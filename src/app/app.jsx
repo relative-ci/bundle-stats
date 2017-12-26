@@ -1,8 +1,13 @@
+import { Router } from 'preact-router';
+
+import Webpack from '../pages/webpack';
 import styles from './app.css';
 
 const App = () => (
   <div class={styles.root}>
-    <h1>Hello!</h1>
+    <Router>
+      <Webpack path="/" />
+    </Router>
   </div>
 );
 
