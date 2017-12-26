@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    ["env", { "modules": false }],
+    "react"
+  ],
+  "plugins": [
+    "preact-require",
+    ["transform-react-jsx", {"pragma": "h"}]
+  ]
+}
