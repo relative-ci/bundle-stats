@@ -1,0 +1,20 @@
+.root {
+  width: 100%;
+  border-collapse: collapse;
+  empty-cells: show;
+}
+
+.cell {
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-width: 1px 0;
+  text-align: left;
+}
+
+thead .cell {
+  border-top: none;
+}
+
+tbody th.cell {
+  font-weight: normal;
+}
