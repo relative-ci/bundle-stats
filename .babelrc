@@ -1,9 +1,10 @@
 {
-  "plugins": [
+  "presets": [
     ["env", { "modules": false }],
     "react"
   ],
   "plugins": [
+    "transform-object-rest-spread",
     "preact-require",
     ["transform-react-jsx", {"pragma": "h"}]
   ]
