@@ -8,8 +8,8 @@ export default [
           size: 697975,
         },
         {
-          name: 'js/app.14d1aceb439a1a191f27.min.js',
-          size: 317519,
+          name: 'js/app.14d1aceb439a1a303030.min.js',
+          size: 300519,
         },
         {
           name: 'css/app.2f7387d779265a064174f6264c542d1a.css',
@@ -20,8 +20,12 @@ export default [
           size: 2288,
         },
         {
-          name: 'img/bg.8c36a3b5.jpg',
-          size: 20195,
+          name: 'img/logo--d.3ad3ed88.svg',
+          size: 2288,
+        },
+        {
+          name: 'img/bg.8c360345.jpg',
+          size: 24300,
         },
       ],
     },
@@ -45,6 +49,10 @@ export default [
         },
         {
           name: 'img/logo.faf8ed88.svg',
+          size: 2288,
+        },
+        {
+          name: 'img/logo--t.d32aad88.svg',
           size: 2288,
         },
         {
