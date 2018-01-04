@@ -3,6 +3,7 @@ const webpackMerge = require('webpack-merge');
 const HtmlPlugin = require('html-webpack-plugin');
 
 const cssConfig = require('./build/webpack/css');
+
 const projectDir = __dirname;
 const distDir = path.resolve(projectDir, 'dist');
 
@@ -47,5 +48,5 @@ module.exports = webpackMerge(
       contentBase: distDir,
     },
   },
-  cssConfig
+  cssConfig,
 );
