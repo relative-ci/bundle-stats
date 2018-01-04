@@ -1,7 +1,7 @@
 import convert from 'convert-units';
 import { round } from 'lodash';
 
-const fileSize = (val = 0) => {
+export const fileSize = (val = 0) => {
   const res = convert(val).from('B').toBest();
   return `${round(res.val, 2)}${res.unit}`;
 };
