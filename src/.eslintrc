@@ -1,8 +1,10 @@
 {
   "extends": "airbnb",
   "env": {
-    "browser": true
+    "browser": true,
+    "node": false
   },
+  "plugins": ["jest"],
   "parser": "babel-eslint",
   "rules": {
     "react/no-unknown-property": "off",

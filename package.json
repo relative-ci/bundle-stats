@@ -7,13 +7,21 @@
     "dev": "webpack-dev-server --progress --hot",
     "build": "NODE_ENV=production webpack",
     "storybook": "start-storybook -p 8090 -c build/storybook",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint . --cache --fix",
-    "pretest": "npm run lint"
+    "test": "NODE_ENV=test jest --coverage",
+    "lint": "eslint src/**/*.js --cache --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "jest": {
+    "transform": {
+      "\\.js$": "babel-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ]
+  },
   "dependencies": {
     "preact": "^8.2.7",
     "preact-router": "^2.6.0",
@@ -23,6 +31,7 @@
     "autoprefixer": "^7.2.3",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.1.2",
+    "babel-jest": "^22.0.4",
     "babel-loader": "^7.1.2",
     "babel-plugin-preact-require": "^1.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -33,9 +42,11 @@
     "eslint-config-airbnb": "^16.1.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.5.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
     "html-webpack-plugin": "^2.30.1",
+    "jest": "^22.0.4",
     "postcss": "^6.0.14",
     "postcss-loader": "^2.0.9",
     "preact-compat": "^3.17.0",

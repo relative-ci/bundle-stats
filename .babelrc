@@ -7,5 +7,13 @@
     "transform-object-rest-spread",
     "preact-require",
     ["transform-react-jsx", {"pragma": "h"}]
-  ]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        "env",
+        "react"
+      ]
+    }
+  }
 }
