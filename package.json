@@ -29,7 +29,8 @@
     "lodash": "^4.17.4",
     "preact": "^8.2.7",
     "preact-router": "^2.6.0",
-    "prop-types": "^15.6.0"
+    "prop-types": "^15.6.0",
+    "recompose": "^0.26.0"
   },
   "devDependencies": {
     "@nivo/bar": "^0.33.0",

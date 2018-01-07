@@ -13,8 +13,14 @@
 
 thead .cell {
   border-top: none;
+  text-transform: uppercase;
 }
 
 tbody th.cell {
   font-weight: normal;
+}
+
+tbody tr:nth-child(odd) .cell {
+  background: #fbfbfb;
+  border: none;
 }
