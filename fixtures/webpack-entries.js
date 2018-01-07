@@ -8,6 +8,10 @@ export default [
           size: 697975,
         },
         {
+          name: 'js/vendor.d249062c08abb6b31a03.min.js.map',
+          size: 1803921,
+        },
+        {
           name: 'js/app.14d1aceb439a1a303030.min.js',
           size: 300519,
         },
@@ -27,6 +31,10 @@ export default [
           name: 'img/bg.8c360345.jpg',
           size: 24300,
         },
+        {
+          name: 'stats.json',
+          size: 0,
+        },
       ],
     },
   },
@@ -38,6 +46,10 @@ export default [
         {
           name: 'js/vendor.d249062c08abb6b31a03.min.js',
           size: 697975,
+        },
+        {
+          name: 'js/vendor.d249062c08abb6b31a03.min.js.map',
+          size: 1387442,
         },
         {
           name: 'js/app.14d1aceb439a1a191f27.min.js',
@@ -58,6 +70,10 @@ export default [
         {
           name: 'img/bg.8c36a3b5.jpg',
           size: 20195,
+        },
+        {
+          name: 'stats.json',
+          size: 0,
         },
       ],
     },

@@ -1,8 +1,8 @@
 import { last, map, uniq } from 'lodash';
 
 const checkIfChanged = values => uniq(values).length !== 1;
-const checkIfAdded = values => !last(values);
-const checkIfDeleted = values => !values[0];
+const checkIfAdded = values => typeof last(values) === 'undefined';
+const checkIfDeleted = values => typeof values[0] === 'undefined';
 
 const processAssets = assets =>
   Object.entries(assets).reduce(

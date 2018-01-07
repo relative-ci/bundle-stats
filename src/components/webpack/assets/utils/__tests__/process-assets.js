@@ -41,6 +41,20 @@ test('Process assets', () => {
         null
       ],
     },
+    'stats.json': {
+      entries: [
+        {
+          source: 'stats.json',
+          name: 'stats.json',
+          size: 0,
+        },
+        {
+          source: 'stats.json',
+          name: 'stats.json',
+          size: 0,
+        },
+      ],
+    },
   });
 
   const expected = [
@@ -98,6 +112,26 @@ test('Process assets', () => {
           size: 100,
         },
         null,
+      ],
+    },
+    {
+      key: 'stats.json',
+      data: {
+        changed: false,
+        added: false,
+        deleted: false,
+      },
+      entries: [
+        {
+          source: 'stats.json',
+          name: 'stats.json',
+          size: 0,
+        },
+        {
+          source: 'stats.json',
+          name: 'stats.json',
+          size: 0,
+        },
       ],
     },
   ];

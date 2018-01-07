@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { sortBy } from 'lodash';
 
 import { fileSize } from '../../../config/metrics';
 import Metric from '../../metric';
@@ -7,14 +6,10 @@ import Table from '../../table';
 import EntryFlag from '../../entry-flag';
 import FileName from '../../file-name';
 import Filter from './filter';
-import getAssetsById from './utils/get-assets-by-id';
-import mergeAssetsById from './utils/merge-assets-by-id';
-import processAssets from './utils/process-assets';
-import { FILTER_SHOW_CHANGED } from './constants';
 import enhance from './container';
 import styles from './styles.css';
 
-const getHeaders = entries => ([
+const getHeaders = () => ([
   {
     text: '',
     options: {
@@ -22,13 +17,20 @@ const getHeaders = entries => ([
     },
   },
   'Files',
-  ...entries.map(({ label }) => ({
-    text: label,
+  {
+    text: 'After',
     options: {
       align: 'right',
       width: '100px',
     },
-  })),
+  },
+  {
+    text: 'Before',
+    options: {
+      align: 'right',
+      width: '100px',
+    },
+  },
 ]);
 
 const getRow = ({ key, data, entries }) => ({
@@ -50,36 +52,27 @@ const getRow = ({ key, data, entries }) => ({
 
 });
 
-const getRows = (entries, show) => {
-  const assetsById = entries.map(({ data }) => getAssetsById(data.assets));
-  const data = processAssets(mergeAssetsById(assetsById));
+const getRows = (data) => data.map(getRow);
 
-  return sortBy(
-    data.filter(o => show === FILTER_SHOW_CHANGED ? o.data.changed : true),
-    o => [!o.data.changed, o.key],
-  )
-    .map(getRow);
-};
-
-const Assets = ({ entries, show, setShow }) => (
+const Assets = ({ data, show, setShow }) => (
   <div>
     <Filter
       active={show}
       onChange={setShow}
     />
     <Table
-      headers={getHeaders(entries)}
-      rows={getRows(entries, show)}
+      headers={getHeaders()}
+      rows={getRows(data, show)}
     />
   </div>
 );
 
 Assets.defaultProps = {
-  entries: [],
+  data: [],
 };
 
 Assets.propTypes = {
-  entries: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  data: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   show: PropTypes.string.isRequired,
   setShow: PropTypes.func.isRequired,
 };
