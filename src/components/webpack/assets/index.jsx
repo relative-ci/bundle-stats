@@ -5,6 +5,7 @@ import Metric from '../../metric';
 import Table from '../../table';
 import EntryFlag from '../../entry-flag';
 import FileName from '../../file-name';
+import Delta from '../../delta';
 import Filter from './filter';
 import enhance from './container';
 import styles from './styles.css';
@@ -13,22 +14,30 @@ const getHeaders = () => ([
   {
     text: '',
     options: {
-      width: '1rem',
+      classNames: styles.status,
     },
   },
-  'Files',
+  {
+    text: 'Files',
+    options: {
+      width: '100%',
+    },
+  },
   {
     text: 'After',
     options: {
       align: 'right',
-      width: '100px',
     },
   },
   {
     text: 'Before',
     options: {
       align: 'right',
-      width: '100px',
+    },
+  },
+  {
+    options: {
+      classNames: styles.delta,
     },
   },
 ]);
@@ -45,14 +54,13 @@ const getRow = ({ key, data, entries }) => ({
     <EntryFlag added={data.added} deleted={data.deleted} />,
     <FileName name={key} />,
 
-    ...entries.map(entry => (
-      entry && <Metric value={entry.size} formatter={fileSize} />
-    )),
+    <Metric value={entries[0] && entries[0].size} formatter={fileSize} />,
+    <Metric value={entries[1] && entries[1].size} formatter={fileSize} />,
+    <Delta value={entries[1].delta} biggerIsBetter={false} />,
   ],
-
 });
 
-const getRows = (data) => data.map(getRow);
+const getRows = data => data.map(getRow);
 
 const Assets = ({ data, show, setShow }) => (
   <div>

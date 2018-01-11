@@ -1,3 +1,13 @@
+/* columns */
+.status {
+  padding-right: 0;
+}
+
+.delta {
+  padding-left: 0;
+  text-align: left;
+}
+
 .unchanged td {
   color: gray;
 }

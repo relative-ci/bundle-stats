@@ -38,7 +38,17 @@ test('Process assets', () => {
           name: 'img/logo.000000.png',
           size: 100,
         },
-        null
+        null,
+      ],
+    },
+    'img/logo--d.png': {
+      entries: [
+        null,
+        {
+          source: 'img/logo--d.png',
+          name: 'img/logo--d.000000.png',
+          size: 150,
+        },
       ],
     },
     'stats.json': {
@@ -75,6 +85,7 @@ test('Process assets', () => {
           source: 'js/vendor.js',
           name: 'js/vendor.000000.js',
           size: 1000,
+          delta: 0,
         },
       ],
     },
@@ -95,6 +106,7 @@ test('Process assets', () => {
           source: 'js/app.js',
           name: 'js/app.000000.js',
           size: 1500,
+          delta: 33.33,
         },
       ],
     },
@@ -111,7 +123,26 @@ test('Process assets', () => {
           name: 'img/logo.000000.png',
           size: 100,
         },
+        {
+          delta: 100,
+        },
+      ],
+    },
+    {
+      key: 'img/logo--d.png',
+      data: {
+        changed: true,
+        added: false,
+        deleted: true,
+      },
+      entries: [
         null,
+        {
+          source: 'img/logo--d.png',
+          name: 'img/logo--d.000000.png',
+          size: 150,
+          delta: -100,
+        },
       ],
     },
     {
@@ -131,6 +162,7 @@ test('Process assets', () => {
           source: 'stats.json',
           name: 'stats.json',
           size: 0,
+          delta: 0,
         },
       ],
     },
