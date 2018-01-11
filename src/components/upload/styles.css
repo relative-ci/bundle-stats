@@ -1,0 +1,30 @@
+.root {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  background: green;
+  color: white;
+  cursor: pointer;
+  font-size: 1.33rem;
+}
+
+.root:hover .button {
+  background: darkgreen;
+}
