@@ -15,21 +15,18 @@ const getDelta = (baseline, current) => {
   return round(currentValue / baselineValue * 100 - 100, 2);
 };
 
-// The first entry is the latest, for the others we compute delta
+// The first entry is the latest,
 const getEntriesDelta = entries =>
-  entries.reduce((aggregator, asset, index) => {
-    if (index === 0) {
-      return [asset];
-    }
-
-    return [
-      ...aggregator,
-      {
-        ...asset,
-        delta: getDelta(asset, aggregator[0]),
-      },
-    ];
-  }, []);
+  entries.reduce((aggregator, asset, index) => [
+    ...aggregator,
+    Object.assign(
+      {},
+      asset,
+      (typeof entries[index + 1] !== 'undefined')
+        ? { delta: getDelta(entries[index + 1], asset) }
+        : {},
+    ),
+  ], []);
 
 const checkIfChanged = values => uniq(values).length !== 1;
 const checkIfAdded = values => typeof last(values) === 'undefined';

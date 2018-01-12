@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { flatten } from 'lodash';
 
 import { fileSize } from '../../../config/metrics';
 import Metric from '../../metric';
@@ -30,14 +31,14 @@ const getHeaders = () => ([
     },
   },
   {
-    text: 'Before',
     options: {
-      align: 'right',
+      classNames: styles.delta,
     },
   },
   {
+    text: 'Before',
     options: {
-      classNames: styles.delta,
+      align: 'right',
     },
   },
 ]);
@@ -54,9 +55,12 @@ const getRow = ({ key, data, entries }) => ({
     <EntryFlag added={data.added} deleted={data.deleted} />,
     <FileName name={key} />,
 
-    <Metric value={entries[0] && entries[0].size} formatter={fileSize} />,
-    <Metric value={entries[1] && entries[1].size} formatter={fileSize} />,
-    <Delta value={entries[1].delta} biggerIsBetter={false} />,
+    ...(flatten(entries.map(entry => ([
+      <Metric value={entry && entry.size} formatter={fileSize} />,
+      entry.delta
+        ? <Delta value={entry.delta} biggerIsBetter={false} />
+        : null,
+    ])))).filter(i => !!i),
   ],
 });
 
