@@ -26,14 +26,14 @@ const enhance = compose(
     const data = processAssets(mergeAssetsById(assetsById));
 
     return {
-      data: sortBy(data, sortByStateAndName),
+      rows: sortBy(data, sortByStateAndName),
     };
   }),
 
   // Filter rows
   withState('show', 'setShow', FILTER_SHOW_CHANGED),
-  withProps(({ data, show }) => ({
-    data: data.filter(filterByState(show)),
+  withProps(({ rows, show }) => ({
+    rows: rows.filter(filterByState(show)),
   })),
 );
 

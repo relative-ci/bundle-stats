@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { flatten } from 'lodash';
+import { filter, flatten, map } from 'lodash';
 
 import { fileSize } from '../../../config/metrics';
 import Metric from '../../metric';
@@ -11,39 +11,66 @@ import Filter from './filter';
 import enhance from './container';
 import styles from './styles.css';
 
-const getHeaders = () => ([
+const generateEntryHeaderCells = (entry, index, entries) => {
+  const columns = [
+    // Value column
+    {
+      text: entry.label || `#${index}`,
+      options: {
+        classNames: styles.value,
+      },
+    },
+
+    // Delta column for all entries except the last one
+    entries.length !== index + 1 ?
+      {
+        options: {
+          classNames: styles.delta,
+        },
+      } :
+      null,
+  ];
+
+  return filter(columns, i => !!i);
+};
+
+const generateHeadersData = entries => ([
+  // Status column
   {
     text: '',
     options: {
       classNames: styles.status,
     },
   },
+
+  // Filename column
   {
     text: 'Files',
     options: {
-      width: '100%',
+      classNames: styles.filename,
     },
   },
-  {
-    text: 'After',
-    options: {
-      align: 'right',
-    },
-  },
-  {
-    options: {
-      classNames: styles.delta,
-    },
-  },
-  {
-    text: 'Before',
-    options: {
-      align: 'right',
-    },
-  },
+
+  // Entries columns
+  ...flatten(map(entries, generateEntryHeaderCells)),
 ]);
 
-const getRow = ({ key, data, entries }) => ({
+const generateEntryRowCells = (entry, index, entries) => {
+  const cells = [
+    // Entry value
+    <Metric value={entry.size} formatter={fileSize} />,
+
+    // Delta for all entries except the last one
+    entries.length !== index + 1 ?
+      <Delta value={entry.delta} biggerIsBetter={false} /> :
+      null,
+  ];
+
+  return filter(cells, i => !!i);
+};
+
+const generateRowData = ({ key, data, entries }) => ({
+  // Row options
   options: {
     classNames: {
       [styles.unchanged]: !data.changed,
@@ -51,43 +78,50 @@ const getRow = ({ key, data, entries }) => ({
       [styles.deleted]: data.deleted,
     },
   },
+
   cells: [
     <EntryFlag added={data.added} deleted={data.deleted} />,
     <FileName name={key} />,
 
-    ...(flatten(entries.map(entry => ([
-      <Metric value={entry && entry.size} formatter={fileSize} />,
-      entry.delta
-        ? <Delta value={entry.delta} biggerIsBetter={false} />
-        : null,
-    ])))).filter(i => !!i),
+    ...(flatten(map(entries, generateEntryRowCells))),
   ],
 });
 
-const getRows = data => data.map(getRow);
+const generateRowsData = rows =>
+  rows.map(generateRowData);
 
-const Assets = ({ data, show, setShow }) => (
-  <div>
-    <Filter
-      active={show}
-      onChange={setShow}
-    />
-    <Table
-      headers={getHeaders()}
-      rows={getRows(data, show)}
-    />
-  </div>
-);
+const Assets = (props) => {
+  const {
+    entries,
+    rows,
+    show,
+    setShow,
+  } = props;
+
+  return (
+    <div>
+      <Filter
+        active={show}
+        onChange={setShow}
+      />
+      <Table
+        headers={generateHeadersData(entries)}
+        rows={generateRowsData(rows, show)}
+      />
+    </div>
+  );
+};
 
 Assets.defaultProps = {
-  data: [],
+  entries: [],
+  rows: [],
 };
 
 Assets.propTypes = {
-  data: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  entries: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  rows: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   show: PropTypes.string.isRequired,
   setShow: PropTypes.func.isRequired,
 };
-
 
 export default enhance(Assets);

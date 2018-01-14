@@ -3,9 +3,17 @@
   padding-right: 0;
 }
 
+.filename {
+  width: 100%;
+}
+
+.value {
+  text-align: right;
+}
+
 .delta {
   padding-left: 0;
-  text-align: left;
+  text-align: right;
 }
 
 .unchanged td {
