@@ -1,3 +1,4 @@
+/* global module */
 import { render } from 'preact';
 
 import App from './app';
