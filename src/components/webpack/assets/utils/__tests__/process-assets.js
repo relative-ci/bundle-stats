@@ -6,12 +6,10 @@ test('Process assets', () => {
     'js/vendor.js': {
       entries: [
         {
-          source: 'js/vendor.js',
           name: 'js/vendor.000000.js',
           size: 1000,
         },
         {
-          source: 'js/vendor.js',
           name: 'js/vendor.000000.js',
           size: 1000,
         },
@@ -20,12 +18,10 @@ test('Process assets', () => {
     'js/app.js': {
       entries: [
         {
-          source: 'js/app.js',
           name: 'js/app.000001.js',
           size: 2000,
         },
         {
-          source: 'js/app.js',
           name: 'js/app.000000.js',
           size: 1500,
         },
@@ -34,7 +30,6 @@ test('Process assets', () => {
     'img/logo.png': {
       entries: [
         {
-          source: 'img/logo.png',
           name: 'img/logo.000000.png',
           size: 100,
         },
@@ -45,7 +40,6 @@ test('Process assets', () => {
       entries: [
         null,
         {
-          source: 'img/logo--d.png',
           name: 'img/logo--d.000000.png',
           size: 150,
         },
@@ -54,12 +48,10 @@ test('Process assets', () => {
     'stats.json': {
       entries: [
         {
-          source: 'stats.json',
           name: 'stats.json',
           size: 0,
         },
         {
-          source: 'stats.json',
           name: 'stats.json',
           size: 0,
         },
@@ -77,13 +69,11 @@ test('Process assets', () => {
       },
       entries: [
         {
-          source: 'js/vendor.js',
           name: 'js/vendor.000000.js',
           size: 1000,
           delta: 0,
         },
         {
-          source: 'js/vendor.js',
           name: 'js/vendor.000000.js',
           size: 1000,
         },
@@ -98,13 +88,11 @@ test('Process assets', () => {
       },
       entries: [
         {
-          source: 'js/app.js',
           name: 'js/app.000001.js',
           size: 2000,
           delta: 33.33,
         },
         {
-          source: 'js/app.js',
           name: 'js/app.000000.js',
           size: 1500,
         },
@@ -119,7 +107,6 @@ test('Process assets', () => {
       },
       entries: [
         {
-          source: 'img/logo.png',
           name: 'img/logo.000000.png',
           size: 100,
           delta: 100,
@@ -139,7 +126,6 @@ test('Process assets', () => {
           delta: -100,
         },
         {
-          source: 'img/logo--d.png',
           name: 'img/logo--d.000000.png',
           size: 150,
         },
@@ -154,13 +140,11 @@ test('Process assets', () => {
       },
       entries: [
         {
-          source: 'stats.json',
           name: 'stats.json',
           size: 0,
           delta: 0,
         },
         {
-          source: 'stats.json',
           name: 'stats.json',
           size: 0,
         },

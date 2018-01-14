@@ -1,8 +1,8 @@
 import { last, map, round, uniq } from 'lodash';
 
 const getDelta = (baseline, current) => {
-  const baselineValue = baseline && baseline.size || 0;
-  const currentValue = current && current.size || 0;
+  const baselineValue = baseline && baseline.size || 0; // eslint-disable-line no-mixed-operators
+  const currentValue = current && current.size || 0; // eslint-disable-line no-mixed-operators
 
   if (baselineValue === currentValue) {
     return 0;
@@ -12,7 +12,9 @@ const getDelta = (baseline, current) => {
     return 100;
   }
 
-  return round(currentValue / baselineValue * 100 - 100, 2);
+  const change = currentValue / baselineValue * 100; // eslint-disable-line no-mixed-operators
+
+  return round(change - 100, 2);
 };
 
 // The first entry is the latest,

@@ -24,7 +24,6 @@ const getAssetsById = assets =>
     return {
       ...aggregator,
       [id]: {
-        source,
         ...asset,
       },
     };
