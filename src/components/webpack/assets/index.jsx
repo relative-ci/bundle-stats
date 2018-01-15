@@ -4,7 +4,6 @@ import { filter, flatten, map } from 'lodash';
 import { fileSize } from '../../../config/metrics';
 import Metric from '../../metric';
 import Table from '../../table';
-import EntryFlag from '../../entry-flag';
 import FileName from '../../file-name';
 import Delta from '../../delta';
 import Filter from './filter';
@@ -35,14 +34,6 @@ const generateEntryHeaderCells = (entry, index, entries) => {
 };
 
 const generateHeadersData = entries => ([
-  // Status column
-  {
-    text: '',
-    options: {
-      classNames: styles.status,
-    },
-  },
-
   // Filename column
   {
     text: 'Files',
@@ -74,13 +65,10 @@ const generateRowData = ({ key, data, entries }) => ({
   options: {
     classNames: {
       [styles.unchanged]: !data.changed,
-      [styles.added]: data.added,
-      [styles.deleted]: data.deleted,
     },
   },
 
   cells: [
-    <EntryFlag added={data.added} deleted={data.deleted} />,
     <FileName name={key} />,
 
     ...(flatten(map(entries, generateEntryRowCells))),

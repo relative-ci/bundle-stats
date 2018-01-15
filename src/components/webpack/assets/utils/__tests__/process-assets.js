@@ -64,8 +64,6 @@ test('Process assets', () => {
       key: 'js/vendor.js',
       data: {
         changed: false,
-        added: false,
-        deleted: false,
       },
       entries: [
         {
@@ -83,8 +81,6 @@ test('Process assets', () => {
       key: 'js/app.js',
       data: {
         changed: true,
-        added: false,
-        deleted: false,
       },
       entries: [
         {
@@ -102,8 +98,6 @@ test('Process assets', () => {
       key: 'img/logo.png',
       data: {
         changed: true,
-        added: true,
-        deleted: false,
       },
       entries: [
         {
@@ -118,8 +112,6 @@ test('Process assets', () => {
       key: 'img/logo--d.png',
       data: {
         changed: true,
-        added: false,
-        deleted: true,
       },
       entries: [
         {
@@ -135,8 +127,6 @@ test('Process assets', () => {
       key: 'stats.json',
       data: {
         changed: false,
-        added: false,
-        deleted: false,
       },
       entries: [
         {

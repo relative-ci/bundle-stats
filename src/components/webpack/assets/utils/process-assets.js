@@ -1,4 +1,4 @@
-import { last, map, round, uniq } from 'lodash';
+import { map, round, uniq } from 'lodash';
 
 const getDelta = (baseline, current) => {
   const baselineValue = baseline && baseline.size || 0; // eslint-disable-line no-mixed-operators
@@ -31,8 +31,6 @@ const getEntriesDelta = entries =>
   ], []);
 
 const checkIfChanged = values => uniq(values).length !== 1;
-const checkIfAdded = values => typeof last(values) === 'undefined';
-const checkIfDeleted = values => typeof values[0] === 'undefined';
 
 const processAssets = assets =>
   Object.entries(assets).reduce((aggregator, [key, asset]) => {
@@ -45,8 +43,6 @@ const processAssets = assets =>
         key,
         data: {
           changed: checkIfChanged(sizes),
-          added: checkIfAdded(sizes),
-          deleted: checkIfDeleted(sizes),
         },
         entries,
       },
