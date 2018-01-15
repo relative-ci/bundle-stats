@@ -51,9 +51,15 @@ const generateEntryRowCells = (entry, index) => {
     // Entry value
     <Metric value={entry.value} formatter={fileSize} />,
 
-    // Delta for all entries except the last one
+    // Delta for all entries except the first one
     index > 0 ?
-      <Delta value={entry.delta} biggerIsBetter={false} /> :
+      (
+        <Delta
+          value={entry.delta}
+          displayValue={entry.displayDelta}
+          biggerIsBetter={false}
+        />
+      ) :
       null,
   ];
 

@@ -1,4 +1,4 @@
-import { round } from 'lodash';
+import { merge, round } from 'lodash';
 
 const getDelta = (baseline, current) => {
   const baselineValue = baseline.value;
@@ -17,18 +17,29 @@ const getDelta = (baseline, current) => {
   return round(change - 100, 2);
 };
 
-// The first entry is the latest,
+const formatDelta = (value) => {
+  const sign = value >= 0 ? '+' : '';
+
+  return `${sign}${value}%`;
+};
+
 const getEntriesDelta = entries =>
-  entries.reduce((aggregator, asset, index) => [
-    ...aggregator,
-    Object.assign(
-      {},
-      asset,
-      index > 0
-        ? { delta: getDelta(entries[index - 1], asset) }
-        : {},
-    ),
-  ], []);
+  entries.reduce((aggregator, asset, index) => {
+    const deltaInfo = {};
+
+    if (index > 0) {
+      deltaInfo.delta = getDelta(entries[index - 1], asset);
+      deltaInfo.displayDelta = formatDelta(deltaInfo.delta);
+    }
+
+    return [
+      ...aggregator,
+      merge(
+        asset,
+        deltaInfo,
+      ),
+    ];
+  }, []);
 
 const computeDelta = dataSet =>
   dataSet.map(({ entries, ...restProps }) => ({

@@ -3,8 +3,7 @@ import cx from 'classnames';
 
 import styles from './styles.css';
 
-const Delta = ({ value, biggerIsBetter }) => {
-  const sign = value >= 0 ? '+' : '';
+const Delta = ({ value, displayValue, biggerIsBetter }) => {
   const positiveChange = (biggerIsBetter && value > 0) || (!biggerIsBetter && value < 0);
 
   const valueClassNames = cx(styles.value, {
@@ -14,13 +13,14 @@ const Delta = ({ value, biggerIsBetter }) => {
 
   return (
     <span class={styles.root}>
-      (<code class={valueClassNames}>{sign}{value}%</code>)
+      (<code class={valueClassNames}>{displayValue}</code>)
     </span>
   );
 };
 
 Delta.propTypes = {
   value: PropTypes.number.isRequired,
+  displayValue: PropTypes.string.isRequired,
   biggerIsBetter: PropTypes.bool,
 };
 
