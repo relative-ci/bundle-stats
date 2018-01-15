@@ -1,9 +1,10 @@
 import { compose, withProps, withState } from 'recompose';
 import { sortBy } from 'lodash';
 
+import computeDelta from '../../../utils/compute-delta';
 import getAssetsById from './utils/get-assets-by-id';
 import mergeAssetsById from './utils/merge-assets-by-id';
-import processAssets from './utils/process-assets';
+import formatDataSet from './utils/format-data-set';
 import {
   FILTER_SHOW_ALL,
   FILTER_SHOW_CHANGED,
@@ -23,7 +24,7 @@ const sortByStateAndName = item =>
 const enhance = compose(
   withProps(({ entries }) => {
     const assetsById = entries.map(({ data }) => getAssetsById(data.assets));
-    const data = processAssets(mergeAssetsById(assetsById));
+    const data = computeDelta(formatDataSet(mergeAssetsById(assetsById)));
 
     return {
       rows: sortBy(data, sortByStateAndName),

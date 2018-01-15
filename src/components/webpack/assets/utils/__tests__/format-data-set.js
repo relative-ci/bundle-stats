@@ -1,8 +1,8 @@
 /* env jest/globals */
-import processAssets from '../process-assets';
+import formatDataSet from '../format-data-set';
 
 test('Process assets', () => {
-  const actual = processAssets({
+  const actual = formatDataSet({
     'js/vendor.js': {
       entries: [
         {
@@ -68,12 +68,11 @@ test('Process assets', () => {
       entries: [
         {
           name: 'js/vendor.000000.js',
-          size: 1000,
-          delta: 0,
+          value: 1000,
         },
         {
           name: 'js/vendor.000000.js',
-          size: 1000,
+          value: 1000,
         },
       ],
     },
@@ -85,12 +84,11 @@ test('Process assets', () => {
       entries: [
         {
           name: 'js/app.000001.js',
-          size: 2000,
-          delta: 33.33,
+          value: 2000,
         },
         {
           name: 'js/app.000000.js',
-          size: 1500,
+          value: 1500,
         },
       ],
     },
@@ -102,10 +100,11 @@ test('Process assets', () => {
       entries: [
         {
           name: 'img/logo.000000.png',
-          size: 100,
-          delta: 100,
+          value: 100,
         },
-        {},
+        {
+          value: 0,
+        },
       ],
     },
     {
@@ -115,11 +114,11 @@ test('Process assets', () => {
       },
       entries: [
         {
-          delta: -100,
+          value: 0,
         },
         {
           name: 'img/logo--d.000000.png',
-          size: 150,
+          value: 150,
         },
       ],
     },
@@ -131,12 +130,11 @@ test('Process assets', () => {
       entries: [
         {
           name: 'stats.json',
-          size: 0,
-          delta: 0,
+          value: 0,
         },
         {
           name: 'stats.json',
-          size: 0,
+          value: 0,
         },
       ],
     },

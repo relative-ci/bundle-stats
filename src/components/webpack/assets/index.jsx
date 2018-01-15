@@ -49,7 +49,7 @@ const generateHeadersData = entries => ([
 const generateEntryRowCells = (entry, index, entries) => {
   const cells = [
     // Entry value
-    <Metric value={entry.size} formatter={fileSize} />,
+    <Metric value={entry.value} formatter={fileSize} />,
 
     // Delta for all entries except the last one
     entries.length !== index + 1 ?
