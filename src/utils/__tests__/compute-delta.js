@@ -93,11 +93,11 @@ test('Format data set', () => {
         {
           name: 'js/vendor.000000.js',
           value: 800,
-          delta: -20,
         },
         {
           name: 'js/vendor.000000.js',
           value: 1000,
+          delta: 25,
         },
       ],
     },
@@ -110,11 +110,11 @@ test('Format data set', () => {
         {
           name: 'js/app.000001.js',
           value: 2000,
-          delta: 33.33,
         },
         {
           name: 'js/app.000000.js',
           value: 1500,
+          delta: -25,
         },
       ],
     },
@@ -127,10 +127,10 @@ test('Format data set', () => {
         {
           name: 'img/logo.000000.png',
           value: 100,
-          delta: 100,
         },
         {
           value: 0,
+          delta: -100,
         },
       ],
     },
@@ -142,11 +142,11 @@ test('Format data set', () => {
       entries: [
         {
           value: 0,
-          delta: -100,
         },
         {
           name: 'img/logo--d.000000.png',
           value: 150,
+          delta: 100,
         },
       ],
     },
@@ -159,11 +159,11 @@ test('Format data set', () => {
         {
           name: 'stats.json',
           value: 0,
-          delta: 0,
         },
         {
           name: 'stats.json',
           value: 0,
+          delta: 0,
         },
       ],
     },

@@ -24,8 +24,8 @@ const getEntriesDelta = entries =>
     Object.assign(
       {},
       asset,
-      (typeof entries[index + 1] !== 'undefined')
-        ? { delta: getDelta(entries[index + 1], asset) }
+      index > 0
+        ? { delta: getDelta(entries[index - 1], asset) }
         : {},
     ),
   ], []);

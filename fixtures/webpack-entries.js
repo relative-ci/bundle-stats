@@ -1,6 +1,6 @@
 export default [
   {
-    label: 'current',
+    label: 'master',
     data: {
       assets: [
         {
@@ -38,9 +38,8 @@ export default [
       ],
     },
   },
-
   {
-    label: 'master',
+    label: 'current',
     data: {
       assets: [
         {

@@ -10,7 +10,7 @@ import Filter from './filter';
 import enhance from './container';
 import styles from './styles.css';
 
-const generateEntryHeaderCells = (entry, index, entries) => {
+const generateEntryHeaderCells = (entry, index) => {
   const columns = [
     // Value column
     {
@@ -20,8 +20,8 @@ const generateEntryHeaderCells = (entry, index, entries) => {
       },
     },
 
-    // Delta column for all entries except the last one
-    entries.length !== index + 1 ?
+    // Delta column for all entries except the first one
+    index > 0 ?
       {
         options: {
           classNames: styles.delta,
@@ -46,13 +46,13 @@ const generateHeadersData = entries => ([
   ...flatten(map(entries, generateEntryHeaderCells)),
 ]);
 
-const generateEntryRowCells = (entry, index, entries) => {
+const generateEntryRowCells = (entry, index) => {
   const cells = [
     // Entry value
     <Metric value={entry.value} formatter={fileSize} />,
 
     // Delta for all entries except the last one
-    entries.length !== index + 1 ?
+    index > 0 ?
       <Delta value={entry.delta} biggerIsBetter={false} /> :
       null,
   ];
