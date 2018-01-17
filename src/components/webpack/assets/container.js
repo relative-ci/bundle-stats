@@ -3,6 +3,7 @@ import { sortBy } from 'lodash';
 
 import computeDelta from '../../../utils/compute-delta';
 import mergeRunsById from '../../../utils/merge-runs-by-id';
+import resolveMetricChanged from '../../../utils/resolve-metric-changed';
 import getAssetsById from './utils/get-assets-by-id';
 import formatDataSet from './utils/format-data-set';
 import {
@@ -15,16 +16,18 @@ const filterByState = show => (item) => {
     return true;
   }
 
-  return item.data.changed;
+  return item.changed;
 };
 
 const sortByStateAndName = item =>
-  [!item.data.changed, item.key];
+  [!item.changed, item.key];
 
 const enhance = compose(
   withProps(({ runs }) => {
+    // Assets specific transformations
     const assetsById = runs.map(({ data }) => getAssetsById(data.assets));
-    const data = computeDelta(formatDataSet(mergeRunsById(assetsById)));
+    // Generic metric transformations
+    const data = computeDelta(resolveMetricChanged(formatDataSet(mergeRunsById(assetsById))));
 
     return {
       rows: sortBy(data, sortByStateAndName),

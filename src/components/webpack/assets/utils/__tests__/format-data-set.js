@@ -62,9 +62,6 @@ test('Process assets', () => {
   const expected = [
     {
       key: 'js/vendor.js',
-      data: {
-        changed: false,
-      },
       runs: [
         {
           name: 'js/vendor.000000.js',
@@ -78,9 +75,6 @@ test('Process assets', () => {
     },
     {
       key: 'js/app.js',
-      data: {
-        changed: true,
-      },
       runs: [
         {
           name: 'js/app.000001.js',
@@ -94,9 +88,6 @@ test('Process assets', () => {
     },
     {
       key: 'img/logo.png',
-      data: {
-        changed: true,
-      },
       runs: [
         {
           name: 'img/logo.000000.png',
@@ -109,9 +100,6 @@ test('Process assets', () => {
     },
     {
       key: 'img/logo--d.png',
-      data: {
-        changed: true,
-      },
       runs: [
         {
           value: 0,
@@ -124,9 +112,6 @@ test('Process assets', () => {
     },
     {
       key: 'stats.json',
-      data: {
-        changed: false,
-      },
       runs: [
         {
           name: 'stats.json',

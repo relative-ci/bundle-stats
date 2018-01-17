@@ -1,34 +1,26 @@
-import { map, uniq } from 'lodash';
-
-const checkIfChanged = values => uniq(values).length !== 1;
-
 const formatDataSet = metrics =>
-  Object.entries(metrics).reduce((aggregator, [key, metric]) => {
-    const runs = metric.runs.map((entry) => {
-      if (entry) {
+  Object.entries(metrics).map(([key, metric]) => {
+    const {
+      runs,
+      ...metricProps
+    } = metric;
+
+    return {
+      ...metricProps,
+      key,
+      runs: runs.map((run) => {
+        if (!run) {
+          return { value: 0 };
+        }
+
+        const { size, ...runProps } = run;
+
         return {
-          name: entry.name,
-          value: entry.size,
+          ...runProps,
+          value: size,
         };
-      }
-
-      return {
-        value: 0,
-      };
-    });
-
-    const sizes = map(runs, 'value');
-
-    return [
-      ...aggregator,
-      {
-        key,
-        data: {
-          changed: checkIfChanged(sizes),
-        },
-        runs,
-      },
-    ];
-  }, []);
+      }),
+    };
+  });
 
 export default formatDataSet;

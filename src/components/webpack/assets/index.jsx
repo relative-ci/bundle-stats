@@ -66,11 +66,11 @@ const generateEntryRowCells = (run, index) => {
   return filter(cells, i => !!i);
 };
 
-const generateRowData = ({ key, data, runs }) => ({
+const generateRowData = ({ key, changed, runs }) => ({
   // Row options
   options: {
     classNames: {
-      [styles.unchanged]: !data.changed,
+      [styles.unchanged]: !changed,
     },
   },
 
@@ -107,12 +107,12 @@ const Assets = (props) => {
 };
 
 Assets.defaultProps = {
-  entries: [],
+  runs: [],
   rows: [],
 };
 
 Assets.propTypes = {
-  entries: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   rows: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   show: PropTypes.string.isRequired,
   setShow: PropTypes.func.isRequired,
