@@ -2,9 +2,9 @@ import { map, uniq } from 'lodash';
 
 const checkIfChanged = values => uniq(values).length !== 1;
 
-const formatDataSet = assets =>
-  Object.entries(assets).reduce((aggregator, [key, asset]) => {
-    const entries = asset.entries.map((entry) => {
+const formatDataSet = metrics =>
+  Object.entries(metrics).reduce((aggregator, [key, metric]) => {
+    const runs = metric.runs.map((entry) => {
       if (entry) {
         return {
           name: entry.name,
@@ -17,7 +17,7 @@ const formatDataSet = assets =>
       };
     });
 
-    const sizes = map(entries, 'value');
+    const sizes = map(runs, 'value');
 
     return [
       ...aggregator,
@@ -26,7 +26,7 @@ const formatDataSet = assets =>
         data: {
           changed: checkIfChanged(sizes),
         },
-        entries,
+        runs,
       },
     ];
   }, []);

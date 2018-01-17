@@ -4,7 +4,7 @@ import computeDelta from '../compute-delta';
 test('Compute delta', () => {
   const actual = computeDelta([
     {
-      entries: [
+      runs: [
         {
           value: 800,
         },
@@ -14,7 +14,7 @@ test('Compute delta', () => {
       ],
     },
     {
-      entries: [
+      runs: [
         {
           value: 2000,
         },
@@ -24,7 +24,7 @@ test('Compute delta', () => {
       ],
     },
     {
-      entries: [
+      runs: [
         {
           value: 100,
         },
@@ -34,7 +34,7 @@ test('Compute delta', () => {
       ],
     },
     {
-      entries: [
+      runs: [
         {
           value: 0,
         },
@@ -44,7 +44,7 @@ test('Compute delta', () => {
       ],
     },
     {
-      entries: [
+      runs: [
         {
           value: 0,
         },
@@ -57,7 +57,7 @@ test('Compute delta', () => {
 
   const expected = [
     {
-      entries: [
+      runs: [
         {
           value: 800,
         },
@@ -69,7 +69,7 @@ test('Compute delta', () => {
       ],
     },
     {
-      entries: [
+      runs: [
         {
           value: 2000,
         },
@@ -81,7 +81,7 @@ test('Compute delta', () => {
       ],
     },
     {
-      entries: [
+      runs: [
         {
           value: 100,
         },
@@ -93,7 +93,7 @@ test('Compute delta', () => {
       ],
     },
     {
-      entries: [
+      runs: [
         {
           value: 0,
         },
@@ -105,7 +105,7 @@ test('Compute delta', () => {
       ],
     },
     {
-      entries: [
+      runs: [
         {
           value: 0,
         },

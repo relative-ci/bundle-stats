@@ -23,28 +23,28 @@ const formatDelta = (value) => {
   return `${sign}${value}%`;
 };
 
-const getEntriesDelta = entries =>
-  entries.reduce((aggregator, asset, index) => {
+const getRunsDelta = runs =>
+  runs.reduce((aggregator, run, index) => {
     const deltaInfo = {};
 
     if (index > 0) {
-      deltaInfo.delta = getDelta(entries[index - 1], asset);
+      deltaInfo.delta = getDelta(runs[index - 1], run);
       deltaInfo.displayDelta = formatDelta(deltaInfo.delta);
     }
 
     return [
       ...aggregator,
       merge(
-        asset,
+        run,
         deltaInfo,
       ),
     ];
   }, []);
 
-const computeDelta = dataSet =>
-  dataSet.map(({ entries, ...restProps }) => ({
+const computeDelta = metrics =>
+  metrics.map(({ runs, ...restProps }) => ({
     ...restProps,
-    entries: getEntriesDelta(entries),
+    runs: getRunsDelta(runs),
   }));
 
 export default computeDelta;

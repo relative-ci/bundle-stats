@@ -4,7 +4,7 @@ import formatDataSet from '../format-data-set';
 test('Process assets', () => {
   const actual = formatDataSet({
     'js/vendor.js': {
-      entries: [
+      runs: [
         {
           name: 'js/vendor.000000.js',
           size: 1000,
@@ -16,7 +16,7 @@ test('Process assets', () => {
       ],
     },
     'js/app.js': {
-      entries: [
+      runs: [
         {
           name: 'js/app.000001.js',
           size: 2000,
@@ -28,7 +28,7 @@ test('Process assets', () => {
       ],
     },
     'img/logo.png': {
-      entries: [
+      runs: [
         {
           name: 'img/logo.000000.png',
           size: 100,
@@ -37,7 +37,7 @@ test('Process assets', () => {
       ],
     },
     'img/logo--d.png': {
-      entries: [
+      runs: [
         null,
         {
           name: 'img/logo--d.000000.png',
@@ -46,7 +46,7 @@ test('Process assets', () => {
       ],
     },
     'stats.json': {
-      entries: [
+      runs: [
         {
           name: 'stats.json',
           size: 0,
@@ -65,7 +65,7 @@ test('Process assets', () => {
       data: {
         changed: false,
       },
-      entries: [
+      runs: [
         {
           name: 'js/vendor.000000.js',
           value: 1000,
@@ -81,7 +81,7 @@ test('Process assets', () => {
       data: {
         changed: true,
       },
-      entries: [
+      runs: [
         {
           name: 'js/app.000001.js',
           value: 2000,
@@ -97,7 +97,7 @@ test('Process assets', () => {
       data: {
         changed: true,
       },
-      entries: [
+      runs: [
         {
           name: 'img/logo.000000.png',
           value: 100,
@@ -112,7 +112,7 @@ test('Process assets', () => {
       data: {
         changed: true,
       },
-      entries: [
+      runs: [
         {
           value: 0,
         },
@@ -127,7 +127,7 @@ test('Process assets', () => {
       data: {
         changed: false,
       },
-      entries: [
+      runs: [
         {
           name: 'stats.json',
           value: 0,

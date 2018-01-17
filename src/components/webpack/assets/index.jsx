@@ -10,11 +10,11 @@ import Filter from './filter';
 import enhance from './container';
 import styles from './styles.css';
 
-const generateEntryHeaderCells = (entry, index) => {
+const generateEntryHeaderCells = (run, index) => {
   const columns = [
     // Value column
     {
-      text: entry.label || `#${index}`,
+      text: run.label || `#${index}`,
       options: {
         classNames: styles.value,
       },
@@ -33,7 +33,7 @@ const generateEntryHeaderCells = (entry, index) => {
   return filter(columns, i => !!i);
 };
 
-const generateHeadersData = entries => ([
+const generateHeadersData = runs => ([
   // Filename column
   {
     text: 'Files',
@@ -43,20 +43,20 @@ const generateHeadersData = entries => ([
   },
 
   // Entries columns
-  ...flatten(map(entries, generateEntryHeaderCells)),
+  ...flatten(map(runs, generateEntryHeaderCells)),
 ]);
 
-const generateEntryRowCells = (entry, index) => {
+const generateEntryRowCells = (run, index) => {
   const cells = [
     // Entry value
-    <Metric value={entry.value} formatter={fileSize} />,
+    <Metric value={run.value} formatter={fileSize} />,
 
     // Delta for all entries except the first one
     index > 0 ?
       (
         <Delta
-          value={entry.delta}
-          displayValue={entry.displayDelta}
+          value={run.delta}
+          displayValue={run.displayDelta}
           biggerIsBetter={false}
         />
       ) :
@@ -66,7 +66,7 @@ const generateEntryRowCells = (entry, index) => {
   return filter(cells, i => !!i);
 };
 
-const generateRowData = ({ key, data, entries }) => ({
+const generateRowData = ({ key, data, runs }) => ({
   // Row options
   options: {
     classNames: {
@@ -77,7 +77,7 @@ const generateRowData = ({ key, data, entries }) => ({
   cells: [
     <FileName name={key} />,
 
-    ...(flatten(map(entries, generateEntryRowCells))),
+    ...(flatten(map(runs, generateEntryRowCells))),
   ],
 });
 
@@ -86,7 +86,7 @@ const generateRowsData = rows =>
 
 const Assets = (props) => {
   const {
-    entries,
+    runs,
     rows,
     show,
     setShow,
@@ -99,7 +99,7 @@ const Assets = (props) => {
         onChange={setShow}
       />
       <Table
-        headers={generateHeadersData(entries)}
+        headers={generateHeadersData(runs)}
         rows={generateRowsData(rows, show)}
       />
     </div>

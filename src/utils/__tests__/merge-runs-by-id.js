@@ -1,8 +1,8 @@
 /* env jest/globals */
-import mergeAssetsById from '../merge-assets-by-id';
+import mergeRunsById from '../merge-runs-by-id';
 
-test('Merge assets by id', () => {
-  const actual = mergeAssetsById([
+test('Merge runs by id', () => {
+  const actual = mergeRunsById([
     {
       1: 'a',
       2: 'b',
@@ -27,25 +27,25 @@ test('Merge assets by id', () => {
 
   const expected = {
     1: {
-      entries: ['a', 'aa', 'aaa'],
+      runs: ['a', 'aa', 'aaa'],
     },
     2: {
-      entries: ['b', 'bb', 'bbb'],
+      runs: ['b', 'bb', 'bbb'],
     },
     3: {
-      entries: ['c', 'cc', 'ccc'],
+      runs: ['c', 'cc', 'ccc'],
     },
     4: {
-      entries: ['d', null, null],
+      runs: ['d', null, null],
     },
     5: {
-      entries: [null, 'ee', null],
+      runs: [null, 'ee', null],
     },
     6: {
-      entries: [null, null, 'fff'],
+      runs: [null, null, 'fff'],
     },
     7: {
-      entries: [null, 'gg', 'ggg'],
+      runs: [null, 'gg', 'ggg'],
     },
   };
 
