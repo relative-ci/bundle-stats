@@ -1,10 +1,4 @@
-/*
- * Basic asset source resolver
- *
- * @TODO use chunks/modules/entries webpack stats props
- */
-const resolveAssetSource = name =>
-  name.replace(/[a-f0-9]{5,32}\./, '');
+import extractFilename from './extract-filename';
 
 const IGNORE_PATTERN = /\.map$/;
 
@@ -17,7 +11,7 @@ const getAssetsById = assets =>
       return aggregator;
     }
 
-    const source = resolveAssetSource(asset.name);
+    const source = extractFilename(asset.name);
     // @TODO Get an uniq id (based on url, source)
     const id = source;
 
