@@ -1,11 +1,9 @@
 import { compose, withProps, withState } from 'recompose';
 import { sortBy } from 'lodash';
 
-import computeDelta from '../../../utils/compute-delta';
-import mergeRunsById from '../../../utils/merge-runs-by-id';
-import resolveMetricChanged from '../../../utils/resolve-metric-changed';
+import withMetrics from '../../../hocs/with-metrics';
 import getAssetsById from './utils/get-assets-by-id';
-import formatDataSet from './utils/format-data-set';
+
 import {
   FILTER_SHOW_ALL,
   FILTER_SHOW_CHANGED,
@@ -25,19 +23,22 @@ const sortByStateAndName = item =>
 const enhance = compose(
   withProps(({ runs }) => {
     // Assets specific transformations
-    const assetsById = runs.map(({ data }) => getAssetsById(data.assets));
-    // Generic metric transformations
-    const data = computeDelta(resolveMetricChanged(formatDataSet(mergeRunsById(assetsById))));
+    const assetsById = runs.map(({ label, data }) => ({
+      label,
+      data: getAssetsById(data.assets),
+    }));
 
     return {
-      rows: sortBy(data, sortByStateAndName),
+      runs: assetsById,
     };
   }),
+
+  withMetrics(),
 
   // Filter rows
   withState('show', 'setShow', FILTER_SHOW_CHANGED),
   withProps(({ rows, show }) => ({
-    rows: rows.filter(filterByState(show)),
+    rows: sortBy(rows, sortByStateAndName).filter(filterByState(show)),
   })),
 );
 

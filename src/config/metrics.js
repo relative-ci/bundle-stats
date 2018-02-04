@@ -1,52 +1,80 @@
 import convert from 'convert-units';
 import { round } from 'lodash';
 
-export const fileSize = (val = 0) => {
+export const fileSize = (val) => {
   const res = convert(val).from('B').toBest();
   return `${round(res.val, 2)}${res.unit}`;
+};
+
+const FILE_SIZE_METRIC = {
+  biggerIsBetter: false,
+  formatter: (val) => {
+    const res = convert(val).from('B').toBest();
+    return `${round(res.val, 2)}${res.unit}`;
+  },
+};
+
+const DURATION_METRIC = {
+  biggerIsBetter: false,
+  formatter: (val) => {
+    const res = convert(val).from('ms').toBest();
+    return `${round(res.val, 4)}${res.unit}`;
+  },
+};
+
+const NUMERIC_METRIC = {
+  biggerIsBetter: true,
+  formatter: val => val,
 };
 
 export default {
   webpack: {
     totalSize: {
+      ...FILE_SIZE_METRIC,
       label: 'Total Size',
-      biggerIsBetter: false,
-      formatter: fileSize,
     },
     totalSizeByType_js: {
+      ...FILE_SIZE_METRIC,
       label: 'JS',
-      biggerIsBetter: false,
-      formatter: fileSize,
     },
     totalSizeByType_css: {
+      ...FILE_SIZE_METRIC,
       label: 'CSS',
-      biggerIsBetter: false,
-      formatter: fileSize,
     },
     totalSizeByType_img: {
+      ...FILE_SIZE_METRIC,
       label: 'IMG',
-      biggerIsBetter: false,
-      formatter: fileSize,
     },
     totalSizeByType_media: {
+      ...FILE_SIZE_METRIC,
       label: 'Media',
-      biggerIsBetter: false,
-      formatter: fileSize,
     },
     totalSizeByType_font: {
+      ...FILE_SIZE_METRIC,
       label: 'Fonts',
-      biggerIsBetter: false,
-      formatter: fileSize,
     },
     totalSizeByType_html: {
+      ...FILE_SIZE_METRIC,
       label: 'HTML',
-      biggerIsBetter: false,
-      formatter: fileSize,
     },
     totalSizeByType_other: {
+      ...FILE_SIZE_METRIC,
       label: 'Other',
-      biggerIsBetter: false,
-      formatter: fileSize,
+    },
+  },
+
+  lighthouse: {
+    score: {
+      ...NUMERIC_METRIC,
+      label: 'Score',
+    },
+    'time-to-first-byte': {
+      ...DURATION_METRIC,
+      label: 'Time to first byte',
+    },
+    'performance-score': {
+      ...NUMERIC_METRIC,
+      label: 'Performance Score',
     },
   },
 };

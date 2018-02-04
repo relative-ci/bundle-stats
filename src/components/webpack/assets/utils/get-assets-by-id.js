@@ -15,10 +15,13 @@ const getAssetsById = assets =>
     // @TODO Get an uniq id (based on url, source)
     const id = source;
 
+    const { size } = asset;
+
     return {
       ...aggregator,
       [id]: {
         ...asset,
+        value: size,
       },
     };
   }, {});
