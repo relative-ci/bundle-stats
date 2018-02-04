@@ -7,7 +7,7 @@ const resolveChartKeys = () =>
     .filter(key => key !== 'totalSize');
 
 const formatChartData = entries =>
-  entries.map(entry => Object.assign({ label: entry.label }, entry.stats));
+  entries.map(entry => Object.assign({ label: entry.label }, entry.data));
 
 const TotalByTypeChart = ({ entries }) => {
   const data = formatChartData(entries);

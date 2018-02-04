@@ -8,21 +8,10 @@ const formatDataSet = metrics =>
     return {
       ...metricProps,
       key,
-      runs: runs.map((run) => {
-        if (!run) {
-          return { value: 0 };
-        }
-
-        const { size, ...runProps } = run;
-
-        return {
-          ...runProps,
-          value: size,
-        };
-      }),
+      runs: runs.map(run => ({
+        value: run || 0,
+      })),
     };
   });
 
 export default formatDataSet;
-
-

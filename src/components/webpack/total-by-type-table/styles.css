@@ -1,0 +1,17 @@
+/* columns */
+.metricName {
+  width: 100%;
+}
+
+.value {
+  text-align: right;
+}
+
+.delta {
+  padding-left: 0;
+  text-align: right;
+}
+
+.unchanged td {
+  color: gray;
+}

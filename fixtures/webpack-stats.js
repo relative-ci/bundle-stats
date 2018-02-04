@@ -1,7 +1,7 @@
 export default [
   {
     label: 'current',
-    stats: {
+    data: {
       totalSize: 2056,
       totalSizeByType_js: 524,
       totalSizeByType_css: 202,
@@ -12,7 +12,7 @@ export default [
   },
   {
     label: 'master',
-    stats: {
+    data: {
       totalSize: 1781,
       totalSizeByType_js: 500,
       totalSizeByType_css: 212,
