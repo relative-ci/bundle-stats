@@ -28,16 +28,12 @@ test('Compute delta', () => {
         {
           value: 100,
         },
-        {
-          value: 0,
-        },
+        null,
       ],
     },
     {
       runs: [
-        {
-          value: 0,
-        },
+        null,
         {
           value: 150,
         },
@@ -86,7 +82,6 @@ test('Compute delta', () => {
           value: 100,
         },
         {
-          value: 0,
           delta: -100,
           displayDelta: '-100%',
         },
@@ -94,9 +89,7 @@ test('Compute delta', () => {
     },
     {
       runs: [
-        {
-          value: 0,
-        },
+        {},
         {
           value: 150,
           delta: 100,

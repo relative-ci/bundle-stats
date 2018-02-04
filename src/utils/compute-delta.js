@@ -1,8 +1,8 @@
 import { merge, round } from 'lodash';
 
 const getDelta = (baseline, current) => {
-  const baselineValue = baseline.value;
-  const currentValue = current.value;
+  const baselineValue = (baseline && baseline.value) || 0;
+  const currentValue = (current && current.value) || 0;
 
   if (baselineValue === currentValue) {
     return 0;
