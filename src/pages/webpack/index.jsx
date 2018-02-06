@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
-import Helmet from 'preact-helmet';
 
 import Assets from '../../components/webpack/assets';
+import TotalByTypeTable from '../../components/webpack/total-by-type-table';
 import enhance from './container';
+import styles from './styles.css';
 
-const Webpack = ({ assets }) => (
+const Webpack = ({ assets, totalByType }) => (
   <div>
     {totalByType.length > 0 && (
       <div className={styles.totalByType}>
@@ -24,10 +25,12 @@ const Webpack = ({ assets }) => (
 );
 
 Webpack.defaultProps = {
+  totalByType: [],
   assets: [],
 };
 
 Webpack.propTypes = {
+  totalByType: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   assets: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };
 

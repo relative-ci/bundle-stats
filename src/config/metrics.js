@@ -29,35 +29,35 @@ const NUMERIC_METRIC = {
 
 export default {
   webpack: {
-    totalSize: {
+    totalSizeByTypeALL: {
       ...FILE_SIZE_METRIC,
       label: 'Total Size',
     },
-    totalSizeByType_js: {
+    totalSizeByTypeJS: {
       ...FILE_SIZE_METRIC,
       label: 'JS',
     },
-    totalSizeByType_css: {
+    totalSizeByTypeCSS: {
       ...FILE_SIZE_METRIC,
       label: 'CSS',
     },
-    totalSizeByType_img: {
+    totalSizeByTypeIMG: {
       ...FILE_SIZE_METRIC,
       label: 'IMG',
     },
-    totalSizeByType_media: {
+    totalSizeByTypeMEDIA: {
       ...FILE_SIZE_METRIC,
       label: 'Media',
     },
-    totalSizeByType_font: {
+    totalSizeByTypeFONT: {
       ...FILE_SIZE_METRIC,
       label: 'Fonts',
     },
-    totalSizeByType_html: {
+    totalSizeByTypeHTML: {
       ...FILE_SIZE_METRIC,
       label: 'HTML',
     },
-    totalSizeByType_other: {
+    totalSizeByTypeOTHER: {
       ...FILE_SIZE_METRIC,
       label: 'Other',
     },

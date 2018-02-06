@@ -6,6 +6,8 @@ import {
   withProps,
 } from 'recompose';
 
+import calculateTotals from './utils/calculate-totals';
+
 const fetchUrl = url =>
   fetch(url).then(res => res.json());
 
@@ -23,10 +25,16 @@ const getSourceUrls = () => {
   return query.getAll('url');
 };
 
-const transformAssets = sources =>
+const createAssets = sources =>
   sources.map((source, index) => ({
     label: `Run #${index}`,
     data: source,
+  }));
+
+const createTotalByType = sources =>
+  sources.map((source, index) => ({
+    label: `Run #${index}`,
+    data: calculateTotals(source.assets),
   }));
 
 const enhance = compose(
@@ -49,7 +57,8 @@ const enhance = compose(
   }),
 
   withProps(({ sources }) => ({
-    assets: transformAssets(sources),
+    assets: createAssets(sources),
+    totalByType: createTotalByType(sources),
   })),
 );
 
