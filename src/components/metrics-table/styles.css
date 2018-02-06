@@ -8,10 +8,10 @@
 }
 
 .delta {
-  padding-left: 0;
+  padding-left: var(--space-xsmall);
   text-align: right;
 }
 
 .unchanged td {
-  color: gray;
+  color: var(--color-gray);
 }

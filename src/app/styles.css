@@ -1,0 +1,24 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid var(--color-gray-light);
+  background: rgb(235, 237, 238, 0.2);
+}
+
+.headerInner {
+  margin: 0 auto;
+  padding: 0 var(--space);
+  width: 100%;
+  max-width: 64rem;
+  display: flex;
+  position: relative;
+}
+
+.main {
+  margin: 0 auto;
+  padding: calc(2rem + var(--space-small) * 2 + var(--space)) var(--space) var(--space);
+  width: 100%;
+  max-width: 64rem;
+}

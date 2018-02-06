@@ -1,11 +1,11 @@
 .root {
-  color: gray;
+  color: var(--color-gray);
 }
 
 .positive {
-  color: green;
+  color: var(--color-green);
 }
 
 .negative {
-  color: red;
+  color: var(--color-red);
 }

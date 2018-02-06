@@ -2,25 +2,21 @@
   width: 100%;
   border-collapse: collapse;
   empty-cells: show;
+  border: 1px solid var(--color-gray-light);
+  border-width: 0 0 1px 1px;
 }
 
 .cell {
-  padding: 1rem;
-  border: 1px solid #eee;
-  border-width: 1px 0;
+  padding: var(--space-xsmall) var(--space-small);
+  border: 1px solid var(--color-gray-light);
+  border-width: 1px 1px 0 0;
   text-align: left;
 }
 
 thead .cell {
-  border-top: none;
   text-transform: uppercase;
 }
 
 tbody th.cell {
   font-weight: normal;
-}
-
-tbody tr:nth-child(odd) .cell {
-  background: #fbfbfb;
-  border: none;
 }

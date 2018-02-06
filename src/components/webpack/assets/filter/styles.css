@@ -1,6 +1,5 @@
 .root {
-  margin: 0 0 1rem;
-  padding: 0 1rem;
+  margin: 0 0 var(--space-small);
   text-align: right;
 }
 
@@ -9,7 +8,7 @@
 }
 
 .item {
-  margin: 0 0 0 0.6rem;
+  margin: 0 0 0 var(--space-small);
   display: inline-block;
 }
 
@@ -18,18 +17,17 @@
   padding: 0;
   border: none;
   background: none;
-  color: gray;
+  color: var(--color-gray);
   outline: none;
   cursor: pointer;
 }
 
 .button:active,
 .button:hover {
-  color: black;
-  outline: none;
+  color: var(--color-gray-dark);
 }
 
 .active {
-  color: black;
+  color: var(--color-gray-dark);
   text-decoration: underline;
 }

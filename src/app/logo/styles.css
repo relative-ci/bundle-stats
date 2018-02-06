@@ -1,0 +1,52 @@
+.root {
+  position: absolute;
+  left: var(--space);
+  top: 50%;
+  margin-top: -1rem;
+  width: 2rem;
+  height: 2rem;
+  background: var(--color-gray);
+  opacity: 0.6;
+}
+
+.link {
+  display: block;
+  position: relative;
+  color: #fff;
+  background: var(--color-gray);
+  text-decoration: none;
+}
+
+.icon {
+  display: block;
+  position: relative;
+  z-index: 2;
+  width: 2rem;
+}
+
+.text {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 100%;
+  padding: 0 var(--space-small) 0 0;
+  white-space: nowrap;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.link:hover {
+  opacity: 1;
+  background: var(--color-red);
+  color: #fff;
+}
+
+.link:hover .icon {
+  background: var(--color-red);
+}
+
+.link:hover .text {
+  display: block;
+  background: var(--color-red);
+}

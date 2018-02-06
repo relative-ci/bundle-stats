@@ -1,0 +1,41 @@
+.root {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.item {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  display: inline-block;
+  padding: var(--space-small);
+  text-decoration: none;
+  color: var(--color-gray);
+  font-weight: bold;
+}
+
+.link:hover,
+.link:active,
+.link:focus {
+  color: var(--color-gray-dark);
+}
+
+.linkActive {
+  position: relative;
+  color: var(--color-gray-dark);
+  text-decoration: none;
+}
+
+.linkActive::after {
+  display: block;
+  content: ' ';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--color-gray-dark);
+}
