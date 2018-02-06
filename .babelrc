@@ -6,7 +6,8 @@
   "plugins": [
     "transform-object-rest-spread",
     "preact-require",
-    ["transform-react-jsx", {"pragma": "h"}]
+    ["transform-react-jsx", {"pragma": "h"}],
+    "lodash"
   ],
   "env": {
     "test": {

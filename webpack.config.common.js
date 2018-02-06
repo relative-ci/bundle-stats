@@ -16,6 +16,7 @@ module.exports = webpackMerge(
     output: {
       path: distDir,
       filename: '[name].js',
+      publicPath: '/',
     },
     resolve: {
       extensions: ['.jsx', '.js', '.json'],
