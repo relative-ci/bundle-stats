@@ -1,24 +1,20 @@
 import PropTypes from 'prop-types';
 
-import Upload from '../../components/upload';
 import Assets from '../../components/webpack/assets';
 import enhance from './container';
 
-const Webpack = props => (
+const Webpack = ({ assets }) => (
   <div>
-    <Upload onChange={props.addFile} />
-    <Assets entries={props.entries} />
+    <Assets runs={assets} />
   </div>
 );
 
 Webpack.defaultProps = {
-  addFile: () => {},
-  entries: [],
+  assets: [],
 };
 
 Webpack.propTypes = {
-  addFile: PropTypes.func,
-  entries: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  assets: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };
 
 export default enhance(Webpack);
