@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import { flatten, get } from 'lodash';
+import { flatten } from 'lodash';
 
-import metrics from '../../config/metrics';
+import { getMetric } from '../../config/metrics';
 import Metric from '../metric';
 import Delta from '../delta';
 import Table from '../table';
@@ -50,7 +50,7 @@ const generateRowCells = metric => (run, index) => {
 };
 
 const getRows = rows => rows.map(({ key, changed, runs }) => {
-  const metric = get(metrics, key);
+  const metric = getMetric(key);
 
   return {
     options: {

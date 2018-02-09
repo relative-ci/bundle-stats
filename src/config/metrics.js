@@ -1,5 +1,5 @@
 import convert from 'convert-units';
-import { round } from 'lodash';
+import { get, round } from 'lodash';
 
 export const fileSize = (val) => {
   const res = convert(val).from('B').toBest();
@@ -27,7 +27,7 @@ const NUMERIC_METRIC = {
   formatter: val => val,
 };
 
-export default {
+const metrics = {
   webpack: {
     totalSizeByTypeALL: {
       ...FILE_SIZE_METRIC,
@@ -78,3 +78,14 @@ export default {
     },
   },
 };
+
+export const getMetric = (key) => {
+  const metric = get(metrics, key);
+
+  return metric || {
+    ...FILE_SIZE_METRIC,
+    label: key,
+  };
+};
+
+export default metrics;
