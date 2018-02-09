@@ -35,13 +35,15 @@ const getHeaders = runs => [
 ];
 
 const generateRowCells = metric => (run, index) => {
-  const displayValue = run.value ? <Metric value={run.value} formatter={metric.formatter} /> : '-';
+  const displayValue = run.value ?
+    <Metric value={run.value} formatter={metric.formatter} /> :
+    '-';
 
   return [
     displayValue,
     index !== 0 && (
       <Delta
-        value={run.value}
+        value={run.delta}
         displayValue={run.displayDelta}
         biggerIsBetter={metric.biggerIsBetter}
       />

@@ -7,8 +7,8 @@ const Delta = ({ value, displayValue, biggerIsBetter }) => {
   const positiveChange = (biggerIsBetter && value > 0) || (!biggerIsBetter && value < 0);
 
   const valueClassNames = cx(styles.value, {
-    [styles.positive]: value && positiveChange,
-    [styles.negative]: value && !positiveChange,
+    [styles.positive]: value !== 0 && positiveChange,
+    [styles.negative]: value !== 0 && !positiveChange,
   });
 
   return (
