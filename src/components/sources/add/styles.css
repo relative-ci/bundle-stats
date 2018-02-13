@@ -1,0 +1,29 @@
+.root {
+  padding: calc(var(--space-xsmall) / 2);
+  display: flex;
+  align-items: stretch;
+}
+
+.label {
+  padding: 0.5em 0;
+  margin-right: var(--space-xsmall);
+  line-height: 2em;
+  flex: 0 0 auto;
+}
+
+.input {
+  border: 1px solid var(--color-gray-light);
+  padding: 0.5em;
+  flex: 1 1 auto;
+}
+
+.actions {
+  text-align: center;
+}
+
+.button {
+  padding: 0.5em 1em;
+  border: 0;
+  background: var(--color-green);
+  color: #fff;
+}
