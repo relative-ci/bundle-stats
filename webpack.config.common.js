@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const HtmlPlugin = require('html-webpack-plugin');
 
@@ -44,6 +45,11 @@ module.exports = webpackMerge(
       new HtmlPlugin({
         template: './index.html',
         filename: 'index.html',
+      }),
+      new webpack.DefinePlugin({
+        'process.env': {
+          'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        },
       }),
     ],
     devtool: 'source-map',
