@@ -5,13 +5,27 @@ import {
   withHandlers,
 } from 'recompose';
 
+import {
+  isGistUrl,
+  getGistRawUrl,
+} from '../utils/gist';
+
+const resolveUrl = (url) => {
+  if (isGistUrl(url)) {
+    return getGistRawUrl(url);
+  }
+
+  return url;
+};
+
 const getInitialUrls = () => {
   const query = new URLSearchParams(window.location.search);
   return query.getAll('url');
 };
 
+
 const getDefaultSource = url => ({
-  url,
+  url: resolveUrl(url),
   error: false,
   loading: false,
   fetched: false,
