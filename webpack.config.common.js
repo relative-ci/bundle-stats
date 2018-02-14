@@ -8,6 +8,7 @@ const appConfig = require('./src/config/app.json');
 
 const projectDir = __dirname;
 const distDir = path.resolve(projectDir, 'dist');
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = webpackMerge(
   {
@@ -47,6 +48,7 @@ module.exports = webpackMerge(
         template: './index.html',
         filename: 'index.html',
         title: appConfig.tilte,
+        minimize: isProduction,
       }),
       new webpack.DefinePlugin({
         'process.env': {
