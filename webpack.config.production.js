@@ -1,11 +1,15 @@
 const path = require('path');
+const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const CopyPlugin = require('copy-webpack-plugin');
+const dotenv = require('dotenv');
 
 const commonConfig = require('./webpack.config.common');
 
 const projectDir = __dirname;
 const distDir = path.resolve(projectDir, 'dist');
+
+dotenv.config();
 
 module.exports = webpackMerge(commonConfig, {
   output: {
@@ -18,5 +22,8 @@ module.exports = webpackMerge(commonConfig, {
         to: distDir,
       },
     ]),
+    new webpack.DefinePlugin({
+      __GA__: JSON.stringify(process.env.GA),
+    }),
   ],
 });

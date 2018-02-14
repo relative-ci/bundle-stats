@@ -54,6 +54,8 @@ module.exports = webpackMerge(
         'process.env': {
           NODE_ENV: JSON.stringify(process.env.NODE_ENV),
         },
+        __PRODUCTION__: JSON.stringify(process.env.NODE_ENV === 'production'),
+        __DEVELOPMENT__: JSON.stringify(process.env.NODE_ENV === 'development'),
       }),
     ],
     devtool: 'source-map',

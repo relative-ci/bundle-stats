@@ -4,6 +4,7 @@ import 'preact/debug';
 
 import App from './app';
 import './index.css';
+import './analytics';
 
 let appElm = document.body.firstElementChild;
 
