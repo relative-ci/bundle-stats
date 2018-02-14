@@ -1,20 +1,7 @@
 import PropTypes from 'prop-types';
 
+import locale from './locale.json';
 import styles from './styles.css';
-
-/* eslint-disable jsx-a11y/label-has-for */
-const Label = ({ children }) => (
-  <label
-    class={styles.label}
-    for="url"
-  >
-    {children}
-  </label>
-);
-
-Label.propTypes = {
-  children: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
-};
 
 const Add = ({ onSubmit }) => {
   const handleFormSubmit = (event) => {
@@ -28,16 +15,16 @@ const Add = ({ onSubmit }) => {
 
   return (
     <form class={styles.root} onSubmit={handleFormSubmit}>
-      <Label>URL</Label>
       <input
         class={styles.input}
         type="url"
         name="url"
         id="url"
+        placeholder={locale.placeholder}
         required
       />
       <button class={styles.button}>
-        Load
+        {locale.submit}
       </button>
     </form>
   );
