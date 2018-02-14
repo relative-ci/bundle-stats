@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { last } from 'lodash';
 
+import locale from './locale.json';
 import styles from './styles.css';
 
 const displayUrl = url => last(url.split('/'));
@@ -29,10 +30,9 @@ const List = ({ sources, removeSource }) => (
     ))}
 
     {sources.length === 0 && (
-      <div class={styles.empty}>
-        <h3 class={styles.emptyTitle}>No sources.</h3>
-        <p>Add a URL to a JSON file.</p>
-      </div>
+      <p class={styles.empty}>
+        {locale.empty}
+      </p>
     )}
   </div>
 );
