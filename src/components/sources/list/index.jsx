@@ -10,13 +10,13 @@ const List = ({ sources, removeSource }) => (
     {sources.length > 0 && sources.map((source, index) => (
       <div
         class={styles.source}
-        title={source}
+        title={source.url}
       >
         <h2 class={styles.title}>
           Run #{index}
         </h2>
         <code class={styles.url}>
-          {displayUrl(source)}
+          {displayUrl(source.url)}
         </code>
         <button
           onClick={() => removeSource(index)}

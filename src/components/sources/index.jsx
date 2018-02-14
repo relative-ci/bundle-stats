@@ -1,21 +1,20 @@
 import PropTypes from 'prop-types';
 
-import enhance from './container';
 import Add from './add';
 import List from './list';
 import styles from './styles.css';
 
 const Sources = ({
   sources,
-  addSource,
-  removeSource,
+  onAddFormSubmit,
+  onSourceRemove,
 }) => (
   <div class={styles.root}>
     <List
       sources={sources}
-      removeSource={removeSource}
+      removeSource={onSourceRemove}
     />
-    <Add onSubmit={addSource} />
+    <Add onSubmit={onAddFormSubmit} />
   </div>
 );
 
@@ -25,8 +24,8 @@ Sources.defaultProps = {
 
 Sources.propTypes = {
   sources: PropTypes.array, // eslint-disable-line react/forbid-prop-types
-  addSource: PropTypes.func.isRequired,
-  removeSource: PropTypes.func.isRequired,
+  onAddFormSubmit: PropTypes.func.isRequired,
+  onSourceRemove: PropTypes.func.isRequired,
 };
 
-export default enhance(Sources);
+export default Sources;

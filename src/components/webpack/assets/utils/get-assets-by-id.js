@@ -5,7 +5,7 @@ const IGNORE_PATTERN = /\.map$/;
 /*
  * Generate an object with assets by id
  */
-const getAssetsById = assets =>
+const getAssetsById = (assets = []) =>
   assets.reduce((aggregator, asset) => {
     if (IGNORE_PATTERN.test(asset.name)) {
       return aggregator;

@@ -25,7 +25,7 @@ const enhance = compose(
     // Assets specific transformations
     const assetsById = runs.map(({ label, data }) => ({
       label,
-      data: getAssetsById(data.assets),
+      data: getAssetsById((data && data.assets) || []),
     }));
 
     return {

@@ -11,12 +11,8 @@ stories.add('default', () => (
 ));
 
 const sources = [
-  {
-    url: 'https://source-a',
-  },
-  {
-    url: 'https://source-b',
-  },
+  'https://source-a',
+  'https://source-b',
 ];
 
 stories.add('with sources', () => (
