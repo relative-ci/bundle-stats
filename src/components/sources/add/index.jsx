@@ -2,6 +2,19 @@ import PropTypes from 'prop-types';
 
 import styles from './styles.css';
 
+/* eslint-disable jsx-a11y/label-has-for */
+const Label = ({ children }) => (
+  <label
+    class={styles.label}
+    for="url"
+  >
+    {children}
+  </label>
+);
+
+Label.propTypes = {
+  children: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
+};
 
 const Add = ({ onSubmit }) => {
   const handleFormSubmit = (event) => {
@@ -15,12 +28,7 @@ const Add = ({ onSubmit }) => {
 
   return (
     <form class={styles.root} onSubmit={handleFormSubmit}>
-      <label
-        class={styles.label}
-        for="url"
-      >
-        URL
-      </label>
+      <Label>URL</Label>
       <input
         class={styles.input}
         type="url"
