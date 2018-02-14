@@ -4,6 +4,7 @@ const webpackMerge = require('webpack-merge');
 const HtmlPlugin = require('html-webpack-plugin');
 
 const cssConfig = require('./build/webpack/css');
+const appConfig = require('./src/config/app.json');
 
 const projectDir = __dirname;
 const distDir = path.resolve(projectDir, 'dist');
@@ -45,10 +46,11 @@ module.exports = webpackMerge(
       new HtmlPlugin({
         template: './index.html',
         filename: 'index.html',
+        title: appConfig.tilte,
       }),
       new webpack.DefinePlugin({
         'process.env': {
-          'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+          NODE_ENV: JSON.stringify(process.env.NODE_ENV),
         },
       }),
     ],

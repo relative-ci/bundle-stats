@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 
+import Helmet from '../../components/helmet';
 import Sources from '../../components/sources';
 import Assets from '../../components/webpack/assets';
 import TotalByTypeTable from '../../components/webpack/total-by-type-table';
+import locale from './locale.json';
 import enhance from './container';
 import styles from './styles.css';
 
@@ -17,6 +19,11 @@ const Webpack = (props) => {
 
   return (
     <div>
+      <Helmet
+        title={locale.title}
+        description={locale.description}
+      />
+
       <Sources
         sources={sources}
         onAddFormSubmit={addSource}
