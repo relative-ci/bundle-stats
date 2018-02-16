@@ -1,5 +1,7 @@
 # Compare
 
+![](https://img.shields.io/circleci/project/github/mas-o-menos/compare/master.svg)
+
 Side by side comparison for webpack assets
 
 ![](https://www.dropbox.com/s/fcqzbltuhyw4dm7/mom-compare.png?raw=1)
