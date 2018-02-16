@@ -9,6 +9,5 @@ Thumbs.db
 yarn.lock
 .eslintcache
 dist
-coverage
 .env
 artifacts

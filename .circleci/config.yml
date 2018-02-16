@@ -35,3 +35,7 @@ jobs:
           path: ./artifacts
           destination: artifacts
 
+      - run:
+          name: Send coveralls
+          command: cat ./artifacts/coverage/lcov.info | node_modules/.bin/coveralls
+
