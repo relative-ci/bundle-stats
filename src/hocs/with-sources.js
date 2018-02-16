@@ -18,6 +18,18 @@ const resolveUrl = (url) => {
   return url;
 };
 
+const syncSearchParams = (sources) => {
+  const params = new URLSearchParams('');
+
+  sources.forEach(({ url }) => params.append('url', url));
+
+  const newSearch = params.toString();
+  const { pathname } = window.location;
+  const newUrl = `${pathname}${(newSearch && `?${newSearch}`) || ''}`;
+
+  window.history.pushState({}, '', newUrl);
+};
+
 const getInitialUrls = () => {
   const query = new URLSearchParams(window.location.search);
   return query.getAll('url');
@@ -25,24 +37,31 @@ const getInitialUrls = () => {
 
 
 const getDefaultSource = url => ({
-  url: resolveUrl(url),
+  url,
+  resolvedUrl: resolveUrl(url),
   error: false,
   loading: false,
   fetched: false,
   res: {},
 });
 
-const addSource = ({ sources, setSources }) => url =>
-  setSources([
+const addSource = ({ sources, setSources }) => (url) => {
+  const newSources = [
     ...sources,
     getDefaultSource(url),
-  ]);
+  ];
+  setSources(newSources);
+  syncSearchParams(newSources);
+};
 
-const removeSource = ({ sources, setSources }) => sourceIndex =>
-  setSources([
+const removeSource = ({ sources, setSources }) => (sourceIndex) => {
+  const newSources = [
     ...sources.slice(0, sourceIndex),
     ...sources.slice(sourceIndex + 1),
-  ]);
+  ];
+  setSources(newSources);
+  syncSearchParams(newSources);
+};
 
 const updateSource = ({ sources, setSources }) => (sourceIndex, payload) =>
   setSources([
@@ -55,7 +74,7 @@ const updateSource = ({ sources, setSources }) => (sourceIndex, payload) =>
   ]);
 
 const fetchSources = (props) => {
-  props.sources.forEach(({ url, loading, fetched }, index) => {
+  props.sources.forEach(({ resolvedUrl, loading, fetched }, index) => {
     if (loading || fetched) {
       return;
     }
@@ -64,7 +83,7 @@ const fetchSources = (props) => {
       loading: true,
     });
 
-    fetch(url)
+    fetch(resolvedUrl)
       .then(res => res.json())
       .then(res => props.updateSource(index, {
         loading: false,
