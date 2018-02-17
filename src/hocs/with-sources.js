@@ -1,3 +1,4 @@
+import { map } from 'lodash';
 import {
   compose,
   withProps,
@@ -9,6 +10,10 @@ import {
   isGistUrl,
   getGistRawUrl,
 } from '../utils/gist';
+import {
+  syncUrlsToSearch,
+  getUrlParams,
+} from '../utils/search-params';
 
 const resolveUrl = (url) => {
   if (isGistUrl(url)) {
@@ -18,22 +23,8 @@ const resolveUrl = (url) => {
   return url;
 };
 
-const syncSearchParams = (sources) => {
-  const params = new URLSearchParams('');
-
-  sources.forEach(({ url }) => params.append('url', url));
-
-  const newSearch = params.toString();
-  const { pathname } = window.location;
-  const newUrl = `${pathname}${(newSearch && `?${newSearch}`) || ''}`;
-
-  window.history.pushState({}, '', newUrl);
-};
-
-const getInitialUrls = () => {
-  const query = new URLSearchParams(window.location.search);
-  return query.getAll('url');
-};
+const syncSearchParams = sources =>
+  syncUrlsToSearch(map(sources, 'url'));
 
 
 const getDefaultSource = url => ({
@@ -98,7 +89,7 @@ const fetchSources = (props) => {
 
 const enhance = () => compose(
   withProps({
-    initialUrls: getInitialUrls(),
+    initialUrls: getUrlParams(),
   }),
   withState(
     'sources',
