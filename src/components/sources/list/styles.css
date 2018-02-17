@@ -6,8 +6,8 @@
 
 .source {
   position: relative;
-  flex: 1 1 25%;
-  min-width: 15rem;
+  flex: 1 1 auto;
+  min-width: 10rem;
   margin: calc(var(--space-xsmall) / 2);
   padding: var(--space-xsmall);
   border: 1px solid var(--color-gray-light);
@@ -22,7 +22,14 @@
 .url {
   display: block;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   max-width: 100%;
+}
+
+.errorMessage {
+  margin-top: var(--space-xsmall);
 }
 
 .remove {

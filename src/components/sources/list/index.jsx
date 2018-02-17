@@ -1,11 +1,8 @@
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import { last } from 'lodash';
 
 import locale from './locale.json';
 import styles from './styles.css';
-
-const displayUrl = url => last(url.split('/'));
 
 const List = ({ sources, removeSource }) => (
   <div class={styles.root}>
@@ -23,9 +20,13 @@ const List = ({ sources, removeSource }) => (
           <h2 class={styles.title}>
             Run #{index}
           </h2>
-          <code class={styles.url}>
-            {displayUrl(source.url)}
-          </code>
+          <a
+            class={styles.url}
+            href={source.url}
+            target="_blank"
+          >
+            {source.url}
+          </a>
           {source.error && (
             <div class={styles.errorMessage}>
               {source.error}
