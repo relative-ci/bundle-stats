@@ -13,7 +13,7 @@ const Delta = ({ value, displayValue, biggerIsBetter }) => {
 
   return (
     <span class={styles.root}>
-      (<code class={valueClassNames}>{displayValue}</code>)
+      <code class={valueClassNames}>{displayValue}</code>
     </span>
   );
 };

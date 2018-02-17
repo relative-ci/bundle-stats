@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { flatten } from 'lodash';
 
 import { getMetric } from '../../config/metrics';
 import Metric from '../metric';
@@ -7,19 +6,12 @@ import Delta from '../delta';
 import Table from '../table';
 import styles from './styles.css';
 
-const generateHeaderCell = (run, index) => [
-  {
-    text: run.label,
-    options: {
-      classNames: styles.value,
-    },
+const generateHeaderCell = run => ({
+  text: run.label,
+  options: {
+    classNames: styles.value,
   },
-  index > 0 && {
-    options: {
-      classNames: styles.delta,
-    },
-  },
-].filter(i => i);
+});
 
 const getHeaders = runs => [
   // Metric name column
@@ -31,24 +23,25 @@ const getHeaders = runs => [
   },
 
   // Runs
-  ...flatten(runs.map(generateHeaderCell)),
+  ...runs.map(generateHeaderCell),
 ];
 
 const generateRowCells = metric => (run, index) => {
-  const displayValue = run.value ?
-    <Metric value={run.value} formatter={metric.formatter} /> :
-    '-';
+  const delta = index !== 0 && (
+    <Delta
+      value={run.delta}
+      displayValue={run.displayDelta}
+      biggerIsBetter={metric.biggerIsBetter}
+    />
+  );
 
-  return [
-    displayValue,
-    index !== 0 && (
-      <Delta
-        value={run.delta}
-        displayValue={run.displayDelta}
-        biggerIsBetter={metric.biggerIsBetter}
-      />
-    ),
-  ].filter(i => i);
+  const displayValue = run.value ? (
+    <Metric value={run.value} formatter={metric.formatter}>
+      {delta}
+    </Metric>
+  ) : '-';
+
+  return displayValue;
 };
 
 const getRows = rows => rows.map(({ key, changed, runs }) => {
@@ -62,7 +55,8 @@ const getRows = rows => rows.map(({ key, changed, runs }) => {
       // Metric name
       metric.label,
 
-      ...flatten(runs.map(generateRowCells(metric))),
+      // Metric run values
+      ...runs.map(generateRowCells(metric)),
     ],
   };
 });
