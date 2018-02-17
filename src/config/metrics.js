@@ -1,91 +1,83 @@
-import convert from 'convert-units';
-import { get, round } from 'lodash';
+import {
+  formatNumber,
+  formatDuration,
+  formatFileSize,
+} from '../utils/format';
 
-export const fileSize = (val) => {
-  const res = convert(val).from('B').toBest();
-  return `${round(res.val, 2)}${res.unit}`;
-};
+export const METRIC_TYPE_FILE_SIZE = 'METRIC_TYPE_FILE_SIZE';
+export const METRIC_TYPE_DURATION = 'METRIC_TYPE_DURATION';
+export const METRIC_TYPE_NUMERIC = 'METRIC_TYPE_NUMERIC';
+export const METRIC_TYPE_SCORE = 'METRIC_TYPE_SCORE';
 
-const FILE_SIZE_METRIC = {
-  biggerIsBetter: false,
-  formatter: (val) => {
-    const res = convert(val).from('B').toBest();
-    return `${round(res.val, 2)}${res.unit}`;
+export const METRIC_TYPES = {
+  [METRIC_TYPE_NUMERIC]: {
+    biggerIsBetter: false,
+    formatter: formatNumber,
+  },
+  [METRIC_TYPE_SCORE]: {
+    biggerIsBetter: true,
+    formatter: formatNumber,
+  },
+  [METRIC_TYPE_DURATION]: {
+    biggerIsBetter: false,
+    formatter: formatDuration,
+  },
+  [METRIC_TYPE_FILE_SIZE]: {
+    biggerIsBetter: false,
+    formatter: formatFileSize,
   },
 };
 
-const DURATION_METRIC = {
-  biggerIsBetter: false,
-  formatter: (val) => {
-    const res = convert(val).from('ms').toBest();
-    return `${round(res.val, 4)}${res.unit}`;
-  },
-};
-
-const NUMERIC_METRIC = {
-  biggerIsBetter: true,
-  formatter: val => val,
-};
-
-const metrics = {
+const METRICS = {
   webpack: {
     totalSizeByTypeALL: {
-      ...FILE_SIZE_METRIC,
       label: 'Total Size',
+      type: METRIC_TYPE_FILE_SIZE,
     },
     totalSizeByTypeJS: {
-      ...FILE_SIZE_METRIC,
       label: 'JS',
+      type: METRIC_TYPE_FILE_SIZE,
     },
     totalSizeByTypeCSS: {
-      ...FILE_SIZE_METRIC,
       label: 'CSS',
+      type: METRIC_TYPE_FILE_SIZE,
     },
     totalSizeByTypeIMG: {
-      ...FILE_SIZE_METRIC,
       label: 'IMG',
+      type: METRIC_TYPE_FILE_SIZE,
     },
     totalSizeByTypeMEDIA: {
-      ...FILE_SIZE_METRIC,
       label: 'Media',
+      type: METRIC_TYPE_FILE_SIZE,
     },
     totalSizeByTypeFONT: {
-      ...FILE_SIZE_METRIC,
       label: 'Fonts',
+      type: METRIC_TYPE_FILE_SIZE,
     },
     totalSizeByTypeHTML: {
-      ...FILE_SIZE_METRIC,
       label: 'HTML',
+      type: METRIC_TYPE_FILE_SIZE,
     },
     totalSizeByTypeOTHER: {
-      ...FILE_SIZE_METRIC,
       label: 'Other',
+      type: METRIC_TYPE_FILE_SIZE,
     },
   },
 
   lighthouse: {
     score: {
-      ...NUMERIC_METRIC,
       label: 'Score',
+      type: METRIC_TYPE_SCORE,
     },
     'time-to-first-byte': {
-      ...DURATION_METRIC,
       label: 'Time to first byte',
+      type: METRIC_TYPE_DURATION,
     },
     'performance-score': {
-      ...NUMERIC_METRIC,
       label: 'Performance Score',
+      type: METRIC_TYPE_SCORE,
     },
   },
 };
 
-export const getMetric = (key) => {
-  const metric = get(metrics, key);
-
-  return metric || {
-    ...FILE_SIZE_METRIC,
-    label: key,
-  };
-};
-
-export default metrics;
+export default METRICS;

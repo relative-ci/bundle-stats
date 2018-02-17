@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import { getMetric } from '../../config/metrics';
+import getMetric from '../../config/metrics';
 import Metric from '../metric';
 import Delta from '../delta';
 import Table from '../table';
