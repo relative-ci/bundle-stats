@@ -1,32 +1,31 @@
-const path = require('path');
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const HtmlPlugin = require('html-webpack-plugin');
 
-const cssConfig = require('./build/webpack/css');
-const appConfig = require('./src/config/app.json');
+const cssConfig = require('./configs/css');
+const resolveConfig = require('./configs/resolve');
+const appConfig = require('../../src/config/app.json');
 
-const projectDir = __dirname;
-const distDir = path.resolve(projectDir, 'dist');
-const isProduction = process.env.NODE_ENV === 'production';
+const {
+  srcDir,
+  distDir,
+  isProduction,
+  isDevelopment,
+} = require('../settings');
 
 module.exports = webpackMerge(
   {
-    context: path.join(projectDir, 'src'),
+    context: srcDir,
     entry: {
-      main: './index.jsx',
+      main: [
+        './polyfill.js',
+        './index.jsx',
+      ],
     },
     output: {
       path: distDir,
       filename: '[name].js',
       publicPath: '/',
-    },
-    resolve: {
-      extensions: ['.jsx', '.js', '.json'],
-      alias: {
-        react: 'preact-compat',
-        'react-dom': 'preact-compat',
-      },
     },
     module: {
       rules: [
@@ -54,8 +53,8 @@ module.exports = webpackMerge(
         'process.env': {
           NODE_ENV: JSON.stringify(process.env.NODE_ENV),
         },
-        __PRODUCTION__: JSON.stringify(process.env.NODE_ENV === 'production'),
-        __DEVELOPMENT__: JSON.stringify(process.env.NODE_ENV === 'development'),
+        __PRODUCTION__: JSON.stringify(isProduction),
+        __DEVELOPMENT__: JSON.stringify(isDevelopment),
       }),
     ],
     devtool: 'source-map',
@@ -65,5 +64,6 @@ module.exports = webpackMerge(
       contentBase: distDir,
     },
   },
+  resolveConfig,
   cssConfig,
 );

@@ -1,16 +1,10 @@
-const path = require('path');
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const CopyPlugin = require('copy-webpack-plugin');
-const StatsPlugin = require('stats-webpack-plugin')
-const dotenv = require('dotenv');
+const StatsPlugin = require('stats-webpack-plugin');
 
+const { distDir, publicDir } = require('../settings');
 const commonConfig = require('./webpack.config.common');
-
-const projectDir = __dirname;
-const distDir = path.resolve(projectDir, 'dist');
-
-dotenv.config();
 
 module.exports = webpackMerge(commonConfig, {
   output: {
@@ -19,7 +13,7 @@ module.exports = webpackMerge(commonConfig, {
   plugins: [
     new CopyPlugin([
       {
-        from: path.resolve(__dirname, 'public'),
+        from: publicDir,
         to: distDir,
       },
     ]),
@@ -35,6 +29,14 @@ module.exports = webpackMerge(commonConfig, {
       modules: false,
       chunks: false,
       warnings: false,
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: ({ context }) => context && context.match(/node_modules/),
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest',
+      minChunks: Infinity,
     }),
   ],
 });
