@@ -24,10 +24,9 @@
 
 .button:active,
 .button:hover {
-  color: var(--color-gray-dark);
+  text-decoration: underline;
 }
 
 .active {
   color: var(--color-gray-dark);
-  text-decoration: underline;
 }

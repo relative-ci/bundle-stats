@@ -23,18 +23,18 @@ const Filter = (props) => {
       <ul class={styles.list}>
         <li class={styles.item}>
           <button
-            class={getButtonClassNames(active, FILTER_SHOW_CHANGED)}
-            onClick={() => onChange(FILTER_SHOW_CHANGED)}
-          >
-            Changed files
-          </button>
-        </li>
-        <li class={styles.item}>
-          <button
             class={getButtonClassNames(active, FILTER_SHOW_ALL)}
             onClick={() => onChange(FILTER_SHOW_ALL)}
           >
             All files
+          </button>
+        </li>
+        <li class={styles.item}>
+          <button
+            class={getButtonClassNames(active, FILTER_SHOW_CHANGED)}
+            onClick={() => onChange(FILTER_SHOW_CHANGED)}
+          >
+            Changed files
           </button>
         </li>
       </ul>
