@@ -1,3 +1,4 @@
+import { map } from 'lodash';
 import {
   compose,
   withProps,
@@ -9,6 +10,11 @@ import {
   isGistUrl,
   getGistRawUrl,
 } from '../utils/gist';
+import fetchJSON from '../utils/fetch';
+import {
+  syncUrlsToSearch,
+  getUrlParams,
+} from '../utils/search-params';
 
 const resolveUrl = (url) => {
   if (isGistUrl(url)) {
@@ -18,22 +24,8 @@ const resolveUrl = (url) => {
   return url;
 };
 
-const syncSearchParams = (sources) => {
-  const params = new URLSearchParams('');
-
-  sources.forEach(({ url }) => params.append('url', url));
-
-  const newSearch = params.toString();
-  const { pathname } = window.location;
-  const newUrl = `${pathname}${(newSearch && `?${newSearch}`) || ''}`;
-
-  window.history.pushState({}, '', newUrl);
-};
-
-const getInitialUrls = () => {
-  const query = new URLSearchParams(window.location.search);
-  return query.getAll('url');
-};
+const syncSearchParams = sources =>
+  syncUrlsToSearch(map(sources, 'url'));
 
 
 const getDefaultSource = url => ({
@@ -74,8 +66,15 @@ const updateSource = ({ sources, setSources }) => (sourceIndex, payload) =>
   ]);
 
 const fetchSources = (props) => {
-  props.sources.forEach(({ resolvedUrl, loading, fetched }, index) => {
-    if (loading || fetched) {
+  props.sources.forEach((source, index) => {
+    const {
+      resolvedUrl,
+      loading,
+      fetched,
+      error,
+    } = source;
+
+    if (loading || fetched || error) {
       return;
     }
 
@@ -83,14 +82,15 @@ const fetchSources = (props) => {
       loading: true,
     });
 
-    fetch(resolvedUrl)
-      .then(res => res.json())
+    fetchJSON(resolvedUrl)
       .then(res => props.updateSource(index, {
         loading: false,
         fetched: true,
         res,
       }))
       .catch(err => props.updateSource(index, {
+        loading: false,
+        fetched: false,
         error: err.message,
       }));
   });
@@ -98,7 +98,7 @@ const fetchSources = (props) => {
 
 const enhance = () => compose(
   withProps({
-    initialUrls: getInitialUrls(),
+    initialUrls: getUrlParams(),
   }),
   withState(
     'sources',
