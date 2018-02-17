@@ -25,29 +25,36 @@ test('Merge runs by id', () => {
     },
   ]);
 
-  const expected = {
-    1: {
+  const expected = [
+    {
+      key: '1',
       runs: ['a', 'aa', 'aaa'],
     },
-    2: {
+    {
+      key: '2',
       runs: ['b', 'bb', 'bbb'],
     },
-    3: {
+    {
+      key: '3',
       runs: ['c', 'cc', 'ccc'],
     },
-    4: {
+    {
+      key: '4',
       runs: ['d', null, null],
     },
-    5: {
+    {
+      key: '5',
       runs: [null, 'ee', null],
     },
-    6: {
+    {
+      key: '6',
       runs: [null, null, 'fff'],
     },
-    7: {
+    {
+      key: '7',
       runs: [null, 'gg', 'ggg'],
     },
-  };
+  ];
 
   expect(actual).toEqual(expected);
 });
