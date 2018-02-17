@@ -10,6 +10,7 @@ import {
   isGistUrl,
   getGistRawUrl,
 } from '../utils/gist';
+import fetchJSON from '../utils/fetch';
 import {
   syncUrlsToSearch,
   getUrlParams,
@@ -74,8 +75,7 @@ const fetchSources = (props) => {
       loading: true,
     });
 
-    fetch(resolvedUrl)
-      .then(res => res.json())
+    fetchJSON(resolvedUrl)
       .then(res => props.updateSource(index, {
         loading: false,
         fetched: true,
