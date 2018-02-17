@@ -1,5 +1,7 @@
 # Compare
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mas-o-menos/compare.svg)](https://greenkeeper.io/)
+
 ![](https://img.shields.io/circleci/project/github/mas-o-menos/compare/master.svg)
 [![Coveralls
 github](https://img.shields.io/coveralls/github/mas-o-menos/compare.svg)](https://coveralls.io/github/mas-o-menos/compare)
