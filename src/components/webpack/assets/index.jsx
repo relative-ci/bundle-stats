@@ -14,10 +14,12 @@ const Assets = (props) => {
 
   return (
     <div>
-      <Filter
-        active={show}
-        onChange={setShow}
-      />
+      {runs.length > 1 && (
+        <Filter
+          active={show}
+          onChange={setShow}
+        />
+      )}
       <MetricsTable
         runs={runs}
         rows={rows}
