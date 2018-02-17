@@ -66,8 +66,15 @@ const updateSource = ({ sources, setSources }) => (sourceIndex, payload) =>
   ]);
 
 const fetchSources = (props) => {
-  props.sources.forEach(({ resolvedUrl, loading, fetched }, index) => {
-    if (loading || fetched) {
+  props.sources.forEach((source, index) => {
+    const {
+      resolvedUrl,
+      loading,
+      fetched,
+      error,
+    } = source;
+
+    if (loading || fetched || error) {
       return;
     }
 
@@ -82,6 +89,8 @@ const fetchSources = (props) => {
         res,
       }))
       .catch(err => props.updateSource(index, {
+        loading: false,
+        fetched: false,
         error: err.message,
       }));
   });

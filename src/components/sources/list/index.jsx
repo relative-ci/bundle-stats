@@ -1,3 +1,4 @@
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { last } from 'lodash';
 
@@ -8,26 +9,39 @@ const displayUrl = url => last(url.split('/'));
 
 const List = ({ sources, removeSource }) => (
   <div class={styles.root}>
-    {sources.length > 0 && sources.map((source, index) => (
-      <div
-        class={styles.source}
-        title={source.url}
-      >
-        <h2 class={styles.title}>
-          Run #{index}
-        </h2>
-        <code class={styles.url}>
-          {displayUrl(source.url)}
-        </code>
-        <button
-          onClick={() => removeSource(index)}
-          type="button"
-          class={styles.remove}
+    {sources.length > 0 && sources.map((source, index) => {
+      const sourceClassName = cx(styles.source, {
+        [styles.error]: source.error,
+        [styles.loading]: source.loading,
+      });
+
+      return (
+        <div
+          class={sourceClassName}
+          title={source.url}
         >
-          x
-        </button>
-      </div>
-    ))}
+          <h2 class={styles.title}>
+            Run #{index}
+          </h2>
+          <code class={styles.url}>
+            {displayUrl(source.url)}
+          </code>
+          {source.error && (
+            <div class={styles.errorMessage}>
+              {source.error}
+            </div>
+          )}
+
+          <button
+            onClick={() => removeSource(index)}
+            type="button"
+            class={styles.remove}
+          >
+            x
+          </button>
+        </div>
+      );
+    })}
 
     {sources.length === 0 && (
       <p class={styles.empty}>

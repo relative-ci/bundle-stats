@@ -15,7 +15,8 @@
 
 .title {
   margin: 0;
-  font-size: var(--size-large);
+  font-size: var(--size);
+  color: inherit;
 }
 
 .url {
@@ -33,6 +34,19 @@
   padding: var(--space-xsmall);
 }
 
+/* Source error modifier */
+.error {
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+/* Source loading modifier */
+.loading {
+  border-color: var(--color-gray);
+  color: var(--color-gray);
+}
+
+/* List empty state */
 .empty {
   margin: 0;
   padding: var(--space-xsmall);
