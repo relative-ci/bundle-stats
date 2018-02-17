@@ -17,7 +17,10 @@ module.exports = webpackMerge(
   {
     context: srcDir,
     entry: {
-      main: './index.jsx',
+      main: [
+        './polyfill.js',
+        './index.jsx',
+      ],
     },
     output: {
       path: distDir,
