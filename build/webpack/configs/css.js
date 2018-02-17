@@ -1,5 +1,6 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const isDevelopment = process.env.NODE_ENV === 'development';
+
+const { isDevelopment } = require('../../settings');
 
 module.exports = {
   module: {

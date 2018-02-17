@@ -1,10 +1,7 @@
-const path = require('path');
 const webpackMerge = require('webpack-merge');
 
+const { publicDir } = require('../settings');
 const commonConfig = require('./webpack.config.common');
-
-const projectDir = __dirname;
-const publicDir = path.resolve(projectDir, 'public');
 
 module.exports = webpackMerge(commonConfig, {
   devServer: {

@@ -4,8 +4,8 @@
   "description": "Compare Webpack assets files",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.config.development.js --progress --hot",
-    "build": "rm -fr ./dist && NODE_ENV=production webpack --config webpack.config.production.js -p",
+    "dev": "webpack-dev-server --config build/webpack/webpack.config.development.js --progress --hot",
+    "build": "rm -fr ./dist && NODE_ENV=production webpack --config build/webpack/webpack.config.production.js -p",
     "storybook": "start-storybook -p 8090 -c build/storybook",
     "test": "NODE_ENV=test jest --coverage --coverageDirectory ./artifacts/coverage",
     "lint": "eslint src/**/*.js --cache"
