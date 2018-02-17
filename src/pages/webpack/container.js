@@ -3,6 +3,7 @@ import {
   withProps,
 } from 'recompose';
 
+import { METRIC_TYPE_FILE_SIZE } from '../../config/metrics';
 import withSources from '../../hocs/with-sources';
 import calculateTotals from './utils/calculate-totals';
 
@@ -14,7 +15,13 @@ const createAssets = sources =>
 
     return {
       label: `Run #${index}`,
-      data: res,
+      data: {
+        ...res,
+        assets: res && res.assets && res.assets.map(item => ({
+          ...item,
+          type: METRIC_TYPE_FILE_SIZE,
+        })),
+      },
     };
   });
 

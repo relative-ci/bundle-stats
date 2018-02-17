@@ -3,7 +3,7 @@ import { round } from 'lodash';
 
 export const formatFileSize = (val) => {
   const res = convert(val).from('B').toBest();
-  return `${round(res.val, 4)}${res.unit}`;
+  return `${round(res.val, 2)}${res.unit}`;
 };
 
 export const formatDuration = (val) => {

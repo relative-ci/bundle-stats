@@ -2,15 +2,15 @@ import { get } from 'lodash';
 
 import METRICS, { METRIC_TYPE_NUMERIC, METRIC_TYPES } from '../config/metrics';
 
-const getMetric = (key) => {
-  const { label, type } = get(METRICS, key, {
+const getMetric = (key, type) => {
+  const metric = get(METRICS, key, {
     label: key,
-    type: METRIC_TYPE_NUMERIC,
+    type: type || METRIC_TYPE_NUMERIC,
   });
 
   return {
-    label,
-    ...METRIC_TYPES[type],
+    label: metric.label,
+    ...METRIC_TYPES[metric.type],
   };
 };
 

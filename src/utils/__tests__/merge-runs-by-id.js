@@ -1,58 +1,125 @@
 /* env jest/globals */
+import { METRIC_TYPE_SCORE } from '../../config/metrics';
 import mergeRunsById from '../merge-runs-by-id';
 
 test('Merge runs by id', () => {
   const actual = mergeRunsById([
     {
-      1: 'a',
-      2: 'b',
-      3: 'c',
-      4: 'd',
+      1: {
+        type: METRIC_TYPE_SCORE,
+        value: 11,
+      },
+      2: {
+        value: 1,
+      },
+      3: {
+        value: 1,
+      },
+      4: {
+        value: 1,
+      },
     },
     {
-      1: 'aa',
-      2: 'bb',
-      3: 'cc',
-      5: 'ee',
-      7: 'gg',
+      1: {
+        type: METRIC_TYPE_SCORE,
+        value: 10
+      },
+      2: {
+        value: 1,
+      },
+      3: {
+        value: 1,
+      },
+      5: {
+        value: 1,
+      },
+      7: {
+        value: 1,
+      },
     },
     {
-      1: 'aaa',
-      2: 'bbb',
-      3: 'ccc',
-      6: 'fff',
-      7: 'ggg',
+      1: {
+        type: METRIC_TYPE_SCORE,
+        value: 20
+      },
+      2: {
+        value: 1,
+      },
+      3: {
+        value: 1,
+      },
+      6: {
+        value: 1,
+      },
+      7: {
+        value: 1,
+      },
     },
   ]);
 
   const expected = [
     {
       key: '1',
-      runs: ['a', 'aa', 'aaa'],
+      type: METRIC_TYPE_SCORE,
+      runs: [
+        {
+          value: 11,
+        },
+        {
+          value: 10,
+        },
+        {
+          value: 20,
+        },
+      ],
     },
     {
       key: '2',
-      runs: ['b', 'bb', 'bbb'],
+      runs: [
+        { value: 1 },
+        { value: 1 },
+        { value: 1 },
+      ],
     },
     {
       key: '3',
-      runs: ['c', 'cc', 'ccc'],
+      runs: [
+        { value: 1 },
+        { value: 1 },
+        { value: 1 },
+      ],
     },
     {
       key: '4',
-      runs: ['d', null, null],
+      runs: [
+        { value: 1 },
+        null,
+        null,
+      ],
     },
     {
       key: '5',
-      runs: [null, 'ee', null],
+      runs: [
+        null,
+        { value: 1 },
+        null,
+      ],
     },
     {
       key: '6',
-      runs: [null, null, 'fff'],
+      runs: [
+        null,
+        null,
+        { value: 1 },
+      ],
     },
     {
       key: '7',
-      runs: [null, 'gg', 'ggg'],
+      runs: [
+        null,
+        { value: 1 },
+        { value: 1 },
+      ],
     },
   ];
 
