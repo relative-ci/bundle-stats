@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import getMetric from '../../config/metrics';
+import getMetric from '../../utils/metrics';
 import Metric from '../metric';
 import Delta from '../delta';
 import Table from '../table';
@@ -44,8 +44,13 @@ const generateRowCells = metric => (run, index) => {
   return displayValue;
 };
 
-const getRows = rows => rows.map(({ key, changed, runs }) => {
-  const metric = getMetric(key);
+const getRows = rows => rows.map(({
+  key,
+  type,
+  changed,
+  runs,
+}) => {
+  const metric = getMetric(key, type);
 
   return {
     options: {

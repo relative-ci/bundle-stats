@@ -1,4 +1,4 @@
-import { fill, map, mergeWith } from 'lodash';
+import { fill, map, mergeWith, omit } from 'lodash';
 
 const mergeWithRuns = (index, count) => (objValue, srcValue) => {
   // if there are no runs, just create an array and fill it with null
@@ -6,9 +6,12 @@ const mergeWithRuns = (index, count) => (objValue, srcValue) => {
     ? [...objValue.runs]
     : fill(Array(count), null);
 
-  res[index] = srcValue;
+  res[index] = omit(srcValue, 'type');
 
-  return { runs: res };
+  return {
+    type: srcValue.type,
+    runs: res,
+  };
 };
 
 /*
