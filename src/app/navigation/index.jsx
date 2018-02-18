@@ -12,6 +12,13 @@ const Navigation = () => (
       >
         Webpack
       </Link>
+      <Link
+        class={styles.link}
+        activeClassName={styles.linkActive}
+        href="/lighthouse"
+      >
+        Lighthouse
+      </Link>
     </li>
   </ul>
 );

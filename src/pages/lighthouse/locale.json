@@ -1,0 +1,4 @@
+{
+  "title": "Lighthouse",
+  "description": "Compare bundle assets from Webpack stats"
+}
