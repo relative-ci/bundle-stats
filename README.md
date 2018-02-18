@@ -1,14 +1,12 @@
 # Compare
 
+Side by side comparison for build stats. https://mas-o-menos-compare.netlify.com
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/mas-o-menos/compare.svg)](https://greenkeeper.io/)
+![CircleCi badge](https://img.shields.io/circleci/project/github/mas-o-menos/compare/master.svg)
+[![Coveralls github](https://img.shields.io/coveralls/github/mas-o-menos/compare.svg)](https://coveralls.io/github/mas-o-menos/compare)
 
-![](https://img.shields.io/circleci/project/github/mas-o-menos/compare/master.svg)
-[![Coveralls
-github](https://img.shields.io/coveralls/github/mas-o-menos/compare.svg)](https://coveralls.io/github/mas-o-menos/compare)
-
-Side by side comparison for webpack assets
-
-![](https://www.dropbox.com/s/fcqzbltuhyw4dm7/mom-compare.png?raw=1)
+![screenshot](https://www.dropbox.com/s/1womnjyay3hi4ly/compare-screenshot.jpg?raw=1)
 
 ```
 https://mas-o-menos-compare.netlify.com/webpack?url=URL1&url=URL2
