@@ -52,3 +52,7 @@ h3 {
   margin: 0 0 var(--space);
   text-transform: uppercase;
 }
+
+a {
+  color: var(--color-blue);
+}

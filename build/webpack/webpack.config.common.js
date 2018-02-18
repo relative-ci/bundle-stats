@@ -4,6 +4,7 @@ const HtmlPlugin = require('html-webpack-plugin');
 
 const cssConfig = require('./configs/css');
 const resolveConfig = require('./configs/resolve');
+const filesConfig = require('./configs/files');
 const appConfig = require('../../src/config/app.json');
 
 const {
@@ -66,4 +67,5 @@ module.exports = webpackMerge(
   },
   resolveConfig,
   cssConfig,
+  filesConfig,
 );

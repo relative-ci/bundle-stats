@@ -1,56 +1,36 @@
-import cx from 'classnames';
 import PropTypes from 'prop-types';
 
+import Source from '../source';
 import locale from './locale.json';
 import styles from './styles.css';
 
-const List = ({ sources, removeSource }) => (
-  <div class={styles.root}>
-    {sources.length > 0 && sources.map((source, index) => {
-      const sourceClassName = cx(styles.source, {
-        [styles.error]: source.error,
-        [styles.loading]: source.loading,
-      });
+const List = ({ sources, removeSource }) => {
+  const getHandleRemoveSource = index => (event) => {
+    event.preventDefault();
+    removeSource(index);
+  };
 
-      return (
-        <div
-          class={sourceClassName}
-          title={source.url}
-        >
-          <h2 class={styles.title}>
-            Run #{index}
-          </h2>
-          <a
-            class={styles.url}
-            href={source.url}
-            target="_blank"
-          >
-            {source.url}
-          </a>
-          {source.error && (
-            <div class={styles.errorMessage}>
-              {source.error}
-            </div>
-          )}
+  return (
+    <div class={styles.root}>
+      {sources.length > 0 && sources.map((source, index) => (
+        <Source
+          className={styles.item}
+          title={`Run #${index}`}
+          url={source.url}
+          error={source.error}
+          loading={source.loading}
+          onRemoveClick={getHandleRemoveSource(index)}
+        />
+      ))}
 
-          <button
-            onClick={() => removeSource(index)}
-            type="button"
-            class={styles.remove}
-          >
-            x
-          </button>
-        </div>
-      );
-    })}
-
-    {sources.length === 0 && (
-      <p class={styles.empty}>
-        {locale.empty}
-      </p>
-    )}
-  </div>
-);
+      {sources.length === 0 && (
+        <p class={styles.empty}>
+          {locale.empty}
+        </p>
+      )}
+    </div>
+  );
+};
 
 List.defaultProps = {
   sources: [],

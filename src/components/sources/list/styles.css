@@ -1,56 +1,16 @@
 .root {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.source {
-  position: relative;
-  flex: 1 1 auto;
+.item {
+  flex: 1 1 15%;
   min-width: 10rem;
-  margin: calc(var(--space-xsmall) / 2);
+  max-width: 30rem;
   padding: var(--space-xsmall);
+  margin-left: -1px;
   border: 1px solid var(--color-gray-light);
-}
-
-.title {
-  margin: 0;
-  font-size: var(--size);
-  color: inherit;
-}
-
-.url {
-  display: block;
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-}
-
-.errorMessage {
-  margin-top: var(--space-xsmall);
-}
-
-.remove {
-  display: inline-block;
-  position: absolute;
-  right: 0;
-  top: 0;
-  border: 0;
-  padding: var(--space-xsmall);
-}
-
-/* Source error modifier */
-.error {
-  border-color: var(--color-red);
-  color: var(--color-red);
-}
-
-/* Source loading modifier */
-.loading {
-  border-color: var(--color-gray);
-  color: var(--color-gray);
 }
 
 /* List empty state */
