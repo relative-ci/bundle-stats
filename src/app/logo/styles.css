@@ -22,6 +22,8 @@
   position: relative;
   z-index: 2;
   width: 2rem;
+  height: 2rem;
+  background: url('./assets/logo.svg') no-repeat;
 }
 
 .text {
@@ -43,10 +45,10 @@
 }
 
 .link:hover .icon {
-  background: var(--color-red);
+  background-color: var(--color-red);
 }
 
 .link:hover .text {
   display: block;
-  background: var(--color-red);
+  background-color: var(--color-red);
 }

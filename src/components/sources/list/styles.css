@@ -41,6 +41,18 @@
   padding: var(--space-xsmall);
 }
 
+.remove::before {
+  display: block;
+  content: ' ';
+  width: 1rem;
+  height: 1rem;
+  background: url('./assets/close.svg') no-repeat 0 0/100% 100%;
+}
+
+.remove:hover {
+  opacity: 0.6;
+}
+
 /* Source error modifier */
 .error {
   border-color: var(--color-red);

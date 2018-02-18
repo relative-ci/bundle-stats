@@ -37,9 +37,8 @@ const List = ({ sources, removeSource }) => (
             onClick={() => removeSource(index)}
             type="button"
             class={styles.remove}
-          >
-            x
-          </button>
+            title={locale.remove}
+          />
         </div>
       );
     })}
