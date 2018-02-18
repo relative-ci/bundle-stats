@@ -1,0 +1,57 @@
+.root {
+  position: relative;
+  padding: var(--space-xsmall);
+  border: 1px solid var(--color-gray-light);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--size);
+  color: inherit;
+}
+
+.url {
+  display: block;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.errorMessage {
+  margin-top: var(--space-xsmall);
+}
+
+.remove {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 0;
+  padding: var(--space-xsmall);
+}
+
+.remove::before {
+  display: block;
+  content: ' ';
+  width: 1rem;
+  height: 1rem;
+  background: url('./assets/close.svg') no-repeat 0 0/100% 100%;
+}
+
+.remove:hover {
+  opacity: 0.6;
+}
+
+/* Source error modifier */
+.error {
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+/* Source loading modifier */
+.loading {
+  border-color: var(--color-gray);
+  color: var(--color-gray);
+}
