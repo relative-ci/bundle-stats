@@ -63,19 +63,34 @@ const METRICS = {
       type: METRIC_TYPE_FILE_SIZE,
     },
   },
-
   lighthouse: {
     score: {
       label: 'Score',
       type: METRIC_TYPE_SCORE,
     },
-    'time-to-first-byte': {
-      label: 'Time to first byte',
+    speedIndex: {
+      label: 'Perceptual Speed Index',
       type: METRIC_TYPE_DURATION,
     },
-    'performance-score': {
-      label: 'Performance Score',
-      type: METRIC_TYPE_SCORE,
+    firstMeaningfulPain: {
+      label: 'First Meaningful Pain',
+      type: METRIC_TYPE_DURATION,
+    },
+    timeToFirstByte: {
+      label: 'Time To First Byte',
+      type: METRIC_TYPE_DURATION,
+    },
+    firstInteractive: {
+      label: 'First Interactive',
+      type: METRIC_TYPE_DURATION,
+    },
+    totalByteWeight: {
+      label: 'Total Weight',
+      type: METRIC_TYPE_FILE_SIZE,
+    },
+    domSize: {
+      label: 'DOM Size',
+      type: METRIC_TYPE_NUMERIC,
     },
   },
 };
