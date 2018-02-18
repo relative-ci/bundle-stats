@@ -1,4 +1,6 @@
 :root {
+  --space-xxxsmall: 0.664rem;
+  --space-xxsmall: 0.773rem;
   --space-xsmall: 0.928rem;
   --space-small: 1.16rem;
   --space: 1.45rem;
@@ -23,11 +25,15 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 13px;
+}
+
 body {
   padding: 0;
   color: var(--color-black);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 75%;
+  font-size: 100%;
   line-height: 1.45;
 }
 

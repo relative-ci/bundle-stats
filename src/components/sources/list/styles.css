@@ -7,7 +7,7 @@
 .item {
   flex: 1 1 15%;
   min-width: 10rem;
-  max-width: 30rem;
+  max-width: 32rem;
   padding: var(--space-xsmall);
   margin-left: -1px;
   border: 1px solid var(--color-gray-light);
@@ -16,6 +16,7 @@
 /* List empty state */
 .empty {
   margin: 0;
+  border: 1px solid var(--color-gray-light);
   padding: var(--space-xsmall);
   text-align: center;
   flex: 1 1 100%;

@@ -19,7 +19,7 @@
 
 .main {
   margin: 0 auto;
-  padding: calc(2rem + var(--space-small) * 2 + var(--space)) var(--space) var(--space);
+  padding: calc(var(--space-small) * 2 + var(--space) + var(--space)) var(--space) var(--space);
   width: 100%;
   max-width: 64rem;
 }
