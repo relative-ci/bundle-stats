@@ -14,9 +14,10 @@
   display: block;
   margin: 0;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   max-width: 100%;
+  font-size: var(-size-small);
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .errorMessage {
@@ -24,15 +25,15 @@
 }
 
 .remove {
-  display: inline-block;
+  display: none;
   position: absolute;
   right: 0;
   top: 0;
   border: 0;
-  padding: var(--space-xsmall);
+  padding: var(--space-xxxsmall);
   background: transparent;
   cursor: pointer;
-  outline: none;
+  opacity: 0.3;
 }
 
 .remove::before {
@@ -45,6 +46,17 @@
 
 .remove:hover {
   opacity: 0.6;
+}
+
+/* Hover state */
+.root:hover {
+  position: relative;
+  z-index: 2;
+  border-color: var(--color-gray);
+}
+
+.root:hover .remove {
+  display: block;
 }
 
 /* Source error modifier */
