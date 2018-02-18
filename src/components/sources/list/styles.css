@@ -1,14 +1,15 @@
 .root {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .item {
-  flex: 1 1 auto;
+  flex: 1 1 15%;
   min-width: 10rem;
-  margin: calc(var(--space-xsmall) / 2);
+  max-width: 30rem;
   padding: var(--space-xsmall);
+  margin-left: -1px;
   border: 1px solid var(--color-gray-light);
 }
 

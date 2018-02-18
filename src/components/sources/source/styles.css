@@ -30,6 +30,9 @@
   top: 0;
   border: 0;
   padding: var(--space-xsmall);
+  background: transparent;
+  cursor: pointer;
+  outline: none;
 }
 
 .remove::before {

@@ -1,7 +1,7 @@
 .root {
   margin: 0 auto;
   width: 100%;
-  max-width: 480px;
+  max-width: 30rem;
   padding: calc(var(--space-xsmall) / 2);
   display: flex;
   align-items: stretch;
@@ -10,7 +10,15 @@
 .input {
   border: 1px solid var(--color-gray-light);
   padding: var(--space-xsmall);
+  background: #fff;
+  color: var(-color-gray);
   flex: 1 1 auto;
+  outline: 0;
+}
+
+.input:focus {
+  border: 1px solid var(--color-gray);
+  color: var(-color-gray-dark);
 }
 
 .actions {
@@ -22,4 +30,12 @@
   border: 0;
   background: var(--color-green);
   color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.buton:hover,
+.button:focus,
+.button:active {
+  color: rgba(255, 255, 255, 0.6);
 }
