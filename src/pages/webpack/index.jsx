@@ -4,6 +4,7 @@ import Helmet from '../../components/helmet';
 import Sources from '../../components/sources';
 import Assets from '../../components/webpack/assets';
 import TotalByTypeTable from '../../components/webpack/total-by-type-table';
+import config from './config.json';
 import locale from './locale.json';
 import enhance from './container';
 import styles from './styles.css';
@@ -12,6 +13,7 @@ const Webpack = (props) => {
   const {
     sources,
     addSource,
+    addSources,
     removeSource,
     assets,
     totalByType,
@@ -26,9 +28,11 @@ const Webpack = (props) => {
 
       <Sources
         sources={sources}
+        exampleUrls={config.exampleUrls}
+        exampleText={locale.loadExample}
         onAddFormSubmit={addSource}
         onSourceRemove={removeSource}
-        removeSource
+        addSources={addSources}
       />
 
       {totalByType.length > 0 && (
@@ -58,6 +62,7 @@ Webpack.defaultProps = {
 Webpack.propTypes = {
   sources: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   addSource: PropTypes.func.isRequired,
+  addSources: PropTypes.func.isRequired,
   removeSource: PropTypes.func.isRequired,
   totalByType: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   assets: PropTypes.array, // eslint-disable-line react/forbid-prop-types

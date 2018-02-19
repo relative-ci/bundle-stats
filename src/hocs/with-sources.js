@@ -43,7 +43,7 @@ const addSources = ({ sources, setSources }) => (urls) => {
   syncSearchParams(newSources);
 };
 
-const addSource = ({ sources, setSources }) => (url) =>
+const addSource = ({ sources, setSources }) => url =>
   addSources({ sources, setSources })([url]);
 
 const removeSource = ({ sources, setSources }) => (sourceIndex) => {
