@@ -1,3 +1,8 @@
 .root {
   margin: 0 0 var(--space);
 }
+
+.example {
+  margin: var(--space-xsmall) 0 0;
+  text-align: center;
+}

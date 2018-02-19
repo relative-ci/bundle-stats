@@ -8,6 +8,7 @@ const Sources = ({
   sources,
   onAddFormSubmit,
   onSourceRemove,
+  example,
 }) => (
   <div class={styles.root}>
     <List
@@ -15,17 +16,25 @@ const Sources = ({
       removeSource={onSourceRemove}
     />
     <Add onSubmit={onAddFormSubmit} />
+
+    {sources.length === 0 && example && (
+      <div class={styles.example}>
+        {example()}
+      </div>
+    )}
   </div>
 );
 
 Sources.defaultProps = {
   sources: [],
+  example: null,
 };
 
 Sources.propTypes = {
   sources: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   onAddFormSubmit: PropTypes.func.isRequired,
   onSourceRemove: PropTypes.func.isRequired,
+  example: PropTypes.func,
 };
 
 export default Sources;
