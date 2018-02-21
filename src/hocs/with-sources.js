@@ -33,14 +33,18 @@ const getDefaultSource = url => ({
   res: {},
 });
 
-const addSource = ({ sources, setSources }) => (url) => {
+const addSources = ({ sources, setSources }) => (urls) => {
   const newSources = [
     ...sources,
-    getDefaultSource(url),
+    ...urls.map(getDefaultSource),
   ];
+
   setSources(newSources);
   syncSearchParams(newSources);
 };
+
+const addSource = ({ sources, setSources }) => (url) =>
+  addSources({ sources, setSources })([url]);
 
 const removeSource = ({ sources, setSources }) => (sourceIndex) => {
   const newSources = [
@@ -99,6 +103,7 @@ const enhance = () => compose(
     ({ initialUrls }) => initialUrls.map(getDefaultSource),
   ),
   withHandlers({
+    addSources,
     addSource,
     removeSource,
     updateSource,
