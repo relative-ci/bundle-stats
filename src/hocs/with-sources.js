@@ -1,7 +1,6 @@
 import { map } from 'lodash';
 import {
   compose,
-  withProps,
   withState,
   withHandlers,
 } from 'recompose';
@@ -11,10 +10,7 @@ import {
   getGistRawUrl,
 } from '../utils/gist';
 import fetchJSON from '../utils/fetch';
-import {
-  syncUrlsToSearch,
-  getUrlParams,
-} from '../utils/search-params';
+import { syncUrlsToSearch } from '../utils/search-params';
 
 const resolveUrl = (url) => {
   if (isGistUrl(url)) {
@@ -97,9 +93,6 @@ const fetchSources = (props) => {
 };
 
 const enhance = () => compose(
-  withProps({
-    initialUrls: getUrlParams(),
-  }),
   withState(
     'sources',
     'setSources',

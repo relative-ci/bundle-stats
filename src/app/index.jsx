@@ -1,8 +1,9 @@
 import { Router } from 'preact-router';
 
-import Redirect from './redirect';
 import Webpack from '../pages/webpack';
 import Lighthouse from '../pages/lighthouse';
+import Redirect from './redirect';
+import Route from './route';
 import Logo from './logo';
 import Navigation from './navigation';
 import styles from './styles.css';
@@ -18,8 +19,8 @@ const App = () => (
     <main class={styles.main}>
       <Router>
         <Redirect path="/" to="/webpack" />
-        <Webpack path="/webpack" />
-        <Lighthouse path="/lighthouse" />
+        <Route component={Webpack} path="/webpack" />
+        <Route component={Lighthouse} path="/lighthouse" />
       </Router>
     </main>
   </div>
