@@ -13,7 +13,7 @@
   display: inline-block;
   padding: var(--space-small);
   text-decoration: none;
-  color: var(--color-gray-light);
+  color: var(--color-gray);
   font-weight: bold;
 }
 
