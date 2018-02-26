@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from '../../components/helmet';
 import Sources from '../../components/sources';
 import MetricsTable from '../../components/metrics-table';
+import config from './config.json';
 import locale from './locale.json';
 import enhance from './container';
 
@@ -13,6 +14,7 @@ const Lighthouse = (props) => {
     rows,
     addSource,
     removeSource,
+    addSources,
   } = props;
 
   return (
@@ -24,8 +26,11 @@ const Lighthouse = (props) => {
 
       <Sources
         sources={sources}
+        exampleUrls={config.exampleUrls}
+        exampleText={locale.loadExample}
         onAddFormSubmit={addSource}
         onSourceRemove={removeSource}
+        addSources={addSources}
       />
 
       {rows.length > 0 && (
@@ -50,6 +55,9 @@ Lighthouse.propTypes = {
 
   /** Add source handler */
   addSource: PropTypes.func.isRequired,
+
+  /** Add sources handler */
+  addSources: PropTypes.func.isRequired,
 
   /** Remove source handler */
   removeSource: PropTypes.func.isRequired,

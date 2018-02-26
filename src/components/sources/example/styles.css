@@ -1,0 +1,20 @@
+.root {
+  margin: var(--space-small);
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  margin: 0 auto;
+  border: 0;
+  background: none;
+  color: var(--color-green);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+  text-decoration: underline;
+}
