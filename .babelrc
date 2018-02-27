@@ -9,6 +9,7 @@
   ],
   "plugins": [
     "transform-object-rest-spread",
+    "transform-class-properties",
     "preact-require",
     ["transform-react-jsx", {"pragma": "h"}],
     "lodash"

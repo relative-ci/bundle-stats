@@ -19,7 +19,7 @@ const List = ({ sources, removeSource }) => {
           url={source.url}
           error={source.error}
           loading={source.loading}
-          onRemoveClick={getHandleRemoveSource(index)}
+          onRemoveClick={getHandleRemoveSource(source)}
         />
       ))}
 
