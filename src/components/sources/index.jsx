@@ -9,26 +9,29 @@ const Sources = ({
   sources,
   exampleUrls,
   exampleText,
-  onAddFormSubmit,
-  onSourceRemove,
-  addSources,
-}) => (
-  <div class={styles.root}>
-    <List
-      sources={sources}
-      removeSource={onSourceRemove}
-    />
-    <Add onSubmit={onAddFormSubmit} />
+  addSource,
+  removeSource,
+}) => {
+  const handleExamplesClick = urls => urls.forEach(addSource);
 
-    {sources.length === 0 && exampleUrls.length > 0 && (
-      <Example
-        urls={exampleUrls}
-        text={exampleText}
-        onLoadClick={addSources}
+  return (
+    <div class={styles.root}>
+      <List
+        sources={sources}
+        removeSource={removeSource}
       />
-    )}
-  </div>
-);
+      <Add onSubmit={addSource} />
+
+      {sources.length === 0 && exampleUrls.length > 0 && (
+        <Example
+          urls={exampleUrls}
+          text={exampleText}
+          onLoadClick={handleExamplesClick}
+        />
+      )}
+    </div>
+  );
+};
 
 Sources.defaultProps = {
   sources: [],
@@ -38,11 +41,10 @@ Sources.defaultProps = {
 
 Sources.propTypes = {
   sources: PropTypes.array, // eslint-disable-line react/forbid-prop-types
-  onAddFormSubmit: PropTypes.func.isRequired,
-  onSourceRemove: PropTypes.func.isRequired,
   exampleUrls: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   exampleText: PropTypes.string,
-  addSources: PropTypes.func.isRequired,
+  addSource: PropTypes.func.isRequired,
+  removeSource: PropTypes.func.isRequired,
 };
 
 export default Sources;

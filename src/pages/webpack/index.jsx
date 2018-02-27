@@ -13,7 +13,6 @@ const Webpack = (props) => {
   const {
     sources,
     addSource,
-    addSources,
     removeSource,
     assets,
     totalByType,
@@ -30,9 +29,8 @@ const Webpack = (props) => {
         sources={sources}
         exampleUrls={config.exampleUrls}
         exampleText={locale.loadExample}
-        onAddFormSubmit={addSource}
-        onSourceRemove={removeSource}
-        addSources={addSources}
+        addSource={addSource}
+        removeSource={removeSource}
       />
 
       {totalByType.length > 0 && (
@@ -62,7 +60,6 @@ Webpack.defaultProps = {
 Webpack.propTypes = {
   sources: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   addSource: PropTypes.func.isRequired,
-  addSources: PropTypes.func.isRequired,
   removeSource: PropTypes.func.isRequired,
   totalByType: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   assets: PropTypes.array, // eslint-disable-line react/forbid-prop-types

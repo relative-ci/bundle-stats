@@ -14,7 +14,6 @@ const Lighthouse = (props) => {
     rows,
     addSource,
     removeSource,
-    addSources,
   } = props;
 
   return (
@@ -28,9 +27,8 @@ const Lighthouse = (props) => {
         sources={sources}
         exampleUrls={config.exampleUrls}
         exampleText={locale.loadExample}
-        onAddFormSubmit={addSource}
-        onSourceRemove={removeSource}
-        addSources={addSources}
+        addSource={addSource}
+        removeSource={removeSource}
       />
 
       {rows.length > 0 && (
@@ -53,11 +51,8 @@ Lighthouse.propTypes = {
   /** Metric rows */
   rows: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
 
-  /** Add source handler */
-  addSource: PropTypes.func.isRequired,
-
   /** Add sources handler */
-  addSources: PropTypes.func.isRequired,
+  addSource: PropTypes.func.isRequired,
 
   /** Remove source handler */
   removeSource: PropTypes.func.isRequired,

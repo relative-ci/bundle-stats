@@ -9,6 +9,7 @@
   "rules": {
     "react/no-unknown-property": "off",
     "react/react-in-jsx-scope": "off",
+    "react/sort-comp": "off",
     "import/no-extraneous-dependencies": ["error"]
   }
 }
