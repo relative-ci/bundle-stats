@@ -8,13 +8,15 @@
   margin: 0 auto;
   border: 0;
   background: none;
-  color: var(--color-blue);
+  color: var(--color-gray-dark);
   cursor: pointer;
-  text-decoration: none;
+  outline: none;
+  text-decoration: underline;
 }
 
 .button:hover,
 .button:active,
 .button:focus {
-  text-decoration: underline;
+  color: var(--color-blue);
+  text-decoration: none;
 }

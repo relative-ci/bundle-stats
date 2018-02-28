@@ -1,13 +1,11 @@
 .root {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
 .item {
-  flex: 1 1 15%;
-  min-width: 10rem;
-  max-width: 32rem;
+  flex: 1 1 10%;
+  min-width: 2rem;
   padding: var(--space-xsmall);
   margin-left: -1px;
   border: 1px solid var(--color-gray-light);

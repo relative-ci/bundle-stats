@@ -61,6 +61,11 @@ h3 {
 }
 
 a {
+  color: inherit;
+}
+
+a:hover,
+a:focus {
   color: var(--color-blue);
 }
 
