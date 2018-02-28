@@ -73,7 +73,7 @@ const METRICS = {
       type: METRIC_TYPE_DURATION,
     },
     firstMeaningfulPain: {
-      label: 'First Meaningful Pain',
+      label: 'First Meaningful Paint',
       type: METRIC_TYPE_DURATION,
     },
     timeToFirstByte: {
