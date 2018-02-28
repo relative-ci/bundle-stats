@@ -19,6 +19,13 @@ const Navigation = () => (
       >
         Lighthouse
       </Link>
+      <Link
+        class={styles.link}
+        activeClassName={styles.linkActive}
+        href="/browsertime"
+      >
+        Browsertime
+      </Link>
     </li>
   </ul>
 );

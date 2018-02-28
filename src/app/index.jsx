@@ -2,6 +2,7 @@ import { Router } from 'preact-router';
 
 import Webpack from '../pages/webpack';
 import Lighthouse from '../pages/lighthouse';
+import Browsertime from '../pages/browsertime';
 import Redirect from './redirect';
 import Route from './route';
 import Logo from './logo';
@@ -21,6 +22,7 @@ const App = () => (
         <Redirect path="/" to="/webpack" />
         <Route component={Webpack} path="/webpack" />
         <Route component={Lighthouse} path="/lighthouse" />
+        <Route component={Browsertime} path="/browsertime" />
       </Router>
     </main>
   </div>
