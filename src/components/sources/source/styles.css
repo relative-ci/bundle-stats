@@ -15,6 +15,7 @@
   margin: 0;
   white-space: nowrap;
   max-width: 100%;
+  color: var(--color-gray);
   font-size: var(-size-small);
   text-overflow: ellipsis;
   overflow: hidden;
