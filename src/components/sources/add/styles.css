@@ -28,7 +28,7 @@
 .button {
   padding: var(--space-xsmall) var(--space);
   border: 0;
-  background: var(--color-green);
+  background: var(--color-blue);
   color: #fff;
   cursor: pointer;
   outline: none;

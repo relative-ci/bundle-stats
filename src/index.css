@@ -16,9 +16,10 @@
   --color-gray: #cacacd;
   --color-gray-dark: #5a5a5b;
   --color-red: #ff8a8e;
-  --color-green: #1a936f;
-  --color-yellow: #e8e288;
-  --color-blue: #177e89;
+  --color-green: #439a86;
+  --color-yellow: #fff1a6;
+  --color-blue: #53a2be;
+  --max-width: 78rem;
 }
 
 * {
@@ -61,4 +62,8 @@ h3 {
 
 a {
   color: var(--color-blue);
+}
+
+code {
+  font-family: sfmono-regular, Consolas, Menlo, liberation mono, ubuntu mono, Courier, monospace;
 }
