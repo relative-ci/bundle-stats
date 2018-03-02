@@ -4,7 +4,7 @@ import Source from '../source';
 import locale from './locale.json';
 import styles from './styles.css';
 
-const List = ({ sources, removeSource }) => {
+const List = ({ sources, runs, removeSource }) => {
   const getHandleRemoveSource = index => (event) => {
     event.preventDefault();
     removeSource(index);
@@ -15,10 +15,10 @@ const List = ({ sources, removeSource }) => {
       {sources.length > 0 && sources.map((source, index) => (
         <Source
           className={styles.item}
-          title={`Run #${index}`}
           url={source.url}
           error={source.error}
           loading={source.loading}
+          run={runs[index]}
           onRemoveClick={getHandleRemoveSource(source)}
         />
       ))}
@@ -34,10 +34,12 @@ const List = ({ sources, removeSource }) => {
 
 List.defaultProps = {
   sources: [],
+  runs: [],
 };
 
 List.propTypes = {
   sources: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   removeSource: PropTypes.func.isRequired,
 };
 

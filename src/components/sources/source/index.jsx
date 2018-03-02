@@ -4,10 +4,20 @@ import PropTypes from 'prop-types';
 import locale from './locale.json';
 import styles from './styles.css';
 
+const renderMeta = (meta = {}) => (
+  <div class={styles.meta}>
+    {Object.entries(meta).map(([key, value]) => (
+      <p class={styles.entry} title={key}>
+        {value}
+      </p>
+    ))}
+  </div>
+);
+
 const Source = (props) => {
   const {
     className,
-    title,
+    run,
     url,
     error,
     loading,
@@ -22,7 +32,7 @@ const Source = (props) => {
   return (
     <div class={rootClassName}>
       <h2 class={styles.title}>
-        {title}
+        {run.label}
       </h2>
 
       <a
@@ -32,6 +42,8 @@ const Source = (props) => {
       >
         {url}
       </a>
+
+      {renderMeta(run.meta)}
 
       {error && (
         <div class={styles.errorMessage}>
@@ -51,6 +63,7 @@ const Source = (props) => {
 
 Source.defaultProps = {
   className: '',
+  run: {},
   error: '',
   loading: false,
 };
@@ -59,8 +72,8 @@ Source.propTypes = {
   /** Adopted child class */
   className: PropTypes.string,
 
-  /** Source title */
-  title: PropTypes.string.isRequired,
+  /** Run data */
+  run: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 
   /** Source url */
   url: PropTypes.string.isRequired,
