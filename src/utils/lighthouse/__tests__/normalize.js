@@ -9,6 +9,10 @@ test('Lighthouse normalize', () => {
 
   const expected = [{
     label: 'Run #0',
+    meta: {
+      timestamp: '2017-11-13T10:35:15.168Z',
+      url: 'http://localhost:8080/',
+    },
     data: {
       'lighthouse.score': {
         value: 69,

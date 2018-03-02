@@ -9,6 +9,11 @@ test('Browsertime normalize', () => {
 
   const expected = [{
     label: 'Run #0',
+    meta: {
+      timestamp: '2018-02-28T18:43:38+00:00',
+      url: 'https://mobile.twitter.com/sitespeedio',
+      connectivity: 'native',
+    },
     data: {
       'browsertime.firstPaint': {
         value: 317,

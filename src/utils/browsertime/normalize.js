@@ -29,6 +29,12 @@ const metricsMap = {
   visualComplete99: 'visualMetrics.VisualComplete99',
 };
 
+const metaMap = {
+  timestamp: 'info.timestamp',
+  url: 'info.url',
+  connectivity: 'info.connectivity.profile',
+};
+
 const getMetrics = res =>
   Object.entries(metricsMap).reduce((aggregator, [internalId, id]) => ({
     ...aggregator,
@@ -37,6 +43,13 @@ const getMetrics = res =>
     },
   }), {});
 
+const getMeta = res =>
+  Object.entries(metaMap).reduce((aggregator, [name, key]) => ({
+    ...aggregator,
+    [name]: get(res, key),
+  }), {});
+
+
 const normalizeSource = ({ loading, error, res }, index) => {
   if (loading || error) {
     return {};
@@ -44,6 +57,7 @@ const normalizeSource = ({ loading, error, res }, index) => {
 
   return {
     label: `Run #${index}`,
+    meta: getMeta(res),
     data: getMetrics(res),
   };
 };
