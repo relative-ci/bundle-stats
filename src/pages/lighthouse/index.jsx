@@ -25,6 +25,7 @@ const Lighthouse = (props) => {
 
       <Sources
         sources={sources}
+        runs={runs}
         exampleUrls={config.exampleUrls}
         exampleText={locale.loadExample}
         addSource={addSource}

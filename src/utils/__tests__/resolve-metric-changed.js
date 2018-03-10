@@ -1,5 +1,3 @@
-/* env jest/globals */
-
 import resolveMetricChanged from '../resolve-metric-changed';
 
 describe('Resolve metric changes', () => {

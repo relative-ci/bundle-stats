@@ -14,6 +14,7 @@ const Webpack = (props) => {
     sources,
     addSource,
     removeSource,
+    runs,
     assets,
     totalByType,
   } = props;
@@ -27,6 +28,7 @@ const Webpack = (props) => {
 
       <Sources
         sources={sources}
+        runs={runs}
         exampleUrls={config.exampleUrls}
         exampleText={locale.loadExample}
         addSource={addSource}
@@ -53,6 +55,7 @@ const Webpack = (props) => {
 
 Webpack.defaultProps = {
   sources: [],
+  runs: [],
   totalByType: [],
   assets: [],
 };
@@ -61,6 +64,7 @@ Webpack.propTypes = {
   sources: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   addSource: PropTypes.func.isRequired,
   removeSource: PropTypes.func.isRequired,
+  runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   totalByType: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   assets: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };

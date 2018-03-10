@@ -15,14 +15,41 @@
   margin: 0;
   white-space: nowrap;
   max-width: 100%;
+  font-size: var(--size-small);
+  text-overflow: ellipsis;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.url:hover,
+.url:active,
+.url:focus {
+  text-decoration: underline;
+}
+
+.meta {
+  margin: var(--space-xxxsmall) 0 0;
+  font-size: var(--size-small);
+}
+
+.entry {
+  margin: 0;
+  white-space: nowrap;
+  max-width: 100%;
   color: var(--color-gray);
-  font-size: var(-size-small);
+  font-size: var(--size-small);
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
+.entryKey::after {
+  margin-right: 0.3em;
+  display: inline-block;
+  content: ":";
+}
+
 .errorMessage {
-  margin-top: var(--space-xsmall);
+  margin-top: var(--space-small);
 }
 
 .remove {

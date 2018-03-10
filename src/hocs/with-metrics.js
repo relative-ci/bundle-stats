@@ -13,7 +13,6 @@ const generateRows = runs => flow(
 )(map(runs, 'data'));
 
 const withMetrics = () => withProps(({ runs }) => ({
-  runs,
   rows: generateRows(runs),
 }));
 

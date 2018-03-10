@@ -1,5 +1,3 @@
-/* env jest/globals */
-
 import extractFilename from '../extract-filename';
 
 test('Extract filename', () => {

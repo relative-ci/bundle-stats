@@ -7,6 +7,6 @@
   position: absolute;
   right: 0;
   top: 100%;
-  font-size: var(--size-small);
+  font-size: var(--size-xsmall);
   font-weight: bold;
 }

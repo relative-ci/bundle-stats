@@ -1,4 +1,3 @@
-/* env jest/globals */
 import computeDelta from '../compute-delta';
 
 test('Compute delta', () => {

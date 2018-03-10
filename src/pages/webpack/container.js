@@ -5,6 +5,7 @@ import {
 
 import { METRIC_TYPE_FILE_SIZE } from '../../config/metrics';
 import withSources from '../../hocs/with-sources';
+import withRuns from '../../hocs/with-runs';
 import calculateTotals from './utils/calculate-totals';
 
 const createAssets = sources =>
@@ -37,8 +38,15 @@ const createTotalByType = sources =>
     };
   });
 
+const metricsMap = {};
+
+const metaMap = {
+  hash: 'hash',
+};
+
 const enhance = compose(
   withSources(),
+  withRuns(metricsMap, metaMap),
   withProps(({ sources }) => ({
     assets: createAssets(sources),
     totalByType: createTotalByType(sources),

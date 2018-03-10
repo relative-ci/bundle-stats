@@ -7,6 +7,7 @@ import styles from './styles.css';
 
 const Sources = ({
   sources,
+  runs,
   exampleUrls,
   exampleText,
   addSource,
@@ -18,6 +19,7 @@ const Sources = ({
     <div class={styles.root}>
       <List
         sources={sources}
+        runs={runs}
         removeSource={removeSource}
       />
       <Add onSubmit={addSource} />
@@ -35,12 +37,14 @@ const Sources = ({
 
 Sources.defaultProps = {
   sources: [],
+  runs: [],
   exampleUrls: [],
   exampleText: '',
 };
 
 Sources.propTypes = {
   sources: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   exampleUrls: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   exampleText: PropTypes.string,
   addSource: PropTypes.func.isRequired,
