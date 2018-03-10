@@ -6,5 +6,8 @@ Thumbs.db
 *.sublime-project
 *.sublime-workspace
 *.log
-.env
+yarn.lock
 .eslintcache
+dist
+.env
+artifacts
