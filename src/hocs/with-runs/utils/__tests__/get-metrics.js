@@ -1,5 +1,3 @@
-/* env jest/globals */
-
 import getMetrics from '../get-metrics';
 
 test('Extract metrics', () => {

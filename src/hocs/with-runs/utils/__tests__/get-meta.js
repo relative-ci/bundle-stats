@@ -1,5 +1,3 @@
-/* env jest/globals */
-
 import getMeta from '../get-meta';
 
 test('Extract meta', () => {

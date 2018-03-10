@@ -1,4 +1,3 @@
-/* env jest/globals */
 import { METRIC_TYPE_SCORE } from '../../config/metrics';
 import getMetric from '../metrics';
 

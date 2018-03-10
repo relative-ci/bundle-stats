@@ -1,4 +1,3 @@
-/* global test */
 import getAssetsById from '../get-assets-by-id';
 import fixtures from '../../../../../../fixtures/webpack-entries';
 

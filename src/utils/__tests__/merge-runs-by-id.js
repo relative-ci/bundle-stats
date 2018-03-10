@@ -1,4 +1,3 @@
-/* env jest/globals */
 import { METRIC_TYPE_SCORE } from '../../config/metrics';
 import mergeRunsById from '../merge-runs-by-id';
 
@@ -22,7 +21,7 @@ test('Merge runs by id', () => {
     {
       1: {
         type: METRIC_TYPE_SCORE,
-        value: 10
+        value: 10,
       },
       2: {
         value: 1,
@@ -40,7 +39,7 @@ test('Merge runs by id', () => {
     {
       1: {
         type: METRIC_TYPE_SCORE,
-        value: 20
+        value: 20,
       },
       2: {
         value: 1,
