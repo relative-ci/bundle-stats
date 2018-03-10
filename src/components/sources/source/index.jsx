@@ -7,8 +7,13 @@ import styles from './styles.css';
 const renderMeta = (meta = {}) => (
   <div class={styles.meta}>
     {Object.entries(meta).map(([key, value]) => (
-      <p class={styles.entry} title={key}>
-        {value}
+      <p class={styles.entry}>
+        <span class={styles.entryKey}>
+          {key}
+        </span>
+        <span class={styles.entryValue}>
+          {value}
+        </span>
       </p>
     ))}
   </div>
