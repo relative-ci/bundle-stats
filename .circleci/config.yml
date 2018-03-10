@@ -39,5 +39,5 @@ jobs:
 
       - run:
           name: Send coveralls for web
-          command: cat ./packages/web/artifacts/coverage/lcov.info | node_modules/.bin/coveralls
+          command: cat ./packages/web/artifacts/coverage/lcov.info | packages/web/node_modules/.bin/coveralls
 
