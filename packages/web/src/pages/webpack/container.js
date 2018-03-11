@@ -3,7 +3,7 @@ import {
   withProps,
 } from 'recompose';
 
-import { METRIC_TYPE_FILE_SIZE } from '../../config/metrics';
+import { METRIC_TYPE_FILE_SIZE } from '../../../../core/config/metrics';
 import withSources from '../../hocs/with-sources';
 import withRuns from '../../hocs/with-runs';
 import calculateTotals from './utils/calculate-totals';

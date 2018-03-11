@@ -1,6 +1,6 @@
 import { get } from 'lodash';
 
-import METRICS, { METRIC_TYPE_NUMERIC, METRIC_TYPES } from '../config/metrics';
+import METRICS, { METRIC_TYPE_NUMERIC, METRIC_TYPES } from '../../../core/config/metrics';
 
 const getMetric = (key, type) => {
   const metric = get(METRICS, key, {

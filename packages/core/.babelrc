@@ -1,0 +1,25 @@
+{
+  "presets": [
+    ["env", {
+      "loose": true,
+        "modules": false,
+        "useBuiltIns": "usage",
+    }],
+    "react"
+  ],
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-class-properties",
+    "preact-require",
+    ["transform-react-jsx", {"pragma": "h"}],
+    "lodash"
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        "env",
+        "react"
+      ]
+    }
+  }
+}

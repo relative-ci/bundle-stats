@@ -1,4 +1,4 @@
-import { METRIC_TYPE_SCORE } from '../../config/metrics';
+import { METRIC_TYPE_SCORE } from '../../../config/metrics';
 import mergeRunsById from '../merge-runs-by-id';
 
 test('Merge runs by id', () => {

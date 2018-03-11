@@ -1,4 +1,4 @@
-import { METRIC_TYPE_SCORE } from '../../config/metrics';
+import { METRIC_TYPE_SCORE } from '../../../../core/config/metrics';
 import getMetric from '../metrics';
 
 describe('getMetric', () => {
