@@ -21,6 +21,11 @@ const argv = require('yargs')
     alias: 'o',
     default: 'console',
   })
+  .options('show-all', {
+    description: 'Show all',
+    alias: 'showAll',
+    default: false,
+  })
   .help()
   .alias('h', 'help')
   .argv;
@@ -31,4 +36,9 @@ const sources = argv.source.map(source => require.resolve(source, {
   ]
 }));
 
-main(argv.type, sources);
+const {
+  type,
+  ...options
+} = argv;
+
+main(type, sources, options);
