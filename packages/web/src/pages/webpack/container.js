@@ -3,10 +3,13 @@ import {
   withProps,
 } from 'recompose';
 
-import { METRIC_TYPE_FILE_SIZE } from '../../../../core/config/metrics';
+import {
+  metricsMap,
+  metaMap,
+} from '../../../../core/config/webpack';
+import createTotalsRun from '../../../../core/utils/runs/webpack/totals';
+import createAssetsRun from '../../../../core/utils/runs/webpack/assets';
 import withSources from '../../hocs/with-sources';
-import withRuns from '../../hocs/with-runs';
-import calculateTotals from './utils/calculate-totals';
 
 const createAssets = sources =>
   sources.map(({ loading, error, res }, index) => {
@@ -14,16 +17,7 @@ const createAssets = sources =>
       return {};
     }
 
-    return {
-      label: `Run #${index}`,
-      data: {
-        ...res,
-        assets: res && res.assets && res.assets.map(item => ({
-          ...item,
-          type: METRIC_TYPE_FILE_SIZE,
-        })),
-      },
-    };
+    return createAssetsRun(metricsMap, metaMap)({ res }, index);
   });
 
 const createTotalByType = sources =>
@@ -32,21 +26,11 @@ const createTotalByType = sources =>
       return {};
     }
 
-    return {
-      label: `Run #${index}`,
-      data: calculateTotals(res.assets || []),
-    };
+    return createTotalsRun(metricsMap, metaMap)({ res }, index);
   });
-
-const metricsMap = {};
-
-const metaMap = {
-  hash: 'hash',
-};
 
 const enhance = compose(
   withSources(),
-  withRuns(metricsMap, metaMap),
   withProps(({ sources }) => ({
     assets: createAssets(sources),
     totalByType: createTotalByType(sources),

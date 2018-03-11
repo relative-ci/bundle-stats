@@ -2,7 +2,7 @@ import { compose, withProps, withState } from 'recompose';
 import { sortBy } from 'lodash';
 
 import withMetrics from '../../../hocs/with-metrics';
-import getAssetsById from './utils/get-assets-by-id';
+import getAssetsById from '../../../../../core/utils/runs/webpack/utils/get-assets-by-id';
 
 import {
   FILTER_SHOW_ALL,
