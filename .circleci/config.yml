@@ -11,31 +11,33 @@ jobs:
 
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-{{ checksum "packages/web/package.json" }}
           - v1-dependencies-
 
       - run:
           name: Install dependencies
-          command: npm install
+          command: npm install && npm run bootstrap
 
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      - run:
-          name: Build application
-          command: npm run build
+            - packages/web/node_modules
+          key: v1-dependencies-{{ checksum "packages/web/package.json" }}
 
       - run:
           name: Test
           command: npm test
 
+      - run:
+          name: Build
+          command: npm run build
+
+
       - store_artifacts:
-          path: ./artifacts
-          destination: artifacts
+          path: ./packages/web/artifacts
+          destination: artifacts/web
 
       - run:
-          name: Send coveralls
-          command: cat ./artifacts/coverage/lcov.info | node_modules/.bin/coveralls
+          name: Send coveralls for web
+          command: cat ./packages/web/artifacts/coverage/lcov.info | packages/web/node_modules/.bin/coveralls
 
