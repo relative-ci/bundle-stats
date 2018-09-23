@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@nivo/bar": "^0.33.0",
+    "@relative-ci/agent": "0.0.2",
     "autoprefixer": "^8.0.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.1.2",
