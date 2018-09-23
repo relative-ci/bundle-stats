@@ -36,6 +36,10 @@ jobs:
           destination: artifacts
 
       - run:
+          name: Send build stats to Relative CI
+          command: node_modules/.bin/relative-ci-agent --webpack-stats artifacts/webpack.json
+
+      - run:
           name: Send coveralls
           command: cat ./artifacts/coverage/lcov.info | node_modules/.bin/coveralls
 
