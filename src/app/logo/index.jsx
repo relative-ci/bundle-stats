@@ -3,17 +3,17 @@ import styles from './styles.css';
 const Logo = () => (
   <h1
     class={styles.root}
-    title="Mas o Menos"
+    title="Relative CI"
   >
     <a
-      href="https://github.com/mas-o-menos/compare"
+      href="https://github.com/relative-ci/compare"
       target="_blank"
       rel="noopener noreferrer"
       class={styles.link}
     >
       <span class={styles.icon} />
       <span class={styles.text}>
-        mas-o-menos
+        Relative CI
       </span>
     </a>
   </h1>
