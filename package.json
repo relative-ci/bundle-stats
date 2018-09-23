@@ -1,7 +1,7 @@
 {
-  "name": "@mas-o-menos/compare",
+  "name": "@relative-ci/compare",
   "version": "1.0.0",
-  "description": "Compare Webpack assets files",
+  "description": "Compare stats files",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config build/webpack/webpack.config.development.js --progress --hot",
