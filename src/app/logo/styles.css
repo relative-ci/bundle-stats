@@ -40,15 +40,15 @@
 
 .link:hover {
   opacity: 1;
-  background: var(--color-red);
+  background: var(--color-primary);
   color: #fff;
 }
 
 .link:hover .icon {
-  background-color: var(--color-red);
+  background-color: var(--color-primary);
 }
 
 .link:hover .text {
   display: block;
-  background-color: var(--color-red);
+  background-color: var(--color-primary);
 }
