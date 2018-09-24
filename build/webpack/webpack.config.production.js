@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const CopyPlugin = require('copy-webpack-plugin');

@@ -11,3 +11,4 @@ yarn.lock
 dist
 .env
 artifacts
+.env
