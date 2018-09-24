@@ -1,0 +1,30 @@
+{
+  "name": "@relative-ci/utils",
+  "version": "0.0.1",
+  "description": "RelativeCI utils",
+  "repository": "relative-ci/utils",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Viorel Cojocaru",
+    "email": "vio@beanon.com",
+    "url": "http://beanon.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/relative-ci/utils/issues"
+  },
+  "homepage": "https://github.com/relative-ci/utils#readme",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0"
+  }
+}
