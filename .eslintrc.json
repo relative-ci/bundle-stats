@@ -6,6 +6,7 @@
   },
   "parser": "babel-eslint",
   "rules": {
+    "operator-linebreak": ["error", "before", { "overrides": { "&&": "ignore" } }],
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "import/extensions": [
       "error",

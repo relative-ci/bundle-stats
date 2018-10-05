@@ -8,35 +8,33 @@ import withSources from '../../hocs/with-sources';
 import withRuns from '../../hocs/with-runs';
 import calculateTotals from './utils/calculate-totals';
 
-const createAssets = sources =>
-  sources.map(({ loading, error, res }, index) => {
-    if (loading || error) {
-      return {};
-    }
+const createAssets = sources => sources.map(({ loading, error, res }, index) => {
+  if (loading || error) {
+    return {};
+  }
 
-    return {
-      label: `Run #${index}`,
-      data: {
-        ...res,
-        assets: res && res.assets && res.assets.map(item => ({
-          ...item,
-          type: METRIC_TYPE_FILE_SIZE,
-        })),
-      },
-    };
-  });
+  return {
+    label: `Run #${index}`,
+    data: {
+      ...res,
+      assets: res && res.assets && res.assets.map(item => ({
+        ...item,
+        type: METRIC_TYPE_FILE_SIZE,
+      })),
+    },
+  };
+});
 
-const createTotalByType = sources =>
-  sources.map(({ loading, error, res }, index) => {
-    if (loading || error) {
-      return {};
-    }
+const createTotalByType = sources => sources.map(({ loading, error, res }, index) => {
+  if (loading || error) {
+    return {};
+  }
 
-    return {
-      label: `Run #${index}`,
-      data: calculateTotals(res.assets || []),
-    };
-  });
+  return {
+    label: `Run #${index}`,
+    data: calculateTotals(res.assets || []),
+  };
+});
 
 const metricsMap = {};
 

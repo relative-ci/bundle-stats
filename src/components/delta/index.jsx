@@ -29,4 +29,3 @@ Delta.defaultProps = {
 };
 
 export default Delta;
-

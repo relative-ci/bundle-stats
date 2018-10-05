@@ -7,10 +7,9 @@ import {
 } from '../constants';
 import styles from './styles.css';
 
-const getButtonClassNames = (active, filter) =>
-  cx(styles.button, {
-    [styles.active]: active === filter,
-  });
+const getButtonClassNames = (active, filter) => cx(styles.button, {
+  [styles.active]: active === filter,
+});
 
 const Filter = (props) => {
   const {
@@ -25,6 +24,7 @@ const Filter = (props) => {
           <button
             class={getButtonClassNames(active, FILTER_SHOW_ALL)}
             onClick={() => onChange(FILTER_SHOW_ALL)}
+            type="button"
           >
             All files
           </button>
@@ -33,6 +33,7 @@ const Filter = (props) => {
           <button
             class={getButtonClassNames(active, FILTER_SHOW_CHANGED)}
             onClick={() => onChange(FILTER_SHOW_CHANGED)}
+            type="button"
           >
             Changed files
           </button>

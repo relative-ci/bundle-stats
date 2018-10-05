@@ -18,11 +18,9 @@ const resolveUrl = (url) => {
   return url;
 };
 
-const syncSourcesWithParams = sources =>
-  syncUrlsToSearch(map(sources, 'url'));
+const syncSourcesWithParams = sources => syncUrlsToSearch(map(sources, 'url'));
 
-const getSourceIndexById = (sources, id) =>
-  sources.findIndex(source => source.id === id);
+const getSourceIndexById = (sources, id) => sources.findIndex(source => source.id === id);
 
 const getDefaultSource = url => ({
   id: uuid(),
@@ -51,16 +49,14 @@ const enhance = () => (BaseComponent) => {
     addSource = (url) => {
       const source = getDefaultSource(url);
 
-      const nextSources = [
-        ...this.state.sources,
-        source,
-      ];
-
-      syncSourcesWithParams(nextSources);
-      this.fetchSource(source);
-
-      this.setState({
-        sources: nextSources,
+      this.setState(state => ({
+        sources: [
+          ...state,
+          source,
+        ],
+      }), ({ sources }) => {
+        this.fetchSource(source);
+        syncSourcesWithParams(sources);
       });
     }
 
@@ -122,9 +118,11 @@ const enhance = () => (BaseComponent) => {
     };
 
     render() {
+      const { sources } = this.state;
+
       return (
         <BaseComponent
-          sources={this.state.sources}
+          sources={sources}
           addSource={this.addSource}
           removeSource={this.removeSource}
           {...this.props}
