@@ -6,6 +6,15 @@
   },
   "parser": "babel-eslint",
   "rules": {
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "import/extensions": [
+      "error",
+      "never",
+      {
+        "svg": "always",
+        "png": "always",
+        "css": "always"
+      }
+    ]
   }
 }
