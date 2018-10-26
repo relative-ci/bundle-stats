@@ -20,5 +20,5 @@ export const FILE_TYPES = {
 export const getFileType = filename => {
   const foundFileType = Object.entries(FILE_TYPES).find(([, typePattern]) => typePattern.test(filename));
 
-  return foundFileType && foundFileType[0];
+  return foundFileType[0];
 }

@@ -1,15 +1,6 @@
 const { sum, map } = require('lodash');
+const { FILE_TYPES, getFileType } = require('./file-types');
 
-// Content types a la Chrome Dev Toolbar
-const FILE_TYPES = {
-  CSS: /\.css$/,
-  JS: /\.js$/,
-  IMG: /\.(png|jpe?g|webp|gif|svg|ico)$/,
-  MEDIA: /\.(mp4|mp3|mov)$/,
-  FONT: /\.(woff|woff2|ttf|otf)$/,
-  HTML: /\.(html?)$/,
-  OTHER: /^.*$/,
-};
 const METRIC_NAME_ALL = 'ALL';
 const METRIC_NAME_PREFIX = 'totalSizeByType';
 const IGNORED_EXTENSIONS = /\.map$/;
@@ -27,10 +18,9 @@ const constructInitialSizeByType = () =>
 
 const calculateTotalByType = assets =>
   assets.reduce((accumulator, current) => {
-    const foundType = Object.entries(FILE_TYPES).find(([, typePattern]) =>
-      current.name.match(typePattern));
+    const fileType = getFileType(current.name);
 
-    const statName = getMetricName(foundType[0]);
+    const statName = getMetricName(fileType);
     const value = accumulator[statName].value + current.size;
 
     return {
