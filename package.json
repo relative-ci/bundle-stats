@@ -3,11 +3,17 @@
   "version": "0.0.1",
   "description": "RelativeCI utils",
   "repository": "relative-ci/utils",
+  "main": "dist/main.node.js",
+  "module": "src/index.js",
+  "engines": {
+    "node": ">= 8.0"
+  },
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "jest"
+    "build": "rm -fr ./lib && babel src -d lib --ignore **/__tests__/**",
+    "test": "jest src"
   },
   "keywords": [],
   "author": {
@@ -24,7 +30,13 @@
     "lodash": "^4.17.11"
   },
   "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
     "jest": "^23.6.0",
-    "jest-cli": "^23.6.0"
+    "jest-cli": "^23.6.0",
+    "regenerator-runtime": "^0.12.1"
   }
 }
