@@ -9,7 +9,7 @@ const getMetricName = fileType =>
   `${METRIC_NAME_PREFIX}${fileType}`;
 
 const constructInitialSizeByType = () =>
-  Object.keys(FILE_TYPES).reduce((accumulator, fileType) => ({
+  FILE_TYPES.reduce((accumulator, fileType) => ({
     ...accumulator,
     [getMetricName(fileType)]: {
       value: 0,
