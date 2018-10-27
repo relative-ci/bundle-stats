@@ -2,7 +2,7 @@ import {
   FILE_TYPE_CSS,
   FILE_TYPE_JS,
   FILE_TYPE_OTHER,
-  getFileType
+  getFileType,
 } from '../file-types';
 
 test('File types', () => {

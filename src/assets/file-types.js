@@ -21,8 +21,8 @@ export const FILE_TYPES = [
   FILE_TYPE_OTHER,
 ];
 
-export const getFileType = filename => {
-  const foundFileType = Object.entries(FILE_TYPE_PATTERNS).find(([, typePattern]) => typePattern.test(filename));
+export const getFileType = (filename) => {
+  const fileType = Object.entries(FILE_TYPE_PATTERNS).find(([, pattern]) => pattern.test(filename));
 
-  return foundFileType ? foundFileType[0] : FILE_TYPE_OTHER;
-}
+  return fileType ? fileType[0] : FILE_TYPE_OTHER;
+};
