@@ -13,7 +13,8 @@
   },
   "scripts": {
     "build": "rm -fr ./lib && babel src -d lib --ignore **/__tests__/**",
-    "prepublishOnly": "npm test && npm run build",
+    "lint": "eslint ./",
+    "prepublishOnly": "npm lint && npm test && npm run build",
     "test": "jest src"
   },
   "keywords": [],
@@ -36,6 +37,10 @@
     "@babel/preset-env": "^7.1.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.26.2",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "regenerator-runtime": "^0.12.1"
