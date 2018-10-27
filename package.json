@@ -1,6 +1,6 @@
 {
   "name": "@relative-ci/utils",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "RelativeCI utils",
   "repository": "relative-ci/utils",
   "main": "dist/main.node.js",
