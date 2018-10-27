@@ -14,7 +14,7 @@
   "scripts": {
     "build": "rm -fr ./lib && babel src -d lib --ignore **/__tests__/**",
     "lint": "eslint ./",
-    "prepublishOnly": "npm lint && npm test && npm run build",
+    "prepublishOnly": "npm run lint && npm test && npm run build",
     "test": "jest src"
   },
   "keywords": [],
