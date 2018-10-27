@@ -13,6 +13,7 @@
   },
   "scripts": {
     "build": "rm -fr ./lib && babel src -d lib --ignore **/__tests__/**",
+    "prepublishOnly": "npm test && npm run build",
     "test": "jest src"
   },
   "keywords": [],
