@@ -16,6 +16,16 @@ export const FILE_TYPE_PATTERNS = {
   [FILE_TYPE_HTML]: /\.(html?)$/,
 };
 
+export const FILE_TYPE_LABELS = {
+  [FILE_TYPE_CSS]: 'CSS',
+  [FILE_TYPE_JS]: 'JS',
+  [FILE_TYPE_IMG]: 'IMG',
+  [FILE_TYPE_MEDIA]: 'Media',
+  [FILE_TYPE_FONT]: 'Fonts',
+  [FILE_TYPE_HTML]: 'HTML',
+  [FILE_TYPE_OTHER]: 'Other',
+};
+
 export const FILE_TYPES = [
   ...Object.keys(FILE_TYPE_PATTERNS),
   FILE_TYPE_OTHER,
