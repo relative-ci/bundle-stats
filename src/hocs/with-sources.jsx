@@ -49,14 +49,14 @@ const enhance = () => (BaseComponent) => {
     addSource = (url) => {
       const source = getDefaultSource(url);
 
-      this.setState(state => ({
+      this.setState(({ sources }) => ({
         sources: [
-          ...state,
+          ...sources,
           source,
         ],
-      }), ({ sources }) => {
+      }), () => {
         this.fetchSource(source);
-        syncSourcesWithParams(sources);
+        syncSourcesWithParams(this.state.sources);
       });
     }
 
