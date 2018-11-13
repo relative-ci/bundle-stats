@@ -1,4 +1,6 @@
-import { fill, map, mergeWith, omit } from 'lodash';
+import {
+  fill, map, mergeWith, omit,
+} from 'lodash';
 
 const mergeWithRuns = (index, count) => (objValue, srcValue) => {
   // if there are no runs, just create an array and fill it with null
@@ -21,12 +23,11 @@ const mergeRunsById = (runs) => {
   const runsCount = runs.length;
 
   const metricsById = runs.reduce(
-    (aggregator, run, index) =>
-      mergeWith(
-        aggregator,
-        run,
-        mergeWithRuns(index, runsCount),
-      ),
+    (aggregator, run, index) => mergeWith(
+      aggregator,
+      run,
+      mergeWithRuns(index, runsCount),
+    ),
     {},
   );
 

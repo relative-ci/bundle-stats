@@ -23,7 +23,7 @@ const Add = ({ onSubmit }) => {
         placeholder={locale.placeholder}
         required
       />
-      <button class={styles.button}>
+      <button type="submit" class={styles.button}>
         {locale.submit}
       </button>
     </form>

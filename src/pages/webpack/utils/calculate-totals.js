@@ -14,39 +14,34 @@ const METRIC_NAME_ALL = 'ALL';
 const METRIC_NAME_PREFIX = 'webpack.totalSizeByType';
 const IGNORED_EXTENSIONS = /\.map$/;
 
-const getMetricName = fileType =>
-  `${METRIC_NAME_PREFIX}${fileType}`;
+const getMetricName = fileType => `${METRIC_NAME_PREFIX}${fileType}`;
 
-const constructInitialSizeByType = () =>
-  Object.keys(FILE_TYPES).reduce((accumulator, fileType) => ({
-    ...accumulator,
-    [getMetricName(fileType)]: {
-      value: 0,
+const constructInitialSizeByType = () => Object.keys(FILE_TYPES).reduce((agg, fileType) => ({
+  ...agg,
+  [getMetricName(fileType)]: {
+    value: 0,
+  },
+}), {});
+
+const calculateTotalByType = assets => assets.reduce((agg, current) => {
+  const types = Object.entries(FILE_TYPES);
+  const foundType = types.find(([, typePattern]) => current.name.match(typePattern));
+
+  const statName = getMetricName(foundType[0]);
+  const value = agg[statName].value + current.size;
+
+  return {
+    ...agg,
+    [statName]: {
+      value,
     },
-  }), {});
+  };
+}, constructInitialSizeByType());
 
-const calculateTotalByType = assets =>
-  assets.reduce((accumulator, current) => {
-    const foundType = Object.entries(FILE_TYPES).find(([, typePattern]) =>
-      current.name.match(typePattern));
-
-    const statName = getMetricName(foundType[0]);
-    const value = accumulator[statName].value + current.size;
-
-    return {
-      ...accumulator,
-      [statName]: {
-        value,
-      },
-    };
-  }, constructInitialSizeByType());
-
-const isAssetValid = asset =>
-  // Ignore particular extensions
-  !IGNORED_EXTENSIONS.test(asset.name) &&
+const isAssetValid = asset => !IGNORED_EXTENSIONS.test(asset.name)
 
   // Skip files that have 0 size (eg: webpack.json)
-  asset.value !== 0;
+  && asset.value !== 0;
 
 const calculateTotals = (assets) => {
   const filteredAssets = assets.filter(isAssetValid);

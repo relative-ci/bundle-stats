@@ -44,6 +44,7 @@ const Source = (props) => {
         class={styles.url}
         href={url}
         target="_blank"
+        rel="noopener noreferrer"
       >
         {url}
       </a>

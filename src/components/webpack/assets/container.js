@@ -17,8 +17,7 @@ const filterByState = show => (item) => {
   return item.changed;
 };
 
-const sortByStateAndName = item =>
-  [!item.changed, item.key];
+const sortByStateAndName = item => [!item.changed, item.key];
 
 const enhance = compose(
   withProps(({ runs }) => {
