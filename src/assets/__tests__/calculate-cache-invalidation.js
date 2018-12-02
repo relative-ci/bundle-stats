@@ -62,6 +62,20 @@ describe('Calculate cache invalidation', () => {
         ],
       },
       {
+        key: 'app.css',
+        changed: true,
+        runs: [
+          {
+            name: 'app.123.css',
+            value: 90,
+          },
+          {
+            name: 'app.111.css',
+            value: 100,
+          },
+        ],
+      },
+      {
         key: 'logo-old.png',
         changed: true,
         deleted: true,
@@ -87,10 +101,10 @@ describe('Calculate cache invalidation', () => {
       },
     ]);
 
-    // 100 + 200 + 50 + 0 = 300
-    // 110 + 200 + 0 + 50 = 310
-    // 100 / 300
+    // 100 + 200 + 100 + 50 + 0 = 400
+    // 110 + 200 + 90  +  0 + 50 = 400
+    // 200 / 400
 
-    expect(actual).toEqual(33.33);
+    expect(actual).toEqual(50);
   });
 });

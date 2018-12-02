@@ -19,7 +19,7 @@ export const calculateCacheInvalidation = (rows) => {
     }
 
     if (changed) {
-      invalidated = runs[1].value;
+      invalidated += runs[1].value;
     }
 
     cached += runs[1].value;
@@ -28,6 +28,8 @@ export const calculateCacheInvalidation = (rows) => {
   if (cached === 0) {
     return 0;
   }
+
+  console.log(invalidated, cached);
 
   return round(invalidated / cached, 4) * 100;
 };
