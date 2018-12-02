@@ -3,7 +3,7 @@
   "version": "1.2.1",
   "description": "RelativeCI utils",
   "repository": "relative-ci/utils",
-  "main": "dist/main.node.js",
+  "main": "lib/index.js",
   "module": "src/index.js",
   "engines": {
     "node": ">= 8.0"
