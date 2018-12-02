@@ -1,4 +1,4 @@
-const calculateTotals = require('../calculate-totals');
+import { calculateTotals } from '../calculate-totals';
 
 test('Calculate totals', () => {
   const actual = calculateTotals([

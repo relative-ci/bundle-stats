@@ -1,5 +1,5 @@
-const { sum, map } = require('lodash');
-const { FILE_TYPES, getFileType } = require('./file-types');
+import { sum, map } from 'lodash';
+import { FILE_TYPES, getFileType } from './file-types';
 
 const METRIC_NAME_ALL = 'ALL';
 const METRIC_NAME_PREFIX = 'totalSizeByType';
@@ -33,7 +33,8 @@ const isAssetValid = asset => !IGNORED_EXTENSIONS.test(asset.name)
   // Skip files that have 0 size (eg: webpack.json)
   && asset.value !== 0;
 
-const calculateTotals = (assets) => {
+// eslint-disable-next-line import/prefer-default-export
+export const calculateTotals = (assets) => {
   const filteredAssets = assets.filter(isAssetValid);
 
   const stats = {
@@ -45,5 +46,3 @@ const calculateTotals = (assets) => {
 
   return stats;
 };
-
-module.exports = calculateTotals;
