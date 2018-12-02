@@ -29,7 +29,5 @@ export const calculateCacheInvalidation = (rows) => {
     return 0;
   }
 
-  console.log(invalidated, cached);
-
-  return round(invalidated / cached, 4) * 100;
+  return round((invalidated / cached) * 100, 2);
 };
