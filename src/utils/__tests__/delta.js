@@ -14,6 +14,6 @@ test('formatDeta', () => {
   expect(formatDelta(0)).toEqual('0%');
   expect(formatDelta(10)).toEqual('+10%');
   expect(formatDelta(-10)).toEqual('-10%');
-  expect(formatDelta(0.001)).toEqual('+~0.01%');
-  expect(formatDelta(-0.001)).toEqual('-~0.01%');
+  expect(formatDelta(0.001)).toEqual('~+0.01%');
+  expect(formatDelta(-0.001)).toEqual('~-0.01%');
 });

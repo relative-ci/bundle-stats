@@ -24,9 +24,14 @@ export const formatDelta = (value) => {
 
   const absValue = Math.abs(value);
 
-  const displayValue = (absValue > 0 && absValue < 0.1)
-    ? '~0.01'
-    : round(absValue, 2);
+  // eslint-disable-next-line no-nested-ternary
+  const displayValue = (absValue > 0 && absValue < 0.01)
+    ? `~${sign}0.01`
+    : (
+      absValue === 0
+        ? absValue
+        : `${sign}${round(absValue, 2)}`
+    );
 
-  return `${sign}${displayValue}%`;
+  return `${displayValue}%`;
 };
