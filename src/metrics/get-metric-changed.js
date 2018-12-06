@@ -1,7 +1,17 @@
 import { map, uniq } from 'lodash';
 
 export const getMetricChanged = (runs) => {
-  const values = map(runs, 'value');
+  const uniqValues = uniq(map(runs, 'value'));
 
-  return uniq(values).length > 1;
+  if (uniqValues.length > 1) {
+    return true;
+  }
+
+  const uniqNames = uniq(map(runs, 'name'));
+
+  if (uniqNames.length > 1) {
+    return true;
+  }
+
+  return false;
 };

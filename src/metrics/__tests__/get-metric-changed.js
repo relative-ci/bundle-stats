@@ -48,4 +48,19 @@ describe('Metric changed', () => {
 
     expect(actual).toBe(false);
   });
+
+  it('should return true if value is the same but the name changed', () => {
+    const actual = getMetricChanged([
+      {
+        name: 'main.111.js',
+        value: 100,
+      },
+      {
+        name: 'main.100.js',
+        value: 100,
+      },
+    ]);
+
+    expect(actual).toBe(true);
+  });
 });
