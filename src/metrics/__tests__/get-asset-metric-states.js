@@ -36,6 +36,17 @@ describe('Get asset metric states', () => {
 
       expect(actual).toBe(true);
     });
+
+    it('should return true if baseline is null and value is falsy', () => {
+      const actual = getMetricAdded([
+        {
+          value: 0,
+        },
+        null,
+      ]);
+
+      expect(actual).toBe(true);
+    });
   });
 
   describe('deleted', () => {
@@ -57,6 +68,17 @@ describe('Get asset metric states', () => {
         null,
         {
           value: 99,
+        },
+      ]);
+
+      expect(actual).toBe(true);
+    });
+
+    it('should return true if current is null and value falsy', () => {
+      const actual = getMetricDeleted([
+        null,
+        {
+          value: 0,
         },
       ]);
 
