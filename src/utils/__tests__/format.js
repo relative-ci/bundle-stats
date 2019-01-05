@@ -27,5 +27,5 @@ describe('format', () => {
 
   test('formatPercentage', () => {
     expect(formatPercentage(10)).toEqual('10%');
-  })
+  });
 });
