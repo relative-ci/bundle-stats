@@ -71,22 +71,22 @@ const METRICS = {
       },
     },
     cacheInvalidation: {
-      label: 'Cache invalidation',
+      label: 'Cache Invalidation',
       type: METRIC_TYPE_PERCENTAGE,
       biggerIsBetter: false,
     },
     modulesCount: {
-      label: 'Modules count',
+      label: 'Modules Count',
       type: METRIC_TYPE_NUMERIC,
       biggerIsBetter: false,
     },
     chunksCount: {
-      label: 'Chunks count',
+      label: 'Chunks Count',
       type: METRIC_TYPE_NUMERIC,
       biggerIsBetter: false,
     },
     assetsCount: {
-      label: 'Assets count',
+      label: 'Assets Count',
       type: METRIC_TYPE_NUMERIC,
       biggerIsBetter: false,
     },
