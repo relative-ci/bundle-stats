@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/relative-ci/utils#readme",
   "dependencies": {
+    "convert-units": "^2.3.4",
     "lodash": "^4.17.11"
   },
   "devDependencies": {
