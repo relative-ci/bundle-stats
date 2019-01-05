@@ -1,6 +1,6 @@
 {
   "name": "@relative-ci/utils",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "RelativeCI utils",
   "repository": "relative-ci/utils",
   "main": "lib/index.js",
