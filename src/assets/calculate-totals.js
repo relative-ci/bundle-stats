@@ -1,5 +1,7 @@
 import { sum, map } from 'lodash';
-import { FILE_TYPES, getFileType } from './file-types';
+import {
+  FILE_TYPE_CSS, FILE_TYPE_JS, FILE_TYPE_PATTERNS, FILE_TYPES, getFileType,
+} from './file-types';
 
 const METRIC_NAME_ALL = 'ALL';
 const METRIC_NAME_PREFIX = 'totalSizeByType';
@@ -45,4 +47,30 @@ export const calculateTotals = (assets) => {
   };
 
   return stats;
+};
+
+export const calculateInitialTotals = (assets, chunks) => {
+  const initialChunks = chunks.filter(chunk => chunk.initial)
+    .map(({ files }) => files)
+    .flat()
+    .filter(name => !IGNORED_EXTENSIONS.test(name));
+
+  const cssChunksFiles = initialChunks.filter(
+    chunkFile => FILE_TYPE_PATTERNS[FILE_TYPE_CSS].test(chunkFile),
+  );
+  const jsChunksFiles = initialChunks.filter(
+    chunkFile => FILE_TYPE_PATTERNS[FILE_TYPE_JS].test(chunkFile),
+  );
+
+  const cssAssets = assets.filter(({ name }) => cssChunksFiles.includes(name));
+  const jsAssets = assets.filter(({ name }) => jsChunksFiles.includes(name));
+
+  return {
+    totalInitialSizeCSS: {
+      value: sum(map(cssAssets, 'size')),
+    },
+    totalInitialSizeJS: {
+      value: sum(map(jsAssets, 'size')),
+    },
+  };
 };

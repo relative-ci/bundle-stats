@@ -1,4 +1,4 @@
-import { calculateTotals } from '../calculate-totals';
+import { calculateTotals, calculateInitialTotals } from '../calculate-totals';
 
 test('Calculate totals', () => {
   const actual = calculateTotals([
@@ -60,6 +60,79 @@ test('Calculate totals', () => {
     },
     totalSizeByTypeOTHER: {
       value: 0,
+    },
+  };
+
+  expect(actual).toEqual(expected);
+});
+
+test('Calculate initial totals', () => {
+  const actual = calculateInitialTotals([
+    {
+      name: 'js/vendor.js',
+      size: 100,
+    },
+    {
+      name: 'js/vendor.js.map',
+      size: 1000,
+    },
+    {
+      name: 'js/app.js',
+      size: 50,
+    },
+    {
+      name: 'css/app.css',
+      size: 10,
+    },
+    {
+      name: 'css/app.css.map',
+      size: 100,
+    },
+    {
+      name: 'img/logo.svg',
+      size: 10,
+    },
+    {
+      name: 'stats.json',
+      size: 0,
+    },
+  ], [
+    {
+      name: 'vendor',
+      initial: true,
+      files: [
+        'js/vendor.js',
+        'js/vendor.js.map',
+      ],
+    },
+    {
+      name: 'app',
+      initial: true,
+      files: [
+        'js/app.js',
+        'js/app.js.map',
+        'css/app.css',
+        'css/app.css.map',
+      ],
+    },
+    {
+      name: 'chunk-a',
+      initial: false,
+      files: [
+        'js/chunk-a.js',
+        'js/chunk-a.js.map',
+        'js/chunk-a.css',
+        'js/chunk-a.css.map',
+      ],
+    },
+  ]);
+
+  const expected = {
+    totalInitialSizeJS: {
+      value: 150,
+    },
+    totalInitialSizeCSS: {
+      value: 10,
     },
   };
 

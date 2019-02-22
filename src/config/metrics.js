@@ -69,6 +69,14 @@ const METRICS = {
         label: 'Other',
         type: METRIC_TYPE_FILE_SIZE,
       },
+      totalInitialSizeJS: {
+        label: 'Initial JS',
+        type: METRIC_TYPE_FILE_SIZE,
+      },
+      totalInitialSizeCSS: {
+        label: 'Initial CSS',
+        type: METRIC_TYPE_FILE_SIZE,
+      },
     },
     cacheInvalidation: {
       label: 'Cache Invalidation',
