@@ -6,6 +6,7 @@
   "scripts": {
     "build-css": "find src -name \\*.css -exec cp {} lib \\; ",
     "build": "rm -fr ./lib && mkdir lib && npm run build-css",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
