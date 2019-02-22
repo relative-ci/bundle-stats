@@ -36,7 +36,7 @@ const isAssetValid = asset => !IGNORED_EXTENSIONS.test(asset.name)
   && asset.value !== 0;
 
 // eslint-disable-next-line import/prefer-default-export
-export const calculateTotals = (assets) => {
+export const calculateTotals = (assets = []) => {
   const filteredAssets = assets.filter(isAssetValid);
 
   const stats = {
@@ -49,7 +49,7 @@ export const calculateTotals = (assets) => {
   return stats;
 };
 
-export const calculateInitialTotals = (assets, chunks) => {
+export const calculateInitialTotals = (assets = [], chunks = []) => {
   const initialChunks = chunks.filter(chunk => chunk.initial)
     .map(({ files }) => files)
     .flat()
