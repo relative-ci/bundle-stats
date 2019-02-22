@@ -1,4 +1,4 @@
-import { sum, map } from 'lodash';
+import { flatten, sum, map } from 'lodash';
 import {
   FILE_TYPE_CSS, FILE_TYPE_JS, FILE_TYPE_PATTERNS, FILE_TYPES, getFileType,
 } from './file-types';
@@ -50,10 +50,9 @@ export const calculateTotals = (assets = []) => {
 };
 
 export const calculateInitialTotals = (assets = [], chunks = []) => {
-  const initialChunks = chunks.filter(chunk => chunk.initial)
-    .map(({ files }) => files)
-    .flat()
-    .filter(name => !IGNORED_EXTENSIONS.test(name));
+  const initialChunks = flatten(
+    chunks.filter(chunk => chunk.initial).map(({ files }) => files),
+  ).filter(name => !IGNORED_EXTENSIONS.test(name));
 
   const cssChunksFiles = initialChunks.filter(
     chunkFile => FILE_TYPE_PATTERNS[FILE_TYPE_CSS].test(chunkFile),
