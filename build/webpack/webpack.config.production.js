@@ -33,4 +33,21 @@ module.exports = webpackMerge(commonConfig, {
       warnings: false,
     }),
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      name: true,
+      minSize: Infinity,
+      cacheGroups: {
+        vendor: {
+          chunks: 'initial',
+          name: 'vendor',
+          filename: 'vendor.[contenthash:5].js',
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          enforce: true,
+        },
+      },
+    },
+  },
 });
