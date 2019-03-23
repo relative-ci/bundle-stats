@@ -34,11 +34,11 @@ const getDefaultSource = url => ({
 
 const enhance = () => (BaseComponent) => {
   class WithSources extends Component {
-    defaultProps = {
+    static defaultProps = {
       initialUrls: [],
     }
 
-    propTypes = {
+    static propTypes = {
       initialUrls: PropTypes.arrayOf(PropTypes.string),
     }
 
