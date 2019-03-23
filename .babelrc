@@ -1,24 +1,31 @@
 {
   "presets": [
-    ["env", {
-      "loose": true,
-        "modules": false,
-        "useBuiltIns": "usage",
-    }],
-    "react"
+    [
+      "@babel/preset-env",
+      {
+        "loose": true,
+        "modules": false
+      }
+    ],
+    "@babel/preset-react"
   ],
   "plugins": [
-    "transform-object-rest-spread",
-    "transform-class-properties",
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-proposal-class-properties",
     "preact-require",
-    ["transform-react-jsx", {"pragma": "h"}],
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "pragma": "h"
+      }
+    ],
     "lodash"
   ],
   "env": {
     "test": {
       "presets": [
-        "env",
-        "react"
+        "@babel/preset-env",
+        "@babel/preset-react"
       ]
     }
   }

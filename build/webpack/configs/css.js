@@ -1,4 +1,4 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CssExtractPlugin = require('mini-css-extract-plugin');
 
 const { isDevelopment } = require('../../settings');
 
@@ -13,9 +13,9 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: isDevelopment ?
-                '[path][name]__[local]' :
-                '[hash:base64:5]',
+              localIdentName: isDevelopment
+                ? '[path][name]__[local]'
+                : '[hash:base64:5]',
             },
           },
           'postcss-loader',
@@ -27,17 +27,13 @@ module.exports = {
       {
         test: /\.css$/,
         enforce: 'post',
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [],
-        }),
+        use: isDevelopment ? 'style-loader' : CssExtractPlugin.loader,
       },
     ],
   },
   plugins: [
-    new ExtractTextPlugin({
+    new CssExtractPlugin({
       filename: '[name].[contenthash:5].css',
-      disable: isDevelopment,
     }),
   ],
 };

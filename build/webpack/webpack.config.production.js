@@ -32,13 +32,5 @@ module.exports = webpackMerge(commonConfig, {
       chunks: false,
       warnings: false,
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: ({ context }) => context && context.match(/node_modules/),
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'manifest',
-      minChunks: Infinity,
-    }),
   ],
 });
