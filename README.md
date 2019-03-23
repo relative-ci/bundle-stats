@@ -1,6 +1,6 @@
 # Compare
 
-Side by side comparison for build stats. https://compare.relative-ci.com
+Side by side comparison for webpack/lighthouse/browsertime stats - https://compare.relative-ci.com.
 
 [![RelativeCI badge](https://img.shields.io/badge/RelativeCI-enabled-brightgreen.svg)](https://app.relative-ci.com/projects/og7ULMMCOgGWXBxRJocI)
 [![Greenkeeper badge](https://badges.greenkeeper.io/relative-ci/compare.svg)](https://greenkeeper.io/)
