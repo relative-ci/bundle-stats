@@ -44,7 +44,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@nivo/bar": "^0.53.1",
+    "@nivo/bar": "^0.54.0",
     "@relative-ci/agent": "1.0.0-2",
     "autoprefixer": "^9.5.0",
     "babel-core": "^7.0.0-bridge.0",
