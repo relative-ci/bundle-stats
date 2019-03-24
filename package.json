@@ -21,6 +21,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
+    "@relative-ci/agent": "^1.1.1",
     "@storybook/react": "^5.0.3",
     "babel-loader": "^8.0.5",
     "classnames": "^2.2.6",
@@ -36,6 +37,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
+    "stats-webpack-plugin": "^0.7.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },

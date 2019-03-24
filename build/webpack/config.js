@@ -1,4 +1,5 @@
 const path = require('path');
+const StatsPlugin = require('stats-webpack-plugin');
 
 const ROOT = path.join(__dirname, '../../');
 const CONTEXT = path.join(ROOT, 'src');
@@ -58,4 +59,12 @@ module.exports = {
     ],
   },
   devtool: 'source-map',
+  plugins: [
+    new StatsPlugin('../artifacts/webpack-stats.json', {
+      all: false,
+      assets: true,
+      modules: true,
+      chunks: true,
+    }),
+  ],
 };
