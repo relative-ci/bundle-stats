@@ -1,3 +1,5 @@
 module.exports = {
-  'pre-push': 'npm run lint && npm test',
+  hooks: {
+    'pre-push': 'npm run lint && npm test',
+  }
 };
