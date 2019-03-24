@@ -24,7 +24,11 @@ jobs:
           key: dependencies-{{ checksum "package.json" }}
 
       - run:
-          name: Build application
+          name: Test
+          command: npm test
+
+      - run:
+          name: Build package
           command: NODE_ENV=production npm run build
 
       - run:
