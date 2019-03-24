@@ -2,10 +2,11 @@
   "name": "@relative-ci/ui",
   "version": "0.0.1",
   "description": "Relative CI shared UI",
-  "main": "lib/index.js",
+  "main": "lib/relative-ci-ui.js",
   "scripts": {
     "build-css": "find src -name \\*.css -exec cp {} lib \\; ",
-    "build": "rm -fr ./lib && mkdir lib && npm run build-css",
+    "build-components": "webpack --config ./build/webpack/config.js --mode production",
+    "build": "rm -fr ./lib && mkdir lib && npm run build-css && npm run build-components",
     "dev": "start-storybook -c ./build/storybook",
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,12 +15,21 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
     "@storybook/react": "^5.0.3",
+    "babel-loader": "^8.0.5",
     "classnames": "^2.2.6",
     "core-js": "^3.0.0",
+    "css-loader": "^2.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react-dom": "^16.8.5",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   },
   "peerDependencies": {
     "classnames": "^2.2.6",
