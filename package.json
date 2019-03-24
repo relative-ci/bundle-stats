@@ -6,10 +6,25 @@
   "scripts": {
     "build-css": "find src -name \\*.css -exec cp {} lib \\; ",
     "build": "rm -fr ./lib && mkdir lib && npm run build-css",
+    "dev": "start-storybook -c ./build/storybook",
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@storybook/react": "^5.0.3",
+    "classnames": "^2.2.6",
+    "core-js": "^3.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
+  },
+  "peerDependencies": {
+    "classnames": "^2.2.6",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
+  }
 }
