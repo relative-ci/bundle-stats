@@ -16,11 +16,13 @@ export const Metric = ({
 );
 
 Metric.defaultProps = {
+  className: '',
   value: 0,
   children: [],
 };
 
 Metric.propTypes = {
+  className: PropTypes.string,
   value: PropTypes.number,
   formatter: PropTypes.func.isRequired,
   children: PropTypes.node,

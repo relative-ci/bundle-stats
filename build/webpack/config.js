@@ -39,8 +39,8 @@ module.exports = {
       root: 'ReactDOM',
     },
   },
-  resolve:{
-    extensions: ['.jsx', '.js', '.json']
+  resolve: {
+    extensions: ['.jsx', '.js', '.json'],
   },
   module: {
     rules: [
@@ -48,14 +48,14 @@ module.exports = {
         test: /\.jsx?/,
         use: [
           'babel-loader',
-          'eslint-loader'
-        ]
+          'eslint-loader',
+        ],
       },
       {
         test: /\.css/,
-        use: 'css-loader'
-      }
-    ]
+        use: 'css-loader',
+      },
+    ],
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
 };
