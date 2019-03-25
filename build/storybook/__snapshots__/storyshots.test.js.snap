@@ -1,5 +1,435 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots BundleAssetsTotalsTable default 1`] = `
+<table
+  className="root"
+>
+  <thead>
+    <tr>
+      <th
+        className="cell metricName"
+        style={
+          Object {
+            "textAlign": undefined,
+            "width": undefined,
+          }
+        }
+      >
+         
+      </th>
+      <th
+        className="cell value current"
+        style={
+          Object {
+            "textAlign": undefined,
+            "width": undefined,
+          }
+        }
+      >
+         
+      </th>
+      <th
+        className="cell value baseline"
+        style={
+          Object {
+            "textAlign": undefined,
+            "width": undefined,
+          }
+        }
+      />
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      className=""
+    >
+      <td
+        className="cell metricName"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        Total Size
+      </td>
+      <td
+        className="cell value current"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          2.47MB
+          <span
+            className="delta"
+          >
+            <span
+              className="root"
+            >
+              <code
+                className="value negative"
+              >
+                +0.36%
+              </code>
+            </span>
+          </span>
+        </code>
+      </td>
+      <td
+        className="cell value baseline"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          2.46MB
+          <span
+            className="delta"
+          />
+        </code>
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td
+        className="cell metricName"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        CSS
+      </td>
+      <td
+        className="cell value current"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          152.65KB
+          <span
+            className="delta"
+          >
+            <span
+              className="root"
+            >
+              <code
+                className="value negative"
+              >
+                +0.96%
+              </code>
+            </span>
+          </span>
+        </code>
+      </td>
+      <td
+        className="cell value baseline"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          151.2KB
+          <span
+            className="delta"
+          />
+        </code>
+      </td>
+    </tr>
+    <tr
+      className="unchanged"
+    >
+      <td
+        className="cell metricName"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        Fonts
+      </td>
+      <td
+        className="cell value current"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        -
+      </td>
+      <td
+        className="cell value baseline"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        -
+      </td>
+    </tr>
+    <tr
+      className="unchanged"
+    >
+      <td
+        className="cell metricName"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        HTML
+      </td>
+      <td
+        className="cell value current"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          40B
+          <span
+            className="delta"
+          />
+        </code>
+      </td>
+      <td
+        className="cell value baseline"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          40B
+          <span
+            className="delta"
+          />
+        </code>
+      </td>
+    </tr>
+    <tr
+      className="unchanged"
+    >
+      <td
+        className="cell metricName"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        IMG
+      </td>
+      <td
+        className="cell value current"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          278.12KB
+          <span
+            className="delta"
+          />
+        </code>
+      </td>
+      <td
+        className="cell value baseline"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          278.12KB
+          <span
+            className="delta"
+          />
+        </code>
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td
+        className="cell metricName"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        JS
+      </td>
+      <td
+        className="cell value current"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          2.05MB
+          <span
+            className="delta"
+          >
+            <span
+              className="root"
+            >
+              <code
+                className="value negative"
+              >
+                +0.36%
+              </code>
+            </span>
+          </span>
+        </code>
+      </td>
+      <td
+        className="cell value baseline"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          2.04MB
+          <span
+            className="delta"
+          />
+        </code>
+      </td>
+    </tr>
+    <tr
+      className="unchanged"
+    >
+      <td
+        className="cell metricName"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        Media
+      </td>
+      <td
+        className="cell value current"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        -
+      </td>
+      <td
+        className="cell value baseline"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        -
+      </td>
+    </tr>
+    <tr
+      className="unchanged"
+    >
+      <td
+        className="cell metricName"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        Other
+      </td>
+      <td
+        className="cell value current"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          788B
+          <span
+            className="delta"
+          />
+        </code>
+      </td>
+      <td
+        className="cell value baseline"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          788B
+          <span
+            className="delta"
+          />
+        </code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
 exports[`Storyshots Delta biggerIsBetter - false 1`] = `
 <span
   className="root"
