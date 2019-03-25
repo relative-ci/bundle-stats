@@ -8,7 +8,7 @@
     "build-components": "webpack --config ./build/webpack/config.js --mode production",
     "build": "rm -fr ./lib && mkdir lib && npm run build-css && npm run build-components",
     "dev": "start-storybook -c ./build/storybook -p 8080",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .jsx,.js",
     "prepublishOnly": "npm run build",
     "test": "jest"
   },
