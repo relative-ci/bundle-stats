@@ -49,6 +49,315 @@ exports[`Storyshots Metric default 1`] = `
 </code>
 `;
 
+exports[`Storyshots MetricsTable default 1`] = `
+<table
+  className="root"
+>
+  <thead>
+    <tr>
+      <th
+        className="cell metricName"
+        style={
+          Object {
+            "textAlign": undefined,
+            "width": undefined,
+          }
+        }
+      >
+         
+      </th>
+      <th
+        className="cell value current"
+        style={
+          Object {
+            "textAlign": undefined,
+            "width": undefined,
+          }
+        }
+      >
+        Run #1
+      </th>
+      <th
+        className="cell value baseline"
+        style={
+          Object {
+            "textAlign": undefined,
+            "width": undefined,
+          }
+        }
+      >
+        Run #2
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      className=""
+    >
+      <td
+        className="cell metricName"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        webpack.totalSize
+      </td>
+      <td
+        className="cell value current"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          873421
+          <span
+            className="delta"
+          />
+        </code>
+      </td>
+      <td
+        className="cell value baseline"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          122331
+          <span
+            className="delta"
+          >
+            <span
+              className="root"
+            >
+              <code
+                className="value positive"
+              >
+                -85.99%
+              </code>
+            </span>
+          </span>
+        </code>
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td
+        className="cell metricName"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        lighthouse.time-to-first-byte
+      </td>
+      <td
+        className="cell value current"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          1231
+          <span
+            className="delta"
+          />
+        </code>
+      </td>
+      <td
+        className="cell value baseline"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          980
+          <span
+            className="delta"
+          >
+            <span
+              className="root"
+            >
+              <code
+                className="value positive"
+              >
+                -20.39%
+              </code>
+            </span>
+          </span>
+        </code>
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td
+        className="cell metricName"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        Score
+      </td>
+      <td
+        className="cell value current"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          80
+          <span
+            className="delta"
+          />
+        </code>
+      </td>
+      <td
+        className="cell value baseline"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          70
+          <span
+            className="delta"
+          >
+            <span
+              className="root"
+            >
+              <code
+                className="value negative"
+              >
+                -12.5%
+              </code>
+            </span>
+          </span>
+        </code>
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td
+        className="cell metricName"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        webpack.totalSizeByType_js
+      </td>
+      <td
+        className="cell value current"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          344232
+          <span
+            className="delta"
+          />
+        </code>
+      </td>
+      <td
+        className="cell value baseline"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        -
+      </td>
+    </tr>
+    <tr
+      className="unchanged"
+    >
+      <td
+        className="cell metricName"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        lighthouse.performance-score
+      </td>
+      <td
+        className="cell value current"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          80
+          <span
+            className="delta"
+          />
+        </code>
+      </td>
+      <td
+        className="cell value baseline"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        <code
+          className="root"
+        >
+          80
+          <span
+            className="delta"
+          />
+        </code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
 exports[`Storyshots Table default 1`] = `
 <table
   className="root"

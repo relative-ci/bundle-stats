@@ -1,0 +1,28 @@
+/* columns */
+.metricName {
+  width: 100%;
+}
+
+.value {
+  text-align: right;
+}
+
+.current {
+  border-left-color: transparent;
+}
+
+.root .baseline {
+  background-image: linear-gradient(to right, var(--color-gray-light), rgba(255, 255, 255, 0));
+  background-repeat: repeat-y;
+  background-size: 3px 100%;
+  background-position: 0 0;
+}
+
+.delta {
+  padding-left: var(--space-xsmall);
+  text-align: right;
+}
+
+.unchanged td {
+  color: var(--color-gray-light);
+}

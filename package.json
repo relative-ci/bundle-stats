@@ -22,6 +22,7 @@
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
     "@relative-ci/agent": "^1.1.1",
+    "@relative-ci/utils": "^1.8.2",
     "@storybook/addon-storyshots": "^5.0.3",
     "@storybook/addons": "^5.0.3",
     "@storybook/react": "^5.0.3",
@@ -50,6 +51,7 @@
     "webpack-cli": "^3.3.0"
   },
   "peerDependencies": {
+    "@relative-ci/utils": "^1.8.2",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
