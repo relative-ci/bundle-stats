@@ -7,4 +7,10 @@ module.exports = {
       { peerDependencies: true },
     ],
   },
+  plugins: [
+    'jest',
+  ],
+  env: {
+    'jest/globals': true,
+  },
 };
