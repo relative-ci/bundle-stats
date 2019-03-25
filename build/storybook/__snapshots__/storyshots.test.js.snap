@@ -1388,3 +1388,24 @@ exports[`Storyshots Table with row headers 1`] = `
   </tbody>
 </table>
 `;
+
+exports[`Storyshots Tooltip default 1`] = `
+<div
+  style={
+    Object {
+      "padding": "100px 100px",
+    }
+  }
+>
+  <span
+    className="root"
+  >
+    Job #100
+    <div
+      className="tooltip"
+    >
+      View job #100
+    </div>
+  </span>
+</div>
+`;
