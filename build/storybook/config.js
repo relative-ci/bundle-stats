@@ -1,5 +1,7 @@
 import { configure } from '@storybook/react';
 
+import '../../src/css/variables.css';
+
 const req = require.context('../../src/components', true, /\.stories\.jsx$/);
 
 function loadStories() {
