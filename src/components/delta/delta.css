@@ -1,0 +1,12 @@
+.root {
+  display: block;
+  text-align: right;
+}
+
+.positive {
+  color: var(--color-green);
+}
+
+.negative {
+  color: var(--color-red);
+}

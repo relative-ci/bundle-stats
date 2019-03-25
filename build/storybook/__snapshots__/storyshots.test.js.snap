@@ -1,5 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Delta biggerIsBetter - false 1`] = `
+<span
+  className="root"
+>
+  <code
+    className="value negative"
+  >
+    20kb
+  </code>
+</span>
+`;
+
+exports[`Storyshots Delta default 1`] = `
+<span
+  className="root"
+>
+  <code
+    className="value positive"
+  >
+    20kb
+  </code>
+</span>
+`;
+
+exports[`Storyshots Delta empty 1`] = `
+<span
+  className="root"
+>
+  <code
+    className="value"
+  >
+    0kb
+  </code>
+</span>
+`;
+
 exports[`Storyshots Metric default 1`] = `
 <code
   className="root"
