@@ -49,6 +49,7 @@
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-test-renderer": "^16.8.5",
+    "recompose": "^0.30.0",
     "stats-webpack-plugin": "^0.7.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
@@ -59,7 +60,8 @@
     "lodash": "^4.17.11",
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react-dom": "^16.8.5",
+    "recompose": "^0.30.0"
   },
   "dependencies": {
     "babel-plugin-lodash": "^3.3.4"

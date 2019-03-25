@@ -1,3 +1,4 @@
+export { BundleAssets } from './components/bundle-assets';
 export { BundleAssetsTotalsTable } from './components/bundle-assets-totals-table';
 export { Delta } from './components/delta';
 export { IconText } from './components/icon-text';

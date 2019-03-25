@@ -1,0 +1,84 @@
+.header {
+  margin-bottom: var(--space-xxsmall);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.title {
+  margin-bottom: 0;
+  margin-right: var(--space-xsmall);
+  flex: 0 0 auto;
+  font-size: var(--size-xlarge);
+  line-height: var(--space-medium);
+}
+
+.filters {
+  flex: 0 0 auto;
+}
+
+.notPredictive {
+  margin-right: var(--space-xxsmall);
+  display: inline-block;
+  width: var(--space-small);
+  height: var(--space-small);
+  vertical-align: middle;
+}
+
+.notPredictiveIcon {
+  vertical-align: top;
+}
+
+.flag {
+  margin-right: var(--space-xxsmall);
+  display: inline-block;
+  width: var(--space-small);
+  height: var(--space-small);
+  font-size: 10px;
+  font-weight: bold;
+  background: var(--color-gray-xxlight);
+  color: var(--color-gray-light);
+  line-height: var(--space-small);
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.flagEntry {
+  composes: flag;
+  background: var(--color-blue);
+  color: var(--color-light);
+}
+
+.flagInitial {
+  composes: flag;
+  background: var(--color-green);
+  color: var(--color-light);
+}
+
+.flagChunk {
+  composes: flag;
+}
+
+.tooltipNotPredictive {
+  text-align: left;
+}
+
+.tooltipNotPredictiveText {
+  margin-bottom: var(--space-xxxsmall);
+}
+
+.tooltipNotPredictiveName {
+  display: block;
+  line-height: 1.3;
+}
+
+.tooltipFilename {
+  text-align: left;
+}
+
+.tooltipTable td,
+.tooltipTable th {
+  padding: 0 var(--space-xxxsmall) 0 0;
+}
