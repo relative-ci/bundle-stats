@@ -1,0 +1,90 @@
+.root {
+  position: relative;
+  display: inline-block;
+}
+
+.label {
+  padding: var(--space-xxxsmall);
+  display: flex;
+  align-items: center;
+
+  color: var(--color-gray-light);
+  font-size: var(--size-small);
+  line-height: 1.1;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.label:hover {
+  color: var(--color-gray);
+}
+
+.labelIcon {
+  margin-right: var(--space-xxxsmall);
+}
+
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: #fff;
+  box-shadow: 0 2px 5px #ddd;
+  min-width: 160px;
+  z-index: 1000;
+  padding: var(--space-xsmall) var(--space-small);
+}
+
+* + .group {
+  margin-top: var(--space-xxxsmall);
+  border-top: 1px solid var(--color-gray-xxlight);
+  padding-top: var(--space-xxxsmall);
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  font-size: var(--size-xsmall);
+}
+
+.groupTitle {
+  flex: 1 1 100%;
+  margin: 0 var(--space-xsmall) 0 0;
+  margin-bottom: 0;
+  font-size: inherit;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.filter {
+  white-space: no-wrap;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: var(--size-small);
+  line-height: var(--space-medium);
+}
+
+.filter:hover {
+  color: var(--color-dark);
+}
+
+.filterInput {
+  flex: 0 0 auto;
+  margin-right: var(--space-xxxsmall);
+}
+
+.filterLabel {
+  flex: 1 1 auto;
+  margin-right: var(--space-small);
+}
+
+/* Dropdown toggle */
+.root .dropdown {
+  display: none;
+}
+
+.root:hover .dropdown {
+  display: block;
+}

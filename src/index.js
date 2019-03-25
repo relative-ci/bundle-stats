@@ -5,4 +5,5 @@ export { JobName } from './components/job-name';
 export { Metric } from './components/metric';
 export { MetricsTable } from './components/metrics-table';
 export { Table } from './components/table';
+export { TableFilters } from './components/table-filters';
 export { Tooltip } from './components/tooltip';
