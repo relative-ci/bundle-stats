@@ -12,3 +12,604 @@ exports[`Storyshots Metric default 1`] = `
   </span>
 </code>
 `;
+
+exports[`Storyshots Table default 1`] = `
+<table
+  className="root"
+>
+  <thead>
+    <tr />
+  </thead>
+  <tbody>
+    <tr
+      className=""
+    >
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        a1
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        b1
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        c1
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        a2
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        b2
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        c2
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        a3
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        b3
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        c3
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Storyshots Table with custom alignment 1`] = `
+<table
+  className="root"
+>
+  <thead>
+    <tr>
+      <th
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+            "width": undefined,
+          }
+        }
+      >
+        
+      </th>
+      <th
+        className="cell"
+        style={
+          Object {
+            "textAlign": "right",
+            "width": undefined,
+          }
+        }
+      >
+        Col A (right)
+      </th>
+      <th
+        className="cell"
+        style={
+          Object {
+            "textAlign": "center",
+            "width": undefined,
+          }
+        }
+      >
+        Col B (center)
+      </th>
+      <th
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+            "width": undefined,
+          }
+        }
+      >
+        Col C
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      className=""
+    >
+      <th
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+            "width": undefined,
+          }
+        }
+      >
+        row 1
+      </th>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": "right",
+          }
+        }
+      >
+        a1
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        b1
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        c1
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <th
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+            "width": undefined,
+          }
+        }
+      >
+        row 2
+      </th>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": "right",
+          }
+        }
+      >
+        a2
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        b2
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        c2
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <th
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+            "width": undefined,
+          }
+        }
+      >
+        row 3
+      </th>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": "right",
+          }
+        }
+      >
+        a3
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        b3
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        c3
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Storyshots Table with headers 1`] = `
+<table
+  className="root"
+>
+  <thead>
+    <tr>
+      <th
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+            "width": undefined,
+          }
+        }
+      >
+        Col A
+      </th>
+      <th
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+            "width": undefined,
+          }
+        }
+      >
+        Col B
+      </th>
+      <th
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+            "width": undefined,
+          }
+        }
+      >
+        Col C
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      className=""
+    >
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        a1
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        b1
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        c1
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        a2
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        b2
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        c2
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        a3
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        b3
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        c3
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Storyshots Table with row headers 1`] = `
+<table
+  className="root"
+>
+  <thead>
+    <tr />
+  </thead>
+  <tbody>
+    <tr
+      className=""
+    >
+      <th
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+            "width": undefined,
+          }
+        }
+      >
+        row 1
+      </th>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        a1
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        b1
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        c1
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <th
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+            "width": undefined,
+          }
+        }
+      >
+        row 2
+      </th>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        a2
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        b2
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        c2
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <th
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+            "width": undefined,
+          }
+        }
+      >
+        row 3
+      </th>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        a3
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        b3
+      </td>
+      <td
+        className="cell"
+        style={
+          Object {
+            "textAlign": undefined,
+          }
+        }
+      >
+        c3
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
