@@ -466,6 +466,69 @@ exports[`Storyshots Delta empty 1`] = `
 </span>
 `;
 
+exports[`Storyshots JobName custom component 1`] = `
+<div
+  style={
+    Object {
+      "padding": "100px",
+    }
+  }
+>
+  <strong
+    className="root"
+  >
+    Job #10
+    <div
+      className="tooltip"
+    >
+      View job details
+    </div>
+  </strong>
+</div>
+`;
+
+exports[`Storyshots JobName default 1`] = `
+<div
+  style={
+    Object {
+      "padding": "100px",
+    }
+  }
+>
+  <span
+    className="root"
+  >
+    Job #10
+    <div
+      className="tooltip"
+    >
+      View job details
+    </div>
+  </span>
+</div>
+`;
+
+exports[`Storyshots JobName render 1`] = `
+<div
+  style={
+    Object {
+      "padding": "100px",
+    }
+  }
+>
+  <span
+    className="root"
+  >
+    #10
+    <div
+      className="tooltip"
+    >
+      View job details
+    </div>
+  </span>
+</div>
+`;
+
 exports[`Storyshots Metric default 1`] = `
 <code
   className="root"
