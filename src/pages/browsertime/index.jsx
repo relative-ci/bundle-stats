@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Helmet from 'preact-helmet';
+import { MetricsTable } from '@relative-ci/ui';
 
-import MetricsTable from '../../components/metrics-table';
 import Sources from '../../components/sources';
 import config from './config.json';
 import locale from './locale.json';

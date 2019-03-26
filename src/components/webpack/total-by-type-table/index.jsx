@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
+import { MetricsTable } from '@relative-ci/ui';
 
-import MetricsTable from '../../metrics-table';
 import enhance from './container';
 
 const TotalByTypeTable = ({ runs, rows }) => (

@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
+import { MetricsTable } from '@relative-ci/ui';
 
 import Helmet from '../../components/helmet';
 import Sources from '../../components/sources';
-import MetricsTable from '../../components/metrics-table';
 import config from './config.json';
 import locale from './locale.json';
 import enhance from './container';
