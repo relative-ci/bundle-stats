@@ -32,7 +32,7 @@
     "lodash": "^4.17.11",
     "preact": "^8.4.2",
     "preact-helmet": "^4.0.0-alpha-3",
-    "preact-router": "^3.0.0",
+    "preact-router": "^2.6.1",
     "prop-types": "^15.7.2",
     "recompose": "^0.30.0",
     "uuid": "^3.3.2",
