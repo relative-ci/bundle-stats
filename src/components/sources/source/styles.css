@@ -1,7 +1,7 @@
 .root {
   position: relative;
   padding: var(--space-xsmall);
-  border: 1px solid var(--color-gray-light);
+  border: 1px solid var(--color-gray-xxlight);
 }
 
 .title {

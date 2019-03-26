@@ -1,5 +1,5 @@
 .root {
-  margin: 0 0 var(--space);
+  margin: 0 0 var(--space-medium);
 }
 
 .example {

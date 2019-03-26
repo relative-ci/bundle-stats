@@ -1,6 +1,6 @@
 .root {
   position: absolute;
-  left: var(--space);
+  left: var(--space-medium);
   top: 50%;
   margin-top: -1rem;
   width: 2rem;

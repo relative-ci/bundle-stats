@@ -8,10 +8,10 @@
 }
 
 .input {
-  border: 1px solid var(--color-gray-light);
+  border: 1px solid var(--color-gray-xxlight);
   padding: var(--space-xsmall);
   background: #fff;
-  color: var(-color-gray);
+  color: var(--color-gray);
   flex: 1 1 auto;
   outline: 0;
 }
@@ -21,9 +21,9 @@
 }
 
 .button {
-  padding: var(--space-xsmall) var(--space);
+  padding: var(--space-xsmall) var(--space-medium);
   border: 0;
-  background: var(--color-gray-light);
+  background: var(--color-gray-xxlight);
   color: var(--color-gray-dark);
   cursor: pointer;
   outline: none;
