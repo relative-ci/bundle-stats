@@ -6,6 +6,10 @@ import App from './app';
 import './index.css';
 import './analytics';
 
+if (__DEVELOPMENT__) {
+  require('preact/debug'); // eslint-disable-line global-require
+}
+
 let appElm = document.body.firstElementChild;
 
 const renderApp = () => {
