@@ -1,40 +1,26 @@
-import {
-  compose,
-  withProps,
-} from 'recompose';
+import { compose, withProps } from 'recompose';
+import { createStats } from '@relative-ci/utils';
 
-import { METRIC_TYPE_FILE_SIZE } from '../../config/metrics';
 import withSources from '../../hocs/with-sources';
 import withRuns from '../../hocs/with-runs';
-import calculateTotals from './utils/calculate-totals';
 
-const createAssets = sources => sources.map(({ loading, error, res }, index) => {
-  if (loading || error) {
-    return {};
-  }
-
-  return {
-    label: `Run #${index}`,
-    data: {
-      ...res,
-      assets: res && res.assets && res.assets.map(item => ({
-        ...item,
-        type: METRIC_TYPE_FILE_SIZE,
-      })),
+const createJobs = sources => sources.map(({ res }, index) => ({
+  internalBuildNumber: index,
+  rawData: {
+    webpack: {
+      stats: res,
     },
-  };
-});
-
-const createTotalByType = sources => sources.map(({ loading, error, res }, index) => {
-  if (loading || error) {
-    return {};
-  }
-
-  return {
-    label: `Run #${index}`,
-    data: calculateTotals(res.assets || []),
-  };
-});
+  },
+})).reduce((agg, job, index, jobs) => [
+  ...agg,
+  {
+    ...job,
+    stats: createStats(
+      jobs[index + 1] && jobs[index + 1].rawData,
+      job.rawData,
+    ),
+  },
+], []);
 
 const metricsMap = {};
 
@@ -46,8 +32,7 @@ const enhance = compose(
   withSources(),
   withRuns(metricsMap, metaMap),
   withProps(({ sources }) => ({
-    assets: createAssets(sources),
-    totalByType: createTotalByType(sources),
+    jobs: createJobs(sources),
   })),
 );
 

@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
+import { BundleAssets, BundleAssetsTotalsTable } from '@relative-ci/ui';
+import { isEmpty } from 'lodash';
 
 import Helmet from '../../components/helmet';
 import Sources from '../../components/sources';
-import Assets from '../../components/webpack/assets';
-import TotalByTypeTable from '../../components/webpack/total-by-type-table';
 import config from './config.json';
 import locale from './locale.json';
 import enhance from './container';
@@ -15,8 +15,7 @@ const Webpack = (props) => {
     addSource,
     removeSource,
     runs,
-    assets,
-    totalByType,
+    jobs,
   } = props;
 
   return (
@@ -35,19 +34,18 @@ const Webpack = (props) => {
         removeSource={removeSource}
       />
 
-      {totalByType.length > 0 && (
-        <div className={styles.totalByType}>
-          <TotalByTypeTable runs={totalByType} />
-        </div>
+      {!isEmpty(jobs) && (
+        <BundleAssetsTotalsTable
+          className={styles.totalsByType}
+          jobs={jobs}
+        />
       )}
 
-      {assets.length > 0 && (
-        <div className={styles.assets}>
-          <Assets
-            runs={assets}
-            className={styles.assets}
-          />
-        </div>
+      {!isEmpty(jobs) && (
+        <BundleAssets
+          className={styles.assets}
+          jobs={jobs}
+        />
       )}
     </div>
   );
@@ -56,8 +54,7 @@ const Webpack = (props) => {
 Webpack.defaultProps = {
   sources: [],
   runs: [],
-  totalByType: [],
-  assets: [],
+  jobs: [],
 };
 
 Webpack.propTypes = {
@@ -65,8 +62,17 @@ Webpack.propTypes = {
   addSource: PropTypes.func.isRequired,
   removeSource: PropTypes.func.isRequired,
   runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
-  totalByType: PropTypes.array, // eslint-disable-line react/forbid-prop-types
-  assets: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  jobs: PropTypes.arrayOf(PropTypes.shape({
+    internalBuildNumber: PropTypes.number,
+    rawData: PropTypes.shape({
+      webpack: PropTypes.shape({
+        assets: PropTypes.arrayOf(PropTypes.shape({
+          name: PropTypes.string,
+          size: PropTypes.number,
+        })),
+      }),
+    }),
+  })),
 };
 
 export default enhance(Webpack);
