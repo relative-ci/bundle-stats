@@ -1,4 +1,4 @@
-import { createStats } from '..';
+import { createStats } from '../create';
 
 describe('createStats', () => {
   test('should create stats when baseline is null', () => {
