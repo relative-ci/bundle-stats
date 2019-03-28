@@ -1,0 +1,18 @@
+.chart {
+  height: 140px;
+}
+
+.legendItem {
+  list-style: none;
+}
+
+.legendIcon {
+  margin-right: var(--space-xxsmall);
+  display: inline-block;
+  width: var(--space-xxsmall);
+  height: var(--space-xxsmall);
+}
+
+.legendLabelEmpty {
+  color: var(--color-gray-xlight);
+}
