@@ -1,3 +1,19 @@
+.panels {
+  margin-bottom: var(--space-medium);
+  display: flex;
+}
+
+.panel {
+  flex: 1 1 50%;
+  border: 1px solid var(--color-gray-xxlight);
+  padding: var(--space-xsmall);
+  height: 180px;
+}
+
+.panel + .panel {
+  margin-left: var(--space-medium);
+}
+
 .totalByType {
-  margin: 0 0 2rem;
+  margin-bottom: var(--space-medium);
 }

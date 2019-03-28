@@ -5,3 +5,7 @@
 :root {
   --max-width: 1024px;
 }
+
+html {
+  box-sizing: border-box;
+}

@@ -1,5 +1,10 @@
 import PropTypes from 'prop-types';
-import { BundleAssets, BundleAssetsTotalsTable } from '@relative-ci/ui';
+import {
+  BundleAssets,
+  BundleAssetsTotalsTable,
+  BundleAssetsTotalsChartBars,
+  BundleAssetsTotalsChartPie,
+} from '@relative-ci/ui';
 import { isEmpty } from 'lodash';
 
 import Helmet from '../../components/helmet';
@@ -33,6 +38,18 @@ const Webpack = (props) => {
         addSource={addSource}
         removeSource={removeSource}
       />
+
+      <div className={styles.panels}>
+        <BundleAssetsTotalsChartBars
+          className={styles.panel}
+          jobs={jobs}
+        />
+
+        <BundleAssetsTotalsChartPie
+          className={styles.panel}
+          jobs={jobs}
+        />
+      </div>
 
       {!isEmpty(jobs) && (
         <BundleAssetsTotalsTable
