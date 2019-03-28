@@ -1,0 +1,14 @@
+.root {
+  font-size: 12px;
+  font-family: var(--font-family-fixed);
+}
+
+.tooltip {
+  margin: 0;
+  padding: 0;
+  padding: var(--space-small);
+  background: var(--color-light);
+  border: 1px solid var(--color-gray-xxlight);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  font-family: var(--font-family);
+}
