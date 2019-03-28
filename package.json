@@ -29,8 +29,7 @@
   },
   "homepage": "https://github.com/relative-ci/utils#readme",
   "dependencies": {
-    "convert-units": "^2.3.4",
-    "lodash": "^4.17.11"
+    "convert-units": "^2.3.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
@@ -42,8 +41,12 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^21.26.2",
+    "lodash": "^4.17.11",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "regenerator-runtime": "^0.12.1"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.11"
   }
 }
