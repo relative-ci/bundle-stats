@@ -4,9 +4,7 @@
   "description": "Relative CI shared UI",
   "main": "lib/relative-ci-ui.js",
   "scripts": {
-    "build-css": "mkdir -p lib/css && find src/css -name \\*.css -exec cp {} lib/css/ \\; ",
-    "build-components": "webpack --config ./build/webpack/config.js --mode production",
-    "build": "rm -fr ./lib && mkdir lib && npm run build-css && npm run build-components",
+    "build": "rm -fr ./lib && babel -D src -d lib --ignore **/__tests__/**",
     "dev": "start-storybook -c ./build/storybook -p 8080",
     "lint": "eslint . --ext .jsx,.js",
     "prepublishOnly": "npm run build",
