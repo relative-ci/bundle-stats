@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { Metric } from '.';
 
-const stories = storiesOf('Metric', module);
+const stories = storiesOf('Components/Metric', module);
 
 stories.add('default', () => (
   <Metric

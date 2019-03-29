@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Tooltip } from '../tooltip';
+import { Tooltip } from '../../ui';
 
 export const JobName = ({
   as: Component,

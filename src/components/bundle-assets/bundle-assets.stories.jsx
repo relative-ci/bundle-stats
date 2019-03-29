@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import job from '../../../__mocks__/job.json';
 import { BundleAssets } from '.';
 
-const stories = storiesOf('BundleAssets', module);
+const stories = storiesOf('Components/BundleAssets', module);
 
 stories.add('default', () => (
   <BundleAssets

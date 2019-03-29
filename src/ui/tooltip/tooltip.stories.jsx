@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { Tooltip } from '.';
 
-const stories = storiesOf('Tooltip', module);
+const stories = storiesOf('UI/Tooltip', module);
 
 stories.addDecorator(storyFn => (
   <div style={{ padding: '100px 100px' }}>

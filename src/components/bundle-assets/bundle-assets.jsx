@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { FILE_TYPE_LABELS } from '@relative-ci/utils';
 
-import { Tooltip } from '../tooltip';
+import { Tooltip } from '../../ui/tooltip';
+import { TableFilters } from '../../ui/table-filters';
 import { MetricsTable } from '../metrics-table';
 import { JobName } from '../job-name';
-import { TableFilters } from '../table-filters';
 import {
   FILTER_ASSET, FILTER_CHANGED, FILTER_ENTRY, FILTER_CHUNK, FILTER_INITIAL,
 } from './bundle-assets.constants';

@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import { Table } from '.';
 
 
-storiesOf('Table', module)
+storiesOf('UI/Table', module)
   .add('default', () => {
     const rows = [
       {

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { JobName } from '.';
 
-const stories = storiesOf('JobName', module);
+const stories = storiesOf('Components/JobName', module);
 
 stories.addDecorator(storyFn => (
   <div style={{ padding: '100px' }}>

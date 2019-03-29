@@ -125,6 +125,6 @@ const rows = [
   },
 ];
 
-storiesOf('MetricsTable', module).add('default', () => (
+storiesOf('Components/MetricsTable', module).add('default', () => (
   <MetricsTable runs={runs} rows={rows} />
 ));

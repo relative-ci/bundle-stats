@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { IconText } from '.';
 
-const stories = storiesOf('IconText', module);
+const stories = storiesOf('UI/IconText', module);
 
 stories.add('default', () => (
   <IconText glyph="branch">

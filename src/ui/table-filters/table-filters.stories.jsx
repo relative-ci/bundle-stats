@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 
 import { TableFilters } from '.';
 
-const stories = storiesOf('TableFilters', module);
+const stories = storiesOf('UI/TableFilters', module);
 stories.addDecorator(storyFn => (
   <div
     style={{

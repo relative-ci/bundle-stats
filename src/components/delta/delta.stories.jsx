@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { Delta } from '.';
 
-const stories = storiesOf('Delta', module);
+const stories = storiesOf('Components/Delta', module);
 
 stories.add('default', () => (
   <Delta

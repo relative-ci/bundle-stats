@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { getMetric } from '@relative-ci/utils';
 
+import { Table } from '../../ui/table';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
-import { Table } from '../table';
 import styles from './metrics-table.css';
 
 const generateHeaderCell = (run, index) => ({

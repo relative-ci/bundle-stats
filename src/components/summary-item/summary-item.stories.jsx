@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { SummaryItem } from './summary-item';
 
-const stories = storiesOf('SummaryItem', module);
+const stories = storiesOf('Components/SummaryItem', module);
 
 stories.addDecorator(storyFn => (
   <div style={{ maxWidth: '240px', width: '100%' }}>
