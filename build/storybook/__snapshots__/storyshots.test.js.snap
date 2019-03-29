@@ -9,6 +9,68 @@ exports[`Storyshots BundleAssets no baseline 1`] = `
 exports[`Storyshots BundleAssets not predictive 1`] = `
 `;
 
+exports[`Storyshots BundleAssetsTotalsChartBars component 1`] = `
+<div
+  className="chart"
+>
+  <div
+    className="recharts-responsive-container root"
+    style={
+      Object {
+        "height": "100%",
+        "maxHeight": undefined,
+        "minHeight": "120px",
+        "minWidth": "320px",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "none",
+          "height": 0,
+          "position": "absolute",
+          "visibility": "hidden",
+          "width": 0,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots BundleAssetsTotalsChartPie component 1`] = `
+<div
+  className="chart"
+>
+  <div
+    className="recharts-responsive-container root"
+    style={
+      Object {
+        "height": "100%",
+        "maxHeight": undefined,
+        "minHeight": "120px",
+        "minWidth": "320px",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "none",
+          "height": 0,
+          "position": "absolute",
+          "visibility": "hidden",
+          "width": 0,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots BundleAssetsTotalsTable default 1`] = `
 <div
   style={

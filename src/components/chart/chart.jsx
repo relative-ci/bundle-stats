@@ -18,6 +18,8 @@ export {
 } from 'recharts';
 
 export const RESPONSIVE_CONTAINER_PROPS = {
+  minWidth: '320px',
+  minHeight: '120px',
   width: '100%',
   height: '100%',
   className: css.root,
