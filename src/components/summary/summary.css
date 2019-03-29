@@ -1,0 +1,7 @@
+.root {
+  display: flex;
+}
+
+.item + .item {
+  margin-left: var(--space-medium);
+}
