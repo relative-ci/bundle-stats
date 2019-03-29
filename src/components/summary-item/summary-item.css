@@ -1,0 +1,46 @@
+.root {
+  padding: var(--space-xsmall) var(--space-small);
+  background: var(--color-gray-xxxlight);
+}
+
+.title {
+  margin-bottom: 0;
+  color: var(--color-gray-light);
+  font-size: var(--size-xsmall);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.metric {
+  display: block;
+}
+
+.currentContainer {
+  margin-bottom: var(--space-xxxsmall);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.currentMetric {
+  composes: metric;
+  color: var(--color-gray-dark);
+  font-size: var(--size-xlarge);
+}
+
+.delta {
+  margin-left: var(--space-xxsmall);
+}
+
+.baselineMetric {
+  composes: metric;
+  flex: 1 1 auto;
+}
+
+/* Loading state */
+.loading {
+  background: var(--color-gray-xxlight);
+  pointer-events: none;
+  max-width: 5em;
+  height: 1.1em;
+}
