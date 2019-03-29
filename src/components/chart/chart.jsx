@@ -1,4 +1,3 @@
-import colormap from 'colormap';
 import { chunk } from 'lodash';
 
 import COLORS from './chart.colors.json';
