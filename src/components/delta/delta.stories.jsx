@@ -1,9 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+import { getWrapperDecorator } from '../../stories';
 import { Delta } from '.';
 
 const stories = storiesOf('Components/Delta', module);
+stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => (
   <Delta

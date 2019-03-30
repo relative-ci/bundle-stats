@@ -2,9 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import job from '../../../__mocks__/job.json';
+import { getWrapperDecorator } from '../../stories';
 import { BundleAssets } from '.';
 
 const stories = storiesOf('Components/BundleAssets', module);
+stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => (
   <BundleAssets

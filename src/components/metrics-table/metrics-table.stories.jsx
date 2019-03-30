@@ -1,8 +1,7 @@
-/* global module */
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
 
+import { getWrapperDecorator } from '../../stories';
 import { MetricsTable } from '.';
 
 const runs = [
@@ -125,6 +124,9 @@ const rows = [
   },
 ];
 
-storiesOf('Components/MetricsTable', module).add('default', () => (
+const stories = storiesOf('Components/MetricsTable', module);
+stories.addDecorator(getWrapperDecorator());
+
+stories.add('default', () => (
   <MetricsTable runs={runs} rows={rows} />
 ));

@@ -1,15 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+import { getWrapperDecorator } from '../../stories';
 import { JobName } from '.';
 
 const stories = storiesOf('Components/JobName', module);
-
-stories.addDecorator(storyFn => (
-  <div style={{ padding: '100px' }}>
-    {storyFn()}
-  </div>
-));
+stories.addDecorator(getWrapperDecorator({ padding: '64px' }));
 
 stories.add('default', () => (
   <JobName

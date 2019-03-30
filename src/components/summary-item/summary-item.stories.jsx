@@ -1,15 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+import { getWrapperDecorator } from '../../stories';
 import { SummaryItem } from './summary-item';
 
 const stories = storiesOf('Components/SummaryItem', module);
-
-stories.addDecorator(storyFn => (
-  <div style={{ maxWidth: '240px', width: '100%' }}>
-    {storyFn()}
-  </div>
-));
+stories.addDecorator(getWrapperDecorator({ maxWidth: '240px' }));
 
 stories.add('default', () => (
   <SummaryItem

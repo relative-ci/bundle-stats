@@ -12,3 +12,4 @@ src/prototypes
 **/*.stories.jsx
 __tests__/**/*
 __mocks__/**/*
+**/*.stories.jsx

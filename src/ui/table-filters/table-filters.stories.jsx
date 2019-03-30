@@ -2,22 +2,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+import { getWrapperDecorator } from '../../stories';
 import { TableFilters } from '.';
 
 const stories = storiesOf('UI/TableFilters', module);
-stories.addDecorator(storyFn => (
-  <div
-    style={{
-      width: '100%',
-      maxWidth: '480px',
-      margin: '0 auto',
-      display: 'flex',
-      justifyContent: 'center',
-    }}
-  >
-    {storyFn()}
-  </div>
-));
+stories.addDecorator(getWrapperDecorator({ paddingLeft: '200px' }));
 
 stories.add('default', () => (
   <TableFilters
