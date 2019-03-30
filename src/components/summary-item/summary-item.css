@@ -1,46 +1,37 @@
-.root {
-  padding: var(--space-xsmall) var(--space-small);
-  background: var(--color-gray-xxxlight);
-}
+.root {}
 
 .title {
   margin-bottom: 0;
-  color: var(--color-gray-light);
+  color: var(--color-gray-xlight);
   font-size: var(--size-xsmall);
   letter-spacing: 0.01em;
   text-transform: uppercase;
-}
-
-.metric {
-  display: block;
-}
-
-.currentContainer {
-  margin-bottom: var(--space-xxxsmall);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  white-space: nowrap;
 }
 
 .currentMetric {
-  composes: metric;
+  display: inline-block;
   color: var(--color-gray-dark);
-  font-size: var(--size-xlarge);
+  font-size: var(--size-large);
 }
 
 .delta {
+  display: inline-block;
   margin-left: var(--space-xxsmall);
+  font-size: var(--size-small);
 }
 
 .baselineMetric {
-  composes: metric;
-  flex: 1 1 auto;
+  display: block;
+  color: var(--color-gray-light);
+  font-size: var(--size-small);
 }
 
 /* Loading state */
 .loading {
-  background: var(--color-gray-xxlight);
+  background: var(--color-gray-xxxlight);
   pointer-events: none;
   max-width: 5em;
+  width: 100%;
   height: 1.1em;
 }

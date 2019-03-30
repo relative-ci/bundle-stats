@@ -12,10 +12,8 @@ stories.add('default', () => (
     loading={false}
     id="webpack.assets.totalSizeByTypeALL"
     data={{
-      'webpack.assets.totalSizeByTypeALL': {
-        current: 120 * 1000,
-        baseline: 100 * 1000,
-      },
+      current: 120 * 1000,
+      baseline: 100 * 1000,
     }}
   />
 ));

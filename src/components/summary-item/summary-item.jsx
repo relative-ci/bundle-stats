@@ -10,7 +10,7 @@ import css from './summary-item.css';
 export const SummaryItem = ({
   className, id, data, loading,
 }) => {
-  const { baseline, current } = data && data[id] ? data[id] : { baseline: 0, current: 0 };
+  const { baseline, current } = data || { baseline: 0, current: 0 };
 
   const metric = getMetric(id);
   const delta = getDelta({ value: baseline }, { value: current });
