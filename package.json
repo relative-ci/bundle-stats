@@ -4,7 +4,7 @@
   "description": "Relative CI shared UI",
   "main": "lib/relative-ci-ui.js",
   "scripts": {
-    "build": "rm -fr ./lib && babel -D src -d lib --ignore **/__tests__/**",
+    "build": "rm -fr ./lib && babel -D src -d lib --ignore **/__tests__/** --ignore /prototypes/**",
     "dev": "start-storybook -c ./build/storybook -p 8080",
     "generate-chart-colors": "node scripts/generate-chart-colors.js",
     "lint": "eslint . --ext .jsx,.js",
