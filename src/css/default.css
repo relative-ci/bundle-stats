@@ -1,0 +1,30 @@
+:root {
+  --font-family-fixed: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  --max-width: 80rem;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--color-gray);
+}
+
+h1, h2, h3, h4, h5 {
+  letter-spacing: -0.01em;
+  color: var(--color-gray-dark);
+}
+
+code {
+  font-family: var(--font-family-fixed);
+}
+
+a {
+  color: var(--color-primary);
+}
+
+a:hover,
+a:active {
+  color: var(--color-primary-dark);
+}
