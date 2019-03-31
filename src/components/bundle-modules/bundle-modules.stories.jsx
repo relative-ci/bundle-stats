@@ -5,7 +5,7 @@ import job from '../../../__mocks__/job.json';
 import { getWrapperDecorator } from '../../stories';
 import { BundleModules } from './bundle-modules';
 
-const stories = storiesOf('BundleModules', module);
+const stories = storiesOf('Components/BundleModules', module);
 stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => (

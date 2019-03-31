@@ -11,7 +11,7 @@ import { BundleAssets } from '../components/bundle-assets';
 import { BundleAssetsTotalsTable } from '../components/bundle-assets-totals-table';
 import { BundleAssetsTotalsChartBars } from '../components/bundle-assets-totals-chart-bars';
 import { BundleAssetsTotalsChartPie } from '../components/bundle-assets-totals-chart-pie';
-import { BundleAssets } from '../components/bundle-assets';
+import { BundleModules } from '../components/bundle-modules';
 import { Summary } from '../components/summary';
 import { getWrapperDecorator } from '../stories';
 
@@ -35,7 +35,7 @@ const baselineJob = {
 
 const JOBS = [currentJob, baselineJob];
 
-stories.add('component', () => (
+stories.add('totals', () => (
   <div>
     <Container>
       <Summary data={currentJob.summary} />
@@ -92,8 +92,41 @@ stories.add('assets', () => (
         <span isTabActive>Modules</span>
       </Tabs>
     </Container>
+  </div>
+));
+
+stories.add('assets', () => (
+  <div>
+    <Container>
+      <Summary data={job.summary} />
+    </Container>
+    <Container>
+      <Tabs>
+        <span>Totals</span>
+        <span isActive>Assets</span>
+        <span>Modules</span>
+      </Tabs>
+    </Container>
     <Container>
       <BundleAssets jobs={JOBS} />
+    </Container>
+  </div>
+));
+
+stories.add('modules', () => (
+  <div>
+    <Container>
+      <Summary data={job.summary} />
+    </Container>
+    <Container>
+      <Tabs>
+        <span>Totals</span>
+        <span>Assets</span>
+        <span isActive>Modules</span>
+      </Tabs>
+    </Container>
+    <Container>
+      <BundleModules jobs={JOBS} />
     </Container>
   </div>
 ));
