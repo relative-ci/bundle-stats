@@ -2,6 +2,7 @@ export { BundleAssets } from './bundle-assets';
 export { BundleAssetsTotalsTable } from './bundle-assets-totals-table';
 export { BundleAssetsTotalsChartBars } from './bundle-assets-totals-chart-bars';
 export { BundleAssetsTotalsChartPie } from './bundle-assets-totals-chart-pie';
+export { BundleChunkModules } from './bundle-chunk-modules';
 export { Delta } from './delta';
 export { JobName } from './job-name';
 export { Metric } from './metric';
