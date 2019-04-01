@@ -20,7 +20,7 @@ const App = () => (
     <main class={styles.main}>
       <Router>
         <Redirect path="/" to="/webpack" />
-        <Route component={Webpack} path="/webpack" />
+        <Route component={Webpack} path="/webpack/:subpage?" />
         <Route component={Lighthouse} path="/lighthouse" />
         <Route component={Browsertime} path="/browsertime" />
       </Router>

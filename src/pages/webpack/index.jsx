@@ -7,6 +7,7 @@ import { isEmpty } from 'lodash';
 import Helmet from '../../components/helmet';
 import Sources from '../../components/sources';
 import Totals from './totals';
+import Assets from './assets';
 import config from './config.json';
 import locale from './locale.json';
 import enhance from './container';
@@ -52,12 +53,19 @@ const Webpack = (props) => {
                   >
                     Totals
                   </a>
+                  <a
+                    href="/webpack/assets"
+                    isActive={path === '/webpack/assets'}
+                  >
+                    Assets
+                  </a>
                 </Tabs>
               )}
             </Match>
           </Container>
           <Router>
             <Totals jobs={jobs} path="/webpack" />
+            <Assets jobs={jobs} path="/webpack/assets" />
           </Router>
         </div>
       )}
