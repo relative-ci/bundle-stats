@@ -8,6 +8,7 @@ import Helmet from '../../components/helmet';
 import Sources from '../../components/sources';
 import Totals from './totals';
 import Assets from './assets';
+import Modules from './modules';
 import config from './config.json';
 import locale from './locale.json';
 import enhance from './container';
@@ -59,6 +60,12 @@ const Webpack = (props) => {
                   >
                     Assets
                   </a>
+                  <a
+                    href="/webpack/modules"
+                    isActive={path === '/webpack/modules'}
+                  >
+                    Modules
+                  </a>
                 </Tabs>
               )}
             </Match>
@@ -66,6 +73,7 @@ const Webpack = (props) => {
           <Router>
             <Totals jobs={jobs} path="/webpack" />
             <Assets jobs={jobs} path="/webpack/assets" />
+            <Modules jobs={jobs} path="/webpack/modules" />
           </Router>
         </div>
       )}
