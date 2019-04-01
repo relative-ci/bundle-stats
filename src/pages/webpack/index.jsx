@@ -52,19 +52,19 @@ const Webpack = (props) => {
                     href="/webpack"
                     isActive={path === '/webpack'}
                   >
-                    Totals
+                    {locale.totals}
                   </a>
                   <a
                     href="/webpack/assets"
                     isActive={path === '/webpack/assets'}
                   >
-                    Assets
+                    {locale.assets}
                   </a>
                   <a
                     href="/webpack/modules"
                     isActive={path === '/webpack/modules'}
                   >
-                    Modules
+                    {locale.modules}
                   </a>
                 </Tabs>
               )}
