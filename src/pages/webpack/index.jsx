@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Container, Summary } from '@relative-ci/ui';
 import { isEmpty } from 'lodash';
 
 import Helmet from '../../components/helmet';
@@ -34,7 +35,12 @@ const Webpack = (props) => {
       />
 
       {!isEmpty(jobs) && (
-        <Totals jobs={jobs} />
+        <div>
+          <Container>
+            <Summary data={jobs[0].summary} />
+          </Container>
+          <Totals jobs={jobs} />
+        </div>
       )}
     </div>
   );

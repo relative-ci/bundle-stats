@@ -1,26 +1,35 @@
 import { compose, withProps } from 'recompose';
-import { createStats } from '@relative-ci/utils';
+import { createStats, createStatsSummary } from '@relative-ci/utils';
+import { last, reverse } from 'lodash';
 
 import withSources from '../../hocs/with-sources';
 import withRuns from '../../hocs/with-runs';
 
-const createJobs = sources => sources.map(({ res }, index) => ({
-  internalBuildNumber: index,
-  rawData: {
-    webpack: {
-      stats: res,
+const createJobs = (sources) => {
+  const jobs = reverse(sources).map(({ res }, index) => ({
+    internalBuildNumber: index,
+    rawData: {
+      webpack: {
+        stats: res,
+      },
     },
-  },
-})).reduce((agg, job, index, jobs) => [
-  ...agg,
-  {
-    ...job,
-    stats: createStats(
-      jobs[index + 1] && jobs[index + 1].rawData,
-      job.rawData,
-    ),
-  },
-], []);
+  })).reduce((agg, job) => {
+    const baseline = last(agg);
+    const stats = createStats(baseline && baseline.rawData, job.rawData);
+    const summary = createStatsSummary(baseline && baseline.stats, stats);
+
+    return [
+      ...agg,
+      {
+        ...job,
+        stats,
+        summary,
+      },
+    ];
+  }, []);
+
+  return reverse(jobs);
+};
 
 const metricsMap = {};
 
