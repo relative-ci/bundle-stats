@@ -1,5 +1,7 @@
+import Router from 'preact-router';
+import Match from 'preact-router/match';
 import PropTypes from 'prop-types';
-import { Container, Summary } from '@relative-ci/ui';
+import { Container, Summary, Tabs } from '@relative-ci/ui';
 import { isEmpty } from 'lodash';
 
 import Helmet from '../../components/helmet';
@@ -8,6 +10,7 @@ import Totals from './totals';
 import config from './config.json';
 import locale from './locale.json';
 import enhance from './container';
+import style from './style.css';
 
 const Webpack = (props) => {
   const {
@@ -39,7 +42,23 @@ const Webpack = (props) => {
           <Container>
             <Summary data={jobs[0].summary} />
           </Container>
-          <Totals jobs={jobs} />
+          <Container className={style.tabs}>
+            <Match>
+              {({ path }) => (
+                <Tabs className={style.tabs}>
+                  <a
+                    href="/webpack"
+                    isActive={path === '/webpack'}
+                  >
+                    Totals
+                  </a>
+                </Tabs>
+              )}
+            </Match>
+          </Container>
+          <Router>
+            <Totals jobs={jobs} path="/webpack" />
+          </Router>
         </div>
       )}
     </div>
