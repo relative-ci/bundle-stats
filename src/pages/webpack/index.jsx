@@ -1,18 +1,12 @@
 import PropTypes from 'prop-types';
-import {
-  BundleAssets,
-  BundleAssetsTotalsTable,
-  BundleAssetsTotalsChartBars,
-  BundleAssetsTotalsChartPie,
-} from '@relative-ci/ui';
 import { isEmpty } from 'lodash';
 
 import Helmet from '../../components/helmet';
 import Sources from '../../components/sources';
+import Totals from './totals';
 import config from './config.json';
 import locale from './locale.json';
 import enhance from './container';
-import styles from './styles.css';
 
 const Webpack = (props) => {
   const {
@@ -39,30 +33,8 @@ const Webpack = (props) => {
         removeSource={removeSource}
       />
 
-      <div className={styles.panels}>
-        <BundleAssetsTotalsChartBars
-          className={styles.panel}
-          jobs={jobs}
-        />
-
-        <BundleAssetsTotalsChartPie
-          className={styles.panel}
-          jobs={jobs}
-        />
-      </div>
-
       {!isEmpty(jobs) && (
-        <BundleAssetsTotalsTable
-          className={styles.totalsByType}
-          jobs={jobs}
-        />
-      )}
-
-      {!isEmpty(jobs) && (
-        <BundleAssets
-          className={styles.assets}
-          jobs={jobs}
-        />
+        <Totals jobs={jobs} />
       )}
     </div>
   );
