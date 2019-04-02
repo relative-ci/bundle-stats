@@ -1,5 +1,6 @@
 import { Link } from 'preact-router/match';
 
+import * as URLS from '../../utils/urls';
 import styles from './styles.css';
 
 const Navigation = () => (
@@ -8,21 +9,21 @@ const Navigation = () => (
       <Link
         class={styles.link}
         activeClassName={styles.linkActive}
-        href="/webpack"
+        href={URLS.WEBPACK_HREF}
       >
         Webpack
       </Link>
       <Link
         class={styles.link}
         activeClassName={styles.linkActive}
-        href="/lighthouse"
+        href={URLS.LIGHTHOUSE_HREF}
       >
         Lighthouse
       </Link>
       <Link
         class={styles.link}
         activeClassName={styles.linkActive}
-        href="/browsertime"
+        href={URLS.BROWSERTIME_HREF}
       >
         Browsertime
       </Link>

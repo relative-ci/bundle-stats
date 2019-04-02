@@ -6,6 +6,7 @@ import { isEmpty } from 'lodash';
 
 import Helmet from '../../components/helmet';
 import Sources from '../../components/sources';
+import * as URLS from '../../utils/urls';
 import Totals from './totals';
 import Assets from './assets';
 import Modules from './modules';
@@ -49,20 +50,20 @@ const Webpack = (props) => {
               {({ path }) => (
                 <Tabs className={style.tabs}>
                   <a
-                    href="/webpack"
-                    isActive={path === '/webpack'}
+                    href={URLS.getWebpackUrl(URLS.WEBPACK_TOTALS_SLUG)}
+                    isActive={path === URLS.getWebpackPath(URLS.WEBPACK_TOTALS_SLUG)}
                   >
                     {locale.totals}
                   </a>
                   <a
-                    href="/webpack/assets"
-                    isActive={path === '/webpack/assets'}
+                    href={URLS.getWebpackUrl(URLS.WEBPACK_ASSETS_SLUG)}
+                    isActive={path === URLS.getWebpackPath(URLS.WEBPACK_ASSETS_SLUG)}
                   >
                     {locale.assets}
                   </a>
                   <a
-                    href="/webpack/modules"
-                    isActive={path === '/webpack/modules'}
+                    href={URLS.getWebpackUrl(URLS.WEBPACK_MODULES_SLUG)}
+                    isActive={path === URLS.getWebpackPath(URLS.WEBPACK_MODULES_SLUG)}
                   >
                     {locale.modules}
                   </a>
@@ -71,9 +72,9 @@ const Webpack = (props) => {
             </Match>
           </Container>
           <Router>
-            <Totals jobs={jobs} path="/webpack" />
-            <Assets jobs={jobs} path="/webpack/assets" />
-            <Modules jobs={jobs} path="/webpack/modules" />
+            <Totals jobs={jobs} path={URLS.getWebpackPath(URLS.WEBPACK_TOTALS_SLUG)} />
+            <Assets jobs={jobs} path={URLS.getWebpackPath(URLS.WEBPACK_ASSETS_SLUG)} />
+            <Modules jobs={jobs} path={URLS.getWebpackPath(URLS.WEBPACK_MODULES_SLUG)} />
           </Router>
         </div>
       )}

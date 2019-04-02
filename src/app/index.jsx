@@ -1,5 +1,6 @@
 import { Router } from 'preact-router';
 
+import * as URLS from '../utils/urls';
 import Webpack from '../pages/webpack';
 import Lighthouse from '../pages/lighthouse';
 import Browsertime from '../pages/browsertime';
@@ -20,9 +21,9 @@ const App = () => (
     <main class={styles.main}>
       <Router>
         <Redirect path="/" to="/webpack" />
-        <Route component={Webpack} path="/webpack/:subpage?" />
-        <Route component={Lighthouse} path="/lighthouse" />
-        <Route component={Browsertime} path="/browsertime" />
+        <Route component={Webpack} path={URLS.WEBPACK_PATH} />
+        <Route component={Lighthouse} path={URLS.LIGHTHOUSE_PATH} />
+        <Route component={Browsertime} path={URLS.BROWSERTIME_PATH} />
       </Router>
     </main>
   </div>
