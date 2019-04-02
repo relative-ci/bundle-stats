@@ -6,7 +6,7 @@ import withSources from '../../hocs/with-sources';
 import withRuns from '../../hocs/with-runs';
 
 const createJobs = (sources) => {
-  const jobs = reverse(sources).map(({ res }, index) => ({
+  const jobs = reverse([...sources]).map(({ res }, index) => ({
     internalBuildNumber: index,
     rawData: {
       webpack: {
