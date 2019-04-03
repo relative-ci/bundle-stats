@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import locale from './locale.json';
 import styles from './styles.css';
 
-const Add = ({ onSubmit }) => {
+const Add = ({ className, onSubmit }) => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -14,7 +15,7 @@ const Add = ({ onSubmit }) => {
   };
 
   return (
-    <form class={styles.root} onSubmit={handleFormSubmit}>
+    <form class={cx(styles.root, className)} onSubmit={handleFormSubmit}>
       <input
         class={styles.input}
         type="url"
@@ -30,7 +31,12 @@ const Add = ({ onSubmit }) => {
   );
 };
 
+Add.defaultProps = {
+  className: '',
+};
+
 Add.propTypes = {
+  className: PropTypes.string,
   onSubmit: PropTypes.func.isRequired,
 };
 

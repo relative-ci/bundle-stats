@@ -80,7 +80,7 @@
 .root:hover {
   position: relative;
   z-index: 2;
-  border-color: var(--color-gray);
+  border-color: var(--color-gray-xlight);
 }
 
 .root:hover .remove {

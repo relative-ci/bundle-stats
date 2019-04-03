@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Container } from '@relative-ci/ui';
 
 import Add from './add';
 import List from './list';
@@ -16,21 +17,26 @@ const Sources = ({
   const handleExamplesClick = urls => urls.forEach(addSource);
 
   return (
-    <div class={styles.root}>
-      <List
-        sources={sources}
-        runs={runs}
-        removeSource={removeSource}
-      />
-      <Add onSubmit={addSource} />
-
-      {sources.length === 0 && exampleUrls.length > 0 && (
-        <Example
-          urls={exampleUrls}
-          text={exampleText}
-          onLoadClick={handleExamplesClick}
+    <div className={styles.root}>
+      <Container>
+        <List
+          sources={sources}
+          runs={runs}
+          removeSource={removeSource}
         />
-      )}
+        <Add
+          className={styles.add}
+          onSubmit={addSource}
+        />
+
+        {sources.length === 0 && exampleUrls.length > 0 && (
+          <Example
+            urls={exampleUrls}
+            text={exampleText}
+            onLoadClick={handleExamplesClick}
+          />
+        )}
+      </Container>
     </div>
   );
 };

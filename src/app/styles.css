@@ -15,11 +15,9 @@
   max-width: var(--max-width);
   display: flex;
   position: relative;
+  align-items: center;
 }
 
 .main {
-  margin: 0 auto;
-  padding: calc(var(--space-small) * 2 + var(--space-medium) + var(--space-medium)) var(--space-medium) var(--space-medium);
-  width: 100%;
-  max-width: var(--max-width);
+  padding: calc(var(--space-small) * 2 + var(--space-medium)) 0 0;
 }
