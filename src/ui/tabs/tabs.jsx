@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import css from './tabs.css';
+import css from './tabs.module.css';
 
 const cloneElement = (element) => {
   const { className, isActive, ...restProps } = element.props;

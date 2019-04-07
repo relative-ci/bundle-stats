@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import css from './panels.css';
+import css from './panels.module.css';
 
 const cloneElement = (element) => {
   const { className, ...restProps } = element.props;

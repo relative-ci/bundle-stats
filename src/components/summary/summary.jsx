@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import { SummaryItem } from '../summary-item';
-import css from './summary.css';
+import css from './summary.module.css';
 
 export const Summary = ({
   className, data, keys, loading,

@@ -21,7 +21,7 @@ import {
   Tooltip,
   getColors,
 } from '../chart';
-import css from './bundle-assets-totals-chart-pie.css';
+import css from './bundle-assets-totals-chart-pie.module.css';
 
 const getMetricLabel = key => getMetric(key).label;
 

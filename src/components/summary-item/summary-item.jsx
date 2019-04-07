@@ -5,7 +5,7 @@ import { getDelta, getMetric, formatDelta } from '@relative-ci/utils';
 
 import { Metric } from '../metric';
 import { Delta } from '../delta';
-import css from './summary-item.css';
+import css from './summary-item.module.css';
 
 export const SummaryItem = ({
   className, id, data, loading,

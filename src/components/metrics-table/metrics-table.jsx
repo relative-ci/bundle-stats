@@ -6,7 +6,7 @@ import { getMetric } from '@relative-ci/utils';
 import { Table } from '../../ui/table';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
-import styles from './metrics-table.css';
+import styles from './metrics-table.module.css';
 
 const generateHeaderCell = (run, index) => ({
   text: run.label,

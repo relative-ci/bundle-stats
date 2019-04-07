@@ -1,7 +1,7 @@
 import { chunk } from 'lodash';
 
 import COLORS from './chart.colors.json';
-import css from './chart.css';
+import css from './chart.module.css';
 
 export {
   Bar,

@@ -6,7 +6,7 @@ import { BundleChunkModules } from '../bundle-chunk-modules';
 import { groupModulesByChunk } from './utils/group-modules-by-chunk';
 import { groupChunksByName } from './utils/group-chunks-by-name';
 
-import css from './bundle-modules.css';
+import css from './bundle-modules.module.css';
 
 export const BundleModules = ({
   currentRawData, baselineRawData, job, project,

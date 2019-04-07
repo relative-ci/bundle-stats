@@ -9,7 +9,7 @@ import PackageIcon from './assets/package.svg';
 import PullRequestIcon from './assets/pull-request.svg';
 import FilterIcon from './assets/filter.svg';
 
-import css from './icon-text.css';
+import css from './icon-text.module.css';
 
 const ICONS = {
   branch: BranchIcon,

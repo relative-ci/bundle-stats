@@ -5,7 +5,7 @@ import cx from 'classnames';
 import { TableFilters } from '../../ui';
 import { JobName } from '../job-name';
 import { MetricsTable } from '../metrics-table';
-import css from './bundle-chunk-modules.css';
+import css from './bundle-chunk-modules.module.css';
 
 const getRunLabel = (run, index) => {
   // Current run

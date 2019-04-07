@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import { IconText } from '../icon-text';
-import css from './table-filters.css';
+import css from './table-filters.module.css';
 
 const Checkbox = ({ label, name, ...inputProps }) => {
   const id = `filter-${name}`;

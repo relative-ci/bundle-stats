@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import css from './tooltip.css';
+import css from './tooltip.module.css';
 
 export const Tooltip = (props) => {
   const {

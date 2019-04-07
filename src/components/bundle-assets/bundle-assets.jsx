@@ -10,7 +10,7 @@ import { JobName } from '../job-name';
 import {
   FILTER_ASSET, FILTER_CHANGED, FILTER_ENTRY, FILTER_CHUNK, FILTER_INITIAL,
 } from './bundle-assets.constants';
-import css from './bundle-assets.css';
+import css from './bundle-assets.module.css';
 
 const RUNS_LABELS = [
   'Current',

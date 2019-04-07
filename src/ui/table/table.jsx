@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import css from './table.css';
+import css from './table.module.css';
 
 const resolveCellOptions = (headers, hasRowHeader, cellId) => {
   if (!headers) {

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import css from './delta.css';
+import css from './delta.module.css';
 
 export const Delta = ({
   className, value, displayValue, biggerIsBetter,

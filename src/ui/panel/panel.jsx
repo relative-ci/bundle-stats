@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import css from './panel.css';
+import css from './panel.module.css';
 
 export const Panel = ({ className, ...restProps }) => (
   <div

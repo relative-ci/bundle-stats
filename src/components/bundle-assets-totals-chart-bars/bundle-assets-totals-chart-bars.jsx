@@ -21,7 +21,7 @@ import {
   YAxis,
   getColors,
 } from '../chart';
-import css from './bundle-assets-totals-chart-bars.css';
+import css from './bundle-assets-totals-chart-bars.module.css';
 
 const getMetricLabel = key => getMetric(key).label;
 
