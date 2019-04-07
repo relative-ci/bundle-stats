@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import Logo from '../../images/relative-ci-logo.inline.svg';
-import { Container } from '../../ui';
+import { Container, Logo } from '../../ui';
 import css from './footer.module.css';
 
 const DOMAIN = 'https://relative-ci.com';
@@ -127,6 +126,7 @@ Footer.defaultProps = {
 Footer.propTypes = {
   /** Adopted child class name */
   className: PropTypes.string,
+
   /** Link component */
-  Link: PropTypes.element,
+  Link: PropTypes.elementType,
 };
