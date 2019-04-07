@@ -13,6 +13,7 @@
 
 .brandingHome {
   vertical-align: middle;
+<<<<<<< HEAD
   color: var(--color-gray-xlight);
 }
 
@@ -24,6 +25,7 @@
 
 .brandingLogo {
   margin: 0 auto;
+  max-width: 32px;
   vertical-align: middle;
 }
 
@@ -61,7 +63,7 @@
 }
 
 @media (min-width: 768px) {
-  .container {
+  .info {
     display: flex;
   }
 
