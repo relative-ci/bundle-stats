@@ -1,5 +1,6 @@
 export { Container } from './container';
 export { IconText } from './icon-text';
+export { Logo } from './logo';
 export { Panel } from './panel';
 export { Panels } from './panels';
 export { Table } from './table';
