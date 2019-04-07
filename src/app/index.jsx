@@ -1,4 +1,5 @@
 import { Router } from 'preact-router';
+import { Footer } from '@relative-ci/ui';
 
 import * as URLS from '../utils/urls';
 import Webpack from '../pages/webpack';
@@ -26,6 +27,7 @@ const App = () => (
         <Route component={Browsertime} path={URLS.BROWSERTIME_PATH} />
       </Router>
     </main>
+    <Footer />
   </div>
 );
 

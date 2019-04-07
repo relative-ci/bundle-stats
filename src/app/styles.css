@@ -19,5 +19,5 @@
 }
 
 .main {
-  padding: calc(var(--space-small) * 2 + var(--space-medium)) 0 0;
+  padding: calc(var(--space-small) * 2 + var(--space-medium)) 0 var(--space-large);
 }
