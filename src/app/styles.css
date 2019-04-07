@@ -5,19 +5,31 @@
   left: 0;
   right: 0;
   border-bottom: 1px solid var(--color-gray-xxlight);
-  background: rgb(255, 255, 255, 0.9);
+  background: var(--color-light);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-xsmall);
 }
 
-.headerInner {
+.headerRelativeLogo {
+  width: var(--space-medium);
+}
+
+.headerGithubLogo {
+  width: var(--space-medium);
+  color: var(--color-gray-xlight);
+}
+
+.headerGithubLogo:active,
+.headerGithubLogo:hover {
+  color: var(--color-gray-light);
+}
+
+.headerNavigation {
   margin: 0 auto;
-  padding: 0 var(--space-medium);
-  width: 100%;
-  max-width: var(--max-width);
-  display: flex;
-  position: relative;
-  align-items: center;
 }
 
 .main {
-  padding: calc(var(--space-small) * 2 + var(--space-medium)) 0 var(--space-large);
+  padding: calc(2 * var(--space-medium)) 0 var(--space-large);
+  min-height: calc(100vh - 86px);
 }

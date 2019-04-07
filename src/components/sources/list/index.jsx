@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
 import Source from '../source';
-import locale from './locale.json';
 import styles from './styles.css';
 
 const List = ({ sources, runs, removeSource }) => {
@@ -22,12 +21,6 @@ const List = ({ sources, runs, removeSource }) => {
           onRemoveClick={getHandleRemoveSource(source)}
         />
       ))}
-
-      {sources.length === 0 && (
-        <p class={styles.empty}>
-          {locale.empty}
-        </p>
-      )}
     </div>
   );
 };

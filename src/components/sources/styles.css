@@ -1,6 +1,6 @@
 .root {
-  padding-top: var(--space-medium);
-  padding-bottom: var(--space-medium);
+  padding-top: var(--space-large);
+  padding-bottom: var(--space-large);
   border-bottom: 1px solid var(--color-gray-xxlight);
   margin: 0 0 var(--space-large);
 }
@@ -12,4 +12,8 @@
 
 .add {
   margin-top: var(--space-medium);
+}
+
+.empty {
+  border-bottom: 0;
 }
