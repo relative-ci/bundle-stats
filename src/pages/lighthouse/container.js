@@ -27,7 +27,7 @@ const metaMap = {
 
 const enhance = compose(
   withSources(),
-  withRuns(metricsMap, metaMap),
+  withRuns(metaMap),
   withMetrics(),
 );
 

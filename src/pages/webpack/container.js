@@ -31,15 +31,9 @@ const createJobs = (sources) => {
   return reverse(jobs);
 };
 
-const metricsMap = {};
-
-const metaMap = {
-  hash: 'hash',
-};
-
 const enhance = compose(
   withSources(),
-  withRuns(metricsMap, metaMap),
+  withRuns({ hash: 'hash' }),
   withProps(({ sources }) => ({
     jobs: createJobs(sources),
   })),
