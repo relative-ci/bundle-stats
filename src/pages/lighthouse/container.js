@@ -1,24 +1,14 @@
-import { compose } from 'recompose';
-import { map, sum } from 'lodash';
+import { compose, withProps } from 'recompose';
 
 import withSources from '../../hocs/with-sources';
 import withRuns from '../../hocs/with-runs';
-import withMetrics from '../../hocs/with-metrics';
 
-const getScore = (res) => {
-  const scores = map(res.reportCategories, 'score');
-  return Math.round(sum(scores) / scores.length);
-};
-
-const metricsMap = {
-  'lighthouse.score': getScore,
-  'lighthouse.speedIndex': 'audits.speed-index-metric.rawValue',
-  'lighthouse.firstMeaningfulPain': 'audits.first-meaningful-paint.rawValue',
-  'lighthouse.timeToFirstByte': 'audits.time-to-first-byte.rawValue',
-  'lighthouse.firstInteractive': 'audits.first-interactive.rawValue',
-  'lighthouse.totalByteWeight': 'audits.total-byte-weight.rawValue',
-  'lighthouse.domSize': 'audits.dom-size.rawValue',
-};
+const createJobs = sources => sources.map(({ res }, index) => ({
+  internalBuildNumber: index + 1,
+  rawData: {
+    lighthouse: res,
+  },
+}));
 
 const metaMap = {
   timestamp: 'generatedTime',
@@ -28,7 +18,9 @@ const metaMap = {
 const enhance = compose(
   withSources(),
   withRuns(metaMap),
-  withMetrics(),
+  withProps(({ sources }) => ({
+    jobs: createJobs(sources),
+  })),
 );
 
 export default enhance;
