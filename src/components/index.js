@@ -6,6 +6,7 @@ export { BundleChunkModules } from './bundle-chunk-modules';
 export { BundleModules } from './bundle-modules';
 export { Delta } from './delta';
 export { JobName } from './job-name';
+export { LighthouseTable } from './lighthouse-table';
 export { Metric } from './metric';
 export { MetricsTable } from './metrics-table';
 export { SummaryItem } from './summary-item';
