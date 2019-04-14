@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Helmet from 'preact-helmet';
+import { Container, BrowsertimeTable } from '@relative-ci/ui';
 
-import MetricsTable from '../../components/metrics-table';
 import Sources from '../../components/sources';
 import config from './config.json';
 import locale from './locale.json';
@@ -11,7 +11,7 @@ const Browsertime = (props) => {
   const {
     sources,
     runs,
-    rows,
+    jobs,
     addSource,
     removeSource,
   } = props;
@@ -32,11 +32,13 @@ const Browsertime = (props) => {
         removeSource={removeSource}
       />
 
-      {rows.length > 0 && (
-        <MetricsTable
-          runs={runs}
-          rows={rows}
-        />
+      {jobs.length > 0 && (
+        <Container>
+          <BrowsertimeTable
+            runs={runs}
+            jobs={jobs}
+          />
+        </Container>
       )}
     </div>
   );
@@ -49,8 +51,8 @@ Browsertime.propTypes = {
   /** Metric runs */
   runs: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
 
-  /** Metric rows */
-  rows: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
+  /** Jobs data */
+  jobs: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
 
   /** Add sources handler */
   addSource: PropTypes.func.isRequired,

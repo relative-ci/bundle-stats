@@ -5,6 +5,10 @@
     "node": true
   },
   "parser": "babel-eslint",
+  "globals": {
+    "__DEVELOPMENT__": true,
+    "__PRODUCTION__": true
+  },
   "rules": {
     "operator-linebreak": ["error", "before", { "overrides": { "&&": "ignore" } }],
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],

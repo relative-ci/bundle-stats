@@ -1,16 +1,14 @@
 import { withProps } from 'recompose';
 
-import getMetrics from './utils/get-metrics';
 import getMeta from './utils/get-meta';
 
-const createRun = (metricsMap, metaMap) => (source, index) => ({
-  label: `Run #${index}`,
+const createRun = (metaMap, length) => (source, index) => ({
+  label: `Job #${index + 1}${length === index + 1 ? ' (baseline)' : ''}`,
   meta: getMeta(source.res, metaMap),
-  data: getMetrics(source.res, metricsMap),
 });
 
-const enhance = (metricsMap, metaMap) => withProps(({ sources }) => ({
-  runs: sources.map(createRun(metricsMap, metaMap)),
+const enhance = metaMap => withProps(({ sources }) => ({
+  runs: sources.map(createRun(metaMap, sources.length)),
 }));
 
 export default enhance;

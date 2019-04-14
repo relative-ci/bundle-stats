@@ -9,6 +9,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
+          isDevelopment ? 'style-loader' : CssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -20,20 +21,17 @@ module.exports = {
           },
           'postcss-loader',
         ],
-        exclude: /node_modules/,
-      },
-
-      // css delivery
-      {
-        test: /\.css$/,
-        enforce: 'post',
-        use: isDevelopment ? 'style-loader' : CssExtractPlugin.loader,
+        include: [
+          /src/,
+          /relative-ci\/ui/,
+        ],
       },
     ],
   },
   plugins: [
     new CssExtractPlugin({
       filename: '[name].[contenthash:5].css',
+      chunkFilename: '[id].[contenthash:5].css',
     }),
   ],
 };

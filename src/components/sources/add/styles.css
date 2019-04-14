@@ -2,16 +2,15 @@
   margin: 0 auto;
   width: 100%;
   max-width: 30rem;
-  padding: var(--space-small) 0 0;
   display: flex;
   align-items: stretch;
 }
 
 .input {
-  border: 1px solid var(--color-gray-light);
+  border: 1px solid var(--color-gray-xxlight);
   padding: var(--space-xsmall);
   background: #fff;
-  color: var(-color-gray);
+  color: var(--color-gray);
   flex: 1 1 auto;
   outline: 0;
 }
@@ -21,9 +20,9 @@
 }
 
 .button {
-  padding: var(--space-xsmall) var(--space);
+  padding: var(--space-xsmall) var(--space-medium);
   border: 0;
-  background: var(--color-gray-light);
+  background: var(--color-gray-xxlight);
   color: var(--color-gray-dark);
   cursor: pointer;
   outline: none;

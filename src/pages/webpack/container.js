@@ -1,53 +1,41 @@
-import {
-  compose,
-  withProps,
-} from 'recompose';
+import { compose, withProps } from 'recompose';
+import { createStats, createStatsSummary } from '@relative-ci/utils';
+import { last, reverse } from 'lodash';
 
-import { METRIC_TYPE_FILE_SIZE } from '../../config/metrics';
 import withSources from '../../hocs/with-sources';
 import withRuns from '../../hocs/with-runs';
-import calculateTotals from './utils/calculate-totals';
 
-const createAssets = sources => sources.map(({ loading, error, res }, index) => {
-  if (loading || error) {
-    return {};
-  }
-
-  return {
-    label: `Run #${index}`,
-    data: {
-      ...res,
-      assets: res && res.assets && res.assets.map(item => ({
-        ...item,
-        type: METRIC_TYPE_FILE_SIZE,
-      })),
+const createJobs = (sources) => {
+  const jobs = reverse([...sources]).map(({ res }, index) => ({
+    internalBuildNumber: (sources.length - index),
+    rawData: {
+      webpack: {
+        stats: res,
+      },
     },
-  };
-});
+  })).reduce((agg, job) => {
+    const baseline = last(agg);
+    const stats = createStats(baseline && baseline.rawData, job.rawData);
+    const summary = createStatsSummary(baseline && baseline.stats, stats);
 
-const createTotalByType = sources => sources.map(({ loading, error, res }, index) => {
-  if (loading || error) {
-    return {};
-  }
+    return [
+      ...agg,
+      {
+        ...job,
+        stats,
+        summary,
+      },
+    ];
+  }, []);
 
-  return {
-    label: `Run #${index}`,
-    data: calculateTotals(res.assets || []),
-  };
-});
-
-const metricsMap = {};
-
-const metaMap = {
-  hash: 'hash',
+  return reverse(jobs);
 };
 
 const enhance = compose(
   withSources(),
-  withRuns(metricsMap, metaMap),
+  withRuns({ hash: 'hash' }),
   withProps(({ sources }) => ({
-    assets: createAssets(sources),
-    totalByType: createTotalByType(sources),
+    jobs: createJobs(sources),
   })),
 );
 

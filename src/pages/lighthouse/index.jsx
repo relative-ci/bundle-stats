@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
+import { Container, LighthouseTable } from '@relative-ci/ui';
 
 import Helmet from '../../components/helmet';
 import Sources from '../../components/sources';
-import MetricsTable from '../../components/metrics-table';
 import config from './config.json';
 import locale from './locale.json';
 import enhance from './container';
@@ -11,7 +11,7 @@ const Lighthouse = (props) => {
   const {
     sources,
     runs,
-    rows,
+    jobs,
     addSource,
     removeSource,
   } = props;
@@ -32,11 +32,13 @@ const Lighthouse = (props) => {
         removeSource={removeSource}
       />
 
-      {rows.length > 0 && (
-        <MetricsTable
-          runs={runs}
-          rows={rows}
-        />
+      {jobs.length > 0 && (
+        <Container>
+          <LighthouseTable
+            runs={runs}
+            jobs={jobs}
+          />
+        </Container>
       )}
     </div>
   );
@@ -49,8 +51,8 @@ Lighthouse.propTypes = {
   /** Metric runs */
   runs: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
 
-  /** Metric rows */
-  rows: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
+  /** Jobs data */
+  jobs: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
 
   /** Add sources handler */
   addSource: PropTypes.func.isRequired,

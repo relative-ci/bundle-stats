@@ -17,11 +17,13 @@ const Helmet = ({ title, description }) => (
 );
 
 Helmet.defaultProps = {
-  description: '',
+  description: config.description,
 };
 
 Helmet.propTypes = {
+  /** Meta title */
   title: PropTypes.string.isRequired,
+
   /** Meta description */
   description: PropTypes.string,
 };

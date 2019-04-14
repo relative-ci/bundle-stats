@@ -104,7 +104,7 @@ test('Compute delta', () => {
         {
           value: 0,
           delta: 0,
-          displayDelta: '+0%',
+          displayDelta: '0%',
         },
       ],
     },

@@ -8,7 +8,6 @@
   min-width: 2rem;
   padding: var(--space-xsmall);
   margin-left: -1px;
-  border: 1px solid var(--color-gray-light);
 }
 
 /* List empty state */

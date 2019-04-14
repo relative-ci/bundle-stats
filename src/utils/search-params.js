@@ -1,4 +1,3 @@
-// eslint-disable import/prefer-default-export
 const URL_PARAM_NAME = 'url';
 
 const urlsToSearch = (urls) => {

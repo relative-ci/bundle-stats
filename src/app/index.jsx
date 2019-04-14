@@ -1,30 +1,42 @@
 import { Router } from 'preact-router';
+import { Logo, Footer } from '@relative-ci/ui';
 
+import * as URLS from '../utils/urls';
 import Webpack from '../pages/webpack';
 import Lighthouse from '../pages/lighthouse';
 import Browsertime from '../pages/browsertime';
 import Redirect from './redirect';
 import Route from './route';
-import Logo from './logo';
 import Navigation from './navigation';
 import styles from './styles.css';
 
 const App = () => (
   <div>
-    <header class={styles.header}>
-      <div class={styles.headerInner}>
-        <Logo />
-        <Navigation />
-      </div>
+    <header className={styles.header}>
+      <Logo
+        className={styles.headerRelativeLogo}
+        as="a"
+        href="https://relative-ci.com"
+        title="Go to relative-ci.com"
+      />
+      <Navigation className={styles.headerNavigation} />
+      <Logo
+        className={styles.headerGithubLogo}
+        kind="github"
+        as="a"
+        href="https://github.com/relative-ci/compare"
+        title="Go to Github"
+      />
     </header>
-    <main class={styles.main}>
+    <main className={styles.main}>
       <Router>
         <Redirect path="/" to="/webpack" />
-        <Route component={Webpack} path="/webpack" />
-        <Route component={Lighthouse} path="/lighthouse" />
-        <Route component={Browsertime} path="/browsertime" />
+        <Route component={Webpack} path={URLS.WEBPACK_PATH} />
+        <Route component={Lighthouse} path={URLS.LIGHTHOUSE_PATH} />
+        <Route component={Browsertime} path={URLS.BROWSERTIME_PATH} />
       </Router>
     </main>
+    <Footer />
   </div>
 );
 

@@ -1,13 +1,19 @@
+import Router from 'preact-router';
+import Match from 'preact-router/match';
 import PropTypes from 'prop-types';
+import { Container, Summary, Tabs } from '@relative-ci/ui';
+import { isEmpty } from 'lodash';
 
 import Helmet from '../../components/helmet';
 import Sources from '../../components/sources';
-import Assets from '../../components/webpack/assets';
-import TotalByTypeTable from '../../components/webpack/total-by-type-table';
+import * as URLS from '../../utils/urls';
+import Totals from './totals';
+import Assets from './assets';
+import Modules from './modules';
 import config from './config.json';
 import locale from './locale.json';
 import enhance from './container';
-import styles from './styles.css';
+import style from './style.css';
 
 const Webpack = (props) => {
   const {
@@ -15,8 +21,7 @@ const Webpack = (props) => {
     addSource,
     removeSource,
     runs,
-    assets,
-    totalByType,
+    jobs,
   } = props;
 
   return (
@@ -35,18 +40,42 @@ const Webpack = (props) => {
         removeSource={removeSource}
       />
 
-      {totalByType.length > 0 && (
-        <div className={styles.totalByType}>
-          <TotalByTypeTable runs={totalByType} />
-        </div>
-      )}
-
-      {assets.length > 0 && (
-        <div className={styles.assets}>
-          <Assets
-            runs={assets}
-            className={styles.assets}
-          />
+      {!isEmpty(jobs) && (
+        <div>
+          <Container>
+            <Summary data={jobs[0].summary} />
+          </Container>
+          <Container className={style.tabs}>
+            <Match>
+              {({ path }) => (
+                <Tabs className={style.tabs}>
+                  <a
+                    href={URLS.getWebpackUrl(URLS.WEBPACK_TOTALS_SLUG)}
+                    isActive={path === URLS.getWebpackPath(URLS.WEBPACK_TOTALS_SLUG)}
+                  >
+                    {locale.totals}
+                  </a>
+                  <a
+                    href={URLS.getWebpackUrl(URLS.WEBPACK_ASSETS_SLUG)}
+                    isActive={path === URLS.getWebpackPath(URLS.WEBPACK_ASSETS_SLUG)}
+                  >
+                    {locale.assets}
+                  </a>
+                  <a
+                    href={URLS.getWebpackUrl(URLS.WEBPACK_MODULES_SLUG)}
+                    isActive={path === URLS.getWebpackPath(URLS.WEBPACK_MODULES_SLUG)}
+                  >
+                    {locale.modules}
+                  </a>
+                </Tabs>
+              )}
+            </Match>
+          </Container>
+          <Router>
+            <Totals jobs={jobs} path={URLS.getWebpackPath(URLS.WEBPACK_TOTALS_SLUG)} />
+            <Assets jobs={jobs} path={URLS.getWebpackPath(URLS.WEBPACK_ASSETS_SLUG)} />
+            <Modules jobs={jobs} path={URLS.getWebpackPath(URLS.WEBPACK_MODULES_SLUG)} />
+          </Router>
         </div>
       )}
     </div>
@@ -56,8 +85,7 @@ const Webpack = (props) => {
 Webpack.defaultProps = {
   sources: [],
   runs: [],
-  totalByType: [],
-  assets: [],
+  jobs: [],
 };
 
 Webpack.propTypes = {
@@ -65,8 +93,17 @@ Webpack.propTypes = {
   addSource: PropTypes.func.isRequired,
   removeSource: PropTypes.func.isRequired,
   runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
-  totalByType: PropTypes.array, // eslint-disable-line react/forbid-prop-types
-  assets: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  jobs: PropTypes.arrayOf(PropTypes.shape({
+    internalBuildNumber: PropTypes.number,
+    rawData: PropTypes.shape({
+      webpack: PropTypes.shape({
+        assets: PropTypes.arrayOf(PropTypes.shape({
+          name: PropTypes.string,
+          size: PropTypes.number,
+        })),
+      }),
+    }),
+  })),
 };
 
 export default enhance(Webpack);

@@ -54,10 +54,10 @@ const enhance = () => (BaseComponent) => {
           ...sources,
           source,
         ],
-      }), () => {
-        this.fetchSource(source);
-        syncSourcesWithParams(this.state.sources);
-      });
+      }));
+
+      this.fetchSource(source);
+      syncSourcesWithParams(this.state.sources);
     }
 
     removeSource = (source) => {
