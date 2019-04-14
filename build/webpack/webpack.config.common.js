@@ -47,7 +47,7 @@ module.exports = webpackMerge(
       new HtmlPlugin({
         template: './index.html',
         filename: 'index.html',
-        title: appConfig.tilte,
+        title: appConfig.title,
         description: appConfig.description,
         minimize: isProduction,
       }),
