@@ -48,6 +48,7 @@ module.exports = webpackMerge(
         template: './index.html',
         filename: 'index.html',
         title: appConfig.tilte,
+        description: appConfig.description,
         minimize: isProduction,
       }),
       new webpack.DefinePlugin({

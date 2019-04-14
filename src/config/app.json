@@ -1,3 +1,4 @@
 {
-  "title": "Relative CI"
+  "title": "Relative CI",
+  "description": "Side by side comparison for Webpack, Lighthouse and Browsertime stats"
 }

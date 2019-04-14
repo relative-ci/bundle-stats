@@ -1,5 +1,5 @@
 {
   "title": "Webpack",
-  "description": "Compare bundle assets from Webpack stats",
+  "description": "Side by side comparison for Webpack stats.",
   "loadExample": "Load ReactHN example"
 }

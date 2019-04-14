@@ -1,5 +1,5 @@
 {
   "title": "Browsertime",
-  "description": "Compare bundle assets from Browsertime stats",
+  "description": "Side by side comparison for Browsertime stats",
   "loadExample": "Load ReactHN vs PreactHN example"
 }
