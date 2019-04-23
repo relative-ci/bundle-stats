@@ -8,12 +8,13 @@ html {
 }
 
 body {
-  color: var(--color-gray);
+  color: var(--color-text);
 }
 
 h1, h2, h3, h4, h5 {
+  margin-bottom: var(--space-small);
   letter-spacing: -0.01em;
-  color: var(--color-gray-dark);
+  color: var(--color-heading);
 }
 
 code {
@@ -26,5 +27,5 @@ a {
 
 a:hover,
 a:active {
-  color: var(--color-primary-dark);
+  color: var(--color-primary-light);
 }

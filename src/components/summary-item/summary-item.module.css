@@ -2,7 +2,7 @@
 
 .title {
   margin-bottom: 0;
-  color: var(--color-gray-xlight);
+  color: var(--color-gray-light);
   font-size: var(--size-xsmall);
   letter-spacing: 0.01em;
   text-transform: uppercase;
@@ -29,7 +29,7 @@
 
 /* Loading state */
 .loading {
-  background: var(--color-gray-xxxlight);
+  background: var(--color-gray-100);
   pointer-events: none;
   max-width: 5em;
   width: 100%;

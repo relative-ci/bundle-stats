@@ -1,4 +1,5 @@
 :root {
+  /* Spaces */
   --space-xxxsmall: 4px;
   --space-xxsmall: 8px;
   --space-xsmall: 12px;
@@ -21,30 +22,87 @@
 
   --line-height: var(--space-medium);
 
-  --color-dark: #171717;
+  /*
+   * Color scheme: https://coolors.co/edeeee-425ad3-47e5bc-ff6666-fff07c
+   */
 
-  --color-gray-xxxlight: #fafafa;
-  --color-gray-xxlight: #E3E3E3;
-  --color-gray-xlight: #A4A4A4;
-  --color-gray-light: #7A7A7A;
-  --color-gray: #505050;
-  --color-gray-dark: #202020;
+	/* https://hihayk.github.io/scale/#4/4/40/90/0/0/100/0/1B264F/27/38/79 */
+	--color-branding-dark: #161E3F;
+	--color-branding: #1B264F;
+	--color-branding-light: #7B84A5;
 
-  --color-red: #ff8a8e;
-  --color-green: #439a86;
-  --color-green-ultra-light: #D3E8E3;
-  --color-green-light: #8BC1B5;
-  --color-green-dark: #34757D;
-  --color-yellow: #fff1a6;
-  --color-yellow-50: #fffde7;
-  --color-blue: #53a2be;
-  --color-light: #fff;
+	/* https://hihayk.github.io/scale/#4/4/40/90/0/0/100/0/9DA1A6/157/161/166 */
+	--color-gray-25: #FAFBFB;
+	--color-gray-50: #F3F4F4;
+	--color-gray-100: #E2E3E4;
+	--color-gray-200: #CED0D3;
+	--color-gray-300: #BABDC1;
+	--color-gray-400: #ACAFB3;
+	--color-gray-500: #9DA1A6;
+	--color-gray-600: #95999E;
+	--color-gray-700: #8B8F95;
+	--color-gray-800: #81858B;
+	--color-gray-900: #6F747B;
 
-  --color-primary: #343951;
-  --color-primary-dark: #2D2941;
-  --color-primary-light: #44495F;
+	--color-gray-light-background: var(--color-gray-25);
+	--color-gray-ultra-light: var(--color-gray-100);
+	--color-gray-light: var(--color-gray-300);
+	--color-gray: var(--color-gray-500);
+	--color-gray-dark: var(--color-gray-700);
+	--color-gray-ultra-dark: var(--color-gray-900);
+
+	/* https://hihayk.github.io/scale/#4/4/40/90/0/0/100/0/FF6666/255/102/102 */
+	--color-red-ultra-dark: #993D3D;
+	--color-red-dark: #CC5252;
+	--color-red: #FF6666;
+	--color-red-light: #FF9696;
+	--color-red-ultra-light: #FFE8E8;
+
+	/* http://mcg.mbitson.com/#!?mcgpalette0=%23425ad3 */
+	--color-blue-50: #e8ebfa;
+	--color-blue-100: #c6cef2;
+	--color-blue-200: #a1ade9;
+	--color-blue-300: #7b8ce0;
+	--color-blue-400: #5e73da;
+	--color-blue-500: #425ad3;
+	--color-blue-600: #3c52ce;
+	--color-blue-700: #3348c8;
+	--color-blue-800: #2b3fc2;
+	--color-blue-900: #1d2eb7;
+
+	--color-blue-ultra-light: var(--color-blue-100);
+	--color-blue-light: var(--color-blue-300);
+	--color-blue: var(--color-blue-500);
+	--color-blue-dark: var(--color-blue-700);
+	--color-blue-ultra-dark: var(--color-blue-900);
+
+	/* https://hihayk.github.io/scale/#5/5/40/90/0/0/100/0/47E5BC/71/229/188 */
+	--color-green-ultra-dark: #2B8971;
+	--color-green-dark: #3CC09E;
+	--color-green: #47E5BC;
+	--color-green-light: #95FFEB;
+	--color-green-ultra-light: #E6FFFC;
+
+	/* https://hihayk.github.io/scale/#4/4/40/90/0/0/100/0/FFF07C/255/240/124 */
+	--color-yellow-ultra-dark: #99904A;
+	--color-yellow-dark: #CCC063;
+	--color-yellow: #FFF07C;
+	--color-yellow-light: #FFFFA5;
+	--color-yellow-ultra-light: #FFFFEB;
+
+
+	/* Functional color variables */
+  --color-dark: #1E2728;
+	--color-light: #FFF;
+
+  --color-primary: var(--color-blue);
+  --color-primary-dark: var(--color-blue-dark);
+  --color-primary-light: var(--color-blue-light);
 
   --color-secondary: var(--color-green);
   --color-secondary-dark: var(--color-green-dark);
   --color-secondary-light: var(--color-green-light);
+
+	--color-text: var(--color-gray-900);
+	--color-heading: var(--color-dark);
 }

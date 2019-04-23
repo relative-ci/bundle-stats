@@ -11,11 +11,11 @@
 	margin-top: 0;
 	padding: var(--space-xsmall);
 	min-width: 120px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 var(--space-xxsmall) rgba(0, 0, 0, 0.2);
 
-	background: var(--color-primary-dark);
-  color: var(--color-light);
-	font-size: var(--size-xsmall);
+	background: var(--color-light);
+  color: var(--color-gray);
+	font-size: var(--size-small);
 	text-align: center;
   white-space: nowrap;
 }
@@ -28,7 +28,7 @@
 	content: '';
 	display: block;
 	border: var(--space-xxsmall) solid transparent;
-	border-top-color: var(--color-primary-dark);
+	border-top-color: var(--color-light);
 }
 
 /* Hover */

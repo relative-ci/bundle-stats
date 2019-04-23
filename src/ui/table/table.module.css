@@ -1,5 +1,5 @@
 .root {
-  border: 1px solid var(--color-gray-xxlight);
+  border: 1px solid var(--color-gray-ultra-light);
   border-width: 1px 1px 0 0;
   width: 100%;
   border-collapse: collapse;
@@ -7,14 +7,14 @@
 }
 
 .cell {
-  border: 1px solid var(--color-gray-xxlight);
+  border: 1px solid var(--color-gray-ultra-light);
   border-width: 0 0 1px 1px;
-  padding: var(--space-small) var(--space-medium);
+  padding: var(--space-xsmall) var(--space-small);
   text-align: left;
 }
 
 thead .cell {
-  padding: var(--space-xxsmall) var(--space-medium);
+  padding: var(--space-xxsmall) var(--space-small);
   text-transform: uppercase;
 }
 
@@ -22,20 +22,16 @@ thead .cell:empty {
   display: none;
 }
 
-tbody tr:first-child .cell {
-  border-top-width: 2px;
-}
-
 tbody th.cell {
   font-weight: normal;
 }
 
 tbody tr:nth-child(even) .cell {
-  background-color: var(--color-gray-xxxlight);
+  background-color: var(--color-gray-light-background);
 }
 
 tbody tr:hover .cell {
-  background-color: var(--color-yellow-50);
+  background-color: var(--color-yellow-ultra-light);
 }
 
 .emptyCell {

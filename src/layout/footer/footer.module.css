@@ -1,6 +1,6 @@
 .root {
   padding: var(--space-large) 0;
-  background: var(--color-gray-xxxlight);
+  background: var(--color-gray-light-background);
   color: var(--color-gray);
   text-align: center;
 }
@@ -13,7 +13,7 @@
 
 .brandingHome {
   vertical-align: middle;
-  color: var(--color-gray-xlight);
+  color: var(--color-gray-ultra-light);
 }
 
 .brandingHome:hover,

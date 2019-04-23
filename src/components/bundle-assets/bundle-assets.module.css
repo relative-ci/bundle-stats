@@ -37,7 +37,7 @@
   height: var(--space-small);
   font-size: 10px;
   font-weight: bold;
-  background: var(--color-gray-xxlight);
+  background: var(--color-gray-100);
   color: var(--color-gray-light);
   line-height: var(--space-small);
   text-align: center;

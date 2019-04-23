@@ -1,13 +1,13 @@
 .root {
   position: relative(); 
-  border-bottom: 1px solid var(--color-gray-xxlight);
+  border-bottom: 1px solid var(--color-gray-100);
 }
 
 .item {
   position: relative;
   display: inline-block;
   padding: var(--space-xsmall) var(--space-small);
-  color: var(--color-gray-xlight);
+  color: var(--color-gray-light);
   font-weight: bold;
   text-decoration: none;
 }
@@ -24,7 +24,7 @@
 }
 
 .item:hover {
-  color: var(--color-info);
+  color: var(--color-primary-dark);
 }
 
 .item:hover::after {
@@ -32,7 +32,7 @@
 }
 
 .itemActive {
-  color: var(--color-info);
+  color: var(--color-primary);
 }
 
 .itemActive::after {
