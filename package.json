@@ -23,7 +23,7 @@
     ]
   },
   "dependencies": {
-    "@babel/polyfill": "7.4.3",
+    "@babel/polyfill": "7.4.4",
     "@moonwalker/orbit-ui": "1.12.9",
     "@relative-ci/ui": "^1.0.0-beta.18",
     "@relative-ci/utils": "^2.0.0",
