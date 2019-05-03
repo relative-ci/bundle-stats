@@ -1,7 +1,7 @@
 .root {
   position: relative;
   padding: var(--space-xsmall);
-  border: 1px solid var(--color-gray-xxlight);
+  border: 1px solid var(--color-gray-ultra-light);
 }
 
 .title {
@@ -80,7 +80,7 @@
 .root:hover {
   position: relative;
   z-index: 2;
-  border-color: var(--color-gray-xlight);
+  border-color: var(--color-gray-light);
 }
 
 .root:hover .remove {

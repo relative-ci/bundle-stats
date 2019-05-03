@@ -7,7 +7,7 @@
 }
 
 .input {
-  border: 1px solid var(--color-gray-xxlight);
+  border: 1px solid var(--color-gray-ultra-light);
   padding: var(--space-xsmall);
   background: #fff;
   color: var(--color-gray);
@@ -22,8 +22,7 @@
 .button {
   padding: var(--space-xsmall) var(--space-medium);
   border: 0;
-  background: var(--color-gray-xxlight);
-  color: var(--color-gray-dark);
+  background: var(--color-gray-ultra-light);
   cursor: pointer;
   outline: none;
 }
