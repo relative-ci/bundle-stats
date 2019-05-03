@@ -4,11 +4,11 @@
   top: 0;
   left: 0;
   right: 0;
-  border-bottom: 1px solid var(--color-gray-xxlight);
+  box-shadow: 0 0 var(--space-xsmall) var(--color-gray-ultra-light);
   background: var(--color-light);
   display: flex;
   align-items: center;
-  padding: 0 var(--space-xsmall);
+  padding: 0 var(--space-medium);
 }
 
 .headerRelativeLogo {

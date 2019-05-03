@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import {
+  Box,
   BundleAssetsTotalsTable,
   BundleAssetsTotalsChartBars,
   BundleAssetsTotalsChartPie,
   Container,
   Panels,
-  Panel,
 } from '@relative-ci/ui';
 
 const Totals = (props) => {
@@ -15,12 +15,12 @@ const Totals = (props) => {
     <div>
       <Container>
         <Panels>
-          <Panel>
+          <Box>
             <BundleAssetsTotalsChartBars jobs={jobs} />
-          </Panel>
-          <Panel>
+          </Box>
+          <Box>
             <BundleAssetsTotalsChartPie jobs={jobs} />
-          </Panel>
+          </Box>
         </Panels>
       </Container>
 
