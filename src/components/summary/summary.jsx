@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import { Box } from '../../ui';
 import { SummaryItem } from '../summary-item';
 import css from './summary.module.css';
 
 export const Summary = ({
   className, data, keys, loading,
 }) => (
-  <div className={cx(css.root, className)}>
+  <Box className={cx(css.root, className)}>
     <div className={css.items}>
       {keys.map(key => (
         <SummaryItem
@@ -20,7 +21,7 @@ export const Summary = ({
         />
       ))}
     </div>
-  </div>
+  </Box>
 );
 
 Summary.defaultProps = {

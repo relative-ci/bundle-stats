@@ -1,5 +1,5 @@
 .chart {
-  height: 140px;
+  height: var(--chart-height);
 }
 
 .tooltipTitle {

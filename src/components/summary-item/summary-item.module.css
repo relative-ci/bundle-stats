@@ -1,17 +1,17 @@
 .root {}
 
 .title {
-  margin-bottom: 0;
+  margin-bottom: var(--space-xxxsmall);
   color: var(--color-gray-light);
   font-size: var(--size-xsmall);
-  letter-spacing: 0.01em;
+  line-height: 1;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
 .currentMetric {
   display: inline-block;
-  color: var(--color-gray-dark);
+  color: var(--color-dark);
   font-size: var(--size-large);
 }
 
@@ -23,7 +23,6 @@
 
 .baselineMetric {
   display: block;
-  color: var(--color-gray-light);
   font-size: var(--size-small);
 }
 
