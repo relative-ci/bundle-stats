@@ -1,3 +1,4 @@
+export { Box } from './box';
 export { Container } from './container';
 export { IconText } from './icon-text';
 export { Logo } from './logo';
