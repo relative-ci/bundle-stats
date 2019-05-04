@@ -5,13 +5,13 @@ import cx from 'classnames';
 import css from './tabs.module.css';
 
 const cloneElement = (element) => {
-  const { className, isActive, ...restProps } = element.props;
+  const { className, isTabActive, ...restProps } = element.props;
 
   return React.cloneElement(
     element,
     {
       ...restProps,
-      className: cx(css.item, isActive && css.itemActive, className),
+      className: cx(css.item, isTabActive && css.itemActive, className),
     },
   );
 };

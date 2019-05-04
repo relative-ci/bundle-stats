@@ -23,15 +23,11 @@
   --line-height: var(--space-medium);
 
   /*
-   * Color scheme: https://coolors.co/edeeee-425ad3-47e5bc-ff6666-fff07c
+   * Color scheme:
+   * http://mcg.mbitson.com/#!?red=%23ef626c&green=%2375cb71&yellow=%23f6e27f&gray=%239da1a6&blue=%232b639b&themename=mcgtheme
+   * https://coolors.co/2b639b-ef626c-75cb71-f6e27f-9da1a6<Paste>
    */
 
-	/* https://hihayk.github.io/scale/#4/4/40/90/0/0/100/0/1B264F/27/38/79 */
-	--color-branding-dark: #161E3F;
-	--color-branding: #1B264F;
-	--color-branding-light: #7B84A5;
-
-	/* https://hihayk.github.io/scale/#4/4/40/90/0/0/100/0/9DA1A6/157/161/166 */
 	--color-gray-25: #FAFBFB;
 	--color-gray-50: #F3F4F4;
 	--color-gray-100: #E2E3E4;
@@ -43,7 +39,6 @@
 	--color-gray-700: #8B8F95;
 	--color-gray-800: #81858B;
 	--color-gray-900: #6F747B;
-
 	--color-gray-light-background: var(--color-gray-25);
 	--color-gray-ultra-light: var(--color-gray-100);
 	--color-gray-light: var(--color-gray-300);
@@ -51,57 +46,90 @@
 	--color-gray-dark: var(--color-gray-700);
 	--color-gray-ultra-dark: var(--color-gray-900);
 
-	/* https://hihayk.github.io/scale/#4/4/40/90/0/0/100/0/FF6666/255/102/102 */
-	--color-red-ultra-dark: #993D3D;
-	--color-red-dark: #CC5252;
-	--color-red: #FF6666;
-	--color-red-light: #FF9696;
-	--color-red-ultra-light: #FFE8E8;
+  --color-red-50: #fdeced;
+  --color-red-100: #fad0d3;
+  --color-red-200: #f7b1b6;
+  --color-red-300: #f49198;
+  --color-red-400: #f17a82;
+  --color-red-500: #ef626c;
+  --color-red-600: #ed5a64;
+  --color-red-700: #eb5059;
+  --color-red-800: #e8464f;
+  --color-red-900: #e4343d;
+	--color-red-ultra-light: var(--color-red-100);
+	--color-red-light: var(--color-red-300);
+	--color-red: var(--color-red-500);
+	--color-red-dark: var(--color-red-700);
+	--color-red-ultra-dark: var(--color-red-900);
 
-	/* http://mcg.mbitson.com/#!?mcgpalette0=%23425ad3 */
-	--color-blue-50: #e8ebfa;
-	--color-blue-100: #c6cef2;
-	--color-blue-200: #a1ade9;
-	--color-blue-300: #7b8ce0;
-	--color-blue-400: #5e73da;
-	--color-blue-500: #425ad3;
-	--color-blue-600: #3c52ce;
-	--color-blue-700: #3348c8;
-	--color-blue-800: #2b3fc2;
-	--color-blue-900: #1d2eb7;
 
+  --color-blue-50: #e6ecf3;
+  --color-blue-100: #bfd0e1;
+  --color-blue-200: #95b1cd;
+  --color-blue-300: #6b92b9;
+  --color-blue-400: #4b7aaa;
+  --color-blue-500: #2b639b;
+  --color-blue-600: #265b93;
+  --color-blue-700: #205189;
+  --color-blue-800: #1a477f;
+  --color-blue-900: #10356d;
 	--color-blue-ultra-light: var(--color-blue-100);
 	--color-blue-light: var(--color-blue-300);
 	--color-blue: var(--color-blue-500);
 	--color-blue-dark: var(--color-blue-700);
 	--color-blue-ultra-dark: var(--color-blue-900);
 
-	/* https://hihayk.github.io/scale/#5/5/40/90/0/0/100/0/47E5BC/71/229/188 */
-	--color-green-ultra-dark: #2B8971;
-	--color-green-dark: #3CC09E;
-	--color-green: #47E5BC;
-	--color-green-light: #95FFEB;
-	--color-green-ultra-light: #E6FFFC;
+  --color-green-50: #eef9ee;
+  --color-green-100: #d6efd4;
+  --color-green-200: #bae5b8;
+  --color-green-300: #9edb9c;
+  --color-green-400: #8ad386;
+  --color-green-500: #75cb71;
+  --color-green-600: #6dc669;
+  --color-green-700: #62be5e;
+  --color-green-800: #58b854;
+  --color-green-900: #45ac42;
+	--color-green-ultra-light: var(--color-green-100);
+	--color-green-light: var(--color-green-300);
+	--color-green: var(--color-green-500);
+	--color-green-dark: var(--color-green-700);
+	--color-green-ultra-dark: var(--color-green-900);
 
-	/* https://hihayk.github.io/scale/#4/4/40/90/0/0/100/0/FFF07C/255/240/124 */
-	--color-yellow-ultra-dark: #99904A;
-	--color-yellow-dark: #CCC063;
-	--color-yellow: #FFF07C;
-	--color-yellow-light: #FFFFA5;
-	--color-yellow-ultra-light: #FFFFEB;
+  --color-yellow-25: #FFFDF2;
+  --color-yellow-50: #fefcf0;
+  --color-yellow-50: #fefcf0;
+  --color-yellow-100: #fcf6d9;
+  --color-yellow-200: #fbf1bf;
+  --color-yellow-300: #f9eba5;
+  --color-yellow-400: #f7e692;
+  --color-yellow-500: #f6e27f;
+  --color-yellow-600: #f5df77;
+  --color-yellow-700: #f3da6c;
+  --color-yellow-800: #f2d662;
+  --color-yellow-900: #efcf4f;
+  --color-yellow-light-background: var(--color-yellow-25);
+	--color-yellow-ultra-light: var(--color-yellow-100);
+	--color-yellow-light: var(--color-yellow-300);
+	--color-yellow: var(--color-yellow-500);
+	--color-yellow-ultra-dark: var(--color-yellow-700);
+	--color-yellow-dark: var(--color-yellow-900);
 
 
 	/* Functional color variables */
   --color-dark: #1E2728;
 	--color-light: #FFF;
 
+	--color-branding-light: var(--color-blue-700);
+	--color-branding: var(--color-blue-800);
+	--color-branding-dark: var(--color-blue-900);
+
+  --color-primary-light: var(--color-blue-light);
   --color-primary: var(--color-blue);
   --color-primary-dark: var(--color-blue-dark);
-  --color-primary-light: var(--color-blue-light);
 
+  --color-secondary-light: var(--color-green-light);
   --color-secondary: var(--color-green);
   --color-secondary-dark: var(--color-green-dark);
-  --color-secondary-light: var(--color-green-light);
 
 	--color-text: var(--color-gray-900);
 	--color-heading: var(--color-dark);

@@ -1,3 +1,7 @@
+.root {
+  width: 100%;
+}
+
 .items {
   margin-left: calc(0px - var(--space-small));
   margin-bottom: calc(0px - var(--space-small));

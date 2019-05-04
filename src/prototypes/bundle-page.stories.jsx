@@ -42,7 +42,7 @@ stories.add('totals', () => (
     </Container>
     <Container>
       <Tabs>
-        <span isActive>Totals</span>
+        <span isTabActive>Totals</span>
         <span>Assets</span>
         <span>Modules</span>
       </Tabs>
@@ -103,7 +103,7 @@ stories.add('assets', () => (
     <Container>
       <Tabs>
         <span>Totals</span>
-        <span isActive>Assets</span>
+        <span isTabActive>Assets</span>
         <span>Modules</span>
       </Tabs>
     </Container>
@@ -122,7 +122,7 @@ stories.add('modules', () => (
       <Tabs>
         <span>Totals</span>
         <span>Assets</span>
-        <span isActive>Modules</span>
+        <span isTabActive>Modules</span>
       </Tabs>
     </Container>
     <Container>

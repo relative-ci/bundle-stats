@@ -1,10 +1,9 @@
 .root {
-  width: 100%;
-  max-width: var(--max-width);
-  padding: 0 var(--space-small);
-  margin: 0 auto;
+  padding: var(--space-small);
 }
 
-.root + .root {
-  margin-top: var(--space-large);
+.inner {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
