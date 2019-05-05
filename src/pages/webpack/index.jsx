@@ -13,7 +13,6 @@ import Modules from './modules';
 import config from './config.json';
 import locale from './locale.json';
 import enhance from './container';
-import style from './style.css';
 
 const Webpack = (props) => {
   const {
@@ -45,25 +44,25 @@ const Webpack = (props) => {
           <Container>
             <Summary data={jobs[0].summary} />
           </Container>
-          <Container className={style.tabs}>
+          <Container>
             <Match>
               {({ path }) => (
-                <Tabs className={style.tabs}>
+                <Tabs>
                   <a
                     href={URLS.getWebpackUrl(URLS.WEBPACK_TOTALS_SLUG)}
-                    isActive={path === URLS.getWebpackPath(URLS.WEBPACK_TOTALS_SLUG)}
+                    isTabActive={path === URLS.getWebpackPath(URLS.WEBPACK_TOTALS_SLUG)}
                   >
                     {locale.totals}
                   </a>
                   <a
                     href={URLS.getWebpackUrl(URLS.WEBPACK_ASSETS_SLUG)}
-                    isActive={path === URLS.getWebpackPath(URLS.WEBPACK_ASSETS_SLUG)}
+                    isTabActive={path === URLS.getWebpackPath(URLS.WEBPACK_ASSETS_SLUG)}
                   >
                     {locale.assets}
                   </a>
                   <a
                     href={URLS.getWebpackUrl(URLS.WEBPACK_MODULES_SLUG)}
-                    isActive={path === URLS.getWebpackPath(URLS.WEBPACK_MODULES_SLUG)}
+                    isTabActive={path === URLS.getWebpackPath(URLS.WEBPACK_MODULES_SLUG)}
                   >
                     {locale.modules}
                   </a>
