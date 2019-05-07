@@ -1,5 +1,6 @@
 .root {
-  padding: var(--space-large) 0;
+  padding-top: var(--space-medium);
+  padding-bottom: var(--space-medium);
   background: var(--color-gray-light-background);
   color: var(--color-gray);
   text-align: center;
