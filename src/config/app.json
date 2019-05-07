@@ -1,4 +1,12 @@
 {
   "title": "Relative CI",
-  "description": "Side by side comparison for Webpack, Lighthouse and Browsertime stats"
+  "description": "Side by side comparison for Webpack, Lighthouse and Browsertime stats",
+  "url": "https://compare.relative-ci.com",
+  "facebook": {
+    "image": "https://compare.relative-ci.com/compare-relative-ci-facebook-screenshot.jpg"
+  },
+  "twitter": {
+    "account": "@Relative_CI",
+    "image": "https://compare.relative-ci.com/compare-relative-ci-twitter-screenshot.jpg"
+  }
 }

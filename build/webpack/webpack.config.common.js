@@ -47,9 +47,8 @@ module.exports = webpackMerge(
       new HtmlPlugin({
         template: './index.html',
         filename: 'index.html',
-        title: appConfig.title,
-        description: appConfig.description,
         minimize: isProduction,
+        ...appConfig,
       }),
       new webpack.DefinePlugin({
         'process.env': {
