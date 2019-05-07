@@ -1,0 +1,29 @@
+.root {
+  width: 100%;
+  min-height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-medium);
+  text-align: center;
+}
+
+/* https://codepen.io/alanshortis/pen/eJLVXr */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  display: block;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  border: 0.25rem solid var(--color-gray-ultra-light);
+  border-top-color: var(--color-gray-light);
+  animation: spin 1s infinite linear;
+}
