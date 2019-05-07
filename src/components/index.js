@@ -12,3 +12,5 @@ export { Metric } from './metric';
 export { MetricsTable } from './metrics-table';
 export { SummaryItem } from './summary-item';
 export { Summary } from './summary';
+
+export * from './chart';

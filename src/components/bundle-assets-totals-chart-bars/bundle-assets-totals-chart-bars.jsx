@@ -14,8 +14,8 @@ import {
   YAXIS_PROPS,
   Bar,
   BarChart,
+  Chart,
   ResponsiveContainer,
-  Text,
   Tooltip,
   XAxis,
   YAxis,
@@ -96,12 +96,9 @@ export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
   const COLORS = getColors(jobs.length);
 
   return (
-    <div className={cx(className, css.chart)}>
+    <Chart className={cx(className, css.chart)} title="File Type Totals By Bundle">
       <ResponsiveContainer {...RESPONSIVE_CONTAINER_PROPS}>
         <BarChart data={data}>
-          <Text textAnchor="middle" scaleToFit>
-            Title
-          </Text>
           <XAxis
             {...XAXIS_PROPS}
             dataKey="key"
@@ -127,7 +124,7 @@ export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
           ))}
         </BarChart>
       </ResponsiveContainer>
-    </div>
+    </Chart>
   );
 };
 

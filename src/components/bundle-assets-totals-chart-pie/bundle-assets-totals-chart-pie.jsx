@@ -13,11 +13,11 @@ import {
   RESPONSIVE_CONTAINER_PROPS,
   TOOLTIP_PROPS,
   Cell,
+  Chart,
   Legend,
   PieChart,
   Pie,
   ResponsiveContainer,
-  Text,
   Tooltip,
   getColors,
 } from '../chart';
@@ -118,15 +118,9 @@ export const BundleAssetsTotalsChartPie = ({ className, jobs }) => {
   const COLORS = getColors(data.length);
 
   return (
-    <div className={cx(className, css.chart)}>
+    <Chart className={cx(css.root, className)} title="Bundle By File Type">
       <ResponsiveContainer {...RESPONSIVE_CONTAINER_PROPS}>
         <PieChart>
-          <Text
-            textAnchor="middle"
-            verticalAnchor="start"
-          >
-            Job ttoo
-          </Text>
           <Legend
             layout="vertical"
             align="right"
@@ -155,7 +149,7 @@ export const BundleAssetsTotalsChartPie = ({ className, jobs }) => {
           </Pie>
         </PieChart>
       </ResponsiveContainer>
-    </div>
+    </Chart>
   );
 };
 

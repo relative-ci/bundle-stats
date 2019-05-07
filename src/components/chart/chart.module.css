@@ -1,4 +1,15 @@
-.root {
+.title {
+	margin: 0 0 var(--space-xxsmall);
+	text-align: center;
+	color: var(--color-gray);
+	font-size: var(--size-medium);
+	font-weight: normal;
+	font-family: var(--font-family-fixed);
+  line-height: var(--line-height);
+}
+
+.chart {
+  height: var(--chart-height);
   font-size: 12px;
   font-family: var(--font-family-fixed);
 }
