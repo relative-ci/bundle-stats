@@ -20,27 +20,25 @@ const Sources = ({
   const rootClassName = cx(styles.root, empty && styles.empty);
 
   return (
-    <div className={rootClassName}>
-      <Container>
-        <List
-          sources={sources}
-          runs={runs}
-          removeSource={removeSource}
-        />
-        <Add
-          className={styles.add}
-          onSubmit={addSource}
-        />
+    <Container className={rootClassName}>
+      <List
+        sources={sources}
+        runs={runs}
+        removeSource={removeSource}
+      />
+      <Add
+        className={styles.add}
+        onSubmit={addSource}
+      />
 
-        {sources.length === 0 && exampleUrls.length > 0 && (
-          <Example
-            urls={exampleUrls}
-            text={exampleText}
-            onLoadClick={handleExamplesClick}
-          />
-        )}
-      </Container>
-    </div>
+      {(sources.length === 0 && exampleUrls.length > 0) && (
+        <Example
+          urls={exampleUrls}
+          text={exampleText}
+          onLoadClick={handleExamplesClick}
+        />
+      )}
+    </Container>
   );
 };
 
