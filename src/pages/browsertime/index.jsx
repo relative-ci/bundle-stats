@@ -6,6 +6,7 @@ import Sources from '../../components/sources';
 import config from './config.json';
 import locale from './locale.json';
 import enhance from './container';
+import css from './style.css';
 
 const Browsertime = (props) => {
   const {
@@ -17,7 +18,7 @@ const Browsertime = (props) => {
   } = props;
 
   return (
-    <div>
+    <div className={css.root}>
       <Helmet
         title={locale.title}
         description={locale.description}
@@ -33,12 +34,14 @@ const Browsertime = (props) => {
       />
 
       {jobs.length > 0 && (
-        <Container>
-          <BrowsertimeTable
-            runs={runs}
-            jobs={jobs}
-          />
-        </Container>
+        <div className={css.main}>
+          <Container>
+            <BrowsertimeTable
+              runs={runs}
+              jobs={jobs}
+            />
+          </Container>
+        </div>
       )}
     </div>
   );

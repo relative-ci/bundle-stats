@@ -13,6 +13,7 @@ import Modules from './modules';
 import config from './config.json';
 import locale from './locale.json';
 import enhance from './container';
+import css from './styles.css';
 
 const Webpack = (props) => {
   const {
@@ -24,7 +25,7 @@ const Webpack = (props) => {
   } = props;
 
   return (
-    <div>
+    <div className={css.root}>
       <Helmet
         title={locale.title}
         description={locale.description}
@@ -40,7 +41,7 @@ const Webpack = (props) => {
       />
 
       {!isEmpty(jobs) && (
-        <div>
+        <div className={css.main}>
           <Container>
             <Summary data={jobs[0].summary} />
           </Container>
