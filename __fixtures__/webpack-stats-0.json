@@ -1,0 +1,440 @@
+{
+    "assets": [
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/apple-touch-icon-180x180.png",
+            "size": 3564
+        },
+        {
+            "chunkNames": [
+                "app"
+            ],
+            "chunks": [
+                0,
+                5,
+                6
+            ],
+            "emitted": true,
+            "name": "app.c8553140.js",
+            "size": 38639
+        },
+        {
+            "chunkNames": [
+                "UserProfile"
+            ],
+            "chunks": [
+                2,
+                5,
+                6
+            ],
+            "emitted": true,
+            "name": "UserProfile.60e03f1c.js",
+            "size": 1419
+        },
+        {
+            "chunkNames": [
+                "NotFound"
+            ],
+            "chunks": [
+                3,
+                5,
+                6
+            ],
+            "emitted": true,
+            "name": "NotFound.c4c69d8e.js",
+            "size": 240
+        },
+        {
+            "chunkNames": [
+                "vendor"
+            ],
+            "chunks": [
+                4,
+                5,
+                6
+            ],
+            "emitted": true,
+            "name": "vendor.8068cd36.js",
+            "size": 373417
+        },
+        {
+            "chunkNames": [
+                "core"
+            ],
+            "chunks": [
+                6,
+                5
+            ],
+            "emitted": true,
+            "name": "core.js",
+            "size": 921
+        },
+        {
+            "chunkNames": [
+                "app"
+            ],
+            "chunks": [
+                0,
+                5,
+                6
+            ],
+            "emitted": true,
+            "name": "app.c8553140.js.map",
+            "size": 223119
+        },
+        {
+            "chunkNames": [
+                "PermalinkedComment"
+            ],
+            "chunks": [
+                1,
+                5,
+                6
+            ],
+            "emitted": true,
+            "name": "PermalinkedComment.7106819e.js.map",
+            "size": 24720
+        },
+        {
+            "chunkNames": [
+                "UserProfile"
+            ],
+            "chunks": [
+                2,
+                5,
+                6
+            ],
+            "emitted": true,
+            "name": "UserProfile.60e03f1c.js.map",
+            "size": 6973
+        },
+        {
+            "chunkNames": [
+                "NotFound"
+            ],
+            "chunks": [
+                3,
+                5,
+                6
+            ],
+            "emitted": true,
+            "name": "NotFound.c4c69d8e.js.map",
+            "size": 1181
+        },
+        {
+            "chunkNames": [
+                "vendor"
+            ],
+            "chunks": [
+                4,
+                5,
+                6
+            ],
+            "emitted": true,
+            "name": "vendor.8068cd36.js.map",
+            "size": 2796036
+        },
+        {
+            "chunkNames": [
+                "core"
+            ],
+            "chunks": [
+                6,
+                5
+            ],
+            "emitted": true,
+            "name": "core.js.map",
+            "size": 9296
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "index.html",
+            "size": 525
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "index-static.html",
+            "size": 3161
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "service-worker.js",
+            "size": 348
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/android-chrome-36x36.png",
+            "size": 1070
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/android-chrome-192x192.png",
+            "size": 3751
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "css/style.css",
+            "size": 7192
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/android-chrome-144x144.png",
+            "size": 2958
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/android-chrome-48x48.png",
+            "size": 1196
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/android-chrome-72x72.png",
+            "size": 1496
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/android-chrome-96x96.png",
+            "size": 1747
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/apple-touch-icon-114x114.png",
+            "size": 1909
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/apple-touch-icon-152x152.png",
+            "size": 3039
+        },
+        {
+            "chunkNames": [
+                "PermalinkedComment"
+            ],
+            "chunks": [
+                1,
+                5,
+                6
+            ],
+            "emitted": true,
+            "name": "PermalinkedComment.7106819e.js",
+            "size": 4050
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/apple-touch-icon-120x120.png",
+            "size": 2008
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/apple-touch-icon-57x57.png",
+            "size": 1355
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/apple-touch-icon-144x144.png",
+            "size": 2958
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/apple-touch-icon-72x72.png",
+            "size": 1496
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/apple-touch-icon-precomposed.png",
+            "size": 4040
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/apple-touch-icon-76x76.png",
+            "size": 1498
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/apple-touch-icon-60x60.png",
+            "size": 1320
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/browserconfig.xml",
+            "size": 403
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/apple-touch-icon.png",
+            "size": 3564
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/favicon-16x16.png",
+            "size": 731
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/favicon-96x96.png",
+            "size": 1747
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/favicon-32x32.png",
+            "size": 999
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/favicon.ico",
+            "size": 7406
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/mstile-144x144.png",
+            "size": 2958
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/mstile-150x150.png",
+            "size": 2313
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/mstile-70x70.png",
+            "size": 1800
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/mstile-310x310.png",
+            "size": 6241
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/logo.png",
+            "size": 274
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/mstile-310x150.png",
+            "size": 2683
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/safari-pinned-tab.svg",
+            "size": 1457
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "img/splashscreen-icon-384x384.png",
+            "size": 7969
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "emitted": true,
+            "name": "views/index.ejs",
+            "size": 3475
+        },
+        {
+            "chunkNames": [],
+            "chunks": [],
+            "name": "../stats/webpack.json",
+            "size": 0
+        }
+    ],
+    "assetsByChunkName": {
+        "NotFound": [
+            "NotFound.c4c69d8e.js",
+            "NotFound.c4c69d8e.js.map"
+        ],
+        "PermalinkedComment": [
+            "PermalinkedComment.7106819e.js",
+            "PermalinkedComment.7106819e.js.map"
+        ],
+        "UserProfile": [
+            "UserProfile.60e03f1c.js",
+            "UserProfile.60e03f1c.js.map"
+        ],
+        "app": [
+            "app.c8553140.js",
+            "app.c8553140.js.map"
+        ],
+        "core": [
+            "core.js",
+            "core.js.map"
+        ],
+        "vendor": [
+            "vendor.8068cd36.js",
+            "vendor.8068cd36.js.map"
+        ]
+    },
+    "errors": [],
+    "hash": "94ea783e7bfcd454ec24",
+    "publicPath": "/",
+    "version": "1.13.1",
+    "warnings": []
+}
