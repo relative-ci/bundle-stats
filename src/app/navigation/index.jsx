@@ -14,21 +14,21 @@ const Navigation = ({ className }) => (
         <Link
           className={styles.link}
           href={URLS.WEBPACK_HREF}
-          isActive={path === URLS.WEBPACK_HREF}
+          isTabActive={path === URLS.WEBPACK_HREF}
         >
           Webpack
         </Link>
         <Link
           className={styles.link}
           href={URLS.LIGHTHOUSE_HREF}
-          isActive={path === URLS.LIGHTHOUSE_HREF}
+          isTabActive={path === URLS.LIGHTHOUSE_HREF}
         >
           Lighthouse
         </Link>
         <Link
           className={styles.link}
           href={URLS.BROWSERTIME_HREF}
-          isActive={path === URLS.BROWSERTIME_HREF}
+          isTabActive={path === URLS.BROWSERTIME_HREF}
         >
           Browsertime
         </Link>
