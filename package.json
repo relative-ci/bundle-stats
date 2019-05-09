@@ -10,9 +10,16 @@
     "lib": "lib"
   },
   "scripts": {
+    "build": "rm -fr ./lib && babel src -d lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["webpack", "bundle", "assets", "modules", "size"],
+  "keywords": [
+    "webpack",
+    "bundle",
+    "assets",
+    "modules",
+    "size"
+  ],
   "author": {
     "name": "Viorel Cojocaru",
     "email": "vio@beanon.com",
@@ -22,5 +29,10 @@
   "bugs": {
     "url": "https://github.com/relative-ci/webpack-bundle-stats/issues"
   },
-  "homepage": "https://github.com/relative-ci/webpack-bundle-stats#readme"
+  "homepage": "https://github.com/relative-ci/webpack-bundle-stats#readme",
+  "devDependencies": {
+    "@babel/cli": "7.4.4",
+    "@babel/core": "7.4.4",
+    "@babel/preset-env": "7.4.4"
+  }
 }
