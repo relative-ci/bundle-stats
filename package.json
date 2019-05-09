@@ -1,0 +1,15 @@
+{
+  "name": "@relative-ci/webpack-bundle-stats",
+  "version": "1.0.0",
+  "description": "Generate bundle report from the webpack stats data.",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
