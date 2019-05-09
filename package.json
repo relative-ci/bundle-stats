@@ -10,7 +10,9 @@
     "lib": "lib"
   },
   "scripts": {
-    "build": "rm -fr ./lib && babel src -d lib",
+    "build": "rm -fr ./lib && mkdir lib && npm run build:page && npm run build:lib",
+    "build:page": "cp page/index.html lib/report.html",
+    "build:lib": "babel src -d lib",
     "lint": "eslint .",
     "test": "jest"
   },
@@ -34,7 +36,7 @@
   "dependencies": {
     "@relative-ci/utils": "2.0.0",
     "@relative-ci/webpack-bundle-stats-html-template": "1.0.0-beta.3",
-    "fs-extra": "^7.0.1",
+    "fs-extra": "7.0.1",
     "lodash": "4.17.11",
     "yargs": "13.2.2"
   },
