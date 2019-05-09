@@ -1,15 +1,26 @@
 {
   "name": "@relative-ci/webpack-bundle-stats",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.2",
   "description": "Generate bundle report from the webpack stats data.",
   "main": "lib/index.js",
+  "bin": {
+    "webpack-bundle-stats": "bin/index.js"
+  },
   "directories": {
     "lib": "lib"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": ["webpack", "bundle", "assets", "modules", "size"],
+  "author": {
+    "name": "Viorel Cojocaru",
+    "email": "vio@beanon.com",
+    "url": "http://beanon.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/relative-ci/webpack-bundle-stats/issues"
+  },
+  "homepage": "https://github.com/relative-ci/webpack-bundle-stats#readme"
 }
