@@ -1,12 +1,9 @@
-const webpackMerge = require('webpack-merge');
-
 const { publicDir } = require('../settings');
-const commonConfig = require('./webpack.config.common');
 
-module.exports = webpackMerge(commonConfig, {
+module.exports = {
   devServer: {
     inline: true,
     historyApiFallback: true,
     contentBase: publicDir,
   },
-});
+};
