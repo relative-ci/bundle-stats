@@ -1,11 +1,9 @@
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
-const HtmlPlugin = require('html-webpack-plugin');
 
 const cssConfig = require('./configs/css');
 const resolveConfig = require('./configs/resolve');
 const filesConfig = require('./configs/files');
-const appConfig = require('../../src/config/app.json');
 
 const {
   srcDir,
@@ -17,12 +15,6 @@ const {
 module.exports = webpackMerge(
   {
     context: srcDir,
-    entry: {
-      main: [
-        './polyfill.js',
-        './index.jsx',
-      ],
-    },
     output: {
       path: distDir,
       filename: '[name].js',
@@ -44,12 +36,6 @@ module.exports = webpackMerge(
       ],
     },
     plugins: [
-      new HtmlPlugin({
-        template: './index.html',
-        filename: 'index.html',
-        minimize: isProduction,
-        ...appConfig,
-      }),
       new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: JSON.stringify(process.env.NODE_ENV),
@@ -59,11 +45,6 @@ module.exports = webpackMerge(
       }),
     ],
     devtool: 'source-map',
-    devServer: {
-      inline: true,
-      historyApiFallback: true,
-      contentBase: distDir,
-    },
   },
   resolveConfig,
   cssConfig,

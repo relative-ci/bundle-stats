@@ -3,7 +3,7 @@ import { render } from 'preact';
 import 'preact/debug';
 
 import App from './app';
-import './index.css';
+import './default.css';
 import './analytics';
 
 if (__DEVELOPMENT__) {
@@ -17,7 +17,7 @@ const renderApp = () => {
 };
 
 if (module.hot) {
-  module.hot.accept('./index.jsx', renderApp);
+  module.hot.accept('./main.jsx', renderApp);
 }
 
 renderApp();
