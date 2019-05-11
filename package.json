@@ -8,7 +8,7 @@
     "dev:standalone": "webpack-dev-server --config build/webpack/webpack.config.standalone.development.js --progress --hot --mode development",
     "build": "npm run build:main && npm run build:standalone",
     "build:main": "rm -fr ./dist && NODE_ENV=production webpack --config build/webpack/webpack.config.main.production.js --mode production",
-    "build:standalone": "rm -fr ./packages/webpack-bundle-stats-html-template/dist NODE_ENV=production webpack --config build/webpack/webpack.config.standalone.production.js --mode production",
+    "build:standalone": "rm -fr ./packages/webpack-bundle-stats-html-template/dist && NODE_ENV=production webpack --config build/webpack/webpack.config.standalone.production.js --mode production",
     "storybook": "start-storybook -p 8090 -c build/storybook",
     "test": "NODE_ENV=test jest --coverage --coverageDirectory ./artifacts/coverage",
     "lint": "eslint src/**/*.js --cache"
