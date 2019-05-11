@@ -1,0 +1,19 @@
+{
+  "name": "@relative-ci/webpack-bundle-stats-html-template",
+  "version": "1.0.0-beta.3",
+  "description": "@relative-ci/webpack-bundle-stats html template",
+  "main": "dist/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Viorel Cojocaru",
+    "email": "vio@beanon.com",
+    "url": "http://beanon.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/relative-ci/compare/issues"
+  },
+  "homepage": "https://github.com/relative-ci/compare#readme"
+}
