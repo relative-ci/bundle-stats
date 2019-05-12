@@ -29,7 +29,7 @@
     "@babel/polyfill": "7.4.4",
     "@moonwalker/orbit-ui": "1.12.12",
     "@relative-ci/ui": "^1.0.0-beta.25",
-    "@relative-ci/utils": "^2.0.0",
+    "@relative-ci/utils": "^2.2.2",
     "@storybook/react": "5.0.11",
     "classnames": "^2.2.6",
     "convert-units": "^2.3.4",
