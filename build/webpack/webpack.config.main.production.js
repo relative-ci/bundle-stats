@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const CopyPlugin = require('copy-webpack-plugin');
 const StatsPlugin = require('stats-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const commonConfig = require('./webpack.config.common');
 const mainCommonConfig = require('./webpack.config.main.common');
@@ -40,6 +41,7 @@ module.exports = webpackMerge(
       }),
     ],
     optimization: {
+      minimizer: [new TerserPlugin({ sourceMap: true })],
       splitChunks: {
         chunks: 'all',
         name: true,
