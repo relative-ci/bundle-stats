@@ -1,6 +1,6 @@
 {
   "name": "@relative-ci/webpack-bundle-stats-html-template",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.5",
   "description": "@relative-ci/webpack-bundle-stats html template",
   "main": "dist/index.html",
   "scripts": {
