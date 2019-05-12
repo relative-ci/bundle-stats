@@ -9,7 +9,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const commonConfig = require('./webpack.config.common');
 const mainCommonConfig = require('./webpack.config.main.common');
 
-const { distDir, publicDir } = require('../settings');
+const { rootDir, distDir, publicDir } = require('../settings');
 
 module.exports = webpackMerge(
   commonConfig,
@@ -28,7 +28,8 @@ module.exports = webpackMerge(
       new webpack.DefinePlugin({
         __GA__: JSON.stringify(process.env.GA),
       }),
-      new StatsPlugin('../artifacts/webpack.json', {
+      new StatsPlugin('../artifacts/webpack.stats.main.json', {
+        context: rootDir,
         assets: true,
         entrypoints: true,
         modules: true,
@@ -37,7 +38,6 @@ module.exports = webpackMerge(
         timings: true,
         children: false,
         source: false,
-        warnings: false,
       }),
     ],
     optimization: {
