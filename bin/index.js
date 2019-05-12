@@ -4,6 +4,7 @@ const process = require('process');
 const path = require('path');
 const { readJSON, writeFile } = require('fs-extra');
 const yargs = require('yargs');
+const { extractDataFromWebpackStats } = require('@relative-ci/utils');
 
 const { createReport } = require('../');
 
@@ -20,6 +21,7 @@ const args = yargs
 const artifactFilepaths = args._;
 
 Promise.all(artifactFilepaths.map(filepath => readJSON(filepath)))
+  .then(sources => sources.map(extractDataFromWebpackStats))
   .then(createReport)
   .then(output => writeFile(DEFAULT_OUTPUT_FILEPATH, output))
   .catch((err) => {
