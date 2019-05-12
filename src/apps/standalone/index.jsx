@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { get } from 'lodash';
 import { Container } from '@relative-ci/ui/lib-esm/ui/container';
 import { Summary } from '@relative-ci/ui/lib-esm/components/summary';
 import { BundleAssets } from '@relative-ci/ui/lib-esm/components/bundle-assets';
@@ -48,7 +49,11 @@ const StandaloneApp = ({ jobs }) => {
         </Container>
         <Container>
           <h2>Modules</h2>
-          <BundleModules jobs={jobs} />
+          <BundleModules
+            currentRawData={get(jobs, '[0].rawData')}
+            baselineRawData={get(jobs, '[1].rawData')}
+            job={jobs[0]}
+          />
         </Container>
       </div>
     </div>
