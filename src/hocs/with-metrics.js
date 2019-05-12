@@ -6,11 +6,11 @@ import { mergeRunsById } from '@relative-ci/utils';
 import resolveMetricChanged from '../utils/resolve-metric-changed';
 import computeDelta from '../utils/compute-delta';
 
-const generateRows = runs => flow(
+const generateRows = runs => flow([
   mergeRunsById,
   resolveMetricChanged,
   computeDelta,
-)(map(runs, 'data'));
+])(map(runs, 'data'));
 
 const withMetrics = () => withProps(({ runs }) => ({
   rows: generateRows(runs),

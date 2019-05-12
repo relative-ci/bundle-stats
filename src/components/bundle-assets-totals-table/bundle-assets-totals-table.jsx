@@ -47,11 +47,11 @@ const getRun = (job, index) => {
 export const BundleAssetsTotalsTable = ({ className, jobs }) => {
   const runs = jobs.map(getRun);
 
-  const rows = flow(
+  const rows = flow([
     mergeRunsById,
     resolveMetricChanged,
     computeDelta,
-  )(map(runs, 'data'));
+  ])(map(runs, 'data'));
 
   const orderedRows = orderBy(rows, ['key']);
 
