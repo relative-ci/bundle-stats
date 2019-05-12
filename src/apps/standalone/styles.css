@@ -1,0 +1,15 @@
+.header {
+  box-shadow: 0 0 var(--space-small) var(--color-gray-ultra-light);
+}
+
+.header .title {
+  font-size: var(--size-xxlarge);
+}
+
+.main {
+  padding: var(--space-small) 0;
+}
+
+.empty {
+  text-align: center;
+}
