@@ -1,6 +1,6 @@
 import { configure } from '@storybook/react';
 
-import '../../src/index.css';
+import '../../src/default.css';
 import './preview.css';
 
 const req = require.context('../../src', true, /stories\.jsx$/);
