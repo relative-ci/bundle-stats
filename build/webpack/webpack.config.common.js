@@ -6,6 +6,7 @@ const resolveConfig = require('./configs/resolve');
 const filesConfig = require('./configs/files');
 
 const {
+  rootDir,
   srcDir,
   distDir,
   isProduction,
