@@ -8,15 +8,23 @@ import StandaloneApp from '.';
 
 const BASELINE_JOB = {
   ...createJob({ webpack: { stats: baselineFixtures } }),
-  internalBuildNumber: 2,
+  internalBuildNumber: 1,
 };
 const CURRENT_JOB = {
   ...createJob({ webpack: { stats: currentFixtures } }, BASELINE_JOB),
-  internalBuildNumber: 1,
+  internalBuildNumber: 2,
 };
 
 const stories = storiesOf('StandaloneApp', module);
 
 stories.add('default', () => (
   <StandaloneApp jobs={[CURRENT_JOB, BASELINE_JOB]} />
+));
+
+stories.add('no baseline', () => (
+  <StandaloneApp jobs={[CURRENT_JOB]} />
+));
+
+stories.add('empty', () => (
+  <StandaloneApp />
 ));
