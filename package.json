@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/relative-ci/webpack-bundle-stats#readme",
   "dependencies": {
-    "@relative-ci/utils": "2.1.0",
+    "@relative-ci/utils": "2.2.0",
     "@relative-ci/webpack-bundle-stats-html-template": "1.0.0-beta.4",
     "fs-extra": "8.0.0",
     "lodash": "4.17.11",
