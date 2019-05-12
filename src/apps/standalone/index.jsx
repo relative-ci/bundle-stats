@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
-import {
-  Container, Summary, BundleAssets, BundleAssetsTotalsTable, BundleModules,
-} from '@relative-ci/ui';
+import { Container } from '@relative-ci/ui/lib-esm/ui/container';
+import { Summary } from '@relative-ci/ui/lib-esm/components/summary';
+import { BundleAssets } from '@relative-ci/ui/lib-esm/components/bundle-assets';
+import { BundleAssetsTotalsTable } from '@relative-ci/ui/lib-esm/components/bundle-assets-totals-table';
+import { BundleModules } from '@relative-ci/ui/lib-esm/components/bundle-modules';
 
 import css from './styles.css';
 
