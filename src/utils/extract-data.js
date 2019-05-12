@@ -1,4 +1,4 @@
-const {
+import {
   flow,
   fromPairs,
   get,
@@ -6,7 +6,7 @@ const {
   filter,
   pick,
   toPairs,
-} = require('lodash/fp');
+} from 'lodash/fp';
 
 const PATH_IGNORE_PATTERN = '.map$';
 
@@ -16,13 +16,13 @@ const PATH_IGNORE_PATTERN = '.map$';
 export const extractDataFromWebpackStats = (source, options = {}) => {
   const pathIgnorePattern = new RegExp(options.pathIgnorePattern || PATH_IGNORE_PATTERN);
 
-  const assets = flow(
+  const assets = flow([
     get('assets'),
     map(pick(['name', 'size'])),
     filter(({ name }) => !pathIgnorePattern.test(name)),
-  )(source);
+  ])(source);
 
-  const entrypoints = flow(
+  const entrypoints = flow([
     get('entrypoints'),
     toPairs,
     map(([key, value]) => [
@@ -30,17 +30,17 @@ export const extractDataFromWebpackStats = (source, options = {}) => {
       pick('assets')(value),
     ]),
     fromPairs,
-  )(source);
+  ])(source);
 
-  const chunks = flow(
+  const chunks = flow([
     get('chunks'),
     map(pick(['id', 'entry', 'initial', 'files', 'names'])),
-  )(source);
+  ])(source);
 
-  const modules = flow(
+  const modules = flow([
     get('modules'),
     map(pick(['name', 'size', 'chunks'])),
-  )(source);
+  ])(source);
 
   return {
     assets,
