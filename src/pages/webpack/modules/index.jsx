@@ -1,15 +1,17 @@
 import PropTypes from 'prop-types';
-import {
-  BundleModules,
-  Container,
-} from '@relative-ci/ui';
+import { get } from 'lodash';
+import { BundleModules, Container } from '@relative-ci/ui';
 
 const Modules = (props) => {
   const { jobs } = props;
 
   return (
     <Container>
-      <BundleModules jobs={jobs} />
+      <BundleModules
+        currentRawData={get(jobs, '[0].rawData')}
+        baselineRawData={get(jobs, '[1].rawData')}
+        job={jobs[0]}
+      />
     </Container>
   );
 };
