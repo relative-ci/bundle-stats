@@ -5,6 +5,8 @@
 
 Generate bundle report from the webpack stats data.
 
+![screenshot](https://www.dropbox.com/s/a42peiozy69nq2t/webpack-bundle-stats-screenshot.jpg?raw=1)
+
 ### Install
 
 ```shell
@@ -16,6 +18,23 @@ or
 ```shell
 yarn global add @relative-ci/webpack-bundle-stats
 ```
+
+### Configuration
+
+Configure Webpack stats to output the necessary data:
+
+```js
+{
+  stats: {
+    assets: true,
+    entrypoints: true,
+    chunks: true,
+    modules: true
+  }
+}
+```
+
+[More info](https://relative-ci.com/documentation/setup#1-configure-webpack)
 
 ### Usage
 
@@ -29,6 +48,6 @@ Options:
 ```
 
 ```shell
-webpack-bundle-stats artifacts/webpack-stats.json artifacts/webpack-stats-previous.js
+$ webpack-bundle-stats artifacts/webpack-stats.json artifacts/webpack-stats-previous.js
+> webpack-bundle-stats.html was created.
 ```
-
