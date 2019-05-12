@@ -1,30 +1,14 @@
-import { createStats, createStatsSummary } from '@relative-ci/utils';
-import { last, reverse } from 'lodash';
+import { createJob } from '@relative-ci/utils';
+import { reverse } from 'lodash';
 
 export const createJobs = (sources) => {
-  // @TODO Add source validation
-
-  const jobs = reverse([...sources]).map((res, index) => ({
-    internalBuildNumber: (sources.length - index),
-    rawData: {
-      webpack: {
-        stats: res,
-      },
+  const jobs = reverse([...sources]).reduce((agg, source, idx) => [
+    {
+      ...createJob({ webpack: { stats: source } }, agg[0]),
+      internalBuildNumber: sources.length - idx,
     },
-  })).reduce((agg, job) => {
-    const baseline = last(agg);
-    const stats = createStats(baseline && baseline.rawData, job.rawData);
-    const summary = createStatsSummary(baseline && baseline.stats, stats);
+    ...agg,
+  ], []);
 
-    return [
-      ...agg,
-      {
-        ...job,
-        stats,
-        summary,
-      },
-    ];
-  }, []);
-
-  return reverse(jobs);
+  return jobs;
 };
