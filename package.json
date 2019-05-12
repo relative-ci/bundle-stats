@@ -4,7 +4,7 @@
   "description": "RelativeCI utils",
   "repository": "relative-ci/utils",
   "main": "lib/index.js",
-  "module": "src/index.js",
+  "module": "lib-esm/index.js",
   "engines": {
     "node": ">= 8.0"
   },
@@ -12,7 +12,9 @@
     "lib": "lib"
   },
   "scripts": {
-    "build": "rm -fr ./lib && babel src -d lib --ignore **/__tests__/**",
+    "build": "npm run build-lib && npm run build-esm",
+    "build-lib": "rm -fr ./lib && babel -D src -d lib --ignore **/__tests__/** --presets=@babel/preset-env",
+    "build-esm": "rm -fr ./lib-esm && babel -D src -d lib-esm --ignore **/__tests__/**",
     "lint": "eslint ./",
     "prepublishOnly": "npm run lint && npm test && npm run build",
     "test": "jest src"
