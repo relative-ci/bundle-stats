@@ -63,7 +63,7 @@ stories.add('with row headers', () => {
 
 stories.add('with custom alignment', () => {
   const headers = [
-    '',
+    ' ',
     {
       text: 'Col A (right)',
       options: {

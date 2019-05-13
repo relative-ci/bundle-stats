@@ -47,7 +47,7 @@ const Td = ({ cell, options = {}, ...props }) => {
 
 export const Table = ({ className, headers, rows }) => (
   <table className={cx(className, css.root)}>
-    {headers && (
+    {(headers && headers.length > 0) && (
       <thead>
         <tr>
           {headers.map((header, index) => {
