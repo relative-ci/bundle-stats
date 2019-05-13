@@ -3,22 +3,23 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { getDelta, getMetric, formatDelta } from '@relative-ci/utils';
 
+import { Box } from '../../ui';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
 import css from './summary-item.module.css';
 
 export const SummaryItem = ({
-  className, id, data, loading,
+  className, size, id, data, loading,
 }) => {
   const { baseline, current } = data || { baseline: 0, current: 0 };
 
   const metric = getMetric(id);
   const delta = getDelta({ value: baseline }, { value: current });
 
-  const rootClassName = cx(css.root, className);
+  const rootClassName = cx(css.root, className, css[size]);
 
   return (
-    <div className={rootClassName}>
+    <Box className={rootClassName}>
       <h3 className={css.title}>
         {metric.label}
       </h3>
@@ -53,18 +54,22 @@ export const SummaryItem = ({
       ) : (
         <span className={cx(css.baselineMetric, css.loading)} />
       )}
-    </div>
+    </Box>
   );
 };
 
 SummaryItem.defaultProps = {
   className: '',
   data: null,
+  size: 'medium',
 };
 
 SummaryItem.propTypes = {
   /** Adopted child class name */
   className: PropTypes.string,
+
+  /** Size modifier */
+  size: PropTypes.oneOf(['medium', 'large']),
 
   /** Metric id */
   id: PropTypes.string.isRequired,

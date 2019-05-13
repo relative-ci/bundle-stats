@@ -7,21 +7,29 @@ import css from './summary.module.css';
 
 export const Summary = ({
   className, data, keys, loading,
-}) => (
-  <div className={cx(css.root, className)}>
-    <div className={css.items}>
-      {keys.map(key => (
-        <SummaryItem
-          key={key}
-          className={css.item}
-          id={key}
-          data={data && data[key]}
-          loading={loading}
-        />
-      ))}
+}) => {
+  const getRenderSummaryItem = itemProps => key => (
+    <SummaryItem
+      key={key}
+      className={css.item}
+      id={key}
+      data={data && data[key]}
+      loading={loading}
+      {...itemProps}
+    />
+  );
+
+  return (
+    <div className={cx(css.root, className)}>
+      <div className={css.items}>
+        {keys.slice(0, 3).map(getRenderSummaryItem({ size: 'large' }))}
+      </div>
+      <div className={css.items}>
+        {keys.slice(3).map(getRenderSummaryItem())}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 Summary.defaultProps = {
   className: '',

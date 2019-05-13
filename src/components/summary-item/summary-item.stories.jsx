@@ -24,3 +24,15 @@ stories.add('loading', () => (
     id="webpack.assets.totalSizeByTypeALL"
   />
 ));
+
+stories.add('size large', () => (
+  <SummaryItem
+    size="large"
+    loading={false}
+    id="webpack.assets.totalSizeByTypeALL"
+    data={{
+      current: 120 * 1000,
+      baseline: 100 * 1000,
+    }}
+  />
+));

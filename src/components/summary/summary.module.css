@@ -1,8 +1,5 @@
 .root {
   width: 100%;
-	border: 1px solid var(--color-gray-ultra-light);
-	border-width: 1px 0;
-	padding: var(--space-medium) 0;
 }
 
 .items {
@@ -11,6 +8,10 @@
   width: calc(100% + var(--space-medium));
   display: flex;
   flex-wrap: wrap;
+}
+
+.items + .items {
+  margin-top: var(--space-medium);
 }
 
 .item {

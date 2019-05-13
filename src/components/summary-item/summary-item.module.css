@@ -1,4 +1,6 @@
-.root {}
+.root {
+  font-size: var(--size-small);
+}
 
 .title {
   margin-bottom: var(--space-xxxsmall);
@@ -18,12 +20,10 @@
 .delta {
   display: inline-block;
   margin-left: var(--space-xxsmall);
-  font-size: var(--size-small);
 }
 
 .baselineMetric {
   display: block;
-  font-size: var(--size-small);
 }
 
 /* Loading state */
@@ -33,4 +33,18 @@
   max-width: 5em;
   width: 100%;
   height: 1.1em;
+}
+
+/* Size large */
+.large {
+  font-size: normal;
+}
+
+.large .currentMetric {
+  font-size: var(--size-xxlarge);
+  font-weight: 900;
+}
+
+.large .delta {
+  font-size: var(--size-small);
 }
