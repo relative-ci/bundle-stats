@@ -51,6 +51,15 @@ export const Footer = ({ className, Link }) => (
           </h3>
           <nav className={css.nav}>
             <a
+              href="https://www.npmjs.com/package/@relative-ci/webpack-bundle-stats"
+              className={css.navLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Generate bundle report from the webpack stats data."
+            >
+              Webpack Bundle Stats
+            </a>
+            <a
               href="https://compare.relative-ci.com/"
               className={css.navLink}
               target="_blank"
