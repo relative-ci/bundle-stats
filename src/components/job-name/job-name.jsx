@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Tooltip } from '../../ui';
+import css from './job-name.module.css';
 
 export const JobName = ({
   as: Component,
@@ -11,6 +12,7 @@ export const JobName = ({
   ...restProps
 }) => (
   <Tooltip
+    className={css.root}
     as={Component}
     title={title}
     {...restProps}

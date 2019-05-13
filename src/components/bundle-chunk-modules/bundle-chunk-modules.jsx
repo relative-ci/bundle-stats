@@ -8,14 +8,6 @@ import { MetricsTable } from '../metrics-table';
 import css from './bundle-chunk-modules.module.css';
 
 const getRunLabel = (run, index) => {
-  // Current run
-  if (index === 0) {
-    return {
-      ...run,
-      label: ' ',
-    };
-  }
-
   // No baseline?
   if (!run || !run.meta) {
     return {
@@ -26,7 +18,12 @@ const getRunLabel = (run, index) => {
 
   return {
     ...run,
-    label: <JobName label="Baseline" internalBuildNumber={run.meta.internalBuildNumber} />,
+    label: (
+      <JobName
+        title={index === 0 ? 'Current' : 'Baseline'}
+        internalBuildNumber={run.meta.internalBuildNumber}
+      />
+    ),
   };
 };
 

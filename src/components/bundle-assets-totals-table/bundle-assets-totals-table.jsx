@@ -25,21 +25,19 @@ const getRun = (job, index) => {
     };
   }
 
-  // @TODO Replace with a proper separation
+  // @TODO Extract metric from the webpack.stats.assets
   const totals = omit({ ...job.stats.webpack.assets }, [
     'totalInitialSizeJS',
     'totalInitialSizeCSS',
   ]);
 
   return {
-    label: index > 0
-      ? (
-        <JobName
-          title="Baseline"
-          internalBuildNumber={job.internalBuildNumber}
-        />
-      )
-      : ' ',
+    label: (
+      <JobName
+        title={index === 0 ? 'Current' : 'Baseline'}
+        internalBuildNumber={job.internalBuildNumber}
+      />
+    ),
     data: prefixStats(totals),
   };
 };

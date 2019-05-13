@@ -30,14 +30,6 @@ const getFileTypeFilters = () => Object.entries(FILE_TYPE_LABELS)
   }), {});
 
 const getRunLabel = (run, index) => {
-  // Current run
-  if (index === 0) {
-    return {
-      ...run,
-      label: ' ',
-    };
-  }
-
   // No baseline?
   if (!run || !run.meta) {
     return {
@@ -46,12 +38,11 @@ const getRunLabel = (run, index) => {
     };
   }
 
-  // @TODO: move into a shared component
   return {
     ...run,
     label: (
       <JobName
-        title="Baseline"
+        title={index === 0 ? 'Current' : 'Baseline'}
         internalBuildNumber={run.meta.internalBuildNumber}
       />
     ),
