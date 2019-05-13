@@ -4,6 +4,7 @@
   width: 100%;
   border-collapse: collapse;
   empty-cells: show;
+  background: var(--color-light);
 }
 
 .cell {

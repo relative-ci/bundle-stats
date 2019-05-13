@@ -1,0 +1,7 @@
+.root {
+  margin: -24px;
+  padding: 24px;
+  width: 100vw;
+  min-height: 100vh;
+  background: var(--color-gray-light-background);
+}

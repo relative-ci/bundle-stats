@@ -14,6 +14,7 @@ import { BundleAssetsTotalsChartPie } from '../components/bundle-assets-totals-c
 import { BundleModules } from '../components/bundle-modules';
 import { Summary } from '../components/summary';
 import { getWrapperDecorator } from '../stories';
+import css from './bundle-page.module.css';
 
 const stories = storiesOf('Prototypes/BundlePage', module);
 stories.addDecorator(getWrapperDecorator());
@@ -36,7 +37,7 @@ const baselineJob = {
 const JOBS = [currentJob, baselineJob];
 
 stories.add('totals', () => (
-  <div>
+  <div className={css.root}>
     <Container>
       <Summary data={currentJob.summary} />
     </Container>
@@ -68,7 +69,7 @@ stories.add('totals', () => (
 stories.add('assets', () => (
   <div className={css.root}>
     <Container>
-      <Summary data={currentJob.summary} />
+      <Summary data={job.summary} />
     </Container>
     <Container>
       <Tabs>
@@ -82,39 +83,11 @@ stories.add('assets', () => (
         <BundleAssets jobs={JOBS} />
       </Box>
     </Container>
-    <Container>
-      <Summary data={currentJob.summary} />
-    </Container>
-    <Container>
-      <Tabs>
-        <span>Totals</span>
-        <span>Assets</span>
-        <span isTabActive>Modules</span>
-      </Tabs>
-    </Container>
-  </div>
-));
-
-stories.add('assets', () => (
-  <div>
-    <Container>
-      <Summary data={job.summary} />
-    </Container>
-    <Container>
-      <Tabs>
-        <span>Totals</span>
-        <span isTabActive>Assets</span>
-        <span>Modules</span>
-      </Tabs>
-    </Container>
-    <Container>
-      <BundleAssets jobs={JOBS} />
-    </Container>
   </div>
 ));
 
 stories.add('modules', () => (
-  <div>
+  <div className={css.root}>
     <Container>
       <Summary data={job.summary} />
     </Container>

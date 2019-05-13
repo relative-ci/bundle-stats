@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { TableFilters } from '../../ui';
+import { Box, TableFilters } from '../../ui';
 import { JobName } from '../job-name';
 import { MetricsTable } from '../metrics-table';
 import css from './bundle-chunk-modules.module.css';
@@ -39,7 +39,7 @@ export const BundleChunkModules = ({
   const rootClassName = cx(css.root, className);
 
   return (
-    <div className={rootClassName}>
+    <Box className={rootClassName}>
       <header className={css.header}>
         {title && (
           <h3 className={css.title}>
@@ -61,7 +61,7 @@ export const BundleChunkModules = ({
         rows={rows}
         runs={labeledRuns}
       />
-    </div>
+    </Box>
   );
 };
 
