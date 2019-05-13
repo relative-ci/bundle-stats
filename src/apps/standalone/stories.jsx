@@ -17,6 +17,12 @@ const CURRENT_JOB = {
 
 const stories = storiesOf('StandaloneApp', module);
 
+stories.addDecorator(storyFn => (
+  <div style={{ margin: '-1rem' }}>
+    {storyFn()}
+  </div>
+));
+
 stories.add('default', () => (
   <StandaloneApp jobs={[CURRENT_JOB, BASELINE_JOB]} />
 ));
