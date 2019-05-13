@@ -16,7 +16,7 @@ import {
   BarChart,
   Chart,
   ResponsiveContainer,
-  Tooltip,
+  RechartsTooltip,
   XAxis,
   YAxis,
   getColors,
@@ -109,7 +109,7 @@ export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
             dataKey="value"
             tickFormatter={formatFileSize}
           />
-          <Tooltip
+          <RechartsTooltip
             {...TOOLTIP_PROPS}
             content={TooltipContent}
           />

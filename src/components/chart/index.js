@@ -7,7 +7,7 @@ export {
   PieChart,
   ResponsiveContainer,
   Text,
-  Tooltip,
+  Tooltip as RechartsTooltip,
   XAxis,
   YAxis,
 } from 'recharts';

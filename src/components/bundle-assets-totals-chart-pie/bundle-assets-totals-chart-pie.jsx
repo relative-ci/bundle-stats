@@ -18,7 +18,7 @@ import {
   PieChart,
   Pie,
   ResponsiveContainer,
-  Tooltip,
+  RechartsTooltip,
   getColors,
 } from '../chart';
 import css from './bundle-assets-totals-chart-pie.module.css';
@@ -45,10 +45,10 @@ const TooltipContent = ({ active, payload }) => {
 };
 
 TooltipContent.propTypes = {
-  /** Recharts Tooltip active flag */
+  /** Recharts RechartsTooltip active flag */
   active: PropTypes.bool.isRequired,
 
-  /** Recharts Tooltip payload array */
+  /** Recharts RechartsTooltip payload array */
   payload: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
     value: PropTypes.number,
@@ -128,7 +128,7 @@ export const BundleAssetsTotalsChartPie = ({ className, jobs }) => {
             iconSize={12}
             content={LegendContent}
           />
-          <Tooltip
+          <RechartsTooltip
             {...TOOLTIP_PROPS}
             content={TooltipContent}
           />
