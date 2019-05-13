@@ -4,6 +4,28 @@ import PropTypes from 'prop-types';
 import { Tooltip } from '../../ui';
 import css from './job-name.module.css';
 
+const JobNameLabel = ({ internalBuildNumber, labelProps }) => (
+  <React.Fragment>
+    <span {...labelProps}>
+      Job
+    </span>
+    <span>
+      {`#${internalBuildNumber}`}
+    </span>
+  </React.Fragment>
+);
+
+JobNameLabel.defaultProps = {
+  labelProps: {},
+};
+
+JobNameLabel.propTypes = {
+  internalBuildNumber: PropTypes.number.isRequired,
+  labelProps: PropTypes.shape({
+    className: PropTypes.string,
+  }),
+};
+
 export const JobName = ({
   as: Component,
   title,
@@ -17,14 +39,19 @@ export const JobName = ({
     title={title}
     {...restProps}
   >
-    {render({ internalBuildNumber })}
+    {render({
+      internalBuildNumber,
+      labelProps: {
+        className: css.label,
+      },
+    })}
   </Tooltip>
 );
 
 JobName.defaultProps = {
   as: 'span',
   title: '',
-  render: ({ internalBuildNumber }) => `Job #${internalBuildNumber}`,
+  render: JobNameLabel,
 };
 
 JobName.propTypes = {
