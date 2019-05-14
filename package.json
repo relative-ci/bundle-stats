@@ -28,7 +28,7 @@
   "dependencies": {
     "@babel/polyfill": "7.4.4",
     "@moonwalker/orbit-ui": "1.12.11",
-    "@relative-ci/ui": "^1.0.0-beta.28",
+    "@relative-ci/ui": "^1.0.0-beta.29",
     "@relative-ci/utils": "^2.2.3",
     "@storybook/react": "5.0.11",
     "classnames": "^2.2.6",
