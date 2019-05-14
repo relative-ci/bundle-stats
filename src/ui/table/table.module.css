@@ -1,6 +1,6 @@
 .root {
   border: 1px solid var(--color-gray-ultra-light);
-  border-width: 1px 1px 0 0;
+  border-width: 1px 0 0 0;
   width: 100%;
   border-collapse: collapse;
   empty-cells: show;
@@ -9,13 +9,13 @@
 
 .cell {
   border: 1px solid var(--color-gray-ultra-light);
-  border-width: 0 0 1px 1px;
+  border-width: 0 0 1px;
   padding: var(--space-xsmall) var(--space-small);
   text-align: left;
 }
 
 thead .cell {
-  padding: var(--space-small) var(--space-small);
+  padding: var(--space-small);
   text-transform: uppercase;
 }
 
@@ -35,12 +35,18 @@ tbody tr:hover .cell {
   background-color: var(--color-yellow-light-background);
 }
 
-.emptyCell {
+.emptyData {
   padding: var(--space-xlarge) var(--space-medium);
-  color: var(--color-gray-light);
+  background: var(--color-light) !important;
+  color: var(--color-gray);
   text-align: center;
 }
 
-tbody tr:hover .emptyCell {
-  background-color: inherit;
+/* Modifier outline */
+.outline {
+  border-width: 1px 1px 0 0;
+}
+
+.outline .cell {
+  border-width: 0 0 1px 1px;
 }

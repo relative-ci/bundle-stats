@@ -24,6 +24,12 @@ stories.add('default', () => {
   return <Table rows={rows} />;
 });
 
+stories.add('empty', () => {
+  const rows = [];
+
+  return <Table rows={rows} />;
+});
+
 stories.add('with headers', () => {
   const headers = ['Col A', 'Col B', 'Col C'];
   const rows = [
@@ -39,6 +45,23 @@ stories.add('with headers', () => {
   ];
 
   return <Table headers={headers} rows={rows} />;
+});
+
+stories.add('with outline', () => {
+  const headers = ['Col A', 'Col B', 'Col C'];
+  const rows = [
+    {
+      cells: ['a1', 'b1', 'c1'],
+    },
+    {
+      cells: ['a2', 'b2', 'c2'],
+    },
+    {
+      cells: ['a3', 'b3', 'c3'],
+    },
+  ];
+
+  return <Table outline headers={headers} rows={rows} />;
 });
 
 

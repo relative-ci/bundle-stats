@@ -45,8 +45,10 @@ const Td = ({ cell, options = {}, ...props }) => {
   );
 };
 
-export const Table = ({ className, headers, rows }) => (
-  <table className={cx(className, css.root)}>
+export const Table = ({
+  className, outline, headers, rows,
+}) => (
+  <table className={cx(className, css.root, outline && css.outline)}>
     {(headers && headers.length > 0) && (
       <thead>
         <tr>
@@ -90,7 +92,7 @@ export const Table = ({ className, headers, rows }) => (
             colSpan={headers.length || 1}
             cell="No entries found."
             options={{
-              classNames: css.emptyCell,
+              classNames: css.emptyData,
             }}
           />
         </tr>
@@ -101,12 +103,14 @@ export const Table = ({ className, headers, rows }) => (
 
 Table.defaultProps = {
   className: '',
+  outline: false,
   headers: [],
   rows: [],
 };
 
 Table.propTypes = {
   className: PropTypes.string,
+  outline: PropTypes.bool,
   headers: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   rows: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };
