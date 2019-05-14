@@ -17,7 +17,7 @@ const Header = () => (
       className={css.headerWebpackLogo}
       kind="webpack"
       as="a"
-      href="http://webpack.org.js"
+      href="https://webpack.js.org"
       target="_blank"
       rel="noopener noreferrer nofollow"
     />
@@ -59,14 +59,14 @@ const StandaloneApp = ({ jobs }) => {
           <Summary data={jobs[0].summary} />
         </Container>
         <Container>
+          <h2>Totals</h2>
           <Box>
-            <h2>Totals</h2>
             <BundleAssetsTotalsTable jobs={jobs} />
           </Box>
         </Container>
         <Container>
+          <h2>Assets</h2>
           <Box>
-            <h2>Assets</h2>
             <BundleAssets jobs={jobs} />
           </Box>
         </Container>
