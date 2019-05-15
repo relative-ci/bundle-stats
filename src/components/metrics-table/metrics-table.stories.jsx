@@ -2,25 +2,26 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
+import { generateRows } from '../../hocs/with-metrics';
 import { MetricsTable } from '.';
 
-const runs = [
+const RUNS = [
   {
     label: 'Run #1',
     data: {
-      'webpack.totalSize': {
+      'webpack.assets.totalSizeByTypeALL': {
         value: 873421,
       },
-      'lighthouse.time-to-first-byte': {
+      'lighthouse.timeToFirstByte': {
         value: 1231,
       },
       'lighthouse.score': {
         value: 80,
       },
-      'webpack.totalSizeByType_js': {
+      'webpack.assets.totalSizeByTypeJS': {
         value: 344232,
       },
-      'lighthouse.performance-score': {
+      'lighthouse.domSize': {
         value: 80,
       },
     },
@@ -28,99 +29,19 @@ const runs = [
   {
     label: 'Run #2',
     data: {
-      'webpack.totalSize': {
+      'webpack.assets.totalSizeByTypeALL': {
         value: 122331,
-        delta: -85.99,
-        displayDelta: '-85.99%',
       },
-      'lighthouse.time-to-first-byte': {
+      'lighthouse.timeToFirstByte': {
         value: 980,
-        delta: -20.39,
-        displayDelta: '-20.39%',
       },
       'lighthouse.score': {
         value: 70,
-        delta: -12.5,
-        displayDelta: '-12.5%',
       },
-      'lighthouse.performance-score': {
+      'lighthouse.domSize': {
         value: 80,
-        delta: 0,
-        displayDelta: '+0%',
       },
     },
-  },
-];
-
-const rows = [
-  {
-    key: 'webpack.totalSize',
-    changed: true,
-    runs: [
-      {
-        value: 873421,
-      },
-      {
-        value: 122331,
-        delta: -85.99,
-        displayDelta: '-85.99%',
-      },
-    ],
-  },
-  {
-    key: 'lighthouse.time-to-first-byte',
-    changed: true,
-    runs: [
-      {
-        value: 1231,
-      },
-      {
-        value: 980,
-        delta: -20.39,
-        displayDelta: '-20.39%',
-      },
-    ],
-  },
-  {
-    key: 'lighthouse.score',
-    changed: true,
-    runs: [
-      {
-        value: 80,
-      },
-      {
-        value: 70,
-        delta: -12.5,
-        displayDelta: '-12.5%',
-      },
-    ],
-  },
-  {
-    key: 'webpack.totalSizeByType_js',
-    changed: true,
-    runs: [
-      {
-        value: 344232,
-      },
-      {
-        delta: -100,
-        displayDelta: '-100%',
-      },
-    ],
-  },
-  {
-    key: 'lighthouse.performance-score',
-    changed: false,
-    runs: [
-      {
-        value: 80,
-      },
-      {
-        value: 80,
-        delta: 0,
-        displayDelta: '+0%',
-      },
-    ],
   },
 ];
 
@@ -128,5 +49,24 @@ const stories = storiesOf('Components/MetricsTable', module);
 stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => (
-  <MetricsTable runs={runs} rows={rows} />
+  <MetricsTable runs={RUNS.slice(0, 1)} rows={generateRows(RUNS.slice(0, 1))} />
+));
+
+stories.add('multiple runs', () => (
+  <MetricsTable runs={RUNS} rows={generateRows(RUNS)} />
+));
+
+const RUNS_WITH_EMPTY_BASELINE = [
+  RUNS[0],
+  {
+    ...RUNS[1],
+    data: {},
+  },
+];
+
+stories.add('empty baseline', () => (
+  <MetricsTable
+    runs={RUNS_WITH_EMPTY_BASELINE}
+    rows={generateRows(RUNS_WITH_EMPTY_BASELINE)}
+  />
 ));
