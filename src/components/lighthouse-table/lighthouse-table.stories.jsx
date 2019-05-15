@@ -37,7 +37,6 @@ stories.add('no baseline', () => (
           lighthouse,
         },
       },
-      undefined,
     ]}
   />
 ));

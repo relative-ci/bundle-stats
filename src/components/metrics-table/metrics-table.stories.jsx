@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
-import { generateRows } from '../../hocs/with-metrics';
+import { generateRows } from '../../utils/generate-rows';
 import { MetricsTable } from '.';
 
 const RUNS = [
