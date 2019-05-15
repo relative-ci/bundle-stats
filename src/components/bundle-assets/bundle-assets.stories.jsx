@@ -9,12 +9,16 @@ const stories = storiesOf('Components/BundleAssets', module);
 stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => (
+  <BundleAssets jobs={[job]} />
+));
+
+stories.add('multiple jobs', () => (
   <BundleAssets
     jobs={[job, job.baseline]}
   />
 ));
 
-stories.add('no baseline', () => (
+stories.add('empty baseline', () => (
   <BundleAssets
     jobs={[job, undefined]}
   />

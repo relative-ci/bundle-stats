@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { get } from 'lodash';
 import { FILE_TYPE_LABELS } from '@relative-ci/utils';
 
 import { Tooltip } from '../../ui/tooltip';
@@ -29,23 +30,18 @@ const getFileTypeFilters = () => Object.entries(FILE_TYPE_LABELS)
     ...current,
   }), {});
 
-const getRunLabel = (run, index) => {
-  // No baseline?
-  if (!run || !run.meta) {
-    return {
-      ...run,
-      label: '-',
-    };
-  }
+const addRunLabel = (run, index) => {
+  const internalBuildNumber = get(run, 'meta.internalBuildNumber');
+  const label = internalBuildNumber ? (
+    <JobName
+      title={index === 0 ? 'Current' : 'Baseline'}
+      internalBuildNumber={internalBuildNumber}
+    />
+  ) : ' ';
 
   return {
     ...run,
-    label: (
-      <JobName
-        title={index === 0 ? 'Current' : 'Baseline'}
-        internalBuildNumber={run.meta.internalBuildNumber}
-      />
-    ),
+    label,
   };
 };
 
@@ -114,7 +110,7 @@ export const BundleAssets = (props) => {
     totalRowCount,
   } = props;
 
-  const labeledRuns = runs.map(getRunLabel);
+  const labeledRuns = runs.map(addRunLabel);
 
   return (
     <section className={cx(css.root, className)}>

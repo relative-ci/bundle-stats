@@ -1,10 +1,10 @@
 import {
-  compose, mapProps, withProps, withState,
+  compose, withProps, withState,
 } from 'recompose';
 import { filter, sortBy } from 'lodash';
 import { FILE_TYPES, METRIC_TYPE_FILE_SIZE, getFileType } from '@relative-ci/utils';
 
-import withMetrics from '../../hocs/with-metrics';
+import { generateRows } from '../../utils/generate-rows';
 import getBundleAssetsById from './utils/get-assets-by-id';
 
 import {
@@ -143,22 +143,25 @@ const getEntryTypeFilters = (value = true) => [
 }), {});
 
 export const enhance = compose(
-  mapProps(({ jobs, ...restProps }) => ({
-    ...restProps,
-    runs: jobs.map(getRun),
-  })),
+  withProps(({ jobs }) => {
+    const runs = jobs.map(getRun);
+    const rows = generateRows(runs);
 
-  withMetrics(),
+    return {
+      runs,
+      rows,
+    };
+  }),
 
   // @TODO run both transformations in one pass
   withProps(addRowFlags),
   withProps(addRowIsNotPredictive),
 
-  withState('filters', 'updateFilters', {
-    [FILTER_CHANGED]: true,
+  withState('filters', 'updateFilters', ({ jobs }) => ({
+    [FILTER_CHANGED]: jobs.length > 1, // enable filter only when there are multiple jobs
     ...getEntryTypeFilters(true),
     ...getFileTypeFilters(true),
-  }),
+  })),
 
   withProps(({ rows, filters }) => ({
     totalRowCount: rows.length,
