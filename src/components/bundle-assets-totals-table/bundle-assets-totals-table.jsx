@@ -1,14 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { map, orderBy, omit } from 'lodash';
-import { flow } from 'lodash/fp';
-import { mergeRunsById } from '@relative-ci/utils';
+import {
+  get, isEmpty, pick,
+} from 'lodash';
 
-import resolveMetricChanged from '../../utils/resolve-metric-changed';
-import computeDelta from '../../utils/compute-delta';
-
+import { generateRows } from '../../utils/generate-rows';
 import { MetricsTable } from '../metrics-table';
 import { JobName } from '../job-name';
+
+const METRICS = [
+  'totalSizeByTypeJS',
+  'totalSizeByTypeCSS',
+  'totalSizeByTypeIMG',
+  'totalSizeByTypeMEDIA',
+  'totalSizeByTypeFONT',
+  'totalSizeByTypeHTML',
+  'totalSizeByTypeOTHER',
+  'totalSizeByTypeALL',
+];
 
 const prefixStats = data => Object.entries(data).map(([key, value]) => ({
   [`webpack.assets.${key}`]: value,
@@ -18,45 +27,36 @@ const prefixStats = data => Object.entries(data).map(([key, value]) => ({
 }), {});
 
 const getRun = (job, index) => {
-  if (!job) {
-    return {
-      label: ' ',
-      data: [],
-    };
+  const data = get(job, ['stats', 'webpack', 'assets'], {});
+  const internalBuildNumber = get(job, 'internalBuildNumber');
+
+  const label = internalBuildNumber ? (
+    <JobName
+      title={index === 0 ? 'Current' : 'Baseline'}
+      internalBuildNumber={job.internalBuildNumber}
+    />
+  ) : ' ';
+
+  if (isEmpty(data)) {
+    return { label };
   }
 
-  // @TODO Extract metric from the webpack.stats.assets
-  const totals = omit({ ...job.stats.webpack.assets }, [
-    'totalInitialSizeJS',
-    'totalInitialSizeCSS',
-  ]);
+  const totals = pick(data, METRICS);
 
   return {
-    label: (
-      <JobName
-        title={index === 0 ? 'Current' : 'Baseline'}
-        internalBuildNumber={job.internalBuildNumber}
-      />
-    ),
+    label,
     data: prefixStats(totals),
   };
 };
 
 export const BundleAssetsTotalsTable = ({ className, jobs }) => {
   const runs = jobs.map(getRun);
-
-  const rows = flow([
-    mergeRunsById,
-    resolveMetricChanged,
-    computeDelta,
-  ])(map(runs, 'data'));
-
-  const orderedRows = orderBy(rows, ['key']);
+  const rows = generateRows(runs);
 
   return (
     <MetricsTable
       className={className}
-      rows={orderedRows}
+      rows={rows}
       runs={runs}
     />
   );
