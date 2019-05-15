@@ -42,7 +42,7 @@ export const BundleChunkModules = ({
     <Box className={rootClassName}>
       <header className={css.header}>
         {title && (
-          <h3 className={css.title}>
+          <h3 className={css.headerTitle}>
             {title}
           </h3>
         )}

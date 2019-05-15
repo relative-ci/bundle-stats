@@ -1,5 +1,7 @@
 .header {
-  margin-bottom: var(--space-xxsmall);
+  padding-bottom: var(--space-xsmall);
+  border-bottom: 1px solid var(--color-gray-ultra-light);
+  margin-bottom: var(--space-xsmall);
   position: relative;
   display: flex;
   align-items: center;

@@ -1,4 +1,11 @@
 .header {
+  margin-bottom: var(--space-small);
+  border-bottom: 1px solid var(--color-gray-ultra-light);
+  padding-bottom: var(--space-small);
   display: flex;
   justify-content: space-between;
+}
+
+.headerTitle {
+  margin: 0;
 }

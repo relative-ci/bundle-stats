@@ -1,6 +1,6 @@
 .root {
   border: 1px solid var(--color-gray-ultra-light);
-  border-width: 1px 0 0 0;
+  border-width: 0;
   width: 100%;
   border-collapse: collapse;
   empty-cells: show;
@@ -15,7 +15,8 @@
 }
 
 thead .cell {
-  padding: var(--space-small);
+  padding-top: 0;
+  border-bottom-width: 2px;
   text-transform: uppercase;
 }
 
@@ -39,6 +40,7 @@ tbody tr:hover .cell {
   padding: var(--space-xlarge) var(--space-medium);
   background: var(--color-light) !important;
   color: var(--color-gray);
+  border-top-width: 1px;
   text-align: center;
 }
 
@@ -50,3 +52,9 @@ tbody tr:hover .cell {
 .outline .cell {
   border-width: 0 0 1px 1px;
 }
+
+.outline thead .cell {
+  padding: var(--space-small);
+  border-bottom-width: 2px;
+}
+
