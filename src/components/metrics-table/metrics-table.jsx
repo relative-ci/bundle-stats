@@ -73,7 +73,7 @@ export const MetricsTable = ({
   className, renderRowHeader, runs, rows,
 }) => (
   <Table
-    className={className}
+    className={cx(styles.root, className, (runs.length > 1) && styles.multipleRuns)}
     headers={getHeaders(runs)}
     rows={getRows(rows, renderRowHeader)}
   />
