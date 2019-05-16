@@ -8,124 +8,47 @@ import { groupChunksByName } from './utils/group-chunks-by-name';
 
 import css from './bundle-modules.module.css';
 
-export const BundleModules = ({
-  currentRawData, baselineRawData, job, project,
-}) => {
-  const currentModules = get(currentRawData, 'webpack.stats.modules');
-  const baselineModules = get(baselineRawData, 'webpack.stats.modules');
-  const currentChunks = groupChunksByName(get(currentRawData, 'webpack.stats.chunks'));
-  const baselineChunks = groupChunksByName(get(baselineRawData, 'webpack.stats.chunks'));
+export const BundleModules = ({ jobs }) => {
+  const modulesByJob = jobs.map(job => get(job, 'rawData.webpack.stats.modules'));
+  const chunksByJob = jobs.map(job => groupChunksByName(get(job, 'rawData.webpack.stats.chunks')));
+  const modulesByChunk = modulesByJob.map(modules => groupModulesByChunk(modules));
 
-  const currentModulesByChunk = groupModulesByChunk(currentModules);
-  const baselineModulesByChunk = groupModulesByChunk(baselineModules);
+  let jobsByChunks = {};
 
-  const jobsByChunks = [];
-
-  Object.keys(currentChunks).forEach((nameId) => {
-    if (baselineChunks[nameId]) {
-      jobsByChunks.push({
-        chunk: baselineChunks[nameId],
-        jobs: [
-          {
-            ...job,
-            modules: currentModulesByChunk[currentChunks[nameId].id],
-            project,
-          },
-          {
-            ...job.baseline,
-            modules: baselineModulesByChunk[baselineChunks[nameId].id],
-            project,
-          },
-        ],
-      });
-    } else {
-      jobsByChunks.push({
-        chunk: currentChunks[nameId],
-        jobs: [
-          {
-            ...job,
-            modules: currentModulesByChunk[currentChunks[nameId].id],
-            project,
-          },
-          {
-            ...job.baseline,
-            modules: [],
-            project,
-          },
-        ],
-      });
-    }
-  });
-
-  Object.keys(baselineChunks).forEach((nameId) => {
-    if (!currentChunks[nameId]) {
-      jobsByChunks.push({
-        chunk: baselineChunks[nameId],
-        jobs: [
-          {
-            ...job,
-            modules: [],
-            project,
-          },
-          {
-            ...job.baseline,
-            modules: baselineModulesByChunk[baselineChunks.id],
-            project,
-          },
-        ],
-      });
-    }
+  chunksByJob.forEach((chunks, jobIndex) => {
+    Object.keys(chunks).forEach((nameId) => {
+      jobsByChunks = {
+        ...jobsByChunks,
+        [nameId]: {
+          ...get(jobsByChunks, nameId, {}),
+          chunk: chunksByJob[jobIndex][nameId],
+          jobs: [
+            ...get(jobsByChunks, [nameId, 'jobs'], []),
+            {
+              ...jobs[jobIndex],
+              modules: modulesByChunk[jobIndex][chunks[nameId].id],
+            },
+          ],
+        },
+      };
+    });
   });
 
   return (
     <React.Fragment>
-      {jobsByChunks.map(({ chunk, jobs }) => (
+      {Object.values(jobsByChunks).map(({ chunk, ...restProps }) => (
         <BundleChunkModules
-          key={chunk.id}
+          key={`${chunk.name}-${chunk.id}`}
           className={css.chunk}
           title={`${chunk.names.join(', ')} (id: ${chunk.id})`}
-          jobs={jobs}
+          jobs={restProps.jobs}
         />
       ))}
     </React.Fragment>
   );
 };
 
-BundleModules.defaultProps = {
-  currentRawData: null,
-  baselineRawData: null,
-  job: null,
-  project: null,
-};
-
 BundleModules.propTypes = {
-  /** Current job raw data */
-  currentRawData: PropTypes.shape({
-    webpack: PropTypes.shape({
-      stats: PropTypes.shape({
-        modules: PropTypes.arrayOf(PropTypes.shape({
-          name: PropTypes.string,
-          size: PropTypes.number,
-        })),
-      }),
-    }),
-  }),
-
-  /** Baseline job raw data */
-  baselineRawData: PropTypes.shape({
-    webpack: PropTypes.shape({
-      stats: PropTypes.shape({
-        modules: PropTypes.arrayOf(PropTypes.shape({
-          name: PropTypes.string,
-          size: PropTypes.number,
-        })),
-      }),
-    }),
-  }),
-
-  /** Job data */
-  job: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-
-  /** Project data */
-  project: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  /* Jobs data */
+  jobs: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
 };

@@ -9,10 +9,13 @@ const stories = storiesOf('Components/BundleModules', module);
 stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => (
-  <BundleModules
-    currentRawData={job.rawData}
-    baselineRawData={job.baselineRawData}
-    job={job}
-    project={job.project}
-  />
+  <BundleModules jobs={[job]} />
+));
+
+stories.add('multiple runs', () => (
+  <BundleModules jobs={[job, job.baseline]} />
+));
+
+stories.add('empty baseline', () => (
+  <BundleModules jobs={[job, null]} />
 ));
