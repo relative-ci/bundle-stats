@@ -108,6 +108,7 @@ export const BundleAssets = (props) => {
     rows,
     updateFilters,
     totalRowCount,
+    filters,
   } = props;
 
   const labeledRuns = runs.map(addRunLabel);
@@ -120,7 +121,8 @@ export const BundleAssets = (props) => {
           filters={{
             [FILTER_CHANGED]: {
               label: 'Changed',
-              defaultValue: true,
+              defaultValue: filters.changed,
+              disabled: runs.length <= 1,
             },
             entryTypes: {
               label: 'Entry type',
@@ -216,4 +218,7 @@ BundleAssets.propTypes = {
   rows: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   updateFilters: PropTypes.func.isRequired,
   totalRowCount: PropTypes.number,
+  filters: PropTypes.shape({
+    changed: PropTypes.bool,
+  }).isRequired,
 };

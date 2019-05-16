@@ -34,6 +34,7 @@ export const BundleChunkModules = ({
   runs,
   totalRowsCount,
   updateFilters,
+  filters,
 }) => {
   const labeledRuns = runs.map(getRunLabel);
   const rootClassName = cx(css.root, className);
@@ -50,7 +51,8 @@ export const BundleChunkModules = ({
           filters={{
             changed: {
               label: 'Changed',
-              defaultValue: true,
+              defaultValue: filters.changed,
+              disabled: runs.length <= 1,
             },
           }}
           label={`Filters (${rows.length}/${totalRowsCount})`}
@@ -91,4 +93,9 @@ BundleChunkModules.propTypes = {
 
   /** Update filters handler */
   updateFilters: PropTypes.func.isRequired,
+
+  /** Filters data */
+  filters: PropTypes.shape({
+    changed: PropTypes.bool,
+  }).isRequired,
 };
