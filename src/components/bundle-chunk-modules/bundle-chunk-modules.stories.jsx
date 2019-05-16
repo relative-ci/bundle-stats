@@ -8,6 +8,7 @@ import { BundleChunkModules } from '.';
 
 const stories = storiesOf('Components/BundleChunkModules', module);
 stories.addDecorator(getWrapperDecorator());
+
 stories.add('default', () => (
   <BundleChunkModules
     title="vendor (id: 1)"
@@ -16,10 +17,35 @@ stories.add('default', () => (
         ...job,
         modules: modules[0],
       },
+    ]}
+  />
+));
+
+stories.add('multiple jobs', () => (
+  <BundleChunkModules
+    title="vendor (id: 1)"
+    jobs={[
       {
-        ...job.baseline,
+        ...job,
+        modules: modules[0],
+      },
+      {
+        ...job,
         modules: modules[1],
       },
+    ]}
+  />
+));
+
+stories.add('empty baseline', () => (
+  <BundleChunkModules
+    title="vendor (id: 1)"
+    jobs={[
+      {
+        ...job,
+        modules: modules[0],
+      },
+      null,
     ]}
   />
 ));
