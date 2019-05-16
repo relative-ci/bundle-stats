@@ -79,7 +79,7 @@
   margin-right: var(--space-small);
 }
 
-.filterInput[disabled] + .filterLabel {
+.filterInput[disabled] + .filterText {
   color: var(--color-gray-light);
 }
 

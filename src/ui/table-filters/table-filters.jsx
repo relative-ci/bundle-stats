@@ -10,21 +10,20 @@ const Checkbox = ({ label, name, ...inputProps }) => {
 
   return (
     <div className={css.filter}>
-      <input
-        className={css.filterInput}
-        type="checkbox"
-        id={id}
-        name={name}
-        {...inputProps}
-      />
-      {/* eslint-disable jsx-a11y/label-has-for */}
-      <label
-        htmlFor={id}
-        className={css.filterLabel}
-      >
-        {label}
+      {/* eslint-disable */}
+      <label className={css.filterLabel}>
+      {/* eslint-enabled */}
+        <input
+          className={css.filterInput}
+          type="checkbox"
+          id={id}
+          name={name}
+          {...inputProps}
+        />
+        <span className={css.filterText}>
+          {label}
+        </span>
       </label>
-      {/* eslint-enabled jsx-a11y/label-has-for */}
     </div>
   );
 };
