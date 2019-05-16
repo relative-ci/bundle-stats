@@ -40,13 +40,29 @@ const StandaloneApp = ({ jobs }) => {
         <Summary data={jobs[0].summary} />
       </Container>
       <Container>
-        <h2>Totals</h2>
+        <h2>
+          <a
+            href="#totals"
+            id="totals"
+            className={css.anchor}
+          >
+            Totals
+          </a>
+        </h2>
         <Box>
           <BundleAssetsTotalsTable jobs={jobs} />
         </Box>
       </Container>
       <Container>
-        <h2>Assets</h2>
+        <h2>
+          <a
+            id="assets"
+            href="#assets"
+            className={css.anchor}
+          >
+            Assets
+          </a>
+        </h2>
         <Box>
           <BundleAssets jobs={jobs} />
         </Box>
