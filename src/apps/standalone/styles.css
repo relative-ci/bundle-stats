@@ -1,34 +1,6 @@
 .root {
+  padding-top: var(--header-height);
   background: var(--color-gray-light-background);
-}
-
-.header {
-  padding: var(--space-xsmall) var(--space-small);
-  display: flex;
-  align-items: center;
-  background: var(--color-light);
-  box-shadow: 0 0 var(--space-small) var(--color-gray-ultra-light);
-}
-
-.headerWebpackLogo {
-  width: var(--space-xxlarge);
-  margin-right: var(--space-xxsmall);
-}
-
-.headerTitle {
-  margin: 0;
-  font-size: var(--size-xlarge);
-}
-
-.headerGithubLogo {
-  margin: 0 0 0 auto;
-  width: var(--space-large);
-  color: var(--color-gray-light);
-}
-
-.headerGithubLogo:active,
-.headerGithubLogo:hover {
-  color: var(--color-gray);
 }
 
 .main {

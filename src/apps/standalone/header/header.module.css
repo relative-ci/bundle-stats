@@ -1,0 +1,28 @@
+.root {
+  padding: var(--space-xsmall) var(--space-small);
+  display: flex;
+  align-items: center;
+  background: var(--color-light);
+  box-shadow: 0 0 var(--space-small) var(--color-gray-ultra-light);
+}
+
+.webpackLogo {
+  width: var(--space-xxlarge);
+  margin-right: var(--space-xxsmall);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--size-xlarge);
+}
+
+.githubLogo {
+  margin: 0 0 0 auto;
+  width: var(--space-large);
+  color: var(--color-gray-light);
+}
+
+.githubLogo:active,
+.githubLogo:hover {
+  color: var(--color-gray);
+}
