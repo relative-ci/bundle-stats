@@ -1,6 +1,19 @@
+:root {
+  --header-height: calc(var(--space-xsmall) * 2 + var(--space-xxlarge));
+}
+
 .root {
   padding-top: var(--header-height);
   background: var(--color-gray-light-background);
+}
+
+.header {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: var(--header-height);
 }
 
 .main {
