@@ -24,7 +24,6 @@
   margin-right: var(--space-xxxsmall);
 }
 
-
 .dropdown {
   position: absolute;
   right: 0;
@@ -78,6 +77,10 @@
 .filterLabel {
   flex: 1 1 auto;
   margin-right: var(--space-small);
+}
+
+.filterInput[disabled] + .filterLabel {
+  color: var(--color-gray-light);
 }
 
 /* Dropdown toggle */

@@ -43,6 +43,7 @@ const renderTree = (key, data, values, onCheckboxChange) => {
         label={data.label}
         onChange={onCheckboxChange}
         checked={values[key]}
+        disabled={data.disabled}
       />
     );
   }

@@ -37,3 +37,34 @@ stories.add('default', () => (
     }}
   />
 ));
+
+stories.add('disable options', () => (
+  <TableFilters
+    onChange={(state) => {
+      console.log(state); // eslint-disable-line no-console
+    }}
+    filters={{
+      changed: {
+        label: 'Changed',
+        defaultValue: false,
+        disabled: true,
+      },
+      entrypoint: {
+        label: 'Entrypoint',
+        defaultValue: false,
+      },
+      fileTypes: {
+        label: 'File types',
+
+        CSS: {
+          label: 'CSS',
+          defaultValue: true,
+        },
+        JS: {
+          label: 'JSS',
+          defaultValue: true,
+        },
+      },
+    }}
+  />
+));
