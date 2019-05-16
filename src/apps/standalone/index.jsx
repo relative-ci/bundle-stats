@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { get } from 'lodash';
 import { Box } from '@relative-ci/ui/lib-esm/ui/box';
 import { Container } from '@relative-ci/ui/lib-esm/ui/container';
 import { Summary } from '@relative-ci/ui/lib-esm/components/summary';

@@ -23,6 +23,7 @@
         "css": "always",
         "json": "always"
       }
-    ]
+    ],
+    "import/prefer-default-export": "off"
   }
 }
