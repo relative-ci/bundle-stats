@@ -78,7 +78,10 @@ const StandaloneApp = ({ jobs }) => {
         </h2>
         <BundleModules jobs={jobs} />
       </Container>
-      <Footer className={css.footer} />
+      <Footer
+        className={css.footer}
+        source="webpack-bundle-stats"
+      />
     </StandaloneAppLayout>
   );
 };

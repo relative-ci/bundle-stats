@@ -37,7 +37,7 @@ jobs:
 
       - run:
           name: Send build stats to Relative CI
-          command: node_modules/.bin/relative-ci-agent --webpack-stats artifacts/webpack.stats.main.json
+          command: node_modules/.bin/relative-ci-agent
 
       - run:
           name: Send coveralls

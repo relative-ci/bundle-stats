@@ -1,6 +1,6 @@
 module.exports = {
   includeCommitMessage: true,
   webpack: {
-    stats: './artifacts/webpack.json',
+    stats: './artifacts/webpack.stats.main.json',
   },
 };
