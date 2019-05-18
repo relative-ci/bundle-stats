@@ -5,7 +5,7 @@
 
 Generate bundle report from the webpack stats data.
 
-![screenshot](https://www.dropbox.com/s/hqnhbm2ciog2hbs/webpack-bundle-stats-screenshot.v3.jpg?raw=1)
+![screenshot](https://www.dropbox.com/s/md4ttdf51lh7kt1/webpack-bundle-stats-screenshot.v4.jpg?raw=1)
 
 ### Install
 
