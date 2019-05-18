@@ -8,9 +8,9 @@ import css from './footer.module.css';
 const DOMAIN = 'https://relative-ci.com';
 
 /* eslint-disable jsx-a11y/anchor-has-content */
-const StandardLink = ({ to, ...props }) => (
+const StandardLink = ({ to, source, ...props }) => (
   <a
-    href={`${DOMAIN}${to}`}
+    href={`${DOMAIN}${to}?utm_source=${source}`}
     {...props}
   />
 );
@@ -19,9 +19,12 @@ const StandardLink = ({ to, ...props }) => (
 StandardLink.propTypes = {
   /** Link to value */
   to: PropTypes.string.isRequired,
+
+  /** UTM source */
+  source: PropTypes.string.isRequired,
 };
 
-export const Footer = ({ className, Link }) => (
+export const Footer = ({ className, Link, source }) => (
   <Container className={cx(css.root, className)} as="footer">
     <div className={css.info}>
       <div className={css.navigation}>
@@ -33,12 +36,14 @@ export const Footer = ({ className, Link }) => (
             <Link
               to="/documentation/setup"
               className={css.navLink}
+              source={source}
             >
               Setup
             </Link>
             <Link
               to="/documentation/resources"
               className={css.navLink}
+              source={source}
             >
               Resources
             </Link>
@@ -56,20 +61,22 @@ export const Footer = ({ className, Link }) => (
               target="_blank"
               rel="noopener noreferrer"
               title="Generate bundle report from the webpack stats data."
+              source={source}
             >
               Webpack Bundle Stats
             </a>
             <a
-              href="https://compare.relative-ci.com/"
+              href={`https://compare.relative-ci.com/?utm_source=${source}`}
               className={css.navLink}
               target="_blank"
               rel="noopener noreferrer"
               title="Side by side comparison for webpack/lighthouse/browsertime stats"
+              source={source}
             >
               Compare
             </a>
             <a
-              href="https://video-compare.relative-ci.com/"
+              href={`https://video-compare.relative-ci.com/?utm_source=${source}`}
               className={css.navLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -115,6 +122,7 @@ export const Footer = ({ className, Link }) => (
         className={css.brandingHome}
         to="/"
         title="Go to homepage"
+        source={source}
       >
         <Logo className={css.brandingLogo} />
         <span className={css.brandingLogotype}>
@@ -128,6 +136,7 @@ export const Footer = ({ className, Link }) => (
 Footer.defaultProps = {
   className: '',
   Link: StandardLink,
+  source: 'web',
 };
 
 Footer.propTypes = {
@@ -136,4 +145,7 @@ Footer.propTypes = {
 
   /** Link component */
   Link: PropTypes.elementType,
+
+  /** UTM source */
+  source: PropTypes.string,
 };
