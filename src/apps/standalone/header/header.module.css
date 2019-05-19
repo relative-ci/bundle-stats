@@ -1,31 +1,3 @@
-.root {
-  padding: var(--space-xsmall) var(--space-small);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  background: var(--color-light);
-  box-shadow: 0 0 var(--space-small) var(--color-gray-ultra-light);
-}
-
-/* Layout */
-.left {
-  flex: 1 1 50%;
-  display: flex;
-  align-items: center;
-}
-
-.center {
-  flex: 1 1 100%;
-  text-align: center;
-  order: 3;
-}
-
-.right {
-  flex: 1 1 50%;
-  order: 2;
-  text-align: right;
-}
-
 /* Components */
 .webpackLogo {
   width: var(--space-xxlarge);
@@ -52,24 +24,4 @@
 .githubLogo:active,
 .githubLogo:hover {
   color: var(--color-gray);
-}
-
-@media (min-width: 600px) {
-  .root {
-    flex-wrap: nowrap;
-  }
-
-  .left {
-    flex: 1 1 25%;
-  }
-
-  .center {
-    flex: 1 1 50%;
-    order: 2;
-  }
-
-  .right {
-    flex: 1 1 25%;
-    order: 3;
-  }
 }
