@@ -1,6 +1,6 @@
 {
   "name": "@relative-ci/webpack-bundle-stats",
-  "version": "1.0.0-beta.6",
+  "version": "1.0.0-beta.7",
   "description": "Generate bundle report from the webpack stats data.",
   "main": "lib/index.js",
   "bin": {
