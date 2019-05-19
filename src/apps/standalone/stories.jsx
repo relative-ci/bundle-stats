@@ -2,17 +2,18 @@
 import { storiesOf } from '@storybook/react';
 import { createJob } from '@relative-ci/utils';
 
-import currentFixtures from '../../../fixtures/webpack-stats-1.extracted';
-import baselineFixtures from '../../../fixtures/webpack-stats-2.extracted';
+import currentData from '../../../fixtures/job.current.json';
+import baselineData from '../../../fixtures/job.baseline.json';
 import StandaloneApp from '.';
 
 const BASELINE_JOB = {
-  ...createJob({ webpack: { stats: baselineFixtures } }),
-  internalBuildNumber: 1,
+  ...baselineData,
+  ...createJob(baselineData.rawData),
 };
+
 const CURRENT_JOB = {
-  ...createJob({ webpack: { stats: currentFixtures } }, BASELINE_JOB),
-  internalBuildNumber: 2,
+  ...currentData,
+  ...createJob(currentData.rawData, BASELINE_JOB),
 };
 
 const stories = storiesOf('StandaloneApp', module);
