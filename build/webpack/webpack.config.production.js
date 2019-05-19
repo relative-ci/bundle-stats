@@ -5,7 +5,7 @@ const webpackMerge = require('webpack-merge');
 const CopyPlugin = require('copy-webpack-plugin');
 const StatsPlugin = require('stats-webpack-plugin');
 
-const { distDir, publicDir } = require('../settings');
+const { distDir, publicDir, rootDir } = require('../settings');
 const commonConfig = require('./webpack.config.common');
 
 module.exports = webpackMerge(commonConfig, {
@@ -23,6 +23,7 @@ module.exports = webpackMerge(commonConfig, {
       __GA__: JSON.stringify(process.env.GA),
     }),
     new StatsPlugin('../artifacts/webpack.json', {
+      context: rootDir,
       assets: true,
       entrypoints: true,
       modules: true,
