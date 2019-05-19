@@ -26,6 +26,7 @@ const getRun = job => ({
 });
 
 const customSort = item => [!item.changed, item.key];
+
 const getFilterByChanged = filters => (row) => {
   if (filters.changed) {
     return row.changed;
@@ -45,6 +46,6 @@ export default compose(
   })),
   withProps(({ rows, filters }) => ({
     totalRowsCount: rows.length,
-    rows: sortBy(rows.filter(getFilterByChanged(filters), customSort)),
+    rows: sortBy(rows.filter(getFilterByChanged(filters)), customSort),
   })),
 );
