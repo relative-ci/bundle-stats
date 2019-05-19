@@ -1,5 +1,5 @@
 .root {
-  display: block;
+  display: inline-block;
   width: var(--space-large);
 }
 
