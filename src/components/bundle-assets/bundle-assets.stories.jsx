@@ -1,26 +1,43 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { createStats, createStatsSummary } from '@relative-ci/utils';
 
-import job from '../../../__mocks__/job.json';
+import currentData from '../../../__mocks__/job.current.json';
+import baselineData from '../../../__mocks__/job.baseline.json';
 import { getWrapperDecorator } from '../../stories';
 import { BundleAssets } from '.';
+
+const currentStats = createStats(baselineData.rawData, currentData.rawData);
+const baselineStats = createStats(null, baselineData.rawData);
+
+const currentJob = {
+  ...currentData,
+  stats: currentStats,
+  summary: createStatsSummary(baselineStats, currentStats),
+};
+
+const baselineJob = {
+  ...baselineData,
+  stats: baselineStats,
+  summary: createStatsSummary(null, baselineStats),
+};
 
 const stories = storiesOf('Components/BundleAssets', module);
 stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => (
-  <BundleAssets jobs={[job]} />
+  <BundleAssets jobs={[currentJob]} />
 ));
 
 stories.add('multiple jobs', () => (
   <BundleAssets
-    jobs={[job, job.baseline]}
+    jobs={[currentJob, baselineJob]}
   />
 ));
 
 stories.add('empty baseline', () => (
   <BundleAssets
-    jobs={[job, undefined]}
+    jobs={[currentJob, undefined]}
   />
 ));
 
@@ -28,7 +45,7 @@ stories.add('not predictive', () => (
   <BundleAssets
     jobs={[
       {
-        ...job,
+        ...currentJob,
         rawData: {
           webpack: {
             stats: {
@@ -43,7 +60,7 @@ stories.add('not predictive', () => (
         },
       },
       {
-        ...job.baseline,
+        ...baselineJob,
         rawData: {
           webpack: {
             stats: {

@@ -69,7 +69,7 @@ stories.add('totals', () => (
 stories.add('assets', () => (
   <div className={css.root}>
     <Container>
-      <Summary data={job.summary} />
+      <Summary data={currentJob.summary} />
     </Container>
     <Container>
       <Tabs>
@@ -89,7 +89,7 @@ stories.add('assets', () => (
 stories.add('modules', () => (
   <div className={css.root}>
     <Container>
-      <Summary data={job.summary} />
+      <Summary data={currentJob.summary} />
     </Container>
     <Container>
       <Tabs>

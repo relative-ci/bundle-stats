@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import job from '../../../__mocks__/job.json';
+import currentData from '../../../__mocks__/job.current.json';
+import baselineData from '../../../__mocks__/job.baseline.json';
 import lighthouse from '../../../__mocks__/lighthouse.json';
 import { getWrapperDecorator } from '../../stories';
 import { LighthouseTable } from '.';
@@ -13,13 +14,13 @@ stories.add('default', () => (
   <LighthouseTable
     jobs={[
       {
-        ...job,
+        ...currentData,
         rawData: {
           lighthouse,
         },
       },
       {
-        ...job.baseline,
+        ...baselineData,
         rawData: {
           lighthouse,
         },
@@ -32,7 +33,7 @@ stories.add('no baseline', () => (
   <LighthouseTable
     jobs={[
       {
-        ...job,
+        ...currentData,
         rawData: {
           lighthouse,
         },
