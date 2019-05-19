@@ -1,0 +1,20 @@
+.root {
+  width: 100%;
+}
+
+.items {
+  margin-left: calc(0px - var(--space-medium));
+  margin-bottom: calc(0px - var(--space-medium));
+  width: calc(100% + var(--space-medium));
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.items + .items {
+  margin-top: var(--space-medium);
+}
+
+.item {
+  flex: 1 1 auto;
+  margin: 0 0 var(--space-medium) var(--space-medium);
+}

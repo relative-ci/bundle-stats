@@ -1,0 +1,60 @@
+.root {
+  border: 1px solid var(--color-gray-ultra-light);
+  border-width: 0;
+  width: 100%;
+  border-collapse: collapse;
+  empty-cells: show;
+  background: var(--color-light);
+}
+
+.cell {
+  border: 1px solid var(--color-gray-ultra-light);
+  border-width: 0 0 1px;
+  padding: var(--space-xsmall) var(--space-small);
+  text-align: left;
+}
+
+thead .cell {
+  padding-top: 0;
+  border-bottom-width: 2px;
+  text-transform: uppercase;
+}
+
+thead .cell:empty {
+  display: none;
+}
+
+tbody th.cell {
+  font-weight: normal;
+}
+
+tbody tr:nth-child(odd) .cell {
+  background-color: var(--color-gray-light-background);
+}
+
+tbody tr:hover .cell {
+  background-color: var(--color-yellow-light-background);
+}
+
+.emptyData {
+  padding: var(--space-xlarge) var(--space-medium);
+  background: var(--color-light) !important;
+  color: var(--color-gray);
+  border-top-width: 1px;
+  text-align: center;
+}
+
+/* Modifier outline */
+.outline {
+  border-width: 1px 1px 0 0;
+}
+
+.outline .cell {
+  border-width: 0 0 1px 1px;
+}
+
+.outline thead .cell {
+  padding: var(--space-small);
+  border-bottom-width: 2px;
+}
+

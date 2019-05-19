@@ -1,0 +1,19 @@
+.chunk + .chunk {
+  margin-top: var(--space-medium);
+}
+
+.empty {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  min-height: 10rem;
+  text-align: center;
+}
+
+.emptyTitle {
+  color: var(--color-gray);
+}
+
+.emptyText {
+  margin-bottom: var(--space-small);
+}

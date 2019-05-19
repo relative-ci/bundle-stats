@@ -1,0 +1,25 @@
+.title {
+	margin: 0 0 var(--space-xxsmall);
+	text-align: center;
+	color: var(--color-gray);
+	font-size: var(--size-medium);
+	font-weight: normal;
+	font-family: var(--font-family-fixed);
+  line-height: var(--line-height);
+}
+
+.chart {
+  height: var(--chart-height);
+  font-size: 12px;
+  font-family: var(--font-family-fixed);
+}
+
+.tooltip {
+  margin: 0;
+  padding: 0;
+  padding: var(--space-small);
+  background: var(--color-light);
+  border: 1px solid var(--color-gray-100);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  font-family: var(--font-family);
+}

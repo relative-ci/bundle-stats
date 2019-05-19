@@ -1,0 +1,40 @@
+.root {
+  position: relative(); 
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.item {
+  position: relative;
+  display: inline-block;
+  padding: var(--space-xsmall) var(--space-small);
+  color: var(--color-gray-light);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.item::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: transparent;
+}
+
+.item:hover {
+  color: var(--color-primary-dark);
+}
+
+.item:hover::after {
+  background: currentColor;
+}
+
+.itemActive {
+  color: var(--color-primary);
+}
+
+.itemActive::after {
+  background: currentColor;
+}
