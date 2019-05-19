@@ -9,3 +9,25 @@
 .headerTitle {
   margin: 0;
 }
+
+.name {
+  border-bottom: 1px dotted transparent;
+}
+
+.nameTooltip {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  min-width: 280px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+  white-space: normal;
+  text-align: left;
+}
+
+.table tbody tr:hover .name {
+  border-color: var(--color-gray-light);
+}

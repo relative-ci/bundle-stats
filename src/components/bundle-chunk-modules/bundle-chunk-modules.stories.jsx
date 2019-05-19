@@ -4,7 +4,6 @@ import { storiesOf } from '@storybook/react';
 import currentData from '../../../__mocks__/job.current.json';
 import baselineData from '../../../__mocks__/job.baseline.json';
 import { getWrapperDecorator } from '../../stories';
-import modules from './bundle-chunk-modules.fixtures.json';
 import { BundleChunkModules } from '.';
 
 const currentJob = { ...currentData };
@@ -19,7 +18,7 @@ stories.add('default', () => (
     jobs={[
       {
         ...currentJob,
-        modules: modules[0],
+        modules: currentJob.rawData.webpack.stats.modules,
       },
     ]}
   />
@@ -31,11 +30,11 @@ stories.add('multiple jobs', () => (
     jobs={[
       {
         ...currentJob,
-        modules: modules[0],
+        modules: currentJob.rawData.webpack.stats.modules,
       },
       {
         ...baselineJob,
-        modules: modules[1],
+        modules: baselineJob.rawData.webpack.stats.modules,
       },
     ]}
   />
@@ -47,7 +46,7 @@ stories.add('empty baseline', () => (
     jobs={[
       {
         ...currentJob,
-        modules: modules[0],
+        modules: currentJob.rawData.webpack.stats.modules,
       },
       null,
     ]}

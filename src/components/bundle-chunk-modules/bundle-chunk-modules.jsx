@@ -1,11 +1,49 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { last } from 'lodash';
 
-import { Box, TableFilters } from '../../ui';
+import { Box, TableFilters, Tooltip } from '../../ui';
 import { JobName } from '../job-name';
 import { MetricsTable } from '../metrics-table';
 import css from './bundle-chunk-modules.module.css';
+
+// css ./node_modules/css-loader/dist/cjs.js??ref--6-0!./src/assets/styles/default.styl
+const NAME_WITH_LOADERS = /!/;
+
+const getModuleShortName = (label) => {
+  if (NAME_WITH_LOADERS.test(label)) {
+    return last(label.split(NAME_WITH_LOADERS));
+  }
+
+  return label;
+};
+
+const renderRowHeader = (metric) => {
+  const { label } = metric;
+  const shortName = getModuleShortName(label);
+
+  if (shortName === label) {
+    return label;
+  }
+
+  return (
+    <Tooltip
+      title={(
+        <div className={css.nameTooltip}>
+          <span className={css.nameTooltipText}>
+            {label}
+          </span>
+        </div>
+      )}
+      align="topLeft"
+    >
+      <span className={css.name}>
+        {shortName}
+      </span>
+    </Tooltip>
+  );
+};
 
 const getRunLabel = (run, index) => {
   // No baseline?
@@ -60,8 +98,10 @@ export const BundleChunkModules = ({
         />
       </header>
       <MetricsTable
+        className={css.table}
         rows={rows}
         runs={labeledRuns}
+        renderRowHeader={renderRowHeader}
       />
     </Box>
   );
