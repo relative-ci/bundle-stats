@@ -5,7 +5,7 @@ import { get, sortBy } from 'lodash';
 import { METRIC_TYPE_FILE_SIZE } from '@relative-ci/utils';
 
 import { generateRows } from '../../utils/generate-rows';
-import getWebpackAssetsById from '../bundle-assets/utils/get-assets-by-id';
+import { getModulesById } from './utils/get-modules-by-id';
 
 const getModulesRunData = (job) => {
   if (!job) {
@@ -21,7 +21,7 @@ const getModulesRunData = (job) => {
 };
 
 const getRun = job => ({
-  data: getWebpackAssetsById(getModulesRunData(job)),
+  data: getModulesById(getModulesRunData(job)),
   meta: job,
 });
 

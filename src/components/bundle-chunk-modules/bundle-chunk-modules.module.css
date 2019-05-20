@@ -14,7 +14,7 @@
   border-bottom: 1px dotted transparent;
 }
 
-.nameTooltip {
+.nameTooltipText {
   display: block;
   width: 100%;
   max-width: 320px;
@@ -26,6 +26,10 @@
   hyphens: auto;
   white-space: normal;
   text-align: left;
+}
+
+.nameTooltipText + .nameTooltipText {
+  margin-top: var(--space-small);
 }
 
 .table tbody tr:hover .name {
