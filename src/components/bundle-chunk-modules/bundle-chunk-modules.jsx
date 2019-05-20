@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { get, map } from 'lodash';
 
 import {
   Box, FileName, TableFilters, Tooltip,
@@ -9,7 +10,7 @@ import { JobName } from '../job-name';
 import { MetricsTable } from '../metrics-table';
 import css from './bundle-chunk-modules.module.css';
 
-const renderRowHeader = (metric, row) => {
+const getRenderRowHeader = labels => (metric, row) => {
   const { label } = metric;
 
   return (
@@ -20,11 +21,14 @@ const renderRowHeader = (metric, row) => {
             const key = `${run.name}-${index}`;
 
             return (
-              <FileName
-                className={css.nameTooltipText}
-                key={key}
-                name={run.name}
-              />
+              <React.Fragment key={key}>
+                <h6>{labels[index]}</h6>
+                <FileName
+                  className={css.nameTooltipText}
+                  key={key}
+                  name={run.name}
+                />
+              </React.Fragment>
             );
           })}
         </div>
@@ -39,12 +43,16 @@ const renderRowHeader = (metric, row) => {
   );
 };
 
-const getRunLabel = (run, index) => {
+const getRunLabel = (run, index, runs) => {
+  const internalBuildNumber = get(run, 'meta.internalBuildNumber');
+  const name = `Job #${internalBuildNumber || (runs.length - index)}`;
+
   // No baseline?
   if (!run || !run.meta) {
     return {
       ...run,
-      label: '-',
+      label: name,
+      name,
     };
   }
 
@@ -56,6 +64,7 @@ const getRunLabel = (run, index) => {
         internalBuildNumber={run.meta.internalBuildNumber}
       />
     ),
+    name,
   };
 };
 
@@ -95,7 +104,7 @@ export const BundleChunkModules = ({
         className={css.table}
         rows={rows}
         runs={labeledRuns}
-        renderRowHeader={renderRowHeader}
+        renderRowHeader={getRenderRowHeader(map(labeledRuns, 'name'))}
       />
     </Box>
   );
