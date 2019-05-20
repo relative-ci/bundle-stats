@@ -12,6 +12,12 @@
 
 .name {
   border-bottom: 1px dotted transparent;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+  white-space: normal;
 }
 
 .nameTooltipText {
