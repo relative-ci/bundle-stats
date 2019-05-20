@@ -10,34 +10,14 @@
   margin: 0;
 }
 
-.name {
-  border-bottom: 1px dotted transparent;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-all;
-  word-break: break-word;
-  hyphens: auto;
-  white-space: normal;
-}
-
 .nameTooltipText {
   display: block;
   width: 100%;
   max-width: 320px;
   min-width: 280px;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-all;
-  word-break: break-word;
-  hyphens: auto;
-  white-space: normal;
   text-align: left;
 }
 
 .nameTooltipText + .nameTooltipText {
   margin-top: var(--space-small);
-}
-
-.table tbody tr:hover .name {
-  border-color: var(--color-gray-light);
 }

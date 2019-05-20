@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { Box, TableFilters, Tooltip } from '../../ui';
+import {
+  Box, FileName, TableFilters, Tooltip,
+} from '../../ui';
 import { JobName } from '../job-name';
 import { MetricsTable } from '../metrics-table';
 import css from './bundle-chunk-modules.module.css';
@@ -14,21 +16,21 @@ const renderRowHeader = (metric, row) => {
     <Tooltip
       title={(
         <div className={css.nameTooltip}>
-          {row.runs.map((run, index) => {
-            const key = index;
-            return (
-              <div key={key} className={css.nameTooltipText}>
-                {run.name}
-              </div>
-            );
-          })}
+          {row.runs.map((run, index) => (
+            <FileName
+              className={css.nameTooltipText}
+              key={`${run.name}-${index}`}
+              name={run.name}
+            />
+          ))}
         </div>
       )}
       align="topLeft"
     >
-      <span className={css.name}>
-        {label}
-      </span>
+      <FileName
+        className={css.name}
+        name={label}
+      />
     </Tooltip>
   );
 };

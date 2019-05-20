@@ -4,6 +4,7 @@ import cx from 'classnames';
 import { get } from 'lodash';
 import { FILE_TYPE_LABELS } from '@relative-ci/utils';
 
+import { FileName } from '../../ui/file-name';
 import { Tooltip } from '../../ui/tooltip';
 import { TableFilters } from '../../ui/table-filters';
 import { MetricsTable } from '../metrics-table';
@@ -81,11 +82,12 @@ const TooltipFilename = ({ runs }) => (
       <tbody>
         {runs.map(({ name }, index) => {
           const key = index;
+
           return (
-            <tr key={key}>
-              <th>{RUNS_LABELS[index]}</th>
-              <td>{name}</td>
-            </tr>
+            <div key={key}>
+              <h6>{RUNS_LABELS[index]}</h6>
+              {name ?  <FileName name={name} /> : '-'}
+            </div>
           );
         })}
       </tbody>
@@ -138,10 +140,11 @@ const renderRowHeader = (metric, row) => (
         c
       </span>
     )}
-    <Tooltip title={<TooltipFilename runs={row.runs} />}>
-      <span className={css.label}>
-        {metric.label}
-      </span>
+    <Tooltip
+      title={<TooltipFilename runs={row.runs} />}
+      align="topLeft"
+    >
+      <FileName name={metric.label} />
     </Tooltip>
   </React.Fragment>
 );

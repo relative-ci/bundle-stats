@@ -78,18 +78,10 @@
 
 .tooltipFilename {
   text-align: left;
+  min-width: 320px;
 }
 
 .tooltipTable td,
 .tooltipTable th {
   padding: 0 var(--space-xxxsmall) 0 0;
-}
-
-.label {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-all;
-  word-break: break-word;
-  hyphens: auto;
-  white-space: normal;
 }
