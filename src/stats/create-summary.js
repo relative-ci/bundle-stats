@@ -1,4 +1,4 @@
-const { get, merge } = require('lodash');
+import { get, merge } from 'lodash';
 
 export const createStatsSummary = (baselineStats, currentStats) => {
   const metrics = [

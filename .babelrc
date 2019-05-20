@@ -1,12 +1,21 @@
 {
   "presets": [
     ["@babel/preset-env", {
-      "targets": {
-        "node": "10.0.0"
-      }
-    }]
+      "loose": true,
+      "modules": false
+    }],
   ],
   "plugins": [
     "babel-plugin-lodash"
-  ]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        "@babel/preset-env"
+      ],
+      "plugins": [
+        "babel-plugin-lodash"
+      ],
+    }
+  }
 }
