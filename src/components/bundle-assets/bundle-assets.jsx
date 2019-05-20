@@ -101,6 +101,51 @@ TooltipFilename.propTypes = {
   runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };
 
+const renderRowHeader = (metric, row) => (
+  <React.Fragment>
+    {row.isNotPredictive && (
+      <Tooltip
+        className={css.notPredictive}
+        title={<TooltipNotPredictive runs={row.runs} />}
+        align="topLeft"
+      >
+        <span className={cx('ui-icon ui-icon--small', css.notPredictiveIcon)}>
+          warning
+        </span>
+      </Tooltip>
+    )}
+    {row.isEntry && (
+      <span
+        title="Entrypoint"
+        className={css.flagEntry}
+      >
+        e
+      </span>
+    )}
+    {row.isInitial && (
+      <span
+        title="Initial"
+        className={css.flagInitial}
+      >
+        i
+      </span>
+    )}
+    {row.isChunk && (
+      <span
+        title="Chunk"
+        className={css.flagChunk}
+      >
+        c
+      </span>
+    )}
+    <Tooltip title={<TooltipFilename runs={row.runs} />}>
+      <span className={css.label}>
+        {metric.label}
+      </span>
+    </Tooltip>
+  </React.Fragment>
+);
+
 export const BundleAssets = (props) => {
   const {
     className,
@@ -157,48 +202,7 @@ export const BundleAssets = (props) => {
         <MetricsTable
           runs={labeledRuns}
           rows={rows}
-          renderRowHeader={(metric, row) => (
-            <React.Fragment>
-              {row.isNotPredictive && (
-                <Tooltip
-                  className={css.notPredictive}
-                  title={<TooltipNotPredictive runs={row.runs} />}
-                  align="topLeft"
-                >
-                  <span className={cx('ui-icon ui-icon--small', css.notPredictiveIcon)}>
-                    warning
-                  </span>
-                </Tooltip>
-              )}
-              {row.isEntry && (
-                <span
-                  title="Entrypoint"
-                  className={css.flagEntry}
-                >
-                  e
-                </span>
-              )}
-              {row.isInitial && (
-                <span
-                  title="Initial"
-                  className={css.flagInitial}
-                >
-                  i
-                </span>
-              )}
-              {row.isChunk && (
-                <span
-                  title="Chunk"
-                  className={css.flagChunk}
-                >
-                  c
-                </span>
-              )}
-              <Tooltip title={<TooltipFilename runs={row.runs} />}>
-                {metric.label}
-              </Tooltip>
-            </React.Fragment>
-          )}
+          renderRowHeader={renderRowHeader}
         />
       </main>
     </section>

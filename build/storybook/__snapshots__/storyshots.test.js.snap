@@ -2614,7 +2614,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                1.css
+                <span
+                  className="label"
+                >
+                  1.css
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -2683,7 +2687,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                main.css
+                <span
+                  className="label"
+                >
+                  main.css
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -2752,7 +2760,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                main.js
+                <span
+                  className="label"
+                >
+                  main.js
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -2821,7 +2833,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                vendor.js
+                <span
+                  className="label"
+                >
+                  vendor.js
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -2878,7 +2894,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                ../artifacts/webpack.stats.main.json
+                <span
+                  className="label"
+                >
+                  ../artifacts/webpack.stats.main.json
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -2928,7 +2948,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                android-chrome-192x192.png
+                <span
+                  className="label"
+                >
+                  android-chrome-192x192.png
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -2985,7 +3009,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                android-chrome-512x512.png
+                <span
+                  className="label"
+                >
+                  android-chrome-512x512.png
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -3042,7 +3070,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                apple-touch-icon.png
+                <span
+                  className="label"
+                >
+                  apple-touch-icon.png
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -3099,7 +3131,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                browserconfig.xml
+                <span
+                  className="label"
+                >
+                  browserconfig.xml
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -3156,7 +3192,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                compare-relative-ci-facebook-screenshot.jpg
+                <span
+                  className="label"
+                >
+                  compare-relative-ci-facebook-screenshot.jpg
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -3213,7 +3253,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                compare-relative-ci-twitter-screenshot.jpg
+                <span
+                  className="label"
+                >
+                  compare-relative-ci-twitter-screenshot.jpg
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -3270,7 +3314,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                components/sources/source/assets/close.svg
+                <span
+                  className="label"
+                >
+                  components/sources/source/assets/close.svg
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -3327,7 +3375,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                favicon-16x16.png
+                <span
+                  className="label"
+                >
+                  favicon-16x16.png
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -3384,7 +3436,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                favicon-32x32.png
+                <span
+                  className="label"
+                >
+                  favicon-32x32.png
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -3441,7 +3497,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                favicon.ico
+                <span
+                  className="label"
+                >
+                  favicon.ico
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -3498,7 +3558,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                index.html
+                <span
+                  className="label"
+                >
+                  index.html
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -3555,7 +3619,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                mstile-150x150.png
+                <span
+                  className="label"
+                >
+                  mstile-150x150.png
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -3612,7 +3680,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                safari-pinned-tab.svg
+                <span
+                  className="label"
+                >
+                  safari-pinned-tab.svg
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -3669,7 +3741,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               <span
                 className="root"
               >
-                site.webmanifest
+                <span
+                  className="label"
+                >
+                  site.webmanifest
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -4137,7 +4213,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                1.css
+                <span
+                  className="label"
+                >
+                  1.css
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -4232,7 +4312,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                main.css
+                <span
+                  className="label"
+                >
+                  main.css
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -4327,7 +4411,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                main.js
+                <span
+                  className="label"
+                >
+                  main.js
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -4422,7 +4510,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                vendor.js
+                <span
+                  className="label"
+                >
+                  vendor.js
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -4505,7 +4597,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                ../artifacts/webpack.stats.main.json
+                <span
+                  className="label"
+                >
+                  ../artifacts/webpack.stats.main.json
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -4571,7 +4667,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                android-chrome-192x192.png
+                <span
+                  className="label"
+                >
+                  android-chrome-192x192.png
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -4654,7 +4754,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                android-chrome-512x512.png
+                <span
+                  className="label"
+                >
+                  android-chrome-512x512.png
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -4737,7 +4841,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                apple-touch-icon.png
+                <span
+                  className="label"
+                >
+                  apple-touch-icon.png
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -4820,7 +4928,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                browserconfig.xml
+                <span
+                  className="label"
+                >
+                  browserconfig.xml
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -4903,7 +5015,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                compare-relative-ci-facebook-screenshot.jpg
+                <span
+                  className="label"
+                >
+                  compare-relative-ci-facebook-screenshot.jpg
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -4986,7 +5102,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                compare-relative-ci-twitter-screenshot.jpg
+                <span
+                  className="label"
+                >
+                  compare-relative-ci-twitter-screenshot.jpg
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -5069,7 +5189,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                components/sources/source/assets/close.svg
+                <span
+                  className="label"
+                >
+                  components/sources/source/assets/close.svg
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -5152,7 +5276,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                favicon-16x16.png
+                <span
+                  className="label"
+                >
+                  favicon-16x16.png
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -5235,7 +5363,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                favicon-32x32.png
+                <span
+                  className="label"
+                >
+                  favicon-32x32.png
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -5318,7 +5450,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                favicon.ico
+                <span
+                  className="label"
+                >
+                  favicon.ico
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -5401,7 +5537,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                index.html
+                <span
+                  className="label"
+                >
+                  index.html
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -5484,7 +5624,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                mstile-150x150.png
+                <span
+                  className="label"
+                >
+                  mstile-150x150.png
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -5567,7 +5711,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                safari-pinned-tab.svg
+                <span
+                  className="label"
+                >
+                  safari-pinned-tab.svg
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -5650,7 +5798,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               <span
                 className="root"
               >
-                site.webmanifest
+                <span
+                  className="label"
+                >
+                  site.webmanifest
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -6160,7 +6312,11 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
               <span
                 className="root"
               >
-                1.css
+                <span
+                  className="label"
+                >
+                  1.css
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -6264,7 +6420,11 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
               <span
                 className="root"
               >
-                main.css
+                <span
+                  className="label"
+                >
+                  main.css
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -6368,7 +6528,11 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
               <span
                 className="root"
               >
-                main.js
+                <span
+                  className="label"
+                >
+                  main.js
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -6472,7 +6636,11 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
               <span
                 className="root"
               >
-                vendor.js
+                <span
+                  className="label"
+                >
+                  vendor.js
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -6554,7 +6722,11 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
               <span
                 className="root"
               >
-                ../artifacts/webpack.json
+                <span
+                  className="label"
+                >
+                  ../artifacts/webpack.json
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -6620,7 +6792,11 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
               <span
                 className="root"
               >
-                ../artifacts/webpack.stats.main.json
+                <span
+                  className="label"
+                >
+                  ../artifacts/webpack.stats.main.json
+                </span>
                 <div
                   className="tooltip"
                 >
@@ -7151,7 +7327,11 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
               <span
                 className="root"
               >
-                static/js/not-predictive.js
+                <span
+                  className="label"
+                >
+                  static/js/not-predictive.js
+                </span>
                 <div
                   className="tooltip"
                 >
