@@ -29,7 +29,7 @@
   /* stylelint-disable */
   margin-top: calc(0px - var(--spacing)) !important;
   /* stylelint-enable */
-  z-index: 1;
+  z-index: 0;
   color: inherit;
   text-decoration: none;
   outline: none;

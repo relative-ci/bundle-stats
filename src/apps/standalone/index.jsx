@@ -17,6 +17,10 @@ const StandaloneAppLayout = props => (
       className={css.main}
       {...props}
     />
+    <Footer
+      className={css.footer}
+      source="webpack-bundle-stats"
+    />
   </div>
 );
 
@@ -78,10 +82,6 @@ const StandaloneApp = ({ jobs }) => {
         </h2>
         <BundleModules jobs={jobs} />
       </Container>
-      <Footer
-        className={css.footer}
-        source="webpack-bundle-stats"
-      />
     </StandaloneAppLayout>
   );
 };
