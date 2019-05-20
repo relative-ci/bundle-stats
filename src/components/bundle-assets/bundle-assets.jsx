@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { get } from 'lodash';
+import { get, map } from 'lodash';
 import { FILE_TYPE_LABELS } from '@relative-ci/utils';
 
 import { FileName } from '../../ui/file-name';
@@ -14,9 +14,12 @@ import {
 } from './bundle-assets.constants';
 import css from './bundle-assets.module.css';
 
+const RUN_TITLE_CURRENT = 'Current';
+const RUN_TITLE_BASELINE = 'Baseline';
+
 const RUNS_LABELS = [
-  'Current',
-  'Baseline',
+  RUN_TITLE_CURRENT,
+  RUN_TITLE_BASELINE,
 ];
 
 const getFileTypeFilters = () => Object.entries(FILE_TYPE_LABELS)
@@ -31,17 +34,20 @@ const getFileTypeFilters = () => Object.entries(FILE_TYPE_LABELS)
     ...current,
   }), {});
 
-const addRunLabel = (run, index) => {
+const addRunLabel = (run, index, runs) => {
   const internalBuildNumber = get(run, 'meta.internalBuildNumber');
+
+  const name = `Job #${internalBuildNumber || (runs.length - index)}`;
   const label = internalBuildNumber ? (
     <JobName
-      title={index === 0 ? 'Current' : 'Baseline'}
+      title={index === 0 ? RUN_TITLE_CURRENT : RUN_TITLE_BASELINE}
       internalBuildNumber={internalBuildNumber}
     />
-  ) : ' ';
+  ) : name;
 
   return {
     ...run,
+    name,
     label,
   };
 };
@@ -76,34 +82,32 @@ TooltipNotPredictive.propTypes = {
   runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };
 
-const TooltipFilename = ({ runs }) => (
+const TooltipFilename = ({ runs, labels }) => (
   <div className={css.tooltipFilename}>
-    <table className={css.tooltipTable}>
-      <tbody>
-        {runs.map(({ name }, index) => {
-          const key = index;
+    {runs.map(({ name }, index) => {
+      const key = index;
 
-          return (
-            <div key={key}>
-              <h6>{RUNS_LABELS[index]}</h6>
-              {name ? <FileName name={name} /> : '-'}
-            </div>
-          );
-        })}
-      </tbody>
-    </table>
+      return (
+        <React.Fragment key={key}>
+          <h6>{labels[index]}</h6>
+          {name ? <FileName name={name} /> : '-'}
+        </React.Fragment>
+      );
+    })}
   </div>
 );
 
 TooltipFilename.defaultProps = {
   runs: [],
+  labels: [],
 };
 
 TooltipFilename.propTypes = {
   runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  labels: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };
 
-const renderRowHeader = (metric, row) => (
+const getRenderRowHeader = labels => (metric, row) => (
   <React.Fragment>
     {row.isNotPredictive && (
       <Tooltip
@@ -141,7 +145,9 @@ const renderRowHeader = (metric, row) => (
       </span>
     )}
     <Tooltip
-      title={<TooltipFilename runs={row.runs} />}
+      title={(
+        <TooltipFilename runs={row.runs} labels={labels} />
+      )}
       align="topLeft"
     >
       <FileName name={metric.label} />
@@ -205,7 +211,7 @@ export const BundleAssets = (props) => {
         <MetricsTable
           runs={labeledRuns}
           rows={rows}
-          renderRowHeader={renderRowHeader}
+          renderRowHeader={getRenderRowHeader(map(labeledRuns, 'name'))}
         />
       </main>
     </section>
