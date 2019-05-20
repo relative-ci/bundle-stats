@@ -3,6 +3,7 @@ export { Container } from './container';
 export { IconText } from './icon-text';
 export { Loader } from './loader';
 export { Logo } from './logo';
+export { FileName } from './file-name';
 export { Panels } from './panels';
 export { Table } from './table';
 export { TableFilters } from './table-filters';
