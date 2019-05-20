@@ -8,10 +8,15 @@
   white-space: normal;
 }
 
-.fileName {
+.part::after {
+  content: '/';
+}
+
+.part:last-child::after {
+  content: '';
+}
+
+.noBreak {
   white-space: nowrap;
 }
 
-.fileName::before {
-  content: '/';
-}

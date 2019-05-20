@@ -86,7 +86,7 @@ const TooltipFilename = ({ runs }) => (
           return (
             <div key={key}>
               <h6>{RUNS_LABELS[index]}</h6>
-              {name ?  <FileName name={name} /> : '-'}
+              {name ? <FileName name={name} /> : '-'}
             </div>
           );
         })}

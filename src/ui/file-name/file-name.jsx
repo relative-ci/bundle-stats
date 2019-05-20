@@ -4,30 +4,29 @@ import cx from 'classnames';
 
 import css from './file-name.css';
 
+const MIN_BREAK_LENGTH = 32;
+
 export const FileName = ({ className, name }) => {
   if (!name) {
     return null;
   }
 
   const parts = name.split('/');
-  const { dirname, filename } = parts.length > 1
-    ? {
-      dirname: parts.slice(0, -1).join('/'),
-      filename: parts.slice(-1)[0],
-    }
-    : {
-      dirname: parts.join('/'),
-      filename: '',
-    };
 
   return (
     <span className={cx(css.root, className)}>
-      {dirname}
-      {filename && (
-        <span className={css.fileName}>
-          {filename}
-        </span>
-      )}
+      {parts.map((part, index) => {
+        const key = `${part}-${index}`;
+        const isShort = part.length < MIN_BREAK_LENGTH;
+        return (
+          <span
+            key={key}
+            className={cx(css.part, isShort && css.noBreak)}
+          >
+            {part}
+          </span>
+        );
+      })}
     </span>
   );
 };

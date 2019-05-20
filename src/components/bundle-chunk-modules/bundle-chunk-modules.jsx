@@ -16,13 +16,17 @@ const renderRowHeader = (metric, row) => {
     <Tooltip
       title={(
         <div className={css.nameTooltip}>
-          {row.runs.map((run, index) => (
-            <FileName
-              className={css.nameTooltipText}
-              key={`${run.name}-${index}`}
-              name={run.name}
-            />
-          ))}
+          {row.runs.map((run, index) => {
+            const key = `${run.name}-${index}`;
+
+            return (
+              <FileName
+                className={css.nameTooltipText}
+                key={key}
+                name={run.name}
+              />
+            );
+          })}
         </div>
       )}
       align="topLeft"
