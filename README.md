@@ -8,7 +8,7 @@ Generate bundle report from the webpack stats data.
 
 [Demo - one job](https://relative-ci.com/tools/webpack-bundle-stats/demo-single-job.html) | [Demo - multiple jobs](https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html)
 
-![screenshot](https://www.dropbox.com/s/md4ttdf51lh7kt1/webpack-bundle-stats-screenshot.v4.jpg?raw=1)
+![screenshot](https://www.dropbox.com/s/m6tsdn3dca3b295/webpack-bundle-stats-screenshot.v5.jpg?raw=1)
 
 ### Install
 
