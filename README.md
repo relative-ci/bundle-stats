@@ -1,6 +1,7 @@
 # Webpack Bundle Stats
 
 [![webpack-bundle-stats version](https://img.shields.io/npm/v/@relative-ci/webpack-bundle-stats.svg)](https://www.npmjs.com/package/@relative-ci/webpack-bundle-stats)
+[![TravisCI badge](https://api.travis-ci.org/relative-ci/webpack-bundle-stats.svg?branch=master)](https://travis-ci.org/relative-ci/webpack-bundle-stats)
 [![Greenkeeper badge](https://badges.greenkeeper.io/relative-ci/webpack-bundle-stats.svg)](https://greenkeeper.io/)
 
 Generate bundle report from the webpack stats data.
