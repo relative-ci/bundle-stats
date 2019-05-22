@@ -19,14 +19,9 @@ const REPORT_HANDLERS = {
   [OUTPUT_TYPE_JSON]: createJSONReport,
 };
 
-export const createReports = (artifacts, outputTypes) => {
-  const initialData = createJobs(artifacts);
-  const types = Array.isArray(outputTypes) ? outputTypes : [outputTypes];
-
-  return Promise.all(
-    types.map(type => ({
-      output: REPORT_HANDLERS[type](initialData),
-      type,
-    })),
-  );
-};
+export const createReports = (initialData, types) => Promise.all(
+  types.map(type => ({
+    output: REPORT_HANDLERS[type](initialData),
+    type,
+  })),
+);

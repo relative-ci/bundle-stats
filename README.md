@@ -54,6 +54,13 @@ Options:
 ```
 
 ```shell
-$ webpack-bundle-stats artifacts/webpack-stats.json artifacts/webpack-stats-previous.js
-> webpack-bundle-stats.html was created.
+$ webpack-bundle-stats --html --json __fixtures__/webpack-stats-0.json __fixtures__/webpack-stats-1.json
+  ✔ Read Webpack stat files
+  ✔ Gather data
+  ✔ Generate reports
+  ✔ Save reports
+
+Reports saved:
+- ./dist/report.html
+- ./dist/report.json
 ```
