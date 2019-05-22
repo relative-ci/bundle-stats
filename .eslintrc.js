@@ -1,11 +1,14 @@
 module.exports = {
   extends: 'airbnb-base',
+  parserOptions: {
+    sourceType: 'script',
+  },
   plugins: ['jest'],
-  globals: {
-    'test': true,
-    'expect': true,
+  env: {
+    'jest/globals': true,
   },
   rules: {
     'import/prefer-default-export': 0,
+    'strict': 0,
   }
 };

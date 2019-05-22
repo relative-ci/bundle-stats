@@ -1,16 +1,26 @@
 #!/usr/bin/env node
 
-/* eslint-disable no-console */
 const path = require('path');
-const { readJSON, outputFile } = require('fs-extra');
 const yargs = require('yargs');
-const Listr = require('listr');
 
-const {
-  OUTPUT_TYPE_HTML, OUTPUT_TYPE_JSON, createJobs, createReports,
-} = require('../'); // eslint-disable-line import/no-unresolved
+const run = require('./run');
 
 const DEFAULT_OUTPUT_DIR = './dist';
+
+const { demo } = yargs.parse();
+
+if (demo) {
+  run({
+    html: true,
+    json: true,
+    outDir: DEFAULT_OUTPUT_DIR,
+    artifactFilepaths: [
+      path.resolve(__dirname, '../__fixtures__/webpack-stats-current.json'),
+      path.resolve(__dirname, '../__fixtures__/webpack-stats-baseline.json'),
+    ],
+  });
+  return;
+}
 
 const args = yargs
   .usage('Usage: $0 OPTIONS [STATS_FILE]...')
@@ -29,6 +39,10 @@ const args = yargs
     boolean: true,
     default: false,
   })
+  .option('demo', {
+    description: 'Generate demo reports',
+    default: false,
+  })
   .alias('d', 'out-dir')
   .alias('h', 'help')
   .alias('v', 'version')
@@ -36,62 +50,9 @@ const args = yargs
   .argv;
 
 const {
-  html,
-  json,
-  outDir,
-  _: artifactFilepaths,
+  html, json, outDir, _: artifactFilepaths,
 } = args;
 
-const outputTypes = [
-  ...html ? [OUTPUT_TYPE_HTML] : [],
-  ...json ? [OUTPUT_TYPE_JSON] : [],
-];
-
-const tasks = new Listr([
-  {
-    title: 'Read Webpack stat files',
-    task: ctx => Promise.all(
-      artifactFilepaths.map(filepath => readJSON(filepath)),
-    ).then((artifacts) => {
-      ctx.artifacts = artifacts;
-    }),
-  },
-  {
-    title: 'Gather data',
-    task: (ctx) => {
-      ctx.initialData = createJobs(ctx.artifacts);
-    },
-  },
-  {
-    title: 'Generate reports',
-    task: async (ctx) => {
-      ctx.reports = await createReports(ctx.initialData, outputTypes);
-    },
-  },
-  {
-    title: 'Save reports',
-    task: ctx => new Listr(
-      ctx.reports.map(({ type, output }) => ({
-        title: type,
-        task: async () => {
-          const filepath = path.join(outDir, `report.${type}`);
-          await outputFile(filepath, output);
-          ctx.output = [
-            ...ctx.output ? ctx.output : [],
-            filepath,
-          ];
-        },
-      })),
-      { concurrent: true },
-    ),
-  },
-]);
-
-tasks.run()
-  .then(({ output }) => {
-    console.log('\nReports saved:');
-    output.map(reportPath => console.log(`- ${path.resolve(reportPath)}`));
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+run({
+  html, json, outDir, artifactFilepaths,
+});
