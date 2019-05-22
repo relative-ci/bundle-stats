@@ -8,7 +8,7 @@ const Listr = require('listr');
 
 const {
   OUTPUT_TYPE_HTML, OUTPUT_TYPE_JSON, createJobs, createReports,
-} = require('../');
+} = require('../'); // eslint-disable-line import/no-unresolved
 
 const DEFAULT_OUTPUT_DIR = './dist';
 
