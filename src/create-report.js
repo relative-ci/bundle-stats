@@ -3,7 +3,6 @@ import { readFileSync } from 'fs-extra';
 import {
   INITIAL_DATA_PATTERN, OUTPUT_TYPE_HTML, OUTPUT_TYPE_JSON,
 } from './constants';
-import { createJobs } from './create-jobs';
 
 const templateFilepath = require.resolve('@relative-ci/webpack-bundle-stats-html-template');
 
