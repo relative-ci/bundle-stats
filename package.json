@@ -36,6 +36,7 @@
     "@relative-ci/utils": "2.2.3",
     "@relative-ci/webpack-bundle-stats-html-template": "1.0.0-beta.16",
     "fs-extra": "8.0.0",
+    "listr": "^0.14.3",
     "lodash": "4.17.11",
     "yargs": "13.2.4"
   },
