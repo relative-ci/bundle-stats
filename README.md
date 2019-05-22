@@ -43,11 +43,14 @@ Configure Webpack stats to output the necessary data:
 
 ```shell
 $ webpack-bundle-stats -h
-Usage: webpack-bundle-stats [STATS_FILE]...
+Usage: webpack-bundle-stats OPTIONS [STATS_FILE]...
 
 Options:
-  -h, --help     Show help                        [boolean]
-  -v, --version  Show version number              [boolean]
+  --html         Save HTML report                      [boolean] [default: true]
+  --json         Save JSON data                       [boolean] [default: false]
+  -d, --out-dir  Output directory                            [default: "./dist"]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]
 ```
 
 ```shell
