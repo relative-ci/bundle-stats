@@ -48,6 +48,7 @@ Usage: webpack-bundle-stats OPTIONS [STATS_FILE]...
 Options:
   --html         Save HTML report                      [boolean] [default: true]
   --json         Save JSON data                       [boolean] [default: false]
+  --demo         Generate demo reports                          [default: false]
   -d, --out-dir  Output directory                            [default: "./dist"]
   -h, --help     Show help                                             [boolean]
   -v, --version  Show version number                                   [boolean]
