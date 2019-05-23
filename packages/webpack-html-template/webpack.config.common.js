@@ -2,8 +2,8 @@ const webpackMerge = require('webpack-merge');
 const HtmlPlugin = require('html-webpack-plugin');
 const HtmlInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 
-const getCSSConfig = require('../../build/webpack/configs/css');
-const getResolveConfig = require('../../build/webpack/configs/resolve');
+const getCSSConfig = require('../../build/configs/css');
+const getResolveConfig = require('../../build/configs/resolve');
 const settings = require('./settings');
 const appConfig = require('./src/config');
 

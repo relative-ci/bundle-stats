@@ -2,7 +2,7 @@ const webpackMerge = require('webpack-merge');
 const StatsPlugin = require('stats-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-const getCommonConfig = require('../../build/webpack/webpack.config.common');
+const getCommonConfig = require('../../build/webpack.config.common');
 const appCommonConfig = require('./webpack.config.common');
 const settings = require('./settings');
 

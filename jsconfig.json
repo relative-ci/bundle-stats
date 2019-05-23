@@ -6,7 +6,10 @@
     "checkJs": true,
     "module": "es6",
     "moduleResolution": "node",
-    "jsx": "react"
+    "jsx": "react",
+    "paths": {
+      "Fixtures/*": ["./fixtures/*"]
+    }
   },
   "exclude": [
     "node_modules",

@@ -13,6 +13,10 @@ module.exports = (settings) => {
       filename: '[name].js',
       publicPath: '/',
     },
+    resolve: {
+      alias: {
+      },
+    },
     module: {
       rules: [
         {
