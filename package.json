@@ -1,0 +1,29 @@
+{
+  "name": "compare",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "dotenv": "^8.0.0",
+    "lerna": "^2.10.1",
+    "mini-css-extract-plugin": "^0.6.0",
+    "webpack": "^4.32.2"
+  },
+  "scripts": {
+    "build": "npm run lerna run build",
+    "lerna": "lerna",
+    "lint": "npm run lerna run lint",
+    "test": "npm run lerna run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/relative-ci/compare.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/relative-ci/compare/issues"
+  },
+  "homepage": "https://github.com/relative-ci/compare#readme"
+}
