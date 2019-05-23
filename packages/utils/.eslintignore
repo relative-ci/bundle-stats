@@ -1,2 +1,4 @@
-lib/**/*.js
-lib-esm/**/*.js
+*
+!src
+!*.js
+!.*.js

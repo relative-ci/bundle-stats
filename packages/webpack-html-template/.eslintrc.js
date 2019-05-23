@@ -5,12 +5,12 @@ module.exports = {
   root: true,
   extends: 'airbnb-base',
   env: {
-    node: true
+    node: true,
   },
   parser: 'babel-eslint',
   globals: {
     __DEVELOPMENT__: true,
-    __PRODUCTION__: true
+    __PRODUCTION__: true,
   },
   settings: {
     'import/resolver': {
@@ -20,16 +20,16 @@ module.exports = {
     },
   },
   rules: {
-    'operator-linebreak': ['error', 'before', { 'overrides': { '&&': 'ignore' } }],
-    'import/no-extraneous-dependencies': ['error', {'devDependencies': true}],
+    'operator-linebreak': ['error', 'before', { overrides: { '&&': 'ignore' } }],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/extensions': [
       'error',
       'never',
       {
         svg: 'always',
         png: 'always',
-        css: 'always'
-      }
+        css: 'always',
+      },
     ],
     'import/prefer-default-export': 'off',
   },

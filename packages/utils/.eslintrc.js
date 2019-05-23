@@ -5,6 +5,6 @@ module.exports = {
   },
   plugins: ['jest'],
   rules: {
-    'import/prefer-default-export': 0
-  }
+    'import/prefer-default-export': 0,
+  },
 };

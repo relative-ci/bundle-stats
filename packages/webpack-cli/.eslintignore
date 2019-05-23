@@ -1,2 +1,5 @@
-lib
-node_modules
+*
+!src
+!bin
+!*.js
+!.*.js

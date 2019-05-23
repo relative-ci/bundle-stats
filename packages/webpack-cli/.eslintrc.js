@@ -9,6 +9,6 @@ module.exports = {
   },
   rules: {
     'import/prefer-default-export': 0,
-    'strict': 0,
-  }
+    strict: 0,
+  },
 };
