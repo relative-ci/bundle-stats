@@ -2,8 +2,8 @@
 import { storiesOf } from '@storybook/react';
 import { createJob } from '@relative-ci/utils';
 
-import currentData from '../../../fixtures/job.current.json';
-import baselineData from '../../../fixtures/job.baseline.json';
+import currentData from '../../../../fixtures/job.current.json';
+import baselineData from '../../../../fixtures/job.baseline.json';
 import StandaloneApp from '.';
 
 const BASELINE_JOB = {

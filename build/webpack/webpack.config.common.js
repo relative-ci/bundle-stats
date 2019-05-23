@@ -1,20 +1,12 @@
+const process = require('process');
 const webpack = require('webpack');
-const webpackMerge = require('webpack-merge');
 
-const cssConfig = require('./configs/css');
-const resolveConfig = require('./configs/resolve');
-const filesConfig = require('./configs/files');
+module.exports = (settings) => {
+  const {
+    srcDir, distDir, isProduction, isDevelopment,
+  } = settings;
 
-const {
-  rootDir,
-  srcDir,
-  distDir,
-  isProduction,
-  isDevelopment,
-} = require('../settings');
-
-module.exports = webpackMerge(
-  {
+  return {
     context: srcDir,
     output: {
       path: distDir,
@@ -46,8 +38,5 @@ module.exports = webpackMerge(
       }),
     ],
     devtool: 'source-map',
-  },
-  resolveConfig,
-  cssConfig,
-  filesConfig,
-);
+  };
+};

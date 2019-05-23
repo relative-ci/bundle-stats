@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "esnext",
+    "checkJs": true,
+    "module": "es6",
+    "moduleResolution": "node",
+    "jsx": "react"
+  },
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}

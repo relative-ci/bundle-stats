@@ -1,8 +1,8 @@
-/* global module, window */
+/* global document, module, window */
 import { render } from 'preact';
 import 'preact/debug';
 
-import StandaloneApp from './apps/standalone';
+import App from './app';
 import './default.css';
 
 const jobs = window.__INITIAL_DATA__; // eslint-disable-line no-underscore-dangle
@@ -14,11 +14,11 @@ if (__DEVELOPMENT__) {
 let appElm = document.body.firstElementChild;
 
 const renderStandaloneApp = () => {
-  appElm = render(<StandaloneApp jobs={jobs} />, document.body, appElm);
+  appElm = render(<App jobs={jobs} />, document.body, appElm);
 };
 
 if (module.hot) {
-  module.hot.accept('./standalone.jsx', renderStandaloneApp);
+  module.hot.accept('./index.jsx', renderStandaloneApp);
 }
 
 renderStandaloneApp();

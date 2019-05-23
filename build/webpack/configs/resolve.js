@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = () => ({
   resolve: {
     extensions: ['.jsx', '.json', '.js'],
     alias: {
@@ -6,4 +6,4 @@ module.exports = {
       'react-dom': 'preact-compat',
     },
   },
-};
+});

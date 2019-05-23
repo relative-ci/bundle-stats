@@ -2,16 +2,18 @@ const webpackMerge = require('webpack-merge');
 const StatsPlugin = require('stats-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-const commonConfig = require('./webpack.config.common');
-const standaloneCommonConfig = require('./webpack.config.standalone.common');
-const { rootDir } = require('../settings');
+const getCommonConfig = require('../../build/webpack/webpack.config.common');
+const appCommonConfig = require('./webpack.config.common');
+const settings = require('./settings');
+
+const { rootDir } = settings;
 
 module.exports = webpackMerge.smart(
-  commonConfig,
-  standaloneCommonConfig,
+  getCommonConfig(settings),
+  appCommonConfig,
   {
     plugins: [
-      new StatsPlugin('../../../artifacts/webpack.stats.standalone.json', {
+      new StatsPlugin('../artifacts/webpack.stats.json', {
         context: rootDir,
         assets: true,
         entrypoints: true,
