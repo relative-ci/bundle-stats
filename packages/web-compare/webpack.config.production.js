@@ -6,14 +6,15 @@ const CopyPlugin = require('copy-webpack-plugin');
 const StatsPlugin = require('stats-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-const commonConfig = require('./webpack.config.common');
-const mainCommonConfig = require('./webpack.config.main.common');
+const getCommonConfig = require('../../build/webpack/webpack.config.common');
+const appCommonConfig = require('./webpack.config.common');
+const settings = require('./settings');
 
-const { rootDir, distDir, publicDir } = require('../settings');
+const { rootDir, distDir, publicDir } = settings;
 
 module.exports = webpackMerge(
-  commonConfig,
-  mainCommonConfig,
+  getCommonConfig(settings),
+  appCommonConfig,
   {
     output: {
       filename: '[name].[chunkhash:8].js',

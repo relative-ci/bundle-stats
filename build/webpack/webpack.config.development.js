@@ -1,9 +1,12 @@
-const { publicDir } = require('../settings');
 
-module.exports = {
-  devServer: {
-    inline: true,
-    historyApiFallback: true,
-    contentBase: publicDir,
-  },
+module.exports = (settings) =>{
+  const { publicDir } = settings;
+
+  return {
+    devServer: {
+      inline: true,
+      historyApiFallback: true,
+      contentBase: publicDir,
+    },
+  };
 };

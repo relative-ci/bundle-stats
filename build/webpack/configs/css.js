@@ -25,7 +25,7 @@ module.exports = (settings) => {
           include: [
             /src/,
             /relative-ci\/ui/,
-            /build\/storybook/,
+            /storybook/,
           ],
         },
       ],

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import PreactHelmet from 'preact-helmet';
 
-import config from '../../config/app.json';
+import config from '../../config.json';
 
 const Helmet = ({ title, description }) => (
   <PreactHelmet
