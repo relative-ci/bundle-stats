@@ -1,0 +1,55 @@
+{
+  "name": "@relative-ci/utils",
+  "version": "2.2.3",
+  "description": "RelativeCI utils",
+  "repository": "relative-ci/utils",
+  "main": "lib/index.js",
+  "module": "lib-esm/index.js",
+  "engines": {
+    "node": ">= 8.0"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "npm run build-lib && npm run build-esm",
+    "build-lib": "rm -fr ./lib && babel -D src -d lib --ignore **/__tests__/** --presets=@babel/preset-env",
+    "build-esm": "rm -fr ./lib-esm && babel -D src -d lib-esm --ignore **/__tests__/**",
+    "lint": "eslint ./",
+    "prepublishOnly": "npm run lint && npm test && npm run build",
+    "test": "jest src"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Viorel Cojocaru",
+    "email": "vio@beanon.com",
+    "url": "http://beanon.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/relative-ci/utils/issues"
+  },
+  "homepage": "https://github.com/relative-ci/utils#readme",
+  "dependencies": {
+    "convert-units": "^2.3.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.8.0",
+    "babel-plugin-lodash": "^3.3.4",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jest": "^22.5.1",
+    "jest": "^24.8.0",
+    "jest-cli": "^23.6.0",
+    "lodash": "^4.17.11",
+    "regenerator-runtime": "^0.12.1"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.11"
+  }
+}
