@@ -1,0 +1,22 @@
+.root {
+  display: inline-block;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+  white-space: normal;
+}
+
+.part::after {
+  content: '/';
+}
+
+.part:last-child::after {
+  content: '';
+}
+
+.noBreak {
+  white-space: nowrap;
+}
+

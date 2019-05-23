@@ -1,0 +1,36 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:11.12.0
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package.json" }}
+            - dependencies-
+
+      - run:
+          name: Install dependencies
+          command: npm ci
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: Test
+          command: npm test
+
+      - run:
+          name: Build package
+          command: NODE_ENV=production npm run build
+
+      - store_artifacts:
+          path: ./artifacts
+          destination: artifacts

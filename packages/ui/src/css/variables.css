@@ -1,0 +1,135 @@
+:root {
+  /* Spaces */
+  --space-xxxsmall: 4px;
+  --space-xxsmall: 8px;
+  --space-xsmall: 12px;
+  --space-small: 16px;
+  --space-medium: 24px;
+  --space-large: 32px;
+  --space-xlarge: 40px;
+  --space-xxlarge: 48px;
+  --space-xxxlarge: 64px;
+
+  /* Typography scale */
+  --size-xsmall: 0.77rem;
+  --size-small: 0.92rem;
+  --size: 1rem;
+  --size-medium: var(--size);
+  --size-large: 1.14rem;
+  --size-xlarge: 1.43rem;
+  --size-xxlarge: 1.71rem;
+  --size-xxxlarge: 2.43rem;
+
+  --line-height: var(--space-medium);
+
+  /*
+   * Color scheme:
+   * http://mcg.mbitson.com/#!?mcgpalette0=%23ef626c&mcgpalette1=%2375cb71&mcgpalette2=%23f6e27f&mcgpalette3=%239da1a6&mcgpalette4=%233c91e6&themename=mcgtheme
+   * https://coolors.co/3c91e6-ef626c-75cb71-f6e27f-1a477f
+   */
+
+	--color-gray-25: #FAFBFB;
+	--color-gray-50: #F3F4F4;
+	--color-gray-100: #E2E3E4;
+	--color-gray-200: #CED0D3;
+	--color-gray-300: #BABDC1;
+	--color-gray-400: #ACAFB3;
+	--color-gray-500: #9DA1A6;
+	--color-gray-600: #95999E;
+	--color-gray-700: #8B8F95;
+	--color-gray-800: #81858B;
+	--color-gray-900: #6F747B;
+	--color-gray-light-background: var(--color-gray-25);
+	--color-gray-ultra-light: var(--color-gray-100);
+	--color-gray-light: var(--color-gray-300);
+	--color-gray: var(--color-gray-500);
+	--color-gray-dark: var(--color-gray-700);
+	--color-gray-ultra-dark: var(--color-gray-900);
+
+  --color-red-50: #fdeced;
+  --color-red-100: #fad0d3;
+  --color-red-200: #f7b1b6;
+  --color-red-300: #f49198;
+  --color-red-400: #f17a82;
+  --color-red-500: #ef626c;
+  --color-red-600: #ed5a64;
+  --color-red-700: #eb5059;
+  --color-red-800: #e8464f;
+  --color-red-900: #e4343d;
+	--color-red-ultra-light: var(--color-red-100);
+	--color-red-light: var(--color-red-300);
+	--color-red: var(--color-red-500);
+	--color-red-dark: var(--color-red-700);
+	--color-red-ultra-dark: var(--color-red-900);
+
+  --color-blue-50: #e8f2fc;
+  --color-blue-100: #c5def8;
+  --color-blue-200: #9ec8f3;
+  --color-blue-300: #77b2ee;
+  --color-blue-400: #59a2ea;
+  --color-blue-500: #3c91e6;
+  --color-blue-600: #3689e3;
+  --color-blue-700: #2e7edf;
+  --color-blue-800: #2774db;
+  --color-blue-900: #1a62d5;
+	--color-blue-ultra-light: var(--color-blue-100);
+	--color-blue-light: var(--color-blue-300);
+	--color-blue: var(--color-blue-500);
+	--color-blue-dark: var(--color-blue-700);
+	--color-blue-ultra-dark: var(--color-blue-900);
+
+  --color-green-50: #eef9ee;
+  --color-green-100: #d6efd4;
+  --color-green-200: #bae5b8;
+  --color-green-300: #9edb9c;
+  --color-green-400: #8ad386;
+  --color-green-500: #75cb71;
+  --color-green-600: #6dc669;
+  --color-green-700: #62be5e;
+  --color-green-800: #58b854;
+  --color-green-900: #45ac42;
+	--color-green-ultra-light: var(--color-green-100);
+	--color-green-light: var(--color-green-300);
+	--color-green: var(--color-green-500);
+	--color-green-dark: var(--color-green-700);
+	--color-green-ultra-dark: var(--color-green-900);
+
+  --color-yellow-25: #FFFDF2;
+  --color-yellow-50: #fefcf0;
+  --color-yellow-50: #fefcf0;
+  --color-yellow-100: #fcf6d9;
+  --color-yellow-200: #fbf1bf;
+  --color-yellow-300: #f9eba5;
+  --color-yellow-400: #f7e692;
+  --color-yellow-500: #f6e27f;
+  --color-yellow-600: #f5df77;
+  --color-yellow-700: #f3da6c;
+  --color-yellow-800: #f2d662;
+  --color-yellow-900: #efcf4f;
+  --color-yellow-light-background: var(--color-yellow-25);
+	--color-yellow-ultra-light: var(--color-yellow-100);
+	--color-yellow-light: var(--color-yellow-300);
+	--color-yellow: var(--color-yellow-500);
+	--color-yellow-ultra-dark: var(--color-yellow-700);
+	--color-yellow-dark: var(--color-yellow-900);
+
+
+	/* Functional color variables */
+  --color-dark: #1E2728;
+	--color-light: #FFF;
+
+	--color-branding-light: #265b93;
+	--color-branding: #1a477f;
+	--color-branding-dark: #10356d;
+
+  --color-primary-light: var(--color-blue-light);
+  --color-primary: var(--color-blue);
+  --color-primary-dark: var(--color-blue-dark);
+
+  --color-secondary-light: var(--color-green-light);
+  --color-secondary: var(--color-green);
+  --color-secondary-dark: var(--color-green-dark);
+
+	--color-text: var(--color-gray-900);
+	--color-heading: var(--color-dark);
+}

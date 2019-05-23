@@ -1,0 +1,13 @@
+.root {
+  display: inline-block;
+  width: var(--space-large);
+}
+
+.logotype {
+  width: 120px;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+}

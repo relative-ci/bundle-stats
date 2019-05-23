@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.panel {
+  flex: 1 1 100%;
+}
+
+.panel + .panel {
+  margin-top: var(--space-medium);
+}
+
+@media (min-width: 768px) {
+  .root {
+    flex-wrap: nowrap;
+  }
+
+  .panel + .panel {
+    margin-top: 0;
+    margin-left: var(--space-medium);
+  }
+}

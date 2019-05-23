@@ -1,0 +1,89 @@
+{
+    "info": {
+        "browsertime": {
+            "version": "2.1.4"
+        },
+        "connectivity": {
+            "engine": "external",
+            "profile": "native"
+        },
+        "timestamp": "2018-02-28T18:43:38+00:00",
+        "url": "https://mobile.twitter.com/sitespeedio"
+    },
+    "statistics": {
+        "timings": {
+            "firstPaint": {
+                "median": 317
+            },
+            "fullyLoaded": {
+                "median": 2695
+            },
+            "pageTimings": {
+                "backEndTime": {
+                    "median": 274
+                },
+                "domContentLoadedTime": {
+                    "median": 811
+                },
+                "domInteractiveTime": {
+                    "median": 811
+                },
+                "domainLookupTime": {
+                    "median": 3
+                },
+                "frontEndTime": {
+                    "median": 413
+                },
+                "pageDownloadTime": {
+                    "median": 98
+                },
+                "pageLoadTime": {
+                    "median": 819
+                },
+                "redirectionTime": {
+                    "median": 2
+                },
+                "serverConnectionTime": {
+                    "median": 108
+                },
+                "serverResponseTime": {
+                    "median": 257
+                }
+            },
+            "paintTiming": {
+                "first-contentful-paint": {
+                    "median": 317
+                },
+                "first-paint": {
+                    "median": 317
+                }
+            },
+            "rumSpeedIndex": {
+                "median": 471
+            }
+        },
+        "visualMetrics": {
+            "FirstVisualChange": {
+                "median": 1200
+            },
+            "LastVisualChange": {
+                "median": 2933
+            },
+            "PerceptualSpeedIndex": {
+                "median": 1433
+            },
+            "SpeedIndex": {
+                "median": 1388
+            },
+            "VisualComplete85": {
+                "median": 1800
+            },
+            "VisualComplete95": {
+                "median": 1900
+            },
+            "VisualComplete99": {
+                "median": 2800
+            }
+        }
+    }
+}

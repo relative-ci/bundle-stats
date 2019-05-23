@@ -1,0 +1,50 @@
+.root {
+  font-size: var(--size-small);
+}
+
+.title {
+  margin-bottom: var(--space-xxxsmall);
+  color: var(--color-gray-light);
+  font-size: var(--size-xsmall);
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.currentMetric {
+  display: inline-block;
+  color: var(--color-dark);
+  font-size: var(--size-large);
+}
+
+.delta {
+  display: inline-block;
+  margin-left: var(--space-xxsmall);
+}
+
+.baselineMetric {
+  display: block;
+}
+
+/* Loading state */
+.loading {
+  background: var(--color-gray-100);
+  pointer-events: none;
+  max-width: 5em;
+  width: 100%;
+  height: 1.1em;
+}
+
+/* Size large */
+.large {
+  font-size: normal;
+}
+
+.large .currentMetric {
+  font-size: var(--size-xxlarge);
+  font-weight: 900;
+}
+
+.large .delta {
+  font-size: var(--size-small);
+}

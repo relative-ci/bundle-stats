@@ -1,0 +1,5 @@
+.root {
+  padding: var(--space-small);
+  box-shadow: 0 0 var(--space-xxxsmall) var(--color-gray-ultra-light);
+  background: var(--color-light);
+}
