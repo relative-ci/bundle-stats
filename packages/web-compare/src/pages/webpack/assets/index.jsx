@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import {
   BundleAssets,
   Container,
-} from '@relative-ci/ui';
+} from '@bundle-stats/ui';
 
 const Assets = (props) => {
   const { jobs } = props;

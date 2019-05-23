@@ -1,5 +1,0 @@
-src
-__fixtures__
-!__fixtures__/webpack-stats-*.json
-**/__tests__/**
-page

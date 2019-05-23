@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Container } from '@relative-ci/ui';
+import { Container } from '@bundle-stats/ui';
 import cx from 'classnames';
 
 import Add from './add';

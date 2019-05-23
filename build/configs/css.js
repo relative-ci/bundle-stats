@@ -1,7 +1,7 @@
 const CssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (settings) => {
-  const { isDevelopment } = settings;
+  const { isDevelopment, rootDir } = settings;
 
   return {
     module: {
@@ -20,11 +20,19 @@ module.exports = (settings) => {
                 : '[hash:base64:5]',
               },
             },
-            'postcss-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                config: {
+                  path: rootDir,
+                },
+              },
+            }
           ],
           include: [
             /src/,
-            /relative-ci\/ui/,
+            /bundle-stats\/ui/,
+            /packages\/ui/, // required for linked packages
             /storybook/,
           ],
         },
@@ -32,8 +40,8 @@ module.exports = (settings) => {
     },
     plugins: [
       new CssExtractPlugin({
-        filename: '[name].[contenthash:5].css',
-        chunkFilename: '[id].[contenthash:5].css',
+        filename: '[name].[contenthash].css',
+        chunkFilename: '[id].[contenthash].css',
       }),
     ],
   };

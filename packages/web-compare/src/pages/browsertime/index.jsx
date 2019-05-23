@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Helmet from 'preact-helmet';
-import { Container, BrowsertimeTable } from '@relative-ci/ui';
+import { Container, BrowsertimeTable } from '@bundle-stats/ui';
 
 import Sources from '../../components/sources';
 import config from './config.json';

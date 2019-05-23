@@ -1,5 +1,5 @@
 import { compose, withProps } from 'recompose';
-import { createStats, createStatsSummary } from '@relative-ci/utils';
+import { createStats, createStatsSummary } from '@bundle-stats/utils';
 import { last, reverse } from 'lodash';
 
 import withSources from '../../hocs/with-sources';

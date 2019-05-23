@@ -1,11 +1,8 @@
-# Compare
+# BundleStats Web Compare
 
 Side by side comparison for webpack/lighthouse/browsertime stats - https://compare.relative-ci.com.
 
 [![RelativeCI badge](https://img.shields.io/badge/RelativeCI-enabled-brightgreen.svg)](https://app.relative-ci.com/projects/og7ULMMCOgGWXBxRJocI)
-[![Greenkeeper badge](https://badges.greenkeeper.io/relative-ci/compare.svg)](https://greenkeeper.io/)
-![CircleCi badge](https://img.shields.io/circleci/project/github/relative-ci/compare/master.svg)
-[![Coveralls github](https://img.shields.io/coveralls/github/relative-ci/compare.svg)](https://coveralls.io/github/relative-ci/compare)
 
 ![screenshot](https://www.dropbox.com/s/1womnjyay3hi4ly/compare-screenshot.jpg?raw=1)
 

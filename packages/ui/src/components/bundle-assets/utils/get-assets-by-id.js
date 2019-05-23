@@ -1,4 +1,4 @@
-import { getAssetName } from '@relative-ci/utils';
+import { getAssetName } from '@bundle-stats/utils';
 
 const IGNORE_PATTERN = /\.map$/;
 

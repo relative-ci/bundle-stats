@@ -1,0 +1,5 @@
+*
+!src
+!storybook
+!*.js
+!.*.js

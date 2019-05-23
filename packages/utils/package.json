@@ -1,8 +1,8 @@
 {
-  "name": "@relative-ci/utils",
-  "version": "2.2.3",
-  "description": "RelativeCI utils",
-  "repository": "relative-ci/utils",
+  "name": "@bundle-stats/utils",
+  "version": "1.0.0-rc.0",
+  "description": "BundleStats utils",
+  "repository": "bundle-stats/bundle-stats",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
   "engines": {
@@ -23,13 +23,13 @@
   "author": {
     "name": "Viorel Cojocaru",
     "email": "vio@beanon.com",
-    "url": "http://beanon.com"
+    "url": "https://beanon.com"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/relative-ci/utils/issues"
+    "url": "https://github.com/bundle-stats/bundle-stats/issues"
   },
-  "homepage": "https://github.com/relative-ci/utils#readme",
+  "homepage": "https://github.com/bundle-stats/bundle-stats/blob/master/packages/utils/README.md",
   "dependencies": {
     "convert-units": "^2.3.4"
   },

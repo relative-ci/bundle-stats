@@ -6,7 +6,7 @@ import {
 } from 'lodash';
 import {
   getMetric, formatFileSize, mergeRunsById,
-} from '@relative-ci/utils';
+} from '@bundle-stats/utils';
 
 import {
   PIE_PROPS,

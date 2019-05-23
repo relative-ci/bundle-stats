@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { getMetric } from '@relative-ci/utils';
+import { getMetric } from '@bundle-stats/utils';
 
 import { Table } from '../../ui/table';
 import { Metric } from '../metric';

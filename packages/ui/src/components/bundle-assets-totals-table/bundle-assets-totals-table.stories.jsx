@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { createStats } from '@relative-ci/utils';
+import { createStats } from '@bundle-stats/utils';
 
 import currentData from '../../../__mocks__/job.current.json';
 import baselineData from '../../../__mocks__/job.baseline.json';

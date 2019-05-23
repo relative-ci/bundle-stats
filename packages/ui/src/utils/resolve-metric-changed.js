@@ -1,4 +1,4 @@
-import { getMetricChanged } from '@relative-ci/utils';
+import { getMetricChanged } from '@bundle-stats/utils';
 
 const resolveMetricChanged = metrics => metrics.map((metric) => {
   const changed = getMetricChanged(metric.runs);

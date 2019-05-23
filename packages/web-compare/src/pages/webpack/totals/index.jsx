@@ -6,7 +6,7 @@ import {
   BundleAssetsTotalsChartPie,
   Container,
   Panels,
-} from '@relative-ci/ui';
+} from '@bundle-stats/ui';
 
 const Totals = (props) => {
   const { jobs } = props;

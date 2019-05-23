@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { omit, sortBy } from 'lodash';
 import {
   getMetric, formatFileSize, mergeRunsById,
-} from '@relative-ci/utils';
+} from '@bundle-stats/utils';
 
 import {
   BAR_PROPS,
