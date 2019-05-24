@@ -1,0 +1,253 @@
+0 silly input [ 'build' ]
+1 silly flags { _: [ 'run' ],
+1 silly flags   'reject-cycles': false,
+1 silly flags   rejectCycles: false,
+1 silly flags   script: 'build',
+1 silly flags   args: [] }
+2 verbose rootPath /Users/vio/work/relative-ci/compare
+3 info version 2.10.1
+4 silly existsSync /Users/vio/work/relative-ci/compare/VERSION
+5 silly initialize attempt
+6 silly initialize success
+7 silly execute attempt
+8 silly runScriptInDir build [] utils
+9 silly getExecOpts { cwd: '/Users/vio/work/relative-ci/compare/packages/utils' }
+10 silly runScriptInDir build [] ui
+11 silly getExecOpts { cwd: '/Users/vio/work/relative-ci/compare/packages/ui' }
+12 silly runScriptInDir build [] html-templates
+13 silly getExecOpts { cwd:
+13 silly getExecOpts    '/Users/vio/work/relative-ci/compare/packages/html-templates' }
+14 silly runScriptInDir build [] web-compare
+15 silly getExecOpts { cwd: '/Users/vio/work/relative-ci/compare/packages/web-compare' }
+16 error build Errored while running script in '@bundle-stats/web-compare'
+17 error execute callback with error
+18 error Error: Command failed: npm run build
+18 error npm ERR! code ELIFECYCLE
+18 error npm ERR! errno 2
+18 error npm ERR! @bundle-stats/web-compare@1.0.0-rc.0 build: `rm -fr ./dist && NODE_ENV=production webpack --config webpack.config.production.js --mode production`
+18 error npm ERR! Exit status 2
+18 error npm ERR!
+18 error npm ERR! Failed at the @bundle-stats/web-compare@1.0.0-rc.0 build script.
+18 error npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+18 error
+18 error npm ERR! A complete log of this run can be found in:
+18 error npm ERR!     /Users/vio/.npm/_logs/2019-05-24T01_11_01_153Z-debug.log
+18 error
+18 error > @bundle-stats/web-compare@1.0.0-rc.0 build /Users/vio/work/relative-ci/compare/packages/web-compare
+18 error > rm -fr ./dist && NODE_ENV=production webpack --config webpack.config.production.js --mode production
+18 error
+18 error Hash: 85c627a8664dca4cef61
+18 error Version: webpack 4.31.0
+18 error Time: 11091ms
+18 error Built at: 05/24/2019 3:11:01 AM
+18 error  7 assets
+18 error Entrypoint main = vendor.1ee56.js vendor.1ee56.js.map main.3510b.css main.d0732562.js main.3510b.css.map main.d0732562.js.map
+18 error   [2] ../node_modules/recompose/dist/Recompose.esm.js + 5 modules 54.7 KiB {1} [built]
+18 error       |    6 modules
+18 error   [8] ./pages/webpack/locale.json 197 bytes {0} [built]
+18 error  [11] ./app/styles.css 177 bytes {0} [built]
+18 error  [15] ./app/navigation/styles.css 75 bytes {0} [built]
+18 error  [28] ./pages/lighthouse/locale.json 134 bytes {0} [built]
+18 error  [29] ./pages/browsertime/locale.json 148 bytes {0} [built]
+18 error  [46] ./pages/webpack/styles.css 75 bytes {0} [built]
+18 error  [47] ./pages/lighthouse/styles.css 75 bytes {0} [built]
+18 error  [48] ./pages/browsertime/style.css 74 bytes {0} [built]
+18 error  [69] ./pages/webpack/config.json 162 bytes {0} [built]
+18 error  [75] ./pages/lighthouse/config.json 162 bytes {0} [built]
+18 error  [78] multi ./polyfill.js ./index.jsx 40 bytes {0} [built]
+18 error  [79] ./polyfill.js 22 bytes {0} [built]
+18 error [174] ./default.css 6.11 KiB {0} [built] [failed] [1 error]
+18 error [175] ./index.jsx + 27 modules 31.6 KiB {0} [built]
+18 error       | ./index.jsx 494 bytes [built]
+18 error       | ./app/index.jsx 1.25 KiB [built]
+18 error       | ./analytics.js 155 bytes [built]
+18 error       | ./utils/urls.js 671 bytes [built]
+18 error       | ./pages/webpack/index.jsx 2.75 KiB [built]
+18 error       | ./pages/lighthouse/index.jsx 1.52 KiB [built]
+18 error       | ./pages/browsertime/index.jsx 1.51 KiB [built]
+18 error       | ./app/redirect.js 288 bytes [built]
+18 error       | ./app/route.jsx 1.09 KiB [built]
+18 error       | ./app/navigation/index.jsx 1.09 KiB [built]
+18 error       | ./pages/webpack/totals/index.jsx 928 bytes [built]
+18 error       | ./pages/webpack/assets/index.jsx 648 bytes [built]
+18 error       | ./pages/webpack/modules/index.jsx 783 bytes [built]
+18 error       | ./utils/search-params.js 646 bytes [built]
+18 error       | ./pages/webpack/container.js 1.79 KiB [built]
+18 error       |     + 13 hidden modules
+18 error     + 171 hidden modules
+18 error
+18 error ERROR in ./default.css
+18 error Module build failed (from /Users/vio/work/relative-ci/compare/node_modules/mini-css-extract-plugin/dist/loader.js):
+18 error ModuleNotFoundError: Module not found: Error: Can't resolve '@bundle-stats/ui/lib/css/default.css' in '/Users/vio/work/relative-ci/compare/packages/web-compare/src'
+18 error     at factory.create (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/webpack/lib/Compilation.js:823:10)
+18 error     at factory (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/webpack/lib/NormalModuleFactory.js:397:22)
+18 error     at resolver (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/webpack/lib/NormalModuleFactory.js:130:21)
+18 error     at asyncLib.parallel (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/webpack/lib/NormalModuleFactory.js:224:22)
+18 error     at /Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/neo-async/async.js:2825:7
+18 error     at /Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/neo-async/async.js:6886:13
+18 error     at normalResolver.resolve (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/webpack/lib/NormalModuleFactory.js:214:25)
+18 error     at doResolve (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/Resolver.js:184:12)
+18 error     at hook.callAsync (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/Resolver.js:238:5)
+18 error     at _fn0 (eval at create (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:15:1)
+18 error     at resolver.doResolve (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/UnsafeCachePlugin.js:37:5)
+18 error     at hook.callAsync (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/Resolver.js:238:5)
+18 error     at _fn0 (eval at create (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:15:1)
+18 error     at hook.callAsync (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/Resolver.js:238:5)
+18 error     at _fn0 (eval at create (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:12:1)
+18 error     at resolver.doResolve (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:42:38)
+18 error     at hook.callAsync (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/Resolver.js:238:5)
+18 error     at _fn42 (eval at create (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:390:1)
+18 error     at resolver.doResolve (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/ModuleKindPlugin.js:23:37)
+18 error     at hook.callAsync (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/Resolver.js:238:5)
+18 error     at _fn0 (eval at create (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:15:1)
+18 error     at hook.callAsync (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/Resolver.js:238:5)
+18 error     at _fn0 (eval at create (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:15:1)
+18 error     at args (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/forEachBail.js:30:14)
+18 error     at hook.callAsync (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/Resolver.js:238:5)
+18 error     at _fn0 (eval at create (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:15:1)
+18 error     at resolver.doResolve (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/UnsafeCachePlugin.js:37:5)
+18 error     at hook.callAsync (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/Resolver.js:238:5)
+18 error     at _fn0 (eval at create (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:15:1)
+18 error     at hook.callAsync (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/Resolver.js:238:5)
+18 error     at _fn0 (eval at create (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:12:1)
+18 error     at resolver.doResolve (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:42:38)
+18 error     at hook.callAsync (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/Resolver.js:238:5)
+18 error     at _fn43 (eval at create (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:402:1)
+18 error     at hook.callAsync (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/Resolver.js:238:5)
+18 error     at _fn0 (eval at create (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:12:1)
+18 error     at resolver.doResolve (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:42:38)
+18 error     at hook.callAsync (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/Resolver.js:238:5)
+18 error     at _fn1 (eval at create (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:24:1)
+18 error     at hook.callAsync (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/Resolver.js:238:5)
+18 error     at _fn0 (eval at create (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:15:1)
+18 error     at fs.stat (/Users/vio/work/relative-ci/compare/packages/web-compare/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:22:13)
+18 error  @ ./index.jsx 7:0-23
+18 error  @ multi ./polyfill.js ./index.jsx
+18 error
+18 error ERROR in ./app/index.jsx
+18 error Module not found: Error: Can't resolve '@bundle-stats/ui' in '/Users/vio/work/relative-ci/compare/packages/web-compare/src/app'
+18 error  @ ./app/index.jsx 3:0-48 16:7-11 23:8-12 43:10-16
+18 error  @ ./index.jsx
+18 error  @ multi ./polyfill.js ./index.jsx
+18 error
+18 error ERROR in ./app/navigation/index.jsx
+18 error Module not found: Error: Can't resolve '@bundle-stats/ui' in '/Users/vio/work/relative-ci/compare/packages/web-compare/src/app/navigation'
+18 error  @ ./app/navigation/index.jsx 6:0-40 14:13-17
+18 error  @ ./app/index.jsx
+18 error  @ ./index.jsx
+18 error  @ multi ./polyfill.js ./index.jsx
+18 error
+18 error ERROR in ./components/sources/index.jsx
+18 error Module not found: Error: Can't resolve '@bundle-stats/ui' in '/Users/vio/work/relative-ci/compare/packages/web-compare/src/components/sources'
+18 error  @ ./components/sources/index.jsx 3:0-45 24:11-20
+18 error  @ ./pages/webpack/index.jsx
+18 error  @ ./app/index.jsx
+18 error  @ ./index.jsx
+18 error  @ multi ./polyfill.js ./index.jsx
+18 error
+18 error ERROR in ./pages/browsertime/index.jsx
+18 error Module not found: Error: Can't resolve '@bundle-stats/ui' in '/Users/vio/work/relative-ci/compare/packages/web-compare/src/pages/browsertime'
+18 error  @ ./pages/browsertime/index.jsx 4:0-63 31:7-16 31:26-42
+18 error  @ ./app/index.jsx
+18 error  @ ./index.jsx
+18 error  @ multi ./polyfill.js ./index.jsx
+18 error
+18 error ERROR in ./pages/lighthouse/index.jsx
+18 error Module not found: Error: Can't resolve '@bundle-stats/ui' in '/Users/vio/work/relative-ci/compare/packages/web-compare/src/pages/lighthouse'
+18 error  @ ./pages/lighthouse/index.jsx 3:0-62 31:7-16 31:26-41
+18 error  @ ./app/index.jsx
+18 error  @ ./index.jsx
+18 error  @ multi ./polyfill.js ./index.jsx
+18 error
+18 error ERROR in ./pages/webpack/index.jsx
+18 error Module not found: Error: Can't resolve '@bundle-stats/ui' in '/Users/vio/work/relative-ci/compare/packages/web-compare/src/pages/webpack'
+18 error  @ ./pages/webpack/index.jsx 6:0-60 38:7-16 38:26-33 40:9-18 42:13-17
+18 error  @ ./app/index.jsx
+18 error  @ ./index.jsx
+18 error  @ multi ./polyfill.js ./index.jsx
+18 error
+18 error ERROR in ./pages/webpack/assets/index.jsx
+18 error Module not found: Error: Can't resolve '@bundle-stats/ui' in '/Users/vio/work/relative-ci/compare/packages/web-compare/src/pages/webpack/assets'
+18 error  @ ./pages/webpack/assets/index.jsx 3:0-59 7:11-20 7:30-42
+18 error  @ ./pages/webpack/index.jsx
+18 error  @ ./app/index.jsx
+18 error  @ ./index.jsx
+18 error  @ multi ./polyfill.js ./index.jsx
+18 error
+18 error ERROR in ./pages/webpack/modules/index.jsx
+18 error Module not found: Error: Can't resolve '@bundle-stats/ui' in '/Users/vio/work/relative-ci/compare/packages/web-compare/src/pages/webpack/modules'
+18 error  @ ./pages/webpack/modules/index.jsx 4:0-60 8:11-20 8:30-43
+18 error  @ ./pages/webpack/index.jsx
+18 error  @ ./app/index.jsx
+18 error  @ ./index.jsx
+18 error  @ multi ./polyfill.js ./index.jsx
+18 error
+18 error ERROR in ./pages/webpack/totals/index.jsx
+18 error Module not found: Error: Can't resolve '@bundle-stats/ui' in '/Users/vio/work/relative-ci/compare/packages/web-compare/src/pages/webpack/totals'
+18 error  @ ./pages/webpack/totals/index.jsx 3:0-140 7:26-35 7:45-51 7:61-64 7:74-101 9:9-12 9:22-48 11:11-20 11:30-53
+18 error  @ ./pages/webpack/index.jsx
+18 error  @ ./app/index.jsx
+18 error  @ ./index.jsx
+18 error  @ multi ./polyfill.js ./index.jsx
+18 error
+18 error ERROR in ./pages/webpack/container.js
+18 error Module not found: Error: Can't resolve '@bundle-stats/utils' in '/Users/vio/work/relative-ci/compare/packages/web-compare/src/pages/webpack'
+18 error  @ ./pages/webpack/container.js 9:0-70 27:16-27 28:18-36
+18 error  @ ./pages/webpack/index.jsx
+18 error  @ ./app/index.jsx
+18 error  @ ./index.jsx
+18 error  @ multi ./polyfill.js ./index.jsx
+18 error Child html-webpack-plugin for "index.html":
+18 error      1 asset
+18 error     Entrypoint undefined = index.html
+18 error     [0] ../node_modules/html-webpack-plugin/lib/loader.js!./index.html 2.38 KiB {0} [built]
+18 error         + 3 hidden modules
+18 error Child mini-css-extract-plugin ../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src/index.js!app/navigation/styles.css:
+18 error     Entrypoint mini-css-extract-plugin = *
+18 error     [0] ../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src!./app/navigation/styles.css 219 bytes {0} [built]
+18 error         + 1 hidden module
+18 error Child mini-css-extract-plugin ../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src/index.js!app/styles.css:
+18 error     Entrypoint mini-css-extract-plugin = *
+18 error     [0] ../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src!./app/styles.css 874 bytes {0} [built]
+18 error         + 1 hidden module
+18 error Child mini-css-extract-plugin ../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src/index.js!components/sources/add/styles.css:
+18 error     Entrypoint mini-css-extract-plugin = *
+18 error        2 modules
+18 error Child mini-css-extract-plugin ../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src/index.js!components/sources/example/styles.css:
+18 error     Entrypoint mini-css-extract-plugin = *
+18 error        2 modules
+18 error Child mini-css-extract-plugin ../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src/index.js!components/sources/list/styles.css:
+18 error     Entrypoint mini-css-extract-plugin = *
+18 error        2 modules
+18 error Child mini-css-extract-plugin ../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src/index.js!components/sources/source/styles.css:
+18 error     Entrypoint mini-css-extract-plugin = *
+18 error        4 modules
+18 error Child mini-css-extract-plugin ../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src/index.js!components/sources/styles.css:
+18 error     Entrypoint mini-css-extract-plugin = *
+18 error        2 modules
+18 error Child mini-css-extract-plugin ../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src/index.js!default.css:
+18 error     Entrypoint mini-css-extract-plugin = *
+18 error     [1] ../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src!./default.css 554 bytes {0} [built]
+18 error         + 2 hidden modules
+18 error
+18 error     ERROR in ./default.css (../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src!./default.css)
+18 error     Module not found: Error: Can't resolve '@bundle-stats/ui/lib/css/default.css' in '/Users/vio/work/relative-ci/compare/packages/web-compare/src'
+18 error      @ ./default.css (../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src!./default.css) 5:10-108
+18 error
+18 error     ERROR in ./default.css (../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src!./default.css)
+18 error     Module not found: Error: Can't resolve '@bundle-stats/ui/lib/css/variables.css' in '/Users/vio/work/relative-ci/compare/packages/web-compare/src'
+18 error      @ ./default.css (../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src!./default.css) 4:10-110
+18 error Child mini-css-extract-plugin ../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src/index.js!pages/browsertime/style.css:
+18 error     Entrypoint mini-css-extract-plugin = *
+18 error     [0] ../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src!./pages/browsertime/style.css 230 bytes {0} [built]
+18 error         + 1 hidden module
+18 error Child mini-css-extract-plugin ../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src/index.js!pages/lighthouse/styles.css:
+18 error     Entrypoint mini-css-extract-plugin = *
+18 error     [0] ../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src!./pages/lighthouse/styles.css 232 bytes {0} [built]
+18 error         + 1 hidden module
+18 error Child mini-css-extract-plugin ../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src/index.js!pages/webpack/styles.css:
+18 error     Entrypoint mini-css-extract-plugin = *
+18 error     [0] ../node_modules/css-loader/dist/cjs.js??ref--6-1!../node_modules/postcss-loader/src!./pages/webpack/styles.css 232 bytes {0} [built]
+18 error         + 1 hidden module
+18 error
+18 error     at Promise.all.then.arr (/Users/vio/.nvm/versions/node/v11.7.0/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
