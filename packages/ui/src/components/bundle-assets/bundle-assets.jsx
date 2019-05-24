@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get, map } from 'lodash';
-import { FILE_TYPE_LABELS } from '@relative-ci/utils';
+import { FILE_TYPE_LABELS } from '@bundle-stats/utils';
 
 import { FileName } from '../../ui/file-name';
 import { Tooltip } from '../../ui/tooltip';

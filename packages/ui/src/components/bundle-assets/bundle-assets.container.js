@@ -2,7 +2,7 @@ import {
   compose, withProps, withState,
 } from 'recompose';
 import { filter, sortBy } from 'lodash';
-import { FILE_TYPES, METRIC_TYPE_FILE_SIZE, getFileType } from '@relative-ci/utils';
+import { FILE_TYPES, METRIC_TYPE_FILE_SIZE, getFileType } from '@bundle-stats/utils';
 
 import { generateRows } from '../../utils/generate-rows';
 import getBundleAssetsById from './utils/get-assets-by-id';

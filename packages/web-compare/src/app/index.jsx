@@ -1,5 +1,5 @@
 import { Router } from 'preact-router';
-import { Logo, Footer } from '@relative-ci/ui';
+import { Logo, Footer } from '@bundle-stats/ui';
 
 import * as URLS from '../utils/urls';
 import Webpack from '../pages/webpack';
@@ -24,7 +24,7 @@ const App = () => (
         className={styles.headerGithubLogo}
         kind="github"
         as="a"
-        href="https://github.com/relative-ci/compare"
+        href="https://github.com/bundle-stats/bundle-stats"
         title="Go to Github"
       />
     </header>

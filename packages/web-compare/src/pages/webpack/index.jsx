@@ -1,7 +1,7 @@
 import Router from 'preact-router';
 import Match from 'preact-router/match';
 import PropTypes from 'prop-types';
-import { Container, Summary, Tabs } from '@relative-ci/ui';
+import { Container, Summary, Tabs } from '@bundle-stats/ui';
 import { isEmpty } from 'lodash';
 
 import Helmet from '../../components/helmet';

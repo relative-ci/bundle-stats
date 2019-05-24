@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
-import { BundleModules, Container } from '@relative-ci/ui';
+import { BundleModules, Container } from '@bundle-stats/ui';
 
 const Modules = (props) => {
   const { jobs } = props;

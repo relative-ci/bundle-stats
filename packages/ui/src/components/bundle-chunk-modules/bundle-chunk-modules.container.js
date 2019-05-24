@@ -2,7 +2,7 @@ import {
   compose, withProps, withState,
 } from 'recompose';
 import { get, sortBy } from 'lodash';
-import { METRIC_TYPE_FILE_SIZE } from '@relative-ci/utils';
+import { METRIC_TYPE_FILE_SIZE } from '@bundle-stats/utils';
 
 import { generateRows } from '../../utils/generate-rows';
 import { getModulesById } from './utils/get-modules-by-id';

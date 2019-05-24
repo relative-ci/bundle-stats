@@ -1,21 +1,25 @@
+const path = require('path');
 const process = require('process');
 const webpack = require('webpack');
 
 module.exports = (settings) => {
   const {
-    srcDir, distDir, isProduction, isDevelopment,
+    srcDir, distDir, isProduction, isDevelopment, rootDir,
   } = settings;
 
   return {
     context: srcDir,
     output: {
       path: distDir,
-      filename: '[name].js',
+      filename: isDevelopment ? '[name].js' : '[name].[contenthash].js',
       publicPath: '/',
+      hashDigestLength: 8
     },
     resolve: {
-      alias: {
-      },
+      modules: [
+        'node_modules',
+        path.join(rootDir, 'node_modules'),
+      ],
     },
     module: {
       rules: [

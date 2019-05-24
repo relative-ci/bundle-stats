@@ -1,7 +1,7 @@
 {
-  "name": "@relative-ci/compare",
-  "version": "2.3.0",
-  "description": "Compare stats files",
+  "name": "@bundle-stats/web-compare",
+  "version": "1.0.0-rc.0",
+  "description": "Side by side comparison for webpack/lighthouse/browsertime stats",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.development.js --progress --hot --mode development",
@@ -10,9 +10,25 @@
     "test": "NODE_ENV=test jest --coverage --coverageDirectory ./artifacts/coverage",
     "lint": "eslint ."
   },
-  "keywords": [],
-  "author": "Vio <vio@beanon.com",
+  "keywords": [
+    "webpack",
+    "lighthouse",
+    "browsertime",
+    "bundle",
+    "assets",
+    "modules",
+    "size"
+  ],
+  "author": {
+    "name": "Viorel Cojocaru",
+    "email": "vio@beanon.com",
+    "url": "https://beanon.com"
+  },
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bundle-stats/bundle-stats/issues"
+  },
+  "homepage": "https://github.com/bundle-stats/bundle-stats/blob/master/packages/web-compare/README.md",
   "jest": {
     "transform": {
       "\\.js$": "babel-jest"
@@ -24,9 +40,9 @@
   },
   "dependencies": {
     "@babel/polyfill": "7.4.4",
+    "@bundle-stats/ui": "1.0.0-rc.0",
+    "@bundle-stats/utils": "1.0.0-rc.0",
     "@moonwalker/orbit-ui": "1.12.12",
-    "@relative-ci/ui": "1.2.0",
-    "@relative-ci/utils": "^2.2.3",
     "@storybook/react": "5.0.11",
     "classnames": "^2.2.6",
     "convert-units": "^2.3.4",
@@ -38,6 +54,8 @@
     "preact-helmet": "^4.0.0-alpha-3",
     "preact-router": "^2.6.1",
     "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "recompose": "^0.30.0",
     "uuid": "^3.3.2",
     "whatwg-fetch": "^3.0.0"

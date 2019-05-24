@@ -1,5 +1,5 @@
 import { merge } from 'lodash';
-import { getDelta, formatDelta } from '@relative-ci/utils';
+import { getDelta, formatDelta } from '@bundle-stats/utils';
 
 const getRunsDelta = runs => runs.reduce((aggregator, run, index) => {
   const deltaInfo = {};

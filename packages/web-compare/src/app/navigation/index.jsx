@@ -2,7 +2,7 @@ import PropType from 'prop-types';
 import cx from 'classnames';
 import Match from 'preact-router/match';
 import { Link } from 'preact-router';
-import { Tabs } from '@relative-ci/ui';
+import { Tabs } from '@bundle-stats/ui';
 
 import * as URLS from '../../utils/urls';
 import styles from './styles.css';

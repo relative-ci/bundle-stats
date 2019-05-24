@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Container, LighthouseTable } from '@relative-ci/ui';
+import { Container, LighthouseTable } from '@bundle-stats/ui';
 
 import Helmet from '../../components/helmet';
 import Sources from '../../components/sources';

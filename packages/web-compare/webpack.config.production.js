@@ -16,9 +16,6 @@ module.exports = webpackMerge(
   getCommonConfig(settings),
   appCommonConfig,
   {
-    output: {
-      filename: '[name].[chunkhash:8].js',
-    },
     plugins: [
       new CopyPlugin([
         {
@@ -29,7 +26,7 @@ module.exports = webpackMerge(
       new webpack.DefinePlugin({
         __GA__: JSON.stringify(process.env.GA),
       }),
-      new StatsPlugin('../artifacts/webpack.stats.main.json', {
+      new StatsPlugin('../artifacts/webpack.stats.json', {
         context: rootDir,
         assets: true,
         entrypoints: true,
@@ -51,7 +48,7 @@ module.exports = webpackMerge(
           vendor: {
             chunks: 'initial',
             name: 'vendor',
-            filename: 'vendor.[contenthash:5].js',
+            filename: 'vendor.[contenthash].js',
             test: /[\\/]node_modules[\\/]/,
             priority: -10,
             enforce: true,

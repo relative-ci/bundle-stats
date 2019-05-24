@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { getDelta, getMetric, formatDelta } from '@relative-ci/utils';
+import { getDelta, getMetric, formatDelta } from '@bundle-stats/utils';
 
 import { Box } from '../../ui';
 import { Metric } from '../metric';

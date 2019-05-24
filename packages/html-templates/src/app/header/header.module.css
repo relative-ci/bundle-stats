@@ -1,0 +1,27 @@
+/* Components */
+.webpackLogo {
+  width: var(--space-xxlarge);
+  margin-right: var(--space-xxsmall);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--size-xlarge);
+  white-space: nowrap;
+  color: var(--color-branding);
+}
+
+.tabs {
+  border-bottom: 0;
+}
+
+.githubLogo {
+  margin: 0 0 0 auto;
+  width: var(--space-large);
+  color: var(--color-gray-light);
+}
+
+.githubLogo:active,
+.githubLogo:hover {
+  color: var(--color-gray);
+}
