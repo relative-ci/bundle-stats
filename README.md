@@ -1,4 +1,4 @@
-# Bundle Stats [![TravisCI badge](https://api.travis-ci.org/bundle-stats/bundle-stats.svg?branch=master)](https://travis-ci.org/bundle-stats/bundle-stats) [!Renovate](https://badges.renovateapi.com/github/bundle-stats/bundle-stats)
+# Bundle Stats [![TravisCI badge](https://api.travis-ci.org/bundle-stats/bundle-stats.svg?branch=master)](https://travis-ci.org/bundle-stats/bundle-stats) ![Renovate](https://badges.renovateapi.com/github/bundle-stats/bundle-stats)
 
 Tooling for bundle stats reporting.
 
