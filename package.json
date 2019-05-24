@@ -4,10 +4,10 @@
   "description": "Tooling for bundle stats reporting.",
   "main": "index.js",
   "devDependencies": {
-    "dotenv": "^8.0.0",
-    "lerna": "^2.10.1",
-    "mini-css-extract-plugin": "^0.6.0",
-    "webpack": "^4.32.2"
+    "dotenv": "8.0.0",
+    "lerna": "2.11.0",
+    "mini-css-extract-plugin": "0.6.0",
+    "webpack": "4.32.2"
   },
   "scripts": {
     "build": "npm run lerna run build",
