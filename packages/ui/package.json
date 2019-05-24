@@ -61,7 +61,7 @@
     "eslint-plugin-jest": "22.6.4",
     "eslint-plugin-jsx-a11y": "6.2.1",
     "eslint-plugin-react": "7.13.0",
-    "hex-rgb": "4.0.0",
+     "hex-rgb": "4.1.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.5.0",
     "lodash": "4.17.11",
