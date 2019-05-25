@@ -42,11 +42,11 @@
     "@babel/polyfill": "7.4.4",
     "@bundle-stats/ui": "1.0.0-rc.0",
     "@bundle-stats/utils": "1.0.0-rc.0",
-    "@moonwalker/orbit-ui": "1.12.12",
+    "@moonwalker/orbit-ui": "1.13.2",
     "@storybook/react": "5.0.11",
     "classnames": "^2.2.6",
     "convert-units": "^2.3.4",
-    "core-js": "3.0.1",
+    "core-js": "3.1.2",
     "ganalytics": "^3.1.1",
     "lodash": "^4.17.11",
     "preact": "^8.4.2",
@@ -82,7 +82,7 @@
     "eslint": "5.16.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-loader": "2.1.2",
-    "eslint-plugin-import": "2.17.2",
+    "eslint-plugin-import": "2.17.3",
     "eslint-plugin-jest": "22.6.4",
     "eslint-plugin-jsx-a11y": "6.2.1",
     "eslint-plugin-react": "7.13.0",
@@ -100,7 +100,7 @@
     "terser-webpack-plugin": "1.3.0",
     "webpack": "4.32.2",
     "webpack-cli": "3.3.2",
-    "webpack-dev-server": "3.3.1",
+    "webpack-dev-server": "3.4.1",
     "webpack-merge": "4.2.1"
   }
 }
