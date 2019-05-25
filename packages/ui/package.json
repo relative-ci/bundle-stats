@@ -72,7 +72,7 @@
     "react-test-renderer": "16.8.6",
     "recompose": "0.30.0",
     "stats-webpack-plugin": "0.7.0",
-    "webpack": "4.29.6",
+    "webpack": "4.32.2",
     "webpack-cli": "3.3.2"
   },
   "peerDependencies": {
