@@ -1,15 +1,24 @@
-# Webpack Bundle Stats
+<p align="center">
+  <img alt="BundleStats screenshot" width="480" src="https://www.dropbox.com/s/8t6m6rruaauwlxq/bundle-stats-screenshot-4.jpg?raw=1"/>
+</p>
+<h1 align="center">Bundle Stats</h1>
+<p align="center">
+<strong>
+  In-depth reports for bundle changes (assets, chunks, modules).
+</strong>
+</p>
+<p align="center">
+  <a href="https://www.npmjs.com/package/bundle-stats"><img src="https://img.shields.io/npm/v/bundle-stats.svg" /></a>
+  <a href="https://travis-ci.org/bundle-stats/bundle-stats"><img alt="TravisCI badge" src="https://api.travis-ci.org/bundle-stats/bundle-stats.svg?branch=master"/></a>
+  <img alt="Renovate" src="https://badges.renovateapi.com/github/bundle-stats/bundle-stats?v=1" />
+</p>
 
-[![bundle-stats version](https://img.shields.io/npm/v/bundle-stats.svg)](https://www.npmjs.com/package/bundle-stats)
-[![TravisCI badge](https://api.travis-ci.org/bundle-stats/bundle-stats.svg?branch=master)](https://travis-ci.org/bundle-stats/bundle-stats)
+## Demo
 
-CLI to generate reports based on Webpack stats data.
+- [Single job](https://relative-ci.com/tools/webpack-bundle-stats/demo-single-job.html)
+- [Multiple jobs](https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html)
 
-[Demo - one job](https://relative-ci.com/tools/webpack-bundle-stats/demo-single-job.html) | [Demo - multiple jobs](https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html)
-
-![screenshot](https://www.dropbox.com/s/m6tsdn3dca3b295/webpack-bundle-stats-screenshot.v5.jpg?raw=1)
-
-### Install
+## Install
 
 ```shell
 npm install -g bundle-stats
@@ -21,7 +30,7 @@ or
 yarn global add bundle-stats
 ```
 
-### Configuration
+## Configuration
 
 Configure Webpack stats to output the necessary data:
 
@@ -36,13 +45,13 @@ Configure Webpack stats to output the necessary data:
 }
 ```
 
-[More info](https://relative-ci.com/documentation/setup#1-configure-webpack)
+[Read more about Webpack stats configuration](https://relative-ci.com/documentation/setup#1-configure-webpack)
 
-### Usage
+## Usage
 
 ```shell
 $ bundle-stats -h
-Usage: webpack-bundle-stats OPTIONS [STATS_FILE]...
+Usage: bundle-stats OPTIONS [WEBPACK_STATS_FILE]...
 
 Options:
   --html         Save HTML report                      [boolean] [default: true]

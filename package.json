@@ -1,7 +1,7 @@
 {
   "name": "@bundle-state/bundle-stats",
   "version": "1.0.0-rc.0",
-  "description": "Tooling for bundle stats reporting.",
+  "description": "In-depth reporting for bundle changes (assets, chunks, modules).",
   "main": "index.js",
   "devDependencies": {
     "dotenv": "8.0.0",

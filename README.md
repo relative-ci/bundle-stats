@@ -1,16 +1,55 @@
-# Bundle Stats [![TravisCI badge](https://api.travis-ci.org/bundle-stats/bundle-stats.svg?branch=master)](https://travis-ci.org/bundle-stats/bundle-stats) ![Renovate](https://badges.renovateapi.com/github/bundle-stats/bundle-stats)
+<p align="center">
+  <img alt="BundleStats screenshot" width="480" src="https://www.dropbox.com/s/8t6m6rruaauwlxq/bundle-stats-screenshot-4.jpg?raw=1"/>
+</p>
+<h1 align="center">Bundle Stats</h1>
+<p align="center">
+<strong>
+  In-depth reporting for bundle changes (assets, chunks, modules).
+</strong>
+</p>
+<p align="center">
+  <a href="https://travis-ci.org/bundle-stats/bundle-stats"><img alt="TravisCI badge" src="https://api.travis-ci.org/bundle-stats/bundle-stats.svg?branch=master"/></a>
+  <img alt="Renovate" src="https://badges.renovateapi.com/github/bundle-stats/bundle-stats?v=1" />
+</p>
 
-Tooling for bundle stats reporting.
+## How you can use it
 
----
+### 1. CLI
 
-[Demo - one job](https://relative-ci.com/tools/webpack-bundle-stats/demo-single-job.html) | [Demo - multiple jobs](https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html)
+#### Install
 
-![screenshot](https://www.dropbox.com/s/m6tsdn3dca3b295/webpack-bundle-stats-screenshot.v5.jpg?raw=1)
+```shell
+# npm
+npm install -g bundle-stats
+# or yarn
+yarn global add bundle-stats
+```
+
+#### Usage
+
+```shell
+$ bundle-stats __fixtures__/webpack-stats-0.json __fixtures__/webpack-stats-1.json
+  ✔ Read Webpack stat files
+  ✔ Gather data
+  ✔ Generate reports
+  ✔ Save reports
+
+Reports saved:
+- ./dist/report.html
+```
+
+[Read more about bundle-stats usage and Webpack configuration](packages/cli#README)
+
+### 2. Standalone web application
+
+Use https://compare.relative-ci.com for comparing Webpack/Lighthouse/Browsertime stats:
+
+[Read more](packages/web-compare#README)
 
 ## Packages
 
 ### [`bundle-stats`](/packages/cli)
+
 Generate bundle report based on Webpack stats data.
 
 ### [`@bundle-stats/web-compare`](packages/web-app)

@@ -1,7 +1,7 @@
 {
   "name": "bundle-stats",
   "version": "1.0.0-rc.0",
-  "description": "Generate bundle report based on Webpack stats data.",
+  "description": "In-depth reporting for bundle changes (assets, chunks, modules).",
   "main": "lib/index.js",
   "bin": {
     "bundle-stats": "bin/index.js"
@@ -31,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/bundle-stats/bundle-stats/issues"
   },
-  "homepage": "https://github.com/bundle-stats/bundle-stats/blob/master/packages/cli/README.md",
+  "homepage": "https://github.com/bundle-stats/bundle-stats/blob/master/packages/cli#README",
   "dependencies": {
     "@bundle-stats/utils": "1.0.0-rc.0",
     "@bundle-stats/html-templates": "1.0.0-rc.0",

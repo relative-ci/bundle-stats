@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/bundle-stats/bundle-stats/issues"
   },
-  "homepage": "https://github.com/bundle-stats/bundle-stats/blob/master/packages/utils/README.md",
+  "homepage": "https://github.com/bundle-stats/bundle-stats/blob/master/packages/utils#README",
   "dependencies": {
     "convert-units": "^2.3.4"
   },
