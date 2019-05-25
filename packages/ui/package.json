@@ -30,7 +30,7 @@
   "bugs": {
     "url": "https://github.com/bundle-stats/bundle-stats/issues"
   },
-  "homepage": "https://github.com/bundle-stats/bundle-stats/blob/master/packages/ui/README.md",
+  "homepage": "https://github.com/bundle-stats/bundle-stats/blob/master/packages/ui#README",
   "devDependencies": {
     "@babel/cli": "7.4.4",
     "@babel/core": "7.4.5",
