@@ -1,13 +1,15 @@
 language: node_js
 node_js:
-  - "12"
-cache:
-  directories:
-  - "$HOME/.npm"
+  - "8"
+git:
+  depth: false
+cache: npm
 install:
-  - npm install
+  - npm ci
   - npm run lerna bootstrap
   - npm run build
 script:
   - npm run lint
   - npm test
+after_script:
+  - cd packages/web-compare && ./node_modules/.bin/relative-ci-agent

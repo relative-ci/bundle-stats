@@ -1,5 +1,7 @@
 # BundleStats Web Compare
 
+[![Relative CI](https://img.shields.io/badge/RelativeCI-enabled-brightgreen.svg)](https://app.relative-ci.com/projects/og7ULMMCOgGWXBxRJocI)
+
 Side by side comparison for webpack/lighthouse/browsertime stats - https://compare.relative-ci.com.
 
 ![screenshot](https://www.dropbox.com/s/1womnjyay3hi4ly/compare-screenshot.jpg?raw=1)
