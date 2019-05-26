@@ -2,7 +2,6 @@
   "name": "@bundle-stats/utils",
   "version": "1.0.0-rc.1",
   "description": "BundleStats utils",
-  "repository": "bundle-stats/bundle-stats",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
   "engines": {
@@ -26,6 +25,10 @@
     "url": "https://beanon.com"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bundle-stats/bundle-stats.git"
+  },
   "bugs": {
     "url": "https://github.com/bundle-stats/bundle-stats/issues"
   },
