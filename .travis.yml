@@ -11,3 +11,5 @@ install:
 script:
   - npm run lint
   - npm test
+after_script:
+  - cd packages/web-compare && ./node_modules/.bin/relative-ci-agent
