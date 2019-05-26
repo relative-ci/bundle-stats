@@ -9,6 +9,9 @@
   "directories": {
     "lib": "lib"
   },
+  "engine": {
+    "node": ">= 8.0"
+  },
   "scripts": {
     "build": "babel src -d lib",
     "lint": "eslint .",
