@@ -58,10 +58,10 @@ Use https://compare.relative-ci.com for comparing Webpack/Lighthouse/Browsertime
 
 Generate bundle report based on Webpack stats data.
 
-### [`@bundle-stats/web-compare`](packages/web-app)
+### [`@bundle-stats/web-compare`](packages/web-compare)
 Side by side comparison for webpack/lighthouse/browsertime stats - https://compare.relative-ci.com.
 
-### [`@bundle-stats/html-templates`](/packages/webpack-report-html-template)
+### [`@bundle-stats/html-templates`](/packages/html-templates)
 HTML templates for report generation.
 
 ### [`@bundle-stats/ui`](/packages/ui)
