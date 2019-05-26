@@ -15,7 +15,7 @@
     "lerna": "lerna",
     "lint": "npm run lerna run lint",
     "prepublishOnly": "npm run lint && npm run test && npm run build",
-    "publish": "npm run lerna exec 'npm publish' --ignore web-compare",
+    "publish": "lerna exec 'npm publish' --ignore web-compare",
     "test": "npm run lerna run test"
   },
   "repository": {

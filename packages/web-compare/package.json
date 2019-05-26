@@ -14,8 +14,10 @@
     "webpack",
     "lighthouse",
     "browsertime",
+    "bundle-size",
     "bundle",
     "assets",
+    "chunks",
     "modules",
     "size"
   ],
@@ -28,7 +30,7 @@
   "bugs": {
     "url": "https://github.com/bundle-stats/bundle-stats/issues"
   },
-  "homepage": "https://github.com/bundle-stats/bundle-stats/blob/master/packages/web-compare#README",
+  "homepage": "https://github.com/bundle-stats/bundle-stats/blob/master/packages/web-compare#readme",
   "jest": {
     "transform": {
       "\\.js$": "babel-jest"

@@ -38,13 +38,13 @@ Reports saved:
 - ./dist/report.html
 ```
 
-[Read more about bundle-stats usage and Webpack configuration](packages/cli#README)
+[Read more about bundle-stats usage and Webpack configuration](packages/cli#readme)
 
 ### 2. Standalone web application
 
 Use https://compare.relative-ci.com for comparing Webpack/Lighthouse/Browsertime stats:
 
-[Read more](packages/web-compare#README)
+[Read more](packages/web-compare#readme)
 
 ## Packages
 
