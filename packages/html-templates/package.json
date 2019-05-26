@@ -5,7 +5,7 @@
   "main": "dist/index.html",
   "scripts": {
     "build": "rm -fr ./dist && NODE_ENV=production webpack --config webpack.config.production.js --mode production",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .jsx,.js --cache --cache-location ./node_modules/.eslintcache",
     "storybook": "start-storybook -p 8090 -c storybook",
     "test": "echo \"Error: no test specified\" && exit 0"
   },

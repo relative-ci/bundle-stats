@@ -27,7 +27,10 @@ module.exports = (settings) => {
           test: /\.jsx?$/,
           enforce: 'pre',
           use: 'eslint-loader',
-          exclude: /node_modules/,
+          exclude: [
+            /node_modules/,
+            path.join(__dirname, '../packages'), // local linked packages
+          ]
         },
         {
           test: /\.jsx?$/,

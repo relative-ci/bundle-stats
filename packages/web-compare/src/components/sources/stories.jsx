@@ -1,7 +1,7 @@
 /* global module */
 import { storiesOf } from '@storybook/react';
 
-import Sources from './';
+import Sources from '.';
 
 
 const stories = storiesOf('Components/Sources', module);

@@ -1,4 +1,4 @@
-*
-!src
-!*.js
-!.*.js
+node_modules
+lib
+lib-esm
+!**/.*.js

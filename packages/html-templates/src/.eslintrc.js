@@ -1,13 +1,21 @@
+/* eslint-env node */
+const getResolveConfig = require('../../../build/configs/resolve');
+
 module.exports = {
-  root: true,
-  extends: 'airbnb-base',
+  extends: 'airbnb',
   env: {
-    node: true,
+    browser: true,
+    node: false,
+    'jest/globals': true,
   },
+  plugins: ['jest'],
   parser: 'babel-eslint',
-  globals: {
-    __DEVELOPMENT__: true,
-    __PRODUCTION__: true,
+  settings: {
+    'import/resolver': {
+      webpack: {
+        config: getResolveConfig(),
+      },
+    },
   },
   rules: {
     'operator-linebreak': ['error', 'before', { overrides: { '&&': 'ignore' } }],
@@ -23,5 +31,9 @@ module.exports = {
       },
     ],
     'import/prefer-default-export': 'off',
+    'react/no-unknown-property': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/sort-comp': 'off',
+    'react/destructuring-assignment': 'off',
   },
 };

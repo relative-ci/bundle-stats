@@ -8,7 +8,7 @@
     "build": "rm -fr ./dist && NODE_ENV=production webpack --config webpack.config.production.js --mode production",
     "storybook": "start-storybook -p 8090 -c storybook",
     "test": "NODE_ENV=test jest --coverage --coverageDirectory ./artifacts/coverage",
-    "lint": "eslint ."
+    "lint": "eslint . --ext .jsx,.js --cache --cache-location ./node_modules/.eslintcache"
   },
   "keywords": [
     "webpack",

@@ -14,7 +14,7 @@
     "build": "npm run build-lib && npm run build-esm",
     "build-lib": "rm -fr ./lib && babel -D src -d lib --ignore **/__tests__/** ",
     "build-esm": "rm -fr ./lib-esm && babel -D src -d lib-esm --ignore **/__tests__/** --config-file=./.babelrc.esm.js",
-    "lint": "eslint ./",
+    "lint": "eslint . --cache --cache-location ./node_modules/.eslintcache",
     "prepublishOnly": "npm run lint && npm test && npm run build",
     "test": "jest src"
   },

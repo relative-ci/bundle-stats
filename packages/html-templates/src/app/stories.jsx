@@ -1,9 +1,12 @@
+// eslint-disable-line
 /* global module */
 import { storiesOf } from '@storybook/react';
 import { createJob } from '@bundle-stats/utils';
 
-import currentData from 'Fixtures/job.current.json';
-import baselineData from 'Fixtures/job.baseline.json';
+/* eslint-disable */
+import currentData from 'Fixtures/job.current.json'; // eslint-disable-line
+import baselineData from 'Fixtures/job.baseline.json'; // eslint-disable-line
+/* eslint-enable */
 import StandaloneApp from '.';
 
 const BASELINE_JOB = {
