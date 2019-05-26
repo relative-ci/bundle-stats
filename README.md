@@ -1,7 +1,7 @@
 <p align="center">
-  <img alt="BundleStats screenshot" width="480" src="https://www.dropbox.com/s/8t6m6rruaauwlxq/bundle-stats-screenshot-4.jpg?raw=1"/>
+  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html"><img alt="BundleStats screenshot" width="480" src="https://www.dropbox.com/s/8t6m6rruaauwlxq/bundle-stats-screenshot-4.jpg?raw=1"/></a>
 </p>
-<h1 align="center">Bundle Stats</h1>
+<h1>Bundle Stats</h1>
 <p align="center">
 <strong>
   In-depth reporting for bundle changes (assets, chunks, modules).
@@ -12,7 +12,13 @@
   <img alt="Renovate" src="https://badges.renovateapi.com/github/bundle-stats/bundle-stats?v=1" />
 </p>
 
-## How you can use it
+## Demo
+
+- [Single job](https://relative-ci.com/tools/webpack-bundle-stats/demo-single-job.html)
+- [Multiple jobs](https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html)
+
+
+## How to use it
 
 ### 1. CLI
 
