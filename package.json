@@ -3,6 +3,9 @@
   "version": "1.0.0-rc.0",
   "description": "In-depth reporting for bundle changes (assets, chunks, modules).",
   "main": "index.js",
+  "engine": {
+    "node": ">= 8.0"
+  },
   "devDependencies": {
     "dotenv": "8.0.0",
     "husky": "2.3.0",
