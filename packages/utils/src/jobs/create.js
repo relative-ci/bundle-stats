@@ -1,5 +1,6 @@
 import { get, set } from 'lodash';
 import { createStats, createStatsSummary } from '../stats';
+import { extractDataFromWebpackStats } from '../utils/extract-data';
 
 const RAW_DATA_IDS = [
   'webpack.stats',
@@ -15,7 +16,7 @@ export const createJob = (source, baseline) => {
     const rawData = get(source, rawDataPath);
 
     if (rawData) {
-      set(agg, `rawData.${rawDataPath}`, rawData);
+      set(agg, `rawData.${rawDataPath}`, extractDataFromWebpackStats(rawData));
     }
 
     return { ...agg };
