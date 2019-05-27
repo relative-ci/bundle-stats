@@ -10,7 +10,7 @@
     "dotenv": "8.0.0",
     "husky": "2.3.0",
     "lerna": "3.14.1",
-    "mini-css-extract-plugin": "0.6.0",
+    "mini-css-extract-plugin": "0.7.0",
     "webpack": "4.32.2"
   },
   "scripts": {
