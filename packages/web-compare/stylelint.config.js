@@ -5,6 +5,6 @@ module.exports = {
   ],
   ignoreFiles: [
     'node_modules/**/*.css',
-    'packages/ui/**/*.css',
+    '../ui/**/*.css',
   ],
 };

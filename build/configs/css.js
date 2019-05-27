@@ -1,3 +1,4 @@
+const path = require('path');
 const CssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (settings) => {
@@ -32,7 +33,7 @@ module.exports = (settings) => {
           include: [
             /src/,
             /bundle-stats\/ui/,
-            /packages\/ui/, // required for linked packages
+            path.join(__dirname, '../../packages/ui'), // required for linked packages
             /storybook/,
           ],
         },
