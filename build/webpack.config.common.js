@@ -34,8 +34,11 @@ module.exports = (settings) => {
         },
         {
           test: /\.jsx?$/,
-          use: 'babel-loader',
+          loader: 'babel-loader',
           exclude: /node_modules/,
+          options: {
+            cacheDirectory: isDevelopment,
+          },
         },
       ],
     },
