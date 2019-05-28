@@ -37,17 +37,17 @@ yarn add --dev bundle-stats
 
 ```js
 // webpack.config.js
-const { WebpackStatsBundlePlugin } = require('bundle-stats');
+const { BundleStatsWebpackPlugin } = require('bundle-stats');
 
 module.exports = {
   ...,
   plugins: [
-    new WebpackStatsBundlePlugin()
+    new BundleStatsWebpackPlugin()
   ]
 }
 ```
 
-#### `WebpackStatsBundlePlugin(options)`
+#### `BundleStatsWebpackPlugin(options)`
 
 - `html` - output html report (default `true`).
 - `json` - output json report (default `false`).
