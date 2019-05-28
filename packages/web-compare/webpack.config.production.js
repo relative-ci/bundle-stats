@@ -37,11 +37,15 @@ module.exports = webpackMerge(
         timings: true,
         children: false,
         source: false,
+        excludeAssets: /artifacts/,
       }),
       new BundleStatsWebpackPlugin({
         html: true,
         json: true,
         outDir: '../artifacts',
+        stats: {
+          excludeAssets: /artifacts/,
+        },
       }),
     ],
     optimization: {
