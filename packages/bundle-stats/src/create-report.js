@@ -1,7 +1,10 @@
 import { readFileSync } from 'fs-extra';
 
 import {
-  INITIAL_DATA_PATTERN, OUTPUT_TYPE_HTML, OUTPUT_TYPE_JSON,
+  INITIAL_DATA_PATTERN,
+  OUTPUT_FILENAME,
+  OUTPUT_TYPE_HTML,
+  OUTPUT_TYPE_JSON,
 } from './constants';
 
 const templateFilepath = require.resolve('@bundle-stats/html-templates');
@@ -18,9 +21,16 @@ const REPORT_HANDLERS = {
   [OUTPUT_TYPE_JSON]: createJSONReport,
 };
 
-export const createReports = (initialData, types) => Promise.all(
-  types.map(type => ({
-    output: REPORT_HANDLERS[type](initialData),
-    type,
-  })),
-);
+export const createReports = (initialData, options) => {
+  const types = [
+    ...options.html ? ['html'] : [],
+    ...options.json ? ['json'] : [],
+  ];
+
+  return Promise.all(
+    types.map(type => ({
+      output: REPORT_HANDLERS[type](initialData),
+      filename: `${OUTPUT_FILENAME}.${type}`,
+    })),
+  );
+};

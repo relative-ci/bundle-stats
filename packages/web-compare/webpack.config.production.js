@@ -5,6 +5,7 @@ const webpackMerge = require('webpack-merge');
 const CopyPlugin = require('copy-webpack-plugin');
 const StatsPlugin = require('stats-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const { BundleStatsWebpackPlugin } = require('bundle-stats');
 
 const getCommonConfig = require('../../build/webpack.config.common');
 const appCommonConfig = require('./webpack.config.common');
@@ -36,6 +37,15 @@ module.exports = webpackMerge(
         timings: true,
         children: false,
         source: false,
+        excludeAssets: /artifacts/,
+      }),
+      new BundleStatsWebpackPlugin({
+        html: true,
+        json: true,
+        outDir: '../artifacts',
+        stats: {
+          excludeAssets: /artifacts/,
+        },
       }),
     ],
     optimization: {
