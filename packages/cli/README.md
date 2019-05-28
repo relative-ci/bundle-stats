@@ -19,7 +19,56 @@
 - [Single job](https://relative-ci.com/tools/webpack-bundle-stats/demo-single-job.html)
 - [Multiple jobs](https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html)
 
-## Install
+## Webpack plugin
+
+### Install
+
+```shell
+npm install --dev bundle-stats
+```
+
+or
+
+```shell
+yarn add --dev bundle-stats
+```
+
+### Webpack configuration
+
+```js
+// webpack.config.js
+const { WebpackStatsBundlePlugin } = require('bundle-stats');
+
+module.exports = {
+  ...,
+  plugins: [
+    new WebpackStatsBundlePlugin()
+  ]
+}
+```
+
+#### `WebpackStatsBundlePlugin(options)`
+
+- `html` - output html report (default `true`).
+- `json` - output json report (default `false`).
+- `ourDir` - output directory relative to `output.path` (default `''`).
+- `stats` - [Webpack stats](https://webpack.js.org/configuration/stats) options
+  default:
+  ```js
+  {
+    stats: {
+      context: WEBPACK_CONTEXT,
+      assets: true,
+      entrypoints: true,
+      chunks: true,
+      modules: true,
+    }
+  }
+  ```
+
+## CLI
+
+### Install as global
 
 ```shell
 npm install -g bundle-stats
@@ -31,10 +80,21 @@ or
 yarn global add bundle-stats
 ```
 
-## Configuration
+### Install as dev dependency
 
-Configure Webpack stats to output the necessary data:
+```shell
+npm install --dev bundle-stats
+```
 
+or
+
+```shell
+yarn add --dev bundle-stats
+```
+
+### Webpack configuration
+
+The CLI is consuming the Webpack stats json. The following [stats options](https://webpack.js.org/configuration/stats) are required:
 ```js
 {
   stats: {
@@ -48,7 +108,7 @@ Configure Webpack stats to output the necessary data:
 
 [Read more about Webpack stats configuration](https://relative-ci.com/documentation/setup#1-configure-webpack)
 
-## Usage
+### Usage
 
 ```shell
 $ bundle-stats -h
