@@ -56,7 +56,7 @@ export const Footer = ({ className, Link, source }) => (
           </h3>
           <nav className={css.nav}>
             <a
-              href="https://www.npmjs.com/package/@bundle-stats/bundle-stats"
+              href="https://www.npmjs.com/package/bundle-stats"
               className={css.navLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -112,23 +112,22 @@ export const Footer = ({ className, Link, source }) => (
         </div>
       </div>
 
-      <p className={css.copyright}>
-        &copy; 2019 Relative CI
-      </p>
-    </div>
-
-    <div className={css.branding}>
-      <Link
-        className={css.brandingHome}
-        to="/"
-        title="Go to homepage"
-        source={source}
-      >
-        <Logo className={css.brandingLogo} />
-        <span className={css.brandingLogotype}>
-          Relative CI
-        </span>
-      </Link>
+      <div className={css.branding}>
+        <Link
+          className={css.brandingHome}
+          to="/"
+          title="Go to homepage"
+          source={source}
+        >
+          <Logo className={css.brandingLogo} />
+          <span className={css.brandingLogotype}>
+            Relative CI
+          </span>
+        </Link>
+        <p className={css.copyright}>
+          &copy; 2019 Relative CI
+        </p>
+      </div>
     </div>
   </Container>
 );
