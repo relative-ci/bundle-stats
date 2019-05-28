@@ -6,12 +6,6 @@
   text-align: center;
 }
 
-.branding {
-  width: 100%;
-  margin-top: var(--space-large);
-  text-align: center;
-}
-
 .brandingHome {
   vertical-align: middle;
   color: var(--color-gray-ultra-light);
@@ -36,6 +30,10 @@
   overflow: hidden;
   height: 0;
   position: absolute;
+}
+
+.copyright {
+  margin-top: var(--space-xsmall);
 }
 
 .navGroup {
@@ -74,8 +72,7 @@
     justify-content: flex-end;
   }
 
-  .copyright {
-    margin-top: 0;
+  .branding {
     order: 1;
     flex: 1 1 25%;
     text-align: left;
