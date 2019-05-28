@@ -32,10 +32,10 @@ module.exports = ({
     {
       title: 'Save reports',
       task: ctx => new Listr(
-        ctx.reports.map(({ type, output }) => ({
-          title: type,
+        ctx.reports.map(({ filename, output }) => ({
+          title: filename,
           task: async () => {
-            const filepath = path.join(outDir, `report.${type}`);
+            const filepath = path.join(outDir, filename);
             await outputFile(filepath, output);
             ctx.output = [
               ...ctx.output ? ctx.output : [],

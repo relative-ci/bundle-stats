@@ -31,8 +31,8 @@ const getOnEmit = options => (compilation, callback) => {
 
   createReports(artifacts, { html, json })
     .then((reports) => {
-      reports.forEach(({ type, output }) => {
-        const filepath = path.join(outDir, `report.${type}`);
+      reports.forEach(({ filename, output }) => {
+        const filepath = path.join(outDir, filename);
 
         // eslint-disable-next-line no-param-reassign
         compilation.assets[filepath] = {

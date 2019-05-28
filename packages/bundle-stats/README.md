@@ -131,6 +131,6 @@ $ bundle-stats --html --json __fixtures__/webpack-stats-0.json __fixtures__/webp
   ✔ Save reports
 
 Reports saved:
-- ./dist/report.html
-- ./dist/report.json
+- ./dist/bundle-stats.html
+- ./dist/bundle-stats.json
 ```
