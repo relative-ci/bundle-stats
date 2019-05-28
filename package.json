@@ -3,7 +3,7 @@
   "version": "1.0.0-rc.3",
   "description": "In-depth reporting for bundle changes (assets, chunks, modules).",
   "main": "index.js",
-  "engine": {
+  "engines": {
     "node": ">= 8.0"
   },
   "devDependencies": {

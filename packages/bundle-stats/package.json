@@ -9,7 +9,7 @@
   "directories": {
     "lib": "lib"
   },
-  "engine": {
+  "engines": {
     "node": ">= 8.0"
   },
   "scripts": {
@@ -20,10 +20,15 @@
   },
   "keywords": [
     "webpack",
+    "bundle-size",
+    "bundle-analyzer",
+    "bundle-stats",
+    "stats",
     "bundle",
+    "size",
     "assets",
-    "modules",
-    "size"
+    "chunks",
+    "modules"
   ],
   "author": {
     "name": "Viorel Cojocaru",
