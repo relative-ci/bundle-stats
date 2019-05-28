@@ -20,16 +20,16 @@ const DEFAULT_OPTIONS = {
 };
 
 const getOnEmit = options => (compilation, callback) => {
-  const { outDir, stats: statsOptions } = options;
+  const {
+    html,
+    json,
+    outDir,
+    stats: statsOptions,
+  } = options;
   const data = compilation.getStats().toJson(statsOptions);
   const artifacts = createJobs([data]);
 
-  const reportTypes = [
-    ...options.html ? ['html'] : [],
-    ...options.json ? ['json'] : [],
-  ];
-
-  createReports(artifacts, reportTypes)
+  createReports(artifacts, { html, json })
     .then((reports) => {
       reports.forEach(({ type, output }) => {
         const filepath = path.join(outDir, `report.${type}`);

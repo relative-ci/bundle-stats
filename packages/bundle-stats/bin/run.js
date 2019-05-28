@@ -3,18 +3,11 @@ const path = require('path');
 const { readJSON, outputFile } = require('fs-extra');
 const Listr = require('listr');
 
-const {
-  OUTPUT_TYPE_HTML, OUTPUT_TYPE_JSON, createJobs, createReports,
-} = require('../'); // eslint-disable-line import/no-unresolved
+const { createJobs, createReports } = require('../'); // eslint-disable-line import/no-unresolved
 
 module.exports = ({
   html, json, outDir, artifactFilepaths,
 }) => {
-  const outputTypes = [
-    ...html ? [OUTPUT_TYPE_HTML] : [],
-    ...json ? [OUTPUT_TYPE_JSON] : [],
-  ];
-
   const tasks = new Listr([
     {
       title: 'Read Webpack stat files',
@@ -33,7 +26,7 @@ module.exports = ({
     {
       title: 'Generate reports',
       task: async (ctx) => {
-        ctx.reports = await createReports(ctx.initialData, outputTypes);
+        ctx.reports = await createReports(ctx.initialData, { html, json });
       },
     },
     {
