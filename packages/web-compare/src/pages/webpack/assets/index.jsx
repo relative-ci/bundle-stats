@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types';
-import {
-  BundleAssets,
-  Container,
-} from '@bundle-stats/ui';
+import { Box, BundleAssets, Container } from '@bundle-stats/ui';
 
 const Assets = (props) => {
   const { jobs } = props;
 
   return (
     <Container>
-      <BundleAssets jobs={jobs} />
+      <Box>
+        <BundleAssets jobs={jobs} />
+      </Box>
     </Container>
   );
 };

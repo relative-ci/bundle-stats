@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Helmet from 'preact-helmet';
-import { Container, BrowsertimeTable } from '@bundle-stats/ui';
+import { Box, Container, BrowsertimeTable } from '@bundle-stats/ui';
 
 import Sources from '../../components/sources';
 import config from './config.json';
@@ -36,10 +36,12 @@ const Browsertime = (props) => {
       {jobs.length > 0 && (
         <div className={css.main}>
           <Container>
-            <BrowsertimeTable
-              runs={runs}
-              jobs={jobs}
-            />
+            <Box>
+              <BrowsertimeTable
+                runs={runs}
+                jobs={jobs}
+              />
+            </Box>
           </Container>
         </div>
       )}

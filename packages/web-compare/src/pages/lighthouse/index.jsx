@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Container, LighthouseTable } from '@bundle-stats/ui';
+import { Box, Container, LighthouseTable } from '@bundle-stats/ui';
 
 import Helmet from '../../components/helmet';
 import Sources from '../../components/sources';
@@ -36,10 +36,12 @@ const Lighthouse = (props) => {
       {jobs.length > 0 && (
         <div className={css.main}>
           <Container>
-            <LighthouseTable
-              runs={runs}
-              jobs={jobs}
-            />
+            <Box>
+              <LighthouseTable
+                runs={runs}
+                jobs={jobs}
+              />
+            </Box>
           </Container>
         </div>
       )}

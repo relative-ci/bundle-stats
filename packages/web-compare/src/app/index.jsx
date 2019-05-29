@@ -1,5 +1,5 @@
 import { Router } from 'preact-router';
-import { Logo, Footer } from '@bundle-stats/ui';
+import { Logo, Footer, Header } from '@bundle-stats/ui';
 
 import * as URLS from '../utils/urls';
 import Webpack from '../pages/webpack';
@@ -11,23 +11,36 @@ import Navigation from './navigation';
 import styles from './styles.css';
 
 const App = () => (
-  <div>
-    <header className={styles.header}>
-      <Logo
-        className={styles.headerRelativeLogo}
-        as="a"
-        href="https://relative-ci.com"
-        title="Go to relative-ci.com"
-      />
-      <Navigation className={styles.headerNavigation} />
-      <Logo
-        className={styles.headerGithubLogo}
-        kind="github"
-        as="a"
-        href="https://github.com/bundle-stats/bundle-stats"
-        title="Go to Github"
-      />
-    </header>
+  <div className={styles.root}>
+    <Header
+      className={styles.header}
+      renderLeft={sideProps => (
+        <div {...sideProps}>
+          <Logo
+            className={styles.headerRelativeLogo}
+            as="a"
+            href="https://relative-ci.com"
+            title="Go to relative-ci.com"
+          />
+        </div>
+      )}
+      render={sideProps => (
+        <div {...sideProps}>
+          <Navigation className={styles.headerNavigation} />
+        </div>
+      )}
+      renderRight={sideProps => (
+        <div {...sideProps}>
+          <Logo
+            className={styles.headerGithubLogo}
+            kind="github"
+            as="a"
+            href="https://github.com/bundle-stats/bundle-stats"
+            title="Go to Github"
+          />
+        </div>
+      )}
+    />
     <main className={styles.main}>
       <Router>
         <Redirect path="/" to="/webpack" />
@@ -36,7 +49,10 @@ const App = () => (
         <Route component={Browsertime} path={URLS.BROWSERTIME_PATH} />
       </Router>
     </main>
-    <Footer />
+    <Footer
+      className={styles.footer}
+      source="bundle-stats-web-compare"
+    />
   </div>
 );
 
