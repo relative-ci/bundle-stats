@@ -75,17 +75,25 @@ export const TableFilters = (props) => {
   const {
     className,
     label,
+    open,
     values,
     filters,
     toggleFilter,
+    toggleOpen,
   } = props;
 
   const onCheckboxChange = ({ target }) => toggleFilter(target.name, target.checked);
-  const rootClassName = cx(css.root, className);
+  const rootClassName = cx(css.root, className, open && css.open);
 
   return (
     <div className={rootClassName}>
-      <IconText glyph="filter" className={css.label}>
+      <IconText
+        className={css.label}
+        glyph="filter"
+        as="button"
+        type="button"
+        onClick={toggleOpen}
+      >
         {label}
       </IconText>
 
@@ -104,7 +112,9 @@ TableFilters.defaultProps = {
 TableFilters.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
+  open: PropTypes.bool.isRequired,
   values: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   filters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   toggleFilter: PropTypes.func.isRequired,
+  toggleOpen: PropTypes.func.isRequired,
 };
