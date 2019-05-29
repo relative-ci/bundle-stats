@@ -41,6 +41,7 @@ export const filterContainer = BaseComponent => class FilterContainer extends Re
 
     this.state = {
       values: getInitialValues('', filters),
+      open: false,
     };
   }
 
@@ -60,7 +61,11 @@ export const filterContainer = BaseComponent => class FilterContainer extends Re
     }
 
     return newState;
-  });
+  })
+
+  toggleOpen = () => this.setState(({ open }) => ({
+    open: !open,
+  }))
 
   render() {
     return (
@@ -68,6 +73,7 @@ export const filterContainer = BaseComponent => class FilterContainer extends Re
         {...this.props}
         {...this.state}
         toggleFilter={this.toggleFilter}
+        toggleOpen={this.toggleOpen}
       />
     );
   }

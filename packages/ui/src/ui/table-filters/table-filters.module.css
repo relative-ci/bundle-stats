@@ -4,19 +4,23 @@
 }
 
 .label {
+  border: 1px solid transparent;
   padding: var(--space-xxxsmall);
   display: flex;
   align-items: center;
 
+  background: none;
   color: var(--color-gray-light);
   font-size: var(--size-small);
   line-height: 1.1;
   font-weight: bold;
   text-transform: uppercase;
+  appearance: none;
   cursor: pointer;
 }
 
 .label:hover {
+  border-color: var(--color-gray-ultra-light);
   color: var(--color-gray);
 }
 
@@ -88,6 +92,6 @@
   display: none;
 }
 
-.root:hover .dropdown {
+.open .dropdown {
   display: block;
 }
