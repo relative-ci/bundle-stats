@@ -1,6 +1,6 @@
 {
   "name": "bundle-stats",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "In-depth reporting for bundle changes (assets, chunks, modules).",
   "main": "lib/index.js",
   "bin": {
@@ -45,7 +45,7 @@
   },
   "homepage": "https://github.com/bundle-stats/bundle-stats/blob/master/packages/cli#readme",
   "dependencies": {
-    "@bundle-stats/html-templates": "^1.0.0",
+    "@bundle-stats/html-templates": "^1.1.0",
     "@bundle-stats/utils": "^1.0.0",
     "fs-extra": "8.0.1",
     "listr": "^0.14.3",
