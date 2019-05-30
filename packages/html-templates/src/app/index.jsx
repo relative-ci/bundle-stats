@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { createStatsSummary } from '@bundle-stats/utils';
 import { Box } from '@bundle-stats/ui/lib-esm/ui/box';
 import { Container } from '@bundle-stats/ui/lib-esm/ui/container';
 import { Summary } from '@bundle-stats/ui/lib-esm/components/summary';
@@ -24,6 +25,15 @@ const StandaloneAppLayout = props => (
   </div>
 );
 
+const getSummaryData = (jobs) => {
+  if (jobs.length <= 2) {
+    return jobs[0].summary;
+  }
+
+  return createStatsSummary(jobs[jobs.length - 1].stats, jobs[0].stats);
+};
+
+
 const StandaloneApp = ({ jobs }) => {
   if (jobs.length === 0) {
     return (
@@ -40,7 +50,7 @@ const StandaloneApp = ({ jobs }) => {
   return (
     <StandaloneAppLayout>
       <Container>
-        <Summary data={jobs[0].summary} />
+        <Summary data={getSummaryData(jobs)} />
       </Container>
       <Container>
         <h2>
