@@ -60,10 +60,10 @@ export const Footer = ({ className, Link, source }) => (
               className={css.navLink}
               target="_blank"
               rel="noopener noreferrer"
-              title="Generate bundle report from the webpack stats data."
+              title="In-depth reporting for bundle changes (assets, chunks, modules)."
               source={source}
             >
-              Webpack Bundle Stats
+              Bundle Stats
             </a>
             <a
               href={`https://compare.relative-ci.com/?utm_source=${source}`}
