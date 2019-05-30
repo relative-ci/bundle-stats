@@ -11,14 +11,20 @@ module.exports = (settings) => {
         {
           test: /\.css$/,
           use: [
-            isDevelopment ? 'style-loader' : CssExtractPlugin.loader,
+            {
+              loader: CssExtractPlugin.loader,
+              options: {
+                hmr: isDevelopment,
+                reloadAll: true,
+              },
+            },
             {
               loader: 'css-loader',
               options: {
                 modules: true,
                 localIdentName: isDevelopment
-                ? '[path][name]__[local]'
-                : '[hash:base64:5]',
+                  ? '[path][name]__[local]'
+                  : '[hash:base64:5]',
               },
             },
             {
@@ -41,8 +47,7 @@ module.exports = (settings) => {
     },
     plugins: [
       new CssExtractPlugin({
-        filename: '[name].[contenthash].css',
-        chunkFilename: '[id].[contenthash].css',
+        filename: isDevelopment ? '[name].css' : '[name].[contenthash].css',
       }),
     ],
   };

@@ -46,7 +46,7 @@
 
 .footer {
   background: var(--color-light);
-  box-shadow: 0 0 12px var(--color-gray-ultra-light);
+  box-shadow: 0 0 var(--space-small) var(--color-gray-ultra-light);
 }
 
 @media (min-width: 600px) {

@@ -17,7 +17,7 @@ const renderApp = () => {
 };
 
 if (module.hot) {
-  module.hot.accept('./main.jsx', renderApp);
+  module.hot.accept('./index.jsx', renderApp);
 }
 
 renderApp();

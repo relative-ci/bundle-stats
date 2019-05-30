@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { get } from 'lodash';
 import { BundleModules, Container } from '@bundle-stats/ui';
 
 const Modules = (props) => {
@@ -7,11 +6,7 @@ const Modules = (props) => {
 
   return (
     <Container>
-      <BundleModules
-        currentRawData={get(jobs, '[0].rawData')}
-        baselineRawData={get(jobs, '[1].rawData')}
-        job={jobs[0]}
-      />
+      <BundleModules jobs={jobs} />
     </Container>
   );
 };
