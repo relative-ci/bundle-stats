@@ -1,8 +1,9 @@
 import Router from 'preact-router';
 import Match from 'preact-router/match';
 import PropTypes from 'prop-types';
+import { isEmpty, last } from 'lodash';
 import { Container, Summary, Tabs } from '@bundle-stats/ui';
-import { isEmpty } from 'lodash';
+import { createStatsSummary } from '@bundle-stats/utils';
 
 import Helmet from '../../components/helmet';
 import Sources from '../../components/sources';
@@ -14,6 +15,14 @@ import config from './config.json';
 import locale from './locale.json';
 import enhance from './container';
 import css from './styles.css';
+
+const getSummaryData = (jobs) => {
+  if (jobs.length <= 2) {
+    return jobs[0].summary;
+  }
+
+  return createStatsSummary(last(jobs).stats, jobs[0].stats);
+};
 
 const Webpack = (props) => {
   const {
@@ -43,7 +52,7 @@ const Webpack = (props) => {
       {!isEmpty(jobs) && (
         <div className={css.main}>
           <Container>
-            <Summary data={jobs[0].summary} />
+            <Summary data={getSummaryData(jobs)} />
           </Container>
           <Container>
             <Match>
