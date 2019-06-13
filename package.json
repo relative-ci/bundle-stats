@@ -11,7 +11,7 @@
     "husky": "2.4.1",
     "lerna": "3.15.0",
     "mini-css-extract-plugin": "0.7.0",
-    "webpack": "4.33.0"
+    "webpack": "4.34.0"
   },
   "scripts": {
     "build": "npm run lerna run build",
