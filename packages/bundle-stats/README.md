@@ -51,7 +51,7 @@ module.exports = {
 
 - `html` - output html report (default `true`).
 - `json` - output json report (default `false`).
-- `ourDir` - output directory relative to `output.path` (default `''`).
+- `outDir` - output directory relative to `output.path` (default `''`).
 - `stats` - [Webpack stats](https://webpack.js.org/configuration/stats) options
   default:
   ```js
