@@ -21,10 +21,11 @@ module.exports = (settings) => {
             {
               loader: 'css-loader',
               options: {
-                modules: true,
-                localIdentName: isDevelopment
-                  ? '[path][name]__[local]'
-                  : '[hash:base64:5]',
+                modules: {
+                  localIdentName: isDevelopment
+                    ? '[path][name]__[local]'
+                    : '[hash:base64:5]',
+                },
               },
             },
             {
