@@ -34,7 +34,7 @@
     "@bundle-stats/ui": "^1.1.3",
     "@bundle-stats/utils": "^1.1.3",
     "@moonwalker/orbit-ui": "1.13.5",
-    "@storybook/react": "5.1.8",
+    "@storybook/react": "5.1.9",
     "autoprefixer": "9.6.0",
     "babel-eslint": "10.0.2",
     "babel-loader": "8.0.6",
