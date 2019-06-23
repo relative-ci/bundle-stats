@@ -1,4 +1,4 @@
-/* global __PRODUCTION__, __GA__ */
+/* global __GA__ */
 import GAnalytics from 'ganalytics';
 
 if (__PRODUCTION__) {

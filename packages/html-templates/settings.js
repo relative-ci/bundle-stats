@@ -1,3 +1,4 @@
+/* env node */
 const { resolve } = require('path');
 const dotenv = require('dotenv');
 const globalSettings = require('../../build/settings');

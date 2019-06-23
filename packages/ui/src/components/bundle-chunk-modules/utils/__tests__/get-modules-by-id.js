@@ -1,4 +1,3 @@
-/* global test, expect */
 import { getModuleName } from '../get-modules-by-id';
 
 test('getModuleName', () => {
