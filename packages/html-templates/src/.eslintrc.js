@@ -30,6 +30,9 @@ module.exports = {
         json: 'alwaus',
       },
     ],
+    'import/no-unresolved': ['error', {
+      ignore: ['@bundle-stats'],
+    }],
     'import/prefer-default-export': 'off',
     'react/no-unknown-property': 'off',
     'react/react-in-jsx-scope': 'off',

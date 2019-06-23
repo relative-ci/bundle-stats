@@ -1,4 +1,4 @@
-/* global document, module, window */
+/* global module */
 import { render } from 'preact';
 import 'preact/debug';
 
