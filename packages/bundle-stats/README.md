@@ -4,7 +4,7 @@
 <h1 align="center">Bundle Stats</h1>
 <p align="center">
 <strong>
-  In-depth reports for bundle changes (assets, chunks, modules).
+  Reports for bundle changes (assets, chunks, modules).
 </strong>
 </p>
 <p align="center">
@@ -14,12 +14,31 @@
   <img alt="Renovate" src="https://badges.renovateapi.com/github/bundle-stats/bundle-stats?v=1" />
 </p>
 
-## Demo
+## Table of Contents
+- [Features](#1-features)
+- [Webpack plugin](#2-webpack-plugin)
+  - [Install](#install)
+  - [Webpack configuration](#webpack-configuration)
+- [CLI](#3-cli)
+  - [Install as global dependency](#install-as-global-dependency)
+  - [Install as dev dependency](#install-as-dev-dependency)
+  - [Webpack configuration](#webpack-configuration-1)
+  - [Usage](#usage)
+- [Standalone web application](#4-standalone-web-application)
+- [:zap: Running on CI](#5-running-on-ci)
 
+## 1. Features
+
+- Totals report - total bundle size and breakdown by asset category (css, js, img, etc)
+- Assets report - added, removed, changed, initial, entry points
+- Modules report - modules added/removed/changed by chunk
+- Side by side comparison between multiple jobs
+
+View demo reports:
 - [Single job](https://relative-ci.com/tools/webpack-bundle-stats/demo-single-job.html)
 - [Multiple jobs](https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html)
 
-## Webpack plugin
+## 2. Webpack plugin
 
 ### Install
 
@@ -66,7 +85,7 @@ module.exports = {
   }
   ```
 
-## CLI
+## 3. CLI
 
 ### Install as global
 
@@ -134,3 +153,13 @@ Reports saved:
 - ./dist/bundle-stats.html
 - ./dist/bundle-stats.json
 ```
+
+## 4. Standalone web application
+
+Use https://compare.relative-ci.com to compare Webpack/Lighthouse/Browsertime stats.
+
+[Read more](../web-compare)
+
+## 5. :zap: Running on CI
+
+[Read more about running BundleStats on CI (BETA)](https://relative-ci.com)
