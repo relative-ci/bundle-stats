@@ -15,7 +15,6 @@ const resolveCellOptions = (headers, hasRowHeader, cellId) => {
   return (header && header.options) || {};
 };
 
-// eslint-disable-next-line react/prop-types
 const Th = ({ header }) => {
   const content = typeof header === 'object' ? header.text : header;
   const options = header.options || {};
@@ -32,7 +31,19 @@ const Th = ({ header }) => {
   );
 };
 
-// eslint-disable-next-line react/prop-types
+Th.defaultProps = {
+  header: '',
+};
+
+Th.propTypes = {
+  header: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      text: PropTypes.string,
+    }),
+  ]),
+};
+
 const Td = ({ cell, options = {}, ...props }) => {
   const style = {
     textAlign: options.align,
@@ -43,6 +54,19 @@ const Td = ({ cell, options = {}, ...props }) => {
       {cell}
     </td>
   );
+};
+
+Td.defaultProps = {
+  cell: null,
+  options: {},
+};
+
+Td.propTypes = {
+  cell: PropTypes.node,
+  options: PropTypes.shape({
+    align: PropTypes.string,
+    classNames: PropTypes.string,
+  }),
 };
 
 export const Table = ({
