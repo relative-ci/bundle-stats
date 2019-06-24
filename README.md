@@ -25,7 +25,7 @@
   - [Webpack configuration](#webpack-configuration-1)
   - [Usage](#usage)
 - [Standalone web application](#4-standalone-web-application)
-- [:zap: Running on CI](#5-running-on-ci)
+- [:zap: Running on CI](#5-zap-running-on-ci)
 
 ## 1. Features
 
