@@ -1,4 +1,6 @@
-import { get, set } from 'lodash';
+import {
+  get, last, reverse, set,
+} from 'lodash';
 import { createStats, createStatsSummary } from '../stats';
 import { extractDataFromWebpackStats } from '../utils/extract-data';
 
@@ -30,4 +32,19 @@ export const createJob = (source, baseline) => {
     stats,
     summary,
   };
+};
+
+/*
+ * Create jobs from sources
+ */
+export const createJobs = (sources) => {
+  const jobs = reverse([...sources]).reduce((agg, source, idx) => [
+    {
+      ...createJob(source, last(agg)),
+      internalBuildNumber: (sources.length - idx),
+    },
+    ...agg,
+  ], []);
+
+  return jobs;
 };
