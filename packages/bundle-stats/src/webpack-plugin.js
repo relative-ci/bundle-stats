@@ -1,7 +1,8 @@
 const process = require('process');
 const path = require('path');
 const { get, merge } = require('lodash');
-const { createJobs } = require('./create-jobs');
+const { createJobs } = require('@bundle-stats/utils');
+
 const { createReports } = require('./create-report');
 
 const CWD = process.cwd();
@@ -27,7 +28,7 @@ const getOnEmit = options => (compilation, callback) => {
     stats: statsOptions,
   } = options;
   const data = compilation.getStats().toJson(statsOptions);
-  const artifacts = createJobs([data]);
+  const artifacts = createJobs([{ webpack: { stats: data } }]);
 
   createReports(artifacts, { html, json })
     .then((reports) => {
