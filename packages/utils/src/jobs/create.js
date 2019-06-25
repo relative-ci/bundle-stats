@@ -4,7 +4,7 @@ import { extractDataFromWebpackStats } from '../utils/extract-data';
 
 const RAW_DATA_IDS = [
   'webpack.stats',
-  'lifetime',
+  'lighthouse',
   'browsertime',
 ];
 
