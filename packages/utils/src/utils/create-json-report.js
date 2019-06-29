@@ -2,6 +2,7 @@ import { map } from 'lodash';
 
 import { createJobs } from '../jobs';
 import { getMetricChanged, mergeRunsById } from '../metrics';
+import { getStatsByMetrics } from '../stats';
 import { getDelta, formatDelta } from './delta';
 import { getMetric } from './metrics';
 
@@ -18,16 +19,7 @@ const SIZE_METRICS = [
   'webpack.assets.totalInitialSizeJS',
 ];
 
-const generateSizeMetrics = stats => SIZE_METRICS.reduce((agg, metricId) => {
-  const value = get(stats, `${metricId}.value`, 0);
-
-  return {
-    ...agg,
-    [metricId]: { value },
-  };
-}, {});
-
-const addMetricsData = entries => entries.map((entry) => {
+export const addMetricsData = entries => entries.map((entry) => {
   const { runs } = entry;
   const { biggerIsBetter, label, formatter } = getMetric(entry.key);
 
@@ -58,19 +50,22 @@ const addMetricsData = entries => entries.map((entry) => {
   };
 });
 
+export const createRuns = (jobs) => jobs.map(({ internalBuildNumber, stats }) => ({
+  meta: {
+    internalBuildNumber,
+  },
+  sizes: getStatsByMetrics(stats, SIZE_METRICS),
+}));
+
+export const createReport = (runs) => ({
+  runs: map(runs, 'meta'),
+  sizes: addMetricsData(mergeRunsById(map(runs, 'sizes'))),
+})
+
 export const createJSONReport = (sources) => {
   const jobs = createJobs(sources);
-  const runs = jobs.map(({ internalBuildNumber, stats }) => ({
-    meta: {
-      internalBuildNumber,
-    },
-    sizes: generateSizeMetrics(stats),
-  }));
-
-  const output = {
-    runs: map(runs, 'meta'),
-    sizes: addMetricsData(mergeRunsById(map(runs, 'sizes'))),
-  };
+  const runs = createRuns(jobs);
+  const output = createReport(runs);
 
   return JSON.stringify(output, null, 2);
 };
