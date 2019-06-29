@@ -2,10 +2,14 @@ import {
   compose, withProps, withState,
 } from 'recompose';
 import { filter, sortBy } from 'lodash';
-import { FILE_TYPES, METRIC_TYPE_FILE_SIZE, getFileType } from '@bundle-stats/utils';
+import {
+  FILE_TYPES,
+  METRIC_TYPE_FILE_SIZE,
+  getFileType,
+  getAssetsMetrics,
+} from '@bundle-stats/utils';
 
 import { generateRows } from '../../utils/generate-rows';
-import getBundleAssetsById from './utils/get-assets-by-id';
 
 import {
   FILTER_ASSET,
@@ -123,7 +127,7 @@ const customSort = item => [
 ];
 
 const getRun = job => ({
-  data: getBundleAssetsById(getAssetRunData(job)),
+  data: getAssetsMetrics(getAssetRunData(job)),
   meta: job,
 });
 
