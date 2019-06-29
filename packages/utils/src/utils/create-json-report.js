@@ -1,8 +1,8 @@
 import { map } from 'lodash';
 
-import { createJobs } from '../jobs';
+import { createJobs } from '../jobs/create';
 import { getMetricChanged, mergeRunsById } from '../metrics';
-import { getStatsByMetrics } from '../stats';
+import { getStatsByMetrics } from '../stats/get-stats-by-metrics';
 import { getDelta, formatDelta } from './delta';
 import { getMetric } from './metrics';
 

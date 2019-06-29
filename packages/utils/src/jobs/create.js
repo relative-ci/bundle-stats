@@ -1,7 +1,9 @@
 import {
   get, last, reverse, set,
 } from 'lodash';
-import { createStats, createStatsSummary } from '../stats';
+
+import { createStats } from '../stats/create';
+import { createStatsSummary } from '../stats/create-summary';
 import { extractDataFromWebpackStats } from '../utils/extract-data';
 
 const RAW_DATA_IDS = [
