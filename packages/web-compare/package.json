@@ -92,7 +92,7 @@
     "eslint-loader": "2.1.2",
     "eslint-plugin-import": "2.18.0",
     "eslint-plugin-jest": "22.7.1",
-    "eslint-plugin-jsx-a11y": "6.2.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.14.2",
     "file-loader": "4.0.0",
     "html-webpack-plugin": "3.2.0",
