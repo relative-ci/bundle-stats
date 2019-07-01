@@ -87,7 +87,7 @@
     "cssnano": "4.1.10",
     "dotenv": "8.0.0",
     "eslint": "6.0.1",
-    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-airbnb": "17.1.1",
     "eslint-import-resolver-webpack": "0.11.1",
     "eslint-loader": "2.1.2",
     "eslint-plugin-import": "2.18.0",
