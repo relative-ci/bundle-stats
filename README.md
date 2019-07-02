@@ -3,9 +3,8 @@
 </p>
 <h1 align="center">Bundle Stats</h1>
 <p align="center">
-<strong>
-  Reports for bundle changes (assets, chunks, modules).
-</strong>
+  BundleStats is analyzing the webpack stats and is providing information about what changed and
+  what is going to be deployed.
 </p>
 <p align="center">
   <a href="https://www.npmjs.com/package/bundle-stats"><img src="https://img.shields.io/npm/v/bundle-stats.svg" /></a>
@@ -13,32 +12,28 @@
   <a href="https://travis-ci.org/bundle-stats/bundle-stats"><img alt="TravisCI badge" src="https://api.travis-ci.org/bundle-stats/bundle-stats.svg?branch=master"/></a>
   <img alt="Renovate" src="https://badges.renovateapi.com/github/bundle-stats/bundle-stats?v=1" />
 </p>
+<p align="center">
+- <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#totals"><strong>Bundle size</strong> and totals by file type(css, js, img, etc)</a><br />
+- <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#totals"><strong>Cache invalidation</strong>, Initial JS/CSS and other bundle specific metrics</a><br />
+- <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#assets"><strong>Assets</strong> report (entrypoint, initial, types, changed, delta)</a><br />
+- <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#modules"><strong>Modules</strong> report (changed, delta) by chunk</a><br />
+:star: <strong>Side by side comparison</strong> for multiple jobs
+</p>
 
 ## Table of Contents
-- [Features](#1-features)
-- [Webpack plugin](#2-webpack-plugin)
+- [Webpack plugin](#1-webpack-plugin)
   - [Install](#install)
   - [Webpack configuration](#webpack-configuration)
-- [CLI](#3-cli)
+- [CLI](#2-cli)
   - [Install as global dependency](#install-as-global-dependency)
   - [Install as dev dependency](#install-as-dev-dependency)
   - [Webpack configuration](#webpack-configuration-1)
   - [Usage](#usage)
-- [Standalone web application](#4-standalone-web-application)
-- [:zap: Running on CI](#5-zap-running-on-ci)
+- [Standalone web application](#3-standalone-web-application)
+- [:zap: Running on CI](#4-zap-running-on-ci)
+- [Packages](#5-packages)
 
-## 1. Features
-
-- Totals report - total bundle size and breakdown by asset category (css, js, img, etc)
-- Assets report - added, removed, changed, initial, entry points
-- Modules report - modules added/removed/changed by chunk
-- Side by side comparison between multiple jobs
-
-View demo reports:
-- [Single job](https://relative-ci.com/tools/webpack-bundle-stats/demo-single-job.html)
-- [Multiple jobs](https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html)
-
-## 2. Webpack plugin
+## 1. Webpack plugin
 
 ### Install
 
@@ -85,7 +80,7 @@ module.exports = {
   }
   ```
 
-## 3. CLI
+## 2. CLI
 
 ### Install as global
 
@@ -154,17 +149,22 @@ Reports saved:
 - ./dist/bundle-stats.json
 ```
 
-## 4. Standalone web application
+## 3. Standalone web application
 
 Use https://compare.relative-ci.com to compare Webpack/Lighthouse/Browsertime stats.
 
-[Read more](/packages/web-compare)
+[Read more](../web-compare)
 
-## 5. :zap: Running on CI
+## 4. :zap: Running on CI
+
+Continuous monitoring with BundleStats on CI:
+- Github Checks integration
+- support for all major CI services (Travis CI, Circle CI, Jenkins, Gitlab CI, Codeship, etc)
+- free for OpenSource
 
 [Read more about running BundleStats on CI (BETA)](https://relative-ci.com)
 
-## 6. Packages
+## 5. Packages
 
 ### [`bundle-stats`](/packages/cli)
 

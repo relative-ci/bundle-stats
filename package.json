@@ -1,7 +1,7 @@
 {
   "name": "@bundle-state/bundle-stats",
   "version": "1.0.0-rc.3",
-  "description": "In-depth reporting for bundle changes (assets, chunks, modules).",
+  "description": "In-depth reports for webpack bundles",
   "main": "index.js",
   "engines": {
     "node": ">= 8.0"
