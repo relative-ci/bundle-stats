@@ -126,4 +126,54 @@ export default {
       ],
     },
   ],
+  assets: [
+    {
+      key: 'main.css',
+      label: 'main.css',
+      changed: false,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 10000,
+          displayValue: '9.77KB',
+        },
+      ],
+    },
+    {
+      key: 'main.js',
+      label: 'main.js',
+      changed: false,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 50000,
+          displayValue: '48.83KB',
+        },
+      ],
+    },
+    {
+      key: 'logo.png',
+      label: 'logo.png',
+      changed: false,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 1000,
+          displayValue: '1000B',
+        },
+      ],
+    },
+    {
+      key: 'index.html',
+      label: 'index.html',
+      changed: false,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 2000,
+          displayValue: '1.95KB',
+        },
+      ],
+    },
+  ],
 };

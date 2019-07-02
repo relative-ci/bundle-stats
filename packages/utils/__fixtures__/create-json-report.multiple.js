@@ -189,4 +189,78 @@ export default {
       ],
     },
   ],
+  assets: [
+    {
+      key: 'main.css',
+      label: 'main.css',
+      changed: true,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 10000,
+          displayValue: '9.77KB',
+          delta: -9.09090909,
+          displayDelta: '-9.09%',
+        },
+        {
+          value: 11000,
+          displayValue: '10.74KB',
+        },
+      ],
+    },
+    {
+      key: 'main.js',
+      label: 'main.js',
+      changed: true,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 50000,
+          displayValue: '48.83KB',
+          delta: 2.04081633,
+          displayDelta: '+2.04%',
+        },
+        {
+          value: 49000,
+          displayValue: '47.85KB',
+        },
+      ],
+    },
+    {
+      key: 'logo.png',
+      label: 'logo.png',
+      changed: false,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 1000,
+          displayValue: '1000B',
+          delta: 0,
+          displayDelta: '0%',
+        },
+        {
+          value: 1000,
+          displayValue: '1000B',
+        },
+      ],
+    },
+    {
+      key: 'index.html',
+      label: 'index.html',
+      changed: false,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 2000,
+          displayValue: '1.95KB',
+          delta: 0,
+          displayDelta: '0%',
+        },
+        {
+          value: 2000,
+          displayValue: '1.95KB',
+        },
+      ],
+    },
+  ],
 };
