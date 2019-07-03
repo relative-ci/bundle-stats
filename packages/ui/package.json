@@ -55,7 +55,7 @@
     "css-loader": "3.0.0",
     "eslint": "6.0.1",
     "eslint-config-airbnb": "17.1.1",
-    "eslint-loader": "2.1.2",
+    "eslint-loader": "2.2.0",
     "eslint-plugin-import": "2.18.0",
     "eslint-plugin-jest": "22.7.1",
     "eslint-plugin-jsx-a11y": "6.2.3",
