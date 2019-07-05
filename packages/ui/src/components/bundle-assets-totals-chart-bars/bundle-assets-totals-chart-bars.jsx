@@ -96,7 +96,7 @@ export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
   const COLORS = getColors(jobs.length);
 
   return (
-    <Chart className={cx(className, css.chart)} title="File Type Totals By Bundle">
+    <Chart className={cx(className, css.chart)} title="Totals by job">
       <ResponsiveContainer {...RESPONSIVE_CONTAINER_PROPS}>
         <BarChart data={data}>
           <XAxis
