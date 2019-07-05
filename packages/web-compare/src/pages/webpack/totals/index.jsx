@@ -16,10 +16,10 @@ const Totals = (props) => {
       <Container>
         <Panels>
           <Box>
-            <BundleAssetsTotalsChartBars jobs={jobs} />
+            <BundleAssetsTotalsChartPie jobs={jobs} />
           </Box>
           <Box>
-            <BundleAssetsTotalsChartPie jobs={jobs} />
+            <BundleAssetsTotalsChartBars jobs={jobs} />
           </Box>
         </Panels>
       </Container>
