@@ -118,7 +118,7 @@ export const BundleAssetsTotalsChartPie = ({ className, jobs }) => {
   const COLORS = getColors(data.length);
 
   return (
-    <Chart className={cx(css.root, className)} title="Bundle By File Type">
+    <Chart className={cx(css.root, className)} title="Bundle by file type">
       <ResponsiveContainer {...RESPONSIVE_CONTAINER_PROPS}>
         <PieChart>
           <Legend
