@@ -31,7 +31,7 @@
 }
 
 .main {
-  padding: calc(2 * var(--space-medium)) 0 var(--space-large);
+  padding: 0 0 var(--space-large);
   min-height: calc(100vh - 86px);
 }
 
