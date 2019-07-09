@@ -263,4 +263,47 @@ export default {
       ],
     },
   ],
+  modules: [
+    {
+      chunkId: '1',
+      modules: [
+        {
+          key: 'module-a',
+          label: 'module-a',
+          changed: false,
+          biggerIsBetter: false,
+          runs: [
+            {
+              value: 1000,
+              displayValue: '1000B',
+              delta: 0,
+              displayDelta: '0%',
+            },
+            {
+              value: 1000,
+              displayValue: '1000B',
+            },
+          ],
+        },
+        {
+          key: 'module-b',
+          label: 'module-b',
+          changed: true,
+          biggerIsBetter: false,
+          runs: [
+            {
+              value: 2000,
+              displayValue: '1.95KB',
+              delta: 33.33333333,
+              displayDelta: '+33.33%',
+            },
+            {
+              value: 1500,
+              displayValue: '1.46KB',
+            },
+          ],
+        },
+      ],
+    },
+  ],
 };

@@ -176,4 +176,35 @@ export default {
       ],
     },
   ],
+  modules: [
+    {
+      chunkId: '1',
+      modules: [
+        {
+          key: 'module-a',
+          label: 'module-a',
+          changed: false,
+          biggerIsBetter: false,
+          runs: [
+            {
+              value: 1000,
+              displayValue: '1000B',
+            },
+          ],
+        },
+        {
+          key: 'module-b',
+          label: 'module-b',
+          changed: false,
+          biggerIsBetter: false,
+          runs: [
+            {
+              value: 2000,
+              displayValue: '1.95KB',
+            },
+          ],
+        },
+      ],
+    },
+  ],
 };
