@@ -1,4 +1,6 @@
-import { get, map } from 'lodash';
+import {
+  flatMap, get, map, uniq,
+} from 'lodash';
 
 import { METRIC_TYPE_FILE_SIZE } from '../config/metrics';
 import { createJobs } from '../jobs/create';
@@ -7,6 +9,7 @@ import { getStatsByMetrics } from '../stats/get-stats-by-metrics';
 import { getDelta, formatDelta } from './delta';
 import { getMetric } from './metrics';
 import { getAssetsMetrics } from './get-assets-metrics';
+import { getModulesMetrics } from './get-modules-metrics';
 
 const SIZE_METRICS = [
   'webpack.assets.totalSizeByTypeJS',
@@ -58,12 +61,17 @@ export const createRuns = jobs => jobs.map(({ internalBuildNumber, stats, rawDat
   },
   sizes: getStatsByMetrics(stats, SIZE_METRICS),
   assets: getAssetsMetrics(get(rawData, 'webpack.stats.assets')),
+  modules: getModulesMetrics(get(rawData, 'webpack.stats.modules')),
 }));
 
 export const createReport = runs => ({
   runs: map(runs, 'meta'),
   sizes: addMetricsData(mergeRunsById(map(runs, 'sizes'))),
   assets: addMetricsData(mergeRunsById(map(runs, 'assets')), METRIC_TYPE_FILE_SIZE),
+  modules: map(uniq(flatMap(runs, ({ modules }) => Object.keys(modules))), chunkId => ({
+    chunkId,
+    modules: addMetricsData(mergeRunsById(map(runs, run => get(run, ['modules', chunkId, 'modules']))), METRIC_TYPE_FILE_SIZE),
+  })),
 });
 
 export const createJSONReport = (sources) => {
