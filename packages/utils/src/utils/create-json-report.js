@@ -4,12 +4,11 @@ import {
 
 import { METRIC_TYPE_FILE_SIZE } from '../config/metrics';
 import { createJobs } from '../jobs/create';
-import { getMetricChanged, mergeRunsById } from '../metrics';
+import { getMetricChanged, getMetricType, mergeRunsById } from '../metrics';
 import { getStatsByMetrics } from '../stats/get-stats-by-metrics';
 import { getAssetsMetrics } from '../assets/get-assets-metrics';
 import { getModulesMetrics } from '../modules/get-modules-metrics';
 import { getDelta, formatDelta } from './delta';
-import { getMetric } from './metrics';
 
 const SIZE_METRICS = [
   'webpack.assets.totalSizeByTypeJS',
@@ -26,7 +25,7 @@ const SIZE_METRICS = [
 
 export const addMetricsData = (entries, metricType) => entries.map((entry) => {
   const { runs } = entry;
-  const { biggerIsBetter, label, formatter } = getMetric(entry.key, metricType);
+  const { biggerIsBetter, label, formatter } = getMetricType(entry.key, metricType);
 
   return {
     ...entry,
