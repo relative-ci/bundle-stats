@@ -6,7 +6,7 @@ import {
 import {
   getMetricChanged, getMetricAdded, getMetricDeleted, mergeRunsById,
 } from '../metrics';
-import { getAssetsMetrics } from '../utils/get-assets-metrics';
+import { getAssetsMetrics } from '../assets/get-assets-metrics';
 
 export const generateWebpackTotals = key => (_, rawData) => {
   const totals = calculateTotals(get(rawData, 'webpack.stats.assets'));
