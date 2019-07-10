@@ -7,9 +7,9 @@ import { createJobs } from '../jobs/create';
 import { getMetricChanged, mergeRunsById } from '../metrics';
 import { getStatsByMetrics } from '../stats/get-stats-by-metrics';
 import { getAssetsMetrics } from '../assets/get-assets-metrics';
+import { getModulesMetrics } from '../modules/get-modules-metrics';
 import { getDelta, formatDelta } from './delta';
 import { getMetric } from './metrics';
-import { getModulesMetrics } from './get-modules-metrics';
 
 const SIZE_METRICS = [
   'webpack.assets.totalSizeByTypeJS',
