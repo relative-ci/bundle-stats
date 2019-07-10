@@ -6,9 +6,9 @@ import { METRIC_TYPE_FILE_SIZE } from '../config/metrics';
 import { createJobs } from '../jobs/create';
 import { getMetricChanged, mergeRunsById } from '../metrics';
 import { getStatsByMetrics } from '../stats/get-stats-by-metrics';
+import { getAssetsMetrics } from '../assets/get-assets-metrics';
 import { getDelta, formatDelta } from './delta';
 import { getMetric } from './metrics';
-import { getAssetsMetrics } from './get-assets-metrics';
 import { getModulesMetrics } from './get-modules-metrics';
 
 const SIZE_METRICS = [
