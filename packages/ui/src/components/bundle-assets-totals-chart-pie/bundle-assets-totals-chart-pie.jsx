@@ -5,7 +5,7 @@ import {
   omit, floor, sortBy,
 } from 'lodash';
 import {
-  getMetric, formatFileSize, mergeRunsById,
+  getMetricType, formatFileSize, mergeRunsById,
 } from '@bundle-stats/utils';
 
 import {
@@ -23,7 +23,7 @@ import {
 } from '../chart';
 import css from './bundle-assets-totals-chart-pie.module.css';
 
-const getMetricLabel = key => getMetric(key).label;
+const getMetricLabel = key => getMetricType(key).label;
 
 const TooltipContent = ({ active, payload }) => {
   if (!active) {

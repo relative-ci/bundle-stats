@@ -1,9 +1,9 @@
 import { omit } from 'lodash';
 
-import { getMetric } from '../metrics';
+import { getMetricType } from '../get-metric-type';
 
 test('getMetric', () => {
-  expect(omit(getMetric('webpack.assets.totalSizeByTypeALL'), ['formatter'])).toEqual(omit({
+  expect(omit(getMetricType('webpack.assets.totalSizeByTypeALL'), ['formatter'])).toEqual(omit({
     label: 'Total Size',
     type: 'METRIC_TYPE_FILE_SIZE',
     biggerIsBetter: false,

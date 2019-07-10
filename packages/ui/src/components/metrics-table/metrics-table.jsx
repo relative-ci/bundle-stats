@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { getMetric } from '@bundle-stats/utils';
+import { getMetricType } from '@bundle-stats/utils';
 
 import { Table } from '../../ui/table';
 import { Metric } from '../metric';
@@ -53,7 +53,7 @@ const getRows = (rows, renderRowHeader) => rows.map((row) => {
     changed,
     runs,
   } = row;
-  const metric = getMetric(key, type);
+  const metric = getMetricType(key, type);
 
   return {
     options: {

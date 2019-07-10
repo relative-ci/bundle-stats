@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { omit, sortBy } from 'lodash';
 import {
-  getMetric, formatFileSize, mergeRunsById,
+  getMetricType, formatFileSize, mergeRunsById,
 } from '@bundle-stats/utils';
 
 import {
@@ -23,7 +23,7 @@ import {
 } from '../chart';
 import css from './bundle-assets-totals-chart-bars.module.css';
 
-const getMetricLabel = key => getMetric(key).label;
+const getMetricLabel = key => getMetricType(key).label;
 
 const TooltipContent = ({ active, payload }) => {
   if (!active) {
