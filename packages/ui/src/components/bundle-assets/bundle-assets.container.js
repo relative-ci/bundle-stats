@@ -1,15 +1,15 @@
 import {
   compose, withProps, withState,
 } from 'recompose';
-import { filter, sortBy } from 'lodash';
+import { get, filter, sortBy } from 'lodash';
 import {
   FILE_TYPES,
   METRIC_TYPE_FILE_SIZE,
+  addMetricsData,
   getFileType,
   getAssetsMetrics,
+  mergeRunsById,
 } from '@bundle-stats/utils';
-
-import { generateRows } from '../../utils/generate-rows';
 
 import {
   FILTER_ASSET,
@@ -19,45 +19,18 @@ import {
   FILTER_INITIAL,
 } from './bundle-assets.constants';
 
-const getAssetRunData = (job) => {
-  if (!job) {
-    return [];
-  }
+const addRowFlags = ({ items }) => {
+  const updatedItems = items.map((item) => {
+    const { runs } = item;
 
-  const { assets = [], entrypoints = {}, chunks = {} } = job.rawData.webpack.stats;
-  const entryItems = Object.values(entrypoints)
-    .map(({ assets: items }) => items)
-    .flat();
-  const initialItems = Object.values(chunks)
-    .filter(({ initial }) => initial)
-    .map(({ files }) => files)
-    .flat();
-  const chunkItems = Object.values(chunks)
-    .filter(({ entry, initial }) => !entry && !initial)
-    .map(({ files }) => files)
-    .flat();
-
-  return assets.map(asset => ({
-    ...asset,
-    isEntry: entryItems.includes(asset.name),
-    isInitial: initialItems.includes(asset.name),
-    isChunk: chunkItems.includes(asset.name),
-    type: METRIC_TYPE_FILE_SIZE,
-  }));
-};
-
-const addRowFlags = ({ rows }) => {
-  const updatedRows = rows.map((row) => {
-    const { runs } = row;
-
-    const isEntry = runs.map(run => run.isEntry).includes(true);
-    const isInitial = runs.map(run => run.isInitial).includes(true);
-    const isChunk = runs.map(run => run.isChunk).includes(true);
+    const isEntry = runs.map(run => run && run.isEntry).includes(true);
+    const isInitial = runs.map(run => run && run.isInitial).includes(true);
+    const isChunk = runs.map(run => run && run.isChunk).includes(true);
 
     const isAsset = !(isEntry || isInitial || isChunk);
 
     return {
-      ...row,
+      ...item,
       isEntry,
       isInitial,
       isChunk,
@@ -66,7 +39,7 @@ const addRowFlags = ({ rows }) => {
   });
 
   return {
-    rows: updatedRows,
+    items: updatedItems,
   };
 };
 
@@ -80,7 +53,9 @@ const getIsNotPredictive = (key, runs) => runs.reduce((agg, current, index) => {
   }
 
   if (
-    current.delta !== 0
+    current
+    && runs[index + 1]
+    && current.delta !== 0
     && ((key !== current.name) && (current.name === runs[index + 1].name))
   ) {
     return true;
@@ -89,10 +64,10 @@ const getIsNotPredictive = (key, runs) => runs.reduce((agg, current, index) => {
   return agg;
 }, false);
 
-const addRowIsNotPredictive = ({ rows }) => ({
-  rows: rows.map(row => ({
-    ...row,
-    isNotPredictive: getIsNotPredictive(row.key, row.runs),
+const addRowIsNotPredictive = ({ items }) => ({
+  items: items.map(item => ({
+    ...item,
+    isNotPredictive: getIsNotPredictive(item.key, item.runs),
   })),
 });
 
@@ -126,11 +101,6 @@ const customSort = item => [
   item.key,
 ];
 
-const getRun = job => ({
-  data: getAssetsMetrics(getAssetRunData(job)),
-  meta: job,
-});
-
 const getFileTypeFilters = (value = true) => FILE_TYPES.reduce((agg, fileTypeFilter) => ({
   ...agg,
   [`fileTypes.${fileTypeFilter}`]: value,
@@ -148,12 +118,20 @@ const getEntryTypeFilters = (value = true) => [
 
 export const enhance = compose(
   withProps(({ jobs }) => {
-    const runs = jobs.map(getRun);
-    const rows = generateRows(runs);
+    const runs = jobs.map(job => ({ meta: job }));
+    const assets = jobs.map(job => getAssetsMetrics(
+      get(job, 'rawData.webpack.stats.assets', []),
+      {
+        chunks: get(job, 'rawData.webpack.stats.chunks', []),
+        entrypoints: get(job, 'rawData.webpack.stats.entrypoints', {}),
+      },
+    ));
+
+    const items = addMetricsData(mergeRunsById(assets), METRIC_TYPE_FILE_SIZE);
 
     return {
       runs,
-      rows,
+      items,
     };
   }),
 
@@ -167,8 +145,8 @@ export const enhance = compose(
     ...getFileTypeFilters(true),
   })),
 
-  withProps(({ rows, filters }) => ({
-    totalRowCount: rows.length,
-    rows: sortBy(filter(rows, getRowFilter(filters)), customSort),
+  withProps(({ items, filters }) => ({
+    totalRowCount: items.length,
+    items: sortBy(filter(items, getRowFilter(filters)), customSort),
   })),
 );

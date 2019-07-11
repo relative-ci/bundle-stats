@@ -1,7 +1,6 @@
-import { compose, mapProps } from 'recompose';
-import { get } from 'lodash';
-
-import withMetrics from '../../hocs/with-metrics';
+import { compose, withProps } from 'recompose';
+import { get, map } from 'lodash';
+import { addMetricsData, mergeRunsById } from '@bundle-stats/utils';
 
 const METRICS = {
   'browsertime.firstPaint': 'statistics.timings.firstPaint.median',
@@ -27,10 +26,8 @@ const METRICS = {
   'browsertime.visualComplete99': 'statistics.visualMetrics.VisualComplete99.median',
 };
 
-const getBrowsertimeData = (job) => {
-  const data = get(job, 'rawData.browsertime');
-
-  if (!data) {
+const getBrowsertimeMetrics = (browsertime) => {
+  if (!browsertime) {
     return {};
   }
 
@@ -38,21 +35,23 @@ const getBrowsertimeData = (job) => {
     .reduce((agg, [metricKey, metricPath]) => ({
       ...agg,
       [metricKey]: {
-        value: get(data, metricPath, 0),
+        value: get(browsertime, metricPath, 0),
       },
     }), {});
 };
 
-const getRun = job => ({
-  data: getBrowsertimeData(job),
-  meta: job,
-});
-
 export const enhance = compose(
-  mapProps(({ jobs, ...restProps }) => ({
-    ...restProps,
-    runs: jobs.map(getRun),
-  })),
+  withProps(({ jobs }) => {
+    const runs = jobs.map(job => ({
+      meta: job,
+      browsertime: getBrowsertimeMetrics(get(job, 'rawData.browsertime')),
+    }));
 
-  withMetrics(),
+    const items = addMetricsData(mergeRunsById(map(runs, 'browsertime')));
+
+    return {
+      runs,
+      items,
+    };
+  }),
 );

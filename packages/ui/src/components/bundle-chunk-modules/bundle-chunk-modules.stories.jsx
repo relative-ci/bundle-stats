@@ -1,5 +1,7 @@
 import React from 'react';
+import { get } from 'lodash';
 import { storiesOf } from '@storybook/react';
+import { getModulesMetrics, getModulesReport } from '@bundle-stats/utils';
 
 import currentData from '../../../__mocks__/job.current.json';
 import baselineData from '../../../__mocks__/job.baseline.json';
@@ -18,23 +20,64 @@ const baselineJob = {
 const stories = storiesOf('Components/BundleChunkModules', module);
 stories.addDecorator(getWrapperDecorator());
 
+const RUNS_DEFAULT = [
+  currentJob,
+].map(job => ({
+  meta: job,
+  modules: getModulesMetrics(
+    get(job, 'rawData.webpack.stats.modules', []),
+    {
+      chunks: get(job, 'rawData.webpack.stats.chunks', []),
+    },
+  ),
+}));
+
 stories.add('default', () => (
   <BundleChunkModules
     title="vendor (id: 1)"
-    jobs={[ currentJob ]}
+    runs={RUNS_DEFAULT}
+    modules={getModulesReport(RUNS_DEFAULT)[1].modules}
   />
 ));
+
+const RUNS_MULTIPLE = [
+  currentJob,
+  baselineJob,
+].map(job => ({
+  meta: job,
+  modules: getModulesMetrics(
+    get(job, 'rawData.webpack.stats.modules', []),
+    {
+      chunks: get(job, 'rawData.webpack.stats.chunks', []),
+    },
+  ),
+}));
 
 stories.add('multiple jobs', () => (
   <BundleChunkModules
     title="vendor (id: 1)"
-    jobs={[ currentJob, baselineJob ]}
+    runs={RUNS_MULTIPLE}
+    modules={getModulesReport(RUNS_MULTIPLE)[1].modules}
   />
 ));
+
+const RUNS_EMPTY_BASELINE = [
+  currentJob,
+  null,
+].map(job => ({
+  meta: job,
+  modules: getModulesMetrics(
+    get(job, 'rawData.webpack.stats.modules', []),
+    {
+      chunks: get(job, 'rawData.webpack.stats.chunks', []),
+    },
+  ),
+}));
 
 stories.add('empty baseline', () => (
   <BundleChunkModules
     title="vendor (id: 1)"
-    jobs={[ currentJob, null ]}
+    runs={RUNS_EMPTY_BASELINE}
+    modules={getModulesReport(RUNS_EMPTY_BASELINE)[1].modules}
   />
 ));

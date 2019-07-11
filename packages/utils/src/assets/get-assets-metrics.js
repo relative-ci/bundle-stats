@@ -9,10 +9,10 @@ const IGNORE_PATTERN = /\.map$/;
  */
 export const getAssetsMetrics = (assets = [], data) => {
   const chunks = get(data, 'chunks', []);
+  const entrypoints = get(data, 'entrypoints', {});
 
-  const entryItems = Object.values(chunks)
-    .filter(({ entry }) => entry)
-    .map(({ files }) => files)
+  const entryItems = Object.values(entrypoints)
+    .map(({ assets: items }) => items)
     .flat();
 
   const initialItems = Object.values(chunks)

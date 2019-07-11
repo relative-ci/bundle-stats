@@ -37,7 +37,7 @@ export const BrowsertimeTable = (props) => {
   const {
     className,
     runs,
-    rows,
+    items,
   } = props;
 
   const labeledRuns = runs.map(getRunLabel);
@@ -46,7 +46,7 @@ export const BrowsertimeTable = (props) => {
     <MetricsTable
       className={className}
       runs={labeledRuns}
-      rows={rows}
+      items={items}
     />
   );
 };
@@ -54,11 +54,11 @@ export const BrowsertimeTable = (props) => {
 BrowsertimeTable.defaultProps = {
   className: '',
   runs: [],
-  rows: [],
+  items: [],
 };
 
 BrowsertimeTable.propTypes = {
   className: PropTypes.string,
   runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
-  rows: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  items: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };

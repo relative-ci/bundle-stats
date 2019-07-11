@@ -1,9 +1,8 @@
-import { compose, mapProps } from 'recompose';
+import { compose, withProps } from 'recompose';
 import {
   get, map, mean, round,
 } from 'lodash';
-
-import withMetrics from '../../hocs/with-metrics';
+import { addMetricsData, mergeRunsById } from '@bundle-stats/utils';
 
 const getScore = (res) => {
   const scores = map(res.reportCategories, 'score');
@@ -20,9 +19,7 @@ const METRICS = {
   'lighthouse.domSize': 'audits.dom-size.rawValue',
 };
 
-const getLighthouseData = (job) => {
-  const data = get(job, 'rawData.lighthouse');
-
+const getLighthouseMetrics = (data) => {
   if (!data) {
     return {};
   }
@@ -36,16 +33,18 @@ const getLighthouseData = (job) => {
     }), {});
 };
 
-const getRun = job => ({
-  data: getLighthouseData(job),
-  meta: job,
-});
-
 export const enhance = compose(
-  mapProps(({ jobs, ...restProps }) => ({
-    ...restProps,
-    runs: jobs.map(getRun),
-  })),
+  withProps(({ jobs }) => {
+    const runs = jobs.map(job => ({
+      meta: job,
+      lighthouse: getLighthouseMetrics(get(job, 'rawData.lighthouse')),
+    }));
 
-  withMetrics(),
+    const items = addMetricsData(mergeRunsById(map(runs, 'lighthouse')));
+
+    return {
+      runs,
+      items,
+    };
+  }),
 );
