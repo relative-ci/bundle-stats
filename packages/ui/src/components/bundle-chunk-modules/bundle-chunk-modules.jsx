@@ -10,38 +10,35 @@ import { JobName } from '../job-name';
 import { MetricsTable } from '../metrics-table';
 import css from './bundle-chunk-modules.module.css';
 
-const getRenderRowHeader = labels => (metric, row) => {
-  const { label } = metric;
+const getRenderRowHeader = labels => row => (
+  <Tooltip
+    title={(
+      <div className={css.nameTooltip}>
+        {row.runs.map((run, index) => {
+          const key = index;
 
-  return (
-    <Tooltip
-      title={(
-        <div className={css.nameTooltip}>
-          {row.runs.map((run, index) => {
-            const key = `${run.name}-${index}`;
-
-            return (
-              <React.Fragment key={key}>
-                <h6>{labels[index]}</h6>
-                <FileName
-                  className={css.nameTooltipText}
-                  key={key}
-                  name={run.name}
-                />
-              </React.Fragment>
-            );
-          })}
-        </div>
+          return (
+            <React.Fragment key={key}>
+              <h6>{labels[index]}</h6>
+              {run && run.name && (
+              <FileName
+                className={css.nameTooltipText}
+                name={run.name}
+              />
+              )}
+            </React.Fragment>
+          );
+        })}
+      </div>
       )}
-      align="topLeft"
-    >
-      <FileName
-        className={css.name}
-        name={label}
-      />
-    </Tooltip>
-  );
-};
+    align="topLeft"
+  >
+    <FileName
+      className={css.name}
+      name={row.label}
+    />
+  </Tooltip>
+);
 
 const getRunLabel = (run, index, runs) => {
   const internalBuildNumber = get(run, 'meta.internalBuildNumber');
@@ -71,8 +68,8 @@ const getRunLabel = (run, index, runs) => {
 export const BundleChunkModules = ({
   className,
   title,
-  rows,
   runs,
+  modules,
   totalRowsCount,
   updateFilters,
   filters,
@@ -96,13 +93,13 @@ export const BundleChunkModules = ({
               disabled: runs.length <= 1,
             },
           }}
-          label={`Filters (${rows.length}/${totalRowsCount})`}
+          label={`Filters (${modules.length}/${totalRowsCount})`}
           onChange={updateFilters}
         />
       </header>
       <MetricsTable
         className={css.table}
-        rows={rows}
+        items={modules}
         runs={labeledRuns}
         renderRowHeader={getRenderRowHeader(map(labeledRuns, 'name'))}
       />
@@ -113,7 +110,7 @@ export const BundleChunkModules = ({
 BundleChunkModules.defaultProps = {
   className: '',
   title: '',
-  rows: [],
+  modules: [],
   runs: [],
   totalRowsCount: 0,
 };
@@ -126,7 +123,7 @@ BundleChunkModules.propTypes = {
   title: PropTypes.string,
 
   /** Rows data */
-  rows: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  modules: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 
   /** Runs data */
   runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types

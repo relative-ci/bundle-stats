@@ -39,6 +39,10 @@ export const addMetricsData = (entries, metricType) => entries.map((entry) => {
 
     // Runs
     runs: runs.map((run, index) => {
+      if (!run || typeof run.value === 'undefined') {
+        return null;
+      }
+
       const { value, ...restRun } = run;
       const delta = (index < runs.length - 1) ? getDelta(runs[index + 1], run) : null;
 

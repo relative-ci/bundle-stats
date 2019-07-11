@@ -84,13 +84,13 @@ TooltipNotPredictive.propTypes = {
 
 const TooltipFilename = ({ runs, labels }) => (
   <div className={css.tooltipFilename}>
-    {runs.map(({ name }, index) => {
+    {runs.map((run, index) => {
       const key = index;
 
       return (
         <React.Fragment key={key}>
           <h6>{labels[index]}</h6>
-          {name ? <FileName name={name} /> : '-'}
+          {(run && run.name) ? <FileName name={run.name} /> : '-'}
         </React.Fragment>
       );
     })}
@@ -107,12 +107,12 @@ TooltipFilename.propTypes = {
   labels: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };
 
-const getRenderRowHeader = labels => (metric, row) => (
+const getRenderRowHeader = labels => item => (
   <React.Fragment>
-    {row.isNotPredictive && (
+    {item.isNotPredictive && (
       <Tooltip
         className={css.notPredictive}
-        title={<TooltipNotPredictive runs={row.runs} />}
+        title={<TooltipNotPredictive runs={item.runs} />}
         align="topLeft"
       >
         <span className={cx('ui-icon ui-icon--small', css.notPredictiveIcon)}>
@@ -120,7 +120,7 @@ const getRenderRowHeader = labels => (metric, row) => (
         </span>
       </Tooltip>
     )}
-    {row.isEntry && (
+    {item.isEntry && (
       <span
         title="Entrypoint"
         className={css.flagEntry}
@@ -128,7 +128,7 @@ const getRenderRowHeader = labels => (metric, row) => (
         e
       </span>
     )}
-    {row.isInitial && (
+    {item.isInitial && (
       <span
         title="Initial"
         className={css.flagInitial}
@@ -136,7 +136,7 @@ const getRenderRowHeader = labels => (metric, row) => (
         i
       </span>
     )}
-    {row.isChunk && (
+    {item.isChunk && (
       <span
         title="Chunk"
         className={css.flagChunk}
@@ -144,13 +144,14 @@ const getRenderRowHeader = labels => (metric, row) => (
         c
       </span>
     )}
+
     <Tooltip
       title={(
-        <TooltipFilename runs={row.runs} labels={labels} />
+        <TooltipFilename runs={item.runs} labels={labels} />
       )}
       align="topLeft"
     >
-      <FileName name={metric.label} />
+      <FileName name={item.label} />
     </Tooltip>
   </React.Fragment>
 );
@@ -159,7 +160,7 @@ export const BundleAssets = (props) => {
   const {
     className,
     runs,
-    rows,
+    items,
     updateFilters,
     totalRowCount,
     filters,
@@ -203,14 +204,14 @@ export const BundleAssets = (props) => {
             },
           }}
           className={css.filters}
-          label={`Filters (${rows.length}/${totalRowCount})`}
+          label={`Filters (${items.length}/${totalRowCount})`}
           onChange={updateFilters}
         />
       </header>
       <main>
         <MetricsTable
           runs={labeledRuns}
-          rows={rows}
+          items={items}
           renderRowHeader={getRenderRowHeader(map(labeledRuns, 'name'))}
         />
       </main>
@@ -220,15 +221,22 @@ export const BundleAssets = (props) => {
 
 BundleAssets.defaultProps = {
   className: '',
-  runs: [],
-  rows: [],
   totalRowCount: 0,
 };
 
 BundleAssets.propTypes = {
   className: PropTypes.string,
-  runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
-  rows: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  runs: PropTypes.arrayOf(PropTypes.shape({
+    internalBuildNumber: PropTypes.number,
+  })).isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    key: PropTypes.string,
+    label: PropTypes.string,
+    runs: PropTypes.arrayOf({
+      displayValue: PropTypes.string,
+      displayDelta: PropTypes.string,
+    }),
+  })).isRequired,
   updateFilters: PropTypes.func.isRequired,
   totalRowCount: PropTypes.number,
   filters: PropTypes.shape({

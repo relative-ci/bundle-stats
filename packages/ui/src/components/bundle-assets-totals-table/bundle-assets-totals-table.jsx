@@ -38,15 +38,15 @@ const getRun = (job, index) => {
 
 export const BundleAssetsTotalsTable = ({ className, jobs }) => {
   const runs = jobs.map(getRun);
-  const rows = addMetricsData(mergeRunsById(
+  const items = addMetricsData(mergeRunsById(
     map(jobs, job => getStatsByMetrics(get(job, 'stats', {}), METRICS)),
   ));
 
   return (
     <MetricsTable
       className={className}
-      rows={rows}
       runs={runs}
+      items={items}
     />
   );
 };

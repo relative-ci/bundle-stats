@@ -13,7 +13,7 @@
     "lint": "eslint . --ext .jsx,.js --cache --cache-location ./node_modules/.eslintcache",
     "prepublishOnly": "npm run build",
     "test": "npm run test:unit && npm run test:storyshots",
-    "test:unit": "jest src",
+    "test:unit": "jest src --passWithNoTests",
     "test:storyshots": "jest build/storybook "
   },
   "repository": {

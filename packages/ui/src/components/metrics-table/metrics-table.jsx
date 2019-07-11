@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { getMetricType } from '@bundle-stats/utils';
 
 import { Table } from '../../ui/table';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
 import styles from './metrics-table.module.css';
 
-const generateHeaderCell = (run, index) => ({
-  text: run.label,
+const generateHeaderCell = (item, index, runs) => ({
+  text: (item && item.label)
+    || (item && item.meta && item.meta.internalBuildNumber && `Run #${item.meta.internalBuildNumber}`)
+    || (item && `Run #${runs.length - index}`)
+    || '-',
   options: {
     classNames: cx(styles.value, index ? styles.baseline : styles.current),
   },
@@ -28,32 +30,31 @@ const getHeaders = runs => [
   ...runs.map(generateHeaderCell),
 ];
 
-const generateRowCells = metric => (run) => {
-  if (!run.value) {
+const generateRowCell = ({ biggerIsBetter }) => (item) => {
+  if (!item || !item.value) {
     return '-';
   }
 
+  const {
+    displayValue, delta, displayDelta,
+  } = item;
+
+
   return (
-    <Metric value={run.value} formatter={metric.formatter}>
-      {run.delta ? (
+    <Metric value={displayValue}>
+      {delta ? (
         <Delta
-          value={run.delta}
-          displayValue={run.displayDelta}
-          biggerIsBetter={metric.biggerIsBetter}
+          value={delta}
+          displayValue={displayDelta}
+          biggerIsBetter={biggerIsBetter}
         />
       ) : null}
     </Metric>
   );
 };
 
-const getRows = (rows, renderRowHeader) => rows.map((row) => {
-  const {
-    key,
-    type,
-    changed,
-    runs,
-  } = row;
-  const metric = getMetricType(key, type);
+const getRows = (runs, items, renderRowHeader) => items.map((item) => {
+  const { biggerIsBetter, changed } = item;
 
   return {
     options: {
@@ -61,32 +62,41 @@ const getRows = (rows, renderRowHeader) => rows.map((row) => {
     },
     cells: [
       // Metric name
-      renderRowHeader(metric, row),
+      renderRowHeader(item),
 
-      // Metric run values
-      ...runs.map(generateRowCells(metric)),
+      // Metric item values
+      ...item.runs.map(generateRowCell({ biggerIsBetter })),
     ],
   };
 });
 
 export const MetricsTable = ({
-  className, renderRowHeader, runs, rows,
+  className, renderRowHeader, runs, items,
 }) => (
   <Table
     className={cx(styles.root, className, (runs.length > 1) && styles.multipleRuns)}
     headers={getHeaders(runs)}
-    rows={getRows(rows, renderRowHeader)}
+    rows={getRows(runs, items, renderRowHeader)}
   />
 );
 
 MetricsTable.defaultProps = {
   className: '',
-  renderRowHeader: row => row.label,
+  renderRowHeader: item => item.label,
 };
 
 MetricsTable.propTypes = {
   className: PropTypes.string,
   renderRowHeader: PropTypes.func,
-  runs: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
-  rows: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
+  runs: PropTypes.arrayOf(PropTypes.shape({
+    internalBuildNumber: PropTypes.number,
+  })).isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    key: PropTypes.string,
+    label: PropTypes.string,
+    runs: PropTypes.arrayOf({
+      displayValue: PropTypes.string,
+      displayDelta: PropTypes.string,
+    }),
+  })).isRequired,
 };
