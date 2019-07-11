@@ -197,7 +197,7 @@ export default {
       biggerIsBetter: false,
       runs: [
         {
-          name: 'main.css',
+          name: 'main.a1b2c3.css',
           isEntry: true,
           isInitial: true,
           isChunk: false,
@@ -207,7 +207,7 @@ export default {
           displayDelta: '-9.09%',
         },
         {
-          name: 'main.css',
+          name: 'main.b1c2d3.css',
           isEntry: true,
           isInitial: true,
           isChunk: false,
@@ -223,7 +223,7 @@ export default {
       biggerIsBetter: false,
       runs: [
         {
-          name: 'main.js',
+          name: 'main.a2b3c4.js',
           isEntry: true,
           isInitial: true,
           isChunk: false,
@@ -233,7 +233,7 @@ export default {
           displayDelta: '+2.04%',
         },
         {
-          name: 'main.js',
+          name: 'main.b2c3d5.js',
           isEntry: true,
           isInitial: true,
           isChunk: false,
@@ -249,7 +249,7 @@ export default {
       biggerIsBetter: false,
       runs: [
         {
-          name: 'logo.png',
+          name: 'logo.a3b4c5.png',
           isEntry: false,
           isInitial: false,
           isChunk: false,
@@ -259,7 +259,7 @@ export default {
           displayDelta: '0%',
         },
         {
-          name: 'logo.png',
+          name: 'logo.a3b4c5.png',
           isEntry: false,
           isInitial: false,
           isChunk: false,

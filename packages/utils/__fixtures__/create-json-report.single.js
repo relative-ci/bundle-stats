@@ -134,7 +134,7 @@ export default {
       biggerIsBetter: false,
       runs: [
         {
-          name: 'main.css',
+          name: 'main.a1b2c3.css',
           isEntry: true,
           isInitial: true,
           isChunk: false,
@@ -150,7 +150,7 @@ export default {
       biggerIsBetter: false,
       runs: [
         {
-          name: 'main.js',
+          name: 'main.a2b3c4.js',
           isEntry: true,
           isInitial: true,
           isChunk: false,
@@ -166,7 +166,7 @@ export default {
       biggerIsBetter: false,
       runs: [
         {
-          name: 'logo.png',
+          name: 'logo.a3b4c5.png',
           isEntry: false,
           isInitial: false,
           isChunk: false,
