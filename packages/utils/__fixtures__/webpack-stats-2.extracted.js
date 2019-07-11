@@ -1,15 +1,15 @@
 module.exports = {
   assets: [
     {
-      name: 'main.css',
+      name: 'main.b1c2d3.css',
       size: 11000,
     },
     {
-      name: 'main.js',
+      name: 'main.b2c3d5.js',
       size: 49000,
     },
     {
-      name: 'logo.png',
+      name: 'logo.a3b4c5.png',
       size: 1000,
     },
     {
@@ -23,8 +23,8 @@ module.exports = {
       id: 1,
       initial: true,
       files: [
-        'main.css',
-        'main.js',
+        'main.b1c2d3.css',
+        'main.b2c3d5.js',
       ],
       names: ['main'],
     },
@@ -32,10 +32,10 @@ module.exports = {
   entrypoints: {
     main: {
       assets: [
-        'main.css',
-        'main.css.map',
-        'main.js',
-        'main.js.map',
+        'main.b1c2d3.css',
+        'main.b1c2d3.css.map',
+        'main.b2c3d5.js',
+        'main.b2c3d5.js.map',
       ],
     },
   },
