@@ -197,12 +197,20 @@ export default {
       biggerIsBetter: false,
       runs: [
         {
+          name: 'main.css',
+          isEntry: true,
+          isInitial: true,
+          isChunk: false,
           value: 10000,
           displayValue: '9.77KB',
           delta: -9.09090909,
           displayDelta: '-9.09%',
         },
         {
+          name: 'main.css',
+          isEntry: true,
+          isInitial: true,
+          isChunk: false,
           value: 11000,
           displayValue: '10.74KB',
         },
@@ -215,12 +223,20 @@ export default {
       biggerIsBetter: false,
       runs: [
         {
+          name: 'main.js',
+          isEntry: true,
+          isInitial: true,
+          isChunk: false,
           value: 50000,
           displayValue: '48.83KB',
           delta: 2.04081633,
           displayDelta: '+2.04%',
         },
         {
+          name: 'main.js',
+          isEntry: true,
+          isInitial: true,
+          isChunk: false,
           value: 49000,
           displayValue: '47.85KB',
         },
@@ -233,12 +249,20 @@ export default {
       biggerIsBetter: false,
       runs: [
         {
+          name: 'logo.png',
+          isEntry: false,
+          isInitial: false,
+          isChunk: false,
           value: 1000,
           displayValue: '1000B',
           delta: 0,
           displayDelta: '0%',
         },
         {
+          name: 'logo.png',
+          isEntry: false,
+          isInitial: false,
+          isChunk: false,
           value: 1000,
           displayValue: '1000B',
         },
@@ -251,12 +275,20 @@ export default {
       biggerIsBetter: false,
       runs: [
         {
+          name: 'index.html',
+          isEntry: false,
+          isInitial: false,
+          isChunk: false,
           value: 2000,
           displayValue: '1.95KB',
           delta: 0,
           displayDelta: '0%',
         },
         {
+          name: 'index.html',
+          isEntry: false,
+          isInitial: false,
+          isChunk: false,
           value: 2000,
           displayValue: '1.95KB',
         },

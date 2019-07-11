@@ -39,10 +39,11 @@ export const addMetricsData = (entries, metricType) => entries.map((entry) => {
 
     // Runs
     runs: runs.map((run, index) => {
-      const { value } = run;
+      const { value, ...restRun } = run;
       const delta = (index < runs.length - 1) ? getDelta(runs[index + 1], run) : null;
 
       return {
+        ...restRun,
         value,
         displayValue: formatter(run.value),
         ...(delta !== null) ? {
@@ -59,7 +60,13 @@ export const createRuns = jobs => jobs.map(({ internalBuildNumber, stats, rawDat
     internalBuildNumber,
   },
   sizes: getStatsByMetrics(stats, SIZE_METRICS),
-  assets: getAssetsMetrics(get(rawData, 'webpack.stats.assets')),
+  assets: getAssetsMetrics(
+    get(rawData, 'webpack.stats.assets'),
+    {
+      chunks: get(rawData, 'webpack.stats.chunks'),
+      entrypoints: get(rawData, 'webpack.stats.entrypoints'),
+    },
+  ),
   modules: getModulesMetrics(get(rawData, 'webpack.stats.modules')),
 }));
 

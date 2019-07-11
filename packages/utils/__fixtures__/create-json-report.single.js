@@ -134,6 +134,10 @@ export default {
       biggerIsBetter: false,
       runs: [
         {
+          name: 'main.css',
+          isEntry: true,
+          isInitial: true,
+          isChunk: false,
           value: 10000,
           displayValue: '9.77KB',
         },
@@ -146,6 +150,10 @@ export default {
       biggerIsBetter: false,
       runs: [
         {
+          name: 'main.js',
+          isEntry: true,
+          isInitial: true,
+          isChunk: false,
           value: 50000,
           displayValue: '48.83KB',
         },
@@ -158,6 +166,10 @@ export default {
       biggerIsBetter: false,
       runs: [
         {
+          name: 'logo.png',
+          isEntry: false,
+          isInitial: false,
+          isChunk: false,
           value: 1000,
           displayValue: '1000B',
         },
@@ -170,6 +182,10 @@ export default {
       biggerIsBetter: false,
       runs: [
         {
+          name: 'index.html',
+          isEntry: false,
+          isInitial: false,
+          isChunk: false,
           value: 2000,
           displayValue: '1.95KB',
         },
