@@ -19,11 +19,12 @@ Metric.defaultProps = {
   className: '',
   value: 0,
   children: [],
+  formatter: val => val,
 };
 
 Metric.propTypes = {
   className: PropTypes.string,
   value: PropTypes.number,
-  formatter: PropTypes.func.isRequired,
+  formatter: PropTypes.func,
   children: PropTypes.node,
 };
