@@ -75,15 +75,22 @@ export const createRuns = jobs => jobs.map(({ internalBuildNumber, stats, rawDat
   ),
 }));
 
+export const getModulesReport = runs => map(
+  uniq(flatMap(runs, ({ modules }) => Object.keys(modules))),
+  chunkId => ({
+    chunkId,
+    chunkNames: uniq(flatMap(runs, run => get(run, ['modules', chunkId, 'chunkNames']))),
+    modules: addMetricsData(mergeRunsById(
+      map(runs, run => get(run, ['modules', chunkId, 'modules'])),
+    ), METRIC_TYPE_FILE_SIZE),
+  }),
+);
+
 export const createReport = runs => ({
   runs: map(runs, 'meta'),
   sizes: addMetricsData(mergeRunsById(map(runs, 'sizes'))),
   assets: addMetricsData(mergeRunsById(map(runs, 'assets')), METRIC_TYPE_FILE_SIZE),
-  modules: map(uniq(flatMap(runs, ({ modules }) => Object.keys(modules))), chunkId => ({
-    chunkId,
-    chunkNames: uniq(flatMap(runs, run => get(run, ['modules', chunkId, 'chunkNames']))),
-    modules: addMetricsData(mergeRunsById(map(runs, run => get(run, ['modules', chunkId, 'modules']))), METRIC_TYPE_FILE_SIZE),
-  })),
+  modules: getModulesReport(runs),
 });
 
 export const createJSONReport = (sources) => {
