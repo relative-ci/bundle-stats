@@ -67,7 +67,12 @@ export const createRuns = jobs => jobs.map(({ internalBuildNumber, stats, rawDat
       entrypoints: get(rawData, 'webpack.stats.entrypoints'),
     },
   ),
-  modules: getModulesMetrics(get(rawData, 'webpack.stats.modules')),
+  modules: getModulesMetrics(
+    get(rawData, 'webpack.stats.modules'),
+    {
+      chunks: get(rawData, 'webpack.stats.chunks'),
+    },
+  ),
 }));
 
 export const createReport = runs => ({
@@ -76,6 +81,7 @@ export const createReport = runs => ({
   assets: addMetricsData(mergeRunsById(map(runs, 'assets')), METRIC_TYPE_FILE_SIZE),
   modules: map(uniq(flatMap(runs, ({ modules }) => Object.keys(modules))), chunkId => ({
     chunkId,
+    chunkNames: uniq(flatMap(runs, run => get(run, ['modules', chunkId, 'chunkNames']))),
     modules: addMetricsData(mergeRunsById(map(runs, run => get(run, ['modules', chunkId, 'modules']))), METRIC_TYPE_FILE_SIZE),
   })),
 });
