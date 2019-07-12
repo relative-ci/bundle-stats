@@ -306,12 +306,14 @@ export default {
           biggerIsBetter: false,
           runs: [
             {
+              name: 'module-a',
               value: 1000,
               displayValue: '1000B',
               delta: 0,
               displayDelta: '0%',
             },
             {
+              name: 'module-a',
               value: 1000,
               displayValue: '1000B',
             },
@@ -324,12 +326,14 @@ export default {
           biggerIsBetter: false,
           runs: [
             {
+              name: 'module-b',
               value: 2000,
               displayValue: '1.95KB',
               delta: 33.33333333,
               displayDelta: '+33.33%',
             },
             {
+              name: 'module-b',
               value: 1500,
               displayValue: '1.46KB',
             },

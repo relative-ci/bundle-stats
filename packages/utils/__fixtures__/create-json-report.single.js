@@ -203,6 +203,7 @@ export default {
           biggerIsBetter: false,
           runs: [
             {
+              name: 'module-a',
               value: 1000,
               displayValue: '1000B',
             },
@@ -215,6 +216,7 @@ export default {
           biggerIsBetter: false,
           runs: [
             {
+              name: 'module-b',
               value: 2000,
               displayValue: '1.95KB',
             },
