@@ -298,6 +298,7 @@ export default {
   modules: [
     {
       chunkId: '1',
+      chunkNames: ['main'],
       modules: [
         {
           key: 'module-a',
