@@ -14,9 +14,11 @@ describe('getModulesMetrics', () => {
       1: {
         modules: {
           'module-a': {
+            name: 'module-a',
             value: 1000,
           },
           'module-b': {
+            name: 'module-b',
             value: 2000,
           },
         },
