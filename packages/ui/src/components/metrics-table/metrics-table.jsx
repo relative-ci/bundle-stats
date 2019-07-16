@@ -31,7 +31,7 @@ const getHeaders = runs => [
 ];
 
 const generateRowCell = ({ biggerIsBetter }) => (item) => {
-  if (!item || !item.value) {
+  if (!item || typeof item.value === 'undefined') {
     return '-';
   }
 
