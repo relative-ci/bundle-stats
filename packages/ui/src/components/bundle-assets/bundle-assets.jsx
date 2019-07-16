@@ -233,8 +233,8 @@ BundleAssets.propTypes = {
     key: PropTypes.string,
     label: PropTypes.string,
     runs: PropTypes.arrayOf({
-      displayValue: PropTypes.string,
-      displayDelta: PropTypes.string,
+      displayValue: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      displayDelta: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     }),
   })).isRequired,
   updateFilters: PropTypes.func.isRequired,
