@@ -20,8 +20,8 @@ const Th = ({ header }) => {
   const options = header.options || {};
 
   const style = {
-    textAlign: options.align,
-    width: options.width,
+    ...options.align ? { textAlign: options.align } : {},
+    ...options.width ? { width: options.width } : {},
   };
 
   return (
