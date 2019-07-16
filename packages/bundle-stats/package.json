@@ -50,7 +50,7 @@
     "fs-extra": "8.1.0",
     "listr": "^0.14.3",
     "lodash": "4.17.14",
-    "yargs": "13.2.4"
+    "yargs": "13.3.0"
   },
   "devDependencies": {
     "@babel/cli": "7.5.0",
