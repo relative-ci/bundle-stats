@@ -24,7 +24,7 @@ Metric.defaultProps = {
 
 Metric.propTypes = {
   className: PropTypes.string,
-  value: PropTypes.number,
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   formatter: PropTypes.func,
   children: PropTypes.node,
 };

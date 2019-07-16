@@ -24,8 +24,6 @@ export const BundleModules = ({ jobs }) => {
 
   const modulesReport = getModulesReport(runs);
 
-  // TODO: show chunks by modules even if we are missing chunks
-
   return (
     <React.Fragment>
       {!isEmpty(modulesReport) && modulesReport.map(({ chunkId, chunkNames, modules }) => (

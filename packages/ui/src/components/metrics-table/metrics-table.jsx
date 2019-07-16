@@ -94,9 +94,9 @@ MetricsTable.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
     key: PropTypes.string,
     label: PropTypes.string,
-    runs: PropTypes.arrayOf({
-      displayValue: PropTypes.string,
-      displayDelta: PropTypes.string,
-    }),
+    runs: PropTypes.arrayOf(PropTypes.shape({
+      displayValue: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      displayDelta: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    })),
   })).isRequired,
 };
