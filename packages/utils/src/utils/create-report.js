@@ -3,7 +3,6 @@ import {
 } from 'lodash';
 
 import { METRIC_TYPE_FILE_SIZE } from '../config/metrics';
-import { createJobs } from '../jobs/create';
 import { getMetricChanged, getMetricType, mergeRunsById } from '../metrics';
 import { getStatsByMetrics } from '../stats/get-stats-by-metrics';
 import { getAssetsMetrics } from '../assets/get-assets-metrics';
@@ -90,17 +89,13 @@ export const getModulesReport = runs => map(
   }),
 );
 
-export const createReport = runs => ({
-  runs: map(runs, 'meta'),
-  sizes: addMetricsData(mergeRunsById(map(runs, 'sizes'))),
-  assets: addMetricsData(mergeRunsById(map(runs, 'assets')), METRIC_TYPE_FILE_SIZE),
-  modules: getModulesReport(runs),
-});
-
-export const createJSONReport = (sources) => {
-  const jobs = createJobs(sources);
+export const createReport = (jobs) => {
   const runs = createRuns(jobs);
-  const output = createReport(runs);
 
-  return JSON.stringify(output, null, 2);
+  return {
+    runs: map(runs, 'meta'),
+    sizes: addMetricsData(mergeRunsById(map(runs, 'sizes'))),
+    assets: addMetricsData(mergeRunsById(map(runs, 'assets')), METRIC_TYPE_FILE_SIZE),
+    modules: getModulesReport(runs),
+  };
 };
