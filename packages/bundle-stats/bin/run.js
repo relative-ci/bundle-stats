@@ -2,8 +2,9 @@
 const path = require('path');
 const { readJSON, outputFile } = require('fs-extra');
 const Listr = require('listr');
+const { createJobs } = require('@bundle-stats/utils');
 
-const { createJobs, createReports } = require('../'); // eslint-disable-line import/no-unresolved
+const { createReports } = require('../'); // eslint-disable-line import/no-unresolved
 
 module.exports = ({
   html, json, outDir, artifactFilepaths,
@@ -14,7 +15,9 @@ module.exports = ({
       task: ctx => Promise.all(
         artifactFilepaths.map(filepath => readJSON(filepath)),
       ).then((artifacts) => {
-        ctx.artifacts = artifacts;
+        ctx.artifacts = artifacts.map(stats => ({
+          webpack: { stats },
+        }));
       }),
     },
     {
