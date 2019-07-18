@@ -1,12 +1,14 @@
 .root {
-  display: inline-block;
+  display: block;
   position: relative;
   line-height: 1.1;
 }
 
+.displayUnit {
+  color: var(--color-gray);
+}
+
 .delta {
-  position: absolute;
-  right: 0;
-  top: 100%;
+  display: block;
   font-size: var(--size-xsmall);
 }
