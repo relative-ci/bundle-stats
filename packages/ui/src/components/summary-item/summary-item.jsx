@@ -30,6 +30,7 @@ export const SummaryItem = ({
             className={css.currentMetric}
             value={current}
             formatter={metric.formatter}
+            enhanced
           />
         ) : (
           <span className={cx(css.currentMetric, css.loading)} />
