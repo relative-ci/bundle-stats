@@ -50,7 +50,7 @@
     "eslint-plugin-jest": "22.11.1",
     "jest": "24.8.0",
     "jest-cli": "24.8.0",
-    "lodash": "4.17.14",
+    "lodash": "4.17.15",
     "regenerator-runtime": "0.13.2"
   },
   "peerDependencies": {
