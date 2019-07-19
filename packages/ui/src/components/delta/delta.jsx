@@ -4,14 +4,20 @@ import cx from 'classnames';
 
 import css from './delta.module.css';
 
+const LEVEL_CHANGE = 5;
+
 export const Delta = ({
   className, value, displayValue, biggerIsBetter,
 }) => {
   const positiveChange = (biggerIsBetter && value > 0) || (!biggerIsBetter && value < 0);
 
+  const absValue = Math.abs(value);
+
   const valueClassNames = cx(css.value, {
-    [css.positive]: value !== 0 && positiveChange,
-    [css.negative]: value !== 0 && !positiveChange,
+    [css.negative]: !positiveChange && (absValue >= LEVEL_CHANGE),
+    [css.slightlyNegative]: !positiveChange && (absValue > 0 && absValue < LEVEL_CHANGE),
+    [css.slightlyPositive]: positiveChange && (absValue > 0 && absValue < LEVEL_CHANGE),
+    [css.positive]: positiveChange && (absValue >= LEVEL_CHANGE),
   });
 
   const rootClassName = cx(css.root, className);
