@@ -106,10 +106,10 @@ const ITEMS_MULTIPLE_RUNS = [
     changed: true,
     runs: [
       {
-        value: 1231,
-        displayValue: '1.231s',
-        delta: 1.256122449,
-        displayDelta: '+25.61%',
+        value: 1000,
+        displayValue: '1s',
+        delta: 2.0408163,
+        displayDelta: '+2.04%',
       },
       {
         value: 980,
@@ -126,12 +126,30 @@ const ITEMS_MULTIPLE_RUNS = [
       {
         value: 80,
         displayValue: '80',
-        delta: 1.142857143,
+        delta: 14.2857143,
         displayDelta: '+14.29%',
       },
       {
         value: 70,
         displayValue: '70',
+      },
+    ],
+  },
+  {
+    key: 'lighthouse.accessibilityScore',
+    label: 'Accessibility score',
+    biggerIsBetter: true,
+    changed: true,
+    runs: [
+      {
+        value: 80,
+        displayValue: '80',
+        delta: 2.5641026,
+        displayDelta: '+2.56%',
+      },
+      {
+        value: 78,
+        displayValue: '78',
       },
     ],
   },

@@ -10,21 +10,36 @@ stories.addDecorator(getWrapperDecorator());
 stories.add('default', () => (
   <Delta
     value={20}
-    displayValue="20kb"
+    displayValue="20%"
   />
 ));
 
-stories.add('biggerIsBetter - false', () => (
+stories.add('negative', () => (
   <Delta
     value={20}
-    displayValue="20kb"
+    displayValue="20%"
     biggerIsBetter={false}
+  />
+));
+
+stories.add('slightlyNegative', () => (
+  <Delta
+    value={1}
+    displayValue="1%"
+    biggerIsBetter={false}
+  />
+));
+
+stories.add('slightlyPositive', () => (
+  <Delta
+    value={1}
+    displayValue="1%"
   />
 ));
 
 stories.add('empty', () => (
   <Delta
     value={0}
-    displayValue="0kb"
+    displayValue="0%"
   />
 ));
