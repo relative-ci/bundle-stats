@@ -1,5 +1,5 @@
 .root {
-  position: relative(); 
+  position: relative();
   border-bottom: 1px solid var(--color-gray-100);
 }
 
@@ -7,7 +7,7 @@
   position: relative;
   display: inline-block;
   padding: var(--space-xsmall) var(--space-small);
-  color: var(--color-gray-light);
+  color: var(--color-gray);
   font-weight: bold;
   text-decoration: none;
 }
