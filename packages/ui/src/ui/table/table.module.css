@@ -10,7 +10,7 @@
 .cell {
   border: 1px solid var(--color-gray-ultra-light);
   border-width: 1px 0 0;
-  padding: var(--space-xsmall) var(--space-small);
+  padding: var(--space-small) var(--space-small);
   text-align: left;
 }
 
