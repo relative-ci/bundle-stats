@@ -1,16 +1,9 @@
-.circleci
 .eslintignore
 .eslintrc.js
-.huskyrc.js
+__mocks__
 jest.config.js
 jsconfig.json
-relativeci.config.js
 build
-artifacts
 scripts
 src/prototypes
 **/*.stories.jsx
-__tests__/**/*
-__mocks__/**/*
-**/*.stories.jsx
-src/prototypes

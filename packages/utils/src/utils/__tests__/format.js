@@ -16,8 +16,8 @@ describe('format', () => {
   });
 
   test('formatNumber', () => {
-    expect(formatNumber(0)).toEqual(0);
-    expect(formatNumber(10)).toEqual(10);
+    expect(formatNumber(0)).toEqual('0');
+    expect(formatNumber(10)).toEqual('10');
   });
 
   test('formatCommit', () => {

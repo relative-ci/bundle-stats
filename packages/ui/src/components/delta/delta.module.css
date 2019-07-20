@@ -3,10 +3,19 @@
   text-align: right;
 }
 
-.positive {
-  color: var(--color-green);
+.negative {
+  color: var(--color-red-dark);
 }
 
-.negative {
-  color: var(--color-red);
+.slightlyNegative {
+  color: var(--color-red-light);
 }
+
+.slightlyPositive {
+  color: var(--color-green-light);
+}
+
+.positive {
+  color: var(--color-green-dark);
+}
+

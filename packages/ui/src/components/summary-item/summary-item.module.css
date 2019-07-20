@@ -15,6 +15,7 @@
   display: inline-block;
   color: var(--color-dark);
   font-size: var(--size-large);
+  font-weight: 700;
 }
 
 .delta {
@@ -42,7 +43,6 @@
 
 .large .currentMetric {
   font-size: var(--size-xxlarge);
-  font-weight: 900;
 }
 
 .large .delta {

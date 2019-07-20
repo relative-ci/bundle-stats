@@ -1,3 +1,7 @@
+.root td {
+  vertical-align: top;
+}
+
 /* columns */
 .metricName {
   width: 100%;
@@ -18,4 +22,28 @@
 
 .multipleRuns .unchanged td {
   color: var(--color-gray-light);
+}
+
+/** Breakpoints */
+.root tr {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.root tbody th {
+  flex: 1 1 auto;
+}
+
+.root tbody th {
+  flex: 1 1 100%;
+}
+
+.root tbody td {
+  flex: 1 1 auto;
+}
+
+@media (min-width: 600px) {
+  .root tr {
+    display: table-row;
+  }
 }

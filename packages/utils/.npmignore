@@ -1,2 +1,6 @@
-**/__tests__/**
+**/__tests__
+__fixtures__
+.editorconfig
+.eslintignore
+.eslintrc.js
 jsconfig.json
