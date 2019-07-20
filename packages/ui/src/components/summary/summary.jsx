@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import { Box } from '../../ui/box';
 import { SummaryItem } from '../summary-item';
 import css from './summary.module.css';
 
@@ -20,14 +21,14 @@ export const Summary = ({
   );
 
   return (
-    <div className={cx(css.root, className)}>
+    <Box className={cx(css.root, className)}>
       <div className={css.items}>
         {keys.slice(0, 3).map(getRenderSummaryItem({ size: 'large' }))}
       </div>
       <div className={css.items}>
         {keys.slice(3).map(getRenderSummaryItem())}
       </div>
-    </div>
+    </Box>
   );
 };
 
