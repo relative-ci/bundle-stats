@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/web-compare",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "Side by side comparison for webpack/lighthouse/browsertime stats",
   "main": "index.js",
   "scripts": {
@@ -46,8 +46,8 @@
   },
   "dependencies": {
     "@babel/polyfill": "7.4.4",
-    "@bundle-stats/ui": "^1.2.0",
-    "@bundle-stats/utils": "^1.2.0",
+    "@bundle-stats/ui": "^1.2.2",
+    "@bundle-stats/utils": "^1.2.2",
     "@moonwalker/orbit-ui": "1.13.9",
     "@storybook/react": "5.1.9",
     "classnames": "^2.2.6",
@@ -80,7 +80,7 @@
     "babel-loader": "8.0.6",
     "babel-plugin-lodash": "3.3.4",
     "babel-plugin-preact-require": "1.0.0",
-    "bundle-stats": "^1.2.0",
+    "bundle-stats": "^1.2.2",
     "copy-webpack-plugin": "5.0.3",
     "coveralls": "3.0.5",
     "css-loader": "3.0.0",
