@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { getDelta, getMetricType, formatDelta } from '@bundle-stats/utils';
 
-import { Box } from '../../ui';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
 import css from './summary-item.module.css';
@@ -19,7 +18,7 @@ export const SummaryItem = ({
   const rootClassName = cx(css.root, className, css[size]);
 
   return (
-    <Box className={rootClassName}>
+    <div className={rootClassName}>
       <h3 className={css.title}>
         {metric.label}
       </h3>
@@ -30,6 +29,7 @@ export const SummaryItem = ({
             className={css.currentMetric}
             value={current}
             formatter={metric.formatter}
+            enhanced
           />
         ) : (
           <span className={cx(css.currentMetric, css.loading)} />
@@ -54,7 +54,7 @@ export const SummaryItem = ({
       ) : (
         <span className={cx(css.baselineMetric, css.loading)} />
       )}
-    </Box>
+    </div>
   );
 };
 

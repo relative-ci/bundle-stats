@@ -38,20 +38,20 @@
     "core-js": "^3.1.4"
   },
   "devDependencies": {
-    "@babel/cli": "7.5.0",
-    "@babel/core": "7.5.4",
-    "@babel/preset-env": "7.5.4",
+    "@babel/cli": "7.5.5",
+    "@babel/core": "7.5.5",
+    "@babel/preset-env": "7.5.5",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "24.8.0",
     "babel-plugin-lodash": "3.3.4",
     "eslint": "6.0.1",
     "eslint-config-airbnb-base": "13.2.0",
-    "eslint-plugin-import": "2.18.0",
-    "eslint-plugin-jest": "22.10.0",
+    "eslint-plugin-import": "2.18.1",
+    "eslint-plugin-jest": "22.12.0",
     "jest": "24.8.0",
     "jest-cli": "24.8.0",
-    "lodash": "4.17.14",
-    "regenerator-runtime": "0.13.2"
+    "lodash": "4.17.15",
+    "regenerator-runtime": "0.13.3"
   },
   "peerDependencies": {
     "lodash": "^4.17.11"

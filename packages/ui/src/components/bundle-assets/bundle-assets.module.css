@@ -1,7 +1,6 @@
 .header {
-  padding-bottom: var(--space-xsmall);
+  padding: var(--space-small);
   border-bottom: 1px solid var(--color-gray-ultra-light);
-  margin-bottom: var(--space-xsmall);
   position: relative;
   display: flex;
   align-items: center;
@@ -83,6 +82,11 @@
   min-width: 320px;
 }
 
-.tooltipFilename h6 {
+.tooltipFilenameItem + .tooltipFilenameItem {
   margin-top: var(--space-xsmall);
+}
+
+.tooltipFilenameTitle {
+  margin: 0;
+  color: var(--color-gray-ultra-dark);
 }

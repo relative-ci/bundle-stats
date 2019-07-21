@@ -9,30 +9,29 @@
 
 .cell {
   border: 1px solid var(--color-gray-ultra-light);
-  border-width: 0 0 1px;
-  padding: var(--space-xsmall) var(--space-small);
+  border-width: 1px 0 0;
+  padding: var(--space-small) var(--space-small);
   text-align: left;
 }
 
-thead .cell {
-  padding-top: 0;
-  border-bottom-width: 2px;
+.root thead .cell {
+  border-width: 0 0 2px;
   text-transform: uppercase;
 }
 
-thead .cell:empty {
+.root thead .cell:empty {
   display: none;
 }
 
-tbody th.cell {
+.root tbody th.cell {
   font-weight: normal;
 }
 
-tbody tr:nth-child(odd) .cell {
+.root tbody tr:nth-child(odd) .cell {
   background-color: var(--color-gray-light-background);
 }
 
-tbody tr:hover .cell {
+.root tbody tr:hover .cell {
   background-color: var(--color-yellow-light-background);
 }
 
@@ -46,7 +45,7 @@ tbody tr:hover .cell {
 
 /* Modifier outline */
 .outline {
-  border-width: 1px 1px 0 0;
+  border-width: 1px 1px 0 1px;
 }
 
 .outline .cell {
@@ -57,4 +56,3 @@ tbody tr:hover .cell {
   padding: var(--space-small);
   border-bottom-width: 2px;
 }
-

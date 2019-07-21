@@ -21,6 +21,7 @@ import {
   RechartsTooltip,
   getColors,
 } from '../chart';
+import { Metric } from '../metric';
 import css from './bundle-assets-totals-chart-pie.module.css';
 
 const getMetricLabel = key => getMetricType(key).label;
@@ -38,8 +39,14 @@ const TooltipContent = ({ active, payload }) => {
 
   return (
     <div className={TOOLTIP_PROPS.contentClassName}>
-      <h5>{getMetricLabel(name)}</h5>
-      <p>{formatFileSize(value)}</p>
+      <h5 className={css.tooltipTitle}>
+        {getMetricLabel(name)}
+      </h5>
+      <Metric
+        className={css.tooltipMetric}
+        value={value}
+        formatter={formatFileSize}
+      />
     </div>
   );
 };
@@ -55,22 +62,30 @@ TooltipContent.propTypes = {
   })).isRequired,
 };
 
-const LegendContent = ({ payload }) => (
-  <ul className={css.legend}>
-    {payload.map(({ payload: item }) => (
-      <li
-        key={item.key}
-        className={css.legendItem}
-      >
-        <span className={css.legendIcon} style={{ backgroundColor: item.fill }} />
-        <span className={cx(css.legendLabel, !item.value && css.legendLabelEmpty)}>
-          {`${floor(item.percent * 100, 2)}% - `}
-          {`${getMetricLabel(item.key)} (${formatFileSize(item.value)})`}
-        </span>
-      </li>
-    ))}
-  </ul>
-);
+const LegendContent = ({ payload }) => {
+  const items = sortBy(payload, item => 1 - item.payload.percent);
+
+  return (
+    <ul className={css.legend}>
+      {items.map(({ payload: item }) => (
+        <li
+          key={item.key}
+          className={css.legendItem}
+        >
+          <span className={css.legendIcon} style={{ backgroundColor: item.fill }} />
+          <span className={cx(css.legendLabel, !item.value && css.legendLabelEmpty)}>
+            <span className={css.legendLabelPercentage}>
+              {`${floor(item.percent * 100, 2)}%`}
+            </span>
+            <span className={css.legendLabelName}>
+              {getMetricLabel(item.key)}
+            </span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 LegendContent.propTypes = {
   /** Reacharts legend item */

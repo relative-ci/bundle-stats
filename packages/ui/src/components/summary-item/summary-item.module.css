@@ -1,4 +1,5 @@
 .root {
+  padding: var(--space-small);
   font-size: var(--size-small);
 }
 
@@ -15,6 +16,8 @@
   display: inline-block;
   color: var(--color-dark);
   font-size: var(--size-large);
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .delta {
@@ -24,6 +27,7 @@
 
 .baselineMetric {
   display: block;
+  line-height: 1.1;
 }
 
 /* Loading state */
@@ -42,7 +46,6 @@
 
 .large .currentMetric {
   font-size: var(--size-xxlarge);
-  font-weight: 900;
 }
 
 .large .delta {

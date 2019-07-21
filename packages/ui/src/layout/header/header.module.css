@@ -23,7 +23,9 @@
 .right {
   flex: 1 1 50%;
   order: 2;
-  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 @media (min-width: 600px) {

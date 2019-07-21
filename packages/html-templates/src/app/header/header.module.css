@@ -1,3 +1,8 @@
+.root {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 /* Components */
 .webpackLogo {
   width: var(--space-xxlarge);
@@ -17,7 +22,7 @@
 
 .githubLogo {
   margin: 0 0 0 auto;
-  width: var(--space-large);
+  width: var(--space-medium);
   color: var(--color-gray-light);
 }
 

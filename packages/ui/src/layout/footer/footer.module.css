@@ -1,8 +1,6 @@
 .root {
-  padding-top: var(--space-medium);
-  padding-bottom: var(--space-medium);
-  background: var(--color-gray-light-background);
-  color: var(--color-gray);
+  padding-top: var(--space-large);
+  padding-bottom: var(--space-large);
   text-align: center;
 }
 
@@ -76,6 +74,10 @@
     order: 1;
     flex: 1 1 25%;
     text-align: left;
+  }
+
+  .brandingLogo {
+    margin: 0;
   }
 
   .navGroup {

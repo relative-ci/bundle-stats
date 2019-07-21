@@ -18,15 +18,15 @@ const getRenderRowHeader = labels => row => (
           const key = index;
 
           return (
-            <React.Fragment key={key}>
-              <h6>{labels[index]}</h6>
-              {(run && run.name) ? (
-                <FileName
-                  className={css.nameTooltipText}
-                  name={run.name}
-                />
-              ) : '-' }
-            </React.Fragment>
+            <div className={css.nameTooltipItem} key={key}>
+              <h5 className={css.nameTooltipTitle}>
+                {labels[index]}
+              </h5>
+              <FileName
+                className={css.nameTooltipText}
+                name={run && run.name ? run.name : '-'}
+              />
+            </div>
           );
         })}
       </div>

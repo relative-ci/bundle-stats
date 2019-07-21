@@ -3,18 +3,20 @@
 }
 
 .items {
-  margin-left: calc(0px - var(--space-medium));
-  margin-bottom: calc(0px - var(--space-medium));
-  width: calc(100% + var(--space-medium));
   display: flex;
   flex-wrap: wrap;
 }
 
-.items + .items {
-  margin-top: var(--space-medium);
+.item {
+  border: 1px solid var(--color-gray-ultra-light);
+  border-width: 1px 0 0 1px;
+  flex: 1 1 auto;
 }
 
-.item {
-  flex: 1 1 auto;
-  margin: 0 0 var(--space-medium) var(--space-medium);
+.item:first-child {
+  border-left: 0;
+}
+
+.items:first-child .item {
+  border-top: 0;
 }
