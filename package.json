@@ -19,7 +19,8 @@
     "lint": "npm run lerna run lint",
     "prepublishOnly": "npm run lint && npm run test && npm run build",
     "publish": "lerna exec 'npm publish' --ignore @bundle-stats/web-compare",
-    "test": "npm run lerna run test"
+    "test": "npm run lerna run test",
+    "test-package": "cd packages/bundle-stats && npm run test-package"
   },
   "repository": {
     "type": "git",
