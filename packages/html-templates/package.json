@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/html-templates",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "HTML templates for report generation.",
   "main": "dist/index.html",
   "scripts": {
@@ -31,8 +31,8 @@
     "@babel/plugin-transform-react-jsx": "7.3.0",
     "@babel/preset-env": "7.5.4",
     "@babel/preset-react": "7.0.0",
-    "@bundle-stats/ui": "^1.2.2",
-    "@bundle-stats/utils": "^1.2.2",
+    "@bundle-stats/ui": "^1.2.3",
+    "@bundle-stats/utils": "^1.2.3",
     "@moonwalker/orbit-ui": "1.13.9",
     "@storybook/react": "5.1.9",
     "autoprefixer": "9.6.1",
