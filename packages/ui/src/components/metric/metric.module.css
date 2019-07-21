@@ -1,7 +1,6 @@
 .root {
   display: block;
   position: relative;
-  line-height: 1.1;
 }
 
 .displayUnit {
@@ -9,6 +8,11 @@
 }
 
 .delta {
+  position: absolute;
+  right: 0;
+  top: 100%;
   display: block;
   font-size: var(--size-xsmall);
+  line-height: 1;
+  margin-top: -3px;
 }

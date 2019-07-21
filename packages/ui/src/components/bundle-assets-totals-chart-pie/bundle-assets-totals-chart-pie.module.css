@@ -1,5 +1,15 @@
+.tooltipTitle {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.tooltipMetric {
+  font-size: 1rem;
+}
+
 .legendItem {
   list-style: none;
+  font-size: var(--size-small);
 }
 
 .legendIcon {
@@ -7,6 +17,14 @@
   display: inline-block;
   width: var(--space-xxsmall);
   height: var(--space-xxsmall);
+}
+
+.legendLabelPercentage::after {
+  content: ' - ';
+}
+
+.legendLabelName {
+  font-family: var(--font-family);
 }
 
 .legendLabelEmpty {

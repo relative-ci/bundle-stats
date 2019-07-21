@@ -88,10 +88,12 @@ const TooltipFilename = ({ runs, labels }) => (
       const key = index;
 
       return (
-        <React.Fragment key={key}>
-          <h6>{labels[index]}</h6>
-          {(run && run.name) ? <FileName name={run.name} /> : '-'}
-        </React.Fragment>
+        <div className={css.tooltipFilenameItem} key={key}>
+          <h5 className={css.tooltipFilenameTitle}>
+            {labels[index]}
+          </h5>
+          <FileName name={run && run.name ? run.name : '-'} />
+        </div>
       );
     })}
   </div>
