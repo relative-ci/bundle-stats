@@ -82,6 +82,11 @@
   min-width: 320px;
 }
 
-.tooltipFilename h6 {
+.tooltipFilenameItem + .tooltipFilenameItem {
   margin-top: var(--space-xsmall);
+}
+
+.tooltipFilenameTitle {
+  margin: 0;
+  color: var(--color-gray-ultra-dark);
 }
