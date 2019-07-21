@@ -4,11 +4,11 @@
 .title {
 	margin: 0 0 var(--space-xxsmall);
 	text-align: center;
-	color: var(--color-gray);
+	color: var(--color-gray-light);
 	font-size: var(--size-medium);
-	font-weight: normal;
-	font-family: var(--font-family-fixed);
+	font-family: var(--font-family);
   line-height: var(--line-height);
+  text-transform: uppercase;
 }
 
 .chart {
