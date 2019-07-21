@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`webpack plugin 1`] = `
+Array [
+  Object {
+    "chunkNames": Array [],
+    "chunks": Array [],
+    "emitted": true,
+    "isOverSizeLimit": true,
+    "name": "bundle-stats.html",
+    "size": 251994,
+  },
+  Object {
+    "chunkNames": Array [
+      "main",
+    ],
+    "chunks": Array [
+      0,
+    ],
+    "emitted": true,
+    "isOverSizeLimit": undefined,
+    "name": "main.js",
+    "size": 956,
+  },
+]
+`;

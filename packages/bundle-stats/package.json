@@ -16,7 +16,8 @@
     "build": "babel src -d lib",
     "lint": "eslint .",
     "prepublishOnly": "npm run build",
-    "test": "jest --passWithNoTests src "
+    "test": "jest --passWithNoTests src ",
+    "test-package": "jest test/package/*.test.js"
   },
   "keywords": [
     "webpack",
@@ -61,6 +62,8 @@
     "eslint-config-airbnb-base": "13.2.0",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jest": "22.13.0",
-    "jest": "24.8.0"
+    "jest": "24.8.0",
+    "memory-fs": "^0.4.1",
+    "webpack": "^4.36.1"
   }
 }
