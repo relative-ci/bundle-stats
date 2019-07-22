@@ -2,10 +2,21 @@
 
 const path = require('path');
 const yargs = require('yargs');
+const updateNotifier = require('update-notifier');
 
+const pkg = require('../package.json');
 const run = require('./run');
 
 const DEFAULT_OUTPUT_DIR = './dist';
+
+const notifier = updateNotifier({
+  pkg,
+  updateCheckInterval: 1000 * 60 * 60 * 24 * 7,
+});
+
+if (notifier.update) {
+  notifier.notify();
+}
 
 const { demo } = yargs.parse();
 

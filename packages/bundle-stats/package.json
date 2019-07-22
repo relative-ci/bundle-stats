@@ -52,6 +52,7 @@
     "fs-extra": "8.1.0",
     "listr": "^0.14.3",
     "lodash": "4.17.15",
+    "update-notifier": "3.0.1",
     "yargs": "13.3.0"
   },
   "devDependencies": {
