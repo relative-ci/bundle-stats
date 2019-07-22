@@ -63,7 +63,7 @@
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jest": "22.13.0",
     "jest": "24.8.0",
-    "memory-fs": "^0.4.1",
-    "webpack": "^4.36.1"
+    "memory-fs": "0.4.1",
+    "webpack": "4.36.1"
   }
 }
