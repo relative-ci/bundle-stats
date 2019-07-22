@@ -6,9 +6,9 @@ Array [
     "chunkNames": Array [],
     "chunks": Array [],
     "emitted": true,
-    "isOverSizeLimit": true,
+    "isOverSizeLimit": undefined,
     "name": "bundle-stats.html",
-    "size": 251994,
+    "size": 0,
   },
   Object {
     "chunkNames": Array [

@@ -37,7 +37,7 @@ const getOnEmit = options => (compilation, callback) => {
 
         // eslint-disable-next-line no-param-reassign
         compilation.assets[filepath] = {
-          size: () => output.length,
+          size: () => 0,
           source: () => output,
         };
       });
