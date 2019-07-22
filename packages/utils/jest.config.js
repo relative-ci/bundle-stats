@@ -1,6 +1,6 @@
 module.exports = {
+  testEnvironment: 'node',
   setupFiles: [
     'core-js',
   ],
-  testEnvironment: 'node',
 };
