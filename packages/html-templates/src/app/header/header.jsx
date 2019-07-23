@@ -12,7 +12,7 @@ export const Header = ({ className }) => (
     renderLeft={partProps => (
       <div {...partProps}>
         <h1 className={css.title}>
-          Bundle Stats
+          BundleStats
         </h1>
       </div>
     )}

@@ -52,8 +52,4 @@
   :root {
     --header-height: calc(var(--space-xsmall) * 2 + var(--space-xxlarge));
   }
-
-  .header {
-    padding-bottom: var(--space-small);
-  }
 }
