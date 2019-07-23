@@ -83,7 +83,7 @@ module.exports = {
 
 ## 2. CLI
 
-### Install as global
+### Install as global dependency
 
 ```shell
 npm install -g bundle-stats
