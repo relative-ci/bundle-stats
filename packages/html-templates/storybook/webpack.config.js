@@ -1,3 +1,4 @@
+const path = require('path');
 const webpackMerge = require('webpack-merge');
 
 const getCssConfig = require('../../../build/configs/css');
@@ -14,5 +15,14 @@ module.exports = ({ config }) => {
     getCssConfig(settings),
     getResolveConfig(settings),
     getFilesConfig(settings),
+    {
+      resolve: {
+        modules: [
+          path.join(__dirname, '../node_modules'),
+          path.join(__dirname, '../ui/node_modules'),
+          path.join(__dirname, '../utils/node_modules'),
+        ],
+      },
+    },
   );
 };
