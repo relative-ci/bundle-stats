@@ -1,6 +1,6 @@
 {
   "name": "bundle-stats",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "description": "In-depth reports for webpack bundles",
   "main": "lib/index.js",
   "bin": {
@@ -46,8 +46,8 @@
   },
   "homepage": "https://github.com/bundle-stats/bundle-stats/blob/master/packages/cli#readme",
   "dependencies": {
-    "@bundle-stats/html-templates": "^1.2.3",
-    "@bundle-stats/utils": "^1.2.3",
+    "@bundle-stats/html-templates": "^1.3.0",
+    "@bundle-stats/utils": "^1.3.0",
     "core-js": "^3.1.4",
     "fs-extra": "8.1.0",
     "listr": "^0.14.3",
