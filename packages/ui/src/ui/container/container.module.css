@@ -2,6 +2,14 @@
   padding: var(--space-small);
 }
 
+.root:first-child {
+  padding-top: var(--space-large);
+}
+
+.root:last-child {
+  padding-bottom: var(--space-large)
+}
+
 .inner {
   width: 100%;
   max-width: var(--max-width);

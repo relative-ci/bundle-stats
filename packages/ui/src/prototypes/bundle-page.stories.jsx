@@ -5,8 +5,9 @@ import { createStats, createStatsSummary } from '@bundle-stats/utils';
 import currentData from '../../__mocks__/job.current.json';
 import baselineData from '../../__mocks__/job.baseline.json';
 import {
-  Box, Container, Panels, Tabs,
+  Box, Container, Logo, Panels, Tabs,
 } from '../ui';
+import { Header, Footer } from '../layout';
 import { BundleAssets } from '../components/bundle-assets';
 import { BundleAssetsTotalsTable } from '../components/bundle-assets-totals-table';
 import { BundleAssetsTotalsChartBars } from '../components/bundle-assets-totals-chart-bars';
@@ -36,70 +37,93 @@ const baselineJob = {
 
 const JOBS = [currentJob, baselineJob];
 
+const PageHeader = () => (
+  <Header
+    className={css.header}
+    renderLeft={sideProps => (
+      <div {...sideProps}>
+        <Logo className={css.headerLogo} />
+      </div>
+    )}
+  />
+);
+
 stories.add('totals', () => (
-  <div className={css.root}>
-    <Container>
-      <Summary data={currentJob.summary} />
-    </Container>
-    <Container>
-      <Tabs>
-        <span isTabActive>Totals</span>
-        <span>Assets</span>
-        <span>Modules</span>
-      </Tabs>
-    </Container>
-    <Container>
-      <Panels>
+  <React.Fragment>
+    <PageHeader />
+    <main className={css.main}>
+      <Container>
+        <Summary data={currentJob.summary} />
+      </Container>
+      <Container>
+        <Tabs>
+          <span isTabActive>Totals</span>
+          <span>Assets</span>
+          <span>Modules</span>
+        </Tabs>
+      </Container>
+      <Container>
+        <Panels>
+          <Box>
+            <BundleAssetsTotalsChartPie jobs={JOBS} />
+          </Box>
+          <Box>
+            <BundleAssetsTotalsChartBars jobs={JOBS} />
+          </Box>
+        </Panels>
+      </Container>
+      <Container>
         <Box>
-          <BundleAssetsTotalsChartPie jobs={JOBS} />
+          <BundleAssetsTotalsTable jobs={JOBS} />
         </Box>
-        <Box>
-          <BundleAssetsTotalsChartBars jobs={JOBS} />
-        </Box>
-      </Panels>
-    </Container>
-    <Container>
-      <Box>
-        <BundleAssetsTotalsTable jobs={JOBS} />
-      </Box>
-    </Container>
-  </div>
+      </Container>
+    </main>
+    <Footer className={css.footer} />
+  </React.Fragment>
 ));
 
 stories.add('assets', () => (
-  <div className={css.root}>
-    <Container>
-      <Summary data={currentJob.summary} />
-    </Container>
-    <Container>
-      <Tabs>
-        <span>Totals</span>
-        <span isTabActive>Assets</span>
-        <span>Modules</span>
-      </Tabs>
-    </Container>
-    <Container>
-      <Box>
-        <BundleAssets jobs={JOBS} />
-      </Box>
-    </Container>
-  </div>
+  <React.Fragment>
+    <PageHeader />
+    <main className={css.main}>
+      <Container>
+        <Summary data={currentJob.summary} />
+      </Container>
+      <Container>
+        <Tabs>
+          <span>Totals</span>
+          <span isTabActive>Assets</span>
+          <span>Modules</span>
+        </Tabs>
+      </Container>
+      <Container>
+        <Box>
+          <BundleAssets jobs={JOBS} />
+        </Box>
+      </Container>
+    </main>
+    <Footer className={css.footer} />
+  </React.Fragment>
 ));
 
 stories.add('modules', () => (
-  <div className={css.root}>
-    <Container>
-      <Summary data={currentJob.summary} />
-    </Container>
-    <Container>
-      <Tabs>
-        <span>Totals</span>
-        <span>Assets</span>
-        <span isTabActive>Modules</span>
-      </Tabs>
-    </Container>
-    <Container>
-      <BundleModules jobs={JOBS} />
-    </Container>
-  </div>
+  <React.Fragment>
+    <PageHeader />
+    <main className={css.main}>
+      <Container>
+        <Summary data={currentJob.summary} />
+      </Container>
+      <Container>
+        <Tabs>
+          <span>Totals</span>
+          <span>Assets</span>
+          <span isTabActive>Modules</span>
+        </Tabs>
+      </Container>
+      <Container>
+        <BundleModules jobs={JOBS} />
+      </Container>
+    </main>
+    <Footer className={css.footer} />
+  </React.Fragment>
 ));

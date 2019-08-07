@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   align-items: center;
   background: var(--color-light);
-  box-shadow: 0 0 var(--space-small) var(--color-gray-ultra-light);
+  border-bottom: 1px solid var(--color-gray-ultra-light);
 }
 
 /* Layout */
