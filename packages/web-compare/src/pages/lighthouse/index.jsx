@@ -6,7 +6,6 @@ import Sources from '../../components/sources';
 import config from './config.json';
 import locale from './locale.json';
 import enhance from './container';
-import css from './styles.css';
 
 const Lighthouse = (props) => {
   const {
@@ -18,7 +17,7 @@ const Lighthouse = (props) => {
   } = props;
 
   return (
-    <div className={css.root}>
+    <div>
       <Helmet
         title={locale.title}
         description={locale.description}
@@ -34,7 +33,7 @@ const Lighthouse = (props) => {
       />
 
       {jobs.length > 0 && (
-        <div className={css.main}>
+        <div>
           <Container>
             <Box>
               <LighthouseTable
