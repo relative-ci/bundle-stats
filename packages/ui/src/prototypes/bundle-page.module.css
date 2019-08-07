@@ -1,7 +1,17 @@
-.root {
-  margin: -24px;
-  padding: 24px;
-  width: 100vw;
-  min-height: 100vh;
-  background: var(--color-gray-light-background);
+.main {
+  min-height: calc(100vh - 72px);
+}
+
+.header {
+  background: var(--color-light);
+  margin: -24px -24px 0;
+}
+
+.headerLogo {
+  width: 24px;
+  color: var(--color-branding);
+}
+
+.footer {
+  margin: 0 -24px -24px;
 }

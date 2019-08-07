@@ -1,6 +1,9 @@
 .root {
+  border-top: 2px solid var(--color-gray-ultra-dark);
   padding-top: var(--space-large);
   padding-bottom: var(--space-large);
+  background: var(--color-dark);
+  color: var(--color-gray-ultra-light);
   text-align: center;
 }
 
@@ -18,6 +21,7 @@
 .brandingLogo {
   margin: 0 auto;
   max-width: 32px;
+  color: var(--color-gray-ultra-dark);
   vertical-align: middle;
 }
 
