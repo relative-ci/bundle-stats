@@ -1,15 +1,37 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Container } from '../ui';
+import { Container, Logo } from '../ui';
 import { getWrapperDecorator } from '../stories';
+import { Header, SubHeader } from '../layout';
 import content from './typography.md';
+import css from './typography.module.css';
 
 const stories = storiesOf('Prototypes/Styleguide', module);
 stories.addDecorator(getWrapperDecorator());
 
 stories.add('typography', () => (
-  <Container dangerouslySetInnerHTML={{ __html: content }} />
+  <React.Fragment>
+    <Header
+      className={css.header}
+      renderLeft={sideProps => (
+        <div {...sideProps}>
+          <h1 className={css.headerTitle}>
+            <Logo className={css.headerLogo} />
+            <span>BundleStats</span>
+          </h1>
+        </div>
+      )}
+    />
+    <SubHeader
+      className={css.subheader}
+      title="HTML Ipsum presents"
+      subtitle="Documentation"
+    />
+    <main className={css.main}>
+      <Container dangerouslySetInnerHTML={{ __html: content }} />
+    </main>
+  </React.Fragment>
 ));
 
 // eslint-disable-next-line react/prop-types
