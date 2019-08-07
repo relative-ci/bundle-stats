@@ -1,10 +1,9 @@
 <p align="center">
-  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank"><img alt="BundleStats screenshot" width="480" src="https://www.dropbox.com/s/8t6m6rruaauwlxq/bundle-stats-screenshot-4.jpg?raw=1"/></a>
+  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank"><img alt="BundleStats screenshot" width="480" src="https://www.dropbox.com/s/vzylxgt1er7yzl5/webpack-bundle-stats-screenshot.v6.jpg?raw=1"/></a>
 </p>
-<h1 align="center">Bundle Stats</h1>
+<h1 align="center">BundleStats</h1>
 <p align="center">
-  BundleStats is analyzing the webpack stats and is providing information about what changed and
-  what is going to be deployed.
+  Generate bundle report(bundle size, assets, modules) and compare the results between different builds.
 </p>
 <p align="center">
   <a href="https://www.npmjs.com/package/bundle-stats"><img src="https://img.shields.io/npm/v/bundle-stats.svg" /></a>
