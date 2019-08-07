@@ -14,7 +14,6 @@ import Modules from './modules';
 import config from './config.json';
 import locale from './locale.json';
 import enhance from './container';
-import css from './styles.css';
 
 const getSummaryData = (jobs) => {
   if (jobs.length <= 2) {
@@ -34,7 +33,7 @@ const Webpack = (props) => {
   } = props;
 
   return (
-    <div className={css.root}>
+    <div>
       <Helmet
         title={locale.title}
         description={locale.description}
@@ -50,7 +49,7 @@ const Webpack = (props) => {
       />
 
       {!isEmpty(jobs) && (
-        <div className={css.main}>
+        <div>
           <Container>
             <Summary data={getSummaryData(jobs)} />
           </Container>
