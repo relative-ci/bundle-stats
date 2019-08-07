@@ -1,0 +1,21 @@
+.header {
+  margin: -24px -24px 0;
+}
+
+.headerTitle {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--size-xlarge);
+  font-weight: 700;
+}
+
+.headerLogo {
+  margin-right: var(--space-xsmall);
+  width: var(--space-large);
+  color: var(--color-branding);
+}
+
+.subheader {
+  margin: 0 -24px;
+}
