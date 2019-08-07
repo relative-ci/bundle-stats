@@ -4,7 +4,6 @@
 
 .root {
   padding-top: var(--header-height);
-  background: var(--color-gray-light-background);
 }
 
 .header {
@@ -14,10 +13,6 @@
   top: 0;
   right: 0;
   height: var(--header-height);
-}
-
-.main {
-  padding: var(--space-small) 0;
 }
 
 .anchor {
@@ -41,11 +36,6 @@
 
 .empty {
   text-align: center;
-}
-
-.footer {
-  background: var(--color-light);
-  box-shadow: 0 0 var(--space-small) var(--color-gray-ultra-light);
 }
 
 @media (min-width: 600px) {

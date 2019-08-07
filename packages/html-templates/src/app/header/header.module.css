@@ -13,7 +13,7 @@
   margin: 0;
   font-size: var(--size-xlarge);
   white-space: nowrap;
-  color: var(--color-branding);
+  font-weight: bold;
 }
 
 .tabs {
