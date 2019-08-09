@@ -30,10 +30,15 @@ const TooltipContent = ({ active, payload }) => {
     return null;
   }
 
+  const item = payload[0];
+  if (!item) {
+    return null;
+  }
+
   return (
     <div className={TOOLTIP_PROPS.contentClassName}>
       <h5 className={css.tooltipTitle}>
-        {getMetricLabel(payload[0].payload.key)}
+        {getMetricLabel(item.payload.key)}
       </h5>
       {payload.map(({ name, value }) => (
         <p className={css.tooltipItem}>
