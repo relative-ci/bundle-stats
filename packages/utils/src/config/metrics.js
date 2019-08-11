@@ -108,7 +108,7 @@ const METRICS = {
       label: 'Perceptual Speed Index',
       type: METRIC_TYPE_DURATION,
     },
-    firstMeaningfulPain: {
+    firstMeaningfulPaint: {
       label: 'First Meaningful Paint',
       type: METRIC_TYPE_DURATION,
     },
