@@ -104,6 +104,27 @@ const METRICS = {
       label: 'Score',
       type: METRIC_TYPE_SCORE,
     },
+    performanceScore: {
+      label: 'Performance',
+      type: METRIC_TYPE_SCORE,
+    },
+    accessibilityScore: {
+      label: 'Accessibility',
+      type: METRIC_TYPE_SCORE,
+    },
+    bestPracticesScore: {
+      label: 'Best Practices',
+      type: METRIC_TYPE_SCORE,
+    },
+    seoScore: {
+      label: 'SEO',
+      type: METRIC_TYPE_SCORE,
+    },
+    pwaScore: {
+      label: 'PWA',
+      type: METRIC_TYPE_SCORE,
+    },
+
     speedIndex: {
       label: 'Perceptual Speed Index',
       type: METRIC_TYPE_DURATION,

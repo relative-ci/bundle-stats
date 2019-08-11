@@ -5,8 +5,16 @@ const getScore = (res) => {
   return round(mean(scores) * 100);
 };
 
+const getCategoryScore = metricPath => res => get(res, metricPath, 0) * 100;
+
 const METRICS = {
   'lighthouse.score': getScore,
+  'lighthouse.performanceScore': getCategoryScore('categories.performance.score'),
+  'lighthouse.accessibilityScore': getCategoryScore('categories.accessibility.score'),
+  'lighthouse.bestPracticesScore': getCategoryScore('categories.best-practices.score'),
+  'lighthouse.seoScore': getCategoryScore('categories.seo.score'),
+  'lighthouse.pwaScore': getCategoryScore('categories.pwa.score'),
+
   'lighthouse.speedIndex': 'audits.speed-index.numericValue',
   'lighthouse.firstMeaningfulPaint': 'audits.first-meaningful-paint.numericValue',
   'lighthouse.timeToFirstByte': 'audits.time-to-first-byte.numericValue',
