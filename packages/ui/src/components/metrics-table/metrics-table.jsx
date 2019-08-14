@@ -17,7 +17,7 @@ const generateHeaderCell = (item, index, runs) => ({
   },
 });
 
-const getHeaders = runs => [
+const getHeaders = (runs) => [
   // Metric name column - one empty strying to render the column
   {
     text: ' ',
@@ -82,7 +82,7 @@ export const MetricsTable = ({
 
 MetricsTable.defaultProps = {
   className: '',
-  renderRowHeader: item => item.label,
+  renderRowHeader: (item) => item.label,
 };
 
 MetricsTable.propTypes = {

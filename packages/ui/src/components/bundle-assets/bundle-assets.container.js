@@ -23,9 +23,9 @@ const addRowFlags = ({ items }) => {
   const updatedItems = items.map((item) => {
     const { runs } = item;
 
-    const isEntry = runs.map(run => run && run.isEntry).includes(true);
-    const isInitial = runs.map(run => run && run.isInitial).includes(true);
-    const isChunk = runs.map(run => run && run.isChunk).includes(true);
+    const isEntry = runs.map((run) => run && run.isEntry).includes(true);
+    const isInitial = runs.map((run) => run && run.isInitial).includes(true);
+    const isChunk = runs.map((run) => run && run.isChunk).includes(true);
 
     const isAsset = !(isEntry || isInitial || isChunk);
 
@@ -65,13 +65,13 @@ const getIsNotPredictive = (key, runs) => runs.reduce((agg, current, index) => {
 }, false);
 
 const addRowIsNotPredictive = ({ items }) => ({
-  items: items.map(item => ({
+  items: items.map((item) => ({
     ...item,
     isNotPredictive: getIsNotPredictive(item.key, item.runs),
   })),
 });
 
-const getRowFilter = filters => (item) => {
+const getRowFilter = (filters) => (item) => {
   if (filters[FILTER_CHANGED] && !item.changed) {
     return false;
   }
@@ -92,7 +92,7 @@ const getRowFilter = filters => (item) => {
   return true;
 };
 
-const customSort = item => [
+const customSort = (item) => [
   !item.isNotPredictive,
   !item.changed,
   !item.isInitial,
@@ -118,8 +118,8 @@ const getEntryTypeFilters = (value = true) => [
 
 export const enhance = compose(
   withProps(({ jobs }) => {
-    const runs = jobs.map(job => ({ meta: job }));
-    const assets = jobs.map(job => getAssetsMetrics(
+    const runs = jobs.map((job) => ({ meta: job }));
+    const assets = jobs.map((job) => getAssetsMetrics(
       get(job, 'rawData.webpack.stats.assets', []),
       {
         chunks: get(job, 'rawData.webpack.stats.chunks', []),

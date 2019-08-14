@@ -9,14 +9,14 @@ import css from './header.module.css';
 export const Header = ({ className }) => (
   <UIHeader
     className={cx(css.root, className)}
-    renderLeft={partProps => (
+    renderLeft={(partProps) => (
       <div {...partProps}>
         <h1 className={css.title}>
           BundleStats
         </h1>
       </div>
     )}
-    render={partProps => (
+    render={(partProps) => (
       <div {...partProps}>
         <Tabs className={cx(css.center, css.tabs)}>
           <a
@@ -40,7 +40,7 @@ export const Header = ({ className }) => (
         </Tabs>
       </div>
     )}
-    renderRight={partProps => (
+    renderRight={(partProps) => (
       <div {...partProps}>
         <Logo
           className={css.githubLogo}

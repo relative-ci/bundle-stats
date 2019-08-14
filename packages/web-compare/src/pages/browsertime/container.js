@@ -9,7 +9,7 @@ const metaMap = {
   connectivity: 'info.connectivity.profile',
 };
 
-const createJobs = sources => sources.map(({ res }, index) => ({
+const createJobs = (sources) => sources.map(({ res }, index) => ({
   internalBuildNumber: index + 1,
   rawData: {
     browsertime: res,

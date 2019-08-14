@@ -14,7 +14,7 @@ const App = () => (
   <div className={styles.root}>
     <Header
       className={styles.header}
-      renderLeft={sideProps => (
+      renderLeft={(sideProps) => (
         <div {...sideProps}>
           <Logo
             className={styles.headerRelativeLogo}
@@ -24,12 +24,12 @@ const App = () => (
           />
         </div>
       )}
-      render={sideProps => (
+      render={(sideProps) => (
         <div {...sideProps}>
           <Navigation className={styles.headerNavigation} />
         </div>
       )}
-      renderRight={sideProps => (
+      renderRight={(sideProps) => (
         <div {...sideProps}>
           <Logo
             className={styles.headerGithubLogo}

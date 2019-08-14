@@ -21,7 +21,7 @@ const CURRENT_JOB = {
 
 const stories = storiesOf('StandaloneApp', module);
 
-stories.addDecorator(storyFn => (
+stories.addDecorator((storyFn) => (
   <div style={{ margin: '-1rem' }}>
     {storyFn()}
   </div>

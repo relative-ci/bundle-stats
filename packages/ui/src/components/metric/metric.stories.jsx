@@ -10,7 +10,7 @@ stories.addDecorator(getWrapperDecorator());
 stories.add('default', () => (
   <Metric
     value={100}
-    formatter={v => `${v}ms`}
+    formatter={(v) => `${v}ms`}
   />
 ));
 
@@ -21,7 +21,7 @@ stories.add('modifier: formatted value', () => (
 stories.add('modifier: enhanced', () => (
   <Metric
     value={100}
-    formatter={v => `${v}ms`}
+    formatter={(v) => `${v}ms`}
     enhanced
   />
 ));

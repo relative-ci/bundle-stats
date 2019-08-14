@@ -62,7 +62,9 @@ const Source = (props) => {
         type="button"
         class={styles.remove}
         title={locale.remove}
-      />
+      >
+        x
+      </button>
     </div>
   );
 };

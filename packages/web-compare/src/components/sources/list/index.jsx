@@ -4,7 +4,7 @@ import Source from '../source';
 import styles from './styles.css';
 
 const List = ({ sources, runs, removeSource }) => {
-  const getHandleRemoveSource = index => (event) => {
+  const getHandleRemoveSource = (index) => (event) => {
     event.preventDefault();
     removeSource(index);
   };

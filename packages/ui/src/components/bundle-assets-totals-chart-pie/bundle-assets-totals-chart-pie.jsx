@@ -24,7 +24,7 @@ import {
 import { Metric } from '../metric';
 import css from './bundle-assets-totals-chart-pie.module.css';
 
-const getMetricLabel = key => getMetricType(key).label;
+const getMetricLabel = (key) => getMetricType(key).label;
 
 const TooltipContent = ({ active, payload }) => {
   if (!active) {
@@ -63,7 +63,7 @@ TooltipContent.propTypes = {
 };
 
 const LegendContent = ({ payload }) => {
-  const items = sortBy(payload, item => 1 - item.payload.percent);
+  const items = sortBy(payload, (item) => 1 - item.payload.percent);
 
   return (
     <ul className={css.legend}>
@@ -99,7 +99,7 @@ LegendContent.propTypes = {
   })).isRequired,
 };
 
-const prefixStats = data => Object.entries(data).map(([key, value]) => ({
+const prefixStats = (data) => Object.entries(data).map(([key, value]) => ({
   [`webpack.assets.${key}`]: value,
 })).reduce((aggregator, current) => ({
   ...aggregator,
@@ -125,7 +125,7 @@ export const BundleAssetsTotalsChartPie = ({ className, jobs }) => {
   const runs = jobs.map(getRun);
   const rows = sortBy(mergeRunsById(runs), 'key');
 
-  const data = rows.map(row => ({
+  const data = rows.map((row) => ({
     key: row.key,
     value: row.runs[0].value,
   }));

@@ -12,7 +12,7 @@ import { BundleChunkModules } from '../bundle-chunk-modules';
 import css from './bundle-modules.module.css';
 
 export const BundleModules = ({ jobs }) => {
-  const runs = jobs.map(job => ({
+  const runs = jobs.map((job) => ({
     meta: job,
     modules: getModulesMetrics(
       get(job, 'rawData.webpack.stats.modules', []),
@@ -25,7 +25,7 @@ export const BundleModules = ({ jobs }) => {
   const modulesReport = getModulesReport(runs);
 
   return (
-    <React.Fragment>
+    <>
       {!isEmpty(modulesReport) && modulesReport.map(({ chunkId, chunkNames, modules }) => (
         <BundleChunkModules
           key={`${chunkNames.join('-')}-${chunkId}`}
@@ -54,7 +54,7 @@ export const BundleModules = ({ jobs }) => {
           </a>
         </Box>
       )}
-    </React.Fragment>
+    </>
   );
 };
 

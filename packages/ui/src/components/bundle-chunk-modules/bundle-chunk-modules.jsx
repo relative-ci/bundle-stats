@@ -10,7 +10,7 @@ import { JobName } from '../job-name';
 import { MetricsTable } from '../metrics-table';
 import css from './bundle-chunk-modules.module.css';
 
-const getRenderRowHeader = labels => row => (
+const getRenderRowHeader = (labels) => (row) => (
   <Tooltip
     title={(
       <div className={css.nameTooltip}>

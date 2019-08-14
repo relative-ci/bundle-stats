@@ -16,9 +16,9 @@ export const Header = ({
 
 Header.defaultProps = {
   className: '',
-  renderLeft: props => <div {...props} />,
-  render: props => <div {...props} />,
-  renderRight: props => <div {...props} />,
+  renderLeft: (props) => <div {...props} />,
+  render: (props) => <div {...props} />,
+  renderRight: (props) => <div {...props} />,
 };
 
 Header.propTypes = {

@@ -40,7 +40,7 @@ const JOBS = [currentJob, baselineJob];
 const PageHeader = () => (
   <Header
     className={css.header}
-    renderLeft={sideProps => (
+    renderLeft={(sideProps) => (
       <div {...sideProps}>
         <Logo className={css.headerLogo} />
       </div>
@@ -49,7 +49,7 @@ const PageHeader = () => (
 );
 
 stories.add('totals', () => (
-  <React.Fragment>
+  <>
     <PageHeader />
     <main className={css.main}>
       <Container>
@@ -79,11 +79,11 @@ stories.add('totals', () => (
       </Container>
     </main>
     <Footer className={css.footer} />
-  </React.Fragment>
+  </>
 ));
 
 stories.add('assets', () => (
-  <React.Fragment>
+  <>
     <PageHeader />
     <main className={css.main}>
       <Container>
@@ -103,11 +103,11 @@ stories.add('assets', () => (
       </Container>
     </main>
     <Footer className={css.footer} />
-  </React.Fragment>
+  </>
 ));
 
 stories.add('modules', () => (
-  <React.Fragment>
+  <>
     <PageHeader />
     <main className={css.main}>
       <Container>
@@ -125,5 +125,5 @@ stories.add('modules', () => (
       </Container>
     </main>
     <Footer className={css.footer} />
-  </React.Fragment>
+  </>
 ));

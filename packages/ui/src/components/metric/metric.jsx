@@ -41,7 +41,7 @@ Metric.defaultProps = {
   enhanced: false,
   value: 0,
   children: [],
-  formatter: val => val,
+  formatter: (val) => val,
 };
 
 Metric.propTypes = {

@@ -38,5 +38,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/sort-comp': 'off',
     'react/destructuring-assignment': 'off',
+    'react/static-property-placement': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
 };

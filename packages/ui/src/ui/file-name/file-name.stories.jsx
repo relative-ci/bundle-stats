@@ -12,11 +12,11 @@ const NAMES = [
 ];
 
 stories.add('default', () => (
-  <React.Fragment>
-    {NAMES.map(name => (
+  <>
+    {NAMES.map((name) => (
       <div key={name} style={{ padding: '12px', outline: '1px dotted lightpink', margin: '12px' }}>
         <FileName name={name} />
       </div>
     ))}
-  </React.Fragment>
+  </>
 ));

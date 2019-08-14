@@ -4,7 +4,7 @@ import { getLighthouseMetrics, addMetricsData, mergeRunsById } from '@bundle-sta
 
 export const enhance = compose(
   withProps(({ jobs }) => {
-    const runs = jobs.map(job => ({
+    const runs = jobs.map((job) => ({
       meta: job,
       lighthouse: getLighthouseMetrics(get(job, 'rawData.lighthouse')),
     }));

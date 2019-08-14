@@ -3,9 +3,9 @@ import {
 } from 'recompose';
 import { sortBy } from 'lodash';
 
-const customSort = item => [!item.changed, item.key];
+const customSort = (item) => [!item.changed, item.key];
 
-const getFilterByChanged = filters => (row) => {
+const getFilterByChanged = (filters) => (row) => {
   if (filters.changed) {
     return row.changed;
   }

@@ -62,6 +62,8 @@
   background: transparent;
   cursor: pointer;
   opacity: 0.3;
+  text-indent: -9999em;
+  overflow: hidden;
 }
 
 .remove::before {

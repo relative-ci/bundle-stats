@@ -109,8 +109,8 @@ TooltipFilename.propTypes = {
   labels: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };
 
-const getRenderRowHeader = labels => item => (
-  <React.Fragment>
+const getRenderRowHeader = (labels) => (item) => (
+  <>
     {item.isNotPredictive && (
       <Tooltip
         className={css.notPredictive}
@@ -155,7 +155,7 @@ const getRenderRowHeader = labels => item => (
     >
       <FileName name={item.label} />
     </Tooltip>
-  </React.Fragment>
+  </>
 );
 
 export const BundleAssets = (props) => {
