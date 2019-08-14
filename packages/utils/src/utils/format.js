@@ -11,8 +11,8 @@ export const formatDuration = (val) => {
   return `${round(res.val, 4)}${res.unit}`;
 };
 
-export const formatNumber = val => `${val}`;
+export const formatNumber = (val) => `${val}`;
 
-export const formatCommit = commitSha => (commitSha && commitSha.substr(0, 7)) || '';
+export const formatCommit = (commitSha) => (commitSha && commitSha.substr(0, 7)) || '';
 
-export const formatPercentage = val => `${val}%`;
+export const formatPercentage = (val) => `${val}%`;

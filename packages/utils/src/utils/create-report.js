@@ -58,7 +58,7 @@ export const addMetricsData = (entries, metricType) => entries.map((entry) => {
   };
 });
 
-export const createRuns = jobs => jobs.map(({ internalBuildNumber, stats, rawData }) => ({
+export const createRuns = (jobs) => jobs.map(({ internalBuildNumber, stats, rawData }) => ({
   meta: {
     internalBuildNumber,
   },
@@ -78,13 +78,13 @@ export const createRuns = jobs => jobs.map(({ internalBuildNumber, stats, rawDat
   ),
 }));
 
-export const getModulesReport = runs => map(
+export const getModulesReport = (runs) => map(
   uniq(flatMap(runs, ({ modules }) => Object.keys(modules))),
-  chunkId => ({
+  (chunkId) => ({
     chunkId,
-    chunkNames: uniq(flatMap(runs, run => get(run, ['modules', chunkId, 'chunkNames']))),
+    chunkNames: uniq(flatMap(runs, (run) => get(run, ['modules', chunkId, 'chunkNames']))),
     modules: addMetricsData(mergeRunsById(
-      map(runs, run => get(run, ['modules', chunkId, 'modules'])),
+      map(runs, (run) => get(run, ['modules', chunkId, 'modules'])),
     ), METRIC_TYPE_FILE_SIZE),
   }),
 );

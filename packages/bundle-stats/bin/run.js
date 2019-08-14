@@ -12,10 +12,10 @@ module.exports = ({
   const tasks = new Listr([
     {
       title: 'Read Webpack stat files',
-      task: ctx => Promise.all(
-        artifactFilepaths.map(filepath => readJSON(filepath)),
+      task: (ctx) => Promise.all(
+        artifactFilepaths.map((filepath) => readJSON(filepath)),
       ).then((artifacts) => {
-        ctx.artifacts = artifacts.map(stats => ({
+        ctx.artifacts = artifacts.map((stats) => ({
           webpack: { stats },
         }));
       }),
@@ -34,7 +34,7 @@ module.exports = ({
     },
     {
       title: 'Save reports',
-      task: ctx => new Listr(
+      task: (ctx) => new Listr(
         ctx.reports.map(({ filename, output }) => ({
           title: filename,
           task: async () => {
@@ -54,7 +54,7 @@ module.exports = ({
   tasks.run()
     .then(({ output }) => {
       console.log('\nReports saved:');
-      output.map(reportPath => console.log(`- ${path.resolve(reportPath)}`));
+      output.map((reportPath) => console.log(`- ${path.resolve(reportPath)}`));
     })
     .catch((err) => {
       console.error(err);
