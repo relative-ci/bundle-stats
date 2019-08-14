@@ -15,7 +15,7 @@ export const createHTMLReport = (data) => {
   return template.replace(INITIAL_DATA_PATTERN, `window.__INITIAL_DATA__ = ${JSON.stringify(data)}`);
 };
 
-export const createJSONReport = data => JSON.stringify(createReport(data), null, 2);
+export const createJSONReport = (data) => JSON.stringify(createReport(data), null, 2);
 
 const REPORT_HANDLERS = {
   [OUTPUT_TYPE_HTML]: createHTMLReport,
@@ -29,7 +29,7 @@ export const createReports = (initialData, options) => {
   ];
 
   return Promise.all(
-    types.map(type => ({
+    types.map((type) => ({
       output: REPORT_HANDLERS[type](initialData),
       filename: `${OUTPUT_FILENAME}.${type}`,
     })),

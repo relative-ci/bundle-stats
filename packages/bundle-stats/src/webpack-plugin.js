@@ -20,7 +20,7 @@ const DEFAULT_OPTIONS = {
   },
 };
 
-const getOnEmit = options => (compilation, callback) => {
+const getOnEmit = (options) => (compilation, callback) => {
   const {
     html,
     json,
@@ -43,7 +43,7 @@ const getOnEmit = options => (compilation, callback) => {
       });
     })
     .then(callback)
-    .catch(err => callback(err));
+    .catch((err) => callback(err));
 };
 
 export class BundleStatsWebpackPlugin {

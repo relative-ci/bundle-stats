@@ -7,7 +7,7 @@ const METRIC_NAME_ALL = 'ALL';
 const METRIC_NAME_PREFIX = 'totalSizeByType';
 const IGNORED_EXTENSIONS = /\.map$/;
 
-const getMetricName = fileType => `${METRIC_NAME_PREFIX}${fileType}`;
+const getMetricName = (fileType) => `${METRIC_NAME_PREFIX}${fileType}`;
 
 const constructInitialSizeByType = () => FILE_TYPES.reduce((accumulator, fileType) => ({
   ...accumulator,
@@ -16,7 +16,7 @@ const constructInitialSizeByType = () => FILE_TYPES.reduce((accumulator, fileTyp
   },
 }), {});
 
-const calculateTotalByType = assets => assets.reduce((accumulator, current) => {
+const calculateTotalByType = (assets) => assets.reduce((accumulator, current) => {
   const fileType = getFileType(current.name);
 
   const statName = getMetricName(fileType);
@@ -30,7 +30,7 @@ const calculateTotalByType = assets => assets.reduce((accumulator, current) => {
   };
 }, constructInitialSizeByType());
 
-const isAssetValid = asset => !IGNORED_EXTENSIONS.test(asset.name)
+const isAssetValid = (asset) => !IGNORED_EXTENSIONS.test(asset.name)
 
   // Skip files that have 0 size (eg: webpack.json)
   && asset.value !== 0;
@@ -51,14 +51,14 @@ export const calculateTotals = (assets = []) => {
 
 export const calculateInitialTotals = (assets = [], chunks = []) => {
   const initialChunks = flatten(
-    chunks.filter(chunk => chunk.initial).map(({ files }) => files),
-  ).filter(name => !IGNORED_EXTENSIONS.test(name));
+    chunks.filter((chunk) => chunk.initial).map(({ files }) => files),
+  ).filter((name) => !IGNORED_EXTENSIONS.test(name));
 
   const cssChunksFiles = initialChunks.filter(
-    chunkFile => FILE_TYPE_PATTERNS[FILE_TYPE_CSS].test(chunkFile),
+    (chunkFile) => FILE_TYPE_PATTERNS[FILE_TYPE_CSS].test(chunkFile),
   );
   const jsChunksFiles = initialChunks.filter(
-    chunkFile => FILE_TYPE_PATTERNS[FILE_TYPE_JS].test(chunkFile),
+    (chunkFile) => FILE_TYPE_PATTERNS[FILE_TYPE_JS].test(chunkFile),
   );
 
   const cssAssets = assets.filter(({ name }) => cssChunksFiles.includes(name));
