@@ -1,11 +1,11 @@
 import { get, mean, round } from 'lodash';
 
 const getScore = (res) => {
-  const scores = Object.values(res.categories).map(category => category.score);
+  const scores = Object.values(res.categories).map((category) => category.score);
   return round(mean(scores) * 100);
 };
 
-const getCategoryScore = metricPath => res => get(res, metricPath, 0) * 100;
+const getCategoryScore = (metricPath) => (res) => get(res, metricPath, 0) * 100;
 
 const METRICS = {
   'lighthouse.score': getScore,
