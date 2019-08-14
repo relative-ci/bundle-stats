@@ -15,7 +15,7 @@ const Sources = ({
   addSource,
   removeSource,
 }) => {
-  const handleExamplesClick = urls => urls.forEach(addSource);
+  const handleExamplesClick = (urls) => urls.forEach(addSource);
   const empty = Boolean(sources && sources.length === 0);
   const rootClassName = cx(styles.root, empty && styles.empty);
 

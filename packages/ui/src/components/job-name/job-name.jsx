@@ -5,14 +5,14 @@ import { Tooltip } from '../../ui';
 import css from './job-name.module.css';
 
 const JobNameLabel = ({ internalBuildNumber, labelProps }) => (
-  <React.Fragment>
+  <>
     <span {...labelProps}>
       Job
     </span>
     <span>
       {`#${internalBuildNumber}`}
     </span>
-  </React.Fragment>
+  </>
 );
 
 JobNameLabel.defaultProps = {

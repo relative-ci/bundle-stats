@@ -9,7 +9,7 @@ import css from './summary.module.css';
 export const Summary = ({
   className, data, keys, loading,
 }) => {
-  const getRenderSummaryItem = itemProps => key => (
+  const getRenderSummaryItem = (itemProps) => (key) => (
     <SummaryItem
       key={key}
       className={css.item}

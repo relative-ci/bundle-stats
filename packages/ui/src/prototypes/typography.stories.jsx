@@ -11,10 +11,10 @@ const stories = storiesOf('Prototypes/Styleguide', module);
 stories.addDecorator(getWrapperDecorator());
 
 stories.add('typography', () => (
-  <React.Fragment>
+  <>
     <Header
       className={css.header}
-      renderLeft={sideProps => (
+      renderLeft={(sideProps) => (
         <div {...sideProps}>
           <h1 className={css.headerTitle}>
             <Logo className={css.headerLogo} />
@@ -31,7 +31,7 @@ stories.add('typography', () => (
     <main className={css.main}>
       <Container dangerouslySetInnerHTML={{ __html: content }} />
     </main>
-  </React.Fragment>
+  </>
 ));
 
 // eslint-disable-next-line react/prop-types
@@ -82,9 +82,9 @@ stories.add('color sheme', () => (
 
     <hr />
 
-    {COLORS.map(colorName => (
+    {COLORS.map((colorName) => (
       <div style={{ display: 'flex', marginBottom: '24px' }}>
-        {NAMES.map(valueName => (
+        {NAMES.map((valueName) => (
           <Item
             key={`${colorName}-${valueName}`}
             colorName={colorName}

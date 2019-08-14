@@ -10,11 +10,11 @@ import { BundleChunkModules } from '.';
 
 const currentJob = {
   ...currentData,
-  modules: currentData.rawData.webpack.stats.modules.filter(i => i.chunks.includes(1)),
+  modules: currentData.rawData.webpack.stats.modules.filter((i) => i.chunks.includes(1)),
 };
 const baselineJob = {
   ...baselineData,
-  modules: baselineData.rawData.webpack.stats.modules.filter(i => i.chunks.includes(1)),
+  modules: baselineData.rawData.webpack.stats.modules.filter((i) => i.chunks.includes(1)),
 };
 
 const stories = storiesOf('Components/BundleChunkModules', module);
@@ -22,7 +22,7 @@ stories.addDecorator(getWrapperDecorator());
 
 const RUNS_DEFAULT = [
   currentJob,
-].map(job => ({
+].map((job) => ({
   meta: job,
   modules: getModulesMetrics(
     get(job, 'rawData.webpack.stats.modules', []),
@@ -43,7 +43,7 @@ stories.add('default', () => (
 const RUNS_MULTIPLE = [
   currentJob,
   baselineJob,
-].map(job => ({
+].map((job) => ({
   meta: job,
   modules: getModulesMetrics(
     get(job, 'rawData.webpack.stats.modules', []),
@@ -64,7 +64,7 @@ stories.add('multiple jobs', () => (
 const RUNS_EMPTY_BASELINE = [
   currentJob,
   null,
-].map(job => ({
+].map((job) => ({
   meta: job,
   modules: getModulesMetrics(
     get(job, 'rawData.webpack.stats.modules', []),

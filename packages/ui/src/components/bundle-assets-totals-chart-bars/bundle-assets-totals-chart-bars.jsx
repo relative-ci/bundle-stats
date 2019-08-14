@@ -23,7 +23,7 @@ import {
 } from '../chart';
 import css from './bundle-assets-totals-chart-bars.module.css';
 
-const getMetricLabel = key => getMetricType(key).label;
+const getMetricLabel = (key) => getMetricType(key).label;
 
 const TooltipContent = ({ active, payload }) => {
   if (!active) {
@@ -63,7 +63,7 @@ TooltipContent.propTypes = {
   })).isRequired,
 };
 
-const prefixStats = data => Object.entries(data).map(([key, value]) => ({
+const prefixStats = (data) => Object.entries(data).map(([key, value]) => ({
   [`webpack.assets.${key}`]: value,
 })).reduce((aggregator, current) => ({
   ...aggregator,
@@ -89,7 +89,7 @@ export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
   const runs = jobs.map(getRun);
   const rows = sortBy(mergeRunsById(runs), 'key');
 
-  const data = rows.map(row => ({
+  const data = rows.map((row) => ({
     key: row.key,
     ...row.runs.reduce((agg, { value }, jobId) => ({
       ...agg,

@@ -11,7 +11,7 @@ import { BundleModules } from '@bundle-stats/ui/lib-esm/components/bundle-module
 import { Header } from './header';
 import css from './styles.css';
 
-const StandaloneAppLayout = props => (
+const StandaloneAppLayout = (props) => (
   <div className={css.root}>
     <Header className={css.header} />
     <div

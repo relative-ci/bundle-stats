@@ -4,7 +4,7 @@ import { getBrowsertimeMetrics, addMetricsData, mergeRunsById } from '@bundle-st
 
 export const enhance = compose(
   withProps(({ jobs }) => {
-    const runs = jobs.map(job => ({
+    const runs = jobs.map((job) => ({
       meta: job,
       browsertime: getBrowsertimeMetrics(get(job, 'rawData.browsertime')),
     }));

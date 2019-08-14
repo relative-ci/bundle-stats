@@ -7,7 +7,7 @@ const createRun = (metaMap, length) => (source, index) => ({
   meta: getMeta(source.res, metaMap),
 });
 
-const enhance = metaMap => withProps(({ sources }) => ({
+const enhance = (metaMap) => withProps(({ sources }) => ({
   runs: sources.map(createRun(metaMap, sources.length)),
 }));
 

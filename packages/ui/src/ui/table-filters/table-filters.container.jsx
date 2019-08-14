@@ -21,7 +21,7 @@ const getInitialValues = (key, filters) => {
   return {};
 };
 
-export const filterContainer = BaseComponent => class FilterContainer extends React.Component {
+export const filterContainer = (BaseComponent) => class FilterContainer extends React.Component {
   static defaultProps = {
     onChange: null,
   }

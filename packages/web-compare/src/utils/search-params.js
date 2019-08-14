@@ -2,7 +2,7 @@ const URL_PARAM_NAME = 'url';
 
 const urlsToSearch = (urls) => {
   const params = new URLSearchParams('');
-  urls.forEach(url => params.append(URL_PARAM_NAME, url));
+  urls.forEach((url) => params.append(URL_PARAM_NAME, url));
 
   const newSearch = params.toString();
 

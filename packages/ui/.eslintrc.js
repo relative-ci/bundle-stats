@@ -7,6 +7,8 @@ module.exports = {
       'error',
       { peerDependencies: true },
     ],
+    'react/static-property-placement': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
   plugins: [
     'jest',

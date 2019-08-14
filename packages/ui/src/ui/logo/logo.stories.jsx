@@ -19,7 +19,7 @@ stories.add('default', () => (
 ));
 
 /* eslint-disable jsx-a11y/anchor-has-content */
-const LogoComponent = props => <a {...props} />;
+const LogoComponent = (props) => <a {...props} />;
 /* eslint-enable jsx-a11y/anchor-has-content */
 
 stories.add('with custom component', () => (

@@ -10,5 +10,5 @@ export const LIGHTHOUSE_PATH = LIGHTHOUSE_HREF;
 export const BROWSERTIME_HREF = '/browsertime';
 export const BROWSERTIME_PATH = BROWSERTIME_HREF;
 
-export const getWebpackPath = subpageSlug => [WEBPACK_HREF, subpageSlug].filter(Boolean).join('/');
-export const getWebpackUrl = subpageSlug => `${getWebpackPath(subpageSlug)}${window.location.search}`;
+export const getWebpackPath = (subpageSlug) => [WEBPACK_HREF, subpageSlug].filter(Boolean).join('/');
+export const getWebpackUrl = (subpageSlug) => `${getWebpackPath(subpageSlug)}${window.location.search}`;

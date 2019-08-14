@@ -18,11 +18,11 @@ const resolveUrl = (url) => {
   return url;
 };
 
-const syncSourcesWithParams = sources => syncUrlsToSearch(map(sources, 'url'));
+const syncSourcesWithParams = (sources) => syncUrlsToSearch(map(sources, 'url'));
 
-const getSourceIndexById = (sources, id) => sources.findIndex(source => source.id === id);
+const getSourceIndexById = (sources, id) => sources.findIndex((source) => source.id === id);
 
-const getDefaultSource = url => ({
+const getDefaultSource = (url) => ({
   id: uuid(),
   url,
   resolvedUrl: resolveUrl(url),
@@ -42,8 +42,12 @@ const enhance = () => (BaseComponent) => {
       initialUrls: PropTypes.arrayOf(PropTypes.string),
     }
 
-    state = {
-      sources: [],
+    constructor(props) {
+      super(props);
+
+      this.state({
+        sources: [],
+      });
     }
 
     addSource = (url) => {
@@ -103,13 +107,13 @@ const enhance = () => (BaseComponent) => {
       });
 
       fetchJSON(resolvedUrl)
-        .then(res => this.updateSource({
+        .then((res) => this.updateSource({
           ...source,
           loading: false,
           fetched: true,
           res,
         }))
-        .catch(err => this.updateSource({
+        .catch((err) => this.updateSource({
           ...source,
           loading: false,
           fetched: false,

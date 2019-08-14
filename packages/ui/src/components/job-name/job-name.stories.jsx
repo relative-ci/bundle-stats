@@ -18,7 +18,7 @@ stories.add('custom component', () => (
   <JobName
     title="View job details"
     internalBuildNumber={10}
-    as={props => <strong {...props} />}
+    as={(props) => <strong {...props} />}
   />
 ));
 

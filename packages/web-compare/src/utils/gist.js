@@ -10,9 +10,9 @@ export const getGistRawUrl = (gistUrl) => {
     gistId,
     'raw',
     revisionId,
-  ].filter(slug => slug).join('/');
+  ].filter((slug) => slug).join('/');
 
   return `${GIST_RAW_ORIGIN}${pathname}`;
 };
 
-export const isGistUrl = url => GIST_PATTERN.test(url);
+export const isGistUrl = (url) => GIST_PATTERN.test(url);
