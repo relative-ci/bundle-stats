@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`webpack plugin 1`] = `
+exports[`webpack plugin package 1`] = `
 Array [
   Object {
     "chunkNames": Array [],

@@ -2,13 +2,22 @@
 const path = require('path');
 const { readJSON, outputFile } = require('fs-extra');
 const Listr = require('listr');
+const { get } = require('lodash');
 const { createJobs } = require('@bundle-stats/utils');
 
-const { createReports } = require('../'); // eslint-disable-line import/no-unresolved
+// eslint-disable-next-line import/no-unresolved
+const {
+  TEXT,
+  createReports,
+  readBaseline,
+  writeBaseline,
+} = require('../');
 
 module.exports = ({
-  html, json, outDir, artifactFilepaths,
+  baseline, compare, html, json, outDir, artifactFilepaths,
 }) => {
+  console.log({ baseline, compare });
+
   const tasks = new Listr([
     {
       title: 'Read Webpack stat files',
@@ -21,7 +30,42 @@ module.exports = ({
       }),
     },
     {
-      title: 'Gather data',
+      title: 'Read baseline data',
+      task: async (ctx) => {
+        const { baselineStats } = ctx;
+
+        ctx.artifacts = ctx.artifacts.concat([{
+          webpack: { stats: baselineStats },
+        }]);
+      },
+      skip: async (ctx) => {
+        if (!compare) {
+          return TEXT.CLI_NO_COMPARE_MODE;
+        }
+
+        if (artifactFilepaths.length !== 1) {
+          return TEXT.CLI_MULTIPLE_STATS;
+        }
+
+        let baselineStats = {};
+
+        try {
+          baselineStats = await readBaseline();
+          ctx.baselineStats = baselineStats;
+        } catch (err) {
+          return TEXT.CLI_BASELINE_MISSING_WARN;
+        }
+
+        return false;
+      },
+    },
+    {
+      title: 'Write baseline data',
+      task: (ctx) => writeBaseline(get(ctx, 'artifacts.0.webpack.stats')),
+      skip: () => !baseline && TEXT.CLI_NO_BASELINE,
+    },
+    {
+      title: 'Process data',
       task: (ctx) => {
         ctx.initialData = createJobs(ctx.artifacts);
       },

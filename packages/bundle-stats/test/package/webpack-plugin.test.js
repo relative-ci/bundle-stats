@@ -4,7 +4,7 @@ const config = require('./app/webpack.config');
 
 jest.setTimeout(10 * 1000);
 
-test('webpack plugin', (done) => {
+test('webpack plugin package', (done) => {
   expect.assertions(3);
 
   const compiler = webpack(config);
