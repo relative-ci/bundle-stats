@@ -33,7 +33,7 @@ export const getBrowsertimeMetrics = (browsertime) => {
     .reduce((agg, [metricKey, metricPath]) => ({
       ...agg,
       [metricKey]: {
-        value: get(browsertime, metricPath, 0),
+        value: get(browsertime, `0.${metricPath}`, 0),
       },
     }), {});
 };
