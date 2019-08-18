@@ -69,7 +69,7 @@
     "stylelint-config-standard": "18.3.0",
     "terser-webpack-plugin": "1.4.1",
     "webpack": "4.39.2",
-    "webpack-cli": "3.3.6",
+    "webpack-cli": "3.3.7",
     "webpack-merge": "4.2.1",
     "whatwg-fetch": "3.0.0"
   }
