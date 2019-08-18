@@ -40,6 +40,18 @@ const args = yargs
     description: 'Output directory',
     default: DEFAULT_OUTPUT_DIR,
   })
+
+  .option('compare', {
+    description: 'Use local saved stats for comparison',
+    boolean: true,
+    default: true,
+  })
+  .option('baseline', {
+    description: 'Save current stats as baseline',
+    boolean: true,
+    default: false,
+  })
+
   .option('html', {
     description: 'Save HTML report',
     boolean: true,
@@ -61,9 +73,14 @@ const args = yargs
   .argv;
 
 const {
-  html, json, outDir, _: artifactFilepaths,
+  compare,
+  baseline,
+
+  html,
+  json,
+  outDir, _: artifactFilepaths,
 } = args;
 
 run({
-  html, json, outDir, artifactFilepaths,
+  baseline, compare, html, json, outDir, artifactFilepaths,
 });

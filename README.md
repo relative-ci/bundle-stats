@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank"><img alt="BundleStats screenshot" width="480" src="https://www.dropbox.com/s/vzylxgt1er7yzl5/webpack-bundle-stats-screenshot.v6.jpg?raw=1"/></a>
+  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank"><img alt="BundleStats screenshot" width="480" src="https://camo.githubusercontent.com/fc18c7594187a7d19adfe50a624951461b80e6ae/68747470733a2f2f7777772e64726f70626f782e636f6d2f732f767a796c78677431657237797a6c352f7765627061636b2d62756e646c652d73746174732d73637265656e73686f742e76362e6a70673f7261773d31"/></a>
 </p>
 <h1 align="center">BundleStats</h1>
 <p align="center">
@@ -24,11 +24,13 @@
 - [Webpack plugin](#1-webpack-plugin)
   - [Install](#install)
   - [Webpack configuration](#webpack-configuration)
+  - [Compare mode](#compare-mode)
 - [CLI](#2-cli)
   - [Install as global dependency](#install-as-global-dependency)
   - [Install as dev dependency](#install-as-dev-dependency)
   - [Webpack configuration](#webpack-configuration-1)
   - [Usage](#usage)
+  - [Compare mode](#compare-mode-1)
 - [Standalone web application](#3-standalone-web-application)
 - [:zap: Running on CI](#4-zap-running-on-ci)
 - [Packages](#5-packages)
@@ -61,8 +63,10 @@ module.exports = {
 }
 ```
 
-#### `BundleStatsWebpackPlugin(options)`
+### `BundleStatsWebpackPlugin(options)`
 
+- `compare` - use local saved stats for comparison (default `true`).
+- `baseline` - save current webpack stats as baseline (default `false`).
 - `html` - output html report (default `true`).
 - `json` - output json report (default `false`).
 - `outDir` - output directory relative to `output.path` (default `''`).
@@ -79,6 +83,26 @@ module.exports = {
     }
   }
   ```
+
+### Compare mode
+
+In `compare` mode, the metrics are compared against an existing Webpack stats file(baseline). To generate the baseline webpack stats, set `BUNDLE_STATS_BASELINE` environmental variable to `true` or set `BundleStatsWebpackPlugin` `baseline` option to `true`:
+
+```shell
+# Checkout to the branch/tag/commit where you want to generate the baseline
+$ git checkout master
+
+# Build your application with BUNDLE_STATS_BASELINE environmental variable
+$ BUNDLE_STATS_BASELINE=true npm run build
+
+# Checkout to the working branch/tag/commit
+$ git checkout MY_FEATURE_BRANCH
+
+# Build your application
+$ npm run build
+```
+
+The option can be disabled by setting `BundleStatsWebpackPlugin` `compare` option to `false`.
 
 ## 2. CLI
 
@@ -129,9 +153,14 @@ $ bundle-stats -h
 Usage: bundle-stats OPTIONS [WEBPACK_STATS_FILE]...
 
 Options:
+  --compare      Use local saved stats for comparison  [boolean] [default: true]
+  --baseline     Save current stats as baseline       [boolean] [default: false]
+
   --html         Save HTML report                      [boolean] [default: true]
   --json         Save JSON data                       [boolean] [default: false]
+
   --demo         Generate demo reports                          [default: false]
+
   -d, --out-dir  Output directory                            [default: "./dist"]
   -h, --help     Show help                                             [boolean]
   -v, --version  Show version number                                   [boolean]
@@ -140,6 +169,9 @@ Options:
 ```shell
 $ bundle-stats --html --json __fixtures__/webpack-stats-0.json __fixtures__/webpack-stats-1.json
   ✔ Read Webpack stat files
+  ✔ Read baseline data
+  ↓ Write baseline data [skipped]
+    → Not a baseline job (see --baseline).
   ✔ Gather data
   ✔ Generate reports
   ✔ Save reports
@@ -149,11 +181,57 @@ Reports saved:
 - ./dist/bundle-stats.json
 ```
 
+### Compare mode
+
+In `compare` mode, the metrics are compared against an existing Webpack stats file(baseline). To generate the baseline webpack stats, use `--baseline` option:
+
+```shell
+# Checkout to the branch/tag/commit where you want to generate the baseline
+$ git checkout master
+
+# Build your application
+$ npm run build
+
+# Run bundle-stats with --baseline option. This will save the baseline data on node_modules/.cache/bundle-stats/baseline.json
+$ bundle-stats --baseline artifacts/webpack-stats.json
+ ✔ Read Webpack stat files
+ ↓ Read baseline data [skipped]
+   → Missing baseline stats, see "--baseline" option.
+ ✔ Write baseline data
+ ✔ Process data
+ ✔ Generate reports
+ ✔ Save reports
+
+Reports saved:
+- ./dist/bundle-stats.html
+
+# Checkout to the working branch/tag/commit
+$ git checkout MY_FEATURE_BRANCH
+
+# Build your application
+$ npm run build
+
+# Run bundle-stats - the report is going to compare the current data against the generated baseline
+$ bundle-stats artifacts/webpack-stats.json
+ ✔ Read Webpack stat files
+ ✔ Read baseline data
+ ↓ Write baseline data [skipped]
+   → Not a baseline job (see --baseline).
+ ✔ Process data
+ ✔ Generate reports
+ ✔ Save reports
+
+Reports saved:
+- ./dist/bundle-stats.html
+```
+
+The option can be disabled using `--no-compare` option.
+
 ## 3. Standalone web application
 
 Use https://compare.relative-ci.com to compare Webpack/Lighthouse/Browsertime stats.
 
-[Read more](../web-compare)
+[Read more](/packages/web-compare)
 
 ## 4. :zap: Running on CI
 
