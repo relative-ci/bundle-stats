@@ -63,7 +63,7 @@ const Source = (props) => {
         class={styles.remove}
         title={locale.remove}
       >
-        x
+        remove
       </button>
     </div>
   );
