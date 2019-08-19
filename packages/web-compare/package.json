@@ -7,7 +7,7 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.development.js --progress --hot --mode development",
     "build": "rm -fr ./dist && cross-env NODE_ENV=production webpack --config webpack.config.production.js --mode production",
     "storybook": "cross-env NODE_ENV=development start-storybook -p 8090 -c storybook",
-    "test": "cross-nev NODE_ENV=test jest --coverage --coverageDirectory ./artifacts/coverage",
+    "test": "cross-env NODE_ENV=test jest --coverage --coverageDirectory ./artifacts/coverage",
     "lint": "eslint . --ext .jsx,.js --cache --cache-location ./node_modules/.eslintcache"
   },
   "keywords": [
