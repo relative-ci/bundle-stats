@@ -45,9 +45,9 @@ const enhance = () => (BaseComponent) => {
     constructor(props) {
       super(props);
 
-      this.state({
+      this.state = {
         sources: [],
-      });
+      };
     }
 
     addSource = (url) => {
