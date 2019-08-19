@@ -1,8 +1,9 @@
-const path = require('path');
-const webpack = require('webpack');
-const MemoryFS = require('memory-fs');
-const { BundleStatsWebpackPlugin } = require('../webpack-plugin');
-const { merge } = require('lodash');
+import path from 'path';
+import webpack from 'webpack';
+import MemoryFS from 'memory-fs';
+import { merge } from 'lodash';
+
+import { BundleStatsWebpackPlugin } from '../webpack-plugin';
 
 jest.setTimeout(10 * 1000);
 

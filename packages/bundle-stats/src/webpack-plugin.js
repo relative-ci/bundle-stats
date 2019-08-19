@@ -1,12 +1,11 @@
+import path from 'path';
+import process from 'process';
+import { get, merge } from 'lodash';
+import { createJobs } from '@bundle-stats/utils';
+
 import * as TEXT from './text';
-
-const process = require('process');
-const path = require('path');
-const { get, merge } = require('lodash');
-const { createJobs } = require('@bundle-stats/utils');
-
-const { getBaselineStatesFilepath, readBaseline } = require('./baseline');
-const { createReports } = require('./create-report');
+import { getBaselineStatesFilepath, readBaseline } from './baseline';
+import { createReports } from './create-report';
 
 const DEFAULT_OPTIONS = {
   compare: true,
