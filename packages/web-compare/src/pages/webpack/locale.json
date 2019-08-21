@@ -1,8 +1,9 @@
 {
   "title": "Webpack",
   "description": "Side by side comparison for Webpack stats.",
-  "loadExample": "Load ReactHN example",
+  "loadExample": "Load React HackerNews example",
   "totals": "Totals",
   "assets": "Assets",
-  "modules": "Modules"
+  "modules": "Modules",
+  "addPlaceholder": "Webpack stats JSON/Gist URL"
 }
