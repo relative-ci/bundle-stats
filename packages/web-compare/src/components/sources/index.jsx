@@ -12,6 +12,7 @@ const Sources = ({
   runs,
   exampleUrls,
   exampleText,
+  addPlaceholder,
   addSource,
   removeSource,
 }) => {
@@ -29,6 +30,7 @@ const Sources = ({
       <Add
         className={styles.add}
         onSubmit={addSource}
+        placeholder={addPlaceholder}
       />
 
       {(sources.length === 0 && exampleUrls.length > 0) && (
@@ -47,6 +49,7 @@ Sources.defaultProps = {
   runs: [],
   exampleUrls: [],
   exampleText: '',
+  addPlaceholder: '',
 };
 
 Sources.propTypes = {
@@ -54,6 +57,7 @@ Sources.propTypes = {
   runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   exampleUrls: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   exampleText: PropTypes.string,
+  addPlaceholder: PropTypes.string,
   addSource: PropTypes.func.isRequired,
   removeSource: PropTypes.func.isRequired,
 };

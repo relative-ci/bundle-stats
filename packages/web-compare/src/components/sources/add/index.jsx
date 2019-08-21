@@ -4,7 +4,7 @@ import cx from 'classnames';
 import locale from './locale.json';
 import styles from './styles.css';
 
-const Add = ({ className, onSubmit }) => {
+const Add = ({ className, onSubmit, placeholder }) => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -21,7 +21,7 @@ const Add = ({ className, onSubmit }) => {
         type="url"
         name="url"
         id="url"
-        placeholder={locale.placeholder}
+        placeholder={placeholder || locale.placeholder}
         required
       />
       <button type="submit" class={styles.button}>
@@ -33,11 +33,13 @@ const Add = ({ className, onSubmit }) => {
 
 Add.defaultProps = {
   className: '',
+  placeholder: '',
 };
 
 Add.propTypes = {
   className: PropTypes.string,
   onSubmit: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
 };
 
 export default Add;

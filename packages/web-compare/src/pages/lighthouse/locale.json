@@ -1,5 +1,6 @@
 {
   "title": "Lighthouse",
   "description": "Side by side comparison for Lighthouse stats",
-  "loadExample": "Load ReactHN example"
+  "loadExample": "Load ReactHN vs PreactHN example",
+  "addPlaceholder": "Lighthouse report JSON/Gist URL"
 }

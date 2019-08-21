@@ -1,5 +1,6 @@
 {
   "title": "Browsertime",
   "description": "Side by side comparison for Browsertime stats",
-  "loadExample": "Load ReactHN vs PreactHN example"
+  "loadExample": "Load ReactHN vs PreactHN example",
+  "addPlaceholder": "Browsertime report JSON/Gist URL"
 }

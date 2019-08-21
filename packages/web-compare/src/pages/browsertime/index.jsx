@@ -28,6 +28,7 @@ const Browsertime = (props) => {
         runs={runs}
         exampleUrls={config.exampleUrls}
         exampleText={locale.loadExample}
+        addPlaceholder={locale.addPlaceholder}
         addSource={addSource}
         removeSource={removeSource}
       />
