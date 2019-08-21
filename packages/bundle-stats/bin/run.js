@@ -16,8 +16,6 @@ const {
 module.exports = ({
   baseline, compare, html, json, outDir, artifactFilepaths,
 }) => {
-  console.log({ baseline, compare });
-
   const tasks = new Listr([
     {
       title: 'Read Webpack stat files',
