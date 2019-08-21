@@ -1,6 +1,6 @@
 {
   "name": "bundle-stats",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "In-depth reports for webpack bundles",
   "main": "lib/index.js",
   "bin": {
