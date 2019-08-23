@@ -1,0 +1,48 @@
+{
+  "name": "gatsby-plugin-bundle-stats",
+  "version": "1.5.2",
+  "description": "In-depth bundle analyzer for webpack(bundle size, assets, modules)",
+  "main": "index.js",
+  "engines": {
+    "node": ">= 8.0"
+  },
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "webpack",
+    "bundle-size",
+    "bundle-analyzer",
+    "bundle-stats",
+    "stats",
+    "bundle",
+    "size",
+    "assets",
+    "chunks",
+    "modules",
+    "gatsby",
+    "gatsby-plugin"
+  ],
+  "author": {
+    "name": "Viorel Cojocaru",
+    "email": "vio@beanon.com",
+    "url": "https://beanon.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bundle-stats/bundle-stats.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bundle-stats/bundle-stats/issues"
+  },
+  "homepage": "https://github.com/bundle-stats/bundle-stats/blob/master/packages/gatsby-plugin#readme",
+  "dependencies": {
+    "bundle-stats": "1.5.2"
+  },
+  "devDependencies": {
+    "eslint": "6.2.1",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-plugin-import": "2.18.2"
+  }
+}
