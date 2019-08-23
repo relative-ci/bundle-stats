@@ -31,9 +31,10 @@
   - [Webpack configuration](#webpack-configuration-1)
   - [Usage](#usage)
   - [Compare mode](#compare-mode-1)
-- [Standalone web application](#3-standalone-web-application)
-- [:zap: Running on CI](#4-zap-running-on-ci)
-- [Packages](#5-packages)
+- [Gatsby plugin](#3-gatsby-plugin)
+- [Standalone web application](#4-standalone-web-application)
+- [:zap: Running on CI](#5-zap-running-on-ci)
+- [Packages](#6-packages)
 
 ## 1. Webpack plugin
 
@@ -227,13 +228,19 @@ Reports saved:
 
 The option can be disabled using `--no-compare` option.
 
-## 3. Standalone web application
+## 3. Gatsby plugin
+
+Install `bundle-stats` as a Gatsby plugin.
+
+[Read more](packages/gatsby-plugin)
+
+## 4. Standalone web application
 
 Use https://compare.relative-ci.com to compare Webpack/Lighthouse/Browsertime stats.
 
-[Read more](/packages/web-compare)
+[Read more](packages/web-compare)
 
-## 4. :zap: Running on CI
+## 5. :zap: Running on CI
 
 Continuous monitoring with BundleStats on CI:
 - Github Checks integration
@@ -242,20 +249,24 @@ Continuous monitoring with BundleStats on CI:
 
 [Read more about running BundleStats on CI (BETA)](https://relative-ci.com)
 
-## 5. Packages
+## 6. Packages
 
-### [`bundle-stats`](/packages/cli)
+### [`bundle-stats`](packages/cli)
 
 Generate bundle report based on Webpack stats data.
 
-### [`@bundle-stats/web-compare`](/packages/web-compare)
+### [`gatsby-plugin-bundle-stats`](packages/gatsby-plugin)
+
+Gatsby plugin for bundle stats
+
+### [`@bundle-stats/web-compare`](packages/web-compare)
 Side by side comparison for webpack/lighthouse/browsertime stats - https://compare.relative-ci.com.
 
-### [`@bundle-stats/html-templates`](/packages/html-templates)
+### [`@bundle-stats/html-templates`](packages/html-templates)
 HTML templates for report generation.
 
-### [`@bundle-stats/ui`](/packages/ui)
+### [`@bundle-stats/ui`](packages/ui)
 UI components for BundleStats projects.
 
-### [`@bundle-stats/utils`](/packages/utils)
+### [`@bundle-stats/utils`](packages/utils)
 Utilities for BundleStats projects.

@@ -1,7 +1,7 @@
 {
   "name": "bundle-stats",
   "version": "1.5.2",
-  "description": "In-depth reports for webpack bundles",
+  "description": "In-depth bundle analyzer for webpack(bundle size, assets, modules)",
   "main": "lib/index.js",
   "bin": {
     "bundle-stats": "bin/index.js"
