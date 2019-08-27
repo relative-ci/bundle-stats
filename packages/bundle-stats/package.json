@@ -66,6 +66,6 @@
     "eslint-plugin-jest": "22.15.2",
     "jest": "24.9.0",
     "memory-fs": "0.4.1",
-    "webpack": "4.39.2"
+    "webpack": "4.39.3"
   }
 }
