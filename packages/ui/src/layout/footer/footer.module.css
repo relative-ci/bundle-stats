@@ -1,9 +1,8 @@
 .root {
-  border-top: 2px solid var(--color-gray-ultra-dark);
   padding-top: var(--space-large);
   padding-bottom: var(--space-large);
-  background: var(--color-dark);
-  color: var(--color-gray-ultra-light);
+  background: var(--color-gray-light-background);
+  color: var(--color-gray);
   text-align: center;
 }
 
