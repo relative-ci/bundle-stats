@@ -49,3 +49,17 @@ stories.add('with right side links', () => (
     <a href="#webpack">Visit webpack.js.org</a>
   </SubHeader>
 ));
+
+stories.add('with small size', () => (
+  <SubHeader
+    size="small"
+    title="Webpack"
+    subtitle="Tools"
+    icon={<Logo kind="webpack" style={{ width: '72px' }} />}
+    rightSide={(
+      <span>Read more</span>
+    )}
+  >
+    <a href="#webpack">Visit webpack.js.org</a>
+  </SubHeader>
+));

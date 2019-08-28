@@ -34,3 +34,17 @@
   flex: 0 0 auto;
   margin-left: var(--space-xsmall);
 }
+
+/** Small size modifier */
+.small .icon {
+  margin-right: var(--space-xxsmall);
+}
+
+.small .title {
+  font-size: var(--size-xlarge);
+  line-height: var(--line-height);
+}
+
+.small .rightSize {
+  margin-left: var(--space-xxsmall);
+}
