@@ -6,6 +6,12 @@
   text-align: center;
 }
 
+.content {
+  border-bottom: 1px solid var(--color-gray-ultra-light);
+  padding-bottom: var(--space-medium);
+  margin-bottom: var(--space-large);
+}
+
 .brandingHome {
   vertical-align: middle;
   color: var(--color-gray-ultra-light);
@@ -44,9 +50,10 @@
 
 .navGroupTitle {
   margin: 0;
+  color: inherit;
   font-size: 1em;
   text-transform: uppercase;
-  color: inherit;
+  font-weight: bold;
 }
 
 .navLink {

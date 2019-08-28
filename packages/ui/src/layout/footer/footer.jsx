@@ -24,8 +24,15 @@ StandardLink.propTypes = {
   source: PropTypes.string.isRequired,
 };
 
-export const Footer = ({ className, Link, source }) => (
+export const Footer = ({
+  className, children, Link, source,
+}) => (
   <Container className={cx(css.root, className)} as="footer">
+    {children && (
+      <div className={css.content}>
+        {children}
+      </div>
+    )}
     <div className={css.info}>
       <div className={css.navigation}>
         <div className={css.navGroup}>
@@ -134,17 +141,22 @@ export const Footer = ({ className, Link, source }) => (
 
 Footer.defaultProps = {
   className: '',
-  Link: StandardLink,
+  children: null,
   source: 'web',
+  Link: StandardLink,
 };
 
 Footer.propTypes = {
   /** Adopted child class name */
   className: PropTypes.string,
 
-  /** Link component */
-  Link: PropTypes.elementType,
+  /** Content */
+  children: PropTypes.element,
 
   /** UTM source */
   source: PropTypes.string,
+
+  /** Link component */
+  Link: PropTypes.elementType,
+
 };
