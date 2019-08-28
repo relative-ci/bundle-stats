@@ -12,6 +12,7 @@ export const SubHeader = (props) => {
     title,
     icon,
     children,
+    rightSide,
   } = props;
 
   return (
@@ -33,6 +34,11 @@ export const SubHeader = (props) => {
           </h1>
           {children}
         </div>
+        {rightSide && (
+          <div className={css.rightSide}>
+            {rightSide}
+          </div>
+        )}
       </div>
     </Container>
   );
@@ -43,6 +49,7 @@ SubHeader.defaultProps = {
   subtitle: '',
   icon: null,
   children: null,
+  rightSide: null,
 };
 
 SubHeader.propTypes = {
@@ -51,4 +58,5 @@ SubHeader.propTypes = {
   subtitle: PropTypes.string,
   icon: PropTypes.element,
   children: PropTypes.element,
+  rightSide: PropTypes.element,
 };
