@@ -32,3 +32,22 @@ stories.add('default', () => (
     )}
   />
 ));
+
+stories.add('menu on the right', () => (
+  <Header
+    renderLeft={({ className }) => (
+      <div className={className}>
+        <Logo />
+      </div>
+    )}
+    renderRight={({ className }) => (
+      <div className={className} style={{ flexBasis: '100%' }}>
+        <Tabs>
+          <span>Totals</span>
+          <span>Assets</span>
+          <span>Modules</span>
+        </Tabs>
+      </div>
+    )}
+  />
+));

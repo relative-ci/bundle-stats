@@ -9,7 +9,7 @@
 
 /* Layout */
 .left {
-  flex: 1 1 50%;
+  flex: 1 1 auto;
   display: flex;
   align-items: center;
 }
@@ -21,7 +21,7 @@
 }
 
 .right {
-  flex: 1 1 50%;
+  flex: 1 1 auto;
   order: 2;
   display: flex;
   align-items: center;
