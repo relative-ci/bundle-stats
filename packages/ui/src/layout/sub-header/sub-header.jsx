@@ -5,9 +5,14 @@ import cx from 'classnames';
 import { Container } from '../../ui/container';
 import css from './sub-header.module.css';
 
+const SIZE_SMALL = 'small';
+const SIZE_DEFAULT = 'default';
+const SIZES = [SIZE_SMALL, SIZE_DEFAULT];
+
 export const SubHeader = (props) => {
   const {
     className,
+    size,
     subtitle,
     title,
     icon,
@@ -15,8 +20,10 @@ export const SubHeader = (props) => {
     rightSide,
   } = props;
 
+  const rootClassName = cx(css.root, css[size], className);
+
   return (
-    <Container className={cx(css.root, className)}>
+    <Container className={rootClassName}>
       <div className={css.inner}>
         {icon && (
           <div className={css.icon}>
@@ -46,6 +53,7 @@ export const SubHeader = (props) => {
 
 SubHeader.defaultProps = {
   className: '',
+  size: SIZE_DEFAULT,
   subtitle: '',
   icon: null,
   children: null,
@@ -54,6 +62,7 @@ SubHeader.defaultProps = {
 
 SubHeader.propTypes = {
   className: PropTypes.string,
+  size: PropTypes.oneOfType(SIZES),
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   icon: PropTypes.element,
