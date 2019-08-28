@@ -10,3 +10,12 @@ stories.addDecorator(getWrapperDecorator());
 stories.add('default', () => (
   <Footer />
 ));
+
+stories.add('with custom content', () => (
+  <Footer>
+    Version 1.0
+    <span style={{ margin: '1em' }}>
+      Contact
+    </span>
+  </Footer>
+));
