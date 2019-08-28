@@ -29,3 +29,8 @@
   font-weight: bold;
   text-transform: uppercase;
 }
+
+.rightSide {
+  flex: 0 0 auto;
+  margin-left: var(--space-xsmall);
+}
