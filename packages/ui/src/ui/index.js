@@ -1,3 +1,4 @@
+export { Alert } from './alert';
 export { Box } from './box';
 export { Container } from './container';
 export { IconText } from './icon-text';
