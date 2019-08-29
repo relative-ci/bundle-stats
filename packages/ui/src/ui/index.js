@@ -1,6 +1,7 @@
 export { Box } from './box';
 export { Container } from './container';
 export { IconText } from './icon-text';
+export { InfoMessage } from './info-message';
 export { Loader } from './loader';
 export { Logo } from './logo';
 export { FileName } from './file-name';
