@@ -63,7 +63,7 @@
     "eslint": "6.2.2",
     "eslint-config-airbnb-base": "14.0.0",
     "eslint-plugin-import": "2.18.2",
-    "eslint-plugin-jest": "22.15.2",
+    "eslint-plugin-jest": "22.16.0",
     "jest": "24.9.0",
     "memory-fs": "0.4.1",
     "webpack": "4.39.3"
