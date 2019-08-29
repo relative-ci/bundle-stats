@@ -1,0 +1,25 @@
+.root {
+  border: 1px solid var(--color-gray-ultra-light);
+  padding: var(--space-small);
+  color: var(--color-dark)
+}
+
+.success {
+  border-color: var(--color-green-light);
+  background: var(--color-green-ultra-light);
+}
+
+.info {
+  border-color: var(--color-blue-light);
+  background: var(--color-blue-ultra-light);
+}
+
+.warning {
+  border-color: var(--color-yellow-light);
+  background: var(--color-yellow-ultra-light);
+}
+
+.danger {
+  border-color: var(--color-red-light);
+  background: var(--color-red-ultra-light)
+}
