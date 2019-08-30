@@ -23,7 +23,6 @@ const Totals = (props) => {
           </Box>
         </Panels>
       </Container>
-
       <Container>
         <Box>
           <BundleAssetsTotalsTable jobs={jobs} />
