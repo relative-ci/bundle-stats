@@ -97,3 +97,9 @@ a:active {
 .ui-button--danger:hover {
   background: var(--color-danger-dark);
 }
+
+@media (min-width: 600px) {
+  html {
+    font-size: 81.25%;
+  }
+}
