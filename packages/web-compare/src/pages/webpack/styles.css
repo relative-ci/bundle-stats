@@ -1,0 +1,3 @@
+.tabs {
+  padding-top: calc(var(--space-small) - var(--space-xsmall));
+}

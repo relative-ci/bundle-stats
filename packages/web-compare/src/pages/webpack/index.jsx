@@ -14,6 +14,7 @@ import Modules from './modules';
 import config from './config.json';
 import locale from './locale.json';
 import enhance from './container';
+import css from './styles.css';
 
 const getSummaryData = (jobs) => {
   if (jobs.length <= 2) {
@@ -54,7 +55,7 @@ const Webpack = (props) => {
           <Container>
             <Summary data={getSummaryData(jobs)} />
           </Container>
-          <Container>
+          <Container className={css.tabs}>
             <Match>
               {({ path }) => (
                 <Tabs>
