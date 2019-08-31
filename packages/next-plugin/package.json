@@ -1,0 +1,48 @@
+{
+  "name": "next-plugin-bundle-stats",
+  "version": "1.7.0-alpha.0",
+  "description": "In-depth bundle analyzer for webpack(bundle size, assets, modules)",
+  "main": "index.js",
+  "engines": {
+    "node": ">= 8.0"
+  },
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "webpack",
+    "bundle-size",
+    "bundle-analyzer",
+    "bundle-stats",
+    "stats",
+    "bundle",
+    "size",
+    "assets",
+    "chunks",
+    "modules",
+    "next",
+    "next-plugin"
+  ],
+  "author": {
+    "name": "Viorel Cojocaru",
+    "email": "vio@beanon.com",
+    "url": "https://beanon.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bundle-stats/bundle-stats.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bundle-stats/bundle-stats/issues"
+  },
+  "homepage": "https://github.com/bundle-stats/bundle-stats/blob/master/packages/next-plugin#readme",
+  "dependencies": {
+    "bundle-stats": "^1.7.0-alpha.0"
+  },
+  "devDependencies": {
+    "eslint": "6.3.0",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-plugin-import": "2.18.2"
+  }
+}
