@@ -32,8 +32,9 @@
   - [Usage](#usage)
   - [Compare mode](#compare-mode-1)
 - [Gatsby plugin](#3-gatsby-plugin)
-- [Standalone web application](#4-standalone-web-application)
-- [:zap: Running on CI](#5-zap-running-on-ci)
+- [Next.js plugin](#4-nextjs-plugin)
+- [Standalone web application](#5-standalone-web-application)
+- [:zap: Running on CI](#6-zap-running-on-ci)
 
 ## 1. Webpack plugin
 
@@ -233,13 +234,19 @@ Install `bundle-stats` as a Gatsby plugin.
 
 [Read more](../gatsby-plugin)
 
-## 4. Standalone web application
+## 4. Next.js plugin
+
+Install `bundle-stats` as a Next.js plugin.
+
+[Read more](../next-plugin)
+
+## 5. Standalone web application
 
 Use https://compare.relative-ci.com to compare Webpack/Lighthouse/Browsertime stats.
 
 [Read more](../web-compare)
 
-## 5. :zap: Running on CI
+## 6. :zap: Running on CI
 
 Continuous monitoring with BundleStats on CI:
 - Github Checks integration
