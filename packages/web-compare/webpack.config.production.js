@@ -6,6 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const StatsPlugin = require('stats-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { BundleStatsWebpackPlugin } = require('bundle-stats');
+const { RelativeCiAgentWebpackPlugin } = require('@relative-ci/agent');
 
 const getCommonConfig = require('../../build/webpack.config.common');
 const appCommonConfig = require('./webpack.config.common');
@@ -43,6 +44,11 @@ module.exports = webpackMerge(
         html: true,
         json: true,
         outDir: '../artifacts',
+        stats: {
+          excludeAssets: /artifacts/,
+        },
+      }),
+      new RelativeCiAgentWebpackPlugin({
         stats: {
           excludeAssets: /artifacts/,
         },
