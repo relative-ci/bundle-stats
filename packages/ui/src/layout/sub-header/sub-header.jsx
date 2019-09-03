@@ -62,7 +62,7 @@ SubHeader.defaultProps = {
 
 SubHeader.propTypes = {
   className: PropTypes.string,
-  size: PropTypes.oneOfType(SIZES),
+  size: PropTypes.oneOf(SIZES),
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   icon: PropTypes.element,
