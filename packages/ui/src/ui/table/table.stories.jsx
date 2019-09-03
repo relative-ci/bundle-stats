@@ -23,11 +23,20 @@ stories.add('default', () => {
   return <Table rows={rows} />;
 });
 
-stories.add('empty', () => {
-  const rows = [];
+stories.add('empty', () => (
+  <Table rows={[]} />
+));
 
-  return <Table rows={rows} />;
-});
+stories.add('empty with custom element', () => (
+  <Table
+    rows={[]}
+    emptyMessage={(
+      <p style={{ outline: '1px solid lightgray' }}>
+        No items available
+      </p>
+    )}
+  />
+));
 
 stories.add('with headers', () => {
   const headers = ['Col A', 'Col B', 'Col C'];

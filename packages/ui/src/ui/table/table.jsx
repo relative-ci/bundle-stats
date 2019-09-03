@@ -70,7 +70,7 @@ Td.propTypes = {
 };
 
 export const Table = ({
-  className, outline, headers, rows,
+  className, emptyMessage, outline, headers, rows,
 }) => (
   <table className={cx(className, css.root, outline && css.outline)}>
     {(headers && headers.length > 0) && (
@@ -114,7 +114,7 @@ export const Table = ({
         <tr>
           <Td
             colSpan={headers.length || 1}
-            cell="No entries found."
+            cell={emptyMessage}
             options={{
               classNames: css.emptyData,
             }}
@@ -127,6 +127,7 @@ export const Table = ({
 
 Table.defaultProps = {
   className: '',
+  emptyMessage: 'No entries found.',
   outline: false,
   headers: [],
   rows: [],
@@ -134,6 +135,7 @@ Table.defaultProps = {
 
 Table.propTypes = {
   className: PropTypes.string,
+  emptyMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   outline: PropTypes.bool,
   headers: PropTypes.array, // eslint-disable-line react/forbid-prop-types
   rows: PropTypes.array, // eslint-disable-line react/forbid-prop-types
