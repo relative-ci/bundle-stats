@@ -92,34 +92,53 @@ stories.add('with row headers', () => {
   return <Table rows={rows} />;
 });
 
-stories.add('with custom alignment', () => {
+stories.add('with custom content and attributes', () => {
   const headers = [
     ' ',
     {
-      text: 'Col A (right)',
-      options: {
-        align: 'right',
+      children: 'Col A (right)',
+      style: {
+        textAlign: 'right',
       },
     },
     {
-      text: 'Col B (center)',
-      options: {
-        align: 'center',
+      children: 'Col B (center)',
+      style: {
+        textAlign: 'center',
       },
     },
-    'Col C',
+    {
+      children: 'Col C (underline)',
+      style: {
+        textDecoration: 'underline',
+      },
+    },
   ];
   const rows = [
     {
-      header: 'row 1',
-      cells: ['a1', 'b1', 'c1'],
+      header: (<strong>row 1</strong>),
+      cells: [
+        (<em>a1</em>),
+        {
+          children: 'b1',
+          style: {
+            color: 'red',
+            textAlign: 'center',
+          },
+        },
+        'c1',
+      ],
     },
     {
-      header: 'row 2',
+      style: {
+        color: 'blue',
+        fontSize: '1.5em',
+      },
+      header: (<strong>row 2</strong>),
       cells: ['a2', 'b2', 'c2'],
     },
     {
-      header: 'row 3',
+      header: (<strong>row 2</strong>),
       cells: ['a3', 'b3', 'c3'],
     },
   ];

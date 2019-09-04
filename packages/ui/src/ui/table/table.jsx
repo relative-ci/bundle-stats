@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { omit } from 'lodash';
 
 import css from './table.module.css';
 
-const resolveCellOptions = (headers, hasRowHeader, cellId) => {
+const getColumnAttributes = (headers, hasRowHeader, cellId) => {
   if (!headers) {
     return {};
   }
@@ -12,61 +13,49 @@ const resolveCellOptions = (headers, hasRowHeader, cellId) => {
   const headerId = hasRowHeader ? cellId + 1 : cellId;
   const header = headers[headerId];
 
-  return (header && header.options) || {};
+  return typeof header === 'object' ? omit(header, ['children']) : {};
 };
 
-const Th = ({ header }) => {
-  const content = typeof header === 'object' ? header.text : header;
-  const options = header.options || {};
-
-  const style = {
-    ...options.align ? { textAlign: options.align } : {},
-    ...options.width ? { width: options.width } : {},
-  };
+const Th = (props) => {
+  const { className, ...restProps } = props;
 
   return (
-    <th className={cx(css.cell, options.classNames)} style={style}>
-      {content}
-    </th>
+    <th className={cx(css.cell, className)} {...restProps} />
   );
 };
 
 Th.defaultProps = {
-  header: '',
+  className: '',
 };
 
 Th.propTypes = {
-  header: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({
-      text: PropTypes.string,
-    }),
-  ]),
+  /** Adopted child class name */
+  className: PropTypes.string,
 };
 
-const Td = ({ cell, options = {}, ...props }) => {
-  const style = {
-    textAlign: options.align,
-  };
-
+const Td = (props) => {
+  const { className, ...restProps } = props;
   return (
-    <td className={cx(css.cell, options.classNames)} style={style} {...props}>
-      {cell}
-    </td>
+    <td className={cx(css.cell, className)} {...restProps} />
   );
 };
 
 Td.defaultProps = {
-  cell: null,
-  options: {},
+  className: '',
 };
 
 Td.propTypes = {
-  cell: PropTypes.node,
-  options: PropTypes.shape({
-    align: PropTypes.string,
-    classNames: PropTypes.string,
-  }),
+  /** Adopted child class name */
+  className: PropTypes.string,
+};
+
+const renderHeader = (header, index) => {
+  const headerProps = {
+    key: (header && header.key) || index,
+    ...typeof header === 'object' && !React.isValidElement(header) ? header : { children: header },
+  };
+
+  return <Th {...headerProps} />;
 };
 
 export const Table = ({
@@ -76,35 +65,31 @@ export const Table = ({
     {(headers && headers.length > 0) && (
       <thead>
         <tr>
-          {headers.map((header, index) => {
-            const key = index;
-            return <Th key={key} header={header} />;
-          })}
+          {headers.map(renderHeader)}
         </tr>
       </thead>
     )}
     <tbody>
       {rows.length > 0 && rows.map(({
-        options = {},
+        className: rowCustomClassName,
         cells = [],
         header = '',
         key,
+        ...rowProps
       }, index) => {
-        const rowClassNames = cx(options.classNames);
+        const rowClassNames = cx(css.row, rowCustomClassName);
 
         return (
-          <tr className={rowClassNames} key={key || index}>
-            {header ? <Th header={header} /> : null }
-            {cells.map((cell, cellId) => {
-              const cellKey = cellId;
+          <tr className={rowClassNames} key={key || index} {...rowProps}>
+            {header && renderHeader(header)}
+            {cells.map((cell, cellIndex) => {
+              const cellProps = {
+                key: (cell && cell.key) || cellIndex,
+                ...getColumnAttributes(headers, !!header, cellIndex),
+                ...typeof cell === 'object' && !React.isValidElement(cell) ? cell : { children: cell },
+              };
 
-              return (
-                <Td
-                  key={cellKey}
-                  cell={cell}
-                  options={resolveCellOptions(headers, !!header, cellId)}
-                />
-              );
+              return <Td {...cellProps} />;
             })}
           </tr>
         );
@@ -113,12 +98,11 @@ export const Table = ({
       {rows.length === 0 && (
         <tr>
           <Td
+            className={css.emptyData}
             colSpan={headers.length || 1}
-            cell={emptyMessage}
-            options={{
-              classNames: css.emptyData,
-            }}
-          />
+          >
+            {emptyMessage}
+          </Td>
         </tr>
       )}
     </tbody>
