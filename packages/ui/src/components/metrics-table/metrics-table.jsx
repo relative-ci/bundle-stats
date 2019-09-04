@@ -8,22 +8,18 @@ import { Delta } from '../delta';
 import styles from './metrics-table.module.css';
 
 const generateHeaderCell = (item, index, runs) => ({
-  text: (item && item.label)
+  children: (item && item.label)
     || (item && item.meta && item.meta.internalBuildNumber && `Run #${item.meta.internalBuildNumber}`)
     || (item && `Run #${runs.length - index}`)
     || '-',
-  options: {
-    classNames: cx(styles.value, index ? styles.baseline : styles.current),
-  },
+  className: cx(styles.value, index ? styles.baseline : styles.current),
 });
 
 const getHeaders = (runs) => [
   // Metric name column - one empty strying to render the column
   {
-    text: ' ',
-    options: {
-      classNames: styles.metricName,
-    },
+    children: ' ',
+    className: styles.metricName,
   },
 
   // Runs
@@ -57,9 +53,7 @@ const getRows = (runs, items, renderRowHeader) => items.map((item) => {
   const { biggerIsBetter, changed } = item;
 
   return {
-    options: {
-      classNames: changed ? '' : styles.unchanged,
-    },
+    className: changed ? '' : styles.unchanged,
     cells: [
       // Metric name
       renderRowHeader(item),
