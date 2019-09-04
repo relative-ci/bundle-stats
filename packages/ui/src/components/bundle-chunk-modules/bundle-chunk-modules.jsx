@@ -86,6 +86,7 @@ export const BundleChunkModules = ({
           </h3>
         )}
         <TableFilters
+          className={css.headerFilters}
           filters={{
             changed: {
               label: 'Changed',
