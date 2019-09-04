@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import OutsideClickHandler from 'react-outside-click-handler';
 
 const getInitialValues = (key, filters) => {
   if (typeof filters.defaultValue !== 'undefined') {
@@ -67,14 +68,18 @@ export const filterContainer = (BaseComponent) => class FilterContainer extends 
     open: !open,
   }))
 
+  dropdownClose = () => this.setState({ open: false })
+
   render() {
     return (
-      <BaseComponent
-        {...this.props}
-        {...this.state}
-        toggleFilter={this.toggleFilter}
-        toggleOpen={this.toggleOpen}
-      />
+      <OutsideClickHandler onOutsideClick={this.dropdownClose}>
+        <BaseComponent
+          {...this.props}
+          {...this.state}
+          toggleFilter={this.toggleFilter}
+          toggleOpen={this.toggleOpen}
+        />
+      </OutsideClickHandler>
     );
   }
 };
