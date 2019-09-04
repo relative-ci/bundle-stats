@@ -9,6 +9,13 @@
   margin: 0;
 }
 
+.headerFilters {
+  flex: 0 0 auto;
+  margin-top: calc(0px - var(--space-xxsmall));
+  margin-right: calc(0px - var(--space-xxsmall));
+  margin-bottom: calc(0px - var(--space-xxsmall));
+}
+
 .nameTooltip {
   text-align: left;
 }

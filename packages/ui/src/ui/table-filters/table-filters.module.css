@@ -5,7 +5,7 @@
 
 .label {
   border: 1px solid transparent;
-  padding: var(--space-xxxsmall);
+  padding: var(--space-xxsmall);
   display: flex;
   align-items: center;
 
@@ -32,16 +32,16 @@
   position: absolute;
   right: 0;
   top: 100%;
-  background: #fff;
-  box-shadow: 0 2px 5px #ddd;
-  min-width: 160px;
+  background: var(--color-light);
+  box-shadow: 0 2px var(--space-xxsmall) var(--color-gray-ultra-light);
+  min-width: 180px;
   z-index: 1000;
   padding: var(--space-xsmall) var(--space-small);
 }
 
 * + .group {
   margin-top: var(--space-xxxsmall);
-  border-top: 1px solid var(--color-gray-100);
+  border-top: 1px solid var(--color-gray-ultra-light);
   padding-top: var(--space-xxxsmall);
 }
 
