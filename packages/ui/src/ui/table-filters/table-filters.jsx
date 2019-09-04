@@ -79,7 +79,7 @@ export const TableFilters = (props) => {
     values,
     filters,
     toggleFilter,
-    toggleOpen,
+    dropdownToggle,
   } = props;
 
   const onCheckboxChange = ({ target }) => toggleFilter(target.name, target.checked);
@@ -92,7 +92,7 @@ export const TableFilters = (props) => {
         glyph="filter"
         as="button"
         type="button"
-        onClick={toggleOpen}
+        onClick={dropdownToggle}
       >
         {label}
       </IconText>
@@ -116,5 +116,5 @@ TableFilters.propTypes = {
   values: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   filters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   toggleFilter: PropTypes.func.isRequired,
-  toggleOpen: PropTypes.func.isRequired,
+  dropdownToggle: PropTypes.func.isRequired,
 };
