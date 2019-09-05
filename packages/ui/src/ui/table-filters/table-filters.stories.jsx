@@ -29,7 +29,11 @@ stories.add('default', () => (
           defaultValue: true,
         },
         JS: {
-          label: 'JSS',
+          label: 'JS',
+          defaultValue: true,
+        },
+        HTML: {
+          label: 'HTML',
           defaultValue: true,
         },
       },
@@ -60,7 +64,11 @@ stories.add('disable options', () => (
           defaultValue: true,
         },
         JS: {
-          label: 'JSS',
+          label: 'JS',
+          defaultValue: true,
+        },
+        HTML: {
+          label: 'HTML',
           defaultValue: true,
         },
       },
