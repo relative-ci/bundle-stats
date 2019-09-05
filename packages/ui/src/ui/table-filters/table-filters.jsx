@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { get } from 'lodash';
 
 import { IconText } from '../icon-text';
 import css from './table-filters.module.css';
 
-const Checkbox = ({ label, name, ...inputProps }) => {
+const Checkbox = ({
+  label, name, getOnOnlyClick, ...inputProps
+}) => {
   const id = `filter-${name}`;
 
   return (
@@ -24,6 +27,15 @@ const Checkbox = ({ label, name, ...inputProps }) => {
           {label}
         </span>
       </label>
+      {getOnOnlyClick && (
+        <button
+          className={css.filterOnlyButton}
+          type="button"
+          onClick={getOnOnlyClick(name)}
+        >
+          only
+        </button>
+      )}
     </div>
   );
 };
@@ -31,9 +43,14 @@ const Checkbox = ({ label, name, ...inputProps }) => {
 Checkbox.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
+  getOnOnlyClick: PropTypes.func,
 };
 
-const renderTree = (key, data, values, onCheckboxChange) => {
+Checkbox.defaultProps = {
+  getOnOnlyClick: null,
+};
+
+const renderTree = (key, data, values, onCheckboxChange, getOnOnlyClick) => {
   if (typeof data.defaultValue !== 'undefined') {
     return (
       <Checkbox
@@ -43,26 +60,86 @@ const renderTree = (key, data, values, onCheckboxChange) => {
         onChange={onCheckboxChange}
         checked={values[key]}
         disabled={data.disabled}
+        getOnOnlyClick={getOnOnlyClick}
       />
     );
   }
 
   if (typeof data === 'object') {
+    const { label: groupLabel, ...groupData } = data;
+    const isRootGroup = !key;
+
+    const groupItems = Object.entries(groupData);
+    const groupCheckboxes = key && groupItems.filter(([itemKey, item]) => typeof item.defaultValue !== 'undefined') || [];
+    const isGroupChecked = groupCheckboxes.map(([itemKey]) => get(values, `${key}.${itemKey}`)).reduce((agg, val) => agg && val, true);
+
+    const onGroupClearAll = () => {
+      groupCheckboxes.forEach(([itemKey, item]) => {
+        onCheckboxChange({
+          target: {
+            name: `${key}.${itemKey}`,
+            checked: false,
+          },
+        });
+      });
+    };
+
+    const onGroupCheckAll = () => {
+      groupCheckboxes.forEach(([itemKey, item]) => {
+        onCheckboxChange({
+          target: {
+            name: `${key}.${itemKey}`,
+            checked: true,
+          },
+        });
+      });
+    };
+
+    const getOnGroupFilterOnlyClick = !isRootGroup && ((filterKey) => () => {
+      onGroupClearAll();
+      onCheckboxChange({
+        target: {
+          name: filterKey,
+          checked: true,
+        },
+      });
+    });
+
     return (
       <div className={css.group} key={key}>
         <div className={css.groupHeader}>
-          {data.label && (
-            <h3 className={css.groupTitle}>
-              {data.label}
-            </h3>
+          {groupLabel && (
+            <>
+              <h3 className={css.groupTitle}>
+                {groupLabel}
+              </h3>
+              {isGroupChecked ? (
+                <button
+                  className={css.groupHeaderButton}
+                  type="button"
+                  onClick={onGroupClearAll}
+                >
+                  clear all
+                </button>
+              ) : (
+                <button
+                  className={css.groupHeaderButton}
+                  type="button"
+                  onClick={onGroupCheckAll}
+                >
+                  check all
+                </button>
+              )}
+            </>
           )}
         </div>
 
-        {Object.entries(data).map(([itemKey, itemData]) => renderTree(
+        {groupItems.map(([itemKey, itemData]) => renderTree(
           [...(key ? [key] : []), itemKey].join('.'),
           itemData,
           values,
           onCheckboxChange,
+          getOnGroupFilterOnlyClick,
         ))}
       </div>
     );
