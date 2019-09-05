@@ -1,7 +1,5 @@
-/* global document */
 import React from 'react';
 import PropTypes from 'prop-types';
-import OutsideClickHandler from 'react-outside-click-handler';
 
 const getInitialValues = (key, filters) => {
   if (typeof filters.defaultValue !== 'undefined') {
@@ -32,7 +30,6 @@ export const tableFiltersContainer = (BaseComponent) => {
 
       this.state = {
         values: getInitialValues('', filters),
-        open: false,
       };
     }
 
@@ -54,28 +51,13 @@ export const tableFiltersContainer = (BaseComponent) => {
       return newState;
     })
 
-    dropdownToggle = () => this.setState(({ open }) => ({
-      open: !open,
-    }))
-
-    dropdownClose = () => this.setState({ open: false })
-
     render() {
-      // Disable outsideClickHandler when not running in a browser
-      const disableOutsideClickHandler = typeof document === 'undefined';
-
       return (
-        <OutsideClickHandler
-          onOutsideClick={this.dropdownClose}
-          disabled={disableOutsideClickHandler}
-        >
-          <BaseComponent
-            {...this.props}
-            {...this.state}
-            toggleFilter={this.toggleFilter}
-            dropdownToggle={this.dropdownToggle}
-          />
-        </OutsideClickHandler>
+        <BaseComponent
+          {...this.props}
+          {...this.state}
+          toggleFilter={this.toggleFilter}
+        />
       );
     }
   }

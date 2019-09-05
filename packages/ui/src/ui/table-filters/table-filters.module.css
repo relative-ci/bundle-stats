@@ -1,45 +1,4 @@
-.root {
-  position: relative;
-  display: inline-block;
-}
-
-.label {
-  border: 1px solid transparent;
-  padding: var(--space-xxsmall);
-  display: flex;
-  align-items: center;
-
-  background: none;
-  color: var(--color-gray-light);
-  font-size: var(--size-small);
-  line-height: 1.1;
-  font-weight: bold;
-  text-transform: uppercase;
-  appearance: none;
-  cursor: pointer;
-}
-
-.label:hover {
-  border-color: var(--color-gray-ultra-light);
-  color: var(--color-gray);
-}
-
-.labelIcon {
-  margin-right: var(--space-xxxsmall);
-}
-
-.dropdown {
-  position: absolute;
-  right: 0;
-  top: 100%;
-  background: var(--color-light);
-  box-shadow: 0 2px var(--space-xxsmall) var(--color-gray-ultra-light);
-  min-width: 180px;
-  z-index: 1000;
-  padding: var(--space-xsmall) var(--space-small);
-}
-
-* + .group {
+.group + .group {
   margin-top: var(--space-xxxsmall);
   border-top: 1px solid var(--color-gray-ultra-light);
   padding-top: var(--space-xxxsmall);
@@ -122,13 +81,4 @@
 
 .filter:hover .filterOnlyButton {
   display: inline;
-}
-
-/* Dropdown toggle */
-.root .dropdown {
-  display: none;
-}
-
-.open .dropdown {
-  display: block;
 }

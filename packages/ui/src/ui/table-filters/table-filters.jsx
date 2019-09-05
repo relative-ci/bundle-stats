@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get } from 'lodash';
 
-import { IconText } from '../icon-text';
+import { Dropdown } from '../dropdown';
 import css from './table-filters.module.css';
 
 const Checkbox = ({
@@ -152,32 +152,25 @@ export const TableFilters = (props) => {
   const {
     className,
     label,
-    open,
     values,
     filters,
     toggleFilter,
-    dropdownToggle,
   } = props;
 
   const onCheckboxChange = ({ target }) => toggleFilter(target.name, target.checked);
-  const rootClassName = cx(css.root, className, open && css.open);
+  const rootClassName = cx(css.root, className);
 
   return (
-    <div className={rootClassName}>
-      <IconText
-        className={css.label}
-        glyph="filter"
-        as="button"
-        type="button"
-        onClick={dropdownToggle}
-      >
-        {label}
-      </IconText>
-
+    <Dropdown
+      className={rootClassName}
+      label={label}
+      glyph="filter"
+      align="right"
+    >
       <form className={css.dropdown}>
         {renderTree('', filters, values, onCheckboxChange)}
       </form>
-    </div>
+    </Dropdown>
   );
 };
 
@@ -189,9 +182,7 @@ TableFilters.defaultProps = {
 TableFilters.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
-  open: PropTypes.bool.isRequired,
   values: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   filters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   toggleFilter: PropTypes.func.isRequired,
-  dropdownToggle: PropTypes.func.isRequired,
 };
