@@ -7,6 +7,6 @@ export { Logo } from './logo';
 export { FileName } from './file-name';
 export { Panels } from './panels';
 export { Table } from './table';
-export { TableFilters } from './table-filters';
+export { FiltersDropdown } from './filters-dropdown';
 export { Tabs } from './tabs';
 export { Tooltip } from './tooltip';
