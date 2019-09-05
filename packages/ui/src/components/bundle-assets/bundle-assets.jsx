@@ -6,7 +6,7 @@ import { FILE_TYPE_LABELS } from '@bundle-stats/utils';
 
 import { FileName } from '../../ui/file-name';
 import { Tooltip } from '../../ui/tooltip';
-import { TableFilters } from '../../ui/table-filters';
+import { FiltersDropdown } from '../../ui/filters-dropdown';
 import { MetricsTable } from '../metrics-table';
 import { JobName } from '../job-name';
 import {
@@ -174,7 +174,7 @@ export const BundleAssets = (props) => {
     <section className={cx(css.root, className)}>
       <header className={css.header}>
         {/* @TODO: get default values from parent state */}
-        <TableFilters
+        <FiltersDropdown
           filters={{
             [FILTER_CHANGED]: {
               label: 'Changed',

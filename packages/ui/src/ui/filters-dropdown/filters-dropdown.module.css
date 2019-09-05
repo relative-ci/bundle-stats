@@ -1,0 +1,84 @@
+.group + .group {
+  margin-top: var(--space-xxxsmall);
+  border-top: 1px solid var(--color-gray-ultra-light);
+  padding-top: var(--space-xxxsmall);
+}
+
+/* clear / check all, only button */
+.button {
+  margin-top: calc(0px - var(--space-xxxsmall));
+  margin-bottom: calc(0px - var(--space-xxxsmall));
+  margin-right: calc(0px - var(--space-xxxsmall));
+  padding: var(--space-xxxsmall);
+  outline: none;
+  padding: 0;
+  appearance: none;
+  border: none;
+  background: none;
+  white-space: nowrap;
+  color: var(--color-gray-light);
+  font-size: var(--size-small);
+}
+
+.button:hover {
+  color: var(--color-gray);
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  font-size: var(--size-xsmall);
+}
+
+.groupTitle {
+  flex: 1 1 100%;
+  margin: 0 var(--space-xsmall) 0 0;
+  margin-bottom: 0;
+  font-size: inherit;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.groupHeaderButton {
+  composes: button;
+}
+
+.filter {
+  white-space: no-wrap;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: var(--size-small);
+  line-height: var(--space-medium);
+}
+
+.filterInput {
+  flex: 0 0 auto;
+  margin-right: var(--space-xxxsmall);
+}
+
+.filterLabel {
+  flex: 1 1 auto;
+  margin-right: var(--space-small);
+}
+
+.filterOnlyButton {
+  display: none;
+  composes: button;
+}
+
+.filterInput[disabled] + .filterText {
+  color: var(--color-gray-light);
+}
+
+.filterInput[disabled] + .filterOnlyButton {
+  display: none;
+}
+
+.filter:hover {
+  color: var(--color-dark);
+}
+
+.filter:hover .filterOnlyButton {
+  display: inline;
+}

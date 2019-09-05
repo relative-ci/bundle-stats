@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { get, map } from 'lodash';
 
 import {
-  Box, FileName, TableFilters, Tooltip,
+  Box, FileName, FiltersDropdown, Tooltip,
 } from '../../ui';
 import { JobName } from '../job-name';
 import { MetricsTable } from '../metrics-table';
@@ -85,7 +85,7 @@ export const BundleChunkModules = ({
             {title}
           </h3>
         )}
-        <TableFilters
+        <FiltersDropdown
           className={css.headerFilters}
           filters={{
             changed: {
