@@ -5,9 +5,10 @@ import cx from 'classnames';
 import BranchIcon from './assets/branch.svg';
 import ClockIcon from './assets/clock.svg';
 import CommitIcon from './assets/commit.svg';
+import FilterIcon from './assets/filter.svg';
 import PackageIcon from './assets/package.svg';
 import PullRequestIcon from './assets/pull-request.svg';
-import FilterIcon from './assets/filter.svg';
+import SortIcon from './assets/sort.svg';
 
 import css from './icon-text.module.css';
 
@@ -15,9 +16,10 @@ const ICONS = {
   branch: BranchIcon,
   clock: ClockIcon,
   commit: CommitIcon,
+  filter: FilterIcon,
   package: PackageIcon,
   pr: PullRequestIcon,
-  filter: FilterIcon,
+  sort: SortIcon,
 };
 
 export const IconText = ({
