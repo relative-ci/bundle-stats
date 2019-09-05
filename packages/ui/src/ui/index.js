@@ -1,12 +1,13 @@
 export { Alert } from './alert';
 export { Box } from './box';
 export { Container } from './container';
+export { FileName } from './file-name';
+export { FiltersDropdown } from './filters-dropdown';
 export { IconText } from './icon-text';
 export { Loader } from './loader';
 export { Logo } from './logo';
-export { FileName } from './file-name';
 export { Panels } from './panels';
+export { SortDropdown } from './sort-dropdown';
 export { Table } from './table';
-export { FiltersDropdown } from './filters-dropdown';
 export { Tabs } from './tabs';
 export { Tooltip } from './tooltip';
