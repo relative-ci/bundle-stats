@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { get, map } from 'lodash';
 
 import {
-  Box, FileName, FiltersDropdown, Tooltip,
+  Box, FileName, FiltersDropdown, SortDropdown, Tooltip,
 } from '../../ui';
 import { JobName } from '../job-name';
 import { MetricsTable } from '../metrics-table';
@@ -73,6 +73,9 @@ export const BundleChunkModules = ({
   totalRowsCount,
   updateFilters,
   filters,
+  sortItems,
+  sort,
+  updateSort,
 }) => {
   const labeledRuns = runs.map(getRunLabel);
   const rootClassName = cx(css.root, className);
@@ -85,8 +88,14 @@ export const BundleChunkModules = ({
             {title}
           </h3>
         )}
+        <SortDropdown
+          className={css.headerDropdown}
+          items={sortItems}
+          onChange={updateSort}
+          {...sort}
+        />
         <FiltersDropdown
-          className={css.headerFilters}
+          className={css.headerDropdown}
           filters={{
             changed: {
               label: 'Changed',
@@ -139,4 +148,16 @@ BundleChunkModules.propTypes = {
   filters: PropTypes.shape({
     changed: PropTypes.bool,
   }).isRequired,
+
+  sortItems: PropTypes.shape({
+    [PropTypes.string]: PropTypes.shape({
+      label: PropTypes.string,
+      defaultDirection: PropTypes.bool,
+    }),
+  }).isRequired,
+  sort: PropTypes.shape({
+    sortBy: PropTypes.string,
+    direction: PropTypes.string,
+  }).isRequired,
+  updateSort: PropTypes.func.isRequired,
 };

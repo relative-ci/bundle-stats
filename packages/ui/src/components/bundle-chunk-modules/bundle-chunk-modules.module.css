@@ -3,17 +3,18 @@
   border-bottom: 1px solid var(--color-gray-ultra-light);
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .headerTitle {
   margin: 0;
+  flex: 1 1 100%;
 }
 
-.headerFilters {
+.headerDropdown {
   flex: 0 0 auto;
-  margin-top: calc(0px - var(--space-xxsmall));
   margin-right: calc(0px - var(--space-xxsmall));
-  margin-bottom: calc(0px - var(--space-xxsmall));
+  margin-left: var(--space-small);
 }
 
 .nameTooltip {
