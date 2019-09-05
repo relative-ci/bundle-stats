@@ -1,7 +1,7 @@
 import {
   compose, withProps, withState,
 } from 'recompose';
-import { get, filter, sortBy } from 'lodash';
+import { get, filter, orderBy } from 'lodash';
 import {
   FILE_TYPES,
   METRIC_TYPE_FILE_SIZE,
@@ -17,6 +17,10 @@ import {
   FILTER_CHUNK,
   FILTER_ENTRY,
   FILTER_INITIAL,
+  ORDER_BY_NAME,
+  ORDER_BY_DELTA,
+  ORDER_BY_SIZE,
+  ORDER_BY,
 } from './bundle-assets.constants';
 
 const addRowFlags = ({ items }) => {
@@ -92,14 +96,34 @@ const getRowFilter = (filters) => (item) => {
   return true;
 };
 
-const customSort = (item) => [
-  !item.isNotPredictive,
-  !item.changed,
-  !item.isInitial,
-  !item.isEntry,
-  !item.isChunk,
-  item.key,
-];
+const getCustomOrder = (sortId) => (item) => {
+  if (sortId === ORDER_BY_NAME) {
+    return item.key;
+  }
+
+  if (sortId === ORDER_BY_DELTA) {
+    return [
+      get(item, 'runs[0].delta', 0),
+      item.key,
+    ];
+  }
+
+  if (sortId === ORDER_BY_SIZE) {
+    return [
+      get(item, 'runs[0].value', 0),
+      item.key,
+    ];
+  }
+
+  return [
+    !item.isNotPredictive,
+    !item.changed,
+    !item.isInitial,
+    !item.isEntry,
+    !item.isChunk,
+    item.key,
+  ];
+};
 
 const getFileTypeFilters = (value = true) => FILE_TYPES.reduce((agg, fileTypeFilter) => ({
   ...agg,
@@ -147,6 +171,13 @@ export const enhance = compose(
 
   withProps(({ items, filters }) => ({
     totalRowCount: items.length,
-    items: sortBy(filter(items, getRowFilter(filters)), customSort),
+    items: filter(items, getRowFilter(filters)),
+  })),
+
+  // sorting
+  withProps({ sortItems: ORDER_BY }),
+  withState('sort', 'updateSort', { sortBy: 'default', direction: 'asc' }),
+  withProps(({ items, sort }) => ({
+    items: orderBy(items, getCustomOrder(sort.sortBy), sort.direction),
   })),
 );

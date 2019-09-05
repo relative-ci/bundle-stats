@@ -7,6 +7,7 @@ import { FILE_TYPE_LABELS } from '@bundle-stats/utils';
 import { FileName } from '../../ui/file-name';
 import { Tooltip } from '../../ui/tooltip';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
+import { SortDropdown } from '../../ui/sort-dropdown';
 import { MetricsTable } from '../metrics-table';
 import { JobName } from '../job-name';
 import {
@@ -166,6 +167,9 @@ export const BundleAssets = (props) => {
     updateFilters,
     totalRowCount,
     filters,
+    sortItems,
+    sort,
+    updateSort,
   } = props;
 
   const labeledRuns = runs.map(addRunLabel);
@@ -173,8 +177,16 @@ export const BundleAssets = (props) => {
   return (
     <section className={cx(css.root, className)}>
       <header className={css.header}>
+        <SortDropdown
+          className={css.dropdown}
+          items={sortItems}
+          {...sort}
+          onChange={updateSort}
+        />
+
         {/* @TODO: get default values from parent state */}
         <FiltersDropdown
+          className={css.dropdown}
           filters={{
             [FILTER_CHANGED]: {
               label: 'Changed',
@@ -205,7 +217,6 @@ export const BundleAssets = (props) => {
               ...getFileTypeFilters(),
             },
           }}
-          className={css.filters}
           label={`Filters (${items.length}/${totalRowCount})`}
           onChange={updateFilters}
         />
@@ -244,4 +255,15 @@ BundleAssets.propTypes = {
   filters: PropTypes.shape({
     changed: PropTypes.bool,
   }).isRequired,
+  sortItems: PropTypes.shape({
+    [PropTypes.string]: PropTypes.shape({
+      label: PropTypes.string,
+      defaultDirection: PropTypes.bool,
+    }),
+  }).isRequired,
+  sort: PropTypes.shape({
+    sortBy: PropTypes.string,
+    direction: PropTypes.string,
+  }).isRequired,
+  updateSort: PropTypes.func.isRequired,
 };
