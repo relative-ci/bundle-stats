@@ -1,6 +1,7 @@
 .root {
   display: block;
   text-align: right;
+  white-space: nowrap;
 }
 
 .negative {

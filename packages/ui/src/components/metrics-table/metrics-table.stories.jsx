@@ -90,8 +90,10 @@ const ITEMS_MULTIPLE_RUNS = [
       {
         value: 873421,
         displayValue: '852.95KB',
-        delta: 613.98,
-        displayDelta: '+613.98%',
+        delta: 751090,
+        displayDelta: '+700KB',
+        deltaPercentage: 613.98,
+        displayDeltaPercentage: '+613.98%',
       },
       {
         value: 122331,
@@ -108,8 +110,10 @@ const ITEMS_MULTIPLE_RUNS = [
       {
         value: 1000,
         displayValue: '1s',
-        delta: 2.0408163,
-        displayDelta: '+2.04%',
+        delta: 20,
+        displayDelta: '+20ms',
+        deltaPercentage: 2.0408163,
+        displayDeltaPercentage: '+2.04%',
       },
       {
         value: 980,
@@ -126,8 +130,10 @@ const ITEMS_MULTIPLE_RUNS = [
       {
         value: 80,
         displayValue: '80',
-        delta: 14.2857143,
-        displayDelta: '+14.29%',
+        delta: 10,
+        displayDelta: '+10',
+        deltaPercentage: 14.2857143,
+        displayDeltaPercentage: '+14.29%',
       },
       {
         value: 70,
@@ -144,8 +150,10 @@ const ITEMS_MULTIPLE_RUNS = [
       {
         value: 80,
         displayValue: '80',
-        delta: 2.5641026,
-        displayDelta: '+2.56%',
+        delta: 2,
+        displayDelta: '+2',
+        deltaPercentage: 2.5641026,
+        displayDeltaPercentage: '+2.56%',
       },
       {
         value: 78,
@@ -162,8 +170,10 @@ const ITEMS_MULTIPLE_RUNS = [
       {
         value: 344232,
         displayValue: '336.16KB',
-        delta: 100,
+        delta: 344232,
         displayDelta: '+100%',
+        deltaPercentage: 100,
+        displayDeltaPercentage: '+100%',
       },
       null,
     ],
@@ -178,7 +188,9 @@ const ITEMS_MULTIPLE_RUNS = [
         value: 80,
         displayValue: '80',
         delta: 0,
-        displayDelta: '0%',
+        displayDelta: '0',
+        deltaPercentage: 0,
+        displayDeltaPercentage: '0%',
       },
       {
         value: 80,
@@ -187,7 +199,6 @@ const ITEMS_MULTIPLE_RUNS = [
     ],
   },
 ];
-
 
 const stories = storiesOf('Components/MetricsTable', module);
 stories.addDecorator(getWrapperDecorator());

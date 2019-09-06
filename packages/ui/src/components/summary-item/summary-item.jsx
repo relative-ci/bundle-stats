@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { getDelta, getMetricType, formatDelta } from '@bundle-stats/utils';
+import {
+  formatDelta, formatPercentage, getDelta, getMetricType,
+} from '@bundle-stats/utils';
 
 import { Metric } from '../metric';
 import { Delta } from '../delta';
@@ -13,7 +15,7 @@ export const SummaryItem = ({
   const { baseline, current } = data || { baseline: 0, current: 0 };
 
   const metric = getMetricType(id);
-  const delta = getDelta({ value: baseline }, { value: current });
+  const diff = getDelta({ value: baseline }, { value: current });
 
   const rootClassName = cx(css.root, className, css[size]);
 
@@ -35,11 +37,11 @@ export const SummaryItem = ({
           <span className={cx(css.currentMetric, css.loading)} />
         )}
 
-        {!loading && delta ? (
+        {!loading && diff && diff.deltaPercentage ? (
           <Delta
             className={css.delta}
-            value={delta}
-            displayValue={formatDelta(delta)}
+            value={diff.deltaPercentage}
+            displayValue={formatDelta(diff.deltaPercentage, formatPercentage)}
             biggerIsBetter={metric.biggerIsBetter}
           />
         ) : null}
