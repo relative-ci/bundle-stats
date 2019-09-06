@@ -5,33 +5,41 @@ export const getDelta = (baseline, current) => {
   const currentValue = (current && current.value) || 0;
 
   if (baselineValue === currentValue) {
-    return 0;
+    return {
+      delta: 0,
+      deltaPercentage: 0,
+    };
   }
 
   if (baselineValue === 0) {
-    return 100;
+    return {
+      delta: currentValue,
+      deltaPercentage: 100,
+    };
   }
 
-  // eslint-disable-next-line no-mixed-operators
-  return round(currentValue / baselineValue * 100 - 100, 8);
+  return {
+    delta: currentValue - baselineValue,
+    deltaPercentage: round((currentValue / baselineValue) * 100 - 100, 8),
+  };
 };
 
-export const formatDelta = (value) => {
+export const formatDelta = (value, formatter) => {
   // eslint-disable-next-line no-nested-ternary
-  const sign = value > 0
+  let sign = value > 0
     ? '+'
     : (value < 0 ? '-' : '');
 
-  const absValue = Math.abs(value);
+  let absValue = Math.abs(value);
 
-  // eslint-disable-next-line no-nested-ternary
-  const displayValue = (absValue > 0 && absValue < 0.01)
-    ? `~${sign}0.01`
-    : (
-      absValue === 0
-        ? absValue
-        : `${sign}${round(absValue, 2)}`
-    );
+  if (absValue > 0 && absValue < 0.01) {
+    sign = `~${sign}`;
+    absValue = 0.01;
+  }
 
-  return `${displayValue}%`;
+  if (absValue > 0.01) {
+    absValue = round(absValue, 2);
+  }
+
+  return `${sign}${formatter(absValue)}`;
 };

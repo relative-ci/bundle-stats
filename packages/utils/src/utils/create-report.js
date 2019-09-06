@@ -8,6 +8,7 @@ import { getStatsByMetrics } from '../stats/get-stats-by-metrics';
 import { getAssetsMetrics } from '../assets/get-assets-metrics';
 import { getModulesMetrics } from '../modules/get-modules-metrics';
 import { getDelta, formatDelta } from './delta';
+import { formatPercentage } from './format';
 
 const SIZE_METRICS = [
   'webpack.assets.totalSizeByTypeJS',
@@ -43,15 +44,20 @@ export const addMetricsData = (entries, metricType) => entries.map((entry) => {
       }
 
       const { value, ...restRun } = run;
-      const delta = (index < runs.length - 1) ? getDelta(runs[index + 1], run) : null;
+      const diff = (index < runs.length - 1) ? getDelta(runs[index + 1], run) : null;
 
       return {
         ...restRun,
+
+        // run data
         value,
         displayValue: formatter(run.value),
-        ...(delta !== null) ? {
-          delta,
-          displayDelta: formatDelta(delta),
+
+        // diff data
+        ...(diff !== null) ? {
+          ...diff,
+          displayDelta: formatDelta(diff.delta, formatter),
+          displayDeltaPercentage: formatDelta(diff.deltaPercentage, formatPercentage),
         } : {},
       };
     }),

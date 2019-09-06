@@ -32,16 +32,15 @@ const generateRowCell = ({ biggerIsBetter }) => (item) => {
   }
 
   const {
-    displayValue, delta, displayDelta,
+    displayValue, deltaPercentage, displayDeltaPercentage,
   } = item;
-
 
   return (
     <Metric value={displayValue}>
-      {delta ? (
+      {deltaPercentage ? (
         <Delta
-          value={delta}
-          displayValue={displayDelta}
+          value={deltaPercentage}
+          displayValue={displayDeltaPercentage}
           biggerIsBetter={biggerIsBetter}
         />
       ) : null}
