@@ -42,7 +42,7 @@ const PageHeader = () => (
     className={css.header}
     renderLeft={(sideProps) => (
       <div {...sideProps}>
-        <Logo className={css.headerLogo} />
+        <Logo kind="bundlestats" className={css.headerLogo} />
       </div>
     )}
   />
