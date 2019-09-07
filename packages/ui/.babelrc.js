@@ -10,7 +10,7 @@ module.exports = {
     '@babel/plugin-proposal-object-rest-spread',
     '@babel/plugin-proposal-class-properties',
     'babel-plugin-lodash',
-    'babel-plugin-inline-react-svg',
+    ['babel-plugin-inline-react-svg', { svgo: false }],
   ],
   env: {
     test: {
