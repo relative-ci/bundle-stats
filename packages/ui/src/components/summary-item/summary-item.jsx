@@ -41,7 +41,7 @@ export const SummaryItem = ({
           <Delta
             className={css.delta}
             value={diff.deltaPercentage}
-            displayValue={formatDelta(diff.deltaPercentage, formatPercentage)}
+            displayValue={`${formatDelta(diff.delta, metric.formatter)} (${formatDelta(diff.deltaPercentage, formatPercentage)})`}
             biggerIsBetter={metric.biggerIsBetter}
           />
         ) : null}
