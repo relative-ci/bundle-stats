@@ -1,12 +1,11 @@
 const path = require('path');
-const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 
 const getCssConfig = require('../../../build/configs/css');
+const getDefineConfig = require('../../../build/configs/define');
 const getResolveConfig = require('../../../build/configs/resolve');
 const getFilesConfig = require('../../../build/configs/files');
 const settings = require('../settings');
-const pkg = require('../package.json');
 
 module.exports = ({ config }) => {
   // Remove other rules than js & md
@@ -15,8 +14,9 @@ module.exports = ({ config }) => {
   return webpackMerge.smart(
     config,
     getCssConfig(settings),
-    getResolveConfig(settings),
+    getDefineConfig(settings),
     getFilesConfig(settings),
+    getResolveConfig(settings),
     {
       resolve: {
         modules: [
@@ -25,11 +25,6 @@ module.exports = ({ config }) => {
           path.join(__dirname, '../utils/node_modules'),
         ],
       },
-      plugins: [
-        new webpack.DefinePlugin({
-          __VERSION__: JSON.stringify(pkg.version),
-        }),
-      ],
     },
   );
 };
