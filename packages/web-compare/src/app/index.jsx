@@ -52,7 +52,15 @@ const App = () => (
     <Footer
       className={styles.footer}
       source="bundle-stats-web-compare"
-    />
+    >
+      <p className={styles.footerInfo}>
+        <a
+          href={`https://github.com/bundle-stats/bundle-stats/releases/tag/v${__VERSION__}`}
+        >
+          {`Version: ${__VERSION__}`}
+        </a>
+      </p>
+    </Footer>
   </div>
 );
 

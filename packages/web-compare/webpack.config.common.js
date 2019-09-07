@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const HtmlPlugin = require('html-webpack-plugin');
 
@@ -6,6 +7,7 @@ const getFilesConfig = require('../../build/configs/files');
 const getResolveConfig = require('../../build/configs/resolve');
 const appConfig = require('./src/config');
 const settings = require('./settings');
+const pkg = require('./package.json');
 
 const { isProduction } = settings;
 
@@ -26,6 +28,9 @@ module.exports = webpackMerge.smart(
         filename: 'index.html',
         minimize: isProduction,
         ...appConfig,
+      }),
+      new webpack.DefinePlugin({
+        __VERSION__: JSON.stringify(pkg.version),
       }),
     ],
   },

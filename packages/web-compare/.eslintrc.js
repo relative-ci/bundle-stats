@@ -8,6 +8,7 @@ module.exports = {
   globals: {
     __DEVELOPMENT__: true,
     __PRODUCTION__: true,
+    __VERSION__: true,
   },
   rules: {
     'operator-linebreak': ['error', 'before', { overrides: { '&&': 'ignore' } }],
