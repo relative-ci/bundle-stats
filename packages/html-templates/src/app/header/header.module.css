@@ -9,11 +9,19 @@
   margin-right: var(--space-xxsmall);
 }
 
-.title {
+.logo {
   margin: 0;
+  width: 156px;
+  color: var(--color-branding);
   font-size: var(--size-xlarge);
   white-space: nowrap;
   font-weight: bold;
+}
+
+.logo:hover,
+.logo:active,
+.logo:focus {
+  color: var(--color-branding-dark);
 }
 
 .tabs {

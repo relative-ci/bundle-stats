@@ -2,13 +2,13 @@
   position: relative;
 }
 
-.headerRelativeLogo {
-  width: var(--space-large);
+.headerBundleStatsLogo {
+  width: 156px;
   color: var(--color-branding);
 }
 
-.headerRelativeLogo:active,
-.headerRelativeLogo:hover {
+.headerBundleStatsLogo:active,
+.headerBundleStatsLogo:hover {
   color: var(--color-branding-dark);
 }
 

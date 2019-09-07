@@ -17,10 +17,11 @@ const App = () => (
       renderLeft={(sideProps) => (
         <div {...sideProps}>
           <Logo
-            className={styles.headerRelativeLogo}
+            className={styles.headerBundleStatsLogo}
+            kind="bundlestats"
             as="a"
-            href="https://relative-ci.com"
-            title="Go to relative-ci.com"
+            href="https://github.com/bundle-stats/bundle-stats"
+            title="Go to Github"
           />
         </div>
       )}
@@ -35,7 +36,7 @@ const App = () => (
             className={styles.headerGithubLogo}
             kind="github"
             as="a"
-            href="https://github.com/bundle-stats/bundle-stats"
+            href="https://github.com/bundle-stats/bundle-stats/tree/master/packages/web-compare"
             title="Go to Github"
           />
         </div>

@@ -8,8 +8,9 @@
 }
 
 .headerLogo {
-  width: 24px;
-  color: var(--color-branding);
+  width: 140px;
+  height: 20px;
+  color: var(--color-dark);
 }
 
 .footer {

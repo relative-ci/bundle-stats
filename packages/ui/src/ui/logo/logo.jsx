@@ -2,19 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import BundleStats from './assets/bundle-stats.inline.svg';
 import GithubSvg from './assets/github.inline.svg';
 import LogoSvg from './assets/relative-ci-logo.inline.svg';
 import LogotypeSvg from './assets/relative-ci-logotype.inline.svg';
 import WebpackSvg from './assets/webpack.inline.svg';
 import {
-  KIND_DEFAULT, KIND_LOGO, KIND_LOGOTYPE, KIND_GITHUB, KIND_WEBPACK, KINDS,
+  KIND_DEFAULT, KIND_BUNDLE_STATS, KIND_LOGO, KIND_LOGOTYPE, KIND_GITHUB, KIND_WEBPACK, KINDS,
 } from './logo.constants';
 import css from './logo.module.css';
 
 const ICONS = {
-  [KIND_LOGO]: LogoSvg,
-  [KIND_LOGOTYPE]: LogotypeSvg,
+  [KIND_BUNDLE_STATS]: BundleStats,
   [KIND_GITHUB]: GithubSvg,
+  [KIND_LOGOTYPE]: LogotypeSvg,
+  [KIND_LOGO]: LogoSvg,
   [KIND_WEBPACK]: WebpackSvg,
 };
 
