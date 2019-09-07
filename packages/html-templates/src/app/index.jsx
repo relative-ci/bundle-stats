@@ -18,7 +18,15 @@ const StandaloneAppLayout = (props) => (
       className={css.main}
       {...props}
     />
-    <Footer source="bundle-stats" />
+    <Footer source="bundle-stats">
+      <p className={css.footerInfo}>
+        <a
+          href={`https://github.com/bundle-stats/bundle-stats/releases/tag/v${__VERSION__}`}
+        >
+          {`Version: ${__VERSION__}`}
+        </a>
+      </p>
+    </Footer>
   </div>
 );
 
