@@ -1,8 +1,9 @@
 const webpackMerge = require('webpack-merge');
 
 const getCssConfig = require('../../../build/configs/css');
-const getResolveConfig = require('../../../build/configs/resolve');
+const getDefineConfig = require('../../../build/configs/define');
 const getFilesConfig = require('../../../build/configs/files');
+const getResolveConfig = require('../../../build/configs/resolve');
 const settings = require('../settings');
 
 module.exports = ({ config }) => {
@@ -12,7 +13,8 @@ module.exports = ({ config }) => {
   return webpackMerge.smart(
     config,
     getCssConfig(settings),
-    getResolveConfig(settings),
+    getDefineConfig(settings),
     getFilesConfig(settings),
+    getResolveConfig(settings),
   );
 };

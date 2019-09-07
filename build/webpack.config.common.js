@@ -1,6 +1,5 @@
 const path = require('path');
 const process = require('process');
-const webpack = require('webpack');
 
 module.exports = (settings) => {
   const {
@@ -42,15 +41,6 @@ module.exports = (settings) => {
         },
       ],
     },
-    plugins: [
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-        },
-        __PRODUCTION__: JSON.stringify(isProduction),
-        __DEVELOPMENT__: JSON.stringify(isDevelopment),
-      }),
-    ],
     devtool: 'source-map',
   };
 };
