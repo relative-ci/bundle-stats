@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { IconText } from '../icon-text';
+import { Icon } from '../icon';
 import css from './dropdown.module.css';
 
 const ALIGN_LEFT = 'left';
@@ -16,16 +16,17 @@ export const Dropdown = (props) => {
 
   return (
     <div className={rootClassName}>
-      <IconText
+      <button
         className={css.label}
-        glyph={glyph}
-        as="button"
         type="button"
         onClick={dropdownToggle}
       >
+        <Icon
+          className={css.labelIcon}
+          glyph={glyph}
+        />
         {label}
-      </IconText>
-
+      </button>
       <div className={css.dropdown}>
         {typeof children === 'function' ? children({ dropdownToggle }) : children}
       </div>
