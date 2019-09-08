@@ -16,6 +16,7 @@
   border: 0;
   background: none;
   color: inherit;
+  line-height: var(--space-small);
   cursor: pointer;
   text-align: left;
 }
@@ -37,6 +38,10 @@
 
 .itemSortType:hover {
   color: var(--color-primary-dark);
+}
+
+.itemSortTypeAsc .itemSortTypeIcon {
+  transform: rotate(180deg);
 }
 
 .item:hover {

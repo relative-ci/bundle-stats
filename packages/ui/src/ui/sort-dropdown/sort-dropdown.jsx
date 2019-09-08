@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import { Dropdown } from '../dropdown';
+import { Icon } from '../icon';
 import css from './sort-dropdown.module.css';
 
 export const SortDropdown = (props) => {
@@ -33,31 +34,43 @@ export const SortDropdown = (props) => {
       align="right"
     >
       <div className={css.items}>
-        {Object.entries(items).map(([key, item]) => (
-          <span
-            key={key}
-            className={cx(css.item, sortBy === key && css.active)}
-          >
-            <button
-              className={css.itemSortBy}
-              type="button"
-              onClick={getButtonOnClick(key, item.defaultDirection)}
-              title={`Order by ${item.label}`}
+        {Object.entries(items).map(([key, item]) => {
+          const sortDirectionProps = direction === 'asc'
+            ? {
+              className: cx(css.itemSortType, css.itemSortTypeAsc),
+              onClick: getButtonOnClick(key, 'desc'),
+              title: 'Order data descending',
+            } : {
+              className: css.itemSortType,
+              onClick: getButtonOnClick(key, 'asc'),
+              title: 'Order data ascending',
+            };
+
+          return (
+            <span
+              key={key}
+              className={cx(css.item, sortBy === key && css.active)}
             >
-              {item.label}
-            </button>
-            <button
-              className={css.itemSortType}
-              type="button"
-              onClick={getButtonOnClick(key, direction === 'asc' ? 'desc' : 'asc')}
-              title={`Order data ${direction === 'asc' ? 'descending' : 'ascending'}`}
-            >
-              <span className="ui-icon ui-icon--small">
-                {direction === 'asc' ? 'arrow_downward' : 'arrow_upward' }
-              </span>
-            </button>
-          </span>
-        ))}
+              <button
+                className={css.itemSortBy}
+                type="button"
+                onClick={getButtonOnClick(key, item.defaultDirection)}
+                title={`Order by ${item.label}`}
+              >
+                {item.label}
+              </button>
+              <button
+                type="button"
+                {...sortDirectionProps}
+              >
+                <Icon
+                  className={css.itemSortTypeIcon}
+                  glyph="arrow"
+                />
+              </button>
+            </span>
+          );
+        })}
       </div>
     </Dropdown>
   );
