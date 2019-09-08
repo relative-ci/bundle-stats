@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import ArrowIcon from './assets/arrow.svg';
 import BranchIcon from './assets/branch.svg';
 import ClockIcon from './assets/clock.svg';
 import CommitIcon from './assets/commit.svg';
@@ -13,6 +14,7 @@ import SortIcon from './assets/sort.svg';
 import css from './icon.module.css';
 
 const ICONS = {
+  arrow: ArrowIcon,
   branch: BranchIcon,
   clock: ClockIcon,
   commit: CommitIcon,

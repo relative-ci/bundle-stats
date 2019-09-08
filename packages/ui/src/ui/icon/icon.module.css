@@ -4,7 +4,6 @@
 }
 
 .icon {
-  margin-right: var(--space-xxxsmall);
   display: inline-block;
   width: var(--space-small);
   height: auto;
