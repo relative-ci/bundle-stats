@@ -103,7 +103,7 @@ const getCustomSort = (sortId) => (item) => {
   }
 
   if (sortId === SORT_BY_DELTA) {
-    return get(item, 'runs[0].delta', 0);
+    return get(item, 'runs[0].deltaPercentage', 0);
   }
 
   if (sortId === SORT_BY_SIZE) {
