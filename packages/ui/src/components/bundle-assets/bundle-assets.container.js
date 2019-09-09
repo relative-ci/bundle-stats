@@ -1,7 +1,7 @@
 import {
   compose, withProps, withState,
 } from 'recompose';
-import { get, filter, orderBy } from 'lodash';
+import { get, filter } from 'lodash';
 import {
   FILE_TYPES,
   METRIC_TYPE_FILE_SIZE,
@@ -11,16 +11,17 @@ import {
   mergeRunsById,
 } from '@bundle-stats/utils';
 
+import { withCustomSort } from '../../hocs/with-custom-sort';
 import {
   FILTER_ASSET,
   FILTER_CHANGED,
   FILTER_CHUNK,
   FILTER_ENTRY,
   FILTER_INITIAL,
-  ORDER_BY_NAME,
-  ORDER_BY_DELTA,
-  ORDER_BY_SIZE,
-  ORDER_BY,
+  SORT_BY_NAME,
+  SORT_BY_DELTA,
+  SORT_BY_SIZE,
+  SORT_BY,
 } from './bundle-assets.constants';
 
 const addRowFlags = ({ items }) => {
@@ -96,16 +97,16 @@ const getRowFilter = (filters) => (item) => {
   return true;
 };
 
-const getCustomOrder = (sortId) => (item) => {
-  if (sortId === ORDER_BY_NAME) {
+const getCustomSort = (sortId) => (item) => {
+  if (sortId === SORT_BY_NAME) {
     return item.key;
   }
 
-  if (sortId === ORDER_BY_DELTA) {
+  if (sortId === SORT_BY_DELTA) {
     return get(item, 'runs[0].delta', 0);
   }
 
-  if (sortId === ORDER_BY_SIZE) {
+  if (sortId === SORT_BY_SIZE) {
     return get(item, 'runs[0].value', 0);
   }
 
@@ -168,10 +169,5 @@ export const enhance = compose(
     items: filter(items, getRowFilter(filters)),
   })),
 
-  // sorting
-  withProps({ sortItems: ORDER_BY }),
-  withState('sort', 'updateSort', { sortBy: 'default', direction: 'asc' }),
-  withProps(({ items, sort }) => ({
-    items: orderBy(items, getCustomOrder(sort.sortBy), sort.direction),
-  })),
+  withCustomSort({ sortItems: SORT_BY, getCustomSort, itemsKey: 'items' }),
 );
