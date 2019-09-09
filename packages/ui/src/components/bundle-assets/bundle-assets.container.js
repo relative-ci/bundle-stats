@@ -102,17 +102,11 @@ const getCustomOrder = (sortId) => (item) => {
   }
 
   if (sortId === ORDER_BY_DELTA) {
-    return [
-      get(item, 'runs[0].delta', 0),
-      item.key,
-    ];
+    return get(item, 'runs[0].delta', 0);
   }
 
   if (sortId === ORDER_BY_SIZE) {
-    return [
-      get(item, 'runs[0].value', 0),
-      item.key,
-    ];
+    return get(item, 'runs[0].value', 0);
   }
 
   return [
