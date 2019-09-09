@@ -1,17 +1,17 @@
-export const ORDER_BY_NAME = 'name';
-export const ORDER_BY_SIZE = 'size';
-export const ORDER_BY_DELTA = 'delta';
+export const SORT_BY_NAME = 'name';
+export const SORT_BY_SIZE = 'size';
+export const SORT_BY_DELTA = 'delta';
 
-export const ORDER_BY = {
-  [ORDER_BY_NAME]: {
+export const SORT_BY = {
+  [SORT_BY_NAME]: {
     label: 'Name',
     defaultDirection: 'asc',
   },
-  [ORDER_BY_DELTA]: {
+  [SORT_BY_DELTA]: {
     label: 'Delta',
     defaultDirection: 'desc',
   },
-  [ORDER_BY_SIZE]: {
+  [SORT_BY_SIZE]: {
     label: 'Size',
     defaultDirection: 'desc',
   },

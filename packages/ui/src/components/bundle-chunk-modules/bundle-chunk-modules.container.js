@@ -1,25 +1,26 @@
 import {
   compose, withProps, withState,
 } from 'recompose';
-import { get, orderBy } from 'lodash';
+import { get } from 'lodash';
 
+import { withCustomSort } from '../../hocs/with-custom-sort';
 import {
-  ORDER_BY_NAME,
-  ORDER_BY_SIZE,
-  ORDER_BY_DELTA,
-  ORDER_BY,
+  SORT_BY_NAME,
+  SORT_BY_SIZE,
+  SORT_BY_DELTA,
+  SORT_BY,
 } from './bundle-chunk-modules.constants';
 
-const getCustomOrder = (sortBy) => (item) => {
-  if (sortBy === ORDER_BY_NAME) {
+const getCustomSort = (sortBy) => (item) => {
+  if (sortBy === SORT_BY_NAME) {
     return item.key;
   }
 
-  if (sortBy === ORDER_BY_SIZE) {
+  if (sortBy === SORT_BY_SIZE) {
     return get(item, 'runs[0].value', 0);
   }
 
-  if (sortBy === ORDER_BY_DELTA) {
+  if (sortBy === SORT_BY_DELTA) {
     return get(item, 'runs[0].delta', 0);
   }
 
@@ -42,10 +43,5 @@ export default compose(
     totalRowsCount: modules.length,
     modules: modules.filter(getFilterByChanged(filters)),
   })),
-  // sorting
-  withProps({ sortItems: ORDER_BY }),
-  withState('sort', 'updateSort', { sortBy: 'default', direction: 'asc' }),
-  withProps(({ modules, sort }) => ({
-    modules: orderBy(modules, getCustomOrder(sort.sortBy), sort.direction),
-  })),
+  withCustomSort({ sortItems: SORT_BY, getCustomSort, itemsKey: 'modules' }),
 );
