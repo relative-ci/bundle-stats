@@ -16,17 +16,11 @@ const getCustomOrder = (sortBy) => (item) => {
   }
 
   if (sortBy === ORDER_BY_SIZE) {
-    return [
-      get(item, 'runs[0].value', 0),
-      item.key,
-    ];
+    return get(item, 'runs[0].value', 0);
   }
 
   if (sortBy === ORDER_BY_DELTA) {
-    return [
-      get(item, 'runs[0].delta', 0),
-      item.key,
-    ];
+    return get(item, 'runs[0].delta', 0);
   }
 
   return [!item.changed, item.key];
