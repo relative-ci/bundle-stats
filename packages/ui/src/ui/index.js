@@ -3,6 +3,7 @@ export { Box } from './box';
 export { Container } from './container';
 export { FileName } from './file-name';
 export { FiltersDropdown } from './filters-dropdown';
+export { HorizontalBarChart } from './horizontal-bar-chart';
 export { Icon } from './icon';
 export { Loader } from './loader';
 export { Logo } from './logo';
