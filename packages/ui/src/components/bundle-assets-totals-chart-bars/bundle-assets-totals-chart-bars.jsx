@@ -1,67 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { omit, sortBy } from 'lodash';
-import {
-  getMetricType, formatFileSize, mergeRunsById,
-} from '@bundle-stats/utils';
+import { max, omit, sum } from 'lodash';
+import { getMetricType } from '@bundle-stats/utils';
 
-import {
-  BAR_PROPS,
-  RESPONSIVE_CONTAINER_PROPS,
-  TOOLTIP_PROPS,
-  XAXIS_PROPS,
-  YAXIS_PROPS,
-  Bar,
-  BarChart,
-  Chart,
-  ResponsiveContainer,
-  RechartsTooltip,
-  XAxis,
-  YAxis,
-  getColors,
-} from '../chart';
+import { BarChart } from '../../ui';
 import css from './bundle-assets-totals-chart-bars.module.css';
-
-const getMetricLabel = (key) => getMetricType(key).label;
-
-const TooltipContent = ({ active, payload }) => {
-  if (!active) {
-    return null;
-  }
-
-  const item = payload[0];
-  if (!item) {
-    return null;
-  }
-
-  return (
-    <div className={TOOLTIP_PROPS.contentClassName}>
-      <h5 className={css.tooltipTitle}>
-        {getMetricLabel(item.payload.key)}
-      </h5>
-      {payload.map(({ name, value }) => (
-        <p className={css.tooltipItem}>
-          {`#${name}: ${formatFileSize(value)}`}
-        </p>
-      ))}
-    </div>
-  );
-};
-
-TooltipContent.propTypes = {
-  /** Recharts active flag */
-  active: PropTypes.bool.isRequired,
-
-  /** Reacharts payload data */
-  payload: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string,
-    value: PropTypes.number,
-    payload: PropTypes.shape({
-      key: PropTypes.string,
-    }),
-  })).isRequired,
-};
 
 const prefixStats = (data) => Object.entries(data).map(([key, value]) => ({
   [`webpack.assets.${key}`]: value,
@@ -86,50 +30,46 @@ const getRun = (job) => {
 };
 
 export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
+  const rootClassName = cx(css.root, className);
+
   const runs = jobs.map(getRun);
-  const rows = sortBy(mergeRunsById(runs), 'key');
-
-  const data = rows.map((row) => ({
-    key: row.key,
-    ...row.runs.reduce((agg, { value }, jobId) => ({
-      ...agg,
-      value,
-      [jobs[jobId].internalBuildNumber]: value,
-    }), {}),
-  }));
-
-  const COLORS = getColors(jobs.length);
+  const runsValues = runs.map((run) => Object.values(run).map(({ value }) => value));
+  const maxValues = runsValues.map((values) => sum(values));
+  const maxValue = max(maxValues);
 
   return (
-    <Chart className={cx(className, css.chart)} title="Totals by job">
-      <ResponsiveContainer {...RESPONSIVE_CONTAINER_PROPS}>
-        <BarChart data={data}>
-          <XAxis
-            {...XAXIS_PROPS}
-            dataKey="key"
-            tickFormatter={getMetricLabel}
-          />
-          <YAxis
-            {...YAXIS_PROPS}
-            dataKey="value"
-            tickFormatter={formatFileSize}
-          />
-          <RechartsTooltip
-            {...TOOLTIP_PROPS}
-            content={TooltipContent}
-          />
-          {jobs.map(({ internalBuildNumber }, index) => (
-            <Bar
-              {...BAR_PROPS}
+    <div className={rootClassName}>
+      <h2 className={css.title}>
+        Total size by type
+      </h2>
+
+      <div className={css.items}>
+        {jobs.map((job, index) => {
+          const { internalBuildNumber } = job;
+          const run = runs[index];
+          const metrics = Object.keys(run).map((item) => getMetricType(item));
+
+          const labels = metrics.map(({ label }) => label);
+          const values = Object.values(run).map(({ value }) => value);
+
+          return (
+            <div
               key={internalBuildNumber}
-              dataKey={internalBuildNumber}
-              fill={COLORS[index]}
-              minPointSize={2}
-            />
-          ))}
-        </BarChart>
-      </ResponsiveContainer>
-    </Chart>
+              className={css.item}
+            >
+              <h3 className={css.itemTitle}>
+                {`Job #${internalBuildNumber}`}
+              </h3>
+              <BarChart
+                className={css.itemChart}
+                data={{ labels, values }}
+                maxValue={maxValue}
+              />
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 };
 
