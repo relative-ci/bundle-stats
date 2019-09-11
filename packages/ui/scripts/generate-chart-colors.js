@@ -5,7 +5,7 @@ const fs = require('fs');
 const colormap = require('colormap');
 const hexRgb = require('hex-rgb');
 
-const FILE_COLORS = path.join(__dirname, '../src/ui/chart/chart.colors.json');
+const FILE_COLORS = path.join(__dirname, '../src/components/chart/chart.colors.json');
 
 const COLORMAP_RECHARTS = [
   '#8884d8',
@@ -28,7 +28,7 @@ const colors = colormap({
   colormap: COLORMAP,
   nshades: COLORMAP.length + 1,
   format: 'rgbaString',
-  alpha: 0.8,
+  alpha: 0.9,
 });
 
 fs.writeFile(FILE_COLORS, JSON.stringify(colors, null, 2), (err) => {
