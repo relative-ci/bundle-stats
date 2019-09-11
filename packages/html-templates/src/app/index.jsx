@@ -4,6 +4,7 @@ import { Box } from '@bundle-stats/ui/lib-esm/ui/box';
 import { Container } from '@bundle-stats/ui/lib-esm/ui/container';
 import { Summary } from '@bundle-stats/ui/lib-esm/components/summary';
 import { BundleAssets } from '@bundle-stats/ui/lib-esm/components/bundle-assets';
+import { BundleAssetsTotalsChartBars } from '@bundle-stats/ui/lib-esm/components/bundle-assets-totals-chart-bars';
 import { Footer } from '@bundle-stats/ui/lib-esm/layout/footer';
 import { BundleAssetsTotalsTable } from '@bundle-stats/ui/lib-esm/components/bundle-assets-totals-table';
 import { BundleModules } from '@bundle-stats/ui/lib-esm/components/bundle-modules';
@@ -56,6 +57,9 @@ const StandaloneApp = ({ jobs }) => {
     <StandaloneAppLayout>
       <Container>
         <Summary data={getSummaryData(jobs)} />
+      </Container>
+      <Container>
+        <BundleAssetsTotalsChartBars jobs={jobs} />
       </Container>
       <Container>
         <h2>

@@ -28,14 +28,12 @@
   text-transform: uppercase;
 }
 
-.itemChart {
-  height: var(--space-medium);
-  font-size: var(--size-xsmall);
-  font-weight: bold;
-}
-
 .item:hover .itemTitle {
   color: var(--color-gray);
+}
+
+.item:first-child .itemChart {
+  height: var(--space-xxxlarge);
 }
 
 .itemTooltip {
