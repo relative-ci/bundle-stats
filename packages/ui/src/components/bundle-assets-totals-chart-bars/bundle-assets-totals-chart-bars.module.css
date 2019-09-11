@@ -1,7 +1,44 @@
-.tooltipTitle {
-  margin: 0;
+.title {
+  margin: 0 0 var(--space-small);
+  color: var(--color-gray-light);
+  font-weight: bold;
+  font-size: var(--size-medium);
+  line-height: 1;
+  text-transform: uppercase;
 }
 
-.tooltipItem {
-  margin: 0;
+.item {
+  position: relative;
+}
+
+.item + .item {
+  margin-top: var(--space-medium);
+}
+
+.itemTitle {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  margin: 0 0 var(--space-xxxsmall);
+
+  color: var(--color-gray-light);
+  font-size: var(--size-xsmall);
+  font-weight: bold;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.itemChart {
+  height: var(--space-medium);
+  font-size: var(--size-xsmall);
+  font-weight: bold;
+}
+
+.item:hover .itemTitle {
+  color: var(--color-gray);
+}
+
+.itemTooltip {
+  text-align: left;
+  padding: 0;
 }
