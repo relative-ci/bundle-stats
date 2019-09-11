@@ -5,13 +5,12 @@ import { createStats, createStatsSummary } from '@bundle-stats/utils';
 import currentData from '../../__mocks__/job.current.json';
 import baselineData from '../../__mocks__/job.baseline.json';
 import {
-  Box, Container, Logo, Panels, Tabs,
+  Box, Container, Logo, Tabs,
 } from '../ui';
 import { Header, Footer } from '../layout';
 import { BundleAssets } from '../components/bundle-assets';
 import { BundleAssetsTotalsTable } from '../components/bundle-assets-totals-table';
 import { BundleAssetsTotalsChartBars } from '../components/bundle-assets-totals-chart-bars';
-import { BundleAssetsTotalsChartPie } from '../components/bundle-assets-totals-chart-pie';
 import { BundleModules } from '../components/bundle-modules';
 import { Summary } from '../components/summary';
 import { getWrapperDecorator } from '../stories';
@@ -63,14 +62,7 @@ stories.add('totals', () => (
         </Tabs>
       </Container>
       <Container>
-        <Panels>
-          <Box>
-            <BundleAssetsTotalsChartPie jobs={JOBS} />
-          </Box>
-          <Box>
-            <BundleAssetsTotalsChartBars jobs={JOBS} />
-          </Box>
-        </Panels>
+        <BundleAssetsTotalsChartBars jobs={JOBS} />
       </Container>
       <Container>
         <Box>

@@ -3,9 +3,7 @@ import {
   Box,
   BundleAssetsTotalsTable,
   BundleAssetsTotalsChartBars,
-  BundleAssetsTotalsChartPie,
   Container,
-  Panels,
 } from '@bundle-stats/ui';
 
 const Totals = (props) => {
@@ -14,14 +12,7 @@ const Totals = (props) => {
   return (
     <div>
       <Container>
-        <Panels>
-          <Box>
-            <BundleAssetsTotalsChartPie jobs={jobs} />
-          </Box>
-          <Box>
-            <BundleAssetsTotalsChartBars jobs={jobs} />
-          </Box>
-        </Panels>
+        <BundleAssetsTotalsChartBars jobs={jobs} />
       </Container>
       <Container>
         <Box>

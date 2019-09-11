@@ -3,8 +3,6 @@ export {
   BarChart,
   Cell,
   Legend,
-  Pie,
-  PieChart,
   ResponsiveContainer,
   Text,
   Tooltip as RechartsTooltip,
