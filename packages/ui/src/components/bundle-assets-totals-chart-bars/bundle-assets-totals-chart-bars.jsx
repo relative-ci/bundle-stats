@@ -1,56 +1,79 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { max, omit, sum } from 'lodash';
-import { getMetricType } from '@bundle-stats/utils';
+import {
+  get, map, max, sum,
+} from 'lodash';
+import {
+  addMetricsData, getStatsByMetrics, mergeRunsById,
+} from '@bundle-stats/utils';
 
-import { BarChart } from '../../ui';
+import { HorizontalBarChart } from '../../ui';
+import { SummaryItem } from '../summary-item';
+import { getColors } from '../chart/chart.utils';
 import css from './bundle-assets-totals-chart-bars.module.css';
 
-const prefixStats = (data) => Object.entries(data).map(([key, value]) => ({
-  [`webpack.assets.${key}`]: value,
-})).reduce((aggregator, current) => ({
-  ...aggregator,
-  ...current,
-}), {});
-
-const getRun = (job) => {
-  if (!job) {
-    return [];
-  }
-
-  // @TODO Replace with a proper separation
-  const totals = omit({ ...job.stats.webpack.assets }, [
-    'totalSizeByTypeALL',
-    'totalInitialSizeJS',
-    'totalInitialSizeCSS',
-  ]);
-
-  return prefixStats(totals);
-};
+const METRICS = [
+  'webpack.assets.totalSizeByTypeJS',
+  'webpack.assets.totalSizeByTypeCSS',
+  'webpack.assets.totalSizeByTypeIMG',
+  'webpack.assets.totalSizeByTypeMEDIA',
+  'webpack.assets.totalSizeByTypeFONT',
+  'webpack.assets.totalSizeByTypeHTML',
+  'webpack.assets.totalSizeByTypeOTHER',
+];
 
 export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
   const rootClassName = cx(css.root, className);
 
-  const runs = jobs.map(getRun);
-  const runsValues = runs.map((run) => Object.values(run).map(({ value }) => value));
-  const maxValues = runsValues.map((values) => sum(values));
+  const items = addMetricsData(mergeRunsById(
+    map(jobs, (job) => getStatsByMetrics(get(job, 'stats', {}), METRICS)),
+  ));
+
+  const dataGraphs = [];
+
+  items.forEach(({ runs }) => {
+    runs.forEach(({ value }, runIndex) => {
+      dataGraphs[runIndex] = [
+        ...dataGraphs[runIndex] || [],
+        value,
+      ];
+    });
+  });
+
+  const maxValues = max(map(dataGraphs, (values) => sum(values)));
   const maxValue = max(maxValues);
+
+  const labels = items.map(({ label }) => label);
+  const colors = getColors(max(map(dataGraphs, (values) => values.length)));
+  const getTooltip = (itemIndex, runIndex) => () => (
+    <SummaryItem
+      className={css.itemTooltip}
+      id={get(items, [itemIndex, 'key'])}
+      data={{
+        current: get(items, [itemIndex, 'runs', runIndex, 'value'], 0),
+        baseline: get(items, [itemIndex, 'runs', runIndex + 1, 'value'], 0),
+      }}
+      size="large"
+    />
+  );
 
   return (
     <div className={rootClassName}>
-      <h2 className={css.title}>
+      <h3 className={css.title}>
         Total size by type
-      </h2>
+      </h3>
 
       <div className={css.items}>
-        {jobs.map((job, index) => {
-          const { internalBuildNumber } = job;
-          const run = runs[index];
-          const metrics = Object.keys(run).map((item) => getMetricType(item));
+        {dataGraphs.map((data, runIndex) => {
+          const { internalBuildNumber } = jobs[runIndex];
 
-          const labels = metrics.map(({ label }) => label);
-          const values = Object.values(run).map(({ value }) => value);
+          const values = data.map((value, valueIndex) => ({
+            value,
+            color: colors[valueIndex],
+            label: labels[valueIndex],
+            getItemTooltip: getTooltip(valueIndex, runIndex),
+          }));
 
           return (
             <div
@@ -60,7 +83,7 @@ export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
               <h3 className={css.itemTitle}>
                 {`Job #${internalBuildNumber}`}
               </h3>
-              <BarChart
+              <HorizontalBarChart
                 className={css.itemChart}
                 data={{ labels, values }}
                 maxValue={maxValue}
