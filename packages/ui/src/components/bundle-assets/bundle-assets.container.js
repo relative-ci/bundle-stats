@@ -7,7 +7,7 @@ import {
   METRIC_TYPE_FILE_SIZE,
   addMetricsData,
   getFileType,
-  getAssetsMetrics,
+  assetsWebpackTransform,
   mergeRunsById,
 } from '@bundle-stats/utils';
 
@@ -138,15 +138,12 @@ const getEntryTypeFilters = (value = true) => [
 export const enhance = compose(
   withProps(({ jobs }) => {
     const runs = jobs.map((job) => ({ meta: job }));
-    const assets = jobs.map((job) => getAssetsMetrics(
-      get(job, 'rawData.webpack.stats.assets', []),
-      {
-        chunks: get(job, 'rawData.webpack.stats.chunks', []),
-        entrypoints: get(job, 'rawData.webpack.stats.entrypoints', {}),
-      },
-    ));
+    const jobsAssets = jobs.map((job) => {
+      const { assets } = assetsWebpackTransform(get(job, 'rawData.webpack.stats'));
+      return assets;
+    });
 
-    const items = addMetricsData(mergeRunsById(assets), METRIC_TYPE_FILE_SIZE);
+    const items = addMetricsData(mergeRunsById(jobsAssets), METRIC_TYPE_FILE_SIZE);
 
     return {
       runs,

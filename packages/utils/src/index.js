@@ -6,4 +6,5 @@ export * from './lighthouse';
 export * from './modules';
 export * from './metrics';
 export * from './stats';
+export * from './transforms';
 export * from './utils';

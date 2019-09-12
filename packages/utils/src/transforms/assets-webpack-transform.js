@@ -1,31 +1,29 @@
 import { get } from 'lodash';
 
-import { getAssetName } from './get-asset-name';
+import { getAssetName } from '../assets';
 
 const IGNORE_PATTERN = /\.map$/;
 
-/*
- * Transform assets array to an object with metrics
- */
-export const getAssetsMetrics = (assets = [], data) => {
-  const chunks = get(data, 'chunks', []);
-  const entrypoints = get(data, 'entrypoints', {});
+export const assetsWebpackTransform = (webpackStats) => {
+  const webpackAssets = get(webpackStats, 'assets', []);
+  const webpackChunks = get(webpackStats, 'chunks', []);
+  const webpackEntrypoints = get(webpackStats, 'entrypoints', {});
 
-  const entryItems = Object.values(entrypoints)
+  const entryItems = Object.values(webpackEntrypoints)
     .map(({ assets: items }) => items)
     .flat();
 
-  const initialItems = Object.values(chunks)
+  const initialItems = Object.values(webpackChunks)
     .filter(({ initial }) => initial)
     .map(({ files }) => files)
     .flat();
 
-  const chunkItems = Object.values(chunks)
+  const chunkItems = Object.values(webpackChunks)
     .filter(({ entry, initial }) => !entry && !initial)
     .map(({ files }) => files)
     .flat();
 
-  return assets.reduce((aggregator, asset) => {
+  const assets = webpackAssets.reduce((aggregator, asset) => {
     if (IGNORE_PATTERN.test(asset.name)) {
       return aggregator;
     }
@@ -47,4 +45,6 @@ export const getAssetsMetrics = (assets = [], data) => {
       },
     };
   }, {});
+
+  return { assets };
 };
