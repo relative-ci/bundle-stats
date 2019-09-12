@@ -6,8 +6,8 @@
 .title {
   margin-bottom: var(--space-xxxsmall);
   color: var(--color-gray-light);
-  font-size: var(--size-xsmall);
-  line-height: 1;
+  font-size: var(--size-small);
+  line-height: var(--space-small);
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -15,9 +15,9 @@
 .currentMetric {
   display: inline-block;
   color: var(--color-dark);
-  font-size: var(--size-large);
+  font-size: var(--size-xlarge);
+  line-height: var(--space-medium);
   font-weight: 700;
-  line-height: 1.1;
 }
 
 .delta {
@@ -27,7 +27,6 @@
 
 .baselineMetric {
   display: block;
-  line-height: 1.1;
 }
 
 /* Loading state */
