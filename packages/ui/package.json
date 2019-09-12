@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/ui",
-  "version": "1.9.0-alpha.0",
+  "version": "1.9.0-alpha.1",
   "description": "UI components for BundleStats projects.",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
