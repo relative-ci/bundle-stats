@@ -1,8 +1,7 @@
 {
   "name": "@bundle-state/bundle-stats",
-  "version": "1.0.0-rc.3",
-  "description": "In-depth reports for webpack bundles",
-  "main": "index.js",
+  "private": true,
+  "description": "Generate bundle report(bundle size, assets, modules) and compare the results between different builds.",
   "engines": {
     "node": ">= 8.0"
   },
