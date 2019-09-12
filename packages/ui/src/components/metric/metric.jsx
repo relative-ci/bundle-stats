@@ -18,7 +18,7 @@ export const Metric = ({
     : [null, formattedValue, null];
 
   return (
-    <code className={cx(className, styles.root)}>
+    <span className={cx(className, styles.root)}>
       <div className={styles.display}>
         <span className={styles.displayValue}>
           {displayValue}
@@ -32,7 +32,7 @@ export const Metric = ({
       <span className={styles.delta}>
         {children}
       </span>
-    </code>
+    </span>
   );
 };
 

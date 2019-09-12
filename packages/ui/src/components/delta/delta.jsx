@@ -13,20 +13,16 @@ export const Delta = ({
 
   const absValue = Math.abs(value);
 
-  const valueClassNames = cx(css.value, {
+  const rootClassName = cx(css.root, className, {
     [css.negative]: !positiveChange && (absValue >= LEVEL_CHANGE),
     [css.slightlyNegative]: !positiveChange && (absValue > 0 && absValue < LEVEL_CHANGE),
     [css.slightlyPositive]: positiveChange && (absValue > 0 && absValue < LEVEL_CHANGE),
     [css.positive]: positiveChange && (absValue >= LEVEL_CHANGE),
   });
 
-  const rootClassName = cx(css.root, className);
-
   return (
     <span className={rootClassName}>
-      <code className={valueClassNames}>
-        {displayValue}
-      </code>
+      {displayValue}
     </span>
   );
 };
