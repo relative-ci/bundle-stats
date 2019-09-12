@@ -11,13 +11,18 @@ export const Tooltip = (props) => {
     children,
     as: Component,
     align,
+    containerRef: ref,
     ...restProps
   } = props;
 
   const rootClassName = cx(css.root, className, align && css[align]);
 
   return (
-    <Component className={rootClassName} {...restProps}>
+    <Component
+      className={rootClassName}
+      {...ref ? { ref } : {}}
+      {...restProps}
+    >
       {children}
       <div className={css.tooltip}>
         {title}
@@ -30,6 +35,7 @@ Tooltip.defaultProps = {
   className: '',
   as: 'span',
   align: '',
+  containerRef: null,
 };
 
 Tooltip.propTypes = {
@@ -38,4 +44,7 @@ Tooltip.propTypes = {
   children: PropTypes.node.isRequired,
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
   align: PropTypes.oneOf(['', 'topLeft']),
+  containerRef: PropTypes.shape({
+    current: PropTypes.object,
+  }),
 };
