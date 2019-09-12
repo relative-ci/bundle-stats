@@ -5,8 +5,8 @@ import {
 import { METRIC_TYPE_FILE_SIZE } from '../config/metrics';
 import { getMetricChanged, getMetricType, mergeRunsById } from '../metrics';
 import { getStatsByMetrics } from '../stats/get-stats-by-metrics';
-import { getAssetsMetrics } from '../assets/get-assets-metrics';
 import { getModulesMetrics } from '../modules/get-modules-metrics';
+import { assetsWebpackTransform } from '../transforms';
 import { getDelta, formatDelta } from './delta';
 import { formatPercentage } from './format';
 
@@ -69,13 +69,7 @@ export const createRuns = (jobs) => jobs.map(({ internalBuildNumber, stats, rawD
     internalBuildNumber,
   },
   sizes: getStatsByMetrics(stats, SIZE_METRICS),
-  assets: getAssetsMetrics(
-    get(rawData, 'webpack.stats.assets'),
-    {
-      chunks: get(rawData, 'webpack.stats.chunks'),
-      entrypoints: get(rawData, 'webpack.stats.entrypoints'),
-    },
-  ),
+  ...assetsWebpackTransform(get(rawData, 'webpack.stats')),
   modules: getModulesMetrics(
     get(rawData, 'webpack.stats.modules'),
     {

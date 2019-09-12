@@ -6,7 +6,7 @@ import {
 import {
   getMetricChanged, getMetricAdded, getMetricDeleted, mergeRunsById,
 } from '../metrics';
-import { getAssetsMetrics } from '../assets/get-assets-metrics';
+import { assetsWebpackTransform } from '../transforms';
 
 export const generateWebpackTotals = (key) => (_, rawData) => {
   const totals = calculateTotals(get(rawData, 'webpack.stats.assets'));
@@ -24,10 +24,10 @@ export const generateWebpackInitialTotals = (key) => (_, rawData) => {
 };
 
 export const generateCacheInvalidation = (key) => (baseline, current) => {
-  const baselineMetrics = getAssetsMetrics(get(baseline, 'webpack.stats.assets', []));
-  const currentAssets = getAssetsMetrics(get(current, 'webpack.stats.assets', []));
+  const { assets: baselineAssets } = assetsWebpackTransform(get(baseline, 'webpack.stats'));
+  const { assets: currentAssets } = assetsWebpackTransform(get(current, 'webpack.stats'));
 
-  const rows = mergeRunsById([currentAssets, baselineMetrics]).map((row) => merge(
+  const rows = mergeRunsById([currentAssets, baselineAssets]).map((row) => merge(
     {},
     row,
     {
