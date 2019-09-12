@@ -41,7 +41,7 @@
 
 /* Size large */
 .large {
-  font-size: normal;
+  font-size: var(--size-medium);
 }
 
 .large .currentMetric {
