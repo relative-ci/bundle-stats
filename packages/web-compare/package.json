@@ -108,7 +108,7 @@
     "terser-webpack-plugin": "2.1.0",
     "webpack": "4.40.2",
     "webpack-cli": "3.3.8",
-    "webpack-dev-server": "3.8.0",
+    "webpack-dev-server": "3.8.1",
     "webpack-merge": "4.2.2"
   }
 }
