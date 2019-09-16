@@ -66,7 +66,7 @@
     "recompose": "0.30.0",
     "stats-webpack-plugin": "0.7.0",
     "stylelint": "11.0.0",
-    "stylelint-config-css-modules": "1.4.0",
+    "stylelint-config-css-modules": "1.5.0",
     "stylelint-config-standard": "19.0.0",
     "terser-webpack-plugin": "2.0.1",
     "webpack": "4.40.2",
