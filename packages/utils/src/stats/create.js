@@ -1,26 +1,18 @@
 import { get, merge, set } from 'lodash';
 
 import {
-  calculateCacheInvalidation, calculateTotals, calculateInitialTotals,
+  calculateCacheInvalidation,
 } from '../assets';
 import {
   getMetricChanged, getMetricAdded, getMetricDeleted, mergeRunsById,
 } from '../metrics';
-import { assetsWebpackTransform } from '../transforms';
+import { assetsWebpackTransform, sizeAssetsTransform } from '../transforms';
 
 export const generateWebpackTotals = (key) => (_, rawData) => {
-  const totals = calculateTotals(get(rawData, 'webpack.stats.assets'));
+  // @NOTE Temporary generation of normalized assets
+  const { sizes } = sizeAssetsTransform(assetsWebpackTransform(get(rawData, 'webpack.stats')));
 
-  return set({}, key, totals);
-};
-
-export const generateWebpackInitialTotals = (key) => (_, rawData) => {
-  const initialTotals = calculateInitialTotals(
-    get(rawData, 'webpack.stats.assets'),
-    get(rawData, 'webpack.stats.chunks'),
-  );
-
-  return set({}, key, initialTotals);
+  return set({}, key, sizes);
 };
 
 export const generateCacheInvalidation = (key) => (baseline, current) => {
@@ -62,7 +54,6 @@ export const generateAssetsCount = (key) => (_, current) => {
 
 export const createStats = (baselineRawData, currentRawData) => [
   generateWebpackTotals('webpack.assets'),
-  generateWebpackInitialTotals('webpack.assets'),
   generateCacheInvalidation('webpack.cacheInvalidation'),
   generateModulesCount('webpack.modulesCount'),
   generateChunksCount('webpack.chunksCount'),
