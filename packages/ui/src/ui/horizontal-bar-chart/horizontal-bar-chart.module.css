@@ -10,6 +10,7 @@
   background: var(--color-gray);
   display: inline-flex;
   min-width: var(--space-xxxsmall);
+  min-height: var(--space-medium);
 }
 
 .itemContent {
@@ -27,6 +28,10 @@
 }
 
 .itemLabel {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   visibility: visible;
 }
 
