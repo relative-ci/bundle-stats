@@ -23,7 +23,7 @@ class HorizontalBarChartItem extends React.Component {
     const wrapperWidth = get(this, 'ref.current.clientWidth', 0);
     const textWidth = get(this, 'textRef.current.scrollWidth', 0);
 
-    if (wrapperWidth >= textWidth) {
+    if (wrapperWidth >= (textWidth + 2 * 4)) {
       this.setState({ isTextOverflowing: false });
     }
   }
@@ -47,9 +47,8 @@ class HorizontalBarChartItem extends React.Component {
         <Tooltip
           className={css.itemContent}
           title={tooltipContent}
-          containerRef={this.textRef}
         >
-          <span className={css.itemLabel}>
+          <span className={css.itemLabel} ref={this.textRef}>
             {label}
           </span>
         </Tooltip>

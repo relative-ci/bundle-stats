@@ -5,13 +5,22 @@ import { getWrapperDecorator } from '../../stories';
 import { HorizontalBarChart } from '.';
 
 const stories = storiesOf('UI/HorizontalBarChart', module);
-stories.addDecorator(getWrapperDecorator());
+stories.addDecorator(getWrapperDecorator({ paddingTop: '128px' }));
 
 stories.add('default', () => (
   <HorizontalBarChart
     data={{
       labels: ['JS', 'CSS', 'IMG', 'Others', 'HTML'],
       values: [300, 200, 300, 0, 20],
+    }}
+  />
+));
+
+stories.add('empty values', () => (
+  <HorizontalBarChart
+    data={{
+      labels: ['JS', 'CSS', 'IMG', 'Others', 'HTML'],
+      values: [0, 0, 0, 0, 0],
     }}
   />
 ));
