@@ -4,19 +4,22 @@
 }
 
 .title {
-  margin-bottom: var(--space-xxxsmall);
+  margin-bottom: var(--space-xxsmall);
+  min-height: var(--size-small);
   color: var(--color-gray-light);
-  font-size: var(--size-small);
-  line-height: var(--space-small);
+  font-size: var(--size-xsmall);
+  line-height: var(--size-small);
   text-transform: uppercase;
   white-space: nowrap;
 }
 
 .currentMetric {
+  margin-bottom: var(--space-xxsmall);
   display: inline-block;
+  min-height: var(--size-large);
   color: var(--color-dark);
-  font-size: var(--size-xlarge);
-  line-height: var(--space-medium);
+  font-size: var(--size-large);
+  line-height: 1;
   font-weight: 700;
 }
 
@@ -27,15 +30,15 @@
 
 .baselineMetric {
   display: block;
+  min-height: var(--size-small);
+  line-height: var(--size-small);
 }
 
 /* Loading state */
 .loading {
-  background: var(--color-gray-100);
+  background: var(--color-gray-light-background);
   pointer-events: none;
-  max-width: 5em;
-  width: 100%;
-  height: 1.1em;
+  width: 8em;
 }
 
 /* Size large */
@@ -44,7 +47,7 @@
 }
 
 .large .currentMetric {
-  font-size: var(--size-xxlarge);
+  font-size: var(--size-xlarge);
 }
 
 .large .delta {
