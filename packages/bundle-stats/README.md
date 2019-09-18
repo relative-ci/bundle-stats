@@ -11,6 +11,7 @@
   <a href="https://travis-ci.org/bundle-stats/bundle-stats"><img alt="TravisCI badge" src="https://api.travis-ci.org/bundle-stats/bundle-stats.svg?branch=master"/></a>
   <img alt="Renovate" src="https://badges.renovateapi.com/github/bundle-stats/bundle-stats?v=1" />
   <a href="https://app.relative-ci.com/projects/og7ULMMCOgGWXBxRJocI"><img alt="RelativeCI badge" src="https://img.shields.io/badge/RelativeCI-enabled-brightgreen.svg" /></a>
+  <a href="https://lgtm.com/projects/g/bundle-stats/bundle-stats/context:javascript"><img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/bundle-stats/bundle-stats.svg?logo=lgtm&logoWidth=18"/></a>
 </p>
 <p align="center">
 - <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#totals"><strong>Bundle size</strong> and totals by file type(css, js, img, etc)</a><br />
