@@ -5,3 +5,4 @@ export * from './modules-webpack-transform';
 export * from './size-assets-transform';
 export * from './count-assets-transform';
 export * from './chunks-count-assets-transform';
+export * from './cache-invalidation-assets-transform';
