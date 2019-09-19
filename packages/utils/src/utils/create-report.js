@@ -5,8 +5,7 @@ import {
 import { METRIC_TYPE_FILE_SIZE } from '../config/metrics';
 import { getMetricChanged, getMetricType, mergeRunsById } from '../metrics';
 import { getStatsByMetrics } from '../stats/get-stats-by-metrics';
-import { getModulesMetrics } from '../modules/get-modules-metrics';
-import { assetsWebpackTransform } from '../transforms';
+import { assetsWebpackTransform, modulesWebpackTransform } from '../transforms';
 import { getDelta, formatDelta } from './delta';
 import { formatPercentage } from './format';
 
@@ -64,19 +63,18 @@ export const addMetricsData = (entries, metricType) => entries.map((entry) => {
   };
 });
 
-export const createRuns = (jobs) => jobs.map(({ internalBuildNumber, stats, rawData }) => ({
-  meta: {
-    internalBuildNumber,
-  },
-  sizes: getStatsByMetrics(stats, SIZE_METRICS),
-  ...assetsWebpackTransform(get(rawData, 'webpack.stats')),
-  modules: getModulesMetrics(
-    get(rawData, 'webpack.stats.modules'),
-    {
-      chunks: get(rawData, 'webpack.stats.chunks'),
+export const createRuns = (jobs) => jobs.map(({ internalBuildNumber, stats, rawData }) => {
+  const webpackStats = get(rawData, 'webpack.stats');
+
+  return {
+    meta: {
+      internalBuildNumber,
     },
-  ),
-}));
+    sizes: getStatsByMetrics(stats, SIZE_METRICS),
+    ...assetsWebpackTransform(webpackStats),
+    ...modulesWebpackTransform(webpackStats),
+  };
+});
 
 export const getModulesReport = (runs) => map(
   uniq(flatMap(runs, ({ modules }) => Object.keys(modules))),

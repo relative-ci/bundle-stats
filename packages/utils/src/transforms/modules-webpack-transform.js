@@ -1,6 +1,6 @@
 import { get } from 'lodash';
 
-import { getModuleName } from './get-module-name';
+import { getModuleName } from '../modules';
 
 const getChunkNames = (chunks = [], chunkId) => {
   const chunk = chunks.find(({ id }) => id === chunkId);
@@ -12,14 +12,17 @@ const getChunkNames = (chunks = [], chunkId) => {
   return chunk.names;
 };
 
-
 /*
- * Transform modules array to an object with metrics
+ * Transform webpack modules array to an object with metrics
  */
-export const getModulesMetrics = (modules = [], rawData = {}) => {
-  const { chunks } = rawData;
+export const modulesWebpackTransform = (webpackStats = {}) => {
+  const { chunks, modules } = webpackStats;
 
-  return modules.reduce((aggregator, moduleEntry) => {
+  if (!modules) {
+    return { modules: {} };
+  }
+
+  const modulesByChunk = modules.reduce((aggregator, moduleEntry) => {
     const {
       name,
       size,
@@ -45,4 +48,8 @@ export const getModulesMetrics = (modules = [], rawData = {}) => {
       },
     }), aggregator);
   }, {});
+
+  return {
+    modules: modulesByChunk,
+  };
 };
