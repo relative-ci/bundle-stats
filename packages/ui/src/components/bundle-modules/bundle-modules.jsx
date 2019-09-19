@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { get, isEmpty } from 'lodash';
 import {
-  getModulesMetrics,
+  modulesWebpackTransform,
   getModulesReport,
 } from '@bundle-stats/utils';
 
@@ -14,12 +14,7 @@ import css from './bundle-modules.module.css';
 export const BundleModules = ({ jobs }) => {
   const runs = jobs.map((job) => ({
     meta: job,
-    modules: getModulesMetrics(
-      get(job, 'rawData.webpack.stats.modules', []),
-      {
-        chunks: get(job, 'rawData.webpack.stats.chunks', []),
-      },
-    ),
+    ...modulesWebpackTransform(get(job, 'rawData.webpack.stats')),
   }));
 
   const modulesReport = getModulesReport(runs);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { get } from 'lodash';
 import { storiesOf } from '@storybook/react';
-import { getModulesMetrics, getModulesReport } from '@bundle-stats/utils';
+import { modulesWebpackTransform, getModulesReport } from '@bundle-stats/utils';
 
 import currentData from '../../../__mocks__/job.current.json';
 import baselineData from '../../../__mocks__/job.baseline.json';
@@ -24,12 +24,7 @@ const RUNS_DEFAULT = [
   currentJob,
 ].map((job) => ({
   meta: job,
-  modules: getModulesMetrics(
-    get(job, 'rawData.webpack.stats.modules', []),
-    {
-      chunks: get(job, 'rawData.webpack.stats.chunks', []),
-    },
-  ),
+  ...modulesWebpackTransform(get(job, 'rawData.webpack.stats')),
 }));
 
 stories.add('default', () => (
@@ -45,12 +40,7 @@ const RUNS_MULTIPLE = [
   baselineJob,
 ].map((job) => ({
   meta: job,
-  modules: getModulesMetrics(
-    get(job, 'rawData.webpack.stats.modules', []),
-    {
-      chunks: get(job, 'rawData.webpack.stats.chunks', []),
-    },
-  ),
+  ...modulesWebpackTransform(get(job, 'rawData.webpack.stats')),
 }));
 
 stories.add('multiple jobs', () => (
@@ -66,12 +56,7 @@ const RUNS_EMPTY_BASELINE = [
   null,
 ].map((job) => ({
   meta: job,
-  modules: getModulesMetrics(
-    get(job, 'rawData.webpack.stats.modules', []),
-    {
-      chunks: get(job, 'rawData.webpack.stats.chunks', []),
-    },
-  ),
+  ...modulesWebpackTransform(get(job, 'rawData.webpack.stats')),
 }));
 
 stories.add('empty baseline', () => (
