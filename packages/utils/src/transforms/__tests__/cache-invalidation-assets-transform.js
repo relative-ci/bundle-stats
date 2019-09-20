@@ -3,7 +3,7 @@ import { cacheInvalidationAssetsTransform } from '../cache-invalidation-assets-t
 describe('cacheInvalidationAssetsTransform', () => {
   test('should return empty', () => {
     const actual = cacheInvalidationAssetsTransform({ assets: {} });
-    expect(actual).toEqual({ stats: { cacheInvalidation: 0 } });
+    expect(actual).toEqual({ stats: { cacheInvalidation: { value: 0 } } });
   });
 
   test('should return size metrics', () => {
@@ -81,6 +81,6 @@ describe('cacheInvalidationAssetsTransform', () => {
       },
     });
 
-    expect(actual).toEqual({ stats: { cacheInvalidation: 57.82 } });
+    expect(actual).toEqual({ stats: { cacheInvalidation: { value: 57.82 } } });
   });
 });

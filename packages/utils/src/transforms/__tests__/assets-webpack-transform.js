@@ -21,6 +21,10 @@ describe('assetsWebpackTransform', () => {
           name: 'css/app.22929a.css.map',
           size: 100,
         },
+        {
+          name: 'img/logo.1211a1.png',
+          size: 10,
+        },
       ],
       chunks: [
         {
@@ -66,6 +70,13 @@ describe('assetsWebpackTransform', () => {
           isEntry: false,
           isInitial: false,
           isChunk: true,
+        },
+        'img/logo.png': {
+          name: 'img/logo.1211a1.png',
+          value: 10,
+          isEntry: false,
+          isInitial: false,
+          isChunk: false,
         },
       },
     };

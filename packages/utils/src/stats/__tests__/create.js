@@ -46,6 +46,18 @@ describe('createStats', () => {
               ],
             },
           ],
+          modules: [
+            {
+              name: 'mod1.js',
+              size: 0,
+              chunks: [0],
+            },
+            {
+              name: 'mod2.js',
+              size: 1,
+              chunks: [1],
+            },
+          ],
         },
       },
     });
@@ -88,10 +100,10 @@ describe('createStats', () => {
           value: 0,
         },
         modulesCount: {
-          value: 0,
+          value: 2,
         },
         chunksCount: {
-          value: 2,
+          value: 0,
         },
         assetsCount: {
           value: 5,
@@ -159,10 +171,12 @@ describe('createStats', () => {
               {
                 name: 'mod1.js',
                 size: 0,
+                chunks: [0],
               },
               {
                 name: 'mod2.js',
                 size: 1,
+                chunks: [1],
               },
             ],
             chunks: [
@@ -230,7 +244,7 @@ describe('createStats', () => {
           value: 2,
         },
         chunksCount: {
-          value: 2,
+          value: 0,
         },
         assetsCount: {
           value: 5,

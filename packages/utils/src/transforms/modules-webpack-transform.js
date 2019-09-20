@@ -16,7 +16,8 @@ const getChunkNames = (chunks = [], chunkId) => {
  * Transform webpack modules array to an object with metrics
  */
 export const modulesWebpackTransform = (webpackStats = {}) => {
-  const { chunks, modules } = webpackStats;
+  const chunks = get(webpackStats, 'chunks', []);
+  const modules = get(webpackStats, 'modules', []);
 
   if (!modules) {
     return { modules: {} };
@@ -26,15 +27,9 @@ export const modulesWebpackTransform = (webpackStats = {}) => {
     const {
       name,
       size,
-      chunks: moduleChunks,
-      ...restModuleProps
     } = moduleEntry;
 
-    const moduleMetric = {
-      ...restModuleProps,
-      name,
-      value: size,
-    };
+    const moduleChunks = get(moduleEntry, 'chunks', []);
     const normalizedName = getModuleName(name);
 
     return moduleChunks.reduce((aggWithChunks, chunkId) => ({
@@ -43,7 +38,10 @@ export const modulesWebpackTransform = (webpackStats = {}) => {
         chunkNames: getChunkNames(chunks, chunkId),
         modules: {
           ...get(aggWithChunks, [chunkId, 'modules']),
-          [normalizedName]: moduleMetric,
+          [normalizedName]: {
+            name,
+            value: size,
+          },
         },
       },
     }), aggregator);

@@ -3,7 +3,7 @@ import { countAssetsTransform } from '../count-assets-transform';
 describe('countAssetsTransform', () => {
   test('should return empty', () => {
     const actual = countAssetsTransform({ assets: {} });
-    expect(actual).toEqual({ stats: { assetsCount: 0 } });
+    expect(actual).toEqual({ stats: { assetsCount: { value: 0 } } });
   });
 
   test('should return size metrics', () => {
@@ -45,6 +45,6 @@ describe('countAssetsTransform', () => {
       },
     });
 
-    expect(actual).toEqual({ stats: { assetsCount: 7 } });
+    expect(actual).toEqual({ stats: { assetsCount: { value: 7 } } });
   });
 });
