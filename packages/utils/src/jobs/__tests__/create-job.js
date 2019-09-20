@@ -34,7 +34,7 @@ describe('Create job', () => {
         },
         'webpack.chunksCount': {
           baseline: 0,
-          current: 1,
+          current: 0,
         },
         'webpack.assetsCount': {
           baseline: 0,
@@ -82,7 +82,7 @@ describe('Create job', () => {
             value: 2,
           },
           chunksCount: {
-            value: 1,
+            value: 0,
           },
           assetsCount: {
             value: 4,
@@ -126,8 +126,8 @@ describe('Create job', () => {
           current: 2,
         },
         'webpack.chunksCount': {
-          baseline: 1,
-          current: 1,
+          baseline: 0,
+          current: 0,
         },
         'webpack.assetsCount': {
           baseline: 4,
@@ -175,7 +175,7 @@ describe('Create job', () => {
             value: 2,
           },
           chunksCount: {
-            value: 1,
+            value: 0,
           },
           assetsCount: {
             value: 4,

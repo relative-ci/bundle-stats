@@ -1,61 +1,62 @@
 import { get, merge, set } from 'lodash';
 
 import {
-  calculateCacheInvalidation,
-} from '../assets';
-import {
-  getMetricChanged, getMetricAdded, getMetricDeleted, mergeRunsById,
-} from '../metrics';
-import { assetsWebpackTransform, sizeAssetsTransform } from '../transforms';
+  assetsWebpackTransform,
+  modulesWebpackTransform,
+  cacheInvalidationAssetsTransform,
+  countAssetsTransform,
+  countModulesTransform,
+  chunksCountAssetsTransform,
+  sizeAssetsTransform,
+} from '../transforms';
 
-export const generateWebpackTotals = (key) => (_, rawData) => {
+export const generateWebpackTotals = (key) => (_, current) => {
   // @NOTE Temporary generation of normalized assets
-  const { sizes } = sizeAssetsTransform(assetsWebpackTransform(get(rawData, 'webpack.stats')));
+  const { sizes } = sizeAssetsTransform(current);
 
   return set({}, key, sizes);
 };
 
 export const generateCacheInvalidation = (key) => (baseline, current) => {
-  const { assets: baselineAssets } = assetsWebpackTransform(get(baseline, 'webpack.stats'));
-  const { assets: currentAssets } = assetsWebpackTransform(get(current, 'webpack.stats'));
-
-  const rows = mergeRunsById([currentAssets, baselineAssets]).map((row) => merge(
-    {},
-    row,
-    {
-      changed: getMetricChanged(row.runs),
-      added: getMetricAdded(row.runs),
-      deleted: getMetricDeleted(row.runs),
-    },
-  ));
-
-  const value = calculateCacheInvalidation(rows);
-
-  return set({}, key, { value });
+  const { stats } = cacheInvalidationAssetsTransform(current, baseline);
+  return set({}, key, stats.cacheInvalidation);
 };
 
 export const generateModulesCount = (key) => (_, current) => {
-  const value = get(current, 'webpack.stats.modules', []).length;
-
-  return set({}, key, { value });
+  const { stats } = countModulesTransform(current);
+  return set({}, key, stats.modulesCount);
 };
 
 export const generateChunksCount = (key) => (_, current) => {
-  const value = get(current, 'webpack.stats.chunks', []).length;
+  const { stats } = chunksCountAssetsTransform(current);
 
-  return set({}, key, { value });
+  return set({}, key, stats.chunksCount);
 };
 
 export const generateAssetsCount = (key) => (_, current) => {
-  const value = get(current, 'webpack.stats.assets', []).length;
+  const { stats } = countAssetsTransform(current);
 
-  return set({}, key, { value });
+  return set({}, key, stats.assetsCount);
 };
 
-export const createStats = (baselineRawData, currentRawData) => [
-  generateWebpackTotals('webpack.assets'),
-  generateCacheInvalidation('webpack.cacheInvalidation'),
-  generateModulesCount('webpack.modulesCount'),
-  generateChunksCount('webpack.chunksCount'),
-  generateAssetsCount('webpack.assetsCount'),
-].map((transform) => transform(baselineRawData, currentRawData)).reduce(merge, {});
+export const createStats = (baselineRawData, currentRawData) => {
+  const baselineWebpackStats = get(baselineRawData, 'webpack.stats');
+  const baselineBundle = {
+    ...assetsWebpackTransform(baselineWebpackStats),
+    ...modulesWebpackTransform(baselineWebpackStats),
+  };
+
+  const currentWebpackStats = get(currentRawData, 'webpack.stats');
+  const currentBundle = {
+    ...assetsWebpackTransform(currentWebpackStats),
+    ...modulesWebpackTransform(currentWebpackStats),
+  };
+
+  return [
+    generateWebpackTotals('webpack.assets'),
+    generateCacheInvalidation('webpack.cacheInvalidation'),
+    generateModulesCount('webpack.modulesCount'),
+    generateChunksCount('webpack.chunksCount'),
+    generateAssetsCount('webpack.assetsCount'),
+  ].map((transform) => transform(baselineBundle, currentBundle)).reduce(merge, {});
+};

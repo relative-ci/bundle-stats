@@ -3,7 +3,7 @@ import { chunksCountAssetsTransform } from '../chunks-count-assets-transform';
 describe('chunksCountAssetsTransform', () => {
   test('should return empty', () => {
     const actual = chunksCountAssetsTransform({ assets: {} });
-    expect(actual).toEqual({ stats: { chunksCount: 0 } });
+    expect(actual).toEqual({ stats: { chunksCount: { value: 0 } } });
   });
 
   test('should return size metrics', () => {
@@ -45,6 +45,6 @@ describe('chunksCountAssetsTransform', () => {
       },
     });
 
-    expect(actual).toEqual({ stats: { chunksCount: 3 } });
+    expect(actual).toEqual({ stats: { chunksCount: { value: 3 } } });
   });
 });

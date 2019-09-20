@@ -1,13 +1,13 @@
-import { merge } from 'lodash';
+import { get, merge } from 'lodash';
 
 import { calculateCacheInvalidation } from '../assets';
 import {
   getMetricChanged, getMetricAdded, getMetricDeleted, mergeRunsById,
 } from '../metrics';
 
-export const cacheInvalidationAssetsTransform = (bundleStats = {}, baselineBundleStats = {}) => {
-  const { assets: currentAssets } = bundleStats;
-  const { assets: baselineAssets } = baselineBundleStats;
+export const cacheInvalidationAssetsTransform = (bundleStats, baselineBundleStats) => {
+  const currentAssets = get(bundleStats, 'assets', []);
+  const baselineAssets = get(baselineBundleStats, 'assets', []);
 
   const rows = mergeRunsById([currentAssets, baselineAssets]).map((row) => merge(
     {},
@@ -19,11 +19,13 @@ export const cacheInvalidationAssetsTransform = (bundleStats = {}, baselineBundl
     },
   ));
 
-  const cacheInvalidation = calculateCacheInvalidation(rows);
+  const value = calculateCacheInvalidation(rows);
 
   return {
     stats: {
-      cacheInvalidation,
+      cacheInvalidation: {
+        value,
+      },
     },
   };
 };
