@@ -1,16 +1,22 @@
+.header {
+  margin: -24px -24px 0;
+}
+
 .main {
   min-height: calc(100vh - 72px);
 }
 
-.header {
-  background: var(--color-light);
-  margin: -24px -24px 0;
+.headerLogo {
+  margin-right: var(--space-xsmall);
+  width: 32px;
+  height: 32px;
+  color: var(--color-branding);
 }
 
-.headerLogo {
+.headerLogotype {
   width: 140px;
-  height: 20px;
-  color: var(--color-dark);
+  height: 16px;
+  color: inherit;
 }
 
 .footer {

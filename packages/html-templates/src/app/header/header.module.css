@@ -4,15 +4,10 @@
 }
 
 /* Components */
-.webpackLogo {
-  width: var(--space-xxlarge);
-  margin-right: var(--space-xxsmall);
-}
-
 .logo {
   margin: 0;
   width: 156px;
-  color: var(--color-branding);
+  color: inherit;
   font-size: var(--size-xlarge);
   white-space: nowrap;
   font-weight: bold;
@@ -21,20 +16,33 @@
 .logo:hover,
 .logo:active,
 .logo:focus {
-  color: var(--color-branding-dark);
+  color: inherit;
+  opacity: 0.7;
 }
 
 .tabs {
   border-bottom: 0;
 }
 
+.tabItem {
+  color: inherit;
+}
+
+.tabItem:hover,
+.tabItem:focus,
+.tabItem:active {
+  color: inherit;
+  opacity: 0.7;
+}
+
 .githubLogo {
   margin: 0 0 0 auto;
   width: var(--space-medium);
-  color: var(--color-gray-light);
+  color: inherit;
 }
 
 .githubLogo:active,
 .githubLogo:hover {
-  color: var(--color-gray);
+  color: inherit;
+  opacity: 0.7;
 }
