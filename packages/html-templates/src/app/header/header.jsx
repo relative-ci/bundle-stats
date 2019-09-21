@@ -27,18 +27,21 @@ export const Header = ({ className }) => (
           <a
             href="#totals"
             title="Go to Totals section"
+            className={css.tabItem}
           >
             Totals
           </a>
           <a
             href="#assets"
             title="Go to Assets section"
+            className={css.tabItem}
           >
             Assets
           </a>
           <a
             href="#modules"
             title="Go to Modules section"
+            className={css.tabItem}
           >
             Modules
           </a>

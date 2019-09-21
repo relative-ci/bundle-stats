@@ -1,9 +1,10 @@
 .root {
-  padding: var(--space-xsmall) var(--space-small);
+  padding: var(--space-small);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  background: var(--color-light);
+  background: var(--color-branding-dark);
+  color: var(--color-light);
   border-bottom: 1px solid var(--color-gray-ultra-light);
 }
 

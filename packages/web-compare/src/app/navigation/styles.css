@@ -1,3 +1,14 @@
 .root {
   border-bottom: 0;
 }
+
+.link {
+  color: inherit;
+}
+
+.link:active,
+.link:focus,
+.link:hover {
+  color: inherit;
+  opacity: 0.7;
+}
