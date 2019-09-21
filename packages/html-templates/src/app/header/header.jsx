@@ -45,6 +45,13 @@ export const Header = ({ className }) => (
           >
             Modules
           </a>
+          <a
+            href="#packages"
+            title="Go to Packages section"
+            className={css.tabItem}
+          >
+            Packages
+          </a>
         </Tabs>
       </div>
     )}

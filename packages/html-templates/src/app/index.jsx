@@ -8,6 +8,7 @@ import { BundleAssetsTotalsChartBars } from '@bundle-stats/ui/lib-esm/components
 import { Footer } from '@bundle-stats/ui/lib-esm/layout/footer';
 import { BundleAssetsTotalsTable } from '@bundle-stats/ui/lib-esm/components/bundle-assets-totals-table';
 import { BundleModules } from '@bundle-stats/ui/lib-esm/components/bundle-modules';
+import { BundlePackages } from '@bundle-stats/ui/lib-esm/components/bundle-packages';
 
 import { Header } from './header';
 import css from './styles.css';
@@ -100,6 +101,20 @@ const StandaloneApp = ({ jobs }) => {
           </a>
         </h2>
         <BundleModules jobs={jobs} />
+      </Container>
+      <Container>
+        <h2>
+          <a
+            id="packages"
+            href="#packages"
+            className={css.anchor}
+          >
+            Packages
+          </a>
+        </h2>
+        <Box>
+          <BundlePackages jobs={jobs} />
+        </Box>
       </Container>
     </StandaloneAppLayout>
   );
