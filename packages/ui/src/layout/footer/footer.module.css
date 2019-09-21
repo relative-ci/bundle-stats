@@ -1,46 +1,27 @@
 .root {
-  padding-top: var(--space-large);
-  padding-bottom: var(--space-large);
+  padding-top: var(--space-medium);
+  padding-bottom: var(--space-medium);
   background: var(--color-gray-light-background);
   color: var(--color-gray);
   text-align: center;
+}
+
+.root a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.root a:hover,
+.root a:focus,
+.root a:active {
+  color: inherit;
+  text-decoration: underline;
 }
 
 .content {
   border-bottom: 1px solid var(--color-gray-ultra-light);
   padding-bottom: var(--space-medium);
   margin-bottom: var(--space-large);
-}
-
-.brandingHome {
-  vertical-align: middle;
-  color: var(--color-gray-ultra-light);
-}
-
-.brandingHome:hover,
-.brandingHome:active
-{
-  color: var(--color-gray-light);
-}
-
-.brandingLogo {
-  margin: 0 auto;
-  max-width: 32px;
-  color: var(--color-gray-ultra-dark);
-  vertical-align: middle;
-}
-
-.brandingLogotype {
-  display: inline-block;
-  text-align: left;
-  text-indent: -99999em;
-  overflow: hidden;
-  height: 0;
-  position: absolute;
-}
-
-.copyright {
-  margin-top: var(--space-xsmall);
 }
 
 .navGroup {
@@ -59,41 +40,28 @@
 .navLink {
   display: inline-block;
   padding: var(--space-xxxsmall);
-  color: inherit;
-  text-decoration: none;
 }
 
-.navLink:hover {
-  color: inherit;
-  text-decoration: underline;
+.branding {
+  margin-top: var(--space-large);
+  border-top: 1px solid var(--color-gray-ultra-light);
+  padding-top: var(--space-medium);
 }
 
 @media (min-width: 768px) {
-  .info {
-    display: flex;
-  }
-
   .navigation {
-    order: 2;
     flex: 1 1 100%;
     display: flex;
     justify-content: flex-end;
   }
 
-  .branding {
-    order: 1;
-    flex: 1 1 25%;
-    text-align: left;
-  }
-
-  .brandingLogo {
-    margin: 0;
-  }
-
   .navGroup {
     text-align: left;
-    margin: 0 0 0 var(--space-large);
     flex: 1 1 33.3%;
+  }
+
+  .navGroup + .navGroup {
+    margin: 0 0 0 var(--space-large);
   }
 
   .navLink {
