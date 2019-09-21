@@ -9,3 +9,4 @@ export * from './cache-invalidation-assets-bundle-transform';
 
 // modules transforms
 export * from './count-modules-bundle-transform';
+export * from './packages-modules-bundle-transform';
