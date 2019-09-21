@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { Container, Logo } from '../../ui';
+import { Container } from '../../ui';
 import css from './footer.module.css';
 
 const DOMAIN = 'https://relative-ci.com';
@@ -120,19 +120,17 @@ export const Footer = ({
       </div>
 
       <div className={css.branding}>
-        <Link
-          className={css.brandingHome}
-          to="/"
-          title="Go to homepage"
-          source={source}
-        >
-          <Logo className={css.brandingLogo} />
-          <span className={css.brandingLogotype}>
-            Relative CI
-          </span>
-        </Link>
         <p className={css.copyright}>
-          &copy; 2019 Relative CI
+          &copy; 2019
+          &nbsp;
+          <Link
+            className={css.brandingHome}
+            to="/"
+            title="Go to homepage"
+            source={source}
+          >
+            RelativeCI
+          </Link>
         </p>
       </div>
     </div>
