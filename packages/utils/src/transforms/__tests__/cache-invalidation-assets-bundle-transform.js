@@ -1,13 +1,13 @@
-import { cacheInvalidationAssetsTransform } from '../cache-invalidation-assets-transform';
+import { cacheInvalidationAssetsBundleTransform } from '../cache-invalidation-assets-bundle-transform';
 
-describe('cacheInvalidationAssetsTransform', () => {
+describe('cacheInvalidationAssetsBundleTransform', () => {
   test('should return empty', () => {
-    const actual = cacheInvalidationAssetsTransform({ assets: {} });
+    const actual = cacheInvalidationAssetsBundleTransform({ assets: {} });
     expect(actual).toEqual({ stats: { cacheInvalidation: { value: 0 } } });
   });
 
   test('should return size metrics', () => {
-    const actual = cacheInvalidationAssetsTransform({
+    const actual = cacheInvalidationAssetsBundleTransform({
       assets: {
         'js/vendor.min.js': {
           name: 'js/vendor.d249062c08abb6b31a03.min.js',

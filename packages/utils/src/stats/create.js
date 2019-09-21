@@ -3,38 +3,38 @@ import { get, merge, set } from 'lodash';
 import {
   assetsWebpackTransform,
   modulesWebpackTransform,
-  cacheInvalidationAssetsTransform,
-  countAssetsTransform,
-  countModulesTransform,
-  chunksCountAssetsTransform,
-  sizeAssetsTransform,
+  cacheInvalidationAssetsBundleTransform,
+  countAssetsBundleTransform,
+  countModulesBundleTransform,
+  chunksCountAssetsBundleTransform,
+  sizeAssetsBundleTransform,
 } from '../transforms';
 
 export const generateWebpackTotals = (key) => (_, current) => {
   // @NOTE Temporary generation of normalized assets
-  const { sizes } = sizeAssetsTransform(current);
+  const { sizes } = sizeAssetsBundleTransform(current);
 
   return set({}, key, sizes);
 };
 
 export const generateCacheInvalidation = (key) => (baseline, current) => {
-  const { stats } = cacheInvalidationAssetsTransform(current, baseline);
+  const { stats } = cacheInvalidationAssetsBundleTransform(current, baseline);
   return set({}, key, stats.cacheInvalidation);
 };
 
 export const generateModulesCount = (key) => (_, current) => {
-  const { stats } = countModulesTransform(current);
+  const { stats } = countModulesBundleTransform(current);
   return set({}, key, stats.modulesCount);
 };
 
 export const generateChunksCount = (key) => (_, current) => {
-  const { stats } = chunksCountAssetsTransform(current);
+  const { stats } = chunksCountAssetsBundleTransform(current);
 
   return set({}, key, stats.chunksCount);
 };
 
 export const generateAssetsCount = (key) => (_, current) => {
-  const { stats } = countAssetsTransform(current);
+  const { stats } = countAssetsBundleTransform(current);
 
   return set({}, key, stats.assetsCount);
 };

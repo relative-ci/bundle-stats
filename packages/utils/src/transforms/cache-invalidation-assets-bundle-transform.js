@@ -5,7 +5,7 @@ import {
   getMetricChanged, getMetricAdded, getMetricDeleted, mergeRunsById,
 } from '../metrics';
 
-export const cacheInvalidationAssetsTransform = (bundleStats, baselineBundleStats) => {
+export const cacheInvalidationAssetsBundleTransform = (bundleStats, baselineBundleStats) => {
   const currentAssets = get(bundleStats, 'assets', []);
   const baselineAssets = get(baselineBundleStats, 'assets', []);
 

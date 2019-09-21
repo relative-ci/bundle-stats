@@ -1,4 +1,4 @@
-export const countAssetsTransform = (bundleStats = {}) => {
+export const countAssetsBundleTransform = (bundleStats = {}) => {
   const { assets } = bundleStats;
 
   const value = Object.keys(assets).length;

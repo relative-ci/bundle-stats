@@ -1,4 +1,4 @@
-export const chunksCountAssetsTransform = (bundleStats = {}) => {
+export const chunksCountAssetsBundleTransform = (bundleStats = {}) => {
   const { assets } = bundleStats;
 
   const value = Object.values(assets).filter(({ isChunk }) => isChunk).length;
