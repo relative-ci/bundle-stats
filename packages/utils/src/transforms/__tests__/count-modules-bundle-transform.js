@@ -1,13 +1,13 @@
-import { countModulesTransform } from '../count-modules-transform';
+import { countModulesBundleTransform } from '../count-modules-bundle-transform';
 
-describe('countModulesTransform', () => {
+describe('countModulesBundleTransform', () => {
   test('should return empty', () => {
-    const actual = countModulesTransform();
+    const actual = countModulesBundleTransform();
     expect(actual).toEqual({ stats: { modulesCount: { value: 0 } } });
   });
 
   test('should return data', () => {
-    const actual = countModulesTransform({
+    const actual = countModulesBundleTransform({
       modules: {
         0: {
           chunkNames: ['main'],

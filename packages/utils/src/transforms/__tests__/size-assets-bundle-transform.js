@@ -1,8 +1,8 @@
-import { sizeAssetsTransform } from '../size-assets-transform';
+import { sizeAssetsBundleTransform } from '../size-assets-bundle-transform';
 
-describe('sizeAssetsTransform', () => {
+describe('sizeAssetsBundleTransform', () => {
   test('should return empty', () => {
-    const actual = sizeAssetsTransform({ assets: {} });
+    const actual = sizeAssetsBundleTransform({ assets: {} });
     expect(actual).toEqual({
       sizes: {
         totalSizeByTypeALL: {
@@ -40,7 +40,7 @@ describe('sizeAssetsTransform', () => {
   });
 
   test('should return size metrics', () => {
-    const actual = sizeAssetsTransform({
+    const actual = sizeAssetsBundleTransform({
       assets: {
         'js/vendor.min.js': {
           name: 'js/vendor.d249062c08abb6b31a03.min.js',

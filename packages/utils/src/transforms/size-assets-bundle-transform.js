@@ -46,7 +46,7 @@ const calculateInitialTotals = (assets) => {
   };
 };
 
-export const sizeAssetsTransform = (bundleStats) => {
+export const sizeAssetsBundleTransform = (bundleStats) => {
   const bundleAssets = Object.values(get(bundleStats, 'assets', {}));
 
   const sizes = {

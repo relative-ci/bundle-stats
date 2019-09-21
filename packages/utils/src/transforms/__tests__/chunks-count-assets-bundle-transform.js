@@ -1,13 +1,13 @@
-import { countAssetsTransform } from '../count-assets-transform';
+import { chunksCountAssetsBundleTransform } from '../chunks-count-assets-bundle-transform';
 
-describe('countAssetsTransform', () => {
+describe('chunksCountAssetsBundleTransform', () => {
   test('should return empty', () => {
-    const actual = countAssetsTransform({ assets: {} });
-    expect(actual).toEqual({ stats: { assetsCount: { value: 0 } } });
+    const actual = chunksCountAssetsBundleTransform({ assets: {} });
+    expect(actual).toEqual({ stats: { chunksCount: { value: 0 } } });
   });
 
   test('should return size metrics', () => {
-    const actual = countAssetsTransform({
+    const actual = chunksCountAssetsBundleTransform({
       assets: {
         'js/vendor.min.js': {
           name: 'js/vendor.d249062c08abb6b31a03.min.js',
@@ -45,6 +45,6 @@ describe('countAssetsTransform', () => {
       },
     });
 
-    expect(actual).toEqual({ stats: { assetsCount: { value: 7 } } });
+    expect(actual).toEqual({ stats: { chunksCount: { value: 3 } } });
   });
 });

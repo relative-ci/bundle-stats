@@ -1,6 +1,6 @@
 import { uniq } from 'lodash';
 
-export const countModulesTransform = (bundleStats = {}) => {
+export const countModulesBundleTransform = (bundleStats = {}) => {
   const { modules = {} } = bundleStats;
 
   const value = uniq(Object.values(modules).map(
