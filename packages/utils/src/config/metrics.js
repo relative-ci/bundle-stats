@@ -83,18 +83,18 @@ const METRICS = {
       type: METRIC_TYPE_PERCENTAGE,
       biggerIsBetter: false,
     },
-    modulesCount: {
-      label: 'Modules Count',
+    moduleCount: {
+      label: 'Module Count',
       type: METRIC_TYPE_NUMERIC,
       biggerIsBetter: false,
     },
-    chunksCount: {
-      label: 'Chunks Count',
+    chunkCount: {
+      label: 'Chunk Count',
       type: METRIC_TYPE_NUMERIC,
       biggerIsBetter: false,
     },
-    assetsCount: {
-      label: 'Assets Count',
+    assetCount: {
+      label: 'Asset Count',
       type: METRIC_TYPE_NUMERIC,
       biggerIsBetter: false,
     },

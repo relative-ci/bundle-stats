@@ -39,13 +39,13 @@ describe('createStatsSummary', () => {
         cacheInvalidation: {
           value: 0,
         },
-        modulesCount: {
+        moduleCount: {
           value: 0,
         },
-        chunksCount: {
+        chunkCount: {
           value: 2,
         },
-        assetsCount: {
+        assetCount: {
           value: 5,
         },
         packageCount: {
@@ -71,15 +71,15 @@ describe('createStatsSummary', () => {
         baseline: 0,
         current: 0,
       },
-      'webpack.modulesCount': {
+      'webpack.moduleCount': {
         baseline: 0,
         current: 0,
       },
-      'webpack.chunksCount': {
+      'webpack.chunkCount': {
         baseline: 0,
         current: 2,
       },
-      'webpack.assetsCount': {
+      'webpack.assetCount': {
         baseline: 0,
         current: 5,
       },
@@ -129,13 +129,13 @@ describe('createStatsSummary', () => {
           cacheInvalidation: {
             value: 45.45,
           },
-          modulesCount: {
+          moduleCount: {
             value: 2,
           },
-          chunksCount: {
+          chunkCount: {
             value: 2,
           },
-          assetsCount: {
+          assetCount: {
             value: 5,
           },
           packageCount: {
@@ -180,13 +180,13 @@ describe('createStatsSummary', () => {
           cacheInvalidation: {
             value: 20,
           },
-          modulesCount: {
+          moduleCount: {
             value: 3,
           },
-          chunksCount: {
+          chunkCount: {
             value: 3,
           },
-          assetsCount: {
+          assetCount: {
             value: 6,
           },
           packageCount: {
@@ -213,15 +213,15 @@ describe('createStatsSummary', () => {
         baseline: 45.45,
         current: 20,
       },
-      'webpack.modulesCount': {
+      'webpack.moduleCount': {
         baseline: 2,
         current: 3,
       },
-      'webpack.chunksCount': {
+      'webpack.chunkCount': {
         baseline: 2,
         current: 3,
       },
-      'webpack.assetsCount': {
+      'webpack.assetCount': {
         baseline: 5,
         current: 6,
       },

@@ -104,13 +104,13 @@ describe('createStats', () => {
         cacheInvalidation: {
           value: 0,
         },
-        modulesCount: {
+        moduleCount: {
           value: 3,
         },
-        chunksCount: {
+        chunkCount: {
           value: 0,
         },
-        assetsCount: {
+        assetCount: {
           value: 5,
         },
         packageCount: {
@@ -253,13 +253,13 @@ describe('createStats', () => {
         cacheInvalidation: {
           value: 45.45,
         },
-        modulesCount: {
+        moduleCount: {
           value: 3,
         },
-        chunksCount: {
+        chunkCount: {
           value: 0,
         },
-        assetsCount: {
+        assetCount: {
           value: 5,
         },
         packageCount: {

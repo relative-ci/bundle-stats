@@ -3,7 +3,7 @@ import { countModulesBundleTransform } from '../count-modules-bundle-transform';
 describe('countModulesBundleTransform', () => {
   test('should return empty', () => {
     const actual = countModulesBundleTransform();
-    expect(actual).toEqual({ stats: { modulesCount: { value: 0 } } });
+    expect(actual).toEqual({ stats: { moduleCount: { value: 0 } } });
   });
 
   test('should return data', () => {
@@ -34,6 +34,6 @@ describe('countModulesBundleTransform', () => {
       },
     });
 
-    expect(actual).toEqual({ stats: { modulesCount: { value: 3 } } });
+    expect(actual).toEqual({ stats: { moduleCount: { value: 3 } } });
   });
 });
