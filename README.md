@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank"><img alt="BundleStats screenshot" width="480" src="https://camo.githubusercontent.com/4f01144ede86cd0c7b26ef665732155df8982819/68747470733a2f2f7777772e64726f70626f782e636f6d2f732f3775356171366e3667363334336c302f62756e646c652d73746174732d312e392e312e706e673f7261773d31"/></a>
+  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank"><img alt="BundleStats screenshot" width="480" src="https://camo.githubusercontent.com/42077b24af73ef1990fb7c239883f667b6e05588/68747470733a2f2f7777772e64726f70626f782e636f6d2f732f3831656a30617031386475776f61652f62756e646c652d73746174732d312e31302e302e706e673f7261773d31"/></a>
 </p>
 <h1 align="center">BundleStats</h1>
 <p align="center">
@@ -18,7 +18,7 @@
 - <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#totals"><strong>Cache invalidation</strong>, Initial JS/CSS and other bundle specific metrics</a><br />
 - <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#assets"><strong>Assets</strong> report (entrypoint, initial, types, changed, delta)</a><br />
 - <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#modules"><strong>Modules</strong> report (changed, delta) by chunk</a><br />
-- <strong>Packages</strong> report (count, changed, delta)</a><br />
+- <a hreg="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#packages"><strong>Packages</strong> report (count, changed, delta)</a><br />
 :star: <strong>Side by side comparison</strong> for multiple jobs
 </p>
 
