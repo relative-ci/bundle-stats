@@ -40,6 +40,10 @@ describe('Create job', () => {
           baseline: 0,
           current: 4,
         },
+        'webpack.packageCount': {
+          baseline: 0,
+          current: 0,
+        },
       },
       stats: {
         webpack: {
@@ -135,6 +139,10 @@ describe('Create job', () => {
         'webpack.assetsCount': {
           baseline: 4,
           current: 4,
+        },
+        'webpack.packageCount': {
+          baseline: 0,
+          current: 0,
         },
       },
       stats: {
