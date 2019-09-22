@@ -9,7 +9,7 @@ export const countModulesBundleTransform = (bundleStats = {}) => {
 
   return {
     stats: {
-      modulesCount: {
+      moduleCount: {
         value,
       },
     },

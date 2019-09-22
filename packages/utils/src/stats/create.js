@@ -8,7 +8,7 @@ import {
   countAssetsBundleTransform,
   countPackagesBundleTransform,
   countModulesBundleTransform,
-  chunksCountAssetsBundleTransform,
+  chunkCountAssetsBundleTransform,
   sizeAssetsBundleTransform,
 } from '../transforms';
 
@@ -29,21 +29,21 @@ export const generatePackageCount = (key) => (_, current) => {
   return set({}, key, stats.packageCount);
 };
 
-export const generateModulesCount = (key) => (_, current) => {
+export const generateModuleCount = (key) => (_, current) => {
   const { stats } = countModulesBundleTransform(current);
-  return set({}, key, stats.modulesCount);
+  return set({}, key, stats.moduleCount);
 };
 
-export const generateChunksCount = (key) => (_, current) => {
-  const { stats } = chunksCountAssetsBundleTransform(current);
+export const generateChunkCount = (key) => (_, current) => {
+  const { stats } = chunkCountAssetsBundleTransform(current);
 
-  return set({}, key, stats.chunksCount);
+  return set({}, key, stats.chunkCount);
 };
 
-export const generateAssetsCount = (key) => (_, current) => {
+export const generateAssetCount = (key) => (_, current) => {
   const { stats } = countAssetsBundleTransform(current);
 
-  return set({}, key, stats.assetsCount);
+  return set({}, key, stats.assetCount);
 };
 
 export const createStats = (baselineRawData, currentRawData) => {
@@ -63,8 +63,8 @@ export const createStats = (baselineRawData, currentRawData) => {
     generateWebpackTotals('webpack.assets'),
     generateCacheInvalidation('webpack.cacheInvalidation'),
     generatePackageCount('webpack.packageCount'),
-    generateModulesCount('webpack.modulesCount'),
-    generateChunksCount('webpack.chunksCount'),
-    generateAssetsCount('webpack.assetsCount'),
+    generateModuleCount('webpack.moduleCount'),
+    generateChunkCount('webpack.chunkCount'),
+    generateAssetCount('webpack.assetCount'),
   ].map((transform) => transform(baselineBundle, currentBundle)).reduce(merge, {});
 };

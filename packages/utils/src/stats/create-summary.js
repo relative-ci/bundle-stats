@@ -6,9 +6,9 @@ export const createStatsSummary = (baselineStats, currentStats) => {
     'webpack.assets.totalInitialSizeJS',
     'webpack.assets.totalInitialSizeCSS',
     'webpack.cacheInvalidation',
-    'webpack.modulesCount',
-    'webpack.chunksCount',
-    'webpack.assetsCount',
+    'webpack.moduleCount',
+    'webpack.chunkCount',
+    'webpack.assetCount',
     'webpack.packageCount',
   ];
 

@@ -5,7 +5,7 @@ export const countAssetsBundleTransform = (bundleStats = {}) => {
 
   return {
     stats: {
-      assetsCount: {
+      assetCount: {
         value,
       },
     },

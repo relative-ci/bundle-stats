@@ -28,15 +28,15 @@ describe('Create job', () => {
           baseline: 0,
           current: 0,
         },
-        'webpack.modulesCount': {
+        'webpack.moduleCount': {
           baseline: 0,
           current: 2,
         },
-        'webpack.chunksCount': {
+        'webpack.chunkCount': {
           baseline: 0,
           current: 0,
         },
-        'webpack.assetsCount': {
+        'webpack.assetCount': {
           baseline: 0,
           current: 4,
         },
@@ -82,13 +82,13 @@ describe('Create job', () => {
           cacheInvalidation: {
             value: 0,
           },
-          modulesCount: {
+          moduleCount: {
             value: 2,
           },
-          chunksCount: {
+          chunkCount: {
             value: 0,
           },
-          assetsCount: {
+          assetCount: {
             value: 4,
           },
           packageCount: {
@@ -128,15 +128,15 @@ describe('Create job', () => {
           baseline: 0,
           current: 95.24,
         },
-        'webpack.modulesCount': {
+        'webpack.moduleCount': {
           baseline: 2,
           current: 2,
         },
-        'webpack.chunksCount': {
+        'webpack.chunkCount': {
           baseline: 0,
           current: 0,
         },
-        'webpack.assetsCount': {
+        'webpack.assetCount': {
           baseline: 4,
           current: 4,
         },
@@ -182,13 +182,13 @@ describe('Create job', () => {
           cacheInvalidation: {
             value: 95.24,
           },
-          modulesCount: {
+          moduleCount: {
             value: 2,
           },
-          chunksCount: {
+          chunkCount: {
             value: 0,
           },
-          assetsCount: {
+          assetCount: {
             value: 4,
           },
           packageCount: {

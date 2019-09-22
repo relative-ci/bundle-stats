@@ -3,7 +3,7 @@ import { countAssetsBundleTransform } from '../count-assets-bundle-transform';
 describe('countAssetsBundleTransform', () => {
   test('should return empty', () => {
     const actual = countAssetsBundleTransform({ assets: {} });
-    expect(actual).toEqual({ stats: { assetsCount: { value: 0 } } });
+    expect(actual).toEqual({ stats: { assetCount: { value: 0 } } });
   });
 
   test('should return size metrics', () => {
@@ -45,6 +45,6 @@ describe('countAssetsBundleTransform', () => {
       },
     });
 
-    expect(actual).toEqual({ stats: { assetsCount: { value: 7 } } });
+    expect(actual).toEqual({ stats: { assetCount: { value: 7 } } });
   });
 });
