@@ -11,6 +11,7 @@ import * as URLS from '../../utils/urls';
 import Totals from './totals';
 import Assets from './assets';
 import Modules from './modules';
+import Packages from './packages';
 import config from './config.json';
 import locale from './locale.json';
 import enhance from './container';
@@ -77,6 +78,12 @@ const Webpack = (props) => {
                   >
                     {locale.modules}
                   </a>
+                  <a
+                    href={URLS.getWebpackUrl(URLS.WEBPACK_PACKAGES_SLUG)}
+                    isTabActive={path === URLS.getWebpackPath(URLS.WEBPACK_PACKAGES_SLUG)}
+                  >
+                    {locale.packages}
+                  </a>
                 </Tabs>
               )}
             </Match>
@@ -85,6 +92,7 @@ const Webpack = (props) => {
             <Totals jobs={jobs} path={URLS.getWebpackPath(URLS.WEBPACK_TOTALS_SLUG)} />
             <Assets jobs={jobs} path={URLS.getWebpackPath(URLS.WEBPACK_ASSETS_SLUG)} />
             <Modules jobs={jobs} path={URLS.getWebpackPath(URLS.WEBPACK_MODULES_SLUG)} />
+            <Packages jobs={jobs} path={URLS.getWebpackPath(URLS.WEBPACK_PACKAGES_SLUG)} />
           </Router>
         </div>
       )}
