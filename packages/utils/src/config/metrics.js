@@ -98,6 +98,11 @@ const METRICS = {
       type: METRIC_TYPE_NUMERIC,
       biggerIsBetter: false,
     },
+    packageCount: {
+      label: 'Package Count',
+      type: METRIC_TYPE_NUMERIC,
+      biggerIsBetter: false,
+    },
   },
   lighthouse: {
     score: {
