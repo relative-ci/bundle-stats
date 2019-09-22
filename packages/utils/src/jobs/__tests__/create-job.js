@@ -87,6 +87,9 @@ describe('Create job', () => {
           assetsCount: {
             value: 4,
           },
+          packageCount: {
+            value: 0,
+          },
         },
       },
       rawData: {
@@ -179,6 +182,9 @@ describe('Create job', () => {
           },
           assetsCount: {
             value: 4,
+          },
+          packageCount: {
+            value: 0,
           },
         },
       },

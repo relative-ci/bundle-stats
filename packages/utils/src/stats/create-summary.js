@@ -9,6 +9,7 @@ export const createStatsSummary = (baselineStats, currentStats) => {
     'webpack.modulesCount',
     'webpack.chunksCount',
     'webpack.assetsCount',
+    'webpack.packageCount',
   ];
 
   return metrics.map((metric) => {

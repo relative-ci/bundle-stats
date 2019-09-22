@@ -2,9 +2,11 @@ import { get, merge, set } from 'lodash';
 
 import {
   assetsWebpackTransform,
+  packagesModulesBundleTransform,
   modulesWebpackTransform,
   cacheInvalidationAssetsBundleTransform,
   countAssetsBundleTransform,
+  countPackagesBundleTransform,
   countModulesBundleTransform,
   chunksCountAssetsBundleTransform,
   sizeAssetsBundleTransform,
@@ -20,6 +22,11 @@ export const generateWebpackTotals = (key) => (_, current) => {
 export const generateCacheInvalidation = (key) => (baseline, current) => {
   const { stats } = cacheInvalidationAssetsBundleTransform(current, baseline);
   return set({}, key, stats.cacheInvalidation);
+};
+
+export const generatePackageCount = (key) => (_, current) => {
+  const { stats } = countPackagesBundleTransform(packagesModulesBundleTransform(current));
+  return set({}, key, stats.packageCount);
 };
 
 export const generateModulesCount = (key) => (_, current) => {
@@ -55,6 +62,7 @@ export const createStats = (baselineRawData, currentRawData) => {
   return [
     generateWebpackTotals('webpack.assets'),
     generateCacheInvalidation('webpack.cacheInvalidation'),
+    generatePackageCount('webpack.packageCount'),
     generateModulesCount('webpack.modulesCount'),
     generateChunksCount('webpack.chunksCount'),
     generateAssetsCount('webpack.assetsCount'),

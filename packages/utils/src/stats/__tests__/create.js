@@ -57,6 +57,11 @@ describe('createStats', () => {
               size: 1,
               chunks: [1],
             },
+            {
+              name: 'node_modules/package-a/dist/index.js',
+              size: 10,
+              chunks: [1],
+            },
           ],
         },
       },
@@ -100,13 +105,16 @@ describe('createStats', () => {
           value: 0,
         },
         modulesCount: {
-          value: 2,
+          value: 3,
         },
         chunksCount: {
           value: 0,
         },
         assetsCount: {
           value: 5,
+        },
+        packageCount: {
+          value: 1,
         },
       },
     });
@@ -178,6 +186,11 @@ describe('createStats', () => {
                 size: 1,
                 chunks: [1],
               },
+              {
+                name: 'node_modules/package-a/dist/index.js',
+                size: 10,
+                chunks: [1],
+              },
             ],
             chunks: [
               {
@@ -241,13 +254,16 @@ describe('createStats', () => {
           value: 45.45,
         },
         modulesCount: {
-          value: 2,
+          value: 3,
         },
         chunksCount: {
           value: 0,
         },
         assetsCount: {
           value: 5,
+        },
+        packageCount: {
+          value: 1,
         },
       },
     });
