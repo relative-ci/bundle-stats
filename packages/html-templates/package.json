@@ -6,6 +6,7 @@
   "scripts": {
     "build": "rm -fr ./dist && cross-env NODE_ENV=production webpack --config webpack.config.production.js --mode production",
     "lint": "eslint . --ext .jsx,.js --cache --cache-location ./node_modules/.eslintcache",
+    "prepublishOnly": "npm run lint && npm test && npm run build",
     "start": "cross-env NODE_ENV=development start-storybook -p 8090 -c storybook",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
