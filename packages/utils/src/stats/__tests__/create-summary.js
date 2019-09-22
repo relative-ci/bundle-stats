@@ -48,6 +48,9 @@ describe('createStatsSummary', () => {
         assetsCount: {
           value: 5,
         },
+        packageCount: {
+          value: 2,
+        },
       },
     });
 
@@ -79,6 +82,10 @@ describe('createStatsSummary', () => {
       'webpack.assetsCount': {
         baseline: 0,
         current: 5,
+      },
+      'webpack.packageCount': {
+        baseline: 0,
+        current: 2,
       },
     });
   });
@@ -131,6 +138,9 @@ describe('createStatsSummary', () => {
           assetsCount: {
             value: 5,
           },
+          packageCount: {
+            value: 2,
+          },
         },
       },
       {
@@ -179,6 +189,9 @@ describe('createStatsSummary', () => {
           assetsCount: {
             value: 6,
           },
+          packageCount: {
+            value: 2,
+          },
         },
       },
     );
@@ -211,6 +224,10 @@ describe('createStatsSummary', () => {
       'webpack.assetsCount': {
         baseline: 5,
         current: 6,
+      },
+      'webpack.packageCount': {
+        baseline: 2,
+        current: 2,
       },
     });
   });

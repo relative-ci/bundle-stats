@@ -43,6 +43,7 @@ Summary.defaultProps = {
     'webpack.modulesCount',
     'webpack.chunksCount',
     'webpack.assetsCount',
+    'webpack.packageCount',
   ],
   loading: false,
 };
