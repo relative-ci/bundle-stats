@@ -57,9 +57,9 @@
     "yargs": "14.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.6.0",
-    "@babel/core": "7.6.0",
-    "@babel/preset-env": "7.6.0",
+    "@babel/cli": "7.6.2",
+    "@babel/core": "7.6.2",
+    "@babel/preset-env": "7.6.2",
     "eslint": "6.4.0",
     "eslint-config-airbnb-base": "14.0.0",
     "eslint-plugin-import": "2.18.2",
