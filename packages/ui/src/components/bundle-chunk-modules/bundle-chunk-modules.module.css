@@ -13,8 +13,10 @@
 
 .headerDropdown {
   flex: 0 0 auto;
+  margin-top: calc(0px - var(--space-xxsmall));
   margin-right: calc(0px - var(--space-xxsmall));
   margin-left: var(--space-small);
+  margin-bottom: calc(0px - var(--space-xxsmall));
 }
 
 .nameTooltip {
