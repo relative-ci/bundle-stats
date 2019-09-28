@@ -1,8 +1,8 @@
 .root {
   padding-top: var(--space-large);
   padding-bottom: var(--space-large);
-  background: var(--color-gray-light-background);
-  color: var(--color-gray);
+  background: var(--color-dark);
+  color: var(--color-gray-ultra-light);
   text-align: center;
 }
 
@@ -12,35 +12,10 @@
   margin-bottom: var(--space-large);
 }
 
-.brandingHome {
-  vertical-align: middle;
-  color: var(--color-gray-ultra-light);
-}
-
-.brandingHome:hover,
-.brandingHome:active
-{
-  color: var(--color-gray-light);
-}
-
-.brandingLogo {
-  margin: 0 auto;
-  max-width: 32px;
-  color: var(--color-gray-ultra-dark);
-  vertical-align: middle;
-}
-
-.brandingLogotype {
-  display: inline-block;
-  text-align: left;
-  text-indent: -99999em;
-  overflow: hidden;
-  height: 0;
-  position: absolute;
-}
-
 .copyright {
-  margin-top: var(--space-xsmall);
+  color: inherit;
+  white-space: nowrap;
+  text-decoration: none;
 }
 
 .navGroup {
@@ -78,16 +53,6 @@
     flex: 1 1 100%;
     display: flex;
     justify-content: flex-end;
-  }
-
-  .branding {
-    order: 1;
-    flex: 1 1 25%;
-    text-align: left;
-  }
-
-  .brandingLogo {
-    margin: 0;
   }
 
   .navGroup {
