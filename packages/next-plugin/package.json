@@ -1,6 +1,6 @@
 {
   "name": "next-plugin-bundle-stats",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "description": "In-depth bundle analyzer for webpack(bundle size, assets, modules)",
   "main": "index.js",
   "engines": {
@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/bundle-stats/bundle-stats/blob/master/packages/next-plugin#readme",
   "dependencies": {
-    "bundle-stats": "^1.10.0"
+    "bundle-stats": "^1.10.1"
   },
   "devDependencies": {
     "eslint": "6.4.0",
