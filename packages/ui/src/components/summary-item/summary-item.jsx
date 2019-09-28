@@ -36,14 +36,16 @@ export const SummaryItem = ({
         <span className={cx(css.currentMetric, css.loading)} />
       )}
 
-      {!loading && diff && diff.deltaPercentage ? (
+      {!loading ? (
         <Delta
           className={css.delta}
           value={diff.deltaPercentage}
           displayValue={`${formatDelta(diff.delta, metric.formatter)} (${formatDelta(diff.deltaPercentage, formatPercentage)})`}
           biggerIsBetter={metric.biggerIsBetter}
         />
-      ) : null}
+      ) : (
+        <span className={cx(css.delta, css.loading)} />
+      )}
     </div>
   );
 };
