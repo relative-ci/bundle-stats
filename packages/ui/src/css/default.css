@@ -6,7 +6,7 @@
 }
 
 html {
-  box-sizing: border-box;
+  font-size: 81.25%;
 }
 
 body {
@@ -96,10 +96,4 @@ a:active {
 .ui-button--danger:focus,
 .ui-button--danger:hover {
   background: var(--color-danger-dark);
-}
-
-@media (min-width: 600px) {
-  html {
-    font-size: 81.25%;
-  }
 }
