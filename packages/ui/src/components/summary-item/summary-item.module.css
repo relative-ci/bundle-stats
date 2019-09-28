@@ -1,5 +1,5 @@
 .root {
-  padding: var(--space-small);
+  padding: var(--space-xsmall) var(--space-small);
   font-size: var(--size-small);
 }
 
@@ -8,30 +8,24 @@
   min-height: var(--size-small);
   color: var(--color-gray-light);
   font-size: var(--size-xsmall);
+  font-weight: bold;
   line-height: var(--size-small);
   text-transform: uppercase;
   white-space: nowrap;
 }
 
 .currentMetric {
-  margin-bottom: var(--space-xxsmall);
-  display: inline-block;
-  min-height: var(--size-large);
+  display: block;
+  min-height: var(--size-xlarge);
   color: var(--color-dark);
   font-size: var(--size-large);
-  line-height: 1;
-  font-weight: 700;
+  font-weight: bold;
+  line-height: var(--size-xlarge);
 }
 
 .delta {
-  display: inline-block;
-  margin-left: var(--space-xxsmall);
-}
-
-.baselineMetric {
   display: block;
-  min-height: var(--size-small);
-  line-height: var(--size-small);
+  text-align: left;
 }
 
 /* Loading state */

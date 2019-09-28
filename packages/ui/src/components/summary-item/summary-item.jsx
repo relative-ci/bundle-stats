@@ -25,37 +25,25 @@ export const SummaryItem = ({
         {metric.label}
       </h3>
 
-      <div className={css.currentContainer}>
-        {!loading ? (
-          <Metric
-            className={css.currentMetric}
-            value={current}
-            formatter={metric.formatter}
-            enhanced
-          />
-        ) : (
-          <span className={cx(css.currentMetric, css.loading)} />
-        )}
-
-        {!loading && diff && diff.deltaPercentage ? (
-          <Delta
-            className={css.delta}
-            value={diff.deltaPercentage}
-            displayValue={`${formatDelta(diff.delta, metric.formatter)} (${formatDelta(diff.deltaPercentage, formatPercentage)})`}
-            biggerIsBetter={metric.biggerIsBetter}
-          />
-        ) : null}
-      </div>
-
       {!loading ? (
         <Metric
-          className={css.baselineMetric}
-          value={baseline}
+          className={css.currentMetric}
+          value={current}
           formatter={metric.formatter}
+          enhanced
         />
       ) : (
-        <span className={cx(css.baselineMetric, css.loading)} />
+        <span className={cx(css.currentMetric, css.loading)} />
       )}
+
+      {!loading && diff && diff.deltaPercentage ? (
+        <Delta
+          className={css.delta}
+          value={diff.deltaPercentage}
+          displayValue={`${formatDelta(diff.delta, metric.formatter)} (${formatDelta(diff.deltaPercentage, formatPercentage)})`}
+          biggerIsBetter={metric.biggerIsBetter}
+        />
+      ) : null}
     </div>
   );
 };
