@@ -1,0 +1,19 @@
+.root {
+  padding: var(--space-xsmall) var(--space-small);
+  display: flex;
+}
+
+.item {
+  flex: 1 1 100%;
+}
+
+.itemTitle {
+  margin: 0;
+  font-size: 1em;
+  font-weight: bold;
+  color: var(--color-gray-light);
+}
+
+.item + .item {
+  margin-left: var(--space-xsmall);
+}
