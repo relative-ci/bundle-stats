@@ -4,33 +4,33 @@
 }
 
 .title {
-  margin-bottom: var(--space-xxsmall);
-  min-height: var(--size-small);
+  margin-bottom: 0;
   color: var(--color-gray-light);
   font-size: var(--size-xsmall);
   font-weight: bold;
-  line-height: var(--size-small);
+  line-height: var(--space-small);
   text-transform: uppercase;
   white-space: nowrap;
 }
 
 .currentMetric {
+  min-height: var(--line-height);
   display: block;
-  min-height: var(--size-xlarge);
   color: var(--color-dark);
   font-size: var(--size-large);
   font-weight: bold;
-  line-height: var(--size-xlarge);
 }
 
 .delta {
   display: block;
+  min-height: var(--space-small);
+  line-height: var(--space-small);
   text-align: left;
 }
 
 /* Loading state */
 .loading {
-  background: var(--color-gray-light-background);
+  background: linear-gradient(to bottom, transparent, transparent 20%, var(--color-gray-light-background) 20%, var(--color-gray-light-background) 80%, transparent);
   pointer-events: none;
   width: 8em;
 }
@@ -42,6 +42,7 @@
 
 .large .currentMetric {
   font-size: var(--size-xlarge);
+  min-height: var(--space-large);
 }
 
 .large .delta {
