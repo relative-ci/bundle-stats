@@ -32,8 +32,8 @@
   color: var(--color-gray);
 }
 
-.item:first-child .itemChart {
-  height: var(--space-xxxlarge);
+.itemChart {
+  height: var(--space-large);
 }
 
 .itemTooltip {
