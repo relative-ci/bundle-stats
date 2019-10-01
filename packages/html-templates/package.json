@@ -54,7 +54,7 @@
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jest": "22.17.0",
     "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-react": "7.15.1",
     "html-webpack-inline-source-plugin": "0.0.10",
     "html-webpack-plugin": "3.2.0",
     "mini-css-extract-plugin": "0.8.0",
