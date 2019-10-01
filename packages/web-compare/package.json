@@ -55,7 +55,7 @@
     "core-js": "3.2.1",
     "ganalytics": "^3.1.1",
     "lodash": "^4.17.11",
-    "preact": "^8.4.2",
+    "preact": "^10.0.0",
     "preact-compat": "3.19.0",
     "preact-helmet": "^4.0.0-alpha-3",
     "preact-router": "^2.6.1",
