@@ -58,7 +58,7 @@
     "preact": "^8.4.2",
     "preact-compat": "3.19.0",
     "preact-helmet": "^4.0.0-alpha-3",
-    "preact-router": "^2.6.1",
+    "preact-router": "^3.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
