@@ -54,7 +54,7 @@
     "listr": "^0.14.3",
     "lodash": "4.17.15",
     "update-notifier": "3.0.1",
-    "yargs": "14.0.0"
+    "yargs": "14.2.0"
   },
   "devDependencies": {
     "@babel/cli": "7.6.2",
