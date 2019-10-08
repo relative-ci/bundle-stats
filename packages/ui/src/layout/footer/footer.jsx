@@ -62,7 +62,7 @@ export const Footer = ({
               Changelog
             </Link>
             <a
-              to="https://github.com/relative-ci/roadmap/issues"
+              href="https://github.com/relative-ci/roadmap/issues"
               className={css.navLink}
               target="_blank"
               rel="noopener noreferrer"
