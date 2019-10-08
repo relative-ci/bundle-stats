@@ -18,6 +18,11 @@
   text-decoration: none;
 }
 
+.copyright:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .navGroup {
   margin: 0 0 var(--space-medium);
   text-align: center;
@@ -53,6 +58,12 @@
     flex: 1 1 100%;
     display: flex;
     justify-content: flex-end;
+  }
+
+  .branding {
+    order: 1;
+    flex: 1 1 25%;
+    text-align: left;
   }
 
   .navGroup {
