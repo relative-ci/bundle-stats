@@ -38,8 +38,8 @@
     "core-js": "^3.1.4"
   },
   "devDependencies": {
-    "@babel/cli": "7.6.3",
-    "@babel/core": "7.6.3",
+    "@babel/cli": "7.6.4",
+    "@babel/core": "7.6.4",
     "@babel/preset-env": "7.6.3",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "24.9.0",
