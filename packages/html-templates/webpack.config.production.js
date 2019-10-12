@@ -1,6 +1,7 @@
 const webpackMerge = require('webpack-merge');
 const StatsPlugin = require('stats-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const { RelativeCiAgentWebpackPlugin } = require('@relative-ci/agent');
 
 const getCommonConfig = require('../../build/webpack.config.common');
 const appCommonConfig = require('./webpack.config.common');
@@ -24,6 +25,7 @@ module.exports = webpackMerge.smart(
         children: false,
         source: false,
       }),
+      new RelativeCiAgentWebpackPlugin(),
     ],
     optimization: {
       minimizer: [new TerserPlugin({ sourceMap: true })],
