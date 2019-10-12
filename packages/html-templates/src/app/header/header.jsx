@@ -11,7 +11,7 @@ export const Header = ({ className }) => (
     className={cx(css.root, className)}
     renderLeft={(partProps) => (
       <div {...partProps}>
-        <a className={css.branding} href="https://github.com/bundle-stats/bundle-stats">
+        <a className={css.branding} href="https://github.com/relative-ci/bundle-stats">
           <Logo className={css.logo}>BundleStats</Logo>
           <Logo className={css.logotype} kind="logotype" />
         </a>
@@ -57,7 +57,7 @@ export const Header = ({ className }) => (
           className={css.githubLogo}
           kind="github"
           as="a"
-          href="https://github.com/bundle-stats/bundle-stats"
+          href="https://github.com/relative-ci/bundle-stats"
           target="_blank"
           rel="noopener noreferrer nofollow"
         />

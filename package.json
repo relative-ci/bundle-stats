@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bundle-stats/bundle-stats.git"
+    "url": "git+https://github.com/relative-ci/bundle-stats.git"
   },
   "keywords": [
     "webpack",
@@ -39,7 +39,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bundle-stats/bundle-stats/issues"
+    "url": "https://github.com/relative-ci/bundle-stats/issues"
   },
-  "homepage": "https://github.com/bundle-stats/bundle-stats#readme"
+  "homepage": "https://github.com/relative-ci/bundle-stats#readme"
 }

@@ -31,12 +31,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bundle-stats/bundle-stats.git"
+    "url": "git+https://github.com/relative-ci/bundle-stats.git"
   },
   "bugs": {
-    "url": "https://github.com/bundle-stats/bundle-stats/issues"
+    "url": "https://github.com/relative-ci/bundle-stats/issues"
   },
-  "homepage": "https://github.com/bundle-stats/bundle-stats/blob/master/packages/gatsby-plugin#readme",
+  "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/gatsby-plugin#readme",
   "dependencies": {
     "bundle-stats": "^1.10.1"
   },

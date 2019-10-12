@@ -78,11 +78,11 @@ export const Footer = ({
           </h3>
           <nav className={css.nav}>
             <a
-              href="https://www.npmjs.com/package/bundle-stats"
+              href="https://github.com/relative-ci/bundle-stats"
               className={css.navLink}
               target="_blank"
               rel="noopener noreferrer"
-              title="In-depth reporting for bundle changes (assets, chunks, modules)."
+              title="In-depth bundle analyzer for webpack(bundle size, assets, modules, packages)"
               source={source}
             >
               Bundle Stats

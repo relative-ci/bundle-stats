@@ -19,12 +19,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bundle-stats/bundle-stats.git"
+    "url": "git+https://github.com/relative-ci/bundle-stats.git"
   },
   "bugs": {
-    "url": "https://github.com/bundle-stats/bundle-stats/issues"
+    "url": "https://github.com/relative-ci/bundle-stats/issues"
   },
-  "homepage": "https://github.com/bundle-stats/bundle-stats/blob/master/packages/html-templates#readme",
+  "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/html-templates#readme",
   "devDependencies": {
     "@babel/core": "7.6.4",
     "@babel/plugin-proposal-class-properties": "7.5.5",

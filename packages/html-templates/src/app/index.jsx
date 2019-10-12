@@ -23,7 +23,7 @@ const StandaloneAppLayout = (props) => (
     <Footer source="bundle-stats">
       <p className={css.footerInfo}>
         <a
-          href={`https://github.com/bundle-stats/bundle-stats/releases/tag/v${__VERSION__}`}
+          href={`https://github.com/relative-ci/bundle-stats/releases/tag/v${__VERSION__}`}
         >
           {`Version: ${__VERSION__}`}
         </a>
