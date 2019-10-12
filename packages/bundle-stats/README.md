@@ -32,10 +32,8 @@
   - [Webpack configuration](#webpack-configuration-1)
   - [Usage](#usage)
   - [Compare mode](#compare-mode-1)
-- [Gatsby plugin](#3-gatsby-plugin)
-- [Next.js plugin](#4-nextjs-plugin)
-- [Standalone web application](#5-standalone-web-application)
-- [:zap: Running on CI](#6-zap-running-on-ci)
+- [Framework specific plugins](#3-framework-specific-plugins)
+- [Related projects](#4-related-projects)
 
 ## 1. Webpack plugin
 
@@ -229,12 +227,12 @@ Reports saved:
 
 The option can be disabled using `--no-compare` option.
 
-## Framework specific plugins
+## 3. Framework specific plugins
 
 - [Gatsby](https://github.com/relative-ci/bundle-stats/tree/master/packages/gatsby-plugin)
 - [Next](https://github.com/relative-ci/bundle-stats/tree/master/packages/next-plugin)
 
-## Related projects
+## 4. Related projects
 
 ### [relative-ci/compare](https://compare.relative-ci.com)
 

@@ -27,25 +27,21 @@
 
 CLI and webapck plugin to generate bundle report.
 
-###
-[`gatsby-plugin-bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/gatsby-plugin)
+### [`gatsby-plugin-bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/gatsby-plugin)
 
 Gatsby plugin for BundleStats.
 
-###
-[`next-plugin-bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/next-plugin)
+### [`next-plugin-bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/next-plugin)
 
 Gatsby plugin for BundleStats.
 
-###
-[`@bundle-stats/html-templates`](https://github.com/relative-ci/bundle-stats/tree/master/packages/html-templates)
+### [`@bundle-stats/html-templates`](https://github.com/relative-ci/bundle-stats/tree/master/packages/html-templates)
 HTML templates for BundleStats reports.
 
 ### [`@bundle-stats/ui`](https://github.com/relative-ci/bundle-stats/tree/master/packages/ui)
 UI components for BundleStats projects.
 
-###
-[`@bundle-stats/utils`](https://github.com/relative-ci/bundle-stats/tree/master/packages/utils)
+### [`@bundle-stats/utils`](https://github.com/relative-ci/bundle-stats/tree/master/packages/utils)
 Utilities for BundleStats projects.
 
 ## Related projects
