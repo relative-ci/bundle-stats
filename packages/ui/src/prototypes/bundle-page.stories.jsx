@@ -41,8 +41,8 @@ const PageHeader = () => (
     className={css.header}
     renderLeft={(sideProps) => (
       <div {...sideProps}>
-        <Logo kind="relative-ci" className={css.headerLogo} />
-        <Logo kind="bundlestats" className={css.headerLogotype} />
+        <Logo kind="logo" className={css.headerLogo} />
+        <Logo kind="logotype" className={css.headerLogotype} />
       </div>
     )}
   />
