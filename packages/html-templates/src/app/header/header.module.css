@@ -1,23 +1,31 @@
 .root {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: var(--space-small);
 }
 
 /* Components */
-.logo {
-  margin: 0;
-  width: 156px;
+.branding {
+  display: flex;
+  align-items: center;
   color: inherit;
-  font-size: var(--size-xlarge);
-  white-space: nowrap;
-  font-weight: bold;
 }
 
-.logo:hover,
-.logo:active,
-.logo:focus {
+.branding:hover,
+.branding:active,
+.branding:focus {
   color: inherit;
-  opacity: 0.7;
+  opacity: 0.8;
+}
+
+.logo {
+  margin-right: var(--space-xsmall);
+  width: var(--space-large);
+  flex: 0 0 var(--space-large);
+}
+
+.logotype {
+  width: 140px;
+  height: var(--space-small);
+  flex: 0 0 auto;
 }
 
 .tabs {

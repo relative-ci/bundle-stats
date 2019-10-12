@@ -11,14 +11,10 @@ export const Header = ({ className }) => (
     className={cx(css.root, className)}
     renderLeft={(partProps) => (
       <div {...partProps}>
-        <Logo
-          className={css.logo}
-          as="a"
-          kind="bundlestats"
-          href="https://github.com/bundle-stats/bundle-stats"
-        >
-          BundleStats
-        </Logo>
+        <a className={css.branding} href="https://github.com/bundle-stats/bundle-stats">
+          <Logo className={css.logo}>BundleStats</Logo>
+          <Logo className={css.logotype} kind="logotype" />
+        </a>
       </div>
     )}
     render={(partProps) => (

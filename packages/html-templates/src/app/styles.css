@@ -52,6 +52,6 @@
 
 @media (min-width: 600px) {
   :root {
-    --header-height: calc(var(--space-xsmall) * 2 + var(--space-xxlarge));
+    --header-height: calc(var(--space-large) + var(--space-small) * 2);
   }
 }
