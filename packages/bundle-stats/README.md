@@ -229,29 +229,20 @@ Reports saved:
 
 The option can be disabled using `--no-compare` option.
 
-## 3. Gatsby plugin
+## Framework specific plugins
 
-Install `bundle-stats` as a Gatsby plugin.
+- [Gatsby](https://github.com/relative-ci/bundle-stats/tree/master/packages/gatsby-plugin)
+- [Next](https://github.com/relative-ci/bundle-stats/tree/master/packages/next-plugin)
 
-[Read more](../gatsby-plugin)
+## Related projects
 
-## 4. Next.js plugin
+### [relative-ci/compare](https://compare.relative-ci.com)
 
-Install `bundle-stats` as a Next.js plugin.
+Standalone web application to compare Webpack/Lighthouse/Browsertime stats.
 
-[Read more](../next-plugin)
-
-## 5. Standalone web application
-
-Use https://compare.relative-ci.com to compare Webpack/Lighthouse/Browsertime stats.
-
-[Read more](https://github.com/relative-ci/compare)
-
-## 6. :zap: Running on CI
+### [relative-ci.com](https://relative-ci.com)
 
 Continuous monitoring with BundleStats on CI:
 - Github Checks integration
 - support for all major CI services (Travis CI, Circle CI, Jenkins, Gitlab CI, Codeship, etc)
 - free for OpenSource
-
-[Read more about running BundleStats on CI (BETA)](https://relative-ci.com)
