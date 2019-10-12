@@ -115,7 +115,7 @@ export const Footer = ({
           </h3>
           <nav className={css.nav}>
             <a
-              href="https://github.com/bundle-stats"
+              href="https://github.com/relative-ci"
               className={css.navLink}
               target="_blank"
               rel="noopener noreferrer"
