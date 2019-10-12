@@ -1,9 +1,8 @@
 const path = require('path');
-const process = require('process');
 
 module.exports = (settings) => {
   const {
-    srcDir, distDir, isProduction, isDevelopment, rootDir,
+    srcDir, distDir, isDevelopment, rootDir,
   } = settings;
 
   return {

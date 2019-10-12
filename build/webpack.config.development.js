@@ -1,4 +1,3 @@
-
 module.exports = (settings) =>{
   const { publicDir } = settings;
 
