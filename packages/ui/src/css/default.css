@@ -15,12 +15,33 @@ body {
 
 h1, h2, h3, h4, h5 {
   margin-bottom: var(--space-small);
-  letter-spacing: -0.005em;
   color: var(--color-heading);
+  font-weight: 500;
 }
 
-h1, h2, h3 {
-  font-weight: 500;
+h1 {
+  font-size: var(--size-xxxlarge);
+  line-height: var(--space-xlarge)
+}
+
+h2 {
+  font-size: var(--size-xxlarge);
+}
+
+h3 {
+  font-size: var(--size-xlarge);
+}
+
+h4 {
+  font-size: var(--size-large);
+}
+
+h5 {
+  font-size: var(--size-medium);
+}
+
+h6 {
+  font-size: var(--size-small);
 }
 
 code {

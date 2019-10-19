@@ -55,11 +55,11 @@ export const Footer = ({
               Resources
             </Link>
             <Link
-              to="/changelog"
+              to="/releases"
               className={css.navLink}
               source={source}
             >
-              Changelog
+              Release notes
             </Link>
             <a
               href="https://github.com/relative-ci/roadmap/issues"

@@ -8,12 +8,12 @@
   align-items: center;
   font-size: var(--size-xlarge);
   font-weight: 700;
+  color: var(--color-light);
 }
 
 .headerLogo {
   margin-right: var(--space-xsmall);
   width: var(--space-large);
-  color: var(--color-branding);
 }
 
 .subheader {
