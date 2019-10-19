@@ -1,22 +1,37 @@
 .header {
-  padding: var(--space-small);
-  border-bottom: 1px solid var(--color-gray-ultra-light);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 0 0 var(--space-small);
 }
 
 .headerTitle {
   margin: 0;
-  flex: 1 1 100%;
+  font-size: 1em;
+  overflow-wrap: break-word;
 }
 
-.headerDropdown {
+.headerTitleName {
+  display: block;
+  font-size: var(--size-large);
+}
+
+.headerTitleId {
+  display: block;
+  color: var(--color-gray-light);
+  font-size: var(--size-small);
+  line-height: var(--space-small);
+}
+
+.tableHeader {
+  padding: var(--space-xxsmall) var(--space-small);
+  border-bottom: 1px solid var(--color-gray-ultra-light);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.tableDropdown {
   flex: 0 0 auto;
-  margin-top: calc(0px - var(--space-xxsmall));
   margin-right: calc(0px - var(--space-xxsmall));
   margin-left: var(--space-small);
-  margin-bottom: calc(0px - var(--space-xxsmall));
 }
 
 .nameTooltip {

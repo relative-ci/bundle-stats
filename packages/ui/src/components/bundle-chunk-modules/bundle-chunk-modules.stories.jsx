@@ -29,7 +29,8 @@ const RUNS_DEFAULT = [
 
 stories.add('default', () => (
   <BundleChunkModules
-    title="vendor (id: 1)"
+    name="vendor"
+    id="1"
     runs={RUNS_DEFAULT}
     modules={getModulesReport(RUNS_DEFAULT)[1].modules}
   />
@@ -45,7 +46,8 @@ const RUNS_MULTIPLE = [
 
 stories.add('multiple jobs', () => (
   <BundleChunkModules
-    title="vendor (id: 1)"
+    name="vendor"
+    id="1"
     runs={RUNS_MULTIPLE}
     modules={getModulesReport(RUNS_MULTIPLE)[1].modules}
   />
@@ -61,7 +63,8 @@ const RUNS_EMPTY_BASELINE = [
 
 stories.add('empty baseline', () => (
   <BundleChunkModules
-    title="vendor (id: 1)"
+    name="vendor"
+    id="1"
     runs={RUNS_EMPTY_BASELINE}
     modules={getModulesReport(RUNS_EMPTY_BASELINE)[1].modules}
   />

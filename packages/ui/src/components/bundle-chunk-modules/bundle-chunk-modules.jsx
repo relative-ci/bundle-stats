@@ -67,7 +67,8 @@ const getRunLabel = (run, index, runs) => {
 
 export const BundleChunkModules = ({
   className,
-  title,
+  name,
+  id,
   runs,
   modules,
   totalRowsCount,
@@ -81,45 +82,57 @@ export const BundleChunkModules = ({
   const rootClassName = cx(css.root, className);
 
   return (
-    <Box className={rootClassName}>
+    <div className={rootClassName}>
       <header className={css.header}>
-        {title && (
-          <h3 className={css.headerTitle}>
-            {title}
-          </h3>
-        )}
-        <SortDropdown
-          className={css.headerDropdown}
-          items={sortItems}
-          onChange={updateSort}
-          {...sort}
-        />
-        <FiltersDropdown
-          className={css.headerDropdown}
-          filters={{
-            changed: {
-              label: 'Changed',
-              defaultValue: filters.changed,
-              disabled: runs.length <= 1,
-            },
-          }}
-          label={`Filters (${modules.length}/${totalRowsCount})`}
-          onChange={updateFilters}
-        />
+        <h3 className={css.headerTitle}>
+          {name && (
+            <span className={css.headerTitleName}>
+              {name}
+            </span>
+          )}
+          {id && (
+            <span className={css.headerTitleId}>
+              {`Chunk id: ${id}`}
+            </span>
+          )}
+        </h3>
       </header>
-      <MetricsTable
-        className={css.table}
-        items={modules}
-        runs={labeledRuns}
-        renderRowHeader={getRenderRowHeader(map(labeledRuns, 'name'))}
-      />
-    </Box>
+      <Box>
+        <div className={css.tableHeader}>
+          <SortDropdown
+            className={css.tableDropdown}
+            items={sortItems}
+            onChange={updateSort}
+            {...sort}
+          />
+          <FiltersDropdown
+            className={css.tableDropdown}
+            filters={{
+              changed: {
+                label: 'Changed',
+                defaultValue: filters.changed,
+                disabled: runs.length <= 1,
+              },
+            }}
+            label={`Filters (${modules.length}/${totalRowsCount})`}
+            onChange={updateFilters}
+          />
+        </div>
+        <MetricsTable
+          className={css.table}
+          items={modules}
+          runs={labeledRuns}
+          renderRowHeader={getRenderRowHeader(map(labeledRuns, 'name'))}
+        />
+      </Box>
+    </div>
   );
 };
 
 BundleChunkModules.defaultProps = {
   className: '',
-  title: '',
+  name: '',
+  id: '',
   modules: [],
   runs: [],
   totalRowsCount: 0,
@@ -129,8 +142,11 @@ BundleChunkModules.propTypes = {
   /** Adopted child class name */
   className: PropTypes.string,
 
-  /** Section title */
-  title: PropTypes.string,
+  /** Chunk name */
+  name: PropTypes.string,
+
+  /** Chunk id */
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
   /** Rows data */
   modules: PropTypes.array, // eslint-disable-line react/forbid-prop-types
