@@ -25,7 +25,8 @@ export const BundleModules = ({ jobs }) => {
         <BundleChunkModules
           key={`${chunkNames.join('-')}-${chunkId}`}
           className={css.chunk}
-          title={`${chunkNames.join(', ')} (id: ${chunkId})`}
+          title={chunkNames.join(', ')}
+          id={chunkId}
           runs={runs}
           modules={modules}
         />
