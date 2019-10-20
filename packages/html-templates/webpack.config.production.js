@@ -25,7 +25,11 @@ module.exports = webpackMerge.smart(
         children: false,
         source: false,
       }),
-      new RelativeCiAgentWebpackPlugin(),
+      new RelativeCiAgentWebpackPlugin({
+        stats: {
+          excludeAssets: [/index.html$/],
+        },
+      }),
     ],
     optimization: {
       minimizer: [new TerserPlugin({ sourceMap: true })],

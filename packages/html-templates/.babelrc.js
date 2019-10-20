@@ -20,6 +20,6 @@ module.exports = {
         pragma: 'h',
       },
     ],
-    'lodash',
+    'babel-plugin-lodash',
   ],
 };
