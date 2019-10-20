@@ -9,6 +9,6 @@ module.exports = {
     }],
   ],
   plugins: [
-    'babel-plugin-lodash',
+    'lodash',
   ],
 };
