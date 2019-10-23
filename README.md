@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank"><img alt="BundleStats screenshot" width="480" src="https://camo.githubusercontent.com/42077b24af73ef1990fb7c239883f667b6e05588/68747470733a2f2f7777772e64726f70626f782e636f6d2f732f3831656a30617031386475776f61652f62756e646c652d73746174732d312e31302e302e706e673f7261773d31"/></a>
+  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank"><img alt="BundleStats screenshot" width="480" height="360" src="https://camo.githubusercontent.com/e739d0cb8de5c057020dca87b22a1bc4d181e8b1/68747470733a2f2f7777772e64726f70626f782e636f6d2f732f62396838776e793937737435696f722f62756e646c652d73746174732d312e31312e302e6a70673f7261773d31"/></a>
 </p>
 <h1 align="center">BundleStats</h1>
 <p align="center">
@@ -35,13 +35,13 @@ Gatsby plugin for BundleStats.
 
 Gatsby plugin for BundleStats.
 
-### [`@bundle-stats/html-templates`](https://github.com/relative-ci/bundle-stats/tree/master/packages/html-templates)
+#### [`@bundle-stats/html-templates`](https://github.com/relative-ci/bundle-stats/tree/master/packages/html-templates)
 HTML templates for BundleStats reports.
 
-### [`@bundle-stats/ui`](https://github.com/relative-ci/bundle-stats/tree/master/packages/ui)
+#### [`@bundle-stats/ui`](https://github.com/relative-ci/bundle-stats/tree/master/packages/ui)
 UI components for BundleStats projects.
 
-### [`@bundle-stats/utils`](https://github.com/relative-ci/bundle-stats/tree/master/packages/utils)
+#### [`@bundle-stats/utils`](https://github.com/relative-ci/bundle-stats/tree/master/packages/utils)
 Utilities for BundleStats projects.
 
 ## Related projects
@@ -52,7 +52,8 @@ Standalone web application to compare Webpack/Lighthouse/Browsertime stats.
 
 ### [relative-ci.com](https://relative-ci.com)
 
-Continuous monitoring with BundleStats on CI:
+Continuous monitoring for web bundle stats:
+- monitor bundle size, assets, modules, packages
 - Github Checks integration
 - support for all major CI services (Travis CI, Circle CI, Jenkins, Gitlab CI, Codeship, etc)
 - free for OpenSource
