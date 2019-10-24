@@ -94,6 +94,9 @@ describe('Create job', () => {
           packageCount: {
             value: 0,
           },
+          duplicatedPackageCount: {
+            value: 0,
+          },
         },
       },
       rawData: {
@@ -192,6 +195,9 @@ describe('Create job', () => {
             value: 4,
           },
           packageCount: {
+            value: 0,
+          },
+          duplicatedPackageCount: {
             value: 0,
           },
         },

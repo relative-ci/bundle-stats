@@ -103,6 +103,11 @@ const METRICS = {
       type: METRIC_TYPE_NUMERIC,
       biggerIsBetter: false,
     },
+    duplicatedPackageCount: {
+      label: 'Duplicated package count',
+      type: METRIC_TYPE_NUMERIC,
+      biggerIsBetter: false,
+    },
   },
   lighthouse: {
     score: {
