@@ -51,7 +51,7 @@ describe('createStatsSummary', () => {
         packageCount: {
           value: 2,
         },
-        duplicatedPackageCount: {
+        duplicatePackagesCount: {
           value: 2,
         },
       },
@@ -90,7 +90,7 @@ describe('createStatsSummary', () => {
         baseline: 0,
         current: 2,
       },
-      'webpack.duplicatedPackageCount': {
+      'webpack.duplicatePackagesCount': {
         baseline: 0,
         current: 2,
       },
@@ -148,7 +148,7 @@ describe('createStatsSummary', () => {
           packageCount: {
             value: 2,
           },
-          duplicatedPackageCount: {
+          duplicatePackagesCount: {
             value: 2,
           },
         },
@@ -202,7 +202,7 @@ describe('createStatsSummary', () => {
           packageCount: {
             value: 2,
           },
-          duplicatedPackageCount: {
+          duplicatePackagesCount: {
             value: 2,
           },
         },
@@ -242,7 +242,7 @@ describe('createStatsSummary', () => {
         baseline: 2,
         current: 2,
       },
-      'webpack.duplicatedPackageCount': {
+      'webpack.duplicatePackagesCount': {
         baseline: 2,
         current: 2,
       },

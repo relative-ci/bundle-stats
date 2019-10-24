@@ -116,7 +116,7 @@ describe('createStats', () => {
         packageCount: {
           value: 1,
         },
-        duplicatedPackageCount: {
+        duplicatePackagesCount: {
           value: 0,
         },
       },
@@ -268,7 +268,7 @@ describe('createStats', () => {
         packageCount: {
           value: 1,
         },
-        duplicatedPackageCount: {
+        duplicatePackagesCount: {
           value: 0,
         },
       },
