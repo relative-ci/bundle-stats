@@ -8,4 +8,7 @@ module.exports = {
       },
     }],
   ],
+  plugins: [
+    'babel-plugin-lodash',
+  ],
 };

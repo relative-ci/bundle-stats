@@ -1,5 +1,6 @@
 import { get, uniqBy } from 'lodash';
 
+import { PACKAGES_SEPARATOR } from '../config';
 import { getModuleName } from '../modules';
 
 const PACKAGE_NAMES = /(node_modules|~)\/((!?@(([\w|\-|_|.]*)\/){2})|(([\w|\-|_|.]*)\/))/g;
@@ -13,7 +14,7 @@ const getPackageName = (moduleName) => {
 
   const names = found.map((modulePath) => modulePath.replace(/.*(node_modules|~)\/(.*)\/$/, '$2'));
 
-  return names.join(':');
+  return names.join(PACKAGES_SEPARATOR);
 };
 
 export const packagesModulesBundleTransform = (bundleStats) => {

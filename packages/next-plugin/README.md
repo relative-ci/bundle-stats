@@ -51,7 +51,7 @@ Standalone web application to compare Webpack/Lighthouse/Browsertime stats.
 
 ### [relative-ci.com](https://relative-ci.com)
 
-Continuous monitoring with BundleStats on CI:
+Continuous monitoring for bundle size, assets, modules and packages on CI:
 - Github Checks integration
 - support for all major CI services (Travis CI, Circle CI, Jenkins, Gitlab CI, Codeship, etc)
 - free for OpenSource

@@ -7,6 +7,7 @@ import {
   cacheInvalidationAssetsBundleTransform,
   countAssetsBundleTransform,
   countPackagesBundleTransform,
+  countDuplicatedPackagesBundleTransform,
   countModulesBundleTransform,
   chunkCountAssetsBundleTransform,
   sizeAssetsBundleTransform,
@@ -27,6 +28,11 @@ export const generateCacheInvalidation = (key) => (baseline, current) => {
 export const generatePackageCount = (key) => (_, current) => {
   const { stats } = countPackagesBundleTransform(packagesModulesBundleTransform(current));
   return set({}, key, stats.packageCount);
+};
+
+export const generateDuplicatedPackageCount = (key) => (_, current) => {
+  const { stats } = countDuplicatedPackagesBundleTransform(packagesModulesBundleTransform(current));
+  return set({}, key, stats.duplicatedPackageCount);
 };
 
 export const generateModuleCount = (key) => (_, current) => {
@@ -63,6 +69,7 @@ export const createStats = (baselineRawData, currentRawData) => {
     generateWebpackTotals('webpack.assets'),
     generateCacheInvalidation('webpack.cacheInvalidation'),
     generatePackageCount('webpack.packageCount'),
+    generateDuplicatedPackageCount('webpack.duplicatedPackageCount'),
     generateModuleCount('webpack.moduleCount'),
     generateChunkCount('webpack.chunkCount'),
     generateAssetCount('webpack.assetCount'),
