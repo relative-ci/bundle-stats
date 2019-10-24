@@ -44,6 +44,7 @@ Summary.defaultProps = {
     'webpack.chunkCount',
     'webpack.assetCount',
     'webpack.packageCount',
+    'webpack.duplicatedPackageCount',
   ],
   loading: false,
 };
