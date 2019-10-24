@@ -104,7 +104,7 @@ const METRICS = {
       biggerIsBetter: false,
     },
     duplicatedPackageCount: {
-      label: 'Duplicated package count',
+      label: 'Duplicated Packages Count',
       type: METRIC_TYPE_NUMERIC,
       biggerIsBetter: false,
     },

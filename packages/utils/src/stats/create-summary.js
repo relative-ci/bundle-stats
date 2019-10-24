@@ -10,6 +10,7 @@ export const createStatsSummary = (baselineStats, currentStats) => {
     'webpack.chunkCount',
     'webpack.assetCount',
     'webpack.packageCount',
+    'webpack.duplicatedPackageCount',
   ];
 
   return metrics.map((metric) => {
