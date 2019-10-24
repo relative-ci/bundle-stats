@@ -44,6 +44,10 @@ describe('Create job', () => {
           baseline: 0,
           current: 0,
         },
+        'webpack.duplicatePackagesCount': {
+          baseline: 0,
+          current: 0,
+        },
       },
       stats: {
         webpack: {
@@ -94,7 +98,7 @@ describe('Create job', () => {
           packageCount: {
             value: 0,
           },
-          duplicatedPackageCount: {
+          duplicatePackagesCount: {
             value: 0,
           },
         },
@@ -144,6 +148,10 @@ describe('Create job', () => {
           current: 4,
         },
         'webpack.packageCount': {
+          baseline: 0,
+          current: 0,
+        },
+        'webpack.duplicatePackagesCount': {
           baseline: 0,
           current: 0,
         },
@@ -197,7 +205,7 @@ describe('Create job', () => {
           packageCount: {
             value: 0,
           },
-          duplicatedPackageCount: {
+          duplicatePackagesCount: {
             value: 0,
           },
         },
