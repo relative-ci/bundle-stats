@@ -1,21 +1,51 @@
-import { get, last } from 'lodash';
+import { find, get, last } from 'lodash';
 
 import { PACKAGES_SEPARATOR } from '../config';
 
 export const countDuplicatePackagesBundleTransform = (bundleStats) => {
-  const packages = get(bundleStats, 'packages', {});
+  const data = get(bundleStats, 'packages', {});
 
-  const packageNames = Object.keys(packages).map(
-    (packageName) => last(packageName.split(PACKAGES_SEPARATOR)),
+  const packages = Object.keys(data).map(
+    (path) => ({
+      name: last(path.split(PACKAGES_SEPARATOR)),
+      path,
+    }),
   );
 
-  const value = packageNames.reduce((agg, packageName, index) => {
-    if (packageNames.slice(0, index).includes(packageName)) {
-      return agg + 1;
+  const { value, paths } = packages.reduce((agg, { name, path }, index) => {
+    if (index === 0) {
+      return agg;
+    }
+
+    const foundDuplicatePackage = find(packages.slice(0, index), { name });
+    if (foundDuplicatePackage) {
+      return {
+        paths: {
+          ...agg.paths,
+          [name]: [
+            ...agg.paths[name] ? agg.paths[name] : [],
+            // Include prev duplicate package if missing
+            ...agg.paths[name] && agg.paths[name].includes(foundDuplicatePackage.path)
+              ? []
+              : [foundDuplicatePackage.path],
+            path,
+          ],
+        },
+        value: agg.value + 1,
+      };
     }
 
     return agg;
-  }, 0);
+  }, { paths: {}, value: 0 });
 
-  return { stats: { duplicatePackagesCount: { value } } };
+  return {
+    warnings: {
+      duplicatePackages: paths,
+    },
+    stats: {
+      duplicatePackagesCount: {
+        value,
+      },
+    },
+  };
 };
