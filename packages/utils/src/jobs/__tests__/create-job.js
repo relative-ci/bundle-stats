@@ -11,6 +11,14 @@ describe('Create job', () => {
     });
 
     const expected = {
+      warnings: {
+        duplicatePackages: {
+          'package-c': [
+            'package-a:package-c',
+            'package-c',
+          ],
+        },
+      },
       summary: {
         'webpack.assets.totalSizeByTypeALL': {
           baseline: 0,
@@ -118,6 +126,14 @@ describe('Create job', () => {
     const actual = createJob({ webpack: { stats: webpackStatsCurrentExtracted } }, baselineJob);
 
     const expected = {
+      warnings: {
+        duplicatePackages: {
+          'package-c': [
+            'package-a:package-c',
+            'package-c',
+          ],
+        },
+      },
       summary: {
         'webpack.assets.totalSizeByTypeALL': {
           baseline: 63000,
