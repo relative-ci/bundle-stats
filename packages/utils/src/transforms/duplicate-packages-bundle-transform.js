@@ -2,7 +2,7 @@ import { find, get, last } from 'lodash';
 
 import { PACKAGES_SEPARATOR } from '../config';
 
-export const countDuplicatePackagesBundleTransform = (bundleStats) => {
+export const duplicatePackagesBundleTransform = (bundleStats) => {
   const data = get(bundleStats, 'packages', {});
 
   const packages = Object.keys(data).map(
@@ -24,7 +24,7 @@ export const countDuplicatePackagesBundleTransform = (bundleStats) => {
           ...agg.paths,
           [name]: [
             ...agg.paths[name] ? agg.paths[name] : [],
-            // Include prev duplicate package if missing
+            // Include prev duplicate package path if missing
             ...agg.paths[name] && agg.paths[name].includes(foundDuplicatePackage.path)
               ? []
               : [foundDuplicatePackage.path],

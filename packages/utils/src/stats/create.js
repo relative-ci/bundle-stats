@@ -7,7 +7,7 @@ import {
   cacheInvalidationAssetsBundleTransform,
   countAssetsBundleTransform,
   countPackagesBundleTransform,
-  countDuplicatePackagesBundleTransform,
+  duplicatePackagesBundleTransform,
   countModulesBundleTransform,
   chunkCountAssetsBundleTransform,
   sizeAssetsBundleTransform,
@@ -31,7 +31,7 @@ export const generatePackageCount = (key) => (_, current) => {
 };
 
 export const generateDuplicatedPackageCount = (key) => (_, current) => {
-  const { stats } = countDuplicatePackagesBundleTransform(packagesModulesBundleTransform(current));
+  const { stats } = duplicatePackagesBundleTransform(packagesModulesBundleTransform(current));
   return set({}, key, stats.duplicatePackagesCount);
 };
 
