@@ -1,11 +1,16 @@
 import {
-  flatMap, get, map, uniq,
+  flatMap, get, isEmpty, map, uniq,
 } from 'lodash';
 
 import { METRIC_TYPE_FILE_SIZE } from '../config/metrics';
 import { getMetricChanged, getMetricType, mergeRunsById } from '../metrics';
 import { getStatsByMetrics } from '../stats/get-stats-by-metrics';
-import { assetsWebpackTransform, modulesWebpackTransform } from '../transforms';
+import {
+  assetsWebpackTransform,
+  duplicatePackagesBundleTransform,
+  modulesWebpackTransform,
+  packagesModulesBundleTransform,
+} from '../transforms';
 import { getDelta, formatDelta } from './delta';
 import { formatPercentage } from './format';
 
@@ -90,8 +95,17 @@ export const getModulesReport = (runs) => map(
 export const createReport = (jobs) => {
   const runs = createRuns(jobs);
 
+  const { warnings: duplicatePackagesWarnings } = duplicatePackagesBundleTransform(
+    packagesModulesBundleTransform(get(jobs, '[0].rawData.webpack')),
+  );
+
+  const warnings = {
+    ...duplicatePackagesWarnings,
+  };
+
   return {
     runs: map(runs, 'meta'),
+    ...!isEmpty(warnings) ? warnings : {},
     sizes: addMetricsData(mergeRunsById(map(runs, 'sizes'))),
     assets: addMetricsData(mergeRunsById(map(runs, 'assets')), METRIC_TYPE_FILE_SIZE),
     modules: getModulesReport(runs),

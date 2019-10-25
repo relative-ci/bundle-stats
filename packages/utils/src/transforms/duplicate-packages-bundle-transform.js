@@ -1,4 +1,6 @@
-import { find, get, last } from 'lodash';
+import {
+  find, get, isEmpty, last,
+} from 'lodash';
 
 import { PACKAGES_SEPARATOR } from '../config';
 
@@ -40,7 +42,7 @@ export const duplicatePackagesBundleTransform = (bundleStats) => {
 
   return {
     warnings: {
-      duplicatePackages: paths,
+      ...!isEmpty(paths) ? { duplicatePackages: paths } : {},
     },
     stats: {
       duplicatePackagesCount: {

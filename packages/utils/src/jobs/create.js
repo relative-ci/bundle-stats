@@ -1,10 +1,11 @@
 import {
-  get, last, reverse, set,
+  get, isEmpty, last, reverse, set,
 } from 'lodash';
 
 import { createStats } from '../stats/create';
 import { createStatsSummary } from '../stats/create-summary';
 import { extractDataFromWebpackStats } from '../utils/extract-data';
+import { duplicatePackagesBundleTransform, packagesModulesBundleTransform } from '../transforms';
 
 const RAW_DATA_IDS = [
   'webpack.stats',
@@ -29,10 +30,19 @@ export const createJob = (source, baseline) => {
   const stats = createStats(baseline && baseline.rawData, data.rawData);
   const summary = createStatsSummary(baseline && baseline.stats, stats);
 
+  const { warnings: duplicatePackagesWarnings } = duplicatePackagesBundleTransform(
+    packagesModulesBundleTransform(get(data, 'rawData.webpack')),
+  );
+
+  const warnings = {
+    ...duplicatePackagesWarnings,
+  };
+
   return {
     ...data,
     stats,
     summary,
+    ...isEmpty(warnings) ? {} : warnings,
   };
 };
 

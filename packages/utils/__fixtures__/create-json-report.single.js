@@ -223,6 +223,58 @@ export default {
             },
           ],
         },
+        {
+          key: 'node_modules/package-a/index.js',
+          label: 'node_modules/package-a/index.js',
+          changed: false,
+          biggerIsBetter: false,
+          runs: [
+            {
+              name: 'node_modules/package-a/index.js',
+              value: 1000,
+              displayValue: '1000B',
+            },
+          ],
+        },
+        {
+          key: 'node_modules/package-a/node_modules/package-c/index.js',
+          label: 'node_modules/package-a/node_modules/package-c/index.js',
+          changed: false,
+          biggerIsBetter: false,
+          runs: [
+            {
+              name: 'node_modules/package-a/node_modules/package-c/index.js',
+              value: 1000,
+              displayValue: '1000B',
+            },
+          ],
+        },
+        {
+          key: 'node_modules/package-b/index.js',
+          label: 'node_modules/package-b/index.js',
+          changed: false,
+          biggerIsBetter: false,
+          runs: [
+            {
+              name: 'node_modules/package-b/index.js',
+              value: 1000,
+              displayValue: '1000B',
+            },
+          ],
+        },
+        {
+          key: 'node_modules/package-c/index.js',
+          label: 'node_modules/package-c/index.js',
+          changed: false,
+          biggerIsBetter: false,
+          runs: [
+            {
+              name: 'node_modules/package-c/index.js',
+              value: 1000,
+              displayValue: '1000B',
+            },
+          ],
+        },
       ],
     },
   ],
