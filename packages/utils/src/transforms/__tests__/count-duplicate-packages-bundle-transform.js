@@ -3,7 +3,10 @@ import { countDuplicatePackagesBundleTransform } from '../count-duplicate-packag
 describe('countDuplicatePackagesBundleTransform', () => {
   test('should return empty', () => {
     const actual = countDuplicatePackagesBundleTransform();
-    expect(actual).toEqual({ stats: { duplicatePackagesCount: { value: 0 } } });
+    expect(actual).toEqual({
+      warnings: { duplicatePackages: {} },
+      stats: { duplicatePackagesCount: { value: 0 } },
+    });
   });
 
   test('should return data', () => {
@@ -27,6 +30,24 @@ describe('countDuplicatePackagesBundleTransform', () => {
       },
     });
 
-    expect(actual).toEqual({ stats: { duplicatePackagesCount: { value: 2 } } });
+    expect(actual).toEqual({
+      warnings: {
+        duplicatePackages: {
+          'package-a': [
+            'package-a',
+            'package-b:package-a',
+          ],
+          'package-c': [
+            'package-c',
+            'org/package-d:package-c',
+          ],
+        },
+      },
+      stats: {
+        duplicatePackagesCount: {
+          value: 2,
+        },
+      },
+    });
   });
 });
