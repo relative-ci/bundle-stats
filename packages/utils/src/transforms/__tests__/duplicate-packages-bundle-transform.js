@@ -1,8 +1,8 @@
-import { countDuplicatePackagesBundleTransform } from '../count-duplicate-packages-bundle-transform';
+import { duplicatePackagesBundleTransform } from '../duplicate-packages-bundle-transform';
 
-describe('countDuplicatePackagesBundleTransform', () => {
+describe('duplicatePackagesBundleTransform', () => {
   test('should return empty', () => {
-    const actual = countDuplicatePackagesBundleTransform();
+    const actual = duplicatePackagesBundleTransform();
     expect(actual).toEqual({
       warnings: { duplicatePackages: {} },
       stats: { duplicatePackagesCount: { value: 0 } },
@@ -10,7 +10,7 @@ describe('countDuplicatePackagesBundleTransform', () => {
   });
 
   test('should return data', () => {
-    const actual = countDuplicatePackagesBundleTransform({
+    const actual = duplicatePackagesBundleTransform({
       packages: {
         'package-a': {
           value: 50,
