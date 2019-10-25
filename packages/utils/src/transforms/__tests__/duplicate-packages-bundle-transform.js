@@ -4,7 +4,7 @@ describe('duplicatePackagesBundleTransform', () => {
   test('should return empty', () => {
     const actual = duplicatePackagesBundleTransform();
     expect(actual).toEqual({
-      warnings: { duplicatePackages: {} },
+      warnings: {},
       stats: { duplicatePackagesCount: { value: 0 } },
     });
   });
