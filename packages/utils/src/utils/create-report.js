@@ -70,6 +70,7 @@ export const addMetricsData = (entries, metricType) => entries.map((entry) => {
 
 export const createRuns = (jobs) => jobs.map(({ internalBuildNumber, stats, rawData }) => {
   const webpackStats = get(rawData, 'webpack.stats');
+  const { modules } = modulesWebpackTransform(webpackStats);
 
   return {
     meta: {
@@ -77,7 +78,8 @@ export const createRuns = (jobs) => jobs.map(({ internalBuildNumber, stats, rawD
     },
     sizes: getStatsByMetrics(stats, SIZE_METRICS),
     ...assetsWebpackTransform(webpackStats),
-    ...modulesWebpackTransform(webpackStats),
+    modules,
+    ...packagesModulesBundleTransform({ modules }),
   };
 });
 
@@ -96,7 +98,7 @@ export const createReport = (jobs) => {
   const runs = createRuns(jobs);
 
   const { warnings: duplicatePackagesWarnings } = duplicatePackagesBundleTransform(
-    packagesModulesBundleTransform(get(jobs, '[0].rawData.webpack')),
+    get(jobs, '[0].packages'),
   );
 
   const warnings = {
@@ -109,5 +111,6 @@ export const createReport = (jobs) => {
     sizes: addMetricsData(mergeRunsById(map(runs, 'sizes'))),
     assets: addMetricsData(mergeRunsById(map(runs, 'assets')), METRIC_TYPE_FILE_SIZE),
     modules: getModulesReport(runs),
+    packages: addMetricsData(mergeRunsById(map(runs, 'packages')), METRIC_TYPE_FILE_SIZE),
   };
 };
