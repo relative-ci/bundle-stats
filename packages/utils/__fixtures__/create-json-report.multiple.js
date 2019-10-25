@@ -7,6 +7,14 @@ export default {
       internalBuildNumber: 2,
     },
   ],
+  warnings: {
+    duplicatePackages: {
+      'package-c': [
+        'package-a:package-c',
+        'package-c',
+      ],
+    },
+  },
   sizes: [
     {
       key: 'webpack.assets.totalSizeByTypeJS',
