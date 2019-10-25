@@ -278,4 +278,54 @@ export default {
       ],
     },
   ],
+  packages: [
+    {
+      key: 'package-a',
+      label: 'package-a',
+      changed: false,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 1000,
+          displayValue: '1000B',
+        },
+      ],
+    },
+    {
+      key: 'package-a:package-c',
+      label: 'package-a:package-c',
+      changed: false,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 1000,
+          displayValue: '1000B',
+        },
+      ],
+    },
+    {
+      key: 'package-b',
+      label: 'package-b',
+      changed: false,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 1000,
+          displayValue: '1000B',
+        },
+      ],
+    },
+    {
+      key: 'package-c',
+      label: 'package-c',
+      changed: false,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 1000,
+          displayValue: '1000B',
+        },
+      ],
+    },
+  ],
 };
