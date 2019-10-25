@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { createStats, createStatsSummary } from '@bundle-stats/utils';
+import { createJob } from '@bundle-stats/utils';
 
 import currentData from '../../__mocks__/job.current.json';
 import baselineData from '../../__mocks__/job.baseline.json';
@@ -13,26 +13,15 @@ import { BundleAssetsTotalsTable } from '../components/bundle-assets-totals-tabl
 import { BundleAssetsTotalsChartBars } from '../components/bundle-assets-totals-chart-bars';
 import { BundleModules } from '../components/bundle-modules';
 import { Summary } from '../components/summary';
+import { DuplicatePackagesWarning } from '../components/duplicate-packages-warning';
 import { getWrapperDecorator } from '../stories';
 import css from './bundle-page.module.css';
 
 const stories = storiesOf('Prototypes/BundlePage', module);
 stories.addDecorator(getWrapperDecorator());
 
-const currentStats = createStats(baselineData.rawData, currentData.rawData);
-const baselineStats = createStats(null, baselineData.rawData);
-
-const currentJob = {
-  ...currentData,
-  stats: currentStats,
-  summary: createStatsSummary(baselineStats, currentStats),
-};
-
-const baselineJob = {
-  ...baselineData,
-  stats: baselineStats,
-  summary: createStatsSummary(null, baselineStats),
-};
+const baselineJob = createJob(baselineData.rawData);
+const currentJob = createJob(currentData.rawData, baselineJob);
 
 const JOBS = [currentJob, baselineJob];
 
@@ -55,6 +44,11 @@ stories.add('totals', () => (
       <Container>
         <Summary data={currentJob.summary} />
       </Container>
+      {currentJob.warnings && currentJob.warnings.duplicatePackages && (
+        <Container>
+          <DuplicatePackagesWarning duplicatePackages={currentJob.warnings.duplicatePackages} />
+        </Container>
+      )}
       <Container>
         <Tabs>
           <span isTabActive>Totals</span>
@@ -82,6 +76,11 @@ stories.add('assets', () => (
       <Container>
         <Summary data={currentJob.summary} />
       </Container>
+      {currentJob.warnings && currentJob.warnings.duplicatePackages && (
+        <Container>
+          <DuplicatePackagesWarning duplicatePackages={currentJob.warnings.duplicatePackages} />
+        </Container>
+      )}
       <Container>
         <Tabs>
           <span>Totals</span>
@@ -106,6 +105,11 @@ stories.add('modules', () => (
       <Container>
         <Summary data={currentJob.summary} />
       </Container>
+      {currentJob.warnings && currentJob.warnings.duplicatePackages && (
+        <Container>
+          <DuplicatePackagesWarning duplicatePackages={currentJob.warnings.duplicatePackages} />
+        </Container>
+      )}
       <Container>
         <Tabs>
           <span>Totals</span>
