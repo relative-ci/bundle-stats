@@ -5,7 +5,11 @@ import {
 import { createStats } from '../stats/create';
 import { createStatsSummary } from '../stats/create-summary';
 import { extractDataFromWebpackStats } from '../utils/extract-data';
-import { duplicatePackagesBundleTransform, packagesModulesBundleTransform } from '../transforms';
+import {
+  duplicatePackagesBundleTransform,
+  modulesWebpackTransform,
+  packagesModulesBundleTransform,
+} from '../transforms';
 
 const RAW_DATA_IDS = [
   'webpack.stats',
@@ -31,7 +35,9 @@ export const createJob = (source, baseline) => {
   const summary = createStatsSummary(baseline && baseline.stats, stats);
 
   const { warnings: duplicatePackagesWarnings } = duplicatePackagesBundleTransform(
-    packagesModulesBundleTransform(get(data, 'rawData.webpack')),
+    packagesModulesBundleTransform({
+      ...modulesWebpackTransform(get(data, 'rawData.webpack.stats')),
+    }),
   );
 
   const warnings = {
@@ -42,7 +48,7 @@ export const createJob = (source, baseline) => {
     ...data,
     stats,
     summary,
-    ...isEmpty(warnings) ? {} : warnings,
+    ...isEmpty(warnings) ? {} : { warnings },
   };
 };
 
