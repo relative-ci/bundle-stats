@@ -98,7 +98,7 @@ export const createReport = (jobs) => {
   const runs = createRuns(jobs);
 
   const { warnings: duplicatePackagesWarnings } = duplicatePackagesBundleTransform(
-    get(jobs, '[0].packages'),
+    get(runs, '[0]', {}),
   );
 
   const warnings = {
@@ -107,7 +107,7 @@ export const createReport = (jobs) => {
 
   return {
     runs: map(runs, 'meta'),
-    ...!isEmpty(warnings) ? warnings : {},
+    ...!isEmpty(warnings) ? { warnings } : {},
     sizes: addMetricsData(mergeRunsById(map(runs, 'sizes'))),
     assets: addMetricsData(mergeRunsById(map(runs, 'assets')), METRIC_TYPE_FILE_SIZE),
     modules: getModulesReport(runs),
