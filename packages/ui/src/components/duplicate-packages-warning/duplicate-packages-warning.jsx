@@ -11,14 +11,21 @@ export const DuplicatePackagesWarning = (props) => {
 
   return (
     <Alert kind="warning" className={className}>
-      <h5 className={css.title}>
-        {`${entries.length} duplicate ${entries.length === 1 ? 'package' : 'packages'}:`}
-      </h5>
-      {entries.map(([key, paths]) => (
-        <p className={css.item}>
-          {`${key}: ${paths.join(', ')}`}
-        </p>
-      ))}
+      <h3 className={css.title}>
+        {`Bundle contains ${entries.length} unique duplicate ${entries.length === 1 ? 'package' : 'packages'}:`}
+      </h3>
+      <ol className={css.packages}>
+        {entries.map(([key, paths]) => (
+          <li key={key} className={css.item}>
+            <p className={css.itemTitle}>
+              {key}
+            </p>
+            <ul className={css.itemPackages}>
+              {paths.map((path) => <li>{path}</li>)}
+            </ul>
+          </li>
+        ))}
+      </ol>
     </Alert>
   );
 };
