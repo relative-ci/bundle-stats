@@ -11,6 +11,14 @@ describe('Create job', () => {
     });
 
     const expected = {
+      warnings: {
+        duplicatePackages: {
+          'package-c': [
+            'package-a:package-c',
+            'package-c',
+          ],
+        },
+      },
       summary: {
         'webpack.assets.totalSizeByTypeALL': {
           baseline: 0,
@@ -30,7 +38,7 @@ describe('Create job', () => {
         },
         'webpack.moduleCount': {
           baseline: 0,
-          current: 2,
+          current: 6,
         },
         'webpack.chunkCount': {
           baseline: 0,
@@ -42,11 +50,11 @@ describe('Create job', () => {
         },
         'webpack.packageCount': {
           baseline: 0,
-          current: 0,
+          current: 4,
         },
         'webpack.duplicatePackagesCount': {
           baseline: 0,
-          current: 0,
+          current: 1,
         },
       },
       stats: {
@@ -87,7 +95,7 @@ describe('Create job', () => {
             value: 0,
           },
           moduleCount: {
-            value: 2,
+            value: 6,
           },
           chunkCount: {
             value: 0,
@@ -96,10 +104,10 @@ describe('Create job', () => {
             value: 4,
           },
           packageCount: {
-            value: 0,
+            value: 4,
           },
           duplicatePackagesCount: {
-            value: 0,
+            value: 1,
           },
         },
       },
@@ -118,6 +126,14 @@ describe('Create job', () => {
     const actual = createJob({ webpack: { stats: webpackStatsCurrentExtracted } }, baselineJob);
 
     const expected = {
+      warnings: {
+        duplicatePackages: {
+          'package-c': [
+            'package-a:package-c',
+            'package-c',
+          ],
+        },
+      },
       summary: {
         'webpack.assets.totalSizeByTypeALL': {
           baseline: 63000,
@@ -136,8 +152,8 @@ describe('Create job', () => {
           current: 95.24,
         },
         'webpack.moduleCount': {
-          baseline: 2,
-          current: 2,
+          baseline: 5,
+          current: 6,
         },
         'webpack.chunkCount': {
           baseline: 0,
@@ -148,12 +164,12 @@ describe('Create job', () => {
           current: 4,
         },
         'webpack.packageCount': {
-          baseline: 0,
-          current: 0,
+          baseline: 3,
+          current: 4,
         },
         'webpack.duplicatePackagesCount': {
           baseline: 0,
-          current: 0,
+          current: 1,
         },
       },
       stats: {
@@ -194,7 +210,7 @@ describe('Create job', () => {
             value: 95.24,
           },
           moduleCount: {
-            value: 2,
+            value: 6,
           },
           chunkCount: {
             value: 0,
@@ -203,10 +219,10 @@ describe('Create job', () => {
             value: 4,
           },
           packageCount: {
-            value: 0,
+            value: 4,
           },
           duplicatePackagesCount: {
-            value: 0,
+            value: 1,
           },
         },
       },

@@ -4,6 +4,14 @@ export default {
       internalBuildNumber: 1,
     },
   ],
+  warnings: {
+    duplicatePackages: {
+      'package-c': [
+        'package-a:package-c',
+        'package-c',
+      ],
+    },
+  },
   sizes: [
     {
       key: 'webpack.assets.totalSizeByTypeJS',
@@ -222,6 +230,108 @@ export default {
               displayValue: '1.95KB',
             },
           ],
+        },
+        {
+          key: 'node_modules/package-a/index.js',
+          label: 'node_modules/package-a/index.js',
+          changed: false,
+          biggerIsBetter: false,
+          runs: [
+            {
+              name: 'node_modules/package-a/index.js',
+              value: 1000,
+              displayValue: '1000B',
+            },
+          ],
+        },
+        {
+          key: 'node_modules/package-a/node_modules/package-c/index.js',
+          label: 'node_modules/package-a/node_modules/package-c/index.js',
+          changed: false,
+          biggerIsBetter: false,
+          runs: [
+            {
+              name: 'node_modules/package-a/node_modules/package-c/index.js',
+              value: 1000,
+              displayValue: '1000B',
+            },
+          ],
+        },
+        {
+          key: 'node_modules/package-b/index.js',
+          label: 'node_modules/package-b/index.js',
+          changed: false,
+          biggerIsBetter: false,
+          runs: [
+            {
+              name: 'node_modules/package-b/index.js',
+              value: 1000,
+              displayValue: '1000B',
+            },
+          ],
+        },
+        {
+          key: 'node_modules/package-c/index.js',
+          label: 'node_modules/package-c/index.js',
+          changed: false,
+          biggerIsBetter: false,
+          runs: [
+            {
+              name: 'node_modules/package-c/index.js',
+              value: 1000,
+              displayValue: '1000B',
+            },
+          ],
+        },
+      ],
+    },
+  ],
+  packages: [
+    {
+      key: 'package-a',
+      label: 'package-a',
+      changed: false,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 1000,
+          displayValue: '1000B',
+        },
+      ],
+    },
+    {
+      key: 'package-a:package-c',
+      label: 'package-a:package-c',
+      changed: false,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 1000,
+          displayValue: '1000B',
+        },
+      ],
+    },
+    {
+      key: 'package-b',
+      label: 'package-b',
+      changed: false,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 1000,
+          displayValue: '1000B',
+        },
+      ],
+    },
+    {
+      key: 'package-c',
+      label: 'package-c',
+      changed: false,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 1000,
+          displayValue: '1000B',
         },
       ],
     },

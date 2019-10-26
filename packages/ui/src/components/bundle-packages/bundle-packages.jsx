@@ -7,7 +7,7 @@ import { FiltersDropdown } from '../../ui/filters-dropdown';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { MetricsTable } from '../metrics-table';
 import { JobName } from '../job-name';
-import { FILTER_CHANGED } from './bundle-packages.constants';
+import { FILTER_CHANGED, FILTER_DUPLICATE } from './bundle-packages.constants';
 import css from './bundle-packages.module.css';
 
 const RUN_TITLE_CURRENT = 'Current';
@@ -62,8 +62,12 @@ export const BundlePackages = (props) => {
           filters={{
             [FILTER_CHANGED]: {
               label: 'Changed',
-              defaultValue: filters.changed,
+              defaultValue: filters[FILTER_CHANGED],
               disabled: runs.length <= 1,
+            },
+            [FILTER_DUPLICATE]: {
+              label: 'Duplicate',
+              defaultValue: filters[FILTER_DUPLICATE],
             },
           }}
           label={`Filters (${items.length}/${totalRowCount})`}

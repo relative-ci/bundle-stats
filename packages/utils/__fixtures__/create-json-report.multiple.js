@@ -7,6 +7,14 @@ export default {
       internalBuildNumber: 2,
     },
   ],
+  warnings: {
+    duplicatePackages: {
+      'package-c': [
+        'package-a:package-c',
+        'package-c',
+      ],
+    },
+  },
   sizes: [
     {
       key: 'webpack.assets.totalSizeByTypeJS',
@@ -371,6 +379,169 @@ export default {
               displayValue: '1.46KB',
             },
           ],
+        },
+        {
+          key: 'node_modules/package-a/index.js',
+          label: 'node_modules/package-a/index.js',
+          changed: false,
+          biggerIsBetter: false,
+          runs: [
+            {
+              name: 'node_modules/package-a/index.js',
+              value: 1000,
+              displayValue: '1000B',
+              delta: 0,
+              deltaPercentage: 0,
+              displayDelta: '0B',
+              displayDeltaPercentage: '0%',
+            },
+            {
+              name: 'node_modules/package-a/index.js',
+              value: 1000,
+              displayValue: '1000B',
+            },
+          ],
+        },
+        {
+          key: 'node_modules/package-a/node_modules/package-c/index.js',
+          label: 'node_modules/package-a/node_modules/package-c/index.js',
+          changed: true,
+          biggerIsBetter: false,
+          runs: [
+            {
+              name: 'node_modules/package-a/node_modules/package-c/index.js',
+              value: 1000,
+              displayValue: '1000B',
+              delta: 1000,
+              deltaPercentage: 100,
+              displayDelta: '+1000B',
+              displayDeltaPercentage: '+100%',
+            },
+            null,
+          ],
+        },
+        {
+          key: 'node_modules/package-b/index.js',
+          label: 'node_modules/package-b/index.js',
+          changed: false,
+          biggerIsBetter: false,
+          runs: [
+            {
+              name: 'node_modules/package-b/index.js',
+              value: 1000,
+              displayValue: '1000B',
+              delta: 0,
+              deltaPercentage: 0,
+              displayDelta: '0B',
+              displayDeltaPercentage: '0%',
+            },
+            {
+              name: 'node_modules/package-b/index.js',
+              value: 1000,
+              displayValue: '1000B',
+            },
+          ],
+        },
+        {
+          key: 'node_modules/package-c/index.js',
+          label: 'node_modules/package-c/index.js',
+          changed: false,
+          biggerIsBetter: false,
+          runs: [
+            {
+              name: 'node_modules/package-c/index.js',
+              value: 1000,
+              displayValue: '1000B',
+              delta: 0,
+              deltaPercentage: 0,
+              displayDelta: '0B',
+              displayDeltaPercentage: '0%',
+            },
+            {
+              name: 'node_modules/package-c/index.js',
+              value: 1000,
+              displayValue: '1000B',
+            },
+          ],
+        },
+      ],
+    },
+  ],
+  packages: [
+    {
+      key: 'package-a',
+      label: 'package-a',
+      changed: false,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 1000,
+          displayValue: '1000B',
+          delta: 0,
+          deltaPercentage: 0,
+          displayDelta: '0B',
+          displayDeltaPercentage: '0%',
+        },
+        {
+          value: 1000,
+          displayValue: '1000B',
+        },
+      ],
+    },
+    {
+      key: 'package-a:package-c',
+      label: 'package-a:package-c',
+      changed: true,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 1000,
+          displayValue: '1000B',
+          delta: 1000,
+          deltaPercentage: 100,
+          displayDelta: '+1000B',
+          displayDeltaPercentage: '+100%',
+        },
+        null,
+      ],
+    },
+    {
+      key: 'package-b',
+      label: 'package-b',
+      changed: false,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 1000,
+          displayValue: '1000B',
+          delta: 0,
+          deltaPercentage: 0,
+          displayDelta: '0B',
+          displayDeltaPercentage: '0%',
+        },
+        {
+          value: 1000,
+          displayValue: '1000B',
+        },
+      ],
+    },
+    {
+      key: 'package-c',
+      label: 'package-c',
+      changed: false,
+      biggerIsBetter: false,
+      runs: [
+        {
+          value: 1000,
+          displayValue: '1000B',
+          delta: 0,
+          deltaPercentage: 0,
+          displayDelta: '0B',
+          displayDeltaPercentage: '0%',
+        },
+        {
+          value: 1000,
+          displayValue: '1000B',
         },
       ],
     },

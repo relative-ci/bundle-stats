@@ -13,4 +13,4 @@ export * from './packages-modules-bundle-transform';
 
 // packages transforms
 export * from './count-packages-bundle-transform';
-export * from './count-duplicate-packages-bundle-transform';
+export * from './duplicate-packages-bundle-transform';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { createStats, createStatsSummary } from '@bundle-stats/utils';
+import { createJob } from '@bundle-stats/utils';
 
 import currentData from '../../__mocks__/job.current.json';
 import baselineData from '../../__mocks__/job.baseline.json';
@@ -12,27 +12,17 @@ import { BundleAssets } from '../components/bundle-assets';
 import { BundleAssetsTotalsTable } from '../components/bundle-assets-totals-table';
 import { BundleAssetsTotalsChartBars } from '../components/bundle-assets-totals-chart-bars';
 import { BundleModules } from '../components/bundle-modules';
+import { BundlePackages } from '../components/bundle-packages';
 import { Summary } from '../components/summary';
+import { DuplicatePackagesWarning } from '../components/duplicate-packages-warning';
 import { getWrapperDecorator } from '../stories';
 import css from './bundle-page.module.css';
 
 const stories = storiesOf('Prototypes/BundlePage', module);
 stories.addDecorator(getWrapperDecorator());
 
-const currentStats = createStats(baselineData.rawData, currentData.rawData);
-const baselineStats = createStats(null, baselineData.rawData);
-
-const currentJob = {
-  ...currentData,
-  stats: currentStats,
-  summary: createStatsSummary(baselineStats, currentStats),
-};
-
-const baselineJob = {
-  ...baselineData,
-  stats: baselineStats,
-  summary: createStatsSummary(null, baselineStats),
-};
+const baselineJob = createJob(baselineData.rawData);
+const currentJob = createJob(currentData.rawData, baselineJob);
 
 const JOBS = [currentJob, baselineJob];
 
@@ -55,11 +45,17 @@ stories.add('totals', () => (
       <Container>
         <Summary data={currentJob.summary} />
       </Container>
+      {currentJob.warnings && currentJob.warnings.duplicatePackages && (
+        <Container>
+          <DuplicatePackagesWarning duplicatePackages={currentJob.warnings.duplicatePackages} />
+        </Container>
+      )}
       <Container>
         <Tabs>
           <span isTabActive>Totals</span>
           <span>Assets</span>
           <span>Modules</span>
+          <span>Packages</span>
         </Tabs>
       </Container>
       <Container>
@@ -82,11 +78,17 @@ stories.add('assets', () => (
       <Container>
         <Summary data={currentJob.summary} />
       </Container>
+      {currentJob.warnings && currentJob.warnings.duplicatePackages && (
+        <Container>
+          <DuplicatePackagesWarning duplicatePackages={currentJob.warnings.duplicatePackages} />
+        </Container>
+      )}
       <Container>
         <Tabs>
           <span>Totals</span>
           <span isTabActive>Assets</span>
           <span>Modules</span>
+          <span>Packages</span>
         </Tabs>
       </Container>
       <Container>
@@ -106,15 +108,51 @@ stories.add('modules', () => (
       <Container>
         <Summary data={currentJob.summary} />
       </Container>
+      {currentJob.warnings && currentJob.warnings.duplicatePackages && (
+        <Container>
+          <DuplicatePackagesWarning duplicatePackages={currentJob.warnings.duplicatePackages} />
+        </Container>
+      )}
       <Container>
         <Tabs>
           <span>Totals</span>
           <span>Assets</span>
           <span isTabActive>Modules</span>
+          <span>Packages</span>
         </Tabs>
       </Container>
       <Container>
         <BundleModules jobs={JOBS} />
+      </Container>
+    </main>
+    <Footer className={css.footer} />
+  </>
+));
+
+stories.add('packages', () => (
+  <>
+    <PageHeader />
+    <main className={css.main}>
+      <Container>
+        <Summary data={currentJob.summary} />
+      </Container>
+      {currentJob.warnings && currentJob.warnings.duplicatePackages && (
+        <Container>
+          <DuplicatePackagesWarning duplicatePackages={currentJob.warnings.duplicatePackages} />
+        </Container>
+      )}
+      <Container>
+        <Tabs>
+          <span>Totals</span>
+          <span>Assets</span>
+          <span>Modules</span>
+          <span isTabActive>Packages</span>
+        </Tabs>
+      </Container>
+      <Container>
+        <Box>
+          <BundlePackages jobs={JOBS} />
+        </Box>
       </Container>
     </main>
     <Footer className={css.footer} />

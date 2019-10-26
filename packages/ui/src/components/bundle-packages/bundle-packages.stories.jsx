@@ -1,26 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { createStats, createStatsSummary } from '@bundle-stats/utils';
+import { createJob } from '@bundle-stats/utils';
 
 import currentData from '../../../__mocks__/job.current.json';
 import baselineData from '../../../__mocks__/job.baseline.json';
 import { getWrapperDecorator } from '../../stories';
 import { BundlePackages } from '.';
 
-const currentStats = createStats(baselineData.rawData, currentData.rawData);
-const baselineStats = createStats(null, baselineData.rawData);
-
-const currentJob = {
-  ...currentData,
-  stats: currentStats,
-  summary: createStatsSummary(baselineStats, currentStats),
-};
-
-const baselineJob = {
-  ...baselineData,
-  stats: baselineStats,
-  summary: createStatsSummary(null, baselineStats),
-};
+const baselineJob = createJob(baselineData.rawData);
+const currentJob = createJob(currentData.rawData, baselineJob);
 
 const stories = storiesOf('Components/BundlePackages', module);
 stories.addDecorator(getWrapperDecorator());

@@ -1,7 +1,9 @@
 import {
   compose, withProps, withState,
 } from 'recompose';
-import { get, filter } from 'lodash';
+import {
+  get, filter, flatten, uniq,
+} from 'lodash';
 import {
   METRIC_TYPE_FILE_SIZE,
   addMetricsData,
@@ -13,6 +15,7 @@ import {
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import {
   FILTER_CHANGED,
+  FILTER_DUPLICATE,
   SORT_BY_NAME,
   SORT_BY_DELTA,
   SORT_BY_SIZE,
@@ -21,6 +24,10 @@ import {
 
 const getRowFilter = (filters) => (item) => {
   if (filters[FILTER_CHANGED] && !item.changed) {
+    return false;
+  }
+
+  if (filters[FILTER_DUPLICATE] && !item.duplicate) {
     return false;
   }
 
@@ -46,6 +53,11 @@ const getCustomSort = (sortId) => (item) => {
   ];
 };
 
+const addDuplicateTag = (items, duplicatePackages) => items.map((item) => ({
+  ...item,
+  duplicate: duplicatePackages.includes(item.key),
+}));
+
 export const enhance = compose(
   withProps(({ jobs }) => {
     const runs = jobs.map((job) => ({ meta: job }));
@@ -55,7 +67,15 @@ export const enhance = compose(
       return res.packages;
     });
 
-    const items = addMetricsData(mergeRunsById(jobsPackages), METRIC_TYPE_FILE_SIZE);
+    const duplicatePackages = uniq(flatten(jobs.map((job) => {
+      const data = get(job, 'warnings.duplicatePackages', {});
+      return flatten(Object.values(data));
+    })));
+
+    const items = addDuplicateTag(
+      addMetricsData(mergeRunsById(jobsPackages), METRIC_TYPE_FILE_SIZE),
+      duplicatePackages,
+    );
 
     return {
       runs,
@@ -65,6 +85,7 @@ export const enhance = compose(
 
   withState('filters', 'updateFilters', ({ jobs }) => ({
     [FILTER_CHANGED]: jobs.length > 1, // enable filter only when there are multiple jobs
+    [FILTER_DUPLICATE]: false,
   })),
 
   withProps(({ items, filters }) => ({

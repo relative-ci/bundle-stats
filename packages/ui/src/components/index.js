@@ -5,6 +5,7 @@ export { BundleAssetsTotalsChartBars } from './bundle-assets-totals-chart-bars';
 export { BundleChunkModules } from './bundle-chunk-modules';
 export { BundlePackages } from './bundle-packages';
 export { BundleModules } from './bundle-modules';
+export { DuplicatePackagesWarning } from './duplicate-packages-warning';
 export { Delta } from './delta';
 export { JobName } from './job-name';
 export { LighthouseTable } from './lighthouse-table';
