@@ -1,7 +1,24 @@
 .title {
   margin-bottom: var(--space-xxxsmall);
+  font-size: var(--size-medium);
+}
+
+.packages {
+  margin: 0;
+  padding: 0;
+  font-size: var(--size-small);
 }
 
 .item {
+  margin: 0;
+  list-style-position: inside;
+}
+
+.itemTitle {
+  margin: 0;
+  display: inline;
+}
+
+.itemPackages {
   margin: 0;
 }
