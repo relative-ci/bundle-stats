@@ -12,6 +12,7 @@ import { BundleAssets } from '../components/bundle-assets';
 import { BundleAssetsTotalsTable } from '../components/bundle-assets-totals-table';
 import { BundleAssetsTotalsChartBars } from '../components/bundle-assets-totals-chart-bars';
 import { BundleModules } from '../components/bundle-modules';
+import { BundlePackages } from '../components/bundle-packages';
 import { Summary } from '../components/summary';
 import { DuplicatePackagesWarning } from '../components/duplicate-packages-warning';
 import { getWrapperDecorator } from '../stories';
@@ -54,6 +55,7 @@ stories.add('totals', () => (
           <span isTabActive>Totals</span>
           <span>Assets</span>
           <span>Modules</span>
+          <span>Packages</span>
         </Tabs>
       </Container>
       <Container>
@@ -86,6 +88,7 @@ stories.add('assets', () => (
           <span>Totals</span>
           <span isTabActive>Assets</span>
           <span>Modules</span>
+          <span>Packages</span>
         </Tabs>
       </Container>
       <Container>
@@ -115,10 +118,41 @@ stories.add('modules', () => (
           <span>Totals</span>
           <span>Assets</span>
           <span isTabActive>Modules</span>
+          <span>Packages</span>
         </Tabs>
       </Container>
       <Container>
         <BundleModules jobs={JOBS} />
+      </Container>
+    </main>
+    <Footer className={css.footer} />
+  </>
+));
+
+stories.add('packages', () => (
+  <>
+    <PageHeader />
+    <main className={css.main}>
+      <Container>
+        <Summary data={currentJob.summary} />
+      </Container>
+      {currentJob.warnings && currentJob.warnings.duplicatePackages && (
+        <Container>
+          <DuplicatePackagesWarning duplicatePackages={currentJob.warnings.duplicatePackages} />
+        </Container>
+      )}
+      <Container>
+        <Tabs>
+          <span>Totals</span>
+          <span>Assets</span>
+          <span>Modules</span>
+          <span isTabActive>Packages</span>
+        </Tabs>
+      </Container>
+      <Container>
+        <Box>
+          <BundlePackages jobs={JOBS} />
+        </Box>
       </Container>
     </main>
     <Footer className={css.footer} />
