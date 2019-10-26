@@ -1,5 +1,6 @@
 .root {
-  padding: var(--space-xsmall) var(--space-small);
+  position: relative;
+  padding: var(--space-xsmall) var(--space-large) var(--space-xsmall) var(--space-small);
   font-size: var(--size-small);
   flex-basis: 15%;
 }
@@ -27,6 +28,39 @@
   min-height: var(--space-small);
   line-height: var(--space-small);
   text-align: left;
+}
+
+.helpButton {
+  position: absolute;
+  top: var(--space-xxsmall);
+  right: var(--space-xxxsmall);
+  border: none;
+  appearance: none;
+  padding: var(--space-xxxsmall);
+  background: none;
+  cursor: pointer;
+  color: var(--color-gray-light);
+  transition: color 0.2s;
+}
+
+.helpButton:hover {
+  color: var(--color-gray);
+}
+
+/* hover state */
+.helpButton {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.2s;
+}
+
+.root:hover .helpButton {
+  visibility: visible;
+  opacity: 1;
+}
+
+.root.loading .helpButton {
+  display: none;
 }
 
 /* Loading state */
