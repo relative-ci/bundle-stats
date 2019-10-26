@@ -23,10 +23,10 @@ export const Summary = ({
   return (
     <Box className={cx(css.root, className)}>
       <div className={css.items}>
-        {keys.slice(0, 3).map(getRenderSummaryItem({ size: 'large' }))}
+        {keys.slice(0, 4).map(getRenderSummaryItem({ size: 'large' }))}
       </div>
       <div className={css.items}>
-        {keys.slice(3).map(getRenderSummaryItem())}
+        {keys.slice(4).map(getRenderSummaryItem())}
       </div>
     </Box>
   );
