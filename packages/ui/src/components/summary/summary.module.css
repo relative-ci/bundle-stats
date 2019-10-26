@@ -10,5 +10,6 @@
 
 .item {
   box-shadow: 0 1px var(--color-gray-ultra-light), 1px 0 var(--color-gray-ultra-light);
-  flex: 1 1 auto;
+  flex-grow: 1;
+  flex-shrink: 1;
 }

@@ -1,6 +1,7 @@
 .root {
   padding: var(--space-xsmall) var(--space-small);
   font-size: var(--size-small);
+  flex-basis: 15%;
 }
 
 .title {
@@ -37,11 +38,12 @@
 
 /* Size large */
 .large {
-  font-size: var(--size-medium);
+  font-size: var(--size-large);
+  flex-basis: 25%;
 }
 
 .large .currentMetric {
-  font-size: var(--size-xlarge);
+  font-size: var(--size-xxlarge);
   min-height: var(--space-large);
 }
 
