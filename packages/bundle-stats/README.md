@@ -1,9 +1,9 @@
 <p align="center">
-  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank"><img alt="BundleStats screenshot" width="480" src="https://camo.githubusercontent.com/e739d0cb8de5c057020dca87b22a1bc4d181e8b1/68747470733a2f2f7777772e64726f70626f782e636f6d2f732f62396838776e793937737435696f722f62756e646c652d73746174732d312e31312e302e6a70673f7261773d31"/></a>
+  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank"><img alt="BundleStats screenshot" width="480" src="https://camo.githubusercontent.com/947159713ba0fccda8039f212839df132d41054e/68747470733a2f2f7777772e64726f70626f782e636f6d2f732f393573676779706b34676a777831622f62756e646c652d73746174732d312e31322e6a70673f7261773d31"/></a>
 </p>
 <h1 align="center">BundleStats</h1>
 <p align="center">
-  Generate bundle report(bundle size, assets, modules) and compare the results between different builds.
+  Generate bundle report(bundle size, assets, modules, packages) and compare the results between different builds.
 </p>
 <p align="center">
   <a href="https://www.npmjs.com/package/bundle-stats"><img src="https://img.shields.io/npm/v/bundle-stats.svg" /></a>
