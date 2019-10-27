@@ -62,7 +62,7 @@ const StandaloneApp = ({ jobs }) => {
       <Container>
         <Summary data={getSummaryData(jobs)} />
       </Container>
-      {warnings.duplicatePackages && (
+      {warnings && warnings.duplicatePackages && (
         <Container>
           <DuplicatePackagesWarning duplicatePackages={warnings.duplicatePackages} />
         </Container>
