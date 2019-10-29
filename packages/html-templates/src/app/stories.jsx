@@ -1,4 +1,3 @@
-// eslint-disable-line
 /* global module */
 import { storiesOf } from '@storybook/react';
 import { createJob } from '@bundle-stats/utils';
