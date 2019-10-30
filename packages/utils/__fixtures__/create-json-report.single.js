@@ -99,7 +99,7 @@ export default {
     },
     {
       key: 'webpack.assets.totalSizeByTypeALL',
-      label: 'Total Size',
+      label: 'Total Bundle Size',
       changed: false,
       biggerIsBetter: false,
       runs: [
@@ -111,7 +111,7 @@ export default {
     },
     {
       key: 'webpack.assets.totalInitialSizeCSS',
-      label: 'Initial CSS',
+      label: 'Initial CSS Size',
       changed: false,
       biggerIsBetter: false,
       runs: [
@@ -123,7 +123,7 @@ export default {
     },
     {
       key: 'webpack.assets.totalInitialSizeJS',
-      label: 'Initial JS',
+      label: 'Initial JS Size',
       changed: false,
       biggerIsBetter: false,
       runs: [
