@@ -26,6 +26,7 @@ export const Tooltip = (props) => {
       {children}
       <div className={css.tooltip}>
         {title}
+        <span className={css.tooltipArrow} />
       </div>
     </Component>
   );
