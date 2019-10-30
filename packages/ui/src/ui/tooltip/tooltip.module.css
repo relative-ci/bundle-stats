@@ -20,24 +20,39 @@
   white-space: nowrap;
 }
 
-.tooltip::after {
+.tooltipArrow {
 	position: absolute;
-	left: 50%;
+	left: 0;
+  right: 0;
 	top: 100%;
-	transform: translateX(-50%);
+  width: 100%;
+  height: var(--space-small);
+  overflow: hidden;
+}
+
+.tooltipArrow::before {
 	content: '';
-	display: block;
-	border: var(--space-xxsmall) solid transparent;
-	border-top-color: var(--color-light);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: var(--space-xsmall);
+  height: var(--space-xsmall);
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+
+  background: var(--color-light);
+  box-shadow: 0 0 var(--space-xxsmall) rgba(0, 0, 0, 0.2);
 }
 
 /* Hover */
 .tooltip {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.2s;
 }
 
 .root:hover .tooltip {
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Align modifier */
@@ -46,6 +61,6 @@
   transform: translateX(calc(0px - var(--space-xsmall))) translateY(calc(0px - var(--space-xsmall)));
 }
 
-.topLeft .tooltip::after {
-  left: 20px;
+.topLeft .tooltipArrow::before {
+  left: var(--space-medium);
 }
