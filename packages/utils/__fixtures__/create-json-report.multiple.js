@@ -1,10 +1,10 @@
 export default {
   runs: [
     {
-      internalBuildNumber: 1,
+      internalBuildNumber: 2,
     },
     {
-      internalBuildNumber: 2,
+      internalBuildNumber: 1,
     },
   ],
   warnings: {

@@ -59,7 +59,7 @@ export const createJobs = (sources) => {
   const jobs = reverse([...sources]).reduce((agg, source, idx) => [
     {
       ...createJob(source, last(agg)),
-      internalBuildNumber: (sources.length - idx),
+      internalBuildNumber: (idx + 1),
     },
     ...agg,
   ], []);
