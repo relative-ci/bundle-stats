@@ -12,6 +12,6 @@ describe('Create jobs', () => {
       { webpack: { stats: webpackStatsCurrentExtracted } },
       { webpack: { stats: webpackStatsBaselineExtracted } },
     ]);
-    expect(actual[1].internalBuildNumber).toBe(2);
+    expect(actual[0].internalBuildNumber).toBe(2);
   });
 });
