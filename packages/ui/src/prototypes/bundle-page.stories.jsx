@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { createJob } from '@bundle-stats/utils';
+import { createJobs } from '@bundle-stats/utils';
 
 import currentData from '../../__mocks__/job.current.json';
 import baselineData from '../../__mocks__/job.baseline.json';
@@ -8,6 +8,7 @@ import {
   Box, Container, Logo, Tabs,
 } from '../ui';
 import { Header, Footer } from '../layout';
+import { JobsHeader } from '../components/jobs-header';
 import { BundleAssets } from '../components/bundle-assets';
 import { BundleAssetsTotalsTable } from '../components/bundle-assets-totals-table';
 import { BundleAssetsTotalsChartBars } from '../components/bundle-assets-totals-chart-bars';
@@ -21,10 +22,8 @@ import css from './bundle-page.module.css';
 const stories = storiesOf('Prototypes/BundlePage', module);
 stories.addDecorator(getWrapperDecorator());
 
-const baselineJob = createJob(baselineData.rawData);
-const currentJob = createJob(currentData.rawData, baselineJob);
-
-const JOBS = [currentJob, baselineJob];
+const JOBS = createJobs([currentData.rawData, baselineData.rawData]);
+const [currentJob] = JOBS;
 
 const PageHeader = () => (
   <Header
@@ -42,6 +41,9 @@ stories.add('totals', () => (
   <>
     <PageHeader />
     <main className={css.main}>
+      <Container>
+        <JobsHeader jobs={JOBS} />
+      </Container>
       <Container>
         <Summary data={currentJob.summary} />
       </Container>
@@ -76,6 +78,9 @@ stories.add('assets', () => (
     <PageHeader />
     <main className={css.main}>
       <Container>
+        <JobsHeader jobs={JOBS} />
+      </Container>
+      <Container>
         <Summary data={currentJob.summary} />
       </Container>
       {currentJob.warnings && currentJob.warnings.duplicatePackages && (
@@ -106,6 +111,9 @@ stories.add('modules', () => (
     <PageHeader />
     <main className={css.main}>
       <Container>
+        <JobsHeader jobs={JOBS} />
+      </Container>
+      <Container>
         <Summary data={currentJob.summary} />
       </Container>
       {currentJob.warnings && currentJob.warnings.duplicatePackages && (
@@ -133,6 +141,9 @@ stories.add('packages', () => (
   <>
     <PageHeader />
     <main className={css.main}>
+      <Container>
+        <JobsHeader jobs={JOBS} />
+      </Container>
       <Container>
         <Summary data={currentJob.summary} />
       </Container>
