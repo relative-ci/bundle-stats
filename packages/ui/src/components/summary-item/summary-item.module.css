@@ -1,6 +1,5 @@
 .root {
   position: relative;
-  padding: var(--space-xsmall) var(--space-large) var(--space-xsmall) var(--space-small);
   font-size: var(--size-small);
   flex-basis: 15%;
 }
@@ -61,6 +60,11 @@
 
 .root.loading .helpButton {
   display: none;
+}
+
+/* Show metric description modifier */
+.showMetricDescription .title {
+  padding-right: var(--space-medium);
 }
 
 /* Loading state */

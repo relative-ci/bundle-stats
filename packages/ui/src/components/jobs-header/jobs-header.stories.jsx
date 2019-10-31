@@ -12,6 +12,12 @@ stories.add('default', () => (
     jobs={[
       {
         internalBuildNumber: 1,
+        summary: {
+          'webpack.assets.totalSizeByTypeALL': {
+            current: 1000000,
+            baseline: 900000,
+          },
+        },
       },
     ]}
   />
@@ -22,9 +28,21 @@ stories.add('multiple jobs', () => (
     jobs={[
       {
         internalBuildNumber: 1,
+        summary: {
+          'webpack.assets.totalSizeByTypeALL': {
+            current: 1000000,
+            baseline: 900000,
+          },
+        },
       },
       {
         internalBuildNumber: 2,
+        summary: {
+          'webpack.assets.totalSizeByTypeALL': {
+            current: 900000,
+            baseline: 0,
+          },
+        },
       },
     ]}
   />

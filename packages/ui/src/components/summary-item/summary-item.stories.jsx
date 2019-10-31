@@ -18,13 +18,6 @@ stories.add('default', () => (
   />
 ));
 
-stories.add('loading', () => (
-  <SummaryItem
-    loading
-    id="webpack.assets.totalSizeByTypeALL"
-  />
-));
-
 stories.add('size large', () => (
   <SummaryItem
     size="large"
@@ -34,5 +27,24 @@ stories.add('size large', () => (
       current: 120 * 1000,
       baseline: 100 * 1000,
     }}
+  />
+));
+
+stories.add('showMetricDescription', () => (
+  <SummaryItem
+    loading={false}
+    id="webpack.assets.totalSizeByTypeALL"
+    data={{
+      current: 120 * 1000,
+      baseline: 100 * 1000,
+    }}
+    showMetricDescription
+  />
+));
+
+stories.add('loading', () => (
+  <SummaryItem
+    loading
+    id="webpack.assets.totalSizeByTypeALL"
   />
 ));

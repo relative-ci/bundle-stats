@@ -11,14 +11,16 @@ import { Delta } from '../delta';
 import css from './summary-item.module.css';
 
 export const SummaryItem = ({
-  className, size, id, data, loading,
+  className, size, id, data, loading, showMetricDescription,
 }) => {
   const { baseline, current } = data || { baseline: 0, current: 0 };
 
   const metric = getMetricType(id);
   const diff = getDelta({ value: baseline }, { value: current });
 
-  const rootClassName = cx(css.root, className, css[size]);
+  const rootClassName = cx(
+    css.root, className, css[size], showMetricDescription && css.showMetricDescription,
+  );
 
   return (
     <div className={rootClassName}>
@@ -48,7 +50,7 @@ export const SummaryItem = ({
         <span className={cx(css.delta, css.loading)} />
       )}
 
-      {metric.description && (
+      {showMetricDescription && metric.description && (
         <Tooltip
           as="button"
           type="button"
@@ -66,6 +68,7 @@ SummaryItem.defaultProps = {
   className: '',
   data: null,
   size: 'medium',
+  showMetricDescription: false,
 };
 
 SummaryItem.propTypes = {
@@ -83,4 +86,7 @@ SummaryItem.propTypes = {
 
   /** Summary data */
   data: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+
+  /** Show description */
+  showMetricDescription: PropTypes.bool,
 };

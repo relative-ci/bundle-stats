@@ -16,6 +16,7 @@ export const Summary = ({
       id={key}
       data={data && data[key]}
       loading={loading}
+      showMetricDescription
       {...itemProps}
     />
   );
@@ -23,10 +24,10 @@ export const Summary = ({
   return (
     <Box className={cx(css.root, className)}>
       <div className={css.items}>
-        {keys.slice(0, 4).map(getRenderSummaryItem({ size: 'large' }))}
+        {keys.slice(0, 3).map(getRenderSummaryItem())}
       </div>
       <div className={css.items}>
-        {keys.slice(4).map(getRenderSummaryItem())}
+        {keys.slice(3).map(getRenderSummaryItem())}
       </div>
     </Box>
   );
@@ -36,7 +37,6 @@ Summary.defaultProps = {
   className: '',
   data: null,
   keys: [
-    'webpack.assets.totalSizeByTypeALL',
     'webpack.assets.totalInitialSizeJS',
     'webpack.assets.totalInitialSizeCSS',
     'webpack.cacheInvalidation',
