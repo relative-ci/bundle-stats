@@ -37,7 +37,7 @@
     "@relative-ci/agent": "1.2.0",
     "@storybook/addon-storyshots": "5.2.5",
     "@storybook/react": "5.2.5",
-    "autoprefixer": "9.7.0",
+    "autoprefixer": "9.7.1",
     "babel-eslint": "10.0.3",
     "babel-jest": "24.9.0",
     "babel-loader": "8.0.6",
