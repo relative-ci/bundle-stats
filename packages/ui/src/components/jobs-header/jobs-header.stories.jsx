@@ -12,6 +12,10 @@ stories.add('default', () => (
     jobs={[
       {
         internalBuildNumber: 1,
+        createdAt: '2019-01-02T00:00:00.000Z',
+        commit: 'abc123',
+        commitMessage: 'feature: Add header',
+        branch: 'master',
         summary: {
           'webpack.assets.totalSizeByTypeALL': {
             current: 1000000,
@@ -28,6 +32,10 @@ stories.add('multiple jobs', () => (
     jobs={[
       {
         internalBuildNumber: 1,
+        createdAt: '2019-01-02T00:00:00.000Z',
+        commit: 'abc123',
+        commitMessage: 'feature: Add header logo',
+        branch: 'master',
         summary: {
           'webpack.assets.totalSizeByTypeALL': {
             current: 1000000,
@@ -37,6 +45,10 @@ stories.add('multiple jobs', () => (
       },
       {
         internalBuildNumber: 2,
+        createdAt: '2019-01-01T00:00:00.000Z',
+        commit: 'cba321',
+        commitMessage: 'fix: Prevent error when data is empty',
+        branch: 'master',
         summary: {
           'webpack.assets.totalSizeByTypeALL': {
             current: 900000,
