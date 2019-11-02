@@ -7,6 +7,7 @@ import BranchIcon from './assets/branch.svg';
 import ClockIcon from './assets/clock.svg';
 import CommitIcon from './assets/commit.svg';
 import FilterIcon from './assets/filter.svg';
+import HelpIcon from './assets/help.svg';
 import PackageIcon from './assets/package.svg';
 import PullRequestIcon from './assets/pull-request.svg';
 import SortIcon from './assets/sort.svg';
@@ -19,6 +20,7 @@ const ICONS = {
   clock: ClockIcon,
   commit: CommitIcon,
   filter: FilterIcon,
+  help: HelpIcon,
   package: PackageIcon,
   pr: PullRequestIcon,
   sort: SortIcon,
