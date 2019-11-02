@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { createStatsSummary } from '@bundle-stats/utils';
 import { Box } from '@bundle-stats/ui/lib-esm/ui/box';
 import { Container } from '@bundle-stats/ui/lib-esm/ui/container';
+import { JobsHeader } from '@bundle-stats/ui/lib-esm/components/jobs-header';
 import { DuplicatePackagesWarning } from '@bundle-stats/ui/lib-esm/components/duplicate-packages-warning';
 import { Summary } from '@bundle-stats/ui/lib-esm/components/summary';
 import { BundleAssets } from '@bundle-stats/ui/lib-esm/components/bundle-assets';
@@ -59,6 +60,9 @@ const StandaloneApp = ({ jobs }) => {
 
   return (
     <StandaloneAppLayout>
+      <Container>
+        <JobsHeader jobs={jobs} />
+      </Container>
       <Container>
         <Summary data={getSummaryData(jobs)} />
       </Container>
