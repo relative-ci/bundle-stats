@@ -8,6 +8,7 @@ export { BundleModules } from './bundle-modules';
 export { DuplicatePackagesWarning } from './duplicate-packages-warning';
 export { Delta } from './delta';
 export { JobName } from './job-name';
+export { JobsHeader } from './jobs-header';
 export { LighthouseTable } from './lighthouse-table';
 export { Metric } from './metric';
 export { MetricsTable } from './metrics-table';

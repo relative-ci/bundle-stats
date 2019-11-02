@@ -12,6 +12,8 @@ stories.add('default', () => (
     jobs={[
       {
         internalBuildNumber: 1,
+        builtAt: '2019-01-02T00:00:00.000Z',
+        hash: 'abc123',
         summary: {
           'webpack.assets.totalSizeByTypeALL': {
             current: 1000000,
@@ -28,6 +30,8 @@ stories.add('multiple jobs', () => (
     jobs={[
       {
         internalBuildNumber: 1,
+        builtAt: '2019-01-02T00:00:00.000Z',
+        hash: 'abc123',
         summary: {
           'webpack.assets.totalSizeByTypeALL': {
             current: 1000000,
@@ -37,6 +41,8 @@ stories.add('multiple jobs', () => (
       },
       {
         internalBuildNumber: 2,
+        builtAt: '2019-01-01T00:00:00.000Z',
+        hash: 'cba321',
         summary: {
           'webpack.assets.totalSizeByTypeALL': {
             current: 900000,
