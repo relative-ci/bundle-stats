@@ -138,6 +138,197 @@ exports[`Storyshots StandaloneApp default 1`] = `
             className="root root"
           >
             <div
+              className="job"
+            >
+              <div
+                className="jobDescription"
+              >
+                <h1
+                  className="jobTitle"
+                >
+                  #124
+                </h1>
+                <div
+                  className="jobMeta"
+                >
+                  <span
+                    className="jobMetaItem"
+                    title="01/02/2019 02:01:01 AM"
+                  >
+                    <span
+                      className="root jobMetaIcon"
+                    >
+                      <svg
+                        className="icon"
+                        fill="currentColor"
+                        viewBox="0 0 14 16"
+                      >
+                        <path
+                          d="M8 8h3v2H7c-.55 0-1-.45-1-1V4h2v4zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    10 months
+                  </span>
+                  <span
+                    className="jobMetaItem"
+                    title="Webpack bundle hash"
+                  >
+                    <span
+                      className="root jobMetaIcon"
+                    >
+                      <svg
+                        className="icon"
+                        fill="currentColor"
+                        viewBox="0 0 896 1024"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M694.875 448C666.375 337.781 567.125 256 448 256c-119.094 0-218.375 81.781-246.906 192H0v128h201.094C229.625 686.25 328.906 768 448 768c119.125 0 218.375-81.75 246.875-192H896V448H694.875zM448 640c-70.656 0-128-57.375-128-128 0-70.656 57.344-128 128-128 70.625 0 128 57.344 128 128 0 70.625-57.375 128-128 128z"
+                        />
+                      </svg>
+                    </span>
+                    bcde2345
+                  </span>
+                </div>
+              </div>
+              <div
+                className="root jobSummaryItem large"
+              >
+                <h3
+                  className="title"
+                >
+                  Total Bundle Size
+                </h3>
+                <span
+                  className="currentMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      796.38
+                    </span>
+                    <span
+                      className="displayUnit"
+                    >
+                      KB
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
+                </span>
+                <span
+                  className="root delta slightlyPositive"
+                >
+                  -3.06KB (-0.38%)
+                </span>
+              </div>
+            </div>
+            <div
+              className="job"
+            >
+              <div
+                className="jobDescription"
+              >
+                <h1
+                  className="jobTitle"
+                >
+                  #123
+                </h1>
+                <div
+                  className="jobMeta"
+                >
+                  <span
+                    className="jobMetaItem"
+                    title="01/01/2019 02:01:01 AM"
+                  >
+                    <span
+                      className="root jobMetaIcon"
+                    >
+                      <svg
+                        className="icon"
+                        fill="currentColor"
+                        viewBox="0 0 14 16"
+                      >
+                        <path
+                          d="M8 8h3v2H7c-.55 0-1-.45-1-1V4h2v4zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    10 months
+                  </span>
+                  <span
+                    className="jobMetaItem"
+                    title="Webpack bundle hash"
+                  >
+                    <span
+                      className="root jobMetaIcon"
+                    >
+                      <svg
+                        className="icon"
+                        fill="currentColor"
+                        viewBox="0 0 896 1024"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M694.875 448C666.375 337.781 567.125 256 448 256c-119.094 0-218.375 81.781-246.906 192H0v128h201.094C229.625 686.25 328.906 768 448 768c119.125 0 218.375-81.75 246.875-192H896V448H694.875zM448 640c-70.656 0-128-57.375-128-128 0-70.656 57.344-128 128-128 70.625 0 128 57.344 128 128 0 70.625-57.375 128-128 128z"
+                        />
+                      </svg>
+                    </span>
+                    abcd1234
+                  </span>
+                </div>
+              </div>
+              <div
+                className="root jobSummaryItem large"
+              >
+                <h3
+                  className="title"
+                >
+                  Total Bundle Size
+                </h3>
+                <span
+                  className="currentMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      799.44
+                    </span>
+                    <span
+                      className="displayUnit"
+                    >
+                      KB
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="root"
+      >
+        <div
+          className="inner"
+        >
+          <div
+            className="root root"
+          >
+            <div
               className="items"
             >
               <div
@@ -179,9 +370,21 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -232,9 +435,21 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -285,9 +500,21 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -338,9 +565,21 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -387,9 +626,21 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -436,9 +687,21 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -485,9 +748,21 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -534,9 +809,21 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -14969,6 +15256,105 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
             className="root root"
           >
             <div
+              className="job"
+            >
+              <div
+                className="jobDescription"
+              >
+                <h1
+                  className="jobTitle"
+                >
+                  #124
+                </h1>
+                <div
+                  className="jobMeta"
+                >
+                  <span
+                    className="jobMetaItem"
+                    title="01/02/2019 02:01:01 AM"
+                  >
+                    <span
+                      className="root jobMetaIcon"
+                    >
+                      <svg
+                        className="icon"
+                        fill="currentColor"
+                        viewBox="0 0 14 16"
+                      >
+                        <path
+                          d="M8 8h3v2H7c-.55 0-1-.45-1-1V4h2v4zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    10 months
+                  </span>
+                  <span
+                    className="jobMetaItem"
+                    title="Webpack bundle hash"
+                  >
+                    <span
+                      className="root jobMetaIcon"
+                    >
+                      <svg
+                        className="icon"
+                        fill="currentColor"
+                        viewBox="0 0 896 1024"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M694.875 448C666.375 337.781 567.125 256 448 256c-119.094 0-218.375 81.781-246.906 192H0v128h201.094C229.625 686.25 328.906 768 448 768c119.125 0 218.375-81.75 246.875-192H896V448H694.875zM448 640c-70.656 0-128-57.375-128-128 0-70.656 57.344-128 128-128 70.625 0 128 57.344 128 128 0 70.625-57.375 128-128 128z"
+                        />
+                      </svg>
+                    </span>
+                    bcde2345
+                  </span>
+                </div>
+              </div>
+              <div
+                className="root jobSummaryItem large"
+              >
+                <h3
+                  className="title"
+                >
+                  Total Bundle Size
+                </h3>
+                <span
+                  className="currentMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      796.38
+                    </span>
+                    <span
+                      className="displayUnit"
+                    >
+                      KB
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="root"
+      >
+        <div
+          className="inner"
+        >
+          <div
+            className="root root"
+          >
+            <div
               className="items"
             >
               <div
@@ -15010,9 +15396,21 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -15063,9 +15461,21 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -15116,9 +15526,21 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -15169,9 +15591,21 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -15218,9 +15652,21 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -15267,9 +15713,21 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -15316,9 +15774,21 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -15365,9 +15835,21 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -83746,6 +84228,197 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
             className="root root"
           >
             <div
+              className="job"
+            >
+              <div
+                className="jobDescription"
+              >
+                <h1
+                  className="jobTitle"
+                >
+                  #124
+                </h1>
+                <div
+                  className="jobMeta"
+                >
+                  <span
+                    className="jobMetaItem"
+                    title="01/02/2019 02:01:01 AM"
+                  >
+                    <span
+                      className="root jobMetaIcon"
+                    >
+                      <svg
+                        className="icon"
+                        fill="currentColor"
+                        viewBox="0 0 14 16"
+                      >
+                        <path
+                          d="M8 8h3v2H7c-.55 0-1-.45-1-1V4h2v4zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    10 months
+                  </span>
+                  <span
+                    className="jobMetaItem"
+                    title="Webpack bundle hash"
+                  >
+                    <span
+                      className="root jobMetaIcon"
+                    >
+                      <svg
+                        className="icon"
+                        fill="currentColor"
+                        viewBox="0 0 896 1024"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M694.875 448C666.375 337.781 567.125 256 448 256c-119.094 0-218.375 81.781-246.906 192H0v128h201.094C229.625 686.25 328.906 768 448 768c119.125 0 218.375-81.75 246.875-192H896V448H694.875zM448 640c-70.656 0-128-57.375-128-128 0-70.656 57.344-128 128-128 70.625 0 128 57.344 128 128 0 70.625-57.375 128-128 128z"
+                        />
+                      </svg>
+                    </span>
+                    bcde2345
+                  </span>
+                </div>
+              </div>
+              <div
+                className="root jobSummaryItem large"
+              >
+                <h3
+                  className="title"
+                >
+                  Total Bundle Size
+                </h3>
+                <span
+                  className="currentMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      796.38
+                    </span>
+                    <span
+                      className="displayUnit"
+                    >
+                      KB
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
+                </span>
+                <span
+                  className="root delta slightlyPositive"
+                >
+                  -3.06KB (-0.38%)
+                </span>
+              </div>
+            </div>
+            <div
+              className="job"
+            >
+              <div
+                className="jobDescription"
+              >
+                <h1
+                  className="jobTitle"
+                >
+                  #123
+                </h1>
+                <div
+                  className="jobMeta"
+                >
+                  <span
+                    className="jobMetaItem"
+                    title="01/01/2019 02:01:01 AM"
+                  >
+                    <span
+                      className="root jobMetaIcon"
+                    >
+                      <svg
+                        className="icon"
+                        fill="currentColor"
+                        viewBox="0 0 14 16"
+                      >
+                        <path
+                          d="M8 8h3v2H7c-.55 0-1-.45-1-1V4h2v4zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    10 months
+                  </span>
+                  <span
+                    className="jobMetaItem"
+                    title="Webpack bundle hash"
+                  >
+                    <span
+                      className="root jobMetaIcon"
+                    >
+                      <svg
+                        className="icon"
+                        fill="currentColor"
+                        viewBox="0 0 896 1024"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M694.875 448C666.375 337.781 567.125 256 448 256c-119.094 0-218.375 81.781-246.906 192H0v128h201.094C229.625 686.25 328.906 768 448 768c119.125 0 218.375-81.75 246.875-192H896V448H694.875zM448 640c-70.656 0-128-57.375-128-128 0-70.656 57.344-128 128-128 70.625 0 128 57.344 128 128 0 70.625-57.375 128-128 128z"
+                        />
+                      </svg>
+                    </span>
+                    abcd1234
+                  </span>
+                </div>
+              </div>
+              <div
+                className="root jobSummaryItem large"
+              >
+                <h3
+                  className="title"
+                >
+                  Total Bundle Size
+                </h3>
+                <span
+                  className="currentMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      799.44
+                    </span>
+                    <span
+                      className="displayUnit"
+                    >
+                      KB
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="root"
+      >
+        <div
+          className="inner"
+        >
+          <div
+            className="root root"
+          >
+            <div
               className="items"
             >
               <div
@@ -83787,9 +84460,21 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -83840,9 +84525,21 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -83893,9 +84590,21 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -83946,9 +84655,21 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -83995,9 +84716,21 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -84044,9 +84777,21 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -84093,9 +84838,21 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
@@ -84142,9 +84899,21 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                   type="button"
                 >
                   <span
-                    className="ui-icon ui-icon--small helpButtonIcon"
+                    className="root helpButtonIcon"
                   >
-                    help
+                    <svg
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M0 0h24v24H0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                      />
+                    </svg>
                   </span>
                   <div
                     className="tooltip"
