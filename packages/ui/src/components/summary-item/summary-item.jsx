@@ -5,7 +5,7 @@ import {
   formatDelta, formatPercentage, getDelta, getMetricType,
 } from '@bundle-stats/utils';
 
-import { Tooltip } from '../../ui';
+import { Icon, Tooltip } from '../../ui';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
 import css from './summary-item.module.css';
@@ -57,7 +57,7 @@ export const SummaryItem = ({
           className={css.helpButton}
           title={metric.description}
         >
-          <span className={`ui-icon ui-icon--small ${css.helpButtonIcon}`}>help</span>
+          <Icon glyph="help" className={css.helpButtonIcon} />
         </Tooltip>
       )}
     </div>

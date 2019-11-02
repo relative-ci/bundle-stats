@@ -17,6 +17,7 @@ stories.add('all', () => (
     'clock',
     'commit',
     'filter',
+    'help',
     'package',
     'pr',
     'sort',
