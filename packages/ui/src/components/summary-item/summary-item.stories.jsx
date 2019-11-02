@@ -42,6 +42,18 @@ stories.add('showMetricDescription', () => (
   />
 ));
 
+stories.add('showDelta false', () => (
+  <SummaryItem
+    loading={false}
+    id="webpack.assets.totalSizeByTypeALL"
+    data={{
+      current: 120 * 1000,
+      baseline: 0,
+    }}
+    showDelta={false}
+  />
+));
+
 stories.add('loading', () => (
   <SummaryItem
     loading

@@ -26,12 +26,13 @@
   flex: 0 0 auto;
   padding-top: 0;
   padding-bottom: 0;
+  margin-left:  var(--space-small);
   text-align: right;
 }
 
 /** Loading state */
 .loading .jobTitle {
   height: var(--size-large);
-  width: 10em;
+  width: 3em;
   background: var(--color-gray-light-background);
 }

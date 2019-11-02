@@ -11,7 +11,7 @@ import { Delta } from '../delta';
 import css from './summary-item.module.css';
 
 export const SummaryItem = ({
-  className, size, id, data, loading, showMetricDescription,
+  className, size, id, data, loading, showDelta, showMetricDescription,
 }) => {
   const { baseline, current } = data || { baseline: 0, current: 0 };
 
@@ -39,7 +39,7 @@ export const SummaryItem = ({
         <span className={cx(css.currentMetric, css.loading)} />
       )}
 
-      {!loading ? (
+      {!loading ? showDelta && (
         <Delta
           className={css.delta}
           value={diff.deltaPercentage}
@@ -69,6 +69,7 @@ SummaryItem.defaultProps = {
   data: null,
   size: 'medium',
   showMetricDescription: false,
+  showDelta: true,
 };
 
 SummaryItem.propTypes = {
@@ -89,4 +90,7 @@ SummaryItem.propTypes = {
 
   /** Show description */
   showMetricDescription: PropTypes.bool,
+
+  /** Show delta */
+  showDelta: PropTypes.bool,
 };

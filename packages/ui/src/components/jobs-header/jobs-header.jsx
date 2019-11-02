@@ -19,17 +19,24 @@ export const JobsHeader = (props) => {
         <>
           <div className={css.job}>
             <div className={css.jobTitle} />
+
+            <SummaryItem
+              className={css.jobSummaryItem}
+              size="large"
+              loading
+              id={TOTAL_BUNDLE_SIZE}
+            />
           </div>
           <div className={css.job}>
             <div className={css.jobTitle} />
-          </div>
 
-          <SummaryItem
-            className={css.jobSummaryItem}
-            size="large"
-            loading
-            id={TOTAL_BUNDLE_SIZE}
-          />
+            <SummaryItem
+              className={css.jobSummaryItem}
+              size="large"
+              loading
+              id={TOTAL_BUNDLE_SIZE}
+            />
+          </div>
         </>
       )}
 
