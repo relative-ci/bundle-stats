@@ -2,13 +2,16 @@
 const path = require('path');
 const { readJSON, outputFile } = require('fs-extra');
 const Listr = require('listr');
-const { get } = require('lodash');
+const {
+  get, merge, omit, pick,
+} = require('lodash');
 const { createJobs } = require('@bundle-stats/utils');
 
 // eslint-disable-next-line import/no-unresolved
 const {
   TEXT,
   createReports,
+  extractJobMeta,
   readBaseline,
   writeBaseline,
 } = require('../');
@@ -22,18 +25,27 @@ module.exports = ({
       task: (ctx) => Promise.all(
         artifactFilepaths.map((filepath) => readJSON(filepath)),
       ).then((artifacts) => {
-        ctx.artifacts = artifacts.map((stats) => ({
-          webpack: { stats },
-        }));
+        ctx.artifacts = artifacts.map((artifact) => {
+          const { meta } = pick(artifact, ['meta']);
+          const stats = omit(artifact, ['meta']);
+
+          return {
+            meta,
+            webpack: { stats },
+          };
+        });
       }),
     },
     {
       title: 'Read baseline data',
       task: async (ctx) => {
         const { baselineStats } = ctx;
+        const { meta } = pick(baselineStats, ['meta']);
+        const stats = omit(baselineStats, ['meta']);
 
         ctx.artifacts = ctx.artifacts.concat([{
-          webpack: { stats: baselineStats },
+          meta,
+          webpack: { stats },
         }]);
       },
       skip: async (ctx) => {
@@ -65,7 +77,11 @@ module.exports = ({
     {
       title: 'Process data',
       task: (ctx) => {
-        ctx.initialData = createJobs(ctx.artifacts);
+        ctx.initialData = createJobs(ctx.artifacts).map((job, index) => merge(
+          {},
+          job,
+          get(ctx, ['artifacts', index, 'meta'], {}),
+        ));
       },
     },
     {

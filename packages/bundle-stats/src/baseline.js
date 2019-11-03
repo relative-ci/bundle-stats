@@ -1,6 +1,9 @@
 import path from 'path';
 import { readJSON, outputJSON } from 'fs-extra';
+import { merge } from 'lodash';
 import findCacheDir from 'find-cache-dir';
+
+import { extractJobMeta } from './extract-job-meta';
 
 const BASELINE_STATS_DIR = findCacheDir({ name: 'bundle-stats' });
 const BASELINE_STATS_BASE = 'baseline.json';
@@ -17,4 +20,11 @@ export const getBaselineStatesFilepath = (from) => {
 };
 
 export const readBaseline = (from) => readJSON(getBaselineStatesFilepath(from));
-export const writeBaseline = (data) => outputJSON(getBaselineStatesFilepath(), data);
+export const writeBaseline = (stats) => {
+  const data = merge(
+    { meta: extractJobMeta() },
+    stats,
+  );
+
+  outputJSON(getBaselineStatesFilepath(), data);
+};

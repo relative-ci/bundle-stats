@@ -50,7 +50,7 @@ const getOnEmit = (options) => async (compilation, callback) => {
     logger.warn(TEXT.PLUGIN_BASELINE_MISSING_WARN);
   }
 
-  const artifacts = createJobs([
+  const jobs = createJobs([
     { webpack: { stats: data } },
     ...compare ? [{ webpack: { stats: baselineStats } }] : [],
   ]);
@@ -58,7 +58,7 @@ const getOnEmit = (options) => async (compilation, callback) => {
   let reports = [];
 
   try {
-    reports = await createReports(artifacts, { html, json });
+    reports = await createReports(jobs, { html, json });
 
     reports.forEach(({ filename, output }) => {
       const filepath = path.join(outDir, filename);

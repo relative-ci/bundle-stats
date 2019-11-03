@@ -1,4 +1,10 @@
 {
+  "meta": {
+    "createdAt": "2019-01-02T00:00:00.000Z",
+    "commit": "cde456",
+    "commitMessage": "fix: Prevent content overflow in Safari",
+    "branch": "fix-content-overflow"
+  },
   "assets": [
     {
       "name": "../artifacts/webpack.stats.main.json",
