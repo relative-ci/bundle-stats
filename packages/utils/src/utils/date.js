@@ -1,8 +1,10 @@
 /* global navigator */
+const navigatorLanguages = (typeof navigator !== 'undefined' && navigator.languages) || [];
+
 export const formatDate = (value) => {
   const date = typeof value === 'string' ? new Date(value) : value;
 
-  return new Intl.DateTimeFormat(navigator.languages || [], {
+  return new Intl.DateTimeFormat(navigatorLanguages, {
     day: '2-digit',
     month: '2-digit',
     year: 'numeric',
@@ -12,7 +14,7 @@ export const formatDate = (value) => {
 export const formatTime = (value) => {
   const date = typeof value === 'string' ? new Date(value) : value;
 
-  return new Intl.DateTimeFormat(navigator.languages || [], {
+  return new Intl.DateTimeFormat(navigatorLanguages, {
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
