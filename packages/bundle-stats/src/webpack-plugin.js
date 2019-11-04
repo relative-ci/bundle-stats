@@ -19,6 +19,8 @@ const DEFAULT_OPTIONS = {
     entrypoints: true,
     chunks: true,
     modules: true,
+    hash: true,
+    builtAt: true,
   },
 };
 
