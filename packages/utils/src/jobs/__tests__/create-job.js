@@ -5,12 +5,16 @@ import { createJob } from '../create';
 describe('Create job', () => {
   test('no baseline', () => {
     const actual = createJob({
+      builtAt: '2019-01-01',
+      hash: 'abcd1234',
       webpack: {
         stats: webpackStatsCurrentExtracted,
       },
     });
 
     const expected = {
+      builtAt: '2019-01-01',
+      hash: 'abcd1234',
       warnings: {
         duplicatePackages: {
           'package-c': [
