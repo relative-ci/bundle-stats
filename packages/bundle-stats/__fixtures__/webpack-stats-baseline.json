@@ -1,4 +1,6 @@
 {
+  "builtAt": "2019-01-01T01:01:01.000Z",
+  "hash": "abcd1234",
   "assets": [
     {
       "name": "../artifacts/webpack.json",

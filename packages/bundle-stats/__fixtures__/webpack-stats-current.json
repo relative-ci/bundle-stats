@@ -1,4 +1,6 @@
 {
+  "builtAt": "2019-01-02T01:01:01.000Z",
+  "hash": "bcde2345",
   "assets": [
     {
       "name": "../artifacts/webpack.stats.main.json",
