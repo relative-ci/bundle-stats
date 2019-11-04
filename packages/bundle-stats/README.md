@@ -80,6 +80,8 @@ module.exports = {
       entrypoints: true,
       chunks: true,
       modules: true,
+      builtAt: true,
+      hash: true
     }
   }
   ```
@@ -139,7 +141,9 @@ The CLI is consuming the Webpack stats json. The following [stats options](https
     assets: true,
     entrypoints: true,
     chunks: true,
-    modules: true
+    modules: true,
+    builtAt: true,
+    hash: true
   }
 }
 ```
