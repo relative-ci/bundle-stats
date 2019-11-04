@@ -22,17 +22,26 @@ module.exports = ({
       task: (ctx) => Promise.all(
         artifactFilepaths.map((filepath) => readJSON(filepath)),
       ).then((artifacts) => {
-        ctx.artifacts = artifacts.map((stats) => ({
-          webpack: { stats },
-        }));
+        ctx.artifacts = artifacts.map((stats) => {
+          const { builtAt, hash } = stats;
+
+          return {
+            builtAt,
+            hash,
+            webpack: { stats },
+          };
+        });
       }),
     },
     {
       title: 'Read baseline data',
       task: async (ctx) => {
         const { baselineStats } = ctx;
+        const { builtAt, hash } = baselineStats;
 
         ctx.artifacts = ctx.artifacts.concat([{
+          builtAt,
+          hash,
           webpack: { stats: baselineStats },
         }]);
       },
