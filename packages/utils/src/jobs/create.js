@@ -1,5 +1,5 @@
 import {
-  get, isEmpty, last, reverse, set,
+  get, isEmpty, last, omit, reverse, set,
 } from 'lodash';
 
 import { createStats } from '../stats/create';
@@ -17,6 +17,8 @@ const RAW_DATA_IDS = [
   'browsertime',
 ];
 
+const SOURCE_IDS = RAW_DATA_IDS.map((id) => id.split('.')[0]);
+
 /*
  * Create job from stats
  */
@@ -29,7 +31,7 @@ export const createJob = (source, baseline) => {
     }
 
     return { ...agg };
-  }, {});
+  }, omit(source, SOURCE_IDS));
 
   const stats = createStats(baseline && baseline.rawData, data.rawData);
   const summary = createStatsSummary(baseline && baseline.stats, stats);
