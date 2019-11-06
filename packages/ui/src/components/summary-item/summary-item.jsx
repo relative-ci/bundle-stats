@@ -55,7 +55,16 @@ export const SummaryItem = ({
           as="button"
           type="button"
           className={css.helpButton}
-          title={metric.description}
+          title={(
+            <div className={css.helpTooltip}>
+              <h4 className={css.helpTooltipTitle}>
+                {metric.label}
+              </h4>
+              <p>
+                {metric.description}
+              </p>
+            </div>
+          )}
         >
           <Icon glyph="help" className={css.helpButtonIcon} />
         </Tooltip>

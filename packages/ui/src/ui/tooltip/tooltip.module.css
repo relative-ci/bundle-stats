@@ -1,37 +1,36 @@
 .root {
-	position: relative;
+  position: relative;
 }
 
 .tooltip {
-	position: absolute;
-	left: 50%;
-	bottom: 100%;
-	transform: translateX(-50%) translateY(calc(0px - var(--space-xsmall)));
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%) translateY(calc(0px - var(--space-xsmall)));
 
-	margin-top: 0;
-	padding: var(--space-xsmall);
-	min-width: 120px;
+  margin-top: 0;
+  padding: var(--space-xsmall);
+  min-width: 120px;
   box-shadow: 0 0 var(--space-xxsmall) rgba(0, 0, 0, 0.2);
 
-	background: var(--color-light);
+  background: var(--color-light);
   color: var(--color-gray);
-	font-size: var(--size-small);
-	text-align: center;
-  white-space: nowrap;
+  font-size: var(--size-small);
+  text-align: center;
 }
 
 .tooltipArrow {
-	position: absolute;
-	left: 0;
+  position: absolute;
+  left: 0;
   right: 0;
-	top: 100%;
+  top: 100%;
   width: 100%;
   height: var(--space-small);
   overflow: hidden;
 }
 
 .tooltipArrow::before {
-	content: '';
+  content: '';
   position: absolute;
   left: 50%;
   top: 0;
@@ -47,12 +46,17 @@
 .tooltip {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s, opacity 0.2s;
+  width: 0;
+  overflow: hidden;
+  transition: visibility 0s, opacity 0.2s ease-in;
 }
 
 .root:hover .tooltip {
   visibility: visible;
   opacity: 1;
+  width: auto;
+  overflow: visible;
+  transition: visibility 0.17s 0s, opacity 0.17s ease-out;
 }
 
 /* Align modifier */
