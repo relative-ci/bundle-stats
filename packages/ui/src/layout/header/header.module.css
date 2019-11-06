@@ -3,7 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  background: var(--color-branding-dark);
+  background: var(--color-dark);
   color: var(--color-light);
   border-bottom: 1px solid var(--color-gray-ultra-light);
 }
