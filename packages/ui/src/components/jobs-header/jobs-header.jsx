@@ -52,8 +52,11 @@ export const JobsHeader = (props) => {
           <div className={css.jobDescription}>
             <h1 className={css.jobTitle}>
               {`#${job.internalBuildNumber}`}
-            </h1>
 
+              <span className={css.jobTag}>
+                {index === 0 ? 'current' : 'baseline' }
+              </span>
+            </h1>
             <div className={css.jobMeta}>
               {job.builtAt && (
                 <span
