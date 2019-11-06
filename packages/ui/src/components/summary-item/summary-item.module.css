@@ -39,7 +39,22 @@
   background: none;
   cursor: pointer;
   color: var(--color-gray-light);
+  outline: none;
   transition: color 0.2s;
+}
+
+.helpTooltip {
+  width: 100vw;
+  max-width: 320px;
+  white-space: normal;
+  text-align: left;
+}
+
+.helpTooltipTitle {
+  margin: 0 0 var(--space-xxxsmall);
+  color: var(--color-gray-ultra-dark);
+  font-size: var(--size-medium);
+  font-weight: bold;
 }
 
 .helpButton:hover {
@@ -50,12 +65,13 @@
 .helpButton {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s, opacity 0.2s;
+  transition: visibility 0s, opacity 0.2s ease-in;
 }
 
 .root:hover .helpButton {
   visibility: visible;
   opacity: 1;
+  transition: visibility 0.17s 0s, opacity 0.17s ease-out;
 }
 
 .root.loading .helpButton {
