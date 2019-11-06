@@ -58,11 +58,15 @@ const getOnEmit = (options) => async (compilation, callback) => {
       hash: data.hash,
       webpack: { stats: data },
     },
-    ...compare ? [{
-      builtAt: baselineStats.builtAt,
-      hash: baselineStats.hash,
-      webpack: { stats: baselineStats },
-    }] : [],
+    ...compare ? [
+      {
+        ...baselineStats ? {
+          builtAt: baselineStats.builtAt,
+          hash: baselineStats.hash,
+        } : {},
+        webpack: { stats: baselineStats },
+      }
+    ] : [],
   ]);
 
   let reports = [];
