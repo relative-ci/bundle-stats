@@ -60,7 +60,7 @@ export const SummaryItem = ({
               <h4 className={css.helpTooltipTitle}>
                 {metric.label}
               </h4>
-              <p>
+              <p className={css.helpTooltipDescription}>
                 {metric.description}
               </p>
             </div>
