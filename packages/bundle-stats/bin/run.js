@@ -26,7 +26,7 @@ module.exports = ({
           const { builtAt, hash } = stats;
 
           return {
-            builtAt,
+            builtAt: builtAt && (new Date(builtAt)).toISOString(),
             hash,
             webpack: { stats },
           };
@@ -40,7 +40,7 @@ module.exports = ({
         const { builtAt, hash } = baselineStats;
 
         ctx.artifacts = ctx.artifacts.concat([{
-          builtAt,
+          builtAt: builtAt && (new Date(builtAt)).toISOString(),
           hash,
           webpack: { stats: baselineStats },
         }]);
