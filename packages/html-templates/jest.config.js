@@ -3,6 +3,7 @@ module.exports = {
   globals: {
     __VERSION__: '0.0.1',
   },
+  globalSetup: '<rootDir>/build/jest/global-setup.js',
   setupFiles: [
     'core-js',
     '<rootDir>/build/jest/register-context.js',

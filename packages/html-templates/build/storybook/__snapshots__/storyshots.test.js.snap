@@ -158,7 +158,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                 >
                   <span
                     className="jobMetaItem"
-                    title="01/02/2019 02:01:01 AM"
+                    title="01/02/2019 01:01"
                   >
                     <span
                       className="root jobMetaIcon"
@@ -255,7 +255,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                 >
                   <span
                     className="jobMetaItem"
-                    title="01/01/2019 02:01:01 AM"
+                    title="01/01/2019 01:01"
                   >
                     <span
                       className="root jobMetaIcon"
@@ -15390,7 +15390,7 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                 >
                   <span
                     className="jobMetaItem"
-                    title="01/02/2019 02:01:01 AM"
+                    title="01/02/2019 01:01"
                   >
                     <span
                       className="root jobMetaIcon"
@@ -84471,7 +84471,7 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                 >
                   <span
                     className="jobMetaItem"
-                    title="01/02/2019 02:01:01 AM"
+                    title="01/02/2019 01:01"
                   >
                     <span
                       className="root jobMetaIcon"
@@ -84568,7 +84568,7 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                 >
                   <span
                     className="jobMetaItem"
-                    title="01/01/2019 02:01:01 AM"
+                    title="01/01/2019 01:01"
                   >
                     <span
                       className="root jobMetaIcon"
