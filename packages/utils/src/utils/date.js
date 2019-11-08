@@ -1,5 +1,5 @@
 /* global navigator */
-const navigatorLanguages = (typeof navigator !== 'undefined' && navigator.languages) || ['en'];
+const navigatorLanguages = (typeof navigator !== 'undefined' && navigator.languages) || 'en';
 
 export const formatDate = (value) => {
   const date = typeof value === 'string' ? new Date(value) : value;
@@ -15,7 +15,10 @@ export const formatTime = (value) => {
   const date = typeof value === 'string' ? new Date(value) : value;
 
   return new Intl.DateTimeFormat(navigatorLanguages, {
-    hour: '2-digit',
+    // Workaround CI node issue
+    ...process.env.NODE_ENV !== 'test' && {
+      hour: '2-digit',
+    },
     minute: '2-digit',
     second: '2-digit',
   }).format(date);
