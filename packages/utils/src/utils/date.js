@@ -1,5 +1,5 @@
 /* global navigator */
-const navigatorLanguages = (typeof navigator !== 'undefined' && navigator.languages) || [];
+const navigatorLanguages = (typeof navigator !== 'undefined' && navigator.languages) || ['en'];
 
 export const formatDate = (value) => {
   const date = typeof value === 'string' ? new Date(value) : value;
