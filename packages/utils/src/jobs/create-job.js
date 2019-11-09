@@ -1,5 +1,5 @@
 import {
-  get, isEmpty, last, merge, omit, set, reverse,
+  get, isEmpty, merge, omit, set,
 } from 'lodash';
 
 import { SOURCE_PATH_WEBPACK_STATS, SOURCE_PATHS } from '../config';
@@ -55,19 +55,4 @@ export const createJob = (source, baseline) => {
     summary,
     ...isEmpty(warnings) ? {} : { warnings },
   };
-};
-
-/*
- * Create jobs from sources
- */
-export const createJobs = (sources) => {
-  const jobs = reverse([...sources]).reduce((agg, source, idx) => [
-    {
-      ...createJob(source, last(agg)),
-      internalBuildNumber: (idx + 1),
-    },
-    ...agg,
-  ], []);
-
-  return jobs;
 };
