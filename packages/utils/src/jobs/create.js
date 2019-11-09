@@ -2,6 +2,7 @@ import {
   get, isEmpty, last, merge, omit, set, reverse,
 } from 'lodash';
 
+import { SOURCE_PATH_WEBPACK_STATS, SOURCE_PATHS } from '../config';
 import { createStats } from '../stats/create';
 import { createStatsSummary } from '../stats/create-summary';
 import {
@@ -11,14 +12,13 @@ import {
   packagesModulesBundleTransform,
 } from '../transforms';
 
-const RAW_DATA_IDS = ['webpack.stats'];
-const SOURCE_IDS = RAW_DATA_IDS.map((id) => id.split('.')[0]);
+const SOURCE_IDS = SOURCE_PATHS.map((id) => id.split('.')[0]);
 
 /*
  * Create job from stats
  */
 export const createJob = (source, baseline) => {
-  const data = RAW_DATA_IDS.reduce((agg, rawDataPath) => {
+  const data = SOURCE_PATHS.reduce((agg, rawDataPath) => {
     const rawData = get(source, rawDataPath);
 
     if (!rawData) {
@@ -32,15 +32,15 @@ export const createJob = (source, baseline) => {
         rawData: set({}, rawDataPath, rawData),
       },
     );
-  }, omit(source, SOURCE_IDS)); // @TODO Why ?
+  }, omit(source, SOURCE_IDS));
 
   const stats = createStats(baseline && baseline.rawData, data.rawData);
   const summary = createStatsSummary(baseline && baseline.stats, stats);
-  const { meta } = metaWebpackTransform(get(data, 'rawData.webpack.stats'));
+  const { meta } = metaWebpackTransform(get(data.rawData, SOURCE_PATH_WEBPACK_STATS));
 
   const { warnings: duplicatePackagesWarnings } = duplicatePackagesBundleTransform(
     packagesModulesBundleTransform({
-      ...modulesWebpackTransform(get(data, 'rawData.webpack.stats')),
+      ...modulesWebpackTransform(get(data.rawData, SOURCE_PATH_WEBPACK_STATS)),
     }),
   );
 

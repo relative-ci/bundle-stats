@@ -2,7 +2,7 @@ import {
   flatMap, get, isEmpty, map, uniq,
 } from 'lodash';
 
-import { METRIC_TYPE_FILE_SIZE } from '../config/metrics';
+import { METRIC_TYPE_FILE_SIZE, SOURCE_PATH_WEBPACK_STATS } from '../config';
 import { getMetricChanged, getMetricType, mergeRunsById } from '../metrics';
 import { getStatsByMetrics } from '../stats/get-stats-by-metrics';
 import {
@@ -71,7 +71,7 @@ export const addMetricsData = (entries, metricType) => entries.map((entry) => {
 export const createRuns = (jobs) => jobs.map(({
   meta, internalBuildNumber, stats, rawData,
 }) => {
-  const webpackStats = get(rawData, 'webpack.stats');
+  const webpackStats = get(rawData, SOURCE_PATH_WEBPACK_STATS);
   const { modules } = modulesWebpackTransform(webpackStats);
 
   return {

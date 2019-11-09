@@ -1,5 +1,6 @@
 import { get, merge, set } from 'lodash';
 
+import { SOURCE_PATH_WEBPACK_STATS } from '../config';
 import {
   assetsWebpackTransform,
   packagesModulesBundleTransform,
@@ -53,13 +54,13 @@ export const generateAssetCount = (key) => (_, current) => {
 };
 
 export const createStats = (baselineRawData, currentRawData) => {
-  const baselineWebpackStats = get(baselineRawData, 'webpack.stats');
+  const baselineWebpackStats = get(baselineRawData, SOURCE_PATH_WEBPACK_STATS);
   const baselineBundle = {
     ...assetsWebpackTransform(baselineWebpackStats),
     ...modulesWebpackTransform(baselineWebpackStats),
   };
 
-  const currentWebpackStats = get(currentRawData, 'webpack.stats');
+  const currentWebpackStats = get(currentRawData, SOURCE_PATH_WEBPACK_STATS);
   const currentBundle = {
     ...assetsWebpackTransform(currentWebpackStats),
     ...modulesWebpackTransform(currentWebpackStats),
