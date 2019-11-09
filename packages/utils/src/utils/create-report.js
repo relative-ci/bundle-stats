@@ -68,12 +68,15 @@ export const addMetricsData = (entries, metricType) => entries.map((entry) => {
   };
 });
 
-export const createRuns = (jobs) => jobs.map(({ internalBuildNumber, stats, rawData }) => {
+export const createRuns = (jobs) => jobs.map(({
+  meta, internalBuildNumber, stats, rawData,
+}) => {
   const webpackStats = get(rawData, 'webpack.stats');
   const { modules } = modulesWebpackTransform(webpackStats);
 
   return {
     meta: {
+      ...meta,
       internalBuildNumber,
     },
     sizes: getStatsByMetrics(stats, SIZE_METRICS),

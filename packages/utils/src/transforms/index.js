@@ -1,5 +1,6 @@
 export * from './assets-webpack-transform';
 export * from './modules-webpack-transform';
+export * from './meta-webpack-transform';
 
 // assets transforms
 export * from './size-assets-bundle-transform';

@@ -156,46 +156,8 @@ exports[`Storyshots StandaloneApp default 1`] = `
                 <div
                   className="jobMeta"
                 >
-                  <span
-                    className="jobMetaItem"
-                    title="01/02/2019 01:01"
-                  >
-                    <span
-                      className="root jobMetaIcon"
-                    >
-                      <svg
-                        className="icon"
-                        fill="currentColor"
-                        viewBox="0 0 14 16"
-                      >
-                        <path
-                          d="M8 8h3v2H7c-.55 0-1-.45-1-1V4h2v4zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"
-                          fillRule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                    10 months
-                  </span>
-                  <span
-                    className="jobMetaItem"
-                    title="Webpack bundle hash"
-                  >
-                    <span
-                      className="root jobMetaIcon"
-                    >
-                      <svg
-                        className="icon"
-                        fill="currentColor"
-                        viewBox="0 0 896 1024"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M694.875 448C666.375 337.781 567.125 256 448 256c-119.094 0-218.375 81.781-246.906 192H0v128h201.094C229.625 686.25 328.906 768 448 768c119.125 0 218.375-81.75 246.875-192H896V448H694.875zM448 640c-70.656 0-128-57.375-128-128 0-70.656 57.344-128 128-128 70.625 0 128 57.344 128 128 0 70.625-57.375 128-128 128z"
-                        />
-                      </svg>
-                    </span>
-                    bcde2345
-                  </span>
+                  
+                  
                 </div>
               </div>
               <div
@@ -253,46 +215,8 @@ exports[`Storyshots StandaloneApp default 1`] = `
                 <div
                   className="jobMeta"
                 >
-                  <span
-                    className="jobMetaItem"
-                    title="01/01/2019 01:01"
-                  >
-                    <span
-                      className="root jobMetaIcon"
-                    >
-                      <svg
-                        className="icon"
-                        fill="currentColor"
-                        viewBox="0 0 14 16"
-                      >
-                        <path
-                          d="M8 8h3v2H7c-.55 0-1-.45-1-1V4h2v4zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"
-                          fillRule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                    10 months
-                  </span>
-                  <span
-                    className="jobMetaItem"
-                    title="Webpack bundle hash"
-                  >
-                    <span
-                      className="root jobMetaIcon"
-                    >
-                      <svg
-                        className="icon"
-                        fill="currentColor"
-                        viewBox="0 0 896 1024"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M694.875 448C666.375 337.781 567.125 256 448 256c-119.094 0-218.375 81.781-246.906 192H0v128h201.094C229.625 686.25 328.906 768 448 768c119.125 0 218.375-81.75 246.875-192H896V448H694.875zM448 640c-70.656 0-128-57.375-128-128 0-70.656 57.344-128 128-128 70.625 0 128 57.344 128 128 0 70.625-57.375 128-128 128z"
-                        />
-                      </svg>
-                    </span>
-                    abcd1234
-                  </span>
+                  
+                  
                 </div>
               </div>
               <div
@@ -15388,46 +15312,8 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                 <div
                   className="jobMeta"
                 >
-                  <span
-                    className="jobMetaItem"
-                    title="01/02/2019 01:01"
-                  >
-                    <span
-                      className="root jobMetaIcon"
-                    >
-                      <svg
-                        className="icon"
-                        fill="currentColor"
-                        viewBox="0 0 14 16"
-                      >
-                        <path
-                          d="M8 8h3v2H7c-.55 0-1-.45-1-1V4h2v4zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"
-                          fillRule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                    10 months
-                  </span>
-                  <span
-                    className="jobMetaItem"
-                    title="Webpack bundle hash"
-                  >
-                    <span
-                      className="root jobMetaIcon"
-                    >
-                      <svg
-                        className="icon"
-                        fill="currentColor"
-                        viewBox="0 0 896 1024"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M694.875 448C666.375 337.781 567.125 256 448 256c-119.094 0-218.375 81.781-246.906 192H0v128h201.094C229.625 686.25 328.906 768 448 768c119.125 0 218.375-81.75 246.875-192H896V448H694.875zM448 640c-70.656 0-128-57.375-128-128 0-70.656 57.344-128 128-128 70.625 0 128 57.344 128 128 0 70.625-57.375 128-128 128z"
-                        />
-                      </svg>
-                    </span>
-                    bcde2345
-                  </span>
+                  
+                  
                 </div>
               </div>
               <div
@@ -84469,46 +84355,8 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                 <div
                   className="jobMeta"
                 >
-                  <span
-                    className="jobMetaItem"
-                    title="01/02/2019 01:01"
-                  >
-                    <span
-                      className="root jobMetaIcon"
-                    >
-                      <svg
-                        className="icon"
-                        fill="currentColor"
-                        viewBox="0 0 14 16"
-                      >
-                        <path
-                          d="M8 8h3v2H7c-.55 0-1-.45-1-1V4h2v4zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"
-                          fillRule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                    10 months
-                  </span>
-                  <span
-                    className="jobMetaItem"
-                    title="Webpack bundle hash"
-                  >
-                    <span
-                      className="root jobMetaIcon"
-                    >
-                      <svg
-                        className="icon"
-                        fill="currentColor"
-                        viewBox="0 0 896 1024"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M694.875 448C666.375 337.781 567.125 256 448 256c-119.094 0-218.375 81.781-246.906 192H0v128h201.094C229.625 686.25 328.906 768 448 768c119.125 0 218.375-81.75 246.875-192H896V448H694.875zM448 640c-70.656 0-128-57.375-128-128 0-70.656 57.344-128 128-128 70.625 0 128 57.344 128 128 0 70.625-57.375 128-128 128z"
-                        />
-                      </svg>
-                    </span>
-                    bcde2345
-                  </span>
+                  
+                  
                 </div>
               </div>
               <div
@@ -84566,46 +84414,8 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                 <div
                   className="jobMeta"
                 >
-                  <span
-                    className="jobMetaItem"
-                    title="01/01/2019 01:01"
-                  >
-                    <span
-                      className="root jobMetaIcon"
-                    >
-                      <svg
-                        className="icon"
-                        fill="currentColor"
-                        viewBox="0 0 14 16"
-                      >
-                        <path
-                          d="M8 8h3v2H7c-.55 0-1-.45-1-1V4h2v4zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"
-                          fillRule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                    10 months
-                  </span>
-                  <span
-                    className="jobMetaItem"
-                    title="Webpack bundle hash"
-                  >
-                    <span
-                      className="root jobMetaIcon"
-                    >
-                      <svg
-                        className="icon"
-                        fill="currentColor"
-                        viewBox="0 0 896 1024"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M694.875 448C666.375 337.781 567.125 256 448 256c-119.094 0-218.375 81.781-246.906 192H0v128h201.094C229.625 686.25 328.906 768 448 768c119.125 0 218.375-81.75 246.875-192H896V448H694.875zM448 640c-70.656 0-128-57.375-128-128 0-70.656 57.344-128 128-128 70.625 0 128 57.344 128 128 0 70.625-57.375 128-128 128z"
-                        />
-                      </svg>
-                    </span>
-                    abcd1234
-                  </span>
+                  
+                  
                 </div>
               </div>
               <div

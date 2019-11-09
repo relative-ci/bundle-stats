@@ -16,6 +16,11 @@ const PATH_IGNORE_PATTERN = '.map$';
 export const extractDataFromWebpackStats = (source, options = {}) => {
   const pathIgnorePattern = new RegExp(options.pathIgnorePattern || PATH_IGNORE_PATTERN);
 
+  // meta
+  const builtAt = get('builtAt')(source);
+  const hash = get('hash')(source);
+
+  // rawData
   const assets = flow([
     get('assets'),
     map(pick(['name', 'size'])),
@@ -43,6 +48,8 @@ export const extractDataFromWebpackStats = (source, options = {}) => {
   ])(source);
 
   return {
+    builtAt,
+    hash,
     assets,
     entrypoints,
     chunks,

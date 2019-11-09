@@ -12,8 +12,14 @@ stories.add('default', () => (
     jobs={[
       {
         internalBuildNumber: 1,
-        builtAt: '2019-01-02T00:00:00.000Z',
-        hash: 'abc123',
+        meta: {
+          webpack: {
+            stats: {
+              builtAt: '2019-01-01T00:00:00.000Z',
+              hash: 'abcd1234',
+            },
+          },
+        },
         summary: {
           'webpack.assets.totalSizeByTypeALL': {
             current: 1000000,
@@ -30,8 +36,14 @@ stories.add('multiple jobs', () => (
     jobs={[
       {
         internalBuildNumber: 1,
-        builtAt: '2019-01-02T00:00:00.000Z',
-        hash: 'abc123',
+        meta: {
+          webpack: {
+            stats: {
+              builtAt: '2019-01-01T00:00:00.000Z',
+              hash: 'abcd1234',
+            },
+          },
+        },
         summary: {
           'webpack.assets.totalSizeByTypeALL': {
             current: 1000000,
@@ -41,8 +53,14 @@ stories.add('multiple jobs', () => (
       },
       {
         internalBuildNumber: 2,
-        builtAt: '2019-01-01T00:00:00.000Z',
-        hash: 'cba321',
+        meta: {
+          webpack: {
+            stats: {
+              builtAt: '2019-01-02T00:00:00.000Z',
+              hash: 'efgh1234',
+            },
+          },
+        },
         summary: {
           'webpack.assets.totalSizeByTypeALL': {
             current: 900000,

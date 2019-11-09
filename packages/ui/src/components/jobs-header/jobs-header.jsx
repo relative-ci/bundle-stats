@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { get } from 'lodash';
 import { formatDistanceToNow } from 'date-fns';
-import { formatDate, formatTime } from '@bundle-stats/utils';
+import { SOURCE_PATH_WEBPACK_STATS, formatDate, formatTime } from '@bundle-stats/utils';
 
 import { Box } from '../../ui/box';
 import { Icon } from '../../ui/icon';
@@ -47,46 +48,50 @@ export const JobsHeader = (props) => {
         </>
       )}
 
-      {!loading && jobs && jobs.map((job, index) => (
-        <div className={css.job}>
-          <div className={css.jobDescription}>
-            <h1 className={css.jobTitle}>
-              {`#${job.internalBuildNumber}`}
+      {!loading && jobs && jobs.map((job, index) => {
+        const { builtAt, hash } = get(job, `meta.${SOURCE_PATH_WEBPACK_STATS}`, {});
 
-              <span className={css.jobTag}>
-                {index === 0 ? 'current' : 'baseline' }
-              </span>
-            </h1>
-            <div className={css.jobMeta}>
-              {job.builtAt && (
-                <span
-                  className={css.jobMetaItem}
-                  title={`${formatDate(job.builtAt)} ${formatTime(job.builtAt)}`}
-                >
-                  <Icon glyph="clock" className={css.jobMetaIcon} />
-                  {formatDistanceToNow(new Date(job.builtAt))}
-                </span>
-              )}
+        return (
+          <div className={css.job} key={job.internalBuilNumber}>
+            <div className={css.jobDescription}>
+              <h1 className={css.jobTitle}>
+                {`#${job.internalBuildNumber}`}
 
-              {job.hash && (
-                <span className={css.jobMetaItem} title="Webpack bundle hash">
-                  <Icon glyph="commit" className={css.jobMetaIcon} />
-                  {job.hash}
+                <span className={css.jobTag}>
+                  {index === 0 ? 'current' : 'baseline' }
                 </span>
-              )}
+              </h1>
+              <div className={css.jobMeta}>
+                {builtAt && (
+                  <span
+                    className={css.jobMetaItem}
+                    title={`${formatDate(builtAt)} ${formatTime(builtAt)}`}
+                  >
+                    <Icon glyph="clock" className={css.jobMetaIcon} />
+                    {formatDistanceToNow(new Date(builtAt))}
+                  </span>
+                )}
+
+                {hash && (
+                  <span className={css.jobMetaItem} title="Webpack bundle hash">
+                    <Icon glyph="commit" className={css.jobMetaIcon} />
+                    {hash}
+                  </span>
+                )}
+              </div>
             </div>
-          </div>
 
-          <SummaryItem
-            className={css.jobSummaryItem}
-            size="large"
-            loading={false}
-            id={TOTAL_BUNDLE_SIZE}
-            data={job.summary[TOTAL_BUNDLE_SIZE]}
-            showDelta={index + 1 < jobs.length}
-          />
-        </div>
-      ))}
+            <SummaryItem
+              className={css.jobSummaryItem}
+              size="large"
+              loading={false}
+              id={TOTAL_BUNDLE_SIZE}
+              data={job.summary[TOTAL_BUNDLE_SIZE]}
+              showDelta={index + 1 < jobs.length}
+            />
+          </div>
+        );
+      })}
     </Box>
   );
 };
