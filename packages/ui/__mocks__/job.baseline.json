@@ -1,7 +1,7 @@
 {
   "branch": "master",
-  "builtAt": "2019-01-00T00:00:00.000Z",
-  "hash": "abcd1000",
+  "builtAt": 1546300800000,
+  "hash": "abc123",
   "buildNumber": "123",
   "buildUrl": "#ci-url",
   "commit": "428abb744923",

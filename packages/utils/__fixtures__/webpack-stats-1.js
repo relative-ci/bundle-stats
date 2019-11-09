@@ -1,4 +1,6 @@
 module.exports = {
+  builtAt: 1546300800000,
+  hash: 'abcd1234',
   assets: [
     {
       chunkNames: ['main'],

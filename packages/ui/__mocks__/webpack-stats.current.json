@@ -1,4 +1,6 @@
 {
+  "builtAt": 1546300800000,
+  "hash": "def456",
   "assets": [
     {
       "name": "../artifacts/webpack.stats.main.json",

@@ -1,4 +1,6 @@
 module.exports = {
+  builtAt: 1546300800000,
+  hash: 'defg1234',
   assets: [
     {
       name: 'main.b1c2d3.css',

@@ -2,8 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 
-import currentData from '../../__mocks__/job.current.json';
-import baselineData from '../../__mocks__/job.baseline.json';
+import baselineData from '../../__mocks__/webpack-stats.baseline.json';
+import currentData from '../../__mocks__/webpack-stats.current.json';
 import {
   Box, Container, Logo, Tabs,
 } from '../ui';
@@ -22,7 +22,10 @@ import css from './bundle-page.module.css';
 const stories = storiesOf('Prototypes/BundlePage', module);
 stories.addDecorator(getWrapperDecorator());
 
-const JOBS = createJobs([currentData.rawData, baselineData.rawData]);
+const JOBS = createJobs([
+  { webpack: { stats: currentData } },
+  { webpack: { stats: baselineData } },
+]);
 const [currentJob] = JOBS;
 
 const PageHeader = () => (

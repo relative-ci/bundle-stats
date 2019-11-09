@@ -5,16 +5,20 @@ import { createJob } from '../create';
 describe('Create job', () => {
   test('no baseline', () => {
     const actual = createJob({
-      builtAt: '2019-01-01',
-      hash: 'abcd1234',
       webpack: {
         stats: webpackStatsCurrentExtracted,
       },
     });
 
     const expected = {
-      builtAt: '2019-01-01',
-      hash: 'abcd1234',
+      meta: {
+        webpack: {
+          stats: {
+            builtAt: '2019-01-01T00:00:00.000Z',
+            hash: 'abcd1234',
+          },
+        },
+      },
       warnings: {
         duplicatePackages: {
           'package-c': [
@@ -122,7 +126,7 @@ describe('Create job', () => {
       },
     };
 
-    expect(expected).toEqual(actual);
+    expect(actual).toEqual(expected);
   });
 
   test('with baseline', () => {
@@ -130,6 +134,14 @@ describe('Create job', () => {
     const actual = createJob({ webpack: { stats: webpackStatsCurrentExtracted } }, baselineJob);
 
     const expected = {
+      meta: {
+        webpack: {
+          stats: {
+            builtAt: '2019-01-01T00:00:00.000Z',
+            hash: 'abcd1234',
+          },
+        },
+      },
       warnings: {
         duplicatePackages: {
           'package-c': [
@@ -237,6 +249,6 @@ describe('Create job', () => {
       },
     };
 
-    expect(expected).toEqual(actual);
+    expect(actual).toEqual(expected);
   });
 });

@@ -53,20 +53,8 @@ const getOnEmit = (options) => async (compilation, callback) => {
   }
 
   const artifacts = createJobs([
-    {
-      builtAt: data.builtAt && (new Date(data.builtAt)).toISOString(),
-      hash: data.hash,
-      webpack: { stats: data },
-    },
-    ...compare ? [
-      {
-        ...baselineStats ? {
-          builtAt: baselineStats.builtAt && (new Date(baselineStats.builtAt)).toISOString(),
-          hash: baselineStats.hash,
-        } : {},
-        webpack: { stats: baselineStats },
-      },
-    ] : [],
+    { webpack: { stats: data } },
+    ...compare ? [{ webpack: { stats: baselineStats } }] : [],
   ]);
 
   let reports = [];
