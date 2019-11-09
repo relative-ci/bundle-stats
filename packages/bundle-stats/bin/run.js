@@ -3,7 +3,7 @@ const path = require('path');
 const { readJSON, outputFile } = require('fs-extra');
 const Listr = require('listr');
 const { get } = require('lodash');
-const { createJobs } = require('@bundle-stats/utils');
+const { createJobs, extractDataFromWebpackStats } = require('@bundle-stats/utils');
 
 // eslint-disable-next-line import/no-unresolved
 const {
@@ -22,13 +22,21 @@ module.exports = ({
       task: (ctx) => Promise.all(
         artifactFilepaths.map((filepath) => readJSON(filepath)),
       ).then((artifacts) => {
-        ctx.artifacts = artifacts.map((stats) => ({ webpack: { stats } }));
+        ctx.artifacts = artifacts.map((stats) => ({
+          webpack: {
+            stats: extractDataFromWebpackStats(stats),
+          },
+        }));
       }),
     },
     {
       title: 'Read baseline data',
       task: async (ctx) => {
-        ctx.artifacts = ctx.artifacts.concat([{ webpack: { stats: ctx.baselineStats } }]);
+        ctx.artifacts = ctx.artifacts.concat([{
+          webpack: {
+            stats: extractDataFromWebpackStats(ctx.baselineStats),
+          },
+        }]);
       },
       skip: async (ctx) => {
         if (!compare) {
@@ -53,7 +61,11 @@ module.exports = ({
     },
     {
       title: 'Write baseline data',
-      task: (ctx) => writeBaseline(get(ctx, 'artifacts.0.webpack.stats')),
+      task: (ctx) => {
+        const stats = get(ctx, 'artifacts.0.webpack.stats');
+        const extractedWebpackStats = extractDataFromWebpackStats(stats);
+        return writeBaseline(extractedWebpackStats);
+      },
       skip: () => !baseline && TEXT.CLI_NO_BASELINE,
     },
     {
