@@ -1,4 +1,7 @@
 const path = require('path');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+
 
 module.exports = (settings) => {
   const {
@@ -39,6 +42,9 @@ module.exports = (settings) => {
           },
         },
       ],
+    },
+    optimization: {
+      minimizer: [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()],
     },
     devtool: 'source-map',
   };
