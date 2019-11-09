@@ -1,7 +1,7 @@
 import path from 'path';
 import process from 'process';
 import { get, merge } from 'lodash';
-import { createJobs } from '@bundle-stats/utils';
+import { createJobs, extractDataFromWebpackStats } from '@bundle-stats/utils';
 
 import * as TEXT from './text';
 import { getBaselineStatesFilepath, readBaseline } from './baseline';
@@ -34,7 +34,9 @@ const getOnEmit = (options) => async (compilation, callback) => {
     stats: statsOptions,
   } = options;
 
-  const data = compilation.getStats().toJson(statsOptions);
+  const data = extractDataFromWebpackStats(
+    compilation.getStats().toJson(statsOptions),
+  );
   const outputPath = get(compilation, 'options.output.path');
 
   const logger = compilation.getInfrastructureLogger
@@ -47,6 +49,7 @@ const getOnEmit = (options) => async (compilation, callback) => {
   try {
     if (compare) {
       baselineStats = await readBaseline();
+      baselineStats = extractDataFromWebpackStats(baselineStats);
     }
   } catch (err) {
     logger.warn(TEXT.PLUGIN_BASELINE_MISSING_WARN);
