@@ -1,6 +1,6 @@
 import webpackStatsCurrentExtracted from '../../../__fixtures__/webpack-stats-1.extracted';
 import webpackStatsBaselineExtracted from '../../../__fixtures__/webpack-stats-2.extracted';
-import { createJob } from '../create';
+import { createJob } from '../create-job';
 
 describe('Create job', () => {
   test('no baseline', () => {
