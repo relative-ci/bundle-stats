@@ -102,7 +102,7 @@ module.exports = ({
   tasks.run()
     .then(({ output }) => {
       console.log('\nReports saved:');
-      output.map((reportPath) => console.log(`- ${path.resolve(reportPath)}`));
+      output.map((reportPath) => console.log(`- ${reportPath}`));
     })
     .catch((err) => {
       console.error(err);
