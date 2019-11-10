@@ -4,7 +4,7 @@ import { get, merge } from 'lodash';
 import { createJobs, extractDataFromWebpackStats } from '@bundle-stats/utils';
 
 import * as TEXT from './text';
-import { getBaselineStatesFilepath, readBaseline } from './baseline';
+import { getBaselineStatsFilepath, readBaseline } from './baseline';
 import { createReports } from './create-report';
 
 const DEFAULT_OPTIONS = {
@@ -43,13 +43,14 @@ const getOnEmit = (options) => async (compilation, callback) => {
     ? compilation.getInfrastructureLogger('BundleStats')
     : console;
 
-  const baselineFilepath = getBaselineStatesFilepath(outputPath);
+  const baselineFilepath = getBaselineStatsFilepath(outputPath);
   let baselineStats = null;
 
   try {
     if (compare) {
-      baselineStats = await readBaseline();
+      baselineStats = await readBaseline(outputPath);
       baselineStats = extractDataFromWebpackStats(baselineStats);
+      logger.info(`Read baseline from ${baselineFilepath}`);
     }
   } catch (err) {
     logger.warn(TEXT.PLUGIN_BASELINE_MISSING_WARN);
@@ -81,6 +82,8 @@ const getOnEmit = (options) => async (compilation, callback) => {
         size: () => 0,
         source: () => JSON.stringify(data),
       };
+
+      logger.info(`Write baseline data to ${baselineFilepath}`);
     }
 
     callback();

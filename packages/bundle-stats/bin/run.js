@@ -9,6 +9,7 @@ const { createJobs, extractDataFromWebpackStats } = require('@bundle-stats/utils
 const {
   TEXT,
   createReports,
+  getBaselineStatsFilepath,
   readBaseline,
   writeBaseline,
 } = require('../');
@@ -18,7 +19,7 @@ module.exports = ({
 }) => {
   const tasks = new Listr([
     {
-      title: 'Read Webpack stat files',
+      title: 'Read Webpack stats files',
       task: (ctx) => Promise.all(
         artifactFilepaths.map((filepath) => readJSON(filepath)),
       ).then((artifacts) => {
@@ -31,7 +32,11 @@ module.exports = ({
     },
     {
       title: 'Read baseline data',
-      task: async (ctx) => {
+      task: async (ctx, task) => {
+        const baselineFilepath = path.relative(process.cwd(), getBaselineStatsFilepath());
+        // eslint-disable-next-line no-param-reassign
+        task.title = `${task.title} (${baselineFilepath})`;
+
         ctx.artifacts = ctx.artifacts.concat([{
           webpack: {
             stats: extractDataFromWebpackStats(ctx.baselineStats),
@@ -61,10 +66,15 @@ module.exports = ({
     },
     {
       title: 'Write baseline data',
-      task: (ctx) => {
+      task: (ctx, task) => {
         const stats = get(ctx, 'artifacts.0.webpack.stats');
         const extractedWebpackStats = extractDataFromWebpackStats(stats);
-        return writeBaseline(extractedWebpackStats);
+        const baselineFilepath = path.relative(process.cwd(), getBaselineStatsFilepath());
+
+        return writeBaseline(extractedWebpackStats).then(() => {
+          // eslint-disable-next-line no-param-reassign
+          task.title = `${task.title} (${baselineFilepath})`;
+        });
       },
       skip: () => !baseline && TEXT.CLI_NO_BASELINE,
     },
