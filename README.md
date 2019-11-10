@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank"><img alt="BundleStats screenshot" width="480" src="https://camo.githubusercontent.com/947159713ba0fccda8039f212839df132d41054e/68747470733a2f2f7777772e64726f70626f782e636f6d2f732f393573676779706b34676a777831622f62756e646c652d73746174732d312e31322e6a70673f7261773d31"/></a>
+  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank"><img alt="BundleStats screenshot" width="640" src="https://camo.githubusercontent.com/b506da13334c97c42de48bb85483ea019c8f25a7/68747470733a2f2f7777772e64726f70626f782e636f6d2f732f6733616662303036666570777875682f62756e646c652d73746174732d312e31332e6a70673f7261773d31"/></a>
 </p>
 <h1 align="center">BundleStats</h1>
 <p align="center">
