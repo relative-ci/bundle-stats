@@ -5,7 +5,7 @@ import findCacheDir from 'find-cache-dir';
 const BASELINE_STATS_DIR = findCacheDir({ name: 'bundle-stats' });
 const BASELINE_STATS_BASE = 'baseline.json';
 
-export const getBaselineStatesFilepath = (from) => {
+export const getBaselineStatsFilepath = (from) => {
   if (!from) {
     return path.join(BASELINE_STATS_DIR, BASELINE_STATS_BASE);
   }
@@ -16,5 +16,5 @@ export const getBaselineStatesFilepath = (from) => {
   );
 };
 
-export const readBaseline = (from) => readJSON(getBaselineStatesFilepath(from));
-export const writeBaseline = (data) => outputJSON(getBaselineStatesFilepath(), data);
+export const readBaseline = (from) => readJSON(getBaselineStatsFilepath(from));
+export const writeBaseline = (data) => outputJSON(getBaselineStatsFilepath(), data);
