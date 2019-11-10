@@ -146,7 +146,9 @@ exports[`Storyshots StandaloneApp default 1`] = `
                 <h1
                   className="jobTitle"
                 >
-                  #124
+                  <span>
+                    #124
+                  </span>
                   <span
                     className="jobTag"
                   >
@@ -205,7 +207,9 @@ exports[`Storyshots StandaloneApp default 1`] = `
                 <h1
                   className="jobTitle"
                 >
-                  #123
+                  <span>
+                    #123
+                  </span>
                   <span
                     className="jobTag"
                   >
@@ -15302,7 +15306,9 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                 <h1
                   className="jobTitle"
                 >
-                  #124
+                  <span>
+                    #124
+                  </span>
                   <span
                     className="jobTag"
                   >
@@ -84345,7 +84351,9 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                 <h1
                   className="jobTitle"
                 >
-                  #124
+                  <span>
+                    #124
+                  </span>
                   <span
                     className="jobTag"
                   >
@@ -84404,7 +84412,9 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                 <h1
                   className="jobTitle"
                 >
-                  #123
+                  <span>
+                    #123
+                  </span>
                   <span
                     className="jobTag"
                   >

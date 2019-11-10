@@ -55,8 +55,9 @@ export const JobsHeader = (props) => {
           <div className={css.job} key={job.internalBuilNumber}>
             <div className={css.jobDescription}>
               <h1 className={css.jobTitle}>
-                {`#${job.internalBuildNumber}`}
-
+                <span>
+                  {`#${job.internalBuildNumber}`}
+                </span>
                 <span className={css.jobTag}>
                   {index === 0 ? 'current' : 'baseline' }
                 </span>
@@ -68,14 +69,16 @@ export const JobsHeader = (props) => {
                     title={`${formatDate(builtAt)} ${formatTime(builtAt)}`}
                   >
                     <Icon glyph="clock" className={css.jobMetaIcon} />
-                    {formatDistanceToNow(new Date(builtAt))}
+                    <span>
+                      {formatDistanceToNow(new Date(builtAt))}
+                    </span>
                   </span>
                 )}
 
                 {hash && (
                   <span className={css.jobMetaItem} title="Webpack bundle hash">
                     <Icon glyph="commit" className={css.jobMetaIcon} />
-                    {hash}
+                    <span>{hash}</span>
                   </span>
                 )}
               </div>

@@ -3,7 +3,6 @@
   display: flex;
   align-items: stretch;
   flex-wrap: wrap;
-  background: var(--color-gray-light-background);
 }
 
 .job {
@@ -17,20 +16,30 @@
 
 .jobTitle {
   margin: 0;
+  font-size: var(--size-xxxlarge);
+  line-height: var(--space-medium);
   font-weight: bold;
-  line-height: 1.1;
+  vertical-align: top;
 }
 
 .jobTag {
   display: inline-block;
-  margin-top: var(--space-xxxsmall);
-  margin-left: var(--space-xxsmall);
+  margin-top: 5px;
+  margin-left: var(--space-xxxsmall);
   font-size: 8px;
+  line-height: var(--space-xxsmall);
   color: var(--color-gray);
   font-weight: normal;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   vertical-align: top;
+}
+
+.jobMeta {
+  margin-top: var(--space-xxsmall);
+  font-size: var(--size-small);
+  line-height: var(--space-xsmall);
+  color: var(--color-gray-light);
 }
 
 .jobDescription {
@@ -45,8 +54,6 @@
   display: inline-flex;
   margin-right: var(--space-xxsmall);
   align-items: center;
-  color: var(--color-gray);
-  line-height: var(--space-small);
 }
 
 .jobMetaIcon {
