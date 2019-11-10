@@ -3,6 +3,7 @@ module.exports = {
   globalSetup: '<rootDir>/build/jest/global-setup.js',
   setupFiles: [
     'core-js',
+    'jest-date-mock',
     '<rootDir>/build/jest/register-context.js',
   ],
   moduleNameMapper: {

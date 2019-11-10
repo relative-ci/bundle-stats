@@ -65,6 +65,7 @@
     "hex-rgb": "4.1.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
+    "jest-date-mock": "1.0.7",
     "lodash": "4.17.15",
     "markdown-loader-jest": "0.1.1",
     "prop-types": "15.7.2",

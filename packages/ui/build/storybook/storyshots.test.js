@@ -1,4 +1,5 @@
 import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
+import { advanceTo } from 'jest-date-mock';
 
 const createNodeMock = (element) => {
   if (element.type === 'div') {
@@ -13,6 +14,8 @@ const createNodeMock = (element) => {
 
   return null;
 };
+
+advanceTo(new Date(2019, 0, 10));
 
 initStoryshots({
   framework: 'react',
