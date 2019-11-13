@@ -20,7 +20,7 @@ const stories = storiesOf('Components/Summary', module);
 stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => (
-  <Summary data={currentJob.summary} />
+  <Summary data={currentJob.summary} showSummaryItemBaselineValue />
 ));
 
 stories.add('loading', () => (

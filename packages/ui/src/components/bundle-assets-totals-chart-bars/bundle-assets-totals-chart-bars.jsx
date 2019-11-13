@@ -55,6 +55,7 @@ export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
         baseline: get(items, [itemIndex, 'runs', runIndex + 1, 'value'], 0),
       }}
       showDelta={runIndex < jobs.length - 1}
+      showBaselineValue={runIndex < jobs.length - 1}
       size="large"
     />
   );

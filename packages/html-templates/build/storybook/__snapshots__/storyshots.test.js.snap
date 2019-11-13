@@ -270,7 +270,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
               className="items"
             >
               <div
-                className="root item medium showMetricDescription"
+                className="root item medium showMetricDescription showBaselineValue"
               >
                 <h3
                   className="title"
@@ -302,6 +302,22 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   className="root delta slightlyNegative"
                 >
                   +80B (+0.01%)
+                </span>
+                <span
+                  className="baselineMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      577.99KB
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
                 </span>
                 <button
                   className="root helpButton"
@@ -348,7 +364,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                 </button>
               </div>
               <div
-                className="root item medium showMetricDescription"
+                className="root item medium showMetricDescription showBaselineValue"
               >
                 <h3
                   className="title"
@@ -380,6 +396,22 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   className="root delta positive"
                 >
                   -3.14KB (-12.91%)
+                </span>
+                <span
+                  className="baselineMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      24.33KB
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
                 </span>
                 <button
                   className="root helpButton"
@@ -426,7 +458,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                 </button>
               </div>
               <div
-                className="root item medium showMetricDescription"
+                className="root item medium showMetricDescription showBaselineValue"
               >
                 <h3
                   className="title"
@@ -458,6 +490,22 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   className="root delta negative"
                 >
                   +75.34% (+100%)
+                </span>
+                <span
+                  className="baselineMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      0%
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
                 </span>
                 <button
                   className="root helpButton"
@@ -508,7 +556,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
               className="items"
             >
               <div
-                className="root item medium showMetricDescription"
+                className="root item medium showMetricDescription showBaselineValue"
               >
                 <h3
                   className="title"
@@ -536,6 +584,22 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   className="root delta"
                 >
                   0 (0%)
+                </span>
+                <span
+                  className="baselineMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      556
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
                 </span>
                 <button
                   className="root helpButton"
@@ -582,7 +646,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                 </button>
               </div>
               <div
-                className="root item medium showMetricDescription"
+                className="root item medium showMetricDescription showBaselineValue"
               >
                 <h3
                   className="title"
@@ -610,6 +674,22 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   className="root delta"
                 >
                   0 (0%)
+                </span>
+                <span
+                  className="baselineMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      0
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
                 </span>
                 <button
                   className="root helpButton"
@@ -656,7 +736,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                 </button>
               </div>
               <div
-                className="root item medium showMetricDescription"
+                className="root item medium showMetricDescription showBaselineValue"
               >
                 <h3
                   className="title"
@@ -684,6 +764,22 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   className="root delta"
                 >
                   0 (0%)
+                </span>
+                <span
+                  className="baselineMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      19
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
                 </span>
                 <button
                   className="root helpButton"
@@ -730,7 +826,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                 </button>
               </div>
               <div
-                className="root item medium showMetricDescription"
+                className="root item medium showMetricDescription showBaselineValue"
               >
                 <h3
                   className="title"
@@ -758,6 +854,22 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   className="root delta"
                 >
                   0 (0%)
+                </span>
+                <span
+                  className="baselineMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      63
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
                 </span>
                 <button
                   className="root helpButton"
@@ -804,7 +916,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                 </button>
               </div>
               <div
-                className="root item medium showMetricDescription"
+                className="root item medium showMetricDescription showBaselineValue"
               >
                 <h3
                   className="title"
@@ -832,6 +944,22 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   className="root delta"
                 >
                   0 (0%)
+                </span>
+                <span
+                  className="baselineMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      3
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
                 </span>
                 <button
                   className="root helpButton"
@@ -1008,7 +1136,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                         className="tooltip"
                       >
                         <div
-                          className="root itemTooltip large"
+                          className="root itemTooltip large showBaselineValue"
                         >
                           <h3
                             className="title"
@@ -1041,6 +1169,22 @@ exports[`Storyshots StandaloneApp default 1`] = `
                           >
                             +80B (+0.01%)
                           </span>
+                          <span
+                            className="baselineMetric root"
+                          >
+                            <div
+                              className="display"
+                            >
+                              <span
+                                className="displayValue"
+                              >
+                                577.99KB
+                              </span>
+                            </div>
+                            <span
+                              className="delta"
+                            />
+                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -1069,7 +1213,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                         className="tooltip"
                       >
                         <div
-                          className="root itemTooltip large"
+                          className="root itemTooltip large showBaselineValue"
                         >
                           <h3
                             className="title"
@@ -1102,6 +1246,22 @@ exports[`Storyshots StandaloneApp default 1`] = `
                           >
                             -3.14KB (-12.91%)
                           </span>
+                          <span
+                            className="baselineMetric root"
+                          >
+                            <div
+                              className="display"
+                            >
+                              <span
+                                className="displayValue"
+                              >
+                                24.33KB
+                              </span>
+                            </div>
+                            <span
+                              className="delta"
+                            />
+                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -1130,7 +1290,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                         className="tooltip"
                       >
                         <div
-                          className="root itemTooltip large"
+                          className="root itemTooltip large showBaselineValue"
                         >
                           <h3
                             className="title"
@@ -1163,6 +1323,22 @@ exports[`Storyshots StandaloneApp default 1`] = `
                           >
                             0B (0%)
                           </span>
+                          <span
+                            className="baselineMetric root"
+                          >
+                            <div
+                              className="display"
+                            >
+                              <span
+                                className="displayValue"
+                              >
+                                194.57KB
+                              </span>
+                            </div>
+                            <span
+                              className="delta"
+                            />
+                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -1191,7 +1367,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                         className="tooltip"
                       >
                         <div
-                          className="root itemTooltip large"
+                          className="root itemTooltip large showBaselineValue"
                         >
                           <h3
                             className="title"
@@ -1224,6 +1400,22 @@ exports[`Storyshots StandaloneApp default 1`] = `
                           >
                             0B (0%)
                           </span>
+                          <span
+                            className="baselineMetric root"
+                          >
+                            <div
+                              className="display"
+                            >
+                              <span
+                                className="displayValue"
+                              >
+                                0B
+                              </span>
+                            </div>
+                            <span
+                              className="delta"
+                            />
+                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -1252,7 +1444,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                         className="tooltip"
                       >
                         <div
-                          className="root itemTooltip large"
+                          className="root itemTooltip large showBaselineValue"
                         >
                           <h3
                             className="title"
@@ -1285,6 +1477,22 @@ exports[`Storyshots StandaloneApp default 1`] = `
                           >
                             0B (0%)
                           </span>
+                          <span
+                            className="baselineMetric root"
+                          >
+                            <div
+                              className="display"
+                            >
+                              <span
+                                className="displayValue"
+                              >
+                                0B
+                              </span>
+                            </div>
+                            <span
+                              className="delta"
+                            />
+                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -1313,7 +1521,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                         className="tooltip"
                       >
                         <div
-                          className="root itemTooltip large"
+                          className="root itemTooltip large showBaselineValue"
                         >
                           <h3
                             className="title"
@@ -1346,6 +1554,22 @@ exports[`Storyshots StandaloneApp default 1`] = `
                           >
                             0B (0%)
                           </span>
+                          <span
+                            className="baselineMetric root"
+                          >
+                            <div
+                              className="display"
+                            >
+                              <span
+                                className="displayValue"
+                              >
+                                1.93KB
+                              </span>
+                            </div>
+                            <span
+                              className="delta"
+                            />
+                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -1374,7 +1598,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                         className="tooltip"
                       >
                         <div
-                          className="root itemTooltip large"
+                          className="root itemTooltip large showBaselineValue"
                         >
                           <h3
                             className="title"
@@ -1406,6 +1630,22 @@ exports[`Storyshots StandaloneApp default 1`] = `
                             className="root delta"
                           >
                             0B (0%)
+                          </span>
+                          <span
+                            className="baselineMetric root"
+                          >
+                            <div
+                              className="display"
+                            >
+                              <span
+                                className="displayValue"
+                              >
+                                627B
+                              </span>
+                            </div>
+                            <span
+                              className="delta"
+                            />
                           </span>
                         </div>
                         <span
@@ -15362,11 +15602,6 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                     className="delta"
                   />
                 </span>
-                <span
-                  className="root delta slightlyNegative"
-                >
-                  +80B (+0.01%)
-                </span>
                 <button
                   className="root helpButton"
                   type="button"
@@ -15439,11 +15674,6 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                   <span
                     className="delta"
                   />
-                </span>
-                <span
-                  className="root delta positive"
-                >
-                  -3.14KB (-12.91%)
                 </span>
                 <button
                   className="root helpButton"
@@ -15518,11 +15748,6 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                     className="delta"
                   />
                 </span>
-                <span
-                  className="root delta negative"
-                >
-                  +75.34% (+100%)
-                </span>
                 <button
                   className="root helpButton"
                   type="button"
@@ -15596,11 +15821,6 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                     className="delta"
                   />
                 </span>
-                <span
-                  className="root delta"
-                >
-                  0 (0%)
-                </span>
                 <button
                   className="root helpButton"
                   type="button"
@@ -15669,11 +15889,6 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                   <span
                     className="delta"
                   />
-                </span>
-                <span
-                  className="root delta"
-                >
-                  0 (0%)
                 </span>
                 <button
                   className="root helpButton"
@@ -15744,11 +15959,6 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                     className="delta"
                   />
                 </span>
-                <span
-                  className="root delta"
-                >
-                  0 (0%)
-                </span>
                 <button
                   className="root helpButton"
                   type="button"
@@ -15818,11 +16028,6 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                     className="delta"
                   />
                 </span>
-                <span
-                  className="root delta"
-                >
-                  0 (0%)
-                </span>
                 <button
                   className="root helpButton"
                   type="button"
@@ -15891,11 +16096,6 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                   <span
                     className="delta"
                   />
-                </span>
-                <span
-                  className="root delta"
-                >
-                  0 (0%)
                 </span>
                 <button
                   className="root helpButton"
@@ -84405,7 +84605,7 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
               className="items"
             >
               <div
-                className="root item medium showMetricDescription"
+                className="root item medium showMetricDescription showBaselineValue"
               >
                 <h3
                   className="title"
@@ -84437,6 +84637,22 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                   className="root delta slightlyNegative"
                 >
                   +80B (+0.01%)
+                </span>
+                <span
+                  className="baselineMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      577.99KB
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
                 </span>
                 <button
                   className="root helpButton"
@@ -84483,7 +84699,7 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                 </button>
               </div>
               <div
-                className="root item medium showMetricDescription"
+                className="root item medium showMetricDescription showBaselineValue"
               >
                 <h3
                   className="title"
@@ -84515,6 +84731,22 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                   className="root delta positive"
                 >
                   -3.14KB (-12.91%)
+                </span>
+                <span
+                  className="baselineMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      24.33KB
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
                 </span>
                 <button
                   className="root helpButton"
@@ -84561,7 +84793,7 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                 </button>
               </div>
               <div
-                className="root item medium showMetricDescription"
+                className="root item medium showMetricDescription showBaselineValue"
               >
                 <h3
                   className="title"
@@ -84593,6 +84825,22 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                   className="root delta negative"
                 >
                   +75.34% (+100%)
+                </span>
+                <span
+                  className="baselineMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      0%
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
                 </span>
                 <button
                   className="root helpButton"
@@ -84643,7 +84891,7 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
               className="items"
             >
               <div
-                className="root item medium showMetricDescription"
+                className="root item medium showMetricDescription showBaselineValue"
               >
                 <h3
                   className="title"
@@ -84671,6 +84919,22 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                   className="root delta"
                 >
                   0 (0%)
+                </span>
+                <span
+                  className="baselineMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      556
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
                 </span>
                 <button
                   className="root helpButton"
@@ -84717,7 +84981,7 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                 </button>
               </div>
               <div
-                className="root item medium showMetricDescription"
+                className="root item medium showMetricDescription showBaselineValue"
               >
                 <h3
                   className="title"
@@ -84745,6 +85009,22 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                   className="root delta"
                 >
                   0 (0%)
+                </span>
+                <span
+                  className="baselineMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      0
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
                 </span>
                 <button
                   className="root helpButton"
@@ -84791,7 +85071,7 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                 </button>
               </div>
               <div
-                className="root item medium showMetricDescription"
+                className="root item medium showMetricDescription showBaselineValue"
               >
                 <h3
                   className="title"
@@ -84819,6 +85099,22 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                   className="root delta"
                 >
                   0 (0%)
+                </span>
+                <span
+                  className="baselineMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      19
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
                 </span>
                 <button
                   className="root helpButton"
@@ -84865,7 +85161,7 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                 </button>
               </div>
               <div
-                className="root item medium showMetricDescription"
+                className="root item medium showMetricDescription showBaselineValue"
               >
                 <h3
                   className="title"
@@ -84893,6 +85189,22 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                   className="root delta"
                 >
                   0 (0%)
+                </span>
+                <span
+                  className="baselineMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      63
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
                 </span>
                 <button
                   className="root helpButton"
@@ -84939,7 +85251,7 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                 </button>
               </div>
               <div
-                className="root item medium showMetricDescription"
+                className="root item medium showMetricDescription showBaselineValue"
               >
                 <h3
                   className="title"
@@ -84967,6 +85279,22 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                   className="root delta"
                 >
                   0 (0%)
+                </span>
+                <span
+                  className="baselineMetric root"
+                >
+                  <div
+                    className="display"
+                  >
+                    <span
+                      className="displayValue"
+                    >
+                      3
+                    </span>
+                  </div>
+                  <span
+                    className="delta"
+                  />
                 </span>
                 <button
                   className="root helpButton"
@@ -85065,7 +85393,7 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                         className="tooltip"
                       >
                         <div
-                          className="root itemTooltip large"
+                          className="root itemTooltip large showBaselineValue"
                         >
                           <h3
                             className="title"
@@ -85098,6 +85426,22 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                           >
                             +80B (+0.01%)
                           </span>
+                          <span
+                            className="baselineMetric root"
+                          >
+                            <div
+                              className="display"
+                            >
+                              <span
+                                className="displayValue"
+                              >
+                                577.99KB
+                              </span>
+                            </div>
+                            <span
+                              className="delta"
+                            />
+                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -85126,7 +85470,7 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                         className="tooltip"
                       >
                         <div
-                          className="root itemTooltip large"
+                          className="root itemTooltip large showBaselineValue"
                         >
                           <h3
                             className="title"
@@ -85159,6 +85503,22 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                           >
                             -3.14KB (-12.91%)
                           </span>
+                          <span
+                            className="baselineMetric root"
+                          >
+                            <div
+                              className="display"
+                            >
+                              <span
+                                className="displayValue"
+                              >
+                                24.33KB
+                              </span>
+                            </div>
+                            <span
+                              className="delta"
+                            />
+                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -85187,7 +85547,7 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                         className="tooltip"
                       >
                         <div
-                          className="root itemTooltip large"
+                          className="root itemTooltip large showBaselineValue"
                         >
                           <h3
                             className="title"
@@ -85220,6 +85580,22 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                           >
                             0B (0%)
                           </span>
+                          <span
+                            className="baselineMetric root"
+                          >
+                            <div
+                              className="display"
+                            >
+                              <span
+                                className="displayValue"
+                              >
+                                194.57KB
+                              </span>
+                            </div>
+                            <span
+                              className="delta"
+                            />
+                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -85248,7 +85624,7 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                         className="tooltip"
                       >
                         <div
-                          className="root itemTooltip large"
+                          className="root itemTooltip large showBaselineValue"
                         >
                           <h3
                             className="title"
@@ -85281,6 +85657,22 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                           >
                             0B (0%)
                           </span>
+                          <span
+                            className="baselineMetric root"
+                          >
+                            <div
+                              className="display"
+                            >
+                              <span
+                                className="displayValue"
+                              >
+                                0B
+                              </span>
+                            </div>
+                            <span
+                              className="delta"
+                            />
+                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -85309,7 +85701,7 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                         className="tooltip"
                       >
                         <div
-                          className="root itemTooltip large"
+                          className="root itemTooltip large showBaselineValue"
                         >
                           <h3
                             className="title"
@@ -85342,6 +85734,22 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                           >
                             0B (0%)
                           </span>
+                          <span
+                            className="baselineMetric root"
+                          >
+                            <div
+                              className="display"
+                            >
+                              <span
+                                className="displayValue"
+                              >
+                                0B
+                              </span>
+                            </div>
+                            <span
+                              className="delta"
+                            />
+                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -85370,7 +85778,7 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                         className="tooltip"
                       >
                         <div
-                          className="root itemTooltip large"
+                          className="root itemTooltip large showBaselineValue"
                         >
                           <h3
                             className="title"
@@ -85403,6 +85811,22 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                           >
                             0B (0%)
                           </span>
+                          <span
+                            className="baselineMetric root"
+                          >
+                            <div
+                              className="display"
+                            >
+                              <span
+                                className="displayValue"
+                              >
+                                1.93KB
+                              </span>
+                            </div>
+                            <span
+                              className="delta"
+                            />
+                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -85431,7 +85855,7 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                         className="tooltip"
                       >
                         <div
-                          className="root itemTooltip large"
+                          className="root itemTooltip large showBaselineValue"
                         >
                           <h3
                             className="title"
@@ -85463,6 +85887,22 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                             className="root delta"
                           >
                             0B (0%)
+                          </span>
+                          <span
+                            className="baselineMetric root"
+                          >
+                            <div
+                              className="display"
+                            >
+                              <span
+                                className="displayValue"
+                              >
+                                627B
+                              </span>
+                            </div>
+                            <span
+                              className="delta"
+                            />
                           </span>
                         </div>
                         <span

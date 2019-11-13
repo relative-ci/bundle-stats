@@ -64,7 +64,11 @@ const StandaloneApp = ({ jobs }) => {
         <JobsHeader jobs={jobs} />
       </Container>
       <Container>
-        <Summary data={getSummaryData(jobs)} />
+        <Summary
+          data={getSummaryData(jobs)}
+          showSummaryItemDelta={jobs.length !== 1}
+          showSummaryItemBaselineValue={jobs.length !== 1}
+        />
       </Container>
       {warnings && warnings.duplicatePackages && (
         <Container>

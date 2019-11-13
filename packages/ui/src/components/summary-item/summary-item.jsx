@@ -11,7 +11,7 @@ import { Delta } from '../delta';
 import css from './summary-item.module.css';
 
 export const SummaryItem = ({
-  className, size, id, data, loading, showDelta, showMetricDescription,
+  className, size, id, data, loading, showBaselineValue, showDelta, showMetricDescription,
 }) => {
   const { baseline, current } = data || { baseline: 0, current: 0 };
 
@@ -19,7 +19,11 @@ export const SummaryItem = ({
   const diff = getDelta({ value: baseline }, { value: current });
 
   const rootClassName = cx(
-    css.root, className, css[size], showMetricDescription && css.showMetricDescription,
+    css.root,
+    className,
+    css[size],
+    showMetricDescription && css.showMetricDescription,
+    showBaselineValue && css.showBaselineValue,
   );
 
   return (
@@ -50,6 +54,16 @@ export const SummaryItem = ({
         <span className={cx(css.delta, css.loading)} />
       )}
 
+      {!loading ? showBaselineValue && (
+        <Metric
+          className={css.baselineMetric}
+          value={baseline}
+          formatter={metric.formatter}
+        />
+      ) : (
+        <span className={cx(css.baselineMetric, css.loading)} />
+      )}
+
       {showMetricDescription && metric.description && (
         <Tooltip
           as="button"
@@ -78,6 +92,7 @@ SummaryItem.defaultProps = {
   data: null,
   size: 'medium',
   showMetricDescription: false,
+  showBaselineValue: false,
   showDelta: true,
 };
 
@@ -99,6 +114,9 @@ SummaryItem.propTypes = {
 
   /** Show description */
   showMetricDescription: PropTypes.bool,
+
+  /** Show baseline value */
+  showBaselineValue: PropTypes.bool,
 
   /** Show delta */
   showDelta: PropTypes.bool,

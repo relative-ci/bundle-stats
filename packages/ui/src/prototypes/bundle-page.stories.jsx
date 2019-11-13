@@ -48,7 +48,7 @@ stories.add('totals', () => (
         <JobsHeader jobs={JOBS} />
       </Container>
       <Container>
-        <Summary data={currentJob.summary} />
+        <Summary data={currentJob.summary} showSummaryItemBaselineValue />
       </Container>
       {currentJob.warnings && currentJob.warnings.duplicatePackages && (
         <Container>
@@ -84,7 +84,7 @@ stories.add('assets', () => (
         <JobsHeader jobs={JOBS} />
       </Container>
       <Container>
-        <Summary data={currentJob.summary} />
+        <Summary data={currentJob.summary} showSummaryItemBaselineValue />
       </Container>
       {currentJob.warnings && currentJob.warnings.duplicatePackages && (
         <Container>
@@ -117,7 +117,7 @@ stories.add('modules', () => (
         <JobsHeader jobs={JOBS} />
       </Container>
       <Container>
-        <Summary data={currentJob.summary} />
+        <Summary data={currentJob.summary} showSummaryItemBaselineValue />
       </Container>
       {currentJob.warnings && currentJob.warnings.duplicatePackages && (
         <Container>
@@ -148,7 +148,7 @@ stories.add('packages', () => (
         <JobsHeader jobs={JOBS} />
       </Container>
       <Container>
-        <Summary data={currentJob.summary} />
+        <Summary data={currentJob.summary} showSummaryItemBaselineValue />
       </Container>
       {currentJob.warnings && currentJob.warnings.duplicatePackages && (
         <Container>
