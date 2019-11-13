@@ -91,6 +91,21 @@
   padding-right: var(--space-medium);
 }
 
+/* Show baseline value */
+.showBaselineValue .currentMetric {
+  display: inline-block;
+  margin-right: var(--space-xxxsmall);
+}
+
+.showBaselineValue .delta {
+  margin: 0;
+  display: inline-block;
+}
+
+.showBaselineValue .baselineMetric {
+  clear: both;
+}
+
 /* Loading state */
 .loading {
   background: var(--color-gray-light-background);

@@ -54,6 +54,18 @@ stories.add('showDelta false', () => (
   />
 ));
 
+stories.add('showBaseline value true', () => (
+  <SummaryItem
+    loading={false}
+    id="webpack.assets.totalSizeByTypeALL"
+    data={{
+      current: 120 * 1000,
+      baseline: 102 * 1000,
+    }}
+    showBaselineValue
+  />
+));
+
 stories.add('loading', () => (
   <SummaryItem
     loading

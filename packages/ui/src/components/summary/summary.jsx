@@ -7,7 +7,7 @@ import { SummaryItem } from '../summary-item';
 import css from './summary.module.css';
 
 export const Summary = ({
-  className, data, keys, loading, showSummaryItemDelta,
+  className, data, keys, loading, showSummaryItemDelta, showSummaryItemBaselineValue,
 }) => {
   const getRenderSummaryItem = (itemProps) => (key) => (
     <SummaryItem
@@ -17,6 +17,7 @@ export const Summary = ({
       data={data && data[key]}
       loading={loading}
       showMetricDescription
+      showBaselineValue={showSummaryItemBaselineValue}
       showDelta={showSummaryItemDelta}
       {...itemProps}
     />
@@ -49,6 +50,7 @@ Summary.defaultProps = {
   ],
   loading: false,
   showSummaryItemDelta: true,
+  showSummaryItemBaselineValue: false,
 };
 
 Summary.propTypes = {
@@ -62,4 +64,5 @@ Summary.propTypes = {
   keys: PropTypes.arrayOf(PropTypes.string),
   loading: PropTypes.bool,
   showSummaryItemDelta: PropTypes.bool,
+  showSummaryItemBaselineValue: PropTypes.bool,
 };

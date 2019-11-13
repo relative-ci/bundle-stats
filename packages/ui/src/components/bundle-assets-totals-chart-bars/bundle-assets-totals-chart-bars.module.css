@@ -37,6 +37,7 @@
 }
 
 .itemTooltip {
+  min-width: 240px;
   text-align: left;
   padding: 0;
 }
