@@ -28,5 +28,5 @@ stories.add('loading', () => (
 ));
 
 stories.add('single run', () => (
-  <Summary data={createStatsSummary(null, currentJob.stats)} />
+  <Summary data={createStatsSummary(null, currentJob.stats)} showSummaryItemDelta={false} />
 ));

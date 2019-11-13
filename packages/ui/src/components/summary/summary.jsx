@@ -7,7 +7,7 @@ import { SummaryItem } from '../summary-item';
 import css from './summary.module.css';
 
 export const Summary = ({
-  className, data, keys, loading,
+  className, data, keys, loading, showSummaryItemDelta,
 }) => {
   const getRenderSummaryItem = (itemProps) => (key) => (
     <SummaryItem
@@ -17,6 +17,7 @@ export const Summary = ({
       data={data && data[key]}
       loading={loading}
       showMetricDescription
+      showDelta={showSummaryItemDelta}
       {...itemProps}
     />
   );
@@ -47,6 +48,7 @@ Summary.defaultProps = {
     'webpack.duplicatePackagesCount',
   ],
   loading: false,
+  showSummaryItemDelta: true,
 };
 
 Summary.propTypes = {
@@ -59,4 +61,5 @@ Summary.propTypes = {
   }),
   keys: PropTypes.arrayOf(PropTypes.string),
   loading: PropTypes.bool,
+  showSummaryItemDelta: PropTypes.bool,
 };

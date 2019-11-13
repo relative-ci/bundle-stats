@@ -1476,11 +1476,6 @@ exports[`Storyshots StandaloneApp default 1`] = `
                               className="delta"
                             />
                           </span>
-                          <span
-                            className="root delta negative"
-                          >
-                            +577.99KB (+100%)
-                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -1536,11 +1531,6 @@ exports[`Storyshots StandaloneApp default 1`] = `
                             <span
                               className="delta"
                             />
-                          </span>
-                          <span
-                            className="root delta negative"
-                          >
-                            +24.33KB (+100%)
                           </span>
                         </div>
                         <span
@@ -1598,11 +1588,6 @@ exports[`Storyshots StandaloneApp default 1`] = `
                               className="delta"
                             />
                           </span>
-                          <span
-                            className="root delta negative"
-                          >
-                            +194.57KB (+100%)
-                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -1658,11 +1643,6 @@ exports[`Storyshots StandaloneApp default 1`] = `
                             <span
                               className="delta"
                             />
-                          </span>
-                          <span
-                            className="root delta"
-                          >
-                            0B (0%)
                           </span>
                         </div>
                         <span
@@ -1720,11 +1700,6 @@ exports[`Storyshots StandaloneApp default 1`] = `
                               className="delta"
                             />
                           </span>
-                          <span
-                            className="root delta"
-                          >
-                            0B (0%)
-                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -1781,11 +1756,6 @@ exports[`Storyshots StandaloneApp default 1`] = `
                               className="delta"
                             />
                           </span>
-                          <span
-                            className="root delta negative"
-                          >
-                            +1.93KB (+100%)
-                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -1841,11 +1811,6 @@ exports[`Storyshots StandaloneApp default 1`] = `
                             <span
                               className="delta"
                             />
-                          </span>
-                          <span
-                            className="root delta negative"
-                          >
-                            +627B (+100%)
                           </span>
                         </div>
                         <span
@@ -16135,11 +16100,6 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                               className="delta"
                             />
                           </span>
-                          <span
-                            className="root delta negative"
-                          >
-                            +578.07KB (+100%)
-                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -16195,11 +16155,6 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                             <span
                               className="delta"
                             />
-                          </span>
-                          <span
-                            className="root delta negative"
-                          >
-                            +21.19KB (+100%)
                           </span>
                         </div>
                         <span
@@ -16257,11 +16212,6 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                               className="delta"
                             />
                           </span>
-                          <span
-                            className="root delta negative"
-                          >
-                            +194.57KB (+100%)
-                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -16317,11 +16267,6 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                             <span
                               className="delta"
                             />
-                          </span>
-                          <span
-                            className="root delta"
-                          >
-                            0B (0%)
                           </span>
                         </div>
                         <span
@@ -16379,11 +16324,6 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                               className="delta"
                             />
                           </span>
-                          <span
-                            className="root delta"
-                          >
-                            0B (0%)
-                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -16440,11 +16380,6 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                               className="delta"
                             />
                           </span>
-                          <span
-                            className="root delta negative"
-                          >
-                            +1.93KB (+100%)
-                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -16500,11 +16435,6 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                             <span
                               className="delta"
                             />
-                          </span>
-                          <span
-                            className="root delta negative"
-                          >
-                            +627B (+100%)
                           </span>
                         </div>
                         <span
@@ -85603,11 +85533,6 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                               className="delta"
                             />
                           </span>
-                          <span
-                            className="root delta negative"
-                          >
-                            +577.99KB (+100%)
-                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -85663,11 +85588,6 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                             <span
                               className="delta"
                             />
-                          </span>
-                          <span
-                            className="root delta negative"
-                          >
-                            +24.33KB (+100%)
                           </span>
                         </div>
                         <span
@@ -85725,11 +85645,6 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                               className="delta"
                             />
                           </span>
-                          <span
-                            className="root delta negative"
-                          >
-                            +194.57KB (+100%)
-                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -85785,11 +85700,6 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                             <span
                               className="delta"
                             />
-                          </span>
-                          <span
-                            className="root delta"
-                          >
-                            0B (0%)
                           </span>
                         </div>
                         <span
@@ -85847,11 +85757,6 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                               className="delta"
                             />
                           </span>
-                          <span
-                            className="root delta"
-                          >
-                            0B (0%)
-                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -85908,11 +85813,6 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                               className="delta"
                             />
                           </span>
-                          <span
-                            className="root delta negative"
-                          >
-                            +1.93KB (+100%)
-                          </span>
                         </div>
                         <span
                           className="tooltipArrow"
@@ -85968,11 +85868,6 @@ exports[`Storyshots StandaloneApp no warnings 1`] = `
                             <span
                               className="delta"
                             />
-                          </span>
-                          <span
-                            className="root delta negative"
-                          >
-                            +627B (+100%)
                           </span>
                         </div>
                         <span
