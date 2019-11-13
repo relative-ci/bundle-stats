@@ -30,7 +30,7 @@
   min-height: var(--space-xsmall);
   font-size: var(--size-small);
   line-height: var(--space-xsmall);
-  text-align: left;
+  text-align: inherit;
 }
 
 .helpButton {
