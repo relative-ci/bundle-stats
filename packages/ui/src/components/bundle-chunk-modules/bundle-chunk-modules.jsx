@@ -73,6 +73,7 @@ export const BundleChunkModules = ({
   modules,
   totalRowCount,
   updateFilters,
+  resetFilters,
   filters,
   sortItems,
   sort,
@@ -82,7 +83,20 @@ export const BundleChunkModules = ({
   const rootClassName = cx(css.root, className);
   const emptyMessage = totalRowCount === 0
     ? 'No modules available.'
-    : 'No modules match your filters.';
+    : (
+      <div className={css.empty}>
+        <p className={css.emptyText}>
+          No modules match your filters.
+        </p>
+        <button
+          className={css.emptyAction}
+          type="button"
+          onClick={() => resetFilters()}
+        >
+          Clear filters
+        </button>
+      </div>
+    );
 
   return (
     <div className={rootClassName}>
@@ -163,6 +177,9 @@ BundleChunkModules.propTypes = {
 
   /** Update filters handler */
   updateFilters: PropTypes.func.isRequired,
+
+  /** Reset filters handler */
+  resetFilters: PropTypes.func.isRequired,
 
   /** Filters data */
   filters: PropTypes.shape({

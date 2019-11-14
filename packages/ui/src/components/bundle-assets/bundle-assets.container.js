@@ -155,10 +155,25 @@ export const enhance = compose(
   withProps(addRowFlags),
   withProps(addRowIsNotPredictive),
 
-  withState('filters', 'updateFilters', ({ jobs }) => ({
-    [FILTER_CHANGED]: jobs.length > 1, // enable filter only when there are multiple jobs
-    ...getEntryTypeFilters(true),
-    ...getFileTypeFilters(true),
+  // Filters
+  withProps(({ jobs }) => {
+    const defaultFilters = {
+      [FILTER_CHANGED]: false,
+      ...getEntryTypeFilters(true),
+      ...getFileTypeFilters(true),
+    };
+
+    return {
+      defaultFilters,
+      initialFilters: {
+        ...defaultFilters,
+        [FILTER_CHANGED]: jobs.length > 1, // enable filter only when there are multiple jobs
+      },
+    };
+  }),
+  withState('filters', 'updateFilters', ({ initialFilters }) => initialFilters),
+  withProps(({ defaultFilters, updateFilters }) => ({
+    resetFilters: () => updateFilters(defaultFilters),
   })),
 
   withProps(({ items, filters }) => ({

@@ -37,6 +37,7 @@ export const BundlePackages = (props) => {
     runs,
     items,
     updateFilters,
+    resetFilters,
     totalRowCount,
     filters,
     sortItems,
@@ -47,7 +48,20 @@ export const BundlePackages = (props) => {
   const labeledRuns = runs.map(addRunLabel);
   const emptyMessage = totalRowCount === 0
     ? 'No packages available.'
-    : 'No packages match your filters.';
+    : (
+      <div className={css.empty}>
+        <p className={css.emptyText}>
+          No packages match your filters.
+        </p>
+        <button
+          className={css.emptyAction}
+          type="button"
+          onClick={() => resetFilters()}
+        >
+          Clear filters
+        </button>
+      </div>
+    );
 
   return (
     <section className={cx(css.root, className)}>
@@ -107,6 +121,7 @@ BundlePackages.propTypes = {
     })),
   })).isRequired,
   updateFilters: PropTypes.func.isRequired,
+  resetFilters: PropTypes.func.isRequired,
   totalRowCount: PropTypes.number,
   filters: PropTypes.shape({
     changed: PropTypes.bool,

@@ -58,6 +58,42 @@ stories.add('empty modules', () => (
   />
 ));
 
+stories.add('empty filtered modules', () => (
+  <BundleChunkModules
+    name="vendor"
+    id="1"
+    runs={RUNS_MULTIPLE}
+    modules={[
+      {
+        key: 'module-a',
+        label: 'module-a',
+        biggerIsBetter: false,
+        changed: false,
+        runs: [
+          {
+            name: 'module-a',
+            value: 25,
+            displayValue: '25B',
+            delta: 0,
+            deltaPercentage: 0,
+            displayDelta: '0B',
+            displayDeltaPercentage: '0%',
+          },
+          {
+            name: 'module-a',
+            value: 25,
+            displayValue: '25B',
+            delta: 0,
+            deltaPercentage: 0,
+            displayDelta: '0B',
+            displayDeltaPercentage: '0%',
+          },
+        ],
+      },
+    ]}
+  />
+));
+
 const RUNS_EMPTY_BASELINE = [
   currentJob,
   null,

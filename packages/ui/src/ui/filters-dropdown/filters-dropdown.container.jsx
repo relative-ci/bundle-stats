@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isEqual } from 'lodash';
 
 const getInitialValues = (key, filters) => {
   if (typeof filters.defaultValue !== 'undefined') {
@@ -31,6 +32,14 @@ export const filtersDropdownContainer = (BaseComponent) => {
       this.state = {
         values: getInitialValues('', filters),
       };
+    }
+
+    static getDerivedStateFromProps({ filters }, state) {
+      if (isEqual(filters, state.values)) {
+        return null;
+      }
+
+      return { values: getInitialValues('', filters) };
     }
 
     toggleFilter = (key, value) => this.setState(({ values, ...state }) => {
