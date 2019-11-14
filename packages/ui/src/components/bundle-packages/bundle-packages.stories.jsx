@@ -35,6 +35,27 @@ stories.add('empty packages', () => (
   />
 ));
 
+stories.add('empty filtered packages', () => (
+  <BundlePackages
+    jobs={[
+      set(merge({}, currentJob), 'rawData.webpack.stats.modules', [
+        {
+          name: './node_modules/package-a/dist.js',
+          size: 100,
+          chunks: [1],
+        },
+      ]),
+      set(merge({}, baselineJob), 'rawData.webpack.stats.modules', [
+        {
+          name: './node_modules/package-a/dist.js',
+          size: 100,
+          chunks: [1],
+        },
+      ]),
+    ]}
+  />
+));
+
 stories.add('empty baseline', () => (
   <BundlePackages
     jobs={[currentJob, undefined]}

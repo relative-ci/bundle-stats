@@ -83,9 +83,21 @@ export const enhance = compose(
     };
   }),
 
-  withState('filters', 'updateFilters', ({ jobs }) => ({
-    [FILTER_CHANGED]: jobs.length > 1, // enable filter only when there are multiple jobs
-    [FILTER_DUPLICATE]: false,
+  withProps(({ runs }) => {
+    const defaultFilters = { [FILTER_CHANGED]: false, [FILTER_DUPLICATE]: false };
+
+    return {
+      defaultFilters,
+      initialFilters: {
+        ...defaultFilters,
+        // enable filter only when there are multiple jobs
+        [FILTER_CHANGED]: runs && runs.length > 1,
+      },
+    };
+  }),
+  withState('filters', 'updateFilters', ({ initialFilters }) => initialFilters),
+  withProps(({ defaultFilters, updateFilters }) => ({
+    resetFilters: () => updateFilters(defaultFilters),
   })),
 
   withProps(({ items, filters }) => ({

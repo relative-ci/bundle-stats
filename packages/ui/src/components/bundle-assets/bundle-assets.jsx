@@ -23,11 +23,11 @@ const RUNS_LABELS = [
   RUN_TITLE_BASELINE,
 ];
 
-const getFileTypeFilters = () => Object.entries(FILE_TYPE_LABELS)
+const getFileTypeFilters = (filters) => Object.entries(FILE_TYPE_LABELS)
   .map(([id, label]) => ({
     [id]: {
       label,
-      defaultValue: true,
+      defaultValue: get(filters, `fileTypes.${id}`, true),
     },
   }))
   .reduce((agg, current) => ({
@@ -165,6 +165,7 @@ export const BundleAssets = (props) => {
     runs,
     items,
     updateFilters,
+    resetFilters,
     totalRowCount,
     filters,
     sortItems,
@@ -175,7 +176,20 @@ export const BundleAssets = (props) => {
   const labeledRuns = runs.map(addRunLabel);
   const emptyMessage = totalRowCount === 0
     ? 'No assets available.'
-    : 'No assets match your filters.';
+    : (
+      <div className={css.empty}>
+        <p className={css.emptyText}>
+          No assets match your filters.
+        </p>
+        <button
+          className={css.emptyAction}
+          type="button"
+          onClick={() => resetFilters()}
+        >
+          Clear filters
+        </button>
+      </div>
+    );
 
   return (
     <section className={cx(css.root, className)}>
@@ -193,31 +207,31 @@ export const BundleAssets = (props) => {
           filters={{
             [FILTER_CHANGED]: {
               label: 'Changed',
-              defaultValue: filters.changed,
+              defaultValue: filters[FILTER_CHANGED],
               disabled: runs.length <= 1,
             },
             entryTypes: {
               label: 'Entry type',
               [FILTER_ENTRY]: {
                 label: 'Entry',
-                defaultValue: true,
+                defaultValue: get(filters, `entryTypes.${FILTER_ENTRY}`, true),
               },
               [FILTER_INITIAL]: {
                 label: 'Initial',
-                defaultValue: true,
+                defaultValue: get(filters, `entryTypes.${FILTER_INITIAL}`, true),
               },
               [FILTER_CHUNK]: {
                 label: 'Chunk',
-                defaultValue: true,
+                defaultValue: get(filters, `entryTypes.${FILTER_CHUNK}`, true),
               },
               [FILTER_ASSET]: {
                 label: 'Asset',
-                defaultValue: true,
+                defaultValue: get(filters, `entryTypes.${FILTER_ASSET}`, true),
               },
             },
             fileTypes: {
               label: 'File type',
-              ...getFileTypeFilters(),
+              ...getFileTypeFilters(filters),
             },
           }}
           label={`Filters (${items.length}/${totalRowCount})`}
@@ -255,6 +269,7 @@ BundleAssets.propTypes = {
     })),
   })).isRequired,
   updateFilters: PropTypes.func.isRequired,
+  resetFilters: PropTypes.func.isRequired,
   totalRowCount: PropTypes.number,
   filters: PropTypes.shape({
     changed: PropTypes.bool,

@@ -36,9 +36,15 @@ const getFilterByChanged = (filters) => (row) => {
 };
 
 export default compose(
-  withState('filters', 'updateFilters', ({ runs }) => ({
-    changed: runs && runs.length > 1,
+  withProps(({ runs }) => ({
+    defaultFilters: { changed: false },
+    initialFilters: { changed: runs && runs.length > 1 },
   })),
+  withState('filters', 'updateFilters', ({ initialFilters }) => initialFilters),
+  withProps(({ defaultFilters, updateFilters }) => ({
+    resetFilters: () => updateFilters(defaultFilters),
+  })),
+
   withProps(({ modules, filters }) => ({
     totalRowCount: modules.length,
     modules: modules.filter(getFilterByChanged(filters)),

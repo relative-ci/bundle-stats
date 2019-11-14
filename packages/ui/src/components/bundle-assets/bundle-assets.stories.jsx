@@ -58,6 +58,39 @@ stories.add('no assets', () => (
   />
 ));
 
+stories.add('empty filtered data', () => (
+  <BundleAssets
+    jobs={[
+      {
+        ...currentJob,
+        rawData: {
+          webpack: {
+            stats: {
+              assets: [{
+                name: 'main.js',
+                size: 100,
+              }],
+            },
+          },
+        },
+      },
+      {
+        ...baselineJob,
+        rawData: {
+          webpack: {
+            stats: {
+              assets: [{
+                name: 'main.js',
+                size: 100,
+              }],
+            },
+          },
+        },
+      },
+    ]}
+  />
+));
+
 stories.add('not predictive', () => (
   <BundleAssets
     jobs={[
