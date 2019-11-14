@@ -1,26 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { createStats, createStatsSummary } from '@bundle-stats/utils';
+import { createJobs } from '@bundle-stats/utils';
 
-import currentData from '../../../__mocks__/job.current.json';
-import baselineData from '../../../__mocks__/job.baseline.json';
+import baselineStats from '../../../__mocks__/webpack-stats.baseline.json';
+import currentStats from '../../../__mocks__/webpack-stats.current.json';
 import { getWrapperDecorator } from '../../stories';
 import { BundleAssets } from '.';
 
-const currentStats = createStats(baselineData.rawData, currentData.rawData);
-const baselineStats = createStats(null, baselineData.rawData);
-
-const currentJob = {
-  ...currentData,
-  stats: currentStats,
-  summary: createStatsSummary(baselineStats, currentStats),
-};
-
-const baselineJob = {
-  ...baselineData,
-  stats: baselineStats,
-  summary: createStatsSummary(null, baselineStats),
-};
+const [currentJob, baselineJob] = createJobs([
+  { webpack: { stats: currentStats } },
+  { webpack: { stats: baselineStats } },
+]);
 
 const stories = storiesOf('Components/BundleAssets', module);
 stories.addDecorator(getWrapperDecorator());
@@ -38,6 +28,33 @@ stories.add('multiple jobs', () => (
 stories.add('empty baseline', () => (
   <BundleAssets
     jobs={[currentJob, undefined]}
+  />
+));
+
+stories.add('no assets', () => (
+  <BundleAssets
+    jobs={[
+      {
+        ...currentJob,
+        rawData: {
+          webpack: {
+            stats: {
+              assets: [],
+            },
+          },
+        },
+      },
+      {
+        ...baselineJob,
+        rawData: {
+          webpack: {
+            stats: {
+              assets: [],
+            },
+          },
+        },
+      },
+    ]}
   />
 ));
 

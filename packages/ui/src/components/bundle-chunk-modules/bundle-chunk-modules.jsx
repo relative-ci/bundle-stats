@@ -71,7 +71,7 @@ export const BundleChunkModules = ({
   id,
   runs,
   modules,
-  totalRowsCount,
+  totalRowCount,
   updateFilters,
   filters,
   sortItems,
@@ -80,6 +80,9 @@ export const BundleChunkModules = ({
 }) => {
   const labeledRuns = runs.map(getRunLabel);
   const rootClassName = cx(css.root, className);
+  const emptyMessage = totalRowCount === 0
+    ? 'No modules available.'
+    : 'No modules match your filters.';
 
   return (
     <div className={rootClassName}>
@@ -114,7 +117,7 @@ export const BundleChunkModules = ({
                 disabled: runs.length <= 1,
               },
             }}
-            label={`Filters (${modules.length}/${totalRowsCount})`}
+            label={`Filters (${modules.length}/${totalRowCount})`}
             onChange={updateFilters}
           />
         </div>
@@ -123,6 +126,7 @@ export const BundleChunkModules = ({
           items={modules}
           runs={labeledRuns}
           renderRowHeader={getRenderRowHeader(map(labeledRuns, 'name'))}
+          emptyMessage={emptyMessage}
         />
       </Box>
     </div>
@@ -135,7 +139,7 @@ BundleChunkModules.defaultProps = {
   id: '',
   modules: [],
   runs: [],
-  totalRowsCount: 0,
+  totalRowCount: 0,
 };
 
 BundleChunkModules.propTypes = {
@@ -154,8 +158,8 @@ BundleChunkModules.propTypes = {
   /** Runs data */
   runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 
-  /** totals row count */
-  totalRowsCount: PropTypes.number,
+  /** total row count */
+  totalRowCount: PropTypes.number,
 
   /** Update filters handler */
   updateFilters: PropTypes.func.isRequired,
