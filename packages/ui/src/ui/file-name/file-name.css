@@ -7,16 +7,3 @@
   hyphens: auto;
   white-space: normal;
 }
-
-.part::after {
-  content: '/';
-}
-
-.part:last-child::after {
-  content: '';
-}
-
-.noBreak {
-  white-space: nowrap;
-}
-
