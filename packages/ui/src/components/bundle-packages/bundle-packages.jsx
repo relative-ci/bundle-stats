@@ -45,6 +45,9 @@ export const BundlePackages = (props) => {
   } = props;
 
   const labeledRuns = runs.map(addRunLabel);
+  const emptyMessage = totalRowCount === 0
+    ? 'No packages available.'
+    : 'No packages match your filters.';
 
   return (
     <section className={cx(css.root, className)}>
@@ -78,6 +81,7 @@ export const BundlePackages = (props) => {
         <MetricsTable
           runs={labeledRuns}
           items={items}
+          emptyMessage={emptyMessage}
         />
       </main>
     </section>

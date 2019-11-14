@@ -1,14 +1,17 @@
 import React from 'react';
+import { merge, set } from 'lodash';
 import { storiesOf } from '@storybook/react';
-import { createJob } from '@bundle-stats/utils';
+import { createJobs } from '@bundle-stats/utils';
 
-import currentData from '../../../__mocks__/job.current.json';
-import baselineData from '../../../__mocks__/job.baseline.json';
+import baselineStats from '../../../__mocks__/webpack-stats.baseline.json';
+import currentStats from '../../../__mocks__/webpack-stats.current.json';
 import { getWrapperDecorator } from '../../stories';
 import { BundlePackages } from '.';
 
-const baselineJob = createJob(baselineData.rawData);
-const currentJob = createJob(currentData.rawData, baselineJob);
+const [currentJob, baselineJob] = createJobs([
+  { webpack: { stats: currentStats } },
+  { webpack: { stats: baselineStats } },
+]);
 
 const stories = storiesOf('Components/BundlePackages', module);
 stories.addDecorator(getWrapperDecorator());
@@ -20,6 +23,15 @@ stories.add('default', () => (
 stories.add('multiple jobs', () => (
   <BundlePackages
     jobs={[currentJob, baselineJob]}
+  />
+));
+
+stories.add('empty packages', () => (
+  <BundlePackages
+    jobs={[
+      set(merge({}, currentJob), 'rawData.webpack.stats.modules', []),
+      set(merge({}, baselineJob), 'rawData.webpack.stats.modules', []),
+    ]}
   />
 ));
 

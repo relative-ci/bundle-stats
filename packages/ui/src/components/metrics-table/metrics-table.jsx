@@ -64,18 +64,20 @@ const getRows = (runs, items, renderRowHeader) => items.map((item) => {
 });
 
 export const MetricsTable = ({
-  className, renderRowHeader, runs, items,
+  className, renderRowHeader, runs, items, emptyMessage,
 }) => (
   <Table
     className={cx(styles.root, className, (runs.length > 1) && styles.multipleRuns)}
     headers={getHeaders(runs)}
     rows={getRows(runs, items, renderRowHeader)}
+    emptyMessage={emptyMessage}
   />
 );
 
 MetricsTable.defaultProps = {
   className: '',
   renderRowHeader: (item) => item.label,
+  emptyMessage: undefined,
 };
 
 MetricsTable.propTypes = {
@@ -92,4 +94,5 @@ MetricsTable.propTypes = {
       displayDelta: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     })),
   })).isRequired,
+  emptyMessage: PropTypes.element,
 };

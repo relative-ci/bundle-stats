@@ -40,7 +40,7 @@ export default compose(
     changed: runs && runs.length > 1,
   })),
   withProps(({ modules, filters }) => ({
-    totalRowsCount: modules.length,
+    totalRowCount: modules.length,
     modules: modules.filter(getFilterByChanged(filters)),
   })),
   withCustomSort({ sortItems: SORT_BY, getCustomSort, itemsKey: 'modules' }),

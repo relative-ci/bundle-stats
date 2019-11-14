@@ -173,6 +173,9 @@ export const BundleAssets = (props) => {
   } = props;
 
   const labeledRuns = runs.map(addRunLabel);
+  const emptyMessage = totalRowCount === 0
+    ? 'No assets available.'
+    : 'No assets match your filters.';
 
   return (
     <section className={cx(css.root, className)}>
@@ -226,6 +229,7 @@ export const BundleAssets = (props) => {
           runs={labeledRuns}
           items={items}
           renderRowHeader={getRenderRowHeader(map(labeledRuns, 'name'))}
+          emptyMessage={emptyMessage}
         />
       </main>
     </section>

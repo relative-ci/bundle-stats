@@ -1,21 +1,17 @@
 import React from 'react';
 import { get } from 'lodash';
 import { storiesOf } from '@storybook/react';
-import { modulesWebpackTransform, getModulesReport } from '@bundle-stats/utils';
+import { createJobs, modulesWebpackTransform, getModulesReport } from '@bundle-stats/utils';
 
-import currentData from '../../../__mocks__/job.current.json';
-import baselineData from '../../../__mocks__/job.baseline.json';
+import baselineStats from '../../../__mocks__/webpack-stats.baseline.json';
+import currentStats from '../../../__mocks__/webpack-stats.current.json';
 import { getWrapperDecorator } from '../../stories';
 import { BundleChunkModules } from '.';
 
-const currentJob = {
-  ...currentData,
-  modules: currentData.rawData.webpack.stats.modules.filter((i) => i.chunks.includes(1)),
-};
-const baselineJob = {
-  ...baselineData,
-  modules: baselineData.rawData.webpack.stats.modules.filter((i) => i.chunks.includes(1)),
-};
+const [currentJob, baselineJob] = createJobs([
+  { webpack: { stats: currentStats } },
+  { webpack: { stats: baselineStats } },
+]);
 
 const stories = storiesOf('Components/BundleChunkModules', module);
 stories.addDecorator(getWrapperDecorator());
@@ -50,6 +46,15 @@ stories.add('multiple jobs', () => (
     id="1"
     runs={RUNS_MULTIPLE}
     modules={getModulesReport(RUNS_MULTIPLE)[1].modules}
+  />
+));
+
+stories.add('empty modules', () => (
+  <BundleChunkModules
+    name="vendor"
+    id="1"
+    runs={RUNS_MULTIPLE}
+    modules={[]}
   />
 ));
 
