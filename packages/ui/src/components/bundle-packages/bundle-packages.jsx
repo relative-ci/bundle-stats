@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get } from 'lodash';
 
+import { EmptySet } from '../../ui/empty-set';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { MetricsTable } from '../metrics-table';
@@ -46,22 +47,13 @@ export const BundlePackages = (props) => {
   } = props;
 
   const labeledRuns = runs.map(addRunLabel);
-  const emptyMessage = totalRowCount === 0
-    ? 'No packages available.'
-    : (
-      <div className={css.empty}>
-        <p className={css.emptyText}>
-          No packages match your filters.
-        </p>
-        <button
-          className={css.emptyAction}
-          type="button"
-          onClick={() => resetFilters()}
-        >
-          Clear filters
-        </button>
-      </div>
-    );
+  const emptyMessage = (
+    <EmptySet
+      resources="packages"
+      filtered={totalRowCount !== 0}
+      resetFilters={resetFilters}
+    />
+  );
 
   return (
     <section className={cx(css.root, className)}>

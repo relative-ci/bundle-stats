@@ -8,6 +8,7 @@ import { FileName } from '../../ui/file-name';
 import { Tooltip } from '../../ui/tooltip';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
 import { SortDropdown } from '../../ui/sort-dropdown';
+import { EmptySet } from '../../ui/empty-set';
 import { MetricsTable } from '../metrics-table';
 import { JobName } from '../job-name';
 import {
@@ -174,22 +175,13 @@ export const BundleAssets = (props) => {
   } = props;
 
   const labeledRuns = runs.map(addRunLabel);
-  const emptyMessage = totalRowCount === 0
-    ? 'No assets available.'
-    : (
-      <div className={css.empty}>
-        <p className={css.emptyText}>
-          No assets match your filters.
-        </p>
-        <button
-          className={css.emptyAction}
-          type="button"
-          onClick={() => resetFilters()}
-        >
-          Clear filters
-        </button>
-      </div>
-    );
+  const emptyMessage = (
+    <EmptySet
+      resources="assets"
+      filtered={totalRowCount !== 0}
+      resetFilters={resetFilters}
+    />
+  );
 
   return (
     <section className={cx(css.root, className)}>
