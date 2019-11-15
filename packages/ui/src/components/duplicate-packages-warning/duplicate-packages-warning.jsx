@@ -21,7 +21,7 @@ export const DuplicatePackagesWarning = (props) => {
               {key}
             </p>
             <ul className={css.itemPackages}>
-              {paths.map((path) => <li>{path}</li>)}
+              {paths.map((path) => <li key={path}>{path}</li>)}
             </ul>
           </li>
         ))}

@@ -49,5 +49,5 @@ Icon.defaultProps = {
 Icon.propTypes = {
   className: PropTypes.string,
   glyph: PropTypes.string.isRequired,
-  as: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
+  as: PropTypes.node,
 };

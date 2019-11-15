@@ -24,16 +24,19 @@ export const Tooltip = (props) => {
       {...restProps}
     >
       {children}
-      <div className={css.tooltip}>
-        {title}
-        <span className={css.tooltipArrow} />
-      </div>
+      {title && (
+        <div className={css.tooltip}>
+          {title}
+          <span className={css.tooltipArrow} />
+        </div>
+      )}
     </Component>
   );
 };
 
 Tooltip.defaultProps = {
   className: '',
+  title: '',
   as: 'span',
   align: '',
   containerRef: null,
@@ -41,7 +44,7 @@ Tooltip.defaultProps = {
 
 Tooltip.propTypes = {
   className: PropTypes.string,
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  title: PropTypes.node,
   children: PropTypes.node.isRequired,
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
   align: PropTypes.oneOf(['', 'topLeft']),

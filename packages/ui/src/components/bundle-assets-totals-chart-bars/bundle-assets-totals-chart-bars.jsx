@@ -79,7 +79,7 @@ export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
 
           return (
             <div
-              key={internalBuildNumber}
+              key={internalBuildNumber || runIndex}
               className={css.item}
             >
               <h3 className={css.itemTitle}>
