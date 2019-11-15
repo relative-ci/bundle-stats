@@ -6,7 +6,7 @@
 
 .title {
   margin-bottom: 0;
-  color: var(--color-gray-light);
+  color: var(--color-text-light);
   font-size: var(--size-xsmall);
   font-weight: bold;
   line-height: var(--space-xsmall);
@@ -17,7 +17,7 @@
 .currentMetric {
   margin-top: 2px;
   display: block;
-  color: var(--color-dark);
+  color: var(--color-heading);
   font-size: var(--size-xlarge);
   line-height: var(--space-medium);
   min-height: var(--space-medium);
@@ -42,7 +42,7 @@
   padding: var(--space-xxxsmall);
   background: none;
   cursor: pointer;
-  color: var(--color-gray-light);
+  color: var(--color-text-light);
   outline: none;
   transition: color 0.2s;
 }
@@ -56,7 +56,6 @@
 
 .helpTooltipTitle {
   margin: 0 0 var(--space-xxxsmall);
-  color: var(--color-gray-ultra-dark);
   font-size: var(--size-medium);
   font-weight: bold;
 }
@@ -66,7 +65,7 @@
 }
 
 .helpButton:hover {
-  color: var(--color-gray);
+  color: var(--color-text-dark);
 }
 
 /* hover state */
@@ -108,7 +107,7 @@
 
 /* Loading state */
 .loading {
-  background: var(--color-gray-light-background);
+  background: var(--color-highlight);
   pointer-events: none;
   width: 8em;
 }

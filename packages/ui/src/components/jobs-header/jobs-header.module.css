@@ -11,7 +11,7 @@
   flex: 1 1 320px;
   display: flex;
   align-items: flex-start;
-  box-shadow: 0 1px var(--color-gray-ultra-light), 1px 0 var(--color-gray-ultra-light);
+  box-shadow: 0 1px var(--color-outline), 1px 0 var(--color-outline);
 }
 
 .jobTitle {
@@ -28,7 +28,6 @@
   margin-left: var(--space-xxxsmall);
   font-size: 8px;
   line-height: var(--space-xxsmall);
-  color: var(--color-gray);
   font-weight: normal;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -39,7 +38,7 @@
   margin-top: var(--space-xxsmall);
   font-size: var(--size-small);
   line-height: var(--space-xsmall);
-  color: var(--color-gray-light);
+  color: var(--color-text-light);
 }
 
 .jobDescription {
@@ -73,5 +72,5 @@
 .loading .jobTitle {
   height: var(--size-large);
   width: 3em;
-  background: var(--color-gray-light-background);
+  background: var(--color-highlight);
 }

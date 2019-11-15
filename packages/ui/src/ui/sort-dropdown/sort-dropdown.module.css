@@ -5,7 +5,7 @@
 .item {
   display: flex;
   align-items: center;
-  color: var(--color-gray-light);
+  color: var(--color-text-light);
 }
 
 .itemButton {
@@ -22,7 +22,7 @@
 }
 
 .itemButton:hover {
-  color: var(--color-gray-ultra-dark);
+  color: var(--color-text-dark);
 }
 
 .itemSortBy {
@@ -45,8 +45,8 @@
 }
 
 .item:hover {
-  background: var(--color-gray-light-background);
-  color: var(--color-gray-dark);
+  background: var(--color-highlight);
+  color: var(--color-text-dark);
 }
 
 .item.active {

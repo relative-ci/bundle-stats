@@ -1,25 +1,25 @@
 .root {
-  border: 1px solid var(--color-gray-ultra-light);
+  border: 1px solid var(--color-outline);
   padding: var(--space-small);
-  color: var(--color-dark)
+  color: var(--color-text-dark)
 }
 
 .success {
-  border-color: var(--color-green-light);
-  background: var(--color-green-ultra-light);
+  border-color: var(--color-outline-success);
+  background: var(--color-highlight-success);
 }
 
 .info {
-  border-color: var(--color-blue-light);
-  background: var(--color-blue-ultra-light);
+  border-color: var(--color-outline-info);
+  background: var(--color-highlight-info);
 }
 
 .warning {
-  border-color: var(--color-yellow-light);
-  background: var(--color-yellow-ultra-light);
+  border-color: var(--color-outline-warning);
+  background: var(--color-highlight-warning);
 }
 
 .danger {
-  border-color: var(--color-red-light);
-  background: var(--color-red-ultra-light)
+  border-color: var(--color-outline-danger);
+  background: var(--color-highlight-danger);
 }

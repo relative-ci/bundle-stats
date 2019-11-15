@@ -10,7 +10,7 @@
   align-items: center;
 
   background: none;
-  color: var(--color-gray-light);
+  color: var(--color-text-light);
   font-size: var(--size-small);
   line-height: 1.1;
   font-weight: bold;
@@ -21,8 +21,8 @@
 }
 
 .label:hover {
-  border-color: var(--color-gray-ultra-light);
-  color: var(--color-gray);
+  border-color: var(--color-outline);
+  color: var(--color-text);
 }
 
 .labelIcon {
@@ -33,8 +33,8 @@
   position: absolute;
   left: 0;
   top: 100%;
-  background: var(--color-light);
-  box-shadow: 0 2px var(--space-xxsmall) var(--color-gray-ultra-light);
+  background: var(--color-background);
+  box-shadow: 0 2px var(--space-xxsmall) var(--color-shadow);
   min-width: 180px;
   z-index: 1000;
   padding: var(--space-xsmall) var(--space-small);

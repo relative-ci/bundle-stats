@@ -1,14 +1,14 @@
 .root {
-  border: 1px solid var(--color-gray-ultra-light);
+  border: 1px solid var(--color-outline);
   border-width: 0;
   width: 100%;
   border-collapse: collapse;
   empty-cells: show;
-  background: var(--color-light);
+  background: var(--color-background);
 }
 
 .cell {
-  border: 1px solid var(--color-gray-ultra-light);
+  border: 1px solid var(--color-outline);
   border-width: 1px 0 0;
   padding: var(--space-small) var(--space-small);
   text-align: left;
@@ -28,17 +28,16 @@
 }
 
 .root tbody tr:nth-child(odd) .cell {
-  background-color: var(--color-gray-light-background);
+  background-color: var(--color-highlight);
 }
 
 .root tbody tr:hover .cell {
-  background-color: var(--color-yellow-light-background);
+  background-color: var(--color-highlight-warning);
 }
 
 .emptyData {
   padding: var(--space-xlarge) var(--space-medium);
-  background: var(--color-light) !important;
-  color: var(--color-gray);
+  background: var(--color-background) !important;
   border-top-width: 1px;
   text-align: center;
 }

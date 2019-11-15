@@ -1,6 +1,6 @@
 .title {
   margin: 0 0 var(--space-small);
-  color: var(--color-gray-light);
+  color: var(--color-text-light);
   font-weight: bold;
   font-size: var(--size-medium);
   line-height: 1;
@@ -21,7 +21,7 @@
   bottom: 100%;
   margin: 0 0 var(--space-xxxsmall);
 
-  color: var(--color-gray-light);
+  color: var(--color-text-light);
   font-size: var(--size-xsmall);
   font-weight: bold;
   line-height: 1.1;
@@ -29,7 +29,7 @@
 }
 
 .item:hover .itemTitle {
-  color: var(--color-gray);
+  color: var(--color-text);
 }
 
 .itemChart {

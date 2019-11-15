@@ -9,7 +9,7 @@
 }
 
 .item {
-  box-shadow: 0 1px var(--color-gray-ultra-light), 1px 0 var(--color-gray-ultra-light);
+  box-shadow: 0 1px var(--color-outline), 1px 0 var(--color-outline);
   flex-grow: 1;
   flex-shrink: 1;
   padding: var(--space-xsmall) var(--space-small);

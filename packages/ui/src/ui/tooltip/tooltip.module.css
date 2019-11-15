@@ -9,12 +9,12 @@
   transform: translateX(-50%) translateY(calc(0px - var(--space-xsmall)));
 
   margin-top: 0;
-  padding: var(--space-xsmall);
+  padding: var(--space-small);
   min-width: 120px;
-  box-shadow: 0 0 var(--space-xxsmall) rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 var(--space-xxsmall) var(--color-shadow);
 
-  background: var(--color-light);
-  color: var(--color-gray);
+  background: var(--color-background);
+  color: var(--color-text);
   font-size: var(--size-small);
   text-align: center;
 }
@@ -38,8 +38,8 @@
   height: var(--space-xsmall);
   transform: translateX(-50%) translateY(-50%) rotate(45deg);
 
-  background: var(--color-light);
-  box-shadow: 0 0 var(--space-xxsmall) rgba(0, 0, 0, 0.2);
+  background: var(--color-background);
+  box-shadow: 0 0 var(--space-xxsmall) var(--color-shadow);
 }
 
 /* Hover */
