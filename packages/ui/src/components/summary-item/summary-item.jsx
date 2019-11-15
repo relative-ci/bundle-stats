@@ -91,6 +91,7 @@ SummaryItem.defaultProps = {
   className: '',
   data: null,
   size: 'medium',
+  loading: false,
   showMetricDescription: false,
   showBaselineValue: false,
   showDelta: true,
@@ -107,7 +108,7 @@ SummaryItem.propTypes = {
   id: PropTypes.string.isRequired,
 
   /** Loading flag */
-  loading: PropTypes.bool.isRequired,
+  loading: PropTypes.bool,
 
   /** Summary data */
   data: PropTypes.object, // eslint-disable-line react/forbid-prop-types

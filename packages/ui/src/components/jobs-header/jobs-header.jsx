@@ -52,7 +52,7 @@ export const JobsHeader = (props) => {
         const { builtAt, hash } = get(job, `meta.${SOURCE_PATH_WEBPACK_STATS}`, {});
 
         return (
-          <div className={css.job} key={job.internalBuilNumber}>
+          <div className={css.job} key={job.internalBuilNumber || index}>
             <div className={css.jobDescription}>
               <h1 className={css.jobTitle}>
                 <span>

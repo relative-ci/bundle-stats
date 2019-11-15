@@ -81,7 +81,7 @@ export const Table = ({
 
         return (
           <tr className={rowClassNames} key={key || index} {...rowProps}>
-            {header && renderHeader(header)}
+            {header ? renderHeader(header) : null}
             {cells.map((cell, cellIndex) => {
               const cellProps = {
                 key: (cell && cell.key) || cellIndex,

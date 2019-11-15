@@ -17,7 +17,7 @@ export const Alert = (props) => {
 Alert.propTypes = {
   className: PropTypes.string,
   kind: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 Alert.defaultProps = {

@@ -22,6 +22,6 @@ stories.add('all', () => (
     'pr',
     'sort',
   ].map((glyph) => (
-    <Icon glyph={glyph} />
+    <Icon glyph={glyph} key={glyph} />
   ))
 ));
