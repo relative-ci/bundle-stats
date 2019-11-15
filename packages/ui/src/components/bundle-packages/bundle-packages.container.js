@@ -1,6 +1,4 @@
-import {
-  compose, withProps, withState,
-} from 'recompose';
+import { compose, withProps } from 'recompose';
 import {
   get, filter, flatten, uniq,
 } from 'lodash';
@@ -13,6 +11,7 @@ import {
 } from '@bundle-stats/utils';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
+import { withFilters } from '../../hocs/with-filters';
 import {
   FILTER_CHANGED,
   FILTER_DUPLICATE,
@@ -95,10 +94,7 @@ export const enhance = compose(
       },
     };
   }),
-  withState('filters', 'updateFilters', ({ initialFilters }) => initialFilters),
-  withProps(({ defaultFilters, updateFilters }) => ({
-    resetFilters: () => updateFilters(defaultFilters),
-  })),
+  withFilters(),
 
   withProps(({ items, filters }) => ({
     totalRowCount: items.length,
