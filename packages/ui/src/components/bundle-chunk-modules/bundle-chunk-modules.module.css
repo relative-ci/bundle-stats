@@ -15,14 +15,14 @@
 
 .headerTitleId {
   display: block;
-  color: var(--color-gray-light);
+  color: var(--color-text-light);
   font-size: var(--size-small);
   line-height: var(--space-small);
 }
 
 .tableHeader {
   padding: var(--space-xxsmall) var(--space-small);
-  border-bottom: 1px solid var(--color-gray-ultra-light);
+  border-bottom: 1px solid var(--color-outline);
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -40,7 +40,6 @@
 
 .nameTooltipTitle {
   margin: 0;
-  color: var(--color-gray-ultra-dark);
 }
 
 .nameTooltipText {

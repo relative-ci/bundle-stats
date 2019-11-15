@@ -1,13 +1,13 @@
 .root {
   position: relative();
-  border-bottom: 1px solid var(--color-gray-100);
+  border-bottom: 1px solid var(--color-outline);
 }
 
 .item {
   position: relative;
   display: inline-block;
   padding: var(--space-xsmall) var(--space-small);
-  color: var(--color-gray);
+  color: var(--color-text-light);
   font-weight: bold;
   text-decoration: none;
 }

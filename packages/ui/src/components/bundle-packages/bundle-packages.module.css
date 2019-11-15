@@ -1,6 +1,6 @@
 .header {
   padding: var(--space-small);
-  border-bottom: 1px solid var(--color-gray-ultra-light);
+  border-bottom: 1px solid var(--color-outline);
   position: relative;
   display: flex;
   align-items: center;
@@ -35,5 +35,4 @@
 
 .tooltipFilenameTitle {
   margin: 0;
-  color: var(--color-gray-ultra-dark);
 }

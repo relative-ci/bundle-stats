@@ -21,7 +21,7 @@
 }
 
 .multipleRuns .unchanged td {
-  color: var(--color-gray-light);
+  color: var(--color-text-light);
 }
 
 /** Breakpoints */

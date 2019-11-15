@@ -1,5 +1,5 @@
 .root {
-  background: var(--color-gray-ultra-light);
+  background: var(--color-highlight);
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
@@ -7,7 +7,7 @@
 
 .item {
   flex: 0 1 auto;
-  background: var(--color-gray);
+  background: var(--color-text);
   display: inline-flex;
   min-width: var(--space-xxxsmall);
   min-height: var(--space-medium);
@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
 
-  color: var(--color-light);
+  color: var(--color-background);
   font-weight: bold;
   text-overflow: ellipsis;
   text-align: center;

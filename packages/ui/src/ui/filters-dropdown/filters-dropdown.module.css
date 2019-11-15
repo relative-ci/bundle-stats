@@ -1,6 +1,6 @@
 .group + .group {
   margin-top: var(--space-xxxsmall);
-  border-top: 1px solid var(--color-gray-ultra-light);
+  border-top: 1px solid var(--color-outline);
   padding-top: var(--space-xxxsmall);
 }
 
@@ -16,12 +16,12 @@
   border: none;
   background: none;
   white-space: nowrap;
-  color: var(--color-gray-light);
+  color: var(--color-text-light);
   font-size: var(--size-small);
 }
 
 .button:hover {
-  color: var(--color-gray);
+  color: var(--color-text-light);
 }
 
 .groupHeader {
@@ -68,7 +68,7 @@
 }
 
 .filterInput[disabled] + .filterText {
-  color: var(--color-gray-light);
+  color: var(--color-text-light);
 }
 
 .filterInput[disabled] + .filterOnlyButton {
@@ -76,7 +76,7 @@
 }
 
 .filter:hover {
-  color: var(--color-dark);
+  color: var(--color-text-dark);
 }
 
 .filter:hover .filterOnlyButton {

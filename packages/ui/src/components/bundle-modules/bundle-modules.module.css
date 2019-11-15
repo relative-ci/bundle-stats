@@ -10,10 +10,6 @@
   text-align: center;
 }
 
-.emptyTitle {
-  color: var(--color-gray);
-}
-
 .emptyText {
   margin-bottom: var(--space-small);
 }

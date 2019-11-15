@@ -11,7 +11,7 @@
   margin: 0;
   font-size: 1em;
   font-weight: bold;
-  color: var(--color-gray-light);
+  color: var(--color-text-light);
 }
 
 .item + .item {
