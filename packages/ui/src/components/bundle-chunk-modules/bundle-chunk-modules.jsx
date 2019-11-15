@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get, map } from 'lodash';
 
-import {
-  Box, FileName, FiltersDropdown, SortDropdown, Tooltip,
-} from '../../ui';
+import { Box } from '../../ui/box';
+import { EmptySet } from '../../ui/empty-set';
+import { FileName } from '../../ui/file-name';
+import { FiltersDropdown } from '../../ui/filters-dropdown';
+import { SortDropdown } from '../../ui/sort-dropdown';
+import { Tooltip } from '../../ui/tooltip';
 import { JobName } from '../job-name';
 import { MetricsTable } from '../metrics-table';
 import css from './bundle-chunk-modules.module.css';
@@ -81,22 +84,13 @@ export const BundleChunkModules = ({
 }) => {
   const labeledRuns = runs.map(getRunLabel);
   const rootClassName = cx(css.root, className);
-  const emptyMessage = totalRowCount === 0
-    ? 'No modules available.'
-    : (
-      <div className={css.empty}>
-        <p className={css.emptyText}>
-          No modules match your filters.
-        </p>
-        <button
-          className={css.emptyAction}
-          type="button"
-          onClick={() => resetFilters()}
-        >
-          Clear filters
-        </button>
-      </div>
-    );
+  const emptyMessage = (
+    <EmptySet
+      resources="modules"
+      filtered={totalRowCount !== 0}
+      resetFilters={resetFilters}
+    />
+  );
 
   return (
     <div className={rootClassName}>

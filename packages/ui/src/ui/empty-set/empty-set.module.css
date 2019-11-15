@@ -1,0 +1,20 @@
+.text {
+  margin-bottom: 0;
+}
+
+.action {
+  appearance: none;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.action:focus,
+.action:active,
+.action:hover {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}

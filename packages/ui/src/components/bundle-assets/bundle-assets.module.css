@@ -94,24 +94,3 @@
   margin: 0;
   color: var(--color-gray-ultra-dark);
 }
-
-.emptyText {
-  margin-bottom: 0;
-}
-
-.emptyAction {
-  appearance: none;
-  padding: 0;
-  background: none;
-  border: none;
-  color: var(--color-blue);
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.emptyAction:focus,
-.emptyAction:active,
-.emptyAction:hover {
-  color: var(--color-blue-dark);
-  text-decoration: none;
-}

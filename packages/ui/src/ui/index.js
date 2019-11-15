@@ -1,6 +1,7 @@
 export { Alert } from './alert';
 export { Box } from './box';
 export { Container } from './container';
+export { EmptySet } from './empty-set';
 export { FileName } from './file-name';
 export { FiltersDropdown } from './filters-dropdown';
 export { HorizontalBarChart } from './horizontal-bar-chart';
