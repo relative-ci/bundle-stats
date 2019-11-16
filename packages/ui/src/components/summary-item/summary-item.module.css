@@ -5,7 +5,7 @@
 }
 
 .title {
-  margin-bottom: 0;
+  margin: 0;
   color: var(--color-text-light);
   font-size: var(--size-xsmall);
   font-weight: bold;
@@ -15,7 +15,7 @@
 }
 
 .currentMetric {
-  margin-top: 2px;
+  margin-top: var(--space-xxxsmall);
   display: block;
   color: var(--color-heading);
   font-size: var(--size-xlarge);
@@ -25,7 +25,7 @@
 }
 
 .delta {
-  margin-top: 2px;
+  margin-top: var(--space-xxxsmall);
   display: block;
   min-height: var(--space-xsmall);
   font-size: var(--size-small);

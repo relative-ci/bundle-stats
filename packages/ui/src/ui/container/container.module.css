@@ -1,13 +1,13 @@
 .root {
-  padding: var(--space-small);
+  padding: var(--space-xxsmall) var(--space-small);
 }
 
 .root:first-child {
-  padding-top: var(--space-large);
+  padding-top: var(--space-small);
 }
 
 .root:last-child {
-  padding-bottom: var(--space-large)
+  padding-bottom: var(--space-small)
 }
 
 .inner {
