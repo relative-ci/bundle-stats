@@ -70,7 +70,7 @@ export const JobsHeader = (props) => {
                   >
                     <Icon glyph="clock" className={css.jobMetaIcon} />
                     <span>
-                      {formatDistanceToNow(new Date(builtAt))}
+                      {formatDistanceToNow(new Date(builtAt), { addSuffix: true })}
                     </span>
                   </span>
                 )}
