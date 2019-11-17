@@ -37,6 +37,12 @@ const getOnEmit = (options) => async (compilation, callback) => {
   const data = extractDataFromWebpackStats(
     compilation.getStats().toJson(statsOptions),
   );
+
+  // Webpack builtAt is not available yet
+  if (!data.builtAt) {
+    data.builtAt = Date.now();
+  }
+
   const outputPath = get(compilation, 'options.output.path');
 
   const logger = compilation.getInfrastructureLogger
