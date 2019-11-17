@@ -37,7 +37,9 @@ export const Footer = ({
       <div className={css.navigation}>
         <div className={css.navGroup}>
           <h3 className={css.navGroupTitle}>
-            Documentation
+            <Link to="/documentation" className={css.navGroupTitleLink}>
+              Documentation
+            </Link>
           </h3>
           <nav className={css.nav}>
             <Link
@@ -48,11 +50,18 @@ export const Footer = ({
               Setup
             </Link>
             <Link
-              to="/documentation/resources"
+              to="/documentation/metrics-and-data"
               className={css.navLink}
               source={source}
             >
-              Resources
+              Metrics and data
+            </Link>
+            <Link
+              to="/documentation/front-end-ops-resources"
+              className={css.navLink}
+              source={source}
+            >
+              FrontEnd-Ops Resources
             </Link>
             <Link
               to="/releases"
