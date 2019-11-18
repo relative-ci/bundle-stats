@@ -5,14 +5,14 @@ import {
 import { METRIC_TYPE_FILE_SIZE, SOURCE_PATH_WEBPACK_STATS } from '../config';
 import { getMetricChanged, getMetricType, mergeRunsById } from '../metrics';
 import { getStatsByMetrics } from '../stats/get-stats-by-metrics';
-import {
-  assetsWebpackTransform,
-  duplicatePackagesBundleTransform,
-  modulesWebpackTransform,
-  packagesModulesBundleTransform,
-} from '../transforms';
 import { getDelta, formatDelta } from './delta';
 import { formatPercentage } from './format';
+import {
+  extractAssets,
+  extractModules,
+  extractModulesPackages,
+  extractModulesPackagesDuplicate,
+} from '../webpack';
 
 const SIZE_METRICS = [
   'webpack.assets.totalSizeByTypeJS',
@@ -72,7 +72,7 @@ export const createRuns = (jobs) => jobs.map(({
   meta, internalBuildNumber, stats, rawData,
 }) => {
   const webpackStats = get(rawData, SOURCE_PATH_WEBPACK_STATS);
-  const { modules } = modulesWebpackTransform(webpackStats);
+  const { modules } = extractModules(webpackStats);
 
   return {
     meta: {
@@ -80,9 +80,9 @@ export const createRuns = (jobs) => jobs.map(({
       internalBuildNumber,
     },
     sizes: getStatsByMetrics(stats, SIZE_METRICS),
-    ...assetsWebpackTransform(webpackStats),
+    ...extractAssets(webpackStats),
     modules,
-    ...packagesModulesBundleTransform({ modules }),
+    ...extractModulesPackages({ modules }),
   };
 });
 
@@ -100,7 +100,7 @@ export const getModulesReport = (runs) => map(
 export const createReport = (jobs) => {
   const runs = createRuns(jobs);
 
-  const { warnings: duplicatePackagesWarnings } = duplicatePackagesBundleTransform(
+  const { warnings: duplicatePackagesWarnings } = extractModulesPackagesDuplicate(
     get(runs, '[0]', {}),
   );
 
