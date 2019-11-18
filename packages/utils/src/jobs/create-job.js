@@ -6,11 +6,11 @@ import { SOURCE_PATH_WEBPACK_STATS, SOURCE_PATHS } from '../config';
 import { createStats } from '../stats/create';
 import { createStatsSummary } from '../stats/create-summary';
 import {
-  duplicatePackagesBundleTransform,
-  metaWebpackTransform,
-  modulesWebpackTransform,
-  packagesModulesBundleTransform,
-} from '../transforms';
+  extractModules,
+  extractModulesPackages,
+  extractModulesPackagesDuplicate,
+  extractMeta,
+} from '../webpack';
 
 const SOURCE_IDS = SOURCE_PATHS.map((id) => id.split('.')[0]);
 
@@ -36,11 +36,11 @@ export const createJob = (source, baseline) => {
 
   const stats = createStats(baseline && baseline.rawData, data.rawData);
   const summary = createStatsSummary(baseline && baseline.stats, stats);
-  const { meta } = metaWebpackTransform(get(data.rawData, SOURCE_PATH_WEBPACK_STATS));
+  const { meta } = extractMeta(get(data.rawData, SOURCE_PATH_WEBPACK_STATS));
 
-  const { warnings: duplicatePackagesWarnings } = duplicatePackagesBundleTransform(
-    packagesModulesBundleTransform({
-      ...modulesWebpackTransform(get(data.rawData, SOURCE_PATH_WEBPACK_STATS)),
+  const { warnings: duplicatePackagesWarnings } = extractModulesPackagesDuplicate(
+    extractModulesPackages({
+      ...extractModules(get(data.rawData, SOURCE_PATH_WEBPACK_STATS)),
     }),
   );
 
