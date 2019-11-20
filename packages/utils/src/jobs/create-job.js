@@ -1,5 +1,5 @@
 import {
-  get, isEmpty, merge, omit, set,
+  get, isEmpty, merge, set,
 } from 'lodash';
 
 import { SOURCE_PATH_WEBPACK_STATS, SOURCE_PATHS } from '../config';
@@ -11,8 +11,6 @@ import {
   extractModulesPackagesDuplicate,
   extractMeta,
 } from '../webpack';
-
-const SOURCE_IDS = SOURCE_PATHS.map((id) => id.split('.')[0]);
 
 /*
  * Create job from stats
@@ -32,7 +30,7 @@ export const createJob = (source, baseline) => {
         rawData: set({}, rawDataPath, rawData),
       },
     );
-  }, omit(source, SOURCE_IDS));
+  }, {});
 
   const stats = createStats(baseline && baseline.rawData, data.rawData);
   const summary = createStatsSummary(baseline && baseline.stats, stats);

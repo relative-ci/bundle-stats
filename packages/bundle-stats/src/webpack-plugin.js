@@ -1,7 +1,8 @@
 import path from 'path';
 import process from 'process';
 import { get, merge } from 'lodash';
-import { createJobs, extractDataFromWebpackStats } from '@bundle-stats/utils';
+import { createJobs } from '@bundle-stats/utils';
+import { filter } from '@bundle-stats/utils/lib-esm/webpack';
 
 import * as TEXT from './text';
 import { getBaselineStatsFilepath, readBaseline } from './baseline';
@@ -34,7 +35,7 @@ const getOnEmit = (options) => async (compilation, callback) => {
     stats: statsOptions,
   } = options;
 
-  const data = extractDataFromWebpackStats(
+  const data = filter(
     compilation.getStats().toJson(statsOptions),
   );
 
@@ -55,7 +56,7 @@ const getOnEmit = (options) => async (compilation, callback) => {
   try {
     if (compare) {
       baselineStats = await readBaseline();
-      baselineStats = extractDataFromWebpackStats(baselineStats);
+      baselineStats = filter(baselineStats);
       logger.info(`Read baseline from ${baselineFilepath}`);
     }
   } catch (err) {
