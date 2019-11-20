@@ -70,9 +70,9 @@ const StandaloneApp = ({ jobs }) => {
           showSummaryItemBaselineValue={jobs.length !== 1}
         />
       </Container>
-      {warnings && warnings.duplicatePackages && (
+      {warnings && warnings.webpack && warnings.webpack.duplicatePackages && (
         <Container>
-          <DuplicatePackagesWarning duplicatePackages={warnings.duplicatePackages} />
+          <DuplicatePackagesWarning duplicatePackages={warnings.webpack.duplicatePackages} />
         </Container>
       )}
       <Container>

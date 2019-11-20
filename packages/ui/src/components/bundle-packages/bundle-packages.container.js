@@ -5,10 +5,9 @@ import {
 import {
   METRIC_TYPE_FILE_SIZE,
   addMetricsData,
-  modulesWebpackTransform,
-  packagesModulesBundleTransform,
   mergeRunsById,
 } from '@bundle-stats/utils';
+import { extractModules, extractModulesPackages } from '@bundle-stats/utils/lib-esm/webpack';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilters } from '../../hocs/with-filters';
@@ -61,8 +60,8 @@ export const enhance = compose(
   withProps(({ jobs }) => {
     const runs = jobs.map((job) => ({ meta: job }));
     const jobsPackages = jobs.map((job) => {
-      const bundle = modulesWebpackTransform(get(job, 'rawData.webpack.stats'));
-      const res = packagesModulesBundleTransform(bundle);
+      const bundle = extractModules(get(job, 'rawData.webpack'));
+      const res = extractModulesPackages(bundle);
       return res.packages;
     });
 

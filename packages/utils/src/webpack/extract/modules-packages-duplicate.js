@@ -1,8 +1,8 @@
 import {
-  find, get, isEmpty, last,
+  find, get, isEmpty, last, set,
 } from 'lodash';
 
-import { PACKAGES_SEPARATOR } from '../../config';
+import { PACKAGES_SEPARATOR, SOURCE_PATH_WEBPACK_STATS } from '../../config';
 
 export const extractModulesPackagesDuplicate = (bundleStats) => {
   const data = get(bundleStats, 'packages', {});
@@ -42,7 +42,7 @@ export const extractModulesPackagesDuplicate = (bundleStats) => {
 
   return {
     warnings: {
-      ...!isEmpty(paths) ? { duplicatePackages: paths } : {},
+      ...!isEmpty(paths) ? set({}, `${SOURCE_PATH_WEBPACK_STATS}.duplicatePackages`, paths) : {},
     },
     stats: {
       duplicatePackagesCount: {

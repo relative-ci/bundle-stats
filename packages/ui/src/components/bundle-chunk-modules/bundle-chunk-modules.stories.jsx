@@ -1,7 +1,8 @@
 import React from 'react';
 import { get } from 'lodash';
 import { storiesOf } from '@storybook/react';
-import { createJobs, modulesWebpackTransform, getModulesReport } from '@bundle-stats/utils';
+import { createJobs, getModulesReport } from '@bundle-stats/utils';
+import { extractModules } from '@bundle-stats/utils/lib-esm/webpack';
 
 import baselineStats from '../../../__mocks__/webpack-stats.baseline.json';
 import currentStats from '../../../__mocks__/webpack-stats.current.json';
@@ -9,8 +10,8 @@ import { getWrapperDecorator } from '../../stories';
 import { BundleChunkModules } from '.';
 
 const [currentJob, baselineJob] = createJobs([
-  { webpack: { stats: currentStats } },
-  { webpack: { stats: baselineStats } },
+  { webpack: currentStats },
+  { webpack: baselineStats },
 ]);
 
 const stories = storiesOf('Components/BundleChunkModules', module);
@@ -20,7 +21,7 @@ const RUNS_DEFAULT = [
   currentJob,
 ].map((job) => ({
   meta: job,
-  ...modulesWebpackTransform(get(job, 'rawData.webpack.stats')),
+  ...extractModules(get(job, 'rawData.webpack')),
 }));
 
 stories.add('default', () => (
@@ -37,7 +38,7 @@ const RUNS_MULTIPLE = [
   baselineJob,
 ].map((job) => ({
   meta: job,
-  ...modulesWebpackTransform(get(job, 'rawData.webpack.stats')),
+  ...extractModules(get(job, 'rawData.webpack')),
 }));
 
 stories.add('multiple jobs', () => (
@@ -99,7 +100,7 @@ const RUNS_EMPTY_BASELINE = [
   null,
 ].map((job) => ({
   meta: job,
-  ...modulesWebpackTransform(get(job, 'rawData.webpack.stats')),
+  ...extractModules(get(job, 'rawData.webpack')),
 }));
 
 stories.add('empty baseline', () => (

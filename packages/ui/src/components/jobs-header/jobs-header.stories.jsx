@@ -14,10 +14,8 @@ stories.add('default', () => (
         internalBuildNumber: 1,
         meta: {
           webpack: {
-            stats: {
-              builtAt: '2019-01-01T00:00:00.000Z',
-              hash: 'abcd1234',
-            },
+            builtAt: '2019-01-01T00:00:00.000Z',
+            hash: 'abcd1234',
           },
         },
         summary: {
@@ -38,10 +36,8 @@ stories.add('multiple jobs', () => (
         internalBuildNumber: 1,
         meta: {
           webpack: {
-            stats: {
-              builtAt: '2019-01-01T00:00:00.000Z',
-              hash: 'abcd1234',
-            },
+            builtAt: '2019-01-01T00:00:00.000Z',
+            hash: 'abcd1234',
           },
         },
         summary: {
@@ -55,10 +51,8 @@ stories.add('multiple jobs', () => (
         internalBuildNumber: 2,
         meta: {
           webpack: {
-            stats: {
-              builtAt: '2019-01-02T00:00:00.000Z',
-              hash: 'efgh1234',
-            },
+            builtAt: '2019-01-02T00:00:00.000Z',
+            hash: 'efgh1234',
           },
         },
         summary: {
@@ -79,10 +73,8 @@ stories.add('multiple equal jobs', () => (
         internalBuildNumber: 1,
         meta: {
           webpack: {
-            stats: {
-              builtAt: '2019-01-01T00:00:00.000Z',
-              hash: 'abcd1234',
-            },
+            builtAt: '2019-01-01T00:00:00.000Z',
+            hash: 'abcd1234',
           },
         },
         summary: {
@@ -96,10 +88,8 @@ stories.add('multiple equal jobs', () => (
         internalBuildNumber: 2,
         meta: {
           webpack: {
-            stats: {
-              builtAt: '2019-01-02T00:00:00.000Z',
-              hash: 'efgh1234',
-            },
+            builtAt: '2019-01-02T00:00:00.000Z',
+            hash: 'efgh1234',
           },
         },
         summary: {

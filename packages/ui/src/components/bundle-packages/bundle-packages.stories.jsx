@@ -9,8 +9,8 @@ import { getWrapperDecorator } from '../../stories';
 import { BundlePackages } from '.';
 
 const [currentJob, baselineJob] = createJobs([
-  { webpack: { stats: currentStats } },
-  { webpack: { stats: baselineStats } },
+  { webpack: currentStats },
+  { webpack: baselineStats },
 ]);
 
 const stories = storiesOf('Components/BundlePackages', module);
@@ -29,8 +29,8 @@ stories.add('multiple jobs', () => (
 stories.add('empty packages', () => (
   <BundlePackages
     jobs={[
-      set(merge({}, currentJob), 'rawData.webpack.stats.modules', []),
-      set(merge({}, baselineJob), 'rawData.webpack.stats.modules', []),
+      set(merge({}, currentJob), 'rawData.webpack.modules', []),
+      set(merge({}, baselineJob), 'rawData.webpack.modules', []),
     ]}
   />
 ));
@@ -38,14 +38,14 @@ stories.add('empty packages', () => (
 stories.add('empty filtered packages', () => (
   <BundlePackages
     jobs={[
-      set(merge({}, currentJob), 'rawData.webpack.stats.modules', [
+      set(merge({}, currentJob), 'rawData.webpack.modules', [
         {
           name: './node_modules/package-a/dist.js',
           size: 100,
           chunks: [1],
         },
       ]),
-      set(merge({}, baselineJob), 'rawData.webpack.stats.modules', [
+      set(merge({}, baselineJob), 'rawData.webpack.modules', [
         {
           name: './node_modules/package-a/dist.js',
           size: 100,

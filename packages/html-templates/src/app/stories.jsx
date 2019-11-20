@@ -9,15 +9,13 @@ import baselineData from 'Fixtures/job.baseline.json'; // eslint-disable-line
 import StandaloneApp from '.';
 
 const JOBS = createJobs([
-  { webpack: { stats: currentData.rawData.webpack.stats } },
-  { webpack: { stats: baselineData.rawData.webpack.stats } },
+  { webpack: currentData.rawData.webpack.stats },
+  { webpack: baselineData.rawData.webpack.stats },
   {
     webpack: {
-      stats: {
-        ...baselineData.rawData.webpack.stats,
-        assets: baselineData.rawData.webpack.stats.assets.filter((asset) => asset.name.match(/.(css|js)$/)),
-        modules: baselineData.rawData.webpack.stats.modules.slice(0, 100),
-      },
+      ...baselineData.rawData.webpack.stats,
+      assets: baselineData.rawData.webpack.stats.assets.filter((asset) => asset.name.match(/.(css|js)$/)),
+      modules: baselineData.rawData.webpack.stats.modules.slice(0, 100),
     },
   },
 ]);
