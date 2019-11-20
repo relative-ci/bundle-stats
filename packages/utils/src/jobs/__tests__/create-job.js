@@ -4,27 +4,23 @@ import { createJob } from '../create-job';
 
 describe('Create job', () => {
   test('no baseline', () => {
-    const actual = createJob({
-      webpack: {
-        stats: webpackStatsCurrentExtracted,
-      },
-    });
+    const actual = createJob({ webpack: webpackStatsCurrentExtracted });
 
     const expected = {
       meta: {
         webpack: {
-          stats: {
-            builtAt: '2019-01-01T00:00:00.000Z',
-            hash: 'abcd1234',
-          },
+          builtAt: '2019-01-01T00:00:00.000Z',
+          hash: 'abcd1234',
         },
       },
       warnings: {
-        duplicatePackages: {
-          'package-c': [
-            'package-a:package-c',
-            'package-c',
-          ],
+        webpack: {
+          duplicatePackages: {
+            'package-c': [
+              'package-a:package-c',
+              'package-c',
+            ],
+          },
         },
       },
       summary: {
@@ -119,35 +115,31 @@ describe('Create job', () => {
           },
         },
       },
-      rawData: {
-        webpack: {
-          stats: webpackStatsCurrentExtracted,
-        },
-      },
+      rawData: { webpack: webpackStatsCurrentExtracted },
     };
 
     expect(actual).toEqual(expected);
   });
 
   test('with baseline', () => {
-    const baselineJob = createJob({ webpack: { stats: webpackStatsBaselineExtracted } });
-    const actual = createJob({ webpack: { stats: webpackStatsCurrentExtracted } }, baselineJob);
+    const baselineJob = createJob({ webpack: webpackStatsBaselineExtracted });
+    const actual = createJob({ webpack: webpackStatsCurrentExtracted }, baselineJob);
 
     const expected = {
       meta: {
         webpack: {
-          stats: {
-            builtAt: '2019-01-01T00:00:00.000Z',
-            hash: 'abcd1234',
-          },
+          builtAt: '2019-01-01T00:00:00.000Z',
+          hash: 'abcd1234',
         },
       },
       warnings: {
-        duplicatePackages: {
-          'package-c': [
-            'package-a:package-c',
-            'package-c',
-          ],
+        webpack: {
+          duplicatePackages: {
+            'package-c': [
+              'package-a:package-c',
+              'package-c',
+            ],
+          },
         },
       },
       summary: {
@@ -242,11 +234,7 @@ describe('Create job', () => {
           },
         },
       },
-      rawData: {
-        webpack: {
-          stats: webpackStatsCurrentExtracted,
-        },
-      },
+      rawData: { webpack: webpackStatsCurrentExtracted },
     };
 
     expect(actual).toEqual(expected);
