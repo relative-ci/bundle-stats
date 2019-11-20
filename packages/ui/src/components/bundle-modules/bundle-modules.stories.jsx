@@ -44,10 +44,8 @@ stories.add('no modules', () => (
         ...currentJob,
         rawData: {
           webpack: {
-            stats: {
-              ...currentJob.rawData.webpack.stats,
-              modules: undefined,
-            },
+            ...currentJob.rawData.webpack,
+            modules: undefined,
           },
         },
       },
@@ -55,10 +53,8 @@ stories.add('no modules', () => (
         ...baselineJob,
         rawData: {
           webpack: {
-            stats: {
-              ...baselineJob.rawData.webpack.stats,
-              modules: undefined,
-            },
+            ...baselineJob.rawData.webpack,
+            modules: undefined,
           },
         },
       },
@@ -73,10 +69,8 @@ stories.add('no chunks', () => (
         ...currentJob,
         rawData: {
           webpack: {
-            stats: {
-              ...currentJob.rawData.webpack.stats,
-              chunks: undefined,
-            },
+            ...currentJob.rawData.webpack,
+            chunks: undefined,
           },
         },
       },
@@ -84,10 +78,8 @@ stories.add('no chunks', () => (
         ...baselineJob,
         rawData: {
           webpack: {
-            stats: {
-              ...baselineJob.rawData.webpack.stats,
-              chunks: undefined,
-            },
+            ...baselineJob.rawData.webpack,
+            chunks: undefined,
           },
         },
       },

@@ -3,28 +3,26 @@ export default {
     {
       internalBuildNumber: 2,
       webpack: {
-        stats: {
-          builtAt: '2019-01-01T00:00:00.000Z',
-          hash: 'abcd1234',
-        },
+        builtAt: '2019-01-01T00:00:00.000Z',
+        hash: 'abcd1234',
       },
     },
     {
       internalBuildNumber: 1,
       webpack: {
-        stats: {
-          builtAt: '2019-01-01T00:00:00.000Z',
-          hash: 'defg1234',
-        },
+        builtAt: '2019-01-01T00:00:00.000Z',
+        hash: 'defg1234',
       },
     },
   ],
   warnings: {
-    duplicatePackages: {
-      'package-c': [
-        'package-a:package-c',
-        'package-c',
-      ],
+    webpack: {
+      duplicatePackages: {
+        'package-c': [
+          'package-a:package-c',
+          'package-c',
+        ],
+      },
     },
   },
   sizes: [

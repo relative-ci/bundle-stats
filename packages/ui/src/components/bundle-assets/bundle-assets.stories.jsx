@@ -8,8 +8,8 @@ import { getWrapperDecorator } from '../../stories';
 import { BundleAssets } from '.';
 
 const [currentJob, baselineJob] = createJobs([
-  { webpack: { stats: currentStats } },
-  { webpack: { stats: baselineStats } },
+  { webpack: currentStats },
+  { webpack: baselineStats },
 ]);
 
 const stories = storiesOf('Components/BundleAssets', module);
@@ -38,9 +38,7 @@ stories.add('no assets', () => (
         ...currentJob,
         rawData: {
           webpack: {
-            stats: {
-              assets: [],
-            },
+            assets: [],
           },
         },
       },
@@ -48,9 +46,7 @@ stories.add('no assets', () => (
         ...baselineJob,
         rawData: {
           webpack: {
-            stats: {
-              assets: [],
-            },
+            assets: [],
           },
         },
       },
@@ -65,12 +61,10 @@ stories.add('empty filtered data', () => (
         ...currentJob,
         rawData: {
           webpack: {
-            stats: {
-              assets: [{
-                name: 'main.js',
-                size: 100,
-              }],
-            },
+            assets: [{
+              name: 'main.js',
+              size: 100,
+            }],
           },
         },
       },
@@ -78,12 +72,10 @@ stories.add('empty filtered data', () => (
         ...baselineJob,
         rawData: {
           webpack: {
-            stats: {
-              assets: [{
-                name: 'main.js',
-                size: 100,
-              }],
-            },
+            assets: [{
+              name: 'main.js',
+              size: 100,
+            }],
           },
         },
       },
@@ -98,14 +90,12 @@ stories.add('not predictive', () => (
         ...currentJob,
         rawData: {
           webpack: {
-            stats: {
-              assets: [
-                {
-                  name: 'static/js/not-predictive.93191.js',
-                  size: 2989,
-                },
-              ],
-            },
+            assets: [
+              {
+                name: 'static/js/not-predictive.93191.js',
+                size: 2989,
+              },
+            ],
           },
         },
       },
@@ -113,14 +103,12 @@ stories.add('not predictive', () => (
         ...baselineJob,
         rawData: {
           webpack: {
-            stats: {
-              assets: [
-                {
-                  name: 'static/js/not-predictive.93191.js',
-                  size: 2988,
-                },
-              ],
-            },
+            assets: [
+              {
+                name: 'static/js/not-predictive.93191.js',
+                size: 2988,
+              },
+            ],
           },
         },
       },
