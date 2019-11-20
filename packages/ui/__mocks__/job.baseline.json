@@ -10,7 +10,6 @@
   "internalBuildNumber": 123,
   "rawData": {
     "webpack": {
-      "stats": {
         "assets": [
           {
             "name": "../artifacts/webpack.json",
@@ -4370,7 +4369,6 @@
             ]
           }
         ]
-      }
     }
   }
 }

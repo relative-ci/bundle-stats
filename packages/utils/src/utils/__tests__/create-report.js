@@ -8,7 +8,7 @@ import { createReport } from '../create-report';
 describe('createReport', () => {
   test('one source', () => {
     const actual = createReport(createJobs([
-      { webpack: { stats: webpackStatsCurrentExtracted } },
+      { webpack: webpackStatsCurrentExtracted },
     ]));
 
     expect(actual).toEqual(expectedSingle);
@@ -16,8 +16,8 @@ describe('createReport', () => {
 
   test('multiple sources', () => {
     const actual = createReport(createJobs([
-      { webpack: { stats: webpackStatsCurrentExtracted } },
-      { webpack: { stats: webpackStatsBaselineExtracted } },
+      { webpack: webpackStatsCurrentExtracted },
+      { webpack: webpackStatsBaselineExtracted },
     ]));
 
     expect(actual).toEqual(expectedMultiple);

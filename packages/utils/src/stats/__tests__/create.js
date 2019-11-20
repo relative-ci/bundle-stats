@@ -4,66 +4,64 @@ describe('createStats', () => {
   test('should create stats when baseline is null', () => {
     const actual = createStats(null, {
       webpack: {
-        stats: {
-          assets: [
-            {
-              name: 'main.js',
-              size: 40,
-            },
-            {
-              name: 'vendors.js',
-              size: 40,
-            },
-            {
-              name: 'main.css',
-              size: 10,
-            },
-            {
-              name: 'index.html',
-              size: 5,
-            },
-            {
-              name: 'logo.png',
-              size: 5,
-            },
-          ],
-          chunks: [
-            {
-              id: 0,
-              initial: true,
-              name: 'main',
-              files: [
-                'main.js',
-                'main.css',
-              ],
-            },
-            {
-              id: 1,
-              initial: true,
-              name: 'main',
-              files: [
-                'vendors.js',
-              ],
-            },
-          ],
-          modules: [
-            {
-              name: 'mod1.js',
-              size: 0,
-              chunks: [0],
-            },
-            {
-              name: 'mod2.js',
-              size: 1,
-              chunks: [1],
-            },
-            {
-              name: 'node_modules/package-a/dist/index.js',
-              size: 10,
-              chunks: [1],
-            },
-          ],
-        },
+        assets: [
+          {
+            name: 'main.js',
+            size: 40,
+          },
+          {
+            name: 'vendors.js',
+            size: 40,
+          },
+          {
+            name: 'main.css',
+            size: 10,
+          },
+          {
+            name: 'index.html',
+            size: 5,
+          },
+          {
+            name: 'logo.png',
+            size: 5,
+          },
+        ],
+        chunks: [
+          {
+            id: 0,
+            initial: true,
+            name: 'main',
+            files: [
+              'main.js',
+              'main.css',
+            ],
+          },
+          {
+            id: 1,
+            initial: true,
+            name: 'main',
+            files: [
+              'vendors.js',
+            ],
+          },
+        ],
+        modules: [
+          {
+            name: 'mod1.js',
+            size: 0,
+            chunks: [0],
+          },
+          {
+            name: 'mod2.js',
+            size: 1,
+            chunks: [1],
+          },
+          {
+            name: 'node_modules/package-a/dist/index.js',
+            size: 10,
+            chunks: [1],
+          },
+        ],
       },
     });
 
@@ -127,94 +125,90 @@ describe('createStats', () => {
     const actual = createStats(
       {
         webpack: {
-          stats: {
-            assets: [
-              {
-                name: 'main.js',
-                size: 50,
-              },
-              {
-                name: 'vendors.js',
-                size: 40,
-              },
-              {
-                name: 'main.css',
-                size: 10,
-              },
-              {
-                name: 'index.html',
-                size: 5,
-              },
-              {
-                name: 'logo.png',
-                size: 5,
-              },
-            ],
-          },
+          assets: [
+            {
+              name: 'main.js',
+              size: 50,
+            },
+            {
+              name: 'vendors.js',
+              size: 40,
+            },
+            {
+              name: 'main.css',
+              size: 10,
+            },
+            {
+              name: 'index.html',
+              size: 5,
+            },
+            {
+              name: 'logo.png',
+              size: 5,
+            },
+          ],
         },
       },
       {
         webpack: {
-          stats: {
-            assets: [
-              {
-                name: 'main.js',
-                size: 40,
-              },
-              {
-                name: 'vendors.js',
-                size: 40,
-              },
-              {
-                name: 'main.css',
-                size: 10,
-              },
-              {
-                name: 'index.html',
-                size: 5,
-              },
-              {
-                name: 'logo.png',
-                size: 5,
-              },
-            ],
-            modules: [
-              {
-                name: 'mod1.js',
-                size: 0,
-                chunks: [0],
-              },
-              {
-                name: 'mod2.js',
-                size: 1,
-                chunks: [1],
-              },
-              {
-                name: 'node_modules/package-a/dist/index.js',
-                size: 10,
-                chunks: [1],
-              },
-            ],
-            chunks: [
-              {
-                id: 0,
-                initial: true,
-                name: 'main',
-                files: [
-                  'main.js',
-                  'main.css',
-                ],
-              },
-              {
-                id: 1,
-                initial: true,
-                name: 'vendors',
-                files: [
-                  'vendors.js',
-                ],
-              },
-            ],
-          },
+          assets: [
+            {
+              name: 'main.js',
+              size: 40,
+            },
+            {
+              name: 'vendors.js',
+              size: 40,
+            },
+            {
+              name: 'main.css',
+              size: 10,
+            },
+            {
+              name: 'index.html',
+              size: 5,
+            },
+            {
+              name: 'logo.png',
+              size: 5,
+            },
+          ],
+          modules: [
+            {
+              name: 'mod1.js',
+              size: 0,
+              chunks: [0],
+            },
+            {
+              name: 'mod2.js',
+              size: 1,
+              chunks: [1],
+            },
+            {
+              name: 'node_modules/package-a/dist/index.js',
+              size: 10,
+              chunks: [1],
+            },
+          ],
+          chunks: [
+            {
+              id: 0,
+              initial: true,
+              name: 'main',
+              files: [
+                'main.js',
+                'main.css',
+              ],
+            },
+            {
+              id: 1,
+              initial: true,
+              name: 'vendors',
+              files: [
+                'vendors.js',
+              ],
+            },
+          ],
         },
       },
     );
