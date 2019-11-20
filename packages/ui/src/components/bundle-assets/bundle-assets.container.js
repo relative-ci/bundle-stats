@@ -4,10 +4,9 @@ import {
   FILE_TYPES,
   METRIC_TYPE_FILE_SIZE,
   addMetricsData,
-  getFileType,
-  assetsWebpackTransform,
   mergeRunsById,
 } from '@bundle-stats/utils';
+import { getFileType, extractAssets } from '@bundle-stats/utils/lib-esm/webpack';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilters } from '../../hocs/with-filters';
@@ -138,7 +137,7 @@ export const enhance = compose(
   withProps(({ jobs }) => {
     const runs = jobs.map((job) => ({ meta: job }));
     const jobsAssets = jobs.map((job) => {
-      const { assets } = assetsWebpackTransform(get(job, 'rawData.webpack.stats'));
+      const { assets } = extractAssets(get(job, 'rawData.webpack'));
       return assets;
     });
 

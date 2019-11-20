@@ -32,15 +32,17 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
 
     expect(actual).toEqual({
       warnings: {
-        duplicatePackages: {
-          'package-a': [
-            'package-a',
-            'package-b:package-a',
-          ],
-          'package-c': [
-            'package-c',
-            'org/package-d:package-c',
-          ],
+        webpack: {
+          duplicatePackages: {
+            'package-a': [
+              'package-a',
+              'package-b:package-a',
+            ],
+            'package-c': [
+              'package-c',
+              'org/package-d:package-c',
+            ],
+          },
         },
       },
       stats: {
