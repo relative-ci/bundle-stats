@@ -1,0 +1,573 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create job no baseline 1`] = `
+Object {
+  "meta": Object {
+    "webpack": Object {
+      "builtAt": "2019-01-01T00:00:00.000Z",
+      "hash": "abcd1234",
+    },
+  },
+  "metrics": Object {
+    "webpack": Object {
+      "assets": Object {
+        "index.html": Object {
+          "isChunk": false,
+          "isEntry": false,
+          "isInitial": false,
+          "name": "index.html",
+          "value": 2000,
+        },
+        "logo.png": Object {
+          "isChunk": false,
+          "isEntry": false,
+          "isInitial": false,
+          "name": "logo.a3b4c5.png",
+          "value": 1000,
+        },
+        "main.css": Object {
+          "isChunk": false,
+          "isEntry": true,
+          "isInitial": true,
+          "name": "main.a1b2c3.css",
+          "value": 10000,
+        },
+        "main.js": Object {
+          "isChunk": false,
+          "isEntry": true,
+          "isInitial": true,
+          "name": "main.a2b3c4.js",
+          "value": 50000,
+        },
+      },
+      "modules": Object {
+        "1": Object {
+          "chunkNames": Array [
+            "main",
+          ],
+          "modules": Object {
+            "module-a": Object {
+              "name": "module-a",
+              "value": 1000,
+            },
+            "module-b": Object {
+              "name": "module-b",
+              "value": 2000,
+            },
+            "node_modules/package-a/index.js": Object {
+              "name": "node_modules/package-a/index.js",
+              "value": 1000,
+            },
+            "node_modules/package-a/node_modules/package-c/index.js": Object {
+              "name": "node_modules/package-a/node_modules/package-c/index.js",
+              "value": 1000,
+            },
+            "node_modules/package-b/index.js": Object {
+              "name": "node_modules/package-b/index.js",
+              "value": 1000,
+            },
+            "node_modules/package-c/index.js": Object {
+              "name": "node_modules/package-c/index.js",
+              "value": 1000,
+            },
+          },
+        },
+      },
+      "packages": Object {
+        "package-a": Object {
+          "value": 1000,
+        },
+        "package-a:package-c": Object {
+          "value": 1000,
+        },
+        "package-b": Object {
+          "value": 1000,
+        },
+        "package-c": Object {
+          "value": 1000,
+        },
+      },
+    },
+  },
+  "rawData": Object {
+    "webpack": Object {
+      "assets": Array [
+        Object {
+          "name": "main.a1b2c3.css",
+          "size": 10000,
+        },
+        Object {
+          "name": "main.a2b3c4.js",
+          "size": 50000,
+        },
+        Object {
+          "name": "logo.a3b4c5.png",
+          "size": 1000,
+        },
+        Object {
+          "name": "index.html",
+          "size": 2000,
+        },
+      ],
+      "builtAt": 1546300800000,
+      "chunks": Array [
+        Object {
+          "entry": true,
+          "files": Array [
+            "main.a1b2c3.css",
+            "main.a2b3c4.js",
+          ],
+          "id": 1,
+          "initial": true,
+          "names": Array [
+            "main",
+          ],
+        },
+      ],
+      "entrypoints": Object {
+        "main": Object {
+          "assets": Array [
+            "main.a1b2c3.css",
+            "main.a1b2c3.css.map",
+            "main.a2b3c4.js",
+            "main.a2b3c4.js.map",
+          ],
+        },
+      },
+      "hash": "abcd1234",
+      "modules": Array [
+        Object {
+          "chunks": Array [
+            1,
+          ],
+          "name": "module-a",
+          "size": 1000,
+        },
+        Object {
+          "chunks": Array [
+            1,
+          ],
+          "name": "module-b",
+          "size": 2000,
+        },
+        Object {
+          "chunks": Array [
+            1,
+          ],
+          "name": "node_modules/package-a/index.js",
+          "size": 1000,
+        },
+        Object {
+          "chunks": Array [
+            1,
+          ],
+          "name": "node_modules/package-a/node_modules/package-c/index.js",
+          "size": 1000,
+        },
+        Object {
+          "chunks": Array [
+            1,
+          ],
+          "name": "node_modules/package-b/index.js",
+          "size": 1000,
+        },
+        Object {
+          "chunks": Array [
+            1,
+          ],
+          "name": "node_modules/package-c/index.js",
+          "size": 1000,
+        },
+      ],
+    },
+  },
+  "stats": Object {
+    "webpack": Object {
+      "assetCount": Object {
+        "value": 4,
+      },
+      "assets": Object {
+        "totalInitialSizeCSS": Object {
+          "value": 10000,
+        },
+        "totalInitialSizeJS": Object {
+          "value": 50000,
+        },
+        "totalSizeByTypeALL": Object {
+          "value": 63000,
+        },
+        "totalSizeByTypeCSS": Object {
+          "value": 10000,
+        },
+        "totalSizeByTypeFONT": Object {
+          "value": 0,
+        },
+        "totalSizeByTypeHTML": Object {
+          "value": 2000,
+        },
+        "totalSizeByTypeIMG": Object {
+          "value": 1000,
+        },
+        "totalSizeByTypeJS": Object {
+          "value": 50000,
+        },
+        "totalSizeByTypeMEDIA": Object {
+          "value": 0,
+        },
+        "totalSizeByTypeOTHER": Object {
+          "value": 0,
+        },
+      },
+      "cacheInvalidation": Object {
+        "value": 0,
+      },
+      "chunkCount": Object {
+        "value": 0,
+      },
+      "duplicatePackagesCount": Object {
+        "value": 1,
+      },
+      "moduleCount": Object {
+        "value": 6,
+      },
+      "packageCount": Object {
+        "value": 4,
+      },
+    },
+  },
+  "summary": Object {
+    "webpack.assetCount": Object {
+      "baseline": 0,
+      "current": 4,
+    },
+    "webpack.assets.totalInitialSizeCSS": Object {
+      "baseline": 0,
+      "current": 10000,
+    },
+    "webpack.assets.totalInitialSizeJS": Object {
+      "baseline": 0,
+      "current": 50000,
+    },
+    "webpack.assets.totalSizeByTypeALL": Object {
+      "baseline": 0,
+      "current": 63000,
+    },
+    "webpack.cacheInvalidation": Object {
+      "baseline": 0,
+      "current": 0,
+    },
+    "webpack.chunkCount": Object {
+      "baseline": 0,
+      "current": 0,
+    },
+    "webpack.duplicatePackagesCount": Object {
+      "baseline": 0,
+      "current": 1,
+    },
+    "webpack.moduleCount": Object {
+      "baseline": 0,
+      "current": 6,
+    },
+    "webpack.packageCount": Object {
+      "baseline": 0,
+      "current": 4,
+    },
+  },
+  "warnings": Object {
+    "webpack": Object {
+      "duplicatePackages": Object {
+        "package-c": Array [
+          "package-a:package-c",
+          "package-c",
+        ],
+      },
+    },
+  },
+}
+`;
+
+exports[`Create job with baseline 1`] = `
+Object {
+  "meta": Object {
+    "webpack": Object {
+      "builtAt": "2019-01-01T00:00:00.000Z",
+      "hash": "abcd1234",
+    },
+  },
+  "metrics": Object {
+    "webpack": Object {
+      "assets": Object {
+        "index.html": Object {
+          "isChunk": false,
+          "isEntry": false,
+          "isInitial": false,
+          "name": "index.html",
+          "value": 2000,
+        },
+        "logo.png": Object {
+          "isChunk": false,
+          "isEntry": false,
+          "isInitial": false,
+          "name": "logo.a3b4c5.png",
+          "value": 1000,
+        },
+        "main.css": Object {
+          "isChunk": false,
+          "isEntry": true,
+          "isInitial": true,
+          "name": "main.a1b2c3.css",
+          "value": 10000,
+        },
+        "main.js": Object {
+          "isChunk": false,
+          "isEntry": true,
+          "isInitial": true,
+          "name": "main.a2b3c4.js",
+          "value": 50000,
+        },
+      },
+      "modules": Object {
+        "1": Object {
+          "chunkNames": Array [
+            "main",
+          ],
+          "modules": Object {
+            "module-a": Object {
+              "name": "module-a",
+              "value": 1000,
+            },
+            "module-b": Object {
+              "name": "module-b",
+              "value": 2000,
+            },
+            "node_modules/package-a/index.js": Object {
+              "name": "node_modules/package-a/index.js",
+              "value": 1000,
+            },
+            "node_modules/package-a/node_modules/package-c/index.js": Object {
+              "name": "node_modules/package-a/node_modules/package-c/index.js",
+              "value": 1000,
+            },
+            "node_modules/package-b/index.js": Object {
+              "name": "node_modules/package-b/index.js",
+              "value": 1000,
+            },
+            "node_modules/package-c/index.js": Object {
+              "name": "node_modules/package-c/index.js",
+              "value": 1000,
+            },
+          },
+        },
+      },
+      "packages": Object {
+        "package-a": Object {
+          "value": 1000,
+        },
+        "package-a:package-c": Object {
+          "value": 1000,
+        },
+        "package-b": Object {
+          "value": 1000,
+        },
+        "package-c": Object {
+          "value": 1000,
+        },
+      },
+    },
+  },
+  "rawData": Object {
+    "webpack": Object {
+      "assets": Array [
+        Object {
+          "name": "main.a1b2c3.css",
+          "size": 10000,
+        },
+        Object {
+          "name": "main.a2b3c4.js",
+          "size": 50000,
+        },
+        Object {
+          "name": "logo.a3b4c5.png",
+          "size": 1000,
+        },
+        Object {
+          "name": "index.html",
+          "size": 2000,
+        },
+      ],
+      "builtAt": 1546300800000,
+      "chunks": Array [
+        Object {
+          "entry": true,
+          "files": Array [
+            "main.a1b2c3.css",
+            "main.a2b3c4.js",
+          ],
+          "id": 1,
+          "initial": true,
+          "names": Array [
+            "main",
+          ],
+        },
+      ],
+      "entrypoints": Object {
+        "main": Object {
+          "assets": Array [
+            "main.a1b2c3.css",
+            "main.a1b2c3.css.map",
+            "main.a2b3c4.js",
+            "main.a2b3c4.js.map",
+          ],
+        },
+      },
+      "hash": "abcd1234",
+      "modules": Array [
+        Object {
+          "chunks": Array [
+            1,
+          ],
+          "name": "module-a",
+          "size": 1000,
+        },
+        Object {
+          "chunks": Array [
+            1,
+          ],
+          "name": "module-b",
+          "size": 2000,
+        },
+        Object {
+          "chunks": Array [
+            1,
+          ],
+          "name": "node_modules/package-a/index.js",
+          "size": 1000,
+        },
+        Object {
+          "chunks": Array [
+            1,
+          ],
+          "name": "node_modules/package-a/node_modules/package-c/index.js",
+          "size": 1000,
+        },
+        Object {
+          "chunks": Array [
+            1,
+          ],
+          "name": "node_modules/package-b/index.js",
+          "size": 1000,
+        },
+        Object {
+          "chunks": Array [
+            1,
+          ],
+          "name": "node_modules/package-c/index.js",
+          "size": 1000,
+        },
+      ],
+    },
+  },
+  "stats": Object {
+    "webpack": Object {
+      "assetCount": Object {
+        "value": 4,
+      },
+      "assets": Object {
+        "totalInitialSizeCSS": Object {
+          "value": 10000,
+        },
+        "totalInitialSizeJS": Object {
+          "value": 50000,
+        },
+        "totalSizeByTypeALL": Object {
+          "value": 63000,
+        },
+        "totalSizeByTypeCSS": Object {
+          "value": 10000,
+        },
+        "totalSizeByTypeFONT": Object {
+          "value": 0,
+        },
+        "totalSizeByTypeHTML": Object {
+          "value": 2000,
+        },
+        "totalSizeByTypeIMG": Object {
+          "value": 1000,
+        },
+        "totalSizeByTypeJS": Object {
+          "value": 50000,
+        },
+        "totalSizeByTypeMEDIA": Object {
+          "value": 0,
+        },
+        "totalSizeByTypeOTHER": Object {
+          "value": 0,
+        },
+      },
+      "cacheInvalidation": Object {
+        "value": 95.24,
+      },
+      "chunkCount": Object {
+        "value": 0,
+      },
+      "duplicatePackagesCount": Object {
+        "value": 1,
+      },
+      "moduleCount": Object {
+        "value": 6,
+      },
+      "packageCount": Object {
+        "value": 4,
+      },
+    },
+  },
+  "summary": Object {
+    "webpack.assetCount": Object {
+      "baseline": 4,
+      "current": 4,
+    },
+    "webpack.assets.totalInitialSizeCSS": Object {
+      "baseline": 11000,
+      "current": 10000,
+    },
+    "webpack.assets.totalInitialSizeJS": Object {
+      "baseline": 49000,
+      "current": 50000,
+    },
+    "webpack.assets.totalSizeByTypeALL": Object {
+      "baseline": 63000,
+      "current": 63000,
+    },
+    "webpack.cacheInvalidation": Object {
+      "baseline": 0,
+      "current": 95.24,
+    },
+    "webpack.chunkCount": Object {
+      "baseline": 0,
+      "current": 0,
+    },
+    "webpack.duplicatePackagesCount": Object {
+      "baseline": 0,
+      "current": 1,
+    },
+    "webpack.moduleCount": Object {
+      "baseline": 5,
+      "current": 6,
+    },
+    "webpack.packageCount": Object {
+      "baseline": 3,
+      "current": 4,
+    },
+  },
+  "warnings": Object {
+    "webpack": Object {
+      "duplicatePackages": Object {
+        "package-c": Array [
+          "package-a:package-c",
+          "package-c",
+        ],
+      },
+    },
+  },
+}
+`;

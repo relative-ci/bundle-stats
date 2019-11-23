@@ -6,6 +6,7 @@ import { SOURCE_PATH_WEBPACK_STATS, SOURCE_PATHS } from '../config';
 import { createStats } from '../stats/create';
 import { createStatsSummary } from '../stats/create-summary';
 import {
+  extractAssets,
   extractModules,
   extractModulesPackages,
   extractModulesPackagesDuplicate,
@@ -32,15 +33,17 @@ export const createJob = (source, baseline) => {
     );
   }, {});
 
+  const webpackData = get(data.rawData, SOURCE_PATH_WEBPACK_STATS);
+
+  const { meta } = extractMeta(webpackData);
+  const { assets } = extractAssets(webpackData);
+  const { modules } = extractModules(webpackData);
+  const { packages } = extractModulesPackages({ modules });
+
   const stats = createStats(baseline && baseline.rawData, data.rawData);
   const summary = createStatsSummary(baseline && baseline.stats, stats);
-  const { meta } = extractMeta(get(data.rawData, SOURCE_PATH_WEBPACK_STATS));
 
-  const { warnings: duplicatePackagesWarnings } = extractModulesPackagesDuplicate(
-    extractModulesPackages({
-      ...extractModules(get(data.rawData, SOURCE_PATH_WEBPACK_STATS)),
-    }),
-  );
+  const { warnings: duplicatePackagesWarnings } = extractModulesPackagesDuplicate({ packages });
 
   const warnings = {
     ...duplicatePackagesWarnings,
@@ -52,5 +55,12 @@ export const createJob = (source, baseline) => {
     stats,
     summary,
     ...isEmpty(warnings) ? {} : { warnings },
+    metrics: {
+      webpack: {
+        assets,
+        modules,
+        packages,
+      },
+    },
   };
 };
