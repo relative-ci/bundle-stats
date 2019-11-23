@@ -19,9 +19,11 @@ stories.add('default', () => (
           },
         },
         summary: {
-          'webpack.assets.totalSizeByTypeALL': {
-            current: 1000000,
-            baseline: 900000,
+          webpack: {
+            totalSizeByTypeALL: {
+              current: 1000000,
+              baseline: 900000,
+            },
           },
         },
       },
@@ -41,9 +43,11 @@ stories.add('multiple jobs', () => (
           },
         },
         summary: {
-          'webpack.assets.totalSizeByTypeALL': {
-            current: 1000000,
-            baseline: 900000,
+          webpack: {
+            totalSizeByTypeALL: {
+              current: 1000000,
+              baseline: 900000,
+            },
           },
         },
       },
@@ -56,9 +60,11 @@ stories.add('multiple jobs', () => (
           },
         },
         summary: {
-          'webpack.assets.totalSizeByTypeALL': {
-            current: 900000,
-            baseline: 0,
+          webpack: {
+            totalSizeByTypeALL: {
+              current: 900000,
+              baseline: 0,
+            },
           },
         },
       },
@@ -78,9 +84,11 @@ stories.add('multiple equal jobs', () => (
           },
         },
         summary: {
-          'webpack.assets.totalSizeByTypeALL': {
-            current: 1000000,
-            baseline: 1000000,
+          webpack: {
+            totalSizeByTypeALL: {
+              current: 1000000,
+              baseline: 1000000,
+            },
           },
         },
       },
@@ -93,9 +101,11 @@ stories.add('multiple equal jobs', () => (
           },
         },
         summary: {
-          'webpack.assets.totalSizeByTypeALL': {
-            current: 1000000,
-            baseline: 0,
+          webpack: {
+            totalSizeByTypeALL: {
+              current: 1000000,
+              baseline: 1000000,
+            },
           },
         },
       },

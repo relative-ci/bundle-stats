@@ -17,8 +17,8 @@ const getPackageName = (moduleName) => {
   return names.join(PACKAGES_SEPARATOR);
 };
 
-export const extractModulesPackages = (bundleStats) => {
-  const modulesByChunks = get(bundleStats, 'modules', {});
+export const extractModulesPackages = (webpackStats, currentExtractedData) => {
+  const modulesByChunks = get(currentExtractedData, 'metrics.modules', {});
 
   const modules = uniqBy(Object.values(modulesByChunks).map((chunk) => {
     const chunkModules = get(chunk, 'modules', {});
@@ -42,5 +42,5 @@ export const extractModulesPackages = (bundleStats) => {
     };
   }, {});
 
-  return { packages };
+  return { metrics: { packages } };
 };

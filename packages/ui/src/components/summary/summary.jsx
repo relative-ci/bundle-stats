@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { get } from 'lodash';
 
 import { SummaryItem } from '../summary-item';
 import css from './summary.module.css';
@@ -15,7 +16,7 @@ export const Summary = ({
       key={key}
       className={css.item}
       id={key}
-      data={data && data[key]}
+      data={get(data, key)}
       loading={loading}
       showMetricDescription
       showBaselineValue={showSummaryItemBaselineValue}
@@ -41,8 +42,8 @@ Summary.defaultProps = {
   data: null,
   firstRowCount: FIRST_ROW_COUNT,
   keys: [
-    'webpack.assets.totalInitialSizeJS',
-    'webpack.assets.totalInitialSizeCSS',
+    'webpack.totalInitialSizeJS',
+    'webpack.totalInitialSizeCSS',
     'webpack.cacheInvalidation',
     'webpack.moduleCount',
     'webpack.chunkCount',

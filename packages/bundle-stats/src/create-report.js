@@ -10,19 +10,19 @@ import {
 
 const templateFilepath = require.resolve('@bundle-stats/html-templates');
 
-export const createHTMLReport = (data) => {
+export const createHTMLReport = (jobs) => {
   const template = readFileSync(templateFilepath, 'utf-8');
-  return template.replace(INITIAL_DATA_PATTERN, `window.__INITIAL_DATA__ = ${JSON.stringify(data)}`);
+  return template.replace(INITIAL_DATA_PATTERN, `window.__INITIAL_DATA__ = ${JSON.stringify(jobs)}`);
 };
 
-export const createJSONReport = (data) => JSON.stringify(createReport(data), null, 2);
+export const createJSONReport = (jobs) => JSON.stringify(createReport(jobs), null, 2);
 
 const REPORT_HANDLERS = {
   [OUTPUT_TYPE_HTML]: createHTMLReport,
   [OUTPUT_TYPE_JSON]: createJSONReport,
 };
 
-export const createReports = (initialData, options) => {
+export const createReports = (jobs, options) => {
   const types = [
     ...options.html ? ['html'] : [],
     ...options.json ? ['json'] : [],
@@ -30,7 +30,7 @@ export const createReports = (initialData, options) => {
 
   return Promise.all(
     types.map((type) => ({
-      output: REPORT_HANDLERS[type](initialData),
+      output: REPORT_HANDLERS[type](jobs),
       filename: `${OUTPUT_FILENAME}.${type}`,
     })),
   );

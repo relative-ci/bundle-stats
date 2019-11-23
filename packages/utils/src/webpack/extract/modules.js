@@ -48,6 +48,8 @@ export const extractModules = (webpackStats = {}) => {
   }, {});
 
   return {
-    modules: modulesByChunk,
+    metrics: {
+      modules: modulesByChunk,
+    },
   };
 };

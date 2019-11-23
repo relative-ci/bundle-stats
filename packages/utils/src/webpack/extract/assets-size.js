@@ -45,16 +45,21 @@ const calculateInitialTotals = (assets) => {
   };
 };
 
-export const extractAssetsSize = (bundleStats) => {
-  const bundleAssets = Object.values(get(bundleStats, 'assets', {}));
+export const extractAssetsSize = (webpackStats, currentExtractedData) => {
+  const bundleAssets = Object.values(get(currentExtractedData, 'metrics.assets', {}));
 
-  const sizes = {
+  const sizes = calculateTotalByType(bundleAssets);
+  const generic = {
     [getMetricName(METRIC_NAME_ALL)]: {
       value: sum(map(bundleAssets, 'value')),
     },
-    ...calculateTotalByType(bundleAssets),
     ...calculateInitialTotals(bundleAssets),
   };
 
-  return { sizes };
+  return {
+    metrics: {
+      ...generic,
+      sizes,
+    },
+  };
 };

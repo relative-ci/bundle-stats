@@ -1,35 +1,19 @@
 import {
-  flatMap, get, isEmpty, map, uniq,
+  flatMap, get, isEmpty, map, pick, uniq,
 } from 'lodash';
 
-import { METRIC_TYPE_FILE_SIZE, SOURCE_PATH_WEBPACK_STATS } from '../config';
+import { METRIC_TYPE_FILE_SIZE } from '../config';
+import * as webpack from '../webpack';
 import { getMetricChanged, getMetricType, mergeRunsById } from '../metrics';
-import { getStatsByMetrics } from '../stats/get-stats-by-metrics';
 import { getDelta, formatDelta } from './delta';
 import { formatPercentage } from './format';
-import {
-  extractAssets,
-  extractModules,
-  extractModulesPackages,
-  extractModulesPackagesDuplicate,
-} from '../webpack';
 
-const SIZE_METRICS = [
-  'webpack.assets.totalSizeByTypeJS',
-  'webpack.assets.totalSizeByTypeCSS',
-  'webpack.assets.totalSizeByTypeIMG',
-  'webpack.assets.totalSizeByTypeMEDIA',
-  'webpack.assets.totalSizeByTypeFONT',
-  'webpack.assets.totalSizeByTypeHTML',
-  'webpack.assets.totalSizeByTypeOTHER',
-  'webpack.assets.totalSizeByTypeALL',
-  'webpack.assets.totalInitialSizeCSS',
-  'webpack.assets.totalInitialSizeJS',
-];
-
-export const addMetricsData = (entries, metricType) => entries.map((entry) => {
+export const addMetricsData = (entries, metricType, metricPrefix = '') => entries.map((entry) => {
   const { runs } = entry;
-  const { biggerIsBetter, label, formatter } = getMetricType(entry.key, metricType);
+  const { biggerIsBetter, label, formatter } = getMetricType(
+    metricPrefix ? [metricPrefix, entry.key].join('.') : entry.key,
+    metricType,
+  );
 
   return {
     ...entry,
@@ -43,7 +27,7 @@ export const addMetricsData = (entries, metricType) => entries.map((entry) => {
 
     // Runs
     runs: runs.map((run, index) => {
-      if (!run || typeof run.value === 'undefined') {
+      if (!run || typeof run.value === 'undefined' || run.value === null) {
         return null;
       }
 
@@ -68,52 +52,49 @@ export const addMetricsData = (entries, metricType) => entries.map((entry) => {
   };
 });
 
-export const createRuns = (jobs) => jobs.map(({
-  meta, internalBuildNumber, stats, rawData,
-}) => {
-  const webpackStats = get(rawData, SOURCE_PATH_WEBPACK_STATS);
-  const { modules } = extractModules(webpackStats);
+const getWebpackSizesMetrics = (job) => {
+  const metrics = get(job, 'metrics.webpack.sizes', {});
 
-  return {
-    meta: {
-      ...meta,
-      internalBuildNumber,
-    },
-    sizes: getStatsByMetrics(stats, SIZE_METRICS),
-    ...extractAssets(webpackStats),
-    modules,
-    ...extractModulesPackages({ modules }),
-  };
-});
+  return Object.entries(metrics).reduce((agg, [key, value]) => ({
+    ...agg,
+    [`webpack.sizes.${key}`]: value,
+  }), {});
+};
 
-export const getModulesReport = (runs) => map(
-  uniq(flatMap(runs, ({ modules }) => Object.keys(modules))),
+const getWebpackStatsMetrics = (job) => {
+  const metrics = pick(get(job, 'metrics.webpack', {}), webpack.SUMMARY_METRIC_PATHS);
+
+  return Object.entries(metrics).reduce((agg, [key, value]) => ({
+    ...agg,
+    [`webpack.${key}`]: value,
+  }), {});
+};
+
+export const getModulesReport = (jobs) => map(
+  uniq(flatMap(jobs, (job) => Object.keys(get(job, 'metrics.webpack.modules', {})))),
+
   (chunkId) => ({
     chunkId,
-    chunkNames: uniq(flatMap(runs, (run) => get(run, ['modules', chunkId, 'chunkNames']))),
+    chunkNames: uniq(flatMap(jobs, (job) => get(job, ['metrics', 'webpack', 'modules', chunkId, 'chunkNames']))),
     modules: addMetricsData(mergeRunsById(
-      map(runs, (run) => get(run, ['modules', chunkId, 'modules'])),
+      map(jobs, (job) => get(job, ['metrics', 'webpack', 'modules', chunkId, 'modules'])),
     ), METRIC_TYPE_FILE_SIZE),
   }),
 );
 
 export const createReport = (jobs) => {
-  const runs = createRuns(jobs);
-
-  const { warnings: duplicatePackagesWarnings } = extractModulesPackagesDuplicate(
-    get(runs, '[0]', {}),
-  );
-
-  const warnings = {
-    ...duplicatePackagesWarnings,
-  };
+  const warnings = get(jobs, '[0].warnings');
 
   return {
-    runs: map(runs, 'meta'),
+    runs: jobs.map(({ internalBuildNumber, meta }) => ({
+      ...meta,
+      internalBuildNumber,
+    })),
     ...!isEmpty(warnings) ? { warnings } : {},
-    sizes: addMetricsData(mergeRunsById(map(runs, 'sizes'))),
-    assets: addMetricsData(mergeRunsById(map(runs, 'assets')), METRIC_TYPE_FILE_SIZE),
-    modules: getModulesReport(runs),
-    packages: addMetricsData(mergeRunsById(map(runs, 'packages')), METRIC_TYPE_FILE_SIZE),
+    stats: addMetricsData(mergeRunsById(map(jobs, getWebpackStatsMetrics))),
+    sizes: addMetricsData(mergeRunsById(map(jobs, getWebpackSizesMetrics))),
+    assets: addMetricsData(mergeRunsById(map(jobs, 'metrics.webpack.assets')), METRIC_TYPE_FILE_SIZE),
+    modules: getModulesReport(jobs),
+    packages: addMetricsData(mergeRunsById(map(jobs, 'metrics.webpack.packages')), METRIC_TYPE_FILE_SIZE),
   };
 };
