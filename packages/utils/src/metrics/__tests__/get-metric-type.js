@@ -5,9 +5,15 @@ import { getMetricType } from '../get-metric-type';
 
 describe('getMetricType', () => {
   test('should return metric', () => {
-    expect(omit(getMetricType('webpack.assets.totalSizeByTypeALL'), ['formatter'])).toEqual(omit({
+    expect(omit(getMetricType('webpack.totalSizeByTypeALL'), ['formatter'])).toEqual(omit({
       label: 'Total Bundle Size',
       description: 'Sum of all assets.',
+      type: 'METRIC_TYPE_FILE_SIZE',
+      biggerIsBetter: false,
+    }, ['formatter']));
+
+    expect(omit(getMetricType('webpack.sizes.totalSizeByTypeJS'), ['formatter'])).toEqual(omit({
+      label: 'JS',
       type: 'METRIC_TYPE_FILE_SIZE',
       biggerIsBetter: false,
     }, ['formatter']));

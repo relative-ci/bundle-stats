@@ -1,26 +1,26 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { createStats, createStatsSummary } from '@bundle-stats/utils';
+import { createJobs } from '@bundle-stats/utils';
 
-import currentData from '../../../__mocks__/job.current.json';
-import baselineData from '../../../__mocks__/job.baseline.json';
+import baselineData from '../../../__mocks__/webpack-stats.baseline.json';
+import currentData from '../../../__mocks__/webpack-stats.current.json';
 import { getWrapperDecorator } from '../../stories';
 import { Summary } from '.';
 
-const currentStats = createStats(baselineData.rawData, currentData.rawData);
-const baselineStats = createStats(null, baselineData.rawData);
+const MULTIPLE_JOBS = createJobs([
+  { webpack: currentData },
+  { webpack: baselineData },
+]);
 
-const currentJob = {
-  ...currentData,
-  stats: currentStats,
-  summary: createStatsSummary(baselineStats, currentStats),
-};
+const SINGLE_JOB = createJobs([
+  { webpack: currentData },
+]);
 
 const stories = storiesOf('Components/Summary', module);
 stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => (
-  <Summary data={currentJob.summary} showSummaryItemBaselineValue />
+  <Summary data={MULTIPLE_JOBS[0].summary} showSummaryItemBaselineValue />
 ));
 
 stories.add('loading', () => (
@@ -28,5 +28,5 @@ stories.add('loading', () => (
 ));
 
 stories.add('single run', () => (
-  <Summary data={createStatsSummary(null, currentJob.stats)} showSummaryItemDelta={false} />
+  <Summary data={SINGLE_JOB[0].summary} showSummaryItemDelta={false} />
 ));

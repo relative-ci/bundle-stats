@@ -3,7 +3,9 @@ const path = require('path');
 const { readJSON, outputFile } = require('fs-extra');
 const Listr = require('listr');
 const { get } = require('lodash');
-const { createJobs, extractDataFromWebpackStats } = require('@bundle-stats/utils');
+
+const { createJobs } = require('@bundle-stats/utils');
+const { filter } = require('@bundle-stats/utils/lib/webpack');
 
 // eslint-disable-next-line import/no-unresolved
 const {
@@ -20,15 +22,11 @@ module.exports = ({
   const tasks = new Listr([
     {
       title: 'Read Webpack stats files',
-      task: (ctx) => Promise.all(
-        artifactFilepaths.map((filepath) => readJSON(filepath)),
-      ).then((artifacts) => {
-        ctx.artifacts = artifacts.map((stats) => ({
-          webpack: {
-            stats: extractDataFromWebpackStats(stats),
-          },
-        }));
-      }),
+      task: (ctx) => Promise
+        .all(artifactFilepaths.map((filepath) => readJSON(filepath)))
+        .then((sources) => {
+          ctx.artifacts = sources.map((source) => ({ webpack: source }));
+        }),
     },
     {
       title: 'Read baseline data',
@@ -37,11 +35,7 @@ module.exports = ({
         // eslint-disable-next-line no-param-reassign
         task.title = `${task.title} (${baselineFilepath})`;
 
-        ctx.artifacts = ctx.artifacts.concat([{
-          webpack: {
-            stats: extractDataFromWebpackStats(ctx.baselineStats),
-          },
-        }]);
+        ctx.artifacts = ctx.artifacts.concat([{ webpack: ctx.baselineStats }]);
       },
       skip: async (ctx) => {
         if (!compare) {
@@ -67,11 +61,11 @@ module.exports = ({
     {
       title: 'Write baseline data',
       task: (ctx, task) => {
-        const stats = get(ctx, 'artifacts.0.webpack.stats');
-        const extractedWebpackStats = extractDataFromWebpackStats(stats);
+        const stats = get(ctx, 'artifacts[0]webpack');
+        const filteredWebpackStats = filter(stats);
         const baselineFilepath = path.relative(process.cwd(), getBaselineStatsFilepath());
 
-        return writeBaseline(extractedWebpackStats).then(() => {
+        return writeBaseline(filteredWebpackStats).then(() => {
           // eslint-disable-next-line no-param-reassign
           task.title = `${task.title} (${baselineFilepath})`;
         });
@@ -81,13 +75,13 @@ module.exports = ({
     {
       title: 'Process data',
       task: (ctx) => {
-        ctx.initialData = createJobs(ctx.artifacts);
+        ctx.jobs = createJobs(ctx.artifacts);
       },
     },
     {
       title: 'Generate reports',
       task: async (ctx) => {
-        ctx.reports = await createReports(ctx.initialData, { html, json });
+        ctx.reports = await createReports(ctx.jobs, { html, json });
       },
     },
     {

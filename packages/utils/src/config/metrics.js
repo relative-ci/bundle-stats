@@ -36,50 +36,20 @@ export const METRIC_TYPES = {
 
 const METRICS = {
   webpack: {
-    assets: {
-      totalSizeByTypeALL: {
-        label: 'Total Bundle Size',
-        description: 'Sum of all assets.',
-        type: METRIC_TYPE_FILE_SIZE,
-      },
-      totalSizeByTypeJS: {
-        label: 'JS',
-        type: METRIC_TYPE_FILE_SIZE,
-      },
-      totalSizeByTypeCSS: {
-        label: 'CSS',
-        type: METRIC_TYPE_FILE_SIZE,
-      },
-      totalSizeByTypeIMG: {
-        label: 'IMG',
-        type: METRIC_TYPE_FILE_SIZE,
-      },
-      totalSizeByTypeMEDIA: {
-        label: 'Media',
-        type: METRIC_TYPE_FILE_SIZE,
-      },
-      totalSizeByTypeFONT: {
-        label: 'Fonts',
-        type: METRIC_TYPE_FILE_SIZE,
-      },
-      totalSizeByTypeHTML: {
-        label: 'HTML',
-        type: METRIC_TYPE_FILE_SIZE,
-      },
-      totalSizeByTypeOTHER: {
-        label: 'Other',
-        type: METRIC_TYPE_FILE_SIZE,
-      },
-      totalInitialSizeJS: {
-        label: 'Initial JS Size',
-        description: 'Sum of all JS assets that are loaded initially(eg: `vendor.js`, `app.js`).',
-        type: METRIC_TYPE_FILE_SIZE,
-      },
-      totalInitialSizeCSS: {
-        label: 'Initial CSS Size',
-        description: 'Sum of all CSS assets that are loaded initially(eg: `vendor.css`, `app.css`).',
-        type: METRIC_TYPE_FILE_SIZE,
-      },
+    totalSizeByTypeALL: {
+      label: 'Total Bundle Size',
+      description: 'Sum of all assets.',
+      type: METRIC_TYPE_FILE_SIZE,
+    },
+    totalInitialSizeJS: {
+      label: 'Initial JS Size',
+      description: 'Sum of all JS assets that are loaded initially(eg: `vendor.js`, `app.js`).',
+      type: METRIC_TYPE_FILE_SIZE,
+    },
+    totalInitialSizeCSS: {
+      label: 'Initial CSS Size',
+      description: 'Sum of all CSS assets that are loaded initially(eg: `vendor.css`, `app.css`).',
+      type: METRIC_TYPE_FILE_SIZE,
     },
     cacheInvalidation: {
       label: 'Cache Invalidation',
@@ -116,6 +86,36 @@ const METRICS = {
       description: 'Total number of packages that are duplicated.',
       type: METRIC_TYPE_NUMERIC,
       biggerIsBetter: false,
+    },
+    sizes: {
+      totalSizeByTypeJS: {
+        label: 'JS',
+        type: METRIC_TYPE_FILE_SIZE,
+      },
+      totalSizeByTypeCSS: {
+        label: 'CSS',
+        type: METRIC_TYPE_FILE_SIZE,
+      },
+      totalSizeByTypeIMG: {
+        label: 'IMG',
+        type: METRIC_TYPE_FILE_SIZE,
+      },
+      totalSizeByTypeMEDIA: {
+        label: 'Media',
+        type: METRIC_TYPE_FILE_SIZE,
+      },
+      totalSizeByTypeFONT: {
+        label: 'Fonts',
+        type: METRIC_TYPE_FILE_SIZE,
+      },
+      totalSizeByTypeHTML: {
+        label: 'HTML',
+        type: METRIC_TYPE_FILE_SIZE,
+      },
+      totalSizeByTypeOTHER: {
+        label: 'Other',
+        type: METRIC_TYPE_FILE_SIZE,
+      },
     },
   },
   lighthouse: {
