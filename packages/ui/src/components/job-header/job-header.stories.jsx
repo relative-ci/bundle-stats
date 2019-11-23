@@ -11,16 +11,16 @@ const JOB = {
   internalBuildNumber: 1,
   meta: {
     webpack: {
-      stats: {
-        builtAt: '2019-01-01T00:00:00.000Z',
-        hash: 'abcd1234',
-      },
+      builtAt: '2019-01-01T00:00:00.000Z',
+      hash: 'abcd1234',
     },
   },
   summary: {
-    'webpack.assets.totalSizeByTypeALL': {
-      current: 1000000,
-      baseline: 900000,
+    webpack: {
+      totalSizeByTypeALL: {
+        current: 1000000,
+        baseline: 900000,
+      },
     },
   },
 };

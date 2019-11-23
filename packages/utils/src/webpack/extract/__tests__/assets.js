@@ -3,7 +3,7 @@ import { extractAssets } from '../assets';
 describe('Webpack/extact/assets', () => {
   test('should return empty', () => {
     const actual = extractAssets();
-    expect(actual).toEqual({ assets: {} });
+    expect(actual).toEqual({ metrics: { assets: {} } });
   });
 
   test('should return metrics', () => {
@@ -56,27 +56,29 @@ describe('Webpack/extact/assets', () => {
     });
 
     const expected = {
-      assets: {
-        'js/main.js': {
-          name: 'js/main.bc2211.js',
-          value: 100,
-          isEntry: true,
-          isInitial: true,
-          isChunk: false,
-        },
-        'css/app.css': {
-          name: 'css/app.22929a.css',
-          value: 100,
-          isEntry: false,
-          isInitial: false,
-          isChunk: true,
-        },
-        'img/logo.png': {
-          name: 'img/logo.1211a1.png',
-          value: 10,
-          isEntry: false,
-          isInitial: false,
-          isChunk: false,
+      metrics: {
+        assets: {
+          'js/main.js': {
+            name: 'js/main.bc2211.js',
+            value: 100,
+            isEntry: true,
+            isInitial: true,
+            isChunk: false,
+          },
+          'css/app.css': {
+            name: 'css/app.22929a.css',
+            value: 100,
+            isEntry: false,
+            isInitial: false,
+            isChunk: true,
+          },
+          'img/logo.png': {
+            name: 'img/logo.1211a1.png',
+            value: 10,
+            isEntry: false,
+            isInitial: false,
+            isChunk: false,
+          },
         },
       },
     };
@@ -103,20 +105,22 @@ describe('Webpack/extact/assets', () => {
     });
 
     const expected = {
-      assets: {
-        'js/main.js': {
-          name: 'js/main.bc2211.js',
-          value: 100,
-          isEntry: false,
-          isInitial: false,
-          isChunk: false,
-        },
-        'css/app.css': {
-          name: 'css/app.22929a.css',
-          value: 100,
-          isEntry: false,
-          isInitial: false,
-          isChunk: false,
+      metrics: {
+        assets: {
+          'js/main.js': {
+            name: 'js/main.bc2211.js',
+            value: 100,
+            isEntry: false,
+            isInitial: false,
+            isChunk: false,
+          },
+          'css/app.css': {
+            name: 'css/app.22929a.css',
+            value: 100,
+            isEntry: false,
+            isInitial: false,
+            isChunk: false,
+          },
         },
       },
     };

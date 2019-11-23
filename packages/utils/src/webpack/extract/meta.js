@@ -1,6 +1,4 @@
-import { get, set } from 'lodash';
-
-import { SOURCE_PATH_WEBPACK_STATS } from '../../config';
+import { get } from 'lodash';
 
 const getBuiltAt = (webpackStats, key) => {
   let builtAt = '';
@@ -23,5 +21,10 @@ export const extractMeta = (webpackStats) => {
   const builtAt = getBuiltAt(webpackStats, 'builtAt');
   const hash = get(webpackStats, 'hash', '');
 
-  return set({}, `meta.${SOURCE_PATH_WEBPACK_STATS}`, { builtAt, hash });
+  return {
+    meta: {
+      builtAt,
+      hash,
+    },
+  };
 };

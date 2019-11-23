@@ -1,32 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { get, map } from 'lodash';
-import { addMetricsData, getStatsByMetrics, mergeRunsById } from '@bundle-stats/utils';
+import { METRIC_TYPE_FILE_SIZE, addMetricsData, mergeRunsById } from '@bundle-stats/utils';
 
 import { MetricsTable } from '../metrics-table';
 import { JobName } from '../job-name';
 
 const METRICS = [
-  'webpack.assets.totalSizeByTypeJS',
-  'webpack.assets.totalSizeByTypeCSS',
-  'webpack.assets.totalSizeByTypeIMG',
-  'webpack.assets.totalSizeByTypeMEDIA',
-  'webpack.assets.totalSizeByTypeFONT',
-  'webpack.assets.totalSizeByTypeHTML',
-  'webpack.assets.totalSizeByTypeOTHER',
-  'webpack.assets.totalSizeByTypeALL',
+  'webpack.sizes.totalSizeByTypeJS',
+  'webpack.sizes.totalSizeByTypeCSS',
+  'webpack.sizes.totalSizeByTypeIMG',
+  'webpack.sizes.totalSizeByTypeMEDIA',
+  'webpack.sizes.totalSizeByTypeFONT',
+  'webpack.sizes.totalSizeByTypeHTML',
+  'webpack.sizes.totalSizeByTypeOTHER',
+  'webpack.totalSizeByTypeALL',
 ];
 
-const getRun = (job, index) => {
-  const internalBuildNumber = get(job, 'internalBuildNumber');
+const getJobMetrics = (job) => METRICS.reduce((agg, metricKey) => {
+  const metric = get(job, `metrics.${metricKey}`, { value: null });
 
-  if (!internalBuildNumber) {
-    return {
-      label: ' ',
-    };
-  }
+  return { ...agg, [metricKey]: metric };
+}, {});
+
+const getRun = (job, index, jobs) => {
+  const internalBuildNumber = get(job, 'meta.internalBuildNumber', jobs.length - index);
+  const name = `Job #${internalBuildNumber}`;
 
   return {
+    name,
     label: (
       <JobName
         title={index === 0 ? 'Current' : 'Baseline'}
@@ -38,9 +40,7 @@ const getRun = (job, index) => {
 
 export const BundleAssetsTotalsTable = ({ className, jobs }) => {
   const runs = jobs.map(getRun);
-  const items = addMetricsData(mergeRunsById(
-    map(jobs, (job) => getStatsByMetrics(get(job, 'stats', {}), METRICS)),
-  ));
+  const items = addMetricsData(mergeRunsById(map(jobs, getJobMetrics)), METRIC_TYPE_FILE_SIZE);
 
   return (
     <MetricsTable
