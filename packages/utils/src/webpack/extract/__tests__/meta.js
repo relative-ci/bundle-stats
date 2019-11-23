@@ -6,10 +6,8 @@ describe('Webpack/extract/meta', () => {
 
     const expected = {
       meta: {
-        webpack: {
-          builtAt: '',
-          hash: '',
-        },
+        builtAt: '',
+        hash: '',
       },
     };
 
@@ -24,10 +22,8 @@ describe('Webpack/extract/meta', () => {
 
     const expected = {
       meta: {
-        webpack: {
-          builtAt: '2019-01-01T00:00:00.000Z',
-          hash: 'abcd1234',
-        },
+        builtAt: '2019-01-01T00:00:00.000Z',
+        hash: 'abcd1234',
       },
     };
 

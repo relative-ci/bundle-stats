@@ -9,7 +9,7 @@ import { Icon } from '../../ui/icon';
 import { SummaryItem } from '../summary-item';
 import css from './job-header.module.css';
 
-const TOTAL_BUNDLE_SIZE = 'webpack.assets.totalSizeByTypeALL';
+const TOTAL_BUNDLE_SIZE = 'webpack.totalSizeByTypeALL';
 
 export const JobHeader = (props) => {
   const {
@@ -61,7 +61,7 @@ export const JobHeader = (props) => {
         size="large"
         loading={false}
         id={TOTAL_BUNDLE_SIZE}
-        data={job.summary[TOTAL_BUNDLE_SIZE]}
+        data={get(job.summary, TOTAL_BUNDLE_SIZE)}
         showDelta={showSummaryDelta}
       />
     </div>

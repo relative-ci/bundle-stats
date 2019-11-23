@@ -10,7 +10,7 @@ stories.addDecorator(getWrapperDecorator({ maxWidth: '320px' }));
 stories.add('default', () => (
   <SummaryItem
     loading={false}
-    id="webpack.assets.totalSizeByTypeALL"
+    id="webpack.totalSizeByTypeALL"
     data={{
       current: 120 * 1000,
       baseline: 100 * 1000,
@@ -22,7 +22,7 @@ stories.add('size large', () => (
   <SummaryItem
     size="large"
     loading={false}
-    id="webpack.assets.totalSizeByTypeALL"
+    id="webpack.totalSizeByTypeALL"
     data={{
       current: 120 * 1000,
       baseline: 100 * 1000,
@@ -33,7 +33,7 @@ stories.add('size large', () => (
 stories.add('showMetricDescription', () => (
   <SummaryItem
     loading={false}
-    id="webpack.assets.totalSizeByTypeALL"
+    id="webpack.totalSizeByTypeALL"
     data={{
       current: 120 * 1000,
       baseline: 100 * 1000,
@@ -45,7 +45,7 @@ stories.add('showMetricDescription', () => (
 stories.add('showDelta false', () => (
   <SummaryItem
     loading={false}
-    id="webpack.assets.totalSizeByTypeALL"
+    id="webpack.totalSizeByTypeALL"
     data={{
       current: 120 * 1000,
       baseline: 0,
@@ -57,7 +57,7 @@ stories.add('showDelta false', () => (
 stories.add('showBaseline value true', () => (
   <SummaryItem
     loading={false}
-    id="webpack.assets.totalSizeByTypeALL"
+    id="webpack.totalSizeByTypeALL"
     data={{
       current: 120 * 1000,
       baseline: 102 * 1000,
@@ -69,6 +69,6 @@ stories.add('showBaseline value true', () => (
 stories.add('loading', () => (
   <SummaryItem
     loading
-    id="webpack.assets.totalSizeByTypeALL"
+    id="webpack.totalSizeByTypeALL"
   />
 ));

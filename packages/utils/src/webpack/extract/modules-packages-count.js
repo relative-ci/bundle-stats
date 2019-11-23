@@ -1,9 +1,9 @@
 import { get } from 'lodash';
 
-export const extractModulesPackagesCount = (bundleStats) => {
-  const packages = get(bundleStats, 'packages', {});
+export const extractModulesPackagesCount = (webpackStats, currentExtractedData) => {
+  const packages = get(currentExtractedData, 'metrics.packages', {});
 
   const value = Object.values(packages).length;
 
-  return { stats: { packageCount: { value } } };
+  return { metrics: { packageCount: { value } } };
 };
