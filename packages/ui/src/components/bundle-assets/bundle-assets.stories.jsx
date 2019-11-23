@@ -1,16 +1,18 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
+import { merge, set } from 'lodash';
 
 import baselineStats from '../../../__mocks__/webpack-stats.baseline.json';
 import currentStats from '../../../__mocks__/webpack-stats.current.json';
 import { getWrapperDecorator } from '../../stories';
 import { BundleAssets } from '.';
 
-const [currentJob, baselineJob] = createJobs([
+const jobs = createJobs([
   { webpack: currentStats },
   { webpack: baselineStats },
 ]);
+const [currentJob, baselineJob] = jobs;
 
 const stories = storiesOf('Components/BundleAssets', module);
 stories.addDecorator(getWrapperDecorator());
@@ -20,9 +22,7 @@ stories.add('default', () => (
 ));
 
 stories.add('multiple jobs', () => (
-  <BundleAssets
-    jobs={[currentJob, baselineJob]}
-  />
+  <BundleAssets jobs={jobs} />
 ));
 
 stories.add('empty baseline', () => (
@@ -32,53 +32,14 @@ stories.add('empty baseline', () => (
 ));
 
 stories.add('no assets', () => (
-  <BundleAssets
-    jobs={[
-      {
-        ...currentJob,
-        rawData: {
-          webpack: {
-            assets: [],
-          },
-        },
-      },
-      {
-        ...baselineJob,
-        rawData: {
-          webpack: {
-            assets: [],
-          },
-        },
-      },
-    ]}
-  />
+  <BundleAssets jobs={jobs.map((job) => set(job, 'metrics.webpack.assets', {}))} />
 ));
 
 stories.add('empty filtered data', () => (
   <BundleAssets
     jobs={[
-      {
-        ...currentJob,
-        rawData: {
-          webpack: {
-            assets: [{
-              name: 'main.js',
-              size: 100,
-            }],
-          },
-        },
-      },
-      {
-        ...baselineJob,
-        rawData: {
-          webpack: {
-            assets: [{
-              name: 'main.js',
-              size: 100,
-            }],
-          },
-        },
-      },
+      set(merge({}, currentJob), 'metrics.webpack.assets', { 'main.js': { value: 100 } }),
+      set(merge({}, baselineJob), 'metrics.webpack.assets', { 'main.js': { value: 100 } }),
     ]}
   />
 ));
@@ -86,32 +47,24 @@ stories.add('empty filtered data', () => (
 stories.add('not predictive', () => (
   <BundleAssets
     jobs={[
-      {
-        ...currentJob,
-        rawData: {
-          webpack: {
-            assets: [
-              {
-                name: 'static/js/not-predictive.93191.js',
-                size: 2989,
-              },
-            ],
+      set(
+        merge({}, currentJob),
+        'metrics.webpack.assets', {
+          'static/js/not-predictive.js': {
+            name: 'static/js/not-predictive.93191.js',
+            value: 2989,
           },
         },
-      },
-      {
-        ...baselineJob,
-        rawData: {
-          webpack: {
-            assets: [
-              {
-                name: 'static/js/not-predictive.93191.js',
-                size: 2988,
-              },
-            ],
+      ),
+      set(
+        merge({}, baselineJob),
+        'metrics.webpack.assets', {
+          'static/js/not-predictive.js': {
+            name: 'static/js/not-predictive.93191.js',
+            value: 2988,
           },
         },
-      },
+      ),
     ]}
   />
 ));

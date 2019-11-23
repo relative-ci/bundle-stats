@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Create job no baseline 1`] = `
+exports[`createJob no baseline 1`] = `
 Object {
   "meta": Object {
     "webpack": Object {
@@ -10,6 +10,9 @@ Object {
   },
   "metrics": Object {
     "webpack": Object {
+      "assetCount": Object {
+        "value": 4,
+      },
       "assets": Object {
         "index.html": Object {
           "isChunk": false,
@@ -39,6 +42,18 @@ Object {
           "name": "main.a2b3c4.js",
           "value": 50000,
         },
+      },
+      "cacheInvalidation": Object {
+        "value": 0,
+      },
+      "chunkCount": Object {
+        "value": 0,
+      },
+      "duplicatePackagesCount": Object {
+        "value": 1,
+      },
+      "moduleCount": Object {
+        "value": 6,
       },
       "modules": Object {
         "1": Object {
@@ -73,6 +88,9 @@ Object {
           },
         },
       },
+      "packageCount": Object {
+        "value": 4,
+      },
       "packages": Object {
         "package-a": Object {
           "value": 1000,
@@ -86,6 +104,38 @@ Object {
         "package-c": Object {
           "value": 1000,
         },
+      },
+      "sizes": Object {
+        "totalSizeByTypeCSS": Object {
+          "value": 10000,
+        },
+        "totalSizeByTypeFONT": Object {
+          "value": 0,
+        },
+        "totalSizeByTypeHTML": Object {
+          "value": 2000,
+        },
+        "totalSizeByTypeIMG": Object {
+          "value": 1000,
+        },
+        "totalSizeByTypeJS": Object {
+          "value": 50000,
+        },
+        "totalSizeByTypeMEDIA": Object {
+          "value": 0,
+        },
+        "totalSizeByTypeOTHER": Object {
+          "value": 0,
+        },
+      },
+      "totalInitialSizeCSS": Object {
+        "value": 10000,
+      },
+      "totalInitialSizeJS": Object {
+        "value": 50000,
+      },
+      "totalSizeByTypeALL": Object {
+        "value": 63000,
       },
     },
   },
@@ -181,96 +231,44 @@ Object {
       ],
     },
   },
-  "stats": Object {
+  "summary": Object {
     "webpack": Object {
       "assetCount": Object {
-        "value": 4,
-      },
-      "assets": Object {
-        "totalInitialSizeCSS": Object {
-          "value": 10000,
-        },
-        "totalInitialSizeJS": Object {
-          "value": 50000,
-        },
-        "totalSizeByTypeALL": Object {
-          "value": 63000,
-        },
-        "totalSizeByTypeCSS": Object {
-          "value": 10000,
-        },
-        "totalSizeByTypeFONT": Object {
-          "value": 0,
-        },
-        "totalSizeByTypeHTML": Object {
-          "value": 2000,
-        },
-        "totalSizeByTypeIMG": Object {
-          "value": 1000,
-        },
-        "totalSizeByTypeJS": Object {
-          "value": 50000,
-        },
-        "totalSizeByTypeMEDIA": Object {
-          "value": 0,
-        },
-        "totalSizeByTypeOTHER": Object {
-          "value": 0,
-        },
+        "baseline": 0,
+        "current": 4,
       },
       "cacheInvalidation": Object {
-        "value": 0,
+        "baseline": 0,
+        "current": 0,
       },
       "chunkCount": Object {
-        "value": 0,
+        "baseline": 0,
+        "current": 0,
       },
       "duplicatePackagesCount": Object {
-        "value": 1,
+        "baseline": 0,
+        "current": 1,
       },
       "moduleCount": Object {
-        "value": 6,
+        "baseline": 0,
+        "current": 6,
       },
       "packageCount": Object {
-        "value": 4,
+        "baseline": 0,
+        "current": 4,
       },
-    },
-  },
-  "summary": Object {
-    "webpack.assetCount": Object {
-      "baseline": 0,
-      "current": 4,
-    },
-    "webpack.assets.totalInitialSizeCSS": Object {
-      "baseline": 0,
-      "current": 10000,
-    },
-    "webpack.assets.totalInitialSizeJS": Object {
-      "baseline": 0,
-      "current": 50000,
-    },
-    "webpack.assets.totalSizeByTypeALL": Object {
-      "baseline": 0,
-      "current": 63000,
-    },
-    "webpack.cacheInvalidation": Object {
-      "baseline": 0,
-      "current": 0,
-    },
-    "webpack.chunkCount": Object {
-      "baseline": 0,
-      "current": 0,
-    },
-    "webpack.duplicatePackagesCount": Object {
-      "baseline": 0,
-      "current": 1,
-    },
-    "webpack.moduleCount": Object {
-      "baseline": 0,
-      "current": 6,
-    },
-    "webpack.packageCount": Object {
-      "baseline": 0,
-      "current": 4,
+      "totalInitialSizeCSS": Object {
+        "baseline": 0,
+        "current": 10000,
+      },
+      "totalInitialSizeJS": Object {
+        "baseline": 0,
+        "current": 50000,
+      },
+      "totalSizeByTypeALL": Object {
+        "baseline": 0,
+        "current": 63000,
+      },
     },
   },
   "warnings": Object {
@@ -286,7 +284,7 @@ Object {
 }
 `;
 
-exports[`Create job with baseline 1`] = `
+exports[`createJob with baseline 1`] = `
 Object {
   "meta": Object {
     "webpack": Object {
@@ -296,6 +294,9 @@ Object {
   },
   "metrics": Object {
     "webpack": Object {
+      "assetCount": Object {
+        "value": 4,
+      },
       "assets": Object {
         "index.html": Object {
           "isChunk": false,
@@ -325,6 +326,18 @@ Object {
           "name": "main.a2b3c4.js",
           "value": 50000,
         },
+      },
+      "cacheInvalidation": Object {
+        "value": 95.24,
+      },
+      "chunkCount": Object {
+        "value": 0,
+      },
+      "duplicatePackagesCount": Object {
+        "value": 1,
+      },
+      "moduleCount": Object {
+        "value": 6,
       },
       "modules": Object {
         "1": Object {
@@ -359,6 +372,9 @@ Object {
           },
         },
       },
+      "packageCount": Object {
+        "value": 4,
+      },
       "packages": Object {
         "package-a": Object {
           "value": 1000,
@@ -372,6 +388,38 @@ Object {
         "package-c": Object {
           "value": 1000,
         },
+      },
+      "sizes": Object {
+        "totalSizeByTypeCSS": Object {
+          "value": 10000,
+        },
+        "totalSizeByTypeFONT": Object {
+          "value": 0,
+        },
+        "totalSizeByTypeHTML": Object {
+          "value": 2000,
+        },
+        "totalSizeByTypeIMG": Object {
+          "value": 1000,
+        },
+        "totalSizeByTypeJS": Object {
+          "value": 50000,
+        },
+        "totalSizeByTypeMEDIA": Object {
+          "value": 0,
+        },
+        "totalSizeByTypeOTHER": Object {
+          "value": 0,
+        },
+      },
+      "totalInitialSizeCSS": Object {
+        "value": 10000,
+      },
+      "totalInitialSizeJS": Object {
+        "value": 50000,
+      },
+      "totalSizeByTypeALL": Object {
+        "value": 63000,
       },
     },
   },
@@ -467,96 +515,44 @@ Object {
       ],
     },
   },
-  "stats": Object {
+  "summary": Object {
     "webpack": Object {
       "assetCount": Object {
-        "value": 4,
-      },
-      "assets": Object {
-        "totalInitialSizeCSS": Object {
-          "value": 10000,
-        },
-        "totalInitialSizeJS": Object {
-          "value": 50000,
-        },
-        "totalSizeByTypeALL": Object {
-          "value": 63000,
-        },
-        "totalSizeByTypeCSS": Object {
-          "value": 10000,
-        },
-        "totalSizeByTypeFONT": Object {
-          "value": 0,
-        },
-        "totalSizeByTypeHTML": Object {
-          "value": 2000,
-        },
-        "totalSizeByTypeIMG": Object {
-          "value": 1000,
-        },
-        "totalSizeByTypeJS": Object {
-          "value": 50000,
-        },
-        "totalSizeByTypeMEDIA": Object {
-          "value": 0,
-        },
-        "totalSizeByTypeOTHER": Object {
-          "value": 0,
-        },
+        "baseline": 4,
+        "current": 4,
       },
       "cacheInvalidation": Object {
-        "value": 95.24,
+        "baseline": 0,
+        "current": 95.24,
       },
       "chunkCount": Object {
-        "value": 0,
+        "baseline": 0,
+        "current": 0,
       },
       "duplicatePackagesCount": Object {
-        "value": 1,
+        "baseline": 0,
+        "current": 1,
       },
       "moduleCount": Object {
-        "value": 6,
+        "baseline": 5,
+        "current": 6,
       },
       "packageCount": Object {
-        "value": 4,
+        "baseline": 3,
+        "current": 4,
       },
-    },
-  },
-  "summary": Object {
-    "webpack.assetCount": Object {
-      "baseline": 4,
-      "current": 4,
-    },
-    "webpack.assets.totalInitialSizeCSS": Object {
-      "baseline": 11000,
-      "current": 10000,
-    },
-    "webpack.assets.totalInitialSizeJS": Object {
-      "baseline": 49000,
-      "current": 50000,
-    },
-    "webpack.assets.totalSizeByTypeALL": Object {
-      "baseline": 63000,
-      "current": 63000,
-    },
-    "webpack.cacheInvalidation": Object {
-      "baseline": 0,
-      "current": 95.24,
-    },
-    "webpack.chunkCount": Object {
-      "baseline": 0,
-      "current": 0,
-    },
-    "webpack.duplicatePackagesCount": Object {
-      "baseline": 0,
-      "current": 1,
-    },
-    "webpack.moduleCount": Object {
-      "baseline": 5,
-      "current": 6,
-    },
-    "webpack.packageCount": Object {
-      "baseline": 3,
-      "current": 4,
+      "totalInitialSizeCSS": Object {
+        "baseline": 11000,
+        "current": 10000,
+      },
+      "totalInitialSizeJS": Object {
+        "baseline": 49000,
+        "current": 50000,
+      },
+      "totalSizeByTypeALL": Object {
+        "baseline": 63000,
+        "current": 63000,
+      },
     },
   },
   "warnings": Object {

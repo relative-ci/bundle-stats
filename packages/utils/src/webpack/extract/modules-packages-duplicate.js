@@ -2,10 +2,10 @@ import {
   find, get, isEmpty, last, set,
 } from 'lodash';
 
-import { PACKAGES_SEPARATOR, SOURCE_PATH_WEBPACK_STATS } from '../../config';
+import { PACKAGES_SEPARATOR } from '../../config';
 
-export const extractModulesPackagesDuplicate = (bundleStats) => {
-  const data = get(bundleStats, 'packages', {});
+export const extractModulesPackagesDuplicate = (webpackStats, currentExtractedData) => {
+  const data = get(currentExtractedData, 'metrics.packages', {});
 
   const packages = Object.keys(data).map(
     (path) => ({
@@ -42,9 +42,9 @@ export const extractModulesPackagesDuplicate = (bundleStats) => {
 
   return {
     warnings: {
-      ...!isEmpty(paths) ? set({}, `${SOURCE_PATH_WEBPACK_STATS}.duplicatePackages`, paths) : {},
+      ...!isEmpty(paths) ? set({}, 'duplicatePackages', paths) : {},
     },
-    stats: {
+    metrics: {
       duplicatePackagesCount: {
         value,
       },

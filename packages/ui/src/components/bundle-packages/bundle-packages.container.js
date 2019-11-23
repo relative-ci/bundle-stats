@@ -1,13 +1,10 @@
 import { compose, withProps } from 'recompose';
-import {
-  get, filter, flatten, uniq,
-} from 'lodash';
+import { get, filter } from 'lodash';
 import {
   METRIC_TYPE_FILE_SIZE,
   addMetricsData,
   mergeRunsById,
 } from '@bundle-stats/utils';
-import { extractModules, extractModulesPackages } from '@bundle-stats/utils/lib-esm/webpack';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilters } from '../../hocs/with-filters';
@@ -59,16 +56,8 @@ const addDuplicateTag = (items, duplicatePackages) => items.map((item) => ({
 export const enhance = compose(
   withProps(({ jobs }) => {
     const runs = jobs.map((job) => ({ meta: job }));
-    const jobsPackages = jobs.map((job) => {
-      const bundle = extractModules(get(job, 'rawData.webpack'));
-      const res = extractModulesPackages(bundle);
-      return res.packages;
-    });
-
-    const duplicatePackages = uniq(flatten(jobs.map((job) => {
-      const data = get(job, 'warnings.duplicatePackages', {});
-      return flatten(Object.values(data));
-    })));
+    const jobsPackages = jobs.map((job) => get(job, 'metrics.webpack.packages'));
+    const duplicatePackages = jobs.map((job) => get(job, 'warnings.webpack.duplicatePackages'));
 
     const items = addDuplicateTag(
       addMetricsData(mergeRunsById(jobsPackages), METRIC_TYPE_FILE_SIZE),

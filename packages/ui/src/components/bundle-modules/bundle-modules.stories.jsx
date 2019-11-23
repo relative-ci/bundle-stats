@@ -1,26 +1,17 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { createStats, createStatsSummary } from '@bundle-stats/utils';
+import { createJobs } from '@bundle-stats/utils';
+import { merge, set } from 'lodash';
 
-import currentData from '../../../__mocks__/job.current.json';
-import baselineData from '../../../__mocks__/job.baseline.json';
+import baselineStats from '../../../__mocks__/webpack-stats.baseline.json';
+import currentStats from '../../../__mocks__/webpack-stats.current.json';
 import { getWrapperDecorator } from '../../stories';
 import { BundleModules } from './bundle-modules';
 
-const currentStats = createStats(baselineData.rawData, currentData.rawData);
-const baselineStats = createStats(null, baselineData.rawData);
-
-const currentJob = {
-  ...currentData,
-  stats: currentStats,
-  summary: createStatsSummary(baselineStats, currentStats),
-};
-
-const baselineJob = {
-  ...baselineData,
-  stats: baselineStats,
-  summary: createStatsSummary(null, baselineStats),
-};
+const [currentJob, baselineJob] = createJobs([
+  { webpack: currentStats },
+  { webpack: baselineStats },
+]);
 
 const stories = storiesOf('Components/BundleModules', module);
 stories.addDecorator(getWrapperDecorator());
@@ -40,49 +31,8 @@ stories.add('empty baseline', () => (
 stories.add('no modules', () => (
   <BundleModules
     jobs={[
-      {
-        ...currentJob,
-        rawData: {
-          webpack: {
-            ...currentJob.rawData.webpack,
-            modules: undefined,
-          },
-        },
-      },
-      {
-        ...baselineJob,
-        rawData: {
-          webpack: {
-            ...baselineJob.rawData.webpack,
-            modules: undefined,
-          },
-        },
-      },
-    ]}
-  />
-));
-
-stories.add('no chunks', () => (
-  <BundleModules
-    jobs={[
-      {
-        ...currentJob,
-        rawData: {
-          webpack: {
-            ...currentJob.rawData.webpack,
-            chunks: undefined,
-          },
-        },
-      },
-      {
-        ...baselineJob,
-        rawData: {
-          webpack: {
-            ...baselineJob.rawData.webpack,
-            chunks: undefined,
-          },
-        },
-      },
+      set(merge({}, currentJob), 'metrics.webpack.modules', {}),
+      set(merge({}, baselineJob), 'metrics.webpack.modules', {}),
     ]}
   />
 ));
