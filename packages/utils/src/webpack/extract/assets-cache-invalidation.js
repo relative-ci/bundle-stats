@@ -3,9 +3,11 @@ import { get, merge } from 'lodash';
 import { getMetricChanged, mergeRunsById } from '../../metrics';
 import { calculateCacheInvalidation, getMetricAdded, getMetricDeleted } from '../utils';
 
-export const extractAssetsCacheInvalidation = (bundleStats, baselineBundleStats) => {
-  const currentAssets = get(bundleStats, 'assets', []);
-  const baselineAssets = get(baselineBundleStats, 'assets', []);
+export const extractAssetsCacheInvalidation = (
+  webpackStats, currentExtractedData, baselineBundleStats,
+) => {
+  const currentAssets = get(currentExtractedData, 'metrics.assets', {});
+  const baselineAssets = get(baselineBundleStats, 'metrics.webpack.assets', {});
 
   const rows = mergeRunsById([currentAssets, baselineAssets]).map((row) => merge(
     {},
@@ -20,7 +22,7 @@ export const extractAssetsCacheInvalidation = (bundleStats, baselineBundleStats)
   const value = calculateCacheInvalidation(rows);
 
   return {
-    stats: {
+    metrics: {
       cacheInvalidation: {
         value,
       },

@@ -5,47 +5,47 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
     const actual = extractModulesPackagesDuplicate();
     expect(actual).toEqual({
       warnings: {},
-      stats: { duplicatePackagesCount: { value: 0 } },
+      metrics: { duplicatePackagesCount: { value: 0 } },
     });
   });
 
   test('should return data', () => {
-    const actual = extractModulesPackagesDuplicate({
-      packages: {
-        'package-a': {
-          value: 50,
-        },
-        'package-b': {
-          value: 10,
-        },
-        'package-b:package-a': {
-          value: 10,
-        },
-        'package-c': {
-          value: 10,
-        },
-        'org/package-d:package-c': {
-          value: 10,
+    const actual = extractModulesPackagesDuplicate(null, {
+      metrics: {
+        packages: {
+          'package-a': {
+            value: 50,
+          },
+          'package-b': {
+            value: 10,
+          },
+          'package-b:package-a': {
+            value: 10,
+          },
+          'package-c': {
+            value: 10,
+          },
+          'org/package-d:package-c': {
+            value: 10,
+          },
         },
       },
     });
 
     expect(actual).toEqual({
       warnings: {
-        webpack: {
-          duplicatePackages: {
-            'package-a': [
-              'package-a',
-              'package-b:package-a',
-            ],
-            'package-c': [
-              'package-c',
-              'org/package-d:package-c',
-            ],
-          },
+        duplicatePackages: {
+          'package-a': [
+            'package-a',
+            'package-b:package-a',
+          ],
+          'package-c': [
+            'package-c',
+            'org/package-d:package-c',
+          ],
         },
       },
-      stats: {
+      metrics: {
         duplicatePackagesCount: {
           value: 2,
         },

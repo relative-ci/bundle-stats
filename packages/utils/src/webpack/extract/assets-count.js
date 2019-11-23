@@ -1,13 +1,8 @@
-export const extractAssetsCount = (bundleStats = {}) => {
-  const { assets } = bundleStats;
+import { get } from 'lodash';
 
+export const extractAssetsCount = (webpackStats, currentExtractedData = {}) => {
+  const assets = get(currentExtractedData, 'metrics.assets', {});
   const value = Object.keys(assets).length;
 
-  return {
-    stats: {
-      assetCount: {
-        value,
-      },
-    },
-  };
+  return { metrics: { assetCount: { value } } };
 };
