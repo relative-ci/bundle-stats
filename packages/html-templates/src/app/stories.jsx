@@ -11,6 +11,10 @@ import StandaloneApp from '.';
 const JOBS = createJobs([
   { webpack: currentData.rawData.webpack },
   { webpack: baselineData.rawData.webpack },
+]);
+const MULTIPLE_JOBS = createJobs([
+  { webpack: currentData.rawData.webpack },
+  { webpack: baselineData.rawData.webpack },
   {
     webpack: {
       ...baselineData.rawData.webpack,
@@ -50,7 +54,7 @@ stories.add('no baseline', () => (
 ));
 
 stories.add('multiple baselines', () => (
-  <StandaloneApp jobs={JOBS} />
+  <StandaloneApp jobs={MULTIPLE_JOBS} />
 ));
 
 stories.add('empty', () => (

@@ -1,13 +1,33 @@
-export * from './assets';
-export * from './assets-cache-invalidation';
-export * from './assets-chunk-count';
-export * from './assets-count';
-export * from './assets-size';
+import { merge } from 'lodash';
 
-export * from './meta';
+import { extractAssets } from './assets';
+import { extractAssetsCacheInvalidation } from './assets-cache-invalidation';
+import { extractAssetsChunkCount } from './assets-chunk-count';
+import { extractAssetsCount } from './assets-count';
+import { extractAssetsSize } from './assets-size';
+import { extractMeta } from './meta';
+import { extractModules } from './modules';
+import { extractModulesCount } from './modules-count';
+import { extractModulesPackages } from './modules-packages';
+import { extractModulesPackagesCount } from './modules-packages-count';
+import { extractModulesPackagesDuplicate } from './modules-packages-duplicate';
 
-export * from './modules';
-export * from './modules-count';
-export * from './modules-packages';
-export * from './modules-packages-count';
-export * from './modules-packages-duplicate';
+const extractFns = [
+  extractAssets,
+  extractAssetsCacheInvalidation,
+  extractAssetsChunkCount,
+  extractAssetsCount,
+  extractAssetsSize,
+  extractMeta,
+  extractModules,
+  extractModulesCount,
+  extractModulesPackages,
+  extractModulesPackagesCount,
+  extractModulesPackagesDuplicate,
+];
+
+export const extract = (webpackStats, baseline) => extractFns.reduce((agg, extractFn) => merge(
+  {},
+  agg,
+  extractFn(webpackStats, agg, baseline),
+), {});

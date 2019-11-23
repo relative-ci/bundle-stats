@@ -46,5 +46,5 @@ export const extractAssets = (webpackStats) => {
     };
   }, {});
 
-  return { assets };
+  return { metrics: { assets } };
 };

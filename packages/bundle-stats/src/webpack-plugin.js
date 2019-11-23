@@ -63,15 +63,15 @@ const getOnEmit = (options) => async (compilation, callback) => {
     logger.warn(TEXT.PLUGIN_BASELINE_MISSING_WARN);
   }
 
-  const artifacts = createJobs([
-    { webpack: { stats: data } },
-    ...compare ? [{ webpack: { stats: baselineStats } }] : [],
+  const jobs = createJobs([
+    { webpack: data },
+    ...compare ? [{ webpack: baselineStats }] : [],
   ]);
 
   let reports = [];
 
   try {
-    reports = await createReports(artifacts, { html, json });
+    reports = await createReports(jobs, { html, json });
 
     reports.forEach(({ filename, output }) => {
       const filepath = path.join(outDir, filename);

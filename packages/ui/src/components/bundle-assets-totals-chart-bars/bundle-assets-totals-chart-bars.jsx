@@ -5,7 +5,7 @@ import {
   get, map, max, sum,
 } from 'lodash';
 import {
-  addMetricsData, getStatsByMetrics, mergeRunsById,
+  addMetricsData, mergeRunsById,
 } from '@bundle-stats/utils';
 
 import { HorizontalBarChart } from '../../ui';
@@ -13,22 +13,19 @@ import { getColors } from '../../utils';
 import { SummaryItem } from '../summary-item';
 import css from './bundle-assets-totals-chart-bars.module.css';
 
-const METRICS = [
-  'webpack.assets.totalSizeByTypeJS',
-  'webpack.assets.totalSizeByTypeCSS',
-  'webpack.assets.totalSizeByTypeIMG',
-  'webpack.assets.totalSizeByTypeMEDIA',
-  'webpack.assets.totalSizeByTypeFONT',
-  'webpack.assets.totalSizeByTypeHTML',
-  'webpack.assets.totalSizeByTypeOTHER',
-];
+const getWebpackSizesMetrics = (job) => {
+  const metrics = get(job, 'metrics.webpack.sizes', {});
+
+  return Object.entries(metrics).reduce((agg, [key, value]) => ({
+    ...agg,
+    [`webpack.sizes.${key}`]: value,
+  }), {});
+};
 
 export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
   const rootClassName = cx(css.root, className);
 
-  const items = addMetricsData(mergeRunsById(
-    map(jobs, (job) => getStatsByMetrics(get(job, 'stats', {}), METRICS)),
-  ));
+  const items = addMetricsData(mergeRunsById(map(jobs, getWebpackSizesMetrics)));
 
   const dataGraphs = [];
 
