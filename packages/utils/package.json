@@ -47,7 +47,7 @@
     "eslint": "6.7.1",
     "eslint-config-airbnb-base": "14.0.0",
     "eslint-plugin-import": "2.18.2",
-    "eslint-plugin-jest": "23.0.4",
+    "eslint-plugin-jest": "23.0.5",
     "jest": "24.9.0",
     "jest-cli": "24.9.0",
     "lodash": "4.17.15",
