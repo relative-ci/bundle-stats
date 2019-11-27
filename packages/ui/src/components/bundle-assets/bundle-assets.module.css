@@ -32,6 +32,11 @@
   margin-top: var(--space-xxxsmall);
 }
 
+.tableRowHeader {
+  display: flex;
+  align-items: center;
+}
+
 .notPredictive {
   margin-right: var(--space-xxsmall);
   display: inline-block;
@@ -45,7 +50,7 @@
 }
 
 .flag {
-  margin-right: var(--space-xxsmall);
+  margin-right: var(--space-xxxsmall);
   display: inline-block;
   width: var(--space-small);
   height: var(--space-small);
@@ -61,13 +66,13 @@
 
 .flagEntry {
   composes: flag;
-  background: var(--color-success);
+  background: var(--color-info);
   color: var(--color-background);
 }
 
 .flagInitial {
   composes: flag;
-  background: var(--color-green);
+  background: var(--color-success);
   color: var(--color-background);
 }
 

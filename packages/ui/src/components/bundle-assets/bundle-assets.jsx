@@ -121,7 +121,7 @@ TooltipFilename.propTypes = {
 };
 
 const getRenderRowHeader = (labels) => (item) => (
-  <>
+  <div className={css.tableRowHeader}>
     {item.isNotPredictive && (
       <Tooltip
         className={css.notPredictive}
@@ -166,7 +166,7 @@ const getRenderRowHeader = (labels) => (item) => (
     >
       <FileName name={item.label} />
     </Tooltip>
-  </>
+  </div>
 );
 
 export const BundleAssets = (props) => {
