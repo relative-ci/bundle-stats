@@ -23,6 +23,15 @@
   margin-left: var(--space-small);
 }
 
+.tableHeaderRun {
+  margin-top: calc(0px - var(--space-xxsmall));
+  margin-bottom: calc(0px - var(--space-xxsmall));
+}
+
+.tableHeaderRunMetric {
+  margin-top: var(--space-xxxsmall);
+}
+
 .notPredictive {
   margin-right: var(--space-xxsmall);
   display: inline-block;
