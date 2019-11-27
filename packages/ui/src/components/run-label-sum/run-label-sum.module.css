@@ -1,0 +1,10 @@
+.root {
+  font-size: var(--size-xsmall);
+  font-weight: normal;
+  line-height: var(--space-xsmall);
+}
+
+.delta {
+  display: block;
+  text-align: inherit;
+}

@@ -10,8 +10,12 @@ import { FiltersDropdown } from '../../ui/filters-dropdown';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Tooltip } from '../../ui/tooltip';
 import { JobName } from '../job-name';
+import { RunLabelSum } from '../run-label-sum';
 import { MetricsTable } from '../metrics-table';
 import css from './bundle-chunk-modules.module.css';
+
+const RUN_TITLE_CURRENT = 'Current';
+const RUN_TITLE_BASELINE = 'Baseline';
 
 const getRenderRowHeader = (labels) => (row) => (
   <Tooltip
@@ -43,28 +47,29 @@ const getRenderRowHeader = (labels) => (row) => (
   </Tooltip>
 );
 
-const getRunLabel = (run, index, runs) => {
-  const internalBuildNumber = get(run, 'meta.internalBuildNumber');
-  const name = `Job #${internalBuildNumber || (runs.length - index)}`;
+const getAddRunLabel = (items) => (run, index, runs) => {
+  const internalBuildNumber = get(run, 'meta.internalBuildNumber', runs.length - index);
+  const name = `Job #${internalBuildNumber}`;
 
-  // No baseline?
-  if (!run || !run.meta) {
-    return {
-      ...run,
-      label: name,
-      name,
-    };
-  }
+  const label = (
+    <div className={css.tableHeaderRun}>
+      <JobName
+        title={index === 0 ? RUN_TITLE_CURRENT : RUN_TITLE_BASELINE}
+        internalBuildNumber={internalBuildNumber}
+      />
+      <RunLabelSum
+        className={css.tableHeaderRunMetric}
+        runIndex={index}
+        runCount={runs.length}
+        rows={items}
+      />
+    </div>
+  );
 
   return {
     ...run,
-    label: (
-      <JobName
-        title={index === 0 ? 'Current' : 'Baseline'}
-        internalBuildNumber={run.meta.internalBuildNumber}
-      />
-    ),
     name,
+    label,
   };
 };
 
@@ -82,7 +87,7 @@ export const BundleChunkModules = ({
   sort,
   updateSort,
 }) => {
-  const labeledRuns = runs.map(getRunLabel);
+  const labeledRuns = runs.map(getAddRunLabel(modules));
   const rootClassName = cx(css.root, className);
   const emptyMessage = (
     <EmptySet

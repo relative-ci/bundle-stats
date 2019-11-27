@@ -17,6 +17,7 @@
 .root thead .cell {
   border-width: 0 0 2px;
   text-transform: uppercase;
+  vertical-align: top;
 }
 
 .root thead .cell:empty {
