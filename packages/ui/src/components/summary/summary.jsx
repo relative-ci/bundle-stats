@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { Box } from '../../ui/box';
 import { SummaryItem } from '../summary-item';
 import css from './summary.module.css';
+
+const FIRST_ROW_COUNT = 3;
 
 export const Summary = ({
   className, data, keys, loading, showSummaryItemDelta, showSummaryItemBaselineValue,
@@ -24,14 +25,14 @@ export const Summary = ({
   );
 
   return (
-    <Box className={cx(css.root, className)}>
+    <div className={cx(css.root, className)}>
       <div className={css.items}>
-        {keys.slice(0, 3).map(getRenderSummaryItem())}
+        {keys.slice(0, FIRST_ROW_COUNT).map(getRenderSummaryItem())}
       </div>
       <div className={css.items}>
-        {keys.slice(3).map(getRenderSummaryItem())}
+        {keys.slice(FIRST_ROW_COUNT).map(getRenderSummaryItem())}
       </div>
-    </Box>
+    </div>
   );
 };
 
