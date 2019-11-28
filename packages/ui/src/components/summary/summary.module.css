@@ -3,13 +3,19 @@
 }
 
 .items {
+  margin: calc(0px - var(--space-xxsmall));
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
 }
 
+.items + .items {
+  margin-top: var(--space-xxsmall);
+}
+
 .item {
-  box-shadow: 0 1px var(--color-outline), 1px 0 var(--color-outline);
+  margin: var(--space-xxsmall);
+  border: 1px solid var(--color-outline);
   flex-grow: 1;
   flex-shrink: 1;
   padding: var(--space-xsmall) var(--space-small);

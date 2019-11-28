@@ -55,7 +55,7 @@
 }
 
 .helpTooltipTitle {
-  margin: 0 0 var(--space-xxxsmall);
+  margin: 0 0 var(--space-xxsmall);
   font-size: var(--size-medium);
   font-weight: bold;
 }
