@@ -41,7 +41,7 @@
     "bundle-stats": "^1.15.0"
   },
   "devDependencies": {
-    "eslint": "6.7.1",
+    "eslint": "6.7.2",
     "eslint-config-airbnb-base": "14.0.0",
     "eslint-plugin-import": "2.18.2"
   }
