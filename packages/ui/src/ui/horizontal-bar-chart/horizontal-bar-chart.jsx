@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { get, round, sum } from 'lodash';
 import cx from 'classnames';
 
-import { getColors } from '../../components/chart/chart.utils';
+import { getColors } from '../../utils';
 import { Tooltip } from '../tooltip';
 import css from './horizontal-bar-chart.module.css';
 
