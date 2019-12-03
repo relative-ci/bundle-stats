@@ -9,8 +9,8 @@ import {
 } from '@bundle-stats/utils';
 
 import { HorizontalBarChart } from '../../ui';
+import { getColors } from '../../utils';
 import { SummaryItem } from '../summary-item';
-import { getColors } from '../chart/chart.utils';
 import css from './bundle-assets-totals-chart-bars.module.css';
 
 const METRICS = [

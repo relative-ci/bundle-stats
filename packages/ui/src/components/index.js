@@ -15,5 +15,3 @@ export { MetricsTable } from './metrics-table';
 export { RunLabelSum } from './run-label-sum';
 export { SummaryItem } from './summary-item';
 export { Summary } from './summary';
-
-export * from './chart';

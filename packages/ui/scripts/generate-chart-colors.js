@@ -5,7 +5,7 @@ const fs = require('fs');
 const colormap = require('colormap');
 const hexRgb = require('hex-rgb');
 
-const FILE_COLORS = path.join(__dirname, '../src/components/chart/chart.colors.json');
+const FILE_COLORS = path.join(__dirname, '../src/chart-colors.json');
 
 const COLORMAP_RECHARTS = [
   '#8884d8',

@@ -1,6 +1,6 @@
 import { chunk } from 'lodash';
 
-import COLORS from './chart.colors.json';
+import COLORS from './chart-colors.json';
 
 export const getColors = (count = 2) => {
   const chunks = chunk(COLORS, Math.round(COLORS.length / count));
