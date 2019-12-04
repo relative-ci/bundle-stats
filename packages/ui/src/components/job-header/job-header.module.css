@@ -1,0 +1,68 @@
+.root {
+  position: relative;
+  padding: var(--space-small);
+  display: flex;
+  align-items: flex-start;
+  box-shadow: 0 1px var(--color-outline), 1px 0 var(--color-outline);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--size-xxxlarge);
+  line-height: var(--space-medium);
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.tag {
+  display: inline-block;
+  margin-top: 5px;
+  margin-left: var(--space-xxxsmall);
+  font-size: 8px;
+  line-height: var(--space-xxsmall);
+  font-weight: normal;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  vertical-align: top;
+}
+
+.meta {
+  margin-top: var(--space-xxsmall);
+  font-size: var(--size-small);
+  line-height: var(--space-xsmall);
+  color: var(--color-text-light);
+}
+
+.description {
+  flex: 1 1 100%;
+}
+
+.commitMessage {
+  margin: 0;
+}
+
+.metaItem {
+  display: inline-flex;
+  margin-right: var(--space-xxsmall);
+  align-items: center;
+}
+
+.metaIcon {
+  width: var(--space-small);
+  margin-right: var(--space-xxxsmall);
+}
+
+.summaryItem {
+  flex: 0 0 auto;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-left:  var(--space-small);
+  text-align: right;
+}
+
+/** Loading state */
+.loading .jobTitle {
+  height: var(--size-large);
+  width: 3em;
+  background: var(--color-highlight);
+}
