@@ -1,100 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { get } from 'lodash';
-import { formatDistanceToNow } from 'date-fns';
-import { SOURCE_PATH_WEBPACK_STATS, formatDate, formatTime } from '@bundle-stats/utils';
 
 import { Box } from '../../ui/box';
-import { Icon } from '../../ui/icon';
-import { SummaryItem } from '../summary-item';
+import { JobHeader } from '../job-header';
 import css from './jobs-header.module.css';
 
-const TOTAL_BUNDLE_SIZE = 'webpack.assets.totalSizeByTypeALL';
-
 export const JobsHeader = (props) => {
-  const { className, loading, jobs } = props;
-
-  const rootClassName = cx(css.root, className, loading && css.loading);
+  const { className, jobs } = props;
+  const rootClassName = cx(css.root, className);
 
   return (
     <Box className={rootClassName}>
-      {loading && (
-        <>
-          <div className={css.job}>
-            <div className={css.jobDescription}>
-              <div className={css.jobTitle} />
-            </div>
-
-            <SummaryItem
-              className={css.jobSummaryItem}
-              size="large"
-              loading
-              id={TOTAL_BUNDLE_SIZE}
-            />
-          </div>
-          <div className={css.job}>
-            <div className={css.jobDescription}>
-              <div className={css.jobTitle} />
-            </div>
-
-            <SummaryItem
-              className={css.jobSummaryItem}
-              size="large"
-              loading
-              id={TOTAL_BUNDLE_SIZE}
-            />
-          </div>
-        </>
-      )}
-
-      {!loading && jobs && jobs.map((job, index) => {
-        const { builtAt, hash } = get(job, `meta.${SOURCE_PATH_WEBPACK_STATS}`, {});
-
-        return (
-          <div className={css.job} key={job.internalBuilNumber || index}>
-            <div className={css.jobDescription}>
-              <h1 className={css.jobTitle}>
-                <span>
-                  {`#${job.internalBuildNumber}`}
-                </span>
-                <span className={css.jobTag}>
-                  {index === 0 ? 'current' : 'baseline' }
-                </span>
-              </h1>
-              <div className={css.jobMeta}>
-                {builtAt && (
-                  <span
-                    className={css.jobMetaItem}
-                    title={`${formatDate(builtAt)} ${formatTime(builtAt)}`}
-                  >
-                    <Icon glyph="clock" className={css.jobMetaIcon} />
-                    <span>
-                      {formatDistanceToNow(new Date(builtAt), { addSuffix: true })}
-                    </span>
-                  </span>
-                )}
-
-                {hash && (
-                  <span className={css.jobMetaItem} title="Webpack bundle hash">
-                    <Icon glyph="commit" className={css.jobMetaIcon} />
-                    <span>{hash}</span>
-                  </span>
-                )}
-              </div>
-            </div>
-
-            <SummaryItem
-              className={css.jobSummaryItem}
-              size="large"
-              loading={false}
-              id={TOTAL_BUNDLE_SIZE}
-              data={job.summary[TOTAL_BUNDLE_SIZE]}
-              showDelta={index + 1 < jobs.length}
-            />
-          </div>
-        );
-      })}
+      {jobs && jobs.map((job, index) => (
+        <JobHeader
+          key={job.internalBuildNumber || index}
+          className={css.item}
+          job={job}
+          index={index}
+          isLast={index + 1 < jobs.length}
+        />
+      ))}
     </Box>
   );
 };
@@ -102,9 +28,6 @@ export const JobsHeader = (props) => {
 JobsHeader.propTypes = {
   /** Adopted child classname */
   className: PropTypes.string,
-
-  /** Loading flag */
-  loading: PropTypes.bool,
 
   /** Jobs data */
   jobs: PropTypes.arrayOf(PropTypes.shape({
@@ -122,6 +45,5 @@ JobsHeader.propTypes = {
 
 JobsHeader.defaultProps = {
   className: '',
-  loading: false,
   jobs: null,
 };

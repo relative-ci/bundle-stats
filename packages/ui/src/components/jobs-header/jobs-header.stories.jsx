@@ -112,7 +112,3 @@ stories.add('multiple equal jobs', () => (
     ]}
   />
 ));
-
-stories.add('loading', () => (
-  <JobsHeader loading />
-));
