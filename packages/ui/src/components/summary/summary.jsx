@@ -8,7 +8,7 @@ import css from './summary.module.css';
 const FIRST_ROW_COUNT = 3;
 
 export const Summary = ({
-  className, data, keys, loading, showSummaryItemDelta, showSummaryItemBaselineValue,
+  className, firstRowCount, data, keys, loading, showSummaryItemDelta, showSummaryItemBaselineValue,
 }) => {
   const getRenderSummaryItem = (itemProps) => (key) => (
     <SummaryItem
@@ -27,10 +27,10 @@ export const Summary = ({
   return (
     <div className={cx(css.root, className)}>
       <div className={css.items}>
-        {keys.slice(0, FIRST_ROW_COUNT).map(getRenderSummaryItem())}
+        {keys.slice(0, firstRowCount).map(getRenderSummaryItem())}
       </div>
       <div className={css.items}>
-        {keys.slice(FIRST_ROW_COUNT).map(getRenderSummaryItem())}
+        {keys.slice(firstRowCount).map(getRenderSummaryItem())}
       </div>
     </div>
   );
@@ -39,6 +39,7 @@ export const Summary = ({
 Summary.defaultProps = {
   className: '',
   data: null,
+  firstRowCount: FIRST_ROW_COUNT,
   keys: [
     'webpack.assets.totalInitialSizeJS',
     'webpack.assets.totalInitialSizeCSS',
@@ -62,6 +63,7 @@ Summary.propTypes = {
       current: PropTypes.number,
     }),
   }),
+  firstRowCount: PropTypes.number,
   keys: PropTypes.arrayOf(PropTypes.string),
   loading: PropTypes.bool,
   showSummaryItemDelta: PropTypes.bool,
