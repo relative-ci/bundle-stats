@@ -13,7 +13,7 @@ const TOTAL_BUNDLE_SIZE = 'webpack.assets.totalSizeByTypeALL';
 
 export const JobHeader = (props) => {
   const {
-    className, job, index, isLast,
+    className, tag, job, showSummaryDelta, children,
   } = props;
 
   const { builtAt, hash } = get(job, `meta.${SOURCE_PATH_WEBPACK_STATS}`, {});
@@ -26,9 +26,11 @@ export const JobHeader = (props) => {
           <span>
             {`#${job.internalBuildNumber}`}
           </span>
-          <span className={css.tag}>
-            {index === 0 ? 'current' : 'baseline' }
-          </span>
+          {tag && (
+            <span className={css.tag}>
+              {tag}
+            </span>
+          )}
         </h1>
         <div className={css.meta}>
           {builtAt && (
@@ -49,6 +51,8 @@ export const JobHeader = (props) => {
               <span>{hash}</span>
             </span>
           )}
+
+          {children}
         </div>
       </div>
 
@@ -58,7 +62,7 @@ export const JobHeader = (props) => {
         loading={false}
         id={TOTAL_BUNDLE_SIZE}
         data={job.summary[TOTAL_BUNDLE_SIZE]}
-        showDelta={isLast}
+        showDelta={showSummaryDelta}
       />
     </div>
   );
@@ -66,6 +70,7 @@ export const JobHeader = (props) => {
 
 JobHeader.propTypes = {
   className: PropTypes.string,
+  tag: PropTypes.string,
   job: PropTypes.shape({
     internalBuildNumber: PropTypes.number,
     meta: PropTypes.shape({
@@ -73,12 +78,14 @@ JobHeader.propTypes = {
     }),
     summary: PropTypes.object,
   }),
-  index: PropTypes.number.isRequired,
-  isLast: PropTypes.bool,
+  showSummaryDelta: PropTypes.bool,
+  children: PropTypes.element,
 };
 
 JobHeader.defaultProps = {
   className: '',
+  tag: '',
   job: null,
-  isLast: false,
+  showSummaryDelta: true,
+  children: null,
 };
