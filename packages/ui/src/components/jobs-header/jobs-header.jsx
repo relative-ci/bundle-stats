@@ -17,8 +17,8 @@ export const JobsHeader = (props) => {
           key={job.internalBuildNumber || index}
           className={css.item}
           job={job}
-          index={index}
-          isLast={index + 1 < jobs.length}
+          showSummaryDelta={index + 1 < jobs.length}
+          tag={index === 0 ? 'current' : 'baseline'}
         />
       ))}
     </Box>
@@ -32,14 +32,6 @@ JobsHeader.propTypes = {
   /** Jobs data */
   jobs: PropTypes.arrayOf(PropTypes.shape({
     internalBuildNumber: PropTypes.number,
-    builtAt: PropTypes.string,
-    hash: PropTypes.string,
-    summary: PropTypes.shape({
-      [PropTypes.string]: PropTypes.shape({
-        current: PropTypes.number,
-        baseline: PropTypes.number,
-      }),
-    }),
   })),
 };
 
