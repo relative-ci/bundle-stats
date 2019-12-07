@@ -18,8 +18,8 @@
     "build": "npm run lerna run build",
     "lerna": "lerna",
     "lint": "npm run lerna run lint",
-    "prepublishOnly": "npm run lint && npm run test && npm run build",
-    "publish": "lerna exec 'npm publish'",
+    "prepublishOnly": "npm run build && npm run lint && npm run test",
+    "publish": "lerna publish",
     "test": "npm run lerna run test",
     "test-package": "cd packages/webpack-plugin && npm run test-package"
   },
