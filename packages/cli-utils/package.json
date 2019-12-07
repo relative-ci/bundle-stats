@@ -1,7 +1,7 @@
 {
-  "name": "bundle-stats-webpack-plugin",
+  "name": "@bundle-stats/cli-utils",
   "version": "1.15.1",
-  "description": "In-depth bundle analyzer for webpack(bundle size, assets, modules, packages)",
+  "description": "BundleStats CLI utilities",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib"
@@ -13,22 +13,9 @@
     "build": "babel src -d lib",
     "lint": "eslint .",
     "prepublishOnly": "npm run build",
-    "test": "jest --passWithNoTests src ",
-    "test-package": "jest test/package/*.test.js"
+    "test": "jest --passWithNoTests src "
   },
-  "keywords": [
-    "webpack",
-    "webpack-plugin",
-    "bundle-size",
-    "bundle-analyzer",
-    "bundle-stats",
-    "stats",
-    "bundle",
-    "size",
-    "assets",
-    "chunks",
-    "modules"
-  ],
+  "keywords": [],
   "author": {
     "name": "Viorel Cojocaru",
     "email": "vio@beanon.com",
@@ -42,11 +29,13 @@
   "bugs": {
     "url": "https://github.com/relative-ci/bundle-stats/issues"
   },
-  "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/webpack-plugin#readme",
+  "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/cli-utils#readme",
   "dependencies": {
-    "@bundle-stats/cli-utils": "^1.15.1",
+    "@bundle-stats/html-templates": "^1.15.1",
     "@bundle-stats/utils": "^1.15.1",
     "core-js": "^3.1.4",
+    "find-cache-dir": "^3.1.0",
+    "fs-extra": "^8.1.0",
     "lodash": "4.17.15"
   },
   "devDependencies": {
@@ -57,8 +46,6 @@
     "eslint-config-airbnb-base": "14.0.0",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jest": "23.1.1",
-    "jest": "24.9.0",
-    "memory-fs": "0.5.0",
-    "webpack": "4.41.2"
+    "jest": "24.9.0"
   }
 }
