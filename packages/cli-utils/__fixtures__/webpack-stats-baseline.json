@@ -1,0 +1,4363 @@
+{
+  "builtAt": 1546300800000,
+  "hash": "abcd1234",
+  "assets": [
+    {
+      "name": "../artifacts/webpack.json",
+      "size": 0
+    },
+    {
+      "name": "1.010f5.css",
+      "size": 20830
+    },
+    {
+      "name": "android-chrome-192x192.png",
+      "size": 6743
+    },
+    {
+      "name": "android-chrome-512x512.png",
+      "size": 19685
+    },
+    {
+      "name": "apple-touch-icon.png",
+      "size": 6372
+    },
+    {
+      "name": "browserconfig.xml",
+      "size": 246
+    },
+    {
+      "name": "compare-relative-ci-facebook-screenshot.jpg",
+      "size": 69462
+    },
+    {
+      "name": "compare-relative-ci-twitter-screenshot.jpg",
+      "size": 72702
+    },
+    {
+      "name": "components/sources/source/assets/close.4dc78.svg",
+      "size": 295
+    },
+    {
+      "name": "favicon-16x16.png",
+      "size": 798
+    },
+    {
+      "name": "favicon-32x32.png",
+      "size": 1248
+    },
+    {
+      "name": "favicon.ico",
+      "size": 15086
+    },
+    {
+      "name": "index.html",
+      "size": 1980
+    },
+    {
+      "name": "main.bc8f2337.js",
+      "size": 18199
+    },
+    {
+      "name": "main.df5df.css",
+      "size": 4089
+    },
+    {
+      "name": "mstile-150x150.png",
+      "size": 5199
+    },
+    {
+      "name": "safari-pinned-tab.svg",
+      "size": 1646
+    },
+    {
+      "name": "site.webmanifest",
+      "size": 381
+    },
+    {
+      "name": "vendor.ae130.js",
+      "size": 573665
+    }
+  ],
+  "entrypoints": {
+    "main": {
+      "assets": [
+        "1.010f5.css",
+        "vendor.ae130.js",
+        "1.010f5.css.map",
+        "vendor.ae130.js.map",
+        "main.df5df.css",
+        "main.bc8f2337.js",
+        "main.df5df.css.map",
+        "main.bc8f2337.js.map"
+      ]
+    }
+  },
+  "chunks": [
+    {
+      "id": 0,
+      "entry": true,
+      "initial": true,
+      "files": [
+        "main.df5df.css",
+        "main.bc8f2337.js",
+        "main.df5df.css.map",
+        "main.bc8f2337.js.map"
+      ],
+      "names": [
+        "main"
+      ]
+    },
+    {
+      "id": 1,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "1.010f5.css",
+        "vendor.ae130.js",
+        "1.010f5.css.map",
+        "vendor.ae130.js.map"
+      ],
+      "names": [
+        "vendor"
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "name": "./node_modules/recharts/node_modules/prop-types/index.js",
+      "size": 956,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/preact-compat/dist/preact-compat.es.js",
+      "size": 18110,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/prop-types/index.js",
+      "size": 710,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/preact/dist/preact.mjs",
+      "size": 19053,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/classnames/index.js",
+      "size": 1198,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isFunction.js",
+      "size": 993,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isNil.js",
+      "size": 426,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isArray.js",
+      "size": 488,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/get.js",
+      "size": 884,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/utils/lib-esm/index.js + 22 modules",
+      "size": 23621,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recompose/dist/Recompose.esm.js + 3 modules",
+      "size": 31876,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/index.js + 306 modules",
+      "size": 779250,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_export.js",
+      "size": 1601,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/layout/footer/footer.module.css",
+      "size": 291,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isObject.js",
+      "size": 733,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/map.js",
+      "size": 1621,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_root.js",
+      "size": 300,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isObjectLike.js",
+      "size": 614,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/components/bundle-assets/bundle-assets.module.css",
+      "size": 421,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseIteratee.js",
+      "size": 895,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/sortBy.js",
+      "size": 1668,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isEqual.js",
+      "size": 986,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/components/summary-item/summary-item.module.css",
+      "size": 195,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./src/components/sources/source/styles.css",
+      "size": 235,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./node_modules/preact-router/dist/preact-router.es.js",
+      "size": 8973,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/round.js",
+      "size": 501,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/ui/table-filters/table-filters.module.css",
+      "size": 256,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseGetTag.js",
+      "size": 792,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/identity.js",
+      "size": 370,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_global.js",
+      "size": 369,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/fp/flow.js",
+      "size": 153,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isString.js",
+      "size": 723,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/set.js",
+      "size": 960,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "(webpack)/buildin/global.js",
+      "size": 472,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_arrayMap.js",
+      "size": 556,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isArrayLike.js",
+      "size": 830,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/fp/placeholder.js",
+      "size": 105,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_fails.js",
+      "size": 104,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isPlainObject.js",
+      "size": 1650,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/omit.js",
+      "size": 1629,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/raf/index.js",
+      "size": 1933,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isSymbol.js",
+      "size": 682,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_getNative.js",
+      "size": 483,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_toKey.js",
+      "size": 523,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/keys.js",
+      "size": 884,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_getTag.js",
+      "size": 1838,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/fp/convert.js",
+      "size": 657,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/toInteger.js",
+      "size": 760,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_isIterateeCall.js",
+      "size": 877,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/last.js",
+      "size": 401,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/merge.js",
+      "size": 1220,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/components/bundle-assets-totals-chart-pie/bundle-assets-totals-chart-pie.module.css",
+      "size": 130,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./src/pages/webpack/locale.json",
+      "size": 197,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_castPath.js",
+      "size": 569,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_Symbol.js",
+      "size": 118,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_copyObject.js",
+      "size": 1044,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash._renative/index.js",
+      "size": 801,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_is-object.js",
+      "size": 110,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_descriptors.js",
+      "size": 184,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isNumber.js",
+      "size": 886,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/uniqBy.js",
+      "size": 1013,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/range.js",
+      "size": 1151,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/components/chart/chart.module.css",
+      "size": 111,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/ui/table/table.module.css",
+      "size": 130,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/components/metrics-table/metrics-table.module.css",
+      "size": 190,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./src/app/styles.css",
+      "size": 177,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/eq.js",
+      "size": 799,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isArguments.js",
+      "size": 1026,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isBuffer.js",
+      "size": 1114,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_isIndex.js",
+      "size": 759,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseUnary.js",
+      "size": 332,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_copyArray.js",
+      "size": 454,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash.isobject/index.js",
+      "size": 1186,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_core.js",
+      "size": 122,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/react-lifecycles-compat/react-lifecycles-compat.es.js",
+      "size": 6048,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/filter.js",
+      "size": 1506,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/fbjs/lib/shallowEqual.js",
+      "size": 1616,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isNaN.js",
+      "size": 911,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/fp/pick.js",
+      "size": 153,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/fp/map.js",
+      "size": 151,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/fp/get.js",
+      "size": 151,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/components/delta/delta.module.css",
+      "size": 114,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/components/summary/summary.module.css",
+      "size": 107,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./src/app/navigation/styles.css",
+      "size": 75,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseGet.js",
+      "size": 616,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_nativeCreate.js",
+      "size": 187,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_ListCache.js",
+      "size": 869,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_assocIndexOf.js",
+      "size": 487,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_getMapData.js",
+      "size": 400,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_Stack.js",
+      "size": 734,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isTypedArray.js",
+      "size": 695,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_isPrototype.js",
+      "size": 480,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseEach.js",
+      "size": 455,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_createCtor.js",
+      "size": 1482,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseCreate.js",
+      "size": 686,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseAssignValue.js",
+      "size": 625,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/keysIn.js",
+      "size": 778,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_flatRest.js",
+      "size": 457,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_an-object.js",
+      "size": 154,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_has.js",
+      "size": 120,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_to-integer.js",
+      "size": 161,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseExtremum.js",
+      "size": 897,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/react-transition-group/index.js",
+      "size": 604,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/every.js",
+      "size": 1869,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/preact-router/match.js",
+      "size": 3305,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/preact-helmet/lib/Helmet.js",
+      "size": 22649,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/symbol-observable/es/index.js",
+      "size": 403,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/sum.js",
+      "size": 453,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/ui/icon-text/icon-text.module.css",
+      "size": 106,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/ui/logo/logo.module.css",
+      "size": 109,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/ui/tabs/tabs.module.css",
+      "size": 113,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/ui/tooltip/tooltip.module.css",
+      "size": 112,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/reduce-css-calc/index.js",
+      "size": 4226,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/components/bundle-assets-totals-chart-bars/bundle-assets-totals-chart-bars.module.css",
+      "size": 106,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/components/bundle-chunk-modules/bundle-chunk-modules.module.css",
+      "size": 77,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./src/components/sources/add/styles.css",
+      "size": 127,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./src/components/sources/styles.css",
+      "size": 126,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./src/pages/lighthouse/locale.json",
+      "size": 134,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./src/pages/browsertime/locale.json",
+      "size": 148,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_isKey.js",
+      "size": 880,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_MapCache.js",
+      "size": 869,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_Map.js",
+      "size": 195,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/toString.js",
+      "size": 580,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseIsEqual.js",
+      "size": 1019,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_SetCache.js",
+      "size": 632,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_cacheHas.js",
+      "size": 337,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_setToArray.js",
+      "size": 345,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_arrayPush.js",
+      "size": 437,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_getSymbols.js",
+      "size": 886,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "(webpack)/buildin/module.js",
+      "size": 497,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isLength.js",
+      "size": 802,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_nodeUtil.js",
+      "size": 995,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseKeys.js",
+      "size": 776,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_createWrap.js",
+      "size": 3714,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_apply.js",
+      "size": 714,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_LazyWrapper.js",
+      "size": 773,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseLodash.js",
+      "size": 178,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_getData.js",
+      "size": 325,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_LodashWrapper.js",
+      "size": 611,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_setToString.js",
+      "size": 392,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_arrayEach.js",
+      "size": 537,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_arrayIncludes.js",
+      "size": 526,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_replaceHolders.js",
+      "size": 785,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/toNumber.js",
+      "size": 1572,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_assignValue.js",
+      "size": 899,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseClone.js",
+      "size": 5613,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_getPrototype.js",
+      "size": 163,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_cloneArrayBuffer.js",
+      "size": 449,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseFlatten.js",
+      "size": 1201,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash._objecttypes/index.js",
+      "size": 650,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash._setbinddata/index.js",
+      "size": 1298,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseRest.js",
+      "size": 559,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_object-dp.js",
+      "size": 600,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_to-primitive.js",
+      "size": 655,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_math-sign.js",
+      "size": 179,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_math-expm1.js",
+      "size": 343,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_cof.js",
+      "size": 106,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_to-iobject.js",
+      "size": 217,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_defined.js",
+      "size": 162,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_enum-bug-keys.js",
+      "size": 160,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_string-trim.js",
+      "size": 899,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_string-ws.js",
+      "size": 170,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/flatten.js",
+      "size": 489,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/debounce.js",
+      "size": 6069,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/change-emitter/lib/index.js",
+      "size": 1132,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/index.js",
+      "size": 7567,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/uniq.js",
+      "size": 688,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/components/metric/metric.module.css",
+      "size": 92,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/ui/container/container.module.css",
+      "size": 91,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/ui/loader/loader.module.css",
+      "size": 107,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/ui/panels/panels.module.css",
+      "size": 92,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/components/job-name/job-name.module.css",
+      "size": 91,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts-scale/lib/index.js",
+      "size": 608,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/mapValues.js",
+      "size": 1338,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/components/chart/chart.colors.json",
+      "size": 1241,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./src/config/app.json",
+      "size": 416,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./src/components/sources/add/locale.json",
+      "size": 60,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./src/components/sources/list/styles.css",
+      "size": 108,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./src/components/sources/example/styles.css",
+      "size": 93,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/reverse.js",
+      "size": 844,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./src/pages/webpack/styles.css",
+      "size": 75,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./src/pages/lighthouse/styles.css",
+      "size": 75,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./src/pages/browsertime/style.css",
+      "size": 74,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_freeGlobal.js",
+      "size": 173,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_stringToPath.js",
+      "size": 840,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_toSource.js",
+      "size": 556,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_equalArrays.js",
+      "size": 2595,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_arraySome.js",
+      "size": 594,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_Uint8Array.js",
+      "size": 130,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_mapToArray.js",
+      "size": 363,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_getAllKeys.js",
+      "size": 455,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseGetAllKeys.js",
+      "size": 739,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_arrayFilter.js",
+      "size": 632,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/stubArray.js",
+      "size": 390,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_arrayLikeKeys.js",
+      "size": 1778,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_overArg.js",
+      "size": 382,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_Set.js",
+      "size": 195,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_WeakMap.js",
+      "size": 207,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_isStrictComparable.js",
+      "size": 414,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_matchesStrictComparable.js",
+      "size": 574,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/hasIn.js",
+      "size": 753,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseMap.js",
+      "size": 668,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseForOwn.js",
+      "size": 456,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseFor.js",
+      "size": 593,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseSetData.js",
+      "size": 456,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_metaMap.js",
+      "size": 143,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_createHybrid.js",
+      "size": 3252,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_composeArgs.js",
+      "size": 1323,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_composeArgsRight.js",
+      "size": 1388,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_createRecurry.js",
+      "size": 2117,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_isLaziable.js",
+      "size": 712,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/noop.js",
+      "size": 250,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_getFuncName.js",
+      "size": 756,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_setData.js",
+      "size": 645,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_shortOut.js",
+      "size": 941,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_setWrapToString.js",
+      "size": 847,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_defineProperty.js",
+      "size": 233,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseFindIndex.js",
+      "size": 766,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_getHolder.js",
+      "size": 280,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/toFinite.js",
+      "size": 868,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseAssign.js",
+      "size": 470,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_cloneBuffer.js",
+      "size": 1056,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_getSymbolsIn.js",
+      "size": 754,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_getAllKeysIn.js",
+      "size": 488,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_cloneTypedArray.js",
+      "size": 527,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_initCloneObject.js",
+      "size": 486,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_overRest.js",
+      "size": 1096,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseSum.js",
+      "size": 600,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_createRound.js",
+      "size": 1100,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash._shimkeys/index.js",
+      "size": 1225,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash._basecreatecallback/index.js",
+      "size": 2735,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash._basecreate/index.js",
+      "size": 1432,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash.noop/index.js",
+      "size": 670,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash._slice/index.js",
+      "size": 1210,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseSet.js",
+      "size": 1278,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseMerge.js",
+      "size": 1330,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_assignMergeValue.js",
+      "size": 582,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isArrayLikeObject.js",
+      "size": 742,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_safeGet.js",
+      "size": 354,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_createAssigner.js",
+      "size": 1042,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseSlice.js",
+      "size": 756,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseUniq.js",
+      "size": 1909,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_arrayIncludesWith.js",
+      "size": 615,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseOrderBy.js",
+      "size": 1196,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_hide.js",
+      "size": 286,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_ie8-dom-define.js",
+      "size": 199,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_dom-create.js",
+      "size": 289,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_property-desc.js",
+      "size": 173,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_redefine.js",
+      "size": 1037,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_uid.js",
+      "size": 162,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_ctx.js",
+      "size": 520,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_math-log1p.js",
+      "size": 154,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_object-gopd.js",
+      "size": 577,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_object-keys-internal.js",
+      "size": 537,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_shared-key.js",
+      "size": 159,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_a-number-value.js",
+      "size": 158,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_is-integer.js",
+      "size": 206,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/react-transition-group/Transition.js",
+      "size": 17705,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/react-transition-group/utils/PropTypes.js",
+      "size": 1148,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/react-transition-group/TransitionGroup.js",
+      "size": 7487,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseGt.js",
+      "size": 357,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseLt.js",
+      "size": 354,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/decimal.js-light/decimal.js",
+      "size": 53368,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts-scale/lib/util/utils.js",
+      "size": 3794,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recompose/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js",
+      "size": 2073,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/symbol-observable/es/ponyfill.js",
+      "size": 333,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/mergeWith.js",
+      "size": 1247,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/fill.js",
+      "size": 1081,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/fp/toPairs.js",
+      "size": 187,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/fp/filter.js",
+      "size": 157,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/fp/fromPairs.js",
+      "size": 163,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/ui/box/box.module.css",
+      "size": 74,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/orderBy.js",
+      "size": 1620,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/intersection.js",
+      "size": 953,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/react-resize-detector/lib/index.js",
+      "size": 349,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/max.js",
+      "size": 614,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/min.js",
+      "size": 614,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/flatMap.js",
+      "size": 812,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/some.js",
+      "size": 1608,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/find.js",
+      "size": 1304,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/throttle.js",
+      "size": 2709,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/events/events.js",
+      "size": 13604,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/minBy.js",
+      "size": 991,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/maxBy.js",
+      "size": 991,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/chunk.js",
+      "size": 1411,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/floor.js",
+      "size": 521,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@relative-ci/ui/lib-esm/components/bundle-modules/bundle-modules.module.css",
+      "size": 76,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/mean.js",
+      "size": 422,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isEmpty.js",
+      "size": 2000,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./src/components/sources/source/locale.json",
+      "size": 32,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./src/pages/webpack/config.json",
+      "size": 162,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./node_modules/uuid/v4.js",
+      "size": 680,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./src/pages/lighthouse/config.json",
+      "size": 162,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./src/pages/browsertime/config.json",
+      "size": 162,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./node_modules/ganalytics/dist/ganalytics.mjs",
+      "size": 684,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/es6/cartesian/Area.js",
+      "size": 22196,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/cartesian/CartesianGrid.js",
+      "size": 14792,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/cartesian/Line.js",
+      "size": 20344,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/cartesian/Scatter.js",
+      "size": 18769,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/cartesian/ZAxis.js",
+      "size": 3720,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/chart/AreaChart.js",
+      "size": 523,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/chart/ComposedChart.js",
+      "size": 761,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/chart/FunnelChart.js",
+      "size": 431,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/chart/LineChart.js",
+      "size": 523,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/chart/RadarChart.js",
+      "size": 1186,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/chart/RadialBarChart.js",
+      "size": 1231,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/chart/Sankey.js",
+      "size": 25333,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/chart/ScatterChart.js",
+      "size": 651,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/chart/Treemap.js",
+      "size": 28720,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/numberAxis/Funnel.js",
+      "size": 15726,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/polar/PolarGrid.js",
+      "size": 8635,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/polar/Radar.js",
+      "size": 13456,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/polar/RadialBar.js",
+      "size": 17095,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/shape/Trapezoid.js",
+      "size": 8599,
+      "chunks": []
+    },
+    {
+      "name": "multi ./polyfill.js ./index.jsx",
+      "size": 40,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./src/polyfill.js",
+      "size": 22,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./node_modules/whatwg-fetch/fetch.js",
+      "size": 13262,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/preact/debug.js",
+      "size": 3652,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_getRawTag.js",
+      "size": 1139,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_objectToString.js",
+      "size": 565,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_memoizeCapped.js",
+      "size": 633,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/memoize.js",
+      "size": 2224,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_mapCacheClear.js",
+      "size": 393,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_Hash.js",
+      "size": 747,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_hashClear.js",
+      "size": 281,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseIsNative.js",
+      "size": 1417,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_isMasked.js",
+      "size": 564,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_coreJsData.js",
+      "size": 157,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_getValue.js",
+      "size": 325,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_hashDelete.js",
+      "size": 445,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_hashGet.js",
+      "size": 772,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_hashHas.js",
+      "size": 626,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_hashSet.js",
+      "size": 598,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_listCacheClear.js",
+      "size": 218,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_listCacheDelete.js",
+      "size": 775,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_listCacheGet.js",
+      "size": 420,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_listCacheHas.js",
+      "size": 403,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_listCacheSet.js",
+      "size": 553,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_mapCacheDelete.js",
+      "size": 450,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_isKeyable.js",
+      "size": 430,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_mapCacheGet.js",
+      "size": 330,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_mapCacheHas.js",
+      "size": 382,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_mapCacheSet.js",
+      "size": 489,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseToString.js",
+      "size": 1154,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/prop-types/factoryWithThrowingShims.js",
+      "size": 1621,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "size": 314,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "(webpack)/buildin/harmony-module.js",
+      "size": 573,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseMatches.js",
+      "size": 710,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseIsMatch.js",
+      "size": 1765,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_stackClear.js",
+      "size": 254,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_stackDelete.js",
+      "size": 405,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_stackGet.js",
+      "size": 271,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_stackHas.js",
+      "size": 323,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_stackSet.js",
+      "size": 853,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseIsEqualDeep.js",
+      "size": 3010,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_setCacheAdd.js",
+      "size": 424,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_setCacheHas.js",
+      "size": 316,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_equalByTag.js",
+      "size": 3746,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_equalObjects.js",
+      "size": 2903,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseTimes.js",
+      "size": 504,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseIsArguments.js",
+      "size": 488,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/stubFalse.js",
+      "size": 280,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseIsTypedArray.js",
+      "size": 2222,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_nativeKeys.js",
+      "size": 204,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_DataView.js",
+      "size": 210,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_Promise.js",
+      "size": 207,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_getMatchData.js",
+      "size": 573,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseMatchesProperty.js",
+      "size": 1129,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseHasIn.js",
+      "size": 374,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_hasPath.js",
+      "size": 1085,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/property.js",
+      "size": 793,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseProperty.js",
+      "size": 360,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_basePropertyDeep.js",
+      "size": 391,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_createBaseFor.js",
+      "size": 648,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_createBaseEach.js",
+      "size": 886,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/fp/_baseConvert.js",
+      "size": 16414,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/fp/_mapping.js",
+      "size": 9955,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/fp/_util.js",
+      "size": 524,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/ary.js",
+      "size": 857,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_createBind.js",
+      "size": 853,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_createCurry.js",
+      "size": 1447,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_countHolders.js",
+      "size": 469,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_realNames.js",
+      "size": 98,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/wrapperLodash.js",
+      "size": 6942,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_wrapperClone.js",
+      "size": 658,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_getWrapDetails.js",
+      "size": 479,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_insertWrapDetails.js",
+      "size": 748,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseSetToString.js",
+      "size": 641,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/constant.js",
+      "size": 528,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_updateWrapDetails.js",
+      "size": 1310,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseIndexOf.js",
+      "size": 659,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseIsNaN.js",
+      "size": 296,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_strictIndexOf.js",
+      "size": 600,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_reorder.js",
+      "size": 900,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_createPartial.js",
+      "size": 1382,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_mergeData.js",
+      "size": 3135,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/clone.js",
+      "size": 1065,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseAssignIn.js",
+      "size": 482,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseKeysIn.js",
+      "size": 870,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_nativeKeysIn.js",
+      "size": 490,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_copySymbols.js",
+      "size": 446,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_copySymbolsIn.js",
+      "size": 470,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_initCloneArray.js",
+      "size": 692,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_initCloneByTag.js",
+      "size": 2261,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_cloneDataView.js",
+      "size": 507,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_cloneRegExp.js",
+      "size": 439,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_cloneSymbol.js",
+      "size": 524,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isMap.js",
+      "size": 613,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseIsMap.js",
+      "size": 478,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isSet.js",
+      "size": 613,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseIsSet.js",
+      "size": 478,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/curry.js",
+      "size": 1644,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isError.js",
+      "size": 961,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/isWeakMap.js",
+      "size": 631,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/iteratee.js",
+      "size": 1700,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/rearg.js",
+      "size": 1023,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_isFlattenable.js",
+      "size": 608,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/toPath.js",
+      "size": 804,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/flow.js",
+      "size": 666,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_createFlow.js",
+      "size": 2249,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/node_modules/lodash.keys/index.js",
+      "size": 1253,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash.foreach/index.js",
+      "size": 2135,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash.bind/index.js",
+      "size": 1391,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash._createwrapper/index.js",
+      "size": 3331,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash._basebind/index.js",
+      "size": 1800,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash._basecreatewrapper/index.js",
+      "size": 2350,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash.isfunction/index.js",
+      "size": 774,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash.identity/index.js",
+      "size": 766,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash.support/index.js",
+      "size": 1147,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash.forown/index.js",
+      "size": 1987,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash.forown/node_modules/lodash.keys/index.js",
+      "size": 1253,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/length.js",
+      "size": 1196,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/area.js",
+      "size": 1367,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/mass.js",
+      "size": 1056,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/volume.js",
+      "size": 2958,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/each.js",
+      "size": 352,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/temperature.js",
+      "size": 845,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/time.js",
+      "size": 1241,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/digital.js",
+      "size": 1249,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/partsPer.js",
+      "size": 696,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/speed.js",
+      "size": 889,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/pace.js",
+      "size": 782,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/pressure.js",
+      "size": 1163,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/current.js",
+      "size": 454,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/voltage.js",
+      "size": 442,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/power.js",
+      "size": 651,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/reactivePower.js",
+      "size": 847,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/apparentPower.js",
+      "size": 751,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/energy.js",
+      "size": 918,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/reactiveEnergy.js",
+      "size": 906,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/volumeFlowRate.js",
+      "size": 5189,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/illuminance.js",
+      "size": 472,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/frequency.js",
+      "size": 1204,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/convert-units/lib/definitions/angle.js",
+      "size": 662,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseMergeDeep.js",
+      "size": 3069,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/toPlainObject.js",
+      "size": 744,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseUnset.js",
+      "size": 580,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_parent.js",
+      "size": 436,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_customOmitClone.js",
+      "size": 475,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseFill.js",
+      "size": 843,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/toLength.js",
+      "size": 868,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseClamp.js",
+      "size": 571,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_createSet.js",
+      "size": 501,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/toPairs.js",
+      "size": 699,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_createToPairs.js",
+      "size": 789,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseToPairs.js",
+      "size": 537,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_setToPairs.js",
+      "size": 364,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/fp/_falseOptions.js",
+      "size": 113,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/pick.js",
+      "size": 629,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_basePick.js",
+      "size": 501,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_basePickBy.js",
+      "size": 791,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseFilter.js",
+      "size": 590,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/fromPairs.js",
+      "size": 596,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseSortBy.js",
+      "size": 543,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_compareMultiple.js",
+      "size": 1599,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_compareAscending.js",
+      "size": 1343,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/es6/math.js",
+      "size": 691,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.math.acosh.js",
+      "size": 571,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_a-function.js",
+      "size": 125,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.math.asinh.js",
+      "size": 342,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.math.atanh.js",
+      "size": 304,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.math.cbrt.js",
+      "size": 218,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.math.clz32.js",
+      "size": 208,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.math.cosh.js",
+      "size": 187,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.math.expm1.js",
+      "size": 187,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.math.fround.js",
+      "size": 132,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_math-fround.js",
+      "size": 716,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.math.hypot.js",
+      "size": 662,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.math.imul.js",
+      "size": 539,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.math.log10.js",
+      "size": 168,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.math.log1p.js",
+      "size": 129,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.math.log2.js",
+      "size": 162,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.math.sign.js",
+      "size": 126,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.math.sinh.js",
+      "size": 454,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.math.tanh.js",
+      "size": 317,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.math.trunc.js",
+      "size": 181,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/es6/number.js",
+      "size": 603,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.number.constructor.js",
+      "size": 2793,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_inherit-if-required.js",
+      "size": 337,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_set-proto.js",
+      "size": 906,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_object-pie.js",
+      "size": 37,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_iobject.js",
+      "size": 289,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_object-gopn.js",
+      "size": 288,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_array-includes.js",
+      "size": 924,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_to-length.js",
+      "size": 215,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_to-absolute-index.js",
+      "size": 223,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_shared.js",
+      "size": 427,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_library.js",
+      "size": 24,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_object-create.js",
+      "size": 1505,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_object-dps.js",
+      "size": 404,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_object-keys.js",
+      "size": 222,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_html.js",
+      "size": 101,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.number.to-fixed.js",
+      "size": 2770,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_string-repeat.js",
+      "size": 373,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.number.to-precision.js",
+      "size": 613,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.number.epsilon.js",
+      "size": 125,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.number.is-finite.js",
+      "size": 246,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.number.is-integer.js",
+      "size": 145,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.number.is-nan.js",
+      "size": 220,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.number.is-safe-integer.js",
+      "size": 294,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.number.max-safe-integer.js",
+      "size": 143,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.number.min-safe-integer.js",
+      "size": 145,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.number.parse-float.js",
+      "size": 228,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_parse-float.js",
+      "size": 359,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/es6.number.parse-int.js",
+      "size": 221,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/core-js/modules/_parse-int.js",
+      "size": 390,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/prop-types/factoryWithThrowingShims.js",
+      "size": 1469,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "size": 314,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/performance-now/lib/performance-now.js",
+      "size": 1061,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/node-libs-browser/node_modules/process/browser.js",
+      "size": 5418,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseIntersection.js",
+      "size": 2262,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_castArrayLikeObject.js",
+      "size": 381,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/react-transition-group/CSSTransition.js",
+      "size": 12118,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/dom-helpers/class/addClass.js",
+      "size": 622,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/@babel/runtime/helpers/interopRequireDefault.js",
+      "size": 145,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/dom-helpers/class/hasClass.js",
+      "size": 349,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/dom-helpers/class/removeClass.js",
+      "size": 568,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/react-transition-group/ReplaceTransition.js",
+      "size": 5081,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/react-transition-group/utils/ChildMapping.js",
+      "size": 4993,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/now.js",
+      "size": 520,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts/node_modules/react-resize-detector/lib/components/ResizeDetector.js",
+      "size": 5429,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js",
+      "size": 33654,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash.debounce/index.js",
+      "size": 10784,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash.throttle/index.js",
+      "size": 13311,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts-scale/lib/getNiceTickValues.js",
+      "size": 12257,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/recharts-scale/lib/util/arithmetic.js",
+      "size": 2376,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseSome.js",
+      "size": 619,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_arrayEvery.js",
+      "size": 597,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseEvery.js",
+      "size": 625,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/reduce-css-calc/node_modules/balanced-match/index.js",
+      "size": 1160,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/reduce-function-call/index.js",
+      "size": 1953,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/reduce-function-call/node_modules/balanced-match/index.js",
+      "size": 1160,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/math-expression-evaluator/src/formula_evaluator.js",
+      "size": 1602,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/math-expression-evaluator/src/postfix_evaluator.js",
+      "size": 3018,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/math-expression-evaluator/src/postfix.js",
+      "size": 1321,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/math-expression-evaluator/src/lexer.js",
+      "size": 9193,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/math-expression-evaluator/src/math_function.js",
+      "size": 2507,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_createFind.js",
+      "size": 853,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/findIndex.js",
+      "size": 1654,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_createRange.js",
+      "size": 864,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseRange.js",
+      "size": 850,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/_baseMean.js",
+      "size": 568,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/preact-side-effect/lib/index.js",
+      "size": 4662,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/deep-equal/index.js",
+      "size": 3051,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/deep-equal/lib/keys.js",
+      "size": 202,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/deep-equal/lib/is_arguments.js",
+      "size": 641,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/object-assign/index.js",
+      "size": 2108,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/preact-helmet/lib/HelmetConstants.js",
+      "size": 677,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/uuid/lib/rng-browser.js",
+      "size": 1312,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./node_modules/uuid/lib/bytesToUuid.js",
+      "size": 747,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "./src/index.css",
+      "size": 39,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./src/index.jsx + 27 modules",
+      "size": 32205,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "./node_modules/lodash/sumBy.js",
+      "size": 908,
+      "chunks": []
+    },
+    {
+      "name": "./node_modules/recharts/es6/util/Constants.js",
+      "size": 290,
+      "chunks": []
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/@moonwalker/orbit-ui/dist/base/index.css",
+      "size": 4267,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/@relative-ci/ui/lib/css/default.css",
+      "size": 636,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/@relative-ci/ui/lib/css/variables.css",
+      "size": 4116,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/index.css",
+      "size": 69,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/app/styles.css",
+      "size": 682,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/app/navigation/styles.css",
+      "size": 32,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/pages/browsertime/style.css",
+      "size": 44,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/pages/lighthouse/styles.css",
+      "size": 45,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/pages/webpack/styles.css",
+      "size": 45,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/components/sources/styles.css",
+      "size": 221,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/components/sources/add/styles.css",
+      "size": 657,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/components/sources/example/styles.css",
+      "size": 355,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/components/sources/list/styles.css",
+      "size": 279,
+      "chunks": [
+        0
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/components/bundle-assets-totals-chart-bars/bundle-assets-totals-chart-bars.module.css",
+      "size": 51,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/components/bundle-assets-totals-chart-pie/bundle-assets-totals-chart-pie.module.css",
+      "size": 217,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/components/bundle-assets/bundle-assets.module.css",
+      "size": 1284,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/components/bundle-chunk-modules/bundle-chunk-modules.module.css",
+      "size": 63,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/components/bundle-modules/bundle-modules.module.css",
+      "size": 57,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/components/chart/chart.module.css",
+      "size": 552,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/components/delta/delta.module.css",
+      "size": 132,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/components/job-name/job-name.module.css",
+      "size": 114,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/components/metric/metric.module.css",
+      "size": 172,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/components/metrics-table/metrics-table.module.css",
+      "size": 445,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/components/summary-item/summary-item.module.css",
+      "size": 760,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/components/summary/summary.module.css",
+      "size": 360,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/layout/footer/footer.module.css",
+      "size": 1380,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/ui/box/box.module.css",
+      "size": 147,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/ui/container/container.module.css",
+      "size": 119,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/ui/icon-text/icon-text.module.css",
+      "size": 356,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/ui/loader/loader.module.css",
+      "size": 899,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/ui/logo/logo.module.css",
+      "size": 133,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/ui/panels/panels.module.css",
+      "size": 291,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/ui/table-filters/table-filters.module.css",
+      "size": 1432,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/ui/table/table.module.css",
+      "size": 966,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/ui/tabs/tabs.module.css",
+      "size": 635,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./node_modules/@relative-ci/ui/lib-esm/ui/tooltip/tooltip.module.css",
+      "size": 1181,
+      "chunks": [
+        1
+      ]
+    },
+    {
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/components/sources/source/styles.css",
+      "size": 1607,
+      "chunks": [
+        0
+      ]
+    }
+  ]
+}
