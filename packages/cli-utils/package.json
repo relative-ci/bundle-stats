@@ -12,7 +12,6 @@
   "scripts": {
     "build": "babel src -d lib",
     "lint": "eslint .",
-    "prepublishOnly": "npm run build",
     "test": "jest --passWithNoTests src "
   },
   "keywords": [],
