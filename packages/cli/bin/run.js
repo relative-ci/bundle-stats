@@ -6,15 +6,9 @@ const { get } = require('lodash');
 
 const { createJobs } = require('@bundle-stats/utils');
 const { filter } = require('@bundle-stats/utils/lib/webpack');
-
-// eslint-disable-next-line import/no-unresolved
 const {
-  TEXT,
-  createReports,
-  getBaselineStatsFilepath,
-  readBaseline,
-  writeBaseline,
-} = require('../');
+  TEXT, createReports, getBaselineStatsFilepath, readBaseline, writeBaseline,
+} = require('@bundle-stats/cli-utils');
 
 module.exports = ({
   baseline, compare, html, json, outDir, artifactFilepaths,
