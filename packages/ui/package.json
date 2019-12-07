@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/ui",
-  "version": "1.15.5",
+  "version": "2.0.0-beta.1",
   "description": "UI components for BundleStats projects.",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
@@ -37,7 +37,7 @@
     "@babel/plugin-proposal-object-rest-spread": "7.8.3",
     "@babel/preset-env": "7.8.3",
     "@babel/preset-react": "7.8.3",
-    "@bundle-stats/utils": "^1.15.4",
+    "@bundle-stats/utils": "^2.0.0-beta.1",
     "@storybook/addon-knobs": "5.3.5",
     "@storybook/addon-storyshots": "5.3.5",
     "@storybook/addons": "5.3.5",
@@ -53,7 +53,7 @@
     "colormap": "2.3.1",
     "core-js": "3.6.4",
     "cross-env": "6.0.3",
-    "css-loader": "3.4.2",
+    "css-loader": "3.4.0",
     "eslint": "6.8.0",
     "eslint-config-airbnb": "18.0.1",
     "eslint-loader": "3.0.3",
@@ -64,7 +64,7 @@
     "hex-rgb": "4.1.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
-    "jest-date-mock": "1.0.8",
+    "jest-date-mock": "1.0.7",
     "lodash": "4.17.15",
     "markdown-loader-jest": "0.1.1",
     "prop-types": "15.7.2",
@@ -73,7 +73,7 @@
     "react-test-renderer": "16.12.0",
     "recompose": "0.30.0",
     "stats-webpack-plugin": "0.7.0",
-    "webpack": "4.41.5",
+    "webpack": "4.41.4",
     "webpack-cli": "3.3.10"
   },
   "peerDependencies": {
