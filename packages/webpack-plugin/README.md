@@ -21,32 +21,86 @@
 :star: <strong>Side by side comparison</strong> for multiple jobs
 </p>
 
-## Packages
+## Table of Contents
+- [Install](#install)
+- [Webpack configuration](#webpack-configuration)
+- [Compare mode](#compare-mode)
+- [Framework specific plugins](#framework-specific-plugins)
+- [Related projects](#related-projects)
 
-### [`bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/cli)
+## Install
 
-CLI to generate bundle stats report.
+```shell
+npm install --dev bundle-stats
+```
 
-### [`bundle-stats-webpack-plugin`](https://github.com/relative-ci/bundle-stats/tree/master/packages/webpack-plugin)
+or
 
-Webpack plugin to generate bundle stats report.
+```shell
+yarn add --dev bundle-stats
+```
 
-### [`gatsby-plugin-bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/gatsby-plugin)
+## Webpack configuration
 
-Gatsby plugin for BundleStats.
+```js
+// webpack.config.js
+const { BundleStatsWebpackPlugin } = require('bundle-stats');
 
-### [`next-plugin-bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/next-plugin)
+module.exports = {
+  ...,
+  plugins: [
+    new BundleStatsWebpackPlugin()
+  ]
+}
+```
 
-Gatsby plugin for BundleStats.
+## `BundleStatsWebpackPlugin(options)`
 
-#### [`@bundle-stats/html-templates`](https://github.com/relative-ci/bundle-stats/tree/master/packages/html-templates)
-HTML templates for BundleStats reports.
+- `compare` - use local saved stats for comparison (default `true`).
+- `baseline` - save current webpack stats as baseline (default `false`).
+- `html` - output html report (default `true`).
+- `json` - output json report (default `false`).
+- `outDir` - output directory relative to `output.path` (default `''`).
+- `stats` - [Webpack stats](https://webpack.js.org/configuration/stats) options
+  default:
+  ```js
+  {
+    stats: {
+      context: WEBPACK_CONTEXT,
+      assets: true,
+      entrypoints: true,
+      chunks: true,
+      modules: true,
+      builtAt: true,
+      hash: true
+    }
+  }
+  ```
 
-#### [`@bundle-stats/ui`](https://github.com/relative-ci/bundle-stats/tree/master/packages/ui)
-UI components for BundleStats projects.
+## Compare mode
 
-#### [`@bundle-stats/utils`](https://github.com/relative-ci/bundle-stats/tree/master/packages/utils)
-Utilities for BundleStats projects.
+In `compare` mode, the metrics are compared against an existing(`node_modules/.cache/bundle-stats/baseline.json`) Webpack stats file(baseline). To generate the baseline webpack stats, set `BUNDLE_STATS_BASELINE` environmental variable to `true` or set `BundleStatsWebpackPlugin` `baseline` option to `true`:
+
+```shell
+# Checkout to the branch/tag/commit where you want to generate the baseline
+$ git checkout master
+
+# Build your application with BUNDLE_STATS_BASELINE environmental variable
+$ BUNDLE_STATS_BASELINE=true npm run build
+
+# Checkout to the working branch/tag/commit
+$ git checkout MY_FEATURE_BRANCH
+
+# Build your application
+$ npm run build
+```
+
+The option can be disabled by setting `BundleStatsWebpackPlugin` `compare` option to `false`.
+
+## Framework specific plugins
+
+- [Gatsby](https://github.com/relative-ci/bundle-stats/tree/master/packages/gatsby-plugin)
+- [Next](https://github.com/relative-ci/bundle-stats/tree/master/packages/next-plugin)
 
 ## Related projects
 

@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/next-plugin#readme",
   "dependencies": {
-    "bundle-stats": "^1.15.1"
+    "bundle-stats-webpack-plugin": "^1.15.1"
   },
   "devDependencies": {
     "eslint": "6.7.2",

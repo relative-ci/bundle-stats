@@ -22,93 +22,15 @@
 </p>
 
 ## Table of Contents
-- [Webpack plugin](#1-webpack-plugin)
-  - [Install](#install)
-  - [Webpack configuration](#webpack-configuration)
-  - [Compare mode](#compare-mode)
-- [CLI](#2-cli)
-  - [Install as global dependency](#install-as-global-dependency)
-  - [Install as dev dependency](#install-as-dev-dependency)
-  - [Webpack configuration](#webpack-configuration-1)
-  - [Usage](#usage)
-  - [Compare mode](#compare-mode-1)
-- [Framework specific plugins](#3-framework-specific-plugins)
-- [Related projects](#4-related-projects)
+- [Install as global dependency](#install-as-global-dependency)
+- [Install as dev dependency](#install-as-dev-dependency)
+- [Webpack configuration](#webpack-configuration-1)
+- [Usage](#usage)
+- [Compare mode](#compare-mode-1)
+- [Framework specific plugins](#framework-specific-plugins)
+- [Related projects](#related-projects)
 
-## 1. Webpack plugin
-
-### Install
-
-```shell
-npm install --dev bundle-stats
-```
-
-or
-
-```shell
-yarn add --dev bundle-stats
-```
-
-### Webpack configuration
-
-```js
-// webpack.config.js
-const { BundleStatsWebpackPlugin } = require('bundle-stats');
-
-module.exports = {
-  ...,
-  plugins: [
-    new BundleStatsWebpackPlugin()
-  ]
-}
-```
-
-### `BundleStatsWebpackPlugin(options)`
-
-- `compare` - use local saved stats for comparison (default `true`).
-- `baseline` - save current webpack stats as baseline (default `false`).
-- `html` - output html report (default `true`).
-- `json` - output json report (default `false`).
-- `outDir` - output directory relative to `output.path` (default `''`).
-- `stats` - [Webpack stats](https://webpack.js.org/configuration/stats) options
-  default:
-  ```js
-  {
-    stats: {
-      context: WEBPACK_CONTEXT,
-      assets: true,
-      entrypoints: true,
-      chunks: true,
-      modules: true,
-      builtAt: true,
-      hash: true
-    }
-  }
-  ```
-
-### Compare mode
-
-In `compare` mode, the metrics are compared against an existing(`node_modules/.cache/bundle-stats/baseline.json`) Webpack stats file(baseline). To generate the baseline webpack stats, set `BUNDLE_STATS_BASELINE` environmental variable to `true` or set `BundleStatsWebpackPlugin` `baseline` option to `true`:
-
-```shell
-# Checkout to the branch/tag/commit where you want to generate the baseline
-$ git checkout master
-
-# Build your application with BUNDLE_STATS_BASELINE environmental variable
-$ BUNDLE_STATS_BASELINE=true npm run build
-
-# Checkout to the working branch/tag/commit
-$ git checkout MY_FEATURE_BRANCH
-
-# Build your application
-$ npm run build
-```
-
-The option can be disabled by setting `BundleStatsWebpackPlugin` `compare` option to `false`.
-
-## 2. CLI
-
-### Install as global dependency
+## Install as global dependency
 
 ```shell
 npm install -g bundle-stats
@@ -120,7 +42,7 @@ or
 yarn global add bundle-stats
 ```
 
-### Install as dev dependency
+## Install as dev dependency
 
 ```shell
 npm install --dev bundle-stats
@@ -132,7 +54,7 @@ or
 yarn add --dev bundle-stats
 ```
 
-### Webpack configuration
+## Webpack configuration
 
 The CLI is consuming the Webpack stats json. The following [stats options](https://webpack.js.org/configuration/stats) are required:
 ```js
@@ -150,7 +72,7 @@ The CLI is consuming the Webpack stats json. The following [stats options](https
 
 [Read more about Webpack stats configuration](https://relative-ci.com/documentation/setup#1-configure-webpack)
 
-### Usage
+## Usage
 
 ```shell
 $ bundle-stats -h
@@ -185,7 +107,7 @@ Reports saved:
 - ./dist/bundle-stats.json
 ```
 
-### Compare mode
+## Compare mode
 
 In `compare` mode, the metrics are compared against an existing(`node_modules/.cache/bundle-stats/baseline.json`) Webpack stats file(baseline). To generate the baseline webpack stats, use `--baseline` option:
 
@@ -231,12 +153,13 @@ Reports saved:
 
 The option can be disabled using `--no-compare` option.
 
-## 3. Framework specific plugins
+## Framework specific plugins
 
+- [Webpack](https://github.com/relative-ci/bundle-stats/tree/master/packages/webpack-plugin)
 - [Gatsby](https://github.com/relative-ci/bundle-stats/tree/master/packages/gatsby-plugin)
 - [Next](https://github.com/relative-ci/bundle-stats/tree/master/packages/next-plugin)
 
-## 4. Related projects
+## Related projects
 
 ### [relative-ci/compare](https://compare.relative-ci.com)
 
