@@ -41,9 +41,13 @@ Standalone web application to compare Webpack/Lighthouse/Browsertime stats.
 
 ## Packages
 
-### [`bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/bundle-stats)
+### [`bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/cli)
 
-CLI and webapck plugin to generate bundle report.
+CLI to generate bundle stats report.
+
+### [`bundle-stats-webpack-plugin`](https://github.com/relative-ci/bundle-stats/tree/master/packages/webpack-plugin)
+
+Webpack plugin to generate bundle stats report.
 
 ### [`gatsby-plugin-bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/gatsby-plugin)
 
