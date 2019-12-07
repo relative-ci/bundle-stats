@@ -13,9 +13,7 @@
     "node": ">= 8.0"
   },
   "scripts": {
-    "build": "babel src -d lib",
     "lint": "eslint .",
-    "prepublishOnly": "npm run build",
     "test": "jest --passWithNoTests src "
   },
   "keywords": [
@@ -48,7 +46,6 @@
     "@bundle-stats/html-templates": "^1.15.8",
     "@bundle-stats/utils": "^1.15.8",
     "core-js": "^3.1.4",
-    "find-cache-dir": "3.3.0",
     "fs-extra": "8.1.0",
     "listr": "^0.14.3",
     "lodash": "4.17.15",
