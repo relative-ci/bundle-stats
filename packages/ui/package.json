@@ -10,7 +10,6 @@
     "build-esm": "rm -fr ./lib-esm && babel -D src -d lib-esm --ignore **/__tests__/** --ignore /prototypes/**",
     "generate-chart-colors": "node scripts/generate-chart-colors.js",
     "lint": "eslint . --ext .jsx,.js --cache --cache-location ./node_modules/.eslintcache",
-    "prepublishOnly": "npm run build",
     "start": "cross-env NODE_ENV=development start-storybook -c ./build/storybook -p 8080",
     "test": "npm run test:unit && npm run test:storyshots",
     "test:unit": "jest src --passWithNoTests",
