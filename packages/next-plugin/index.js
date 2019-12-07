@@ -1,4 +1,4 @@
-const { BundleStatsWebpackPlugin } = require('bundle-stats');
+const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin');
 
 module.exports = (pluginOptions = {}) => (nextConfig = {}) => ({
   ...nextConfig,
