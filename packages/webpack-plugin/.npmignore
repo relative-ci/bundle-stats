@@ -1,0 +1,5 @@
+.eslintignore
+.eslintrc.js
+__fixtures__
+!__fixtures__/webpack-stats-*.json
+src
