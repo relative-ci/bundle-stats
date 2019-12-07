@@ -3,10 +3,9 @@ import process from 'process';
 import { get, merge } from 'lodash';
 import { createJobs } from '@bundle-stats/utils';
 import { filter } from '@bundle-stats/utils/lib-esm/webpack';
-
-import * as TEXT from './text';
-import { getBaselineStatsFilepath, readBaseline } from './baseline';
-import { createReports } from './create-report';
+import {
+  TEXT, getBaselineStatsFilepath, readBaseline, createReports,
+} from '@bundle-stats/cli-utils';
 
 const DEFAULT_OPTIONS = {
   compare: true,
