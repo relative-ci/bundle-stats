@@ -12,7 +12,7 @@
     "mini-css-extract-plugin": "0.8.2",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "terser-webpack-plugin": "2.3.1",
-    "webpack": "4.41.3"
+    "webpack": "4.41.4"
   },
   "scripts": {
     "build": "npm run lerna run build",
