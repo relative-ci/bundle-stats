@@ -54,7 +54,7 @@ const getOnEmit = (options) => async (compilation, callback) => {
 
   try {
     if (compare) {
-      baselineStats = await readBaseline(outputPath);
+      baselineStats = await readBaseline();
       baselineStats = extractDataFromWebpackStats(baselineStats);
       logger.info(`Read baseline from ${baselineFilepath}`);
     }
