@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import css from './file-name.css';
+import css from './file-name.module.css';
 
 export const FileName = ({ className, name }) => (
   <span className={cx(css.root, className)}>
