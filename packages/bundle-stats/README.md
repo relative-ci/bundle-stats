@@ -25,6 +25,7 @@
 - [Webpack plugin](#1-webpack-plugin)
   - [Install](#install)
   - [Webpack configuration](#webpack-configuration)
+  - [Use with create-react-app](#use-with-create-react-app)
   - [Compare mode](#compare-mode)
 - [CLI](#2-cli)
   - [Install as global dependency](#install-as-global-dependency)
