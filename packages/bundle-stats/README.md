@@ -63,6 +63,43 @@ module.exports = {
 }
 ```
 
+### Use with create-react-app
+
+You will need to customize the default webpack config. That can be done by using [react-app-rewired](https://github.com/timarney/react-app-rewired) which is one of create-react-app's custom config solutions. You will also need [customize-cra](https://github.com/arackaf/customize-cra).
+
+```shell
+npm install --dev customize-cra react-app-rewired
+```
+
+or
+
+```shell
+yarn add customize-cra react-app-rewired --dev
+```
+
+Change your default scripts in `package.json` to:
+
+```json
+/* package.json */
+"scripts": {
+  "start": "react-app-rewired start",
+  "build": "react-app-rewired build",
+  "test": "react-app-rewired test"
+}
+```
+
+Create a file `config-overrides.js` at the same level as `package.json`.
+
+```js
+// config-overrides.js
+const { override, addWebpackPlugin } = require('customize-cra');
+const { BundleStatsWebpackPlugin } = require('bundle-stats');
+
+module.exports = override(
+  addWebpackPlugin(new BundleStatsWebpackPlugin()),
+);
+```
+
 ### `BundleStatsWebpackPlugin(options)`
 
 - `compare` - use local saved stats for comparison (default `true`).
