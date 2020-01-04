@@ -55,7 +55,7 @@
     "eslint-import-resolver-webpack": "0.12.0",
     "eslint-loader": "3.0.3",
     "eslint-plugin-import": "2.19.1",
-    "eslint-plugin-jest": "23.2.0",
+    "eslint-plugin-jest": "23.3.0",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.17.0",
     "html-webpack-inline-source-plugin": "0.0.10",
