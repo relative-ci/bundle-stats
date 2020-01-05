@@ -48,7 +48,7 @@
   opacity: 0;
   width: 0;
   overflow: hidden;
-  transition: visibility 0s, opacity 0.2s ease-in;
+  transition: visibility 0s 0.15s, opacity 0.15s ease-out;
 }
 
 .root:hover .tooltip {
@@ -56,7 +56,7 @@
   opacity: 1;
   width: auto;
   overflow: visible;
-  transition: visibility 0.17s 0s, opacity 0.17s ease-out;
+  transition: visibility 0s 0.4s, opacity 0.2s 0.2s ease-in;
 }
 
 /* Align modifier */
