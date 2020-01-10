@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "dotenv": "8.2.0",
-    "husky": "4.0.4",
+    "husky": "4.0.6",
     "lerna": "3.20.2",
     "mini-css-extract-plugin": "0.9.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
