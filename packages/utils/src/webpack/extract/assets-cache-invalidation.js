@@ -1,6 +1,7 @@
 import { get, merge } from 'lodash';
 
-import { getMetricChanged, mergeRunsById } from '../../metrics';
+import { getMetricChanged } from '../../metrics/get-metric-changed';
+import { mergeRunsById } from '../../report/merge-runs-by-id';
 import { calculateCacheInvalidation, getMetricAdded, getMetricDeleted } from '../utils';
 
 export const extractAssetsCacheInvalidation = (
