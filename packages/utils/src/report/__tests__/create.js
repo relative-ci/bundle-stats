@@ -1,9 +1,9 @@
 import webpackStatsCurrentExtracted from '../../../__fixtures__/webpack-stats-1.extracted';
 import webpackStatsBaselineExtracted from '../../../__fixtures__/webpack-stats-2.extracted';
 import { createJobs } from '../../jobs';
-import { createReport } from '../create-report';
+import { createReport } from '../create';
 
-describe('createReport', () => {
+describe('report / createReport', () => {
   test('single source', () => {
     const actual = createReport(createJobs([
       { webpack: webpackStatsCurrentExtracted },
