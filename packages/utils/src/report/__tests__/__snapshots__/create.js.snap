@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`createReport multiple sources 1`] = `
+exports[`report / createReport multiple sources 1`] = `
 Object {
   "assets": Array [
     Object {
@@ -716,7 +716,7 @@ Object {
 }
 `;
 
-exports[`createReport single source 1`] = `
+exports[`report / createReport single source 1`] = `
 Object {
   "assets": Array [
     Object {
