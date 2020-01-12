@@ -1,27 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { get, map } from 'lodash';
-import { METRIC_TYPE_FILE_SIZE, addMetricsData, mergeRunsById } from '@bundle-stats/utils';
+import { get } from 'lodash';
+import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import { MetricsTable } from '../metrics-table';
 import { JobName } from '../job-name';
-
-const METRICS = [
-  'webpack.sizes.totalSizeByTypeJS',
-  'webpack.sizes.totalSizeByTypeCSS',
-  'webpack.sizes.totalSizeByTypeIMG',
-  'webpack.sizes.totalSizeByTypeMEDIA',
-  'webpack.sizes.totalSizeByTypeFONT',
-  'webpack.sizes.totalSizeByTypeHTML',
-  'webpack.sizes.totalSizeByTypeOTHER',
-  'webpack.totalSizeByTypeALL',
-];
-
-const getJobMetrics = (job) => METRICS.reduce((agg, metricKey) => {
-  const metric = get(job, `metrics.${metricKey}`, { value: null });
-
-  return { ...agg, [metricKey]: metric };
-}, {});
 
 const getRun = (job, index, jobs) => {
   const internalBuildNumber = get(job, 'meta.internalBuildNumber', jobs.length - index);
@@ -40,7 +23,7 @@ const getRun = (job, index, jobs) => {
 
 export const BundleAssetsTotalsTable = ({ className, jobs }) => {
   const runs = jobs.map(getRun);
-  const items = addMetricsData(mergeRunsById(map(jobs, getJobMetrics)), METRIC_TYPE_FILE_SIZE);
+  const items = webpack.compare.sizes(jobs);
 
   return (
     <MetricsTable
