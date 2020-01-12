@@ -1,7 +1,6 @@
 import { get, isEmpty } from 'lodash';
 
 import * as webpack from '../webpack';
-import { compareMetrics } from './compare-metrics';
 
 export const createReport = (jobs) => {
   const warnings = get(jobs, '[0].warnings');
@@ -18,9 +17,7 @@ export const createReport = (jobs) => {
     // Add webpack sections comparisons
     ...webpack.SECTIONS.reduce((agg, section) => ({
       ...agg,
-      [section]: webpack.compare[section]
-        ? webpack.compare[section](jobs)
-        : compareMetrics(jobs, webpack.selectors[section]),
+      [section]: webpack.compare[section](jobs),
     }), {}),
   };
 };
