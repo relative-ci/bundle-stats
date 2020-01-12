@@ -72,7 +72,7 @@
     "react-test-renderer": "16.12.0",
     "recompose": "0.30.0",
     "stats-webpack-plugin": "0.7.0",
-    "stylelint": "12.0.1",
+    "stylelint": "13.0.0",
     "stylelint-config-css-modules": "2.1.0",
     "stylelint-config-standard": "19.0.0",
     "terser-webpack-plugin": "2.3.2",
