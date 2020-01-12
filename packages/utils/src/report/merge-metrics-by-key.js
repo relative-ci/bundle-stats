@@ -15,7 +15,7 @@ const mergeWithRuns = (index, count) => (objValue, srcValue) => {
   };
 };
 
-export const mergeRunsById = (runs) => {
+export const mergeMetricsByKey = (runs) => {
   const runsCount = runs.length;
 
   const metricsById = runs.reduce(

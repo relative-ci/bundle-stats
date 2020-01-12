@@ -1,7 +1,7 @@
 import { get, merge } from 'lodash';
 
 import { getMetricChanged } from '../../metrics/get-metric-changed';
-import { mergeRunsById } from '../../report/merge-runs-by-id';
+import { mergeMetricsByKey } from '../../report/merge-metrics-by-key';
 import { calculateCacheInvalidation, getMetricAdded, getMetricDeleted } from '../utils';
 
 export const extractAssetsCacheInvalidation = (
@@ -10,7 +10,7 @@ export const extractAssetsCacheInvalidation = (
   const currentAssets = get(currentExtractedData, 'metrics.assets', {});
   const baselineAssets = get(baselineBundleStats, 'metrics.webpack.assets', {});
 
-  const rows = mergeRunsById([currentAssets, baselineAssets]).map((row) => merge(
+  const rows = mergeMetricsByKey([currentAssets, baselineAssets]).map((row) => merge(
     {},
     row,
     {

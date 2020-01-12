@@ -1,8 +1,8 @@
-import { mergeRunsById } from '../merge-runs-by-id';
+import { mergeMetricsByKey } from '../merge-metrics-by-key';
 
-describe('merge runs by ids', () => {
+describe('merge metrics by keys', () => {
   it('should return rows', () => {
-    const actual = mergeRunsById([
+    const actual = mergeMetricsByKey([
       {
         metric1: {
           value: 100,

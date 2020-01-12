@@ -2,7 +2,7 @@ import { flatMap, map, uniq } from 'lodash';
 
 import { METRIC_TYPE_FILE_SIZE } from '../config/metrics';
 import { addRowData } from '../report/add-row-data';
-import { mergeRunsById } from '../report/merge-runs-by-id';
+import { mergeMetricsByKey } from '../report/merge-metrics-by-key';
 import { compareMetrics } from '../report/compare-metrics';
 import {
   SECTION_WEBPACK_STATS,
@@ -56,7 +56,7 @@ const compareModules = (jobs) => {
   return allChunkIds.map((chunkId) => {
     const jobsChunk = map(jobsModuleMetrics, chunkId);
     const chunkNames = uniq(flatMap(jobsChunk, 'chunkNames'));
-    const modules = mergeRunsById(map(jobsChunk, 'modules')).map(
+    const modules = mergeMetricsByKey(map(jobsChunk, 'modules')).map(
       (row) => addRowData(row, METRIC_TYPE_FILE_SIZE),
     );
 
