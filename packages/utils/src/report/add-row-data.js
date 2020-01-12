@@ -1,7 +1,7 @@
 import { getDelta, formatDelta } from '../utils/delta';
 import { formatPercentage } from '../utils/format';
-import { getMetricChanged } from '../metrics/get-metric-changed';
 import { getMetricType } from '../metrics/get-metric-type';
+import { getMetricChanged } from './get-metric-changed';
 
 export const addRowData = (row, metricType) => {
   const { key, runs } = row;
