@@ -1,6 +1,6 @@
 import { compose, withProps } from 'recompose';
 import { get, map } from 'lodash';
-import { getLighthouseMetrics, addMetricsData, mergeRunsById } from '@bundle-stats/utils';
+import { getLighthouseMetrics, mergeMetricsByKey, addRowData } from '@bundle-stats/utils';
 
 export const enhance = compose(
   withProps(({ jobs }) => {
@@ -9,7 +9,7 @@ export const enhance = compose(
       lighthouse: getLighthouseMetrics(get(job, 'rawData.lighthouse')),
     }));
 
-    const items = addMetricsData(mergeRunsById(map(runs, 'lighthouse')));
+    const items = mergeMetricsByKey(map(runs, 'lighthouse')).map(addRowData);
 
     return {
       runs,

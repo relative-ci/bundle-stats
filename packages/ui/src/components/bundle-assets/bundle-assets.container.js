@@ -1,12 +1,7 @@
 import { compose, withProps } from 'recompose';
 import { get, filter } from 'lodash';
-import {
-  FILE_TYPES,
-  METRIC_TYPE_FILE_SIZE,
-  addMetricsData,
-  mergeRunsById,
-} from '@bundle-stats/utils';
-import { getFileType } from '@bundle-stats/utils/lib-esm/webpack';
+import { FILE_TYPES } from '@bundle-stats/utils';
+import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilters } from '../../hocs/with-filters';
@@ -88,7 +83,7 @@ const getRowFilter = (filters) => (item) => {
     return false;
   }
 
-  if (!filters[`fileTypes.${getFileType(item.key)}`]) {
+  if (!filters[`fileTypes.${webpack.getFileType(item.key)}`]) {
     return false;
   }
 
@@ -136,8 +131,7 @@ const getEntryTypeFilters = (value = true) => [
 export const enhance = compose(
   withProps(({ jobs }) => {
     const runs = jobs.map((job) => ({ meta: job }));
-    const jobsAssets = jobs.map((job) => get(job, 'metrics.webpack.assets', []));
-    const items = addMetricsData(mergeRunsById(jobsAssets), METRIC_TYPE_FILE_SIZE);
+    const items = webpack.compare.assets(jobs);
 
     return {
       runs,
