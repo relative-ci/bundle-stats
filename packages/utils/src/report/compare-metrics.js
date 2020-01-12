@@ -1,11 +1,11 @@
 import { map } from 'lodash';
 
 import { addRowData } from './add-row-data';
-import { mergeRunsById } from './merge-runs-by-id';
+import { mergeMetricsByKey } from './merge-metrics-by-key';
 
 export const compareMetrics = (jobs, selectMetrics, metricType) => {
   const data = map(jobs, selectMetrics);
-  const rows = mergeRunsById(data);
+  const rows = mergeMetricsByKey(data);
 
   return rows.map((row) => addRowData(row, metricType));
 };
