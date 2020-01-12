@@ -30,7 +30,6 @@ Object {
           "value": 11000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -59,7 +58,6 @@ Object {
           "value": 49000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -88,7 +86,6 @@ Object {
           "value": 1000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -117,7 +114,6 @@ Object {
           "value": 2000,
         },
       ],
-      "type": undefined,
     },
   ],
   "modules": Array [
@@ -148,7 +144,6 @@ Object {
               "value": 1000,
             },
           ],
-          "type": undefined,
         },
         Object {
           "biggerIsBetter": false,
@@ -171,7 +166,6 @@ Object {
               "value": 1500,
             },
           ],
-          "type": undefined,
         },
         Object {
           "biggerIsBetter": false,
@@ -194,7 +188,6 @@ Object {
               "value": 1000,
             },
           ],
-          "type": undefined,
         },
         Object {
           "biggerIsBetter": false,
@@ -213,7 +206,6 @@ Object {
             },
             null,
           ],
-          "type": undefined,
         },
         Object {
           "biggerIsBetter": false,
@@ -236,7 +228,6 @@ Object {
               "value": 1000,
             },
           ],
-          "type": undefined,
         },
         Object {
           "biggerIsBetter": false,
@@ -259,7 +250,6 @@ Object {
               "value": 1000,
             },
           ],
-          "type": undefined,
         },
       ],
     },
@@ -284,7 +274,6 @@ Object {
           "value": 1000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -302,7 +291,6 @@ Object {
         },
         null,
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -323,7 +311,6 @@ Object {
           "value": 1000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -344,7 +331,6 @@ Object {
           "value": 1000,
         },
       ],
-      "type": undefined,
     },
   ],
   "runs": Array [
@@ -383,7 +369,6 @@ Object {
           "value": 11000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -404,7 +389,6 @@ Object {
           "value": 49000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -425,7 +409,6 @@ Object {
           "value": 1000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -446,7 +429,6 @@ Object {
           "value": 0,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -467,7 +449,6 @@ Object {
           "value": 0,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -488,7 +469,6 @@ Object {
           "value": 2000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -509,7 +489,6 @@ Object {
           "value": 0,
         },
       ],
-      "type": undefined,
     },
   ],
   "stats": Array [
@@ -532,7 +511,6 @@ Object {
           "value": 63000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -553,7 +531,6 @@ Object {
           "value": 49000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -574,7 +551,6 @@ Object {
           "value": 11000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -595,7 +571,6 @@ Object {
           "value": 0,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -616,7 +591,6 @@ Object {
           "value": 5,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -637,7 +611,6 @@ Object {
           "value": 0,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -658,7 +631,6 @@ Object {
           "value": 4,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -679,7 +651,6 @@ Object {
           "value": 3,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -700,7 +671,6 @@ Object {
           "value": 0,
         },
       ],
-      "type": undefined,
     },
   ],
   "warnings": Object {
@@ -734,7 +704,6 @@ Object {
           "value": 10000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -751,7 +720,6 @@ Object {
           "value": 50000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -768,7 +736,6 @@ Object {
           "value": 1000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -785,7 +752,6 @@ Object {
           "value": 2000,
         },
       ],
-      "type": undefined,
     },
   ],
   "modules": Array [
@@ -807,7 +773,6 @@ Object {
               "value": 1000,
             },
           ],
-          "type": undefined,
         },
         Object {
           "biggerIsBetter": false,
@@ -821,7 +786,6 @@ Object {
               "value": 2000,
             },
           ],
-          "type": undefined,
         },
         Object {
           "biggerIsBetter": false,
@@ -835,7 +799,6 @@ Object {
               "value": 1000,
             },
           ],
-          "type": undefined,
         },
         Object {
           "biggerIsBetter": false,
@@ -849,7 +812,6 @@ Object {
               "value": 1000,
             },
           ],
-          "type": undefined,
         },
         Object {
           "biggerIsBetter": false,
@@ -863,7 +825,6 @@ Object {
               "value": 1000,
             },
           ],
-          "type": undefined,
         },
         Object {
           "biggerIsBetter": false,
@@ -877,7 +838,6 @@ Object {
               "value": 1000,
             },
           ],
-          "type": undefined,
         },
       ],
     },
@@ -894,7 +854,6 @@ Object {
           "value": 1000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -907,7 +866,6 @@ Object {
           "value": 1000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -920,7 +878,6 @@ Object {
           "value": 1000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -933,7 +890,6 @@ Object {
           "value": 1000,
         },
       ],
-      "type": undefined,
     },
   ],
   "runs": Array [
@@ -957,7 +913,6 @@ Object {
           "value": 10000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -970,7 +925,6 @@ Object {
           "value": 50000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -983,7 +937,6 @@ Object {
           "value": 1000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -996,7 +949,6 @@ Object {
           "value": 0,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -1009,7 +961,6 @@ Object {
           "value": 0,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -1022,7 +973,6 @@ Object {
           "value": 2000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -1035,7 +985,6 @@ Object {
           "value": 0,
         },
       ],
-      "type": undefined,
     },
   ],
   "stats": Array [
@@ -1050,7 +999,6 @@ Object {
           "value": 63000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -1063,7 +1011,6 @@ Object {
           "value": 50000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -1076,7 +1023,6 @@ Object {
           "value": 10000,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -1089,7 +1035,6 @@ Object {
           "value": 0,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -1102,7 +1047,6 @@ Object {
           "value": 6,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -1115,7 +1059,6 @@ Object {
           "value": 0,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -1128,7 +1071,6 @@ Object {
           "value": 4,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -1141,7 +1083,6 @@ Object {
           "value": 4,
         },
       ],
-      "type": undefined,
     },
     Object {
       "biggerIsBetter": false,
@@ -1154,7 +1095,6 @@ Object {
           "value": 1,
         },
       ],
-      "type": undefined,
     },
   ],
   "warnings": Object {
