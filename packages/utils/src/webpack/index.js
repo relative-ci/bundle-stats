@@ -1,15 +1,5 @@
+export * from './constants';
 export * from './filter';
 export * from './extract';
+export * from './selectors';
 export * from './utils';
-
-export const SUMMARY_METRIC_PATHS = [
-  'totalSizeByTypeALL',
-  'totalInitialSizeJS',
-  'totalInitialSizeCSS',
-  'cacheInvalidation',
-  'moduleCount',
-  'chunkCount',
-  'assetCount',
-  'packageCount',
-  'duplicatePackagesCount',
-];
