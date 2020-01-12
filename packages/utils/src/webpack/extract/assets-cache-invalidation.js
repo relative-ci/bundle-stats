@@ -1,6 +1,6 @@
 import { get, merge } from 'lodash';
 
-import { getMetricChanged } from '../../metrics/get-metric-changed';
+import { getMetricChanged } from '../../report/get-metric-changed';
 import { mergeMetricsByKey } from '../../report/merge-metrics-by-key';
 import { calculateCacheInvalidation, getMetricAdded, getMetricDeleted } from '../utils';
 
