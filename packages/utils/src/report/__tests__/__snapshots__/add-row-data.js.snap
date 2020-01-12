@@ -5,29 +5,28 @@ Array [
   Object {
     "biggerIsBetter": false,
     "changed": true,
-    "key": "metric1",
-    "label": "metric1",
+    "key": "webpack.totalSizeByTypeALL",
+    "label": "Total Bundle Size",
     "runs": Array [
       Object {
         "delta": -10,
         "deltaPercentage": -9.09090909,
-        "displayDelta": "-10",
+        "displayDelta": "-10B",
         "displayDeltaPercentage": "-9.09%",
-        "displayValue": "100",
+        "displayValue": "100B",
         "value": 100,
       },
       Object {
-        "displayValue": "110",
+        "displayValue": "110B",
         "value": 110,
       },
     ],
-    "type": "METRIC_TYPE_DURATION",
   },
   Object {
     "biggerIsBetter": false,
     "changed": true,
-    "key": "metric2",
-    "label": "metric2",
+    "key": "webpack.duplicatePackagesCount",
+    "label": "Duplicate Packages Count",
     "runs": Array [
       Object {
         "delta": 10,
@@ -39,13 +38,12 @@ Array [
       },
       null,
     ],
-    "type": "METRIC_TYPE_NUMBER",
   },
   Object {
     "biggerIsBetter": false,
     "changed": false,
-    "key": "metric4",
-    "label": "metric4",
+    "key": "webpack.mdoulesCount",
+    "label": "webpack.mdoulesCount",
     "runs": Array [
       Object {
         "delta": 0,
@@ -60,7 +58,61 @@ Array [
         "value": 100,
       },
     ],
-    "type": "METRIC_TYPE_SCORE",
+  },
+  Object {
+    "biggerIsBetter": false,
+    "changed": true,
+    "key": "webpack.cacheInvalidation",
+    "label": "Cache Invalidation",
+    "runs": Array [
+      null,
+      Object {
+        "displayValue": "10%",
+        "value": 10,
+      },
+    ],
+  },
+]
+`;
+
+exports[`report / addRowData should add data with metric type 1`] = `
+Array [
+  Object {
+    "biggerIsBetter": false,
+    "changed": true,
+    "key": "metric1",
+    "label": "metric1",
+    "runs": Array [
+      Object {
+        "delta": -10,
+        "deltaPercentage": -9.09090909,
+        "displayDelta": "-10B",
+        "displayDeltaPercentage": "-9.09%",
+        "displayValue": "100B",
+        "value": 100,
+      },
+      Object {
+        "displayValue": "110B",
+        "value": 110,
+      },
+    ],
+  },
+  Object {
+    "biggerIsBetter": false,
+    "changed": true,
+    "key": "metric2",
+    "label": "metric2",
+    "runs": Array [
+      Object {
+        "delta": 10,
+        "deltaPercentage": 100,
+        "displayDelta": "+10B",
+        "displayDeltaPercentage": "+100%",
+        "displayValue": "10B",
+        "value": 10,
+      },
+      null,
+    ],
   },
   Object {
     "biggerIsBetter": false,
@@ -70,11 +122,30 @@ Array [
     "runs": Array [
       null,
       Object {
-        "displayValue": "10",
+        "displayValue": "10B",
         "value": 10,
       },
     ],
-    "type": "METRIC_TYPE_FILE_SIZE",
+  },
+  Object {
+    "biggerIsBetter": false,
+    "changed": false,
+    "key": "metric4",
+    "label": "metric4",
+    "runs": Array [
+      Object {
+        "delta": 0,
+        "deltaPercentage": 0,
+        "displayDelta": "0B",
+        "displayDeltaPercentage": "0%",
+        "displayValue": "100B",
+        "value": 100,
+      },
+      Object {
+        "displayValue": "100B",
+        "value": 100,
+      },
+    ],
   },
 ]
 `;

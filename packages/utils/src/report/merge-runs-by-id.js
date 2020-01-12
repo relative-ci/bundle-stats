@@ -1,5 +1,5 @@
 import {
-  fill, map, mergeWith, omit,
+  fill, map, mergeWith,
 } from 'lodash';
 
 const mergeWithRuns = (index, count) => (objValue, srcValue) => {
@@ -8,10 +8,9 @@ const mergeWithRuns = (index, count) => (objValue, srcValue) => {
     ? [...objValue.runs]
     : fill(Array(count), null);
 
-  res[index] = omit(srcValue, 'type');
+  res[index] = srcValue;
 
   return {
-    type: srcValue.type,
     runs: res,
   };
 };

@@ -3,16 +3,19 @@ import { formatPercentage } from '../utils/format';
 import { getMetricChanged } from '../metrics/get-metric-changed';
 import { getMetricType } from '../metrics/get-metric-type';
 
-export const addRowData = (entries, metricType, metricPrefix = '') => entries.map((entry) => {
-  const { runs } = entry;
+export const addRowData = (row, metricType) => {
+  const { key, runs } = row;
 
+  // Resolve row metric
+  // - if the key is a predefined metric, use it
+  // - if the key is not matching an existing metric, use the default metricType
   const { biggerIsBetter, label, formatter } = getMetricType(
-    metricPrefix ? [metricPrefix, entry.key].join('.') : entry.key,
-    metricType,
+    key,
+    typeof metricType === 'string' && metricType, // explicit, avoid passing of map cb params
   );
 
   return {
-    ...entry,
+    ...row,
 
     // Metric props
     biggerIsBetter,
@@ -46,4 +49,4 @@ export const addRowData = (entries, metricType, metricPrefix = '') => entries.ma
       };
     }),
   };
-});
+};
