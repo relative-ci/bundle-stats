@@ -1,6 +1,13 @@
 import { get, pick } from 'lodash';
 
-import { SUMMARY_METRIC_PATHS } from './constants';
+import {
+  SECTION_WEBPACK_STATS,
+  SECTION_WEBPACK_SIZES,
+  SECTION_WEBPACK_ASSETS,
+  SECTION_WEBPACK_MODULES,
+  SECTION_WEBPACK_PACKAGES,
+  SUMMARY_METRIC_PATHS,
+} from './constants';
 
 const getStatsMetrics = (job) => {
   const data = get(job, 'metrics.webpack');
@@ -30,9 +37,9 @@ const getPackageMetrics = (job) => get(job, 'metrics.webpack.packages', {});
 const getModulesMetrics = (job) => get(job, 'metrics.webpack.modules', {});
 
 export const selectors = {
-  stats: getStatsMetrics,
-  sizes: getSizeMetrics,
-  assets: getAssetsMetrics,
-  packages: getPackageMetrics,
-  modules: getModulesMetrics,
+  [SECTION_WEBPACK_STATS]: getStatsMetrics,
+  [SECTION_WEBPACK_SIZES]: getSizeMetrics,
+  [SECTION_WEBPACK_ASSETS]: getAssetsMetrics,
+  [SECTION_WEBPACK_MODULES]: getModulesMetrics,
+  [SECTION_WEBPACK_PACKAGES]: getPackageMetrics,
 };
