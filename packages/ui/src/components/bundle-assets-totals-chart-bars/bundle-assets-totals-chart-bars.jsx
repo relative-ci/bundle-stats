@@ -4,28 +4,16 @@ import cx from 'classnames';
 import {
   get, map, max, sum,
 } from 'lodash';
-import {
-  addMetricsData, mergeRunsById,
-} from '@bundle-stats/utils';
+import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import { HorizontalBarChart } from '../../ui';
 import { getColors } from '../../utils';
 import { SummaryItem } from '../summary-item';
 import css from './bundle-assets-totals-chart-bars.module.css';
 
-const getWebpackSizesMetrics = (job) => {
-  const metrics = get(job, 'metrics.webpack.sizes', {});
-
-  return Object.entries(metrics).reduce((agg, [key, value]) => ({
-    ...agg,
-    [`webpack.sizes.${key}`]: value,
-  }), {});
-};
-
 export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
   const rootClassName = cx(css.root, className);
-
-  const items = addMetricsData(mergeRunsById(map(jobs, getWebpackSizesMetrics)));
+  const items = webpack.compare.sizes(jobs);
 
   const dataGraphs = [];
 
