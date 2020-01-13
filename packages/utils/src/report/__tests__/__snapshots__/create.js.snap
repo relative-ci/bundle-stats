@@ -353,26 +353,6 @@ Object {
     Object {
       "biggerIsBetter": false,
       "changed": true,
-      "key": "webpack.sizes.totalSizeByTypeCSS",
-      "label": "CSS",
-      "runs": Array [
-        Object {
-          "delta": -1000,
-          "deltaPercentage": -9.09090909,
-          "displayDelta": "-1000B",
-          "displayDeltaPercentage": "-9.09%",
-          "displayValue": "9.77KB",
-          "value": 10000,
-        },
-        Object {
-          "displayValue": "10.74KB",
-          "value": 11000,
-        },
-      ],
-    },
-    Object {
-      "biggerIsBetter": false,
-      "changed": true,
       "key": "webpack.sizes.totalSizeByTypeJS",
       "label": "JS",
       "runs": Array [
@@ -387,6 +367,26 @@ Object {
         Object {
           "displayValue": "47.85KB",
           "value": 49000,
+        },
+      ],
+    },
+    Object {
+      "biggerIsBetter": false,
+      "changed": true,
+      "key": "webpack.sizes.totalSizeByTypeCSS",
+      "label": "CSS",
+      "runs": Array [
+        Object {
+          "delta": -1000,
+          "deltaPercentage": -9.09090909,
+          "displayDelta": "-1000B",
+          "displayDeltaPercentage": "-9.09%",
+          "displayValue": "9.77KB",
+          "value": 10000,
+        },
+        Object {
+          "displayValue": "10.74KB",
+          "value": 11000,
         },
       ],
     },
@@ -905,24 +905,24 @@ Object {
     Object {
       "biggerIsBetter": false,
       "changed": false,
-      "key": "webpack.sizes.totalSizeByTypeCSS",
-      "label": "CSS",
-      "runs": Array [
-        Object {
-          "displayValue": "9.77KB",
-          "value": 10000,
-        },
-      ],
-    },
-    Object {
-      "biggerIsBetter": false,
-      "changed": false,
       "key": "webpack.sizes.totalSizeByTypeJS",
       "label": "JS",
       "runs": Array [
         Object {
           "displayValue": "48.83KB",
           "value": 50000,
+        },
+      ],
+    },
+    Object {
+      "biggerIsBetter": false,
+      "changed": false,
+      "key": "webpack.sizes.totalSizeByTypeCSS",
+      "label": "CSS",
+      "runs": Array [
+        Object {
+          "displayValue": "9.77KB",
+          "value": 10000,
         },
       ],
     },
