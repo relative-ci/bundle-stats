@@ -5,7 +5,7 @@ import { map, uniq } from 'lodash';
  *
  * @param {Object[]} runs List of runs
  * @param {number} runs[].value The metric value
- * @param {string} runs[].name The metric original name
+ * @param {string} [runs[].name] The metric original name
  * @return {boolean} Metric changed flag
  */
 export const getMetricChanged = (runs) => {

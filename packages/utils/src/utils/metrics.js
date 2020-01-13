@@ -1,6 +1,8 @@
 import { get } from 'lodash';
 
 import METRICS, { METRIC_TYPE_NUMERIC, METRIC_TYPES } from '../config/metrics';
+import { formatDelta, getDelta, getDeltaType } from './delta';
+import { formatPercentage } from './format';
 
 /**
  * Get metric type data
@@ -32,5 +34,49 @@ export const getMetricType = (key, type) => {
     ...METRIC_TYPES[resolvedType],
     type: resolvedType,
     label: key,
+  };
+};
+
+/**
+ *
+ * Get metric information
+ *
+ * @param {Object} metric Metric data
+ * @param {Function} metric.formatter Metric formatter
+ * @param {Boolean} metric.biggerIsBetter Metric flag
+ * @param {number} currentValue Current value
+ * @param {number} baselineValue Baseline value
+ *
+ * @typedef {Object} MetricInfo
+ * @property {number} value Metric value
+ * @property {string} displayValue Metric display value
+ * @property {number} delta Metric delta value
+ * @property {string} displayDelta Metric display delta value
+ * @property {string} displayDeltaPercentage Metric displat delta percentage
+ * @property {string} deltaType Metric delta type
+ *
+ * @return @MetricInfo
+ */
+export const getMetricRunInfo = (metric, currentValue, baselineValue) => {
+  const { formatter, biggerIsBetter } = metric;
+
+  const runInfo = {
+    value: currentValue,
+    displayValue: formatter(currentValue),
+  };
+
+  if (typeof baselineValue === 'undefined') {
+    return runInfo;
+  }
+
+  const { delta, deltaPercentage } = getDelta({ value: baselineValue }, { value: currentValue });
+
+  return {
+    ...runInfo,
+    delta,
+    deltaPercentage,
+    displayDelta: formatDelta(delta, formatter),
+    displayDeltaPercentage: formatDelta(deltaPercentage, formatPercentage),
+    deltaType: getDeltaType(deltaPercentage, biggerIsBetter),
   };
 };
