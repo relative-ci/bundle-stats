@@ -26,22 +26,21 @@ const getHeaders = (runs) => [
   ...runs.map(generateHeaderCell),
 ];
 
-const generateRowCell = ({ biggerIsBetter }) => (item) => {
+const generateRowCell = () => (item) => {
   if (!item || typeof item.value === 'undefined') {
     return '-';
   }
 
   const {
-    displayValue, deltaPercentage, displayDeltaPercentage,
+    displayValue, deltaPercentage, displayDeltaPercentage, deltaType,
   } = item;
 
   return (
     <Metric value={displayValue}>
       {deltaPercentage ? (
         <Delta
-          value={deltaPercentage}
           displayValue={displayDeltaPercentage}
-          biggerIsBetter={biggerIsBetter}
+          deltaType={deltaType}
         />
       ) : null}
     </Metric>
@@ -49,7 +48,7 @@ const generateRowCell = ({ biggerIsBetter }) => (item) => {
 };
 
 const getRows = (runs, items, renderRowHeader) => items.map((item) => {
-  const { biggerIsBetter, changed } = item;
+  const { changed } = item;
 
   return {
     className: changed ? '' : styles.unchanged,
@@ -58,7 +57,7 @@ const getRows = (runs, items, renderRowHeader) => items.map((item) => {
       renderRowHeader(item),
 
       // Metric item values
-      ...item.runs.map(generateRowCell({ biggerIsBetter })),
+      ...item.runs.map(generateRowCell()),
     ],
   };
 });
