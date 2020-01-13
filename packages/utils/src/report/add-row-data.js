@@ -1,6 +1,6 @@
 import { getDelta, formatDelta } from '../utils/delta';
 import { formatPercentage } from '../utils/format';
-import { getMetricType } from '../metrics/get-metric-type';
+import { getMetricType } from '../utils/metrics';
 import { getMetricChanged } from './get-metric-changed';
 
 export const addRowData = (row, metricType) => {

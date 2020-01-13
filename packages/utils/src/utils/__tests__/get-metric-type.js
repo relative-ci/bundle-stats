@@ -1,7 +1,7 @@
 import { omit } from 'lodash';
 
 import { METRIC_TYPE_FILE_SIZE } from '../../config/metrics';
-import { getMetricType } from '../get-metric-type';
+import { getMetricType } from '../metrics';
 
 describe('getMetricType', () => {
   test('should return metric', () => {
