@@ -24,6 +24,13 @@ export const getDelta = (baseline, current) => {
   };
 };
 
+/**
+ * Format delta output
+ *
+ * @param {number} value Metric value
+ * @param {Function} formatter Metric type formatter
+ * @return {String} Delta output
+ */
 export const formatDelta = (value, formatter) => {
   // eslint-disable-next-line no-nested-ternary
   let sign = value > 0
