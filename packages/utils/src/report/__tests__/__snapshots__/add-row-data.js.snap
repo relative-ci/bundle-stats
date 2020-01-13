@@ -11,6 +11,7 @@ Array [
       Object {
         "delta": -10,
         "deltaPercentage": -9.09090909,
+        "deltaType": "POSITIVE",
         "displayDelta": "-10B",
         "displayDeltaPercentage": "-9.09%",
         "displayValue": "100B",
@@ -31,6 +32,7 @@ Array [
       Object {
         "delta": 10,
         "deltaPercentage": 100,
+        "deltaType": "HIGH_NEGATIVE",
         "displayDelta": "+10",
         "displayDeltaPercentage": "+100%",
         "displayValue": "10",
@@ -48,6 +50,7 @@ Array [
       Object {
         "delta": 0,
         "deltaPercentage": 0,
+        "deltaType": "NO_CHANGE",
         "displayDelta": "0",
         "displayDeltaPercentage": "0%",
         "displayValue": "100",
@@ -86,6 +89,7 @@ Array [
       Object {
         "delta": -10,
         "deltaPercentage": -9.09090909,
+        "deltaType": "POSITIVE",
         "displayDelta": "-10B",
         "displayDeltaPercentage": "-9.09%",
         "displayValue": "100B",
@@ -106,6 +110,7 @@ Array [
       Object {
         "delta": 10,
         "deltaPercentage": 100,
+        "deltaType": "HIGH_NEGATIVE",
         "displayDelta": "+10B",
         "displayDeltaPercentage": "+100%",
         "displayValue": "10B",
@@ -136,6 +141,7 @@ Array [
       Object {
         "delta": 0,
         "deltaPercentage": 0,
+        "deltaType": "NO_CHANGE",
         "displayDelta": "0B",
         "displayDeltaPercentage": "0%",
         "displayValue": "100B",

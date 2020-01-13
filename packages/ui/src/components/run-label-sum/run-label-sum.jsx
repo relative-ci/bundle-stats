@@ -4,11 +4,7 @@ import cx from 'classnames';
 import { get } from 'lodash';
 import { flow, map, sum } from 'lodash/fp';
 import {
-  METRIC_TYPE_FILE_SIZE,
-  formatDelta,
-  formatPercentage,
-  getDelta,
-  getMetricType,
+  METRIC_TYPE_FILE_SIZE, getMetricType, getMetricRunInfo,
 } from '@bundle-stats/utils';
 
 import { Delta } from '../delta';
@@ -58,16 +54,14 @@ export const RunLabelSum = (props) => {
   }
 
   const baselineRunSum = getRunRowsSum(rows, runIndex + 1);
-  const diff = getDelta({ value: baselineRunSum }, { value: currentRunSum });
-  const displayDeltaPercentage = formatDelta(diff.deltaPercentage, formatPercentage);
+  const info = getMetricRunInfo(METRIC_TYPE_DATA, currentRunSum, baselineRunSum);
 
   return (
     <Wrapper className={rootClassName} value={currentRunSum}>
       <Delta
         className={css.delta}
-        value={diff.delta}
-        displayValue={displayDeltaPercentage}
-        biggerIsBetter={false}
+        displayValue={info.displayDeltaPercentage}
+        deltaType={info.deltaType}
       />
     </Wrapper>
   );

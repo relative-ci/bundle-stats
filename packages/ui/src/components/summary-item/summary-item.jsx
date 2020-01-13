@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import {
-  formatDelta, formatPercentage, getDelta, getMetricType,
-} from '@bundle-stats/utils';
+import { getMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { Icon, Tooltip } from '../../ui';
 import { Metric } from '../metric';
@@ -16,7 +14,7 @@ export const SummaryItem = ({
   const { baseline, current } = data || { baseline: 0, current: 0 };
 
   const metric = getMetricType(id);
-  const diff = getDelta({ value: baseline }, { value: current });
+  const runInfo = getMetricRunInfo(metric, current, baseline);
 
   const rootClassName = cx(
     css.root,
@@ -46,9 +44,8 @@ export const SummaryItem = ({
       {!loading ? showDelta && (
         <Delta
           className={css.delta}
-          value={diff.deltaPercentage}
-          displayValue={`${formatDelta(diff.delta, metric.formatter)} (${formatDelta(diff.deltaPercentage, formatPercentage)})`}
-          biggerIsBetter={metric.biggerIsBetter}
+          displayValue={`${runInfo.displayDelta} (${runInfo.displayDeltaPercentage})`}
+          deltaType={runInfo.deltaType}
         />
       ) : (
         <span className={cx(css.delta, css.loading)} />

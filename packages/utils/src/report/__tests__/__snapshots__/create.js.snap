@@ -12,6 +12,7 @@ Object {
         Object {
           "delta": -1000,
           "deltaPercentage": -9.09090909,
+          "deltaType": "POSITIVE",
           "displayDelta": "-1000B",
           "displayDeltaPercentage": "-9.09%",
           "displayValue": "9.77KB",
@@ -40,6 +41,7 @@ Object {
         Object {
           "delta": 1000,
           "deltaPercentage": 2.04081633,
+          "deltaType": "LOW_NEGATIVE",
           "displayDelta": "+1000B",
           "displayDeltaPercentage": "+2.04%",
           "displayValue": "48.83KB",
@@ -68,6 +70,7 @@ Object {
         Object {
           "delta": 0,
           "deltaPercentage": 0,
+          "deltaType": "NO_CHANGE",
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "1000B",
@@ -96,6 +99,7 @@ Object {
         Object {
           "delta": 0,
           "deltaPercentage": 0,
+          "deltaType": "NO_CHANGE",
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "1.95KB",
@@ -132,6 +136,7 @@ Object {
             Object {
               "delta": 0,
               "deltaPercentage": 0,
+              "deltaType": "NO_CHANGE",
               "displayDelta": "0B",
               "displayDeltaPercentage": "0%",
               "displayValue": "1000B",
@@ -154,6 +159,7 @@ Object {
             Object {
               "delta": 500,
               "deltaPercentage": 33.33333333,
+              "deltaType": "NEGATIVE",
               "displayDelta": "+500B",
               "displayDeltaPercentage": "+33.33%",
               "displayValue": "1.95KB",
@@ -176,6 +182,7 @@ Object {
             Object {
               "delta": 0,
               "deltaPercentage": 0,
+              "deltaType": "NO_CHANGE",
               "displayDelta": "0B",
               "displayDeltaPercentage": "0%",
               "displayValue": "1000B",
@@ -198,6 +205,7 @@ Object {
             Object {
               "delta": 1000,
               "deltaPercentage": 100,
+              "deltaType": "HIGH_NEGATIVE",
               "displayDelta": "+1000B",
               "displayDeltaPercentage": "+100%",
               "displayValue": "1000B",
@@ -216,6 +224,7 @@ Object {
             Object {
               "delta": 0,
               "deltaPercentage": 0,
+              "deltaType": "NO_CHANGE",
               "displayDelta": "0B",
               "displayDeltaPercentage": "0%",
               "displayValue": "1000B",
@@ -238,6 +247,7 @@ Object {
             Object {
               "delta": 0,
               "deltaPercentage": 0,
+              "deltaType": "NO_CHANGE",
               "displayDelta": "0B",
               "displayDeltaPercentage": "0%",
               "displayValue": "1000B",
@@ -264,6 +274,7 @@ Object {
         Object {
           "delta": 0,
           "deltaPercentage": 0,
+          "deltaType": "NO_CHANGE",
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "1000B",
@@ -284,6 +295,7 @@ Object {
         Object {
           "delta": 1000,
           "deltaPercentage": 100,
+          "deltaType": "HIGH_NEGATIVE",
           "displayDelta": "+1000B",
           "displayDeltaPercentage": "+100%",
           "displayValue": "1000B",
@@ -301,6 +313,7 @@ Object {
         Object {
           "delta": 0,
           "deltaPercentage": 0,
+          "deltaType": "NO_CHANGE",
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "1000B",
@@ -321,6 +334,7 @@ Object {
         Object {
           "delta": 0,
           "deltaPercentage": 0,
+          "deltaType": "NO_CHANGE",
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "1000B",
@@ -359,6 +373,7 @@ Object {
         Object {
           "delta": 1000,
           "deltaPercentage": 2.04081633,
+          "deltaType": "LOW_NEGATIVE",
           "displayDelta": "+1000B",
           "displayDeltaPercentage": "+2.04%",
           "displayValue": "48.83KB",
@@ -379,6 +394,7 @@ Object {
         Object {
           "delta": -1000,
           "deltaPercentage": -9.09090909,
+          "deltaType": "POSITIVE",
           "displayDelta": "-1000B",
           "displayDeltaPercentage": "-9.09%",
           "displayValue": "9.77KB",
@@ -399,6 +415,7 @@ Object {
         Object {
           "delta": 0,
           "deltaPercentage": 0,
+          "deltaType": "NO_CHANGE",
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "1000B",
@@ -419,6 +436,7 @@ Object {
         Object {
           "delta": 0,
           "deltaPercentage": 0,
+          "deltaType": "NO_CHANGE",
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "0B",
@@ -439,6 +457,7 @@ Object {
         Object {
           "delta": 0,
           "deltaPercentage": 0,
+          "deltaType": "NO_CHANGE",
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "0B",
@@ -459,6 +478,7 @@ Object {
         Object {
           "delta": 0,
           "deltaPercentage": 0,
+          "deltaType": "NO_CHANGE",
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "1.95KB",
@@ -479,6 +499,7 @@ Object {
         Object {
           "delta": 0,
           "deltaPercentage": 0,
+          "deltaType": "NO_CHANGE",
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "0B",
@@ -501,6 +522,7 @@ Object {
         Object {
           "delta": 0,
           "deltaPercentage": 0,
+          "deltaType": "NO_CHANGE",
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "61.52KB",
@@ -521,6 +543,7 @@ Object {
         Object {
           "delta": 1000,
           "deltaPercentage": 2.04081633,
+          "deltaType": "LOW_NEGATIVE",
           "displayDelta": "+1000B",
           "displayDeltaPercentage": "+2.04%",
           "displayValue": "48.83KB",
@@ -541,6 +564,7 @@ Object {
         Object {
           "delta": -1000,
           "deltaPercentage": -9.09090909,
+          "deltaType": "POSITIVE",
           "displayDelta": "-1000B",
           "displayDeltaPercentage": "-9.09%",
           "displayValue": "9.77KB",
@@ -561,6 +585,7 @@ Object {
         Object {
           "delta": 95.24,
           "deltaPercentage": 100,
+          "deltaType": "HIGH_NEGATIVE",
           "displayDelta": "+95.24%",
           "displayDeltaPercentage": "+100%",
           "displayValue": "95.24%",
@@ -581,6 +606,7 @@ Object {
         Object {
           "delta": 1,
           "deltaPercentage": 20,
+          "deltaType": "NEGATIVE",
           "displayDelta": "+1",
           "displayDeltaPercentage": "+20%",
           "displayValue": "6",
@@ -601,6 +627,7 @@ Object {
         Object {
           "delta": 0,
           "deltaPercentage": 0,
+          "deltaType": "NO_CHANGE",
           "displayDelta": "0",
           "displayDeltaPercentage": "0%",
           "displayValue": "0",
@@ -621,6 +648,7 @@ Object {
         Object {
           "delta": 0,
           "deltaPercentage": 0,
+          "deltaType": "NO_CHANGE",
           "displayDelta": "0",
           "displayDeltaPercentage": "0%",
           "displayValue": "4",
@@ -641,6 +669,7 @@ Object {
         Object {
           "delta": 1,
           "deltaPercentage": 33.33333333,
+          "deltaType": "NEGATIVE",
           "displayDelta": "+1",
           "displayDeltaPercentage": "+33.33%",
           "displayValue": "4",
@@ -661,6 +690,7 @@ Object {
         Object {
           "delta": 1,
           "deltaPercentage": 100,
+          "deltaType": "HIGH_NEGATIVE",
           "displayDelta": "+1",
           "displayDeltaPercentage": "+100%",
           "displayValue": "1",
