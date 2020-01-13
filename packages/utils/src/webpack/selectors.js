@@ -1,5 +1,6 @@
 import { get, pick } from 'lodash';
 
+import METRICS from '../config/metrics';
 import {
   SECTION_WEBPACK_STATS,
   SECTION_WEBPACK_SIZES,
@@ -9,6 +10,16 @@ import {
   SUMMARY_METRIC_PATHS,
 } from './constants';
 
+/**
+ *
+ * Get stats metrics
+ *
+ * @param {Object} job Job data
+ * @param {Object} job.metrics Job metrics
+ * @param {Object} job.metrics.webpack Job webpack metrics
+ *
+ * @return {Object} Webpack stats metrics
+ */
 const getStatsMetrics = (job) => {
   const data = get(job, 'metrics.webpack');
   const metrics = pick(data, SUMMARY_METRIC_PATHS);
@@ -20,21 +31,65 @@ const getStatsMetrics = (job) => {
   }), {});
 };
 
+/**
+ *
+ * Get size metrics
+ *
+ * @param {Object} job Job data
+ * @param {Object} job.metrics Job metrics
+ * @param {Object} job.metrics.webpack Job webpack metrics
+ * @param {Object} job.metrics.webpack.sizes Job webpack size metrics
+ *
+ * @return {Object} Webpack size metrics
+ */
 const getSizeMetrics = (job) => {
   const metrics = get(job, 'metrics.webpack.sizes', {});
 
-  // rename metric keys
-  return Object.entries(metrics).reduce((agg, [key, value]) => ({
+  // List metrics by the metrics list
+  return Object.keys(METRICS.webpack.sizes).reduce((agg, key) => ({
     ...agg,
-    [`webpack.sizes.${key}`]: value,
+    [`webpack.sizes.${key}`]: metrics[key],
   }), {});
 };
 
+/**
+ *
+ * Get asset metrics
+ *
+ * @param {Object} job Job data
+ * @param {Object} job.metrics Job metrics
+ * @param {Object} job.metrics.webpack Job webpack metrics
+ * @param {Object} job.metrics.webpack.assets Job webpack asset metrics
+ *
+ * @return {Object} Webpack asset metrics
+ */
 const getAssetsMetrics = (job) => get(job, 'metrics.webpack.assets', {});
 
-const getPackageMetrics = (job) => get(job, 'metrics.webpack.packages', {});
-
+/**
+ *
+ * Get module metrics
+ *
+ * @param {Object} job Job data
+ * @param {Object} job.metrics Job metrics
+ * @param {Object} job.metrics.webpack Job webpack metrics
+ * @param {Object} job.metrics.webpack.modules Job webpack module metrics
+ *
+ * @return {Object} Webpack module metrics
+ */
 const getModulesMetrics = (job) => get(job, 'metrics.webpack.modules', {});
+
+/**
+ *
+ * Get package metrics
+ *
+ * @param {Object} job Job data
+ * @param {Object} job.metrics Job metrics
+ * @param {Object} job.metrics.webpack Job webpack metrics
+ * @param {Object} job.metrics.webpack.packages Job webpack package metrics
+ *
+ * @return {Object} Webpack package metrics
+ */
+const getPackageMetrics = (job) => get(job, 'metrics.webpack.packages', {});
 
 export const selectors = {
   [SECTION_WEBPACK_STATS]: getStatsMetrics,
