@@ -2,7 +2,7 @@ import {
   find, get, isEmpty, last, set,
 } from 'lodash';
 
-import { PACKAGES_SEPARATOR } from '../../config';
+import { INSIGHT_WARNING, PACKAGES_SEPARATOR } from '../../config';
 
 export const extractModulesPackagesDuplicate = (webpackStats, currentExtractedData) => {
   const data = get(currentExtractedData, 'metrics.packages', {});
@@ -41,8 +41,10 @@ export const extractModulesPackagesDuplicate = (webpackStats, currentExtractedDa
   }, { paths: {}, value: 0 });
 
   return {
-    warnings: {
-      ...!isEmpty(paths) ? set({}, 'duplicatePackages', paths) : {},
+    insights: {
+      ...!isEmpty(paths)
+        ? set({}, 'duplicatePackages', { type: INSIGHT_WARNING, data: paths })
+        : {},
     },
     metrics: {
       duplicatePackagesCount: {
