@@ -5,7 +5,7 @@ import { createSummary } from './create-summary';
 import * as webpack from '../webpack';
 
 const SOURCE_FNS = { webpack };
-const GENERIC_PROPS = ['meta', 'warnings', 'metrics'];
+const GENERIC_PROPS = ['meta', 'insights', 'metrics'];
 
 /*
  * Create job from stats
