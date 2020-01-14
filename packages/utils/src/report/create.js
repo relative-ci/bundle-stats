@@ -3,7 +3,7 @@ import { get, isEmpty } from 'lodash';
 import * as webpack from '../webpack';
 
 export const createReport = (jobs) => {
-  const warnings = get(jobs, '[0].warnings');
+  const insights = get(jobs, '[0].insights');
 
   return {
     runs: jobs.map(({ internalBuildNumber, meta }) => ({
@@ -11,8 +11,8 @@ export const createReport = (jobs) => {
       internalBuildNumber,
     })),
 
-    // Add warnings if available
-    ...!isEmpty(warnings) ? { warnings } : {},
+    // Add insights if available
+    ...!isEmpty(insights) ? { insights } : {},
 
     // Add webpack sections comparisons
     ...webpack.SECTIONS.reduce((agg, section) => ({

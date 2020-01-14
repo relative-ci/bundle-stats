@@ -46,7 +46,7 @@ const StandaloneApp = ({ jobs }) => {
     );
   }
 
-  const warnings = jobs[0] && jobs[0].warnings;
+  const insights = jobs[0] && jobs[0].insights;
 
   return (
     <StandaloneAppLayout>
@@ -60,9 +60,9 @@ const StandaloneApp = ({ jobs }) => {
           showSummaryItemBaselineValue={jobs.length !== 1}
         />
       </Container>
-      {warnings && warnings.webpack && warnings.webpack.duplicatePackages && (
+      {insights && insights.webpack && insights.webpack.duplicatePackages && (
         <Container>
-          <DuplicatePackagesWarning duplicatePackages={warnings.webpack.duplicatePackages} />
+          <DuplicatePackagesWarning duplicatePackages={insights.webpack.duplicatePackages.data} />
         </Container>
       )}
       <Container>
@@ -133,7 +133,7 @@ StandaloneApp.defaultProps = {
 StandaloneApp.propTypes = {
   jobs: PropTypes.arrayOf(PropTypes.shape({
     internalBuildNumber: PropTypes.number,
-    warnings: PropTypes.object,
+    insights: PropTypes.object,
     summary: PropTypes.object,
   })),
 };
