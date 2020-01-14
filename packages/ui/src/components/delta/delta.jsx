@@ -7,12 +7,7 @@ import css from './delta.module.css';
 export const Delta = ({
   className, displayValue, deltaType,
 }) => {
-  const rootClassName = cx(css.root, className, {
-    [css.negative]: ['NEGATIVE', 'HIGH_NEGATIVE'].includes(deltaType),
-    [css.slightlyNegative]: deltaType === 'LOW_NEGATIVE',
-    [css.slightlyPositive]: deltaType === 'LOW_POSITIVE',
-    [css.positive]: ['POSITIVE', 'HIGH_POSITIVE'].includes(deltaType),
-  });
+  const rootClassName = cx(css.root, className, css[deltaType]);
 
   return (
     <span className={rootClassName}>
