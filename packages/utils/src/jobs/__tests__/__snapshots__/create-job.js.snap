@@ -2,6 +2,19 @@
 
 exports[`createJob no baseline 1`] = `
 Object {
+  "insights": Object {
+    "webpack": Object {
+      "duplicatePackages": Object {
+        "data": Object {
+          "package-c": Array [
+            "package-a:package-c",
+            "package-c",
+          ],
+        },
+        "type": "WARNING",
+      },
+    },
+  },
   "meta": Object {
     "webpack": Object {
       "builtAt": "2019-01-01T00:00:00.000Z",
@@ -271,21 +284,24 @@ Object {
       },
     },
   },
-  "warnings": Object {
-    "webpack": Object {
-      "duplicatePackages": Object {
-        "package-c": Array [
-          "package-a:package-c",
-          "package-c",
-        ],
-      },
-    },
-  },
 }
 `;
 
 exports[`createJob with baseline 1`] = `
 Object {
+  "insights": Object {
+    "webpack": Object {
+      "duplicatePackages": Object {
+        "data": Object {
+          "package-c": Array [
+            "package-a:package-c",
+            "package-c",
+          ],
+        },
+        "type": "WARNING",
+      },
+    },
+  },
   "meta": Object {
     "webpack": Object {
       "builtAt": "2019-01-01T00:00:00.000Z",
@@ -552,16 +568,6 @@ Object {
       "totalSizeByTypeALL": Object {
         "baseline": 63000,
         "current": 63000,
-      },
-    },
-  },
-  "warnings": Object {
-    "webpack": Object {
-      "duplicatePackages": Object {
-        "package-c": Array [
-          "package-a:package-c",
-          "package-c",
-        ],
       },
     },
   },

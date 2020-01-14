@@ -51,10 +51,10 @@ stories.add('totals', () => (
       <Container>
         <Summary data={currentJob.summary} showSummaryItemBaselineValue />
       </Container>
-      {get(currentJob, 'warnings.webpack.duplicatePackages') && (
+      {get(currentJob, 'insights.webpack.duplicatePackages') && (
         <Container>
           <DuplicatePackagesWarning
-            duplicatePackages={get(currentJob, 'warnings.webpack.duplicatePackages')}
+            duplicatePackages={get(currentJob, 'insights.webpack.duplicatePackages.data')}
           />
         </Container>
       )}
@@ -89,10 +89,10 @@ stories.add('assets', () => (
       <Container>
         <Summary data={currentJob.summary} showSummaryItemBaselineValue />
       </Container>
-      {get(currentJob, 'warnings.webpack.duplicatePackages') && (
+      {get(currentJob, 'insights.webpack.duplicatePackages') && (
         <Container>
           <DuplicatePackagesWarning
-            duplicatePackages={get(currentJob, 'warnings.webpack.duplicatePackages')}
+            duplicatePackages={get(currentJob, 'insights.webpack.duplicatePackages.data')}
           />
         </Container>
       )}
@@ -124,10 +124,10 @@ stories.add('modules', () => (
       <Container>
         <Summary data={currentJob.summary} showSummaryItemBaselineValue />
       </Container>
-      {get(currentJob, 'warnings.webpack.duplicatePackages') && (
+      {get(currentJob, 'insights.webpack.duplicatePackages') && (
         <Container>
           <DuplicatePackagesWarning
-            duplicatePackages={get(currentJob, 'warnings.webpack.duplicatePackages')}
+            duplicatePackages={get(currentJob, 'insights.webpack.duplicatePackages.data')}
           />
         </Container>
       )}
@@ -157,10 +157,10 @@ stories.add('packages', () => (
       <Container>
         <Summary data={currentJob.summary} showSummaryItemBaselineValue />
       </Container>
-      {get(currentJob, 'warnings.webpack.duplicatePackages') && (
+      {get(currentJob, 'insights.webpack.duplicatePackages') && (
         <Container>
           <DuplicatePackagesWarning
-            duplicatePackages={get(currentJob, 'warnings.webpack.duplicatePackages')}
+            duplicatePackages={get(currentJob, 'insights.webpack.duplicatePackages.data')}
           />
         </Container>
       )}
