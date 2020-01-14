@@ -120,6 +120,19 @@ Object {
       ],
     },
   ],
+  "insights": Object {
+    "webpack": Object {
+      "duplicatePackages": Object {
+        "data": Object {
+          "package-c": Array [
+            "package-a:package-c",
+            "package-c",
+          ],
+        },
+        "type": "WARNING",
+      },
+    },
+  },
   "modules": Array [
     Object {
       "chunkId": "1",
@@ -703,16 +716,6 @@ Object {
       ],
     },
   ],
-  "warnings": Object {
-    "webpack": Object {
-      "duplicatePackages": Object {
-        "package-c": Array [
-          "package-a:package-c",
-          "package-c",
-        ],
-      },
-    },
-  },
 }
 `;
 
@@ -784,6 +787,19 @@ Object {
       ],
     },
   ],
+  "insights": Object {
+    "webpack": Object {
+      "duplicatePackages": Object {
+        "data": Object {
+          "package-c": Array [
+            "package-a:package-c",
+            "package-c",
+          ],
+        },
+        "type": "WARNING",
+      },
+    },
+  },
   "modules": Array [
     Object {
       "chunkId": "1",
@@ -1127,15 +1143,5 @@ Object {
       ],
     },
   ],
-  "warnings": Object {
-    "webpack": Object {
-      "duplicatePackages": Object {
-        "package-c": Array [
-          "package-a:package-c",
-          "package-c",
-        ],
-      },
-    },
-  },
 }
 `;

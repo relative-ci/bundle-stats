@@ -37,12 +37,12 @@ stories.add('default', () => (
   <StandaloneApp jobs={[CURRENT_JOB, BASELINE_JOB]} />
 ));
 
-stories.add('no warnings', () => (
+stories.add('no insights', () => (
   <StandaloneApp
     jobs={[
       {
         ...CURRENT_JOB,
-        warnings: undefined,
+        insights: undefined,
       },
       BASELINE_JOB,
     ]}
