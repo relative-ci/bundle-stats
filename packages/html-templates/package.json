@@ -79,5 +79,8 @@
     "webpack-cli": "3.3.11",
     "webpack-merge": "4.2.2",
     "whatwg-fetch": "3.0.0"
+  },
+  "dependencies": {
+    "react-helmet": "^5.2.1"
   }
 }
