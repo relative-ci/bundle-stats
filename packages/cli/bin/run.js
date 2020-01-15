@@ -4,10 +4,10 @@ const { readJSON, outputFile } = require('fs-extra');
 const Listr = require('listr');
 const { get } = require('lodash');
 
-const { createJobs } = require('@bundle-stats/utils');
+const { createJobs, createReport } = require('@bundle-stats/utils');
 const { filter } = require('@bundle-stats/utils/lib/webpack');
 const {
-  TEXT, createReports, getBaselineStatsFilepath, readBaseline, writeBaseline,
+  TEXT, createArtifacts, getBaselineStatsFilepath, readBaseline, writeBaseline,
 } = require('@bundle-stats/cli-utils');
 
 module.exports = ({
@@ -19,7 +19,7 @@ module.exports = ({
       task: (ctx) => Promise
         .all(artifactFilepaths.map((filepath) => readJSON(filepath)))
         .then((sources) => {
-          ctx.artifacts = sources.map((source) => ({ webpack: source }));
+          ctx.sources = sources.map((source) => ({ webpack: source }));
         }),
     },
     {
@@ -29,7 +29,7 @@ module.exports = ({
         // eslint-disable-next-line no-param-reassign
         task.title = `${task.title} (${baselineFilepath})`;
 
-        ctx.artifacts = ctx.artifacts.concat([{ webpack: ctx.baselineStats }]);
+        ctx.sources = ctx.sources.concat([{ webpack: ctx.baselineStats }]);
       },
       skip: async (ctx) => {
         if (!compare) {
@@ -55,9 +55,12 @@ module.exports = ({
     {
       title: 'Write baseline data',
       task: (ctx, task) => {
-        const stats = get(ctx, 'artifacts[0]webpack');
+        const stats = get(ctx, 'sources[0]webpack');
         const filteredWebpackStats = filter(stats);
-        const baselineFilepath = path.relative(process.cwd(), getBaselineStatsFilepath());
+        const baselineFilepath = path.relative(
+          process.cwd(),
+          getBaselineStatsFilepath(),
+        );
 
         return writeBaseline(filteredWebpackStats).then(() => {
           // eslint-disable-next-line no-param-reassign
@@ -69,23 +72,25 @@ module.exports = ({
     {
       title: 'Process data',
       task: (ctx) => {
-        ctx.jobs = createJobs(ctx.artifacts);
+        ctx.jobs = createJobs(ctx.sources);
+        ctx.report = createReport(ctx.jobs);
       },
     },
     {
       title: 'Generate reports',
       task: async (ctx) => {
-        ctx.reports = await createReports(ctx.jobs, { html, json });
+        ctx.artifacts = await createArtifacts(ctx.jobs, ctx.report, { html, json });
       },
     },
     {
       title: 'Save reports',
       task: (ctx) => new Listr(
-        ctx.reports.map(({ filename, output }) => ({
+        Object.values(ctx.artifacts).map(({ filename, output }) => ({
           title: filename,
           task: async () => {
             const filepath = path.join(outDir, filename);
             await outputFile(filepath, output);
+
             ctx.output = [
               ...ctx.output ? ctx.output : [],
               filepath,
@@ -99,7 +104,7 @@ module.exports = ({
 
   tasks.run()
     .then(({ output }) => {
-      console.log('\nReports saved:');
+      console.log('\nArtifacts:');
       output.map((reportPath) => console.log(`- ${reportPath}`));
     })
     .catch((err) => {
