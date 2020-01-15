@@ -1,10 +1,10 @@
 import path from 'path';
 import process from 'process';
 import { get, merge } from 'lodash';
-import { createJobs } from '@bundle-stats/utils';
+import { createJobs, createReport } from '@bundle-stats/utils';
 import { filter } from '@bundle-stats/utils/lib-esm/webpack';
 import {
-  TEXT, getBaselineStatsFilepath, readBaseline, createReports,
+  TEXT, getBaselineStatsFilepath, readBaseline, createArtifacts,
 } from '@bundle-stats/cli-utils';
 
 const DEFAULT_OPTIONS = {
@@ -66,36 +66,31 @@ const getOnEmit = (options) => async (compilation, callback) => {
     { webpack: data },
     ...compare ? [{ webpack: baselineStats }] : [],
   ]);
+  const report = createReport(jobs);
 
-  let reports = [];
+  const artifacts = createArtifacts(jobs, report, { html, json });
 
-  try {
-    reports = await createReports(jobs, { html, json });
+  Object.values(artifacts).forEach(({ filename, output }) => {
+    const filepath = path.join(outDir, filename);
 
-    reports.forEach(({ filename, output }) => {
-      const filepath = path.join(outDir, filename);
+    // eslint-disable-next-line no-param-reassign
+    compilation.assets[filepath] = {
+      size: () => 0,
+      source: () => output,
+    };
+  });
 
-      // eslint-disable-next-line no-param-reassign
-      compilation.assets[filepath] = {
-        size: () => 0,
-        source: () => output,
-      };
-    });
+  if (baseline) {
+    // eslint-disable-next-line no-param-reassign
+    compilation.assets[baselineFilepath] = {
+      size: () => 0,
+      source: () => JSON.stringify(data),
+    };
 
-    if (baseline) {
-      // eslint-disable-next-line no-param-reassign
-      compilation.assets[baselineFilepath] = {
-        size: () => 0,
-        source: () => JSON.stringify(data),
-      };
-
-      logger.info(`Write baseline data to ${baselineFilepath}`);
-    }
-
-    callback();
-  } catch (err) {
-    callback(err);
+    logger.info(`Write baseline data to ${baselineFilepath}`);
   }
+
+  callback();
 };
 
 export class BundleStatsWebpackPlugin {

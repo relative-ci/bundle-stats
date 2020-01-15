@@ -1,5 +1,4 @@
 import { readFileSync } from 'fs-extra';
-import { createReport } from '@bundle-stats/utils';
 
 import {
   INITIAL_DATA_PATTERN,
@@ -10,28 +9,29 @@ import {
 
 const templateFilepath = require.resolve('@bundle-stats/html-templates');
 
-export const createHTMLReport = (jobs) => {
+export const createHTMLArtifact = (jobs) => {
   const template = readFileSync(templateFilepath, 'utf-8');
   return template.replace(INITIAL_DATA_PATTERN, `window.__INITIAL_DATA__ = ${JSON.stringify(jobs)}`);
 };
 
-export const createJSONReport = (jobs) => JSON.stringify(createReport(jobs), null, 2);
+export const createJSONArtifact = (_, report) => JSON.stringify(report, null, 2);
 
 const REPORT_HANDLERS = {
-  [OUTPUT_TYPE_HTML]: createHTMLReport,
-  [OUTPUT_TYPE_JSON]: createJSONReport,
+  [OUTPUT_TYPE_HTML]: createHTMLArtifact,
+  [OUTPUT_TYPE_JSON]: createJSONArtifact,
 };
 
-export const createReports = (jobs, options) => {
+export const createArtifacts = (jobs, report, options) => {
   const types = [
     ...options.html ? ['html'] : [],
     ...options.json ? ['json'] : [],
   ];
 
-  return Promise.all(
-    types.map((type) => ({
-      output: REPORT_HANDLERS[type](jobs),
+  return types.reduce((agg, type) => ({
+    ...agg,
+    [type]: {
+      output: REPORT_HANDLERS[type](jobs, report),
       filename: `${OUTPUT_FILENAME}.${type}`,
-    })),
-  );
+    },
+  }), {});
 };
