@@ -4,6 +4,13 @@ exports[`createJob no baseline 1`] = `
 Object {
   "insights": Object {
     "webpack": Object {
+      "assetsSizeTotal": Object {
+        "data": Object {
+          "md": "Bundle size increased with *+61.52KB* (*+100%*).",
+          "text": "Bundle size increased with +61.52KB (+100%).",
+        },
+        "type": "INFO",
+      },
       "duplicatePackages": Object {
         "data": Object {
           "package-c": Array [
@@ -291,6 +298,13 @@ exports[`createJob with baseline 1`] = `
 Object {
   "insights": Object {
     "webpack": Object {
+      "assetsSizeTotal": Object {
+        "data": Object {
+          "md": "Bundle size did not change.",
+          "text": "Bundle size did not change.",
+        },
+        "type": "INFO",
+      },
       "duplicatePackages": Object {
         "data": Object {
           "package-c": Array [
