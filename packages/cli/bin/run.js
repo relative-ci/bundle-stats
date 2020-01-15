@@ -3,11 +3,12 @@ const path = require('path');
 const { readJSON, outputFile } = require('fs-extra');
 const Listr = require('listr');
 const { get } = require('lodash');
+const boxen = require('boxen');
 
 const { createJobs, createReport } = require('@bundle-stats/utils');
 const { filter } = require('@bundle-stats/utils/lib/webpack');
 const {
-  TEXT, createArtifacts, getBaselineStatsFilepath, readBaseline, writeBaseline,
+  TEXT, createArtifacts, getBaselineStatsFilepath, getReportInfo, readBaseline, writeBaseline,
 } = require('@bundle-stats/cli-utils');
 
 module.exports = ({
@@ -103,7 +104,13 @@ module.exports = ({
   ]);
 
   tasks.run()
-    .then(({ output }) => {
+    .then(({ output, report }) => {
+      const info = getReportInfo(report);
+
+      if (info) {
+        console.log(`\n${boxen(info)}`);
+      }
+
       console.log('\nArtifacts:');
       output.map((reportPath) => console.log(`- ${reportPath}`));
     })
