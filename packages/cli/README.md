@@ -102,7 +102,7 @@ $ bundle-stats --html --json __fixtures__/webpack-stats-0.json __fixtures__/webp
   ✔ Generate reports
   ✔ Save reports
 
-Reports saved:
+Artifacts saved:
 - ./dist/bundle-stats.html
 - ./dist/bundle-stats.json
 ```
@@ -128,7 +128,7 @@ $ bundle-stats --baseline artifacts/webpack-stats.json
  ✔ Generate reports
  ✔ Save reports
 
-Reports saved:
+Artifacts saved:
 - ./dist/bundle-stats.html
 
 # Checkout to the working branch/tag/commit
@@ -147,7 +147,7 @@ $ bundle-stats artifacts/webpack-stats.json
  ✔ Generate reports
  ✔ Save reports
 
-Reports saved:
+Artifacts saved:
 - ./dist/bundle-stats.html
 ```
 
