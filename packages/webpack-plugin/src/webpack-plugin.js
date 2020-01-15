@@ -4,7 +4,7 @@ import { get, merge } from 'lodash';
 import { createJobs, createReport } from '@bundle-stats/utils';
 import { filter } from '@bundle-stats/utils/lib-esm/webpack';
 import {
-  TEXT, getBaselineStatsFilepath, readBaseline, createArtifacts,
+  TEXT, getBaselineStatsFilepath, getReportInfo, readBaseline, createArtifacts,
 } from '@bundle-stats/cli-utils';
 
 const DEFAULT_OPTIONS = {
@@ -67,7 +67,6 @@ const getOnEmit = (options) => async (compilation, callback) => {
     ...compare ? [{ webpack: baselineStats }] : [],
   ]);
   const report = createReport(jobs);
-
   const artifacts = createArtifacts(jobs, report, { html, json });
 
   Object.values(artifacts).forEach(({ filename, output }) => {
@@ -88,6 +87,12 @@ const getOnEmit = (options) => async (compilation, callback) => {
     };
 
     logger.info(`Write baseline data to ${baselineFilepath}`);
+  }
+
+  const info = getReportInfo(report);
+
+  if (info) {
+    logger.info(info);
   }
 
   callback();
