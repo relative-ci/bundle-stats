@@ -45,6 +45,7 @@
   "dependencies": {
     "@bundle-stats/cli-utils": "^2.0.0-beta.3",
     "@bundle-stats/utils": "^2.0.0-beta.3",
+    "boxen": "^4.2.0",
     "core-js": "^3.1.4",
     "fs-extra": "8.1.0",
     "listr": "^0.14.3",
