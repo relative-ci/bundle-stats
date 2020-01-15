@@ -102,6 +102,10 @@ $ bundle-stats --html --json __fixtures__/webpack-stats-0.json __fixtures__/webp
   ✔ Generate reports
   ✔ Save reports
 
+┌────────────────────────────────────────────┐
+│Bundle size decreased with -3.06KB (-0.38%).│
+└────────────────────────────────────────────┘
+
 Artifacts saved:
 - ./dist/bundle-stats.html
 - ./dist/bundle-stats.json
@@ -128,9 +132,15 @@ $ bundle-stats --baseline artifacts/webpack-stats.json
  ✔ Generate reports
  ✔ Save reports
 
+┌────────────────────────────────────────────┐
+│Bundle size decreased with -3.06KB (-0.38%).│
+└────────────────────────────────────────────┘
+
 Artifacts saved:
 - ./dist/bundle-stats.html
+```
 
+```
 # Checkout to the working branch/tag/commit
 $ git checkout MY_FEATURE_BRANCH
 
@@ -146,6 +156,10 @@ $ bundle-stats artifacts/webpack-stats.json
  ✔ Process data
  ✔ Generate reports
  ✔ Save reports
+
+┌────────────────────────────────────────────┐
+│Bundle size decreased with -3.06KB (-0.38%).│
+└────────────────────────────────────────────┘
 
 Artifacts saved:
 - ./dist/bundle-stats.html
