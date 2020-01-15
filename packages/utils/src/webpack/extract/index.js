@@ -5,6 +5,7 @@ import { extractAssetsCacheInvalidation } from './assets-cache-invalidation';
 import { extractAssetsChunkCount } from './assets-chunk-count';
 import { extractAssetsCount } from './assets-count';
 import { extractAssetsSize } from './assets-size';
+import { extractAssetsSizeTotalInsight } from './assets-size-total-insight';
 import { extractMeta } from './meta';
 import { extractModules } from './modules';
 import { extractModulesCount } from './modules-count';
@@ -18,6 +19,7 @@ const extractFns = [
   extractAssetsChunkCount,
   extractAssetsCount,
   extractAssetsSize,
+  extractAssetsSizeTotalInsight,
   extractMeta,
   extractModules,
   extractModulesCount,
