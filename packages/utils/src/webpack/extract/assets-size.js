@@ -1,6 +1,6 @@
 import { get, map, sum } from 'lodash';
 
-import { FILE_TYPE_CSS, FILE_TYPE_JS, FILE_TYPES } from '../../config';
+import { FILE_TYPE_CSS, FILE_TYPE_JS, FILE_TYPES } from '../../config/file-types';
 import { getFileType } from '../utils';
 
 const METRIC_NAME_ALL = 'ALL';
