@@ -1,4 +1,4 @@
 {
-  "title": "BundleStats report",
+  "title": "BundleStats",
   "description": "relative-ci/bundle-stats: In-depth bundle analyzer for webpack(bundle size, assets, modules, packages)"
 }
