@@ -5,11 +5,36 @@ const Listr = require('listr');
 const { get } = require('lodash');
 const boxen = require('boxen');
 
-const { createJobs, createReport } = require('@bundle-stats/utils');
+const {
+  DELTA_TYPE_HIGH_NEGATIVE,
+  DELTA_TYPE_NEGATIVE,
+  DELTA_TYPE_LOW_NEGATIVE,
+  DELTA_TYPE_NO_CHANGE,
+  DELTA_TYPE_LOW_POSITIVE,
+  DELTA_TYPE_POSITIVE,
+  DELTA_TYPE_HIGH_POSITIVE,
+  createJobs,
+  createReport,
+} = require('@bundle-stats/utils');
 const { filter } = require('@bundle-stats/utils/lib/webpack');
 const {
   TEXT, createArtifacts, getBaselineStatsFilepath, getReportInfo, readBaseline, writeBaseline,
 } = require('@bundle-stats/cli-utils');
+
+const REPORT_INFO_COLORS = {
+  [DELTA_TYPE_HIGH_NEGATIVE]: 'red',
+  [DELTA_TYPE_NEGATIVE]: 'red',
+  [DELTA_TYPE_LOW_NEGATIVE]: 'yellow',
+  [DELTA_TYPE_NO_CHANGE]: 'gray',
+  [DELTA_TYPE_LOW_POSITIVE]: 'green',
+  [DELTA_TYPE_POSITIVE]: 'green',
+  [DELTA_TYPE_HIGH_POSITIVE]: 'green',
+};
+
+const getReportInfoBorderColor = (reportInfo) => {
+  const { deltaType } = reportInfo.info;
+  return REPORT_INFO_COLORS[deltaType];
+};
 
 module.exports = ({
   baseline, compare, html, json, outDir, artifactFilepaths,
@@ -105,10 +130,18 @@ module.exports = ({
 
   tasks.run()
     .then(({ output, report }) => {
-      const info = getReportInfo(report);
+      const reportInfo = getReportInfo(report);
 
-      if (info) {
-        console.log(`\n${boxen(info)}`);
+      if (reportInfo) {
+        const infoBox = boxen(
+          reportInfo.text,
+          {
+            padding: 1,
+            borderColor: getReportInfoBorderColor(reportInfo),
+          },
+        );
+
+        console.log(`\n${infoBox}`);
       }
 
       console.log('\nArtifacts:');
