@@ -6,6 +6,15 @@ Object {
     "webpack": Object {
       "assetsSizeTotal": Object {
         "data": Object {
+          "info": Object {
+            "delta": 63000,
+            "deltaPercentage": 100,
+            "deltaType": "HIGH_NEGATIVE",
+            "displayDelta": "+61.52KB",
+            "displayDeltaPercentage": "+100%",
+            "displayValue": "61.52KB",
+            "value": 63000,
+          },
           "md": "Bundle size increased with *+61.52KB* (*+100%*).",
           "text": "Bundle size increased with +61.52KB (+100%).",
         },
@@ -300,6 +309,15 @@ Object {
     "webpack": Object {
       "assetsSizeTotal": Object {
         "data": Object {
+          "info": Object {
+            "delta": 0,
+            "deltaPercentage": 0,
+            "deltaType": "NO_CHANGE",
+            "displayDelta": "0B",
+            "displayDeltaPercentage": "0%",
+            "displayValue": "61.52KB",
+            "value": 63000,
+          },
           "md": "Bundle size did not change.",
           "text": "Bundle size did not change.",
         },
