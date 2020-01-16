@@ -92,7 +92,7 @@ const getOnEmit = (options) => async (compilation, callback) => {
   const info = getReportInfo(report);
 
   if (info) {
-    logger.info(info);
+    logger.info(info.text);
   }
 
   callback();
