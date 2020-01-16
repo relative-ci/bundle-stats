@@ -13,6 +13,15 @@ describe('Webpack/extracts/extractAssetsSizeTotalInsight', () => {
           data: {
             md: 'Bundle size increased with *+9.77KB* (*+100%*).',
             text: 'Bundle size increased with +9.77KB (+100%).',
+            info: {
+              delta: 10000,
+              deltaPercentage: 100,
+              deltaType: 'HIGH_NEGATIVE',
+              displayDelta: '+9.77KB',
+              displayDeltaPercentage: '+100%',
+              displayValue: '9.77KB',
+              value: 10000,
+            },
           },
           type: 'INFO',
         },
@@ -33,6 +42,15 @@ describe('Webpack/extracts/extractAssetsSizeTotalInsight', () => {
           data: {
             md: 'Bundle size decreased with *-9.77KB* (*-50%*).',
             text: 'Bundle size decreased with -9.77KB (-50%).',
+            info: {
+              delta: -10000,
+              deltaPercentage: -50,
+              deltaType: 'POSITIVE',
+              displayDelta: '-9.77KB',
+              displayDeltaPercentage: '-50%',
+              displayValue: '9.77KB',
+              value: 10000,
+            },
           },
           type: 'INFO',
         },

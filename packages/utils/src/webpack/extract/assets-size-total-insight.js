@@ -39,9 +39,8 @@ export const extractAssetsSizeTotalInsight = (
   const baselineValue = get(baselineBundleStats, ['metrics', 'webpack', METRIC_NAME, 'value'], 0);
 
   const metric = getMetricType(['webpack', METRIC_NAME].join('.'));
-  const {
-    deltaType, displayDelta, displayDeltaPercentage,
-  } = getMetricRunInfo(metric, currentValue, baselineValue);
+  const info = getMetricRunInfo(metric, currentValue, baselineValue);
+  const { deltaType, displayDelta, displayDeltaPercentage } = info;
   const messageTemplate = TEMPLATES.get(deltaType);
 
   return {
@@ -54,6 +53,7 @@ export const extractAssetsSizeTotalInsight = (
             displayDelta: `*${displayDelta}*`,
             displayDeltaPercentage: `*${displayDeltaPercentage}*`,
           }),
+          info,
         },
       },
     },
