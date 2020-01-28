@@ -2,7 +2,7 @@ const { BundleStatsWebpackPlugin } = require('bundle-stats');
 
 module.exports = (pluginOptions = {}) => (nextConfig = {}) => ({
   ...nextConfig,
-  webpack: (config, options) => {
+  webpack(config, options) {
     if (!options.defaultLoaders) {
       throw new Error(
         'This plugin is not compatible with Next.js versions below 5.0.0 https://err.sh/next-plugins/upgrade',
@@ -11,16 +11,16 @@ module.exports = (pluginOptions = {}) => (nextConfig = {}) => ({
 
     const { dev, isServer } = options;
 
-    if (dev || isServer) {
-      return config;
+    if (!dev && !isServer) {
+      config.plugins.push(
+        new BundleStatsWebpackPlugin(pluginOptions),
+      );
     }
 
-    return {
-      ...config,
-      plugins: [
-        ...config.plugins,
-        new BundleStatsWebpackPlugin(pluginOptions),
-      ],
-    };
+    if (typeof nextConfig.webpack === 'function') {
+      return nextConfig.webpack(config, options);
+    }
+
+    return config;
   },
 });
