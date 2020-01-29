@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/ui",
-  "version": "1.15.5",
+  "version": "1.15.6",
   "description": "UI components for BundleStats projects.",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
@@ -38,7 +38,7 @@
     "@babel/plugin-proposal-object-rest-spread": "7.8.3",
     "@babel/preset-env": "7.8.3",
     "@babel/preset-react": "7.8.3",
-    "@bundle-stats/utils": "^1.15.4",
+    "@bundle-stats/utils": "^1.15.6",
     "@storybook/addon-knobs": "5.3.9",
     "@storybook/addon-storyshots": "5.3.9",
     "@storybook/addons": "5.3.9",
