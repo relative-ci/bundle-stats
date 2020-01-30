@@ -75,7 +75,7 @@
     "stylelint": "13.0.0",
     "stylelint-config-css-modules": "2.2.0",
     "stylelint-config-standard": "19.0.0",
-    "terser-webpack-plugin": "2.3.3",
+    "terser-webpack-plugin": "2.3.4",
     "webpack": "4.41.5",
     "webpack-cli": "3.3.10",
     "webpack-merge": "4.2.2",
