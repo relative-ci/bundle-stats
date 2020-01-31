@@ -42,11 +42,13 @@ module.exports = ({
   const tasks = new Listr([
     {
       title: 'Read Webpack stats files',
-      task: (ctx) => Promise
-        .all(artifactFilepaths.map((filepath) => readJSON(filepath)))
-        .then((sources) => {
-          ctx.sources = sources.map((source) => ({ webpack: source }));
-        }),
+      task: async (ctx) => {
+        const sources = await Promise.all(
+          artifactFilepaths.map((filepath) => readJSON(filepath)),
+        );
+
+        ctx.sources = sources.map((source) => ({ webpack: filter(source) }));
+      },
     },
     {
       title: 'Read baseline data',
@@ -55,7 +57,7 @@ module.exports = ({
         // eslint-disable-next-line no-param-reassign
         task.title = `${task.title} (${baselineFilepath})`;
 
-        ctx.sources = ctx.sources.concat([{ webpack: ctx.baselineStats }]);
+        ctx.sources = ctx.sources.concat([{ webpack: filter(ctx.baselineStats) }]);
       },
       skip: async (ctx) => {
         if (!compare) {
