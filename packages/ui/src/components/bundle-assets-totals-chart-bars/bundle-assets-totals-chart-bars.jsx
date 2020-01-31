@@ -18,10 +18,10 @@ export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
   const dataGraphs = [];
 
   items.forEach(({ runs }) => {
-    runs.forEach(({ value }, runIndex) => {
+    runs.forEach((run, runIndex) => {
       dataGraphs[runIndex] = [
         ...dataGraphs[runIndex] || [],
-        value,
+        get(run, 'value', 0),
       ];
     });
   });
