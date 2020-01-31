@@ -24,6 +24,10 @@ const MULTIPLE_JOBS = createJobs([
   },
 ]);
 const [CURRENT_JOB, BASELINE_JOB] = JOBS;
+const EMPTY_BASELINE = createJobs([
+  { webpack: currentData.rawData.webpack },
+  { webpack: null },
+]);
 
 const stories = storiesOf('StandaloneApp', module);
 
@@ -51,6 +55,10 @@ stories.add('no insights', () => (
 
 stories.add('no baseline', () => (
   <StandaloneApp jobs={[CURRENT_JOB]} />
+));
+
+stories.add('empty baseline', () => (
+  <StandaloneApp jobs={EMPTY_BASELINE} />
 ));
 
 stories.add('multiple baselines', () => (
