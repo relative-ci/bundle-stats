@@ -7,9 +7,14 @@ import baselineData from '../../../__mocks__/webpack-stats.baseline.json';
 import { getWrapperDecorator } from '../../stories';
 import { BundleAssetsTotalsChartBars } from './bundle-assets-totals-chart-bars';
 
-const jobs = createJobs([
+const JOBS = createJobs([
   { webpack: currentData },
   { webpack: baselineData },
+]);
+
+const EMPTY_BASELINE = createJobs([
+  { webpack: currentData },
+  { webpack: null },
 ]);
 
 const stories = storiesOf('Components/BundleAssetsTotalsChartBars', module);
@@ -17,5 +22,9 @@ const stories = storiesOf('Components/BundleAssetsTotalsChartBars', module);
 stories.addDecorator(getWrapperDecorator());
 
 stories.add('component', () => (
-  <BundleAssetsTotalsChartBars jobs={jobs} />
+  <BundleAssetsTotalsChartBars jobs={JOBS} />
+));
+
+stories.add('empty baseline', () => (
+  <BundleAssetsTotalsChartBars jobs={EMPTY_BASELINE} />
 ));
