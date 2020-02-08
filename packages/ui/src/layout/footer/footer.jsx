@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import { Container } from '../../ui';
+import config from '../../config.json';
 import css from './footer.module.css';
-
-const DOMAIN = 'https://relative-ci.com';
 
 /* eslint-disable jsx-a11y/anchor-has-content */
 const StandardLink = ({ to, source, ...props }) => (
   <a
-    href={`${DOMAIN}${to}?utm_source=${source}`}
+    href={`${config.siteUrl}${to}?utm_source=${source}`}
     {...props}
   />
 );
@@ -73,8 +72,6 @@ export const Footer = ({
             <a
               href="https://github.com/relative-ci/roadmap/issues"
               className={css.navLink}
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Roadmap
             </a>
@@ -92,25 +89,19 @@ export const Footer = ({
               target="_blank"
               rel="noopener noreferrer"
               title="In-depth bundle analyzer for webpack(bundle size, assets, modules, packages)"
-              source={source}
             >
               Bundle Stats
             </a>
             <a
               href={`https://compare.relative-ci.com/?utm_source=${source}`}
               className={css.navLink}
-              target="_blank"
-              rel="noopener noreferrer"
               title="Side by side comparison for webpack/lighthouse/browsertime stats"
-              source={source}
             >
               Compare
             </a>
             <a
               href={`https://video-compare.relative-ci.com/?utm_source=${source}`}
               className={css.navLink}
-              target="_blank"
-              rel="noopener noreferrer"
               title="Side by side video playing for webpagetest / browsertime recordings."
             >
               Video Compare
@@ -126,16 +117,12 @@ export const Footer = ({
             <a
               href="https://github.com/relative-ci"
               className={css.navLink}
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Github
             </a>
             <a
               href="https://twitter.com/Relative_CI"
               className={css.navLink}
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Twitter
             </a>
@@ -150,7 +137,8 @@ export const Footer = ({
           title="Go to homepage"
           source={source}
         >
-          &copy; 2019 Relative CI
+          &copy;
+          {` ${new Date().getFullYear()} ${config.appName}`}
         </Link>
       </div>
     </div>
