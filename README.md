@@ -21,6 +21,24 @@
 :star: <strong>Side by side comparison</strong> for multiple jobs
 </p>
 
+## Related projects
+
+### [relative-ci.com](https://relative-ci.com)
+
+Continuous monitoring for webpack bundles:
+- Monitor and analyze bundle size, assets, modules, packages
+- Github Checks, Slack integration
+- Support for all major CI services (Travis CI, Circle CI, Jenkins, Gitlab CI, Codeship, etc)
+- Free for OpenSource
+
+[Try Beta](https://relative-ci.com)
+
+### [relative-ci/compare](https://compare.relative-ci.com)
+
+Standalone web application to compare Webpack/Lighthouse/Browsertime stats.
+
+[Compare bundle stats](https://compare.relative-ci.com)
+
 ## Packages
 
 ### [`bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/bundle-stats)
@@ -44,16 +62,3 @@ UI components for BundleStats projects.
 #### [`@bundle-stats/utils`](https://github.com/relative-ci/bundle-stats/tree/master/packages/utils)
 Utilities for BundleStats projects.
 
-## Related projects
-
-### [relative-ci/compare](https://compare.relative-ci.com)
-
-Standalone web application to compare Webpack/Lighthouse/Browsertime stats.
-
-### [relative-ci.com](https://relative-ci.com)
-
-Continuous monitoring for web bundle stats:
-- monitor bundle size, assets, modules, packages
-- Github Checks integration
-- support for all major CI services (Travis CI, Circle CI, Jenkins, Gitlab CI, Codeship, etc)
-- free for OpenSource

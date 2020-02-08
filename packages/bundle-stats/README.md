@@ -276,14 +276,18 @@ The option can be disabled using `--no-compare` option.
 
 ## 4. Related projects
 
+### [relative-ci.com](https://relative-ci.com)
+
+Continuous monitoring for webpack bundles:
+- Monitor and analyze bundle size, assets, modules, packages
+- Github Checks, Slack integration
+- Support for all major CI services (Travis CI, Circle CI, Jenkins, Gitlab CI, Codeship, etc)
+- Free for OpenSource
+
+[Try Beta](https://relative-ci.com)
+
 ### [relative-ci/compare](https://compare.relative-ci.com)
 
 Standalone web application to compare Webpack/Lighthouse/Browsertime stats.
 
-### [relative-ci.com](https://relative-ci.com)
-
-Continuous monitoring for web bundle stats:
-- monitor bundle size, assets, modules, packages
-- Github Checks integration
-- support for all major CI services (Travis CI, Circle CI, Jenkins, Gitlab CI, Codeship, etc)
-- free for OpenSource
+[Compare bundle stats](https://compare.relative-ci.com)
