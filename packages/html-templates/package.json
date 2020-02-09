@@ -74,7 +74,7 @@
     "stats-webpack-plugin": "0.7.0",
     "stylelint": "13.2.0",
     "stylelint-config-css-modules": "2.2.0",
-    "stylelint-config-standard": "19.0.0",
+    "stylelint-config-standard": "20.0.0",
     "terser-webpack-plugin": "2.3.4",
     "webpack": "4.41.5",
     "webpack-cli": "3.3.10",
