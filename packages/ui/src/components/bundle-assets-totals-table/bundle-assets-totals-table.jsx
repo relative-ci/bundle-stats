@@ -7,7 +7,7 @@ import { MetricsTable } from '../metrics-table';
 import { JobName } from '../job-name';
 
 const getRun = (job, index, jobs) => {
-  const internalBuildNumber = get(job, 'meta.internalBuildNumber', jobs.length - index);
+  const internalBuildNumber = get(job, 'internalBuildNumber', jobs.length - index);
   const name = `Job #${internalBuildNumber}`;
 
   return {
