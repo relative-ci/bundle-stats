@@ -4,26 +4,37 @@ import { get } from 'lodash';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import { MetricsTable } from '../metrics-table';
+import { RunLabelSum } from '../run-label-sum';
 import { JobName } from '../job-name';
 
-const getRun = (job, index, jobs) => {
+import css from './bundle-assets-totals-table.module.css';
+
+const getRun = (items) => (job, index, jobs) => {
   const internalBuildNumber = get(job, 'internalBuildNumber', jobs.length - index);
   const name = `Job #${internalBuildNumber}`;
 
   return {
     name,
     label: (
-      <JobName
-        title={index === 0 ? 'Current' : 'Baseline'}
-        internalBuildNumber={internalBuildNumber}
-      />
+      <div className={css.tableHeaderRun}>
+        <JobName
+          title={index === 0 ? 'Current' : 'Baseline'}
+          internalBuildNumber={internalBuildNumber}
+        />
+        <RunLabelSum
+          className={css.tableHeaderRunMetric}
+          runIndex={index}
+          runCount={jobs.length}
+          rows={items}
+        />
+      </div>
     ),
   };
 };
 
 export const BundleAssetsTotalsTable = ({ className, jobs }) => {
-  const runs = jobs.map(getRun);
   const items = webpack.compare.sizes(jobs);
+  const runs = jobs.map(getRun(items));
 
   return (
     <MetricsTable
