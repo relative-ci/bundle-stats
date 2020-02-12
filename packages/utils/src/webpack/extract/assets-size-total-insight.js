@@ -13,10 +13,10 @@ import { INSIGHT_INFO } from '../../config/insights';
 import { getMetricRunInfo, getMetricType } from '../../utils/metrics';
 
 const INCREASED = template(
-  'Bundle size increased with <%= displayAbsDelta %> (<%= displayDeltaPercentage %>).',
+  'Bundle size increased to <%= displayValue %> (<%= displayDeltaPercentage %>).',
 );
 const DECREASED = template(
-  'Bundle size decreased with <%= displayAbsDelta %> (<%= displayDeltaPercentage %>).',
+  'Bundle size decreased to <%= displayValue %> (<%= displayDeltaPercentage %>).',
 );
 const NO_CHANGE = template('Bundle size did not change.');
 
@@ -40,8 +40,7 @@ export const extractAssetsSizeTotalInsight = (
 
   const metric = getMetricType(['webpack', METRIC_NAME].join('.'));
   const info = getMetricRunInfo(metric, currentValue, baselineValue);
-  const { deltaType, delta, displayDeltaPercentage } = info;
-  const displayAbsDelta = metric.formatter(Math.abs(delta));
+  const { deltaType, displayDeltaPercentage, displayValue } = info;
   const messageTemplate = TEMPLATES.get(deltaType);
 
   return {
@@ -49,9 +48,9 @@ export const extractAssetsSizeTotalInsight = (
       assetsSizeTotal: {
         type: INSIGHT_INFO,
         data: {
-          text: messageTemplate({ displayAbsDelta, displayDeltaPercentage }),
+          text: messageTemplate({ displayValue, displayDeltaPercentage }),
           md: messageTemplate({
-            displayAbsDelta: `*${displayAbsDelta}*`,
+            displayValue: `*${displayValue}*`,
             displayDeltaPercentage: `*${displayDeltaPercentage}*`,
           }),
           info,
