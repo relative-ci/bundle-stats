@@ -15,7 +15,7 @@
     "build-lib": "rm -fr ./lib && babel -D src -d lib --ignore **/__tests__/** ",
     "build-esm": "rm -fr ./lib-esm && babel -D src -d lib-esm --ignore **/__tests__/** --config-file=./.babelrc.esm.js",
     "lint": "eslint . --cache --cache-location ./node_modules/.eslintcache",
-    "test": "jest src"
+    "test": "TZ=UTC jest src"
   },
   "keywords": [],
   "author": {
@@ -49,6 +49,7 @@
     "eslint-plugin-jest": "23.8.0",
     "jest": "25.1.0",
     "jest-cli": "25.1.0",
+    "jest-date-mock": "1.0.8",
     "lodash": "4.17.15",
     "regenerator-runtime": "0.13.3"
   },
