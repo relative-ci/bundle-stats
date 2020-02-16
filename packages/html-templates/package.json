@@ -2,7 +2,7 @@
   "name": "@bundle-stats/html-templates",
   "version": "1.15.8",
   "description": "HTML templates for report generation.",
-  "main": "dist/index.html",
+  "main": "index.js",
   "scripts": {
     "build": "rm -fr ./dist && cross-env NODE_ENV=production webpack --config webpack.config.production.js --mode production",
     "lint": "eslint . --ext .jsx,.js --cache --cache-location ./node_modules/.eslintcache",
