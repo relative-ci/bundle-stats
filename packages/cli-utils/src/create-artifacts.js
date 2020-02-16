@@ -1,5 +1,3 @@
-import { readFileSync } from 'fs-extra';
-
 import {
   INITIAL_DATA_PATTERN,
   OUTPUT_FILENAME,
@@ -7,12 +5,12 @@ import {
   OUTPUT_TYPE_JSON,
 } from './constants';
 
-const templateFilepath = require.resolve('@bundle-stats/html-templates');
+const template = require('@bundle-stats/html-templates');
 
-export const createHTMLArtifact = (jobs) => {
-  const template = readFileSync(templateFilepath, 'utf-8');
-  return template.replace(INITIAL_DATA_PATTERN, `window.__INITIAL_DATA__ = ${JSON.stringify(jobs)}`);
-};
+export const createHTMLArtifact = (jobs) => template.replace(
+  INITIAL_DATA_PATTERN,
+  `window.__INITIAL_DATA__ = ${JSON.stringify(jobs)}`,
+);
 
 export const createJSONArtifact = (_, report) => JSON.stringify(report, null, 2);
 
