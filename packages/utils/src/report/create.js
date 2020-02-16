@@ -3,6 +3,7 @@ import { get, isEmpty } from 'lodash';
 import { SOURCE_PATHS } from '../config';
 import { getMetricType, getMetricRunInfo } from '../utils/metrics';
 import * as webpack from '../webpack';
+import { version } from '../../package.json';
 
 export const createReport = (jobs) => {
   const insights = get(jobs, '[0].insights');
@@ -28,6 +29,9 @@ export const createReport = (jobs) => {
   }, {});
 
   return {
+    createdAt: new Date().toISOString(),
+    version,
+
     runs: jobs.map(({ internalBuildNumber, meta }) => ({
       ...meta,
       internalBuildNumber,
