@@ -10,6 +10,7 @@ import {
   SECTION_WEBPACK_ASSETS,
   SECTION_WEBPACK_MODULES,
   SECTION_WEBPACK_PACKAGES,
+  SECTIONS,
 } from './constants';
 import { selectors } from './selectors';
 
@@ -73,10 +74,21 @@ const compareModules = (jobs) => {
  */
 const comparePackages = (jobs) => compareMetrics(jobs, selectors.packages, METRIC_TYPE_FILE_SIZE);
 
-export const compare = {
+export const compareBySection = {
   [SECTION_WEBPACK_STATS]: compareStats,
   [SECTION_WEBPACK_SIZES]: compareSizes,
   [SECTION_WEBPACK_ASSETS]: compareAssets,
   [SECTION_WEBPACK_MODULES]: compareModules,
   [SECTION_WEBPACK_PACKAGES]: comparePackages,
 };
+
+/**
+ * Compare webpack sections
+ *
+ * @param {Object[]} jobs - List of jobs to compare
+ * @return {Object} Compared metrics by section
+ */
+export const compare = (jobs) => SECTIONS.reduce((agg, sectionId) => ({
+  ...agg,
+  [sectionId]: compareBySection[sectionId](jobs),
+}), {});

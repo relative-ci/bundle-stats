@@ -11,7 +11,7 @@ import css from './bundle-modules.module.css';
 export const BundleModules = ({ jobs }) => {
   const runs = jobs.map((job) => ({ meta: job }));
 
-  const modulesReport = webpack.compare.modules(jobs);
+  const modulesReport = webpack.compareBySection.modules(jobs);
 
   return (
     <>

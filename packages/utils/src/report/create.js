@@ -43,9 +43,6 @@ export const createReport = (jobs) => {
     ...!isEmpty(insights) ? { insights } : {},
 
     // Add webpack sections comparisons
-    ...webpack.SECTIONS.reduce((agg, section) => ({
-      ...agg,
-      [section]: webpack.compare[section](jobs),
-    }), {}),
+    ...webpack.compare(jobs),
   };
 };

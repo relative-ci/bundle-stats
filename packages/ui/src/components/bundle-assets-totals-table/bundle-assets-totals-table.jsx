@@ -33,7 +33,7 @@ const getRun = (items) => (job, index, jobs) => {
 };
 
 export const BundleAssetsTotalsTable = ({ className, jobs }) => {
-  const items = webpack.compare.sizes(jobs);
+  const items = webpack.compareBySection.sizes(jobs);
   const runs = jobs.map(getRun(items));
 
   return (

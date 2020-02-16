@@ -55,7 +55,7 @@ export const enhance = compose(
     const duplicatePackages = jobs.map((job) => get(job, 'warnings.webpack.duplicatePackages'));
 
     const items = addDuplicateTag(
-      webpack.compare.packages(jobs),
+      webpack.compareBySection.packages(jobs),
       duplicatePackages,
     );
 

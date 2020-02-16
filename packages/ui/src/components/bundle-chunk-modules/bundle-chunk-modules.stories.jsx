@@ -23,7 +23,7 @@ stories.add('default', () => (
     name="vendor"
     id="1"
     runs={RUNS_DEFAULT}
-    modules={webpack.compare.modules(RUNS_DEFAULT)[1].modules}
+    modules={webpack.compareBySection.modules(RUNS_DEFAULT)[1].modules}
   />
 ));
 
@@ -34,7 +34,7 @@ stories.add('multiple jobs', () => (
     name="vendor"
     id="1"
     runs={RUNS_MULTIPLE}
-    modules={webpack.compare.modules(RUNS_MULTIPLE)[1].modules}
+    modules={webpack.compareBySection.modules(RUNS_MULTIPLE)[1].modules}
   />
 ));
 
@@ -93,6 +93,6 @@ stories.add('empty baseline', () => (
     name="vendor"
     id="1"
     runs={RUNS_EMPTY_BASELINE}
-    modules={webpack.compare.modules(RUNS_EMPTY_BASELINE)[1].modules}
+    modules={webpack.compareBySection.modules(RUNS_EMPTY_BASELINE)[1].modules}
   />
 ));

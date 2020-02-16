@@ -13,7 +13,7 @@ import css from './bundle-assets-totals-chart-bars.module.css';
 
 export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
   const rootClassName = cx(css.root, className);
-  const items = webpack.compare.sizes(jobs);
+  const items = webpack.compareBySection.sizes(jobs);
 
   const dataGraphs = [];
 
