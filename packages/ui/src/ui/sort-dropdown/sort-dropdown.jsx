@@ -78,7 +78,7 @@ export const SortDropdown = (props) => {
 
 SortDropdown.defaultProps = {
   className: '',
-  label: 'Sort by',
+  label: 'Order by',
   onChange: () => {},
   sortBy: '',
   direction: 'asc',
