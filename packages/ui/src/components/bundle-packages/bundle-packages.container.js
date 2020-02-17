@@ -52,7 +52,9 @@ const addDuplicateTag = (items, duplicatePackages) => items.map((item) => ({
 export const enhance = compose(
   withProps(({ jobs }) => {
     const runs = jobs.map((job) => ({ meta: job }));
-    const duplicatePackages = jobs.map((job) => get(job, 'warnings.webpack.duplicatePackages'));
+    const duplicatePackages = Object.values(
+      get(jobs, '0.insights.webpack.duplicatePackages.data', {}),
+    ).flat();
 
     const items = addDuplicateTag(
       webpack.compareBySection.packages(jobs),
