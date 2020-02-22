@@ -5,7 +5,7 @@ import { formatDelta, getDelta, getDeltaType } from './delta';
 import { formatPercentage } from './format';
 
 import { metrics as webpackMetricTypes } from '../webpack/metrics';
-import {MetricTypeType} from '../../types';
+import { metrics as lighthouseMetricTypes } from '../lighthouse/metrics';
 
 /**
  * Create getMetricTypes handler
@@ -21,6 +21,7 @@ export const createGetMetricType = (metrics) =>
    * @param {String} [type] Default metric type
    * @return {import('../../types').MetricType}
    */
+  // eslint-disable-next-line implicit-arrow-linebreak
   (key, type) => {
     /** @type {import('../../types').MetricTypeConfig} */
     const metric = get(metrics, key);
@@ -48,7 +49,11 @@ export const createGetMetricType = (metrics) =>
  * @param {import('../../types').MetricTypeType} [type] Default metric type
  * @return {import('../../types').MetricType}
  */
-export const getGlobalMetricType = createGetMetricType({ ...METRICS, webpack: webpackMetricTypes });
+export const getGlobalMetricType = createGetMetricType({
+  ...METRICS,
+  webpack: webpackMetricTypes,
+  lighthouse: lighthouseMetricTypes,
+});
 
 /**
  *
