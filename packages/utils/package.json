@@ -4,6 +4,7 @@
   "description": "BundleStats utils",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
+  "types": "types/index.d.ts",
   "engines": {
     "node": ">= 8.0"
   },
