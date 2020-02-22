@@ -39,3 +39,32 @@ export interface MetricRunInfo extends MetricRunInfo {
   displayDeltaPercentage?: string;
   deltaType?: MetricRunInfoDeltaType;
 }
+
+export interface LighthouseSource {
+  lighthouseVersion: string;
+  fetchTime: string;
+  requestedUrl: string;
+  categories: { [key: string]: { score: number } }
+  audits: { [key: string]: { score: number; numericValue: number } }
+}
+
+export interface LighthouseMetricsCategoryScores {
+  performanceScore: MetricRun;
+  accessibilityScore: MetricRun;
+  bestPracticesScore: MetricRun;
+  seoScore: MetricRun;
+  pwaScore: MetricRun;
+}
+
+export interface LighthouseMetricsScore {
+  score: MetricRun;
+}
+
+export interface LighthouseMetricsAudits {
+  speedIndex: MetricRun;
+  firstMeaningfulPaint: MetricRun;
+  timeToFirstByte: MetricRun;
+  firstInteractive: MetricRun;
+  totalByteWeight: MetricRun;
+  domSize: MetricRun;
+}

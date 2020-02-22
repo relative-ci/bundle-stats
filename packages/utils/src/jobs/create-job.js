@@ -3,8 +3,9 @@ import { get, merge, set } from 'lodash';
 import { SOURCE_PATHS } from '../config';
 import { createSummary } from './create-summary';
 import * as webpack from '../webpack';
+import * as lighthouse from '../lighthouse';
 
-const SOURCE_FNS = { webpack };
+const SOURCE_FNS = { webpack, lighthouse };
 const GENERIC_PROPS = ['meta', 'insights', 'metrics'];
 
 /*

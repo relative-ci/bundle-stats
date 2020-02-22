@@ -1,33 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { get } from 'lodash';
+import * as lighthouse from '@bundle-stats/utils/lib-esm/lighthouse';
 
 import { MetricsTable } from '../metrics-table';
 import { JobName } from '../job-name';
 
-const getRunLabel = (run, index) => {
-  // Current run
-  if (index === 0) {
-    return {
-      ...run,
-      label: ' ',
-    };
-  }
-
-  // No baseline?
-  if (!run || !run.meta) {
-    return {
-      ...run,
-      label: '-',
-    };
-  }
+const getRunLabel = (job, index, jobs) => {
+  const internalBuildNumber = get(job, 'internalBuildNumber', jobs.length - index);
+  const name = `Job #${internalBuildNumber}`;
 
   // @TODO: move into a shared component
   return {
-    ...run,
+    name,
     label: (
       <JobName
-        title="Baseline"
-        internalBuildNumber={run.meta.internalBuildNumber}
+        title={index === 0 ? 'Current' : 'Baseline'}
+        internalBuildNumber={internalBuildNumber}
       />
     ),
   };
@@ -36,16 +25,15 @@ const getRunLabel = (run, index) => {
 export const LighthouseTable = (props) => {
   const {
     className,
-    runs,
-    items,
+    jobs,
   } = props;
-
-  const labeledRuns = runs.map(getRunLabel);
+  const items = lighthouse.compare(jobs);
+  const runs = jobs.map(getRunLabel);
 
   return (
     <MetricsTable
       className={className}
-      runs={labeledRuns}
+      runs={runs}
       items={items}
     />
   );
@@ -53,12 +41,10 @@ export const LighthouseTable = (props) => {
 
 LighthouseTable.defaultProps = {
   className: '',
-  runs: [],
-  items: [],
+  jobs: [],
 };
 
 LighthouseTable.propTypes = {
   className: PropTypes.string,
-  runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
-  items: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  jobs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };
