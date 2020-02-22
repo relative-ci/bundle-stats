@@ -5,6 +5,7 @@ import { formatDelta, getDelta, getDeltaType } from './delta';
 import { formatPercentage } from './format';
 
 import { metrics as webpackMetricTypes } from '../webpack/metrics';
+import {MetricTypeType} from '../../types';
 
 /**
  * Create getMetricTypes handler
@@ -18,15 +19,10 @@ export const createGetMetricType = (metrics) =>
    *
    * @param {String} key Metric key
    * @param {String} [type] Default metric type
-   *
-   * @typedef {Object} Metric
-   * @property {String} label Metric label
-   * @property {String} type Metric type
-   * @property {Function} formatter Metric format handler
-   * @property {Boolean} biggerIsBetter Metric flag
-   * @return {Metric}
+   * @return {import('../../types').MetricType}
    */
   (key, type) => {
+    /** @type {import('../../types').MetricTypeConfig} */
     const metric = get(metrics, key);
 
     if (metric && metric.type) {
@@ -49,37 +45,20 @@ export const createGetMetricType = (metrics) =>
  * Get global metric type
  *
  * @param {String} key Metric key
- * @param {String} [type] Default metric type
- *
- * @typedef {Object} Metric
- * @property {String} label Metric label
- * @property {String} type Metric type
- * @property {Function} formatter Metric format handler
- * @property {Boolean} biggerIsBetter Metric flag
- * @return {Metric}
+ * @param {import('../../types').MetricTypeType} [type] Default metric type
+ * @return {import('../../types').MetricType}
  */
 export const getGlobalMetricType = createGetMetricType({ ...METRICS, webpack: webpackMetricTypes });
-
 
 /**
  *
  * Get metric information
  *
- * @param {Object} metric Metric data
- * @param {Function} metric.formatter Metric formatter
- * @param {Boolean} metric.biggerIsBetter Metric flag
+ * @param {import('../../types').MetricType} metric Metric data
  * @param {number} currentValue Current value
  * @param {number} baselineValue Baseline value
  *
- * @typedef {Object} MetricInfo
- * @property {number} value Metric value
- * @property {string} displayValue Metric display value
- * @property {number} delta Metric delta value
- * @property {string} displayDelta Metric display delta value
- * @property {string} displayDeltaPercentage Metric displat delta percentage
- * @property {string} deltaType Metric delta type
- *
- * @return @MetricInfo
+ * @return {import('../../types').MetricRunInfo}
  */
 export const getMetricRunInfo = (metric, currentValue, baselineValue) => {
   const { formatter, biggerIsBetter } = metric;
