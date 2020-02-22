@@ -1,6 +1,5 @@
 import { get, pick } from 'lodash';
 
-import METRICS from '../config/metrics';
 import {
   SECTION_WEBPACK_STATS,
   SECTION_WEBPACK_SIZES,
@@ -9,6 +8,7 @@ import {
   SECTION_WEBPACK_PACKAGES,
   SUMMARY_METRIC_PATHS,
 } from './constants';
+import { metrics as metricTypes } from './metrics';
 
 /**
  *
@@ -46,7 +46,7 @@ const getSizeMetrics = (job) => {
   const metrics = get(job, 'metrics.webpack.sizes', {});
 
   // List metrics by the metrics list
-  return Object.keys(METRICS.webpack.sizes).reduce((agg, key) => ({
+  return Object.keys(metricTypes.sizes).reduce((agg, key) => ({
     ...agg,
     [`webpack.sizes.${key}`]: metrics[key],
   }), {});

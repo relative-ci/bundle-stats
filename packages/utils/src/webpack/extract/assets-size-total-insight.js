@@ -10,7 +10,8 @@ import {
   DELTA_TYPE_HIGH_POSITIVE,
 } from '../../config/delta';
 import { INSIGHT_INFO } from '../../config/insights';
-import { getMetricRunInfo, getMetricType } from '../../utils/metrics';
+import { getMetricRunInfo } from '../../utils/metrics';
+import { getMetricType } from '../utils';
 
 const INCREASED = template(
   'Bundle size increased to <%= displayValue %> (<%= displayDeltaPercentage %>).',
@@ -38,7 +39,7 @@ export const extractAssetsSizeTotalInsight = (
   const currentValue = get(currentExtractedData, ['metrics', METRIC_NAME, 'value'], 0);
   const baselineValue = get(baselineBundleStats, ['metrics', 'webpack', METRIC_NAME, 'value'], 0);
 
-  const metric = getMetricType(['webpack', METRIC_NAME].join('.'));
+  const metric = getMetricType(METRIC_NAME);
   const info = getMetricRunInfo(metric, currentValue, baselineValue);
   const { deltaType, displayDeltaPercentage, displayValue } = info;
   const messageTemplate = TEMPLATES.get(deltaType);

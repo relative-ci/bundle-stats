@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { getMetricType, getMetricRunInfo } from '@bundle-stats/utils';
+import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { Icon, Tooltip } from '../../ui';
 import { Metric } from '../metric';
@@ -13,7 +13,7 @@ export const SummaryItem = ({
 }) => {
   const { baseline, current } = data || { baseline: 0, current: 0 };
 
-  const metric = getMetricType(id);
+  const metric = getGlobalMetricType(id);
   const runInfo = getMetricRunInfo(metric, current, baseline);
 
   const rootClassName = cx(
