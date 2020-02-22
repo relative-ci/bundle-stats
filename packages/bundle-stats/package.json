@@ -49,7 +49,7 @@
     "@bundle-stats/html-templates": "^1.15.7",
     "@bundle-stats/utils": "^1.15.7",
     "core-js": "^3.1.4",
-    "find-cache-dir": "3.2.0",
+    "find-cache-dir": "3.3.0",
     "fs-extra": "8.1.0",
     "listr": "^0.14.3",
     "lodash": "4.17.15",
