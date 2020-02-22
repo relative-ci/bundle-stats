@@ -4,8 +4,49 @@ import METRICS, { METRIC_TYPE_NUMERIC, METRIC_TYPES } from '../config/metrics';
 import { formatDelta, getDelta, getDeltaType } from './delta';
 import { formatPercentage } from './format';
 
+import { metrics as webpackMetricTypes } from '../webpack/metrics';
+
 /**
- * Get metric type data
+ * Create getMetricTypes handler
+ *
+ * @param {Object} metrics
+ * @return {Function}
+ */
+export const createGetMetricType = (metrics) =>
+  /**
+   * Get metric type data
+   *
+   * @param {String} key Metric key
+   * @param {String} [type] Default metric type
+   *
+   * @typedef {Object} Metric
+   * @property {String} label Metric label
+   * @property {String} type Metric type
+   * @property {Function} formatter Metric format handler
+   * @property {Boolean} biggerIsBetter Metric flag
+   * @return {Metric}
+   */
+  (key, type) => {
+    const metric = get(metrics, key);
+
+    if (metric && metric.type) {
+      return {
+        ...METRIC_TYPES[metric.type],
+        ...metric,
+      };
+    }
+
+    const resolvedType = type || METRIC_TYPE_NUMERIC;
+
+    return {
+      ...METRIC_TYPES[resolvedType],
+      type: resolvedType,
+      label: key,
+    };
+  };
+
+/**
+ * Get global metric type
  *
  * @param {String} key Metric key
  * @param {String} [type] Default metric type
@@ -15,27 +56,10 @@ import { formatPercentage } from './format';
  * @property {String} type Metric type
  * @property {Function} formatter Metric format handler
  * @property {Boolean} biggerIsBetter Metric flag
- *
- * @return @Metric
+ * @return {Metric}
  */
-export const getMetricType = (key, type) => {
-  const metric = get(METRICS, key);
+export const getGlobalMetricType = createGetMetricType({ ...METRICS, webpack: webpackMetricTypes });
 
-  if (metric && metric.type) {
-    return {
-      ...METRIC_TYPES[metric.type],
-      ...metric,
-    };
-  }
-
-  const resolvedType = type || METRIC_TYPE_NUMERIC;
-
-  return {
-    ...METRIC_TYPES[resolvedType],
-    type: resolvedType,
-    label: key,
-  };
-};
 
 /**
  *

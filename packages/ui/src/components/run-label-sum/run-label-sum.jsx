@@ -4,14 +4,14 @@ import cx from 'classnames';
 import { get } from 'lodash';
 import { flow, map, sum } from 'lodash/fp';
 import {
-  METRIC_TYPE_FILE_SIZE, getMetricType, getMetricRunInfo,
+  METRIC_TYPE_FILE_SIZE, getGlobalMetricType, getMetricRunInfo,
 } from '@bundle-stats/utils';
 
 import { Delta } from '../delta';
 import { Metric } from '../metric';
 import css from './run-label-sum.module.css';
 
-const METRIC_TYPE_DATA = getMetricType(null, METRIC_TYPE_FILE_SIZE);
+const METRIC_TYPE_DATA = getGlobalMetricType(null, METRIC_TYPE_FILE_SIZE);
 
 const getRunRowsSum = (rows, runIndex) => flow(
   map((row) => get(row, `runs[${runIndex}].value`, 0)),

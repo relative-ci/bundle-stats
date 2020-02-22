@@ -1,6 +1,6 @@
 import { get } from 'lodash';
 
-import { getMetricType, getMetricRunInfo } from '../utils/metrics';
+import { getGlobalMetricType, getMetricRunInfo } from '../utils/metrics';
 import { getMetricChanged } from './get-metric-changed';
 
 /**
@@ -21,7 +21,7 @@ export const addRowData = (row, metricType) => {
   // Resolve row metric
   // - if the key is a predefined metric, use it
   // - if the key is not matching an existing metric, use the default metricType
-  const metric = getMetricType(
+  const metric = getGlobalMetricType(
     key,
     typeof metricType === 'string' && metricType, // explicit, avoid passing of map cb params
   );

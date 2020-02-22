@@ -1,7 +1,7 @@
 import { get, isEmpty } from 'lodash';
 
 import { SOURCE_PATHS } from '../config';
-import { getMetricType, getMetricRunInfo } from '../utils/metrics';
+import { getMetricRunInfo } from '../utils/metrics';
 import * as webpack from '../webpack';
 import { version } from '../../package.json';
 
@@ -12,7 +12,7 @@ export const createReport = (jobs) => {
     const sourceSummary = get(jobs, [0, 'summary', sourceId]);
 
     const output = Object.entries(sourceSummary).map(([metricId, summaryData]) => {
-      const metric = getMetricType(`${sourceId}.${metricId}`);
+      const metric = webpack.getMetricType(metricId);
       const { current = 0, baseline = 0 } = summaryData;
       const info = getMetricRunInfo(metric, current, baseline);
 

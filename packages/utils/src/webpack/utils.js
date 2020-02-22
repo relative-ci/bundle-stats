@@ -1,6 +1,8 @@
 import { last, map, round } from 'lodash';
 
+import { createGetMetricType } from '../utils/metrics';
 import { FILE_TYPE_OTHER, FILE_TYPE_PATTERNS } from '../config';
+import { metrics } from './metrics';
 
 const FILENAME_HASH_PATTERN = /[.|-][a-f0-9]{5,32}$/;
 
@@ -94,3 +96,11 @@ export const getMetricDeleted = (runs) => {
 
   return Boolean(baseline !== null && !current);
 };
+
+/**
+ * Get webpack metric data
+ *
+ * @param {String} key - Webpack metric key
+ * @return {Object} Metric data
+ */
+export const getMetricType = createGetMetricType(metrics);
