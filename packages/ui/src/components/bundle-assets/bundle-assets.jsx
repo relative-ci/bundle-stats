@@ -10,8 +10,6 @@ import { FiltersDropdown } from '../../ui/filters-dropdown';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { EmptySet } from '../../ui/empty-set';
 import { MetricsTable } from '../metrics-table';
-import { JobName } from '../job-name';
-import { RunLabelSum } from '../run-label-sum';
 import {
   FILTER_ASSET, FILTER_CHANGED, FILTER_ENTRY, FILTER_CHUNK, FILTER_INITIAL,
 } from './bundle-assets.constants';
@@ -37,29 +35,13 @@ const getFileTypeFilters = (filters) => Object.entries(FILE_TYPE_LABELS)
     ...current,
   }), {});
 
-const getAddRunLabel = (items) => (run, index, runs) => {
+const getAddRunLabel = (run, index, runs) => {
   const internalBuildNumber = get(run, 'meta.internalBuildNumber', runs.length - index);
   const name = `Job #${internalBuildNumber}`;
-
-  const label = (
-    <div className={css.tableHeaderRun}>
-      <JobName
-        title={index === 0 ? RUN_TITLE_CURRENT : RUN_TITLE_BASELINE}
-        internalBuildNumber={internalBuildNumber}
-      />
-      <RunLabelSum
-        className={css.tableHeaderRunMetric}
-        runIndex={index}
-        runCount={runs.length}
-        rows={items}
-      />
-    </div>
-  );
 
   return {
     ...run,
     name,
-    label,
   };
 };
 
@@ -183,7 +165,7 @@ export const BundleAssets = (props) => {
     updateSort,
   } = props;
 
-  const labeledRuns = runs.map(getAddRunLabel(items));
+  const labeledRuns = runs.map(getAddRunLabel);
   const emptyMessage = (
     <EmptySet
       resources="assets"
@@ -245,6 +227,7 @@ export const BundleAssets = (props) => {
           items={items}
           renderRowHeader={getRenderRowHeader(map(labeledRuns, 'name'))}
           emptyMessage={emptyMessage}
+          showHeaderSum
         />
       </main>
     </section>

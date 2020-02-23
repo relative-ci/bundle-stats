@@ -2,6 +2,15 @@
   vertical-align: top;
 }
 
+.tableHeaderRun {
+  margin-top: calc(0px - var(--space-xxsmall));
+  margin-bottom: calc(0px - var(--space-xxsmall));
+}
+
+.tableHeaderRunMetric {
+  margin-top: var(--space-xxxsmall);
+}
+
 /* columns */
 .metricName {
   width: 100%;

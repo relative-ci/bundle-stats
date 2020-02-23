@@ -9,13 +9,8 @@ import { FileName } from '../../ui/file-name';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Tooltip } from '../../ui/tooltip';
-import { JobName } from '../job-name';
-import { RunLabelSum } from '../run-label-sum';
 import { MetricsTable } from '../metrics-table';
 import css from './bundle-chunk-modules.module.css';
-
-const RUN_TITLE_CURRENT = 'Current';
-const RUN_TITLE_BASELINE = 'Baseline';
 
 const getRenderRowHeader = (labels) => (row) => (
   <Tooltip
@@ -47,29 +42,13 @@ const getRenderRowHeader = (labels) => (row) => (
   </Tooltip>
 );
 
-const getAddRunLabel = (items) => (run, index, runs) => {
-  const internalBuildNumber = get(run, 'meta.internalBuildNumber', runs.length - index);
+const getAddRunLabel = (job, index, jobs) => {
+  const internalBuildNumber = get(job, 'internalBuildNumber', jobs.length - index);
   const name = `Job #${internalBuildNumber}`;
 
-  const label = (
-    <div className={css.tableHeaderRun}>
-      <JobName
-        title={index === 0 ? RUN_TITLE_CURRENT : RUN_TITLE_BASELINE}
-        internalBuildNumber={internalBuildNumber}
-      />
-      <RunLabelSum
-        className={css.tableHeaderRunMetric}
-        runIndex={index}
-        runCount={runs.length}
-        rows={items}
-      />
-    </div>
-  );
-
   return {
-    ...run,
+    ...job,
     name,
-    label,
   };
 };
 
@@ -87,7 +66,7 @@ export const BundleChunkModules = ({
   sort,
   updateSort,
 }) => {
-  const labeledRuns = runs.map(getAddRunLabel(modules));
+  const labeledRuns = runs.map(getAddRunLabel);
   const rootClassName = cx(css.root, className);
   const emptyMessage = (
     <EmptySet
@@ -140,6 +119,7 @@ export const BundleChunkModules = ({
           runs={labeledRuns}
           renderRowHeader={getRenderRowHeader(map(labeledRuns, 'name'))}
           emptyMessage={emptyMessage}
+          showHeaderSum
         />
       </Box>
     </div>
