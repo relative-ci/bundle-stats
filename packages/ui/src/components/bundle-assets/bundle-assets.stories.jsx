@@ -8,31 +8,25 @@ import currentStats from '../../../__mocks__/webpack-stats.current.json';
 import { getWrapperDecorator } from '../../stories';
 import { BundleAssets } from '.';
 
-const jobs = createJobs([
+const JOBS = createJobs([
   { webpack: currentStats },
   { webpack: baselineStats },
 ]);
-const [currentJob, baselineJob] = jobs;
+const [currentJob, baselineJob] = JOBS;
 
 const stories = storiesOf('Components/BundleAssets', module);
 stories.addDecorator(getWrapperDecorator());
 
-stories.add('default', () => (
-  <BundleAssets jobs={[currentJob]} />
-));
+stories.add('default', () => <BundleAssets jobs={[baselineJob]} />);
 
-stories.add('multiple jobs', () => (
-  <BundleAssets jobs={jobs} />
-));
+stories.add('multiple jobs', () => <BundleAssets jobs={JOBS} />);
 
-stories.add('empty baseline', () => (
-  <BundleAssets
-    jobs={[currentJob, undefined]}
-  />
-));
+const JOBS_EMPTY_BASELINE = createJobs([{ webpack: currentStats }, null]);
+
+stories.add('empty baseline', () => <BundleAssets jobs={JOBS_EMPTY_BASELINE} />);
 
 stories.add('no assets', () => (
-  <BundleAssets jobs={jobs.map((job) => set(job, 'metrics.webpack.assets', {}))} />
+  <BundleAssets jobs={JOBS.map((job) => set(job, 'metrics.webpack.assets', {}))} />
 ));
 
 stories.add('empty filtered data', () => (

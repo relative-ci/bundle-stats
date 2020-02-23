@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { get, map } from 'lodash';
+import { map } from 'lodash';
 
 import { Box } from '../../ui/box';
 import { EmptySet } from '../../ui/empty-set';
@@ -42,16 +42,6 @@ const getRenderRowHeader = (labels) => (row) => (
   </Tooltip>
 );
 
-const getAddRunLabel = (job, index, jobs) => {
-  const internalBuildNumber = get(job, 'internalBuildNumber', jobs.length - index);
-  const name = `Job #${internalBuildNumber}`;
-
-  return {
-    ...job,
-    name,
-  };
-};
-
 export const BundleChunkModules = ({
   className,
   name,
@@ -66,7 +56,6 @@ export const BundleChunkModules = ({
   sort,
   updateSort,
 }) => {
-  const labeledRuns = runs.map(getAddRunLabel);
   const rootClassName = cx(css.root, className);
   const emptyMessage = (
     <EmptySet
@@ -116,8 +105,8 @@ export const BundleChunkModules = ({
         <MetricsTable
           className={css.table}
           items={modules}
-          runs={labeledRuns}
-          renderRowHeader={getRenderRowHeader(map(labeledRuns, 'name'))}
+          runs={runs}
+          renderRowHeader={getRenderRowHeader(map(runs, 'label'))}
           emptyMessage={emptyMessage}
           showHeaderSum
         />

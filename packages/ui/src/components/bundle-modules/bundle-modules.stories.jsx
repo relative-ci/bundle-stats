@@ -17,16 +17,16 @@ const stories = storiesOf('Components/BundleModules', module);
 stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => (
-  <BundleModules jobs={[currentJob]} />
+  <BundleModules jobs={[baselineJob]} />
 ));
 
 stories.add('multiple runs', () => (
   <BundleModules jobs={[currentJob, baselineJob]} />
 ));
 
-stories.add('empty baseline', () => (
-  <BundleModules jobs={[currentJob, null]} />
-));
+const JOBS_EMPTY_BASELINE = createJobs([{ webpack: currentStats }, null]);
+
+stories.add('empty baseline', () => <BundleModules jobs={JOBS_EMPTY_BASELINE} />);
 
 stories.add('no modules', () => (
   <BundleModules

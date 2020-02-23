@@ -8,24 +8,18 @@ import currentStats from '../../../__mocks__/webpack-stats.current.json';
 import { getWrapperDecorator } from '../../stories';
 import { BundlePackages } from '.';
 
-const jobs = createJobs([
+const JOBS = createJobs([
   { webpack: currentStats },
   { webpack: baselineStats },
 ]);
-const [currentJob, baselineJob] = jobs;
+const [currentJob, baselineJob] = JOBS;
 
 const stories = storiesOf('Components/BundlePackages', module);
 stories.addDecorator(getWrapperDecorator());
 
-stories.add('default', () => (
-  <BundlePackages jobs={[currentJob]} />
-));
+stories.add('default', () => <BundlePackages jobs={[baselineJob]} />);
 
-stories.add('multiple jobs', () => (
-  <BundlePackages
-    jobs={jobs}
-  />
-));
+stories.add('multiple jobs', () => <BundlePackages jobs={JOBS} />);
 
 stories.add('empty packages', () => (
   <BundlePackages
@@ -45,8 +39,9 @@ stories.add('empty filtered packages', () => (
   />
 ));
 
-stories.add('empty baseline', () => (
-  <BundlePackages
-    jobs={[currentJob, undefined]}
-  />
-));
+const JOBS_EMPTY_BASELINE = createJobs([
+  { webpack: currentStats },
+  { webpack: null },
+]);
+
+stories.add('empty baseline', () => <BundlePackages jobs={JOBS_EMPTY_BASELINE} />);
