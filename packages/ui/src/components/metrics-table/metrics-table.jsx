@@ -1,21 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { get } from 'lodash';
 
 import { Table } from '../../ui/table';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
+import { JobName } from '../job-name';
+import { RunLabelSum } from '../run-label-sum';
 import styles from './metrics-table.module.css';
 
-const generateHeaderCell = (item, index, runs) => ({
-  children: (item && item.label)
-    || (item && item.meta && item.meta.internalBuildNumber && `Run #${item.meta.internalBuildNumber}`)
-    || (item && `Run #${runs.length - index}`)
-    || '-',
-  className: cx(styles.value, index ? styles.baseline : styles.current),
-});
+const getHeaderCell = (items, showHeaderSum) => (job, index, jobs) => {
+  const className = cx(styles.value, index ? styles.baseline : styles.current);
+  const internalBuildNumber = get(job, 'internalBuildNumber', jobs.length - index);
+  const name = `Job #${internalBuildNumber}`;
 
-const getHeaders = (runs) => [
+  const jobName = (
+    <JobName
+      title={index === 0 ? 'Current' : 'Baseline'}
+      internalBuildNumber={internalBuildNumber}
+    >
+      {name}
+    </JobName>
+  );
+
+  return {
+    children: showHeaderSum
+      ? (
+        <div className={styles.tableHeaderRun}>
+          {jobName}
+          <RunLabelSum
+            className={styles.tableHeaderRunMetric}
+            runIndex={index}
+            runCount={jobs.length}
+            rows={items}
+          />
+        </div>
+      ) : jobName,
+    className,
+  };
+};
+
+const getHeaders = (runs, items, showHeaderSum) => [
   // Metric name column - one empty strying to render the column
   {
     children: ' ',
@@ -23,7 +49,7 @@ const getHeaders = (runs) => [
   },
 
   // Runs
-  ...runs.map(generateHeaderCell),
+  ...runs.map(getHeaderCell(items, showHeaderSum)),
 ];
 
 const generateRowCell = () => (item) => {
@@ -63,11 +89,11 @@ const getRows = (runs, items, renderRowHeader) => items.map((item) => {
 });
 
 export const MetricsTable = ({
-  className, renderRowHeader, runs, items, emptyMessage,
+  className, renderRowHeader, runs, items, emptyMessage, showHeaderSum,
 }) => (
   <Table
     className={cx(styles.root, className, (runs.length > 1) && styles.multipleRuns)}
-    headers={getHeaders(runs)}
+    headers={getHeaders(runs, items, showHeaderSum)}
     rows={getRows(runs, items, renderRowHeader)}
     emptyMessage={emptyMessage}
   />
@@ -77,6 +103,7 @@ MetricsTable.defaultProps = {
   className: '',
   renderRowHeader: (item) => item.label,
   emptyMessage: undefined,
+  showHeaderSum: false,
 };
 
 MetricsTable.propTypes = {
@@ -94,4 +121,5 @@ MetricsTable.propTypes = {
     })),
   })).isRequired,
   emptyMessage: PropTypes.element,
+  showHeaderSum: PropTypes.bool,
 };
