@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import { Box } from '@bundle-stats/ui/lib-esm/ui/box';
 import { Container } from '@bundle-stats/ui/lib-esm/ui/container';
 import { JobsHeader } from '@bundle-stats/ui/lib-esm/components/jobs-header';
@@ -12,7 +11,6 @@ import { BundleAssetsTotalsTable } from '@bundle-stats/ui/lib-esm/components/bun
 import { BundleModules } from '@bundle-stats/ui/lib-esm/components/bundle-modules';
 import { BundlePackages } from '@bundle-stats/ui/lib-esm/components/bundle-packages';
 
-import appConfig from '../config.json';
 import { Header } from './header';
 import css from './styles.css';
 
@@ -49,22 +47,12 @@ const StandaloneApp = ({ jobs }) => {
   }
 
   const insights = jobs && jobs[0] && jobs[0].insights;
-  const assetsSizeTotalInsight = insights
-    && insights.webpack
-    && insights.webpack.assetsSizeTotal;
   const duplicatePackagesInsights = insights
     && insights.webpack
     && insights.webpack.duplicatePackages;
 
   return (
     <StandaloneAppLayout>
-      {assetsSizeTotalInsight && (
-        <Helmet>
-          <title>
-            {`${assetsSizeTotalInsight.data.text} - ${appConfig.title}`}
-          </title>
-        </Helmet>
-      )}
       <Container>
         <JobsHeader jobs={jobs} />
       </Container>
