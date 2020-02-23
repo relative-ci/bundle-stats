@@ -1,3 +1,4 @@
+import { get } from 'lodash';
 import {
   INITIAL_DATA_PATTERN,
   OUTPUT_FILENAME,
@@ -7,10 +8,20 @@ import {
 
 const template = require('@bundle-stats/html-templates');
 
-export const createHTMLArtifact = (jobs) => template.replace(
-  INITIAL_DATA_PATTERN,
-  `window.__INITIAL_DATA__ = ${JSON.stringify(jobs)}`,
-);
+export const createHTMLArtifact = (jobs) => {
+  let output = template.replace(
+    INITIAL_DATA_PATTERN,
+    `window.__INITIAL_DATA__ = ${JSON.stringify(jobs)}`,
+  );
+
+  const totalSize = get(jobs, '0.insights.webpack.assetsSizeTotal.data.text');
+
+  if (totalSize) {
+    output = output.replace(/<title>(.*)<\/title>/, `<title>${totalSize} - $1</title>`);
+  }
+
+  return output;
+};
 
 export const createJSONArtifact = (_, report) => JSON.stringify(report, null, 2);
 
