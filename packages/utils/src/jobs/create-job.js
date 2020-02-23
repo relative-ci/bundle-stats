@@ -4,8 +4,9 @@ import { SOURCE_PATHS } from '../config';
 import { createSummary } from './create-summary';
 import * as webpack from '../webpack';
 import * as lighthouse from '../lighthouse';
+import * as browsertime from '../browsertime';
 
-const SOURCE_FNS = { webpack, lighthouse };
+const SOURCE_FNS = { webpack, lighthouse, browsertime };
 const GENERIC_PROPS = ['meta', 'insights', 'metrics'];
 
 /*

@@ -1,11 +1,12 @@
 import { get } from 'lodash';
 
-import METRICS, { METRIC_TYPE_NUMERIC, METRIC_TYPES } from '../config/metrics';
+import { METRIC_TYPE_NUMERIC, METRIC_TYPES } from '../config/metrics';
 import { formatDelta, getDelta, getDeltaType } from './delta';
 import { formatPercentage } from './format';
 
 import { metrics as webpackMetricTypes } from '../webpack/metrics';
 import { metrics as lighthouseMetricTypes } from '../lighthouse/metrics';
+import { metrics as browsertimeMeticTypes } from '../browsertime/metrics';
 
 /**
  * Create getMetricTypes handler
@@ -50,9 +51,9 @@ export const createGetMetricType = (metrics) =>
  * @return {import('../../types').MetricType}
  */
 export const getGlobalMetricType = createGetMetricType({
-  ...METRICS,
   webpack: webpackMetricTypes,
   lighthouse: lighthouseMetricTypes,
+  browsertime: browsertimeMeticTypes,
 });
 
 /**
