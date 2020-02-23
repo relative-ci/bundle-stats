@@ -1,3 +1,4 @@
+import { omit } from 'lodash';
 import { advanceTo } from 'jest-date-mock';
 
 import webpackStatsCurrentExtracted from '../../../__fixtures__/webpack-stats-1.extracted';
@@ -13,7 +14,7 @@ describe('report / createReport', () => {
       { webpack: webpackStatsCurrentExtracted },
     ]));
 
-    expect(actual).toMatchSnapshot();
+    expect(omit(actual, ['version'])).toMatchSnapshot();
   });
 
   test('multiple sources', () => {
@@ -22,6 +23,6 @@ describe('report / createReport', () => {
       { webpack: webpackStatsBaselineExtracted },
     ]));
 
-    expect(actual).toMatchSnapshot();
+    expect(omit(actual, ['version'])).toMatchSnapshot();
   });
 });
