@@ -51,7 +51,6 @@ const addDuplicateTag = (items, duplicatePackages) => items.map((item) => ({
 
 export const enhance = compose(
   withProps(({ jobs }) => {
-    const runs = jobs.map((job) => ({ meta: job }));
     const duplicatePackages = Object.values(
       get(jobs, '0.insights.webpack.duplicatePackages.data', {}),
     ).flat();
@@ -61,13 +60,10 @@ export const enhance = compose(
       duplicatePackages,
     );
 
-    return {
-      runs,
-      items,
-    };
+    return { items };
   }),
 
-  withProps(({ runs }) => {
+  withProps(({ jobs }) => {
     const defaultFilters = { [FILTER_CHANGED]: false, [FILTER_DUPLICATE]: false };
 
     return {
@@ -75,7 +71,7 @@ export const enhance = compose(
       initialFilters: {
         ...defaultFilters,
         // enable filter only when there are multiple jobs
-        [FILTER_CHANGED]: runs && runs.length > 1,
+        [FILTER_CHANGED]: jobs && jobs.length > 1,
       },
     };
   }),

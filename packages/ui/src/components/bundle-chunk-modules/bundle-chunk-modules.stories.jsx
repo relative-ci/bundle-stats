@@ -16,7 +16,7 @@ const [currentJob, baselineJob] = createJobs([
 const stories = storiesOf('Components/BundleChunkModules', module);
 stories.addDecorator(getWrapperDecorator());
 
-const RUNS_DEFAULT = [currentJob];
+const RUNS_DEFAULT = [baselineJob];
 
 stories.add('default', () => (
   <BundleChunkModules
@@ -83,16 +83,16 @@ stories.add('empty filtered modules', () => (
   />
 ));
 
-const RUNS_EMPTY_BASELINE = [
-  currentJob,
+const JOBS_EMPTY_BASELINE = createJobs([
+  { webpack: currentStats },
   null,
-];
+]);
 
 stories.add('empty baseline', () => (
   <BundleChunkModules
     name="vendor"
     id="1"
-    runs={RUNS_EMPTY_BASELINE}
-    modules={webpack.compareBySection.modules(RUNS_EMPTY_BASELINE)[1].modules}
+    runs={JOBS_EMPTY_BASELINE}
+    modules={webpack.compareBySection.modules(JOBS_EMPTY_BASELINE)[1].modules}
   />
 ));

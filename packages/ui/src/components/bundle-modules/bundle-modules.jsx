@@ -9,8 +9,6 @@ import { BundleChunkModules } from '../bundle-chunk-modules';
 import css from './bundle-modules.module.css';
 
 export const BundleModules = ({ jobs }) => {
-  const runs = jobs.map((job) => ({ meta: job }));
-
   const modulesReport = webpack.compareBySection.modules(jobs);
 
   return (
@@ -21,7 +19,7 @@ export const BundleModules = ({ jobs }) => {
           className={css.chunk}
           name={chunkNames.join(', ')}
           id={chunkId}
-          runs={runs}
+          runs={jobs}
           modules={modules}
         />
       ))}

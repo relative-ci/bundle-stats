@@ -130,13 +130,8 @@ const getEntryTypeFilters = (value = true) => [
 
 export const enhance = compose(
   withProps(({ jobs }) => {
-    const runs = jobs.map((job) => ({ meta: job }));
     const items = webpack.compareBySection.assets(jobs);
-
-    return {
-      runs,
-      items,
-    };
+    return { items };
   }),
 
   // @TODO run both transformations in one pass

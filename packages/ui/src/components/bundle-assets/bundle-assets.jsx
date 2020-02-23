@@ -35,16 +35,6 @@ const getFileTypeFilters = (filters) => Object.entries(FILE_TYPE_LABELS)
     ...current,
   }), {});
 
-const getAddRunLabel = (run, index, runs) => {
-  const internalBuildNumber = get(run, 'meta.internalBuildNumber', runs.length - index);
-  const name = `Job #${internalBuildNumber}`;
-
-  return {
-    ...run,
-    name,
-  };
-};
-
 const TooltipNotPredictive = ({ runs }) => (
   <div className={css.tooltipNotPredictive}>
     <p className={css.tooltipNotPredictiveText}>
@@ -154,7 +144,7 @@ const getRenderRowHeader = (labels) => (item) => (
 export const BundleAssets = (props) => {
   const {
     className,
-    runs,
+    jobs,
     items,
     updateFilters,
     resetFilters,
@@ -165,7 +155,6 @@ export const BundleAssets = (props) => {
     updateSort,
   } = props;
 
-  const labeledRuns = runs.map(getAddRunLabel);
   const emptyMessage = (
     <EmptySet
       resources="assets"
@@ -191,7 +180,7 @@ export const BundleAssets = (props) => {
             [FILTER_CHANGED]: {
               label: 'Changed',
               defaultValue: filters[FILTER_CHANGED],
-              disabled: runs.length <= 1,
+              disabled: jobs.length <= 1,
             },
             entryTypes: {
               label: 'Entry type',
@@ -223,9 +212,9 @@ export const BundleAssets = (props) => {
       </header>
       <main>
         <MetricsTable
-          runs={labeledRuns}
+          runs={jobs}
           items={items}
-          renderRowHeader={getRenderRowHeader(map(labeledRuns, 'name'))}
+          renderRowHeader={getRenderRowHeader(map(jobs, 'label'))}
           emptyMessage={emptyMessage}
           showHeaderSum
         />
@@ -241,8 +230,9 @@ BundleAssets.defaultProps = {
 
 BundleAssets.propTypes = {
   className: PropTypes.string,
-  runs: PropTypes.arrayOf(PropTypes.shape({
+  jobs: PropTypes.arrayOf(PropTypes.shape({
     internalBuildNumber: PropTypes.number,
+    label: PropTypes.string,
   })).isRequired,
   items: PropTypes.arrayOf(PropTypes.shape({
     key: PropTypes.string,

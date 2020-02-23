@@ -6,14 +6,12 @@ import { MetricsTable } from '.';
 
 const RUNS = [
   {
-    meta: {
-      internalBuildNumber: 1,
-    },
+    internalBuildNumber: 2,
+    label: 'Job #2',
   },
   {
-    meta: {
-      internalBuildNumber: 2,
-    },
+    internalBuildNumber: 1,
+    label: 'Job #1',
   },
 ];
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { get } from 'lodash';
 
 import { EmptySet } from '../../ui/empty-set';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
@@ -10,20 +9,10 @@ import { MetricsTable } from '../metrics-table';
 import { FILTER_CHANGED, FILTER_DUPLICATE } from './bundle-packages.constants';
 import css from './bundle-packages.module.css';
 
-const getAddRunLabel = (run, index, runs) => {
-  const internalBuildNumber = get(run, 'meta.internalBuildNumber', runs.length - index);
-  const name = `Job #${internalBuildNumber}`;
-
-  return {
-    ...run,
-    name,
-  };
-};
-
 export const BundlePackages = (props) => {
   const {
     className,
-    runs,
+    jobs,
     items,
     updateFilters,
     resetFilters,
@@ -33,8 +22,6 @@ export const BundlePackages = (props) => {
     sort,
     updateSort,
   } = props;
-
-  const labeledRuns = runs.map(getAddRunLabel);
 
   const emptyMessage = (
     <EmptySet
@@ -61,7 +48,7 @@ export const BundlePackages = (props) => {
             [FILTER_CHANGED]: {
               label: 'Changed',
               defaultValue: filters[FILTER_CHANGED],
-              disabled: runs.length <= 1,
+              disabled: jobs.length <= 1,
             },
             [FILTER_DUPLICATE]: {
               label: 'Duplicate',
@@ -74,7 +61,7 @@ export const BundlePackages = (props) => {
       </header>
       <main>
         <MetricsTable
-          runs={labeledRuns}
+          runs={jobs}
           items={items}
           emptyMessage={emptyMessage}
           showHeaderSum
@@ -91,7 +78,7 @@ BundlePackages.defaultProps = {
 
 BundlePackages.propTypes = {
   className: PropTypes.string,
-  runs: PropTypes.arrayOf(PropTypes.shape({
+  jobs: PropTypes.arrayOf(PropTypes.shape({
     internalBuildNumber: PropTypes.number,
   })).isRequired,
   items: PropTypes.arrayOf(PropTypes.shape({

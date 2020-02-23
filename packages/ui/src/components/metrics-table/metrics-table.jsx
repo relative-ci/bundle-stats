@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { get } from 'lodash';
 
 import { Table } from '../../ui/table';
 import { Metric } from '../metric';
@@ -10,17 +9,24 @@ import { JobName } from '../job-name';
 import { RunLabelSum } from '../run-label-sum';
 import styles from './metrics-table.module.css';
 
-const getHeaderCell = (items, showHeaderSum) => (job, index, jobs) => {
+const getHeaderCell = (items, showHeaderSum) => (run, index, runs) => {
   const className = cx(styles.value, index ? styles.baseline : styles.current);
-  const internalBuildNumber = get(job, 'internalBuildNumber', jobs.length - index);
-  const name = `Job #${internalBuildNumber}`;
+
+  if (!run) {
+    return {
+      children: '-',
+      className,
+    };
+  }
+
+  const { label, internalBuildNumber } = run;
 
   const jobName = (
     <JobName
       title={index === 0 ? 'Current' : 'Baseline'}
       internalBuildNumber={internalBuildNumber}
     >
-      {name}
+      {label}
     </JobName>
   );
 
@@ -32,7 +38,7 @@ const getHeaderCell = (items, showHeaderSum) => (job, index, jobs) => {
           <RunLabelSum
             className={styles.tableHeaderRunMetric}
             runIndex={index}
-            runCount={jobs.length}
+            runCount={runs.length}
             rows={items}
           />
         </div>
