@@ -68,3 +68,72 @@ export interface LighthouseMetricsAudits {
   totalByteWeight: MetricRun;
   domSize: MetricRun;
 }
+
+export interface BrowsertimeSourceMetric {
+  median: number;
+}
+
+export interface BrowsertimeSource {
+  info?: {
+    browsertime: {
+      version: string;
+    }
+    timestamp: string;
+    url: string;
+  }
+  statistics?: {
+    timings: {
+      firstPaint: BrowsertimeSourceMetric;
+      fullyLoaded: BrowsertimeSourceMetric;
+      pageTimings: {
+        backEndTime: BrowsertimeSourceMetric;
+        domContentLoadedTime: BrowsertimeSourceMetric;
+        domInteractiveTime: BrowsertimeSourceMetric;
+        domainLookupTime: BrowsertimeSourceMetric;
+        frontEndTime: BrowsertimeSourceMetric;
+        pageDownloadTime: BrowsertimeSourceMetric;
+        pageLoadTime: BrowsertimeSourceMetric;
+        redirectionTime: BrowsertimeSourceMetric;
+        serverConnectionTime: BrowsertimeSourceMetric;
+        serverResponseTime: BrowsertimeSourceMetric;
+      }
+      paintTiming: {
+        'first-contentful-paint': BrowsertimeSourceMetric;
+      }
+      rumSpeedIndex: BrowsertimeSourceMetric;
+    }
+    visualmetrics: {
+      FirstVisualChange: BrowsertimeSourceMetric;
+      LastVisualChange: BrowsertimeSourceMetric;
+      PerceptualSpeedIndex: BrowsertimeSourceMetric;
+      SpeedIndex: BrowsertimeSourceMetric;
+      VisualComplete85: BrowsertimeSourceMetric;
+      VisualComplete95: BrowsertimeSourceMetric;
+      VisualComplete99: BrowsertimeSourceMetric;
+    }
+  }
+}
+
+export interface BrowsertimeMetrics {
+  firstPaint: MetricRun;
+  fullyLoaded: MetricRun;
+  backEndTime: MetricRun;
+  domContentLoadedTime: MetricRun;
+  domInteractiveTime: MetricRun;
+  domainLookupTime: MetricRun;
+  frontEndTime: MetricRun;
+  pageDownloadTime: MetricRun;
+  pageLoadTime: MetricRun;
+  redirectionTime: MetricRun;
+  serverConnectionTime: MetricRun;
+  serverResponseTime: MetricRun;
+  firstContentfulPaint: MetricRun;
+  rumSpeedIndex: MetricRun;
+  firstVisualChange: MetricRun;
+  lastVisualChange: MetricRun;
+  perceptualSpeedIndex: MetricRun;
+  speedIndex: MetricRun;
+  visualComplete85: MetricRun;
+  visualComplete95: MetricRun;
+  visualComplete99: MetricRun;
+}
