@@ -3,7 +3,12 @@ node_js:
 - '8'
 git:
   depth: false
-cache: npm
+cache:
+  npm: true
+  directories:
+    - $HOME/.npm
+    - $HOME/node_modules
+    - $HOME/packages/*/node_modules
 install:
   - npm ci
   - npm run lerna bootstrap
