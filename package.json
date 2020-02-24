@@ -15,12 +15,12 @@
     "webpack": "4.41.6"
   },
   "scripts": {
-    "build": "npm run lerna run build",
+    "build": "lerna run build",
+    "bump": "./scripts/bump.sh",
     "lerna": "lerna",
-    "lint": "npm run lerna run lint",
-    "prepublishOnly": "npm run build && npm run lint && npm run test",
-    "publish": "lerna publish",
-    "test": "npm run lerna run test",
+    "lint": "lerna run lint",
+    "release": "./scripts/release.sh",
+    "test": "lerna run test",
     "test-package": "cd packages/webpack-plugin && npm run test-package"
   },
   "repository": {
