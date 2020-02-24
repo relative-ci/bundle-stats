@@ -13,10 +13,10 @@ then
     VERSION="prerelease"
   fi
   PRERELEASE_ARG="$VERSION --force-publish"
-  MESSAGE=$"DROP: %s [ci skip]"
+  MESSAGE=$"DROP: %s"
 else
 	PRERELEASE_ARG="--conventional-commits"
-  MESSAGE=$":package: release %s [ci skip]"
+  MESSAGE=$":package: release %s"
 fi
 
 RELEASE_ARGS="${PRERELEASE_ARG} ${@}"
