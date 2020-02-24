@@ -20,5 +20,6 @@ const options = [
 ];
 
 console.log(`Running lerna with "${options.join(' ')}"`);
+console.log(__dirname, process.cwd());
 
 execSync(`./node_modules/.bin/lerna ${options.join(' ')}`);
