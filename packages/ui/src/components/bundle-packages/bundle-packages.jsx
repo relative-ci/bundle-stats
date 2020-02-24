@@ -78,7 +78,7 @@ BundlePackages.defaultProps = {
 
 BundlePackages.propTypes = {
   className: PropTypes.string,
-  runs: PropTypes.arrayOf(PropTypes.shape({
+  jobs: PropTypes.arrayOf(PropTypes.shape({
     internalBuildNumber: PropTypes.number,
   })).isRequired,
   items: PropTypes.arrayOf(PropTypes.shape({

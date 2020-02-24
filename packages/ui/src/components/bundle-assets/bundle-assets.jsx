@@ -35,16 +35,6 @@ const getFileTypeFilters = (filters) => Object.entries(FILE_TYPE_LABELS)
     ...current,
   }), {});
 
-const getAddRunLabel = (run, index, runs) => {
-  const internalBuildNumber = get(run, 'meta.internalBuildNumber', runs.length - index);
-  const name = `Job #${internalBuildNumber}`;
-
-  return {
-    ...run,
-    name,
-  };
-};
-
 const TooltipNotPredictive = ({ runs }) => (
   <div className={css.tooltipNotPredictive}>
     <p className={css.tooltipNotPredictiveText}>
