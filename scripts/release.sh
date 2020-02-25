@@ -17,7 +17,9 @@ const options = [
   '--no-changelog',
   '--no-git-tag-version',
   '--no-push',
-  '--yes'
+  '--yes',
+  '--concurrency 1',
+  '--no-verify-access'
 ];
 
 console.log(`Running lerna with "${options.join(' ')}"`);
