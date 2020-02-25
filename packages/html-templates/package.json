@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/html-templates",
-  "version": "2.0.0-beta.19",
+  "version": "2.0.0-beta.20",
   "description": "HTML templates for report generation.",
   "main": "index.js",
   "scripts": {
@@ -30,8 +30,8 @@
     "@babel/plugin-proposal-object-rest-spread": "7.8.3",
     "@babel/preset-env": "7.8.4",
     "@babel/preset-react": "7.8.3",
-    "@bundle-stats/ui": "^2.0.0-beta.19",
-    "@bundle-stats/utils": "^2.0.0-beta.19",
+    "@bundle-stats/ui": "^2.0.0-beta.20",
+    "@bundle-stats/utils": "^2.0.0-beta.20",
     "@moonwalker/orbit-ui": "1.14.11",
     "@relative-ci/agent": "1.2.0",
     "@storybook/addon-storyshots": "5.3.13",
@@ -79,5 +79,6 @@
     "webpack-cli": "3.3.11",
     "webpack-merge": "4.2.2",
     "whatwg-fetch": "3.0.0"
-  }
+  },
+  "gitHead": "4495d8f5572e96f25589bd97c474b1d4344afac4"
 }

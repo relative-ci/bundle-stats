@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/ui",
-  "version": "2.0.0-beta.19",
+  "version": "2.0.0-beta.20",
   "description": "UI components for BundleStats projects.",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
@@ -37,7 +37,7 @@
     "@babel/plugin-proposal-object-rest-spread": "7.8.3",
     "@babel/preset-env": "7.8.4",
     "@babel/preset-react": "7.8.3",
-    "@bundle-stats/utils": "^2.0.0-beta.19",
+    "@bundle-stats/utils": "^2.0.0-beta.20",
     "@storybook/addon-knobs": "5.3.13",
     "@storybook/addon-storyshots": "5.3.13",
     "@storybook/addons": "5.3.13",
@@ -88,5 +88,6 @@
   "dependencies": {
     "date-fns": "^2.6.0",
     "react-outside-click-handler": "^1.2.4"
-  }
+  },
+  "gitHead": "4495d8f5572e96f25589bd97c474b1d4344afac4"
 }
