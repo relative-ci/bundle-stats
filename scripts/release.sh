@@ -22,5 +22,5 @@ const options = [
 
 console.log(`Running lerna with "${options.join(' ')}"`);
 
-const res = execSync(`npm run lerna ${options.join(' ')}`);
+const res = execSync(`npm run lerna -- ${options.join(' ')}`);
 console.lo(res.toString());
