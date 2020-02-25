@@ -22,7 +22,4 @@ const options = [
 
 console.log(`Running lerna with "${options.join(' ')}"`);
 
-const res = execSync(`npm run lerna -- ${options.join(' ')}`, {
-  maxBuffer: 1024 * 1024 * 16
-});
-console.lo(res.toString());
+execSync(`npm run lerna -- ${options.join(' ')}`);
