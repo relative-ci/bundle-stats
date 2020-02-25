@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const path = require('path');
 const { execSync } = require('child_process');
 
 const tag = execSync('git tag -l --points-at HEAD')
@@ -20,6 +21,6 @@ const options = [
 ];
 
 console.log(`Running lerna with "${options.join(' ')}"`);
-console.log(__dirname, process.cwd());
 
-execSync(`./node_modules/.bin/lerna ${options.join(' ')}`);
+const res = execSync(`npm run lerna ${options.join(' ')}`);
+console.lo(res.toString());
