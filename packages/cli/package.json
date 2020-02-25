@@ -63,5 +63,6 @@
     "eslint-plugin-import": "2.20.1",
     "eslint-plugin-jest": "23.8.0",
     "jest": "25.1.0"
-  }
+  },
+  "gitHead": "e65cf9c4031bff9269774d2b87405aed9c58e7d9"
 }

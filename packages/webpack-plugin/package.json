@@ -60,5 +60,6 @@
     "jest": "24.9.0",
     "memory-fs": "0.5.0",
     "webpack": "4.41.2"
-  }
+  },
+  "gitHead": "e65cf9c4031bff9269774d2b87405aed9c58e7d9"
 }

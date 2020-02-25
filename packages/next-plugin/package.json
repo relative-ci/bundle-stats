@@ -39,11 +39,12 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/next-plugin#readme",
   "dependencies": {
-    "bundle-stats-webpack-plugin": "^1.15.7"
+    "bundle-stats-webpack-plugin": "2.0.0-beta.28"
   },
   "devDependencies": {
     "eslint": "6.8.0",
     "eslint-config-airbnb-base": "14.0.0",
     "eslint-plugin-import": "2.20.1"
-  }
+  },
+  "gitHead": "e65cf9c4031bff9269774d2b87405aed9c58e7d9"
 }

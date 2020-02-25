@@ -45,5 +45,6 @@
     "eslint": "6.8.0",
     "eslint-config-airbnb-base": "14.0.0",
     "eslint-plugin-import": "2.20.1"
-  }
+  },
+  "gitHead": "e65cf9c4031bff9269774d2b87405aed9c58e7d9"
 }
