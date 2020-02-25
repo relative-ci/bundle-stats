@@ -7,7 +7,8 @@
     "node": ">= 8.0"
   },
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "prepublishOnly": "npm install"
   },
   "keywords": [
     "webpack",
