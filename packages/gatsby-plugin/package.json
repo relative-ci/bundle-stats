@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-bundle-stats",
-  "version": "2.0.0-beta.26",
+  "version": "2.0.0-beta.27",
   "description": "In-depth bundle analyzer for webpack(bundle size, assets, modules)",
   "main": "index.js",
   "engines": {
