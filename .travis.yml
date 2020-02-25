@@ -28,7 +28,8 @@ before_deploy:
 deploy:
   provider: script
   script: "npm run release"
-  api_key:
+  skip_cleanup: true
   on:
     tags: true
     repo: relative-ci/bundle-stats
+
