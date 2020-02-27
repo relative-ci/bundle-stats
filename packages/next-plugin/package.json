@@ -7,7 +7,7 @@
     "node": ">= 8.0"
   },
   "scripts": {
-    "lint": "eslint ."
+    "lint": "../../node_modules/.bin/eslint . --ext .js"
   },
   "keywords": [
     "webpack",

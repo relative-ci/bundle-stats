@@ -22,9 +22,7 @@ module.exports = (settings) => {
               loader: 'css-loader',
               options: {
                 modules: {
-                  localIdentName: isDevelopment
-                    ? '[path][name]__[local]'
-                    : '[hash:base64:5]',
+                  localIdentName: isDevelopment ? '[path][name]__[local]' : '[hash:base64:5]',
                 },
               },
             },
@@ -35,7 +33,7 @@ module.exports = (settings) => {
                   path: rootDir,
                 },
               },
-            }
+            },
           ],
           include: [
             /src/,
@@ -52,4 +50,4 @@ module.exports = (settings) => {
       }),
     ],
   };
-}
+};

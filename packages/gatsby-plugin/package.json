@@ -7,7 +7,7 @@
     "node": ">= 8.0"
   },
   "scripts": {
-    "lint": "eslint ."
+    "lint": "../../node_modules/.bin/eslint . --ext .js"
   },
   "keywords": [
     "webpack",
@@ -39,10 +39,5 @@
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/gatsby-plugin#readme",
   "dependencies": {
     "bundle-stats-webpack-plugin": "^2.0.0-beta.34"
-  },
-  "devDependencies": {
-    "eslint": "6.8.0",
-    "eslint-config-airbnb-base": "14.0.0",
-    "eslint-plugin-import": "2.20.1"
   }
 }
