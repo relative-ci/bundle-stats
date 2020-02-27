@@ -2,4 +2,7 @@
 .eslintrc.js
 __fixtures__
 !__fixtures__/webpack-stats-*.json
+jest.config.js
+jsconfig.js
 src
+test
