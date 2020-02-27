@@ -1,4 +1,3 @@
-/* global document */
 import React from 'react';
 import OutsideClickHandler from 'react-outside-click-handler';
 
@@ -12,11 +11,12 @@ export const dropdownContainer = (BaseComponent) => {
       };
     }
 
-    dropdownToggle = () => this.setState(({ open }) => ({
-      open: !open,
-    }))
+    dropdownToggle = () =>
+      this.setState(({ open }) => ({
+        open: !open,
+      }));
 
-    dropdownClose = () => this.setState({ open: false })
+    dropdownClose = () => this.setState({ open: false });
 
     render() {
       // Disable outsideClickHandler when not running in a browser
@@ -27,11 +27,7 @@ export const dropdownContainer = (BaseComponent) => {
           onOutsideClick={this.dropdownClose}
           disabled={disableOutsideClickHandler}
         >
-          <BaseComponent
-            {...this.props}
-            {...this.state}
-            dropdownToggle={this.dropdownToggle}
-          />
+          <BaseComponent {...this.props} {...this.state} dropdownToggle={this.dropdownToggle} />
         </OutsideClickHandler>
       );
     }
