@@ -2,7 +2,7 @@
 
 [![](https://img.shields.io/npm/v/gatsby-plugin-bundle-stats.svg)](https://www.npmjs.com/package/gatsby-plugin-bundle-stats)
 
-[Gatsby](https://www.gatsbyjs.org) plugin for [bundle-stats](https://github.com/relative-ci/bundle-stats/tree/master/packages/bundle-stats).
+[Gatsby](https://www.gatsbyjs.org) plugin for [bundle-stats](https://github.com/relative-ci/bundle-stats/tree/master/packages/webpack-plugin).
 
 ## Description
 

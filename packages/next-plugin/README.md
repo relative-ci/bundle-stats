@@ -2,7 +2,7 @@
 
 [![](https://img.shields.io/npm/v/next-plugin-bundle-stats.svg)](https://www.npmjs.com/package/next-plugin-bundle-stats)
 
-[Next.js](https://nextjs.org) plugin for [bundle-stats](https://github.com/relative-ci/bundle-stats/tree/master/packages/bundle-stats).
+[Next.js](https://nextjs.org) plugin for [bundle-stats](https://github.com/relative-ci/bundle-stats/tree/master/packages/webpack-plugin).
 
 ## Description
 
@@ -22,7 +22,7 @@ yarn add --dev next-plugin-bundle-stats
 
 ## Available options
 
-See [bundle-stats available options](https://github.com/relative-ci/bundle-stats/tree/master/packages/bundle-stats#bundlestatswebpackpluginoptions).
+See [bundle-stats available options](https://github.com/relative-ci/bundle-stats/tree/master/packages/webpack-plugin#bundlestatswebpackpluginoptions).
 
 ## Examples of usage
 
