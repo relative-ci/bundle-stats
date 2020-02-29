@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { createStatsSummary } from '@bundle-stats/utils';
 import { Box } from '@bundle-stats/ui/lib-esm/ui/box';
 import { Container } from '@bundle-stats/ui/lib-esm/ui/container';
 import { JobsHeader } from '@bundle-stats/ui/lib-esm/components/jobs-header';
@@ -34,15 +33,6 @@ const StandaloneAppLayout = (props) => (
   </div>
 );
 
-const getSummaryData = (jobs) => {
-  if (jobs.length <= 2) {
-    return jobs[0].summary;
-  }
-
-  return createStatsSummary(jobs[jobs.length - 1].stats, jobs[0].stats);
-};
-
-
 const StandaloneApp = ({ jobs }) => {
   if (jobs.length === 0) {
     return (
@@ -56,7 +46,10 @@ const StandaloneApp = ({ jobs }) => {
     );
   }
 
-  const warnings = jobs[0] && jobs[0].warnings;
+  const insights = jobs && jobs[0] && jobs[0].insights;
+  const duplicatePackagesInsights = insights
+    && insights.webpack
+    && insights.webpack.duplicatePackages;
 
   return (
     <StandaloneAppLayout>
@@ -65,14 +58,14 @@ const StandaloneApp = ({ jobs }) => {
       </Container>
       <Container>
         <Summary
-          data={getSummaryData(jobs)}
+          data={jobs[0].summary}
           showSummaryItemDelta={jobs.length !== 1}
           showSummaryItemBaselineValue={jobs.length !== 1}
         />
       </Container>
-      {warnings && warnings.duplicatePackages && (
+      {duplicatePackagesInsights && (
         <Container>
-          <DuplicatePackagesWarning duplicatePackages={warnings.duplicatePackages} />
+          <DuplicatePackagesWarning duplicatePackages={duplicatePackagesInsights.data} />
         </Container>
       )}
       <Container>
@@ -143,7 +136,8 @@ StandaloneApp.defaultProps = {
 StandaloneApp.propTypes = {
   jobs: PropTypes.arrayOf(PropTypes.shape({
     internalBuildNumber: PropTypes.number,
-    warnings: PropTypes.object,
+    insights: PropTypes.object,
+    summary: PropTypes.object,
   })),
 };
 

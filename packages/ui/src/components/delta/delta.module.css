@@ -5,19 +5,26 @@
   letter-spacing: 0.05em;
 }
 
-.negative {
+.HIGH_NEGATIVE {
   color: var(--color-red-dark);
 }
 
-.slightlyNegative {
+.NEGATIVE {
+  color: var(--color-red-dark);
+}
+
+.LOW_NEGATIVE {
   color: var(--color-red-light);
 }
 
-.slightlyPositive {
+.LOW_POSITIVE {
   color: var(--color-green-light);
 }
 
-.positive {
+.POSITIVE {
   color: var(--color-green-dark);
 }
 
+.HIGH_POSITIVE {
+  color: var(--color-green-dark);
+}

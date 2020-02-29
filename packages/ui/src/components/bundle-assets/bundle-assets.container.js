@@ -1,13 +1,7 @@
 import { compose, withProps } from 'recompose';
 import { get, filter } from 'lodash';
-import {
-  FILE_TYPES,
-  METRIC_TYPE_FILE_SIZE,
-  addMetricsData,
-  getFileType,
-  assetsWebpackTransform,
-  mergeRunsById,
-} from '@bundle-stats/utils';
+import { FILE_TYPES } from '@bundle-stats/utils';
+import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilters } from '../../hocs/with-filters';
@@ -89,7 +83,7 @@ const getRowFilter = (filters) => (item) => {
     return false;
   }
 
-  if (!filters[`fileTypes.${getFileType(item.key)}`]) {
+  if (!filters[`fileTypes.${webpack.getFileType(item.key)}`]) {
     return false;
   }
 
@@ -136,18 +130,8 @@ const getEntryTypeFilters = (value = true) => [
 
 export const enhance = compose(
   withProps(({ jobs }) => {
-    const runs = jobs.map((job) => ({ meta: job }));
-    const jobsAssets = jobs.map((job) => {
-      const { assets } = assetsWebpackTransform(get(job, 'rawData.webpack.stats'));
-      return assets;
-    });
-
-    const items = addMetricsData(mergeRunsById(jobsAssets), METRIC_TYPE_FILE_SIZE);
-
-    return {
-      runs,
-      items,
-    };
+    const items = webpack.compareBySection.assets(jobs);
+    return { items };
   }),
 
   // @TODO run both transformations in one pass

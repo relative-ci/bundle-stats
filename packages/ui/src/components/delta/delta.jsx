@@ -4,21 +4,10 @@ import cx from 'classnames';
 
 import css from './delta.module.css';
 
-const LEVEL_CHANGE = 5;
-
 export const Delta = ({
-  className, value, displayValue, biggerIsBetter,
+  className, displayValue, deltaType,
 }) => {
-  const positiveChange = (biggerIsBetter && value > 0) || (!biggerIsBetter && value < 0);
-
-  const absValue = Math.abs(value);
-
-  const rootClassName = cx(css.root, className, {
-    [css.negative]: !positiveChange && (absValue >= LEVEL_CHANGE),
-    [css.slightlyNegative]: !positiveChange && (absValue > 0 && absValue < LEVEL_CHANGE),
-    [css.slightlyPositive]: positiveChange && (absValue > 0 && absValue < LEVEL_CHANGE),
-    [css.positive]: positiveChange && (absValue >= LEVEL_CHANGE),
-  });
+  const rootClassName = cx(css.root, className, css[deltaType]);
 
   return (
     <span className={rootClassName}>
@@ -29,12 +18,10 @@ export const Delta = ({
 
 Delta.defaultProps = {
   className: '',
-  biggerIsBetter: true,
 };
 
 Delta.propTypes = {
   className: PropTypes.string,
-  value: PropTypes.number.isRequired,
   displayValue: PropTypes.string.isRequired,
-  biggerIsBetter: PropTypes.bool,
+  deltaType: PropTypes.string.isRequired,
 };

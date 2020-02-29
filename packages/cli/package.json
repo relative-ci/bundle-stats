@@ -1,0 +1,58 @@
+{
+  "name": "bundle-stats",
+  "version": "2.0.0-rc.3",
+  "description": "In-depth bundle analyzer for webpack(bundle size, assets, modules, packages)",
+  "main": "lib/index.js",
+  "bin": {
+    "bundle-stats": "bin/index.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "engines": {
+    "node": ">= 8.0"
+  },
+  "scripts": {
+    "lint": "../../node_modules/.bin/eslint . --ext .js",
+    "test": "jest --passWithNoTests src "
+  },
+  "keywords": [
+    "webpack",
+    "bundle-size",
+    "bundle-analyzer",
+    "bundle-stats",
+    "stats",
+    "bundle",
+    "size",
+    "assets",
+    "chunks",
+    "modules"
+  ],
+  "author": {
+    "name": "Viorel Cojocaru",
+    "email": "vio@beanon.com",
+    "url": "https://beanon.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/relative-ci/bundle-stats.git"
+  },
+  "bugs": {
+    "url": "https://github.com/relative-ci/bundle-stats/issues"
+  },
+  "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/cli#readme",
+  "dependencies": {
+    "@bundle-stats/cli-utils": "^2.0.0-rc.3",
+    "@bundle-stats/utils": "^2.0.0-rc.3",
+    "boxen": "^4.2.0",
+    "fs-extra": "8.1.0",
+    "listr": "^0.14.3",
+    "lodash": "4.17.15",
+    "update-notifier": "4.1.0",
+    "yargs": "15.1.0"
+  },
+  "devDependencies": {
+    "jest": "25.1.0"
+  }
+}

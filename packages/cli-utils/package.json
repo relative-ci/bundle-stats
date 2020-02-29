@@ -1,0 +1,46 @@
+{
+  "name": "@bundle-stats/cli-utils",
+  "version": "2.0.0-rc.3",
+  "description": "BundleStats CLI utilities",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "engines": {
+    "node": ">= 8.0"
+  },
+  "scripts": {
+    "build": "babel src -d lib",
+    "lint": "../../node_modules/.bin/eslint . --ext .js",
+    "test": "jest --passWithNoTests src "
+  },
+  "keywords": [],
+  "author": {
+    "name": "Viorel Cojocaru",
+    "email": "vio@beanon.com",
+    "url": "https://beanon.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/relative-ci/bundle-stats.git"
+  },
+  "bugs": {
+    "url": "https://github.com/relative-ci/bundle-stats/issues"
+  },
+  "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/cli-utils#readme",
+  "dependencies": {
+    "@bundle-stats/html-templates": "^2.0.0-rc.3",
+    "@bundle-stats/utils": "^2.0.0-rc.3",
+    "core-js": "^3.1.4",
+    "find-cache-dir": "^3.1.0",
+    "fs-extra": "^8.1.0",
+    "lodash": "4.17.15"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.7.4",
+    "@babel/core": "7.7.4",
+    "@babel/preset-env": "7.7.4",
+    "jest": "24.9.0"
+  }
+}

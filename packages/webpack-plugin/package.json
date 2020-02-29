@@ -1,0 +1,59 @@
+{
+  "name": "bundle-stats-webpack-plugin",
+  "version": "2.0.0-rc.3",
+  "description": "In-depth bundle analyzer for webpack(bundle size, assets, modules, packages)",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "engines": {
+    "node": ">= 8.0"
+  },
+  "scripts": {
+    "build": "babel src -d lib",
+    "lint": "../../node_modules/.bin/eslint . --ext .js",
+    "test": "jest --passWithNoTests src ",
+    "test-package": "jest test/package/*.test.js"
+  },
+  "keywords": [
+    "webpack",
+    "webpack-plugin",
+    "bundle-size",
+    "bundle-analyzer",
+    "bundle-stats",
+    "stats",
+    "bundle",
+    "size",
+    "assets",
+    "chunks",
+    "modules"
+  ],
+  "author": {
+    "name": "Viorel Cojocaru",
+    "email": "vio@beanon.com",
+    "url": "https://beanon.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/relative-ci/bundle-stats.git"
+  },
+  "bugs": {
+    "url": "https://github.com/relative-ci/bundle-stats/issues"
+  },
+  "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/webpack-plugin#readme",
+  "dependencies": {
+    "@bundle-stats/cli-utils": "^2.0.0-rc.3",
+    "@bundle-stats/utils": "^2.0.0-rc.3",
+    "core-js": "^3.1.4",
+    "lodash": "4.17.15"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.7.4",
+    "@babel/core": "7.7.4",
+    "@babel/preset-env": "7.7.4",
+    "jest": "24.9.0",
+    "memory-fs": "0.5.0",
+    "webpack": "4.41.2"
+  }
+}

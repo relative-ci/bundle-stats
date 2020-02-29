@@ -1,9 +1,20 @@
 language: node_js
 node_js:
-  - "8"
+- '8'
 git:
   depth: false
-cache: npm
+cache:
+  npm: true
+  directories:
+    - $HOME/.npm
+    - $HOME/node_modules
+    - $HOME/packages/cli/node_modules
+    - $HOME/packages/cli-utils/node_modules
+    - $HOME/packages/gatsby-plugin/node_modules
+    - $HOME/packages/html-templates/node_modules
+    - $HOME/packages/next-plugin/node_modules
+    - $HOME/packages/ui/node_modules
+    - $HOME/packages/utils/node_modules
 install:
   - npm ci
   - npm run lerna bootstrap
@@ -12,3 +23,13 @@ script:
   - npm run lint
   - npm test
   - npm run test-package
+before_deploy:
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
+deploy:
+  provider: script
+  script: "npm run release"
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: relative-ci/bundle-stats
+

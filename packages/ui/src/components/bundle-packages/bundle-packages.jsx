@@ -1,50 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { get } from 'lodash';
 
 import { EmptySet } from '../../ui/empty-set';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { MetricsTable } from '../metrics-table';
-import { JobName } from '../job-name';
-import { RunLabelSum } from '../run-label-sum';
 import { FILTER_CHANGED, FILTER_DUPLICATE } from './bundle-packages.constants';
 import css from './bundle-packages.module.css';
-
-const RUN_TITLE_CURRENT = 'Current';
-const RUN_TITLE_BASELINE = 'Baseline';
-
-const getAddRunLabel = (items) => (run, index, runs) => {
-  const internalBuildNumber = get(run, 'meta.internalBuildNumber', runs.length - index);
-  const name = `Job #${internalBuildNumber}`;
-
-  const label = (
-    <div className={css.tableHeaderRun}>
-      <JobName
-        title={index === 0 ? RUN_TITLE_CURRENT : RUN_TITLE_BASELINE}
-        internalBuildNumber={internalBuildNumber}
-      />
-      <RunLabelSum
-        className={css.tableHeaderRunMetric}
-        runIndex={index}
-        runCount={runs.length}
-        rows={items}
-      />
-    </div>
-  );
-
-  return {
-    ...run,
-    name,
-    label,
-  };
-};
 
 export const BundlePackages = (props) => {
   const {
     className,
-    runs,
+    jobs,
     items,
     updateFilters,
     resetFilters,
@@ -55,7 +23,6 @@ export const BundlePackages = (props) => {
     updateSort,
   } = props;
 
-  const labeledRuns = runs.map(getAddRunLabel(items));
   const emptyMessage = (
     <EmptySet
       resources="packages"
@@ -81,7 +48,7 @@ export const BundlePackages = (props) => {
             [FILTER_CHANGED]: {
               label: 'Changed',
               defaultValue: filters[FILTER_CHANGED],
-              disabled: runs.length <= 1,
+              disabled: jobs.length <= 1,
             },
             [FILTER_DUPLICATE]: {
               label: 'Duplicate',
@@ -94,9 +61,10 @@ export const BundlePackages = (props) => {
       </header>
       <main>
         <MetricsTable
-          runs={labeledRuns}
+          runs={jobs}
           items={items}
           emptyMessage={emptyMessage}
+          showHeaderSum
         />
       </main>
     </section>
@@ -110,7 +78,7 @@ BundlePackages.defaultProps = {
 
 BundlePackages.propTypes = {
   className: PropTypes.string,
-  runs: PropTypes.arrayOf(PropTypes.shape({
+  jobs: PropTypes.arrayOf(PropTypes.shape({
     internalBuildNumber: PropTypes.number,
   })).isRequired,
   items: PropTypes.arrayOf(PropTypes.shape({

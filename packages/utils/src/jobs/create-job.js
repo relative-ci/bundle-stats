@@ -1,58 +1,44 @@
-import {
-  get, isEmpty, merge, omit, set,
-} from 'lodash';
+import { get, merge, set } from 'lodash';
 
-import { SOURCE_PATH_WEBPACK_STATS, SOURCE_PATHS } from '../config';
-import { createStats } from '../stats/create';
-import { createStatsSummary } from '../stats/create-summary';
-import {
-  duplicatePackagesBundleTransform,
-  metaWebpackTransform,
-  modulesWebpackTransform,
-  packagesModulesBundleTransform,
-} from '../transforms';
+import { SOURCE_PATHS } from '../config';
+import { createSummary } from './create-summary';
+import * as webpack from '../webpack';
+import * as lighthouse from '../lighthouse';
+import * as browsertime from '../browsertime';
 
-const SOURCE_IDS = SOURCE_PATHS.map((id) => id.split('.')[0]);
+const SOURCE_FNS = { webpack, lighthouse, browsertime };
+const GENERIC_PROPS = ['meta', 'insights', 'metrics'];
 
 /*
  * Create job from stats
  */
-export const createJob = (source, baseline) => {
-  const data = SOURCE_PATHS.reduce((agg, rawDataPath) => {
-    const rawData = get(source, rawDataPath);
+export const createJob = (source, baseline) => SOURCE_PATHS.reduce((agg, sourcePath) => {
+  const rawData = get(source, sourcePath);
 
-    if (!rawData) {
-      return agg;
-    }
+  if (!rawData) {
+    return agg;
+  }
 
-    return merge(
-      {},
-      agg,
-      {
-        rawData: set({}, rawDataPath, rawData),
-      },
-    );
-  }, omit(source, SOURCE_IDS));
+  const sourceModule = SOURCE_FNS[sourcePath];
 
-  const stats = createStats(baseline && baseline.rawData, data.rawData);
-  const summary = createStatsSummary(baseline && baseline.stats, stats);
-  const { meta } = metaWebpackTransform(get(data.rawData, SOURCE_PATH_WEBPACK_STATS));
+  if (!sourceModule) {
+    return agg;
+  }
 
-  const { warnings: duplicatePackagesWarnings } = duplicatePackagesBundleTransform(
-    packagesModulesBundleTransform({
-      ...modulesWebpackTransform(get(data.rawData, SOURCE_PATH_WEBPACK_STATS)),
-    }),
+  const extractedData = sourceModule.extract(rawData, baseline);
+  const summary = createSummary(
+    SOURCE_FNS[sourcePath].SUMMARY_METRIC_PATHS,
+    get(baseline, `metrics.${sourcePath}`, {}),
+    get(extractedData, 'metrics', {}),
   );
 
-  const warnings = {
-    ...duplicatePackagesWarnings,
-  };
-
-  return {
-    ...data,
-    meta,
-    stats,
-    summary,
-    ...isEmpty(warnings) ? {} : { warnings },
-  };
-};
+  return merge(
+    {},
+    agg,
+    { rawData: set({}, sourcePath, rawData) },
+    { summary: set({}, sourcePath, summary) },
+    ...GENERIC_PROPS.map((genericPropName) => ({
+      [genericPropName]: set({}, sourcePath, extractedData[genericPropName]),
+    })),
+  );
+}, {});

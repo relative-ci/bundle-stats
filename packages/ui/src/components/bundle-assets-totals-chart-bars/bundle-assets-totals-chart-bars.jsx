@@ -4,39 +4,24 @@ import cx from 'classnames';
 import {
   get, map, max, sum,
 } from 'lodash';
-import {
-  addMetricsData, getStatsByMetrics, mergeRunsById,
-} from '@bundle-stats/utils';
+import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import { HorizontalBarChart } from '../../ui';
 import { getColors } from '../../utils';
 import { SummaryItem } from '../summary-item';
 import css from './bundle-assets-totals-chart-bars.module.css';
 
-const METRICS = [
-  'webpack.assets.totalSizeByTypeJS',
-  'webpack.assets.totalSizeByTypeCSS',
-  'webpack.assets.totalSizeByTypeIMG',
-  'webpack.assets.totalSizeByTypeMEDIA',
-  'webpack.assets.totalSizeByTypeFONT',
-  'webpack.assets.totalSizeByTypeHTML',
-  'webpack.assets.totalSizeByTypeOTHER',
-];
-
 export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
   const rootClassName = cx(css.root, className);
-
-  const items = addMetricsData(mergeRunsById(
-    map(jobs, (job) => getStatsByMetrics(get(job, 'stats', {}), METRICS)),
-  ));
+  const items = webpack.compareBySection.sizes(jobs);
 
   const dataGraphs = [];
 
   items.forEach(({ runs }) => {
-    runs.forEach(({ value }, runIndex) => {
+    runs.forEach((run, runIndex) => {
       dataGraphs[runIndex] = [
         ...dataGraphs[runIndex] || [],
-        value,
+        get(run, 'value', 0),
       ];
     });
   });

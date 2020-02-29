@@ -6,22 +6,35 @@
     "node": ">= 8.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "dotenv": "8.2.0",
-    "husky": "4.2.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-import-resolver-node": "^0.3.3",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.8.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "husky": "^4.2.3",
     "lerna": "3.20.2",
+    "lint-staged": "^10.0.8",
     "mini-css-extract-plugin": "0.9.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
+    "prettier": "^1.19.1",
     "terser-webpack-plugin": "2.3.5",
     "webpack": "4.41.6"
   },
   "scripts": {
-    "build": "npm run lerna run build",
+    "build": "lerna run build",
+    "bump": "./scripts/bump.sh",
+    "format": "prettier --write \"**/*.{js,jsx}\"",
     "lerna": "lerna",
-    "lint": "npm run lerna run lint",
-    "prepublishOnly": "npm run lint && npm run test && npm run build",
-    "publish": "lerna exec 'npm publish'",
-    "test": "npm run lerna run test",
-    "test-package": "cd packages/bundle-stats && npm run test-package"
+    "lint": "lerna exec 'npm run lint -- --quiet'",
+    "release": "./scripts/release.sh",
+    "test": "lerna run test",
+    "test-package": "cd packages/webpack-plugin && npm run test-package"
   },
   "repository": {
     "type": "git",

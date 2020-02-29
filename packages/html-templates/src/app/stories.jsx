@@ -9,19 +9,25 @@ import baselineData from 'Fixtures/job.baseline.json'; // eslint-disable-line
 import StandaloneApp from '.';
 
 const JOBS = createJobs([
-  { webpack: { stats: currentData.rawData.webpack.stats } },
-  { webpack: { stats: baselineData.rawData.webpack.stats } },
+  { webpack: currentData.rawData.webpack },
+  { webpack: baselineData.rawData.webpack },
+]);
+const MULTIPLE_JOBS = createJobs([
+  { webpack: currentData.rawData.webpack },
+  { webpack: baselineData.rawData.webpack },
   {
     webpack: {
-      stats: {
-        ...baselineData.rawData.webpack.stats,
-        assets: baselineData.rawData.webpack.stats.assets.filter((asset) => asset.name.match(/.(css|js)$/)),
-        modules: baselineData.rawData.webpack.stats.modules.slice(0, 100),
-      },
+      ...baselineData.rawData.webpack,
+      assets: baselineData.rawData.webpack.assets.filter((asset) => asset.name.match(/.(css|js)$/)),
+      modules: baselineData.rawData.webpack.modules.slice(0, 100),
     },
   },
 ]);
 const [CURRENT_JOB, BASELINE_JOB] = JOBS;
+const EMPTY_BASELINE = createJobs([
+  { webpack: currentData.rawData.webpack },
+  { webpack: null },
+]);
 
 const stories = storiesOf('StandaloneApp', module);
 
@@ -35,12 +41,12 @@ stories.add('default', () => (
   <StandaloneApp jobs={[CURRENT_JOB, BASELINE_JOB]} />
 ));
 
-stories.add('no warnings', () => (
+stories.add('no insights', () => (
   <StandaloneApp
     jobs={[
       {
         ...CURRENT_JOB,
-        warnings: undefined,
+        insights: undefined,
       },
       BASELINE_JOB,
     ]}
@@ -51,8 +57,12 @@ stories.add('no baseline', () => (
   <StandaloneApp jobs={[CURRENT_JOB]} />
 ));
 
+stories.add('empty baseline', () => (
+  <StandaloneApp jobs={EMPTY_BASELINE} />
+));
+
 stories.add('multiple baselines', () => (
-  <StandaloneApp jobs={JOBS} />
+  <StandaloneApp jobs={MULTIPLE_JOBS} />
 ));
 
 stories.add('empty', () => (

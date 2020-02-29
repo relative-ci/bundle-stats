@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
+import { get } from 'lodash';
 
 import baselineData from '../../__mocks__/webpack-stats.baseline.json';
 import currentData from '../../__mocks__/webpack-stats.current.json';
@@ -23,8 +24,8 @@ const stories = storiesOf('Prototypes/BundlePage', module);
 stories.addDecorator(getWrapperDecorator());
 
 const JOBS = createJobs([
-  { webpack: { stats: currentData } },
-  { webpack: { stats: baselineData } },
+  { webpack: currentData },
+  { webpack: baselineData },
 ]);
 const [currentJob] = JOBS;
 
@@ -50,9 +51,11 @@ stories.add('totals', () => (
       <Container>
         <Summary data={currentJob.summary} showSummaryItemBaselineValue />
       </Container>
-      {currentJob.warnings && currentJob.warnings.duplicatePackages && (
+      {get(currentJob, 'insights.webpack.duplicatePackages') && (
         <Container>
-          <DuplicatePackagesWarning duplicatePackages={currentJob.warnings.duplicatePackages} />
+          <DuplicatePackagesWarning
+            duplicatePackages={get(currentJob, 'insights.webpack.duplicatePackages.data')}
+          />
         </Container>
       )}
       <Container>
@@ -86,9 +89,11 @@ stories.add('assets', () => (
       <Container>
         <Summary data={currentJob.summary} showSummaryItemBaselineValue />
       </Container>
-      {currentJob.warnings && currentJob.warnings.duplicatePackages && (
+      {get(currentJob, 'insights.webpack.duplicatePackages') && (
         <Container>
-          <DuplicatePackagesWarning duplicatePackages={currentJob.warnings.duplicatePackages} />
+          <DuplicatePackagesWarning
+            duplicatePackages={get(currentJob, 'insights.webpack.duplicatePackages.data')}
+          />
         </Container>
       )}
       <Container>
@@ -119,9 +124,11 @@ stories.add('modules', () => (
       <Container>
         <Summary data={currentJob.summary} showSummaryItemBaselineValue />
       </Container>
-      {currentJob.warnings && currentJob.warnings.duplicatePackages && (
+      {get(currentJob, 'insights.webpack.duplicatePackages') && (
         <Container>
-          <DuplicatePackagesWarning duplicatePackages={currentJob.warnings.duplicatePackages} />
+          <DuplicatePackagesWarning
+            duplicatePackages={get(currentJob, 'insights.webpack.duplicatePackages.data')}
+          />
         </Container>
       )}
       <Container>
@@ -150,9 +157,11 @@ stories.add('packages', () => (
       <Container>
         <Summary data={currentJob.summary} showSummaryItemBaselineValue />
       </Container>
-      {currentJob.warnings && currentJob.warnings.duplicatePackages && (
+      {get(currentJob, 'insights.webpack.duplicatePackages') && (
         <Container>
-          <DuplicatePackagesWarning duplicatePackages={currentJob.warnings.duplicatePackages} />
+          <DuplicatePackagesWarning
+            duplicatePackages={get(currentJob, 'insights.webpack.duplicatePackages.data')}
+          />
         </Container>
       )}
       <Container>

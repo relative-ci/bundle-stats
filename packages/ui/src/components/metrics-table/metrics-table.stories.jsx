@@ -6,14 +6,12 @@ import { MetricsTable } from '.';
 
 const RUNS = [
   {
-    meta: {
-      internalBuildNumber: 1,
-    },
+    internalBuildNumber: 2,
+    label: 'Job #2',
   },
   {
-    meta: {
-      internalBuildNumber: 2,
-    },
+    internalBuildNumber: 1,
+    label: 'Job #1',
   },
 ];
 
@@ -94,6 +92,7 @@ const ITEMS_MULTIPLE_RUNS = [
         displayDelta: '+700KB',
         deltaPercentage: 613.98,
         displayDeltaPercentage: '+613.98%',
+        deltaType: 'HIGH_NEGATIVE',
       },
       {
         value: 122331,
@@ -114,6 +113,7 @@ const ITEMS_MULTIPLE_RUNS = [
         displayDelta: '+20ms',
         deltaPercentage: 2.0408163,
         displayDeltaPercentage: '+2.04%',
+        deltaType: 'LOW_NEGATIVE',
       },
       {
         value: 980,
@@ -134,6 +134,7 @@ const ITEMS_MULTIPLE_RUNS = [
         displayDelta: '+10',
         deltaPercentage: 14.2857143,
         displayDeltaPercentage: '+14.29%',
+        deltaType: 'POSITIVE',
       },
       {
         value: 70,
@@ -154,6 +155,7 @@ const ITEMS_MULTIPLE_RUNS = [
         displayDelta: '+2',
         deltaPercentage: 2.5641026,
         displayDeltaPercentage: '+2.56%',
+        deltaType: 'LOW_POSITIVE',
       },
       {
         value: 78,
@@ -174,6 +176,7 @@ const ITEMS_MULTIPLE_RUNS = [
         displayDelta: '+100%',
         deltaPercentage: 100,
         displayDeltaPercentage: '+100%',
+        deltaType: 'HIGH_NEGATIVE',
       },
       null,
     ],
@@ -191,6 +194,7 @@ const ITEMS_MULTIPLE_RUNS = [
         displayDelta: '0',
         deltaPercentage: 0,
         displayDeltaPercentage: '0%',
+        deltaType: 'NO_CHANGE',
       },
       {
         value: 80,

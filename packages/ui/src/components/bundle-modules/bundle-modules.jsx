@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { get, isEmpty } from 'lodash';
-import {
-  modulesWebpackTransform,
-  getModulesReport,
-} from '@bundle-stats/utils';
+import { isEmpty } from 'lodash';
+import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import { Box } from '../../ui/box';
 import { BundleChunkModules } from '../bundle-chunk-modules';
@@ -12,12 +9,7 @@ import { BundleChunkModules } from '../bundle-chunk-modules';
 import css from './bundle-modules.module.css';
 
 export const BundleModules = ({ jobs }) => {
-  const runs = jobs.map((job) => ({
-    meta: job,
-    ...modulesWebpackTransform(get(job, 'rawData.webpack.stats')),
-  }));
-
-  const modulesReport = getModulesReport(runs);
+  const modulesReport = webpack.compareBySection.modules(jobs);
 
   return (
     <>
@@ -27,7 +19,7 @@ export const BundleModules = ({ jobs }) => {
           className={css.chunk}
           name={chunkNames.join(', ')}
           id={chunkId}
-          runs={runs}
+          runs={jobs}
           modules={modules}
         />
       ))}

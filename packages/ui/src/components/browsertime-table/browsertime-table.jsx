@@ -1,64 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import * as browsertime from '@bundle-stats/utils';
 
 import { MetricsTable } from '../metrics-table';
-import { JobName } from '../job-name';
-
-const getRunLabel = (run, index) => {
-  // Current run
-  if (index === 0) {
-    return {
-      ...run,
-      label: ' ',
-    };
-  }
-
-  // No baseline?
-  if (!run || !run.meta) {
-    return {
-      ...run,
-      label: '-',
-    };
-  }
-
-  // @TODO: move into a shared component
-  return {
-    ...run,
-    label: (
-      <JobName
-        title="Baseline"
-        internalBuildNumber={run.meta.internalBuildNumber}
-      />
-    ),
-  };
-};
 
 export const BrowsertimeTable = (props) => {
   const {
     className,
-    runs,
-    items,
+    jobs,
   } = props;
 
-  const labeledRuns = runs.map(getRunLabel);
+  const items = browsertime.compare(jobs);
 
   return (
     <MetricsTable
       className={className}
-      runs={labeledRuns}
       items={items}
+      runs={jobs}
     />
   );
 };
 
 BrowsertimeTable.defaultProps = {
   className: '',
-  runs: [],
-  items: [],
+  jobs: [],
 };
 
 BrowsertimeTable.propTypes = {
   className: PropTypes.string,
-  runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
-  items: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  jobs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };

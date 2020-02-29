@@ -34,15 +34,6 @@
   margin-left: var(--space-small);
 }
 
-.tableHeaderRun {
-  margin-top: calc(0px - var(--space-xxsmall));
-  margin-bottom: calc(0px - var(--space-xxsmall));
-}
-
-.tableHeaderRunMetric {
-  margin-top: var(--space-xxxsmall);
-}
-
 .nameTooltip {
   text-align: left;
 }

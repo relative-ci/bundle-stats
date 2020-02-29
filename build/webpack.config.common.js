@@ -2,11 +2,8 @@ const path = require('path');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 
-
 module.exports = (settings) => {
-  const {
-    srcDir, distDir, isDevelopment, rootDir,
-  } = settings;
+  const { srcDir, distDir, isDevelopment, rootDir } = settings;
 
   return {
     context: srcDir,
@@ -14,25 +11,13 @@ module.exports = (settings) => {
       path: distDir,
       filename: isDevelopment ? '[name].js' : '[name].[contenthash].js',
       publicPath: '/',
-      hashDigestLength: 8
+      hashDigestLength: 8,
     },
     resolve: {
-      modules: [
-        'node_modules',
-        path.join(rootDir, 'node_modules'),
-      ],
+      modules: ['node_modules', path.join(rootDir, 'node_modules')],
     },
     module: {
       rules: [
-        {
-          test: /\.jsx?$/,
-          enforce: 'pre',
-          use: 'eslint-loader',
-          exclude: [
-            /node_modules/,
-            path.join(__dirname, '../packages'), // local linked packages
-          ]
-        },
         {
           test: /\.jsx?$/,
           loader: 'babel-loader',

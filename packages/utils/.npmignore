@@ -4,3 +4,4 @@ __fixtures__
 .eslintignore
 .eslintrc.js
 jsconfig.json
+jest.config.js

@@ -1,33 +1,30 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { createStats, createStatsSummary } from '@bundle-stats/utils';
+import { createJobs } from '@bundle-stats/utils';
 
-import currentData from '../../../__mocks__/job.current.json';
-import baselineData from '../../../__mocks__/job.baseline.json';
+import currentData from '../../../__mocks__/webpack-stats.current.json';
+import baselineData from '../../../__mocks__/webpack-stats.baseline.json';
 import { getWrapperDecorator } from '../../stories';
-import { BundleAssetsTotalsChartBars as Component } from './bundle-assets-totals-chart-bars';
+import { BundleAssetsTotalsChartBars } from './bundle-assets-totals-chart-bars';
 
-const currentStats = createStats(baselineData.rawData, currentData.rawData);
-const baselineStats = createStats(null, baselineData.rawData);
+const JOBS = createJobs([
+  { webpack: currentData },
+  { webpack: baselineData },
+]);
 
-const currentJob = {
-  ...currentData,
-  stats: currentStats,
-  summary: createStatsSummary(baselineStats, currentStats),
-};
-
-const baselineJob = {
-  ...baselineData,
-  stats: baselineStats,
-  summary: createStatsSummary(null, baselineStats),
-};
-
-const jobs = [currentJob, baselineJob];
+const EMPTY_BASELINE = createJobs([
+  { webpack: currentData },
+  { webpack: null },
+]);
 
 const stories = storiesOf('Components/BundleAssetsTotalsChartBars', module);
 
 stories.addDecorator(getWrapperDecorator());
 
 stories.add('component', () => (
-  <Component jobs={jobs} />
+  <BundleAssetsTotalsChartBars jobs={JOBS} />
+));
+
+stories.add('empty baseline', () => (
+  <BundleAssetsTotalsChartBars jobs={EMPTY_BASELINE} />
 ));

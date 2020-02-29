@@ -1,14 +1,6 @@
 import { compose, withProps } from 'recompose';
-import {
-  get, filter, flatten, uniq,
-} from 'lodash';
-import {
-  METRIC_TYPE_FILE_SIZE,
-  addMetricsData,
-  modulesWebpackTransform,
-  packagesModulesBundleTransform,
-  mergeRunsById,
-} from '@bundle-stats/utils';
+import { get, filter } from 'lodash';
+import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilters } from '../../hocs/with-filters';
@@ -59,30 +51,19 @@ const addDuplicateTag = (items, duplicatePackages) => items.map((item) => ({
 
 export const enhance = compose(
   withProps(({ jobs }) => {
-    const runs = jobs.map((job) => ({ meta: job }));
-    const jobsPackages = jobs.map((job) => {
-      const bundle = modulesWebpackTransform(get(job, 'rawData.webpack.stats'));
-      const res = packagesModulesBundleTransform(bundle);
-      return res.packages;
-    });
-
-    const duplicatePackages = uniq(flatten(jobs.map((job) => {
-      const data = get(job, 'warnings.duplicatePackages', {});
-      return flatten(Object.values(data));
-    })));
+    const duplicatePackages = Object.values(
+      get(jobs, '0.insights.webpack.duplicatePackages.data', {}),
+    ).flat();
 
     const items = addDuplicateTag(
-      addMetricsData(mergeRunsById(jobsPackages), METRIC_TYPE_FILE_SIZE),
+      webpack.compareBySection.packages(jobs),
       duplicatePackages,
     );
 
-    return {
-      runs,
-      items,
-    };
+    return { items };
   }),
 
-  withProps(({ runs }) => {
+  withProps(({ jobs }) => {
     const defaultFilters = { [FILTER_CHANGED]: false, [FILTER_DUPLICATE]: false };
 
     return {
@@ -90,7 +71,7 @@ export const enhance = compose(
       initialFilters: {
         ...defaultFilters,
         // enable filter only when there are multiple jobs
-        [FILTER_CHANGED]: runs && runs.length > 1,
+        [FILTER_CHANGED]: jobs && jobs.length > 1,
       },
     };
   }),

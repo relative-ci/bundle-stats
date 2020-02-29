@@ -1,7 +1,7 @@
 import React from 'react';
-import { get } from 'lodash';
 import { storiesOf } from '@storybook/react';
-import { createJobs, modulesWebpackTransform, getModulesReport } from '@bundle-stats/utils';
+import { createJobs } from '@bundle-stats/utils';
+import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import baselineStats from '../../../__mocks__/webpack-stats.baseline.json';
 import currentStats from '../../../__mocks__/webpack-stats.current.json';
@@ -9,43 +9,32 @@ import { getWrapperDecorator } from '../../stories';
 import { BundleChunkModules } from '.';
 
 const [currentJob, baselineJob] = createJobs([
-  { webpack: { stats: currentStats } },
-  { webpack: { stats: baselineStats } },
+  { webpack: currentStats },
+  { webpack: baselineStats },
 ]);
 
 const stories = storiesOf('Components/BundleChunkModules', module);
 stories.addDecorator(getWrapperDecorator());
 
-const RUNS_DEFAULT = [
-  currentJob,
-].map((job) => ({
-  meta: job,
-  ...modulesWebpackTransform(get(job, 'rawData.webpack.stats')),
-}));
+const RUNS_DEFAULT = [baselineJob];
 
 stories.add('default', () => (
   <BundleChunkModules
     name="vendor"
     id="1"
     runs={RUNS_DEFAULT}
-    modules={getModulesReport(RUNS_DEFAULT)[1].modules}
+    modules={webpack.compareBySection.modules(RUNS_DEFAULT)[1].modules}
   />
 ));
 
-const RUNS_MULTIPLE = [
-  currentJob,
-  baselineJob,
-].map((job) => ({
-  meta: job,
-  ...modulesWebpackTransform(get(job, 'rawData.webpack.stats')),
-}));
+const RUNS_MULTIPLE = [currentJob, baselineJob];
 
 stories.add('multiple jobs', () => (
   <BundleChunkModules
     name="vendor"
     id="1"
     runs={RUNS_MULTIPLE}
-    modules={getModulesReport(RUNS_MULTIPLE)[1].modules}
+    modules={webpack.compareBySection.modules(RUNS_MULTIPLE)[1].modules}
   />
 ));
 
@@ -94,19 +83,16 @@ stories.add('empty filtered modules', () => (
   />
 ));
 
-const RUNS_EMPTY_BASELINE = [
-  currentJob,
+const JOBS_EMPTY_BASELINE = createJobs([
+  { webpack: currentStats },
   null,
-].map((job) => ({
-  meta: job,
-  ...modulesWebpackTransform(get(job, 'rawData.webpack.stats')),
-}));
+]);
 
 stories.add('empty baseline', () => (
   <BundleChunkModules
     name="vendor"
     id="1"
-    runs={RUNS_EMPTY_BASELINE}
-    modules={getModulesReport(RUNS_EMPTY_BASELINE)[1].modules}
+    runs={JOBS_EMPTY_BASELINE}
+    modules={webpack.compareBySection.modules(JOBS_EMPTY_BASELINE)[1].modules}
   />
 ));

@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`report / addRowData should add data 1`] = `
+Array [
+  Object {
+    "biggerIsBetter": false,
+    "changed": true,
+    "key": "webpack.totalSizeByTypeALL",
+    "label": "Total Bundle Size",
+    "runs": Array [
+      Object {
+        "delta": -10,
+        "deltaPercentage": -9.09090909,
+        "deltaType": "POSITIVE",
+        "displayDelta": "-10B",
+        "displayDeltaPercentage": "-9.09%",
+        "displayValue": "100B",
+        "value": 100,
+      },
+      Object {
+        "displayValue": "110B",
+        "value": 110,
+      },
+    ],
+  },
+  Object {
+    "biggerIsBetter": false,
+    "changed": true,
+    "key": "webpack.duplicatePackagesCount",
+    "label": "Duplicate Packages Count",
+    "runs": Array [
+      Object {
+        "delta": 10,
+        "deltaPercentage": 100,
+        "deltaType": "HIGH_NEGATIVE",
+        "displayDelta": "+10",
+        "displayDeltaPercentage": "+100%",
+        "displayValue": "10",
+        "value": 10,
+      },
+      null,
+    ],
+  },
+  Object {
+    "biggerIsBetter": false,
+    "changed": false,
+    "key": "webpack.mdoulesCount",
+    "label": "webpack.mdoulesCount",
+    "runs": Array [
+      Object {
+        "delta": 0,
+        "deltaPercentage": 0,
+        "deltaType": "NO_CHANGE",
+        "displayDelta": "0",
+        "displayDeltaPercentage": "0%",
+        "displayValue": "100",
+        "value": 100,
+      },
+      Object {
+        "displayValue": "100",
+        "value": 100,
+      },
+    ],
+  },
+  Object {
+    "biggerIsBetter": false,
+    "changed": true,
+    "key": "webpack.cacheInvalidation",
+    "label": "Cache Invalidation",
+    "runs": Array [
+      null,
+      Object {
+        "displayValue": "10%",
+        "value": 10,
+      },
+    ],
+  },
+]
+`;
+
+exports[`report / addRowData should add data with metric type 1`] = `
+Array [
+  Object {
+    "biggerIsBetter": false,
+    "changed": true,
+    "key": "metric1",
+    "label": "metric1",
+    "runs": Array [
+      Object {
+        "delta": -10,
+        "deltaPercentage": -9.09090909,
+        "deltaType": "POSITIVE",
+        "displayDelta": "-10B",
+        "displayDeltaPercentage": "-9.09%",
+        "displayValue": "100B",
+        "value": 100,
+      },
+      Object {
+        "displayValue": "110B",
+        "value": 110,
+      },
+    ],
+  },
+  Object {
+    "biggerIsBetter": false,
+    "changed": true,
+    "key": "metric2",
+    "label": "metric2",
+    "runs": Array [
+      Object {
+        "delta": 10,
+        "deltaPercentage": 100,
+        "deltaType": "HIGH_NEGATIVE",
+        "displayDelta": "+10B",
+        "displayDeltaPercentage": "+100%",
+        "displayValue": "10B",
+        "value": 10,
+      },
+      null,
+    ],
+  },
+  Object {
+    "biggerIsBetter": false,
+    "changed": true,
+    "key": "metric3",
+    "label": "metric3",
+    "runs": Array [
+      null,
+      Object {
+        "displayValue": "10B",
+        "value": 10,
+      },
+    ],
+  },
+  Object {
+    "biggerIsBetter": false,
+    "changed": false,
+    "key": "metric4",
+    "label": "metric4",
+    "runs": Array [
+      Object {
+        "delta": 0,
+        "deltaPercentage": 0,
+        "deltaType": "NO_CHANGE",
+        "displayDelta": "0B",
+        "displayDeltaPercentage": "0%",
+        "displayValue": "100B",
+        "value": 100,
+      },
+      Object {
+        "displayValue": "100B",
+        "value": 100,
+      },
+    ],
+  },
+]
+`;

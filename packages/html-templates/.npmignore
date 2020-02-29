@@ -1,10 +1,13 @@
 .eslintignore
 .eslintrc.js
 artifacts
+build
 dist/*
 !dist/index.html
+jest.config.js
 postcss.config.js
 settings.js
+src
 storybook
 stylelint.config.js
 webpack.config.*
