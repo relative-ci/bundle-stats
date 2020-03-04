@@ -22,7 +22,7 @@ yarn add --dev next-plugin-bundle-stats
 
 ## Available options
 
-See [bundle-stats available options](https://github.com/relative-ci/bundle-stats/tree/master/packages/webpack-plugin#bundlestatswebpackpluginoptions).
+See [bundle-stats-webpack-plugin options](https://github.com/relative-ci/bundle-stats/tree/master/packages/webpack-plugin#bundlestatswebpackpluginoptions).
 
 ## Examples of usage
 
