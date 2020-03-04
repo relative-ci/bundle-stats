@@ -25,7 +25,7 @@
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "prettier": "1.19.1",
     "terser-webpack-plugin": "2.3.5",
-    "webpack": "4.41.6"
+    "webpack": "4.42.0"
   },
   "scripts": {
     "build": "lerna run build",
