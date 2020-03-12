@@ -39,6 +39,10 @@ Standalone web application to compare Webpack/Lighthouse/Browsertime stats.
 
 [Compare bundle stats](https://compare.relative-ci.com)
 
+### [bundle-stats-action](https://github.com/vio/bundle-stats-action)
+
+Github Action that generates [bundle-stats](https://github.com/relative-ci/bundle-stats) reports for webpack.
+
 ## Packages
 
 ### [`bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/cli)
