@@ -1,0 +1,5 @@
+{
+  "INVALID": "Invalid webpack source structure, please make sure webpack stats configuration is correct.",
+  "MISSING_ASSETS": "Assets property is missing!",
+  "MISSING_MODULES": "Modules property is missing!"
+}
