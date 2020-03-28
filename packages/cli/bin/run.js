@@ -16,10 +16,16 @@ const {
   createJobs,
   createReport,
 } = require('@bundle-stats/utils');
-const { filter } = require('@bundle-stats/utils/lib/webpack');
+const { filter, validate } = require('@bundle-stats/utils/lib/webpack');
 const {
-  TEXT, createArtifacts, getBaselineStatsFilepath, getReportInfo, readBaseline, writeBaseline,
+  TEXT,
+  createArtifacts,
+  getBaselineStatsFilepath,
+  getReportInfo,
+  readBaseline,
+  writeBaseline,
 } = require('@bundle-stats/cli-utils');
+const LOCALES = require('../locales.json');
 
 const REPORT_INFO_COLORS = {
   [DELTA_TYPE_HIGH_NEGATIVE]: 'red',
@@ -36,16 +42,22 @@ const getReportInfoBorderColor = (reportInfo) => {
   return REPORT_INFO_COLORS[deltaType];
 };
 
-module.exports = ({
-  baseline, compare, html, json, outDir, artifactFilepaths,
-}) => {
+module.exports = ({ baseline, compare, html, json, outDir, artifactFilepaths }) => {
   const tasks = new Listr([
     {
       title: 'Read Webpack stats files',
       task: async (ctx) => {
-        const sources = await Promise.all(
-          artifactFilepaths.map((filepath) => readJSON(filepath)),
-        );
+        const sources = await Promise.all(artifactFilepaths.map((filepath) => readJSON(filepath)));
+
+        sources.forEach((source, index) => {
+          const invalid = validate(source);
+
+          if (invalid) {
+            throw new Error(
+              `${invalid}\n${LOCALES.WEBPACK_CONFIGURATION_URL}\nFilepath: ${artifactFilepaths[index]}`,
+            );
+          }
+        });
 
         ctx.sources = sources.map((source) => ({ webpack: filter(source) }));
       },
@@ -85,10 +97,7 @@ module.exports = ({
       task: (ctx, task) => {
         const stats = get(ctx, 'sources[0]webpack');
         const filteredWebpackStats = filter(stats);
-        const baselineFilepath = path.relative(
-          process.cwd(),
-          getBaselineStatsFilepath(),
-        );
+        const baselineFilepath = path.relative(process.cwd(), getBaselineStatsFilepath());
 
         return writeBaseline(filteredWebpackStats).then(() => {
           // eslint-disable-next-line no-param-reassign
@@ -112,36 +121,32 @@ module.exports = ({
     },
     {
       title: 'Save reports',
-      task: (ctx) => new Listr(
-        Object.values(ctx.artifacts).map(({ filename, output }) => ({
-          title: filename,
-          task: async () => {
-            const filepath = path.join(outDir, filename);
-            await outputFile(filepath, output);
+      task: (ctx) =>
+        new Listr(
+          Object.values(ctx.artifacts).map(({ filename, output }) => ({
+            title: filename,
+            task: async () => {
+              const filepath = path.join(outDir, filename);
+              await outputFile(filepath, output);
 
-            ctx.output = [
-              ...ctx.output ? ctx.output : [],
-              filepath,
-            ];
-          },
-        })),
-        { concurrent: true },
-      ),
+              ctx.output = [...(ctx.output ? ctx.output : []), filepath];
+            },
+          })),
+          { concurrent: true },
+        ),
     },
   ]);
 
-  tasks.run()
+  tasks
+    .run()
     .then(({ output, report }) => {
       const reportInfo = getReportInfo(report);
 
       if (reportInfo) {
-        const infoBox = boxen(
-          reportInfo.text,
-          {
-            padding: 1,
-            borderColor: getReportInfoBorderColor(reportInfo),
-          },
-        );
+        const infoBox = boxen(reportInfo.text, {
+          padding: 1,
+          borderColor: getReportInfoBorderColor(reportInfo),
+        });
 
         console.log(`\n${infoBox}`);
       }
@@ -150,6 +155,6 @@ module.exports = ({
       output.map((reportPath) => console.log(`- ${reportPath}`));
     })
     .catch((err) => {
-      console.error(err);
+      console.error(err.message);
     });
 };

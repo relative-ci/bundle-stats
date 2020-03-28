@@ -5,3 +5,4 @@ export * from './filter';
 export * from './metrics';
 export * from './selectors';
 export * from './utils';
+export * from './validate';

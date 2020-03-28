@@ -2,10 +2,16 @@ import path from 'path';
 import process from 'process';
 import { get, merge } from 'lodash';
 import { createJobs, createReport } from '@bundle-stats/utils';
-import { filter } from '@bundle-stats/utils/lib-esm/webpack';
+import { filter, validate } from '@bundle-stats/utils/lib-esm/webpack';
 import {
-  TEXT, getBaselineStatsFilepath, getReportInfo, readBaseline, createArtifacts,
+  TEXT,
+  getBaselineStatsFilepath,
+  getReportInfo,
+  readBaseline,
+  createArtifacts,
 } from '@bundle-stats/cli-utils';
+
+import LOCALES from '../locales.json';
 
 const DEFAULT_OPTIONS = {
   compare: true,
@@ -25,18 +31,20 @@ const DEFAULT_OPTIONS = {
 };
 
 const getOnEmit = (options) => async (compilation, callback) => {
-  const {
-    compare,
-    baseline,
-    html,
-    json,
-    outDir,
-    stats: statsOptions,
-  } = options;
+  const { compare, baseline, html, json, outDir, stats: statsOptions } = options;
 
-  const data = filter(
-    compilation.getStats().toJson(statsOptions),
-  );
+  const logger = compilation.getInfrastructureLogger
+    ? compilation.getInfrastructureLogger('BundleStats')
+    : console;
+
+  const source = compilation.getStats().toJson(statsOptions);
+  const invalid = validate(source);
+
+  if (invalid) {
+    logger.warn(`${invalid}\n${LOCALES.WEBPACK_CONFIGURATION_URL}`);
+  }
+
+  const data = filter(source);
 
   // Webpack builtAt is not available yet
   if (!data.builtAt) {
@@ -44,10 +52,6 @@ const getOnEmit = (options) => async (compilation, callback) => {
   }
 
   const outputPath = get(compilation, 'options.output.path');
-
-  const logger = compilation.getInfrastructureLogger
-    ? compilation.getInfrastructureLogger('BundleStats')
-    : console;
 
   const baselineFilepath = getBaselineStatsFilepath(outputPath);
   let baselineStats = null;
@@ -62,10 +66,7 @@ const getOnEmit = (options) => async (compilation, callback) => {
     logger.warn(TEXT.PLUGIN_BASELINE_MISSING_WARN);
   }
 
-  const jobs = createJobs([
-    { webpack: data },
-    ...compare ? [{ webpack: baselineStats }] : [],
-  ]);
+  const jobs = createJobs([{ webpack: data }, ...(compare ? [{ webpack: baselineStats }] : [])]);
   const report = createReport(jobs);
   const artifacts = createArtifacts(jobs, report, { html, json });
 
