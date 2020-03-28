@@ -24,7 +24,7 @@
 ## Table of Contents
 - [Install as global dependency](#install-as-global-dependency)
 - [Install as dev dependency](#install-as-dev-dependency)
-- [Webpack configuration](#webpack-configuration-1)
+- [Webpack configuration](#webpack-configuration)
 - [Usage](#usage)
 - [Compare mode](#compare-mode-1)
 - [Framework specific plugins](#framework-specific-plugins)
@@ -69,8 +69,6 @@ The CLI is consuming the Webpack stats json. The following [stats options](https
   }
 }
 ```
-
-[Read more about Webpack stats configuration](https://relative-ci.com/documentation/setup#1-configure-webpack)
 
 ## Usage
 

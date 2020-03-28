@@ -24,7 +24,8 @@
 ## Table of Contents
 - [Install](#install)
 - [Webpack configuration](#webpack-configuration)
-- [Use with create-react-app](#use-with-create-react-app)
+  - [BundleStatsWebpackPlugin(options)](#bundlestatswebpackpluginoptions)
+  - [Use with create-react-app](#use-with-create-react-app)
 - [Compare mode](#compare-mode)
 - [Framework specific plugins](#framework-specific-plugins)
 - [Related projects](#related-projects)
@@ -54,6 +55,29 @@ module.exports = {
   ]
 }
 ```
+
+### `BundleStatsWebpackPlugin(options)`
+
+- `compare` - use local saved stats for comparison (default `true`).
+- `baseline` - save current webpack stats as baseline (default `false`).
+- `html` - output html report (default `true`).
+- `json` - output json report (default `false`).
+- `outDir` - output directory relative to `output.path` (default `''`).
+- `stats` - [Webpack stats](https://webpack.js.org/configuration/stats) options
+  default:
+  ```js
+  {
+    stats: {
+      context: WEBPACK_CONTEXT,
+      assets: true,
+      entrypoints: true,
+      chunks: true,
+      modules: true,
+      builtAt: true,
+      hash: true
+    }
+  }
+  ```
 
 ### Use with create-react-app
 
@@ -91,29 +115,6 @@ module.exports = override(
   addWebpackPlugin(new BundleStatsWebpackPlugin()),
 );
 ```
-
-## `BundleStatsWebpackPlugin(options)`
-
-- `compare` - use local saved stats for comparison (default `true`).
-- `baseline` - save current webpack stats as baseline (default `false`).
-- `html` - output html report (default `true`).
-- `json` - output json report (default `false`).
-- `outDir` - output directory relative to `output.path` (default `''`).
-- `stats` - [Webpack stats](https://webpack.js.org/configuration/stats) options
-  default:
-  ```js
-  {
-    stats: {
-      context: WEBPACK_CONTEXT,
-      assets: true,
-      entrypoints: true,
-      chunks: true,
-      modules: true,
-      builtAt: true,
-      hash: true
-    }
-  }
-  ```
 
 ## Compare mode
 
