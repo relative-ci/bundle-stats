@@ -6,3 +6,4 @@ Thumbs.db
 *.sublime-project
 *.sublime-workspace
 *.log
+yarn.lock
