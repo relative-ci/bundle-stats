@@ -10,36 +10,40 @@ import { FiltersDropdown } from '../../ui/filters-dropdown';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { EmptySet } from '../../ui/empty-set';
 import { MetricsTable } from '../metrics-table';
+import { MetricsTableSearch } from '../metrics-table-search';
 import {
-  FILTER_ASSET, FILTER_CHANGED, FILTER_ENTRY, FILTER_CHUNK, FILTER_INITIAL,
+  FILTER_ASSET,
+  FILTER_CHANGED,
+  FILTER_ENTRY,
+  FILTER_CHUNK,
+  FILTER_INITIAL,
 } from './bundle-assets.constants';
 import css from './bundle-assets.module.css';
 
 const RUN_TITLE_CURRENT = 'Current';
 const RUN_TITLE_BASELINE = 'Baseline';
 
-const RUNS_LABELS = [
-  RUN_TITLE_CURRENT,
-  RUN_TITLE_BASELINE,
-];
+const RUNS_LABELS = [RUN_TITLE_CURRENT, RUN_TITLE_BASELINE];
 
-const getFileTypeFilters = (filters) => Object.entries(FILE_TYPE_LABELS)
-  .map(([id, label]) => ({
-    [id]: {
-      label,
-      defaultValue: get(filters, `fileTypes.${id}`, true),
-    },
-  }))
-  .reduce((agg, current) => ({
-    ...agg,
-    ...current,
-  }), {});
+const getFileTypeFilters = (filters) =>
+  Object.entries(FILE_TYPE_LABELS)
+    .map(([id, label]) => ({
+      [id]: {
+        label,
+        defaultValue: get(filters, `fileTypes.${id}`, true),
+      },
+    }))
+    .reduce(
+      (agg, current) => ({
+        ...agg,
+        ...current,
+      }),
+      {},
+    );
 
 const TooltipNotPredictive = ({ runs }) => (
   <div className={css.tooltipNotPredictive}>
-    <p className={css.tooltipNotPredictiveText}>
-      File name is the same, but the size has changed:
-    </p>
+    <p className={css.tooltipNotPredictiveText}>File name is the same, but the size has changed:</p>
     <table className={css.tooltipTable}>
       <tr>
         {runs.map(({ name, value }, index) => {
@@ -72,9 +76,7 @@ const TooltipFilename = ({ runs, labels }) => (
 
       return (
         <div className={css.tooltipFilenameItem} key={key}>
-          <h5 className={css.tooltipFilenameTitle}>
-            {labels[index]}
-          </h5>
+          <h5 className={css.tooltipFilenameTitle}>{labels[index]}</h5>
           <FileName name={run && run.name ? run.name : '-'} />
         </div>
       );
@@ -100,42 +102,26 @@ const getRenderRowHeader = (labels) => (item) => (
         title={<TooltipNotPredictive runs={item.runs} />}
         align="topLeft"
       >
-        <span className={cx('ui-icon ui-icon--small', css.notPredictiveIcon)}>
-          warning
-        </span>
+        <span className={cx('ui-icon ui-icon--small', css.notPredictiveIcon)}>warning</span>
       </Tooltip>
     )}
     {item.isEntry && (
-      <span
-        title="Entrypoint"
-        className={css.flagEntry}
-      >
+      <span title="Entrypoint" className={css.flagEntry}>
         e
       </span>
     )}
     {item.isInitial && (
-      <span
-        title="Initial"
-        className={css.flagInitial}
-      >
+      <span title="Initial" className={css.flagInitial}>
         i
       </span>
     )}
     {item.isChunk && (
-      <span
-        title="Chunk"
-        className={css.flagChunk}
-      >
+      <span title="Chunk" className={css.flagChunk}>
         c
       </span>
     )}
 
-    <Tooltip
-      title={(
-        <TooltipFilename runs={item.runs} labels={labels} />
-      )}
-      align="topLeft"
-    >
+    <Tooltip title={<TooltipFilename runs={item.runs} labels={labels} />} align="topLeft">
       <FileName name={item.label} />
     </Tooltip>
   </div>
@@ -152,63 +138,76 @@ export const BundleAssets = (props) => {
     filters,
     sortItems,
     sort,
+    search,
+    updateSearch,
     updateSort,
   } = props;
 
+  const clearSearch = () => {
+    resetFilters();
+    updateSearch('');
+  };
+
   const emptyMessage = (
-    <EmptySet
-      resources="assets"
-      filtered={totalRowCount !== 0}
-      resetFilters={resetFilters}
-    />
+    <EmptySet resources="assets" filtered={totalRowCount !== 0} resetFilters={clearSearch} />
   );
 
   return (
     <section className={cx(css.root, className)}>
       <header className={css.header}>
-        <SortDropdown
-          className={css.dropdown}
-          items={sortItems}
-          {...sort}
-          onChange={updateSort}
-        />
+        <div className={css.headerLeft}>
+          <MetricsTableSearch
+            className={css.search}
+            placeholder="Search by name"
+            search={search}
+            updateSearch={updateSearch}
+          />
+        </div>
+        <div className={css.headerRight}>
+          <SortDropdown
+            className={css.dropdown}
+            items={sortItems}
+            {...sort}
+            onChange={updateSort}
+          />
 
-        {/* @TODO: get default values from parent state */}
-        <FiltersDropdown
-          className={css.dropdown}
-          filters={{
-            [FILTER_CHANGED]: {
-              label: 'Changed',
-              defaultValue: filters[FILTER_CHANGED],
-              disabled: jobs.length <= 1,
-            },
-            entryTypes: {
-              label: 'Entry type',
-              [FILTER_ENTRY]: {
-                label: 'Entry',
-                defaultValue: get(filters, `entryTypes.${FILTER_ENTRY}`, true),
+          {/* @TODO: get default values from parent state */}
+          <FiltersDropdown
+            className={css.dropdown}
+            filters={{
+              [FILTER_CHANGED]: {
+                label: 'Changed',
+                defaultValue: filters[FILTER_CHANGED],
+                disabled: jobs.length <= 1,
               },
-              [FILTER_INITIAL]: {
-                label: 'Initial',
-                defaultValue: get(filters, `entryTypes.${FILTER_INITIAL}`, true),
+              entryTypes: {
+                label: 'Entry type',
+                [FILTER_ENTRY]: {
+                  label: 'Entry',
+                  defaultValue: get(filters, `entryTypes.${FILTER_ENTRY}`, true),
+                },
+                [FILTER_INITIAL]: {
+                  label: 'Initial',
+                  defaultValue: get(filters, `entryTypes.${FILTER_INITIAL}`, true),
+                },
+                [FILTER_CHUNK]: {
+                  label: 'Chunk',
+                  defaultValue: get(filters, `entryTypes.${FILTER_CHUNK}`, true),
+                },
+                [FILTER_ASSET]: {
+                  label: 'Asset',
+                  defaultValue: get(filters, `entryTypes.${FILTER_ASSET}`, true),
+                },
               },
-              [FILTER_CHUNK]: {
-                label: 'Chunk',
-                defaultValue: get(filters, `entryTypes.${FILTER_CHUNK}`, true),
+              fileTypes: {
+                label: 'File type',
+                ...getFileTypeFilters(filters),
               },
-              [FILTER_ASSET]: {
-                label: 'Asset',
-                defaultValue: get(filters, `entryTypes.${FILTER_ASSET}`, true),
-              },
-            },
-            fileTypes: {
-              label: 'File type',
-              ...getFileTypeFilters(filters),
-            },
-          }}
-          label={`Filters (${items.length}/${totalRowCount})`}
-          onChange={updateFilters}
-        />
+            }}
+            label={`Filters (${items.length}/${totalRowCount})`}
+            onChange={updateFilters}
+          />
+        </div>
       </header>
       <main>
         <MetricsTable
@@ -230,18 +229,24 @@ BundleAssets.defaultProps = {
 
 BundleAssets.propTypes = {
   className: PropTypes.string,
-  jobs: PropTypes.arrayOf(PropTypes.shape({
-    internalBuildNumber: PropTypes.number,
-    label: PropTypes.string,
-  })).isRequired,
-  items: PropTypes.arrayOf(PropTypes.shape({
-    key: PropTypes.string,
-    label: PropTypes.string,
-    runs: PropTypes.arrayOf(PropTypes.shape({
-      displayValue: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-      displayDelta: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    })),
-  })).isRequired,
+  jobs: PropTypes.arrayOf(
+    PropTypes.shape({
+      internalBuildNumber: PropTypes.number,
+      label: PropTypes.string,
+    }),
+  ).isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string,
+      label: PropTypes.string,
+      runs: PropTypes.arrayOf(
+        PropTypes.shape({
+          displayValue: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+          displayDelta: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+        }),
+      ),
+    }),
+  ).isRequired,
   updateFilters: PropTypes.func.isRequired,
   resetFilters: PropTypes.func.isRequired,
   totalRowCount: PropTypes.number,
@@ -254,6 +259,8 @@ BundleAssets.propTypes = {
       defaultDirection: PropTypes.bool,
     }),
   }).isRequired,
+  search: PropTypes.string.isRequired,
+  updateSearch: PropTypes.func.isRequired,
   sort: PropTypes.shape({
     sortBy: PropTypes.string,
     direction: PropTypes.string,

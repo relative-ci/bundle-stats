@@ -1,6 +1,17 @@
 .header {
   padding: var(--space-small);
   border-bottom: 1px solid var(--color-outline);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.headerLeft {
+  flex: 1 1 50%;
+  max-width: 320px;
+}
+
+.headerRight {
   position: relative;
   display: flex;
   align-items: center;
@@ -97,4 +108,9 @@
 
 .tooltipFilenameTitle {
   margin: 0;
+}
+
+.search {
+  margin: 0;
+  width: 100%;
 }
