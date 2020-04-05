@@ -20,18 +20,13 @@
   line-height: var(--space-small);
 }
 
-.tableHeader {
-  padding: var(--space-xxsmall) var(--space-small);
+.toolbar {
   border-bottom: 1px solid var(--color-outline);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
 }
 
-.tableDropdown {
-  flex: 0 0 auto;
-  margin-right: calc(0px - var(--space-xxsmall));
-  margin-left: var(--space-small);
+.toolbarSearch {
+  width: 100%;
+  max-width: 360px;
 }
 
 .nameTooltip {

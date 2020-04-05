@@ -15,16 +15,16 @@ const runSearch = (items, query) => {
   return items.filter(({ key }) => key && searchRegExp.test(key));
 };
 
-export const withSearch = () =>
+export const withSearch = (list = 'items') =>
   compose(
     withState('search', 'updateSearch', ''),
-    withProps(({ items, search }) => {
+    withProps(({ search, ...restProps }) => {
       if (!search.trim()) {
         return null;
       }
 
       return {
-        items: runSearch(items, search),
+        [list]: runSearch(restProps[list], search),
       };
     }),
   );

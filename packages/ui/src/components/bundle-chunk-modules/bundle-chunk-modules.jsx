@@ -8,37 +8,31 @@ import { EmptySet } from '../../ui/empty-set';
 import { FileName } from '../../ui/file-name';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
 import { SortDropdown } from '../../ui/sort-dropdown';
+import { Toolbar } from '../../ui/toolbar';
 import { Tooltip } from '../../ui/tooltip';
 import { MetricsTable } from '../metrics-table';
+import { MetricsTableSearch } from '../metrics-table-search';
 import css from './bundle-chunk-modules.module.css';
 
 const getRenderRowHeader = (labels) => (row) => (
   <Tooltip
-    title={(
+    title={
       <div className={css.nameTooltip}>
         {row.runs.map((run, index) => {
           const key = index;
 
           return (
             <div className={css.nameTooltipItem} key={key}>
-              <h5 className={css.nameTooltipTitle}>
-                {labels[index]}
-              </h5>
-              <FileName
-                className={css.nameTooltipText}
-                name={run && run.name ? run.name : '-'}
-              />
+              <h5 className={css.nameTooltipTitle}>{labels[index]}</h5>
+              <FileName className={css.nameTooltipText} name={run && run.name ? run.name : '-'} />
             </div>
           );
         })}
       </div>
-      )}
+    }
     align="topLeft"
   >
-    <FileName
-      className={css.name}
-      name={row.label}
-    />
+    <FileName className={css.name} name={row.label} />
   </Tooltip>
 );
 
@@ -55,53 +49,65 @@ export const BundleChunkModules = ({
   sortItems,
   sort,
   updateSort,
+  search,
+  updateSearch,
 }) => {
   const rootClassName = cx(css.root, className);
+
+  const clearSearch = () => {
+    resetFilters();
+    updateSearch('');
+  };
+
   const emptyMessage = (
-    <EmptySet
-      resources="modules"
-      filtered={totalRowCount !== 0}
-      resetFilters={resetFilters}
-    />
+    <EmptySet resources="modules" filtered={totalRowCount !== 0} resetFilters={clearSearch} />
   );
 
   return (
     <div className={rootClassName}>
       <header className={css.header}>
         <h3 className={css.headerTitle}>
-          {name && (
-            <span className={css.headerTitleName}>
-              {name}
-            </span>
-          )}
-          {id && (
-            <span className={css.headerTitleId}>
-              {`Chunk id: ${id}`}
-            </span>
-          )}
+          {name && <span className={css.headerTitleName}>{name}</span>}
+          {id && <span className={css.headerTitleId}>{`Chunk id: ${id}`}</span>}
         </h3>
       </header>
       <Box>
-        <div className={css.tableHeader}>
-          <SortDropdown
-            className={css.tableDropdown}
-            items={sortItems}
-            onChange={updateSort}
-            {...sort}
+        <Toolbar
+          className={css.toolbar}
+          renderActions={({ actionClassName }) => (
+            <>
+              <div className={actionClassName}>
+                <SortDropdown
+                  className={css.tableDropdown}
+                  items={sortItems}
+                  onChange={updateSort}
+                  {...sort}
+                />
+              </div>
+              <div className={actionClassName}>
+                <FiltersDropdown
+                  className={css.tableDropdown}
+                  filters={{
+                    changed: {
+                      label: 'Changed',
+                      defaultValue: filters.changed,
+                      disabled: runs.length <= 1,
+                    },
+                  }}
+                  label={`Filters (${modules.length}/${totalRowCount})`}
+                  onChange={updateFilters}
+                />
+              </div>
+            </>
+          )}
+        >
+          <MetricsTableSearch
+            className={css.toolbarSearch}
+            search={search}
+            updateSearch={updateSearch}
+            placeholder="Search by name"
           />
-          <FiltersDropdown
-            className={css.tableDropdown}
-            filters={{
-              changed: {
-                label: 'Changed',
-                defaultValue: filters.changed,
-                disabled: runs.length <= 1,
-              },
-            }}
-            label={`Filters (${modules.length}/${totalRowCount})`}
-            onChange={updateFilters}
-          />
-        </div>
+        </Toolbar>
         <MetricsTable
           className={css.table}
           items={modules}
@@ -165,4 +171,6 @@ BundleChunkModules.propTypes = {
     direction: PropTypes.string,
   }).isRequired,
   updateSort: PropTypes.func.isRequired,
+  search: PropTypes.string.isRequired,
+  updateSearch: PropTypes.func.isRequired,
 };
