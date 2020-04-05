@@ -6,18 +6,6 @@
   flex-wrap: wrap;
 }
 
-.headerLeft {
-  flex: 1 1 50%;
-  max-width: 320px;
-}
-
-.headerRight {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
 .title {
   margin-bottom: 0;
   margin-right: var(--space-xsmall);
