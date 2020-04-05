@@ -5,7 +5,9 @@ import cx from 'classnames';
 import { EmptySet } from '../../ui/empty-set';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
 import { SortDropdown } from '../../ui/sort-dropdown';
+import { Toolbar } from '../../ui/toolbar';
 import { MetricsTable } from '../metrics-table';
+import { MetricsTableSearch } from '../metrics-table-search';
 import { FILTER_CHANGED, FILTER_DUPLICATE } from './bundle-packages.constants';
 import css from './bundle-packages.module.css';
 
@@ -21,51 +23,58 @@ export const BundlePackages = (props) => {
     sortItems,
     sort,
     updateSort,
+    search,
+    updateSearch,
   } = props;
 
+  const clear = () => {
+    resetFilters();
+    updateSearch('');
+  };
+
   const emptyMessage = (
-    <EmptySet
-      resources="packages"
-      filtered={totalRowCount !== 0}
-      resetFilters={resetFilters}
-    />
+    <EmptySet resources="packages" filtered={totalRowCount !== 0} resetFilters={clear} />
   );
 
   return (
     <section className={cx(css.root, className)}>
-      <header className={css.header}>
-        <SortDropdown
-          className={css.dropdown}
-          items={sortItems}
-          {...sort}
-          onChange={updateSort}
+      <Toolbar
+        className={css.toolbar}
+        renderActions={({ actionClassName }) => (
+          <>
+            <div className={actionClassName}>
+              <SortDropdown items={sortItems} {...sort} onChange={updateSort} />
+            </div>
+            <div className={actionClassName}>
+              {/* @TODO: get default values from parent state */}
+              <FiltersDropdown
+                filters={{
+                  [FILTER_CHANGED]: {
+                    label: 'Changed',
+                    defaultValue: filters[FILTER_CHANGED],
+                    disabled: jobs.length <= 1,
+                  },
+                  [FILTER_DUPLICATE]: {
+                    label: 'Duplicate',
+                    defaultValue: filters[FILTER_DUPLICATE],
+                  },
+                }}
+                label={`Filters (${items.length}/${totalRowCount})`}
+                onChange={updateFilters}
+              />
+            </div>
+          </>
+        )}
+      >
+        <MetricsTableSearch
+          className={css.toolbarSearch}
+          placeholder="Search by name"
+          search={search}
+          updateSearch={updateSearch}
         />
-
-        {/* @TODO: get default values from parent state */}
-        <FiltersDropdown
-          className={css.dropdown}
-          filters={{
-            [FILTER_CHANGED]: {
-              label: 'Changed',
-              defaultValue: filters[FILTER_CHANGED],
-              disabled: jobs.length <= 1,
-            },
-            [FILTER_DUPLICATE]: {
-              label: 'Duplicate',
-              defaultValue: filters[FILTER_DUPLICATE],
-            },
-          }}
-          label={`Filters (${items.length}/${totalRowCount})`}
-          onChange={updateFilters}
-        />
-      </header>
+      </Toolbar>
       <main>
-        <MetricsTable
-          runs={jobs}
-          items={items}
-          emptyMessage={emptyMessage}
-          showHeaderSum
-        />
+        <MetricsTable runs={jobs} items={items} emptyMessage={emptyMessage} showHeaderSum />
       </main>
     </section>
   );
@@ -78,17 +87,23 @@ BundlePackages.defaultProps = {
 
 BundlePackages.propTypes = {
   className: PropTypes.string,
-  jobs: PropTypes.arrayOf(PropTypes.shape({
-    internalBuildNumber: PropTypes.number,
-  })).isRequired,
-  items: PropTypes.arrayOf(PropTypes.shape({
-    key: PropTypes.string,
-    label: PropTypes.string,
-    runs: PropTypes.arrayOf(PropTypes.shape({
-      displayValue: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-      displayDelta: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    })),
-  })).isRequired,
+  jobs: PropTypes.arrayOf(
+    PropTypes.shape({
+      internalBuildNumber: PropTypes.number,
+    }),
+  ).isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string,
+      label: PropTypes.string,
+      runs: PropTypes.arrayOf(
+        PropTypes.shape({
+          displayValue: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+          displayDelta: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+        }),
+      ),
+    }),
+  ).isRequired,
   updateFilters: PropTypes.func.isRequired,
   resetFilters: PropTypes.func.isRequired,
   totalRowCount: PropTypes.number,
@@ -106,4 +121,6 @@ BundlePackages.propTypes = {
     direction: PropTypes.string,
   }).isRequired,
   updateSort: PropTypes.func.isRequired,
+  search: PropTypes.string.isRequired,
+  updateSearch: PropTypes.func.isRequired,
 };

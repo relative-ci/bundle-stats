@@ -139,9 +139,9 @@ export const BundleAssets = (props) => {
     filters,
     sortItems,
     sort,
+    updateSort,
     search,
     updateSearch,
-    updateSort,
   } = props;
 
   const clearSearch = () => {
