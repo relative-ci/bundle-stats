@@ -9,6 +9,7 @@ import { Tooltip } from '../../ui/tooltip';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { EmptySet } from '../../ui/empty-set';
+import { Toolbar } from '../../ui/toolbar';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
 import {
@@ -154,61 +155,61 @@ export const BundleAssets = (props) => {
 
   return (
     <section className={cx(css.root, className)}>
-      <header className={css.header}>
-        <div className={css.headerLeft}>
-          <MetricsTableSearch
-            className={css.search}
-            placeholder="Search by name"
-            search={search}
-            updateSearch={updateSearch}
-          />
-        </div>
-        <div className={css.headerRight}>
-          <SortDropdown
-            className={css.dropdown}
-            items={sortItems}
-            {...sort}
-            onChange={updateSort}
-          />
+      <Toolbar
+        className={css.toolbar}
+        renderActions={({ actionClassName }) => (
+          <>
+            <div className={cx(css.dropdown, actionClassName)}>
+              <SortDropdown items={sortItems} {...sort} onChange={updateSort} />
+            </div>
 
-          {/* @TODO: get default values from parent state */}
-          <FiltersDropdown
-            className={css.dropdown}
-            filters={{
-              [FILTER_CHANGED]: {
-                label: 'Changed',
-                defaultValue: filters[FILTER_CHANGED],
-                disabled: jobs.length <= 1,
-              },
-              entryTypes: {
-                label: 'Entry type',
-                [FILTER_ENTRY]: {
-                  label: 'Entry',
-                  defaultValue: get(filters, `entryTypes.${FILTER_ENTRY}`, true),
-                },
-                [FILTER_INITIAL]: {
-                  label: 'Initial',
-                  defaultValue: get(filters, `entryTypes.${FILTER_INITIAL}`, true),
-                },
-                [FILTER_CHUNK]: {
-                  label: 'Chunk',
-                  defaultValue: get(filters, `entryTypes.${FILTER_CHUNK}`, true),
-                },
-                [FILTER_ASSET]: {
-                  label: 'Asset',
-                  defaultValue: get(filters, `entryTypes.${FILTER_ASSET}`, true),
-                },
-              },
-              fileTypes: {
-                label: 'File type',
-                ...getFileTypeFilters(filters),
-              },
-            }}
-            label={`Filters (${items.length}/${totalRowCount})`}
-            onChange={updateFilters}
-          />
-        </div>
-      </header>
+            <div className={cx(css.dropdown, actionClassName)}>
+              {/* @TODO: get default values from parent state */}
+              <FiltersDropdown
+                filters={{
+                  [FILTER_CHANGED]: {
+                    label: 'Changed',
+                    defaultValue: filters[FILTER_CHANGED],
+                    disabled: jobs.length <= 1,
+                  },
+                  entryTypes: {
+                    label: 'Entry type',
+                    [FILTER_ENTRY]: {
+                      label: 'Entry',
+                      defaultValue: get(filters, `entryTypes.${FILTER_ENTRY}`, true),
+                    },
+                    [FILTER_INITIAL]: {
+                      label: 'Initial',
+                      defaultValue: get(filters, `entryTypes.${FILTER_INITIAL}`, true),
+                    },
+                    [FILTER_CHUNK]: {
+                      label: 'Chunk',
+                      defaultValue: get(filters, `entryTypes.${FILTER_CHUNK}`, true),
+                    },
+                    [FILTER_ASSET]: {
+                      label: 'Asset',
+                      defaultValue: get(filters, `entryTypes.${FILTER_ASSET}`, true),
+                    },
+                  },
+                  fileTypes: {
+                    label: 'File type',
+                    ...getFileTypeFilters(filters),
+                  },
+                }}
+                label={`Filters (${items.length}/${totalRowCount})`}
+                onChange={updateFilters}
+              />
+            </div>
+          </>
+        )}
+      >
+        <MetricsTableSearch
+          className={css.toolbarSearch}
+          placeholder="Search by name"
+          search={search}
+          updateSearch={updateSearch}
+        />
+      </Toolbar>
       <main>
         <MetricsTable
           runs={jobs}

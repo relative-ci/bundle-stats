@@ -1,25 +1,13 @@
-.header {
-  padding: var(--space-small);
+.toolbar {
   border-bottom: 1px solid var(--color-outline);
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
 
-.title {
-  margin-bottom: 0;
-  margin-right: var(--space-xsmall);
-  flex: 0 0 auto;
-  font-size: var(--size-xlarge);
-  line-height: var(--space-medium);
+.toolbarSearch {
+  width: 100%;
+  max-width: 360px;
 }
 
 .dropdown {
-  flex: 0 0 auto;
-  margin-top: calc(0px - var(--space-xxsmall));
-  margin-right: calc(0px - var(--space-xxsmall));
-  margin-bottom: calc(0px - var(--space-xxsmall));
-  margin-left: var(--space-small);
 }
 
 .tableRowHeader {
