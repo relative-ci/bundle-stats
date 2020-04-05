@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/DuplicatePackagesWarning multiple duplicate packages 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <DuplicatePackagesWarning
+    className=""
+    duplicatePackages={
+      Object {
+        "package-c": Array [
+          "package-c",
+          "package-a:package-c",
+        ],
+        "package-d": Array [
+          "package-b:package-d",
+          "package-c:package-d",
+        ],
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Components/DuplicatePackagesWarning single duplicate packages 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <DuplicatePackagesWarning
+    className=""
+    duplicatePackages={
+      Object {
+        "package-c": Array [
+          "package-c",
+          "package-a:package-c",
+        ],
+      }
+    }
+  />
+</div>
+`;

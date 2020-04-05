@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI/Toolbar default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Toolbar
+    className=""
+    renderActions={null}
+  >
+    <div
+      className="root"
+    >
+      <div
+        className="content"
+      >
+        <div>
+          Content
+        </div>
+      </div>
+    </div>
+  </Toolbar>
+</div>
+`;
+
+exports[`Storyshots UI/Toolbar with actions 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Toolbar
+    className=""
+    renderActions={[Function]}
+  >
+    <div
+      className="root"
+    >
+      <div
+        className="content"
+      >
+        Content
+      </div>
+      <div
+        className="actions"
+      >
+        <div
+          className="action"
+        >
+          Action 1
+        </div>
+        <div
+          className="action"
+        >
+          Action 2
+        </div>
+      </div>
+    </div>
+  </Toolbar>
+</div>
+`;

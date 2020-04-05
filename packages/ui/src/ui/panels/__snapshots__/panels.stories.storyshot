@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI/Panels default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Panels
+    className=""
+    style={
+      Object {
+        "outline": "1px dotted hotpink",
+      }
+    }
+  >
+    <div
+      className="root"
+      style={
+        Object {
+          "outline": "1px dotted hotpink",
+        }
+      }
+    >
+      <div
+        className="panel"
+        key=".0"
+        style={
+          Object {
+            "padding": "24px",
+          }
+        }
+      >
+        Panel 1
+      </div>
+      <div
+        className="panel"
+        key=".1"
+        style={
+          Object {
+            "padding": "24px",
+          }
+        }
+      >
+        Panel 2
+      </div>
+    </div>
+  </Panels>
+</div>
+`;

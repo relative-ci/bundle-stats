@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/JobName custom component 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "64px",
+      "width": "100%",
+    }
+  }
+>
+  <JobName
+    as={[Function]}
+    internalBuildNumber={10}
+    render={[Function]}
+    title="View job details"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/JobName default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "64px",
+      "width": "100%",
+    }
+  }
+>
+  <JobName
+    as="span"
+    internalBuildNumber={10}
+    render={[Function]}
+    title="View job details"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/JobName render 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "64px",
+      "width": "100%",
+    }
+  }
+>
+  <JobName
+    as="span"
+    internalBuildNumber={10}
+    render={[Function]}
+    title="View job details"
+  />
+</div>
+`;

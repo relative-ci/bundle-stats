@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI/Box default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Box
+    as="div"
+    className=""
+  >
+    <div
+      className="root"
+    >
+      <p>
+        Lorem ipsum
+      </p>
+    </div>
+  </Box>
+</div>
+`;
+
+exports[`Storyshots UI/Box with table 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Box
+    as="div"
+    className=""
+  >
+    <div
+      className="root"
+    >
+      <Table
+        className=""
+        emptyMessage="No entries found."
+        headers={
+          Array [
+            "Col A",
+            "Col B",
+            "Col C",
+          ]
+        }
+        outline={false}
+        rows={
+          Array [
+            Object {
+              "cells": Array [
+                "a1",
+                "b1",
+                "c1",
+              ],
+            },
+            Object {
+              "cells": Array [
+                "a2",
+                "b2",
+                "c2",
+              ],
+            },
+            Object {
+              "cells": Array [
+                "a3",
+                "b3",
+                "c3",
+              ],
+            },
+          ]
+        }
+      >
+        <table
+          className="root"
+        >
+          <thead>
+            <tr>
+              <Th
+                className=""
+                key="0"
+              >
+                <th
+                  className="cell"
+                >
+                  Col A
+                </th>
+              </Th>
+              <Th
+                className=""
+                key="1"
+              >
+                <th
+                  className="cell"
+                >
+                  Col B
+                </th>
+              </Th>
+              <Th
+                className=""
+                key="2"
+              >
+                <th
+                  className="cell"
+                >
+                  Col C
+                </th>
+              </Th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              className="row"
+              key="0"
+            >
+              <Td
+                className=""
+                key="0"
+              >
+                <td
+                  className="cell"
+                >
+                  a1
+                </td>
+              </Td>
+              <Td
+                className=""
+                key="1"
+              >
+                <td
+                  className="cell"
+                >
+                  b1
+                </td>
+              </Td>
+              <Td
+                className=""
+                key="2"
+              >
+                <td
+                  className="cell"
+                >
+                  c1
+                </td>
+              </Td>
+            </tr>
+            <tr
+              className="row"
+              key="1"
+            >
+              <Td
+                className=""
+                key="0"
+              >
+                <td
+                  className="cell"
+                >
+                  a2
+                </td>
+              </Td>
+              <Td
+                className=""
+                key="1"
+              >
+                <td
+                  className="cell"
+                >
+                  b2
+                </td>
+              </Td>
+              <Td
+                className=""
+                key="2"
+              >
+                <td
+                  className="cell"
+                >
+                  c2
+                </td>
+              </Td>
+            </tr>
+            <tr
+              className="row"
+              key="2"
+            >
+              <Td
+                className=""
+                key="0"
+              >
+                <td
+                  className="cell"
+                >
+                  a3
+                </td>
+              </Td>
+              <Td
+                className=""
+                key="1"
+              >
+                <td
+                  className="cell"
+                >
+                  b3
+                </td>
+              </Td>
+              <Td
+                className=""
+                key="2"
+              >
+                <td
+                  className="cell"
+                >
+                  c3
+                </td>
+              </Td>
+            </tr>
+          </tbody>
+        </table>
+      </Table>
+    </div>
+  </Box>
+</div>
+`;

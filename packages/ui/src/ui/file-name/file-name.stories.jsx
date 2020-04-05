@@ -13,11 +13,11 @@ const NAMES = [
 ];
 
 stories.add('default', () => (
-  <>
+  <div>
     {NAMES.map((name) => (
       <div key={name} style={{ padding: '12px', outline: '1px dotted lightpink', margin: '12px' }}>
         <FileName name={name} />
       </div>
     ))}
-  </>
+  </div>
 ));

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI/Loader default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Loader
+    className=""
+  >
+    <span
+      className="root"
+    >
+      <span
+        className="loader"
+      />
+    </span>
+  </Loader>
+</div>
+`;

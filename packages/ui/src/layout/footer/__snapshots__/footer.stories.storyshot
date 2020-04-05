@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Layout/Footer default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Footer
+    Link={[Function]}
+    className=""
+    source="web"
+  />
+</div>
+`;
+
+exports[`Storyshots Layout/Footer with custom content 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Footer
+    Link={[Function]}
+    className=""
+    source="web"
+  >
+    Version 1.0
+    <span
+      style={
+        Object {
+          "margin": "1em",
+        }
+      }
+    >
+      Contact
+    </span>
+  </Footer>
+</div>
+`;

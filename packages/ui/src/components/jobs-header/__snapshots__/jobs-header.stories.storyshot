@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/JobsHeader default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <JobsHeader
+    className=""
+    jobs={
+      Array [
+        Object {
+          "internalBuildNumber": 1,
+          "meta": Object {
+            "webpack": Object {
+              "builtAt": "2019-01-01T00:00:00.000Z",
+              "hash": "abcd1234",
+            },
+          },
+          "summary": Object {
+            "webpack": Object {
+              "totalSizeByTypeALL": Object {
+                "baseline": 900000,
+                "current": 1000000,
+              },
+            },
+          },
+        },
+      ]
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Components/JobsHeader multiple equal jobs 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <JobsHeader
+    className=""
+    jobs={
+      Array [
+        Object {
+          "internalBuildNumber": 1,
+          "meta": Object {
+            "webpack": Object {
+              "builtAt": "2019-01-01T00:00:00.000Z",
+              "hash": "abcd1234",
+            },
+          },
+          "summary": Object {
+            "webpack": Object {
+              "totalSizeByTypeALL": Object {
+                "baseline": 1000000,
+                "current": 1000000,
+              },
+            },
+          },
+        },
+        Object {
+          "internalBuildNumber": 2,
+          "meta": Object {
+            "webpack": Object {
+              "builtAt": "2019-01-02T00:00:00.000Z",
+              "hash": "efgh1234",
+            },
+          },
+          "summary": Object {
+            "webpack": Object {
+              "totalSizeByTypeALL": Object {
+                "baseline": 1000000,
+                "current": 1000000,
+              },
+            },
+          },
+        },
+      ]
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Components/JobsHeader multiple jobs 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <JobsHeader
+    className=""
+    jobs={
+      Array [
+        Object {
+          "internalBuildNumber": 1,
+          "meta": Object {
+            "webpack": Object {
+              "builtAt": "2019-01-01T00:00:00.000Z",
+              "hash": "abcd1234",
+            },
+          },
+          "summary": Object {
+            "webpack": Object {
+              "totalSizeByTypeALL": Object {
+                "baseline": 900000,
+                "current": 1000000,
+              },
+            },
+          },
+        },
+        Object {
+          "internalBuildNumber": 2,
+          "meta": Object {
+            "webpack": Object {
+              "builtAt": "2019-01-02T00:00:00.000Z",
+              "hash": "efgh1234",
+            },
+          },
+          "summary": Object {
+            "webpack": Object {
+              "totalSizeByTypeALL": Object {
+                "baseline": 0,
+                "current": 900000,
+              },
+            },
+          },
+        },
+      ]
+    }
+  />
+</div>
+`;

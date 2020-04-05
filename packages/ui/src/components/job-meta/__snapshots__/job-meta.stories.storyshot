@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/JobMeta default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <JobMeta
+    as="div"
+    className=""
+    meta={
+      Array [
+        Object {
+          "content": Array [
+            <p>
+              July 3th 
+            </p>,
+          ],
+          "title": "#123",
+        },
+        Object {
+          "content": Array [
+            <p>
+              July 4th
+            </p>,
+          ],
+          "title": "#122",
+        },
+      ]
+    }
+  />
+</div>
+`;

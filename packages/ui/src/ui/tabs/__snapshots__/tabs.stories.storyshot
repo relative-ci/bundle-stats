@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI/Tabs default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Tabs
+    className=""
+  >
+    <nav
+      className="root"
+    >
+      <span
+        className="item"
+        isActive={true}
+        key=".0"
+      >
+        Option A
+      </span>
+      <span
+        className="item"
+        key=".1"
+      >
+        Option B
+      </span>
+      <span
+        className="item"
+        key=".2"
+      >
+        Option C
+      </span>
+    </nav>
+  </Tabs>
+</div>
+`;

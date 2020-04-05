@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI/Alert default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Alert
+    className=""
+    kind="default"
+  >
+    <div
+      className="root default"
+    >
+      Lorem ipsum
+    </div>
+  </Alert>
+</div>
+`;
+
+exports[`Storyshots UI/Alert with kind danger 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Alert
+    className=""
+    kind="danger"
+  >
+    <div
+      className="root danger"
+    >
+      Lorem ipsum
+    </div>
+  </Alert>
+</div>
+`;
+
+exports[`Storyshots UI/Alert with kind info 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Alert
+    className=""
+    kind="info"
+  >
+    <div
+      className="root info"
+    >
+      Lorem ipsum
+    </div>
+  </Alert>
+</div>
+`;
+
+exports[`Storyshots UI/Alert with kind success 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Alert
+    className=""
+    kind="success"
+  >
+    <div
+      className="root success"
+    >
+      Lorem ipsum
+    </div>
+  </Alert>
+</div>
+`;
+
+exports[`Storyshots UI/Alert with kind warning 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Alert
+    className=""
+    kind="warning"
+  >
+    <div
+      className="root warning"
+    >
+      Lorem ipsum
+    </div>
+  </Alert>
+</div>
+`;

@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Summary default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Summary
+    className=""
+    data={
+      Object {
+        "webpack": Object {
+          "assetCount": Object {
+            "baseline": 19,
+            "current": 19,
+          },
+          "cacheInvalidation": Object {
+            "baseline": 0,
+            "current": 75.34,
+          },
+          "chunkCount": Object {
+            "baseline": 0,
+            "current": 0,
+          },
+          "duplicatePackagesCount": Object {
+            "baseline": 3,
+            "current": 3,
+          },
+          "moduleCount": Object {
+            "baseline": 556,
+            "current": 556,
+          },
+          "packageCount": Object {
+            "baseline": 63,
+            "current": 63,
+          },
+          "totalInitialSizeCSS": Object {
+            "baseline": 24919,
+            "current": 21703,
+          },
+          "totalInitialSizeJS": Object {
+            "baseline": 591864,
+            "current": 591944,
+          },
+          "totalSizeByTypeALL": Object {
+            "baseline": 818626,
+            "current": 815490,
+          },
+        },
+      }
+    }
+    firstRowCount={3}
+    keys={
+      Array [
+        "webpack.totalInitialSizeJS",
+        "webpack.totalInitialSizeCSS",
+        "webpack.cacheInvalidation",
+        "webpack.moduleCount",
+        "webpack.chunkCount",
+        "webpack.assetCount",
+        "webpack.packageCount",
+        "webpack.duplicatePackagesCount",
+      ]
+    }
+    loading={false}
+    showSummaryItemBaselineValue={true}
+    showSummaryItemDelta={true}
+  />
+</div>
+`;
+
+exports[`Storyshots Components/Summary loading 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Summary
+    className=""
+    data={null}
+    firstRowCount={3}
+    keys={
+      Array [
+        "webpack.totalInitialSizeJS",
+        "webpack.totalInitialSizeCSS",
+        "webpack.cacheInvalidation",
+        "webpack.moduleCount",
+        "webpack.chunkCount",
+        "webpack.assetCount",
+        "webpack.packageCount",
+        "webpack.duplicatePackagesCount",
+      ]
+    }
+    loading={true}
+    showSummaryItemBaselineValue={false}
+    showSummaryItemDelta={true}
+  />
+</div>
+`;
+
+exports[`Storyshots Components/Summary single run 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Summary
+    className=""
+    data={
+      Object {
+        "webpack": Object {
+          "assetCount": Object {
+            "baseline": 0,
+            "current": 19,
+          },
+          "cacheInvalidation": Object {
+            "baseline": 0,
+            "current": 0,
+          },
+          "chunkCount": Object {
+            "baseline": 0,
+            "current": 0,
+          },
+          "duplicatePackagesCount": Object {
+            "baseline": 0,
+            "current": 3,
+          },
+          "moduleCount": Object {
+            "baseline": 0,
+            "current": 556,
+          },
+          "packageCount": Object {
+            "baseline": 0,
+            "current": 63,
+          },
+          "totalInitialSizeCSS": Object {
+            "baseline": 0,
+            "current": 21703,
+          },
+          "totalInitialSizeJS": Object {
+            "baseline": 0,
+            "current": 591944,
+          },
+          "totalSizeByTypeALL": Object {
+            "baseline": 0,
+            "current": 815490,
+          },
+        },
+      }
+    }
+    firstRowCount={3}
+    keys={
+      Array [
+        "webpack.totalInitialSizeJS",
+        "webpack.totalInitialSizeCSS",
+        "webpack.cacheInvalidation",
+        "webpack.moduleCount",
+        "webpack.chunkCount",
+        "webpack.assetCount",
+        "webpack.packageCount",
+        "webpack.duplicatePackagesCount",
+      ]
+    }
+    loading={false}
+    showSummaryItemBaselineValue={false}
+    showSummaryItemDelta={false}
+  />
+</div>
+`;

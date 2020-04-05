@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI/Tooltip default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "64px",
+      "width": "100%",
+    }
+  }
+>
+  <Tooltip
+    align=""
+    as="span"
+    className=""
+    containerRef={null}
+    title="View job #100"
+  >
+    <span
+      className="root"
+    >
+      Job #100
+      <div
+        className="tooltip"
+      >
+        View job #100
+        <span
+          className="tooltipArrow"
+        />
+      </div>
+    </span>
+  </Tooltip>
+</div>
+`;

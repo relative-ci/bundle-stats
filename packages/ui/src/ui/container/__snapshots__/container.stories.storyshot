@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI/Container default 1`] = `
+<div
+  style={
+    Object {
+      "background": "hotpink",
+    }
+  }
+>
+  <Container
+    as="div"
+    className=""
+    style={
+      Object {
+        "background": "white",
+      }
+    }
+  >
+    <div
+      className="root"
+    >
+      <div
+        className="inner"
+        style={
+          Object {
+            "background": "white",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "background": "white",
+              "padding": "24px",
+            }
+          }
+        >
+          Content
+        </div>
+      </div>
+    </div>
+  </Container>
+</div>
+`;
