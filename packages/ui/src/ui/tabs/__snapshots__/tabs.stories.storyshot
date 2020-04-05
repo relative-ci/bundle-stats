@@ -17,8 +17,8 @@ exports[`Storyshots UI/Tabs default 1`] = `
       className="root"
     >
       <span
-        className="item"
-        isActive={true}
+        className="item itemActive"
+        isTabActive={true}
         key=".0"
       >
         Option A

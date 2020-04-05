@@ -8,10 +8,7 @@ import css from './footer.module.css';
 
 /* eslint-disable jsx-a11y/anchor-has-content */
 const StandardLink = ({ to, source, ...props }) => (
-  <a
-    href={`${config.siteUrl}${to}?utm_source=${source}`}
-    {...props}
-  />
+  <a href={`${config.siteUrl}${to}?utm_source=${source}`} {...props} />
 );
 /* eslint-enable jsx-a11y/anchor-has-content */
 
@@ -23,15 +20,9 @@ StandardLink.propTypes = {
   source: PropTypes.string.isRequired,
 };
 
-export const Footer = ({
-  className, children, Link, source,
-}) => (
+export const Footer = ({ className, children, Link, source }) => (
   <Container className={cx(css.root, className)} as="footer">
-    {children && (
-      <div className={css.content}>
-        {children}
-      </div>
-    )}
+    {children && <div className={css.content}>{children}</div>}
     <div className={css.info}>
       <div className={css.navigation}>
         <div className={css.navGroup}>
@@ -41,18 +32,10 @@ export const Footer = ({
             </Link>
           </h3>
           <nav className={css.nav}>
-            <Link
-              to="/documentation/setup"
-              className={css.navLink}
-              source={source}
-            >
+            <Link to="/documentation/setup" className={css.navLink} source={source}>
               Setup
             </Link>
-            <Link
-              to="/documentation/metrics-and-data"
-              className={css.navLink}
-              source={source}
-            >
+            <Link to="/documentation/metrics-and-data" className={css.navLink} source={source}>
               Metrics and data
             </Link>
             <Link
@@ -62,26 +45,17 @@ export const Footer = ({
             >
               FrontEnd-Ops Resources
             </Link>
-            <Link
-              to="/releases"
-              className={css.navLink}
-              source={source}
-            >
+            <Link to="/releases" className={css.navLink} source={source}>
               Release notes
             </Link>
-            <a
-              href="https://github.com/relative-ci/roadmap/issues"
-              className={css.navLink}
-            >
+            <a href="https://github.com/relative-ci/roadmap/issues" className={css.navLink}>
               Roadmap
             </a>
           </nav>
         </div>
 
         <div className={css.navGroup}>
-          <h3 className={css.navGroupTitle}>
-            Tools
-          </h3>
+          <h3 className={css.navGroupTitle}>Tools</h3>
           <nav className={css.nav}>
             <a
               href="https://github.com/relative-ci/bundle-stats"
@@ -110,20 +84,12 @@ export const Footer = ({
         </div>
 
         <div className={css.navGroup}>
-          <h3 className={css.navGroupTitle}>
-            Social
-          </h3>
+          <h3 className={css.navGroupTitle}>Social</h3>
           <nav className={css.nav}>
-            <a
-              href="https://github.com/relative-ci"
-              className={css.navLink}
-            >
+            <a href="https://github.com/relative-ci" className={css.navLink}>
               Github
             </a>
-            <a
-              href="https://twitter.com/Relative_CI"
-              className={css.navLink}
-            >
+            <a href="https://twitter.com/Relative_CI" className={css.navLink}>
               Twitter
             </a>
           </nav>
@@ -131,12 +97,7 @@ export const Footer = ({
       </div>
 
       <div className={css.branding}>
-        <Link
-          className={css.copyright}
-          to="/"
-          title="Go to homepage"
-          source={source}
-        >
+        <Link className={css.copyright} to="/" title="Go to homepage" source={source}>
           &copy;
           {` ${new Date().getFullYear()} ${config.appName}`}
         </Link>
@@ -157,12 +118,11 @@ Footer.propTypes = {
   className: PropTypes.string,
 
   /** Content */
-  children: PropTypes.element,
+  children: PropTypes.node,
 
   /** UTM source */
   source: PropTypes.string,
 
   /** Link component */
   Link: PropTypes.elementType,
-
 };
