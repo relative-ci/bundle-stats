@@ -2,6 +2,9 @@ import { getAssetName } from '../utils';
 
 describe('Webpack/utils', () => {
   test('should return normalized asset name', () => {
+    expect(getAssetName()).toBe('');
+    expect(getAssetName(null)).toBe('');
+
     expect(getAssetName('main.d2490.js')).toBe('main.js');
     expect(getAssetName('main.d249062c08abb6b31a03.js')).toBe('main.js');
     expect(getAssetName('main.d249062c08abb6b31a03.min.js')).toBe('main.min.js');
