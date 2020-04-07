@@ -16,22 +16,31 @@ export const getFileType = (filename) => {
  * Extract (guess) filename from a hashed filename
  */
 export const getAssetName = (assetFilepath) => {
+  if (!assetFilepath) {
+    return '';
+  }
+
   const pathParts = assetFilepath.split('/');
   const dirname = pathParts.slice(0, -1).join('/');
   const filename = last(pathParts);
 
   const filenameParts = filename.split('.');
 
-  const { basename, extension } = filenameParts.slice(-2, -1).join('') === 'min'
-    ? {
-      basename: filenameParts.slice(0, -2).join('.'),
-      extension: filenameParts.slice(-2).join('.'),
-    } : {
-      basename: filenameParts.slice(0, -1).join('.'),
-      extension: filenameParts.slice(-1).join('.'),
-    };
+  const { basename, extension } =
+    filenameParts.slice(-2, -1).join('') === 'min'
+      ? {
+          basename: filenameParts.slice(0, -2).join('.'),
+          extension: filenameParts.slice(-2).join('.'),
+        }
+      : {
+          basename: filenameParts.slice(0, -1).join('.'),
+          extension: filenameParts.slice(-1).join('.'),
+        };
 
-  return `${dirname ? `${dirname}/` : ''}${basename.replace(FILENAME_HASH_PATTERN, '')}.${extension}`;
+  return `${dirname ? `${dirname}/` : ''}${basename.replace(
+    FILENAME_HASH_PATTERN,
+    '',
+  )}.${extension}`;
 };
 
 // css ./node_modules/css-loader/dist/cjs.js??ref--6-0!./src/assets/styles/default.styl
@@ -40,16 +49,20 @@ const NAME_WITH_LOADERS = /!/;
 // ./src/index.jsx + 27 modules
 const NAME_WITH_MODULES = /\s\+\s\d*\smodules$/;
 
-export const getModuleName = (label) => {
-  if (NAME_WITH_LOADERS.test(label)) {
-    return last(label.split(NAME_WITH_LOADERS));
+export const getModuleName = (moduleLabel) => {
+  if (!moduleLabel) {
+    return '';
   }
 
-  if (NAME_WITH_MODULES.test(label)) {
-    return label.replace(NAME_WITH_MODULES, '');
+  if (NAME_WITH_LOADERS.test(moduleLabel)) {
+    return last(moduleLabel.split(NAME_WITH_LOADERS));
   }
 
-  return label;
+  if (NAME_WITH_MODULES.test(moduleLabel)) {
+    return moduleLabel.replace(NAME_WITH_MODULES, '');
+  }
+
+  return moduleLabel;
 };
 
 /*
@@ -62,9 +75,7 @@ export const calculateCacheInvalidation = (rows) => {
   let cached = 0;
   let invalidated = 0;
 
-  rows.forEach(({
-    changed, added, deleted, runs,
-  }) => {
+  rows.forEach(({ changed, added, deleted, runs }) => {
     // Added and deleted files do not count towards the caching index
     if (added || deleted) {
       return;
@@ -83,7 +94,6 @@ export const calculateCacheInvalidation = (rows) => {
 
   return round((invalidated / cached) * 100, 2);
 };
-
 
 export const getMetricAdded = (runs) => {
   const [current, baseline] = map(runs, 'value');
