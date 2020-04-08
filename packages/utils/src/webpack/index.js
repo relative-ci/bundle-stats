@@ -4,5 +4,6 @@ export * from './extract';
 export * from './filter';
 export * from './metrics';
 export * from './selectors';
+export * from './struct';
 export * from './utils';
 export * from './validate';
