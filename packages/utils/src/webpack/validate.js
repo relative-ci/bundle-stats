@@ -11,7 +11,9 @@ export const validate = (webpackSource) => {
   try {
     WebpackSourceStruct(webpackSource);
   } catch (err) {
-    return `${INVALID}\n\n${err.message}`;
+    const { path, type } = err;
+    const key = path[0];
+    return `${INVALID}\n\nExpected a value of type \`${type}\` for \`${key}\``;
   }
 
   return '';
