@@ -15,28 +15,28 @@ const WebpackSourceStruct = struct({
   builtAt: optional('number'),
   assets: intersection([
     [
-      {
+      struct.interface({
         name: 'string',
         size: 'number',
-      },
+      }),
     ],
     'notEmptyArray',
   ]),
   modules: optional([
-    {
+    struct.interface({
       name: 'string',
       size: 'number',
       chunks: [union(['number', 'string'])],
-    },
+    }),
   ]),
   chunks: optional([
-    {
+    struct.interface({
       id: union(['number', 'string']),
       entry: 'boolean',
       initial: 'boolean',
       names: ['string'],
       files: ['string'],
-    },
+    }),
   ]),
 });
 

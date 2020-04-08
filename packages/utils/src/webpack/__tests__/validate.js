@@ -7,6 +7,8 @@ describe('Webpack/validate', () => {
         {
           name: 'main.js',
           size: 100,
+          emitted: true,
+          chunks: [1, 2],
         },
       ],
     };
