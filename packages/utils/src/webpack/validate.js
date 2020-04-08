@@ -8,12 +8,10 @@ const struct = superstruct({
   },
 });
 
-const { intersection, optional, union } = struct;
-
-const WebpackSourceStruct = struct({
-  hash: optional('string'),
-  builtAt: optional('number'),
-  assets: intersection([
+const WebpackSourceStruct = struct.interface({
+  hash: struct.optional('string'),
+  builtAt: struct.optional('number'),
+  assets: struct.intersection([
     [
       struct.interface({
         name: 'string',
@@ -22,16 +20,16 @@ const WebpackSourceStruct = struct({
     ],
     'notEmptyArray',
   ]),
-  modules: optional([
+  modules: struct.optional([
     struct.interface({
       name: 'string',
       size: 'number',
-      chunks: [union(['number', 'string'])],
+      chunks: [struct.union(['number', 'string'])],
     }),
   ]),
-  chunks: optional([
+  chunks: struct.optional([
     struct.interface({
-      id: union(['number', 'string']),
+      id: struct.union(['number', 'string']),
       entry: 'boolean',
       initial: 'boolean',
       names: ['string'],
