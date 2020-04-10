@@ -1,12 +1,16 @@
 import React, { useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import { debounce } from 'lodash';
 
 const DEBOUNCE_DURATION = 300;
 
-export const withSearchPattern = () => (BaseComponent) => {
-  const WithSearchPattern = (props) => {
+export const withSearch = () => (BaseComponent) => {
+  const WithSearch = (props) => {
+    const { initialFilters, defaultFilters } = props;
+
     const [search, updateSearch] = useState('');
     const [searchPattern, setSearchPattern] = useState();
+    const [filters, updateFilters] = useState(initialFilters);
 
     const debouncedUpdateSearchPattern = useRef(
       debounce((newValue) => {
@@ -31,15 +35,24 @@ export const withSearchPattern = () => (BaseComponent) => {
       debouncedUpdateSearchPattern.current(newValue);
     });
 
-    return (
-      <BaseComponent
-        {...props}
-        search={search}
-        searchPattern={searchPattern}
-        updateSearch={handleUpdateSearch.current}
-      />
-    );
+    const handleResetFilters = useRef(() => updateFilters(defaultFilters));
+
+    const baseProps = {
+      search,
+      searchPattern,
+      filters,
+      updateFilters,
+      resetFilters: handleResetFilters.current,
+      updateSearch: handleUpdateSearch.current,
+    };
+
+    return <BaseComponent {...props} {...baseProps} />;
   };
 
-  return WithSearchPattern;
+  WithSearch.propTypes = {
+    initialFilters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+    defaultFilters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  };
+
+  return WithSearch;
 };

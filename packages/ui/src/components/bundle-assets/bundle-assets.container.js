@@ -4,9 +4,8 @@ import { FILE_TYPES } from '@bundle-stats/utils';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
-import { withFilters } from '../../hocs/with-filters';
 import { withFilteredItems } from '../../hocs/with-filtered-items';
-import { withSearchPattern } from '../../hocs/with-search';
+import { withSearch } from '../../hocs/with-search';
 import {
   FILTER_ASSET,
   FILTER_CHANGED,
@@ -163,8 +162,7 @@ export const enhance = compose(
       },
     };
   }),
-  withFilters(),
-  withSearchPattern(),
+  withSearch(),
   withFilteredItems(getRowFilter),
   withCustomSort({ sortItems: SORT_BY, getCustomSort }),
 );

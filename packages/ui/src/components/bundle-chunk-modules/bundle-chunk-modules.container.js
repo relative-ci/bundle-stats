@@ -2,9 +2,8 @@ import { compose, withProps } from 'recompose';
 import { get } from 'lodash';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
-import { withFilters } from '../../hocs/with-filters';
 import { withFilteredItems } from '../../hocs/with-filtered-items';
-import { withSearchPattern } from '../../hocs/with-search';
+import { withSearch } from '../../hocs/with-search';
 import {
   SORT_BY_NAME,
   SORT_BY_SIZE,
@@ -42,8 +41,7 @@ export default compose(
     initialFilters: { changed: runs && runs.length > 1 },
     totalRowCount: items.length,
   })),
-  withFilters(),
-  withSearchPattern(),
+  withSearch(),
   withFilteredItems(getFilterByChanged),
   withCustomSort({ sortItems: SORT_BY, getCustomSort }),
 );

@@ -10,7 +10,7 @@ exports[`Storyshots Components/BundleChunkModules default 1`] = `
     }
   }
 >
-  <withProps(withState(withProps(WithSearchPattern)))
+  <withProps(WithSearch)
     id="1"
     items={
       Array [
@@ -14036,7 +14036,7 @@ exports[`Storyshots Components/BundleChunkModules empty baseline 1`] = `
     }
   }
 >
-  <withProps(withState(withProps(WithSearchPattern)))
+  <withProps(WithSearch)
     id="1"
     items={
       Array [
@@ -31264,7 +31264,7 @@ exports[`Storyshots Components/BundleChunkModules empty filtered modules 1`] = `
     }
   }
 >
-  <withProps(withState(withProps(WithSearchPattern)))
+  <withProps(WithSearch)
     id="1"
     items={
       Array [
@@ -45459,7 +45459,7 @@ exports[`Storyshots Components/BundleChunkModules empty modules 1`] = `
     }
   }
 >
-  <withProps(withState(withProps(WithSearchPattern)))
+  <withProps(WithSearch)
     id="1"
     items={Array []}
     name="vendor"
@@ -59625,7 +59625,7 @@ exports[`Storyshots Components/BundleChunkModules multiple jobs 1`] = `
     }
   }
 >
-  <withProps(withState(withProps(WithSearchPattern)))
+  <withProps(WithSearch)
     id="1"
     items={
       Array [
