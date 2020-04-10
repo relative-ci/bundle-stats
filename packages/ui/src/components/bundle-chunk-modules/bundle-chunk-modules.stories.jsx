@@ -23,7 +23,7 @@ stories.add('default', () => (
     name="vendor"
     id="1"
     runs={RUNS_DEFAULT}
-    modules={webpack.compareBySection.modules(RUNS_DEFAULT)[1].modules}
+    items={webpack.compareBySection.modules(RUNS_DEFAULT)[1].modules}
   />
 ));
 
@@ -34,17 +34,12 @@ stories.add('multiple jobs', () => (
     name="vendor"
     id="1"
     runs={RUNS_MULTIPLE}
-    modules={webpack.compareBySection.modules(RUNS_MULTIPLE)[1].modules}
+    items={webpack.compareBySection.modules(RUNS_MULTIPLE)[1].modules}
   />
 ));
 
 stories.add('empty modules', () => (
-  <BundleChunkModules
-    name="vendor"
-    id="1"
-    runs={RUNS_MULTIPLE}
-    modules={[]}
-  />
+  <BundleChunkModules name="vendor" id="1" runs={RUNS_MULTIPLE} items={[]} />
 ));
 
 stories.add('empty filtered modules', () => (
@@ -52,7 +47,7 @@ stories.add('empty filtered modules', () => (
     name="vendor"
     id="1"
     runs={RUNS_MULTIPLE}
-    modules={[
+    items={[
       {
         key: 'module-a',
         label: 'module-a',
@@ -83,16 +78,13 @@ stories.add('empty filtered modules', () => (
   />
 ));
 
-const JOBS_EMPTY_BASELINE = createJobs([
-  { webpack: currentStats },
-  null,
-]);
+const JOBS_EMPTY_BASELINE = createJobs([{ webpack: currentStats }, null]);
 
 stories.add('empty baseline', () => (
   <BundleChunkModules
     name="vendor"
     id="1"
     runs={JOBS_EMPTY_BASELINE}
-    modules={webpack.compareBySection.modules(JOBS_EMPTY_BASELINE)[1].modules}
+    items={webpack.compareBySection.modules(JOBS_EMPTY_BASELINE)[1].modules}
   />
 ));

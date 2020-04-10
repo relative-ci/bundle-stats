@@ -13,25 +13,22 @@ export const BundleModules = ({ jobs }) => {
 
   return (
     <>
-      {!isEmpty(modulesReport) && modulesReport.map(({ chunkId, chunkNames, modules }) => (
-        <BundleChunkModules
-          key={`${chunkNames.join('-')}-${chunkId}`}
-          className={css.chunk}
-          name={chunkNames.join(', ')}
-          id={chunkId}
-          runs={jobs}
-          modules={modules}
-        />
-      ))}
+      {!isEmpty(modulesReport) &&
+        modulesReport.map(({ chunkId, chunkNames, modules }) => (
+          <BundleChunkModules
+            key={`${chunkNames.join('-')}-${chunkId}`}
+            className={css.chunk}
+            name={chunkNames.join(', ')}
+            id={chunkId}
+            runs={jobs}
+            items={modules}
+          />
+        ))}
 
       {isEmpty(modulesReport) && (
         <Box className={css.empty}>
-          <h2 className={css.emptyTitle}>
-            No data available!
-          </h2>
-          <p className={css.emptyText}>
-            Please make sure Webpack stats are configured correctly.
-          </p>
+          <h2 className={css.emptyTitle}>No data available!</h2>
+          <p className={css.emptyText}>Please make sure Webpack stats are configured correctly.</p>
           <a
             href="https://relative-ci.com/documentation/setup#1-configure-webpack"
             className={css.emptyLink}

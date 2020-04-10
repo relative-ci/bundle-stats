@@ -165,6 +165,6 @@ export const enhance = compose(
   }),
   withFilters(),
   withSearchPattern(),
-  withFilteredItems('items', getRowFilter),
-  withCustomSort({ sortItems: SORT_BY, getCustomSort, itemsKey: 'items' }),
+  withFilteredItems(getRowFilter),
+  withCustomSort({ sortItems: SORT_BY, getCustomSort }),
 );

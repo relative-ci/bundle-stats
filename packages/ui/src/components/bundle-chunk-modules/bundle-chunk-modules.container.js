@@ -37,13 +37,13 @@ const getFilterByChanged = (filters) => (row) => {
 };
 
 export default compose(
-  withProps(({ runs, modules }) => ({
+  withProps(({ runs, items }) => ({
     defaultFilters: { changed: false },
     initialFilters: { changed: runs && runs.length > 1 },
-    totalRowCount: modules.length,
+    totalRowCount: items.length,
   })),
   withFilters(),
   withSearchPattern(),
-  withFilteredItems('modules', getFilterByChanged),
-  withCustomSort({ sortItems: SORT_BY, getCustomSort, itemsKey: 'modules' }),
+  withFilteredItems(getFilterByChanged),
+  withCustomSort({ sortItems: SORT_BY, getCustomSort }),
 );

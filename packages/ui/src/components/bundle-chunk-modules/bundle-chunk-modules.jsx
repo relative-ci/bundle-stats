@@ -41,7 +41,7 @@ export const BundleChunkModules = ({
   name,
   id,
   runs,
-  modules,
+  items,
   totalRowCount,
   updateFilters,
   resetFilters,
@@ -94,7 +94,7 @@ export const BundleChunkModules = ({
                       disabled: runs.length <= 1,
                     },
                   }}
-                  label={`Filters (${modules.length}/${totalRowCount})`}
+                  label={`Filters (${items.length}/${totalRowCount})`}
                   onChange={updateFilters}
                 />
               </div>
@@ -110,7 +110,7 @@ export const BundleChunkModules = ({
         </Toolbar>
         <MetricsTable
           className={css.table}
-          items={modules}
+          items={items}
           runs={runs}
           renderRowHeader={getRenderRowHeader(map(runs, 'label'))}
           emptyMessage={emptyMessage}
@@ -125,7 +125,7 @@ BundleChunkModules.defaultProps = {
   className: '',
   name: '',
   id: '',
-  modules: [],
+  items: [],
   runs: [],
   totalRowCount: 0,
 };
@@ -141,7 +141,7 @@ BundleChunkModules.propTypes = {
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
   /** Rows data */
-  modules: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  items: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 
   /** Runs data */
   runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types

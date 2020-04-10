@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const withFilteredItems = (collection = 'items', getFilter) => (BaseComponent) => {
+export const withFilteredItems = (getFilter) => (BaseComponent) => {
   const WithFilteredItems = (props) => {
-    const { [collection]: items, filters, searchPattern } = props;
+    const { items, filters, searchPattern } = props;
 
     const filteredItems = items.filter((item) => {
       if (searchPattern && !searchPattern.test(item?.key)) {
@@ -14,7 +14,7 @@ export const withFilteredItems = (collection = 'items', getFilter) => (BaseCompo
     });
 
     const baseProps = {
-      [collection]: filteredItems,
+      items: filteredItems,
     };
 
     return <BaseComponent {...props} {...baseProps} />;
@@ -22,6 +22,7 @@ export const withFilteredItems = (collection = 'items', getFilter) => (BaseCompo
 
   WithFilteredItems.propTypes = {
     filters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+    items: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
     searchPattern: PropTypes.instanceOf(RegExp).isRequired,
   };
 

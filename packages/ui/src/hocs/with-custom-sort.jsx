@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { orderBy } from 'lodash';
 
 export const withCustomSort = ({
   sortItems,
   getCustomSort,
-  itemsKey,
   sortBy = 'default',
   direction = 'asc',
 }) => (BaseComponent) => {
   const WithCustomSort = (props) => {
-    const { [itemsKey]: items } = props;
+    const { items } = props;
     const [sort, updateSort] = useState({ sortBy, direction });
     const orderedItems = orderBy(items, getCustomSort(sort.sortBy), sort.direction);
 
@@ -17,10 +17,14 @@ export const withCustomSort = ({
       sort,
       updateSort,
       sortItems,
-      [itemsKey]: orderedItems,
+      items: orderedItems,
     };
 
     return <BaseComponent {...props} {...otherProps} />;
+  };
+
+  WithCustomSort.propTypes = {
+    items: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
   };
 
   return WithCustomSort;

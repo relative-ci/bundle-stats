@@ -12,7 +12,7 @@ exports[`Storyshots Components/BundleChunkModules default 1`] = `
 >
   <withProps(withState(withProps(WithSearchPattern)))
     id="1"
-    modules={
+    items={
       Array [
         Object {
           "biggerIsBetter": false,
@@ -14038,7 +14038,7 @@ exports[`Storyshots Components/BundleChunkModules empty baseline 1`] = `
 >
   <withProps(withState(withProps(WithSearchPattern)))
     id="1"
-    modules={
+    items={
       Array [
         Object {
           "biggerIsBetter": false,
@@ -31266,7 +31266,7 @@ exports[`Storyshots Components/BundleChunkModules empty filtered modules 1`] = `
 >
   <withProps(withState(withProps(WithSearchPattern)))
     id="1"
-    modules={
+    items={
       Array [
         Object {
           "biggerIsBetter": false,
@@ -45461,7 +45461,7 @@ exports[`Storyshots Components/BundleChunkModules empty modules 1`] = `
 >
   <withProps(withState(withProps(WithSearchPattern)))
     id="1"
-    modules={Array []}
+    items={Array []}
     name="vendor"
     runs={
       Array [
@@ -59627,7 +59627,7 @@ exports[`Storyshots Components/BundleChunkModules multiple jobs 1`] = `
 >
   <withProps(withState(withProps(WithSearchPattern)))
     id="1"
-    modules={
+    items={
       Array [
         Object {
           "biggerIsBetter": false,

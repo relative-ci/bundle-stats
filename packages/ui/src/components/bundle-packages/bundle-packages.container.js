@@ -77,12 +77,11 @@ export const enhance = compose(
   }),
   withFilters(),
   withSearchPattern(),
-  withFilteredItems('items', getRowFilter),
+  withFilteredItems(getRowFilter),
 
   withCustomSort({
     sortItems: SORT_BY,
     getCustomSort,
-    itemsKey: 'items',
     sortBy: SORT_BY_SIZE,
     direction: SORT_BY[SORT_BY_SIZE].defaultDirection,
   }),
