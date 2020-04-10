@@ -10,7 +10,7 @@ exports[`Storyshots Components/BundlePackages default 1`] = `
     }
   }
 >
-  <withProps(withProps(withState(withProps(withState(withProps(withProps(withProps(withState(withProps(BundlePackages))))))))))
+  <withProps(withProps(withState(withProps(WithSearchPattern))))
     jobs={
       Array [
         Object {
@@ -7101,7 +7101,7 @@ exports[`Storyshots Components/BundlePackages empty baseline 1`] = `
     }
   }
 >
-  <withProps(withProps(withState(withProps(withState(withProps(withProps(withProps(withState(withProps(BundlePackages))))))))))
+  <withProps(withProps(withState(withProps(WithSearchPattern))))
     jobs={
       Array [
         Object {
@@ -14196,7 +14196,7 @@ exports[`Storyshots Components/BundlePackages empty filtered packages 1`] = `
     }
   }
 >
-  <withProps(withProps(withState(withProps(withState(withProps(withProps(withProps(withState(withProps(BundlePackages))))))))))
+  <withProps(withProps(withState(withProps(WithSearchPattern))))
     jobs={
       Array [
         Object {
@@ -27987,7 +27987,7 @@ exports[`Storyshots Components/BundlePackages empty packages 1`] = `
     }
   }
 >
-  <withProps(withProps(withState(withProps(withState(withProps(withProps(withProps(withState(withProps(BundlePackages))))))))))
+  <withProps(withProps(withState(withProps(WithSearchPattern))))
     jobs={
       Array [
         Object {
@@ -41770,7 +41770,7 @@ exports[`Storyshots Components/BundlePackages multiple jobs 1`] = `
     }
   }
 >
-  <withProps(withProps(withState(withProps(withState(withProps(withProps(withProps(withState(withProps(BundlePackages))))))))))
+  <withProps(withProps(withState(withProps(WithSearchPattern))))
     jobs={
       Array [
         Object {

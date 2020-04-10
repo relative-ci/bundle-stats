@@ -3,7 +3,8 @@ import { get } from 'lodash';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilters } from '../../hocs/with-filters';
-import { withSearch } from '../../hocs/with-search';
+import { withFilteredItems } from '../../hocs/with-filtered-items';
+import { withSearchPattern } from '../../hocs/with-search';
 import {
   SORT_BY_NAME,
   SORT_BY_SIZE,
@@ -42,10 +43,7 @@ export default compose(
     totalRowCount: modules.length,
   })),
   withFilters(),
-  withSearch('modules'),
-
-  withProps(({ modules, filters }) => ({
-    modules: modules.filter(getFilterByChanged(filters)),
-  })),
+  withSearchPattern(),
+  withFilteredItems('modules', getFilterByChanged),
   withCustomSort({ sortItems: SORT_BY, getCustomSort, itemsKey: 'modules' }),
 );

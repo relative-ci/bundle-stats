@@ -1,10 +1,11 @@
 import { compose, withProps } from 'recompose';
-import { get, filter } from 'lodash';
+import { get } from 'lodash';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilters } from '../../hocs/with-filters';
-import { withSearch } from '../../hocs/with-search';
+import { withFilteredItems } from '../../hocs/with-filtered-items';
+import { withSearchPattern } from '../../hocs/with-search';
 import {
   FILTER_CHANGED,
   FILTER_DUPLICATE,
@@ -75,11 +76,8 @@ export const enhance = compose(
     };
   }),
   withFilters(),
-  withSearch(),
-
-  withProps(({ items, filters }) => ({
-    items: filter(items, getRowFilter(filters)),
-  })),
+  withSearchPattern(),
+  withFilteredItems('items', getRowFilter),
 
   withCustomSort({
     sortItems: SORT_BY,

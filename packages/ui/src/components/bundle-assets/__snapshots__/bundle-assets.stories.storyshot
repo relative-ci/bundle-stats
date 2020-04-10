@@ -10,7 +10,7 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
     }
   }
 >
-  <withProps(withProps(withProps(withProps(withState(withProps(withState(withProps(withProps(withProps(withState(withProps(BundleAssets))))))))))))
+  <withProps(withProps(withProps(withProps(withState(withProps(WithSearchPattern))))))
     jobs={
       Array [
         Object {
@@ -7101,7 +7101,7 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
     }
   }
 >
-  <withProps(withProps(withProps(withProps(withState(withProps(withState(withProps(withProps(withProps(withState(withProps(BundleAssets))))))))))))
+  <withProps(withProps(withProps(withProps(withState(withProps(WithSearchPattern))))))
     jobs={
       Array [
         Object {
@@ -14196,7 +14196,7 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
     }
   }
 >
-  <withProps(withProps(withProps(withProps(withState(withProps(withState(withProps(withProps(withProps(withState(withProps(BundleAssets))))))))))))
+  <withProps(withProps(withProps(withProps(withState(withProps(WithSearchPattern))))))
     jobs={
       Array [
         Object {
@@ -28099,7 +28099,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
     }
   }
 >
-  <withProps(withProps(withProps(withProps(withState(withProps(withState(withProps(withProps(withProps(withState(withProps(BundleAssets))))))))))))
+  <withProps(withProps(withProps(withProps(withState(withProps(WithSearchPattern))))))
     jobs={
       Array [
         Object {
@@ -42262,7 +42262,7 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
     }
   }
 >
-  <withProps(withProps(withProps(withProps(withState(withProps(withState(withProps(withProps(withProps(withState(withProps(BundleAssets))))))))))))
+  <withProps(withProps(withProps(withProps(withState(withProps(WithSearchPattern))))))
     jobs={
       Array [
         Object {
@@ -56157,7 +56157,7 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
     }
   }
 >
-  <withProps(withProps(withProps(withProps(withState(withProps(withState(withProps(withProps(withProps(withState(withProps(BundleAssets))))))))))))
+  <withProps(withProps(withProps(withProps(withState(withProps(WithSearchPattern))))))
     jobs={
       Array [
         Object {
