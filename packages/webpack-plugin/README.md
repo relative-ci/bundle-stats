@@ -62,7 +62,7 @@ module.exports = {
 - `baseline` - save current webpack stats as baseline (default `false`).
 - `html` - output html report (default `true`).
 - `json` - output json report (default `false`).
-- `outDir` - output directory relative to `output.path` (default `''`).
+- `outDir` - output directory relative to webpack `output.path` (default `''`).
 - `stats` - [Webpack stats](https://webpack.js.org/configuration/stats) options
   default:
   ```js
