@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Layout/SubHeader default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <SubHeader
+    className=""
+    icon={null}
+    rightSide={null}
+    size="default"
+    subtitle=""
+    title="Webpack"
+  />
+</div>
+`;
+
+exports[`Storyshots Layout/SubHeader with children 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <SubHeader
+    className=""
+    icon={
+      <Logo
+        as="span"
+        className=""
+        kind="webpack"
+        style={
+          Object {
+            "width": "72px",
+          }
+        }
+      />
+    }
+    rightSide={null}
+    size="default"
+    subtitle="Tools"
+    title="Webpack"
+  >
+    <a
+      href="#webpack"
+    >
+      Visit webpack.js.org
+    </a>
+  </SubHeader>
+</div>
+`;
+
+exports[`Storyshots Layout/SubHeader with icon 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <SubHeader
+    className=""
+    icon={
+      <Logo
+        as="span"
+        className=""
+        kind="webpack"
+        style={
+          Object {
+            "width": "48px",
+          }
+        }
+      />
+    }
+    rightSide={null}
+    size="default"
+    subtitle="Tools"
+    title="Webpack"
+  />
+</div>
+`;
+
+exports[`Storyshots Layout/SubHeader with right side links 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <SubHeader
+    className=""
+    icon={
+      <Logo
+        as="span"
+        className=""
+        kind="webpack"
+        style={
+          Object {
+            "width": "72px",
+          }
+        }
+      />
+    }
+    rightSide={
+      <span>
+        Read more
+      </span>
+    }
+    size="default"
+    subtitle="Tools"
+    title="Webpack"
+  >
+    <a
+      href="#webpack"
+    >
+      Visit webpack.js.org
+    </a>
+  </SubHeader>
+</div>
+`;
+
+exports[`Storyshots Layout/SubHeader with small size 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <SubHeader
+    className=""
+    icon={
+      <Logo
+        as="span"
+        className=""
+        kind="webpack"
+        style={
+          Object {
+            "width": "72px",
+          }
+        }
+      />
+    }
+    rightSide={
+      <span>
+        Read more
+      </span>
+    }
+    size="small"
+    subtitle="Tools"
+    title="Webpack"
+  >
+    <a
+      href="#webpack"
+    >
+      Visit webpack.js.org
+    </a>
+  </SubHeader>
+</div>
+`;
+
+exports[`Storyshots Layout/SubHeader with subtitle 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <SubHeader
+    className=""
+    icon={null}
+    rightSide={null}
+    size="default"
+    subtitle="Tools"
+    title="Webpack"
+  />
+</div>
+`;

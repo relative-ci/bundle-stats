@@ -4,11 +4,10 @@
 }
 
 .icon {
-  display: inline-block;
+  display: block;
   width: var(--space-small);
   height: auto;
   max-height: var(--space-small);
-  vertical-align: middle;
 }
 
 .text {

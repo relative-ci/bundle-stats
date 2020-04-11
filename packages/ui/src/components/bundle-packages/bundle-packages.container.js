@@ -1,9 +1,10 @@
 import { compose, withProps } from 'recompose';
-import { get, filter } from 'lodash';
+import { get } from 'lodash';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
-import { withFilters } from '../../hocs/with-filters';
+import { withFilteredItems } from '../../hocs/with-filtered-items';
+import { withSearch } from '../../hocs/with-search';
 import {
   FILTER_CHANGED,
   FILTER_DUPLICATE,
@@ -38,16 +39,14 @@ const getCustomSort = (sortId) => (item) => {
     return get(item, 'runs[0].value', 0);
   }
 
-  return [
-    !item.changed,
-    item.key,
-  ];
+  return [!item.changed, item.key];
 };
 
-const addDuplicateTag = (items, duplicatePackages) => items.map((item) => ({
-  ...item,
-  duplicate: duplicatePackages.includes(item.key),
-}));
+const addDuplicateTag = (items, duplicatePackages) =>
+  items.map((item) => ({
+    ...item,
+    duplicate: duplicatePackages.includes(item.key),
+  }));
 
 export const enhance = compose(
   withProps(({ jobs }) => {
@@ -55,12 +54,12 @@ export const enhance = compose(
       get(jobs, '0.insights.webpack.duplicatePackages.data', {}),
     ).flat();
 
-    const items = addDuplicateTag(
-      webpack.compareBySection.packages(jobs),
-      duplicatePackages,
-    );
+    const items = addDuplicateTag(webpack.compareBySection.packages(jobs), duplicatePackages);
 
-    return { items };
+    return {
+      totalRowCount: items.length,
+      items,
+    };
   }),
 
   withProps(({ jobs }) => {
@@ -75,17 +74,12 @@ export const enhance = compose(
       },
     };
   }),
-  withFilters(),
-
-  withProps(({ items, filters }) => ({
-    totalRowCount: items.length,
-    items: filter(items, getRowFilter(filters)),
-  })),
+  withSearch(),
+  withFilteredItems(getRowFilter),
 
   withCustomSort({
     sortItems: SORT_BY,
     getCustomSort,
-    itemsKey: 'items',
     sortBy: SORT_BY_SIZE,
     direction: SORT_BY[SORT_BY_SIZE].defaultDirection,
   }),

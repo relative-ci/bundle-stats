@@ -7,14 +7,7 @@ import { Icon } from '../icon';
 import css from './sort-dropdown.module.css';
 
 export const SortDropdown = (props) => {
-  const {
-    className,
-    label,
-    items,
-    sortBy,
-    direction,
-    onChange,
-  } = props;
+  const { className, label, items, sortBy, direction, onChange } = props;
 
   const rootClassName = cx(css.root, className);
 
@@ -22,53 +15,32 @@ export const SortDropdown = (props) => {
     onChange({ sortBy: newSortBy, direction: newDirection });
   };
 
-  const customLabel = items[sortBy]
-    ? `Ordered by ${items[sortBy].label}`
-    : label;
+  const customLabel = items[sortBy] ? `Ordered by ${items[sortBy].label}` : label;
 
   return (
-    <Dropdown
-      className={rootClassName}
-      label={customLabel}
-      glyph="sort"
-      align="right"
-    >
+    <Dropdown className={rootClassName} label={customLabel} glyph="sort" align="right">
       <div className={css.items}>
         {Object.entries(items).map(([key, item]) => {
-          const sortDirectionProps = direction === 'asc'
-            ? {
-              className: cx(css.itemSortType, css.itemSortTypeAsc),
-              onClick: getButtonOnClick(key, 'desc'),
-              title: 'Order data descending',
-            } : {
-              className: css.itemSortType,
-              onClick: getButtonOnClick(key, 'asc'),
-              title: 'Order data ascending',
-            };
+          const buttonProps =
+            direction === 'asc'
+              ? {
+                  className: cx(css.itemButton, css.itemAsc),
+                  onClick: getButtonOnClick(key, 'desc'),
+                  title: `Order data by ${item.label} descending`,
+                }
+              : {
+                  className: css.itemButton,
+                  onClick: getButtonOnClick(key, 'asc'),
+                  title: `Order data by ${item.label} ascending`,
+                };
 
           return (
-            <span
-              key={key}
-              className={cx(css.item, sortBy === key && css.active)}
-            >
-              <button
-                className={css.itemSortBy}
-                type="button"
-                onClick={getButtonOnClick(key, item.defaultDirection)}
-                title={`Order by ${item.label}`}
-              >
-                {item.label}
+            <div key={key} className={cx(css.item, sortBy === key && css.active)}>
+              <button type="button" {...buttonProps}>
+                <span className={css.itemLabel}>{item.label}</span>
+                <Icon className={css.itemIcon} glyph="arrow" />
               </button>
-              <button
-                type="button"
-                {...sortDirectionProps}
-              >
-                <Icon
-                  className={css.itemSortTypeIcon}
-                  glyph="arrow"
-                />
-              </button>
-            </span>
+            </div>
           );
         })}
       </div>

@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI/EmptySet default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <EmptySet
+    filtered={true}
+    resetFilters={[Function]}
+    resources="assets"
+  >
+    <div
+      className="root"
+    >
+      <p
+        className="text"
+      >
+        No assets found.
+      </p>
+      <button
+        className="action"
+        onClick={[Function]}
+        type="button"
+      >
+        View all
+      </button>
+    </div>
+  </EmptySet>
+</div>
+`;
+
+exports[`Storyshots UI/EmptySet empty 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <EmptySet
+    filtered={false}
+    resetFilters={[Function]}
+    resources="assets"
+  >
+    <div
+      className="root"
+    >
+      <p
+        className="text"
+      >
+        No assets available.
+      </p>
+    </div>
+  </EmptySet>
+</div>
+`;

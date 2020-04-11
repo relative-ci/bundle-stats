@@ -7,3 +7,4 @@ build
 scripts
 src/prototypes
 **/*.stories.jsx
+__snapshots__

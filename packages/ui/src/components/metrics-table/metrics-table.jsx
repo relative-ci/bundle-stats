@@ -22,27 +22,25 @@ const getHeaderCell = (items, showHeaderSum) => (run, index, runs) => {
   const { label, internalBuildNumber } = run;
 
   const jobName = (
-    <JobName
-      title={index === 0 ? 'Current' : 'Baseline'}
-      internalBuildNumber={internalBuildNumber}
-    >
+    <JobName title={index === 0 ? 'Current' : 'Baseline'} internalBuildNumber={internalBuildNumber}>
       {label}
     </JobName>
   );
 
   return {
-    children: showHeaderSum
-      ? (
-        <div className={styles.tableHeaderRun}>
-          {jobName}
-          <RunLabelSum
-            className={styles.tableHeaderRunMetric}
-            runIndex={index}
-            runCount={runs.length}
-            rows={items}
-          />
-        </div>
-      ) : jobName,
+    children: showHeaderSum ? (
+      <div className={styles.tableHeaderRun}>
+        {jobName}
+        <RunLabelSum
+          className={styles.tableHeaderRunMetric}
+          runIndex={index}
+          runCount={runs.length}
+          rows={items}
+        />
+      </div>
+    ) : (
+      jobName
+    ),
     className,
   };
 };
@@ -63,42 +61,44 @@ const generateRowCell = () => (item) => {
     return '-';
   }
 
-  const {
-    displayValue, deltaPercentage, displayDeltaPercentage, deltaType,
-  } = item;
+  const { displayValue, deltaPercentage, displayDeltaPercentage, deltaType } = item;
 
   return (
     <Metric value={displayValue}>
       {deltaPercentage ? (
-        <Delta
-          displayValue={displayDeltaPercentage}
-          deltaType={deltaType}
-        />
+        <Delta displayValue={displayDeltaPercentage} deltaType={deltaType} />
       ) : null}
     </Metric>
   );
 };
 
-const getRows = (runs, items, renderRowHeader) => items.map((item) => {
-  const { changed } = item;
+const getRows = (runs, items, renderRowHeader) =>
+  items.map((item, index) => {
+    const { changed } = item;
 
-  return {
-    className: changed ? '' : styles.unchanged,
-    cells: [
-      // Metric name
-      renderRowHeader(item),
+    return {
+      key: item?.key || index,
+      className: changed ? '' : styles.unchanged,
+      cells: [
+        // Metric name
+        renderRowHeader(item),
 
-      // Metric item values
-      ...item.runs.map(generateRowCell()),
-    ],
-  };
-});
+        // Metric item values
+        ...item.runs.map(generateRowCell()),
+      ],
+    };
+  });
 
 export const MetricsTable = ({
-  className, renderRowHeader, runs, items, emptyMessage, showHeaderSum,
+  className,
+  renderRowHeader,
+  runs,
+  items,
+  emptyMessage,
+  showHeaderSum,
 }) => (
   <Table
-    className={cx(styles.root, className, (runs.length > 1) && styles.multipleRuns)}
+    className={cx(styles.root, className, runs.length > 1 && styles.multipleRuns)}
     headers={getHeaders(runs, items, showHeaderSum)}
     rows={getRows(runs, items, renderRowHeader)}
     emptyMessage={emptyMessage}
@@ -115,17 +115,23 @@ MetricsTable.defaultProps = {
 MetricsTable.propTypes = {
   className: PropTypes.string,
   renderRowHeader: PropTypes.func,
-  runs: PropTypes.arrayOf(PropTypes.shape({
-    internalBuildNumber: PropTypes.number,
-  })).isRequired,
-  items: PropTypes.arrayOf(PropTypes.shape({
-    key: PropTypes.string,
-    label: PropTypes.string,
-    runs: PropTypes.arrayOf(PropTypes.shape({
-      displayValue: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-      displayDelta: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    })),
-  })).isRequired,
+  runs: PropTypes.arrayOf(
+    PropTypes.shape({
+      internalBuildNumber: PropTypes.number,
+    }),
+  ).isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string,
+      label: PropTypes.string,
+      runs: PropTypes.arrayOf(
+        PropTypes.shape({
+          displayValue: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+          displayDelta: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+        }),
+      ),
+    }),
+  ).isRequired,
   emptyMessage: PropTypes.element,
   showHeaderSum: PropTypes.bool,
 };

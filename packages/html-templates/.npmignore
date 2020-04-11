@@ -11,3 +11,4 @@ src
 storybook
 stylelint.config.js
 webpack.config.*
+__snapshots__

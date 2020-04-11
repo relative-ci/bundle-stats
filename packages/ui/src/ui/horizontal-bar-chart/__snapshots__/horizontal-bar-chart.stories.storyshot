@@ -1,0 +1,1181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI/HorizontalBarChart default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "paddingTop": "128px",
+      "width": "100%",
+    }
+  }
+>
+  <HorizontalBarChart
+    className=""
+    data={
+      Object {
+        "labels": Array [
+          "JS",
+          "CSS",
+          "IMG",
+          "Others",
+          "HTML",
+        ],
+        "values": Array [
+          300,
+          200,
+          300,
+          0,
+          20,
+        ],
+      }
+    }
+    maxValue={null}
+  >
+    <div
+      className="root"
+    >
+      <HorizontalBarChartItem
+        className="item"
+        color="rgba(136,132,216,0.9)"
+        getItemTooltip={[Function]}
+        key="0"
+        label="JS"
+        width="36.59%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "rgba(136,132,216,0.9)",
+              "width": "36.59%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                JS
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="rgba(140,203,227,0.8999999999999999)"
+        getItemTooltip={[Function]}
+        key="1"
+        label="CSS"
+        width="24.39%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "rgba(140,203,227,0.8999999999999999)",
+              "width": "24.39%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                CSS
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="rgba(135,205,150,0.9)"
+        getItemTooltip={[Function]}
+        key="2"
+        label="IMG"
+        width="36.59%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "rgba(135,205,150,0.9)",
+              "width": "36.59%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                IMG
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="rgba(183,228,99,0.8999999999999999)"
+        getItemTooltip={[Function]}
+        key="3"
+        label="Others"
+        width="0%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "rgba(183,228,99,0.8999999999999999)",
+              "width": "0%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                Others
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="rgba(255,198,88,0.9)"
+        getItemTooltip={[Function]}
+        key="4"
+        label="HTML"
+        width="2.44%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "rgba(255,198,88,0.9)",
+              "width": "2.44%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                HTML
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+    </div>
+  </HorizontalBarChart>
+</div>
+`;
+
+exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "paddingTop": "128px",
+      "width": "100%",
+    }
+  }
+>
+  <HorizontalBarChart
+    className=""
+    data={
+      Object {
+        "labels": Array [
+          "JS",
+          "CSS",
+          "IMG",
+          "Others",
+          "HTML",
+        ],
+        "values": Array [
+          0,
+          0,
+          0,
+          0,
+          0,
+        ],
+      }
+    }
+    maxValue={null}
+  >
+    <div
+      className="root"
+    >
+      <HorizontalBarChartItem
+        className="item"
+        color="rgba(136,132,216,0.9)"
+        getItemTooltip={[Function]}
+        key="0"
+        label="JS"
+        width="NaN%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "rgba(136,132,216,0.9)",
+              "width": "NaN%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                JS
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="rgba(140,203,227,0.8999999999999999)"
+        getItemTooltip={[Function]}
+        key="1"
+        label="CSS"
+        width="NaN%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "rgba(140,203,227,0.8999999999999999)",
+              "width": "NaN%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                CSS
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="rgba(135,205,150,0.9)"
+        getItemTooltip={[Function]}
+        key="2"
+        label="IMG"
+        width="NaN%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "rgba(135,205,150,0.9)",
+              "width": "NaN%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                IMG
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="rgba(183,228,99,0.8999999999999999)"
+        getItemTooltip={[Function]}
+        key="3"
+        label="Others"
+        width="NaN%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "rgba(183,228,99,0.8999999999999999)",
+              "width": "NaN%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                Others
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="rgba(255,198,88,0.9)"
+        getItemTooltip={[Function]}
+        key="4"
+        label="HTML"
+        width="NaN%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "rgba(255,198,88,0.9)",
+              "width": "NaN%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                HTML
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+    </div>
+  </HorizontalBarChart>
+</div>
+`;
+
+exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "paddingTop": "128px",
+      "width": "100%",
+    }
+  }
+>
+  <HorizontalBarChart
+    className=""
+    data={
+      Object {
+        "labels": Array [
+          "JS",
+          "CSS",
+          "IMG",
+          "Others",
+          "HTML",
+        ],
+        "values": Array [
+          Object {
+            "color": "red",
+            "value": 300,
+          },
+          Object {
+            "color": "green",
+            "value": 200,
+          },
+          Object {
+            "color": "orange",
+            "value": 300,
+          },
+          Object {
+            "color": "blue",
+            "value": 0,
+          },
+          Object {
+            "color": "pink",
+            "value": 20,
+          },
+        ],
+      }
+    }
+    maxValue={null}
+  >
+    <div
+      className="root"
+    >
+      <HorizontalBarChartItem
+        className="item"
+        color="red"
+        getItemTooltip={[Function]}
+        key="0"
+        label="JS"
+        width="36.59%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "red",
+              "width": "36.59%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                JS
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="green"
+        getItemTooltip={[Function]}
+        key="1"
+        label="CSS"
+        width="24.39%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "green",
+              "width": "24.39%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                CSS
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="orange"
+        getItemTooltip={[Function]}
+        key="2"
+        label="IMG"
+        width="36.59%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "orange",
+              "width": "36.59%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                IMG
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="blue"
+        getItemTooltip={[Function]}
+        key="3"
+        label="Others"
+        width="0%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "blue",
+              "width": "0%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                Others
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="pink"
+        getItemTooltip={[Function]}
+        key="4"
+        label="HTML"
+        width="2.44%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "pink",
+              "width": "2.44%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                HTML
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+    </div>
+  </HorizontalBarChart>
+</div>
+`;
+
+exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "paddingTop": "128px",
+      "width": "100%",
+    }
+  }
+>
+  <HorizontalBarChart
+    className=""
+    data={
+      Object {
+        "labels": Array [
+          "JS",
+          "CSS",
+          "IMG",
+          "Others",
+          "HTML",
+        ],
+        "values": Array [
+          Object {
+            "color": "red",
+            "label": <h3>
+              JS
+            </h3>,
+            "value": 300,
+          },
+          Object {
+            "color": "green",
+            "label": <h3>
+              JS
+            </h3>,
+            "value": 200,
+          },
+          Object {
+            "color": "orange",
+            "label": <h3>
+              JS
+            </h3>,
+            "value": 300,
+          },
+          Object {
+            "color": "blue",
+            "label": <h3>
+              JS
+            </h3>,
+            "value": 0,
+          },
+          Object {
+            "color": "pink",
+            "label": <h3>
+              JS
+            </h3>,
+            "value": 20,
+          },
+        ],
+      }
+    }
+    maxValue={null}
+  >
+    <div
+      className="root"
+    >
+      <HorizontalBarChartItem
+        className="item"
+        color="red"
+        getItemTooltip={[Function]}
+        key="0"
+        label={
+          <h3>
+            JS
+          </h3>
+        }
+        width="36.59%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "red",
+              "width": "36.59%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                <h3>
+                  JS
+                </h3>
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="green"
+        getItemTooltip={[Function]}
+        key="1"
+        label={
+          <h3>
+            JS
+          </h3>
+        }
+        width="24.39%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "green",
+              "width": "24.39%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                <h3>
+                  JS
+                </h3>
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="orange"
+        getItemTooltip={[Function]}
+        key="2"
+        label={
+          <h3>
+            JS
+          </h3>
+        }
+        width="36.59%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "orange",
+              "width": "36.59%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                <h3>
+                  JS
+                </h3>
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="blue"
+        getItemTooltip={[Function]}
+        key="3"
+        label={
+          <h3>
+            JS
+          </h3>
+        }
+        width="0%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "blue",
+              "width": "0%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                <h3>
+                  JS
+                </h3>
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="pink"
+        getItemTooltip={[Function]}
+        key="4"
+        label={
+          <h3>
+            JS
+          </h3>
+        }
+        width="2.44%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "pink",
+              "width": "2.44%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                <h3>
+                  JS
+                </h3>
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+    </div>
+  </HorizontalBarChart>
+</div>
+`;
+
+exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "paddingTop": "128px",
+      "width": "100%",
+    }
+  }
+>
+  <HorizontalBarChart
+    className=""
+    data={
+      Object {
+        "labels": Array [
+          "JS",
+          "CSS",
+          "IMG",
+          "Others",
+          "HTML",
+        ],
+        "values": Array [
+          300,
+          200,
+          300,
+          0,
+          20,
+        ],
+      }
+    }
+    maxValue={1200}
+  >
+    <div
+      className="root"
+    >
+      <HorizontalBarChartItem
+        className="item"
+        color="rgba(136,132,216,0.9)"
+        getItemTooltip={[Function]}
+        key="0"
+        label="JS"
+        width="25%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "rgba(136,132,216,0.9)",
+              "width": "25%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                JS
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="rgba(140,203,227,0.8999999999999999)"
+        getItemTooltip={[Function]}
+        key="1"
+        label="CSS"
+        width="16.67%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "rgba(140,203,227,0.8999999999999999)",
+              "width": "16.67%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                CSS
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="rgba(135,205,150,0.9)"
+        getItemTooltip={[Function]}
+        key="2"
+        label="IMG"
+        width="25%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "rgba(135,205,150,0.9)",
+              "width": "25%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                IMG
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="rgba(183,228,99,0.8999999999999999)"
+        getItemTooltip={[Function]}
+        key="3"
+        label="Others"
+        width="0%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "rgba(183,228,99,0.8999999999999999)",
+              "width": "0%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                Others
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+      <HorizontalBarChartItem
+        className="item"
+        color="rgba(255,198,88,0.9)"
+        getItemTooltip={[Function]}
+        key="4"
+        label="HTML"
+        width="1.67%"
+      >
+        <span
+          className="item textOverflowed"
+          style={
+            Object {
+              "background": "rgba(255,198,88,0.9)",
+              "width": "1.67%",
+            }
+          }
+        >
+          <Tooltip
+            align=""
+            as="span"
+            className="itemContent"
+            containerRef={null}
+            title={null}
+          >
+            <span
+              className="root itemContent"
+            >
+              <span
+                className="itemLabel"
+              >
+                HTML
+              </span>
+            </span>
+          </Tooltip>
+        </span>
+      </HorizontalBarChartItem>
+    </div>
+  </HorizontalBarChart>
+</div>
+`;

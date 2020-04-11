@@ -5,7 +5,7 @@
 
 .label {
   border: 1px solid transparent;
-  padding: var(--space-xxsmall);
+  padding: calc(var(--space-xxsmall) - 1px);
   display: flex;
   align-items: center;
 

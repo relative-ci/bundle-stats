@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Ui/FileName default 1`] = `
+<div>
+  <div
+    key="styles.css"
+    style={
+      Object {
+        "margin": "12px",
+        "outline": "1px dotted lightpink",
+        "padding": "12px",
+      }
+    }
+  >
+    <FileName
+      className=""
+      name="styles.css"
+    >
+      <span
+        className="root"
+      >
+        styles.css
+      </span>
+    </FileName>
+  </div>
+  <div
+    key="./src/components/sources/styles.css"
+    style={
+      Object {
+        "margin": "12px",
+        "outline": "1px dotted lightpink",
+        "padding": "12px",
+      }
+    }
+  >
+    <FileName
+      className=""
+      name="./src/components/sources/styles.css"
+    >
+      <span
+        className="root"
+      >
+        ./src/components/sources/styles.css
+      </span>
+    </FileName>
+  </div>
+  <div
+    key="css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/components/sources/source/styles.css"
+    style={
+      Object {
+        "margin": "12px",
+        "outline": "1px dotted lightpink",
+        "padding": "12px",
+      }
+    }
+  >
+    <FileName
+      className=""
+      name="css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/components/sources/source/styles.css"
+    >
+      <span
+        className="root"
+      >
+        css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/components/sources/source/styles.css
+      </span>
+    </FileName>
+  </div>
+  <div
+    key="rreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordeallylongword"
+    style={
+      Object {
+        "margin": "12px",
+        "outline": "1px dotted lightpink",
+        "padding": "12px",
+      }
+    }
+  >
+    <FileName
+      className=""
+      name="rreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordeallylongword"
+    >
+      <span
+        className="root"
+      >
+        rreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordeallylongword
+      </span>
+    </FileName>
+  </div>
+</div>
+`;

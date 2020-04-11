@@ -1,10 +1,11 @@
 import { compose, withProps } from 'recompose';
-import { get, filter } from 'lodash';
+import { get } from 'lodash';
 import { FILE_TYPES } from '@bundle-stats/utils';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
-import { withFilters } from '../../hocs/with-filters';
+import { withFilteredItems } from '../../hocs/with-filtered-items';
+import { withSearch } from '../../hocs/with-search';
 import {
   FILTER_ASSET,
   FILTER_CHANGED,
@@ -41,26 +42,28 @@ const addRowFlags = ({ items }) => {
   };
 };
 
-const getIsNotPredictive = (key, runs) => runs.reduce((agg, current, index) => {
-  if (agg) {
+const getIsNotPredictive = (key, runs) =>
+  runs.reduce((agg, current, index) => {
+    if (agg) {
+      return agg;
+    }
+
+    if (index + 1 === runs.length) {
+      return agg;
+    }
+
+    if (
+      current &&
+      runs[index + 1] &&
+      current.delta !== 0 &&
+      key !== current.name &&
+      current.name === runs[index + 1].name
+    ) {
+      return true;
+    }
+
     return agg;
-  }
-
-  if (index + 1 === runs.length) {
-    return agg;
-  }
-
-  if (
-    current
-    && runs[index + 1]
-    && current.delta !== 0
-    && ((key !== current.name) && (current.name === runs[index + 1].name))
-  ) {
-    return true;
-  }
-
-  return agg;
-}, false);
+  }, false);
 
 const addRowIsNotPredictive = ({ items }) => ({
   items: items.map((item) => ({
@@ -74,12 +77,14 @@ const getRowFilter = (filters) => (item) => {
     return false;
   }
 
-  if (!(
-    (filters[`entryTypes.${FILTER_ENTRY}`] && item.isEntry)
-    || (filters[`entryTypes.${FILTER_INITIAL}`] && item.isInitial)
-    || (filters[`entryTypes.${FILTER_CHUNK}`] && item.isChunk)
-    || (filters[`entryTypes.${FILTER_ASSET}`] && item.isAsset)
-  )) {
+  if (
+    !(
+      (filters[`entryTypes.${FILTER_ENTRY}`] && item.isEntry) ||
+      (filters[`entryTypes.${FILTER_INITIAL}`] && item.isInitial) ||
+      (filters[`entryTypes.${FILTER_CHUNK}`] && item.isChunk) ||
+      (filters[`entryTypes.${FILTER_ASSET}`] && item.isAsset)
+    )
+  ) {
     return false;
   }
 
@@ -113,25 +118,28 @@ const getCustomSort = (sortId) => (item) => {
   ];
 };
 
-const getFileTypeFilters = (value = true) => FILE_TYPES.reduce((agg, fileTypeFilter) => ({
-  ...agg,
-  [`fileTypes.${fileTypeFilter}`]: value,
-}), {});
+const getFileTypeFilters = (value = true) =>
+  FILE_TYPES.reduce(
+    (agg, fileTypeFilter) => ({
+      ...agg,
+      [`fileTypes.${fileTypeFilter}`]: value,
+    }),
+    {},
+  );
 
-const getEntryTypeFilters = (value = true) => [
-  FILTER_ENTRY,
-  FILTER_INITIAL,
-  FILTER_CHUNK,
-  FILTER_ASSET,
-].reduce((agg, entryTypeFilter) => ({
-  ...agg,
-  [`entryTypes.${entryTypeFilter}`]: value,
-}), {});
+const getEntryTypeFilters = (value = true) =>
+  [FILTER_ENTRY, FILTER_INITIAL, FILTER_CHUNK, FILTER_ASSET].reduce(
+    (agg, entryTypeFilter) => ({
+      ...agg,
+      [`entryTypes.${entryTypeFilter}`]: value,
+    }),
+    {},
+  );
 
 export const enhance = compose(
   withProps(({ jobs }) => {
     const items = webpack.compareBySection.assets(jobs);
-    return { items };
+    return { items, totalRowCount: items.length };
   }),
 
   // @TODO run both transformations in one pass
@@ -154,12 +162,7 @@ export const enhance = compose(
       },
     };
   }),
-  withFilters(),
-
-  withProps(({ items, filters }) => ({
-    totalRowCount: items.length,
-    items: filter(items, getRowFilter(filters)),
-  })),
-
-  withCustomSort({ sortItems: SORT_BY, getCustomSort, itemsKey: 'items' }),
+  withSearch(),
+  withFilteredItems(getRowFilter),
+  withCustomSort({ sortItems: SORT_BY, getCustomSort }),
 );

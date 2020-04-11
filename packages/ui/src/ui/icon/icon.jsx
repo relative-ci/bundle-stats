@@ -4,6 +4,7 @@ import cx from 'classnames';
 
 import ArrowIcon from './assets/arrow.svg';
 import BranchIcon from './assets/branch.svg';
+import CancelIcon from './assets/cancel.svg';
 import ClockIcon from './assets/clock.svg';
 import CommitIcon from './assets/commit.svg';
 import FilterIcon from './assets/filter.svg';
@@ -17,6 +18,7 @@ import css from './icon.module.css';
 const ICONS = {
   arrow: ArrowIcon,
   branch: BranchIcon,
+  cancel: CancelIcon,
   clock: ClockIcon,
   commit: CommitIcon,
   filter: FilterIcon,
@@ -26,12 +28,7 @@ const ICONS = {
   sort: SortIcon,
 };
 
-export const Icon = ({
-  className,
-  glyph,
-  as: Component,
-  ...restProps
-}) => {
+export const Icon = ({ className, glyph, as: Component, ...restProps }) => {
   const Svg = ICONS[glyph];
 
   return (

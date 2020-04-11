@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/RunLabelSum default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "64px",
+      "width": "100%",
+    }
+  }
+>
+  <RunLabelSum
+    className=""
+    rows={
+      Array [
+        Object {
+          "name": "File a",
+          "runs": Array [
+            Object {
+              "value": 100,
+            },
+          ],
+        },
+        Object {
+          "name": "File a",
+          "runs": Array [
+            Object {
+              "value": 200,
+            },
+          ],
+        },
+      ]
+    }
+    runCount={1}
+    runIndex={0}
+  />
+</div>
+`;
+
+exports[`Storyshots Components/RunLabelSum multiple runs - baseline 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "64px",
+      "width": "100%",
+    }
+  }
+>
+  <RunLabelSum
+    className=""
+    rows={
+      Array [
+        Object {
+          "name": "File a",
+          "runs": Array [
+            Object {
+              "value": 100,
+            },
+            Object {
+              "value": 50,
+            },
+          ],
+        },
+        Object {
+          "name": "File a",
+          "runs": Array [
+            Object {
+              "value": 200,
+            },
+            Object {
+              "value": 100,
+            },
+          ],
+        },
+      ]
+    }
+    runCount={2}
+    runIndex={1}
+  />
+</div>
+`;
+
+exports[`Storyshots Components/RunLabelSum multiple runs - current 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "64px",
+      "width": "100%",
+    }
+  }
+>
+  <RunLabelSum
+    className=""
+    rows={
+      Array [
+        Object {
+          "name": "File a",
+          "runs": Array [
+            Object {
+              "value": 100,
+            },
+            Object {
+              "value": 50,
+            },
+          ],
+        },
+        Object {
+          "name": "File a",
+          "runs": Array [
+            Object {
+              "value": 200,
+            },
+            Object {
+              "value": 100,
+            },
+          ],
+        },
+      ]
+    }
+    runCount={2}
+    runIndex={0}
+  />
+</div>
+`;

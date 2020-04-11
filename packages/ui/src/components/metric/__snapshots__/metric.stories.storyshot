@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Metric default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Metric
+    className=""
+    enhanced={false}
+    formatter={[Function]}
+    value={100}
+  />
+</div>
+`;
+
+exports[`Storyshots Components/Metric modifier: enhanced 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Metric
+    className=""
+    enhanced={true}
+    formatter={[Function]}
+    value={100}
+  />
+</div>
+`;
+
+exports[`Storyshots Components/Metric modifier: formatted value 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Metric
+    className=""
+    enhanced={false}
+    formatter={[Function]}
+    value="100KB"
+  />
+</div>
+`;

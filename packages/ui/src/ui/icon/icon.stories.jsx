@@ -7,21 +7,18 @@ import { Icon } from '.';
 const stories = storiesOf('UI/Icon', module);
 stories.addDecorator(getWrapperDecorator());
 
-stories.add('default', () => (
-  <Icon glyph="branch" />
-));
+stories.add('default', () => <Icon glyph="branch" />);
 
-stories.add('all', () => (
+stories.add('all', () =>
   [
     'branch',
     'clock',
+    'cancel',
     'commit',
     'filter',
     'help',
     'package',
     'pr',
     'sort',
-  ].map((glyph) => (
-    <Icon glyph={glyph} key={glyph} />
-  ))
-));
+  ].map((glyph) => <Icon glyph={glyph} key={glyph} />),
+);

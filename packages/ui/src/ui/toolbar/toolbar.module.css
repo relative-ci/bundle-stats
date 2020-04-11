@@ -1,0 +1,36 @@
+.root {
+  padding: var(--space-small);
+}
+
+.content {}
+
+.actions {
+  margin-top: var(--space-xsmall);
+  display: flex;
+  align-items: center;
+}
+
+.action {
+  flex: 0 0 auto;
+}
+
+.action + .action {
+  margin-left: var(--space-xsmall);
+}
+
+@media (min-width: 768px) {
+  .root {
+    display: flex;
+    flex-wrap: no-wrap;
+  }
+
+  .content {
+    flex: 1 1 auto;
+  }
+
+  .actions {
+    margin-top: 0;
+    margin-left: var(--space-small);
+    flex: 0 0 auto;
+  }
+}
