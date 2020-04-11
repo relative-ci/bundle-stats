@@ -3,6 +3,7 @@
   "version": "2.1.1",
   "description": "In-depth bundle analyzer for webpack(bundle size, assets, modules, packages)",
   "main": "lib/index.js",
+  "types": "typings.d.ts",
   "directories": {
     "lib": "lib"
   },
