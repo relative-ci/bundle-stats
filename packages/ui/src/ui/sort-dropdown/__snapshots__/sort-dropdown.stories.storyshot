@@ -96,31 +96,28 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                 <div
                   className="items"
                 >
-                  <span
+                  <div
                     className="item"
                     key="filename"
                   >
                     <button
-                      className="itemSortBy"
+                      className="itemButton itemAsc"
                       onClick={[Function]}
-                      title="Order by Filename"
+                      title="Order data by Filename descending"
                       type="button"
                     >
-                      Filename
-                    </button>
-                    <button
-                      className="itemSortType itemSortTypeAsc"
-                      onClick={[Function]}
-                      title="Order data descending"
-                      type="button"
-                    >
+                      <span
+                        className="itemLabel"
+                      >
+                        Filename
+                      </span>
                       <Icon
                         as="span"
-                        className="itemSortTypeIcon"
+                        className="itemIcon"
                         glyph="arrow"
                       >
                         <span
-                          className="root itemSortTypeIcon"
+                          className="root itemIcon"
                         >
                           <ArrowIcon
                             className="icon"
@@ -146,32 +143,29 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                         </span>
                       </Icon>
                     </button>
-                  </span>
-                  <span
+                  </div>
+                  <div
                     className="item active"
                     key="size"
                   >
                     <button
-                      className="itemSortBy"
+                      className="itemButton itemAsc"
                       onClick={[Function]}
-                      title="Order by Size"
+                      title="Order data by Size descending"
                       type="button"
                     >
-                      Size
-                    </button>
-                    <button
-                      className="itemSortType itemSortTypeAsc"
-                      onClick={[Function]}
-                      title="Order data descending"
-                      type="button"
-                    >
+                      <span
+                        className="itemLabel"
+                      >
+                        Size
+                      </span>
                       <Icon
                         as="span"
-                        className="itemSortTypeIcon"
+                        className="itemIcon"
                         glyph="arrow"
                       >
                         <span
-                          className="root itemSortTypeIcon"
+                          className="root itemIcon"
                         >
                           <ArrowIcon
                             className="icon"
@@ -197,7 +191,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                         </span>
                       </Icon>
                     </button>
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>

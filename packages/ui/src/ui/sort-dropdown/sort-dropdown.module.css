@@ -2,45 +2,31 @@
   margin: calc(0px - var(--space-xsmall)) calc(0px - var(--space-small));
 }
 
-.item {
-  display: flex;
-  align-items: center;
-  color: var(--color-text-light);
-}
-
 .itemButton {
   padding: var(--space-xsmall) var(--space-small);
+  display: flex;
+  width: 100%;
 
   outline: 0;
   appearance: none;
   border: 0;
   background: none;
   color: inherit;
+  font-size: var(--size-small);
   line-height: var(--space-small);
   cursor: pointer;
   text-align: left;
 }
 
-.itemButton:hover {
-  color: var(--color-text-dark);
-}
-
-.itemSortBy {
-  flex: 1 1 100%;
-  composes: itemButton;
-}
-
-.itemSortType {
-  composes: itemButton;
+.itemIcon {
   display: none;
-  color: var(--color-primary);
 }
 
-.itemSortType:hover {
-  color: var(--color-primary-dark);
+.itemLabel {
+  flex: 1 1 100%;
 }
 
-.itemSortTypeAsc .itemSortTypeIcon {
+.itemAsc .itemIcon {
   transform: rotate(180deg);
 }
 
@@ -50,9 +36,10 @@
 }
 
 .item.active {
-  color: var(--color-text);
+  background: var(--color-highlight);
+  color: var(--color-primary);
 }
 
-.item.active .itemSortType {
+.item.active .itemIcon {
   display: block;
 }
