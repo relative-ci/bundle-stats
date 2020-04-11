@@ -83,145 +83,164 @@ exports[`Storyshots UI/Box with table 1`] = `
           className="root"
         >
           <thead>
-            <tr>
-              <Th
+            <Tr
+              className=""
+              key="header-row"
+            >
+              <tr
                 className=""
-                key="0"
               >
-                <th
-                  className="cell"
+                <Th
+                  className=""
+                  key="header-0"
                 >
-                  Col A
-                </th>
-              </Th>
-              <Th
-                className=""
-                key="1"
-              >
-                <th
-                  className="cell"
+                  <th
+                    className="cell"
+                  >
+                    Col A
+                  </th>
+                </Th>
+                <Th
+                  className=""
+                  key="header-1"
                 >
-                  Col B
-                </th>
-              </Th>
-              <Th
-                className=""
-                key="2"
-              >
-                <th
-                  className="cell"
+                  <th
+                    className="cell"
+                  >
+                    Col B
+                  </th>
+                </Th>
+                <Th
+                  className=""
+                  key="header-2"
                 >
-                  Col C
-                </th>
-              </Th>
-            </tr>
+                  <th
+                    className="cell"
+                  >
+                    Col C
+                  </th>
+                </Th>
+              </tr>
+            </Tr>
           </thead>
           <tbody>
-            <tr
-              className="row"
-              key="0"
+            <Tr
+              className=""
+              key="row-0"
             >
-              <Td
+              <tr
                 className=""
-                key="0"
               >
-                <td
-                  className="cell"
+                <Td
+                  className=""
+                  key="row-0-0"
                 >
-                  a1
-                </td>
-              </Td>
-              <Td
-                className=""
-                key="1"
-              >
-                <td
-                  className="cell"
+                  <td
+                    className="cell"
+                  >
+                    a1
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-0-1"
                 >
-                  b1
-                </td>
-              </Td>
-              <Td
-                className=""
-                key="2"
-              >
-                <td
-                  className="cell"
+                  <td
+                    className="cell"
+                  >
+                    b1
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-0-2"
                 >
-                  c1
-                </td>
-              </Td>
-            </tr>
-            <tr
-              className="row"
-              key="1"
+                  <td
+                    className="cell"
+                  >
+                    c1
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+            <Tr
+              className=""
+              key="row-1"
             >
-              <Td
+              <tr
                 className=""
-                key="0"
               >
-                <td
-                  className="cell"
+                <Td
+                  className=""
+                  key="row-1-0"
                 >
-                  a2
-                </td>
-              </Td>
-              <Td
-                className=""
-                key="1"
-              >
-                <td
-                  className="cell"
+                  <td
+                    className="cell"
+                  >
+                    a2
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-1-1"
                 >
-                  b2
-                </td>
-              </Td>
-              <Td
-                className=""
-                key="2"
-              >
-                <td
-                  className="cell"
+                  <td
+                    className="cell"
+                  >
+                    b2
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-1-2"
                 >
-                  c2
-                </td>
-              </Td>
-            </tr>
-            <tr
-              className="row"
-              key="2"
+                  <td
+                    className="cell"
+                  >
+                    c2
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+            <Tr
+              className=""
+              key="row-2"
             >
-              <Td
+              <tr
                 className=""
-                key="0"
               >
-                <td
-                  className="cell"
+                <Td
+                  className=""
+                  key="row-2-0"
                 >
-                  a3
-                </td>
-              </Td>
-              <Td
-                className=""
-                key="1"
-              >
-                <td
-                  className="cell"
+                  <td
+                    className="cell"
+                  >
+                    a3
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-2-1"
                 >
-                  b3
-                </td>
-              </Td>
-              <Td
-                className=""
-                key="2"
-              >
-                <td
-                  className="cell"
+                  <td
+                    className="cell"
+                  >
+                    b3
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-2-2"
                 >
-                  c3
-                </td>
-              </Td>
-            </tr>
+                  <td
+                    className="cell"
+                  >
+                    c3
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
           </tbody>
         </table>
       </Table>
