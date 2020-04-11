@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { orderBy } from 'lodash';
 
@@ -11,7 +11,11 @@ export const withCustomSort = ({
   const WithCustomSort = (props) => {
     const { items } = props;
     const [sort, updateSort] = useState({ sortBy, direction });
-    const orderedItems = orderBy(items, getCustomSort(sort.sortBy), sort.direction);
+    const orderedItems = useMemo(() => orderBy(items, getCustomSort(sort.sortBy), sort.direction), [
+      items,
+      sort.sortBy,
+      sort.direction,
+    ]);
 
     const otherProps = {
       sort,

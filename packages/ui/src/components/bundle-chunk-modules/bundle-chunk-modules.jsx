@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { map } from 'lodash';
@@ -59,8 +59,12 @@ export const BundleChunkModules = ({
     updateSearch('');
   };
 
-  const emptyMessage = (
-    <EmptySet resources="modules" filtered={totalRowCount !== 0} resetFilters={clearSearch} />
+  const renderRowHeader = useMemo(() => getRenderRowHeader(map(runs, 'label')), []);
+  const emptyMessage = useMemo(
+    () => (
+      <EmptySet resources="modules" filtered={totalRowCount !== 0} resetFilters={clearSearch} />
+    ),
+    [],
   );
 
   return (
@@ -112,7 +116,7 @@ export const BundleChunkModules = ({
           className={css.table}
           items={items}
           runs={runs}
-          renderRowHeader={getRenderRowHeader(map(runs, 'label'))}
+          renderRowHeader={renderRowHeader.current}
           emptyMessage={emptyMessage}
           showHeaderSum
         />

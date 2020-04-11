@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get, map } from 'lodash';
@@ -149,9 +149,11 @@ export const BundleAssets = (props) => {
     updateSearch('');
   };
 
-  const emptyMessage = (
-    <EmptySet resources="assets" filtered={totalRowCount !== 0} resetFilters={clearSearch} />
+  const emptyMessage = useMemo(
+    () => <EmptySet resources="assets" filtered={totalRowCount !== 0} resetFilters={clearSearch} />,
+    [],
   );
+  const renderRowHeader = useMemo(() => getRenderRowHeader(map(jobs, 'label')), []);
 
   return (
     <section className={cx(css.root, className)}>
@@ -214,7 +216,7 @@ export const BundleAssets = (props) => {
         <MetricsTable
           runs={jobs}
           items={items}
-          renderRowHeader={getRenderRowHeader(map(jobs, 'label'))}
+          renderRowHeader={renderRowHeader}
           emptyMessage={emptyMessage}
           showHeaderSum
         />

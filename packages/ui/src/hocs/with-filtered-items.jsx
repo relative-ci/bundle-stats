@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 export const withFilteredItems = (getFilter) => (BaseComponent) => {
   const WithFilteredItems = (props) => {
     const { items, filters, searchPattern } = props;
 
-    const filteredItems = items.filter((item) => {
-      if (searchPattern && !searchPattern.test(item?.key)) {
-        return false;
-      }
+    const filteredItems = useMemo(
+      () =>
+        items.filter((item) => {
+          if (searchPattern && !searchPattern.test(item?.key)) {
+            return false;
+          }
 
-      return getFilter(filters)(item);
-    });
+          return getFilter(filters)(item);
+        }),
+      [items, searchPattern, filters],
+    );
 
     const baseProps = {
       items: filteredItems,

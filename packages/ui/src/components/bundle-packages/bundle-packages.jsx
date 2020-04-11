@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
@@ -32,8 +32,9 @@ export const BundlePackages = (props) => {
     updateSearch('');
   };
 
-  const emptyMessage = (
-    <EmptySet resources="packages" filtered={totalRowCount !== 0} resetFilters={clear} />
+  const emptyMessage = useMemo(
+    () => <EmptySet resources="packages" filtered={totalRowCount !== 0} resetFilters={clear} />,
+    [],
   );
 
   return (
