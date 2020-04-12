@@ -3,21 +3,37 @@ const CssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (settings) => {
   const { isDevelopment, rootDir } = settings;
+  const include = [
+    /src/,
+    /bundle-stats\/ui/,
+    path.join(__dirname, '../../packages/ui'), // required for linked packages
+    /storybook/,
+  ];
+  const cssExtractRule = {
+    loader: CssExtractPlugin.loader,
+    options: {
+      hmr: isDevelopment,
+      reloadAll: true,
+    },
+  };
+  const postCssRule = {
+    loader: 'postcss-loader',
+    options: {
+      config: {
+        path: rootDir,
+      },
+    },
+  };
 
   return {
     module: {
       rules: [
         // CSS transformations
         {
-          test: /\.css$/,
+          test: /\.module\.css$/,
+          include,
           use: [
-            {
-              loader: CssExtractPlugin.loader,
-              options: {
-                hmr: isDevelopment,
-                reloadAll: true,
-              },
-            },
+            cssExtractRule,
             {
               loader: 'css-loader',
               options: {
@@ -26,20 +42,19 @@ module.exports = (settings) => {
                 },
               },
             },
-            {
-              loader: 'postcss-loader',
-              options: {
-                config: {
-                  path: rootDir,
-                },
-              },
-            },
+            postCssRule,
           ],
-          include: [
-            /src/,
-            /bundle-stats\/ui/,
-            path.join(__dirname, '../../packages/ui'), // required for linked packages
-            /storybook/,
+        },
+        {
+          test: /^(?!.*module\.css$).*\.css$/,
+          include,
+          use: [
+            cssExtractRule,
+            {
+              loader: 'css-loader',
+              options: { modules: false }
+            },
+            postCssRule
           ],
         },
       ],
