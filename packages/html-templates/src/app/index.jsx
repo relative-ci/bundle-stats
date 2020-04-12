@@ -12,7 +12,7 @@ import { BundleModules } from '@bundle-stats/ui/lib-esm/components/bundle-module
 import { BundlePackages } from '@bundle-stats/ui/lib-esm/components/bundle-packages';
 
 import { Header } from './header';
-import css from './styles.css';
+import css from './styles.module.css';
 
 const StandaloneAppLayout = (props) => (
   <div className={css.root}>
