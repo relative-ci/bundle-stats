@@ -6,7 +6,7 @@ Array [
     "biggerIsBetter": false,
     "changed": true,
     "key": "webpack.totalSizeByTypeALL",
-    "label": "Total Bundle Size",
+    "label": "Bundle Size",
     "runs": Array [
       Object {
         "delta": -10,
@@ -27,7 +27,7 @@ Array [
     "biggerIsBetter": false,
     "changed": true,
     "key": "webpack.duplicatePackagesCount",
-    "label": "Duplicate Packages Count",
+    "label": "Duplicate Packages",
     "runs": Array [
       Object {
         "delta": 10,
