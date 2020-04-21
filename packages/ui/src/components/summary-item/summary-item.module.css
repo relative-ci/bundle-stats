@@ -6,6 +6,8 @@
 
 .title {
   margin: 0;
+  /* space for help icon */
+  padding-right: var(--space-small);
   color: var(--color-text-light);
   font-size: var(--size-xsmall);
   font-weight: bold;
@@ -15,7 +17,7 @@
 }
 
 .currentMetric {
-  margin: var(--space-xxsmall) 0 0;
+  margin: var(--space-xxxsmall) 0 0;
   display: block;
   color: var(--color-heading);
   font-size: var(--size-xxlarge);
@@ -34,8 +36,8 @@
 
 .helpButton {
   position: absolute;
-  top: var(--space-xxsmall);
-  right: var(--space-xxxsmall);
+  top: calc(-2px - var(--space-xxxsmall));
+  right: calc(0px - var(--space-xxxsmall));
   border: none;
   appearance: none;
   padding: var(--space-xxxsmall);
@@ -89,33 +91,14 @@
   padding-right: var(--space-medium);
 }
 
-/* Show baseline value */
-.showBaselineValue .currentMetric {
-  display: inline-block;
-  margin-right: var(--space-xxxsmall);
-}
-
-.showBaselineValue .delta {
-  margin: 0;
-  display: inline-block;
-}
-
-.showBaselineValue .baselineMetric {
-  clear: both;
-}
-
 /* Loading state */
 .loading {
   background: var(--color-highlight);
   pointer-events: none;
-  width: 8em;
+  width: 5em;
 }
 
 /* Size large */
-.large {
-  flex-basis: 25%;
-}
-
 .large .currentMetric {
-  font-size: var(--size-xxlarge);
+  font-size: var(--size-xxxlarge);
 }

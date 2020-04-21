@@ -54,7 +54,6 @@ exports[`Storyshots Components/Summary default 1`] = `
         },
       }
     }
-    firstRowCount={3}
     keys={
       Array [
         "webpack.totalInitialSizeJS",
@@ -87,7 +86,6 @@ exports[`Storyshots Components/Summary loading 1`] = `
   <Summary
     className=""
     data={null}
-    firstRowCount={3}
     keys={
       Array [
         "webpack.totalInitialSizeJS",
@@ -161,7 +159,6 @@ exports[`Storyshots Components/Summary single run 1`] = `
         },
       }
     }
-    firstRowCount={3}
     keys={
       Array [
         "webpack.totalInitialSizeJS",

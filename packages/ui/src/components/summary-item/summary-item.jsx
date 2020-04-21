@@ -9,7 +9,13 @@ import { Delta } from '../delta';
 import css from './summary-item.module.css';
 
 export const SummaryItem = ({
-  className, size, id, data, loading, showBaselineValue, showDelta, showMetricDescription,
+  className,
+  size,
+  id,
+  data,
+  loading,
+  showDelta,
+  showMetricDescription,
 }) => {
   const { baseline, current } = data || { baseline: 0, current: 0 };
 
@@ -21,14 +27,11 @@ export const SummaryItem = ({
     className,
     css[size],
     showMetricDescription && css.showMetricDescription,
-    showBaselineValue && css.showBaselineValue,
   );
 
   return (
     <div className={rootClassName}>
-      <h3 className={css.title}>
-        {metric.label}
-      </h3>
+      <h3 className={css.title}>{metric.label}</h3>
 
       {!loading ? (
         <Metric
@@ -41,24 +44,16 @@ export const SummaryItem = ({
         <span className={cx(css.currentMetric, css.loading)} />
       )}
 
-      {!loading ? showDelta && (
-        <Delta
-          className={css.delta}
-          displayValue={`${runInfo.displayDelta} (${runInfo.displayDeltaPercentage})`}
-          deltaType={runInfo.deltaType}
-        />
+      {!loading ? (
+        showDelta && (
+          <Delta
+            className={css.delta}
+            displayValue={runInfo.displayDeltaPercentage}
+            deltaType={runInfo.deltaType}
+          />
+        )
       ) : (
         <span className={cx(css.delta, css.loading)} />
-      )}
-
-      {!loading ? showBaselineValue && (
-        <Metric
-          className={css.baselineMetric}
-          value={baseline}
-          formatter={metric.formatter}
-        />
-      ) : (
-        <span className={cx(css.baselineMetric, css.loading)} />
       )}
 
       {showMetricDescription && metric.description && (
@@ -66,16 +61,12 @@ export const SummaryItem = ({
           as="button"
           type="button"
           className={css.helpButton}
-          title={(
+          title={
             <div className={css.helpTooltip}>
-              <h4 className={css.helpTooltipTitle}>
-                {metric.label}
-              </h4>
-              <p className={css.helpTooltipDescription}>
-                {metric.description}
-              </p>
+              <h4 className={css.helpTooltipTitle}>{metric.label}</h4>
+              <p className={css.helpTooltipDescription}>{metric.description}</p>
             </div>
-          )}
+          }
         >
           <Icon glyph="help" className={css.helpButtonIcon} />
         </Tooltip>
@@ -90,7 +81,6 @@ SummaryItem.defaultProps = {
   size: 'medium',
   loading: false,
   showMetricDescription: false,
-  showBaselineValue: false,
   showDelta: true,
 };
 
@@ -112,9 +102,6 @@ SummaryItem.propTypes = {
 
   /** Show description */
   showMetricDescription: PropTypes.bool,
-
-  /** Show baseline value */
-  showBaselineValue: PropTypes.bool,
 
   /** Show delta */
   showDelta: PropTypes.bool,

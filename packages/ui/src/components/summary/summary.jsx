@@ -6,10 +6,13 @@ import { get } from 'lodash';
 import { SummaryItem } from '../summary-item';
 import css from './summary.module.css';
 
-const FIRST_ROW_COUNT = 3;
-
 export const Summary = ({
-  className, firstRowCount, data, keys, loading, showSummaryItemDelta, showSummaryItemBaselineValue,
+  className,
+  data,
+  keys,
+  loading,
+  showSummaryItemDelta,
+  showSummaryItemBaselineValue,
 }) => {
   const getRenderSummaryItem = (itemProps) => (key) => (
     <SummaryItem
@@ -27,12 +30,7 @@ export const Summary = ({
 
   return (
     <div className={cx(css.root, className)}>
-      <div className={css.items}>
-        {keys.slice(0, firstRowCount).map(getRenderSummaryItem())}
-      </div>
-      <div className={css.items}>
-        {keys.slice(firstRowCount).map(getRenderSummaryItem())}
-      </div>
+      <div className={css.items}>{keys.map(getRenderSummaryItem())}</div>
     </div>
   );
 };
@@ -40,7 +38,6 @@ export const Summary = ({
 Summary.defaultProps = {
   className: '',
   data: null,
-  firstRowCount: FIRST_ROW_COUNT,
   keys: [
     'webpack.totalInitialSizeJS',
     'webpack.totalInitialSizeCSS',
@@ -64,7 +61,6 @@ Summary.propTypes = {
       current: PropTypes.number,
     }),
   }),
-  firstRowCount: PropTypes.number,
   keys: PropTypes.arrayOf(PropTypes.string),
   loading: PropTypes.bool,
   showSummaryItemDelta: PropTypes.bool,

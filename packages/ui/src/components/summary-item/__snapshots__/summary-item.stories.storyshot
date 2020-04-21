@@ -21,7 +21,6 @@ exports[`Storyshots Components/SummaryItem default 1`] = `
     }
     id="webpack.totalSizeByTypeALL"
     loading={false}
-    showBaselineValue={false}
     showDelta={true}
     showMetricDescription={false}
     size="medium"
@@ -45,36 +44,6 @@ exports[`Storyshots Components/SummaryItem loading 1`] = `
     data={null}
     id="webpack.totalSizeByTypeALL"
     loading={true}
-    showBaselineValue={false}
-    showDelta={true}
-    showMetricDescription={false}
-    size="medium"
-  />
-</div>
-`;
-
-exports[`Storyshots Components/SummaryItem showBaseline value true 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "maxWidth": "320px",
-      "padding": "24px",
-      "width": "100%",
-    }
-  }
->
-  <SummaryItem
-    className=""
-    data={
-      Object {
-        "baseline": 102000,
-        "current": 120000,
-      }
-    }
-    id="webpack.totalSizeByTypeALL"
-    loading={false}
-    showBaselineValue={true}
     showDelta={true}
     showMetricDescription={false}
     size="medium"
@@ -103,7 +72,6 @@ exports[`Storyshots Components/SummaryItem showDelta false 1`] = `
     }
     id="webpack.totalSizeByTypeALL"
     loading={false}
-    showBaselineValue={false}
     showDelta={false}
     showMetricDescription={false}
     size="medium"
@@ -132,7 +100,6 @@ exports[`Storyshots Components/SummaryItem showMetricDescription 1`] = `
     }
     id="webpack.totalSizeByTypeALL"
     loading={false}
-    showBaselineValue={false}
     showDelta={true}
     showMetricDescription={true}
     size="medium"
@@ -161,7 +128,6 @@ exports[`Storyshots Components/SummaryItem size large 1`] = `
     }
     id="webpack.totalSizeByTypeALL"
     loading={false}
-    showBaselineValue={false}
     showDelta={true}
     showMetricDescription={false}
     size="large"
