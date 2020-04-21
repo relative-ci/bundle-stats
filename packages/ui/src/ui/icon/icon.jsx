@@ -29,7 +29,7 @@ const ICONS = {
 };
 
 export const Icon = ({ className, glyph, as: Component, ...restProps }) => {
-  const Svg = ICONS[glyph];
+  const Svg = typeof glyph === 'string' ? ICONS[glyph] : glyph;
 
   return (
     <Component className={cx(css.root, className)} {...restProps}>
@@ -45,6 +45,6 @@ Icon.defaultProps = {
 
 Icon.propTypes = {
   className: PropTypes.string,
-  glyph: PropTypes.string.isRequired,
+  glyph: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   as: PropTypes.node,
 };

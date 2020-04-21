@@ -9,22 +9,13 @@ const ALIGN_LEFT = 'left';
 const ALIGN_RIGHT = 'right';
 
 export const Dropdown = (props) => {
-  const {
-    className, label, glyph, open, dropdownToggle, align, children,
-  } = props;
+  const { className, label, glyph, open, dropdownToggle, align, children } = props;
   const rootClassName = cx(css.root, open && css.open, css[align], className);
 
   return (
     <div className={rootClassName}>
-      <button
-        className={css.label}
-        type="button"
-        onClick={dropdownToggle}
-      >
-        <Icon
-          className={css.labelIcon}
-          glyph={glyph}
-        />
+      <button className={css.label} type="button" onClick={dropdownToggle}>
+        {glyph && <Icon className={css.labelIcon} glyph={glyph} />}
         {label}
       </button>
       <div className={css.dropdown}>
@@ -37,6 +28,7 @@ export const Dropdown = (props) => {
 Dropdown.defaultProps = {
   className: '',
   label: '',
+  glyph: null,
   align: ALIGN_LEFT,
 };
 
@@ -48,7 +40,7 @@ Dropdown.propTypes = {
   label: PropTypes.string,
 
   /** Icon glyph */
-  glyph: PropTypes.string.isRequired,
+  glyph: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 
   /** Dropdown open state */
   open: PropTypes.bool.isRequired,
