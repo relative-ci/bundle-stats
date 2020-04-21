@@ -547,7 +547,7 @@ Object {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.totalSizeByTypeALL",
-      "label": "Total Bundle Size",
+      "label": "Bundle Size",
       "runs": Array [
         Object {
           "delta": 0,
@@ -568,7 +568,7 @@ Object {
       "biggerIsBetter": false,
       "changed": true,
       "key": "webpack.totalInitialSizeJS",
-      "label": "Initial JS Size",
+      "label": "Initial JS",
       "runs": Array [
         Object {
           "delta": 1000,
@@ -589,7 +589,7 @@ Object {
       "biggerIsBetter": false,
       "changed": true,
       "key": "webpack.totalInitialSizeCSS",
-      "label": "Initial CSS Size",
+      "label": "Initial CSS",
       "runs": Array [
         Object {
           "delta": -1000,
@@ -631,7 +631,7 @@ Object {
       "biggerIsBetter": false,
       "changed": true,
       "key": "webpack.moduleCount",
-      "label": "Module Count",
+      "label": "Modules",
       "runs": Array [
         Object {
           "delta": 1,
@@ -652,7 +652,7 @@ Object {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.chunkCount",
-      "label": "Chunk Count",
+      "label": "Chunks",
       "runs": Array [
         Object {
           "delta": 0,
@@ -673,7 +673,7 @@ Object {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.assetCount",
-      "label": "Asset Count",
+      "label": "Assets",
       "runs": Array [
         Object {
           "delta": 0,
@@ -694,7 +694,7 @@ Object {
       "biggerIsBetter": false,
       "changed": true,
       "key": "webpack.packageCount",
-      "label": "Package Count",
+      "label": "Packages",
       "runs": Array [
         Object {
           "delta": 1,
@@ -715,7 +715,7 @@ Object {
       "biggerIsBetter": false,
       "changed": true,
       "key": "webpack.duplicatePackagesCount",
-      "label": "Duplicate Packages Count",
+      "label": "Duplicate Packages",
       "runs": Array [
         Object {
           "delta": 1,
@@ -742,7 +742,7 @@ Object {
         "displayDelta": "0B",
         "displayDeltaPercentage": "0%",
         "displayValue": "61.52KB",
-        "label": "Total Bundle Size",
+        "label": "Bundle Size",
         "value": 63000,
       },
       Object {
@@ -752,7 +752,7 @@ Object {
         "displayDelta": "+1000B",
         "displayDeltaPercentage": "+2.04%",
         "displayValue": "48.83KB",
-        "label": "Initial JS Size",
+        "label": "Initial JS",
         "value": 50000,
       },
       Object {
@@ -762,7 +762,7 @@ Object {
         "displayDelta": "-1000B",
         "displayDeltaPercentage": "-9.09%",
         "displayValue": "9.77KB",
-        "label": "Initial CSS Size",
+        "label": "Initial CSS",
         "value": 10000,
       },
       Object {
@@ -782,7 +782,7 @@ Object {
         "displayDelta": "+1",
         "displayDeltaPercentage": "+20%",
         "displayValue": "6",
-        "label": "Module Count",
+        "label": "Modules",
         "value": 6,
       },
       Object {
@@ -792,7 +792,7 @@ Object {
         "displayDelta": "0",
         "displayDeltaPercentage": "0%",
         "displayValue": "0",
-        "label": "Chunk Count",
+        "label": "Chunks",
         "value": 0,
       },
       Object {
@@ -802,7 +802,7 @@ Object {
         "displayDelta": "0",
         "displayDeltaPercentage": "0%",
         "displayValue": "4",
-        "label": "Asset Count",
+        "label": "Assets",
         "value": 4,
       },
       Object {
@@ -812,7 +812,7 @@ Object {
         "displayDelta": "+1",
         "displayDeltaPercentage": "+33.33%",
         "displayValue": "4",
-        "label": "Package Count",
+        "label": "Packages",
         "value": 4,
       },
       Object {
@@ -822,7 +822,7 @@ Object {
         "displayDelta": "+1",
         "displayDeltaPercentage": "+100%",
         "displayValue": "1",
-        "label": "Duplicate Packages Count",
+        "label": "Duplicate Packages",
         "value": 1,
       },
     ],
@@ -1166,7 +1166,7 @@ Object {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.totalSizeByTypeALL",
-      "label": "Total Bundle Size",
+      "label": "Bundle Size",
       "runs": Array [
         Object {
           "displayValue": "61.52KB",
@@ -1178,7 +1178,7 @@ Object {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.totalInitialSizeJS",
-      "label": "Initial JS Size",
+      "label": "Initial JS",
       "runs": Array [
         Object {
           "displayValue": "48.83KB",
@@ -1190,7 +1190,7 @@ Object {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.totalInitialSizeCSS",
-      "label": "Initial CSS Size",
+      "label": "Initial CSS",
       "runs": Array [
         Object {
           "displayValue": "9.77KB",
@@ -1214,7 +1214,7 @@ Object {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.moduleCount",
-      "label": "Module Count",
+      "label": "Modules",
       "runs": Array [
         Object {
           "displayValue": "6",
@@ -1226,7 +1226,7 @@ Object {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.chunkCount",
-      "label": "Chunk Count",
+      "label": "Chunks",
       "runs": Array [
         Object {
           "displayValue": "0",
@@ -1238,7 +1238,7 @@ Object {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.assetCount",
-      "label": "Asset Count",
+      "label": "Assets",
       "runs": Array [
         Object {
           "displayValue": "4",
@@ -1250,7 +1250,7 @@ Object {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.packageCount",
-      "label": "Package Count",
+      "label": "Packages",
       "runs": Array [
         Object {
           "displayValue": "4",
@@ -1262,7 +1262,7 @@ Object {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.duplicatePackagesCount",
-      "label": "Duplicate Packages Count",
+      "label": "Duplicate Packages",
       "runs": Array [
         Object {
           "displayValue": "1",
@@ -1280,7 +1280,7 @@ Object {
         "displayDelta": "+61.52KB",
         "displayDeltaPercentage": "+100%",
         "displayValue": "61.52KB",
-        "label": "Total Bundle Size",
+        "label": "Bundle Size",
         "value": 63000,
       },
       Object {
@@ -1290,7 +1290,7 @@ Object {
         "displayDelta": "+48.83KB",
         "displayDeltaPercentage": "+100%",
         "displayValue": "48.83KB",
-        "label": "Initial JS Size",
+        "label": "Initial JS",
         "value": 50000,
       },
       Object {
@@ -1300,7 +1300,7 @@ Object {
         "displayDelta": "+9.77KB",
         "displayDeltaPercentage": "+100%",
         "displayValue": "9.77KB",
-        "label": "Initial CSS Size",
+        "label": "Initial CSS",
         "value": 10000,
       },
       Object {
@@ -1320,7 +1320,7 @@ Object {
         "displayDelta": "+6",
         "displayDeltaPercentage": "+100%",
         "displayValue": "6",
-        "label": "Module Count",
+        "label": "Modules",
         "value": 6,
       },
       Object {
@@ -1330,7 +1330,7 @@ Object {
         "displayDelta": "0",
         "displayDeltaPercentage": "0%",
         "displayValue": "0",
-        "label": "Chunk Count",
+        "label": "Chunks",
         "value": 0,
       },
       Object {
@@ -1340,7 +1340,7 @@ Object {
         "displayDelta": "+4",
         "displayDeltaPercentage": "+100%",
         "displayValue": "4",
-        "label": "Asset Count",
+        "label": "Assets",
         "value": 4,
       },
       Object {
@@ -1350,7 +1350,7 @@ Object {
         "displayDelta": "+4",
         "displayDeltaPercentage": "+100%",
         "displayValue": "4",
-        "label": "Package Count",
+        "label": "Packages",
         "value": 4,
       },
       Object {
@@ -1360,7 +1360,7 @@ Object {
         "displayDelta": "+1",
         "displayDeltaPercentage": "+100%",
         "displayValue": "1",
-        "label": "Duplicate Packages Count",
+        "label": "Duplicate Packages",
         "value": 1,
       },
     ],
