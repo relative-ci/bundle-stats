@@ -54,21 +54,16 @@ stories.add('showDelta false', () => (
   />
 ));
 
-stories.add('showBaseline value true', () => (
+stories.add('inline', () => (
   <SummaryItem
     loading={false}
     id="webpack.totalSizeByTypeALL"
     data={{
       current: 120 * 1000,
-      baseline: 102 * 1000,
+      baseline: 100 * 1000,
     }}
-    showBaselineValue
+    inline
   />
 ));
 
-stories.add('loading', () => (
-  <SummaryItem
-    loading
-    id="webpack.totalSizeByTypeALL"
-  />
-));
+stories.add('loading', () => <SummaryItem loading id="webpack.totalSizeByTypeALL" />);
