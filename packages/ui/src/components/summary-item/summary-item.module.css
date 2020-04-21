@@ -15,21 +15,20 @@
 }
 
 .currentMetric {
-  margin-top: var(--space-xxxsmall);
+  margin: var(--space-xxsmall) 0 0;
   display: block;
   color: var(--color-heading);
-  font-size: var(--size-xlarge);
+  font-size: var(--size-xxlarge);
   line-height: var(--space-medium);
   min-height: var(--space-medium);
   font-weight: bold;
 }
 
 .delta {
-  margin-top: var(--space-xxxsmall);
+  margin: var(--space-xxxsmall) 0 0;
   display: block;
   min-height: var(--space-xsmall);
-  font-size: var(--size-small);
-  line-height: var(--space-xsmall);
+  line-height: 1;
   text-align: inherit;
 }
 

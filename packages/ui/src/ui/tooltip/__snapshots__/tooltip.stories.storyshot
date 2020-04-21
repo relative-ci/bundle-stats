@@ -5,7 +5,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
   style={
     Object {
       "height": "100%",
-      "padding": "64px",
+      "padding": "12px",
       "width": "100%",
     }
   }
@@ -20,15 +20,12 @@ exports[`Storyshots UI/Tooltip default 1`] = `
     <span
       className="root"
     >
-      Job #100
-      <div
-        className="tooltip"
+      <span
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
-        View job #100
-        <span
-          className="tooltipArrow"
-        />
-      </div>
+        Job #100
+      </span>
     </span>
   </Tooltip>
 </div>

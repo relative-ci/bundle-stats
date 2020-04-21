@@ -64,9 +64,14 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                JS
+                <span
+                  className="itemLabel"
+                >
+                  JS
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -100,9 +105,14 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                CSS
+                <span
+                  className="itemLabel"
+                >
+                  CSS
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -136,9 +146,14 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                IMG
+                <span
+                  className="itemLabel"
+                >
+                  IMG
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -172,9 +187,14 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                Others
+                <span
+                  className="itemLabel"
+                >
+                  Others
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -208,9 +228,14 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                HTML
+                <span
+                  className="itemLabel"
+                >
+                  HTML
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -285,9 +310,14 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                JS
+                <span
+                  className="itemLabel"
+                >
+                  JS
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -321,9 +351,14 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                CSS
+                <span
+                  className="itemLabel"
+                >
+                  CSS
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -357,9 +392,14 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                IMG
+                <span
+                  className="itemLabel"
+                >
+                  IMG
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -393,9 +433,14 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                Others
+                <span
+                  className="itemLabel"
+                >
+                  Others
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -429,9 +474,14 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                HTML
+                <span
+                  className="itemLabel"
+                >
+                  HTML
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -521,9 +571,14 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                JS
+                <span
+                  className="itemLabel"
+                >
+                  JS
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -557,9 +612,14 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                CSS
+                <span
+                  className="itemLabel"
+                >
+                  CSS
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -593,9 +653,14 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                IMG
+                <span
+                  className="itemLabel"
+                >
+                  IMG
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -629,9 +694,14 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                Others
+                <span
+                  className="itemLabel"
+                >
+                  Others
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -665,9 +735,14 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                HTML
+                <span
+                  className="itemLabel"
+                >
+                  HTML
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -776,11 +851,16 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                <h3>
-                  JS
-                </h3>
+                <span
+                  className="itemLabel"
+                >
+                  <h3>
+                    JS
+                  </h3>
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -818,11 +898,16 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                <h3>
-                  JS
-                </h3>
+                <span
+                  className="itemLabel"
+                >
+                  <h3>
+                    JS
+                  </h3>
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -860,11 +945,16 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                <h3>
-                  JS
-                </h3>
+                <span
+                  className="itemLabel"
+                >
+                  <h3>
+                    JS
+                  </h3>
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -902,11 +992,16 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                <h3>
-                  JS
-                </h3>
+                <span
+                  className="itemLabel"
+                >
+                  <h3>
+                    JS
+                  </h3>
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -944,11 +1039,16 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                <h3>
-                  JS
-                </h3>
+                <span
+                  className="itemLabel"
+                >
+                  <h3>
+                    JS
+                  </h3>
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -1023,9 +1123,14 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                JS
+                <span
+                  className="itemLabel"
+                >
+                  JS
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -1059,9 +1164,14 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                CSS
+                <span
+                  className="itemLabel"
+                >
+                  CSS
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -1095,9 +1205,14 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                IMG
+                <span
+                  className="itemLabel"
+                >
+                  IMG
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -1131,9 +1246,14 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                Others
+                <span
+                  className="itemLabel"
+                >
+                  Others
+                </span>
               </span>
             </span>
           </Tooltip>
@@ -1167,9 +1287,14 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
               className="root itemContent"
             >
               <span
-                className="itemLabel"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
-                HTML
+                <span
+                  className="itemLabel"
+                >
+                  HTML
+                </span>
               </span>
             </span>
           </Tooltip>

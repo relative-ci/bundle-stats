@@ -81,7 +81,10 @@
     "recompose": "^0.30.0"
   },
   "dependencies": {
+    "@popperjs/core": "^2.3.3",
     "date-fns": "^2.6.0",
-    "react-outside-click-handler": "^1.2.4"
+    "react-outside-click-handler": "^1.2.4",
+    "react-popper": "^2.2.2",
+    "use-events": "^1.4.1"
   }
 }
