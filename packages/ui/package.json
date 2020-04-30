@@ -58,7 +58,7 @@
     "enzyme-to-json": "3.4.4",
     "hex-rgb": "4.1.0",
     "identity-obj-proxy": "3.0.0",
-    "jest": "25.5.2",
+    "jest": "25.5.3",
     "jest-date-mock": "1.0.8",
     "lodash": "4.17.15",
     "markdown-loader-jest": "0.1.1",
