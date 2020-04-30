@@ -25,10 +25,10 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/html-templates#readme",
   "devDependencies": {
-    "@babel/core": "7.9.0",
+    "@babel/core": "7.9.6",
     "@babel/plugin-proposal-class-properties": "7.8.3",
-    "@babel/plugin-proposal-object-rest-spread": "7.9.5",
-    "@babel/preset-env": "7.9.5",
+    "@babel/plugin-proposal-object-rest-spread": "7.9.6",
+    "@babel/preset-env": "7.9.6",
     "@babel/preset-react": "7.9.4",
     "@bundle-stats/ui": "^2.2.0",
     "@bundle-stats/utils": "^2.2.0",
