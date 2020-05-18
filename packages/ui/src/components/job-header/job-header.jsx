@@ -6,15 +6,10 @@ import { formatDistanceToNow } from 'date-fns';
 import { SOURCE_PATH_WEBPACK_STATS, formatDate, formatTime } from '@bundle-stats/utils';
 
 import { Icon } from '../../ui/icon';
-import { SummaryItem } from '../summary-item';
 import css from './job-header.module.css';
 
-const TOTAL_BUNDLE_SIZE = 'webpack.totalSizeByTypeALL';
-
 export const JobHeader = (props) => {
-  const {
-    className, tag, job, showSummaryDelta, children,
-  } = props;
+  const { className, tag, job, children } = props;
 
   const { builtAt, hash } = get(job, `meta.${SOURCE_PATH_WEBPACK_STATS}`, {});
   const rootClassName = cx(css.root, className);
@@ -23,25 +18,14 @@ export const JobHeader = (props) => {
     <div className={rootClassName}>
       <div className={css.description}>
         <h1 className={css.title}>
-          <span>
-            {`#${job.internalBuildNumber}`}
-          </span>
-          {tag && (
-            <span className={css.tag}>
-              {tag}
-            </span>
-          )}
+          <span>{`#${job.internalBuildNumber}`}</span>
+          {tag && <span className={css.tag}>{tag}</span>}
         </h1>
         <div className={css.meta}>
           {builtAt && (
-            <span
-              className={css.metaItem}
-              title={`${formatDate(builtAt)} ${formatTime(builtAt)}`}
-            >
+            <span className={css.metaItem} title={`${formatDate(builtAt)} ${formatTime(builtAt)}`}>
               <Icon glyph="clock" className={css.metaIcon} />
-              <span>
-                {formatDistanceToNow(new Date(builtAt), { addSuffix: true })}
-              </span>
+              <span>{formatDistanceToNow(new Date(builtAt), { addSuffix: true })}</span>
             </span>
           )}
 
@@ -55,15 +39,6 @@ export const JobHeader = (props) => {
           {children}
         </div>
       </div>
-
-      <SummaryItem
-        className={css.summaryItem}
-        size="large"
-        loading={false}
-        id={TOTAL_BUNDLE_SIZE}
-        data={get(job.summary, TOTAL_BUNDLE_SIZE)}
-        showDelta={showSummaryDelta}
-      />
     </div>
   );
 };
@@ -78,7 +53,6 @@ JobHeader.propTypes = {
     }),
     summary: PropTypes.object,
   }),
-  showSummaryDelta: PropTypes.bool,
   children: PropTypes.element,
 };
 
@@ -86,6 +60,5 @@ JobHeader.defaultProps = {
   className: '',
   tag: '',
   job: null,
-  showSummaryDelta: true,
   children: null,
 };

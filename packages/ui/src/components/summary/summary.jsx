@@ -6,31 +6,27 @@ import { get } from 'lodash';
 import { SummaryItem } from '../summary-item';
 import css from './summary.module.css';
 
-export const Summary = ({
-  className,
-  data,
-  keys,
-  loading,
-  showSummaryItemDelta,
-  showSummaryItemBaselineValue,
-}) => {
+export const Summary = ({ className, data, keys, loading, showSummaryItemDelta }) => {
   const getRenderSummaryItem = (itemProps) => (key) => (
-    <SummaryItem
-      key={key}
-      className={css.item}
-      id={key}
-      data={get(data, key)}
-      loading={loading}
-      showMetricDescription
-      showBaselineValue={showSummaryItemBaselineValue}
-      showDelta={showSummaryItemDelta}
-      {...itemProps}
-    />
+    <div className={css.item}>
+      <SummaryItem
+        key={key}
+        id={key}
+        data={get(data, key)}
+        loading={loading}
+        showMetricDescription
+        showDelta={showSummaryItemDelta}
+        {...itemProps}
+      />
+    </div>
   );
 
   return (
     <div className={cx(css.root, className)}>
-      <div className={css.items}>{keys.map(getRenderSummaryItem())}</div>
+      <div className={css.items}>
+        {keys.slice(0, 4).map(getRenderSummaryItem({ size: 'large' }))}
+      </div>
+      <div className={css.items}>{keys.slice(4).map(getRenderSummaryItem())}</div>
     </div>
   );
 };
@@ -39,6 +35,7 @@ Summary.defaultProps = {
   className: '',
   data: null,
   keys: [
+    'webpack.totalSizeByTypeALL',
     'webpack.totalInitialSizeJS',
     'webpack.totalInitialSizeCSS',
     'webpack.cacheInvalidation',

@@ -5,9 +5,9 @@
 }
 
 .title {
+  position: relative;
+  padding-right: var(--space-medium); /* space for help icon */
   margin: 0;
-  /* space for help icon */
-  padding-right: var(--space-small);
   color: var(--color-text-light);
   font-size: var(--size-xsmall);
   font-weight: bold;
@@ -20,7 +20,7 @@
   margin: var(--space-xxxsmall) 0 0;
   display: block;
   color: var(--color-heading);
-  font-size: var(--size-xxlarge);
+  font-size: var(--size-xlarge);
   line-height: var(--space-medium);
   min-height: var(--space-medium);
   font-weight: bold;
@@ -36,11 +36,12 @@
 
 .helpButton {
   position: absolute;
-  top: calc(-2px - var(--space-xxxsmall));
-  right: calc(0px - var(--space-xxxsmall));
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   border: none;
-  appearance: none;
   padding: var(--space-xxxsmall);
+  appearance: none;
   background: none;
   cursor: pointer;
   color: var(--color-text-light);
@@ -65,30 +66,17 @@
   line-height: var(--space-small);
 }
 
+
 .helpButton:hover {
-  color: var(--color-text-dark);
+  color: var(--color-text);
 }
 
-/* hover state */
-.helpButton {
+.root .helpButton {
   visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.2s ease-in;
 }
 
 .root:hover .helpButton {
   visibility: visible;
-  opacity: 1;
-  transition: visibility 0.17s 0s, opacity 0.17s ease-out;
-}
-
-.root.loading .helpButton {
-  display: none;
-}
-
-/* Show metric description modifier */
-.showMetricDescription .title {
-  padding-right: var(--space-medium);
 }
 
 /* Loading state */
@@ -101,4 +89,5 @@
 /* Size large */
 .large .currentMetric {
   font-size: var(--size-xxxlarge);
+  font-weight: bold;
 }

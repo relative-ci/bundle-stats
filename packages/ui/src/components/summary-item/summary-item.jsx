@@ -22,16 +22,29 @@ export const SummaryItem = ({
   const metric = getGlobalMetricType(id);
   const runInfo = getMetricRunInfo(metric, current, baseline);
 
-  const rootClassName = cx(
-    css.root,
-    className,
-    css[size],
-    showMetricDescription && css.showMetricDescription,
-  );
+  const rootClassName = cx(css.root, className, css[size]);
 
   return (
     <div className={rootClassName}>
-      <h3 className={css.title}>{metric.label}</h3>
+      <h3 className={css.title}>
+        <span>{metric.label}</span>
+
+        {showMetricDescription && metric.description && (
+          <Tooltip
+            as="button"
+            type="button"
+            className={css.helpButton}
+            title={
+              <div className={css.helpTooltip}>
+                <h4 className={css.helpTooltipTitle}>{metric.label}</h4>
+                <p className={css.helpTooltipDescription}>{metric.description}</p>
+              </div>
+            }
+          >
+            <Icon glyph="help" className={css.helpButtonIcon} />
+          </Tooltip>
+        )}
+      </h3>
 
       {!loading ? (
         <Metric
@@ -54,22 +67,6 @@ export const SummaryItem = ({
         )
       ) : (
         <span className={cx(css.delta, css.loading)} />
-      )}
-
-      {showMetricDescription && metric.description && (
-        <Tooltip
-          as="button"
-          type="button"
-          className={css.helpButton}
-          title={
-            <div className={css.helpTooltip}>
-              <h4 className={css.helpTooltipTitle}>{metric.label}</h4>
-              <p className={css.helpTooltipDescription}>{metric.description}</p>
-            </div>
-          }
-        >
-          <Icon glyph="help" className={css.helpButtonIcon} />
-        </Tooltip>
       )}
     </div>
   );
