@@ -31,7 +31,6 @@ exports[`Storyshots Components/JobHeader default 1`] = `
         },
       }
     }
-    showSummaryDelta={true}
     tag=""
   />
 </div>
@@ -68,50 +67,12 @@ exports[`Storyshots Components/JobHeader with custom content 1`] = `
         },
       }
     }
-    showSummaryDelta={true}
     tag=""
   >
     <p>
       Lorem ipsum dolor sit amed
     </p>
   </JobHeader>
-</div>
-`;
-
-exports[`Storyshots Components/JobHeader with showSummaryDelta = false 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
-  }
->
-  <JobHeader
-    className=""
-    job={
-      Object {
-        "internalBuildNumber": 1,
-        "meta": Object {
-          "webpack": Object {
-            "builtAt": "2019-01-01T00:00:00.000Z",
-            "hash": "abcd1234",
-          },
-        },
-        "summary": Object {
-          "webpack": Object {
-            "totalSizeByTypeALL": Object {
-              "baseline": 900000,
-              "current": 1000000,
-            },
-          },
-        },
-      }
-    }
-    showSummaryDelta={false}
-    tag="baseline"
-  />
 </div>
 `;
 
@@ -146,7 +107,6 @@ exports[`Storyshots Components/JobHeader with tag 1`] = `
         },
       }
     }
-    showSummaryDelta={true}
     tag="current"
   />
 </div>

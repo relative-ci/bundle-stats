@@ -25,17 +25,9 @@ const JOB = {
   },
 };
 
-stories.add('default', () => (
-  <JobHeader job={JOB} />
-));
+stories.add('default', () => <JobHeader job={JOB} />);
 
-stories.add('with tag', () => (
-  <JobHeader job={JOB} tag="current" />
-));
-
-stories.add('with showSummaryDelta = false', () => (
-  <JobHeader job={JOB} tag="baseline" showSummaryDelta={false} />
-));
+stories.add('with tag', () => <JobHeader job={JOB} tag="current" />);
 
 stories.add('with custom content', () => (
   <JobHeader job={JOB}>

@@ -1,7 +1,5 @@
 .title {
   margin: 0;
-  /* space for help icon */
-  padding-right: var(--space-small);
   color: var(--color-text-light);
   font-weight: bold;
   font-size: var(--size-xsmall);
@@ -86,4 +84,5 @@
 /* Size large */
 .large .currentMetric {
   font-size: var(--size-xxxlarge);
+  font-weight: bold;
 }
