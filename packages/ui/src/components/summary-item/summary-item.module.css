@@ -1,17 +1,15 @@
 .root {
   position: relative;
   font-size: var(--size-small);
-  flex-basis: 15%;
 }
 
 .title {
   position: relative;
-  padding-right: var(--space-medium); /* space for help icon */
   margin: 0;
   color: var(--color-text-light);
   font-size: var(--size-xsmall);
   font-weight: bold;
-  line-height: var(--space-xsmall);
+  line-height: var(--space-small);
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -32,21 +30,6 @@
   min-height: var(--space-xsmall);
   line-height: 1;
   text-align: inherit;
-}
-
-.helpButton {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  padding: var(--space-xxxsmall);
-  appearance: none;
-  background: none;
-  cursor: pointer;
-  color: var(--color-text-light);
-  outline: none;
-  transition: color 0.2s;
 }
 
 .helpTooltip {
@@ -77,6 +60,29 @@
 
 .root:hover .helpButton {
   visibility: visible;
+}
+
+/* show metric description - underline help */
+.showMetricDescription:hover .title {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+}
+
+/* inline */
+.inline .title {
+  display: inline-block;
+}
+
+.inline .currentMetric {
+  margin: 0 0 0 var(--space-xxsmall);
+  display: inline-block;
+  font-size: var(--size-small);
+}
+
+.inline .delta {
+  margin: 0 0 0 var(--space-xxxsmall);
+  display: inline-block;
+  font-size: var(--size-small);
 }
 
 /* Loading state */

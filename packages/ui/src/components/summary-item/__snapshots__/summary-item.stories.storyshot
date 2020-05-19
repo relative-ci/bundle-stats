@@ -20,6 +20,36 @@ exports[`Storyshots Components/SummaryItem default 1`] = `
       }
     }
     id="webpack.totalSizeByTypeALL"
+    inline={false}
+    loading={false}
+    showDelta={true}
+    showMetricDescription={false}
+    size="medium"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/SummaryItem inline 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "maxWidth": "320px",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <SummaryItem
+    className=""
+    data={
+      Object {
+        "baseline": 100000,
+        "current": 120000,
+      }
+    }
+    id="webpack.totalSizeByTypeALL"
+    inline={true}
     loading={false}
     showDelta={true}
     showMetricDescription={false}
@@ -43,6 +73,7 @@ exports[`Storyshots Components/SummaryItem loading 1`] = `
     className=""
     data={null}
     id="webpack.totalSizeByTypeALL"
+    inline={false}
     loading={true}
     showDelta={true}
     showMetricDescription={false}
@@ -71,6 +102,7 @@ exports[`Storyshots Components/SummaryItem showDelta false 1`] = `
       }
     }
     id="webpack.totalSizeByTypeALL"
+    inline={false}
     loading={false}
     showDelta={false}
     showMetricDescription={false}
@@ -99,6 +131,7 @@ exports[`Storyshots Components/SummaryItem showMetricDescription 1`] = `
       }
     }
     id="webpack.totalSizeByTypeALL"
+    inline={false}
     loading={false}
     showDelta={true}
     showMetricDescription={true}
@@ -127,6 +160,7 @@ exports[`Storyshots Components/SummaryItem size large 1`] = `
       }
     }
     id="webpack.totalSizeByTypeALL"
+    inline={false}
     loading={false}
     showDelta={true}
     showMetricDescription={false}
