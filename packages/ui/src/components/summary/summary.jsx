@@ -6,27 +6,42 @@ import { get } from 'lodash';
 import { SummaryItem } from '../summary-item';
 import css from './summary.module.css';
 
-export const Summary = ({ className, data, keys, loading, showSummaryItemDelta }) => {
-  const getRenderSummaryItem = (itemProps) => (key) => (
-    <div className={css.item}>
-      <SummaryItem
-        key={key}
-        id={key}
-        data={get(data, key)}
-        loading={loading}
-        showMetricDescription
-        showDelta={showSummaryItemDelta}
-        {...itemProps}
-      />
-    </div>
+const PRIMARY_METRICS = new Map([
+  ['webpack.totalSizeByTypeALL'],
+  ['webpack.totalInitialSizeJS'],
+  ['webpack.totalInitialSizeCSS'],
+  ['webpack.cacheInvalidation', { showDelta: false }],
+]);
+
+const SECONDARY_METRICS = new Map([
+  ['webpack.assetCount'],
+  ['webpack.chunkCount'],
+  ['webpack.moduleCount'],
+  ['webpack.packageCount'],
+  ['webpack.duplicatePackagesCount'],
+]);
+
+export const Summary = ({ className, data, loading, showSummaryItemDelta }) => {
+  const getRenderSummaryItem = (sectionProps) => ([key, keyProps]) => (
+    <SummaryItem
+      key={key}
+      id={key}
+      data={get(data, key)}
+      loading={loading}
+      showMetricDescription
+      showDelta={showSummaryItemDelta}
+      className={css.item}
+      {...keyProps}
+      {...sectionProps}
+    />
   );
 
   return (
     <div className={cx(css.root, className)}>
-      <div className={css.items}>
-        {keys.slice(0, 4).map(getRenderSummaryItem({ size: 'large' }))}
+      <div className={css.primary}>{[...PRIMARY_METRICS].map(getRenderSummaryItem())}</div>
+      <div className={css.secondary}>
+        {[...SECONDARY_METRICS].map(getRenderSummaryItem({ inline: true }))}
       </div>
-      <div className={css.items}>{keys.slice(4).map(getRenderSummaryItem())}</div>
     </div>
   );
 };
@@ -34,17 +49,6 @@ export const Summary = ({ className, data, keys, loading, showSummaryItemDelta }
 Summary.defaultProps = {
   className: '',
   data: null,
-  keys: [
-    'webpack.totalSizeByTypeALL',
-    'webpack.totalInitialSizeJS',
-    'webpack.totalInitialSizeCSS',
-    'webpack.cacheInvalidation',
-    'webpack.moduleCount',
-    'webpack.chunkCount',
-    'webpack.assetCount',
-    'webpack.packageCount',
-    'webpack.duplicatePackagesCount',
-  ],
   loading: false,
   showSummaryItemDelta: true,
   showSummaryItemBaselineValue: false,
@@ -58,7 +62,6 @@ Summary.propTypes = {
       current: PropTypes.number,
     }),
   }),
-  keys: PropTypes.arrayOf(PropTypes.string),
   loading: PropTypes.bool,
   showSummaryItemDelta: PropTypes.bool,
   showSummaryItemBaselineValue: PropTypes.bool,

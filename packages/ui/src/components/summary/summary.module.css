@@ -3,23 +3,38 @@
   border: 1px solid var(--color-outline);
 }
 
-.items {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: var(--space-small);
-  grid-row-gap: 0px;
-}
-
 .item {
-  padding: var(--space-small);
-  flex: 1 1 auto;
+  background: none;
 }
 
 .item:hover {
   background: var(--color-highlight);
 }
 
-.items + .items {
-  border: 1px solid var(--color-outline);
+.primary {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.primary .item {
+  padding: var(--space-small);
+  flex: 1 1 25%;
+  min-width: 120px;
+  box-shadow: 1px 1px var(--color-outline);
+  box-shadow: -1px -1px var(--color-outline);
+}
+
+.secondary {
+  border-top: 1px solid var(--color-outline);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.secondary .item {
+  display: inline-block;
+  flex: 1 1 20%;
+  min-width: 80px;
+  padding: var(--space-xsmall) var(--space-small);
+  box-shadow: 1px 1px var(--color-outline);
+  box-shadow: -1px -1px var(--color-outline);
 }
