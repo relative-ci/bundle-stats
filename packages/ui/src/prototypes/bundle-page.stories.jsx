@@ -41,25 +41,24 @@ const PageHeader = () => (
   />
 );
 
+const NewPageHeader = ({ children }) => (
+  <Container className={css.newHeader}>
+    {children}
+  </Container>
+);
+
 stories.add('totals', () => (
-  <>
-    <PageHeader />
+  <div style={{ margin: '-24px' }}>
+    <NewPageHeader>
+      <JobsHeader jobs={JOBS} />
+    </NewPageHeader>
     <main className={css.main}>
-      <Container>
-        <JobsHeader jobs={JOBS} />
-      </Container>
       <Container>
         <Summary data={currentJob.summary} showSummaryItemBaselineValue />
       </Container>
-      {get(currentJob, 'insights.webpack.duplicatePackages') && (
-        <Container>
-          <DuplicatePackagesWarning
-            duplicatePackages={get(currentJob, 'insights.webpack.duplicatePackages.data')}
-          />
-        </Container>
-      )}
       <Container>
-        <Tabs>
+        <Tabs >
+          <span>Insigts</span>
           <span isTabActive>Totals</span>
           <span>Assets</span>
           <span>Modules</span>
@@ -76,7 +75,7 @@ stories.add('totals', () => (
       </Container>
     </main>
     <Footer className={css.footer} />
-  </>
+  </div>
 ));
 
 stories.add('assets', () => (

@@ -2,6 +2,20 @@
   margin: -24px -24px 0;
 }
 
+.newHeader {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 8px var(--color-shadow);
+}
+
+.newHeaderBranding {
+  padding: var(--space-small) var(--space-large);
+}
+
+.newHeader .headerLogo {
+  margin: 0;
+}
+
 .main {
   min-height: calc(100vh - 72px);
 }

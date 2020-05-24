@@ -10,6 +10,10 @@
   --space-xxlarge: 48px;
   --space-xxxlarge: 64px;
 
+  /* Dimensions */
+  --container-max-width: 100rem;
+  --container-max-width-small: 80rem;
+
   /* Typography scale */
   --size-xsmall: 0.77rem;
   --size-small: 0.92rem;
@@ -39,7 +43,7 @@
   --color-gray-800 : #434548;
   --color-gray-900 : #323336;
   --color-gray-ultra-light: var(--color-gray-100);
-  --color-gray-light: var(--color-gray-300);
+  --color-gray-light: var(--color-gray-200);
   --color-gray: var(--color-gray-500);
   --color-gray-dark: var(--color-gray-700);
   --color-gray-ultra-dark: var(--color-gray-900);
@@ -139,7 +143,7 @@
   --color-highlight-danger: var(--color-red-25);
 
   --color-text-light: var(--color-gray-200);
-  --color-text: var(--color-gray);
+  --color-text: var(--color-gray-600);
   --color-text-dark: var(--color-gray-dark);
   --color-heading: var(--color-gray-ultra-dark);
 
