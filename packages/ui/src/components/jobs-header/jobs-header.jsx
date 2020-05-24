@@ -12,15 +12,15 @@ export const JobsHeader = (props) => {
 
   return (
     <Box className={rootClassName}>
-      {jobs && jobs.map((job, index) => (
-        <JobHeader
-          key={job.internalBuildNumber || index}
-          className={css.item}
-          job={job}
-          showSummaryDelta={index + 1 < jobs.length}
-          tag={index === 0 ? 'current' : 'baseline'}
-        />
-      ))}
+      {jobs &&
+        jobs.map((job, index) => (
+          <JobHeader
+            key={job.internalBuildNumber || index}
+            className={css.item}
+            job={job}
+            tag={index === 0 ? 'current' : 'baseline'}
+          />
+        ))}
     </Box>
   );
 };
@@ -30,9 +30,11 @@ JobsHeader.propTypes = {
   className: PropTypes.string,
 
   /** Jobs data */
-  jobs: PropTypes.arrayOf(PropTypes.shape({
-    internalBuildNumber: PropTypes.number,
-  })),
+  jobs: PropTypes.arrayOf(
+    PropTypes.shape({
+      internalBuildNumber: PropTypes.number,
+    }),
+  ),
 };
 
 JobsHeader.defaultProps = {

@@ -1,21 +1,15 @@
-.root {
-  position: relative;
-  font-size: var(--size-small);
-  flex-basis: 15%;
-}
-
 .title {
   margin: 0;
   color: var(--color-text-light);
-  font-size: var(--size-xsmall);
   font-weight: bold;
-  line-height: var(--space-xsmall);
+  font-size: var(--size-xsmall);
+  line-height: var(--space-small);
   text-transform: uppercase;
   white-space: nowrap;
 }
 
 .currentMetric {
-  margin-top: var(--space-xxxsmall);
+  margin: 0;
   display: block;
   color: var(--color-heading);
   font-size: var(--size-xlarge);
@@ -25,26 +19,12 @@
 }
 
 .delta {
-  margin-top: var(--space-xxxsmall);
+  margin: 0;
   display: block;
   min-height: var(--space-xsmall);
   font-size: var(--size-small);
-  line-height: var(--space-xsmall);
+  line-height: var(--space-small);
   text-align: inherit;
-}
-
-.helpButton {
-  position: absolute;
-  top: var(--space-xxsmall);
-  right: var(--space-xxxsmall);
-  border: none;
-  appearance: none;
-  padding: var(--space-xxxsmall);
-  background: none;
-  cursor: pointer;
-  color: var(--color-text-light);
-  outline: none;
-  transition: color 0.2s;
 }
 
 .helpTooltip {
@@ -56,67 +36,53 @@
 
 .helpTooltipTitle {
   margin: 0 0 var(--space-xxsmall);
+  color: var(--color-text);
   font-size: var(--size-medium);
+  text-transform: none;
   font-weight: bold;
 }
 
 .helpTooltipDescription {
+  color: var(--color-text);
   line-height: var(--space-small);
+  font-weight: normal;
+  text-transform: none;
 }
 
-.helpButton:hover {
-  color: var(--color-text-dark);
+/* Hover */
+
+/* show metric description - underline help */
+.showMetricDescription:hover .title {
+  text-decoration: underline;
+  text-decoration-style: dashed;
 }
 
-/* hover state */
-.helpButton {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.2s ease-in;
-}
-
-.root:hover .helpButton {
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0.17s 0s, opacity 0.17s ease-out;
-}
-
-.root.loading .helpButton {
-  display: none;
-}
-
-/* Show metric description modifier */
-.showMetricDescription .title {
-  padding-right: var(--space-medium);
-}
-
-/* Show baseline value */
-.showBaselineValue .currentMetric {
-  display: inline-block;
-  margin-right: var(--space-xxxsmall);
-}
-
-.showBaselineValue .delta {
-  margin: 0;
+/* Inline */
+.inline .title {
   display: inline-block;
 }
 
-.showBaselineValue .baselineMetric {
-  clear: both;
+.inline .currentMetric {
+  margin: 0 0 0 var(--space-xxsmall);
+  display: inline-block;
+  font-size: var(--size-small);
+}
+
+.inline .delta {
+  margin: 0 0 0 var(--space-xxxsmall);
+  display: inline-block;
+  font-size: var(--size-small);
 }
 
 /* Loading state */
 .loading {
   background: var(--color-highlight);
   pointer-events: none;
-  width: 8em;
+  width: 5em;
 }
 
 /* Size large */
-.large {
-  flex-basis: 25%;
-}
-
 .large .currentMetric {
-  font-size: var(--size-xxlarge);
+  font-size: var(--size-xxxlarge);
+  font-weight: bold;
 }
