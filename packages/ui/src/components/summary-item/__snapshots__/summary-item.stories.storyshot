@@ -12,6 +12,7 @@ exports[`Storyshots Components/SummaryItem default 1`] = `
   }
 >
   <SummaryItem
+    as="div"
     className=""
     data={
       Object {
@@ -41,6 +42,7 @@ exports[`Storyshots Components/SummaryItem inline 1`] = `
   }
 >
   <SummaryItem
+    as="div"
     className=""
     data={
       Object {
@@ -70,6 +72,7 @@ exports[`Storyshots Components/SummaryItem loading 1`] = `
   }
 >
   <SummaryItem
+    as="div"
     className=""
     data={null}
     id="webpack.totalSizeByTypeALL"
@@ -94,6 +97,7 @@ exports[`Storyshots Components/SummaryItem showDelta false 1`] = `
   }
 >
   <SummaryItem
+    as="div"
     className=""
     data={
       Object {
@@ -123,6 +127,7 @@ exports[`Storyshots Components/SummaryItem showMetricDescription 1`] = `
   }
 >
   <SummaryItem
+    as="div"
     className=""
     data={
       Object {
@@ -152,6 +157,7 @@ exports[`Storyshots Components/SummaryItem size large 1`] = `
   }
 >
   <SummaryItem
+    as="div"
     className=""
     data={
       Object {

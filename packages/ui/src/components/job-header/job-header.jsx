@@ -5,6 +5,7 @@ import { get } from 'lodash';
 import { formatDistanceToNow } from 'date-fns';
 import { SOURCE_PATH_WEBPACK_STATS, formatDate, formatTime } from '@bundle-stats/utils';
 
+import { Box } from '../../ui/box';
 import { Icon } from '../../ui/icon';
 import css from './job-header.module.css';
 
@@ -15,7 +16,7 @@ export const JobHeader = (props) => {
   const rootClassName = cx(css.root, className);
 
   return (
-    <div className={rootClassName}>
+    <Box className={rootClassName} outline>
       <div className={css.description}>
         <h1 className={css.title}>
           <span>{`#${job.internalBuildNumber}`}</span>
@@ -39,7 +40,7 @@ export const JobHeader = (props) => {
           {children}
         </div>
       </div>
-    </div>
+    </Box>
   );
 };
 

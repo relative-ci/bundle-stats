@@ -17,11 +17,8 @@
 }
 
 .primary .item {
-  padding: var(--space-small);
   flex: 1 1 25%;
   min-width: 120px;
-  box-shadow: 1px 1px var(--color-outline);
-  box-shadow: -1px -1px var(--color-outline);
 }
 
 .secondary {
@@ -35,6 +32,4 @@
   flex: 1 1 20%;
   min-width: 80px;
   padding: var(--space-xsmall) var(--space-small);
-  box-shadow: 1px 1px var(--color-outline);
-  box-shadow: -1px -1px var(--color-outline);
 }

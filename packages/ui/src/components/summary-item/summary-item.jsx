@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
-import { Tooltip } from '../../ui';
+import { Tooltip } from '../../ui/tooltip';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
 import css from './summary-item.module.css';
 
 export const SummaryItem = ({
   className,
+  as: Component,
   size,
   id,
   data,
@@ -17,6 +18,7 @@ export const SummaryItem = ({
   showDelta,
   showMetricDescription,
   inline,
+  ...restProps
 }) => {
   const { baseline, current } = data || { baseline: 0, current: 0 };
 
@@ -34,7 +36,7 @@ export const SummaryItem = ({
   );
 
   return (
-    <div className={rootClassName}>
+    <Component className={rootClassName} {...restProps}>
       <Tooltip
         as="h3"
         className={css.title}
@@ -72,12 +74,13 @@ export const SummaryItem = ({
       ) : (
         <span className={cx(css.delta, css.loading)} />
       )}
-    </div>
+    </Component>
   );
 };
 
 SummaryItem.defaultProps = {
   className: '',
+  as: 'div',
   data: null,
   size: 'medium',
   loading: false,
@@ -89,6 +92,9 @@ SummaryItem.defaultProps = {
 SummaryItem.propTypes = {
   /** Adopted child class name */
   className: PropTypes.string,
+
+  /** Wrapper component */
+  as: PropTypes.elementType,
 
   /** Size modifier */
   size: PropTypes.oneOf(['medium', 'large']),

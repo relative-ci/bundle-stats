@@ -3,7 +3,7 @@
 }
 
 .outline {
-  border: 1px solid var(--color-outline);
+  box-shadow: 0 0 0 1px var(--color-outline);
 }
 
 /* Space modifier */

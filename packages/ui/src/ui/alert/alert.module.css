@@ -1,25 +1,23 @@
 .root {
-  border: 1px solid var(--color-outline);
-  padding: var(--space-small);
-  color: var(--color-text-dark)
+  box-shadow: 0 0 0 1px var(--color-outline);
 }
 
 .success {
-  border-color: var(--color-outline-success);
+  box-shadow: 0 0 0 1px var(--color-outline-success);
   background: var(--color-highlight-success);
 }
 
 .info {
-  border-color: var(--color-outline-info);
+  box-shadow: 0 0 0 1px var(--color-outline-info);
   background: var(--color-highlight-info);
 }
 
 .warning {
-  border-color: var(--color-outline-warning);
+  box-shadow: 0 0 0 1px var(--color-outline-warning);
   background: var(--color-highlight-warning);
 }
 
 .danger {
-  border-color: var(--color-outline-danger);
+  box-shadow: 0 0 0 1px var(--color-outline-danger);
   background: var(--color-highlight-danger);
 }

@@ -2,16 +2,12 @@ import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
+import { Box } from '../box';
 import css from './alert.module.css';
 
 export const Alert = (props) => {
-  const { className, kind, children } = props;
-
-  return (
-    <div className={cx(css.root, className, css[kind])}>
-      {children}
-    </div>
-  );
+  const { className, kind, ...restProps } = props;
+  return <Box className={cx(css.root, className, css[kind])} outline {...restProps} />;
 };
 
 Alert.propTypes = {

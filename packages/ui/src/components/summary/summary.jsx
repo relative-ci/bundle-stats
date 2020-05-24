@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get } from 'lodash';
 
+import { Box } from '../../ui/box';
 import { SummaryItem } from '../summary-item';
 import css from './summary.module.css';
 
@@ -26,6 +27,7 @@ export const Summary = ({ className, data, loading, showSummaryItemDelta }) => {
     <SummaryItem
       key={key}
       id={key}
+      as={(wrapperProps) => <Box outline {...wrapperProps} />}
       data={get(data, key)}
       loading={loading}
       showMetricDescription
