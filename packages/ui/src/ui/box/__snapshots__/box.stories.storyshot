@@ -14,10 +14,64 @@ exports[`Storyshots UI/Box default 1`] = `
     as="div"
     className=""
     outline={false}
+    space="medium"
   >
     <div
-      className="root"
-      outline={false}
+      className="root medium"
+    >
+      <p>
+        Lorem ipsum
+      </p>
+    </div>
+  </Box>
+</div>
+`;
+
+exports[`Storyshots UI/Box outline 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Box
+    as="div"
+    className=""
+    outline={true}
+    space="medium"
+  >
+    <div
+      className="root outline medium"
+    >
+      <p>
+        Lorem ipsum
+      </p>
+    </div>
+  </Box>
+</div>
+`;
+
+exports[`Storyshots UI/Box space modifier 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Box
+    as="div"
+    className=""
+    outline={true}
+    space="small"
+  >
+    <div
+      className="root outline small"
     >
       <p>
         Lorem ipsum
@@ -41,10 +95,10 @@ exports[`Storyshots UI/Box with table 1`] = `
     as="div"
     className=""
     outline={false}
+    space="medium"
   >
     <div
-      className="root"
-      outline={false}
+      className="root medium"
     >
       <Table
         className=""

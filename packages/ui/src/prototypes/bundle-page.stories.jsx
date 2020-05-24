@@ -68,7 +68,7 @@ stories.add('totals', () => (
         <BundleAssetsTotalsChartBars jobs={JOBS} />
       </Container>
       <Container>
-        <Box outline>
+        <Box outline space="none">
           <BundleAssetsTotalsTable jobs={JOBS} />
         </Box>
       </Container>
@@ -103,7 +103,7 @@ stories.add('assets', () => (
         </Tabs>
       </Container>
       <Container>
-        <Box outline>
+        <Box outline space="none">
           <BundleAssets jobs={JOBS} />
         </Box>
       </Container>
@@ -171,7 +171,7 @@ stories.add('packages', () => (
         </Tabs>
       </Container>
       <Container>
-        <Box outline>
+        <Box outline space="none">
           <BundlePackages jobs={JOBS} />
         </Box>
       </Container>

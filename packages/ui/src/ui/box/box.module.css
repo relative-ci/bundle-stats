@@ -5,3 +5,16 @@
 .outline {
   border: 1px solid var(--color-outline);
 }
+
+/* Space modifier */
+.small {
+  padding: var(--space-xsmall);
+}
+
+.medium {
+  padding: var(--space-small);
+}
+
+.large {
+  padding: var(--space-medium);
+}

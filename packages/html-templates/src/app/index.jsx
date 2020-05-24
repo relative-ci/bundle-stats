@@ -81,7 +81,7 @@ const StandaloneApp = ({ jobs }) => {
             Totals
           </a>
         </h2>
-        <Box outline>
+        <Box outline space="none">
           <BundleAssetsTotalsTable jobs={jobs} />
         </Box>
       </Container>
@@ -95,7 +95,7 @@ const StandaloneApp = ({ jobs }) => {
             Assets
           </a>
         </h2>
-        <Box outline>
+        <Box outline space="none">
           <BundleAssets jobs={jobs} />
         </Box>
       </Container>
@@ -121,7 +121,7 @@ const StandaloneApp = ({ jobs }) => {
             Packages
           </a>
         </h2>
-        <Box outline>
+        <Box outline space="none">
           <BundlePackages jobs={jobs} />
         </Box>
       </Container>

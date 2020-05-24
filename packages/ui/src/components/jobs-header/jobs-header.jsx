@@ -11,7 +11,7 @@ export const JobsHeader = (props) => {
   const rootClassName = cx(css.root, className);
 
   return (
-    <Box className={rootClassName} outline>
+    <Box className={rootClassName} outline space="none">
       {jobs &&
         jobs.map((job, index) => (
           <JobHeader

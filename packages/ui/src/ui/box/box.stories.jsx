@@ -14,6 +14,18 @@ stories.add('default', () => (
   </Box>
 ));
 
+stories.add('outline', () => (
+  <Box outline>
+    <p>Lorem ipsum</p>
+  </Box>
+));
+
+stories.add('space modifier', () => (
+  <Box outline space="small">
+    <p>Lorem ipsum</p>
+  </Box>
+));
+
 stories.add('with table', () => (
   <Box>
     <Table
