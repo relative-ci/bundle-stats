@@ -13,9 +13,11 @@ exports[`Storyshots UI/Box default 1`] = `
   <Box
     as="div"
     className=""
+    outline={false}
   >
     <div
       className="root"
+      outline={false}
     >
       <p>
         Lorem ipsum
@@ -38,9 +40,11 @@ exports[`Storyshots UI/Box with table 1`] = `
   <Box
     as="div"
     className=""
+    outline={false}
   >
     <div
       className="root"
+      outline={false}
     >
       <Table
         className=""

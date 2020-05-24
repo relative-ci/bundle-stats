@@ -75,7 +75,7 @@ export const BundleChunkModules = ({
           {id && <span className={css.headerTitleId}>{`Chunk id: ${id}`}</span>}
         </h3>
       </header>
-      <Box>
+      <Box outline>
         <Toolbar
           className={css.toolbar}
           renderActions={({ actionClassName }) => (
