@@ -38,9 +38,9 @@ export const Summary = ({ className, data, loading, showSummaryItemDelta }) => {
 
   return (
     <div className={cx(css.root, className)}>
-      <div className={css.primary}>{[...PRIMARY_METRICS].map(getRenderSummaryItem())}</div>
+      <div className={css.primary}>{Array.from(PRIMARY_METRICS).map(getRenderSummaryItem())}</div>
       <div className={css.secondary}>
-        {[...SECONDARY_METRICS].map(getRenderSummaryItem({ inline: true }))}
+        {Array.from(SECONDARY_METRICS).map(getRenderSummaryItem({ inline: true }))}
       </div>
     </div>
   );
