@@ -55,7 +55,6 @@ exports[`Storyshots Components/Summary default 1`] = `
       }
     }
     loading={false}
-    showSummaryItemBaselineValue={true}
     showSummaryItemDelta={true}
   />
 </div>
@@ -75,7 +74,6 @@ exports[`Storyshots Components/Summary loading 1`] = `
     className=""
     data={null}
     loading={true}
-    showSummaryItemBaselineValue={false}
     showSummaryItemDelta={true}
   />
 </div>
@@ -136,7 +134,6 @@ exports[`Storyshots Components/Summary single run 1`] = `
       }
     }
     loading={false}
-    showSummaryItemBaselineValue={false}
     showSummaryItemDelta={false}
   />
 </div>

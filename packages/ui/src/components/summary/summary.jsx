@@ -51,7 +51,6 @@ Summary.defaultProps = {
   data: null,
   loading: false,
   showSummaryItemDelta: true,
-  showSummaryItemBaselineValue: false,
 };
 
 Summary.propTypes = {
@@ -64,5 +63,4 @@ Summary.propTypes = {
   }),
   loading: PropTypes.bool,
   showSummaryItemDelta: PropTypes.bool,
-  showSummaryItemBaselineValue: PropTypes.bool,
 };
