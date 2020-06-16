@@ -12,7 +12,7 @@
     "eslint-config-airbnb": "18.1.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-import-resolver-node": "0.3.4",
-    "eslint-import-resolver-webpack": "0.12.1",
+    "eslint-import-resolver-webpack": "0.12.2",
     "eslint-plugin-import": "2.21.2",
     "eslint-plugin-jest": "23.13.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
