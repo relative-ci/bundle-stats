@@ -4,16 +4,10 @@ import cx from 'classnames';
 
 import css from './delta.module.css';
 
-export const Delta = ({
-  className, displayValue, deltaType,
-}) => {
+export const Delta = ({ className, displayValue, deltaType }) => {
   const rootClassName = cx(css.root, className, css[deltaType]);
 
-  return (
-    <span className={rootClassName}>
-      {displayValue}
-    </span>
-  );
+  return <span className={rootClassName}>{displayValue}</span>;
 };
 
 Delta.defaultProps = {
