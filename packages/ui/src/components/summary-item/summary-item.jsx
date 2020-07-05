@@ -56,21 +56,18 @@ export const SummaryItem = ({
           value={current}
           formatter={metric.formatter}
           enhanced
-        />
+          inline={inline}
+        >
+          {showDelta && (
+            <Delta
+              className={css.delta}
+              displayValue={runInfo.displayDeltaPercentage}
+              deltaType={runInfo.deltaType}
+            />
+          )}
+        </Metric>
       ) : (
         <span className={cx(css.currentMetric, css.loading)} />
-      )}
-
-      {!loading ? (
-        showDelta && (
-          <Delta
-            className={css.delta}
-            displayValue={runInfo.displayDeltaPercentage}
-            deltaType={runInfo.deltaType}
-          />
-        )
-      ) : (
-        <span className={cx(css.delta, css.loading)} />
       )}
     </div>
   );

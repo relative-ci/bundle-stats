@@ -5,17 +5,76 @@ exports[`Storyshots Components/Metric default 1`] = `
   style={
     Object {
       "height": "100%",
+      "maxWidth": "200px",
       "padding": "24px",
       "width": "100%",
     }
   }
 >
   <Metric
+    anchored={false}
     className=""
     enhanced={false}
     formatter={[Function]}
+    inline={false}
     value={100}
   />
+</div>
+`;
+
+exports[`Storyshots Components/Metric modifier: anchored 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "maxWidth": "200px",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Metric
+    anchored={true}
+    className=""
+    enhanced={false}
+    formatter={[Function]}
+    inline={false}
+    value={100}
+  >
+    <Delta
+      className=""
+      deltaType="POSITIVE"
+      displayValue="+10%"
+    />
+  </Metric>
+</div>
+`;
+
+exports[`Storyshots Components/Metric modifier: delta 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "maxWidth": "200px",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Metric
+    anchored={false}
+    className=""
+    enhanced={false}
+    formatter={[Function]}
+    inline={false}
+    value={100}
+  >
+    <Delta
+      className=""
+      deltaType="POSITIVE"
+      displayValue="+10%"
+    />
+  </Metric>
 </div>
 `;
 
@@ -24,15 +83,18 @@ exports[`Storyshots Components/Metric modifier: enhanced 1`] = `
   style={
     Object {
       "height": "100%",
+      "maxWidth": "200px",
       "padding": "24px",
       "width": "100%",
     }
   }
 >
   <Metric
+    anchored={false}
     className=""
     enhanced={true}
     formatter={[Function]}
+    inline={false}
     value={100}
   />
 </div>
@@ -43,16 +105,47 @@ exports[`Storyshots Components/Metric modifier: formatted value 1`] = `
   style={
     Object {
       "height": "100%",
+      "maxWidth": "200px",
       "padding": "24px",
       "width": "100%",
     }
   }
 >
   <Metric
+    anchored={false}
     className=""
     enhanced={false}
     formatter={[Function]}
+    inline={false}
     value="100KB"
   />
+</div>
+`;
+
+exports[`Storyshots Components/Metric modifier: inline 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "maxWidth": "200px",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Metric
+    anchored={false}
+    className=""
+    enhanced={false}
+    formatter={[Function]}
+    inline={true}
+    value={100}
+  >
+    <Delta
+      className=""
+      deltaType="POSITIVE"
+      displayValue="+10%"
+    />
+  </Metric>
 </div>
 `;

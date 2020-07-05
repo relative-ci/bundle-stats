@@ -64,7 +64,7 @@ const generateRowCell = () => (item) => {
   const { displayValue, deltaPercentage, displayDeltaPercentage, deltaType } = item;
 
   return (
-    <Metric value={displayValue}>
+    <Metric value={displayValue} anchored>
       {deltaPercentage ? (
         <Delta displayValue={displayDeltaPercentage} deltaType={deltaType} />
       ) : null}

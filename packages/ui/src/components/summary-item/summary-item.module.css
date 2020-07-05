@@ -24,7 +24,6 @@
   min-height: var(--space-xsmall);
   font-size: var(--size-small);
   line-height: var(--space-small);
-  text-align: inherit;
 }
 
 .helpTooltip {
@@ -69,7 +68,6 @@
 }
 
 .inline .delta {
-  margin: 0 0 0 var(--space-xxxsmall);
   display: inline-block;
   font-size: var(--size-small);
 }
