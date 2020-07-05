@@ -28,9 +28,10 @@ export const SummaryItem = ({
     css.root,
     className,
     css[size],
-    showMetricDescription && css.showMetricDescription,
     inline && css.inline,
+    showMetricDescription && css.showMetricDescription,
     showMetricDescriptionTooltip && css.showMetricDescription,
+    showDelta && css.showDelta,
   );
 
   return (
