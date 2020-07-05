@@ -1,8 +1,5 @@
 .root {
-  display: block;
-  text-align: right;
   white-space: nowrap;
-  letter-spacing: 0.05em;
   color: var(--color-gray-ultra-light);
 }
 

@@ -28,9 +28,10 @@ export const SummaryItem = ({
     css.root,
     className,
     css[size],
-    showMetricDescription && css.showMetricDescription,
     inline && css.inline,
+    showMetricDescription && css.showMetricDescription,
     showMetricDescriptionTooltip && css.showMetricDescription,
+    showDelta && css.showDelta,
   );
 
   return (
@@ -56,21 +57,18 @@ export const SummaryItem = ({
           value={current}
           formatter={metric.formatter}
           enhanced
-        />
+          inline={inline}
+        >
+          {showDelta && (
+            <Delta
+              className={css.delta}
+              displayValue={runInfo.displayDeltaPercentage}
+              deltaType={runInfo.deltaType}
+            />
+          )}
+        </Metric>
       ) : (
         <span className={cx(css.currentMetric, css.loading)} />
-      )}
-
-      {!loading ? (
-        showDelta && (
-          <Delta
-            className={css.delta}
-            displayValue={runInfo.displayDeltaPercentage}
-            deltaType={runInfo.deltaType}
-          />
-        )
-      ) : (
-        <span className={cx(css.delta, css.loading)} />
       )}
     </div>
   );

@@ -1,6 +1,5 @@
 .root {
   display: block;
-  position: relative;
   letter-spacing: 0.05em;
 }
 
@@ -9,11 +8,23 @@
 }
 
 .delta {
+  display: block;
+  font-size: var(--size-xsmall);
+}
+
+.anchored {
+  position: relative;
+}
+
+.anchored .delta {
   position: absolute;
   right: 0;
   top: 100%;
-  display: block;
-  font-size: var(--size-xsmall);
   line-height: 1;
-  margin-top: -3px;
+  margin-top: -2px;
+}
+
+.inline .delta {
+  display: inline-block;
+  margin: 0 0 0 var(--space-xxxsmall);
 }
