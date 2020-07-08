@@ -47,7 +47,7 @@
     "@bundle-stats/cli-utils": "^2.2.0",
     "@bundle-stats/utils": "^2.2.0",
     "core-js": "^3.1.4",
-    "lodash": "4.17.15"
+    "lodash": "4.17.19"
   },
   "devDependencies": {
     "@babel/cli": "7.10.4",
