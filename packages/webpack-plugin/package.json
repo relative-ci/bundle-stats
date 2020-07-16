@@ -50,8 +50,8 @@
     "lodash": "4.17.19"
   },
   "devDependencies": {
-    "@babel/cli": "7.10.4",
-    "@babel/core": "7.10.4",
+    "@babel/cli": "7.10.5",
+    "@babel/core": "7.10.5",
     "@babel/preset-env": "7.10.4",
     "jest": "25.5.4",
     "memory-fs": "0.5.0",
