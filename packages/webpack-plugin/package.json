@@ -55,6 +55,6 @@
     "@babel/preset-env": "7.10.4",
     "jest": "25.5.4",
     "memory-fs": "0.5.0",
-    "webpack": "4.43.0"
+    "webpack": "4.44.0"
   }
 }
