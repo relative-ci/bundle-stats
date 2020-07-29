@@ -1,4 +1,4 @@
-const webpackMerge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const HtmlPlugin = require('html-webpack-plugin');
 const HtmlInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 
@@ -10,16 +10,13 @@ const settings = require('./settings');
 
 const { isProduction } = settings;
 
-module.exports = webpackMerge.smart(
+module.exports = merge(
   getCSSConfig(settings),
   getDefineConfig(settings),
   getResolveConfig(settings),
   {
     entry: {
-      main: [
-        './polyfill.js',
-        './index.jsx',
-      ],
+      main: ['./polyfill.js', './index.jsx'],
     },
     plugins: [
       new HtmlPlugin({

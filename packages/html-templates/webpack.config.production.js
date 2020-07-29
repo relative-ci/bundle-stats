@@ -1,4 +1,4 @@
-const webpackMerge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const StatsPlugin = require('stats-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { RelativeCiAgentWebpackPlugin } = require('@relative-ci/agent');
@@ -9,30 +9,26 @@ const settings = require('./settings');
 
 const { rootDir } = settings;
 
-module.exports = webpackMerge.smart(
-  getCommonConfig(settings),
-  appCommonConfig,
-  {
-    plugins: [
-      new StatsPlugin('../artifacts/webpack.stats.json', {
-        context: rootDir,
-        assets: true,
-        entrypoints: true,
-        modules: true,
-        chunks: true,
-        performance: true,
-        timings: true,
-        children: false,
-        source: false,
-      }),
-      new RelativeCiAgentWebpackPlugin({
-        stats: {
-          excludeAssets: [/index.html$/],
-        },
-      }),
-    ],
-    optimization: {
-      minimizer: [new TerserPlugin({ sourceMap: true })],
-    },
+module.exports = merge(getCommonConfig(settings), appCommonConfig, {
+  plugins: [
+    new StatsPlugin('../artifacts/webpack.stats.json', {
+      context: rootDir,
+      assets: true,
+      entrypoints: true,
+      modules: true,
+      chunks: true,
+      performance: true,
+      timings: true,
+      children: false,
+      source: false,
+    }),
+    new RelativeCiAgentWebpackPlugin({
+      stats: {
+        excludeAssets: [/index.html$/],
+      },
+    }),
+  ],
+  optimization: {
+    minimizer: [new TerserPlugin({ sourceMap: true })],
   },
-);
+});
