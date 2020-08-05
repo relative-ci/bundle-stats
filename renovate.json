@@ -1,6 +1,6 @@
 {
   "extends": [
-    "config:base",
+    "config:base"
   ]
   "baseBranches": ["update-dependencies"],
   "automerge": true
