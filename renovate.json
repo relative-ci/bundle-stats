@@ -3,5 +3,5 @@
     "config:base",
   ]
   "baseBranches": ["update-dependencies"],
-  "automerge": true,
+  "automerge": true
 }
