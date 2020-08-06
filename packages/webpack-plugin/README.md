@@ -33,20 +33,20 @@
 ## Install
 
 ```shell
-npm install --dev bundle-stats
+npm install --dev bundle-stats-webpack-plugin
 ```
 
 or
 
 ```shell
-yarn add --dev bundle-stats
+yarn add --dev bundle-stats-webpack-plugin
 ```
 
 ## Webpack configuration
 
 ```js
 // webpack.config.js
-const { BundleStatsWebpackPlugin } = require('bundle-stats');
+const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin');
 
 module.exports = {
   ...,
@@ -109,7 +109,7 @@ Create a file `config-overrides.js` at the same level as `package.json`.
 ```js
 // config-overrides.js
 const { override, addWebpackPlugin } = require('customize-cra');
-const { BundleStatsWebpackPlugin } = require('bundle-stats');
+const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin');
 
 module.exports = override(
   addWebpackPlugin(new BundleStatsWebpackPlugin()),
