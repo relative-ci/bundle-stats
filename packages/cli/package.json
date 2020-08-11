@@ -53,6 +53,6 @@
     "yargs": "15.4.1"
   },
   "devDependencies": {
-    "jest": "25.5.4"
+    "jest": "26.3.0"
   }
 }
