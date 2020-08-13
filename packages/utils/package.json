@@ -48,7 +48,7 @@
     "jest": "26.4.0",
     "jest-cli": "26.4.0",
     "jest-date-mock": "1.0.8",
-    "lodash": "4.17.19",
+    "lodash": "4.17.20",
     "regenerator-runtime": "0.13.7"
   },
   "peerDependencies": {
