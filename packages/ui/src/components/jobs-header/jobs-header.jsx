@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { Box } from '../../ui/box';
 import { JobHeader } from '../job-header';
 import css from './jobs-header.module.css';
 
@@ -11,7 +10,7 @@ export const JobsHeader = (props) => {
   const rootClassName = cx(css.root, className);
 
   return (
-    <Box className={rootClassName}>
+    <div className={rootClassName}>
       {jobs &&
         jobs.map((job, index) => (
           <JobHeader
@@ -21,7 +20,7 @@ export const JobsHeader = (props) => {
             tag={index === 0 ? 'current' : 'baseline'}
           />
         ))}
-    </Box>
+    </div>
   );
 };
 

@@ -14,14 +14,15 @@
 }
 
 .tag {
-  display: inline-block;
+  padding: var(--space-xxxsmall);
   margin-top: 5px;
   margin-left: var(--space-xxxsmall);
-  font-size: 8px;
+  background-color: var(--color-highlight);
+  color: var(--color-text-light);
+  display: inline-block;
+  font-size: 9px;
   line-height: var(--space-xxsmall);
   font-weight: normal;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
   vertical-align: top;
 }
 
