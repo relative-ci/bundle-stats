@@ -34,6 +34,14 @@
   color: var(--color-gray-dark);
 }
 
+.main {
+  padding-bottom: var(--space-large);
+}
+
+.jobsHeader {
+  border-bottom: 1px solid var(--color-outline);
+}
+
 .empty {
   text-align: center;
 }
