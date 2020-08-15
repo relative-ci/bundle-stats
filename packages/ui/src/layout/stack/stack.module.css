@@ -1,0 +1,11 @@
+.space--small > .item + .item {
+  margin-top: var(--space-small);
+}
+
+.space--medium > .item + .item {
+  margin-top: var(--space-medium);
+}
+
+.space--large > .item + .item {
+  margin-top: var(--space-large);
+}
