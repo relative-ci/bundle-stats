@@ -24,22 +24,23 @@
 
   /*
    * Color scheme:
-   * http://mcg.mbitson.com/#!?mcgpalette0=%23da5a63&mcgpalette1=%236bb967&mcgpalette2=%23f6e27f&mcgpalette3=%23737679&mcgpalette4=%233784d2&themename=mcgtheme
-   * https://coolors.co/3784d2-da5a63-6bb967-f6e27f-5f6164
+   * http://mcg.mbitson.com/#!?mcgpalette0=%23da5a63&mcgpalette1=%236bb967&mcgpalette2=%23f6e27f&mcgpalette3=%234f5154&mcgpalette4=%233784d2&themename=mcgtheme
+   * https://coolors.co/3784d2-da5a63-6bb967-f6e27f-4f5154
    */
   --color-gray-25: #fafbfb;
-  --color-gray-50 : #ececec;
-  --color-gray-100 : #cfd0d1;
-  --color-gray-200 : #afb0b2;
-  --color-gray-300 : #8f9093;
-  --color-gray-400 : #77797b;
-  --color-gray-500 : #5f6164;
-  --color-gray-600 : #57595c;
-  --color-gray-700 : #4d4f52;
-  --color-gray-800 : #434548;
-  --color-gray-900 : #323336;
+  --color-gray-50 : #eaeaea;
+  --color-gray-100 : #cacbcc;
+  --color-gray-200 : #a7a8aa;
+  --color-gray-300 : #848587;
+  --color-gray-400 : #696b6e;
+  --color-gray-500 : #4f5154;
+  --color-gray-600 : #484a4d;
+  --color-gray-700 : #3f4043;
+  --color-gray-800 : #36373a;
+  --color-gray-900 : #262729;
+
   --color-gray-ultra-light: var(--color-gray-100);
-  --color-gray-light: var(--color-gray-300);
+  --color-gray-light: var(--color-gray-200);
   --color-gray: var(--color-gray-500);
   --color-gray-dark: var(--color-gray-700);
   --color-gray-ultra-dark: var(--color-gray-900);
@@ -138,7 +139,7 @@
   --color-highlight-warning: var(--color-yellow-25);
   --color-highlight-danger: var(--color-red-25);
 
-  --color-text-light: var(--color-gray-200);
+  --color-text-light: var(--color-gray-light);
   --color-text: var(--color-gray);
   --color-text-dark: var(--color-gray-dark);
   --color-heading: var(--color-gray-ultra-dark);
