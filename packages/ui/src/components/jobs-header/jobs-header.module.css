@@ -1,5 +1,4 @@
 .root {
-  border-width: 1px 1px 3px 1px;
   display: flex;
   align-items: stretch;
   flex-wrap: wrap;
@@ -7,7 +6,6 @@
 
 .item {
   flex: 1 1 320px;
-  box-shadow: 0 1px var(--color-outline), 1px 0 var(--color-outline);
 }
 
 /** Loading state */
