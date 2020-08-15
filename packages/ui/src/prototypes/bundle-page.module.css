@@ -2,7 +2,13 @@
   margin: -24px -24px 0;
 }
 
+.jobsHeader {
+  border-bottom: 1px solid var(--color-outline);
+}
+
 .main {
+  margin: 0 -24px;
+  padding:  0 0 var(--space-large);
   min-height: calc(100vh - 72px);
 }
 
@@ -17,6 +23,15 @@
   width: 122px;
   height: 14px;
   color: inherit;
+}
+
+.tabsContainer {
+  border: 1px solid var(--color-outline);
+  border-width: 0 0 1px;
+}
+
+.tabsContainer .tabs {
+  margin-bottom: -1px; /* overlap bottom border */
 }
 
 .footer {

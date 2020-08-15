@@ -1,14 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 import { get } from 'lodash';
 
 import baselineData from '../../__mocks__/webpack-stats.baseline.json';
 import currentData from '../../__mocks__/webpack-stats.current.json';
-import {
-  Box, Container, Logo, Tabs,
-} from '../ui';
-import { Header, Footer } from '../layout';
+import { Box, Container, Logo, Tabs } from '../ui';
+import { Header, Footer, Stack } from '../layout';
 import { JobsHeader } from '../components/jobs-header';
 import { BundleAssets } from '../components/bundle-assets';
 import { BundleAssetsTotalsTable } from '../components/bundle-assets-totals-table';
@@ -23,161 +22,97 @@ import css from './bundle-page.module.css';
 const stories = storiesOf('Prototypes/BundlePage', module);
 stories.addDecorator(getWrapperDecorator());
 
-const JOBS = createJobs([
-  { webpack: currentData },
-  { webpack: baselineData },
-]);
+const JOBS = createJobs([{ webpack: currentData }, { webpack: baselineData }]);
 const [currentJob] = JOBS;
 
-const PageHeader = () => (
-  <Header
-    className={css.header}
-    renderLeft={(sideProps) => (
-      <div {...sideProps}>
-        <Logo kind="logo" className={css.headerLogo} />
-        <Logo kind="logotype" className={css.headerLogotype} />
-      </div>
-    )}
-  />
-);
+const TABS = ['Totals', 'Assets', 'Modules', 'Packages'];
 
-stories.add('totals', () => (
+const Page = ({ children, activeTab }) => (
   <>
-    <PageHeader />
-    <main className={css.main}>
-      <Container>
+    <Header
+      className={css.header}
+      renderLeft={(sideProps) => (
+        <div {...sideProps}>
+          <Logo kind="logo" className={css.headerLogo} />
+          <Logo kind="logotype" className={css.headerLogotype} />
+        </div>
+      )}
+    />
+    <Stack className={css.main} space="large">
+      <Container className={css.jobsHeader}>
         <JobsHeader jobs={JOBS} />
       </Container>
-      <Container>
-        <Summary data={currentJob.summary} showSummaryItemBaselineValue />
-      </Container>
-      {get(currentJob, 'insights.webpack.duplicatePackages') && (
+      <Stack className={css.mainTop} space="medium">
         <Container>
-          <DuplicatePackagesWarning
-            duplicatePackages={get(currentJob, 'insights.webpack.duplicatePackages.data')}
-          />
+          <Summary data={currentJob.summary} showSummaryItemBaselineValue />
         </Container>
-      )}
-      <Container>
-        <Tabs>
-          <span isTabActive>Totals</span>
-          <span>Assets</span>
-          <span>Modules</span>
-          <span>Packages</span>
+        {get(currentJob, 'insights.webpack.duplicatePackages') && (
+          <Container>
+            <DuplicatePackagesWarning
+              duplicatePackages={get(currentJob, 'insights.webpack.duplicatePackages.data')}
+            />
+          </Container>
+        )}
+      </Stack>
+      <Container className={css.tabsContainer}>
+        <Tabs className={css.tabs}>
+          {TABS.map((tab) => (
+            <span key={tab} isTabActive={activeTab === tab}>
+              {tab}
+            </span>
+          ))}
         </Tabs>
       </Container>
-      <Container>
-        <BundleAssetsTotalsChartBars jobs={JOBS} />
-      </Container>
-      <Container>
-        <Box>
-          <BundleAssetsTotalsTable jobs={JOBS} />
-        </Box>
-      </Container>
-    </main>
+      <Stack className={css.mainBottom} space="medium">
+        {children}
+      </Stack>
+    </Stack>
     <Footer className={css.footer} />
   </>
+);
+
+Page.propTypes = {
+  activeTab: PropTypes.oneOf(TABS).isRequired,
+  children: PropTypes.node.isRequired,
+};
+
+stories.add('totals', () => (
+  <Page activeTab="Totals">
+    <Container>
+      <BundleAssetsTotalsChartBars jobs={JOBS} />
+    </Container>
+    <Container>
+      <Box>
+        <BundleAssetsTotalsTable jobs={JOBS} />
+      </Box>
+    </Container>
+  </Page>
 ));
 
 stories.add('assets', () => (
-  <>
-    <PageHeader />
-    <main className={css.main}>
-      <Container>
-        <JobsHeader jobs={JOBS} />
-      </Container>
-      <Container>
-        <Summary data={currentJob.summary} showSummaryItemBaselineValue />
-      </Container>
-      {get(currentJob, 'insights.webpack.duplicatePackages') && (
-        <Container>
-          <DuplicatePackagesWarning
-            duplicatePackages={get(currentJob, 'insights.webpack.duplicatePackages.data')}
-          />
-        </Container>
-      )}
-      <Container>
-        <Tabs>
-          <span>Totals</span>
-          <span isTabActive>Assets</span>
-          <span>Modules</span>
-          <span>Packages</span>
-        </Tabs>
-      </Container>
-      <Container>
-        <Box>
-          <BundleAssets jobs={JOBS} />
-        </Box>
-      </Container>
-    </main>
-    <Footer className={css.footer} />
-  </>
+  <Page activeTab="Assets">
+    <Container>
+      <Box>
+        <BundleAssets jobs={JOBS} />
+      </Box>
+    </Container>
+  </Page>
 ));
 
 stories.add('modules', () => (
-  <>
-    <PageHeader />
-    <main className={css.main}>
-      <Container>
-        <JobsHeader jobs={JOBS} />
-      </Container>
-      <Container>
-        <Summary data={currentJob.summary} showSummaryItemBaselineValue />
-      </Container>
-      {get(currentJob, 'insights.webpack.duplicatePackages') && (
-        <Container>
-          <DuplicatePackagesWarning
-            duplicatePackages={get(currentJob, 'insights.webpack.duplicatePackages.data')}
-          />
-        </Container>
-      )}
-      <Container>
-        <Tabs>
-          <span>Totals</span>
-          <span>Assets</span>
-          <span isTabActive>Modules</span>
-          <span>Packages</span>
-        </Tabs>
-      </Container>
-      <Container>
-        <BundleModules jobs={JOBS} />
-      </Container>
-    </main>
-    <Footer className={css.footer} />
-  </>
+  <Page activeTab="Modules">
+    <Container>
+      <BundleModules jobs={JOBS} />
+    </Container>
+  </Page>
 ));
 
 stories.add('packages', () => (
-  <>
-    <PageHeader />
-    <main className={css.main}>
-      <Container>
-        <JobsHeader jobs={JOBS} />
-      </Container>
-      <Container>
-        <Summary data={currentJob.summary} showSummaryItemBaselineValue />
-      </Container>
-      {get(currentJob, 'insights.webpack.duplicatePackages') && (
-        <Container>
-          <DuplicatePackagesWarning
-            duplicatePackages={get(currentJob, 'insights.webpack.duplicatePackages.data')}
-          />
-        </Container>
-      )}
-      <Container>
-        <Tabs>
-          <span>Totals</span>
-          <span>Assets</span>
-          <span>Modules</span>
-          <span isTabActive>Packages</span>
-        </Tabs>
-      </Container>
-      <Container>
-        <Box>
-          <BundlePackages jobs={JOBS} />
-        </Box>
-      </Container>
-    </main>
-    <Footer className={css.footer} />
-  </>
+  <Page activeTab="Packages">
+    <Container>
+      <Box>
+        <BundlePackages jobs={JOBS} />
+      </Box>
+    </Container>
+  </Page>
 ));
