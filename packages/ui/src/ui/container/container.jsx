@@ -20,5 +20,5 @@ Container.propTypes = {
   className: PropTypes.string,
 
   /** Custom component */
-  as: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  as: PropTypes.elementType,
 };

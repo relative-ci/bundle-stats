@@ -1,15 +1,3 @@
-.root {
-  padding: var(--space-xsmall) var(--space-small);
-}
-
-.root:first-child {
-  padding-top: var(--space-medium);
-}
-
-.root:last-child {
-  padding-bottom: var(--space-medium)
-}
-
 .inner {
   width: 100%;
   max-width: var(--max-width);
