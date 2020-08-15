@@ -48,6 +48,9 @@ export const Footer = ({ className, children, Link, source }) => (
             <Link to="/releases" className={css.navLink} source={source}>
               Release notes
             </Link>
+            <Link to="/documentation/faq" className={css.navLink} source={source}>
+              FAQ
+            </Link>
             <a href="https://github.com/relative-ci/roadmap/issues" className={css.navLink}>
               Roadmap
             </a>
