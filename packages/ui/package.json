@@ -69,6 +69,7 @@
     "react-test-renderer": "16.13.1",
     "recompose": "0.30.0",
     "stats-webpack-plugin": "0.7.0",
+    "style-loader": "^1.2.1",
     "webpack": "4.44.1",
     "webpack-cli": "3.3.12"
   },
