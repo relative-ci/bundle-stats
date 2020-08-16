@@ -5,7 +5,8 @@
 }
 
 .item {
-  flex: 1 1 320px;
+  flex: 1 1 360px;
+  padding: var(--space-small) var(--space-small) var(--space-small) 0;
 }
 
 /** Loading state */

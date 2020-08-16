@@ -41,6 +41,13 @@ stories.add('with nested stack', () => (
   </Stack>
 ));
 
+stories.add('with null child', () => (
+  <Stack space="large">
+    {null}
+    <Box>Lorem ipsum 1</Box>
+  </Stack>
+));
+
 stories.add('single item', () => (
   <Stack>
     <Box>Lorem ipsum</Box>

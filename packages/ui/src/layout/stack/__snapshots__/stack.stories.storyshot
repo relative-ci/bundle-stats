@@ -172,3 +172,28 @@ exports[`Storyshots Layout/Stack with nested stack 1`] = `
   </Stack>
 </div>
 `;
+
+exports[`Storyshots Layout/Stack with null child 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Stack
+    as="div"
+    className=""
+    space="large"
+  >
+    <Box
+      as="div"
+      className=""
+    >
+      Lorem ipsum 1
+    </Box>
+  </Stack>
+</div>
+`;
