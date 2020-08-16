@@ -1,6 +1,5 @@
 .root {
   position: relative;
-  padding: var(--space-small);
   display: flex;
   align-items: flex-start;
 }
