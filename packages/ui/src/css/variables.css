@@ -45,6 +45,7 @@
   --color-gray-dark: var(--color-gray-700);
   --color-gray-ultra-dark: var(--color-gray-900);
 
+  --color-red-25: #fdf5f6;
   --color-red-50 : #fbebec;
   --color-red-100 : #f4ced0;
   --color-red-200 : #edadb1;
@@ -61,6 +62,7 @@
   --color-red-dark: var(--color-red-700);
   --color-red-ultra-dark: var(--color-red-900);
 
+  --color-blue-25 : #f3f8fd;
   --color-blue-50 : #e7f0fa;
   --color-blue-100 : #c3daf2;
   --color-blue-200 : #9bc2e9;
@@ -77,6 +79,7 @@
   --color-blue-dark: var(--color-blue-700);
   --color-blue-ultra-dark: var(--color-blue-900);
 
+  --color-green-25 : #f6fbf6;
   --color-green-50 : #edf7ed;
   --color-green-100 : #d3ead1;
   --color-green-200 : #b5dcb3;
@@ -112,17 +115,22 @@
   --color-yellow-dark: var(--color-yellow-900);
 
   --color-dark: #111;
-  --color-light: #FFF;
+  --color-light: #fff;
 
   /* Functional color variables */
   --color-branding-light: #265b93;
   --color-branding: #1a477f;
   --color-branding-dark: #10356d;
 
-  --color-success: var(--color-green-500);
-  --color-info: var(--color-blue-500);
-  --color-warning: var(--color-yellow-500);
-  --color-danger: var(--color-red-500);
+  --color-text-light: var(--color-gray-light);
+  --color-text: var(--color-gray);
+  --color-text-dark: var(--color-gray-dark);
+  --color-heading: var(--color-gray-ultra-dark);
+
+  --color-success: var(--color-green);
+  --color-info: var(--color-blue);
+  --color-warning: var(--color-yellow);
+  --color-danger: var(--color-red);
 
   --color-primary-light: var(--color-blue-light);
   --color-primary: var(--color-blue);
@@ -139,15 +147,11 @@
   --color-highlight-warning: var(--color-yellow-25);
   --color-highlight-danger: var(--color-red-25);
 
-  --color-text-light: var(--color-gray-light);
-  --color-text: var(--color-gray);
-  --color-text-dark: var(--color-gray-dark);
-  --color-heading: var(--color-gray-ultra-dark);
-
   --color-outline: var(--color-gray-50);
-  --color-outline-success: var(--color-green-50);
-  --color-outline-blue: var(--color-blue-50);
-  --color-outline-warning: var(--color-yellow-ultra-light);
-  --color-outline-danger: var(--color-red-50);
+  --color-outline-success: var(--color-green-100);
+  --color-outline-info: var(--color-blue-100);
+  --color-outline-warning: var(--color-yellow-100);
+  --color-outline-danger: var(--color-red-100);
+
   --color-shadow: rgba(0, 0, 0, 0.2);
 }
