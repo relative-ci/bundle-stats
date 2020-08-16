@@ -1,4 +1,6 @@
 .root {
+  padding-top: var(--space-small);
+  padding-bottom: var(--space-small);
   border-bottom: 1px solid var(--color-outline);
   background: var(--color-highlight);
 }
