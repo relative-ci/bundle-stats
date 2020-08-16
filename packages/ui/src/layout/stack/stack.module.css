@@ -1,3 +1,15 @@
+.space--xxxsmall > .item + .item {
+  margin-top: var(--space-xxxsmall);
+}
+
+.space--xxsmall > .item + .item {
+  margin-top: var(--space-xxsmall);
+}
+
+.space--xsmall > .item + .item {
+  margin-top: var(--space-xsmall);
+}
+
 .space--small > .item + .item {
   margin-top: var(--space-small);
 }
@@ -8,4 +20,16 @@
 
 .space--large > .item + .item {
   margin-top: var(--space-large);
+}
+
+.space--xlarge > .item + .item {
+  margin-top: var(--space-xlarge);
+}
+
+.space--xxlarge > .item + .item {
+  margin-top: var(--space-xxlarge);
+}
+
+.space--xxxlarge > .item + .item {
+  margin-top: var(--space-xxxlarge);
 }
