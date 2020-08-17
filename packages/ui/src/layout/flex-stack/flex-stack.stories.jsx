@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
-import { Box } from '../../ui';
+import { Box } from '../box';
 import { FlexStack } from '.';
 
 const stories = storiesOf('Layout/FlexStack', module);

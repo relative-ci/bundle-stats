@@ -4,19 +4,10 @@ import cx from 'classnames';
 
 import css from './box.module.css';
 
-export const Box = ({
-  className,
-  as: Component,
-  ...props
-}) => {
+export const Box = ({ className, as: Component, ...props }) => {
   const rootClassName = cx(css.root, className);
 
-  return (
-    <Component
-      className={rootClassName}
-      {...props}
-    />
-  );
+  return <Component className={rootClassName} {...props} />;
 };
 
 Box.defaultProps = {
