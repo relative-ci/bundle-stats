@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { isEmpty } from 'lodash';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
-import { Box } from '../../ui/box';
+import { Box } from '../../layout/box';
 import { BundleChunkModules } from '../bundle-chunk-modules';
 
 import css from './bundle-modules.module.css';
@@ -26,7 +26,7 @@ export const BundleModules = ({ jobs }) => {
         ))}
 
       {isEmpty(modulesReport) && (
-        <Box className={css.empty}>
+        <Box className={css.empty} outline>
           <h2 className={css.emptyTitle}>No data available!</h2>
           <p className={css.emptyText}>Please make sure Webpack stats are configured correctly.</p>
           <a

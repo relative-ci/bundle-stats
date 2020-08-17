@@ -13,11 +13,31 @@ exports[`Storyshots Layout/Box default 1`] = `
   <Box
     as="div"
     className=""
+    outline={false}
     padding="no-space"
   >
-    <p>
-      Lorem ipsum
-    </p>
+    Lorem ipsum
+  </Box>
+</div>
+`;
+
+exports[`Storyshots Layout/Box with outline 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Box
+    as="div"
+    className=""
+    outline={true}
+    padding="large"
+  >
+    Lorem ipsum
   </Box>
 </div>
 `;
@@ -35,11 +55,10 @@ exports[`Storyshots Layout/Box with padding 1`] = `
   <Box
     as="div"
     className=""
+    outline={false}
     padding="medium"
   >
-    <p>
-      Lorem ipsum
-    </p>
+    Lorem ipsum
   </Box>
 </div>
 `;
@@ -57,6 +76,7 @@ exports[`Storyshots Layout/Box with table 1`] = `
   <Box
     as="div"
     className=""
+    outline={false}
     padding="no-space"
   >
     <Table

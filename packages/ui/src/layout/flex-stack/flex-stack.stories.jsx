@@ -10,8 +10,8 @@ stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => (
   <FlexStack>
-    <Box>Lorem ipsum 1</Box>
-    <Box>Lorem ipsum 2</Box>
+    <Box outline>Lorem ipsum 1</Box>
+    <Box outline>Lorem ipsum 2</Box>
     {null}
     Lorem ipsum 3
   </FlexStack>
@@ -19,32 +19,32 @@ stories.add('default', () => (
 
 stories.add('with custom wrapper', () => (
   <FlexStack as="main" className="wrapper">
-    <Box>Lorem ipsum 1</Box>
-    <Box>Lorem ipsum 2</Box>
+    <Box outline>Lorem ipsum 1</Box>
+    <Box outline>Lorem ipsum 2</Box>
   </FlexStack>
 ));
 
 stories.add('with large space', () => (
   <FlexStack space="large">
-    <Box>Lorem ipsum 1</Box>
-    <Box>Lorem ipsum 2</Box>
-    <Box>Lorem ipsum 3</Box>
+    <Box outline>Lorem ipsum 1</Box>
+    <Box outline>Lorem ipsum 2</Box>
+    <Box outline>Lorem ipsum 3</Box>
   </FlexStack>
 ));
 
 stories.add('with nested stack', () => (
   <FlexStack space="large">
-    <Box>Lorem ipsum 1</Box>
-    <Box>Lorem ipsum 2</Box>
+    <Box outline>Lorem ipsum 1</Box>
+    <Box outline>Lorem ipsum 2</Box>
     <FlexStack space="small">
-      <Box>Lorem ipsum 3.1</Box>
-      <Box>Lorem ipsum 3.2</Box>
+      <Box outline>Lorem ipsum 3.1</Box>
+      <Box outline>Lorem ipsum 3.2</Box>
     </FlexStack>
   </FlexStack>
 ));
 
 stories.add('single item', () => (
   <FlexStack>
-    <Box>Lorem ipsum</Box>
+    <Box outline>Lorem ipsum</Box>
   </FlexStack>
 ));

@@ -18,6 +18,7 @@ exports[`Storyshots Layout/FlexStack default 1`] = `
     <Box
       as="div"
       className=""
+      outline={true}
       padding="no-space"
     >
       Lorem ipsum 1
@@ -25,6 +26,7 @@ exports[`Storyshots Layout/FlexStack default 1`] = `
     <Box
       as="div"
       className=""
+      outline={true}
       padding="no-space"
     >
       Lorem ipsum 2
@@ -52,6 +54,7 @@ exports[`Storyshots Layout/FlexStack single item 1`] = `
     <Box
       as="div"
       className=""
+      outline={true}
       padding="no-space"
     >
       Lorem ipsum
@@ -78,6 +81,7 @@ exports[`Storyshots Layout/FlexStack with custom wrapper 1`] = `
     <Box
       as="div"
       className=""
+      outline={true}
       padding="no-space"
     >
       Lorem ipsum 1
@@ -85,6 +89,7 @@ exports[`Storyshots Layout/FlexStack with custom wrapper 1`] = `
     <Box
       as="div"
       className=""
+      outline={true}
       padding="no-space"
     >
       Lorem ipsum 2
@@ -111,6 +116,7 @@ exports[`Storyshots Layout/FlexStack with large space 1`] = `
     <Box
       as="div"
       className=""
+      outline={true}
       padding="no-space"
     >
       Lorem ipsum 1
@@ -118,6 +124,7 @@ exports[`Storyshots Layout/FlexStack with large space 1`] = `
     <Box
       as="div"
       className=""
+      outline={true}
       padding="no-space"
     >
       Lorem ipsum 2
@@ -125,6 +132,7 @@ exports[`Storyshots Layout/FlexStack with large space 1`] = `
     <Box
       as="div"
       className=""
+      outline={true}
       padding="no-space"
     >
       Lorem ipsum 3
@@ -151,6 +159,7 @@ exports[`Storyshots Layout/FlexStack with nested stack 1`] = `
     <Box
       as="div"
       className=""
+      outline={true}
       padding="no-space"
     >
       Lorem ipsum 1
@@ -158,6 +167,7 @@ exports[`Storyshots Layout/FlexStack with nested stack 1`] = `
     <Box
       as="div"
       className=""
+      outline={true}
       padding="no-space"
     >
       Lorem ipsum 2
@@ -170,6 +180,7 @@ exports[`Storyshots Layout/FlexStack with nested stack 1`] = `
       <Box
         as="div"
         className=""
+        outline={true}
         padding="no-space"
       >
         Lorem ipsum 3.1
@@ -177,6 +188,7 @@ exports[`Storyshots Layout/FlexStack with nested stack 1`] = `
       <Box
         as="div"
         className=""
+        outline={true}
         padding="no-space"
       >
         Lorem ipsum 3.2

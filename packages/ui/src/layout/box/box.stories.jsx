@@ -8,15 +8,13 @@ import { Box } from '.';
 const stories = storiesOf('Layout/Box', module);
 stories.addDecorator(getWrapperDecorator());
 
-stories.add('default', () => (
-  <Box>
-    <p>Lorem ipsum</p>
-  </Box>
-));
+stories.add('default', () => <Box>Lorem ipsum</Box>);
 
-stories.add('with padding', () => (
-  <Box padding="medium">
-    <p>Lorem ipsum</p>
+stories.add('with padding', () => <Box padding="medium">Lorem ipsum</Box>);
+
+stories.add('with outline', () => (
+  <Box padding="large" outline>
+    Lorem ipsum
   </Box>
 ));
 

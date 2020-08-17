@@ -1,6 +1,9 @@
 .root {
-  border: 1px solid var(--color-outline);
   background: var(--color-background);
+}
+
+.outline {
+  border: 1px solid var(--color-outline);
 }
 
 .padding-xxxsmall {
