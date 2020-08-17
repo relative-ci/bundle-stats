@@ -1,20 +1,14 @@
 .root {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
 }
 
 .title {
-  margin: 0;
-  font-size: var(--size-xxxlarge);
-  line-height: var(--space-medium);
+  line-height: 1;
   font-weight: bold;
   vertical-align: top;
 }
 
 .tag {
   padding: var(--space-xxxsmall);
-  margin-top: 5px;
   margin-left: var(--space-xxxsmall);
   background-color: var(--color-highlight);
   color: var(--color-text-light);
@@ -25,43 +19,19 @@
   vertical-align: top;
 }
 
-.meta {
-  margin-top: var(--space-xxsmall);
-  font-size: var(--size-small);
-  line-height: var(--space-xsmall);
-  color: var(--color-text-light);
-}
-
-.description {
-  flex: 1 1 100%;
-}
-
-.commitMessage {
-  margin: 0;
-}
 
 .metaItem {
   display: inline-flex;
-  margin-right: var(--space-xxsmall);
   align-items: center;
 }
 
 .metaIcon {
   width: var(--space-small);
+  height: var(--space-small);
   margin-right: var(--space-xxxsmall);
+  color: var(--color-text-light);
 }
 
-.summaryItem {
-  flex: 0 0 auto;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-left:  var(--space-small);
-  text-align: right;
-}
-
-/** Loading state */
-.loading .jobTitle {
-  height: var(--size-large);
-  width: 3em;
-  background: var(--color-highlight);
+.metaLabel {
+  line-height: 1;
 }

@@ -1,3 +1,7 @@
+.item {
+  margin: 0;
+}
+
 .space--xxxsmall > .item + .item {
   margin-top: var(--space-xxxsmall);
 }

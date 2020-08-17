@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import { FlexStack } from '../../layout/flex-stack';
 import { JobHeader } from '../job-header';
 import css from './jobs-header.module.css';
 
@@ -10,7 +11,7 @@ export const JobsHeader = (props) => {
   const rootClassName = cx(css.root, className);
 
   return (
-    <div className={rootClassName}>
+    <FlexStack className={rootClassName} space="small">
       {jobs &&
         jobs.map((job, index) => (
           <JobHeader
@@ -20,7 +21,7 @@ export const JobsHeader = (props) => {
             tag={index === 0 ? 'current' : 'baseline'}
           />
         ))}
-    </div>
+    </FlexStack>
   );
 };
 

@@ -4,6 +4,10 @@
   justify-content: flex-start;
 }
 
+.item {
+  margin: 0;
+}
+
 .space--xxxsmall > .item + .item {
   margin-left: var(--space-xxxsmall);
 }

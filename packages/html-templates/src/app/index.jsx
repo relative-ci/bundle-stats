@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Box } from '@bundle-stats/ui/lib-esm/ui/box';
+import { Box } from '@bundle-stats/ui/lib-esm/layout/box';
 import { Container } from '@bundle-stats/ui/lib-esm/ui/container';
 import { JobsHeader } from '@bundle-stats/ui/lib-esm/components/jobs-header';
 import { DuplicatePackagesWarning } from '@bundle-stats/ui/lib-esm/components/duplicate-packages-warning';
@@ -74,7 +74,7 @@ const StandaloneApp = ({ jobs }) => {
             Totals
           </a>
         </h2>
-        <Box>
+        <Box outline>
           <BundleAssetsTotalsTable jobs={jobs} />
         </Box>
       </Container>
@@ -85,7 +85,7 @@ const StandaloneApp = ({ jobs }) => {
             Assets
           </a>
         </h2>
-        <Box>
+        <Box outline>
           <BundleAssets jobs={jobs} />
         </Box>
       </Container>
@@ -103,7 +103,7 @@ const StandaloneApp = ({ jobs }) => {
             Packages
           </a>
         </h2>
-        <Box>
+        <Box outline>
           <BundlePackages jobs={jobs} />
         </Box>
       </Container>

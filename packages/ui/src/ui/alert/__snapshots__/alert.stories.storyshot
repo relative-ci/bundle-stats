@@ -14,11 +14,18 @@ exports[`Storyshots UI/Alert default 1`] = `
     className=""
     kind="default"
   >
-    <div
+    <Box
+      as="div"
       className="root default"
+      outline={true}
+      padding="small"
     >
-      Lorem ipsum
-    </div>
+      <div
+        className="root root default padding-small outline"
+      >
+        Lorem ipsum
+      </div>
+    </Box>
   </Alert>
 </div>
 `;
@@ -37,11 +44,18 @@ exports[`Storyshots UI/Alert with kind danger 1`] = `
     className=""
     kind="danger"
   >
-    <div
+    <Box
+      as="div"
       className="root danger"
+      outline={true}
+      padding="small"
     >
-      Lorem ipsum
-    </div>
+      <div
+        className="root root danger padding-small outline"
+      >
+        Lorem ipsum
+      </div>
+    </Box>
   </Alert>
 </div>
 `;
@@ -60,11 +74,18 @@ exports[`Storyshots UI/Alert with kind info 1`] = `
     className=""
     kind="info"
   >
-    <div
+    <Box
+      as="div"
       className="root info"
+      outline={true}
+      padding="small"
     >
-      Lorem ipsum
-    </div>
+      <div
+        className="root root info padding-small outline"
+      >
+        Lorem ipsum
+      </div>
+    </Box>
   </Alert>
 </div>
 `;
@@ -83,11 +104,18 @@ exports[`Storyshots UI/Alert with kind success 1`] = `
     className=""
     kind="success"
   >
-    <div
+    <Box
+      as="div"
       className="root success"
+      outline={true}
+      padding="small"
     >
-      Lorem ipsum
-    </div>
+      <div
+        className="root root success padding-small outline"
+      >
+        Lorem ipsum
+      </div>
+    </Box>
   </Alert>
 </div>
 `;
@@ -106,11 +134,18 @@ exports[`Storyshots UI/Alert with kind warning 1`] = `
     className=""
     kind="warning"
   >
-    <div
+    <Box
+      as="div"
       className="root warning"
+      outline={true}
+      padding="small"
     >
-      Lorem ipsum
-    </div>
+      <div
+        className="root root warning padding-small outline"
+      >
+        Lorem ipsum
+      </div>
+    </Box>
   </Alert>
 </div>
 `;
