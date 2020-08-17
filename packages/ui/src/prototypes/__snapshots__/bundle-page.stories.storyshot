@@ -20,6 +20,7 @@ exports[`Storyshots Prototypes/BundlePage assets 1`] = `
       <Box
         as="div"
         className=""
+        padding="no-space"
       >
         <withProps(withProps(withProps(withProps(WithSearch))))
           jobs={
@@ -14194,7 +14195,7 @@ exports[`Storyshots Prototypes/BundlePage modules 1`] = `
       as="div"
       className=""
     >
-      <BundleModules
+      <Component
         jobs={
           Array [
             Object {
@@ -28369,6 +28370,7 @@ exports[`Storyshots Prototypes/BundlePage packages 1`] = `
       <Box
         as="div"
         className=""
+        padding="no-space"
       >
         <withProps(withProps(WithSearch))
           jobs={
@@ -56702,6 +56704,7 @@ exports[`Storyshots Prototypes/BundlePage totals 1`] = `
       <Box
         as="div"
         className=""
+        padding="no-space"
       >
         <BundleAssetsTotalsTable
           className=""

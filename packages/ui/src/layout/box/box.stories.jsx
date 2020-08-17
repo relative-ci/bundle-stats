@@ -5,11 +5,17 @@ import { getWrapperDecorator } from '../../stories';
 import { Table } from '../../ui';
 import { Box } from '.';
 
-const stories = storiesOf('UI/Box', module);
+const stories = storiesOf('Layout/Box', module);
 stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => (
   <Box>
+    <p>Lorem ipsum</p>
+  </Box>
+));
+
+stories.add('with padding', () => (
+  <Box padding="medium">
     <p>Lorem ipsum</p>
   </Box>
 ));

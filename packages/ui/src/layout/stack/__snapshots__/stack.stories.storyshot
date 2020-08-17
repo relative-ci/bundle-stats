@@ -18,12 +18,14 @@ exports[`Storyshots Layout/Stack default 1`] = `
     <Box
       as="div"
       className=""
+      padding="no-space"
     >
       Lorem ipsum 1
     </Box>
     <Box
       as="div"
       className=""
+      padding="no-space"
     >
       Lorem ipsum 2
     </Box>
@@ -50,6 +52,7 @@ exports[`Storyshots Layout/Stack single item 1`] = `
     <Box
       as="div"
       className=""
+      padding="no-space"
     >
       Lorem ipsum
     </Box>
@@ -75,12 +78,14 @@ exports[`Storyshots Layout/Stack with custom wrapper 1`] = `
     <Box
       as="div"
       className=""
+      padding="no-space"
     >
       Lorem ipsum 1
     </Box>
     <Box
       as="div"
       className=""
+      padding="no-space"
     >
       Lorem ipsum 2
     </Box>
@@ -106,18 +111,21 @@ exports[`Storyshots Layout/Stack with large space 1`] = `
     <Box
       as="div"
       className=""
+      padding="no-space"
     >
       Lorem ipsum 1
     </Box>
     <Box
       as="div"
       className=""
+      padding="no-space"
     >
       Lorem ipsum 2
     </Box>
     <Box
       as="div"
       className=""
+      padding="no-space"
     >
       Lorem ipsum 3
     </Box>
@@ -143,12 +151,14 @@ exports[`Storyshots Layout/Stack with nested stack 1`] = `
     <Box
       as="div"
       className=""
+      padding="no-space"
     >
       Lorem ipsum 1
     </Box>
     <Box
       as="div"
       className=""
+      padding="no-space"
     >
       Lorem ipsum 2
     </Box>
@@ -160,12 +170,14 @@ exports[`Storyshots Layout/Stack with nested stack 1`] = `
       <Box
         as="div"
         className=""
+        padding="no-space"
       >
         Lorem ipsum 3.1
       </Box>
       <Box
         as="div"
         className=""
+        padding="no-space"
       >
         Lorem ipsum 3.2
       </Box>

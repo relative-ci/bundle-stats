@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UI/Box default 1`] = `
+exports[`Storyshots Layout/Box default 1`] = `
 <div
   style={
     Object {
@@ -13,19 +13,16 @@ exports[`Storyshots UI/Box default 1`] = `
   <Box
     as="div"
     className=""
+    padding="no-space"
   >
-    <div
-      className="root"
-    >
-      <p>
-        Lorem ipsum
-      </p>
-    </div>
+    <p>
+      Lorem ipsum
+    </p>
   </Box>
 </div>
 `;
 
-exports[`Storyshots UI/Box with table 1`] = `
+exports[`Storyshots Layout/Box with padding 1`] = `
 <div
   style={
     Object {
@@ -38,213 +35,67 @@ exports[`Storyshots UI/Box with table 1`] = `
   <Box
     as="div"
     className=""
+    padding="medium"
   >
-    <div
-      className="root"
-    >
-      <Table
-        className=""
-        emptyMessage="No entries found."
-        headers={
-          Array [
-            "Col A",
-            "Col B",
-            "Col C",
-          ]
-        }
-        outline={false}
-        rows={
-          Array [
-            Object {
-              "cells": Array [
-                "a1",
-                "b1",
-                "c1",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "a2",
-                "b2",
-                "c2",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "a3",
-                "b3",
-                "c3",
-              ],
-            },
-          ]
-        }
-      >
-        <table
-          className="root"
-        >
-          <thead>
-            <Tr
-              className=""
-              key="header-row"
-            >
-              <tr
-                className=""
-              >
-                <Th
-                  className=""
-                  key="header-0"
-                >
-                  <th
-                    className="cell"
-                  >
-                    Col A
-                  </th>
-                </Th>
-                <Th
-                  className=""
-                  key="header-1"
-                >
-                  <th
-                    className="cell"
-                  >
-                    Col B
-                  </th>
-                </Th>
-                <Th
-                  className=""
-                  key="header-2"
-                >
-                  <th
-                    className="cell"
-                  >
-                    Col C
-                  </th>
-                </Th>
-              </tr>
-            </Tr>
-          </thead>
-          <tbody>
-            <Tr
-              className=""
-              key="row-0"
-            >
-              <tr
-                className=""
-              >
-                <Td
-                  className=""
-                  key="row-0-0"
-                >
-                  <td
-                    className="cell"
-                  >
-                    a1
-                  </td>
-                </Td>
-                <Td
-                  className=""
-                  key="row-0-1"
-                >
-                  <td
-                    className="cell"
-                  >
-                    b1
-                  </td>
-                </Td>
-                <Td
-                  className=""
-                  key="row-0-2"
-                >
-                  <td
-                    className="cell"
-                  >
-                    c1
-                  </td>
-                </Td>
-              </tr>
-            </Tr>
-            <Tr
-              className=""
-              key="row-1"
-            >
-              <tr
-                className=""
-              >
-                <Td
-                  className=""
-                  key="row-1-0"
-                >
-                  <td
-                    className="cell"
-                  >
-                    a2
-                  </td>
-                </Td>
-                <Td
-                  className=""
-                  key="row-1-1"
-                >
-                  <td
-                    className="cell"
-                  >
-                    b2
-                  </td>
-                </Td>
-                <Td
-                  className=""
-                  key="row-1-2"
-                >
-                  <td
-                    className="cell"
-                  >
-                    c2
-                  </td>
-                </Td>
-              </tr>
-            </Tr>
-            <Tr
-              className=""
-              key="row-2"
-            >
-              <tr
-                className=""
-              >
-                <Td
-                  className=""
-                  key="row-2-0"
-                >
-                  <td
-                    className="cell"
-                  >
-                    a3
-                  </td>
-                </Td>
-                <Td
-                  className=""
-                  key="row-2-1"
-                >
-                  <td
-                    className="cell"
-                  >
-                    b3
-                  </td>
-                </Td>
-                <Td
-                  className=""
-                  key="row-2-2"
-                >
-                  <td
-                    className="cell"
-                  >
-                    c3
-                  </td>
-                </Td>
-              </tr>
-            </Tr>
-          </tbody>
-        </table>
-      </Table>
-    </div>
+    <p>
+      Lorem ipsum
+    </p>
+  </Box>
+</div>
+`;
+
+exports[`Storyshots Layout/Box with table 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Box
+    as="div"
+    className=""
+    padding="no-space"
+  >
+    <Table
+      className=""
+      emptyMessage="No entries found."
+      headers={
+        Array [
+          "Col A",
+          "Col B",
+          "Col C",
+        ]
+      }
+      outline={false}
+      rows={
+        Array [
+          Object {
+            "cells": Array [
+              "a1",
+              "b1",
+              "c1",
+            ],
+          },
+          Object {
+            "cells": Array [
+              "a2",
+              "b2",
+              "c2",
+            ],
+          },
+          Object {
+            "cells": Array [
+              "a3",
+              "b3",
+              "c3",
+            ],
+          },
+        ]
+      }
+    />
   </Box>
 </div>
 `;
