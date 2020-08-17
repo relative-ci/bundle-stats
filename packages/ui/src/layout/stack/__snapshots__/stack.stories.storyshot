@@ -27,6 +27,7 @@ exports[`Storyshots Layout/Stack default 1`] = `
     >
       Lorem ipsum 2
     </Box>
+    Lorem ipsum 3
   </Stack>
 </div>
 `;
@@ -169,31 +170,6 @@ exports[`Storyshots Layout/Stack with nested stack 1`] = `
         Lorem ipsum 3.2
       </Box>
     </Stack>
-  </Stack>
-</div>
-`;
-
-exports[`Storyshots Layout/Stack with null child 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
-  }
->
-  <Stack
-    as="div"
-    className=""
-    space="large"
-  >
-    <Box
-      as="div"
-      className=""
-    >
-      Lorem ipsum 1
-    </Box>
   </Stack>
 </div>
 `;

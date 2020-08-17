@@ -173,28 +173,3 @@ exports[`Storyshots Layout/FlexStack with nested stack 1`] = `
   </FlexStack>
 </div>
 `;
-
-exports[`Storyshots Layout/FlexStack with null child 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
-  }
->
-  <FlexStack
-    as="div"
-    className=""
-    space="large"
-  >
-    <Box
-      as="div"
-      className=""
-    >
-      Lorem ipsum 1
-    </Box>
-  </FlexStack>
-</div>
-`;

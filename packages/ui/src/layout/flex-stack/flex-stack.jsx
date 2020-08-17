@@ -3,22 +3,8 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import { NO_SPACE, SPACES } from '../../constants';
+import { getRenderChildWithClassName } from '../../utils';
 import css from './flex-stack.module.css';
-
-const renderNestedChild = (child) => {
-  if (child === null) {
-    return null;
-  }
-
-  if (!child?.props) {
-    return <div className={css.item}>{child}</div>;
-  }
-
-  return React.cloneElement(child, {
-    ...child.props,
-    className: cx(css.item, child.props.className),
-  });
-};
 
 export const FlexStack = (props) => {
   const { as: Component, className, space, children, ...restProps } = props;
@@ -26,7 +12,7 @@ export const FlexStack = (props) => {
 
   return (
     <Component {...restProps} className={rootClassName}>
-      {React.Children.map(children, renderNestedChild)}
+      {React.Children.map(children, getRenderChildWithClassName(css.item))}
     </Component>
   );
 };

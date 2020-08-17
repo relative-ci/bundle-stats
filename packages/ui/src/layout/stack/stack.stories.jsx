@@ -12,6 +12,8 @@ stories.add('default', () => (
   <Stack>
     <Box>Lorem ipsum 1</Box>
     <Box>Lorem ipsum 2</Box>
+    {null}
+    Lorem ipsum 3
   </Stack>
 ));
 
@@ -38,13 +40,6 @@ stories.add('with nested stack', () => (
       <Box>Lorem ipsum 3.1</Box>
       <Box>Lorem ipsum 3.2</Box>
     </Stack>
-  </Stack>
-));
-
-stories.add('with null child', () => (
-  <Stack space="large">
-    {null}
-    <Box>Lorem ipsum 1</Box>
   </Stack>
 ));
 

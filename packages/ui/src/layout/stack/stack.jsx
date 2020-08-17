@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import { NO_SPACE, SPACES } from '../../constants';
+import { getRenderChildWithClassName } from '../../utils';
 import css from './stack.module.css';
 
 export const Stack = (props) => {
@@ -11,10 +12,7 @@ export const Stack = (props) => {
 
   return (
     <Component className={rootClassName}>
-      {React.Children.map(
-        children,
-        (child) => child !== null && <div className={css.item}>{child}</div>,
-      )}
+      {React.Children.map(children, getRenderChildWithClassName(css.item))}
     </Component>
   );
 };
