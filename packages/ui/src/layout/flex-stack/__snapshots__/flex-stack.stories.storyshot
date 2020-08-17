@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Layout/FlexStack default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <FlexStack
+    as="div"
+    className=""
+    space="no-space"
+  >
+    <Box
+      as="div"
+      className=""
+    >
+      Lorem ipsum 1
+    </Box>
+    <Box
+      as="div"
+      className=""
+    >
+      Lorem ipsum 2
+    </Box>
+    Lorem ipsum 3
+  </FlexStack>
+</div>
+`;
+
+exports[`Storyshots Layout/FlexStack single item 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <FlexStack
+    as="div"
+    className=""
+    space="no-space"
+  >
+    <Box
+      as="div"
+      className=""
+    >
+      Lorem ipsum
+    </Box>
+  </FlexStack>
+</div>
+`;
+
+exports[`Storyshots Layout/FlexStack with custom wrapper 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <FlexStack
+    as="main"
+    className="wrapper"
+    space="no-space"
+  >
+    <Box
+      as="div"
+      className=""
+    >
+      Lorem ipsum 1
+    </Box>
+    <Box
+      as="div"
+      className=""
+    >
+      Lorem ipsum 2
+    </Box>
+  </FlexStack>
+</div>
+`;
+
+exports[`Storyshots Layout/FlexStack with large space 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <FlexStack
+    as="div"
+    className=""
+    space="large"
+  >
+    <Box
+      as="div"
+      className=""
+    >
+      Lorem ipsum 1
+    </Box>
+    <Box
+      as="div"
+      className=""
+    >
+      Lorem ipsum 2
+    </Box>
+    <Box
+      as="div"
+      className=""
+    >
+      Lorem ipsum 3
+    </Box>
+  </FlexStack>
+</div>
+`;
+
+exports[`Storyshots Layout/FlexStack with nested stack 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <FlexStack
+    as="div"
+    className=""
+    space="large"
+  >
+    <Box
+      as="div"
+      className=""
+    >
+      Lorem ipsum 1
+    </Box>
+    <Box
+      as="div"
+      className=""
+    >
+      Lorem ipsum 2
+    </Box>
+    <FlexStack
+      as="div"
+      className=""
+      space="small"
+    >
+      <Box
+        as="div"
+        className=""
+      >
+        Lorem ipsum 3.1
+      </Box>
+      <Box
+        as="div"
+        className=""
+      >
+        Lorem ipsum 3.2
+      </Box>
+    </FlexStack>
+  </FlexStack>
+</div>
+`;
+
+exports[`Storyshots Layout/FlexStack with null child 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <FlexStack
+    as="div"
+    className=""
+    space="large"
+  >
+    <Box
+      as="div"
+      className=""
+    >
+      Lorem ipsum 1
+    </Box>
+  </FlexStack>
+</div>
+`;

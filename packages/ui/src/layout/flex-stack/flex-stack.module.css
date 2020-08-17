@@ -1,0 +1,41 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.space--xxxsmall > .item + .item {
+  margin-left: var(--space-xxxsmall);
+}
+
+.space--xxsmall > .item + .item {
+  margin-left: var(--space-xxsmall);
+}
+
+.space--xsmall > .item + .item {
+  margin-left: var(--space-xsmall);
+}
+
+.space--small > .item + .item {
+  margin-left: var(--space-small);
+}
+
+.space--medium > .item + .item {
+  margin-left: var(--space-medium);
+}
+
+.space--large > .item + .item {
+  margin-left: var(--space-large);
+}
+
+.space--xlarge > .item + .item {
+  margin-left: var(--space-xlarge);
+}
+
+.space--xxlarge > .item + .item {
+  margin-left: var(--space-xxlarge);
+}
+
+.space--xxxlarge > .item + .item {
+  margin-left: var(--space-xxxlarge);
+}
