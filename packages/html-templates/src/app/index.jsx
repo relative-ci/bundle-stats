@@ -119,8 +119,9 @@ StandaloneApp.propTypes = {
   jobs: PropTypes.arrayOf(
     PropTypes.shape({
       internalBuildNumber: PropTypes.number,
-      insights: PropTypes.object,
-      summary: PropTypes.object,
+      insights: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+      summary: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+
     }),
   ),
 };
