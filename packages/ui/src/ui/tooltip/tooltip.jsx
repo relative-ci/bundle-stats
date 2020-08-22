@@ -18,11 +18,7 @@ export const Tooltip = (props) => {
   const rootClassName = cx(css.root, className, align && css[align]);
 
   return (
-    <Component
-      className={rootClassName}
-      {...ref ? { ref } : {}}
-      {...restProps}
-    >
+    <Component className={rootClassName} {...(ref ? { ref } : {})} {...restProps}>
       {children}
       {title && (
         <div className={css.tooltip}>
@@ -49,6 +45,6 @@ Tooltip.propTypes = {
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
   align: PropTypes.oneOf(['', 'topLeft']),
   containerRef: PropTypes.shape({
-    current: PropTypes.object,
+    current: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   }),
 };
