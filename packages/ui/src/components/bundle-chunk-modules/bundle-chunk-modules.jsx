@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { map } from 'lodash';
 
-import { Box } from '../../ui/box';
+import { Box } from '../../layout/box';
 import { EmptySet } from '../../ui/empty-set';
 import { FileName } from '../../ui/file-name';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
@@ -75,7 +75,7 @@ export const BundleChunkModules = ({
           {id && <span className={css.headerTitleId}>{`Chunk id: ${id}`}</span>}
         </h3>
       </header>
-      <Box>
+      <Box outline>
         <Toolbar
           className={css.toolbar}
           renderActions={({ actionClassName }) => (

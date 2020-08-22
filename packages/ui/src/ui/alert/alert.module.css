@@ -1,7 +1,6 @@
 .root {
-  border: 1px solid var(--color-outline);
-  padding: var(--space-small);
-  color: var(--color-text-dark)
+  color: var(--color-text);
+  border-color: var(--color-outline);
 }
 
 .success {

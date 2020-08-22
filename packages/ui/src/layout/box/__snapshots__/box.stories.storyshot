@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Layout/Box default 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Box
+    as="div"
+    className=""
+    outline={false}
+    padding="no-space"
+  >
+    Lorem ipsum
+  </Box>
+</div>
+`;
+
+exports[`Storyshots Layout/Box with outline 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Box
+    as="div"
+    className=""
+    outline={true}
+    padding="large"
+  >
+    Lorem ipsum
+  </Box>
+</div>
+`;
+
+exports[`Storyshots Layout/Box with padding 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Box
+    as="div"
+    className=""
+    outline={false}
+    padding="medium"
+  >
+    Lorem ipsum
+  </Box>
+</div>
+`;
+
+exports[`Storyshots Layout/Box with table 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Box
+    as="div"
+    className=""
+    outline={false}
+    padding="no-space"
+  >
+    <Table
+      className=""
+      emptyMessage="No entries found."
+      headers={
+        Array [
+          "Col A",
+          "Col B",
+          "Col C",
+        ]
+      }
+      outline={false}
+      rows={
+        Array [
+          Object {
+            "cells": Array [
+              "a1",
+              "b1",
+              "c1",
+            ],
+          },
+          Object {
+            "cells": Array [
+              "a2",
+              "b2",
+              "c2",
+            ],
+          },
+          Object {
+            "cells": Array [
+              "a3",
+              "b3",
+              "c3",
+            ],
+          },
+        ]
+      }
+    />
+  </Box>
+</div>
+`;

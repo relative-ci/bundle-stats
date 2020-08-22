@@ -6,8 +6,8 @@ import { get } from 'lodash';
 
 import baselineData from '../../__mocks__/webpack-stats.baseline.json';
 import currentData from '../../__mocks__/webpack-stats.current.json';
-import { Box, Container, Logo, Tabs } from '../ui';
-import { Header, Footer, Stack } from '../layout';
+import { Container, Logo, Tabs } from '../ui';
+import { Box, Header, Footer, Stack } from '../layout';
 import { JobsHeader } from '../components/jobs-header';
 import { BundleAssets } from '../components/bundle-assets';
 import { BundleAssetsTotalsTable } from '../components/bundle-assets-totals-table';
@@ -82,7 +82,7 @@ stories.add('totals', () => (
       <BundleAssetsTotalsChartBars jobs={JOBS} />
     </Container>
     <Container>
-      <Box>
+      <Box outline>
         <BundleAssetsTotalsTable jobs={JOBS} />
       </Box>
     </Container>
@@ -92,7 +92,7 @@ stories.add('totals', () => (
 stories.add('assets', () => (
   <Page activeTab="Assets">
     <Container>
-      <Box>
+      <Box outline>
         <BundleAssets jobs={JOBS} />
       </Box>
     </Container>
@@ -110,7 +110,7 @@ stories.add('modules', () => (
 stories.add('packages', () => (
   <Page activeTab="Packages">
     <Container>
-      <Box>
+      <Box outline>
         <BundlePackages jobs={JOBS} />
       </Box>
     </Container>

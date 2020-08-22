@@ -1,5 +1,4 @@
 .title {
-  margin: 0 0 var(--space-small);
   color: var(--color-text-light);
   font-weight: bold;
   font-size: var(--size-medium);
@@ -9,10 +8,6 @@
 
 .item {
   position: relative;
-}
-
-.item + .item {
-  margin-top: var(--space-medium);
 }
 
 .itemTitle {

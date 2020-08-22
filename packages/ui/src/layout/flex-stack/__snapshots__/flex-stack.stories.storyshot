@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Layout/Stack default 1`] = `
+exports[`Storyshots Layout/FlexStack default 1`] = `
 <div
   style={
     Object {
@@ -10,7 +10,7 @@ exports[`Storyshots Layout/Stack default 1`] = `
     }
   }
 >
-  <Stack
+  <FlexStack
     as="div"
     className=""
     space="no-space"
@@ -32,11 +32,11 @@ exports[`Storyshots Layout/Stack default 1`] = `
       Lorem ipsum 2
     </Box>
     Lorem ipsum 3
-  </Stack>
+  </FlexStack>
 </div>
 `;
 
-exports[`Storyshots Layout/Stack single item 1`] = `
+exports[`Storyshots Layout/FlexStack single item 1`] = `
 <div
   style={
     Object {
@@ -46,7 +46,7 @@ exports[`Storyshots Layout/Stack single item 1`] = `
     }
   }
 >
-  <Stack
+  <FlexStack
     as="div"
     className=""
     space="no-space"
@@ -59,11 +59,11 @@ exports[`Storyshots Layout/Stack single item 1`] = `
     >
       Lorem ipsum
     </Box>
-  </Stack>
+  </FlexStack>
 </div>
 `;
 
-exports[`Storyshots Layout/Stack with custom wrapper 1`] = `
+exports[`Storyshots Layout/FlexStack with custom wrapper 1`] = `
 <div
   style={
     Object {
@@ -73,7 +73,7 @@ exports[`Storyshots Layout/Stack with custom wrapper 1`] = `
     }
   }
 >
-  <Stack
+  <FlexStack
     as="main"
     className="wrapper"
     space="no-space"
@@ -94,11 +94,11 @@ exports[`Storyshots Layout/Stack with custom wrapper 1`] = `
     >
       Lorem ipsum 2
     </Box>
-  </Stack>
+  </FlexStack>
 </div>
 `;
 
-exports[`Storyshots Layout/Stack with large space 1`] = `
+exports[`Storyshots Layout/FlexStack with large space 1`] = `
 <div
   style={
     Object {
@@ -108,7 +108,7 @@ exports[`Storyshots Layout/Stack with large space 1`] = `
     }
   }
 >
-  <Stack
+  <FlexStack
     as="div"
     className=""
     space="large"
@@ -137,11 +137,11 @@ exports[`Storyshots Layout/Stack with large space 1`] = `
     >
       Lorem ipsum 3
     </Box>
-  </Stack>
+  </FlexStack>
 </div>
 `;
 
-exports[`Storyshots Layout/Stack with nested stack 1`] = `
+exports[`Storyshots Layout/FlexStack with nested stack 1`] = `
 <div
   style={
     Object {
@@ -151,7 +151,7 @@ exports[`Storyshots Layout/Stack with nested stack 1`] = `
     }
   }
 >
-  <Stack
+  <FlexStack
     as="div"
     className=""
     space="large"
@@ -172,7 +172,7 @@ exports[`Storyshots Layout/Stack with nested stack 1`] = `
     >
       Lorem ipsum 2
     </Box>
-    <Stack
+    <FlexStack
       as="div"
       className=""
       space="small"
@@ -193,7 +193,7 @@ exports[`Storyshots Layout/Stack with nested stack 1`] = `
       >
         Lorem ipsum 3.2
       </Box>
-    </Stack>
-  </Stack>
+    </FlexStack>
+  </FlexStack>
 </div>
 `;

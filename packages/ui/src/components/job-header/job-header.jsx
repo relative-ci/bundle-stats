@@ -5,6 +5,8 @@ import { get } from 'lodash';
 import { formatDistanceToNow } from 'date-fns';
 import { SOURCE_PATH_WEBPACK_STATS, formatDate, formatTime } from '@bundle-stats/utils';
 
+import { FlexStack } from '../../layout/flex-stack';
+import { Stack } from '../../layout/stack';
 import { Icon } from '../../ui/icon';
 import css from './job-header.module.css';
 
@@ -15,31 +17,31 @@ export const JobHeader = (props) => {
   const rootClassName = cx(css.root, className);
 
   return (
-    <div className={rootClassName}>
-      <div className={css.description}>
-        <h1 className={css.title}>
-          <span>{`#${job.internalBuildNumber}`}</span>
-          {tag && <span className={css.tag}>{tag}</span>}
-        </h1>
-        <div className={css.meta}>
-          {builtAt && (
-            <span className={css.metaItem} title={`${formatDate(builtAt)} ${formatTime(builtAt)}`}>
-              <Icon glyph="clock" className={css.metaIcon} />
-              <span>{formatDistanceToNow(new Date(builtAt), { addSuffix: true })}</span>
+    <Stack className={rootClassName} space="xsmall">
+      <h1 className={css.title}>
+        <span>{`#${job.internalBuildNumber}`}</span>
+        {tag && <span className={css.tag}>{tag}</span>}
+      </h1>
+      <FlexStack className={css.meta} space="xxsmall">
+        {builtAt && (
+          <span className={css.metaItem} title={`${formatDate(builtAt)} ${formatTime(builtAt)}`}>
+            <Icon glyph="clock" className={css.metaIcon} />
+            <span className={css.metaLabel}>
+              {formatDistanceToNow(new Date(builtAt), { addSuffix: true })}
             </span>
-          )}
+          </span>
+        )}
 
-          {hash && (
-            <span className={css.metaItem} title="Webpack bundle hash">
-              <Icon glyph="commit" className={css.metaIcon} />
-              <span>{hash}</span>
-            </span>
-          )}
+        {hash && (
+          <span className={css.metaItem} title="Webpack bundle hash">
+            <Icon glyph="commit" className={css.metaIcon} />
+            <span className={css.metaLabel}>{hash}</span>
+          </span>
+        )}
 
-          {children}
-        </div>
-      </div>
-    </div>
+        {children}
+      </FlexStack>
+    </Stack>
   );
 };
 

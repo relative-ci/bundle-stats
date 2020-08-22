@@ -18,20 +18,15 @@ exports[`Storyshots Layout/Stack default 1`] = `
     <Box
       as="div"
       className=""
-      outline={true}
-      padding="no-space"
     >
       Lorem ipsum 1
     </Box>
     <Box
       as="div"
       className=""
-      outline={true}
-      padding="no-space"
     >
       Lorem ipsum 2
     </Box>
-    Lorem ipsum 3
   </Stack>
 </div>
 `;
@@ -54,8 +49,6 @@ exports[`Storyshots Layout/Stack single item 1`] = `
     <Box
       as="div"
       className=""
-      outline={true}
-      padding="no-space"
     >
       Lorem ipsum
     </Box>
@@ -81,16 +74,12 @@ exports[`Storyshots Layout/Stack with custom wrapper 1`] = `
     <Box
       as="div"
       className=""
-      outline={true}
-      padding="no-space"
     >
       Lorem ipsum 1
     </Box>
     <Box
       as="div"
       className=""
-      outline={true}
-      padding="no-space"
     >
       Lorem ipsum 2
     </Box>
@@ -116,24 +105,18 @@ exports[`Storyshots Layout/Stack with large space 1`] = `
     <Box
       as="div"
       className=""
-      outline={true}
-      padding="no-space"
     >
       Lorem ipsum 1
     </Box>
     <Box
       as="div"
       className=""
-      outline={true}
-      padding="no-space"
     >
       Lorem ipsum 2
     </Box>
     <Box
       as="div"
       className=""
-      outline={true}
-      padding="no-space"
     >
       Lorem ipsum 3
     </Box>
@@ -159,16 +142,12 @@ exports[`Storyshots Layout/Stack with nested stack 1`] = `
     <Box
       as="div"
       className=""
-      outline={true}
-      padding="no-space"
     >
       Lorem ipsum 1
     </Box>
     <Box
       as="div"
       className=""
-      outline={true}
-      padding="no-space"
     >
       Lorem ipsum 2
     </Box>
@@ -180,20 +159,41 @@ exports[`Storyshots Layout/Stack with nested stack 1`] = `
       <Box
         as="div"
         className=""
-        outline={true}
-        padding="no-space"
       >
         Lorem ipsum 3.1
       </Box>
       <Box
         as="div"
         className=""
-        outline={true}
-        padding="no-space"
       >
         Lorem ipsum 3.2
       </Box>
     </Stack>
+  </Stack>
+</div>
+`;
+
+exports[`Storyshots Layout/Stack with null child 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Stack
+    as="div"
+    className=""
+    space="large"
+  >
+    <Box
+      as="div"
+      className=""
+    >
+      Lorem ipsum 1
+    </Box>
   </Stack>
 </div>
 `;

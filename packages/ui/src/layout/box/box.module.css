@@ -1,0 +1,43 @@
+.root {
+  background: var(--color-background);
+}
+
+.outline {
+  border: 1px solid var(--color-outline);
+}
+
+.padding-xxxsmall {
+  padding: var(--space-xxxsmall);
+}
+
+.padding-xxsmall {
+  padding: var(--space-xxsmall);
+}
+
+.padding-xxsmall {
+  padding: var(--space-xsmall);
+}
+
+.padding-small {
+  padding: var(--space-small);
+}
+
+.padding-medium {
+  padding: var(--space-medium);
+}
+
+.padding-large {
+  padding: var(--space-large);
+}
+
+.padding-xlarge {
+  padding: var(--space-xlarge);
+}
+
+.padding-xxlarge {
+  padding: var(--space-xxlarge);
+}
+
+.padding-xxxlarge {
+  padding: var(--space-xxxlarge);
+}

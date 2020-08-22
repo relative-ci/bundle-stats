@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import {
-  get, map, max, sum,
-} from 'lodash';
+import { get, map, max, sum } from 'lodash';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import { HorizontalBarChart } from '../../ui';
 import { getColors } from '../../utils';
+import { Stack } from '../../layout/stack';
 import { SummaryItem } from '../summary-item';
 import css from './bundle-assets-totals-chart-bars.module.css';
 
@@ -19,10 +18,7 @@ export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
 
   items.forEach(({ runs }) => {
     runs.forEach((run, runIndex) => {
-      dataGraphs[runIndex] = [
-        ...dataGraphs[runIndex] || [],
-        get(run, 'value', 0),
-      ];
+      dataGraphs[runIndex] = [...(dataGraphs[runIndex] || []), get(run, 'value', 0)];
     });
   });
 
@@ -46,12 +42,10 @@ export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
   );
 
   return (
-    <div className={rootClassName}>
-      <h3 className={css.title}>
-        Total size by type
-      </h3>
+    <Stack className={rootClassName} space="small">
+      <h3 className={css.title}>Total size by type</h3>
 
-      <div className={css.items}>
+      <Stack className={css.items} space="medium">
         {dataGraphs.map((data, runIndex) => {
           const { internalBuildNumber } = jobs[runIndex];
 
@@ -63,13 +57,8 @@ export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
           }));
 
           return (
-            <div
-              key={internalBuildNumber || runIndex}
-              className={css.item}
-            >
-              <h3 className={css.itemTitle}>
-                {`Job #${internalBuildNumber}`}
-              </h3>
+            <div key={internalBuildNumber || runIndex} className={css.item}>
+              <h3 className={css.itemTitle}>{`Job #${internalBuildNumber}`}</h3>
               <HorizontalBarChart
                 className={css.itemChart}
                 data={{ labels, values }}
@@ -78,8 +67,8 @@ export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
             </div>
           );
         })}
-      </div>
-    </div>
+      </Stack>
+    </Stack>
   );
 };
 
@@ -89,7 +78,9 @@ BundleAssetsTotalsChartBars.defaultProps = {
 
 BundleAssetsTotalsChartBars.propTypes = {
   className: PropTypes.string,
-  jobs: PropTypes.arrayOf(PropTypes.shape({
-    internalBuildNumber: PropTypes.number,
-  })).isRequired,
+  jobs: PropTypes.arrayOf(
+    PropTypes.shape({
+      internalBuildNumber: PropTypes.number,
+    }),
+  ).isRequired,
 };

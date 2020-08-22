@@ -4,27 +4,27 @@ import cx from 'classnames';
 
 import { NO_SPACE, SPACES } from '../../constants';
 import { getRenderChildWithClassName } from '../../utils';
-import css from './stack.module.css';
+import css from './flex-stack.module.css';
 
-export const Stack = (props) => {
-  const { as: Component, className, space, children } = props;
+export const FlexStack = (props) => {
+  const { as: Component, className, space, children, ...restProps } = props;
   const rootClassName = cx(className, css.root, css[`space--${space}`]);
 
   return (
-    <Component className={rootClassName}>
+    <Component {...restProps} className={rootClassName}>
       {React.Children.map(children, getRenderChildWithClassName(css.item))}
     </Component>
   );
 };
 
-Stack.defaultProps = {
+FlexStack.defaultProps = {
   as: 'div',
   className: '',
   children: null,
   space: NO_SPACE,
 };
 
-Stack.propTypes = {
+FlexStack.propTypes = {
   as: PropTypes.elementType,
   className: PropTypes.string,
   children: PropTypes.node,
