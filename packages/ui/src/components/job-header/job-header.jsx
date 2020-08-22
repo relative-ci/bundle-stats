@@ -53,7 +53,7 @@ JobHeader.propTypes = {
     meta: PropTypes.shape({
       builtAt: PropTypes.string,
     }),
-    summary: PropTypes.object,
+    summary: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   }),
   children: PropTypes.element,
 };
