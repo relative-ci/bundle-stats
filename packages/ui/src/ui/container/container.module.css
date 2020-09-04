@@ -1,5 +1,5 @@
 .inner {
-  width: 100%;
+  width: calc(100% - var(--space--small) - var(--space-small));
   max-width: var(--max-width);
   margin: 0 auto;
 }
