@@ -27,7 +27,7 @@ export const Footer = ({ className, children, Link, source }) => (
       <div className={css.navigation}>
         <div className={css.navGroup}>
           <h3 className={css.navGroupTitle}>
-            <Link to="/documentation" className={css.navGroupTitleLink}>
+            <Link to="/documentation" className={css.navGroupTitleLink} source={source}>
               Documentation
             </Link>
           </h3>
