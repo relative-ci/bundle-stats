@@ -34,7 +34,6 @@
 
 .rightSide {
   flex: 0 0 auto;
-  margin-left: var(--space-xsmall);
 }
 
 /** Small size modifier */
@@ -49,4 +48,23 @@
 
 .small .rightSize {
   margin-left: var(--space-xxsmall);
+}
+
+/** Breakpoint changes */
+.inner {
+  flex-wrap: wrap;
+}
+
+.rightSide {
+  margin: var(--space-xsmall) 0 0;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    flex-wrap: nowrap;
+  }
+
+  .rightSide {
+    margin: 0 0 0 var(--space-xsmall);
+  }
 }
