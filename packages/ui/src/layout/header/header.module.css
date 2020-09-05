@@ -28,7 +28,7 @@
   justify-content: flex-end;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .root {
     flex-wrap: nowrap;
   }
