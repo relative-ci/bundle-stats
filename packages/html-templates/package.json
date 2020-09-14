@@ -73,6 +73,6 @@
     "webpack": "4.44.1",
     "webpack-cli": "3.3.12",
     "webpack-merge": "5.1.4",
-    "whatwg-fetch": "3.4.0"
+    "whatwg-fetch": "3.4.1"
   }
 }
