@@ -2,7 +2,7 @@ import { get } from 'lodash';
 
 import { getAssetName } from '../utils';
 
-const IGNORE_PATTERN = /\.map$/;
+const IGNORE_PATTERN = /\.(map|LICENSE\.txt)$/;
 
 export const extractAssets = (webpackStats) => {
   const webpackAssets = get(webpackStats, 'assets', []);
