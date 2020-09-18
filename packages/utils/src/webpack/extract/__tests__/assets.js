@@ -25,32 +25,30 @@ describe('Webpack/extact/assets', () => {
           name: 'img/logo.1211a1.png',
           size: 10,
         },
+        {
+          name: 'js/main.bc2211.LICENSE.txt',
+          size: 10,
+        },
       ],
       chunks: [
         {
           entry: true,
           id: 1,
           initial: true,
-          files: [
-            'js/main.bc2211.js',
-          ],
+          files: ['js/main.bc2211.js'],
           names: ['main'],
         },
         {
           entry: false,
           id: 2,
           initial: false,
-          files: [
-            'css/app.22929a.css',
-          ],
+          files: ['css/app.22929a.css'],
           names: ['app'],
         },
       ],
       entrypoints: {
         main: {
-          assets: [
-            'js/main.bc2211.js',
-          ],
+          assets: ['js/main.bc2211.js'],
         },
       },
     });
