@@ -3,12 +3,14 @@ const CssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (settings) => {
   const { isDevelopment, rootDir } = settings;
+
   const include = [
     /src/,
     /bundle-stats\/ui/,
     path.join(__dirname, '../../packages/ui'), // required for linked packages
     /storybook/,
   ];
+
   const cssExtractRule = {
     loader: CssExtractPlugin.loader,
     options: {
@@ -16,11 +18,12 @@ module.exports = (settings) => {
       reloadAll: true,
     },
   };
+
   const postCssRule = {
     loader: 'postcss-loader',
     options: {
-      config: {
-        path: rootDir,
+      postcssOptions: {
+        config: path.join(rootDir, 'postcss.config.js'),
       },
     },
   };
@@ -52,9 +55,9 @@ module.exports = (settings) => {
             cssExtractRule,
             {
               loader: 'css-loader',
-              options: { modules: false }
+              options: { modules: false },
             },
-            postCssRule
+            postCssRule,
           ],
         },
       ],
