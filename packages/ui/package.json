@@ -56,7 +56,7 @@
     "css-loader": "4.3.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.5",
-    "enzyme-to-json": "3.6.0",
+    "enzyme-to-json": "3.6.1",
     "hex-rgb": "4.2.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "26.4.2",
