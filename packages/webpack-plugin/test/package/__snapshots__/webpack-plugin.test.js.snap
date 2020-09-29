@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`webpack plugin package 1`] = `
+exports[`webpack plugin package webpack4 1`] = `
 Array [
   Object {
     "chunkNames": Array [],
@@ -23,6 +23,56 @@ Array [
     "isOverSizeLimit": undefined,
     "name": "main.js",
     "size": 956,
+  },
+]
+`;
+
+exports[`webpack plugin package webpack5 1`] = `
+Array [
+  Object {
+    "auxiliaryChunkIdHints": Array [],
+    "auxiliaryChunkNames": Array [],
+    "auxiliaryChunks": Array [],
+    "cached": false,
+    "chunkIdHints": Array [],
+    "chunkNames": Array [],
+    "chunks": Array [],
+    "comparedForEmit": false,
+    "emitted": true,
+    "filteredRelated": undefined,
+    "info": Object {
+      "size": 426380,
+    },
+    "isOverSizeLimit": true,
+    "name": "bundle-stats.html",
+    "related": Object {},
+    "size": 426380,
+    "type": "asset",
+  },
+  Object {
+    "auxiliaryChunkIdHints": Array [],
+    "auxiliaryChunkNames": Array [],
+    "auxiliaryChunks": Array [],
+    "cached": false,
+    "chunkIdHints": Array [],
+    "chunkNames": Array [
+      "main",
+    ],
+    "chunks": Array [
+      179,
+    ],
+    "comparedForEmit": false,
+    "emitted": true,
+    "filteredRelated": undefined,
+    "info": Object {
+      "minimized": true,
+      "size": 27,
+    },
+    "isOverSizeLimit": false,
+    "name": "main.js",
+    "related": Object {},
+    "size": 27,
+    "type": "asset",
   },
 ]
 `;

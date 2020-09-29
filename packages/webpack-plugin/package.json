@@ -57,9 +57,10 @@
     "jest": "26.4.2",
     "jest-date-mock": "^1.0.8",
     "memory-fs": "0.5.0",
-    "webpack": "4.44.2"
+    "webpack": "4.44.2",
+    "webpack5": "npm:webpack@^5.0.0-rc.1"
   },
-  "peerDependencies":{
-    "webpack": "^4.0.0"
+  "peerDependencies": {
+    "webpack": "^4.0.0 | ^5.0.0-rc.1"
   }
 }
