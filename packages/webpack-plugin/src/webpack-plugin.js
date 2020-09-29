@@ -1,6 +1,6 @@
 import path from 'path';
 import process from 'process';
-import { get, merge } from 'lodash';
+import { merge } from 'lodash';
 import { createJobs, createReport } from '@bundle-stats/utils';
 import { filter, validate } from '@bundle-stats/utils/lib-esm/webpack';
 import {
@@ -30,14 +30,17 @@ const DEFAULT_OPTIONS = {
   },
 };
 
-const getOnEmit = (options) => async (compilation, callback) => {
-  const { compare, baseline, html, json, outDir, stats: statsOptions } = options;
+const PLUGIN_NAME = 'BundleStats';
+
+const generateReports = async (compilation, options) => {
+  const { compare, baseline, html, json, outDir } = options;
 
   const logger = compilation.getInfrastructureLogger
-    ? compilation.getInfrastructureLogger('BundleStats')
+    ? compilation.getInfrastructureLogger(PLUGIN_NAME)
     : console;
+  const source = compilation.getStats().toJson(options.stats);
+  const outputPath = compilation?.options?.output?.path;
 
-  const source = compilation.getStats().toJson(statsOptions);
   const invalid = validate(source);
 
   if (invalid) {
@@ -50,8 +53,6 @@ const getOnEmit = (options) => async (compilation, callback) => {
   if (!data.builtAt) {
     data.builtAt = Date.now();
   }
-
-  const outputPath = get(compilation, 'options.output.path');
 
   const baselineFilepath = getBaselineStatsFilepath(outputPath);
   let baselineStats = null;
@@ -70,33 +71,39 @@ const getOnEmit = (options) => async (compilation, callback) => {
   const report = createReport(jobs);
   const artifacts = createArtifacts(jobs, report, { html, json });
 
+  const assets = [];
+
   Object.values(artifacts).forEach(({ filename, output }) => {
     const filepath = path.join(outDir, filename);
 
-    // eslint-disable-next-line no-param-reassign
-    compilation.assets[filepath] = {
+    assets.push({
+      filepath,
       size: () => 0,
       source: () => output,
-    };
+    });
   });
 
   if (baseline) {
-    // eslint-disable-next-line no-param-reassign
-    compilation.assets[baselineFilepath] = {
+    assets.push({
+      filepath: baselineFilepath,
       size: () => 0,
       source: () => JSON.stringify(data),
-    };
+    });
 
     logger.info(`Write baseline data to ${baselineFilepath}`);
   }
+
+  // Add reports to assets
+  assets.forEach(({ filepath, ...asset }) => {
+    // eslint-disable-next-line no-param-reassign
+    compilation.assets[filepath] = asset;
+  });
 
   const info = getReportInfo(report);
 
   if (info) {
     logger.info(info.text);
   }
-
-  callback();
 };
 
 export class BundleStatsWebpackPlugin {
@@ -110,12 +117,15 @@ export class BundleStatsWebpackPlugin {
       DEFAULT_OPTIONS,
       {
         stats: {
-          context: get(compiler, 'options.context'),
+          context: compiler.options?.context,
         },
       },
       this.options,
     );
 
-    compiler.hooks.emit.tapAsync('BundleStats', getOnEmit(options));
+    compiler.hooks.emit.tapAsync(PLUGIN_NAME, async (compilation, callback) => {
+      await generateReports(compilation, options);
+      callback();
+    });
   }
 }
