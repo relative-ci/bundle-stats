@@ -2,6 +2,7 @@
 .eslintrc.js
 __fixtures__
 jest.config.js
+jest.setup.js
 jsconfig.js
 src
 test
