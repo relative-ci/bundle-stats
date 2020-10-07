@@ -73,7 +73,7 @@
     "terser-webpack-plugin": "4.2.2",
     "webpack": "4.44.2",
     "webpack-cli": "3.3.12",
-    "webpack-merge": "5.1.4",
+    "webpack-merge": "5.2.0",
     "whatwg-fetch": "3.4.1"
   }
 }
