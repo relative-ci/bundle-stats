@@ -1,3 +1,4 @@
+import webpack from 'webpack';
 import path from 'path';
 import process from 'process';
 import { merge } from 'lodash';
@@ -32,7 +33,9 @@ const DEFAULT_OPTIONS = {
 
 const PLUGIN_NAME = 'BundleStats';
 
-const generateReports = async (compilation, options) => {
+const isWebpack5 = parseInt(webpack.version, 10) === 5;
+
+const generateReports = async (compilation, assets, options) => {
   const { compare, baseline, html, json, outDir } = options;
 
   const logger = compilation.getInfrastructureLogger
@@ -71,33 +74,25 @@ const generateReports = async (compilation, options) => {
   const report = createReport(jobs);
   const artifacts = createArtifacts(jobs, report, { html, json });
 
-  const assets = [];
-
   Object.values(artifacts).forEach(({ filename, output }) => {
     const filepath = path.join(outDir, filename);
 
-    assets.push({
-      filepath,
+    // eslint-disable-next-line no-param-reassign
+    assets[filepath] = {
       size: () => 0,
       source: () => output,
-    });
+    };
   });
 
   if (baseline) {
-    assets.push({
-      filepath: baselineFilepath,
+    // eslint-disable-next-line no-param-reassign
+    assets[baselineFilepath] = {
       size: () => 0,
       source: () => JSON.stringify(data),
-    });
+    };
 
     logger.info(`Write baseline data to ${baselineFilepath}`);
   }
-
-  // Add reports to assets
-  assets.forEach(({ filepath, ...asset }) => {
-    // eslint-disable-next-line no-param-reassign
-    compilation.assets[filepath] = asset;
-  });
 
   const info = getReportInfo(report);
 
@@ -123,9 +118,23 @@ export class BundleStatsWebpackPlugin {
       this.options,
     );
 
-    compiler.hooks.emit.tapAsync(PLUGIN_NAME, async (compilation, callback) => {
-      await generateReports(compilation, options);
-      callback();
-    });
+    if (isWebpack5) {
+      compiler.hooks.make.tap(PLUGIN_NAME, (compilation) => {
+        compilation.hooks.processAssets.tap(
+          { name: PLUGIN_NAME, stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT },
+          (assets) => generateReports(compilation, assets, options),
+        );
+      });
+
+      return;
+    }
+
+    compiler.hooks.emit.tapAsync(
+      PLUGIN_NAME,
+      async (compilation, callback) => {
+        await generateReports(compilation, compilation.assets, options);
+        callback();
+      }
+    );
   }
 }

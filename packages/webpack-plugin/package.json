@@ -13,8 +13,8 @@
   "scripts": {
     "build": "babel src -d lib",
     "lint": "../../node_modules/.bin/eslint . --ext .js",
-    "test": "jest --passWithNoTests src ",
-    "test-package": "jest test/package/*.test.js"
+    "test": "TZ=UTC jest src ",
+    "test-package": "TZ=UTC jest test/package/*.test.js"
   },
   "keywords": [
     "webpack",
@@ -53,11 +53,14 @@
     "@babel/cli": "7.11.6",
     "@babel/core": "7.11.6",
     "@babel/preset-env": "7.11.5",
+    "@types/jest": "^26.0.14",
     "jest": "26.4.2",
+    "jest-date-mock": "^1.0.8",
     "memory-fs": "0.5.0",
-    "webpack": "4.44.2"
+    "webpack": "4.44.2",
+    "webpack5": "npm:webpack@^5.0.0-rc.1"
   },
-  "peerDependencies":{
-    "webpack": "^4.0.0"
+  "peerDependencies": {
+    "webpack": "^4.0.0 | ^5.0.0-rc.1"
   }
 }
