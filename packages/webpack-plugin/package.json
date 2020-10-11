@@ -53,12 +53,12 @@
     "@babel/cli": "7.11.6",
     "@babel/core": "7.11.6",
     "@babel/preset-env": "7.11.5",
-    "@types/jest": "^26.0.14",
-    "jest": "26.4.2",
-    "jest-date-mock": "^1.0.8",
+    "@types/jest": "26.0.14",
+    "jest": "26.5.2",
+    "jest-date-mock": "1.0.8",
     "memory-fs": "0.5.0",
     "webpack": "4.44.2",
-    "webpack5": "npm:webpack@^5.0.0-rc.1"
+    "webpack5": "npm:webpack@5.0.0"
   },
   "peerDependencies": {
     "webpack": "^4.0.0 | ^5.0.0-rc.1"
