@@ -59,7 +59,7 @@
     "enzyme-to-json": "3.6.1",
     "hex-rgb": "4.2.0",
     "identity-obj-proxy": "3.0.0",
-    "jest": "26.5.2",
+    "jest": "26.5.3",
     "jest-date-mock": "1.0.8",
     "lodash": "4.17.20",
     "markdown-loader-jest": "0.1.1",
