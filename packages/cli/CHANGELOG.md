@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/relative-ci/bundle-stats/compare/v2.2.0...v2.3.0) (2020-10-12)
+
+
+### Bug Fixes
+
+* Regenerate package-lock.json ([0aa419e](https://github.com/relative-ci/bundle-stats/commit/0aa419e29b93f9ebebf1b8b79838d9e52044c9ef))
+* **deps:** update dependency fs-extra to v9 ([9be5705](https://github.com/relative-ci/bundle-stats/commit/9be5705d2ad1e9a7e4e4196265eebc932bda0811))
+* **deps:** update dependency fs-extra to v9.0.1 ([30691d1](https://github.com/relative-ci/bundle-stats/commit/30691d17102ba45ebc4ec92a09981c95163d708d))
+* **deps:** update dependency lodash to v4.17.19 ([437d715](https://github.com/relative-ci/bundle-stats/commit/437d715bcdce3da849bffc07de9b6aafc07f5d0e))
+* **deps:** update dependency yargs to v15.4.0 ([121a0e6](https://github.com/relative-ci/bundle-stats/commit/121a0e6315bad13fe1ad7d020182a51b7dcbc6aa))
+* **deps:** update dependency yargs to v15.4.1 ([405afb4](https://github.com/relative-ci/bundle-stats/commit/405afb4739d992a4eb5e34ee31443af5978d656b))
+* **deps:** update dependency yargs to v16 ([3439cd0](https://github.com/relative-ci/bundle-stats/commit/3439cd0f6807f031a16ac0548b38762486b9e5d8))
+
+
+
+
+
 # [2.2.0](https://github.com/relative-ci/bundle-stats/compare/v2.1.1...v2.2.0) (2020-04-13)
 
 **Note:** Version bump only for package bundle-stats
