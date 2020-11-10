@@ -41,12 +41,12 @@ Array [
     "emitted": true,
     "filteredRelated": undefined,
     "info": Object {
-      "size": 423496,
+      "size": 0,
     },
     "isOverSizeLimit": true,
     "name": "bundle-stats.html",
     "related": Object {},
-    "size": 423496,
+    "size": 0,
     "type": "asset",
   },
   Object {
