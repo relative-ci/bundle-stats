@@ -4,7 +4,24 @@ import { createGetMetricType } from '../utils/metrics';
 import { FILE_TYPE_OTHER, FILE_TYPE_PATTERNS } from '../config';
 import { metrics } from './metrics';
 
-const FILENAME_HASH_PATTERN = /[.|-][a-f0-9]{5,32}$/;
+// Md5 hash matcher
+const HASH_PATTERN = '[a-f|0-9]{5,32}';
+
+// Match has prefix
+const HASH_SEPARATOR_PATTERN = '[-|.]';
+
+// Match multiple extensions: .js, .js.gz, .min.js, .chunk.js
+const EXTENSION_PATTERN = /(?:\.[a-z|0-9]{2,}){1,}/;
+
+const PATTERNS = [
+  // Match path/name-HASH.ext, path/name.HASH.ext, path/name-HASH.chunk.ext
+  `(.*)${HASH_SEPARATOR_PATTERN}${HASH_PATTERN}(${EXTENSION_PATTERN.source})$`,
+
+  // Match static/HASH
+  `(static)/${HASH_PATTERN}(.*${EXTENSION_PATTERN.source})$`,
+].map((pattern) => new RegExp(pattern));
+
+const NO_BASENAME = /(^|.*\/)\..*$/;
 
 export const getFileType = (filename) => {
   const fileType = Object.entries(FILE_TYPE_PATTERNS).find(([, pattern]) => pattern.test(filename));
@@ -20,27 +37,22 @@ export const getAssetName = (assetFilepath) => {
     return '';
   }
 
-  const pathParts = assetFilepath.split('/');
-  const dirname = pathParts.slice(0, -1).join('/');
-  const filename = last(pathParts);
+  let result;
 
-  const filenameParts = filename.split('.');
+  for (let i = 0; i < PATTERNS.length && !result; i += 1) {
+    const pattern = PATTERNS[i];
+    const extracted = assetFilepath.replace(pattern, '$1$2');
 
-  const { basename, extension } =
-    filenameParts.slice(-2, -1).join('') === 'min'
-      ? {
-          basename: filenameParts.slice(0, -2).join('.'),
-          extension: filenameParts.slice(-2).join('.'),
-        }
-      : {
-          basename: filenameParts.slice(0, -1).join('.'),
-          extension: filenameParts.slice(-1).join('.'),
-        };
+    if (extracted && extracted !== assetFilepath && !NO_BASENAME.test(extracted)) {
+      result = extracted;
+    }
+  }
 
-  return `${dirname ? `${dirname}/` : ''}${basename.replace(
-    FILENAME_HASH_PATTERN,
-    '',
-  )}.${extension}`;
+  if (!result) {
+    return assetFilepath;
+  }
+
+  return result;
 };
 
 // css ./node_modules/css-loader/dist/cjs.js??ref--6-0!./src/assets/styles/default.styl

@@ -21,6 +21,13 @@ describe('Webpack/utils', () => {
 
     expect(getAssetName('login-chunk.d2490.js')).toBe('login-chunk.js');
     expect(getAssetName('login-abcde.d2490.js')).toBe('login-abcde.js');
+    expect(getAssetName('login-abcde-chunk.js')).toBe('login-abcde-chunk.js');
     expect(getAssetName('web-app/login-chunk.d2490.js')).toBe('web-app/login-chunk.js');
+
+    expect(getAssetName('static/d2490/pages/app.js')).toBe('static/pages/app.js');
+    expect(getAssetName('static/chunks/d249062c08abb6b31a03.js')).toBe(
+      'static/chunks/d249062c08abb6b31a03.js',
+    );
+    expect(getAssetName('static/css/main.d2490.chunk.css')).toBe('static/css/main.chunk.css');
   });
 });
