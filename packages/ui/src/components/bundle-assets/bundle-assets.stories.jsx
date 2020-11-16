@@ -8,10 +8,7 @@ import currentStats from '../../../__mocks__/webpack-stats.current.json';
 import { getWrapperDecorator } from '../../stories';
 import { BundleAssets } from '.';
 
-const JOBS = createJobs([
-  { webpack: currentStats },
-  { webpack: baselineStats },
-]);
+const JOBS = createJobs([{ webpack: currentStats }, { webpack: baselineStats }]);
 const [currentJob, baselineJob] = JOBS;
 
 const stories = storiesOf('Components/BundleAssets', module);
@@ -41,24 +38,18 @@ stories.add('empty filtered data', () => (
 stories.add('not predictive', () => (
   <BundleAssets
     jobs={[
-      set(
-        merge({}, currentJob),
-        'metrics.webpack.assets', {
-          'static/js/not-predictive.js': {
-            name: 'static/js/not-predictive.93191.js',
-            value: 2989,
-          },
+      set(merge({}, currentJob), 'metrics.webpack.assets', {
+        'static/js/not-predictive.js': {
+          name: 'static/js/not-predictive.93191a1.js',
+          value: 2989,
         },
-      ),
-      set(
-        merge({}, baselineJob),
-        'metrics.webpack.assets', {
-          'static/js/not-predictive.js': {
-            name: 'static/js/not-predictive.93191.js',
-            value: 2988,
-          },
+      }),
+      set(merge({}, baselineJob), 'metrics.webpack.assets', {
+        'static/js/not-predictive.js': {
+          name: 'static/js/not-predictive.93191a1.js',
+          value: 2988,
         },
-      ),
+      }),
     ]}
   />
 ));

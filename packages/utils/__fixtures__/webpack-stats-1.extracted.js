@@ -3,15 +3,15 @@ module.exports = {
   hash: 'abcd1234',
   assets: [
     {
-      name: 'main.a1b2c3.css',
+      name: 'main.a1b2c3d.css',
       size: 10000,
     },
     {
-      name: 'main.a2b3c4.js',
+      name: 'main.a2b3c4d.js',
       size: 50000,
     },
     {
-      name: 'logo.a3b4c5.png',
+      name: 'logo.a3b4c5d.png',
       size: 1000,
     },
     {
@@ -24,20 +24,17 @@ module.exports = {
       entry: true,
       id: 1,
       initial: true,
-      files: [
-        'main.a1b2c3.css',
-        'main.a2b3c4.js',
-      ],
+      files: ['main.a1b2c3d.css', 'main.a2b3c4d.js'],
       names: ['main'],
     },
   ],
   entrypoints: {
     main: {
       assets: [
-        'main.a1b2c3.css',
-        'main.a1b2c3.css.map',
-        'main.a2b3c4.js',
-        'main.a2b3c4.js.map',
+        'main.a1b2c3d.css',
+        'main.a1b2c3d.css.map',
+        'main.a2b3c4d.js',
+        'main.a2b3c4d.js.map',
       ],
     },
   },
