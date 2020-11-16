@@ -3,15 +3,15 @@ module.exports = {
   hash: 'defg1234',
   assets: [
     {
-      name: 'main.b1c2d3.css',
+      name: 'main.b1c2d3e.css',
       size: 11000,
     },
     {
-      name: 'main.b2c3d5.js',
+      name: 'main.b2c3d4e.js',
       size: 49000,
     },
     {
-      name: 'logo.a3b4c5.png',
+      name: 'logo.a3b4c5d.png',
       size: 1000,
     },
     {
@@ -24,20 +24,17 @@ module.exports = {
       entry: true,
       id: 1,
       initial: true,
-      files: [
-        'main.b1c2d3.css',
-        'main.b2c3d5.js',
-      ],
+      files: ['main.b1c2d3e.css', 'main.b2c3d4e.js'],
       names: ['main'],
     },
   ],
   entrypoints: {
     main: {
       assets: [
-        'main.b1c2d3.css',
-        'main.b1c2d3.css.map',
-        'main.b2c3d5.js',
-        'main.b2c3d5.js.map',
+        'main.b1c2d3e.css',
+        'main.b1c2d3e.css.map',
+        'main.b2c3d4e.js',
+        'main.b2c3d4e.js.map',
       ],
     },
   },

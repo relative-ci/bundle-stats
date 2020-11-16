@@ -76,7 +76,7 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
                   "isChunk": false,
                   "isEntry": true,
                   "isInitial": true,
-                  "name": "1.010f5.css",
+                  "name": "1.010f5a1.css",
                   "value": 20830,
                 },
                 "android-chrome-192x192.png": Object {
@@ -125,7 +125,7 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
                   "isChunk": false,
                   "isEntry": false,
                   "isInitial": false,
-                  "name": "components/sources/source/assets/close.4dc78.svg",
+                  "name": "components/sources/source/assets/close.4dc78b2.svg",
                   "value": 295,
                 },
                 "favicon-16x16.png": Object {
@@ -160,7 +160,7 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
                   "isChunk": false,
                   "isEntry": true,
                   "isInitial": true,
-                  "name": "main.df5df.css",
+                  "name": "main.df5dfc3.css",
                   "value": 4089,
                 },
                 "main.js": Object {
@@ -195,7 +195,7 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
                   "isChunk": false,
                   "isEntry": true,
                   "isInitial": true,
-                  "name": "vendor.ae130.js",
+                  "name": "vendor.ae130d4.js",
                   "value": 573665,
                 },
               },
@@ -2687,7 +2687,7 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
                   "size": 0,
                 },
                 Object {
-                  "name": "1.010f5.css",
+                  "name": "1.010f5a1.css",
                   "size": 20830,
                 },
                 Object {
@@ -2715,7 +2715,7 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
                   "size": 72702,
                 },
                 Object {
-                  "name": "components/sources/source/assets/close.4dc78.svg",
+                  "name": "components/sources/source/assets/close.4dc78b2.svg",
                   "size": 295,
                 },
                 Object {
@@ -2739,7 +2739,7 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
                   "size": 18199,
                 },
                 Object {
-                  "name": "main.df5df.css",
+                  "name": "main.df5dfc3.css",
                   "size": 4089,
                 },
                 Object {
@@ -2755,7 +2755,7 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
                   "size": 381,
                 },
                 Object {
-                  "name": "vendor.ae130.js",
+                  "name": "vendor.ae130d4.js",
                   "size": 573665,
                 },
               ],
@@ -2764,9 +2764,9 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
                 Object {
                   "entry": true,
                   "files": Array [
-                    "main.df5df.css",
+                    "main.df5dfc3.css",
                     "main.bc8f2337.js",
-                    "main.df5df.css.map",
+                    "main.df5dfc3.css.map",
                     "main.bc8f2337.js.map",
                   ],
                   "id": 0,
@@ -2778,10 +2778,10 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
                 Object {
                   "entry": false,
                   "files": Array [
-                    "1.010f5.css",
-                    "vendor.ae130.js",
-                    "1.010f5.css.map",
-                    "vendor.ae130.js.map",
+                    "1.010f5a1.css",
+                    "vendor.ae130d4.js",
+                    "1.010f5a1.css.map",
+                    "vendor.ae130d4.js.map",
                   ],
                   "id": 1,
                   "initial": true,
@@ -2793,13 +2793,13 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
               "entrypoints": Object {
                 "main": Object {
                   "assets": Array [
-                    "1.010f5.css",
-                    "vendor.ae130.js",
-                    "1.010f5.css.map",
-                    "vendor.ae130.js.map",
-                    "main.df5df.css",
+                    "1.010f5a1.css",
+                    "vendor.ae130d4.js",
+                    "1.010f5a1.css.map",
+                    "vendor.ae130d4.js.map",
+                    "main.df5dfc3.css",
                     "main.bc8f2337.js",
-                    "main.df5df.css.map",
+                    "main.df5dfc3.css.map",
                     "main.bc8f2337.js.map",
                   ],
                 },
@@ -7167,7 +7167,7 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
                   "isChunk": false,
                   "isEntry": true,
                   "isInitial": true,
-                  "name": "1.2428c.css",
+                  "name": "1.242bca1.css",
                   "value": 18475,
                 },
                 "android-chrome-192x192.png": Object {
@@ -7216,7 +7216,7 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
                   "isChunk": false,
                   "isEntry": false,
                   "isInitial": false,
-                  "name": "components/sources/source/assets/close.4dc78.svg",
+                  "name": "components/sources/source/assets/close.4dc78b2.svg",
                   "value": 295,
                 },
                 "favicon-16x16.png": Object {
@@ -7251,7 +7251,7 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
                   "isChunk": false,
                   "isEntry": true,
                   "isInitial": true,
-                  "name": "main.bd313.css",
+                  "name": "main.bd313b2.css",
                   "value": 3228,
                 },
                 "main.js": Object {
@@ -7286,7 +7286,7 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
                   "isChunk": false,
                   "isEntry": true,
                   "isInitial": true,
-                  "name": "vendor.6858d.js",
+                  "name": "vendor.6858db2.js",
                   "value": 573665,
                 },
               },
@@ -9778,7 +9778,7 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
                   "size": 0,
                 },
                 Object {
-                  "name": "1.2428c.css",
+                  "name": "1.242bca1.css",
                   "size": 18475,
                 },
                 Object {
@@ -9806,7 +9806,7 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
                   "size": 72702,
                 },
                 Object {
-                  "name": "components/sources/source/assets/close.4dc78.svg",
+                  "name": "components/sources/source/assets/close.4dc78b2.svg",
                   "size": 295,
                 },
                 Object {
@@ -9830,7 +9830,7 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
                   "size": 18279,
                 },
                 Object {
-                  "name": "main.bd313.css",
+                  "name": "main.bd313b2.css",
                   "size": 3228,
                 },
                 Object {
@@ -9846,7 +9846,7 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
                   "size": 381,
                 },
                 Object {
-                  "name": "vendor.6858d.js",
+                  "name": "vendor.6858db2.js",
                   "size": 573665,
                 },
               ],
@@ -9855,9 +9855,9 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
                 Object {
                   "entry": true,
                   "files": Array [
-                    "main.bd313.css",
+                    "main.bd313b2.css",
                     "main.af1dbc34.js",
-                    "main.bd313.css.map",
+                    "main.bd313b2.css.map",
                     "main.af1dbc34.js.map",
                   ],
                   "id": 0,
@@ -9869,10 +9869,10 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
                 Object {
                   "entry": false,
                   "files": Array [
-                    "1.2428c.css",
-                    "vendor.6858d.js",
-                    "1.2428c.css.map",
-                    "vendor.6858d.js.map",
+                    "1.242bca1.css",
+                    "vendor.6858db2.js",
+                    "1.242bca1.css.map",
+                    "vendor.6858db2.js.map",
                   ],
                   "id": 1,
                   "initial": true,
@@ -9884,13 +9884,13 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
               "entrypoints": Object {
                 "main": Object {
                   "assets": Array [
-                    "1.2428c.css",
-                    "vendor.6858d.js",
-                    "1.2428c.css.map",
-                    "vendor.6858d.js.map",
-                    "main.bd313.css",
+                    "1.242bca1.css",
+                    "vendor.6858db2.js",
+                    "1.242bca1.css.map",
+                    "vendor.6858db2.js.map",
+                    "main.bd313b2.css",
                     "main.af1dbc34.js",
-                    "main.bd313.css.map",
+                    "main.bd313b2.css.map",
                     "main.af1dbc34.js.map",
                   ],
                 },
@@ -16743,7 +16743,7 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
                   "size": 0,
                 },
                 Object {
-                  "name": "1.2428c.css",
+                  "name": "1.242bca1.css",
                   "size": 18475,
                 },
                 Object {
@@ -16771,7 +16771,7 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
                   "size": 72702,
                 },
                 Object {
-                  "name": "components/sources/source/assets/close.4dc78.svg",
+                  "name": "components/sources/source/assets/close.4dc78b2.svg",
                   "size": 295,
                 },
                 Object {
@@ -16795,7 +16795,7 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
                   "size": 18279,
                 },
                 Object {
-                  "name": "main.bd313.css",
+                  "name": "main.bd313b2.css",
                   "size": 3228,
                 },
                 Object {
@@ -16811,7 +16811,7 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
                   "size": 381,
                 },
                 Object {
-                  "name": "vendor.6858d.js",
+                  "name": "vendor.6858db2.js",
                   "size": 573665,
                 },
               ],
@@ -16820,9 +16820,9 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
                 Object {
                   "entry": true,
                   "files": Array [
-                    "main.bd313.css",
+                    "main.bd313b2.css",
                     "main.af1dbc34.js",
-                    "main.bd313.css.map",
+                    "main.bd313b2.css.map",
                     "main.af1dbc34.js.map",
                   ],
                   "id": 0,
@@ -16834,10 +16834,10 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
                 Object {
                   "entry": false,
                   "files": Array [
-                    "1.2428c.css",
-                    "vendor.6858d.js",
-                    "1.2428c.css.map",
-                    "vendor.6858d.js.map",
+                    "1.242bca1.css",
+                    "vendor.6858db2.js",
+                    "1.242bca1.css.map",
+                    "vendor.6858db2.js.map",
                   ],
                   "id": 1,
                   "initial": true,
@@ -16849,13 +16849,13 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
               "entrypoints": Object {
                 "main": Object {
                   "assets": Array [
-                    "1.2428c.css",
-                    "vendor.6858d.js",
-                    "1.2428c.css.map",
-                    "vendor.6858d.js.map",
-                    "main.bd313.css",
+                    "1.242bca1.css",
+                    "vendor.6858db2.js",
+                    "1.242bca1.css.map",
+                    "vendor.6858db2.js.map",
+                    "main.bd313b2.css",
                     "main.af1dbc34.js",
-                    "main.bd313.css.map",
+                    "main.bd313b2.css.map",
                     "main.af1dbc34.js.map",
                   ],
                 },
@@ -23685,7 +23685,7 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
                   "size": 0,
                 },
                 Object {
-                  "name": "1.010f5.css",
+                  "name": "1.010f5a1.css",
                   "size": 20830,
                 },
                 Object {
@@ -23713,7 +23713,7 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
                   "size": 72702,
                 },
                 Object {
-                  "name": "components/sources/source/assets/close.4dc78.svg",
+                  "name": "components/sources/source/assets/close.4dc78b2.svg",
                   "size": 295,
                 },
                 Object {
@@ -23737,7 +23737,7 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
                   "size": 18199,
                 },
                 Object {
-                  "name": "main.df5df.css",
+                  "name": "main.df5dfc3.css",
                   "size": 4089,
                 },
                 Object {
@@ -23753,7 +23753,7 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
                   "size": 381,
                 },
                 Object {
-                  "name": "vendor.ae130.js",
+                  "name": "vendor.ae130d4.js",
                   "size": 573665,
                 },
               ],
@@ -23762,9 +23762,9 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
                 Object {
                   "entry": true,
                   "files": Array [
-                    "main.df5df.css",
+                    "main.df5dfc3.css",
                     "main.bc8f2337.js",
-                    "main.df5df.css.map",
+                    "main.df5dfc3.css.map",
                     "main.bc8f2337.js.map",
                   ],
                   "id": 0,
@@ -23776,10 +23776,10 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
                 Object {
                   "entry": false,
                   "files": Array [
-                    "1.010f5.css",
-                    "vendor.ae130.js",
-                    "1.010f5.css.map",
-                    "vendor.ae130.js.map",
+                    "1.010f5a1.css",
+                    "vendor.ae130d4.js",
+                    "1.010f5a1.css.map",
+                    "vendor.ae130d4.js.map",
                   ],
                   "id": 1,
                   "initial": true,
@@ -23791,13 +23791,13 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
               "entrypoints": Object {
                 "main": Object {
                   "assets": Array [
-                    "1.010f5.css",
-                    "vendor.ae130.js",
-                    "1.010f5.css.map",
-                    "vendor.ae130.js.map",
-                    "main.df5df.css",
+                    "1.010f5a1.css",
+                    "vendor.ae130d4.js",
+                    "1.010f5a1.css.map",
+                    "vendor.ae130d4.js.map",
+                    "main.df5dfc3.css",
                     "main.bc8f2337.js",
-                    "main.df5df.css.map",
+                    "main.df5dfc3.css.map",
                     "main.bc8f2337.js.map",
                   ],
                 },
@@ -28165,7 +28165,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                   "isChunk": false,
                   "isEntry": true,
                   "isInitial": true,
-                  "name": "1.2428c.css",
+                  "name": "1.242bca1.css",
                   "value": 18475,
                 },
                 "android-chrome-192x192.png": Object {
@@ -28214,7 +28214,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                   "isChunk": false,
                   "isEntry": false,
                   "isInitial": false,
-                  "name": "components/sources/source/assets/close.4dc78.svg",
+                  "name": "components/sources/source/assets/close.4dc78b2.svg",
                   "value": 295,
                 },
                 "favicon-16x16.png": Object {
@@ -28249,7 +28249,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                   "isChunk": false,
                   "isEntry": true,
                   "isInitial": true,
-                  "name": "main.bd313.css",
+                  "name": "main.bd313b2.css",
                   "value": 3228,
                 },
                 "main.js": Object {
@@ -28284,7 +28284,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                   "isChunk": false,
                   "isEntry": true,
                   "isInitial": true,
-                  "name": "vendor.6858d.js",
+                  "name": "vendor.6858db2.js",
                   "value": 573665,
                 },
               },
@@ -30776,7 +30776,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                   "size": 0,
                 },
                 Object {
-                  "name": "1.2428c.css",
+                  "name": "1.242bca1.css",
                   "size": 18475,
                 },
                 Object {
@@ -30804,7 +30804,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                   "size": 72702,
                 },
                 Object {
-                  "name": "components/sources/source/assets/close.4dc78.svg",
+                  "name": "components/sources/source/assets/close.4dc78b2.svg",
                   "size": 295,
                 },
                 Object {
@@ -30828,7 +30828,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                   "size": 18279,
                 },
                 Object {
-                  "name": "main.bd313.css",
+                  "name": "main.bd313b2.css",
                   "size": 3228,
                 },
                 Object {
@@ -30844,7 +30844,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                   "size": 381,
                 },
                 Object {
-                  "name": "vendor.6858d.js",
+                  "name": "vendor.6858db2.js",
                   "size": 573665,
                 },
               ],
@@ -30853,9 +30853,9 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                 Object {
                   "entry": true,
                   "files": Array [
-                    "main.bd313.css",
+                    "main.bd313b2.css",
                     "main.af1dbc34.js",
-                    "main.bd313.css.map",
+                    "main.bd313b2.css.map",
                     "main.af1dbc34.js.map",
                   ],
                   "id": 0,
@@ -30867,10 +30867,10 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                 Object {
                   "entry": false,
                   "files": Array [
-                    "1.2428c.css",
-                    "vendor.6858d.js",
-                    "1.2428c.css.map",
-                    "vendor.6858d.js.map",
+                    "1.242bca1.css",
+                    "vendor.6858db2.js",
+                    "1.242bca1.css.map",
+                    "vendor.6858db2.js.map",
                   ],
                   "id": 1,
                   "initial": true,
@@ -30882,13 +30882,13 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
               "entrypoints": Object {
                 "main": Object {
                   "assets": Array [
-                    "1.2428c.css",
-                    "vendor.6858d.js",
-                    "1.2428c.css.map",
-                    "vendor.6858d.js.map",
-                    "main.bd313.css",
+                    "1.242bca1.css",
+                    "vendor.6858db2.js",
+                    "1.242bca1.css.map",
+                    "vendor.6858db2.js.map",
+                    "main.bd313b2.css",
                     "main.af1dbc34.js",
-                    "main.bd313.css.map",
+                    "main.bd313b2.css.map",
                     "main.af1dbc34.js.map",
                   ],
                 },
@@ -35237,7 +35237,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                   "isChunk": false,
                   "isEntry": true,
                   "isInitial": true,
-                  "name": "1.010f5.css",
+                  "name": "1.010f5a1.css",
                   "value": 20830,
                 },
                 "android-chrome-192x192.png": Object {
@@ -35286,7 +35286,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                   "isChunk": false,
                   "isEntry": false,
                   "isInitial": false,
-                  "name": "components/sources/source/assets/close.4dc78.svg",
+                  "name": "components/sources/source/assets/close.4dc78b2.svg",
                   "value": 295,
                 },
                 "favicon-16x16.png": Object {
@@ -35321,7 +35321,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                   "isChunk": false,
                   "isEntry": true,
                   "isInitial": true,
-                  "name": "main.df5df.css",
+                  "name": "main.df5dfc3.css",
                   "value": 4089,
                 },
                 "main.js": Object {
@@ -35356,7 +35356,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                   "isChunk": false,
                   "isEntry": true,
                   "isInitial": true,
-                  "name": "vendor.ae130.js",
+                  "name": "vendor.ae130d4.js",
                   "value": 573665,
                 },
               },
@@ -37848,7 +37848,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                   "size": 0,
                 },
                 Object {
-                  "name": "1.010f5.css",
+                  "name": "1.010f5a1.css",
                   "size": 20830,
                 },
                 Object {
@@ -37876,7 +37876,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                   "size": 72702,
                 },
                 Object {
-                  "name": "components/sources/source/assets/close.4dc78.svg",
+                  "name": "components/sources/source/assets/close.4dc78b2.svg",
                   "size": 295,
                 },
                 Object {
@@ -37900,7 +37900,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                   "size": 18199,
                 },
                 Object {
-                  "name": "main.df5df.css",
+                  "name": "main.df5dfc3.css",
                   "size": 4089,
                 },
                 Object {
@@ -37916,7 +37916,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                   "size": 381,
                 },
                 Object {
-                  "name": "vendor.ae130.js",
+                  "name": "vendor.ae130d4.js",
                   "size": 573665,
                 },
               ],
@@ -37925,9 +37925,9 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                 Object {
                   "entry": true,
                   "files": Array [
-                    "main.df5df.css",
+                    "main.df5dfc3.css",
                     "main.bc8f2337.js",
-                    "main.df5df.css.map",
+                    "main.df5dfc3.css.map",
                     "main.bc8f2337.js.map",
                   ],
                   "id": 0,
@@ -37939,10 +37939,10 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                 Object {
                   "entry": false,
                   "files": Array [
-                    "1.010f5.css",
-                    "vendor.ae130.js",
-                    "1.010f5.css.map",
-                    "vendor.ae130.js.map",
+                    "1.010f5a1.css",
+                    "vendor.ae130d4.js",
+                    "1.010f5a1.css.map",
+                    "vendor.ae130d4.js.map",
                   ],
                   "id": 1,
                   "initial": true,
@@ -37954,13 +37954,13 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
               "entrypoints": Object {
                 "main": Object {
                   "assets": Array [
-                    "1.010f5.css",
-                    "vendor.ae130.js",
-                    "1.010f5.css.map",
-                    "vendor.ae130.js.map",
-                    "main.df5df.css",
+                    "1.010f5a1.css",
+                    "vendor.ae130d4.js",
+                    "1.010f5a1.css.map",
+                    "vendor.ae130d4.js.map",
+                    "main.df5dfc3.css",
                     "main.bc8f2337.js",
-                    "main.df5df.css.map",
+                    "main.df5dfc3.css.map",
                     "main.bc8f2337.js.map",
                   ],
                 },
@@ -44805,7 +44805,7 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
                   "size": 0,
                 },
                 Object {
-                  "name": "1.2428c.css",
+                  "name": "1.242bca1.css",
                   "size": 18475,
                 },
                 Object {
@@ -44833,7 +44833,7 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
                   "size": 72702,
                 },
                 Object {
-                  "name": "components/sources/source/assets/close.4dc78.svg",
+                  "name": "components/sources/source/assets/close.4dc78b2.svg",
                   "size": 295,
                 },
                 Object {
@@ -44857,7 +44857,7 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
                   "size": 18279,
                 },
                 Object {
-                  "name": "main.bd313.css",
+                  "name": "main.bd313b2.css",
                   "size": 3228,
                 },
                 Object {
@@ -44873,7 +44873,7 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
                   "size": 381,
                 },
                 Object {
-                  "name": "vendor.6858d.js",
+                  "name": "vendor.6858db2.js",
                   "size": 573665,
                 },
               ],
@@ -44882,9 +44882,9 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
                 Object {
                   "entry": true,
                   "files": Array [
-                    "main.bd313.css",
+                    "main.bd313b2.css",
                     "main.af1dbc34.js",
-                    "main.bd313.css.map",
+                    "main.bd313b2.css.map",
                     "main.af1dbc34.js.map",
                   ],
                   "id": 0,
@@ -44896,10 +44896,10 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
                 Object {
                   "entry": false,
                   "files": Array [
-                    "1.2428c.css",
-                    "vendor.6858d.js",
-                    "1.2428c.css.map",
-                    "vendor.6858d.js.map",
+                    "1.242bca1.css",
+                    "vendor.6858db2.js",
+                    "1.242bca1.css.map",
+                    "vendor.6858db2.js.map",
                   ],
                   "id": 1,
                   "initial": true,
@@ -44911,13 +44911,13 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
               "entrypoints": Object {
                 "main": Object {
                   "assets": Array [
-                    "1.2428c.css",
-                    "vendor.6858d.js",
-                    "1.2428c.css.map",
-                    "vendor.6858d.js.map",
-                    "main.bd313.css",
+                    "1.242bca1.css",
+                    "vendor.6858db2.js",
+                    "1.242bca1.css.map",
+                    "vendor.6858db2.js.map",
+                    "main.bd313b2.css",
                     "main.af1dbc34.js",
-                    "main.bd313.css.map",
+                    "main.bd313b2.css.map",
                     "main.af1dbc34.js.map",
                   ],
                 },
@@ -51743,7 +51743,7 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
                   "size": 0,
                 },
                 Object {
-                  "name": "1.010f5.css",
+                  "name": "1.010f5a1.css",
                   "size": 20830,
                 },
                 Object {
@@ -51771,7 +51771,7 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
                   "size": 72702,
                 },
                 Object {
-                  "name": "components/sources/source/assets/close.4dc78.svg",
+                  "name": "components/sources/source/assets/close.4dc78b2.svg",
                   "size": 295,
                 },
                 Object {
@@ -51795,7 +51795,7 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
                   "size": 18199,
                 },
                 Object {
-                  "name": "main.df5df.css",
+                  "name": "main.df5dfc3.css",
                   "size": 4089,
                 },
                 Object {
@@ -51811,7 +51811,7 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
                   "size": 381,
                 },
                 Object {
-                  "name": "vendor.ae130.js",
+                  "name": "vendor.ae130d4.js",
                   "size": 573665,
                 },
               ],
@@ -51820,9 +51820,9 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
                 Object {
                   "entry": true,
                   "files": Array [
-                    "main.df5df.css",
+                    "main.df5dfc3.css",
                     "main.bc8f2337.js",
-                    "main.df5df.css.map",
+                    "main.df5dfc3.css.map",
                     "main.bc8f2337.js.map",
                   ],
                   "id": 0,
@@ -51834,10 +51834,10 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
                 Object {
                   "entry": false,
                   "files": Array [
-                    "1.010f5.css",
-                    "vendor.ae130.js",
-                    "1.010f5.css.map",
-                    "vendor.ae130.js.map",
+                    "1.010f5a1.css",
+                    "vendor.ae130d4.js",
+                    "1.010f5a1.css.map",
+                    "vendor.ae130d4.js.map",
                   ],
                   "id": 1,
                   "initial": true,
@@ -51849,13 +51849,13 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
               "entrypoints": Object {
                 "main": Object {
                   "assets": Array [
-                    "1.010f5.css",
-                    "vendor.ae130.js",
-                    "1.010f5.css.map",
-                    "vendor.ae130.js.map",
-                    "main.df5df.css",
+                    "1.010f5a1.css",
+                    "vendor.ae130d4.js",
+                    "1.010f5a1.css.map",
+                    "vendor.ae130d4.js.map",
+                    "main.df5dfc3.css",
                     "main.bc8f2337.js",
-                    "main.df5df.css.map",
+                    "main.df5dfc3.css.map",
                     "main.bc8f2337.js.map",
                   ],
                 },
@@ -56213,7 +56213,7 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
               },
               "assets": Object {
                 "static/js/not-predictive.js": Object {
-                  "name": "static/js/not-predictive.93191.js",
+                  "name": "static/js/not-predictive.93191a1.js",
                   "value": 2989,
                 },
               },
@@ -58705,7 +58705,7 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
                   "size": 0,
                 },
                 Object {
-                  "name": "1.2428c.css",
+                  "name": "1.242bca1.css",
                   "size": 18475,
                 },
                 Object {
@@ -58733,7 +58733,7 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
                   "size": 72702,
                 },
                 Object {
-                  "name": "components/sources/source/assets/close.4dc78.svg",
+                  "name": "components/sources/source/assets/close.4dc78b2.svg",
                   "size": 295,
                 },
                 Object {
@@ -58757,7 +58757,7 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
                   "size": 18279,
                 },
                 Object {
-                  "name": "main.bd313.css",
+                  "name": "main.bd313b2.css",
                   "size": 3228,
                 },
                 Object {
@@ -58773,7 +58773,7 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
                   "size": 381,
                 },
                 Object {
-                  "name": "vendor.6858d.js",
+                  "name": "vendor.6858db2.js",
                   "size": 573665,
                 },
               ],
@@ -58782,9 +58782,9 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
                 Object {
                   "entry": true,
                   "files": Array [
-                    "main.bd313.css",
+                    "main.bd313b2.css",
                     "main.af1dbc34.js",
-                    "main.bd313.css.map",
+                    "main.bd313b2.css.map",
                     "main.af1dbc34.js.map",
                   ],
                   "id": 0,
@@ -58796,10 +58796,10 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
                 Object {
                   "entry": false,
                   "files": Array [
-                    "1.2428c.css",
-                    "vendor.6858d.js",
-                    "1.2428c.css.map",
-                    "vendor.6858d.js.map",
+                    "1.242bca1.css",
+                    "vendor.6858db2.js",
+                    "1.242bca1.css.map",
+                    "vendor.6858db2.js.map",
                   ],
                   "id": 1,
                   "initial": true,
@@ -58811,13 +58811,13 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
               "entrypoints": Object {
                 "main": Object {
                   "assets": Array [
-                    "1.2428c.css",
-                    "vendor.6858d.js",
-                    "1.2428c.css.map",
-                    "vendor.6858d.js.map",
-                    "main.bd313.css",
+                    "1.242bca1.css",
+                    "vendor.6858db2.js",
+                    "1.242bca1.css.map",
+                    "vendor.6858db2.js.map",
+                    "main.bd313b2.css",
                     "main.af1dbc34.js",
-                    "main.bd313.css.map",
+                    "main.bd313b2.css.map",
                     "main.af1dbc34.js.map",
                   ],
                 },
@@ -63156,7 +63156,7 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
               },
               "assets": Object {
                 "static/js/not-predictive.js": Object {
-                  "name": "static/js/not-predictive.93191.js",
+                  "name": "static/js/not-predictive.93191a1.js",
                   "value": 2988,
                 },
               },
@@ -65648,7 +65648,7 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
                   "size": 0,
                 },
                 Object {
-                  "name": "1.010f5.css",
+                  "name": "1.010f5a1.css",
                   "size": 20830,
                 },
                 Object {
@@ -65676,7 +65676,7 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
                   "size": 72702,
                 },
                 Object {
-                  "name": "components/sources/source/assets/close.4dc78.svg",
+                  "name": "components/sources/source/assets/close.4dc78b2.svg",
                   "size": 295,
                 },
                 Object {
@@ -65700,7 +65700,7 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
                   "size": 18199,
                 },
                 Object {
-                  "name": "main.df5df.css",
+                  "name": "main.df5dfc3.css",
                   "size": 4089,
                 },
                 Object {
@@ -65716,7 +65716,7 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
                   "size": 381,
                 },
                 Object {
-                  "name": "vendor.ae130.js",
+                  "name": "vendor.ae130d4.js",
                   "size": 573665,
                 },
               ],
@@ -65725,9 +65725,9 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
                 Object {
                   "entry": true,
                   "files": Array [
-                    "main.df5df.css",
+                    "main.df5dfc3.css",
                     "main.bc8f2337.js",
-                    "main.df5df.css.map",
+                    "main.df5dfc3.css.map",
                     "main.bc8f2337.js.map",
                   ],
                   "id": 0,
@@ -65739,10 +65739,10 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
                 Object {
                   "entry": false,
                   "files": Array [
-                    "1.010f5.css",
-                    "vendor.ae130.js",
-                    "1.010f5.css.map",
-                    "vendor.ae130.js.map",
+                    "1.010f5a1.css",
+                    "vendor.ae130d4.js",
+                    "1.010f5a1.css.map",
+                    "vendor.ae130d4.js.map",
                   ],
                   "id": 1,
                   "initial": true,
@@ -65754,13 +65754,13 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
               "entrypoints": Object {
                 "main": Object {
                   "assets": Array [
-                    "1.010f5.css",
-                    "vendor.ae130.js",
-                    "1.010f5.css.map",
-                    "vendor.ae130.js.map",
-                    "main.df5df.css",
+                    "1.010f5a1.css",
+                    "vendor.ae130d4.js",
+                    "1.010f5a1.css.map",
+                    "vendor.ae130d4.js.map",
+                    "main.df5dfc3.css",
                     "main.bc8f2337.js",
-                    "main.df5df.css.map",
+                    "main.df5dfc3.css.map",
                     "main.bc8f2337.js.map",
                   ],
                 },

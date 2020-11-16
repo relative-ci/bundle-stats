@@ -54,21 +54,21 @@ Object {
           "isChunk": false,
           "isEntry": false,
           "isInitial": false,
-          "name": "logo.a3b4c5.png",
+          "name": "logo.a3b4c5d.png",
           "value": 1000,
         },
         "main.css": Object {
           "isChunk": false,
           "isEntry": true,
           "isInitial": true,
-          "name": "main.a1b2c3.css",
+          "name": "main.a1b2c3d.css",
           "value": 10000,
         },
         "main.js": Object {
           "isChunk": false,
           "isEntry": true,
           "isInitial": true,
-          "name": "main.a2b3c4.js",
+          "name": "main.a2b3c4d.js",
           "value": 50000,
         },
       },
@@ -172,15 +172,15 @@ Object {
     "webpack": Object {
       "assets": Array [
         Object {
-          "name": "main.a1b2c3.css",
+          "name": "main.a1b2c3d.css",
           "size": 10000,
         },
         Object {
-          "name": "main.a2b3c4.js",
+          "name": "main.a2b3c4d.js",
           "size": 50000,
         },
         Object {
-          "name": "logo.a3b4c5.png",
+          "name": "logo.a3b4c5d.png",
           "size": 1000,
         },
         Object {
@@ -193,8 +193,8 @@ Object {
         Object {
           "entry": true,
           "files": Array [
-            "main.a1b2c3.css",
-            "main.a2b3c4.js",
+            "main.a1b2c3d.css",
+            "main.a2b3c4d.js",
           ],
           "id": 1,
           "initial": true,
@@ -206,10 +206,10 @@ Object {
       "entrypoints": Object {
         "main": Object {
           "assets": Array [
-            "main.a1b2c3.css",
-            "main.a1b2c3.css.map",
-            "main.a2b3c4.js",
-            "main.a2b3c4.js.map",
+            "main.a1b2c3d.css",
+            "main.a1b2c3d.css.map",
+            "main.a2b3c4d.js",
+            "main.a2b3c4d.js.map",
           ],
         },
       },
@@ -357,21 +357,21 @@ Object {
           "isChunk": false,
           "isEntry": false,
           "isInitial": false,
-          "name": "logo.a3b4c5.png",
+          "name": "logo.a3b4c5d.png",
           "value": 1000,
         },
         "main.css": Object {
           "isChunk": false,
           "isEntry": true,
           "isInitial": true,
-          "name": "main.a1b2c3.css",
+          "name": "main.a1b2c3d.css",
           "value": 10000,
         },
         "main.js": Object {
           "isChunk": false,
           "isEntry": true,
           "isInitial": true,
-          "name": "main.a2b3c4.js",
+          "name": "main.a2b3c4d.js",
           "value": 50000,
         },
       },
@@ -475,15 +475,15 @@ Object {
     "webpack": Object {
       "assets": Array [
         Object {
-          "name": "main.a1b2c3.css",
+          "name": "main.a1b2c3d.css",
           "size": 10000,
         },
         Object {
-          "name": "main.a2b3c4.js",
+          "name": "main.a2b3c4d.js",
           "size": 50000,
         },
         Object {
-          "name": "logo.a3b4c5.png",
+          "name": "logo.a3b4c5d.png",
           "size": 1000,
         },
         Object {
@@ -496,8 +496,8 @@ Object {
         Object {
           "entry": true,
           "files": Array [
-            "main.a1b2c3.css",
-            "main.a2b3c4.js",
+            "main.a1b2c3d.css",
+            "main.a2b3c4d.js",
           ],
           "id": 1,
           "initial": true,
@@ -509,10 +509,10 @@ Object {
       "entrypoints": Object {
         "main": Object {
           "assets": Array [
-            "main.a1b2c3.css",
-            "main.a1b2c3.css.map",
-            "main.a2b3c4.js",
-            "main.a2b3c4.js.map",
+            "main.a1b2c3d.css",
+            "main.a1b2c3d.css.map",
+            "main.a2b3c4d.js",
+            "main.a2b3c4d.js.map",
           ],
         },
       },
