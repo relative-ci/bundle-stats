@@ -64,9 +64,9 @@
     "lodash": "4.17.20",
     "markdown-loader-jest": "0.1.1",
     "prop-types": "15.7.2",
-    "react": "16.14.0",
-    "react-dom": "16.14.0",
-    "react-test-renderer": "16.14.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-test-renderer": "17.0.1",
     "recompose": "0.30.0",
     "stats-webpack-plugin": "0.7.0",
     "style-loader": "2.0.0",
@@ -78,8 +78,8 @@
     "classnames": "^2.2.6",
     "lodash": "^4.17.11",
     "prop-types": "^15.7.2",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
+    "react": "^16.8.5 || ^17.0.0",
+    "react-dom": "^16.8.5 || ^17.0.0",
     "recompose": "^0.30.0"
   },
   "dependencies": {
