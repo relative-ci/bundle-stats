@@ -65,6 +65,7 @@ Array [
     "emitted": true,
     "filteredRelated": undefined,
     "info": Object {
+      "javascriptModule": false,
       "minimized": true,
       "size": 27,
     },
