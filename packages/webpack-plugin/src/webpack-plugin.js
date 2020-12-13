@@ -124,10 +124,15 @@ export class BundleStatsWebpackPlugin {
 
             Object.entries(newAssets).forEach(([filename, source]) => {
               const asset = compiler.getAsset(filename);
+              const assetData = {
+                size: () => 0,
+                source: () => source
+              };
+
               if (asset) {
-                compiler.updateAsset(filename, source);
+                compiler.updateAsset(filename, assetData);
               } else {
-                compiler.emitAsset(filename, source);
+                compiler.emitAsset(filename, assetData);
               }
             });
           },
