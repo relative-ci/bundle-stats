@@ -123,16 +123,16 @@ export class BundleStatsWebpackPlugin {
             const newAssets = await generateReports(compilation, options);
 
             Object.entries(newAssets).forEach(([filename, source]) => {
-              const asset = compiler.getAsset(filename);
+              const asset = compilation.getAsset(filename);
               const assetData = {
                 size: () => 0,
-                source: () => source
+                source: () => source,
               };
 
               if (asset) {
-                compiler.updateAsset(filename, assetData);
+                compilation.updateAsset(filename, assetData);
               } else {
-                compiler.emitAsset(filename, assetData);
+                compilation.emitAsset(filename, assetData);
               }
             });
           },
