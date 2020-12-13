@@ -35,8 +35,9 @@ const PLUGIN_NAME = 'BundleStats';
 
 const isWebpack5 = parseInt(webpack.version, 10) === 5;
 
-const generateReports = async (compilation, assets, options) => {
+const generateReports = async (compilation, options) => {
   const { compare, baseline, html, json, outDir } = options;
+  const newAssets = {};
 
   const logger = compilation.getInfrastructureLogger
     ? compilation.getInfrastructureLogger(PLUGIN_NAME)
@@ -78,18 +79,12 @@ const generateReports = async (compilation, assets, options) => {
     const filepath = path.join(outDir, filename);
 
     // eslint-disable-next-line no-param-reassign
-    assets[filepath] = {
-      size: () => 0,
-      source: () => output,
-    };
+    newAssets[filepath] = output;
   });
 
   if (baseline) {
     // eslint-disable-next-line no-param-reassign
-    assets[baselineFilepath] = {
-      size: () => 0,
-      source: () => JSON.stringify(data),
-    };
+    newAssets[baselineFilepath] = JSON.stringify(data);
 
     logger.info(`Write baseline data to ${baselineFilepath}`);
   }
@@ -99,6 +94,8 @@ const generateReports = async (compilation, assets, options) => {
   if (info) {
     logger.info(info.text);
   }
+
+  return newAssets;
 };
 
 export class BundleStatsWebpackPlugin {
@@ -122,19 +119,36 @@ export class BundleStatsWebpackPlugin {
       compiler.hooks.make.tap(PLUGIN_NAME, (compilation) => {
         compilation.hooks.processAssets.tap(
           { name: PLUGIN_NAME, stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT },
-          (assets) => generateReports(compilation, assets, options),
+          async () => {
+            const newAssets = await generateReports(compilation, options);
+
+            Object.entries(newAssets).forEach(([filename, data]) => {
+              const asset = compiler.getAsset(filename);
+              if (asset) {
+                compiler.updateAsset(filename, data);
+              } else {
+                compiler.emitAsset(filename, data);
+              }
+            });
+          },
         );
       });
 
       return;
     }
 
-    compiler.hooks.emit.tapAsync(
-      PLUGIN_NAME,
-      async (compilation, callback) => {
-        await generateReports(compilation, compilation.assets, options);
-        callback();
-      }
-    );
+    compiler.hooks.emit.tapAsync(PLUGIN_NAME, async (compilation, callback) => {
+      const newAssets = await generateReports(compilation, options);
+
+      Object.entries(newAssets).forEach(([filename, source]) => {
+        // eslint-disable-next-line no-param-reassign
+        compilation.assets[filename] = {
+          size: 0,
+          source: () => source,
+        };
+      });
+
+      callback();
+    });
   }
 }
