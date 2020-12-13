@@ -122,12 +122,12 @@ export class BundleStatsWebpackPlugin {
           async () => {
             const newAssets = await generateReports(compilation, options);
 
-            Object.entries(newAssets).forEach(([filename, data]) => {
+            Object.entries(newAssets).forEach(([filename, source]) => {
               const asset = compiler.getAsset(filename);
               if (asset) {
-                compiler.updateAsset(filename, data);
+                compiler.updateAsset(filename, source);
               } else {
-                compiler.emitAsset(filename, data);
+                compiler.emitAsset(filename, source);
               }
             });
           },
@@ -143,7 +143,7 @@ export class BundleStatsWebpackPlugin {
       Object.entries(newAssets).forEach(([filename, source]) => {
         // eslint-disable-next-line no-param-reassign
         compilation.assets[filename] = {
-          size: 0,
+          size: () => 0,
           source: () => source,
         };
       });
