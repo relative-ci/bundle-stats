@@ -116,7 +116,7 @@ export class BundleStatsWebpackPlugin {
     );
 
     if (isWebpack5) {
-      compiler.hooks.make.tap(PLUGIN_NAME, (compilation) => {
+      compiler.hooks.thisCompilation.tap(PLUGIN_NAME, (compilation) => {
         compilation.hooks.processAssets.tap(
           { name: PLUGIN_NAME, stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT },
           async () => {
