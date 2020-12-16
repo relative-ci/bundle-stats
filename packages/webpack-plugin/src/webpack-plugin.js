@@ -117,23 +117,18 @@ export class BundleStatsWebpackPlugin {
 
     if (isWebpack5) {
       compiler.hooks.thisCompilation.tap(PLUGIN_NAME, (compilation) => {
-        compilation.hooks.processAssets.tap(
-          { name: PLUGIN_NAME, stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT },
+        compilation.hooks.processAssets.tapPromise(
+          {
+            name: PLUGIN_NAME,
+            stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT,
+          },
           async () => {
             const newAssets = await generateReports(compilation, options);
 
             Object.entries(newAssets).forEach(([filename, source]) => {
-              const asset = compilation.getAsset(filename);
-              const assetData = {
-                size: () => 0,
-                source: () => source,
-              };
-
-              if (asset) {
-                compilation.updateAsset(filename, assetData);
-              } else {
-                compilation.emitAsset(filename, assetData);
-              }
+              compilation.emitAsset(filename, new webpack.sources.RawSource(source), {
+                development: true,
+              });
             });
           },
         );
