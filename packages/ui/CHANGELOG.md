@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/relative-ci/bundle-stats/compare/v2.3.0...v2.4.0) (2020-12-21)
+
+
+### Features
+
+* **utils:** Use min 7 chars for hash ([5f1656b](https://github.com/relative-ci/bundle-stats/commit/5f1656ba66ad92fdd3b2b81af0df0ba11c110832))
+
+
+
+
+
 # [2.3.0](https://github.com/relative-ci/bundle-stats/compare/v2.2.0...v2.3.0) (2020-10-12)
 
 

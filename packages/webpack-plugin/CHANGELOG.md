@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/relative-ci/bundle-stats/compare/v2.3.0...v2.4.0) (2020-12-21)
+
+
+### Bug Fixes
+
+* **webpack-plugin:** Emit assets for Webpack 5 ([2bdde59](https://github.com/relative-ci/bundle-stats/commit/2bdde59d92bdb7533ce308b46aceedb3c1326bac))
+* **webpack-plugin:** Use emit asset ([179a4f1](https://github.com/relative-ci/bundle-stats/commit/179a4f1c902cfe8785f0129e7abd525961483800))
+* peerDependencies compatibility with npm@7 ([79cce11](https://github.com/relative-ci/bundle-stats/commit/79cce11e8b73618b1e2c5f1df81c35b8f03463f3))
+
+
+
+
+
 # [2.3.0](https://github.com/relative-ci/bundle-stats/compare/v2.2.0...v2.3.0) (2020-10-12)
 
 
