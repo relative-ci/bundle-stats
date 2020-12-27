@@ -3,4 +3,7 @@ export default {
   ASSETS: 'Assets',
   MODULES: 'Modules',
   PACKAGES: 'Packages',
+
+  NO_DATA: 'No data available.',
+  VERSION: 'Version',
 };

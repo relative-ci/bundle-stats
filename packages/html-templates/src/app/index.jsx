@@ -28,7 +28,7 @@ const StandaloneAppLayout = (props) => (
     <Footer source="bundle-stats">
       <p className={css.footerInfo}>
         <a href={`https://github.com/relative-ci/bundle-stats/releases/tag/v${__VERSION__}`}>
-          {`Version: ${__VERSION__}`}
+          {`${I18N.VERSION}: ${__VERSION__}`}
         </a>
       </p>
     </Footer>
@@ -40,7 +40,7 @@ const StandaloneApp = ({ jobs }) => {
     return (
       <StandaloneAppLayout>
         <Container>
-          <div className={css.empty}>No data available.</div>
+          <div className={css.empty}>{I18N.NO_DATA}</div>
         </Container>
       </StandaloneAppLayout>
     );
@@ -117,9 +117,7 @@ const StandaloneApp = ({ jobs }) => {
                 </Container>
 
                 <Container>
-                  <h2>
-                    Totals
-                  </h2>
+                  <h2>Totals</h2>
                   <Box outline>
                     <BundleAssetsTotalsTable jobs={jobs} />
                   </Box>
@@ -143,7 +141,6 @@ StandaloneApp.propTypes = {
       internalBuildNumber: PropTypes.number,
       insights: PropTypes.object, // eslint-disable-line react/forbid-prop-types
       summary: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-
     }),
   ),
 };
