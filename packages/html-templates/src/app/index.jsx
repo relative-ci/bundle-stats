@@ -66,15 +66,24 @@ const StandaloneApp = ({ jobs }) => {
 
         <Container className={css.tabsContainer}>
           <Tabs className={css.tabs}>
-            <NavLink to={URLS.OVERVIEW}>{I18N.OVERVIEW}</NavLink>
-            <NavLink to={URLS.ASSETS}>{I18N.ASSETS}</NavLink>
-            <NavLink to={URLS.MODULES}>{I18N.MODULES}</NavLink>
-            <NavLink to={URLS.PACKAGES}>{I18N.PACKAGES}</NavLink>
+            <NavLink exact to={URLS.OVERVIEW} activeClassName={css.tabActive}>
+              {I18N.OVERVIEW}
+            </NavLink>
+            <NavLink exact to={URLS.ASSETS} activeClassName={css.tabActive}>
+              {I18N.ASSETS}
+            </NavLink>
+            <NavLink exact to={URLS.MODULES} activeClassName={css.tabActive}>
+              {I18N.MODULES}
+            </NavLink>
+            <NavLink exact to={URLS.PACKAGES} activeClassName={css.tabActive}>
+              {I18N.PACKAGES}
+            </NavLink>
           </Tabs>
         </Container>
 
         <Switch>
           <Route
+            exact
             path={URLS.ASSETS}
             component={() => (
               <Container>
@@ -85,6 +94,7 @@ const StandaloneApp = ({ jobs }) => {
             )}
           />
           <Route
+            exact
             path={URLS.MODULES}
             component={() => (
               <Container>
@@ -93,6 +103,7 @@ const StandaloneApp = ({ jobs }) => {
             )}
           />
           <Route
+            exact
             path={URLS.PACKAGES}
             component={() => (
               <Container>
@@ -103,6 +114,7 @@ const StandaloneApp = ({ jobs }) => {
             )}
           />
           <Route
+            exact
             path={URLS.OVERVIEW}
             component={() => (
               <Stack space="large">

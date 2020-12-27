@@ -38,6 +38,14 @@
   margin-bottom: -1px;
 }
 
+.tabActive {
+  color: var(--color-primary);
+}
+
+.tabActive::after {
+  background: currentColor;
+}
+
 .footerInfo a {
   color: inherit;
   text-decoration: none;
