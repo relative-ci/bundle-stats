@@ -1,4 +1,7 @@
 import PropTypes from 'prop-types';
+import {
+  HashRouter, Switch, Route, NavLink,
+} from 'react-router-dom';
 import { Box } from '@bundle-stats/ui/lib-esm/layout/box';
 import { Container } from '@bundle-stats/ui/lib-esm/ui/container';
 import { JobsHeader } from '@bundle-stats/ui/lib-esm/components/jobs-header';
@@ -6,13 +9,16 @@ import { DuplicatePackagesWarning } from '@bundle-stats/ui/lib-esm/components/du
 import { Summary } from '@bundle-stats/ui/lib-esm/components/summary';
 import { BundleAssets } from '@bundle-stats/ui/lib-esm/components/bundle-assets';
 import { BundleAssetsTotalsChartBars } from '@bundle-stats/ui/lib-esm/components/bundle-assets-totals-chart-bars';
+import { Tabs } from '@bundle-stats/ui/lib-esm/ui/tabs';
 import { Footer } from '@bundle-stats/ui/lib-esm/layout/footer';
 import { Stack } from '@bundle-stats/ui/lib-esm/layout/stack';
 import { BundleAssetsTotalsTable } from '@bundle-stats/ui/lib-esm/components/bundle-assets-totals-table';
 import { BundleModules } from '@bundle-stats/ui/lib-esm/components/bundle-modules';
 import { BundlePackages } from '@bundle-stats/ui/lib-esm/components/bundle-packages';
 
+import I18N from '../i18n';
 import { Header } from './header';
+import { URLS } from './constants';
 import css from './styles.module.css';
 
 const StandaloneAppLayout = (props) => (
@@ -41,73 +47,89 @@ const StandaloneApp = ({ jobs }) => {
   }
 
   const insights = jobs && jobs[0] && jobs[0].insights;
-  const duplicatePackagesInsights
-    = insights && insights.webpack && insights.webpack.duplicatePackages;
+  const duplicatePackagesInsights = insights?.webpack?.duplicatePackages;
 
   return (
-    <StandaloneAppLayout>
-      <Container className={css.jobsHeader}>
-        <JobsHeader jobs={jobs} />
-      </Container>
-
-      <Container>
-        <Summary
-          data={jobs[0].summary}
-          showSummaryItemDelta={jobs.length !== 1}
-          showSummaryItemBaselineValue={jobs.length !== 1}
-        />
-      </Container>
-
-      {duplicatePackagesInsights && (
-        <Container>
-          <DuplicatePackagesWarning duplicatePackages={duplicatePackagesInsights.data} />
+    <HashRouter>
+      <StandaloneAppLayout>
+        <Container className={css.jobsHeader}>
+          <JobsHeader jobs={jobs} />
         </Container>
-      )}
 
-      <Container>
-        <BundleAssetsTotalsChartBars jobs={jobs} />
-      </Container>
+        <Container>
+          <Summary
+            data={jobs[0].summary}
+            showSummaryItemDelta={jobs.length !== 1}
+            showSummaryItemBaselineValue={jobs.length !== 1}
+          />
+        </Container>
 
-      <Container>
-        <h2>
-          <a href="#totals" id="totals" className={css.anchor}>
-            Totals
-          </a>
-        </h2>
-        <Box outline>
-          <BundleAssetsTotalsTable jobs={jobs} />
-        </Box>
-      </Container>
+        <Container className={css.tabsContainer}>
+          <Tabs className={css.tabs}>
+            <NavLink to={URLS.OVERVIEW}>{I18N.OVERVIEW}</NavLink>
+            <NavLink to={URLS.ASSETS}>{I18N.ASSETS}</NavLink>
+            <NavLink to={URLS.MODULES}>{I18N.MODULES}</NavLink>
+            <NavLink to={URLS.PACKAGES}>{I18N.PACKAGES}</NavLink>
+          </Tabs>
+        </Container>
 
-      <Container>
-        <h2>
-          <a id="assets" href="#assets" className={css.anchor}>
-            Assets
-          </a>
-        </h2>
-        <Box outline>
-          <BundleAssets jobs={jobs} />
-        </Box>
-      </Container>
-      <Container>
-        <h2>
-          <a id="modules" href="#modules" className={css.anchor}>
-            Modules
-          </a>
-        </h2>
-        <BundleModules jobs={jobs} />
-      </Container>
-      <Container>
-        <h2>
-          <a id="packages" href="#packages" className={css.anchor}>
-            Packages
-          </a>
-        </h2>
-        <Box outline>
-          <BundlePackages jobs={jobs} />
-        </Box>
-      </Container>
-    </StandaloneAppLayout>
+        <Switch>
+          <Route
+            path={URLS.ASSETS}
+            component={() => (
+              <Container>
+                <Box outline>
+                  <BundleAssets jobs={jobs} />
+                </Box>
+              </Container>
+            )}
+          />
+          <Route
+            path={URLS.MODULES}
+            component={() => (
+              <Container>
+                <BundleModules jobs={jobs} />
+              </Container>
+            )}
+          />
+          <Route
+            path={URLS.PACKAGES}
+            component={() => (
+              <Container>
+                <Box outline>
+                  <BundlePackages jobs={jobs} />
+                </Box>
+              </Container>
+            )}
+          />
+          <Route
+            path={URLS.OVERVIEW}
+            component={() => (
+              <Stack space="large">
+                {duplicatePackagesInsights && (
+                  <Container>
+                    <DuplicatePackagesWarning duplicatePackages={duplicatePackagesInsights.data} />
+                  </Container>
+                )}
+
+                <Container>
+                  <BundleAssetsTotalsChartBars jobs={jobs} />
+                </Container>
+
+                <Container>
+                  <h2>
+                    Totals
+                  </h2>
+                  <Box outline>
+                    <BundleAssetsTotalsTable jobs={jobs} />
+                  </Box>
+                </Container>
+              </Stack>
+            )}
+          />
+        </Switch>
+      </StandaloneAppLayout>
+    </HashRouter>
   );
 };
 
