@@ -24,6 +24,8 @@
 }
 
 .empty {
+  padding-top: var(--space-large);
+  min-height: 80vh;
   text-align: center;
 }
 
