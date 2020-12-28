@@ -9,6 +9,7 @@ import { DuplicatePackagesWarning } from '@bundle-stats/ui/lib-esm/components/du
 import { Summary } from '@bundle-stats/ui/lib-esm/components/summary';
 import { BundleAssets } from '@bundle-stats/ui/lib-esm/components/bundle-assets';
 import { BundleAssetsTotalsChartBars } from '@bundle-stats/ui/lib-esm/components/bundle-assets-totals-chart-bars';
+import { Logo } from '@bundle-stats/ui/lib-esm/ui/logo';
 import { Tabs } from '@bundle-stats/ui/lib-esm/ui/tabs';
 import { Footer } from '@bundle-stats/ui/lib-esm/layout/footer';
 import { Stack } from '@bundle-stats/ui/lib-esm/layout/stack';
@@ -17,13 +18,11 @@ import { BundleModules } from '@bundle-stats/ui/lib-esm/components/bundle-module
 import { BundlePackages } from '@bundle-stats/ui/lib-esm/components/bundle-packages';
 
 import I18N from '../i18n';
-import { Header } from './header';
 import { URLS } from './constants';
 import css from './styles.module.css';
 
 const StandaloneAppLayout = (props) => (
   <div className={css.root}>
-    <Header className={css.header} />
     <Stack className={css.main} space="large" {...props} />
     <Footer source="bundle-stats">
       <p className={css.footerInfo}>
@@ -52,9 +51,22 @@ const StandaloneApp = ({ jobs }) => {
   return (
     <HashRouter>
       <StandaloneAppLayout>
-        <Container className={css.jobsHeader}>
-          <JobsHeader jobs={jobs} />
-        </Container>
+        <header className={css.header}>
+          <a className={css.headerBranding} href="https://github.com/relative-ci/bundle-stats">
+            <Logo className={css.headerBrandingLogo}>BundleStats</Logo>
+          </a>
+          <JobsHeader className={css.headerJobs} jobs={jobs} />
+          <div className={css.headerTools}>
+            <Logo
+              className={css.headerToolsGithub}
+              kind="github"
+              as="a"
+              href="https://github.com/relative-ci/bundle-stats"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+            />
+          </div>
+        </header>
 
         <Container>
           <Summary

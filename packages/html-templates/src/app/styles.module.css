@@ -13,14 +13,39 @@
   top: 0;
   right: 0;
   height: var(--header-height);
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-outline);
+  box-shadow: 0 0 var(--space-xxsmall) var(--color-shadow);
+  display: flex;
+  align-items: stretch;
+}
+
+.headerBranding {
+  padding: var(--space-small);
+  flex: 0 0 auto;
+  border-right: 1px solid var(--color-outline);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+}
+
+.headerJobs {
+  flex: 1 1 auto;
+}
+
+.headerTools {
+  border-left: 1px solid var(--color-outline);
+  padding: var(--space-small);
+  margin: 0 0 0 auto;
+  color: var(--color-text-light);
+}
+
+.headerToolsGithub {
+  color: inherit;
 }
 
 .main {
   padding-bottom: var(--space-large);
-}
-
-.jobsHeader {
-  border-bottom: 1px solid var(--color-outline);
 }
 
 .empty {
