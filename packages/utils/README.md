@@ -37,22 +37,23 @@ console.log(report.insights.webpack.assetsSizeTotal.data.text);
 
 ## Related projects
 
-### [relative-ci.com](https://relative-ci.com)
+### :cyclone: [relative-ci.com](https://relative-ci.com)
 
-Continuous monitoring for webpack bundles:
-- Monitor and analyze bundle size, assets, modules, packages
-- Github Checks, Slack integration
+Specialized insights for web bundles:
+
+- Monitor and analyze bundle size, assets, modules, packages on every build
+- Github Check and Slack integrations
 - Support for all major CI services (Travis CI, Circle CI, Jenkins, Gitlab CI, Codeship, etc)
-- Free for OpenSource
+- Free for Developers & OpenSource
 
 [Try Beta](https://relative-ci.com)
 
-### [relative-ci/compare](https://compare.relative-ci.com)
+### :first_quarter_moon: [relative-ci/compare](https://compare.relative-ci.com)
 
 Standalone web application to compare Webpack/Lighthouse/Browsertime stats.
 
 [Compare bundle stats](https://compare.relative-ci.com)
 
-### [bundle-stats-action](https://github.com/vio/bundle-stats-action)
+### :zap: [bundle-stats-action](https://github.com/vio/bundle-stats-action)
 
 Github Action that generates [bundle-stats](https://github.com/relative-ci/bundle-stats) reports for webpack.
