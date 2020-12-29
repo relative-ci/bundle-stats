@@ -1,0 +1,29 @@
+.root {
+  display: flex;
+  align-items: stretch;
+}
+
+.branding {
+  padding: var(--space-small);
+  flex: 0 0 auto;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+}
+
+.jobs {
+  flex: 1 1 auto;
+}
+
+.tools {
+  padding: var(--space-small);
+  margin: 0 0 0 auto;
+  display: flex;
+  align-items: center;
+  color: var(--color-text-light);
+}
+
+.toolsGithub {
+  color: inherit;
+  width: var(--space-medium);
+}
