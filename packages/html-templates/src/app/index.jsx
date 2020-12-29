@@ -16,14 +16,14 @@ import { BundleModules } from '@bundle-stats/ui/lib-esm/components/bundle-module
 import { BundlePackages } from '@bundle-stats/ui/lib-esm/components/bundle-packages';
 
 import I18N from '../i18n';
-import { Header } from './header'
+import { Header } from './header';
 import { URLS } from './constants';
 import css from './styles.module.css';
 
 const StandaloneAppLayout = ({ jobs, ...props }) => (
   <div className={css.root}>
     <Header className={css.header} jobs={jobs} />
-    <Stack className={css.main} space="large" {...props} />
+    <main className={css.main} {...props} />
     <Footer source="bundle-stats">
       <p className={css.footerInfo}>
         <a href={`https://github.com/relative-ci/bundle-stats/releases/tag/v${__VERSION__}`}>
@@ -33,6 +33,14 @@ const StandaloneAppLayout = ({ jobs, ...props }) => (
     </Footer>
   </div>
 );
+
+StandaloneAppLayout.propTypes = {
+  jobs: PropTypes.arrayOf(PropTypes.object),
+};
+
+StandaloneAppLayout.defaultProps = {
+  jobs: null,
+};
 
 const StandaloneApp = ({ jobs }) => {
   if (jobs.length === 0) {
@@ -76,63 +84,67 @@ const StandaloneApp = ({ jobs }) => {
           </Tabs>
         </Container>
 
-        <Switch>
-          <Route
-            exact
-            path={URLS.ASSETS}
-            component={() => (
-              <Container>
-                <Box outline>
-                  <BundleAssets jobs={jobs} />
-                </Box>
-              </Container>
-            )}
-          />
-          <Route
-            exact
-            path={URLS.MODULES}
-            component={() => (
-              <Container>
-                <BundleModules jobs={jobs} />
-              </Container>
-            )}
-          />
-          <Route
-            exact
-            path={URLS.PACKAGES}
-            component={() => (
-              <Container>
-                <Box outline>
-                  <BundlePackages jobs={jobs} />
-                </Box>
-              </Container>
-            )}
-          />
-          <Route
-            exact
-            path={URLS.OVERVIEW}
-            component={() => (
-              <Stack space="large">
-                {duplicatePackagesInsights && (
-                  <Container>
-                    <DuplicatePackagesWarning duplicatePackages={duplicatePackagesInsights.data} />
-                  </Container>
-                )}
-
+        <div className={css.tabsContent}>
+          <Switch>
+            <Route
+              exact
+              path={URLS.ASSETS}
+              component={() => (
                 <Container>
-                  <BundleAssetsTotalsChartBars jobs={jobs} />
-                </Container>
-
-                <Container>
-                  <h2>Totals</h2>
                   <Box outline>
-                    <BundleAssetsTotalsTable jobs={jobs} />
+                    <BundleAssets jobs={jobs} />
                   </Box>
                 </Container>
-              </Stack>
-            )}
-          />
-        </Switch>
+              )}
+            />
+            <Route
+              exact
+              path={URLS.MODULES}
+              component={() => (
+                <Container>
+                  <BundleModules jobs={jobs} />
+                </Container>
+              )}
+            />
+            <Route
+              exact
+              path={URLS.PACKAGES}
+              component={() => (
+                <Container>
+                  <Box outline>
+                    <BundlePackages jobs={jobs} />
+                  </Box>
+                </Container>
+              )}
+            />
+            <Route
+              exact
+              path={URLS.OVERVIEW}
+              component={() => (
+                <Stack space="large">
+                  {duplicatePackagesInsights && (
+                    <Container>
+                      <DuplicatePackagesWarning
+                        duplicatePackages={duplicatePackagesInsights.data}
+                      />
+                    </Container>
+                  )}
+
+                  <Container>
+                    <BundleAssetsTotalsChartBars jobs={jobs} />
+                  </Container>
+
+                  <Container>
+                    <h2>Totals</h2>
+                    <Box outline>
+                      <BundleAssetsTotalsTable jobs={jobs} />
+                    </Box>
+                  </Container>
+                </Stack>
+              )}
+            />
+          </Switch>
+        </div>
       </StandaloneAppLayout>
     </HashRouter>
   );

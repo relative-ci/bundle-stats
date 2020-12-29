@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { JobsHeader } from '@bundle-stats/ui/lib-esm/components/jobs-header';
 import { Logo } from '@bundle-stats/ui/lib-esm/ui/logo';
@@ -23,3 +24,13 @@ export const Header = ({ className, jobs }) => (
     </div>
   </header>
 );
+
+Header.propTypes = {
+  className: PropTypes.string,
+  jobs: PropTypes.arrayOf(PropTypes.object),
+};
+
+Header.defaultProps = {
+  className: '',
+  jobs: null,
+};

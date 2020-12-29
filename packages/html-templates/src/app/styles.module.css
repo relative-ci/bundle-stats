@@ -1,21 +1,9 @@
 :root {
-  --header-height: calc(var(--space-xsmall) + var(--space-xxlarge) * 2);
+  --header-height: 0px;
 }
 
 .root {
   padding-top: var(--header-height);
-}
-
-.header {
-  position: fixed;
-  z-index: 100;
-  left: 0;
-  top: 0;
-  right: 0;
-  height: var(--header-height);
-  background-color: var(--color-background);
-  border-bottom: 1px solid var(--color-outline);
-  box-shadow: 0 0 var(--space-xxsmall) var(--color-shadow);
 }
 
 .main {
@@ -29,6 +17,7 @@
 }
 
 .tabsContainer {
+  margin-top: var(--space-small);
   margin-bottom: var(--space-large);
   border-bottom: 1px solid var(--color-outline);
 }
@@ -45,6 +34,10 @@
   background: currentColor;
 }
 
+.tabsContent {
+  min-height: 480px;
+}
+
 .footerInfo a {
   color: inherit;
   text-decoration: none;
@@ -59,6 +52,22 @@
 
 @media (min-width: 600px) {
   :root {
-    --header-height: calc(var(--space-large) + var(--space-small) * 2);
+    --header-height: 80px;
+  }
+
+  .root {
+    padding-top: calc(var(--header-height) + var(--space-large));
+  }
+
+  .header {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: var(--header-height);
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-outline);
+    box-shadow: 0 0 var(--space-xxsmall) var(--color-shadow);
   }
 }
