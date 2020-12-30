@@ -60,7 +60,7 @@
     "mini-css-extract-plugin": "1.2.1",
     "postcss": "8.2.2",
     "postcss-loader": "4.1.0",
-    "preact": "10.5.7",
+    "preact": "10.5.8",
     "prop-types": "15.7.2",
     "react": "16.14.0",
     "react-dom": "16.14.0",
