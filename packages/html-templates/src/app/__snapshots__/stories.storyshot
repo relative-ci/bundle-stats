@@ -53,8 +53,8 @@ exports[`Storyshots StandaloneApp default 1`] = `
           "label": "Job #2",
           "meta": Object {
             "webpack": Object {
-              "builtAt": "",
-              "hash": "",
+              "builtAt": "2019-01-02T01:01:01.000Z",
+              "hash": "bcde2345",
             },
           },
           "metrics": Object {
@@ -2757,6 +2757,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   "size": 573665,
                 },
               ],
+              "builtAt": "2019-01-02T01:01:01.000Z",
               "chunks": Array [
                 Object {
                   "entry": true,
@@ -2801,6 +2802,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   ],
                 },
               },
+              "hash": "bcde2345",
               "modules": Array [
                 Object {
                   "chunks": Array [
@@ -7123,8 +7125,8 @@ exports[`Storyshots StandaloneApp default 1`] = `
           "label": "Job #1",
           "meta": Object {
             "webpack": Object {
-              "builtAt": "",
-              "hash": "",
+              "builtAt": "2019-01-01T01:01:01.000Z",
+              "hash": "abcd1234",
             },
           },
           "metrics": Object {
@@ -9827,6 +9829,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   "size": 573665,
                 },
               ],
+              "builtAt": "2019-01-01T01:01:01.000Z",
               "chunks": Array [
                 Object {
                   "entry": true,
@@ -9871,6 +9874,7 @@ exports[`Storyshots StandaloneApp default 1`] = `
                   ],
                 },
               },
+              "hash": "abcd1234",
               "modules": Array [
                 Object {
                   "chunks": Array [
@@ -21315,8 +21319,8 @@ exports[`Storyshots StandaloneApp multiple baselines 1`] = `
           "label": "Job #3",
           "meta": Object {
             "webpack": Object {
-              "builtAt": "",
-              "hash": "",
+              "builtAt": "2019-01-02T01:01:01.000Z",
+              "hash": "bcde2345",
             },
           },
           "metrics": Object {
@@ -24019,6 +24023,7 @@ exports[`Storyshots StandaloneApp multiple baselines 1`] = `
                   "size": 573665,
                 },
               ],
+              "builtAt": "2019-01-02T01:01:01.000Z",
               "chunks": Array [
                 Object {
                   "entry": true,
@@ -24063,6 +24068,7 @@ exports[`Storyshots StandaloneApp multiple baselines 1`] = `
                   ],
                 },
               },
+              "hash": "bcde2345",
               "modules": Array [
                 Object {
                   "chunks": Array [
@@ -28385,8 +28391,8 @@ exports[`Storyshots StandaloneApp multiple baselines 1`] = `
           "label": "Job #2",
           "meta": Object {
             "webpack": Object {
-              "builtAt": "",
-              "hash": "",
+              "builtAt": "2019-01-01T01:01:01.000Z",
+              "hash": "abcd1234",
             },
           },
           "metrics": Object {
@@ -31089,6 +31095,7 @@ exports[`Storyshots StandaloneApp multiple baselines 1`] = `
                   "size": 573665,
                 },
               ],
+              "builtAt": "2019-01-01T01:01:01.000Z",
               "chunks": Array [
                 Object {
                   "entry": true,
@@ -31133,6 +31140,7 @@ exports[`Storyshots StandaloneApp multiple baselines 1`] = `
                   ],
                 },
               },
+              "hash": "abcd1234",
               "modules": Array [
                 Object {
                   "chunks": Array [
@@ -35447,8 +35455,8 @@ exports[`Storyshots StandaloneApp multiple baselines 1`] = `
           "label": "Job #1",
           "meta": Object {
             "webpack": Object {
-              "builtAt": "",
-              "hash": "",
+              "builtAt": "2019-01-01T01:01:01.000Z",
+              "hash": "aaaa1111",
             },
           },
           "metrics": Object {
@@ -36021,6 +36029,7 @@ exports[`Storyshots StandaloneApp multiple baselines 1`] = `
                   "size": 573665,
                 },
               ],
+              "builtAt": "2019-01-01T01:01:01.000Z",
               "chunks": Array [
                 Object {
                   "entry": true,
@@ -36065,6 +36074,7 @@ exports[`Storyshots StandaloneApp multiple baselines 1`] = `
                   ],
                 },
               },
+              "hash": "aaaa1111",
               "modules": Array [
                 Object {
                   "chunks": Array [
@@ -36869,8 +36879,8 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
           "label": "Job #2",
           "meta": Object {
             "webpack": Object {
-              "builtAt": "",
-              "hash": "",
+              "builtAt": "2019-01-02T01:01:01.000Z",
+              "hash": "bcde2345",
             },
           },
           "metrics": Object {
@@ -39573,6 +39583,7 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                   "size": 573665,
                 },
               ],
+              "builtAt": "2019-01-02T01:01:01.000Z",
               "chunks": Array [
                 Object {
                   "entry": true,
@@ -39617,6 +39628,7 @@ exports[`Storyshots StandaloneApp no baseline 1`] = `
                   ],
                 },
               },
+              "hash": "bcde2345",
               "modules": Array [
                 Object {
                   "chunks": Array [
@@ -43920,8 +43932,8 @@ exports[`Storyshots StandaloneApp no insights 1`] = `
           "label": "Job #2",
           "meta": Object {
             "webpack": Object {
-              "builtAt": "",
-              "hash": "",
+              "builtAt": "2019-01-02T01:01:01.000Z",
+              "hash": "bcde2345",
             },
           },
           "metrics": Object {
@@ -46624,6 +46636,7 @@ exports[`Storyshots StandaloneApp no insights 1`] = `
                   "size": 573665,
                 },
               ],
+              "builtAt": "2019-01-02T01:01:01.000Z",
               "chunks": Array [
                 Object {
                   "entry": true,
@@ -46668,6 +46681,7 @@ exports[`Storyshots StandaloneApp no insights 1`] = `
                   ],
                 },
               },
+              "hash": "bcde2345",
               "modules": Array [
                 Object {
                   "chunks": Array [
@@ -50990,8 +51004,8 @@ exports[`Storyshots StandaloneApp no insights 1`] = `
           "label": "Job #1",
           "meta": Object {
             "webpack": Object {
-              "builtAt": "",
-              "hash": "",
+              "builtAt": "2019-01-01T01:01:01.000Z",
+              "hash": "abcd1234",
             },
           },
           "metrics": Object {
@@ -53694,6 +53708,7 @@ exports[`Storyshots StandaloneApp no insights 1`] = `
                   "size": 573665,
                 },
               ],
+              "builtAt": "2019-01-01T01:01:01.000Z",
               "chunks": Array [
                 Object {
                   "entry": true,
@@ -53738,6 +53753,7 @@ exports[`Storyshots StandaloneApp no insights 1`] = `
                   ],
                 },
               },
+              "hash": "abcd1234",
               "modules": Array [
                 Object {
                   "chunks": Array [
