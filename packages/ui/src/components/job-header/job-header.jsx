@@ -17,7 +17,7 @@ export const JobHeader = (props) => {
   const rootClassName = cx(css.root, className);
 
   return (
-    <Stack className={rootClassName} space="xsmall">
+    <Stack className={rootClassName} space="xxsmall">
       <h1 className={css.title}>
         <span>{`#${job.internalBuildNumber}`}</span>
         {tag && <span className={css.tag}>{tag}</span>}
