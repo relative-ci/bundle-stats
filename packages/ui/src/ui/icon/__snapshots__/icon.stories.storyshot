@@ -13,6 +13,38 @@ exports[`Storyshots UI/Icon all 1`] = `
   <Icon
     as="span"
     className=""
+    glyph="arrow"
+    key="arrow"
+  >
+    <span
+      className="root"
+    >
+      <ArrowIcon
+        className="icon"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <svg
+          className="icon"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <path
+            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+          />
+        </svg>
+      </ArrowIcon>
+    </span>
+  </Icon>
+  <Icon
+    as="span"
+    className=""
     glyph="branch"
     key="branch"
   >
@@ -36,33 +68,6 @@ exports[`Storyshots UI/Icon all 1`] = `
           />
         </svg>
       </BranchIcon>
-    </span>
-  </Icon>
-  <Icon
-    as="span"
-    className=""
-    glyph="clock"
-    key="clock"
-  >
-    <span
-      className="root"
-    >
-      <ClockIcon
-        className="icon"
-        fill="currentColor"
-        viewBox="0 0 14 16"
-      >
-        <svg
-          className="icon"
-          fill="currentColor"
-          viewBox="0 0 14 16"
-        >
-          <path
-            d="M8 8h3v2H7c-.55 0-1-.45-1-1V4h2v4zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"
-            fillRule="evenodd"
-          />
-        </svg>
-      </ClockIcon>
     </span>
   </Icon>
   <Icon
@@ -99,6 +104,33 @@ exports[`Storyshots UI/Icon all 1`] = `
           />
         </svg>
       </CancelIcon>
+    </span>
+  </Icon>
+  <Icon
+    as="span"
+    className=""
+    glyph="clock"
+    key="clock"
+  >
+    <span
+      className="root"
+    >
+      <ClockIcon
+        className="icon"
+        fill="currentColor"
+        viewBox="0 0 14 16"
+      >
+        <svg
+          className="icon"
+          fill="currentColor"
+          viewBox="0 0 14 16"
+        >
+          <path
+            d="M8 8h3v2H7c-.55 0-1-.45-1-1V4h2v4zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </ClockIcon>
     </span>
   </Icon>
   <Icon
@@ -295,28 +327,32 @@ exports[`Storyshots UI/Icon default 1`] = `
   <Icon
     as="span"
     className=""
-    glyph="branch"
+    glyph="arrow"
   >
     <span
       className="root"
     >
-      <BranchIcon
+      <ArrowIcon
         className="icon"
         fill="currentColor"
-        viewBox="0 0 640 1024"
+        viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
       >
         <svg
           className="icon"
           fill="currentColor"
-          viewBox="0 0 640 1024"
+          viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M512 192c-70.625 0-128 57.344-128 128 0 47.219 25.875 88.062 64 110.281V448s0 128-128 128c-53.062 0-94.656 11.375-128 28.812V302.281c38.156-22.219 64-63.062 64-110.281 0-70.656-57.344-128-128-128S0 121.344 0 192c0 47.219 25.844 88.062 64 110.281V721.75C25.844 743.938 0 784.75 0 832c0 70.625 57.344 128 128 128s128-57.375 128-128c0-33.5-13.188-63.75-34.25-86.625C240.375 722.5 270.656 704 320 704c254 0 256-256 256-256v-17.719c38.125-22.219 64-63.062 64-110.281 0-70.656-57.375-128-128-128zm-384-64c35.406 0 64 28.594 64 64s-28.594 64-64 64-64-28.594-64-64 28.594-64 64-64zm0 768c-35.406 0-64-28.625-64-64 0-35.312 28.594-64 64-64s64 28.688 64 64c0 35.375-28.594 64-64 64zm384-512c-35.375 0-64-28.594-64-64s28.625-64 64-64 64 28.594 64 64-28.625 64-64 64z"
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <path
+            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
           />
         </svg>
-      </BranchIcon>
+      </ArrowIcon>
     </span>
   </Icon>
 </div>

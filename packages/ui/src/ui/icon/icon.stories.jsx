@@ -2,23 +2,13 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
-import { Icon } from '.';
+import { Icon, ICONS } from '.';
 
 const stories = storiesOf('UI/Icon', module);
 stories.addDecorator(getWrapperDecorator());
 
-stories.add('default', () => <Icon glyph="branch" />);
+stories.add('default', () => <Icon glyph={ICONS.ARROW} />);
 
 stories.add('all', () =>
-  [
-    'branch',
-    'clock',
-    'cancel',
-    'commit',
-    'filter',
-    'help',
-    'package',
-    'pr',
-    'sort',
-  ].map((glyph) => <Icon glyph={glyph} key={glyph} />),
+  Object.values(ICONS).map((glyph) => <Icon glyph={glyph} key={glyph} />),
 );
