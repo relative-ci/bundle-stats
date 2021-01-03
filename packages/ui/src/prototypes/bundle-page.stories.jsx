@@ -25,7 +25,7 @@ stories.addDecorator(getWrapperDecorator());
 const JOBS = createJobs([{ webpack: currentData }, { webpack: baselineData }]);
 const [currentJob] = JOBS;
 
-const TABS = ['Totals', 'Assets', 'Modules', 'Packages'];
+const TABS = ['Overview', 'Assets', 'Modules', 'Packages'];
 
 const Page = ({ children, activeTab }) => (
   <>
@@ -46,13 +46,6 @@ const Page = ({ children, activeTab }) => (
         <Container>
           <Summary data={currentJob.summary} showSummaryItemBaselineValue />
         </Container>
-        {get(currentJob, 'insights.webpack.duplicatePackages') && (
-          <Container>
-            <DuplicatePackagesWarning
-              duplicatePackages={get(currentJob, 'insights.webpack.duplicatePackages.data')}
-            />
-          </Container>
-        )}
       </Stack>
       <Container className={css.tabsContainer}>
         <Tabs className={css.tabs}>
@@ -76,8 +69,15 @@ Page.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-stories.add('totals', () => (
-  <Page activeTab="Totals">
+stories.add('overview', () => (
+  <Page activeTab="Overview">
+    {get(currentJob, 'insights.webpack.duplicatePackages') && (
+      <Container>
+        <DuplicatePackagesWarning
+          duplicatePackages={get(currentJob, 'insights.webpack.duplicatePackages.data')}
+        />
+      </Container>
+    )}
     <Container>
       <BundleAssetsTotalsChartBars jobs={JOBS} />
     </Container>
