@@ -1,49 +1,41 @@
 :root {
-  --header-height: calc(var(--space-xsmall) + var(--space-xxlarge) * 2);
+  --header-height: 0px;
 }
 
 .root {
   padding-top: var(--header-height);
 }
 
-.header {
-  position: fixed;
-  z-index: 100;
-  left: 0;
-  top: 0;
-  right: 0;
-  height: var(--header-height);
-}
-
-.anchor {
-  --spacing: calc(var(--header-height) + var(--space-small));
-
-  position: relative;
-  padding-top: var(--spacing);
-  /* stylelint-disable */
-  margin-top: calc(0px - var(--spacing)) !important;
-  /* stylelint-enable */
-  z-index: 0;
-  color: inherit;
-  text-decoration: none;
-  outline: none;
-}
-
-.anchor:hover,
-.anchor:active {
-  color: var(--color-gray-dark);
-}
-
 .main {
   padding-bottom: var(--space-large);
 }
 
-.jobsHeader {
+.empty {
+  padding-top: var(--space-large);
+  min-height: 80vh;
+  text-align: center;
+}
+
+.tabsContainer {
+  margin-top: var(--space-small);
+  margin-bottom: var(--space-large);
   border-bottom: 1px solid var(--color-outline);
 }
 
-.empty {
-  text-align: center;
+.tabs {
+  margin-bottom: -1px;
+}
+
+.tabActive {
+  color: var(--color-primary);
+}
+
+.tabActive::after {
+  background: currentColor;
+}
+
+.tabsContent {
+  min-height: 480px;
 }
 
 .footerInfo a {
@@ -60,6 +52,22 @@
 
 @media (min-width: 600px) {
   :root {
-    --header-height: calc(var(--space-large) + var(--space-small) * 2);
+    --header-height: 80px;
+  }
+
+  .root {
+    padding-top: calc(var(--header-height) + var(--space-large));
+  }
+
+  .header {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: var(--header-height);
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-outline);
+    box-shadow: 0 0 var(--space-xxsmall) var(--color-shadow);
   }
 }

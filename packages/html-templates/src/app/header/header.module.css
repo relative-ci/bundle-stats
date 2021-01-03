@@ -1,56 +1,30 @@
 .root {
-  padding: var(--space-small);
+  display: flex;
+  align-items: stretch;
 }
 
-/* Components */
 .branding {
+  padding: var(--space-small);
+  flex: 0 0 auto;
+  color: var(--color-text);
   display: flex;
   align-items: center;
-  color: inherit;
 }
 
-.branding:hover,
-.branding:active,
-.branding:focus {
-  color: inherit;
-  opacity: 0.8;
+.jobs {
+  flex: 1 1 auto;
 }
 
-.logo {
-  margin-right: var(--space-xsmall);
-  width: var(--space-large);
-  flex: 0 0 var(--space-large);
-}
-
-.logotype {
-  width: 140px;
-  height: var(--space-small);
-  flex: 0 0 auto;
-}
-
-.tabs {
-  border-bottom: 0;
-}
-
-.tabItem {
-  color: inherit;
-}
-
-.tabItem:hover,
-.tabItem:focus,
-.tabItem:active {
-  color: inherit;
-  opacity: 0.7;
-}
-
-.githubLogo {
+.tools {
+  border-left: 1px solid var(--color-outline);
+  padding: var(--space-small);
   margin: 0 0 0 auto;
-  width: var(--space-medium);
-  color: inherit;
+  display: flex;
+  align-items: center;
+  color: var(--color-text-light);
 }
 
-.githubLogo:active,
-.githubLogo:hover {
+.toolsGithub {
   color: inherit;
-  opacity: 0.7;
+  width: var(--space-medium);
 }
