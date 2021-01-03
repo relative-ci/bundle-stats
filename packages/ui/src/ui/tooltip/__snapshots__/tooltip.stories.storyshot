@@ -11,25 +11,194 @@ exports[`Storyshots UI/Tooltip default 1`] = `
   }
 >
   <Tooltip
-    align=""
     as="span"
     className=""
     containerRef={null}
     title="View job #100"
   >
-    <span
+    <ForwardRef(TooltipReference)
+      animated={false}
+      animating={false}
+      as="span"
+      baseId="id-test"
       className="root"
+      hide={[Function]}
+      place={[Function]}
+      placement="top"
+      setAnimated={[Function]}
+      setBaseId={[Function]}
+      setVisible={[Function]}
+      show={[Function]}
+      stopAnimation={[Function]}
+      toggle={[Function]}
+      unstable_arrowRef={
+        Object {
+          "current": null,
+        }
+      }
+      unstable_arrowStyles={Object {}}
+      unstable_disclosureRef={
+        Object {
+          "current": null,
+        }
+      }
+      unstable_idCountRef={
+        Object {
+          "current": 0,
+        }
+      }
+      unstable_originalPlacement="top"
+      unstable_popoverRef={
+        Object {
+          "current": <div
+            hidden=""
+            id="id-test"
+            role="tooltip"
+            style="display: none; pointer-events: none;"
+          >
+            <div
+              class="tooltip"
+            >
+              View job #100
+            </div>
+          </div>,
+        }
+      }
+      unstable_popoverStyles={Object {}}
+      unstable_referenceRef={
+        Object {
+          "current": <span
+            aria-describedby="id-test"
+            class="root"
+            tabindex="0"
+          >
+            Job #100
+          </span>,
+        }
+      }
+      unstable_setTimeout={[Function]}
+      unstable_timeout={0}
+      unstable_update={[Function]}
+      visible={false}
     >
-      Job #100
-      <div
-        className="tooltip"
+      <span
+        aria-describedby="id-test"
+        className="root"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        tabIndex={0}
       >
-        View job #100
-        <span
-          className="tooltipArrow"
-        />
-      </div>
-    </span>
+        Job #100
+      </span>
+    </ForwardRef(TooltipReference)>
+    <ForwardRef(Tooltip)
+      animated={false}
+      animating={false}
+      baseId="id-test"
+      hide={[Function]}
+      place={[Function]}
+      placement="top"
+      setAnimated={[Function]}
+      setBaseId={[Function]}
+      setVisible={[Function]}
+      show={[Function]}
+      stopAnimation={[Function]}
+      toggle={[Function]}
+      unstable_arrowRef={
+        Object {
+          "current": null,
+        }
+      }
+      unstable_arrowStyles={Object {}}
+      unstable_disclosureRef={
+        Object {
+          "current": null,
+        }
+      }
+      unstable_idCountRef={
+        Object {
+          "current": 0,
+        }
+      }
+      unstable_originalPlacement="top"
+      unstable_popoverRef={
+        Object {
+          "current": <div
+            hidden=""
+            id="id-test"
+            role="tooltip"
+            style="display: none; pointer-events: none;"
+          >
+            <div
+              class="tooltip"
+            >
+              View job #100
+            </div>
+          </div>,
+        }
+      }
+      unstable_popoverStyles={Object {}}
+      unstable_referenceRef={
+        Object {
+          "current": <span
+            aria-describedby="id-test"
+            class="root"
+            tabindex="0"
+          >
+            Job #100
+          </span>,
+        }
+      }
+      unstable_setTimeout={[Function]}
+      unstable_timeout={0}
+      unstable_update={[Function]}
+      visible={false}
+    >
+      <Portal>
+        <Portal
+          containerInfo={
+            <div
+              class="__reakit-portal"
+            >
+              <div
+                hidden=""
+                id="id-test"
+                role="tooltip"
+                style="display: none; pointer-events: none;"
+              >
+                <div
+                  class="tooltip"
+                >
+                  View job #100
+                </div>
+              </div>
+            </div>
+          }
+        >
+          <div
+            hidden={true}
+            id="id-test"
+            onAnimationEnd={[Function]}
+            onTransitionEnd={[Function]}
+            role="tooltip"
+            style={
+              Object {
+                "display": "none",
+                "pointerEvents": "none",
+              }
+            }
+          >
+            <div
+              className="tooltip"
+            >
+              View job #100
+            </div>
+          </div>
+        </Portal>
+      </Portal>
+    </ForwardRef(Tooltip)>
   </Tooltip>
 </div>
 `;

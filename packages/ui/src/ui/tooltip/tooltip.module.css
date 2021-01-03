@@ -3,68 +3,14 @@
 }
 
 .tooltip {
-  position: absolute;
-  left: 50%;
-  bottom: 100%;
-  transform: translateX(-50%) translateY(calc(0px - var(--space-xsmall)));
-
-  margin-top: 0;
-  padding: var(--space-small);
-  min-width: 120px;
+  padding: var(--space-xxsmall);
   box-shadow: 0 0 var(--space-xxsmall) var(--color-shadow);
 
   background: var(--color-background);
-  color: var(--color-text);
   font-size: var(--size-small);
-  text-align: center;
 }
 
-.tooltipArrow {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
-  width: 100%;
-  height: var(--space-small);
-  overflow: hidden;
-}
-
-.tooltipArrow::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: var(--space-xsmall);
-  height: var(--space-xsmall);
-  transform: translateX(-50%) translateY(-50%) rotate(45deg);
-
-  background: var(--color-background);
-  box-shadow: 0 0 var(--space-xxsmall) var(--color-shadow);
-}
-
-/* Hover */
-.tooltip {
-  visibility: hidden;
-  opacity: 0;
-  width: 0;
-  overflow: hidden;
-  transition: visibility 0s 0.15s, opacity 0.15s ease-out;
-}
-
-.root:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
-  width: auto;
-  overflow: visible;
-  transition: visibility 0s 0.4s, opacity 0.2s 0.2s ease-in;
-}
-
-/* Align modifier */
-.topLeft .tooltip {
-  left: 0;
-  transform: translateX(calc(0px - var(--space-xsmall))) translateY(calc(0px - var(--space-xsmall)));
-}
-
-.topLeft .tooltipArrow::before {
-  left: var(--space-medium);
+.arrow svg {
+  display: block;
+  fill: var(--color-background);
 }

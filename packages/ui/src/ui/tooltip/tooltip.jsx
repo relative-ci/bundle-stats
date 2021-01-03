@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import {
+  Tooltip as UITooltip,
+  TooltipArrow as UITooltipArrow,
+  TooltipReference as UITooltipReference,
+  useTooltipState,
+} from 'reakit/Tooltip';
 
 import css from './tooltip.module.css';
 
@@ -10,23 +16,34 @@ export const Tooltip = (props) => {
     title,
     children,
     as: Component,
-    align,
     containerRef: ref,
     ...restProps
   } = props;
 
-  const rootClassName = cx(css.root, className, align && css[align]);
+  const rootClassName = cx(css.root, className);
+  const tooltipProps = useTooltipState({
+    baseId: process.env.NODE_ENV === 'test' && 'id-test',
+    placement: 'top',
+  });
 
   return (
-    <Component className={rootClassName} {...(ref ? { ref } : {})} {...restProps}>
-      {children}
+    <>
+      <UITooltipReference
+        as={Component}
+        className={rootClassName}
+        {...ref ? { ref } : {}}
+        {...restProps}
+        {...tooltipProps}
+      >
+        {children}
+      </UITooltipReference>
       {title && (
-        <div className={css.tooltip}>
-          {title}
-          <span className={css.tooltipArrow} />
-        </div>
+        <UITooltip {...tooltipProps}>
+          <UITooltipArrow {...tooltipProps} className={css.arrow} />
+          <div className={css.tooltip}>{title}</div>
+        </UITooltip>
       )}
-    </Component>
+    </>
   );
 };
 
@@ -34,7 +51,6 @@ Tooltip.defaultProps = {
   className: '',
   title: '',
   as: 'span',
-  align: '',
   containerRef: null,
 };
 
@@ -43,7 +59,6 @@ Tooltip.propTypes = {
   title: PropTypes.node,
   children: PropTypes.node.isRequired,
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
-  align: PropTypes.oneOf(['', 'topLeft']),
   containerRef: PropTypes.shape({
     current: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   }),
