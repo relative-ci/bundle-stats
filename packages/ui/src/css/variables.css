@@ -40,7 +40,7 @@
   --color-gray-900 : #262729;
 
   --color-gray-ultra-light: var(--color-gray-100);
-  --color-gray-light: var(--color-gray-200);
+  --color-gray-light: var(--color-gray-300);
   --color-gray: var(--color-gray-500);
   --color-gray-dark: var(--color-gray-700);
   --color-gray-ultra-dark: var(--color-gray-900);
@@ -122,9 +122,11 @@
   --color-branding: #1a477f;
   --color-branding-dark: #10356d;
 
+  --color-text-ultra-light: var(--color-gray-ultra-light);
   --color-text-light: var(--color-gray-light);
   --color-text: var(--color-gray);
   --color-text-dark: var(--color-gray-dark);
+  --color-text-ultra-dark: var(--color-gray-ultra-dark);
   --color-heading: var(--color-gray-ultra-dark);
 
   --color-success: var(--color-green);
