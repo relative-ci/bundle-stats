@@ -59,7 +59,7 @@ const StandaloneApp = ({ jobs }) => {
   return (
     <HashRouter>
       <StandaloneAppLayout jobs={jobs}>
-        <Container>
+        <Container className={css.summaryContainer}>
           <Summary
             data={jobs[0].summary}
             showSummaryItemDelta={jobs.length !== 1}

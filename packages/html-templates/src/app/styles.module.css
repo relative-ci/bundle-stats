@@ -16,10 +16,16 @@
   text-align: center;
 }
 
+.summaryContainer {
+  padding-top: var(--space-large);
+  padding-bottom: var(--space-small);
+  background: var(--color-highlight);
+}
+
 .tabsContainer {
-  margin-top: var(--space-small);
   margin-bottom: var(--space-large);
   border-bottom: 1px solid var(--color-outline);
+  background: var(--color-highlight);
 }
 
 .tabs {
@@ -55,10 +61,6 @@
     --header-height: 80px;
   }
 
-  .root {
-    padding-top: calc(var(--header-height) + var(--space-large));
-  }
-
   .header {
     position: fixed;
     z-index: 100;
@@ -68,6 +70,6 @@
     height: var(--header-height);
     background-color: var(--color-background);
     border-bottom: 1px solid var(--color-outline);
-    box-shadow: 0 0 var(--space-xxsmall) var(--color-shadow);
+    box-shadow: 0 0 var(--space-xxxsmall) var(--color-shadow);
   }
 }

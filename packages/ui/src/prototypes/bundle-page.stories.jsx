@@ -7,7 +7,7 @@ import { get } from 'lodash';
 import baselineData from '../../__mocks__/webpack-stats.baseline.json';
 import currentData from '../../__mocks__/webpack-stats.current.json';
 import { Container, Logo, Tabs } from '../ui';
-import { Box, Header, Footer, Stack } from '../layout';
+import { Box, Footer, Stack } from '../layout';
 import { JobsHeader } from '../components/jobs-header';
 import { BundleAssets } from '../components/bundle-assets';
 import { BundleAssetsTotalsTable } from '../components/bundle-assets-totals-table';
@@ -28,25 +28,17 @@ const [currentJob] = JOBS;
 const TABS = ['Overview', 'Assets', 'Modules', 'Packages'];
 
 const Page = ({ children, activeTab }) => (
-  <>
-    <Header
-      className={css.header}
-      renderLeft={(sideProps) => (
-        <div {...sideProps}>
-          <Logo kind="logo" className={css.headerLogo} />
-          <Logo kind="logotype" className={css.headerLogotype} />
-        </div>
-      )}
-    />
-    <Stack className={css.main} space="large">
-      <Container className={css.jobsHeader}>
+  <div className={css.root}>
+    <Container className={css.header}>
+      <div className={css.headerInner}>
+        <Logo kind="logo" className={css.headerLogo} />
         <JobsHeader jobs={JOBS} />
-      </Container>
-      <Stack className={css.mainTop} space="medium">
-        <Container>
-          <Summary data={currentJob.summary} showSummaryItemBaselineValue />
-        </Container>
-      </Stack>
+      </div>
+    </Container>
+    <Container className={css.summaryContainer}>
+      <Summary data={currentJob.summary} showSummaryItemBaselineValue />
+    </Container>
+    <Stack className={css.main} space="large">
       <Container className={css.tabsContainer}>
         <Tabs className={css.tabs}>
           {TABS.map((tab) => (
@@ -61,7 +53,7 @@ const Page = ({ children, activeTab }) => (
       </Stack>
     </Stack>
     <Footer className={css.footer} />
-  </>
+  </div>
 );
 
 Page.propTypes = {

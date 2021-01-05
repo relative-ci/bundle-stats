@@ -1,6 +1,6 @@
-.root {
+.inner {
   display: flex;
-  align-items: stretch;
+  align-items: center;
 }
 
 .branding {
