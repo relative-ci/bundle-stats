@@ -16,6 +16,10 @@
   vertical-align: top;
 }
 
+.meta {
+  color: var(--color-text-light);
+}
+
 .metaItem {
   display: inline-flex;
   align-items: center;
@@ -25,7 +29,6 @@
   width: var(--space-small);
   height: var(--space-small);
   margin-right: var(--space-xxxsmall);
-  color: var(--color-text-light);
 }
 
 .metaLabel {

@@ -40,12 +40,7 @@ export const SummaryItem = ({
         as="h3"
         className={css.title}
         title={
-          showMetricDescriptionTooltip && (
-            <div className={css.helpTooltip}>
-              <h4 className={css.helpTooltipTitle}>{metric.label}</h4>
-              <p className={css.helpTooltipDescription}>{metric.description}</p>
-            </div>
-          )
+          showMetricDescriptionTooltip && <p className={css.helpTooltip}>{metric.description}</p>
         }
       >
         {metric.label}

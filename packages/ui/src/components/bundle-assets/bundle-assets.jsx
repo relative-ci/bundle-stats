@@ -101,7 +101,6 @@ const getRenderRowHeader = (labels) => (item) => (
       <Tooltip
         className={css.notPredictive}
         title={<TooltipNotPredictive runs={item.runs} />}
-        align="topLeft"
       >
         <span className={cx('ui-icon ui-icon--small', css.notPredictiveIcon)}>warning</span>
       </Tooltip>

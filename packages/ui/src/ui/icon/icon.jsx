@@ -15,21 +15,34 @@ import SortIcon from './assets/sort.svg';
 
 import css from './icon.module.css';
 
-const ICONS = {
-  arrow: ArrowIcon,
-  branch: BranchIcon,
-  cancel: CancelIcon,
-  clock: ClockIcon,
-  commit: CommitIcon,
-  filter: FilterIcon,
-  help: HelpIcon,
-  package: PackageIcon,
-  pr: PullRequestIcon,
-  sort: SortIcon,
+export const ICONS = {
+  ARROW: 'arrow',
+  BRANCH: 'branch',
+  CANCEL: 'cancel',
+  CLOCK: 'clock',
+  COMMIT: 'commit',
+  FILTER: 'filter',
+  HELP: 'help',
+  PACKAGE: 'package',
+  PR: 'pr',
+  SORT: 'sort',
+};
+
+const ICON_MAP = {
+  [ICONS.ARROW]: ArrowIcon,
+  [ICONS.BRANCH]: BranchIcon,
+  [ICONS.CANCEL]: CancelIcon,
+  [ICONS.CLOCK]: ClockIcon,
+  [ICONS.COMMIT]: CommitIcon,
+  [ICONS.FILTER]: FilterIcon,
+  [ICONS.HELP]: HelpIcon,
+  [ICONS.PACKAGE]: PackageIcon,
+  [ICONS.PR]: PullRequestIcon,
+  [ICONS.SORT]: SortIcon,
 };
 
 export const Icon = ({ className, glyph, as: Component, ...restProps }) => {
-  const Svg = typeof glyph === 'string' ? ICONS[glyph] : glyph;
+  const Svg = typeof glyph === 'string' ? ICON_MAP[glyph] : glyph;
 
   return (
     <Component className={cx(css.root, className)} {...restProps}>
@@ -45,6 +58,6 @@ Icon.defaultProps = {
 
 Icon.propTypes = {
   className: PropTypes.string,
-  glyph: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  glyph: PropTypes.oneOfType([PropTypes.oneOf(Object.values(ICONS)), PropTypes.node]).isRequired,
   as: PropTypes.node,
 };

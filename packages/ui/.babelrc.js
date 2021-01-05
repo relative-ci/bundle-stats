@@ -14,7 +14,7 @@ module.exports = {
     '@babel/plugin-proposal-private-methods',
     '@babel/plugin-proposal-class-properties',
     'babel-plugin-lodash',
-    ['babel-plugin-inline-react-svg', { svgo: false }],
+    ['@simplyianm/babel-plugin-inline-react-svg', { noReactAutoImport: true, svgo: false }],
   ],
   env: {
     test: {

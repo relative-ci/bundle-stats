@@ -1,5 +1,6 @@
 .title {
   margin: 0;
+  display: inline-block;
   color: var(--color-text-light);
   font-weight: bold;
   font-size: var(--size-xsmall);
@@ -27,25 +28,7 @@
 }
 
 .helpTooltip {
-  width: 100vw;
-  max-width: 320px;
-  white-space: normal;
-  text-align: left;
-}
-
-.helpTooltipTitle {
-  margin: 0 0 var(--space-xxsmall);
-  color: var(--color-text);
-  font-size: var(--size-medium);
-  text-transform: none;
-  font-weight: bold;
-}
-
-.helpTooltipDescription {
-  color: var(--color-text);
-  line-height: var(--space-small);
-  font-weight: normal;
-  text-transform: none;
+  max-width: 280px;
 }
 
 /* Hover */

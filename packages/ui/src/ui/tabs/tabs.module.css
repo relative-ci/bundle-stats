@@ -6,7 +6,7 @@
 .item {
   position: relative;
   display: inline-block;
-  padding: var(--space-xsmall) var(--space-small);
+  padding: var(--space-xsmall) 0;
   color: var(--color-text-light);
   font-weight: bold;
   text-decoration: none;
@@ -37,4 +37,8 @@
 
 .itemActive::after {
   background: currentColor;
+}
+
+.item + .item {
+  margin-left: var(--space-medium);
 }
