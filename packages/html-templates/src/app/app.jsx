@@ -17,10 +17,10 @@ import { BundlePackages } from '@bundle-stats/ui/lib-esm/components/bundle-packa
 
 import I18N from '../i18n';
 import { Header } from './header';
-import { URLS } from './constants';
-import css from './styles.module.css';
+import { URLS } from './app.constants';
+import css from './app.module.css';
 
-const StandaloneAppLayout = ({ jobs, ...props }) => (
+const Layout = ({ jobs, ...props }) => (
   <div className={css.root}>
     <Header className={css.header} jobs={jobs} />
     <main className={css.main} {...props} />
@@ -34,22 +34,22 @@ const StandaloneAppLayout = ({ jobs, ...props }) => (
   </div>
 );
 
-StandaloneAppLayout.propTypes = {
+Layout.propTypes = {
   jobs: PropTypes.arrayOf(PropTypes.object),
 };
 
-StandaloneAppLayout.defaultProps = {
+Layout.defaultProps = {
   jobs: null,
 };
 
-const StandaloneApp = ({ jobs }) => {
+export const App = ({ jobs }) => {
   if (jobs.length === 0) {
     return (
-      <StandaloneAppLayout>
+      <Layout>
         <Container>
           <div className={css.empty}>{I18N.NO_DATA}</div>
         </Container>
-      </StandaloneAppLayout>
+      </Layout>
     );
   }
 
@@ -58,7 +58,7 @@ const StandaloneApp = ({ jobs }) => {
 
   return (
     <HashRouter>
-      <StandaloneAppLayout jobs={jobs}>
+      <Layout jobs={jobs}>
         <Container className={css.summaryContainer}>
           <Summary
             data={jobs[0].summary}
@@ -145,16 +145,16 @@ const StandaloneApp = ({ jobs }) => {
             />
           </Switch>
         </div>
-      </StandaloneAppLayout>
+      </Layout>
     </HashRouter>
   );
 };
 
-StandaloneApp.defaultProps = {
+App.defaultProps = {
   jobs: [],
 };
 
-StandaloneApp.propTypes = {
+App.propTypes = {
   jobs: PropTypes.arrayOf(
     PropTypes.shape({
       internalBuildNumber: PropTypes.number,
@@ -163,5 +163,3 @@ StandaloneApp.propTypes = {
     }),
   ),
 };
-
-export default StandaloneApp;
