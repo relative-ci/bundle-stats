@@ -21,3 +21,12 @@ stories.add('loading', () => <Summary loading />);
 stories.add('single run', () => (
   <Summary data={SINGLE_JOB[0].summary} showSummaryItemDelta={false} />
 ));
+
+stories.add('with link', () => (
+  <Summary
+    data={MULTIPLE_JOBS[0].summary}
+    SummaryItemWrapper={({ keyProps, ...props }) => (
+      <span {...props} onClick={() => alert(JSON.stringify(keyProps))} />
+    )}
+  />
+));

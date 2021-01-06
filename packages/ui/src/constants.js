@@ -21,3 +21,10 @@ export const SPACES = [
   SPACE_XXLARGE,
   SPACE_XXXLARGE,
 ];
+
+export const SECTIONS = {
+  TOTALS: 'TOTALS',
+  ASSETS: 'ASSETS',
+  MODULES: 'MODULES',
+  PACKAGES: 'PACKAGES',
+};

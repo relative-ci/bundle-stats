@@ -3,27 +3,42 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get } from 'lodash';
 
+import { SECTIONS } from '../../constants';
 import { SummaryItem } from '../summary-item';
 import css from './summary.module.css';
 
 const PRIMARY_METRICS = new Map([
-  ['webpack.totalSizeByTypeALL'],
-  ['webpack.totalInitialSizeJS'],
-  ['webpack.totalInitialSizeCSS'],
-  ['webpack.cacheInvalidation', { showDelta: false }],
+  ['webpack.totalSizeByTypeALL', { section: SECTIONS.TOTALS }],
+  ['webpack.totalInitialSizeJS', { section: SECTIONS.ASSETS }],
+  ['webpack.totalInitialSizeCSS', { section: SECTIONS.ASSETS }],
+  ['webpack.cacheInvalidation', { section: SECTIONS.ASSETS, showDelta: false }],
 ]);
 
 const SECONDARY_METRICS = new Map([
-  ['webpack.assetCount'],
-  ['webpack.chunkCount'],
-  ['webpack.moduleCount'],
-  ['webpack.packageCount'],
-  ['webpack.duplicatePackagesCount'],
+  ['webpack.assetCount', { section: SECTIONS.ASSETS }],
+  ['webpack.chunkCount', { section: SECTIONS.ASSETS }],
+  ['webpack.moduleCount', { section: SECTIONS.MODULES }],
+  ['webpack.packageCount', { section: SECTIONS.PACKAGES }],
+  ['webpack.duplicatePackagesCount', { section: SECTIONS.PACKAGES }],
 ]);
 
-export const Summary = ({ className, data, loading, showSummaryItemDelta }) => {
+const DefaultSummaryItemWrapper = ({ className, children }) => (
+  <div className={className}>{children}</div>
+);
+
+DefaultSummaryItemWrapper.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
+};
+
+DefaultSummaryItemWrapper.defaultProps = {
+  className: '',
+};
+
+export const Summary = ({ className, data, loading, showSummaryItemDelta, SummaryItemWrapper }) => {
   const getRenderSummaryItem = (sectionProps) => ([key, keyProps]) => (
     <SummaryItem
+      as={(wrapperProps) => <SummaryItemWrapper {...wrapperProps} keyProps={keyProps} />}
       key={key}
       id={key}
       data={get(data, key)}
@@ -51,6 +66,7 @@ Summary.defaultProps = {
   data: null,
   loading: false,
   showSummaryItemDelta: true,
+  SummaryItemWrapper: DefaultSummaryItemWrapper,
 };
 
 Summary.propTypes = {
@@ -63,4 +79,5 @@ Summary.propTypes = {
   }),
   loading: PropTypes.bool,
   showSummaryItemDelta: PropTypes.bool,
+  SummaryItemWrapper: PropTypes.elementType,
 };

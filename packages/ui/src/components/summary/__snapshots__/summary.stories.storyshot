@@ -11,6 +11,7 @@ exports[`Storyshots Components/Summary default 1`] = `
   }
 >
   <Summary
+    SummaryItemWrapper={[Function]}
     className=""
     data={
       Object {
@@ -71,6 +72,7 @@ exports[`Storyshots Components/Summary loading 1`] = `
   }
 >
   <Summary
+    SummaryItemWrapper={[Function]}
     className=""
     data={null}
     loading={true}
@@ -90,6 +92,7 @@ exports[`Storyshots Components/Summary single run 1`] = `
   }
 >
   <Summary
+    SummaryItemWrapper={[Function]}
     className=""
     data={
       Object {
@@ -135,6 +138,67 @@ exports[`Storyshots Components/Summary single run 1`] = `
     }
     loading={false}
     showSummaryItemDelta={false}
+  />
+</div>
+`;
+
+exports[`Storyshots Components/Summary with link 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "padding": "24px",
+      "width": "100%",
+    }
+  }
+>
+  <Summary
+    SummaryItemWrapper={[Function]}
+    className=""
+    data={
+      Object {
+        "webpack": Object {
+          "assetCount": Object {
+            "baseline": 19,
+            "current": 19,
+          },
+          "cacheInvalidation": Object {
+            "baseline": 0,
+            "current": 75.34,
+          },
+          "chunkCount": Object {
+            "baseline": 0,
+            "current": 0,
+          },
+          "duplicatePackagesCount": Object {
+            "baseline": 3,
+            "current": 3,
+          },
+          "moduleCount": Object {
+            "baseline": 556,
+            "current": 556,
+          },
+          "packageCount": Object {
+            "baseline": 63,
+            "current": 63,
+          },
+          "totalInitialSizeCSS": Object {
+            "baseline": 24919,
+            "current": 21703,
+          },
+          "totalInitialSizeJS": Object {
+            "baseline": 591864,
+            "current": 591944,
+          },
+          "totalSizeByTypeALL": Object {
+            "baseline": 818626,
+            "current": 815490,
+          },
+        },
+      }
+    }
+    loading={false}
+    showSummaryItemDelta={true}
   />
 </div>
 `;
