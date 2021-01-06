@@ -3,15 +3,11 @@ import { get } from 'lodash';
 import { FILE_TYPES } from '@bundle-stats/utils';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
+import { ASSET_FILTERS } from '../../constants';
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilteredItems } from '../../hocs/with-filtered-items';
 import { withSearch } from '../../hocs/with-search';
 import {
-  FILTER_ASSET,
-  FILTER_CHANGED,
-  FILTER_CHUNK,
-  FILTER_ENTRY,
-  FILTER_INITIAL,
   SORT_BY_NAME,
   SORT_BY_DELTA,
   SORT_BY_SIZE,
@@ -73,16 +69,16 @@ const addRowIsNotPredictive = ({ items }) => ({
 });
 
 const getRowFilter = (filters) => (item) => {
-  if (filters[FILTER_CHANGED] && !item.changed) {
+  if (filters[ASSET_FILTERS.CHANGED] && !item.changed) {
     return false;
   }
 
   if (
     !(
-      (filters[`entryTypes.${FILTER_ENTRY}`] && item.isEntry) ||
-      (filters[`entryTypes.${FILTER_INITIAL}`] && item.isInitial) ||
-      (filters[`entryTypes.${FILTER_CHUNK}`] && item.isChunk) ||
-      (filters[`entryTypes.${FILTER_ASSET}`] && item.isAsset)
+      (filters[`entryTypes.${ASSET_FILTERS.ENTRY}`] && item.isEntry) ||
+      (filters[`entryTypes.${ASSET_FILTERS.INITIAL}`] && item.isInitial) ||
+      (filters[`entryTypes.${ASSET_FILTERS.CHUNK}`] && item.isChunk) ||
+      (filters[`entryTypes.${ASSET_FILTERS.ASSET}`] && item.isAsset)
     )
   ) {
     return false;
@@ -128,7 +124,7 @@ const getFileTypeFilters = (value = true) =>
   );
 
 const getEntryTypeFilters = (value = true) =>
-  [FILTER_ENTRY, FILTER_INITIAL, FILTER_CHUNK, FILTER_ASSET].reduce(
+  [ASSET_FILTERS.ENTRY, ASSET_FILTERS.INITIAL, ASSET_FILTERS.CHUNK, ASSET_FILTERS.ASSET].reduce(
     (agg, entryTypeFilter) => ({
       ...agg,
       [`entryTypes.${entryTypeFilter}`]: value,
@@ -147,18 +143,18 @@ export const enhance = compose(
   withProps(addRowIsNotPredictive),
 
   // Filters
-  withProps(({ jobs }) => {
+  withProps(({ jobs, initialFilters }) => {
     const defaultFilters = {
-      [FILTER_CHANGED]: false,
+      [ASSET_FILTERS.CHANGED]: false,
       ...getEntryTypeFilters(true),
       ...getFileTypeFilters(true),
     };
 
     return {
       defaultFilters,
-      initialFilters: {
+      initialFilters: initialFilters || {
         ...defaultFilters,
-        [FILTER_CHANGED]: jobs.length > 1, // enable filter only when there are multiple jobs
+        [ASSET_FILTERS.CHANGED]: jobs.length > 1, // enable filter only when there are multiple jobs
       },
     };
   }),

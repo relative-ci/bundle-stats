@@ -4,6 +4,7 @@ import cx from 'classnames';
 import { get, map } from 'lodash';
 import { FILE_TYPE_LABELS } from '@bundle-stats/utils';
 
+import { ASSET_FILTERS } from '../../constants';
 import { FileName } from '../../ui/file-name';
 import { Tooltip } from '../../ui/tooltip';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
@@ -12,13 +13,6 @@ import { EmptySet } from '../../ui/empty-set';
 import { Toolbar } from '../../ui/toolbar';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
-import {
-  FILTER_ASSET,
-  FILTER_CHANGED,
-  FILTER_ENTRY,
-  FILTER_CHUNK,
-  FILTER_INITIAL,
-} from './bundle-assets.constants';
 import css from './bundle-assets.module.css';
 
 const RUN_TITLE_CURRENT = 'Current';
@@ -168,28 +162,28 @@ export const BundleAssets = (props) => {
               {/* @TODO: get default values from parent state */}
               <FiltersDropdown
                 filters={{
-                  [FILTER_CHANGED]: {
+                  [ASSET_FILTERS.CHANGED]: {
                     label: 'Changed',
-                    defaultValue: filters[FILTER_CHANGED],
+                    defaultValue: filters[ASSET_FILTERS.CHANGED],
                     disabled: jobs.length <= 1,
                   },
                   entryTypes: {
                     label: 'Entry type',
-                    [FILTER_ENTRY]: {
+                    [ASSET_FILTERS.ENTRY]: {
                       label: 'Entry',
-                      defaultValue: get(filters, `entryTypes.${FILTER_ENTRY}`, true),
+                      defaultValue: get(filters, `entryTypes.${ASSET_FILTERS.ENTRY}`, true),
                     },
-                    [FILTER_INITIAL]: {
+                    [ASSET_FILTERS.INITIAL]: {
                       label: 'Initial',
-                      defaultValue: get(filters, `entryTypes.${FILTER_INITIAL}`, true),
+                      defaultValue: get(filters, `entryTypes.${ASSET_FILTERS.INITIAL}`, true),
                     },
-                    [FILTER_CHUNK]: {
+                    [ASSET_FILTERS.CHUNK]: {
                       label: 'Chunk',
-                      defaultValue: get(filters, `entryTypes.${FILTER_CHUNK}`, true),
+                      defaultValue: get(filters, `entryTypes.${ASSET_FILTERS.CHUNK}`, true),
                     },
-                    [FILTER_ASSET]: {
+                    [ASSET_FILTERS.ASSET]: {
                       label: 'Asset',
-                      defaultValue: get(filters, `entryTypes.${FILTER_ASSET}`, true),
+                      defaultValue: get(filters, `entryTypes.${ASSET_FILTERS.ASSET}`, true),
                     },
                   },
                   fileTypes: {

@@ -28,3 +28,11 @@ export const SECTIONS = {
   MODULES: 'MODULES',
   PACKAGES: 'PACKAGES',
 };
+
+export const ASSET_FILTERS = {
+  ASSET: 'asset',
+  CHANGED: 'changed',
+  ENTRY: 'entrypoint',
+  INITIAL: 'initial',
+  CHUNK: 'chunk',
+};
