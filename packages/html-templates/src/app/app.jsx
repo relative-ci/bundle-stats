@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import {
   HashRouter, Switch, Route, NavLink,
 } from 'react-router-dom';
+import cx from 'classnames';
+import { SECTIONS } from '@bundle-stats/ui/lib-esm/constants';
 import { Box } from '@bundle-stats/ui/lib-esm/layout/box';
 import { Container } from '@bundle-stats/ui/lib-esm/ui/container';
 import { DuplicatePackagesWarning } from '@bundle-stats/ui/lib-esm/components/duplicate-packages-warning';
@@ -17,7 +19,7 @@ import { BundlePackages } from '@bundle-stats/ui/lib-esm/components/bundle-packa
 
 import I18N from '../i18n';
 import { Header } from './header';
-import { URLS } from './app.constants';
+import { SECTION_URLS, URLS } from './app.constants';
 import css from './app.module.css';
 
 const Layout = ({ jobs, ...props }) => (
@@ -40,6 +42,23 @@ Layout.propTypes = {
 
 Layout.defaultProps = {
   jobs: null,
+};
+
+const SummaryItemWrapper = ({ keyProps, className, ...props }) => {
+  const { section } = keyProps;
+  const href = SECTION_URLS[section];
+  return <Link to={href} className={cx(className, css.summaryItemLink)} {...props} />;
+};
+
+SummaryItemWrapper.propTypes = {
+  keyProps: PropTypes.shape({
+    section: PropTypes.oneOf(Object.values(SECTIONS)),
+  }).isRequired,
+  className: PropTypes.string,
+};
+
+SummaryItemWrapper.defaultProps = {
+  className: '',
 };
 
 export const App = ({ jobs }) => {

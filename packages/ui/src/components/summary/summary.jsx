@@ -2,15 +2,36 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get } from 'lodash';
+import { FILE_TYPE_CSS, FILE_TYPE_JS } from '@bundle-stats/utils/lib-esm/config/file-types';
 
-import { SECTIONS } from '../../constants';
+import { ASSET_FILTERS, SECTIONS } from '../../constants';
 import { SummaryItem } from '../summary-item';
 import css from './summary.module.css';
 
 const PRIMARY_METRICS = new Map([
   ['webpack.totalSizeByTypeALL', { section: SECTIONS.TOTALS }],
-  ['webpack.totalInitialSizeJS', { section: SECTIONS.ASSETS }],
-  ['webpack.totalInitialSizeCSS', { section: SECTIONS.ASSETS }],
+  [
+    'webpack.totalInitialSizeJS',
+    {
+      section: SECTIONS.ASSETS,
+      filters: {
+        [ASSET_FILTERS.CHANGED]: false,
+        [`entryTypes.${ASSET_FILTERS.INITIAL}`]: true,
+        [`fileTypes.${FILE_TYPE_JS}`]: true,
+      },
+    },
+  ],
+  [
+    'webpack.totalInitialSizeCSS',
+    {
+      section: SECTIONS.ASSETS,
+      filters: {
+        [ASSET_FILTERS.CHANGED]: false,
+        [`entryTypes.${ASSET_FILTERS.INITIAL}`]: true,
+        [`fileTypes.${FILE_TYPE_CSS}`]: true,
+      },
+    },
+  ],
   ['webpack.cacheInvalidation', { section: SECTIONS.ASSETS, showDelta: false }],
 ]);
 
