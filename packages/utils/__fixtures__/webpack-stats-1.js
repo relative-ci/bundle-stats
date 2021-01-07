@@ -3,6 +3,11 @@ module.exports = {
   hash: 'abcd1234',
   assets: [
     {
+      type: 'hidden assets',
+      filteredChildren: 2,
+      size: 100,
+    },
+    {
       chunkNames: ['main'],
       chunks: [1],
       emitted: true,
