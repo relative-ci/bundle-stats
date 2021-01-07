@@ -55,6 +55,21 @@ describe('Webpack/validate', () => {
         ],
       }),
     ).toEqual('');
+
+    expect(
+      validate({
+        ...webpackSource,
+        chunks: [
+          {
+            names: [],
+            entry: false,
+            initial: false,
+            id: null,
+            files: ['main.js'],
+          },
+        ],
+      }),
+    ).toEqual('');
   });
 
   test('should return message if data is missing', () => {

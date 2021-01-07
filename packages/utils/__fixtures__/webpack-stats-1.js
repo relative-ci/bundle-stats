@@ -68,6 +68,15 @@ module.exports = {
       siblings: [1],
       size: 60000,
     },
+    {
+      entry: false,
+      id: null,
+      initial: false,
+      modules: [],
+      files: ['other.js'],
+      names: [],
+      size: 0,
+    },
   ],
   entrypoints: {
     main: {

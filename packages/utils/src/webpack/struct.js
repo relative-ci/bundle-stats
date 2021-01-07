@@ -24,7 +24,7 @@ export const WebpackSourceModuleChunk = struct.interface({
 });
 
 export const WebpackSourceChunkStruct = struct.interface({
-  id: struct.union(['number', 'string']),
+  id: struct.union(['number', 'string', 'null']),
   entry: 'boolean',
   initial: 'boolean',
   names: ['string'],
