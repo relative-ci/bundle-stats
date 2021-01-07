@@ -24,6 +24,7 @@ export const filter = (source, options = {}) => {
   const assets = flow([
     get('assets'),
     map(pick(['name', 'size'])),
+    // Skip assets with empty name or ignore pattern
     _filter(({ name }) => name && !pathIgnorePattern.test(name)),
   ])(source);
 
@@ -41,7 +42,7 @@ export const filter = (source, options = {}) => {
     get('chunks'),
     map(pick(['id', 'entry', 'initial', 'files', 'names'])),
     // Skip chunks with empty id
-    _filter(({ id }) => id !== null || typeof id !== 'undefined')
+    _filter(({ id }) => id !== null && typeof id !== 'undefined')
   ])(source);
 
   const modules = flow([
