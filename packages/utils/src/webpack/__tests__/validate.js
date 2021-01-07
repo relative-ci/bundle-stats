@@ -42,6 +42,19 @@ describe('Webpack/validate', () => {
         ],
       }),
     ).toEqual('');
+
+    expect(
+      validate({
+        assets: [
+          {
+            type: 'hidden assets',
+            filteredChildrend: 2,
+            size: 100,
+          },
+          ...webpackSource.assets,
+        ],
+      }),
+    ).toEqual('');
   });
 
   test('should return message if data is missing', () => {

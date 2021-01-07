@@ -24,7 +24,7 @@ export const filter = (source, options = {}) => {
   const assets = flow([
     get('assets'),
     map(pick(['name', 'size'])),
-    _filter(({ name }) => !pathIgnorePattern.test(name)),
+    _filter(({ name }) => name && !pathIgnorePattern.test(name)),
   ])(source);
 
   const entrypoints = flow([
