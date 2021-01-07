@@ -4,7 +4,7 @@ module.exports = {
   assets: [
     {
       type: 'hidden assets',
-      filteredChildrend: 2,
+      filteredChildren: 2,
       size: 100,
     },
     {

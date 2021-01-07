@@ -13,7 +13,7 @@ export const WebpackSourceAssetStruct = struct.interface({
 
 export const WebpackSourceAssetHiddenStruct = struct.interface({
   type: 'string',
-  filteredChildrend: 'number',
+  filteredChildren: 'number',
   size: 'number',
 });
 
