@@ -51,7 +51,7 @@
     "babel-plugin-require-context-hook": "1.0.0",
     "classnames": "2.2.6",
     "colormap": "2.3.1",
-    "core-js": "3.8.1",
+    "core-js": "3.8.2",
     "cross-env": "7.0.3",
     "css-loader": "5.0.1",
     "enzyme": "3.11.0",
@@ -71,7 +71,7 @@
     "stats-webpack-plugin": "0.7.0",
     "style-loader": "2.0.0",
     "webpack": "4.44.2",
-    "webpack-cli": "4.2.0"
+    "webpack-cli": "4.3.1"
   },
   "peerDependencies": {
     "@bundle-stats/utils": "^1.0.0-rc.0",
