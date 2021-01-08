@@ -14,6 +14,9 @@ describe('Webpack/utils/getModuleName', () => {
     expect(getModuleName('!babel-loader!eslint-loader!./node_modules/lodash/_apply.js')).toBe(
       './node_modules/lodash/_apply.js',
     );
+    expect(getModuleName('plugin/src/loader.js?{"modules":["./src/main.js"]}!')).toBe(
+      'plugin/src/loader.js?{"modules":["./src/main.js"]}!'
+    );
   });
 
   test('should skip webpack module details', () => {
