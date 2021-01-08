@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/relative-ci/bundle-stats/compare/v2.4.0...v2.5.0) (2021-01-08)
+
+
+### Bug Fixes
+
+* **html-templates:** Active tabs navigation ([ac38a3e](https://github.com/relative-ci/bundle-stats/commit/ac38a3e92f90ae4d8dbb2f4a14dabbbad6864e1d))
+* **html-templates:** Empty layout ([fbb6e11](https://github.com/relative-ci/bundle-stats/commit/fbb6e114f0a60909bea2a58ab50196a8468d357d))
+* **html-templates:** Normalize layout spacing ([f271d88](https://github.com/relative-ci/bundle-stats/commit/f271d88237cd41b98d6cbdf4da9bb6e8b6129c83))
+* **html-templates:** Use i18n exports ([eddb51e](https://github.com/relative-ci/bundle-stats/commit/eddb51e017dba86a401675a4a87580043f30ba15))
+* **ui:** Add reakit as dependency ([20cc52b](https://github.com/relative-ci/bundle-stats/commit/20cc52b2fd63388ef87a94e0799a1a62cfe499a9))
+* **ui:** Grayscale - increase contrast ([bf968b9](https://github.com/relative-ci/bundle-stats/commit/bf968b9578d0262b8d57674648e79bf0a394b36e))
+* **ui:** JobHeader - layout fixes ([208908e](https://github.com/relative-ci/bundle-stats/commit/208908e43c2e7ea95f3888d72c446d0740a1c9f5))
+* **ui:** JobsHeader - add borders & padding ([d09e434](https://github.com/relative-ci/bundle-stats/commit/d09e4341b9639797dfd721c42691bbf7f3d99446))
+* **ui:** JobsHeader - tweak spacing; use i18n ([ec215c5](https://github.com/relative-ci/bundle-stats/commit/ec215c5b7e02e04773a663a90cb11417e55d1283))
+* **ui:** Summary - add bg ([ad477f0](https://github.com/relative-ci/bundle-stats/commit/ad477f0b85036b896afbf9c8682203e2a39c2004))
+* **ui:** SummaryItem - simplify tooltip ([ea80be0](https://github.com/relative-ci/bundle-stats/commit/ea80be052d480589efc72b1650902da0fd85d3ad))
+* **ui:** Svg support - workaround jsx transform issue ([65b90b3](https://github.com/relative-ci/bundle-stats/commit/65b90b3b8b0f42640ac2d8d212736a14d7f5fa50))
+* **ui:** Tabs - tweak active state ([5c3f33e](https://github.com/relative-ci/bundle-stats/commit/5c3f33e2b0536022c5dac9072f16df96e1fbf45e))
+
+
+### Features
+
+* **html-templates:** Merge headers ([ba5c4ad](https://github.com/relative-ci/bundle-stats/commit/ba5c4adf7d4dcc64d27389807044c76472298bc2))
+* **html-templates:** Use tabs navigation ([dd95a50](https://github.com/relative-ci/bundle-stats/commit/dd95a502f5d2c76e0086a51ccdca7f5b9c342960))
+
+
+
+
+
 # [2.4.0](https://github.com/relative-ci/bundle-stats/compare/v2.3.0...v2.4.0) (2020-12-21)
 
 

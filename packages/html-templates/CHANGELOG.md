@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/relative-ci/bundle-stats/compare/v2.4.0...v2.5.0) (2021-01-08)
+
+
+### Bug Fixes
+
+* **html-templates:** Active tabs navigation ([ac38a3e](https://github.com/relative-ci/bundle-stats/commit/ac38a3e92f90ae4d8dbb2f4a14dabbbad6864e1d))
+* **html-templates:** Empty layout ([fbb6e11](https://github.com/relative-ci/bundle-stats/commit/fbb6e114f0a60909bea2a58ab50196a8468d357d))
+* **html-templates:** Normalize layout spacing ([f271d88](https://github.com/relative-ci/bundle-stats/commit/f271d88237cd41b98d6cbdf4da9bb6e8b6129c83))
+* **html-templates:** Use i18n exports ([eddb51e](https://github.com/relative-ci/bundle-stats/commit/eddb51e017dba86a401675a4a87580043f30ba15))
+* **ui:** JobHeader - layout fixes ([208908e](https://github.com/relative-ci/bundle-stats/commit/208908e43c2e7ea95f3888d72c446d0740a1c9f5))
+
+
+### Features
+
+* **html-templates:** Merge headers ([ba5c4ad](https://github.com/relative-ci/bundle-stats/commit/ba5c4adf7d4dcc64d27389807044c76472298bc2))
+* **html-templates:** Use tabs navigation ([dd95a50](https://github.com/relative-ci/bundle-stats/commit/dd95a502f5d2c76e0086a51ccdca7f5b9c342960))
+
+
+
+
+
 # [2.4.0](https://github.com/relative-ci/bundle-stats/compare/v2.3.0...v2.4.0) (2020-12-21)
 
 
