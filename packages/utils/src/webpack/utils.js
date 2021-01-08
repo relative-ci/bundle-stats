@@ -67,7 +67,11 @@ export const getModuleName = (moduleLabel) => {
   }
 
   if (NAME_WITH_LOADERS.test(moduleLabel)) {
-    return last(moduleLabel.split(NAME_WITH_LOADERS));
+    const normalizedName = last(moduleLabel.split(NAME_WITH_LOADERS));
+
+    if (normalizedName?.trim()) {
+      return normalizedName;
+    }
   }
 
   if (NAME_WITH_MODULES.test(moduleLabel)) {
