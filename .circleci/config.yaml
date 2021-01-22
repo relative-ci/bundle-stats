@@ -1,0 +1,23 @@
+jobs:
+  test-lint-build:
+    executor:
+      name: node/default
+      tag: '10.23'
+    steps:
+      - checkout
+      - node/install-packages
+
+      - npm run lerna bootstrap
+      - npm run build
+
+      - npm run lint
+      - npm test
+      - npm run test-package
+
+orbs:
+  node: circleci/node@4.1.0
+version: 2.1
+workflows:
+  test_my_app:
+    jobs:
+      - lint-test-build

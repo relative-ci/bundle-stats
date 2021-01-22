@@ -23,6 +23,7 @@ script:
   - npm run lint
   - npm test
   - npm run test-package
+
 before_deploy:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
 deploy:
