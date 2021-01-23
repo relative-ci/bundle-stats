@@ -56,7 +56,7 @@
     "jest-date-mock": "1.0.8",
     "mini-css-extract-plugin": "1.2.1",
     "postcss": "8.2.4",
-    "postcss-loader": "4.1.0",
+    "postcss-loader": "4.2.0",
     "react-test-renderer": "16.14.0",
     "stats-webpack-plugin": "0.7.0",
     "stylelint": "13.8.0",
