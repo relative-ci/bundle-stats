@@ -20,15 +20,15 @@ jobs:
       - run: npm run lint
       - run: npm test
       - run: npm run test-package
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
 
   release:
     <<: *defaults
     steps:
-      - checkout
-      - node/install-packages
-
-      - run: npm run lerna -- bootstrap
-      - run: npm run build
+      - attach_workspace:
+          at: ~/repo
       - deploy:
           command: npm run release
 
