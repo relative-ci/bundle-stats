@@ -1,8 +1,16 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.1.0
+
+defaults: &defaults
+  working_directory: ~/repo
+  executor:
+   name: node/default
+   tag: '10.23'
+
 jobs:
   test:
-    executor:
-      name: node/default
-      tag: '10.23'
+    <<: *defaults
     steps:
       - checkout
       - node/install-packages
@@ -13,10 +21,32 @@ jobs:
       - run: npm test
       - run: npm run test-package
 
-orbs:
-  node: circleci/node@4.1.0
-version: 2.1
+  release:
+    <<: *defaults
+    steps:
+      - checkout
+      - node/install-packages
+
+      - run: npm run lerna -- bootstrap
+      - run: npm run build
+      - deploy:
+          command: npm run release
+
 workflows:
-  test:
+  version: 2
+  build-release:
     jobs:
-      - test
+      - test:
+          filters:
+            tags:
+              ignore: /^v.*/
+            branches:
+              only: /.*/
+      - release:
+          requires:
+            - test
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
