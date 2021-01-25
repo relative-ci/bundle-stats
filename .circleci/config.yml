@@ -1,22 +1,78 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.1.0
+
+defaults: &defaults
+  working_directory: ~/repo
+  executor:
+   name: node/default
+   tag: '10.23'
+
 jobs:
-  test:
-    executor:
-      name: node/default
-      tag: '10.23'
+  build:
+    <<: *defaults
     steps:
       - checkout
       - node/install-packages
-
       - run: npm run lerna -- bootstrap
       - run: npm run build
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+  lint:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
       - run: npm run lint
+
+  test:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
       - run: npm test
       - run: npm run test-package
 
-orbs:
-  node: circleci/node@4.1.0
-version: 2.1
+  release:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+      - deploy:
+          command: npm run release
+
 workflows:
-  test:
+  test-release:
     jobs:
-      - test
+      - build:
+          filters:
+            tags:
+              only: /.*/
+
+      - lint:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /.*/
+
+      - test:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /.*/
+
+      - release:
+          requires:
+            - lint
+            - test
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
