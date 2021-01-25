@@ -36,12 +36,6 @@ workflows:
   version: 2
   build-release:
     jobs:
-      - test:
-          filters:
-            tags:
-              ignore: /^v.*/
-            branches:
-              only: /.*/
       - release:
           requires:
             - test
