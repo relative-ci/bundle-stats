@@ -9,30 +9,19 @@ defaults: &defaults
    tag: '10.23'
 
 jobs:
-  build:
+  test:
     <<: *defaults
     steps:
       - checkout
       - node/install-packages
       - run: npm run lerna -- bootstrap
       - run: npm run build
+      - run: npm run lint
+      - run: npm test
+      - run: npm run test-package
       - persist_to_workspace:
           root: ~/repo
           paths: .
-  lint:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/repo
-      - run: npm run lint
-
-  test:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/repo
-      - run: npm test
-      - run: npm run test-package
 
   release:
     <<: *defaults
@@ -48,28 +37,13 @@ jobs:
 workflows:
   test-release:
     jobs:
-      - build:
-          filters:
-            tags:
-              only: /.*/
-
-      - lint:
-          requires:
-            - build
-          filters:
-            tags:
-              only: /.*/
-
       - test:
-          requires:
-            - build
           filters:
             tags:
               only: /.*/
 
       - release:
           requires:
-            - lint
             - test
           filters:
             tags:
