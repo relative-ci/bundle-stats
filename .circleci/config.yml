@@ -36,6 +36,11 @@ workflows:
   test-release:
     jobs:
       - test
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              only: /.*/
       - release:
           requires:
             - test
