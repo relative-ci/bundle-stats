@@ -39,8 +39,6 @@ workflows:
           filters:
             tags:
               only: /.*/
-            branches:
-              only: /.*/
       - release:
           requires:
             - test
