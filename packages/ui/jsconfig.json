@@ -6,7 +6,8 @@
     "checkJs": true,
     "module": "es6",
     "moduleResolution": "node",
-    "jsx": "react"
+    "jsx": "react",
+    "resolveJsonModule": true
   },
   "exclude": [
     "node_modules",

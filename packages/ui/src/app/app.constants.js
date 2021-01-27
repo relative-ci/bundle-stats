@@ -1,4 +1,4 @@
-import { SECTIONS } from '@bundle-stats/ui/lib-esm/constants';
+import { SECTIONS } from '../constants';
 
 export const URLS = {
   OVERVIEW: '/',
