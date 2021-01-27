@@ -36,7 +36,7 @@
   "dependencies": {
     "convert-units": "^2.3.4",
     "core-js": "^3.1.4",
-    "superstruct": "^0.8.3"
+    "superstruct": "^0.14.0"
   },
   "devDependencies": {
     "@babel/cli": "7.12.10",
