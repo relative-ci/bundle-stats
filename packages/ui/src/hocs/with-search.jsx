@@ -1,12 +1,13 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { debounce } from 'lodash';
+import { debounce, merge } from 'lodash';
 
 const DEBOUNCE_DURATION = 300;
 
 export const withSearch = () => (BaseComponent) => {
   const WithSearch = (props) => {
-    const { initialFilters, defaultFilters } = props;
+    const { defaultFilters, emptyFilters, filters: customFilters } = props;
+    const initialFilters = customFilters ? merge({}, emptyFilters, customFilters) : defaultFilters;
 
     const [search, updateSearch] = useState('');
     const [searchPattern, setSearchPattern] = useState();
@@ -49,9 +50,14 @@ export const withSearch = () => (BaseComponent) => {
     return <BaseComponent {...props} {...baseProps} />;
   };
 
+  WithSearch.defaultProps = {
+    filters: null,
+  };
+
   WithSearch.propTypes = {
-    initialFilters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+    emptyFilters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
     defaultFilters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+    filters: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   };
 
   return WithSearch;

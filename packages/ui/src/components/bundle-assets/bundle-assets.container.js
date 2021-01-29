@@ -135,29 +135,31 @@ const getEntryTypeFilters = (value = true) =>
 export const enhance = compose(
   withProps(({ jobs }) => {
     const items = webpack.compareBySection.assets(jobs);
-    return { items, totalRowCount: items.length };
-  }),
 
-  // @TODO run both transformations in one pass
-  withProps(addRowFlags),
-  withProps(addRowIsNotPredictive),
-
-  // Filters
-  withProps(({ jobs, initialFilters }) => {
     const defaultFilters = {
       [ASSET_FILTERS.CHANGED]: false,
       ...getEntryTypeFilters(true),
       ...getFileTypeFilters(true),
     };
 
+    const emptyFilters = {
+      [ASSET_FILTERS.CHANGED]: false,
+      ...getEntryTypeFilters(false),
+      ...getFileTypeFilters(false),
+    };
+
     return {
+      items,
+      totalRowCount: items.length,
       defaultFilters,
-      initialFilters: initialFilters || {
-        ...defaultFilters,
-        [ASSET_FILTERS.CHANGED]: jobs.length > 1, // enable filter only when there are multiple jobs
-      },
+      emptyFilters,
     };
   }),
+
+  // @TODO run both transformations in one pass
+  withProps(addRowFlags),
+  withProps(addRowIsNotPredictive),
+
   withSearch(),
   withFilteredItems(getRowFilter),
   withCustomSort({ sortItems: SORT_BY, getCustomSort }),
