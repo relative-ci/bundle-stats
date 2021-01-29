@@ -2,13 +2,16 @@ import { FILE_TYPE_CSS, FILE_TYPE_JS } from '@bundle-stats/utils/lib-esm/config/
 
 import { ASSET_FILTERS, COMPONENT, PACKAGE_FILTERS, SECTIONS } from './constants';
 import { getAssetEntryTypeFilters, getAssetFileTypeFilters } from './utils';
+import I18N from './i18n';
 
 export const TOTALS = {
   section: SECTIONS.TOTALS,
+  title: I18N.COMPONENT_LINK_TOTALS,
 };
 
 export const BUNDLE_ASSETS_INITIAL_JS = {
   section: SECTIONS.ASSETS,
+  title: I18N.COMPONENT_LINK_BUNDLE_ASSETS_INITIAL_JS,
   params: {
     [COMPONENT.BUNDLE_ASSETS]: {
       filters: {
@@ -22,6 +25,7 @@ export const BUNDLE_ASSETS_INITIAL_JS = {
 
 export const BUNDLE_ASSETS_INITIAL_CSS = {
   section: SECTIONS.ASSETS,
+  title: I18N.COMPONENT_LINK_BUNDLE_ASSETS_INITIAL_CSS,
   params: {
     [COMPONENT.BUNDLE_ASSETS]: {
       filters: {
@@ -35,6 +39,7 @@ export const BUNDLE_ASSETS_INITIAL_CSS = {
 
 export const BUNDLE_ASSETS_CACHE_INVALIDATION = {
   section: SECTIONS.ASSETS,
+  title: I18N.COMPONENT_LINK_BUNDLE_ASSETS_CACHE_INVALIDATION,
   params: {
     [COMPONENT.BUNDLE_ASSETS]: {
       filters: {
@@ -48,6 +53,7 @@ export const BUNDLE_ASSETS_CACHE_INVALIDATION = {
 
 export const BUNDLE_ASSETS_COUNT = {
   section: SECTIONS.ASSETS,
+  title: I18N.COMPONENT_LINK_BUNDLE_ASSETS_COUNT,
   params: {
     [COMPONENT.BUNDLE_ASSETS]: {
       filters: {
@@ -61,6 +67,7 @@ export const BUNDLE_ASSETS_COUNT = {
 
 export const BUNDLE_ASSETS_CHUNK_COUNT = {
   section: SECTIONS.ASSETS,
+  title: I18N.COMPONENT_LINK_BUNDLE_ASSETS_CHUNK_COUNT,
   params: {
     [COMPONENT.BUNDLE_ASSETS]: {
       filters: {
@@ -74,10 +81,12 @@ export const BUNDLE_ASSETS_CHUNK_COUNT = {
 
 export const BUNDLE_MODULES = {
   section: SECTIONS.MODULES,
+  title: I18N.COMPONENT_LINK_MODULES,
 };
 
 export const BUNLDE_PACKAGES_COUNT = {
   section: SECTIONS.PACKAGES,
+  title: I18N.COMPONENT_LINK_PACKAGES_COUNT,
   params: {
     [COMPONENT.BUNDLE_PACKAGES]: {
       filters: {
@@ -89,6 +98,7 @@ export const BUNLDE_PACKAGES_COUNT = {
 
 export const BUNDLE_PACKAGES_DUPLICATE = {
   section: SECTIONS.PACKAGES,
+  title: I18N.COMPONENT_LINK_PACKAGES_DUPLICATE,
   params: {
     [COMPONENT.BUNDLE_PACKAGES]: {
       filters: {
