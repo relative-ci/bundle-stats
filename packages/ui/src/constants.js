@@ -36,3 +36,13 @@ export const ASSET_FILTERS = {
   INITIAL: 'initial',
   CHUNK: 'chunk',
 };
+
+export const PACKAGE_FILTERS = {
+  CHANGED: 'changed',
+  DUPLICATE: 'duplicate',
+};
+
+export const COMPONENT = {
+  BUNDLE_ASSETS: 'ba',
+  BUNDLE_PACKAGES: 'bp',
+};

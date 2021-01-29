@@ -2,45 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get } from 'lodash';
-import { FILE_TYPE_CSS, FILE_TYPE_JS } from '@bundle-stats/utils/lib-esm/config/file-types';
 
-import { ASSET_FILTERS, SECTIONS } from '../../constants';
+import * as COMPONENT_LINKS from '../../component-links';
 import { SummaryItem } from '../summary-item';
 import css from './summary.module.css';
 
 const PRIMARY_METRICS = new Map([
-  ['webpack.totalSizeByTypeALL', { section: SECTIONS.TOTALS }],
-  [
-    'webpack.totalInitialSizeJS',
-    {
-      section: SECTIONS.ASSETS,
-      filters: {
-        [ASSET_FILTERS.CHANGED]: false,
-        [`entryTypes.${ASSET_FILTERS.INITIAL}`]: true,
-        [`fileTypes.${FILE_TYPE_JS}`]: true,
-      },
-    },
-  ],
-  [
-    'webpack.totalInitialSizeCSS',
-    {
-      section: SECTIONS.ASSETS,
-      filters: {
-        [ASSET_FILTERS.CHANGED]: false,
-        [`entryTypes.${ASSET_FILTERS.INITIAL}`]: true,
-        [`fileTypes.${FILE_TYPE_CSS}`]: true,
-      },
-    },
-  ],
-  ['webpack.cacheInvalidation', { section: SECTIONS.ASSETS, showDelta: false }],
+  ['webpack.totalSizeByTypeALL', { link: COMPONENT_LINKS.TOTALS }],
+  ['webpack.totalInitialSizeJS', { link: COMPONENT_LINKS.BUNDLE_ASSETS_INITIAL_JS }],
+  ['webpack.totalInitialSizeCSS', { link: COMPONENT_LINKS.BUNDLE_ASSETS_INITIAL_CSS }],
+  ['webpack.cacheInvalidation', {
+    link: COMPONENT_LINKS.BUNDLE_ASSETS_CACHE_INVALIDATION,
+    showDelta: false,
+  }],
 ]);
 
 const SECONDARY_METRICS = new Map([
-  ['webpack.assetCount', { section: SECTIONS.ASSETS }],
-  ['webpack.chunkCount', { section: SECTIONS.ASSETS }],
-  ['webpack.moduleCount', { section: SECTIONS.MODULES }],
-  ['webpack.packageCount', { section: SECTIONS.PACKAGES }],
-  ['webpack.duplicatePackagesCount', { section: SECTIONS.PACKAGES }],
+  ['webpack.assetCount', { link: COMPONENT_LINKS.BUNDLE_ASSETS_COUNT }],
+  ['webpack.chunkCount', { link: COMPONENT_LINKS.BUNDLE_ASSETS_CHUNK_COUNT }],
+  ['webpack.moduleCount', { link: COMPONENT_LINKS.BUNDLE_MODULES }],
+  ['webpack.packageCount', { link: COMPONENT_LINKS.BUNLDE_PACKAGES_COUNT }],
+  ['webpack.duplicatePackagesCount', { link: COMPONENT_LINKS.BUNDLE_PACKAGES_DUPLICATE }],
 ]);
 
 const DefaultSummaryItemWrapper = ({ className, children }) => (

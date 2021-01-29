@@ -1,7 +1,9 @@
 import React from 'react';
 import { chunk } from 'lodash';
 import cx from 'classnames';
+import { FILE_TYPES } from '@bundle-stats/utils';
 
+import { ASSET_FILTERS } from './constants';
 import COLORS from './chart-colors.json';
 
 export const getColors = (count = 2) => {
@@ -34,3 +36,21 @@ export const getRenderChildWithClassName = (className) => (child) => {
     className: cx(className, child.props.className),
   });
 };
+
+export const getAssetFileTypeFilters = (value = true) =>
+  FILE_TYPES.reduce(
+    (agg, fileTypeFilter) => ({
+      ...agg,
+      [`fileTypes.${fileTypeFilter}`]: value,
+    }),
+    {},
+  );
+
+export const getAssetEntryTypeFilters = (value = true) =>
+  [ASSET_FILTERS.ENTRY, ASSET_FILTERS.INITIAL, ASSET_FILTERS.CHUNK, ASSET_FILTERS.ASSET].reduce(
+    (agg, entryTypeFilter) => ({
+      ...agg,
+      [`entryTypes.${entryTypeFilter}`]: value,
+    }),
+    {},
+  );

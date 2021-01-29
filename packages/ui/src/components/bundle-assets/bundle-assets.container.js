@@ -1,12 +1,12 @@
 import { compose, withProps } from 'recompose';
 import { get } from 'lodash';
-import { FILE_TYPES } from '@bundle-stats/utils';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import { ASSET_FILTERS } from '../../constants';
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilteredItems } from '../../hocs/with-filtered-items';
 import { withSearch } from '../../hocs/with-search';
+import { getAssetEntryTypeFilters, getAssetFileTypeFilters } from '../../utils';
 import {
   SORT_BY_NAME,
   SORT_BY_DELTA,
@@ -114,38 +114,20 @@ const getCustomSort = (sortId) => (item) => {
   ];
 };
 
-const getFileTypeFilters = (value = true) =>
-  FILE_TYPES.reduce(
-    (agg, fileTypeFilter) => ({
-      ...agg,
-      [`fileTypes.${fileTypeFilter}`]: value,
-    }),
-    {},
-  );
-
-const getEntryTypeFilters = (value = true) =>
-  [ASSET_FILTERS.ENTRY, ASSET_FILTERS.INITIAL, ASSET_FILTERS.CHUNK, ASSET_FILTERS.ASSET].reduce(
-    (agg, entryTypeFilter) => ({
-      ...agg,
-      [`entryTypes.${entryTypeFilter}`]: value,
-    }),
-    {},
-  );
-
 export const enhance = compose(
   withProps(({ jobs }) => {
     const items = webpack.compareBySection.assets(jobs);
 
     const defaultFilters = {
       [ASSET_FILTERS.CHANGED]: false,
-      ...getEntryTypeFilters(true),
-      ...getFileTypeFilters(true),
+      ...getAssetEntryTypeFilters(true),
+      ...getAssetFileTypeFilters(true),
     };
 
     const emptyFilters = {
       [ASSET_FILTERS.CHANGED]: false,
-      ...getEntryTypeFilters(false),
-      ...getFileTypeFilters(false),
+      ...getAssetEntryTypeFilters(false),
+      ...getAssetFileTypeFilters(false),
     };
 
     return {

@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, HashRouter, NavLink, Route, Switch } from 'react-router-dom';
 import cx from 'classnames';
+import { get } from 'lodash';
 
-import { SECTIONS } from '../constants';
+import { COMPONENT, SECTIONS } from '../constants';
 import { Box } from '../layout/box';
 import { Container } from '../ui/container';
 import { DuplicatePackagesWarning } from '../components/duplicate-packages-warning';
@@ -41,14 +42,26 @@ Layout.defaultProps = {
 };
 
 const SummaryItemWrapper = ({ keyProps, className, ...props }) => {
-  const { section } = keyProps;
-  const href = SECTION_URLS[section];
-  return <Link to={href} className={cx(className, css.summaryItemLink)} {...props} />;
+  const { link } = keyProps;
+
+  if (!link) {
+    return null;
+  }
+
+  const location = {
+    pathname: SECTION_URLS[link.section],
+    state: link.params,
+  };
+
+  return <Link to={location} className={cx(className, css.summaryItemLink)} {...props} />;
 };
 
 SummaryItemWrapper.propTypes = {
   keyProps: PropTypes.shape({
-    section: PropTypes.oneOf(Object.values(SECTIONS)),
+    link: PropTypes.shape({
+      section: PropTypes.oneOf(Object.values(SECTIONS)),
+      params: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+    }),
   }).isRequired,
   className: PropTypes.string,
 };
@@ -79,6 +92,7 @@ export const App = ({ footer, jobs }) => {
             data={jobs[0].summary}
             showSummaryItemDelta={jobs.length !== 1}
             showSummaryItemBaselineValue={jobs.length !== 1}
+            SummaryItemWrapper={SummaryItemWrapper}
           />
         </Container>
 
@@ -104,10 +118,13 @@ export const App = ({ footer, jobs }) => {
             <Route
               exact
               path={URLS.ASSETS}
-              component={() => (
+              component={({ location }) => (
                 <Container>
                   <Box outline>
-                    <BundleAssets jobs={jobs} />
+                    <BundleAssets
+                      jobs={jobs}
+                      filters={get(location, ['state', COMPONENT.BUNDLE_ASSETS, 'filters'])}
+                    />
                   </Box>
                 </Container>
               )}
@@ -124,10 +141,13 @@ export const App = ({ footer, jobs }) => {
             <Route
               exact
               path={URLS.PACKAGES}
-              component={() => (
+              component={({ location }) => (
                 <Container>
                   <Box outline>
-                    <BundlePackages jobs={jobs} />
+                    <BundlePackages
+                      jobs={jobs}
+                      filters={get(location, ['state', COMPONENT.BUNDLE_PACKAGES, 'filters'])}
+                    />
                   </Box>
                 </Container>
               )}
