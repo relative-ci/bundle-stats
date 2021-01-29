@@ -55,25 +55,17 @@ export const enhance = compose(
     ).flat();
 
     const items = addDuplicateTag(webpack.compareBySection.packages(jobs), duplicatePackages);
+    const defaultFilters = { [FILTER_CHANGED]: true, [FILTER_DUPLICATE]: false };
+    const emptyFilters = { [FILTER_CHANGED]: false, [FILTER_DUPLICATE]: false };
 
     return {
       totalRowCount: items.length,
       items,
-    };
-  }),
-
-  withProps(({ jobs }) => {
-    const defaultFilters = { [FILTER_CHANGED]: false, [FILTER_DUPLICATE]: false };
-
-    return {
       defaultFilters,
-      initialFilters: {
-        ...defaultFilters,
-        // enable filter only when there are multiple jobs
-        [FILTER_CHANGED]: jobs && jobs.length > 1,
-      },
+      emptyFilters,
     };
   }),
+
   withSearch(),
   withFilteredItems(getRowFilter),
 

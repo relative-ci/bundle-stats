@@ -7,6 +7,7 @@ import baselineStats from '../../../__mocks__/webpack-stats.baseline.json';
 import currentStats from '../../../__mocks__/webpack-stats.current.json';
 import { getWrapperDecorator } from '../../stories';
 import { BundlePackages } from '.';
+import { FILTER_CHANGED, FILTER_DUPLICATE } from './bundle-packages.constants';
 
 const JOBS = createJobs([
   { webpack: currentStats },
@@ -20,6 +21,15 @@ stories.addDecorator(getWrapperDecorator());
 stories.add('default', () => <BundlePackages jobs={[baselineJob]} />);
 
 stories.add('multiple jobs', () => <BundlePackages jobs={JOBS} />);
+stories.add('custom filters', () => (
+  <BundlePackages
+    jobs={JOBS}
+    filters={{
+      [FILTER_CHANGED]: false,
+      [FILTER_DUPLICATE]: true,
+    }}
+  />
+));
 
 stories.add('empty packages', () => (
   <BundlePackages
