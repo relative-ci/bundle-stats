@@ -18,4 +18,5 @@ export default {
   COMPONENT_LINK_MODULES: 'View modules',
   COMPONENT_LINK_PACKAGES_COUNT: 'View all packages',
   COMPONENT_LINK_PACKAGES_DUPLICATE: 'View all duplicate packages',
+  COMPONENT_LINK_BUNDLE_ASSETS_BY_FILE_TYPE: 'View all <%= label %> assets',
 };

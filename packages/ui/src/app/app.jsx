@@ -4,7 +4,7 @@ import { Link, HashRouter, NavLink, Route, Switch } from 'react-router-dom';
 import cx from 'classnames';
 import { get } from 'lodash';
 
-import { COMPONENT, SECTIONS } from '../constants';
+import { ASSETS_SIZES_FILE_TYPE_MAP, COMPONENT, SECTIONS } from '../constants';
 import { Box } from '../layout/box';
 import { Container } from '../ui/container';
 import { DuplicatePackagesWarning } from '../components/duplicate-packages-warning';
@@ -22,6 +22,7 @@ import I18N from '../i18n';
 import { Header } from './header';
 import { SECTION_URLS, URLS } from './app.constants';
 import css from './app.module.css';
+import {getBundleAssetsFileTypeComponentLink} from '../component-links';
 
 const Layout = ({ jobs, footer, ...props }) => (
   <div className={css.root}>
@@ -180,7 +181,25 @@ export const App = ({ footer, jobs }) => {
                   <Container>
                     <h2>Totals</h2>
                     <Box outline>
-                      <BundleAssetsTotalsTable jobs={jobs} />
+                      <BundleAssetsTotalsTable
+                        jobs={jobs}
+                        renderRowHeader={(item) => {
+                          const fileType = ASSETS_SIZES_FILE_TYPE_MAP[item.key];
+                          const componentLinkData = getBundleAssetsFileTypeComponentLink(
+                            fileType,
+                            item.label
+                          );
+                          const newLocation = {
+                            pathname: SECTION_URLS[componentLinkData.section],
+                            state: componentLinkData.params
+                          };
+                          return (
+                            <Link to={newLocation} title={componentLinkData.title}>
+                              {item.label}
+                            </Link>
+                          );
+                        }}
+                      />
                     </Box>
                   </Container>
                 </Stack>

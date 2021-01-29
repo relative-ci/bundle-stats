@@ -1,3 +1,5 @@
+import { FILE_TYPES } from '@bundle-stats/utils';
+
 export const NO_SPACE = 'no-space';
 export const SPACE_XXXSMALL = 'xxxsmall';
 export const SPACE_XXSMALL = 'xxsmall';
@@ -46,3 +48,11 @@ export const COMPONENT = {
   BUNDLE_ASSETS: 'ba',
   BUNDLE_PACKAGES: 'bp',
 };
+
+export const ASSETS_SIZES_FILE_TYPE_MAP = FILE_TYPES.reduce(
+  (agg, fileType) => ({
+    ...agg,
+    [`webpack.sizes.totalSizeByType${fileType}`]: fileType,
+  }),
+  {},
+);

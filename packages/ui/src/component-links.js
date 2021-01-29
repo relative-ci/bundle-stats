@@ -1,3 +1,4 @@
+import { template } from 'lodash';
 import { FILE_TYPE_CSS, FILE_TYPE_JS } from '@bundle-stats/utils/lib-esm/config/file-types';
 
 import { ASSET_FILTERS, COMPONENT, PACKAGE_FILTERS, SECTIONS } from './constants';
@@ -108,3 +109,18 @@ export const BUNDLE_PACKAGES_DUPLICATE = {
     },
   },
 };
+
+export const getBundleAssetsFileTypeComponentLink = (fileType, label) => ({
+  section: SECTIONS.ASSETS,
+  title: template(I18N.COMPONENT_LINK_BUNDLE_ASSETS_BY_FILE_TYPE)({ label }),
+  params: {
+    [COMPONENT.BUNDLE_ASSETS]: {
+      filters: {
+        [ASSET_FILTERS.CHANGED]: false,
+        ...getAssetEntryTypeFilters(true),
+        ...getAssetFileTypeFilters(false),
+        [`fileTypes.${fileType}`]: true,
+      },
+    },
+  },
+});

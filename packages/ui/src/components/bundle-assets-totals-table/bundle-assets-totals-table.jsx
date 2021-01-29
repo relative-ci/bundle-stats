@@ -4,7 +4,7 @@ import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import { MetricsTable } from '../metrics-table';
 
-export const BundleAssetsTotalsTable = ({ className, jobs }) => {
+export const BundleAssetsTotalsTable = ({ className, jobs, renderRowHeader }) => {
   const items = webpack.compareBySection.sizes(jobs);
 
   return (
@@ -12,6 +12,7 @@ export const BundleAssetsTotalsTable = ({ className, jobs }) => {
       className={className}
       runs={jobs}
       items={items}
+      renderRowHeader={renderRowHeader}
       showHeaderSum
     />
   );
@@ -20,6 +21,7 @@ export const BundleAssetsTotalsTable = ({ className, jobs }) => {
 BundleAssetsTotalsTable.defaultProps = {
   className: '',
   jobs: [],
+  renderRowHeader: undefined,
 };
 
 BundleAssetsTotalsTable.propTypes = {
@@ -28,4 +30,7 @@ BundleAssetsTotalsTable.propTypes = {
 
   /** Jobs data */
   jobs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+
+  /** MetricsTable renderRowHeader render prop */
+  renderRowHeader: PropTypes.func,
 };
