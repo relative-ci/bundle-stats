@@ -53,13 +53,21 @@ const SummaryItemWrapper = ({ keyProps, className, ...props }) => {
     state: link.params,
   };
 
-  return <Link to={location} className={cx(className, css.summaryItemLink)} {...props} />;
+  return (
+    <Link
+      className={cx(className, css.summaryItemLink)}
+      to={location}
+      title={link.title}
+      {...props}
+    />
+  );
 };
 
 SummaryItemWrapper.propTypes = {
   keyProps: PropTypes.shape({
     link: PropTypes.shape({
       section: PropTypes.oneOf(Object.values(SECTIONS)),
+      title: PropTypes.string,
       params: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     }),
   }).isRequired,
