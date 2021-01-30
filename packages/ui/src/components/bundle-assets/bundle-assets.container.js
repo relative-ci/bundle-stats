@@ -119,7 +119,7 @@ export const enhance = compose(
     const items = webpack.compareBySection.assets(jobs);
 
     const defaultFilters = {
-      [ASSET_FILTERS.CHANGED]: false,
+      [ASSET_FILTERS.CHANGED]: true,
       ...getAssetEntryTypeFilters(true),
       ...getAssetFileTypeFilters(true),
     };
@@ -130,11 +130,18 @@ export const enhance = compose(
       ...getAssetFileTypeFilters(false),
     };
 
+    const allEntriesFilters = {
+      [ASSET_FILTERS.CHANGED]: false,
+      ...getAssetEntryTypeFilters(true),
+      ...getAssetFileTypeFilters(true),
+    };
+
     return {
       items,
       totalRowCount: items.length,
       defaultFilters,
       emptyFilters,
+      allEntriesFilters,
     };
   }),
 

@@ -37,8 +37,9 @@ const getFilterByChanged = (filters) => (row) => {
 
 export default compose(
   withProps(({ runs, items }) => ({
-    defaultFilters: { changed: false },
+    defaultFilters: { changed: true },
     initialFilters: { changed: runs && runs.length > 1 },
+    allEntriesFilters: { changed: false },
     totalRowCount: items.length,
   })),
   withSearch(),

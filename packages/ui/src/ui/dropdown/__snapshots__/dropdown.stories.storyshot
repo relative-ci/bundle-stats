@@ -22,6 +22,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
     >
       <div>
         <Dropdown
+          activeLabel={false}
           align="left"
           className=""
           dropdownToggle={[Function]}
@@ -112,6 +113,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
     >
       <div>
         <Dropdown
+          activeLabel={false}
           align="left"
           className=""
           dropdownToggle={[Function]}
@@ -201,6 +203,7 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
     >
       <div>
         <Dropdown
+          activeLabel={false}
           align="right"
           className=""
           dropdownToggle={[Function]}

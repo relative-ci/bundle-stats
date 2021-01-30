@@ -130,6 +130,7 @@ export const BundleAssets = (props) => {
     resetFilters,
     totalRowCount,
     filters,
+    hasActiveFilters,
     sortItems,
     sort,
     updateSort,
@@ -192,6 +193,7 @@ export const BundleAssets = (props) => {
                   },
                 }}
                 label={`Filters (${items.length}/${totalRowCount})`}
+                hasActiveFilters={hasActiveFilters}
                 onChange={updateFilters}
               />
             </div>
@@ -221,6 +223,7 @@ export const BundleAssets = (props) => {
 BundleAssets.defaultProps = {
   className: '',
   totalRowCount: 0,
+  hasActiveFilters: false,
 };
 
 BundleAssets.propTypes = {
@@ -249,6 +252,7 @@ BundleAssets.propTypes = {
   filters: PropTypes.shape({
     changed: PropTypes.bool,
   }).isRequired,
+  hasActiveFilters: PropTypes.bool,
   sortItems: PropTypes.shape({
     [PropTypes.string]: PropTypes.shape({
       label: PropTypes.string,

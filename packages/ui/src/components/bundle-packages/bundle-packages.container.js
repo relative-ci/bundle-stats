@@ -56,12 +56,14 @@ export const enhance = compose(
     const items = addDuplicateTag(webpack.compareBySection.packages(jobs), duplicatePackages);
     const defaultFilters = { [PACKAGE_FILTERS.CHANGED]: true, [PACKAGE_FILTERS.DUPLICATE]: false };
     const emptyFilters = { [PACKAGE_FILTERS.CHANGED]: false, [PACKAGE_FILTERS.DUPLICATE]: false };
+    const allEntriesFilters = { [PACKAGE_FILTERS.CHANGED]: false, [PACKAGE_FILTERS.DUPLICATE]: false };
 
     return {
       totalRowCount: items.length,
       items,
       defaultFilters,
       emptyFilters,
+      allEntriesFilters,
     };
   }),
 

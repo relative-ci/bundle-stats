@@ -42,6 +42,7 @@ exports[`Storyshots UI/FiltersDropdown default 1`] = `
     onChange={[Function]}
   >
     <FiltersDropdown
+      active={false}
       className=""
       filters={
         Object {
@@ -97,6 +98,7 @@ exports[`Storyshots UI/FiltersDropdown default 1`] = `
         >
           <div>
             <Dropdown
+              activeLabel={false}
               align="right"
               className="root"
               dropdownToggle={[Function]}
@@ -406,6 +408,7 @@ exports[`Storyshots UI/FiltersDropdown disable options 1`] = `
     onChange={[Function]}
   >
     <FiltersDropdown
+      active={false}
       className=""
       filters={
         Object {
@@ -462,6 +465,7 @@ exports[`Storyshots UI/FiltersDropdown disable options 1`] = `
         >
           <div>
             <Dropdown
+              activeLabel={false}
               align="right"
               className="root"
               dropdownToggle={[Function]}

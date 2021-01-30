@@ -9,8 +9,14 @@ const ALIGN_LEFT = 'left';
 const ALIGN_RIGHT = 'right';
 
 export const Dropdown = (props) => {
-  const { className, label, glyph, open, dropdownToggle, align, children } = props;
-  const rootClassName = cx(css.root, open && css.open, css[align], className);
+  const { className, label, glyph, activeLabel, open, dropdownToggle, align, children } = props;
+  const rootClassName = cx(
+    css.root,
+    open && css.open,
+    activeLabel && css.activeLabel,
+    css[align],
+    className
+  );
 
   return (
     <div className={rootClassName}>
@@ -30,6 +36,7 @@ Dropdown.defaultProps = {
   label: '',
   glyph: null,
   align: ALIGN_LEFT,
+  activeLabel: false,
 };
 
 Dropdown.propTypes = {
@@ -47,6 +54,9 @@ Dropdown.propTypes = {
 
   /** Align modifier */
   align: PropTypes.oneOf([ALIGN_LEFT, ALIGN_RIGHT]),
+
+  /** Active label flag */
+  activeLabel: PropTypes.bool,
 
   /** Content */
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]).isRequired,
