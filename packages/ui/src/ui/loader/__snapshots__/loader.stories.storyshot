@@ -1,25 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI/Loader default 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <Loader
-    className=""
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
-    <span
-      className="root"
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
     >
-      <span
-        className="loader"
-      />
-    </span>
-  </Loader>
-</div>
+      <Loader
+        className=""
+      >
+        <span
+          className="root"
+        >
+          <span
+            className="loader"
+          />
+        </span>
+      </Loader>
+    </div>
+  </Router>
+</MemoryRouter>
 `;

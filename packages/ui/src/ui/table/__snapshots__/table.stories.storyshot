@@ -1,1336 +1,1644 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI/Table default 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <Table
-    className=""
-    emptyMessage="No entries found."
-    headers={Array []}
-    outline={false}
-    rows={
-      Array [
-        Object {
-          "cells": Array [
-            "a1",
-            "b1",
-            "c1",
-          ],
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
         },
-        Object {
-          "cells": Array [
-            "a2",
-            "b2",
-            "c2",
-          ],
-        },
-        Object {
-          "cells": Array [
-            "a3",
-            "b3",
-            "c3",
-          ],
-        },
-      ]
+        "push": [Function],
+        "replace": [Function],
+      }
     }
   >
-    <table
-      className="root"
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
     >
-      <tbody>
-        <Tr
-          className=""
-          key="row-0"
+      <Table
+        className=""
+        emptyMessage="No entries found."
+        headers={Array []}
+        outline={false}
+        rows={
+          Array [
+            Object {
+              "cells": Array [
+                "a1",
+                "b1",
+                "c1",
+              ],
+            },
+            Object {
+              "cells": Array [
+                "a2",
+                "b2",
+                "c2",
+              ],
+            },
+            Object {
+              "cells": Array [
+                "a3",
+                "b3",
+                "c3",
+              ],
+            },
+          ]
+        }
+      >
+        <table
+          className="root"
         >
-          <tr
-            className=""
-          >
-            <Td
+          <tbody>
+            <Tr
               className=""
-              key="row-0-0"
+              key="row-0"
             >
-              <td
-                className="cell"
+              <tr
+                className=""
               >
-                a1
-              </td>
-            </Td>
-            <Td
+                <Td
+                  className=""
+                  key="row-0-0"
+                >
+                  <td
+                    className="cell"
+                  >
+                    a1
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-0-1"
+                >
+                  <td
+                    className="cell"
+                  >
+                    b1
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-0-2"
+                >
+                  <td
+                    className="cell"
+                  >
+                    c1
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+            <Tr
               className=""
-              key="row-0-1"
+              key="row-1"
             >
-              <td
-                className="cell"
+              <tr
+                className=""
               >
-                b1
-              </td>
-            </Td>
-            <Td
+                <Td
+                  className=""
+                  key="row-1-0"
+                >
+                  <td
+                    className="cell"
+                  >
+                    a2
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-1-1"
+                >
+                  <td
+                    className="cell"
+                  >
+                    b2
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-1-2"
+                >
+                  <td
+                    className="cell"
+                  >
+                    c2
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+            <Tr
               className=""
-              key="row-0-2"
+              key="row-2"
             >
-              <td
-                className="cell"
+              <tr
+                className=""
               >
-                c1
-              </td>
-            </Td>
-          </tr>
-        </Tr>
-        <Tr
-          className=""
-          key="row-1"
-        >
-          <tr
-            className=""
-          >
-            <Td
-              className=""
-              key="row-1-0"
-            >
-              <td
-                className="cell"
-              >
-                a2
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-1-1"
-            >
-              <td
-                className="cell"
-              >
-                b2
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-1-2"
-            >
-              <td
-                className="cell"
-              >
-                c2
-              </td>
-            </Td>
-          </tr>
-        </Tr>
-        <Tr
-          className=""
-          key="row-2"
-        >
-          <tr
-            className=""
-          >
-            <Td
-              className=""
-              key="row-2-0"
-            >
-              <td
-                className="cell"
-              >
-                a3
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-2-1"
-            >
-              <td
-                className="cell"
-              >
-                b3
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-2-2"
-            >
-              <td
-                className="cell"
-              >
-                c3
-              </td>
-            </Td>
-          </tr>
-        </Tr>
-      </tbody>
-    </table>
-  </Table>
-</div>
+                <Td
+                  className=""
+                  key="row-2-0"
+                >
+                  <td
+                    className="cell"
+                  >
+                    a3
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-2-1"
+                >
+                  <td
+                    className="cell"
+                  >
+                    b3
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-2-2"
+                >
+                  <td
+                    className="cell"
+                  >
+                    c3
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+          </tbody>
+        </table>
+      </Table>
+    </div>
+  </Router>
+</MemoryRouter>
 `;
 
 exports[`Storyshots UI/Table empty 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <Table
-    className=""
-    emptyMessage="No entries found."
-    headers={Array []}
-    outline={false}
-    rows={Array []}
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
-    <table
-      className="root"
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
     >
-      <tbody>
-        <tr
-          key="row-empty"
+      <Table
+        className=""
+        emptyMessage="No entries found."
+        headers={Array []}
+        outline={false}
+        rows={Array []}
+      >
+        <table
+          className="root"
         >
-          <Td
-            className="emptyData"
-            colSpan={1}
-          >
-            <td
-              className="cell emptyData"
-              colSpan={1}
+          <tbody>
+            <tr
+              key="row-empty"
             >
-              No entries found.
-            </td>
-          </Td>
-        </tr>
-      </tbody>
-    </table>
-  </Table>
-</div>
+              <Td
+                className="emptyData"
+                colSpan={1}
+              >
+                <td
+                  className="cell emptyData"
+                  colSpan={1}
+                >
+                  No entries found.
+                </td>
+              </Td>
+            </tr>
+          </tbody>
+        </table>
+      </Table>
+    </div>
+  </Router>
+</MemoryRouter>
 `;
 
 exports[`Storyshots UI/Table empty with custom element 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <Table
-    className=""
-    emptyMessage={
-      <p
-        style={
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
           Object {
-            "outline": "1px solid lightgray",
-          }
-        }
-      >
-        No items available
-      </p>
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
     }
-    headers={Array []}
-    outline={false}
-    rows={Array []}
   >
-    <table
-      className="root"
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
     >
-      <tbody>
-        <tr
-          key="row-empty"
-        >
-          <Td
-            className="emptyData"
-            colSpan={1}
+      <Table
+        className=""
+        emptyMessage={
+          <p
+            style={
+              Object {
+                "outline": "1px solid lightgray",
+              }
+            }
           >
-            <td
-              className="cell emptyData"
-              colSpan={1}
+            No items available
+          </p>
+        }
+        headers={Array []}
+        outline={false}
+        rows={Array []}
+      >
+        <table
+          className="root"
+        >
+          <tbody>
+            <tr
+              key="row-empty"
             >
-              <p
-                style={
-                  Object {
-                    "outline": "1px solid lightgray",
-                  }
-                }
+              <Td
+                className="emptyData"
+                colSpan={1}
               >
-                No items available
-              </p>
-            </td>
-          </Td>
-        </tr>
-      </tbody>
-    </table>
-  </Table>
-</div>
+                <td
+                  className="cell emptyData"
+                  colSpan={1}
+                >
+                  <p
+                    style={
+                      Object {
+                        "outline": "1px solid lightgray",
+                      }
+                    }
+                  >
+                    No items available
+                  </p>
+                </td>
+              </Td>
+            </tr>
+          </tbody>
+        </table>
+      </Table>
+    </div>
+  </Router>
+</MemoryRouter>
 `;
 
 exports[`Storyshots UI/Table with custom content and attributes 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <Table
-    className=""
-    emptyMessage="No entries found."
-    headers={
-      Array [
-        " ",
-        Object {
-          "children": "Col A (right)",
-          "style": Object {
-            "textAlign": "right",
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
           },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
         },
-        Object {
-          "children": "Col B (center)",
-          "style": Object {
-            "textAlign": "center",
-          },
-        },
-        Object {
-          "children": "Col C (underline)",
-          "style": Object {
-            "textDecoration": "underline",
-          },
-        },
-      ]
+        "push": [Function],
+        "replace": [Function],
+      }
     }
-    outline={false}
-    rows={
-      Array [
+  >
+    <div
+      style={
         Object {
-          "cells": Array [
-            <em>
-              a1
-            </em>,
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
+    >
+      <Table
+        className=""
+        emptyMessage="No entries found."
+        headers={
+          Array [
+            " ",
             Object {
-              "children": "b1",
+              "children": "Col A (right)",
               "style": Object {
-                "color": "red",
+                "textAlign": "right",
+              },
+            },
+            Object {
+              "children": "Col B (center)",
+              "style": Object {
                 "textAlign": "center",
               },
             },
-            "c1",
-          ],
-          "header": <strong>
-            row 1
-          </strong>,
-        },
-        Object {
-          "cells": Array [
-            "a2",
-            "b2",
-            "c2",
-          ],
-          "header": <strong>
-            row 2
-          </strong>,
-          "style": Object {
-            "color": "blue",
-            "fontSize": "1.5em",
-          },
-        },
-        Object {
-          "cells": Array [
-            "a3",
-            "b3",
-            "c3",
-          ],
-          "header": <strong>
-            row 2
-          </strong>,
-        },
-      ]
-    }
-  >
-    <table
-      className="root"
-    >
-      <thead>
-        <Tr
-          className=""
-          key="header-row"
-        >
-          <tr
-            className=""
-          >
-            <Th
-              className=""
-              key="header-0"
-            >
-              <th
-                className="cell"
-              >
-                 
-              </th>
-            </Th>
-            <Th
-              className=""
-              key="header-1"
-              style={
-                Object {
-                  "textAlign": "right",
-                }
-              }
-            >
-              <th
-                className="cell"
-                style={
-                  Object {
-                    "textAlign": "right",
-                  }
-                }
-              >
-                Col A (right)
-              </th>
-            </Th>
-            <Th
-              className=""
-              key="header-2"
-              style={
-                Object {
-                  "textAlign": "center",
-                }
-              }
-            >
-              <th
-                className="cell"
-                style={
-                  Object {
-                    "textAlign": "center",
-                  }
-                }
-              >
-                Col B (center)
-              </th>
-            </Th>
-            <Th
-              className=""
-              key="header-3"
-              style={
-                Object {
-                  "textDecoration": "underline",
-                }
-              }
-            >
-              <th
-                className="cell"
-                style={
-                  Object {
-                    "textDecoration": "underline",
-                  }
-                }
-              >
-                Col C (underline)
-              </th>
-            </Th>
-          </tr>
-        </Tr>
-      </thead>
-      <tbody>
-        <Tr
-          className=""
-          key="row-0"
-        >
-          <tr
-            className=""
-          >
-            <Th
-              className=""
-              key="header-undefined"
-            >
-              <th
-                className="cell"
-              >
-                <strong>
-                  row 1
-                </strong>
-              </th>
-            </Th>
-            <Td
-              className=""
-              key="row-0-0"
-              style={
-                Object {
-                  "textAlign": "right",
-                }
-              }
-            >
-              <td
-                className="cell"
-                style={
-                  Object {
-                    "textAlign": "right",
-                  }
-                }
-              >
+            Object {
+              "children": "Col C (underline)",
+              "style": Object {
+                "textDecoration": "underline",
+              },
+            },
+          ]
+        }
+        outline={false}
+        rows={
+          Array [
+            Object {
+              "cells": Array [
                 <em>
                   a1
-                </em>
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-0-1"
-              style={
+                </em>,
                 Object {
-                  "color": "red",
-                  "textAlign": "center",
-                }
-              }
-            >
-              <td
-                className="cell"
-                style={
-                  Object {
+                  "children": "b1",
+                  "style": Object {
                     "color": "red",
                     "textAlign": "center",
-                  }
-                }
-              >
-                b1
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-0-2"
-              style={
-                Object {
-                  "textDecoration": "underline",
-                }
-              }
-            >
-              <td
-                className="cell"
-                style={
-                  Object {
-                    "textDecoration": "underline",
-                  }
-                }
-              >
-                c1
-              </td>
-            </Td>
-          </tr>
-        </Tr>
-        <Tr
-          className=""
-          key="row-1"
-          style={
+                  },
+                },
+                "c1",
+              ],
+              "header": <strong>
+                row 1
+              </strong>,
+            },
             Object {
-              "color": "blue",
-              "fontSize": "1.5em",
-            }
-          }
-        >
-          <tr
-            className=""
-            style={
-              Object {
+              "cells": Array [
+                "a2",
+                "b2",
+                "c2",
+              ],
+              "header": <strong>
+                row 2
+              </strong>,
+              "style": Object {
                 "color": "blue",
                 "fontSize": "1.5em",
-              }
-            }
-          >
-            <Th
-              className=""
-              key="header-undefined"
-            >
-              <th
-                className="cell"
-              >
-                <strong>
-                  row 2
-                </strong>
-              </th>
-            </Th>
-            <Td
-              className=""
-              key="row-1-0"
-              style={
-                Object {
-                  "textAlign": "right",
-                }
-              }
-            >
-              <td
-                className="cell"
-                style={
-                  Object {
-                    "textAlign": "right",
-                  }
-                }
-              >
-                a2
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-1-1"
-              style={
-                Object {
-                  "textAlign": "center",
-                }
-              }
-            >
-              <td
-                className="cell"
-                style={
-                  Object {
-                    "textAlign": "center",
-                  }
-                }
-              >
-                b2
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-1-2"
-              style={
-                Object {
-                  "textDecoration": "underline",
-                }
-              }
-            >
-              <td
-                className="cell"
-                style={
-                  Object {
-                    "textDecoration": "underline",
-                  }
-                }
-              >
-                c2
-              </td>
-            </Td>
-          </tr>
-        </Tr>
-        <Tr
-          className=""
-          key="row-2"
+              },
+            },
+            Object {
+              "cells": Array [
+                "a3",
+                "b3",
+                "c3",
+              ],
+              "header": <strong>
+                row 2
+              </strong>,
+            },
+          ]
+        }
+      >
+        <table
+          className="root"
         >
-          <tr
-            className=""
-          >
-            <Th
+          <thead>
+            <Tr
               className=""
-              key="header-undefined"
+              key="header-row"
             >
-              <th
-                className="cell"
+              <tr
+                className=""
               >
-                <strong>
-                  row 2
-                </strong>
-              </th>
-            </Th>
-            <Td
+                <Th
+                  className=""
+                  key="header-0"
+                >
+                  <th
+                    className="cell"
+                  >
+                     
+                  </th>
+                </Th>
+                <Th
+                  className=""
+                  key="header-1"
+                  style={
+                    Object {
+                      "textAlign": "right",
+                    }
+                  }
+                >
+                  <th
+                    className="cell"
+                    style={
+                      Object {
+                        "textAlign": "right",
+                      }
+                    }
+                  >
+                    Col A (right)
+                  </th>
+                </Th>
+                <Th
+                  className=""
+                  key="header-2"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  <th
+                    className="cell"
+                    style={
+                      Object {
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    Col B (center)
+                  </th>
+                </Th>
+                <Th
+                  className=""
+                  key="header-3"
+                  style={
+                    Object {
+                      "textDecoration": "underline",
+                    }
+                  }
+                >
+                  <th
+                    className="cell"
+                    style={
+                      Object {
+                        "textDecoration": "underline",
+                      }
+                    }
+                  >
+                    Col C (underline)
+                  </th>
+                </Th>
+              </tr>
+            </Tr>
+          </thead>
+          <tbody>
+            <Tr
               className=""
-              key="row-2-0"
+              key="row-0"
+            >
+              <tr
+                className=""
+              >
+                <Th
+                  className=""
+                  key="header-undefined"
+                >
+                  <th
+                    className="cell"
+                  >
+                    <strong>
+                      row 1
+                    </strong>
+                  </th>
+                </Th>
+                <Td
+                  className=""
+                  key="row-0-0"
+                  style={
+                    Object {
+                      "textAlign": "right",
+                    }
+                  }
+                >
+                  <td
+                    className="cell"
+                    style={
+                      Object {
+                        "textAlign": "right",
+                      }
+                    }
+                  >
+                    <em>
+                      a1
+                    </em>
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-0-1"
+                  style={
+                    Object {
+                      "color": "red",
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  <td
+                    className="cell"
+                    style={
+                      Object {
+                        "color": "red",
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    b1
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-0-2"
+                  style={
+                    Object {
+                      "textDecoration": "underline",
+                    }
+                  }
+                >
+                  <td
+                    className="cell"
+                    style={
+                      Object {
+                        "textDecoration": "underline",
+                      }
+                    }
+                  >
+                    c1
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+            <Tr
+              className=""
+              key="row-1"
               style={
                 Object {
-                  "textAlign": "right",
+                  "color": "blue",
+                  "fontSize": "1.5em",
                 }
               }
             >
-              <td
-                className="cell"
+              <tr
+                className=""
                 style={
                   Object {
-                    "textAlign": "right",
+                    "color": "blue",
+                    "fontSize": "1.5em",
                   }
                 }
               >
-                a3
-              </td>
-            </Td>
-            <Td
+                <Th
+                  className=""
+                  key="header-undefined"
+                >
+                  <th
+                    className="cell"
+                  >
+                    <strong>
+                      row 2
+                    </strong>
+                  </th>
+                </Th>
+                <Td
+                  className=""
+                  key="row-1-0"
+                  style={
+                    Object {
+                      "textAlign": "right",
+                    }
+                  }
+                >
+                  <td
+                    className="cell"
+                    style={
+                      Object {
+                        "textAlign": "right",
+                      }
+                    }
+                  >
+                    a2
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-1-1"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  <td
+                    className="cell"
+                    style={
+                      Object {
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    b2
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-1-2"
+                  style={
+                    Object {
+                      "textDecoration": "underline",
+                    }
+                  }
+                >
+                  <td
+                    className="cell"
+                    style={
+                      Object {
+                        "textDecoration": "underline",
+                      }
+                    }
+                  >
+                    c2
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+            <Tr
               className=""
-              key="row-2-1"
-              style={
-                Object {
-                  "textAlign": "center",
-                }
-              }
+              key="row-2"
             >
-              <td
-                className="cell"
-                style={
-                  Object {
-                    "textAlign": "center",
-                  }
-                }
+              <tr
+                className=""
               >
-                b3
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-2-2"
-              style={
-                Object {
-                  "textDecoration": "underline",
-                }
-              }
-            >
-              <td
-                className="cell"
-                style={
-                  Object {
-                    "textDecoration": "underline",
+                <Th
+                  className=""
+                  key="header-undefined"
+                >
+                  <th
+                    className="cell"
+                  >
+                    <strong>
+                      row 2
+                    </strong>
+                  </th>
+                </Th>
+                <Td
+                  className=""
+                  key="row-2-0"
+                  style={
+                    Object {
+                      "textAlign": "right",
+                    }
                   }
-                }
-              >
-                c3
-              </td>
-            </Td>
-          </tr>
-        </Tr>
-      </tbody>
-    </table>
-  </Table>
-</div>
+                >
+                  <td
+                    className="cell"
+                    style={
+                      Object {
+                        "textAlign": "right",
+                      }
+                    }
+                  >
+                    a3
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-2-1"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  <td
+                    className="cell"
+                    style={
+                      Object {
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    b3
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-2-2"
+                  style={
+                    Object {
+                      "textDecoration": "underline",
+                    }
+                  }
+                >
+                  <td
+                    className="cell"
+                    style={
+                      Object {
+                        "textDecoration": "underline",
+                      }
+                    }
+                  >
+                    c3
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+          </tbody>
+        </table>
+      </Table>
+    </div>
+  </Router>
+</MemoryRouter>
 `;
 
 exports[`Storyshots UI/Table with headers 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <Table
-    className=""
-    emptyMessage="No entries found."
-    headers={
-      Array [
-        "Col A",
-        "Col B",
-        "Col C",
-      ]
-    }
-    outline={false}
-    rows={
-      Array [
-        Object {
-          "cells": Array [
-            "a1",
-            "b1",
-            "c1",
-          ],
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
         },
-        Object {
-          "cells": Array [
-            "a2",
-            "b2",
-            "c2",
-          ],
-        },
-        Object {
-          "cells": Array [
-            "a3",
-            "b3",
-            "c3",
-          ],
-        },
-      ]
+        "push": [Function],
+        "replace": [Function],
+      }
     }
   >
-    <table
-      className="root"
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
     >
-      <thead>
-        <Tr
-          className=""
-          key="header-row"
+      <Table
+        className=""
+        emptyMessage="No entries found."
+        headers={
+          Array [
+            "Col A",
+            "Col B",
+            "Col C",
+          ]
+        }
+        outline={false}
+        rows={
+          Array [
+            Object {
+              "cells": Array [
+                "a1",
+                "b1",
+                "c1",
+              ],
+            },
+            Object {
+              "cells": Array [
+                "a2",
+                "b2",
+                "c2",
+              ],
+            },
+            Object {
+              "cells": Array [
+                "a3",
+                "b3",
+                "c3",
+              ],
+            },
+          ]
+        }
+      >
+        <table
+          className="root"
         >
-          <tr
-            className=""
-          >
-            <Th
+          <thead>
+            <Tr
               className=""
-              key="header-0"
+              key="header-row"
             >
-              <th
-                className="cell"
+              <tr
+                className=""
               >
-                Col A
-              </th>
-            </Th>
-            <Th
+                <Th
+                  className=""
+                  key="header-0"
+                >
+                  <th
+                    className="cell"
+                  >
+                    Col A
+                  </th>
+                </Th>
+                <Th
+                  className=""
+                  key="header-1"
+                >
+                  <th
+                    className="cell"
+                  >
+                    Col B
+                  </th>
+                </Th>
+                <Th
+                  className=""
+                  key="header-2"
+                >
+                  <th
+                    className="cell"
+                  >
+                    Col C
+                  </th>
+                </Th>
+              </tr>
+            </Tr>
+          </thead>
+          <tbody>
+            <Tr
               className=""
-              key="header-1"
+              key="row-0"
             >
-              <th
-                className="cell"
+              <tr
+                className=""
               >
-                Col B
-              </th>
-            </Th>
-            <Th
+                <Td
+                  className=""
+                  key="row-0-0"
+                >
+                  <td
+                    className="cell"
+                  >
+                    a1
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-0-1"
+                >
+                  <td
+                    className="cell"
+                  >
+                    b1
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-0-2"
+                >
+                  <td
+                    className="cell"
+                  >
+                    c1
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+            <Tr
               className=""
-              key="header-2"
+              key="row-1"
             >
-              <th
-                className="cell"
+              <tr
+                className=""
               >
-                Col C
-              </th>
-            </Th>
-          </tr>
-        </Tr>
-      </thead>
-      <tbody>
-        <Tr
-          className=""
-          key="row-0"
-        >
-          <tr
-            className=""
-          >
-            <Td
+                <Td
+                  className=""
+                  key="row-1-0"
+                >
+                  <td
+                    className="cell"
+                  >
+                    a2
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-1-1"
+                >
+                  <td
+                    className="cell"
+                  >
+                    b2
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-1-2"
+                >
+                  <td
+                    className="cell"
+                  >
+                    c2
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+            <Tr
               className=""
-              key="row-0-0"
+              key="row-2"
             >
-              <td
-                className="cell"
+              <tr
+                className=""
               >
-                a1
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-0-1"
-            >
-              <td
-                className="cell"
-              >
-                b1
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-0-2"
-            >
-              <td
-                className="cell"
-              >
-                c1
-              </td>
-            </Td>
-          </tr>
-        </Tr>
-        <Tr
-          className=""
-          key="row-1"
-        >
-          <tr
-            className=""
-          >
-            <Td
-              className=""
-              key="row-1-0"
-            >
-              <td
-                className="cell"
-              >
-                a2
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-1-1"
-            >
-              <td
-                className="cell"
-              >
-                b2
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-1-2"
-            >
-              <td
-                className="cell"
-              >
-                c2
-              </td>
-            </Td>
-          </tr>
-        </Tr>
-        <Tr
-          className=""
-          key="row-2"
-        >
-          <tr
-            className=""
-          >
-            <Td
-              className=""
-              key="row-2-0"
-            >
-              <td
-                className="cell"
-              >
-                a3
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-2-1"
-            >
-              <td
-                className="cell"
-              >
-                b3
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-2-2"
-            >
-              <td
-                className="cell"
-              >
-                c3
-              </td>
-            </Td>
-          </tr>
-        </Tr>
-      </tbody>
-    </table>
-  </Table>
-</div>
+                <Td
+                  className=""
+                  key="row-2-0"
+                >
+                  <td
+                    className="cell"
+                  >
+                    a3
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-2-1"
+                >
+                  <td
+                    className="cell"
+                  >
+                    b3
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-2-2"
+                >
+                  <td
+                    className="cell"
+                  >
+                    c3
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+          </tbody>
+        </table>
+      </Table>
+    </div>
+  </Router>
+</MemoryRouter>
 `;
 
 exports[`Storyshots UI/Table with outline 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <Table
-    className=""
-    emptyMessage="No entries found."
-    headers={
-      Array [
-        "Col A",
-        "Col B",
-        "Col C",
-      ]
-    }
-    outline={true}
-    rows={
-      Array [
-        Object {
-          "cells": Array [
-            "a1",
-            "b1",
-            "c1",
-          ],
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
         },
-        Object {
-          "cells": Array [
-            "a2",
-            "b2",
-            "c2",
-          ],
-        },
-        Object {
-          "cells": Array [
-            "a3",
-            "b3",
-            "c3",
-          ],
-        },
-      ]
+        "push": [Function],
+        "replace": [Function],
+      }
     }
   >
-    <table
-      className="root outline"
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
     >
-      <thead>
-        <Tr
-          className=""
-          key="header-row"
+      <Table
+        className=""
+        emptyMessage="No entries found."
+        headers={
+          Array [
+            "Col A",
+            "Col B",
+            "Col C",
+          ]
+        }
+        outline={true}
+        rows={
+          Array [
+            Object {
+              "cells": Array [
+                "a1",
+                "b1",
+                "c1",
+              ],
+            },
+            Object {
+              "cells": Array [
+                "a2",
+                "b2",
+                "c2",
+              ],
+            },
+            Object {
+              "cells": Array [
+                "a3",
+                "b3",
+                "c3",
+              ],
+            },
+          ]
+        }
+      >
+        <table
+          className="root outline"
         >
-          <tr
-            className=""
-          >
-            <Th
+          <thead>
+            <Tr
               className=""
-              key="header-0"
+              key="header-row"
             >
-              <th
-                className="cell"
+              <tr
+                className=""
               >
-                Col A
-              </th>
-            </Th>
-            <Th
+                <Th
+                  className=""
+                  key="header-0"
+                >
+                  <th
+                    className="cell"
+                  >
+                    Col A
+                  </th>
+                </Th>
+                <Th
+                  className=""
+                  key="header-1"
+                >
+                  <th
+                    className="cell"
+                  >
+                    Col B
+                  </th>
+                </Th>
+                <Th
+                  className=""
+                  key="header-2"
+                >
+                  <th
+                    className="cell"
+                  >
+                    Col C
+                  </th>
+                </Th>
+              </tr>
+            </Tr>
+          </thead>
+          <tbody>
+            <Tr
               className=""
-              key="header-1"
+              key="row-0"
             >
-              <th
-                className="cell"
+              <tr
+                className=""
               >
-                Col B
-              </th>
-            </Th>
-            <Th
+                <Td
+                  className=""
+                  key="row-0-0"
+                >
+                  <td
+                    className="cell"
+                  >
+                    a1
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-0-1"
+                >
+                  <td
+                    className="cell"
+                  >
+                    b1
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-0-2"
+                >
+                  <td
+                    className="cell"
+                  >
+                    c1
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+            <Tr
               className=""
-              key="header-2"
+              key="row-1"
             >
-              <th
-                className="cell"
+              <tr
+                className=""
               >
-                Col C
-              </th>
-            </Th>
-          </tr>
-        </Tr>
-      </thead>
-      <tbody>
-        <Tr
-          className=""
-          key="row-0"
-        >
-          <tr
-            className=""
-          >
-            <Td
+                <Td
+                  className=""
+                  key="row-1-0"
+                >
+                  <td
+                    className="cell"
+                  >
+                    a2
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-1-1"
+                >
+                  <td
+                    className="cell"
+                  >
+                    b2
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-1-2"
+                >
+                  <td
+                    className="cell"
+                  >
+                    c2
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+            <Tr
               className=""
-              key="row-0-0"
+              key="row-2"
             >
-              <td
-                className="cell"
+              <tr
+                className=""
               >
-                a1
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-0-1"
-            >
-              <td
-                className="cell"
-              >
-                b1
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-0-2"
-            >
-              <td
-                className="cell"
-              >
-                c1
-              </td>
-            </Td>
-          </tr>
-        </Tr>
-        <Tr
-          className=""
-          key="row-1"
-        >
-          <tr
-            className=""
-          >
-            <Td
-              className=""
-              key="row-1-0"
-            >
-              <td
-                className="cell"
-              >
-                a2
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-1-1"
-            >
-              <td
-                className="cell"
-              >
-                b2
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-1-2"
-            >
-              <td
-                className="cell"
-              >
-                c2
-              </td>
-            </Td>
-          </tr>
-        </Tr>
-        <Tr
-          className=""
-          key="row-2"
-        >
-          <tr
-            className=""
-          >
-            <Td
-              className=""
-              key="row-2-0"
-            >
-              <td
-                className="cell"
-              >
-                a3
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-2-1"
-            >
-              <td
-                className="cell"
-              >
-                b3
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-2-2"
-            >
-              <td
-                className="cell"
-              >
-                c3
-              </td>
-            </Td>
-          </tr>
-        </Tr>
-      </tbody>
-    </table>
-  </Table>
-</div>
+                <Td
+                  className=""
+                  key="row-2-0"
+                >
+                  <td
+                    className="cell"
+                  >
+                    a3
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-2-1"
+                >
+                  <td
+                    className="cell"
+                  >
+                    b3
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-2-2"
+                >
+                  <td
+                    className="cell"
+                  >
+                    c3
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+          </tbody>
+        </table>
+      </Table>
+    </div>
+  </Router>
+</MemoryRouter>
 `;
 
 exports[`Storyshots UI/Table with row headers 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <Table
-    className=""
-    emptyMessage="No entries found."
-    headers={Array []}
-    outline={false}
-    rows={
-      Array [
-        Object {
-          "cells": Array [
-            "a1",
-            "b1",
-            "c1",
-          ],
-          "header": "row 1",
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
         },
-        Object {
-          "cells": Array [
-            "a2",
-            "b2",
-            "c2",
-          ],
-          "header": "row 2",
-        },
-        Object {
-          "cells": Array [
-            "a3",
-            "b3",
-            "c3",
-          ],
-          "header": "row 3",
-        },
-      ]
+        "push": [Function],
+        "replace": [Function],
+      }
     }
   >
-    <table
-      className="root"
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
     >
-      <tbody>
-        <Tr
-          className=""
-          key="row-0"
+      <Table
+        className=""
+        emptyMessage="No entries found."
+        headers={Array []}
+        outline={false}
+        rows={
+          Array [
+            Object {
+              "cells": Array [
+                "a1",
+                "b1",
+                "c1",
+              ],
+              "header": "row 1",
+            },
+            Object {
+              "cells": Array [
+                "a2",
+                "b2",
+                "c2",
+              ],
+              "header": "row 2",
+            },
+            Object {
+              "cells": Array [
+                "a3",
+                "b3",
+                "c3",
+              ],
+              "header": "row 3",
+            },
+          ]
+        }
+      >
+        <table
+          className="root"
         >
-          <tr
-            className=""
-          >
-            <Th
+          <tbody>
+            <Tr
               className=""
-              key="header-undefined"
+              key="row-0"
             >
-              <th
-                className="cell"
+              <tr
+                className=""
               >
-                row 1
-              </th>
-            </Th>
-            <Td
+                <Th
+                  className=""
+                  key="header-undefined"
+                >
+                  <th
+                    className="cell"
+                  >
+                    row 1
+                  </th>
+                </Th>
+                <Td
+                  className=""
+                  key="row-0-0"
+                >
+                  <td
+                    className="cell"
+                  >
+                    a1
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-0-1"
+                >
+                  <td
+                    className="cell"
+                  >
+                    b1
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-0-2"
+                >
+                  <td
+                    className="cell"
+                  >
+                    c1
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+            <Tr
               className=""
-              key="row-0-0"
+              key="row-1"
             >
-              <td
-                className="cell"
+              <tr
+                className=""
               >
-                a1
-              </td>
-            </Td>
-            <Td
+                <Th
+                  className=""
+                  key="header-undefined"
+                >
+                  <th
+                    className="cell"
+                  >
+                    row 2
+                  </th>
+                </Th>
+                <Td
+                  className=""
+                  key="row-1-0"
+                >
+                  <td
+                    className="cell"
+                  >
+                    a2
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-1-1"
+                >
+                  <td
+                    className="cell"
+                  >
+                    b2
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-1-2"
+                >
+                  <td
+                    className="cell"
+                  >
+                    c2
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+            <Tr
               className=""
-              key="row-0-1"
+              key="row-2"
             >
-              <td
-                className="cell"
+              <tr
+                className=""
               >
-                b1
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-0-2"
-            >
-              <td
-                className="cell"
-              >
-                c1
-              </td>
-            </Td>
-          </tr>
-        </Tr>
-        <Tr
-          className=""
-          key="row-1"
-        >
-          <tr
-            className=""
-          >
-            <Th
-              className=""
-              key="header-undefined"
-            >
-              <th
-                className="cell"
-              >
-                row 2
-              </th>
-            </Th>
-            <Td
-              className=""
-              key="row-1-0"
-            >
-              <td
-                className="cell"
-              >
-                a2
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-1-1"
-            >
-              <td
-                className="cell"
-              >
-                b2
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-1-2"
-            >
-              <td
-                className="cell"
-              >
-                c2
-              </td>
-            </Td>
-          </tr>
-        </Tr>
-        <Tr
-          className=""
-          key="row-2"
-        >
-          <tr
-            className=""
-          >
-            <Th
-              className=""
-              key="header-undefined"
-            >
-              <th
-                className="cell"
-              >
-                row 3
-              </th>
-            </Th>
-            <Td
-              className=""
-              key="row-2-0"
-            >
-              <td
-                className="cell"
-              >
-                a3
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-2-1"
-            >
-              <td
-                className="cell"
-              >
-                b3
-              </td>
-            </Td>
-            <Td
-              className=""
-              key="row-2-2"
-            >
-              <td
-                className="cell"
-              >
-                c3
-              </td>
-            </Td>
-          </tr>
-        </Tr>
-      </tbody>
-    </table>
-  </Table>
-</div>
+                <Th
+                  className=""
+                  key="header-undefined"
+                >
+                  <th
+                    className="cell"
+                  >
+                    row 3
+                  </th>
+                </Th>
+                <Td
+                  className=""
+                  key="row-2-0"
+                >
+                  <td
+                    className="cell"
+                  >
+                    a3
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-2-1"
+                >
+                  <td
+                    className="cell"
+                  >
+                    b3
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-2-2"
+                >
+                  <td
+                    className="cell"
+                  >
+                    c3
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+          </tbody>
+        </table>
+      </Table>
+    </div>
+  </Router>
+</MemoryRouter>
 `;

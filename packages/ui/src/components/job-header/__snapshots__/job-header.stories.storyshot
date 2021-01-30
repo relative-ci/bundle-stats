@@ -1,113 +1,212 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components/JobHeader default 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <JobHeader
-    className=""
-    job={
+  <div
+    style={
       Object {
-        "internalBuildNumber": 1,
-        "meta": Object {
-          "webpack": Object {
-            "builtAt": "2019-01-01T00:00:00.000Z",
-            "hash": "abcd1234",
-          },
-        },
-        "summary": Object {
-          "webpack": Object {
-            "totalSizeByTypeALL": Object {
-              "baseline": 900000,
-              "current": 1000000,
-            },
-          },
-        },
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
       }
     }
-    tag=""
-  />
-</div>
+  >
+    <JobHeader
+      className=""
+      job={
+        Object {
+          "internalBuildNumber": 1,
+          "meta": Object {
+            "webpack": Object {
+              "builtAt": "2019-01-01T00:00:00.000Z",
+              "hash": "abcd1234",
+            },
+          },
+          "summary": Object {
+            "webpack": Object {
+              "totalSizeByTypeALL": Object {
+                "baseline": 900000,
+                "current": 1000000,
+              },
+            },
+          },
+        }
+      }
+      tag=""
+    />
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Components/JobHeader with custom content 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <JobHeader
-    className=""
-    job={
+  <div
+    style={
       Object {
-        "internalBuildNumber": 1,
-        "meta": Object {
-          "webpack": Object {
-            "builtAt": "2019-01-01T00:00:00.000Z",
-            "hash": "abcd1234",
-          },
-        },
-        "summary": Object {
-          "webpack": Object {
-            "totalSizeByTypeALL": Object {
-              "baseline": 900000,
-              "current": 1000000,
-            },
-          },
-        },
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
       }
     }
-    tag=""
   >
-    <p>
-      Lorem ipsum dolor sit amed
-    </p>
-  </JobHeader>
-</div>
+    <JobHeader
+      className=""
+      job={
+        Object {
+          "internalBuildNumber": 1,
+          "meta": Object {
+            "webpack": Object {
+              "builtAt": "2019-01-01T00:00:00.000Z",
+              "hash": "abcd1234",
+            },
+          },
+          "summary": Object {
+            "webpack": Object {
+              "totalSizeByTypeALL": Object {
+                "baseline": 900000,
+                "current": 1000000,
+              },
+            },
+          },
+        }
+      }
+      tag=""
+    >
+      <p>
+        Lorem ipsum dolor sit amed
+      </p>
+    </JobHeader>
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Components/JobHeader with tag 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <JobHeader
-    className=""
-    job={
+  <div
+    style={
       Object {
-        "internalBuildNumber": 1,
-        "meta": Object {
-          "webpack": Object {
-            "builtAt": "2019-01-01T00:00:00.000Z",
-            "hash": "abcd1234",
-          },
-        },
-        "summary": Object {
-          "webpack": Object {
-            "totalSizeByTypeALL": Object {
-              "baseline": 900000,
-              "current": 1000000,
-            },
-          },
-        },
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
       }
     }
-    tag="current"
-  />
-</div>
+  >
+    <JobHeader
+      className=""
+      job={
+        Object {
+          "internalBuildNumber": 1,
+          "meta": Object {
+            "webpack": Object {
+              "builtAt": "2019-01-01T00:00:00.000Z",
+              "hash": "abcd1234",
+            },
+          },
+          "summary": Object {
+            "webpack": Object {
+              "totalSizeByTypeALL": Object {
+                "baseline": 900000,
+                "current": 1000000,
+              },
+            },
+          },
+        }
+      }
+      tag="current"
+    />
+  </div>
+</Router>
 `;

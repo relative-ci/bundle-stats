@@ -1,151 +1,371 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI/Alert default 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <Alert
-    className=""
-    kind="default"
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
-    <Box
-      as="div"
-      className="root default"
-      outline={true}
-      padding="small"
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
     >
-      <div
-        className="root root default padding-small outline"
+      <Alert
+        className=""
+        kind="default"
       >
-        Lorem ipsum
-      </div>
-    </Box>
-  </Alert>
-</div>
+        <Box
+          as="div"
+          className="root default"
+          outline={true}
+          padding="small"
+        >
+          <div
+            className="root root default padding-small outline"
+          >
+            Lorem ipsum
+          </div>
+        </Box>
+      </Alert>
+    </div>
+  </Router>
+</MemoryRouter>
 `;
 
 exports[`Storyshots UI/Alert with kind danger 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <Alert
-    className=""
-    kind="danger"
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
-    <Box
-      as="div"
-      className="root danger"
-      outline={true}
-      padding="small"
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
     >
-      <div
-        className="root root danger padding-small outline"
+      <Alert
+        className=""
+        kind="danger"
       >
-        Lorem ipsum
-      </div>
-    </Box>
-  </Alert>
-</div>
+        <Box
+          as="div"
+          className="root danger"
+          outline={true}
+          padding="small"
+        >
+          <div
+            className="root root danger padding-small outline"
+          >
+            Lorem ipsum
+          </div>
+        </Box>
+      </Alert>
+    </div>
+  </Router>
+</MemoryRouter>
 `;
 
 exports[`Storyshots UI/Alert with kind info 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <Alert
-    className=""
-    kind="info"
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
-    <Box
-      as="div"
-      className="root info"
-      outline={true}
-      padding="small"
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
     >
-      <div
-        className="root root info padding-small outline"
+      <Alert
+        className=""
+        kind="info"
       >
-        Lorem ipsum
-      </div>
-    </Box>
-  </Alert>
-</div>
+        <Box
+          as="div"
+          className="root info"
+          outline={true}
+          padding="small"
+        >
+          <div
+            className="root root info padding-small outline"
+          >
+            Lorem ipsum
+          </div>
+        </Box>
+      </Alert>
+    </div>
+  </Router>
+</MemoryRouter>
 `;
 
 exports[`Storyshots UI/Alert with kind success 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <Alert
-    className=""
-    kind="success"
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
-    <Box
-      as="div"
-      className="root success"
-      outline={true}
-      padding="small"
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
     >
-      <div
-        className="root root success padding-small outline"
+      <Alert
+        className=""
+        kind="success"
       >
-        Lorem ipsum
-      </div>
-    </Box>
-  </Alert>
-</div>
+        <Box
+          as="div"
+          className="root success"
+          outline={true}
+          padding="small"
+        >
+          <div
+            className="root root success padding-small outline"
+          >
+            Lorem ipsum
+          </div>
+        </Box>
+      </Alert>
+    </div>
+  </Router>
+</MemoryRouter>
 `;
 
 exports[`Storyshots UI/Alert with kind warning 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <Alert
-    className=""
-    kind="warning"
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
-    <Box
-      as="div"
-      className="root warning"
-      outline={true}
-      padding="small"
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
     >
-      <div
-        className="root root warning padding-small outline"
+      <Alert
+        className=""
+        kind="warning"
       >
-        Lorem ipsum
-      </div>
-    </Box>
-  </Alert>
-</div>
+        <Box
+          as="div"
+          className="root warning"
+          outline={true}
+          padding="small"
+        >
+          <div
+            className="root root warning padding-small outline"
+          >
+            Lorem ipsum
+          </div>
+        </Box>
+      </Alert>
+    </div>
+  </Router>
+</MemoryRouter>
 `;

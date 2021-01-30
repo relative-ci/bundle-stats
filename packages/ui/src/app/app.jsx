@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, HashRouter, NavLink, Route, Switch } from 'react-router-dom';
+import { HashRouter, NavLink, Route, Switch } from 'react-router-dom';
 import cx from 'classnames';
 import { get } from 'lodash';
 
-import { ASSETS_SIZES_FILE_TYPE_MAP, COMPONENT, SECTIONS } from '../constants';
+import { COMPONENT, SECTIONS, URLS } from '../constants';
 import { Box } from '../layout/box';
 import { Container } from '../ui/container';
 import { DuplicatePackagesWarning } from '../components/duplicate-packages-warning';
@@ -20,9 +20,8 @@ import { BundlePackages } from '../components/bundle-packages';
 
 import I18N from '../i18n';
 import { Header } from './header';
-import { SECTION_URLS, URLS } from './app.constants';
 import css from './app.module.css';
-import {getBundleAssetsFileTypeComponentLink} from '../component-links';
+import { ComponentLink } from '../components/component-link';
 
 const Layout = ({ jobs, footer, ...props }) => (
   <div className={css.root}>
@@ -49,16 +48,14 @@ const SummaryItemWrapper = ({ keyProps, className, ...props }) => {
     return null;
   }
 
-  const location = {
-    pathname: SECTION_URLS[link.section],
-    state: link.params,
-  };
+  const { section, title, params } = link;
 
   return (
-    <Link
+    <ComponentLink
       className={cx(className, css.summaryItemLink)}
-      to={location}
-      title={link.title}
+      section={section}
+      title={title}
+      params={params}
       {...props}
     />
   );
@@ -181,25 +178,7 @@ export const App = ({ footer, jobs }) => {
                   <Container>
                     <h2>Totals</h2>
                     <Box outline>
-                      <BundleAssetsTotalsTable
-                        jobs={jobs}
-                        renderRowHeader={(item) => {
-                          const fileType = ASSETS_SIZES_FILE_TYPE_MAP[item.key];
-                          const componentLinkData = getBundleAssetsFileTypeComponentLink(
-                            fileType,
-                            item.label
-                          );
-                          const newLocation = {
-                            pathname: SECTION_URLS[componentLinkData.section],
-                            state: componentLinkData.params
-                          };
-                          return (
-                            <Link to={newLocation} title={componentLinkData.title}>
-                              {item.label}
-                            </Link>
-                          );
-                        }}
-                      />
+                      <BundleAssetsTotalsTable jobs={jobs} />
                     </Box>
                   </Container>
                 </Stack>

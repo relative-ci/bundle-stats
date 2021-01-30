@@ -1,53 +1,119 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components/DuplicatePackagesWarning multiple duplicate packages 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <DuplicatePackagesWarning
-    className=""
-    duplicatePackages={
+  <div
+    style={
       Object {
-        "package-c": Array [
-          "package-c",
-          "package-a:package-c",
-        ],
-        "package-d": Array [
-          "package-b:package-d",
-          "package-c:package-d",
-        ],
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
       }
     }
-  />
-</div>
+  >
+    <DuplicatePackagesWarning
+      className=""
+      duplicatePackages={
+        Object {
+          "package-c": Array [
+            "package-c",
+            "package-a:package-c",
+          ],
+          "package-d": Array [
+            "package-b:package-d",
+            "package-c:package-d",
+          ],
+        }
+      }
+    />
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Components/DuplicatePackagesWarning single duplicate packages 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <DuplicatePackagesWarning
-    className=""
-    duplicatePackages={
+  <div
+    style={
       Object {
-        "package-c": Array [
-          "package-c",
-          "package-a:package-c",
-        ],
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
       }
     }
-  />
-</div>
+  >
+    <DuplicatePackagesWarning
+      className=""
+      duplicatePackages={
+        Object {
+          "package-c": Array [
+            "package-c",
+            "package-a:package-c",
+          ],
+        }
+      }
+    />
+  </div>
+</Router>
 `;

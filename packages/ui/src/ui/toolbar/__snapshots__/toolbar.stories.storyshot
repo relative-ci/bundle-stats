@@ -1,71 +1,159 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI/Toolbar default 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <Toolbar
-    className=""
-    renderActions={null}
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
     <div
-      className="root"
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
     >
-      <div
-        className="content"
+      <Toolbar
+        className=""
+        renderActions={null}
       >
-        <div>
-          Content
+        <div
+          className="root"
+        >
+          <div
+            className="content"
+          >
+            <div>
+              Content
+            </div>
+          </div>
         </div>
-      </div>
+      </Toolbar>
     </div>
-  </Toolbar>
-</div>
+  </Router>
+</MemoryRouter>
 `;
 
 exports[`Storyshots UI/Toolbar with actions 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <Toolbar
-    className=""
-    renderActions={[Function]}
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
     <div
-      className="root"
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
     >
-      <div
-        className="content"
-      >
-        Content
-      </div>
-      <div
-        className="actions"
+      <Toolbar
+        className=""
+        renderActions={[Function]}
       >
         <div
-          className="action"
+          className="root"
         >
-          Action 1
+          <div
+            className="content"
+          >
+            Content
+          </div>
+          <div
+            className="actions"
+          >
+            <div
+              className="action"
+            >
+              Action 1
+            </div>
+            <div
+              className="action"
+            >
+              Action 2
+            </div>
+          </div>
         </div>
-        <div
-          className="action"
-        >
-          Action 2
-        </div>
-      </div>
+      </Toolbar>
     </div>
-  </Toolbar>
-</div>
+  </Router>
+</MemoryRouter>
 `;
