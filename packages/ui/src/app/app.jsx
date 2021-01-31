@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { HashRouter, NavLink, Route, Switch } from 'react-router-dom';
+import { HashRouter, NavLink, Route, Switch, useLocation } from 'react-router-dom';
 import cx from 'classnames';
 
 import { COMPONENT, SECTIONS, URLS } from '../constants';
@@ -21,6 +21,16 @@ import { QueryStateProvider, useComponentQueryState } from '../query-state';
 import I18N from '../i18n';
 import { Header } from './header';
 import css from './app.module.css';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 const Layout = ({ jobs, footer, ...props }) => (
   <div className={css.root}>
@@ -202,6 +212,7 @@ AppComponent.propTypes = {
 
 export const App = (props) => (
   <HashRouter>
+    <ScrollToTop />
     <QueryStateProvider>
       <AppComponent {...props} />
     </QueryStateProvider>
