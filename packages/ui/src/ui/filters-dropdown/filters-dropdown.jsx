@@ -51,7 +51,7 @@ Checkbox.defaultProps = {
 };
 
 const renderTree = (key, data, values, onCheckboxChange, getOnOnlyClick) => {
-  if (typeof data.defaultValue !== 'undefined') {
+  if (typeof data?.defaultValue !== 'undefined') {
     return (
       <Checkbox
         key={key}
@@ -70,7 +70,7 @@ const renderTree = (key, data, values, onCheckboxChange, getOnOnlyClick) => {
     const isRootGroup = !key;
 
     const groupItems = Object.entries(groupData);
-    const groupCheckboxes = key && groupItems.filter(([itemKey, item]) => typeof item.defaultValue !== 'undefined') || [];
+    const groupCheckboxes = key && groupItems.filter(([itemKey, item]) => typeof item?.defaultValue !== 'undefined') || [];
     const isGroupChecked = groupCheckboxes.map(([itemKey]) => get(values, `${key}.${itemKey}`)).reduce((agg, val) => agg && val, true);
 
     const onGroupClearAll = () => {

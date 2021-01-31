@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { HashRouter, NavLink, Route, Switch } from 'react-router-dom';
 import cx from 'classnames';
-import { get } from 'lodash';
 
 import { COMPONENT, SECTIONS, URLS } from '../constants';
 import { Box } from '../layout/box';
@@ -17,11 +16,11 @@ import { Stack } from '../layout/stack';
 import { BundleAssetsTotalsTable } from '../components/bundle-assets-totals-table';
 import { BundleModules } from '../components/bundle-modules';
 import { BundlePackages } from '../components/bundle-packages';
-
+import { ComponentLink } from '../components/component-link';
+import { QueryStateProvider, useComponentQueryState } from '../query-state';
 import I18N from '../i18n';
 import { Header } from './header';
 import css from './app.module.css';
-import { ComponentLink } from '../components/component-link';
 
 const Layout = ({ jobs, footer, ...props }) => (
   <div className={css.root}>
@@ -76,7 +75,10 @@ SummaryItemWrapper.defaultProps = {
   className: '',
 };
 
-export const App = ({ footer, jobs }) => {
+const AppComponent = ({ footer, jobs }) => {
+  const [bundleStatsState, bundleStatsSetState] = useComponentQueryState(COMPONENT.BUNDLE_ASSETS);
+  const [bundlePackagesState, bundlePackagesSetState] = useComponentQueryState(COMPONENT.BUNDLE_PACKAGES);
+
   if (jobs.length === 0) {
     return (
       <Layout footer={footer}>
@@ -91,112 +93,103 @@ export const App = ({ footer, jobs }) => {
   const duplicatePackagesInsights = insights?.webpack?.duplicatePackages;
 
   return (
-    <HashRouter>
-      <Layout jobs={jobs} footer={footer}>
-        <Container className={css.summaryContainer}>
-          <Summary
-            data={jobs[0].summary}
-            showSummaryItemDelta={jobs.length !== 1}
-            showSummaryItemBaselineValue={jobs.length !== 1}
-            SummaryItemWrapper={SummaryItemWrapper}
+    <Layout jobs={jobs} footer={footer}>
+      <Container className={css.summaryContainer}>
+        <Summary
+          data={jobs[0].summary}
+          showSummaryItemDelta={jobs.length !== 1}
+          showSummaryItemBaselineValue={jobs.length !== 1}
+          SummaryItemWrapper={SummaryItemWrapper}
+        />
+      </Container>
+
+      <Container className={css.tabsContainer}>
+        <Tabs className={css.tabs}>
+          <NavLink exact to={URLS.OVERVIEW} activeClassName={css.tabActive}>
+            {I18N.OVERVIEW}
+          </NavLink>
+          <NavLink exact to={URLS.ASSETS} activeClassName={css.tabActive}>
+            {I18N.ASSETS}
+          </NavLink>
+          <NavLink exact to={URLS.MODULES} activeClassName={css.tabActive}>
+            {I18N.MODULES}
+          </NavLink>
+          <NavLink exact to={URLS.PACKAGES} activeClassName={css.tabActive}>
+            {I18N.PACKAGES}
+          </NavLink>
+        </Tabs>
+      </Container>
+
+      <div className={css.tabsContent}>
+        <Switch>
+          <Route
+            exact
+            path={URLS.ASSETS}
+            component={() => (
+              <Container>
+                <Box outline>
+                  <BundleAssets jobs={jobs} setState={bundleStatsSetState} {...bundleStatsState} />
+                </Box>
+              </Container>
+            )}
           />
-        </Container>
-
-        <Container className={css.tabsContainer}>
-          <Tabs className={css.tabs}>
-            <NavLink exact to={URLS.OVERVIEW} activeClassName={css.tabActive}>
-              {I18N.OVERVIEW}
-            </NavLink>
-            <NavLink exact to={URLS.ASSETS} activeClassName={css.tabActive}>
-              {I18N.ASSETS}
-            </NavLink>
-            <NavLink exact to={URLS.MODULES} activeClassName={css.tabActive}>
-              {I18N.MODULES}
-            </NavLink>
-            <NavLink exact to={URLS.PACKAGES} activeClassName={css.tabActive}>
-              {I18N.PACKAGES}
-            </NavLink>
-          </Tabs>
-        </Container>
-
-        <div className={css.tabsContent}>
-          <Switch>
-            <Route
-              exact
-              path={URLS.ASSETS}
-              component={({ location }) => (
+          <Route
+            exact
+            path={URLS.MODULES}
+            component={() => (
+              <Container>
+                <BundleModules jobs={jobs} />
+              </Container>
+            )}
+          />
+          <Route
+            exact
+            path={URLS.PACKAGES}
+            component={() => (
+              <Container>
+                <Box outline>
+                  <BundlePackages
+                    jobs={jobs}
+                    {...bundlePackagesState}
+                    setState={bundlePackagesSetState}
+                  />
+                </Box>
+              </Container>
+            )}
+          />
+          <Route
+            exact
+            path={URLS.OVERVIEW}
+            component={() => (
+              <Stack space="large">
+                {duplicatePackagesInsights && (
+                  <Container>
+                    <DuplicatePackagesWarning duplicatePackages={duplicatePackagesInsights.data} />
+                  </Container>
+                )}
+                <Container>
+                  <BundleAssetsTotalsChartBars jobs={jobs} />
+                </Container>
                 <Container>
                   <Box outline>
-                    <BundleAssets
-                      jobs={jobs}
-                      filters={get(location, ['state', COMPONENT.BUNDLE_ASSETS, 'filters'])}
-                    />
+                    <BundleAssetsTotalsTable jobs={jobs} />
                   </Box>
                 </Container>
-              )}
-            />
-            <Route
-              exact
-              path={URLS.MODULES}
-              component={() => (
-                <Container>
-                  <BundleModules jobs={jobs} />
-                </Container>
-              )}
-            />
-            <Route
-              exact
-              path={URLS.PACKAGES}
-              component={({ location }) => (
-                <Container>
-                  <Box outline>
-                    <BundlePackages
-                      jobs={jobs}
-                      filters={get(location, ['state', COMPONENT.BUNDLE_PACKAGES, 'filters'])}
-                    />
-                  </Box>
-                </Container>
-              )}
-            />
-            <Route
-              exact
-              path={URLS.OVERVIEW}
-              component={() => (
-                <Stack space="large">
-                  {duplicatePackagesInsights && (
-                    <Container>
-                      <DuplicatePackagesWarning
-                        duplicatePackages={duplicatePackagesInsights.data}
-                      />
-                    </Container>
-                  )}
-
-                  <Container>
-                    <BundleAssetsTotalsChartBars jobs={jobs} />
-                  </Container>
-
-                  <Container>
-                    <h2>Totals</h2>
-                    <Box outline>
-                      <BundleAssetsTotalsTable jobs={jobs} />
-                    </Box>
-                  </Container>
-                </Stack>
-              )}
-            />
-          </Switch>
-        </div>
-      </Layout>
-    </HashRouter>
+              </Stack>
+            )}
+          />
+        </Switch>
+      </div>
+    </Layout>
   );
 };
 
-App.defaultProps = {
+AppComponent.defaultProps = {
   jobs: [],
   footer: null,
 };
 
-App.propTypes = {
+AppComponent.propTypes = {
   jobs: PropTypes.arrayOf(
     PropTypes.shape({
       internalBuildNumber: PropTypes.number,
@@ -206,3 +199,11 @@ App.propTypes = {
   ),
   footer: PropTypes.node,
 };
+
+export const App = (props) => (
+  <HashRouter>
+    <QueryStateProvider>
+      <AppComponent {...props} />
+    </QueryStateProvider>
+  </HashRouter>
+);

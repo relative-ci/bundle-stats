@@ -25,10 +25,10 @@ export const SPACES = [
 ];
 
 export const SECTIONS = {
-  TOTALS: 'TOTALS',
-  ASSETS: 'ASSETS',
-  MODULES: 'MODULES',
-  PACKAGES: 'PACKAGES',
+  TOTALS: 'overview',
+  ASSETS: 'assets',
+  MODULES: 'modules',
+  PACKAGES: 'packages',
 };
 
 export const URLS = {

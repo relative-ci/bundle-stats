@@ -6,12 +6,20 @@ const DEBOUNCE_DURATION = 300;
 
 export const withSearch = () => (BaseComponent) => {
   const WithSearch = (props) => {
-    const { allEntriesFilters, defaultFilters, emptyFilters, filters: customFilters } = props;
+    const {
+      allEntriesFilters,
+      defaultFilters,
+      emptyFilters,
+      filters: customFilters,
+      search: customSearch,
+      setState,
+    } = props;
+
     const initialFilters = customFilters ? merge({}, emptyFilters, customFilters) : defaultFilters;
 
-    const [search, updateSearch] = useState('');
-    const [searchPattern, setSearchPattern] = useState();
-    const [filters, updateFilters] = useState(initialFilters);
+    const [search, updateSearch] = useState(customSearch);
+    const [searchPattern, setSearchPattern] = useState(new RegExp(customSearch));
+    const [filters, updateFilters] = useState(merge({}, emptyFilters, initialFilters));
 
     const debouncedUpdateSearchPattern = useRef(
       debounce((newValue) => {
@@ -27,6 +35,10 @@ export const withSearch = () => (BaseComponent) => {
           // skip
         }
 
+        if (setState) {
+          setState({ search: newValue });
+        }
+
         return setSearchPattern(newPattern);
       }, DEBOUNCE_DURATION),
     );
@@ -36,7 +48,15 @@ export const withSearch = () => (BaseComponent) => {
       debouncedUpdateSearchPattern.current(newValue);
     });
 
-    const handleResetFilters = useRef(() => updateFilters(defaultFilters));
+    const handleUpdateFilters = (newFilters) => {
+      if (setState) {
+        setState({ filters: newFilters });
+      }
+
+      updateFilters(newFilters);
+    };
+
+    const handleResetFilters = useRef(() => handleUpdateFilters(defaultFilters));
 
     const hasActiveFilters = !isEqual(allEntriesFilters, filters);
 
@@ -44,7 +64,7 @@ export const withSearch = () => (BaseComponent) => {
       search,
       searchPattern,
       filters,
-      updateFilters,
+      updateFilters: handleUpdateFilters,
       resetFilters: handleResetFilters.current,
       updateSearch: handleUpdateSearch.current,
       hasActiveFilters,
@@ -55,6 +75,8 @@ export const withSearch = () => (BaseComponent) => {
 
   WithSearch.defaultProps = {
     filters: null,
+    setState: null,
+    search: '',
   };
 
   WithSearch.propTypes = {
@@ -62,6 +84,8 @@ export const withSearch = () => (BaseComponent) => {
     emptyFilters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
     defaultFilters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
     filters: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+    search: PropTypes.string,
+    setState: PropTypes.func,
   };
 
   return WithSearch;

@@ -9,7 +9,6 @@ exports[`Storyshots App default 1`] = `
   }
 >
   <App
-    footer={null}
     jobs={
       Array [
         Object {
@@ -14170,10 +14169,7 @@ exports[`Storyshots App empty 1`] = `
     }
   }
 >
-  <App
-    footer={null}
-    jobs={Array []}
-  />
+  <App />
 </div>
 `;
 
@@ -14186,7 +14182,6 @@ exports[`Storyshots App empty baseline 1`] = `
   }
 >
   <App
-    footer={null}
     jobs={
       Array [
         Object {
@@ -21278,7 +21273,6 @@ exports[`Storyshots App multiple baselines 1`] = `
   }
 >
   <App
-    footer={null}
     jobs={
       Array [
         Object {
@@ -36839,7 +36833,6 @@ exports[`Storyshots App no baseline 1`] = `
   }
 >
   <App
-    footer={null}
     jobs={
       Array [
         Object {
@@ -43929,7 +43922,6 @@ exports[`Storyshots App no insights 1`] = `
   }
 >
   <App
-    footer={null}
     jobs={
       Array [
         Object {
