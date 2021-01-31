@@ -124,3 +124,17 @@ export const getBundleAssetsFileTypeComponentLink = (fileType, label) => ({
     },
   },
 });
+
+export const getBundlePackagesByNameComponentLink = (search) => ({
+  section: SECTIONS.PACKAGES,
+  title: I18N.COMPONENT_LINK_PACKAGES_DUPLICATE,
+  params: {
+    [COMPONENT.BUNDLE_PACKAGES]: {
+      search,
+      filters: {
+        [PACKAGE_FILTERS.CHANGED]: false,
+        [PACKAGE_FILTERS.DUPLICATE]: true,
+      },
+    },
+  },
+});

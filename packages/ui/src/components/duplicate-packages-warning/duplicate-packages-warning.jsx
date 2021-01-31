@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Alert } from '../../ui';
+import { getBundlePackagesByNameComponentLink } from '../../component-links';
+import { ComponentLink } from '../component-link';
 import css from './duplicate-packages-warning.module.css';
 
 export const DuplicatePackagesWarning = (props) => {
@@ -17,9 +19,9 @@ export const DuplicatePackagesWarning = (props) => {
       <ol className={css.packages}>
         {entries.map(([key, paths]) => (
           <li key={key} className={css.item}>
-            <p className={css.itemTitle}>
+            <ComponentLink className={css.itemTitle} {...getBundlePackagesByNameComponentLink(key)}>
               {key}
-            </p>
+            </ComponentLink>
             <ul className={css.itemPackages}>
               {paths.map((path) => <li key={path}>{path}</li>)}
             </ul>
