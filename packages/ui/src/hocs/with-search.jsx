@@ -56,7 +56,14 @@ export const withSearch = () => (BaseComponent) => {
       updateFilters(newFilters);
     };
 
-    const handleResetFilters = useRef(() => handleUpdateFilters(defaultFilters));
+    const handleResetFilters = useRef(() => {
+      if (setState) {
+        setState({ filters: defaultFilters, search: '' });
+      } else {
+        updateFilters(defaultFilters);
+        updateSearch('');
+      }
+    });
 
     const hasActiveFilters = !isEqual(allEntriesFilters, filters);
 
