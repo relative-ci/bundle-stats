@@ -1,41 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI/Tabs default 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <Tabs
-    className=""
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
-    <nav
-      className="root"
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
     >
-      <span
-        className="item itemActive"
-        isTabActive={true}
-        key=".0"
+      <Tabs
+        className=""
       >
-        Option A
-      </span>
-      <span
-        className="item"
-        key=".1"
-      >
-        Option B
-      </span>
-      <span
-        className="item"
-        key=".2"
-      >
-        Option C
-      </span>
-    </nav>
-  </Tabs>
-</div>
+        <nav
+          className="root"
+        >
+          <span
+            className="item itemActive"
+            isTabActive={true}
+            key=".0"
+          >
+            Option A
+          </span>
+          <span
+            className="item"
+            key=".1"
+          >
+            Option B
+          </span>
+          <span
+            className="item"
+            key=".2"
+          >
+            Option C
+          </span>
+        </nav>
+      </Tabs>
+    </div>
+  </Router>
+</MemoryRouter>
 `;

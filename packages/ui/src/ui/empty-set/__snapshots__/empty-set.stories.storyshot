@@ -1,64 +1,152 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI/EmptySet default 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <EmptySet
-    filtered={true}
-    resetFilters={[Function]}
-    resources="assets"
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
     <div
-      className="root"
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
     >
-      <p
-        className="text"
+      <EmptySet
+        filtered={true}
+        resetFilters={[Function]}
+        resources="assets"
       >
-        No assets found.
-      </p>
-      <button
-        className="action"
-        onClick={[Function]}
-        type="button"
-      >
-        View all
-      </button>
+        <div
+          className="root"
+        >
+          <p
+            className="text"
+          >
+            No assets found.
+          </p>
+          <button
+            className="action"
+            onClick={[Function]}
+            type="button"
+          >
+            View all
+          </button>
+        </div>
+      </EmptySet>
     </div>
-  </EmptySet>
-</div>
+  </Router>
+</MemoryRouter>
 `;
 
 exports[`Storyshots UI/EmptySet empty 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <EmptySet
-    filtered={false}
-    resetFilters={[Function]}
-    resources="assets"
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
     <div
-      className="root"
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
     >
-      <p
-        className="text"
+      <EmptySet
+        filtered={false}
+        resetFilters={[Function]}
+        resources="assets"
       >
-        No assets available.
-      </p>
+        <div
+          className="root"
+        >
+          <p
+            className="text"
+          >
+            No assets available.
+          </p>
+        </div>
+      </EmptySet>
     </div>
-  </EmptySet>
-</div>
+  </Router>
+</MemoryRouter>
 `;

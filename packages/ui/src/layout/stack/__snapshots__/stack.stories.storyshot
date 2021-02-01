@@ -1,181 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Layout/Stack default 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <Stack
-    as="div"
-    className=""
-    space="no-space"
-  >
-    <Box
-      as="div"
-      className=""
-      outline={true}
-      padding="no-space"
-    >
-      Lorem ipsum 1
-    </Box>
-    <Box
-      as="div"
-      className=""
-      outline={true}
-      padding="no-space"
-    >
-      Lorem ipsum 2
-    </Box>
-    Lorem ipsum 3
-  </Stack>
-</div>
-`;
-
-exports[`Storyshots Layout/Stack single item 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
     }
-  }
->
-  <Stack
-    as="div"
-    className=""
-    space="no-space"
   >
-    <Box
-      as="div"
-      className=""
-      outline={true}
-      padding="no-space"
-    >
-      Lorem ipsum
-    </Box>
-  </Stack>
-</div>
-`;
-
-exports[`Storyshots Layout/Stack with custom wrapper 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
-  }
->
-  <Stack
-    as="main"
-    className="wrapper"
-    space="no-space"
-  >
-    <Box
-      as="div"
-      className=""
-      outline={true}
-      padding="no-space"
-    >
-      Lorem ipsum 1
-    </Box>
-    <Box
-      as="div"
-      className=""
-      outline={true}
-      padding="no-space"
-    >
-      Lorem ipsum 2
-    </Box>
-  </Stack>
-</div>
-`;
-
-exports[`Storyshots Layout/Stack with large space 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
-  }
->
-  <Stack
-    as="div"
-    className=""
-    space="large"
-  >
-    <Box
-      as="div"
-      className=""
-      outline={true}
-      padding="no-space"
-    >
-      Lorem ipsum 1
-    </Box>
-    <Box
-      as="div"
-      className=""
-      outline={true}
-      padding="no-space"
-    >
-      Lorem ipsum 2
-    </Box>
-    <Box
-      as="div"
-      className=""
-      outline={true}
-      padding="no-space"
-    >
-      Lorem ipsum 3
-    </Box>
-  </Stack>
-</div>
-`;
-
-exports[`Storyshots Layout/Stack with nested stack 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
-    }
-  }
->
-  <Stack
-    as="div"
-    className=""
-    space="large"
-  >
-    <Box
-      as="div"
-      className=""
-      outline={true}
-      padding="no-space"
-    >
-      Lorem ipsum 1
-    </Box>
-    <Box
-      as="div"
-      className=""
-      outline={true}
-      padding="no-space"
-    >
-      Lorem ipsum 2
-    </Box>
     <Stack
       as="div"
       className=""
-      space="small"
+      space="no-space"
     >
       <Box
         as="div"
@@ -183,7 +53,7 @@ exports[`Storyshots Layout/Stack with nested stack 1`] = `
         outline={true}
         padding="no-space"
       >
-        Lorem ipsum 3.1
+        Lorem ipsum 1
       </Box>
       <Box
         as="div"
@@ -191,9 +61,304 @@ exports[`Storyshots Layout/Stack with nested stack 1`] = `
         outline={true}
         padding="no-space"
       >
-        Lorem ipsum 3.2
+        Lorem ipsum 2
+      </Box>
+      Lorem ipsum 3
+    </Stack>
+  </div>
+</Router>
+`;
+
+exports[`Storyshots Layout/Stack single item 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <Stack
+      as="div"
+      className=""
+      space="no-space"
+    >
+      <Box
+        as="div"
+        className=""
+        outline={true}
+        padding="no-space"
+      >
+        Lorem ipsum
       </Box>
     </Stack>
-  </Stack>
-</div>
+  </div>
+</Router>
+`;
+
+exports[`Storyshots Layout/Stack with custom wrapper 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <Stack
+      as="main"
+      className="wrapper"
+      space="no-space"
+    >
+      <Box
+        as="div"
+        className=""
+        outline={true}
+        padding="no-space"
+      >
+        Lorem ipsum 1
+      </Box>
+      <Box
+        as="div"
+        className=""
+        outline={true}
+        padding="no-space"
+      >
+        Lorem ipsum 2
+      </Box>
+    </Stack>
+  </div>
+</Router>
+`;
+
+exports[`Storyshots Layout/Stack with large space 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <Stack
+      as="div"
+      className=""
+      space="large"
+    >
+      <Box
+        as="div"
+        className=""
+        outline={true}
+        padding="no-space"
+      >
+        Lorem ipsum 1
+      </Box>
+      <Box
+        as="div"
+        className=""
+        outline={true}
+        padding="no-space"
+      >
+        Lorem ipsum 2
+      </Box>
+      <Box
+        as="div"
+        className=""
+        outline={true}
+        padding="no-space"
+      >
+        Lorem ipsum 3
+      </Box>
+    </Stack>
+  </div>
+</Router>
+`;
+
+exports[`Storyshots Layout/Stack with nested stack 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <Stack
+      as="div"
+      className=""
+      space="large"
+    >
+      <Box
+        as="div"
+        className=""
+        outline={true}
+        padding="no-space"
+      >
+        Lorem ipsum 1
+      </Box>
+      <Box
+        as="div"
+        className=""
+        outline={true}
+        padding="no-space"
+      >
+        Lorem ipsum 2
+      </Box>
+      <Stack
+        as="div"
+        className=""
+        space="small"
+      >
+        <Box
+          as="div"
+          className=""
+          outline={true}
+          padding="no-space"
+        >
+          Lorem ipsum 3.1
+        </Box>
+        <Box
+          as="div"
+          className=""
+          outline={true}
+          padding="no-space"
+        >
+          Lorem ipsum 3.2
+        </Box>
+      </Stack>
+    </Stack>
+  </div>
+</Router>
 `;

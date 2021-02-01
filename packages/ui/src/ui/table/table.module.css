@@ -24,8 +24,19 @@
   display: none;
 }
 
-.root tbody th.cell {
+.root tbody .cell {
   font-weight: normal;
+}
+
+.root tbody .cell a {
+  text-decoration: none;
+}
+
+.root tbody .cell a:hover,
+.root tbody .cell a:focus,
+.root tbody .cell a:active
+{
+  text-decoration: underline;
 }
 
 .root tbody tr:nth-child(odd) .cell {

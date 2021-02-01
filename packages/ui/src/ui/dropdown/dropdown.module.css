@@ -40,6 +40,12 @@
   padding: var(--space-xsmall) var(--space-small);
 }
 
+/* activeLabel modifier */
+.activeLabel .label {
+  border-color: var(--color-outline);
+  color: var(--color-text);
+}
+
 /* align=right modifier */
 .right .dropdown {
   left: auto;

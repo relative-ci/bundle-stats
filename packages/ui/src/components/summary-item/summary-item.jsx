@@ -10,6 +10,7 @@ import css from './summary-item.module.css';
 
 export const SummaryItem = ({
   className,
+  as: Component,
   size,
   id,
   data,
@@ -17,6 +18,7 @@ export const SummaryItem = ({
   showDelta,
   showMetricDescription,
   inline,
+  ...props
 }) => {
   const { baseline, current } = data || { baseline: 0, current: 0 };
 
@@ -35,7 +37,7 @@ export const SummaryItem = ({
   );
 
   return (
-    <div className={rootClassName}>
+    <Component className={rootClassName} {...props}>
       <Tooltip
         as="h3"
         className={css.title}
@@ -65,12 +67,13 @@ export const SummaryItem = ({
       ) : (
         <span className={cx(css.currentMetric, css.loading)} />
       )}
-    </div>
+    </Component>
   );
 };
 
 SummaryItem.defaultProps = {
   className: '',
+  as: 'div',
   data: null,
   size: 'medium',
   loading: false,
@@ -82,6 +85,9 @@ SummaryItem.defaultProps = {
 SummaryItem.propTypes = {
   /** Adopted child class name */
   className: PropTypes.string,
+
+  /** Custom component */
+  as: PropTypes.elementType,
 
   /** Size modifier */
   size: PropTypes.oneOf(['medium', 'large']),

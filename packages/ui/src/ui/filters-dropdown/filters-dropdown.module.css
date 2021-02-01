@@ -52,14 +52,16 @@
   line-height: var(--space-medium);
 }
 
+.filterLabel {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  margin-right: var(--space-small);
+}
+
 .filterInput {
   flex: 0 0 auto;
   margin-right: var(--space-xxxsmall);
-}
-
-.filterLabel {
-  flex: 1 1 auto;
-  margin-right: var(--space-small);
 }
 
 .filterOnlyButton {

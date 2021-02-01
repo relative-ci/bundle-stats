@@ -6,7 +6,7 @@ import { createJobs } from '@bundle-stats/utils';
 import currentData from 'Fixtures/job.current.json'; // eslint-disable-line
 import baselineData from 'Fixtures/job.baseline.json'; // eslint-disable-line
 /* eslint-enable */
-import StandaloneApp from '.';
+import { App } from '.';
 
 const CURRENT_SOURCE = {
   webpack: {
@@ -47,7 +47,7 @@ const EMPTY_BASELINE = createJobs([
   { webpack: null },
 ]);
 
-const stories = storiesOf('StandaloneApp', module);
+const stories = storiesOf('App', module);
 
 stories.addDecorator((storyFn) => (
   <div style={{ margin: '-1rem' }}>
@@ -56,11 +56,11 @@ stories.addDecorator((storyFn) => (
 ));
 
 stories.add('default', () => (
-  <StandaloneApp jobs={[CURRENT_JOB, BASELINE_JOB]} />
+  <App jobs={[CURRENT_JOB, BASELINE_JOB]} />
 ));
 
 stories.add('no insights', () => (
-  <StandaloneApp
+  <App
     jobs={[
       {
         ...CURRENT_JOB,
@@ -72,17 +72,17 @@ stories.add('no insights', () => (
 ));
 
 stories.add('no baseline', () => (
-  <StandaloneApp jobs={[CURRENT_JOB]} />
+  <App jobs={[CURRENT_JOB]} />
 ));
 
 stories.add('empty baseline', () => (
-  <StandaloneApp jobs={EMPTY_BASELINE} />
+  <App jobs={EMPTY_BASELINE} />
 ));
 
 stories.add('multiple baselines', () => (
-  <StandaloneApp jobs={MULTIPLE_JOBS} />
+  <App jobs={MULTIPLE_JOBS} />
 ));
 
 stories.add('empty', () => (
-  <StandaloneApp />
+  <App />
 ));

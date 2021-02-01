@@ -1,58 +1,157 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components/JobName custom component 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "64px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <JobName
-    as={[Function]}
-    internalBuildNumber={10}
-    render={[Function]}
-    title="View job details"
-  />
-</div>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "64px",
+        "width": "100%",
+      }
+    }
+  >
+    <JobName
+      as={[Function]}
+      internalBuildNumber={10}
+      render={[Function]}
+      title="View job details"
+    />
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Components/JobName default 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "64px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <JobName
-    as="span"
-    internalBuildNumber={10}
-    render={[Function]}
-    title="View job details"
-  />
-</div>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "64px",
+        "width": "100%",
+      }
+    }
+  >
+    <JobName
+      as="span"
+      internalBuildNumber={10}
+      render={[Function]}
+      title="View job details"
+    />
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Components/JobName render 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "64px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <JobName
-    as="span"
-    internalBuildNumber={10}
-    render={[Function]}
-    title="View job details"
-  />
-</div>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "64px",
+        "width": "100%",
+      }
+    }
+  >
+    <JobName
+      as="span"
+      internalBuildNumber={10}
+      render={[Function]}
+      title="View job details"
+    />
+  </div>
+</Router>
 `;

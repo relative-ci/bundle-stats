@@ -51,6 +51,7 @@ export const BundleChunkModules = ({
   updateSort,
   search,
   updateSearch,
+  hasActiveFilters,
 }) => {
   const rootClassName = cx(css.root, className);
 
@@ -100,6 +101,7 @@ export const BundleChunkModules = ({
                   }}
                   label={`Filters (${items.length}/${totalRowCount})`}
                   onChange={updateFilters}
+                  hasActiveFilters={hasActiveFilters}
                 />
               </div>
             </>
@@ -132,6 +134,7 @@ BundleChunkModules.defaultProps = {
   items: [],
   runs: [],
   totalRowCount: 0,
+  hasActiveFilters: false,
 };
 
 BundleChunkModules.propTypes = {
@@ -163,6 +166,8 @@ BundleChunkModules.propTypes = {
   filters: PropTypes.shape({
     changed: PropTypes.bool,
   }).isRequired,
+
+  hasActiveFilters: PropTypes.bool,
 
   sortItems: PropTypes.shape({
     [PropTypes.string]: PropTypes.shape({

@@ -1,6 +1,3 @@
-export const FILTER_CHANGED = 'changed';
-export const FILTER_DUPLICATE = 'duplicate';
-
 export const SORT_BY_NAME = 'name';
 export const SORT_BY_SIZE = 'size';
 export const SORT_BY_DELTA = 'delta';

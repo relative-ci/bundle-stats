@@ -1,91 +1,256 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components/Delta default 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <Delta
-    className=""
-    deltaType="POSITIVE"
-    displayValue="20%"
-  />
-</div>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <Delta
+      className=""
+      deltaType="POSITIVE"
+      displayValue="20%"
+    />
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Components/Delta empty 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <Delta
-    className=""
-    deltaType="NO_CHANGE"
-    displayValue="0%"
-  />
-</div>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <Delta
+      className=""
+      deltaType="NO_CHANGE"
+      displayValue="0%"
+    />
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Components/Delta negative 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <Delta
-    className=""
-    deltaType="NEGATIVE"
-    displayValue="20%"
-  />
-</div>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <Delta
+      className=""
+      deltaType="NEGATIVE"
+      displayValue="20%"
+    />
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Components/Delta slightlyNegative 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <Delta
-    className=""
-    deltaType="LOW_NEGATIVE"
-    displayValue="1%"
-  />
-</div>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <Delta
+      className=""
+      deltaType="LOW_NEGATIVE"
+      displayValue="1%"
+    />
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Components/Delta slightlyPositive 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <Delta
-    className=""
-    deltaType="LOW_POSITIVE"
-    displayValue="1%"
-  />
-</div>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <Delta
+      className=""
+      deltaType="LOW_POSITIVE"
+      displayValue="1%"
+    />
+  </div>
+</Router>
 `;

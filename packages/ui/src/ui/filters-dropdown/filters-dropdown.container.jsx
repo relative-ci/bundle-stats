@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { isEqual } from 'lodash';
 
 const getInitialValues = (key, filters) => {
-  if (typeof filters.defaultValue !== 'undefined') {
+  if (typeof filters?.defaultValue !== 'undefined') {
     return {
       [key]: filters.defaultValue,
     };

@@ -1,17 +1,13 @@
 import { compose, withProps } from 'recompose';
 import { get } from 'lodash';
-import { FILE_TYPES } from '@bundle-stats/utils';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
+import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS } from '../../constants';
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilteredItems } from '../../hocs/with-filtered-items';
 import { withSearch } from '../../hocs/with-search';
+import { getAssetEntryTypeFilters, getAssetFileTypeFilters } from '../../utils';
 import {
-  FILTER_ASSET,
-  FILTER_CHANGED,
-  FILTER_CHUNK,
-  FILTER_ENTRY,
-  FILTER_INITIAL,
   SORT_BY_NAME,
   SORT_BY_DELTA,
   SORT_BY_SIZE,
@@ -73,22 +69,22 @@ const addRowIsNotPredictive = ({ items }) => ({
 });
 
 const getRowFilter = (filters) => (item) => {
-  if (filters[FILTER_CHANGED] && !item.changed) {
+  if (filters[ASSET_FILTERS.CHANGED] && !item.changed) {
     return false;
   }
 
   if (
     !(
-      (filters[`entryTypes.${FILTER_ENTRY}`] && item.isEntry) ||
-      (filters[`entryTypes.${FILTER_INITIAL}`] && item.isInitial) ||
-      (filters[`entryTypes.${FILTER_CHUNK}`] && item.isChunk) ||
-      (filters[`entryTypes.${FILTER_ASSET}`] && item.isAsset)
+      (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`] && item.isEntry) ||
+      (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`] && item.isInitial) ||
+      (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`] && item.isChunk) ||
+      (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ASSET}`] && item.isAsset)
     )
   ) {
     return false;
   }
 
-  if (!filters[`fileTypes.${webpack.getFileType(item.key)}`]) {
+  if (!filters[`${ASSET_FILE_TYPE}.${webpack.getFileType(item.key)}`]) {
     return false;
   }
 
@@ -118,50 +114,41 @@ const getCustomSort = (sortId) => (item) => {
   ];
 };
 
-const getFileTypeFilters = (value = true) =>
-  FILE_TYPES.reduce(
-    (agg, fileTypeFilter) => ({
-      ...agg,
-      [`fileTypes.${fileTypeFilter}`]: value,
-    }),
-    {},
-  );
-
-const getEntryTypeFilters = (value = true) =>
-  [FILTER_ENTRY, FILTER_INITIAL, FILTER_CHUNK, FILTER_ASSET].reduce(
-    (agg, entryTypeFilter) => ({
-      ...agg,
-      [`entryTypes.${entryTypeFilter}`]: value,
-    }),
-    {},
-  );
-
 export const enhance = compose(
   withProps(({ jobs }) => {
     const items = webpack.compareBySection.assets(jobs);
-    return { items, totalRowCount: items.length };
+
+    const defaultFilters = {
+      [ASSET_FILTERS.CHANGED]: true,
+      ...getAssetEntryTypeFilters(true),
+      ...getAssetFileTypeFilters(true),
+    };
+
+    const emptyFilters = {
+      [ASSET_FILTERS.CHANGED]: false,
+      ...getAssetEntryTypeFilters(false),
+      ...getAssetFileTypeFilters(false),
+    };
+
+    const allEntriesFilters = {
+      [ASSET_FILTERS.CHANGED]: false,
+      ...getAssetEntryTypeFilters(true),
+      ...getAssetFileTypeFilters(true),
+    };
+
+    return {
+      items,
+      totalRowCount: items.length,
+      defaultFilters,
+      emptyFilters,
+      allEntriesFilters,
+    };
   }),
 
   // @TODO run both transformations in one pass
   withProps(addRowFlags),
   withProps(addRowIsNotPredictive),
 
-  // Filters
-  withProps(({ jobs }) => {
-    const defaultFilters = {
-      [FILTER_CHANGED]: false,
-      ...getEntryTypeFilters(true),
-      ...getFileTypeFilters(true),
-    };
-
-    return {
-      defaultFilters,
-      initialFilters: {
-        ...defaultFilters,
-        [FILTER_CHANGED]: jobs.length > 1, // enable filter only when there are multiple jobs
-      },
-    };
-  }),
   withSearch(),
   withFilteredItems(getRowFilter),
   withCustomSort({ sortItems: SORT_BY, getCustomSort }),

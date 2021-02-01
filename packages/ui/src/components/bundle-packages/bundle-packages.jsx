@@ -2,13 +2,13 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import { PACKAGE_FILTERS } from '../../constants';
 import { EmptySet } from '../../ui/empty-set';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Toolbar } from '../../ui/toolbar';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
-import { FILTER_CHANGED, FILTER_DUPLICATE } from './bundle-packages.constants';
 import css from './bundle-packages.module.css';
 
 export const BundlePackages = (props) => {
@@ -25,6 +25,7 @@ export const BundlePackages = (props) => {
     updateSort,
     search,
     updateSearch,
+    hasActiveFilters,
   } = props;
 
   const clear = () => {
@@ -50,18 +51,19 @@ export const BundlePackages = (props) => {
               {/* @TODO: get default values from parent state */}
               <FiltersDropdown
                 filters={{
-                  [FILTER_CHANGED]: {
+                  [PACKAGE_FILTERS.CHANGED]: {
                     label: 'Changed',
-                    defaultValue: filters[FILTER_CHANGED],
+                    defaultValue: filters[PACKAGE_FILTERS.CHANGED],
                     disabled: jobs.length <= 1,
                   },
-                  [FILTER_DUPLICATE]: {
+                  [PACKAGE_FILTERS.DUPLICATE]: {
                     label: 'Duplicate',
-                    defaultValue: filters[FILTER_DUPLICATE],
+                    defaultValue: filters[PACKAGE_FILTERS.DUPLICATE],
                   },
                 }}
                 label={`Filters (${items.length}/${totalRowCount})`}
                 onChange={updateFilters}
+                hasActiveFilters={hasActiveFilters}
               />
             </div>
           </>
@@ -84,6 +86,7 @@ export const BundlePackages = (props) => {
 BundlePackages.defaultProps = {
   className: '',
   totalRowCount: 0,
+  hasActiveFilters: false,
 };
 
 BundlePackages.propTypes = {
@@ -111,6 +114,7 @@ BundlePackages.propTypes = {
   filters: PropTypes.shape({
     changed: PropTypes.bool,
   }).isRequired,
+  hasActiveFilters: PropTypes.bool,
   sortItems: PropTypes.shape({
     [PropTypes.string]: PropTypes.shape({
       label: PropTypes.string,

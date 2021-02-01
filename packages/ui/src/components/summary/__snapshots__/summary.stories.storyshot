@@ -1,140 +1,336 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components/Summary default 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <Summary
-    className=""
-    data={
+  <div
+    style={
       Object {
-        "webpack": Object {
-          "assetCount": Object {
-            "baseline": 19,
-            "current": 19,
-          },
-          "cacheInvalidation": Object {
-            "baseline": 0,
-            "current": 75.34,
-          },
-          "chunkCount": Object {
-            "baseline": 0,
-            "current": 0,
-          },
-          "duplicatePackagesCount": Object {
-            "baseline": 3,
-            "current": 3,
-          },
-          "moduleCount": Object {
-            "baseline": 556,
-            "current": 556,
-          },
-          "packageCount": Object {
-            "baseline": 63,
-            "current": 63,
-          },
-          "totalInitialSizeCSS": Object {
-            "baseline": 24919,
-            "current": 21703,
-          },
-          "totalInitialSizeJS": Object {
-            "baseline": 591864,
-            "current": 591944,
-          },
-          "totalSizeByTypeALL": Object {
-            "baseline": 818626,
-            "current": 815490,
-          },
-        },
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
       }
     }
-    loading={false}
-    showSummaryItemDelta={true}
-  />
-</div>
+  >
+    <Summary
+      SummaryItemWrapper={[Function]}
+      className=""
+      data={
+        Object {
+          "webpack": Object {
+            "assetCount": Object {
+              "baseline": 19,
+              "current": 19,
+            },
+            "cacheInvalidation": Object {
+              "baseline": 0,
+              "current": 75.34,
+            },
+            "chunkCount": Object {
+              "baseline": 0,
+              "current": 0,
+            },
+            "duplicatePackagesCount": Object {
+              "baseline": 3,
+              "current": 3,
+            },
+            "moduleCount": Object {
+              "baseline": 556,
+              "current": 556,
+            },
+            "packageCount": Object {
+              "baseline": 63,
+              "current": 63,
+            },
+            "totalInitialSizeCSS": Object {
+              "baseline": 24919,
+              "current": 21703,
+            },
+            "totalInitialSizeJS": Object {
+              "baseline": 591864,
+              "current": 591944,
+            },
+            "totalSizeByTypeALL": Object {
+              "baseline": 818626,
+              "current": 815490,
+            },
+          },
+        }
+      }
+      loading={false}
+      showSummaryItemDelta={true}
+    />
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Components/Summary loading 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <Summary
-    className=""
-    data={null}
-    loading={true}
-    showSummaryItemDelta={true}
-  />
-</div>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <Summary
+      SummaryItemWrapper={[Function]}
+      className=""
+      data={null}
+      loading={true}
+      showSummaryItemDelta={true}
+    />
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Components/Summary single run 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <Summary
-    className=""
-    data={
+  <div
+    style={
       Object {
-        "webpack": Object {
-          "assetCount": Object {
-            "baseline": 0,
-            "current": 19,
-          },
-          "cacheInvalidation": Object {
-            "baseline": 0,
-            "current": 0,
-          },
-          "chunkCount": Object {
-            "baseline": 0,
-            "current": 0,
-          },
-          "duplicatePackagesCount": Object {
-            "baseline": 0,
-            "current": 3,
-          },
-          "moduleCount": Object {
-            "baseline": 0,
-            "current": 556,
-          },
-          "packageCount": Object {
-            "baseline": 0,
-            "current": 63,
-          },
-          "totalInitialSizeCSS": Object {
-            "baseline": 0,
-            "current": 21703,
-          },
-          "totalInitialSizeJS": Object {
-            "baseline": 0,
-            "current": 591944,
-          },
-          "totalSizeByTypeALL": Object {
-            "baseline": 0,
-            "current": 815490,
-          },
-        },
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
       }
     }
-    loading={false}
-    showSummaryItemDelta={false}
-  />
-</div>
+  >
+    <Summary
+      SummaryItemWrapper={[Function]}
+      className=""
+      data={
+        Object {
+          "webpack": Object {
+            "assetCount": Object {
+              "baseline": 0,
+              "current": 19,
+            },
+            "cacheInvalidation": Object {
+              "baseline": 0,
+              "current": 0,
+            },
+            "chunkCount": Object {
+              "baseline": 0,
+              "current": 0,
+            },
+            "duplicatePackagesCount": Object {
+              "baseline": 0,
+              "current": 3,
+            },
+            "moduleCount": Object {
+              "baseline": 0,
+              "current": 556,
+            },
+            "packageCount": Object {
+              "baseline": 0,
+              "current": 63,
+            },
+            "totalInitialSizeCSS": Object {
+              "baseline": 0,
+              "current": 21703,
+            },
+            "totalInitialSizeJS": Object {
+              "baseline": 0,
+              "current": 591944,
+            },
+            "totalSizeByTypeALL": Object {
+              "baseline": 0,
+              "current": 815490,
+            },
+          },
+        }
+      }
+      loading={false}
+      showSummaryItemDelta={false}
+    />
+  </div>
+</Router>
+`;
+
+exports[`Storyshots Components/Summary with link 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <Summary
+      SummaryItemWrapper={[Function]}
+      className=""
+      data={
+        Object {
+          "webpack": Object {
+            "assetCount": Object {
+              "baseline": 19,
+              "current": 19,
+            },
+            "cacheInvalidation": Object {
+              "baseline": 0,
+              "current": 75.34,
+            },
+            "chunkCount": Object {
+              "baseline": 0,
+              "current": 0,
+            },
+            "duplicatePackagesCount": Object {
+              "baseline": 3,
+              "current": 3,
+            },
+            "moduleCount": Object {
+              "baseline": 556,
+              "current": 556,
+            },
+            "packageCount": Object {
+              "baseline": 63,
+              "current": 63,
+            },
+            "totalInitialSizeCSS": Object {
+              "baseline": 24919,
+              "current": 21703,
+            },
+            "totalInitialSizeJS": Object {
+              "baseline": 591864,
+              "current": 591944,
+            },
+            "totalSizeByTypeALL": Object {
+              "baseline": 818626,
+              "current": 815490,
+            },
+          },
+        }
+      }
+      loading={false}
+      showSummaryItemDelta={true}
+    />
+  </div>
+</Router>
 `;

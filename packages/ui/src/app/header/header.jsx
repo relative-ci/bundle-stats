@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { Container } from '@bundle-stats/ui/lib-esm/ui/container';
-import { JobsHeader } from '@bundle-stats/ui/lib-esm/components/jobs-header';
-import { Logo } from '@bundle-stats/ui/lib-esm/ui/logo';
+
+import { Container } from '../../ui/container';
+import { JobsHeader } from '../../components/jobs-header';
+import { Logo } from '../../ui/logo';
 
 import css from './header.module.css';
 

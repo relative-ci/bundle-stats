@@ -1,204 +1,249 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI/SortDropdown default 1`] = `
-<div
-  style={
-    Object {
-      "height": "100%",
-      "padding": "24px",
-      "paddingLeft": "200px",
-      "width": "100%",
-    }
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
   }
 >
-  <SortDropdown
-    className=""
-    direction="asc"
-    items={
+  <Router
+    history={
       Object {
-        "filename": Object {
-          "label": "Filename",
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
         },
-        "size": Object {
-          "label": "Size",
-        },
+        "push": [Function],
+        "replace": [Function],
       }
     }
-    label="Order by"
-    onChange={[Function]}
-    sortBy="size"
   >
-    <DropdownContainer
-      align="right"
-      className="root"
-      glyph="sort"
-      label="Ordered by Size"
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "paddingLeft": "200px",
+          "width": "100%",
+        }
+      }
     >
-      <OutsideClickHandler
-        disabled={false}
-        display="block"
-        onOutsideClick={[Function]}
-        useCapture={true}
+      <SortDropdown
+        className=""
+        direction="asc"
+        items={
+          Object {
+            "filename": Object {
+              "label": "Filename",
+            },
+            "size": Object {
+              "label": "Size",
+            },
+          }
+        }
+        label="Order by"
+        onChange={[Function]}
+        sortBy="size"
       >
-        <div>
-          <Dropdown
-            align="right"
-            className="root"
-            dropdownToggle={[Function]}
-            glyph="sort"
-            label="Ordered by Size"
-            open={false}
+        <DropdownContainer
+          align="right"
+          className="root"
+          glyph="sort"
+          label="Ordered by Size"
+        >
+          <OutsideClickHandler
+            disabled={false}
+            display="block"
+            onOutsideClick={[Function]}
+            useCapture={true}
           >
-            <div
-              className="root right root"
-            >
-              <button
-                className="label"
-                onClick={[Function]}
-                type="button"
-              >
-                <Icon
-                  as="span"
-                  className="labelIcon"
-                  glyph="sort"
-                >
-                  <span
-                    className="root labelIcon"
-                  >
-                    <SortIcon
-                      className="icon"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <svg
-                        className="icon"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
-                        />
-                        <path
-                          d="M0 0h24v24H0z"
-                          fill="none"
-                        />
-                      </svg>
-                    </SortIcon>
-                  </span>
-                </Icon>
-                Ordered by Size
-              </button>
-              <div
-                className="dropdown"
+            <div>
+              <Dropdown
+                activeLabel={false}
+                align="right"
+                className="root"
+                dropdownToggle={[Function]}
+                glyph="sort"
+                label="Ordered by Size"
+                open={false}
               >
                 <div
-                  className="items"
+                  className="root right root"
                 >
-                  <div
-                    className="item"
-                    key="filename"
+                  <button
+                    className="label"
+                    onClick={[Function]}
+                    type="button"
                   >
-                    <button
-                      className="itemButton itemAsc"
-                      onClick={[Function]}
-                      title="Order data by Filename descending"
-                      type="button"
+                    <Icon
+                      as="span"
+                      className="labelIcon"
+                      glyph="sort"
                     >
                       <span
-                        className="itemLabel"
+                        className="root labelIcon"
                       >
-                        Filename
-                      </span>
-                      <Icon
-                        as="span"
-                        className="itemIcon"
-                        glyph="arrow"
-                      >
-                        <span
-                          className="root itemIcon"
+                        <SortIcon
+                          className="icon"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <ArrowIcon
+                          <svg
                             className="icon"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              className="icon"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M0 0h24v24H0V0z"
-                                fill="none"
-                              />
-                              <path
-                                d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                              />
-                            </svg>
-                          </ArrowIcon>
-                        </span>
-                      </Icon>
-                    </button>
-                  </div>
-                  <div
-                    className="item active"
-                    key="size"
-                  >
-                    <button
-                      className="itemButton itemAsc"
-                      onClick={[Function]}
-                      title="Order data by Size descending"
-                      type="button"
-                    >
-                      <span
-                        className="itemLabel"
-                      >
-                        Size
+                            <path
+                              d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
+                            />
+                            <path
+                              d="M0 0h24v24H0z"
+                              fill="none"
+                            />
+                          </svg>
+                        </SortIcon>
                       </span>
-                      <Icon
-                        as="span"
-                        className="itemIcon"
-                        glyph="arrow"
+                    </Icon>
+                    Ordered by Size
+                  </button>
+                  <div
+                    className="dropdown"
+                  >
+                    <div
+                      className="items"
+                    >
+                      <div
+                        className="item"
+                        key="filename"
                       >
-                        <span
-                          className="root itemIcon"
+                        <button
+                          className="itemButton itemAsc"
+                          onClick={[Function]}
+                          title="Order data by Filename descending"
+                          type="button"
                         >
-                          <ArrowIcon
-                            className="icon"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            className="itemLabel"
                           >
-                            <svg
-                              className="icon"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
+                            Filename
+                          </span>
+                          <Icon
+                            as="span"
+                            className="itemIcon"
+                            glyph="arrow"
+                          >
+                            <span
+                              className="root itemIcon"
                             >
-                              <path
-                                d="M0 0h24v24H0V0z"
-                                fill="none"
-                              />
-                              <path
-                                d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                              />
-                            </svg>
-                          </ArrowIcon>
-                        </span>
-                      </Icon>
-                    </button>
+                              <ArrowIcon
+                                className="icon"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <svg
+                                  className="icon"
+                                  fill="currentColor"
+                                  viewBox="0 0 24 24"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M0 0h24v24H0V0z"
+                                    fill="none"
+                                  />
+                                  <path
+                                    d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                                  />
+                                </svg>
+                              </ArrowIcon>
+                            </span>
+                          </Icon>
+                        </button>
+                      </div>
+                      <div
+                        className="item active"
+                        key="size"
+                      >
+                        <button
+                          className="itemButton itemAsc"
+                          onClick={[Function]}
+                          title="Order data by Size descending"
+                          type="button"
+                        >
+                          <span
+                            className="itemLabel"
+                          >
+                            Size
+                          </span>
+                          <Icon
+                            as="span"
+                            className="itemIcon"
+                            glyph="arrow"
+                          >
+                            <span
+                              className="root itemIcon"
+                            >
+                              <ArrowIcon
+                                className="icon"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <svg
+                                  className="icon"
+                                  fill="currentColor"
+                                  viewBox="0 0 24 24"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M0 0h24v24H0V0z"
+                                    fill="none"
+                                  />
+                                  <path
+                                    d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                                  />
+                                </svg>
+                              </ArrowIcon>
+                            </span>
+                          </Icon>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Dropdown>
             </div>
-          </Dropdown>
-        </div>
-      </OutsideClickHandler>
-    </DropdownContainer>
-  </SortDropdown>
-</div>
+          </OutsideClickHandler>
+        </DropdownContainer>
+      </SortDropdown>
+    </div>
+  </Router>
+</MemoryRouter>
 `;

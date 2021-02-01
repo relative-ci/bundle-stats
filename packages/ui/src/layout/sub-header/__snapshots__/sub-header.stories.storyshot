@@ -1,197 +1,395 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Layout/SubHeader default 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <SubHeader
-    className=""
-    icon={null}
-    rightSide={null}
-    size="default"
-    subtitle=""
-    title="Webpack"
-  />
-</div>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <SubHeader
+      className=""
+      icon={null}
+      rightSide={null}
+      size="default"
+      subtitle=""
+      title="Webpack"
+    />
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Layout/SubHeader with children 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <SubHeader
-    className=""
-    icon={
-      <Logo
-        as="span"
-        className=""
-        kind="webpack"
-        style={
-          Object {
-            "width": "72px",
-          }
-        }
-      />
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
     }
-    rightSide={null}
-    size="default"
-    subtitle="Tools"
-    title="Webpack"
   >
-    <a
-      href="#webpack"
+    <SubHeader
+      className=""
+      icon={
+        <Logo
+          as="span"
+          className=""
+          kind="webpack"
+          style={
+            Object {
+              "width": "72px",
+            }
+          }
+        />
+      }
+      rightSide={null}
+      size="default"
+      subtitle="Tools"
+      title="Webpack"
     >
-      Visit webpack.js.org
-    </a>
-  </SubHeader>
-</div>
+      <a
+        href="#webpack"
+      >
+        Visit webpack.js.org
+      </a>
+    </SubHeader>
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Layout/SubHeader with icon 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <SubHeader
-    className=""
-    icon={
-      <Logo
-        as="span"
-        className=""
-        kind="webpack"
-        style={
-          Object {
-            "width": "48px",
-          }
-        }
-      />
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
     }
-    rightSide={null}
-    size="default"
-    subtitle="Tools"
-    title="Webpack"
-  />
-</div>
+  >
+    <SubHeader
+      className=""
+      icon={
+        <Logo
+          as="span"
+          className=""
+          kind="webpack"
+          style={
+            Object {
+              "width": "48px",
+            }
+          }
+        />
+      }
+      rightSide={null}
+      size="default"
+      subtitle="Tools"
+      title="Webpack"
+    />
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Layout/SubHeader with right side links 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <SubHeader
-    className=""
-    icon={
-      <Logo
-        as="span"
-        className=""
-        kind="webpack"
-        style={
-          Object {
-            "width": "72px",
-          }
-        }
-      />
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
     }
-    rightSide={
-      <span>
-        Read more
-      </span>
-    }
-    size="default"
-    subtitle="Tools"
-    title="Webpack"
   >
-    <a
-      href="#webpack"
+    <SubHeader
+      className=""
+      icon={
+        <Logo
+          as="span"
+          className=""
+          kind="webpack"
+          style={
+            Object {
+              "width": "72px",
+            }
+          }
+        />
+      }
+      rightSide={
+        <span>
+          Read more
+        </span>
+      }
+      size="default"
+      subtitle="Tools"
+      title="Webpack"
     >
-      Visit webpack.js.org
-    </a>
-  </SubHeader>
-</div>
+      <a
+        href="#webpack"
+      >
+        Visit webpack.js.org
+      </a>
+    </SubHeader>
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Layout/SubHeader with small size 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <SubHeader
-    className=""
-    icon={
-      <Logo
-        as="span"
-        className=""
-        kind="webpack"
-        style={
-          Object {
-            "width": "72px",
-          }
-        }
-      />
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
     }
-    rightSide={
-      <span>
-        Read more
-      </span>
-    }
-    size="small"
-    subtitle="Tools"
-    title="Webpack"
   >
-    <a
-      href="#webpack"
+    <SubHeader
+      className=""
+      icon={
+        <Logo
+          as="span"
+          className=""
+          kind="webpack"
+          style={
+            Object {
+              "width": "72px",
+            }
+          }
+        />
+      }
+      rightSide={
+        <span>
+          Read more
+        </span>
+      }
+      size="small"
+      subtitle="Tools"
+      title="Webpack"
     >
-      Visit webpack.js.org
-    </a>
-  </SubHeader>
-</div>
+      <a
+        href="#webpack"
+      >
+        Visit webpack.js.org
+      </a>
+    </SubHeader>
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Layout/SubHeader with subtitle 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <SubHeader
-    className=""
-    icon={null}
-    rightSide={null}
-    size="default"
-    subtitle="Tools"
-    title="Webpack"
-  />
-</div>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <SubHeader
+      className=""
+      icon={null}
+      rightSide={null}
+      size="default"
+      subtitle="Tools"
+      title="Webpack"
+    />
+  </div>
+</Router>
 `;

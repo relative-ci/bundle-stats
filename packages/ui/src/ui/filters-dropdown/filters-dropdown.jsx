@@ -51,7 +51,7 @@ Checkbox.defaultProps = {
 };
 
 const renderTree = (key, data, values, onCheckboxChange, getOnOnlyClick) => {
-  if (typeof data.defaultValue !== 'undefined') {
+  if (typeof data?.defaultValue !== 'undefined') {
     return (
       <Checkbox
         key={key}
@@ -70,7 +70,7 @@ const renderTree = (key, data, values, onCheckboxChange, getOnOnlyClick) => {
     const isRootGroup = !key;
 
     const groupItems = Object.entries(groupData);
-    const groupCheckboxes = key && groupItems.filter(([itemKey, item]) => typeof item.defaultValue !== 'undefined') || [];
+    const groupCheckboxes = key && groupItems.filter(([itemKey, item]) => typeof item?.defaultValue !== 'undefined') || [];
     const isGroupChecked = groupCheckboxes.map(([itemKey]) => get(values, `${key}.${itemKey}`)).reduce((agg, val) => agg && val, true);
 
     const onGroupClearAll = () => {
@@ -155,6 +155,7 @@ export const FiltersDropdown = (props) => {
     values,
     filters,
     toggleFilter,
+    hasActiveFilters,
   } = props;
 
   const onCheckboxChange = ({ target }) => toggleFilter(target.name, target.checked);
@@ -166,6 +167,7 @@ export const FiltersDropdown = (props) => {
       label={label}
       glyph="filter"
       align="right"
+      activeLabel={hasActiveFilters}
     >
       <form className={css.dropdown}>
         {renderTree('', filters, values, onCheckboxChange)}
@@ -177,11 +179,13 @@ export const FiltersDropdown = (props) => {
 FiltersDropdown.defaultProps = {
   className: '',
   label: 'Filters',
+  active: false,
 };
 
 FiltersDropdown.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
+  hasActiveFilters: PropTypes.bool,
   values: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   filters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   toggleFilter: PropTypes.func.isRequired,

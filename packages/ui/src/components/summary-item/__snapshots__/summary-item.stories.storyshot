@@ -1,170 +1,374 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components/SummaryItem default 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "maxWidth": "320px",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <SummaryItem
-    className=""
-    data={
+  <div
+    style={
       Object {
-        "baseline": 100000,
-        "current": 120000,
+        "height": "100%",
+        "maxWidth": "320px",
+        "padding": "24px",
+        "width": "100%",
       }
     }
-    id="webpack.totalSizeByTypeALL"
-    inline={false}
-    loading={false}
-    showDelta={true}
-    showMetricDescription={false}
-    size="medium"
-  />
-</div>
+  >
+    <SummaryItem
+      as="div"
+      className=""
+      data={
+        Object {
+          "baseline": 100000,
+          "current": 120000,
+        }
+      }
+      id="webpack.totalSizeByTypeALL"
+      inline={false}
+      loading={false}
+      showDelta={true}
+      showMetricDescription={false}
+      size="medium"
+    />
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Components/SummaryItem inline 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "maxWidth": "320px",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <SummaryItem
-    className=""
-    data={
+  <div
+    style={
       Object {
-        "baseline": 100000,
-        "current": 120000,
+        "height": "100%",
+        "maxWidth": "320px",
+        "padding": "24px",
+        "width": "100%",
       }
     }
-    id="webpack.totalSizeByTypeALL"
-    inline={true}
-    loading={false}
-    showDelta={true}
-    showMetricDescription={false}
-    size="medium"
-  />
-</div>
+  >
+    <SummaryItem
+      as="div"
+      className=""
+      data={
+        Object {
+          "baseline": 100000,
+          "current": 120000,
+        }
+      }
+      id="webpack.totalSizeByTypeALL"
+      inline={true}
+      loading={false}
+      showDelta={true}
+      showMetricDescription={false}
+      size="medium"
+    />
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Components/SummaryItem loading 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "maxWidth": "320px",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <SummaryItem
-    className=""
-    data={null}
-    id="webpack.totalSizeByTypeALL"
-    inline={false}
-    loading={true}
-    showDelta={true}
-    showMetricDescription={false}
-    size="medium"
-  />
-</div>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "maxWidth": "320px",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <SummaryItem
+      as="div"
+      className=""
+      data={null}
+      id="webpack.totalSizeByTypeALL"
+      inline={false}
+      loading={true}
+      showDelta={true}
+      showMetricDescription={false}
+      size="medium"
+    />
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Components/SummaryItem showDelta false 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "maxWidth": "320px",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <SummaryItem
-    className=""
-    data={
+  <div
+    style={
       Object {
-        "baseline": 0,
-        "current": 120000,
+        "height": "100%",
+        "maxWidth": "320px",
+        "padding": "24px",
+        "width": "100%",
       }
     }
-    id="webpack.totalSizeByTypeALL"
-    inline={false}
-    loading={false}
-    showDelta={false}
-    showMetricDescription={false}
-    size="medium"
-  />
-</div>
+  >
+    <SummaryItem
+      as="div"
+      className=""
+      data={
+        Object {
+          "baseline": 0,
+          "current": 120000,
+        }
+      }
+      id="webpack.totalSizeByTypeALL"
+      inline={false}
+      loading={false}
+      showDelta={false}
+      showMetricDescription={false}
+      size="medium"
+    />
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Components/SummaryItem showMetricDescription 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "maxWidth": "320px",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <SummaryItem
-    className=""
-    data={
+  <div
+    style={
       Object {
-        "baseline": 100000,
-        "current": 120000,
+        "height": "100%",
+        "maxWidth": "320px",
+        "padding": "24px",
+        "width": "100%",
       }
     }
-    id="webpack.totalSizeByTypeALL"
-    inline={false}
-    loading={false}
-    showDelta={true}
-    showMetricDescription={true}
-    size="medium"
-  />
-</div>
+  >
+    <SummaryItem
+      as="div"
+      className=""
+      data={
+        Object {
+          "baseline": 100000,
+          "current": 120000,
+        }
+      }
+      id="webpack.totalSizeByTypeALL"
+      inline={false}
+      loading={false}
+      showDelta={true}
+      showMetricDescription={true}
+      size="medium"
+    />
+  </div>
+</Router>
 `;
 
 exports[`Storyshots Components/SummaryItem size large 1`] = `
-<div
-  style={
+<Router
+  history={
     Object {
-      "height": "100%",
-      "maxWidth": "320px",
-      "padding": "24px",
-      "width": "100%",
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
     }
   }
 >
-  <SummaryItem
-    className=""
-    data={
+  <div
+    style={
       Object {
-        "baseline": 100000,
-        "current": 120000,
+        "height": "100%",
+        "maxWidth": "320px",
+        "padding": "24px",
+        "width": "100%",
       }
     }
-    id="webpack.totalSizeByTypeALL"
-    inline={false}
-    loading={false}
-    showDelta={true}
-    showMetricDescription={false}
-    size="large"
-  />
-</div>
+  >
+    <SummaryItem
+      as="div"
+      className=""
+      data={
+        Object {
+          "baseline": 100000,
+          "current": 120000,
+        }
+      }
+      id="webpack.totalSizeByTypeALL"
+      inline={false}
+      loading={false}
+      showDelta={true}
+      showMetricDescription={false}
+      size="large"
+    />
+  </div>
+</Router>
 `;

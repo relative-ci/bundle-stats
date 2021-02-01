@@ -17,6 +17,13 @@
 .itemTitle {
   margin: 0;
   display: inline;
+  text-decoration: none;
+}
+
+.itemTitle:hover,
+.itemTitle:active,
+.itemTitle:focus {
+  text-decoration: underline;
 }
 
 .itemPackages {
