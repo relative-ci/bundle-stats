@@ -45,8 +45,8 @@ exports[`Storyshots Components/BundleAssets custom filters 1`] = `
     <withProps(withProps(withProps(WithSearch)))
       filters={
         Object {
-          "entryTypes.entrypoint": true,
-          "fileTypes.JS": true,
+          "et.entrypoint": true,
+          "ft.JS": true,
         }
       }
       jobs={

@@ -1,7 +1,14 @@
 import { template } from 'lodash';
 import { FILE_TYPE_CSS, FILE_TYPE_JS } from '@bundle-stats/utils/lib-esm/config/file-types';
 
-import { ASSET_FILTERS, COMPONENT, PACKAGE_FILTERS, SECTIONS } from './constants';
+import {
+  ASSET_ENTRY_TYPE,
+  ASSET_FILE_TYPE,
+  ASSET_FILTERS,
+  COMPONENT,
+  PACKAGE_FILTERS,
+  SECTIONS,
+} from './constants';
 import { getAssetEntryTypeFilters, getAssetFileTypeFilters } from './utils';
 import I18N from './i18n';
 
@@ -17,8 +24,8 @@ export const BUNDLE_ASSETS_INITIAL_JS = {
     [COMPONENT.BUNDLE_ASSETS]: {
       filters: {
         [ASSET_FILTERS.CHANGED]: false,
-        [`entryTypes.${ASSET_FILTERS.INITIAL}`]: true,
-        [`fileTypes.${FILE_TYPE_JS}`]: true,
+        [`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`]: true,
+        [`${ASSET_FILE_TYPE}.${FILE_TYPE_JS}`]: true,
       },
     },
   },
@@ -31,8 +38,8 @@ export const BUNDLE_ASSETS_INITIAL_CSS = {
     [COMPONENT.BUNDLE_ASSETS]: {
       filters: {
         [ASSET_FILTERS.CHANGED]: false,
-        [`entryTypes.${ASSET_FILTERS.INITIAL}`]: true,
-        [`fileTypes.${FILE_TYPE_CSS}`]: true,
+        [`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`]: true,
+        [`${ASSET_FILE_TYPE}.${FILE_TYPE_CSS}`]: true,
       },
     },
   },
@@ -73,7 +80,7 @@ export const BUNDLE_ASSETS_CHUNK_COUNT = {
     [COMPONENT.BUNDLE_ASSETS]: {
       filters: {
         [ASSET_FILTERS.CHANGED]: false,
-        [`entryTypes.${ASSET_FILTERS.CHUNK}`]: true,
+        [`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`]: true,
         ...getAssetFileTypeFilters(true),
       },
     },
@@ -119,7 +126,7 @@ export const getBundleAssetsFileTypeComponentLink = (fileType, label) => ({
         [ASSET_FILTERS.CHANGED]: false,
         ...getAssetEntryTypeFilters(true),
         ...getAssetFileTypeFilters(false),
-        [`fileTypes.${fileType}`]: true,
+        [`${ASSET_FILE_TYPE}.${fileType}`]: true,
       },
     },
   },

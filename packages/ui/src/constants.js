@@ -53,6 +53,9 @@ export const ASSET_FILTERS = {
   CHUNK: 'chunk',
 };
 
+export const ASSET_ENTRY_TYPE = 'et';
+export const ASSET_FILE_TYPE = 'ft';
+
 export const PACKAGE_FILTERS = {
   CHANGED: 'changed',
   DUPLICATE: 'duplicate',

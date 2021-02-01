@@ -5,7 +5,7 @@ import { merge, set } from 'lodash';
 
 import baselineStats from '../../../__mocks__/webpack-stats.baseline.json';
 import currentStats from '../../../__mocks__/webpack-stats.current.json';
-import { ASSET_FILTERS } from '../../constants';
+import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS } from '../../constants';
 import { getWrapperDecorator } from '../../stories';
 import { BundleAssets } from '.';
 
@@ -23,8 +23,8 @@ stories.add('custom filters', () => (
   <BundleAssets
     jobs={JOBS}
     filters={{
-      [`entryTypes.${ASSET_FILTERS.ENTRY}`]: true,
-      [`fileTypes.${FILE_TYPE_JS}`]: true,
+      [`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`]: true,
+      [`${ASSET_FILE_TYPE}.${FILE_TYPE_JS}`]: true,
     }}
   />
 ));

@@ -2,7 +2,7 @@ import { compose, withProps } from 'recompose';
 import { get } from 'lodash';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
-import { ASSET_FILTERS } from '../../constants';
+import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS } from '../../constants';
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilteredItems } from '../../hocs/with-filtered-items';
 import { withSearch } from '../../hocs/with-search';
@@ -75,16 +75,16 @@ const getRowFilter = (filters) => (item) => {
 
   if (
     !(
-      (filters[`entryTypes.${ASSET_FILTERS.ENTRY}`] && item.isEntry) ||
-      (filters[`entryTypes.${ASSET_FILTERS.INITIAL}`] && item.isInitial) ||
-      (filters[`entryTypes.${ASSET_FILTERS.CHUNK}`] && item.isChunk) ||
-      (filters[`entryTypes.${ASSET_FILTERS.ASSET}`] && item.isAsset)
+      (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`] && item.isEntry) ||
+      (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`] && item.isInitial) ||
+      (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`] && item.isChunk) ||
+      (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ASSET}`] && item.isAsset)
     )
   ) {
     return false;
   }
 
-  if (!filters[`fileTypes.${webpack.getFileType(item.key)}`]) {
+  if (!filters[`${ASSET_FILE_TYPE}.${webpack.getFileType(item.key)}`]) {
     return false;
   }
 

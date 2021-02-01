@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { get, map } from 'lodash';
 import { FILE_TYPE_LABELS } from '@bundle-stats/utils';
 
-import { ASSET_FILTERS } from '../../constants';
+import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS } from '../../constants';
 import { FileName } from '../../ui/file-name';
 import { Tooltip } from '../../ui/tooltip';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
@@ -25,7 +25,7 @@ const getFileTypeFilters = (filters) =>
     .map(([id, label]) => ({
       [id]: {
         label,
-        defaultValue: get(filters, `fileTypes.${id}`, true),
+        defaultValue: get(filters, `${ASSET_FILE_TYPE}.${id}`, true),
       },
     }))
     .reduce(
@@ -168,26 +168,26 @@ export const BundleAssets = (props) => {
                     defaultValue: filters[ASSET_FILTERS.CHANGED],
                     disabled: jobs.length <= 1,
                   },
-                  entryTypes: {
+                  [ASSET_ENTRY_TYPE]: {
                     label: 'Entry type',
                     [ASSET_FILTERS.ENTRY]: {
                       label: 'Entry',
-                      defaultValue: get(filters, `entryTypes.${ASSET_FILTERS.ENTRY}`, true),
+                      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`, true),
                     },
                     [ASSET_FILTERS.INITIAL]: {
                       label: 'Initial',
-                      defaultValue: get(filters, `entryTypes.${ASSET_FILTERS.INITIAL}`, true),
+                      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`, true),
                     },
                     [ASSET_FILTERS.CHUNK]: {
                       label: 'Chunk',
-                      defaultValue: get(filters, `entryTypes.${ASSET_FILTERS.CHUNK}`, true),
+                      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`, true),
                     },
                     [ASSET_FILTERS.ASSET]: {
                       label: 'Asset',
-                      defaultValue: get(filters, `entryTypes.${ASSET_FILTERS.ASSET}`, true),
+                      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ASSET}`, true),
                     },
                   },
-                  fileTypes: {
+                  [ASSET_FILE_TYPE]: {
                     label: 'File type',
                     ...getFileTypeFilters(filters),
                   },
