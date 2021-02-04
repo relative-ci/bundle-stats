@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { HashRouter, NavLink, Route, Switch, useLocation } from 'react-router-dom';
-import cx from 'classnames';
 
-import { COMPONENT, SECTIONS, URLS } from '../constants';
+import { COMPONENT, URLS } from '../constants';
 import { Box } from '../layout/box';
 import { Container } from '../ui/container';
 import { DuplicatePackagesWarning } from '../components/duplicate-packages-warning';
@@ -16,7 +15,6 @@ import { Stack } from '../layout/stack';
 import { BundleAssetsTotalsTable } from '../components/bundle-assets-totals-table';
 import { BundleModules } from '../components/bundle-modules';
 import { BundlePackages } from '../components/bundle-packages';
-import { ComponentLink } from '../components/component-link';
 import { QueryStateProvider, useComponentQueryState } from '../query-state';
 import I18N from '../i18n';
 import { Header } from './header';
@@ -50,41 +48,6 @@ Layout.defaultProps = {
   footer: null,
 };
 
-const SummaryItemWrapper = ({ keyProps, className, ...props }) => {
-  const { link } = keyProps;
-
-  if (!link) {
-    return null;
-  }
-
-  const { section, title, params } = link;
-
-  return (
-    <ComponentLink
-      className={cx(className, css.summaryItemLink)}
-      section={section}
-      title={title}
-      params={params}
-      {...props}
-    />
-  );
-};
-
-SummaryItemWrapper.propTypes = {
-  keyProps: PropTypes.shape({
-    link: PropTypes.shape({
-      section: PropTypes.oneOf(Object.values(SECTIONS)),
-      title: PropTypes.string,
-      params: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-    }),
-  }).isRequired,
-  className: PropTypes.string,
-};
-
-SummaryItemWrapper.defaultProps = {
-  className: '',
-};
-
 const AppComponent = ({ footer, jobs }) => {
   const [bundleStatsState, bundleStatsSetState] = useComponentQueryState(COMPONENT.BUNDLE_ASSETS);
   const [bundlePackagesState, bundlePackagesSetState] = useComponentQueryState(COMPONENT.BUNDLE_PACKAGES);
@@ -105,12 +68,7 @@ const AppComponent = ({ footer, jobs }) => {
   return (
     <Layout jobs={jobs} footer={footer}>
       <Container className={css.summaryContainer}>
-        <Summary
-          data={jobs[0].summary}
-          showSummaryItemDelta={jobs.length !== 1}
-          showSummaryItemBaselineValue={jobs.length !== 1}
-          SummaryItemWrapper={SummaryItemWrapper}
-        />
+        <Summary data={jobs[0].summary} showSummaryItemDelta={jobs.length !== 1} />
       </Container>
 
       <Container className={css.tabsContainer}>
