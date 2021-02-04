@@ -44,6 +44,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable default 1`] = `
   >
     <BundleAssetsTotalsTable
       className=""
+      customComponentLink={[Function]}
       jobs={
         Array [
           Object {
@@ -7169,6 +7170,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable empty baseline 1`] = `
   >
     <BundleAssetsTotalsTable
       className=""
+      customComponentLink={[Function]}
       jobs={
         Array [
           Object {
@@ -14298,6 +14300,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable multiple jobs 1`] = `
   >
     <BundleAssetsTotalsTable
       className=""
+      customComponentLink={[Function]}
       jobs={
         Array [
           Object {
