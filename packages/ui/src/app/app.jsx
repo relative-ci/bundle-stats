@@ -93,10 +93,15 @@ const AppComponent = ({ footer, jobs }) => {
           <Route
             exact
             path={URLS.ASSETS}
-            component={() => (
+            render={({ location }) => (
               <Container>
                 <Box outline>
-                  <BundleAssets jobs={jobs} setState={bundleStatsSetState} {...bundleStatsState} />
+                  <BundleAssets
+                    jobs={jobs}
+                    setState={bundleStatsSetState}
+                    {...bundleStatsState}
+                    key={`${location.pathname}_${location.search}`}
+                  />
                 </Box>
               </Container>
             )}
@@ -104,7 +109,7 @@ const AppComponent = ({ footer, jobs }) => {
           <Route
             exact
             path={URLS.MODULES}
-            component={() => (
+            render={() => (
               <Container>
                 <BundleModules jobs={jobs} />
               </Container>
@@ -113,13 +118,14 @@ const AppComponent = ({ footer, jobs }) => {
           <Route
             exact
             path={URLS.PACKAGES}
-            component={() => (
+            render={({ location }) => (
               <Container>
                 <Box outline>
                   <BundlePackages
                     jobs={jobs}
                     {...bundlePackagesState}
                     setState={bundlePackagesSetState}
+                    key={`${location.pathname}_${location.search}`}
                   />
                 </Box>
               </Container>
@@ -128,7 +134,7 @@ const AppComponent = ({ footer, jobs }) => {
           <Route
             exact
             path={URLS.OVERVIEW}
-            component={() => (
+            render={() => (
               <Stack space="large">
                 {duplicatePackagesInsights && (
                   <Container>
