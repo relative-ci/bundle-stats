@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/relative-ci/bundle-stats/compare/v2.5.0...v2.6.0) (2021-02-06)
+
+
+### Features
+
+* **html-templates:** Link summary items to tabs ([6f760a9](https://github.com/relative-ci/bundle-stats/commit/6f760a9316175af90405ee4c44be65f7d94b1fc1))
+
+
+
+
+
 # [2.5.0](https://github.com/relative-ci/bundle-stats/compare/v2.4.0...v2.5.0) (2021-01-08)
 
 

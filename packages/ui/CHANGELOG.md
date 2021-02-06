@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/relative-ci/bundle-stats/compare/v2.5.0...v2.6.0) (2021-02-06)
+
+
+### Bug Fixes
+
+* **ui:** App router - use render with key ([621db45](https://github.com/relative-ci/bundle-stats/commit/621db453c873349b6661aef7adf3155c4f397725))
+* **ui:** BundleAssetsTotalsTable - add custom ComponentLink prop ([958f806](https://github.com/relative-ci/bundle-stats/commit/958f80698c656eedb9ce07c404b2e405d9a03c84))
+* **ui:** DuplicatePackagesWarning - add custom ComponentLink prop ([2115220](https://github.com/relative-ci/bundle-stats/commit/21152201232fa1ded3dc59a675443b4d1e61420b))
+* **ui:** FiltersDropdown - vertically align input & label ([871df3a](https://github.com/relative-ci/bundle-stats/commit/871df3a562e371faf3669ef6c611dd1586dc18e6))
+* **ui:** MetricTable - add styles for links ([bfd1c19](https://github.com/relative-ci/bundle-stats/commit/bfd1c1984301208427ab6821dbd2a98002b15c45))
+* **ui:** Reset filters and search ([3548839](https://github.com/relative-ci/bundle-stats/commit/3548839beb302ea9a8be63f28a65036622fa07dc))
+* **ui:** Router - scroll to top on change ([ce7c3b6](https://github.com/relative-ci/bundle-stats/commit/ce7c3b685189c42682487179b34133817b3b7429))
+
+
+### Features
+
+* **html-templates:** Link summary items to tabs ([6f760a9](https://github.com/relative-ci/bundle-stats/commit/6f760a9316175af90405ee4c44be65f7d94b1fc1))
+* **ui:** Add section - components links ([ffb9349](https://github.com/relative-ci/bundle-stats/commit/ffb9349534e4a66690945b09ec3096582e4b4b6f))
+* **ui:** BundleAssets - allow to pass custom initialFilters ([c82b042](https://github.com/relative-ci/bundle-stats/commit/c82b0423db3d68ab05de7184e21d290b1674107e))
+* **ui:** BundlePackages - add support for custom filters ([bc3210e](https://github.com/relative-ci/bundle-stats/commit/bc3210e4e73f77f114a6c24fbc2de0d82e6e9c95))
+* **ui:** Components links - add titles ([d591218](https://github.com/relative-ci/bundle-stats/commit/d591218b5556a244fc2d3e8f20338c235f412db6))
+* **ui:** DuplicatePackagesWarning - link to packages ([e65ea46](https://github.com/relative-ci/bundle-stats/commit/e65ea465052a806c20a819e848a4ae4e76279262))
+* **ui:** Enable URL state ([c69cb4e](https://github.com/relative-ci/bundle-stats/commit/c69cb4eca376d1fcfa5c207704684b1bcffcda79))
+* **ui:** FiltersDropdown - active filters state ([05da749](https://github.com/relative-ci/bundle-stats/commit/05da749dae06408ce779ab537ef0c8f82e859abc))
+* **ui:** Summary - add item titles ([7600ab7](https://github.com/relative-ci/bundle-stats/commit/7600ab7c75de5a72adfd08692f79b218808f1526))
+* **ui:** Summary - add support for item wrappers ([e07e1fe](https://github.com/relative-ci/bundle-stats/commit/e07e1fecc124c321e27a68279e76cc88150fe34a))
+* **ui:** Totals - add links to BundleAssets ([50782a4](https://github.com/relative-ci/bundle-stats/commit/50782a4f9db74df93f734344c7a5d5b3a9ba0c8f))
+
+
+
+
+
 # [2.5.0](https://github.com/relative-ci/bundle-stats/compare/v2.4.0...v2.5.0) (2021-01-08)
 
 
