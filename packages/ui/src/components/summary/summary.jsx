@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get } from 'lodash';
 
+import { SECTIONS } from '../../constants';
 import * as COMPONENT_LINKS from '../../component-links';
+import { ComponentLink } from '../component-link';
 import { SummaryItem } from '../summary-item';
 import css from './summary.module.css';
 
@@ -25,23 +27,55 @@ const SECONDARY_METRICS = new Map([
   ['webpack.duplicatePackagesCount', { link: COMPONENT_LINKS.BUNDLE_PACKAGES_DUPLICATE }],
 ]);
 
-const DefaultSummaryItemWrapper = ({ className, children }) => (
-  <div className={className}>{children}</div>
-);
+const SummaryItemWrapper = ({ as: CustomLink, keyProps, className, ...props }) => {
+  const { link } = keyProps;
 
-DefaultSummaryItemWrapper.propTypes = {
+  if (!link) {
+    return null;
+  }
+
+  const { section, title, params } = link;
+
+  return (
+    <CustomLink
+      className={cx(className, css.summaryItemLink)}
+      section={section}
+      title={title}
+      params={params}
+      {...props}
+    />
+  );
+};
+
+SummaryItemWrapper.propTypes = {
+  as: PropTypes.elementType,
+  keyProps: PropTypes.shape({
+    link: PropTypes.shape({
+      section: PropTypes.oneOf(Object.values(SECTIONS)),
+      title: PropTypes.string,
+      params: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+    }),
+  }).isRequired,
   className: PropTypes.string,
-  children: PropTypes.node.isRequired,
 };
 
-DefaultSummaryItemWrapper.defaultProps = {
+SummaryItemWrapper.defaultProps = {
   className: '',
+  as: ComponentLink,
 };
 
-export const Summary = ({ className, data, loading, showSummaryItemDelta, SummaryItemWrapper }) => {
+export const Summary = ({
+  className,
+  data,
+  loading,
+  showSummaryItemDelta,
+  summaryItemLink: SummaryItemCustomLink,
+}) => {
   const getRenderSummaryItem = (sectionProps) => ([key, keyProps]) => (
     <SummaryItem
-      as={(wrapperProps) => <SummaryItemWrapper {...wrapperProps} keyProps={keyProps} />}
+      as={(wrapperProps) => (
+        <SummaryItemWrapper as={SummaryItemCustomLink} {...wrapperProps} keyProps={keyProps} />
+      )}
       key={key}
       id={key}
       data={get(data, key)}
@@ -69,7 +103,7 @@ Summary.defaultProps = {
   data: null,
   loading: false,
   showSummaryItemDelta: true,
-  SummaryItemWrapper: DefaultSummaryItemWrapper,
+  summaryItemLink: undefined,
 };
 
 Summary.propTypes = {
@@ -82,5 +116,5 @@ Summary.propTypes = {
   }),
   loading: PropTypes.bool,
   showSummaryItemDelta: PropTypes.bool,
-  SummaryItemWrapper: PropTypes.elementType,
+  summaryItemLink: PropTypes.elementType,
 };

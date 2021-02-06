@@ -7,7 +7,11 @@ import { getBundleAssetsFileTypeComponentLink } from '../../component-links';
 import { MetricsTable } from '../metrics-table';
 import { ComponentLink } from '../component-link';
 
-export const BundleAssetsTotalsTable = ({ className, jobs }) => {
+export const BundleAssetsTotalsTable = ({
+  className,
+  jobs,
+  customComponentLink: CustomComponentLink,
+}) => {
   const items = webpack.compareBySection.sizes(jobs);
 
   const renderRowHeader = (item) => {
@@ -15,9 +19,9 @@ export const BundleAssetsTotalsTable = ({ className, jobs }) => {
     const { section, title, params } = getBundleAssetsFileTypeComponentLink(fileType, item.label);
 
     return (
-      <ComponentLink section={section} title={title} params={params}>
+      <CustomComponentLink section={section} title={title} params={params}>
         {item.label}
-      </ComponentLink>
+      </CustomComponentLink>
     );
   };
 
@@ -35,6 +39,7 @@ export const BundleAssetsTotalsTable = ({ className, jobs }) => {
 BundleAssetsTotalsTable.defaultProps = {
   className: '',
   jobs: [],
+  customComponentLink: ComponentLink,
 };
 
 BundleAssetsTotalsTable.propTypes = {
@@ -43,4 +48,6 @@ BundleAssetsTotalsTable.propTypes = {
 
   /** Jobs data */
   jobs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+
+  customComponentLink: PropTypes.elementType,
 };

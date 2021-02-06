@@ -39,3 +39,8 @@
   box-shadow: 1px 1px var(--color-outline);
   box-shadow: -1px -1px var(--color-outline);
 }
+
+.summaryItemLink {
+  color: inherit;
+  text-decoration: none;
+}

@@ -44,6 +44,7 @@ exports[`Storyshots Components/DuplicatePackagesWarning multiple duplicate packa
   >
     <DuplicatePackagesWarning
       className=""
+      customComponentLink={[Function]}
       duplicatePackages={
         Object {
           "package-c": Array [
@@ -105,6 +106,7 @@ exports[`Storyshots Components/DuplicatePackagesWarning single duplicate package
   >
     <DuplicatePackagesWarning
       className=""
+      customComponentLink={[Function]}
       duplicatePackages={
         Object {
           "package-c": Array [

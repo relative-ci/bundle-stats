@@ -43,7 +43,6 @@ exports[`Storyshots Components/Summary default 1`] = `
     }
   >
     <Summary
-      SummaryItemWrapper={[Function]}
       className=""
       data={
         Object {
@@ -137,7 +136,6 @@ exports[`Storyshots Components/Summary loading 1`] = `
     }
   >
     <Summary
-      SummaryItemWrapper={[Function]}
       className=""
       data={null}
       loading={true}
@@ -190,7 +188,6 @@ exports[`Storyshots Components/Summary single run 1`] = `
     }
   >
     <Summary
-      SummaryItemWrapper={[Function]}
       className=""
       data={
         Object {

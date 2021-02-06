@@ -7,7 +7,7 @@ import { ComponentLink } from '../component-link';
 import css from './duplicate-packages-warning.module.css';
 
 export const DuplicatePackagesWarning = (props) => {
-  const { className, duplicatePackages } = props;
+  const { className, duplicatePackages, customComponentLink: CustomComponentLink } = props;
 
   const entries = Object.entries(duplicatePackages);
 
@@ -19,9 +19,9 @@ export const DuplicatePackagesWarning = (props) => {
       <ol className={css.packages}>
         {entries.map(([key, paths]) => (
           <li key={key} className={css.item}>
-            <ComponentLink className={css.itemTitle} {...getBundlePackagesByNameComponentLink(key)}>
+            <CustomComponentLink className={css.itemTitle} {...getBundlePackagesByNameComponentLink(key)}>
               {key}
-            </ComponentLink>
+            </CustomComponentLink>
             <ul className={css.itemPackages}>
               {paths.map((path) => <li key={path}>{path}</li>)}
             </ul>
@@ -34,6 +34,7 @@ export const DuplicatePackagesWarning = (props) => {
 
 DuplicatePackagesWarning.propTypes = {
   className: PropTypes.string,
+  customComponentLink: PropTypes.elementType,
   duplicatePackages: PropTypes.shape({
     [PropTypes.string]: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
@@ -41,4 +42,5 @@ DuplicatePackagesWarning.propTypes = {
 
 DuplicatePackagesWarning.defaultProps = {
   className: '',
+  customComponentLink: ComponentLink,
 };
