@@ -16,7 +16,7 @@
     "build-lib": "rm -fr ./lib && babel -D src -d lib --ignore **/__tests__/** ",
     "build-esm": "rm -fr ./lib-esm && babel -D src -d lib-esm --ignore **/__tests__/** --config-file=./.babelrc.esm.js",
     "lint": "../../node_modules/.bin/eslint . --ext .js",
-    "test": "TZ=UTC jest src"
+    "test": "TZ=UTC jest src --maxWorkers=4"
   },
   "keywords": [],
   "author": {
