@@ -16,7 +16,7 @@
     "build-lib": "rm -fr ./lib && babel -D src -d lib --ignore **/__tests__/** ",
     "build-esm": "rm -fr ./lib-esm && babel -D src -d lib-esm --ignore **/__tests__/** --config-file=./.babelrc.esm.js",
     "lint": "../../node_modules/.bin/eslint . --ext .js",
-    "test": "TZ=UTC jest src"
+    "test": "TZ=UTC jest src --maxWorkers=4"
   },
   "keywords": [],
   "author": {
@@ -39,9 +39,9 @@
     "superstruct": "^0.8.3"
   },
   "devDependencies": {
-    "@babel/cli": "7.12.10",
-    "@babel/core": "7.12.10",
-    "@babel/preset-env": "7.12.11",
+    "@babel/cli": "7.12.13",
+    "@babel/core": "7.12.13",
+    "@babel/preset-env": "7.12.13",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "26.6.3",
     "babel-plugin-lodash": "3.3.4",
