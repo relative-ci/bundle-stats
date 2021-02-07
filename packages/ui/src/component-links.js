@@ -134,7 +134,7 @@ export const getBundleAssetsFileTypeComponentLink = (fileType, label) => ({
 
 export const getBundlePackagesByNameComponentLink = (search) => ({
   section: SECTIONS.PACKAGES,
-  title: I18N.COMPONENT_LINK_PACKAGES_DUPLICATE,
+  title: I18N.COMPONENT_LINK_VIEW_PACKAGE,
   params: {
     [COMPONENT.BUNDLE_PACKAGES]: {
       search,
