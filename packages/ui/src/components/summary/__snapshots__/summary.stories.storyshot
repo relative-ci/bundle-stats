@@ -88,6 +88,7 @@ exports[`Storyshots Components/Summary default 1`] = `
       }
       loading={false}
       showSummaryItemDelta={true}
+      summaryItemLink={[Function]}
     />
   </div>
 </Router>
@@ -140,6 +141,7 @@ exports[`Storyshots Components/Summary loading 1`] = `
       data={null}
       loading={true}
       showSummaryItemDelta={true}
+      summaryItemLink={[Function]}
     />
   </div>
 </Router>
@@ -233,6 +235,7 @@ exports[`Storyshots Components/Summary single run 1`] = `
       }
       loading={false}
       showSummaryItemDelta={false}
+      summaryItemLink={[Function]}
     />
   </div>
 </Router>
@@ -327,6 +330,7 @@ exports[`Storyshots Components/Summary with link 1`] = `
       }
       loading={false}
       showSummaryItemDelta={true}
+      summaryItemLink={[Function]}
     />
   </div>
 </Router>
