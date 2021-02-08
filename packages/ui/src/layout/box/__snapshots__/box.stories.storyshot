@@ -45,8 +45,142 @@ exports[`Storyshots Layout/Box default 1`] = `
     <Box
       as="div"
       className=""
+      horizontalPadding=""
       outline={false}
       padding="no-space"
+      style={
+        Object {
+          "outline": "1px dotted magenta",
+        }
+      }
+      verticalPadding=""
+    >
+      Lorem ipsum
+    </Box>
+  </div>
+</Router>
+`;
+
+exports[`Storyshots Layout/Box with horizontal & vertical padding 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <Box
+      as="div"
+      className=""
+      horizontalPadding=""
+      outline={false}
+      padding={
+        Array [
+          "xxsmall",
+          "medium",
+        ]
+      }
+      style={
+        Object {
+          "outline": "1px dotted magenta",
+        }
+      }
+      verticalPadding=""
+    >
+      Lorem ipsum
+    </Box>
+  </div>
+</Router>
+`;
+
+exports[`Storyshots Layout/Box with horizontal padding 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <Box
+      as="div"
+      className=""
+      horizontalPadding="medium"
+      outline={false}
+      padding="no-space"
+      style={
+        Object {
+          "outline": "1px dotted magenta",
+        }
+      }
+      verticalPadding=""
     >
       Lorem ipsum
     </Box>
@@ -99,8 +233,10 @@ exports[`Storyshots Layout/Box with outline 1`] = `
     <Box
       as="div"
       className=""
+      horizontalPadding=""
       outline={true}
       padding="large"
+      verticalPadding=""
     >
       Lorem ipsum
     </Box>
@@ -153,8 +289,15 @@ exports[`Storyshots Layout/Box with padding 1`] = `
     <Box
       as="div"
       className=""
+      horizontalPadding=""
       outline={false}
       padding="medium"
+      style={
+        Object {
+          "outline": "1px dotted magenta",
+        }
+      }
+      verticalPadding=""
     >
       Lorem ipsum
     </Box>
@@ -207,8 +350,15 @@ exports[`Storyshots Layout/Box with table 1`] = `
     <Box
       as="div"
       className=""
+      horizontalPadding=""
       outline={false}
       padding="no-space"
+      style={
+        Object {
+          "outline": "1px dotted magenta",
+        }
+      }
+      verticalPadding=""
     >
       <Table
         className=""
@@ -247,6 +397,67 @@ exports[`Storyshots Layout/Box with table 1`] = `
           ]
         }
       />
+    </Box>
+  </div>
+</Router>
+`;
+
+exports[`Storyshots Layout/Box with vertical padding 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <Box
+      as="div"
+      className=""
+      horizontalPadding=""
+      outline={false}
+      padding="no-space"
+      style={
+        Object {
+          "outline": "1px dotted magenta",
+        }
+      }
+      verticalPadding="medium"
+    >
+      Lorem ipsum
     </Box>
   </div>
 </Router>

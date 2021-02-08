@@ -59,8 +59,10 @@ exports[`Storyshots UI/Alert default 1`] = `
         <Box
           as="div"
           className="root default"
+          horizontalPadding=""
           outline={true}
           padding="small"
+          verticalPadding=""
         >
           <div
             className="root root default padding-small outline"
@@ -133,8 +135,10 @@ exports[`Storyshots UI/Alert with kind danger 1`] = `
         <Box
           as="div"
           className="root danger"
+          horizontalPadding=""
           outline={true}
           padding="small"
+          verticalPadding=""
         >
           <div
             className="root root danger padding-small outline"
@@ -207,8 +211,10 @@ exports[`Storyshots UI/Alert with kind info 1`] = `
         <Box
           as="div"
           className="root info"
+          horizontalPadding=""
           outline={true}
           padding="small"
+          verticalPadding=""
         >
           <div
             className="root root info padding-small outline"
@@ -281,8 +287,10 @@ exports[`Storyshots UI/Alert with kind success 1`] = `
         <Box
           as="div"
           className="root success"
+          horizontalPadding=""
           outline={true}
           padding="small"
+          verticalPadding=""
         >
           <div
             className="root root success padding-small outline"
@@ -355,8 +363,10 @@ exports[`Storyshots UI/Alert with kind warning 1`] = `
         <Box
           as="div"
           className="root warning"
+          horizontalPadding=""
           outline={true}
           padding="small"
+          verticalPadding=""
         >
           <div
             className="root root warning padding-small outline"

@@ -8,9 +8,23 @@ import { Box } from '.';
 const stories = storiesOf('Layout/Box', module);
 stories.addDecorator(getWrapperDecorator());
 
-stories.add('default', () => <Box>Lorem ipsum</Box>);
+stories.add('default', () => <Box style={{ outline: '1px dotted magenta' }}>Lorem ipsum</Box>);
 
-stories.add('with padding', () => <Box padding="medium">Lorem ipsum</Box>);
+stories.add('with padding', () => (
+  <Box padding="medium" style={{ outline: '1px dotted magenta' }}>Lorem ipsum</Box>
+));
+
+stories.add('with horizontal padding', () => (
+  <Box horizontalPadding="medium" style={{ outline: '1px dotted magenta' }}>Lorem ipsum</Box>
+));
+
+stories.add('with vertical padding', () => (
+  <Box verticalPadding="medium" style={{ outline: '1px dotted magenta' }}>Lorem ipsum</Box>
+));
+
+stories.add('with horizontal & vertical padding', () => (
+  <Box padding={['xxsmall', 'medium']} style={{ outline: '1px dotted magenta' }}>Lorem ipsum</Box>
+));
 
 stories.add('with outline', () => (
   <Box padding="large" outline>
@@ -19,7 +33,7 @@ stories.add('with outline', () => (
 ));
 
 stories.add('with table', () => (
-  <Box>
+  <Box style={{ outline: '1px dotted magenta' }}>
     <Table
       headers={['Col A', 'Col B', 'Col C']}
       rows={[
