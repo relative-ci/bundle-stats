@@ -73,3 +73,10 @@ export const ASSETS_SIZES_FILE_TYPE_MAP = FILE_TYPES.reduce(
   }),
   {},
 );
+
+export const METRICS_WEBPACK_GENERAL = [
+  'webpack.totalSizeByTypeALL',
+  'webpack.totalInitialSizeJS',
+  'webpack.totalInitialSizeCSS',
+  'webpack.cacheInvalidation',
+];

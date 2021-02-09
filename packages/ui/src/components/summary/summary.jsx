@@ -3,29 +3,18 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get } from 'lodash';
 
-import * as COMPONENT_LINKS from '../../component-links';
+import { METRICS_WEBPACK_GENERAL } from '../../constants';
+import { METRIC_COMPONENT_LINKS } from '../../component-links';
 import { Box } from '../../layout/box';
 import { FlexStack } from '../../layout/flex-stack';
 import { ComponentLink } from '../component-link';
 import { SummaryItem } from '../summary-item';
 import css from './summary.module.css';
 
-const METRICS = new Map([
-  ['webpack.totalSizeByTypeALL', { link: COMPONENT_LINKS.TOTALS }],
-  ['webpack.totalInitialSizeJS', { link: COMPONENT_LINKS.BUNDLE_ASSETS_INITIAL_JS }],
-  ['webpack.totalInitialSizeCSS', { link: COMPONENT_LINKS.BUNDLE_ASSETS_INITIAL_CSS }],
-  [
-    'webpack.cacheInvalidation',
-    {
-      link: COMPONENT_LINKS.BUNDLE_ASSETS_CACHE_INVALIDATION,
-      showDelta: false,
-    },
-  ],
-]);
-
 export const Summary = ({
   className,
   size,
+  keys,
   data,
   loading,
   showSummaryItemDelta,
@@ -33,27 +22,29 @@ export const Summary = ({
 }) => (
   <Box outline className={cx(css.root, className)}>
     <FlexStack className={css.items}>
-      {Array.from(METRICS).map(([metricId, metricOptions]) =>(
-        <SummaryItem
-          as={({ className: itemClassName, ...itemProps }) => (
-            <Box
-              padding={['xsmall', 'small']}
-              className={cx(itemClassName, css.summaryItemLink)}
-              {...itemProps}
-              as={SummaryItemCustomLink}
-              {...metricOptions.link}
-            />
-          )}
-          size={size}
-          key={metricId}
-          id={metricId}
-          data={get(data, metricId)}
-          loading={loading}
-          showMetricDescription
-          showDelta={showSummaryItemDelta && metricOptions.showDelta !== false}
-          className={css.item}
-        />
-      ))}
+      {Array.from(METRIC_COMPONENT_LINKS).filter(([metricId]) => keys.includes(metricId)).map(
+        ([metricId, metricOptions]) => (
+          <SummaryItem
+            as={({ className: itemClassName, ...itemProps }) => (
+              <Box
+                padding={['xsmall', 'small']}
+                className={cx(itemClassName, css.summaryItemLink)}
+                {...itemProps}
+                as={SummaryItemCustomLink}
+                {...metricOptions.link}
+              />
+            )}
+            size={size}
+            key={metricId}
+            id={metricId}
+            data={get(data, metricId)}
+            loading={loading}
+            showMetricDescription
+            showDelta={showSummaryItemDelta && metricOptions.showDelta !== false}
+            className={css.item}
+          />
+        )
+      )}
     </FlexStack>
   </Box>
 );
@@ -63,6 +54,7 @@ Summary.defaultProps = {
   data: null,
   loading: false,
   size: '',
+  keys: METRICS_WEBPACK_GENERAL,
   showSummaryItemDelta: true,
   summaryItemLink: ComponentLink,
 };
@@ -70,6 +62,7 @@ Summary.defaultProps = {
 Summary.propTypes = {
   className: PropTypes.string,
   size: PropTypes.string,
+  keys: PropTypes.arrayOf(PropTypes.string),
   data: PropTypes.shape({
     [PropTypes.string]: PropTypes.shape({
       baseline: PropTypes.number,

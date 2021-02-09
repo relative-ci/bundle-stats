@@ -4,6 +4,7 @@ import { createJobs } from '@bundle-stats/utils';
 
 import baselineData from '../../../__mocks__/webpack-stats.baseline.json';
 import currentData from '../../../__mocks__/webpack-stats.current.json';
+import { METRICS_WEBPACK_ASSETS } from '../../constants';
 import { getWrapperDecorator } from '../../stories';
 import { Summary } from '.';
 
@@ -16,6 +17,8 @@ stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => <Summary data={MULTIPLE_JOBS[0].summary} />);
 
+stories.add('custom keys', () => <Summary keys={METRICS_WEBPACK_ASSETS} data={MULTIPLE_JOBS[0].summary} />);
+
 stories.add('loading', () => <Summary loading />);
 
 stories.add('single run', () => (
@@ -25,7 +28,7 @@ stories.add('single run', () => (
 stories.add('with link', () => (
   <Summary
     data={MULTIPLE_JOBS[0].summary}
-    SummaryItemWrapper={({ keyProps, ...props }) => (
+    summaryItemLink={({ keyProps, ...props }) => (
       <button type="button" {...props} onClick={() => alert(JSON.stringify(keyProps))} />
     )}
   />
