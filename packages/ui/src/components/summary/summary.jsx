@@ -25,6 +25,7 @@ const METRICS = new Map([
 
 export const Summary = ({
   className,
+  size,
   data,
   loading,
   showSummaryItemDelta,
@@ -43,6 +44,7 @@ export const Summary = ({
               {...metricOptions.link}
             />
           )}
+          size={size}
           key={metricId}
           id={metricId}
           data={get(data, metricId)}
@@ -60,12 +62,14 @@ Summary.defaultProps = {
   className: '',
   data: null,
   loading: false,
+  size: '',
   showSummaryItemDelta: true,
   summaryItemLink: ComponentLink,
 };
 
 Summary.propTypes = {
   className: PropTypes.string,
+  size: PropTypes.string,
   data: PropTypes.shape({
     [PropTypes.string]: PropTypes.shape({
       baseline: PropTypes.number,
