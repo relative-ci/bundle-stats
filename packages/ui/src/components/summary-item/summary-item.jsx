@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
-import { Tooltip } from '../../ui';
+import { Icon } from '../../ui/icon';
+import { Tooltip } from '../../ui/tooltip';
 import { Stack } from '../../layout/stack';
+import { FlexStack } from '../../layout/flex-stack';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
 import css from './summary-item.module.css';
@@ -36,24 +38,19 @@ export const SummaryItem = ({
   );
 
   return (
-    <Stack space="xxxsmall" as={Component} className={rootClassName} {...props}>
-      <Tooltip
-        as="h3"
-        className={css.title}
-        title={
-          showMetricDescriptionTooltip && <p className={css.helpTooltip}>{metric.description}</p>
-        }
-      >
-        {metric.label}
-      </Tooltip>
+    <Stack as={Component} className={rootClassName} {...props}>
+      <FlexStack space="xxxsmall" className={css.header}>
+        <h3 className={css.title}>{metric.label}</h3>
+
+        {showMetricDescriptionTooltip && (
+          <Tooltip className={css.icon} title={metric.description}>
+            <Icon glyph="help" />
+          </Tooltip>
+        )}
+      </FlexStack>
 
       {!loading ? (
-        <Metric
-          className={css.currentMetric}
-          value={current}
-          formatter={metric.formatter}
-          enhanced
-        >
+        <Metric className={css.currentMetric} value={current} formatter={metric.formatter} enhanced>
           {showDelta && (
             <Delta
               className={css.delta}

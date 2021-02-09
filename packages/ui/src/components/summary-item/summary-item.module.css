@@ -9,6 +9,23 @@
   white-space: nowrap;
 }
 
+.icon {
+  color: var(--color-text-light);
+  transition: var(--transition-in);
+}
+
+.icon:hover,
+.icon:active,
+.icon:focus {
+  color: var(--color-primary);
+  transition: var(--transition-out);
+}
+
+.helpTooltip {
+  max-width: 280px;
+}
+
+
 .currentMetric {
   margin: 0;
   display: block;
@@ -20,24 +37,14 @@
 }
 
 .delta {
-  margin: 0;
+  margin: var(--space-xxxsmall) 0 0;
   display: block;
   font-size: var(--size-small);
   line-height: var(--space-small);
   min-height: var(--space-xsmall);
 }
 
-.helpTooltip {
-  max-width: 280px;
-}
-
 /* Hover */
-
-/* show metric description - underline help */
-.showMetricDescription:hover .title {
-  text-decoration: underline;
-  text-decoration-style: dashed;
-}
 
 .showDelta .currentMetric {
   min-height: calc(var(--space-medium) + var(--space-small));
