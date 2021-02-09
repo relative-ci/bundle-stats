@@ -36,7 +36,7 @@
   background: var(--color-background);
   box-shadow: 0 2px var(--space-xxsmall) var(--color-shadow);
   min-width: 180px;
-  z-index: 1000;
+  z-index: var(--layer-high);
   padding: var(--space-xsmall) var(--space-small);
 }
 

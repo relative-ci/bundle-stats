@@ -118,3 +118,8 @@ a:active {
 .ui-button--danger:hover {
   background: var(--color-danger-dark);
 }
+
+:global .__reakit-portal {
+  z-index: var(--layer-xhigh);
+  position: relative;
+}
