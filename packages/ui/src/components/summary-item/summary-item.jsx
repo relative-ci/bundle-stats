@@ -4,6 +4,7 @@ import cx from 'classnames';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { Tooltip } from '../../ui';
+import { Stack } from '../../layout/stack';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
 import css from './summary-item.module.css';
@@ -17,7 +18,6 @@ export const SummaryItem = ({
   loading,
   showDelta,
   showMetricDescription,
-  inline,
   ...props
 }) => {
   const { baseline, current } = data || { baseline: 0, current: 0 };
@@ -30,14 +30,13 @@ export const SummaryItem = ({
     css.root,
     className,
     css[size],
-    inline && css.inline,
     showMetricDescription && css.showMetricDescription,
     showMetricDescriptionTooltip && css.showMetricDescription,
     showDelta && css.showDelta,
   );
 
   return (
-    <Component className={rootClassName} {...props}>
+    <Stack space="xxxsmall" as={Component} className={rootClassName} {...props}>
       <Tooltip
         as="h3"
         className={css.title}
@@ -54,7 +53,6 @@ export const SummaryItem = ({
           value={current}
           formatter={metric.formatter}
           enhanced
-          inline={inline}
         >
           {showDelta && (
             <Delta
@@ -67,7 +65,7 @@ export const SummaryItem = ({
       ) : (
         <span className={cx(css.currentMetric, css.loading)} />
       )}
-    </Component>
+    </Stack>
   );
 };
 
@@ -79,7 +77,6 @@ SummaryItem.defaultProps = {
   loading: false,
   showMetricDescription: false,
   showDelta: true,
-  inline: false,
 };
 
 SummaryItem.propTypes = {
@@ -106,7 +103,4 @@ SummaryItem.propTypes = {
 
   /** Show delta */
   showDelta: PropTypes.bool,
-
-  /** Inline flag */
-  inline: PropTypes.bool,
 };

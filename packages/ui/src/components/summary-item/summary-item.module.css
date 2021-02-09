@@ -43,27 +43,6 @@
   min-height: calc(var(--space-medium) + var(--space-small));
 }
 
-/* Inline */
-.inline {
-  white-space: nowrap;
-}
-
-.inline .title {
-  display: inline-block;
-}
-
-.inline .currentMetric {
-  margin: 0 0 0 var(--space-xxsmall);
-  display: inline-block;
-  font-size: var(--size-small);
-  min-height: var(--space-small);
-}
-
-.inline .delta {
-  display: inline-block;
-  font-size: var(--size-small);
-}
-
 /* Loading state */
 .loading {
   background: var(--color-highlight);

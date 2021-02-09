@@ -54,16 +54,4 @@ stories.add('showDelta false', () => (
   />
 ));
 
-stories.add('inline', () => (
-  <SummaryItem
-    loading={false}
-    id="webpack.totalSizeByTypeALL"
-    data={{
-      current: 120 * 1000,
-      baseline: 100 * 1000,
-    }}
-    inline
-  />
-));
-
 stories.add('loading', () => <SummaryItem loading id="webpack.totalSizeByTypeALL" />);
