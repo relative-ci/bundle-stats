@@ -134,7 +134,7 @@ export const getBundleAssetsFileTypeComponentLink = (fileType, label) => ({
 
 export const getBundlePackagesByNameComponentLink = (search) => ({
   section: SECTIONS.PACKAGES,
-  title: I18N.COMPONENT_LINK_PACKAGES_DUPLICATE,
+  title: I18N.COMPONENT_LINK_VIEW_PACKAGE,
   params: {
     [COMPONENT.BUNDLE_PACKAGES]: {
       search,
@@ -145,3 +145,21 @@ export const getBundlePackagesByNameComponentLink = (search) => ({
     },
   },
 });
+
+export const METRIC_COMPONENT_LINKS = new Map([
+  ['webpack.totalSizeByTypeALL', { link: TOTALS }],
+  ['webpack.totalInitialSizeJS', { link: BUNDLE_ASSETS_INITIAL_JS }],
+  ['webpack.totalInitialSizeCSS', { link: BUNDLE_ASSETS_INITIAL_CSS }],
+  [
+    'webpack.cacheInvalidation',
+    {
+      link: BUNDLE_ASSETS_CACHE_INVALIDATION,
+      showDelta: false,
+    },
+  ],
+  ['webpack.assetCount', { link: BUNDLE_ASSETS_COUNT }],
+  ['webpack.chunkCount', { link: BUNDLE_ASSETS_CHUNK_COUNT }],
+  ['webpack.moduleCount', { link: BUNDLE_MODULES }],
+  ['webpack.packageCount', { link: BUNLDE_PACKAGES_COUNT }],
+  ['webpack.duplicatePackagesCount', { link: BUNDLE_PACKAGES_DUPLICATE }],
+]);

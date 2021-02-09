@@ -5,16 +5,41 @@ import cx from 'classnames';
 import { NO_SPACE, SPACES } from '../../constants';
 import css from './box.module.css';
 
-export const Box = ({ className, as: Component, padding, outline, ...props }) => {
-  const rootClassName = cx(css.root, className, css[`padding-${padding}`], outline && css.outline);
+export const Box = (props) => {
+  const {
+    className,
+    as: Component,
+    padding,
+    horizontalPadding,
+    verticalPadding,
+    outline,
+    ...restProps
+  } = props;
 
-  return <Component className={rootClassName} {...props} />;
+  const [resolvedPadding, resolvedVerticalPadding, resolvedHorizontalPadding] = Array.isArray(
+    padding,
+  )
+    ? [null, ...padding]
+    : [padding, verticalPadding, horizontalPadding];
+
+  const rootClassName = cx(
+    css.root,
+    className,
+    resolvedPadding && css[`padding-${resolvedPadding}`],
+    resolvedVerticalPadding && css[`vertical-padding-${resolvedVerticalPadding}`],
+    resolvedHorizontalPadding && css[`horizontal-padding-${resolvedHorizontalPadding}`],
+    outline && css.outline,
+  );
+
+  return <Component className={rootClassName} {...restProps} />;
 };
 
 Box.defaultProps = {
   className: '',
   as: 'div',
   padding: NO_SPACE,
+  horizontalPadding: '',
+  verticalPadding: '',
   outline: false,
 };
 
@@ -26,7 +51,16 @@ Box.propTypes = {
   as: PropTypes.elementType,
 
   /** Padding space size */
-  padding: PropTypes.oneOf(SPACES),
+  padding: PropTypes.oneOfType([
+    PropTypes.oneOf(SPACES),
+    PropTypes.arrayOf(PropTypes.oneOf(SPACES)),
+  ]),
+
+  /** Horizonatl padding space size */
+  horizontalPadding: PropTypes.oneOf(SPACES),
+
+  /** Vertical padding space size */
+  verticalPadding: PropTypes.oneOf(SPACES),
 
   /** Outline flag */
   outline: PropTypes.bool,

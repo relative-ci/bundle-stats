@@ -8,11 +8,11 @@ import { BundleChunkModules } from '../bundle-chunk-modules';
 
 import css from './bundle-modules.module.css';
 
-export const BundleModules = ({ jobs }) => {
+export const BundleModules = ({ className, jobs }) => {
   const modulesReport = webpack.compareBySection.modules(jobs);
 
   return (
-    <>
+    <div className={className}>
       {!isEmpty(modulesReport) &&
         modulesReport.map(({ chunkId, chunkNames, modules }) => (
           <BundleChunkModules
@@ -39,11 +39,18 @@ export const BundleModules = ({ jobs }) => {
           </a>
         </Box>
       )}
-    </>
+    </div>
   );
 };
 
 BundleModules.propTypes = {
+  /** Adopted child className */
+  className: PropTypes.string,
+
   /* Jobs data */
   jobs: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
+};
+
+BundleModules.defaultProps = {
+  className: '',
 };

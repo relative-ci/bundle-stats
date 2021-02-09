@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
-import { Tooltip } from '../../ui';
+import { Icon } from '../../ui/icon';
+import { Tooltip } from '../../ui/tooltip';
+import { Stack } from '../../layout/stack';
+import { FlexStack } from '../../layout/flex-stack';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
 import css from './summary-item.module.css';
@@ -17,7 +20,6 @@ export const SummaryItem = ({
   loading,
   showDelta,
   showMetricDescription,
-  inline,
   ...props
 }) => {
   const { baseline, current } = data || { baseline: 0, current: 0 };
@@ -30,32 +32,25 @@ export const SummaryItem = ({
     css.root,
     className,
     css[size],
-    inline && css.inline,
     showMetricDescription && css.showMetricDescription,
     showMetricDescriptionTooltip && css.showMetricDescription,
     showDelta && css.showDelta,
   );
 
   return (
-    <Component className={rootClassName} {...props}>
-      <Tooltip
-        as="h3"
-        className={css.title}
-        title={
-          showMetricDescriptionTooltip && <p className={css.helpTooltip}>{metric.description}</p>
-        }
-      >
-        {metric.label}
-      </Tooltip>
+    <Stack as={Component} className={rootClassName} {...props}>
+      <FlexStack space="xxxsmall" className={css.header}>
+        <h3 className={css.title}>{metric.label}</h3>
+
+        {showMetricDescriptionTooltip && (
+          <Tooltip className={css.icon} title={metric.description}>
+            <Icon glyph="help" />
+          </Tooltip>
+        )}
+      </FlexStack>
 
       {!loading ? (
-        <Metric
-          className={css.currentMetric}
-          value={current}
-          formatter={metric.formatter}
-          enhanced
-          inline={inline}
-        >
+        <Metric className={css.currentMetric} value={current} formatter={metric.formatter} enhanced>
           {showDelta && (
             <Delta
               className={css.delta}
@@ -67,7 +62,7 @@ export const SummaryItem = ({
       ) : (
         <span className={cx(css.currentMetric, css.loading)} />
       )}
-    </Component>
+    </Stack>
   );
 };
 
@@ -79,7 +74,6 @@ SummaryItem.defaultProps = {
   loading: false,
   showMetricDescription: false,
   showDelta: true,
-  inline: false,
 };
 
 SummaryItem.propTypes = {
@@ -106,7 +100,4 @@ SummaryItem.propTypes = {
 
   /** Show delta */
   showDelta: PropTypes.bool,
-
-  /** Inline flag */
-  inline: PropTypes.bool,
 };

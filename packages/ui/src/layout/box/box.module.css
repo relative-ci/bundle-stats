@@ -14,7 +14,7 @@
   padding: var(--space-xxsmall);
 }
 
-.padding-xxsmall {
+.padding-xsmall {
   padding: var(--space-xsmall);
 }
 
@@ -40,4 +40,100 @@
 
 .padding-xxxlarge {
   padding: var(--space-xxxlarge);
+}
+
+/**
+ * Horizontal padding modifier
+ */
+.horizontal-padding-xxxsmall {
+  padding-left: var(--space-xxxsmall);
+  padding-right: var(--space-xxxsmall);
+}
+
+.horizontal-padding-xxsmall {
+  padding-left: var(--space-xxsmall);
+  padding-right: var(--space-xxsmall);
+}
+
+.horizontal-padding-xsmall {
+  padding-left: var(--space-xsmall);
+  padding-right: var(--space-xsmall);
+}
+
+.horizontal-padding-small {
+  padding-left: var(--space-small);
+  padding-right: var(--space-small);
+}
+
+.horizontal-padding-medium {
+  padding-left: var(--space-medium);
+  padding-right: var(--space-medium);
+}
+
+.horizontal-padding-large {
+  padding-left: var(--space-large);
+  padding-right: var(--space-large);
+}
+
+.horizontal-padding-xlarge {
+  padding-left: var(--space-xlarge);
+  padding-right: var(--space-xlarge);
+}
+
+.horizontal-padding-xxlarge {
+  padding-left: var(--space-xxlarge);
+  padding-right: var(--space-xxlarge);
+}
+
+.horizontal-padding-xxxlarge {
+  padding-left: var(--space-xxxlarge);
+  padding-right: var(--space-xxxlarge);
+}
+
+/**
+ * Vertical padding modifier
+ */
+.vertical-padding-xxxsmall {
+  padding-top: var(--space-xxxsmall);
+  padding-bottom: var(--space-xxxsmall);
+}
+
+.vertical-padding-xxsmall {
+  padding-top: var(--space-xxsmall);
+  padding-bottom: var(--space-xxsmall);
+}
+
+.vertical-padding-xsmall {
+  padding-top: var(--space-xsmall);
+  padding-bottom: var(--space-xsmall);
+}
+
+.vertical-padding-small {
+  padding-top: var(--space-small);
+  padding-bottom: var(--space-small);
+}
+
+.vertical-padding-medium {
+  padding-top: var(--space-medium);
+  padding-bottom: var(--space-medium);
+}
+
+.vertical-padding-large {
+  padding-top: var(--space-large);
+  padding-bottom: var(--space-large);
+}
+
+.vertical-padding-xlarge {
+  padding-top: var(--space-xlarge);
+  padding-bottom: var(--space-xlarge);
+}
+
+.vertical-padding-xxlarge {
+  padding-top: var(--space-xxlarge);
+  padding-bottom: var(--space-xxlarge);
+}
+
+.vertical-padding-xxxlarge {
+  padding-top: var(--space-xxxlarge);
+  padding-bottom: var(--space-xxxlarge);
 }

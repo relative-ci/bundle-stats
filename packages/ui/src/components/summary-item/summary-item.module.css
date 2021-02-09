@@ -9,59 +9,42 @@
   white-space: nowrap;
 }
 
-.currentMetric {
-  margin: 0;
-  display: block;
-  color: var(--color-heading);
-  font-size: var(--size-xlarge);
-  line-height: var(--space-medium);
-  min-height: var(--space-medium);
-  font-weight: bold;
+.icon {
+  color: var(--color-text-light);
+  transition: var(--transition-in);
 }
 
-.delta {
-  margin: 0;
-  display: block;
-  font-size: var(--size-small);
-  line-height: var(--space-small);
-  min-height: var(--space-xsmall);
+.icon:hover,
+.icon:active,
+.icon:focus {
+  color: var(--color-primary);
+  transition: var(--transition-out);
 }
 
 .helpTooltip {
   max-width: 280px;
 }
 
-/* Hover */
+.currentMetric {
+  margin: 0;
+  display: block;
+  color: var(--color-heading);
+  font-size: var(--size-large);
+  line-height: var(--space-small);
+  min-height: var(--space-small);
+  font-weight: bold;
+}
 
-/* show metric description - underline help */
-.showMetricDescription:hover .title {
-  text-decoration: underline;
-  text-decoration-style: dashed;
+.delta {
+  margin: var(--space-xxxsmall) 0 0;
+  display: block;
+  font-size: var(--size-small);
+  line-height: var(--space-small);
+  min-height: var(--space-xsmall);
 }
 
 .showDelta .currentMetric {
   min-height: calc(var(--space-medium) + var(--space-small));
-}
-
-/* Inline */
-.inline {
-  white-space: nowrap;
-}
-
-.inline .title {
-  display: inline-block;
-}
-
-.inline .currentMetric {
-  margin: 0 0 0 var(--space-xxsmall);
-  display: inline-block;
-  font-size: var(--size-small);
-  min-height: var(--space-small);
-}
-
-.inline .delta {
-  display: inline-block;
-  font-size: var(--size-small);
 }
 
 /* Loading state */
@@ -74,5 +57,6 @@
 /* Size large */
 .large .currentMetric {
   font-size: var(--size-xxxlarge);
-  font-weight: bold;
+  line-height: var(--space-medium);
+  min-height: var(--space-medium);
 }
