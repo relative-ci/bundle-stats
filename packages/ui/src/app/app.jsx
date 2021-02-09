@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { HashRouter, NavLink, Route, Switch, useLocation } from 'react-router-dom';
 
-import { COMPONENT, URLS } from '../constants';
+import { COMPONENT, METRICS_WEBPACK_ASSETS, METRICS_WEBPACK_GENERAL, METRICS_WEBPACK_MODULES, METRICS_WEBPACK_PACKAGES, URLS } from '../constants';
 import { Box } from '../layout/box';
 import { Container } from '../ui/container';
 import { DuplicatePackagesWarning } from '../components/duplicate-packages-warning';
@@ -68,7 +68,12 @@ const AppComponent = ({ footer, jobs }) => {
   return (
     <Layout jobs={jobs} footer={footer}>
       <Container className={css.summaryContainer}>
-        <Summary data={jobs[0].summary} showSummaryItemDelta={jobs.length !== 1} />
+        <Summary
+          size="large"
+          keys={METRICS_WEBPACK_GENERAL}
+          data={jobs[0].summary}
+          showSummaryItemDelta={jobs.length !== 1}
+        />
       </Container>
 
       <Container className={css.tabsContainer}>
@@ -95,14 +100,21 @@ const AppComponent = ({ footer, jobs }) => {
             path={URLS.ASSETS}
             render={({ location }) => (
               <Container>
-                <Box outline>
-                  <BundleAssets
-                    jobs={jobs}
-                    setState={bundleStatsSetState}
-                    {...bundleStatsState}
-                    key={`${location.pathname}_${location.search}`}
+                <Stack space="medium">
+                  <Summary
+                    keys={METRICS_WEBPACK_ASSETS}
+                    data={jobs[0].summary}
+                    showSummaryItemDelta={jobs.length !== 1}
                   />
-                </Box>
+                  <Box outline>
+                    <BundleAssets
+                      jobs={jobs}
+                      setState={bundleStatsSetState}
+                      {...bundleStatsState}
+                      key={`${location.pathname}_${location.search}`}
+                    />
+                  </Box>
+                </Stack>
               </Container>
             )}
           />
@@ -111,7 +123,14 @@ const AppComponent = ({ footer, jobs }) => {
             path={URLS.MODULES}
             render={() => (
               <Container>
-                <BundleModules jobs={jobs} />
+                <Stack space="medium">
+                  <Summary
+                    keys={METRICS_WEBPACK_MODULES}
+                    data={jobs[0].summary}
+                    showSummaryItemDelta={jobs.length !== 1}
+                  />
+                  <BundleModules jobs={jobs} />
+                </Stack>
               </Container>
             )}
           />
@@ -120,14 +139,21 @@ const AppComponent = ({ footer, jobs }) => {
             path={URLS.PACKAGES}
             render={({ location }) => (
               <Container>
-                <Box outline>
-                  <BundlePackages
-                    jobs={jobs}
-                    {...bundlePackagesState}
-                    setState={bundlePackagesSetState}
-                    key={`${location.pathname}_${location.search}`}
+                <Stack space="medium">
+                  <Summary
+                    keys={METRICS_WEBPACK_PACKAGES}
+                    data={jobs[0].summary}
+                    showSummaryItemDelta={jobs.length !== 1}
                   />
-                </Box>
+                  <Box outline>
+                    <BundlePackages
+                      jobs={jobs}
+                      {...bundlePackagesState}
+                      setState={bundlePackagesSetState}
+                      key={`${location.pathname}_${location.search}`}
+                    />
+                  </Box>
+                </Stack>
               </Container>
             )}
           />

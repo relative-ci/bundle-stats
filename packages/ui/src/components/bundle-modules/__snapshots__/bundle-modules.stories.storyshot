@@ -43,6 +43,7 @@ exports[`Storyshots Components/BundleModules default 1`] = `
     }
   >
     <BundleModules
+      className=""
       jobs={
         Array [
           Object {
@@ -7167,6 +7168,7 @@ exports[`Storyshots Components/BundleModules empty baseline 1`] = `
     }
   >
     <BundleModules
+      className=""
       jobs={
         Array [
           Object {
@@ -14295,6 +14297,7 @@ exports[`Storyshots Components/BundleModules multiple runs 1`] = `
     }
   >
     <BundleModules
+      className=""
       jobs={
         Array [
           Object {
@@ -28491,6 +28494,7 @@ exports[`Storyshots Components/BundleModules no modules 1`] = `
     }
   >
     <BundleModules
+      className=""
       jobs={
         Array [
           Object {
