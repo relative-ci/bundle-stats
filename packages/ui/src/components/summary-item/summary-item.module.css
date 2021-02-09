@@ -25,14 +25,13 @@
   max-width: 280px;
 }
 
-
 .currentMetric {
   margin: 0;
   display: block;
   color: var(--color-heading);
-  font-size: var(--size-xxxlarge);
-  line-height: var(--space-medium);
-  min-height: var(--space-medium);
+  font-size: var(--size-large);
+  line-height: var(--space-small);
+  min-height: var(--space-small);
   font-weight: bold;
 }
 
@@ -43,8 +42,6 @@
   line-height: var(--space-small);
   min-height: var(--space-xsmall);
 }
-
-/* Hover */
 
 .showDelta .currentMetric {
   min-height: calc(var(--space-medium) + var(--space-small));
@@ -60,5 +57,6 @@
 /* Size large */
 .large .currentMetric {
   font-size: var(--size-xxxlarge);
-  font-weight: bold;
+  line-height: var(--space-medium);
+  min-height: var(--space-medium);
 }
