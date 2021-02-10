@@ -24,13 +24,13 @@ export const extractAssets = (webpackStats) => {
     .flat();
 
   const assets = webpackAssets.reduce((aggregator, asset) => {
-    asset.name = asset.name && asset.name.split('?')[0];
+    const baseName = asset.name && asset.name.split('?')[0];
 
-    if (IGNORE_PATTERN.test(asset.name)) {
+    if (IGNORE_PATTERN.test(baseName)) {
       return aggregator;
     }
 
-    const source = getAssetName(asset.name);
+    const source = getAssetName(baseName);
     // @TODO Get an uniq id (based on url, source)
     const id = source;
 
@@ -39,7 +39,7 @@ export const extractAssets = (webpackStats) => {
     return {
       ...aggregator,
       [id]: {
-        name,
+        name: baseName,
         value: size,
         isEntry: entryItems.includes(name),
         isInitial: initialItems.includes(name),
