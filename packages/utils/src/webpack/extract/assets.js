@@ -24,6 +24,8 @@ export const extractAssets = (webpackStats) => {
     .flat();
 
   const assets = webpackAssets.reduce((aggregator, asset) => {
+    asset.name = asset.name && asset.name.split('?')[0];
+
     if (IGNORE_PATTERN.test(asset.name)) {
       return aggregator;
     }
