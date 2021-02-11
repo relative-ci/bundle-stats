@@ -125,4 +125,82 @@ describe('Webpack/extract/assets', () => {
 
     expect(actual).toEqual(expected);
   });
+
+  test('should return metrics when a query is in the file name', () => {
+    const actual = extractAssets({
+      assets: [
+        {
+          name: 'js/main.bc22113.js?test=abcd',
+          size: 100,
+        },
+        {
+          name: 'css/app.22929ab.css?test=abcd',
+          size: 100,
+        },
+        {
+          name: 'css/app.22929ab.css.map',
+          size: 100,
+        },
+        {
+          name: 'img/logo.1211a12.png?test=abcd&test2=dcba',
+          size: 10,
+        },
+        {
+          name: 'js/main.bc22113.LICENSE.txt',
+          size: 10,
+        },
+      ],
+      chunks: [
+        {
+          entry: true,
+          id: 1,
+          initial: true,
+          files: ['js/main.bc22113.js?test=abcd'],
+          names: ['main'],
+        },
+        {
+          entry: false,
+          id: 2,
+          initial: false,
+          files: ['css/app.22929ab.css?test=abcd'],
+          names: ['app'],
+        },
+      ],
+      entrypoints: {
+        main: {
+          assets: ['js/main.bc22113.js?test=abcd'],
+        },
+      },
+    });
+
+    const expected = {
+      metrics: {
+        assets: {
+          'js/main.js': {
+            name: 'js/main.bc22113.js',
+            value: 100,
+            isEntry: true,
+            isInitial: true,
+            isChunk: false,
+          },
+          'css/app.css': {
+            name: 'css/app.22929ab.css',
+            value: 100,
+            isEntry: false,
+            isInitial: false,
+            isChunk: true,
+          },
+          'img/logo.png': {
+            name: 'img/logo.1211a12.png',
+            value: 10,
+            isEntry: false,
+            isInitial: false,
+            isChunk: false,
+          },
+        },
+      },
+    };
+
+    expect(actual).toEqual(expected);
+  });
 });
