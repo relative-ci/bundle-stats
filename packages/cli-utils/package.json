@@ -35,7 +35,7 @@
     "core-js": "^3.1.4",
     "find-cache-dir": "^3.1.0",
     "fs-extra": "^9.0.0",
-    "lodash": "4.17.20"
+    "lodash": "4.17.21"
   },
   "devDependencies": {
     "@babel/cli": "7.12.17",
