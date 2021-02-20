@@ -164,7 +164,10 @@ const AppComponent = ({ footer, jobs }) => {
               <Stack space="large">
                 {duplicatePackagesInsights && (
                   <Container>
-                    <DuplicatePackagesWarning duplicatePackages={duplicatePackagesInsights.data} />
+                    <DuplicatePackagesWarning
+                      duplicatePackages={duplicatePackagesInsights.dataExt || duplicatePackagesInsights.data}
+                      duplicatePackagesCount={jobs[0].summary.webpack.duplicatePackagesCount}
+                    />
                   </Container>
                 )}
                 <Container>

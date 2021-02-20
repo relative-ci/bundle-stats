@@ -57,6 +57,12 @@ exports[`Storyshots Components/DuplicatePackagesWarning multiple duplicate packa
           ],
         }
       }
+      duplicatePackagesCount={
+        Object {
+          "baseline": 3,
+          "current": 2,
+        }
+      }
     />
   </div>
 </Router>
@@ -113,6 +119,12 @@ exports[`Storyshots Components/DuplicatePackagesWarning single duplicate package
             "package-c",
             "package-a:package-c",
           ],
+        }
+      }
+      duplicatePackagesCount={
+        Object {
+          "baseline": 0,
+          "current": 1,
         }
       }
     />
@@ -195,6 +207,12 @@ exports[`Storyshots Components/DuplicatePackagesWarning v3 multiple duplicate pa
           },
         }
       }
+      duplicatePackagesCount={
+        Object {
+          "baseline": 3,
+          "current": 2,
+        }
+      }
     />
   </div>
 </Router>
@@ -260,6 +278,12 @@ exports[`Storyshots Components/DuplicatePackagesWarning v3 single duplicate pack
             ],
             "value": 10000,
           },
+        }
+      }
+      duplicatePackagesCount={
+        Object {
+          "baseline": 2,
+          "current": 1,
         }
       }
     />

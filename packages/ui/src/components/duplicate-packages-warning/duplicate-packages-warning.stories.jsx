@@ -12,6 +12,10 @@ stories.add('single duplicate packages', () => (
     duplicatePackages={{
       'package-c': ['package-c', 'package-a:package-c'],
     }}
+    duplicatePackagesCount={{
+      current: 1,
+      baseline: 0,
+    }}
   />
 ));
 
@@ -20,6 +24,10 @@ stories.add('multiple duplicate packages', () => (
     duplicatePackages={{
       'package-c': ['package-c', 'package-a:package-c'],
       'package-d': ['package-b:package-d', 'package-c:package-d'],
+    }}
+    duplicatePackagesCount={{
+      current: 2,
+      baseline: 3,
     }}
   />
 ));
@@ -40,6 +48,10 @@ stories.add('v3 single duplicate packages', () => (
           },
         ],
       },
+    }}
+    duplicatePackagesCount={{
+      current: 1,
+      baseline: 2,
     }}
   />
 ));
@@ -73,6 +85,10 @@ stories.add('v3 multiple duplicate packages', () => (
           },
         ],
       },
+    }}
+    duplicatePackagesCount={{
+      current: 2,
+      baseline: 3,
     }}
   />
 ));

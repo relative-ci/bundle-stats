@@ -13,6 +13,10 @@
   font-size: var(--size-medium);
 }
 
+.titleDelta {
+  font-weight: normal;
+}
+
 .groups {
   margin: 0;
   padding: 0;
