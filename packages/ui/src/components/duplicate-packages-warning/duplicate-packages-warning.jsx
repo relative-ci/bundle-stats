@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import { METRIC_TYPE_FILE_SIZE, METRIC_TYPES } from '@bundle-stats/utils';
 
 import { Alert } from '../../ui';
@@ -32,7 +33,7 @@ export const DuplicatePackagesWarning = (props) => {
   });
 
   return (
-    <Alert kind="warning" className={className}>
+    <Alert kind="warning" className={cx(css.root, className)}>
       <h3 className={css.title}>
         {`Bundle contains ${entries.length} unique duplicate ${entries.length === 1 ? 'package' : 'packages'}:`}
       </h3>
@@ -48,7 +49,13 @@ export const DuplicatePackagesWarning = (props) => {
             <ul className={css.groupItems}>
               {packageData.children.map(({ name, value }) => (
                 <li key={name} className={css.item}>
-                  <span className={css.itemName}>{name}</span>
+                  <CustomComponentLink
+                    className={css.itemName}
+                    {...getBundlePackagesByNameComponentLink(name)}
+                  >
+                    {name}
+                  </CustomComponentLink>
+
                   {value && (
                     <Metric
                       className={css.itemValue}

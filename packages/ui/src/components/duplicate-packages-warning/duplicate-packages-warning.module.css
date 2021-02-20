@@ -1,3 +1,13 @@
+.root a {
+  text-decoration: none;
+}
+
+.root a:hover,
+.root a:active,
+.root a:focus {
+  text-decoration: underline;
+}
+
 .title {
   margin-bottom: var(--space-xxsmall);
   font-size: var(--size-medium);
@@ -16,13 +26,7 @@
 
 .groupTitle {
   margin: 0;
-  text-decoration: none;
-}
-
-.groupTitle:hover,
-.groupTitle:active,
-.groupTitle:focus {
-  text-decoration: underline;
+  font-weight: bold;
 }
 
 .groupItems {
@@ -32,5 +36,4 @@
 .itemValue {
   margin-left: var(--space-xxsmall);
   display: inline;
-  font-weight: bold;
 }
