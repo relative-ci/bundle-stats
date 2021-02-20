@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { METRIC_TYPE_FILE_SIZE, METRIC_TYPES } from '@bundle-stats/utils';
 
 import { Alert } from '../../ui';
 import { getBundlePackagesByNameComponentLink } from '../../component-links';
 import { ComponentLink } from '../component-link';
 import css from './duplicate-packages-warning.module.css';
+import {Metric} from '../metric';
+
+const fileSizeMetric = METRIC_TYPES[METRIC_TYPE_FILE_SIZE];
 
 export const DuplicatePackagesWarning = (props) => {
   const { className, duplicatePackages, customComponentLink: CustomComponentLink } = props;
@@ -32,20 +36,26 @@ export const DuplicatePackagesWarning = (props) => {
       <h3 className={css.title}>
         {`Bundle contains ${entries.length} unique duplicate ${entries.length === 1 ? 'package' : 'packages'}:`}
       </h3>
-      <ol className={css.packages}>
+      <ol className={css.groups}>
         {entries.map(([packageName, packageData]) => (
-          <li key={packageName} className={css.item}>
+          <li key={packageName} className={css.group}>
             <CustomComponentLink
-              className={css.itemTitle}
+              className={css.groupTitle}
               {...getBundlePackagesByNameComponentLink(packageName)}
             >
               {packageName}
             </CustomComponentLink>
-            <ul className={css.itemPackages}>
+            <ul className={css.groupItems}>
               {packageData.children.map(({ name, value }) => (
-                <li key={name}>
-                  {name}
-                  {value}
+                <li key={name} className={css.item}>
+                  <span className={css.itemName}>{name}</span>
+                  {value && (
+                    <Metric
+                      className={css.itemValue}
+                      value={value}
+                      formatter={fileSizeMetric.formatter}
+                    />
+                  )}
                 </li>
               ))}
             </ul>

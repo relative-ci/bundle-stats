@@ -1,31 +1,36 @@
 .title {
-  margin-bottom: var(--space-xxxsmall);
+  margin-bottom: var(--space-xxsmall);
   font-size: var(--size-medium);
 }
 
-.packages {
+.groups {
   margin: 0;
   padding: 0;
   font-size: var(--size-small);
 }
 
-.item {
+.group {
   margin: 0;
   list-style-position: inside;
 }
 
-.itemTitle {
+.groupTitle {
   margin: 0;
-  display: inline;
   text-decoration: none;
 }
 
-.itemTitle:hover,
-.itemTitle:active,
-.itemTitle:focus {
+.groupTitle:hover,
+.groupTitle:active,
+.groupTitle:focus {
   text-decoration: underline;
 }
 
-.itemPackages {
+.groupItems {
   margin: 0;
+}
+
+.itemValue {
+  margin-left: var(--space-xxsmall);
+  display: inline;
+  font-weight: bold;
 }

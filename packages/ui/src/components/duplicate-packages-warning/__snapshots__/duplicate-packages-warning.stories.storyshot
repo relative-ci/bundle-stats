@@ -119,3 +119,150 @@ exports[`Storyshots Components/DuplicatePackagesWarning single duplicate package
   </div>
 </Router>
 `;
+
+exports[`Storyshots Components/DuplicatePackagesWarning v3 multiple duplicate packages 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <DuplicatePackagesWarning
+      className=""
+      customComponentLink={[Function]}
+      duplicatePackages={
+        Object {
+          "package-a": Object {
+            "children": Array [
+              Object {
+                "name": "package-a",
+                "value": 5000,
+              },
+              Object {
+                "name": "package-b:package-a",
+                "value": 1000,
+              },
+            ],
+            "value": 6000,
+          },
+          "package-c": Object {
+            "children": Array [
+              Object {
+                "name": "org/package-d:package-c",
+                "value": 4000,
+              },
+              Object {
+                "name": "package-c",
+                "value": 3000,
+              },
+            ],
+            "value": 7000,
+          },
+        }
+      }
+    />
+  </div>
+</Router>
+`;
+
+exports[`Storyshots Components/DuplicatePackagesWarning v3 single duplicate packages 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <DuplicatePackagesWarning
+      className=""
+      customComponentLink={[Function]}
+      duplicatePackages={
+        Object {
+          "package-c": Object {
+            "children": Array [
+              Object {
+                "name": "package-c",
+                "value": 6000,
+              },
+              Object {
+                "name": "package-a:package-c",
+                "value": 4000,
+              },
+            ],
+            "value": 10000,
+          },
+        }
+      }
+    />
+  </div>
+</Router>
+`;
