@@ -9,7 +9,23 @@ import css from './duplicate-packages-warning.module.css';
 export const DuplicatePackagesWarning = (props) => {
   const { className, duplicatePackages, customComponentLink: CustomComponentLink } = props;
 
-  const entries = Object.entries(duplicatePackages);
+  const entries = Object.entries(duplicatePackages).map(([packageName, packageData]) => {
+    // pre v3 structure
+    if (Array.isArray(packageData)) {
+      return [
+        packageName,
+        {
+          value: null,
+          children: packageData.map((packagePath) => ({
+            name: packagePath,
+            value: null,
+          })),
+        },
+      ];
+    }
+
+    return [packageName, packageData];
+  });
 
   return (
     <Alert kind="warning" className={className}>
@@ -17,13 +33,21 @@ export const DuplicatePackagesWarning = (props) => {
         {`Bundle contains ${entries.length} unique duplicate ${entries.length === 1 ? 'package' : 'packages'}:`}
       </h3>
       <ol className={css.packages}>
-        {entries.map(([key, paths]) => (
-          <li key={key} className={css.item}>
-            <CustomComponentLink className={css.itemTitle} {...getBundlePackagesByNameComponentLink(key)}>
-              {key}
+        {entries.map(([packageName, packageData]) => (
+          <li key={packageName} className={css.item}>
+            <CustomComponentLink
+              className={css.itemTitle}
+              {...getBundlePackagesByNameComponentLink(packageName)}
+            >
+              {packageName}
             </CustomComponentLink>
             <ul className={css.itemPackages}>
-              {paths.map((path) => <li key={path}>{path}</li>)}
+              {packageData.children.map(({ name, value }) => (
+                <li key={name}>
+                  {name}
+                  {value}
+                </li>
+              ))}
             </ul>
           </li>
         ))}
@@ -35,9 +59,7 @@ export const DuplicatePackagesWarning = (props) => {
 DuplicatePackagesWarning.propTypes = {
   className: PropTypes.string,
   customComponentLink: PropTypes.elementType,
-  duplicatePackages: PropTypes.shape({
-    [PropTypes.string]: PropTypes.arrayOf(PropTypes.string),
-  }).isRequired,
+  duplicatePackages: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
 DuplicatePackagesWarning.defaultProps = {

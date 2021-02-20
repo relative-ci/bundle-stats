@@ -10,10 +10,7 @@ stories.addDecorator(getWrapperDecorator());
 stories.add('single duplicate packages', () => (
   <DuplicatePackagesWarning
     duplicatePackages={{
-      'package-c': [
-        'package-c',
-        'package-a:package-c',
-      ],
+      'package-c': ['package-c', 'package-a:package-c'],
     }}
   />
 ));
@@ -21,14 +18,8 @@ stories.add('single duplicate packages', () => (
 stories.add('multiple duplicate packages', () => (
   <DuplicatePackagesWarning
     duplicatePackages={{
-      'package-c': [
-        'package-c',
-        'package-a:package-c',
-      ],
-      'package-d': [
-        'package-b:package-d',
-        'package-c:package-d',
-      ],
+      'package-c': ['package-c', 'package-a:package-c'],
+      'package-d': ['package-b:package-d', 'package-c:package-d'],
     }}
   />
 ));
