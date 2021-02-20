@@ -45,6 +45,47 @@ exports[`Storyshots App default 1`] = `
                     "prop-types",
                   ],
                 },
+                "dataExt": Object {
+                  "balanced-match": Object {
+                    "children": Array [
+                      Object {
+                        "name": "reduce-css-calc:balanced-match",
+                        "value": 1160,
+                      },
+                      Object {
+                        "name": "reduce-function-call:balanced-match",
+                        "value": 1160,
+                      },
+                    ],
+                    "value": 2320,
+                  },
+                  "lodash.keys": Object {
+                    "children": Array [
+                      Object {
+                        "name": "convert-units:lodash.keys",
+                        "value": 1253,
+                      },
+                      Object {
+                        "name": "lodash.forown:lodash.keys",
+                        "value": 1253,
+                      },
+                    ],
+                    "value": 2506,
+                  },
+                  "prop-types": Object {
+                    "children": Array [
+                      Object {
+                        "name": "recharts:prop-types",
+                        "value": 2739,
+                      },
+                      Object {
+                        "name": "prop-types",
+                        "value": 2645,
+                      },
+                    ],
+                    "value": 5384,
+                  },
+                },
                 "type": "WARNING",
               },
             },
@@ -7116,6 +7157,47 @@ exports[`Storyshots App default 1`] = `
                     "recharts:prop-types",
                     "prop-types",
                   ],
+                },
+                "dataExt": Object {
+                  "balanced-match": Object {
+                    "children": Array [
+                      Object {
+                        "name": "reduce-css-calc:balanced-match",
+                        "value": 1160,
+                      },
+                      Object {
+                        "name": "reduce-function-call:balanced-match",
+                        "value": 1160,
+                      },
+                    ],
+                    "value": 2320,
+                  },
+                  "lodash.keys": Object {
+                    "children": Array [
+                      Object {
+                        "name": "convert-units:lodash.keys",
+                        "value": 1253,
+                      },
+                      Object {
+                        "name": "lodash.forown:lodash.keys",
+                        "value": 1253,
+                      },
+                    ],
+                    "value": 2506,
+                  },
+                  "prop-types": Object {
+                    "children": Array [
+                      Object {
+                        "name": "recharts:prop-types",
+                        "value": 2739,
+                      },
+                      Object {
+                        "name": "prop-types",
+                        "value": 2645,
+                      },
+                    ],
+                    "value": 5384,
+                  },
                 },
                 "type": "WARNING",
               },
@@ -14218,6 +14300,47 @@ exports[`Storyshots App empty baseline 1`] = `
                     "prop-types",
                   ],
                 },
+                "dataExt": Object {
+                  "balanced-match": Object {
+                    "children": Array [
+                      Object {
+                        "name": "reduce-css-calc:balanced-match",
+                        "value": 1160,
+                      },
+                      Object {
+                        "name": "reduce-function-call:balanced-match",
+                        "value": 1160,
+                      },
+                    ],
+                    "value": 2320,
+                  },
+                  "lodash.keys": Object {
+                    "children": Array [
+                      Object {
+                        "name": "convert-units:lodash.keys",
+                        "value": 1253,
+                      },
+                      Object {
+                        "name": "lodash.forown:lodash.keys",
+                        "value": 1253,
+                      },
+                    ],
+                    "value": 2506,
+                  },
+                  "prop-types": Object {
+                    "children": Array [
+                      Object {
+                        "name": "recharts:prop-types",
+                        "value": 2739,
+                      },
+                      Object {
+                        "name": "prop-types",
+                        "value": 2645,
+                      },
+                    ],
+                    "value": 5384,
+                  },
+                },
                 "type": "WARNING",
               },
             },
@@ -21309,6 +21432,47 @@ exports[`Storyshots App multiple baselines 1`] = `
                     "prop-types",
                   ],
                 },
+                "dataExt": Object {
+                  "balanced-match": Object {
+                    "children": Array [
+                      Object {
+                        "name": "reduce-css-calc:balanced-match",
+                        "value": 1160,
+                      },
+                      Object {
+                        "name": "reduce-function-call:balanced-match",
+                        "value": 1160,
+                      },
+                    ],
+                    "value": 2320,
+                  },
+                  "lodash.keys": Object {
+                    "children": Array [
+                      Object {
+                        "name": "convert-units:lodash.keys",
+                        "value": 1253,
+                      },
+                      Object {
+                        "name": "lodash.forown:lodash.keys",
+                        "value": 1253,
+                      },
+                    ],
+                    "value": 2506,
+                  },
+                  "prop-types": Object {
+                    "children": Array [
+                      Object {
+                        "name": "recharts:prop-types",
+                        "value": 2739,
+                      },
+                      Object {
+                        "name": "prop-types",
+                        "value": 2645,
+                      },
+                    ],
+                    "value": 5384,
+                  },
+                },
                 "type": "WARNING",
               },
             },
@@ -28381,6 +28545,47 @@ exports[`Storyshots App multiple baselines 1`] = `
                     "prop-types",
                   ],
                 },
+                "dataExt": Object {
+                  "balanced-match": Object {
+                    "children": Array [
+                      Object {
+                        "name": "reduce-css-calc:balanced-match",
+                        "value": 1160,
+                      },
+                      Object {
+                        "name": "reduce-function-call:balanced-match",
+                        "value": 1160,
+                      },
+                    ],
+                    "value": 2320,
+                  },
+                  "lodash.keys": Object {
+                    "children": Array [
+                      Object {
+                        "name": "convert-units:lodash.keys",
+                        "value": 1253,
+                      },
+                      Object {
+                        "name": "lodash.forown:lodash.keys",
+                        "value": 1253,
+                      },
+                    ],
+                    "value": 2506,
+                  },
+                  "prop-types": Object {
+                    "children": Array [
+                      Object {
+                        "name": "recharts:prop-types",
+                        "value": 2739,
+                      },
+                      Object {
+                        "name": "prop-types",
+                        "value": 2645,
+                      },
+                    ],
+                    "value": 5384,
+                  },
+                },
                 "type": "WARNING",
               },
             },
@@ -35445,6 +35650,21 @@ exports[`Storyshots App multiple baselines 1`] = `
                     "prop-types",
                   ],
                 },
+                "dataExt": Object {
+                  "prop-types": Object {
+                    "children": Array [
+                      Object {
+                        "name": "recharts:prop-types",
+                        "value": 956,
+                      },
+                      Object {
+                        "name": "prop-types",
+                        "value": 710,
+                      },
+                    ],
+                    "value": 1666,
+                  },
+                },
                 "type": "WARNING",
               },
             },
@@ -36868,6 +37088,47 @@ exports[`Storyshots App no baseline 1`] = `
                     "recharts:prop-types",
                     "prop-types",
                   ],
+                },
+                "dataExt": Object {
+                  "balanced-match": Object {
+                    "children": Array [
+                      Object {
+                        "name": "reduce-css-calc:balanced-match",
+                        "value": 1160,
+                      },
+                      Object {
+                        "name": "reduce-function-call:balanced-match",
+                        "value": 1160,
+                      },
+                    ],
+                    "value": 2320,
+                  },
+                  "lodash.keys": Object {
+                    "children": Array [
+                      Object {
+                        "name": "convert-units:lodash.keys",
+                        "value": 1253,
+                      },
+                      Object {
+                        "name": "lodash.forown:lodash.keys",
+                        "value": 1253,
+                      },
+                    ],
+                    "value": 2506,
+                  },
+                  "prop-types": Object {
+                    "children": Array [
+                      Object {
+                        "name": "recharts:prop-types",
+                        "value": 2739,
+                      },
+                      Object {
+                        "name": "prop-types",
+                        "value": 2645,
+                      },
+                    ],
+                    "value": 5384,
+                  },
                 },
                 "type": "WARNING",
               },
@@ -50993,6 +51254,47 @@ exports[`Storyshots App no insights 1`] = `
                     "recharts:prop-types",
                     "prop-types",
                   ],
+                },
+                "dataExt": Object {
+                  "balanced-match": Object {
+                    "children": Array [
+                      Object {
+                        "name": "reduce-css-calc:balanced-match",
+                        "value": 1160,
+                      },
+                      Object {
+                        "name": "reduce-function-call:balanced-match",
+                        "value": 1160,
+                      },
+                    ],
+                    "value": 2320,
+                  },
+                  "lodash.keys": Object {
+                    "children": Array [
+                      Object {
+                        "name": "convert-units:lodash.keys",
+                        "value": 1253,
+                      },
+                      Object {
+                        "name": "lodash.forown:lodash.keys",
+                        "value": 1253,
+                      },
+                    ],
+                    "value": 2506,
+                  },
+                  "prop-types": Object {
+                    "children": Array [
+                      Object {
+                        "name": "recharts:prop-types",
+                        "value": 2739,
+                      },
+                      Object {
+                        "name": "prop-types",
+                        "value": 2645,
+                      },
+                    ],
+                    "value": 5384,
+                  },
                 },
                 "type": "WARNING",
               },

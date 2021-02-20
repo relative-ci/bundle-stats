@@ -1,4 +1,4 @@
-import { find, get, last } from 'lodash';
+import {  get, last, orderBy } from 'lodash';
 
 import { INSIGHT_WARNING, PACKAGES_SEPARATOR } from '../../config';
 
@@ -14,6 +14,7 @@ export const extractModulesPackagesDuplicate = (webpackStats, currentExtractedDa
       ...agg,
       [name]: {
         ...existingPackageData,
+        // @TODO compute after the filtering
         value: (existingPackageData?.value || 0) + packageData.value,
         children: [
           ...(existingPackageData?.children || []),
@@ -27,7 +28,7 @@ export const extractModulesPackagesDuplicate = (webpackStats, currentExtractedDa
   }, {});
 
   // Filter and count duplicate packages
-  const { count, duplicatePackagesByName } = Object.entries(packagesByName).reduce(
+  const { count, duplicatePackages } = Object.entries(packagesByName).reduce(
     (agg, [name, data]) => {
       if (data.children.length === 1) {
         return agg;
@@ -35,13 +36,16 @@ export const extractModulesPackagesDuplicate = (webpackStats, currentExtractedDa
 
       return {
         count: agg.count + 1,
-        duplicatePackagesByName: {
-          ...agg.duplicatePackagesByName,
-          [name]: data,
-        },
+        duplicatePackages: [
+          ...(agg.duplicatePackages || []),
+          {
+            name,
+            ...data,
+          },
+        ],
       };
     },
-    { count: 0, duplicatePackagesByName: {} },
+    { count: 0, duplicatePackages: [] },
   );
 
   if (!count) {
@@ -53,6 +57,18 @@ export const extractModulesPackagesDuplicate = (webpackStats, currentExtractedDa
       },
     };
   }
+
+  // Generate v3 data structure - order packages and children desc by value
+  const duplicatePackagesByName = orderBy(duplicatePackages, 'value', 'desc').reduce(
+    (agg, { name, ...duplicatePackageData }) => ({
+      ...agg,
+      [name]: {
+        ...duplicatePackageData,
+        children: orderBy(duplicatePackageData.children, 'value', 'desc'),
+      },
+    }),
+    {},
+  );
 
   // Generate v2 data structure
   // @TODO remove in v3.0

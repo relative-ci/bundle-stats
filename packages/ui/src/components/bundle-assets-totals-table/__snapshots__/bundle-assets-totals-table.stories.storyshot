@@ -81,6 +81,47 @@ exports[`Storyshots Components/BundleAssetsTotalsTable default 1`] = `
                       "prop-types",
                     ],
                   },
+                  "dataExt": Object {
+                    "balanced-match": Object {
+                      "children": Array [
+                        Object {
+                          "name": "reduce-css-calc:balanced-match",
+                          "value": 1160,
+                        },
+                        Object {
+                          "name": "reduce-function-call:balanced-match",
+                          "value": 1160,
+                        },
+                      ],
+                      "value": 2320,
+                    },
+                    "lodash.keys": Object {
+                      "children": Array [
+                        Object {
+                          "name": "convert-units:lodash.keys",
+                          "value": 1253,
+                        },
+                        Object {
+                          "name": "lodash.forown:lodash.keys",
+                          "value": 1253,
+                        },
+                      ],
+                      "value": 2506,
+                    },
+                    "prop-types": Object {
+                      "children": Array [
+                        Object {
+                          "name": "recharts:prop-types",
+                          "value": 2739,
+                        },
+                        Object {
+                          "name": "prop-types",
+                          "value": 2645,
+                        },
+                      ],
+                      "value": 5384,
+                    },
+                  },
                   "type": "WARNING",
                 },
               },
@@ -7206,6 +7247,47 @@ exports[`Storyshots Components/BundleAssetsTotalsTable empty baseline 1`] = `
                       "recharts:prop-types",
                       "prop-types",
                     ],
+                  },
+                  "dataExt": Object {
+                    "balanced-match": Object {
+                      "children": Array [
+                        Object {
+                          "name": "reduce-css-calc:balanced-match",
+                          "value": 1160,
+                        },
+                        Object {
+                          "name": "reduce-function-call:balanced-match",
+                          "value": 1160,
+                        },
+                      ],
+                      "value": 2320,
+                    },
+                    "lodash.keys": Object {
+                      "children": Array [
+                        Object {
+                          "name": "convert-units:lodash.keys",
+                          "value": 1253,
+                        },
+                        Object {
+                          "name": "lodash.forown:lodash.keys",
+                          "value": 1253,
+                        },
+                      ],
+                      "value": 2506,
+                    },
+                    "prop-types": Object {
+                      "children": Array [
+                        Object {
+                          "name": "recharts:prop-types",
+                          "value": 2739,
+                        },
+                        Object {
+                          "name": "prop-types",
+                          "value": 2645,
+                        },
+                      ],
+                      "value": 5384,
+                    },
                   },
                   "type": "WARNING",
                 },
@@ -14337,6 +14419,47 @@ exports[`Storyshots Components/BundleAssetsTotalsTable multiple jobs 1`] = `
                       "prop-types",
                     ],
                   },
+                  "dataExt": Object {
+                    "balanced-match": Object {
+                      "children": Array [
+                        Object {
+                          "name": "reduce-css-calc:balanced-match",
+                          "value": 1160,
+                        },
+                        Object {
+                          "name": "reduce-function-call:balanced-match",
+                          "value": 1160,
+                        },
+                      ],
+                      "value": 2320,
+                    },
+                    "lodash.keys": Object {
+                      "children": Array [
+                        Object {
+                          "name": "convert-units:lodash.keys",
+                          "value": 1253,
+                        },
+                        Object {
+                          "name": "lodash.forown:lodash.keys",
+                          "value": 1253,
+                        },
+                      ],
+                      "value": 2506,
+                    },
+                    "prop-types": Object {
+                      "children": Array [
+                        Object {
+                          "name": "recharts:prop-types",
+                          "value": 2739,
+                        },
+                        Object {
+                          "name": "prop-types",
+                          "value": 2645,
+                        },
+                      ],
+                      "value": 5384,
+                    },
+                  },
                   "type": "WARNING",
                 },
               },
@@ -21408,6 +21531,47 @@ exports[`Storyshots Components/BundleAssetsTotalsTable multiple jobs 1`] = `
                       "recharts:prop-types",
                       "prop-types",
                     ],
+                  },
+                  "dataExt": Object {
+                    "balanced-match": Object {
+                      "children": Array [
+                        Object {
+                          "name": "reduce-css-calc:balanced-match",
+                          "value": 1160,
+                        },
+                        Object {
+                          "name": "reduce-function-call:balanced-match",
+                          "value": 1160,
+                        },
+                      ],
+                      "value": 2320,
+                    },
+                    "lodash.keys": Object {
+                      "children": Array [
+                        Object {
+                          "name": "convert-units:lodash.keys",
+                          "value": 1253,
+                        },
+                        Object {
+                          "name": "lodash.forown:lodash.keys",
+                          "value": 1253,
+                        },
+                      ],
+                      "value": 2506,
+                    },
+                    "prop-types": Object {
+                      "children": Array [
+                        Object {
+                          "name": "recharts:prop-types",
+                          "value": 2739,
+                        },
+                        Object {
+                          "name": "prop-types",
+                          "value": 2645,
+                        },
+                      ],
+                      "value": 5384,
+                    },
                   },
                   "type": "WARNING",
                 },

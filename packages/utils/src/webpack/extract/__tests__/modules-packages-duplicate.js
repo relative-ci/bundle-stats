@@ -22,10 +22,10 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
             value: 10,
           },
           'package-c': {
-            value: 10,
+            value: 30,
           },
           'org/package-d:package-c': {
-            value: 10,
+            value: 40,
           },
         },
       },
@@ -37,11 +37,24 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           type: 'WARNING',
           // @TODO Obsolete structure, remove in v3.0
           data: {
+            'package-c': ['org/package-d:package-c', 'package-c'],
             'package-a': ['package-a', 'package-b:package-a'],
-            'package-c': ['package-c', 'org/package-d:package-c'],
           },
           // @NOTE New extended structure for the insight
           dataExt: {
+            'package-c': {
+              value: 70,
+              children: [
+                {
+                  name: 'org/package-d:package-c',
+                  value: 40,
+                },
+                {
+                  name: 'package-c',
+                  value: 30,
+                },
+              ],
+            },
             'package-a': {
               value: 60,
               children: [
@@ -54,19 +67,6 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
                   value: 10,
                 },
               ],
-            },
-            'package-c': {
-              value: 20,
-              children: [
-                {
-                  name: 'package-c',
-                  value: 10,
-                },
-                {
-                  name: 'org/package-d:package-c',
-                  value: 10,
-                },
-              ]
             },
           },
         },

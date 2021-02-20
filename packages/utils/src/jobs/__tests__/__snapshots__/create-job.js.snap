@@ -27,6 +27,21 @@ Object {
             "package-c",
           ],
         },
+        "dataExt": Object {
+          "package-c": Object {
+            "children": Array [
+              Object {
+                "name": "package-a:package-c",
+                "value": 1000,
+              },
+              Object {
+                "name": "package-c",
+                "value": 1000,
+              },
+            ],
+            "value": 2000,
+          },
+        },
         "type": "WARNING",
       },
     },
@@ -329,6 +344,21 @@ Object {
             "package-a:package-c",
             "package-c",
           ],
+        },
+        "dataExt": Object {
+          "package-c": Object {
+            "children": Array [
+              Object {
+                "name": "package-a:package-c",
+                "value": 1000,
+              },
+              Object {
+                "name": "package-c",
+                "value": 1000,
+              },
+            ],
+            "value": 2000,
+          },
         },
         "type": "WARNING",
       },
