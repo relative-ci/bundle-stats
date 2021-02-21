@@ -1,0 +1,26 @@
+.button {
+  border: none;
+  outline: none;
+  padding: 0;
+  background: none;
+  color: inherit;
+}
+
+.popover {
+  padding: var(--space-xsmall) var(--space-small);
+  outline: none;
+  box-shadow: 0 0 var(--space-xxsmall) var(--color-shadow);
+  background: var(--color-light);
+}
+
+.arrow svg {
+  display: block;
+}
+
+.arrow :global .fill {
+  fill: var(--color-light);
+}
+
+.arrow :global .stroke {
+  fill: var(--color-light);
+}
