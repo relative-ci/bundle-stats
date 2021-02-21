@@ -26,3 +26,32 @@
 .HIGH_POSITIVE {
   color: var(--color-green-dark);
 }
+
+.inverted {
+  background-color: var(--color-gray-ultra-light);
+  color: var(--color-light);
+}
+
+.inverted.HIGH_NEGATIVE {
+  background: var(--color-red-dark);
+}
+
+.inverted.NEGATIVE {
+  background: var(--color-red-dark);
+}
+
+.inverted.LOW_NEGATIVE {
+  background: var(--color-red-light);
+}
+
+.inverted.LOW_POSITIVE {
+  background: var(--color-green-light);
+}
+
+.inverted.POSITIVE {
+  background: var(--color-green-dark);
+}
+
+.HIGH_POSITIVE {
+  background: var(--color-green-dark);
+}

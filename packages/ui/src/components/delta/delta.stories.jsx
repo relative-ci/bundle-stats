@@ -41,3 +41,11 @@ stories.add('empty', () => (
     deltaType="NO_CHANGE"
   />
 ));
+
+stories.add('inverted', () => (
+  <Delta
+    displayValue="1%"
+    deltaType="LOW_NEGATIVE"
+    inverted
+  />
+));
