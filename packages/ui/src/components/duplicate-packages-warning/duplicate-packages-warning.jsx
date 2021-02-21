@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { METRIC_TYPE_FILE_SIZE, METRIC_TYPE_NUMERIC, METRIC_TYPES, getMetricRunInfo } from '@bundle-stats/utils';
+import {
+  METRIC_TYPE_FILE_SIZE, METRIC_TYPE_NUMERIC, METRIC_TYPES, getMetricRunInfo,
+} from '@bundle-stats/utils';
 
 import { Alert } from '../../ui';
-import { getBundlePackagesByNameComponentLink } from '../../component-links';
+import { BUNDLE_PACKAGES_DUPLICATE, getBundlePackagesByNameComponentLink } from '../../component-links';
 import { ComponentLink } from '../component-link';
+import { Delta } from '../delta';
+import { Metric } from '../metric';
 import css from './duplicate-packages-warning.module.css';
-import {Metric} from '../metric';
-import {Delta} from '../delta';
 
 const fileSizeMetric = METRIC_TYPES[METRIC_TYPE_FILE_SIZE];
 const numberMetric = METRIC_TYPES[METRIC_TYPE_NUMERIC];
@@ -50,12 +52,17 @@ export const DuplicatePackagesWarning = (props) => {
       <h3 className={css.title}>
         {`Bundle contains`}
         {` `}
-        {metricRunInfo.value}
-        <sup className={css.titleDelta}>
-          (<Delta displayValue={metricRunInfo.displayDelta} deltaType={metricRunInfo.deltaType} />)
-        </sup>
-        {` `}
-        {`duplicate ${metricRunInfo.value === 1 ? 'package' : 'packages'}:`}
+        <ComponentLink {...BUNDLE_PACKAGES_DUPLICATE}>
+          {metricRunInfo.value}
+          <Delta
+            className={css.titleDelta}
+            inverted
+            displayValue={metricRunInfo.displayDelta}
+            deltaType={metricRunInfo.deltaType}
+          />
+          {` `}
+          {`duplicate ${metricRunInfo.value === 1 ? 'package' : 'packages'}:`}
+        </ComponentLink>
       </h3>
       <ol className={css.groups}>
         {entries.map(([packageName, packageData]) => (
