@@ -15,3 +15,13 @@
   content: ' ↳ ';
   opacity: 0.6;
 }
+
+.packagePopoverTitle {
+  margin-bottom: var(--space-xxxsmall);
+}
+
+.packagePopoverList {
+  margin: 0;
+  padding: 0;
+  list-style: inside;
+}

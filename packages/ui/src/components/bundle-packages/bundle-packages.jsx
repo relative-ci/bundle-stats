@@ -6,20 +6,49 @@ import { PACKAGES_SEPARATOR } from '@bundle-stats/utils';
 import { PACKAGE_FILTERS } from '../../constants';
 import { EmptySet } from '../../ui/empty-set';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
+import { Popover } from '../../ui/popover';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Toolbar } from '../../ui/toolbar';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
 import css from './bundle-packages.module.css';
 
+const getPopoverContent = (packageName) => (
+  <div className={css.packagePopover}>
+    <h4 className={css.packagePopoverTitle}>{packageName}</h4>
+    <ul className={css.packagePopoverList}>
+      <li className={css.packagePopoverItem}>
+        <a href={`https://www.npmjs.com/package/${packageName}`} target="_blank" rel="noreferrer">npmjs.com</a>
+      </li>
+      <li className={css.packagePopoverItem}>
+        <a
+          href={`https://bundlephobia.com/result?p=${packageName}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          bundlephobia.com
+        </a>
+      </li>
+    </ul>
+  </div>
+);
+
 const renderRowHeader = (item) => {
   const packages = item.label.split(PACKAGES_SEPARATOR);
 
   return (
     <>
-      {packages.map((packageName) => (
-        <span className={css.packageName}>{packageName}</span>
-      ))}
+      {packages.map((packageName, index) => {
+        if (index < packages.length - 1) {
+          return <span className={css.packageName}>{packageName}</span>;
+        }
+
+        return (
+          <Popover className={css.packageName} content={getPopoverContent(packageName)}>
+            {packageName}
+          </Popover>
+        );
+      })}
     </>
   );
 }
