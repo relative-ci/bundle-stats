@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { PACKAGES_SEPARATOR } from '@bundle-stats/utils';
 
 import { PACKAGE_FILTERS } from '../../constants';
 import { EmptySet } from '../../ui/empty-set';
@@ -10,6 +11,18 @@ import { Toolbar } from '../../ui/toolbar';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
 import css from './bundle-packages.module.css';
+
+const renderRowHeader = (item) => {
+  const packages = item.label.split(PACKAGES_SEPARATOR);
+
+  return (
+    <>
+      {packages.map((packageName) => (
+        <span className={css.packageName}>{packageName}</span>
+      ))}
+    </>
+  );
+}
 
 export const BundlePackages = (props) => {
   const {
@@ -77,7 +90,13 @@ export const BundlePackages = (props) => {
         />
       </Toolbar>
       <main>
-        <MetricsTable runs={jobs} items={items} emptyMessage={emptyMessage} showHeaderSum />
+        <MetricsTable
+          runs={jobs}
+          items={items}
+          emptyMessage={emptyMessage}
+          renderRowHeader={renderRowHeader}
+          showHeaderSum
+        />
       </main>
     </section>
   );

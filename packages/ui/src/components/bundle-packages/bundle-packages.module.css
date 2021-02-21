@@ -6,3 +6,12 @@
   width: 100%;
   max-width: 360px;
 }
+
+.packageName {
+  display: block;
+}
+
+.packageName + .packageName::before {
+  content: ' ↳ ';
+  opacity: 0.6;
+}
