@@ -20,6 +20,7 @@ const DEFAULT_OPTIONS = {
   html: true,
   json: false,
   outDir: '',
+  silent: false,
   stats: {
     context: process.cwd(),
     assets: true,
@@ -65,7 +66,7 @@ const generateReports = async (compilation, options) => {
     if (compare) {
       baselineStats = await readBaseline();
       baselineStats = filter(baselineStats);
-      logger.info(`Read baseline from ${baselineFilepath}`);
+      if (!options.silent) logger.info(`Read baseline from ${baselineFilepath}`);
     }
   } catch (err) {
     logger.warn(TEXT.PLUGIN_BASELINE_MISSING_WARN);
@@ -86,12 +87,12 @@ const generateReports = async (compilation, options) => {
     // eslint-disable-next-line no-param-reassign
     newAssets[baselineFilepath] = JSON.stringify(data);
 
-    logger.info(`Write baseline data to ${baselineFilepath}`);
+    if (!options.silent) logger.info(`Write baseline data to ${baselineFilepath}`);
   }
 
   const info = getReportInfo(report);
 
-  if (info) {
+  if (info && !options.silent) {
     logger.info(info.text);
   }
 
