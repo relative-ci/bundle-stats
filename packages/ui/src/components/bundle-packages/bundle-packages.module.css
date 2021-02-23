@@ -32,12 +32,15 @@
   opacity: 0.6;
 }
 
+.packagePopover {
+  min-width: 240px;
+}
+
 .packagePopoverTitle {
   margin-bottom: var(--space-xxxsmall);
 }
 
 .packagePopoverList {
-  margin: 0;
   padding: 0;
   list-style: inside;
 }
