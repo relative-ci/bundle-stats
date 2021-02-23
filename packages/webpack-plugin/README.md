@@ -63,6 +63,7 @@ module.exports = {
 - `html` - output html report (default `true`).
 - `json` - output json report (default `false`).
 - `outDir` - output directory relative to webpack `output.path` (default `''`).
+- `silent` - stop logging info and only log warning and error (default `false`).
 - `stats` - [Webpack stats](https://webpack.js.org/configuration/stats) options
   default:
   ```js
