@@ -45,6 +45,7 @@ const renderRowHeader = (item) => {
 
         return (
           <Popover className={css.packageName} content={getPopoverContent(packageName)}>
+            {item.duplicate && <span className={css.duplicate} title="Duplicate package">D</span>}
             {packageName}
           </Popover>
         );
