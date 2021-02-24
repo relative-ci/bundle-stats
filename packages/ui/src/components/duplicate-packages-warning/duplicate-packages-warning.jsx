@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { METRIC_TYPE_NUMERIC, METRIC_TYPES, getMetricRunInfo } from '@bundle-stats/utils';
+import { BUNDLE_PACKAGES_DUPLICATE, METRIC_TYPE_NUMERIC, METRIC_TYPES, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { Alert } from '../../ui';
-import { BUNDLE_PACKAGES_DUPLICATE } from '../../component-links';
 import { ComponentLink } from '../component-link';
 import { Delta } from '../delta';
 import css from './duplicate-packages-warning.module.css';

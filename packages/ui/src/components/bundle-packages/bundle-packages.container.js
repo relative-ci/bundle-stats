@@ -1,8 +1,8 @@
 import { compose, withProps } from 'recompose';
 import { get } from 'lodash';
+import { PACKAGE_FILTERS } from '@bundle-stats/utils';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
-import { PACKAGE_FILTERS } from '../../constants';
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilteredItems } from '../../hocs/with-filtered-items';
 import { withSearch } from '../../hocs/with-search';

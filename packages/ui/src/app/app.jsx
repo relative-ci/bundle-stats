@@ -1,8 +1,15 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { HashRouter, NavLink, Route, Switch, useLocation } from 'react-router-dom';
+import { COMPONENT } from '@bundle-stats/utils';
 
-import { COMPONENT, METRICS_WEBPACK_ASSETS, METRICS_WEBPACK_GENERAL, METRICS_WEBPACK_MODULES, METRICS_WEBPACK_PACKAGES, URLS } from '../constants';
+import {
+  METRICS_WEBPACK_ASSETS,
+  METRICS_WEBPACK_GENERAL,
+  METRICS_WEBPACK_MODULES,
+  METRICS_WEBPACK_PACKAGES,
+  URLS,
+} from '../constants';
 import { Box } from '../layout/box';
 import { Container } from '../ui/container';
 import { DuplicatePackagesWarning } from '../components/duplicate-packages-warning';

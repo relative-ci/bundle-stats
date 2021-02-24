@@ -1,10 +1,8 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { PACKAGES_SEPARATOR } from '@bundle-stats/utils';
+import { PACKAGE_FILTERS, PACKAGES_SEPARATOR, getBundlePackagesByNameComponentLink } from '@bundle-stats/utils';
 
-import { PACKAGE_FILTERS } from '../../constants';
-import { getBundlePackagesByNameComponentLink } from '../../component-links';
 import { Stack } from '../../layout/stack';
 import { EmptySet } from '../../ui/empty-set';
 import { FiltersDropdown } from '../../ui/filters-dropdown';

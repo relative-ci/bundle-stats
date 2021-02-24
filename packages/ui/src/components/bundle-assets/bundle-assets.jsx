@@ -2,9 +2,8 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get, map } from 'lodash';
-import { FILE_TYPE_LABELS } from '@bundle-stats/utils';
+import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, FILE_TYPE_LABELS } from '@bundle-stats/utils';
 
-import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS } from '../../constants';
 import { FileName } from '../../ui/file-name';
 import { Tooltip } from '../../ui/tooltip';
 import { FiltersDropdown } from '../../ui/filters-dropdown';

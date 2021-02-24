@@ -1,3 +1,4 @@
+export * from './component-links';
 export * from './file-types';
 export * from './insights';
 export * from './metrics';
