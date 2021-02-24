@@ -1,4 +1,4 @@
-import {  get, last, orderBy } from 'lodash';
+import {  get, last, map, orderBy, sum } from 'lodash';
 
 import { INSIGHT_WARNING, PACKAGES_SEPARATOR } from '../../config';
 
@@ -14,8 +14,6 @@ export const extractModulesPackagesDuplicate = (webpackStats, currentExtractedDa
       ...agg,
       [name]: {
         ...existingPackageData,
-        // @TODO compute after the filtering
-        value: (existingPackageData?.value || 0) + packageData.value,
         children: [
           ...(existingPackageData?.children || []),
           {
@@ -27,7 +25,7 @@ export const extractModulesPackagesDuplicate = (webpackStats, currentExtractedDa
     };
   }, {});
 
-  // Filter and count duplicate packages
+  // Filter, sum and count duplicate packages
   const { count, duplicatePackages } = Object.entries(packagesByName).reduce(
     (agg, [name, data]) => {
       if (data.children.length === 1) {
@@ -40,6 +38,7 @@ export const extractModulesPackagesDuplicate = (webpackStats, currentExtractedDa
           ...(agg.duplicatePackages || []),
           {
             name,
+            value: sum(map(data.children, 'value')),
             ...data,
           },
         ],
@@ -58,7 +57,6 @@ export const extractModulesPackagesDuplicate = (webpackStats, currentExtractedDa
     };
   }
 
-  // Generate v3 data structure - order packages and children desc by value
   const duplicatePackagesByName = orderBy(duplicatePackages, 'value', 'desc').reduce(
     (agg, { name, ...duplicatePackageData }) => ({
       ...agg,
@@ -85,7 +83,6 @@ export const extractModulesPackagesDuplicate = (webpackStats, currentExtractedDa
       duplicatePackages: {
         type: INSIGHT_WARNING,
         data,
-        dataExt: duplicatePackagesByName,
       },
     },
     metrics: {

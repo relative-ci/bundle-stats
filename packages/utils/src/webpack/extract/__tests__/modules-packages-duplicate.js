@@ -40,35 +40,6 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
             'package-c': ['org/package-d:package-c', 'package-c'],
             'package-a': ['package-a', 'package-b:package-a'],
           },
-          // @NOTE New extended structure for the insight
-          dataExt: {
-            'package-c': {
-              value: 70,
-              children: [
-                {
-                  name: 'org/package-d:package-c',
-                  value: 40,
-                },
-                {
-                  name: 'package-c',
-                  value: 30,
-                },
-              ],
-            },
-            'package-a': {
-              value: 60,
-              children: [
-                {
-                  name: 'package-a',
-                  value: 50,
-                },
-                {
-                  name: 'package-b:package-a',
-                  value: 10,
-                },
-              ],
-            },
-          },
         },
       },
       metrics: {

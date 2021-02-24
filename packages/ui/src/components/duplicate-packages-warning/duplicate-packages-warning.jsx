@@ -25,7 +25,7 @@ export const DuplicatePackagesWarning = (props) => {
       <h3 className={css.title}>
         {`Bundle contains`}
         {` `}
-        <ComponentLink {...BUNDLE_PACKAGES_DUPLICATE}>
+        <CustomComponentLink {...BUNDLE_PACKAGES_DUPLICATE}>
           {metricRunInfo.value}
           <Delta
             className={css.titleDelta}
@@ -35,7 +35,7 @@ export const DuplicatePackagesWarning = (props) => {
           />
           {` `}
           {`duplicate ${metricRunInfo.value === 1 ? 'package' : 'packages'}.`}
-        </ComponentLink>
+        </CustomComponentLink>
       </h3>
     </Alert>
   );
