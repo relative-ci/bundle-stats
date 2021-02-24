@@ -1,13 +1,12 @@
 import React from 'react';
 import { merge, set } from 'lodash';
 import { storiesOf } from '@storybook/react';
-import { createJobs } from '@bundle-stats/utils';
+import { PACKAGE_FILTERS, createJobs } from '@bundle-stats/utils';
 
 import baselineStats from '../../../__mocks__/webpack-stats.baseline.json';
 import currentStats from '../../../__mocks__/webpack-stats.current.json';
 import { getWrapperDecorator } from '../../stories';
 import { BundlePackages } from '.';
-import {PACKAGE_FILTERS} from '../../constants';
 
 const JOBS = createJobs([
   { webpack: currentStats },

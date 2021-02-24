@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { FILE_TYPE_JS, createJobs } from '@bundle-stats/utils';
+import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, FILE_TYPE_JS, createJobs } from '@bundle-stats/utils';
 import { merge, set } from 'lodash';
 
 import baselineStats from '../../../__mocks__/webpack-stats.baseline.json';
 import currentStats from '../../../__mocks__/webpack-stats.current.json';
-import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS } from '../../constants';
 import { getWrapperDecorator } from '../../stories';
 import { BundleAssets } from '.';
 

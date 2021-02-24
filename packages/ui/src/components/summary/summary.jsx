@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get } from 'lodash';
+import { METRIC_COMPONENT_LINKS } from '@bundle-stats/utils';
 
 import { METRICS_WEBPACK_GENERAL } from '../../constants';
-import { METRIC_COMPONENT_LINKS } from '../../component-links';
 import { Box } from '../../layout/box';
 import { FlexStack } from '../../layout/flex-stack';
 import { ComponentLink } from '../component-link';

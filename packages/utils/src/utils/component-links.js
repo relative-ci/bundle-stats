@@ -1,6 +1,6 @@
 import { template } from 'lodash';
-import { FILE_TYPE_CSS, FILE_TYPE_JS } from '@bundle-stats/utils/lib-esm/config/file-types';
 
+import { FILE_TYPES, FILE_TYPE_CSS, FILE_TYPE_JS } from '../config/file-types';
 import {
   ASSET_ENTRY_TYPE,
   ASSET_FILE_TYPE,
@@ -8,9 +8,26 @@ import {
   COMPONENT,
   PACKAGE_FILTERS,
   SECTIONS,
-} from './constants';
-import { getAssetEntryTypeFilters, getAssetFileTypeFilters } from './utils';
-import I18N from './i18n';
+} from '../config/component-links';
+import I18N from '../i18n';
+
+export const getAssetFileTypeFilters = (value = true) =>
+  FILE_TYPES.reduce(
+    (agg, fileTypeFilter) => ({
+      ...agg,
+      [`${ASSET_FILE_TYPE}.${fileTypeFilter}`]: value,
+    }),
+    {},
+  );
+
+export const getAssetEntryTypeFilters = (value = true) =>
+  [ASSET_FILTERS.ENTRY, ASSET_FILTERS.INITIAL, ASSET_FILTERS.CHUNK, ASSET_FILTERS.ASSET].reduce(
+    (agg, entryTypeFilter) => ({
+      ...agg,
+      [`${ASSET_ENTRY_TYPE}.${entryTypeFilter}`]: value,
+    }),
+    {},
+  );
 
 export const TOTALS = {
   section: SECTIONS.TOTALS,
