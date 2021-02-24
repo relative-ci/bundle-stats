@@ -5,7 +5,7 @@
 .root a:hover,
 .root a:active,
 .root a:focus {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .title {
@@ -18,29 +18,4 @@
   padding: 1px 2px;
   vertical-align: super;
   font-size: 9px;
-}
-
-.groups {
-  margin: 0;
-  padding: 0;
-  font-size: var(--size-small);
-}
-
-.group {
-  margin: 0;
-  list-style-position: inside;
-}
-
-.groupTitle {
-  margin: 0;
-  font-weight: bold;
-}
-
-.groupItems {
-  margin: 0;
-}
-
-.itemValue {
-  margin-left: var(--space-xxsmall);
-  display: inline;
 }
