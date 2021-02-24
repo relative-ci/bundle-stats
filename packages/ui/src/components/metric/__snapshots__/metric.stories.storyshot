@@ -110,6 +110,7 @@ exports[`Storyshots Components/Metric modifier: anchored 1`] = `
         className=""
         deltaType="POSITIVE"
         displayValue="+10%"
+        inverted={false}
       />
     </Metric>
   </div>
@@ -171,6 +172,7 @@ exports[`Storyshots Components/Metric modifier: delta 1`] = `
         className=""
         deltaType="POSITIVE"
         displayValue="+10%"
+        inverted={false}
       />
     </Metric>
   </div>
@@ -342,6 +344,7 @@ exports[`Storyshots Components/Metric modifier: inline 1`] = `
         className=""
         deltaType="POSITIVE"
         displayValue="+10%"
+        inverted={false}
       />
     </Metric>
   </div>

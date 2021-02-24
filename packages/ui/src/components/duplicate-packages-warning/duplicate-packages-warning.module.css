@@ -1,31 +1,21 @@
-.title {
-  margin-bottom: var(--space-xxxsmall);
-  font-size: var(--size-medium);
-}
-
-.packages {
-  margin: 0;
-  padding: 0;
-  font-size: var(--size-small);
-}
-
-.item {
-  margin: 0;
-  list-style-position: inside;
-}
-
-.itemTitle {
-  margin: 0;
-  display: inline;
+.root a {
   text-decoration: none;
 }
 
-.itemTitle:hover,
-.itemTitle:active,
-.itemTitle:focus {
-  text-decoration: underline;
+.root a:hover,
+.root a:active,
+.root a:focus {
+  text-decoration: none;
 }
 
-.itemPackages {
-  margin: 0;
+.title {
+  margin-bottom: var(--space-xxsmall);
+  font-size: var(--size-medium);
+}
+
+.titleDelta {
+  margin-left: var(--space-xxxsmall);
+  padding: 1px 2px;
+  vertical-align: super;
+  font-size: 9px;
 }

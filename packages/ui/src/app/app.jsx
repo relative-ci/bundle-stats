@@ -62,8 +62,10 @@ const AppComponent = ({ footer, jobs }) => {
     );
   }
 
-  const insights = jobs && jobs[0] && jobs[0].insights;
-  const duplicatePackagesInsights = insights?.webpack?.duplicatePackages;
+  const { duplicatePackagesCount } = jobs[0].summary.webpack;
+  const duplicatePackagesInsights = Boolean(
+    duplicatePackagesCount.current || duplicatePackagesCount.baseline,
+  );
 
   return (
     <Layout jobs={jobs} footer={footer}>
@@ -164,7 +166,7 @@ const AppComponent = ({ footer, jobs }) => {
               <Stack space="large">
                 {duplicatePackagesInsights && (
                   <Container>
-                    <DuplicatePackagesWarning duplicatePackages={duplicatePackagesInsights.data} />
+                    <DuplicatePackagesWarning duplicatePackagesCount={duplicatePackagesCount} />
                   </Container>
                 )}
                 <Container>
