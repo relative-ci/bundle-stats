@@ -22,7 +22,21 @@
 }
 
 .helpTooltip {
-  max-width: 280px;
+  font-size: var(--size-small);
+}
+
+.readMoreBtn {
+  padding: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.readMoreBtn:hover,
+.readMoreBtn:active,
+.readMoreBtn:focus {
+  color: var(--color-primary-dark);
+  text-decoration: none;
 }
 
 .currentMetric {

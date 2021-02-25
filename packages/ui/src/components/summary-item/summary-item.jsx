@@ -4,12 +4,44 @@ import cx from 'classnames';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { Icon } from '../../ui/icon';
-import { Tooltip } from '../../ui/tooltip';
+import { Popover } from '../../ui/popover';
 import { Stack } from '../../layout/stack';
 import { FlexStack } from '../../layout/flex-stack';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
 import css from './summary-item.module.css';
+
+const MetricInfo = ({ description, url }) => {
+  const readMoreOnClick = () => {
+    window.open(url);
+  };
+
+  return (
+    <Stack space="xxxsmall" className={css.helpTooltip}>
+      <p>{description}</p>
+      {url && (
+        <p>
+          <button
+            type="button"
+            className={cx('ui-button ui-button--clear', css.readMoreBtn)}
+            onClick={readMoreOnClick}
+          >
+            Read more
+          </button>
+        </p>
+      )}
+    </Stack>
+  );
+};
+
+MetricInfo.propTypes = {
+  description: PropTypes.string.isRequired,
+  url: PropTypes.string,
+};
+
+MetricInfo.defaultProps = {
+  url: '',
+};
 
 export const SummaryItem = ({
   className,
@@ -43,9 +75,12 @@ export const SummaryItem = ({
         <h3 className={css.title}>{metric.label}</h3>
 
         {showMetricDescriptionTooltip && (
-          <Tooltip className={css.icon} title={metric.description}>
+          <Popover
+            className={css.icon}
+            content={<MetricInfo {...metric} />}
+          >
             <Icon glyph="help" />
-          </Tooltip>
+          </Popover>
         )}
       </FlexStack>
 
