@@ -63,6 +63,7 @@ exports[`Storyshots UI/Popover default 1`] = `
           className="button"
           hide={[Function]}
           modal={false}
+          onMouseEnter={[Function]}
           place={[Function]}
           placement="top"
           setAnimated={[Function]}
@@ -123,7 +124,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                 id="id-test"
                 role="dialog"
                 style="display: none;"
-                tabindex="-1"
+                tabindex="0"
               >
                 <div
                   class="arrow"
@@ -144,6 +145,25 @@ exports[`Storyshots UI/Popover default 1`] = `
                   </svg>
                 </div>
                 View job #100
+                <button
+                  class="root closeBtn"
+                  type="button"
+                >
+                  <svg
+                    class="icon"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    />
+                  </svg>
+                </button>
               </div>,
             }
           }
@@ -176,6 +196,7 @@ exports[`Storyshots UI/Popover default 1`] = `
             onKeyUp={[Function]}
             onMouseDown={[Function]}
             onMouseDownCapture={[Function]}
+            onMouseEnter={[Function]}
             type="button"
           >
             Job #100
@@ -196,6 +217,7 @@ exports[`Storyshots UI/Popover default 1`] = `
           setVisible={[Function]}
           show={[Function]}
           stopAnimation={[Function]}
+          tabIndex={0}
           toggle={[Function]}
           unstable_arrowRef={
             Object {
@@ -248,7 +270,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                 id="id-test"
                 role="dialog"
                 style="display: none;"
-                tabindex="-1"
+                tabindex="0"
               >
                 <div
                   class="arrow"
@@ -269,6 +291,25 @@ exports[`Storyshots UI/Popover default 1`] = `
                   </svg>
                 </div>
                 View job #100
+                <button
+                  class="root closeBtn"
+                  type="button"
+                >
+                  <svg
+                    class="icon"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    />
+                  </svg>
+                </button>
               </div>,
             }
           }
@@ -304,7 +345,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                 "display": "none",
               }
             }
-            tabIndex={-1}
+            tabIndex={0}
           >
             <ForwardRef(PopoverArrow)
               animated={false}
@@ -373,7 +414,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                     id="id-test"
                     role="dialog"
                     style="display: none;"
-                    tabindex="-1"
+                    tabindex="0"
                   >
                     <div
                       class="arrow"
@@ -394,6 +435,25 @@ exports[`Storyshots UI/Popover default 1`] = `
                       </svg>
                     </div>
                     View job #100
+                    <button
+                      class="root closeBtn"
+                      type="button"
+                    >
+                      <svg
+                        class="icon"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        />
+                        <path
+                          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                        />
+                      </svg>
+                    </button>
                   </div>,
                 }
               }
@@ -446,6 +506,41 @@ exports[`Storyshots UI/Popover default 1`] = `
               </div>
             </ForwardRef(PopoverArrow)>
             View job #100
+            <Icon
+              as="button"
+              className="closeBtn"
+              glyph="close"
+              onClick={[Function]}
+              type="button"
+            >
+              <button
+                className="root closeBtn"
+                onClick={[Function]}
+                type="button"
+              >
+                <CloseIcon
+                  className="icon"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <svg
+                    className="icon"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    />
+                  </svg>
+                </CloseIcon>
+              </button>
+            </Icon>
           </div>
         </ForwardRef(Popover)>
       </Popover>

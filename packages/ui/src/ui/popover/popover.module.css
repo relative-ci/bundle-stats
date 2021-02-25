@@ -3,11 +3,11 @@
   outline: none;
   padding: 0;
   background: none;
-  color: inherit;
 }
 
 .popover {
-  padding: var(--space-xsmall) var(--space-small);
+  padding: var(--space-xsmall) var(--space-medium) var(--space-xsmall) var(--space-small);
+  max-width: 320px;
   outline: none;
   box-shadow: 0 0 var(--space-xxsmall) var(--color-shadow);
   background: var(--color-light);
@@ -23,4 +23,21 @@
 
 .arrow :global .stroke {
   fill: var(--color-light);
+}
+
+.closeBtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: var(--space-xxxsmall);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-light);
+}
+
+.closeBtn:hover,
+.closeBtn:active,
+.closeBtn:focus {
+  color: var(--color-text);
 }
