@@ -214,3 +214,22 @@ stories.add('default', () => (
 stories.add('multiple runs', () => (
   <MetricsTable runs={RUNS} items={ITEMS_MULTIPLE_RUNS} />
 ));
+
+stories.add('with header rows', () => (
+  <MetricsTable
+    runs={RUNS}
+    items={ITEMS_MULTIPLE_RUNS}
+    headerRows={[
+      [
+        'Metric',
+        {
+          children: 'Value',
+          colSpan: RUNS.length,
+          style: {
+            textAlign: 'center'
+          }
+        }
+      ]
+    ]}
+  />
+));
