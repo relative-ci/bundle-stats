@@ -1,4 +1,7 @@
 {
   "appName": "RelativeCI",
-  "siteUrl": "https://relative-ci.com"
+  "siteUrl": "https://relative-ci.com",
+  "documentation" : {
+    "packages": "https://relative-ci.com/documentation/metrics-and-data#packages"
+  }
 }

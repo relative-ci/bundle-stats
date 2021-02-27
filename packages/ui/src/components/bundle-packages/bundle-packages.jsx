@@ -3,9 +3,13 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { PACKAGE_FILTERS, PACKAGES_SEPARATOR, getBundlePackagesByNameComponentLink } from '@bundle-stats/utils';
 
+import config from '../../config.json';
+import I18N from '../../i18n';
 import { Stack } from '../../layout/stack';
+import { FlexStack } from '../../layout/flex-stack';
 import { EmptySet } from '../../ui/empty-set';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
+import { Icon } from '../../ui/icon';
 import { Popover } from '../../ui/popover';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Toolbar } from '../../ui/toolbar';
@@ -41,6 +45,33 @@ const getPopoverContent = ({ packageName, duplicate, CustomComponentLink }) => (
     </div>
   </Stack>
 );
+
+const Title = () => {
+  return (
+    <FlexStack space="xxxsmall" className={css.title}>
+      <span>{I18N.PACKAGES}</span>
+      <Popover
+        content={(
+          <Stack space="xxxsmall" className={css.titlePopover}>
+            <p>{I18N.PACKAGES_INFO}</p>
+            <p>
+              <a
+                href={config.documentation.packages}
+                className={css.titlePopoverReadMore}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {I18N.READ_MORE}
+              </a>
+            </p>
+          </Stack>
+        )}
+      >
+        <Icon glyph="help" />
+      </Popover>
+    </FlexStack>
+  );
+};
 
 export const BundlePackages = (props) => {
   const {
@@ -146,6 +177,7 @@ export const BundlePackages = (props) => {
           emptyMessage={emptyMessage}
           renderRowHeader={renderRowHeader}
           showHeaderSum
+          title={<Title />}
         />
       </main>
     </section>
