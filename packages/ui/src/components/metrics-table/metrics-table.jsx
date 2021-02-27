@@ -45,10 +45,10 @@ const getHeaderCell = (items, showHeaderSum) => (run, index, runs) => {
   };
 };
 
-const getHeaders = (runs, items, showHeaderSum) => [
+const getHeaders = (runs, items, showHeaderSum, title) => [
   // Metric name column - one empty strying to render the column
   {
-    children: ' ',
+    children: title || ' ',
     className: styles.metricName,
   },
 
@@ -97,10 +97,11 @@ export const MetricsTable = ({
   emptyMessage,
   showHeaderSum,
   headerRows,
+  title,
 }) => (
   <Table
     className={cx(styles.root, className, runs.length > 1 && styles.multipleRuns)}
-    headers={[...headerRows, getHeaders(runs, items, showHeaderSum)]}
+    headers={[...headerRows, getHeaders(runs, items, showHeaderSum, title)]}
     rows={getRows(runs, items, renderRowHeader)}
     emptyMessage={emptyMessage}
   />
@@ -112,6 +113,7 @@ MetricsTable.defaultProps = {
   emptyMessage: undefined,
   showHeaderSum: false,
   headerRows: [],
+  title: '',
 };
 
 MetricsTable.propTypes = {
@@ -146,4 +148,5 @@ MetricsTable.propTypes = {
       ]),
     ),
   ),
+  title: PropTypes.element,
 };

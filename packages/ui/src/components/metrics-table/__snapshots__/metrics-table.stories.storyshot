@@ -119,6 +119,7 @@ exports[`Storyshots Components/MetricsTable default 1`] = `
         ]
       }
       showHeaderSum={false}
+      title=""
     />
   </div>
 </Router>
@@ -310,6 +311,7 @@ exports[`Storyshots Components/MetricsTable multiple runs 1`] = `
         ]
       }
       showHeaderSum={false}
+      title=""
     />
   </div>
 </Router>
@@ -514,6 +516,7 @@ exports[`Storyshots Components/MetricsTable with header rows 1`] = `
         ]
       }
       showHeaderSum={false}
+      title=""
     />
   </div>
 </Router>
