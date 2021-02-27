@@ -1,5 +1,6 @@
 import { compose, withProps } from 'recompose';
 import { get } from 'lodash';
+import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilteredItems } from '../../hocs/with-filtered-items';
@@ -9,7 +10,7 @@ import {
   SORT_BY_SIZE,
   SORT_BY_DELTA,
   SORT_BY,
-} from './bundle-chunk-modules.constants';
+} from './bundle-modules.constants';
 
 const getCustomSort = (sortBy) => (item) => {
   if (sortBy === SORT_BY_NAME) {
@@ -36,12 +37,17 @@ const getFilterByChanged = (filters) => (row) => {
 };
 
 export default compose(
-  withProps(({ runs, items }) => ({
-    defaultFilters: { changed: true },
-    initialFilters: { changed: runs && runs.length > 1 },
-    allEntriesFilters: { changed: false },
-    totalRowCount: items.length,
-  })),
+  withProps(({ jobs }) => {
+    const items = webpack.compareBySection.allModules(jobs);
+
+    return {
+      defaultFilters: { changed: jobs?.length > 1 },
+      initialFilters: { changed: jobs?.length > 1 },
+      allEntriesFilters: { changed: false },
+      totalRowCount: items.length,
+      items,
+    };
+  }),
   withSearch(),
   withFilteredItems(getFilterByChanged),
   withCustomSort({ sortItems: SORT_BY, getCustomSort }),

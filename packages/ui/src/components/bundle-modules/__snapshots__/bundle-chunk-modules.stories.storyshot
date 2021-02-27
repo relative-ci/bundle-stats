@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components/BundleModules default 1`] = `
+exports[`Storyshots Components/BundleChunkModules default 1`] = `
 <Router
   history={
     Object {
@@ -7124,7 +7124,7 @@ exports[`Storyshots Components/BundleModules default 1`] = `
 </Router>
 `;
 
-exports[`Storyshots Components/BundleModules empty baseline 1`] = `
+exports[`Storyshots Components/BundleChunkModules empty baseline 1`] = `
 <Router
   history={
     Object {
@@ -14252,7 +14252,7 @@ exports[`Storyshots Components/BundleModules empty baseline 1`] = `
 </Router>
 `;
 
-exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
+exports[`Storyshots Components/BundleChunkModules multiple jobs 1`] = `
 <Router
   history={
     Object {

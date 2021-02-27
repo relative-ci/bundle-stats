@@ -139,7 +139,9 @@ const AppComponent = ({ footer, jobs }) => {
                     data={jobs[0].summary}
                     showSummaryItemDelta={jobs.length !== 1}
                   />
-                  <BundleModules jobs={jobs} />
+                  <Box outline>
+                    <BundleModules jobs={jobs} />
+                  </Box>
                 </Stack>
               </Container>
             )}

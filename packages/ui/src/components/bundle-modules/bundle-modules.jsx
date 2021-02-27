@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { isEmpty, map } from 'lodash';
-import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
+import cx from 'classnames';
+import { map } from 'lodash';
 
 import config from '../../config.json';
 import I18N from '../../i18n';
@@ -9,9 +9,13 @@ import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { EmptySet } from '../../ui/empty-set';
 import { FileName } from '../../ui/file-name';
-import { Tooltip } from '../../ui/tooltip';
+import { FiltersDropdown } from '../../ui/filters-dropdown';
 import { Popover } from '../../ui/popover';
-import { MetricsTable } from '../../components/metrics-table';
+import { SortDropdown } from '../../ui/sort-dropdown';
+import { Toolbar } from '../../ui/toolbar';
+import { Tooltip } from '../../ui/tooltip';
+import { MetricsTable } from '../metrics-table';
+import { MetricsTableSearch } from '../metrics-table-search';
 import css from './bundle-modules.module.css';
 
 const getRenderRowHeader = (labels) => (row) => (
@@ -30,6 +34,7 @@ const getRenderRowHeader = (labels) => (row) => (
         })}
       </div>
     }
+    align="topLeft"
   >
     <FileName className={css.name} name={row.label} />
   </Tooltip>
@@ -39,42 +44,46 @@ const Title = () => {
   return (
     <FlexStack space="xxxsmall" className={css.title}>
       <span>{I18N.MODULES}</span>
-      <Popover
-        content={(
-          <Stack space="xxxsmall">
-            <p>{I18N.MODULES_INFO}</p>
-            <p>
-              <a
-                href={config.documentation.modules}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {I18N.READ_MORE}
-              </a>
-            </p>
-          </Stack>
-        )}
-      >
-        <Icon glyph="help" />
+      <Popover icon="help">
+        <Stack space="xxxsmall">
+          <p>{I18N.MODULES_INFO}</p>
+          <p>
+            <a
+              href={config.documentation.modules}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {I18N.READ_MORE}
+            </a>
+          </p>
+        </Stack>
       </Popover>
     </FlexStack>
   );
 };
 
-
 export const BundleModules = ({
   className,
   jobs,
+  items,
   totalRowCount,
+  updateFilters,
   resetFilters,
+  filters,
+  sortItems,
+  sort,
+  updateSort,
+  search,
   updateSearch,
+  hasActiveFilters,
 }) => {
-  const items = webpack.compareBySection.allModules(jobs);
+  const rootClassName = cx(css.root, className);
 
   const clearSearch = () => {
     resetFilters();
     updateSearch('');
   };
+
   const renderRowHeader = useMemo(() => getRenderRowHeader(map(jobs, 'label')), []);
   const emptyMessage = useMemo(
     () => (
@@ -83,38 +92,103 @@ export const BundleModules = ({
     [],
   );
 
-
   return (
-    <MetricsTable
-      className={className}
-      items={items}
-      runs={jobs}
-      renderRowHeader={renderRowHeader.current}
-      emptyMessage={emptyMessage}
-      showHeaderSum
-      title={<Title />}
-    />
+    <div className={rootClassName}>
+      <Toolbar
+        className={css.toolbar}
+        renderActions={({ actionClassName }) => (
+          <>
+            <div className={actionClassName}>
+              <SortDropdown
+                className={css.tableDropdown}
+                items={sortItems}
+                onChange={updateSort}
+                {...sort}
+              />
+            </div>
+            <div className={actionClassName}>
+              <FiltersDropdown
+                className={css.tableDropdown}
+                filters={{
+                  changed: {
+                    label: 'Changed',
+                    defaultValue: filters.changed,
+                    disabled: jobs.length <= 1,
+                  },
+                }}
+                label={`Filters (${items.length}/${totalRowCount})`}
+                onChange={updateFilters}
+                hasActiveFilters={hasActiveFilters}
+              />
+            </div>
+          </>
+        )}
+      >
+        <MetricsTableSearch
+          className={css.toolbarSearch}
+          search={search}
+          updateSearch={updateSearch}
+          placeholder="Search by name"
+        />
+      </Toolbar>
+      <MetricsTable
+        className={css.table}
+        items={items}
+        runs={jobs}
+        renderRowHeader={renderRowHeader.current}
+        emptyMessage={emptyMessage}
+        showHeaderSum
+        title={<Title />}
+      />
+    </div>
   );
-};
-
-BundleModules.propTypes = {
-  /** Adopted child className */
-  className: PropTypes.string,
-
-  /* Jobs data */
-  jobs: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
-
-  /** total row count */
-  totalRowCount: PropTypes.number,
-
-  /** Reset filters handler */
-  resetFilters: PropTypes.func.isRequired,
-
-  updateSearch: PropTypes.func.isRequired,
 };
 
 BundleModules.defaultProps = {
   className: '',
-
+  items: [],
+  jobs: [],
   totalRowCount: 0,
+  hasActiveFilters: false,
+};
+
+BundleModules.propTypes = {
+  /** Adopted child class name */
+  className: PropTypes.string,
+
+  /** Rows data */
+  items: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+
+  /** Jobs data */
+  jobs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+
+  /** total row count */
+  totalRowCount: PropTypes.number,
+
+  /** Update filters handler */
+  updateFilters: PropTypes.func.isRequired,
+
+  /** Reset filters handler */
+  resetFilters: PropTypes.func.isRequired,
+
+  /** Filters data */
+  filters: PropTypes.shape({
+    changed: PropTypes.bool,
+  }).isRequired,
+
+  hasActiveFilters: PropTypes.bool,
+
+  sortItems: PropTypes.shape({
+    [PropTypes.string]: PropTypes.shape({
+      label: PropTypes.string,
+      defaultDirection: PropTypes.bool,
+    }),
+  }).isRequired,
+  sort: PropTypes.shape({
+    sortBy: PropTypes.string,
+    direction: PropTypes.string,
+  }).isRequired,
+  updateSort: PropTypes.func.isRequired,
+  search: PropTypes.string.isRequired,
+  updateSearch: PropTypes.func.isRequired,
 };

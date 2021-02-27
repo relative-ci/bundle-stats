@@ -1,15 +1,31 @@
-.chunk + .chunk {
-  margin-top: var(--space-medium);
+.title {
+  color: var(--color-text-light);
 }
 
-.empty {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  min-height: 10rem;
-  text-align: center;
+.toolbar {
+  border-bottom: 1px solid var(--color-outline);
 }
 
-.emptyText {
-  margin-bottom: var(--space-small);
+.toolbarSearch {
+  width: 100%;
+  max-width: 360px;
+}
+
+.nameTooltip {
+  text-align: left;
+}
+
+.nameTooltipTitle {
+  margin: 0;
+}
+
+.nameTooltipText {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  min-width: 280px;
+}
+
+.nameTooltipItem + .nameTooltipItem {
+  margin-top: var(--space-small);
 }
