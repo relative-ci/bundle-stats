@@ -21,14 +21,10 @@
   transition: var(--transition-out);
 }
 
-.helpTooltip {
-  font-size: var(--size-small);
-}
-
 .readMoreBtn {
+  /* simulate link */
   padding: 0;
   color: var(--color-primary);
-  font-weight: bold;
   text-decoration: underline;
   line-height: var(--space-small);
 }

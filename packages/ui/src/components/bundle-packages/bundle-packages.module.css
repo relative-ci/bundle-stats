@@ -2,14 +2,6 @@
   color: var(--color-text-light);
 }
 
-.titlePopover {
-  font-size: var(--size-small);
-}
-
-.titlePopoverReadMore {
-  font-weight: bold;
-}
-
 .toolbar {
   border-bottom: 1px solid var(--color-outline);
 }

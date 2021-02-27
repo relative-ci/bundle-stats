@@ -46,6 +46,7 @@ export const Popover = ({ className, content, children }) => {
       </UIPopoverDisclosure>
       <UIPopover className={css.popover} {...popover} tabIndex={0}>
         <UIPopoverArrow className={css.arrow} {...popover} />
+
         {content}
 
         <Icon

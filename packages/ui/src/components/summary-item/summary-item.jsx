@@ -12,12 +12,13 @@ import { Delta } from '../delta';
 import css from './summary-item.module.css';
 
 const MetricInfo = ({ description, url }) => {
+  // Workaround cases where the parent is a link
   const readMoreOnClick = () => {
     window.open(url);
   };
 
   return (
-    <Stack space="xxxsmall" className={css.helpTooltip}>
+    <Stack space="xxxsmall">
       <p>{description}</p>
       {url && (
         <p>

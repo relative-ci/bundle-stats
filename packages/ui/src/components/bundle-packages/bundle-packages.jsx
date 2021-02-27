@@ -52,12 +52,11 @@ const Title = () => {
       <span>{I18N.PACKAGES}</span>
       <Popover
         content={(
-          <Stack space="xxxsmall" className={css.titlePopover}>
+          <Stack space="xxxsmall">
             <p>{I18N.PACKAGES_INFO}</p>
             <p>
               <a
                 href={config.documentation.packages}
-                className={css.titlePopoverReadMore}
                 target="_blank"
                 rel="noreferrer"
               >

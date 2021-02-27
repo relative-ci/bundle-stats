@@ -3,6 +3,7 @@
   outline: none;
   padding: 0;
   background: none;
+  color: inherit;
 }
 
 .popover {
@@ -11,6 +12,11 @@
   outline: none;
   box-shadow: 0 0 var(--space-xxsmall) var(--color-shadow);
   background: var(--color-light);
+  font-size: var(--size-small);
+}
+
+.wrapper {
+  background-color: red;
 }
 
 .arrow svg {
