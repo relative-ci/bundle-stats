@@ -52,6 +52,6 @@
   background: var(--color-green-dark);
 }
 
-.HIGH_POSITIVE {
+.inverted.HIGH_POSITIVE {
   background: var(--color-green-dark);
 }
