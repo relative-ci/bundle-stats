@@ -21,8 +21,19 @@
   transition: var(--transition-out);
 }
 
-.helpTooltip {
-  max-width: 280px;
+.readMoreBtn {
+  /* simulate link */
+  padding: 0;
+  color: var(--color-primary);
+  text-decoration: underline;
+  line-height: var(--space-small);
+}
+
+.readMoreBtn:hover,
+.readMoreBtn:active,
+.readMoreBtn:focus {
+  color: var(--color-primary-dark);
+  text-decoration: none;
 }
 
 .currentMetric {

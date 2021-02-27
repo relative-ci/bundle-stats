@@ -6,6 +6,7 @@ import ArrowIcon from './assets/arrow.svg';
 import BranchIcon from './assets/branch.svg';
 import CancelIcon from './assets/cancel.svg';
 import ClockIcon from './assets/clock.svg';
+import CloseIcon from './assets/close.svg';
 import CommitIcon from './assets/commit.svg';
 import FilterIcon from './assets/filter.svg';
 import HelpIcon from './assets/help.svg';
@@ -19,6 +20,7 @@ export const ICONS = {
   ARROW: 'arrow',
   BRANCH: 'branch',
   CANCEL: 'cancel',
+  CLOSE: 'close',
   CLOCK: 'clock',
   COMMIT: 'commit',
   FILTER: 'filter',
@@ -33,6 +35,7 @@ const ICON_MAP = {
   [ICONS.BRANCH]: BranchIcon,
   [ICONS.CANCEL]: CancelIcon,
   [ICONS.CLOCK]: ClockIcon,
+  [ICONS.CLOSE]: CloseIcon,
   [ICONS.COMMIT]: CommitIcon,
   [ICONS.FILTER]: FilterIcon,
   [ICONS.HELP]: HelpIcon,

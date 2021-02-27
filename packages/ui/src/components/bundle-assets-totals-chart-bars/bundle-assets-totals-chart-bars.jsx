@@ -42,32 +42,28 @@ export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
   );
 
   return (
-    <Stack className={rootClassName} space="small">
-      <h3 className={css.title}>Total size by type</h3>
+    <Stack className={rootClassName} space="medium">
+      {dataGraphs.map((data, runIndex) => {
+        const { internalBuildNumber } = jobs[runIndex];
 
-      <Stack className={css.items} space="medium">
-        {dataGraphs.map((data, runIndex) => {
-          const { internalBuildNumber } = jobs[runIndex];
+        const values = data.map((value, valueIndex) => ({
+          value,
+          color: colors[valueIndex],
+          label: labels[valueIndex],
+          getItemTooltip: getTooltip(valueIndex, runIndex),
+        }));
 
-          const values = data.map((value, valueIndex) => ({
-            value,
-            color: colors[valueIndex],
-            label: labels[valueIndex],
-            getItemTooltip: getTooltip(valueIndex, runIndex),
-          }));
-
-          return (
-            <div key={internalBuildNumber || runIndex} className={css.item}>
-              <h3 className={css.itemTitle}>{`Job #${internalBuildNumber}`}</h3>
-              <HorizontalBarChart
-                className={css.itemChart}
-                data={{ labels, values }}
-                maxValue={maxValue}
-              />
-            </div>
-          );
-        })}
-      </Stack>
+        return (
+          <div key={internalBuildNumber || runIndex} className={css.item}>
+            <h3 className={css.itemTitle}>{`Job #${internalBuildNumber}`}</h3>
+            <HorizontalBarChart
+              className={css.itemChart}
+              data={{ labels, values }}
+              maxValue={maxValue}
+            />
+          </div>
+        );
+      })}
     </Stack>
   );
 };

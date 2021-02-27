@@ -1,14 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { omit } from 'lodash';
+import { last, omit } from 'lodash';
 
 import css from './table.module.css';
 
-const getColumnAttributes = (headers, hasRowHeader, cellId) => {
-  if (!headers) {
+/**
+ * Pickup column attributes
+ */
+const getColumnAttributes = (headerRows, hasRowHeader, cellId) => {
+  if (!headerRows) {
     return {};
   }
+
+  const headers = Array.isArray(headerRows[0]) ? last(headerRows) : headerRows;
 
   const headerId = hasRowHeader ? cellId + 1 : cellId;
   const header = headers[headerId];
@@ -17,8 +22,8 @@ const getColumnAttributes = (headers, hasRowHeader, cellId) => {
 };
 
 const Tr = (props) => {
-  const { className } = props;
-  return <tr className={cx(css.row, className)} {...props} />;
+  const { className, ...restProps } = props;
+  return <tr className={cx(css.row, className)} {...restProps} />;
 };
 
 Tr.defaultProps = {
@@ -59,7 +64,7 @@ Td.propTypes = {
   className: PropTypes.string,
 };
 
-const renderHeader = (header, index) => {
+const renderHeaderTh = (header, index) => {
   const headerProps = {
     key: `header-${index}`,
     ...(typeof header === 'object' && !React.isValidElement(header)
@@ -72,11 +77,23 @@ const renderHeader = (header, index) => {
 
 export const Table = ({ className, emptyMessage, outline, headers, rows }) => (
   <table className={cx(className, css.root, outline && css.outline)}>
-    {headers && headers.length > 0 && (
+    {headers?.length > 0 && (
       <thead>
-        <Tr key="header-row">{headers.map(renderHeader)}</Tr>
+        {Array.isArray(headers[0]) ? (
+          <>
+            {headers.map((header, index) => {
+              const key = `header-row-${index}`;
+              return (
+                <Tr key={key}>{header.map(renderHeaderTh)}</Tr>
+              );
+            })}
+          </>
+        ) : (
+          <Tr key="header-row">{headers.map(renderHeaderTh)}</Tr>
+        )}
       </thead>
     )}
+
     <tbody>
       {rows.length > 0 &&
         rows.map(
@@ -85,8 +102,7 @@ export const Table = ({ className, emptyMessage, outline, headers, rows }) => (
 
             return (
               <Tr className={rowCustomClassName} key={rowKey} {...rowProps}>
-                {header && renderHeader(header)}
-
+                {header && renderHeaderTh(header)}
                 {cells.map((cell, cellIndex) => {
                   const cellProps = {
                     key: cell?.key || `${rowKey}-${cellIndex}`,

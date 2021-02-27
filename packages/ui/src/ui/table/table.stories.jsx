@@ -55,6 +55,27 @@ stories.add('with headers', () => {
   return <Table headers={headers} rows={rows} />;
 });
 
+stories.add('with multiple rows header', () => {
+  const headers = [
+    [' ', { children: 'Colspan', colSpan: 2 }],
+    ['Col A', 'Col B', 'Col C'],
+  ];
+
+  const rows = [
+    {
+      cells: ['a1', 'b1', 'c1'],
+    },
+    {
+      cells: ['a2', 'b2', 'c2'],
+    },
+    {
+      cells: ['a3', 'b3', 'c3'],
+    },
+  ];
+
+  return <Table headers={headers} rows={rows} />;
+});
+
 stories.add('with outline', () => {
   const headers = ['Col A', 'Col B', 'Col C'];
   const rows = [

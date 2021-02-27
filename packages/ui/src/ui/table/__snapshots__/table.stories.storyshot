@@ -92,7 +92,7 @@ exports[`Storyshots UI/Table default 1`] = `
               key="row-0"
             >
               <tr
-                className=""
+                className="row"
               >
                 <Td
                   className=""
@@ -131,7 +131,7 @@ exports[`Storyshots UI/Table default 1`] = `
               key="row-1"
             >
               <tr
-                className=""
+                className="row"
               >
                 <Td
                   className=""
@@ -170,7 +170,7 @@ exports[`Storyshots UI/Table default 1`] = `
               key="row-2"
             >
               <tr
-                className=""
+                className="row"
               >
                 <Td
                   className=""
@@ -537,7 +537,7 @@ exports[`Storyshots UI/Table with custom content and attributes 1`] = `
               key="header-row"
             >
               <tr
-                className=""
+                className="row"
               >
                 <Th
                   className=""
@@ -618,7 +618,7 @@ exports[`Storyshots UI/Table with custom content and attributes 1`] = `
               key="row-0"
             >
               <tr
-                className=""
+                className="row"
               >
                 <Th
                   className=""
@@ -709,7 +709,7 @@ exports[`Storyshots UI/Table with custom content and attributes 1`] = `
               }
             >
               <tr
-                className=""
+                className="row"
                 style={
                   Object {
                     "color": "blue",
@@ -796,7 +796,7 @@ exports[`Storyshots UI/Table with custom content and attributes 1`] = `
               key="row-2"
             >
               <tr
-                className=""
+                className="row"
               >
                 <Th
                   className=""
@@ -978,7 +978,7 @@ exports[`Storyshots UI/Table with headers 1`] = `
               key="header-row"
             >
               <tr
-                className=""
+                className="row"
               >
                 <Th
                   className=""
@@ -1019,7 +1019,7 @@ exports[`Storyshots UI/Table with headers 1`] = `
               key="row-0"
             >
               <tr
-                className=""
+                className="row"
               >
                 <Td
                   className=""
@@ -1058,7 +1058,7 @@ exports[`Storyshots UI/Table with headers 1`] = `
               key="row-1"
             >
               <tr
-                className=""
+                className="row"
               >
                 <Td
                   className=""
@@ -1097,7 +1097,306 @@ exports[`Storyshots UI/Table with headers 1`] = `
               key="row-2"
             >
               <tr
-                className=""
+                className="row"
+              >
+                <Td
+                  className=""
+                  key="row-2-0"
+                >
+                  <td
+                    className="cell"
+                  >
+                    a3
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-2-1"
+                >
+                  <td
+                    className="cell"
+                  >
+                    b3
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-2-2"
+                >
+                  <td
+                    className="cell"
+                  >
+                    c3
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+          </tbody>
+        </table>
+      </Table>
+    </div>
+  </Router>
+</MemoryRouter>
+`;
+
+exports[`Storyshots UI/Table with multiple rows header 1`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
+  }
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
+    >
+      <Table
+        className=""
+        emptyMessage="No entries found."
+        headers={
+          Array [
+            Array [
+              " ",
+              Object {
+                "children": "Colspan",
+                "colSpan": 2,
+              },
+            ],
+            Array [
+              "Col A",
+              "Col B",
+              "Col C",
+            ],
+          ]
+        }
+        outline={false}
+        rows={
+          Array [
+            Object {
+              "cells": Array [
+                "a1",
+                "b1",
+                "c1",
+              ],
+            },
+            Object {
+              "cells": Array [
+                "a2",
+                "b2",
+                "c2",
+              ],
+            },
+            Object {
+              "cells": Array [
+                "a3",
+                "b3",
+                "c3",
+              ],
+            },
+          ]
+        }
+      >
+        <table
+          className="root"
+        >
+          <thead>
+            <Tr
+              className=""
+              key="header-row-0"
+            >
+              <tr
+                className="row"
+              >
+                <Th
+                  className=""
+                  key="header-0"
+                >
+                  <th
+                    className="cell"
+                  >
+                     
+                  </th>
+                </Th>
+                <Th
+                  className=""
+                  colSpan={2}
+                  key="header-1"
+                >
+                  <th
+                    className="cell"
+                    colSpan={2}
+                  >
+                    Colspan
+                  </th>
+                </Th>
+              </tr>
+            </Tr>
+            <Tr
+              className=""
+              key="header-row-1"
+            >
+              <tr
+                className="row"
+              >
+                <Th
+                  className=""
+                  key="header-0"
+                >
+                  <th
+                    className="cell"
+                  >
+                    Col A
+                  </th>
+                </Th>
+                <Th
+                  className=""
+                  key="header-1"
+                >
+                  <th
+                    className="cell"
+                  >
+                    Col B
+                  </th>
+                </Th>
+                <Th
+                  className=""
+                  key="header-2"
+                >
+                  <th
+                    className="cell"
+                  >
+                    Col C
+                  </th>
+                </Th>
+              </tr>
+            </Tr>
+          </thead>
+          <tbody>
+            <Tr
+              className=""
+              key="row-0"
+            >
+              <tr
+                className="row"
+              >
+                <Td
+                  className=""
+                  key="row-0-0"
+                >
+                  <td
+                    className="cell"
+                  >
+                    a1
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-0-1"
+                >
+                  <td
+                    className="cell"
+                  >
+                    b1
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-0-2"
+                >
+                  <td
+                    className="cell"
+                  >
+                    c1
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+            <Tr
+              className=""
+              key="row-1"
+            >
+              <tr
+                className="row"
+              >
+                <Td
+                  className=""
+                  key="row-1-0"
+                >
+                  <td
+                    className="cell"
+                  >
+                    a2
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-1-1"
+                >
+                  <td
+                    className="cell"
+                  >
+                    b2
+                  </td>
+                </Td>
+                <Td
+                  className=""
+                  key="row-1-2"
+                >
+                  <td
+                    className="cell"
+                  >
+                    c2
+                  </td>
+                </Td>
+              </tr>
+            </Tr>
+            <Tr
+              className=""
+              key="row-2"
+            >
+              <tr
+                className="row"
               >
                 <Td
                   className=""
@@ -1237,7 +1536,7 @@ exports[`Storyshots UI/Table with outline 1`] = `
               key="header-row"
             >
               <tr
-                className=""
+                className="row"
               >
                 <Th
                   className=""
@@ -1278,7 +1577,7 @@ exports[`Storyshots UI/Table with outline 1`] = `
               key="row-0"
             >
               <tr
-                className=""
+                className="row"
               >
                 <Td
                   className=""
@@ -1317,7 +1616,7 @@ exports[`Storyshots UI/Table with outline 1`] = `
               key="row-1"
             >
               <tr
-                className=""
+                className="row"
               >
                 <Td
                   className=""
@@ -1356,7 +1655,7 @@ exports[`Storyshots UI/Table with outline 1`] = `
               key="row-2"
             >
               <tr
-                className=""
+                className="row"
               >
                 <Td
                   className=""
@@ -1493,7 +1792,7 @@ exports[`Storyshots UI/Table with row headers 1`] = `
               key="row-0"
             >
               <tr
-                className=""
+                className="row"
               >
                 <Th
                   className=""
@@ -1542,7 +1841,7 @@ exports[`Storyshots UI/Table with row headers 1`] = `
               key="row-1"
             >
               <tr
-                className=""
+                className="row"
               >
                 <Th
                   className=""
@@ -1591,7 +1890,7 @@ exports[`Storyshots UI/Table with row headers 1`] = `
               key="row-2"
             >
               <tr
-                className=""
+                className="row"
               >
                 <Th
                   className=""
