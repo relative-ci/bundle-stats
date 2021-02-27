@@ -1,12 +1,17 @@
 import { compose, withProps } from 'recompose';
 import { get } from 'lodash';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
+import {
+  ASSET_ENTRY_TYPE,
+  ASSET_FILE_TYPE,
+  ASSET_FILTERS,
+  getAssetEntryTypeFilters,
+  getAssetFileTypeFilters,
+} from '@bundle-stats/utils';
 
-import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS } from '../../constants';
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilteredItems } from '../../hocs/with-filtered-items';
 import { withSearch } from '../../hocs/with-search';
-import { getAssetEntryTypeFilters, getAssetFileTypeFilters } from '../../utils';
 import {
   SORT_BY_NAME,
   SORT_BY_DELTA,
@@ -119,7 +124,7 @@ export const enhance = compose(
     const items = webpack.compareBySection.assets(jobs);
 
     const defaultFilters = {
-      [ASSET_FILTERS.CHANGED]: true,
+      [ASSET_FILTERS.CHANGED]: jobs?.length > 1,
       ...getAssetEntryTypeFilters(true),
       ...getAssetFileTypeFilters(true),
     };

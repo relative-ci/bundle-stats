@@ -29,6 +29,7 @@
 }
 
 .root tbody .cell a {
+  color: inherit;
   text-decoration: none;
 }
 
@@ -36,6 +37,7 @@
 .root tbody .cell a:focus,
 .root tbody .cell a:active
 {
+  color: var(--color-primary);
   text-decoration: underline;
 }
 

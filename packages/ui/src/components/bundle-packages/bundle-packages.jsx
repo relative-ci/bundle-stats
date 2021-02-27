@@ -1,15 +1,81 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { PACKAGE_FILTERS, PACKAGES_SEPARATOR, getBundleModulesBySearch, getBundlePackagesByNameComponentLink } from '@bundle-stats/utils';
 
-import { PACKAGE_FILTERS } from '../../constants';
+import config from '../../config.json';
+import I18N from '../../i18n';
+import { Stack } from '../../layout/stack';
+import { FlexStack } from '../../layout/flex-stack';
 import { EmptySet } from '../../ui/empty-set';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
+import { Popover } from '../../ui/popover';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Toolbar } from '../../ui/toolbar';
+import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
 import css from './bundle-packages.module.css';
+
+const getPopoverContent = ({ packageName, packagePath, duplicate, CustomComponentLink }) => {
+  const normalizedPackagePath = `node_modules/${packagePath.split(PACKAGES_SEPARATOR).join('/node_modules/')}`;
+
+  return (
+    <Stack space="xxsmall" className={css.packagePopover}>
+      <h4 className={css.packagePopoverTitle}>{packageName}</h4>
+      <ul className={css.packagePopoverList}>
+        <li className={css.packagePopoverItem}>
+          <a href={`https://www.npmjs.com/package/${packageName}`} target="_blank" rel="noreferrer">npmjs.com</a>
+        </li>
+        <li className={css.packagePopoverItem}>
+          <a
+            href={`https://bundlephobia.com/result?p=${packageName}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            bundlephobia.com
+          </a>
+        </li>
+      </ul>
+
+      <Stack space="xxxsmall" className={css.packagePopover.actions}>
+        {duplicate && (
+          <div>
+            <CustomComponentLink {...getBundlePackagesByNameComponentLink(packageName)}>
+              View all duplicates
+            </CustomComponentLink>
+          </div>
+        )}
+
+        <CustomComponentLink {...getBundleModulesBySearch(normalizedPackagePath)}>
+          View all modules
+        </CustomComponentLink>
+      </Stack>
+    </Stack>
+  );
+};
+
+const Title = () => {
+  return (
+    <FlexStack space="xxxsmall" className={css.title}>
+      <span>{I18N.PACKAGES}</span>
+      <Popover icon="help">
+        <Stack space="xxxsmall">
+          <p>{I18N.PACKAGES_INFO}</p>
+          <p>
+            <a
+              href={config.documentation.packages}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {I18N.READ_MORE}
+            </a>
+          </p>
+        </Stack>
+      </Popover>
+    </FlexStack>
+  );
+};
 
 export const BundlePackages = (props) => {
   const {
@@ -26,6 +92,7 @@ export const BundlePackages = (props) => {
     search,
     updateSearch,
     hasActiveFilters,
+    customComponentLink: CustomComponentLink,
   } = props;
 
   const clear = () => {
@@ -37,6 +104,37 @@ export const BundlePackages = (props) => {
     () => <EmptySet resources="packages" filtered={totalRowCount !== 0} resetFilters={clear} />,
     [],
   );
+
+  const renderRowHeader = (item) => {
+    const packageNames = item.label.split(PACKAGES_SEPARATOR);
+    return (
+      <>
+        {packageNames.map((packageName, index) => {
+          // Render duplicate flag only for the last entry
+          const duplicateFlag = (index === packageNames.length - 1) && item.duplicate && (
+            <span className={css.duplicate} title="Duplicate package">
+              D
+            </span>
+          );
+
+          return (
+            <Popover
+              className={css.packageName}
+              icon={duplicateFlag}
+              label={packageName}
+            >
+              {getPopoverContent({
+                packageName,
+                packagePath: item.label,
+                duplicate: item.duplicate,
+                CustomComponentLink,
+              })}
+            </Popover>
+          );
+        })}
+      </>
+    );
+  };
 
   return (
     <section className={cx(css.root, className)}>
@@ -77,7 +175,14 @@ export const BundlePackages = (props) => {
         />
       </Toolbar>
       <main>
-        <MetricsTable runs={jobs} items={items} emptyMessage={emptyMessage} showHeaderSum />
+        <MetricsTable
+          runs={jobs}
+          items={items}
+          emptyMessage={emptyMessage}
+          renderRowHeader={renderRowHeader}
+          showHeaderSum
+          title={<Title />}
+        />
       </main>
     </section>
   );
@@ -87,6 +192,7 @@ BundlePackages.defaultProps = {
   className: '',
   totalRowCount: 0,
   hasActiveFilters: false,
+  customComponentLink: ComponentLink,
 };
 
 BundlePackages.propTypes = {
@@ -128,4 +234,5 @@ BundlePackages.propTypes = {
   updateSort: PropTypes.func.isRequired,
   search: PropTypes.string.isRequired,
   updateSearch: PropTypes.func.isRequired,
+  customComponentLink: PropTypes.elementType,
 };

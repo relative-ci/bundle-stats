@@ -1,6 +1,7 @@
 export default {
   OVERVIEW: 'Overview',
   ASSETS: 'Assets',
+  ASSET_TOTALS: 'Total size by type',
   MODULES: 'Modules',
   PACKAGES: 'Packages',
 
@@ -9,15 +10,10 @@ export default {
   CURRENT: 'current',
   BASELINE: 'baseline',
 
-  COMPONENT_LINK_TOTALS: 'View total size by type',
-  COMPONENT_LINK_BUNDLE_ASSETS_INITIAL_JS: 'View all initial JS assets',
-  COMPONENT_LINK_BUNDLE_ASSETS_INITIAL_CSS: 'View all initial CSS assets',
-  COMPONENT_LINK_BUNDLE_ASSETS_CACHE_INVALIDATION: 'View all changed assets',
-  COMPONENT_LINK_BUNDLE_ASSETS_COUNT: 'View all assets',
-  COMPONENT_LINK_BUNDLE_ASSETS_CHUNK_COUNT: 'View all chunks',
-  COMPONENT_LINK_MODULES: 'View modules',
-  COMPONENT_LINK_PACKAGES_COUNT: 'View all packages',
-  COMPONENT_LINK_PACKAGES_DUPLICATE: 'View all duplicate packages',
-  COMPONENT_LINK_VIEW_PACKAGE: 'View package',
-  COMPONENT_LINK_BUNDLE_ASSETS_BY_FILE_TYPE: 'View all <%= label %> assets',
+  READ_MORE: 'Read more',
+
+  ASSETS_INFO: 'Asset size is the disk file size',
+  ASSET_TOTALS_INFO: 'Total file type size is the disk size of the corresponding assets.',
+  MODULES_INFO: 'Module size is the estimated size before any production optimization (eg: minimization, concatenation).',
+  PACKAGES_INFO: 'Package size the estimated size of the contained modules before any production optimization(eg: concatenation, minification).'
 };

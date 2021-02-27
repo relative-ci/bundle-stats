@@ -1,8 +1,8 @@
 import { compose, withProps } from 'recompose';
 import { get } from 'lodash';
+import { PACKAGE_FILTERS } from '@bundle-stats/utils';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
-import { PACKAGE_FILTERS } from '../../constants';
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilteredItems } from '../../hocs/with-filtered-items';
 import { withSearch } from '../../hocs/with-search';
@@ -54,9 +54,19 @@ export const enhance = compose(
     ).flat();
 
     const items = addDuplicateTag(webpack.compareBySection.packages(jobs), duplicatePackages);
-    const defaultFilters = { [PACKAGE_FILTERS.CHANGED]: true, [PACKAGE_FILTERS.DUPLICATE]: false };
-    const emptyFilters = { [PACKAGE_FILTERS.CHANGED]: false, [PACKAGE_FILTERS.DUPLICATE]: false };
-    const allEntriesFilters = { [PACKAGE_FILTERS.CHANGED]: false, [PACKAGE_FILTERS.DUPLICATE]: false };
+
+    const defaultFilters = {
+      [PACKAGE_FILTERS.CHANGED]: jobs?.length > 1,
+      [PACKAGE_FILTERS.DUPLICATE]: false,
+    };
+    const emptyFilters = {
+      [PACKAGE_FILTERS.CHANGED]: false,
+      [PACKAGE_FILTERS.DUPLICATE]: false,
+    };
+    const allEntriesFilters = {
+      [PACKAGE_FILTERS.CHANGED]: false,
+      [PACKAGE_FILTERS.DUPLICATE]: false,
+    };
 
     return {
       totalRowCount: items.length,

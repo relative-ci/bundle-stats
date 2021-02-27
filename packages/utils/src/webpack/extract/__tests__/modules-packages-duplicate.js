@@ -4,7 +4,6 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
   test('should return empty', () => {
     const actual = extractModulesPackagesDuplicate();
     expect(actual).toEqual({
-      insights: {},
       metrics: { duplicatePackagesCount: { value: 0 } },
     });
   });
@@ -23,10 +22,10 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
             value: 10,
           },
           'package-c': {
-            value: 10,
+            value: 30,
           },
           'org/package-d:package-c': {
-            value: 10,
+            value: 40,
           },
         },
       },
@@ -36,15 +35,10 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
       insights: {
         duplicatePackages: {
           type: 'WARNING',
+          // @TODO Obsolete structure, remove in v3.0
           data: {
-            'package-a': [
-              'package-a',
-              'package-b:package-a',
-            ],
-            'package-c': [
-              'package-c',
-              'org/package-d:package-c',
-            ],
+            'package-c': ['org/package-d:package-c', 'package-c'],
+            'package-a': ['package-a', 'package-b:package-a'],
           },
         },
       },

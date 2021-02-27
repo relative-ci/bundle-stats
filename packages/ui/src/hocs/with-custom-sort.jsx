@@ -5,8 +5,8 @@ import { orderBy } from 'lodash';
 export const withCustomSort = ({
   sortItems,
   getCustomSort,
-  sortBy = 'default',
-  direction = 'asc',
+  sortBy = 'size',
+  direction = 'desc',
 }) => (BaseComponent) => {
   const WithCustomSort = (props) => {
     const { items } = props;

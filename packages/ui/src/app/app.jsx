@@ -1,8 +1,15 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { HashRouter, NavLink, Route, Switch, useLocation } from 'react-router-dom';
+import { COMPONENT } from '@bundle-stats/utils';
 
-import { COMPONENT, METRICS_WEBPACK_ASSETS, METRICS_WEBPACK_GENERAL, METRICS_WEBPACK_MODULES, METRICS_WEBPACK_PACKAGES, URLS } from '../constants';
+import {
+  METRICS_WEBPACK_ASSETS,
+  METRICS_WEBPACK_GENERAL,
+  METRICS_WEBPACK_MODULES,
+  METRICS_WEBPACK_PACKAGES,
+  URLS,
+} from '../constants';
 import { Box } from '../layout/box';
 import { Container } from '../ui/container';
 import { DuplicatePackagesWarning } from '../components/duplicate-packages-warning';
@@ -15,6 +22,7 @@ import { Stack } from '../layout/stack';
 import { BundleAssetsTotalsTable } from '../components/bundle-assets-totals-table';
 import { BundleModules } from '../components/bundle-modules';
 import { BundlePackages } from '../components/bundle-packages';
+import { TotalSizeTypeTitle } from '../components/total-size-type-title';
 import { QueryStateProvider, useComponentQueryState } from '../query-state';
 import I18N from '../i18n';
 import { Header } from './header';
@@ -51,6 +59,7 @@ Layout.defaultProps = {
 const AppComponent = ({ footer, jobs }) => {
   const [bundleStatsState, bundleStatsSetState] = useComponentQueryState(COMPONENT.BUNDLE_ASSETS);
   const [bundlePackagesState, bundlePackagesSetState] = useComponentQueryState(COMPONENT.BUNDLE_PACKAGES);
+  const [bundleModulesState, bundleModulesSetState] = useComponentQueryState(COMPONENT.BUNDLE_MODULES);
 
   if (jobs.length === 0) {
     return (
@@ -62,8 +71,10 @@ const AppComponent = ({ footer, jobs }) => {
     );
   }
 
-  const insights = jobs && jobs[0] && jobs[0].insights;
-  const duplicatePackagesInsights = insights?.webpack?.duplicatePackages;
+  const { duplicatePackagesCount } = jobs[0].summary.webpack;
+  const duplicatePackagesInsights = Boolean(
+    duplicatePackagesCount.current || duplicatePackagesCount.baseline,
+  );
 
   return (
     <Layout jobs={jobs} footer={footer}>
@@ -129,7 +140,13 @@ const AppComponent = ({ footer, jobs }) => {
                     data={jobs[0].summary}
                     showSummaryItemDelta={jobs.length !== 1}
                   />
-                  <BundleModules jobs={jobs} />
+                  <Box outline>
+                    <BundleModules
+                      jobs={jobs}
+                      setState={bundleModulesSetState}
+                      {...bundleModulesState}
+                    />
+                  </Box>
                 </Stack>
               </Container>
             )}
@@ -164,16 +181,17 @@ const AppComponent = ({ footer, jobs }) => {
               <Stack space="large">
                 {duplicatePackagesInsights && (
                   <Container>
-                    <DuplicatePackagesWarning duplicatePackages={duplicatePackagesInsights.data} />
+                    <DuplicatePackagesWarning duplicatePackagesCount={duplicatePackagesCount} />
                   </Container>
                 )}
                 <Container>
-                  <BundleAssetsTotalsChartBars jobs={jobs} />
-                </Container>
-                <Container>
-                  <Box outline>
-                    <BundleAssetsTotalsTable jobs={jobs} />
-                  </Box>
+                  <Stack space="small">
+                    <TotalSizeTypeTitle />
+                    <BundleAssetsTotalsChartBars jobs={jobs} />
+                    <Box outline>
+                      <BundleAssetsTotalsTable jobs={jobs} />
+                    </Box>
+                  </Stack>
                 </Container>
               </Stack>
             )}

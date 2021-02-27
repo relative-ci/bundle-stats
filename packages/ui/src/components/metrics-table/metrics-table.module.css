@@ -33,10 +33,6 @@
   color: var(--color-text-light);
 }
 
-.multipleRuns .unchanged td a {
-  color: var(--color-primary-light);
-}
-
 /** Breakpoints */
 .root tr {
   display: flex;

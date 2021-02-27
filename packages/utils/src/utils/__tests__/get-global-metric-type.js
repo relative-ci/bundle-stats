@@ -9,7 +9,8 @@ describe('getGlobalMetricType', () => {
       omit(
         {
           label: 'Bundle Size',
-          description: 'Sum of all assets.',
+          description: 'Sum of all assets emitted by webpack.',
+          url: 'https://relative-ci.com/documentation/metrics-and-data#assets',
           type: 'METRIC_TYPE_FILE_SIZE',
           biggerIsBetter: false,
         },

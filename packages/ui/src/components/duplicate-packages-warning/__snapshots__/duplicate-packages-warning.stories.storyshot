@@ -45,16 +45,10 @@ exports[`Storyshots Components/DuplicatePackagesWarning multiple duplicate packa
     <DuplicatePackagesWarning
       className=""
       customComponentLink={[Function]}
-      duplicatePackages={
+      duplicatePackagesCount={
         Object {
-          "package-c": Array [
-            "package-c",
-            "package-a:package-c",
-          ],
-          "package-d": Array [
-            "package-b:package-d",
-            "package-c:package-d",
-          ],
+          "baseline": 3,
+          "current": 2,
         }
       }
     />
@@ -107,12 +101,10 @@ exports[`Storyshots Components/DuplicatePackagesWarning single duplicate package
     <DuplicatePackagesWarning
       className=""
       customComponentLink={[Function]}
-      duplicatePackages={
+      duplicatePackagesCount={
         Object {
-          "package-c": Array [
-            "package-c",
-            "package-a:package-c",
-          ],
+          "baseline": 0,
+          "current": 1,
         }
       }
     />
