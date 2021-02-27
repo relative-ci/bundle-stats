@@ -96,22 +96,21 @@ export const BundlePackages = (props) => {
   );
 
   const renderRowHeader = (item) => {
-    const packages = item.label.split(PACKAGES_SEPARATOR);
+    const packageNames = item.label.split(PACKAGES_SEPARATOR);
     return (
       <>
-        {packages.map((packageName, index) => {
-          if (index < packages.length - 1) {
-            return <span className={css.packageName}>{packageName}</span>;
-          }
+        {packageNames.map((packageName, index) => {
+          // Render duplicate flag only for the last entry
+          const duplicateFlag = (index === packageNames.length - 1) && item.duplicate && (
+            <span className={css.duplicate} title="Duplicate package">
+              D
+            </span>
+          );
 
           return (
             <Popover
               className={css.packageName}
-              icon={item.duplicate && (
-                <span className={css.duplicate} title="Duplicate package">
-                  D
-                </span>
-              )}
+              icon={duplicateFlag}
               label={packageName}
             >
               {getPopoverContent({
