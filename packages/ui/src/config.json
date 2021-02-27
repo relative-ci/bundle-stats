@@ -2,6 +2,7 @@
   "appName": "RelativeCI",
   "siteUrl": "https://relative-ci.com",
   "documentation" : {
+    "assets": "https://relative-ci.com/documentation/metrics-and-data#assets",
     "modules": "https://relative-ci.com/documentation/metrics-and-data#modules",
     "packages": "https://relative-ci.com/documentation/metrics-and-data#packages"
   }
