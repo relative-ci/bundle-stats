@@ -61,11 +61,16 @@ exports[`Storyshots UI/Alert default 1`] = `
           className="root default"
           horizontalPadding=""
           outline={true}
-          padding="small"
+          padding={
+            Array [
+              "xsmall",
+              "small",
+            ]
+          }
           verticalPadding=""
         >
           <div
-            className="root root default padding-small outline"
+            className="root root default vertical-padding-xsmall horizontal-padding-small outline"
           >
             Lorem ipsum
           </div>
@@ -137,11 +142,16 @@ exports[`Storyshots UI/Alert with kind danger 1`] = `
           className="root danger"
           horizontalPadding=""
           outline={true}
-          padding="small"
+          padding={
+            Array [
+              "xsmall",
+              "small",
+            ]
+          }
           verticalPadding=""
         >
           <div
-            className="root root danger padding-small outline"
+            className="root root danger vertical-padding-xsmall horizontal-padding-small outline"
           >
             Lorem ipsum
           </div>
@@ -213,11 +223,16 @@ exports[`Storyshots UI/Alert with kind info 1`] = `
           className="root info"
           horizontalPadding=""
           outline={true}
-          padding="small"
+          padding={
+            Array [
+              "xsmall",
+              "small",
+            ]
+          }
           verticalPadding=""
         >
           <div
-            className="root root info padding-small outline"
+            className="root root info vertical-padding-xsmall horizontal-padding-small outline"
           >
             Lorem ipsum
           </div>
@@ -289,11 +304,16 @@ exports[`Storyshots UI/Alert with kind success 1`] = `
           className="root success"
           horizontalPadding=""
           outline={true}
-          padding="small"
+          padding={
+            Array [
+              "xsmall",
+              "small",
+            ]
+          }
           verticalPadding=""
         >
           <div
-            className="root root success padding-small outline"
+            className="root root success vertical-padding-xsmall horizontal-padding-small outline"
           >
             Lorem ipsum
           </div>
@@ -365,11 +385,16 @@ exports[`Storyshots UI/Alert with kind warning 1`] = `
           className="root warning"
           horizontalPadding=""
           outline={true}
-          padding="small"
+          padding={
+            Array [
+              "xsmall",
+              "small",
+            ]
+          }
           verticalPadding=""
         >
           <div
-            className="root root warning padding-small outline"
+            className="root root warning vertical-padding-xsmall horizontal-padding-small outline"
           >
             Lorem ipsum
           </div>
