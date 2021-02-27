@@ -22,6 +22,7 @@ import { Stack } from '../layout/stack';
 import { BundleAssetsTotalsTable } from '../components/bundle-assets-totals-table';
 import { BundleModules } from '../components/bundle-modules';
 import { BundlePackages } from '../components/bundle-packages';
+import { TotalSizeTypeTitle } from '../components/total-size-type-title';
 import { QueryStateProvider, useComponentQueryState } from '../query-state';
 import I18N from '../i18n';
 import { Header } from './header';
@@ -177,12 +178,13 @@ const AppComponent = ({ footer, jobs }) => {
                   </Container>
                 )}
                 <Container>
-                  <BundleAssetsTotalsChartBars jobs={jobs} />
-                </Container>
-                <Container>
-                  <Box outline>
-                    <BundleAssetsTotalsTable jobs={jobs} />
-                  </Box>
+                  <Stack space="small">
+                    <TotalSizeTypeTitle />
+                    <BundleAssetsTotalsChartBars jobs={jobs} />
+                    <Box outline>
+                      <BundleAssetsTotalsTable jobs={jobs} />
+                    </Box>
+                  </Stack>
                 </Container>
               </Stack>
             )}
