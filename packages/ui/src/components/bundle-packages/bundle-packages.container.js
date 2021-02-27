@@ -56,7 +56,7 @@ export const enhance = compose(
     const items = addDuplicateTag(webpack.compareBySection.packages(jobs), duplicatePackages);
 
     const defaultFilters = {
-      [PACKAGE_FILTERS.CHANGED]: jobs.length > 1 && true,
+      [PACKAGE_FILTERS.CHANGED]: jobs?.length > 1,
       [PACKAGE_FILTERS.DUPLICATE]: false,
     };
     const emptyFilters = {

@@ -280,11 +280,11 @@ exports[`Storyshots UI/Table empty 1`] = `
             >
               <Td
                 className="emptyData"
-                colSpan={1}
+                colSpan={0}
               >
                 <td
                   className="cell emptyData"
-                  colSpan={1}
+                  colSpan={0}
                 >
                   No entries found.
                 </td>
@@ -376,11 +376,11 @@ exports[`Storyshots UI/Table empty with custom element 1`] = `
             >
               <Td
                 className="emptyData"
-                colSpan={1}
+                colSpan={0}
               >
                 <td
                   className="cell emptyData"
-                  colSpan={1}
+                  colSpan={0}
                 >
                   <p
                     style={

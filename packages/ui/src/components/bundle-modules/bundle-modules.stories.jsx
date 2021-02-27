@@ -16,7 +16,7 @@ const stories = storiesOf('Components/BundleModules', module);
 stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => (
-  <BundleModules jobs={JOBS[1]} />
+  <BundleModules jobs={[JOBS[1]]} />
 ));
 
 stories.add('multiple jobs', () => (

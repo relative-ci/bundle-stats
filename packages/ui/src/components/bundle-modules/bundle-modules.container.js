@@ -63,7 +63,7 @@ export default compose(
     };
 
     const emptyFilters = {
-      changed: jobs?.length > 1,
+      changed: false,
       ...getChunksFilters(chunks, true),
     };
 
