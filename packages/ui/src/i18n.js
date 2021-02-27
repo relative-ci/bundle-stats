@@ -11,5 +11,6 @@ export default {
 
   READ_MORE: 'Read more',
 
+  MODULES_INFO: 'Module size is the estimated size before any production optimization (eg: minimization, concatenation).',
   PACKAGES_INFO: 'Package size the estimated size of the contained modules before any production optimization(eg: concatenation, minification).'
 };

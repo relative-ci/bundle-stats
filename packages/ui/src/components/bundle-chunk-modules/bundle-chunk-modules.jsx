@@ -3,10 +3,16 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { map } from 'lodash';
 
+import config from '../../config.json';
+import I18N from '../../i18n';
 import { Box } from '../../layout/box';
+import { FlexStack } from '../../layout/flex-stack';
+import { Stack } from '../../layout/stack';
 import { EmptySet } from '../../ui/empty-set';
 import { FileName } from '../../ui/file-name';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
+import { Icon } from '../../ui/icon';
+import { Popover } from '../../ui/popover';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Toolbar } from '../../ui/toolbar';
 import { Tooltip } from '../../ui/tooltip';
@@ -35,6 +41,32 @@ const getRenderRowHeader = (labels) => (row) => (
     <FileName className={css.name} name={row.label} />
   </Tooltip>
 );
+
+const Title = () => {
+  return (
+    <FlexStack space="xxxsmall" className={css.title}>
+      <span>{I18N.MODULES}</span>
+      <Popover
+        content={(
+          <Stack space="xxxsmall">
+            <p>{I18N.MODULES_INFO}</p>
+            <p>
+              <a
+                href={config.documentation.modules}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {I18N.READ_MORE}
+              </a>
+            </p>
+          </Stack>
+        )}
+      >
+        <Icon glyph="help" />
+      </Popover>
+    </FlexStack>
+  );
+};
 
 export const BundleChunkModules = ({
   className,
@@ -121,6 +153,7 @@ export const BundleChunkModules = ({
           renderRowHeader={renderRowHeader.current}
           emptyMessage={emptyMessage}
           showHeaderSum
+          title={<Title />}
         />
       </Box>
     </div>

@@ -1,3 +1,7 @@
+.title {
+  color: var(--color-text-light);
+}
+
 .header {
   padding: 0 0 var(--space-small);
 }
