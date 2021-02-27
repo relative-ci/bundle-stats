@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Webpack/compare should compare all modules 1`] = `
+Array [
+  Object {
+    "biggerIsBetter": false,
+    "changed": false,
+    "key": "module-a",
+    "label": "module-a",
+    "runs": Array [
+      Object {
+        "chunkIds": Array [
+          "1",
+        ],
+        "delta": 0,
+        "deltaPercentage": 0,
+        "deltaType": "NO_CHANGE",
+        "displayDelta": "0B",
+        "displayDeltaPercentage": "0%",
+        "displayValue": "1000B",
+        "name": "module-a",
+        "value": 1000,
+      },
+      Object {
+        "chunkIds": Array [
+          "1",
+        ],
+        "displayValue": "1000B",
+        "name": "module-a",
+        "value": 1000,
+      },
+    ],
+  },
+  Object {
+    "biggerIsBetter": false,
+    "changed": true,
+    "key": "module-b",
+    "label": "module-b",
+    "runs": Array [
+      Object {
+        "chunkIds": Array [
+          "1",
+        ],
+        "delta": 500,
+        "deltaPercentage": 33.33333333,
+        "deltaType": "NEGATIVE",
+        "displayDelta": "+500B",
+        "displayDeltaPercentage": "+33.33%",
+        "displayValue": "1.95KB",
+        "name": "module-b",
+        "value": 2000,
+      },
+      Object {
+        "chunkIds": Array [
+          "1",
+        ],
+        "displayValue": "1.46KB",
+        "name": "module-b",
+        "value": 1500,
+      },
+    ],
+  },
+  Object {
+    "biggerIsBetter": false,
+    "changed": false,
+    "key": "node_modules/package-a/index.js",
+    "label": "node_modules/package-a/index.js",
+    "runs": Array [
+      Object {
+        "chunkIds": Array [
+          "1",
+        ],
+        "delta": 0,
+        "deltaPercentage": 0,
+        "deltaType": "NO_CHANGE",
+        "displayDelta": "0B",
+        "displayDeltaPercentage": "0%",
+        "displayValue": "1000B",
+        "name": "node_modules/package-a/index.js",
+        "value": 1000,
+      },
+      Object {
+        "chunkIds": Array [
+          "1",
+        ],
+        "displayValue": "1000B",
+        "name": "node_modules/package-a/index.js",
+        "value": 1000,
+      },
+    ],
+  },
+  Object {
+    "biggerIsBetter": false,
+    "changed": true,
+    "key": "node_modules/package-a/node_modules/package-c/index.js",
+    "label": "node_modules/package-a/node_modules/package-c/index.js",
+    "runs": Array [
+      Object {
+        "chunkIds": Array [
+          "1",
+        ],
+        "delta": 1000,
+        "deltaPercentage": 100,
+        "deltaType": "HIGH_NEGATIVE",
+        "displayDelta": "+1000B",
+        "displayDeltaPercentage": "+100%",
+        "displayValue": "1000B",
+        "name": "node_modules/package-a/node_modules/package-c/index.js",
+        "value": 1000,
+      },
+      null,
+    ],
+  },
+  Object {
+    "biggerIsBetter": false,
+    "changed": false,
+    "key": "node_modules/package-b/index.js",
+    "label": "node_modules/package-b/index.js",
+    "runs": Array [
+      Object {
+        "chunkIds": Array [
+          "1",
+        ],
+        "delta": 0,
+        "deltaPercentage": 0,
+        "deltaType": "NO_CHANGE",
+        "displayDelta": "0B",
+        "displayDeltaPercentage": "0%",
+        "displayValue": "1000B",
+        "name": "node_modules/package-b/index.js",
+        "value": 1000,
+      },
+      Object {
+        "chunkIds": Array [
+          "1",
+        ],
+        "displayValue": "1000B",
+        "name": "node_modules/package-b/index.js",
+        "value": 1000,
+      },
+    ],
+  },
+  Object {
+    "biggerIsBetter": false,
+    "changed": false,
+    "key": "node_modules/package-c/index.js",
+    "label": "node_modules/package-c/index.js",
+    "runs": Array [
+      Object {
+        "chunkIds": Array [
+          "1",
+        ],
+        "delta": 0,
+        "deltaPercentage": 0,
+        "deltaType": "NO_CHANGE",
+        "displayDelta": "0B",
+        "displayDeltaPercentage": "0%",
+        "displayValue": "1000B",
+        "name": "node_modules/package-c/index.js",
+        "value": 1000,
+      },
+      Object {
+        "chunkIds": Array [
+          "1",
+        ],
+        "displayValue": "1000B",
+        "name": "node_modules/package-c/index.js",
+        "value": 1000,
+      },
+    ],
+  },
+]
+`;

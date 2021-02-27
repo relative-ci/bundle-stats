@@ -1,4 +1,4 @@
-import { flatMap, map, uniq } from 'lodash';
+import { flatMap, map, merge, uniq } from 'lodash';
 
 import { METRIC_TYPE_FILE_SIZE } from '../config/metrics';
 import { addRowData } from '../report/add-row-data';
@@ -11,6 +11,7 @@ import {
   SECTION_WEBPACK_MODULES,
   SECTION_WEBPACK_PACKAGES,
   SECTIONS,
+  SECTION_WEBPACK_ALL_MODULES,
 } from './constants';
 import { selectors } from './selectors';
 
@@ -46,7 +47,7 @@ const compareAssets = (jobs) => compareMetrics(jobs, selectors.assets, METRIC_TY
  *
  * @param {Object[]} jobs - List of jobs to compare
  *
- * @return {Object[]} Compared module metrics by chunk Id
+ * @return {Object[]} Compared module metrics by chunk id
  */
 const compareModules = (jobs) => {
   const jobsModuleMetrics = jobs.map(selectors.modules);
@@ -66,6 +67,49 @@ const compareModules = (jobs) => {
 };
 
 /**
+ * Compare all modules
+ *
+ * @param {Object[]} jobs - List of jobs to compare
+ *
+ * @return {Object[]} Compared module metrics
+ */
+const compareAllModules = (jobs) => {
+  const jobsWithAllModules = jobs.map((job) => {
+    const modulesByChunkId = selectors.modules(job);
+
+    const allModules = Object.entries(modulesByChunkId).reduce((agg, [chunkId, { modules }]) => {
+      // Aggregate chunk modules
+      const processedModules = Object.entries(modules).reduce((chunkAgg, [moduleName, moduleData]) => {
+        const existingModule = chunkAgg[moduleName];
+
+        return {
+          ...chunkAgg,
+          [moduleName]: {
+            ...moduleData,
+            chunkIds: [
+              ...(existingModule?.chunkIds || []),
+              chunkId,
+            ]
+          },
+        }
+      }, agg);
+
+      return processedModules;
+    }, {});
+
+    return merge({}, job, {
+      metrics: {
+        webpack: {
+          allModules
+        }
+      }
+    })
+  });
+
+  return compareMetrics(jobsWithAllModules, selectors.allModules, METRIC_TYPE_FILE_SIZE);
+};
+
+/**
  * Compare package metrics
  *
  * @param {Object[]} jobs - List of jobs to compare
@@ -79,6 +123,7 @@ export const compareBySection = {
   [SECTION_WEBPACK_SIZES]: compareSizes,
   [SECTION_WEBPACK_ASSETS]: compareAssets,
   [SECTION_WEBPACK_MODULES]: compareModules,
+  [SECTION_WEBPACK_ALL_MODULES]: compareAllModules,
   [SECTION_WEBPACK_PACKAGES]: comparePackages,
 };
 
