@@ -4,6 +4,15 @@
   padding: 0;
   background: none;
   color: inherit;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: var(--color-primary);
+}
+
+.button:hover .label {
+  text-decoration: underline;
 }
 
 .popover {
@@ -13,10 +22,6 @@
   box-shadow: 0 0 var(--space-xxsmall) var(--color-shadow);
   background: var(--color-light);
   font-size: var(--size-small);
-}
-
-.wrapper {
-  background-color: red;
 }
 
 .arrow svg {
@@ -40,10 +45,12 @@
   border: none;
   cursor: pointer;
   color: var(--color-text-light);
+  transition: var(--transition-out);
 }
 
 .closeBtn:hover,
 .closeBtn:active,
 .closeBtn:focus {
   color: var(--color-text);
+  transition: var(--transition-in);
 }

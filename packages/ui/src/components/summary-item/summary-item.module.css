@@ -1,24 +1,11 @@
 .title {
   margin: 0;
-  display: inline-block;
   color: var(--color-text-light);
   font-weight: bold;
   font-size: var(--size-xsmall);
   line-height: var(--space-small);
   text-transform: uppercase;
   white-space: nowrap;
-}
-
-.icon {
-  color: var(--color-text-light);
-  transition: var(--transition-in);
-}
-
-.icon:hover,
-.icon:active,
-.icon:focus {
-  color: var(--color-primary);
-  transition: var(--transition-out);
 }
 
 .readMoreBtn {
@@ -37,7 +24,6 @@
 }
 
 .currentMetric {
-  margin: 0;
   display: block;
   color: var(--color-heading);
   font-size: var(--size-large);
@@ -48,14 +34,16 @@
 
 .delta {
   margin: var(--space-xxxsmall) 0 0;
-  display: block;
   font-size: var(--size-small);
   line-height: var(--space-small);
   min-height: var(--space-xsmall);
 }
 
-.showDelta .currentMetric {
-  min-height: calc(var(--space-medium) + var(--space-small));
+.baselineMetric {
+  color: var(--color-text-light);
+  font-size: var(--size-small);
+  line-height: var(--space-small);
+  min-height: var(--space-small);
 }
 
 /* Loading state */
@@ -71,3 +59,4 @@
   line-height: var(--space-medium);
   min-height: var(--space-medium);
 }
+

@@ -8,7 +8,13 @@ const stories = storiesOf('UI/Popover', module);
 stories.addDecorator(getWrapperDecorator({ padding: '64px' }));
 
 stories.add('default', () => (
-  <Popover content="View job #100">
-    Job #100
+  <Popover label="Job #100">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </Popover>
+));
+
+stories.add('default', () => (
+  <Popover icon="help">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   </Popover>
 ));

@@ -9,7 +9,6 @@ import { Stack } from '../../layout/stack';
 import { FlexStack } from '../../layout/flex-stack';
 import { EmptySet } from '../../ui/empty-set';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
-import { Icon } from '../../ui/icon';
 import { Popover } from '../../ui/popover';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Toolbar } from '../../ui/toolbar';
@@ -50,23 +49,19 @@ const Title = () => {
   return (
     <FlexStack space="xxxsmall" className={css.title}>
       <span>{I18N.PACKAGES}</span>
-      <Popover
-        content={(
-          <Stack space="xxxsmall">
-            <p>{I18N.PACKAGES_INFO}</p>
-            <p>
-              <a
-                href={config.documentation.packages}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {I18N.READ_MORE}
-              </a>
-            </p>
-          </Stack>
-        )}
-      >
-        <Icon glyph="help" />
+      <Popover icon="help">
+        <Stack space="xxxsmall">
+          <p>{I18N.PACKAGES_INFO}</p>
+          <p>
+            <a
+              href={config.documentation.packages}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {I18N.READ_MORE}
+            </a>
+          </p>
+        </Stack>
       </Popover>
     </FlexStack>
   );
@@ -101,29 +96,28 @@ export const BundlePackages = (props) => {
   );
 
   const renderRowHeader = (item) => {
-    const packages = item.label.split(PACKAGES_SEPARATOR);
+    const packageNames = item.label.split(PACKAGES_SEPARATOR);
     return (
       <>
-        {packages.map((packageName, index) => {
-          if (index < packages.length - 1) {
-            return <span className={css.packageName}>{packageName}</span>;
-          }
+        {packageNames.map((packageName, index) => {
+          // Render duplicate flag only for the last entry
+          const duplicateFlag = (index === packageNames.length - 1) && item.duplicate && (
+            <span className={css.duplicate} title="Duplicate package">
+              D
+            </span>
+          );
 
           return (
             <Popover
               className={css.packageName}
-              content={getPopoverContent({
+              icon={duplicateFlag}
+              label={packageName}
+            >
+              {getPopoverContent({
                 packageName,
                 duplicate: item.duplicate,
                 CustomComponentLink,
               })}
-            >
-              {item.duplicate && (
-                <span className={css.duplicate} title="Duplicate package">
-                  D
-                </span>
-              )}
-              {packageName}
             </Popover>
           );
         })}

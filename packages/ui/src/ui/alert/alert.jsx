@@ -9,7 +9,7 @@ export const Alert = (props) => {
   const { className, kind, children } = props;
 
   return (
-    <Box padding="small" outline className={cx(css.root, className, css[kind])}>
+    <Box padding={['xsmall', 'small']} outline className={cx(css.root, className, css[kind])}>
       {children}
     </Box>
   );
