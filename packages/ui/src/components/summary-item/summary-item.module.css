@@ -24,7 +24,6 @@
 }
 
 .currentMetric {
-  margin: 0;
   display: block;
   color: var(--color-heading);
   font-size: var(--size-large);
@@ -35,14 +34,16 @@
 
 .delta {
   margin: var(--space-xxxsmall) 0 0;
-  display: block;
   font-size: var(--size-small);
   line-height: var(--space-small);
   min-height: var(--space-xsmall);
 }
 
-.showDelta .currentMetric {
-  min-height: calc(var(--space-medium) + var(--space-small));
+.baselineMetric {
+  color: var(--color-text-light);
+  font-size: var(--size-small);
+  line-height: var(--space-small);
+  min-height: var(--space-small);
 }
 
 /* Loading state */
@@ -58,3 +59,4 @@
   line-height: var(--space-medium);
   min-height: var(--space-medium);
 }
+

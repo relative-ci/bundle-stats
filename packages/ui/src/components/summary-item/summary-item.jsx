@@ -70,7 +70,7 @@ export const SummaryItem = ({
   );
 
   return (
-    <Stack as={Component} className={rootClassName} {...props}>
+    <Stack space="xxxsmall" as={Component} className={rootClassName} {...props}>
       <FlexStack as="h3" space="xxxsmall" className={css.title}>
         <span>
           {metric.label}
@@ -86,19 +86,37 @@ export const SummaryItem = ({
         )}
       </FlexStack>
 
-      {!loading ? (
-        <Metric className={css.currentMetric} value={current} formatter={metric.formatter} enhanced>
-          {showDelta && (
-            <Delta
-              className={css.delta}
-              displayValue={runInfo.displayDeltaPercentage}
-              deltaType={runInfo.deltaType}
-            />
-          )}
-        </Metric>
-      ) : (
-        <span className={cx(css.currentMetric, css.loading)} />
-      )}
+      <Stack>
+        {!loading ? (
+          <Metric
+            className={css.currentMetric}
+            value={current}
+            formatter={metric.formatter}
+            enhanced
+            inline
+          >
+            {showDelta && (
+              <Delta
+                className={css.delta}
+                displayValue={runInfo.displayDeltaPercentage}
+                deltaType={runInfo.deltaType}
+              />
+            )}
+          </Metric>
+        ) : (
+          <span className={cx(css.currentMetric, css.loading)} />
+        )}
+
+        {!loading ? (
+          <Metric
+            className={css.baselineMetric}
+            value={baseline}
+            formatter={metric.formatter}
+          />
+        ) : (
+          <span className={cx(css.baselineMetric, css.loading)} />
+        )}
+      </Stack>
     </Stack>
   );
 };
