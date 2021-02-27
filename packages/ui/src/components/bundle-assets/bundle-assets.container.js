@@ -124,7 +124,7 @@ export const enhance = compose(
     const items = webpack.compareBySection.assets(jobs);
 
     const defaultFilters = {
-      [ASSET_FILTERS.CHANGED]: true,
+      [ASSET_FILTERS.CHANGED]: jobs?.length > 1,
       ...getAssetEntryTypeFilters(true),
       ...getAssetFileTypeFilters(true),
     };

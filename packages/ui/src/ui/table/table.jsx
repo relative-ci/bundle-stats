@@ -121,7 +121,7 @@ export const Table = ({ className, emptyMessage, outline, headers, rows }) => (
 
       {rows.length === 0 && (
         <tr key="row-empty">
-          <Td className={css.emptyData} colSpan={headers.length || 1}>
+          <Td className={css.emptyData} colSpan={Array.isArray(headers[0]) ? headers[0].length : headers.length}>
             {emptyMessage}
           </Td>
         </tr>
