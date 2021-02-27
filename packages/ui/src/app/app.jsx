@@ -59,6 +59,7 @@ Layout.defaultProps = {
 const AppComponent = ({ footer, jobs }) => {
   const [bundleStatsState, bundleStatsSetState] = useComponentQueryState(COMPONENT.BUNDLE_ASSETS);
   const [bundlePackagesState, bundlePackagesSetState] = useComponentQueryState(COMPONENT.BUNDLE_PACKAGES);
+  const [bundleModulesState, bundleModulesSetState] = useComponentQueryState(COMPONENT.BUNDLE_MODULES);
 
   if (jobs.length === 0) {
     return (
@@ -140,7 +141,11 @@ const AppComponent = ({ footer, jobs }) => {
                     showSummaryItemDelta={jobs.length !== 1}
                   />
                   <Box outline>
-                    <BundleModules jobs={jobs} />
+                    <BundleModules
+                      jobs={jobs}
+                      setState={bundleModulesSetState}
+                      {...bundleModulesState}
+                    />
                   </Box>
                 </Stack>
               </Container>

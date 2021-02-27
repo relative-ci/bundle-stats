@@ -31,11 +31,12 @@ const getCustomSort = (sortBy) => (item) => {
 };
 
 const getRowFilter = (filters) => (row) => {
+  // Skip not changed rows
   if (filters[MODULE_FILTER_CHANGED] && !row.changed) {
-    return row.changed;
+    return false;
   }
 
-  // Filter by chunkId
+  // Skip not matching chunks
   if(!get(row, 'runs[0].chunkIds', []).find((chunkId) => filters[`${MODULE_FILTER_CHUNKS}.${chunkId}`])) {
     return false;
   }
@@ -61,7 +62,7 @@ export default compose(
       ...getChunksFilters(chunks, true),
     };
 
-    const initialFilters = {
+    const emptyFilters = {
       changed: jobs?.length > 1,
       ...getChunksFilters(chunks, true),
     };
@@ -73,7 +74,7 @@ export default compose(
 
     return {
       defaultFilters,
-      initialFilters,
+      emptyFilters,
       allEntriesFilters,
       totalRowCount: items.length,
       items,

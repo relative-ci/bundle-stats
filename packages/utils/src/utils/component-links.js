@@ -6,6 +6,8 @@ import {
   ASSET_FILE_TYPE,
   ASSET_FILTERS,
   COMPONENT,
+  MODULE_CHUNK,
+  MODULE_FILTERS,
   PACKAGE_FILTERS,
   SECTIONS,
 } from '../config/component-links';
@@ -108,6 +110,32 @@ export const BUNDLE_MODULES = {
   section: SECTIONS.MODULES,
   title: I18N.COMPONENT_LINK_MODULES,
 };
+
+export const getBundleModulesBySearch = (search) => ({
+  section: SECTIONS.MODULES,
+  title: I18N.COMPONENT_LINK_MODULES,
+  params: {
+    [COMPONENT.BUNDLE_MODULES]: {
+      search,
+      filters: {
+        [MODULE_FILTERS.CHANGED]: false,
+      },
+    },
+  },
+});
+
+export const getBundleModulesByChunk = (chunkId) => ({
+  section: SECTIONS.MODULES,
+  title: I18N.COMPONENT_LINK_MODULES,
+  params: {
+    [COMPONENT.BUNDLE_MODULES]: {
+      filters: {
+        [MODULE_FILTERS.CHANGED]: false,
+        [`${MODULE_CHUNK}.${chunkId}`]: true,
+      },
+    },
+  },
+})
 
 export const BUNLDE_PACKAGES_COUNT = {
   section: SECTIONS.PACKAGES,

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { PACKAGE_FILTERS, PACKAGES_SEPARATOR, getBundlePackagesByNameComponentLink } from '@bundle-stats/utils';
+import { PACKAGE_FILTERS, PACKAGES_SEPARATOR, getBundleModulesBySearch, getBundlePackagesByNameComponentLink } from '@bundle-stats/utils';
 
 import config from '../../config.json';
 import I18N from '../../i18n';
@@ -17,33 +17,43 @@ import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
 import css from './bundle-packages.module.css';
 
-const getPopoverContent = ({ packageName, duplicate, CustomComponentLink }) => (
-  <Stack space="xxsmall" className={css.packagePopover}>
-    <h4 className={css.packagePopoverTitle}>{packageName}</h4>
-    <ul className={css.packagePopoverList}>
-      <li className={css.packagePopoverItem}>
-        <a href={`https://www.npmjs.com/package/${packageName}`} target="_blank" rel="noreferrer">npmjs.com</a>
-      </li>
-      <li className={css.packagePopoverItem}>
-        <a
-          href={`https://bundlephobia.com/result?p=${packageName}`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          bundlephobia.com
-        </a>
-      </li>
-    </ul>
+const getPopoverContent = ({ packageName, packagePath, duplicate, CustomComponentLink }) => {
+  const normalizedPackagePath = `node_modules/${packagePath.split(PACKAGES_SEPARATOR).join('/node_modules/')}`;
 
-    <div className={css.packagePopover.actions}>
-      {duplicate && (
-        <CustomComponentLink {...getBundlePackagesByNameComponentLink(packageName)}>
-          View all duplicates
+  return (
+    <Stack space="xxsmall" className={css.packagePopover}>
+      <h4 className={css.packagePopoverTitle}>{packageName}</h4>
+      <ul className={css.packagePopoverList}>
+        <li className={css.packagePopoverItem}>
+          <a href={`https://www.npmjs.com/package/${packageName}`} target="_blank" rel="noreferrer">npmjs.com</a>
+        </li>
+        <li className={css.packagePopoverItem}>
+          <a
+            href={`https://bundlephobia.com/result?p=${packageName}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            bundlephobia.com
+          </a>
+        </li>
+      </ul>
+
+      <Stack space="xxxsmall" className={css.packagePopover.actions}>
+        {duplicate && (
+          <div>
+            <CustomComponentLink {...getBundlePackagesByNameComponentLink(packageName)}>
+              View all duplicates
+            </CustomComponentLink>
+          </div>
+        )}
+
+        <CustomComponentLink {...getBundleModulesBySearch(normalizedPackagePath)}>
+          View all modules
         </CustomComponentLink>
-      )}
-    </div>
-  </Stack>
-);
+      </Stack>
+    </Stack>
+  );
+};
 
 const Title = () => {
   return (
@@ -115,6 +125,7 @@ export const BundlePackages = (props) => {
             >
               {getPopoverContent({
                 packageName,
+                packagePath: item.label,
                 duplicate: item.duplicate,
                 CustomComponentLink,
               })}
