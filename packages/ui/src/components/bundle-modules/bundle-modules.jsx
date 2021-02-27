@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { map } from 'lodash';
+import { get, map } from 'lodash';
 
 import config from '../../config.json';
 import I18N from '../../i18n';
@@ -17,6 +17,7 @@ import { Tooltip } from '../../ui/tooltip';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
 import css from './bundle-modules.module.css';
+import {MODULE_FILTER_CHANGED, MODULE_FILTER_CHUNKS} from './bundle-modules.constants';
 
 const getRenderRowHeader = (labels) => (row) => (
   <Tooltip
@@ -34,7 +35,6 @@ const getRenderRowHeader = (labels) => (row) => (
         })}
       </div>
     }
-    align="topLeft"
   >
     <FileName className={css.name} name={row.label} />
   </Tooltip>
@@ -66,6 +66,7 @@ export const BundleModules = ({
   className,
   jobs,
   items,
+  chunks,
   totalRowCount,
   updateFilters,
   resetFilters,
@@ -110,10 +111,20 @@ export const BundleModules = ({
               <FiltersDropdown
                 className={css.tableDropdown}
                 filters={{
-                  changed: {
+                  [MODULE_FILTER_CHANGED]: {
                     label: 'Changed',
                     defaultValue: filters.changed,
                     disabled: jobs.length <= 1,
+                  },
+                  [MODULE_FILTER_CHUNKS]: {
+                    label: 'Chunks',
+                    ...chunks.reduce((agg, { id, name }) => ({
+                      ...agg,
+                      [id]: {
+                        label: name,
+                        defaultValue: get(filters, `${MODULE_FILTER_CHUNKS}.${id}`, true),
+                      }
+                    }), {})
                   },
                 }}
                 label={`Filters (${items.length}/${totalRowCount})`}
@@ -161,6 +172,12 @@ BundleModules.propTypes = {
 
   /** Jobs data */
   jobs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+
+  /** Chunks data */
+  chunks: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+  })).isRequired,
 
   /** total row count */
   totalRowCount: PropTypes.number,
