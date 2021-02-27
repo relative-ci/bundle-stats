@@ -9,7 +9,6 @@ import { Stack } from '../../layout/stack';
 import { FlexStack } from '../../layout/flex-stack';
 import { EmptySet } from '../../ui/empty-set';
 import { FiltersDropdown } from '../../ui/filters-dropdown';
-import { Icon } from '../../ui/icon';
 import { Popover } from '../../ui/popover';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Toolbar } from '../../ui/toolbar';
@@ -50,23 +49,19 @@ const Title = () => {
   return (
     <FlexStack space="xxxsmall" className={css.title}>
       <span>{I18N.PACKAGES}</span>
-      <Popover
-        content={(
-          <Stack space="xxxsmall">
-            <p>{I18N.PACKAGES_INFO}</p>
-            <p>
-              <a
-                href={config.documentation.packages}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {I18N.READ_MORE}
-              </a>
-            </p>
-          </Stack>
-        )}
-      >
-        <Icon glyph="help" />
+      <Popover icon="help">
+        <Stack space="xxxsmall">
+          <p>{I18N.PACKAGES_INFO}</p>
+          <p>
+            <a
+              href={config.documentation.packages}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {I18N.READ_MORE}
+            </a>
+          </p>
+        </Stack>
       </Popover>
     </FlexStack>
   );
@@ -112,18 +107,18 @@ export const BundlePackages = (props) => {
           return (
             <Popover
               className={css.packageName}
-              content={getPopoverContent({
-                packageName,
-                duplicate: item.duplicate,
-                CustomComponentLink,
-              })}
-            >
-              {item.duplicate && (
+              icon={item.duplicate && (
                 <span className={css.duplicate} title="Duplicate package">
                   D
                 </span>
               )}
-              {packageName}
+              label={packageName}
+            >
+              {getPopoverContent({
+                packageName,
+                duplicate: item.duplicate,
+                CustomComponentLink,
+              })}
             </Popover>
           );
         })}

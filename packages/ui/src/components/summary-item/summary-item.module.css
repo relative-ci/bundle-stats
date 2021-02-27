@@ -1,24 +1,11 @@
 .title {
   margin: 0;
-  display: inline-block;
   color: var(--color-text-light);
   font-weight: bold;
   font-size: var(--size-xsmall);
   line-height: var(--space-small);
   text-transform: uppercase;
   white-space: nowrap;
-}
-
-.icon {
-  color: var(--color-text-light);
-  transition: var(--transition-in);
-}
-
-.icon:hover,
-.icon:active,
-.icon:focus {
-  color: var(--color-primary);
-  transition: var(--transition-out);
 }
 
 .readMoreBtn {

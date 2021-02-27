@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
-import { Icon } from '../../ui/icon';
 import { Popover } from '../../ui/popover';
 import { Stack } from '../../layout/stack';
 import { FlexStack } from '../../layout/flex-stack';
@@ -72,15 +71,17 @@ export const SummaryItem = ({
 
   return (
     <Stack as={Component} className={rootClassName} {...props}>
-      <FlexStack space="xxxsmall" className={css.header}>
-        <h3 className={css.title}>{metric.label}</h3>
+      <FlexStack as="h3" space="xxxsmall" className={css.title}>
+        <span>
+          {metric.label}
+        </span>
 
         {showMetricDescriptionTooltip && (
           <Popover
             className={css.icon}
-            content={<MetricInfo {...metric} />}
+            icon="help"
           >
-            <Icon glyph="help" />
+            <MetricInfo {...metric} />
           </Popover>
         )}
       </FlexStack>

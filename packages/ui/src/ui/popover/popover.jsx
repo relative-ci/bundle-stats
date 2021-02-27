@@ -11,7 +11,7 @@ import {
 import { Icon } from '../icon';
 import css from './popover.module.css';
 
-export const Popover = ({ className, content, children }) => {
+export const Popover = ({ className, icon, label, children }) => {
   const popover = usePopoverState({
     baseId: process.env.NODE_ENV === 'test' && 'id-test',
     gutter: 24,
@@ -42,12 +42,19 @@ export const Popover = ({ className, content, children }) => {
         {...popover}
         onClick={onButtonClick}
       >
-        {children}
+        {icon && ((typeof icon === 'string') ? (
+          <Icon className={css.icon} glyph={icon} />
+        ) : icon)}
+        {label && (
+          <span className={css.label}>
+            {label}
+          </span>
+        )}
       </UIPopoverDisclosure>
       <UIPopover className={css.popover} {...popover} tabIndex={0}>
         <UIPopoverArrow className={css.arrow} {...popover} />
 
-        {content}
+        {children}
 
         <Icon
           glyph="close"
@@ -63,10 +70,13 @@ export const Popover = ({ className, content, children }) => {
 
 Popover.propTypes = {
   className: PropTypes.string,
-  content: PropTypes.node.isRequired,
+  label: PropTypes.string,
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   children: PropTypes.node.isRequired,
 };
 
 Popover.defaultProps = {
   className: '',
+  icon: '',
+  label: '',
 };
