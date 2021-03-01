@@ -88,6 +88,16 @@ exports[`Storyshots Components/BundleModules default 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": "0",
+                    "name": "main",
+                  },
+                  Object {
+                    "id": "1",
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "abc123",
               },
             },
@@ -105,7 +115,8 @@ exports[`Storyshots Components/BundleModules default 1`] = `
                     "value": 0,
                   },
                   "1.css": Object {
-                    "isChunk": false,
+                    "chunkId": "1",
+                    "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
                     "name": "1.010f5a1.css",
@@ -189,14 +200,16 @@ exports[`Storyshots Components/BundleModules default 1`] = `
                     "value": 1980,
                   },
                   "main.css": Object {
-                    "isChunk": false,
+                    "chunkId": "0",
+                    "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
                     "name": "main.df5dfc3.css",
                     "value": 4089,
                   },
                   "main.js": Object {
-                    "isChunk": false,
+                    "chunkId": "0",
+                    "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
                     "name": "main.bc8f2337.js",
@@ -224,7 +237,8 @@ exports[`Storyshots Components/BundleModules default 1`] = `
                     "value": 381,
                   },
                   "vendor.js": Object {
-                    "isChunk": false,
+                    "chunkId": "1",
+                    "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
                     "name": "vendor.ae130d4.js",
@@ -235,7 +249,7 @@ exports[`Storyshots Components/BundleModules default 1`] = `
                   "value": 0,
                 },
                 "chunkCount": Object {
-                  "value": 0,
+                  "value": 4,
                 },
                 "duplicatePackagesCount": Object {
                   "value": 3,
@@ -7088,7 +7102,7 @@ exports[`Storyshots Components/BundleModules default 1`] = `
                 },
                 "chunkCount": Object {
                   "baseline": 0,
-                  "current": 0,
+                  "current": 4,
                 },
                 "duplicatePackagesCount": Object {
                   "baseline": 0,
@@ -7212,6 +7226,16 @@ exports[`Storyshots Components/BundleModules empty baseline 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": "0",
+                    "name": "main",
+                  },
+                  Object {
+                    "id": "1",
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "def456",
               },
             },
@@ -7229,7 +7253,8 @@ exports[`Storyshots Components/BundleModules empty baseline 1`] = `
                     "value": 0,
                   },
                   "1.css": Object {
-                    "isChunk": false,
+                    "chunkId": "1",
+                    "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
                     "name": "1.242bca1.css",
@@ -7313,14 +7338,16 @@ exports[`Storyshots Components/BundleModules empty baseline 1`] = `
                     "value": 1980,
                   },
                   "main.css": Object {
-                    "isChunk": false,
+                    "chunkId": "0",
+                    "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
                     "name": "main.bd313b2.css",
                     "value": 3228,
                   },
                   "main.js": Object {
-                    "isChunk": false,
+                    "chunkId": "0",
+                    "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
                     "name": "main.af1dbc34.js",
@@ -7348,7 +7375,8 @@ exports[`Storyshots Components/BundleModules empty baseline 1`] = `
                     "value": 381,
                   },
                   "vendor.js": Object {
-                    "isChunk": false,
+                    "chunkId": "1",
+                    "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
                     "name": "vendor.6858db2.js",
@@ -7359,7 +7387,7 @@ exports[`Storyshots Components/BundleModules empty baseline 1`] = `
                   "value": 0,
                 },
                 "chunkCount": Object {
-                  "value": 0,
+                  "value": 4,
                 },
                 "duplicatePackagesCount": Object {
                   "value": 3,
@@ -14212,7 +14240,7 @@ exports[`Storyshots Components/BundleModules empty baseline 1`] = `
                 },
                 "chunkCount": Object {
                   "baseline": 0,
-                  "current": 0,
+                  "current": 4,
                 },
                 "duplicatePackagesCount": Object {
                   "baseline": 0,
@@ -14340,6 +14368,16 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": "0",
+                    "name": "main",
+                  },
+                  Object {
+                    "id": "1",
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "def456",
               },
             },
@@ -14357,7 +14395,8 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
                     "value": 0,
                   },
                   "1.css": Object {
-                    "isChunk": false,
+                    "chunkId": "1",
+                    "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
                     "name": "1.242bca1.css",
@@ -14441,14 +14480,16 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
                     "value": 1980,
                   },
                   "main.css": Object {
-                    "isChunk": false,
+                    "chunkId": "0",
+                    "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
                     "name": "main.bd313b2.css",
                     "value": 3228,
                   },
                   "main.js": Object {
-                    "isChunk": false,
+                    "chunkId": "0",
+                    "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
                     "name": "main.af1dbc34.js",
@@ -14476,7 +14517,8 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
                     "value": 381,
                   },
                   "vendor.js": Object {
-                    "isChunk": false,
+                    "chunkId": "1",
+                    "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
                     "name": "vendor.6858db2.js",
@@ -14487,7 +14529,7 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
                   "value": 75.34,
                 },
                 "chunkCount": Object {
-                  "value": 0,
+                  "value": 4,
                 },
                 "duplicatePackagesCount": Object {
                   "value": 3,
@@ -21339,8 +21381,8 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
                   "current": 75.34,
                 },
                 "chunkCount": Object {
-                  "baseline": 0,
-                  "current": 0,
+                  "baseline": 4,
+                  "current": 4,
                 },
                 "duplicatePackagesCount": Object {
                   "baseline": 3,
@@ -21412,6 +21454,16 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": "0",
+                    "name": "main",
+                  },
+                  Object {
+                    "id": "1",
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "abc123",
               },
             },
@@ -21429,7 +21481,8 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
                     "value": 0,
                   },
                   "1.css": Object {
-                    "isChunk": false,
+                    "chunkId": "1",
+                    "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
                     "name": "1.010f5a1.css",
@@ -21513,14 +21566,16 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
                     "value": 1980,
                   },
                   "main.css": Object {
-                    "isChunk": false,
+                    "chunkId": "0",
+                    "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
                     "name": "main.df5dfc3.css",
                     "value": 4089,
                   },
                   "main.js": Object {
-                    "isChunk": false,
+                    "chunkId": "0",
+                    "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
                     "name": "main.bc8f2337.js",
@@ -21548,7 +21603,8 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
                     "value": 381,
                   },
                   "vendor.js": Object {
-                    "isChunk": false,
+                    "chunkId": "1",
+                    "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
                     "name": "vendor.ae130d4.js",
@@ -21559,7 +21615,7 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
                   "value": 0,
                 },
                 "chunkCount": Object {
-                  "value": 0,
+                  "value": 4,
                 },
                 "duplicatePackagesCount": Object {
                   "value": 3,
@@ -28412,7 +28468,7 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
                 },
                 "chunkCount": Object {
                   "baseline": 0,
-                  "current": 0,
+                  "current": 4,
                 },
                 "duplicatePackagesCount": Object {
                   "baseline": 0,

@@ -42,14 +42,8 @@ export const Popover = ({ className, icon, label, children }) => {
         {...popover}
         onClick={onButtonClick}
       >
-        {icon && ((typeof icon === 'string') ? (
-          <Icon className={css.icon} glyph={icon} />
-        ) : icon)}
-        {label && (
-          <span className={css.label}>
-            {label}
-          </span>
-        )}
+        {icon && (typeof icon === 'string' ? <Icon className={css.icon} glyph={icon} /> : icon)}
+        {label && <span className={css.label}>{label}</span>}
       </UIPopoverDisclosure>
       <UIPopover className={css.popover} {...popover} tabIndex={0}>
         <UIPopoverArrow className={css.arrow} {...popover} />
@@ -70,8 +64,8 @@ export const Popover = ({ className, icon, label, children }) => {
 
 Popover.propTypes = {
   className: PropTypes.string,
-  label: PropTypes.string,
-  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  label: PropTypes.element,
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   children: PropTypes.node.isRequired,
 };
 

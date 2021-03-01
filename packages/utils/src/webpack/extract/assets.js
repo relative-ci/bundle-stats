@@ -1,4 +1,4 @@
-import { get } from 'lodash';
+import { get, isEmpty } from 'lodash';
 
 import { getAssetName } from '../utils';
 
@@ -13,40 +13,53 @@ export const extractAssets = (webpackStats) => {
     .map(({ assets: items }) => items)
     .flat();
 
-  const initialItems = Object.values(webpackChunks)
+  const initialItems = webpackChunks
     .filter(({ initial }) => initial)
     .map(({ files }) => files)
     .flat();
 
-  const chunkItems = Object.values(webpackChunks)
-    .filter(({ entry, initial }) => !entry && !initial)
-    .map(({ files }) => files)
-    .flat();
+  const normalizedChunks = webpackChunks.map(({ id, names, files }) => ({
+    id: id.toString(),
+    name: names.join('+') || `chunk-${id}`,
+    files,
+  }));
 
   const assets = webpackAssets.reduce((aggregator, asset) => {
-    const baseName = asset.name && asset.name.split('?')[0];
+    const baseName = asset?.name.split('?')[0];
 
     if (IGNORE_PATTERN.test(baseName)) {
       return aggregator;
     }
 
-    const source = getAssetName(baseName);
-    // @TODO Get an uniq id (based on url, source)
-    const id = source;
+    // Check for the corresponding chunk
+    const assetChunk = normalizedChunks.find((chunk) => chunk.files.includes(asset.name));
 
+    const normalizedName = getAssetName(baseName);
     const { size, name } = asset;
 
     return {
       ...aggregator,
-      [id]: {
+      [normalizedName]: {
         name: baseName,
         value: size,
         isEntry: entryItems.includes(name),
         isInitial: initialItems.includes(name),
-        isChunk: chunkItems.includes(name),
+        isChunk: Boolean(assetChunk),
+        ...(assetChunk ? { chunkId: assetChunk.id } : {}),
       },
     };
   }, {});
 
-  return { metrics: { assets } };
+  return {
+    metrics: {
+      assets,
+    },
+    ...(!isEmpty(normalizedChunks)
+      ? {
+          meta: {
+            chunks: normalizedChunks.map(({ id, name }) => ({ id, name })),
+          },
+        }
+      : {}),
+  };
 };

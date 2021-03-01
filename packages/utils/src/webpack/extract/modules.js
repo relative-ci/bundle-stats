@@ -24,27 +24,27 @@ export const extractModules = (webpackStats = {}) => {
   }
 
   const modulesByChunk = modules.reduce((aggregator, moduleEntry) => {
-    const {
-      name,
-      size,
-    } = moduleEntry;
+    const { name, size } = moduleEntry;
 
     const moduleChunks = get(moduleEntry, 'chunks', []);
     const normalizedName = getModuleName(name);
 
-    return moduleChunks.reduce((aggWithChunks, chunkId) => ({
-      ...aggWithChunks,
-      [chunkId]: {
-        chunkNames: getChunkNames(chunks, chunkId),
-        modules: {
-          ...get(aggWithChunks, [chunkId, 'modules']),
-          [normalizedName]: {
-            name,
-            value: size,
+    return moduleChunks.reduce(
+      (aggWithChunks, chunkId) => ({
+        ...aggWithChunks,
+        [chunkId.toString()]: {
+          chunkNames: getChunkNames(chunks, chunkId),
+          modules: {
+            ...get(aggWithChunks, [chunkId, 'modules']),
+            [normalizedName]: {
+              name,
+              value: size,
+            },
           },
         },
-      },
-    }), aggregator);
+      }),
+      aggregator,
+    );
   }, {});
 
   return {

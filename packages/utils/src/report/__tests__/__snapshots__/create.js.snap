@@ -10,21 +10,23 @@ Object {
       "label": "main.css",
       "runs": Array [
         Object {
+          "chunkId": "1",
           "delta": -1000,
           "deltaPercentage": -9.09090909,
           "deltaType": "POSITIVE",
           "displayDelta": "-1000B",
           "displayDeltaPercentage": "-9.09%",
           "displayValue": "9.77KB",
-          "isChunk": false,
+          "isChunk": true,
           "isEntry": true,
           "isInitial": true,
           "name": "main.a1b2c3d.css",
           "value": 10000,
         },
         Object {
+          "chunkId": "1",
           "displayValue": "10.74KB",
-          "isChunk": false,
+          "isChunk": true,
           "isEntry": true,
           "isInitial": true,
           "name": "main.b1c2d3e.css",
@@ -39,21 +41,23 @@ Object {
       "label": "main.js",
       "runs": Array [
         Object {
+          "chunkId": "1",
           "delta": 1000,
           "deltaPercentage": 2.04081633,
           "deltaType": "LOW_NEGATIVE",
           "displayDelta": "+1000B",
           "displayDeltaPercentage": "+2.04%",
           "displayValue": "48.83KB",
-          "isChunk": false,
+          "isChunk": true,
           "isEntry": true,
           "isInitial": true,
           "name": "main.a2b3c4d.js",
           "value": 50000,
         },
         Object {
+          "chunkId": "1",
           "displayValue": "47.85KB",
-          "isChunk": false,
+          "isChunk": true,
           "isEntry": true,
           "isInitial": true,
           "name": "main.b2c3d4e.js",
@@ -382,6 +386,12 @@ Object {
       "internalBuildNumber": 2,
       "webpack": Object {
         "builtAt": "2019-01-01T00:00:00.000Z",
+        "chunks": Array [
+          Object {
+            "id": "1",
+            "name": "main",
+          },
+        ],
         "hash": "abcd1234",
       },
     },
@@ -389,6 +399,12 @@ Object {
       "internalBuildNumber": 1,
       "webpack": Object {
         "builtAt": "2019-01-01T00:00:00.000Z",
+        "chunks": Array [
+          Object {
+            "id": "1",
+            "name": "main",
+          },
+        ],
         "hash": "defg1234",
       },
     },
@@ -660,12 +676,12 @@ Object {
           "deltaType": "NO_CHANGE",
           "displayDelta": "0",
           "displayDeltaPercentage": "0%",
-          "displayValue": "0",
-          "value": 0,
+          "displayValue": "2",
+          "value": 2,
         },
         Object {
-          "displayValue": "0",
-          "value": 0,
+          "displayValue": "2",
+          "value": 2,
         },
       ],
     },
@@ -791,9 +807,9 @@ Object {
         "deltaType": "NO_CHANGE",
         "displayDelta": "0",
         "displayDeltaPercentage": "0%",
-        "displayValue": "0",
+        "displayValue": "2",
         "label": "Chunks",
-        "value": 0,
+        "value": 2,
       },
       Object {
         "delta": 0,
@@ -840,8 +856,9 @@ Object {
       "label": "main.css",
       "runs": Array [
         Object {
+          "chunkId": "1",
           "displayValue": "9.77KB",
-          "isChunk": false,
+          "isChunk": true,
           "isEntry": true,
           "isInitial": true,
           "name": "main.a1b2c3d.css",
@@ -856,8 +873,9 @@ Object {
       "label": "main.js",
       "runs": Array [
         Object {
+          "chunkId": "1",
           "displayValue": "48.83KB",
-          "isChunk": false,
+          "isChunk": true,
           "isEntry": true,
           "isInitial": true,
           "name": "main.a2b3c4d.js",
@@ -1071,6 +1089,12 @@ Object {
       "internalBuildNumber": 1,
       "webpack": Object {
         "builtAt": "2019-01-01T00:00:00.000Z",
+        "chunks": Array [
+          Object {
+            "id": "1",
+            "name": "main",
+          },
+        ],
         "hash": "abcd1234",
       },
     },
@@ -1229,8 +1253,8 @@ Object {
       "label": "Chunks",
       "runs": Array [
         Object {
-          "displayValue": "0",
-          "value": 0,
+          "displayValue": "2",
+          "value": 2,
         },
       ],
     },
@@ -1324,14 +1348,14 @@ Object {
         "value": 6,
       },
       Object {
-        "delta": 0,
-        "deltaPercentage": 0,
-        "deltaType": "NO_CHANGE",
-        "displayDelta": "0",
-        "displayDeltaPercentage": "0%",
-        "displayValue": "0",
+        "delta": 2,
+        "deltaPercentage": 100,
+        "deltaType": "HIGH_NEGATIVE",
+        "displayDelta": "+2",
+        "displayDeltaPercentage": "+100%",
+        "displayValue": "2",
         "label": "Chunks",
-        "value": 0,
+        "value": 2,
       },
       Object {
         "delta": 4,
