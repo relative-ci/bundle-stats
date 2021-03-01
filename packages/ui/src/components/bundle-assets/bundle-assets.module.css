@@ -79,3 +79,7 @@
 .filenamePopover {
   min-width: 280px;
 }
+
+.assetInfoViewModulesIcon {
+  transform: rotate(-90deg);
+}
