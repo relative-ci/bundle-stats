@@ -1,12 +1,13 @@
 import { template } from 'lodash';
 
-import { FILE_TYPES, FILE_TYPE_CSS, FILE_TYPE_JS } from '../config/file-types';
+import { FILE_TYPES, FILE_TYPE_CSS, FILE_TYPE_JS, MODULE_SOURCE_FILE_TYPES } from '../config/file-types';
 import {
   ASSET_ENTRY_TYPE,
   ASSET_FILE_TYPE,
   ASSET_FILTERS,
   COMPONENT,
   MODULE_CHUNK,
+  MODULE_FILE_TYPE,
   MODULE_FILTERS,
   PACKAGE_FILTERS,
   SECTIONS,
@@ -38,6 +39,15 @@ export const getModuleChunkFilters = (chunkIds, value) => chunkIds.reduce(
   }),
   {},
 );
+
+export const getModuleFileTypeFilters = (value = true) =>
+  MODULE_SOURCE_FILE_TYPES.reduce(
+    (agg, fileType) => ({
+      ...agg,
+      [`${MODULE_FILE_TYPE}.${fileType}`]: value,
+    }),
+    {},
+  );
 
 export const TOTALS = {
   section: SECTIONS.TOTALS,
@@ -132,7 +142,7 @@ export const getBundleModulesBySearch = (search) => ({
   },
 });
 
-export const getBundleModulesByChunk = (chunkIds, chunkId) => ({
+export const getBundleModulesByChunk = (chunkIds, chunkId, fileType = '') => ({
   section: SECTIONS.MODULES,
   title: I18N.COMPONENT_LINK_MODULES,
   params: {
@@ -141,10 +151,14 @@ export const getBundleModulesByChunk = (chunkIds, chunkId) => ({
         [MODULE_FILTERS.CHANGED]: false,
         ...getModuleChunkFilters(chunkIds, false),
         [`${MODULE_CHUNK}.${chunkId}`]: true,
+        ...(fileType && {
+          ...getModuleFileTypeFilters(false),
+          [`${MODULE_FILE_TYPE}.${fileType}`]: true,
+        }),
       },
     },
   },
-})
+});
 
 export const BUNLDE_PACKAGES_COUNT = {
   section: SECTIONS.PACKAGES,

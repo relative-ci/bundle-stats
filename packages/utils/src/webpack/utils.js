@@ -25,7 +25,6 @@ const NO_BASENAME = /(^|.*\/)\..*$/;
 
 export const getFileType = (filename) => {
   const fileType = Object.entries(FILE_TYPE_PATTERNS).find(([, pattern]) => pattern.test(filename));
-
   return fileType ? fileType[0] : FILE_TYPE_OTHER;
 };
 
