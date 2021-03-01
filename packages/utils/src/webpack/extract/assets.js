@@ -19,7 +19,6 @@ export const extractAssets = (webpackStats) => {
     .flat();
 
   const chunkItems = Object.values(webpackChunks)
-    .filter(({ entry, initial }) => !entry && !initial)
     .map(({ files }) => files)
     .flat();
 

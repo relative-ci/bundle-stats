@@ -56,8 +56,8 @@ exports[`Storyshots Components/Summary custom keys 1`] = `
               "current": 75.34,
             },
             "chunkCount": Object {
-              "baseline": 0,
-              "current": 0,
+              "baseline": 4,
+              "current": 4,
             },
             "duplicatePackagesCount": Object {
               "baseline": 3,
@@ -157,8 +157,8 @@ exports[`Storyshots Components/Summary default 1`] = `
               "current": 75.34,
             },
             "chunkCount": Object {
-              "baseline": 0,
-              "current": 0,
+              "baseline": 4,
+              "current": 4,
             },
             "duplicatePackagesCount": Object {
               "baseline": 3,
@@ -323,7 +323,7 @@ exports[`Storyshots Components/Summary single run 1`] = `
             },
             "chunkCount": Object {
               "baseline": 0,
-              "current": 0,
+              "current": 4,
             },
             "duplicatePackagesCount": Object {
               "baseline": 0,
@@ -425,8 +425,8 @@ exports[`Storyshots Components/Summary with link 1`] = `
               "current": 75.34,
             },
             "chunkCount": Object {
-              "baseline": 0,
-              "current": 0,
+              "baseline": 4,
+              "current": 4,
             },
             "duplicatePackagesCount": Object {
               "baseline": 3,

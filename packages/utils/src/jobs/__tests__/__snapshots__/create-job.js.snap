@@ -58,14 +58,14 @@ Object {
           "value": 1000,
         },
         "main.css": Object {
-          "isChunk": false,
+          "isChunk": true,
           "isEntry": true,
           "isInitial": true,
           "name": "main.a1b2c3d.css",
           "value": 10000,
         },
         "main.js": Object {
-          "isChunk": false,
+          "isChunk": true,
           "isEntry": true,
           "isInitial": true,
           "name": "main.a2b3c4d.js",
@@ -76,7 +76,7 @@ Object {
         "value": 0,
       },
       "chunkCount": Object {
-        "value": 0,
+        "value": 2,
       },
       "duplicatePackagesCount": Object {
         "value": 1,
@@ -272,7 +272,7 @@ Object {
       },
       "chunkCount": Object {
         "baseline": 0,
-        "current": 0,
+        "current": 2,
       },
       "duplicatePackagesCount": Object {
         "baseline": 0,
@@ -361,14 +361,14 @@ Object {
           "value": 1000,
         },
         "main.css": Object {
-          "isChunk": false,
+          "isChunk": true,
           "isEntry": true,
           "isInitial": true,
           "name": "main.a1b2c3d.css",
           "value": 10000,
         },
         "main.js": Object {
-          "isChunk": false,
+          "isChunk": true,
           "isEntry": true,
           "isInitial": true,
           "name": "main.a2b3c4d.js",
@@ -379,7 +379,7 @@ Object {
         "value": 95.24,
       },
       "chunkCount": Object {
-        "value": 0,
+        "value": 2,
       },
       "duplicatePackagesCount": Object {
         "value": 1,
@@ -574,8 +574,8 @@ Object {
         "current": 95.24,
       },
       "chunkCount": Object {
-        "baseline": 0,
-        "current": 0,
+        "baseline": 2,
+        "current": 2,
       },
       "duplicatePackagesCount": Object {
         "baseline": 0,

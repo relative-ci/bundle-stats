@@ -61,7 +61,7 @@ describe('Webpack/extract/assets', () => {
             value: 100,
             isEntry: true,
             isInitial: true,
-            isChunk: false,
+            isChunk: true,
           },
           'css/app.css': {
             name: 'css/app.22929ab.css',
@@ -181,7 +181,7 @@ describe('Webpack/extract/assets', () => {
             value: 100,
             isEntry: true,
             isInitial: true,
-            isChunk: false,
+            isChunk: true,
           },
           'css/app.css': {
             name: 'css/app.22929ab.css',
