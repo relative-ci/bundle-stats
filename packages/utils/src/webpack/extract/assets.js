@@ -13,31 +13,26 @@ export const extractAssets = (webpackStats) => {
     .map(({ assets: items }) => items)
     .flat();
 
-  const initialItems = Object.values(webpackChunks)
+  const initialItems = webpackChunks
     .filter(({ initial }) => initial)
     .map(({ files }) => files)
     .flat();
 
-  const chunkItems = Object.values(webpackChunks)
-    .map(({ files }) => files)
-    .flat();
+  const chunkItems = webpackChunks.map(({ files }) => files).flat();
 
   const assets = webpackAssets.reduce((aggregator, asset) => {
-    const baseName = asset.name && asset.name.split('?')[0];
+    const baseName = asset?.name.split('?')[0];
 
     if (IGNORE_PATTERN.test(baseName)) {
       return aggregator;
     }
 
-    const source = getAssetName(baseName);
-    // @TODO Get an uniq id (based on url, source)
-    const id = source;
-
+    const normalizedName = getAssetName(baseName);
     const { size, name } = asset;
 
     return {
       ...aggregator,
-      [id]: {
+      [normalizedName]: {
         name: baseName,
         value: size,
         isEntry: entryItems.includes(name),
