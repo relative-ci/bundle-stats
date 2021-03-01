@@ -129,10 +129,18 @@
   --color-text-ultra-dark: var(--color-gray-ultra-dark);
   --color-heading: var(--color-gray-ultra-dark);
 
+  --color-success-light: var(--color-green-light);
   --color-success: var(--color-green);
+  --color-success-dark: var(--color-green-dark);
+  --color-info-light: var(--color-blue-light);
   --color-info: var(--color-blue);
+  --color--info-dark: var(--color-blue-dark);
+  --color-warning-light: var(--color-yellow-light);
   --color-warning: var(--color-yellow);
+  --color-warning-dark: var(--color-yellow-dark);
+  --color-danger-light: var(--color-red-light);
   --color-danger: var(--color-red);
+  --color-danger-dark: var(--color-red-dark);
 
   --color-primary-light: var(--color-blue-light);
   --color-primary: var(--color-blue);
