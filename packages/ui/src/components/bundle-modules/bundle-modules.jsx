@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { get, map } from 'lodash';
+import { get, isEmpty, map } from 'lodash';
 import { MODULE_CHUNK, MODULE_FILTERS } from '@bundle-stats/utils';
 
 import config from '../../config.json';
@@ -99,17 +99,23 @@ export const BundleModules = ({
       defaultValue: filters.changed,
       disabled: jobs.length <= 1,
     },
-    [MODULE_CHUNK]: {
-      label: 'Chunks',
-      ...chunks.reduce((agg, { id, name }) => ({
-        ...agg,
-        // @TODO defaultValue is always set to false
-        [id]: {
-          label: name,
-          defaultValue: get(filters, `${MODULE_CHUNK}.${id}`, true),
-        }
-      }), {})
-    },
+
+    // When chunks data available, list available chunks as filters
+    ...(!isEmpty(chunks) && {
+      [MODULE_CHUNK]: {
+        label: 'Chunks',
+        ...chunks.reduce(
+          (chunkFilters, { id, name }) => ({
+            ...chunkFilters,
+            [id]: {
+              label: name,
+              defaultValue: get(filters, `${MODULE_CHUNK}.${id}`, true),
+            },
+          }),
+          {},
+        ),
+      },
+    }),
   };
 
   return (

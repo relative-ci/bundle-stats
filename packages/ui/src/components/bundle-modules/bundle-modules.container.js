@@ -42,10 +42,7 @@ export default compose(
   withProps(({ jobs }) => {
     const items = webpack.compareBySection.allModules(jobs);
 
-    const chunks = (jobs[0]?.rawData?.webpack.chunks || []).map(({ id, names }) => ({
-      id,
-      name: names.join(',') || `chunk-${id}`,
-    }));
+    const chunks = jobs[0]?.meta?.webpack?.chunks || []
     const chunkIds = map(chunks, 'id');
 
     const defaultFilters = {

@@ -106,7 +106,6 @@ const getRenderRowHeader = (labels, CustomComponentLink, chunkIds) => (item) => 
     <Stack space="xsmall" className={css.filenamePopover}>
       {item.runs.map((run, index) => {
         const key = index;
-
         return (
           <Stack space="xxxsmall" key={key}>
             <h5>{labels[index]}</h5>
@@ -172,11 +171,7 @@ export const BundleAssets = (props) => {
     [],
   );
 
-  // List all the chunkIds across assets & runs
-  const chunks = (jobs[0]?.rawData?.webpack.chunks || []).map(({ id, names }) => ({
-    id,
-    name: names.join(',') || `chunk-${id}`,
-  }));
+  const chunks = jobs[0]?.meta?.webpack?.chunks || [];
   const chunkIds = map(chunks, 'id');
 
   const renderRowHeader = useMemo(() => getRenderRowHeader(map(jobs, 'label'), CustomComponentLink, chunkIds), []);

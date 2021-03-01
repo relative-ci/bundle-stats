@@ -94,6 +94,16 @@ exports[`Storyshots Components/BundleAssets custom filters 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": 0,
+                    "name": "main",
+                  },
+                  Object {
+                    "id": 1,
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "def456",
               },
             },
@@ -7170,6 +7180,16 @@ exports[`Storyshots Components/BundleAssets custom filters 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": 0,
+                    "name": "main",
+                  },
+                  Object {
+                    "id": 1,
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "abc123",
               },
             },
@@ -14298,6 +14318,16 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": 0,
+                    "name": "main",
+                  },
+                  Object {
+                    "id": 1,
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "abc123",
               },
             },
@@ -21426,6 +21456,16 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": 0,
+                    "name": "main",
+                  },
+                  Object {
+                    "id": 1,
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "def456",
               },
             },
@@ -28558,6 +28598,16 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": 0,
+                    "name": "main",
+                  },
+                  Object {
+                    "id": 1,
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "def456",
               },
             },
@@ -35500,6 +35550,16 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": 0,
+                    "name": "main",
+                  },
+                  Object {
+                    "id": 1,
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "abc123",
               },
             },
@@ -42494,6 +42554,16 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": 0,
+                    "name": "main",
+                  },
+                  Object {
+                    "id": 1,
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "def456",
               },
             },
@@ -49570,6 +49640,16 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": 0,
+                    "name": "main",
+                  },
+                  Object {
+                    "id": 1,
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "abc123",
               },
             },
@@ -56698,6 +56778,16 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": 0,
+                    "name": "main",
+                  },
+                  Object {
+                    "id": 1,
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "def456",
               },
             },
@@ -63636,6 +63726,16 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": 0,
+                    "name": "main",
+                  },
+                  Object {
+                    "id": 1,
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "abc123",
               },
             },
@@ -70626,6 +70726,16 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": 0,
+                    "name": "main",
+                  },
+                  Object {
+                    "id": 1,
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "def456",
               },
             },
@@ -77569,6 +77679,16 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": 0,
+                    "name": "main",
+                  },
+                  Object {
+                    "id": 1,
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "abc123",
               },
             },

@@ -54,6 +54,16 @@ exports[`Storyshots App default 1`] = `
           "meta": Object {
             "webpack": Object {
               "builtAt": "2019-01-02T01:01:01.000Z",
+              "chunks": Array [
+                Object {
+                  "id": 0,
+                  "name": "main",
+                },
+                Object {
+                  "id": 1,
+                  "name": "vendor",
+                },
+              ],
               "hash": "bcde2345",
             },
           },
@@ -7130,6 +7140,16 @@ exports[`Storyshots App default 1`] = `
           "meta": Object {
             "webpack": Object {
               "builtAt": "2019-01-01T01:01:01.000Z",
+              "chunks": Array [
+                Object {
+                  "id": 0,
+                  "name": "main",
+                },
+                Object {
+                  "id": 1,
+                  "name": "vendor",
+                },
+              ],
               "hash": "abcd1234",
             },
           },
@@ -14235,6 +14255,16 @@ exports[`Storyshots App empty baseline 1`] = `
           "meta": Object {
             "webpack": Object {
               "builtAt": "",
+              "chunks": Array [
+                Object {
+                  "id": 0,
+                  "name": "main",
+                },
+                Object {
+                  "id": 1,
+                  "name": "vendor",
+                },
+              ],
               "hash": "",
             },
           },
@@ -21330,6 +21360,16 @@ exports[`Storyshots App multiple baselines 1`] = `
           "meta": Object {
             "webpack": Object {
               "builtAt": "2019-01-02T01:01:01.000Z",
+              "chunks": Array [
+                Object {
+                  "id": 0,
+                  "name": "main",
+                },
+                Object {
+                  "id": 1,
+                  "name": "vendor",
+                },
+              ],
               "hash": "bcde2345",
             },
           },
@@ -28406,6 +28446,16 @@ exports[`Storyshots App multiple baselines 1`] = `
           "meta": Object {
             "webpack": Object {
               "builtAt": "2019-01-01T01:01:01.000Z",
+              "chunks": Array [
+                Object {
+                  "id": 0,
+                  "name": "main",
+                },
+                Object {
+                  "id": 1,
+                  "name": "vendor",
+                },
+              ],
               "hash": "abcd1234",
             },
           },
@@ -35474,6 +35524,16 @@ exports[`Storyshots App multiple baselines 1`] = `
           "meta": Object {
             "webpack": Object {
               "builtAt": "2019-01-01T01:01:01.000Z",
+              "chunks": Array [
+                Object {
+                  "id": 0,
+                  "name": "main",
+                },
+                Object {
+                  "id": 1,
+                  "name": "vendor",
+                },
+              ],
               "hash": "aaaa1111",
             },
           },
@@ -36902,6 +36962,16 @@ exports[`Storyshots App no baseline 1`] = `
           "meta": Object {
             "webpack": Object {
               "builtAt": "2019-01-02T01:01:01.000Z",
+              "chunks": Array [
+                Object {
+                  "id": 0,
+                  "name": "main",
+                },
+                Object {
+                  "id": 1,
+                  "name": "vendor",
+                },
+              ],
               "hash": "bcde2345",
             },
           },
@@ -43959,6 +44029,16 @@ exports[`Storyshots App no insights 1`] = `
           "meta": Object {
             "webpack": Object {
               "builtAt": "2019-01-02T01:01:01.000Z",
+              "chunks": Array [
+                Object {
+                  "id": 0,
+                  "name": "main",
+                },
+                Object {
+                  "id": 1,
+                  "name": "vendor",
+                },
+              ],
               "hash": "bcde2345",
             },
           },
@@ -51035,6 +51115,16 @@ exports[`Storyshots App no insights 1`] = `
           "meta": Object {
             "webpack": Object {
               "builtAt": "2019-01-01T01:01:01.000Z",
+              "chunks": Array [
+                Object {
+                  "id": 0,
+                  "name": "main",
+                },
+                Object {
+                  "id": 1,
+                  "name": "vendor",
+                },
+              ],
               "hash": "abcd1234",
             },
           },

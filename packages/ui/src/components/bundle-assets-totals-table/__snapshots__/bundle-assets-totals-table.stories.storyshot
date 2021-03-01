@@ -90,6 +90,16 @@ exports[`Storyshots Components/BundleAssetsTotalsTable default 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": 0,
+                    "name": "main",
+                  },
+                  Object {
+                    "id": 1,
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "def456",
               },
             },
@@ -7220,6 +7230,16 @@ exports[`Storyshots Components/BundleAssetsTotalsTable empty baseline 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": 0,
+                    "name": "main",
+                  },
+                  Object {
+                    "id": 1,
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "def456",
               },
             },
@@ -14354,6 +14374,16 @@ exports[`Storyshots Components/BundleAssetsTotalsTable multiple jobs 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": 0,
+                    "name": "main",
+                  },
+                  Object {
+                    "id": 1,
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "def456",
               },
             },
@@ -21430,6 +21460,16 @@ exports[`Storyshots Components/BundleAssetsTotalsTable multiple jobs 1`] = `
             "meta": Object {
               "webpack": Object {
                 "builtAt": "2019-01-01T00:00:00.000Z",
+                "chunks": Array [
+                  Object {
+                    "id": 0,
+                    "name": "main",
+                  },
+                  Object {
+                    "id": 1,
+                    "name": "vendor",
+                  },
+                ],
                 "hash": "abc123",
               },
             },
