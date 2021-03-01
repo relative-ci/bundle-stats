@@ -8,6 +8,7 @@ import {
   ASSET_FILTERS,
   FILE_TYPE_LABELS,
   getBundleModulesByChunk,
+  getModuleFileType,
 } from '@bundle-stats/utils';
 
 import config from '../../config.json';
@@ -75,8 +76,6 @@ TooltipNotPredictive.propTypes = {
   runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };
 
-const getChunk = (chunks, id) => find(chunks, { id });
-
 const getRenderRowHeader = ({ labels, CustomComponentLink, chunks, chunkIds }) => (item) => (
   <Popover
     label={<FileName name={item.label} />}
@@ -106,22 +105,26 @@ const getRenderRowHeader = ({ labels, CustomComponentLink, chunks, chunkIds }) =
     }
   >
     <Stack space="xsmall" className={css.filenamePopover}>
-      {item.runs.map((run, index) => (
-        <Stack space="xxxsmall">
-          <h5>{labels[index]}</h5>
-          <FileName name={run?.name || '-'} />
-          {run?.chunkId && (
-            <div>
-              <CustomComponentLink {...getBundleModulesByChunk(chunkIds, run.chunkId)}>
-                <FlexStack space="xxxsmall">
-                  <span>Chunk: {find(chunks, { id: run.chunkId }).name}</span>
-                  <Icon glyph="arrow" className={css.assetInfoViewModulesIcon} />
-                </FlexStack>
-              </CustomComponentLink>
-            </div>
-          )}
-        </Stack>
-      ))}
+      {item.runs.map((run, index) => {
+        const fileType = getModuleFileType(run?.name);
+
+        return (
+          <Stack space="xxxsmall">
+            <h5>{labels[index]}</h5>
+            <FileName name={run?.name || '-'} />
+            {run?.chunkId && (
+              <div>
+                <CustomComponentLink {...getBundleModulesByChunk(chunkIds, run.chunkId, fileType)}>
+                  <FlexStack space="xxxsmall">
+                    <span>{`${fileType} chunk: ${find(chunks, { id: run.chunkId }).name}`}</span>
+                    <Icon glyph="arrow" className={css.assetInfoViewModulesIcon} />
+                  </FlexStack>
+                </CustomComponentLink>
+              </div>
+            )}
+          </Stack>
+        );
+      })}
     </Stack>
   </Popover>
 );
