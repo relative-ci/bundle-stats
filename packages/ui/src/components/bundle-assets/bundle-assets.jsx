@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get, map } from 'lodash';
-import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, FILE_TYPE_LABELS } from '@bundle-stats/utils';
+import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, FILE_TYPE_LABELS, getBundleModulesByChunk } from '@bundle-stats/utils';
 
 import config from '../../config.json';
 import I18N from '../../i18n';
@@ -15,6 +15,7 @@ import { FiltersDropdown } from '../../ui/filters-dropdown';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { EmptySet } from '../../ui/empty-set';
 import { Toolbar } from '../../ui/toolbar';
+import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
 import css from './bundle-assets.module.css';
@@ -68,19 +69,30 @@ TooltipNotPredictive.propTypes = {
   runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };
 
-const TooltipFilename = ({ runs, labels }) => (
-  <div className={css.tooltipFilename}>
+const TooltipFilename = ({ runs, labels, CustomComponentLink }) => (
+  <Stack space="xsmall" className={css.filenamePopover}>
     {runs.map((run, index) => {
       const key = index;
 
+      const name = <FileName name={run?.name || '-'} />;
+
       return (
-        <div className={css.tooltipFilenameItem} key={key}>
-          <h5 className={css.tooltipFilenameTitle}>{labels[index]}</h5>
-          <FileName name={run && run.name ? run.name : '-'} />
-        </div>
+        <Stack space="xxxsmall" key={key}>
+          <h5>{labels[index]}</h5>
+
+          <div>
+          {run?.chunkId ? (
+            <CustomComponentLink {...getBundleModulesByChunk(run.chunkId)}>
+              {name}
+            </CustomComponentLink>
+          ) : (
+            name
+          )}
+          </div>
+        </Stack>
       );
     })}
-  </div>
+  </Stack>
 );
 
 TooltipFilename.defaultProps = {
@@ -93,36 +105,40 @@ TooltipFilename.propTypes = {
   labels: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };
 
-const getRenderRowHeader = (labels) => (item) => (
-  <div className={css.tableRowHeader}>
-    {item.isNotPredictive && (
-      <Tooltip
-        className={css.notPredictive}
-        title={<TooltipNotPredictive runs={item.runs} />}
-      >
-        <span className={cx('ui-icon ui-icon--small', css.notPredictiveIcon)}>warning</span>
-      </Tooltip>
-    )}
-    {item.isEntry && (
-      <span title="Entrypoint" className={css.flagEntry}>
-        e
-      </span>
-    )}
-    {item.isInitial && (
-      <span title="Initial" className={css.flagInitial}>
-        i
-      </span>
-    )}
-    {item.isChunk && (
-      <span title="Chunk" className={css.flagChunk}>
-        c
-      </span>
-    )}
-
-    <Tooltip title={<TooltipFilename runs={item.runs} labels={labels} />} align="topLeft">
-      <FileName name={item.label} />
-    </Tooltip>
-  </div>
+const getRenderRowHeader = (labels, CustomComponentLink) => (item) => (
+  <Popover
+    label={<FileName name={item.label} />}
+    icon={
+      <>
+        {item.isNotPredictive && (
+          <Tooltip className={css.notPredictive} title={<TooltipNotPredictive runs={item.runs} />}>
+            <span className={cx('ui-icon ui-icon--small', css.notPredictiveIcon)}>warning</span>
+          </Tooltip>
+        )}
+        {item.isEntry && (
+          <span title="Entrypoint" className={css.flagEntry}>
+            e
+          </span>
+        )}
+        {item.isInitial && (
+          <span title="Initial" className={css.flagInitial}>
+            i
+          </span>
+        )}
+        {item.isChunk && (
+          <span title="Chunk" className={css.flagChunk}>
+            c
+          </span>
+        )}
+      </>
+    }
+  >
+    <TooltipFilename
+      runs={item.runs}
+      labels={labels}
+      CustomComponentLink={CustomComponentLink}
+    />
+  </Popover>
 );
 
 const Title = () => {
@@ -133,11 +149,7 @@ const Title = () => {
         <Stack space="xxxsmall">
           <p>{I18N.ASSETS_INFO}</p>
           <p>
-            <a
-              href={config.documentation.assets}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={config.documentation.assets} target="_blank" rel="noreferrer">
               {I18N.READ_MORE}
             </a>
           </p>
@@ -162,6 +174,7 @@ export const BundleAssets = (props) => {
     updateSort,
     search,
     updateSearch,
+    customComponentLink: CustomComponentLink,
   } = props;
 
   const clearSearch = () => {
@@ -173,7 +186,7 @@ export const BundleAssets = (props) => {
     () => <EmptySet resources="assets" filtered={totalRowCount !== 0} resetFilters={clearSearch} />,
     [],
   );
-  const renderRowHeader = useMemo(() => getRenderRowHeader(map(jobs, 'label')), []);
+  const renderRowHeader = useMemo(() => getRenderRowHeader(map(jobs, 'label'), CustomComponentLink), []);
 
   return (
     <section className={cx(css.root, className)}>
@@ -251,6 +264,7 @@ BundleAssets.defaultProps = {
   className: '',
   totalRowCount: 0,
   hasActiveFilters: false,
+  customComponentLink: ComponentLink,
 };
 
 BundleAssets.propTypes = {
@@ -293,4 +307,5 @@ BundleAssets.propTypes = {
     direction: PropTypes.string,
   }).isRequired,
   updateSort: PropTypes.func.isRequired,
+  customComponentLink: PropTypes.elementType,
 };

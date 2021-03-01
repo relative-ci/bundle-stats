@@ -14,11 +14,6 @@
 .dropdown {
 }
 
-.tableRowHeader {
-  display: flex;
-  align-items: center;
-}
-
 .notPredictive {
   margin-right: var(--space-xxsmall);
   display: inline-block;
@@ -76,21 +71,11 @@
   line-height: 1.3;
 }
 
-/* Tooltip filename */
-.tooltipFilename {
-  text-align: left;
-  min-width: 320px;
-}
-
-.tooltipFilenameItem + .tooltipFilenameItem {
-  margin-top: var(--space-xsmall);
-}
-
-.tooltipFilenameTitle {
-  margin: 0;
-}
-
 .search {
   margin: 0;
   width: 100%;
+}
+
+.filenamePopover {
+  min-width: 280px;
 }
