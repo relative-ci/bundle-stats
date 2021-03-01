@@ -3,14 +3,21 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get, map, max, sum } from 'lodash';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
+import { getBundleAssetsFileTypeComponentLink } from '@bundle-stats/utils';
 
+import { ASSETS_SIZES_FILE_TYPE_MAP } from '../../constants';
 import { HorizontalBarChart } from '../../ui';
+import { ComponentLink } from '../component-link'
 import { getColors } from '../../utils';
 import { Stack } from '../../layout/stack';
 import { SummaryItem } from '../summary-item';
 import css from './bundle-assets-totals-chart-bars.module.css';
 
-export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
+export const BundleAssetsTotalsChartBars = ({
+  className,
+  jobs,
+  customComponentLink: CustomComponentLink,
+}) => {
   const rootClassName = cx(css.root, className);
   const items = webpack.compareBySection.sizes(jobs);
 
@@ -25,8 +32,17 @@ export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
   const maxValues = max(map(dataGraphs, (values) => sum(values)));
   const maxValue = max(maxValues);
 
-  const labels = items.map(({ label }) => label);
+  const labels = items.map(({ key, label }) => {
+    const fileType = ASSETS_SIZES_FILE_TYPE_MAP[key];
+    const componentData = getBundleAssetsFileTypeComponentLink(fileType, label);
+    return (
+      <CustomComponentLink className={css.itemLink} {...componentData}>
+        {label}
+      </CustomComponentLink>
+    );
+  });
   const colors = getColors(max(map(dataGraphs, (values) => values.length)));
+
   const getTooltip = (itemIndex, runIndex) => () => (
     <SummaryItem
       className={css.itemTooltip}
@@ -70,6 +86,7 @@ export const BundleAssetsTotalsChartBars = ({ className, jobs }) => {
 
 BundleAssetsTotalsChartBars.defaultProps = {
   className: '',
+  customComponentLink: ComponentLink,
 };
 
 BundleAssetsTotalsChartBars.propTypes = {
@@ -79,4 +96,5 @@ BundleAssetsTotalsChartBars.propTypes = {
       internalBuildNumber: PropTypes.number,
     }),
   ).isRequired,
+  customComponentLink: PropTypes.elementType,
 };
