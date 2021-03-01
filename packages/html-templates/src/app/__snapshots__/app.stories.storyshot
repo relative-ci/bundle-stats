@@ -56,11 +56,11 @@ exports[`Storyshots App default 1`] = `
               "builtAt": "2019-01-02T01:01:01.000Z",
               "chunks": Array [
                 Object {
-                  "id": 0,
+                  "id": "0",
                   "name": "main",
                 },
                 Object {
-                  "id": 1,
+                  "id": "1",
                   "name": "vendor",
                 },
               ],
@@ -81,7 +81,7 @@ exports[`Storyshots App default 1`] = `
                   "value": 0,
                 },
                 "1.css": Object {
-                  "chunkId": 1,
+                  "chunkId": "1",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -166,7 +166,7 @@ exports[`Storyshots App default 1`] = `
                   "value": 1980,
                 },
                 "main.css": Object {
-                  "chunkId": 0,
+                  "chunkId": "0",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -174,7 +174,7 @@ exports[`Storyshots App default 1`] = `
                   "value": 3228,
                 },
                 "main.js": Object {
-                  "chunkId": 0,
+                  "chunkId": "0",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -203,7 +203,7 @@ exports[`Storyshots App default 1`] = `
                   "value": 381,
                 },
                 "vendor.js": Object {
-                  "chunkId": 1,
+                  "chunkId": "1",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -7142,11 +7142,11 @@ exports[`Storyshots App default 1`] = `
               "builtAt": "2019-01-01T01:01:01.000Z",
               "chunks": Array [
                 Object {
-                  "id": 0,
+                  "id": "0",
                   "name": "main",
                 },
                 Object {
-                  "id": 1,
+                  "id": "1",
                   "name": "vendor",
                 },
               ],
@@ -7167,7 +7167,7 @@ exports[`Storyshots App default 1`] = `
                   "value": 0,
                 },
                 "1.css": Object {
-                  "chunkId": 1,
+                  "chunkId": "1",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -7252,7 +7252,7 @@ exports[`Storyshots App default 1`] = `
                   "value": 1980,
                 },
                 "main.css": Object {
-                  "chunkId": 0,
+                  "chunkId": "0",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -7260,7 +7260,7 @@ exports[`Storyshots App default 1`] = `
                   "value": 4089,
                 },
                 "main.js": Object {
-                  "chunkId": 0,
+                  "chunkId": "0",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -7289,7 +7289,7 @@ exports[`Storyshots App default 1`] = `
                   "value": 381,
                 },
                 "vendor.js": Object {
-                  "chunkId": 1,
+                  "chunkId": "1",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -14259,11 +14259,11 @@ exports[`Storyshots App empty baseline 1`] = `
               "builtAt": "",
               "chunks": Array [
                 Object {
-                  "id": 0,
+                  "id": "0",
                   "name": "main",
                 },
                 Object {
-                  "id": 1,
+                  "id": "1",
                   "name": "vendor",
                 },
               ],
@@ -14284,7 +14284,7 @@ exports[`Storyshots App empty baseline 1`] = `
                   "value": 0,
                 },
                 "1.css": Object {
-                  "chunkId": 1,
+                  "chunkId": "1",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -14369,7 +14369,7 @@ exports[`Storyshots App empty baseline 1`] = `
                   "value": 1980,
                 },
                 "main.css": Object {
-                  "chunkId": 0,
+                  "chunkId": "0",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -14377,7 +14377,7 @@ exports[`Storyshots App empty baseline 1`] = `
                   "value": 3228,
                 },
                 "main.js": Object {
-                  "chunkId": 0,
+                  "chunkId": "0",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -14406,7 +14406,7 @@ exports[`Storyshots App empty baseline 1`] = `
                   "value": 381,
                 },
                 "vendor.js": Object {
-                  "chunkId": 1,
+                  "chunkId": "1",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -21364,11 +21364,11 @@ exports[`Storyshots App multiple baselines 1`] = `
               "builtAt": "2019-01-02T01:01:01.000Z",
               "chunks": Array [
                 Object {
-                  "id": 0,
+                  "id": "0",
                   "name": "main",
                 },
                 Object {
-                  "id": 1,
+                  "id": "1",
                   "name": "vendor",
                 },
               ],
@@ -21389,7 +21389,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 0,
                 },
                 "1.css": Object {
-                  "chunkId": 1,
+                  "chunkId": "1",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -21474,7 +21474,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 1980,
                 },
                 "main.css": Object {
-                  "chunkId": 0,
+                  "chunkId": "0",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -21482,7 +21482,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 3228,
                 },
                 "main.js": Object {
-                  "chunkId": 0,
+                  "chunkId": "0",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -21511,7 +21511,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 381,
                 },
                 "vendor.js": Object {
-                  "chunkId": 1,
+                  "chunkId": "1",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -28450,11 +28450,11 @@ exports[`Storyshots App multiple baselines 1`] = `
               "builtAt": "2019-01-01T01:01:01.000Z",
               "chunks": Array [
                 Object {
-                  "id": 0,
+                  "id": "0",
                   "name": "main",
                 },
                 Object {
-                  "id": 1,
+                  "id": "1",
                   "name": "vendor",
                 },
               ],
@@ -28475,7 +28475,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 0,
                 },
                 "1.css": Object {
-                  "chunkId": 1,
+                  "chunkId": "1",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -28560,7 +28560,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 1980,
                 },
                 "main.css": Object {
-                  "chunkId": 0,
+                  "chunkId": "0",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -28568,7 +28568,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 4089,
                 },
                 "main.js": Object {
-                  "chunkId": 0,
+                  "chunkId": "0",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -28597,7 +28597,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 381,
                 },
                 "vendor.js": Object {
-                  "chunkId": 1,
+                  "chunkId": "1",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -35528,11 +35528,11 @@ exports[`Storyshots App multiple baselines 1`] = `
               "builtAt": "2019-01-01T01:01:01.000Z",
               "chunks": Array [
                 Object {
-                  "id": 0,
+                  "id": "0",
                   "name": "main",
                 },
                 Object {
-                  "id": 1,
+                  "id": "1",
                   "name": "vendor",
                 },
               ],
@@ -35546,7 +35546,7 @@ exports[`Storyshots App multiple baselines 1`] = `
               },
               "assets": Object {
                 "1.css": Object {
-                  "chunkId": 1,
+                  "chunkId": "1",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -35554,7 +35554,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 20830,
                 },
                 "main.css": Object {
-                  "chunkId": 0,
+                  "chunkId": "0",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -35562,7 +35562,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 4089,
                 },
                 "main.js": Object {
-                  "chunkId": 0,
+                  "chunkId": "0",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -35570,7 +35570,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 18199,
                 },
                 "vendor.js": Object {
-                  "chunkId": 1,
+                  "chunkId": "1",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -36966,11 +36966,11 @@ exports[`Storyshots App no baseline 1`] = `
               "builtAt": "2019-01-02T01:01:01.000Z",
               "chunks": Array [
                 Object {
-                  "id": 0,
+                  "id": "0",
                   "name": "main",
                 },
                 Object {
-                  "id": 1,
+                  "id": "1",
                   "name": "vendor",
                 },
               ],
@@ -36991,7 +36991,7 @@ exports[`Storyshots App no baseline 1`] = `
                   "value": 0,
                 },
                 "1.css": Object {
-                  "chunkId": 1,
+                  "chunkId": "1",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -37076,7 +37076,7 @@ exports[`Storyshots App no baseline 1`] = `
                   "value": 1980,
                 },
                 "main.css": Object {
-                  "chunkId": 0,
+                  "chunkId": "0",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -37084,7 +37084,7 @@ exports[`Storyshots App no baseline 1`] = `
                   "value": 3228,
                 },
                 "main.js": Object {
-                  "chunkId": 0,
+                  "chunkId": "0",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -37113,7 +37113,7 @@ exports[`Storyshots App no baseline 1`] = `
                   "value": 381,
                 },
                 "vendor.js": Object {
-                  "chunkId": 1,
+                  "chunkId": "1",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -44033,11 +44033,11 @@ exports[`Storyshots App no insights 1`] = `
               "builtAt": "2019-01-02T01:01:01.000Z",
               "chunks": Array [
                 Object {
-                  "id": 0,
+                  "id": "0",
                   "name": "main",
                 },
                 Object {
-                  "id": 1,
+                  "id": "1",
                   "name": "vendor",
                 },
               ],
@@ -44058,7 +44058,7 @@ exports[`Storyshots App no insights 1`] = `
                   "value": 0,
                 },
                 "1.css": Object {
-                  "chunkId": 1,
+                  "chunkId": "1",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -44143,7 +44143,7 @@ exports[`Storyshots App no insights 1`] = `
                   "value": 1980,
                 },
                 "main.css": Object {
-                  "chunkId": 0,
+                  "chunkId": "0",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -44151,7 +44151,7 @@ exports[`Storyshots App no insights 1`] = `
                   "value": 3228,
                 },
                 "main.js": Object {
-                  "chunkId": 0,
+                  "chunkId": "0",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -44180,7 +44180,7 @@ exports[`Storyshots App no insights 1`] = `
                   "value": 381,
                 },
                 "vendor.js": Object {
-                  "chunkId": 1,
+                  "chunkId": "1",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -51119,11 +51119,11 @@ exports[`Storyshots App no insights 1`] = `
               "builtAt": "2019-01-01T01:01:01.000Z",
               "chunks": Array [
                 Object {
-                  "id": 0,
+                  "id": "0",
                   "name": "main",
                 },
                 Object {
-                  "id": 1,
+                  "id": "1",
                   "name": "vendor",
                 },
               ],
@@ -51144,7 +51144,7 @@ exports[`Storyshots App no insights 1`] = `
                   "value": 0,
                 },
                 "1.css": Object {
-                  "chunkId": 1,
+                  "chunkId": "1",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -51229,7 +51229,7 @@ exports[`Storyshots App no insights 1`] = `
                   "value": 1980,
                 },
                 "main.css": Object {
-                  "chunkId": 0,
+                  "chunkId": "0",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -51237,7 +51237,7 @@ exports[`Storyshots App no insights 1`] = `
                   "value": 4089,
                 },
                 "main.js": Object {
-                  "chunkId": 0,
+                  "chunkId": "0",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -51266,7 +51266,7 @@ exports[`Storyshots App no insights 1`] = `
                   "value": 381,
                 },
                 "vendor.js": Object {
-                  "chunkId": 1,
+                  "chunkId": "1",
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,

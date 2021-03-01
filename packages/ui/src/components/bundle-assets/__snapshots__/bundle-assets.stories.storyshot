@@ -96,11 +96,11 @@ exports[`Storyshots Components/BundleAssets custom filters 1`] = `
                 "builtAt": "2019-01-01T00:00:00.000Z",
                 "chunks": Array [
                   Object {
-                    "id": 0,
+                    "id": "0",
                     "name": "main",
                   },
                   Object {
-                    "id": 1,
+                    "id": "1",
                     "name": "vendor",
                   },
                 ],
@@ -121,7 +121,7 @@ exports[`Storyshots Components/BundleAssets custom filters 1`] = `
                     "value": 0,
                   },
                   "1.css": Object {
-                    "chunkId": 1,
+                    "chunkId": "1",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -206,7 +206,7 @@ exports[`Storyshots Components/BundleAssets custom filters 1`] = `
                     "value": 1980,
                   },
                   "main.css": Object {
-                    "chunkId": 0,
+                    "chunkId": "0",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -214,7 +214,7 @@ exports[`Storyshots Components/BundleAssets custom filters 1`] = `
                     "value": 3228,
                   },
                   "main.js": Object {
-                    "chunkId": 0,
+                    "chunkId": "0",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -243,7 +243,7 @@ exports[`Storyshots Components/BundleAssets custom filters 1`] = `
                     "value": 381,
                   },
                   "vendor.js": Object {
-                    "chunkId": 1,
+                    "chunkId": "1",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -7182,11 +7182,11 @@ exports[`Storyshots Components/BundleAssets custom filters 1`] = `
                 "builtAt": "2019-01-01T00:00:00.000Z",
                 "chunks": Array [
                   Object {
-                    "id": 0,
+                    "id": "0",
                     "name": "main",
                   },
                   Object {
-                    "id": 1,
+                    "id": "1",
                     "name": "vendor",
                   },
                 ],
@@ -7207,7 +7207,7 @@ exports[`Storyshots Components/BundleAssets custom filters 1`] = `
                     "value": 0,
                   },
                   "1.css": Object {
-                    "chunkId": 1,
+                    "chunkId": "1",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -7292,7 +7292,7 @@ exports[`Storyshots Components/BundleAssets custom filters 1`] = `
                     "value": 1980,
                   },
                   "main.css": Object {
-                    "chunkId": 0,
+                    "chunkId": "0",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -7300,7 +7300,7 @@ exports[`Storyshots Components/BundleAssets custom filters 1`] = `
                     "value": 4089,
                   },
                   "main.js": Object {
-                    "chunkId": 0,
+                    "chunkId": "0",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -7329,7 +7329,7 @@ exports[`Storyshots Components/BundleAssets custom filters 1`] = `
                     "value": 381,
                   },
                   "vendor.js": Object {
-                    "chunkId": 1,
+                    "chunkId": "1",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -14320,11 +14320,11 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
                 "builtAt": "2019-01-01T00:00:00.000Z",
                 "chunks": Array [
                   Object {
-                    "id": 0,
+                    "id": "0",
                     "name": "main",
                   },
                   Object {
-                    "id": 1,
+                    "id": "1",
                     "name": "vendor",
                   },
                 ],
@@ -14345,7 +14345,7 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
                     "value": 0,
                   },
                   "1.css": Object {
-                    "chunkId": 1,
+                    "chunkId": "1",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -14430,7 +14430,7 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
                     "value": 1980,
                   },
                   "main.css": Object {
-                    "chunkId": 0,
+                    "chunkId": "0",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -14438,7 +14438,7 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
                     "value": 4089,
                   },
                   "main.js": Object {
-                    "chunkId": 0,
+                    "chunkId": "0",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -14467,7 +14467,7 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
                     "value": 381,
                   },
                   "vendor.js": Object {
-                    "chunkId": 1,
+                    "chunkId": "1",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -21458,11 +21458,11 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
                 "builtAt": "2019-01-01T00:00:00.000Z",
                 "chunks": Array [
                   Object {
-                    "id": 0,
+                    "id": "0",
                     "name": "main",
                   },
                   Object {
-                    "id": 1,
+                    "id": "1",
                     "name": "vendor",
                   },
                 ],
@@ -21483,7 +21483,7 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
                     "value": 0,
                   },
                   "1.css": Object {
-                    "chunkId": 1,
+                    "chunkId": "1",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -21568,7 +21568,7 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
                     "value": 1980,
                   },
                   "main.css": Object {
-                    "chunkId": 0,
+                    "chunkId": "0",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -21576,7 +21576,7 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
                     "value": 3228,
                   },
                   "main.js": Object {
-                    "chunkId": 0,
+                    "chunkId": "0",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -21605,7 +21605,7 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
                     "value": 381,
                   },
                   "vendor.js": Object {
-                    "chunkId": 1,
+                    "chunkId": "1",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -28600,11 +28600,11 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
                 "builtAt": "2019-01-01T00:00:00.000Z",
                 "chunks": Array [
                   Object {
-                    "id": 0,
+                    "id": "0",
                     "name": "main",
                   },
                   Object {
-                    "id": 1,
+                    "id": "1",
                     "name": "vendor",
                   },
                 ],
@@ -35552,11 +35552,11 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
                 "builtAt": "2019-01-01T00:00:00.000Z",
                 "chunks": Array [
                   Object {
-                    "id": 0,
+                    "id": "0",
                     "name": "main",
                   },
                   Object {
-                    "id": 1,
+                    "id": "1",
                     "name": "vendor",
                   },
                 ],
@@ -42556,11 +42556,11 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                 "builtAt": "2019-01-01T00:00:00.000Z",
                 "chunks": Array [
                   Object {
-                    "id": 0,
+                    "id": "0",
                     "name": "main",
                   },
                   Object {
-                    "id": 1,
+                    "id": "1",
                     "name": "vendor",
                   },
                 ],
@@ -42581,7 +42581,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                     "value": 0,
                   },
                   "1.css": Object {
-                    "chunkId": 1,
+                    "chunkId": "1",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -42666,7 +42666,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                     "value": 1980,
                   },
                   "main.css": Object {
-                    "chunkId": 0,
+                    "chunkId": "0",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -42674,7 +42674,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                     "value": 3228,
                   },
                   "main.js": Object {
-                    "chunkId": 0,
+                    "chunkId": "0",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -42703,7 +42703,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                     "value": 381,
                   },
                   "vendor.js": Object {
-                    "chunkId": 1,
+                    "chunkId": "1",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -49642,11 +49642,11 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                 "builtAt": "2019-01-01T00:00:00.000Z",
                 "chunks": Array [
                   Object {
-                    "id": 0,
+                    "id": "0",
                     "name": "main",
                   },
                   Object {
-                    "id": 1,
+                    "id": "1",
                     "name": "vendor",
                   },
                 ],
@@ -49667,7 +49667,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                     "value": 0,
                   },
                   "1.css": Object {
-                    "chunkId": 1,
+                    "chunkId": "1",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -49752,7 +49752,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                     "value": 1980,
                   },
                   "main.css": Object {
-                    "chunkId": 0,
+                    "chunkId": "0",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -49760,7 +49760,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                     "value": 4089,
                   },
                   "main.js": Object {
-                    "chunkId": 0,
+                    "chunkId": "0",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -49789,7 +49789,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                     "value": 381,
                   },
                   "vendor.js": Object {
-                    "chunkId": 1,
+                    "chunkId": "1",
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -56780,11 +56780,11 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
                 "builtAt": "2019-01-01T00:00:00.000Z",
                 "chunks": Array [
                   Object {
-                    "id": 0,
+                    "id": "0",
                     "name": "main",
                   },
                   Object {
-                    "id": 1,
+                    "id": "1",
                     "name": "vendor",
                   },
                 ],
@@ -63728,11 +63728,11 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
                 "builtAt": "2019-01-01T00:00:00.000Z",
                 "chunks": Array [
                   Object {
-                    "id": 0,
+                    "id": "0",
                     "name": "main",
                   },
                   Object {
-                    "id": 1,
+                    "id": "1",
                     "name": "vendor",
                   },
                 ],
@@ -70728,11 +70728,11 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
                 "builtAt": "2019-01-01T00:00:00.000Z",
                 "chunks": Array [
                   Object {
-                    "id": 0,
+                    "id": "0",
                     "name": "main",
                   },
                   Object {
-                    "id": 1,
+                    "id": "1",
                     "name": "vendor",
                   },
                 ],
@@ -77681,11 +77681,11 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
                 "builtAt": "2019-01-01T00:00:00.000Z",
                 "chunks": Array [
                   Object {
-                    "id": 0,
+                    "id": "0",
                     "name": "main",
                   },
                   Object {
-                    "id": 1,
+                    "id": "1",
                     "name": "vendor",
                   },
                 ],

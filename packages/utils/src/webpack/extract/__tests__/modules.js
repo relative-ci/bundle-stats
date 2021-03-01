@@ -13,7 +13,7 @@ describe('Webpack/extract/modules', () => {
     expect(actual).toEqual({
       metrics: {
         modules: {
-          1: {
+          '1': {
             chunkNames: ['main'],
             modules: {
               'module-a': {

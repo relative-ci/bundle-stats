@@ -10,7 +10,7 @@ Object {
       "label": "main.css",
       "runs": Array [
         Object {
-          "chunkId": 1,
+          "chunkId": "1",
           "delta": -1000,
           "deltaPercentage": -9.09090909,
           "deltaType": "POSITIVE",
@@ -24,7 +24,7 @@ Object {
           "value": 10000,
         },
         Object {
-          "chunkId": 1,
+          "chunkId": "1",
           "displayValue": "10.74KB",
           "isChunk": true,
           "isEntry": true,
@@ -41,7 +41,7 @@ Object {
       "label": "main.js",
       "runs": Array [
         Object {
-          "chunkId": 1,
+          "chunkId": "1",
           "delta": 1000,
           "deltaPercentage": 2.04081633,
           "deltaType": "LOW_NEGATIVE",
@@ -55,7 +55,7 @@ Object {
           "value": 50000,
         },
         Object {
-          "chunkId": 1,
+          "chunkId": "1",
           "displayValue": "47.85KB",
           "isChunk": true,
           "isEntry": true,
@@ -388,7 +388,7 @@ Object {
         "builtAt": "2019-01-01T00:00:00.000Z",
         "chunks": Array [
           Object {
-            "id": 1,
+            "id": "1",
             "name": "main",
           },
         ],
@@ -401,7 +401,7 @@ Object {
         "builtAt": "2019-01-01T00:00:00.000Z",
         "chunks": Array [
           Object {
-            "id": 1,
+            "id": "1",
             "name": "main",
           },
         ],
@@ -856,7 +856,7 @@ Object {
       "label": "main.css",
       "runs": Array [
         Object {
-          "chunkId": 1,
+          "chunkId": "1",
           "displayValue": "9.77KB",
           "isChunk": true,
           "isEntry": true,
@@ -873,7 +873,7 @@ Object {
       "label": "main.js",
       "runs": Array [
         Object {
-          "chunkId": 1,
+          "chunkId": "1",
           "displayValue": "48.83KB",
           "isChunk": true,
           "isEntry": true,
@@ -1091,7 +1091,7 @@ Object {
         "builtAt": "2019-01-01T00:00:00.000Z",
         "chunks": Array [
           Object {
-            "id": 1,
+            "id": "1",
             "name": "main",
           },
         ],

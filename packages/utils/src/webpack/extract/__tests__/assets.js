@@ -33,14 +33,14 @@ describe('Webpack/extract/assets', () => {
       chunks: [
         {
           entry: true,
-          id: 1,
+          id: '1',
           initial: true,
           files: ['js/main.bc22113.js'],
           names: ['main'],
         },
         {
           entry: false,
-          id: 2,
+          id: '2',
           initial: false,
           files: ['css/app.22929ab.css'],
           names: ['app'],
@@ -57,11 +57,11 @@ describe('Webpack/extract/assets', () => {
       meta: {
         chunks: [
           {
-            id: 1,
+            id: '1',
             name: 'main',
           },
           {
-            id: 2,
+            id: '2',
             name: 'app',
           }
         ],
@@ -74,7 +74,7 @@ describe('Webpack/extract/assets', () => {
             isEntry: true,
             isInitial: true,
             isChunk: true,
-            chunkId: 1,
+            chunkId: '1',
           },
           'css/app.css': {
             name: 'css/app.22929ab.css',
@@ -82,7 +82,7 @@ describe('Webpack/extract/assets', () => {
             isEntry: false,
             isInitial: false,
             isChunk: true,
-            chunkId: 2,
+            chunkId: '2',
           },
           'img/logo.png': {
             name: 'img/logo.1211a12.png',
@@ -191,11 +191,11 @@ describe('Webpack/extract/assets', () => {
       meta: {
         chunks: [
           {
-            id: 1,
+            id: '1',
             name: 'main',
           },
           {
-            id: 2,
+            id: '2',
             name: 'app',
           }
         ],
@@ -208,7 +208,7 @@ describe('Webpack/extract/assets', () => {
             isEntry: true,
             isInitial: true,
             isChunk: true,
-            chunkId: 1,
+            chunkId: '1',
           },
           'css/app.css': {
             name: 'css/app.22929ab.css',
@@ -216,7 +216,7 @@ describe('Webpack/extract/assets', () => {
             isEntry: false,
             isInitial: false,
             isChunk: true,
-            chunkId: 2,
+            chunkId: '2',
           },
           'img/logo.png': {
             name: 'img/logo.1211a12.png',

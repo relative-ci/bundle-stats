@@ -18,9 +18,10 @@ export const extractAssets = (webpackStats) => {
     .map(({ files }) => files)
     .flat();
 
-  const chunks = webpackChunks.map(({ id, names }) => ({
-    id,
+  const normalizedChunks = webpackChunks.map(({ id, names, files }) => ({
+    id: id.toString(),
     name: names.join('+') || `chunk-${id}`,
+    files,
   }));
 
   const assets = webpackAssets.reduce((aggregator, asset) => {
@@ -31,7 +32,7 @@ export const extractAssets = (webpackStats) => {
     }
 
     // Check for the corresponding chunk
-    const assetChunk = webpackChunks.find((chunk) => chunk.files.includes(asset.name));
+    const assetChunk = normalizedChunks.find((chunk) => chunk.files.includes(asset.name));
 
     const normalizedName = getAssetName(baseName);
     const { size, name } = asset;
@@ -44,7 +45,7 @@ export const extractAssets = (webpackStats) => {
         isEntry: entryItems.includes(name),
         isInitial: initialItems.includes(name),
         isChunk: Boolean(assetChunk),
-        ... assetChunk ? { chunkId: assetChunk.id } : {}
+        ...(assetChunk ? { chunkId: assetChunk.id } : {}),
       },
     };
   }, {});
@@ -53,10 +54,12 @@ export const extractAssets = (webpackStats) => {
     metrics: {
       assets,
     },
-    ...!isEmpty(chunks) && {
-      meta: {
-        chunks,
-      },
-    },
+    ...(!isEmpty(normalizedChunks)
+      ? {
+          meta: {
+            chunks: normalizedChunks.map(({ id, name }) => ({ id, name })),
+          },
+        }
+      : {}),
   };
 };
