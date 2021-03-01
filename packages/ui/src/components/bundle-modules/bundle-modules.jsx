@@ -1,7 +1,14 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { get, map } from 'lodash';
+import { get, isEmpty, map } from 'lodash';
+import {
+  FILE_TYPE_LABELS,
+  MODULE_SOURCE_FILE_TYPES,
+  MODULE_CHUNK,
+  MODULE_FILTERS,
+  MODULE_FILE_TYPE,
+} from '@bundle-stats/utils';
 
 import config from '../../config.json';
 import I18N from '../../i18n';
@@ -17,7 +24,6 @@ import { Tooltip } from '../../ui/tooltip';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
 import css from './bundle-modules.module.css';
-import {MODULE_FILTER_CHANGED, MODULE_FILTER_CHUNKS} from './bundle-modules.constants';
 
 const getRenderRowHeader = (labels) => (row) => (
   <Tooltip
@@ -93,6 +99,46 @@ export const BundleModules = ({
     [],
   );
 
+  const dropdownFilters = {
+    [MODULE_FILTERS.CHANGED]: {
+      label: 'Changed',
+      defaultValue: filters.changed,
+      disabled: jobs.length <= 1,
+    },
+
+    // When chunks data available, list available chunks as filters
+    ...(!isEmpty(chunks) && {
+      [MODULE_CHUNK]: {
+        label: 'Chunks',
+        ...chunks.reduce(
+          (chunkFilters, { id, name }) => ({
+            ...chunkFilters,
+            [id]: {
+              label: name,
+              defaultValue: get(filters, `${MODULE_CHUNK}.${id}`, true),
+            },
+          }),
+          {},
+        ),
+      },
+    }),
+
+    // Module source types
+    [MODULE_FILE_TYPE]: {
+      label: 'File types',
+      ...MODULE_SOURCE_FILE_TYPES.reduce(
+        (agg, fileType) => ({
+          ...agg,
+          [fileType]: {
+            label: FILE_TYPE_LABELS[fileType],
+            defaultValue: get(filters, `${MODULE_FILE_TYPE}.${fileType}`, true),
+          },
+        }),
+        {},
+      ),
+    },
+  };
+
   return (
     <div className={rootClassName}>
       <Toolbar
@@ -110,23 +156,7 @@ export const BundleModules = ({
             <div className={actionClassName}>
               <FiltersDropdown
                 className={css.tableDropdown}
-                filters={{
-                  [MODULE_FILTER_CHANGED]: {
-                    label: 'Changed',
-                    defaultValue: filters.changed,
-                    disabled: jobs.length <= 1,
-                  },
-                  [MODULE_FILTER_CHUNKS]: {
-                    label: 'Chunks',
-                    ...chunks.reduce((agg, { id, name }) => ({
-                      ...agg,
-                      [id]: {
-                        label: name,
-                        defaultValue: get(filters, `${MODULE_FILTER_CHUNKS}.${id}`, true),
-                      }
-                    }), {})
-                  },
-                }}
+                filters={dropdownFilters}
                 label={`Filters (${items.length}/${totalRowCount})`}
                 onChange={updateFilters}
                 hasActiveFilters={hasActiveFilters}
