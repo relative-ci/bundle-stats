@@ -1,4 +1,4 @@
-import { get } from 'lodash';
+import { get, isEmpty } from 'lodash';
 
 import { getAssetName } from '../utils';
 
@@ -17,6 +17,11 @@ export const extractAssets = (webpackStats) => {
     .filter(({ initial }) => initial)
     .map(({ files }) => files)
     .flat();
+
+  const chunks = webpackChunks.map(({ id, names }) => ({
+    id,
+    name: names.join('+') || `chunk-${id}`,
+  }));
 
   const assets = webpackAssets.reduce((aggregator, asset) => {
     const baseName = asset?.name.split('?')[0];
@@ -44,5 +49,14 @@ export const extractAssets = (webpackStats) => {
     };
   }, {});
 
-  return { metrics: { assets } };
+  return {
+    metrics: {
+      assets,
+    },
+    ...!isEmpty(chunks) && {
+      meta: {
+        chunks,
+      },
+    },
+  };
 };

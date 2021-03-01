@@ -54,6 +54,18 @@ describe('Webpack/extract/assets', () => {
     });
 
     const expected = {
+      meta: {
+        chunks: [
+          {
+            id: 1,
+            name: 'main',
+          },
+          {
+            id: 2,
+            name: 'app',
+          }
+        ],
+      },
       metrics: {
         assets: {
           'js/main.js': {
@@ -176,6 +188,18 @@ describe('Webpack/extract/assets', () => {
     });
 
     const expected = {
+      meta: {
+        chunks: [
+          {
+            id: 1,
+            name: 'main',
+          },
+          {
+            id: 2,
+            name: 'app',
+          }
+        ],
+      },
       metrics: {
         assets: {
           'js/main.js': {

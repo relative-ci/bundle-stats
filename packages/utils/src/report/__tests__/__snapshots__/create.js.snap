@@ -386,6 +386,12 @@ Object {
       "internalBuildNumber": 2,
       "webpack": Object {
         "builtAt": "2019-01-01T00:00:00.000Z",
+        "chunks": Array [
+          Object {
+            "id": 1,
+            "name": "main",
+          },
+        ],
         "hash": "abcd1234",
       },
     },
@@ -393,6 +399,12 @@ Object {
       "internalBuildNumber": 1,
       "webpack": Object {
         "builtAt": "2019-01-01T00:00:00.000Z",
+        "chunks": Array [
+          Object {
+            "id": 1,
+            "name": "main",
+          },
+        ],
         "hash": "defg1234",
       },
     },
@@ -1077,6 +1089,12 @@ Object {
       "internalBuildNumber": 1,
       "webpack": Object {
         "builtAt": "2019-01-01T00:00:00.000Z",
+        "chunks": Array [
+          Object {
+            "id": 1,
+            "name": "main",
+          },
+        ],
         "hash": "abcd1234",
       },
     },
