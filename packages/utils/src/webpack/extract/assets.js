@@ -18,14 +18,15 @@ export const extractAssets = (webpackStats) => {
     .map(({ files }) => files)
     .flat();
 
-  const chunkItems = webpackChunks.map(({ files }) => files).flat();
-
   const assets = webpackAssets.reduce((aggregator, asset) => {
     const baseName = asset?.name.split('?')[0];
 
     if (IGNORE_PATTERN.test(baseName)) {
       return aggregator;
     }
+
+    // Check for the corresponding chunk
+    const assetChunk = webpackChunks.find((chunk) => chunk.files.includes(asset.name));
 
     const normalizedName = getAssetName(baseName);
     const { size, name } = asset;
@@ -37,7 +38,8 @@ export const extractAssets = (webpackStats) => {
         value: size,
         isEntry: entryItems.includes(name),
         isInitial: initialItems.includes(name),
-        isChunk: chunkItems.includes(name),
+        isChunk: Boolean(assetChunk),
+        ... assetChunk ? { chunkId: assetChunk.id } : {}
       },
     };
   }, {});

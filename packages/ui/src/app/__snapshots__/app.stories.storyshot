@@ -71,6 +71,7 @@ exports[`Storyshots App default 1`] = `
                   "value": 0,
                 },
                 "1.css": Object {
+                  "chunkId": 1,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -155,6 +156,7 @@ exports[`Storyshots App default 1`] = `
                   "value": 1980,
                 },
                 "main.css": Object {
+                  "chunkId": 0,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -162,6 +164,7 @@ exports[`Storyshots App default 1`] = `
                   "value": 3228,
                 },
                 "main.js": Object {
+                  "chunkId": 0,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -190,6 +193,7 @@ exports[`Storyshots App default 1`] = `
                   "value": 381,
                 },
                 "vendor.js": Object {
+                  "chunkId": 1,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -7143,6 +7147,7 @@ exports[`Storyshots App default 1`] = `
                   "value": 0,
                 },
                 "1.css": Object {
+                  "chunkId": 1,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -7227,6 +7232,7 @@ exports[`Storyshots App default 1`] = `
                   "value": 1980,
                 },
                 "main.css": Object {
+                  "chunkId": 0,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -7234,6 +7240,7 @@ exports[`Storyshots App default 1`] = `
                   "value": 4089,
                 },
                 "main.js": Object {
+                  "chunkId": 0,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -7262,6 +7269,7 @@ exports[`Storyshots App default 1`] = `
                   "value": 381,
                 },
                 "vendor.js": Object {
+                  "chunkId": 1,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -14244,6 +14252,7 @@ exports[`Storyshots App empty baseline 1`] = `
                   "value": 0,
                 },
                 "1.css": Object {
+                  "chunkId": 1,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -14328,6 +14337,7 @@ exports[`Storyshots App empty baseline 1`] = `
                   "value": 1980,
                 },
                 "main.css": Object {
+                  "chunkId": 0,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -14335,6 +14345,7 @@ exports[`Storyshots App empty baseline 1`] = `
                   "value": 3228,
                 },
                 "main.js": Object {
+                  "chunkId": 0,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -14363,6 +14374,7 @@ exports[`Storyshots App empty baseline 1`] = `
                   "value": 381,
                 },
                 "vendor.js": Object {
+                  "chunkId": 1,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -21335,6 +21347,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 0,
                 },
                 "1.css": Object {
+                  "chunkId": 1,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -21419,6 +21432,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 1980,
                 },
                 "main.css": Object {
+                  "chunkId": 0,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -21426,6 +21440,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 3228,
                 },
                 "main.js": Object {
+                  "chunkId": 0,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -21454,6 +21469,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 381,
                 },
                 "vendor.js": Object {
+                  "chunkId": 1,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -28407,6 +28423,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 0,
                 },
                 "1.css": Object {
+                  "chunkId": 1,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -28491,6 +28508,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 1980,
                 },
                 "main.css": Object {
+                  "chunkId": 0,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -28498,6 +28516,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 4089,
                 },
                 "main.js": Object {
+                  "chunkId": 0,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -28526,6 +28545,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 381,
                 },
                 "vendor.js": Object {
+                  "chunkId": 1,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -35464,6 +35484,7 @@ exports[`Storyshots App multiple baselines 1`] = `
               },
               "assets": Object {
                 "1.css": Object {
+                  "chunkId": 1,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -35471,6 +35492,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 20830,
                 },
                 "main.css": Object {
+                  "chunkId": 0,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -35478,6 +35500,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 4089,
                 },
                 "main.js": Object {
+                  "chunkId": 0,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -35485,6 +35508,7 @@ exports[`Storyshots App multiple baselines 1`] = `
                   "value": 18199,
                 },
                 "vendor.js": Object {
+                  "chunkId": 1,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -36895,6 +36919,7 @@ exports[`Storyshots App no baseline 1`] = `
                   "value": 0,
                 },
                 "1.css": Object {
+                  "chunkId": 1,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -36979,6 +37004,7 @@ exports[`Storyshots App no baseline 1`] = `
                   "value": 1980,
                 },
                 "main.css": Object {
+                  "chunkId": 0,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -36986,6 +37012,7 @@ exports[`Storyshots App no baseline 1`] = `
                   "value": 3228,
                 },
                 "main.js": Object {
+                  "chunkId": 0,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -37014,6 +37041,7 @@ exports[`Storyshots App no baseline 1`] = `
                   "value": 381,
                 },
                 "vendor.js": Object {
+                  "chunkId": 1,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -43948,6 +43976,7 @@ exports[`Storyshots App no insights 1`] = `
                   "value": 0,
                 },
                 "1.css": Object {
+                  "chunkId": 1,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -44032,6 +44061,7 @@ exports[`Storyshots App no insights 1`] = `
                   "value": 1980,
                 },
                 "main.css": Object {
+                  "chunkId": 0,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -44039,6 +44069,7 @@ exports[`Storyshots App no insights 1`] = `
                   "value": 3228,
                 },
                 "main.js": Object {
+                  "chunkId": 0,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -44067,6 +44098,7 @@ exports[`Storyshots App no insights 1`] = `
                   "value": 381,
                 },
                 "vendor.js": Object {
+                  "chunkId": 1,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -51020,6 +51052,7 @@ exports[`Storyshots App no insights 1`] = `
                   "value": 0,
                 },
                 "1.css": Object {
+                  "chunkId": 1,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -51104,6 +51137,7 @@ exports[`Storyshots App no insights 1`] = `
                   "value": 1980,
                 },
                 "main.css": Object {
+                  "chunkId": 0,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -51111,6 +51145,7 @@ exports[`Storyshots App no insights 1`] = `
                   "value": 4089,
                 },
                 "main.js": Object {
+                  "chunkId": 0,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,
@@ -51139,6 +51174,7 @@ exports[`Storyshots App no insights 1`] = `
                   "value": 381,
                 },
                 "vendor.js": Object {
+                  "chunkId": 1,
                   "isChunk": true,
                   "isEntry": true,
                   "isInitial": true,

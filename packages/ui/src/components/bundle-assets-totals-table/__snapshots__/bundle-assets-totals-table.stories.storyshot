@@ -107,6 +107,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable default 1`] = `
                     "value": 0,
                   },
                   "1.css": Object {
+                    "chunkId": 1,
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -191,6 +192,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable default 1`] = `
                     "value": 1980,
                   },
                   "main.css": Object {
+                    "chunkId": 0,
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -198,6 +200,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable default 1`] = `
                     "value": 3228,
                   },
                   "main.js": Object {
+                    "chunkId": 0,
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -226,6 +229,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable default 1`] = `
                     "value": 381,
                   },
                   "vendor.js": Object {
+                    "chunkId": 1,
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -7233,6 +7237,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable empty baseline 1`] = `
                     "value": 0,
                   },
                   "1.css": Object {
+                    "chunkId": 1,
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -7317,6 +7322,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable empty baseline 1`] = `
                     "value": 1980,
                   },
                   "main.css": Object {
+                    "chunkId": 0,
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -7324,6 +7330,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable empty baseline 1`] = `
                     "value": 3228,
                   },
                   "main.js": Object {
+                    "chunkId": 0,
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -7352,6 +7359,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable empty baseline 1`] = `
                     "value": 381,
                   },
                   "vendor.js": Object {
+                    "chunkId": 1,
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -14363,6 +14371,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable multiple jobs 1`] = `
                     "value": 0,
                   },
                   "1.css": Object {
+                    "chunkId": 1,
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -14447,6 +14456,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable multiple jobs 1`] = `
                     "value": 1980,
                   },
                   "main.css": Object {
+                    "chunkId": 0,
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -14454,6 +14464,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable multiple jobs 1`] = `
                     "value": 3228,
                   },
                   "main.js": Object {
+                    "chunkId": 0,
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -14482,6 +14493,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable multiple jobs 1`] = `
                     "value": 381,
                   },
                   "vendor.js": Object {
+                    "chunkId": 1,
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -21435,6 +21447,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable multiple jobs 1`] = `
                     "value": 0,
                   },
                   "1.css": Object {
+                    "chunkId": 1,
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -21519,6 +21532,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable multiple jobs 1`] = `
                     "value": 1980,
                   },
                   "main.css": Object {
+                    "chunkId": 0,
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -21526,6 +21540,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable multiple jobs 1`] = `
                     "value": 4089,
                   },
                   "main.js": Object {
+                    "chunkId": 0,
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,
@@ -21554,6 +21569,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable multiple jobs 1`] = `
                     "value": 381,
                   },
                   "vendor.js": Object {
+                    "chunkId": 1,
                     "isChunk": true,
                     "isEntry": true,
                     "isInitial": true,

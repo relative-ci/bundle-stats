@@ -62,6 +62,7 @@ describe('Webpack/extract/assets', () => {
             isEntry: true,
             isInitial: true,
             isChunk: true,
+            chunkId: 1,
           },
           'css/app.css': {
             name: 'css/app.22929ab.css',
@@ -69,6 +70,7 @@ describe('Webpack/extract/assets', () => {
             isEntry: false,
             isInitial: false,
             isChunk: true,
+            chunkId: 2,
           },
           'img/logo.png': {
             name: 'img/logo.1211a12.png',
@@ -182,6 +184,7 @@ describe('Webpack/extract/assets', () => {
             isEntry: true,
             isInitial: true,
             isChunk: true,
+            chunkId: 1,
           },
           'css/app.css': {
             name: 'css/app.22929ab.css',
@@ -189,6 +192,7 @@ describe('Webpack/extract/assets', () => {
             isEntry: false,
             isInitial: false,
             isChunk: true,
+            chunkId: 2,
           },
           'img/logo.png': {
             name: 'img/logo.1211a12.png',
