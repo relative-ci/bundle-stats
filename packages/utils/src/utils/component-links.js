@@ -31,6 +31,14 @@ export const getAssetEntryTypeFilters = (value = true) =>
     {},
   );
 
+export const getModuleChunkFilters = (chunkIds, value) => chunkIds.reduce(
+  (agg, chunkId) => ({
+    ...agg,
+    [`${MODULE_CHUNK}.${chunkId}`]: value,
+  }),
+  {},
+);
+
 export const TOTALS = {
   section: SECTIONS.TOTALS,
   title: I18N.COMPONENT_LINK_TOTALS,
@@ -124,13 +132,14 @@ export const getBundleModulesBySearch = (search) => ({
   },
 });
 
-export const getBundleModulesByChunk = (chunkId) => ({
+export const getBundleModulesByChunk = (chunkIds, chunkId) => ({
   section: SECTIONS.MODULES,
   title: I18N.COMPONENT_LINK_MODULES,
   params: {
     [COMPONENT.BUNDLE_MODULES]: {
       filters: {
         [MODULE_FILTERS.CHANGED]: false,
+        ...getModuleChunkFilters(chunkIds, false),
         [`${MODULE_CHUNK}.${chunkId}`]: true,
       },
     },

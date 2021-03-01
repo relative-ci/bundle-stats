@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get, map } from 'lodash';
+import { MODULE_CHUNK, MODULE_FILTERS } from '@bundle-stats/utils';
 
 import config from '../../config.json';
 import I18N from '../../i18n';
@@ -17,7 +18,6 @@ import { Tooltip } from '../../ui/tooltip';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
 import css from './bundle-modules.module.css';
-import {MODULE_FILTER_CHANGED, MODULE_FILTER_CHUNKS} from './bundle-modules.constants';
 
 const getRenderRowHeader = (labels) => (row) => (
   <Tooltip
@@ -93,6 +93,25 @@ export const BundleModules = ({
     [],
   );
 
+  const dropdownFilters = {
+    [MODULE_FILTERS.CHANGED]: {
+      label: 'Changed',
+      defaultValue: filters.changed,
+      disabled: jobs.length <= 1,
+    },
+    [MODULE_CHUNK]: {
+      label: 'Chunks',
+      ...chunks.reduce((agg, { id, name }) => ({
+        ...agg,
+        // @TODO defaultValue is always set to false
+        [id]: {
+          label: name,
+          defaultValue: get(filters, `${MODULE_CHUNK}.${id}`, true),
+        }
+      }), {})
+    },
+  };
+
   return (
     <div className={rootClassName}>
       <Toolbar
@@ -110,23 +129,7 @@ export const BundleModules = ({
             <div className={actionClassName}>
               <FiltersDropdown
                 className={css.tableDropdown}
-                filters={{
-                  [MODULE_FILTER_CHANGED]: {
-                    label: 'Changed',
-                    defaultValue: filters.changed,
-                    disabled: jobs.length <= 1,
-                  },
-                  [MODULE_FILTER_CHUNKS]: {
-                    label: 'Chunks',
-                    ...chunks.reduce((agg, { id, name }) => ({
-                      ...agg,
-                      [id]: {
-                        label: name,
-                        defaultValue: get(filters, `${MODULE_FILTER_CHUNKS}.${id}`, true),
-                      }
-                    }), {})
-                  },
-                }}
+                filters={dropdownFilters}
                 label={`Filters (${items.length}/${totalRowCount})`}
                 onChange={updateFilters}
                 hasActiveFilters={hasActiveFilters}

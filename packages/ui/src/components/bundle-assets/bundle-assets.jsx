@@ -2,7 +2,13 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get, map } from 'lodash';
-import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, FILE_TYPE_LABELS, getBundleModulesByChunk } from '@bundle-stats/utils';
+import {
+  ASSET_ENTRY_TYPE,
+  ASSET_FILE_TYPE,
+  ASSET_FILTERS,
+  FILE_TYPE_LABELS,
+  getBundleModulesByChunk,
+} from '@bundle-stats/utils';
 
 import config from '../../config.json';
 import I18N from '../../i18n';
@@ -69,43 +75,7 @@ TooltipNotPredictive.propTypes = {
   runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };
 
-const TooltipFilename = ({ runs, labels, CustomComponentLink }) => (
-  <Stack space="xsmall" className={css.filenamePopover}>
-    {runs.map((run, index) => {
-      const key = index;
-
-      const name = <FileName name={run?.name || '-'} />;
-
-      return (
-        <Stack space="xxxsmall" key={key}>
-          <h5>{labels[index]}</h5>
-
-          <div>
-          {run?.chunkId ? (
-            <CustomComponentLink {...getBundleModulesByChunk(run.chunkId)}>
-              {name}
-            </CustomComponentLink>
-          ) : (
-            name
-          )}
-          </div>
-        </Stack>
-      );
-    })}
-  </Stack>
-);
-
-TooltipFilename.defaultProps = {
-  runs: [],
-  labels: [],
-};
-
-TooltipFilename.propTypes = {
-  runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
-  labels: PropTypes.array, // eslint-disable-line react/forbid-prop-types
-};
-
-const getRenderRowHeader = (labels, CustomComponentLink) => (item) => (
+const getRenderRowHeader = (labels, CustomComponentLink, chunkIds) => (item) => (
   <Popover
     label={<FileName name={item.label} />}
     icon={
@@ -133,11 +103,26 @@ const getRenderRowHeader = (labels, CustomComponentLink) => (item) => (
       </>
     }
   >
-    <TooltipFilename
-      runs={item.runs}
-      labels={labels}
-      CustomComponentLink={CustomComponentLink}
-    />
+    <Stack space="xsmall" className={css.filenamePopover}>
+      {item.runs.map((run, index) => {
+        const key = index;
+
+        return (
+          <Stack space="xxxsmall" key={key}>
+            <h5>{labels[index]}</h5>
+
+            <FlexStack space="xxxsmall">
+              <FileName name={run?.name || '-'} />
+              {run?.chunkId && (
+                <CustomComponentLink {...getBundleModulesByChunk(chunkIds, run.chunkId)}>
+                  View modules
+                </CustomComponentLink>
+              )}
+            </FlexStack>
+          </Stack>
+        );
+      })}
+    </Stack>
   </Popover>
 );
 
@@ -186,7 +171,15 @@ export const BundleAssets = (props) => {
     () => <EmptySet resources="assets" filtered={totalRowCount !== 0} resetFilters={clearSearch} />,
     [],
   );
-  const renderRowHeader = useMemo(() => getRenderRowHeader(map(jobs, 'label'), CustomComponentLink), []);
+
+  // List all the chunkIds across assets & runs
+  const chunks = (jobs[0]?.rawData?.webpack.chunks || []).map(({ id, names }) => ({
+    id,
+    name: names.join(',') || `chunk-${id}`,
+  }));
+  const chunkIds = map(chunks, 'id');
+
+  const renderRowHeader = useMemo(() => getRenderRowHeader(map(jobs, 'label'), CustomComponentLink, chunkIds), []);
 
   return (
     <section className={cx(css.root, className)}>

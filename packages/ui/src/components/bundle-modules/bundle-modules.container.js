@@ -1,18 +1,12 @@
 import { compose, withProps } from 'recompose';
-import { get } from 'lodash';
+import { get, map } from 'lodash';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
+import { MODULE_CHUNK, MODULE_FILTERS, getModuleChunkFilters } from '@bundle-stats/utils';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilteredItems } from '../../hocs/with-filtered-items';
 import { withSearch } from '../../hocs/with-search';
-import {
-  SORT_BY_NAME,
-  SORT_BY_SIZE,
-  SORT_BY_DELTA,
-  SORT_BY,
-  MODULE_FILTER_CHANGED,
-  MODULE_FILTER_CHUNKS,
-} from './bundle-modules.constants';
+import { SORT_BY_NAME, SORT_BY_SIZE, SORT_BY_DELTA, SORT_BY } from './bundle-modules.constants';
 
 const getCustomSort = (sortBy) => (item) => {
   if (sortBy === SORT_BY_NAME) {
@@ -32,44 +26,41 @@ const getCustomSort = (sortBy) => (item) => {
 
 const getRowFilter = (filters) => (row) => {
   // Skip not changed rows
-  if (filters[MODULE_FILTER_CHANGED] && !row.changed) {
+  if (filters[MODULE_FILTERS.CHANGED] && !row.changed) {
     return false;
   }
 
   // Skip not matching chunks
-  if(!get(row, 'runs[0].chunkIds', []).find((chunkId) => filters[`${MODULE_FILTER_CHUNKS}.${chunkId}`])) {
+  if(!get(row, 'runs[0].chunkIds', []).find((chunkId) => filters[`${MODULE_CHUNK}.${chunkId}`])) {
     return false;
   }
 
   return true;
 };
 
-const getChunksFilters = (chunks, value) => chunks.reduce((agg, { id }) => ({
-  ...agg,
-  [`${MODULE_FILTER_CHUNKS}.${id}`]: value,
-}), {});
-
 export default compose(
   withProps(({ jobs }) => {
     const items = webpack.compareBySection.allModules(jobs);
+
     const chunks = (jobs[0]?.rawData?.webpack.chunks || []).map(({ id, names }) => ({
       id,
       name: names.join(',') || `chunk-${id}`,
     }));
+    const chunkIds = map(chunks, 'id');
 
     const defaultFilters = {
       changed: jobs?.length > 1,
-      ...getChunksFilters(chunks, true),
+      ...getModuleChunkFilters(chunkIds, true),
     };
 
     const emptyFilters = {
       changed: false,
-      ...getChunksFilters(chunks, true),
+      ...getModuleChunkFilters(chunkIds, true),
     };
 
     const allEntriesFilters = {
       changed: false,
-      ...getChunksFilters(chunks, true),
+      ...getModuleChunkFilters(chunkIds, true),
     };
 
     return {

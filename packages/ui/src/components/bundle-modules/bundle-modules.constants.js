@@ -16,6 +16,3 @@ export const SORT_BY = {
     defaultDirection: 'desc',
   },
 };
-
-export const MODULE_FILTER_CHANGED = 'changed';
-export const MODULE_FILTER_CHUNKS = 'chunks';
