@@ -26,16 +26,20 @@
   vertical-align: top;
 }
 
-.flag {
+.assetInfoFlags {
   margin-right: var(--space-xxxsmall);
+}
+
+.flag {
   display: inline-block;
-  width: var(--space-small);
-  height: var(--space-small);
-  font-size: 10px;
+  width: var(--space-xsmall);
+  height: var(--space-xsmall);
+  font-family: var(--font-family);
+  font-size: 8px;
   font-weight: bold;
   background: var(--color-highlight);
   color: var(--color-text-light);
-  line-height: var(--space-small);
+  line-height: var(--space-xsmall);
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
@@ -43,18 +47,20 @@
 
 .flagEntry {
   composes: flag;
-  background: var(--color-info);
+  background: var(--color-info-light);
   color: var(--color-background);
 }
 
 .flagInitial {
   composes: flag;
-  background: var(--color-success);
+  background: var(--color-info-light);
   color: var(--color-background);
 }
 
 .flagChunk {
   composes: flag;
+  background: var(--color-info);
+  color: var(--color-background);
 }
 
 /* Tooltip not predictive */

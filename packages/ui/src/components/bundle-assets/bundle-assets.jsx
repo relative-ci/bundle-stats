@@ -81,11 +81,11 @@ const getRenderRowHeader = ({ labels, CustomComponentLink, chunks, chunkIds }) =
   <Popover
     label={<FileName name={item.label} />}
     icon={
-      <>
-        {item.isNotPredictive && (
-          <Tooltip className={css.notPredictive} title={<TooltipNotPredictive runs={item.runs} />}>
-            <span className={cx('ui-icon ui-icon--small', css.notPredictiveIcon)}>warning</span>
-          </Tooltip>
+      <FlexStack space="xxxsmall" className={css.assetInfoFlags}>
+        {item.isChunk && (
+          <span title="Chunk" className={css.flagChunk}>
+            c
+          </span>
         )}
         {item.isEntry && (
           <span title="Entrypoint" className={css.flagEntry}>
@@ -97,12 +97,12 @@ const getRenderRowHeader = ({ labels, CustomComponentLink, chunks, chunkIds }) =
             i
           </span>
         )}
-        {item.isChunk && (
-          <span title="Chunk" className={css.flagChunk}>
-            c
-          </span>
+        {item.isNotPredictive && (
+          <Tooltip className={css.notPredictive} title={<TooltipNotPredictive runs={item.runs} />}>
+            <span className={cx('ui-icon ui-icon--small', css.notPredictiveIcon)}>warning</span>
+          </Tooltip>
         )}
-      </>
+      </FlexStack>
     }
   >
     <Stack space="xsmall" className={css.filenamePopover}>
@@ -110,7 +110,6 @@ const getRenderRowHeader = ({ labels, CustomComponentLink, chunks, chunkIds }) =
         <Stack space="xxxsmall">
           <h5>{labels[index]}</h5>
           <FileName name={run?.name || '-'} />
-
           {run?.chunkId && (
             <div>
               <CustomComponentLink {...getBundleModulesByChunk(chunkIds, run.chunkId)}>
