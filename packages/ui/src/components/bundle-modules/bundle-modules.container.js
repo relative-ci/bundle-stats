@@ -1,7 +1,14 @@
 import { compose, withProps } from 'recompose';
 import { get, map } from 'lodash';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
-import { MODULE_CHUNK, MODULE_FILTERS, getModuleChunkFilters } from '@bundle-stats/utils';
+import {
+  MODULE_CHUNK,
+  MODULE_FILTERS,
+  MODULE_FILE_TYPE,
+  getModuleChunkFilters,
+  getModuleFileTypeFilters,
+  getModuleSourceFileType,
+} from '@bundle-stats/utils';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilteredItems } from '../../hocs/with-filtered-items';
@@ -31,7 +38,13 @@ const getRowFilter = (filters) => (row) => {
   }
 
   // Skip not matching chunks
-  if(!get(row, 'runs[0].chunkIds', []).find((chunkId) => filters[`${MODULE_CHUNK}.${chunkId}`])) {
+  if (!get(row, 'runs[0].chunkIds', []).find((chunkId) => filters[`${MODULE_CHUNK}.${chunkId}`])) {
+    return false;
+  }
+
+  // Skip not matching source types
+  const fileType = getModuleSourceFileType(row.key);
+  if (!filters[`${MODULE_FILE_TYPE}.${fileType}`]) {
     return false;
   }
 
@@ -48,16 +61,19 @@ export default compose(
     const defaultFilters = {
       changed: jobs?.length > 1,
       ...getModuleChunkFilters(chunkIds, true),
+      ...getModuleFileTypeFilters(true),
     };
 
     const emptyFilters = {
       changed: false,
       ...getModuleChunkFilters(chunkIds, true),
+      ...getModuleFileTypeFilters(true),
     };
 
     const allEntriesFilters = {
       changed: false,
       ...getModuleChunkFilters(chunkIds, true),
+      ...getModuleFileTypeFilters(true),
     };
 
     return {

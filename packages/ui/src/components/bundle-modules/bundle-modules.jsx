@@ -2,7 +2,13 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get, isEmpty, map } from 'lodash';
-import { MODULE_CHUNK, MODULE_FILTERS } from '@bundle-stats/utils';
+import {
+  FILE_TYPE_LABELS,
+  MODULE_SOURCE_FILE_TYPES,
+  MODULE_CHUNK,
+  MODULE_FILTERS,
+  MODULE_FILE_TYPE,
+} from '@bundle-stats/utils';
 
 import config from '../../config.json';
 import I18N from '../../i18n';
@@ -116,6 +122,21 @@ export const BundleModules = ({
         ),
       },
     }),
+
+    // Module source types
+    [MODULE_FILE_TYPE]: {
+      label: 'File types',
+      ...MODULE_SOURCE_FILE_TYPES.reduce(
+        (agg, fileType) => ({
+          ...agg,
+          [fileType]: {
+            label: FILE_TYPE_LABELS[fileType],
+            defaultValue: get(filters, `${MODULE_FILE_TYPE}.${fileType}`, true),
+          },
+        }),
+        {},
+      ),
+    },
   };
 
   return (
