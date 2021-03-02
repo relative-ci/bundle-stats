@@ -7,6 +7,7 @@ import {
   ASSET_FILTERS,
   getAssetEntryTypeFilters,
   getAssetFileTypeFilters,
+  getFileType,
 } from '@bundle-stats/utils';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
@@ -89,7 +90,7 @@ const getRowFilter = (filters) => (item) => {
     return false;
   }
 
-  if (!filters[`${ASSET_FILE_TYPE}.${webpack.getFileType(item.key)}`]) {
+  if (!filters[`${ASSET_FILE_TYPE}.${getFileType(item.key)}`]) {
     return false;
   }
 

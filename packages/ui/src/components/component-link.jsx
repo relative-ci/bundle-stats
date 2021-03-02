@@ -1,23 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { encodeQueryParams, JsonParam } from 'use-query-params';
-import { stringify } from 'query-string';
+import { getComponentStateQueryString } from '@bundle-stats/utils';
 
 import { SECTION_URLS } from '../constants';
 
 export const ComponentLink = ({ section, title, params, ...props }) => {
-  const meta = Object.keys(params).reduce(
-    (agg, componentName) => ({
-      ...agg,
-      [componentName]: JsonParam,
-    }),
-    {},
-  );
-
+  const search = getComponentStateQueryString(params);
   const location = {
     pathname: SECTION_URLS[section],
-    search: stringify(encodeQueryParams(meta, params)),
+    search,
   };
 
   return <Link to={location} title={title} {...props} />;

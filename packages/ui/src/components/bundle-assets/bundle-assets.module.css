@@ -82,10 +82,6 @@
   width: 100%;
 }
 
-.filenamePopover {
+.assetInfo {
   min-width: 280px;
-}
-
-.assetInfoViewModulesIcon {
-  transform: rotate(-90deg);
 }
