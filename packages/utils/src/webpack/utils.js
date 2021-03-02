@@ -1,7 +1,6 @@
 import { last, map, round } from 'lodash';
 
 import { createGetMetricType } from '../utils/metrics';
-import { FILE_TYPE_OTHER, FILE_TYPE_PATTERNS } from '../config';
 import { metrics } from './metrics';
 
 // Md5 hash matcher
@@ -22,11 +21,6 @@ const PATTERNS = [
 ].map((pattern) => new RegExp(pattern));
 
 const NO_BASENAME = /(^|.*\/)\..*$/;
-
-export const getFileType = (filename) => {
-  const fileType = Object.entries(FILE_TYPE_PATTERNS).find(([, pattern]) => pattern.test(filename));
-  return fileType ? fileType[0] : FILE_TYPE_OTHER;
-};
 
 /**
  * Extract (guess) filename from a hashed filename

@@ -1,7 +1,7 @@
 import { get, map, sum } from 'lodash';
 
 import { FILE_TYPE_CSS, FILE_TYPE_JS, FILE_TYPES } from '../../config/file-types';
-import { getFileType } from '../utils';
+import { getFileType } from '../../utils/file-types';
 
 const METRIC_NAME_ALL = 'ALL';
 const METRIC_NAME_PREFIX = 'totalSizeByType';

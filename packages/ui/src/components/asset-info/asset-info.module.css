@@ -1,0 +1,13 @@
+.root {}
+
+.chunk {
+  display: block;
+  max-width: 25ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.viewModulesIcon {
+  transform: rotate(-90deg);
+}

@@ -1,6 +1,13 @@
 import { template } from 'lodash';
+import { stringify } from 'query-string';
+import { JsonParam, encodeQueryParams } from 'serialize-query-params';
 
-import { FILE_TYPES, FILE_TYPE_CSS, FILE_TYPE_JS, MODULE_SOURCE_FILE_TYPES } from '../config/file-types';
+import {
+  FILE_TYPES,
+  FILE_TYPE_CSS,
+  FILE_TYPE_JS,
+  MODULE_SOURCE_FILE_TYPES,
+} from '../config/file-types';
 import {
   ASSET_ENTRY_TYPE,
   ASSET_FILE_TYPE,
@@ -49,6 +56,7 @@ export const getModuleFileTypeFilters = (value = true) =>
     {},
   );
 
+/** @type {} */
 export const TOTALS = {
   section: SECTIONS.TOTALS,
   title: I18N.COMPONENT_LINK_TOTALS,
@@ -213,6 +221,18 @@ export const getBundlePackagesByNameComponentLink = (search) => ({
     },
   },
 });
+
+export const getComponentStateQueryString = (params = {}) => {
+  const meta = Object.keys(params).reduce(
+    (agg, componentName) => ({
+      ...agg,
+      [componentName]: JsonParam,
+    }),
+    {},
+  );
+
+  return stringify(encodeQueryParams(meta, params));
+};
 
 export const METRIC_COMPONENT_LINKS = new Map([
   ['webpack.totalSizeByTypeALL', { link: TOTALS }],
