@@ -1,12 +1,8 @@
 #!/usr/bin/env node
 
-const path = require('path');
 const { execSync } = require('child_process');
 
-const tag = execSync('git tag -l --points-at HEAD')
-  .toString()
-  .trim();
-
+const tag = execSync('git tag -l --points-at HEAD').toString().trim();
 const matchTag = tag.match(/^v\d*\.\d*\.\d*-(\w*)\..*$/);
 const distTag = (matchTag && matchTag[1]) || 'latest';
 
@@ -17,7 +13,7 @@ const options = [
   '--no-changelog',
   '--no-git-tag-version',
   '--no-push',
-  '--yes'
+  '--yes',
 ];
 
 console.log(`Running lerna with "${options.join(' ')}"`);
