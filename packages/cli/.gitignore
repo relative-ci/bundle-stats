@@ -7,3 +7,4 @@ Thumbs.db
 *.sublime-workspace
 *.log
 yarn.lock
+dist
