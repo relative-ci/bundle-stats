@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { BUNDLE_PACKAGES_DUPLICATE, METRIC_TYPE_NUMERIC, METRIC_TYPES, getMetricRunInfo } from '@bundle-stats/utils';
 
-import { Alert } from '../../ui';
+import { Alert } from '../../ui/alert';
 import { ComponentLink } from '../component-link';
 import { Delta } from '../delta';
 import css from './duplicate-packages-warning.module.css';
