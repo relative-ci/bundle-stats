@@ -15,7 +15,7 @@ then
   PRERELEASE_ARG="$VERSION --force-publish"
   MESSAGE=$"DROP: %s"
 else
-	PRERELEASE_ARG="--conventional-commits"
+	PRERELEASE_ARG=""
   MESSAGE=$":package: release %s"
 fi
 
@@ -23,4 +23,4 @@ RELEASE_ARGS="${PRERELEASE_ARG} ${@}"
 
 echo "Running lerna version with '${RELEASE_ARGS}'."
 
-./node_modules/.bin/lerna version $RELEASE_ARGS --message "$MESSAGE [ci skip]" --create-release github --conventional-commits
+./node_modules/.bin/lerna version --conventional-commits --create-release github $RELEASE_ARGS --message "$MESSAGE [ci skip]"
