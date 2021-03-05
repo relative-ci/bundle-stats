@@ -183,9 +183,9 @@ The option can be disabled using `--no-compare` option.
 
 Specialized insights for web bundles:
 
-- Monitor and analyze bundle size, assets, modules, packages on every build
-- Github Check and Slack integrations
-- Support for all major CI services (Travis CI, Circle CI, Jenkins, Gitlab CI, Codeship, etc)
+- Monitor and analyze bundle size, assets, modules, packages
+- GitHub Check, GitHub Pull Request, and Slack integrations
+- Support for all major CI services (CircleCI, GitHub Actions, Travis CI CI, Jenkins, Gitlab CI, Codeship)
 - Free for Developers & OpenSource
 
 [Try Beta](https://relative-ci.com)
