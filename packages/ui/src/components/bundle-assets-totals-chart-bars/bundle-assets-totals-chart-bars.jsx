@@ -6,7 +6,7 @@ import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 import { getBundleAssetsFileTypeComponentLink } from '@bundle-stats/utils';
 
 import { ASSETS_SIZES_FILE_TYPE_MAP } from '../../constants';
-import { HorizontalBarChart } from '../../ui';
+import { HorizontalBarChart } from '../../ui/horizontal-bar-chart';
 import { ComponentLink } from '../component-link'
 import { getColors } from '../../utils';
 import { Stack } from '../../layout/stack';

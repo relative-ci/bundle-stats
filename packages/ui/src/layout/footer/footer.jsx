@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { Container } from '../../ui';
+import { Container } from '../../ui/container';
 import config from '../../config.json';
 import css from './footer.module.css';
 

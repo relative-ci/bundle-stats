@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Tooltip } from '../../ui';
+import { Tooltip } from '../../ui/tooltip';
 import css from './job-name.module.css';
 
 const JobNameLabel = ({ internalBuildNumber, labelProps }) => (

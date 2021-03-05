@@ -2,8 +2,8 @@
 import { render } from 'preact';
 import 'preact/debug';
 
-import { App } from './app';
 import './default.css';
+import { App } from './app';
 
 const jobs = window.__INITIAL_DATA__; // eslint-disable-line no-underscore-dangle
 
