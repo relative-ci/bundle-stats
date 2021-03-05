@@ -3,6 +3,83 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/relative-ci/bundle-stats/compare/v2.6.0...v2.7.0) (2021-03-05)
+
+
+### Bug Fixes
+
+* **ui:** Alert - decrease vertical spacing ([d00c7a4](https://github.com/relative-ci/bundle-stats/commit/d00c7a42a34533ed11cce960ba0287b9dab228ef))
+* **ui:** BundleAssets - improve asset popover ([d3769b8](https://github.com/relative-ci/bundle-stats/commit/d3769b8e35b4f4a3b89211633085300d4ab743b7))
+* **ui:** BundleAssets - improve asset popover ([d15a6b2](https://github.com/relative-ci/bundle-stats/commit/d15a6b21ace480b3cdacc87dee6551e066431762))
+* **ui:** BundleModuels - add emptyFilters ([d02f8bb](https://github.com/relative-ci/bundle-stats/commit/d02f8bbc3a9eef27a6d15591f869e2760c141241))
+* **ui:** BundlePackages - do not set changed filter if single job ([9797e55](https://github.com/relative-ci/bundle-stats/commit/9797e55bfb17fb02324433b3bf9c7be48c5aa6ae))
+* **ui:** BundlePackages - show popover info for all packages ([785e99e](https://github.com/relative-ci/bundle-stats/commit/785e99ee6c1a720d3c385082cc8173375c2c77f5))
+* **ui:** BundleTotalsChartBars - link to assets component ([3270e87](https://github.com/relative-ci/bundle-stats/commit/3270e877ed64d8ba42cfc4a58de32f463d47ae64))
+* **ui:** Change default sort by to size desc ([b52e81e](https://github.com/relative-ci/bundle-stats/commit/b52e81e5918e905b6972a3757b3d1be4562241d4))
+* **ui:** Color scheme - add light/dark variation to functional ([9fddfa0](https://github.com/relative-ci/bundle-stats/commit/9fddfa0cf8dbe89c293113c89b6e557178f6c025))
+* **ui:** Correct view package filter title ([1bfb68d](https://github.com/relative-ci/bundle-stats/commit/1bfb68de5551146d15f1667134b4e7fe37477fb1))
+* **ui:** Delta - inverted high positive state ([4ce3d4f](https://github.com/relative-ci/bundle-stats/commit/4ce3d4fc4bddec96a0f6607a399c21ce3dae918f))
+* **ui:** Fix default changed filter when only one job ([19a12cc](https://github.com/relative-ci/bundle-stats/commit/19a12cc4e03b83e2516964f9d3994591b62adc3b))
+* **ui:** FlexStack - stretch full height ([4c7ffbb](https://github.com/relative-ci/bundle-stats/commit/4c7ffbbbdcc0f890786507a6742b1749cc0a5648))
+* **ui:** Modules packages duplicate - remove extra data ([db60126](https://github.com/relative-ci/bundle-stats/commit/db601266c82611083bcbb946a832e5e42ac318ab))
+* **ui:** No css-modules in the global styles ([9342a4a](https://github.com/relative-ci/bundle-stats/commit/9342a4a601f7618aa11fa0a572b5cb7e9d4f1c16))
+* **ui:** Popover - update api ([96503d0](https://github.com/relative-ci/bundle-stats/commit/96503d0edc79e0fc3d48be2534d138a789c7ed18))
+* **ui:** Popover - valign icon and label ([63517a2](https://github.com/relative-ci/bundle-stats/commit/63517a22ff88ffdd40332be5e9d5d3331a36543e))
+* **ui:** Summary - add size modifier ([2d3aaf9](https://github.com/relative-ci/bundle-stats/commit/2d3aaf9df31a2f3d61a6555f660f34e18ccfe89d))
+* **ui:** SummaryItem - correct font-size for size modifier ([7afa5b8](https://github.com/relative-ci/bundle-stats/commit/7afa5b8d95022806174159f9ccff516edd3c6a8b))
+* **ui:** SummaryItem - remove inline variation ([4c73cbf](https://github.com/relative-ci/bundle-stats/commit/4c73cbf0fdf1b4a95dafe38ba6c6f018fbc70709))
+* **ui:** SummaryItem - show baseline value ([9d9fe8c](https://github.com/relative-ci/bundle-stats/commit/9d9fe8c51515ec88b45b1fb1bd34f64de2c1dad4))
+* **ui:** SummaryItem - use Popover for help info ([1a9bddd](https://github.com/relative-ci/bundle-stats/commit/1a9bddde5085a040c3ebb3735d58577edaac9029))
+* **ui:** Table - empty colspan based on headers ([b2c0e6c](https://github.com/relative-ci/bundle-stats/commit/b2c0e6c00e6535049ce7a4ed127348439fdf2d60))
+* **ui:** Table - show inherit colors for links ([277a423](https://github.com/relative-ci/bundle-stats/commit/277a423437f3adacc6c11fca1653ed9159e22756))
+* **ui:** Tooltip z-index ([a13436c](https://github.com/relative-ci/bundle-stats/commit/a13436c9a6d1231379cb7862b3b2bcb3ebfcda85))
+* **ui/utils:** BundleModules - fix chunk filtering ([b02717d](https://github.com/relative-ci/bundle-stats/commit/b02717dbfe417cc3fddeead54c0d7770aac055ae))
+* **utils:** Assets - always flag assets as chunks ([45e20d4](https://github.com/relative-ci/bundle-stats/commit/45e20d48aa6c5c3797295e48c8a40bc4ffbd903f))
+* **utils:** Consistent type for chunk id ([76f9f07](https://github.com/relative-ci/bundle-stats/commit/76f9f07962b987f0d7b9ae8f233ba4f134e11263))
+
+
+### Features
+
+* **ui:** Add popover component ([04199b4](https://github.com/relative-ci/bundle-stats/commit/04199b43f71f08d9abbcfd4b1c7a7c0b123403ef))
+* **ui:** Add section summary ([07fbb1c](https://github.com/relative-ci/bundle-stats/commit/07fbb1c99596f6973a096c3d542a8b6e76d17c39))
+* **ui:** Add TotalSizeByType title with size info ([99d05c3](https://github.com/relative-ci/bundle-stats/commit/99d05c3941ec59d46749d6263c6625aad536cbe9))
+* **ui:** Box - add horizontal/vertical padding variation ([048860d](https://github.com/relative-ci/bundle-stats/commit/048860dc8b130d29a39cfeefe5e4d453fd833481))
+* **ui:** BundleAssets - add title and asset size popover info ([4104318](https://github.com/relative-ci/bundle-stats/commit/41043184b21af413a9151a1fa3523cb520313bcf))
+* **ui:** BundleAssets - link chunk to modules ([b8f8b37](https://github.com/relative-ci/bundle-stats/commit/b8f8b3748e772329dfb89d1812f8b3d3882a1daa))
+* **ui:** BundleAssets - link to modules by chunk type ([12aa246](https://github.com/relative-ci/bundle-stats/commit/12aa246940e503c094112ba051d697e4cba5c2d0))
+* **ui:** BundleChunkModules - add title with module size info ([e9f053f](https://github.com/relative-ci/bundle-stats/commit/e9f053faa592eb39dfad4ff617dbfd54f85d5e54))
+* **ui:** BundleModules - add support for source file type filters ([1c074e8](https://github.com/relative-ci/bundle-stats/commit/1c074e831b1065e4e6b98b2478c78d04a550b932))
+* **ui:** BundleModules - filter by chunk ([76acc62](https://github.com/relative-ci/bundle-stats/commit/76acc6234bb8830aa1dc8a07f29252349db0c3eb))
+* **ui:** BundleModules - show all entries ([dd2de92](https://github.com/relative-ci/bundle-stats/commit/dd2de92c95ad0362c4d3551cb243f7cb9417986b))
+* **ui:** BundlePackages - add package popover ([12f3bca](https://github.com/relative-ci/bundle-stats/commit/12f3bca8a16fb427191f77009dfe528e4c281488))
+* **ui:** BundlePackages - add title with popover info ([5416c4b](https://github.com/relative-ci/bundle-stats/commit/5416c4b1ef7bb8b325e004f8771e0087091348a0))
+* **ui:** BundlePackages - add view all duplicates button ([7b04638](https://github.com/relative-ci/bundle-stats/commit/7b04638d9ba0f8c666f8a6a9ceb83111bfb441ef))
+* **ui:** BundlePackages - link to corresponding modules ([ba10a8d](https://github.com/relative-ci/bundle-stats/commit/ba10a8d66d7a37b9df842333fc06e6c6cdb97e12))
+* **ui:** BundlePackages - show duplicated flag ([f201b05](https://github.com/relative-ci/bundle-stats/commit/f201b0539467d0acc41c89f1f56772d2713a0842))
+* **ui:** Delta - add inverted modifier ([bf49809](https://github.com/relative-ci/bundle-stats/commit/bf4980925c9420ff23e1f527eabfde1c893b0e52))
+* **ui:** DuplicatePackagesWarning - ling children to packages view ([2be9c09](https://github.com/relative-ci/bundle-stats/commit/2be9c09af536d103cb7659d806567b221d5182d9))
+* **ui:** DuplicatePackagesWarning - show changed metric ([3ca0609](https://github.com/relative-ci/bundle-stats/commit/3ca06095283b19d98d779c0a06e896da58334e85))
+* **ui:** DuplicatePackagesWarning - show package size ([52d1ea4](https://github.com/relative-ci/bundle-stats/commit/52d1ea41e20ca59f5afc0a83c8d326725201c04d))
+* **ui:** DuplicatePackagesWarning - support for duplicate packages v3 data structure ([77e4965](https://github.com/relative-ci/bundle-stats/commit/77e4965a6ebf71ab45f78c5b0cc9728fd8200907))
+* **ui:** DuplicatePackagesWarning - title delta and link ([4572b66](https://github.com/relative-ci/bundle-stats/commit/4572b661a723149f2c843b188681fc04cf619b8e))
+* **ui:** Metrics(Table) - add support for multiple rows header ([ef7eea6](https://github.com/relative-ci/bundle-stats/commit/ef7eea6e0bbe7936aea1a7c1f1e8b9b4e3db7671))
+* **ui:** MetricsTable - add support for title ([eae9ae1](https://github.com/relative-ci/bundle-stats/commit/eae9ae1d6c272776d0402f6b12c8b700ecf8a734))
+* **ui:** Popover - updates ([79406a5](https://github.com/relative-ci/bundle-stats/commit/79406a5b4c249ce91d4d1965851cdf45244c9049))
+* **ui:** Summary - allow to render custom links ([4817681](https://github.com/relative-ci/bundle-stats/commit/4817681ac16a6a58ed17390432b5fd5d289f2d8d))
+* **ui:** Summary - update metrics ([0d53bd8](https://github.com/relative-ci/bundle-stats/commit/0d53bd839deb56f3e790cf5dc74c8a6d581c5625))
+* **utils:** Add compareAllModules ([fc9949d](https://github.com/relative-ci/bundle-stats/commit/fc9949daa4cfc117caee7ef8c1d2fb6dbab86d62))
+* **utils:** ModulesPackagesDuplicate - order by size desc ([7c16d78](https://github.com/relative-ci/bundle-stats/commit/7c16d780f99fabd531803fa75cdd4f34dea1722a))
+* **utils:** Webpack assets - add chunkId ([048f72f](https://github.com/relative-ci/bundle-stats/commit/048f72f1ef4fa9829e56d82a59a95427d818636d))
+
+
+### Reverts
+
+* Revert "build(ui): Fix package - add sideEffects" ([6a597fb](https://github.com/relative-ci/bundle-stats/commit/6a597fb66ff33a6338cd17301c56055958bd6ecc))
+
+
+
+
+
 # [2.6.0](https://github.com/relative-ci/bundle-stats/compare/v2.5.0...v2.6.0) (2021-02-06)
 
 

@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/relative-ci/bundle-stats/compare/v2.6.0...v2.7.0) (2021-03-05)
+
+
+### Bug Fixes
+
+* **ui:** Modules packages duplicate - remove extra data ([db60126](https://github.com/relative-ci/bundle-stats/commit/db601266c82611083bcbb946a832e5e42ac318ab))
+* **ui/utils:** BundleModules - fix chunk filtering ([b02717d](https://github.com/relative-ci/bundle-stats/commit/b02717dbfe417cc3fddeead54c0d7770aac055ae))
+* **utils:** Assets - always flag assets as chunks ([45e20d4](https://github.com/relative-ci/bundle-stats/commit/45e20d48aa6c5c3797295e48c8a40bc4ffbd903f))
+* **utils:** Consistent type for chunk id ([76f9f07](https://github.com/relative-ci/bundle-stats/commit/76f9f07962b987f0d7b9ae8f233ba4f134e11263))
+* **utils:** Tweak metric descriptions ([e0f6174](https://github.com/relative-ci/bundle-stats/commit/e0f6174c468c2b2536d23edc7ea8137bd4b65a9f))
+
+
+### Features
+
+* **utils:** Add compareAllModules ([fc9949d](https://github.com/relative-ci/bundle-stats/commit/fc9949daa4cfc117caee7ef8c1d2fb6dbab86d62))
+* **utils:** Add module section links ([1f17efb](https://github.com/relative-ci/bundle-stats/commit/1f17efb1fb295d149210a1fab36cfb00e899950a))
+* **utils:** Add support for module source/destination types ([5fc2464](https://github.com/relative-ci/bundle-stats/commit/5fc2464682f8bb2965ca4d4aa07f7a10806a91c2))
+* **utils:** ModulesPackagesDuplicate - add size data ([887a554](https://github.com/relative-ci/bundle-stats/commit/887a554314d1b82c820b771f73fc8ebdf48bcbf2))
+* **utils:** ModulesPackagesDuplicate - order by size desc ([7c16d78](https://github.com/relative-ci/bundle-stats/commit/7c16d780f99fabd531803fa75cdd4f34dea1722a))
+* **utils:** Webpack assets - add chunkId ([048f72f](https://github.com/relative-ci/bundle-stats/commit/048f72f1ef4fa9829e56d82a59a95427d818636d))
+* **utils:** Webpack chunks - save normalized array as meta ([8a4e79d](https://github.com/relative-ci/bundle-stats/commit/8a4e79dddc4d20b4a5ac5b524d6b6736960985ff))
+
+
+
+
+
 # [2.6.0](https://github.com/relative-ci/bundle-stats/compare/v2.5.0...v2.6.0) (2021-02-06)
 
 **Note:** Version bump only for package @bundle-stats/utils

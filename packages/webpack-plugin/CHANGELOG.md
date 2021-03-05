@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/relative-ci/bundle-stats/compare/v2.6.0...v2.7.0) (2021-03-05)
+
+
+### Features
+
+* add an option to only log error/warning and stop logging info ([2a54166](https://github.com/relative-ci/bundle-stats/commit/2a54166128cfb9180ecf69d669ab88d4da5ebb7e))
+
+
+
+
+
 # [2.6.0](https://github.com/relative-ci/bundle-stats/compare/v2.5.0...v2.6.0) (2021-02-06)
 
 **Note:** Version bump only for package bundle-stats-webpack-plugin

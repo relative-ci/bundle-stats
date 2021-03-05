@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/relative-ci/bundle-stats/compare/v2.6.0...v2.7.0) (2021-03-05)
+
+
+### Bug Fixes
+
+* **html-templates:** Bundle generic css before app css ([e75f9dc](https://github.com/relative-ci/bundle-stats/commit/e75f9dc85e206310b330b473e17179bce903d6f6))
+* **utils:** Assets - always flag assets as chunks ([45e20d4](https://github.com/relative-ci/bundle-stats/commit/45e20d48aa6c5c3797295e48c8a40bc4ffbd903f))
+* **utils:** Consistent type for chunk id ([76f9f07](https://github.com/relative-ci/bundle-stats/commit/76f9f07962b987f0d7b9ae8f233ba4f134e11263))
+
+
+### Features
+
+* **utils:** Webpack assets - add chunkId ([048f72f](https://github.com/relative-ci/bundle-stats/commit/048f72f1ef4fa9829e56d82a59a95427d818636d))
+
+
+
+
+
 # [2.6.0](https://github.com/relative-ci/bundle-stats/compare/v2.5.0...v2.6.0) (2021-02-06)
 
 
