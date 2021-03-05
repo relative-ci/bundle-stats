@@ -8,6 +8,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
+* [1229 - Support files that have a query in the file name](https://github.com/relative-ci/bundle-stats/pull/1229) (https://github.com/Chris3773)
 * Lerna bump consistent args ([edc1da5](https://github.com/relative-ci/bundle-stats/commit/edc1da56e6c5ec8680254155a719c5ad9035fba9))
 * **html-templates:** Bundle generic css before app css ([e75f9dc](https://github.com/relative-ci/bundle-stats/commit/e75f9dc85e206310b330b473e17179bce903d6f6))
 * **ui:** Alert - decrease vertical spacing ([d00c7a4](https://github.com/relative-ci/bundle-stats/commit/d00c7a42a34533ed11cce960ba0287b9dab228ef))
@@ -43,6 +44,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
+* [1260 - add an option to only log error/warning and stop logging info ](https://github.com/relative-ci/bundle-stats/pull/1260) https://github.com/jimblue
 * **ui:** Add popover component ([04199b4](https://github.com/relative-ci/bundle-stats/commit/04199b43f71f08d9abbcfd4b1c7a7c0b123403ef))
 * **ui:** Add section summary ([07fbb1c](https://github.com/relative-ci/bundle-stats/commit/07fbb1c99596f6973a096c3d542a8b6e76d17c39))
 * **ui:** Add TotalSizeByType title with size info ([99d05c3](https://github.com/relative-ci/bundle-stats/commit/99d05c3941ec59d46749d6263c6625aad536cbe9))
