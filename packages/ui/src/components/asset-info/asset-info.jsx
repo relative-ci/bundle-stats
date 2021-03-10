@@ -17,6 +17,7 @@ export const AssetInfo = (props) => {
     <Stack space="xsmall" className={cx(css.root, className)}>
       {item.runs.map((run, index) => {
         const fileType = getModuleFileType(run?.name);
+        const chunk = find(chunks, { id: run?.chunkId });
 
         return (
           <Stack space="xxxsmall">
@@ -24,12 +25,12 @@ export const AssetInfo = (props) => {
 
             <FileName name={run?.name || '-'} />
 
-            {run?.chunkId && (
+            {chunk && (
               <CustomComponentLink
                 className={css.chunk}
                 {...getBundleModulesByChunk(chunkIds, run.chunkId, fileType)}
               >
-                {`${fileType} chunk: ${find(chunks, { id: run.chunkId }).name}`}
+                {`${fileType} chunk: ${chunk.name}`}
               </CustomComponentLink>
             )}
           </Stack>
