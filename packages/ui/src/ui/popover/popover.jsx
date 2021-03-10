@@ -11,7 +11,7 @@ import {
 import { Icon } from '../icon';
 import css from './popover.module.css';
 
-export const Popover = ({ className, icon, label, children }) => {
+export const Popover = ({ className, icon, label, ariaLabel, children }) => {
   const popover = usePopoverState({
     baseId: process.env.NODE_ENV === 'test' && 'id-test',
     gutter: 24,
@@ -41,6 +41,7 @@ export const Popover = ({ className, icon, label, children }) => {
         className={cx(css.button, className)}
         {...popover}
         onClick={onButtonClick}
+        aria-label={ariaLabel}
       >
         {icon && (typeof icon === 'string' ? <Icon className={css.icon} glyph={icon} /> : icon)}
         {label && <span className={css.label}>{label}</span>}
@@ -67,10 +68,12 @@ Popover.propTypes = {
   label: PropTypes.element,
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   children: PropTypes.node.isRequired,
+  ariaLabel: PropTypes.string,
 };
 
 Popover.defaultProps = {
   className: '',
   icon: '',
   label: '',
+  ariaLabel: 'View more info',
 };
