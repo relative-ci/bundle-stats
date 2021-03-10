@@ -9,14 +9,42 @@ import { FileName } from '../../ui/file-name';
 import { ComponentLink } from '../component-link';
 import css from './asset-info.module.css';
 
+const ChunkModulesLink = ({ as: Component, chunks, chunkId, name }) => {
+  const chunk = find(chunks, { id: chunkId });
+
+  if (!chunk) {
+    return null;
+  }
+
+  const chunkIds = map(chunks, 'id');
+  const fileType = getModuleFileType(name);
+
+  return (
+    <Component className={css.chunk} {...getBundleModulesByChunk(chunkIds, chunkId, fileType)}>
+      {`${fileType} chunk: ${chunk.name}`}
+    </Component>
+  );
+};
+
+ChunkModulesLink.propTypes = {
+  as: PropTypes.elementType.isRequired,
+  chunks: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+  chunkId: PropTypes.string,
+  name: PropTypes.string,
+};
+
+ChunkModulesLink.defaultProps = {
+  chunks: [],
+  chunkId: '',
+  name: '',
+};
+
 export const AssetInfo = (props) => {
   const { className, chunks, item, labels, CustomComponentLink } = props;
-  const chunkIds = map(chunks, 'id');
 
   return (
     <Stack space="xsmall" className={cx(css.root, className)}>
       {item.runs.map((run, index) => {
-        const fileType = getModuleFileType(run?.name);
 
         return (
           <Stack space="xxxsmall">
@@ -24,13 +52,13 @@ export const AssetInfo = (props) => {
 
             <FileName name={run?.name || '-'} />
 
-            {run?.chunkId && (
-              <CustomComponentLink
-                className={css.chunk}
-                {...getBundleModulesByChunk(chunkIds, run.chunkId, fileType)}
-              >
-                {`${fileType} chunk: ${find(chunks, { id: run.chunkId }).name}`}
-              </CustomComponentLink>
+            {index === 0 && (
+              <ChunkModulesLink
+                as={CustomComponentLink}
+                chunks={chunks}
+                chunkId={run?.chunkId}
+                name={run?.name}
+              />
             )}
           </Stack>
         );
