@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/ModuleInfo default 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <ModuleInfo
+      chunkIds={
+        Array [
+          "1",
+          "2",
+        ]
+      }
+      chunks={
+        Array [
+          Object {
+            "id": "2",
+            "name": "vendors",
+          },
+        ]
+      }
+      className=""
+      customComponentLink={[Function]}
+      item={
+        Object {
+          "runs": Array [
+            Object {
+              "chunkIds": Array [
+                "2",
+              ],
+              "key": "./node_modules/lodash/fp/_baseConvert.js",
+              "name": "./node_modules/lodash/fp/_baseConvert.js",
+            },
+            Object {
+              "chunkIds": Array [
+                "2",
+              ],
+              "key": "./node_modules/lodash/fp/_baseConvert.js",
+              "name": "./node_modules/lodash/fp/_baseConvert.js",
+            },
+          ],
+        }
+      }
+      labels={
+        Array [
+          "Job #2",
+          "Job #1",
+        ]
+      }
+    />
+  </div>
+</Router>
+`;
