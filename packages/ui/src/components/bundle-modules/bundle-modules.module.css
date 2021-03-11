@@ -11,21 +11,6 @@
   max-width: 360px;
 }
 
-.nameTooltip {
-  text-align: left;
-}
-
-.nameTooltipTitle {
-  margin: 0;
-}
-
-.nameTooltipText {
-  display: block;
-  width: 100%;
-  max-width: 320px;
+.namePopover {
   min-width: 280px;
-}
-
-.nameTooltipItem + .nameTooltipItem {
-  margin-top: var(--space-small);
 }
