@@ -46,6 +46,7 @@ export const useSearch = ({
   defaultFilters,
   allEntriesFilters,
 }) => {
+  // When we pass custom filters, set the other flags to false (emptyFilters)
   const initialFilters = customFilters ? merge({}, emptyFilters, customFilters) : defaultFilters;
 
   const [{ search, searchPattern, filters }, dispatch] = useReducer(

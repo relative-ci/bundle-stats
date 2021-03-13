@@ -135,6 +135,13 @@ export const BUNDLE_ASSETS_CHUNK_COUNT = {
 export const BUNDLE_MODULES = {
   section: SECTIONS.MODULES,
   title: I18N.COMPONENT_LINK_MODULES,
+  params: {
+    [COMPONENT.BUNDLE_MODULES]: {
+      filters: {
+        [MODULE_FILTERS.CHANGED]: false,
+      },
+    },
+  },
 };
 
 export const getBundleModulesBySearch = (search) => ({

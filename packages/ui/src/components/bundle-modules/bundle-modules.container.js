@@ -67,8 +67,8 @@ export default compose(
 
     const emptyFilters = {
       changed: false,
-      ...getModuleChunkFilters(chunkIds, true),
-      ...getModuleFileTypeFilters(true),
+      ...getModuleChunkFilters(chunkIds, false),
+      ...getModuleFileTypeFilters(false),
     };
 
     const allEntriesFilters = {
