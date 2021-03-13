@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { compose, withProps } from 'recompose';
 import { get } from 'lodash';
 import { PACKAGE_FILTERS } from '@bundle-stats/utils';
@@ -53,7 +54,10 @@ export const enhance = compose(
       get(jobs, '0.insights.webpack.duplicatePackages.data', {}),
     ).flat();
 
-    const items = addDuplicateTag(webpack.compareBySection.packages(jobs), duplicatePackages);
+    const items = useMemo(
+      () => addDuplicateTag(webpack.compareBySection.packages(jobs), duplicatePackages),
+      [jobs, duplicatePackages],
+    );
 
     const defaultFilters = {
       [PACKAGE_FILTERS.CHANGED]: jobs?.length > 1,
