@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.2](https://github.com/relative-ci/bundle-stats/compare/v2.7.1...v2.7.2) (2021-03-13)
+
+
+### Bug Fixes
+
+* **utils:** Modules - add changed flag to view all link ([5c94893](https://github.com/relative-ci/bundle-stats/commit/5c94893c84d3f59d8f3b91fa57f595457b2d5818))
+
+
+### Performance Improvements
+
+* **ui:** Memo data comparison ([e6691fd](https://github.com/relative-ci/bundle-stats/commit/e6691fd02df89081c17ca9c561f93b109fec88c1))
+* **utils:** Webpack compareAllModules - use object assignment ([7001578](https://github.com/relative-ci/bundle-stats/commit/70015783eff546243ae80160c173c42e9b3ae6bb))
+
+
+
+
+
 ## [2.7.1](https://github.com/relative-ci/bundle-stats/compare/v2.7.0...v2.7.1) (2021-03-10)
 
 
