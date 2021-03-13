@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { compose, withProps } from 'recompose';
 import { get } from 'lodash';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
@@ -122,7 +123,7 @@ const getCustomSort = (sortId) => (item) => {
 
 export const enhance = compose(
   withProps(({ jobs }) => {
-    const items = webpack.compareBySection.assets(jobs);
+    const items = useMemo(() => webpack.compareBySection.assets(jobs), [jobs]);
 
     const defaultFilters = {
       [ASSET_FILTERS.CHANGED]: jobs?.length > 1,

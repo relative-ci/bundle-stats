@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { compose, withProps } from 'recompose';
 import { get, map } from 'lodash';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
@@ -53,7 +54,7 @@ const getRowFilter = (filters) => (row) => {
 
 export default compose(
   withProps(({ jobs }) => {
-    const items = webpack.compareBySection.allModules(jobs);
+    const items = useMemo(() => webpack.compareBySection.allModules(jobs), [jobs]);
 
     const chunks = jobs[0]?.meta?.webpack?.chunks || []
     const chunkIds = map(chunks, 'id');
