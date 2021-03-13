@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get, isEmpty, map } from 'lodash';
@@ -26,21 +26,54 @@ import { MetricsTableSearch } from '../metrics-table-search';
 import { ModuleInfo } from '../module-info';
 import css from './bundle-modules.module.css';
 
-const getRenderRowHeader = ({ labels, chunks, CustomComponentLink }) => (row) => {
+const RowHeader = ({ row, chunks, labels, CustomComponentLink }) => {
   const chunkIds = map(chunks, 'id');
+
+  const [showPopopver, setPopover] = useState(false);
+  const handleOnMouseEnter = useCallback(() => setPopover(true), [showPopopver]);
+  const content = <FileName name={row.label} />;
+
   return (
-    <Popover ariaLabel="View module info" label={<FileName name={row.label} />}>
-      <ModuleInfo
-        className={css.namePopover}
-        item={row}
-        chunks={chunks}
-        chunkIds={chunkIds}
-        labels={labels}
-        customComponentLink={CustomComponentLink}
-      />
-    </Popover>
+    <div onMouseEnter={handleOnMouseEnter}>
+      {!showPopopver ?
+        content
+        : (
+        <Popover ariaLabel="View module info" label={content}>
+          <ModuleInfo
+            className={css.namePopover}
+            item={row}
+            chunks={chunks}
+            chunkIds={chunkIds}
+            labels={labels}
+            customComponentLink={CustomComponentLink}
+          />
+        </Popover>
+      )}
+    </div>
   );
 };
+
+RowHeader.propTypes = {
+  row: PropTypes.shape({
+    label: PropTypes.string,
+  }).isRequired,
+  chunks: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+    }),
+  ),
+  labels: PropTypes.arrayOf(PropTypes.string).isRequired,
+  CustomComponentLink: PropTypes.elementType.isRequired,
+};
+
+RowHeader.defaultProps = {
+  chunks: [],
+};
+
+const getRenderRowHeader = ({ labels, chunks, CustomComponentLink }) => (row) => (
+  <RowHeader row={row} chunks={chunks} labels={labels} CustomComponentLink={CustomComponentLink} />
+);
 
 const Title = () => {
   return (
@@ -50,11 +83,7 @@ const Title = () => {
         <Stack space="xxxsmall">
           <p>{I18N.MODULES_INFO}</p>
           <p>
-            <a
-              href={config.documentation.modules}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={config.documentation.modules} target="_blank" rel="noreferrer">
               {I18N.READ_MORE}
             </a>
           </p>
@@ -89,7 +118,10 @@ export const BundleModules = ({
   }, []);
 
   const labels = useMemo(() => map(jobs, 'label'), [jobs]);
-  const renderRowHeader = useMemo(() => getRenderRowHeader({ labels, chunks, CustomComponentLink }), [labels, chunks]);
+  const renderRowHeader = useMemo(
+    () => getRenderRowHeader({ labels, chunks, CustomComponentLink }),
+    [labels, chunks],
+  );
   const emptyMessage = useMemo(
     () => (
       <EmptySet resources="modules" filtered={totalRowCount !== 0} resetFilters={clearSearch} />
