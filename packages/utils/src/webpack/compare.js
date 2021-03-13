@@ -70,7 +70,6 @@ const compareModules = (jobs) => {
  * Compare all modules
  *
  * @param {Object[]} jobs - List of jobs to compare
- *
  * @return {Object[]} Compared module metrics
  */
 const compareAllModules = (jobs) => {
@@ -79,20 +78,22 @@ const compareAllModules = (jobs) => {
 
     const allModules = Object.entries(modulesByChunkId).reduce((agg, [chunkId, { modules }]) => {
       // Aggregate chunk modules
-      const processedModules = Object.entries(modules).reduce((chunkAgg, [moduleName, moduleData]) => {
-        const existingModule = chunkAgg[moduleName];
+      const processedModules = Object.entries(modules).reduce(
+        (chunkAgg, [moduleName, moduleData]) => {
+          const existingModule = chunkAgg[moduleName];
 
-        return {
-          ...chunkAgg,
-          [moduleName]: {
+          // @NOTE immutable methods will decrease the perfomace by more than 3x
+          // eslint-disable-next-line no-param-reassign
+          chunkAgg[moduleName] = {
+            ...existingModule,
             ...moduleData,
-            chunkIds: [
-              ...(existingModule?.chunkIds || []),
-              chunkId,
-            ]
-          },
-        }
-      }, agg);
+            chunkIds: [...(existingModule?.chunkIds || []), chunkId],
+          };
+
+          return chunkAgg;
+        },
+        agg,
+      );
 
       return processedModules;
     }, {});
@@ -100,10 +101,10 @@ const compareAllModules = (jobs) => {
     return merge({}, job, {
       metrics: {
         webpack: {
-          allModules
-        }
-      }
-    })
+          allModules,
+        },
+      },
+    });
   });
 
   return compareMetrics(jobsWithAllModules, selectors.allModules, METRIC_TYPE_FILE_SIZE);
