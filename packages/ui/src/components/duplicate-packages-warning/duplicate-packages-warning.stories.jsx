@@ -24,3 +24,12 @@ stories.add('multiple duplicate packages', () => (
     }}
   />
 ));
+
+stories.add('no changes', () => (
+  <DuplicatePackagesWarning
+    duplicatePackagesCount={{
+      current: 2,
+      baseline: 2,
+    }}
+  />
+));

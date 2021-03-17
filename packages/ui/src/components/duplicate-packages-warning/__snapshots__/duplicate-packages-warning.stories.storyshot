@@ -56,6 +56,62 @@ exports[`Storyshots Components/DuplicatePackagesWarning multiple duplicate packa
 </Router>
 `;
 
+exports[`Storyshots Components/DuplicatePackagesWarning no changes 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <DuplicatePackagesWarning
+      className=""
+      customComponentLink={[Function]}
+      duplicatePackagesCount={
+        Object {
+          "baseline": 2,
+          "current": 2,
+        }
+      }
+    />
+  </div>
+</Router>
+`;
+
 exports[`Storyshots Components/DuplicatePackagesWarning single duplicate packages 1`] = `
 <Router
   history={

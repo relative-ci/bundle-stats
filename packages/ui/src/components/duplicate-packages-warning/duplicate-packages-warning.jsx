@@ -21,21 +21,19 @@ export const DuplicatePackagesWarning = (props) => {
 
   return (
     <Alert kind="warning" className={cx(css.root, className)}>
-      <h3 className={css.title}>
-        {`Bundle contains`}
-        {` `}
-        <CustomComponentLink {...BUNDLE_PACKAGES_DUPLICATE}>
-          {metricRunInfo.value}
+      {`Bundle contains `}
+      <CustomComponentLink {...BUNDLE_PACKAGES_DUPLICATE}>
+        {metricRunInfo.value}
+        {metricRunInfo.delta !== 0 && (
           <Delta
             className={css.titleDelta}
             inverted
             displayValue={metricRunInfo.displayDelta}
             deltaType={metricRunInfo.deltaType}
           />
-          {` `}
-          {`duplicate ${metricRunInfo.value === 1 ? 'package' : 'packages'}.`}
-        </CustomComponentLink>
-      </h3>
+        )}
+        {` duplicate ${metricRunInfo.value === 1 ? 'package' : 'packages'}.`}
+      </CustomComponentLink>
     </Alert>
   );
 };
