@@ -72,15 +72,10 @@ export const SummaryItem = ({
   return (
     <Stack space="xxxsmall" as={Component} className={rootClassName} {...props}>
       <FlexStack as="h3" space="xxxsmall" className={css.title}>
-        <span>
-          {metric.label}
-        </span>
+        <span>{metric.label}</span>
 
         {showMetricDescriptionTooltip && (
-          <Popover
-            className={css.icon}
-            icon="help"
-          >
+          <Popover className={css.icon} icon="help">
             <MetricInfo {...metric} />
           </Popover>
         )}
@@ -108,11 +103,7 @@ export const SummaryItem = ({
         )}
 
         {!loading ? (
-          <Metric
-            className={css.baselineMetric}
-            value={baseline}
-            formatter={metric.formatter}
-          />
+          <Metric className={css.baselineMetric} value={baseline} formatter={metric.formatter} />
         ) : (
           <span className={cx(css.baselineMetric, css.loading)} />
         )}

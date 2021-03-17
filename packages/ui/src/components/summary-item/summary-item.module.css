@@ -49,9 +49,10 @@
 
 /* Loading state */
 .loading {
+  display: block;
   background: var(--color-highlight);
   pointer-events: none;
-  width: 5em;
+  width: 10ch;
 }
 
 /* Size large */
