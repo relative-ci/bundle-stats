@@ -18,3 +18,4 @@ export { ModuleInfo } from './module-info';
 export { RunLabelSum } from './run-label-sum';
 export { SummaryItem } from './summary-item';
 export { Summary } from './summary';
+export { TotalSizeTypeTitle } from './total-size-type-title';
