@@ -14,6 +14,7 @@ export { LighthouseTable } from './lighthouse-table';
 export { Metric } from './metric';
 export { MetricsTable } from './metrics-table';
 export { MetricsTableSearch } from './metrics-table-search';
+export { ModuleInfo } from './module-info';
 export { RunLabelSum } from './run-label-sum';
 export { SummaryItem } from './summary-item';
 export { Summary } from './summary';

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get, isEmpty, map } from 'lodash';
@@ -12,6 +12,7 @@ import {
 
 import config from '../../config.json';
 import I18N from '../../i18n';
+import { ComponentLink } from '../component-link';
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { EmptySet } from '../../ui/empty-set';
@@ -20,30 +21,58 @@ import { FiltersDropdown } from '../../ui/filters-dropdown';
 import { Popover } from '../../ui/popover';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Toolbar } from '../../ui/toolbar';
-import { Tooltip } from '../../ui/tooltip';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
+import { ModuleInfo } from '../module-info';
 import css from './bundle-modules.module.css';
 
-const getRenderRowHeader = (labels) => (row) => (
-  <Tooltip
-    title={
-      <div className={css.nameTooltip}>
-        {row.runs.map((run, index) => {
-          const key = index;
+const RowHeader = ({ row, chunks, labels, CustomComponentLink }) => {
+  const chunkIds = map(chunks, 'id');
 
-          return (
-            <div className={css.nameTooltipItem} key={key}>
-              <h5 className={css.nameTooltipTitle}>{labels[index]}</h5>
-              <FileName className={css.nameTooltipText} name={run && run.name ? run.name : '-'} />
-            </div>
-          );
-        })}
-      </div>
-    }
-  >
-    <FileName className={css.name} name={row.label} />
-  </Tooltip>
+  const [showPopopver, setPopover] = useState(false);
+  const handleOnMouseEnter = useCallback(() => setPopover(true), [showPopopver]);
+  const content = <FileName name={row.label} />;
+
+  return (
+    <div onMouseEnter={handleOnMouseEnter}>
+      {!showPopopver ?
+        content
+        : (
+        <Popover ariaLabel="View module info" label={content}>
+          <ModuleInfo
+            className={css.namePopover}
+            item={row}
+            chunks={chunks}
+            chunkIds={chunkIds}
+            labels={labels}
+            customComponentLink={CustomComponentLink}
+          />
+        </Popover>
+      )}
+    </div>
+  );
+};
+
+RowHeader.propTypes = {
+  row: PropTypes.shape({
+    label: PropTypes.string,
+  }).isRequired,
+  chunks: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+    }),
+  ),
+  labels: PropTypes.arrayOf(PropTypes.string).isRequired,
+  CustomComponentLink: PropTypes.elementType.isRequired,
+};
+
+RowHeader.defaultProps = {
+  chunks: [],
+};
+
+const getRenderRowHeader = ({ labels, chunks, CustomComponentLink }) => (row) => (
+  <RowHeader row={row} chunks={chunks} labels={labels} CustomComponentLink={CustomComponentLink} />
 );
 
 const Title = () => {
@@ -54,11 +83,7 @@ const Title = () => {
         <Stack space="xxxsmall">
           <p>{I18N.MODULES_INFO}</p>
           <p>
-            <a
-              href={config.documentation.modules}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={config.documentation.modules} target="_blank" rel="noreferrer">
               {I18N.READ_MORE}
             </a>
           </p>
@@ -83,15 +108,20 @@ export const BundleModules = ({
   search,
   updateSearch,
   hasActiveFilters,
+  customComponentLink: CustomComponentLink,
 }) => {
   const rootClassName = cx(css.root, className);
 
-  const clearSearch = () => {
+  const clearSearch = useCallback(() => {
     resetFilters();
     updateSearch('');
-  };
+  }, []);
 
-  const renderRowHeader = useMemo(() => getRenderRowHeader(map(jobs, 'label')), []);
+  const labels = useMemo(() => map(jobs, 'label'), [jobs]);
+  const renderRowHeader = useMemo(
+    () => getRenderRowHeader({ labels, chunks, CustomComponentLink }),
+    [labels, chunks],
+  );
   const emptyMessage = useMemo(
     () => (
       <EmptySet resources="modules" filtered={totalRowCount !== 0} resetFilters={clearSearch} />
@@ -176,7 +206,7 @@ export const BundleModules = ({
         className={css.table}
         items={items}
         runs={jobs}
-        renderRowHeader={renderRowHeader.current}
+        renderRowHeader={renderRowHeader}
         emptyMessage={emptyMessage}
         showHeaderSum
         title={<Title />}
@@ -191,6 +221,7 @@ BundleModules.defaultProps = {
   jobs: [],
   totalRowCount: 0,
   hasActiveFilters: false,
+  customComponentLink: ComponentLink,
 };
 
 BundleModules.propTypes = {
@@ -238,4 +269,5 @@ BundleModules.propTypes = {
   updateSort: PropTypes.func.isRequired,
   search: PropTypes.string.isRequired,
   updateSearch: PropTypes.func.isRequired,
+  customComponentLink: PropTypes.elementType,
 };

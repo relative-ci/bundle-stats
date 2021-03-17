@@ -53,6 +53,7 @@ exports[`Storyshots UI/Popover default 1`] = `
       }
     >
       <Popover
+        ariaLabel="View more info"
         className=""
         icon="help"
         label=""
@@ -60,6 +61,7 @@ exports[`Storyshots UI/Popover default 1`] = `
         <ForwardRef(PopoverDisclosure)
           animated={false}
           animating={false}
+          aria-label="View more info"
           baseId="id-test"
           className="button"
           hide={[Function]}
@@ -103,6 +105,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                 aria-controls="id-test"
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                aria-label="View more info"
                 class="button"
                 type="button"
               >
@@ -193,6 +196,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                 aria-controls="id-test"
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                aria-label="View more info"
                 class="button"
                 type="button"
               >
@@ -224,6 +228,7 @@ exports[`Storyshots UI/Popover default 1`] = `
             aria-controls="id-test"
             aria-expanded={false}
             aria-haspopup="dialog"
+            aria-label="View more info"
             className="button"
             onClick={[Function]}
             onClickCapture={[Function]}
@@ -311,6 +316,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                 aria-controls="id-test"
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                aria-label="View more info"
                 class="button"
                 type="button"
               >
@@ -401,6 +407,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                 aria-controls="id-test"
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                aria-label="View more info"
                 class="button"
                 type="button"
               >
@@ -549,6 +556,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                         aria-controls="id-test"
                         aria-expanded="false"
                         aria-haspopup="dialog"
+                        aria-label="View more info"
                         class="button"
                         type="button"
                       >
@@ -639,6 +647,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                         aria-controls="id-test"
                         aria-expanded="false"
                         aria-haspopup="dialog"
+                        aria-label="View more info"
                         class="button"
                         type="button"
                       >

@@ -56,7 +56,6 @@ export const getModuleFileTypeFilters = (value = true) =>
     {},
   );
 
-/** @type {} */
 export const TOTALS = {
   section: SECTIONS.TOTALS,
   title: I18N.COMPONENT_LINK_TOTALS,
@@ -144,7 +143,7 @@ export const BUNDLE_MODULES = {
   },
 };
 
-export const getBundleModulesBySearch = (search) => ({
+export const getBundleModulesBySearch = (search, chunkIds) => ({
   section: SECTIONS.MODULES,
   title: I18N.COMPONENT_LINK_MODULES,
   params: {
@@ -152,6 +151,8 @@ export const getBundleModulesBySearch = (search) => ({
       search,
       filters: {
         [MODULE_FILTERS.CHANGED]: false,
+        ...getModuleChunkFilters(chunkIds, true),
+        ...getModuleFileTypeFilters(true),
       },
     },
   },

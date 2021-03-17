@@ -1,4 +1,4 @@
-import React, { useCallback, useReducer } from 'react';
+import React, { useCallback, useEffect, useReducer } from 'react';
 import PropTypes from 'prop-types';
 import { debounce, isEqual, merge } from 'lodash';
 
@@ -7,6 +7,7 @@ const ACTION_SET_FILTERS = 'SET_FILTERS';
 const ACTION_SET_SEARCH = 'SET_SEARCH';
 const ACTION_SET_SEARCH_PATTERN = 'SET_SEARCH_PATTERN';
 const ACTION_RESET = 'RESET';
+const ACTION_SET = 'SET';
 
 const getSearchReducer = ({ defaultFilters }) => (state, action) => {
   const { type, payload } = action;
@@ -33,9 +34,28 @@ const getSearchReducer = ({ defaultFilters }) => (state, action) => {
         search: '',
         searchPattern: '',
       };
+    case ACTION_SET:
+      return payload;
     default:
       return state;
   }
+};
+
+export const generateState = (filters, search) => {
+  let searchPattern = new RegExp(/.*/);
+
+  try {
+    searchPattern = new RegExp(search);
+  } catch (err) {
+    // noop
+    console.error(err); // eslint-disable-line no-console
+  }
+
+  return {
+    filters,
+    search,
+    searchPattern,
+  };
 };
 
 export const useSearch = ({
@@ -51,12 +71,13 @@ export const useSearch = ({
 
   const [{ search, searchPattern, filters }, dispatch] = useReducer(
     getSearchReducer({ defaultFilters }),
-    {
-      search: customSearch,
-      searchPattern: new RegExp(customSearch),
-      filters: merge({}, emptyFilters, initialFilters),
-    },
+    generateState(initialFilters, customSearch),
   );
+
+  // Update state when the custom filters/search are changing
+  useEffect(() => {
+    dispatch({ type: ACTION_SET, payload: generateState(initialFilters, customSearch) });
+  }, [customFilters, customSearch])
 
   const debouncedSearch = useCallback(
     debounce((newValue) => {
@@ -68,8 +89,9 @@ export const useSearch = ({
 
       try {
         newPattern = new RegExp(newValue);
-      } catch (error) {
-        // skip
+      } catch (err) {
+        // noop
+        console.error(err); // eslint-disable-line no-console
       }
 
       if (setState) {
