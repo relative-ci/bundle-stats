@@ -1,7 +1,12 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { PACKAGE_FILTERS, PACKAGES_SEPARATOR, getBundleModulesBySearch, getBundlePackagesByNameComponentLink } from '@bundle-stats/utils';
+import {
+  PACKAGE_FILTERS,
+  PACKAGES_SEPARATOR,
+  getBundleModulesBySearch,
+  getBundlePackagesByNameComponentLink,
+} from '@bundle-stats/utils';
 
 import config from '../../config.json';
 import I18N from '../../i18n';
@@ -17,15 +22,23 @@ import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
 import css from './bundle-packages.module.css';
 
-const getPopoverContent = ({ packageName, packagePath, duplicate, CustomComponentLink }) => {
-  const normalizedPackagePath = `node_modules/${packagePath.split(PACKAGES_SEPARATOR).join('/node_modules/')}`;
+const getPopoverContent = ({
+  chunkIds,
+  packageName,
+  packagePath,
+  duplicate,
+  CustomComponentLink,
+}) => {
+  const normalizedPackagePath = `node_modules/${packagePath.split(PACKAGES_SEPARATOR).join('/node_modules/')}/`;
 
   return (
     <Stack space="xxsmall" className={css.packagePopover}>
       <h4 className={css.packagePopoverTitle}>{packageName}</h4>
       <ul className={css.packagePopoverList}>
         <li className={css.packagePopoverItem}>
-          <a href={`https://www.npmjs.com/package/${packageName}`} target="_blank" rel="noreferrer">npmjs.com</a>
+          <a href={`https://www.npmjs.com/package/${packageName}`} target="_blank" rel="noreferrer">
+            npmjs.com
+          </a>
         </li>
         <li className={css.packagePopoverItem}>
           <a
@@ -47,7 +60,7 @@ const getPopoverContent = ({ packageName, packagePath, duplicate, CustomComponen
           </div>
         )}
 
-        <CustomComponentLink {...getBundleModulesBySearch(normalizedPackagePath)}>
+        <CustomComponentLink {...getBundleModulesBySearch(normalizedPackagePath, chunkIds)}>
           View all modules
         </CustomComponentLink>
       </Stack>
@@ -105,25 +118,24 @@ export const BundlePackages = (props) => {
     [],
   );
 
+  const chunkIds = (jobs[0]?.meta?.webpack?.chunks || []).map(({ id }) => id);
+
   const renderRowHeader = (item) => {
     const packageNames = item.label.split(PACKAGES_SEPARATOR);
     return (
       <>
         {packageNames.map((packageName, index) => {
           // Render duplicate flag only for the last entry
-          const duplicateFlag = (index === packageNames.length - 1) && item.duplicate && (
+          const duplicateFlag = index === packageNames.length - 1 && item.duplicate && (
             <span className={css.duplicate} title="Duplicate package">
               D
             </span>
           );
 
           return (
-            <Popover
-              className={css.packageName}
-              icon={duplicateFlag}
-              label={packageName}
-            >
+            <Popover className={css.packageName} icon={duplicateFlag} label={packageName}>
               {getPopoverContent({
+                chunkIds,
                 packageName,
                 packagePath: item.label,
                 duplicate: item.duplicate,
