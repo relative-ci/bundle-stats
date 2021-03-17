@@ -13,13 +13,13 @@ export const metrics = {
   },
   totalInitialSizeJS: {
     label: 'Initial JS',
-    description: 'Sum of all JavaScript assets that are flagged as initial(eg: vendor.js, app.js).',
+    description: 'Sum of all JavaScript assets that are labeled as initial(eg: vendor.js, app.js).',
     url: 'https://relative-ci.com/documentation/metrics-and-data#assets',
     type: METRIC_TYPE_FILE_SIZE,
   },
   totalInitialSizeCSS: {
     label: 'Initial CSS',
-    description: 'Sum of all CSS [assets](#assets) that are flagged as initial(eg: vendor.css, app.css).',
+    description: 'Sum of all CSS assets that are labeled as initial(eg: vendor.css, app.css).',
     url: 'https://relative-ci.com/documentation/metrics-and-data#assets',
     type: METRIC_TYPE_FILE_SIZE,
   },
