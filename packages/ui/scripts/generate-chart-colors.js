@@ -28,7 +28,7 @@ const colors = colormap({
   colormap: COLORMAP,
   nshades: COLORMAP.length + 1,
   format: 'rgbaString',
-  alpha: 0.9,
+  alpha: 1,
 });
 
 fs.writeFile(FILE_COLORS, JSON.stringify(colors, null, 2), (err) => {
