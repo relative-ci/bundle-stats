@@ -29,6 +29,7 @@
   font-size: var(--size-large);
   line-height: var(--space-small);
   min-height: var(--space-small);
+  white-space: nowrap;
   font-weight: bold;
 }
 
@@ -48,9 +49,10 @@
 
 /* Loading state */
 .loading {
+  display: block;
   background: var(--color-highlight);
   pointer-events: none;
-  width: 5em;
+  width: 10ch;
 }
 
 /* Size large */
