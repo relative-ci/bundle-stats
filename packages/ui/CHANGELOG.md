@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0-beta.1](https://github.com/relative-ci/bundle-stats/compare/v2.7.2...v2.8.0-beta.1) (2021-03-19)
+
+
+### Bug Fixes
+
+* **ui:** DuplicatePackagesWarning - skip delta when 0 ([e5ebc46](https://github.com/relative-ci/bundle-stats/commit/e5ebc4689aac35118d559fef244c01c087ff9c14))
+* **ui:** Export TotalSizeTypeTitle ([6c40752](https://github.com/relative-ci/bundle-stats/commit/6c407527c99716068e8226fe7605dc85510176f8))
+* **ui:** Increase color palette saturation ([0465ab4](https://github.com/relative-ci/bundle-stats/commit/0465ab42dfcae206954a2a19089c2e8bf3f3a9e3))
+* **ui:** Popover - pass aria-label ([547c4f1](https://github.com/relative-ci/bundle-stats/commit/547c4f1b77db9ee245516d27725b23bd1b1b87c2))
+* **ui:** SummaryItem - correct loading state ([c053b89](https://github.com/relative-ci/bundle-stats/commit/c053b89d7b04f4265e8c3ca81d955f8c8ae05276))
+* **ui:** SummaryItem - prevent delta value from wrapping ([ddd63a1](https://github.com/relative-ci/bundle-stats/commit/ddd63a1ffe339be7cfd47bfb36649b9c890151f0))
+* **ui:** withSearch - update state when props are changing ([4f16adb](https://github.com/relative-ci/bundle-stats/commit/4f16adba54099a2ef6bb5a4e600306cc326e56d0))
+* **utils:** Component link - set chunk ids filters ([2643fd3](https://github.com/relative-ci/bundle-stats/commit/2643fd384ed60e2754b7c9aa18cad95e5c7cfd3e))
+
+
+### Features
+
+* **ui:** BundleModules - add ModuleInfo on click ([a3ae754](https://github.com/relative-ci/bundle-stats/commit/a3ae754435a6de026a06de00c2e896742ad7a0c2))
+* **ui:** ModuleInfo component ([29e6694](https://github.com/relative-ci/bundle-stats/commit/29e6694d8fb3e37ba8e14f294c0f02e3b3a9e177))
+
+
+### Performance Improvements
+
+* **ui:** BundleModules - render Popover on mouse enter ([8c0f2ce](https://github.com/relative-ci/bundle-stats/commit/8c0f2ce90924bee26a398b60b38ad56bc26af37e))
+
+
+
+
+
 ## [2.7.2](https://github.com/relative-ci/bundle-stats/compare/v2.7.1...v2.7.2) (2021-03-13)
 
 
