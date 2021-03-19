@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.1](https://github.com/relative-ci/bundle-stats/compare/v2.7.0...v2.7.1) (2021-03-10)
+
+
+### Bug Fixes
+
+* **ui:** BundleAssets - prevent error when chunk id is not available ([5cdfad3](https://github.com/relative-ci/bundle-stats/commit/5cdfad3ea245583aafd431493225ef7cb1542f3c))
+* **ui:** BundleAssets - view all modules link only for current run ([f3769cc](https://github.com/relative-ci/bundle-stats/commit/f3769cc7a3ff103b099b870771f0d8f08d93f977))
+
+
+
+
+
 # [2.7.0](https://github.com/relative-ci/bundle-stats/compare/v2.6.0...v2.7.0) (2021-03-05)
 
 
