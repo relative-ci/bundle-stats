@@ -1,6 +1,6 @@
-import { getGroupFiltersLabelSuffix } from '../filters-dropdown.utils';
+import { getGroupFiltersLabelSuffix } from '../filters.utils';
 
-describe('UI / FiltersDropdown / utils', () => {
+describe('UI / Filters / utils', () => {
   describe('getGroupFiltersLabelSuffix', () => {
     test('should return none', () => {
       const suffix = getGroupFiltersLabelSuffix([

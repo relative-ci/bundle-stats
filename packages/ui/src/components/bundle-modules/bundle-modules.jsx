@@ -17,7 +17,7 @@ import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { EmptySet } from '../../ui/empty-set';
 import { FileName } from '../../ui/file-name';
-import { FiltersDropdown } from '../../ui/filters-dropdown';
+import { Filters } from '../../ui/filters';
 import { Popover } from '../../ui/popover';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Toolbar } from '../../ui/toolbar';
@@ -189,7 +189,7 @@ export const BundleModules = ({
               />
             </div>
           </FlexStack>
-          <FiltersDropdown
+          <Filters
             className={css.tableDropdown}
             filters={dropdownFilters}
             label={`Filters (${items.length}/${totalRowCount})`}

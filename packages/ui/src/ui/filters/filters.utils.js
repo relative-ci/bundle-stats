@@ -8,6 +8,7 @@ const JOIN = ', ';
  */
 export const getGroupFiltersLabelSuffix = (filters) => {
   const filterCount = filters.length;
+  // eslint-disable-next-line no-unused-vars
   const checkedFilters = filters.filter(([_, { defaultValue }]) => defaultValue);
   const filterCheckedCount = checkedFilters.length;
 
@@ -19,6 +20,7 @@ export const getGroupFiltersLabelSuffix = (filters) => {
     return 'all';
   }
 
+  // eslint-disable-next-line no-unused-vars
   const checkedFilterLabels = checkedFilters.map(([_, { label }]) => label);
 
   let suffix = '';

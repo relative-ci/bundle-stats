@@ -5,8 +5,8 @@ import { get } from 'lodash';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Dropdown } from '../dropdown';
-import { getGroupFiltersLabelSuffix } from './filters-dropdown.utils';
-import css from './filters-dropdown.module.css';
+import { getGroupFiltersLabelSuffix } from './filters.utils';
+import css from './filters.module.css';
 
 const Filter = (props) => {
   const { className, label, name, getOnOnlyClick, ...inputProps } = props;
@@ -147,7 +147,7 @@ FilterGroup.propTypes = {
   onCheckboxChange: PropTypes.func.isRequired,
 };
 
-export const FiltersDropdown = (props) => {
+export const Filters = (props) => {
   const {
     className,
     label,
@@ -195,13 +195,13 @@ export const FiltersDropdown = (props) => {
   );
 };
 
-FiltersDropdown.defaultProps = {
+Filters.defaultProps = {
   className: '',
   label: 'Filters',
   active: false,
 };
 
-FiltersDropdown.propTypes = {
+Filters.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
   hasActiveFilters: PropTypes.bool,

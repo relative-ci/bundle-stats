@@ -3,9 +3,9 @@ import { storiesOf } from '@storybook/react';
 import { get } from 'lodash';
 
 import { getWrapperDecorator } from '../../stories';
-import { FiltersDropdown } from '.';
+import { Filters } from '.';
 
-const stories = storiesOf('UI/FiltersDropdown', module);
+const stories = storiesOf('UI/Filters', module);
 stories.addDecorator(getWrapperDecorator({ paddingLeft: '200px' }));
 
 const FiltersState = ({ children }) => {
@@ -25,7 +25,7 @@ const FiltersState = ({ children }) => {
 stories.add('default', () => (
   <FiltersState>
     {(values, setValues) => (
-      <FiltersDropdown
+      <Filters
         onChange={setValues}
         filters={{
           changed: {
@@ -67,7 +67,7 @@ stories.add('default', () => (
 ));
 
 stories.add('disable options', () => (
-  <FiltersDropdown
+  <Filters
     onChange={(state) => {
       console.log(state); // eslint-disable-line no-console
     }}

@@ -11,7 +11,7 @@ import { Stack } from '../../layout/stack';
 import { FileName } from '../../ui/file-name';
 import { Popover } from '../../ui/popover';
 import { Tooltip } from '../../ui/tooltip';
-import { FiltersDropdown } from '../../ui/filters-dropdown';
+import { Filters } from '../../ui/filters';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { EmptySet } from '../../ui/empty-set';
 import { Toolbar } from '../../ui/toolbar';
@@ -191,7 +191,7 @@ export const BundleAssets = (props) => {
             </div>
           </FlexStack>
           <div>
-            <FiltersDropdown
+            <Filters
               filters={{
                 [ASSET_FILTERS.CHANGED]: {
                   label: 'Changed',

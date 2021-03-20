@@ -13,7 +13,7 @@ import I18N from '../../i18n';
 import { Stack } from '../../layout/stack';
 import { FlexStack } from '../../layout/flex-stack';
 import { EmptySet } from '../../ui/empty-set';
-import { FiltersDropdown } from '../../ui/filters-dropdown';
+import { Filters } from '../../ui/filters';
 import { Popover } from '../../ui/popover';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Toolbar } from '../../ui/toolbar';
@@ -163,7 +163,7 @@ export const BundlePackages = (props) => {
               <SortDropdown items={sortItems} {...sort} onChange={updateSort} />
             </div>
           </FlexStack>
-          <FiltersDropdown
+          <Filters
             filters={{
               [PACKAGE_FILTERS.CHANGED]: {
                 label: 'Changed',
