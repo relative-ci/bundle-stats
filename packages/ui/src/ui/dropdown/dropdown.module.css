@@ -4,24 +4,22 @@
 }
 
 .label {
-  border: 1px solid transparent;
+  border: 1px solid var(--color-outline);
   padding: calc(var(--space-xxsmall) - 1px);
   display: flex;
   align-items: center;
 
   background: none;
-  color: var(--color-text-light);
   font-size: var(--size-small);
   line-height: 1.1;
-  font-weight: bold;
-  text-transform: uppercase;
   white-space: nowrap;
   appearance: none;
   cursor: pointer;
+  color: var(--color-text-light);
 }
 
 .label:hover {
-  border-color: var(--color-outline);
+  border-color: var(--color-outline-dark);
   color: var(--color-text);
 }
 
