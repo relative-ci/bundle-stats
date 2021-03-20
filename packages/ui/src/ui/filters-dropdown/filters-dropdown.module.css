@@ -1,75 +1,41 @@
-.group + .group {
-  margin-top: var(--space-xxxsmall);
-  border-top: 1px solid var(--color-outline);
-  padding-top: var(--space-xxxsmall);
-}
-
-/* clear / check all, only button */
-.button {
-  margin-top: calc(0px - var(--space-xxxsmall));
-  margin-bottom: calc(0px - var(--space-xxxsmall));
-  margin-right: calc(0px - var(--space-xxxsmall));
-  padding: var(--space-xxxsmall);
-  outline: none;
-  padding: 0;
-  appearance: none;
-  border: none;
-  background: none;
-  white-space: nowrap;
-  color: var(--color-text-light);
-  font-size: var(--size-small);
-}
-
-.button:hover {
-  color: var(--color-text-light);
-}
-
-.groupHeader {
-  display: flex;
-  align-items: center;
-  font-size: var(--size-xsmall);
-}
-
-.groupTitle {
-  flex: 1 1 100%;
-  margin: 0 var(--space-xsmall) 0 0;
-  margin-bottom: 0;
-  font-size: inherit;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.groupHeaderButton {
-  composes: button;
-}
-
+/* Checkbox + label + button */
 .filter {
-  white-space: no-wrap;
+  position: relative;
   width: 100%;
-  display: flex;
-  align-items: center;
   font-size: var(--size-small);
-  line-height: var(--space-medium);
+  line-height: 1;
 }
 
-.filterLabel {
-  flex: 1 1 auto;
-  display: flex;
+.filterCheckbox {
+  padding: var(--space-xxxsmall) 0;
+  cursor: pointer;
   align-items: center;
-  margin-right: var(--space-small);
 }
 
 .filterInput {
   flex: 0 0 auto;
-  margin-right: var(--space-xxxsmall);
+  height: 1em;
+  cursor: pointer;
+}
+
+.filterLabel {
+  flex: 1 1 auto;
 }
 
 .filterOnlyButton {
   display: none;
-  composes: button;
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.filterInput[disabled] + .filterText {
+/** filter disabled state */
+.filterInput[disabled] + .filterLabel {
   color: var(--color-text-light);
 }
 
@@ -77,10 +43,66 @@
   display: none;
 }
 
+/** filter hover state */
+.filter {
+  color: var(--color-text);
+}
+
 .filter:hover {
-  color: var(--color-text-dark);
+  color: var(--color-dark);
 }
 
 .filter:hover .filterOnlyButton {
-  display: inline;
+  display: block;
+}
+
+/** Filter standard variation */
+.filterStandalone {
+  width: auto;
+  color: var(--color-text-light);
+}
+
+.filterStandalone .filterCheckbox {
+  padding: calc(var(--space-xxsmall) - 1px) calc(var(--space-xxsmall) - 1px);
+  border: 1px solid var(--color-outline);
+}
+
+.filterStandalone:hover {
+  border-color: var(--color-outline-dark);
+  color: var(--color-text);
+}
+
+/** Filter group variation */
+.filterGroupActions {
+  margin-top: var(--space-xxxsmall);
+  padding-top: var(--space-xxxsmall);
+  border-top: 1px solid var(--color-outline);
+}
+
+/* clear / check all */
+.filterGroupButton {
+  margin-top: calc(0px - var(--space-xxxsmall));
+  margin-bottom: calc(0px - var(--space-xxxsmall));
+  margin-right: calc(0px - var(--space-xxxsmall));
+  padding: var(--space-xxxsmall) 0;
+  outline: none;
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  white-space: nowrap;
+  color: var(--color-primary);
+  font-size: var(--size-small);
+  line-height: 1;
+}
+
+.filterGroupButton:hover {
+  color: var(--color-primary-dark);
+}
+.items {
+  align-items: flex-start;
+}
+
+.item {
+  flex: 0 0 auto;
 }

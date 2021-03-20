@@ -53,48 +53,24 @@ exports[`Storyshots UI/FiltersDropdown default 1`] = `
         }
       }
     >
-      <FiltersDropdownContainer
-        filters={
-          Object {
-            "changed": Object {
-              "defaultValue": true,
-              "label": "Changed",
-            },
-            "entrypoint": Object {
-              "defaultValue": false,
-              "label": "Entrypoint",
-            },
-            "fileTypes": Object {
-              "CSS": Object {
-                "defaultValue": true,
-                "label": "CSS",
-              },
-              "HTML": Object {
-                "defaultValue": true,
-                "label": "HTML",
-              },
-              "JS": Object {
-                "defaultValue": true,
-                "label": "JS",
-              },
-              "label": "File types",
-            },
-          }
-        }
-        onChange={[Function]}
-      >
-        <FiltersDropdown
-          active={false}
-          className=""
+      <FiltersState>
+        <FiltersDropdownContainer
           filters={
             Object {
+              "assetTypes": Object {
+                "entrypoint": Object {
+                  "defaultValue": true,
+                  "label": "Entrypoint",
+                },
+                "initial": Object {
+                  "defaultValue": true,
+                  "label": "Initial",
+                },
+                "label": "Types",
+              },
               "changed": Object {
                 "defaultValue": true,
                 "label": "Changed",
-              },
-              "entrypoint": Object {
-                "defaultValue": false,
-                "label": "Entrypoint",
               },
               "fileTypes": Object {
                 "CSS": Object {
@@ -113,297 +89,515 @@ exports[`Storyshots UI/FiltersDropdown default 1`] = `
               },
             }
           }
-          label="Filters"
           onChange={[Function]}
-          toggleFilter={[Function]}
-          values={
-            Object {
-              "changed": true,
-              "entrypoint": false,
-              "fileTypes.CSS": true,
-              "fileTypes.HTML": true,
-              "fileTypes.JS": true,
-            }
-          }
         >
-          <DropdownContainer
-            align="right"
-            className="root"
-            glyph="filter"
+          <FiltersDropdown
+            active={false}
+            className=""
+            filters={
+              Object {
+                "assetTypes": Object {
+                  "entrypoint": Object {
+                    "defaultValue": true,
+                    "label": "Entrypoint",
+                  },
+                  "initial": Object {
+                    "defaultValue": true,
+                    "label": "Initial",
+                  },
+                  "label": "Types",
+                },
+                "changed": Object {
+                  "defaultValue": true,
+                  "label": "Changed",
+                },
+                "fileTypes": Object {
+                  "CSS": Object {
+                    "defaultValue": true,
+                    "label": "CSS",
+                  },
+                  "HTML": Object {
+                    "defaultValue": true,
+                    "label": "HTML",
+                  },
+                  "JS": Object {
+                    "defaultValue": true,
+                    "label": "JS",
+                  },
+                  "label": "File types",
+                },
+              }
+            }
             label="Filters"
+            onChange={[Function]}
+            toggleFilter={[Function]}
+            values={
+              Object {
+                "assetTypes.entrypoint": true,
+                "assetTypes.initial": true,
+                "changed": true,
+                "fileTypes.CSS": true,
+                "fileTypes.HTML": true,
+                "fileTypes.JS": true,
+              }
+            }
           >
-            <OutsideClickHandler
-              disabled={false}
-              display="block"
-              onOutsideClick={[Function]}
-              useCapture={true}
+            <form
+              className="root"
             >
-              <div>
-                <Dropdown
-                  activeLabel={false}
-                  align="right"
-                  className="root"
-                  dropdownToggle={[Function]}
-                  glyph="filter"
-                  label="Filters"
-                  open={false}
+              <FlexStack
+                as="div"
+                className="items"
+                space="xsmall"
+              >
+                <div
+                  className="items root space--xsmall"
                 >
-                  <div
-                    className="root right root"
+                  <Filter
+                    checked={true}
+                    className="item item filterStandalone"
+                    getOnOnlyClick={null}
+                    key=".$changed"
+                    label="Changed"
+                    name="changed"
+                    onChange={[Function]}
                   >
-                    <button
-                      className="label"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <Icon
-                        as="span"
-                        className="labelIcon"
-                        glyph="filter"
-                      >
-                        <span
-                          className="root labelIcon"
-                        >
-                          <FilterIcon
-                            className="icon"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <svg
-                              className="icon"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-                              />
-                              <path
-                                d="M0 0h24v24H0z"
-                                fill="none"
-                              />
-                            </svg>
-                          </FilterIcon>
-                        </span>
-                      </Icon>
-                      Filters
-                    </button>
                     <div
-                      className="dropdown"
+                      className="filter item item filterStandalone"
                     >
-                      <form
-                        className="dropdown"
+                      <FlexStack
+                        as="label"
+                        className="filterCheckbox"
+                        space="xxxsmall"
                       >
-                        <div
-                          className="group"
-                          key=""
+                        <label
+                          className="filterCheckbox root space--xxxsmall"
                         >
-                          <div
-                            className="groupHeader"
-                          />
-                          <Checkbox
+                          <input
                             checked={true}
-                            getOnOnlyClick={null}
-                            key="changed"
-                            label="Changed"
+                            className="item filterInput"
+                            id="filter-changed"
+                            key=".0"
                             name="changed"
                             onChange={[Function]}
+                            type="checkbox"
+                          />
+                          <span
+                            className="item filterLabel"
+                            key=".1"
                           >
-                            <div
-                              className="filter"
-                            >
-                              <label
-                                className="filterLabel"
-                              >
-                                <input
-                                  checked={true}
-                                  className="filterInput"
-                                  id="filter-changed"
-                                  name="changed"
-                                  onChange={[Function]}
-                                  type="checkbox"
-                                />
-                                <span
-                                  className="filterText"
-                                >
-                                  Changed
-                                </span>
-                              </label>
-                            </div>
-                          </Checkbox>
-                          <Checkbox
-                            checked={false}
-                            getOnOnlyClick={null}
-                            key="entrypoint"
-                            label="Entrypoint"
-                            name="entrypoint"
-                            onChange={[Function]}
-                          >
-                            <div
-                              className="filter"
-                            >
-                              <label
-                                className="filterLabel"
-                              >
-                                <input
-                                  checked={false}
-                                  className="filterInput"
-                                  id="filter-entrypoint"
-                                  name="entrypoint"
-                                  onChange={[Function]}
-                                  type="checkbox"
-                                />
-                                <span
-                                  className="filterText"
-                                >
-                                  Entrypoint
-                                </span>
-                              </label>
-                            </div>
-                          </Checkbox>
-                          <div
-                            className="group"
-                            key="fileTypes"
-                          >
-                            <div
-                              className="groupHeader"
-                            >
-                              <h3
-                                className="groupTitle"
-                              >
-                                File types
-                              </h3>
-                              <button
-                                className="groupHeaderButton"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                clear all
-                              </button>
-                            </div>
-                            <Checkbox
-                              checked={true}
-                              getOnOnlyClick={[Function]}
-                              key="fileTypes.CSS"
-                              label="CSS"
-                              name="fileTypes.CSS"
-                              onChange={[Function]}
+                            Changed
+                          </span>
+                        </label>
+                      </FlexStack>
+                    </div>
+                  </Filter>
+                  <div
+                    className="item item"
+                    key=".1"
+                  >
+                    <FilterGroup
+                      data={
+                        Object {
+                          "entrypoint": Object {
+                            "defaultValue": true,
+                            "label": "Entrypoint",
+                          },
+                          "initial": Object {
+                            "defaultValue": true,
+                            "label": "Initial",
+                          },
+                          "label": "Types",
+                        }
+                      }
+                      groupKey="assetTypes"
+                      key="assetTypes"
+                      onCheckboxChange={[Function]}
+                      values={
+                        Object {
+                          "assetTypes.entrypoint": true,
+                          "assetTypes.initial": true,
+                          "changed": true,
+                          "fileTypes.CSS": true,
+                          "fileTypes.HTML": true,
+                          "fileTypes.JS": true,
+                        }
+                      }
+                    >
+                      <DropdownContainer
+                        label="Types: all"
+                      >
+                        <OutsideClickHandler
+                          disabled={false}
+                          display="block"
+                          onOutsideClick={[Function]}
+                          useCapture={true}
+                        >
+                          <div>
+                            <Dropdown
+                              activeLabel={false}
+                              align="left"
+                              className=""
+                              dropdownToggle={[Function]}
+                              glyph={null}
+                              label="Types: all"
+                              open={false}
                             >
                               <div
-                                className="filter"
+                                className="root left"
                               >
-                                <label
-                                  className="filterLabel"
+                                <button
+                                  className="label"
+                                  onClick={[Function]}
+                                  type="button"
                                 >
-                                  <input
+                                  Types: all
+                                </button>
+                                <div
+                                  className="dropdown"
+                                >
+                                  <Filter
                                     checked={true}
-                                    className="filterInput"
-                                    id="filter-fileTypes.CSS"
+                                    className=""
+                                    getOnOnlyClick={[Function]}
+                                    key="assetTypes.entrypoint"
+                                    label="Entrypoint"
+                                    name="assetTypes.entrypoint"
+                                    onChange={[Function]}
+                                  >
+                                    <div
+                                      className="filter"
+                                    >
+                                      <FlexStack
+                                        as="label"
+                                        className="filterCheckbox"
+                                        space="xxxsmall"
+                                      >
+                                        <label
+                                          className="filterCheckbox root space--xxxsmall"
+                                        >
+                                          <input
+                                            checked={true}
+                                            className="item filterInput"
+                                            id="filter-assetTypes.entrypoint"
+                                            key=".0"
+                                            name="assetTypes.entrypoint"
+                                            onChange={[Function]}
+                                            type="checkbox"
+                                          />
+                                          <span
+                                            className="item filterLabel"
+                                            key=".1"
+                                          >
+                                            Entrypoint
+                                          </span>
+                                        </label>
+                                      </FlexStack>
+                                      <button
+                                        className="filterOnlyButton"
+                                        onClick={[Function]}
+                                        type="button"
+                                      >
+                                        only
+                                      </button>
+                                    </div>
+                                  </Filter>
+                                  <Filter
+                                    checked={true}
+                                    className=""
+                                    getOnOnlyClick={[Function]}
+                                    key="assetTypes.initial"
+                                    label="Initial"
+                                    name="assetTypes.initial"
+                                    onChange={[Function]}
+                                  >
+                                    <div
+                                      className="filter"
+                                    >
+                                      <FlexStack
+                                        as="label"
+                                        className="filterCheckbox"
+                                        space="xxxsmall"
+                                      >
+                                        <label
+                                          className="filterCheckbox root space--xxxsmall"
+                                        >
+                                          <input
+                                            checked={true}
+                                            className="item filterInput"
+                                            id="filter-assetTypes.initial"
+                                            key=".0"
+                                            name="assetTypes.initial"
+                                            onChange={[Function]}
+                                            type="checkbox"
+                                          />
+                                          <span
+                                            className="item filterLabel"
+                                            key=".1"
+                                          >
+                                            Initial
+                                          </span>
+                                        </label>
+                                      </FlexStack>
+                                      <button
+                                        className="filterOnlyButton"
+                                        onClick={[Function]}
+                                        type="button"
+                                      >
+                                        only
+                                      </button>
+                                    </div>
+                                  </Filter>
+                                  <div
+                                    className="filterGroupActions"
+                                  >
+                                    <button
+                                      className="filterGroupButton"
+                                      onClick={[Function]}
+                                      type="button"
+                                    >
+                                      Clear all
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </Dropdown>
+                          </div>
+                        </OutsideClickHandler>
+                      </DropdownContainer>
+                    </FilterGroup>
+                  </div>
+                  <div
+                    className="item item"
+                    key=".2"
+                  >
+                    <FilterGroup
+                      data={
+                        Object {
+                          "CSS": Object {
+                            "defaultValue": true,
+                            "label": "CSS",
+                          },
+                          "HTML": Object {
+                            "defaultValue": true,
+                            "label": "HTML",
+                          },
+                          "JS": Object {
+                            "defaultValue": true,
+                            "label": "JS",
+                          },
+                          "label": "File types",
+                        }
+                      }
+                      groupKey="fileTypes"
+                      key="fileTypes"
+                      onCheckboxChange={[Function]}
+                      values={
+                        Object {
+                          "assetTypes.entrypoint": true,
+                          "assetTypes.initial": true,
+                          "changed": true,
+                          "fileTypes.CSS": true,
+                          "fileTypes.HTML": true,
+                          "fileTypes.JS": true,
+                        }
+                      }
+                    >
+                      <DropdownContainer
+                        label="File types: all"
+                      >
+                        <OutsideClickHandler
+                          disabled={false}
+                          display="block"
+                          onOutsideClick={[Function]}
+                          useCapture={true}
+                        >
+                          <div>
+                            <Dropdown
+                              activeLabel={false}
+                              align="left"
+                              className=""
+                              dropdownToggle={[Function]}
+                              glyph={null}
+                              label="File types: all"
+                              open={false}
+                            >
+                              <div
+                                className="root left"
+                              >
+                                <button
+                                  className="label"
+                                  onClick={[Function]}
+                                  type="button"
+                                >
+                                  File types: all
+                                </button>
+                                <div
+                                  className="dropdown"
+                                >
+                                  <Filter
+                                    checked={true}
+                                    className=""
+                                    getOnOnlyClick={[Function]}
+                                    key="fileTypes.CSS"
+                                    label="CSS"
                                     name="fileTypes.CSS"
                                     onChange={[Function]}
-                                    type="checkbox"
-                                  />
-                                  <span
-                                    className="filterText"
                                   >
-                                    CSS
-                                  </span>
-                                </label>
-                                <button
-                                  className="filterOnlyButton"
-                                  onClick={[Function]}
-                                  type="button"
-                                >
-                                  only
-                                </button>
-                              </div>
-                            </Checkbox>
-                            <Checkbox
-                              checked={true}
-                              getOnOnlyClick={[Function]}
-                              key="fileTypes.JS"
-                              label="JS"
-                              name="fileTypes.JS"
-                              onChange={[Function]}
-                            >
-                              <div
-                                className="filter"
-                              >
-                                <label
-                                  className="filterLabel"
-                                >
-                                  <input
+                                    <div
+                                      className="filter"
+                                    >
+                                      <FlexStack
+                                        as="label"
+                                        className="filterCheckbox"
+                                        space="xxxsmall"
+                                      >
+                                        <label
+                                          className="filterCheckbox root space--xxxsmall"
+                                        >
+                                          <input
+                                            checked={true}
+                                            className="item filterInput"
+                                            id="filter-fileTypes.CSS"
+                                            key=".0"
+                                            name="fileTypes.CSS"
+                                            onChange={[Function]}
+                                            type="checkbox"
+                                          />
+                                          <span
+                                            className="item filterLabel"
+                                            key=".1"
+                                          >
+                                            CSS
+                                          </span>
+                                        </label>
+                                      </FlexStack>
+                                      <button
+                                        className="filterOnlyButton"
+                                        onClick={[Function]}
+                                        type="button"
+                                      >
+                                        only
+                                      </button>
+                                    </div>
+                                  </Filter>
+                                  <Filter
                                     checked={true}
-                                    className="filterInput"
-                                    id="filter-fileTypes.JS"
+                                    className=""
+                                    getOnOnlyClick={[Function]}
+                                    key="fileTypes.JS"
+                                    label="JS"
                                     name="fileTypes.JS"
                                     onChange={[Function]}
-                                    type="checkbox"
-                                  />
-                                  <span
-                                    className="filterText"
                                   >
-                                    JS
-                                  </span>
-                                </label>
-                                <button
-                                  className="filterOnlyButton"
-                                  onClick={[Function]}
-                                  type="button"
-                                >
-                                  only
-                                </button>
-                              </div>
-                            </Checkbox>
-                            <Checkbox
-                              checked={true}
-                              getOnOnlyClick={[Function]}
-                              key="fileTypes.HTML"
-                              label="HTML"
-                              name="fileTypes.HTML"
-                              onChange={[Function]}
-                            >
-                              <div
-                                className="filter"
-                              >
-                                <label
-                                  className="filterLabel"
-                                >
-                                  <input
+                                    <div
+                                      className="filter"
+                                    >
+                                      <FlexStack
+                                        as="label"
+                                        className="filterCheckbox"
+                                        space="xxxsmall"
+                                      >
+                                        <label
+                                          className="filterCheckbox root space--xxxsmall"
+                                        >
+                                          <input
+                                            checked={true}
+                                            className="item filterInput"
+                                            id="filter-fileTypes.JS"
+                                            key=".0"
+                                            name="fileTypes.JS"
+                                            onChange={[Function]}
+                                            type="checkbox"
+                                          />
+                                          <span
+                                            className="item filterLabel"
+                                            key=".1"
+                                          >
+                                            JS
+                                          </span>
+                                        </label>
+                                      </FlexStack>
+                                      <button
+                                        className="filterOnlyButton"
+                                        onClick={[Function]}
+                                        type="button"
+                                      >
+                                        only
+                                      </button>
+                                    </div>
+                                  </Filter>
+                                  <Filter
                                     checked={true}
-                                    className="filterInput"
-                                    id="filter-fileTypes.HTML"
+                                    className=""
+                                    getOnOnlyClick={[Function]}
+                                    key="fileTypes.HTML"
+                                    label="HTML"
                                     name="fileTypes.HTML"
                                     onChange={[Function]}
-                                    type="checkbox"
-                                  />
-                                  <span
-                                    className="filterText"
                                   >
-                                    HTML
-                                  </span>
-                                </label>
-                                <button
-                                  className="filterOnlyButton"
-                                  onClick={[Function]}
-                                  type="button"
-                                >
-                                  only
-                                </button>
+                                    <div
+                                      className="filter"
+                                    >
+                                      <FlexStack
+                                        as="label"
+                                        className="filterCheckbox"
+                                        space="xxxsmall"
+                                      >
+                                        <label
+                                          className="filterCheckbox root space--xxxsmall"
+                                        >
+                                          <input
+                                            checked={true}
+                                            className="item filterInput"
+                                            id="filter-fileTypes.HTML"
+                                            key=".0"
+                                            name="fileTypes.HTML"
+                                            onChange={[Function]}
+                                            type="checkbox"
+                                          />
+                                          <span
+                                            className="item filterLabel"
+                                            key=".1"
+                                          >
+                                            HTML
+                                          </span>
+                                        </label>
+                                      </FlexStack>
+                                      <button
+                                        className="filterOnlyButton"
+                                        onClick={[Function]}
+                                        type="button"
+                                      >
+                                        only
+                                      </button>
+                                    </div>
+                                  </Filter>
+                                  <div
+                                    className="filterGroupActions"
+                                  >
+                                    <button
+                                      className="filterGroupButton"
+                                      onClick={[Function]}
+                                      type="button"
+                                    >
+                                      Clear all
+                                    </button>
+                                  </div>
+                                </div>
                               </div>
-                            </Checkbox>
+                            </Dropdown>
                           </div>
-                        </div>
-                      </form>
-                    </div>
+                        </OutsideClickHandler>
+                      </DropdownContainer>
+                    </FilterGroup>
                   </div>
-                </Dropdown>
-              </div>
-            </OutsideClickHandler>
-          </DropdownContainer>
-        </FiltersDropdown>
-      </FiltersDropdownContainer>
+                </div>
+              </FlexStack>
+            </form>
+          </FiltersDropdown>
+        </FiltersDropdownContainer>
+      </FiltersState>
     </div>
   </Router>
 </MemoryRouter>
@@ -537,284 +731,324 @@ exports[`Storyshots UI/FiltersDropdown disable options 1`] = `
             }
           }
         >
-          <DropdownContainer
-            align="right"
+          <form
             className="root"
-            glyph="filter"
-            label="Filters"
           >
-            <OutsideClickHandler
-              disabled={false}
-              display="block"
-              onOutsideClick={[Function]}
-              useCapture={true}
+            <FlexStack
+              as="div"
+              className="items"
+              space="xsmall"
             >
-              <div>
-                <Dropdown
-                  activeLabel={false}
-                  align="right"
-                  className="root"
-                  dropdownToggle={[Function]}
-                  glyph="filter"
-                  label="Filters"
-                  open={false}
+              <div
+                className="items root space--xsmall"
+              >
+                <Filter
+                  checked={false}
+                  className="item item filterStandalone"
+                  disabled={true}
+                  getOnOnlyClick={null}
+                  key=".$changed"
+                  label="Changed"
+                  name="changed"
+                  onChange={[Function]}
                 >
                   <div
-                    className="root right root"
+                    className="filter item item filterStandalone"
                   >
-                    <button
-                      className="label"
-                      onClick={[Function]}
-                      type="button"
+                    <FlexStack
+                      as="label"
+                      className="filterCheckbox"
+                      space="xxxsmall"
                     >
-                      <Icon
-                        as="span"
-                        className="labelIcon"
-                        glyph="filter"
+                      <label
+                        className="filterCheckbox root space--xxxsmall"
                       >
+                        <input
+                          checked={false}
+                          className="item filterInput"
+                          disabled={true}
+                          id="filter-changed"
+                          key=".0"
+                          name="changed"
+                          onChange={[Function]}
+                          type="checkbox"
+                        />
                         <span
-                          className="root labelIcon"
+                          className="item filterLabel"
+                          key=".1"
                         >
-                          <FilterIcon
-                            className="icon"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <svg
-                              className="icon"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-                              />
-                              <path
-                                d="M0 0h24v24H0z"
-                                fill="none"
-                              />
-                            </svg>
-                          </FilterIcon>
+                          Changed
                         </span>
-                      </Icon>
-                      Filters
-                    </button>
-                    <div
-                      className="dropdown"
+                      </label>
+                    </FlexStack>
+                  </div>
+                </Filter>
+                <Filter
+                  checked={false}
+                  className="item item filterStandalone"
+                  getOnOnlyClick={null}
+                  key=".$entrypoint"
+                  label="Entrypoint"
+                  name="entrypoint"
+                  onChange={[Function]}
+                >
+                  <div
+                    className="filter item item filterStandalone"
+                  >
+                    <FlexStack
+                      as="label"
+                      className="filterCheckbox"
+                      space="xxxsmall"
                     >
-                      <form
-                        className="dropdown"
+                      <label
+                        className="filterCheckbox root space--xxxsmall"
                       >
-                        <div
-                          className="group"
-                          key=""
+                        <input
+                          checked={false}
+                          className="item filterInput"
+                          id="filter-entrypoint"
+                          key=".0"
+                          name="entrypoint"
+                          onChange={[Function]}
+                          type="checkbox"
+                        />
+                        <span
+                          className="item filterLabel"
+                          key=".1"
                         >
-                          <div
-                            className="groupHeader"
-                          />
-                          <Checkbox
-                            checked={false}
-                            disabled={true}
-                            getOnOnlyClick={null}
-                            key="changed"
-                            label="Changed"
-                            name="changed"
-                            onChange={[Function]}
+                          Entrypoint
+                        </span>
+                      </label>
+                    </FlexStack>
+                  </div>
+                </Filter>
+                <div
+                  className="item item"
+                  key=".2"
+                >
+                  <FilterGroup
+                    data={
+                      Object {
+                        "CSS": Object {
+                          "defaultValue": true,
+                          "label": "CSS",
+                        },
+                        "HTML": Object {
+                          "defaultValue": true,
+                          "label": "HTML",
+                        },
+                        "JS": Object {
+                          "defaultValue": true,
+                          "label": "JS",
+                        },
+                        "label": "File types",
+                      }
+                    }
+                    groupKey="fileTypes"
+                    key="fileTypes"
+                    onCheckboxChange={[Function]}
+                    values={
+                      Object {
+                        "changed": false,
+                        "entrypoint": false,
+                        "fileTypes.CSS": true,
+                        "fileTypes.HTML": true,
+                        "fileTypes.JS": true,
+                      }
+                    }
+                  >
+                    <DropdownContainer
+                      label="File types: all"
+                    >
+                      <OutsideClickHandler
+                        disabled={false}
+                        display="block"
+                        onOutsideClick={[Function]}
+                        useCapture={true}
+                      >
+                        <div>
+                          <Dropdown
+                            activeLabel={false}
+                            align="left"
+                            className=""
+                            dropdownToggle={[Function]}
+                            glyph={null}
+                            label="File types: all"
+                            open={false}
                           >
                             <div
-                              className="filter"
+                              className="root left"
                             >
-                              <label
-                                className="filterLabel"
-                              >
-                                <input
-                                  checked={false}
-                                  className="filterInput"
-                                  disabled={true}
-                                  id="filter-changed"
-                                  name="changed"
-                                  onChange={[Function]}
-                                  type="checkbox"
-                                />
-                                <span
-                                  className="filterText"
-                                >
-                                  Changed
-                                </span>
-                              </label>
-                            </div>
-                          </Checkbox>
-                          <Checkbox
-                            checked={false}
-                            getOnOnlyClick={null}
-                            key="entrypoint"
-                            label="Entrypoint"
-                            name="entrypoint"
-                            onChange={[Function]}
-                          >
-                            <div
-                              className="filter"
-                            >
-                              <label
-                                className="filterLabel"
-                              >
-                                <input
-                                  checked={false}
-                                  className="filterInput"
-                                  id="filter-entrypoint"
-                                  name="entrypoint"
-                                  onChange={[Function]}
-                                  type="checkbox"
-                                />
-                                <span
-                                  className="filterText"
-                                >
-                                  Entrypoint
-                                </span>
-                              </label>
-                            </div>
-                          </Checkbox>
-                          <div
-                            className="group"
-                            key="fileTypes"
-                          >
-                            <div
-                              className="groupHeader"
-                            >
-                              <h3
-                                className="groupTitle"
-                              >
-                                File types
-                              </h3>
                               <button
-                                className="groupHeaderButton"
+                                className="label"
                                 onClick={[Function]}
                                 type="button"
                               >
-                                clear all
+                                File types: all
                               </button>
+                              <div
+                                className="dropdown"
+                              >
+                                <Filter
+                                  checked={true}
+                                  className=""
+                                  getOnOnlyClick={[Function]}
+                                  key="fileTypes.CSS"
+                                  label="CSS"
+                                  name="fileTypes.CSS"
+                                  onChange={[Function]}
+                                >
+                                  <div
+                                    className="filter"
+                                  >
+                                    <FlexStack
+                                      as="label"
+                                      className="filterCheckbox"
+                                      space="xxxsmall"
+                                    >
+                                      <label
+                                        className="filterCheckbox root space--xxxsmall"
+                                      >
+                                        <input
+                                          checked={true}
+                                          className="item filterInput"
+                                          id="filter-fileTypes.CSS"
+                                          key=".0"
+                                          name="fileTypes.CSS"
+                                          onChange={[Function]}
+                                          type="checkbox"
+                                        />
+                                        <span
+                                          className="item filterLabel"
+                                          key=".1"
+                                        >
+                                          CSS
+                                        </span>
+                                      </label>
+                                    </FlexStack>
+                                    <button
+                                      className="filterOnlyButton"
+                                      onClick={[Function]}
+                                      type="button"
+                                    >
+                                      only
+                                    </button>
+                                  </div>
+                                </Filter>
+                                <Filter
+                                  checked={true}
+                                  className=""
+                                  getOnOnlyClick={[Function]}
+                                  key="fileTypes.JS"
+                                  label="JS"
+                                  name="fileTypes.JS"
+                                  onChange={[Function]}
+                                >
+                                  <div
+                                    className="filter"
+                                  >
+                                    <FlexStack
+                                      as="label"
+                                      className="filterCheckbox"
+                                      space="xxxsmall"
+                                    >
+                                      <label
+                                        className="filterCheckbox root space--xxxsmall"
+                                      >
+                                        <input
+                                          checked={true}
+                                          className="item filterInput"
+                                          id="filter-fileTypes.JS"
+                                          key=".0"
+                                          name="fileTypes.JS"
+                                          onChange={[Function]}
+                                          type="checkbox"
+                                        />
+                                        <span
+                                          className="item filterLabel"
+                                          key=".1"
+                                        >
+                                          JS
+                                        </span>
+                                      </label>
+                                    </FlexStack>
+                                    <button
+                                      className="filterOnlyButton"
+                                      onClick={[Function]}
+                                      type="button"
+                                    >
+                                      only
+                                    </button>
+                                  </div>
+                                </Filter>
+                                <Filter
+                                  checked={true}
+                                  className=""
+                                  getOnOnlyClick={[Function]}
+                                  key="fileTypes.HTML"
+                                  label="HTML"
+                                  name="fileTypes.HTML"
+                                  onChange={[Function]}
+                                >
+                                  <div
+                                    className="filter"
+                                  >
+                                    <FlexStack
+                                      as="label"
+                                      className="filterCheckbox"
+                                      space="xxxsmall"
+                                    >
+                                      <label
+                                        className="filterCheckbox root space--xxxsmall"
+                                      >
+                                        <input
+                                          checked={true}
+                                          className="item filterInput"
+                                          id="filter-fileTypes.HTML"
+                                          key=".0"
+                                          name="fileTypes.HTML"
+                                          onChange={[Function]}
+                                          type="checkbox"
+                                        />
+                                        <span
+                                          className="item filterLabel"
+                                          key=".1"
+                                        >
+                                          HTML
+                                        </span>
+                                      </label>
+                                    </FlexStack>
+                                    <button
+                                      className="filterOnlyButton"
+                                      onClick={[Function]}
+                                      type="button"
+                                    >
+                                      only
+                                    </button>
+                                  </div>
+                                </Filter>
+                                <div
+                                  className="filterGroupActions"
+                                >
+                                  <button
+                                    className="filterGroupButton"
+                                    onClick={[Function]}
+                                    type="button"
+                                  >
+                                    Clear all
+                                  </button>
+                                </div>
+                              </div>
                             </div>
-                            <Checkbox
-                              checked={true}
-                              getOnOnlyClick={[Function]}
-                              key="fileTypes.CSS"
-                              label="CSS"
-                              name="fileTypes.CSS"
-                              onChange={[Function]}
-                            >
-                              <div
-                                className="filter"
-                              >
-                                <label
-                                  className="filterLabel"
-                                >
-                                  <input
-                                    checked={true}
-                                    className="filterInput"
-                                    id="filter-fileTypes.CSS"
-                                    name="fileTypes.CSS"
-                                    onChange={[Function]}
-                                    type="checkbox"
-                                  />
-                                  <span
-                                    className="filterText"
-                                  >
-                                    CSS
-                                  </span>
-                                </label>
-                                <button
-                                  className="filterOnlyButton"
-                                  onClick={[Function]}
-                                  type="button"
-                                >
-                                  only
-                                </button>
-                              </div>
-                            </Checkbox>
-                            <Checkbox
-                              checked={true}
-                              getOnOnlyClick={[Function]}
-                              key="fileTypes.JS"
-                              label="JS"
-                              name="fileTypes.JS"
-                              onChange={[Function]}
-                            >
-                              <div
-                                className="filter"
-                              >
-                                <label
-                                  className="filterLabel"
-                                >
-                                  <input
-                                    checked={true}
-                                    className="filterInput"
-                                    id="filter-fileTypes.JS"
-                                    name="fileTypes.JS"
-                                    onChange={[Function]}
-                                    type="checkbox"
-                                  />
-                                  <span
-                                    className="filterText"
-                                  >
-                                    JS
-                                  </span>
-                                </label>
-                                <button
-                                  className="filterOnlyButton"
-                                  onClick={[Function]}
-                                  type="button"
-                                >
-                                  only
-                                </button>
-                              </div>
-                            </Checkbox>
-                            <Checkbox
-                              checked={true}
-                              getOnOnlyClick={[Function]}
-                              key="fileTypes.HTML"
-                              label="HTML"
-                              name="fileTypes.HTML"
-                              onChange={[Function]}
-                            >
-                              <div
-                                className="filter"
-                              >
-                                <label
-                                  className="filterLabel"
-                                >
-                                  <input
-                                    checked={true}
-                                    className="filterInput"
-                                    id="filter-fileTypes.HTML"
-                                    name="fileTypes.HTML"
-                                    onChange={[Function]}
-                                    type="checkbox"
-                                  />
-                                  <span
-                                    className="filterText"
-                                  >
-                                    HTML
-                                  </span>
-                                </label>
-                                <button
-                                  className="filterOnlyButton"
-                                  onClick={[Function]}
-                                  type="button"
-                                >
-                                  only
-                                </button>
-                              </div>
-                            </Checkbox>
-                          </div>
+                          </Dropdown>
                         </div>
-                      </form>
-                    </div>
-                  </div>
-                </Dropdown>
+                      </OutsideClickHandler>
+                    </DropdownContainer>
+                  </FilterGroup>
+                </div>
               </div>
-            </OutsideClickHandler>
-          </DropdownContainer>
+            </FlexStack>
+          </form>
         </FiltersDropdown>
       </FiltersDropdownContainer>
     </div>

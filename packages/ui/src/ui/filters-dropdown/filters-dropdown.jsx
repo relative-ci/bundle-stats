@@ -3,18 +3,21 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get } from 'lodash';
 
+import { FlexStack } from '../../layout/flex-stack';
 import { Dropdown } from '../dropdown';
+import { getGroupFiltersLabelSuffix } from './filters-dropdown.utils';
 import css from './filters-dropdown.module.css';
 
-const Checkbox = ({
-  label, name, getOnOnlyClick, ...inputProps
-}) => {
+const Filter = (props) => {
+  const { className, label, name, getOnOnlyClick, ...inputProps } = props;
   const id = `filter-${name}`;
 
+  const rootClassName = cx(css.filter, className);
+
   return (
-    <div className={css.filter}>
+    <div className={rootClassName}>
       {/* eslint-disable */}
-      <label className={css.filterLabel}>
+      <FlexStack space="xxxsmall" as="label" className={css.filterCheckbox}>
       {/* eslint-enabled */}
         <input
           className={css.filterInput}
@@ -23,10 +26,11 @@ const Checkbox = ({
           name={name}
           {...inputProps}
         />
-        <span className={css.filterText}>
+        <span className={css.filterLabel}>
           {label}
         </span>
-      </label>
+      </FlexStack>
+
       {getOnOnlyClick && (
         <button
           className={css.filterOnlyButton}
@@ -40,112 +44,107 @@ const Checkbox = ({
   );
 };
 
-Checkbox.propTypes = {
+Filter.propTypes = {
+  className: PropTypes.string,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   getOnOnlyClick: PropTypes.func,
 };
 
-Checkbox.defaultProps = {
+Filter.defaultProps = {
+  className: '',
   getOnOnlyClick: null,
 };
 
-const renderTree = (key, data, values, onCheckboxChange, getOnOnlyClick) => {
-  if (typeof data?.defaultValue !== 'undefined') {
-    return (
-      <Checkbox
-        key={key}
-        name={key}
-        label={data.label}
-        onChange={onCheckboxChange}
-        checked={values[key]}
-        disabled={data.disabled}
-        getOnOnlyClick={getOnOnlyClick}
-      />
-    );
-  }
+const FilterGroup = (props) => {
+  const { groupKey, data, values, onCheckboxChange } = props;
 
-  if (typeof data === 'object') {
-    const { label: groupLabel, ...groupData } = data;
-    const isRootGroup = !key;
+  const { label: groupLabel, ...groupData } = data;
 
-    const groupItems = Object.entries(groupData);
-    const groupCheckboxes = key && groupItems.filter(([itemKey, item]) => typeof item?.defaultValue !== 'undefined') || [];
-    const isGroupChecked = groupCheckboxes.map(([itemKey]) => get(values, `${key}.${itemKey}`)).reduce((agg, val) => agg && val, true);
+  const groupItems = Object.entries(groupData);
+  const groupCheckboxes = groupItems.filter(([itemKey, item]) => typeof item?.defaultValue !== 'undefined');
+  const isGroupChecked = groupCheckboxes.map(([itemKey]) => get(values, `${groupKey}.${itemKey}`)).reduce((agg, val) => agg && val, true);
 
-    const onGroupClearAll = () => {
-      groupCheckboxes.forEach(([itemKey, item]) => {
-        onCheckboxChange({
-          target: {
-            name: `${key}.${itemKey}`,
-            checked: false,
-          },
-        });
-      });
-    };
+  const filterSuffix = getGroupFiltersLabelSuffix(groupItems);
 
-    const onGroupCheckAll = () => {
-      groupCheckboxes.forEach(([itemKey, item]) => {
-        onCheckboxChange({
-          target: {
-            name: `${key}.${itemKey}`,
-            checked: true,
-          },
-        });
-      });
-    };
-
-    const getOnGroupFilterOnlyClick = !isRootGroup ? ((filterKey) => () => {
-      onGroupClearAll();
+  const onGroupClearAll = () => {
+    groupCheckboxes.forEach(([itemKey, item]) => {
       onCheckboxChange({
         target: {
-          name: filterKey,
+          name: `${groupKey}.${itemKey}`,
+          checked: false,
+        },
+      });
+    });
+  };
+
+  const onGroupCheckAll = () => {
+    groupCheckboxes.forEach(([itemKey, item]) => {
+      onCheckboxChange({
+        target: {
+          name: `${groupKey}.${itemKey}`,
           checked: true,
         },
       });
-    }) : null;
+    });
+  };
 
-    return (
-      <div className={css.group} key={key}>
-        <div className={css.groupHeader}>
-          {groupLabel && (
-            <>
-              <h3 className={css.groupTitle}>
-                {groupLabel}
-              </h3>
-              {isGroupChecked ? (
-                <button
-                  className={css.groupHeaderButton}
-                  type="button"
-                  onClick={onGroupClearAll}
-                >
-                  clear all
-                </button>
-              ) : (
-                <button
-                  className={css.groupHeaderButton}
-                  type="button"
-                  onClick={onGroupCheckAll}
-                >
-                  check all
-                </button>
-              )}
-            </>
-          )}
-        </div>
+  return (
+    <Dropdown label={`${groupLabel}: ${filterSuffix}`}>
+      {groupItems.map(([itemKey, itemData]) => {
+        const id = [groupKey, itemKey].join('.');
 
-        {groupItems.map(([itemKey, itemData]) => renderTree(
-          [...(key ? [key] : []), itemKey].join('.'),
-          itemData,
-          values,
-          onCheckboxChange,
-          getOnGroupFilterOnlyClick,
-        ))}
+        const getOnOnlyClick = () => () => {
+          onGroupClearAll();
+          onCheckboxChange({
+            target: {
+              name: id,
+              checked: true,
+            },
+          });
+        };
+
+        return (
+          <Filter
+            key={id}
+            name={id}
+            label={itemData.label}
+            onChange={onCheckboxChange}
+            checked={values[id]}
+            disabled={itemData.disabled}
+            getOnOnlyClick={getOnOnlyClick}
+          />
+        );
+      })}
+
+      <div className={css.filterGroupActions}>
+        {isGroupChecked ? (
+          <button
+            className={css.filterGroupButton}
+            type="button"
+            onClick={onGroupClearAll}
+          >
+            Clear all
+          </button>
+        ) : (
+          <button
+            className={css.filterGroupButton}
+            type="button"
+            onClick={onGroupCheckAll}
+          >
+            Check all
+          </button>
+        )}
       </div>
-    );
-  }
+    </Dropdown>
+  );
+};
 
-  return null;
+FilterGroup.propTypes = {
+  groupKey: PropTypes.string.isRequired,
+  data: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  values: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  onCheckboxChange: PropTypes.func.isRequired,
 };
 
 export const FiltersDropdown = (props) => {
@@ -162,17 +161,37 @@ export const FiltersDropdown = (props) => {
   const rootClassName = cx(css.root, className);
 
   return (
-    <Dropdown
-      className={rootClassName}
-      label={label}
-      glyph="filter"
-      align="right"
-      activeLabel={hasActiveFilters}
-    >
-      <form className={css.dropdown}>
-        {renderTree('', filters, values, onCheckboxChange)}
-      </form>
-    </Dropdown>
+    <form className={rootClassName}>
+      <FlexStack space="xsmall" className={css.items}>
+        {Object.entries(filters).map(([name, data]) => {
+          if (typeof data?.defaultValue !== 'undefined') {
+            return (
+              <Filter
+                key={name}
+                className={cx(css.item, css.filterStandalone)}
+                name={name}
+                label={data.label}
+                onChange={onCheckboxChange}
+                checked={values[name]}
+                disabled={data.disabled}
+              />
+            );
+          }
+
+          return (
+            <div className={css.item}>
+              <FilterGroup
+                key={name}
+                groupKey={name}
+                data={data}
+                values={values}
+                onCheckboxChange={onCheckboxChange}
+              />
+            </div>
+          );
+        })}
+      </FlexStack>
+    </form>
   );
 };
 

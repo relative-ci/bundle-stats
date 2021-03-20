@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useCallback, useState} from 'react';
 import { storiesOf } from '@storybook/react';
+import { get } from 'lodash';
 
 import { getWrapperDecorator } from '../../stories';
 import { FiltersDropdown } from '.';
@@ -7,38 +8,62 @@ import { FiltersDropdown } from '.';
 const stories = storiesOf('UI/FiltersDropdown', module);
 stories.addDecorator(getWrapperDecorator({ paddingLeft: '200px' }));
 
-stories.add('default', () => (
-  <FiltersDropdown
-    onChange={(state) => {
-      console.log(state); // eslint-disable-line no-console
-    }}
-    filters={{
-      changed: {
-        label: 'Changed',
-        defaultValue: true,
-      },
-      entrypoint: {
-        label: 'Entrypoint',
-        defaultValue: false,
-      },
-      fileTypes: {
-        label: 'File types',
+const FiltersState = ({ children }) => {
+  const [values, setValues] = useState({ changed: true, 'assetType.entrypoint': true });
 
-        CSS: {
-          label: 'CSS',
-          defaultValue: true,
-        },
-        JS: {
-          label: 'JS',
-          defaultValue: true,
-        },
-        HTML: {
-          label: 'HTML',
-          defaultValue: true,
-        },
-      },
-    }}
-  />
+  const handleSetValues = useCallback(
+    (newValues) => {
+      setValues({ ...values, ...newValues });
+      console.info(newValues);
+    },
+    [values],
+  );
+
+  return children(values, handleSetValues);
+};
+
+stories.add('default', () => (
+  <FiltersState>
+    {(values, setValues) => (
+      <FiltersDropdown
+        onChange={setValues}
+        filters={{
+          changed: {
+            label: 'Changed',
+            defaultValue: get(values, 'changed', true),
+          },
+          assetTypes: {
+            label: 'Types',
+
+            entrypoint: {
+              label: 'Entrypoint',
+              defaultValue: get(values, 'assetTypes.entrypoint', true),
+            },
+            initial: {
+              label: 'Initial',
+              defaultValue: get(values, 'assetTypes.initial', true),
+            },
+          },
+          fileTypes: {
+            label: 'File types',
+
+            CSS: {
+              label: 'CSS',
+              defaultValue: get(values, 'fileTypes.CSS', true),
+            },
+            JS: {
+              label: 'JS',
+              defaultValue: get(values, 'fileTypes.JS', true),
+            },
+            HTML: {
+              label: 'HTML',
+              defaultValue: get(values, 'fileTypes.HTML', true),
+            },
+          },
+        }}
+      />
+    )}
+  </FiltersState>
 ));
 
 stories.add('disable options', () => (
