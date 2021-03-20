@@ -171,11 +171,16 @@ export const BundleModules = ({
 
   return (
     <div className={rootClassName}>
-      <Toolbar
-        className={css.toolbar}
-        renderActions={({ actionClassName }) => (
-          <>
-            <div className={actionClassName}>
+      <Toolbar className={css.toolbar}>
+        <Stack space="xsmall">
+          <FlexStack space="xsmall">
+            <MetricsTableSearch
+              className={css.toolbarSearch}
+              search={search}
+              updateSearch={updateSearch}
+              placeholder="Search by name"
+            />
+            <div>
               <SortDropdown
                 className={css.tableDropdown}
                 items={sortItems}
@@ -183,24 +188,15 @@ export const BundleModules = ({
                 {...sort}
               />
             </div>
-            <div className={actionClassName}>
-              <FiltersDropdown
-                className={css.tableDropdown}
-                filters={dropdownFilters}
-                label={`Filters (${items.length}/${totalRowCount})`}
-                onChange={updateFilters}
-                hasActiveFilters={hasActiveFilters}
-              />
-            </div>
-          </>
-        )}
-      >
-        <MetricsTableSearch
-          className={css.toolbarSearch}
-          search={search}
-          updateSearch={updateSearch}
-          placeholder="Search by name"
-        />
+          </FlexStack>
+          <FiltersDropdown
+            className={css.tableDropdown}
+            filters={dropdownFilters}
+            label={`Filters (${items.length}/${totalRowCount})`}
+            onChange={updateFilters}
+            hasActiveFilters={hasActiveFilters}
+          />
+        </Stack>
       </Toolbar>
       <MetricsTable
         className={css.table}

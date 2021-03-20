@@ -171,57 +171,63 @@ export const BundleAssets = (props) => {
         className={css.toolbar}
         renderActions={({ actionClassName }) => (
           <>
-            <div className={cx(css.dropdown, actionClassName)}>
-              <SortDropdown items={sortItems} {...sort} onChange={updateSort} />
-            </div>
 
             <div className={cx(css.dropdown, actionClassName)}>
               {/* @TODO: get default values from parent state */}
-              <FiltersDropdown
-                filters={{
-                  [ASSET_FILTERS.CHANGED]: {
-                    label: 'Changed',
-                    defaultValue: filters[ASSET_FILTERS.CHANGED],
-                    disabled: jobs.length <= 1,
-                  },
-                  [ASSET_ENTRY_TYPE]: {
-                    label: 'Entry type',
-                    [ASSET_FILTERS.ENTRY]: {
-                      label: 'Entry',
-                      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`, true),
-                    },
-                    [ASSET_FILTERS.INITIAL]: {
-                      label: 'Initial',
-                      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`, true),
-                    },
-                    [ASSET_FILTERS.CHUNK]: {
-                      label: 'Chunk',
-                      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`, true),
-                    },
-                    [ASSET_FILTERS.ASSET]: {
-                      label: 'Asset',
-                      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ASSET}`, true),
-                    },
-                  },
-                  [ASSET_FILE_TYPE]: {
-                    label: 'File type',
-                    ...getFileTypeFilters(filters),
-                  },
-                }}
-                label={`Filters (${items.length}/${totalRowCount})`}
-                hasActiveFilters={hasActiveFilters}
-                onChange={updateFilters}
-              />
             </div>
           </>
         )}
       >
-        <MetricsTableSearch
-          className={css.toolbarSearch}
-          placeholder="Search by name"
-          search={search}
-          updateSearch={updateSearch}
-        />
+        <Stack space="xsmall">
+          <FlexStack space="xsmall">
+            <MetricsTableSearch
+              className={css.toolbarSearch}
+              placeholder="Search by name"
+              search={search}
+              updateSearch={updateSearch}
+            />
+            <div>
+              <SortDropdown items={sortItems} {...sort} onChange={updateSort} />
+            </div>
+          </FlexStack>
+          <div>
+            <FiltersDropdown
+              filters={{
+                [ASSET_FILTERS.CHANGED]: {
+                  label: 'Changed',
+                  defaultValue: filters[ASSET_FILTERS.CHANGED],
+                  disabled: jobs.length <= 1,
+                },
+                [ASSET_ENTRY_TYPE]: {
+                  label: 'Entry type',
+                  [ASSET_FILTERS.ENTRY]: {
+                    label: 'Entry',
+                    defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`, true),
+                  },
+                  [ASSET_FILTERS.INITIAL]: {
+                    label: 'Initial',
+                    defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`, true),
+                  },
+                  [ASSET_FILTERS.CHUNK]: {
+                    label: 'Chunk',
+                    defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`, true),
+                  },
+                  [ASSET_FILTERS.ASSET]: {
+                    label: 'Asset',
+                    defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ASSET}`, true),
+                  },
+                },
+                [ASSET_FILE_TYPE]: {
+                  label: 'File type',
+                  ...getFileTypeFilters(filters),
+                },
+              }}
+              label={`Filters (${items.length}/${totalRowCount})`}
+              hasActiveFilters={hasActiveFilters}
+              onChange={updateFilters}
+            />
+          </div>
+        </Stack>
       </Toolbar>
       <main>
         <MetricsTable

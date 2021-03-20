@@ -150,41 +150,36 @@ export const BundlePackages = (props) => {
 
   return (
     <section className={cx(css.root, className)}>
-      <Toolbar
-        className={css.toolbar}
-        renderActions={({ actionClassName }) => (
-          <>
-            <div className={actionClassName}>
+      <Toolbar className={css.toolbar}>
+        <Stack space="xsmall">
+          <FlexStack space="xsmall">
+            <MetricsTableSearch
+              className={css.toolbarSearch}
+              placeholder="Search by name"
+              search={search}
+              updateSearch={updateSearch}
+            />
+            <div>
               <SortDropdown items={sortItems} {...sort} onChange={updateSort} />
             </div>
-            <div className={actionClassName}>
-              {/* @TODO: get default values from parent state */}
-              <FiltersDropdown
-                filters={{
-                  [PACKAGE_FILTERS.CHANGED]: {
-                    label: 'Changed',
-                    defaultValue: filters[PACKAGE_FILTERS.CHANGED],
-                    disabled: jobs.length <= 1,
-                  },
-                  [PACKAGE_FILTERS.DUPLICATE]: {
-                    label: 'Duplicate',
-                    defaultValue: filters[PACKAGE_FILTERS.DUPLICATE],
-                  },
-                }}
-                label={`Filters (${items.length}/${totalRowCount})`}
-                onChange={updateFilters}
-                hasActiveFilters={hasActiveFilters}
-              />
-            </div>
-          </>
-        )}
-      >
-        <MetricsTableSearch
-          className={css.toolbarSearch}
-          placeholder="Search by name"
-          search={search}
-          updateSearch={updateSearch}
-        />
+          </FlexStack>
+          <FiltersDropdown
+            filters={{
+              [PACKAGE_FILTERS.CHANGED]: {
+                label: 'Changed',
+                defaultValue: filters[PACKAGE_FILTERS.CHANGED],
+                disabled: jobs.length <= 1,
+              },
+              [PACKAGE_FILTERS.DUPLICATE]: {
+                label: 'Duplicate',
+                defaultValue: filters[PACKAGE_FILTERS.DUPLICATE],
+              },
+            }}
+            label={`Filters (${items.length}/${totalRowCount})`}
+            onChange={updateFilters}
+            hasActiveFilters={hasActiveFilters}
+          />
+        </Stack>
       </Toolbar>
       <main>
         <MetricsTable
