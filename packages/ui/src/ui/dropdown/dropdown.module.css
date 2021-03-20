@@ -11,7 +11,7 @@
 
   background: none;
   font-size: var(--size-small);
-  line-height: 1.1;
+  line-height: var(--space-small);
   white-space: nowrap;
   appearance: none;
   cursor: pointer;

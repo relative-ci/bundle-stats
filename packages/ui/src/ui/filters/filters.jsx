@@ -26,7 +26,7 @@ const Filter = (props) => {
           name={name}
           {...inputProps}
         />
-        <span className={css.filterLabel}>
+        <span className={css.filterLabel} title={label}>
           {label}
         </span>
       </FlexStack>

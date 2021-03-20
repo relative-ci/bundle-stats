@@ -2,12 +2,13 @@
 .filter {
   position: relative;
   width: 100%;
+  max-width: 240px;
   font-size: var(--size-small);
-  line-height: 1;
+  line-height: var(--space-small);
 }
 
 .filterCheckbox {
-  padding: var(--space-xxxsmall) 0;
+  padding: var(--space-xxxsmall) var(--space-large) var(--space-xxxsmall) 0;
   cursor: pointer;
   align-items: center;
 }
@@ -20,14 +21,20 @@
 
 .filterLabel {
   flex: 1 1 auto;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .filterOnlyButton {
+  padding: var(--space-xxxsmall);
   display: none;
   appearance: none;
   border: none;
-  background: none;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255) 30%);
   cursor: pointer;
+  line-height: 1;
   position: absolute;
   right: 0;
   top: 50%;
@@ -74,7 +81,7 @@
 
 /** Filter group variation */
 .filterGroupItems {
-  max-height: calc(20 * (var(--size-small) + 2 * var(--space-xxxsmall)));
+  max-height: calc(20 * (var(--space-small) + 2 * var(--space-xxxsmall)));
   overflow: auto;
 }
 

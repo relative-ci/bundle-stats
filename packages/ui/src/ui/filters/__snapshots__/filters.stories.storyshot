@@ -57,17 +57,6 @@ exports[`Storyshots UI/Filters default 1`] = `
         <FiltersContainer
           filters={
             Object {
-              "assetTypes": Object {
-                "entrypoint": Object {
-                  "defaultValue": true,
-                  "label": "Entrypoint",
-                },
-                "initial": Object {
-                  "defaultValue": true,
-                  "label": "Initial",
-                },
-                "label": "Types",
-              },
               "changed": Object {
                 "defaultValue": true,
                 "label": "Changed",
@@ -85,6 +74,10 @@ exports[`Storyshots UI/Filters default 1`] = `
                   "defaultValue": true,
                   "label": "JS",
                 },
+                "OTHER": Object {
+                  "defaultValue": true,
+                  "label": "Asset that is not CSS, JS or HTML",
+                },
                 "label": "File types",
               },
             }
@@ -96,17 +89,6 @@ exports[`Storyshots UI/Filters default 1`] = `
             className=""
             filters={
               Object {
-                "assetTypes": Object {
-                  "entrypoint": Object {
-                    "defaultValue": true,
-                    "label": "Entrypoint",
-                  },
-                  "initial": Object {
-                    "defaultValue": true,
-                    "label": "Initial",
-                  },
-                  "label": "Types",
-                },
                 "changed": Object {
                   "defaultValue": true,
                   "label": "Changed",
@@ -124,6 +106,10 @@ exports[`Storyshots UI/Filters default 1`] = `
                     "defaultValue": true,
                     "label": "JS",
                   },
+                  "OTHER": Object {
+                    "defaultValue": true,
+                    "label": "Asset that is not CSS, JS or HTML",
+                  },
                   "label": "File types",
                 },
               }
@@ -133,12 +119,11 @@ exports[`Storyshots UI/Filters default 1`] = `
             toggleFilter={[Function]}
             values={
               Object {
-                "assetTypes.entrypoint": true,
-                "assetTypes.initial": true,
                 "changed": true,
                 "fileTypes.CSS": true,
                 "fileTypes.HTML": true,
                 "fileTypes.JS": true,
+                "fileTypes.OTHER": true,
               }
             }
           >
@@ -185,6 +170,7 @@ exports[`Storyshots UI/Filters default 1`] = `
                           <span
                             className="item filterLabel"
                             key=".1"
+                            title="Changed"
                           >
                             Changed
                           </span>
@@ -195,185 +181,6 @@ exports[`Storyshots UI/Filters default 1`] = `
                   <div
                     className="item item"
                     key=".1"
-                  >
-                    <FilterGroup
-                      data={
-                        Object {
-                          "entrypoint": Object {
-                            "defaultValue": true,
-                            "label": "Entrypoint",
-                          },
-                          "initial": Object {
-                            "defaultValue": true,
-                            "label": "Initial",
-                          },
-                          "label": "Types",
-                        }
-                      }
-                      groupKey="assetTypes"
-                      key="assetTypes"
-                      onCheckboxChange={[Function]}
-                      values={
-                        Object {
-                          "assetTypes.entrypoint": true,
-                          "assetTypes.initial": true,
-                          "changed": true,
-                          "fileTypes.CSS": true,
-                          "fileTypes.HTML": true,
-                          "fileTypes.JS": true,
-                        }
-                      }
-                    >
-                      <DropdownContainer
-                        label="Types: all"
-                      >
-                        <OutsideClickHandler
-                          disabled={false}
-                          display="block"
-                          onOutsideClick={[Function]}
-                          useCapture={true}
-                        >
-                          <div>
-                            <Dropdown
-                              activeLabel={false}
-                              align="left"
-                              className=""
-                              dropdownToggle={[Function]}
-                              glyph={null}
-                              label="Types: all"
-                              open={false}
-                            >
-                              <div
-                                className="root left"
-                              >
-                                <button
-                                  className="label"
-                                  onClick={[Function]}
-                                  type="button"
-                                >
-                                  Types: all
-                                </button>
-                                <div
-                                  className="dropdown"
-                                >
-                                  <div
-                                    className="filterGroupItems"
-                                  >
-                                    <Filter
-                                      checked={true}
-                                      className=""
-                                      getOnOnlyClick={[Function]}
-                                      key="assetTypes.entrypoint"
-                                      label="Entrypoint"
-                                      name="assetTypes.entrypoint"
-                                      onChange={[Function]}
-                                    >
-                                      <div
-                                        className="filter"
-                                      >
-                                        <FlexStack
-                                          as="label"
-                                          className="filterCheckbox"
-                                          space="xxxsmall"
-                                        >
-                                          <label
-                                            className="filterCheckbox root space--xxxsmall"
-                                          >
-                                            <input
-                                              checked={true}
-                                              className="item filterInput"
-                                              id="filter-assetTypes.entrypoint"
-                                              key=".0"
-                                              name="assetTypes.entrypoint"
-                                              onChange={[Function]}
-                                              type="checkbox"
-                                            />
-                                            <span
-                                              className="item filterLabel"
-                                              key=".1"
-                                            >
-                                              Entrypoint
-                                            </span>
-                                          </label>
-                                        </FlexStack>
-                                        <button
-                                          className="filterOnlyButton"
-                                          onClick={[Function]}
-                                          type="button"
-                                        >
-                                          only
-                                        </button>
-                                      </div>
-                                    </Filter>
-                                    <Filter
-                                      checked={true}
-                                      className=""
-                                      getOnOnlyClick={[Function]}
-                                      key="assetTypes.initial"
-                                      label="Initial"
-                                      name="assetTypes.initial"
-                                      onChange={[Function]}
-                                    >
-                                      <div
-                                        className="filter"
-                                      >
-                                        <FlexStack
-                                          as="label"
-                                          className="filterCheckbox"
-                                          space="xxxsmall"
-                                        >
-                                          <label
-                                            className="filterCheckbox root space--xxxsmall"
-                                          >
-                                            <input
-                                              checked={true}
-                                              className="item filterInput"
-                                              id="filter-assetTypes.initial"
-                                              key=".0"
-                                              name="assetTypes.initial"
-                                              onChange={[Function]}
-                                              type="checkbox"
-                                            />
-                                            <span
-                                              className="item filterLabel"
-                                              key=".1"
-                                            >
-                                              Initial
-                                            </span>
-                                          </label>
-                                        </FlexStack>
-                                        <button
-                                          className="filterOnlyButton"
-                                          onClick={[Function]}
-                                          type="button"
-                                        >
-                                          only
-                                        </button>
-                                      </div>
-                                    </Filter>
-                                  </div>
-                                  <div
-                                    className="filterGroupActions"
-                                  >
-                                    <button
-                                      className="filterGroupButton"
-                                      onClick={[Function]}
-                                      type="button"
-                                    >
-                                      Clear all
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </Dropdown>
-                          </div>
-                        </OutsideClickHandler>
-                      </DropdownContainer>
-                    </FilterGroup>
-                  </div>
-                  <div
-                    className="item item"
-                    key=".2"
                   >
                     <FilterGroup
                       data={
@@ -390,6 +197,10 @@ exports[`Storyshots UI/Filters default 1`] = `
                             "defaultValue": true,
                             "label": "JS",
                           },
+                          "OTHER": Object {
+                            "defaultValue": true,
+                            "label": "Asset that is not CSS, JS or HTML",
+                          },
                           "label": "File types",
                         }
                       }
@@ -398,12 +209,11 @@ exports[`Storyshots UI/Filters default 1`] = `
                       onCheckboxChange={[Function]}
                       values={
                         Object {
-                          "assetTypes.entrypoint": true,
-                          "assetTypes.initial": true,
                           "changed": true,
                           "fileTypes.CSS": true,
                           "fileTypes.HTML": true,
                           "fileTypes.JS": true,
+                          "fileTypes.OTHER": true,
                         }
                       }
                     >
@@ -474,6 +284,7 @@ exports[`Storyshots UI/Filters default 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="CSS"
                                             >
                                               CSS
                                             </span>
@@ -520,6 +331,7 @@ exports[`Storyshots UI/Filters default 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="JS"
                                             >
                                               JS
                                             </span>
@@ -566,8 +378,56 @@ exports[`Storyshots UI/Filters default 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="HTML"
                                             >
                                               HTML
+                                            </span>
+                                          </label>
+                                        </FlexStack>
+                                        <button
+                                          className="filterOnlyButton"
+                                          onClick={[Function]}
+                                          type="button"
+                                        >
+                                          only
+                                        </button>
+                                      </div>
+                                    </Filter>
+                                    <Filter
+                                      checked={true}
+                                      className=""
+                                      getOnOnlyClick={[Function]}
+                                      key="fileTypes.OTHER"
+                                      label="Asset that is not CSS, JS or HTML"
+                                      name="fileTypes.OTHER"
+                                      onChange={[Function]}
+                                    >
+                                      <div
+                                        className="filter"
+                                      >
+                                        <FlexStack
+                                          as="label"
+                                          className="filterCheckbox"
+                                          space="xxxsmall"
+                                        >
+                                          <label
+                                            className="filterCheckbox root space--xxxsmall"
+                                          >
+                                            <input
+                                              checked={true}
+                                              className="item filterInput"
+                                              id="filter-fileTypes.OTHER"
+                                              key=".0"
+                                              name="fileTypes.OTHER"
+                                              onChange={[Function]}
+                                              type="checkbox"
+                                            />
+                                            <span
+                                              className="item filterLabel"
+                                              key=".1"
+                                              title="Asset that is not CSS, JS or HTML"
+                                            >
+                                              Asset that is not CSS, JS or HTML
                                             </span>
                                           </label>
                                         </FlexStack>
@@ -784,6 +644,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                         <span
                           className="item filterLabel"
                           key=".1"
+                          title="Changed"
                         >
                           Changed
                         </span>
@@ -823,6 +684,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                         <span
                           className="item filterLabel"
                           key=".1"
+                          title="Entrypoint"
                         >
                           Entrypoint
                         </span>
@@ -932,6 +794,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                                           <span
                                             className="item filterLabel"
                                             key=".1"
+                                            title="CSS"
                                           >
                                             CSS
                                           </span>
@@ -978,6 +841,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                                           <span
                                             className="item filterLabel"
                                             key=".1"
+                                            title="JS"
                                           >
                                             JS
                                           </span>
@@ -1024,6 +888,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                                           <span
                                             className="item filterLabel"
                                             key=".1"
+                                            title="HTML"
                                           >
                                             HTML
                                           </span>
@@ -1378,6 +1243,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                           <span
                             className="item filterLabel"
                             key=".1"
+                            title="Changed"
                           >
                             Changed
                           </span>
@@ -1557,6 +1423,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 1"
                                             >
                                               Chunk 1
                                             </span>
@@ -1601,6 +1468,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 2"
                                             >
                                               Chunk 2
                                             </span>
@@ -1645,6 +1513,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 3"
                                             >
                                               Chunk 3
                                             </span>
@@ -1689,6 +1558,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 4"
                                             >
                                               Chunk 4
                                             </span>
@@ -1733,6 +1603,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 5"
                                             >
                                               Chunk 5
                                             </span>
@@ -1777,6 +1648,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 6"
                                             >
                                               Chunk 6
                                             </span>
@@ -1821,6 +1693,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 7"
                                             >
                                               Chunk 7
                                             </span>
@@ -1865,6 +1738,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 8"
                                             >
                                               Chunk 8
                                             </span>
@@ -1909,6 +1783,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 9"
                                             >
                                               Chunk 9
                                             </span>
@@ -1953,6 +1828,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 10"
                                             >
                                               Chunk 10
                                             </span>
@@ -1997,6 +1873,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 11"
                                             >
                                               Chunk 11
                                             </span>
@@ -2041,6 +1918,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 12"
                                             >
                                               Chunk 12
                                             </span>
@@ -2085,6 +1963,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 13"
                                             >
                                               Chunk 13
                                             </span>
@@ -2129,6 +2008,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 14"
                                             >
                                               Chunk 14
                                             </span>
@@ -2173,6 +2053,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 15"
                                             >
                                               Chunk 15
                                             </span>
@@ -2217,6 +2098,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 16"
                                             >
                                               Chunk 16
                                             </span>
@@ -2261,6 +2143,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 17"
                                             >
                                               Chunk 17
                                             </span>
@@ -2305,6 +2188,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 18"
                                             >
                                               Chunk 18
                                             </span>
@@ -2349,6 +2233,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 19"
                                             >
                                               Chunk 19
                                             </span>
@@ -2393,6 +2278,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 20"
                                             >
                                               Chunk 20
                                             </span>
@@ -2437,6 +2323,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 21"
                                             >
                                               Chunk 21
                                             </span>
@@ -2481,6 +2368,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                             <span
                                               className="item filterLabel"
                                               key=".1"
+                                              title="Chunk 22"
                                             >
                                               Chunk 22
                                             </span>

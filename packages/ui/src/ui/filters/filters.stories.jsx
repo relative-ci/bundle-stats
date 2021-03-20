@@ -32,21 +32,8 @@ stories.add('default', () => (
             label: 'Changed',
             defaultValue: get(values, 'changed', true),
           },
-          assetTypes: {
-            label: 'Types',
-
-            entrypoint: {
-              label: 'Entrypoint',
-              defaultValue: get(values, 'assetTypes.entrypoint', true),
-            },
-            initial: {
-              label: 'Initial',
-              defaultValue: get(values, 'assetTypes.initial', true),
-            },
-          },
           fileTypes: {
             label: 'File types',
-
             CSS: {
               label: 'CSS',
               defaultValue: get(values, 'fileTypes.CSS', true),
@@ -58,6 +45,10 @@ stories.add('default', () => (
             HTML: {
               label: 'HTML',
               defaultValue: get(values, 'fileTypes.HTML', true),
+            },
+            OTHER: {
+              label: 'Asset that is not CSS, JS or HTML',
+              defaultValue: get(values, 'fileTypes.OTHER', true),
             },
           },
         }}
