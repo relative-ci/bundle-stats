@@ -91,31 +91,33 @@ const FilterGroup = (props) => {
 
   return (
     <Dropdown label={`${groupLabel}: ${filterSuffix}`}>
-      {groupItems.map(([itemKey, itemData]) => {
-        const id = [groupKey, itemKey].join('.');
+      <div className={css.filterGroupItems}>
+        {groupItems.map(([itemKey, itemData]) => {
+          const id = [groupKey, itemKey].join('.');
 
-        const getOnOnlyClick = () => () => {
-          onGroupClearAll();
-          onCheckboxChange({
-            target: {
-              name: id,
-              checked: true,
-            },
-          });
-        };
+          const getOnOnlyClick = () => () => {
+            onGroupClearAll();
+            onCheckboxChange({
+              target: {
+                name: id,
+                checked: true,
+              },
+            });
+          };
 
-        return (
-          <Filter
-            key={id}
-            name={id}
-            label={itemData.label}
-            onChange={onCheckboxChange}
-            checked={values[id]}
-            disabled={itemData.disabled}
-            getOnOnlyClick={getOnOnlyClick}
-          />
-        );
-      })}
+          return (
+            <Filter
+              key={id}
+              name={id}
+              label={itemData.label}
+              onChange={onCheckboxChange}
+              checked={values[id]}
+              disabled={itemData.disabled}
+              getOnOnlyClick={getOnOnlyClick}
+            />
+          );
+        })}
+      </div>
 
       <div className={css.filterGroupActions}>
         {isGroupChecked ? (

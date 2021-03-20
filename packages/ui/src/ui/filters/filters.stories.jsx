@@ -66,6 +66,37 @@ stories.add('default', () => (
   </FiltersState>
 ));
 
+stories.add('overflow', () => (
+  <FiltersState>
+    {(values, setValues) => (
+      <Filters
+        onChange={setValues}
+        filters={{
+          changed: {
+            label: 'Changed',
+            defaultValue: get(values, 'changed', true),
+          },
+          chunks: {
+            label: 'Chunks',
+            ...Array(22)
+              .fill('')
+              .reduce(
+                (agg, value, currentIndex) => ({
+                  ...agg,
+                  [`chunk-${currentIndex}`]: {
+                    label: `Chunk ${currentIndex + 1}`,
+                    defaultValue: get(values, `chunks.chunk-${currentIndex}`),
+                  },
+                }),
+                {},
+              ),
+          },
+        }}
+      />
+    )}
+  </FiltersState>
+));
+
 stories.add('disable options', () => (
   <Filters
     onChange={(state) => {

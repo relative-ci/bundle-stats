@@ -73,6 +73,11 @@
 }
 
 /** Filter group variation */
+.filterGroupItems {
+  max-height: calc(20 * (var(--size-small) + 2 * var(--space-xxxsmall)));
+  overflow: auto;
+}
+
 .filterGroupActions {
   margin-top: var(--space-xxxsmall);
   padding-top: var(--space-xxxsmall);
