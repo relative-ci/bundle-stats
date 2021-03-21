@@ -239,13 +239,26 @@ exports[`Storyshots UI/Filters default 1`] = `
                               <div
                                 className="root left"
                               >
-                                <button
+                                <FlexStack
+                                  as="button"
                                   className="label"
                                   onClick={[Function]}
+                                  space="xxxsmall"
                                   type="button"
                                 >
-                                  File types: all
-                                </button>
+                                  <button
+                                    className="label root space--xxxsmall"
+                                    onClick={[Function]}
+                                    type="button"
+                                  >
+                                    <div
+                                      className="item"
+                                      key=".1"
+                                    >
+                                      File types: all
+                                    </div>
+                                  </button>
+                                </FlexStack>
                                 <div
                                   className="dropdown"
                                 >
@@ -749,13 +762,26 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                             <div
                               className="root left"
                             >
-                              <button
+                              <FlexStack
+                                as="button"
                                 className="label"
                                 onClick={[Function]}
+                                space="xxxsmall"
                                 type="button"
                               >
-                                File types: all
-                              </button>
+                                <button
+                                  className="label root space--xxxsmall"
+                                  onClick={[Function]}
+                                  type="button"
+                                >
+                                  <div
+                                    className="item"
+                                    key=".1"
+                                  >
+                                    File types: all
+                                  </div>
+                                </button>
+                              </FlexStack>
                               <div
                                 className="dropdown"
                               >
@@ -1380,13 +1406,26 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                               <div
                                 className="root left"
                               >
-                                <button
+                                <FlexStack
+                                  as="button"
                                   className="label"
                                   onClick={[Function]}
+                                  space="xxxsmall"
                                   type="button"
                                 >
-                                  Chunks: none
-                                </button>
+                                  <button
+                                    className="label root space--xxxsmall"
+                                    onClick={[Function]}
+                                    type="button"
+                                  >
+                                    <div
+                                      className="item"
+                                      key=".1"
+                                    >
+                                      Chunks: none
+                                    </div>
+                                  </button>
+                                </FlexStack>
                                 <div
                                   className="dropdown"
                                 >

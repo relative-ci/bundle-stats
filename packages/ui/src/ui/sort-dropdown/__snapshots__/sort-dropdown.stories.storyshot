@@ -95,44 +95,58 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                 <div
                   className="root right root"
                 >
-                  <button
+                  <FlexStack
+                    as="button"
                     className="label"
                     onClick={[Function]}
+                    space="xxxsmall"
                     type="button"
                   >
-                    <Icon
-                      as="span"
-                      className="labelIcon"
-                      glyph="sort"
+                    <button
+                      className="label root space--xxxsmall"
+                      onClick={[Function]}
+                      type="button"
                     >
-                      <span
-                        className="root labelIcon"
+                      <Icon
+                        as="span"
+                        className="item labelIcon"
+                        glyph="sort"
+                        key=".0"
                       >
-                        <SortIcon
-                          className="icon"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <span
+                          className="root item labelIcon"
                         >
-                          <svg
+                          <SortIcon
                             className="icon"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
-                            />
-                            <path
-                              d="M0 0h24v24H0z"
-                              fill="none"
-                            />
-                          </svg>
-                        </SortIcon>
-                      </span>
-                    </Icon>
-                    Ordered by Size
-                  </button>
+                            <svg
+                              className="icon"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
+                              />
+                              <path
+                                d="M0 0h24v24H0z"
+                                fill="none"
+                              />
+                            </svg>
+                          </SortIcon>
+                        </span>
+                      </Icon>
+                      <div
+                        className="item"
+                        key=".1"
+                      >
+                        Ordered by Size
+                      </div>
+                    </button>
+                  </FlexStack>
                   <div
                     className="dropdown"
                   >

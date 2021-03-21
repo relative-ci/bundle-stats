@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import { FlexStack } from '../../layout/flex-stack';
 import { Icon } from '../icon';
 import css from './dropdown.module.css';
 
@@ -20,10 +21,16 @@ export const Dropdown = (props) => {
 
   return (
     <div className={rootClassName}>
-      <button className={css.label} type="button" onClick={dropdownToggle}>
+      <FlexStack
+        space="xxxsmall"
+        className={css.label}
+        as="button"
+        type="button"
+        onClick={dropdownToggle}
+      >
         {glyph && <Icon className={css.labelIcon} glyph={glyph} />}
         {label}
-      </button>
+      </FlexStack>
       <div className={css.dropdown}>
         {typeof children === 'function' ? children({ dropdownToggle }) : children}
       </div>
