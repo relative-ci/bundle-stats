@@ -14,7 +14,6 @@ import config from '../../config.json';
 import I18N from '../../i18n';
 import { ComponentLink } from '../component-link';
 import { FlexStack } from '../../layout/flex-stack';
-import { Stack } from '../../layout/stack';
 import { EmptySet } from '../../ui/empty-set';
 import { FileName } from '../../ui/file-name';
 import { Filters } from '../../ui/filters';
@@ -24,6 +23,7 @@ import { Toolbar } from '../../ui/toolbar';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
 import { MetricsTableOptions } from '../metrics-table-options';
+import { MetricsTableTitle } from '../metrics-table-title';
 import { ModuleInfo } from '../module-info';
 import css from './bundle-modules.module.css';
 
@@ -75,24 +75,6 @@ RowHeader.defaultProps = {
 const getRenderRowHeader = ({ labels, chunks, CustomComponentLink }) => (row) => (
   <RowHeader row={row} chunks={chunks} labels={labels} CustomComponentLink={CustomComponentLink} />
 );
-
-const Title = () => {
-  return (
-    <FlexStack space="xxxsmall" className={css.title}>
-      <span>{I18N.MODULES}</span>
-      <Popover icon="help">
-        <Stack space="xxxsmall">
-          <p>{I18N.MODULES_INFO}</p>
-          <p>
-            <a href={config.documentation.modules} target="_blank" rel="noreferrer">
-              {I18N.READ_MORE}
-            </a>
-          </p>
-        </Stack>
-      </Popover>
-    </FlexStack>
-  );
-};
 
 export const BundleModules = ({
   className,
@@ -209,7 +191,14 @@ export const BundleModules = ({
         renderRowHeader={renderRowHeader}
         emptyMessage={emptyMessage}
         showHeaderSum
-        title={<Title />}
+        title={
+          <MetricsTableTitle
+            title={I18N.MODULES}
+            info={`(${items.length}/${totalRowCount})`}
+            popoverInfo={I18N.MODULES_INFO}
+            popoverHref={config.documentation.modules}
+          />
+        }
       />
     </div>
   );

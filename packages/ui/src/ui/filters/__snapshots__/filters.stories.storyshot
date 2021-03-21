@@ -85,7 +85,6 @@ exports[`Storyshots UI/Filters default 1`] = `
           onChange={[Function]}
         >
           <Filters
-            active={false}
             className=""
             filters={
               Object {
@@ -114,7 +113,6 @@ exports[`Storyshots UI/Filters default 1`] = `
                 },
               }
             }
-            label="Filters"
             onChange={[Function]}
             toggleFilter={[Function]}
             values={
@@ -569,7 +567,6 @@ exports[`Storyshots UI/Filters disable options 1`] = `
         onChange={[Function]}
       >
         <Filters
-          active={false}
           className=""
           filters={
             Object {
@@ -599,7 +596,6 @@ exports[`Storyshots UI/Filters disable options 1`] = `
               },
             }
           }
-          label="Filters"
           onChange={[Function]}
           toggleFilter={[Function]}
           values={
@@ -1116,7 +1112,6 @@ exports[`Storyshots UI/Filters overflow 1`] = `
           onChange={[Function]}
         >
           <Filters
-            active={false}
             className=""
             filters={
               Object {
@@ -1217,7 +1212,6 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                 },
               }
             }
-            label="Filters"
             onChange={[Function]}
             toggleFilter={[Function]}
             values={

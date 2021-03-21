@@ -152,11 +152,9 @@ FilterGroup.propTypes = {
 export const Filters = (props) => {
   const {
     className,
-    label,
     values,
     filters,
     toggleFilter,
-    hasActiveFilters,
   } = props;
 
   const onCheckboxChange = ({ target }) => toggleFilter(target.name, target.checked);
@@ -199,14 +197,10 @@ export const Filters = (props) => {
 
 Filters.defaultProps = {
   className: '',
-  label: 'Filters',
-  active: false,
 };
 
 Filters.propTypes = {
   className: PropTypes.string,
-  label: PropTypes.string,
-  hasActiveFilters: PropTypes.bool,
   values: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   filters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   toggleFilter: PropTypes.func.isRequired,

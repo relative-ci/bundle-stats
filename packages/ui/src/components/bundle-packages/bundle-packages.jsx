@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import {
@@ -21,6 +21,7 @@ import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
 import { MetricsTableOptions } from '../metrics-table-options';
+import { MetricsTableTitle } from '../metrics-table-title';
 import css from './bundle-packages.module.css';
 
 const getPopoverContent = ({
@@ -66,28 +67,6 @@ const getPopoverContent = ({
         </CustomComponentLink>
       </Stack>
     </Stack>
-  );
-};
-
-const Title = () => {
-  return (
-    <FlexStack space="xxxsmall" className={css.title}>
-      <span>{I18N.PACKAGES}</span>
-      <Popover icon="help">
-        <Stack space="xxxsmall">
-          <p>{I18N.PACKAGES_INFO}</p>
-          <p>
-            <a
-              href={config.documentation.packages}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {I18N.READ_MORE}
-            </a>
-          </p>
-        </Stack>
-      </Popover>
-    </FlexStack>
   );
 };
 
@@ -194,7 +173,14 @@ export const BundlePackages = (props) => {
           emptyMessage={emptyMessage}
           renderRowHeader={renderRowHeader}
           showHeaderSum
-          title={<Title />}
+          title={
+            <MetricsTableTitle
+              title={I18N.PACKAGES}
+              info={`(${items.length}/${totalRowCount})`}
+              popoverInfo={I18N.PACKAGES_INFO}
+              popoverHref={config.documentation.packages}
+            />
+          }
         />
       </main>
     </section>

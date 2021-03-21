@@ -7,7 +7,6 @@ import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, FILE_TYPE_LABELS } fr
 import config from '../../config.json';
 import I18N from '../../i18n';
 import { FlexStack } from '../../layout/flex-stack';
-import { Stack } from '../../layout/stack';
 import { FileName } from '../../ui/file-name';
 import { Popover } from '../../ui/popover';
 import { Tooltip } from '../../ui/tooltip';
@@ -20,6 +19,7 @@ import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
 import { MetricsTableOptions } from '../metrics-table-options';
+import { MetricsTableTitle } from '../metrics-table-title';
 import css from './bundle-assets.module.css';
 
 const RUN_TITLE_CURRENT = 'Current';
@@ -107,24 +107,6 @@ const getRenderRowHeader = ({ labels, CustomComponentLink, chunks }) => (item) =
     />
   </Popover>
 );
-
-const Title = () => {
-  return (
-    <FlexStack space="xxxsmall" className={css.title}>
-      <span>{I18N.ASSETS}</span>
-      <Popover icon="help">
-        <Stack space="xxxsmall">
-          <p>{I18N.ASSETS_INFO}</p>
-          <p>
-            <a href={config.documentation.assets} target="_blank" rel="noreferrer">
-              {I18N.READ_MORE}
-            </a>
-          </p>
-        </Stack>
-      </Popover>
-    </FlexStack>
-  );
-};
 
 export const BundleAssets = (props) => {
   const {
@@ -218,7 +200,6 @@ export const BundleAssets = (props) => {
                 ...getFileTypeFilters(filters),
               },
             }}
-            label={`Filters (${items.length}/${totalRowCount})`}
             hasActiveFilters={hasActiveFilters}
             onChange={updateFilters}
           />
@@ -231,7 +212,14 @@ export const BundleAssets = (props) => {
           renderRowHeader={renderRowHeader}
           emptyMessage={emptyMessage}
           showHeaderSum
-          title={<Title />}
+          title={
+            <MetricsTableTitle
+              title={I18N.ASSETS}
+              info={`(${items.length}/${totalRowCount})`}
+              popoverInfo={I18N.ASSETS_INFO}
+              popoverHref={config.documentation.assets}
+            />
+          }
         />
       </main>
     </section>
