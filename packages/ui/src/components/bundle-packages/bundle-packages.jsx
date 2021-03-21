@@ -150,19 +150,21 @@ export const BundlePackages = (props) => {
 
   return (
     <section className={cx(css.root, className)}>
-      <Toolbar className={css.toolbar}>
-        <Stack space="xsmall">
-          <FlexStack space="xsmall">
-            <MetricsTableSearch
-              className={css.toolbarSearch}
-              placeholder="Search by name"
-              search={search}
-              updateSearch={updateSearch}
-            />
-            <div>
-              <SortDropdown items={sortItems} {...sort} onChange={updateSort} />
-            </div>
-          </FlexStack>
+      <Toolbar
+        className={css.toolbar}
+        renderActions={({ actionClassName }) => (
+          <div className={cx(css.dropdown, actionClassName)}>
+            <SortDropdown items={sortItems} {...sort} onChange={updateSort} />
+          </div>
+        )}
+      >
+        <FlexStack>
+          <MetricsTableSearch
+            className={css.toolbarSearch}
+            placeholder="Search by name"
+            search={search}
+            updateSearch={updateSearch}
+          />
           <Filters
             filters={{
               [PACKAGE_FILTERS.CHANGED]: {
@@ -179,7 +181,7 @@ export const BundlePackages = (props) => {
             onChange={updateFilters}
             hasActiveFilters={hasActiveFilters}
           />
-        </Stack>
+        </FlexStack>
       </Toolbar>
       <main>
         <MetricsTable

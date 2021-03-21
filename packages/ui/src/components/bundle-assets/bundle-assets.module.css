@@ -8,10 +8,8 @@
 
 .toolbarSearch {
   width: 100%;
-  max-width: 360px;
-}
-
-.dropdown {
+  max-width: 240px;
+  margin-right: -1px; /** collapse border */
 }
 
 .notPredictive {

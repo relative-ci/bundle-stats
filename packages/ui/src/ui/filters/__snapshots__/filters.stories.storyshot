@@ -133,10 +133,10 @@ exports[`Storyshots UI/Filters default 1`] = `
               <FlexStack
                 as="div"
                 className="items"
-                space="xsmall"
+                space="no-space"
               >
                 <div
-                  className="items root space--xsmall"
+                  className="items root space--no-space"
                 >
                   <Filter
                     checked={true}
@@ -605,10 +605,10 @@ exports[`Storyshots UI/Filters disable options 1`] = `
             <FlexStack
               as="div"
               className="items"
-              space="xsmall"
+              space="no-space"
             >
               <div
-                className="items root space--xsmall"
+                className="items root space--no-space"
               >
                 <Filter
                   checked={false}
@@ -1206,10 +1206,10 @@ exports[`Storyshots UI/Filters overflow 1`] = `
               <FlexStack
                 as="div"
                 className="items"
-                space="xsmall"
+                space="no-space"
               >
                 <div
-                  className="items root space--xsmall"
+                  className="items root space--no-space"
                 >
                   <Filter
                     checked={true}

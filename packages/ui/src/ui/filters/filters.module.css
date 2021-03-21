@@ -67,6 +67,7 @@
 .filterStandalone {
   width: auto;
   color: var(--color-text-light);
+  z-index: var(--layout-xlow); /* show collapsed border */
 }
 
 .filterStandalone .filterCheckbox {
@@ -75,6 +76,10 @@
 }
 
 .filterStandalone:hover {
+  z-index: var(--layout-xlow); /* show collapsed border */
+}
+
+.filterStandalone:hover .filterCheckbox {
   border-color: var(--color-outline-dark);
   color: var(--color-text);
 }
@@ -116,5 +121,11 @@
 }
 
 .item {
+  position: relative;
   flex: 0 0 auto;
+  margin-right: -1px;
+}
+
+.item:hover {
+  z-index: var(--layer-low); /* show collapsed border */
 }

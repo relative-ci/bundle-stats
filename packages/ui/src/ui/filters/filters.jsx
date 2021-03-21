@@ -164,7 +164,7 @@ export const Filters = (props) => {
 
   return (
     <form className={rootClassName}>
-      <FlexStack space="xsmall" className={css.items}>
+      <FlexStack className={css.items}>
         {Object.entries(filters).map(([name, data]) => {
           if (typeof data?.defaultValue !== 'undefined') {
             return (
