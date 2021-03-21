@@ -15,7 +15,7 @@ export const Dropdown = (props) => {
     open && css.open,
     activeLabel && css.activeLabel,
     css[align],
-    className
+    className,
   );
 
   return (
