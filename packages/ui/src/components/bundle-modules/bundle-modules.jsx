@@ -23,6 +23,7 @@ import { SortDropdown } from '../../ui/sort-dropdown';
 import { Toolbar } from '../../ui/toolbar';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
+import { MetricsTableOptions } from '../metrics-table-options';
 import { ModuleInfo } from '../module-info';
 import css from './bundle-modules.module.css';
 
@@ -101,6 +102,7 @@ export const BundleModules = ({
   totalRowCount,
   updateFilters,
   resetFilters,
+  resetAllFilters,
   filters,
   sortItems,
   sort,
@@ -112,21 +114,13 @@ export const BundleModules = ({
 }) => {
   const rootClassName = cx(css.root, className);
 
-  const clearSearch = useCallback(() => {
-    resetFilters();
-    updateSearch('');
-  }, []);
-
   const labels = useMemo(() => map(jobs, 'label'), [jobs]);
   const renderRowHeader = useMemo(
     () => getRenderRowHeader({ labels, chunks, CustomComponentLink }),
     [labels, chunks],
   );
-  const emptyMessage = useMemo(
-    () => (
-      <EmptySet resources="modules" filtered={totalRowCount !== 0} resetFilters={clearSearch} />
-    ),
-    [],
+  const emptyMessage = (
+    <EmptySet resources="modules" filtered={totalRowCount !== 0} resetFilters={resetFilters} />
   );
 
   const dropdownFilters = {
@@ -174,14 +168,22 @@ export const BundleModules = ({
       <Toolbar
         className={css.toolbar}
         renderActions={({ actionClassName }) => (
-          <div className={cx(css.dropdown, actionClassName)}>
-            <SortDropdown
-              className={css.tableDropdown}
-              items={sortItems}
-              onChange={updateSort}
-              {...sort}
-            />
-          </div>
+          <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
+            <div>
+              <SortDropdown
+                className={css.tableDropdown}
+                items={sortItems}
+                onChange={updateSort}
+                {...sort}
+              />
+            </div>
+            <div>
+              <MetricsTableOptions
+                handleViewAll={resetAllFilters}
+                handleResetFilters={resetFilters}
+              />
+            </div>
+          </FlexStack>
         )}
       >
         <FlexStack>
@@ -246,6 +248,7 @@ BundleModules.propTypes = {
 
   /** Reset filters handler */
   resetFilters: PropTypes.func.isRequired,
+  resetAllFilters: PropTypes.func.isRequired,
 
   /** Filters data */
   filters: PropTypes.shape({

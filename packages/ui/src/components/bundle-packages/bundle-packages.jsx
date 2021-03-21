@@ -20,6 +20,7 @@ import { Toolbar } from '../../ui/toolbar';
 import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
+import { MetricsTableOptions } from '../metrics-table-options';
 import css from './bundle-packages.module.css';
 
 const getPopoverContent = ({
@@ -97,6 +98,7 @@ export const BundlePackages = (props) => {
     items,
     updateFilters,
     resetFilters,
+    resetAllFilters,
     totalRowCount,
     filters,
     sortItems,
@@ -108,14 +110,8 @@ export const BundlePackages = (props) => {
     customComponentLink: CustomComponentLink,
   } = props;
 
-  const clear = () => {
-    resetFilters();
-    updateSearch('');
-  };
-
-  const emptyMessage = useMemo(
-    () => <EmptySet resources="packages" filtered={totalRowCount !== 0} resetFilters={clear} />,
-    [],
+  const emptyMessage = (
+    <EmptySet resources="packages" filtered={totalRowCount !== 0} resetFilters={resetFilters} />
   );
 
   const chunkIds = (jobs[0]?.meta?.webpack?.chunks || []).map(({ id }) => id);
@@ -153,9 +149,17 @@ export const BundlePackages = (props) => {
       <Toolbar
         className={css.toolbar}
         renderActions={({ actionClassName }) => (
-          <div className={cx(css.dropdown, actionClassName)}>
-            <SortDropdown items={sortItems} {...sort} onChange={updateSort} />
-          </div>
+          <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
+            <div>
+              <SortDropdown items={sortItems} {...sort} onChange={updateSort} />
+            </div>
+            <div>
+              <MetricsTableOptions
+                handleViewAll={resetAllFilters}
+                handleResetFilters={resetFilters}
+              />
+            </div>
+          </FlexStack>
         )}
       >
         <FlexStack>
@@ -225,6 +229,7 @@ BundlePackages.propTypes = {
   ).isRequired,
   updateFilters: PropTypes.func.isRequired,
   resetFilters: PropTypes.func.isRequired,
+  resetAllFilters: PropTypes.func.isRequired,
   totalRowCount: PropTypes.number,
   filters: PropTypes.shape({
     changed: PropTypes.bool,
