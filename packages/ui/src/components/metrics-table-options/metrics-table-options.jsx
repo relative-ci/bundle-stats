@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import I18N from '../../i18n';
 import { Dropdown } from '../../ui/dropdown';
 import css from './metrics-table-options.module.css';
 
@@ -25,12 +26,12 @@ export const MetricsTableOptions = (props) => {
                 className={css.item}
                 onClick={getButtonOnClick(handleResetFilters)}
               >
-                Reset filters
+                {I18N.RESET_FILTERS}
               </button>
             )}
             {handleViewAll && (
               <button type="button" className={css.item} onClick={getButtonOnClick(handleViewAll)}>
-                View all entries
+                {I18N.VIEW_ALL}
               </button>
             )}
           </>

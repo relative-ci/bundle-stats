@@ -128,7 +128,12 @@ export const BundleAssets = (props) => {
   } = props;
 
   const emptyMessage = (
-    <EmptySet resources="assets" filtered={totalRowCount !== 0} resetFilters={resetFilters} />
+    <EmptySet
+      resources="assets"
+      filtered={totalRowCount !== 0}
+      handleResetFilters={resetFilters}
+      handleViewAll={resetAllFilters}
+    />
   );
 
   const chunks = jobs[0]?.meta?.webpack?.chunks || [];

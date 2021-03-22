@@ -102,7 +102,12 @@ export const BundleModules = ({
     [labels, chunks],
   );
   const emptyMessage = (
-    <EmptySet resources="modules" filtered={totalRowCount !== 0} resetFilters={resetFilters} />
+    <EmptySet
+      resources="modules"
+      filtered={totalRowCount !== 0}
+      handleResetFilters={resetFilters}
+      handleViewAll={resetAllFilters}
+    />
   );
 
   const dropdownFilters = {
@@ -115,7 +120,7 @@ export const BundleModules = ({
     // When chunks data available, list available chunks as filters
     ...(!isEmpty(chunks) && {
       [MODULE_CHUNK]: {
-        label: 'Chunks',
+        label: 'Chunk',
         ...chunks.reduce(
           (chunkFilters, { id, name }) => ({
             ...chunkFilters,
@@ -131,7 +136,7 @@ export const BundleModules = ({
 
     // Module source types
     [MODULE_FILE_TYPE]: {
-      label: 'File types',
+      label: 'File type',
       ...MODULE_SOURCE_FILE_TYPES.reduce(
         (agg, fileType) => ({
           ...agg,

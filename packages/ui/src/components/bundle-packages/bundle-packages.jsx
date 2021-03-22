@@ -90,7 +90,12 @@ export const BundlePackages = (props) => {
   } = props;
 
   const emptyMessage = (
-    <EmptySet resources="packages" filtered={totalRowCount !== 0} resetFilters={resetFilters} />
+    <EmptySet
+      resources="packages"
+      filtered={totalRowCount !== 0}
+      handleResetFilters={resetFilters}
+      handleViewAll={resetAllFilters}
+    />
   );
 
   const chunkIds = (jobs[0]?.meta?.webpack?.chunks || []).map(({ id }) => id);
