@@ -165,6 +165,7 @@
   --color-highlight-danger: var(--color-red-25);
 
   --color-outline: var(--color-gray-50);
+  --color-outline-dark: var(--color-gray-100);
   --color-outline-success: var(--color-green-100);
   --color-outline-info: var(--color-blue-100);
   --color-outline-warning: var(--color-yellow-100);

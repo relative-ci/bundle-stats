@@ -1,0 +1,13 @@
+.item {
+  display: block;
+  padding: var(--space-xxxsmall) 0;
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-primary);
+}
+
+.item:hover {
+  color: var(--color-primary-dark);
+}

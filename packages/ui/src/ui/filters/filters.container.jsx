@@ -23,7 +23,7 @@ const getInitialValues = (key, filters) => {
 };
 
 export const filtersDropdownContainer = (BaseComponent) => {
-  class FiltersDropdownContainer extends React.Component {
+  class FiltersContainer extends React.Component {
     constructor(props) {
       super(props);
 
@@ -71,11 +71,11 @@ export const filtersDropdownContainer = (BaseComponent) => {
     }
   }
 
-  FiltersDropdownContainer.defaultProps = {
+  FiltersContainer.defaultProps = {
     onChange: null,
   };
 
-  FiltersDropdownContainer.propTypes = {
+  FiltersContainer.propTypes = {
     /** Filter config */
     filters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 
@@ -83,5 +83,5 @@ export const filtersDropdownContainer = (BaseComponent) => {
     onChange: PropTypes.func,
   };
 
-  return FiltersDropdownContainer;
+  return FiltersContainer;
 };

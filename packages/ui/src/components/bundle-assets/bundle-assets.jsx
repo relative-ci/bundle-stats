@@ -7,11 +7,10 @@ import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, FILE_TYPE_LABELS } fr
 import config from '../../config.json';
 import I18N from '../../i18n';
 import { FlexStack } from '../../layout/flex-stack';
-import { Stack } from '../../layout/stack';
 import { FileName } from '../../ui/file-name';
 import { Popover } from '../../ui/popover';
 import { Tooltip } from '../../ui/tooltip';
-import { FiltersDropdown } from '../../ui/filters-dropdown';
+import { Filters } from '../../ui/filters';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { EmptySet } from '../../ui/empty-set';
 import { Toolbar } from '../../ui/toolbar';
@@ -19,6 +18,8 @@ import { AssetInfo } from '../asset-info';
 import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
+import { MetricsTableOptions } from '../metrics-table-options';
+import { MetricsTableTitle } from '../metrics-table-title';
 import css from './bundle-assets.module.css';
 
 const RUN_TITLE_CURRENT = 'Current';
@@ -107,24 +108,6 @@ const getRenderRowHeader = ({ labels, CustomComponentLink, chunks }) => (item) =
   </Popover>
 );
 
-const Title = () => {
-  return (
-    <FlexStack space="xxxsmall" className={css.title}>
-      <span>{I18N.ASSETS}</span>
-      <Popover icon="help">
-        <Stack space="xxxsmall">
-          <p>{I18N.ASSETS_INFO}</p>
-          <p>
-            <a href={config.documentation.assets} target="_blank" rel="noreferrer">
-              {I18N.READ_MORE}
-            </a>
-          </p>
-        </Stack>
-      </Popover>
-    </FlexStack>
-  );
-};
-
 export const BundleAssets = (props) => {
   const {
     className,
@@ -132,6 +115,7 @@ export const BundleAssets = (props) => {
     items,
     updateFilters,
     resetFilters,
+    resetAllFilters,
     totalRowCount,
     filters,
     hasActiveFilters,
@@ -143,14 +127,13 @@ export const BundleAssets = (props) => {
     customComponentLink: CustomComponentLink,
   } = props;
 
-  const clearSearch = () => {
-    resetFilters();
-    updateSearch('');
-  };
-
-  const emptyMessage = useMemo(
-    () => <EmptySet resources="assets" filtered={totalRowCount !== 0} resetFilters={clearSearch} />,
-    [],
+  const emptyMessage = (
+    <EmptySet
+      resources="assets"
+      filtered={totalRowCount !== 0}
+      handleResetFilters={resetFilters}
+      handleViewAll={resetAllFilters}
+    />
   );
 
   const chunks = jobs[0]?.meta?.webpack?.chunks || [];
@@ -170,58 +153,62 @@ export const BundleAssets = (props) => {
       <Toolbar
         className={css.toolbar}
         renderActions={({ actionClassName }) => (
-          <>
-            <div className={cx(css.dropdown, actionClassName)}>
+          <FlexStack space="xsmall" className={cx(css.dropdown, actionClassName)}>
+            <div>
               <SortDropdown items={sortItems} {...sort} onChange={updateSort} />
             </div>
-
-            <div className={cx(css.dropdown, actionClassName)}>
-              {/* @TODO: get default values from parent state */}
-              <FiltersDropdown
-                filters={{
-                  [ASSET_FILTERS.CHANGED]: {
-                    label: 'Changed',
-                    defaultValue: filters[ASSET_FILTERS.CHANGED],
-                    disabled: jobs.length <= 1,
-                  },
-                  [ASSET_ENTRY_TYPE]: {
-                    label: 'Entry type',
-                    [ASSET_FILTERS.ENTRY]: {
-                      label: 'Entry',
-                      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`, true),
-                    },
-                    [ASSET_FILTERS.INITIAL]: {
-                      label: 'Initial',
-                      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`, true),
-                    },
-                    [ASSET_FILTERS.CHUNK]: {
-                      label: 'Chunk',
-                      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`, true),
-                    },
-                    [ASSET_FILTERS.ASSET]: {
-                      label: 'Asset',
-                      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ASSET}`, true),
-                    },
-                  },
-                  [ASSET_FILE_TYPE]: {
-                    label: 'File type',
-                    ...getFileTypeFilters(filters),
-                  },
-                }}
-                label={`Filters (${items.length}/${totalRowCount})`}
-                hasActiveFilters={hasActiveFilters}
-                onChange={updateFilters}
+            <div>
+              <MetricsTableOptions
+                handleViewAll={resetAllFilters}
+                handleResetFilters={resetFilters}
               />
             </div>
-          </>
+          </FlexStack>
         )}
       >
-        <MetricsTableSearch
-          className={css.toolbarSearch}
-          placeholder="Search by name"
-          search={search}
-          updateSearch={updateSearch}
-        />
+        <FlexStack>
+          <MetricsTableSearch
+            className={css.toolbarSearch}
+            placeholder="Search by name"
+            search={search}
+            updateSearch={updateSearch}
+          />
+          <Filters
+            className={css.toolbarFilters}
+            filters={{
+              [ASSET_FILTERS.CHANGED]: {
+                label: 'Changed',
+                defaultValue: filters[ASSET_FILTERS.CHANGED],
+                disabled: jobs.length <= 1,
+              },
+              [ASSET_ENTRY_TYPE]: {
+                label: 'Entry type',
+                [ASSET_FILTERS.ENTRY]: {
+                  label: 'Entry',
+                  defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`, true),
+                },
+                [ASSET_FILTERS.INITIAL]: {
+                  label: 'Initial',
+                  defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`, true),
+                },
+                [ASSET_FILTERS.CHUNK]: {
+                  label: 'Chunk',
+                  defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`, true),
+                },
+                [ASSET_FILTERS.ASSET]: {
+                  label: 'Asset',
+                  defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ASSET}`, true),
+                },
+              },
+              [ASSET_FILE_TYPE]: {
+                label: 'File type',
+                ...getFileTypeFilters(filters),
+              },
+            }}
+            hasActiveFilters={hasActiveFilters}
+            onChange={updateFilters}
+          />
+        </FlexStack>
       </Toolbar>
       <main>
         <MetricsTable
@@ -230,7 +217,14 @@ export const BundleAssets = (props) => {
           renderRowHeader={renderRowHeader}
           emptyMessage={emptyMessage}
           showHeaderSum
-          title={<Title />}
+          title={
+            <MetricsTableTitle
+              title={I18N.ASSETS}
+              info={`(${items.length}/${totalRowCount})`}
+              popoverInfo={I18N.ASSETS_INFO}
+              popoverHref={config.documentation.assets}
+            />
+          }
         />
       </main>
     </section>
@@ -266,6 +260,7 @@ BundleAssets.propTypes = {
   ).isRequired,
   updateFilters: PropTypes.func.isRequired,
   resetFilters: PropTypes.func.isRequired,
+  resetAllFilters: PropTypes.func.isRequired,
   totalRowCount: PropTypes.number,
   filters: PropTypes.shape({
     changed: PropTypes.bool,

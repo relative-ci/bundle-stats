@@ -6,10 +6,11 @@ const DEBOUNCE_DURATION = 500;
 const ACTION_SET_FILTERS = 'SET_FILTERS';
 const ACTION_SET_SEARCH = 'SET_SEARCH';
 const ACTION_SET_SEARCH_PATTERN = 'SET_SEARCH_PATTERN';
-const ACTION_RESET = 'RESET';
+const ACTION_RESET_DEFAULT = 'RESET_DEFAULT';
+const ACTION_RESET_ALL = 'RESET_ALL';
 const ACTION_SET = 'SET';
 
-const getSearchReducer = ({ defaultFilters }) => (state, action) => {
+const getSearchReducer = ({ defaultFilters, allEntriesFilters }) => (state, action) => {
   const { type, payload } = action;
 
   switch (type) {
@@ -28,9 +29,15 @@ const getSearchReducer = ({ defaultFilters }) => (state, action) => {
         ...state,
         searchPattern: payload,
       };
-    case ACTION_RESET:
+    case ACTION_RESET_DEFAULT:
       return {
         filters: defaultFilters,
+        search: '',
+        searchPattern: '',
+      };
+    case ACTION_RESET_ALL:
+      return {
+        filters: allEntriesFilters,
         search: '',
         searchPattern: '',
       };
@@ -70,7 +77,7 @@ export const useSearch = ({
   const initialFilters = customFilters ? merge({}, emptyFilters, customFilters) : defaultFilters;
 
   const [{ search, searchPattern, filters }, dispatch] = useReducer(
-    getSearchReducer({ defaultFilters }),
+    getSearchReducer({ defaultFilters, allEntriesFilters }),
     generateState(initialFilters, customSearch),
   );
 
@@ -120,9 +127,17 @@ export const useSearch = ({
     if (setState) {
       setState({ filters: defaultFilters, search: '' });
     } else {
-      dispatch({ type: ACTION_RESET });
+      dispatch({ type: ACTION_RESET_DEFAULT });
     }
   }, [defaultFilters]);
+
+  const handleResetAllFilters = useCallback(() => {
+    if (setState) {
+      setState({ filters: allEntriesFilters, search: '' });
+    } else {
+      dispatch({ type: ACTION_RESET_ALL });
+    }
+  }, [allEntriesFilters]);
 
   return {
     search,
@@ -130,8 +145,9 @@ export const useSearch = ({
     searchPattern,
     updateFilters: handleUpdateFilters,
     resetFilters: handleResetFilters,
+    resetAllFilters: handleResetAllFilters,
     filters,
-    hasActiveFilters: !isEqual(allEntriesFilters, filters)
+    hasActiveFilters: !isEqual(allEntriesFilters, filters),
   };
 };
 

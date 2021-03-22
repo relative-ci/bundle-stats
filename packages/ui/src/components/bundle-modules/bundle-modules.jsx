@@ -14,15 +14,16 @@ import config from '../../config.json';
 import I18N from '../../i18n';
 import { ComponentLink } from '../component-link';
 import { FlexStack } from '../../layout/flex-stack';
-import { Stack } from '../../layout/stack';
 import { EmptySet } from '../../ui/empty-set';
 import { FileName } from '../../ui/file-name';
-import { FiltersDropdown } from '../../ui/filters-dropdown';
+import { Filters } from '../../ui/filters';
 import { Popover } from '../../ui/popover';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Toolbar } from '../../ui/toolbar';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
+import { MetricsTableOptions } from '../metrics-table-options';
+import { MetricsTableTitle } from '../metrics-table-title';
 import { ModuleInfo } from '../module-info';
 import css from './bundle-modules.module.css';
 
@@ -75,24 +76,6 @@ const getRenderRowHeader = ({ labels, chunks, CustomComponentLink }) => (row) =>
   <RowHeader row={row} chunks={chunks} labels={labels} CustomComponentLink={CustomComponentLink} />
 );
 
-const Title = () => {
-  return (
-    <FlexStack space="xxxsmall" className={css.title}>
-      <span>{I18N.MODULES}</span>
-      <Popover icon="help">
-        <Stack space="xxxsmall">
-          <p>{I18N.MODULES_INFO}</p>
-          <p>
-            <a href={config.documentation.modules} target="_blank" rel="noreferrer">
-              {I18N.READ_MORE}
-            </a>
-          </p>
-        </Stack>
-      </Popover>
-    </FlexStack>
-  );
-};
-
 export const BundleModules = ({
   className,
   jobs,
@@ -101,6 +84,7 @@ export const BundleModules = ({
   totalRowCount,
   updateFilters,
   resetFilters,
+  resetAllFilters,
   filters,
   sortItems,
   sort,
@@ -112,21 +96,18 @@ export const BundleModules = ({
 }) => {
   const rootClassName = cx(css.root, className);
 
-  const clearSearch = useCallback(() => {
-    resetFilters();
-    updateSearch('');
-  }, []);
-
   const labels = useMemo(() => map(jobs, 'label'), [jobs]);
   const renderRowHeader = useMemo(
     () => getRenderRowHeader({ labels, chunks, CustomComponentLink }),
     [labels, chunks],
   );
-  const emptyMessage = useMemo(
-    () => (
-      <EmptySet resources="modules" filtered={totalRowCount !== 0} resetFilters={clearSearch} />
-    ),
-    [],
+  const emptyMessage = (
+    <EmptySet
+      resources="modules"
+      filtered={totalRowCount !== 0}
+      handleResetFilters={resetFilters}
+      handleViewAll={resetAllFilters}
+    />
   );
 
   const dropdownFilters = {
@@ -139,7 +120,7 @@ export const BundleModules = ({
     // When chunks data available, list available chunks as filters
     ...(!isEmpty(chunks) && {
       [MODULE_CHUNK]: {
-        label: 'Chunks',
+        label: 'Chunk',
         ...chunks.reduce(
           (chunkFilters, { id, name }) => ({
             ...chunkFilters,
@@ -155,7 +136,7 @@ export const BundleModules = ({
 
     // Module source types
     [MODULE_FILE_TYPE]: {
-      label: 'File types',
+      label: 'File type',
       ...MODULE_SOURCE_FILE_TYPES.reduce(
         (agg, fileType) => ({
           ...agg,
@@ -174,8 +155,8 @@ export const BundleModules = ({
       <Toolbar
         className={css.toolbar}
         renderActions={({ actionClassName }) => (
-          <>
-            <div className={actionClassName}>
+          <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
+            <div>
               <SortDropdown
                 className={css.tableDropdown}
                 items={sortItems}
@@ -183,24 +164,30 @@ export const BundleModules = ({
                 {...sort}
               />
             </div>
-            <div className={actionClassName}>
-              <FiltersDropdown
-                className={css.tableDropdown}
-                filters={dropdownFilters}
-                label={`Filters (${items.length}/${totalRowCount})`}
-                onChange={updateFilters}
-                hasActiveFilters={hasActiveFilters}
+            <div>
+              <MetricsTableOptions
+                handleViewAll={resetAllFilters}
+                handleResetFilters={resetFilters}
               />
             </div>
-          </>
+          </FlexStack>
         )}
       >
-        <MetricsTableSearch
-          className={css.toolbarSearch}
-          search={search}
-          updateSearch={updateSearch}
-          placeholder="Search by name"
-        />
+        <FlexStack>
+          <MetricsTableSearch
+            className={css.toolbarSearch}
+            search={search}
+            updateSearch={updateSearch}
+            placeholder="Search by name"
+          />
+          <Filters
+            className={css.tableDropdown}
+            filters={dropdownFilters}
+            label={`Filters (${items.length}/${totalRowCount})`}
+            onChange={updateFilters}
+            hasActiveFilters={hasActiveFilters}
+          />
+        </FlexStack>
       </Toolbar>
       <MetricsTable
         className={css.table}
@@ -209,7 +196,14 @@ export const BundleModules = ({
         renderRowHeader={renderRowHeader}
         emptyMessage={emptyMessage}
         showHeaderSum
-        title={<Title />}
+        title={
+          <MetricsTableTitle
+            title={I18N.MODULES}
+            info={`(${items.length}/${totalRowCount})`}
+            popoverInfo={I18N.MODULES_INFO}
+            popoverHref={config.documentation.modules}
+          />
+        }
       />
     </div>
   );
@@ -248,6 +242,7 @@ BundleModules.propTypes = {
 
   /** Reset filters handler */
   resetFilters: PropTypes.func.isRequired,
+  resetAllFilters: PropTypes.func.isRequired,
 
   /** Filters data */
   filters: PropTypes.shape({

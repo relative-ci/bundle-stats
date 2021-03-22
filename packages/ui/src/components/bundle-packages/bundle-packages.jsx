@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import {
@@ -13,13 +13,15 @@ import I18N from '../../i18n';
 import { Stack } from '../../layout/stack';
 import { FlexStack } from '../../layout/flex-stack';
 import { EmptySet } from '../../ui/empty-set';
-import { FiltersDropdown } from '../../ui/filters-dropdown';
+import { Filters } from '../../ui/filters';
 import { Popover } from '../../ui/popover';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Toolbar } from '../../ui/toolbar';
 import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
+import { MetricsTableOptions } from '../metrics-table-options';
+import { MetricsTableTitle } from '../metrics-table-title';
 import css from './bundle-packages.module.css';
 
 const getPopoverContent = ({
@@ -68,28 +70,6 @@ const getPopoverContent = ({
   );
 };
 
-const Title = () => {
-  return (
-    <FlexStack space="xxxsmall" className={css.title}>
-      <span>{I18N.PACKAGES}</span>
-      <Popover icon="help">
-        <Stack space="xxxsmall">
-          <p>{I18N.PACKAGES_INFO}</p>
-          <p>
-            <a
-              href={config.documentation.packages}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {I18N.READ_MORE}
-            </a>
-          </p>
-        </Stack>
-      </Popover>
-    </FlexStack>
-  );
-};
-
 export const BundlePackages = (props) => {
   const {
     className,
@@ -97,6 +77,7 @@ export const BundlePackages = (props) => {
     items,
     updateFilters,
     resetFilters,
+    resetAllFilters,
     totalRowCount,
     filters,
     sortItems,
@@ -108,14 +89,13 @@ export const BundlePackages = (props) => {
     customComponentLink: CustomComponentLink,
   } = props;
 
-  const clear = () => {
-    resetFilters();
-    updateSearch('');
-  };
-
-  const emptyMessage = useMemo(
-    () => <EmptySet resources="packages" filtered={totalRowCount !== 0} resetFilters={clear} />,
-    [],
+  const emptyMessage = (
+    <EmptySet
+      resources="packages"
+      filtered={totalRowCount !== 0}
+      handleResetFilters={resetFilters}
+      handleViewAll={resetAllFilters}
+    />
   );
 
   const chunkIds = (jobs[0]?.meta?.webpack?.chunks || []).map(({ id }) => id);
@@ -153,38 +133,43 @@ export const BundlePackages = (props) => {
       <Toolbar
         className={css.toolbar}
         renderActions={({ actionClassName }) => (
-          <>
-            <div className={actionClassName}>
+          <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
+            <div>
               <SortDropdown items={sortItems} {...sort} onChange={updateSort} />
             </div>
-            <div className={actionClassName}>
-              {/* @TODO: get default values from parent state */}
-              <FiltersDropdown
-                filters={{
-                  [PACKAGE_FILTERS.CHANGED]: {
-                    label: 'Changed',
-                    defaultValue: filters[PACKAGE_FILTERS.CHANGED],
-                    disabled: jobs.length <= 1,
-                  },
-                  [PACKAGE_FILTERS.DUPLICATE]: {
-                    label: 'Duplicate',
-                    defaultValue: filters[PACKAGE_FILTERS.DUPLICATE],
-                  },
-                }}
-                label={`Filters (${items.length}/${totalRowCount})`}
-                onChange={updateFilters}
-                hasActiveFilters={hasActiveFilters}
+            <div>
+              <MetricsTableOptions
+                handleViewAll={resetAllFilters}
+                handleResetFilters={resetFilters}
               />
             </div>
-          </>
+          </FlexStack>
         )}
       >
-        <MetricsTableSearch
-          className={css.toolbarSearch}
-          placeholder="Search by name"
-          search={search}
-          updateSearch={updateSearch}
-        />
+        <FlexStack>
+          <MetricsTableSearch
+            className={css.toolbarSearch}
+            placeholder="Search by name"
+            search={search}
+            updateSearch={updateSearch}
+          />
+          <Filters
+            filters={{
+              [PACKAGE_FILTERS.CHANGED]: {
+                label: 'Changed',
+                defaultValue: filters[PACKAGE_FILTERS.CHANGED],
+                disabled: jobs.length <= 1,
+              },
+              [PACKAGE_FILTERS.DUPLICATE]: {
+                label: 'Duplicate',
+                defaultValue: filters[PACKAGE_FILTERS.DUPLICATE],
+              },
+            }}
+            label={`Filters (${items.length}/${totalRowCount})`}
+            onChange={updateFilters}
+            hasActiveFilters={hasActiveFilters}
+          />
+        </FlexStack>
       </Toolbar>
       <main>
         <MetricsTable
@@ -193,7 +178,14 @@ export const BundlePackages = (props) => {
           emptyMessage={emptyMessage}
           renderRowHeader={renderRowHeader}
           showHeaderSum
-          title={<Title />}
+          title={
+            <MetricsTableTitle
+              title={I18N.PACKAGES}
+              info={`(${items.length}/${totalRowCount})`}
+              popoverInfo={I18N.PACKAGES_INFO}
+              popoverHref={config.documentation.packages}
+            />
+          }
         />
       </main>
     </section>
@@ -228,6 +220,7 @@ BundlePackages.propTypes = {
   ).isRequired,
   updateFilters: PropTypes.func.isRequired,
   resetFilters: PropTypes.func.isRequired,
+  resetAllFilters: PropTypes.func.isRequired,
   totalRowCount: PropTypes.number,
   filters: PropTypes.shape({
     changed: PropTypes.bool,

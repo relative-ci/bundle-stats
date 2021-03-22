@@ -21,7 +21,7 @@ export const getColors = (count = 2) => {
 };
 
 export const getRenderChildWithClassName = (className) => (child) => {
-  if (child === null) {
+  if (child === null || child === '') {
     return null;
   }
 
