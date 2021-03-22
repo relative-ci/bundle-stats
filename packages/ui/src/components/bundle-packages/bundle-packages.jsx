@@ -134,15 +134,11 @@ export const BundlePackages = (props) => {
         className={css.toolbar}
         renderActions={({ actionClassName }) => (
           <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
-            <div>
-              <SortDropdown items={sortItems} {...sort} onChange={updateSort} />
-            </div>
-            <div>
-              <MetricsTableOptions
-                handleViewAll={resetAllFilters}
-                handleResetFilters={resetFilters}
-              />
-            </div>
+            <SortDropdown items={sortItems} {...sort} onChange={updateSort} />
+            <MetricsTableOptions
+              handleViewAll={resetAllFilters}
+              handleResetFilters={resetFilters}
+            />
           </FlexStack>
         )}
       >

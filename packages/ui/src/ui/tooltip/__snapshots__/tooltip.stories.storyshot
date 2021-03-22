@@ -113,7 +113,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                 hidden=""
                 id="id-test"
                 role="tooltip"
-                style="display: none; pointer-events: none;"
+                style="display: none; position: fixed; left: 0px; top: 0px; pointer-events: none;"
               >
                 <div
                   class="arrow"
@@ -141,7 +141,13 @@ exports[`Storyshots UI/Tooltip default 1`] = `
               </div>,
             }
           }
-          unstable_popoverStyles={Object {}}
+          unstable_popoverStyles={
+            Object {
+              "left": "0",
+              "position": "fixed",
+              "top": "0",
+            }
+          }
           unstable_referenceRef={
             Object {
               "current": <span
@@ -223,7 +229,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                 hidden=""
                 id="id-test"
                 role="tooltip"
-                style="display: none; pointer-events: none;"
+                style="display: none; position: fixed; left: 0px; top: 0px; pointer-events: none;"
               >
                 <div
                   class="arrow"
@@ -251,7 +257,13 @@ exports[`Storyshots UI/Tooltip default 1`] = `
               </div>,
             }
           }
-          unstable_popoverStyles={Object {}}
+          unstable_popoverStyles={
+            Object {
+              "left": "0",
+              "position": "fixed",
+              "top": "0",
+            }
+          }
           unstable_referenceRef={
             Object {
               "current": <span
@@ -278,7 +290,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                     hidden=""
                     id="id-test"
                     role="tooltip"
-                    style="display: none; pointer-events: none;"
+                    style="display: none; position: fixed; left: 0px; top: 0px; pointer-events: none;"
                   >
                     <div
                       class="arrow"
@@ -316,7 +328,10 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                 style={
                   Object {
                     "display": "none",
+                    "left": "0",
                     "pointerEvents": "none",
+                    "position": "fixed",
+                    "top": "0",
                   }
                 }
               >
@@ -374,7 +389,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                         hidden=""
                         id="id-test"
                         role="tooltip"
-                        style="display: none; pointer-events: none;"
+                        style="display: none; position: fixed; left: 0px; top: 0px; pointer-events: none;"
                       >
                         <div
                           class="arrow"
@@ -402,7 +417,13 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                       </div>,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span

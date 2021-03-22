@@ -12,27 +12,23 @@ export const MetricsTableOptions = (props) => {
 
   return (
     <Dropdown className={rootClassName} glyph="menu" align="right" {...restProps}>
-      {({ dropdownToggle }) => {
+      {({ MenuItem, menu }) => {
         const getButtonOnClick = (handler) => () => {
           handler();
-          dropdownToggle();
+          menu.toggle();
         };
 
         return (
           <>
             {handleResetFilters && (
-              <button
-                type="button"
-                className={css.item}
-                onClick={getButtonOnClick(handleResetFilters)}
-              >
+              <MenuItem {...menu} className={css.item} onClick={getButtonOnClick(handleResetFilters)}>
                 {I18N.RESET_FILTERS}
-              </button>
+              </MenuItem>
             )}
             {handleViewAll && (
-              <button type="button" className={css.item} onClick={getButtonOnClick(handleViewAll)}>
+              <MenuItem {...menu} className={css.item} onClick={getButtonOnClick(handleViewAll)}>
                 {I18N.VIEW_ALL}
-              </button>
+              </MenuItem>
             )}
           </>
         );

@@ -1,40 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import {
+  useMenuState,
+  Menu,
+  MenuItem,
+  MenuButton,
+} from 'reakit/Menu';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Icon } from '../icon';
 import css from './dropdown.module.css';
 
-const ALIGN_LEFT = 'left';
-const ALIGN_RIGHT = 'right';
-
 export const Dropdown = (props) => {
-  const { className, label, glyph, activeLabel, open, dropdownToggle, align, children } = props;
+  const { className, label, glyph, activeLabel, children } = props;
   const rootClassName = cx(
     css.root,
-    open && css.open,
     activeLabel && css.activeLabel,
-    css[align],
     className,
   );
 
+  const menu = useMenuState({
+    baseId: process.env.NODE_ENV === 'test' && 'id-test',
+    modal: true,
+  });
+
   return (
-    <div className={rootClassName}>
-      <FlexStack
-        space="xxxsmall"
-        className={css.label}
-        as="button"
-        type="button"
-        onClick={dropdownToggle}
-      >
-        {glyph && <Icon className={css.labelIcon} glyph={glyph} />}
-        {label}
-      </FlexStack>
-      <div className={css.dropdown}>
-        {typeof children === 'function' ? children({ dropdownToggle }) : children}
-      </div>
-    </div>
+    <>
+      <MenuButton {...menu} className={rootClassName} tabIndex={null}>
+        <FlexStack space="xxxsmall" className={css.label}>
+          {glyph && <Icon className={css.labelIcon} glyph={glyph} />}
+          {label}
+        </FlexStack>
+      </MenuButton>
+      <Menu {...menu} aria-label={label} className={css.dropdown}>
+        {typeof children === 'function' ? children({ MenuItem, menu, dropdownToggle: menu.toggle }) : children}
+      </Menu>
+    </>
   );
 };
 
@@ -42,7 +44,6 @@ Dropdown.defaultProps = {
   className: '',
   label: '',
   glyph: null,
-  align: ALIGN_LEFT,
   activeLabel: false,
 };
 
@@ -59,15 +60,9 @@ Dropdown.propTypes = {
   /** Dropdown open state */
   open: PropTypes.bool.isRequired,
 
-  /** Align modifier */
-  align: PropTypes.oneOf([ALIGN_LEFT, ALIGN_RIGHT]),
-
   /** Active label flag */
   activeLabel: PropTypes.bool,
 
   /** Content */
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]).isRequired,
-
-  /** Dropdown toggle handler */
-  dropdownToggle: PropTypes.func.isRequired,
 };

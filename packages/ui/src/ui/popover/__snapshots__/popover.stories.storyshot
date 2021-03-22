@@ -145,7 +145,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                 hidden=""
                 id="id-test"
                 role="dialog"
-                style="display: none;"
+                style="display: none; position: fixed; left: 0px; top: 0px;"
                 tabindex="0"
               >
                 <div
@@ -189,7 +189,13 @@ exports[`Storyshots UI/Popover default 1`] = `
               </div>,
             }
           }
-          unstable_popoverStyles={Object {}}
+          unstable_popoverStyles={
+            Object {
+              "left": "0",
+              "position": "fixed",
+              "top": "0",
+            }
+          }
           unstable_referenceRef={
             Object {
               "current": <button
@@ -356,7 +362,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                 hidden=""
                 id="id-test"
                 role="dialog"
-                style="display: none;"
+                style="display: none; position: fixed; left: 0px; top: 0px;"
                 tabindex="0"
               >
                 <div
@@ -400,7 +406,13 @@ exports[`Storyshots UI/Popover default 1`] = `
               </div>,
             }
           }
-          unstable_popoverStyles={Object {}}
+          unstable_popoverStyles={
+            Object {
+              "left": "0",
+              "position": "fixed",
+              "top": "0",
+            }
+          }
           unstable_referenceRef={
             Object {
               "current": <button
@@ -448,7 +460,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                     hidden=""
                     id="id-test"
                     role="dialog"
-                    style="display: none;"
+                    style="display: none; position: fixed; left: 0px; top: 0px;"
                     tabindex="0"
                   >
                     <div
@@ -507,6 +519,9 @@ exports[`Storyshots UI/Popover default 1`] = `
                 style={
                   Object {
                     "display": "none",
+                    "left": "0",
+                    "position": "fixed",
+                    "top": "0",
                   }
                 }
                 tabIndex={0}
@@ -596,7 +611,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                         hidden=""
                         id="id-test"
                         role="dialog"
-                        style="display: none;"
+                        style="display: none; position: fixed; left: 0px; top: 0px;"
                         tabindex="0"
                       >
                         <div
@@ -640,7 +655,13 @@ exports[`Storyshots UI/Popover default 1`] = `
                       </div>,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <button

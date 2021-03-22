@@ -1,6 +1,7 @@
 .root {
-  position: relative;
-  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 .label {
@@ -32,12 +33,6 @@
   min-width: 180px;
   z-index: var(--layer-high);
   padding: var(--space-xsmall) var(--space-small);
-}
-
-/* activeLabel modifier */
-.activeLabel .label {
-  border-color: var(--color-outline);
-  color: var(--color-text);
 }
 
 /* align=right modifier */
