@@ -42,7 +42,7 @@
   position: absolute;
   right: 0;
   top: 0;
-  padding: var(--space-xxxsmall);
+  padding: var(--space-xxsmall);
   background: none;
   border: none;
   cursor: pointer;

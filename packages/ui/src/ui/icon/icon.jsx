@@ -10,6 +10,7 @@ import CloseIcon from './assets/close.svg';
 import CommitIcon from './assets/commit.svg';
 import FilterIcon from './assets/filter.svg';
 import HelpIcon from './assets/help.svg';
+import MenuIcon from './assets/menu.svg';
 import PackageIcon from './assets/package.svg';
 import PullRequestIcon from './assets/pull-request.svg';
 import SortIcon from './assets/sort.svg';
@@ -25,6 +26,7 @@ export const ICONS = {
   COMMIT: 'commit',
   FILTER: 'filter',
   HELP: 'help',
+  MENU: 'menu',
   PACKAGE: 'package',
   PR: 'pr',
   SORT: 'sort',
@@ -39,6 +41,7 @@ const ICON_MAP = {
   [ICONS.COMMIT]: CommitIcon,
   [ICONS.FILTER]: FilterIcon,
   [ICONS.HELP]: HelpIcon,
+  [ICONS.MENU]: MenuIcon,
   [ICONS.PACKAGE]: PackageIcon,
   [ICONS.PR]: PullRequestIcon,
   [ICONS.SORT]: SortIcon,

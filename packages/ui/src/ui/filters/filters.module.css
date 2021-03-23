@@ -1,0 +1,131 @@
+/* Checkbox + label + button */
+.filter {
+  position: relative;
+  width: 100%;
+  max-width: 240px;
+  font-size: var(--size-small);
+  line-height: var(--space-small);
+}
+
+.filterCheckbox {
+  padding: var(--space-xxxsmall) var(--space-large) var(--space-xxxsmall) 0;
+  cursor: pointer;
+  align-items: center;
+}
+
+.filterInput {
+  flex: 0 0 auto;
+  height: 1em;
+  cursor: pointer;
+}
+
+.filterLabel {
+  flex: 1 1 auto;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.filterOnlyButton {
+  padding: var(--space-xxxsmall);
+  display: none;
+  appearance: none;
+  border: none;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255) 30%);
+  cursor: pointer;
+  line-height: 1;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/** filter disabled state */
+.filterInput[disabled] + .filterLabel {
+  color: var(--color-text-light);
+}
+
+.filterInput[disabled] + .filterOnlyButton {
+  display: none;
+}
+
+/** filter hover state */
+.filter {
+  color: var(--color-text);
+}
+
+.filter:hover {
+  color: var(--color-dark);
+}
+
+.filter:hover .filterOnlyButton {
+  display: block;
+}
+
+/** Filter standard variation */
+.filterStandalone {
+  width: auto;
+  color: var(--color-text-light);
+  z-index: var(--layout-xlow); /* show collapsed border */
+}
+
+.filterStandalone .filterCheckbox {
+  padding: calc(var(--space-xxsmall) - 1px) calc(var(--space-xxsmall) - 1px);
+  border: 1px solid var(--color-outline);
+}
+
+.filterStandalone:hover {
+  z-index: var(--layout-xlow); /* show collapsed border */
+}
+
+.filterStandalone:hover .filterCheckbox {
+  border-color: var(--color-outline-dark);
+  color: var(--color-text);
+}
+
+/** Filter group variation */
+.filterGroupItems {
+  max-height: calc(20 * (var(--space-small) + 2 * var(--space-xxxsmall)));
+  overflow: auto;
+}
+
+.filterGroupActions {
+  margin-top: var(--space-xxxsmall);
+  padding-top: var(--space-xxxsmall);
+  border-top: 1px solid var(--color-outline);
+}
+
+/* clear / check all */
+.filterGroupButton {
+  margin-top: calc(0px - var(--space-xxxsmall));
+  margin-bottom: calc(0px - var(--space-xxxsmall));
+  margin-right: calc(0px - var(--space-xxxsmall));
+  padding: var(--space-xxxsmall) 0;
+  outline: none;
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  white-space: nowrap;
+  color: var(--color-primary);
+  font-size: var(--size-small);
+  line-height: 1;
+}
+
+.filterGroupButton:hover {
+  color: var(--color-primary-dark);
+}
+.items {
+  align-items: flex-start;
+}
+
+.item {
+  position: relative;
+  flex: 0 0 auto;
+  margin-right: -1px;
+}
+
+.item:hover {
+  z-index: var(--layer-low); /* show collapsed border */
+}

@@ -1,0 +1,11 @@
+.root {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+.info {
+  font-weight: normal;
+  text-transform: none;
+}
+

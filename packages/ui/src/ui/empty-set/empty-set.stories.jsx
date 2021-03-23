@@ -8,9 +8,13 @@ const stories = storiesOf('UI/EmptySet', module);
 stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => (
-  <EmptySet resources="assets" filtered resetFilters={() => console.log('filter')} />
+  <EmptySet
+    resources="assets"
+    filtered handleResetFilters={() => console.log('RESET_FILTERS')}
+    handleViewAll={() => console.log('VIEW_ALL')}
+  />
 ));
 
 stories.add('empty', () => (
-  <EmptySet resources="assets" filtered={false} resetFilters={() => console.log('filter')} />
+  <EmptySet resources="assets" filtered={false} />
 ));

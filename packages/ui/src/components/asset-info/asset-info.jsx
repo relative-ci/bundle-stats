@@ -20,8 +20,11 @@ const ChunkModulesLink = ({ as: Component, chunks, chunkId, name }) => {
   const fileType = getModuleFileType(name);
 
   return (
-    <Component className={css.chunk} {...getBundleModulesByChunk(chunkIds, chunkId, fileType)}>
-      {`${fileType} chunk: ${chunk.name}`}
+    <Component
+      className={css.viewModules}
+      {...getBundleModulesByChunk(chunkIds, chunkId, fileType)}
+    >
+      View chunk modules
     </Component>
   );
 };
@@ -45,12 +48,17 @@ export const AssetInfo = (props) => {
   return (
     <Stack space="xsmall" className={cx(css.root, className)}>
       {item.runs.map((run, index) => {
+        const Title = index !== 0 ? 'h4' : 'h3';
+        const key = `asset-info-${run?.name || index}-${index}`;
 
         return (
-          <Stack space="xxxsmall">
-            <h5>{labels[index]}</h5>
-
-            <FileName name={run?.name || '-'} />
+          <Stack space="xxxsmall" key={key}>
+            <Title>{labels[index]}</Title>
+            <FileName
+              className={css.fileName}
+              as='code'
+              name={run?.name || '-'}
+            />
 
             {index === 0 && (
               <ChunkModulesLink

@@ -1,6 +1,7 @@
 .root {
   width: 100%;
   position: relative;
+  z-index: var(--layout-low); /** show collapsed border on focus */
 }
 
 
@@ -9,7 +10,7 @@
 }
 
 .input:focus {
-  border-color: var(--color-gray-light);
+  border-color: var(--color-outline-dark);
 }
 
 .cancelButton {

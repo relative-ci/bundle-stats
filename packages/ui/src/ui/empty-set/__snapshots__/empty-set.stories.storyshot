@@ -54,7 +54,8 @@ exports[`Storyshots UI/EmptySet default 1`] = `
     >
       <EmptySet
         filtered={true}
-        resetFilters={[Function]}
+        handleResetFilters={[Function]}
+        handleViewAll={[Function]}
         resources="assets"
       >
         <div
@@ -70,7 +71,15 @@ exports[`Storyshots UI/EmptySet default 1`] = `
             onClick={[Function]}
             type="button"
           >
-            View all
+            Reset filters
+          </button>
+           or 
+          <button
+            className="action"
+            onClick={[Function]}
+            type="button"
+          >
+            View all entries
           </button>
         </div>
       </EmptySet>
@@ -133,7 +142,8 @@ exports[`Storyshots UI/EmptySet empty 1`] = `
     >
       <EmptySet
         filtered={false}
-        resetFilters={[Function]}
+        handleResetFilters={null}
+        handleViewAll={null}
         resources="assets"
       >
         <div
