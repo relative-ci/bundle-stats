@@ -91,53 +91,62 @@ const FilterGroup = (props) => {
 
   return (
     <Dropdown label={`${groupLabel}: ${filterSuffix}`}>
-      <div className={css.filterGroupItems}>
-        {groupItems.map(([itemKey, itemData]) => {
-          const id = [groupKey, itemKey].join('.');
+      {({ MenuItem, menu }) => (
+        <>
+          <div className={css.filterGroupItems}>
+            {groupItems.map(([itemKey, itemData]) => {
+              const id = [groupKey, itemKey].join('.');
 
-          const getOnOnlyClick = () => () => {
-            onGroupClearAll();
-            onCheckboxChange({
-              target: {
-                name: id,
-                checked: true,
-              },
-            });
-          };
+              const getOnOnlyClick = () => () => {
+                onGroupClearAll();
+                onCheckboxChange({
+                  target: {
+                    name: id,
+                    checked: true,
+                  },
+                });
+              };
 
-          return (
-            <Filter
-              key={id}
-              name={id}
-              label={itemData.label}
-              onChange={onCheckboxChange}
-              checked={values[id]}
-              disabled={itemData.disabled}
-              getOnOnlyClick={getOnOnlyClick}
-            />
-          );
-        })}
-      </div>
+              const handleOnChange = (data) => {
+                onCheckboxChange(data);
+                menu.hide();
+              };
 
-      <div className={css.filterGroupActions}>
-        {isGroupChecked ? (
-          <button
-            className={css.filterGroupButton}
-            type="button"
-            onClick={onGroupClearAll}
-          >
-            Clear all
-          </button>
-        ) : (
-          <button
-            className={css.filterGroupButton}
-            type="button"
-            onClick={onGroupCheckAll}
-          >
-            Check all
-          </button>
-        )}
-      </div>
+              return (
+                <Filter
+                  key={id}
+                  name={id}
+                  label={itemData.label}
+                  onChange={handleOnChange}
+                  checked={values[id]}
+                  disabled={itemData.disabled}
+                  getOnOnlyClick={getOnOnlyClick}
+                />
+              );
+            })}
+          </div>
+          <div className={css.filterGroupActions}>
+            {isGroupChecked ? (
+              <button
+                className={css.filterGroupButton}
+                type="button"
+                onClick={onGroupClearAll}
+              >
+                Clear all
+              </button>
+            ) : (
+              <button
+                className={css.filterGroupButton}
+                type="button"
+                onClick={onGroupCheckAll}
+              >
+                Check all
+              </button>
+            )}
+          </div>
+        </>
+      )}
+
     </Dropdown>
   );
 };

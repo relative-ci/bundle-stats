@@ -138,7 +138,13 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -238,7 +244,13 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -338,7 +350,13 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -438,7 +456,13 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -538,7 +562,13 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -723,7 +753,13 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -823,7 +859,13 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -923,7 +965,13 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -1023,7 +1071,13 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -1123,7 +1177,13 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -1323,7 +1383,13 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -1423,7 +1489,13 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -1523,7 +1595,13 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -1623,7 +1701,13 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -1723,7 +1807,13 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -1942,7 +2032,13 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -2050,7 +2146,13 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -2158,7 +2260,13 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -2266,7 +2374,13 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -2374,7 +2488,13 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -2563,7 +2683,13 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -2663,7 +2789,13 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -2763,7 +2895,13 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -2863,7 +3001,13 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
@@ -2963,7 +3107,13 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                       "current": null,
                     }
                   }
-                  unstable_popoverStyles={Object {}}
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
                   unstable_referenceRef={
                     Object {
                       "current": <span
