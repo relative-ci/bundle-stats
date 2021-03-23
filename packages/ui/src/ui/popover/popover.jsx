@@ -49,7 +49,7 @@ export const Popover = ({ className, icon, label, ariaLabel, children }) => {
       <UIPopover className={css.popover} {...popover} tabIndex={0}>
         <UIPopoverArrow className={css.arrow} {...popover} />
 
-        {children}
+        {typeof children === 'function' ? children({ popoverToggle: popover.toggle }) : children}
 
         <Icon
           glyph="close"
@@ -67,7 +67,7 @@ Popover.propTypes = {
   className: PropTypes.string,
   label: PropTypes.element,
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  children: PropTypes.node.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]).isRequired,
   ariaLabel: PropTypes.string,
 };
 

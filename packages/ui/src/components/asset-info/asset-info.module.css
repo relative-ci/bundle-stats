@@ -1,13 +1,8 @@
-.root {}
-
-.chunk {
-  display: block;
-  max-width: 25ch;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.fileName {
+  padding: 2px;
+  background: var(--color-highlight-warning);
 }
 
-.viewModulesIcon {
-  transform: rotate(-90deg);
+.viewModules {
+  display: block;
 }

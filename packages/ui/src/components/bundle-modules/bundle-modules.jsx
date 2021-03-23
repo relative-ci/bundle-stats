@@ -40,14 +40,17 @@ const RowHeader = ({ row, chunks, labels, CustomComponentLink }) => {
         content
         : (
         <Popover ariaLabel="View module info" label={content}>
-          <ModuleInfo
-            className={css.namePopover}
-            item={row}
-            chunks={chunks}
-            chunkIds={chunkIds}
-            labels={labels}
-            customComponentLink={CustomComponentLink}
-          />
+          {({ popoverToggle }) => (
+            <ModuleInfo
+              className={css.namePopover}
+              item={row}
+              chunks={chunks}
+              chunkIds={chunkIds}
+              labels={labels}
+              customComponentLink={CustomComponentLink}
+              onClick={popoverToggle}
+            />
+          )}
         </Popover>
       )}
     </div>

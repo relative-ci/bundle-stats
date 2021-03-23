@@ -35,7 +35,7 @@ const getPopoverContent = ({
 
   return (
     <Stack space="xxsmall" className={css.packagePopover}>
-      <h4 className={css.packagePopoverTitle}>{packageName}</h4>
+      <h3 className={css.packagePopoverTitle}>{packageName}</h3>
       <ul className={css.packagePopoverList}>
         <li className={css.packagePopoverItem}>
           <a href={`https://www.npmjs.com/package/${packageName}`} target="_blank" rel="noreferrer">
@@ -57,13 +57,13 @@ const getPopoverContent = ({
         {duplicate && (
           <div>
             <CustomComponentLink {...getBundlePackagesByNameComponentLink(packageName)}>
-              View all duplicates
+              View all duplicate instances
             </CustomComponentLink>
           </div>
         )}
 
         <CustomComponentLink {...getBundleModulesBySearch(normalizedPackagePath, chunkIds)}>
-          View all modules
+          View package modules
         </CustomComponentLink>
       </Stack>
     </Stack>
