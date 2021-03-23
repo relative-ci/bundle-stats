@@ -30,5 +30,6 @@ module.exports = merge(getCommonConfig(settings), appCommonConfig, {
   ],
   optimization: {
     minimizer: [new TerserPlugin({ sourceMap: true })],
+    concatenateModules: false,
   },
 });
