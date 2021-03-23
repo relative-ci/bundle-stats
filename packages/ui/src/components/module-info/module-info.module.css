@@ -1,0 +1,20 @@
+.chunksTitle {
+  margin-right: var(--space-xxxsmall);
+}
+
+.chunksItems {
+  display: inline;
+}
+
+.chunksItem {
+  overflow-wrap: break-word;
+}
+
+.chunksItem + .chunksItem {
+  margin-left: var(--space-xxxsmall);
+}
+
+.fileName {
+  padding: 2px;
+  background: var(--color-highlight-warning);
+}

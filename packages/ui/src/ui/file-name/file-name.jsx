@@ -4,20 +4,24 @@ import cx from 'classnames';
 
 import css from './file-name.module.css';
 
-export const FileName = ({ className, name }) => (
-  <span className={cx(css.root, className)}>
+export const FileName = ({ className, as: Component, name }) => (
+  <Component className={cx(css.root, className)}>
     {name}
-  </span>
+  </Component>
 );
 
 FileName.defaultProps = {
   className: '',
+  as: 'span',
   name: '',
 };
 
 FileName.propTypes = {
   /** Adopted child class name */
   className: PropTypes.string,
+
+  /** Element type */
+  as: PropTypes.elementType,
 
   /** File name source  */
   name: PropTypes.string,
