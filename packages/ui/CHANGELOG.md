@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0-beta.2](https://github.com/relative-ci/bundle-stats/compare/v2.8.0-beta.1...v2.8.0-beta.2) (2021-03-23)
+
+
+### Bug Fixes
+
+* **ui:** Filters - crop long dropdown labels ([cfd3292](https://github.com/relative-ci/bundle-stats/commit/cfd3292c8c409243615c1b8fb463f5a547344ca1))
+* **ui:** Filters - overflow if there more than 20 items ([a6bdfd2](https://github.com/relative-ci/bundle-stats/commit/a6bdfd2e5458f6baf53009054bdab196f3decceb))
+* **ui:** MetricsTable - show count and total count ([11e4ca6](https://github.com/relative-ci/bundle-stats/commit/11e4ca6b4bdff285660fc6012a263b3f82f2541a))
+* **ui:** Remove dropdown label right margin ([b9eb061](https://github.com/relative-ci/bundle-stats/commit/b9eb0611bfc680ad41ae3edd7fce787a2ef5d643))
+
+
+### Features
+
+* **ui:** Add MetricsTableOptions ([edff4eb](https://github.com/relative-ci/bundle-stats/commit/edff4ebfb417ec8feb8f19ddcfacd1d03a7f2c17))
+* **ui:** MetricsTableOptions component ([8b30c1f](https://github.com/relative-ci/bundle-stats/commit/8b30c1ffa0cbfb463a3efc35354470c6a6d9630d))
+
+
+
+
+
 # [2.8.0-beta.1](https://github.com/relative-ci/bundle-stats/compare/v2.7.2...v2.8.0-beta.1) (2021-03-19)
 
 
