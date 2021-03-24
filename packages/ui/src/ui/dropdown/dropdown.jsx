@@ -34,7 +34,11 @@ export const Dropdown = (props) => {
         </FlexStack>
       </MenuButton>
       <Menu {...menu} aria-label={label} className={css.dropdown}>
-        {typeof children === 'function' ? children({ MenuItem, menu, dropdownToggle: menu.toggle }) : children}
+        {typeof children === 'function' ? children({
+          MenuItem,
+          menu,
+          menuItemClassName: css.menuItem,
+        }) : children}
       </Menu>
     </>
   );
@@ -42,7 +46,7 @@ export const Dropdown = (props) => {
 
 Dropdown.defaultProps = {
   className: '',
-  label: '',
+  label: null,
   glyph: null,
   activeLabel: false,
 };
@@ -52,7 +56,7 @@ Dropdown.propTypes = {
   className: PropTypes.string,
 
   /** Button label */
-  label: PropTypes.string,
+  label: PropTypes.node,
 
   /** Icon glyph */
   glyph: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),

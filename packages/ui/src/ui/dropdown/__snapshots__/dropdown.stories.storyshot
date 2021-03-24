@@ -1084,7 +1084,6 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                 tabIndex={-1}
               >
                 <button
-                  onClick={[Function]}
                   type="button"
                 >
                   Toggle dropdown

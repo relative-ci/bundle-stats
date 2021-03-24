@@ -1,21 +1,6 @@
-.items {
-  margin: calc(0px - var(--space-xsmall)) calc(0px - var(--space-small));
-}
-
-.itemButton {
-  padding: var(--space-xsmall) var(--space-small);
+.item {
+  padding: var(--space-xxxsmall) var(--space-small);
   display: flex;
-  width: 100%;
-
-  outline: 0;
-  appearance: none;
-  border: 0;
-  background: none;
-  color: inherit;
-  font-size: var(--size-small);
-  line-height: var(--space-small);
-  cursor: pointer;
-  text-align: left;
 }
 
 .itemIcon {
@@ -30,14 +15,14 @@
   transform: rotate(180deg);
 }
 
-.item:hover {
-  background: var(--color-highlight);
-  color: var(--color-text-dark);
+.item:hover,
+.item:active,
+.item:focus {
+  color: var(--color-primary);
 }
 
 .item.active {
-  background: var(--color-highlight);
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
 }
 
 .item.active .itemIcon {

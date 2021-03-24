@@ -91,7 +91,7 @@ const FilterGroup = (props) => {
 
   return (
     <Dropdown label={`${groupLabel}: ${filterSuffix}`}>
-      {({ MenuItem, menu }) => (
+      {({ MenuItem, menu, menuItemClassName }) => (
         <>
           <div className={css.filterGroupItems}>
             {groupItems.map(([itemKey, itemData]) => {
@@ -113,35 +113,40 @@ const FilterGroup = (props) => {
               };
 
               return (
-                <Filter
-                  key={id}
-                  name={id}
-                  label={itemData.label}
-                  onChange={handleOnChange}
-                  checked={values[id]}
-                  disabled={itemData.disabled}
-                  getOnOnlyClick={getOnOnlyClick}
-                />
+                <MenuItem key={id} {...menu} className={cx(menuItemClassName, css.filterGroupItem)}>
+                  <Filter
+                    name={id}
+                    label={itemData.label}
+                    onChange={handleOnChange}
+                    checked={values[id]}
+                    disabled={itemData.disabled}
+                    getOnOnlyClick={getOnOnlyClick}
+                  />
+                </MenuItem>
               );
             })}
           </div>
           <div className={css.filterGroupActions}>
             {isGroupChecked ? (
-              <button
-                className={css.filterGroupButton}
+              <MenuItem
+                id="clear-all"
+                as="button"
+                className={menuItemClassName}
                 type="button"
                 onClick={onGroupClearAll}
               >
                 Clear all
-              </button>
+              </MenuItem>
             ) : (
-              <button
-                className={css.filterGroupButton}
+              <MenuItem
+                id="clear-all"
+                as="button"
+                className={menuItemClassName}
                 type="button"
                 onClick={onGroupCheckAll}
               >
                 Check all
-              </button>
+              </MenuItem>
             )}
           </div>
         </>

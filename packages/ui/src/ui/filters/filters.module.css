@@ -3,12 +3,9 @@
   position: relative;
   width: 100%;
   max-width: 240px;
-  font-size: var(--size-small);
-  line-height: var(--space-small);
 }
 
 .filterCheckbox {
-  padding: var(--space-xxxsmall) var(--space-large) var(--space-xxxsmall) 0;
   cursor: pointer;
   align-items: center;
 }
@@ -68,6 +65,8 @@
   width: auto;
   color: var(--color-text-light);
   z-index: var(--layout-xlow); /* show collapsed border */
+  font-size: var(--size-small);
+  line-height: var(--space-small);
 }
 
 .filterStandalone .filterCheckbox {
@@ -113,9 +112,6 @@
   line-height: 1;
 }
 
-.filterGroupButton:hover {
-  color: var(--color-primary-dark);
-}
 .items {
   align-items: flex-start;
 }
