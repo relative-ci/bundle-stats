@@ -16,7 +16,7 @@ export const SortDropdown = (props) => {
 
   return (
     <Dropdown className={rootClassName} label={customLabel} glyph="sort" align="right">
-      {({ MenuItem, menu }) => {
+      {({ MenuItem, menu, menuItemClassName }) => {
         const getButtonOnClick = (newSortBy, newDirection) => () => {
           onChange({ sortBy: newSortBy, direction: newDirection });
           menu.toggle();
@@ -39,12 +39,15 @@ export const SortDropdown = (props) => {
                   };
 
               return (
-                <div key={key} className={cx(css.item, sortBy === key && css.active)}>
-                  <MenuItem {...menu} {...buttonProps}>
-                    <span className={css.itemLabel}>{item.label}</span>
-                    <Icon className={css.itemIcon} glyph="arrow" />
-                  </MenuItem>
-                </div>
+                <MenuItem
+                  key={key}
+                  {...menu}
+                  {...buttonProps}
+                  className={cx(menuItemClassName, css.item, sortBy === key && css.active)}
+                >
+                  <span className={css.itemLabel}>{item.label}</span>
+                  <Icon className={css.itemIcon} glyph="arrow" />
+                </MenuItem>
               );
             })}
           </div>
