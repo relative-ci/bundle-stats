@@ -67,8 +67,9 @@ export const BUNDLE_ASSETS_INITIAL_JS = {
   params: {
     [COMPONENT.BUNDLE_ASSETS]: {
       filters: {
-        [ASSET_FILTERS.CHANGED]: false,
+        ...getAssetEntryTypeFilters(false),
         [`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`]: true,
+        ...getAssetFileTypeFilters(false),
         [`${ASSET_FILE_TYPE}.${FILE_TYPE_JS}`]: true,
       },
     },
@@ -81,8 +82,9 @@ export const BUNDLE_ASSETS_INITIAL_CSS = {
   params: {
     [COMPONENT.BUNDLE_ASSETS]: {
       filters: {
-        [ASSET_FILTERS.CHANGED]: false,
+        ...getAssetEntryTypeFilters(false),
         [`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`]: true,
+        ...getAssetFileTypeFilters(false),
         [`${ASSET_FILE_TYPE}.${FILE_TYPE_CSS}`]: true,
       },
     },
@@ -96,8 +98,6 @@ export const BUNDLE_ASSETS_CACHE_INVALIDATION = {
     [COMPONENT.BUNDLE_ASSETS]: {
       filters: {
         [ASSET_FILTERS.CHANGED]: true,
-        ...getAssetEntryTypeFilters(true),
-        ...getAssetFileTypeFilters(true),
       },
     },
   },
@@ -109,9 +109,8 @@ export const BUNDLE_ASSETS_COUNT = {
   params: {
     [COMPONENT.BUNDLE_ASSETS]: {
       filters: {
+        // Keep a filter to allow the merge and skip default
         [ASSET_FILTERS.CHANGED]: false,
-        ...getAssetEntryTypeFilters(true),
-        ...getAssetFileTypeFilters(true),
       },
     },
   },
@@ -123,9 +122,8 @@ export const BUNDLE_ASSETS_CHUNK_COUNT = {
   params: {
     [COMPONENT.BUNDLE_ASSETS]: {
       filters: {
-        [ASSET_FILTERS.CHANGED]: false,
+        ...getAssetEntryTypeFilters(false),
         [`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`]: true,
-        ...getAssetFileTypeFilters(true),
       },
     },
   },
@@ -137,34 +135,29 @@ export const BUNDLE_MODULES = {
   params: {
     [COMPONENT.BUNDLE_MODULES]: {
       filters: {
+        // Keep a filter to allow the merge and skip default
         [MODULE_FILTERS.CHANGED]: false,
       },
     },
   },
 };
 
-export const getBundleModulesBySearch = (search, chunkIds) => ({
+export const getBundleModulesBySearch = (search) => ({
   section: SECTIONS.MODULES,
   title: I18N.COMPONENT_LINK_MODULES,
   params: {
     [COMPONENT.BUNDLE_MODULES]: {
       search,
-      filters: {
-        [MODULE_FILTERS.CHANGED]: false,
-        ...getModuleChunkFilters(chunkIds, true),
-        ...getModuleFileTypeFilters(true),
-      },
     },
   },
 });
 
 export const getBundleModulesByChunk = (chunkIds, chunkId, fileType = '') => ({
   section: SECTIONS.MODULES,
-  title: I18N.COMPONENT_LINK_MODULES,
+  title: I18N.COMPONENT_LINK_CHUNK_MODULES,
   params: {
     [COMPONENT.BUNDLE_MODULES]: {
       filters: {
-        [MODULE_FILTERS.CHANGED]: false,
         ...getModuleChunkFilters(chunkIds, false),
         [`${MODULE_CHUNK}.${chunkId}`]: true,
         ...(fileType && {
@@ -182,6 +175,7 @@ export const BUNLDE_PACKAGES_COUNT = {
   params: {
     [COMPONENT.BUNDLE_PACKAGES]: {
       filters: {
+        // Keep a filter to allow the merge and skip default
         [PACKAGE_FILTERS.CHANGED]: false,
       },
     },
@@ -194,7 +188,6 @@ export const BUNDLE_PACKAGES_DUPLICATE = {
   params: {
     [COMPONENT.BUNDLE_PACKAGES]: {
       filters: {
-        [PACKAGE_FILTERS.CHANGED]: false,
         [PACKAGE_FILTERS.DUPLICATE]: true,
       },
     },
@@ -207,8 +200,6 @@ export const getBundleAssetsFileTypeComponentLink = (fileType, label) => ({
   params: {
     [COMPONENT.BUNDLE_ASSETS]: {
       filters: {
-        [ASSET_FILTERS.CHANGED]: false,
-        ...getAssetEntryTypeFilters(true),
         ...getAssetFileTypeFilters(false),
         [`${ASSET_FILE_TYPE}.${fileType}`]: true,
       },
@@ -223,7 +214,6 @@ export const getBundlePackagesByNameComponentLink = (search) => ({
     [COMPONENT.BUNDLE_PACKAGES]: {
       search,
       filters: {
-        [PACKAGE_FILTERS.CHANGED]: false,
         [PACKAGE_FILTERS.DUPLICATE]: true,
       },
     },

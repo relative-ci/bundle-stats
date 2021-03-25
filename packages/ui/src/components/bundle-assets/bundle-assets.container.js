@@ -131,12 +131,6 @@ export const enhance = compose(
       ...getAssetFileTypeFilters(true),
     };
 
-    const emptyFilters = {
-      [ASSET_FILTERS.CHANGED]: false,
-      ...getAssetEntryTypeFilters(false),
-      ...getAssetFileTypeFilters(false),
-    };
-
     const allEntriesFilters = {
       [ASSET_FILTERS.CHANGED]: false,
       ...getAssetEntryTypeFilters(true),
@@ -147,7 +141,6 @@ export const enhance = compose(
       items,
       totalRowCount: items.length,
       defaultFilters,
-      emptyFilters,
       allEntriesFilters,
     };
   }),
