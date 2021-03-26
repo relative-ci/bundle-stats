@@ -69,12 +69,11 @@ export const useSearch = ({
   setState,
   search: customSearch,
   filters: customFilters,
-  emptyFilters,
   defaultFilters,
   allEntriesFilters,
 }) => {
-  // When we pass custom filters, set the other flags to false (emptyFilters)
-  const initialFilters = customFilters ? merge({}, emptyFilters, customFilters) : defaultFilters;
+  // When we pass custom filters, set the other flags to true(allEntries)
+  const initialFilters = customFilters ? merge({}, allEntriesFilters, customFilters) : defaultFilters;
 
   const [{ search, searchPattern, filters }, dispatch] = useReducer(
     getSearchReducer({ defaultFilters, allEntriesFilters }),
@@ -153,13 +152,12 @@ export const useSearch = ({
 
 export const withSearch = () => (BaseComponent) => {
   const WithSearch = (props) => {
-    const { allEntriesFilters, defaultFilters, emptyFilters, filters, search, setState } = props;
+    const { allEntriesFilters, defaultFilters, filters, search, setState } = props;
     const searchProps = useSearch({
       search,
       filters,
       setState,
       defaultFilters,
-      emptyFilters,
       allEntriesFilters,
     });
 
@@ -174,7 +172,6 @@ export const withSearch = () => (BaseComponent) => {
 
   WithSearch.propTypes = {
     allEntriesFilters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-    emptyFilters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
     defaultFilters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
     filters: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     search: PropTypes.string,

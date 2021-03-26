@@ -65,12 +65,6 @@ export default compose(
       ...getModuleFileTypeFilters(true),
     };
 
-    const emptyFilters = {
-      changed: false,
-      ...getModuleChunkFilters(chunkIds, false),
-      ...getModuleFileTypeFilters(false),
-    };
-
     const allEntriesFilters = {
       changed: false,
       ...getModuleChunkFilters(chunkIds, true),
@@ -79,7 +73,6 @@ export default compose(
 
     return {
       defaultFilters,
-      emptyFilters,
       allEntriesFilters,
       totalRowCount: items.length,
       items,

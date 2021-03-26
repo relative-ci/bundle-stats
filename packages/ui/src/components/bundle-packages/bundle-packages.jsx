@@ -25,7 +25,6 @@ import { MetricsTableTitle } from '../metrics-table-title';
 import css from './bundle-packages.module.css';
 
 const getPopoverContent = ({
-  chunkIds,
   packageName,
   packagePath,
   duplicate,
@@ -62,7 +61,7 @@ const getPopoverContent = ({
           </div>
         )}
 
-        <CustomComponentLink {...getBundleModulesBySearch(normalizedPackagePath, chunkIds)}>
+        <CustomComponentLink {...getBundleModulesBySearch(normalizedPackagePath)}>
           View package modules
         </CustomComponentLink>
       </Stack>
@@ -98,8 +97,6 @@ export const BundlePackages = (props) => {
     />
   );
 
-  const chunkIds = (jobs[0]?.meta?.webpack?.chunks || []).map(({ id }) => id);
-
   const renderRowHeader = (item) => {
     const packageNames = item.label.split(PACKAGES_SEPARATOR);
     return (
@@ -115,7 +112,6 @@ export const BundlePackages = (props) => {
           return (
             <Popover className={css.packageName} icon={duplicateFlag} label={packageName}>
               {getPopoverContent({
-                chunkIds,
                 packageName,
                 packagePath: item.label,
                 duplicate: item.duplicate,

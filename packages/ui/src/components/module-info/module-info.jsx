@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { isEmpty, find, noop } from 'lodash';
-import { getBundleModulesByChunk, getModuleFileType } from '@bundle-stats/utils';
+import { getBundleModulesByChunk } from '@bundle-stats/utils';
 
 import { Stack } from '../../layout/stack';
 import { FileName } from '../../ui/file-name';
@@ -18,8 +18,6 @@ export const ModuleInfo = (props) => {
     customComponentLink: CustomComponentLink,
     onClick,
   } = props;
-
-  const fileType = getModuleFileType(item.key);
 
   return (
     <Stack space="small" className={className}>
@@ -42,7 +40,7 @@ export const ModuleInfo = (props) => {
 
                   return (
                     <CustomComponentLink
-                      {...getBundleModulesByChunk(chunkIds, chunkId, fileType)}
+                      {...getBundleModulesByChunk(chunkIds, chunkId)}
                       onClick={onClick}
                       className={css.chunksItem}
                     >

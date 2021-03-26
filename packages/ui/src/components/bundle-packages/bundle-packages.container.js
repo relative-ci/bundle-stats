@@ -63,10 +63,6 @@ export const enhance = compose(
       [PACKAGE_FILTERS.CHANGED]: jobs?.length > 1,
       [PACKAGE_FILTERS.DUPLICATE]: false,
     };
-    const emptyFilters = {
-      [PACKAGE_FILTERS.CHANGED]: false,
-      [PACKAGE_FILTERS.DUPLICATE]: false,
-    };
     const allEntriesFilters = {
       [PACKAGE_FILTERS.CHANGED]: false,
       [PACKAGE_FILTERS.DUPLICATE]: false,
@@ -76,7 +72,6 @@ export const enhance = compose(
       totalRowCount: items.length,
       items,
       defaultFilters,
-      emptyFilters,
       allEntriesFilters,
     };
   }),
