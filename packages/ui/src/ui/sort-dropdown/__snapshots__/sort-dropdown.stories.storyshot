@@ -73,6 +73,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
         <Dropdown
           activeLabel={false}
           align="right"
+          ariaLabel=""
           className="root"
           glyph="sort"
           label="Ordered by Size"
