@@ -84,6 +84,11 @@
 }
 
 /** Filter group variation */
+.labelSuffixCustom {
+  color: var(--color-text);
+  text-transform: lowercase;
+}
+
 .filterGroupItems {
   max-height: calc(20 * (var(--space-small) + 2 * var(--space-xxxsmall)));
   overflow: auto;

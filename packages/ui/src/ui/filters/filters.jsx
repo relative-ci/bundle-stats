@@ -5,7 +5,7 @@ import { get } from 'lodash';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Dropdown } from '../dropdown';
-import { getGroupFiltersLabelSuffix } from './filters.utils';
+import { getGroupFiltersLabelSuffix, LABELS } from './filters.utils';
 import css from './filters.module.css';
 
 const Filter = (props) => {
@@ -66,6 +66,16 @@ const FilterGroup = (props) => {
   const isGroupChecked = groupCheckboxes.map(([itemKey]) => get(values, `${groupKey}.${itemKey}`)).reduce((agg, val) => agg && val, true);
 
   const filterSuffix = getGroupFiltersLabelSuffix(groupItems);
+  const hasCustomFilterSuffix = !Object.values(LABELS).includes(filterSuffix);
+  const dropdownLabel = (
+    <>
+      {`${groupLabel}:`}
+      &nbsp;
+      <span className={cx(hasCustomFilterSuffix && css.labelSuffixCustom)}>
+        {filterSuffix}
+      </span>
+    </>
+  );
 
   const onGroupClearAll = () => {
     groupCheckboxes.forEach(([itemKey, item]) => {
@@ -90,7 +100,7 @@ const FilterGroup = (props) => {
   };
 
   return (
-    <Dropdown label={`${groupLabel}: ${filterSuffix}`}>
+    <Dropdown label={dropdownLabel} ariaLabel={`${groupLabel}: ${filterSuffix}`}>
       {({ MenuItem, menu, menuItemClassName }) => (
         <>
           <div className={css.filterGroupItems}>
