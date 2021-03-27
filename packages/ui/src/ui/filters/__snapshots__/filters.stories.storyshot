@@ -217,9 +217,20 @@ exports[`Storyshots UI/Filters default 1`] = `
                     >
                       <Dropdown
                         activeLabel={false}
+                        ariaLabel="File types: all"
                         className=""
                         glyph={null}
-                        label="File types: all"
+                        label={
+                          <React.Fragment>
+                            File types:
+                             
+                            <span
+                              className=""
+                            >
+                              all
+                            </span>
+                          </React.Fragment>
+                        }
                       >
                         <ForwardRef(MenuButton)
                           animated={false}
@@ -448,11 +459,13 @@ exports[`Storyshots UI/Filters default 1`] = `
                                 <div
                                   class="label root space--xxxsmall"
                                 >
-                                  <div
-                                    class="item"
+                                  File types:
+                                   
+                                  <span
+                                    class=""
                                   >
-                                    File types: all
-                                  </div>
+                                    all
+                                  </span>
                                 </div>
                               </button>,
                             }
@@ -655,11 +668,13 @@ exports[`Storyshots UI/Filters default 1`] = `
                                 <div
                                   class="label root space--xxxsmall"
                                 >
-                                  <div
-                                    class="item"
+                                  File types:
+                                   
+                                  <span
+                                    class=""
                                   >
-                                    File types: all
-                                  </div>
+                                    all
+                                  </span>
                                 </div>
                               </button>,
                             }
@@ -700,12 +715,13 @@ exports[`Storyshots UI/Filters default 1`] = `
                               <div
                                 className="label root space--xxxsmall"
                               >
-                                <div
-                                  className="item"
-                                  key=".1"
+                                File types:
+                                 
+                                <span
+                                  className=""
                                 >
-                                  File types: all
-                                </div>
+                                  all
+                                </span>
                               </div>
                             </FlexStack>
                           </button>
@@ -937,11 +953,13 @@ exports[`Storyshots UI/Filters default 1`] = `
                                 <div
                                   class="label root space--xxxsmall"
                                 >
-                                  <div
-                                    class="item"
+                                  File types:
+                                   
+                                  <span
+                                    class=""
                                   >
-                                    File types: all
-                                  </div>
+                                    all
+                                  </span>
                                 </div>
                               </button>,
                             }
@@ -1144,11 +1162,13 @@ exports[`Storyshots UI/Filters default 1`] = `
                                 <div
                                   class="label root space--xxxsmall"
                                 >
-                                  <div
-                                    class="item"
+                                  File types:
+                                   
+                                  <span
+                                    class=""
                                   >
-                                    File types: all
-                                  </div>
+                                    all
+                                  </span>
                                 </div>
                               </button>,
                             }
@@ -1597,11 +1617,13 @@ exports[`Storyshots UI/Filters default 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            File types:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              File types: all
-                                            </div>
+                                              all
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -1804,11 +1826,13 @@ exports[`Storyshots UI/Filters default 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            File types:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              File types: all
-                                            </div>
+                                              all
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -2117,11 +2141,13 @@ exports[`Storyshots UI/Filters default 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            File types:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              File types: all
-                                            </div>
+                                              all
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -2324,11 +2350,13 @@ exports[`Storyshots UI/Filters default 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            File types:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              File types: all
-                                            </div>
+                                              all
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -2637,11 +2665,13 @@ exports[`Storyshots UI/Filters default 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            File types:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              File types: all
-                                            </div>
+                                              all
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -2844,11 +2874,13 @@ exports[`Storyshots UI/Filters default 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            File types:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              File types: all
-                                            </div>
+                                              all
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -3157,11 +3189,13 @@ exports[`Storyshots UI/Filters default 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            File types:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              File types: all
-                                            </div>
+                                              all
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -3364,11 +3398,13 @@ exports[`Storyshots UI/Filters default 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            File types:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              File types: all
-                                            </div>
+                                              all
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -3758,9 +3794,20 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                   >
                     <Dropdown
                       activeLabel={false}
+                      ariaLabel="File types: all"
                       className=""
                       glyph={null}
-                      label="File types: all"
+                      label={
+                        <React.Fragment>
+                          File types:
+                           
+                          <span
+                            className=""
+                          >
+                            all
+                          </span>
+                        </React.Fragment>
+                      }
                     >
                       <ForwardRef(MenuButton)
                         animated={false}
@@ -3948,11 +3995,13 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                               <div
                                 class="label root space--xxxsmall"
                               >
-                                <div
-                                  class="item"
+                                File types:
+                                 
+                                <span
+                                  class=""
                                 >
-                                  File types: all
-                                </div>
+                                  all
+                                </span>
                               </div>
                             </button>,
                           }
@@ -4121,11 +4170,13 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                               <div
                                 class="label root space--xxxsmall"
                               >
-                                <div
-                                  class="item"
+                                File types:
+                                 
+                                <span
+                                  class=""
                                 >
-                                  File types: all
-                                </div>
+                                  all
+                                </span>
                               </div>
                             </button>,
                           }
@@ -4166,12 +4217,13 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                             <div
                               className="label root space--xxxsmall"
                             >
-                              <div
-                                className="item"
-                                key=".1"
+                              File types:
+                               
+                              <span
+                                className=""
                               >
-                                File types: all
-                              </div>
+                                all
+                              </span>
                             </div>
                           </FlexStack>
                         </button>
@@ -4362,11 +4414,13 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                               <div
                                 class="label root space--xxxsmall"
                               >
-                                <div
-                                  class="item"
+                                File types:
+                                 
+                                <span
+                                  class=""
                                 >
-                                  File types: all
-                                </div>
+                                  all
+                                </span>
                               </div>
                             </button>,
                           }
@@ -4535,11 +4589,13 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                               <div
                                 class="label root space--xxxsmall"
                               >
-                                <div
-                                  class="item"
+                                File types:
+                                 
+                                <span
+                                  class=""
                                 >
-                                  File types: all
-                                </div>
+                                  all
+                                </span>
                               </div>
                             </button>,
                           }
@@ -4913,11 +4969,13 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                                         <div
                                           class="label root space--xxxsmall"
                                         >
-                                          <div
-                                            class="item"
+                                          File types:
+                                           
+                                          <span
+                                            class=""
                                           >
-                                            File types: all
-                                          </div>
+                                            all
+                                          </span>
                                         </div>
                                       </button>,
                                     }
@@ -5086,11 +5144,13 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                                         <div
                                           class="label root space--xxxsmall"
                                         >
-                                          <div
-                                            class="item"
+                                          File types:
+                                           
+                                          <span
+                                            class=""
                                           >
-                                            File types: all
-                                          </div>
+                                            all
+                                          </span>
                                         </div>
                                       </button>,
                                     }
@@ -5358,11 +5418,13 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                                         <div
                                           class="label root space--xxxsmall"
                                         >
-                                          <div
-                                            class="item"
+                                          File types:
+                                           
+                                          <span
+                                            class=""
                                           >
-                                            File types: all
-                                          </div>
+                                            all
+                                          </span>
                                         </div>
                                       </button>,
                                     }
@@ -5531,11 +5593,13 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                                         <div
                                           class="label root space--xxxsmall"
                                         >
-                                          <div
-                                            class="item"
+                                          File types:
+                                           
+                                          <span
+                                            class=""
                                           >
-                                            File types: all
-                                          </div>
+                                            all
+                                          </span>
                                         </div>
                                       </button>,
                                     }
@@ -5803,11 +5867,13 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                                         <div
                                           class="label root space--xxxsmall"
                                         >
-                                          <div
-                                            class="item"
+                                          File types:
+                                           
+                                          <span
+                                            class=""
                                           >
-                                            File types: all
-                                          </div>
+                                            all
+                                          </span>
                                         </div>
                                       </button>,
                                     }
@@ -5976,11 +6042,13 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                                         <div
                                           class="label root space--xxxsmall"
                                         >
-                                          <div
-                                            class="item"
+                                          File types:
+                                           
+                                          <span
+                                            class=""
                                           >
-                                            File types: all
-                                          </div>
+                                            all
+                                          </span>
                                         </div>
                                       </button>,
                                     }
@@ -6538,9 +6606,20 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                     >
                       <Dropdown
                         activeLabel={false}
+                        ariaLabel="Chunks: none"
                         className=""
                         glyph={null}
-                        label="Chunks: none"
+                        label={
+                          <React.Fragment>
+                            Chunks:
+                             
+                            <span
+                              className=""
+                            >
+                              none
+                            </span>
+                          </React.Fragment>
+                        }
                       >
                         <ForwardRef(MenuButton)
                           animated={false}
@@ -7485,11 +7564,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                 <div
                                   class="label root space--xxxsmall"
                                 >
-                                  <div
-                                    class="item"
+                                  Chunks:
+                                   
+                                  <span
+                                    class=""
                                   >
-                                    Chunks: none
-                                  </div>
+                                    none
+                                  </span>
                                 </div>
                               </button>,
                             }
@@ -8282,11 +8363,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                 <div
                                   class="label root space--xxxsmall"
                                 >
-                                  <div
-                                    class="item"
+                                  Chunks:
+                                   
+                                  <span
+                                    class=""
                                   >
-                                    Chunks: none
-                                  </div>
+                                    none
+                                  </span>
                                 </div>
                               </button>,
                             }
@@ -8327,12 +8410,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                               <div
                                 className="label root space--xxxsmall"
                               >
-                                <div
-                                  className="item"
-                                  key=".1"
+                                Chunks:
+                                 
+                                <span
+                                  className=""
                                 >
-                                  Chunks: none
-                                </div>
+                                  none
+                                </span>
                               </div>
                             </FlexStack>
                           </button>
@@ -9280,11 +9364,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                 <div
                                   class="label root space--xxxsmall"
                                 >
-                                  <div
-                                    class="item"
+                                  Chunks:
+                                   
+                                  <span
+                                    class=""
                                   >
-                                    Chunks: none
-                                  </div>
+                                    none
+                                  </span>
                                 </div>
                               </button>,
                             }
@@ -10077,11 +10163,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                 <div
                                   class="label root space--xxxsmall"
                                 >
-                                  <div
-                                    class="item"
+                                  Chunks:
+                                   
+                                  <span
+                                    class=""
                                   >
-                                    Chunks: none
-                                  </div>
+                                    none
+                                  </span>
                                 </div>
                               </button>,
                             }
@@ -11836,11 +11924,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -12633,11 +12723,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -13660,11 +13752,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -14457,11 +14551,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -15484,11 +15580,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -16281,11 +16379,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -17308,11 +17408,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -18105,11 +18207,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -19132,11 +19236,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -19929,11 +20035,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -20956,11 +21064,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -21753,11 +21863,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -22780,11 +22892,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -23577,11 +23691,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -24604,11 +24720,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -25401,11 +25519,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -26428,11 +26548,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -27225,11 +27347,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -28252,11 +28376,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -29049,11 +29175,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -30076,11 +30204,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -30873,11 +31003,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -31900,11 +32032,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -32697,11 +32831,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -33724,11 +33860,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -34521,11 +34659,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -35548,11 +35688,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -36345,11 +36487,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -37372,11 +37516,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -38169,11 +38315,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -39196,11 +39344,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -39993,11 +40143,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -41020,11 +41172,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -41817,11 +41971,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -42844,11 +43000,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -43641,11 +43799,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -44668,11 +44828,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -45465,11 +45627,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -46492,11 +46656,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -47289,11 +47455,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -48316,11 +48484,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -49113,11 +49283,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -50140,11 +50312,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }
@@ -50937,11 +51111,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           <div
                                             class="label root space--xxxsmall"
                                           >
-                                            <div
-                                              class="item"
+                                            Chunks:
+                                             
+                                            <span
+                                              class=""
                                             >
-                                              Chunks: none
-                                            </div>
+                                              none
+                                            </span>
                                           </div>
                                         </button>,
                                       }

@@ -24,6 +24,6 @@
   width: 32px;
   height: 32px;
   border: 0.33rem solid var(--color-highlight);
-  border-top-color: var(--color-text-light);
-  animation: spin 1s infinite linear;
+  border-top-color: var(--color-outline);
+  animation: spin 0.85s infinite linear;
 }

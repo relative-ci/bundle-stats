@@ -148,6 +148,10 @@ export const getBundleModulesBySearch = (search) => ({
   params: {
     [COMPONENT.BUNDLE_MODULES]: {
       search,
+      filters: {
+        // Keep a filter to allow the merge and skip default
+        [MODULE_FILTERS.CHANGED]: false,
+      },
     },
   },
 });
