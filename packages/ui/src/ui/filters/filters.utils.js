@@ -2,6 +2,11 @@ const FILTER_SUFFIX_MAX_LENGTH = 18;
 const ELLIPSES = '...';
 const JOIN = ', ';
 
+export const LABELS = {
+  NONE: 'none',
+  ALL: 'all',
+};
+
 /**
  * @param {Array<Array>} filters
  * @return {String}
@@ -13,11 +18,11 @@ export const getGroupFiltersLabelSuffix = (filters) => {
   const filterCheckedCount = checkedFilters.length;
 
   if (filterCheckedCount === 0) {
-    return 'none';
+    return LABELS.NONE;
   }
 
   if (filterCheckedCount === filterCount) {
-    return 'all';
+    return LABELS.ALL;
   }
 
   // eslint-disable-next-line no-unused-vars

@@ -54,6 +54,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
     >
       <Dropdown
         activeLabel={false}
+        ariaLabel=""
         className=""
         glyph="filter"
         label="Toggle"
@@ -609,6 +610,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
     >
       <Dropdown
         activeLabel={false}
+        ariaLabel=""
         className=""
         glyph="filter"
         label="Toggle"
@@ -1084,7 +1086,6 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                 tabIndex={-1}
               >
                 <button
-                  onClick={[Function]}
                   type="button"
                 >
                   Toggle dropdown
@@ -1154,6 +1155,7 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
       <Dropdown
         activeLabel={false}
         align="right"
+        ariaLabel=""
         className=""
         glyph="filter"
         label="Toggle"

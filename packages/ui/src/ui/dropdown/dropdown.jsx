@@ -13,7 +13,7 @@ import { Icon } from '../icon';
 import css from './dropdown.module.css';
 
 export const Dropdown = (props) => {
-  const { className, label, glyph, activeLabel, children } = props;
+  const { className, label, ariaLabel, glyph, activeLabel, children } = props;
   const rootClassName = cx(
     css.root,
     activeLabel && css.activeLabel,
@@ -33,8 +33,12 @@ export const Dropdown = (props) => {
           {label}
         </FlexStack>
       </MenuButton>
-      <Menu {...menu} aria-label={label} className={css.dropdown}>
-        {typeof children === 'function' ? children({ MenuItem, menu, dropdownToggle: menu.toggle }) : children}
+      <Menu {...menu} aria-label={ariaLabel || label} className={css.dropdown}>
+        {typeof children === 'function' ? children({
+          MenuItem,
+          menu,
+          menuItemClassName: css.menuItem,
+        }) : children}
       </Menu>
     </>
   );
@@ -42,7 +46,8 @@ export const Dropdown = (props) => {
 
 Dropdown.defaultProps = {
   className: '',
-  label: '',
+  label: null,
+  ariaLabel: '',
   glyph: null,
   activeLabel: false,
 };
@@ -52,7 +57,10 @@ Dropdown.propTypes = {
   className: PropTypes.string,
 
   /** Button label */
-  label: PropTypes.string,
+  label: PropTypes.node,
+
+  /** Aria label */
+  ariaLabel: PropTypes.string,
 
   /** Icon glyph */
   glyph: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),

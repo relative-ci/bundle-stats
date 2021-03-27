@@ -5,7 +5,7 @@ import { get } from 'lodash';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Dropdown } from '../dropdown';
-import { getGroupFiltersLabelSuffix } from './filters.utils';
+import { getGroupFiltersLabelSuffix, LABELS } from './filters.utils';
 import css from './filters.module.css';
 
 const Filter = (props) => {
@@ -66,6 +66,16 @@ const FilterGroup = (props) => {
   const isGroupChecked = groupCheckboxes.map(([itemKey]) => get(values, `${groupKey}.${itemKey}`)).reduce((agg, val) => agg && val, true);
 
   const filterSuffix = getGroupFiltersLabelSuffix(groupItems);
+  const hasCustomFilterSuffix = !Object.values(LABELS).includes(filterSuffix);
+  const dropdownLabel = (
+    <>
+      {`${groupLabel}:`}
+      &nbsp;
+      <span className={cx(hasCustomFilterSuffix && css.labelSuffixCustom)}>
+        {filterSuffix}
+      </span>
+    </>
+  );
 
   const onGroupClearAll = () => {
     groupCheckboxes.forEach(([itemKey, item]) => {
@@ -90,8 +100,8 @@ const FilterGroup = (props) => {
   };
 
   return (
-    <Dropdown label={`${groupLabel}: ${filterSuffix}`}>
-      {({ MenuItem, menu }) => (
+    <Dropdown label={dropdownLabel} ariaLabel={`${groupLabel}: ${filterSuffix}`}>
+      {({ MenuItem, menu, menuItemClassName }) => (
         <>
           <div className={css.filterGroupItems}>
             {groupItems.map(([itemKey, itemData]) => {
@@ -113,35 +123,40 @@ const FilterGroup = (props) => {
               };
 
               return (
-                <Filter
-                  key={id}
-                  name={id}
-                  label={itemData.label}
-                  onChange={handleOnChange}
-                  checked={values[id]}
-                  disabled={itemData.disabled}
-                  getOnOnlyClick={getOnOnlyClick}
-                />
+                <MenuItem key={id} {...menu} className={cx(menuItemClassName, css.filterGroupItem)}>
+                  <Filter
+                    name={id}
+                    label={itemData.label}
+                    onChange={handleOnChange}
+                    checked={values[id]}
+                    disabled={itemData.disabled}
+                    getOnOnlyClick={getOnOnlyClick}
+                  />
+                </MenuItem>
               );
             })}
           </div>
           <div className={css.filterGroupActions}>
             {isGroupChecked ? (
-              <button
-                className={css.filterGroupButton}
+              <MenuItem
+                id="clear-all"
+                as="button"
+                className={menuItemClassName}
                 type="button"
                 onClick={onGroupClearAll}
               >
                 Clear all
-              </button>
+              </MenuItem>
             ) : (
-              <button
-                className={css.filterGroupButton}
+              <MenuItem
+                id="clear-all"
+                as="button"
+                className={menuItemClassName}
                 type="button"
                 onClick={onGroupCheckAll}
               >
                 Check all
-              </button>
+              </MenuItem>
             )}
           </div>
         </>
