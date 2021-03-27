@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0-beta.3](https://github.com/relative-ci/bundle-stats/compare/v2.8.0-beta.2...v2.8.0-beta.3) (2021-03-27)
+
+
+### Bug Fixes
+
+* **ui:** Dropdown - consistent usage and styling ([46082d6](https://github.com/relative-ci/bundle-stats/commit/46082d6fd782e6861f4dfe54829b7ed6f3a1f30a))
+* **ui:** Filters - active styles for custom selection ([a0ea03a](https://github.com/relative-ci/bundle-stats/commit/a0ea03a1cad742683238f389d4e6f65516421cc9))
+* **ui:** Loader - update colors ([c3f10f4](https://github.com/relative-ci/bundle-stats/commit/c3f10f4a69fabbedfefca01518735e079c518927))
+* **ui:** Search - merge filters param to all entries filters ([024d05d](https://github.com/relative-ci/bundle-stats/commit/024d05da639e33a4c4944968f878cbd4c67f6aa1))
+
+
+
+
+
 # [2.8.0-beta.2](https://github.com/relative-ci/bundle-stats/compare/v2.8.0-beta.1...v2.8.0-beta.2) (2021-03-23)
 
 

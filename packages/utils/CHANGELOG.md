@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0-beta.3](https://github.com/relative-ci/bundle-stats/compare/v2.8.0-beta.2...v2.8.0-beta.3) (2021-03-27)
+
+
+### Bug Fixes
+
+* **ui:** Search - merge filters param to all entries filters ([024d05d](https://github.com/relative-ci/bundle-stats/commit/024d05da639e33a4c4944968f878cbd4c67f6aa1))
+* **utils:** ComponentLinks - packages change filter ([cb93c85](https://github.com/relative-ci/bundle-stats/commit/cb93c8548943c24f7358a09b55e681150589f461))
+
+
+
+
+
 # [2.8.0-beta.2](https://github.com/relative-ci/bundle-stats/compare/v2.8.0-beta.1...v2.8.0-beta.2) (2021-03-23)
 
 **Note:** Version bump only for package @bundle-stats/utils
