@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/relative-ci/bundle-stats/compare/v2.7.2...v2.8.0) (2021-03-27)
+
+
+### Bug Fixes
+
+* **ui:** Dropdown - consistent usage and styling ([46082d6](https://github.com/relative-ci/bundle-stats/commit/46082d6fd782e6861f4dfe54829b7ed6f3a1f30a))
+* **ui:** DuplicatePackagesWarning - skip delta when 0 ([e5ebc46](https://github.com/relative-ci/bundle-stats/commit/e5ebc4689aac35118d559fef244c01c087ff9c14))
+* **ui:** Export TotalSizeTypeTitle ([6c40752](https://github.com/relative-ci/bundle-stats/commit/6c407527c99716068e8226fe7605dc85510176f8))
+* **ui:** Filters - active styles for custom selection ([a0ea03a](https://github.com/relative-ci/bundle-stats/commit/a0ea03a1cad742683238f389d4e6f65516421cc9))
+* **ui:** Filters - crop long dropdown labels ([cfd3292](https://github.com/relative-ci/bundle-stats/commit/cfd3292c8c409243615c1b8fb463f5a547344ca1))
+* **ui:** Filters - overflow if there more than 20 items ([a6bdfd2](https://github.com/relative-ci/bundle-stats/commit/a6bdfd2e5458f6baf53009054bdab196f3decceb))
+* **ui:** Increase color palette saturation ([0465ab4](https://github.com/relative-ci/bundle-stats/commit/0465ab42dfcae206954a2a19089c2e8bf3f3a9e3))
+* **ui:** Loader - update colors ([c3f10f4](https://github.com/relative-ci/bundle-stats/commit/c3f10f4a69fabbedfefca01518735e079c518927))
+* **ui:** MetricsTable - show count and total count ([11e4ca6](https://github.com/relative-ci/bundle-stats/commit/11e4ca6b4bdff285660fc6012a263b3f82f2541a))
+* **ui:** Popover - pass aria-label ([547c4f1](https://github.com/relative-ci/bundle-stats/commit/547c4f1b77db9ee245516d27725b23bd1b1b87c2))
+* **ui:** Remove dropdown label right margin ([b9eb061](https://github.com/relative-ci/bundle-stats/commit/b9eb0611bfc680ad41ae3edd7fce787a2ef5d643))
+* **ui:** Search - merge filters param to all entries filters ([024d05d](https://github.com/relative-ci/bundle-stats/commit/024d05da639e33a4c4944968f878cbd4c67f6aa1))
+* **ui:** SummaryItem - correct loading state ([c053b89](https://github.com/relative-ci/bundle-stats/commit/c053b89d7b04f4265e8c3ca81d955f8c8ae05276))
+* **ui:** SummaryItem - prevent delta value from wrapping ([ddd63a1](https://github.com/relative-ci/bundle-stats/commit/ddd63a1ffe339be7cfd47bfb36649b9c890151f0))
+* **ui:** withSearch - update state when props are changing ([4f16adb](https://github.com/relative-ci/bundle-stats/commit/4f16adba54099a2ef6bb5a4e600306cc326e56d0))
+* **utils:** Component link - set chunk ids filters ([2643fd3](https://github.com/relative-ci/bundle-stats/commit/2643fd384ed60e2754b7c9aa18cad95e5c7cfd3e))
+* **utils:** ComponentLinks - packages change filter ([cb93c85](https://github.com/relative-ci/bundle-stats/commit/cb93c8548943c24f7358a09b55e681150589f461))
+* **utils:** Webpack metrics info ([8b06dd5](https://github.com/relative-ci/bundle-stats/commit/8b06dd5095b5a8206ba2531355df618431147541))
+
+
+### Features
+
+* **ui:** Add MetricsTableOptions ([edff4eb](https://github.com/relative-ci/bundle-stats/commit/edff4ebfb417ec8feb8f19ddcfacd1d03a7f2c17))
+* **ui:** BundleModules - add ModuleInfo on click ([a3ae754](https://github.com/relative-ci/bundle-stats/commit/a3ae754435a6de026a06de00c2e896742ad7a0c2))
+* **ui:** MetricsTableOptions component ([8b30c1f](https://github.com/relative-ci/bundle-stats/commit/8b30c1ffa0cbfb463a3efc35354470c6a6d9630d))
+* **ui:** ModuleInfo component ([29e6694](https://github.com/relative-ci/bundle-stats/commit/29e6694d8fb3e37ba8e14f294c0f02e3b3a9e177))
+
+
+### Performance Improvements
+
+* **ui:** BundleModules - render Popover on mouse enter ([8c0f2ce](https://github.com/relative-ci/bundle-stats/commit/8c0f2ce90924bee26a398b60b38ad56bc26af37e))
+
+
+
+
+
 ## [2.7.2](https://github.com/relative-ci/bundle-stats/compare/v2.7.1...v2.7.2) (2021-03-13)
 
 

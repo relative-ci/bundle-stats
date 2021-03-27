@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/relative-ci/bundle-stats/compare/v2.7.2...v2.8.0) (2021-03-27)
+
+
+### Bug Fixes
+
+* **ui:** Search - merge filters param to all entries filters ([024d05d](https://github.com/relative-ci/bundle-stats/commit/024d05da639e33a4c4944968f878cbd4c67f6aa1))
+* **utils:** Component link - set chunk ids filters ([2643fd3](https://github.com/relative-ci/bundle-stats/commit/2643fd384ed60e2754b7c9aa18cad95e5c7cfd3e))
+* **utils:** ComponentLinks - packages change filter ([cb93c85](https://github.com/relative-ci/bundle-stats/commit/cb93c8548943c24f7358a09b55e681150589f461))
+* **utils:** Webpack metrics info ([8b06dd5](https://github.com/relative-ci/bundle-stats/commit/8b06dd5095b5a8206ba2531355df618431147541))
+
+
+
+
+
 ## [2.7.2](https://github.com/relative-ci/bundle-stats/compare/v2.7.1...v2.7.2) (2021-03-13)
 
 
