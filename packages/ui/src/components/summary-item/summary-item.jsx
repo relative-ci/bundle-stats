@@ -21,11 +21,7 @@ const MetricInfo = ({ description, url }) => {
       <p>{description}</p>
       {url && (
         <p>
-          <button
-            type="button"
-            className={cx('ui-button ui-button--clear', css.readMoreBtn)}
-            onClick={readMoreOnClick}
-          >
+          <button type="button" className={css.readMoreBtn} onClick={readMoreOnClick}>
             Read more
           </button>
         </p>

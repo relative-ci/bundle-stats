@@ -4,7 +4,6 @@
   z-index: var(--layout-low); /** show collapsed border on focus */
 }
 
-
 .input {
   border-color: var(--color-outline);
 }
@@ -14,6 +13,13 @@
 }
 
 .cancelButton {
+  appearance: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-text-light);
+  cursor: pointer;
+  border-radius: 50%;
   position: absolute;
   right: 0;
   top: 50%;
@@ -21,6 +27,12 @@
   padding: var(--space-xxsmall);
   width: var(--space-large);
   height: var(--space-large);
+}
+
+.cancelButton:focus,
+.cancelButton:hover,
+.cancelButton:active {
+  color: var(--color-text);
 }
 
 .cancelButtonIcon {

@@ -9,8 +9,12 @@
 }
 
 .readMoreBtn {
-  /* simulate link */
+  appearance: none;
   padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  /* simulate link */
   color: var(--color-primary);
   text-decoration: underline;
   line-height: var(--space-small);
