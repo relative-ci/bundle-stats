@@ -7,6 +7,7 @@ import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, FILE_TYPE_LABELS } fr
 import config from '../../config.json';
 import I18N from '../../i18n';
 import { FlexStack } from '../../layout/flex-stack';
+import { Icon } from '../../ui/icon';
 import { FileName } from '../../ui/file-name';
 import { Popover } from '../../ui/popover';
 import { Tooltip } from '../../ui/tooltip';
@@ -75,6 +76,11 @@ const getRenderRowHeader = ({ labels, CustomComponentLink, chunks }) => (item) =
     label={<FileName name={item.label} />}
     icon={
       <FlexStack space="xxxsmall" className={css.assetInfoFlags}>
+        {item.isNotPredictive && (
+          <Tooltip className={css.notPredictive} title={<TooltipNotPredictive runs={item.runs} />}>
+            <Icon className={css.notPredictiveIcon} glyph="warning" />
+          </Tooltip>
+        )}
         {item.isChunk && (
           <span title="Chunk" className={css.flagChunk}>
             c
@@ -89,11 +95,6 @@ const getRenderRowHeader = ({ labels, CustomComponentLink, chunks }) => (item) =
           <span title="Initial" className={css.flagInitial}>
             i
           </span>
-        )}
-        {item.isNotPredictive && (
-          <Tooltip className={css.notPredictive} title={<TooltipNotPredictive runs={item.runs} />}>
-            <span className={cx('ui-icon ui-icon--small', css.notPredictiveIcon)}>warning</span>
-          </Tooltip>
         )}
       </FlexStack>
     }
