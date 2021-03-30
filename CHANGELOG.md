@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0-beta.0](https://github.com/relative-ci/bundle-stats/compare/v2.8.0...v2.9.0-beta.0) (2021-03-30)
+
+
+### Bug Fixes
+
+* **ui:** BundleAssets - use Icon for not predictive warning ([40a40c9](https://github.com/relative-ci/bundle-stats/commit/40a40c9b3f9686eeeab2a271d2f5ac7793967915))
+* **utils:** Fix info texts ([626375f](https://github.com/relative-ci/bundle-stats/commit/626375fc3d5ca3819a45689324ab5efa12b29b3f))
+
+
+### Features
+
+* **ui:** Icon - add warning svg ([ecdb419](https://github.com/relative-ci/bundle-stats/commit/ecdb41931ba3fd727763d5d095b42da97a9dea74))
+
+
+
+
+
 # [2.8.0](https://github.com/relative-ci/bundle-stats/compare/v2.7.2...v2.8.0) (2021-03-27)
 
 
