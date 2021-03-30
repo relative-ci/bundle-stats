@@ -17,6 +17,7 @@
 }
 
 .notPredictiveIcon {
+  color: var(--color-warning-dark);
   vertical-align: top;
 }
 

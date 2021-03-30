@@ -14,8 +14,8 @@ export default {
 
   ASSETS_INFO: 'Asset size is the disk file size',
   ASSET_TOTALS_INFO: 'Total file type size is the disk size of the corresponding assets.',
-  MODULES_INFO: 'Module size is the estimated size before any production optimization (eg: minimization, concatenation).',
-  PACKAGES_INFO: 'Package size the estimated size of the contained modules before any production optimization(eg: concatenation, minification).',
+  MODULES_INFO: 'Module size is the estimated size before any production optimization (eg: minimization).',
+  PACKAGES_INFO: 'Package size is the estimated size of the contained modules before any production optimization(eg: minification).',
 
   RESET_FILTERS: 'Reset filters',
   VIEW_ALL: 'View all entries',

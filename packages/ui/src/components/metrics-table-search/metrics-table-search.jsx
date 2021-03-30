@@ -20,7 +20,7 @@ export const MetricsTableSearch = (props) => {
       />
       {search && (
         <button
-          className={cx('ui-button', 'ui-button--clear', css.cancelButton)}
+          className={css.cancelButton}
           type="button"
           onClick={() => updateSearch('')}
         >

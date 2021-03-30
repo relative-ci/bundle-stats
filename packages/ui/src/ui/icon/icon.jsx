@@ -14,6 +14,7 @@ import MenuIcon from './assets/menu.svg';
 import PackageIcon from './assets/package.svg';
 import PullRequestIcon from './assets/pull-request.svg';
 import SortIcon from './assets/sort.svg';
+import WarningIcon from './assets/warning.svg';
 
 import css from './icon.module.css';
 
@@ -30,6 +31,7 @@ export const ICONS = {
   PACKAGE: 'package',
   PR: 'pr',
   SORT: 'sort',
+  WARNING: 'warning',
 };
 
 const ICON_MAP = {
@@ -45,6 +47,7 @@ const ICON_MAP = {
   [ICONS.PACKAGE]: PackageIcon,
   [ICONS.PR]: PullRequestIcon,
   [ICONS.SORT]: SortIcon,
+  [ICONS.WARNING]: WarningIcon,
 };
 
 export const Icon = ({ className, glyph, as: Component, ...restProps }) => {
