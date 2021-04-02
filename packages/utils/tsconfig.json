@@ -1,0 +1,14 @@
+{
+  "extends": "@tsconfig/node10/tsconfig.json",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "lib": ["ES2019"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "lib", "lib-esm", "__fixtures__", "**/__tests__/*"]
+}

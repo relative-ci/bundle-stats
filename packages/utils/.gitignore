@@ -9,3 +9,4 @@ Thumbs.db
 yarn.lock
 lib
 lib-esm
+types
