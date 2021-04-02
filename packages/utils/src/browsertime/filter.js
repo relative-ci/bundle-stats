@@ -1,6 +1,7 @@
-import {
-  get, merge, pick, set,
-} from 'lodash';
+import get from 'lodash/get';
+import merge from 'lodash/merge';
+import pick from 'lodash/pick';
+import set from 'lodash/set';
 
 const META_KEYS = [
   'info.browsertime.version',

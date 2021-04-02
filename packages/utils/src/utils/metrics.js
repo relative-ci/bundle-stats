@@ -1,4 +1,4 @@
-import { get } from 'lodash';
+import get from 'lodash/get';
 
 import { METRIC_TYPE_NUMERIC, METRIC_TYPES } from '../config/metrics';
 import { formatDelta, getDelta, getDeltaType } from './delta';

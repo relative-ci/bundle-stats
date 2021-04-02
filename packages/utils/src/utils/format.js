@@ -1,5 +1,5 @@
 import convert from 'convert-units';
-import { round } from 'lodash';
+import round from 'lodash/round';
 
 export const formatFileSize = (val) => {
   const res = convert(val).from('B').toBest();

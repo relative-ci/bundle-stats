@@ -1,4 +1,5 @@
-import { get, uniqBy } from 'lodash';
+import get from 'lodash/get';
+import uniqBy from 'lodash/uniqBy';
 
 import { PACKAGES_SEPARATOR } from '../../config';
 import { getModuleName } from '../utils';

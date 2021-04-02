@@ -1,4 +1,6 @@
-import { get, mean, round } from 'lodash';
+import get from 'lodash/get';
+import mean from 'lodash/mean';
+import round from 'lodash/round';
 
 /**
  * Extract average score

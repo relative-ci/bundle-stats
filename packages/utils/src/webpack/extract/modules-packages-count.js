@@ -1,4 +1,4 @@
-import { get } from 'lodash';
+import get from 'lodash/get';
 
 export const extractModulesPackagesCount = (webpackStats, currentExtractedData) => {
   const packages = get(currentExtractedData, 'metrics.packages', {});

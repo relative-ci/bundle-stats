@@ -1,4 +1,4 @@
-import { map } from 'lodash';
+import map from 'lodash/map';
 
 import { addRowData } from './add-row-data';
 import { mergeMetricsByKey } from './merge-metrics-by-key';

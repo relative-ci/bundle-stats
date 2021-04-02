@@ -1,4 +1,4 @@
-import { get } from 'lodash';
+import get from 'lodash/get';
 
 export const extractAssetsCount = (webpackStats, currentExtractedData = {}) => {
   const assets = get(currentExtractedData, 'metrics.assets', {});

@@ -1,4 +1,5 @@
-import { last, reverse } from 'lodash';
+import last from 'lodash/last';
+import reverse from 'lodash/reverse';
 
 import { createJob } from './create-job';
 

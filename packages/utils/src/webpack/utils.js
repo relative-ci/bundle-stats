@@ -1,4 +1,6 @@
-import { last, map, round } from 'lodash';
+import last from 'lodash/last';
+import map from 'lodash/map';
+import round from 'lodash/round';
 
 import { createGetMetricType } from '../utils/metrics';
 import { metrics } from './metrics';

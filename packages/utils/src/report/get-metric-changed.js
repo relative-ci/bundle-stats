@@ -1,4 +1,5 @@
-import { map, uniq } from 'lodash';
+import uniq from 'lodash/uniq';
+import map from 'lodash/map';
 
 /**
  * Check if metric is changed over runs

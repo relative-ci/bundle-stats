@@ -1,4 +1,5 @@
-import { get, pick } from 'lodash';
+import get from 'lodash/get';
+import pick from 'lodash/pick';
 
 import {
   SECTION_WEBPACK_STATS,

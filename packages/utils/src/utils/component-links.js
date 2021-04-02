@@ -1,4 +1,4 @@
-import { template } from 'lodash';
+import template from 'lodash/template';
 import { stringify } from 'query-string';
 import { JsonParam, encodeQueryParams } from 'serialize-query-params';
 

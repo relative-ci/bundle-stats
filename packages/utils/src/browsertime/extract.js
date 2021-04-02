@@ -1,4 +1,4 @@
-import { get } from 'lodash';
+import get from 'lodash/get';
 
 const METRICS = {
   firstPaint: 'statistics.timings.firstPaint',

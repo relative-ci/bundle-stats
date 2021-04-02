@@ -1,4 +1,6 @@
-import { get, merge, set } from 'lodash';
+import get from 'lodash/get';
+import merge from 'lodash/merge';
+import set from 'lodash/set';
 
 import { SOURCE_PATHS } from '../config';
 import { createSummary } from './create-summary';
