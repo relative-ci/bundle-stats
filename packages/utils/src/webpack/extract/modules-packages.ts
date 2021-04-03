@@ -1,8 +1,9 @@
+import max from 'lodash/max';
 import last from 'lodash/last';
 import uniqBy from 'lodash/uniqBy';
 
-import { PACKAGES_SEPARATOR } from '../../config';
-import { Metric, WebpackMetricsModules, WebpackMetricsPackages } from '../../constants';
+import { PACKAGES_SEPARATOR, PACKAGE_ID_SEPARATOR } from '../../config';
+import { PackageMetric, WebpackMetricsModules, WebpackMetricsPackages } from '../../constants';
 
 const PACKAGE_NAMES = /(node_modules|~)\/((!?@(([\w|\-|_|.]*)\/){2})|(([\w|\-|_|.]*)\/))/g;
 
@@ -10,7 +11,7 @@ const getPackageInfoFromModulePath = (moduleName: string) => {
   const found = moduleName.match(PACKAGE_NAMES);
 
   if (!found) {
-    return;
+    return null;
   }
 
   const names = found.map((modulePath) => modulePath.replace(/.*(node_modules|~)\/(.*)\/$/, '$2'));
@@ -33,8 +34,8 @@ export const extractModulesPackages = (
 
   // Flatten all modules across chunks and filter duplicates
   const modules = uniqBy(
-    Object.values(modulesByChunks).map(({ modules = {} }) => Object.entries(modules)).flat(),
-    ([ id ]) => id,
+    Object.values(modulesByChunks).map((chunk) => Object.entries(chunk.modules)).flat(),
+    ([id]) => id,
   );
 
   const packages = modules.reduce(
@@ -45,15 +46,64 @@ export const extractModulesPackages = (
         return agg;
       }
 
+      const existingPackageData = agg[packageInfo.name];
+
+      // New package data
+      if (!existingPackageData) {
+        return {
+          ...agg,
+          [packageInfo.name]: {
+            path: packageInfo.path,
+            value,
+          }
+        };
+      }
+
+      // Existing package info
+      if (existingPackageData.path === packageInfo.path) {
+        return {
+          ...agg,
+          [packageInfo.name]: {
+            ...existingPackageData,
+            value: existingPackageData.value + value,
+          },
+        };
+      }
+
+      // Same package name, but different paths (eg: symlinks)
+      const existingPackageWithEqualPath = Object.entries(agg).find(
+        ([_, packageData]) => packageData.path === packageInfo.path,
+      );
+
+      if (existingPackageWithEqualPath) {
+        const [name, data] = existingPackageWithEqualPath;
+
+        return {
+          ...agg,
+          [name]: {
+            ...data,
+            value: data.value + value,
+          },
+        };
+      }
+
+      // New package name & data
+      const lastIndex = max(Object.keys(agg)
+        .map((name) => name.split('~'))
+        .filter(([name]) => name === packageInfo.name)
+        .map(([_, index]) => parseInt(index, 10))) || 0;
+
+      const packageName = [packageInfo.name, lastIndex + 1].join(PACKAGE_ID_SEPARATOR);
+
       return {
         ...agg,
-        [packageInfo.name]: {
+        [packageName]: {
           path: packageInfo.path,
-          value: (agg[packageInfo.name]?.value || 0) + value,
+          value,
         },
       };
     },
-    {} as Record<string, Metric>,
+    {} as Record<string, PackageMetric>,
   );
 
   return { metrics: { packages } };

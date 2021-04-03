@@ -2,6 +2,7 @@ import last from 'lodash/last';
 import map from 'lodash/map';
 import round from 'lodash/round';
 
+import { PACKAGES_SEPARATOR, PACKAGE_ID_SEPARATOR } from '../config';
 import { createGetMetricType } from '../utils/metrics';
 import { metrics } from './metrics';
 
@@ -125,3 +126,17 @@ export const getMetricDeleted = (runs) => {
  * @return {Object} Metric data
  */
 export const getMetricType = createGetMetricType(metrics);
+
+/**
+ * Get public package name from package id
+ *
+ * @param {String} packageId
+ * @return {String} public package name
+ */
+export const getPackagePublicName = (packageId) => {
+  // Split packages
+  const name = last(packageId.split(PACKAGES_SEPARATOR));
+
+  // Strip package suffix (eg: ~1)
+  return name.split(PACKAGE_ID_SEPARATOR)[0];
+};

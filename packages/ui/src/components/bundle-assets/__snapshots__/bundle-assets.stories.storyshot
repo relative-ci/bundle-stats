@@ -2508,192 +2508,255 @@ exports[`Storyshots Components/BundleAssets custom filters 1`] = `
                 },
                 "packages": Object {
                   "@babel/runtime": Object {
+                    "path": "./node_modules/@babel/runtime",
                     "value": 145,
                   },
                   "@moonwalker/orbit-ui": Object {
+                    "path": "./node_modules/@moonwalker/orbit-ui",
                     "value": 4267,
                   },
                   "@relative-ci/ui": Object {
+                    "path": "./node_modules/@relative-ci/ui",
                     "value": 794634,
                   },
                   "@relative-ci/utils": Object {
+                    "path": "./node_modules/@relative-ci/utils",
                     "value": 23621,
                   },
                   "change-emitter": Object {
+                    "path": "./node_modules/change-emitter",
                     "value": 1132,
                   },
                   "classnames": Object {
+                    "path": "./node_modules/classnames",
                     "value": 1198,
                   },
                   "convert-units": Object {
+                    "path": "./node_modules/convert-units",
                     "value": 33857,
                   },
                   "convert-units:lodash.keys": Object {
+                    "path": "./node_modules/convert-units/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "decimal.js-light": Object {
+                    "path": "./node_modules/decimal.js-light",
                     "value": 53368,
                   },
                   "deep-equal": Object {
+                    "path": "./node_modules/deep-equal",
                     "value": 3894,
                   },
                   "dom-helpers": Object {
+                    "path": "./node_modules/dom-helpers",
                     "value": 1539,
                   },
                   "events": Object {
+                    "path": "./node_modules/events",
                     "value": 13604,
                   },
                   "fbjs": Object {
+                    "path": "./node_modules/fbjs",
                     "value": 1616,
                   },
                   "ganalytics": Object {
+                    "path": "./node_modules/ganalytics",
                     "value": 684,
                   },
                   "lodash": Object {
+                    "path": "./node_modules/lodash",
                     "value": 291069,
                   },
                   "lodash._basebind": Object {
+                    "path": "./node_modules/lodash._basebind",
                     "value": 1800,
                   },
                   "lodash._basecreate": Object {
+                    "path": "./node_modules/lodash._basecreate",
                     "value": 1432,
                   },
                   "lodash._basecreatecallback": Object {
+                    "path": "./node_modules/lodash._basecreatecallback",
                     "value": 2735,
                   },
                   "lodash._basecreatewrapper": Object {
+                    "path": "./node_modules/lodash._basecreatewrapper",
                     "value": 2350,
                   },
                   "lodash._createwrapper": Object {
+                    "path": "./node_modules/lodash._createwrapper",
                     "value": 3331,
                   },
                   "lodash._objecttypes": Object {
+                    "path": "./node_modules/lodash._objecttypes",
                     "value": 650,
                   },
                   "lodash._renative": Object {
+                    "path": "./node_modules/lodash._renative",
                     "value": 801,
                   },
                   "lodash._setbinddata": Object {
+                    "path": "./node_modules/lodash._setbinddata",
                     "value": 1298,
                   },
                   "lodash._shimkeys": Object {
+                    "path": "./node_modules/lodash._shimkeys",
                     "value": 1225,
                   },
                   "lodash._slice": Object {
+                    "path": "./node_modules/lodash._slice",
                     "value": 1210,
                   },
                   "lodash.bind": Object {
+                    "path": "./node_modules/lodash.bind",
                     "value": 1391,
                   },
                   "lodash.debounce": Object {
+                    "path": "./node_modules/lodash.debounce",
                     "value": 10784,
                   },
                   "lodash.foreach": Object {
+                    "path": "./node_modules/lodash.foreach",
                     "value": 2135,
                   },
                   "lodash.forown": Object {
+                    "path": "./node_modules/lodash.forown",
                     "value": 1987,
                   },
                   "lodash.forown:lodash.keys": Object {
+                    "path": "./node_modules/lodash.forown/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "lodash.identity": Object {
+                    "path": "./node_modules/lodash.identity",
                     "value": 766,
                   },
                   "lodash.isfunction": Object {
+                    "path": "./node_modules/lodash.isfunction",
                     "value": 774,
                   },
                   "lodash.isobject": Object {
+                    "path": "./node_modules/lodash.isobject",
                     "value": 1186,
                   },
                   "lodash.noop": Object {
+                    "path": "./node_modules/lodash.noop",
                     "value": 670,
                   },
                   "lodash.support": Object {
+                    "path": "./node_modules/lodash.support",
                     "value": 1147,
                   },
                   "lodash.throttle": Object {
+                    "path": "./node_modules/lodash.throttle",
                     "value": 13311,
                   },
                   "math-expression-evaluator": Object {
+                    "path": "./node_modules/math-expression-evaluator",
                     "value": 17641,
                   },
                   "node-libs-browser:process": Object {
+                    "path": "./node_modules/node-libs-browser/node_modules/process",
                     "value": 5418,
                   },
                   "object-assign": Object {
+                    "path": "./node_modules/object-assign",
                     "value": 2108,
                   },
                   "performance-now": Object {
+                    "path": "./node_modules/performance-now",
                     "value": 1061,
                   },
                   "preact": Object {
+                    "path": "./node_modules/preact",
                     "value": 22705,
                   },
                   "preact-compat": Object {
+                    "path": "./node_modules/preact-compat",
                     "value": 18110,
                   },
                   "preact-helmet": Object {
+                    "path": "./node_modules/preact-helmet",
                     "value": 23326,
                   },
                   "preact-router": Object {
+                    "path": "./node_modules/preact-router",
                     "value": 12278,
                   },
                   "preact-side-effect": Object {
+                    "path": "./node_modules/preact-side-effect",
                     "value": 4662,
                   },
                   "prop-types": Object {
+                    "path": "./node_modules/prop-types",
                     "value": 2645,
                   },
                   "raf": Object {
+                    "path": "./node_modules/raf",
                     "value": 1933,
                   },
                   "react-lifecycles-compat": Object {
+                    "path": "./node_modules/react-lifecycles-compat",
                     "value": 6048,
                   },
                   "react-transition-group": Object {
+                    "path": "./node_modules/react-transition-group",
                     "value": 49136,
                   },
                   "recharts-scale": Object {
+                    "path": "./node_modules/recharts-scale",
                     "value": 19035,
                   },
                   "recharts:core-js": Object {
+                    "path": "./node_modules/recharts/node_modules/core-js",
                     "value": 32862,
                   },
                   "recharts:prop-types": Object {
+                    "path": "./node_modules/recharts/node_modules/prop-types",
                     "value": 2739,
                   },
                   "recharts:react-resize-detector": Object {
+                    "path": "./node_modules/recharts/node_modules/react-resize-detector",
                     "value": 5778,
                   },
                   "recompose": Object {
+                    "path": "./node_modules/recompose",
                     "value": 31876,
                   },
                   "recompose:hoist-non-react-statics": Object {
+                    "path": "./node_modules/recompose/node_modules/hoist-non-react-statics",
                     "value": 2073,
                   },
                   "reduce-css-calc": Object {
+                    "path": "./node_modules/reduce-css-calc",
                     "value": 4226,
                   },
                   "reduce-css-calc:balanced-match": Object {
+                    "path": "./node_modules/reduce-css-calc/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "reduce-function-call": Object {
+                    "path": "./node_modules/reduce-function-call",
                     "value": 1953,
                   },
                   "reduce-function-call:balanced-match": Object {
+                    "path": "./node_modules/reduce-function-call/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "resize-observer-polyfill": Object {
+                    "path": "./node_modules/resize-observer-polyfill",
                     "value": 33654,
                   },
                   "symbol-observable": Object {
+                    "path": "./node_modules/symbol-observable",
                     "value": 736,
                   },
                   "uuid": Object {
+                    "path": "./node_modules/uuid",
                     "value": 2739,
                   },
                   "whatwg-fetch": Object {
+                    "path": "./node_modules/whatwg-fetch",
                     "value": 13262,
                   },
                 },
@@ -9594,192 +9657,255 @@ exports[`Storyshots Components/BundleAssets custom filters 1`] = `
                 },
                 "packages": Object {
                   "@babel/runtime": Object {
+                    "path": "./node_modules/@babel/runtime",
                     "value": 145,
                   },
                   "@moonwalker/orbit-ui": Object {
+                    "path": "./node_modules/@moonwalker/orbit-ui",
                     "value": 4267,
                   },
                   "@relative-ci/ui": Object {
+                    "path": "./node_modules/@relative-ci/ui",
                     "value": 796989,
                   },
                   "@relative-ci/utils": Object {
+                    "path": "./node_modules/@relative-ci/utils",
                     "value": 23621,
                   },
                   "change-emitter": Object {
+                    "path": "./node_modules/change-emitter",
                     "value": 1132,
                   },
                   "classnames": Object {
+                    "path": "./node_modules/classnames",
                     "value": 1198,
                   },
                   "convert-units": Object {
+                    "path": "./node_modules/convert-units",
                     "value": 33857,
                   },
                   "convert-units:lodash.keys": Object {
+                    "path": "./node_modules/convert-units/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "decimal.js-light": Object {
+                    "path": "./node_modules/decimal.js-light",
                     "value": 53368,
                   },
                   "deep-equal": Object {
+                    "path": "./node_modules/deep-equal",
                     "value": 3894,
                   },
                   "dom-helpers": Object {
+                    "path": "./node_modules/dom-helpers",
                     "value": 1539,
                   },
                   "events": Object {
+                    "path": "./node_modules/events",
                     "value": 13604,
                   },
                   "fbjs": Object {
+                    "path": "./node_modules/fbjs",
                     "value": 1616,
                   },
                   "ganalytics": Object {
+                    "path": "./node_modules/ganalytics",
                     "value": 684,
                   },
                   "lodash": Object {
+                    "path": "./node_modules/lodash",
                     "value": 291069,
                   },
                   "lodash._basebind": Object {
+                    "path": "./node_modules/lodash._basebind",
                     "value": 1800,
                   },
                   "lodash._basecreate": Object {
+                    "path": "./node_modules/lodash._basecreate",
                     "value": 1432,
                   },
                   "lodash._basecreatecallback": Object {
+                    "path": "./node_modules/lodash._basecreatecallback",
                     "value": 2735,
                   },
                   "lodash._basecreatewrapper": Object {
+                    "path": "./node_modules/lodash._basecreatewrapper",
                     "value": 2350,
                   },
                   "lodash._createwrapper": Object {
+                    "path": "./node_modules/lodash._createwrapper",
                     "value": 3331,
                   },
                   "lodash._objecttypes": Object {
+                    "path": "./node_modules/lodash._objecttypes",
                     "value": 650,
                   },
                   "lodash._renative": Object {
+                    "path": "./node_modules/lodash._renative",
                     "value": 801,
                   },
                   "lodash._setbinddata": Object {
+                    "path": "./node_modules/lodash._setbinddata",
                     "value": 1298,
                   },
                   "lodash._shimkeys": Object {
+                    "path": "./node_modules/lodash._shimkeys",
                     "value": 1225,
                   },
                   "lodash._slice": Object {
+                    "path": "./node_modules/lodash._slice",
                     "value": 1210,
                   },
                   "lodash.bind": Object {
+                    "path": "./node_modules/lodash.bind",
                     "value": 1391,
                   },
                   "lodash.debounce": Object {
+                    "path": "./node_modules/lodash.debounce",
                     "value": 10784,
                   },
                   "lodash.foreach": Object {
+                    "path": "./node_modules/lodash.foreach",
                     "value": 2135,
                   },
                   "lodash.forown": Object {
+                    "path": "./node_modules/lodash.forown",
                     "value": 1987,
                   },
                   "lodash.forown:lodash.keys": Object {
+                    "path": "./node_modules/lodash.forown/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "lodash.identity": Object {
+                    "path": "./node_modules/lodash.identity",
                     "value": 766,
                   },
                   "lodash.isfunction": Object {
+                    "path": "./node_modules/lodash.isfunction",
                     "value": 774,
                   },
                   "lodash.isobject": Object {
+                    "path": "./node_modules/lodash.isobject",
                     "value": 1186,
                   },
                   "lodash.noop": Object {
+                    "path": "./node_modules/lodash.noop",
                     "value": 670,
                   },
                   "lodash.support": Object {
+                    "path": "./node_modules/lodash.support",
                     "value": 1147,
                   },
                   "lodash.throttle": Object {
+                    "path": "./node_modules/lodash.throttle",
                     "value": 13311,
                   },
                   "math-expression-evaluator": Object {
+                    "path": "./node_modules/math-expression-evaluator",
                     "value": 17641,
                   },
                   "node-libs-browser:process": Object {
+                    "path": "./node_modules/node-libs-browser/node_modules/process",
                     "value": 5418,
                   },
                   "object-assign": Object {
+                    "path": "./node_modules/object-assign",
                     "value": 2108,
                   },
                   "performance-now": Object {
+                    "path": "./node_modules/performance-now",
                     "value": 1061,
                   },
                   "preact": Object {
+                    "path": "./node_modules/preact",
                     "value": 22705,
                   },
                   "preact-compat": Object {
+                    "path": "./node_modules/preact-compat",
                     "value": 18110,
                   },
                   "preact-helmet": Object {
+                    "path": "./node_modules/preact-helmet",
                     "value": 23326,
                   },
                   "preact-router": Object {
+                    "path": "./node_modules/preact-router",
                     "value": 12278,
                   },
                   "preact-side-effect": Object {
+                    "path": "./node_modules/preact-side-effect",
                     "value": 4662,
                   },
                   "prop-types": Object {
+                    "path": "./node_modules/prop-types",
                     "value": 2645,
                   },
                   "raf": Object {
+                    "path": "./node_modules/raf",
                     "value": 1933,
                   },
                   "react-lifecycles-compat": Object {
+                    "path": "./node_modules/react-lifecycles-compat",
                     "value": 6048,
                   },
                   "react-transition-group": Object {
+                    "path": "./node_modules/react-transition-group",
                     "value": 49136,
                   },
                   "recharts-scale": Object {
+                    "path": "./node_modules/recharts-scale",
                     "value": 19035,
                   },
                   "recharts:core-js": Object {
+                    "path": "./node_modules/recharts/node_modules/core-js",
                     "value": 32862,
                   },
                   "recharts:prop-types": Object {
+                    "path": "./node_modules/recharts/node_modules/prop-types",
                     "value": 2739,
                   },
                   "recharts:react-resize-detector": Object {
+                    "path": "./node_modules/recharts/node_modules/react-resize-detector",
                     "value": 5778,
                   },
                   "recompose": Object {
+                    "path": "./node_modules/recompose",
                     "value": 31876,
                   },
                   "recompose:hoist-non-react-statics": Object {
+                    "path": "./node_modules/recompose/node_modules/hoist-non-react-statics",
                     "value": 2073,
                   },
                   "reduce-css-calc": Object {
+                    "path": "./node_modules/reduce-css-calc",
                     "value": 4226,
                   },
                   "reduce-css-calc:balanced-match": Object {
+                    "path": "./node_modules/reduce-css-calc/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "reduce-function-call": Object {
+                    "path": "./node_modules/reduce-function-call",
                     "value": 1953,
                   },
                   "reduce-function-call:balanced-match": Object {
+                    "path": "./node_modules/reduce-function-call/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "resize-observer-polyfill": Object {
+                    "path": "./node_modules/resize-observer-polyfill",
                     "value": 33654,
                   },
                   "symbol-observable": Object {
+                    "path": "./node_modules/symbol-observable",
                     "value": 736,
                   },
                   "uuid": Object {
+                    "path": "./node_modules/uuid",
                     "value": 2739,
                   },
                   "whatwg-fetch": Object {
+                    "path": "./node_modules/whatwg-fetch",
                     "value": 13262,
                   },
                 },
@@ -16732,192 +16858,255 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
                 },
                 "packages": Object {
                   "@babel/runtime": Object {
+                    "path": "./node_modules/@babel/runtime",
                     "value": 145,
                   },
                   "@moonwalker/orbit-ui": Object {
+                    "path": "./node_modules/@moonwalker/orbit-ui",
                     "value": 4267,
                   },
                   "@relative-ci/ui": Object {
+                    "path": "./node_modules/@relative-ci/ui",
                     "value": 796989,
                   },
                   "@relative-ci/utils": Object {
+                    "path": "./node_modules/@relative-ci/utils",
                     "value": 23621,
                   },
                   "change-emitter": Object {
+                    "path": "./node_modules/change-emitter",
                     "value": 1132,
                   },
                   "classnames": Object {
+                    "path": "./node_modules/classnames",
                     "value": 1198,
                   },
                   "convert-units": Object {
+                    "path": "./node_modules/convert-units",
                     "value": 33857,
                   },
                   "convert-units:lodash.keys": Object {
+                    "path": "./node_modules/convert-units/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "decimal.js-light": Object {
+                    "path": "./node_modules/decimal.js-light",
                     "value": 53368,
                   },
                   "deep-equal": Object {
+                    "path": "./node_modules/deep-equal",
                     "value": 3894,
                   },
                   "dom-helpers": Object {
+                    "path": "./node_modules/dom-helpers",
                     "value": 1539,
                   },
                   "events": Object {
+                    "path": "./node_modules/events",
                     "value": 13604,
                   },
                   "fbjs": Object {
+                    "path": "./node_modules/fbjs",
                     "value": 1616,
                   },
                   "ganalytics": Object {
+                    "path": "./node_modules/ganalytics",
                     "value": 684,
                   },
                   "lodash": Object {
+                    "path": "./node_modules/lodash",
                     "value": 291069,
                   },
                   "lodash._basebind": Object {
+                    "path": "./node_modules/lodash._basebind",
                     "value": 1800,
                   },
                   "lodash._basecreate": Object {
+                    "path": "./node_modules/lodash._basecreate",
                     "value": 1432,
                   },
                   "lodash._basecreatecallback": Object {
+                    "path": "./node_modules/lodash._basecreatecallback",
                     "value": 2735,
                   },
                   "lodash._basecreatewrapper": Object {
+                    "path": "./node_modules/lodash._basecreatewrapper",
                     "value": 2350,
                   },
                   "lodash._createwrapper": Object {
+                    "path": "./node_modules/lodash._createwrapper",
                     "value": 3331,
                   },
                   "lodash._objecttypes": Object {
+                    "path": "./node_modules/lodash._objecttypes",
                     "value": 650,
                   },
                   "lodash._renative": Object {
+                    "path": "./node_modules/lodash._renative",
                     "value": 801,
                   },
                   "lodash._setbinddata": Object {
+                    "path": "./node_modules/lodash._setbinddata",
                     "value": 1298,
                   },
                   "lodash._shimkeys": Object {
+                    "path": "./node_modules/lodash._shimkeys",
                     "value": 1225,
                   },
                   "lodash._slice": Object {
+                    "path": "./node_modules/lodash._slice",
                     "value": 1210,
                   },
                   "lodash.bind": Object {
+                    "path": "./node_modules/lodash.bind",
                     "value": 1391,
                   },
                   "lodash.debounce": Object {
+                    "path": "./node_modules/lodash.debounce",
                     "value": 10784,
                   },
                   "lodash.foreach": Object {
+                    "path": "./node_modules/lodash.foreach",
                     "value": 2135,
                   },
                   "lodash.forown": Object {
+                    "path": "./node_modules/lodash.forown",
                     "value": 1987,
                   },
                   "lodash.forown:lodash.keys": Object {
+                    "path": "./node_modules/lodash.forown/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "lodash.identity": Object {
+                    "path": "./node_modules/lodash.identity",
                     "value": 766,
                   },
                   "lodash.isfunction": Object {
+                    "path": "./node_modules/lodash.isfunction",
                     "value": 774,
                   },
                   "lodash.isobject": Object {
+                    "path": "./node_modules/lodash.isobject",
                     "value": 1186,
                   },
                   "lodash.noop": Object {
+                    "path": "./node_modules/lodash.noop",
                     "value": 670,
                   },
                   "lodash.support": Object {
+                    "path": "./node_modules/lodash.support",
                     "value": 1147,
                   },
                   "lodash.throttle": Object {
+                    "path": "./node_modules/lodash.throttle",
                     "value": 13311,
                   },
                   "math-expression-evaluator": Object {
+                    "path": "./node_modules/math-expression-evaluator",
                     "value": 17641,
                   },
                   "node-libs-browser:process": Object {
+                    "path": "./node_modules/node-libs-browser/node_modules/process",
                     "value": 5418,
                   },
                   "object-assign": Object {
+                    "path": "./node_modules/object-assign",
                     "value": 2108,
                   },
                   "performance-now": Object {
+                    "path": "./node_modules/performance-now",
                     "value": 1061,
                   },
                   "preact": Object {
+                    "path": "./node_modules/preact",
                     "value": 22705,
                   },
                   "preact-compat": Object {
+                    "path": "./node_modules/preact-compat",
                     "value": 18110,
                   },
                   "preact-helmet": Object {
+                    "path": "./node_modules/preact-helmet",
                     "value": 23326,
                   },
                   "preact-router": Object {
+                    "path": "./node_modules/preact-router",
                     "value": 12278,
                   },
                   "preact-side-effect": Object {
+                    "path": "./node_modules/preact-side-effect",
                     "value": 4662,
                   },
                   "prop-types": Object {
+                    "path": "./node_modules/prop-types",
                     "value": 2645,
                   },
                   "raf": Object {
+                    "path": "./node_modules/raf",
                     "value": 1933,
                   },
                   "react-lifecycles-compat": Object {
+                    "path": "./node_modules/react-lifecycles-compat",
                     "value": 6048,
                   },
                   "react-transition-group": Object {
+                    "path": "./node_modules/react-transition-group",
                     "value": 49136,
                   },
                   "recharts-scale": Object {
+                    "path": "./node_modules/recharts-scale",
                     "value": 19035,
                   },
                   "recharts:core-js": Object {
+                    "path": "./node_modules/recharts/node_modules/core-js",
                     "value": 32862,
                   },
                   "recharts:prop-types": Object {
+                    "path": "./node_modules/recharts/node_modules/prop-types",
                     "value": 2739,
                   },
                   "recharts:react-resize-detector": Object {
+                    "path": "./node_modules/recharts/node_modules/react-resize-detector",
                     "value": 5778,
                   },
                   "recompose": Object {
+                    "path": "./node_modules/recompose",
                     "value": 31876,
                   },
                   "recompose:hoist-non-react-statics": Object {
+                    "path": "./node_modules/recompose/node_modules/hoist-non-react-statics",
                     "value": 2073,
                   },
                   "reduce-css-calc": Object {
+                    "path": "./node_modules/reduce-css-calc",
                     "value": 4226,
                   },
                   "reduce-css-calc:balanced-match": Object {
+                    "path": "./node_modules/reduce-css-calc/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "reduce-function-call": Object {
+                    "path": "./node_modules/reduce-function-call",
                     "value": 1953,
                   },
                   "reduce-function-call:balanced-match": Object {
+                    "path": "./node_modules/reduce-function-call/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "resize-observer-polyfill": Object {
+                    "path": "./node_modules/resize-observer-polyfill",
                     "value": 33654,
                   },
                   "symbol-observable": Object {
+                    "path": "./node_modules/symbol-observable",
                     "value": 736,
                   },
                   "uuid": Object {
+                    "path": "./node_modules/uuid",
                     "value": 2739,
                   },
                   "whatwg-fetch": Object {
+                    "path": "./node_modules/whatwg-fetch",
                     "value": 13262,
                   },
                 },
@@ -23870,192 +24059,255 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
                 },
                 "packages": Object {
                   "@babel/runtime": Object {
+                    "path": "./node_modules/@babel/runtime",
                     "value": 145,
                   },
                   "@moonwalker/orbit-ui": Object {
+                    "path": "./node_modules/@moonwalker/orbit-ui",
                     "value": 4267,
                   },
                   "@relative-ci/ui": Object {
+                    "path": "./node_modules/@relative-ci/ui",
                     "value": 794634,
                   },
                   "@relative-ci/utils": Object {
+                    "path": "./node_modules/@relative-ci/utils",
                     "value": 23621,
                   },
                   "change-emitter": Object {
+                    "path": "./node_modules/change-emitter",
                     "value": 1132,
                   },
                   "classnames": Object {
+                    "path": "./node_modules/classnames",
                     "value": 1198,
                   },
                   "convert-units": Object {
+                    "path": "./node_modules/convert-units",
                     "value": 33857,
                   },
                   "convert-units:lodash.keys": Object {
+                    "path": "./node_modules/convert-units/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "decimal.js-light": Object {
+                    "path": "./node_modules/decimal.js-light",
                     "value": 53368,
                   },
                   "deep-equal": Object {
+                    "path": "./node_modules/deep-equal",
                     "value": 3894,
                   },
                   "dom-helpers": Object {
+                    "path": "./node_modules/dom-helpers",
                     "value": 1539,
                   },
                   "events": Object {
+                    "path": "./node_modules/events",
                     "value": 13604,
                   },
                   "fbjs": Object {
+                    "path": "./node_modules/fbjs",
                     "value": 1616,
                   },
                   "ganalytics": Object {
+                    "path": "./node_modules/ganalytics",
                     "value": 684,
                   },
                   "lodash": Object {
+                    "path": "./node_modules/lodash",
                     "value": 291069,
                   },
                   "lodash._basebind": Object {
+                    "path": "./node_modules/lodash._basebind",
                     "value": 1800,
                   },
                   "lodash._basecreate": Object {
+                    "path": "./node_modules/lodash._basecreate",
                     "value": 1432,
                   },
                   "lodash._basecreatecallback": Object {
+                    "path": "./node_modules/lodash._basecreatecallback",
                     "value": 2735,
                   },
                   "lodash._basecreatewrapper": Object {
+                    "path": "./node_modules/lodash._basecreatewrapper",
                     "value": 2350,
                   },
                   "lodash._createwrapper": Object {
+                    "path": "./node_modules/lodash._createwrapper",
                     "value": 3331,
                   },
                   "lodash._objecttypes": Object {
+                    "path": "./node_modules/lodash._objecttypes",
                     "value": 650,
                   },
                   "lodash._renative": Object {
+                    "path": "./node_modules/lodash._renative",
                     "value": 801,
                   },
                   "lodash._setbinddata": Object {
+                    "path": "./node_modules/lodash._setbinddata",
                     "value": 1298,
                   },
                   "lodash._shimkeys": Object {
+                    "path": "./node_modules/lodash._shimkeys",
                     "value": 1225,
                   },
                   "lodash._slice": Object {
+                    "path": "./node_modules/lodash._slice",
                     "value": 1210,
                   },
                   "lodash.bind": Object {
+                    "path": "./node_modules/lodash.bind",
                     "value": 1391,
                   },
                   "lodash.debounce": Object {
+                    "path": "./node_modules/lodash.debounce",
                     "value": 10784,
                   },
                   "lodash.foreach": Object {
+                    "path": "./node_modules/lodash.foreach",
                     "value": 2135,
                   },
                   "lodash.forown": Object {
+                    "path": "./node_modules/lodash.forown",
                     "value": 1987,
                   },
                   "lodash.forown:lodash.keys": Object {
+                    "path": "./node_modules/lodash.forown/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "lodash.identity": Object {
+                    "path": "./node_modules/lodash.identity",
                     "value": 766,
                   },
                   "lodash.isfunction": Object {
+                    "path": "./node_modules/lodash.isfunction",
                     "value": 774,
                   },
                   "lodash.isobject": Object {
+                    "path": "./node_modules/lodash.isobject",
                     "value": 1186,
                   },
                   "lodash.noop": Object {
+                    "path": "./node_modules/lodash.noop",
                     "value": 670,
                   },
                   "lodash.support": Object {
+                    "path": "./node_modules/lodash.support",
                     "value": 1147,
                   },
                   "lodash.throttle": Object {
+                    "path": "./node_modules/lodash.throttle",
                     "value": 13311,
                   },
                   "math-expression-evaluator": Object {
+                    "path": "./node_modules/math-expression-evaluator",
                     "value": 17641,
                   },
                   "node-libs-browser:process": Object {
+                    "path": "./node_modules/node-libs-browser/node_modules/process",
                     "value": 5418,
                   },
                   "object-assign": Object {
+                    "path": "./node_modules/object-assign",
                     "value": 2108,
                   },
                   "performance-now": Object {
+                    "path": "./node_modules/performance-now",
                     "value": 1061,
                   },
                   "preact": Object {
+                    "path": "./node_modules/preact",
                     "value": 22705,
                   },
                   "preact-compat": Object {
+                    "path": "./node_modules/preact-compat",
                     "value": 18110,
                   },
                   "preact-helmet": Object {
+                    "path": "./node_modules/preact-helmet",
                     "value": 23326,
                   },
                   "preact-router": Object {
+                    "path": "./node_modules/preact-router",
                     "value": 12278,
                   },
                   "preact-side-effect": Object {
+                    "path": "./node_modules/preact-side-effect",
                     "value": 4662,
                   },
                   "prop-types": Object {
+                    "path": "./node_modules/prop-types",
                     "value": 2645,
                   },
                   "raf": Object {
+                    "path": "./node_modules/raf",
                     "value": 1933,
                   },
                   "react-lifecycles-compat": Object {
+                    "path": "./node_modules/react-lifecycles-compat",
                     "value": 6048,
                   },
                   "react-transition-group": Object {
+                    "path": "./node_modules/react-transition-group",
                     "value": 49136,
                   },
                   "recharts-scale": Object {
+                    "path": "./node_modules/recharts-scale",
                     "value": 19035,
                   },
                   "recharts:core-js": Object {
+                    "path": "./node_modules/recharts/node_modules/core-js",
                     "value": 32862,
                   },
                   "recharts:prop-types": Object {
+                    "path": "./node_modules/recharts/node_modules/prop-types",
                     "value": 2739,
                   },
                   "recharts:react-resize-detector": Object {
+                    "path": "./node_modules/recharts/node_modules/react-resize-detector",
                     "value": 5778,
                   },
                   "recompose": Object {
+                    "path": "./node_modules/recompose",
                     "value": 31876,
                   },
                   "recompose:hoist-non-react-statics": Object {
+                    "path": "./node_modules/recompose/node_modules/hoist-non-react-statics",
                     "value": 2073,
                   },
                   "reduce-css-calc": Object {
+                    "path": "./node_modules/reduce-css-calc",
                     "value": 4226,
                   },
                   "reduce-css-calc:balanced-match": Object {
+                    "path": "./node_modules/reduce-css-calc/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "reduce-function-call": Object {
+                    "path": "./node_modules/reduce-function-call",
                     "value": 1953,
                   },
                   "reduce-function-call:balanced-match": Object {
+                    "path": "./node_modules/reduce-function-call/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "resize-observer-polyfill": Object {
+                    "path": "./node_modules/resize-observer-polyfill",
                     "value": 33654,
                   },
                   "symbol-observable": Object {
+                    "path": "./node_modules/symbol-observable",
                     "value": 736,
                   },
                   "uuid": Object {
+                    "path": "./node_modules/uuid",
                     "value": 2739,
                   },
                   "whatwg-fetch": Object {
+                    "path": "./node_modules/whatwg-fetch",
                     "value": 13262,
                   },
                 },
@@ -30878,192 +31130,255 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
                 },
                 "packages": Object {
                   "@babel/runtime": Object {
+                    "path": "./node_modules/@babel/runtime",
                     "value": 145,
                   },
                   "@moonwalker/orbit-ui": Object {
+                    "path": "./node_modules/@moonwalker/orbit-ui",
                     "value": 4267,
                   },
                   "@relative-ci/ui": Object {
+                    "path": "./node_modules/@relative-ci/ui",
                     "value": 794634,
                   },
                   "@relative-ci/utils": Object {
+                    "path": "./node_modules/@relative-ci/utils",
                     "value": 23621,
                   },
                   "change-emitter": Object {
+                    "path": "./node_modules/change-emitter",
                     "value": 1132,
                   },
                   "classnames": Object {
+                    "path": "./node_modules/classnames",
                     "value": 1198,
                   },
                   "convert-units": Object {
+                    "path": "./node_modules/convert-units",
                     "value": 33857,
                   },
                   "convert-units:lodash.keys": Object {
+                    "path": "./node_modules/convert-units/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "decimal.js-light": Object {
+                    "path": "./node_modules/decimal.js-light",
                     "value": 53368,
                   },
                   "deep-equal": Object {
+                    "path": "./node_modules/deep-equal",
                     "value": 3894,
                   },
                   "dom-helpers": Object {
+                    "path": "./node_modules/dom-helpers",
                     "value": 1539,
                   },
                   "events": Object {
+                    "path": "./node_modules/events",
                     "value": 13604,
                   },
                   "fbjs": Object {
+                    "path": "./node_modules/fbjs",
                     "value": 1616,
                   },
                   "ganalytics": Object {
+                    "path": "./node_modules/ganalytics",
                     "value": 684,
                   },
                   "lodash": Object {
+                    "path": "./node_modules/lodash",
                     "value": 291069,
                   },
                   "lodash._basebind": Object {
+                    "path": "./node_modules/lodash._basebind",
                     "value": 1800,
                   },
                   "lodash._basecreate": Object {
+                    "path": "./node_modules/lodash._basecreate",
                     "value": 1432,
                   },
                   "lodash._basecreatecallback": Object {
+                    "path": "./node_modules/lodash._basecreatecallback",
                     "value": 2735,
                   },
                   "lodash._basecreatewrapper": Object {
+                    "path": "./node_modules/lodash._basecreatewrapper",
                     "value": 2350,
                   },
                   "lodash._createwrapper": Object {
+                    "path": "./node_modules/lodash._createwrapper",
                     "value": 3331,
                   },
                   "lodash._objecttypes": Object {
+                    "path": "./node_modules/lodash._objecttypes",
                     "value": 650,
                   },
                   "lodash._renative": Object {
+                    "path": "./node_modules/lodash._renative",
                     "value": 801,
                   },
                   "lodash._setbinddata": Object {
+                    "path": "./node_modules/lodash._setbinddata",
                     "value": 1298,
                   },
                   "lodash._shimkeys": Object {
+                    "path": "./node_modules/lodash._shimkeys",
                     "value": 1225,
                   },
                   "lodash._slice": Object {
+                    "path": "./node_modules/lodash._slice",
                     "value": 1210,
                   },
                   "lodash.bind": Object {
+                    "path": "./node_modules/lodash.bind",
                     "value": 1391,
                   },
                   "lodash.debounce": Object {
+                    "path": "./node_modules/lodash.debounce",
                     "value": 10784,
                   },
                   "lodash.foreach": Object {
+                    "path": "./node_modules/lodash.foreach",
                     "value": 2135,
                   },
                   "lodash.forown": Object {
+                    "path": "./node_modules/lodash.forown",
                     "value": 1987,
                   },
                   "lodash.forown:lodash.keys": Object {
+                    "path": "./node_modules/lodash.forown/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "lodash.identity": Object {
+                    "path": "./node_modules/lodash.identity",
                     "value": 766,
                   },
                   "lodash.isfunction": Object {
+                    "path": "./node_modules/lodash.isfunction",
                     "value": 774,
                   },
                   "lodash.isobject": Object {
+                    "path": "./node_modules/lodash.isobject",
                     "value": 1186,
                   },
                   "lodash.noop": Object {
+                    "path": "./node_modules/lodash.noop",
                     "value": 670,
                   },
                   "lodash.support": Object {
+                    "path": "./node_modules/lodash.support",
                     "value": 1147,
                   },
                   "lodash.throttle": Object {
+                    "path": "./node_modules/lodash.throttle",
                     "value": 13311,
                   },
                   "math-expression-evaluator": Object {
+                    "path": "./node_modules/math-expression-evaluator",
                     "value": 17641,
                   },
                   "node-libs-browser:process": Object {
+                    "path": "./node_modules/node-libs-browser/node_modules/process",
                     "value": 5418,
                   },
                   "object-assign": Object {
+                    "path": "./node_modules/object-assign",
                     "value": 2108,
                   },
                   "performance-now": Object {
+                    "path": "./node_modules/performance-now",
                     "value": 1061,
                   },
                   "preact": Object {
+                    "path": "./node_modules/preact",
                     "value": 22705,
                   },
                   "preact-compat": Object {
+                    "path": "./node_modules/preact-compat",
                     "value": 18110,
                   },
                   "preact-helmet": Object {
+                    "path": "./node_modules/preact-helmet",
                     "value": 23326,
                   },
                   "preact-router": Object {
+                    "path": "./node_modules/preact-router",
                     "value": 12278,
                   },
                   "preact-side-effect": Object {
+                    "path": "./node_modules/preact-side-effect",
                     "value": 4662,
                   },
                   "prop-types": Object {
+                    "path": "./node_modules/prop-types",
                     "value": 2645,
                   },
                   "raf": Object {
+                    "path": "./node_modules/raf",
                     "value": 1933,
                   },
                   "react-lifecycles-compat": Object {
+                    "path": "./node_modules/react-lifecycles-compat",
                     "value": 6048,
                   },
                   "react-transition-group": Object {
+                    "path": "./node_modules/react-transition-group",
                     "value": 49136,
                   },
                   "recharts-scale": Object {
+                    "path": "./node_modules/recharts-scale",
                     "value": 19035,
                   },
                   "recharts:core-js": Object {
+                    "path": "./node_modules/recharts/node_modules/core-js",
                     "value": 32862,
                   },
                   "recharts:prop-types": Object {
+                    "path": "./node_modules/recharts/node_modules/prop-types",
                     "value": 2739,
                   },
                   "recharts:react-resize-detector": Object {
+                    "path": "./node_modules/recharts/node_modules/react-resize-detector",
                     "value": 5778,
                   },
                   "recompose": Object {
+                    "path": "./node_modules/recompose",
                     "value": 31876,
                   },
                   "recompose:hoist-non-react-statics": Object {
+                    "path": "./node_modules/recompose/node_modules/hoist-non-react-statics",
                     "value": 2073,
                   },
                   "reduce-css-calc": Object {
+                    "path": "./node_modules/reduce-css-calc",
                     "value": 4226,
                   },
                   "reduce-css-calc:balanced-match": Object {
+                    "path": "./node_modules/reduce-css-calc/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "reduce-function-call": Object {
+                    "path": "./node_modules/reduce-function-call",
                     "value": 1953,
                   },
                   "reduce-function-call:balanced-match": Object {
+                    "path": "./node_modules/reduce-function-call/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "resize-observer-polyfill": Object {
+                    "path": "./node_modules/resize-observer-polyfill",
                     "value": 33654,
                   },
                   "symbol-observable": Object {
+                    "path": "./node_modules/symbol-observable",
                     "value": 736,
                   },
                   "uuid": Object {
+                    "path": "./node_modules/uuid",
                     "value": 2739,
                   },
                   "whatwg-fetch": Object {
+                    "path": "./node_modules/whatwg-fetch",
                     "value": 13262,
                   },
                 },
@@ -37830,192 +38145,255 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
                 },
                 "packages": Object {
                   "@babel/runtime": Object {
+                    "path": "./node_modules/@babel/runtime",
                     "value": 145,
                   },
                   "@moonwalker/orbit-ui": Object {
+                    "path": "./node_modules/@moonwalker/orbit-ui",
                     "value": 4267,
                   },
                   "@relative-ci/ui": Object {
+                    "path": "./node_modules/@relative-ci/ui",
                     "value": 796989,
                   },
                   "@relative-ci/utils": Object {
+                    "path": "./node_modules/@relative-ci/utils",
                     "value": 23621,
                   },
                   "change-emitter": Object {
+                    "path": "./node_modules/change-emitter",
                     "value": 1132,
                   },
                   "classnames": Object {
+                    "path": "./node_modules/classnames",
                     "value": 1198,
                   },
                   "convert-units": Object {
+                    "path": "./node_modules/convert-units",
                     "value": 33857,
                   },
                   "convert-units:lodash.keys": Object {
+                    "path": "./node_modules/convert-units/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "decimal.js-light": Object {
+                    "path": "./node_modules/decimal.js-light",
                     "value": 53368,
                   },
                   "deep-equal": Object {
+                    "path": "./node_modules/deep-equal",
                     "value": 3894,
                   },
                   "dom-helpers": Object {
+                    "path": "./node_modules/dom-helpers",
                     "value": 1539,
                   },
                   "events": Object {
+                    "path": "./node_modules/events",
                     "value": 13604,
                   },
                   "fbjs": Object {
+                    "path": "./node_modules/fbjs",
                     "value": 1616,
                   },
                   "ganalytics": Object {
+                    "path": "./node_modules/ganalytics",
                     "value": 684,
                   },
                   "lodash": Object {
+                    "path": "./node_modules/lodash",
                     "value": 291069,
                   },
                   "lodash._basebind": Object {
+                    "path": "./node_modules/lodash._basebind",
                     "value": 1800,
                   },
                   "lodash._basecreate": Object {
+                    "path": "./node_modules/lodash._basecreate",
                     "value": 1432,
                   },
                   "lodash._basecreatecallback": Object {
+                    "path": "./node_modules/lodash._basecreatecallback",
                     "value": 2735,
                   },
                   "lodash._basecreatewrapper": Object {
+                    "path": "./node_modules/lodash._basecreatewrapper",
                     "value": 2350,
                   },
                   "lodash._createwrapper": Object {
+                    "path": "./node_modules/lodash._createwrapper",
                     "value": 3331,
                   },
                   "lodash._objecttypes": Object {
+                    "path": "./node_modules/lodash._objecttypes",
                     "value": 650,
                   },
                   "lodash._renative": Object {
+                    "path": "./node_modules/lodash._renative",
                     "value": 801,
                   },
                   "lodash._setbinddata": Object {
+                    "path": "./node_modules/lodash._setbinddata",
                     "value": 1298,
                   },
                   "lodash._shimkeys": Object {
+                    "path": "./node_modules/lodash._shimkeys",
                     "value": 1225,
                   },
                   "lodash._slice": Object {
+                    "path": "./node_modules/lodash._slice",
                     "value": 1210,
                   },
                   "lodash.bind": Object {
+                    "path": "./node_modules/lodash.bind",
                     "value": 1391,
                   },
                   "lodash.debounce": Object {
+                    "path": "./node_modules/lodash.debounce",
                     "value": 10784,
                   },
                   "lodash.foreach": Object {
+                    "path": "./node_modules/lodash.foreach",
                     "value": 2135,
                   },
                   "lodash.forown": Object {
+                    "path": "./node_modules/lodash.forown",
                     "value": 1987,
                   },
                   "lodash.forown:lodash.keys": Object {
+                    "path": "./node_modules/lodash.forown/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "lodash.identity": Object {
+                    "path": "./node_modules/lodash.identity",
                     "value": 766,
                   },
                   "lodash.isfunction": Object {
+                    "path": "./node_modules/lodash.isfunction",
                     "value": 774,
                   },
                   "lodash.isobject": Object {
+                    "path": "./node_modules/lodash.isobject",
                     "value": 1186,
                   },
                   "lodash.noop": Object {
+                    "path": "./node_modules/lodash.noop",
                     "value": 670,
                   },
                   "lodash.support": Object {
+                    "path": "./node_modules/lodash.support",
                     "value": 1147,
                   },
                   "lodash.throttle": Object {
+                    "path": "./node_modules/lodash.throttle",
                     "value": 13311,
                   },
                   "math-expression-evaluator": Object {
+                    "path": "./node_modules/math-expression-evaluator",
                     "value": 17641,
                   },
                   "node-libs-browser:process": Object {
+                    "path": "./node_modules/node-libs-browser/node_modules/process",
                     "value": 5418,
                   },
                   "object-assign": Object {
+                    "path": "./node_modules/object-assign",
                     "value": 2108,
                   },
                   "performance-now": Object {
+                    "path": "./node_modules/performance-now",
                     "value": 1061,
                   },
                   "preact": Object {
+                    "path": "./node_modules/preact",
                     "value": 22705,
                   },
                   "preact-compat": Object {
+                    "path": "./node_modules/preact-compat",
                     "value": 18110,
                   },
                   "preact-helmet": Object {
+                    "path": "./node_modules/preact-helmet",
                     "value": 23326,
                   },
                   "preact-router": Object {
+                    "path": "./node_modules/preact-router",
                     "value": 12278,
                   },
                   "preact-side-effect": Object {
+                    "path": "./node_modules/preact-side-effect",
                     "value": 4662,
                   },
                   "prop-types": Object {
+                    "path": "./node_modules/prop-types",
                     "value": 2645,
                   },
                   "raf": Object {
+                    "path": "./node_modules/raf",
                     "value": 1933,
                   },
                   "react-lifecycles-compat": Object {
+                    "path": "./node_modules/react-lifecycles-compat",
                     "value": 6048,
                   },
                   "react-transition-group": Object {
+                    "path": "./node_modules/react-transition-group",
                     "value": 49136,
                   },
                   "recharts-scale": Object {
+                    "path": "./node_modules/recharts-scale",
                     "value": 19035,
                   },
                   "recharts:core-js": Object {
+                    "path": "./node_modules/recharts/node_modules/core-js",
                     "value": 32862,
                   },
                   "recharts:prop-types": Object {
+                    "path": "./node_modules/recharts/node_modules/prop-types",
                     "value": 2739,
                   },
                   "recharts:react-resize-detector": Object {
+                    "path": "./node_modules/recharts/node_modules/react-resize-detector",
                     "value": 5778,
                   },
                   "recompose": Object {
+                    "path": "./node_modules/recompose",
                     "value": 31876,
                   },
                   "recompose:hoist-non-react-statics": Object {
+                    "path": "./node_modules/recompose/node_modules/hoist-non-react-statics",
                     "value": 2073,
                   },
                   "reduce-css-calc": Object {
+                    "path": "./node_modules/reduce-css-calc",
                     "value": 4226,
                   },
                   "reduce-css-calc:balanced-match": Object {
+                    "path": "./node_modules/reduce-css-calc/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "reduce-function-call": Object {
+                    "path": "./node_modules/reduce-function-call",
                     "value": 1953,
                   },
                   "reduce-function-call:balanced-match": Object {
+                    "path": "./node_modules/reduce-function-call/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "resize-observer-polyfill": Object {
+                    "path": "./node_modules/resize-observer-polyfill",
                     "value": 33654,
                   },
                   "symbol-observable": Object {
+                    "path": "./node_modules/symbol-observable",
                     "value": 736,
                   },
                   "uuid": Object {
+                    "path": "./node_modules/uuid",
                     "value": 2739,
                   },
                   "whatwg-fetch": Object {
+                    "path": "./node_modules/whatwg-fetch",
                     "value": 13262,
                   },
                 },
@@ -44968,192 +45346,255 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                 },
                 "packages": Object {
                   "@babel/runtime": Object {
+                    "path": "./node_modules/@babel/runtime",
                     "value": 145,
                   },
                   "@moonwalker/orbit-ui": Object {
+                    "path": "./node_modules/@moonwalker/orbit-ui",
                     "value": 4267,
                   },
                   "@relative-ci/ui": Object {
+                    "path": "./node_modules/@relative-ci/ui",
                     "value": 794634,
                   },
                   "@relative-ci/utils": Object {
+                    "path": "./node_modules/@relative-ci/utils",
                     "value": 23621,
                   },
                   "change-emitter": Object {
+                    "path": "./node_modules/change-emitter",
                     "value": 1132,
                   },
                   "classnames": Object {
+                    "path": "./node_modules/classnames",
                     "value": 1198,
                   },
                   "convert-units": Object {
+                    "path": "./node_modules/convert-units",
                     "value": 33857,
                   },
                   "convert-units:lodash.keys": Object {
+                    "path": "./node_modules/convert-units/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "decimal.js-light": Object {
+                    "path": "./node_modules/decimal.js-light",
                     "value": 53368,
                   },
                   "deep-equal": Object {
+                    "path": "./node_modules/deep-equal",
                     "value": 3894,
                   },
                   "dom-helpers": Object {
+                    "path": "./node_modules/dom-helpers",
                     "value": 1539,
                   },
                   "events": Object {
+                    "path": "./node_modules/events",
                     "value": 13604,
                   },
                   "fbjs": Object {
+                    "path": "./node_modules/fbjs",
                     "value": 1616,
                   },
                   "ganalytics": Object {
+                    "path": "./node_modules/ganalytics",
                     "value": 684,
                   },
                   "lodash": Object {
+                    "path": "./node_modules/lodash",
                     "value": 291069,
                   },
                   "lodash._basebind": Object {
+                    "path": "./node_modules/lodash._basebind",
                     "value": 1800,
                   },
                   "lodash._basecreate": Object {
+                    "path": "./node_modules/lodash._basecreate",
                     "value": 1432,
                   },
                   "lodash._basecreatecallback": Object {
+                    "path": "./node_modules/lodash._basecreatecallback",
                     "value": 2735,
                   },
                   "lodash._basecreatewrapper": Object {
+                    "path": "./node_modules/lodash._basecreatewrapper",
                     "value": 2350,
                   },
                   "lodash._createwrapper": Object {
+                    "path": "./node_modules/lodash._createwrapper",
                     "value": 3331,
                   },
                   "lodash._objecttypes": Object {
+                    "path": "./node_modules/lodash._objecttypes",
                     "value": 650,
                   },
                   "lodash._renative": Object {
+                    "path": "./node_modules/lodash._renative",
                     "value": 801,
                   },
                   "lodash._setbinddata": Object {
+                    "path": "./node_modules/lodash._setbinddata",
                     "value": 1298,
                   },
                   "lodash._shimkeys": Object {
+                    "path": "./node_modules/lodash._shimkeys",
                     "value": 1225,
                   },
                   "lodash._slice": Object {
+                    "path": "./node_modules/lodash._slice",
                     "value": 1210,
                   },
                   "lodash.bind": Object {
+                    "path": "./node_modules/lodash.bind",
                     "value": 1391,
                   },
                   "lodash.debounce": Object {
+                    "path": "./node_modules/lodash.debounce",
                     "value": 10784,
                   },
                   "lodash.foreach": Object {
+                    "path": "./node_modules/lodash.foreach",
                     "value": 2135,
                   },
                   "lodash.forown": Object {
+                    "path": "./node_modules/lodash.forown",
                     "value": 1987,
                   },
                   "lodash.forown:lodash.keys": Object {
+                    "path": "./node_modules/lodash.forown/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "lodash.identity": Object {
+                    "path": "./node_modules/lodash.identity",
                     "value": 766,
                   },
                   "lodash.isfunction": Object {
+                    "path": "./node_modules/lodash.isfunction",
                     "value": 774,
                   },
                   "lodash.isobject": Object {
+                    "path": "./node_modules/lodash.isobject",
                     "value": 1186,
                   },
                   "lodash.noop": Object {
+                    "path": "./node_modules/lodash.noop",
                     "value": 670,
                   },
                   "lodash.support": Object {
+                    "path": "./node_modules/lodash.support",
                     "value": 1147,
                   },
                   "lodash.throttle": Object {
+                    "path": "./node_modules/lodash.throttle",
                     "value": 13311,
                   },
                   "math-expression-evaluator": Object {
+                    "path": "./node_modules/math-expression-evaluator",
                     "value": 17641,
                   },
                   "node-libs-browser:process": Object {
+                    "path": "./node_modules/node-libs-browser/node_modules/process",
                     "value": 5418,
                   },
                   "object-assign": Object {
+                    "path": "./node_modules/object-assign",
                     "value": 2108,
                   },
                   "performance-now": Object {
+                    "path": "./node_modules/performance-now",
                     "value": 1061,
                   },
                   "preact": Object {
+                    "path": "./node_modules/preact",
                     "value": 22705,
                   },
                   "preact-compat": Object {
+                    "path": "./node_modules/preact-compat",
                     "value": 18110,
                   },
                   "preact-helmet": Object {
+                    "path": "./node_modules/preact-helmet",
                     "value": 23326,
                   },
                   "preact-router": Object {
+                    "path": "./node_modules/preact-router",
                     "value": 12278,
                   },
                   "preact-side-effect": Object {
+                    "path": "./node_modules/preact-side-effect",
                     "value": 4662,
                   },
                   "prop-types": Object {
+                    "path": "./node_modules/prop-types",
                     "value": 2645,
                   },
                   "raf": Object {
+                    "path": "./node_modules/raf",
                     "value": 1933,
                   },
                   "react-lifecycles-compat": Object {
+                    "path": "./node_modules/react-lifecycles-compat",
                     "value": 6048,
                   },
                   "react-transition-group": Object {
+                    "path": "./node_modules/react-transition-group",
                     "value": 49136,
                   },
                   "recharts-scale": Object {
+                    "path": "./node_modules/recharts-scale",
                     "value": 19035,
                   },
                   "recharts:core-js": Object {
+                    "path": "./node_modules/recharts/node_modules/core-js",
                     "value": 32862,
                   },
                   "recharts:prop-types": Object {
+                    "path": "./node_modules/recharts/node_modules/prop-types",
                     "value": 2739,
                   },
                   "recharts:react-resize-detector": Object {
+                    "path": "./node_modules/recharts/node_modules/react-resize-detector",
                     "value": 5778,
                   },
                   "recompose": Object {
+                    "path": "./node_modules/recompose",
                     "value": 31876,
                   },
                   "recompose:hoist-non-react-statics": Object {
+                    "path": "./node_modules/recompose/node_modules/hoist-non-react-statics",
                     "value": 2073,
                   },
                   "reduce-css-calc": Object {
+                    "path": "./node_modules/reduce-css-calc",
                     "value": 4226,
                   },
                   "reduce-css-calc:balanced-match": Object {
+                    "path": "./node_modules/reduce-css-calc/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "reduce-function-call": Object {
+                    "path": "./node_modules/reduce-function-call",
                     "value": 1953,
                   },
                   "reduce-function-call:balanced-match": Object {
+                    "path": "./node_modules/reduce-function-call/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "resize-observer-polyfill": Object {
+                    "path": "./node_modules/resize-observer-polyfill",
                     "value": 33654,
                   },
                   "symbol-observable": Object {
+                    "path": "./node_modules/symbol-observable",
                     "value": 736,
                   },
                   "uuid": Object {
+                    "path": "./node_modules/uuid",
                     "value": 2739,
                   },
                   "whatwg-fetch": Object {
+                    "path": "./node_modules/whatwg-fetch",
                     "value": 13262,
                   },
                 },
@@ -52054,192 +52495,255 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
                 },
                 "packages": Object {
                   "@babel/runtime": Object {
+                    "path": "./node_modules/@babel/runtime",
                     "value": 145,
                   },
                   "@moonwalker/orbit-ui": Object {
+                    "path": "./node_modules/@moonwalker/orbit-ui",
                     "value": 4267,
                   },
                   "@relative-ci/ui": Object {
+                    "path": "./node_modules/@relative-ci/ui",
                     "value": 796989,
                   },
                   "@relative-ci/utils": Object {
+                    "path": "./node_modules/@relative-ci/utils",
                     "value": 23621,
                   },
                   "change-emitter": Object {
+                    "path": "./node_modules/change-emitter",
                     "value": 1132,
                   },
                   "classnames": Object {
+                    "path": "./node_modules/classnames",
                     "value": 1198,
                   },
                   "convert-units": Object {
+                    "path": "./node_modules/convert-units",
                     "value": 33857,
                   },
                   "convert-units:lodash.keys": Object {
+                    "path": "./node_modules/convert-units/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "decimal.js-light": Object {
+                    "path": "./node_modules/decimal.js-light",
                     "value": 53368,
                   },
                   "deep-equal": Object {
+                    "path": "./node_modules/deep-equal",
                     "value": 3894,
                   },
                   "dom-helpers": Object {
+                    "path": "./node_modules/dom-helpers",
                     "value": 1539,
                   },
                   "events": Object {
+                    "path": "./node_modules/events",
                     "value": 13604,
                   },
                   "fbjs": Object {
+                    "path": "./node_modules/fbjs",
                     "value": 1616,
                   },
                   "ganalytics": Object {
+                    "path": "./node_modules/ganalytics",
                     "value": 684,
                   },
                   "lodash": Object {
+                    "path": "./node_modules/lodash",
                     "value": 291069,
                   },
                   "lodash._basebind": Object {
+                    "path": "./node_modules/lodash._basebind",
                     "value": 1800,
                   },
                   "lodash._basecreate": Object {
+                    "path": "./node_modules/lodash._basecreate",
                     "value": 1432,
                   },
                   "lodash._basecreatecallback": Object {
+                    "path": "./node_modules/lodash._basecreatecallback",
                     "value": 2735,
                   },
                   "lodash._basecreatewrapper": Object {
+                    "path": "./node_modules/lodash._basecreatewrapper",
                     "value": 2350,
                   },
                   "lodash._createwrapper": Object {
+                    "path": "./node_modules/lodash._createwrapper",
                     "value": 3331,
                   },
                   "lodash._objecttypes": Object {
+                    "path": "./node_modules/lodash._objecttypes",
                     "value": 650,
                   },
                   "lodash._renative": Object {
+                    "path": "./node_modules/lodash._renative",
                     "value": 801,
                   },
                   "lodash._setbinddata": Object {
+                    "path": "./node_modules/lodash._setbinddata",
                     "value": 1298,
                   },
                   "lodash._shimkeys": Object {
+                    "path": "./node_modules/lodash._shimkeys",
                     "value": 1225,
                   },
                   "lodash._slice": Object {
+                    "path": "./node_modules/lodash._slice",
                     "value": 1210,
                   },
                   "lodash.bind": Object {
+                    "path": "./node_modules/lodash.bind",
                     "value": 1391,
                   },
                   "lodash.debounce": Object {
+                    "path": "./node_modules/lodash.debounce",
                     "value": 10784,
                   },
                   "lodash.foreach": Object {
+                    "path": "./node_modules/lodash.foreach",
                     "value": 2135,
                   },
                   "lodash.forown": Object {
+                    "path": "./node_modules/lodash.forown",
                     "value": 1987,
                   },
                   "lodash.forown:lodash.keys": Object {
+                    "path": "./node_modules/lodash.forown/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "lodash.identity": Object {
+                    "path": "./node_modules/lodash.identity",
                     "value": 766,
                   },
                   "lodash.isfunction": Object {
+                    "path": "./node_modules/lodash.isfunction",
                     "value": 774,
                   },
                   "lodash.isobject": Object {
+                    "path": "./node_modules/lodash.isobject",
                     "value": 1186,
                   },
                   "lodash.noop": Object {
+                    "path": "./node_modules/lodash.noop",
                     "value": 670,
                   },
                   "lodash.support": Object {
+                    "path": "./node_modules/lodash.support",
                     "value": 1147,
                   },
                   "lodash.throttle": Object {
+                    "path": "./node_modules/lodash.throttle",
                     "value": 13311,
                   },
                   "math-expression-evaluator": Object {
+                    "path": "./node_modules/math-expression-evaluator",
                     "value": 17641,
                   },
                   "node-libs-browser:process": Object {
+                    "path": "./node_modules/node-libs-browser/node_modules/process",
                     "value": 5418,
                   },
                   "object-assign": Object {
+                    "path": "./node_modules/object-assign",
                     "value": 2108,
                   },
                   "performance-now": Object {
+                    "path": "./node_modules/performance-now",
                     "value": 1061,
                   },
                   "preact": Object {
+                    "path": "./node_modules/preact",
                     "value": 22705,
                   },
                   "preact-compat": Object {
+                    "path": "./node_modules/preact-compat",
                     "value": 18110,
                   },
                   "preact-helmet": Object {
+                    "path": "./node_modules/preact-helmet",
                     "value": 23326,
                   },
                   "preact-router": Object {
+                    "path": "./node_modules/preact-router",
                     "value": 12278,
                   },
                   "preact-side-effect": Object {
+                    "path": "./node_modules/preact-side-effect",
                     "value": 4662,
                   },
                   "prop-types": Object {
+                    "path": "./node_modules/prop-types",
                     "value": 2645,
                   },
                   "raf": Object {
+                    "path": "./node_modules/raf",
                     "value": 1933,
                   },
                   "react-lifecycles-compat": Object {
+                    "path": "./node_modules/react-lifecycles-compat",
                     "value": 6048,
                   },
                   "react-transition-group": Object {
+                    "path": "./node_modules/react-transition-group",
                     "value": 49136,
                   },
                   "recharts-scale": Object {
+                    "path": "./node_modules/recharts-scale",
                     "value": 19035,
                   },
                   "recharts:core-js": Object {
+                    "path": "./node_modules/recharts/node_modules/core-js",
                     "value": 32862,
                   },
                   "recharts:prop-types": Object {
+                    "path": "./node_modules/recharts/node_modules/prop-types",
                     "value": 2739,
                   },
                   "recharts:react-resize-detector": Object {
+                    "path": "./node_modules/recharts/node_modules/react-resize-detector",
                     "value": 5778,
                   },
                   "recompose": Object {
+                    "path": "./node_modules/recompose",
                     "value": 31876,
                   },
                   "recompose:hoist-non-react-statics": Object {
+                    "path": "./node_modules/recompose/node_modules/hoist-non-react-statics",
                     "value": 2073,
                   },
                   "reduce-css-calc": Object {
+                    "path": "./node_modules/reduce-css-calc",
                     "value": 4226,
                   },
                   "reduce-css-calc:balanced-match": Object {
+                    "path": "./node_modules/reduce-css-calc/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "reduce-function-call": Object {
+                    "path": "./node_modules/reduce-function-call",
                     "value": 1953,
                   },
                   "reduce-function-call:balanced-match": Object {
+                    "path": "./node_modules/reduce-function-call/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "resize-observer-polyfill": Object {
+                    "path": "./node_modules/resize-observer-polyfill",
                     "value": 33654,
                   },
                   "symbol-observable": Object {
+                    "path": "./node_modules/symbol-observable",
                     "value": 736,
                   },
                   "uuid": Object {
+                    "path": "./node_modules/uuid",
                     "value": 2739,
                   },
                   "whatwg-fetch": Object {
+                    "path": "./node_modules/whatwg-fetch",
                     "value": 13262,
                   },
                 },
@@ -59054,192 +59558,255 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
                 },
                 "packages": Object {
                   "@babel/runtime": Object {
+                    "path": "./node_modules/@babel/runtime",
                     "value": 145,
                   },
                   "@moonwalker/orbit-ui": Object {
+                    "path": "./node_modules/@moonwalker/orbit-ui",
                     "value": 4267,
                   },
                   "@relative-ci/ui": Object {
+                    "path": "./node_modules/@relative-ci/ui",
                     "value": 794634,
                   },
                   "@relative-ci/utils": Object {
+                    "path": "./node_modules/@relative-ci/utils",
                     "value": 23621,
                   },
                   "change-emitter": Object {
+                    "path": "./node_modules/change-emitter",
                     "value": 1132,
                   },
                   "classnames": Object {
+                    "path": "./node_modules/classnames",
                     "value": 1198,
                   },
                   "convert-units": Object {
+                    "path": "./node_modules/convert-units",
                     "value": 33857,
                   },
                   "convert-units:lodash.keys": Object {
+                    "path": "./node_modules/convert-units/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "decimal.js-light": Object {
+                    "path": "./node_modules/decimal.js-light",
                     "value": 53368,
                   },
                   "deep-equal": Object {
+                    "path": "./node_modules/deep-equal",
                     "value": 3894,
                   },
                   "dom-helpers": Object {
+                    "path": "./node_modules/dom-helpers",
                     "value": 1539,
                   },
                   "events": Object {
+                    "path": "./node_modules/events",
                     "value": 13604,
                   },
                   "fbjs": Object {
+                    "path": "./node_modules/fbjs",
                     "value": 1616,
                   },
                   "ganalytics": Object {
+                    "path": "./node_modules/ganalytics",
                     "value": 684,
                   },
                   "lodash": Object {
+                    "path": "./node_modules/lodash",
                     "value": 291069,
                   },
                   "lodash._basebind": Object {
+                    "path": "./node_modules/lodash._basebind",
                     "value": 1800,
                   },
                   "lodash._basecreate": Object {
+                    "path": "./node_modules/lodash._basecreate",
                     "value": 1432,
                   },
                   "lodash._basecreatecallback": Object {
+                    "path": "./node_modules/lodash._basecreatecallback",
                     "value": 2735,
                   },
                   "lodash._basecreatewrapper": Object {
+                    "path": "./node_modules/lodash._basecreatewrapper",
                     "value": 2350,
                   },
                   "lodash._createwrapper": Object {
+                    "path": "./node_modules/lodash._createwrapper",
                     "value": 3331,
                   },
                   "lodash._objecttypes": Object {
+                    "path": "./node_modules/lodash._objecttypes",
                     "value": 650,
                   },
                   "lodash._renative": Object {
+                    "path": "./node_modules/lodash._renative",
                     "value": 801,
                   },
                   "lodash._setbinddata": Object {
+                    "path": "./node_modules/lodash._setbinddata",
                     "value": 1298,
                   },
                   "lodash._shimkeys": Object {
+                    "path": "./node_modules/lodash._shimkeys",
                     "value": 1225,
                   },
                   "lodash._slice": Object {
+                    "path": "./node_modules/lodash._slice",
                     "value": 1210,
                   },
                   "lodash.bind": Object {
+                    "path": "./node_modules/lodash.bind",
                     "value": 1391,
                   },
                   "lodash.debounce": Object {
+                    "path": "./node_modules/lodash.debounce",
                     "value": 10784,
                   },
                   "lodash.foreach": Object {
+                    "path": "./node_modules/lodash.foreach",
                     "value": 2135,
                   },
                   "lodash.forown": Object {
+                    "path": "./node_modules/lodash.forown",
                     "value": 1987,
                   },
                   "lodash.forown:lodash.keys": Object {
+                    "path": "./node_modules/lodash.forown/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "lodash.identity": Object {
+                    "path": "./node_modules/lodash.identity",
                     "value": 766,
                   },
                   "lodash.isfunction": Object {
+                    "path": "./node_modules/lodash.isfunction",
                     "value": 774,
                   },
                   "lodash.isobject": Object {
+                    "path": "./node_modules/lodash.isobject",
                     "value": 1186,
                   },
                   "lodash.noop": Object {
+                    "path": "./node_modules/lodash.noop",
                     "value": 670,
                   },
                   "lodash.support": Object {
+                    "path": "./node_modules/lodash.support",
                     "value": 1147,
                   },
                   "lodash.throttle": Object {
+                    "path": "./node_modules/lodash.throttle",
                     "value": 13311,
                   },
                   "math-expression-evaluator": Object {
+                    "path": "./node_modules/math-expression-evaluator",
                     "value": 17641,
                   },
                   "node-libs-browser:process": Object {
+                    "path": "./node_modules/node-libs-browser/node_modules/process",
                     "value": 5418,
                   },
                   "object-assign": Object {
+                    "path": "./node_modules/object-assign",
                     "value": 2108,
                   },
                   "performance-now": Object {
+                    "path": "./node_modules/performance-now",
                     "value": 1061,
                   },
                   "preact": Object {
+                    "path": "./node_modules/preact",
                     "value": 22705,
                   },
                   "preact-compat": Object {
+                    "path": "./node_modules/preact-compat",
                     "value": 18110,
                   },
                   "preact-helmet": Object {
+                    "path": "./node_modules/preact-helmet",
                     "value": 23326,
                   },
                   "preact-router": Object {
+                    "path": "./node_modules/preact-router",
                     "value": 12278,
                   },
                   "preact-side-effect": Object {
+                    "path": "./node_modules/preact-side-effect",
                     "value": 4662,
                   },
                   "prop-types": Object {
+                    "path": "./node_modules/prop-types",
                     "value": 2645,
                   },
                   "raf": Object {
+                    "path": "./node_modules/raf",
                     "value": 1933,
                   },
                   "react-lifecycles-compat": Object {
+                    "path": "./node_modules/react-lifecycles-compat",
                     "value": 6048,
                   },
                   "react-transition-group": Object {
+                    "path": "./node_modules/react-transition-group",
                     "value": 49136,
                   },
                   "recharts-scale": Object {
+                    "path": "./node_modules/recharts-scale",
                     "value": 19035,
                   },
                   "recharts:core-js": Object {
+                    "path": "./node_modules/recharts/node_modules/core-js",
                     "value": 32862,
                   },
                   "recharts:prop-types": Object {
+                    "path": "./node_modules/recharts/node_modules/prop-types",
                     "value": 2739,
                   },
                   "recharts:react-resize-detector": Object {
+                    "path": "./node_modules/recharts/node_modules/react-resize-detector",
                     "value": 5778,
                   },
                   "recompose": Object {
+                    "path": "./node_modules/recompose",
                     "value": 31876,
                   },
                   "recompose:hoist-non-react-statics": Object {
+                    "path": "./node_modules/recompose/node_modules/hoist-non-react-statics",
                     "value": 2073,
                   },
                   "reduce-css-calc": Object {
+                    "path": "./node_modules/reduce-css-calc",
                     "value": 4226,
                   },
                   "reduce-css-calc:balanced-match": Object {
+                    "path": "./node_modules/reduce-css-calc/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "reduce-function-call": Object {
+                    "path": "./node_modules/reduce-function-call",
                     "value": 1953,
                   },
                   "reduce-function-call:balanced-match": Object {
+                    "path": "./node_modules/reduce-function-call/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "resize-observer-polyfill": Object {
+                    "path": "./node_modules/resize-observer-polyfill",
                     "value": 33654,
                   },
                   "symbol-observable": Object {
+                    "path": "./node_modules/symbol-observable",
                     "value": 736,
                   },
                   "uuid": Object {
+                    "path": "./node_modules/uuid",
                     "value": 2739,
                   },
                   "whatwg-fetch": Object {
+                    "path": "./node_modules/whatwg-fetch",
                     "value": 13262,
                   },
                 },
@@ -66002,192 +66569,255 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
                 },
                 "packages": Object {
                   "@babel/runtime": Object {
+                    "path": "./node_modules/@babel/runtime",
                     "value": 145,
                   },
                   "@moonwalker/orbit-ui": Object {
+                    "path": "./node_modules/@moonwalker/orbit-ui",
                     "value": 4267,
                   },
                   "@relative-ci/ui": Object {
+                    "path": "./node_modules/@relative-ci/ui",
                     "value": 796989,
                   },
                   "@relative-ci/utils": Object {
+                    "path": "./node_modules/@relative-ci/utils",
                     "value": 23621,
                   },
                   "change-emitter": Object {
+                    "path": "./node_modules/change-emitter",
                     "value": 1132,
                   },
                   "classnames": Object {
+                    "path": "./node_modules/classnames",
                     "value": 1198,
                   },
                   "convert-units": Object {
+                    "path": "./node_modules/convert-units",
                     "value": 33857,
                   },
                   "convert-units:lodash.keys": Object {
+                    "path": "./node_modules/convert-units/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "decimal.js-light": Object {
+                    "path": "./node_modules/decimal.js-light",
                     "value": 53368,
                   },
                   "deep-equal": Object {
+                    "path": "./node_modules/deep-equal",
                     "value": 3894,
                   },
                   "dom-helpers": Object {
+                    "path": "./node_modules/dom-helpers",
                     "value": 1539,
                   },
                   "events": Object {
+                    "path": "./node_modules/events",
                     "value": 13604,
                   },
                   "fbjs": Object {
+                    "path": "./node_modules/fbjs",
                     "value": 1616,
                   },
                   "ganalytics": Object {
+                    "path": "./node_modules/ganalytics",
                     "value": 684,
                   },
                   "lodash": Object {
+                    "path": "./node_modules/lodash",
                     "value": 291069,
                   },
                   "lodash._basebind": Object {
+                    "path": "./node_modules/lodash._basebind",
                     "value": 1800,
                   },
                   "lodash._basecreate": Object {
+                    "path": "./node_modules/lodash._basecreate",
                     "value": 1432,
                   },
                   "lodash._basecreatecallback": Object {
+                    "path": "./node_modules/lodash._basecreatecallback",
                     "value": 2735,
                   },
                   "lodash._basecreatewrapper": Object {
+                    "path": "./node_modules/lodash._basecreatewrapper",
                     "value": 2350,
                   },
                   "lodash._createwrapper": Object {
+                    "path": "./node_modules/lodash._createwrapper",
                     "value": 3331,
                   },
                   "lodash._objecttypes": Object {
+                    "path": "./node_modules/lodash._objecttypes",
                     "value": 650,
                   },
                   "lodash._renative": Object {
+                    "path": "./node_modules/lodash._renative",
                     "value": 801,
                   },
                   "lodash._setbinddata": Object {
+                    "path": "./node_modules/lodash._setbinddata",
                     "value": 1298,
                   },
                   "lodash._shimkeys": Object {
+                    "path": "./node_modules/lodash._shimkeys",
                     "value": 1225,
                   },
                   "lodash._slice": Object {
+                    "path": "./node_modules/lodash._slice",
                     "value": 1210,
                   },
                   "lodash.bind": Object {
+                    "path": "./node_modules/lodash.bind",
                     "value": 1391,
                   },
                   "lodash.debounce": Object {
+                    "path": "./node_modules/lodash.debounce",
                     "value": 10784,
                   },
                   "lodash.foreach": Object {
+                    "path": "./node_modules/lodash.foreach",
                     "value": 2135,
                   },
                   "lodash.forown": Object {
+                    "path": "./node_modules/lodash.forown",
                     "value": 1987,
                   },
                   "lodash.forown:lodash.keys": Object {
+                    "path": "./node_modules/lodash.forown/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "lodash.identity": Object {
+                    "path": "./node_modules/lodash.identity",
                     "value": 766,
                   },
                   "lodash.isfunction": Object {
+                    "path": "./node_modules/lodash.isfunction",
                     "value": 774,
                   },
                   "lodash.isobject": Object {
+                    "path": "./node_modules/lodash.isobject",
                     "value": 1186,
                   },
                   "lodash.noop": Object {
+                    "path": "./node_modules/lodash.noop",
                     "value": 670,
                   },
                   "lodash.support": Object {
+                    "path": "./node_modules/lodash.support",
                     "value": 1147,
                   },
                   "lodash.throttle": Object {
+                    "path": "./node_modules/lodash.throttle",
                     "value": 13311,
                   },
                   "math-expression-evaluator": Object {
+                    "path": "./node_modules/math-expression-evaluator",
                     "value": 17641,
                   },
                   "node-libs-browser:process": Object {
+                    "path": "./node_modules/node-libs-browser/node_modules/process",
                     "value": 5418,
                   },
                   "object-assign": Object {
+                    "path": "./node_modules/object-assign",
                     "value": 2108,
                   },
                   "performance-now": Object {
+                    "path": "./node_modules/performance-now",
                     "value": 1061,
                   },
                   "preact": Object {
+                    "path": "./node_modules/preact",
                     "value": 22705,
                   },
                   "preact-compat": Object {
+                    "path": "./node_modules/preact-compat",
                     "value": 18110,
                   },
                   "preact-helmet": Object {
+                    "path": "./node_modules/preact-helmet",
                     "value": 23326,
                   },
                   "preact-router": Object {
+                    "path": "./node_modules/preact-router",
                     "value": 12278,
                   },
                   "preact-side-effect": Object {
+                    "path": "./node_modules/preact-side-effect",
                     "value": 4662,
                   },
                   "prop-types": Object {
+                    "path": "./node_modules/prop-types",
                     "value": 2645,
                   },
                   "raf": Object {
+                    "path": "./node_modules/raf",
                     "value": 1933,
                   },
                   "react-lifecycles-compat": Object {
+                    "path": "./node_modules/react-lifecycles-compat",
                     "value": 6048,
                   },
                   "react-transition-group": Object {
+                    "path": "./node_modules/react-transition-group",
                     "value": 49136,
                   },
                   "recharts-scale": Object {
+                    "path": "./node_modules/recharts-scale",
                     "value": 19035,
                   },
                   "recharts:core-js": Object {
+                    "path": "./node_modules/recharts/node_modules/core-js",
                     "value": 32862,
                   },
                   "recharts:prop-types": Object {
+                    "path": "./node_modules/recharts/node_modules/prop-types",
                     "value": 2739,
                   },
                   "recharts:react-resize-detector": Object {
+                    "path": "./node_modules/recharts/node_modules/react-resize-detector",
                     "value": 5778,
                   },
                   "recompose": Object {
+                    "path": "./node_modules/recompose",
                     "value": 31876,
                   },
                   "recompose:hoist-non-react-statics": Object {
+                    "path": "./node_modules/recompose/node_modules/hoist-non-react-statics",
                     "value": 2073,
                   },
                   "reduce-css-calc": Object {
+                    "path": "./node_modules/reduce-css-calc",
                     "value": 4226,
                   },
                   "reduce-css-calc:balanced-match": Object {
+                    "path": "./node_modules/reduce-css-calc/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "reduce-function-call": Object {
+                    "path": "./node_modules/reduce-function-call",
                     "value": 1953,
                   },
                   "reduce-function-call:balanced-match": Object {
+                    "path": "./node_modules/reduce-function-call/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "resize-observer-polyfill": Object {
+                    "path": "./node_modules/resize-observer-polyfill",
                     "value": 33654,
                   },
                   "symbol-observable": Object {
+                    "path": "./node_modules/symbol-observable",
                     "value": 736,
                   },
                   "uuid": Object {
+                    "path": "./node_modules/uuid",
                     "value": 2739,
                   },
                   "whatwg-fetch": Object {
+                    "path": "./node_modules/whatwg-fetch",
                     "value": 13262,
                   },
                 },
@@ -73007,192 +73637,255 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
                 },
                 "packages": Object {
                   "@babel/runtime": Object {
+                    "path": "./node_modules/@babel/runtime",
                     "value": 145,
                   },
                   "@moonwalker/orbit-ui": Object {
+                    "path": "./node_modules/@moonwalker/orbit-ui",
                     "value": 4267,
                   },
                   "@relative-ci/ui": Object {
+                    "path": "./node_modules/@relative-ci/ui",
                     "value": 794634,
                   },
                   "@relative-ci/utils": Object {
+                    "path": "./node_modules/@relative-ci/utils",
                     "value": 23621,
                   },
                   "change-emitter": Object {
+                    "path": "./node_modules/change-emitter",
                     "value": 1132,
                   },
                   "classnames": Object {
+                    "path": "./node_modules/classnames",
                     "value": 1198,
                   },
                   "convert-units": Object {
+                    "path": "./node_modules/convert-units",
                     "value": 33857,
                   },
                   "convert-units:lodash.keys": Object {
+                    "path": "./node_modules/convert-units/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "decimal.js-light": Object {
+                    "path": "./node_modules/decimal.js-light",
                     "value": 53368,
                   },
                   "deep-equal": Object {
+                    "path": "./node_modules/deep-equal",
                     "value": 3894,
                   },
                   "dom-helpers": Object {
+                    "path": "./node_modules/dom-helpers",
                     "value": 1539,
                   },
                   "events": Object {
+                    "path": "./node_modules/events",
                     "value": 13604,
                   },
                   "fbjs": Object {
+                    "path": "./node_modules/fbjs",
                     "value": 1616,
                   },
                   "ganalytics": Object {
+                    "path": "./node_modules/ganalytics",
                     "value": 684,
                   },
                   "lodash": Object {
+                    "path": "./node_modules/lodash",
                     "value": 291069,
                   },
                   "lodash._basebind": Object {
+                    "path": "./node_modules/lodash._basebind",
                     "value": 1800,
                   },
                   "lodash._basecreate": Object {
+                    "path": "./node_modules/lodash._basecreate",
                     "value": 1432,
                   },
                   "lodash._basecreatecallback": Object {
+                    "path": "./node_modules/lodash._basecreatecallback",
                     "value": 2735,
                   },
                   "lodash._basecreatewrapper": Object {
+                    "path": "./node_modules/lodash._basecreatewrapper",
                     "value": 2350,
                   },
                   "lodash._createwrapper": Object {
+                    "path": "./node_modules/lodash._createwrapper",
                     "value": 3331,
                   },
                   "lodash._objecttypes": Object {
+                    "path": "./node_modules/lodash._objecttypes",
                     "value": 650,
                   },
                   "lodash._renative": Object {
+                    "path": "./node_modules/lodash._renative",
                     "value": 801,
                   },
                   "lodash._setbinddata": Object {
+                    "path": "./node_modules/lodash._setbinddata",
                     "value": 1298,
                   },
                   "lodash._shimkeys": Object {
+                    "path": "./node_modules/lodash._shimkeys",
                     "value": 1225,
                   },
                   "lodash._slice": Object {
+                    "path": "./node_modules/lodash._slice",
                     "value": 1210,
                   },
                   "lodash.bind": Object {
+                    "path": "./node_modules/lodash.bind",
                     "value": 1391,
                   },
                   "lodash.debounce": Object {
+                    "path": "./node_modules/lodash.debounce",
                     "value": 10784,
                   },
                   "lodash.foreach": Object {
+                    "path": "./node_modules/lodash.foreach",
                     "value": 2135,
                   },
                   "lodash.forown": Object {
+                    "path": "./node_modules/lodash.forown",
                     "value": 1987,
                   },
                   "lodash.forown:lodash.keys": Object {
+                    "path": "./node_modules/lodash.forown/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "lodash.identity": Object {
+                    "path": "./node_modules/lodash.identity",
                     "value": 766,
                   },
                   "lodash.isfunction": Object {
+                    "path": "./node_modules/lodash.isfunction",
                     "value": 774,
                   },
                   "lodash.isobject": Object {
+                    "path": "./node_modules/lodash.isobject",
                     "value": 1186,
                   },
                   "lodash.noop": Object {
+                    "path": "./node_modules/lodash.noop",
                     "value": 670,
                   },
                   "lodash.support": Object {
+                    "path": "./node_modules/lodash.support",
                     "value": 1147,
                   },
                   "lodash.throttle": Object {
+                    "path": "./node_modules/lodash.throttle",
                     "value": 13311,
                   },
                   "math-expression-evaluator": Object {
+                    "path": "./node_modules/math-expression-evaluator",
                     "value": 17641,
                   },
                   "node-libs-browser:process": Object {
+                    "path": "./node_modules/node-libs-browser/node_modules/process",
                     "value": 5418,
                   },
                   "object-assign": Object {
+                    "path": "./node_modules/object-assign",
                     "value": 2108,
                   },
                   "performance-now": Object {
+                    "path": "./node_modules/performance-now",
                     "value": 1061,
                   },
                   "preact": Object {
+                    "path": "./node_modules/preact",
                     "value": 22705,
                   },
                   "preact-compat": Object {
+                    "path": "./node_modules/preact-compat",
                     "value": 18110,
                   },
                   "preact-helmet": Object {
+                    "path": "./node_modules/preact-helmet",
                     "value": 23326,
                   },
                   "preact-router": Object {
+                    "path": "./node_modules/preact-router",
                     "value": 12278,
                   },
                   "preact-side-effect": Object {
+                    "path": "./node_modules/preact-side-effect",
                     "value": 4662,
                   },
                   "prop-types": Object {
+                    "path": "./node_modules/prop-types",
                     "value": 2645,
                   },
                   "raf": Object {
+                    "path": "./node_modules/raf",
                     "value": 1933,
                   },
                   "react-lifecycles-compat": Object {
+                    "path": "./node_modules/react-lifecycles-compat",
                     "value": 6048,
                   },
                   "react-transition-group": Object {
+                    "path": "./node_modules/react-transition-group",
                     "value": 49136,
                   },
                   "recharts-scale": Object {
+                    "path": "./node_modules/recharts-scale",
                     "value": 19035,
                   },
                   "recharts:core-js": Object {
+                    "path": "./node_modules/recharts/node_modules/core-js",
                     "value": 32862,
                   },
                   "recharts:prop-types": Object {
+                    "path": "./node_modules/recharts/node_modules/prop-types",
                     "value": 2739,
                   },
                   "recharts:react-resize-detector": Object {
+                    "path": "./node_modules/recharts/node_modules/react-resize-detector",
                     "value": 5778,
                   },
                   "recompose": Object {
+                    "path": "./node_modules/recompose",
                     "value": 31876,
                   },
                   "recompose:hoist-non-react-statics": Object {
+                    "path": "./node_modules/recompose/node_modules/hoist-non-react-statics",
                     "value": 2073,
                   },
                   "reduce-css-calc": Object {
+                    "path": "./node_modules/reduce-css-calc",
                     "value": 4226,
                   },
                   "reduce-css-calc:balanced-match": Object {
+                    "path": "./node_modules/reduce-css-calc/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "reduce-function-call": Object {
+                    "path": "./node_modules/reduce-function-call",
                     "value": 1953,
                   },
                   "reduce-function-call:balanced-match": Object {
+                    "path": "./node_modules/reduce-function-call/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "resize-observer-polyfill": Object {
+                    "path": "./node_modules/resize-observer-polyfill",
                     "value": 33654,
                   },
                   "symbol-observable": Object {
+                    "path": "./node_modules/symbol-observable",
                     "value": 736,
                   },
                   "uuid": Object {
+                    "path": "./node_modules/uuid",
                     "value": 2739,
                   },
                   "whatwg-fetch": Object {
+                    "path": "./node_modules/whatwg-fetch",
                     "value": 13262,
                   },
                 },
@@ -79960,192 +80653,255 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
                 },
                 "packages": Object {
                   "@babel/runtime": Object {
+                    "path": "./node_modules/@babel/runtime",
                     "value": 145,
                   },
                   "@moonwalker/orbit-ui": Object {
+                    "path": "./node_modules/@moonwalker/orbit-ui",
                     "value": 4267,
                   },
                   "@relative-ci/ui": Object {
+                    "path": "./node_modules/@relative-ci/ui",
                     "value": 796989,
                   },
                   "@relative-ci/utils": Object {
+                    "path": "./node_modules/@relative-ci/utils",
                     "value": 23621,
                   },
                   "change-emitter": Object {
+                    "path": "./node_modules/change-emitter",
                     "value": 1132,
                   },
                   "classnames": Object {
+                    "path": "./node_modules/classnames",
                     "value": 1198,
                   },
                   "convert-units": Object {
+                    "path": "./node_modules/convert-units",
                     "value": 33857,
                   },
                   "convert-units:lodash.keys": Object {
+                    "path": "./node_modules/convert-units/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "decimal.js-light": Object {
+                    "path": "./node_modules/decimal.js-light",
                     "value": 53368,
                   },
                   "deep-equal": Object {
+                    "path": "./node_modules/deep-equal",
                     "value": 3894,
                   },
                   "dom-helpers": Object {
+                    "path": "./node_modules/dom-helpers",
                     "value": 1539,
                   },
                   "events": Object {
+                    "path": "./node_modules/events",
                     "value": 13604,
                   },
                   "fbjs": Object {
+                    "path": "./node_modules/fbjs",
                     "value": 1616,
                   },
                   "ganalytics": Object {
+                    "path": "./node_modules/ganalytics",
                     "value": 684,
                   },
                   "lodash": Object {
+                    "path": "./node_modules/lodash",
                     "value": 291069,
                   },
                   "lodash._basebind": Object {
+                    "path": "./node_modules/lodash._basebind",
                     "value": 1800,
                   },
                   "lodash._basecreate": Object {
+                    "path": "./node_modules/lodash._basecreate",
                     "value": 1432,
                   },
                   "lodash._basecreatecallback": Object {
+                    "path": "./node_modules/lodash._basecreatecallback",
                     "value": 2735,
                   },
                   "lodash._basecreatewrapper": Object {
+                    "path": "./node_modules/lodash._basecreatewrapper",
                     "value": 2350,
                   },
                   "lodash._createwrapper": Object {
+                    "path": "./node_modules/lodash._createwrapper",
                     "value": 3331,
                   },
                   "lodash._objecttypes": Object {
+                    "path": "./node_modules/lodash._objecttypes",
                     "value": 650,
                   },
                   "lodash._renative": Object {
+                    "path": "./node_modules/lodash._renative",
                     "value": 801,
                   },
                   "lodash._setbinddata": Object {
+                    "path": "./node_modules/lodash._setbinddata",
                     "value": 1298,
                   },
                   "lodash._shimkeys": Object {
+                    "path": "./node_modules/lodash._shimkeys",
                     "value": 1225,
                   },
                   "lodash._slice": Object {
+                    "path": "./node_modules/lodash._slice",
                     "value": 1210,
                   },
                   "lodash.bind": Object {
+                    "path": "./node_modules/lodash.bind",
                     "value": 1391,
                   },
                   "lodash.debounce": Object {
+                    "path": "./node_modules/lodash.debounce",
                     "value": 10784,
                   },
                   "lodash.foreach": Object {
+                    "path": "./node_modules/lodash.foreach",
                     "value": 2135,
                   },
                   "lodash.forown": Object {
+                    "path": "./node_modules/lodash.forown",
                     "value": 1987,
                   },
                   "lodash.forown:lodash.keys": Object {
+                    "path": "./node_modules/lodash.forown/node_modules/lodash.keys",
                     "value": 1253,
                   },
                   "lodash.identity": Object {
+                    "path": "./node_modules/lodash.identity",
                     "value": 766,
                   },
                   "lodash.isfunction": Object {
+                    "path": "./node_modules/lodash.isfunction",
                     "value": 774,
                   },
                   "lodash.isobject": Object {
+                    "path": "./node_modules/lodash.isobject",
                     "value": 1186,
                   },
                   "lodash.noop": Object {
+                    "path": "./node_modules/lodash.noop",
                     "value": 670,
                   },
                   "lodash.support": Object {
+                    "path": "./node_modules/lodash.support",
                     "value": 1147,
                   },
                   "lodash.throttle": Object {
+                    "path": "./node_modules/lodash.throttle",
                     "value": 13311,
                   },
                   "math-expression-evaluator": Object {
+                    "path": "./node_modules/math-expression-evaluator",
                     "value": 17641,
                   },
                   "node-libs-browser:process": Object {
+                    "path": "./node_modules/node-libs-browser/node_modules/process",
                     "value": 5418,
                   },
                   "object-assign": Object {
+                    "path": "./node_modules/object-assign",
                     "value": 2108,
                   },
                   "performance-now": Object {
+                    "path": "./node_modules/performance-now",
                     "value": 1061,
                   },
                   "preact": Object {
+                    "path": "./node_modules/preact",
                     "value": 22705,
                   },
                   "preact-compat": Object {
+                    "path": "./node_modules/preact-compat",
                     "value": 18110,
                   },
                   "preact-helmet": Object {
+                    "path": "./node_modules/preact-helmet",
                     "value": 23326,
                   },
                   "preact-router": Object {
+                    "path": "./node_modules/preact-router",
                     "value": 12278,
                   },
                   "preact-side-effect": Object {
+                    "path": "./node_modules/preact-side-effect",
                     "value": 4662,
                   },
                   "prop-types": Object {
+                    "path": "./node_modules/prop-types",
                     "value": 2645,
                   },
                   "raf": Object {
+                    "path": "./node_modules/raf",
                     "value": 1933,
                   },
                   "react-lifecycles-compat": Object {
+                    "path": "./node_modules/react-lifecycles-compat",
                     "value": 6048,
                   },
                   "react-transition-group": Object {
+                    "path": "./node_modules/react-transition-group",
                     "value": 49136,
                   },
                   "recharts-scale": Object {
+                    "path": "./node_modules/recharts-scale",
                     "value": 19035,
                   },
                   "recharts:core-js": Object {
+                    "path": "./node_modules/recharts/node_modules/core-js",
                     "value": 32862,
                   },
                   "recharts:prop-types": Object {
+                    "path": "./node_modules/recharts/node_modules/prop-types",
                     "value": 2739,
                   },
                   "recharts:react-resize-detector": Object {
+                    "path": "./node_modules/recharts/node_modules/react-resize-detector",
                     "value": 5778,
                   },
                   "recompose": Object {
+                    "path": "./node_modules/recompose",
                     "value": 31876,
                   },
                   "recompose:hoist-non-react-statics": Object {
+                    "path": "./node_modules/recompose/node_modules/hoist-non-react-statics",
                     "value": 2073,
                   },
                   "reduce-css-calc": Object {
+                    "path": "./node_modules/reduce-css-calc",
                     "value": 4226,
                   },
                   "reduce-css-calc:balanced-match": Object {
+                    "path": "./node_modules/reduce-css-calc/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "reduce-function-call": Object {
+                    "path": "./node_modules/reduce-function-call",
                     "value": 1953,
                   },
                   "reduce-function-call:balanced-match": Object {
+                    "path": "./node_modules/reduce-function-call/node_modules/balanced-match",
                     "value": 1160,
                   },
                   "resize-observer-polyfill": Object {
+                    "path": "./node_modules/resize-observer-polyfill",
                     "value": 33654,
                   },
                   "symbol-observable": Object {
+                    "path": "./node_modules/symbol-observable",
                     "value": 736,
                   },
                   "uuid": Object {
+                    "path": "./node_modules/uuid",
                     "value": 2739,
                   },
                   "whatwg-fetch": Object {
+                    "path": "./node_modules/whatwg-fetch",
                     "value": 13262,
                   },
                 },

@@ -48,6 +48,14 @@ describe('Webpack/extract/extractModulesPackages', () => {
                 name: './node_modules/@org/package-a/node_modules/@org/package-b/index.js',
                 value: 20,
               },
+              '../lib/node_modules/@org/package-a/node_modules/@org/package-b/index.js': {
+                name: '../lib/node_modules/@org/package-a/node_modules/@org/package-b/index.js',
+                value: 25,
+              },
+              '../lib/node_modules/@org/package-a/node_modules/@org/package-b/module-a.js': {
+                name: '../lib/node_modules/@org/package-a/node_modules/@org/package-b/module-a.js',
+                value: 10,
+              },
             },
           },
         },
@@ -80,6 +88,10 @@ describe('Webpack/extract/extractModulesPackages', () => {
           '@org/package-a:@org/package-b': {
             path: './node_modules/@org/package-a/node_modules/@org/package-b',
             value: 20,
+          },
+          '@org/package-a:@org/package-b~1': {
+            path: '../lib/node_modules/@org/package-a/node_modules/@org/package-b',
+            value: 35,
           },
         },
       },

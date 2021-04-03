@@ -48,6 +48,10 @@ export interface ModuleMetric extends Metric {
   name: string;
 }
 
+export interface PackageMetric extends Metric {
+  path: string;
+}
+
 export interface WebpackMetricsModulesChunk {
   modules: Record<string, ModuleMetric>
 }
@@ -60,7 +64,7 @@ export interface WebpackMetricsModules {
 
 export interface WebpackMetricsPackages {
   metrics: {
-    packages: Record<string, Metric>
+    packages: Record<string, PackageMetric>
   }
 }
 
