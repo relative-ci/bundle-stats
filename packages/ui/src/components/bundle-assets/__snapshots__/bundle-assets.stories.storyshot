@@ -42,7 +42,7 @@ exports[`Storyshots Components/BundleAssets custom filters 1`] = `
       }
     }
   >
-    <withProps(withProps(withProps(WithSearch)))
+    <Component
       filters={
         Object {
           "et.entrypoint": true,
@@ -14272,7 +14272,7 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
       }
     }
   >
-    <withProps(withProps(withProps(WithSearch)))
+    <Component
       jobs={
         Array [
           Object {
@@ -21410,7 +21410,7 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
       }
     }
   >
-    <withProps(withProps(withProps(WithSearch)))
+    <Component
       jobs={
         Array [
           Object {
@@ -28552,7 +28552,7 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
       }
     }
   >
-    <withProps(withProps(withProps(WithSearch)))
+    <Component
       jobs={
         Array [
           Object {
@@ -42508,7 +42508,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
       }
     }
   >
-    <withProps(withProps(withProps(WithSearch)))
+    <Component
       jobs={
         Array [
           Object {
@@ -56732,7 +56732,7 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
       }
     }
   >
-    <withProps(withProps(withProps(WithSearch)))
+    <Component
       jobs={
         Array [
           Object {
@@ -70680,7 +70680,7 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
       }
     }
   >
-    <withProps(withProps(withProps(WithSearch)))
+    <Component
       jobs={
         Array [
           Object {

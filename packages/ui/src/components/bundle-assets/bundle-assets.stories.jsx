@@ -33,7 +33,7 @@ const JOBS_EMPTY_BASELINE = createJobs([{ webpack: currentStats }, null]);
 stories.add('empty baseline', () => <BundleAssets jobs={JOBS_EMPTY_BASELINE} />);
 
 stories.add('no assets', () => (
-  <BundleAssets jobs={JOBS.map((job) => set(job, 'metrics.webpack.assets', {}))} />
+  <BundleAssets jobs={JOBS.map((job) => set(merge({}, job), 'metrics.webpack.assets', {}))} />
 ));
 
 stories.add('empty filtered data', () => (
