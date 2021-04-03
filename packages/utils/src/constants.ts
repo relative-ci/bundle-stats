@@ -40,6 +40,30 @@ export interface MetricRunInfo {
   deltaType?: MetricRunInfoDeltaType;
 }
 
+export interface Metric {
+  value: number;
+}
+
+export interface ModuleMetric extends Metric {
+  name: string;
+}
+
+export interface WebpackMetricsModulesChunk {
+  modules: Record<string, ModuleMetric>
+}
+
+export interface WebpackMetricsModules {
+  metrics: {
+    modules: Record<string, WebpackMetricsModulesChunk>
+  }
+}
+
+export interface WebpackMetricsPackages {
+  metrics: {
+    packages: Record<string, Metric>
+  }
+}
+
 export interface LighthouseSource {
   lighthouseVersion: string;
   fetchTime: string;
