@@ -1,3 +1,4 @@
+import last from 'lodash/last';
 import uniqBy from 'lodash/uniqBy';
 
 import { PACKAGES_SEPARATOR } from '../../config';
@@ -5,16 +6,23 @@ import { Metric, WebpackMetricsModules, WebpackMetricsPackages } from '../../con
 
 const PACKAGE_NAMES = /(node_modules|~)\/((!?@(([\w|\-|_|.]*)\/){2})|(([\w|\-|_|.]*)\/))/g;
 
-const getPackageNameFromModulePath = (moduleName: string) => {
+const getPackageInfoFromModulePath = (moduleName: string) => {
   const found = moduleName.match(PACKAGE_NAMES);
 
   if (!found) {
-    return '';
+    return;
   }
 
   const names = found.map((modulePath) => modulePath.replace(/.*(node_modules|~)\/(.*)\/$/, '$2'));
 
-  return names.join(PACKAGES_SEPARATOR);
+  // get the module full path
+  const pattern = new RegExp(`(.*)(${last(found)}).*`);
+  const path = moduleName.replace(pattern, '$1$2').replace(/\/$/, '');
+
+  return {
+    name: names.join(PACKAGES_SEPARATOR),
+    path,
+  };
 };
 
 export const extractModulesPackages = (
@@ -31,16 +39,17 @@ export const extractModulesPackages = (
 
   const packages = modules.reduce(
     (agg, [modulePath, { value }]) => {
-      const packageName = getPackageNameFromModulePath(modulePath);
+      const packageInfo = getPackageInfoFromModulePath(modulePath);
 
-      if (!packageName) {
+      if (!packageInfo) {
         return agg;
       }
 
       return {
         ...agg,
-        [packageName]: {
-          value: (agg[packageName]?.value || 0) + value,
+        [packageInfo.name]: {
+          path: packageInfo.path,
+          value: (agg[packageInfo.name]?.value || 0) + value,
         },
       };
     },
