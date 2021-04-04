@@ -7,7 +7,7 @@
     "preserveConstEnums": true,
     "allowJs": true,
     "sourceMap": true,
-    "lib": ["ES2019"]
+    "lib": ["ES2019.Array"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "lib", "lib-esm", "__fixtures__", "**/__tests__/*"]
