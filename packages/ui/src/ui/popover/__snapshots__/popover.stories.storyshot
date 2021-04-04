@@ -55,6 +55,683 @@ exports[`Storyshots UI/Popover default 1`] = `
       <Popover
         ariaLabel="View more info"
         className=""
+        icon=""
+        label="Job #100"
+      >
+        <ForwardRef(PopoverDisclosure)
+          animated={false}
+          animating={false}
+          aria-label="View more info"
+          baseId="id-test"
+          className="button"
+          hide={[Function]}
+          modal={true}
+          onClick={[Function]}
+          place={[Function]}
+          placement="top"
+          setAnimated={[Function]}
+          setBaseId={[Function]}
+          setModal={[Function]}
+          setVisible={[Function]}
+          show={[Function]}
+          stopAnimation={[Function]}
+          toggle={[Function]}
+          unstable_arrowRef={
+            Object {
+              "current": <div
+                class="arrow"
+                style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+              >
+                <svg
+                  style="transform: rotateZ(180deg);"
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    class="stroke"
+                    d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                  />
+                  <path
+                    class="fill"
+                    d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                  />
+                </svg>
+              </div>,
+            }
+          }
+          unstable_arrowStyles={Object {}}
+          unstable_disclosureRef={
+            Object {
+              "current": <button
+                aria-controls="id-test"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                aria-label="View more info"
+                class="button"
+                type="button"
+              >
+                
+                <span
+                  class="label"
+                >
+                  Job #100
+                </span>
+              </button>,
+            }
+          }
+          unstable_idCountRef={
+            Object {
+              "current": 0,
+            }
+          }
+          unstable_originalPlacement="top"
+          unstable_popoverRef={
+            Object {
+              "current": <div
+                aria-modal="true"
+                class="popover"
+                data-dialog="true"
+                hidden=""
+                id="id-test"
+                role="dialog"
+                style="display: none; position: fixed; left: 0px; top: 0px;"
+                tabindex="0"
+              >
+                <div
+                  class="arrow"
+                  style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                >
+                  <svg
+                    style="transform: rotateZ(180deg);"
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      class="stroke"
+                      d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                    />
+                    <path
+                      class="fill"
+                      d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                    />
+                  </svg>
+                </div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <button
+                  class="root closeBtn"
+                  type="button"
+                >
+                  <svg
+                    class="icon"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    />
+                  </svg>
+                </button>
+              </div>,
+            }
+          }
+          unstable_popoverStyles={
+            Object {
+              "left": "0",
+              "position": "fixed",
+              "top": "0",
+            }
+          }
+          unstable_referenceRef={
+            Object {
+              "current": <button
+                aria-controls="id-test"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                aria-label="View more info"
+                class="button"
+                type="button"
+              >
+                
+                <span
+                  class="label"
+                >
+                  Job #100
+                </span>
+              </button>,
+            }
+          }
+          unstable_update={[Function]}
+          visible={false}
+        >
+          <button
+            aria-controls="id-test"
+            aria-expanded={false}
+            aria-haspopup="dialog"
+            aria-label="View more info"
+            className="button"
+            onClick={[Function]}
+            onClickCapture={[Function]}
+            onKeyDown={[Function]}
+            onKeyPressCapture={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseDownCapture={[Function]}
+            type="button"
+          >
+            <span
+              className="label"
+            >
+              Job #100
+            </span>
+          </button>
+        </ForwardRef(PopoverDisclosure)>
+        <ForwardRef(Popover)
+          animated={false}
+          animating={false}
+          baseId="id-test"
+          className="popover"
+          hide={[Function]}
+          modal={true}
+          place={[Function]}
+          placement="top"
+          setAnimated={[Function]}
+          setBaseId={[Function]}
+          setModal={[Function]}
+          setVisible={[Function]}
+          show={[Function]}
+          stopAnimation={[Function]}
+          tabIndex={0}
+          toggle={[Function]}
+          unstable_arrowRef={
+            Object {
+              "current": <div
+                class="arrow"
+                style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+              >
+                <svg
+                  style="transform: rotateZ(180deg);"
+                  viewBox="0 0 30 30"
+                >
+                  <path
+                    class="stroke"
+                    d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                  />
+                  <path
+                    class="fill"
+                    d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                  />
+                </svg>
+              </div>,
+            }
+          }
+          unstable_arrowStyles={Object {}}
+          unstable_disclosureRef={
+            Object {
+              "current": <button
+                aria-controls="id-test"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                aria-label="View more info"
+                class="button"
+                type="button"
+              >
+                
+                <span
+                  class="label"
+                >
+                  Job #100
+                </span>
+              </button>,
+            }
+          }
+          unstable_idCountRef={
+            Object {
+              "current": 0,
+            }
+          }
+          unstable_originalPlacement="top"
+          unstable_popoverRef={
+            Object {
+              "current": <div
+                aria-modal="true"
+                class="popover"
+                data-dialog="true"
+                hidden=""
+                id="id-test"
+                role="dialog"
+                style="display: none; position: fixed; left: 0px; top: 0px;"
+                tabindex="0"
+              >
+                <div
+                  class="arrow"
+                  style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                >
+                  <svg
+                    style="transform: rotateZ(180deg);"
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      class="stroke"
+                      d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                    />
+                    <path
+                      class="fill"
+                      d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                    />
+                  </svg>
+                </div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <button
+                  class="root closeBtn"
+                  type="button"
+                >
+                  <svg
+                    class="icon"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    />
+                  </svg>
+                </button>
+              </div>,
+            }
+          }
+          unstable_popoverStyles={
+            Object {
+              "left": "0",
+              "position": "fixed",
+              "top": "0",
+            }
+          }
+          unstable_referenceRef={
+            Object {
+              "current": <button
+                aria-controls="id-test"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                aria-label="View more info"
+                class="button"
+                type="button"
+              >
+                
+                <span
+                  class="label"
+                >
+                  Job #100
+                </span>
+              </button>,
+            }
+          }
+          unstable_update={[Function]}
+          visible={false}
+        >
+          <Portal>
+            <Portal
+              containerInfo={
+                <div
+                  class="__reakit-portal"
+                >
+                  <div
+                    aria-modal="true"
+                    class="popover"
+                    data-dialog="true"
+                    hidden=""
+                    id="id-test"
+                    role="dialog"
+                    style="display: none; position: fixed; left: 0px; top: 0px;"
+                    tabindex="0"
+                  >
+                    <div
+                      class="arrow"
+                      style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                    >
+                      <svg
+                        style="transform: rotateZ(180deg);"
+                        viewBox="0 0 30 30"
+                      >
+                        <path
+                          class="stroke"
+                          d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                        />
+                        <path
+                          class="fill"
+                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                        />
+                      </svg>
+                    </div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    <button
+                      class="root closeBtn"
+                      type="button"
+                    >
+                      <svg
+                        class="icon"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        />
+                        <path
+                          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              }
+            >
+              <div
+                aria-modal={true}
+                className="popover"
+                data-dialog={true}
+                hidden={true}
+                id="id-test"
+                onAnimationEnd={[Function]}
+                onBlur={[Function]}
+                onKeyDown={[Function]}
+                onTransitionEnd={[Function]}
+                role="dialog"
+                style={
+                  Object {
+                    "display": "none",
+                    "left": "0",
+                    "position": "fixed",
+                    "top": "0",
+                  }
+                }
+                tabIndex={0}
+              >
+                <ForwardRef(PopoverArrow)
+                  animated={false}
+                  animating={false}
+                  baseId="id-test"
+                  className="arrow"
+                  hide={[Function]}
+                  modal={true}
+                  place={[Function]}
+                  placement="top"
+                  setAnimated={[Function]}
+                  setBaseId={[Function]}
+                  setModal={[Function]}
+                  setVisible={[Function]}
+                  show={[Function]}
+                  stopAnimation={[Function]}
+                  toggle={[Function]}
+                  unstable_arrowRef={
+                    Object {
+                      "current": <div
+                        class="arrow"
+                        style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                      >
+                        <svg
+                          style="transform: rotateZ(180deg);"
+                          viewBox="0 0 30 30"
+                        >
+                          <path
+                            class="stroke"
+                            d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                          />
+                          <path
+                            class="fill"
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          />
+                        </svg>
+                      </div>,
+                    }
+                  }
+                  unstable_arrowStyles={Object {}}
+                  unstable_disclosureRef={
+                    Object {
+                      "current": <button
+                        aria-controls="id-test"
+                        aria-expanded="false"
+                        aria-haspopup="dialog"
+                        aria-label="View more info"
+                        class="button"
+                        type="button"
+                      >
+                        
+                        <span
+                          class="label"
+                        >
+                          Job #100
+                        </span>
+                      </button>,
+                    }
+                  }
+                  unstable_idCountRef={
+                    Object {
+                      "current": 0,
+                    }
+                  }
+                  unstable_originalPlacement="top"
+                  unstable_popoverRef={
+                    Object {
+                      "current": <div
+                        aria-modal="true"
+                        class="popover"
+                        data-dialog="true"
+                        hidden=""
+                        id="id-test"
+                        role="dialog"
+                        style="display: none; position: fixed; left: 0px; top: 0px;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="arrow"
+                          style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                        >
+                          <svg
+                            style="transform: rotateZ(180deg);"
+                            viewBox="0 0 30 30"
+                          >
+                            <path
+                              class="stroke"
+                              d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                            />
+                            <path
+                              class="fill"
+                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            />
+                          </svg>
+                        </div>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        <button
+                          class="root closeBtn"
+                          type="button"
+                        >
+                          <svg
+                            class="icon"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M0 0h24v24H0z"
+                              fill="none"
+                            />
+                            <path
+                              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                            />
+                          </svg>
+                        </button>
+                      </div>,
+                    }
+                  }
+                  unstable_popoverStyles={
+                    Object {
+                      "left": "0",
+                      "position": "fixed",
+                      "top": "0",
+                    }
+                  }
+                  unstable_referenceRef={
+                    Object {
+                      "current": <button
+                        aria-controls="id-test"
+                        aria-expanded="false"
+                        aria-haspopup="dialog"
+                        aria-label="View more info"
+                        class="button"
+                        type="button"
+                      >
+                        
+                        <span
+                          class="label"
+                        >
+                          Job #100
+                        </span>
+                      </button>,
+                    }
+                  }
+                  unstable_update={[Function]}
+                  visible={false}
+                >
+                  <div
+                    className="arrow"
+                    style={
+                      Object {
+                        "fontSize": 30,
+                        "height": "1em",
+                        "pointerEvents": "none",
+                        "top": "100%",
+                        "width": "1em",
+                      }
+                    }
+                  >
+                    <svg
+                      style={
+                        Object {
+                          "transform": "rotateZ(180deg)",
+                        }
+                      }
+                      viewBox="0 0 30 30"
+                    >
+                      <path
+                        className="stroke"
+                        d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                      />
+                      <path
+                        className="fill"
+                        d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                      />
+                    </svg>
+                  </div>
+                </ForwardRef(PopoverArrow)>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <Icon
+                  as="button"
+                  className="closeBtn"
+                  glyph="close"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <button
+                    className="root closeBtn"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <CloseIcon
+                      className="icon"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <svg
+                        className="icon"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        />
+                        <path
+                          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                        />
+                      </svg>
+                    </CloseIcon>
+                  </button>
+                </Icon>
+              </div>
+            </Portal>
+          </Portal>
+        </ForwardRef(Popover)>
+      </Popover>
+    </div>
+  </Router>
+</MemoryRouter>
+`;
+
+exports[`Storyshots UI/Popover with icon 1`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
+  }
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "64px",
+          "width": "100%",
+        }
+      }
+    >
+      <Popover
+        ariaLabel="View more info"
+        className=""
         icon="help"
         label=""
       >

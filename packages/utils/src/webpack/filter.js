@@ -1,12 +1,10 @@
-import {
-  flow,
-  fromPairs,
-  get,
-  map,
-  filter as _filter,
-  pick,
-  toPairs,
-} from 'lodash/fp';
+import flow from 'lodash/fp/flow';
+import fromPairs from 'lodash/fp/fromPairs';
+import get from 'lodash/fp/get';
+import map from 'lodash/fp/map';
+import _filter from 'lodash/fp/filter';
+import pick from 'lodash/fp/pick';
+import toPairs from 'lodash/fp/toPairs';
 
 const PATH_IGNORE_PATTERN = '.map$';
 

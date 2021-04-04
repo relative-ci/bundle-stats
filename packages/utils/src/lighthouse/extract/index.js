@@ -1,4 +1,4 @@
-import { merge } from 'lodash';
+import merge from 'lodash/merge';
 
 import { extractCategoryScores } from './category-scores';
 import { extractScoreCategoryScores } from './score-category-scores';

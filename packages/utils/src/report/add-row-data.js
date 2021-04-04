@@ -1,4 +1,4 @@
-import { get } from 'lodash';
+import get from 'lodash/get';
 
 import { getGlobalMetricType, getMetricRunInfo } from '../utils/metrics';
 import { getMetricChanged } from './get-metric-changed';

@@ -3,7 +3,7 @@ import path from 'path';
 import process from 'process';
 import { merge } from 'lodash';
 import { createJobs, createReport } from '@bundle-stats/utils';
-import { filter, validate } from '@bundle-stats/utils/lib-esm/webpack';
+import { filter, validate } from '@bundle-stats/utils/lib/webpack';
 import {
   TEXT,
   getBaselineStatsFilepath,

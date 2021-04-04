@@ -1,4 +1,4 @@
-import { omit } from 'lodash';
+import omit from 'lodash/omit';
 
 import { METRIC_TYPE_FILE_SIZE } from '../../config/metrics';
 import { createGetMetricType } from '../metrics';

@@ -5,6 +5,7 @@ const Listr = require('listr');
 const { get } = require('lodash');
 const boxen = require('boxen');
 
+require('@bundle-stats/utils/lib/polyfills');
 const {
   DELTA_TYPE_HIGH_NEGATIVE,
   DELTA_TYPE_NEGATIVE,

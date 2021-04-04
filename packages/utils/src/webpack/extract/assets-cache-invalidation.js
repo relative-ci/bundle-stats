@@ -1,4 +1,5 @@
-import { get, merge } from 'lodash';
+import get from 'lodash/get';
+import merge from 'lodash/merge';
 
 import { getMetricChanged } from '../../report/get-metric-changed';
 import { mergeMetricsByKey } from '../../report/merge-metrics-by-key';

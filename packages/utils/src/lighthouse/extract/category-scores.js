@@ -1,4 +1,4 @@
-import { get } from 'lodash';
+import get from 'lodash/get';
 
 /**
  * Extract lighthouse category scores

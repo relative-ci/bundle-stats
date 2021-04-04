@@ -1,4 +1,4 @@
-import { merge } from 'lodash';
+import merge from 'lodash/merge';
 
 import { extractAssets } from './assets';
 import { extractAssetsCacheInvalidation } from './assets-cache-invalidation';

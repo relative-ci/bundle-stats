@@ -1,4 +1,6 @@
-import { get, map, sum } from 'lodash';
+import get from 'lodash/get';
+import map from 'lodash/map';
+import sum from 'lodash/sum';
 
 import { FILE_TYPE_CSS, FILE_TYPE_JS, FILE_TYPES } from '../../config/file-types';
 import { getFileType } from '../../utils/file-types';

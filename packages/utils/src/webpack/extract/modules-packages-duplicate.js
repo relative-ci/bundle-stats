@@ -1,4 +1,8 @@
-import {  get, last, map, orderBy, sum } from 'lodash';
+import get from 'lodash/get';
+import last from 'lodash/last';
+import map from 'lodash/map';
+import orderBy from 'lodash/orderBy';
+import sum from 'lodash/sum';
 
 import { INSIGHT_WARNING, PACKAGES_SEPARATOR } from '../../config';
 
