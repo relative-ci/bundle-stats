@@ -6,10 +6,14 @@
     "node": ">= 10.0"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "4.21.0",
+    "@typescript-eslint/parser": "4.21.0",
+    "@tsconfig/node10": "1.0.7",
     "babel-eslint": "10.1.0",
     "dotenv": "8.2.0",
     "eslint": "7.23.0",
     "eslint-config-airbnb": "18.2.1",
+    "eslint-config-airbnb-typescript": "12.3.1",
     "eslint-config-prettier": "7.2.0",
     "eslint-import-resolver-node": "0.3.4",
     "eslint-import-resolver-webpack": "0.13.0",
@@ -25,6 +29,7 @@
     "optimize-css-assets-webpack-plugin": "5.0.4",
     "prettier": "2.2.1",
     "terser-webpack-plugin": "4.2.3",
+    "typescript": "4.2.4",
     "webpack": "4.46.0"
   },
   "scripts": {

@@ -1,0 +1,15 @@
+{
+  "extends": "@tsconfig/node10/tsconfig.json",
+  "compilerOptions": {
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "strict": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "lib": ["ES2019.Array"],
+    "noEmit": true
+  }
+}

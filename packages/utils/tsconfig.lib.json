@@ -1,10 +1,6 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "target": "ES2019",
-    "module": "ES6",
-    "declaration": true,
-    "declarationDir": "./types",
     "noEmit": false
   },
   "exclude": ["**/__tests__/*"]

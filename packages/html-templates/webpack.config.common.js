@@ -5,7 +5,7 @@ const HtmlInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const getCSSConfig = require('../../build/configs/css');
 const getDefineConfig = require('../../build/configs/define');
 const getResolveConfig = require('../../build/configs/resolve');
-const appConfig = require('./src/config');
+const appConfig = require('./src/config.json');
 const settings = require('./settings');
 
 const { isProduction } = settings;
