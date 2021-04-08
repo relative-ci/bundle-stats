@@ -32,11 +32,11 @@
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/ui#readme",
   "devDependencies": {
     "@babel/cli": "7.13.14",
-    "@babel/core": "7.13.14",
+    "@babel/core": "7.13.15",
     "@babel/plugin-proposal-class-properties": "7.13.0",
     "@babel/plugin-proposal-object-rest-spread": "7.13.8",
     "@babel/plugin-proposal-private-methods": "7.13.0",
-    "@babel/preset-env": "7.13.12",
+    "@babel/preset-env": "7.13.15",
     "@babel/preset-react": "7.13.13",
     "@bundle-stats/utils": "^2.8.2",
     "@simplyianm/babel-plugin-inline-react-svg": "1.2.0",
