@@ -1,4 +1,5 @@
-import { get, template } from 'lodash';
+import get from 'lodash/get';
+import template from 'lodash/template';
 
 import { INSIGHT_INFO } from '../../config/insights';
 import { getMetricRunInfo } from '../../utils/metrics';

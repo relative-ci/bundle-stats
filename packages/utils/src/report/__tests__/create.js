@@ -1,4 +1,4 @@
-import { omit } from 'lodash';
+import omit from 'lodash/omit';
 import { advanceTo } from 'jest-date-mock';
 
 import webpackStatsCurrentExtracted from '../../../__fixtures__/webpack-stats-1.extracted';

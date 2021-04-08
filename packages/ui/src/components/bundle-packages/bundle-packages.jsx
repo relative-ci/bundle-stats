@@ -7,6 +7,7 @@ import {
   getBundleModulesBySearch,
   getBundlePackagesByNameComponentLink,
 } from '@bundle-stats/utils';
+import { getPackagePublicName } from '@bundle-stats/utils/lib-esm/webpack/utils';
 
 import config from '../../config.json';
 import I18N from '../../i18n';
@@ -31,19 +32,20 @@ const getPopoverContent = ({
   CustomComponentLink,
 }) => {
   const normalizedPackagePath = `node_modules/${packagePath.split(PACKAGES_SEPARATOR).join('/node_modules/')}/`;
+  const publicPackageName = getPackagePublicName(packageName);
 
   return (
     <Stack space="xxsmall" className={css.packagePopover}>
-      <h3 className={css.packagePopoverTitle}>{packageName}</h3>
+      <h3 className={css.packagePopoverTitle}>{publicPackageName}</h3>
       <ul className={css.packagePopoverList}>
         <li className={css.packagePopoverItem}>
-          <a href={`https://www.npmjs.com/package/${packageName}`} target="_blank" rel="noreferrer">
+          <a href={`https://www.npmjs.com/package/${publicPackageName}`} target="_blank" rel="noreferrer">
             npmjs.com
           </a>
         </li>
         <li className={css.packagePopoverItem}>
           <a
-            href={`https://bundlephobia.com/result?p=${packageName}`}
+            href={`https://bundlephobia.com/result?p=${publicPackageName}`}
             target="_blank"
             rel="noreferrer"
           >
@@ -55,7 +57,7 @@ const getPopoverContent = ({
       <Stack space="xxxsmall" className={css.packagePopover.actions}>
         {duplicate && (
           <div>
-            <CustomComponentLink {...getBundlePackagesByNameComponentLink(packageName)}>
+            <CustomComponentLink {...getBundlePackagesByNameComponentLink(publicPackageName)}>
               View all duplicate instances
             </CustomComponentLink>
           </div>

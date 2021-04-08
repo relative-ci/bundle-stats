@@ -1,6 +1,6 @@
-import {
-  fill, map, mergeWith,
-} from 'lodash';
+import fill from 'lodash/fill';
+import map from 'lodash/map';
+import mergeWith from 'lodash/mergeWith';
 
 const mergeWithRuns = (index, count) => (objValue, srcValue) => {
   // if there are no runs, just create an array and fill it with null

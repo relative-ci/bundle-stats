@@ -1,4 +1,4 @@
-import { get } from 'lodash';
+import get from 'lodash/get';
 
 export const selectors = (job) => {
   const data = get(job, 'metrics.lighthouse', {});

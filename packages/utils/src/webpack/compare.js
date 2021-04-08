@@ -1,4 +1,7 @@
-import { flatMap, map, merge, uniq } from 'lodash';
+import flatMap from 'lodash/flatMap';
+import map from 'lodash/map';
+import merge from 'lodash/merge';
+import uniq from 'lodash/uniq';
 
 import { METRIC_TYPE_FILE_SIZE } from '../config/metrics';
 import { addRowData } from '../report/add-row-data';

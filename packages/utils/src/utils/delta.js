@@ -1,4 +1,4 @@
-import { round } from 'lodash';
+import round from 'lodash/round';
 
 import {
   DELTA_TYPE_NO_CHANGE,

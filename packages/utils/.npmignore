@@ -6,3 +6,6 @@ __fixtures__
 .eslintrc.js
 jsconfig.json
 jest.config.js
+jest.global.js
+tsconfig.json
+tsconfig.esm.json

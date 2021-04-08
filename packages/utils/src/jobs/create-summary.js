@@ -1,4 +1,5 @@
-import { get, merge } from 'lodash';
+import get from 'lodash/get';
+import merge from 'lodash/merge';
 
 export const createSummary = (
   metricPaths, baselineSourceMetrics, currentSourceMetrics,

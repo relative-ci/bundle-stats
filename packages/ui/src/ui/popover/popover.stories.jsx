@@ -13,7 +13,7 @@ stories.add('default', () => (
   </Popover>
 ));
 
-stories.add('default', () => (
+stories.add('with icon', () => (
   <Popover icon="help">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   </Popover>
