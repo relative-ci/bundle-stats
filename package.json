@@ -62,5 +62,6 @@
   "bugs": {
     "url": "https://github.com/relative-ci/bundle-stats/issues"
   },
-  "homepage": "https://github.com/relative-ci/bundle-stats#readme"
+  "homepage": "https://github.com/relative-ci/bundle-stats#readme",
+  "version": "2.9.0-beta.1"
 }
