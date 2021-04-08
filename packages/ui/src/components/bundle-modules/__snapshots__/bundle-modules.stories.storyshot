@@ -7271,6 +7271,10 @@ exports[`Storyshots Components/BundleModules empty baseline 1`] = `
                       "reduce-css-calc:balanced-match",
                       "reduce-function-call:balanced-match",
                     ],
+                    "lodash.debounce": Array [
+                      "lodash.debounce",
+                      "lodash.debounce~1",
+                    ],
                     "lodash.keys": Array [
                       "convert-units:lodash.keys",
                       "lodash.forown:lodash.keys",
@@ -7453,10 +7457,10 @@ exports[`Storyshots Components/BundleModules empty baseline 1`] = `
                   "value": 4,
                 },
                 "duplicatePackagesCount": Object {
-                  "value": 3,
+                  "value": 4,
                 },
                 "moduleCount": Object {
-                  "value": 556,
+                  "value": 557,
                 },
                 "modules": Object {
                   "0": Object {
@@ -7574,6 +7578,10 @@ exports[`Storyshots Components/BundleModules empty baseline 1`] = `
                       "(webpack)/buildin/module.js": Object {
                         "name": "(webpack)/buildin/module.js",
                         "value": 497,
+                      },
+                      "../other-library/node_modules/lodash.debounce/index.js": Object {
+                        "name": "../other-library/node_modules/lodash.debounce/index.js",
+                        "value": 10784,
                       },
                       "./node_modules/@babel/runtime/helpers/interopRequireDefault.js": Object {
                         "name": "./node_modules/@babel/runtime/helpers/interopRequireDefault.js",
@@ -9699,7 +9707,7 @@ exports[`Storyshots Components/BundleModules empty baseline 1`] = `
                   },
                 },
                 "packageCount": Object {
-                  "value": 63,
+                  "value": 64,
                 },
                 "packages": Object {
                   "@babel/runtime": Object {
@@ -9808,6 +9816,10 @@ exports[`Storyshots Components/BundleModules empty baseline 1`] = `
                   },
                   "lodash.debounce": Object {
                     "path": "./node_modules/lodash.debounce",
+                    "value": 10784,
+                  },
+                  "lodash.debounce~1": Object {
+                    "path": "../other-library/node_modules/lodash.debounce",
                     "value": 10784,
                   },
                   "lodash.foreach": Object {
@@ -13877,6 +13889,13 @@ exports[`Storyshots Components/BundleModules empty baseline 1`] = `
                       1,
                     ],
                     "name": "./node_modules/lodash.debounce/index.js",
+                    "size": 10784,
+                  },
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "../other-library/node_modules/lodash.debounce/index.js",
                     "size": 10784,
                   },
                   Object {
@@ -14370,15 +14389,15 @@ exports[`Storyshots Components/BundleModules empty baseline 1`] = `
                 },
                 "duplicatePackagesCount": Object {
                   "baseline": 0,
-                  "current": 3,
+                  "current": 4,
                 },
                 "moduleCount": Object {
                   "baseline": 0,
-                  "current": 556,
+                  "current": 557,
                 },
                 "packageCount": Object {
                   "baseline": 0,
-                  "current": 63,
+                  "current": 64,
                 },
                 "totalInitialSizeCSS": Object {
                   "baseline": 0,
@@ -14475,6 +14494,10 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
                     "balanced-match": Array [
                       "reduce-css-calc:balanced-match",
                       "reduce-function-call:balanced-match",
+                    ],
+                    "lodash.debounce": Array [
+                      "lodash.debounce",
+                      "lodash.debounce~1",
                     ],
                     "lodash.keys": Array [
                       "convert-units:lodash.keys",
@@ -14658,10 +14681,10 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
                   "value": 4,
                 },
                 "duplicatePackagesCount": Object {
-                  "value": 3,
+                  "value": 4,
                 },
                 "moduleCount": Object {
-                  "value": 556,
+                  "value": 557,
                 },
                 "modules": Object {
                   "0": Object {
@@ -14779,6 +14802,10 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
                       "(webpack)/buildin/module.js": Object {
                         "name": "(webpack)/buildin/module.js",
                         "value": 497,
+                      },
+                      "../other-library/node_modules/lodash.debounce/index.js": Object {
+                        "name": "../other-library/node_modules/lodash.debounce/index.js",
+                        "value": 10784,
                       },
                       "./node_modules/@babel/runtime/helpers/interopRequireDefault.js": Object {
                         "name": "./node_modules/@babel/runtime/helpers/interopRequireDefault.js",
@@ -16904,7 +16931,7 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
                   },
                 },
                 "packageCount": Object {
-                  "value": 63,
+                  "value": 64,
                 },
                 "packages": Object {
                   "@babel/runtime": Object {
@@ -17013,6 +17040,10 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
                   },
                   "lodash.debounce": Object {
                     "path": "./node_modules/lodash.debounce",
+                    "value": 10784,
+                  },
+                  "lodash.debounce~1": Object {
+                    "path": "../other-library/node_modules/lodash.debounce",
                     "value": 10784,
                   },
                   "lodash.foreach": Object {
@@ -21088,6 +21119,13 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
                     "chunks": Array [
                       1,
                     ],
+                    "name": "../other-library/node_modules/lodash.debounce/index.js",
+                    "size": 10784,
+                  },
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
                     "name": "./node_modules/lodash.throttle/index.js",
                     "size": 13311,
                   },
@@ -21575,15 +21613,15 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
                 },
                 "duplicatePackagesCount": Object {
                   "baseline": 3,
-                  "current": 3,
+                  "current": 4,
                 },
                 "moduleCount": Object {
                   "baseline": 556,
-                  "current": 556,
+                  "current": 557,
                 },
                 "packageCount": Object {
                   "baseline": 63,
-                  "current": 63,
+                  "current": 64,
                 },
                 "totalInitialSizeCSS": Object {
                   "baseline": 24919,

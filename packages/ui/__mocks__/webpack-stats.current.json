@@ -3888,6 +3888,13 @@
       ]
     },
     {
+      "name": "../other-library/node_modules/lodash.debounce/index.js",
+      "size": 10784,
+      "chunks": [
+        1
+      ]
+    },
+    {
       "name": "./node_modules/lodash.throttle/index.js",
       "size": 13311,
       "chunks": [
