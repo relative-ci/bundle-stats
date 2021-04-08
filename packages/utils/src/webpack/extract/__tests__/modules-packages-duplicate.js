@@ -27,6 +27,9 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           'org/package-d:package-c': {
             value: 40,
           },
+          'package-c~1': {
+            value: 40,
+          },
         },
       },
     });
@@ -37,7 +40,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           type: 'WARNING',
           // @TODO Obsolete structure, remove in v3.0
           data: {
-            'package-c': ['org/package-d:package-c', 'package-c'],
+            'package-c': ['org/package-d:package-c', 'package-c~1', 'package-c'],
             'package-a': ['package-a', 'package-b:package-a'],
           },
         },

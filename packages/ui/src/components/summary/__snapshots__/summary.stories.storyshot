@@ -61,15 +61,15 @@ exports[`Storyshots Components/Summary custom keys 1`] = `
             },
             "duplicatePackagesCount": Object {
               "baseline": 3,
-              "current": 3,
+              "current": 4,
             },
             "moduleCount": Object {
               "baseline": 556,
-              "current": 556,
+              "current": 557,
             },
             "packageCount": Object {
               "baseline": 63,
-              "current": 63,
+              "current": 64,
             },
             "totalInitialSizeCSS": Object {
               "baseline": 24919,
@@ -162,15 +162,15 @@ exports[`Storyshots Components/Summary default 1`] = `
             },
             "duplicatePackagesCount": Object {
               "baseline": 3,
-              "current": 3,
+              "current": 4,
             },
             "moduleCount": Object {
               "baseline": 556,
-              "current": 556,
+              "current": 557,
             },
             "packageCount": Object {
               "baseline": 63,
-              "current": 63,
+              "current": 64,
             },
             "totalInitialSizeCSS": Object {
               "baseline": 24919,
@@ -327,15 +327,15 @@ exports[`Storyshots Components/Summary single run 1`] = `
             },
             "duplicatePackagesCount": Object {
               "baseline": 0,
-              "current": 3,
+              "current": 4,
             },
             "moduleCount": Object {
               "baseline": 0,
-              "current": 556,
+              "current": 557,
             },
             "packageCount": Object {
               "baseline": 0,
-              "current": 63,
+              "current": 64,
             },
             "totalInitialSizeCSS": Object {
               "baseline": 0,
@@ -430,15 +430,15 @@ exports[`Storyshots Components/Summary with link 1`] = `
             },
             "duplicatePackagesCount": Object {
               "baseline": 3,
-              "current": 3,
+              "current": 4,
             },
             "moduleCount": Object {
               "baseline": 556,
-              "current": 556,
+              "current": 557,
             },
             "packageCount": Object {
               "baseline": 63,
-              "current": 63,
+              "current": 64,
             },
             "totalInitialSizeCSS": Object {
               "baseline": 24919,

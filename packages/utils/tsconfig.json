@@ -1,16 +1,4 @@
 {
-  "extends": "@tsconfig/node10/tsconfig.json",
-  "compilerOptions": {
-    "moduleResolution": "Node",
-    "allowSyntheticDefaultImports": true,
-    "noImplicitAny": true,
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "strict": true,
-    "allowJs": true,
-    "sourceMap": true,
-    "lib": ["ES2019.Array"]
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "lib", "lib-esm", "__fixtures__", "**/__tests__/*"]
+  "extends": "../../tsconfig.json",
+  "include": ["src/**/*"]
 }
