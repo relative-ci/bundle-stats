@@ -11,7 +11,7 @@ const RUNS = [
   },
   {
     internalBuildNumber: 1,
-    label: 'Job #1',
+    label: <a href="#noop">Job #1</a>,
   },
 ];
 
