@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0-beta.3](https://github.com/relative-ci/bundle-stats/compare/v2.9.0-beta.2...v2.9.0-beta.3) (2021-04-18)
+
+
+### Bug Fixes
+
+* **ui:** JobName - allow children ([e3d0fcd](https://github.com/relative-ci/bundle-stats/commit/e3d0fcd2f53384ab0a843642995549157545449e))
+* **ui:** MetricTable - styles for JobName link ([4f97f32](https://github.com/relative-ci/bundle-stats/commit/4f97f3266ec2d19fe3684d21bf64ae4507576ee9))
+
+
+
+
+
 # [2.9.0-beta.2](https://github.com/relative-ci/bundle-stats/compare/v2.9.0-beta.1...v2.9.0-beta.2) (2021-04-09)
 
 **Note:** Version bump only for package @bundle-state/bundle-stats
