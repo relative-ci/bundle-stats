@@ -7,12 +7,7 @@ import { JobName } from '.';
 const stories = storiesOf('Components/JobName', module);
 stories.addDecorator(getWrapperDecorator({ padding: '64px' }));
 
-stories.add('default', () => (
-  <JobName
-    title="View job details"
-    internalBuildNumber={10}
-  />
-));
+stories.add('default', () => <JobName title="View job details" internalBuildNumber={10} />);
 
 stories.add('custom component', () => (
   <JobName
@@ -23,9 +18,7 @@ stories.add('custom component', () => (
 ));
 
 stories.add('render', () => (
-  <JobName
-    title="View job details"
-    internalBuildNumber={10}
-    render={({ internalBuildNumber }) => `#${internalBuildNumber}`}
-  />
+  <JobName title="View job details">
+    <a href="https://relative-ci.com/test">#10</a>
+  </JobName>
 ));

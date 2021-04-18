@@ -306,7 +306,11 @@ exports[`Storyshots Components/MetricsTable multiple runs 1`] = `
           },
           Object {
             "internalBuildNumber": 1,
-            "label": "Job #1",
+            "label": <a
+              href="#noop"
+            >
+              Job #1
+            </a>,
           },
         ]
       }
@@ -511,7 +515,11 @@ exports[`Storyshots Components/MetricsTable with header rows 1`] = `
           },
           Object {
             "internalBuildNumber": 1,
-            "label": "Job #1",
+            "label": <a
+              href="#noop"
+            >
+              Job #1
+            </a>,
           },
         ]
       }

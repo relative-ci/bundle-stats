@@ -1,7 +1,3 @@
 .root {
   white-space: nowrap;
 }
-
-.label {
-  margin-right: var(--space-xxxsmall);
-}

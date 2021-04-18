@@ -11,6 +11,18 @@
   margin-top: var(--space-xxxsmall);
 }
 
+.jobName a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.jobName a:hover,
+.jobName a:active,
+.jobName a:focus {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
 /* columns */
 .metricName {
   width: 100%;

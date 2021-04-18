@@ -22,7 +22,11 @@ const getHeaderCell = (items, showHeaderSum) => (run, index, runs) => {
   const { label, internalBuildNumber } = run;
 
   const jobName = (
-    <JobName title={index === 0 ? 'Current' : 'Baseline'} internalBuildNumber={internalBuildNumber}>
+    <JobName
+      title={index === 0 ? 'Current' : 'Baseline'}
+      internalBuildNumber={internalBuildNumber}
+      className={styles.jobName}
+    >
       {label}
     </JobName>
   );
