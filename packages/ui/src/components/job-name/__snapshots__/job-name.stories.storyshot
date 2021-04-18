@@ -45,7 +45,6 @@ exports[`Storyshots Components/JobName custom component 1`] = `
     <JobName
       as={[Function]}
       internalBuildNumber={10}
-      render={[Function]}
       title="View job details"
     />
   </div>
@@ -97,7 +96,6 @@ exports[`Storyshots Components/JobName default 1`] = `
     <JobName
       as="span"
       internalBuildNumber={10}
-      render={[Function]}
       title="View job details"
     />
   </div>
@@ -148,10 +146,15 @@ exports[`Storyshots Components/JobName render 1`] = `
   >
     <JobName
       as="span"
-      internalBuildNumber={10}
-      render={[Function]}
+      internalBuildNumber={null}
       title="View job details"
-    />
+    >
+      <a
+        href="https://relative-ci.com/test"
+      >
+        #10
+      </a>
+    </JobName>
   </div>
 </Router>
 `;
