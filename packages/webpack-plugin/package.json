@@ -46,7 +46,7 @@
   "dependencies": {
     "@bundle-stats/cli-utils": "^2.8.0",
     "@bundle-stats/utils": "^2.8.0",
-    "core-js": "^3.1.4",
+    "core-js": "^3.10.2",
     "lodash": "4.17.21"
   },
   "devDependencies": {
