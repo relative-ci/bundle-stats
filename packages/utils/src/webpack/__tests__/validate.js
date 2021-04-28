@@ -27,6 +27,32 @@ describe('Webpack/validate', () => {
         ],
       }),
     ).toEqual('');
+    expect(
+      validate({
+        ...webpackSource,
+        modules: [
+          {
+            name: './main.js  + 2 concantenated modules',
+            size: 10,
+            chunks: [1],
+            modules: [
+              {
+                name: './main.js',
+                size: 3,
+              },
+              {
+                name: './main-dependency-1.js',
+                size: 4,
+              },
+              {
+                name: './main-dependency-2.js',
+                size: 3,
+              },
+            ],
+          },
+        ],
+      }),
+    ).toEqual('');
     expect(validate({ ...webpackSource, chunks: [] })).toEqual('');
     expect(
       validate({
