@@ -1,5 +1,5 @@
 import fixtures from '../../../../__fixtures__/webpack-stats-1.extracted';
-import fixturesWithConcatenatedModules from '../../../../__fixtures__/webpack-stats-1-concatenated.extracted';
+import fixturesWithConcatenatedModules from '../../../../__fixtures__/webpack-stats-3.extracted';
 import { extractModules } from '../modules';
 
 describe('Webpack/extract/modules', () => {
