@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.0](https://github.com/relative-ci/bundle-stats/compare/v2.8.0...v3.0.0-alpha.0) (2021-04-28)
+
+
+### Bug Fixes
+
+* **utils:** Packages - add package path ([b53c362](https://github.com/relative-ci/bundle-stats/commit/b53c3624556cdaf42f5c79a2bdedb5a1fd2e1b62))
+* **utils:** Packages - separate packages based on path ([e66cf69](https://github.com/relative-ci/bundle-stats/commit/e66cf69426c0a3c795ff6027b67e388cbe90aaa3))
+
+
+### Features
+
+* **utils:** Webpack - extract concatenated modules ([cfad952](https://github.com/relative-ci/bundle-stats/commit/cfad9526a7133b1850f276f57abc06dc3c2cc98b))
+* **utils:** Webpack validate - allow modules[].modules[] ([e681da5](https://github.com/relative-ci/bundle-stats/commit/e681da5fda7e0be96e877d1bfee6356c1289d406))
+
+
+
+
+
 # [2.8.0](https://github.com/relative-ci/bundle-stats/compare/v2.7.2...v2.8.0) (2021-03-27)
 
 

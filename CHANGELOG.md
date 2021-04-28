@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.0](https://github.com/relative-ci/bundle-stats/compare/v2.8.0...v3.0.0-alpha.0) (2021-04-28)
+
+
+### Bug Fixes
+
+* **cli:** Import utils polyfills ([5be6cc6](https://github.com/relative-ci/bundle-stats/commit/5be6cc63662f317ed72e8bd6adcda8668b9fdbc0))
+* **ui:** BundleAssets - use Icon for not predictive warning ([40a40c9](https://github.com/relative-ci/bundle-stats/commit/40a40c9b3f9686eeeab2a271d2f5ac7793967915))
+* **ui:** BundlePackages - extract public package name ([a87b5b5](https://github.com/relative-ci/bundle-stats/commit/a87b5b5e1b771697451ac0d5f7ce39f471550b84))
+* **ui:** JobName - allow children ([e3d0fcd](https://github.com/relative-ci/bundle-stats/commit/e3d0fcd2f53384ab0a843642995549157545449e))
+* **ui:** MetricTable - styles for JobName link ([4f97f32](https://github.com/relative-ci/bundle-stats/commit/4f97f3266ec2d19fe3684d21bf64ae4507576ee9))
+* **utils:** Fix info texts ([626375f](https://github.com/relative-ci/bundle-stats/commit/626375fc3d5ca3819a45689324ab5efa12b29b3f))
+* **utils:** Packages - add package path ([b53c362](https://github.com/relative-ci/bundle-stats/commit/b53c3624556cdaf42f5c79a2bdedb5a1fd2e1b62))
+* **utils:** Packages - separate packages based on path ([e66cf69](https://github.com/relative-ci/bundle-stats/commit/e66cf69426c0a3c795ff6027b67e388cbe90aaa3))
+
+
+### Features
+
+* **ui:** Icon - add warning svg ([ecdb419](https://github.com/relative-ci/bundle-stats/commit/ecdb41931ba3fd727763d5d095b42da97a9dea74))
+* **utils:** Webpack - extract concatenated modules ([cfad952](https://github.com/relative-ci/bundle-stats/commit/cfad9526a7133b1850f276f57abc06dc3c2cc98b))
+* **utils:** Webpack validate - allow modules[].modules[] ([e681da5](https://github.com/relative-ci/bundle-stats/commit/e681da5fda7e0be96e877d1bfee6356c1289d406))
+
+
+
+
+
 # [2.8.0](https://github.com/relative-ci/bundle-stats/compare/v2.7.2...v2.8.0) (2021-03-27)
 
 
