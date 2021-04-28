@@ -43,10 +43,17 @@ export const filter = (source, options = {}) => {
     _filter(({ id }) => id !== null && typeof id !== 'undefined')
   ])(source);
 
-  const modules = flow([
-    get('modules'),
-    map(pick(['name', 'size', 'chunks'])),
-  ])(source);
+  const modules = source?.modules.map(
+    ({ name, size, chunks: moduleChunks, modules: concatenatedModules }) => ({
+      name,
+      size,
+      chunks: moduleChunks,
+      modules: concatenatedModules?.map((concatenatedModule) => ({
+        name: concatenatedModule.name,
+        size: concatenatedModule.size,
+      })),
+    }),
+  );
 
   return {
     builtAt,
