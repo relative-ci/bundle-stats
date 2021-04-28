@@ -23,7 +23,23 @@ export const extractModules = (webpackStats = {}) => {
     return { modules: {} };
   }
 
-  const modulesByChunk = modules.reduce((aggregator, moduleEntry) => {
+  // Flatten concatenated modules
+  const allModules = modules.reduce((agg, moduleEntry) => {
+    if (!moduleEntry.modules) {
+      return [...agg, moduleEntry];
+    }
+
+    return [
+      ...agg,
+      ...moduleEntry.modules.map((concatenatedModule) => ({
+        ...concatenatedModule,
+        // Add parent chunks
+        chunks: moduleEntry.chunks,
+      })),
+    ];
+  }, []);
+
+  const modulesByChunk = allModules.reduce((aggregator, moduleEntry) => {
     const { name, size } = moduleEntry;
 
     const moduleChunks = get(moduleEntry, 'chunks', []);
