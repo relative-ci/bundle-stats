@@ -1,55 +1,19 @@
 import React, { useCallback, useEffect, useReducer } from 'react';
 import PropTypes from 'prop-types';
-import { debounce, isEqual, merge } from 'lodash';
+import { isEqual, merge, noop } from 'lodash';
 
-const DEBOUNCE_DURATION = 500;
 const ACTION_SET_FILTERS = 'SET_FILTERS';
 const ACTION_SET_SEARCH = 'SET_SEARCH';
-const ACTION_SET_SEARCH_PATTERN = 'SET_SEARCH_PATTERN';
 const ACTION_RESET_DEFAULT = 'RESET_DEFAULT';
 const ACTION_RESET_ALL = 'RESET_ALL';
 const ACTION_SET = 'SET';
 
-const getSearchReducer = ({ defaultFilters, allEntriesFilters }) => (state, action) => {
-  const { type, payload } = action;
-
-  switch (type) {
-    case ACTION_SET_FILTERS:
-      return {
-        ...state,
-        filters: payload,
-      };
-    case ACTION_SET_SEARCH:
-      return {
-        ...state,
-        search: payload,
-      };
-    case ACTION_SET_SEARCH_PATTERN:
-      return {
-        ...state,
-        searchPattern: payload,
-      };
-    case ACTION_RESET_DEFAULT:
-      return {
-        filters: defaultFilters,
-        search: '',
-        searchPattern: '',
-      };
-    case ACTION_RESET_ALL:
-      return {
-        filters: allEntriesFilters,
-        search: '',
-        searchPattern: '',
-      };
-    case ACTION_SET:
-      return payload;
-    default:
-      return state;
-  }
-};
-
-export const generateState = (filters, search) => {
+const getSearchPattern = (search) => {
   let searchPattern = new RegExp(/.*/);
+
+  if (!search || !search.trim()) {
+    return searchPattern;
+  }
 
   try {
     searchPattern = new RegExp(search);
@@ -58,85 +22,123 @@ export const generateState = (filters, search) => {
     console.error(err); // eslint-disable-line no-console
   }
 
-  return {
-    filters,
-    search,
-    searchPattern,
-  };
+  return searchPattern;
 };
 
+const getSearchReducer = ({ defaultFilters, allEntriesFilters, setParentState = noop }) => (
+  state, action,
+) => {
+  const { type, payload } = action;
+
+  switch (type) {
+    case ACTION_SET_FILTERS: {
+      setParentState({
+        filters: payload,
+        search: state.search,
+      });
+
+      return {
+        ...state,
+        filters: payload,
+      };
+    }
+
+    case ACTION_SET_SEARCH: {
+      setParentState({
+        filters: state.filters,
+        search: payload,
+      });
+
+      return {
+        ...state,
+        search: payload,
+        searchPattern: getSearchPattern(payload),
+      };
+    }
+
+    case ACTION_RESET_DEFAULT: {
+      setParentState({
+        filters: defaultFilters,
+        search: '',
+      });
+
+      return {
+        filters: defaultFilters,
+        search: '',
+        searchPattern: getSearchPattern(),
+      };
+    }
+
+    case ACTION_RESET_ALL: {
+      setParentState({
+        filters: allEntriesFilters,
+        search: '',
+      });
+
+      return {
+        filters: allEntriesFilters,
+        search: '',
+        searchPattern: getSearchPattern(),
+      };
+    }
+
+    case ACTION_SET: {
+      return payload;
+    }
+
+    default:
+      return state;
+  }
+};
+
+export const generateState = (filters, search) => ({
+  filters,
+  search,
+  searchPattern: getSearchPattern(search),
+});
+
 export const useSearch = ({
-  setState,
-  search: customSearch,
-  filters: customFilters,
+  setState: setParentState,
+  search: parentSearch,
+  filters: parentFilters,
   defaultFilters,
   allEntriesFilters,
 }) => {
   // When we pass custom filters, set the other flags to true(allEntries)
-  const initialFilters = customFilters ? merge({}, allEntriesFilters, customFilters) : defaultFilters;
+  const initialFilters = parentFilters
+    ? merge({}, allEntriesFilters, parentFilters)
+    : defaultFilters;
 
   const [{ search, searchPattern, filters }, dispatch] = useReducer(
-    getSearchReducer({ defaultFilters, allEntriesFilters }),
-    generateState(initialFilters, customSearch),
+    getSearchReducer({ defaultFilters, allEntriesFilters, setParentState }),
+    generateState(initialFilters, parentSearch),
   );
 
-  // Update state when the custom filters/search are changing
+  // Update state when the custom filters/search are changing - initial load or route updates
   useEffect(() => {
-    dispatch({ type: ACTION_SET, payload: generateState(initialFilters, customSearch) });
-  }, [customFilters, customSearch])
+    // Run a deep comparison to prevent circular setState triggering
+    if (parentSearch === search || isEqual(parentFilters, filters)) {
+      return;
+    }
 
-  const debouncedSearch = useCallback(
-    debounce((newValue) => {
-      let newPattern;
-
-      if (!newValue.trim()) {
-        return dispatch({ type: ACTION_SET_SEARCH_PATTERN, payload: '' });
-      }
-
-      try {
-        newPattern = new RegExp(newValue);
-      } catch (err) {
-        // noop
-        console.error(err); // eslint-disable-line no-console
-      }
-
-      if (setState) {
-        setState({ search: newValue });
-      }
-
-      return dispatch({ type: ACTION_SET_SEARCH_PATTERN, payload: newPattern });
-    }, DEBOUNCE_DURATION),
-    [],
-  );
+    dispatch({ type: ACTION_SET, payload: generateState(initialFilters, parentSearch) });
+  }, [search, filters, parentFilters, parentSearch]);
 
   const handleUpdateSearch = useCallback((newValue) => {
     dispatch({ type: ACTION_SET_SEARCH, payload: newValue });
-    debouncedSearch(newValue);
   }, []);
 
   const handleUpdateFilters = useCallback((newFilters) => {
-    if (setState) {
-      setState({ filters: newFilters });
-    }
-
     dispatch({ type: ACTION_SET_FILTERS, payload: newFilters });
   }, []);
 
   const handleResetFilters = useCallback(() => {
-    if (setState) {
-      setState({ filters: defaultFilters, search: '' });
-    } else {
-      dispatch({ type: ACTION_RESET_DEFAULT });
-    }
-  }, [defaultFilters]);
+    dispatch({ type: ACTION_RESET_DEFAULT });
+  }, []);
 
   const handleResetAllFilters = useCallback(() => {
-    if (setState) {
-      setState({ filters: allEntriesFilters, search: '' });
-    } else {
-      dispatch({ type: ACTION_RESET_ALL });
-    }
-  }, [allEntriesFilters]);
+    dispatch({ type: ACTION_RESET_ALL });
+  }, []);
 
   return {
     search,
