@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0-beta.4](https://github.com/relative-ci/bundle-stats/compare/v2.9.0-beta.3...v2.9.0-beta.4) (2021-04-30)
+
+**Note:** Version bump only for package @bundle-stats/cli-utils
+
+
+
+
+
 # [2.9.0-beta.3](https://github.com/relative-ci/bundle-stats/compare/v2.9.0-beta.2...v2.9.0-beta.3) (2021-04-18)
 
 **Note:** Version bump only for package @bundle-stats/cli-utils
