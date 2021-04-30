@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { Route, useHistory, useLocation } from 'react-router-dom';
 import { JsonParam, QueryParamProvider, useQueryParams } from 'use-query-params';
-import { merge } from 'lodash';
+import { isEqual, merge } from 'lodash';
 
 export const QueryStateProvider = (props) => {
   const history = useHistory();
@@ -21,7 +21,14 @@ export const useComponentQueryState = (componentName) => {
 
   const setState = useCallback(
     (newState) => {
-      setSearch({ [componentName]: merge({}, state, newState) });
+      const newComponentState = merge({}, state, newState);
+
+      // Deep check to prevent unnecessary state changes
+      if (isEqual(newComponentState, state)) {
+        return;
+      }
+
+      setSearch({ [componentName]: newComponentState });
     },
     [state],
   );
