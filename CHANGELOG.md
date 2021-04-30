@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.2](https://github.com/relative-ci/bundle-stats/compare/v3.0.0-alpha.1...v3.0.0-alpha.2) (2021-04-30)
+
+
+### Bug Fixes
+
+* **ui:** withSearch - name regexp case insensitive ([0ca664c](https://github.com/relative-ci/bundle-stats/commit/0ca664c4b57eb529ba0fc0b4e77f3b6221ef0d77))
+* **utils:** withSearch - prevent inconsistent filter state ([8cf6847](https://github.com/relative-ci/bundle-stats/commit/8cf68475235c6fd0b85a6bb83e9b922dd812efe1))
+
+
+
+
+
 # [3.0.0-alpha.1](https://github.com/relative-ci/bundle-stats/compare/v3.0.0-alpha.0...v3.0.0-alpha.1) (2021-04-28)
 
 **Note:** Version bump only for package @bundle-state/bundle-stats
