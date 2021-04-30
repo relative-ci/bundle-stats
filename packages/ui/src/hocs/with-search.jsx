@@ -16,7 +16,7 @@ const getSearchPattern = (search) => {
   }
 
   try {
-    searchPattern = new RegExp(search);
+    searchPattern = new RegExp(search, 'i');
   } catch (err) {
     // noop
     console.error(err); // eslint-disable-line no-console
