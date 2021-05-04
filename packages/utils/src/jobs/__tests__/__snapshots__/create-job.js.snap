@@ -242,6 +242,11 @@ Object {
           "size": 2000,
         },
         Object {
+          "chunks": Array [],
+          "name": "module-c",
+          "size": 1000,
+        },
+        Object {
           "chunks": Array [
             1,
           ],
@@ -555,6 +560,11 @@ Object {
           ],
           "name": "module-b",
           "size": 2000,
+        },
+        Object {
+          "chunks": Array [],
+          "name": "module-c",
+          "size": 1000,
         },
         Object {
           "chunks": Array [
