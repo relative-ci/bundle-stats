@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0-beta.5](https://github.com/relative-ci/bundle-stats/compare/v2.9.0-beta.4...v2.9.0-beta.5) (2021-05-04)
+
+
+### Bug Fixes
+
+* **utils:** Filter - remove empty module chunks ([68fae44](https://github.com/relative-ci/bundle-stats/commit/68fae44f226c00c93e2b2a2cecdcb30c372e3dc4))
+
+
+
+
+
 # [2.9.0-beta.4](https://github.com/relative-ci/bundle-stats/compare/v2.9.0-beta.3...v2.9.0-beta.4) (2021-04-30)
 
 **Note:** Version bump only for package @bundle-stats/utils
