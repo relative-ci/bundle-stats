@@ -46,6 +46,11 @@ export const filter = (source, options = {}) => {
   const modules = flow([
     get('modules'),
     map(pick(['name', 'size', 'chunks'])),
+    // Skip chunks with empty id
+    map((moduleEntry) => ({
+      ...moduleEntry,
+      chunks: moduleEntry.chunks?.filter((chunk) => Boolean(chunk)),
+    })),
   ])(source);
 
   return {
