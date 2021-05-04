@@ -20,7 +20,7 @@ export const WebpackSourceAssetHiddenStruct = struct.interface({
 export const WebpackSourceModuleChunk = struct.interface({
   name: 'string',
   size: 'number',
-  chunks: [struct.union(['number', 'string'])],
+  chunks: [struct.union(['number', 'string', 'null'])],
 });
 
 export const WebpackSourceChunkStruct = struct.interface({
