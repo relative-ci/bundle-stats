@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0-beta.6](https://github.com/relative-ci/bundle-stats/compare/v2.9.0-beta.5...v2.9.0-beta.6) (2021-05-04)
+
+
+### Bug Fixes
+
+* **utils:** Filter - skip only null and undefined ([de7b8e9](https://github.com/relative-ci/bundle-stats/commit/de7b8e96b8e81b6fbedf485c53a2855549935314))
+
+
+
+
+
 # [2.9.0-beta.5](https://github.com/relative-ci/bundle-stats/compare/v2.9.0-beta.4...v2.9.0-beta.5) (2021-05-04)
 
 
