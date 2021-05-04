@@ -49,7 +49,9 @@ export const filter = (source, options = {}) => {
     // Skip chunks with empty id
     map((moduleEntry) => ({
       ...moduleEntry,
-      chunks: moduleEntry.chunks?.filter((chunk) => Boolean(chunk)),
+      chunks: moduleEntry.chunks?.filter(
+        (chunkId) => chunkId !== null && typeof chunkId !== 'undefined',
+      ),
     })),
   ])(source);
 
