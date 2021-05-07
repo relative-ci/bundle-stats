@@ -59,7 +59,7 @@
     "postcss-loader": "4.2.0",
     "react-test-renderer": "16.14.0",
     "stats-webpack-plugin": "0.7.0",
-    "stylelint": "13.13.0",
+    "stylelint": "13.13.1",
     "stylelint-config-css-modules": "2.2.0",
     "stylelint-config-standard": "22.0.0",
     "terser-webpack-plugin": "4.2.3",
