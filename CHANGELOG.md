@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.1](https://github.com/relative-ci/bundle-stats/compare/v2.8.0...v2.8.1) (2021-05-07)
+
+
+### Bug Fixes
+
+* **cli:** Import utils polyfills ([5be6cc6](https://github.com/relative-ci/bundle-stats/commit/5be6cc63662f317ed72e8bd6adcda8668b9fdbc0))
+* **ui:** BundleAssets - use Icon for not predictive warning ([40a40c9](https://github.com/relative-ci/bundle-stats/commit/40a40c9b3f9686eeeab2a271d2f5ac7793967915))
+* **ui:** BundlePackages - extract public package name ([a87b5b5](https://github.com/relative-ci/bundle-stats/commit/a87b5b5e1b771697451ac0d5f7ce39f471550b84))
+* **ui:** JobName - allow children ([e3d0fcd](https://github.com/relative-ci/bundle-stats/commit/e3d0fcd2f53384ab0a843642995549157545449e))
+* **ui:** MetricTable - styles for JobName link ([4f97f32](https://github.com/relative-ci/bundle-stats/commit/4f97f3266ec2d19fe3684d21bf64ae4507576ee9))
+* **ui:** withSearch - name regexp case insensitive ([0ca664c](https://github.com/relative-ci/bundle-stats/commit/0ca664c4b57eb529ba0fc0b4e77f3b6221ef0d77))
+* **utils:** Filter - remove empty module chunks ([68fae44](https://github.com/relative-ci/bundle-stats/commit/68fae44f226c00c93e2b2a2cecdcb30c372e3dc4))
+* **utils:** Filter - skip only null and undefined ([de7b8e9](https://github.com/relative-ci/bundle-stats/commit/de7b8e96b8e81b6fbedf485c53a2855549935314))
+* **utils:** Fix info texts ([626375f](https://github.com/relative-ci/bundle-stats/commit/626375fc3d5ca3819a45689324ab5efa12b29b3f))
+* **utils:** Packages - add package path ([b53c362](https://github.com/relative-ci/bundle-stats/commit/b53c3624556cdaf42f5c79a2bdedb5a1fd2e1b62))
+* **utils:** Packages - separate packages based on path ([e66cf69](https://github.com/relative-ci/bundle-stats/commit/e66cf69426c0a3c795ff6027b67e388cbe90aaa3))
+* **utils:** withSearch - prevent inconsistent filter state ([8cf6847](https://github.com/relative-ci/bundle-stats/commit/8cf68475235c6fd0b85a6bb83e9b922dd812efe1))
+
+
+### Features
+
+* **ui:** Icon - add warning svg ([ecdb419](https://github.com/relative-ci/bundle-stats/commit/ecdb41931ba3fd727763d5d095b42da97a9dea74))
+
+
+
+
+
 # [2.8.0](https://github.com/relative-ci/bundle-stats/compare/v2.7.2...v2.8.0) (2021-03-27)
 
 

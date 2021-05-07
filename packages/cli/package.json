@@ -1,6 +1,6 @@
 {
   "name": "bundle-stats",
-  "version": "2.8.0",
+  "version": "2.8.1",
   "description": "In-depth bundle analyzer for webpack(bundle size, assets, modules, packages)",
   "main": "lib/index.js",
   "bin": {
@@ -43,8 +43,8 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/cli#readme",
   "dependencies": {
-    "@bundle-stats/cli-utils": "^2.8.0",
-    "@bundle-stats/utils": "^2.8.0",
+    "@bundle-stats/cli-utils": "^2.8.1",
+    "@bundle-stats/utils": "^2.8.1",
     "boxen": "^5.0.0",
     "fs-extra": "9.1.0",
     "listr": "^0.14.3",

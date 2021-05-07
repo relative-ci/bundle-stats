@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.1](https://github.com/relative-ci/bundle-stats/compare/v2.8.0...v2.8.1) (2021-05-07)
+
+
+### Bug Fixes
+
+* **utils:** Filter - remove empty module chunks ([68fae44](https://github.com/relative-ci/bundle-stats/commit/68fae44f226c00c93e2b2a2cecdcb30c372e3dc4))
+* **utils:** Filter - skip only null and undefined ([de7b8e9](https://github.com/relative-ci/bundle-stats/commit/de7b8e96b8e81b6fbedf485c53a2855549935314))
+* **utils:** Packages - add package path ([b53c362](https://github.com/relative-ci/bundle-stats/commit/b53c3624556cdaf42f5c79a2bdedb5a1fd2e1b62))
+* **utils:** Packages - separate packages based on path ([e66cf69](https://github.com/relative-ci/bundle-stats/commit/e66cf69426c0a3c795ff6027b67e388cbe90aaa3))
+
+
+
+
+
 # [2.8.0](https://github.com/relative-ci/bundle-stats/compare/v2.7.2...v2.8.0) (2021-03-27)
 
 
