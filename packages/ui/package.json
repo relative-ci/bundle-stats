@@ -77,6 +77,7 @@
   "peerDependencies": {
     "@bundle-stats/utils": "^1.0.0-rc.0 || ^2.0.0",
     "classnames": "^2.2.6",
+    "core-js": "^3.9.1",
     "lodash": "^4.17.11",
     "prop-types": "^15.7.2",
     "react": "^16.8.5",

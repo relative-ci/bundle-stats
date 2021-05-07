@@ -51,6 +51,7 @@
     "ts-jest": "^26.5.4"
   },
   "peerDependencies": {
+    "core-js": "^3.9.1",
     "lodash": "^4.17.11"
   }
 }

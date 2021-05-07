@@ -46,6 +46,7 @@
     "@bundle-stats/cli-utils": "^2.8.1",
     "@bundle-stats/utils": "^2.8.1",
     "boxen": "^5.0.0",
+    "core-js": "^3.1.4",
     "fs-extra": "9.1.0",
     "listr": "^0.14.3",
     "lodash": "4.17.21",
