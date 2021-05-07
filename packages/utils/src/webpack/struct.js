@@ -17,11 +17,10 @@ export const WebpackSourceAssetHiddenStruct = struct.interface({
   size: 'number',
 });
 
-export const WebpackSourceModuleStruct = struct.interface({
+export const WebpackSourceModuleChunk = struct.interface({
   name: 'string',
   size: 'number',
-  chunks: [struct.union(['number', 'string'])],
-  modules: struct.optional([struct.interface({ name: 'string', size: 'number' })]),
+  chunks: [struct.union(['number', 'string', 'null'])],
 });
 
 export const WebpackSourceChunkStruct = struct.interface({
@@ -35,10 +34,7 @@ export const WebpackSourceChunkStruct = struct.interface({
 export const WebpackSourceStruct = struct.interface({
   hash: struct.optional('string'),
   builtAt: struct.optional('number'),
-  assets: struct.intersection([
-    [struct.union([WebpackSourceAssetStruct, WebpackSourceAssetHiddenStruct])],
-    'notEmptyArray',
-  ]),
-  modules: struct.optional([WebpackSourceModuleStruct]),
+  assets: struct.intersection([[struct.union([WebpackSourceAssetStruct, WebpackSourceAssetHiddenStruct])], 'notEmptyArray']),
+  modules: struct.optional([WebpackSourceModuleChunk]),
   chunks: struct.optional([WebpackSourceChunkStruct]),
 });
