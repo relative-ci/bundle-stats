@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/html-templates",
-  "version": "3.0.0-alpha.3",
+  "version": "3.0.0-alpha.4",
   "description": "HTML templates for report generation.",
   "main": "index.js",
   "scripts": {
@@ -69,8 +69,8 @@
     "whatwg-fetch": "3.6.2"
   },
   "dependencies": {
-    "@bundle-stats/ui": "^3.0.0-alpha.3",
-    "@bundle-stats/utils": "^3.0.0-alpha.3",
+    "@bundle-stats/ui": "^3.0.0-alpha.4",
+    "@bundle-stats/utils": "^3.0.0-alpha.4",
     "classnames": "2.2.6",
     "lodash": "^4.17.11",
     "preact": "10.5.13",
