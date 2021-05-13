@@ -2,8 +2,6 @@ export const SECTION_WEBPACK_STATS = 'stats';
 export const SECTION_WEBPACK_SIZES = 'sizes';
 export const SECTION_WEBPACK_ASSETS = 'assets';
 export const SECTION_WEBPACK_MODULES = 'modules';
-// @TODO Replace 'modules' in v3.0
-export const SECTION_WEBPACK_ALL_MODULES = 'allModules';
 export const SECTION_WEBPACK_PACKAGES = 'packages';
 
 export const SECTIONS = [

@@ -46,26 +46,23 @@ export interface Metric {
 
 export interface ModuleMetric extends Metric {
   name: string;
+  chunkIds: Array<Number | String>;
 }
 
 export interface PackageMetric extends Metric {
   path: string;
 }
 
-export interface WebpackMetricsModulesChunk {
-  modules: Record<string, ModuleMetric>
-}
-
 export interface WebpackMetricsModules {
   metrics: {
-    modules: Record<string, WebpackMetricsModulesChunk>
-  }
+    modules: Record<string, ModuleMetric>;
+  };
 }
 
 export interface WebpackMetricsPackages {
   metrics: {
-    packages: Record<string, PackageMetric>
-  }
+    packages: Record<string, PackageMetric>;
+  };
 }
 
 export interface LighthouseSource {
