@@ -10,53 +10,55 @@ describe('Webpack/extract/extractModulesPackages', () => {
     const actual = extractModulesPackages(null, {
       metrics: {
         modules: {
-          0: {
-            modules: {
-              'pages/page-a.js': {
-                name: 'pages/page-a.js',
-                value: 100,
-              },
-            },
+          'pages/page-a.js': {
+            name: 'pages/page-a.js',
+            value: 100,
+            chunkIds: [0],
           },
-          1: {
-            modules: {
-              './node_modules/package-a/index.js': {
-                name: './node_modules/package-a/index.js',
-                value: 20,
-              },
-              './~/package-c/index.js': {
-                name: './~/package-c/index.js',
-                value: 10,
-              },
-              './node_modules/package-a/dist/module-a.js': {
-                name: './node_modules/package-a/dist/module-a.js',
-                value: 30,
-              },
-              './node_modules/package-b/index.js': {
-                name: './node_modules/package-b/index.js',
-                value: 10,
-              },
-              './node_modules/package-a/node_modules/package-b/index.js': {
-                name: './node_modules/package-a/node_modules/package-b/index.js',
-                value: 20,
-              },
-              './node_modules/@org/package-a/index.js': {
-                name: './node_modules/@org/package-a/index.js',
-                value: 20,
-              },
-              './node_modules/@org/package-a/node_modules/@org/package-b/index.js': {
-                name: './node_modules/@org/package-a/node_modules/@org/package-b/index.js',
-                value: 20,
-              },
-              '../lib/node_modules/@org/package-a/node_modules/@org/package-b/index.js': {
-                name: '../lib/node_modules/@org/package-a/node_modules/@org/package-b/index.js',
-                value: 25,
-              },
-              '../lib/node_modules/@org/package-a/node_modules/@org/package-b/module-a.js': {
-                name: '../lib/node_modules/@org/package-a/node_modules/@org/package-b/module-a.js',
-                value: 10,
-              },
-            },
+          './node_modules/package-a/index.js': {
+            name: './node_modules/package-a/index.js',
+            value: 20,
+            chunkIds: [1],
+          },
+          './~/package-c/index.js': {
+            name: './~/package-c/index.js',
+            value: 10,
+            chunkIds: [1],
+          },
+          './node_modules/package-a/dist/module-a.js': {
+            name: './node_modules/package-a/dist/module-a.js',
+            value: 30,
+            chunkIds: [1],
+          },
+          './node_modules/package-b/index.js': {
+            name: './node_modules/package-b/index.js',
+            value: 10,
+            chunkIds: [1],
+          },
+          './node_modules/package-a/node_modules/package-b/index.js': {
+            name: './node_modules/package-a/node_modules/package-b/index.js',
+            value: 20,
+            chunkIds: [1],
+          },
+          './node_modules/@org/package-a/index.js': {
+            name: './node_modules/@org/package-a/index.js',
+            value: 20,
+            chunkIds: [1],
+          },
+          './node_modules/@org/package-a/node_modules/@org/package-b/index.js': {
+            name: './node_modules/@org/package-a/node_modules/@org/package-b/index.js',
+            value: 20,
+            chunkIds: [1],
+          },
+          '../lib/node_modules/@org/package-a/node_modules/@org/package-b/index.js': {
+            name: '../lib/node_modules/@org/package-a/node_modules/@org/package-b/index.js',
+            value: 25,
+            chunkIds: [1],
+          },
+          '../lib/node_modules/@org/package-a/node_modules/@org/package-b/module-a.js': {
+            name: '../lib/node_modules/@org/package-a/node_modules/@org/package-b/module-a.js',
+            value: 10,
+            chunkIds: [1],
           },
         },
       },

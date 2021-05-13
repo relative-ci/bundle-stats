@@ -1,30 +1,20 @@
 import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
 
 import { getModuleName } from '../utils';
-
-const getChunkNames = (chunks = [], chunkId) => {
-  const chunk = chunks.find(({ id }) => id === chunkId);
-
-  if (!chunk) {
-    return [];
-  }
-
-  return chunk.names;
-};
 
 /*
  * Extract webpack modules array to an object with metrics
  */
 export const extractModules = (webpackStats = {}) => {
-  const chunks = get(webpackStats, 'chunks', []);
-  const modules = get(webpackStats, 'modules', []);
+  const modulesSource = get(webpackStats, 'modules', []);
 
-  if (!modules) {
+  if (!modulesSource) {
     return { modules: {} };
   }
 
   // Flatten concatenated modules
-  const allModules = modules.reduce((agg, moduleEntry) => {
+  const allModules = modulesSource.reduce((agg, moduleEntry) => {
     if (!moduleEntry.modules) {
       return [...agg, moduleEntry];
     }
@@ -39,28 +29,24 @@ export const extractModules = (webpackStats = {}) => {
     ];
   }, []);
 
-  const modulesByChunk = allModules.reduce((aggregator, moduleEntry) => {
-    const { name, size } = moduleEntry;
-
-    const moduleChunks = get(moduleEntry, 'chunks', []);
+  // Extracted modules
+  const modulesByChunk = allModules.reduce((agg, moduleEntry) => {
+    const { name, size, chunks } = moduleEntry;
     const normalizedName = getModuleName(name);
 
-    return moduleChunks.reduce(
-      (aggWithChunks, chunkId) => ({
-        ...aggWithChunks,
-        [chunkId.toString()]: {
-          chunkNames: getChunkNames(chunks, chunkId),
-          modules: {
-            ...get(aggWithChunks, [chunkId, 'modules']),
-            [normalizedName]: {
-              name,
-              value: size,
-            },
-          },
-        },
-      }),
-      aggregator,
-    );
+    // skip modules with no chunks
+    if (isEmpty(chunks)) {
+      return agg;
+    }
+
+    return {
+      ...agg,
+      [normalizedName]: {
+        name,
+        value: size,
+        chunkIds: chunks,
+      },
+    };
   }, {});
 
   return {
