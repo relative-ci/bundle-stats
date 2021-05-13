@@ -54,7 +54,7 @@ const getRowFilter = (filters) => (row) => {
 
 export default compose(
   withProps(({ jobs }) => {
-    const items = useMemo(() => webpack.compareBySection.allModules(jobs), [jobs]);
+    const items = useMemo(() => webpack.compareBySection.modules(jobs), [jobs]);
 
     const chunks = jobs[0]?.meta?.webpack?.chunks || []
     const chunkIds = map(chunks, 'id');

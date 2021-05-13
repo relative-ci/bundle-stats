@@ -8,7 +8,6 @@ import {
   SECTION_WEBPACK_MODULES,
   SECTION_WEBPACK_PACKAGES,
   SUMMARY_METRIC_PATHS,
-  SECTION_WEBPACK_ALL_MODULES,
 } from './constants';
 import { metrics as metricTypes } from './metrics';
 
@@ -82,19 +81,6 @@ const getModulesMetrics = (job) => get(job, 'metrics.webpack.modules', {});
 
 /**
  *
- * Get all modules metrics
- *
- * @param {Object} job Job data
- * @param {Object} job.metrics Job metrics
- * @param {Object} job.metrics.webpack Job webpack metrics
- * @param {Object} job.metrics.webpack.modules Job webpack module metrics
- *
- * @return {Object} Webpack module metrics
- */
-const getAllModulesMetrics = (job) => get(job, 'metrics.webpack.allModules', {});
-
-/**
- *
  * Get package metrics
  *
  * @param {Object} job Job data
@@ -111,6 +97,5 @@ export const selectors = {
   [SECTION_WEBPACK_SIZES]: getSizeMetrics,
   [SECTION_WEBPACK_ASSETS]: getAssetsMetrics,
   [SECTION_WEBPACK_MODULES]: getModulesMetrics,
-  [SECTION_WEBPACK_ALL_MODULES]: getAllModulesMetrics,
   [SECTION_WEBPACK_PACKAGES]: getPackageMetrics,
 };
