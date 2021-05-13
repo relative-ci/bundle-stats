@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.6](https://github.com/relative-ci/bundle-stats/compare/v3.0.0-alpha.5...v3.0.0-alpha.6) (2021-05-13)
+
+**Note:** Version bump only for package next-plugin-bundle-stats
+
+
+
+
+
 # [3.0.0-alpha.5](https://github.com/relative-ci/bundle-stats/compare/v3.0.0-alpha.4...v3.0.0-alpha.5) (2021-05-09)
 
 **Note:** Version bump only for package next-plugin-bundle-stats
