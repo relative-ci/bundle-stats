@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.8](https://github.com/relative-ci/bundle-stats/compare/v3.0.0-alpha.7...v3.0.0-alpha.8) (2021-05-13)
+
+**Note:** Version bump only for package @bundle-stats/ui
+
+
+
+
+
 # [3.0.0-alpha.7](https://github.com/relative-ci/bundle-stats/compare/v3.0.0-alpha.6...v3.0.0-alpha.7) (2021-05-13)
 
 **Note:** Version bump only for package @bundle-stats/ui
