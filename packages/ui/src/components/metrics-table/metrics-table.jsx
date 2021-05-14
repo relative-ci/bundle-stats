@@ -61,6 +61,7 @@ const getHeaders = (runs, items, showHeaderSum, title) => [
 ];
 
 const generateRowCell = () => (item) => {
+  // eslint-disable-next-line react/destructuring-assignment
   if (!item || typeof item.value === 'undefined') {
     return '-';
   }
