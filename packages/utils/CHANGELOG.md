@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.0](https://github.com/relative-ci/bundle-stats/compare/v2.8.2...v3.0.0-beta.0) (2021-05-15)
+
+
+### Features
+
+* **utils:** Webpack - extract concatenated modules ([39651ed](https://github.com/relative-ci/bundle-stats/commit/39651ed8e7cfbd0673c5418084911cd8e89c3185))
+* **utils:** Webpack validate - allow modules[].modules[] ([309a4bb](https://github.com/relative-ci/bundle-stats/commit/309a4bb1325d399e1dc381c4155dcd7f14a52563))
+
+
+
+
+
 ## [2.8.2](https://github.com/relative-ci/bundle-stats/compare/v2.8.1...v2.8.2) (2021-05-07)
 
 
