@@ -42,9 +42,7 @@ exports[`Storyshots Components/MetricsTable default 1`] = `
       }
     }
   >
-    <MetricsTable
-      className=""
-      headerRows={Array []}
+    <Component
       items={
         Array [
           Object {
@@ -109,7 +107,6 @@ exports[`Storyshots Components/MetricsTable default 1`] = `
           },
         ]
       }
-      renderRowHeader={[Function]}
       runs={
         Array [
           Object {
@@ -118,8 +115,6 @@ exports[`Storyshots Components/MetricsTable default 1`] = `
           },
         ]
       }
-      showHeaderSum={false}
-      title=""
     />
   </div>
 </Router>
@@ -167,9 +162,7 @@ exports[`Storyshots Components/MetricsTable multiple runs 1`] = `
       }
     }
   >
-    <MetricsTable
-      className=""
-      headerRows={Array []}
+    <Component
       items={
         Array [
           Object {
@@ -297,7 +290,6 @@ exports[`Storyshots Components/MetricsTable multiple runs 1`] = `
           },
         ]
       }
-      renderRowHeader={[Function]}
       runs={
         Array [
           Object {
@@ -314,8 +306,6 @@ exports[`Storyshots Components/MetricsTable multiple runs 1`] = `
           },
         ]
       }
-      showHeaderSum={false}
-      title=""
     />
   </div>
 </Router>
@@ -363,8 +353,7 @@ exports[`Storyshots Components/MetricsTable with header rows 1`] = `
       }
     }
   >
-    <MetricsTable
-      className=""
+    <Component
       headerRows={
         Array [
           Array [
@@ -506,7 +495,6 @@ exports[`Storyshots Components/MetricsTable with header rows 1`] = `
           },
         ]
       }
-      renderRowHeader={[Function]}
       runs={
         Array [
           Object {
@@ -523,8 +511,6 @@ exports[`Storyshots Components/MetricsTable with header rows 1`] = `
           },
         ]
       }
-      showHeaderSum={false}
-      title=""
     />
   </div>
 </Router>

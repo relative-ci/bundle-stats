@@ -42,12 +42,11 @@ exports[`Storyshots Components/RunLabelSum default 1`] = `
       }
     }
   >
-    <RunLabelSum
-      className=""
+    <Component
       rows={
         Array [
           Object {
-            "name": "File a",
+            "key": "File a",
             "runs": Array [
               Object {
                 "value": 100,
@@ -55,7 +54,7 @@ exports[`Storyshots Components/RunLabelSum default 1`] = `
             ],
           },
           Object {
-            "name": "File a",
+            "key": "File a",
             "runs": Array [
               Object {
                 "value": 200,
@@ -113,12 +112,11 @@ exports[`Storyshots Components/RunLabelSum multiple runs - baseline 1`] = `
       }
     }
   >
-    <RunLabelSum
-      className=""
+    <Component
       rows={
         Array [
           Object {
-            "name": "File a",
+            "key": "File a",
             "runs": Array [
               Object {
                 "value": 100,
@@ -129,7 +127,7 @@ exports[`Storyshots Components/RunLabelSum multiple runs - baseline 1`] = `
             ],
           },
           Object {
-            "name": "File a",
+            "key": "File a",
             "runs": Array [
               Object {
                 "value": 200,
@@ -190,12 +188,11 @@ exports[`Storyshots Components/RunLabelSum multiple runs - current 1`] = `
       }
     }
   >
-    <RunLabelSum
-      className=""
+    <Component
       rows={
         Array [
           Object {
-            "name": "File a",
+            "key": "File a",
             "runs": Array [
               Object {
                 "value": 100,
@@ -206,7 +203,7 @@ exports[`Storyshots Components/RunLabelSum multiple runs - current 1`] = `
             ],
           },
           Object {
-            "name": "File a",
+            "key": "File a",
             "runs": Array [
               Object {
                 "value": 200,
