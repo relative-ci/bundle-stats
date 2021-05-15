@@ -71,43 +71,47 @@ TooltipNotPredictive.propTypes = {
   runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };
 
-const getRenderRowHeader = ({ labels, CustomComponentLink, chunks }) => (item) => (
-  <Popover
-    label={<FileName name={item.label} />}
-    icon={
-      <FlexStack space="xxxsmall" className={css.assetInfoFlags}>
-        {item.isNotPredictive && (
-          <Tooltip className={css.notPredictive} title={<TooltipNotPredictive runs={item.runs} />}>
-            <Icon className={css.notPredictiveIcon} glyph="warning" />
-          </Tooltip>
-        )}
-        {item.isChunk && (
-          <span title="Chunk" className={css.flagChunk}>
-            c
-          </span>
-        )}
-        {item.isEntry && (
-          <span title="Entrypoint" className={css.flagEntry}>
-            e
-          </span>
-        )}
-        {item.isInitial && (
-          <span title="Initial" className={css.flagInitial}>
-            i
-          </span>
-        )}
-      </FlexStack>
-    }
-  >
-    <AssetInfo
-      className={css.assetInfo}
-      item={item}
-      labels={labels}
-      chunks={chunks}
-      CustomComponentLink={CustomComponentLink}
-    />
-  </Popover>
-);
+const getRenderRowHeader = ({ labels, CustomComponentLink, chunks }) => (item) => {
+  const { label, isNotPredictive, runs, isChunk, isEntry, isInitial } = item;
+
+  return (
+    <Popover
+      label={<FileName name={label} />}
+      icon={
+        <FlexStack space="xxxsmall" className={css.assetInfoFlags}>
+          {isNotPredictive && (
+            <Tooltip className={css.notPredictive} title={<TooltipNotPredictive runs={runs} />}>
+              <Icon className={css.notPredictiveIcon} glyph="warning" />
+            </Tooltip>
+          )}
+          {isChunk && (
+            <span title="Chunk" className={css.flagChunk}>
+              c
+            </span>
+          )}
+          {isEntry && (
+            <span title="Entrypoint" className={css.flagEntry}>
+              e
+            </span>
+          )}
+          {isInitial && (
+            <span title="Initial" className={css.flagInitial}>
+              i
+            </span>
+          )}
+        </FlexStack>
+      }
+    >
+      <AssetInfo
+        className={css.assetInfo}
+        item={item}
+        labels={labels}
+        chunks={chunks}
+        CustomComponentLink={CustomComponentLink}
+      />
+    </Popover>
+  );
+};
 
 export const BundleAssets = (props) => {
   const {
