@@ -1,12 +1,14 @@
 .button {
   display: inline-flex;
   align-items: center;
+  justify-content: flex-start;
   border: none;
   outline: none;
   padding: 0;
   background: none;
   color: inherit;
   cursor: pointer;
+  text-align: inherit;
 }
 
 .button:hover {
