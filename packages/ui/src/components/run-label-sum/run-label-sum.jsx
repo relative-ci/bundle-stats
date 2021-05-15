@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get } from 'lodash';
 import { flow, map, sum } from 'lodash/fp';
-import { METRIC_TYPE_FILE_SIZE, getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
+import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils/lib-esm/utils/metrics';
+import { METRIC_TYPE_FILE_SIZE } from '@bundle-stats/utils/lib-esm/config/metrics';
 
 import { Delta } from '../delta';
 import { Metric } from '../metric';
