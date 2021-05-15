@@ -1,6 +1,5 @@
 import max from 'lodash/max';
 import last from 'lodash/last';
-import uniqBy from 'lodash/uniqBy';
 
 import { PACKAGES_SEPARATOR, PACKAGE_ID_SEPARATOR } from '../../config';
 import { PackageMetric, WebpackMetricsModules, WebpackMetricsPackages } from '../../constants';
@@ -28,83 +27,76 @@ const getPackageInfoFromModulePath = (moduleName: string) => {
 
 export const extractModulesPackages = (
   webpackStats?: any,
-  currentExtractedData?: WebpackMetricsModules
+  currentExtractedData?: WebpackMetricsModules,
 ): WebpackMetricsPackages => {
-  const modulesByChunks = currentExtractedData?.metrics?.modules || {};
+  const modules = Object.entries(currentExtractedData?.metrics?.modules || {});
 
-  // Flatten all modules across chunks and filter duplicates
-  const modules = uniqBy(
-    Object.values(modulesByChunks).map((chunk) => Object.entries(chunk.modules)).flat(),
-    ([id]) => id,
-  );
+  const packages = modules.reduce((agg, [modulePath, { value }]) => {
+    const packageInfo = getPackageInfoFromModulePath(modulePath);
 
-  const packages = modules.reduce(
-    (agg, [modulePath, { value }]) => {
-      const packageInfo = getPackageInfoFromModulePath(modulePath);
+    if (!packageInfo) {
+      return agg;
+    }
 
-      if (!packageInfo) {
-        return agg;
-      }
+    const existingPackageData = agg[packageInfo.name];
 
-      const existingPackageData = agg[packageInfo.name];
+    // New package data
+    if (!existingPackageData) {
+      return {
+        ...agg,
+        [packageInfo.name]: {
+          path: packageInfo.path,
+          value,
+        }
+      };
+    }
 
-      // New package data
-      if (!existingPackageData) {
-        return {
-          ...agg,
-          [packageInfo.name]: {
-            path: packageInfo.path,
-            value,
-          }
-        };
-      }
+    // Existing package info
+    if (existingPackageData.path === packageInfo.path) {
+      return {
+        ...agg,
+        [packageInfo.name]: {
+          ...existingPackageData,
+          value: existingPackageData.value + value,
+        },
+      };
+    }
 
-      // Existing package info
-      if (existingPackageData.path === packageInfo.path) {
-        return {
-          ...agg,
-          [packageInfo.name]: {
-            ...existingPackageData,
-            value: existingPackageData.value + value,
-          },
-        };
-      }
+    // Same package name, but different paths (eg: symlinks)
+    const existingPackageWithEqualPath = Object.entries(agg).find(
+      ([_, packageData]) => packageData.path === packageInfo.path,
+    );
 
-      // Same package name, but different paths (eg: symlinks)
-      const existingPackageWithEqualPath = Object.entries(agg).find(
-        ([_, packageData]) => packageData.path === packageInfo.path,
-      );
-
-      if (existingPackageWithEqualPath) {
-        const [name, data] = existingPackageWithEqualPath;
-
-        return {
-          ...agg,
-          [name]: {
-            ...data,
-            value: data.value + value,
-          },
-        };
-      }
-
-      // New package name & data
-      const lastIndex = max(Object.keys(agg)
-        .map((name) => name.split('~'))
-        .filter(([name]) => name === packageInfo.name)
-        .map(([_, index]) => parseInt(index, 10))) || 0;
-
-      const packageName = [packageInfo.name, lastIndex + 1].join(PACKAGE_ID_SEPARATOR);
+    if (existingPackageWithEqualPath) {
+      const [name, data] = existingPackageWithEqualPath;
 
       return {
         ...agg,
-        [packageName]: {
-          path: packageInfo.path,
-          value,
+        [name]: {
+          ...data,
+          value: data.value + value,
         },
       };
-    },
-    {} as Record<string, PackageMetric>,
-  );
+    }
+
+    // New package name & data
+    const lastIndex = max(
+      Object.keys(agg)
+        .map((name) => name.split('~'))
+        .filter(([name]) => name === packageInfo.name)
+        .map(([_, index]) => parseInt(index, 10)),
+    ) || 0;
+
+    const packageName = [packageInfo.name, lastIndex + 1].join(PACKAGE_ID_SEPARATOR);
+
+    return {
+      ...agg,
+      [packageName]: {
+        path: packageInfo.path,
+        value,
+      },
+    };
+  }, {} as Record<string, PackageMetric>);
 
   return { metrics: { packages } };
 };

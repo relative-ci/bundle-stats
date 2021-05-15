@@ -2,7 +2,7 @@ import webpackStatsCurrentExtracted from '../../../__fixtures__/webpack-stats-1.
 import webpackStatsBaselineExtracted from '../../../__fixtures__/webpack-stats-2.extracted';
 
 import { createJobs } from '../../jobs';
-import { SECTION_WEBPACK_ALL_MODULES } from '../constants';
+import { SECTION_WEBPACK_MODULES } from '../constants';
 import { compareBySection } from '../compare';
 
 const JOBS = createJobs([
@@ -12,7 +12,7 @@ const JOBS = createJobs([
 
 describe('Webpack/compare', () => {
   test('should compare all modules', () => {
-    const result = compareBySection[SECTION_WEBPACK_ALL_MODULES](JOBS);
+    const result = compareBySection[SECTION_WEBPACK_MODULES](JOBS);
     expect(result).toMatchSnapshot();
   })
 });

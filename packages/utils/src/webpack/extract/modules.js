@@ -1,50 +1,52 @@
 import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
 
 import { getModuleName } from '../utils';
-
-const getChunkNames = (chunks = [], chunkId) => {
-  const chunk = chunks.find(({ id }) => id === chunkId);
-
-  if (!chunk) {
-    return [];
-  }
-
-  return chunk.names;
-};
 
 /*
  * Extract webpack modules array to an object with metrics
  */
 export const extractModules = (webpackStats = {}) => {
-  const chunks = get(webpackStats, 'chunks', []);
-  const modules = get(webpackStats, 'modules', []);
+  const modulesSource = get(webpackStats, 'modules', []);
 
-  if (!modules) {
+  if (!modulesSource) {
     return { modules: {} };
   }
 
-  const modulesByChunk = modules.reduce((aggregator, moduleEntry) => {
-    const { name, size } = moduleEntry;
+  // Flatten concatenated modules
+  const allModules = modulesSource.reduce((agg, moduleEntry) => {
+    if (!moduleEntry.modules) {
+      return [...agg, moduleEntry];
+    }
 
-    const moduleChunks = get(moduleEntry, 'chunks', []);
+    return [
+      ...agg,
+      ...moduleEntry.modules.map((concatenatedModule) => ({
+        ...concatenatedModule,
+        // Add parent chunks
+        chunks: moduleEntry.chunks,
+      })),
+    ];
+  }, []);
+
+  // Extracted modules
+  const modulesByChunk = allModules.reduce((agg, moduleEntry) => {
+    const { name, size, chunks } = moduleEntry;
     const normalizedName = getModuleName(name);
 
-    return moduleChunks.reduce(
-      (aggWithChunks, chunkId) => ({
-        ...aggWithChunks,
-        [chunkId.toString()]: {
-          chunkNames: getChunkNames(chunks, chunkId),
-          modules: {
-            ...get(aggWithChunks, [chunkId, 'modules']),
-            [normalizedName]: {
-              name,
-              value: size,
-            },
-          },
-        },
-      }),
-      aggregator,
-    );
+    // skip modules with no chunks
+    if (isEmpty(chunks)) {
+      return agg;
+    }
+
+    return {
+      ...agg,
+      [normalizedName]: {
+        name,
+        value: size,
+        chunkIds: chunks,
+      },
+    };
   }, {});
 
   return {
