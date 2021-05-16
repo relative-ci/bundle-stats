@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.1](https://github.com/relative-ci/bundle-stats/compare/v3.0.0-beta.0...v3.0.0-beta.1) (2021-05-16)
+
+
+### Bug Fixes
+
+* **utils:** Module chunkId - consistent type with meta.chunks ([8e2bc0c](https://github.com/relative-ci/bundle-stats/commit/8e2bc0c359e6622bf30c4f61338e5b40a2918112))
+
+
+
+
+
 # [3.0.0-beta.0](https://github.com/relative-ci/bundle-stats/compare/v2.8.2...v3.0.0-beta.0) (2021-05-15)
 
 **Note:** Version bump only for package @bundle-stats/html-templates
