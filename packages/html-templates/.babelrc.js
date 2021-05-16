@@ -47,7 +47,7 @@ module.exports = {
             modules: 'commonjs',
             corejs: 3,
             targets: {
-              node: 8,
+              node: 'current',
             },
           },
         ],
