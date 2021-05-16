@@ -4,14 +4,13 @@ import orderBy from 'lodash/orderBy';
 import sum from 'lodash/sum';
 
 import { INSIGHT_WARNING } from '../../config';
-import { getPackagePublicName } from '../utils';
 
 export const extractModulesPackagesDuplicate = (webpackStats, currentExtractedData) => {
   const source = get(currentExtractedData, 'metrics.packages', {});
 
   // Group packages by the public name
-  const packagesByName = Object.entries(source).reduce((agg, [packageName, packageData]) => {
-    const name = getPackagePublicName(packageName);
+  const packagesByName = Object.entries(source).reduce((agg, [packageId, packageData]) => {
+    const { name } = packageData;
     const existingPackageData = agg[name];
 
     return {
@@ -21,7 +20,7 @@ export const extractModulesPackagesDuplicate = (webpackStats, currentExtractedDa
         children: [
           ...(existingPackageData?.children || []),
           {
-            name: packageName,
+            name: packageId,
             value: packageData.value,
           },
         ],
