@@ -95,42 +95,42 @@ Object {
       "modules": Object {
         "module-a": Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "name": "module-a",
           "value": 1000,
         },
         "module-b": Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "name": "module-b",
           "value": 2000,
         },
         "node_modules/package-a/index.js": Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "name": "node_modules/package-a/index.js",
           "value": 1000,
         },
         "node_modules/package-a/node_modules/package-c/index.js": Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "name": "node_modules/package-a/node_modules/package-c/index.js",
           "value": 1000,
         },
         "node_modules/package-b/index.js": Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "name": "node_modules/package-b/index.js",
           "value": 1000,
         },
         "node_modules/package-c/index.js": Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "name": "node_modules/package-c/index.js",
           "value": 1000,
@@ -426,42 +426,42 @@ Object {
       "modules": Object {
         "module-a": Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "name": "module-a",
           "value": 1000,
         },
         "module-b": Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "name": "module-b",
           "value": 2000,
         },
         "node_modules/package-a/index.js": Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "name": "node_modules/package-a/index.js",
           "value": 1000,
         },
         "node_modules/package-a/node_modules/package-c/index.js": Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "name": "node_modules/package-a/node_modules/package-c/index.js",
           "value": 1000,
         },
         "node_modules/package-b/index.js": Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "name": "node_modules/package-b/index.js",
           "value": 1000,
         },
         "node_modules/package-c/index.js": Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "name": "node_modules/package-c/index.js",
           "value": 1000,

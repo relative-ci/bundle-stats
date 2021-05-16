@@ -163,7 +163,7 @@ Object {
       "runs": Array [
         Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "delta": 0,
           "deltaPercentage": 0,
@@ -176,7 +176,7 @@ Object {
         },
         Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "displayValue": "1000B",
           "name": "module-a",
@@ -192,7 +192,7 @@ Object {
       "runs": Array [
         Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "delta": 500,
           "deltaPercentage": 33.33333333,
@@ -205,7 +205,7 @@ Object {
         },
         Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "displayValue": "1.46KB",
           "name": "module-b",
@@ -221,7 +221,7 @@ Object {
       "runs": Array [
         Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "delta": 0,
           "deltaPercentage": 0,
@@ -234,7 +234,7 @@ Object {
         },
         Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "displayValue": "1000B",
           "name": "node_modules/package-a/index.js",
@@ -250,7 +250,7 @@ Object {
       "runs": Array [
         Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "delta": 1000,
           "deltaPercentage": 100,
@@ -272,7 +272,7 @@ Object {
       "runs": Array [
         Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "delta": 0,
           "deltaPercentage": 0,
@@ -285,7 +285,7 @@ Object {
         },
         Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "displayValue": "1000B",
           "name": "node_modules/package-b/index.js",
@@ -301,7 +301,7 @@ Object {
       "runs": Array [
         Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "delta": 0,
           "deltaPercentage": 0,
@@ -314,7 +314,7 @@ Object {
         },
         Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "displayValue": "1000B",
           "name": "node_modules/package-c/index.js",
@@ -987,7 +987,7 @@ Object {
       "runs": Array [
         Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "displayValue": "1000B",
           "name": "module-a",
@@ -1003,7 +1003,7 @@ Object {
       "runs": Array [
         Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "displayValue": "1.95KB",
           "name": "module-b",
@@ -1019,7 +1019,7 @@ Object {
       "runs": Array [
         Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "displayValue": "1000B",
           "name": "node_modules/package-a/index.js",
@@ -1035,7 +1035,7 @@ Object {
       "runs": Array [
         Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "displayValue": "1000B",
           "name": "node_modules/package-a/node_modules/package-c/index.js",
@@ -1051,7 +1051,7 @@ Object {
       "runs": Array [
         Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "displayValue": "1000B",
           "name": "node_modules/package-b/index.js",
@@ -1067,7 +1067,7 @@ Object {
       "runs": Array [
         Object {
           "chunkIds": Array [
-            1,
+            "1",
           ],
           "displayValue": "1000B",
           "name": "node_modules/package-c/index.js",
