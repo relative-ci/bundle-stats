@@ -3,7 +3,7 @@
   "private": true,
   "description": "Generate bundle report(bundle size, assets, modules, packages) and compare the results between different builds.",
   "engines": {
-    "node": ">= 10.0"
+    "node": ">= 12.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "4.22.1",
