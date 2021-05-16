@@ -1,7 +1,7 @@
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 
-import { getModuleName } from '../utils';
+import { getModuleName, normalizeChunkId } from '../utils';
 
 /*
  * Extract webpack modules array to an object with metrics
@@ -44,7 +44,7 @@ export const extractModules = (webpackStats = {}) => {
       [normalizedName]: {
         name,
         value: size,
-        chunkIds: chunks,
+        chunkIds: chunks.map(normalizeChunkId),
       },
     };
   }, {});

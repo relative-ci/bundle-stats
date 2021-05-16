@@ -1,7 +1,7 @@
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 
-import { getAssetName } from '../utils';
+import { getAssetName, normalizeChunkId } from '../utils';
 
 const IGNORE_PATTERN = /\.(map|LICENSE\.txt)$/;
 
@@ -20,7 +20,7 @@ export const extractAssets = (webpackStats) => {
     .flat();
 
   const normalizedChunks = webpackChunks.map(({ id, names, files }) => ({
-    id: id.toString(),
+    id: normalizeChunkId(id),
     name: names.join('+') || `chunk-${id}`,
     files,
   }));
