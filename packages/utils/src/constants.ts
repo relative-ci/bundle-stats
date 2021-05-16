@@ -46,7 +46,7 @@ export interface Metric {
 
 export interface ModuleMetric extends Metric {
   name: string;
-  chunkIds: Array<Number | String>;
+  chunkIds: Array<String>;
 }
 
 export interface PackageMetric extends Metric {

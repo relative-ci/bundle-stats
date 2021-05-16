@@ -10,7 +10,7 @@ Array [
     "runs": Array [
       Object {
         "chunkIds": Array [
-          1,
+          "1",
         ],
         "delta": 0,
         "deltaPercentage": 0,
@@ -23,7 +23,7 @@ Array [
       },
       Object {
         "chunkIds": Array [
-          1,
+          "1",
         ],
         "displayValue": "1000B",
         "name": "module-a",
@@ -39,7 +39,7 @@ Array [
     "runs": Array [
       Object {
         "chunkIds": Array [
-          1,
+          "1",
         ],
         "delta": 500,
         "deltaPercentage": 33.33333333,
@@ -52,7 +52,7 @@ Array [
       },
       Object {
         "chunkIds": Array [
-          1,
+          "1",
         ],
         "displayValue": "1.46KB",
         "name": "module-b",
@@ -68,7 +68,7 @@ Array [
     "runs": Array [
       Object {
         "chunkIds": Array [
-          1,
+          "1",
         ],
         "delta": 0,
         "deltaPercentage": 0,
@@ -81,7 +81,7 @@ Array [
       },
       Object {
         "chunkIds": Array [
-          1,
+          "1",
         ],
         "displayValue": "1000B",
         "name": "node_modules/package-a/index.js",
@@ -97,7 +97,7 @@ Array [
     "runs": Array [
       Object {
         "chunkIds": Array [
-          1,
+          "1",
         ],
         "delta": 1000,
         "deltaPercentage": 100,
@@ -119,7 +119,7 @@ Array [
     "runs": Array [
       Object {
         "chunkIds": Array [
-          1,
+          "1",
         ],
         "delta": 0,
         "deltaPercentage": 0,
@@ -132,7 +132,7 @@ Array [
       },
       Object {
         "chunkIds": Array [
-          1,
+          "1",
         ],
         "displayValue": "1000B",
         "name": "node_modules/package-b/index.js",
@@ -148,7 +148,7 @@ Array [
     "runs": Array [
       Object {
         "chunkIds": Array [
-          1,
+          "1",
         ],
         "delta": 0,
         "deltaPercentage": 0,
@@ -161,7 +161,7 @@ Array [
       },
       Object {
         "chunkIds": Array [
-          1,
+          "1",
         ],
         "displayValue": "1000B",
         "name": "node_modules/package-c/index.js",

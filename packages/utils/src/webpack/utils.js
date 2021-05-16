@@ -140,3 +140,9 @@ export const getPackagePublicName = (packageId) => {
   // Strip package suffix (eg: ~1)
   return name.split(PACKAGE_ID_SEPARATOR)[0];
 };
+
+/**
+ * @param {String|Number} chunkId
+ * @return {String}
+ */
+export const normalizeChunkId = (chunkId) => chunkId.toString();
