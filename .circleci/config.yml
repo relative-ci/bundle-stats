@@ -6,7 +6,7 @@ defaults: &defaults
   working_directory: ~/repo
   executor:
    name: node/default
-   tag: '10.23'
+   tag: '12.22'
 
 jobs:
   test:
