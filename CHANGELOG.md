@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.2](https://github.com/relative-ci/bundle-stats/compare/v3.0.0-beta.1...v3.0.0-beta.2) (2021-05-16)
+
+
+### Reverts
+
+* Revert "build(html-templates): Avoid duplicate dependencies from linked packages" ([7a1a1ac](https://github.com/relative-ci/bundle-stats/commit/7a1a1ac3fb357fdc3b897e205a9e43cb21312b89))
+
+
+
+
+
 # [3.0.0-beta.1](https://github.com/relative-ci/bundle-stats/compare/v3.0.0-beta.0...v3.0.0-beta.1) (2021-05-16)
 
 
