@@ -24,7 +24,7 @@ export enum MetricRunInfoDeltaType {
   'NO_CHANGE',
   'LOW_POSITIVE',
   'POSITIVE',
-  'HIGH_POSITIVE'
+  'HIGH_POSITIVE',
 }
 
 export interface MetricRun {
@@ -69,8 +69,8 @@ export interface LighthouseSource {
   lighthouseVersion: string;
   fetchTime: string;
   requestedUrl: string;
-  categories: { [key: string]: { score: number } }
-  audits: { [key: string]: { score: number; numericValue: number } }
+  categories: { [key: string]: { score: number } };
+  audits: { [key: string]: { score: number; numericValue: number } };
 }
 
 export interface LighthouseMetricsCategoryScores {
