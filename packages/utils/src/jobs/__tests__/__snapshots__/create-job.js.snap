@@ -141,18 +141,22 @@ Object {
       },
       "packages": Object {
         "package-a": Object {
+          "name": "package-a",
           "path": "node_modules/package-a",
           "value": 1000,
         },
         "package-a:package-c": Object {
+          "name": "package-c",
           "path": "node_modules/package-a/node_modules/package-c",
           "value": 1000,
         },
         "package-b": Object {
+          "name": "package-b",
           "path": "node_modules/package-b",
           "value": 1000,
         },
         "package-c": Object {
+          "name": "package-c",
           "path": "node_modules/package-c",
           "value": 1000,
         },
@@ -472,18 +476,22 @@ Object {
       },
       "packages": Object {
         "package-a": Object {
+          "name": "package-a",
           "path": "node_modules/package-a",
           "value": 1000,
         },
         "package-a:package-c": Object {
+          "name": "package-c",
           "path": "node_modules/package-a/node_modules/package-c",
           "value": 1000,
         },
         "package-b": Object {
+          "name": "package-b",
           "path": "node_modules/package-b",
           "value": 1000,
         },
         "package-c": Object {
+          "name": "package-c",
           "path": "node_modules/package-c",
           "value": 1000,
         },

@@ -6,7 +6,7 @@ import { PackageMetric, WebpackMetricsModules, WebpackMetricsPackages } from '..
 
 const PACKAGE_NAMES = /(node_modules|~)\/((!?@(([\w|\-|_|.]*)\/){2})|(([\w|\-|_|.]*)\/))/g;
 
-const getPackageInfoFromModulePath = (moduleName: string) => {
+const getPackageMetaFromModulePath = (moduleName: string) => {
   const found = moduleName.match(PACKAGE_NAMES);
 
   if (!found) {
@@ -14,13 +14,15 @@ const getPackageInfoFromModulePath = (moduleName: string) => {
   }
 
   const names = found.map((modulePath) => modulePath.replace(/.*(node_modules|~)\/(.*)\/$/, '$2'));
+  const name = last(names);
 
   // get the module full path
   const pattern = new RegExp(`(.*)(${last(found)}).*`);
   const path = moduleName.replace(pattern, '$1$2').replace(/\/$/, '');
 
   return {
-    name: names.join(PACKAGES_SEPARATOR),
+    id: names.join(PACKAGES_SEPARATOR),
+    name,
     path,
   };
 };
@@ -32,30 +34,31 @@ export const extractModulesPackages = (
   const modules = Object.entries(currentExtractedData?.metrics?.modules || {});
 
   const packages = modules.reduce((agg, [modulePath, { value }]) => {
-    const packageInfo = getPackageInfoFromModulePath(modulePath);
+    const packageMeta = getPackageMetaFromModulePath(modulePath);
 
-    if (!packageInfo) {
+    if (!packageMeta) {
       return agg;
     }
 
-    const existingPackageData = agg[packageInfo.name];
+    const existingPackageData = agg[packageMeta.id];
 
     // New package data
     if (!existingPackageData) {
       return {
         ...agg,
-        [packageInfo.name]: {
-          path: packageInfo.path,
+        [packageMeta.id]: {
+          name: packageMeta.name,
+          path: packageMeta.path,
           value,
-        }
+        },
       };
     }
 
     // Existing package info
-    if (existingPackageData.path === packageInfo.path) {
+    if (existingPackageData.path === packageMeta.path) {
       return {
         ...agg,
-        [packageInfo.name]: {
+        [packageMeta.id]: {
           ...existingPackageData,
           value: existingPackageData.value + value,
         },
@@ -64,7 +67,7 @@ export const extractModulesPackages = (
 
     // Same package name, but different paths (eg: symlinks)
     const existingPackageWithEqualPath = Object.entries(agg).find(
-      ([_, packageData]) => packageData.path === packageInfo.path,
+      ([_, packageData]) => packageData.path === packageMeta.path,
     );
 
     if (existingPackageWithEqualPath) {
@@ -82,17 +85,18 @@ export const extractModulesPackages = (
     // New package name & data
     const lastIndex = max(
       Object.keys(agg)
-        .map((name) => name.split('~'))
-        .filter(([name]) => name === packageInfo.name)
+        .map((id) => id.split('~'))
+        .filter(([id]) => id === packageMeta.id)
         .map(([_, index]) => parseInt(index, 10)),
     ) || 0;
 
-    const packageName = [packageInfo.name, lastIndex + 1].join(PACKAGE_ID_SEPARATOR);
+    const packageName = [packageMeta.id, lastIndex + 1].join(PACKAGE_ID_SEPARATOR);
 
     return {
       ...agg,
       [packageName]: {
-        path: packageInfo.path,
+        name: packageMeta.name,
+        path: packageMeta.path,
         value,
       },
     };

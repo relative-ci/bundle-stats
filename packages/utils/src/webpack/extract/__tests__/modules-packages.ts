@@ -68,30 +68,37 @@ describe('Webpack/extract/extractModulesPackages', () => {
       metrics: {
         packages: {
           'package-a': {
+            name: 'package-a',
             path: './node_modules/package-a',
             value: 50,
           },
           'package-b': {
+            name: 'package-b',
             path: './node_modules/package-b',
             value: 10,
           },
           'package-c': {
+            name: 'package-c',
             path: './~/package-c',
             value: 10,
           },
           'package-a:package-b': {
+            name: 'package-b',
             path: './node_modules/package-a/node_modules/package-b',
             value: 20,
           },
           '@org/package-a': {
+            name: '@org/package-a',
             path: './node_modules/@org/package-a',
             value: 20,
           },
           '@org/package-a:@org/package-b': {
+            name: '@org/package-b',
             path: './node_modules/@org/package-a/node_modules/@org/package-b',
             value: 20,
           },
           '@org/package-a:@org/package-b~1': {
+            name: '@org/package-b',
             path: '../lib/node_modules/@org/package-a/node_modules/@org/package-b',
             value: 35,
           },

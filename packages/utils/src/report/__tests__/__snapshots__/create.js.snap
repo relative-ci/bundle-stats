@@ -337,11 +337,13 @@ Object {
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "1000B",
+          "name": "package-a",
           "path": "node_modules/package-a",
           "value": 1000,
         },
         Object {
           "displayValue": "1000B",
+          "name": "package-a",
           "path": "node_modules/package-a",
           "value": 1000,
         },
@@ -360,6 +362,7 @@ Object {
           "displayDelta": "+1000B",
           "displayDeltaPercentage": "+100%",
           "displayValue": "1000B",
+          "name": "package-c",
           "path": "node_modules/package-a/node_modules/package-c",
           "value": 1000,
         },
@@ -379,11 +382,13 @@ Object {
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "1000B",
+          "name": "package-b",
           "path": "node_modules/package-b",
           "value": 1000,
         },
         Object {
           "displayValue": "1000B",
+          "name": "package-b",
           "path": "node_modules/package-b",
           "value": 1000,
         },
@@ -402,11 +407,13 @@ Object {
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "1000B",
+          "name": "package-c",
           "path": "node_modules/package-c",
           "value": 1000,
         },
         Object {
           "displayValue": "1000B",
+          "name": "package-c",
           "path": "node_modules/package-c",
           "value": 1000,
         },
@@ -1085,6 +1092,7 @@ Object {
       "runs": Array [
         Object {
           "displayValue": "1000B",
+          "name": "package-a",
           "path": "node_modules/package-a",
           "value": 1000,
         },
@@ -1098,6 +1106,7 @@ Object {
       "runs": Array [
         Object {
           "displayValue": "1000B",
+          "name": "package-c",
           "path": "node_modules/package-a/node_modules/package-c",
           "value": 1000,
         },
@@ -1111,6 +1120,7 @@ Object {
       "runs": Array [
         Object {
           "displayValue": "1000B",
+          "name": "package-b",
           "path": "node_modules/package-b",
           "value": 1000,
         },
@@ -1124,6 +1134,7 @@ Object {
       "runs": Array [
         Object {
           "displayValue": "1000B",
+          "name": "package-c",
           "path": "node_modules/package-c",
           "value": 1000,
         },

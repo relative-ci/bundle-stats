@@ -13,21 +13,27 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
       metrics: {
         packages: {
           'package-a': {
+            name: 'package-a',
             value: 50,
           },
           'package-b': {
+            name: 'package-b',
             value: 10,
           },
           'package-b:package-a': {
+            name: 'package-a',
             value: 10,
           },
           'package-c': {
+            name: 'package-c',
             value: 30,
           },
           'org/package-d:package-c': {
+            name: 'package-c',
             value: 40,
           },
           'package-c~1': {
+            name: 'package-c',
             value: 40,
           },
         },
@@ -38,7 +44,6 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
       insights: {
         duplicatePackages: {
           type: 'WARNING',
-          // @TODO Obsolete structure, remove in v3.0
           data: {
             'package-c': ['org/package-d:package-c', 'package-c~1', 'package-c'],
             'package-a': ['package-a', 'package-b:package-a'],
@@ -47,7 +52,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
       },
       metrics: {
         duplicatePackagesCount: {
-          value: 2,
+          value: 3,
         },
       },
     });
