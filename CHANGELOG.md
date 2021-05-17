@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.4](https://github.com/relative-ci/bundle-stats/compare/v3.0.0-beta.3...v3.0.0-beta.4) (2021-05-17)
+
+
+### Bug Fixes
+
+* **utils:** DuplicatePackagesCount - count all the duplicate instances ([d9bdba5](https://github.com/relative-ci/bundle-stats/commit/d9bdba53ef2fc6fb72f89a892fd61adcb159db3b))
+
+
+### Features
+
+* **utils:** Packages - store public package name ([36f5397](https://github.com/relative-ci/bundle-stats/commit/36f5397b50cd4ac377e90f9067692b27e9fdbfd1))
+
+
+
+
+
 # [3.0.0-beta.3](https://github.com/relative-ci/bundle-stats/compare/v3.0.0-beta.2...v3.0.0-beta.3) (2021-05-16)
 
 
