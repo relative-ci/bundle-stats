@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/relative-ci/bundle-stats/compare/v2.8.2...v3.0.0) (2021-05-18)
+
+
+### Bug Fixes
+
+* **ui:** Popover - text align left ([854b290](https://github.com/relative-ci/bundle-stats/commit/854b290f5240b2a4747c7d2846fa6a1f52bc8685))
+* **utils:** Module chunkId - consistent type with meta.chunks ([8e2bc0c](https://github.com/relative-ci/bundle-stats/commit/8e2bc0c359e6622bf30c4f61338e5b40a2918112))
+
+
+### Features
+
+* **utils:** Packages - store public package name ([36f5397](https://github.com/relative-ci/bundle-stats/commit/36f5397b50cd4ac377e90f9067692b27e9fdbfd1))
+
+
+
+
+
 ## [2.8.2](https://github.com/relative-ci/bundle-stats/compare/v2.8.1...v2.8.2) (2021-05-07)
 
 

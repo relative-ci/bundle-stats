@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/relative-ci/bundle-stats/compare/v2.8.2...v3.0.0) (2021-05-18)
+
+
+### Bug Fixes
+
+* **utils:** DuplicatePackagesCount - count all the duplicate instances ([d9bdba5](https://github.com/relative-ci/bundle-stats/commit/d9bdba53ef2fc6fb72f89a892fd61adcb159db3b))
+* babelrc - use node current config ([b8a364b](https://github.com/relative-ci/bundle-stats/commit/b8a364b5da1f2f9ccd744b13f583fa58df2ebcea))
+* **utils:** Module chunkId - consistent type with meta.chunks ([8e2bc0c](https://github.com/relative-ci/bundle-stats/commit/8e2bc0c359e6622bf30c4f61338e5b40a2918112))
+
+
+### Features
+
+* **utils:** Packages - store public package name ([36f5397](https://github.com/relative-ci/bundle-stats/commit/36f5397b50cd4ac377e90f9067692b27e9fdbfd1))
+
+
+### Reverts
+
+* Revert "build(html-templates): Avoid duplicate dependencies from linked packages" ([7a1a1ac](https://github.com/relative-ci/bundle-stats/commit/7a1a1ac3fb357fdc3b897e205a9e43cb21312b89))
+
+
+
+
+
 ## [2.8.2](https://github.com/relative-ci/bundle-stats/compare/v2.8.1...v2.8.2) (2021-05-07)
 
 

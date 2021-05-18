@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/relative-ci/bundle-stats/compare/v2.8.2...v3.0.0) (2021-05-18)
+
+**Note:** Version bump only for package gatsby-plugin-bundle-stats
+
+
+
+
+
 ## [2.8.2](https://github.com/relative-ci/bundle-stats/compare/v2.8.1...v2.8.2) (2021-05-07)
 
 **Note:** Version bump only for package gatsby-plugin-bundle-stats
