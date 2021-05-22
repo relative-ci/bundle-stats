@@ -156,7 +156,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                 </div>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 <button
-                  class="root closeBtn"
+                  class="root closeBtn medium"
                   type="button"
                 >
                   <svg
@@ -325,7 +325,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                 </div>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 <button
-                  class="root closeBtn"
+                  class="root closeBtn medium"
                   type="button"
                 >
                   <svg
@@ -411,7 +411,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                     </div>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     <button
-                      class="root closeBtn"
+                      class="root closeBtn medium"
                       type="button"
                     >
                       <svg
@@ -550,7 +550,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                         </div>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         <button
-                          class="root closeBtn"
+                          class="root closeBtn medium"
                           type="button"
                         >
                           <svg
@@ -637,10 +637,11 @@ exports[`Storyshots UI/Popover default 1`] = `
                   className="closeBtn"
                   glyph="close"
                   onClick={[Function]}
+                  size="medium"
                   type="button"
                 >
                   <button
-                    className="root closeBtn"
+                    className="root closeBtn medium"
                     onClick={[Function]}
                     type="button"
                   >
@@ -787,7 +788,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                 type="button"
               >
                 <span
-                  class="root icon"
+                  class="root icon medium"
                 >
                   <svg
                     class="icon"
@@ -845,7 +846,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                 </div>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 <button
-                  class="root closeBtn"
+                  class="root closeBtn medium"
                   type="button"
                 >
                   <svg
@@ -884,7 +885,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                 type="button"
               >
                 <span
-                  class="root icon"
+                  class="root icon medium"
                 >
                   <svg
                     class="icon"
@@ -926,9 +927,10 @@ exports[`Storyshots UI/Popover with icon 1`] = `
               as="span"
               className="icon"
               glyph="help"
+              size="medium"
             >
               <span
-                className="root icon"
+                className="root icon medium"
               >
                 <HelpIcon
                   className="icon"
@@ -1004,7 +1006,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                 type="button"
               >
                 <span
-                  class="root icon"
+                  class="root icon medium"
                 >
                   <svg
                     class="icon"
@@ -1062,7 +1064,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                 </div>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 <button
-                  class="root closeBtn"
+                  class="root closeBtn medium"
                   type="button"
                 >
                   <svg
@@ -1101,7 +1103,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                 type="button"
               >
                 <span
-                  class="root icon"
+                  class="root icon medium"
                 >
                   <svg
                     class="icon"
@@ -1160,7 +1162,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                     </div>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     <button
-                      class="root closeBtn"
+                      class="root closeBtn medium"
                       type="button"
                     >
                       <svg
@@ -1253,7 +1255,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                         type="button"
                       >
                         <span
-                          class="root icon"
+                          class="root icon medium"
                         >
                           <svg
                             class="icon"
@@ -1311,7 +1313,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                         </div>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         <button
-                          class="root closeBtn"
+                          class="root closeBtn medium"
                           type="button"
                         >
                           <svg
@@ -1350,7 +1352,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                         type="button"
                       >
                         <span
-                          class="root icon"
+                          class="root icon medium"
                         >
                           <svg
                             class="icon"
@@ -1410,10 +1412,11 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                   className="closeBtn"
                   glyph="close"
                   onClick={[Function]}
+                  size="medium"
                   type="button"
                 >
                   <button
-                    className="root closeBtn"
+                    className="root closeBtn medium"
                     onClick={[Function]}
                     type="button"
                   >

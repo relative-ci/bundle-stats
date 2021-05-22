@@ -119,7 +119,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                   class="label root space--xxxsmall"
                 >
                   <span
-                    class="root item labelIcon"
+                    class="root item labelIcon medium"
                   >
                     <svg
                       class="icon"
@@ -199,7 +199,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                   class="label root space--xxxsmall"
                 >
                   <span
-                    class="root item labelIcon"
+                    class="root item labelIcon medium"
                   >
                     <svg
                       class="icon"
@@ -266,9 +266,10 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                   className="item labelIcon"
                   glyph="filter"
                   key=".0"
+                  size="medium"
                 >
                   <span
-                    className="root item labelIcon"
+                    className="root item labelIcon medium"
                   >
                     <FilterIcon
                       className="icon"
@@ -363,7 +364,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                   class="label root space--xxxsmall"
                 >
                   <span
-                    class="root item labelIcon"
+                    class="root item labelIcon medium"
                   >
                     <svg
                       class="icon"
@@ -443,7 +444,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                   class="label root space--xxxsmall"
                 >
                   <span
-                    class="root item labelIcon"
+                    class="root item labelIcon medium"
                   >
                     <svg
                       class="icon"
@@ -675,7 +676,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                   class="label root space--xxxsmall"
                 >
                   <span
-                    class="root item labelIcon"
+                    class="root item labelIcon medium"
                   >
                     <svg
                       class="icon"
@@ -752,7 +753,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                   class="label root space--xxxsmall"
                 >
                   <span
-                    class="root item labelIcon"
+                    class="root item labelIcon medium"
                   >
                     <svg
                       class="icon"
@@ -819,9 +820,10 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                   className="item labelIcon"
                   glyph="filter"
                   key=".0"
+                  size="medium"
                 >
                   <span
-                    className="root item labelIcon"
+                    className="root item labelIcon medium"
                   >
                     <FilterIcon
                       className="icon"
@@ -916,7 +918,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                   class="label root space--xxxsmall"
                 >
                   <span
-                    class="root item labelIcon"
+                    class="root item labelIcon medium"
                   >
                     <svg
                       class="icon"
@@ -993,7 +995,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                   class="label root space--xxxsmall"
                 >
                   <span
-                    class="root item labelIcon"
+                    class="root item labelIcon medium"
                   >
                     <svg
                       class="icon"
@@ -1220,7 +1222,7 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
                   class="label root space--xxxsmall"
                 >
                   <span
-                    class="root item labelIcon"
+                    class="root item labelIcon medium"
                   >
                     <svg
                       class="icon"
@@ -1300,7 +1302,7 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
                   class="label root space--xxxsmall"
                 >
                   <span
-                    class="root item labelIcon"
+                    class="root item labelIcon medium"
                   >
                     <svg
                       class="icon"
@@ -1367,9 +1369,10 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
                   className="item labelIcon"
                   glyph="filter"
                   key=".0"
+                  size="medium"
                 >
                   <span
-                    className="root item labelIcon"
+                    className="root item labelIcon medium"
                   >
                     <FilterIcon
                       className="icon"
@@ -1464,7 +1467,7 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
                   class="label root space--xxxsmall"
                 >
                   <span
-                    class="root item labelIcon"
+                    class="root item labelIcon medium"
                   >
                     <svg
                       class="icon"
@@ -1544,7 +1547,7 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
                   class="label root space--xxxsmall"
                 >
                   <span
-                    class="root item labelIcon"
+                    class="root item labelIcon medium"
                   >
                     <svg
                       class="icon"

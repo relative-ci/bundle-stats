@@ -108,7 +108,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                         Filename
                       </span>
                       <span
-                        class="root itemIcon"
+                        class="root itemIcon medium"
                       >
                         <svg
                           class="icon"
@@ -146,7 +146,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                         Size
                       </span>
                       <span
-                        class="root itemIcon"
+                        class="root itemIcon medium"
                       >
                         <svg
                           class="icon"
@@ -218,7 +218,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                     class="label root space--xxxsmall"
                   >
                     <span
-                      class="root item labelIcon"
+                      class="root item labelIcon medium"
                     >
                       <svg
                         class="icon"
@@ -283,7 +283,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                         Filename
                       </span>
                       <span
-                        class="root itemIcon"
+                        class="root itemIcon medium"
                       >
                         <svg
                           class="icon"
@@ -314,7 +314,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                         Size
                       </span>
                       <span
-                        class="root itemIcon"
+                        class="root itemIcon medium"
                       >
                         <svg
                           class="icon"
@@ -356,7 +356,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                     class="label root space--xxxsmall"
                   >
                     <span
-                      class="root item labelIcon"
+                      class="root item labelIcon medium"
                     >
                       <svg
                         class="icon"
@@ -423,9 +423,10 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                     className="item labelIcon"
                     glyph="sort"
                     key=".0"
+                    size="medium"
                   >
                     <span
-                      className="root item labelIcon"
+                      className="root item labelIcon medium"
                     >
                       <SortIcon
                         className="icon"
@@ -491,7 +492,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                         Filename
                       </span>
                       <span
-                        class="root itemIcon"
+                        class="root itemIcon medium"
                       >
                         <svg
                           class="icon"
@@ -529,7 +530,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                         Size
                       </span>
                       <span
-                        class="root itemIcon"
+                        class="root itemIcon medium"
                       >
                         <svg
                           class="icon"
@@ -600,7 +601,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                     class="label root space--xxxsmall"
                   >
                     <span
-                      class="root item labelIcon"
+                      class="root item labelIcon medium"
                     >
                       <svg
                         class="icon"
@@ -665,7 +666,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                         Filename
                       </span>
                       <span
-                        class="root itemIcon"
+                        class="root itemIcon medium"
                       >
                         <svg
                           class="icon"
@@ -696,7 +697,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                         Size
                       </span>
                       <span
-                        class="root itemIcon"
+                        class="root itemIcon medium"
                       >
                         <svg
                           class="icon"
@@ -738,7 +739,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                     class="label root space--xxxsmall"
                   >
                     <span
-                      class="root item labelIcon"
+                      class="root item labelIcon medium"
                     >
                       <svg
                         class="icon"
@@ -809,7 +810,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             Filename
                           </span>
                           <span
-                            class="root itemIcon"
+                            class="root itemIcon medium"
                           >
                             <svg
                               class="icon"
@@ -840,7 +841,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             Size
                           </span>
                           <span
-                            class="root itemIcon"
+                            class="root itemIcon medium"
                           >
                             <svg
                               class="icon"
@@ -924,7 +925,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                   Filename
                                 </span>
                                 <span
-                                  class="root itemIcon"
+                                  class="root itemIcon medium"
                                 >
                                   <svg
                                     class="icon"
@@ -962,7 +963,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                   Size
                                 </span>
                                 <span
-                                  class="root itemIcon"
+                                  class="root itemIcon medium"
                                 >
                                   <svg
                                     class="icon"
@@ -1036,7 +1037,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               class="label root space--xxxsmall"
                             >
                               <span
-                                class="root item labelIcon"
+                                class="root item labelIcon medium"
                               >
                                 <svg
                                   class="icon"
@@ -1101,7 +1102,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                   Filename
                                 </span>
                                 <span
-                                  class="root itemIcon"
+                                  class="root itemIcon medium"
                                 >
                                   <svg
                                     class="icon"
@@ -1132,7 +1133,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                   Size
                                 </span>
                                 <span
-                                  class="root itemIcon"
+                                  class="root itemIcon medium"
                                 >
                                   <svg
                                     class="icon"
@@ -1174,7 +1175,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               class="label root space--xxxsmall"
                             >
                               <span
-                                class="root item labelIcon"
+                                class="root item labelIcon medium"
                               >
                                 <svg
                                   class="icon"
@@ -1239,9 +1240,10 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                           as="span"
                           className="itemIcon"
                           glyph="arrow"
+                          size="medium"
                         >
                           <span
-                            className="root itemIcon"
+                            className="root itemIcon medium"
                           >
                             <ArrowIcon
                               className="icon"
@@ -1298,7 +1300,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                   Filename
                                 </span>
                                 <span
-                                  class="root itemIcon"
+                                  class="root itemIcon medium"
                                 >
                                   <svg
                                     class="icon"
@@ -1336,7 +1338,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                   Size
                                 </span>
                                 <span
-                                  class="root itemIcon"
+                                  class="root itemIcon medium"
                                 >
                                   <svg
                                     class="icon"
@@ -1410,7 +1412,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               class="label root space--xxxsmall"
                             >
                               <span
-                                class="root item labelIcon"
+                                class="root item labelIcon medium"
                               >
                                 <svg
                                   class="icon"
@@ -1475,7 +1477,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                   Filename
                                 </span>
                                 <span
-                                  class="root itemIcon"
+                                  class="root itemIcon medium"
                                 >
                                   <svg
                                     class="icon"
@@ -1506,7 +1508,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                   Size
                                 </span>
                                 <span
-                                  class="root itemIcon"
+                                  class="root itemIcon medium"
                                 >
                                   <svg
                                     class="icon"
@@ -1548,7 +1550,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               class="label root space--xxxsmall"
                             >
                               <span
-                                class="root item labelIcon"
+                                class="root item labelIcon medium"
                               >
                                 <svg
                                   class="icon"
@@ -1613,9 +1615,10 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                           as="span"
                           className="itemIcon"
                           glyph="arrow"
+                          size="medium"
                         >
                           <span
-                            className="root itemIcon"
+                            className="root itemIcon medium"
                           >
                             <ArrowIcon
                               className="icon"
