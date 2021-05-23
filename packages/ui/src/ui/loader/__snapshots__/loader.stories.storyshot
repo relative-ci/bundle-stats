@@ -54,14 +54,76 @@ exports[`Storyshots UI/Loader default 1`] = `
     >
       <Loader
         className=""
+        size="medium"
       >
         <span
-          className="root"
-        >
-          <span
-            className="loader"
-          />
-        </span>
+          className="root medium"
+        />
+      </Loader>
+    </div>
+  </Router>
+</MemoryRouter>
+`;
+
+exports[`Storyshots UI/Loader with size 1`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
+  }
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
+    >
+      <Loader
+        className=""
+        size="large"
+      >
+        <span
+          className="root large"
+        />
       </Loader>
     </div>
   </Router>

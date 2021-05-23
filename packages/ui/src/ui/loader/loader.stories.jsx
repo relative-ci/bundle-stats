@@ -7,6 +7,5 @@ import { Loader } from '.';
 const stories = storiesOf('UI/Loader', module);
 stories.addDecorator(getWrapperDecorator());
 
-stories.add('default', () => (
-  <Loader />
-));
+stories.add('default', () => <Loader />);
+stories.add('with size', () => <Loader size={Loader.SIZE_LARGE} />);

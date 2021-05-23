@@ -1,13 +1,3 @@
-.root {
-  width: 100%;
-  min-height: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: var(--space-medium);
-  text-align: center;
-}
-
 /* https://codepen.io/alanshortis/pen/eJLVXr */
 @keyframes spin {
   0% {
@@ -18,12 +8,52 @@
   }
 }
 
-.loader {
+.root {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  color: var(--color-outline);
+}
+
+.root::before,
+.root::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  content: '';
   display: block;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  border: 0.33rem solid var(--color-highlight);
-  border-top-color: var(--color-outline);
+  border: var(--border-width) solid currentColor;
+}
+
+.root::before {
+  opacity: 0.3;
+}
+
+.root::after {
+  border: solid transparent;
+  border-top-color: currentColor;
   animation: spin 0.85s infinite linear;
+}
+
+/** Size modifiers */
+.small {
+  --border-width: 2px;
+  width: var(--space-small);
+  height: var(--space-small);
+}
+
+.medium {
+  --border-width: 3px;
+  width: var(--space-medium);
+  height: var(--space-medium);
+}
+
+.large {
+  --border-width: 4px;
+  width: var(--space-large);
+  height: var(--space-large);
 }
