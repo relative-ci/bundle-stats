@@ -4,165 +4,154 @@ import { storiesOf } from '@storybook/react';
 import { getWrapperDecorator } from '../../stories';
 import { Table } from '.';
 
+const { THead, TBody, Td, Tr, Th } = Table;
+
 const stories = storiesOf('UI/Table', module);
 stories.addDecorator(getWrapperDecorator());
 
-stories.add('default', () => {
-  const rows = [
-    {
-      cells: ['a1', 'b1', 'c1'],
-    },
-    {
-      cells: ['a2', 'b2', 'c2'],
-    },
-    {
-      cells: ['a3', 'b3', 'c3'],
-    },
-  ];
-
-  return <Table rows={rows} />;
-});
-
-stories.add('empty', () => (
-  <Table rows={[]} />
+stories.add('default', () => (
+  <Table>
+    <TBody>
+      <Tr>
+        <Td>a1</Td>
+        <Td>b1</Td>
+        <Td>c1</Td>
+      </Tr>
+      <Tr>
+        <Td>a2</Td>
+        <Td>b2</Td>
+        <Td>c2</Td>
+      </Tr>
+      <Tr>
+        <Td>a3</Td>
+        <Td>b3</Td>
+        <Td>c3</Td>
+      </Tr>
+    </TBody>
+  </Table>
 ));
 
+stories.add('empty', () => <Table />);
 stories.add('empty with custom element', () => (
-  <Table
-    rows={[]}
-    emptyMessage={(
-      <p style={{ outline: '1px solid lightgray' }}>
-        No items available
-      </p>
-    )}
-  />
+  <Table emptyMessage={<p style={{ outline: '1px solid lightgray' }}>No items available</p>} />
 ));
 
-stories.add('with headers', () => {
-  const headers = ['Col A', 'Col B', 'Col C'];
-  const rows = [
-    {
-      cells: ['a1', 'b1', 'c1'],
-    },
-    {
-      cells: ['a2', 'b2', 'c2'],
-    },
-    {
-      cells: ['a3', 'b3', 'c3'],
-    },
-  ];
+stories.add('with headers', () => (
+  <Table>
+    <THead>
+      <Tr>
+        <Th>Col A</Th>
+        <Th>Col B</Th>
+        <Th>Col C</Th>
+      </Tr>
+    </THead>
+    <TBody>
+      <Tr>
+        <Td>a1</Td>
+        <Td>b1</Td>
+        <Td>c1</Td>
+      </Tr>
+      <Tr>
+        <Td>a2</Td>
+        <Td>b2</Td>
+        <Td>c2</Td>
+      </Tr>
+      <Tr>
+        <Td>a3</Td>
+        <Td>b3</Td>
+        <Td>c3</Td>
+      </Tr>
+    </TBody>
+  </Table>
+));
 
-  return <Table headers={headers} rows={rows} />;
-});
+stories.add('with multiple rows header', () => (
+  <Table>
+    <THead>
+      <Tr>
+        <Th> </Th>
+        <Th colSpan={2}>Colspan</Th>
+      </Tr>
+      <Tr>
+        <Th>Col A</Th>
+        <Th>Col B</Th>
+        <Th>Col C</Th>
+      </Tr>
+    </THead>
+    <TBody>
+      <Tr>
+        <Td>a1</Td>
+        <Td>b1</Td>
+        <Td>c1</Td>
+      </Tr>
+      <Tr>
+        <Td>a2</Td>
+        <Td>b2</Td>
+        <Td>c2</Td>
+      </Tr>
+      <Tr>
+        <Td>a3</Td>
+        <Td>b3</Td>
+        <Td>c3</Td>
+      </Tr>
+    </TBody>
+  </Table>
+));
 
-stories.add('with multiple rows header', () => {
-  const headers = [
-    [' ', { children: 'Colspan', colSpan: 2 }],
-    ['Col A', 'Col B', 'Col C'],
-  ];
+stories.add('with row headers', () => (
+  <Table>
+    <TBody>
+      <Tr>
+        <Th>row 1</Th>
+        <Td>a1</Td>
+        <Td>b1</Td>
+        <Td>c1</Td>
+      </Tr>
+      <Tr>
+        <Th>row 2</Th>
+        <Td>a2</Td>
+        <Td>b2</Td>
+        <Td>c2</Td>
+      </Tr>
+      <Tr>
+        <Th>row 3</Th>
+        <Td>a3</Td>
+        <Td>b3</Td>
+        <Td>c3</Td>
+      </Tr>
+    </TBody>
+  </Table>
+));
 
-  const rows = [
-    {
-      cells: ['a1', 'b1', 'c1'],
-    },
-    {
-      cells: ['a2', 'b2', 'c2'],
-    },
-    {
-      cells: ['a3', 'b3', 'c3'],
-    },
-  ];
-
-  return <Table headers={headers} rows={rows} />;
-});
-
-stories.add('with outline', () => {
-  const headers = ['Col A', 'Col B', 'Col C'];
-  const rows = [
-    {
-      cells: ['a1', 'b1', 'c1'],
-    },
-    {
-      cells: ['a2', 'b2', 'c2'],
-    },
-    {
-      cells: ['a3', 'b3', 'c3'],
-    },
-  ];
-
-  return <Table outline headers={headers} rows={rows} />;
-});
-
-
-stories.add('with row headers', () => {
-  const rows = [
-    {
-      header: 'row 1',
-      cells: ['a1', 'b1', 'c1'],
-    },
-    {
-      header: 'row 2',
-      cells: ['a2', 'b2', 'c2'],
-    },
-    {
-      header: 'row 3',
-      cells: ['a3', 'b3', 'c3'],
-    },
-  ];
-
-  return <Table rows={rows} />;
-});
-
-stories.add('with custom content and attributes', () => {
-  const headers = [
-    ' ',
-    {
-      children: 'Col A (right)',
-      style: {
-        textAlign: 'right',
-      },
-    },
-    {
-      children: 'Col B (center)',
-      style: {
-        textAlign: 'center',
-      },
-    },
-    {
-      children: 'Col C (underline)',
-      style: {
-        textDecoration: 'underline',
-      },
-    },
-  ];
-  const rows = [
-    {
-      header: (<strong>row 1</strong>),
-      cells: [
-        (<em>a1</em>),
-        {
-          children: 'b1',
-          style: {
-            color: 'red',
-            textAlign: 'center',
-          },
-        },
-        'c1',
-      ],
-    },
-    {
-      style: {
-        color: 'blue',
-        fontSize: '1.5em',
-      },
-      header: (<strong>row 2</strong>),
-      cells: ['a2', 'b2', 'c2'],
-    },
-    {
-      header: (<strong>row 2</strong>),
-      cells: ['a3', 'b3', 'c3'],
-    },
-  ];
-
-  return <Table headers={headers} rows={rows} />;
-});
+stories.add('with custom content and attributes', () => (
+  <Table>
+    <THead>
+      <Tr>
+        <Th> </Th>
+        <Th style={{ textAlign: 'right' }}>Col A (right)</Th>
+        <Th style={{ textAlign: 'center' }}>Col B (center)</Th>
+        <Th style={{ textDecoration: 'underline' }}>Col C(undefiner)</Th>
+      </Tr>
+    </THead>
+    <TBody>
+      <Tr>
+        <Th><strong>row 1</strong></Th>
+        <Td style={{ textAlign: 'right' }}>a1</Td>
+        <Td style={{ textAlign: 'center', color: 'red' }}>b1</Td>
+        <Td style={{ textDecoration: 'underline' }}>c1</Td>
+      </Tr>
+      <Tr style={{ color: 'blue', fontSize: '1.5em' }}>
+        <Th><strong>row 2</strong></Th>
+        <Td style={{ textAlign: 'right' }}>a2</Td>
+        <Td style={{ textAlign: 'center'}}>b2</Td>
+        <Td style={{ textDecoration: 'underline' }}>c2</Td>
+      </Tr>
+      <Tr>
+        <Th><strong>row 3</strong></Th>
+        <Td style={{ textAlign: 'right' }}>a3</Td>
+        <Td style={{ textAlign: 'center'}}>b3</Td>
+        <Td style={{ textDecoration: 'underline' }}>c3</Td>
+      </Tr>
+    </TBody>
+  </Table>
+));
