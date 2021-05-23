@@ -359,8 +359,8 @@ exports[`Storyshots Components/MetricsTable with header rows 1`] = `
           Array [
             "Metric",
             Object {
-              "children": "Value",
-              "colSpan": 2,
+              "children": "Colspan",
+              "colSpan": 3,
               "style": Object {
                 "textAlign": "center",
               },
