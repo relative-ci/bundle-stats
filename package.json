@@ -6,8 +6,8 @@
     "node": ">= 12.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "4.22.1",
-    "@typescript-eslint/parser": "4.22.1",
+    "@typescript-eslint/eslint-plugin": "4.26.0",
+    "@typescript-eslint/parser": "4.26.0",
     "@tsconfig/node10": "1.0.7",
     "babel-eslint": "10.1.0",
     "dotenv": "8.6.0",
