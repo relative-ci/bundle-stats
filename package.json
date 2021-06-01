@@ -10,7 +10,7 @@
     "@typescript-eslint/parser": "4.22.1",
     "@tsconfig/node10": "1.0.7",
     "babel-eslint": "10.1.0",
-    "dotenv": "8.2.0",
+    "dotenv": "8.6.0",
     "eslint": "7.25.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-airbnb-typescript": "12.3.1",
