@@ -47,11 +47,11 @@
     "@bundle-stats/utils": "^3.0.0",
     "boxen": "^5.0.0",
     "core-js": "^3.1.4",
-    "fs-extra": "9.1.0",
+    "fs-extra": "10.0.0",
     "listr": "^0.14.3",
     "lodash": "4.17.21",
     "update-notifier": "5.1.0",
-    "yargs": "16.2.0"
+    "yargs": "17.0.1"
   },
   "devDependencies": {
     "jest": "26.6.3"
