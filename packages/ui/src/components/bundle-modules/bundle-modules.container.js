@@ -123,7 +123,7 @@ export default compose(
          * to avoid running an expensive operation before filtering, we just show the total amount of
          * rows to be the max count between different runs
          */
-        totalRowCount: max(jobs.map((job) => Object.values(job?.metrics?.webpack?.modules).length)),
+        totalRowCount: max(jobs.map((job) => Object.values(job?.metrics?.webpack?.modules || {}).length)),
       }),
       [jobs],
     );
