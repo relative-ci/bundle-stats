@@ -52,84 +52,102 @@ exports[`Storyshots UI/Icon all 1`] = `
         }
       }
     >
-      <Icon
-        as="span"
-        className=""
-        glyph="arrow"
-        key="arrow"
+      <span
+        style={
+          Object {
+            "margin": "0.3rem",
+          }
+        }
       >
-        <span
-          className="root"
+        <Icon
+          as="span"
+          className=""
+          glyph="arrow"
+          key="arrow"
+          size="medium"
         >
-          <ArrowIcon
-            className="icon"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            className="root medium"
           >
-            <svg
+            <ArrowIcon
               className="icon"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M0 0h24v24H0V0z"
-                fill="none"
-              />
-              <path
-                d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-              />
-            </svg>
-          </ArrowIcon>
-        </span>
-      </Icon>
-      <Icon
-        as="span"
-        className=""
-        glyph="branch"
-        key="branch"
+              <svg
+                className="icon"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 0h24v24H0V0z"
+                  fill="none"
+                />
+                <path
+                  d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                />
+              </svg>
+            </ArrowIcon>
+          </span>
+        </Icon>
+      </span>
+      <span
+        style={
+          Object {
+            "margin": "0.3rem",
+          }
+        }
       >
-        <span
-          className="root"
+        <Icon
+          as="span"
+          className=""
+          glyph="branch"
+          key="branch"
+          size="medium"
         >
-          <BranchIcon
-            className="icon"
-            fill="currentColor"
-            viewBox="0 0 640 1024"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            className="root medium"
           >
-            <svg
+            <BranchIcon
               className="icon"
               fill="currentColor"
               viewBox="0 0 640 1024"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M512 192c-70.625 0-128 57.344-128 128 0 47.219 25.875 88.062 64 110.281V448s0 128-128 128c-53.062 0-94.656 11.375-128 28.812V302.281c38.156-22.219 64-63.062 64-110.281 0-70.656-57.344-128-128-128S0 121.344 0 192c0 47.219 25.844 88.062 64 110.281V721.75C25.844 743.938 0 784.75 0 832c0 70.625 57.344 128 128 128s128-57.375 128-128c0-33.5-13.188-63.75-34.25-86.625C240.375 722.5 270.656 704 320 704c254 0 256-256 256-256v-17.719c38.125-22.219 64-63.062 64-110.281 0-70.656-57.375-128-128-128zm-384-64c35.406 0 64 28.594 64 64s-28.594 64-64 64-64-28.594-64-64 28.594-64 64-64zm0 768c-35.406 0-64-28.625-64-64 0-35.312 28.594-64 64-64s64 28.688 64 64c0 35.375-28.594 64-64 64zm384-512c-35.375 0-64-28.594-64-64s28.625-64 64-64 64 28.594 64 64-28.625 64-64 64z"
-              />
-            </svg>
-          </BranchIcon>
-        </span>
-      </Icon>
-      <Icon
-        as="span"
-        className=""
-        glyph="cancel"
-        key="cancel"
+              <svg
+                className="icon"
+                fill="currentColor"
+                viewBox="0 0 640 1024"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M512 192c-70.625 0-128 57.344-128 128 0 47.219 25.875 88.062 64 110.281V448s0 128-128 128c-53.062 0-94.656 11.375-128 28.812V302.281c38.156-22.219 64-63.062 64-110.281 0-70.656-57.344-128-128-128S0 121.344 0 192c0 47.219 25.844 88.062 64 110.281V721.75C25.844 743.938 0 784.75 0 832c0 70.625 57.344 128 128 128s128-57.375 128-128c0-33.5-13.188-63.75-34.25-86.625C240.375 722.5 270.656 704 320 704c254 0 256-256 256-256v-17.719c38.125-22.219 64-63.062 64-110.281 0-70.656-57.375-128-128-128zm-384-64c35.406 0 64 28.594 64 64s-28.594 64-64 64-64-28.594-64-64 28.594-64 64-64zm0 768c-35.406 0-64-28.625-64-64 0-35.312 28.594-64 64-64s64 28.688 64 64c0 35.375-28.594 64-64 64zm384-512c-35.375 0-64-28.594-64-64s28.625-64 64-64 64 28.594 64 64-28.625 64-64 64z"
+                />
+              </svg>
+            </BranchIcon>
+          </span>
+        </Icon>
+      </span>
+      <span
+        style={
+          Object {
+            "margin": "0.3rem",
+          }
+        }
       >
-        <span
-          className="root"
+        <Icon
+          as="span"
+          className=""
+          glyph="cancel"
+          key="cancel"
+          size="medium"
         >
-          <CancelIcon
-            className="icon"
-            fill="currentColor"
-            height="24"
-            viewBox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            className="root medium"
           >
-            <svg
+            <CancelIcon
               className="icon"
               fill="currentColor"
               height="24"
@@ -137,318 +155,417 @@ exports[`Storyshots UI/Icon all 1`] = `
               width="24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
-              />
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-            </svg>
-          </CancelIcon>
-        </span>
-      </Icon>
-      <Icon
-        as="span"
-        className=""
-        glyph="close"
-        key="close"
+              <svg
+                className="icon"
+                fill="currentColor"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+                />
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+              </svg>
+            </CancelIcon>
+          </span>
+        </Icon>
+      </span>
+      <span
+        style={
+          Object {
+            "margin": "0.3rem",
+          }
+        }
       >
-        <span
-          className="root"
+        <Icon
+          as="span"
+          className=""
+          glyph="close"
+          key="close"
+          size="medium"
         >
-          <CloseIcon
-            className="icon"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            className="root medium"
           >
-            <svg
+            <CloseIcon
               className="icon"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-              <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-              />
-            </svg>
-          </CloseIcon>
-        </span>
-      </Icon>
-      <Icon
-        as="span"
-        className=""
-        glyph="clock"
-        key="clock"
+              <svg
+                className="icon"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </svg>
+            </CloseIcon>
+          </span>
+        </Icon>
+      </span>
+      <span
+        style={
+          Object {
+            "margin": "0.3rem",
+          }
+        }
       >
-        <span
-          className="root"
+        <Icon
+          as="span"
+          className=""
+          glyph="clock"
+          key="clock"
+          size="medium"
         >
-          <ClockIcon
-            className="icon"
-            fill="currentColor"
-            viewBox="0 0 14 16"
+          <span
+            className="root medium"
           >
-            <svg
+            <ClockIcon
               className="icon"
               fill="currentColor"
               viewBox="0 0 14 16"
             >
-              <path
-                d="M8 8h3v2H7c-.55 0-1-.45-1-1V4h2v4zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </ClockIcon>
-        </span>
-      </Icon>
-      <Icon
-        as="span"
-        className=""
-        glyph="commit"
-        key="commit"
+              <svg
+                className="icon"
+                fill="currentColor"
+                viewBox="0 0 14 16"
+              >
+                <path
+                  d="M8 8h3v2H7c-.55 0-1-.45-1-1V4h2v4zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </ClockIcon>
+          </span>
+        </Icon>
+      </span>
+      <span
+        style={
+          Object {
+            "margin": "0.3rem",
+          }
+        }
       >
-        <span
-          className="root"
+        <Icon
+          as="span"
+          className=""
+          glyph="commit"
+          key="commit"
+          size="medium"
         >
-          <CommitIcon
-            className="icon"
-            fill="currentColor"
-            viewBox="0 0 896 1024"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            className="root medium"
           >
-            <svg
+            <CommitIcon
               className="icon"
               fill="currentColor"
               viewBox="0 0 896 1024"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M694.875 448C666.375 337.781 567.125 256 448 256c-119.094 0-218.375 81.781-246.906 192H0v128h201.094C229.625 686.25 328.906 768 448 768c119.125 0 218.375-81.75 246.875-192H896V448H694.875zM448 640c-70.656 0-128-57.375-128-128 0-70.656 57.344-128 128-128 70.625 0 128 57.344 128 128 0 70.625-57.375 128-128 128z"
-              />
-            </svg>
-          </CommitIcon>
-        </span>
-      </Icon>
-      <Icon
-        as="span"
-        className=""
-        glyph="filter"
-        key="filter"
+              <svg
+                className="icon"
+                fill="currentColor"
+                viewBox="0 0 896 1024"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M694.875 448C666.375 337.781 567.125 256 448 256c-119.094 0-218.375 81.781-246.906 192H0v128h201.094C229.625 686.25 328.906 768 448 768c119.125 0 218.375-81.75 246.875-192H896V448H694.875zM448 640c-70.656 0-128-57.375-128-128 0-70.656 57.344-128 128-128 70.625 0 128 57.344 128 128 0 70.625-57.375 128-128 128z"
+                />
+              </svg>
+            </CommitIcon>
+          </span>
+        </Icon>
+      </span>
+      <span
+        style={
+          Object {
+            "margin": "0.3rem",
+          }
+        }
       >
-        <span
-          className="root"
+        <Icon
+          as="span"
+          className=""
+          glyph="filter"
+          key="filter"
+          size="medium"
         >
-          <FilterIcon
-            className="icon"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            className="root medium"
           >
-            <svg
+            <FilterIcon
               className="icon"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-              />
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-            </svg>
-          </FilterIcon>
-        </span>
-      </Icon>
-      <Icon
-        as="span"
-        className=""
-        glyph="help"
-        key="help"
+              <svg
+                className="icon"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
+                />
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+              </svg>
+            </FilterIcon>
+          </span>
+        </Icon>
+      </span>
+      <span
+        style={
+          Object {
+            "margin": "0.3rem",
+          }
+        }
       >
-        <span
-          className="root"
+        <Icon
+          as="span"
+          className=""
+          glyph="help"
+          key="help"
+          size="medium"
         >
-          <HelpIcon
-            className="icon"
-            fill="currentColor"
-            viewBox="0 0 24 24"
+          <span
+            className="root medium"
           >
-            <svg
+            <HelpIcon
               className="icon"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
-              />
-            </svg>
-          </HelpIcon>
-        </span>
-      </Icon>
-      <Icon
-        as="span"
-        className=""
-        glyph="menu"
-        key="menu"
+              <svg
+                className="icon"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                />
+              </svg>
+            </HelpIcon>
+          </span>
+        </Icon>
+      </span>
+      <span
+        style={
+          Object {
+            "margin": "0.3rem",
+          }
+        }
       >
-        <span
-          className="root"
+        <Icon
+          as="span"
+          className=""
+          glyph="menu"
+          key="menu"
+          size="medium"
         >
-          <MenuIcon
-            className="icon"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            className="root medium"
           >
-            <svg
+            <MenuIcon
               className="icon"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-              <path
-                d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-              />
-            </svg>
-          </MenuIcon>
-        </span>
-      </Icon>
-      <Icon
-        as="span"
-        className=""
-        glyph="package"
-        key="package"
+              <svg
+                className="icon"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+                <path
+                  d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                />
+              </svg>
+            </MenuIcon>
+          </span>
+        </Icon>
+      </span>
+      <span
+        style={
+          Object {
+            "margin": "0.3rem",
+          }
+        }
       >
-        <span
-          className="root"
+        <Icon
+          as="span"
+          className=""
+          glyph="package"
+          key="package"
+          size="medium"
         >
-          <PackageIcon
-            className="icon"
-            fill="currentColor"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            className="root medium"
           >
-            <svg
+            <PackageIcon
               className="icon"
               fill="currentColor"
               viewBox="0 0 1024 1024"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M480 64L0 192v576l480 128 480-128V192L480 64zM63.875 720.934L63.5 288l384.498 102.533.001 432.833L63.875 720.934zM63.5 224l160.254-42.734L640 292.265v.135l-160 42.667L63.5 224zm832.625 496.934L512.001 823.366l.001-432.833L640 356.4v156l128-34.135V322.267L896.5 288l-.375 432.934zM768 258.267v-.125L351.734 147.138 480 112.934 896.5 224 768 258.267z"
-              />
-            </svg>
-          </PackageIcon>
-        </span>
-      </Icon>
-      <Icon
-        as="span"
-        className=""
-        glyph="pr"
-        key="pr"
+              <svg
+                className="icon"
+                fill="currentColor"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M480 64L0 192v576l480 128 480-128V192L480 64zM63.875 720.934L63.5 288l384.498 102.533.001 432.833L63.875 720.934zM63.5 224l160.254-42.734L640 292.265v.135l-160 42.667L63.5 224zm832.625 496.934L512.001 823.366l.001-432.833L640 356.4v156l128-34.135V322.267L896.5 288l-.375 432.934zM768 258.267v-.125L351.734 147.138 480 112.934 896.5 224 768 258.267z"
+                />
+              </svg>
+            </PackageIcon>
+          </span>
+        </Icon>
+      </span>
+      <span
+        style={
+          Object {
+            "margin": "0.3rem",
+          }
+        }
       >
-        <span
-          className="root"
+        <Icon
+          as="span"
+          className=""
+          glyph="pr"
+          key="pr"
+          size="medium"
         >
-          <PullRequestIcon
-            className="icon"
-            fill="currentColor"
-            viewBox="0 0 768 1024"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            className="root medium"
           >
-            <svg
+            <PullRequestIcon
               className="icon"
               fill="currentColor"
               viewBox="0 0 768 1024"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M128 64C57.344 64 0 121.344 0 192c0 47.219 25.906 88.062 64 110.281V721.75C25.906 743.938 0 784.75 0 832c0 70.625 57.344 128 128 128s128-57.375 128-128c0-47.25-25.844-88.062-64-110.25V302.281c38.156-22.219 64-63.062 64-110.281 0-70.656-57.344-128-128-128zm0 832c-35.312 0-64-28.625-64-64 0-35.312 28.688-64 64-64 35.406 0 64 28.688 64 64 0 35.375-28.594 64-64 64zm0-640c-35.312 0-64-28.594-64-64s28.688-64 64-64c35.406 0 64 28.594 64 64s-28.594 64-64 64zm576 465.75V320c0-192.5-192-192-192-192h-64V0L256 192l192 192V256h64c56.438 0 64 64 64 64v401.75c-38.125 22.188-64 62.938-64 110.25 0 70.625 57.375 128 128 128s128-57.375 128-128c0-47.25-25.875-88.062-64-110.25zM640 896c-35.312 0-64-28.625-64-64 0-35.312 28.688-64 64-64 35.375 0 64 28.688 64 64 0 35.375-28.625 64-64 64z"
-              />
-            </svg>
-          </PullRequestIcon>
-        </span>
-      </Icon>
-      <Icon
-        as="span"
-        className=""
-        glyph="sort"
-        key="sort"
+              <svg
+                className="icon"
+                fill="currentColor"
+                viewBox="0 0 768 1024"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M128 64C57.344 64 0 121.344 0 192c0 47.219 25.906 88.062 64 110.281V721.75C25.906 743.938 0 784.75 0 832c0 70.625 57.344 128 128 128s128-57.375 128-128c0-47.25-25.844-88.062-64-110.25V302.281c38.156-22.219 64-63.062 64-110.281 0-70.656-57.344-128-128-128zm0 832c-35.312 0-64-28.625-64-64 0-35.312 28.688-64 64-64 35.406 0 64 28.688 64 64 0 35.375-28.594 64-64 64zm0-640c-35.312 0-64-28.594-64-64s28.688-64 64-64c35.406 0 64 28.594 64 64s-28.594 64-64 64zm576 465.75V320c0-192.5-192-192-192-192h-64V0L256 192l192 192V256h64c56.438 0 64 64 64 64v401.75c-38.125 22.188-64 62.938-64 110.25 0 70.625 57.375 128 128 128s128-57.375 128-128c0-47.25-25.875-88.062-64-110.25zM640 896c-35.312 0-64-28.625-64-64 0-35.312 28.688-64 64-64 35.375 0 64 28.688 64 64 0 35.375-28.625 64-64 64z"
+                />
+              </svg>
+            </PullRequestIcon>
+          </span>
+        </Icon>
+      </span>
+      <span
+        style={
+          Object {
+            "margin": "0.3rem",
+          }
+        }
       >
-        <span
-          className="root"
+        <Icon
+          as="span"
+          className=""
+          glyph="sort"
+          key="sort"
+          size="medium"
         >
-          <SortIcon
-            className="icon"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            className="root medium"
           >
-            <svg
+            <SortIcon
               className="icon"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
-              />
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-            </svg>
-          </SortIcon>
-        </span>
-      </Icon>
-      <Icon
-        as="span"
-        className=""
-        glyph="warning"
-        key="warning"
+              <svg
+                className="icon"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
+                />
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+              </svg>
+            </SortIcon>
+          </span>
+        </Icon>
+      </span>
+      <span
+        style={
+          Object {
+            "margin": "0.3rem",
+          }
+        }
       >
-        <span
-          className="root"
+        <Icon
+          as="span"
+          className=""
+          glyph="warning"
+          key="warning"
+          size="medium"
         >
-          <WarningIcon
-            className="icon"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            className="root medium"
           >
-            <svg
+            <WarningIcon
               className="icon"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-              <path
-                d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
-              />
-            </svg>
-          </WarningIcon>
-        </span>
-      </Icon>
+              <svg
+                className="icon"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+                <path
+                  d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+                />
+              </svg>
+            </WarningIcon>
+          </span>
+        </Icon>
+      </span>
     </div>
   </Router>
 </MemoryRouter>
@@ -510,9 +627,99 @@ exports[`Storyshots UI/Icon default 1`] = `
         as="span"
         className=""
         glyph="arrow"
+        size="medium"
       >
         <span
-          className="root"
+          className="root medium"
+        >
+          <ArrowIcon
+            className="icon"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <svg
+              className="icon"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+              />
+            </svg>
+          </ArrowIcon>
+        </span>
+      </Icon>
+    </div>
+  </Router>
+</MemoryRouter>
+`;
+
+exports[`Storyshots UI/Icon with size 1`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
+  }
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
+    >
+      <Icon
+        as="span"
+        className=""
+        glyph="arrow"
+        size="large"
+      >
+        <span
+          className="root large"
         >
           <ArrowIcon
             className="icon"

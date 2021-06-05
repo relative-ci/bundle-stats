@@ -18,7 +18,7 @@ import WarningIcon from './assets/warning.svg';
 
 import css from './icon.module.css';
 
-export const ICONS = {
+const ICONS = {
   ARROW: 'arrow',
   BRANCH: 'branch',
   CANCEL: 'cancel',
@@ -50,23 +50,32 @@ const ICON_MAP = {
   [ICONS.WARNING]: WarningIcon,
 };
 
-export const Icon = ({ className, glyph, as: Component, ...restProps }) => {
+export const Icon = ({ className, glyph, as: Component, size, ...restProps }) => {
   const Svg = typeof glyph === 'string' ? ICON_MAP[glyph] : glyph;
 
   return (
-    <Component className={cx(css.root, className)} {...restProps}>
+    <Component className={cx(css.root, className, css[size])} {...restProps}>
       <Svg className={css.icon} />
     </Component>
   );
 };
 
+Icon.ICONS = ICONS;
+
+Icon.SIZE_SMALL = 'small';
+Icon.SIZE_MEDIUM = 'medium';
+Icon.SIZE_LARGE = 'large';
+Icon.SIZES = [Icon.SIZE_SMALL, Icon.SIZE_MEDIUM, Icon.SIZE_LARGE];
+
 Icon.defaultProps = {
   className: '',
   as: 'span',
+  size: Icon.SIZE_MEDIUM,
 };
 
 Icon.propTypes = {
   className: PropTypes.string,
   glyph: PropTypes.oneOfType([PropTypes.oneOf(Object.values(ICONS)), PropTypes.node]).isRequired,
   as: PropTypes.node,
+  size: PropTypes.oneOf(Icon.SIZES),
 };

@@ -25,7 +25,7 @@ const getSearchPattern = (search) => {
   return searchPattern;
 };
 
-const getSearchReducer = ({ defaultFilters, allEntriesFilters, setParentState = noop }) => (
+const getSearchReducer = ({ defaultFilters, allEntriesFilters, setParentState }) => (
   state, action,
 ) => {
   const { type, payload } = action;
@@ -168,7 +168,7 @@ export const withSearch = () => (BaseComponent) => {
 
   WithSearch.defaultProps = {
     filters: null,
-    setState: null,
+    setState: noop,
     search: '',
   };
 
