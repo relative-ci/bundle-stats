@@ -35669,3 +35669,1623 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
   </div>
 </Router>
 `;
+
+exports[`Storyshots Components/BundleModules/chunk filters chunk with module moved in 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <withProps(WithSearch)
+      filters={
+        Object {
+          "c.1": true,
+          "c.2": false,
+          "c.3": false,
+          "changed": false,
+        }
+      }
+      jobs={
+        Array [
+          Object {
+            "insights": Object {
+              "webpack": Object {
+                "assetsSizeTotal": Object {
+                  "data": Object {
+                    "info": Object {
+                      "delta": 0,
+                      "deltaPercentage": 0,
+                      "deltaType": "NO_CHANGE",
+                      "displayDelta": "0B",
+                      "displayDeltaPercentage": "0%",
+                      "displayValue": "0B",
+                      "value": 0,
+                    },
+                    "md": "*Bundle Size* — *0B* (*0%*).",
+                    "text": "Bundle Size — 0B (0%).",
+                  },
+                  "type": "INFO",
+                },
+              },
+            },
+            "internalBuildNumber": 2,
+            "label": "Job #2",
+            "meta": Object {
+              "webpack": Object {
+                "builtAt": "",
+                "chunks": Array [
+                  Object {
+                    "id": "1",
+                    "name": "chunk-1",
+                  },
+                  Object {
+                    "id": "2",
+                    "name": "chunk-2",
+                  },
+                ],
+                "hash": "",
+              },
+            },
+            "metrics": Object {
+              "webpack": Object {
+                "assetCount": Object {
+                  "value": 0,
+                },
+                "assets": Object {},
+                "cacheInvalidation": Object {
+                  "value": 0,
+                },
+                "chunkCount": Object {
+                  "value": 0,
+                },
+                "duplicatePackagesCount": Object {
+                  "value": 0,
+                },
+                "moduleCount": Object {
+                  "value": 5,
+                },
+                "modules": Object {
+                  "module-1a.js": Object {
+                    "chunkIds": Array [
+                      "1",
+                    ],
+                    "name": "module-1a.js",
+                    "value": 1100,
+                  },
+                  "module-1b.js": Object {
+                    "chunkIds": Array [
+                      "1",
+                    ],
+                    "name": "module-1b.js",
+                    "value": 1200,
+                  },
+                  "module-2b.js": Object {
+                    "chunkIds": Array [
+                      "2",
+                    ],
+                    "name": "module-2b.js",
+                    "value": 2200,
+                  },
+                  "module-moved-from-chunk-2-to-1.js": Object {
+                    "chunkIds": Array [
+                      "1",
+                    ],
+                    "name": "module-moved-from-chunk-2-to-1.js",
+                    "value": 2300,
+                  },
+                  "module-moved-from-chunk-3-to-1.js": Object {
+                    "chunkIds": Array [
+                      "1",
+                    ],
+                    "name": "module-moved-from-chunk-3-to-1.js",
+                    "value": 3300,
+                  },
+                },
+                "packageCount": Object {
+                  "value": 0,
+                },
+                "packages": Object {},
+                "sizes": Object {
+                  "totalSizeByTypeCSS": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeFONT": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeHTML": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeIMG": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeJS": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeMEDIA": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeOTHER": Object {
+                    "value": 0,
+                  },
+                },
+                "totalInitialSizeCSS": Object {
+                  "value": 0,
+                },
+                "totalInitialSizeJS": Object {
+                  "value": 0,
+                },
+                "totalSizeByTypeALL": Object {
+                  "value": 0,
+                },
+              },
+            },
+            "rawData": Object {
+              "webpack": Object {
+                "chunks": Array [
+                  Object {
+                    "id": 1,
+                    "names": Array [
+                      "chunk-1",
+                    ],
+                  },
+                  Object {
+                    "id": 2,
+                    "names": Array [
+                      "chunk-2",
+                    ],
+                  },
+                ],
+                "modules": Array [
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "module-1a.js",
+                    "size": 1100,
+                  },
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "module-1b.js",
+                    "size": 1200,
+                  },
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "module-moved-from-chunk-2-to-1.js",
+                    "size": 2300,
+                  },
+                  Object {
+                    "chunks": Array [
+                      2,
+                    ],
+                    "name": "module-2b.js",
+                    "size": 2200,
+                  },
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "module-moved-from-chunk-3-to-1.js",
+                    "size": 3300,
+                  },
+                ],
+              },
+            },
+            "summary": Object {
+              "webpack": Object {
+                "assetCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "cacheInvalidation": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "chunkCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "duplicatePackagesCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "moduleCount": Object {
+                  "baseline": 6,
+                  "current": 5,
+                },
+                "packageCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "totalInitialSizeCSS": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "totalInitialSizeJS": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "totalSizeByTypeALL": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+              },
+            },
+          },
+          Object {
+            "insights": Object {
+              "webpack": Object {
+                "assetsSizeTotal": Object {
+                  "data": Object {
+                    "info": Object {
+                      "delta": 0,
+                      "deltaPercentage": 0,
+                      "deltaType": "NO_CHANGE",
+                      "displayDelta": "0B",
+                      "displayDeltaPercentage": "0%",
+                      "displayValue": "0B",
+                      "value": 0,
+                    },
+                    "md": "*Bundle Size* — *0B* (*0%*).",
+                    "text": "Bundle Size — 0B (0%).",
+                  },
+                  "type": "INFO",
+                },
+              },
+            },
+            "internalBuildNumber": 1,
+            "label": "Job #1",
+            "meta": Object {
+              "webpack": Object {
+                "builtAt": "",
+                "chunks": Array [
+                  Object {
+                    "id": "1",
+                    "name": "chunk-1",
+                  },
+                  Object {
+                    "id": "2",
+                    "name": "chunk-2",
+                  },
+                  Object {
+                    "id": "3",
+                    "name": "chunk-3",
+                  },
+                ],
+                "hash": "",
+              },
+            },
+            "metrics": Object {
+              "webpack": Object {
+                "assetCount": Object {
+                  "value": 0,
+                },
+                "assets": Object {},
+                "cacheInvalidation": Object {
+                  "value": 0,
+                },
+                "chunkCount": Object {
+                  "value": 0,
+                },
+                "duplicatePackagesCount": Object {
+                  "value": 0,
+                },
+                "moduleCount": Object {
+                  "value": 6,
+                },
+                "modules": Object {
+                  "module-1a.js": Object {
+                    "chunkIds": Array [
+                      "1",
+                    ],
+                    "name": "module-1a.js",
+                    "value": 1000,
+                  },
+                  "module-1b.js": Object {
+                    "chunkIds": Array [
+                      "1",
+                    ],
+                    "name": "module-1b.js",
+                    "value": 1100,
+                  },
+                  "module-2b.js": Object {
+                    "chunkIds": Array [
+                      "2",
+                    ],
+                    "name": "module-2b.js",
+                    "value": 2200,
+                  },
+                  "module-moved-from-chunk-2-to-1.js": Object {
+                    "chunkIds": Array [
+                      "2",
+                    ],
+                    "name": "module-moved-from-chunk-2-to-1.js",
+                    "value": 2000,
+                  },
+                  "module-moved-from-chunk-3-to-1.js": Object {
+                    "chunkIds": Array [
+                      "3",
+                    ],
+                    "name": "module-moved-from-chunk-3-to-1.js",
+                    "value": 3300,
+                  },
+                  "module-removed-from-all-chunks.js": Object {
+                    "chunkIds": Array [
+                      "3",
+                    ],
+                    "name": "module-removed-from-all-chunks.js",
+                    "value": 3300,
+                  },
+                },
+                "packageCount": Object {
+                  "value": 0,
+                },
+                "packages": Object {},
+                "sizes": Object {
+                  "totalSizeByTypeCSS": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeFONT": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeHTML": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeIMG": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeJS": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeMEDIA": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeOTHER": Object {
+                    "value": 0,
+                  },
+                },
+                "totalInitialSizeCSS": Object {
+                  "value": 0,
+                },
+                "totalInitialSizeJS": Object {
+                  "value": 0,
+                },
+                "totalSizeByTypeALL": Object {
+                  "value": 0,
+                },
+              },
+            },
+            "rawData": Object {
+              "webpack": Object {
+                "chunks": Array [
+                  Object {
+                    "id": 1,
+                    "names": Array [
+                      "chunk-1",
+                    ],
+                  },
+                  Object {
+                    "id": 2,
+                    "names": Array [
+                      "chunk-2",
+                    ],
+                  },
+                  Object {
+                    "id": 3,
+                    "names": Array [
+                      "chunk-3",
+                    ],
+                  },
+                ],
+                "modules": Array [
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "module-1a.js",
+                    "size": 1000,
+                  },
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "module-1b.js",
+                    "size": 1100,
+                  },
+                  Object {
+                    "chunks": Array [
+                      2,
+                    ],
+                    "name": "module-moved-from-chunk-2-to-1.js",
+                    "size": 2000,
+                  },
+                  Object {
+                    "chunks": Array [
+                      2,
+                    ],
+                    "name": "module-2b.js",
+                    "size": 2200,
+                  },
+                  Object {
+                    "chunks": Array [
+                      3,
+                    ],
+                    "name": "module-moved-from-chunk-3-to-1.js",
+                    "size": 3300,
+                  },
+                  Object {
+                    "chunks": Array [
+                      3,
+                    ],
+                    "name": "module-removed-from-all-chunks.js",
+                    "size": 3300,
+                  },
+                ],
+              },
+            },
+            "summary": Object {
+              "webpack": Object {
+                "assetCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "cacheInvalidation": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "chunkCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "duplicatePackagesCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "moduleCount": Object {
+                  "baseline": 0,
+                  "current": 6,
+                },
+                "packageCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "totalInitialSizeCSS": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "totalInitialSizeJS": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "totalSizeByTypeALL": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+              },
+            },
+          },
+        ]
+      }
+    />
+  </div>
+</Router>
+`;
+
+exports[`Storyshots Components/BundleModules/chunk filters chunk with module moved out 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <withProps(WithSearch)
+      filters={
+        Object {
+          "c.1": false,
+          "c.2": true,
+          "c.3": false,
+          "changed": false,
+        }
+      }
+      jobs={
+        Array [
+          Object {
+            "insights": Object {
+              "webpack": Object {
+                "assetsSizeTotal": Object {
+                  "data": Object {
+                    "info": Object {
+                      "delta": 0,
+                      "deltaPercentage": 0,
+                      "deltaType": "NO_CHANGE",
+                      "displayDelta": "0B",
+                      "displayDeltaPercentage": "0%",
+                      "displayValue": "0B",
+                      "value": 0,
+                    },
+                    "md": "*Bundle Size* — *0B* (*0%*).",
+                    "text": "Bundle Size — 0B (0%).",
+                  },
+                  "type": "INFO",
+                },
+              },
+            },
+            "internalBuildNumber": 2,
+            "label": "Job #2",
+            "meta": Object {
+              "webpack": Object {
+                "builtAt": "",
+                "chunks": Array [
+                  Object {
+                    "id": "1",
+                    "name": "chunk-1",
+                  },
+                  Object {
+                    "id": "2",
+                    "name": "chunk-2",
+                  },
+                ],
+                "hash": "",
+              },
+            },
+            "metrics": Object {
+              "webpack": Object {
+                "assetCount": Object {
+                  "value": 0,
+                },
+                "assets": Object {},
+                "cacheInvalidation": Object {
+                  "value": 0,
+                },
+                "chunkCount": Object {
+                  "value": 0,
+                },
+                "duplicatePackagesCount": Object {
+                  "value": 0,
+                },
+                "moduleCount": Object {
+                  "value": 5,
+                },
+                "modules": Object {
+                  "module-1a.js": Object {
+                    "chunkIds": Array [
+                      "1",
+                    ],
+                    "name": "module-1a.js",
+                    "value": 1100,
+                  },
+                  "module-1b.js": Object {
+                    "chunkIds": Array [
+                      "1",
+                    ],
+                    "name": "module-1b.js",
+                    "value": 1200,
+                  },
+                  "module-2b.js": Object {
+                    "chunkIds": Array [
+                      "2",
+                    ],
+                    "name": "module-2b.js",
+                    "value": 2200,
+                  },
+                  "module-moved-from-chunk-2-to-1.js": Object {
+                    "chunkIds": Array [
+                      "1",
+                    ],
+                    "name": "module-moved-from-chunk-2-to-1.js",
+                    "value": 2300,
+                  },
+                  "module-moved-from-chunk-3-to-1.js": Object {
+                    "chunkIds": Array [
+                      "1",
+                    ],
+                    "name": "module-moved-from-chunk-3-to-1.js",
+                    "value": 3300,
+                  },
+                },
+                "packageCount": Object {
+                  "value": 0,
+                },
+                "packages": Object {},
+                "sizes": Object {
+                  "totalSizeByTypeCSS": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeFONT": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeHTML": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeIMG": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeJS": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeMEDIA": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeOTHER": Object {
+                    "value": 0,
+                  },
+                },
+                "totalInitialSizeCSS": Object {
+                  "value": 0,
+                },
+                "totalInitialSizeJS": Object {
+                  "value": 0,
+                },
+                "totalSizeByTypeALL": Object {
+                  "value": 0,
+                },
+              },
+            },
+            "rawData": Object {
+              "webpack": Object {
+                "chunks": Array [
+                  Object {
+                    "id": 1,
+                    "names": Array [
+                      "chunk-1",
+                    ],
+                  },
+                  Object {
+                    "id": 2,
+                    "names": Array [
+                      "chunk-2",
+                    ],
+                  },
+                ],
+                "modules": Array [
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "module-1a.js",
+                    "size": 1100,
+                  },
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "module-1b.js",
+                    "size": 1200,
+                  },
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "module-moved-from-chunk-2-to-1.js",
+                    "size": 2300,
+                  },
+                  Object {
+                    "chunks": Array [
+                      2,
+                    ],
+                    "name": "module-2b.js",
+                    "size": 2200,
+                  },
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "module-moved-from-chunk-3-to-1.js",
+                    "size": 3300,
+                  },
+                ],
+              },
+            },
+            "summary": Object {
+              "webpack": Object {
+                "assetCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "cacheInvalidation": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "chunkCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "duplicatePackagesCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "moduleCount": Object {
+                  "baseline": 6,
+                  "current": 5,
+                },
+                "packageCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "totalInitialSizeCSS": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "totalInitialSizeJS": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "totalSizeByTypeALL": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+              },
+            },
+          },
+          Object {
+            "insights": Object {
+              "webpack": Object {
+                "assetsSizeTotal": Object {
+                  "data": Object {
+                    "info": Object {
+                      "delta": 0,
+                      "deltaPercentage": 0,
+                      "deltaType": "NO_CHANGE",
+                      "displayDelta": "0B",
+                      "displayDeltaPercentage": "0%",
+                      "displayValue": "0B",
+                      "value": 0,
+                    },
+                    "md": "*Bundle Size* — *0B* (*0%*).",
+                    "text": "Bundle Size — 0B (0%).",
+                  },
+                  "type": "INFO",
+                },
+              },
+            },
+            "internalBuildNumber": 1,
+            "label": "Job #1",
+            "meta": Object {
+              "webpack": Object {
+                "builtAt": "",
+                "chunks": Array [
+                  Object {
+                    "id": "1",
+                    "name": "chunk-1",
+                  },
+                  Object {
+                    "id": "2",
+                    "name": "chunk-2",
+                  },
+                  Object {
+                    "id": "3",
+                    "name": "chunk-3",
+                  },
+                ],
+                "hash": "",
+              },
+            },
+            "metrics": Object {
+              "webpack": Object {
+                "assetCount": Object {
+                  "value": 0,
+                },
+                "assets": Object {},
+                "cacheInvalidation": Object {
+                  "value": 0,
+                },
+                "chunkCount": Object {
+                  "value": 0,
+                },
+                "duplicatePackagesCount": Object {
+                  "value": 0,
+                },
+                "moduleCount": Object {
+                  "value": 6,
+                },
+                "modules": Object {
+                  "module-1a.js": Object {
+                    "chunkIds": Array [
+                      "1",
+                    ],
+                    "name": "module-1a.js",
+                    "value": 1000,
+                  },
+                  "module-1b.js": Object {
+                    "chunkIds": Array [
+                      "1",
+                    ],
+                    "name": "module-1b.js",
+                    "value": 1100,
+                  },
+                  "module-2b.js": Object {
+                    "chunkIds": Array [
+                      "2",
+                    ],
+                    "name": "module-2b.js",
+                    "value": 2200,
+                  },
+                  "module-moved-from-chunk-2-to-1.js": Object {
+                    "chunkIds": Array [
+                      "2",
+                    ],
+                    "name": "module-moved-from-chunk-2-to-1.js",
+                    "value": 2000,
+                  },
+                  "module-moved-from-chunk-3-to-1.js": Object {
+                    "chunkIds": Array [
+                      "3",
+                    ],
+                    "name": "module-moved-from-chunk-3-to-1.js",
+                    "value": 3300,
+                  },
+                  "module-removed-from-all-chunks.js": Object {
+                    "chunkIds": Array [
+                      "3",
+                    ],
+                    "name": "module-removed-from-all-chunks.js",
+                    "value": 3300,
+                  },
+                },
+                "packageCount": Object {
+                  "value": 0,
+                },
+                "packages": Object {},
+                "sizes": Object {
+                  "totalSizeByTypeCSS": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeFONT": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeHTML": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeIMG": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeJS": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeMEDIA": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeOTHER": Object {
+                    "value": 0,
+                  },
+                },
+                "totalInitialSizeCSS": Object {
+                  "value": 0,
+                },
+                "totalInitialSizeJS": Object {
+                  "value": 0,
+                },
+                "totalSizeByTypeALL": Object {
+                  "value": 0,
+                },
+              },
+            },
+            "rawData": Object {
+              "webpack": Object {
+                "chunks": Array [
+                  Object {
+                    "id": 1,
+                    "names": Array [
+                      "chunk-1",
+                    ],
+                  },
+                  Object {
+                    "id": 2,
+                    "names": Array [
+                      "chunk-2",
+                    ],
+                  },
+                  Object {
+                    "id": 3,
+                    "names": Array [
+                      "chunk-3",
+                    ],
+                  },
+                ],
+                "modules": Array [
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "module-1a.js",
+                    "size": 1000,
+                  },
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "module-1b.js",
+                    "size": 1100,
+                  },
+                  Object {
+                    "chunks": Array [
+                      2,
+                    ],
+                    "name": "module-moved-from-chunk-2-to-1.js",
+                    "size": 2000,
+                  },
+                  Object {
+                    "chunks": Array [
+                      2,
+                    ],
+                    "name": "module-2b.js",
+                    "size": 2200,
+                  },
+                  Object {
+                    "chunks": Array [
+                      3,
+                    ],
+                    "name": "module-moved-from-chunk-3-to-1.js",
+                    "size": 3300,
+                  },
+                  Object {
+                    "chunks": Array [
+                      3,
+                    ],
+                    "name": "module-removed-from-all-chunks.js",
+                    "size": 3300,
+                  },
+                ],
+              },
+            },
+            "summary": Object {
+              "webpack": Object {
+                "assetCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "cacheInvalidation": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "chunkCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "duplicatePackagesCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "moduleCount": Object {
+                  "baseline": 0,
+                  "current": 6,
+                },
+                "packageCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "totalInitialSizeCSS": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "totalInitialSizeJS": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "totalSizeByTypeALL": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+              },
+            },
+          },
+        ]
+      }
+    />
+  </div>
+</Router>
+`;
+
+exports[`Storyshots Components/BundleModules/chunk filters removed chunk 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <withProps(WithSearch)
+      filters={
+        Object {
+          "c.1": false,
+          "c.2": false,
+          "c.3": true,
+          "changed": false,
+        }
+      }
+      jobs={
+        Array [
+          Object {
+            "insights": Object {
+              "webpack": Object {
+                "assetsSizeTotal": Object {
+                  "data": Object {
+                    "info": Object {
+                      "delta": 0,
+                      "deltaPercentage": 0,
+                      "deltaType": "NO_CHANGE",
+                      "displayDelta": "0B",
+                      "displayDeltaPercentage": "0%",
+                      "displayValue": "0B",
+                      "value": 0,
+                    },
+                    "md": "*Bundle Size* — *0B* (*0%*).",
+                    "text": "Bundle Size — 0B (0%).",
+                  },
+                  "type": "INFO",
+                },
+              },
+            },
+            "internalBuildNumber": 2,
+            "label": "Job #2",
+            "meta": Object {
+              "webpack": Object {
+                "builtAt": "",
+                "chunks": Array [
+                  Object {
+                    "id": "1",
+                    "name": "chunk-1",
+                  },
+                  Object {
+                    "id": "2",
+                    "name": "chunk-2",
+                  },
+                ],
+                "hash": "",
+              },
+            },
+            "metrics": Object {
+              "webpack": Object {
+                "assetCount": Object {
+                  "value": 0,
+                },
+                "assets": Object {},
+                "cacheInvalidation": Object {
+                  "value": 0,
+                },
+                "chunkCount": Object {
+                  "value": 0,
+                },
+                "duplicatePackagesCount": Object {
+                  "value": 0,
+                },
+                "moduleCount": Object {
+                  "value": 5,
+                },
+                "modules": Object {
+                  "module-1a.js": Object {
+                    "chunkIds": Array [
+                      "1",
+                    ],
+                    "name": "module-1a.js",
+                    "value": 1100,
+                  },
+                  "module-1b.js": Object {
+                    "chunkIds": Array [
+                      "1",
+                    ],
+                    "name": "module-1b.js",
+                    "value": 1200,
+                  },
+                  "module-2b.js": Object {
+                    "chunkIds": Array [
+                      "2",
+                    ],
+                    "name": "module-2b.js",
+                    "value": 2200,
+                  },
+                  "module-moved-from-chunk-2-to-1.js": Object {
+                    "chunkIds": Array [
+                      "1",
+                    ],
+                    "name": "module-moved-from-chunk-2-to-1.js",
+                    "value": 2300,
+                  },
+                  "module-moved-from-chunk-3-to-1.js": Object {
+                    "chunkIds": Array [
+                      "1",
+                    ],
+                    "name": "module-moved-from-chunk-3-to-1.js",
+                    "value": 3300,
+                  },
+                },
+                "packageCount": Object {
+                  "value": 0,
+                },
+                "packages": Object {},
+                "sizes": Object {
+                  "totalSizeByTypeCSS": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeFONT": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeHTML": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeIMG": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeJS": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeMEDIA": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeOTHER": Object {
+                    "value": 0,
+                  },
+                },
+                "totalInitialSizeCSS": Object {
+                  "value": 0,
+                },
+                "totalInitialSizeJS": Object {
+                  "value": 0,
+                },
+                "totalSizeByTypeALL": Object {
+                  "value": 0,
+                },
+              },
+            },
+            "rawData": Object {
+              "webpack": Object {
+                "chunks": Array [
+                  Object {
+                    "id": 1,
+                    "names": Array [
+                      "chunk-1",
+                    ],
+                  },
+                  Object {
+                    "id": 2,
+                    "names": Array [
+                      "chunk-2",
+                    ],
+                  },
+                ],
+                "modules": Array [
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "module-1a.js",
+                    "size": 1100,
+                  },
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "module-1b.js",
+                    "size": 1200,
+                  },
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "module-moved-from-chunk-2-to-1.js",
+                    "size": 2300,
+                  },
+                  Object {
+                    "chunks": Array [
+                      2,
+                    ],
+                    "name": "module-2b.js",
+                    "size": 2200,
+                  },
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "module-moved-from-chunk-3-to-1.js",
+                    "size": 3300,
+                  },
+                ],
+              },
+            },
+            "summary": Object {
+              "webpack": Object {
+                "assetCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "cacheInvalidation": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "chunkCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "duplicatePackagesCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "moduleCount": Object {
+                  "baseline": 6,
+                  "current": 5,
+                },
+                "packageCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "totalInitialSizeCSS": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "totalInitialSizeJS": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "totalSizeByTypeALL": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+              },
+            },
+          },
+          Object {
+            "insights": Object {
+              "webpack": Object {
+                "assetsSizeTotal": Object {
+                  "data": Object {
+                    "info": Object {
+                      "delta": 0,
+                      "deltaPercentage": 0,
+                      "deltaType": "NO_CHANGE",
+                      "displayDelta": "0B",
+                      "displayDeltaPercentage": "0%",
+                      "displayValue": "0B",
+                      "value": 0,
+                    },
+                    "md": "*Bundle Size* — *0B* (*0%*).",
+                    "text": "Bundle Size — 0B (0%).",
+                  },
+                  "type": "INFO",
+                },
+              },
+            },
+            "internalBuildNumber": 1,
+            "label": "Job #1",
+            "meta": Object {
+              "webpack": Object {
+                "builtAt": "",
+                "chunks": Array [
+                  Object {
+                    "id": "1",
+                    "name": "chunk-1",
+                  },
+                  Object {
+                    "id": "2",
+                    "name": "chunk-2",
+                  },
+                  Object {
+                    "id": "3",
+                    "name": "chunk-3",
+                  },
+                ],
+                "hash": "",
+              },
+            },
+            "metrics": Object {
+              "webpack": Object {
+                "assetCount": Object {
+                  "value": 0,
+                },
+                "assets": Object {},
+                "cacheInvalidation": Object {
+                  "value": 0,
+                },
+                "chunkCount": Object {
+                  "value": 0,
+                },
+                "duplicatePackagesCount": Object {
+                  "value": 0,
+                },
+                "moduleCount": Object {
+                  "value": 6,
+                },
+                "modules": Object {
+                  "module-1a.js": Object {
+                    "chunkIds": Array [
+                      "1",
+                    ],
+                    "name": "module-1a.js",
+                    "value": 1000,
+                  },
+                  "module-1b.js": Object {
+                    "chunkIds": Array [
+                      "1",
+                    ],
+                    "name": "module-1b.js",
+                    "value": 1100,
+                  },
+                  "module-2b.js": Object {
+                    "chunkIds": Array [
+                      "2",
+                    ],
+                    "name": "module-2b.js",
+                    "value": 2200,
+                  },
+                  "module-moved-from-chunk-2-to-1.js": Object {
+                    "chunkIds": Array [
+                      "2",
+                    ],
+                    "name": "module-moved-from-chunk-2-to-1.js",
+                    "value": 2000,
+                  },
+                  "module-moved-from-chunk-3-to-1.js": Object {
+                    "chunkIds": Array [
+                      "3",
+                    ],
+                    "name": "module-moved-from-chunk-3-to-1.js",
+                    "value": 3300,
+                  },
+                  "module-removed-from-all-chunks.js": Object {
+                    "chunkIds": Array [
+                      "3",
+                    ],
+                    "name": "module-removed-from-all-chunks.js",
+                    "value": 3300,
+                  },
+                },
+                "packageCount": Object {
+                  "value": 0,
+                },
+                "packages": Object {},
+                "sizes": Object {
+                  "totalSizeByTypeCSS": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeFONT": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeHTML": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeIMG": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeJS": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeMEDIA": Object {
+                    "value": 0,
+                  },
+                  "totalSizeByTypeOTHER": Object {
+                    "value": 0,
+                  },
+                },
+                "totalInitialSizeCSS": Object {
+                  "value": 0,
+                },
+                "totalInitialSizeJS": Object {
+                  "value": 0,
+                },
+                "totalSizeByTypeALL": Object {
+                  "value": 0,
+                },
+              },
+            },
+            "rawData": Object {
+              "webpack": Object {
+                "chunks": Array [
+                  Object {
+                    "id": 1,
+                    "names": Array [
+                      "chunk-1",
+                    ],
+                  },
+                  Object {
+                    "id": 2,
+                    "names": Array [
+                      "chunk-2",
+                    ],
+                  },
+                  Object {
+                    "id": 3,
+                    "names": Array [
+                      "chunk-3",
+                    ],
+                  },
+                ],
+                "modules": Array [
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "module-1a.js",
+                    "size": 1000,
+                  },
+                  Object {
+                    "chunks": Array [
+                      1,
+                    ],
+                    "name": "module-1b.js",
+                    "size": 1100,
+                  },
+                  Object {
+                    "chunks": Array [
+                      2,
+                    ],
+                    "name": "module-moved-from-chunk-2-to-1.js",
+                    "size": 2000,
+                  },
+                  Object {
+                    "chunks": Array [
+                      2,
+                    ],
+                    "name": "module-2b.js",
+                    "size": 2200,
+                  },
+                  Object {
+                    "chunks": Array [
+                      3,
+                    ],
+                    "name": "module-moved-from-chunk-3-to-1.js",
+                    "size": 3300,
+                  },
+                  Object {
+                    "chunks": Array [
+                      3,
+                    ],
+                    "name": "module-removed-from-all-chunks.js",
+                    "size": 3300,
+                  },
+                ],
+              },
+            },
+            "summary": Object {
+              "webpack": Object {
+                "assetCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "cacheInvalidation": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "chunkCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "duplicatePackagesCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "moduleCount": Object {
+                  "baseline": 0,
+                  "current": 6,
+                },
+                "packageCount": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "totalInitialSizeCSS": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "totalInitialSizeJS": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+                "totalSizeByTypeALL": Object {
+                  "baseline": 0,
+                  "current": 0,
+                },
+              },
+            },
+          },
+        ]
+      }
+    />
+  </div>
+</Router>
+`;
