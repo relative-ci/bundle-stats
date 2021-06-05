@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { compose, withProps } from 'recompose';
-import { get, map, merge, intersection, uniqBy } from 'lodash';
+import { get, map, max, merge, intersection, uniqBy } from 'lodash';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 import {
   MODULE_CHUNK,
@@ -115,10 +115,21 @@ export default compose(
     return { jobs: jobsWithFilteredData };
   }),
   withProps(({ jobs }) => {
-    const items = useMemo(() => webpack.compareBySection.modules(jobs), [jobs]);
+    const { items, totalRowCount } = useMemo(
+      () => ({
+        items: webpack.compareBySection.modules(jobs),
+        /*
+         * total amount of rows depends on the way the modules are merged before any filtering.
+         * to avoid running an expensive operation before filtering, we just show the total amount of
+         * rows to be the max count between different runs
+         */
+        totalRowCount: max(jobs.map((job) => Object.values(job?.metrics?.webpack?.modules).length)),
+      }),
+      [jobs],
+    );
 
     return {
-      totalRowCount: items.length,
+      totalRowCount,
       items,
     };
   }),
