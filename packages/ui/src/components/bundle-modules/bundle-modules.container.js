@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { compose, withProps } from 'recompose';
-import { get, map } from 'lodash';
+import { get, map, max, merge, intersection, uniqBy } from 'lodash';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 import {
   MODULE_CHUNK,
@@ -38,11 +38,6 @@ const getRowFilter = (filters) => (row) => {
     return false;
   }
 
-  // Skip not matching chunks
-  if (!get(row, 'runs[0].chunkIds', []).find((chunkId) => filters[`${MODULE_CHUNK}.${chunkId}`])) {
-    return false;
-  }
-
   // Skip not matching source types
   const fileType = getModuleSourceFileType(row.key);
   if (!filters[`${MODULE_FILE_TYPE}.${fileType}`]) {
@@ -53,10 +48,12 @@ const getRowFilter = (filters) => (row) => {
 };
 
 export default compose(
-  withProps(({ jobs }) => {
-    const items = useMemo(() => webpack.compareBySection.modules(jobs), [jobs]);
-
-    const chunks = jobs[0]?.meta?.webpack?.chunks || []
+  withProps((props) => {
+    const { jobs } = props;
+    const chunks = uniqBy(
+      jobs.map((job) => job?.meta?.webpack?.chunks || []).flat(),
+      ({ id }) => id,
+    );
     const chunkIds = map(chunks, 'id');
 
     const defaultFilters = {
@@ -74,12 +71,68 @@ export default compose(
     return {
       defaultFilters,
       allEntriesFilters,
-      totalRowCount: items.length,
-      items,
       chunks,
+      chunkIds,
     };
   }),
   withSearch(),
+  withProps((props) => {
+    const { jobs, chunkIds, filters } = props;
+
+    // List of chunkIds with filter value set to `true`
+    const includedChunkIds = chunkIds.reduce((agg, chunkId) => {
+      if (get(filters, `${MODULE_CHUNK}.${chunkId}`)) {
+        return [...agg, chunkId];
+      }
+      return agg;
+    }, []);
+
+    // If all the filters are included, return jobs as they are
+    if (includedChunkIds.length === chunkIds.length) {
+      return { jobs };
+    }
+
+    const jobsWithFilteredData = jobs.map((job) => {
+      const { modules } = job?.metrics?.webpack || {};
+
+      const filteredModules = Object.entries(modules).reduce((agg, [moduleId, moduleEntry]) => {
+        const match = intersection(moduleEntry.chunkIds, includedChunkIds);
+
+        if (match.length > 0) {
+          agg[moduleId] = moduleEntry; // eslint-disable-line no-param-reassign
+        }
+
+        return agg;
+      }, {});
+
+      // Copy job data into a new object to prevent mutations of the original data
+      const newJob = merge({}, job);
+      newJob.metrics.webpack.modules = filteredModules;
+
+      return newJob;
+    });
+
+    return { jobs: jobsWithFilteredData };
+  }),
+  withProps(({ jobs }) => {
+    const { items, totalRowCount } = useMemo(
+      () => ({
+        items: webpack.compareBySection.modules(jobs),
+        /*
+         * total amount of rows depends on the way the modules are merged before any filtering.
+         * to avoid running an expensive operation before filtering, we just show the total amount of
+         * rows to be the max count between different runs
+         */
+        totalRowCount: max(jobs.map((job) => Object.values(job?.metrics?.webpack?.modules || {}).length)),
+      }),
+      [jobs],
+    );
+
+    return {
+      totalRowCount,
+      items,
+    };
+  }),
   withFilteredItems(getRowFilter),
   withCustomSort({ sortItems: SORT_BY, getCustomSort }),
 );

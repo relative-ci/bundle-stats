@@ -182,7 +182,6 @@ export const BundleModules = ({
           <Filters
             className={css.tableDropdown}
             filters={dropdownFilters}
-            label={`Filters (${items.length}/${totalRowCount})`}
             onChange={updateFilters}
             hasActiveFilters={hasActiveFilters}
           />
