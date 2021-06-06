@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/relative-ci/bundle-stats/compare/v3.0.0...v3.0.1) (2021-06-06)
+
+
+### Bug Fixes
+
+* **ui:** BundleModules - filter by chunkId before merging ([4bac95b](https://github.com/relative-ci/bundle-stats/commit/4bac95b4224aef71e15de33a5469d51020bdbfbc))
+* **ui:** BundleModules - total rows as max count across runs ([f89bca5](https://github.com/relative-ci/bundle-stats/commit/f89bca5de02f2ac20f5ef09ff493c8127d605a28))
+* **ui:** Reword module/package size information ([a5a55ab](https://github.com/relative-ci/bundle-stats/commit/a5a55abf321d95fdf4a9550b49dda71dc6bff72a))
+* **ui:** Update utils peer dependency version ([c83c7d9](https://github.com/relative-ci/bundle-stats/commit/c83c7d94929e5bda84ba7311218499ddd54015cb))
+* **ui:** withSearch - prevent error on missing parent state ([bb3531a](https://github.com/relative-ci/bundle-stats/commit/bb3531a181e23ffb6e2267084b0b3be38acc4eac))
+
+
+### Features
+
+* **ui:** Icon - add size modifier ([812770b](https://github.com/relative-ci/bundle-stats/commit/812770b763cd1b07dbbe174d467cec3aa0694aa6))
+
+
+
+
+
 # [3.0.0](https://github.com/relative-ci/bundle-stats/compare/v2.8.2...v3.0.0) (2021-05-18)
 
 
