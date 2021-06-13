@@ -151,9 +151,9 @@ Specialized insights for web bundles:
 - Monitor and analyze bundle size, assets, modules, packages
 - GitHub Check, GitHub Pull Request, and Slack integrations
 - Support for all major CI services (CircleCI, GitHub Actions, Travis CI CI, Jenkins, Gitlab CI, Codeship)
-- Free for Developers & OpenSource
+- Free for OpenSource, developers and small teams
 
-[Try Beta](https://relative-ci.com)
+[Try for free](https://relative-ci.com?utm_source=github&utm_medium=bundle-stats)
 
 ### :first_quarter_moon: [relative-ci/compare](https://compare.relative-ci.com)
 
