@@ -31,7 +31,7 @@
     "@babel/plugin-proposal-private-methods": "7.13.0",
     "@babel/preset-env": "7.14.4",
     "@babel/preset-react": "7.13.13",
-    "@moonwalker/orbit-ui": "1.14.20",
+    "@moonwalker/orbit-ui": "1.14.26",
     "@relative-ci/agent": "2.0.0",
     "@storybook/addon-storyshots": "6.2.9",
     "@storybook/react": "6.2.9",
