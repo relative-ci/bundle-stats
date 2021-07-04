@@ -66,7 +66,7 @@ export const SummaryItem = ({
   );
 
   return (
-    <Stack space="xxxsmall" as={Component} className={rootClassName} {...props}>
+    <Stack space="xxsmall" as={Component} className={rootClassName} {...props}>
       <FlexStack as="h3" space="xxxsmall" className={css.title}>
         <span>{metric.label}</span>
 
