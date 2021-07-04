@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0-beta.0](https://github.com/relative-ci/bundle-stats/compare/v3.0.1...v3.1.0-beta.0) (2021-07-04)
+
+
+### Bug Fixes
+
+* **ui:** Move variables to the specific file ([796604c](https://github.com/relative-ci/bundle-stats/commit/796604c6f7bddd6bc14596087c4048636389a57a))
+
+
+
+
+
 ## [3.0.1](https://github.com/relative-ci/bundle-stats/compare/v3.0.0...v3.0.1) (2021-06-06)
 
 
