@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0-beta.1](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.0...v3.1.0-beta.1) (2021-07-07)
+
+
+### Bug Fixes
+
+* **ui:** Move variables to the specific file ([9c95365](https://github.com/relative-ci/bundle-stats/commit/9c95365fca7a228b478abab84068917a7fcf58a7))
+* **ui:** Revert style-loader ([c320f5c](https://github.com/relative-ci/bundle-stats/commit/c320f5cd283979f22315be34b7fc6eb12c779949))
+
+
+
+
+
 # [3.1.0-beta.0](https://github.com/relative-ci/bundle-stats/compare/v3.0.1...v3.1.0-beta.0) (2021-07-04)
 
 
