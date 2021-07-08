@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0-beta.2](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.1...v3.1.0-beta.2) (2021-07-08)
+
+
+### Features
+
+* **ui:** Add Skeleton component ([fa2ebd8](https://github.com/relative-ci/bundle-stats/commit/fa2ebd8f84c9c4e54b652669d2e9c264b66c7783))
+
+
+
+
+
 # [3.1.0-beta.1](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.0...v3.1.0-beta.1) (2021-07-07)
 
 
