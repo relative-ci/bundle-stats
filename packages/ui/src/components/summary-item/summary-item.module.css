@@ -31,8 +31,7 @@
   display: block;
   color: var(--color-heading);
   font-size: var(--size-large);
-  line-height: var(--space-small);
-  min-height: var(--space-small);
+  line-height: 1.3;
   white-space: nowrap;
   font-weight: bold;
 }
@@ -40,23 +39,21 @@
 .delta {
   margin: var(--space-xxxsmall) 0 0;
   font-size: var(--size-small);
-  line-height: var(--space-small);
-  min-height: var(--space-xsmall);
 }
 
 .baselineMetric {
   color: var(--color-text-light);
   font-size: var(--size-small);
-  line-height: var(--space-small);
-  min-height: var(--space-small);
+  line-height: 1.3;
 }
 
 /* Loading state */
-.loading {
-  display: block;
-  background: var(--color-highlight);
-  pointer-events: none;
-  width: 10ch;
+.loading.currentMetric {
+  width: 8em;
+}
+
+.loading.baselineMetric {
+  width: 5em;
 }
 
 /* Size large */
@@ -66,3 +63,6 @@
   min-height: var(--space-medium);
 }
 
+.large .baselineMetric {
+  font-size: var(--size-medium);
+}
