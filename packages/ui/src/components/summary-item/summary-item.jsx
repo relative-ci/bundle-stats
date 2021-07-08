@@ -4,6 +4,7 @@ import cx from 'classnames';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { Popover } from '../../ui/popover';
+import { Skeleton } from '../../ui/skeleton';
 import { Stack } from '../../layout/stack';
 import { FlexStack } from '../../layout/flex-stack';
 import { Metric } from '../metric';
@@ -95,13 +96,13 @@ export const SummaryItem = ({
             )}
           </Metric>
         ) : (
-          <span className={cx(css.currentMetric, css.loading)} />
+          <Skeleton className={cx(css.currentMetric, css.loading)} />
         )}
 
         {!loading ? (
           <Metric className={css.baselineMetric} value={baseline} formatter={metric.formatter} />
         ) : (
-          <span className={cx(css.baselineMetric, css.loading)} />
+          <Skeleton className={cx(css.baselineMetric, css.loading)} />
         )}
       </Stack>
     </Stack>
