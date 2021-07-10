@@ -1,0 +1,22 @@
+# Workflow name
+name: 'Storybook'
+
+# Event for the workflow
+on:
+  push:
+    branches: master
+
+jobs:
+  storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Install dependencies
+        run: npm install && npm run lerna -- bootstrap
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
