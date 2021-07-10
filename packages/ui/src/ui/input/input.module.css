@@ -1,0 +1,51 @@
+.root {
+  border: 1px solid var(--color-outline);;
+  border-radius: 0;
+  color: var(--color-text-light);
+  width: 100%;
+  transition: var(--transition-in);
+  appearance: none;
+  outline: none;
+}
+
+.root::-webkit-input-placeholder {
+  color: var(--color-text-light);
+}
+
+.root::-moz-placeholder {
+  color: var(--color-text-light);
+}
+
+.root:-ms-input-placeholder {
+  color: var(--color-text-light);
+}
+
+.root:-moz-placeholder {
+  color: var(--color-text-light);
+}
+
+.root:focus {
+  border-color: var(--color-outline);
+  color: inherit;
+  transition: var(--transition-out);
+}
+
+/** Size modifier */
+/* default - medium */
+.root {
+  padding: var(--space-xsmall);
+  font-size: 1rem;
+  line-height: calc(var(--space-small) - 2px);
+}
+
+.small {
+  padding: var(--space-xxsmall);
+  font-size: var(--size-small);
+  line-height: calc(var(--space-small) - 2px);
+}
+
+.large {
+  padding: var(--space-small);
+  font-size: var(--size-large);
+  line-height: calc(var(--space-large) - 2px);
+}

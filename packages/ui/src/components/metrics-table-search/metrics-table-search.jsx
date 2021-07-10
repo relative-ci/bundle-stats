@@ -4,6 +4,7 @@ import cx from 'classnames';
 import { debounce } from 'lodash';
 
 import { Icon } from '../../ui/icon';
+import { Input } from '../../ui/input';
 
 import css from './metrics-table-search.module.css';
 
@@ -41,11 +42,12 @@ export const MetricsTableSearch = (props) => {
 
   return (
     <div className={rootClassname}>
-      <input
-        className={cx('ui-input', 'ui-input--small', css.input)}
+      <Input
+        className={css.input}
         placeholder={placeholder}
         onChange={handleChangeValue}
         value={value}
+        size="small"
       />
       {search && (
         <button className={css.cancelButton} type="button" onClick={handleClearValue}>
