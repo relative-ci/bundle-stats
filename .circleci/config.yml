@@ -19,6 +19,15 @@ jobs:
       - run: npm run lint
       - run: npm test
       - run: npm run test-package
+      - run:
+          name: Chromatic
+          command: |
+            if [[ ! << pipeline.git.branch >> =~ ^(dependabot|renovate).* ]]; then
+              npm run chromatic --prefix packages/ui
+            else
+              echo "Skip"
+            fi
+
       - persist_to_workspace:
           root: ~/repo
           paths: .
