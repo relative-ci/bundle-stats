@@ -1,5 +1,5 @@
 # Workflow name
-name: 'Chromatic'
+name: chromatic
 
 # Event for the workflow
 on:
@@ -10,14 +10,16 @@ jobs:
   storybook:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Install dependencies
         run: npm install && npm run lerna -- bootstrap
 
-      - name: Publish to Chromatic
-        uses: chromaui/action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          workingDir: ./packages/ui
+      - name: Run chromatic
+        run: npm run chromatic --prefix packages/ui
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
