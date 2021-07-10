@@ -1,39 +1,44 @@
-.item {
-  margin: 0;
+.root > .item {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.space--xxxsmall > .item + .item {
-  margin-top: var(--space-xxxsmall);
+.root > .item:last-child {
+  margin-bottom: 0;
 }
 
-.space--xxsmall > .item + .item {
-  margin-top: var(--space-xxsmall);
+.space--xxxsmall > .item {
+  margin-bottom: var(--space-xxxsmall);
 }
 
-.space--xsmall > .item + .item {
-  margin-top: var(--space-xsmall);
+.space--xxsmall > .item {
+  margin-bottom: var(--space-xxsmall);
 }
 
-.space--small > .item + .item {
-  margin-top: var(--space-small);
+.space--xsmall > .item {
+  margin-bottom: var(--space-xsmall);
 }
 
-.space--medium > .item + .item {
-  margin-top: var(--space-medium);
+.space--small > .item {
+  margin-bottom: var(--space-small);
 }
 
-.space--large > .item + .item {
-  margin-top: var(--space-large);
+.space--medium > .item {
+  margin-bottom: var(--space-medium);
 }
 
-.space--xlarge > .item + .item {
-  margin-top: var(--space-xlarge);
+.space--large > .item {
+  margin-bottom: var(--space-large);
 }
 
-.space--xxlarge > .item + .item {
-  margin-top: var(--space-xxlarge);
+.space--xlarge > .item {
+  margin-bottom: var(--space-xlarge);
 }
 
-.space--xxxlarge > .item + .item {
-  margin-top: var(--space-xxxlarge);
+.space--xxlarge > .item {
+  margin-bottom: var(--space-xxlarge);
+}
+
+.space--xxxlarge > .item {
+  margin-bottom: var(--space-xxxlarge);
 }
