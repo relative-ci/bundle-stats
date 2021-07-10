@@ -19,6 +19,7 @@ jobs:
       - run: npm run lint
       - run: npm test
       - run: npm run test-package
+      - run: npm run chromatic --prefix packages/ui
       - persist_to_workspace:
           root: ~/repo
           paths: .
