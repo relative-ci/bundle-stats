@@ -35,6 +35,7 @@
   "scripts": {
     "build": "lerna run build",
     "bump": "./scripts/bump.sh",
+    "chromatic": "npm run chromatic --prefix packages/ui",
     "format": "prettier --write \"**/*.{js,jsx}\"",
     "lerna": "lerna",
     "lint": "lerna exec 'npm run lint -- --quiet'",
