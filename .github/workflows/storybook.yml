@@ -1,10 +1,8 @@
 # Workflow name
-name: 'Chromatic'
+name: chromatic
 
 # Event for the workflow
-on:
-  push:
-    branches: master
+on: push
 
 jobs:
   storybook:
@@ -15,9 +13,8 @@ jobs:
       - name: Install dependencies
         run: npm install && npm run lerna -- bootstrap
 
-      - name: Publish to Chromatic
-        uses: chromaui/action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          workingDir: ./packages/ui
+      - name: Run chromatic
+        run: npm run chromatic --prefix project/ui
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
