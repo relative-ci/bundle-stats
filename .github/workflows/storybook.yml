@@ -1,5 +1,5 @@
 # Workflow name
-name: 'Storybook'
+name: 'Chromatic'
 
 # Event for the workflow
 on:
