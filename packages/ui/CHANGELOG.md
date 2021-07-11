@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0-beta.3](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.2...v3.1.0-beta.3) (2021-07-11)
+
+
+### Bug Fixes
+
+* **ui:** Fix line-height ([6842c66](https://github.com/relative-ci/bundle-stats/commit/6842c66a4b98cedcddec1cf34691d810411327db))
+* **ui:** FlexStack - use margin-right for gap ([b7b1d36](https://github.com/relative-ci/bundle-stats/commit/b7b1d36266503d00e381def01859fac5068ccbc1))
+* **ui:** JobHeader - fix content spacing ([1e7e005](https://github.com/relative-ci/bundle-stats/commit/1e7e005f1769c5343b7fa7af08e47d5402e70220))
+* **ui:** Move variables to the specific file ([a6f94c7](https://github.com/relative-ci/bundle-stats/commit/a6f94c70e38ed4eddb43a92b70902709150cc6f8))
+* **ui:** Stack - use marbin-bottom for spacing ([cbeb248](https://github.com/relative-ci/bundle-stats/commit/cbeb248f309e04d12bd7df4a7743ec3eec0904d8))
+
+
+### Features
+
+* **ui:** Add Input component ([7c26b86](https://github.com/relative-ci/bundle-stats/commit/7c26b8600b78d3aa515d22a954334926d776baf5))
+* **ui:** Add Skeleton component ([895ede4](https://github.com/relative-ci/bundle-stats/commit/895ede450e4d3060e400fe463c788047bad8ef2c))
+
+
+
+
+
 # [3.1.0-beta.2](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.1...v3.1.0-beta.2) (2021-07-08)
 
 
