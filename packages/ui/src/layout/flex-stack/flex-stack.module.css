@@ -1,45 +1,51 @@
 .root {
+  --gap: 0px;
+
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
 }
 
-.item {
-  margin: 0;
+.root > .item {
+  margin-right: var(--gap);
 }
 
-.space--xxxsmall > .item + .item {
-  margin-left: var(--space-xxxsmall);
+.root > .item:last-child {
+  margin-right: 0;
 }
 
-.space--xxsmall > .item + .item {
-  margin-left: var(--space-xxsmall);
+.space--xxxsmall {
+  --gap: var(--space-xxxsmall);
 }
 
-.space--xsmall > .item + .item {
-  margin-left: var(--space-xsmall);
+.space--xxsmall {
+  --gap: var(--space-xxsmall);
 }
 
-.space--small > .item + .item {
-  margin-left: var(--space-small);
+.space--xsmall {
+  --gap: var(--space-xsmall);
 }
 
-.space--medium > .item + .item {
-  margin-left: var(--space-medium);
+.space--small {
+  --gap: var(--space-small);
 }
 
-.space--large > .item + .item {
-  margin-left: var(--space-large);
+.space--medium {
+  --gap: var(--space-medium);
 }
 
-.space--xlarge > .item + .item {
-  margin-left: var(--space-xlarge);
+.space--large {
+  --gap: var(--space-large);
 }
 
-.space--xxlarge > .item + .item {
-  margin-left: var(--space-xxlarge);
+.space--xlarge {
+  --gap: var(--space-xlarge);
 }
 
-.space--xxxlarge > .item + .item {
-  margin-left: var(--space-xxxlarge);
+.space--xxlarge {
+  --gap: var(--space-xxlarge);
+}
+
+.space--xxxlarge {
+  --gap: var(--space-xxxlarge);
 }

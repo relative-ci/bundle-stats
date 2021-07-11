@@ -39,7 +39,7 @@ export const JobHeader = (props) => {
           </span>
         )}
 
-        {children}
+        <div className={css.content}>{children}</div>
       </FlexStack>
     </Stack>
   );

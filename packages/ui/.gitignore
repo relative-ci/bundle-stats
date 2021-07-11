@@ -10,3 +10,4 @@ yarn.lock
 artifacts
 lib
 lib-esm
+storybook-static

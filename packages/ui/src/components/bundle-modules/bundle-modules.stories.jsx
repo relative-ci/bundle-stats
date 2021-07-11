@@ -1,16 +1,27 @@
 import React from 'react';
+import { clone, cloneDeep } from 'lodash';
 import { storiesOf } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 
-import baselineStats from '../../../__mocks__/webpack-stats.baseline.json';
-import currentStats from '../../../__mocks__/webpack-stats.current.json';
+import baselineStatsFixtures from '../../../__mocks__/webpack-stats.baseline.json';
+import currentStatsFixtures from '../../../__mocks__/webpack-stats.current.json';
 import { getWrapperDecorator } from '../../stories';
 import { BundleModules } from '.';
 
-const JOBS = createJobs([
-  { webpack: currentStats },
-  { webpack: baselineStats },
-]);
+// Limit the side of the modules when not in dev mode (chromatic limit, snapshot too large)
+const { baselineStats, currentStats } = process.env.NODE_ENV !== 'development'
+    ? {
+        // eslint-disable-next-line prefer-object-spread
+        baselineStats: Object.assign({}, baselineStatsFixtures, {
+          modules: baselineStatsFixtures.modules.slice(0, 100),
+        }),
+        // eslint-disable-next-line prefer-object-spread
+        currentStats: Object.assign({}, currentStatsFixtures, {
+          modules: currentStatsFixtures.modules.slice(0, 100),
+        }),
+    } : { baselineStats: baselineStatsFixtures, currentStats: currentStatsFixtures };
+
+const JOBS = createJobs([{ webpack: currentStats }, { webpack: baselineStats }]);
 
 const stories = storiesOf('Components/BundleModules', module);
 stories.addDecorator(getWrapperDecorator());

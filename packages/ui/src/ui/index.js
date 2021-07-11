@@ -6,6 +6,7 @@ export { FileName } from './file-name';
 export { Filters } from './filters';
 export { HorizontalBarChart } from './horizontal-bar-chart';
 export { Icon } from './icon';
+export { Input } from './input';
 export { Loader } from './loader';
 export { Logo } from './logo';
 export { Panels } from './panels';
