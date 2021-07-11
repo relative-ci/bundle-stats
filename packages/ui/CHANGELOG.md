@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0-beta.5](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.4...v3.1.0-beta.5) (2021-07-11)
+
+
+### Bug Fixes
+
+* **ui:** FlexStack - use margin-right for gap ([4524989](https://github.com/relative-ci/bundle-stats/commit/45249891b7e8b5e0b81dd3b0882439cf7f8a265d))
+* **ui:** JobHeader - fix content spacing ([ffada10](https://github.com/relative-ci/bundle-stats/commit/ffada100d09b594350356a8e1d35d68af72c27af))
+* **ui:** Stack - use margin-bottom for spacing ([04eff1c](https://github.com/relative-ci/bundle-stats/commit/04eff1cfa362fa6c5a09c9945c98481400e2957c))
+
+
+
+
+
 # [3.1.0-beta.4](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.3...v3.1.0-beta.4) (2021-07-11)
 
 
