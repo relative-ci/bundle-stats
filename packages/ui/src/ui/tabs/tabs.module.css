@@ -1,5 +1,5 @@
 .root {
-  position: relative();
+  position: relative;
   border-bottom: 1px solid var(--color-outline);
 }
 

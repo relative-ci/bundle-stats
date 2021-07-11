@@ -1,47 +1,39 @@
-.root {
-  --gap: 0px;
-}
-
-.root > .item {
-  margin-bottom: var(--gap);
-}
-
 .root > .item:last-child {
-  margin-bottom: 0l
+  margin-bottom: 0;
 }
 
-.space--xxxsmall {
-  --gap: var(--space-xxxsmall);
+.space--xxxsmall > .item {
+  margin-bottom: var(--space-xxxsmall);
 }
 
-.space--xxsmall {
-  --gap: var(--space-xxsmall);
+.space--xxsmall > .item {
+  margin-bottom: var(--space-xxsmall);
 }
 
-.space--xsmall {
-  --gap: var(--space-xsmall);
+.space--xsmall > .item {
+  margin-bottom: var(--space-xsmall);
 }
 
-.space--small {
-  --gap: var(--space-small);
+.space--small > .item {
+  margin-bottom: var(--space-small);
 }
 
-.space--medium {
-  --gap: var(--space-medium);
+.space--medium > .item {
+  margin-bottom: var(--space-medium);
 }
 
-.space--large {
-  --gap: var(--space-large);
+.space--large > .item {
+  margin-bottom: var(--space-large);
 }
 
-.space--xlarge {
-  --gap: var(--space-xlarge);
+.space--xlarge > .item {
+  margin-bottom: var(--space-xlarge);
 }
 
-.space--xxlarge {
-  --gap: var(--space-xxlarge);
+.space--xxlarge > .item {
+  margin-bottom: var(--space-xxlarge);
 }
 
-.space--xxxlarge {
-  --gap: var(--space-xxxlarge);
+.space--xxxlarge > .item {
+  margin-bottom: var(--space-xxxlarge);
 }
