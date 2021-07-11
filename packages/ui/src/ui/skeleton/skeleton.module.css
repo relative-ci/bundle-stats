@@ -1,0 +1,13 @@
+.root {
+  display: block;
+  background: linear-gradient(transparent 10%, currentColor 10.1%, currentColor 90%, transparent 90.1%);
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+/** empty char to keep the text height */
+.root::before {
+  display: inline-block;
+  content: '\A0';
+  color: transparent;
+}
