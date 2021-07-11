@@ -1,3 +1,8 @@
+.root > .item {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .root > .item:last-child {
   margin-bottom: 0;
 }
