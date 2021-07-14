@@ -78,7 +78,7 @@ const getRenderRowHeader = ({ labels, CustomComponentLink, chunks }) => (item) =
     <Popover
       label={<FileName name={label} />}
       icon={
-        <FlexStack space="xxxsmall" className={css.assetInfoFlags}>
+        <div className={css.assetInfoFlags}>
           {isNotPredictive && (
             <Tooltip className={css.notPredictive} title={<TooltipNotPredictive runs={runs} />}>
               <Icon className={css.notPredictiveIcon} glyph="warning" />
@@ -99,7 +99,7 @@ const getRenderRowHeader = ({ labels, CustomComponentLink, chunks }) => (item) =
               i
             </span>
           )}
-        </FlexStack>
+        </div>
       }
     >
       <AssetInfo
