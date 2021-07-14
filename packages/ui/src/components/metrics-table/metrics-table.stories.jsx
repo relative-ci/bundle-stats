@@ -224,7 +224,7 @@ stories.add('with header rows', () => (
         'Metric',
         {
           children: 'Colspan',
-          colSpan: RUNS.length + 1,
+          colSpan: 1 + (RUNS.length - 1) * 2 + 1,
           style: {
             textAlign: 'center'
           }

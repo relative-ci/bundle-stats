@@ -1,7 +1,3 @@
-.root td {
-  vertical-align: top;
-}
-
 .tableHeaderRun {
   margin-top: calc(0px - var(--space-xxsmall));
   margin-bottom: calc(0px - var(--space-xxsmall));
@@ -9,6 +5,7 @@
 
 .tableHeaderRunMetric {
   margin-top: var(--space-xxxsmall);
+  font-weight: normal;
 }
 
 .jobName a {
@@ -32,13 +29,14 @@
   text-align: right;
 }
 
-.current {
-  border-left-color: transparent;
+.delta {
+  padding-left: 0;
+  text-align: left;
+  font-size: var(--size-xsmall);
 }
 
-.delta {
-  padding-left: var(--space-xsmall);
-  text-align: right;
+.current {
+  border-left-color: transparent;
 }
 
 .multipleRuns .unchanged td {
