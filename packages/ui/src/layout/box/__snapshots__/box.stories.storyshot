@@ -363,40 +363,88 @@ exports[`Storyshots Layout/Box with table 1`] = `
       <Table
         className=""
         emptyMessage="No entries found."
-        headers={
-          Array [
-            "Col A",
-            "Col B",
-            "Col C",
-          ]
-        }
-        outline={false}
-        rows={
-          Array [
-            Object {
-              "cells": Array [
-                "a1",
-                "b1",
-                "c1",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "a2",
-                "b2",
-                "c2",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "a3",
-                "b3",
-                "c3",
-              ],
-            },
-          ]
-        }
-      />
+      >
+        <THead>
+          <Tr
+            className=""
+          >
+            <Th
+              className=""
+            >
+              Col A
+            </Th>
+            <Th
+              className=""
+            >
+              Col B
+            </Th>
+            <Th
+              className=""
+            >
+              Col C
+            </Th>
+          </Tr>
+        </THead>
+        <TBody>
+          <Tr
+            className=""
+          >
+            <Td
+              className=""
+            >
+              a1
+            </Td>
+            <Td
+              className=""
+            >
+              b1
+            </Td>
+            <Td
+              className=""
+            >
+              c1
+            </Td>
+          </Tr>
+          <Tr
+            className=""
+          >
+            <Td
+              className=""
+            >
+              a2
+            </Td>
+            <Td
+              className=""
+            >
+              b2
+            </Td>
+            <Td
+              className=""
+            >
+              c2
+            </Td>
+          </Tr>
+          <Tr
+            className=""
+          >
+            <Td
+              className=""
+            >
+              a3
+            </Td>
+            <Td
+              className=""
+            >
+              b3
+            </Td>
+            <Td
+              className=""
+            >
+              c3
+            </Td>
+          </Tr>
+        </TBody>
+      </Table>
     </Box>
   </div>
 </Router>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
@@ -103,14 +103,41 @@ export const MetricsTable = ({
   showHeaderSum,
   headerRows,
   title,
-}) => (
-  <Table
-    className={cx(styles.root, className, runs.length > 1 && styles.multipleRuns)}
-    headers={[...headerRows, getHeaders(runs, items, showHeaderSum, title)]}
-    rows={getRows(runs, items, renderRowHeader)}
-    emptyMessage={emptyMessage}
-  />
-);
+}) => {
+  const headers = useMemo(
+    () => [...headerRows, getHeaders(runs, items, showHeaderSum, title)],
+    [headerRows, runs, items, showHeaderSum, title],
+  );
+  const rows = useMemo(() => getRows(runs, items, renderRowHeader), [runs, items, renderRowHeader]);
+
+  const headerColumns = useMemo(() => headers[headers.length - 1], headers);
+
+  return (
+    <Table
+      className={cx(styles.root, className, runs.length > 1 && styles.multipleRuns)}
+      emptyMessage={emptyMessage}
+    >
+      <Table.THead>
+        {headers.map((headerRow) => (
+          <Table.Tr>
+            {headerRow.map((header) => (
+              <Table.Th {...header} />
+            ))}
+          </Table.Tr>
+        ))}
+      </Table.THead>
+      <Table.TBody>
+        {rows.map(({ key, className: rowClassName, cells }) => (
+          <Table.Tr key={key} className={rowClassName}>
+            {cells.map((cell, index) => (
+              <Table.Td className={headerColumns[index]?.className}>{cell}</Table.Td>
+            ))}
+          </Table.Tr>
+        ))}
+      </Table.TBody>
+    </Table>
+  );
+};
 
 MetricsTable.defaultProps = {
   className: '',
