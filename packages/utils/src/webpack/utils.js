@@ -7,7 +7,7 @@ import { createGetMetricType } from '../utils/metrics';
 import { metrics } from './metrics';
 
 // Md5 hash matcher
-const HASH_PATTERN = '[a-f|0-9]{7,32}';
+const HASH_PATTERN = '[a-f|0-9]{5,32}';
 
 // Match has prefix
 const HASH_SEPARATOR_PATTERN = '[-|.]';
