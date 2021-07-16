@@ -1,7 +1,7 @@
 {
-  "name": "@bundle-stats/utils",
-  "version": "3.1.0-beta.6",
-  "description": "BundleStats utils",
+  "name": "@bundle-stats/plugin-webpack-filter",
+  "version": "3.0.1",
+  "description": "BundleStats webpack filter plugin",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
   "types": "types/index.d.ts",
@@ -32,17 +32,11 @@
   "bugs": {
     "url": "https://github.com/relative-ci/bundle-stats/issues"
   },
-  "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/utils#readme",
-  "dependencies": {
-    "@bundle-stats/plugin-webpack-filter": "3.0.1",
-    "convert-units": "^2.3.4",
-    "query-string": "^7.0.0",
-    "serialize-query-params": "^1.3.3",
-    "superstruct": "^0.8.3"
-  },
+  "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/plugin-webpack-filter#readme",
   "devDependencies": {
     "@types/jest": "26.0.24",
     "@types/lodash": "4.14.171",
+    "@types/webpack": "5.28.0",
     "core-js": "3.15.2",
     "jest": "26.6.3",
     "jest-cli": "26.6.3",
