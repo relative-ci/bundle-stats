@@ -1,9 +1,0 @@
-.root {
-  font-size: var(--size-small);
-  font-weight: normal;
-  line-height: var(--space-small);
-}
-
-.delta {
-  font-size: var(--size-xsmall);
-}
