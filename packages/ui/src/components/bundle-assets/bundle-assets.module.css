@@ -22,7 +22,12 @@
 }
 
 .assetInfoFlags {
+  display: inline-block;
   margin-right: var(--space-xxxsmall);
+}
+
+.assetInfoFlags:empty {
+  display: none;
 }
 
 .flag {
@@ -38,6 +43,10 @@
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
+}
+
+.flag + .flag {
+  margin-left: 2px;
 }
 
 .flagEntry {

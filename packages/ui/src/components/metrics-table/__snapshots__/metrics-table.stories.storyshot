@@ -42,7 +42,9 @@ exports[`Storyshots Components/MetricsTable default 1`] = `
       }
     }
   >
-    <Component
+    <MetricsTable
+      className=""
+      headerRows={Array []}
       items={
         Array [
           Object {
@@ -107,6 +109,7 @@ exports[`Storyshots Components/MetricsTable default 1`] = `
           },
         ]
       }
+      renderRowHeader={[Function]}
       runs={
         Array [
           Object {
@@ -115,6 +118,8 @@ exports[`Storyshots Components/MetricsTable default 1`] = `
           },
         ]
       }
+      showHeaderSum={false}
+      title=""
     />
   </div>
 </Router>
@@ -162,7 +167,9 @@ exports[`Storyshots Components/MetricsTable multiple runs 1`] = `
       }
     }
   >
-    <Component
+    <MetricsTable
+      className=""
+      headerRows={Array []}
       items={
         Array [
           Object {
@@ -290,6 +297,7 @@ exports[`Storyshots Components/MetricsTable multiple runs 1`] = `
           },
         ]
       }
+      renderRowHeader={[Function]}
       runs={
         Array [
           Object {
@@ -306,6 +314,8 @@ exports[`Storyshots Components/MetricsTable multiple runs 1`] = `
           },
         ]
       }
+      showHeaderSum={false}
+      title=""
     />
   </div>
 </Router>
@@ -353,14 +363,15 @@ exports[`Storyshots Components/MetricsTable with header rows 1`] = `
       }
     }
   >
-    <Component
+    <MetricsTable
+      className=""
       headerRows={
         Array [
           Array [
             "Metric",
             Object {
-              "children": "Value",
-              "colSpan": 2,
+              "children": "Colspan",
+              "colSpan": 4,
               "style": Object {
                 "textAlign": "center",
               },
@@ -495,6 +506,7 @@ exports[`Storyshots Components/MetricsTable with header rows 1`] = `
           },
         ]
       }
+      renderRowHeader={[Function]}
       runs={
         Array [
           Object {
@@ -511,6 +523,8 @@ exports[`Storyshots Components/MetricsTable with header rows 1`] = `
           },
         ]
       }
+      showHeaderSum={false}
+      title=""
     />
   </div>
 </Router>

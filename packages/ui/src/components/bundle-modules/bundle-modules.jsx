@@ -187,6 +187,7 @@ export const BundleModules = ({
           />
         </FlexStack>
       </Toolbar>
+
       <MetricsTable
         className={css.table}
         items={items}
