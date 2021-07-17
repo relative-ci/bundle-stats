@@ -44,7 +44,9 @@
   position: absolute;
   right: 0;
   top: 0;
-  padding: var(--space-xxsmall);
+  width: var(--space-medium);
+  height: var(--space-medium);
+  padding: var(--space-xxxsmall);
   background: none;
   border: none;
   cursor: pointer;
