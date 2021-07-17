@@ -31,6 +31,28 @@ stories.add('default', () => (
   </Table>
 ));
 
+stories.add('compact', () => (
+  <Table compact>
+    <TBody>
+      <Tr>
+        <Td>a1</Td>
+        <Td>b1</Td>
+        <Td>c1</Td>
+      </Tr>
+      <Tr>
+        <Td>a2</Td>
+        <Td>b2</Td>
+        <Td>c2</Td>
+      </Tr>
+      <Tr>
+        <Td>a3</Td>
+        <Td>b3</Td>
+        <Td>c3</Td>
+      </Tr>
+    </TBody>
+  </Table>
+));
+
 stories.add('empty', () => <Table />);
 stories.add('empty with custom element', () => (
   <Table emptyMessage={<p style={{ outline: '1px solid lightgray' }}>No items available</p>} />

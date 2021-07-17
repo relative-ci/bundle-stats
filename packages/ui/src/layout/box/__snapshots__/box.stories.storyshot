@@ -362,6 +362,7 @@ exports[`Storyshots Layout/Box with table 1`] = `
     >
       <Table
         className=""
+        compact={false}
         emptyMessage="No entries found."
       >
         <THead>

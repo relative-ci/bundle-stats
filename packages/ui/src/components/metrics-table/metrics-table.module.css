@@ -29,10 +29,6 @@
   padding-right: var(--space-xxsmall);
 }
 
-.headerRowColumns th {
-  padding-top: var(--space-xxsmall);
-}
-
 /* columns overrides for showHeaderSum */
 .showHeaderSum .headerRowColumns .value,
 .showHeaderSum .headerRowColumns .delta {
@@ -41,8 +37,7 @@
 }
 
 .headerRowTotals th {
-  padding-top: 0;
-  padding-bottom: var(--space-xxsmall);
+  padding-top: 0 !important;
   font-weight: normal;
   font-size: var(--size-xsmall);
   vertical-align: middle;

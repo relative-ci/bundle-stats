@@ -176,7 +176,7 @@ export const MetricsTable = ({
   );
 
   return (
-    <Table className={rootClassName} emptyMessage={emptyMessage}>
+    <Table className={rootClassName} emptyMessage={emptyMessage} compact>
       <Table.THead>
         {headers.map((headerRow) => {
           const { cells, className: rowClassName } = headerRow.cells

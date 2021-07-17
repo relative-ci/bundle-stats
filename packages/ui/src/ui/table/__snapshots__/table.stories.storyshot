@@ -1,5 +1,181 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots UI/Table compact 1`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "home",
+        "pathname": "/",
+      },
+    ]
+  }
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "home",
+            "pathname": "/",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "padding": "24px",
+          "width": "100%",
+        }
+      }
+    >
+      <Table
+        className=""
+        compact={true}
+        emptyMessage="No entries found."
+      >
+        <table
+          className="root compact"
+        >
+          <TBody>
+            <tbody>
+              <Tr
+                className=""
+              >
+                <tr
+                  className="row"
+                >
+                  <Td
+                    className=""
+                  >
+                    <td
+                      className="cell"
+                    >
+                      a1
+                    </td>
+                  </Td>
+                  <Td
+                    className=""
+                  >
+                    <td
+                      className="cell"
+                    >
+                      b1
+                    </td>
+                  </Td>
+                  <Td
+                    className=""
+                  >
+                    <td
+                      className="cell"
+                    >
+                      c1
+                    </td>
+                  </Td>
+                </tr>
+              </Tr>
+              <Tr
+                className=""
+              >
+                <tr
+                  className="row"
+                >
+                  <Td
+                    className=""
+                  >
+                    <td
+                      className="cell"
+                    >
+                      a2
+                    </td>
+                  </Td>
+                  <Td
+                    className=""
+                  >
+                    <td
+                      className="cell"
+                    >
+                      b2
+                    </td>
+                  </Td>
+                  <Td
+                    className=""
+                  >
+                    <td
+                      className="cell"
+                    >
+                      c2
+                    </td>
+                  </Td>
+                </tr>
+              </Tr>
+              <Tr
+                className=""
+              >
+                <tr
+                  className="row"
+                >
+                  <Td
+                    className=""
+                  >
+                    <td
+                      className="cell"
+                    >
+                      a3
+                    </td>
+                  </Td>
+                  <Td
+                    className=""
+                  >
+                    <td
+                      className="cell"
+                    >
+                      b3
+                    </td>
+                  </Td>
+                  <Td
+                    className=""
+                  >
+                    <td
+                      className="cell"
+                    >
+                      c3
+                    </td>
+                  </Td>
+                </tr>
+              </Tr>
+            </tbody>
+          </TBody>
+        </table>
+      </Table>
+    </div>
+  </Router>
+</MemoryRouter>
+`;
+
 exports[`Storyshots UI/Table default 1`] = `
 <MemoryRouter
   initialEntries={
@@ -54,6 +230,7 @@ exports[`Storyshots UI/Table default 1`] = `
     >
       <Table
         className=""
+        compact={false}
         emptyMessage="No entries found."
       >
         <table
@@ -229,6 +406,7 @@ exports[`Storyshots UI/Table empty 1`] = `
     >
       <Table
         className=""
+        compact={false}
         emptyMessage="No entries found."
       >
         <div
@@ -296,6 +474,7 @@ exports[`Storyshots UI/Table empty with custom element 1`] = `
     >
       <Table
         className=""
+        compact={false}
         emptyMessage={
           <p
             style={
@@ -381,6 +560,7 @@ exports[`Storyshots UI/Table with custom content and attributes 1`] = `
     >
       <Table
         className=""
+        compact={false}
         emptyMessage="No entries found."
       >
         <table
@@ -771,6 +951,7 @@ exports[`Storyshots UI/Table with headers 1`] = `
     >
       <Table
         className=""
+        compact={false}
         emptyMessage="No entries found."
       >
         <table
@@ -985,6 +1166,7 @@ exports[`Storyshots UI/Table with multiple rows header 1`] = `
     >
       <Table
         className=""
+        compact={false}
         emptyMessage="No entries found."
       >
         <table
@@ -1227,6 +1409,7 @@ exports[`Storyshots UI/Table with row headers 1`] = `
     >
       <Table
         className=""
+        compact={false}
         emptyMessage="No entries found."
       >
         <table

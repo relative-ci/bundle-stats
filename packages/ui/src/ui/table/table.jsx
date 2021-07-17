@@ -51,8 +51,8 @@ Td.propTypes = {
   className: PropTypes.string,
 };
 
-export const Table = ({ className, emptyMessage, children }) => {
-  const rootClassName = cx(css.root, className);
+export const Table = ({ className, emptyMessage, compact, children }) => {
+  const rootClassName = cx(css.root, className, compact && css.compact);
 
   if (!children) {
     return <div className={cx(rootClassName, css.empty)}>{emptyMessage}</div>;
@@ -71,10 +71,12 @@ Table.defaultProps = {
   className: '',
   emptyMessage: 'No entries found.',
   children: null,
+  compact: false,
 };
 
 Table.propTypes = {
   className: PropTypes.string,
   emptyMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  compact: PropTypes.bool,
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
 };
