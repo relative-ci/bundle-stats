@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0-beta.7](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.6...v3.1.0-beta.7) (2021-07-17)
+
+
+### Bug Fixes
+
+* **ui:** Popover - close icon size ([5cc567f](https://github.com/relative-ci/bundle-stats/commit/5cc567fcc5aa583ac9534787d091dfd183334586))
+* **ui:** RunLabelSum - remove obsolete ([df68b38](https://github.com/relative-ci/bundle-stats/commit/df68b383189219c23c897ada60c17cd1b87c3bce))
+
+
+
+
+
 # [3.1.0-beta.6](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.5...v3.1.0-beta.6) (2021-07-12)
 
 **Note:** Version bump only for package @bundle-stats/ui

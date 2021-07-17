@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0-beta.7](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.6...v3.1.0-beta.7) (2021-07-17)
+
+
+### Bug Fixes
+
+* **utils:** Assets - replace 5 char hashes ([f0d6bd2](https://github.com/relative-ci/bundle-stats/commit/f0d6bd26c6ab3e54d548bbb2756d76708ea8bce1))
+
+
+
+
+
 # [3.1.0-beta.6](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.5...v3.1.0-beta.6) (2021-07-12)
 
 **Note:** Version bump only for package @bundle-stats/utils
