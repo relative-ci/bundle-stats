@@ -1,13 +1,3 @@
-.tableHeaderRun {
-  margin-top: calc(0px - var(--space-xxsmall));
-  margin-bottom: calc(0px - var(--space-xxsmall));
-}
-
-.tableHeaderRunMetric {
-  margin-top: var(--space-xxxsmall);
-  font-weight: normal;
-}
-
 .jobName a {
   color: inherit;
   text-decoration: none;
@@ -35,10 +25,30 @@
   font-size: var(--size-xsmall);
 }
 
-.current {
-  border-left-color: transparent;
+.value.current {
+  padding-right: var(--space-xxsmall);
 }
 
+.headerRowColumns th {
+  padding-top: var(--space-xxsmall);
+}
+
+/* columns overrides for showHeaderSum */
+.showHeaderSum .headerRowColumns .value,
+.showHeaderSum .headerRowColumns .delta {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.headerRowTotals th {
+  padding-top: 0;
+  padding-bottom: var(--space-xxsmall);
+  font-weight: normal;
+  font-size: var(--size-xsmall);
+  vertical-align: middle;
+}
+
+/** rows */
 .multipleRuns .unchanged td {
   color: var(--color-text-light);
 }

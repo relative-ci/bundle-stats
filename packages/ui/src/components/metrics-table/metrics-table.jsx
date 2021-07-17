@@ -9,7 +9,6 @@ import { Table } from '../../ui/table';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
 import { JobName } from '../job-name';
-import { RunLabelSum } from '../run-label-sum';
 import styles from './metrics-table.module.css';
 
 const METRIC_TYPE_DATA = getGlobalMetricType(null, METRIC_TYPE_FILE_SIZE);
@@ -65,14 +64,18 @@ const getHeaderTotalCells = (rows) => (run, runIndex, runs) => {
       children: <Metric className={styles.tableHeaderRunMetric} value={infoTotal.displayValue} />,
       className,
     },
+
     // Delta column
     ...(!isBaseline
       ? [
           {
             children: (
-              <Delta displayValue={infoTotal.displayDeltaPercentage} deltaType={infoTotal.deltaType} />
+              <Delta
+                displayValue={infoTotal.displayDeltaPercentage}
+                deltaType={infoTotal.deltaType}
+              />
             ),
-            className: cx(styles.delta),
+            className: styles.delta,
           },
         ]
       : []),
@@ -80,19 +83,28 @@ const getHeaderTotalCells = (rows) => (run, runIndex, runs) => {
 };
 
 const getHeaderRows = (runs, items, showHeaderSum, title) => [
-  [
-    // Metric name column - one empty strying to render the column
-    {
-      children: title || ' ',
-      className: styles.metricName,
-      // Will render 2 rows when we need to render the totals
-      rowSpan: showHeaderSum ? 2 : 1,
-    },
+  {
+    className: styles.headerRowColumns,
+    cells: [
+      // Metric name column - one empty strying to render the column
+      {
+        children: title || ' ',
+        className: styles.metricName,
+        rowSpan: showHeaderSum ? 2 : 1,
+      },
 
-    // Runs
-    ...runs.map(getHeaderLabelCells(items)).flat(),
-  ],
-  ...(showHeaderSum ? [runs.map(getHeaderTotalCells(items)).flat()] : []),
+      // Runs
+      ...runs.map(getHeaderLabelCells(items)).flat(),
+    ],
+  },
+  ...(showHeaderSum
+    ? [
+        {
+          className: styles.headerRowTotals,
+          cells: runs.map(getHeaderTotalCells(items)).flat(),
+        },
+      ]
+    : []),
 ];
 
 const generateRowCells = (item, index, items) => {
@@ -147,27 +159,38 @@ export const MetricsTable = ({
 }) => {
   const { headers, columnClassNames } = useMemo(() => {
     const headerColumns = getHeaderRows(runs, items, showHeaderSum, title);
+
     return {
       headers: [...headerRows, ...headerColumns],
-      // First row has the column class names
-      columnClassNames: headerColumns[0].map((headerColumn) => headerColumn.className),
+      // First header row has the column class names
+      columnClassNames: headerColumns[0].cells.map((headerColumn) => headerColumn.className),
     };
   }, [headerRows, runs, items, showHeaderSum, title]);
   const rows = useMemo(() => getRows(runs, items, renderRowHeader), [runs, items, renderRowHeader]);
 
+  const rootClassName = cx(
+    styles.root,
+    className,
+    runs.length > 1 && styles.multipleRuns,
+    showHeaderSum && styles.showHeaderSum,
+  );
+
   return (
-    <Table
-      className={cx(styles.root, className, runs.length > 1 && styles.multipleRuns)}
-      emptyMessage={emptyMessage}
-    >
+    <Table className={rootClassName} emptyMessage={emptyMessage}>
       <Table.THead>
-        {headers.map((headerRow) => (
-          <Table.Tr>
-            {headerRow.map((header) => (
-              <Table.Th {...header} />
-            ))}
-          </Table.Tr>
-        ))}
+        {headers.map((headerRow) => {
+          const { cells, className: rowClassName } = headerRow.cells
+            ? headerRow
+            : { cells: headerRow };
+
+          return (
+            <Table.Tr className={rowClassName}>
+              {cells.map((header) => (
+                <Table.Th {...header} />
+              ))}
+            </Table.Tr>
+          );
+        })}
       </Table.THead>
       <Table.TBody>
         {rows.map(({ key, className: rowClassName, cells }) => (
