@@ -31,34 +31,3 @@ stories.add('with outline', () => (
     Lorem ipsum
   </Box>
 ));
-
-stories.add('with table', () => (
-  <Box style={{ outline: '1px dotted magenta' }}>
-    <Table>
-      <Table.THead>
-        <Table.Tr>
-          <Table.Th>Col A</Table.Th>
-          <Table.Th>Col B</Table.Th>
-          <Table.Th>Col C</Table.Th>
-        </Table.Tr>
-      </Table.THead>
-      <Table.TBody>
-        <Table.Tr>
-          <Table.Td>a1</Table.Td>
-          <Table.Td>b1</Table.Td>
-          <Table.Td>c1</Table.Td>
-        </Table.Tr>
-        <Table.Tr>
-          <Table.Td>a2</Table.Td>
-          <Table.Td>b2</Table.Td>
-          <Table.Td>c2</Table.Td>
-        </Table.Tr>
-        <Table.Tr>
-          <Table.Td>a3</Table.Td>
-          <Table.Td>b3</Table.Td>
-          <Table.Td>c3</Table.Td>
-        </Table.Tr>
-      </Table.TBody>
-    </Table>
-  </Box>
-));
