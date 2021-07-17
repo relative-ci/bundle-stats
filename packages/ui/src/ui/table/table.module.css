@@ -70,6 +70,10 @@ tr:last-child .cell {
   border-top-width: 1px;
 }
 
+.outline.empty {
+  border-width: 1px;
+}
+
 /* compact variation */
 .compact .cell {
   padding-top: var(--space-xsmall);
