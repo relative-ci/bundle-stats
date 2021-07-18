@@ -5,10 +5,10 @@ import cx from 'classnames';
 import css from './skeleton.module.css';
 
 export const Skeleton = (props) => {
-  const { className } = props;
+  const { className, ...restProps } = props;
   const rootClassName = cx(css.root, className);
 
-  return <span className={rootClassName} />;
+  return <span className={rootClassName} {...restProps} />;
 };
 
 Skeleton.propTypes = {
