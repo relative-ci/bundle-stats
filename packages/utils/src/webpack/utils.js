@@ -57,24 +57,31 @@ const NAME_WITH_LOADERS = /!/;
 // ./src/index.jsx + 27 modules
 const NAME_WITH_MODULES = /\s\+\s\d*\smodules$/;
 
-export const getModuleName = (moduleLabel) => {
-  if (!moduleLabel) {
+// css ../node_modules../node_modules/package-a
+const INVALID_CSS_PREFIX = /^css\s.*node_modules(?!\/)/;
+
+export const getModuleName = (name) => {
+  if (!name) {
     return '';
   }
 
-  if (NAME_WITH_LOADERS.test(moduleLabel)) {
-    const normalizedName = last(moduleLabel.split(NAME_WITH_LOADERS));
+  if (NAME_WITH_LOADERS.test(name)) {
+    const normalizedName = last(name.split(NAME_WITH_LOADERS));
 
     if (normalizedName?.trim()) {
       return normalizedName;
     }
   }
 
-  if (NAME_WITH_MODULES.test(moduleLabel)) {
-    return moduleLabel.replace(NAME_WITH_MODULES, '');
+  if (NAME_WITH_MODULES.test(name)) {
+    return name.replace(NAME_WITH_MODULES, '');
   }
 
-  return moduleLabel;
+  if (INVALID_CSS_PREFIX.test(name)) {
+    return name.replace(INVALID_CSS_PREFIX, '');
+  }
+
+  return name;
 };
 
 /*
