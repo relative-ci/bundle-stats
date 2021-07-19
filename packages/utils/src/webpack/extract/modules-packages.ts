@@ -5,20 +5,25 @@ import { PACKAGES_SEPARATOR, PACKAGE_ID_SEPARATOR } from '../../config';
 import { PackageMetric, WebpackMetricsModules, WebpackMetricsPackages } from '../../constants';
 
 const PACKAGE_NAMES = /(node_modules|~)\/((!?@(([\w|\-|_|.]*)\/){2})|(([\w|\-|_|.]*)\/))/g;
+const PACKAGE_PATH_REPLACE = /.*(node_modules|~)\/(.*)\/$/;
 
-const getPackageMetaFromModulePath = (moduleName: string) => {
-  const found = moduleName.match(PACKAGE_NAMES);
+/**
+ * Heuristics to extract package id, name, and path from a module path
+ */
+export const getPackageMetaFromModulePath = (modulePath: string) => {
+  const paths = modulePath.match(PACKAGE_NAMES);
 
-  if (!found) {
+  if (!paths) {
     return null;
   }
 
-  const names = found.map((modulePath) => modulePath.replace(/.*(node_modules|~)\/(.*)\/$/, '$2'));
+  const names = paths.map((packagePath) => packagePath.replace(PACKAGE_PATH_REPLACE, '$2'));
   const name = last(names);
 
-  // get the module full path
-  const pattern = new RegExp(`(.*)(${last(found)}).*`);
-  const path = moduleName.replace(pattern, '$1$2').replace(/\/$/, '');
+  // Get package full path
+  // @NOTE use the last path to prevent getting incorrect results on packages with similar names
+  const pattern = new RegExp(`(.*)(${last(paths)}).*`);
+  const path = modulePath.replace(pattern, '$1$2').replace(/\/$/, '');
 
   return {
     id: names.join(PACKAGES_SEPARATOR),
