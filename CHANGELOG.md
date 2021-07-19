@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0-beta.10](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.9...v3.1.0-beta.10) (2021-07-19)
+
+
+### Bug Fixes
+
+* **utils:** ModuleName - replace invalid css prefix ([9b7111c](https://github.com/relative-ci/bundle-stats/commit/9b7111cd5e5137a875525d54948c6a7e48795023))
+
+
+
+
+
 # [3.1.0-beta.9](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.8...v3.1.0-beta.9) (2021-07-18)
 
 
