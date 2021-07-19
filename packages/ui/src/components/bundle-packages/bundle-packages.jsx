@@ -81,30 +81,28 @@ const PackageRowHeader = ({ item, CustomComponentLink }) => {
   const { path } = item.runs[0] || {};
 
   return (
-    <Stack>
-      <span className={css.packageNames}>
-        {packageNames.map((packageName, index) => {
-          // Render duplicate flag only for the last entry
-          const duplicateFlag = index === packageNames.length - 1 && item.duplicate && (
-            <span className={css.duplicate} title="Duplicate package">
-              D
-            </span>
-          );
+    <span className={css.packageNames}>
+      {packageNames.map((packageName, index) => {
+        // Render duplicate flag only for the last entry
+        const duplicateFlag = index === packageNames.length - 1 && item.duplicate && (
+          <span className={css.duplicate} title="Duplicate package">
+            D
+          </span>
+        );
 
-          return (
-            <Popover className={css.packageName} icon={duplicateFlag} label={packageName}>
-              <PackagePopoverContent
-                name={packageName}
-                path={path}
-                fullName={item.label}
-                duplicate={item.duplicate}
-                CustomComponentLink={CustomComponentLink}
-              />
-            </Popover>
-          );
-        })}
-      </span>
-    </Stack>
+        return (
+          <Popover className={css.packageName} icon={duplicateFlag} label={packageName}>
+            <PackagePopoverContent
+              name={packageName}
+              path={path}
+              fullName={item.label}
+              duplicate={item.duplicate}
+              CustomComponentLink={CustomComponentLink}
+            />
+          </Popover>
+        );
+      })}
+    </span>
   );
 };
 
