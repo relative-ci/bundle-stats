@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0-beta.11](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.10...v3.1.0-beta.11) (2021-07-19)
+
+
+### Bug Fixes
+
+* **ui:** BundlePackages - use package path for module searching ([c422543](https://github.com/relative-ci/bundle-stats/commit/c422543e91bb9beb5af85390a999fe7c0f70e448))
+* **ui:** Skeleton - allow rest props ([9b43fe0](https://github.com/relative-ci/bundle-stats/commit/9b43fe07ad64b4f76b7ba4efd239f77653cd8109))
+* **ui:** Table - add outline variation ([0f1f912](https://github.com/relative-ci/bundle-stats/commit/0f1f9127b868edd5be7c15118f29096bce846425))
+
+
+
+
+
 # [3.1.0-beta.10](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.9...v3.1.0-beta.10) (2021-07-19)
 
 **Note:** Version bump only for package @bundle-stats/ui
