@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import {
@@ -25,7 +25,7 @@ import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
 import css from './bundle-packages.module.css';
 
-const getPopoverContent = ({
+const PackagePopoverContent = ({
   packageName,
   packagePath,
   duplicate,
@@ -71,6 +71,49 @@ const getPopoverContent = ({
   );
 };
 
+PackagePopoverContent.propTypes = {
+  packageName: PropTypes.string.isRequired,
+  packagePath: PropTypes.string.isRequired,
+  duplicate: PropTypes.bool.isRequired,
+  CustomComponentLink: PropTypes.elementType.isRequired,
+};
+
+const PackageRowHeader = ({ item, CustomComponentLink }) => {
+  const packageNames = item.label.split(PACKAGES_SEPARATOR);
+
+  return (
+    <span className={css.packageNames}>
+      {packageNames.map((packageName, index) => {
+        // Render duplicate flag only for the last entry
+        const duplicateFlag = index === packageNames.length - 1 && item.duplicate && (
+          <span className={css.duplicate} title="Duplicate package">
+            D
+          </span>
+        );
+
+        return (
+          <Popover className={css.packageName} icon={duplicateFlag} label={packageName}>
+            <PackagePopoverContent
+              packageName={packageName}
+              packagePath={item.label}
+              duplicate={item.duplicate}
+              CustomComponentLink={CustomComponentLink}
+            />
+          </Popover>
+        );
+      })}
+    </span>
+  );
+};
+
+PackageRowHeader.propTypes = {
+  item: PropTypes.shape({
+    label: PropTypes.string,
+    duplicate: PropTypes.bool,
+  }).isRequired,
+  CustomComponentLink: PropTypes.elementType.isRequired,
+};
+
 export const BundlePackages = (props) => {
   const {
     className,
@@ -99,32 +142,10 @@ export const BundlePackages = (props) => {
     />
   );
 
-  const renderRowHeader = (item) => {
-    const packageNames = item.label.split(PACKAGES_SEPARATOR);
-    return (
-      <>
-        {packageNames.map((packageName, index) => {
-          // Render duplicate flag only for the last entry
-          const duplicateFlag = index === packageNames.length - 1 && item.duplicate && (
-            <span className={css.duplicate} title="Duplicate package">
-              D
-            </span>
-          );
-
-          return (
-            <Popover className={css.packageName} icon={duplicateFlag} label={packageName}>
-              {getPopoverContent({
-                packageName,
-                packagePath: item.label,
-                duplicate: item.duplicate,
-                CustomComponentLink,
-              })}
-            </Popover>
-          );
-        })}
-      </>
-    );
-  };
+  const renderRowHeader = useCallback(
+    (item) => <PackageRowHeader item={item} CustomComponentLink={CustomComponentLink} />,
+    [CustomComponentLink],
+  );
 
   return (
     <section className={cx(css.root, className)}>
