@@ -26,7 +26,7 @@
 .item:hover,
 .item:focus,
 .item:active {
-  color: var(--color-primary-dark);
+  color: var(--color-text-light);
   outline: none;
 }
 
