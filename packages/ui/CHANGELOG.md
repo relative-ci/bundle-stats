@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0-beta.13](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.12...v3.1.0-beta.13) (2021-07-20)
+
+
+### Bug Fixes
+
+* **ui:** Add missing focus styles ([8ea9952](https://github.com/relative-ci/bundle-stats/commit/8ea9952ce2b99d62ed9ae4a71bf932ece551a353))
+* **ui:** BundlePackages - use package path for module searching ([c447a2d](https://github.com/relative-ci/bundle-stats/commit/c447a2d90cfa413b913e560f0e507ae273fdd948))
+* **ui:** Footer - remove unnecessary links ([0e7c857](https://github.com/relative-ci/bundle-stats/commit/0e7c857b01babb9fb302f1800ca30100e4f34dac))
+* **ui:** MetricsTable - add back empty message state ([2af2547](https://github.com/relative-ci/bundle-stats/commit/2af254766f5f5811a2c969e204037ccfa559b5ea))
+* **ui:** MetricsTableSearch - do not show text underneath ([6ecb9f1](https://github.com/relative-ci/bundle-stats/commit/6ecb9f1bc9fb088aea1adf3642e1923829725e2f))
+* **ui:** Popover - inherit line-height ([4cba1fd](https://github.com/relative-ci/bundle-stats/commit/4cba1fdb40f5460c4cf485b52fffff0a649694f3))
+* **ui:** Skeleton - allow rest props ([5ddb0ea](https://github.com/relative-ci/bundle-stats/commit/5ddb0ea8aed0a053fd8011f4a2425a42ce526dd0))
+* **ui:** Table - add outline variation ([cf82d92](https://github.com/relative-ci/bundle-stats/commit/cf82d920a04cddadb1876f316d9f6794815769fc))
+* **ui:** Tabs - use text-light as active/focus/hover ([a371787](https://github.com/relative-ci/bundle-stats/commit/a3717871ddb4ff04f8ab27fbd30c2a44bf3d3f64))
+
+
+
+
+
 # [3.1.0-beta.12](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.11...v3.1.0-beta.12) (2021-07-19)
 
 
