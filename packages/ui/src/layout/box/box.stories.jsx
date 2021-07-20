@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
-import { Table } from '../../ui';
 import { Box } from '.';
 
 const stories = storiesOf('Layout/Box', module);

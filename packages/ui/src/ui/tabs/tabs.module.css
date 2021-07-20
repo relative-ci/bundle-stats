@@ -23,11 +23,16 @@
   background: transparent;
 }
 
-.item:hover {
-  color: var(--color-primary-dark);
+.item:hover,
+.item:focus,
+.item:active {
+  color: var(--color-text-light);
+  outline: none;
 }
 
-.item:hover::after {
+.item:hover::after,
+.item:focus::after,
+.item:active::after {
   background: currentColor;
 }
 
