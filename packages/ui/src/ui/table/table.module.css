@@ -13,6 +13,10 @@
   text-align: left;
 }
 
+tr:last-child .cell {
+  border-bottom-width: 1px;
+}
+
 .root thead .cell {
   border-width: 0 0 2px;
   text-transform: uppercase;
@@ -49,10 +53,25 @@
 }
 
 .empty {
+  border: 1px solid var(--color-outline);
+  border-width: 1px 0;
   padding: var(--space-xlarge) var(--space-medium);
   background: var(--color-background) !important;
-  border-top-width: 1px;
   text-align: center;
+}
+
+/* outline variation */
+.outline {
+  border: 1px solid var(--color-outline);
+  border-width: 0 1px;
+}
+
+.outline thead tr:first-child .cell {
+  border-top-width: 1px;
+}
+
+.outline.empty {
+  border-width: 1px;
 }
 
 /* compact variation */

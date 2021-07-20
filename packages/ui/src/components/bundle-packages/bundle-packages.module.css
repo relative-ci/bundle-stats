@@ -28,13 +28,19 @@
   color: var(--color-light);
 }
 
-.packageName + .packageName {
-  display: block;
+.packageName {
+  color: var(--color-text-light);
+}
+
+.packageName:last-child {
+  color: inherit;
 }
 
 .packageName + .packageName::before {
-  content: ' ↳ ';
-  opacity: 0.6;
+  display: inline-block;
+  margin: 0 var(--space-xxxsmall);
+  content: '/';
+  color: var(--color-text-ultra-light);
 }
 
 .packagePopover {

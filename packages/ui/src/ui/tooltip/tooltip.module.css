@@ -1,5 +1,13 @@
 .root {
   position: relative;
+  color: inherit;
+  line-height: inherit;
+}
+
+.root:focus,
+.root:active,
+.root:hover {
+  outline: none;
 }
 
 .tooltip {

@@ -56,7 +56,7 @@ stories.addDecorator((storyFn) => (
 ));
 
 stories.add('default', () => (
-  <App jobs={[CURRENT_JOB, BASELINE_JOB]} />
+  <App jobs={[CURRENT_JOB, BASELINE_JOB]} version="1.0" />
 ));
 
 stories.add('no insights', () => (
@@ -72,17 +72,17 @@ stories.add('no insights', () => (
 ));
 
 stories.add('no baseline', () => (
-  <App jobs={[CURRENT_JOB]} />
+  <App jobs={[CURRENT_JOB]} version="1.0" />
 ));
 
 stories.add('empty baseline', () => (
-  <App jobs={EMPTY_BASELINE} />
+  <App jobs={EMPTY_BASELINE} version="1.0" />
 ));
 
 stories.add('multiple baselines', () => (
-  <App jobs={MULTIPLE_JOBS} />
+  <App jobs={MULTIPLE_JOBS} version="1.0" />
 ));
 
 stories.add('empty', () => (
-  <App />
+  <App verison="1.0"/>
 ));

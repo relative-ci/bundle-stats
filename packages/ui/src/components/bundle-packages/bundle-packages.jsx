@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import {
@@ -7,7 +7,6 @@ import {
   getBundleModulesBySearch,
   getBundlePackagesByNameComponentLink,
 } from '@bundle-stats/utils';
-import { getPackagePublicName } from '@bundle-stats/utils/lib-esm/webpack/utils';
 
 import config from '../../config.json';
 import I18N from '../../i18n';
@@ -25,27 +24,21 @@ import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
 import css from './bundle-packages.module.css';
 
-const getPopoverContent = ({
-  packageName,
-  packagePath,
-  duplicate,
-  CustomComponentLink,
-}) => {
-  const normalizedPackagePath = `node_modules/${packagePath.split(PACKAGES_SEPARATOR).join('/node_modules/')}/`;
-  const publicPackageName = getPackagePublicName(packageName);
+const PackagePopoverContent = ({ name, fullName, path, duplicate, CustomComponentLink }) => {
+  const normalizedPackagePath = path || `node_modules/${fullName.split(PACKAGES_SEPARATOR).join('/node_modules/')}/`;
 
   return (
     <Stack space="xxsmall" className={css.packagePopover}>
-      <h3 className={css.packagePopoverTitle}>{publicPackageName}</h3>
+      <h3 className={css.packagePopoverTitle}>{name}</h3>
       <ul className={css.packagePopoverList}>
         <li className={css.packagePopoverItem}>
-          <a href={`https://www.npmjs.com/package/${publicPackageName}`} target="_blank" rel="noreferrer">
+          <a href={`https://www.npmjs.com/package/${name}`} target="_blank" rel="noreferrer">
             npmjs.com
           </a>
         </li>
         <li className={css.packagePopoverItem}>
           <a
-            href={`https://bundlephobia.com/result?p=${publicPackageName}`}
+            href={`https://bundlephobia.com/result?p=${name}`}
             target="_blank"
             rel="noreferrer"
           >
@@ -57,7 +50,7 @@ const getPopoverContent = ({
       <Stack space="xxxsmall" className={css.packagePopover.actions}>
         {duplicate && (
           <div>
-            <CustomComponentLink {...getBundlePackagesByNameComponentLink(publicPackageName)}>
+            <CustomComponentLink {...getBundlePackagesByNameComponentLink(name)}>
               View all duplicate instances
             </CustomComponentLink>
           </div>
@@ -69,6 +62,61 @@ const getPopoverContent = ({
       </Stack>
     </Stack>
   );
+};
+
+PackagePopoverContent.propTypes = {
+  name: PropTypes.string.isRequired,
+  path: PropTypes.string,
+  fullName: PropTypes.string.isRequired,
+  duplicate: PropTypes.bool.isRequired,
+  CustomComponentLink: PropTypes.elementType.isRequired,
+};
+
+PackagePopoverContent.defaultProps = {
+  path: '',
+};
+
+const PackageRowHeader = ({ item, CustomComponentLink }) => {
+  const packageNames = item.label.split(PACKAGES_SEPARATOR);
+  const { path } = item.runs[0] || {};
+
+  return (
+    <span className={css.packageNames}>
+      {packageNames.map((packageName, index) => {
+        // Render duplicate flag only for the last entry
+        const duplicateFlag = index === packageNames.length - 1 && item.duplicate && (
+          <span className={css.duplicate} title="Duplicate package">
+            D
+          </span>
+        );
+
+        return (
+          <Popover className={css.packageName} icon={duplicateFlag} label={packageName}>
+            <PackagePopoverContent
+              name={packageName}
+              path={path}
+              fullName={item.label}
+              duplicate={item.duplicate}
+              CustomComponentLink={CustomComponentLink}
+            />
+          </Popover>
+        );
+      })}
+    </span>
+  );
+};
+
+PackageRowHeader.propTypes = {
+  item: PropTypes.shape({
+    label: PropTypes.string,
+    duplicate: PropTypes.bool,
+    runs: PropTypes.arrayOf(
+      PropTypes.shape({
+        path: PropTypes.string,
+      }),
+    ).isRequired,
+  }).isRequired,
+  CustomComponentLink: PropTypes.elementType.isRequired,
 };
 
 export const BundlePackages = (props) => {
@@ -99,32 +147,10 @@ export const BundlePackages = (props) => {
     />
   );
 
-  const renderRowHeader = (item) => {
-    const packageNames = item.label.split(PACKAGES_SEPARATOR);
-    return (
-      <>
-        {packageNames.map((packageName, index) => {
-          // Render duplicate flag only for the last entry
-          const duplicateFlag = index === packageNames.length - 1 && item.duplicate && (
-            <span className={css.duplicate} title="Duplicate package">
-              D
-            </span>
-          );
-
-          return (
-            <Popover className={css.packageName} icon={duplicateFlag} label={packageName}>
-              {getPopoverContent({
-                packageName,
-                packagePath: item.label,
-                duplicate: item.duplicate,
-                CustomComponentLink,
-              })}
-            </Popover>
-          );
-        })}
-      </>
-    );
-  };
+  const renderRowHeader = useCallback(
+    (item) => <PackageRowHeader item={item} CustomComponentLink={CustomComponentLink} />,
+    [CustomComponentLink],
+  );
 
   return (
     <section className={cx(css.root, className)}>

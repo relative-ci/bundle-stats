@@ -53,6 +53,28 @@ stories.add('compact', () => (
   </Table>
 ));
 
+stories.add('outline', () => (
+  <Table outline>
+    <TBody>
+      <Tr>
+        <Td>a1</Td>
+        <Td>b1</Td>
+        <Td>c1</Td>
+      </Tr>
+      <Tr>
+        <Td>a2</Td>
+        <Td>b2</Td>
+        <Td>c2</Td>
+      </Tr>
+      <Tr>
+        <Td>a3</Td>
+        <Td>b3</Td>
+        <Td>c3</Td>
+      </Tr>
+    </TBody>
+  </Table>
+));
+
 stories.add('empty', () => <Table />);
 stories.add('empty with custom element', () => (
   <Table emptyMessage={<p style={{ outline: '1px solid lightgray' }}>No items available</p>} />
@@ -60,6 +82,35 @@ stories.add('empty with custom element', () => (
 
 stories.add('with headers', () => (
   <Table>
+    <THead>
+      <Tr>
+        <Th>Col A</Th>
+        <Th>Col B</Th>
+        <Th>Col C</Th>
+      </Tr>
+    </THead>
+    <TBody>
+      <Tr>
+        <Td>a1</Td>
+        <Td>b1</Td>
+        <Td>c1</Td>
+      </Tr>
+      <Tr>
+        <Td>a2</Td>
+        <Td>b2</Td>
+        <Td>c2</Td>
+      </Tr>
+      <Tr>
+        <Td>a3</Td>
+        <Td>b3</Td>
+        <Td>c3</Td>
+      </Tr>
+    </TBody>
+  </Table>
+));
+
+stories.add('with headers and outline', () => (
+  <Table outline>
     <THead>
       <Tr>
         <Th>Col A</Th>

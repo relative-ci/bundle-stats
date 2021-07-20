@@ -48,6 +48,13 @@
   color: var(--color-text-light);
 }
 
+.root .empty {
+  background: none !important;
+  padding-top: var(--space-xxxlarge);
+  padding-bottom: var(--space-xxxlarge);
+  text-align: center;
+}
+
 /** Breakpoints */
 .root tr {
   display: flex;

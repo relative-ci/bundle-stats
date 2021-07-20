@@ -43,9 +43,8 @@ exports[`Storyshots Layout/Footer default 1`] = `
     }
   >
     <Footer
-      Link={[Function]}
       className=""
-      source="web"
+      version={null}
     />
   </div>
 </Router>
@@ -94,9 +93,8 @@ exports[`Storyshots Layout/Footer with custom content 1`] = `
     }
   >
     <Footer
-      Link={[Function]}
       className=""
-      source="web"
+      version={null}
     >
       Version 1.0
       <span

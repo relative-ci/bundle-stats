@@ -17,7 +17,6 @@
   padding: 0;
   border: 0;
   background: none;
-  color: var(--color-text-light);
   cursor: pointer;
   border-radius: 50%;
   position: absolute;
@@ -27,12 +26,16 @@
   padding: var(--space-xxsmall);
   width: var(--space-large);
   height: var(--space-large);
+  background: radial-gradient(var(--color-background), transparent 75%);
+  color: var(--color-text-ultra-light);
+  transition: var(--transition-in);
 }
 
 .cancelButton:focus,
 .cancelButton:hover,
 .cancelButton:active {
-  color: var(--color-text);
+  color: var(--color-text-light);
+  transition: var(--transition-out);
 }
 
 .cancelButtonIcon {
