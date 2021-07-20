@@ -38,32 +38,32 @@ const ScrollToTop = () => {
   return null;
 };
 
-const Layout = ({ jobs, footer, ...props }) => (
+const Layout = ({ jobs, version, ...props }) => (
   <div className={css.root}>
     <Header className={css.header} jobs={jobs} />
     <main className={css.main} {...props} />
-    <Footer source="bundle-stats">{footer}</Footer>
+    <Footer version={version} />
   </div>
 );
 
 Layout.propTypes = {
   jobs: PropTypes.arrayOf(PropTypes.object),
-  footer: PropTypes.node,
+  version: PropTypes.string,
 };
 
 Layout.defaultProps = {
   jobs: null,
-  footer: null,
+  version: null,
 };
 
-const AppComponent = ({ footer, jobs }) => {
+const AppComponent = ({ version, jobs }) => {
   const [bundleStatsState, bundleStatsSetState] = useComponentQueryState(COMPONENT.BUNDLE_ASSETS);
   const [bundlePackagesState, bundlePackagesSetState] = useComponentQueryState(COMPONENT.BUNDLE_PACKAGES);
   const [bundleModulesState, bundleModulesSetState] = useComponentQueryState(COMPONENT.BUNDLE_MODULES);
 
   if (jobs.length === 0) {
     return (
-      <Layout footer={footer}>
+      <Layout version={version}>
         <Container>
           <div className={css.empty}>{I18N.NO_DATA}</div>
         </Container>
@@ -77,7 +77,7 @@ const AppComponent = ({ footer, jobs }) => {
   );
 
   return (
-    <Layout jobs={jobs} footer={footer}>
+    <Layout jobs={jobs} version={version}>
       <Container className={css.summaryContainer}>
         <Summary
           size="large"
@@ -204,7 +204,7 @@ const AppComponent = ({ footer, jobs }) => {
 
 AppComponent.defaultProps = {
   jobs: [],
-  footer: null,
+  version: null,
 };
 
 AppComponent.propTypes = {
@@ -215,7 +215,7 @@ AppComponent.propTypes = {
       summary: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     }),
   ),
-  footer: PropTypes.node,
+  version: PropTypes.string,
 };
 
 export const App = (props) => (
