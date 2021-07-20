@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { get } from 'lodash';
+import { get, isEmpty } from 'lodash';
 import { flow, map, sum } from 'lodash/fp';
 import { METRIC_TYPE_FILE_SIZE, getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
@@ -159,13 +159,13 @@ export const MetricsTable = ({
 }) => {
   const { headers, columnClassNames } = useMemo(() => {
     const headerColumns = getHeaderRows(runs, items, showHeaderSum, title);
-
     return {
       headers: [...headerRows, ...headerColumns],
       // First header row has the column class names
       columnClassNames: headerColumns[0].cells.map((headerColumn) => headerColumn.className),
     };
   }, [headerRows, runs, items, showHeaderSum, title]);
+
   const rows = useMemo(() => getRows(runs, items, renderRowHeader), [runs, items, renderRowHeader]);
 
   const rootClassName = cx(
@@ -176,7 +176,7 @@ export const MetricsTable = ({
   );
 
   return (
-    <Table className={rootClassName} emptyMessage={emptyMessage} compact>
+    <Table className={rootClassName} compact>
       <Table.THead>
         {headers.map((headerRow) => {
           const { cells, className: rowClassName } = headerRow.cells
@@ -193,13 +193,21 @@ export const MetricsTable = ({
         })}
       </Table.THead>
       <Table.TBody>
-        {rows.map(({ key, className: rowClassName, cells }) => (
-          <Table.Tr key={key} className={rowClassName}>
-            {cells.map((cell, index) => (
-              <Table.Td className={columnClassNames[index]}>{cell}</Table.Td>
-            ))}
+        {!isEmpty(rows) ? (
+          rows.map(({ key, className: rowClassName, cells }) => (
+            <Table.Tr key={key} className={rowClassName}>
+              {cells.map((cell, index) => (
+                <Table.Td className={columnClassNames[index]}>{cell}</Table.Td>
+              ))}
+            </Table.Tr>
+          ))
+        ) : (
+          <Table.Tr>
+            <Table.Td className={styles.empty} colSpan={columnClassNames?.length || 1}>
+              {emptyMessage}
+            </Table.Td>
           </Table.Tr>
-        ))}
+        )}
       </Table.TBody>
     </Table>
   );
@@ -208,7 +216,7 @@ export const MetricsTable = ({
 MetricsTable.defaultProps = {
   className: '',
   renderRowHeader: (item) => item.label,
-  emptyMessage: undefined,
+  emptyMessage: 'No entries found.',
   showHeaderSum: false,
   headerRows: [],
   title: '',

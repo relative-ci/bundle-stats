@@ -44,6 +44,7 @@ exports[`Storyshots Components/MetricsTable default 1`] = `
   >
     <MetricsTable
       className=""
+      emptyMessage="No entries found."
       headerRows={Array []}
       items={
         Array [
@@ -125,6 +126,77 @@ exports[`Storyshots Components/MetricsTable default 1`] = `
 </Router>
 `;
 
+exports[`Storyshots Components/MetricsTable empty 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "home",
+          "pathname": "/",
+          "search": "",
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "home",
+        "pathname": "/",
+        "search": "",
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "height": "100%",
+        "padding": "24px",
+        "width": "100%",
+      }
+    }
+  >
+    <MetricsTable
+      className=""
+      emptyMessage="No entries found."
+      headerRows={Array []}
+      items={Array []}
+      renderRowHeader={[Function]}
+      runs={
+        Array [
+          Object {
+            "internalBuildNumber": 2,
+            "label": "Job #2",
+          },
+          Object {
+            "internalBuildNumber": 1,
+            "label": <a
+              href="#noop"
+            >
+              Job #1
+            </a>,
+          },
+        ]
+      }
+      showHeaderSum={false}
+      title=""
+    />
+  </div>
+</Router>
+`;
+
 exports[`Storyshots Components/MetricsTable multiple runs 1`] = `
 <Router
   history={
@@ -169,6 +241,7 @@ exports[`Storyshots Components/MetricsTable multiple runs 1`] = `
   >
     <MetricsTable
       className=""
+      emptyMessage="No entries found."
       headerRows={Array []}
       items={
         Array [
@@ -365,6 +438,7 @@ exports[`Storyshots Components/MetricsTable with header rows 1`] = `
   >
     <MetricsTable
       className=""
+      emptyMessage="No entries found."
       headerRows={
         Array [
           Array [

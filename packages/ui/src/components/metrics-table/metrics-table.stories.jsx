@@ -233,3 +233,5 @@ stories.add('with header rows', () => (
     ]}
   />
 ));
+
+stories.add('empty', () =><MetricsTable runs={RUNS} items={[]} />);
