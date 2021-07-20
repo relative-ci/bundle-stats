@@ -12,7 +12,9 @@
   text-align: inherit;
 }
 
-.button:hover {
+.button:hover,
+.button:active,
+.button:focus {
   color: var(--color-primary);
 }
 

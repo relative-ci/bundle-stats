@@ -8,6 +8,12 @@
 .item {
   flex: 1 0 25%; /* force equal sizes */
   position: relative;
+  z-index: 1;
+}
+
+.item:focus-visible {
+  background: var(--color-highlight);
+  outline: none;
 }
 
 .item::before {
