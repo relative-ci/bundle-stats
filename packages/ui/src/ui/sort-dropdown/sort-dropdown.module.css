@@ -1,6 +1,6 @@
 .item {
-  padding: var(--space-xxxsmall) var(--space-small);
   display: flex;
+  align-items: center;
 }
 
 .itemIcon {
@@ -13,16 +13,6 @@
 
 .itemAsc .itemIcon {
   transform: rotate(180deg);
-}
-
-.item:hover,
-.item:active,
-.item:focus {
-  color: var(--color-primary);
-}
-
-.item.active {
-  color: var(--color-primary-dark);
 }
 
 .item.active .itemIcon {

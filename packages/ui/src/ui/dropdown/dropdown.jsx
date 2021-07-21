@@ -1,12 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import {
-  useMenuState,
-  Menu,
-  MenuItem,
-  MenuButton,
-} from 'reakit/Menu';
+import { Menu, MenuItem, MenuButton, useMenuState } from 'reakit/Menu';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Icon } from '../icon';
@@ -14,16 +9,9 @@ import css from './dropdown.module.css';
 
 export const Dropdown = (props) => {
   const { className, label, ariaLabel, glyph, activeLabel, children } = props;
-  const rootClassName = cx(
-    css.root,
-    activeLabel && css.activeLabel,
-    className,
-  );
+  const rootClassName = cx(css.root, activeLabel && css.activeLabel, className);
 
-  const menu = useMenuState({
-    baseId: process.env.NODE_ENV === 'test' && 'id-test',
-    modal: true,
-  });
+  const menu = useMenuState({baseId: process.env.NODE_ENV === 'test' && 'id-test', modal: true });
 
   return (
     <>
@@ -34,11 +22,16 @@ export const Dropdown = (props) => {
         </FlexStack>
       </MenuButton>
       <Menu {...menu} aria-label={ariaLabel || label} className={css.dropdown}>
-        {typeof children === 'function' ? children({
-          MenuItem,
-          menu,
-          menuItemClassName: css.menuItem,
-        }) : children}
+        {typeof children === 'function'
+          ?
+            children({
+              MenuItem,
+              menu,
+              menuItemClassName: css.menuItem,
+              menuItemActiveClassName: css.menuItemActive,
+            })
+          : children
+        }
       </Menu>
     </>
   );
