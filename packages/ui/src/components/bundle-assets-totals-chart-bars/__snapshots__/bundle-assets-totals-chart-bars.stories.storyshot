@@ -76,10 +76,6 @@ exports[`Storyshots Components/BundleAssetsTotalsChartBars component 1`] = `
                       "lodash.debounce",
                       "lodash.debounce~1",
                     ],
-                    "lodash.keys": Array [
-                      "convert-units:lodash.keys",
-                      "lodash.forown:lodash.keys",
-                    ],
                     "prop-types": Array [
                       "recharts:prop-types",
                       "prop-types",
@@ -258,7 +254,7 @@ exports[`Storyshots Components/BundleAssetsTotalsChartBars component 1`] = `
                   "value": 4,
                 },
                 "duplicatePackagesCount": Object {
-                  "value": 4,
+                  "value": 3,
                 },
                 "moduleCount": Object {
                   "value": 557,
@@ -684,11 +680,11 @@ exports[`Storyshots Components/BundleAssetsTotalsChartBars component 1`] = `
                     "name": "./node_modules/convert-units/lib/index.js",
                     "value": 7567,
                   },
-                  "./node_modules/convert-units/node_modules/lodash.keys/index.js": Object {
+                  "./node_modules/convert-units/node_modules/lodash.isEmpty/index.js": Object {
                     "chunkIds": Array [
                       "1",
                     ],
-                    "name": "./node_modules/convert-units/node_modules/lodash.keys/index.js",
+                    "name": "./node_modules/convert-units/node_modules/lodash.isEmpty/index.js",
                     "value": 1253,
                   },
                   "./node_modules/decimal.js-light/decimal.js": Object {
@@ -4203,9 +4199,9 @@ exports[`Storyshots Components/BundleAssetsTotalsChartBars component 1`] = `
                     "path": "./node_modules/convert-units",
                     "value": 33857,
                   },
-                  "convert-units:lodash.keys": Object {
-                    "name": "lodash.keys",
-                    "path": "./node_modules/convert-units/node_modules/lodash.keys",
+                  "convert-units:lodash.isEmpty": Object {
+                    "name": "lodash.isEmpty",
+                    "path": "./node_modules/convert-units/node_modules/lodash.isEmpty",
                     "value": 1253,
                   },
                   "decimal.js-light": Object {
@@ -7556,7 +7552,7 @@ exports[`Storyshots Components/BundleAssetsTotalsChartBars component 1`] = `
                     "chunks": Array [
                       1,
                     ],
-                    "name": "./node_modules/convert-units/node_modules/lodash.keys/index.js",
+                    "name": "./node_modules/convert-units/node_modules/lodash.isEmpty/index.js",
                     "size": 1253,
                   },
                   Object {
@@ -8911,7 +8907,7 @@ exports[`Storyshots Components/BundleAssetsTotalsChartBars component 1`] = `
                 },
                 "duplicatePackagesCount": Object {
                   "baseline": 3,
-                  "current": 4,
+                  "current": 3,
                 },
                 "moduleCount": Object {
                   "baseline": 556,
@@ -17885,10 +17881,6 @@ exports[`Storyshots Components/BundleAssetsTotalsChartBars empty baseline 1`] = 
                       "lodash.debounce",
                       "lodash.debounce~1",
                     ],
-                    "lodash.keys": Array [
-                      "convert-units:lodash.keys",
-                      "lodash.forown:lodash.keys",
-                    ],
                     "prop-types": Array [
                       "recharts:prop-types",
                       "prop-types",
@@ -18067,7 +18059,7 @@ exports[`Storyshots Components/BundleAssetsTotalsChartBars empty baseline 1`] = 
                   "value": 4,
                 },
                 "duplicatePackagesCount": Object {
-                  "value": 4,
+                  "value": 3,
                 },
                 "moduleCount": Object {
                   "value": 557,
@@ -18493,11 +18485,11 @@ exports[`Storyshots Components/BundleAssetsTotalsChartBars empty baseline 1`] = 
                     "name": "./node_modules/convert-units/lib/index.js",
                     "value": 7567,
                   },
-                  "./node_modules/convert-units/node_modules/lodash.keys/index.js": Object {
+                  "./node_modules/convert-units/node_modules/lodash.isEmpty/index.js": Object {
                     "chunkIds": Array [
                       "1",
                     ],
-                    "name": "./node_modules/convert-units/node_modules/lodash.keys/index.js",
+                    "name": "./node_modules/convert-units/node_modules/lodash.isEmpty/index.js",
                     "value": 1253,
                   },
                   "./node_modules/decimal.js-light/decimal.js": Object {
@@ -22012,9 +22004,9 @@ exports[`Storyshots Components/BundleAssetsTotalsChartBars empty baseline 1`] = 
                     "path": "./node_modules/convert-units",
                     "value": 33857,
                   },
-                  "convert-units:lodash.keys": Object {
-                    "name": "lodash.keys",
-                    "path": "./node_modules/convert-units/node_modules/lodash.keys",
+                  "convert-units:lodash.isEmpty": Object {
+                    "name": "lodash.isEmpty",
+                    "path": "./node_modules/convert-units/node_modules/lodash.isEmpty",
                     "value": 1253,
                   },
                   "decimal.js-light": Object {
@@ -25365,7 +25357,7 @@ exports[`Storyshots Components/BundleAssetsTotalsChartBars empty baseline 1`] = 
                     "chunks": Array [
                       1,
                     ],
-                    "name": "./node_modules/convert-units/node_modules/lodash.keys/index.js",
+                    "name": "./node_modules/convert-units/node_modules/lodash.isEmpty/index.js",
                     "size": 1253,
                   },
                   Object {
@@ -26720,7 +26712,7 @@ exports[`Storyshots Components/BundleAssetsTotalsChartBars empty baseline 1`] = 
                 },
                 "duplicatePackagesCount": Object {
                   "baseline": 0,
-                  "current": 4,
+                  "current": 3,
                 },
                 "moduleCount": Object {
                   "baseline": 0,

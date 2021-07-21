@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { compose, withProps } from 'recompose';
-import { get } from 'lodash';
+import { map, get, values, flatten, uniq } from 'lodash';
+import { } from 'lodash/fp';
 import { PACKAGE_FILTERS } from '@bundle-stats/utils';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
@@ -13,6 +14,16 @@ import {
   SORT_BY_SIZE,
   SORT_BY,
 } from './bundle-packages.constants';
+
+// Get a list of duplicate packages across jobs
+const getDuplicatePackages = (jobs) => {
+  const jobsDuplicatePackages = jobs.map((job) => {
+    const insightsData = job?.insights?.webpack?.duplicatePackages?.data || {};
+    return Object.values(insightsData).flat();
+  });
+
+  return uniq(flatten(jobsDuplicatePackages));
+};
 
 const getRowFilter = (filters) => (item) => {
   if (filters[PACKAGE_FILTERS.CHANGED] && !item.changed) {
@@ -42,22 +53,19 @@ const getCustomSort = (sortId) => (item) => {
   return [!item.changed, item.key];
 };
 
-const addDuplicateTag = (items, duplicatePackages) =>
+const addDuplicateFlag = (items, duplicateJobs) =>
   items.map((item) => ({
     ...item,
-    duplicate: duplicatePackages.includes(item.key),
+    duplicate: duplicateJobs.includes(item.key),
   }));
 
 export const enhance = compose(
   withProps(({ jobs }) => {
-    const duplicatePackages = Object.values(
-      get(jobs, '0.insights.webpack.duplicatePackages.data', {}),
-    ).flat();
-
-    const items = useMemo(
-      () => addDuplicateTag(webpack.compareBySection.packages(jobs), duplicatePackages),
-      [jobs, duplicatePackages],
-    );
+    const items = useMemo(() => {
+      const duplicateJobs = getDuplicatePackages(jobs);
+      const compareResult = webpack.compareBySection.packages(jobs);
+      return addDuplicateFlag(compareResult, duplicateJobs);
+    }, [jobs]);
 
     const defaultFilters = {
       [PACKAGE_FILTERS.CHANGED]: jobs?.length > 1,

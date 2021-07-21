@@ -115,6 +115,7 @@ exports[`Storyshots UI/Filters default 1`] = `
             }
             onChange={[Function]}
             toggleFilter={[Function]}
+            toggleFilters={[Function]}
             values={
               Object {
                 "changed": true,
@@ -205,6 +206,7 @@ exports[`Storyshots UI/Filters default 1`] = `
                       groupKey="fileTypes"
                       key="fileTypes"
                       onCheckboxChange={[Function]}
+                      toggleFilters={[Function]}
                       values={
                         Object {
                           "changed": true,
@@ -3654,6 +3656,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
           }
           onChange={[Function]}
           toggleFilter={[Function]}
+          toggleFilters={[Function]}
           values={
             Object {
               "changed": false,
@@ -3782,6 +3785,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                     groupKey="fileTypes"
                     key="fileTypes"
                     onCheckboxChange={[Function]}
+                    toggleFilters={[Function]}
                     values={
                       Object {
                         "changed": false,
@@ -6440,6 +6444,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
             }
             onChange={[Function]}
             toggleFilter={[Function]}
+            toggleFilters={[Function]}
             values={
               Object {
                 "changed": true,
@@ -6598,6 +6603,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                       groupKey="chunks"
                       key="chunks"
                       onCheckboxChange={[Function]}
+                      toggleFilters={[Function]}
                       values={
                         Object {
                           "changed": true,
