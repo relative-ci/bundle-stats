@@ -59,13 +59,19 @@
   padding: var(--space-xxxsmall) var(--space-small);
   background: none;
   text-align: left;
-  color: var(--color-text);
+  color: var(--color-text-light);
   font-size: var(--size-small);
-  line-height: var(--space-small);
+  line-height: inherit;
 }
 
-.menuItem:focus,
-.menuItem:active,
 .menuItem:hover {
+  color: var(--color-text);
+}
+
+.menuItemActive {
   color: var(--color-primary);
+}
+
+.menuItemActive:hover {
+  color: var(--color-primary-dark);
 }

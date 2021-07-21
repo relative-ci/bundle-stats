@@ -42,23 +42,43 @@ export const filtersDropdownContainer = (BaseComponent) => {
       return { values: getInitialValues('', filters) };
     }
 
-    toggleFilter = (key, value) => this.setState(({ values, ...state }) => {
-      const newState = {
-        ...state,
-        values: {
-          ...values,
-          [key]: value,
-        },
-      };
+    toggleFilter = (key, value) =>
+      this.setState(({ values, ...state }) => {
+        const newState = {
+          ...state,
+          values: {
+            ...values,
+            [key]: value,
+          },
+        };
 
-      const { onChange } = this.props;
+        const { onChange } = this.props;
 
-      if (onChange) {
-        onChange(newState.values);
-      }
+        if (onChange) {
+          onChange(newState.values);
+        }
 
-      return newState;
-    })
+        return newState;
+      });
+
+    toggleFilters = (newFilters) =>
+      this.setState((prevState) => {
+        const newState = {
+          ...prevState,
+          values: {
+            ...prevState.values,
+            ...newFilters,
+          },
+        };
+
+        const { onChange } = this.props;
+
+        if (onChange) {
+          onChange(newState.values);
+        }
+
+        return newState;
+      });
 
     render() {
       return (
@@ -66,6 +86,7 @@ export const filtersDropdownContainer = (BaseComponent) => {
           {...this.props}
           {...this.state}
           toggleFilter={this.toggleFilter}
+          toggleFilters={this.toggleFilters}
         />
       );
     }

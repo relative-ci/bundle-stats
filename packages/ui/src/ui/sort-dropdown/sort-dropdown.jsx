@@ -8,15 +8,13 @@ import css from './sort-dropdown.module.css';
 
 export const SortDropdown = (props) => {
   const { className, label, items, sortBy, direction, onChange } = props;
-
   const rootClassName = cx(css.root, className);
-
 
   const customLabel = items[sortBy] ? `Ordered by ${items[sortBy].label}` : label;
 
   return (
     <Dropdown className={rootClassName} label={customLabel} glyph="sort" align="right">
-      {({ MenuItem, menu, menuItemClassName }) => {
+      {({ MenuItem, menu, menuItemClassName, menuItemActiveClassName }) => {
         const getButtonOnClick = (newSortBy, newDirection) => () => {
           onChange({ sortBy: newSortBy, direction: newDirection });
           menu.toggle();
@@ -38,12 +36,19 @@ export const SortDropdown = (props) => {
                     title: `Order data by ${item.label} ascending`,
                   };
 
+              const isActive = sortBy === key;
+
               return (
                 <MenuItem
                   key={key}
                   {...menu}
                   {...buttonProps}
-                  className={cx(menuItemClassName, css.item, sortBy === key && css.active)}
+                  className={cx(
+                    menuItemClassName,
+                    css.item,
+                    isActive && menuItemActiveClassName,
+                    isActive && css.active,
+                  )}
                 >
                   <span className={css.itemLabel}>{item.label}</span>
                   <Icon className={css.itemIcon} glyph="arrow" />
