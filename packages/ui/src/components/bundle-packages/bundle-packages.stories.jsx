@@ -20,6 +20,7 @@ stories.addDecorator(getWrapperDecorator());
 stories.add('default', () => <BundlePackages jobs={[baselineJob]} />);
 
 stories.add('multiple jobs', () => <BundlePackages jobs={JOBS} />);
+
 stories.add('custom filters', () => (
   <BundlePackages
     jobs={JOBS}
