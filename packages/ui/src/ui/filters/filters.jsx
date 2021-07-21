@@ -57,7 +57,7 @@ Filter.defaultProps = {
 };
 
 const FilterGroup = (props) => {
-  const { groupKey, data, values, onCheckboxChange } = props;
+  const { groupKey, data, values, onCheckboxChange, toggleFilters } = props;
 
   const { label: groupLabel, ...groupData } = data;
 
@@ -77,61 +77,34 @@ const FilterGroup = (props) => {
     </>
   );
 
+  const getOnGroupCheck = (value, overrides = {}) => () => {
+    const newFilters = groupCheckboxes.reduce((agg, [itemKey]) => ({
+      ...agg,
+      [`${groupKey}.${itemKey}`]: value,
+    }), {});
+
+    toggleFilters({
+      ...newFilters,
+      ...overrides,
+    });
+  };
+
   return (
     <Dropdown label={dropdownLabel} ariaLabel={`${groupLabel}: ${filterSuffix}`}>
       {({ MenuItem, menu, menuItemClassName }) => {
-        const onGroupClearAll = () => {
-          groupCheckboxes.forEach(([itemKey, item]) => {
-            onCheckboxChange({
-              target: {
-                name: `${groupKey}.${itemKey}`,
-                checked: false,
-              },
-            });
-          });
-          menu.toggle();
-        };
-
-        const onGroupCheckAll = () => {
-          groupCheckboxes.forEach(([itemKey, item]) => {
-            onCheckboxChange({
-              target: {
-                name: `${groupKey}.${itemKey}`,
-                checked: true,
-              },
-            });
-          });
-
-          menu.toggle();
-        };
-
         return (
           <>
             <div className={css.filterGroupItems}>
               {groupItems.map(([itemKey, itemData]) => {
                 const id = [groupKey, itemKey].join('.');
-
-                const getOnOnlyClick = () => () => {
-                  onGroupClearAll();
-                  onCheckboxChange({
-                    target: {
-                      name: id,
-                      checked: true,
-                    },
-                  });
-                  menu.toggle();
-                };
-
-                const handleOnChange = (data) => {
-                  onCheckboxChange(data);
-                };
+                const getOnOnlyClick = () => getOnGroupCheck(false, { [id]: true });
 
                 return (
                   <MenuItem key={id} {...menu} className={cx(menuItemClassName, css.filterGroupItem)}>
                     <Filter
                       name={id}
                       label={itemData.label}
-                      onChange={handleOnChange}
+                      onChange={onCheckboxChange}
                       checked={values[id]}
                       disabled={itemData.disabled}
                       getOnOnlyClick={getOnOnlyClick}
@@ -147,7 +120,7 @@ const FilterGroup = (props) => {
                   as="button"
                   className={menuItemClassName}
                   type="button"
-                  onClick={onGroupClearAll}
+                  onClick={getOnGroupCheck(false)}
                 >
                   Clear all
                 </MenuItem>
@@ -157,7 +130,7 @@ const FilterGroup = (props) => {
                   as="button"
                   className={menuItemClassName}
                   type="button"
-                  onClick={onGroupCheckAll}
+                  onClick={getOnGroupCheck(true)}
                 >
                   Check all
                 </MenuItem>
@@ -175,6 +148,7 @@ FilterGroup.propTypes = {
   data: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   values: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   onCheckboxChange: PropTypes.func.isRequired,
+  toggleFilters: PropTypes.func.isRequired,
 };
 
 export const Filters = (props) => {
@@ -183,6 +157,7 @@ export const Filters = (props) => {
     values,
     filters,
     toggleFilter,
+    toggleFilters,
   } = props;
 
   const onCheckboxChange = ({ target }) => toggleFilter(target.name, target.checked);
@@ -214,6 +189,7 @@ export const Filters = (props) => {
                 data={data}
                 values={values}
                 onCheckboxChange={onCheckboxChange}
+                toggleFilters={toggleFilters}
               />
             </div>
           );
