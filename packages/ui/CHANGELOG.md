@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0-beta.14](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.13...v3.1.0-beta.14) (2021-07-21)
+
+
+### Bug Fixes
+
+* **ui:** BundlePackages - filter by duplicate across the jobs ([0d025dc](https://github.com/relative-ci/bundle-stats/commit/0d025dc596c1326435afeaddb3d23bf6e1f6776a))
+* **ui:** Dropdown - consistent look & feel ([a1862c7](https://github.com/relative-ci/bundle-stats/commit/a1862c7c5f5c4f90dacf9ee42325ac2575fbdec0))
+* **ui:** Filters - run filters group change in one operation ([8de3457](https://github.com/relative-ci/bundle-stats/commit/8de3457ea92b8135abcd1e4cf24455f66ae8bcd1))
+
+
+
+
+
 # [3.1.0-beta.13](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.12...v3.1.0-beta.13) (2021-07-20)
 
 
