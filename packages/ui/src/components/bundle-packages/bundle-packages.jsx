@@ -17,6 +17,7 @@ import { Filters } from '../../ui/filters';
 import { Popover } from '../../ui/popover';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Toolbar } from '../../ui/toolbar';
+import { FileName } from '../../ui/file-name';
 import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
@@ -29,7 +30,13 @@ const PackagePopoverContent = ({ name, fullName, path, duplicate, CustomComponen
 
   return (
     <Stack space="xxsmall" className={css.packagePopover}>
-      <h3 className={css.packagePopoverTitle}>{name}</h3>
+      <Stack space="xxxsmall">
+        <h3 className={css.packagePopoverTitle}>{name}</h3>
+        <p className={css.packagePopoverPath}>
+          <FileName className={css.packagePopoverPathValue} name={normalizedPackagePath} />
+        </p>
+      </Stack>
+
       <ul className={css.packagePopoverList}>
         <li className={css.packagePopoverItem}>
           <a href={`https://www.npmjs.com/package/${name}`} target="_blank" rel="noreferrer">
