@@ -14,7 +14,7 @@ jobs:
     steps:
       - checkout
       - node/install-packages
-      - run: npm run lerna -- bootstrap
+      - run: npm run install-dependencies
       - run: npm run build
       - run: npm run lint
       - run: npm test

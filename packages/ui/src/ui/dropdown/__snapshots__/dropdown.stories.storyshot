@@ -165,7 +165,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                 hidden=""
                 id="id-test"
                 role="menu"
-                style="display: none; position: fixed; left: 0px; top: 0px;"
+                style="display: none; position: fixed; left: 100%; top: 100%;"
                 tabindex="-1"
               >
                 <ul>
@@ -181,9 +181,9 @@ exports[`Storyshots UI/Dropdown default 1`] = `
           }
           unstable_popoverStyles={
             Object {
-              "left": "0",
+              "left": "100%",
               "position": "fixed",
-              "top": "0",
+              "top": "100%",
             }
           }
           unstable_referenceRef={
@@ -410,7 +410,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                 hidden=""
                 id="id-test"
                 role="menu"
-                style="display: none; position: fixed; left: 0px; top: 0px;"
+                style="display: none; position: fixed; left: 100%; top: 100%;"
                 tabindex="-1"
               >
                 <ul>
@@ -426,9 +426,9 @@ exports[`Storyshots UI/Dropdown default 1`] = `
           }
           unstable_popoverStyles={
             Object {
-              "left": "0",
+              "left": "100%",
               "position": "fixed",
-              "top": "0",
+              "top": "100%",
             }
           }
           unstable_referenceRef={
@@ -496,7 +496,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                     hidden=""
                     id="id-test"
                     role="menu"
-                    style="display: none; position: fixed; left: 0px; top: 0px;"
+                    style="display: none; position: fixed; left: 100%; top: 100%;"
                     tabindex="-1"
                   >
                     <ul>
@@ -532,9 +532,9 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                 style={
                   Object {
                     "display": "none",
-                    "left": "0",
+                    "left": "100%",
                     "position": "fixed",
-                    "top": "0",
+                    "top": "100%",
                   }
                 }
                 tabIndex={-1}
@@ -722,7 +722,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                 hidden=""
                 id="id-test"
                 role="menu"
-                style="display: none; position: fixed; left: 0px; top: 0px;"
+                style="display: none; position: fixed; left: 100%; top: 100%;"
                 tabindex="-1"
               >
                 <button
@@ -735,9 +735,9 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
           }
           unstable_popoverStyles={
             Object {
-              "left": "0",
+              "left": "100%",
               "position": "fixed",
-              "top": "0",
+              "top": "100%",
             }
           }
           unstable_referenceRef={
@@ -964,7 +964,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                 hidden=""
                 id="id-test"
                 role="menu"
-                style="display: none; position: fixed; left: 0px; top: 0px;"
+                style="display: none; position: fixed; left: 100%; top: 100%;"
                 tabindex="-1"
               >
                 <button
@@ -977,9 +977,9 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
           }
           unstable_popoverStyles={
             Object {
-              "left": "0",
+              "left": "100%",
               "position": "fixed",
-              "top": "0",
+              "top": "100%",
             }
           }
           unstable_referenceRef={
@@ -1047,7 +1047,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                     hidden=""
                     id="id-test"
                     role="menu"
-                    style="display: none; position: fixed; left: 0px; top: 0px;"
+                    style="display: none; position: fixed; left: 100%; top: 100%;"
                     tabindex="-1"
                   >
                     <button
@@ -1080,9 +1080,9 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                 style={
                   Object {
                     "display": "none",
-                    "left": "0",
+                    "left": "100%",
                     "position": "fixed",
-                    "top": "0",
+                    "top": "100%",
                   }
                 }
                 tabIndex={-1}
@@ -1268,7 +1268,7 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
                 hidden=""
                 id="id-test"
                 role="menu"
-                style="display: none; position: fixed; left: 0px; top: 0px;"
+                style="display: none; position: fixed; left: 100%; top: 100%;"
                 tabindex="-1"
               >
                 <ul>
@@ -1284,9 +1284,9 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
           }
           unstable_popoverStyles={
             Object {
-              "left": "0",
+              "left": "100%",
               "position": "fixed",
-              "top": "0",
+              "top": "100%",
             }
           }
           unstable_referenceRef={
@@ -1513,7 +1513,7 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
                 hidden=""
                 id="id-test"
                 role="menu"
-                style="display: none; position: fixed; left: 0px; top: 0px;"
+                style="display: none; position: fixed; left: 100%; top: 100%;"
                 tabindex="-1"
               >
                 <ul>
@@ -1529,9 +1529,9 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
           }
           unstable_popoverStyles={
             Object {
-              "left": "0",
+              "left": "100%",
               "position": "fixed",
-              "top": "0",
+              "top": "100%",
             }
           }
           unstable_referenceRef={
@@ -1599,7 +1599,7 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
                     hidden=""
                     id="id-test"
                     role="menu"
-                    style="display: none; position: fixed; left: 0px; top: 0px;"
+                    style="display: none; position: fixed; left: 100%; top: 100%;"
                     tabindex="-1"
                   >
                     <ul>
@@ -1635,9 +1635,9 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
                 style={
                   Object {
                     "display": "none",
-                    "left": "0",
+                    "left": "100%",
                     "position": "fixed",
-                    "top": "0",
+                    "top": "100%",
                   }
                 }
                 tabIndex={-1}
