@@ -1,10 +1,12 @@
 {
   "name": "@bundle-stats/ui",
-  "version": "3.1.0-beta.16",
+  "version": "3.1.0-beta.17",
   "description": "UI components for BundleStats projects.",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "scripts": {
     "build": "npm run build-lib && npm run build-esm",
     "build-lib": "rm -fr ./lib && babel -D src -d lib --ignore **/__tests__/** --ignore /prototypes/** --presets=@babel/preset-env,@babel/preset-react",
