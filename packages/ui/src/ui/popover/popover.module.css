@@ -24,7 +24,7 @@
 
 .popover {
   padding: var(--space-xsmall) var(--space-medium) var(--space-xsmall) var(--space-small);
-  max-width: 320px;
+  max-width: 360px;
   outline: none;
   box-shadow: 0 0 var(--space-xxsmall) var(--color-shadow);
   background: var(--color-light);

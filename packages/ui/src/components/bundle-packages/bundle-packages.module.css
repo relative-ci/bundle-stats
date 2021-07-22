@@ -44,11 +44,13 @@
 }
 
 .packagePopover {
-  min-width: 240px;
+  min-width: 320px;
 }
 
-.packagePopoverTitle {
-  margin-bottom: var(--space-xxxsmall);
+.packagePopoverPathValue {
+  padding: var(--space-xxxsmall);
+  background: var(--color-highlight-warning);
+  font-family: var(--font-family-monospace);
 }
 
 .packagePopoverList {
