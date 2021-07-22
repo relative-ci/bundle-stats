@@ -23,16 +23,12 @@
   background: transparent;
 }
 
-.item:hover,
-.item:focus,
-.item:active {
+.item:hover {
   color: var(--color-text-light);
   outline: none;
 }
 
-.item:hover::after,
-.item:focus::after,
-.item:active::after {
+.item:hover::after {
   background: currentColor;
 }
 
