@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0-beta.15](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.14...v3.1.0-beta.15) (2021-07-22)
+
+
+### Bug Fixes
+
+* **ui:** BundlePackages - show package path ([2d02d64](https://github.com/relative-ci/bundle-stats/commit/2d02d649f1210c0f62dfd5525fe3581daf15e97f))
+* **ui:** MetricsTable - increase left spacing ([637bc3c](https://github.com/relative-ci/bundle-stats/commit/637bc3c7c3beb0b39ca43f806fba04edb98e264b))
+* **ui:** Tabs - use def focus/active ([70b2822](https://github.com/relative-ci/bundle-stats/commit/70b2822ac0575f73b5c21064412c001478e3fbad))
+
+
+
+
+
 # [3.1.0-beta.14](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.13...v3.1.0-beta.14) (2021-07-21)
 
 
