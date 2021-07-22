@@ -38,6 +38,7 @@
     "format": "prettier --write \"**/*.{js,jsx}\"",
     "lerna": "lerna",
     "lint": "lerna exec 'npm run lint -- --quiet'",
+    "install-dependencies": "npm install && npx lerna bootstrap --hoist",
     "release": "./scripts/release.sh",
     "test": "lerna run test",
     "test-package": "cd packages/webpack-plugin && npm run test-package"
