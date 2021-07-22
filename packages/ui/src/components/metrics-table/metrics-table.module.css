@@ -16,6 +16,7 @@
 }
 
 .value {
+  padding-left: var(--space-large);
   text-align: right;
 }
 
