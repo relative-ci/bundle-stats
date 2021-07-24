@@ -43,7 +43,7 @@
     "babel-plugin-require-context-hook": "1.0.0",
     "core-js": "^3.15.2",
     "cross-env": "7.0.3",
-    "css-loader": "5.2.6",
+    "css-loader": "5.2.7",
     "dotenv": "10.0.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.6",
