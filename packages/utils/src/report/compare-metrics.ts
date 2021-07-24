@@ -1,6 +1,6 @@
 import map from 'lodash/map';
 
-import { addRowData } from './add-row-data';
+import { getAddRowMetricData } from './add-row-metric-data';
 import { mergeMetricsByKey } from './merge-metrics-by-key';
 
 export const compareMetrics = (
@@ -9,7 +9,6 @@ export const compareMetrics = (
   metricType: string,
 ) => {
   const data = map(jobs, selectMetrics);
-  const rows = mergeMetricsByKey(data);
 
-  return rows.map((row) => addRowData(row, metricType));
+  return mergeMetricsByKey(data, [getAddRowMetricData(metricType)]);
 };

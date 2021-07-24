@@ -4,7 +4,10 @@ import { getGlobalMetricType, getMetricRunInfo } from '../utils/metrics';
 import { getMetricChanged } from './get-metric-changed';
 import * as types from './types';
 
-export const addRowData = (row: types.ReportRow, metricType?: string) => {
+/**
+ * Add row metric diff data
+ */
+export const getAddRowMetricData = (metricType?: string) => (row: types.ReportRow) => {
   const { key, runs } = row;
 
   // Resolve row metric

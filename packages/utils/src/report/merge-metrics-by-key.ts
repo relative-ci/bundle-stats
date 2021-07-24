@@ -13,7 +13,10 @@ const mergeWithRuns = (runIndex: number, runsCount: number) =>
     return runs;
   };
 
-export const mergeMetricsByKey = (runs: Array<RunMetrics>): Array<types.ReportRow> => {
+export const mergeMetricsByKey = (
+  runs: Array<RunMetrics>,
+  rowTransformers?: Array<(row: types.ReportRow) => types.ReportRow>,
+): Array<types.ReportRow> => {
   const runsCount = runs.length;
 
   const metricsById = runs.reduce(
@@ -21,5 +24,17 @@ export const mergeMetricsByKey = (runs: Array<RunMetrics>): Array<types.ReportRo
     {} as Record<string, Array<types.MetricValue | null>>,
   );
 
-  return Object.entries(metricsById).map(([key, data]) => ({ key, runs: data }));
+  return Object.entries(metricsById).map(([key, value]) => {
+    const row = { key, runs: value };
+
+    if (!rowTransformers) {
+      return row;
+    }
+
+    // Run all row transformations
+    return rowTransformers.reduce(
+      (aggregatedRow, rowTransformer) => rowTransformer(aggregatedRow),
+      row,
+    );
+  });
 };
