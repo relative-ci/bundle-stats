@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { compose, withProps } from 'recompose';
 import { get } from 'lodash';
-import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
+import * as webpack from '@bundle-stats/utils/lib-esm/src/webpack';
 import {
   ASSET_ENTRY_TYPE,
   ASSET_FILE_TYPE,
@@ -21,27 +21,21 @@ import {
   SORT_BY,
 } from './bundle-assets.constants';
 
-const addRowFlags = ({ items }) => {
-  const updatedItems = items.map((item) => {
-    const { runs } = item;
+const addRowAssetFlags = (row) => {
+  const { runs } = row;
 
-    const isEntry = runs.map((run) => run && run.isEntry).includes(true);
-    const isInitial = runs.map((run) => run && run.isInitial).includes(true);
-    const isChunk = runs.map((run) => run && run.isChunk).includes(true);
+  const isEntry = runs.map((run) => run?.isEntry).includes(true);
+  const isInitial = runs.map((run) => run?.isInitial).includes(true);
+  const isChunk = runs.map((run) => run?.isChunk).includes(true);
 
-    const isAsset = !(isEntry || isInitial || isChunk);
-
-    return {
-      ...item,
-      isEntry,
-      isInitial,
-      isChunk,
-      isAsset,
-    };
-  });
+  const isAsset = !(isEntry || isInitial || isChunk);
 
   return {
-    items: updatedItems,
+    ...row,
+    isEntry,
+    isInitial,
+    isChunk,
+    isAsset,
   };
 };
 
@@ -68,11 +62,9 @@ const getIsNotPredictive = (key, runs) =>
     return agg;
   }, false);
 
-const addRowIsNotPredictive = ({ items }) => ({
-  items: items.map((item) => ({
-    ...item,
-    isNotPredictive: getIsNotPredictive(item.key, item.runs),
-  })),
+const addRowIsNotPredictive = (row) => ({
+  ...row,
+  isNotPredictive: getIsNotPredictive(row.key, row.runs),
 });
 
 const getRowFilter = (filters) => (item) => {
@@ -123,7 +115,10 @@ const getCustomSort = (sortId) => (item) => {
 
 export const enhance = compose(
   withProps(({ jobs }) => {
-    const items = useMemo(() => webpack.compareBySection.assets(jobs), [jobs]);
+    const items = useMemo(
+      () => webpack.compareBySection.assets(jobs, [addRowAssetFlags, addRowIsNotPredictive]),
+      [jobs]
+    );
 
     const defaultFilters = {
       [ASSET_FILTERS.CHANGED]: jobs?.length > 1,
@@ -144,10 +139,6 @@ export const enhance = compose(
       allEntriesFilters,
     };
   }),
-
-  // @TODO run both transformations in one pass
-  withProps(addRowFlags),
-  withProps(addRowIsNotPredictive),
 
   withSearch(),
   withFilteredItems(getRowFilter),

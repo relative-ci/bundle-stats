@@ -1,9 +1,8 @@
 import { useMemo } from 'react';
 import { compose, withProps } from 'recompose';
-import { map, get, values, flatten, uniq } from 'lodash';
-import { } from 'lodash/fp';
+import { get, flatten, uniq } from 'lodash';
 import { PACKAGE_FILTERS } from '@bundle-stats/utils';
-import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
+import * as webpack from '@bundle-stats/utils/lib-esm/src/webpack';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilteredItems } from '../../hocs/with-filtered-items';
@@ -53,18 +52,16 @@ const getCustomSort = (sortId) => (item) => {
   return [!item.changed, item.key];
 };
 
-const addDuplicateFlag = (items, duplicateJobs) =>
-  items.map((item) => ({
-    ...item,
-    duplicate: duplicateJobs.includes(item.key),
-  }));
+const getAddRowDuplicateFlag = (duplicateJobs) => (row) => ({
+  ...row,
+  duplicate: duplicateJobs.includes(row.key),
+});
 
 export const enhance = compose(
   withProps(({ jobs }) => {
     const items = useMemo(() => {
       const duplicateJobs = getDuplicatePackages(jobs);
-      const compareResult = webpack.compareBySection.packages(jobs);
-      return addDuplicateFlag(compareResult, duplicateJobs);
+      return webpack.compareBySection.packages(jobs, [getAddRowDuplicateFlag(duplicateJobs)]);
     }, [jobs]);
 
     const defaultFilters = {

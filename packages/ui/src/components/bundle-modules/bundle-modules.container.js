@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { compose, withProps } from 'recompose';
 import { get, map, max, merge, intersection, uniqBy } from 'lodash';
-import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
+import * as webpack from '@bundle-stats/utils/lib-esm/src/webpack';
 import {
   MODULE_CHUNK,
   MODULE_FILTERS,
