@@ -46,7 +46,7 @@ describe('report / addRowData', () => {
       },
     ];
 
-    const actual = rows.map(addRowData);
+    const actual = rows.map((row) => addRowData(row as any));
 
     expect(actual).toMatchSnapshot();
   });

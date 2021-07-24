@@ -1,4 +1,3 @@
-import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 
 import { SOURCE_PATHS } from '../config';
@@ -6,11 +5,16 @@ import { getGlobalMetricType, getMetricRunInfo } from '../utils/metrics';
 import * as webpack from '../webpack';
 import { version } from '../../package.json';
 
-export const createReport = (jobs) => {
-  const insights = get(jobs, '[0].insights');
+interface JobSummary {
+  current: number;
+  baseline: number;
+}
+
+export const createReport = (jobs: Array<any>) => {
+  const insights = jobs[0]?.insights;
 
   const summary = SOURCE_PATHS.reduce((agg, sourceId) => {
-    const sourceSummary = get(jobs, [0, 'summary', sourceId]);
+    const sourceSummary = jobs[0]?.summary?.[sourceId] as JobSummary;
 
     if (!sourceSummary) {
       return agg;
@@ -46,7 +50,7 @@ export const createReport = (jobs) => {
     summary,
 
     // Add insights if available
-    ...!isEmpty(insights) ? { insights } : {},
+    ...(!isEmpty(insights) ? { insights } : {}),
 
     // Add webpack sections comparisons
     ...webpack.compare(jobs),
