@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`report / addRowData should add data 1`] = `
+exports[`report / addRowMetricData should add data 1`] = `
 Array [
   Object {
     "biggerIsBetter": false,
@@ -78,7 +78,7 @@ Array [
 ]
 `;
 
-exports[`report / addRowData should add data with metric type 1`] = `
+exports[`report / addRowMetricData should add data with metric type 1`] = `
 Array [
   Object {
     "biggerIsBetter": false,

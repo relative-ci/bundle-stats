@@ -5,6 +5,7 @@
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
     "removeComments": true,
+    "resolveJsonModule": true,
     "preserveConstEnums": true,
     "strict": true,
     "allowJs": true,

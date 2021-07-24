@@ -14,45 +14,52 @@ import { selectors } from './selectors';
  * Compare stats metrics
  *
  * @param {Object[]} jobs - List of jobs to compare
+ * @param {Array<Function>} [rowTransformers]
  *
  * @return {Object[]} Compared stats metrics
  */
-const compareStats = (jobs) => compareMetrics(jobs, selectors.stats);
+const compareStats = (jobs, rowTransformers) => compareMetrics(
+  jobs, selectors.stats, undefined, rowTransformers,
+);
 
 /**
  * Compare size metrics
  *
  * @param {Object[]} jobs - List of jobs to compare
+ * @param {Array<Function>} [rowTransformers]
  *
  * @return {Object[]} Compared size metrics
  */
-const compareSizes = (jobs) => compareMetrics(jobs, selectors.sizes);
+const compareSizes = (jobs, rowTransformers) => compareMetrics(jobs, selectors.sizes, undefined, rowTransformers);
 
 /**
  * Compare asset metrics
  *
  * @param {Object[]} jobs - List of jobs to compare
+ * @param {Array<Function>} [rowTransformers]
  *
  * @return {Object[]} Compared asset metrics
  */
-const compareAssets = (jobs) => compareMetrics(jobs, selectors.assets, METRIC_TYPE_FILE_SIZE);
+const compareAssets = (jobs, rowTransformers) => compareMetrics(jobs, selectors.assets, METRIC_TYPE_FILE_SIZE, rowTransformers);
 
 /**
  * Compare all modules
  *
  * @param {Object[]} jobs - List of jobs to compare
+ * @param {Array<Function>} [rowTransformers]
  * @return {Object[]} Compared module metrics
  */
-const compareModules = (jobs) => compareMetrics(jobs, selectors.modules, METRIC_TYPE_FILE_SIZE);
+const compareModules = (jobs, rowTransformers) => compareMetrics(jobs, selectors.modules, METRIC_TYPE_FILE_SIZE, rowTransformers);
 
 /**
  * Compare package metrics
  *
  * @param {Object[]} jobs - List of jobs to compare
+ * @param {Array<Function>} [rowTransformers]
  *
  * @return {Object[]} Compared package metrics
  */
-const comparePackages = (jobs) => compareMetrics(jobs, selectors.packages, METRIC_TYPE_FILE_SIZE);
+const comparePackages = (jobs, rowTransformers) => compareMetrics(jobs, selectors.packages, METRIC_TYPE_FILE_SIZE, rowTransformers);
 
 export const compareBySection = {
   [SECTION_WEBPACK_STATS]: compareStats,

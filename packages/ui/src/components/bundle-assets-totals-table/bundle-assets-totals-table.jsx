@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { getBundleAssetsFileTypeComponentLink } from '@bundle-stats/utils';
-import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
+import * as webpack from '@bundle-stats/utils/lib-esm/src/webpack';
 
 import { ASSETS_SIZES_FILE_TYPE_MAP } from '../../constants';
 import { MetricsTable } from '../metrics-table';
