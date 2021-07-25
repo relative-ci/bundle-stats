@@ -5,7 +5,8 @@
     "module": "ES6",
     "declaration": true,
     "declarationDir": "./types",
-    "noEmit": false
+    "noEmit": false,
+    "rootDir": "."
   },
   "exclude": ["**/__tests__/*"]
 }

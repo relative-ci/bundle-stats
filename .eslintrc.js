@@ -35,6 +35,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'prettier/prettier': 'warn',
     'no-unused-vars': ['warn', { varsIgnorePattern: '^[_]{1,}$' }],
+    'implicit-arrow-linebreak': 'warn',
   },
   plugins: ['jest'],
   overrides: [
@@ -48,8 +49,10 @@ module.exports = {
       plugins: ['@typescript-eslint'],
       rules: {
         'import/prefer-default-export': 'off',
+        'implicit-arrow-linebreak': 'warn',
         '@typescript-eslint/comma-dangle': 'warn',
         '@typescript-eslint/no-unused-vars': ['warn', { varsIgnorePattern: '^[_]{1,}$' }],
+        // '@typescript-eslint/implicit-arrow-linebreak': 'warn',
       },
     },
   ],

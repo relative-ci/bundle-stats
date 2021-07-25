@@ -1,7 +1,7 @@
 import { METRIC_TYPE_FILE_SIZE } from '../../config/metrics';
-import { addRowData } from '../add-row-data';
+import { getAddRowMetricData } from '../add-row-metric-data';
 
-describe('report / addRowData', () => {
+describe('report / addRowMetricData', () => {
   test('should add data', () => {
     const rows = [
       {
@@ -46,7 +46,8 @@ describe('report / addRowData', () => {
       },
     ];
 
-    const actual = rows.map(addRowData);
+    const addRowMetricData = getAddRowMetricData();
+    const actual = rows.map(addRowMetricData);
 
     expect(actual).toMatchSnapshot();
   });
@@ -95,7 +96,8 @@ describe('report / addRowData', () => {
       },
     ];
 
-    const actual = rows.map((row) => addRowData(row, METRIC_TYPE_FILE_SIZE));
+    const addRowMetricData = getAddRowMetricData(METRIC_TYPE_FILE_SIZE);
+    const actual = rows.map(addRowMetricData);
 
     expect(actual).toMatchSnapshot();
   });

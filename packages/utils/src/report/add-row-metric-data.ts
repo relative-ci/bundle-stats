@@ -2,20 +2,12 @@ import get from 'lodash/get';
 
 import { getGlobalMetricType, getMetricRunInfo } from '../utils/metrics';
 import { getMetricChanged } from './get-metric-changed';
+import * as types from './types';
 
 /**
- *
- * Add row data
- *
- * @param {Object} row Row data
- * @param {string} row.key Row key (metric name / normalized file name)
- * @param {Object[]} row.runs Row metric runs
- * @param {number} row.runs.value Run metric value
- * @param {string} metricType Metric type
- *
- * @return {Object} Run with data
+ * Add row metric diff data
  */
-export const addRowData = (row, metricType) => {
+export const getAddRowMetricData = (metricType?: string) => (row: types.ReportRow) => {
   const { key, runs } = row;
 
   // Resolve row metric
