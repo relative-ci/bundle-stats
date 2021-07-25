@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0-beta.19](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.18...v3.1.0-beta.19) (2021-07-25)
+
+
+### Features
+
+* **utils:** Webpack compare - pass row transformers ([b5f9728](https://github.com/relative-ci/bundle-stats/commit/b5f9728b4afd11cebc958ef11f70fbcaffe7716e))
+
+
+### Performance Improvements
+
+* **utils:** mergeMetricsByKey - run addRowMetricData in one step ([9203549](https://github.com/relative-ci/bundle-stats/commit/92035497f2082d5e676facf23fb748ecc1134668))
+
+
+
+
+
 # [3.1.0-beta.18](https://github.com/relative-ci/bundle-stats/compare/v3.1.0-beta.17...v3.1.0-beta.18) (2021-07-22)
 
 **Note:** Version bump only for package @bundle-stats/utils
