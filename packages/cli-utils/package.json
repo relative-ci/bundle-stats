@@ -32,7 +32,7 @@
   "dependencies": {
     "@bundle-stats/html-templates": "^3.0.1",
     "@bundle-stats/utils": "^3.0.1",
-    "core-js": "^3.10.2",
+    "core-js": "^3.15.2",
     "find-cache-dir": "^3.1.0",
     "fs-extra": "^10.0.0",
     "lodash": "4.17.21"
