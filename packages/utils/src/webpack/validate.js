@@ -1,4 +1,4 @@
-import I18N from '../i18n';
+import { INVALID } from '../../locales.json';
 import { WebpackSourceStruct } from './struct';
 
 /**
@@ -13,7 +13,7 @@ export const validate = (webpackSource) => {
   } catch (err) {
     const { path, type } = err;
     const key = path[0];
-    return `${I18N.INVALID}\n\nExpected a value of type \`${type}\` for \`${key}\``;
+    return `${INVALID}\n\nExpected a value of type \`${type}\` for \`${key}\``;
   }
 
   return '';
