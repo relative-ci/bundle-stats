@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get, map, max, sum } from 'lodash';
-import * as webpack from '@bundle-stats/utils/lib-esm/src/webpack';
+import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 import { getBundleAssetsFileTypeComponentLink } from '@bundle-stats/utils';
 
 import { ASSETS_SIZES_FILE_TYPE_MAP } from '../../constants';

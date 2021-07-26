@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { compose, withProps } from 'recompose';
 import { get } from 'lodash';
-import * as webpack from '@bundle-stats/utils/lib-esm/src/webpack';
+import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 import {
   ASSET_ENTRY_TYPE,
   ASSET_FILE_TYPE,
