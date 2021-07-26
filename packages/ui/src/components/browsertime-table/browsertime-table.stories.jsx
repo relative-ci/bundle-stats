@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
-import * as browsertime from '@bundle-stats/utils/lib-esm/src/browsertime';
+import * as browsertime from '@bundle-stats/utils/lib-esm/browsertime';
 
 import browsertimeSourceFixtures from '../../../../../fixtures/browsertime.json';
 import { getWrapperDecorator } from '../../stories';

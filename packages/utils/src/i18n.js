@@ -11,5 +11,5 @@ export default {
   COMPONENT_LINK_PACKAGES_DUPLICATE: 'View all duplicate packages',
   COMPONENT_LINK_VIEW_PACKAGE: 'View package',
   COMPONENT_LINK_BUNDLE_ASSETS_BY_FILE_TYPE: 'View all <%= label %> assets',
-  INVALID: 'Invalid webpack stats structure, please make sure webpack stats configuration is correct.'
+  INVALID: 'Invalid webpack stats structure, please make sure webpack stats configuration is correct.',
 };

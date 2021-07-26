@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { compose, withProps } from 'recompose';
 import { get, flatten, uniq } from 'lodash';
 import { PACKAGE_FILTERS } from '@bundle-stats/utils';
-import * as webpack from '@bundle-stats/utils/lib-esm/src/webpack';
+import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilteredItems } from '../../hocs/with-filtered-items';

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as lighthouse from '@bundle-stats/utils/lib-esm/src/lighthouse';
+import * as lighthouse from '@bundle-stats/utils/lib-esm/lighthouse';
 
 import { MetricsTable } from '../metrics-table';
 

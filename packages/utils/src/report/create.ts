@@ -3,6 +3,7 @@ import isEmpty from 'lodash/isEmpty';
 import { SOURCE_PATHS } from '../config';
 import { getGlobalMetricType, getMetricRunInfo } from '../utils/metrics';
 import * as webpack from '../webpack';
+/* @ts-ignore */
 import { version } from '../../package.json';
 
 interface JobSummary {
