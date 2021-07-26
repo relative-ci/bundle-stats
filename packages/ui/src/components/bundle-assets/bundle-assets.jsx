@@ -144,12 +144,7 @@ export const BundleAssets = (props) => {
   const chunks = jobs[0]?.meta?.webpack?.chunks || [];
 
   const renderRowHeader = useMemo(
-    () =>
-      getRenderRowHeader({
-        labels: map(jobs, 'label'),
-        CustomComponentLink,
-        chunks,
-      }),
+    () => getRenderRowHeader({ labels: map(jobs, 'label'), CustomComponentLink, chunks }),
     [jobs, chunks],
   );
 
@@ -245,6 +240,11 @@ BundleAssets.propTypes = {
     PropTypes.shape({
       internalBuildNumber: PropTypes.number,
       label: PropTypes.string,
+      meta: PropTypes.shape({
+        webpack: PropTypes.shape({
+          chunks: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+        }),
+      }),
     }),
   ).isRequired,
   items: PropTypes.arrayOf(
