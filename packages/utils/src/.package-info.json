@@ -1,0 +1,59 @@
+{
+  "name": "@bundle-stats/utils",
+  "version": "3.0.1",
+  "description": "BundleStats utils",
+  "main": "lib/index.js",
+  "module": "lib-esm/index.js",
+  "types": "types/index.d.ts",
+  "engines": {
+    "node": ">= 12.0"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "prebuild": "cp package.json src/.package-info.json",
+    "build": "npm run build-lib && npm run build-esm",
+    "build-lib": "rm -fr ./lib && ../../node_modules/.bin/tsc --rootDir ./src --project tsconfig.lib.json --outDir ./lib",
+    "build-esm": "rm -fr ./lib-esm && rm -fr ./types && ../../node_modules/.bin/tsc --rootDir ./src --project tsconfig.esm.json --outDir ./lib-esm",
+    "lint": "../../node_modules/.bin/eslint . --ext .js,.ts --resolve-plugins-relative-to ../../",
+    "test": "TZ=UTC jest src --maxWorkers=4"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Viorel Cojocaru",
+    "email": "vio@beanon.com",
+    "url": "https://beanon.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/relative-ci/bundle-stats.git"
+  },
+  "bugs": {
+    "url": "https://github.com/relative-ci/bundle-stats/issues"
+  },
+  "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/utils#readme",
+  "dependencies": {
+    "@bundle-stats/plugin-webpack-filter": "3.0.1",
+    "convert-units": "^2.3.4",
+    "query-string": "^7.0.0",
+    "serialize-query-params": "^1.3.3",
+    "superstruct": "^0.8.3"
+  },
+  "devDependencies": {
+    "@types/jest": "26.0.24",
+    "@types/lodash": "4.14.171",
+    "core-js": "3.15.2",
+    "jest": "26.6.3",
+    "jest-cli": "26.6.3",
+    "jest-date-mock": "1.0.8",
+    "lodash": "4.17.21",
+    "regenerator-runtime": "0.13.7",
+    "ts-jest": "26.5.6"
+  },
+  "peerDependencies": {
+    "core-js": "^3.9.1",
+    "lodash": "^4.17.11"
+  }
+}
