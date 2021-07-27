@@ -14,7 +14,6 @@ jobs:
     steps:
       - checkout
       - node/install-packages
-      - run: npm install
       - run: npx lerna bootstrap --hoist
       - run: npm run build
       - run: npm run lint
