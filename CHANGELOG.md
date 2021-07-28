@@ -3,6 +3,57 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/relative-ci/bundle-stats/compare/v3.0.1...v3.1.0) (2021-07-28)
+
+
+### Bug Fixes
+
+* **ui:** Add missing focus styles ([8ea9952](https://github.com/relative-ci/bundle-stats/commit/8ea9952ce2b99d62ed9ae4a71bf932ece551a353))
+* **ui:** BundlePackages - filter by duplicate across the jobs ([0d025dc](https://github.com/relative-ci/bundle-stats/commit/0d025dc596c1326435afeaddb3d23bf6e1f6776a))
+* **ui:** BundlePackages - use package path for module searching ([c447a2d](https://github.com/relative-ci/bundle-stats/commit/c447a2d90cfa413b913e560f0e507ae273fdd948))
+* **ui:** Dropdown - consistent look & feel ([a1862c7](https://github.com/relative-ci/bundle-stats/commit/a1862c7c5f5c4f90dacf9ee42325ac2575fbdec0))
+* **ui:** Filters - run filters group change in one operation ([8de3457](https://github.com/relative-ci/bundle-stats/commit/8de3457ea92b8135abcd1e4cf24455f66ae8bcd1))
+* **ui:** Fix line-height ([6842c66](https://github.com/relative-ci/bundle-stats/commit/6842c66a4b98cedcddec1cf34691d810411327db))
+* **ui:** FlexStack - use margin-right for gap ([4524989](https://github.com/relative-ci/bundle-stats/commit/45249891b7e8b5e0b81dd3b0882439cf7f8a265d))
+* **ui:** Footer - remove unnecessary links ([0e7c857](https://github.com/relative-ci/bundle-stats/commit/0e7c857b01babb9fb302f1800ca30100e4f34dac))
+* **ui:** Import utils dependencies from root ([673ce03](https://github.com/relative-ci/bundle-stats/commit/673ce03a578152632e4a0d68395c669977e1b655))
+* **ui:** JobHeader - fix content spacing ([ffada10](https://github.com/relative-ci/bundle-stats/commit/ffada100d09b594350356a8e1d35d68af72c27af))
+* **ui:** MetricsTable - add back empty message state ([2af2547](https://github.com/relative-ci/bundle-stats/commit/2af254766f5f5811a2c969e204037ccfa559b5ea))
+* **ui:** MetricsTableSearch - do not show text underneath ([6ecb9f1](https://github.com/relative-ci/bundle-stats/commit/6ecb9f1bc9fb088aea1adf3642e1923829725e2f))
+* **ui:** Move variables to the specific file ([a6f94c7](https://github.com/relative-ci/bundle-stats/commit/a6f94c70e38ed4eddb43a92b70902709150cc6f8))
+* **ui:** Popover - close icon size ([5cc567f](https://github.com/relative-ci/bundle-stats/commit/5cc567fcc5aa583ac9534787d091dfd183334586))
+* **ui:** Popover - inherit line-height ([4cba1fd](https://github.com/relative-ci/bundle-stats/commit/4cba1fdb40f5460c4cf485b52fffff0a649694f3))
+* **ui:** Revert style-loader ([c320f5c](https://github.com/relative-ci/bundle-stats/commit/c320f5cd283979f22315be34b7fc6eb12c779949))
+* **ui:** RunLabelSum - remove obsolete ([df68b38](https://github.com/relative-ci/bundle-stats/commit/df68b383189219c23c897ada60c17cd1b87c3bce))
+* **ui:** Skeleton - allow rest props ([5ddb0ea](https://github.com/relative-ci/bundle-stats/commit/5ddb0ea8aed0a053fd8011f4a2425a42ce526dd0))
+* **ui:** Stack - use margin-bottom for spacing ([04eff1c](https://github.com/relative-ci/bundle-stats/commit/04eff1cfa362fa6c5a09c9945c98481400e2957c))
+* **ui:** Table - add outline variation ([cf82d92](https://github.com/relative-ci/bundle-stats/commit/cf82d920a04cddadb1876f316d9f6794815769fc))
+* **ui:** Tabs - use text-light as active/focus/hover ([a371787](https://github.com/relative-ci/bundle-stats/commit/a3717871ddb4ff04f8ab27fbd30c2a44bf3d3f64))
+* **utils:** Assets - replace 5 char hashes ([f0d6bd2](https://github.com/relative-ci/bundle-stats/commit/f0d6bd26c6ab3e54d548bbb2756d76708ea8bce1))
+* **utils:** ModuleName - replace invalid css prefix ([9b7111c](https://github.com/relative-ci/bundle-stats/commit/9b7111cd5e5137a875525d54948c6a7e48795023))
+
+
+### Features
+
+* BundleModules - filter by source type ([e494b23](https://github.com/relative-ci/bundle-stats/commit/e494b2312841bd767321f2677c6502f23478bca5))
+* **ui:** Add Input component ([7c26b86](https://github.com/relative-ci/bundle-stats/commit/7c26b8600b78d3aa515d22a954334926d776baf5))
+* **ui:** Add Skeleton component ([895ede4](https://github.com/relative-ci/bundle-stats/commit/895ede450e4d3060e400fe463c788047bad8ef2c))
+* **utils:** Webpack compare - pass row transformers ([b5f9728](https://github.com/relative-ci/bundle-stats/commit/b5f9728b4afd11cebc958ef11f70fbcaffe7716e))
+
+
+### Performance Improvements
+
+* **utils:** mergeMetricsByKey - run addRowMetricData in one step ([9203549](https://github.com/relative-ci/bundle-stats/commit/92035497f2082d5e676facf23fb748ecc1134668))
+
+
+### Reverts
+
+* Revert "build(utils): tsconfig - fix rootDir" ([7f2f753](https://github.com/relative-ci/bundle-stats/commit/7f2f753dcc8ed3393f54772f69db367b589f3389))
+
+
+
+
+
 ## [3.0.1](https://github.com/relative-ci/bundle-stats/compare/v3.0.0...v3.0.1) (2021-06-06)
 
 

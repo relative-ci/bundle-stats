@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/relative-ci/bundle-stats/compare/v3.0.1...v3.1.0) (2021-07-28)
+
+
+### Bug Fixes
+
+* **utils:** Assets - replace 5 char hashes ([f0d6bd2](https://github.com/relative-ci/bundle-stats/commit/f0d6bd26c6ab3e54d548bbb2756d76708ea8bce1))
+* **utils:** ModuleName - replace invalid css prefix ([9b7111c](https://github.com/relative-ci/bundle-stats/commit/9b7111cd5e5137a875525d54948c6a7e48795023))
+
+
+### Features
+
+* BundleModules - filter by source type ([e494b23](https://github.com/relative-ci/bundle-stats/commit/e494b2312841bd767321f2677c6502f23478bca5))
+* **utils:** Webpack compare - pass row transformers ([b5f9728](https://github.com/relative-ci/bundle-stats/commit/b5f9728b4afd11cebc958ef11f70fbcaffe7716e))
+
+
+### Performance Improvements
+
+* **utils:** mergeMetricsByKey - run addRowMetricData in one step ([9203549](https://github.com/relative-ci/bundle-stats/commit/92035497f2082d5e676facf23fb748ecc1134668))
+
+
+### Reverts
+
+* Revert "build(utils): tsconfig - fix rootDir" ([7f2f753](https://github.com/relative-ci/bundle-stats/commit/7f2f753dcc8ed3393f54772f69db367b589f3389))
+
+
+
+
+
 ## [3.0.1](https://github.com/relative-ci/bundle-stats/compare/v3.0.0...v3.0.1) (2021-06-06)
 
 **Note:** Version bump only for package @bundle-stats/utils
