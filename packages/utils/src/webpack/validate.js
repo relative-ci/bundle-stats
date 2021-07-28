@@ -1,4 +1,4 @@
-import * as I18N from '../i18n';
+import I18N from '../i18n';
 import { WebpackSourceStruct } from './struct';
 
 /**
