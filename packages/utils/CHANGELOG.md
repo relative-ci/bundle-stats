@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.1](https://github.com/relative-ci/bundle-stats/compare/v3.1.0...v3.1.1) (2021-07-28)
+
+
+### Bug Fixes
+
+* **utils:** Import default I18N ([baf56e3](https://github.com/relative-ci/bundle-stats/commit/baf56e3fd8b11ee076a623ee6237622ad8fb60f7))
+
+
+
+
+
 # [3.1.0](https://github.com/relative-ci/bundle-stats/compare/v3.0.1...v3.1.0) (2021-07-28)
 
 
