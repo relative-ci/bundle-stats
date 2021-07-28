@@ -3,15 +3,15 @@ import last from 'lodash/last';
 
 import { PACKAGES_SEPARATOR, PACKAGE_ID_SEPARATOR } from '../../config';
 import { PackageMetric, WebpackMetricsModules, WebpackMetricsPackages } from '../../constants';
+import { MODULE_PATH_PACKAGES } from '../constants';
 
-const PACKAGE_NAMES = /(node_modules|~)\/((!?@(([\w|\-|_|.]*)\/){2})|(([\w|\-|_|.]*)\/))/g;
 const PACKAGE_PATH_REPLACE = /.*(node_modules|~)\/(.*)\/$/;
 
 /**
  * Heuristics to extract package id, name, and path from a module path
  */
 export const getPackageMetaFromModulePath = (modulePath: string) => {
-  const paths = modulePath.match(PACKAGE_NAMES);
+  const paths = modulePath.match(MODULE_PATH_PACKAGES);
 
   if (!paths) {
     return null;

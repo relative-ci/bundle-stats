@@ -23,3 +23,6 @@ export const SUMMARY_METRIC_PATHS = [
   'packageCount',
   'duplicatePackagesCount',
 ];
+
+// Extract npm package names from a module path
+export const MODULE_PATH_PACKAGES = /(node_modules|~)\/((!?@(([\w|\-|_|.]*)\/){2})|(([\w|\-|_|.]*)\/))/g;

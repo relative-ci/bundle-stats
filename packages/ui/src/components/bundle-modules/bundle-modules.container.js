@@ -6,7 +6,9 @@ import {
   MODULE_CHUNK,
   MODULE_FILTERS,
   MODULE_FILE_TYPE,
+  MODULE_SOURCE_TYPE,
   getModuleChunkFilters,
+  getModuleSourceTypeFilters,
   getModuleFileTypeFilters,
   getModuleSourceFileType,
 } from '@bundle-stats/utils';
@@ -15,6 +17,12 @@ import { withCustomSort } from '../../hocs/with-custom-sort';
 import { withFilteredItems } from '../../hocs/with-filtered-items';
 import { withSearch } from '../../hocs/with-search';
 import { SORT_BY_NAME, SORT_BY_SIZE, SORT_BY_DELTA, SORT_BY } from './bundle-modules.constants';
+
+const addRowSourceFlag = (row) => {
+  const { key } = row;
+  const thirdParty = Boolean(key.match(webpack.MODULE_PATH_PACKAGES));
+  return { ...row, thirdParty };
+};
 
 const getCustomSort = (sortBy) => (item) => {
   if (sortBy === SORT_BY_NAME) {
@@ -38,7 +46,17 @@ const getRowFilter = (filters) => (row) => {
     return false;
   }
 
-  // Skip not matching source types
+  // Skip not matching source type
+  if (
+    !(
+      (filters[`${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.FIRST_PARTY}`] && row.thirdParty === false) ||
+      (filters[`${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.THIRD_PARTY}`] && row.thirdParty === true)
+    )
+  ) {
+    return false;
+  }
+
+  // Skip not matching source file types
   const fileType = getModuleSourceFileType(row.key);
   if (!filters[`${MODULE_FILE_TYPE}.${fileType}`]) {
     return false;
@@ -58,12 +76,14 @@ export default compose(
 
     const defaultFilters = {
       changed: jobs?.length > 1,
+      ...getModuleSourceTypeFilters(true),
       ...getModuleChunkFilters(chunkIds, true),
       ...getModuleFileTypeFilters(true),
     };
 
     const allEntriesFilters = {
       changed: false,
+      ...getModuleSourceTypeFilters(true),
       ...getModuleChunkFilters(chunkIds, true),
       ...getModuleFileTypeFilters(true),
     };
@@ -117,7 +137,7 @@ export default compose(
   withProps(({ jobs }) => {
     const { items, totalRowCount } = useMemo(
       () => ({
-        items: webpack.compareBySection.modules(jobs),
+        items: webpack.compareBySection.modules(jobs, [addRowSourceFlag]),
         /*
          * total amount of rows depends on the way the modules are merged before any filtering.
          * to avoid running an expensive operation before filtering, we just show the total amount of

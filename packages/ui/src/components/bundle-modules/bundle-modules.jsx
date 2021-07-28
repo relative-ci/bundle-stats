@@ -5,6 +5,7 @@ import { get, isEmpty, map } from 'lodash';
 import {
   FILE_TYPE_LABELS,
   MODULE_SOURCE_FILE_TYPES,
+  MODULE_SOURCE_TYPE,
   MODULE_CHUNK,
   MODULE_FILTERS,
   MODULE_FILE_TYPE,
@@ -118,6 +119,17 @@ export const BundleModules = ({
       label: 'Changed',
       defaultValue: filters.changed,
       disabled: jobs.length <= 1,
+    },
+    [MODULE_SOURCE_TYPE]: {
+      label: 'Source',
+      [MODULE_FILTERS.FIRST_PARTY]: {
+        label: 'First party',
+        defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.FIRST_PARTY}`, true),
+      },
+      [MODULE_FILTERS.THIRD_PARTY]: {
+        label: 'Third party',
+        defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.THIRD_PARTY}`, true),
+      },
     },
 
     // When chunks data available, list available chunks as filters

@@ -16,6 +16,7 @@ import {
   MODULE_CHUNK,
   MODULE_FILE_TYPE,
   MODULE_FILTERS,
+  MODULE_SOURCE_TYPE,
   PACKAGE_FILTERS,
   SECTIONS,
 } from '../config/component-links';
@@ -38,6 +39,11 @@ export const getAssetEntryTypeFilters = (value = true) =>
     }),
     {},
   );
+
+export const getModuleSourceTypeFilters = (value = true) => ({
+  [`${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.FIRST_PARTY}`]: value,
+  [`${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.THIRD_PARTY}`]: value,
+});
 
 export const getModuleChunkFilters = (chunkIds, value) => chunkIds.reduce(
   (agg, chunkId) => ({
