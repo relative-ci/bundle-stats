@@ -1,5 +1,5 @@
-import I18N from '../i18n';
-import { WebpackSourceStruct } from './struct';
+import * as I18N from './i18n';
+import { WebpackSourceStruct } from './schemas';
 
 /**
  * Validate webpack source
@@ -7,7 +7,7 @@ import { WebpackSourceStruct } from './struct';
  * @param {Object} [webpackSource]
  * @return {String} Message, if invalid, empty string if valid
  */
-export const validate = (webpackSource) => {
+export default (webpackSource?: any): string => {
   try {
     WebpackSourceStruct(webpackSource);
   } catch (err) {
