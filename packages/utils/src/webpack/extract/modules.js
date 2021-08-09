@@ -16,17 +16,21 @@ export const extractModules = (webpackStats = {}) => {
   // Flatten concatenated modules
   const allModules = modulesSource.reduce((agg, moduleEntry) => {
     if (!moduleEntry.modules) {
-      return [...agg, moduleEntry];
+      agg.push(moduleEntry);
+
+      return agg;
     }
 
-    return [
-      ...agg,
-      ...moduleEntry.modules.map((concatenatedModule) => ({
+    // eslint-disable-next-line no-param-reassign
+    agg = agg.concat(
+      moduleEntry.modules.map((concatenatedModule) => ({
         ...concatenatedModule,
         // Add parent chunks
         chunks: moduleEntry.chunks,
       })),
-    ];
+    );
+
+    return agg;
   }, []);
 
   // Extracted modules
@@ -39,14 +43,14 @@ export const extractModules = (webpackStats = {}) => {
       return agg;
     }
 
-    return {
-      ...agg,
-      [normalizedName]: {
-        name,
-        value: size,
-        chunkIds: chunks.map(normalizeChunkId),
-      },
+    // eslint-disable-next-line no-param-reassign
+    agg[normalizedName] = {
+      name,
+      value: size,
+      chunkIds: chunks.map(normalizeChunkId),
     };
+
+    return agg;
   }, {});
 
   return {
