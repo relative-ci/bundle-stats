@@ -1,16 +1,26 @@
-import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 
+import { ModuleMetric, WebpackMetricsModules } from '../../constants';
 import { getModuleName, normalizeChunkId } from '../utils';
+
+interface WebpackModule {
+  name: string;
+  size: number;
+  chunks: Array<string | number>;
+}
+
+interface WebpackModuleWithConcatenatedModules extends WebpackModule {
+  modules?: Array<Pick<WebpackModule, 'name' | 'size'>>;
+}
 
 /*
  * Extract webpack modules array to an object with metrics
  */
-export const extractModules = (webpackStats = {}) => {
-  const modulesSource = get(webpackStats, 'modules', []);
+export const extractModules = (webpackStats?: any): WebpackMetricsModules => {
+  const modulesSource: Array<WebpackModuleWithConcatenatedModules> = webpackStats?.modules || [];
 
   if (!modulesSource) {
-    return { modules: {} };
+    return { metrics: { modules: {} } };
   }
 
   // Flatten concatenated modules
@@ -31,10 +41,10 @@ export const extractModules = (webpackStats = {}) => {
     );
 
     return agg;
-  }, []);
+  }, [] as Array<WebpackModule>);
 
-  // Extracted modules
-  const modulesByChunk = allModules.reduce((agg, moduleEntry) => {
+  // Normalize module entries
+  const modules = allModules.reduce((agg, moduleEntry) => {
     const { name, size, chunks } = moduleEntry;
     const normalizedName = getModuleName(name);
 
@@ -51,11 +61,7 @@ export const extractModules = (webpackStats = {}) => {
     };
 
     return agg;
-  }, {});
+  }, {} as Record<string, ModuleMetric>);
 
-  return {
-    metrics: {
-      modules: modulesByChunk,
-    },
-  };
+  return { metrics: { modules } };
 };
