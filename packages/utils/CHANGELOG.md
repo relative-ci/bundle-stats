@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.2-alpha.3](https://github.com/relative-ci/bundle-stats/compare/v3.1.2-alpha.2...v3.1.2-alpha.3) (2021-08-10)
+
+
+### Bug Fixes
+
+* **utils:** Component links - show only changed entries for chunk modules ([be3a79b](https://github.com/relative-ci/bundle-stats/commit/be3a79b46028822f45bcc7487148e56fbc1f1777))
+
+
+### Performance Improvements
+
+* **utils:** Webpack extract - use assignments instead of deconstructions ([40fbd38](https://github.com/relative-ci/bundle-stats/commit/40fbd38710cff334a6e58dc026ff6d84e98841c3))
+
+
+
+
+
 ## [3.1.2-alpha.2](https://github.com/relative-ci/bundle-stats/compare/v3.1.2-alpha.1...v3.1.2-alpha.2) (2021-07-31)
 
 **Note:** Version bump only for package @bundle-stats/utils
