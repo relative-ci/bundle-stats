@@ -168,6 +168,7 @@ export const getBundleModulesByChunk = (chunkIds, chunkId, fileType = '') => ({
   params: {
     [COMPONENT.BUNDLE_MODULES]: {
       filters: {
+        [MODULE_FILTERS.CHANGED]: true,
         ...getModuleChunkFilters(chunkIds, false),
         [`${MODULE_CHUNK}.${chunkId}`]: true,
         ...(fileType && {
