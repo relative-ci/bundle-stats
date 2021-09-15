@@ -38,9 +38,9 @@ export const Tooltip = (props) => {
         {children}
       </UITooltipReference>
       {title && (
-        <UITooltip {...tooltipProps}>
+        <UITooltip {...tooltipProps} className={css.tooltip}>
           <UITooltipArrow {...tooltipProps} className={css.arrow} />
-          <div className={css.tooltip}>{title}</div>
+          {title}
         </UITooltip>
       )}
     </>

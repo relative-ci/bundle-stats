@@ -110,10 +110,11 @@ exports[`Storyshots UI/Tooltip default 1`] = `
           unstable_popoverRef={
             Object {
               "current": <div
+                class="tooltip"
                 hidden=""
                 id="id-test"
                 role="tooltip"
-                style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
+                style="display: none; position: fixed; left: 0px; top: 0px; pointer-events: none;"
               >
                 <div
                   class="arrow"
@@ -133,19 +134,15 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                     />
                   </svg>
                 </div>
-                <div
-                  class="tooltip"
-                >
-                  View job #100
-                </div>
+                View job #100
               </div>,
             }
           }
           unstable_popoverStyles={
             Object {
-              "left": "100%",
+              "left": "0",
               "position": "fixed",
-              "top": "100%",
+              "top": "0",
             }
           }
           unstable_referenceRef={
@@ -180,6 +177,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
           animated={false}
           animating={false}
           baseId="id-test"
+          className="tooltip"
           hide={[Function]}
           place={[Function]}
           placement="top"
@@ -226,10 +224,11 @@ exports[`Storyshots UI/Tooltip default 1`] = `
           unstable_popoverRef={
             Object {
               "current": <div
+                class="tooltip"
                 hidden=""
                 id="id-test"
                 role="tooltip"
-                style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
+                style="display: none; position: fixed; left: 0px; top: 0px; pointer-events: none;"
               >
                 <div
                   class="arrow"
@@ -249,19 +248,15 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                     />
                   </svg>
                 </div>
-                <div
-                  class="tooltip"
-                >
-                  View job #100
-                </div>
+                View job #100
               </div>,
             }
           }
           unstable_popoverStyles={
             Object {
-              "left": "100%",
+              "left": "0",
               "position": "fixed",
-              "top": "100%",
+              "top": "0",
             }
           }
           unstable_referenceRef={
@@ -287,10 +282,11 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                   class="__reakit-portal"
                 >
                   <div
+                    class="tooltip"
                     hidden=""
                     id="id-test"
                     role="tooltip"
-                    style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
+                    style="display: none; position: fixed; left: 0px; top: 0px; pointer-events: none;"
                   >
                     <div
                       class="arrow"
@@ -310,16 +306,13 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                         />
                       </svg>
                     </div>
-                    <div
-                      class="tooltip"
-                    >
-                      View job #100
-                    </div>
+                    View job #100
                   </div>
                 </div>
               }
             >
               <div
+                className="tooltip"
                 hidden={true}
                 id="id-test"
                 onAnimationEnd={[Function]}
@@ -328,10 +321,10 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                 style={
                   Object {
                     "display": "none",
-                    "left": "100%",
+                    "left": "0",
                     "pointerEvents": "none",
                     "position": "fixed",
-                    "top": "100%",
+                    "top": "0",
                   }
                 }
               >
@@ -386,10 +379,11 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                   unstable_popoverRef={
                     Object {
                       "current": <div
+                        class="tooltip"
                         hidden=""
                         id="id-test"
                         role="tooltip"
-                        style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
+                        style="display: none; position: fixed; left: 0px; top: 0px; pointer-events: none;"
                       >
                         <div
                           class="arrow"
@@ -409,19 +403,15 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                             />
                           </svg>
                         </div>
-                        <div
-                          class="tooltip"
-                        >
-                          View job #100
-                        </div>
+                        View job #100
                       </div>,
                     }
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "100%",
+                      "left": "0",
                       "position": "fixed",
-                      "top": "100%",
+                      "top": "0",
                     }
                   }
                   unstable_referenceRef={
@@ -471,11 +461,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                     </svg>
                   </div>
                 </ForwardRef(TooltipArrow)>
-                <div
-                  className="tooltip"
-                >
-                  View job #100
-                </div>
+                View job #100
               </div>
             </Portal>
           </Portal>
