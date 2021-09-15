@@ -17,6 +17,7 @@ export const Tooltip = (props) => {
     children,
     as: Component,
     containerRef: ref,
+    darkMode,
     ...restProps
   } = props;
 
@@ -38,7 +39,7 @@ export const Tooltip = (props) => {
         {children}
       </UITooltipReference>
       {title && (
-        <UITooltip {...tooltipProps} className={css.tooltip}>
+        <UITooltip {...tooltipProps} className={cx(css.tooltip, darkMode && css.tooltipDarkMode)}>
           <UITooltipArrow {...tooltipProps} className={css.arrow} />
           {title}
         </UITooltip>
@@ -52,6 +53,7 @@ Tooltip.defaultProps = {
   title: '',
   as: 'span',
   containerRef: null,
+  darkMode: true,
 };
 
 Tooltip.propTypes = {
@@ -62,4 +64,5 @@ Tooltip.propTypes = {
   containerRef: PropTypes.shape({
     current: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   }),
+  darkMode: PropTypes.bool,
 };

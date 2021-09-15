@@ -12,3 +12,9 @@ stories.add('default', () => (
     Job #100
   </Tooltip>
 ));
+
+stories.add('darkMode:false', () => (
+  <Tooltip title="View job #100" darkMode={false}>
+    Job #100
+  </Tooltip>
+));

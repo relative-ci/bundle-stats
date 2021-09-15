@@ -12,8 +12,8 @@
 
 .tooltip {
   padding: var(--space-xxxsmall) var(--space-xxsmall);
-  background: var(--color-text);
-  color: var(--color-light);
+  background: var(--color-light);
+  color: var(--color-text);
   filter: drop-shadow(0 0 var(--space-xxxsmall) var(--color-shadow));
   font-size: var(--size-xsmall);
   line-height: var(--space-small);
@@ -21,5 +21,14 @@
 
 .arrow svg {
   display: block;
+  fill: var(--color-light);
+}
+
+.tooltipDarkMode {
+  background: var(--color-text);
+  color: var(--color-light);
+}
+
+.tooltipDarkMode .arrow svg {
   fill: var(--color-text);
 }
