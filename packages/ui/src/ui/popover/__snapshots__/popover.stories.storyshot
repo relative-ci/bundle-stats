@@ -133,7 +133,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                 hidden=""
                 id="id-test"
                 role="dialog"
-                style="display: none; position: fixed; left: 0px; top: 0px;"
+                style="display: none; position: fixed; left: 100%; top: 100%;"
                 tabindex="0"
               >
                 <div
@@ -179,9 +179,9 @@ exports[`Storyshots UI/Popover default 1`] = `
           }
           unstable_popoverStyles={
             Object {
-              "left": "0",
+              "left": "100%",
               "position": "fixed",
-              "top": "0",
+              "top": "100%",
             }
           }
           unstable_referenceRef={
@@ -302,7 +302,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                 hidden=""
                 id="id-test"
                 role="dialog"
-                style="display: none; position: fixed; left: 0px; top: 0px;"
+                style="display: none; position: fixed; left: 100%; top: 100%;"
                 tabindex="0"
               >
                 <div
@@ -348,9 +348,9 @@ exports[`Storyshots UI/Popover default 1`] = `
           }
           unstable_popoverStyles={
             Object {
-              "left": "0",
+              "left": "100%",
               "position": "fixed",
-              "top": "0",
+              "top": "100%",
             }
           }
           unstable_referenceRef={
@@ -388,7 +388,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                     hidden=""
                     id="id-test"
                     role="dialog"
-                    style="display: none; position: fixed; left: 0px; top: 0px;"
+                    style="display: none; position: fixed; left: 100%; top: 100%;"
                     tabindex="0"
                   >
                     <div
@@ -447,9 +447,9 @@ exports[`Storyshots UI/Popover default 1`] = `
                 style={
                   Object {
                     "display": "none",
-                    "left": "0",
+                    "left": "100%",
                     "position": "fixed",
-                    "top": "0",
+                    "top": "100%",
                   }
                 }
                 tabIndex={0}
@@ -527,7 +527,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                         hidden=""
                         id="id-test"
                         role="dialog"
-                        style="display: none; position: fixed; left: 0px; top: 0px;"
+                        style="display: none; position: fixed; left: 100%; top: 100%;"
                         tabindex="0"
                       >
                         <div
@@ -573,9 +573,9 @@ exports[`Storyshots UI/Popover default 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -823,7 +823,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                 hidden=""
                 id="id-test"
                 role="dialog"
-                style="display: none; position: fixed; left: 0px; top: 0px;"
+                style="display: none; position: fixed; left: 100%; top: 100%;"
                 tabindex="0"
               >
                 <div
@@ -869,9 +869,9 @@ exports[`Storyshots UI/Popover with icon 1`] = `
           }
           unstable_popoverStyles={
             Object {
-              "left": "0",
+              "left": "100%",
               "position": "fixed",
-              "top": "0",
+              "top": "100%",
             }
           }
           unstable_referenceRef={
@@ -1041,7 +1041,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                 hidden=""
                 id="id-test"
                 role="dialog"
-                style="display: none; position: fixed; left: 0px; top: 0px;"
+                style="display: none; position: fixed; left: 100%; top: 100%;"
                 tabindex="0"
               >
                 <div
@@ -1087,9 +1087,9 @@ exports[`Storyshots UI/Popover with icon 1`] = `
           }
           unstable_popoverStyles={
             Object {
-              "left": "0",
+              "left": "100%",
               "position": "fixed",
-              "top": "0",
+              "top": "100%",
             }
           }
           unstable_referenceRef={
@@ -1139,7 +1139,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                     hidden=""
                     id="id-test"
                     role="dialog"
-                    style="display: none; position: fixed; left: 0px; top: 0px;"
+                    style="display: none; position: fixed; left: 100%; top: 100%;"
                     tabindex="0"
                   >
                     <div
@@ -1198,9 +1198,9 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                 style={
                   Object {
                     "display": "none",
-                    "left": "0",
+                    "left": "100%",
                     "position": "fixed",
-                    "top": "0",
+                    "top": "100%",
                   }
                 }
                 tabIndex={0}
@@ -1290,7 +1290,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                         hidden=""
                         id="id-test"
                         role="dialog"
-                        style="display: none; position: fixed; left: 0px; top: 0px;"
+                        style="display: none; position: fixed; left: 100%; top: 100%;"
                         tabindex="0"
                       >
                         <div
@@ -1336,9 +1336,9 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={

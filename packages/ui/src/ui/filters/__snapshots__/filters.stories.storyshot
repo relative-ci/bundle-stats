@@ -492,7 +492,7 @@ exports[`Storyshots UI/Filters default 1`] = `
                                 hidden=""
                                 id="id-test"
                                 role="menu"
-                                style="display: none; position: fixed; left: 0px; top: 0px;"
+                                style="display: none; position: fixed; left: 100%; top: 100%;"
                                 tabindex="-1"
                               >
                                 <div
@@ -653,9 +653,9 @@ exports[`Storyshots UI/Filters default 1`] = `
                           }
                           unstable_popoverStyles={
                             Object {
-                              "left": "0",
+                              "left": "100%",
                               "position": "fixed",
-                              "top": "0",
+                              "top": "100%",
                             }
                           }
                           unstable_referenceRef={
@@ -986,7 +986,7 @@ exports[`Storyshots UI/Filters default 1`] = `
                                 hidden=""
                                 id="id-test"
                                 role="menu"
-                                style="display: none; position: fixed; left: 0px; top: 0px;"
+                                style="display: none; position: fixed; left: 100%; top: 100%;"
                                 tabindex="-1"
                               >
                                 <div
@@ -1147,9 +1147,9 @@ exports[`Storyshots UI/Filters default 1`] = `
                           }
                           unstable_popoverStyles={
                             Object {
-                              "left": "0",
+                              "left": "100%",
                               "position": "fixed",
-                              "top": "0",
+                              "top": "100%",
                             }
                           }
                           unstable_referenceRef={
@@ -1201,7 +1201,7 @@ exports[`Storyshots UI/Filters default 1`] = `
                                     hidden=""
                                     id="id-test"
                                     role="menu"
-                                    style="display: none; position: fixed; left: 0px; top: 0px;"
+                                    style="display: none; position: fixed; left: 100%; top: 100%;"
                                     tabindex="-1"
                                   >
                                     <div
@@ -1382,9 +1382,9 @@ exports[`Storyshots UI/Filters default 1`] = `
                                 style={
                                   Object {
                                     "display": "none",
-                                    "left": "0",
+                                    "left": "100%",
                                     "position": "fixed",
-                                    "top": "0",
+                                    "top": "100%",
                                   }
                                 }
                                 tabIndex={-1}
@@ -1650,7 +1650,7 @@ exports[`Storyshots UI/Filters default 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -1811,9 +1811,9 @@ exports[`Storyshots UI/Filters default 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -2174,7 +2174,7 @@ exports[`Storyshots UI/Filters default 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -2335,9 +2335,9 @@ exports[`Storyshots UI/Filters default 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -2698,7 +2698,7 @@ exports[`Storyshots UI/Filters default 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -2859,9 +2859,9 @@ exports[`Storyshots UI/Filters default 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -3222,7 +3222,7 @@ exports[`Storyshots UI/Filters default 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -3383,9 +3383,9 @@ exports[`Storyshots UI/Filters default 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -4030,7 +4030,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                               hidden=""
                               id="id-test"
                               role="menu"
-                              style="display: none; position: fixed; left: 0px; top: 0px;"
+                              style="display: none; position: fixed; left: 100%; top: 100%;"
                               tabindex="-1"
                             >
                               <div
@@ -4157,9 +4157,9 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                         }
                         unstable_popoverStyles={
                           Object {
-                            "left": "0",
+                            "left": "100%",
                             "position": "fixed",
-                            "top": "0",
+                            "top": "100%",
                           }
                         }
                         unstable_referenceRef={
@@ -4449,7 +4449,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                               hidden=""
                               id="id-test"
                               role="menu"
-                              style="display: none; position: fixed; left: 0px; top: 0px;"
+                              style="display: none; position: fixed; left: 100%; top: 100%;"
                               tabindex="-1"
                             >
                               <div
@@ -4576,9 +4576,9 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                         }
                         unstable_popoverStyles={
                           Object {
-                            "left": "0",
+                            "left": "100%",
                             "position": "fixed",
-                            "top": "0",
+                            "top": "100%",
                           }
                         }
                         unstable_referenceRef={
@@ -4630,7 +4630,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                                   hidden=""
                                   id="id-test"
                                   role="menu"
-                                  style="display: none; position: fixed; left: 0px; top: 0px;"
+                                  style="display: none; position: fixed; left: 100%; top: 100%;"
                                   tabindex="-1"
                                 >
                                   <div
@@ -4777,9 +4777,9 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                               style={
                                 Object {
                                   "display": "none",
-                                  "left": "0",
+                                  "left": "100%",
                                   "position": "fixed",
-                                  "top": "0",
+                                  "top": "100%",
                                 }
                               }
                               tabIndex={-1}
@@ -5004,7 +5004,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                                         hidden=""
                                         id="id-test"
                                         role="menu"
-                                        style="display: none; position: fixed; left: 0px; top: 0px;"
+                                        style="display: none; position: fixed; left: 100%; top: 100%;"
                                         tabindex="-1"
                                       >
                                         <div
@@ -5131,9 +5131,9 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                                   }
                                   unstable_popoverStyles={
                                     Object {
-                                      "left": "0",
+                                      "left": "100%",
                                       "position": "fixed",
-                                      "top": "0",
+                                      "top": "100%",
                                     }
                                   }
                                   unstable_referenceRef={
@@ -5453,7 +5453,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                                         hidden=""
                                         id="id-test"
                                         role="menu"
-                                        style="display: none; position: fixed; left: 0px; top: 0px;"
+                                        style="display: none; position: fixed; left: 100%; top: 100%;"
                                         tabindex="-1"
                                       >
                                         <div
@@ -5580,9 +5580,9 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                                   }
                                   unstable_popoverStyles={
                                     Object {
-                                      "left": "0",
+                                      "left": "100%",
                                       "position": "fixed",
-                                      "top": "0",
+                                      "top": "100%",
                                     }
                                   }
                                   unstable_referenceRef={
@@ -5902,7 +5902,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                                         hidden=""
                                         id="id-test"
                                         role="menu"
-                                        style="display: none; position: fixed; left: 0px; top: 0px;"
+                                        style="display: none; position: fixed; left: 100%; top: 100%;"
                                         tabindex="-1"
                                       >
                                         <div
@@ -6029,9 +6029,9 @@ exports[`Storyshots UI/Filters disable options 1`] = `
                                   }
                                   unstable_popoverStyles={
                                     Object {
-                                      "left": "0",
+                                      "left": "100%",
                                       "position": "fixed",
-                                      "top": "0",
+                                      "top": "100%",
                                     }
                                   }
                                   unstable_referenceRef={
@@ -7601,7 +7601,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                 hidden=""
                                 id="id-test"
                                 role="menu"
-                                style="display: none; position: fixed; left: 0px; top: 0px;"
+                                style="display: none; position: fixed; left: 100%; top: 100%;"
                                 tabindex="-1"
                               >
                                 <div
@@ -8352,9 +8352,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                           }
                           unstable_popoverStyles={
                             Object {
-                              "left": "0",
+                              "left": "100%",
                               "position": "fixed",
-                              "top": "0",
+                              "top": "100%",
                             }
                           }
                           unstable_referenceRef={
@@ -9401,7 +9401,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                 hidden=""
                                 id="id-test"
                                 role="menu"
-                                style="display: none; position: fixed; left: 0px; top: 0px;"
+                                style="display: none; position: fixed; left: 100%; top: 100%;"
                                 tabindex="-1"
                               >
                                 <div
@@ -10152,9 +10152,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                           }
                           unstable_popoverStyles={
                             Object {
-                              "left": "0",
+                              "left": "100%",
                               "position": "fixed",
-                              "top": "0",
+                              "top": "100%",
                             }
                           }
                           unstable_referenceRef={
@@ -10206,7 +10206,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     hidden=""
                                     id="id-test"
                                     role="menu"
-                                    style="display: none; position: fixed; left: 0px; top: 0px;"
+                                    style="display: none; position: fixed; left: 100%; top: 100%;"
                                     tabindex="-1"
                                   >
                                     <div
@@ -10977,9 +10977,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                 style={
                                   Object {
                                     "display": "none",
-                                    "left": "0",
+                                    "left": "100%",
                                     "position": "fixed",
-                                    "top": "0",
+                                    "top": "100%",
                                   }
                                 }
                                 tabIndex={-1}
@@ -11961,7 +11961,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -12712,9 +12712,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -13789,7 +13789,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -14540,9 +14540,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -15617,7 +15617,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -16368,9 +16368,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -17445,7 +17445,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -18196,9 +18196,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -19273,7 +19273,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -20024,9 +20024,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -21101,7 +21101,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -21852,9 +21852,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -22929,7 +22929,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -23680,9 +23680,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -24757,7 +24757,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -25508,9 +25508,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -26585,7 +26585,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -27336,9 +27336,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -28413,7 +28413,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -29164,9 +29164,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -30241,7 +30241,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -30992,9 +30992,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -32069,7 +32069,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -32820,9 +32820,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -33897,7 +33897,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -34648,9 +34648,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -35725,7 +35725,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -36476,9 +36476,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -37553,7 +37553,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -38304,9 +38304,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -39381,7 +39381,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -40132,9 +40132,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -41209,7 +41209,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -41960,9 +41960,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -43037,7 +43037,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -43788,9 +43788,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -44865,7 +44865,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -45616,9 +45616,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -46693,7 +46693,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -47444,9 +47444,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -48521,7 +48521,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -49272,9 +49272,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={
@@ -50349,7 +50349,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                           hidden=""
                                           id="id-test"
                                           role="menu"
-                                          style="display: none; position: fixed; left: 0px; top: 0px;"
+                                          style="display: none; position: fixed; left: 100%; top: 100%;"
                                           tabindex="-1"
                                         >
                                           <div
@@ -51100,9 +51100,9 @@ exports[`Storyshots UI/Filters overflow 1`] = `
                                     }
                                     unstable_popoverStyles={
                                       Object {
-                                        "left": "0",
+                                        "left": "100%",
                                         "position": "fixed",
-                                        "top": "0",
+                                        "top": "100%",
                                       }
                                     }
                                     unstable_referenceRef={

@@ -99,7 +99,7 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -141,9 +141,9 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -206,7 +206,7 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -248,9 +248,9 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -313,7 +313,7 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -355,9 +355,9 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -420,7 +420,7 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -462,9 +462,9 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -527,7 +527,7 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -569,9 +569,9 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -719,7 +719,7 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -761,9 +761,9 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -826,7 +826,7 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -868,9 +868,9 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -933,7 +933,7 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -975,9 +975,9 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -1040,7 +1040,7 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -1082,9 +1082,9 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -1147,7 +1147,7 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -1189,9 +1189,9 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -1354,7 +1354,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -1396,9 +1396,9 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -1461,7 +1461,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -1503,9 +1503,9 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -1568,7 +1568,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -1610,9 +1610,9 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -1675,7 +1675,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -1717,9 +1717,9 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -1782,7 +1782,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -1824,9 +1824,9 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -2008,7 +2008,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -2050,9 +2050,9 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -2123,7 +2123,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -2165,9 +2165,9 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -2238,7 +2238,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -2280,9 +2280,9 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -2353,7 +2353,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -2395,9 +2395,9 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -2468,7 +2468,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -2510,9 +2510,9 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -2664,7 +2664,7 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -2706,9 +2706,9 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -2771,7 +2771,7 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -2813,9 +2813,9 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -2878,7 +2878,7 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -2920,9 +2920,9 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -2985,7 +2985,7 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -3027,9 +3027,9 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
@@ -3092,7 +3092,7 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                 as="span"
                 className="itemContent"
                 containerRef={null}
-                darkMode={true}
+                darkMode={false}
                 title={null}
               >
                 <ForwardRef(TooltipReference)
@@ -3134,9 +3134,9 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                   }
                   unstable_popoverStyles={
                     Object {
-                      "left": "0",
+                      "left": "100%",
                       "position": "fixed",
-                      "top": "0",
+                      "top": "100%",
                     }
                   }
                   unstable_referenceRef={
