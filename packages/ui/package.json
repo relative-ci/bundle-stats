@@ -41,7 +41,7 @@
     "@babel/preset-env": "7.15.6",
     "@babel/preset-react": "7.14.5",
     "@simplyianm/babel-plugin-inline-react-svg": "1.2.0",
-    "@storybook/addon-knobs": "6.2.9",
+    "@storybook/addon-knobs": "6.3.1",
     "@storybook/addon-storyshots": "6.2.9",
     "@storybook/addons": "6.2.9",
     "@storybook/react": "6.2.9",
