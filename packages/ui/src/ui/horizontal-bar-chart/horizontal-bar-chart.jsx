@@ -47,6 +47,7 @@ class HorizontalBarChartItem extends React.Component {
         <Tooltip
           className={css.itemContent}
           title={tooltipContent}
+          darkMode={false}
         >
           <span className={css.itemLabel} ref={this.textRef}>
             {label}

@@ -11,14 +11,24 @@
 }
 
 .tooltip {
-  padding: var(--space-xxsmall);
-  box-shadow: 0 0 var(--space-xxsmall) var(--color-shadow);
-
-  background: var(--color-background);
-  font-size: var(--size-small);
+  padding: var(--space-xxxsmall) var(--space-xxsmall);
+  background: var(--color-light);
+  color: var(--color-text);
+  filter: drop-shadow(0 0 var(--space-xxxsmall) var(--color-shadow));
+  font-size: var(--size-xsmall);
+  line-height: var(--space-small);
 }
 
 .arrow svg {
   display: block;
-  fill: var(--color-background);
+  fill: var(--color-light);
+}
+
+.tooltipDarkMode {
+  background: var(--color-text);
+  color: var(--color-light);
+}
+
+.tooltipDarkMode .arrow svg {
+  fill: var(--color-text);
 }
