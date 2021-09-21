@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.4-alpha.0](https://github.com/relative-ci/bundle-stats/compare/v3.1.3...v3.1.4-alpha.0) (2021-09-21)
+
+
+### Bug Fixes
+
+* **ui:** BarChart - use light Tooltip ([64aa6fb](https://github.com/relative-ci/bundle-stats/commit/64aa6fb6ec00593ce43a6b8e55f26de897aef6ea))
+* **ui:** BundlePackages - show package path ([69dcb45](https://github.com/relative-ci/bundle-stats/commit/69dcb450335cce214b769862792c5a403d45dd66))
+* **ui:** MetricsTable - increase left spacing ([5b021aa](https://github.com/relative-ci/bundle-stats/commit/5b021aa3c6ae331a4126587e299dbac9c5df7961))
+* **ui:** Tabs - use def focus/active ([3bfdfff](https://github.com/relative-ci/bundle-stats/commit/3bfdfff35c9e279c5e139fdb2ed17373d1848bfc))
+* **ui:** Tooltip - add darkMode variation ([b60f619](https://github.com/relative-ci/bundle-stats/commit/b60f61966f1022ab6d0aa4a0e6155ba68e47286d))
+* **ui:** Tooltip - update styles ([438d16a](https://github.com/relative-ci/bundle-stats/commit/438d16a813495808ed026e958217e95de2b65fd9))
+* **ui:** Tooltip/Popover - replace shadow with filter ([48af4e2](https://github.com/relative-ci/bundle-stats/commit/48af4e278aa09eef9aeee3e4bf0ebc8a5b4ad43e))
+
+
+
+
+
 ## [3.1.2](https://github.com/relative-ci/bundle-stats/compare/v3.1.1...v3.1.2) (2021-08-10)
 
 
