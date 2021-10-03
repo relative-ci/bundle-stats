@@ -24,5 +24,12 @@ export const SUMMARY_METRIC_PATHS = [
   'duplicatePackagesCount',
 ];
 
-// Extract npm package names from a module path
-export const MODULE_PATH_PACKAGES = /(node_modules|~)\/((!?@(([\w|\-|_|.]*)\/){2})|(([\w|\-|_|.]*)\/))/g;
+// Extract package paths from module path
+// https://regex101.com/r/22Leep/5
+export const MODULE_PATH_PACKAGES =
+  /((?:node_modules|~)(?:\/\.pnpm)?\/)((?:@[\w|\-|_|.]*[/|+])?(?:[\w|\-|_|.]+\+)*(?:[\w|\-|_|.]*(?:@[\w|\-|_|.]*)?)(?:_(?:@[\w|\-|_|.]*[/|+])?(?:[\w|\-|_|.]*(?:@[\w|\-|_|.]*)?))*\/)/g
+
+// Extract package name from package path
+// https://regex101.com/r/tTlU0W/5
+export const PACKAGE_PATH_NAME =
+  /(?:(?:node_modules|~)(?:\/\.pnpm)?)\/(?:((?:@[\w|\-|_|.]*[/|+])?(?:(?:[\w|\-|_|.]+\+)*)(?:[\w|\-|_|.]+))(?:@[\w|\-|_|.]+)?)(?:_(?:(?:((?:@[\w|\-|_|.]+[/|+])?(?:[\w|\-|_|.]+))(?:@[\w|\-|_|.]*))))*\//g;
