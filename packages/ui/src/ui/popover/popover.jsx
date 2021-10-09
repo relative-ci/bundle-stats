@@ -47,7 +47,7 @@ export const Popover = ({ className, icon, label, ariaLabel, children }) => {
         {label && <span className={css.label}>{label}</span>}
       </UIPopoverDisclosure>
       <UIPopover className={css.popover} {...popover} tabIndex={0}>
-        <UIPopoverArrow className={css.arrow} {...popover} />
+        <UIPopoverArrow className={css.arrow} {...popover} size={24} />
 
         {typeof children === 'function' ? children({ popoverToggle: popover.toggle }) : children}
 
