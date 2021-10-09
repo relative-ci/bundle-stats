@@ -7,11 +7,16 @@ describe('Webpack/extract', () => {
     });
 
     describe('npm', () => {
-      test('should extract from 1st level dependenct module paths', () => {
+      test('should extract from 1st level dependency module paths', () => {
         expect(getPackageMetaFromModulePath('./node_modules/package-a/lib/index.js')).toEqual({
           id: 'package-a',
           name: 'package-a',
           path: './node_modules/package-a',
+        });
+        expect(getPackageMetaFromModulePath('./node_modules/lodash.isEmpty/index.js')).toEqual({
+          id: 'lodash.isEmpty',
+          name: 'lodash.isEmpty',
+          path: './node_modules/lodash.isEmpty',
         });
         expect(getPackageMetaFromModulePath('../node_modules/package-a/lib/index.js')).toEqual({
           id: 'package-a',
