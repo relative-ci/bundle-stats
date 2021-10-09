@@ -40,7 +40,7 @@ export const Tooltip = (props) => {
       </UITooltipReference>
       {title && (
         <UITooltip {...tooltipProps} className={cx(css.tooltip, darkMode && css.tooltipDarkMode)}>
-          <UITooltipArrow {...tooltipProps} className={css.arrow} />
+          <UITooltipArrow {...tooltipProps} className={css.arrow} size={12} />
           {title}
         </UITooltip>
       )}

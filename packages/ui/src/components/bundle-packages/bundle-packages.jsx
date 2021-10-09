@@ -4,6 +4,7 @@ import cx from 'classnames';
 import {
   PACKAGE_FILTERS,
   PACKAGES_SEPARATOR,
+  PACKAGE_ID_SEPARATOR,
   getBundleModulesBySearch,
   getBundlePackagesByNameComponentLink,
 } from '@bundle-stats/utils';
@@ -27,11 +28,19 @@ import css from './bundle-packages.module.css';
 
 const PackagePopoverContent = ({ name, fullName, path, duplicate, CustomComponentLink }) => {
   const normalizedPackagePath = path || `node_modules/${fullName.split(PACKAGES_SEPARATOR).join('/node_modules/')}/`;
+  const [normalizedName, packageId] = name.split(PACKAGE_ID_SEPARATOR);
 
   return (
     <Stack space="xxsmall" className={css.packagePopover}>
       <Stack space="xxxsmall">
-        <h3 className={css.packagePopoverTitle}>{name}</h3>
+        <h3 className={css.packagePopoverTitle}>
+          {normalizedName}
+          {packageId && (
+            <span className={css.packagePopoverTitleIndex}>
+              {`${PACKAGE_ID_SEPARATOR}${packageId}`}
+            </span>
+          )}
+        </h3>
         <p className={css.packagePopoverPath}>
           <FileName className={css.packagePopoverPathValue} name={normalizedPackagePath} />
         </p>
@@ -39,13 +48,17 @@ const PackagePopoverContent = ({ name, fullName, path, duplicate, CustomComponen
 
       <ul className={css.packagePopoverList}>
         <li className={css.packagePopoverItem}>
-          <a href={`https://www.npmjs.com/package/${name}`} target="_blank" rel="noreferrer">
+          <a
+            href={`https://www.npmjs.com/package/${normalizedName}`}
+            target="_blank"
+            rel="noreferrer"
+          >
             npmjs.com
           </a>
         </li>
         <li className={css.packagePopoverItem}>
           <a
-            href={`https://bundlephobia.com/result?p=${name}`}
+            href={`https://bundlephobia.com/result?p=${normalizedName}`}
             target="_blank"
             rel="noreferrer"
           >
@@ -57,14 +70,14 @@ const PackagePopoverContent = ({ name, fullName, path, duplicate, CustomComponen
       <Stack space="xxxsmall" className={css.packagePopover.actions}>
         {duplicate && (
           <div>
-            <CustomComponentLink {...getBundlePackagesByNameComponentLink(name)}>
+            <CustomComponentLink {...getBundlePackagesByNameComponentLink(normalizedName)}>
               View all duplicate instances
             </CustomComponentLink>
           </div>
         )}
 
         <CustomComponentLink {...getBundleModulesBySearch(normalizedPackagePath)}>
-          View package modules
+          Search modules by package path
         </CustomComponentLink>
       </Stack>
     </Stack>

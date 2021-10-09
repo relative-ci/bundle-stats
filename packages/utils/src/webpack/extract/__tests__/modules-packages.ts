@@ -13,6 +13,11 @@ describe('Webpack/extract', () => {
           name: 'package-a',
           path: './node_modules/package-a',
         });
+        expect(getPackageMetaFromModulePath('./~/package-a/lib/index.js')).toEqual({
+          id: 'package-a',
+          name: 'package-a',
+          path: './~/package-a',
+        });
         expect(getPackageMetaFromModulePath('./node_modules/lodash.isEmpty/index.js')).toEqual({
           id: 'lodash.isEmpty',
           name: 'lodash.isEmpty',

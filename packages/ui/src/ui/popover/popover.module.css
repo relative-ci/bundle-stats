@@ -23,7 +23,7 @@
 }
 
 .popover {
-  padding: var(--space-xsmall) var(--space-medium) var(--space-xsmall) var(--space-small);
+  padding: var(--space-xsmall) var(--space-large) var(--space-xsmall) var(--space-small);
   max-width: 360px;
   outline: none;
   filter: drop-shadow(0 0 var(--space-xxxsmall) var(--color-shadow));
@@ -53,13 +53,13 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--color-text-light);
+  color: var(--color-text-ultra-light);
   transition: var(--transition-out);
 }
 
 .closeBtn:hover,
 .closeBtn:active,
 .closeBtn:focus {
-  color: var(--color-text);
+  color: var(--color-text-light);
   transition: var(--transition-in);
 }

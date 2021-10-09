@@ -25,6 +25,7 @@ const BASELINE_SOURCE = {
 };
 
 const JOBS = createJobs([CURRENT_SOURCE, BASELINE_SOURCE]);
+const NO_BASELINE_JOBS = createJobs([CURRENT_SOURCE]);
 
 const MULTIPLE_JOBS = createJobs([
   CURRENT_SOURCE,
@@ -72,7 +73,7 @@ stories.add('no insights', () => (
 ));
 
 stories.add('no baseline', () => (
-  <App jobs={[CURRENT_JOB]} version="1.0" />
+  <App jobs={NO_BASELINE_JOBS} version="1.0" />
 ));
 
 stories.add('empty baseline', () => (

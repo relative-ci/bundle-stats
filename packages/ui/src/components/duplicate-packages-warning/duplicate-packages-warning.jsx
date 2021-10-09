@@ -11,7 +11,12 @@ import css from './duplicate-packages-warning.module.css';
 const numberMetric = METRIC_TYPES[METRIC_TYPE_NUMERIC];
 
 export const DuplicatePackagesWarning = (props) => {
-  const { className, duplicatePackagesCount, customComponentLink: CustomComponentLink } = props;
+  const {
+    className,
+    duplicatePackagesCount,
+    customComponentLink: CustomComponentLink,
+    showDelta,
+  } = props;
 
   const metricRunInfo = getMetricRunInfo(
     numberMetric,
@@ -24,7 +29,7 @@ export const DuplicatePackagesWarning = (props) => {
       {`Bundle contains `}
       <CustomComponentLink {...BUNDLE_PACKAGES_DUPLICATE}>
         {metricRunInfo.value}
-        {metricRunInfo.delta !== 0 && (
+        {showDelta && metricRunInfo.delta !== 0 && (
           <Delta
             className={css.titleDelta}
             inverted
@@ -45,9 +50,11 @@ DuplicatePackagesWarning.propTypes = {
     current: PropTypes.number,
     baseline: PropTypes.number,
   }).isRequired,
+  showDelta: PropTypes.bool,
 };
 
 DuplicatePackagesWarning.defaultProps = {
   className: '',
   customComponentLink: ComponentLink,
+  showDelta: true,
 };
