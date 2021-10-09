@@ -78,7 +78,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
             Object {
               "current": <div
                 class="arrow"
-                style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
               >
                 <svg
                   style="transform: rotateZ(180deg);"
@@ -119,7 +119,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
               >
                 <div
                   class="arrow"
-                  style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                  style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                 >
                   <svg
                     style="transform: rotateZ(180deg);"
@@ -192,7 +192,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
             Object {
               "current": <div
                 class="arrow"
-                style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
               >
                 <svg
                   style="transform: rotateZ(180deg);"
@@ -233,7 +233,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
               >
                 <div
                   class="arrow"
-                  style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                  style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                 >
                   <svg
                     style="transform: rotateZ(180deg);"
@@ -291,7 +291,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                   >
                     <div
                       class="arrow"
-                      style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                     >
                       <svg
                         style="transform: rotateZ(180deg);"
@@ -341,13 +341,14 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                   setBaseId={[Function]}
                   setVisible={[Function]}
                   show={[Function]}
+                  size={12}
                   stopAnimation={[Function]}
                   toggle={[Function]}
                   unstable_arrowRef={
                     Object {
                       "current": <div
                         class="arrow"
-                        style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                        style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                       >
                         <svg
                           style="transform: rotateZ(180deg);"
@@ -388,7 +389,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                       >
                         <div
                           class="arrow"
-                          style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                          style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                         >
                           <svg
                             style="transform: rotateZ(180deg);"
@@ -435,7 +436,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                     className="arrow"
                     style={
                       Object {
-                        "fontSize": 16,
+                        "fontSize": 12,
                         "height": "1em",
                         "pointerEvents": "none",
                         "top": "100%",
@@ -551,7 +552,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
             Object {
               "current": <div
                 class="arrow"
-                style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
               >
                 <svg
                   style="transform: rotateZ(180deg);"
@@ -592,7 +593,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
               >
                 <div
                   class="arrow"
-                  style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                  style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                 >
                   <svg
                     style="transform: rotateZ(180deg);"
@@ -665,7 +666,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
             Object {
               "current": <div
                 class="arrow"
-                style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
               >
                 <svg
                   style="transform: rotateZ(180deg);"
@@ -706,7 +707,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
               >
                 <div
                   class="arrow"
-                  style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                  style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                 >
                   <svg
                     style="transform: rotateZ(180deg);"
@@ -764,7 +765,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                   >
                     <div
                       class="arrow"
-                      style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                     >
                       <svg
                         style="transform: rotateZ(180deg);"
@@ -814,13 +815,14 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                   setBaseId={[Function]}
                   setVisible={[Function]}
                   show={[Function]}
+                  size={12}
                   stopAnimation={[Function]}
                   toggle={[Function]}
                   unstable_arrowRef={
                     Object {
                       "current": <div
                         class="arrow"
-                        style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                        style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                       >
                         <svg
                           style="transform: rotateZ(180deg);"
@@ -861,7 +863,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                       >
                         <div
                           class="arrow"
-                          style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                          style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                         >
                           <svg
                             style="transform: rotateZ(180deg);"
@@ -908,7 +910,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                     className="arrow"
                     style={
                       Object {
-                        "fontSize": 16,
+                        "fontSize": 12,
                         "height": "1em",
                         "pointerEvents": "none",
                         "top": "100%",

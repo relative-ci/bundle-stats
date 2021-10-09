@@ -80,7 +80,7 @@ exports[`Storyshots UI/Popover default 1`] = `
             Object {
               "current": <div
                 class="arrow"
-                style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                style="font-size: 24px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
               >
                 <svg
                   style="transform: rotateZ(180deg);"
@@ -138,7 +138,7 @@ exports[`Storyshots UI/Popover default 1`] = `
               >
                 <div
                   class="arrow"
-                  style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                  style="font-size: 24px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                 >
                   <svg
                     style="transform: rotateZ(180deg);"
@@ -249,7 +249,7 @@ exports[`Storyshots UI/Popover default 1`] = `
             Object {
               "current": <div
                 class="arrow"
-                style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                style="font-size: 24px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
               >
                 <svg
                   style="transform: rotateZ(180deg);"
@@ -307,7 +307,7 @@ exports[`Storyshots UI/Popover default 1`] = `
               >
                 <div
                   class="arrow"
-                  style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                  style="font-size: 24px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                 >
                   <svg
                     style="transform: rotateZ(180deg);"
@@ -393,7 +393,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                   >
                     <div
                       class="arrow"
-                      style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                      style="font-size: 24px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                     >
                       <svg
                         style="transform: rotateZ(180deg);"
@@ -468,13 +468,14 @@ exports[`Storyshots UI/Popover default 1`] = `
                   setModal={[Function]}
                   setVisible={[Function]}
                   show={[Function]}
+                  size={24}
                   stopAnimation={[Function]}
                   toggle={[Function]}
                   unstable_arrowRef={
                     Object {
                       "current": <div
                         class="arrow"
-                        style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                        style="font-size: 24px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                       >
                         <svg
                           style="transform: rotateZ(180deg);"
@@ -532,7 +533,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                       >
                         <div
                           class="arrow"
-                          style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                          style="font-size: 24px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                         >
                           <svg
                             style="transform: rotateZ(180deg);"
@@ -604,7 +605,7 @@ exports[`Storyshots UI/Popover default 1`] = `
                     className="arrow"
                     style={
                       Object {
-                        "fontSize": 30,
+                        "fontSize": 24,
                         "height": "1em",
                         "pointerEvents": "none",
                         "top": "100%",
@@ -758,7 +759,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
             Object {
               "current": <div
                 class="arrow"
-                style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                style="font-size: 24px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
               >
                 <svg
                   style="transform: rotateZ(180deg);"
@@ -828,7 +829,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
               >
                 <div
                   class="arrow"
-                  style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                  style="font-size: 24px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                 >
                   <svg
                     style="transform: rotateZ(180deg);"
@@ -976,7 +977,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
             Object {
               "current": <div
                 class="arrow"
-                style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                style="font-size: 24px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
               >
                 <svg
                   style="transform: rotateZ(180deg);"
@@ -1046,7 +1047,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
               >
                 <div
                   class="arrow"
-                  style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                  style="font-size: 24px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                 >
                   <svg
                     style="transform: rotateZ(180deg);"
@@ -1144,7 +1145,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                   >
                     <div
                       class="arrow"
-                      style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                      style="font-size: 24px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                     >
                       <svg
                         style="transform: rotateZ(180deg);"
@@ -1219,13 +1220,14 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                   setModal={[Function]}
                   setVisible={[Function]}
                   show={[Function]}
+                  size={24}
                   stopAnimation={[Function]}
                   toggle={[Function]}
                   unstable_arrowRef={
                     Object {
                       "current": <div
                         class="arrow"
-                        style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                        style="font-size: 24px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                       >
                         <svg
                           style="transform: rotateZ(180deg);"
@@ -1295,7 +1297,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                       >
                         <div
                           class="arrow"
-                          style="font-size: 30px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                          style="font-size: 24px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                         >
                           <svg
                             style="transform: rotateZ(180deg);"
@@ -1379,7 +1381,7 @@ exports[`Storyshots UI/Popover with icon 1`] = `
                     className="arrow"
                     style={
                       Object {
-                        "fontSize": 30,
+                        "fontSize": 24,
                         "height": "1em",
                         "pointerEvents": "none",
                         "top": "100%",

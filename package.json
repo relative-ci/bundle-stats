@@ -1,7 +1,7 @@
 {
   "name": "@bundle-state/bundle-stats",
   "private": true,
-  "description": "Generate bundle report(bundle size, assets, modules, packages) and compare the results between different builds.",
+  "description": "Analyze webpack stats(bundle size, assets, modules, packages) and compare the results between different builds.",
   "engines": {
     "node": ">= 12.0"
   },
