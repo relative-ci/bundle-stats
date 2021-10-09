@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">BundleStats</h1>
 <p align="center">
-  Generate bundle report(bundle size, assets, modules, packages) and compare the results between different builds.
+  Analyze webpack stats(bundle size, assets, modules, packages) and compare the results between different builds.
 </p>
 <p align="center">
   <a href="https://www.npmjs.com/package/bundle-stats"><img src="https://img.shields.io/npm/v/bundle-stats.svg" /></a>
@@ -16,12 +16,12 @@
   <a href="https://app.relative-ci.com/projects/V1bXuieJbYttHCS75L8G"><img src="https://badges.relative-ci.com/badges/V1bXuieJbYttHCS75L8G?branch=master" alt="RelativeCI"></a>
 </p>
 <p align="center">
-- <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#totals"><strong>Bundle size</strong> and totals by file type(css, js, img, etc)</a><br />
-- <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#totals"><strong>Cache invalidation</strong>, Initial JS/CSS and other bundle specific metrics</a><br />
-- <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#assets"><strong>Assets</strong> report (entrypoint, initial, types, changed, delta)</a><br />
-- <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#modules"><strong>Modules</strong> report (changed, delta) by chunk</a><br />
-- <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#packages"><strong>Packages</strong> report (count, duplicate, changed, delta)</a><br />
-:star: <strong>Side by side comparison</strong> for multiple jobs
+- <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#/"><strong>Bundle size</strong> and totals by file type(css, js, img, etc)</a><br />
+- <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#/"><strong>Cache invalidation</strong>, Initial JS/CSS and other bundle specific metrics</a><br />
+- <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#/assets"><strong>Assets</strong> report (entrypoint, initial, types, changed, delta)</a><br />
+- <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#/modules"><strong>Modules</strong> report (changed, delta) by chunk</a><br />
+- <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#/packages"><strong>Packages</strong> report (count, duplicate, changed, delta)</a><br />
+:star: <strong>Side by side comparison</strong> for multiple builds
 </p>
 
 ## Related projects
@@ -30,9 +30,9 @@
 
 Specialized insights for web bundles:
 
-- Monitor and analyze bundle size, assets, modules, packages
+- Analyze and monitor webpack stats(bundle size, assets, modules, packages)
 - GitHub Check, GitHub Pull Request, and Slack integrations
-- Support for all major CI services (CircleCI, GitHub Actions, Travis CI CI, Jenkins, Gitlab CI, Codeship)
+- Support for all major CI services (CircleCI, GitHub Actions, Gitlab CI, Jenkins, Travis CI)
 - Free for OpenSource, developers and small teams
 
 [Try for free](https://relative-ci.com?utm_source=github&utm_medium=bundle-stats)

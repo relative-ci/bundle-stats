@@ -61,9 +61,9 @@ module.exports = {
 
 Specialized insights for web bundles:
 
-- Monitor and analyze bundle size, assets, modules, packages
+- Analyze and monitor webpack stats(bundle size, assets, modules, packages)
 - GitHub Check, GitHub Pull Request, and Slack integrations
-- Support for all major CI services (CircleCI, GitHub Actions, Travis CI CI, Jenkins, Gitlab CI, Codeship)
+- Support for all major CI services (CircleCI, GitHub Actions, Gitlab CI, Jenkins, Travis CI)
 - Free for OpenSource, developers and small teams
 
 [Try for free](https://relative-ci.com?utm_source=github&utm_medium=bundle-stats)
