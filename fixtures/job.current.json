@@ -3532,6 +3532,13 @@
           ]
         },
         {
+          "name": "../linked-dependency/node_modules/lodash.throttle/index.js",
+          "size": 8211,
+          "chunks": [
+            5
+          ]
+        },
+        {
           "name": "./src/components/admin-logs/index.js + 2 modules",
           "size": 4816,
           "chunks": [

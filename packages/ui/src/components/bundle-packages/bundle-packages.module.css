@@ -47,6 +47,11 @@
   min-width: 320px;
 }
 
+.packagePopoverTitleIndex {
+  color: var(--color-text-light);
+  font-weight: normal;
+}
+
 .packagePopoverPathValue {
   padding: var(--space-xxxsmall);
   background: var(--color-highlight-warning);
