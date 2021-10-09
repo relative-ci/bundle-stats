@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { compose, withProps } from 'recompose';
 import { get } from 'lodash';
-import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
+import { compareBySection } from '@bundle-stats/utils/lib-esm/webpack/compare';
 import {
   ASSET_ENTRY_TYPE,
   ASSET_FILE_TYPE,
@@ -116,7 +116,7 @@ const getCustomSort = (sortId) => (item) => {
 export const enhance = compose(
   withProps(({ jobs }) => {
     const items = useMemo(
-      () => webpack.compareBySection.assets(jobs, [addRowAssetFlags, addRowIsNotPredictive]),
+      () => compareBySection.assets(jobs, [addRowAssetFlags, addRowIsNotPredictive]),
       [jobs]
     );
 
