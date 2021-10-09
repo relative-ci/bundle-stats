@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components/DuplicatePackagesWarning multiple duplicate packages 1`] = `
+exports[`Storyshots Components/DuplicatePackagesWarning multiple jobs 1`] = `
 <Router
   history={
     Object {
@@ -51,6 +51,7 @@ exports[`Storyshots Components/DuplicatePackagesWarning multiple duplicate packa
           "current": 2,
         }
       }
+      showDelta={true}
     />
   </div>
 </Router>
@@ -107,12 +108,13 @@ exports[`Storyshots Components/DuplicatePackagesWarning no changes 1`] = `
           "current": 2,
         }
       }
+      showDelta={true}
     />
   </div>
 </Router>
 `;
 
-exports[`Storyshots Components/DuplicatePackagesWarning single duplicate packages 1`] = `
+exports[`Storyshots Components/DuplicatePackagesWarning single job 1`] = `
 <Router
   history={
     Object {
@@ -163,6 +165,7 @@ exports[`Storyshots Components/DuplicatePackagesWarning single duplicate package
           "current": 1,
         }
       }
+      showDelta={false}
     />
   </div>
 </Router>

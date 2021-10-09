@@ -181,7 +181,10 @@ const AppComponent = ({ version, jobs }) => {
               <Stack space="large">
                 {duplicatePackagesInsights && (
                   <Container>
-                    <DuplicatePackagesWarning duplicatePackagesCount={duplicatePackagesCount} />
+                    <DuplicatePackagesWarning
+                      duplicatePackagesCount={duplicatePackagesCount}
+                      showDelta={jobs.length > 1}
+                    />
                   </Container>
                 )}
                 <Container>

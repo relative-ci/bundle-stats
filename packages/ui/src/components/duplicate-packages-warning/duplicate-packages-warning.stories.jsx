@@ -7,16 +7,17 @@ import { DuplicatePackagesWarning } from '.';
 const stories = storiesOf('Components/DuplicatePackagesWarning', module);
 stories.addDecorator(getWrapperDecorator());
 
-stories.add('single duplicate packages', () => (
+stories.add('single job', () => (
   <DuplicatePackagesWarning
     duplicatePackagesCount={{
       current: 1,
       baseline: 0,
     }}
+    showDelta={false}
   />
 ));
 
-stories.add('multiple duplicate packages', () => (
+stories.add('multiple jobs', () => (
   <DuplicatePackagesWarning
     duplicatePackagesCount={{
       current: 2,
