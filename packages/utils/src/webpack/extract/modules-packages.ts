@@ -1,11 +1,22 @@
 import max from 'lodash/max';
 import last from 'lodash/last';
+import isEmpty from 'lodash/isEmpty';
 
 import { PACKAGES_SEPARATOR, PACKAGE_ID_SEPARATOR } from '../../config';
 import { PackageMetric, WebpackMetricsModules, WebpackMetricsPackages } from '../../constants';
-import { MODULE_PATH_PACKAGES } from '../constants';
+import { MODULE_PATH_PACKAGES, PACKAGE_PATH_NAME } from '../constants';
 
-const PACKAGE_PATH_REPLACE = /.*(node_modules|~)\/(.*)\/$/;
+const uniqLast = (data: Array<unknown>) => {
+  const res: Array<unknown> = [];
+
+  data.forEach((item, index) => {
+    if (!data.slice(index + 1).includes(item)) {
+      res.push(item);
+    }
+  });
+
+  return res;
+};
 
 /**
  * Heuristics to extract package id, name, and path from a module path
@@ -13,11 +24,33 @@ const PACKAGE_PATH_REPLACE = /.*(node_modules|~)\/(.*)\/$/;
 export const getPackageMetaFromModulePath = (modulePath: string) => {
   const paths = modulePath.match(MODULE_PATH_PACKAGES);
 
+  // No package paths found, skip
   if (!paths) {
     return null;
   }
 
-  const names = paths.map((packagePath) => packagePath.replace(PACKAGE_PATH_REPLACE, '$2'));
+  // Extract package names from module path
+  // @NOTE check for uniq for pnpm cases
+  const names = uniqLast(
+    paths
+      .map((packagePath) => {
+        // @ts-ignore
+        const found = packagePath.matchAll(PACKAGE_PATH_NAME);
+
+        if (!found) {
+          return [];
+        }
+
+        return [...found].flat().slice(1).filter(Boolean).map((name) => name.replace(/\+/g, '/'));
+      })
+      .flat(),
+  );
+
+  // If no names, skip
+  if (isEmpty(names)) {
+    return null;
+  }
+
   const name = last(names);
 
   // Get package full path

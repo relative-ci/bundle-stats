@@ -6,38 +6,168 @@ describe('Webpack/extract', () => {
       expect(getPackageMetaFromModulePath('./components/home.jsx')).toEqual(null);
     });
 
-    test('should extract deduped package info', () => {
-      expect(getPackageMetaFromModulePath('./node_modules/package-a/index.js')).toEqual({
-        id: 'package-a',
-        name: 'package-a',
-        path: './node_modules/package-a',
+    describe('npm', () => {
+      test('should extract from 1st level dependency module paths', () => {
+        expect(getPackageMetaFromModulePath('./node_modules/package-a/lib/index.js')).toEqual({
+          id: 'package-a',
+          name: 'package-a',
+          path: './node_modules/package-a',
+        });
+        expect(getPackageMetaFromModulePath('./node_modules/lodash.isEmpty/index.js')).toEqual({
+          id: 'lodash.isEmpty',
+          name: 'lodash.isEmpty',
+          path: './node_modules/lodash.isEmpty',
+        });
+        expect(getPackageMetaFromModulePath('../node_modules/package-a/lib/index.js')).toEqual({
+          id: 'package-a',
+          name: 'package-a',
+          path: '../node_modules/package-a',
+        });
+        expect(getPackageMetaFromModulePath('./node_modules/@org/package-a/lib/index.js')).toEqual({
+          id: '@org/package-a',
+          name: '@org/package-a',
+          path: './node_modules/@org/package-a',
+        });
       });
-      expect(getPackageMetaFromModulePath('../node_modules/package-a/index.js')).toEqual({
-        id: 'package-a',
-        name: 'package-a',
-        path: '../node_modules/package-a',
-      });
-      expect(getPackageMetaFromModulePath('./node_modules/@org/package-a/index.js')).toEqual({
-        id: '@org/package-a',
-        name: '@org/package-a',
-        path: './node_modules/@org/package-a',
+
+      test('should extract from 2nd level dependency module paths', () => {
+        expect(
+          getPackageMetaFromModulePath(
+            './node_modules/package-a/node_modules/package-b/lib/index.js',
+          ),
+        ).toEqual({
+          id: 'package-a:package-b',
+          name: 'package-b',
+          path: './node_modules/package-a/node_modules/package-b',
+        });
+        expect(
+          getPackageMetaFromModulePath(
+            './node_modules/@org/package-a/node_modules/package-b/lib/index.js',
+          ),
+        ).toEqual({
+          id: '@org/package-a:package-b',
+          name: 'package-b',
+          path: './node_modules/@org/package-a/node_modules/package-b',
+        });
+        expect(
+          getPackageMetaFromModulePath(
+            './node_modules/@org/package-a/node_modules/@org/package-b/lib/index.js',
+          ),
+        ).toEqual({
+          id: '@org/package-a:@org/package-b',
+          name: '@org/package-b',
+          path: './node_modules/@org/package-a/node_modules/@org/package-b',
+        });
       });
     });
 
-    test('should extract 2nd level dependencies', () => {
-      expect(
-        getPackageMetaFromModulePath('./node_modules/package-a/node_modules/package-b/get.js'),
-      ).toEqual({
-        id: 'package-a:package-b',
-        name: 'package-b',
-        path: './node_modules/package-a/node_modules/package-b',
+    describe('pnpm', () => {
+      test('should extract from 1st level dependency module path', () => {
+        expect(
+          getPackageMetaFromModulePath(
+            './node_modules/.pnpm/package-a@1.0.0/node_modules/package-a/index.js',
+          ),
+        ).toEqual({
+          id: 'package-a',
+          name: 'package-a',
+          path: './node_modules/.pnpm/package-a@1.0.0/node_modules/package-a',
+        });
+
+        expect(
+          getPackageMetaFromModulePath(
+            './node_modules/.pnpm/@org+package-a@1.0.0/node_modules/@org/package-a/index.js',
+          ),
+        ).toEqual({
+          id: '@org/package-a',
+          name: '@org/package-a',
+          path: './node_modules/.pnpm/@org+package-a@1.0.0/node_modules/@org/package-a',
+        });
       });
-      expect(
-        getPackageMetaFromModulePath('./node_modules/package-a-1/node_modules/package-a/get.js'),
-      ).toEqual({
-        id: 'package-a-1:package-a',
-        name: 'package-a',
-        path: './node_modules/package-a-1/node_modules/package-a',
+
+      test('should extract from nested dependency module path', () => {
+        expect(
+          getPackageMetaFromModulePath(
+            './node_modules/.pnpm/package-a@1.0.0/node_modules/package-b/index.js',
+          ),
+        ).toEqual({
+          id: 'package-a:package-b',
+          name: 'package-b',
+          path: './node_modules/.pnpm/package-a@1.0.0/node_modules/package-b',
+        });
+
+        expect(
+          getPackageMetaFromModulePath(
+            './node_modules/.pnpm/@org+package-a@1.0.0/node_modules/package-b/lib/index.js',
+          ),
+        ).toEqual({
+          id: '@org/package-a:package-b',
+          name: 'package-b',
+          path: './node_modules/.pnpm/@org+package-a@1.0.0/node_modules/package-b',
+        });
+
+        expect(
+          getPackageMetaFromModulePath(
+            './node_modules/.pnpm/@org+package-a@1.0.0/node_modules/@org/package-b/lib/index.js',
+          ),
+        ).toEqual({
+          id: '@org/package-a:@org/package-b',
+          name: '@org/package-b',
+          path: './node_modules/.pnpm/@org+package-a@1.0.0/node_modules/@org/package-b',
+        });
+      });
+
+      test('should extract from peer dependency module paths', () => {
+        expect(
+          getPackageMetaFromModulePath(
+            './node_modules/.pnpm/package-a@1.0.0_package-b@1.0.0/node_modules/package-a/lib/index.js',
+          ),
+        ).toEqual({
+          id: 'package-b:package-a',
+          name: 'package-a',
+          path: './node_modules/.pnpm/package-a@1.0.0_package-b@1.0.0/node_modules/package-a',
+        });
+
+        expect(
+          getPackageMetaFromModulePath(
+            './node_modules/.pnpm/package-a@1.0.0_package-b@1.0.0/node_modules/package-c/lib/index.js',
+          ),
+        ).toEqual({
+          id: 'package-a:package-b:package-c',
+          name: 'package-c',
+          path: './node_modules/.pnpm/package-a@1.0.0_package-b@1.0.0/node_modules/package-c',
+        });
+
+        expect(
+          getPackageMetaFromModulePath(
+            './node_modules/.pnpm/@org+package-a@1.0.0_package-b@1.0.0/node_modules/package-c/lib/index.js',
+          ),
+        ).toEqual({
+          id: '@org/package-a:package-b:package-c',
+          name: 'package-c',
+          path: './node_modules/.pnpm/@org+package-a@1.0.0_package-b@1.0.0/node_modules/package-c',
+        });
+
+        expect(
+          getPackageMetaFromModulePath(
+            './node_modules/.pnpm/@org+package-a@1.0.0_@org+package-b@1.0.0/node_modules/package-c/lib/index.js',
+          ),
+        ).toEqual({
+          id: '@org/package-a:@org/package-b:package-c',
+          name: 'package-c',
+          path: './node_modules/.pnpm/@org+package-a@1.0.0_@org+package-b@1.0.0/node_modules/package-c',
+        });
+      });
+
+      test('should extract from git dependency module paths', () => {
+        expect(
+          getPackageMetaFromModulePath(
+            './node_modules/.pnpm/github.com+org-a+repo-a@abcd1234/node_modules/repo-a/src/index.js',
+          ),
+        ).toEqual({
+          id: 'github.com/org-a/repo-a:repo-a',
+          name: 'repo-a',
+          path: './node_modules/.pnpm/github.com+org-a+repo-a@abcd1234/node_modules/repo-a',
+        });
       });
     });
   });
