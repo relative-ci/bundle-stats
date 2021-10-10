@@ -5,5 +5,6 @@ module.exports = {
   moduleNameMapper: {
     '\\.css$': 'identity-obj-proxy',
     '^.+\\.md?$': 'markdown-loader-jest',
+    '@bundle-stats/utils/lib-esm/(.+)': '@bundle-stats/utils/lib/$1',
   },
 };
