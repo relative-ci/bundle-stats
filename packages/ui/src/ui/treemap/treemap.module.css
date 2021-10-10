@@ -1,0 +1,35 @@
+.root {
+  position: relative;
+  border: 1px solid var(--color-outline);
+}
+
+.root::before {
+  content: '';
+  display: block;
+  padding: 0 0 33.33%;
+}
+
+.item {
+  position: absolute;
+  padding: var(--space-xxxsmall);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item::before {
+  left: 2px;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  content: '';
+  position: absolute;
+  display: block;
+  outline: 1px solid var(--color-outline);
+}
+
+.itemLabel {
+  max-width: 100%;
+  color: var(--color-text-light);
+  font-size: var(--size-small);
+}
