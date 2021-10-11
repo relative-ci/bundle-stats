@@ -30,5 +30,14 @@ module.exports = merge(getCommonConfig(settings), appCommonConfig, {
   ],
   optimization: {
     minimizer: [new TerserPlugin({ sourceMap: true })],
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          name: 'vendors',
+          test: /[\\/]node_modules[\\/]/,
+          chunks: 'all',
+        },
+      },
+    },
   },
 });
