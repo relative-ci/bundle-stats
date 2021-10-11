@@ -1,5 +1,7 @@
-import convert from 'convert-units';
+import configureMeasurements, { digital, time } from 'convert-units';
 import round from 'lodash/round';
+
+const convert = configureMeasurements({ digital, time });
 
 export const formatFileSize = (val) => {
   const res = convert(val).from('B').toBest();
