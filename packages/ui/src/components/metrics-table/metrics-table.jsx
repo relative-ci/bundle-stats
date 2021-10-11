@@ -1,8 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { get, isEmpty } from 'lodash';
-import { flow, map, sum } from 'lodash/fp';
+import { get, isEmpty, sum } from 'lodash';
 import { METRIC_TYPE_FILE_SIZE, getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { Table } from '../../ui/table';
@@ -13,11 +12,7 @@ import styles from './metrics-table.module.css';
 
 const METRIC_TYPE_DATA = getGlobalMetricType(null, METRIC_TYPE_FILE_SIZE);
 
-const getRowsRunTotal = (rows, runIndex) =>
-  flow(
-    map((row) => get(row, `runs[${runIndex}].value`, 0)),
-    sum,
-  )(rows);
+const getRowsRunTotal = (rows, runIndex) => sum(rows.map((row) => get(row, `runs[${runIndex}].value`, 0)));
 
 const getHeaderLabelCells = (rows) => (run, runIndex, runs) => {
   const isBaseline = runIndex === runs.length - 1;
