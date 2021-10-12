@@ -7,6 +7,7 @@ module.exports = {
         modules: false,
         useBuiltIns: 'usage',
         corejs: 3,
+        targets: 'supports es6-module and last 2 versions',
       },
     ],
     ['@babel/preset-react', { pragma: 'h' }],
