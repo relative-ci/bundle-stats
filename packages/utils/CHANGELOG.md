@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0-beta.2](https://github.com/relative-ci/bundle-stats/compare/v3.1.3...v3.2.0-beta.2) (2021-10-12)
+
+
+### Bug Fixes
+
+* Consistent dependency versions across packages ([cceebb7](https://github.com/relative-ci/bundle-stats/commit/cceebb7724670a7c40c156c395449fc65d183690))
+* **utils:** Use convert-units@beta ([731e7a4](https://github.com/relative-ci/bundle-stats/commit/731e7a4c1cf3fc2189f961388632fdbab838be3f))
+* **utils:** Webpack module packages -construct patterns ([29c8606](https://github.com/relative-ci/bundle-stats/commit/29c86067d07188e4a553f7a41f70cc0621ea7c0d))
+* **utils:** Webpack packages - make slug pattern more restrictive ([4d1ac7f](https://github.com/relative-ci/bundle-stats/commit/4d1ac7f7fc3c4783a0124efb651de2ff2752301e))
+
+
+### Features
+
+* **utils:** Extract packages - add support for pnpm ([527e154](https://github.com/relative-ci/bundle-stats/commit/527e15422447c14dfa6f0ba0fdfe859c0aae7b9a))
+
+
+
+
+
 ## [3.1.2](https://github.com/relative-ci/bundle-stats/compare/v3.1.1...v3.1.2) (2021-08-10)
 
 

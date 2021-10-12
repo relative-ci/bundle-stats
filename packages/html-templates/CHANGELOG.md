@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0-beta.2](https://github.com/relative-ci/bundle-stats/compare/v3.1.3...v3.2.0-beta.2) (2021-10-12)
+
+
+### Bug Fixes
+
+* Consistent dependency versions across packages ([cceebb7](https://github.com/relative-ci/bundle-stats/commit/cceebb7724670a7c40c156c395449fc65d183690))
+* **html-templayes:** Remove preact/debug ([9cdaa2a](https://github.com/relative-ci/bundle-stats/commit/9cdaa2a83b6e463f7ef77a92cc74ccd7ef9ca815))
+* **ui:** PackagePopover - use normalized name for searches ([d32c690](https://github.com/relative-ci/bundle-stats/commit/d32c690c370612479cf6a5f1f589ffd1c77afbb0))
+
+
+
+
+
 ## [3.1.2](https://github.com/relative-ci/bundle-stats/compare/v3.1.1...v3.1.2) (2021-08-10)
 
 **Note:** Version bump only for package @bundle-stats/html-templates
