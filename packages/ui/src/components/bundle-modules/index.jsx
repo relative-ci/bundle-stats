@@ -1,0 +1,107 @@
+import React, { useMemo } from 'react';
+import PropTypes from 'prop-types';
+import { uniqBy, map } from 'lodash';
+import {
+  getModuleChunkFilters,
+  getModuleSourceTypeFilters,
+  getModuleFileTypeFilters,
+} from '@bundle-stats/utils';
+import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
+
+import { useRowsFilter } from '../../hooks/rows-filter';
+import { useRowsSort } from '../../hooks/rows-sort';
+import { useSearchParams } from '../../hooks/search-params';
+import { BundleModules as BundleModulesComponent } from './bundle-modules';
+import {
+  addRowSourceFlag,
+  getRowFilter,
+  getCustomSort,
+  useModuleFilterByChunk,
+} from './bundle-modules.utils';
+import { SORT_BY } from './bundle-modules.constants';
+
+export const BundleModules = (props) => {
+  const { jobs, filters, search, setState, sortBy, direction, ...restProps } = props;
+
+  const chunks = uniqBy(jobs.map((job) => job?.meta?.webpack?.chunks || []).flat(), ({ id }) => id);
+  const chunkIds = map(chunks, 'id');
+
+  const { defaultFilters, allEntriesFilters } = useMemo(
+    () => ({
+      defaultFilters: {
+        changed: jobs?.length > 1,
+        ...getModuleSourceTypeFilters(true),
+        ...getModuleChunkFilters(chunkIds, true),
+        ...getModuleFileTypeFilters(true),
+      },
+      allEntriesFilters: {
+        changed: false,
+        ...getModuleSourceTypeFilters(true),
+        ...getModuleChunkFilters(chunkIds, true),
+        ...getModuleFileTypeFilters(true),
+      },
+    }),
+    [jobs],
+  );
+
+  const searchParams = useSearchParams({
+    search,
+    filters,
+    defaultFilters,
+    allEntriesFilters,
+    setState,
+  });
+
+  const filteredJobsByChunkIds = useModuleFilterByChunk({
+    jobs,
+    filters: searchParams.filters,
+    chunkIds,
+  });
+
+  const { rows, totalRowCount } = useMemo(() => {
+    const result = webpack.compareBySection.modules(filteredJobsByChunkIds, [addRowSourceFlag]);
+    return { rows: result, totalRowCount: result.length };
+  }, [filteredJobsByChunkIds]);
+
+  const filteredRows = useRowsFilter({
+    rows,
+    searchPattern: searchParams.searchPattern,
+    filters: searchParams.filters,
+    getRowFilter,
+  });
+
+  const sortParams = useRowsSort({
+    rows: filteredRows,
+    sortFields: SORT_BY,
+    sortBy,
+    sortDirection: direction,
+    getCustomSort,
+  });
+
+  return (
+    <BundleModulesComponent
+      jobs={jobs}
+      chunks={chunks}
+      {...restProps}
+      {...searchParams}
+      {...sortParams}
+      totalRowCount={totalRowCount}
+    />
+  );
+};
+
+BundleModules.propTypes = {
+  jobs: PropTypes.arrayOf(PropTypes.object).isRequired, // eslint-disable-line react/forbid-prop-types
+  filters: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  search: PropTypes.string,
+  sortBy: PropTypes.string,
+  direction: PropTypes.string,
+  setState: PropTypes.func.isRequired,
+};
+
+BundleModules.defaultProps = {
+  filters: undefined,
+  search: undefined,
+  sortBy: undefined,
+  direction: undefined,
+};

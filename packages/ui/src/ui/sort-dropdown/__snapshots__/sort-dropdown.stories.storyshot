@@ -56,7 +56,8 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
       <SortDropdown
         className=""
         direction="asc"
-        items={
+        field="size"
+        fields={
           Object {
             "filename": Object {
               "label": "Filename",
@@ -68,7 +69,6 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
         }
         label="Order by"
         onChange={[Function]}
-        sortBy="size"
       >
         <Dropdown
           activeLabel={false}
@@ -96,7 +96,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                   "id": "id-test-1",
                   "ref": Object {
                     "current": <button
-                      class="menuItem item"
+                      class="itemAsc menuItem item"
                       id="id-test-1"
                       role="menuitem"
                       tabindex="0"
@@ -134,7 +134,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                   "id": "id-test-2",
                   "ref": Object {
                     "current": <button
-                      class="menuItem item menuItemActive active"
+                      class="itemAsc menuItem item menuItemActive active"
                       id="id-test-2"
                       role="menuitem"
                       tabindex="-1"
@@ -271,7 +271,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                     class="items"
                   >
                     <button
-                      class="menuItem item"
+                      class="itemAsc menuItem item"
                       id="id-test-1"
                       role="menuitem"
                       tabindex="0"
@@ -302,7 +302,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                       </span>
                     </button>
                     <button
-                      class="menuItem item menuItemActive active"
+                      class="itemAsc menuItem item menuItemActive active"
                       id="id-test-2"
                       role="menuitem"
                       tabindex="-1"
@@ -480,7 +480,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                   "id": "id-test-1",
                   "ref": Object {
                     "current": <button
-                      class="menuItem item"
+                      class="itemAsc menuItem item"
                       id="id-test-1"
                       role="menuitem"
                       tabindex="0"
@@ -518,7 +518,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                   "id": "id-test-2",
                   "ref": Object {
                     "current": <button
-                      class="menuItem item menuItemActive active"
+                      class="itemAsc menuItem item menuItemActive active"
                       id="id-test-2"
                       role="menuitem"
                       tabindex="-1"
@@ -654,7 +654,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                     class="items"
                   >
                     <button
-                      class="menuItem item"
+                      class="itemAsc menuItem item"
                       id="id-test-1"
                       role="menuitem"
                       tabindex="0"
@@ -685,7 +685,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                       </span>
                     </button>
                     <button
-                      class="menuItem item menuItemActive active"
+                      class="itemAsc menuItem item menuItemActive active"
                       id="id-test-2"
                       role="menuitem"
                       tabindex="-1"
@@ -798,7 +798,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                         class="items"
                       >
                         <button
-                          class="menuItem item"
+                          class="itemAsc menuItem item"
                           id="id-test-1"
                           role="menuitem"
                           tabindex="0"
@@ -829,7 +829,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                           </span>
                         </button>
                         <button
-                          class="menuItem item menuItemActive active"
+                          class="itemAsc menuItem item menuItemActive active"
                           id="id-test-2"
                           role="menuitem"
                           tabindex="-1"
@@ -899,7 +899,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                       animated={false}
                       animating={false}
                       baseId="id-test"
-                      className="menuItem item"
+                      className="itemAsc menuItem item"
                       currentId="id-test-1"
                       down={[Function]}
                       first={[Function]}
@@ -913,7 +913,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             "id": "id-test-1",
                             "ref": Object {
                               "current": <button
-                                class="menuItem item"
+                                class="itemAsc menuItem item"
                                 id="id-test-1"
                                 role="menuitem"
                                 tabindex="0"
@@ -951,7 +951,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             "id": "id-test-2",
                             "ref": Object {
                               "current": <button
-                                class="menuItem item menuItemActive active"
+                                class="itemAsc menuItem item menuItemActive active"
                                 id="id-test-2"
                                 role="menuitem"
                                 tabindex="-1"
@@ -1090,7 +1090,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               class="items"
                             >
                               <button
-                                class="menuItem item"
+                                class="itemAsc menuItem item"
                                 id="id-test-1"
                                 role="menuitem"
                                 tabindex="0"
@@ -1121,7 +1121,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                 </span>
                               </button>
                               <button
-                                class="menuItem item menuItemActive active"
+                                class="itemAsc menuItem item menuItemActive active"
                                 id="id-test-2"
                                 role="menuitem"
                                 tabindex="-1"
@@ -1213,7 +1213,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                       wrap={false}
                     >
                       <button
-                        className="menuItem item"
+                        className="itemAsc menuItem item"
                         id="id-test-1"
                         onBlurCapture={[Function]}
                         onClick={[Function]}
@@ -1274,7 +1274,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                       animated={false}
                       animating={false}
                       baseId="id-test"
-                      className="menuItem item menuItemActive active"
+                      className="itemAsc menuItem item menuItemActive active"
                       currentId="id-test-1"
                       down={[Function]}
                       first={[Function]}
@@ -1288,7 +1288,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             "id": "id-test-1",
                             "ref": Object {
                               "current": <button
-                                class="menuItem item"
+                                class="itemAsc menuItem item"
                                 id="id-test-1"
                                 role="menuitem"
                                 tabindex="0"
@@ -1326,7 +1326,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             "id": "id-test-2",
                             "ref": Object {
                               "current": <button
-                                class="menuItem item menuItemActive active"
+                                class="itemAsc menuItem item menuItemActive active"
                                 id="id-test-2"
                                 role="menuitem"
                                 tabindex="-1"
@@ -1465,7 +1465,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               class="items"
                             >
                               <button
-                                class="menuItem item"
+                                class="itemAsc menuItem item"
                                 id="id-test-1"
                                 role="menuitem"
                                 tabindex="0"
@@ -1496,7 +1496,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                 </span>
                               </button>
                               <button
-                                class="menuItem item menuItemActive active"
+                                class="itemAsc menuItem item menuItemActive active"
                                 id="id-test-2"
                                 role="menuitem"
                                 tabindex="-1"
@@ -1588,7 +1588,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                       wrap={false}
                     >
                       <button
-                        className="menuItem item menuItemActive active"
+                        className="itemAsc menuItem item menuItemActive active"
                         id="id-test-2"
                         onBlurCapture={[Function]}
                         onClick={[Function]}
