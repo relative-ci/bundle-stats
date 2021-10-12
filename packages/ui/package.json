@@ -51,7 +51,7 @@
     "chromatic": "5.9.2",
     "classnames": "2.3.1",
     "colormap": "2.3.2",
-    "core-js": "^3.16.2",
+    "core-js": "3.18.3",
     "cross-env": "7.0.3",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.6",
@@ -60,13 +60,13 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "26.6.3",
     "jest-date-mock": "1.0.8",
-    "lodash": "^4.17.21",
-    "prop-types": "^15.7.2",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-router-dom": "^5.3.0",
+    "lodash": "4.17.21",
+    "prop-types": "15.7.2",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "react-router-dom": "5.3.0",
     "react-test-renderer": "16.14.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "3.0.2"
   },
   "peerDependencies": {
     "classnames": "^2.2.6",
