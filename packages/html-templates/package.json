@@ -4,7 +4,8 @@
   "description": "HTML templates for report generation.",
   "main": "index.js",
   "scripts": {
-    "build": "rm -fr ./dist && cross-env NODE_ENV=production webpack --config webpack.config.production.js --mode production",
+    "prebuild": "rimraf ./dist",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js --mode production",
     "lint": "../../node_modules/.bin/eslint . --ext .js,.jsx",
     "start": "cross-env NODE_ENV=development start-storybook -p 8090 -c build/storybook",
     "test": "jest build/storybook"
@@ -54,6 +55,7 @@
     "postcss": "8.3.5",
     "postcss-loader": "4.3.0",
     "react-test-renderer": "16.14.0",
+    "rimraf": "^3.0.2",
     "stats-webpack-plugin": "0.7.0",
     "stylelint": "13.13.1",
     "stylelint-config-css-modules": "2.2.0",

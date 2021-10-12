@@ -6,8 +6,10 @@
   "module": "lib-esm/index.js",
   "scripts": {
     "build": "npm run build-lib && npm run build-esm",
-    "build-lib": "rm -fr ./lib && babel -D src -d lib --ignore **/__tests__/** --ignore /prototypes/** --presets=@babel/preset-env,@babel/preset-react",
-    "build-esm": "rm -fr ./lib-esm && babel -D src -d lib-esm --ignore **/__tests__/** --ignore /prototypes/**",
+    "prebuild-lib": "rimraf ./lib",
+    "build-lib": "babel -D src -d lib --ignore **/__tests__/**/* --ignore /prototypes/** --presets=@babel/preset-env,@babel/preset-react",
+    "prebuild-esm": "rimraf ./lib-esm",
+    "build-esm": "babel -D src -d lib-esm --ignore **/__tests__/**/* --ignore /prototypes/**",
     "build-storybook": "npx build-storybook -c ./build/storybook",
     "generate-chart-colors": "node scripts/generate-chart-colors.js",
     "lint": "../../node_modules/.bin/eslint . --ext .jsx,.js",
@@ -63,7 +65,8 @@
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-router-dom": "5.3.0",
-    "react-test-renderer": "16.14.0"
+    "react-test-renderer": "16.14.0",
+    "rimraf": "^3.0.2"
   },
   "peerDependencies": {
     "classnames": "^2.2.6",
