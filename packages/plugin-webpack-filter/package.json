@@ -38,11 +38,11 @@
     "@types/jest": "26.0.24",
     "@types/lodash": "4.14.172",
     "@types/webpack": "5.28.0",
-    "core-js": "^3.16.2",
+    "core-js": "3.18.3",
     "jest": "26.6.3",
     "jest-cli": "26.6.3",
     "jest-date-mock": "1.0.8",
-    "lodash": "^4.17.21",
+    "lodash": "4.17.21",
     "regenerator-runtime": "0.13.7",
     "ts-jest": "26.5.6"
   },
