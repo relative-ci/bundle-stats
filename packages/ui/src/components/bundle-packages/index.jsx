@@ -1,0 +1,84 @@
+import React, { useMemo } from 'react';
+import PropTypes from 'prop-types';
+import { PACKAGE_FILTERS } from '@bundle-stats/utils';
+import * as webpack from '@bundle-stats/utils/lib-esm/webpack/compare';
+
+import { useRowsFilter } from '../../hooks/rows-filter';
+import { useRowsSort } from '../../hooks/rows-sort';
+import { useSearchParams } from '../../hooks/search-params';
+import { SORT_BY } from './bundle-packages.constants';
+import { BundlePackages as BundlePackagesComponent } from './bundle-packages';
+import { getDuplicatePackages, getAddRowDuplicateFlag, getRowFilter, getCustomSort } from './bundle-packages.utils';
+
+export const BundlePackages = (props) => {
+  const { jobs, search, filters, setState, sortBy, direction, ...restProps } = props;
+
+  const { defaultFilters, allEntriesFilters } = useMemo(
+    () => ({
+      defaultFilters: {
+        [PACKAGE_FILTERS.CHANGED]: jobs?.length > 1,
+        [PACKAGE_FILTERS.DUPLICATE]: false,
+      },
+      allEntriesFilters: {
+        [PACKAGE_FILTERS.CHANGED]: false,
+        [PACKAGE_FILTERS.DUPLICATE]: false,
+      },
+    }),
+    [jobs],
+  );
+
+  const searchParams = useSearchParams({
+    search,
+    filters,
+    defaultFilters,
+    allEntriesFilters,
+    setState,
+  });
+
+  const { rows, totalRowCount } = useMemo(() => {
+    const duplicateJobs = getDuplicatePackages(jobs);
+    const result = webpack.compareBySection.packages(jobs, [getAddRowDuplicateFlag(duplicateJobs)]);
+    return { rows: result, totalRowCount: result.length };
+  }, [jobs]);
+
+  const filteredRows = useRowsFilter({
+    rows,
+    searchPattern: searchParams.searchPattern,
+    filters: searchParams.filters,
+    getRowFilter,
+  });
+
+  const sortParams = useRowsSort({
+    rows: filteredRows,
+    sortFields: SORT_BY,
+    sortBy,
+    sortDirection: direction,
+    getCustomSort,
+  });
+
+  return (
+    <BundlePackagesComponent
+      jobs={jobs}
+      {...restProps}
+      {...searchParams}
+      {...sortParams}
+      totalRowCount={totalRowCount}
+    />
+  );
+};
+
+BundlePackages.propTypes = {
+  jobs: PropTypes.arrayOf(PropTypes.object).isRequired, // eslint-disable-line react/forbid-prop-types
+  filters: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  search: PropTypes.string,
+  sortBy: PropTypes.string,
+  direction: PropTypes.string,
+  setState: PropTypes.func.isRequired,
+};
+
+BundlePackages.defaultProps = {
+  filters: undefined,
+  search: undefined,
+  sortBy: undefined,
+  direction: undefined,
+};

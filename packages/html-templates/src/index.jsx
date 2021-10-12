@@ -1,6 +1,5 @@
 /* global module, require */
 import { render } from 'preact';
-import 'preact/debug';
 
 import './default.css';
 import { App } from './app';

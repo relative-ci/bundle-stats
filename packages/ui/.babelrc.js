@@ -5,14 +5,14 @@ module.exports = {
       {
         loose: true,
         modules: false,
+        useBuiltIns: 'usage',
+        corejs: 3,
+        targets: 'supports es6-module and last 2 versions',
       },
     ],
     '@babel/preset-react',
   ],
   plugins: [
-    '@babel/plugin-proposal-object-rest-spread',
-    '@babel/plugin-proposal-private-methods',
-    '@babel/plugin-proposal-class-properties',
     'babel-plugin-lodash',
     ['@simplyianm/babel-plugin-inline-react-svg', { noReactAutoImport: true, svgo: false }],
   ],

@@ -12,7 +12,7 @@ stories.add('default', () => (
     onChange={(state) => {
       console.log(state); // eslint-disable-line no-console
     }}
-    items={{
+    fields={{
       filename: {
         label: 'Filename',
       },
@@ -20,6 +20,6 @@ stories.add('default', () => (
         label: 'Size',
       },
     }}
-    sortBy="size"
+    field="size"
   />
 ));

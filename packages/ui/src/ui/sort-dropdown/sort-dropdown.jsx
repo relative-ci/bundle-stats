@@ -7,36 +7,35 @@ import { Icon } from '../icon';
 import css from './sort-dropdown.module.css';
 
 export const SortDropdown = (props) => {
-  const { className, label, items, sortBy, direction, onChange } = props;
+  const { className, label, fields, field, direction, onChange } = props;
   const rootClassName = cx(css.root, className);
 
-  const customLabel = items[sortBy] ? `Ordered by ${items[sortBy].label}` : label;
+  const customLabel = fields[field] ? `Ordered by ${fields[field].label}` : label;
 
   return (
     <Dropdown className={rootClassName} label={customLabel} glyph="sort" align="right">
       {({ MenuItem, menu, menuItemClassName, menuItemActiveClassName }) => {
-        const getButtonOnClick = (newSortBy, newDirection) => () => {
-          onChange({ sortBy: newSortBy, direction: newDirection });
+        const getButtonOnClick = (newField, newDirection) => () => {
+          onChange({ field: newField, direction: newDirection });
           menu.toggle();
         };
 
         return (
           <div className={css.items}>
-            {Object.entries(items).map(([key, item]) => {
+            {Object.entries(fields).map(([key, item]) => {
               const buttonProps =
                 direction === 'asc'
                   ? {
-                    className: cx(css.itemButton, css.itemAsc),
+                    className: css.itemAsc,
                     onClick: getButtonOnClick(key, 'desc'),
                     title: `Order data by ${item.label} descending`,
                   }
                   : {
-                    className: css.itemButton,
                     onClick: getButtonOnClick(key, 'asc'),
                     title: `Order data by ${item.label} ascending`,
                   };
 
-              const isActive = sortBy === key;
+              const isActive = field === key;
 
               return (
                 <MenuItem
@@ -44,6 +43,7 @@ export const SortDropdown = (props) => {
                   {...menu}
                   {...buttonProps}
                   className={cx(
+                    buttonProps.className,
                     menuItemClassName,
                     css.item,
                     isActive && menuItemActiveClassName,
@@ -66,17 +66,17 @@ SortDropdown.defaultProps = {
   className: '',
   label: 'Order by',
   onChange: () => {},
-  sortBy: '',
+  field: '',
   direction: 'asc',
 };
 
 SortDropdown.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string,
-  items: PropTypes.shape({
+  fields: PropTypes.shape({
     [PropTypes.string]: PropTypes.string,
   }).isRequired,
   onChange: PropTypes.func,
-  sortBy: PropTypes.string,
+  field: PropTypes.string,
   direction: PropTypes.string,
 };

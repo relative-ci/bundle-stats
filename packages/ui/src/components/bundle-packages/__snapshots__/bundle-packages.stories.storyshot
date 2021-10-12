@@ -42,7 +42,7 @@ exports[`Storyshots Components/BundlePackages custom filters 1`] = `
       }
     }
   >
-    <withProps(WithSearch)
+    <BundlePackages
       filters={
         Object {
           "changed": false,
@@ -17851,7 +17851,7 @@ exports[`Storyshots Components/BundlePackages default 1`] = `
       }
     }
   >
-    <withProps(WithSearch)
+    <BundlePackages
       jobs={
         Array [
           Object {
@@ -26769,7 +26769,7 @@ exports[`Storyshots Components/BundlePackages empty baseline 1`] = `
       }
     }
   >
-    <withProps(WithSearch)
+    <BundlePackages
       jobs={
         Array [
           Object {
@@ -35710,7 +35710,7 @@ exports[`Storyshots Components/BundlePackages empty filtered packages 1`] = `
       }
     }
   >
-    <withProps(WithSearch)
+    <BundlePackages
       jobs={
         Array [
           Object {
@@ -52884,7 +52884,7 @@ exports[`Storyshots Components/BundlePackages empty packages 1`] = `
       }
     }
   >
-    <withProps(WithSearch)
+    <BundlePackages
       jobs={
         Array [
           Object {
@@ -70050,7 +70050,7 @@ exports[`Storyshots Components/BundlePackages multiple jobs 1`] = `
       }
     }
   >
-    <withProps(WithSearch)
+    <BundlePackages
       jobs={
         Array [
           Object {

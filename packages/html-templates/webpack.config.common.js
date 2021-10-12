@@ -16,7 +16,7 @@ module.exports = merge(
   getResolveConfig(settings),
   {
     entry: {
-      main: ['./polyfill.js', './index.jsx'],
+      main: './index.jsx',
     },
     plugins: [
       new HtmlPlugin({

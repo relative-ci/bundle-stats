@@ -7,16 +7,12 @@ module.exports = {
         modules: false,
         useBuiltIns: 'usage',
         corejs: 3,
+        targets: 'supports es6-module and last 2 versions',
       },
     ],
     ['@babel/preset-react', { pragma: 'h' }],
   ],
-  plugins: [
-    'babel-plugin-preact-require',
-    '@babel/plugin-proposal-object-rest-spread',
-    '@babel/plugin-proposal-class-properties',
-    '@babel/plugin-proposal-private-methods',
-  ],
+  plugins: ['babel-plugin-preact-require'],
   env: {
     development: {
       presets: [
@@ -31,12 +27,7 @@ module.exports = {
         ],
         '@babel/preset-react',
       ],
-      plugins: [
-        'babel-plugin-react-require',
-        '@babel/plugin-proposal-object-rest-spread',
-        '@babel/plugin-proposal-class-properties',
-        '@babel/plugin-proposal-private-methods',
-      ],
+      plugins: ['babel-plugin-react-require'],
     },
     test: {
       presets: [
@@ -53,13 +44,7 @@ module.exports = {
         ],
         '@babel/preset-react',
       ],
-      plugins: [
-        '@babel/plugin-proposal-object-rest-spread',
-        '@babel/plugin-proposal-class-properties',
-        '@babel/plugin-proposal-private-methods',
-        'babel-plugin-react-require',
-        'babel-plugin-require-context-hook',
-      ],
+      plugins: ['babel-plugin-react-require', 'babel-plugin-require-context-hook'],
     },
   },
 };

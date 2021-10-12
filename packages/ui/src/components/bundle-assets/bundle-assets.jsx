@@ -124,7 +124,7 @@ export const BundleAssets = (props) => {
     totalRowCount,
     filters,
     hasActiveFilters,
-    sortItems,
+    sortFields,
     sort,
     updateSort,
     search,
@@ -154,7 +154,7 @@ export const BundleAssets = (props) => {
         className={css.toolbar}
         renderActions={({ actionClassName }) => (
           <FlexStack space="xsmall" className={cx(css.dropdown, actionClassName)}>
-            <SortDropdown items={sortItems} {...sort} onChange={updateSort} />
+            <SortDropdown fields={sortFields} {...sort} onChange={updateSort} />
             <MetricsTableOptions
               handleViewAll={resetAllFilters}
               handleResetFilters={resetFilters}
@@ -267,7 +267,7 @@ BundleAssets.propTypes = {
     changed: PropTypes.bool,
   }).isRequired,
   hasActiveFilters: PropTypes.bool,
-  sortItems: PropTypes.shape({
+  sortFields: PropTypes.shape({
     [PropTypes.string]: PropTypes.shape({
       label: PropTypes.string,
       defaultDirection: PropTypes.bool,

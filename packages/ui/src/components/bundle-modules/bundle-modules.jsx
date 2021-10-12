@@ -90,7 +90,7 @@ export const BundleModules = ({
   resetFilters,
   resetAllFilters,
   filters,
-  sortItems,
+  sortFields,
   sort,
   updateSort,
   search,
@@ -173,7 +173,7 @@ export const BundleModules = ({
           <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
             <SortDropdown
               className={css.tableDropdown}
-              items={sortItems}
+              fields={sortFields}
               onChange={updateSort}
               {...sort}
             />
@@ -262,7 +262,7 @@ BundleModules.propTypes = {
 
   hasActiveFilters: PropTypes.bool,
 
-  sortItems: PropTypes.shape({
+  sortFields: PropTypes.shape({
     [PropTypes.string]: PropTypes.shape({
       label: PropTypes.string,
       defaultDirection: PropTypes.bool,

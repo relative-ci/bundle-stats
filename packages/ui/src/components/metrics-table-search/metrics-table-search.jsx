@@ -48,6 +48,7 @@ export const MetricsTableSearch = (props) => {
         onChange={handleChangeValue}
         value={value}
         size="small"
+        autoComplete="off"
       />
       {search && (
         <button className={css.cancelButton} type="button" onClick={handleClearValue}>

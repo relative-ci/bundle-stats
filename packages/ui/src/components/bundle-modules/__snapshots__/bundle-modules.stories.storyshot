@@ -42,7 +42,7 @@ exports[`Storyshots Components/BundleModules default 1`] = `
       }
     }
   >
-    <withProps(WithSearch)
+    <BundleModules
       jobs={
         Array [
           Object {
@@ -1990,7 +1990,7 @@ exports[`Storyshots Components/BundleModules empty baseline 1`] = `
       }
     }
   >
-    <withProps(WithSearch)
+    <BundleModules
       jobs={
         Array [
           Object {
@@ -3942,7 +3942,7 @@ exports[`Storyshots Components/BundleModules multiple jobs 1`] = `
       }
     }
   >
-    <withProps(WithSearch)
+    <BundleModules
       jobs={
         Array [
           Object {
@@ -7786,7 +7786,7 @@ exports[`Storyshots Components/BundleModules/chunk filters chunk with module mov
       }
     }
   >
-    <withProps(WithSearch)
+    <BundleModules
       filters={
         Object {
           "c.1": true,
@@ -8326,7 +8326,7 @@ exports[`Storyshots Components/BundleModules/chunk filters chunk with module mov
       }
     }
   >
-    <withProps(WithSearch)
+    <BundleModules
       filters={
         Object {
           "c.1": false,
@@ -8866,7 +8866,7 @@ exports[`Storyshots Components/BundleModules/chunk filters removed chunk 1`] = `
       }
     }
   >
-    <withProps(WithSearch)
+    <BundleModules
       filters={
         Object {
           "c.1": false,

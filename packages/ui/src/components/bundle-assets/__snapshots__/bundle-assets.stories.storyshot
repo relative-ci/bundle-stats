@@ -17804,6 +17804,7 @@ exports[`Storyshots Components/BundleAssets custom filters 1`] = `
           },
         ]
       }
+      setState={[Function]}
     />
   </div>
 </Router>
@@ -26722,6 +26723,7 @@ exports[`Storyshots Components/BundleAssets default 1`] = `
           },
         ]
       }
+      setState={[Function]}
     />
   </div>
 </Router>
@@ -35663,6 +35665,7 @@ exports[`Storyshots Components/BundleAssets empty baseline 1`] = `
           },
         ]
       }
+      setState={[Function]}
     />
   </div>
 </Router>
@@ -53198,6 +53201,8 @@ exports[`Storyshots Components/BundleAssets empty filtered data 1`] = `
           },
         ]
       }
+      search="vendors"
+      setState={[Function]}
     />
   </div>
 </Router>
@@ -71001,6 +71006,7 @@ exports[`Storyshots Components/BundleAssets multiple jobs 1`] = `
           },
         ]
       }
+      setState={[Function]}
     />
   </div>
 </Router>
@@ -88528,6 +88534,7 @@ exports[`Storyshots Components/BundleAssets no assets 1`] = `
           },
         ]
       }
+      setState={[Function]}
     />
   </div>
 </Router>
@@ -106065,6 +106072,7 @@ exports[`Storyshots Components/BundleAssets not predictive 1`] = `
           },
         ]
       }
+      setState={[Function]}
     />
   </div>
 </Router>
