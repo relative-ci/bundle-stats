@@ -72,7 +72,6 @@
     "prop-types": "15.7.2",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "react-router-dom": "^5.2.0",
-    "recompose": "0.30.0"
+    "react-router-dom": "^5.2.0"
   }
 }
