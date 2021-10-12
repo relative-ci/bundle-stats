@@ -1,13 +1,13 @@
 import { useMemo } from 'react';
 import { get, intersection, merge } from 'lodash';
-import { MODULE_PATH_PACKAGES } from '@bundle-stats/utils/lib-esm/webpack/constants';
+import { MODULE_PATH_PACKAGES } from '@bundle-stats/utils/lib-esm/webpack';
 import {
   MODULE_CHUNK,
   MODULE_FILTERS,
   MODULE_FILE_TYPE,
   MODULE_SOURCE_TYPE,
-} from '@bundle-stats/utils/lib-esm/config/component-links';
-import { getModuleSourceFileType } from '@bundle-stats/utils/lib-esm/utils/file-types';
+  getModuleSourceFileType,
+} from '@bundle-stats/utils';
 
 import { SORT_BY_NAME, SORT_BY_SIZE, SORT_BY_DELTA } from './bundle-modules.constants';
 

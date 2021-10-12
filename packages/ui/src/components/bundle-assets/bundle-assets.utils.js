@@ -1,10 +1,5 @@
 import { get } from 'lodash';
-import {
-  ASSET_ENTRY_TYPE,
-  ASSET_FILE_TYPE,
-  ASSET_FILTERS,
-} from '@bundle-stats/utils/lib-esm/config/component-links';
-import { getFileType } from '@bundle-stats/utils/lib-esm/utils/file-types';
+import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, getFileType } from '@bundle-stats/utils';
 
 import { SORT_BY_NAME, SORT_BY_DELTA, SORT_BY_SIZE } from './bundle-assets.constants';
 

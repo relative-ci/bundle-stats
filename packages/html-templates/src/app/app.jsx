@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { App as BundleStatsApp } from '@bundle-stats/ui/lib-esm/app';
+import { App as BundleStatsApp } from '@bundle-stats/ui';
 
 export const App = ({ jobs }) => <BundleStatsApp jobs={jobs} version={__VERSION__} />;
 

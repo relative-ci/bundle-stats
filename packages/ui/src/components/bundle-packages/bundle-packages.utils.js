@@ -1,5 +1,5 @@
 import { get, flatten, uniq } from 'lodash';
-import { PACKAGE_FILTERS } from '@bundle-stats/utils/lib-esm/config/component-links';
+import { PACKAGE_FILTERS } from '@bundle-stats/utils';
 
 import { SORT_BY_NAME, SORT_BY_DELTA, SORT_BY_SIZE } from './bundle-packages.constants';
 
