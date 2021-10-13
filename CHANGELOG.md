@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/relative-ci/bundle-stats/compare/v3.1.3...v3.2.0) (2021-10-13)
+
+
+### Bug Fixes
+
+* **ui:** Search - cancel btn background ([b0affb5](https://github.com/relative-ci/bundle-stats/commit/b0affb5ef8bdb9bb719df38e4fd8a9f6fc7ff50f))
+* Consistent dependency versions across packages ([cceebb7](https://github.com/relative-ci/bundle-stats/commit/cceebb7724670a7c40c156c395449fc65d183690))
+* **html-templayes:** Remove preact/debug ([9cdaa2a](https://github.com/relative-ci/bundle-stats/commit/9cdaa2a83b6e463f7ef77a92cc74ccd7ef9ca815))
+* **ui:** Add core-js ([c62f1bd](https://github.com/relative-ci/bundle-stats/commit/c62f1bd9b298506022aaa4f70c8291dda46ddfe6))
+* **ui:** BarChart - use light Tooltip ([64aa6fb](https://github.com/relative-ci/bundle-stats/commit/64aa6fb6ec00593ce43a6b8e55f26de897aef6ea))
+* **ui:** BundlePackages - show package path ([69dcb45](https://github.com/relative-ci/bundle-stats/commit/69dcb450335cce214b769862792c5a403d45dd66))
+* **ui:** DuplicatePackageWarning - do not show delta when no baseline ([25e08c2](https://github.com/relative-ci/bundle-stats/commit/25e08c2295b375ad7ec9e723e43ddc813eea2c8c))
+* **ui:** MetricsTable - increase left spacing ([5b021aa](https://github.com/relative-ci/bundle-stats/commit/5b021aa3c6ae331a4126587e299dbac9c5df7961))
+* **ui:** PackagePopover - use normalized name for searches ([d32c690](https://github.com/relative-ci/bundle-stats/commit/d32c690c370612479cf6a5f1f589ffd1c77afbb0))
+* **ui:** Remove unused webpack.config & dependencies ([313a6de](https://github.com/relative-ci/bundle-stats/commit/313a6de350d3752aa053f027bbba32053ea8a1f3))
+* **ui:** Tabs - use def focus/active ([3bfdfff](https://github.com/relative-ci/bundle-stats/commit/3bfdfff35c9e279c5e139fdb2ed17373d1848bfc))
+* **ui:** Tooltip - add darkMode variation ([b60f619](https://github.com/relative-ci/bundle-stats/commit/b60f61966f1022ab6d0aa4a0e6155ba68e47286d))
+* **ui:** Tooltip - update styles ([438d16a](https://github.com/relative-ci/bundle-stats/commit/438d16a813495808ed026e958217e95de2b65fd9))
+* **ui:** Tooltip/Popover - replace shadow with filter ([48af4e2](https://github.com/relative-ci/bundle-stats/commit/48af4e278aa09eef9aeee3e4bf0ebc8a5b4ad43e))
+* **utils:** Use convert-units@beta ([731e7a4](https://github.com/relative-ci/bundle-stats/commit/731e7a4c1cf3fc2189f961388632fdbab838be3f))
+* **utils:** Webpack module packages -construct patterns ([29c8606](https://github.com/relative-ci/bundle-stats/commit/29c86067d07188e4a553f7a41f70cc0621ea7c0d))
+* **utils:** Webpack packages - make slug pattern more restrictive ([4d1ac7f](https://github.com/relative-ci/bundle-stats/commit/4d1ac7f7fc3c4783a0124efb651de2ff2752301e))
+
+
+### Features
+
+* **utils:** Extract packages - add support for pnpm ([527e154](https://github.com/relative-ci/bundle-stats/commit/527e15422447c14dfa6f0ba0fdfe859c0aae7b9a))
+
+
+
+
+
 ## [3.1.2](https://github.com/relative-ci/bundle-stats/compare/v3.1.1...v3.1.2) (2021-08-10)
 
 
