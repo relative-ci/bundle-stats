@@ -43,6 +43,6 @@
     "ts-jest": "26.5.6"
   },
   "dependencies": {
-    "superstruct": "^0.8.3"
+    "superstruct": "^0.15.0"
   }
 }
