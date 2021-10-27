@@ -11,7 +11,7 @@ const settings = require('./settings');
 
 const { isProduction } = settings;
 const iconSprite = fs.readFileSync(
-  require.resolve('@bundle-stats/ui/lib-esm/ui/icon/icons.svg'),
+  require.resolve('@bundle-stats/ui/lib-esm/assets/icons.svg'),
   'utf-8',
 );
 
