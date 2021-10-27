@@ -1,388 +1,86 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Layout/FlexStack default 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <FlexStack
-      as="div"
-      className=""
-      space="no-space"
-    >
-      <Box
-        as="div"
-        className=""
-        horizontalPadding=""
-        outline={true}
-        padding="no-space"
-        verticalPadding=""
-      >
-        Lorem ipsum 1
-      </Box>
-      <Box
-        as="div"
-        className=""
-        horizontalPadding=""
-        outline={true}
-        padding="no-space"
-        verticalPadding=""
-      >
-        Lorem ipsum 2
-      </Box>
-      Lorem ipsum 3
-    </FlexStack>
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Layout/FlexStack single item 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <FlexStack
-      as="div"
-      className=""
-      space="no-space"
-    >
-      <Box
-        as="div"
-        className=""
-        horizontalPadding=""
-        outline={true}
-        padding="no-space"
-        verticalPadding=""
-      >
-        Lorem ipsum
-      </Box>
-    </FlexStack>
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Layout/FlexStack with custom wrapper 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <FlexStack
-      as="main"
-      className="wrapper"
-      space="no-space"
-    >
-      <Box
-        as="div"
-        className=""
-        horizontalPadding=""
-        outline={true}
-        padding="no-space"
-        verticalPadding=""
-      >
-        Lorem ipsum 1
-      </Box>
-      <Box
-        as="div"
-        className=""
-        horizontalPadding=""
-        outline={true}
-        padding="no-space"
-        verticalPadding=""
-      >
-        Lorem ipsum 2
-      </Box>
-    </FlexStack>
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Layout/FlexStack with large space 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <FlexStack
-      as="div"
-      className=""
-      space="large"
-    >
-      <Box
-        as="div"
-        className=""
-        horizontalPadding=""
-        outline={true}
-        padding="no-space"
-        verticalPadding=""
-      >
-        Lorem ipsum 1
-      </Box>
-      <Box
-        as="div"
-        className=""
-        horizontalPadding=""
-        outline={true}
-        padding="no-space"
-        verticalPadding=""
-      >
-        Lorem ipsum 2
-      </Box>
-      <Box
-        as="div"
-        className=""
-        horizontalPadding=""
-        outline={true}
-        padding="no-space"
-        verticalPadding=""
-      >
-        Lorem ipsum 3
-      </Box>
-    </FlexStack>
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Layout/FlexStack with nested stack 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <FlexStack
-      as="div"
-      className=""
-      space="large"
-    >
-      <Box
-        as="div"
-        className=""
-        horizontalPadding=""
-        outline={true}
-        padding="no-space"
-        verticalPadding=""
-      >
-        Lorem ipsum 1
-      </Box>
-      <Box
-        as="div"
-        className=""
-        horizontalPadding=""
-        outline={true}
-        padding="no-space"
-        verticalPadding=""
-      >
-        Lorem ipsum 2
-      </Box>
-      <FlexStack
-        as="div"
-        className=""
-        space="small"
-      >
-        <Box
-          as="div"
-          className=""
-          horizontalPadding=""
-          outline={true}
-          padding="no-space"
-          verticalPadding=""
-        >
-          Lorem ipsum 3.1
-        </Box>
-        <Box
-          as="div"
-          className=""
-          horizontalPadding=""
-          outline={true}
-          padding="no-space"
-          verticalPadding=""
-        >
-          Lorem ipsum 3.2
-        </Box>
-      </FlexStack>
-    </FlexStack>
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;

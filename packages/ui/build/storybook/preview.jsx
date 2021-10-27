@@ -6,9 +6,9 @@ import IconSprite from '../../src/ui/icon/icons.svg';
 
 export const decorators = [
   (Story) => (
-    <>
+    <div>
       <Story />
       <IconSprite style={{ position: 'absolute', width: 0, height: 0 }} />
-    </>
+    </div>
   ),
 ];

@@ -1,313 +1,103 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components/Delta default 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <Delta
-      className=""
-      deltaType="POSITIVE"
-      displayValue="20%"
-      inverted={false}
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/Delta empty 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <Delta
-      className=""
-      deltaType="NO_CHANGE"
-      displayValue="0%"
-      inverted={false}
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/Delta inverted 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <Delta
-      className=""
-      deltaType="LOW_NEGATIVE"
-      displayValue="1%"
-      inverted={true}
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/Delta negative 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <Delta
-      className=""
-      deltaType="NEGATIVE"
-      displayValue="20%"
-      inverted={false}
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/Delta slightlyNegative 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <Delta
-      className=""
-      deltaType="LOW_NEGATIVE"
-      displayValue="1%"
-      inverted={false}
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/Delta slightlyPositive 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <Delta
-      className=""
-      deltaType="LOW_POSITIVE"
-      displayValue="1%"
-      inverted={false}
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;

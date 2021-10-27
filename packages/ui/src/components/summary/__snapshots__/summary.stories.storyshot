@@ -1,473 +1,86 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components/Summary custom keys 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <Summary
-      className=""
-      data={
-        Object {
-          "webpack": Object {
-            "assetCount": Object {
-              "baseline": 19,
-              "current": 19,
-            },
-            "cacheInvalidation": Object {
-              "baseline": 0,
-              "current": 75.34,
-            },
-            "chunkCount": Object {
-              "baseline": 4,
-              "current": 4,
-            },
-            "duplicatePackagesCount": Object {
-              "baseline": 3,
-              "current": 3,
-            },
-            "moduleCount": Object {
-              "baseline": 556,
-              "current": 557,
-            },
-            "packageCount": Object {
-              "baseline": 63,
-              "current": 64,
-            },
-            "totalInitialSizeCSS": Object {
-              "baseline": 24919,
-              "current": 21703,
-            },
-            "totalInitialSizeJS": Object {
-              "baseline": 591864,
-              "current": 591944,
-            },
-            "totalSizeByTypeALL": Object {
-              "baseline": 818626,
-              "current": 815490,
-            },
-          },
-        }
-      }
-      keys={
-        Array [
-          "webpack.assetCount",
-          "webpack.chunkCount",
-        ]
-      }
-      loading={false}
-      showSummaryItemDelta={true}
-      size=""
-      summaryItemLink={[Function]}
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/Summary default 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <Summary
-      className=""
-      data={
-        Object {
-          "webpack": Object {
-            "assetCount": Object {
-              "baseline": 19,
-              "current": 19,
-            },
-            "cacheInvalidation": Object {
-              "baseline": 0,
-              "current": 75.34,
-            },
-            "chunkCount": Object {
-              "baseline": 4,
-              "current": 4,
-            },
-            "duplicatePackagesCount": Object {
-              "baseline": 3,
-              "current": 3,
-            },
-            "moduleCount": Object {
-              "baseline": 556,
-              "current": 557,
-            },
-            "packageCount": Object {
-              "baseline": 63,
-              "current": 64,
-            },
-            "totalInitialSizeCSS": Object {
-              "baseline": 24919,
-              "current": 21703,
-            },
-            "totalInitialSizeJS": Object {
-              "baseline": 591864,
-              "current": 591944,
-            },
-            "totalSizeByTypeALL": Object {
-              "baseline": 818626,
-              "current": 815490,
-            },
-          },
-        }
-      }
-      keys={
-        Array [
-          "webpack.totalSizeByTypeALL",
-          "webpack.totalInitialSizeJS",
-          "webpack.totalInitialSizeCSS",
-          "webpack.cacheInvalidation",
-        ]
-      }
-      loading={false}
-      showSummaryItemDelta={true}
-      size=""
-      summaryItemLink={[Function]}
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/Summary loading 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <Summary
-      className=""
-      data={null}
-      keys={
-        Array [
-          "webpack.totalSizeByTypeALL",
-          "webpack.totalInitialSizeJS",
-          "webpack.totalInitialSizeCSS",
-          "webpack.cacheInvalidation",
-        ]
-      }
-      loading={true}
-      showSummaryItemDelta={true}
-      size=""
-      summaryItemLink={[Function]}
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/Summary single run 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <Summary
-      className=""
-      data={
-        Object {
-          "webpack": Object {
-            "assetCount": Object {
-              "baseline": 0,
-              "current": 19,
-            },
-            "cacheInvalidation": Object {
-              "baseline": 0,
-              "current": 0,
-            },
-            "chunkCount": Object {
-              "baseline": 0,
-              "current": 4,
-            },
-            "duplicatePackagesCount": Object {
-              "baseline": 0,
-              "current": 3,
-            },
-            "moduleCount": Object {
-              "baseline": 0,
-              "current": 557,
-            },
-            "packageCount": Object {
-              "baseline": 0,
-              "current": 64,
-            },
-            "totalInitialSizeCSS": Object {
-              "baseline": 0,
-              "current": 21703,
-            },
-            "totalInitialSizeJS": Object {
-              "baseline": 0,
-              "current": 591944,
-            },
-            "totalSizeByTypeALL": Object {
-              "baseline": 0,
-              "current": 815490,
-            },
-          },
-        }
-      }
-      keys={
-        Array [
-          "webpack.totalSizeByTypeALL",
-          "webpack.totalInitialSizeJS",
-          "webpack.totalInitialSizeCSS",
-          "webpack.cacheInvalidation",
-        ]
-      }
-      loading={false}
-      showSummaryItemDelta={false}
-      size=""
-      summaryItemLink={[Function]}
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/Summary with link 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <Summary
-      className=""
-      data={
-        Object {
-          "webpack": Object {
-            "assetCount": Object {
-              "baseline": 19,
-              "current": 19,
-            },
-            "cacheInvalidation": Object {
-              "baseline": 0,
-              "current": 75.34,
-            },
-            "chunkCount": Object {
-              "baseline": 4,
-              "current": 4,
-            },
-            "duplicatePackagesCount": Object {
-              "baseline": 3,
-              "current": 3,
-            },
-            "moduleCount": Object {
-              "baseline": 556,
-              "current": 557,
-            },
-            "packageCount": Object {
-              "baseline": 63,
-              "current": 64,
-            },
-            "totalInitialSizeCSS": Object {
-              "baseline": 24919,
-              "current": 21703,
-            },
-            "totalInitialSizeJS": Object {
-              "baseline": 591864,
-              "current": 591944,
-            },
-            "totalSizeByTypeALL": Object {
-              "baseline": 818626,
-              "current": 815490,
-            },
-          },
-        }
-      }
-      keys={
-        Array [
-          "webpack.totalSizeByTypeALL",
-          "webpack.totalInitialSizeJS",
-          "webpack.totalInitialSizeCSS",
-          "webpack.cacheInvalidation",
-        ]
-      }
-      loading={false}
-      showSummaryItemDelta={true}
-      size=""
-      summaryItemLink={[Function]}
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;

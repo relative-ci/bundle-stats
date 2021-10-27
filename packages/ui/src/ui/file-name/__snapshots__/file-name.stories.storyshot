@@ -2,93 +2,290 @@
 
 exports[`Storyshots Ui/FileName default 1`] = `
 <div>
-  <div
-    key="styles.css"
+  <Component>
+    <div>
+      <div
+        key="styles.css"
+        style={
+          Object {
+            "margin": "12px",
+            "outline": "1px dotted lightpink",
+            "padding": "12px",
+          }
+        }
+      >
+        <FileName
+          as="span"
+          className=""
+          name="styles.css"
+        >
+          <span
+            className="root"
+          >
+            styles.css
+          </span>
+        </FileName>
+      </div>
+      <div
+        key="./src/components/sources/styles.css"
+        style={
+          Object {
+            "margin": "12px",
+            "outline": "1px dotted lightpink",
+            "padding": "12px",
+          }
+        }
+      >
+        <FileName
+          as="span"
+          className=""
+          name="./src/components/sources/styles.css"
+        >
+          <span
+            className="root"
+          >
+            ./src/components/sources/styles.css
+          </span>
+        </FileName>
+      </div>
+      <div
+        key="css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/components/sources/source/styles.css"
+        style={
+          Object {
+            "margin": "12px",
+            "outline": "1px dotted lightpink",
+            "padding": "12px",
+          }
+        }
+      >
+        <FileName
+          as="span"
+          className=""
+          name="css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/components/sources/source/styles.css"
+        >
+          <span
+            className="root"
+          >
+            css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/components/sources/source/styles.css
+          </span>
+        </FileName>
+      </div>
+      <div
+        key="rreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordeallylongword"
+        style={
+          Object {
+            "margin": "12px",
+            "outline": "1px dotted lightpink",
+            "padding": "12px",
+          }
+        }
+      >
+        <FileName
+          as="span"
+          className=""
+          name="rreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordeallylongword"
+        >
+          <span
+            className="root"
+          >
+            rreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordeallylongword
+          </span>
+        </FileName>
+      </div>
+    </div>
+  </Component>
+  <IconSprite
+    height="16"
     style={
       Object {
-        "margin": "12px",
-        "outline": "1px dotted lightpink",
-        "padding": "12px",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
+    width="16"
   >
-    <FileName
-      as="span"
-      className=""
-      name="styles.css"
-    >
-      <span
-        className="root"
-      >
-        styles.css
-      </span>
-    </FileName>
-  </div>
-  <div
-    key="./src/components/sources/styles.css"
-    style={
-      Object {
-        "margin": "12px",
-        "outline": "1px dotted lightpink",
-        "padding": "12px",
+    <svg
+      height="16"
+      style={
+        Object {
+          "height": 0,
+          "position": "absolute",
+          "width": 0,
+        }
       }
-    }
-  >
-    <FileName
-      as="span"
-      className=""
-      name="./src/components/sources/styles.css"
+      width="16"
     >
-      <span
-        className="root"
+      <symbol
+        className="afeather afeather-arrow-down"
+        fill="none"
+        id="arrow"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        ./src/components/sources/styles.css
-      </span>
-    </FileName>
-  </div>
-  <div
-    key="css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/components/sources/source/styles.css"
-    style={
-      Object {
-        "margin": "12px",
-        "outline": "1px dotted lightpink",
-        "padding": "12px",
-      }
-    }
-  >
-    <FileName
-      as="span"
-      className=""
-      name="css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/components/sources/source/styles.css"
-    >
-      <span
-        className="root"
+        <path
+          d="M12 5v14M19 12l-7 7-7-7"
+        />
+      </symbol>
+      <symbol
+        className="bfeather bfeather-x-circle"
+        fill="none"
+        id="cancel"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        css ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src!./src/components/sources/source/styles.css
-      </span>
-    </FileName>
-  </div>
-  <div
-    key="rreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordeallylongword"
-    style={
-      Object {
-        "margin": "12px",
-        "outline": "1px dotted lightpink",
-        "padding": "12px",
-      }
-    }
-  >
-    <FileName
-      as="span"
-      className=""
-      name="rreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordeallylongword"
-    >
-      <span
-        className="root"
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="cfeather cfeather-clock"
+        fill="none"
+        id="clock"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        rreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordeallylongword
-      </span>
-    </FileName>
-  </div>
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 6v6l4 2"
+        />
+      </symbol>
+      <symbol
+        className="dfeather dfeather-x"
+        fill="none"
+        id="close"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 6L6 18M6 6l12 12"
+        />
+      </symbol>
+      <symbol
+        className="efeather efeather-git-commit"
+        fill="none"
+        id="commit"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+        />
+        <path
+          d="M1.05 12H7M17.01 12h5.95"
+        />
+      </symbol>
+      <symbol
+        className="ffeather ffeather-bar-chart"
+        fill="none"
+        id="filter"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 20V10M18 20V4M6 20v-4"
+        />
+      </symbol>
+      <symbol
+        className="gfeather gfeather-help-circle"
+        fill="none"
+        id="help"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"
+        />
+      </symbol>
+      <symbol
+        className="hfeather hfeather-menu"
+        fill="none"
+        id="menu"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 12h18M3 6h18M3 18h18"
+        />
+      </symbol>
+      <symbol
+        fill="currentColor"
+        id="sort"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </symbol>
+      <symbol
+        className="jfeather jfeather-alert-triangle"
+        fill="none"
+        id="warning"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"
+        />
+      </symbol>
+    </svg>
+  </IconSprite>
 </div>
 `;

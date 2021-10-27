@@ -1,788 +1,242 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI/SortDropdown default 1`] = `
-<MemoryRouter
-  initialEntries={
-    Array [
-      Object {
-        "key": "home",
-        "pathname": "/",
-      },
-    ]
-  }
->
-  <Router
-    history={
-      Object {
-        "action": "POP",
-        "block": [Function],
-        "canGo": [Function],
-        "createHref": [Function],
-        "entries": Array [
+<div>
+  <Component>
+    <MemoryRouter
+      initialEntries={
+        Array [
           Object {
-            "hash": "",
             "key": "home",
             "pathname": "/",
-            "search": "",
           },
-        ],
-        "go": [Function],
-        "goBack": [Function],
-        "goForward": [Function],
-        "index": 0,
-        "length": 1,
-        "listen": [Function],
-        "location": Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-        "push": [Function],
-        "replace": [Function],
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "height": "100%",
-          "padding": "24px",
-          "paddingLeft": "200px",
-          "width": "100%",
-        }
+        ]
       }
     >
-      <SortDropdown
-        className=""
-        direction="asc"
-        field="size"
-        fields={
+      <Router
+        history={
           Object {
-            "filename": Object {
-              "label": "Filename",
+            "action": "POP",
+            "block": [Function],
+            "canGo": [Function],
+            "createHref": [Function],
+            "entries": Array [
+              Object {
+                "hash": "",
+                "key": "home",
+                "pathname": "/",
+                "search": "",
+              },
+            ],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "index": 0,
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "key": "home",
+              "pathname": "/",
+              "search": "",
             },
-            "size": Object {
-              "label": "Size",
-            },
+            "push": [Function],
+            "replace": [Function],
           }
         }
-        label="Order by"
-        onChange={[Function]}
       >
-        <Dropdown
-          activeLabel={false}
-          align="right"
-          ariaLabel=""
-          className="root"
-          glyph="sort"
-          label="Ordered by Size"
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "padding": "24px",
+              "paddingLeft": "200px",
+              "width": "100%",
+            }
+          }
         >
-          <ForwardRef(MenuButton)
-            animated={false}
-            animating={false}
-            baseId="id-test"
-            className="root root"
-            currentId="id-test-1"
-            down={[Function]}
-            first={[Function]}
-            groups={Array []}
-            hide={[Function]}
-            items={
-              Array [
-                Object {
-                  "disabled": false,
-                  "groupId": undefined,
-                  "id": "id-test-1",
-                  "ref": Object {
-                    "current": <button
-                      class="itemAsc menuItem item"
-                      id="id-test-1"
-                      role="menuitem"
-                      tabindex="0"
-                      title="Order data by Filename descending"
-                    >
-                      <span
-                        class="itemLabel"
-                      >
-                        Filename
-                      </span>
-                      <span
-                        class="root itemIcon medium"
-                      >
-                        <svg
-                          class="icon"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0 0h24v24H0V0z"
-                            fill="none"
-                          />
-                          <path
-                            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                          />
-                        </svg>
-                      </span>
-                    </button>,
-                  },
+          <SortDropdown
+            className=""
+            direction="asc"
+            field="size"
+            fields={
+              Object {
+                "filename": Object {
+                  "label": "Filename",
                 },
-                Object {
-                  "disabled": false,
-                  "groupId": undefined,
-                  "id": "id-test-2",
-                  "ref": Object {
-                    "current": <button
-                      class="itemAsc menuItem item menuItemActive active"
-                      id="id-test-2"
-                      role="menuitem"
-                      tabindex="-1"
-                      title="Order data by Size descending"
-                    >
-                      <span
-                        class="itemLabel"
-                      >
-                        Size
-                      </span>
-                      <span
-                        class="root itemIcon medium"
-                      >
-                        <svg
-                          class="icon"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0 0h24v24H0V0z"
-                            fill="none"
-                          />
-                          <path
-                            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                          />
-                        </svg>
-                      </span>
-                    </button>,
-                  },
+                "size": Object {
+                  "label": "Size",
                 },
-              ]
-            }
-            last={[Function]}
-            loop={false}
-            modal={true}
-            move={[Function]}
-            next={[Function]}
-            orientation="vertical"
-            place={[Function]}
-            placement="bottom-start"
-            previous={[Function]}
-            registerGroup={[Function]}
-            registerItem={[Function]}
-            reset={[Function]}
-            rtl={false}
-            setAnimated={[Function]}
-            setBaseId={[Function]}
-            setCurrentId={[Function]}
-            setLoop={[Function]}
-            setModal={[Function]}
-            setOrientation={[Function]}
-            setRTL={[Function]}
-            setShift={[Function]}
-            setVisible={[Function]}
-            setWrap={[Function]}
-            shift={false}
-            show={[Function]}
-            sort={[Function]}
-            stopAnimation={[Function]}
-            tabIndex={null}
-            toggle={[Function]}
-            unregisterGroup={[Function]}
-            unregisterItem={[Function]}
-            unstable_arrowRef={
-              Object {
-                "current": null,
               }
             }
-            unstable_arrowStyles={Object {}}
-            unstable_disclosureRef={
-              Object {
-                "current": <button
-                  aria-controls="id-test"
-                  aria-expanded="false"
-                  aria-haspopup="menu"
-                  class="root root"
-                  type="button"
-                >
-                  <div
-                    class="label root space--xxxsmall"
-                  >
-                    <span
-                      class="root item labelIcon medium"
-                    >
-                      <svg
-                        class="icon"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
-                        />
-                        <path
-                          d="M0 0h24v24H0z"
-                          fill="none"
-                        />
-                      </svg>
-                    </span>
-                    <div
-                      class="item"
-                    >
-                      Ordered by Size
-                    </div>
-                  </div>
-                </button>,
-              }
-            }
-            unstable_hasActiveWidget={false}
-            unstable_idCountRef={
-              Object {
-                "current": 2,
-              }
-            }
-            unstable_includesBaseElement={false}
-            unstable_moves={0}
-            unstable_originalPlacement="bottom-start"
-            unstable_popoverRef={
-              Object {
-                "current": <div
-                  aria-label="Ordered by Size"
-                  aria-modal="true"
-                  aria-orientation="vertical"
-                  class="dropdown"
-                  data-dialog="true"
-                  hidden=""
-                  id="id-test"
-                  role="menu"
-                  style="display: none; position: fixed; left: 100%; top: 100%;"
-                  tabindex="-1"
-                >
-                  <div
-                    class="items"
-                  >
-                    <button
-                      class="itemAsc menuItem item"
-                      id="id-test-1"
-                      role="menuitem"
-                      tabindex="0"
-                      title="Order data by Filename descending"
-                    >
-                      <span
-                        class="itemLabel"
-                      >
-                        Filename
-                      </span>
-                      <span
-                        class="root itemIcon medium"
-                      >
-                        <svg
-                          class="icon"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0 0h24v24H0V0z"
-                            fill="none"
-                          />
-                          <path
-                            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                    <button
-                      class="itemAsc menuItem item menuItemActive active"
-                      id="id-test-2"
-                      role="menuitem"
-                      tabindex="-1"
-                      title="Order data by Size descending"
-                    >
-                      <span
-                        class="itemLabel"
-                      >
-                        Size
-                      </span>
-                      <span
-                        class="root itemIcon medium"
-                      >
-                        <svg
-                          class="icon"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0 0h24v24H0V0z"
-                            fill="none"
-                          />
-                          <path
-                            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </div>
-                </div>,
-              }
-            }
-            unstable_popoverStyles={
-              Object {
-                "left": "100%",
-                "position": "fixed",
-                "top": "100%",
-              }
-            }
-            unstable_referenceRef={
-              Object {
-                "current": <button
-                  aria-controls="id-test"
-                  aria-expanded="false"
-                  aria-haspopup="menu"
-                  class="root root"
-                  type="button"
-                >
-                  <div
-                    class="label root space--xxxsmall"
-                  >
-                    <span
-                      class="root item labelIcon medium"
-                    >
-                      <svg
-                        class="icon"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
-                        />
-                        <path
-                          d="M0 0h24v24H0z"
-                          fill="none"
-                        />
-                      </svg>
-                    </span>
-                    <div
-                      class="item"
-                    >
-                      Ordered by Size
-                    </div>
-                  </div>
-                </button>,
-              }
-            }
-            unstable_setHasActiveWidget={[Function]}
-            unstable_setIncludesBaseElement={[Function]}
-            unstable_setValue={[Function]}
-            unstable_setVirtual={[Function]}
-            unstable_update={[Function]}
-            unstable_values={Object {}}
-            unstable_virtual={false}
-            up={[Function]}
-            visible={false}
-            wrap={false}
+            label="Order by"
+            onChange={[Function]}
           >
-            <button
-              aria-controls="id-test"
-              aria-expanded={false}
-              aria-haspopup="menu"
-              className="root root"
-              onClick={[Function]}
-              onClickCapture={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyPressCapture={[Function]}
-              onKeyUp={[Function]}
-              onMouseDown={[Function]}
-              onMouseDownCapture={[Function]}
-              onMouseEnter={[Function]}
-              tabIndex={null}
-              type="button"
+            <Dropdown
+              activeLabel={false}
+              align="right"
+              ariaLabel=""
+              className="root"
+              glyph="sort"
+              label="Ordered by Size"
             >
-              <FlexStack
-                as="div"
-                className="label"
-                space="xxxsmall"
-              >
-                <div
-                  className="label root space--xxxsmall"
-                >
-                  <Icon
-                    as="span"
-                    className="item labelIcon"
-                    glyph="sort"
-                    key=".0"
-                    size="medium"
-                  >
-                    <span
-                      className="root item labelIcon medium"
-                    >
-                      <SortIcon
-                        className="icon"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <svg
-                          className="icon"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
+              <ForwardRef(MenuButton)
+                animated={false}
+                animating={false}
+                baseId="id-test"
+                className="root root"
+                currentId="id-test-1"
+                down={[Function]}
+                first={[Function]}
+                groups={Array []}
+                hide={[Function]}
+                items={
+                  Array [
+                    Object {
+                      "disabled": false,
+                      "groupId": undefined,
+                      "id": "id-test-1",
+                      "ref": Object {
+                        "current": <button
+                          class="itemAsc menuItem item"
+                          id="id-test-1"
+                          role="menuitem"
+                          tabindex="0"
+                          title="Order data by Filename descending"
                         >
-                          <path
-                            d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
-                          />
-                          <path
-                            d="M0 0h24v24H0z"
-                            fill="none"
-                          />
-                        </svg>
-                      </SortIcon>
-                    </span>
-                  </Icon>
-                  <div
-                    className="item"
-                    key=".1"
-                  >
-                    Ordered by Size
-                  </div>
-                </div>
-              </FlexStack>
-            </button>
-          </ForwardRef(MenuButton)>
-          <ForwardRef(Menu)
-            animated={false}
-            animating={false}
-            aria-label="Ordered by Size"
-            baseId="id-test"
-            className="dropdown"
-            currentId="id-test-1"
-            down={[Function]}
-            first={[Function]}
-            groups={Array []}
-            hide={[Function]}
-            items={
-              Array [
-                Object {
-                  "disabled": false,
-                  "groupId": undefined,
-                  "id": "id-test-1",
-                  "ref": Object {
+                          <span
+                            class="itemLabel"
+                          >
+                            Filename
+                          </span>
+                          <span
+                            class="root itemIcon medium"
+                          >
+                            <svg
+                              class="icon"
+                            >
+                              <use
+                                xlink:href="#arrow"
+                              />
+                            </svg>
+                          </span>
+                        </button>,
+                      },
+                    },
+                    Object {
+                      "disabled": false,
+                      "groupId": undefined,
+                      "id": "id-test-2",
+                      "ref": Object {
+                        "current": <button
+                          class="itemAsc menuItem item menuItemActive active"
+                          id="id-test-2"
+                          role="menuitem"
+                          tabindex="-1"
+                          title="Order data by Size descending"
+                        >
+                          <span
+                            class="itemLabel"
+                          >
+                            Size
+                          </span>
+                          <span
+                            class="root itemIcon medium"
+                          >
+                            <svg
+                              class="icon"
+                            >
+                              <use
+                                xlink:href="#arrow"
+                              />
+                            </svg>
+                          </span>
+                        </button>,
+                      },
+                    },
+                  ]
+                }
+                last={[Function]}
+                loop={false}
+                modal={true}
+                move={[Function]}
+                next={[Function]}
+                orientation="vertical"
+                place={[Function]}
+                placement="bottom-start"
+                previous={[Function]}
+                registerGroup={[Function]}
+                registerItem={[Function]}
+                reset={[Function]}
+                rtl={false}
+                setAnimated={[Function]}
+                setBaseId={[Function]}
+                setCurrentId={[Function]}
+                setLoop={[Function]}
+                setModal={[Function]}
+                setOrientation={[Function]}
+                setRTL={[Function]}
+                setShift={[Function]}
+                setVisible={[Function]}
+                setWrap={[Function]}
+                shift={false}
+                show={[Function]}
+                sort={[Function]}
+                stopAnimation={[Function]}
+                tabIndex={null}
+                toggle={[Function]}
+                unregisterGroup={[Function]}
+                unregisterItem={[Function]}
+                unstable_arrowRef={
+                  Object {
+                    "current": null,
+                  }
+                }
+                unstable_arrowStyles={Object {}}
+                unstable_disclosureRef={
+                  Object {
                     "current": <button
-                      class="itemAsc menuItem item"
-                      id="id-test-1"
-                      role="menuitem"
-                      tabindex="0"
-                      title="Order data by Filename descending"
+                      aria-controls="id-test"
+                      aria-expanded="false"
+                      aria-haspopup="menu"
+                      class="root root"
+                      type="button"
                     >
-                      <span
-                        class="itemLabel"
+                      <div
+                        class="label root space--xxxsmall"
                       >
-                        Filename
-                      </span>
-                      <span
-                        class="root itemIcon medium"
-                      >
-                        <svg
-                          class="icon"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <span
+                          class="root item labelIcon medium"
                         >
-                          <path
-                            d="M0 0h24v24H0V0z"
-                            fill="none"
-                          />
-                          <path
-                            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                          />
-                        </svg>
-                      </span>
+                          <svg
+                            class="icon"
+                          >
+                            <use
+                              xlink:href="#sort"
+                            />
+                          </svg>
+                        </span>
+                        <div
+                          class="item"
+                        >
+                          Ordered by Size
+                        </div>
+                      </div>
                     </button>,
-                  },
-                },
-                Object {
-                  "disabled": false,
-                  "groupId": undefined,
-                  "id": "id-test-2",
-                  "ref": Object {
-                    "current": <button
-                      class="itemAsc menuItem item menuItemActive active"
-                      id="id-test-2"
-                      role="menuitem"
-                      tabindex="-1"
-                      title="Order data by Size descending"
-                    >
-                      <span
-                        class="itemLabel"
-                      >
-                        Size
-                      </span>
-                      <span
-                        class="root itemIcon medium"
-                      >
-                        <svg
-                          class="icon"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0 0h24v24H0V0z"
-                            fill="none"
-                          />
-                          <path
-                            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                          />
-                        </svg>
-                      </span>
-                    </button>,
-                  },
-                },
-              ]
-            }
-            last={[Function]}
-            loop={false}
-            modal={true}
-            move={[Function]}
-            next={[Function]}
-            orientation="vertical"
-            place={[Function]}
-            placement="bottom-start"
-            previous={[Function]}
-            registerGroup={[Function]}
-            registerItem={[Function]}
-            reset={[Function]}
-            rtl={false}
-            setAnimated={[Function]}
-            setBaseId={[Function]}
-            setCurrentId={[Function]}
-            setLoop={[Function]}
-            setModal={[Function]}
-            setOrientation={[Function]}
-            setRTL={[Function]}
-            setShift={[Function]}
-            setVisible={[Function]}
-            setWrap={[Function]}
-            shift={false}
-            show={[Function]}
-            sort={[Function]}
-            stopAnimation={[Function]}
-            toggle={[Function]}
-            unregisterGroup={[Function]}
-            unregisterItem={[Function]}
-            unstable_arrowRef={
-              Object {
-                "current": null,
-              }
-            }
-            unstable_arrowStyles={Object {}}
-            unstable_disclosureRef={
-              Object {
-                "current": <button
-                  aria-controls="id-test"
-                  aria-expanded="false"
-                  aria-haspopup="menu"
-                  class="root root"
-                  type="button"
-                >
-                  <div
-                    class="label root space--xxxsmall"
-                  >
-                    <span
-                      class="root item labelIcon medium"
-                    >
-                      <svg
-                        class="icon"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
-                        />
-                        <path
-                          d="M0 0h24v24H0z"
-                          fill="none"
-                        />
-                      </svg>
-                    </span>
-                    <div
-                      class="item"
-                    >
-                      Ordered by Size
-                    </div>
-                  </div>
-                </button>,
-              }
-            }
-            unstable_hasActiveWidget={false}
-            unstable_idCountRef={
-              Object {
-                "current": 2,
-              }
-            }
-            unstable_includesBaseElement={false}
-            unstable_moves={0}
-            unstable_originalPlacement="bottom-start"
-            unstable_popoverRef={
-              Object {
-                "current": <div
-                  aria-label="Ordered by Size"
-                  aria-modal="true"
-                  aria-orientation="vertical"
-                  class="dropdown"
-                  data-dialog="true"
-                  hidden=""
-                  id="id-test"
-                  role="menu"
-                  style="display: none; position: fixed; left: 100%; top: 100%;"
-                  tabindex="-1"
-                >
-                  <div
-                    class="items"
-                  >
-                    <button
-                      class="itemAsc menuItem item"
-                      id="id-test-1"
-                      role="menuitem"
-                      tabindex="0"
-                      title="Order data by Filename descending"
-                    >
-                      <span
-                        class="itemLabel"
-                      >
-                        Filename
-                      </span>
-                      <span
-                        class="root itemIcon medium"
-                      >
-                        <svg
-                          class="icon"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0 0h24v24H0V0z"
-                            fill="none"
-                          />
-                          <path
-                            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                    <button
-                      class="itemAsc menuItem item menuItemActive active"
-                      id="id-test-2"
-                      role="menuitem"
-                      tabindex="-1"
-                      title="Order data by Size descending"
-                    >
-                      <span
-                        class="itemLabel"
-                      >
-                        Size
-                      </span>
-                      <span
-                        class="root itemIcon medium"
-                      >
-                        <svg
-                          class="icon"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0 0h24v24H0V0z"
-                            fill="none"
-                          />
-                          <path
-                            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </div>
-                </div>,
-              }
-            }
-            unstable_popoverStyles={
-              Object {
-                "left": "100%",
-                "position": "fixed",
-                "top": "100%",
-              }
-            }
-            unstable_referenceRef={
-              Object {
-                "current": <button
-                  aria-controls="id-test"
-                  aria-expanded="false"
-                  aria-haspopup="menu"
-                  class="root root"
-                  type="button"
-                >
-                  <div
-                    class="label root space--xxxsmall"
-                  >
-                    <span
-                      class="root item labelIcon medium"
-                    >
-                      <svg
-                        class="icon"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
-                        />
-                        <path
-                          d="M0 0h24v24H0z"
-                          fill="none"
-                        />
-                      </svg>
-                    </span>
-                    <div
-                      class="item"
-                    >
-                      Ordered by Size
-                    </div>
-                  </div>
-                </button>,
-              }
-            }
-            unstable_setHasActiveWidget={[Function]}
-            unstable_setIncludesBaseElement={[Function]}
-            unstable_setValue={[Function]}
-            unstable_setVirtual={[Function]}
-            unstable_update={[Function]}
-            unstable_values={Object {}}
-            unstable_virtual={false}
-            up={[Function]}
-            visible={false}
-            wrap={false}
-          >
-            <Portal>
-              <Portal
-                containerInfo={
-                  <div
-                    class="__reakit-portal"
-                  >
-                    <div
+                  }
+                }
+                unstable_hasActiveWidget={false}
+                unstable_idCountRef={
+                  Object {
+                    "current": 2,
+                  }
+                }
+                unstable_includesBaseElement={false}
+                unstable_moves={0}
+                unstable_originalPlacement="bottom-start"
+                unstable_popoverRef={
+                  Object {
+                    "current": <div
                       aria-label="Ordered by Size"
                       aria-modal="true"
                       aria-orientation="vertical"
@@ -814,16 +268,9 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                           >
                             <svg
                               class="icon"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <path
-                                d="M0 0h24v24H0V0z"
-                                fill="none"
-                              />
-                              <path
-                                d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                              <use
+                                xlink:href="#arrow"
                               />
                             </svg>
                           </span>
@@ -845,814 +292,1340 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                           >
                             <svg
                               class="icon"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <path
-                                d="M0 0h24v24H0V0z"
-                                fill="none"
-                              />
-                              <path
-                                d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                              <use
+                                xlink:href="#arrow"
                               />
                             </svg>
                           </span>
                         </button>
                       </div>
-                    </div>
-                  </div>
-                }
-              >
-                <div
-                  aria-label="Ordered by Size"
-                  aria-modal={true}
-                  aria-orientation="vertical"
-                  className="dropdown"
-                  data-dialog={true}
-                  hidden={true}
-                  id="id-test"
-                  onAnimationEnd={[Function]}
-                  onBlur={[Function]}
-                  onBlurCapture={[Function]}
-                  onFocus={[Function]}
-                  onFocusCapture={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyDownCapture={[Function]}
-                  onKeyUpCapture={[Function]}
-                  onTransitionEnd={[Function]}
-                  role="menu"
-                  style={
-                    Object {
-                      "display": "none",
-                      "left": "100%",
-                      "position": "fixed",
-                      "top": "100%",
-                    }
+                    </div>,
                   }
-                  tabIndex={-1}
+                }
+                unstable_popoverStyles={
+                  Object {
+                    "left": "100%",
+                    "position": "fixed",
+                    "top": "100%",
+                  }
+                }
+                unstable_referenceRef={
+                  Object {
+                    "current": <button
+                      aria-controls="id-test"
+                      aria-expanded="false"
+                      aria-haspopup="menu"
+                      class="root root"
+                      type="button"
+                    >
+                      <div
+                        class="label root space--xxxsmall"
+                      >
+                        <span
+                          class="root item labelIcon medium"
+                        >
+                          <svg
+                            class="icon"
+                          >
+                            <use
+                              xlink:href="#sort"
+                            />
+                          </svg>
+                        </span>
+                        <div
+                          class="item"
+                        >
+                          Ordered by Size
+                        </div>
+                      </div>
+                    </button>,
+                  }
+                }
+                unstable_setHasActiveWidget={[Function]}
+                unstable_setIncludesBaseElement={[Function]}
+                unstable_setValue={[Function]}
+                unstable_setVirtual={[Function]}
+                unstable_update={[Function]}
+                unstable_values={Object {}}
+                unstable_virtual={false}
+                up={[Function]}
+                visible={false}
+                wrap={false}
+              >
+                <button
+                  aria-controls="id-test"
+                  aria-expanded={false}
+                  aria-haspopup="menu"
+                  className="root root"
+                  onClick={[Function]}
+                  onClickCapture={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyPressCapture={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseDownCapture={[Function]}
+                  onMouseEnter={[Function]}
+                  tabIndex={null}
+                  type="button"
                 >
-                  <div
-                    className="items"
+                  <FlexStack
+                    as="div"
+                    className="label"
+                    space="xxxsmall"
                   >
-                    <ForwardRef(MenuItem)
-                      animated={false}
-                      animating={false}
-                      baseId="id-test"
-                      className="itemAsc menuItem item"
-                      currentId="id-test-1"
-                      down={[Function]}
-                      first={[Function]}
-                      groups={Array []}
-                      hide={[Function]}
-                      items={
-                        Array [
-                          Object {
-                            "disabled": false,
-                            "groupId": undefined,
-                            "id": "id-test-1",
-                            "ref": Object {
-                              "current": <button
-                                class="itemAsc menuItem item"
-                                id="id-test-1"
-                                role="menuitem"
-                                tabindex="0"
-                                title="Order data by Filename descending"
-                              >
-                                <span
-                                  class="itemLabel"
-                                >
-                                  Filename
-                                </span>
-                                <span
-                                  class="root itemIcon medium"
-                                >
-                                  <svg
-                                    class="icon"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M0 0h24v24H0V0z"
-                                      fill="none"
-                                    />
-                                    <path
-                                      d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                                    />
-                                  </svg>
-                                </span>
-                              </button>,
-                            },
-                          },
-                          Object {
-                            "disabled": false,
-                            "groupId": undefined,
-                            "id": "id-test-2",
-                            "ref": Object {
-                              "current": <button
-                                class="itemAsc menuItem item menuItemActive active"
-                                id="id-test-2"
-                                role="menuitem"
-                                tabindex="-1"
-                                title="Order data by Size descending"
-                              >
-                                <span
-                                  class="itemLabel"
-                                >
-                                  Size
-                                </span>
-                                <span
-                                  class="root itemIcon medium"
-                                >
-                                  <svg
-                                    class="icon"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M0 0h24v24H0V0z"
-                                      fill="none"
-                                    />
-                                    <path
-                                      d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                                    />
-                                  </svg>
-                                </span>
-                              </button>,
-                            },
-                          },
-                        ]
-                      }
-                      key="filename"
-                      last={[Function]}
-                      loop={false}
-                      modal={true}
-                      move={[Function]}
-                      next={[Function]}
-                      onClick={[Function]}
-                      orientation="vertical"
-                      place={[Function]}
-                      placement="bottom-start"
-                      previous={[Function]}
-                      registerGroup={[Function]}
-                      registerItem={[Function]}
-                      reset={[Function]}
-                      rtl={false}
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setCurrentId={[Function]}
-                      setLoop={[Function]}
-                      setModal={[Function]}
-                      setOrientation={[Function]}
-                      setRTL={[Function]}
-                      setShift={[Function]}
-                      setVisible={[Function]}
-                      setWrap={[Function]}
-                      shift={false}
-                      show={[Function]}
-                      sort={[Function]}
-                      stopAnimation={[Function]}
-                      title="Order data by Filename descending"
-                      toggle={[Function]}
-                      unregisterGroup={[Function]}
-                      unregisterItem={[Function]}
-                      unstable_arrowRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": <button
-                            aria-controls="id-test"
-                            aria-expanded="false"
-                            aria-haspopup="menu"
-                            class="root root"
-                            type="button"
+                    <div
+                      className="label root space--xxxsmall"
+                    >
+                      <Icon
+                        as="span"
+                        className="item labelIcon"
+                        glyph="sort"
+                        key=".0"
+                        size="medium"
+                      >
+                        <span
+                          className="root item labelIcon medium"
+                        >
+                          <svg
+                            className="icon"
                           >
-                            <div
-                              class="label root space--xxxsmall"
+                            <use
+                              xlinkHref="#sort"
+                            />
+                          </svg>
+                        </span>
+                      </Icon>
+                      <div
+                        className="item"
+                        key=".1"
+                      >
+                        Ordered by Size
+                      </div>
+                    </div>
+                  </FlexStack>
+                </button>
+              </ForwardRef(MenuButton)>
+              <ForwardRef(Menu)
+                animated={false}
+                animating={false}
+                aria-label="Ordered by Size"
+                baseId="id-test"
+                className="dropdown"
+                currentId="id-test-1"
+                down={[Function]}
+                first={[Function]}
+                groups={Array []}
+                hide={[Function]}
+                items={
+                  Array [
+                    Object {
+                      "disabled": false,
+                      "groupId": undefined,
+                      "id": "id-test-1",
+                      "ref": Object {
+                        "current": <button
+                          class="itemAsc menuItem item"
+                          id="id-test-1"
+                          role="menuitem"
+                          tabindex="0"
+                          title="Order data by Filename descending"
+                        >
+                          <span
+                            class="itemLabel"
+                          >
+                            Filename
+                          </span>
+                          <span
+                            class="root itemIcon medium"
+                          >
+                            <svg
+                              class="icon"
+                            >
+                              <use
+                                xlink:href="#arrow"
+                              />
+                            </svg>
+                          </span>
+                        </button>,
+                      },
+                    },
+                    Object {
+                      "disabled": false,
+                      "groupId": undefined,
+                      "id": "id-test-2",
+                      "ref": Object {
+                        "current": <button
+                          class="itemAsc menuItem item menuItemActive active"
+                          id="id-test-2"
+                          role="menuitem"
+                          tabindex="-1"
+                          title="Order data by Size descending"
+                        >
+                          <span
+                            class="itemLabel"
+                          >
+                            Size
+                          </span>
+                          <span
+                            class="root itemIcon medium"
+                          >
+                            <svg
+                              class="icon"
+                            >
+                              <use
+                                xlink:href="#arrow"
+                              />
+                            </svg>
+                          </span>
+                        </button>,
+                      },
+                    },
+                  ]
+                }
+                last={[Function]}
+                loop={false}
+                modal={true}
+                move={[Function]}
+                next={[Function]}
+                orientation="vertical"
+                place={[Function]}
+                placement="bottom-start"
+                previous={[Function]}
+                registerGroup={[Function]}
+                registerItem={[Function]}
+                reset={[Function]}
+                rtl={false}
+                setAnimated={[Function]}
+                setBaseId={[Function]}
+                setCurrentId={[Function]}
+                setLoop={[Function]}
+                setModal={[Function]}
+                setOrientation={[Function]}
+                setRTL={[Function]}
+                setShift={[Function]}
+                setVisible={[Function]}
+                setWrap={[Function]}
+                shift={false}
+                show={[Function]}
+                sort={[Function]}
+                stopAnimation={[Function]}
+                toggle={[Function]}
+                unregisterGroup={[Function]}
+                unregisterItem={[Function]}
+                unstable_arrowRef={
+                  Object {
+                    "current": null,
+                  }
+                }
+                unstable_arrowStyles={Object {}}
+                unstable_disclosureRef={
+                  Object {
+                    "current": <button
+                      aria-controls="id-test"
+                      aria-expanded="false"
+                      aria-haspopup="menu"
+                      class="root root"
+                      type="button"
+                    >
+                      <div
+                        class="label root space--xxxsmall"
+                      >
+                        <span
+                          class="root item labelIcon medium"
+                        >
+                          <svg
+                            class="icon"
+                          >
+                            <use
+                              xlink:href="#sort"
+                            />
+                          </svg>
+                        </span>
+                        <div
+                          class="item"
+                        >
+                          Ordered by Size
+                        </div>
+                      </div>
+                    </button>,
+                  }
+                }
+                unstable_hasActiveWidget={false}
+                unstable_idCountRef={
+                  Object {
+                    "current": 2,
+                  }
+                }
+                unstable_includesBaseElement={false}
+                unstable_moves={0}
+                unstable_originalPlacement="bottom-start"
+                unstable_popoverRef={
+                  Object {
+                    "current": <div
+                      aria-label="Ordered by Size"
+                      aria-modal="true"
+                      aria-orientation="vertical"
+                      class="dropdown"
+                      data-dialog="true"
+                      hidden=""
+                      id="id-test"
+                      role="menu"
+                      style="display: none; position: fixed; left: 100%; top: 100%;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="items"
+                      >
+                        <button
+                          class="itemAsc menuItem item"
+                          id="id-test-1"
+                          role="menuitem"
+                          tabindex="0"
+                          title="Order data by Filename descending"
+                        >
+                          <span
+                            class="itemLabel"
+                          >
+                            Filename
+                          </span>
+                          <span
+                            class="root itemIcon medium"
+                          >
+                            <svg
+                              class="icon"
+                            >
+                              <use
+                                xlink:href="#arrow"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                        <button
+                          class="itemAsc menuItem item menuItemActive active"
+                          id="id-test-2"
+                          role="menuitem"
+                          tabindex="-1"
+                          title="Order data by Size descending"
+                        >
+                          <span
+                            class="itemLabel"
+                          >
+                            Size
+                          </span>
+                          <span
+                            class="root itemIcon medium"
+                          >
+                            <svg
+                              class="icon"
+                            >
+                              <use
+                                xlink:href="#arrow"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>,
+                  }
+                }
+                unstable_popoverStyles={
+                  Object {
+                    "left": "100%",
+                    "position": "fixed",
+                    "top": "100%",
+                  }
+                }
+                unstable_referenceRef={
+                  Object {
+                    "current": <button
+                      aria-controls="id-test"
+                      aria-expanded="false"
+                      aria-haspopup="menu"
+                      class="root root"
+                      type="button"
+                    >
+                      <div
+                        class="label root space--xxxsmall"
+                      >
+                        <span
+                          class="root item labelIcon medium"
+                        >
+                          <svg
+                            class="icon"
+                          >
+                            <use
+                              xlink:href="#sort"
+                            />
+                          </svg>
+                        </span>
+                        <div
+                          class="item"
+                        >
+                          Ordered by Size
+                        </div>
+                      </div>
+                    </button>,
+                  }
+                }
+                unstable_setHasActiveWidget={[Function]}
+                unstable_setIncludesBaseElement={[Function]}
+                unstable_setValue={[Function]}
+                unstable_setVirtual={[Function]}
+                unstable_update={[Function]}
+                unstable_values={Object {}}
+                unstable_virtual={false}
+                up={[Function]}
+                visible={false}
+                wrap={false}
+              >
+                <Portal>
+                  <Portal
+                    containerInfo={
+                      <div
+                        class="__reakit-portal"
+                      >
+                        <div
+                          aria-label="Ordered by Size"
+                          aria-modal="true"
+                          aria-orientation="vertical"
+                          class="dropdown"
+                          data-dialog="true"
+                          hidden=""
+                          id="id-test"
+                          role="menu"
+                          style="display: none; position: fixed; left: 100%; top: 100%;"
+                          tabindex="-1"
+                        >
+                          <div
+                            class="items"
+                          >
+                            <button
+                              class="itemAsc menuItem item"
+                              id="id-test-1"
+                              role="menuitem"
+                              tabindex="0"
+                              title="Order data by Filename descending"
                             >
                               <span
-                                class="root item labelIcon medium"
+                                class="itemLabel"
+                              >
+                                Filename
+                              </span>
+                              <span
+                                class="root itemIcon medium"
                               >
                                 <svg
                                   class="icon"
-                                  fill="currentColor"
-                                  viewBox="0 0 24 24"
-                                  xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
-                                  />
-                                  <path
-                                    d="M0 0h24v24H0z"
-                                    fill="none"
+                                  <use
+                                    xlink:href="#arrow"
                                   />
                                 </svg>
                               </span>
-                              <div
-                                class="item"
-                              >
-                                Ordered by Size
-                              </div>
-                            </div>
-                          </button>,
-                        }
-                      }
-                      unstable_hasActiveWidget={false}
-                      unstable_idCountRef={
-                        Object {
-                          "current": 2,
-                        }
-                      }
-                      unstable_includesBaseElement={false}
-                      unstable_moves={0}
-                      unstable_originalPlacement="bottom-start"
-                      unstable_popoverRef={
-                        Object {
-                          "current": <div
-                            aria-label="Ordered by Size"
-                            aria-modal="true"
-                            aria-orientation="vertical"
-                            class="dropdown"
-                            data-dialog="true"
-                            hidden=""
-                            id="id-test"
-                            role="menu"
-                            style="display: none; position: fixed; left: 100%; top: 100%;"
-                            tabindex="-1"
-                          >
-                            <div
-                              class="items"
+                            </button>
+                            <button
+                              class="itemAsc menuItem item menuItemActive active"
+                              id="id-test-2"
+                              role="menuitem"
+                              tabindex="-1"
+                              title="Order data by Size descending"
                             >
-                              <button
-                                class="itemAsc menuItem item"
-                                id="id-test-1"
-                                role="menuitem"
-                                tabindex="0"
-                                title="Order data by Filename descending"
+                              <span
+                                class="itemLabel"
                               >
-                                <span
-                                  class="itemLabel"
-                                >
-                                  Filename
-                                </span>
-                                <span
-                                  class="root itemIcon medium"
-                                >
-                                  <svg
-                                    class="icon"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M0 0h24v24H0V0z"
-                                      fill="none"
-                                    />
-                                    <path
-                                      d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                                    />
-                                  </svg>
-                                </span>
-                              </button>
-                              <button
-                                class="itemAsc menuItem item menuItemActive active"
-                                id="id-test-2"
-                                role="menuitem"
-                                tabindex="-1"
-                                title="Order data by Size descending"
+                                Size
+                              </span>
+                              <span
+                                class="root itemIcon medium"
                               >
-                                <span
-                                  class="itemLabel"
+                                <svg
+                                  class="icon"
                                 >
-                                  Size
-                                </span>
-                                <span
-                                  class="root itemIcon medium"
-                                >
-                                  <svg
-                                    class="icon"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M0 0h24v24H0V0z"
-                                      fill="none"
-                                    />
-                                    <path
-                                      d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                                    />
-                                  </svg>
-                                </span>
-                              </button>
-                            </div>
-                          </div>,
-                        }
-                      }
-                      unstable_popoverStyles={
+                                  <use
+                                    xlink:href="#arrow"
+                                  />
+                                </svg>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    }
+                  >
+                    <div
+                      aria-label="Ordered by Size"
+                      aria-modal={true}
+                      aria-orientation="vertical"
+                      className="dropdown"
+                      data-dialog={true}
+                      hidden={true}
+                      id="id-test"
+                      onAnimationEnd={[Function]}
+                      onBlur={[Function]}
+                      onBlurCapture={[Function]}
+                      onFocus={[Function]}
+                      onFocusCapture={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyDownCapture={[Function]}
+                      onKeyUpCapture={[Function]}
+                      onTransitionEnd={[Function]}
+                      role="menu"
+                      style={
                         Object {
+                          "display": "none",
                           "left": "100%",
                           "position": "fixed",
                           "top": "100%",
                         }
                       }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <button
-                            aria-controls="id-test"
-                            aria-expanded="false"
-                            aria-haspopup="menu"
-                            class="root root"
-                            type="button"
-                          >
-                            <div
-                              class="label root space--xxxsmall"
-                            >
-                              <span
-                                class="root item labelIcon medium"
-                              >
-                                <svg
-                                  class="icon"
-                                  fill="currentColor"
-                                  viewBox="0 0 24 24"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
-                                  />
-                                  <path
-                                    d="M0 0h24v24H0z"
-                                    fill="none"
-                                  />
-                                </svg>
-                              </span>
-                              <div
-                                class="item"
-                              >
-                                Ordered by Size
-                              </div>
-                            </div>
-                          </button>,
-                        }
-                      }
-                      unstable_setHasActiveWidget={[Function]}
-                      unstable_setIncludesBaseElement={[Function]}
-                      unstable_setValue={[Function]}
-                      unstable_setVirtual={[Function]}
-                      unstable_update={[Function]}
-                      unstable_values={Object {}}
-                      unstable_virtual={false}
-                      up={[Function]}
-                      visible={false}
-                      wrap={false}
+                      tabIndex={-1}
                     >
-                      <button
-                        className="itemAsc menuItem item"
-                        id="id-test-1"
-                        onBlurCapture={[Function]}
-                        onClick={[Function]}
-                        onClickCapture={[Function]}
-                        onFocus={[Function]}
-                        onKeyDown={[Function]}
-                        onKeyPressCapture={[Function]}
-                        onKeyUp={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseDownCapture={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
-                        onMouseMove={[Function]}
-                        role="menuitem"
-                        tabIndex={0}
-                        title="Order data by Filename descending"
+                      <div
+                        className="items"
                       >
-                        <span
-                          className="itemLabel"
-                        >
-                          Filename
-                        </span>
-                        <Icon
-                          as="span"
-                          className="itemIcon"
-                          glyph="arrow"
-                          size="medium"
-                        >
-                          <span
-                            className="root itemIcon medium"
-                          >
-                            <ArrowIcon
-                              className="icon"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <svg
-                                className="icon"
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M0 0h24v24H0V0z"
-                                  fill="none"
-                                />
-                                <path
-                                  d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                                />
-                              </svg>
-                            </ArrowIcon>
-                          </span>
-                        </Icon>
-                      </button>
-                    </ForwardRef(MenuItem)>
-                    <ForwardRef(MenuItem)
-                      animated={false}
-                      animating={false}
-                      baseId="id-test"
-                      className="itemAsc menuItem item menuItemActive active"
-                      currentId="id-test-1"
-                      down={[Function]}
-                      first={[Function]}
-                      groups={Array []}
-                      hide={[Function]}
-                      items={
-                        Array [
-                          Object {
-                            "disabled": false,
-                            "groupId": undefined,
-                            "id": "id-test-1",
-                            "ref": Object {
-                              "current": <button
-                                class="itemAsc menuItem item"
-                                id="id-test-1"
-                                role="menuitem"
-                                tabindex="0"
-                                title="Order data by Filename descending"
-                              >
-                                <span
-                                  class="itemLabel"
-                                >
-                                  Filename
-                                </span>
-                                <span
-                                  class="root itemIcon medium"
-                                >
-                                  <svg
-                                    class="icon"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
+                        <ForwardRef(MenuItem)
+                          animated={false}
+                          animating={false}
+                          baseId="id-test"
+                          className="itemAsc menuItem item"
+                          currentId="id-test-1"
+                          down={[Function]}
+                          first={[Function]}
+                          groups={Array []}
+                          hide={[Function]}
+                          items={
+                            Array [
+                              Object {
+                                "disabled": false,
+                                "groupId": undefined,
+                                "id": "id-test-1",
+                                "ref": Object {
+                                  "current": <button
+                                    class="itemAsc menuItem item"
+                                    id="id-test-1"
+                                    role="menuitem"
+                                    tabindex="0"
+                                    title="Order data by Filename descending"
                                   >
-                                    <path
-                                      d="M0 0h24v24H0V0z"
-                                      fill="none"
-                                    />
-                                    <path
-                                      d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                                    />
-                                  </svg>
-                                </span>
-                              </button>,
-                            },
-                          },
-                          Object {
-                            "disabled": false,
-                            "groupId": undefined,
-                            "id": "id-test-2",
-                            "ref": Object {
+                                    <span
+                                      class="itemLabel"
+                                    >
+                                      Filename
+                                    </span>
+                                    <span
+                                      class="root itemIcon medium"
+                                    >
+                                      <svg
+                                        class="icon"
+                                      >
+                                        <use
+                                          xlink:href="#arrow"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </button>,
+                                },
+                              },
+                              Object {
+                                "disabled": false,
+                                "groupId": undefined,
+                                "id": "id-test-2",
+                                "ref": Object {
+                                  "current": <button
+                                    class="itemAsc menuItem item menuItemActive active"
+                                    id="id-test-2"
+                                    role="menuitem"
+                                    tabindex="-1"
+                                    title="Order data by Size descending"
+                                  >
+                                    <span
+                                      class="itemLabel"
+                                    >
+                                      Size
+                                    </span>
+                                    <span
+                                      class="root itemIcon medium"
+                                    >
+                                      <svg
+                                        class="icon"
+                                      >
+                                        <use
+                                          xlink:href="#arrow"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </button>,
+                                },
+                              },
+                            ]
+                          }
+                          key="filename"
+                          last={[Function]}
+                          loop={false}
+                          modal={true}
+                          move={[Function]}
+                          next={[Function]}
+                          onClick={[Function]}
+                          orientation="vertical"
+                          place={[Function]}
+                          placement="bottom-start"
+                          previous={[Function]}
+                          registerGroup={[Function]}
+                          registerItem={[Function]}
+                          reset={[Function]}
+                          rtl={false}
+                          setAnimated={[Function]}
+                          setBaseId={[Function]}
+                          setCurrentId={[Function]}
+                          setLoop={[Function]}
+                          setModal={[Function]}
+                          setOrientation={[Function]}
+                          setRTL={[Function]}
+                          setShift={[Function]}
+                          setVisible={[Function]}
+                          setWrap={[Function]}
+                          shift={false}
+                          show={[Function]}
+                          sort={[Function]}
+                          stopAnimation={[Function]}
+                          title="Order data by Filename descending"
+                          toggle={[Function]}
+                          unregisterGroup={[Function]}
+                          unregisterItem={[Function]}
+                          unstable_arrowRef={
+                            Object {
+                              "current": null,
+                            }
+                          }
+                          unstable_arrowStyles={Object {}}
+                          unstable_disclosureRef={
+                            Object {
                               "current": <button
-                                class="itemAsc menuItem item menuItemActive active"
-                                id="id-test-2"
-                                role="menuitem"
+                                aria-controls="id-test"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                class="root root"
+                                type="button"
+                              >
+                                <div
+                                  class="label root space--xxxsmall"
+                                >
+                                  <span
+                                    class="root item labelIcon medium"
+                                  >
+                                    <svg
+                                      class="icon"
+                                    >
+                                      <use
+                                        xlink:href="#sort"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="item"
+                                  >
+                                    Ordered by Size
+                                  </div>
+                                </div>
+                              </button>,
+                            }
+                          }
+                          unstable_hasActiveWidget={false}
+                          unstable_idCountRef={
+                            Object {
+                              "current": 2,
+                            }
+                          }
+                          unstable_includesBaseElement={false}
+                          unstable_moves={0}
+                          unstable_originalPlacement="bottom-start"
+                          unstable_popoverRef={
+                            Object {
+                              "current": <div
+                                aria-label="Ordered by Size"
+                                aria-modal="true"
+                                aria-orientation="vertical"
+                                class="dropdown"
+                                data-dialog="true"
+                                hidden=""
+                                id="id-test"
+                                role="menu"
+                                style="display: none; position: fixed; left: 100%; top: 100%;"
                                 tabindex="-1"
-                                title="Order data by Size descending"
                               >
-                                <span
-                                  class="itemLabel"
+                                <div
+                                  class="items"
                                 >
-                                  Size
-                                </span>
-                                <span
-                                  class="root itemIcon medium"
-                                >
-                                  <svg
-                                    class="icon"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
+                                  <button
+                                    class="itemAsc menuItem item"
+                                    id="id-test-1"
+                                    role="menuitem"
+                                    tabindex="0"
+                                    title="Order data by Filename descending"
                                   >
-                                    <path
-                                      d="M0 0h24v24H0V0z"
-                                      fill="none"
-                                    />
-                                    <path
-                                      d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                                    />
-                                  </svg>
-                                </span>
+                                    <span
+                                      class="itemLabel"
+                                    >
+                                      Filename
+                                    </span>
+                                    <span
+                                      class="root itemIcon medium"
+                                    >
+                                      <svg
+                                        class="icon"
+                                      >
+                                        <use
+                                          xlink:href="#arrow"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </button>
+                                  <button
+                                    class="itemAsc menuItem item menuItemActive active"
+                                    id="id-test-2"
+                                    role="menuitem"
+                                    tabindex="-1"
+                                    title="Order data by Size descending"
+                                  >
+                                    <span
+                                      class="itemLabel"
+                                    >
+                                      Size
+                                    </span>
+                                    <span
+                                      class="root itemIcon medium"
+                                    >
+                                      <svg
+                                        class="icon"
+                                      >
+                                        <use
+                                          xlink:href="#arrow"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>,
+                            }
+                          }
+                          unstable_popoverStyles={
+                            Object {
+                              "left": "100%",
+                              "position": "fixed",
+                              "top": "100%",
+                            }
+                          }
+                          unstable_referenceRef={
+                            Object {
+                              "current": <button
+                                aria-controls="id-test"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                class="root root"
+                                type="button"
+                              >
+                                <div
+                                  class="label root space--xxxsmall"
+                                >
+                                  <span
+                                    class="root item labelIcon medium"
+                                  >
+                                    <svg
+                                      class="icon"
+                                    >
+                                      <use
+                                        xlink:href="#sort"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="item"
+                                  >
+                                    Ordered by Size
+                                  </div>
+                                </div>
                               </button>,
-                            },
-                          },
-                        ]
-                      }
-                      key="size"
-                      last={[Function]}
-                      loop={false}
-                      modal={true}
-                      move={[Function]}
-                      next={[Function]}
-                      onClick={[Function]}
-                      orientation="vertical"
-                      place={[Function]}
-                      placement="bottom-start"
-                      previous={[Function]}
-                      registerGroup={[Function]}
-                      registerItem={[Function]}
-                      reset={[Function]}
-                      rtl={false}
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setCurrentId={[Function]}
-                      setLoop={[Function]}
-                      setModal={[Function]}
-                      setOrientation={[Function]}
-                      setRTL={[Function]}
-                      setShift={[Function]}
-                      setVisible={[Function]}
-                      setWrap={[Function]}
-                      shift={false}
-                      show={[Function]}
-                      sort={[Function]}
-                      stopAnimation={[Function]}
-                      title="Order data by Size descending"
-                      toggle={[Function]}
-                      unregisterGroup={[Function]}
-                      unregisterItem={[Function]}
-                      unstable_arrowRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": <button
-                            aria-controls="id-test"
-                            aria-expanded="false"
-                            aria-haspopup="menu"
-                            class="root root"
-                            type="button"
+                            }
+                          }
+                          unstable_setHasActiveWidget={[Function]}
+                          unstable_setIncludesBaseElement={[Function]}
+                          unstable_setValue={[Function]}
+                          unstable_setVirtual={[Function]}
+                          unstable_update={[Function]}
+                          unstable_values={Object {}}
+                          unstable_virtual={false}
+                          up={[Function]}
+                          visible={false}
+                          wrap={false}
+                        >
+                          <button
+                            className="itemAsc menuItem item"
+                            id="id-test-1"
+                            onBlurCapture={[Function]}
+                            onClick={[Function]}
+                            onClickCapture={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyPressCapture={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseDownCapture={[Function]}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseMove={[Function]}
+                            role="menuitem"
+                            tabIndex={0}
+                            title="Order data by Filename descending"
                           >
-                            <div
-                              class="label root space--xxxsmall"
+                            <span
+                              className="itemLabel"
+                            >
+                              Filename
+                            </span>
+                            <Icon
+                              as="span"
+                              className="itemIcon"
+                              glyph="arrow"
+                              size="medium"
                             >
                               <span
-                                class="root item labelIcon medium"
+                                className="root itemIcon medium"
                               >
                                 <svg
-                                  class="icon"
-                                  fill="currentColor"
-                                  viewBox="0 0 24 24"
-                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="icon"
                                 >
-                                  <path
-                                    d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
-                                  />
-                                  <path
-                                    d="M0 0h24v24H0z"
-                                    fill="none"
+                                  <use
+                                    xlinkHref="#arrow"
                                   />
                                 </svg>
                               </span>
-                              <div
-                                class="item"
-                              >
-                                Ordered by Size
-                              </div>
-                            </div>
-                          </button>,
-                        }
-                      }
-                      unstable_hasActiveWidget={false}
-                      unstable_idCountRef={
-                        Object {
-                          "current": 2,
-                        }
-                      }
-                      unstable_includesBaseElement={false}
-                      unstable_moves={0}
-                      unstable_originalPlacement="bottom-start"
-                      unstable_popoverRef={
-                        Object {
-                          "current": <div
-                            aria-label="Ordered by Size"
-                            aria-modal="true"
-                            aria-orientation="vertical"
-                            class="dropdown"
-                            data-dialog="true"
-                            hidden=""
-                            id="id-test"
-                            role="menu"
-                            style="display: none; position: fixed; left: 100%; top: 100%;"
-                            tabindex="-1"
-                          >
-                            <div
-                              class="items"
-                            >
-                              <button
-                                class="itemAsc menuItem item"
-                                id="id-test-1"
-                                role="menuitem"
-                                tabindex="0"
-                                title="Order data by Filename descending"
-                              >
-                                <span
-                                  class="itemLabel"
-                                >
-                                  Filename
-                                </span>
-                                <span
-                                  class="root itemIcon medium"
-                                >
-                                  <svg
-                                    class="icon"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
+                            </Icon>
+                          </button>
+                        </ForwardRef(MenuItem)>
+                        <ForwardRef(MenuItem)
+                          animated={false}
+                          animating={false}
+                          baseId="id-test"
+                          className="itemAsc menuItem item menuItemActive active"
+                          currentId="id-test-1"
+                          down={[Function]}
+                          first={[Function]}
+                          groups={Array []}
+                          hide={[Function]}
+                          items={
+                            Array [
+                              Object {
+                                "disabled": false,
+                                "groupId": undefined,
+                                "id": "id-test-1",
+                                "ref": Object {
+                                  "current": <button
+                                    class="itemAsc menuItem item"
+                                    id="id-test-1"
+                                    role="menuitem"
+                                    tabindex="0"
+                                    title="Order data by Filename descending"
                                   >
-                                    <path
-                                      d="M0 0h24v24H0V0z"
-                                      fill="none"
-                                    />
-                                    <path
-                                      d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                                    />
-                                  </svg>
-                                </span>
-                              </button>
-                              <button
-                                class="itemAsc menuItem item menuItemActive active"
-                                id="id-test-2"
-                                role="menuitem"
+                                    <span
+                                      class="itemLabel"
+                                    >
+                                      Filename
+                                    </span>
+                                    <span
+                                      class="root itemIcon medium"
+                                    >
+                                      <svg
+                                        class="icon"
+                                      >
+                                        <use
+                                          xlink:href="#arrow"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </button>,
+                                },
+                              },
+                              Object {
+                                "disabled": false,
+                                "groupId": undefined,
+                                "id": "id-test-2",
+                                "ref": Object {
+                                  "current": <button
+                                    class="itemAsc menuItem item menuItemActive active"
+                                    id="id-test-2"
+                                    role="menuitem"
+                                    tabindex="-1"
+                                    title="Order data by Size descending"
+                                  >
+                                    <span
+                                      class="itemLabel"
+                                    >
+                                      Size
+                                    </span>
+                                    <span
+                                      class="root itemIcon medium"
+                                    >
+                                      <svg
+                                        class="icon"
+                                      >
+                                        <use
+                                          xlink:href="#arrow"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </button>,
+                                },
+                              },
+                            ]
+                          }
+                          key="size"
+                          last={[Function]}
+                          loop={false}
+                          modal={true}
+                          move={[Function]}
+                          next={[Function]}
+                          onClick={[Function]}
+                          orientation="vertical"
+                          place={[Function]}
+                          placement="bottom-start"
+                          previous={[Function]}
+                          registerGroup={[Function]}
+                          registerItem={[Function]}
+                          reset={[Function]}
+                          rtl={false}
+                          setAnimated={[Function]}
+                          setBaseId={[Function]}
+                          setCurrentId={[Function]}
+                          setLoop={[Function]}
+                          setModal={[Function]}
+                          setOrientation={[Function]}
+                          setRTL={[Function]}
+                          setShift={[Function]}
+                          setVisible={[Function]}
+                          setWrap={[Function]}
+                          shift={false}
+                          show={[Function]}
+                          sort={[Function]}
+                          stopAnimation={[Function]}
+                          title="Order data by Size descending"
+                          toggle={[Function]}
+                          unregisterGroup={[Function]}
+                          unregisterItem={[Function]}
+                          unstable_arrowRef={
+                            Object {
+                              "current": null,
+                            }
+                          }
+                          unstable_arrowStyles={Object {}}
+                          unstable_disclosureRef={
+                            Object {
+                              "current": <button
+                                aria-controls="id-test"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                class="root root"
+                                type="button"
+                              >
+                                <div
+                                  class="label root space--xxxsmall"
+                                >
+                                  <span
+                                    class="root item labelIcon medium"
+                                  >
+                                    <svg
+                                      class="icon"
+                                    >
+                                      <use
+                                        xlink:href="#sort"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="item"
+                                  >
+                                    Ordered by Size
+                                  </div>
+                                </div>
+                              </button>,
+                            }
+                          }
+                          unstable_hasActiveWidget={false}
+                          unstable_idCountRef={
+                            Object {
+                              "current": 2,
+                            }
+                          }
+                          unstable_includesBaseElement={false}
+                          unstable_moves={0}
+                          unstable_originalPlacement="bottom-start"
+                          unstable_popoverRef={
+                            Object {
+                              "current": <div
+                                aria-label="Ordered by Size"
+                                aria-modal="true"
+                                aria-orientation="vertical"
+                                class="dropdown"
+                                data-dialog="true"
+                                hidden=""
+                                id="id-test"
+                                role="menu"
+                                style="display: none; position: fixed; left: 100%; top: 100%;"
                                 tabindex="-1"
-                                title="Order data by Size descending"
                               >
-                                <span
-                                  class="itemLabel"
+                                <div
+                                  class="items"
                                 >
-                                  Size
-                                </span>
-                                <span
-                                  class="root itemIcon medium"
-                                >
-                                  <svg
-                                    class="icon"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
+                                  <button
+                                    class="itemAsc menuItem item"
+                                    id="id-test-1"
+                                    role="menuitem"
+                                    tabindex="0"
+                                    title="Order data by Filename descending"
                                   >
-                                    <path
-                                      d="M0 0h24v24H0V0z"
-                                      fill="none"
-                                    />
-                                    <path
-                                      d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                                    />
-                                  </svg>
-                                </span>
-                              </button>
-                            </div>
-                          </div>,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <button
-                            aria-controls="id-test"
-                            aria-expanded="false"
-                            aria-haspopup="menu"
-                            class="root root"
-                            type="button"
+                                    <span
+                                      class="itemLabel"
+                                    >
+                                      Filename
+                                    </span>
+                                    <span
+                                      class="root itemIcon medium"
+                                    >
+                                      <svg
+                                        class="icon"
+                                      >
+                                        <use
+                                          xlink:href="#arrow"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </button>
+                                  <button
+                                    class="itemAsc menuItem item menuItemActive active"
+                                    id="id-test-2"
+                                    role="menuitem"
+                                    tabindex="-1"
+                                    title="Order data by Size descending"
+                                  >
+                                    <span
+                                      class="itemLabel"
+                                    >
+                                      Size
+                                    </span>
+                                    <span
+                                      class="root itemIcon medium"
+                                    >
+                                      <svg
+                                        class="icon"
+                                      >
+                                        <use
+                                          xlink:href="#arrow"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>,
+                            }
+                          }
+                          unstable_popoverStyles={
+                            Object {
+                              "left": "100%",
+                              "position": "fixed",
+                              "top": "100%",
+                            }
+                          }
+                          unstable_referenceRef={
+                            Object {
+                              "current": <button
+                                aria-controls="id-test"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                class="root root"
+                                type="button"
+                              >
+                                <div
+                                  class="label root space--xxxsmall"
+                                >
+                                  <span
+                                    class="root item labelIcon medium"
+                                  >
+                                    <svg
+                                      class="icon"
+                                    >
+                                      <use
+                                        xlink:href="#sort"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="item"
+                                  >
+                                    Ordered by Size
+                                  </div>
+                                </div>
+                              </button>,
+                            }
+                          }
+                          unstable_setHasActiveWidget={[Function]}
+                          unstable_setIncludesBaseElement={[Function]}
+                          unstable_setValue={[Function]}
+                          unstable_setVirtual={[Function]}
+                          unstable_update={[Function]}
+                          unstable_values={Object {}}
+                          unstable_virtual={false}
+                          up={[Function]}
+                          visible={false}
+                          wrap={false}
+                        >
+                          <button
+                            className="itemAsc menuItem item menuItemActive active"
+                            id="id-test-2"
+                            onBlurCapture={[Function]}
+                            onClick={[Function]}
+                            onClickCapture={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyPressCapture={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseDownCapture={[Function]}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseMove={[Function]}
+                            role="menuitem"
+                            tabIndex={-1}
+                            title="Order data by Size descending"
                           >
-                            <div
-                              class="label root space--xxxsmall"
+                            <span
+                              className="itemLabel"
+                            >
+                              Size
+                            </span>
+                            <Icon
+                              as="span"
+                              className="itemIcon"
+                              glyph="arrow"
+                              size="medium"
                             >
                               <span
-                                class="root item labelIcon medium"
+                                className="root itemIcon medium"
                               >
                                 <svg
-                                  class="icon"
-                                  fill="currentColor"
-                                  viewBox="0 0 24 24"
-                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="icon"
                                 >
-                                  <path
-                                    d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
-                                  />
-                                  <path
-                                    d="M0 0h24v24H0z"
-                                    fill="none"
+                                  <use
+                                    xlinkHref="#arrow"
                                   />
                                 </svg>
                               </span>
-                              <div
-                                class="item"
-                              >
-                                Ordered by Size
-                              </div>
-                            </div>
-                          </button>,
-                        }
-                      }
-                      unstable_setHasActiveWidget={[Function]}
-                      unstable_setIncludesBaseElement={[Function]}
-                      unstable_setValue={[Function]}
-                      unstable_setVirtual={[Function]}
-                      unstable_update={[Function]}
-                      unstable_values={Object {}}
-                      unstable_virtual={false}
-                      up={[Function]}
-                      visible={false}
-                      wrap={false}
-                    >
-                      <button
-                        className="itemAsc menuItem item menuItemActive active"
-                        id="id-test-2"
-                        onBlurCapture={[Function]}
-                        onClick={[Function]}
-                        onClickCapture={[Function]}
-                        onFocus={[Function]}
-                        onKeyDown={[Function]}
-                        onKeyPressCapture={[Function]}
-                        onKeyUp={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseDownCapture={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
-                        onMouseMove={[Function]}
-                        role="menuitem"
-                        tabIndex={-1}
-                        title="Order data by Size descending"
-                      >
-                        <span
-                          className="itemLabel"
-                        >
-                          Size
-                        </span>
-                        <Icon
-                          as="span"
-                          className="itemIcon"
-                          glyph="arrow"
-                          size="medium"
-                        >
-                          <span
-                            className="root itemIcon medium"
-                          >
-                            <ArrowIcon
-                              className="icon"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <svg
-                                className="icon"
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M0 0h24v24H0V0z"
-                                  fill="none"
-                                />
-                                <path
-                                  d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
-                                />
-                              </svg>
-                            </ArrowIcon>
-                          </span>
-                        </Icon>
-                      </button>
-                    </ForwardRef(MenuItem)>
-                  </div>
-                </div>
-              </Portal>
-            </Portal>
-          </ForwardRef(Menu)>
-        </Dropdown>
-      </SortDropdown>
-    </div>
-  </Router>
-</MemoryRouter>
+                            </Icon>
+                          </button>
+                        </ForwardRef(MenuItem)>
+                      </div>
+                    </div>
+                  </Portal>
+                </Portal>
+              </ForwardRef(Menu)>
+            </Dropdown>
+          </SortDropdown>
+        </div>
+      </Router>
+    </MemoryRouter>
+  </Component>
+  <IconSprite
+    height="16"
+    style={
+      Object {
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
+      }
+    }
+    width="16"
+  >
+    <svg
+      height="16"
+      style={
+        Object {
+          "height": 0,
+          "position": "absolute",
+          "width": 0,
+        }
+      }
+      width="16"
+    >
+      <symbol
+        className="afeather afeather-arrow-down"
+        fill="none"
+        id="arrow"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 5v14M19 12l-7 7-7-7"
+        />
+      </symbol>
+      <symbol
+        className="bfeather bfeather-x-circle"
+        fill="none"
+        id="cancel"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="cfeather cfeather-clock"
+        fill="none"
+        id="clock"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 6v6l4 2"
+        />
+      </symbol>
+      <symbol
+        className="dfeather dfeather-x"
+        fill="none"
+        id="close"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 6L6 18M6 6l12 12"
+        />
+      </symbol>
+      <symbol
+        className="efeather efeather-git-commit"
+        fill="none"
+        id="commit"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+        />
+        <path
+          d="M1.05 12H7M17.01 12h5.95"
+        />
+      </symbol>
+      <symbol
+        className="ffeather ffeather-bar-chart"
+        fill="none"
+        id="filter"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 20V10M18 20V4M6 20v-4"
+        />
+      </symbol>
+      <symbol
+        className="gfeather gfeather-help-circle"
+        fill="none"
+        id="help"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"
+        />
+      </symbol>
+      <symbol
+        className="hfeather hfeather-menu"
+        fill="none"
+        id="menu"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 12h18M3 6h18M3 18h18"
+        />
+      </symbol>
+      <symbol
+        fill="currentColor"
+        id="sort"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </symbol>
+      <symbol
+        className="jfeather jfeather-alert-triangle"
+        fill="none"
+        id="warning"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"
+        />
+      </symbol>
+    </svg>
+  </IconSprite>
+</div>
 `;

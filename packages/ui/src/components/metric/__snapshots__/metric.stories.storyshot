@@ -1,352 +1,103 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components/Metric default 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "maxWidth": "200px",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <Metric
-      anchored={false}
-      className=""
-      enhanced={false}
-      formatter={[Function]}
-      inline={false}
-      value={100}
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/Metric modifier: anchored 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "maxWidth": "200px",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <Metric
-      anchored={true}
-      className=""
-      enhanced={false}
-      formatter={[Function]}
-      inline={false}
-      value={100}
-    >
-      <Delta
-        className=""
-        deltaType="POSITIVE"
-        displayValue="+10%"
-        inverted={false}
-      />
-    </Metric>
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/Metric modifier: delta 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "maxWidth": "200px",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <Metric
-      anchored={false}
-      className=""
-      enhanced={false}
-      formatter={[Function]}
-      inline={false}
-      value={100}
-    >
-      <Delta
-        className=""
-        deltaType="POSITIVE"
-        displayValue="+10%"
-        inverted={false}
-      />
-    </Metric>
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/Metric modifier: enhanced 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "maxWidth": "200px",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <Metric
-      anchored={false}
-      className=""
-      enhanced={true}
-      formatter={[Function]}
-      inline={false}
-      value={100}
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/Metric modifier: formatted value 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "maxWidth": "200px",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <Metric
-      anchored={false}
-      className=""
-      enhanced={false}
-      formatter={[Function]}
-      inline={false}
-      value="100KB"
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/Metric modifier: inline 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "maxWidth": "200px",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <Metric
-      anchored={false}
-      className=""
-      enhanced={false}
-      formatter={[Function]}
-      inline={true}
-      value={100}
-    >
-      <Delta
-        className=""
-        deltaType="POSITIVE"
-        displayValue="+10%"
-        inverted={false}
-      />
-    </Metric>
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
