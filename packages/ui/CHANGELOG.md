@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.1-alpha.0](https://github.com/relative-ci/bundle-stats/compare/v3.2.0...v3.2.1-alpha.0) (2021-10-27)
+
+
+### Bug Fixes
+
+* **ui:** Remove unused icons ([8c337da](https://github.com/relative-ci/bundle-stats/commit/8c337da68a9628d9ef4c9d27f11747b0bc548f29))
+
+
+
+
+
 # [3.2.0](https://github.com/relative-ci/bundle-stats/compare/v3.1.3...v3.2.0) (2021-10-13)
 
 
