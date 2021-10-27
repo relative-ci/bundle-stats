@@ -1,605 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components/MetricsTable default 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <MetricsTable
-      className=""
-      emptyMessage="No entries found."
-      headerRows={Array []}
-      items={
-        Array [
-          Object {
-            "biggerIsBetter": false,
-            "changed": false,
-            "key": "webpack.assets.totalSizeByTypeALL",
-            "label": "Total Size",
-            "runs": Array [
-              Object {
-                "displayValue": "852.95KB",
-                "value": 873421,
-              },
-            ],
-          },
-          Object {
-            "biggerIsBetter": false,
-            "changed": false,
-            "key": "lighthouse.timeToFirstByte",
-            "label": "Time To First Byte",
-            "runs": Array [
-              Object {
-                "displayValue": "1.231s",
-                "value": 1231,
-              },
-            ],
-          },
-          Object {
-            "biggerIsBetter": true,
-            "changed": false,
-            "key": "lighthouse.score",
-            "label": "Score",
-            "runs": Array [
-              Object {
-                "displayValue": "80",
-                "value": 80,
-              },
-            ],
-          },
-          Object {
-            "biggerIsBetter": false,
-            "changed": false,
-            "key": "webpack.assets.totalSizeByTypeJS",
-            "label": "JS",
-            "runs": Array [
-              Object {
-                "displayValue": "336.16KB",
-                "value": 344232,
-              },
-            ],
-          },
-          Object {
-            "biggerIsBetter": false,
-            "changed": false,
-            "key": "lighthouse.domSize",
-            "label": "DOM Size",
-            "runs": Array [
-              Object {
-                "displayValue": "80",
-                "value": 80,
-              },
-            ],
-          },
-        ]
-      }
-      renderRowHeader={[Function]}
-      runs={
-        Array [
-          Object {
-            "internalBuildNumber": 2,
-            "label": "Job #2",
-          },
-        ]
-      }
-      showHeaderSum={false}
-      title=""
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/MetricsTable empty 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <MetricsTable
-      className=""
-      emptyMessage="No entries found."
-      headerRows={Array []}
-      items={Array []}
-      renderRowHeader={[Function]}
-      runs={
-        Array [
-          Object {
-            "internalBuildNumber": 2,
-            "label": "Job #2",
-          },
-          Object {
-            "internalBuildNumber": 1,
-            "label": <a
-              href="#noop"
-            >
-              Job #1
-            </a>,
-          },
-        ]
-      }
-      showHeaderSum={false}
-      title=""
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/MetricsTable multiple runs 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <MetricsTable
-      className=""
-      emptyMessage="No entries found."
-      headerRows={Array []}
-      items={
-        Array [
-          Object {
-            "biggerIsBetter": false,
-            "changed": true,
-            "key": "webpack.assets.totalSizeByTypeALL",
-            "label": "Total Size",
-            "runs": Array [
-              Object {
-                "delta": 751090,
-                "deltaPercentage": 613.98,
-                "deltaType": "HIGH_NEGATIVE",
-                "displayDelta": "+700KB",
-                "displayDeltaPercentage": "+613.98%",
-                "displayValue": "852.95KB",
-                "value": 873421,
-              },
-              Object {
-                "displayValue": "119.46KB",
-                "value": 122331,
-              },
-            ],
-          },
-          Object {
-            "biggerIsBetter": false,
-            "changed": true,
-            "key": "lighthouse.timeToFirstByte",
-            "label": "Time To First Byte",
-            "runs": Array [
-              Object {
-                "delta": 20,
-                "deltaPercentage": 2.0408163,
-                "deltaType": "LOW_NEGATIVE",
-                "displayDelta": "+20ms",
-                "displayDeltaPercentage": "+2.04%",
-                "displayValue": "1s",
-                "value": 1000,
-              },
-              Object {
-                "displayValue": "980ms",
-                "value": 980,
-              },
-            ],
-          },
-          Object {
-            "biggerIsBetter": true,
-            "changed": true,
-            "key": "lighthouse.score",
-            "label": "Score",
-            "runs": Array [
-              Object {
-                "delta": 10,
-                "deltaPercentage": 14.2857143,
-                "deltaType": "POSITIVE",
-                "displayDelta": "+10",
-                "displayDeltaPercentage": "+14.29%",
-                "displayValue": "80",
-                "value": 80,
-              },
-              Object {
-                "displayValue": "70",
-                "value": 70,
-              },
-            ],
-          },
-          Object {
-            "biggerIsBetter": true,
-            "changed": true,
-            "key": "lighthouse.accessibilityScore",
-            "label": "Accessibility score",
-            "runs": Array [
-              Object {
-                "delta": 2,
-                "deltaPercentage": 2.5641026,
-                "deltaType": "LOW_POSITIVE",
-                "displayDelta": "+2",
-                "displayDeltaPercentage": "+2.56%",
-                "displayValue": "80",
-                "value": 80,
-              },
-              Object {
-                "displayValue": "78",
-                "value": 78,
-              },
-            ],
-          },
-          Object {
-            "biggerIsBetter": false,
-            "changed": true,
-            "key": "webpack.assets.totalSizeByTypeJS",
-            "label": "JS",
-            "runs": Array [
-              Object {
-                "delta": 344232,
-                "deltaPercentage": 100,
-                "deltaType": "HIGH_NEGATIVE",
-                "displayDelta": "+100%",
-                "displayDeltaPercentage": "+100%",
-                "displayValue": "336.16KB",
-                "value": 344232,
-              },
-              null,
-            ],
-          },
-          Object {
-            "biggerIsBetter": false,
-            "changed": false,
-            "key": "lighthouse.domSize",
-            "label": "DOM Size",
-            "runs": Array [
-              Object {
-                "delta": 0,
-                "deltaPercentage": 0,
-                "deltaType": "NO_CHANGE",
-                "displayDelta": "0",
-                "displayDeltaPercentage": "0%",
-                "displayValue": "80",
-                "value": 80,
-              },
-              Object {
-                "displayValue": "80",
-                "value": 80,
-              },
-            ],
-          },
-        ]
-      }
-      renderRowHeader={[Function]}
-      runs={
-        Array [
-          Object {
-            "internalBuildNumber": 2,
-            "label": "Job #2",
-          },
-          Object {
-            "internalBuildNumber": 1,
-            "label": <a
-              href="#noop"
-            >
-              Job #1
-            </a>,
-          },
-        ]
-      }
-      showHeaderSum={false}
-      title=""
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/MetricsTable with header rows 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <MetricsTable
-      className=""
-      emptyMessage="No entries found."
-      headerRows={
-        Array [
-          Array [
-            "Metric",
-            Object {
-              "children": "Colspan",
-              "colSpan": 4,
-              "style": Object {
-                "textAlign": "center",
-              },
-            },
-          ],
-        ]
-      }
-      items={
-        Array [
-          Object {
-            "biggerIsBetter": false,
-            "changed": true,
-            "key": "webpack.assets.totalSizeByTypeALL",
-            "label": "Total Size",
-            "runs": Array [
-              Object {
-                "delta": 751090,
-                "deltaPercentage": 613.98,
-                "deltaType": "HIGH_NEGATIVE",
-                "displayDelta": "+700KB",
-                "displayDeltaPercentage": "+613.98%",
-                "displayValue": "852.95KB",
-                "value": 873421,
-              },
-              Object {
-                "displayValue": "119.46KB",
-                "value": 122331,
-              },
-            ],
-          },
-          Object {
-            "biggerIsBetter": false,
-            "changed": true,
-            "key": "lighthouse.timeToFirstByte",
-            "label": "Time To First Byte",
-            "runs": Array [
-              Object {
-                "delta": 20,
-                "deltaPercentage": 2.0408163,
-                "deltaType": "LOW_NEGATIVE",
-                "displayDelta": "+20ms",
-                "displayDeltaPercentage": "+2.04%",
-                "displayValue": "1s",
-                "value": 1000,
-              },
-              Object {
-                "displayValue": "980ms",
-                "value": 980,
-              },
-            ],
-          },
-          Object {
-            "biggerIsBetter": true,
-            "changed": true,
-            "key": "lighthouse.score",
-            "label": "Score",
-            "runs": Array [
-              Object {
-                "delta": 10,
-                "deltaPercentage": 14.2857143,
-                "deltaType": "POSITIVE",
-                "displayDelta": "+10",
-                "displayDeltaPercentage": "+14.29%",
-                "displayValue": "80",
-                "value": 80,
-              },
-              Object {
-                "displayValue": "70",
-                "value": 70,
-              },
-            ],
-          },
-          Object {
-            "biggerIsBetter": true,
-            "changed": true,
-            "key": "lighthouse.accessibilityScore",
-            "label": "Accessibility score",
-            "runs": Array [
-              Object {
-                "delta": 2,
-                "deltaPercentage": 2.5641026,
-                "deltaType": "LOW_POSITIVE",
-                "displayDelta": "+2",
-                "displayDeltaPercentage": "+2.56%",
-                "displayValue": "80",
-                "value": 80,
-              },
-              Object {
-                "displayValue": "78",
-                "value": 78,
-              },
-            ],
-          },
-          Object {
-            "biggerIsBetter": false,
-            "changed": true,
-            "key": "webpack.assets.totalSizeByTypeJS",
-            "label": "JS",
-            "runs": Array [
-              Object {
-                "delta": 344232,
-                "deltaPercentage": 100,
-                "deltaType": "HIGH_NEGATIVE",
-                "displayDelta": "+100%",
-                "displayDeltaPercentage": "+100%",
-                "displayValue": "336.16KB",
-                "value": 344232,
-              },
-              null,
-            ],
-          },
-          Object {
-            "biggerIsBetter": false,
-            "changed": false,
-            "key": "lighthouse.domSize",
-            "label": "DOM Size",
-            "runs": Array [
-              Object {
-                "delta": 0,
-                "deltaPercentage": 0,
-                "deltaType": "NO_CHANGE",
-                "displayDelta": "0",
-                "displayDeltaPercentage": "0%",
-                "displayValue": "80",
-                "value": 80,
-              },
-              Object {
-                "displayValue": "80",
-                "value": 80,
-              },
-            ],
-          },
-        ]
-      }
-      renderRowHeader={[Function]}
-      runs={
-        Array [
-          Object {
-            "internalBuildNumber": 2,
-            "label": "Job #2",
-          },
-          Object {
-            "internalBuildNumber": 1,
-            "label": <a
-              href="#noop"
-            >
-              Job #1
-            </a>,
-          },
-        ]
-      }
-      showHeaderSum={false}
-      title=""
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;

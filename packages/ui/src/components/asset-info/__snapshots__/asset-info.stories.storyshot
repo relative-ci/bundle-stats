@@ -1,152 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components/AssetInfo default 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <AssetInfo
-      CustomComponentLink={[Function]}
-      chunks={Array []}
-      className=""
-      item={
-        Object {
-          "runs": Array [
-            Object {
-              "name": "static/vendor.abcd1234.js",
-            },
-            Object {
-              "name": "static/vendor.defg5678.js",
-            },
-          ],
-        }
-      }
-      labels={
-        Array [
-          "Job #2",
-          "Job #1",
-        ]
-      }
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/AssetInfo with chunks 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <AssetInfo
-      CustomComponentLink={[Function]}
-      chunks={
-        Array [
-          Object {
-            "id": "1",
-            "name": "vendor",
-          },
-          Object {
-            "id": "2",
-            "name": "app~common~utils~shared",
-          },
-        ]
-      }
-      className=""
-      item={
-        Object {
-          "runs": Array [
-            Object {
-              "chunkId": "1",
-              "name": "static/vendor.abcd1234.js",
-            },
-            Object {
-              "chunkId": "2",
-              "name": "static/vendor.defg5678.js",
-            },
-          ],
-        }
-      }
-      labels={
-        Array [
-          "Job #2",
-          "Job #1",
-        ]
-      }
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;

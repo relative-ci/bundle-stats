@@ -1,493 +1,157 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI/Dropdown default 1`] = `
-<MemoryRouter
-  initialEntries={
-    Array [
-      Object {
-        "key": "home",
-        "pathname": "/",
-      },
-    ]
-  }
->
-  <Router
-    history={
-      Object {
-        "action": "POP",
-        "block": [Function],
-        "canGo": [Function],
-        "createHref": [Function],
-        "entries": Array [
+<div>
+  <Component>
+    <MemoryRouter
+      initialEntries={
+        Array [
           Object {
-            "hash": "",
             "key": "home",
             "pathname": "/",
-            "search": "",
           },
-        ],
-        "go": [Function],
-        "goBack": [Function],
-        "goForward": [Function],
-        "index": 0,
-        "length": 1,
-        "listen": [Function],
-        "location": Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-        "push": [Function],
-        "replace": [Function],
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "height": "100%",
-          "padding": "24px",
-          "width": "100%",
-        }
+        ]
       }
     >
-      <Dropdown
-        activeLabel={false}
-        ariaLabel=""
-        className=""
-        glyph="filter"
-        label="Toggle"
+      <Router
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "canGo": [Function],
+            "createHref": [Function],
+            "entries": Array [
+              Object {
+                "hash": "",
+                "key": "home",
+                "pathname": "/",
+                "search": "",
+              },
+            ],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "index": 0,
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "key": "home",
+              "pathname": "/",
+              "search": "",
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
       >
-        <ForwardRef(MenuButton)
-          animated={false}
-          animating={false}
-          baseId="id-test"
-          className="root"
-          down={[Function]}
-          first={[Function]}
-          groups={Array []}
-          hide={[Function]}
-          items={Array []}
-          last={[Function]}
-          loop={false}
-          modal={true}
-          move={[Function]}
-          next={[Function]}
-          orientation="vertical"
-          place={[Function]}
-          placement="bottom-start"
-          previous={[Function]}
-          registerGroup={[Function]}
-          registerItem={[Function]}
-          reset={[Function]}
-          rtl={false}
-          setAnimated={[Function]}
-          setBaseId={[Function]}
-          setCurrentId={[Function]}
-          setLoop={[Function]}
-          setModal={[Function]}
-          setOrientation={[Function]}
-          setRTL={[Function]}
-          setShift={[Function]}
-          setVisible={[Function]}
-          setWrap={[Function]}
-          shift={false}
-          show={[Function]}
-          sort={[Function]}
-          stopAnimation={[Function]}
-          tabIndex={null}
-          toggle={[Function]}
-          unregisterGroup={[Function]}
-          unregisterItem={[Function]}
-          unstable_arrowRef={
+        <div
+          style={
             Object {
-              "current": null,
+              "height": "100%",
+              "padding": "24px",
+              "width": "100%",
             }
           }
-          unstable_arrowStyles={Object {}}
-          unstable_disclosureRef={
-            Object {
-              "current": <button
-                aria-controls="id-test"
-                aria-expanded="false"
-                aria-haspopup="menu"
-                class="root"
-                type="button"
-              >
-                <div
-                  class="label root space--xxxsmall"
-                >
-                  <span
-                    class="root item labelIcon medium"
-                  >
-                    <svg
-                      class="icon"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-                      />
-                      <path
-                        d="M0 0h24v24H0z"
-                        fill="none"
-                      />
-                    </svg>
-                  </span>
-                  <div
-                    class="item"
-                  >
-                    Toggle
-                  </div>
-                </div>
-              </button>,
-            }
-          }
-          unstable_hasActiveWidget={false}
-          unstable_idCountRef={
-            Object {
-              "current": 0,
-            }
-          }
-          unstable_includesBaseElement={false}
-          unstable_moves={0}
-          unstable_originalPlacement="bottom-start"
-          unstable_popoverRef={
-            Object {
-              "current": <div
-                aria-label="Toggle"
-                aria-modal="true"
-                aria-orientation="vertical"
-                class="dropdown"
-                data-dialog="true"
-                hidden=""
-                id="id-test"
-                role="menu"
-                style="display: none; position: fixed; left: 100%; top: 100%;"
-                tabindex="-1"
-              >
-                <ul>
-                  <li>
-                    Option 1
-                  </li>
-                  <li>
-                    Option 2
-                  </li>
-                </ul>
-              </div>,
-            }
-          }
-          unstable_popoverStyles={
-            Object {
-              "left": "100%",
-              "position": "fixed",
-              "top": "100%",
-            }
-          }
-          unstable_referenceRef={
-            Object {
-              "current": <button
-                aria-controls="id-test"
-                aria-expanded="false"
-                aria-haspopup="menu"
-                class="root"
-                type="button"
-              >
-                <div
-                  class="label root space--xxxsmall"
-                >
-                  <span
-                    class="root item labelIcon medium"
-                  >
-                    <svg
-                      class="icon"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-                      />
-                      <path
-                        d="M0 0h24v24H0z"
-                        fill="none"
-                      />
-                    </svg>
-                  </span>
-                  <div
-                    class="item"
-                  >
-                    Toggle
-                  </div>
-                </div>
-              </button>,
-            }
-          }
-          unstable_setHasActiveWidget={[Function]}
-          unstable_setIncludesBaseElement={[Function]}
-          unstable_setValue={[Function]}
-          unstable_setVirtual={[Function]}
-          unstable_update={[Function]}
-          unstable_values={Object {}}
-          unstable_virtual={false}
-          up={[Function]}
-          visible={false}
-          wrap={false}
         >
-          <button
-            aria-controls="id-test"
-            aria-expanded={false}
-            aria-haspopup="menu"
-            className="root"
-            onClick={[Function]}
-            onClickCapture={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onKeyPressCapture={[Function]}
-            onKeyUp={[Function]}
-            onMouseDown={[Function]}
-            onMouseDownCapture={[Function]}
-            onMouseEnter={[Function]}
-            tabIndex={null}
-            type="button"
+          <Dropdown
+            activeLabel={false}
+            ariaLabel=""
+            className=""
+            glyph="filter"
+            label="Toggle"
           >
-            <FlexStack
-              as="div"
-              className="label"
-              space="xxxsmall"
-            >
-              <div
-                className="label root space--xxxsmall"
-              >
-                <Icon
-                  as="span"
-                  className="item labelIcon"
-                  glyph="filter"
-                  key=".0"
-                  size="medium"
-                >
-                  <span
-                    className="root item labelIcon medium"
+            <ForwardRef(MenuButton)
+              animated={false}
+              animating={false}
+              baseId="id-test"
+              className="root"
+              down={[Function]}
+              first={[Function]}
+              groups={Array []}
+              hide={[Function]}
+              items={Array []}
+              last={[Function]}
+              loop={false}
+              modal={true}
+              move={[Function]}
+              next={[Function]}
+              orientation="vertical"
+              place={[Function]}
+              placement="bottom-start"
+              previous={[Function]}
+              registerGroup={[Function]}
+              registerItem={[Function]}
+              reset={[Function]}
+              rtl={false}
+              setAnimated={[Function]}
+              setBaseId={[Function]}
+              setCurrentId={[Function]}
+              setLoop={[Function]}
+              setModal={[Function]}
+              setOrientation={[Function]}
+              setRTL={[Function]}
+              setShift={[Function]}
+              setVisible={[Function]}
+              setWrap={[Function]}
+              shift={false}
+              show={[Function]}
+              sort={[Function]}
+              stopAnimation={[Function]}
+              tabIndex={null}
+              toggle={[Function]}
+              unregisterGroup={[Function]}
+              unregisterItem={[Function]}
+              unstable_arrowRef={
+                Object {
+                  "current": null,
+                }
+              }
+              unstable_arrowStyles={Object {}}
+              unstable_disclosureRef={
+                Object {
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="menu"
+                    class="root"
+                    type="button"
                   >
-                    <FilterIcon
-                      className="icon"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      class="label root space--xxxsmall"
                     >
-                      <svg
-                        className="icon"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <span
+                        class="root item labelIcon medium"
                       >
-                        <path
-                          d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-                        />
-                        <path
-                          d="M0 0h24v24H0z"
-                          fill="none"
-                        />
-                      </svg>
-                    </FilterIcon>
-                  </span>
-                </Icon>
-                <div
-                  className="item"
-                  key=".1"
-                >
-                  Toggle
-                </div>
-              </div>
-            </FlexStack>
-          </button>
-        </ForwardRef(MenuButton)>
-        <ForwardRef(Menu)
-          animated={false}
-          animating={false}
-          aria-label="Toggle"
-          baseId="id-test"
-          className="dropdown"
-          down={[Function]}
-          first={[Function]}
-          groups={Array []}
-          hide={[Function]}
-          items={Array []}
-          last={[Function]}
-          loop={false}
-          modal={true}
-          move={[Function]}
-          next={[Function]}
-          orientation="vertical"
-          place={[Function]}
-          placement="bottom-start"
-          previous={[Function]}
-          registerGroup={[Function]}
-          registerItem={[Function]}
-          reset={[Function]}
-          rtl={false}
-          setAnimated={[Function]}
-          setBaseId={[Function]}
-          setCurrentId={[Function]}
-          setLoop={[Function]}
-          setModal={[Function]}
-          setOrientation={[Function]}
-          setRTL={[Function]}
-          setShift={[Function]}
-          setVisible={[Function]}
-          setWrap={[Function]}
-          shift={false}
-          show={[Function]}
-          sort={[Function]}
-          stopAnimation={[Function]}
-          toggle={[Function]}
-          unregisterGroup={[Function]}
-          unregisterItem={[Function]}
-          unstable_arrowRef={
-            Object {
-              "current": null,
-            }
-          }
-          unstable_arrowStyles={Object {}}
-          unstable_disclosureRef={
-            Object {
-              "current": <button
-                aria-controls="id-test"
-                aria-expanded="false"
-                aria-haspopup="menu"
-                class="root"
-                type="button"
-              >
-                <div
-                  class="label root space--xxxsmall"
-                >
-                  <span
-                    class="root item labelIcon medium"
-                  >
-                    <svg
-                      class="icon"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-                      />
-                      <path
-                        d="M0 0h24v24H0z"
-                        fill="none"
-                      />
-                    </svg>
-                  </span>
-                  <div
-                    class="item"
-                  >
-                    Toggle
-                  </div>
-                </div>
-              </button>,
-            }
-          }
-          unstable_hasActiveWidget={false}
-          unstable_idCountRef={
-            Object {
-              "current": 0,
-            }
-          }
-          unstable_includesBaseElement={false}
-          unstable_moves={0}
-          unstable_originalPlacement="bottom-start"
-          unstable_popoverRef={
-            Object {
-              "current": <div
-                aria-label="Toggle"
-                aria-modal="true"
-                aria-orientation="vertical"
-                class="dropdown"
-                data-dialog="true"
-                hidden=""
-                id="id-test"
-                role="menu"
-                style="display: none; position: fixed; left: 100%; top: 100%;"
-                tabindex="-1"
-              >
-                <ul>
-                  <li>
-                    Option 1
-                  </li>
-                  <li>
-                    Option 2
-                  </li>
-                </ul>
-              </div>,
-            }
-          }
-          unstable_popoverStyles={
-            Object {
-              "left": "100%",
-              "position": "fixed",
-              "top": "100%",
-            }
-          }
-          unstable_referenceRef={
-            Object {
-              "current": <button
-                aria-controls="id-test"
-                aria-expanded="false"
-                aria-haspopup="menu"
-                class="root"
-                type="button"
-              >
-                <div
-                  class="label root space--xxxsmall"
-                >
-                  <span
-                    class="root item labelIcon medium"
-                  >
-                    <svg
-                      class="icon"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-                      />
-                      <path
-                        d="M0 0h24v24H0z"
-                        fill="none"
-                      />
-                    </svg>
-                  </span>
-                  <div
-                    class="item"
-                  >
-                    Toggle
-                  </div>
-                </div>
-              </button>,
-            }
-          }
-          unstable_setHasActiveWidget={[Function]}
-          unstable_setIncludesBaseElement={[Function]}
-          unstable_setValue={[Function]}
-          unstable_setVirtual={[Function]}
-          unstable_update={[Function]}
-          unstable_values={Object {}}
-          unstable_virtual={false}
-          up={[Function]}
-          visible={false}
-          wrap={false}
-        >
-          <Portal>
-            <Portal
-              containerInfo={
-                <div
-                  class="__reakit-portal"
-                >
-                  <div
+                        <svg
+                          class="icon"
+                        >
+                          <use
+                            xlink:href="#filter"
+                          />
+                        </svg>
+                      </span>
+                      <div
+                        class="item"
+                      >
+                        Toggle
+                      </div>
+                    </div>
+                  </button>,
+                }
+              }
+              unstable_hasActiveWidget={false}
+              unstable_idCountRef={
+                Object {
+                  "current": 0,
+                }
+              }
+              unstable_includesBaseElement={false}
+              unstable_moves={0}
+              unstable_originalPlacement="bottom-start"
+              unstable_popoverRef={
+                Object {
+                  "current": <div
                     aria-label="Toggle"
                     aria-modal="true"
                     aria-orientation="vertical"
@@ -507,538 +171,699 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                         Option 2
                       </li>
                     </ul>
-                  </div>
-                </div>
-              }
-            >
-              <div
-                aria-label="Toggle"
-                aria-modal={true}
-                aria-orientation="vertical"
-                className="dropdown"
-                data-dialog={true}
-                hidden={true}
-                id="id-test"
-                onAnimationEnd={[Function]}
-                onBlur={[Function]}
-                onBlurCapture={[Function]}
-                onFocus={[Function]}
-                onFocusCapture={[Function]}
-                onKeyDown={[Function]}
-                onKeyDownCapture={[Function]}
-                onKeyUpCapture={[Function]}
-                onTransitionEnd={[Function]}
-                role="menu"
-                style={
-                  Object {
-                    "display": "none",
-                    "left": "100%",
-                    "position": "fixed",
-                    "top": "100%",
-                  }
+                  </div>,
                 }
-                tabIndex={-1}
+              }
+              unstable_popoverStyles={
+                Object {
+                  "left": "100%",
+                  "position": "fixed",
+                  "top": "100%",
+                }
+              }
+              unstable_referenceRef={
+                Object {
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="menu"
+                    class="root"
+                    type="button"
+                  >
+                    <div
+                      class="label root space--xxxsmall"
+                    >
+                      <span
+                        class="root item labelIcon medium"
+                      >
+                        <svg
+                          class="icon"
+                        >
+                          <use
+                            xlink:href="#filter"
+                          />
+                        </svg>
+                      </span>
+                      <div
+                        class="item"
+                      >
+                        Toggle
+                      </div>
+                    </div>
+                  </button>,
+                }
+              }
+              unstable_setHasActiveWidget={[Function]}
+              unstable_setIncludesBaseElement={[Function]}
+              unstable_setValue={[Function]}
+              unstable_setVirtual={[Function]}
+              unstable_update={[Function]}
+              unstable_values={Object {}}
+              unstable_virtual={false}
+              up={[Function]}
+              visible={false}
+              wrap={false}
+            >
+              <button
+                aria-controls="id-test"
+                aria-expanded={false}
+                aria-haspopup="menu"
+                className="root"
+                onClick={[Function]}
+                onClickCapture={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyPressCapture={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseDownCapture={[Function]}
+                onMouseEnter={[Function]}
+                tabIndex={null}
+                type="button"
               >
-                <ul>
-                  <li>
-                    Option 1
-                  </li>
-                  <li>
-                    Option 2
-                  </li>
-                </ul>
-              </div>
-            </Portal>
-          </Portal>
-        </ForwardRef(Menu)>
-      </Dropdown>
-    </div>
-  </Router>
-</MemoryRouter>
+                <FlexStack
+                  as="div"
+                  className="label"
+                  space="xxxsmall"
+                >
+                  <div
+                    className="label root space--xxxsmall"
+                  >
+                    <Icon
+                      as="span"
+                      className="item labelIcon"
+                      glyph="filter"
+                      key=".0"
+                      size="medium"
+                    >
+                      <span
+                        className="root item labelIcon medium"
+                      >
+                        <svg
+                          className="icon"
+                        >
+                          <use
+                            xlinkHref="#filter"
+                          />
+                        </svg>
+                      </span>
+                    </Icon>
+                    <div
+                      className="item"
+                      key=".1"
+                    >
+                      Toggle
+                    </div>
+                  </div>
+                </FlexStack>
+              </button>
+            </ForwardRef(MenuButton)>
+            <ForwardRef(Menu)
+              animated={false}
+              animating={false}
+              aria-label="Toggle"
+              baseId="id-test"
+              className="dropdown"
+              down={[Function]}
+              first={[Function]}
+              groups={Array []}
+              hide={[Function]}
+              items={Array []}
+              last={[Function]}
+              loop={false}
+              modal={true}
+              move={[Function]}
+              next={[Function]}
+              orientation="vertical"
+              place={[Function]}
+              placement="bottom-start"
+              previous={[Function]}
+              registerGroup={[Function]}
+              registerItem={[Function]}
+              reset={[Function]}
+              rtl={false}
+              setAnimated={[Function]}
+              setBaseId={[Function]}
+              setCurrentId={[Function]}
+              setLoop={[Function]}
+              setModal={[Function]}
+              setOrientation={[Function]}
+              setRTL={[Function]}
+              setShift={[Function]}
+              setVisible={[Function]}
+              setWrap={[Function]}
+              shift={false}
+              show={[Function]}
+              sort={[Function]}
+              stopAnimation={[Function]}
+              toggle={[Function]}
+              unregisterGroup={[Function]}
+              unregisterItem={[Function]}
+              unstable_arrowRef={
+                Object {
+                  "current": null,
+                }
+              }
+              unstable_arrowStyles={Object {}}
+              unstable_disclosureRef={
+                Object {
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="menu"
+                    class="root"
+                    type="button"
+                  >
+                    <div
+                      class="label root space--xxxsmall"
+                    >
+                      <span
+                        class="root item labelIcon medium"
+                      >
+                        <svg
+                          class="icon"
+                        >
+                          <use
+                            xlink:href="#filter"
+                          />
+                        </svg>
+                      </span>
+                      <div
+                        class="item"
+                      >
+                        Toggle
+                      </div>
+                    </div>
+                  </button>,
+                }
+              }
+              unstable_hasActiveWidget={false}
+              unstable_idCountRef={
+                Object {
+                  "current": 0,
+                }
+              }
+              unstable_includesBaseElement={false}
+              unstable_moves={0}
+              unstable_originalPlacement="bottom-start"
+              unstable_popoverRef={
+                Object {
+                  "current": <div
+                    aria-label="Toggle"
+                    aria-modal="true"
+                    aria-orientation="vertical"
+                    class="dropdown"
+                    data-dialog="true"
+                    hidden=""
+                    id="id-test"
+                    role="menu"
+                    style="display: none; position: fixed; left: 100%; top: 100%;"
+                    tabindex="-1"
+                  >
+                    <ul>
+                      <li>
+                        Option 1
+                      </li>
+                      <li>
+                        Option 2
+                      </li>
+                    </ul>
+                  </div>,
+                }
+              }
+              unstable_popoverStyles={
+                Object {
+                  "left": "100%",
+                  "position": "fixed",
+                  "top": "100%",
+                }
+              }
+              unstable_referenceRef={
+                Object {
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="menu"
+                    class="root"
+                    type="button"
+                  >
+                    <div
+                      class="label root space--xxxsmall"
+                    >
+                      <span
+                        class="root item labelIcon medium"
+                      >
+                        <svg
+                          class="icon"
+                        >
+                          <use
+                            xlink:href="#filter"
+                          />
+                        </svg>
+                      </span>
+                      <div
+                        class="item"
+                      >
+                        Toggle
+                      </div>
+                    </div>
+                  </button>,
+                }
+              }
+              unstable_setHasActiveWidget={[Function]}
+              unstable_setIncludesBaseElement={[Function]}
+              unstable_setValue={[Function]}
+              unstable_setVirtual={[Function]}
+              unstable_update={[Function]}
+              unstable_values={Object {}}
+              unstable_virtual={false}
+              up={[Function]}
+              visible={false}
+              wrap={false}
+            >
+              <Portal>
+                <Portal
+                  containerInfo={
+                    <div
+                      class="__reakit-portal"
+                    >
+                      <div
+                        aria-label="Toggle"
+                        aria-modal="true"
+                        aria-orientation="vertical"
+                        class="dropdown"
+                        data-dialog="true"
+                        hidden=""
+                        id="id-test"
+                        role="menu"
+                        style="display: none; position: fixed; left: 100%; top: 100%;"
+                        tabindex="-1"
+                      >
+                        <ul>
+                          <li>
+                            Option 1
+                          </li>
+                          <li>
+                            Option 2
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  }
+                >
+                  <div
+                    aria-label="Toggle"
+                    aria-modal={true}
+                    aria-orientation="vertical"
+                    className="dropdown"
+                    data-dialog={true}
+                    hidden={true}
+                    id="id-test"
+                    onAnimationEnd={[Function]}
+                    onBlur={[Function]}
+                    onBlurCapture={[Function]}
+                    onFocus={[Function]}
+                    onFocusCapture={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyDownCapture={[Function]}
+                    onKeyUpCapture={[Function]}
+                    onTransitionEnd={[Function]}
+                    role="menu"
+                    style={
+                      Object {
+                        "display": "none",
+                        "left": "100%",
+                        "position": "fixed",
+                        "top": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <ul>
+                      <li>
+                        Option 1
+                      </li>
+                      <li>
+                        Option 2
+                      </li>
+                    </ul>
+                  </div>
+                </Portal>
+              </Portal>
+            </ForwardRef(Menu)>
+          </Dropdown>
+        </div>
+      </Router>
+    </MemoryRouter>
+  </Component>
+  <IconSprite
+    height="16"
+    style={
+      Object {
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
+      }
+    }
+    width="16"
+  >
+    <svg
+      height="16"
+      style={
+        Object {
+          "height": 0,
+          "position": "absolute",
+          "width": 0,
+        }
+      }
+      width="16"
+    >
+      <symbol
+        className="afeather afeather-arrow-down"
+        fill="none"
+        id="arrow"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 5v14M19 12l-7 7-7-7"
+        />
+      </symbol>
+      <symbol
+        className="bfeather bfeather-x-circle"
+        fill="none"
+        id="cancel"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="cfeather cfeather-clock"
+        fill="none"
+        id="clock"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 6v6l4 2"
+        />
+      </symbol>
+      <symbol
+        className="dfeather dfeather-x"
+        fill="none"
+        id="close"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 6L6 18M6 6l12 12"
+        />
+      </symbol>
+      <symbol
+        className="efeather efeather-git-commit"
+        fill="none"
+        id="commit"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+        />
+        <path
+          d="M1.05 12H7M17.01 12h5.95"
+        />
+      </symbol>
+      <symbol
+        className="ffeather ffeather-bar-chart"
+        fill="none"
+        id="filter"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 20V10M18 20V4M6 20v-4"
+        />
+      </symbol>
+      <symbol
+        className="gfeather gfeather-help-circle"
+        fill="none"
+        id="help"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"
+        />
+      </symbol>
+      <symbol
+        className="hfeather hfeather-menu"
+        fill="none"
+        id="menu"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 12h18M3 6h18M3 18h18"
+        />
+      </symbol>
+      <symbol
+        fill="currentColor"
+        id="sort"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </symbol>
+      <symbol
+        className="jfeather jfeather-alert-triangle"
+        fill="none"
+        id="warning"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"
+        />
+      </symbol>
+    </svg>
+  </IconSprite>
+</div>
 `;
 
 exports[`Storyshots UI/Dropdown with render function 1`] = `
-<MemoryRouter
-  initialEntries={
-    Array [
-      Object {
-        "key": "home",
-        "pathname": "/",
-      },
-    ]
-  }
->
-  <Router
-    history={
-      Object {
-        "action": "POP",
-        "block": [Function],
-        "canGo": [Function],
-        "createHref": [Function],
-        "entries": Array [
+<div>
+  <Component>
+    <MemoryRouter
+      initialEntries={
+        Array [
           Object {
-            "hash": "",
             "key": "home",
             "pathname": "/",
-            "search": "",
           },
-        ],
-        "go": [Function],
-        "goBack": [Function],
-        "goForward": [Function],
-        "index": 0,
-        "length": 1,
-        "listen": [Function],
-        "location": Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-        "push": [Function],
-        "replace": [Function],
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "height": "100%",
-          "padding": "24px",
-          "width": "100%",
-        }
+        ]
       }
     >
-      <Dropdown
-        activeLabel={false}
-        ariaLabel=""
-        className=""
-        glyph="filter"
-        label="Toggle"
+      <Router
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "canGo": [Function],
+            "createHref": [Function],
+            "entries": Array [
+              Object {
+                "hash": "",
+                "key": "home",
+                "pathname": "/",
+                "search": "",
+              },
+            ],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "index": 0,
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "key": "home",
+              "pathname": "/",
+              "search": "",
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
       >
-        <ForwardRef(MenuButton)
-          animated={false}
-          animating={false}
-          baseId="id-test"
-          className="root"
-          down={[Function]}
-          first={[Function]}
-          groups={Array []}
-          hide={[Function]}
-          items={Array []}
-          last={[Function]}
-          loop={false}
-          modal={true}
-          move={[Function]}
-          next={[Function]}
-          orientation="vertical"
-          place={[Function]}
-          placement="bottom-start"
-          previous={[Function]}
-          registerGroup={[Function]}
-          registerItem={[Function]}
-          reset={[Function]}
-          rtl={false}
-          setAnimated={[Function]}
-          setBaseId={[Function]}
-          setCurrentId={[Function]}
-          setLoop={[Function]}
-          setModal={[Function]}
-          setOrientation={[Function]}
-          setRTL={[Function]}
-          setShift={[Function]}
-          setVisible={[Function]}
-          setWrap={[Function]}
-          shift={false}
-          show={[Function]}
-          sort={[Function]}
-          stopAnimation={[Function]}
-          tabIndex={null}
-          toggle={[Function]}
-          unregisterGroup={[Function]}
-          unregisterItem={[Function]}
-          unstable_arrowRef={
+        <div
+          style={
             Object {
-              "current": null,
+              "height": "100%",
+              "padding": "24px",
+              "width": "100%",
             }
           }
-          unstable_arrowStyles={Object {}}
-          unstable_disclosureRef={
-            Object {
-              "current": <button
-                aria-controls="id-test"
-                aria-expanded="false"
-                aria-haspopup="menu"
-                class="root"
-                type="button"
-              >
-                <div
-                  class="label root space--xxxsmall"
-                >
-                  <span
-                    class="root item labelIcon medium"
-                  >
-                    <svg
-                      class="icon"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-                      />
-                      <path
-                        d="M0 0h24v24H0z"
-                        fill="none"
-                      />
-                    </svg>
-                  </span>
-                  <div
-                    class="item"
-                  >
-                    Toggle
-                  </div>
-                </div>
-              </button>,
-            }
-          }
-          unstable_hasActiveWidget={false}
-          unstable_idCountRef={
-            Object {
-              "current": 0,
-            }
-          }
-          unstable_includesBaseElement={false}
-          unstable_moves={0}
-          unstable_originalPlacement="bottom-start"
-          unstable_popoverRef={
-            Object {
-              "current": <div
-                aria-label="Toggle"
-                aria-modal="true"
-                aria-orientation="vertical"
-                class="dropdown"
-                data-dialog="true"
-                hidden=""
-                id="id-test"
-                role="menu"
-                style="display: none; position: fixed; left: 100%; top: 100%;"
-                tabindex="-1"
-              >
-                <button
-                  type="button"
-                >
-                  Toggle dropdown
-                </button>
-              </div>,
-            }
-          }
-          unstable_popoverStyles={
-            Object {
-              "left": "100%",
-              "position": "fixed",
-              "top": "100%",
-            }
-          }
-          unstable_referenceRef={
-            Object {
-              "current": <button
-                aria-controls="id-test"
-                aria-expanded="false"
-                aria-haspopup="menu"
-                class="root"
-                type="button"
-              >
-                <div
-                  class="label root space--xxxsmall"
-                >
-                  <span
-                    class="root item labelIcon medium"
-                  >
-                    <svg
-                      class="icon"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-                      />
-                      <path
-                        d="M0 0h24v24H0z"
-                        fill="none"
-                      />
-                    </svg>
-                  </span>
-                  <div
-                    class="item"
-                  >
-                    Toggle
-                  </div>
-                </div>
-              </button>,
-            }
-          }
-          unstable_setHasActiveWidget={[Function]}
-          unstable_setIncludesBaseElement={[Function]}
-          unstable_setValue={[Function]}
-          unstable_setVirtual={[Function]}
-          unstable_update={[Function]}
-          unstable_values={Object {}}
-          unstable_virtual={false}
-          up={[Function]}
-          visible={false}
-          wrap={false}
         >
-          <button
-            aria-controls="id-test"
-            aria-expanded={false}
-            aria-haspopup="menu"
-            className="root"
-            onClick={[Function]}
-            onClickCapture={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onKeyPressCapture={[Function]}
-            onKeyUp={[Function]}
-            onMouseDown={[Function]}
-            onMouseDownCapture={[Function]}
-            onMouseEnter={[Function]}
-            tabIndex={null}
-            type="button"
+          <Dropdown
+            activeLabel={false}
+            ariaLabel=""
+            className=""
+            glyph="filter"
+            label="Toggle"
           >
-            <FlexStack
-              as="div"
-              className="label"
-              space="xxxsmall"
-            >
-              <div
-                className="label root space--xxxsmall"
-              >
-                <Icon
-                  as="span"
-                  className="item labelIcon"
-                  glyph="filter"
-                  key=".0"
-                  size="medium"
-                >
-                  <span
-                    className="root item labelIcon medium"
+            <ForwardRef(MenuButton)
+              animated={false}
+              animating={false}
+              baseId="id-test"
+              className="root"
+              down={[Function]}
+              first={[Function]}
+              groups={Array []}
+              hide={[Function]}
+              items={Array []}
+              last={[Function]}
+              loop={false}
+              modal={true}
+              move={[Function]}
+              next={[Function]}
+              orientation="vertical"
+              place={[Function]}
+              placement="bottom-start"
+              previous={[Function]}
+              registerGroup={[Function]}
+              registerItem={[Function]}
+              reset={[Function]}
+              rtl={false}
+              setAnimated={[Function]}
+              setBaseId={[Function]}
+              setCurrentId={[Function]}
+              setLoop={[Function]}
+              setModal={[Function]}
+              setOrientation={[Function]}
+              setRTL={[Function]}
+              setShift={[Function]}
+              setVisible={[Function]}
+              setWrap={[Function]}
+              shift={false}
+              show={[Function]}
+              sort={[Function]}
+              stopAnimation={[Function]}
+              tabIndex={null}
+              toggle={[Function]}
+              unregisterGroup={[Function]}
+              unregisterItem={[Function]}
+              unstable_arrowRef={
+                Object {
+                  "current": null,
+                }
+              }
+              unstable_arrowStyles={Object {}}
+              unstable_disclosureRef={
+                Object {
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="menu"
+                    class="root"
+                    type="button"
                   >
-                    <FilterIcon
-                      className="icon"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      class="label root space--xxxsmall"
                     >
-                      <svg
-                        className="icon"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <span
+                        class="root item labelIcon medium"
                       >
-                        <path
-                          d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-                        />
-                        <path
-                          d="M0 0h24v24H0z"
-                          fill="none"
-                        />
-                      </svg>
-                    </FilterIcon>
-                  </span>
-                </Icon>
-                <div
-                  className="item"
-                  key=".1"
-                >
-                  Toggle
-                </div>
-              </div>
-            </FlexStack>
-          </button>
-        </ForwardRef(MenuButton)>
-        <ForwardRef(Menu)
-          animated={false}
-          animating={false}
-          aria-label="Toggle"
-          baseId="id-test"
-          className="dropdown"
-          down={[Function]}
-          first={[Function]}
-          groups={Array []}
-          hide={[Function]}
-          items={Array []}
-          last={[Function]}
-          loop={false}
-          modal={true}
-          move={[Function]}
-          next={[Function]}
-          orientation="vertical"
-          place={[Function]}
-          placement="bottom-start"
-          previous={[Function]}
-          registerGroup={[Function]}
-          registerItem={[Function]}
-          reset={[Function]}
-          rtl={false}
-          setAnimated={[Function]}
-          setBaseId={[Function]}
-          setCurrentId={[Function]}
-          setLoop={[Function]}
-          setModal={[Function]}
-          setOrientation={[Function]}
-          setRTL={[Function]}
-          setShift={[Function]}
-          setVisible={[Function]}
-          setWrap={[Function]}
-          shift={false}
-          show={[Function]}
-          sort={[Function]}
-          stopAnimation={[Function]}
-          toggle={[Function]}
-          unregisterGroup={[Function]}
-          unregisterItem={[Function]}
-          unstable_arrowRef={
-            Object {
-              "current": null,
-            }
-          }
-          unstable_arrowStyles={Object {}}
-          unstable_disclosureRef={
-            Object {
-              "current": <button
-                aria-controls="id-test"
-                aria-expanded="false"
-                aria-haspopup="menu"
-                class="root"
-                type="button"
-              >
-                <div
-                  class="label root space--xxxsmall"
-                >
-                  <span
-                    class="root item labelIcon medium"
-                  >
-                    <svg
-                      class="icon"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-                      />
-                      <path
-                        d="M0 0h24v24H0z"
-                        fill="none"
-                      />
-                    </svg>
-                  </span>
-                  <div
-                    class="item"
-                  >
-                    Toggle
-                  </div>
-                </div>
-              </button>,
-            }
-          }
-          unstable_hasActiveWidget={false}
-          unstable_idCountRef={
-            Object {
-              "current": 0,
-            }
-          }
-          unstable_includesBaseElement={false}
-          unstable_moves={0}
-          unstable_originalPlacement="bottom-start"
-          unstable_popoverRef={
-            Object {
-              "current": <div
-                aria-label="Toggle"
-                aria-modal="true"
-                aria-orientation="vertical"
-                class="dropdown"
-                data-dialog="true"
-                hidden=""
-                id="id-test"
-                role="menu"
-                style="display: none; position: fixed; left: 100%; top: 100%;"
-                tabindex="-1"
-              >
-                <button
-                  type="button"
-                >
-                  Toggle dropdown
-                </button>
-              </div>,
-            }
-          }
-          unstable_popoverStyles={
-            Object {
-              "left": "100%",
-              "position": "fixed",
-              "top": "100%",
-            }
-          }
-          unstable_referenceRef={
-            Object {
-              "current": <button
-                aria-controls="id-test"
-                aria-expanded="false"
-                aria-haspopup="menu"
-                class="root"
-                type="button"
-              >
-                <div
-                  class="label root space--xxxsmall"
-                >
-                  <span
-                    class="root item labelIcon medium"
-                  >
-                    <svg
-                      class="icon"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-                      />
-                      <path
-                        d="M0 0h24v24H0z"
-                        fill="none"
-                      />
-                    </svg>
-                  </span>
-                  <div
-                    class="item"
-                  >
-                    Toggle
-                  </div>
-                </div>
-              </button>,
-            }
-          }
-          unstable_setHasActiveWidget={[Function]}
-          unstable_setIncludesBaseElement={[Function]}
-          unstable_setValue={[Function]}
-          unstable_setVirtual={[Function]}
-          unstable_update={[Function]}
-          unstable_values={Object {}}
-          unstable_virtual={false}
-          up={[Function]}
-          visible={false}
-          wrap={false}
-        >
-          <Portal>
-            <Portal
-              containerInfo={
-                <div
-                  class="__reakit-portal"
-                >
-                  <div
+                        <svg
+                          class="icon"
+                        >
+                          <use
+                            xlink:href="#filter"
+                          />
+                        </svg>
+                      </span>
+                      <div
+                        class="item"
+                      >
+                        Toggle
+                      </div>
+                    </div>
+                  </button>,
+                }
+              }
+              unstable_hasActiveWidget={false}
+              unstable_idCountRef={
+                Object {
+                  "current": 0,
+                }
+              }
+              unstable_includesBaseElement={false}
+              unstable_moves={0}
+              unstable_originalPlacement="bottom-start"
+              unstable_popoverRef={
+                Object {
+                  "current": <div
                     aria-label="Toggle"
                     aria-modal="true"
                     aria-orientation="vertical"
@@ -1055,542 +880,691 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                     >
                       Toggle dropdown
                     </button>
-                  </div>
-                </div>
-              }
-            >
-              <div
-                aria-label="Toggle"
-                aria-modal={true}
-                aria-orientation="vertical"
-                className="dropdown"
-                data-dialog={true}
-                hidden={true}
-                id="id-test"
-                onAnimationEnd={[Function]}
-                onBlur={[Function]}
-                onBlurCapture={[Function]}
-                onFocus={[Function]}
-                onFocusCapture={[Function]}
-                onKeyDown={[Function]}
-                onKeyDownCapture={[Function]}
-                onKeyUpCapture={[Function]}
-                onTransitionEnd={[Function]}
-                role="menu"
-                style={
-                  Object {
-                    "display": "none",
-                    "left": "100%",
-                    "position": "fixed",
-                    "top": "100%",
-                  }
+                  </div>,
                 }
-                tabIndex={-1}
+              }
+              unstable_popoverStyles={
+                Object {
+                  "left": "100%",
+                  "position": "fixed",
+                  "top": "100%",
+                }
+              }
+              unstable_referenceRef={
+                Object {
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="menu"
+                    class="root"
+                    type="button"
+                  >
+                    <div
+                      class="label root space--xxxsmall"
+                    >
+                      <span
+                        class="root item labelIcon medium"
+                      >
+                        <svg
+                          class="icon"
+                        >
+                          <use
+                            xlink:href="#filter"
+                          />
+                        </svg>
+                      </span>
+                      <div
+                        class="item"
+                      >
+                        Toggle
+                      </div>
+                    </div>
+                  </button>,
+                }
+              }
+              unstable_setHasActiveWidget={[Function]}
+              unstable_setIncludesBaseElement={[Function]}
+              unstable_setValue={[Function]}
+              unstable_setVirtual={[Function]}
+              unstable_update={[Function]}
+              unstable_values={Object {}}
+              unstable_virtual={false}
+              up={[Function]}
+              visible={false}
+              wrap={false}
+            >
+              <button
+                aria-controls="id-test"
+                aria-expanded={false}
+                aria-haspopup="menu"
+                className="root"
+                onClick={[Function]}
+                onClickCapture={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyPressCapture={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseDownCapture={[Function]}
+                onMouseEnter={[Function]}
+                tabIndex={null}
+                type="button"
               >
-                <button
-                  type="button"
+                <FlexStack
+                  as="div"
+                  className="label"
+                  space="xxxsmall"
                 >
-                  Toggle dropdown
-                </button>
-              </div>
-            </Portal>
-          </Portal>
-        </ForwardRef(Menu)>
-      </Dropdown>
-    </div>
-  </Router>
-</MemoryRouter>
+                  <div
+                    className="label root space--xxxsmall"
+                  >
+                    <Icon
+                      as="span"
+                      className="item labelIcon"
+                      glyph="filter"
+                      key=".0"
+                      size="medium"
+                    >
+                      <span
+                        className="root item labelIcon medium"
+                      >
+                        <svg
+                          className="icon"
+                        >
+                          <use
+                            xlinkHref="#filter"
+                          />
+                        </svg>
+                      </span>
+                    </Icon>
+                    <div
+                      className="item"
+                      key=".1"
+                    >
+                      Toggle
+                    </div>
+                  </div>
+                </FlexStack>
+              </button>
+            </ForwardRef(MenuButton)>
+            <ForwardRef(Menu)
+              animated={false}
+              animating={false}
+              aria-label="Toggle"
+              baseId="id-test"
+              className="dropdown"
+              down={[Function]}
+              first={[Function]}
+              groups={Array []}
+              hide={[Function]}
+              items={Array []}
+              last={[Function]}
+              loop={false}
+              modal={true}
+              move={[Function]}
+              next={[Function]}
+              orientation="vertical"
+              place={[Function]}
+              placement="bottom-start"
+              previous={[Function]}
+              registerGroup={[Function]}
+              registerItem={[Function]}
+              reset={[Function]}
+              rtl={false}
+              setAnimated={[Function]}
+              setBaseId={[Function]}
+              setCurrentId={[Function]}
+              setLoop={[Function]}
+              setModal={[Function]}
+              setOrientation={[Function]}
+              setRTL={[Function]}
+              setShift={[Function]}
+              setVisible={[Function]}
+              setWrap={[Function]}
+              shift={false}
+              show={[Function]}
+              sort={[Function]}
+              stopAnimation={[Function]}
+              toggle={[Function]}
+              unregisterGroup={[Function]}
+              unregisterItem={[Function]}
+              unstable_arrowRef={
+                Object {
+                  "current": null,
+                }
+              }
+              unstable_arrowStyles={Object {}}
+              unstable_disclosureRef={
+                Object {
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="menu"
+                    class="root"
+                    type="button"
+                  >
+                    <div
+                      class="label root space--xxxsmall"
+                    >
+                      <span
+                        class="root item labelIcon medium"
+                      >
+                        <svg
+                          class="icon"
+                        >
+                          <use
+                            xlink:href="#filter"
+                          />
+                        </svg>
+                      </span>
+                      <div
+                        class="item"
+                      >
+                        Toggle
+                      </div>
+                    </div>
+                  </button>,
+                }
+              }
+              unstable_hasActiveWidget={false}
+              unstable_idCountRef={
+                Object {
+                  "current": 0,
+                }
+              }
+              unstable_includesBaseElement={false}
+              unstable_moves={0}
+              unstable_originalPlacement="bottom-start"
+              unstable_popoverRef={
+                Object {
+                  "current": <div
+                    aria-label="Toggle"
+                    aria-modal="true"
+                    aria-orientation="vertical"
+                    class="dropdown"
+                    data-dialog="true"
+                    hidden=""
+                    id="id-test"
+                    role="menu"
+                    style="display: none; position: fixed; left: 100%; top: 100%;"
+                    tabindex="-1"
+                  >
+                    <button
+                      type="button"
+                    >
+                      Toggle dropdown
+                    </button>
+                  </div>,
+                }
+              }
+              unstable_popoverStyles={
+                Object {
+                  "left": "100%",
+                  "position": "fixed",
+                  "top": "100%",
+                }
+              }
+              unstable_referenceRef={
+                Object {
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="menu"
+                    class="root"
+                    type="button"
+                  >
+                    <div
+                      class="label root space--xxxsmall"
+                    >
+                      <span
+                        class="root item labelIcon medium"
+                      >
+                        <svg
+                          class="icon"
+                        >
+                          <use
+                            xlink:href="#filter"
+                          />
+                        </svg>
+                      </span>
+                      <div
+                        class="item"
+                      >
+                        Toggle
+                      </div>
+                    </div>
+                  </button>,
+                }
+              }
+              unstable_setHasActiveWidget={[Function]}
+              unstable_setIncludesBaseElement={[Function]}
+              unstable_setValue={[Function]}
+              unstable_setVirtual={[Function]}
+              unstable_update={[Function]}
+              unstable_values={Object {}}
+              unstable_virtual={false}
+              up={[Function]}
+              visible={false}
+              wrap={false}
+            >
+              <Portal>
+                <Portal
+                  containerInfo={
+                    <div
+                      class="__reakit-portal"
+                    >
+                      <div
+                        aria-label="Toggle"
+                        aria-modal="true"
+                        aria-orientation="vertical"
+                        class="dropdown"
+                        data-dialog="true"
+                        hidden=""
+                        id="id-test"
+                        role="menu"
+                        style="display: none; position: fixed; left: 100%; top: 100%;"
+                        tabindex="-1"
+                      >
+                        <button
+                          type="button"
+                        >
+                          Toggle dropdown
+                        </button>
+                      </div>
+                    </div>
+                  }
+                >
+                  <div
+                    aria-label="Toggle"
+                    aria-modal={true}
+                    aria-orientation="vertical"
+                    className="dropdown"
+                    data-dialog={true}
+                    hidden={true}
+                    id="id-test"
+                    onAnimationEnd={[Function]}
+                    onBlur={[Function]}
+                    onBlurCapture={[Function]}
+                    onFocus={[Function]}
+                    onFocusCapture={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyDownCapture={[Function]}
+                    onKeyUpCapture={[Function]}
+                    onTransitionEnd={[Function]}
+                    role="menu"
+                    style={
+                      Object {
+                        "display": "none",
+                        "left": "100%",
+                        "position": "fixed",
+                        "top": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <button
+                      type="button"
+                    >
+                      Toggle dropdown
+                    </button>
+                  </div>
+                </Portal>
+              </Portal>
+            </ForwardRef(Menu)>
+          </Dropdown>
+        </div>
+      </Router>
+    </MemoryRouter>
+  </Component>
+  <IconSprite
+    height="16"
+    style={
+      Object {
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
+      }
+    }
+    width="16"
+  >
+    <svg
+      height="16"
+      style={
+        Object {
+          "height": 0,
+          "position": "absolute",
+          "width": 0,
+        }
+      }
+      width="16"
+    >
+      <symbol
+        className="afeather afeather-arrow-down"
+        fill="none"
+        id="arrow"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 5v14M19 12l-7 7-7-7"
+        />
+      </symbol>
+      <symbol
+        className="bfeather bfeather-x-circle"
+        fill="none"
+        id="cancel"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="cfeather cfeather-clock"
+        fill="none"
+        id="clock"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 6v6l4 2"
+        />
+      </symbol>
+      <symbol
+        className="dfeather dfeather-x"
+        fill="none"
+        id="close"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 6L6 18M6 6l12 12"
+        />
+      </symbol>
+      <symbol
+        className="efeather efeather-git-commit"
+        fill="none"
+        id="commit"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+        />
+        <path
+          d="M1.05 12H7M17.01 12h5.95"
+        />
+      </symbol>
+      <symbol
+        className="ffeather ffeather-bar-chart"
+        fill="none"
+        id="filter"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 20V10M18 20V4M6 20v-4"
+        />
+      </symbol>
+      <symbol
+        className="gfeather gfeather-help-circle"
+        fill="none"
+        id="help"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"
+        />
+      </symbol>
+      <symbol
+        className="hfeather hfeather-menu"
+        fill="none"
+        id="menu"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 12h18M3 6h18M3 18h18"
+        />
+      </symbol>
+      <symbol
+        fill="currentColor"
+        id="sort"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </symbol>
+      <symbol
+        className="jfeather jfeather-alert-triangle"
+        fill="none"
+        id="warning"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"
+        />
+      </symbol>
+    </svg>
+  </IconSprite>
+</div>
 `;
 
 exports[`Storyshots UI/Dropdown with right alignement 1`] = `
-<MemoryRouter
-  initialEntries={
-    Array [
-      Object {
-        "key": "home",
-        "pathname": "/",
-      },
-    ]
-  }
->
-  <Router
-    history={
-      Object {
-        "action": "POP",
-        "block": [Function],
-        "canGo": [Function],
-        "createHref": [Function],
-        "entries": Array [
+<div>
+  <Component>
+    <MemoryRouter
+      initialEntries={
+        Array [
           Object {
-            "hash": "",
             "key": "home",
             "pathname": "/",
-            "search": "",
           },
-        ],
-        "go": [Function],
-        "goBack": [Function],
-        "goForward": [Function],
-        "index": 0,
-        "length": 1,
-        "listen": [Function],
-        "location": Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-        "push": [Function],
-        "replace": [Function],
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "height": "100%",
-          "padding": "24px",
-          "width": "100%",
-        }
+        ]
       }
     >
-      <Dropdown
-        activeLabel={false}
-        align="right"
-        ariaLabel=""
-        className=""
-        glyph="filter"
-        label="Toggle"
+      <Router
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "canGo": [Function],
+            "createHref": [Function],
+            "entries": Array [
+              Object {
+                "hash": "",
+                "key": "home",
+                "pathname": "/",
+                "search": "",
+              },
+            ],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "index": 0,
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "key": "home",
+              "pathname": "/",
+              "search": "",
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
       >
-        <ForwardRef(MenuButton)
-          animated={false}
-          animating={false}
-          baseId="id-test"
-          className="root"
-          down={[Function]}
-          first={[Function]}
-          groups={Array []}
-          hide={[Function]}
-          items={Array []}
-          last={[Function]}
-          loop={false}
-          modal={true}
-          move={[Function]}
-          next={[Function]}
-          orientation="vertical"
-          place={[Function]}
-          placement="bottom-start"
-          previous={[Function]}
-          registerGroup={[Function]}
-          registerItem={[Function]}
-          reset={[Function]}
-          rtl={false}
-          setAnimated={[Function]}
-          setBaseId={[Function]}
-          setCurrentId={[Function]}
-          setLoop={[Function]}
-          setModal={[Function]}
-          setOrientation={[Function]}
-          setRTL={[Function]}
-          setShift={[Function]}
-          setVisible={[Function]}
-          setWrap={[Function]}
-          shift={false}
-          show={[Function]}
-          sort={[Function]}
-          stopAnimation={[Function]}
-          tabIndex={null}
-          toggle={[Function]}
-          unregisterGroup={[Function]}
-          unregisterItem={[Function]}
-          unstable_arrowRef={
+        <div
+          style={
             Object {
-              "current": null,
+              "height": "100%",
+              "padding": "24px",
+              "width": "100%",
             }
           }
-          unstable_arrowStyles={Object {}}
-          unstable_disclosureRef={
-            Object {
-              "current": <button
-                aria-controls="id-test"
-                aria-expanded="false"
-                aria-haspopup="menu"
-                class="root"
-                type="button"
-              >
-                <div
-                  class="label root space--xxxsmall"
-                >
-                  <span
-                    class="root item labelIcon medium"
-                  >
-                    <svg
-                      class="icon"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-                      />
-                      <path
-                        d="M0 0h24v24H0z"
-                        fill="none"
-                      />
-                    </svg>
-                  </span>
-                  <div
-                    class="item"
-                  >
-                    Toggle
-                  </div>
-                </div>
-              </button>,
-            }
-          }
-          unstable_hasActiveWidget={false}
-          unstable_idCountRef={
-            Object {
-              "current": 0,
-            }
-          }
-          unstable_includesBaseElement={false}
-          unstable_moves={0}
-          unstable_originalPlacement="bottom-start"
-          unstable_popoverRef={
-            Object {
-              "current": <div
-                aria-label="Toggle"
-                aria-modal="true"
-                aria-orientation="vertical"
-                class="dropdown"
-                data-dialog="true"
-                hidden=""
-                id="id-test"
-                role="menu"
-                style="display: none; position: fixed; left: 100%; top: 100%;"
-                tabindex="-1"
-              >
-                <ul>
-                  <li>
-                    Option 1
-                  </li>
-                  <li>
-                    Option 2
-                  </li>
-                </ul>
-              </div>,
-            }
-          }
-          unstable_popoverStyles={
-            Object {
-              "left": "100%",
-              "position": "fixed",
-              "top": "100%",
-            }
-          }
-          unstable_referenceRef={
-            Object {
-              "current": <button
-                aria-controls="id-test"
-                aria-expanded="false"
-                aria-haspopup="menu"
-                class="root"
-                type="button"
-              >
-                <div
-                  class="label root space--xxxsmall"
-                >
-                  <span
-                    class="root item labelIcon medium"
-                  >
-                    <svg
-                      class="icon"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-                      />
-                      <path
-                        d="M0 0h24v24H0z"
-                        fill="none"
-                      />
-                    </svg>
-                  </span>
-                  <div
-                    class="item"
-                  >
-                    Toggle
-                  </div>
-                </div>
-              </button>,
-            }
-          }
-          unstable_setHasActiveWidget={[Function]}
-          unstable_setIncludesBaseElement={[Function]}
-          unstable_setValue={[Function]}
-          unstable_setVirtual={[Function]}
-          unstable_update={[Function]}
-          unstable_values={Object {}}
-          unstable_virtual={false}
-          up={[Function]}
-          visible={false}
-          wrap={false}
         >
-          <button
-            aria-controls="id-test"
-            aria-expanded={false}
-            aria-haspopup="menu"
-            className="root"
-            onClick={[Function]}
-            onClickCapture={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onKeyPressCapture={[Function]}
-            onKeyUp={[Function]}
-            onMouseDown={[Function]}
-            onMouseDownCapture={[Function]}
-            onMouseEnter={[Function]}
-            tabIndex={null}
-            type="button"
+          <Dropdown
+            activeLabel={false}
+            align="right"
+            ariaLabel=""
+            className=""
+            glyph="filter"
+            label="Toggle"
           >
-            <FlexStack
-              as="div"
-              className="label"
-              space="xxxsmall"
-            >
-              <div
-                className="label root space--xxxsmall"
-              >
-                <Icon
-                  as="span"
-                  className="item labelIcon"
-                  glyph="filter"
-                  key=".0"
-                  size="medium"
-                >
-                  <span
-                    className="root item labelIcon medium"
+            <ForwardRef(MenuButton)
+              animated={false}
+              animating={false}
+              baseId="id-test"
+              className="root"
+              down={[Function]}
+              first={[Function]}
+              groups={Array []}
+              hide={[Function]}
+              items={Array []}
+              last={[Function]}
+              loop={false}
+              modal={true}
+              move={[Function]}
+              next={[Function]}
+              orientation="vertical"
+              place={[Function]}
+              placement="bottom-start"
+              previous={[Function]}
+              registerGroup={[Function]}
+              registerItem={[Function]}
+              reset={[Function]}
+              rtl={false}
+              setAnimated={[Function]}
+              setBaseId={[Function]}
+              setCurrentId={[Function]}
+              setLoop={[Function]}
+              setModal={[Function]}
+              setOrientation={[Function]}
+              setRTL={[Function]}
+              setShift={[Function]}
+              setVisible={[Function]}
+              setWrap={[Function]}
+              shift={false}
+              show={[Function]}
+              sort={[Function]}
+              stopAnimation={[Function]}
+              tabIndex={null}
+              toggle={[Function]}
+              unregisterGroup={[Function]}
+              unregisterItem={[Function]}
+              unstable_arrowRef={
+                Object {
+                  "current": null,
+                }
+              }
+              unstable_arrowStyles={Object {}}
+              unstable_disclosureRef={
+                Object {
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="menu"
+                    class="root"
+                    type="button"
                   >
-                    <FilterIcon
-                      className="icon"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      class="label root space--xxxsmall"
                     >
-                      <svg
-                        className="icon"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <span
+                        class="root item labelIcon medium"
                       >
-                        <path
-                          d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-                        />
-                        <path
-                          d="M0 0h24v24H0z"
-                          fill="none"
-                        />
-                      </svg>
-                    </FilterIcon>
-                  </span>
-                </Icon>
-                <div
-                  className="item"
-                  key=".1"
-                >
-                  Toggle
-                </div>
-              </div>
-            </FlexStack>
-          </button>
-        </ForwardRef(MenuButton)>
-        <ForwardRef(Menu)
-          animated={false}
-          animating={false}
-          aria-label="Toggle"
-          baseId="id-test"
-          className="dropdown"
-          down={[Function]}
-          first={[Function]}
-          groups={Array []}
-          hide={[Function]}
-          items={Array []}
-          last={[Function]}
-          loop={false}
-          modal={true}
-          move={[Function]}
-          next={[Function]}
-          orientation="vertical"
-          place={[Function]}
-          placement="bottom-start"
-          previous={[Function]}
-          registerGroup={[Function]}
-          registerItem={[Function]}
-          reset={[Function]}
-          rtl={false}
-          setAnimated={[Function]}
-          setBaseId={[Function]}
-          setCurrentId={[Function]}
-          setLoop={[Function]}
-          setModal={[Function]}
-          setOrientation={[Function]}
-          setRTL={[Function]}
-          setShift={[Function]}
-          setVisible={[Function]}
-          setWrap={[Function]}
-          shift={false}
-          show={[Function]}
-          sort={[Function]}
-          stopAnimation={[Function]}
-          toggle={[Function]}
-          unregisterGroup={[Function]}
-          unregisterItem={[Function]}
-          unstable_arrowRef={
-            Object {
-              "current": null,
-            }
-          }
-          unstable_arrowStyles={Object {}}
-          unstable_disclosureRef={
-            Object {
-              "current": <button
-                aria-controls="id-test"
-                aria-expanded="false"
-                aria-haspopup="menu"
-                class="root"
-                type="button"
-              >
-                <div
-                  class="label root space--xxxsmall"
-                >
-                  <span
-                    class="root item labelIcon medium"
-                  >
-                    <svg
-                      class="icon"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-                      />
-                      <path
-                        d="M0 0h24v24H0z"
-                        fill="none"
-                      />
-                    </svg>
-                  </span>
-                  <div
-                    class="item"
-                  >
-                    Toggle
-                  </div>
-                </div>
-              </button>,
-            }
-          }
-          unstable_hasActiveWidget={false}
-          unstable_idCountRef={
-            Object {
-              "current": 0,
-            }
-          }
-          unstable_includesBaseElement={false}
-          unstable_moves={0}
-          unstable_originalPlacement="bottom-start"
-          unstable_popoverRef={
-            Object {
-              "current": <div
-                aria-label="Toggle"
-                aria-modal="true"
-                aria-orientation="vertical"
-                class="dropdown"
-                data-dialog="true"
-                hidden=""
-                id="id-test"
-                role="menu"
-                style="display: none; position: fixed; left: 100%; top: 100%;"
-                tabindex="-1"
-              >
-                <ul>
-                  <li>
-                    Option 1
-                  </li>
-                  <li>
-                    Option 2
-                  </li>
-                </ul>
-              </div>,
-            }
-          }
-          unstable_popoverStyles={
-            Object {
-              "left": "100%",
-              "position": "fixed",
-              "top": "100%",
-            }
-          }
-          unstable_referenceRef={
-            Object {
-              "current": <button
-                aria-controls="id-test"
-                aria-expanded="false"
-                aria-haspopup="menu"
-                class="root"
-                type="button"
-              >
-                <div
-                  class="label root space--xxxsmall"
-                >
-                  <span
-                    class="root item labelIcon medium"
-                  >
-                    <svg
-                      class="icon"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-                      />
-                      <path
-                        d="M0 0h24v24H0z"
-                        fill="none"
-                      />
-                    </svg>
-                  </span>
-                  <div
-                    class="item"
-                  >
-                    Toggle
-                  </div>
-                </div>
-              </button>,
-            }
-          }
-          unstable_setHasActiveWidget={[Function]}
-          unstable_setIncludesBaseElement={[Function]}
-          unstable_setValue={[Function]}
-          unstable_setVirtual={[Function]}
-          unstable_update={[Function]}
-          unstable_values={Object {}}
-          unstable_virtual={false}
-          up={[Function]}
-          visible={false}
-          wrap={false}
-        >
-          <Portal>
-            <Portal
-              containerInfo={
-                <div
-                  class="__reakit-portal"
-                >
-                  <div
+                        <svg
+                          class="icon"
+                        >
+                          <use
+                            xlink:href="#filter"
+                          />
+                        </svg>
+                      </span>
+                      <div
+                        class="item"
+                      >
+                        Toggle
+                      </div>
+                    </div>
+                  </button>,
+                }
+              }
+              unstable_hasActiveWidget={false}
+              unstable_idCountRef={
+                Object {
+                  "current": 0,
+                }
+              }
+              unstable_includesBaseElement={false}
+              unstable_moves={0}
+              unstable_originalPlacement="bottom-start"
+              unstable_popoverRef={
+                Object {
+                  "current": <div
                     aria-label="Toggle"
                     aria-modal="true"
                     aria-orientation="vertical"
@@ -1610,52 +1584,543 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
                         Option 2
                       </li>
                     </ul>
-                  </div>
-                </div>
-              }
-            >
-              <div
-                aria-label="Toggle"
-                aria-modal={true}
-                aria-orientation="vertical"
-                className="dropdown"
-                data-dialog={true}
-                hidden={true}
-                id="id-test"
-                onAnimationEnd={[Function]}
-                onBlur={[Function]}
-                onBlurCapture={[Function]}
-                onFocus={[Function]}
-                onFocusCapture={[Function]}
-                onKeyDown={[Function]}
-                onKeyDownCapture={[Function]}
-                onKeyUpCapture={[Function]}
-                onTransitionEnd={[Function]}
-                role="menu"
-                style={
-                  Object {
-                    "display": "none",
-                    "left": "100%",
-                    "position": "fixed",
-                    "top": "100%",
-                  }
+                  </div>,
                 }
-                tabIndex={-1}
+              }
+              unstable_popoverStyles={
+                Object {
+                  "left": "100%",
+                  "position": "fixed",
+                  "top": "100%",
+                }
+              }
+              unstable_referenceRef={
+                Object {
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="menu"
+                    class="root"
+                    type="button"
+                  >
+                    <div
+                      class="label root space--xxxsmall"
+                    >
+                      <span
+                        class="root item labelIcon medium"
+                      >
+                        <svg
+                          class="icon"
+                        >
+                          <use
+                            xlink:href="#filter"
+                          />
+                        </svg>
+                      </span>
+                      <div
+                        class="item"
+                      >
+                        Toggle
+                      </div>
+                    </div>
+                  </button>,
+                }
+              }
+              unstable_setHasActiveWidget={[Function]}
+              unstable_setIncludesBaseElement={[Function]}
+              unstable_setValue={[Function]}
+              unstable_setVirtual={[Function]}
+              unstable_update={[Function]}
+              unstable_values={Object {}}
+              unstable_virtual={false}
+              up={[Function]}
+              visible={false}
+              wrap={false}
+            >
+              <button
+                aria-controls="id-test"
+                aria-expanded={false}
+                aria-haspopup="menu"
+                className="root"
+                onClick={[Function]}
+                onClickCapture={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyPressCapture={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseDownCapture={[Function]}
+                onMouseEnter={[Function]}
+                tabIndex={null}
+                type="button"
               >
-                <ul>
-                  <li>
-                    Option 1
-                  </li>
-                  <li>
-                    Option 2
-                  </li>
-                </ul>
-              </div>
-            </Portal>
-          </Portal>
-        </ForwardRef(Menu)>
-      </Dropdown>
-    </div>
-  </Router>
-</MemoryRouter>
+                <FlexStack
+                  as="div"
+                  className="label"
+                  space="xxxsmall"
+                >
+                  <div
+                    className="label root space--xxxsmall"
+                  >
+                    <Icon
+                      as="span"
+                      className="item labelIcon"
+                      glyph="filter"
+                      key=".0"
+                      size="medium"
+                    >
+                      <span
+                        className="root item labelIcon medium"
+                      >
+                        <svg
+                          className="icon"
+                        >
+                          <use
+                            xlinkHref="#filter"
+                          />
+                        </svg>
+                      </span>
+                    </Icon>
+                    <div
+                      className="item"
+                      key=".1"
+                    >
+                      Toggle
+                    </div>
+                  </div>
+                </FlexStack>
+              </button>
+            </ForwardRef(MenuButton)>
+            <ForwardRef(Menu)
+              animated={false}
+              animating={false}
+              aria-label="Toggle"
+              baseId="id-test"
+              className="dropdown"
+              down={[Function]}
+              first={[Function]}
+              groups={Array []}
+              hide={[Function]}
+              items={Array []}
+              last={[Function]}
+              loop={false}
+              modal={true}
+              move={[Function]}
+              next={[Function]}
+              orientation="vertical"
+              place={[Function]}
+              placement="bottom-start"
+              previous={[Function]}
+              registerGroup={[Function]}
+              registerItem={[Function]}
+              reset={[Function]}
+              rtl={false}
+              setAnimated={[Function]}
+              setBaseId={[Function]}
+              setCurrentId={[Function]}
+              setLoop={[Function]}
+              setModal={[Function]}
+              setOrientation={[Function]}
+              setRTL={[Function]}
+              setShift={[Function]}
+              setVisible={[Function]}
+              setWrap={[Function]}
+              shift={false}
+              show={[Function]}
+              sort={[Function]}
+              stopAnimation={[Function]}
+              toggle={[Function]}
+              unregisterGroup={[Function]}
+              unregisterItem={[Function]}
+              unstable_arrowRef={
+                Object {
+                  "current": null,
+                }
+              }
+              unstable_arrowStyles={Object {}}
+              unstable_disclosureRef={
+                Object {
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="menu"
+                    class="root"
+                    type="button"
+                  >
+                    <div
+                      class="label root space--xxxsmall"
+                    >
+                      <span
+                        class="root item labelIcon medium"
+                      >
+                        <svg
+                          class="icon"
+                        >
+                          <use
+                            xlink:href="#filter"
+                          />
+                        </svg>
+                      </span>
+                      <div
+                        class="item"
+                      >
+                        Toggle
+                      </div>
+                    </div>
+                  </button>,
+                }
+              }
+              unstable_hasActiveWidget={false}
+              unstable_idCountRef={
+                Object {
+                  "current": 0,
+                }
+              }
+              unstable_includesBaseElement={false}
+              unstable_moves={0}
+              unstable_originalPlacement="bottom-start"
+              unstable_popoverRef={
+                Object {
+                  "current": <div
+                    aria-label="Toggle"
+                    aria-modal="true"
+                    aria-orientation="vertical"
+                    class="dropdown"
+                    data-dialog="true"
+                    hidden=""
+                    id="id-test"
+                    role="menu"
+                    style="display: none; position: fixed; left: 100%; top: 100%;"
+                    tabindex="-1"
+                  >
+                    <ul>
+                      <li>
+                        Option 1
+                      </li>
+                      <li>
+                        Option 2
+                      </li>
+                    </ul>
+                  </div>,
+                }
+              }
+              unstable_popoverStyles={
+                Object {
+                  "left": "100%",
+                  "position": "fixed",
+                  "top": "100%",
+                }
+              }
+              unstable_referenceRef={
+                Object {
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="menu"
+                    class="root"
+                    type="button"
+                  >
+                    <div
+                      class="label root space--xxxsmall"
+                    >
+                      <span
+                        class="root item labelIcon medium"
+                      >
+                        <svg
+                          class="icon"
+                        >
+                          <use
+                            xlink:href="#filter"
+                          />
+                        </svg>
+                      </span>
+                      <div
+                        class="item"
+                      >
+                        Toggle
+                      </div>
+                    </div>
+                  </button>,
+                }
+              }
+              unstable_setHasActiveWidget={[Function]}
+              unstable_setIncludesBaseElement={[Function]}
+              unstable_setValue={[Function]}
+              unstable_setVirtual={[Function]}
+              unstable_update={[Function]}
+              unstable_values={Object {}}
+              unstable_virtual={false}
+              up={[Function]}
+              visible={false}
+              wrap={false}
+            >
+              <Portal>
+                <Portal
+                  containerInfo={
+                    <div
+                      class="__reakit-portal"
+                    >
+                      <div
+                        aria-label="Toggle"
+                        aria-modal="true"
+                        aria-orientation="vertical"
+                        class="dropdown"
+                        data-dialog="true"
+                        hidden=""
+                        id="id-test"
+                        role="menu"
+                        style="display: none; position: fixed; left: 100%; top: 100%;"
+                        tabindex="-1"
+                      >
+                        <ul>
+                          <li>
+                            Option 1
+                          </li>
+                          <li>
+                            Option 2
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  }
+                >
+                  <div
+                    aria-label="Toggle"
+                    aria-modal={true}
+                    aria-orientation="vertical"
+                    className="dropdown"
+                    data-dialog={true}
+                    hidden={true}
+                    id="id-test"
+                    onAnimationEnd={[Function]}
+                    onBlur={[Function]}
+                    onBlurCapture={[Function]}
+                    onFocus={[Function]}
+                    onFocusCapture={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyDownCapture={[Function]}
+                    onKeyUpCapture={[Function]}
+                    onTransitionEnd={[Function]}
+                    role="menu"
+                    style={
+                      Object {
+                        "display": "none",
+                        "left": "100%",
+                        "position": "fixed",
+                        "top": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <ul>
+                      <li>
+                        Option 1
+                      </li>
+                      <li>
+                        Option 2
+                      </li>
+                    </ul>
+                  </div>
+                </Portal>
+              </Portal>
+            </ForwardRef(Menu)>
+          </Dropdown>
+        </div>
+      </Router>
+    </MemoryRouter>
+  </Component>
+  <IconSprite
+    height="16"
+    style={
+      Object {
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
+      }
+    }
+    width="16"
+  >
+    <svg
+      height="16"
+      style={
+        Object {
+          "height": 0,
+          "position": "absolute",
+          "width": 0,
+        }
+      }
+      width="16"
+    >
+      <symbol
+        className="afeather afeather-arrow-down"
+        fill="none"
+        id="arrow"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 5v14M19 12l-7 7-7-7"
+        />
+      </symbol>
+      <symbol
+        className="bfeather bfeather-x-circle"
+        fill="none"
+        id="cancel"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="cfeather cfeather-clock"
+        fill="none"
+        id="clock"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 6v6l4 2"
+        />
+      </symbol>
+      <symbol
+        className="dfeather dfeather-x"
+        fill="none"
+        id="close"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 6L6 18M6 6l12 12"
+        />
+      </symbol>
+      <symbol
+        className="efeather efeather-git-commit"
+        fill="none"
+        id="commit"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+        />
+        <path
+          d="M1.05 12H7M17.01 12h5.95"
+        />
+      </symbol>
+      <symbol
+        className="ffeather ffeather-bar-chart"
+        fill="none"
+        id="filter"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 20V10M18 20V4M6 20v-4"
+        />
+      </symbol>
+      <symbol
+        className="gfeather gfeather-help-circle"
+        fill="none"
+        id="help"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"
+        />
+      </symbol>
+      <symbol
+        className="hfeather hfeather-menu"
+        fill="none"
+        id="menu"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 12h18M3 6h18M3 18h18"
+        />
+      </symbol>
+      <symbol
+        fill="currentColor"
+        id="sort"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </symbol>
+      <symbol
+        className="jfeather jfeather-alert-triangle"
+        fill="none"
+        id="warning"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"
+        />
+      </symbol>
+    </svg>
+  </IconSprite>
+</div>
 `;

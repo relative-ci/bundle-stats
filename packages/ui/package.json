@@ -12,6 +12,7 @@
     "build-esm": "babel -D src -d lib-esm --ignore **/__tests__/**/* --ignore /prototypes/**",
     "build-storybook": "npx build-storybook -c ./build/storybook",
     "generate-chart-colors": "node scripts/generate-chart-colors.js",
+    "generate-svg-sprite": "npx svg-sprite -s --si src/assets/icons/*.svg && mv symbol/svg/sprite.symbol.svg src/assets/icons.svg",
     "lint": "../../node_modules/.bin/eslint . --ext .jsx,.js",
     "start": "cross-env NODE_ENV=development start-storybook -c ./build/storybook -p 8080",
     "test": "npm run test:unit && npm run test:storyshots",

@@ -1,288 +1,118 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
-<MemoryRouter
-  initialEntries={
-    Array [
-      Object {
-        "key": "home",
-        "pathname": "/",
-      },
-    ]
-  }
->
-  <Router
-    history={
-      Object {
-        "action": "POP",
-        "block": [Function],
-        "canGo": [Function],
-        "createHref": [Function],
-        "entries": Array [
+<div>
+  <Component>
+    <MemoryRouter
+      initialEntries={
+        Array [
           Object {
-            "hash": "",
             "key": "home",
             "pathname": "/",
-            "search": "",
           },
-        ],
-        "go": [Function],
-        "goBack": [Function],
-        "goForward": [Function],
-        "index": 0,
-        "length": 1,
-        "listen": [Function],
-        "location": Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-        "push": [Function],
-        "replace": [Function],
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "height": "100%",
-          "padding": "64px",
-          "width": "100%",
-        }
+        ]
       }
     >
-      <Tooltip
-        as="span"
-        className=""
-        containerRef={null}
-        darkMode={false}
-        title="View job #100"
+      <Router
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "canGo": [Function],
+            "createHref": [Function],
+            "entries": Array [
+              Object {
+                "hash": "",
+                "key": "home",
+                "pathname": "/",
+                "search": "",
+              },
+            ],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "index": 0,
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "key": "home",
+              "pathname": "/",
+              "search": "",
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
       >
-        <ForwardRef(TooltipReference)
-          animated={false}
-          animating={false}
-          as="span"
-          baseId="id-test"
-          className="root"
-          hide={[Function]}
-          place={[Function]}
-          placement="top"
-          setAnimated={[Function]}
-          setBaseId={[Function]}
-          setVisible={[Function]}
-          show={[Function]}
-          stopAnimation={[Function]}
-          toggle={[Function]}
-          unstable_arrowRef={
+        <div
+          style={
             Object {
-              "current": <div
-                class="arrow"
-                style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
-              >
-                <svg
-                  style="transform: rotateZ(180deg);"
-                  viewBox="0 0 30 30"
-                >
-                  <path
-                    class="stroke"
-                    d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
-                  />
-                  <path
-                    class="fill"
-                    d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                  />
-                </svg>
-              </div>,
+              "height": "100%",
+              "padding": "64px",
+              "width": "100%",
             }
           }
-          unstable_arrowStyles={Object {}}
-          unstable_disclosureRef={
-            Object {
-              "current": null,
-            }
-          }
-          unstable_idCountRef={
-            Object {
-              "current": 0,
-            }
-          }
-          unstable_originalPlacement="top"
-          unstable_popoverRef={
-            Object {
-              "current": <div
-                class="tooltip"
-                hidden=""
-                id="id-test"
-                role="tooltip"
-                style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
-              >
-                <div
-                  class="arrow"
-                  style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
-                >
-                  <svg
-                    style="transform: rotateZ(180deg);"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      class="stroke"
-                      d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
-                    />
-                    <path
-                      class="fill"
-                      d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                    />
-                  </svg>
-                </div>
-                View job #100
-              </div>,
-            }
-          }
-          unstable_popoverStyles={
-            Object {
-              "left": "100%",
-              "position": "fixed",
-              "top": "100%",
-            }
-          }
-          unstable_referenceRef={
-            Object {
-              "current": <span
-                aria-describedby="id-test"
-                class="root"
-                tabindex="0"
-              >
-                Job #100
-              </span>,
-            }
-          }
-          unstable_setTimeout={[Function]}
-          unstable_timeout={0}
-          unstable_update={[Function]}
-          visible={false}
         >
-          <span
-            aria-describedby="id-test"
-            className="root"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            tabIndex={0}
+          <Tooltip
+            as="span"
+            className=""
+            containerRef={null}
+            darkMode={false}
+            title="View job #100"
           >
-            Job #100
-          </span>
-        </ForwardRef(TooltipReference)>
-        <ForwardRef(Tooltip)
-          animated={false}
-          animating={false}
-          baseId="id-test"
-          className="tooltip"
-          hide={[Function]}
-          place={[Function]}
-          placement="top"
-          setAnimated={[Function]}
-          setBaseId={[Function]}
-          setVisible={[Function]}
-          show={[Function]}
-          stopAnimation={[Function]}
-          toggle={[Function]}
-          unstable_arrowRef={
-            Object {
-              "current": <div
-                class="arrow"
-                style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
-              >
-                <svg
-                  style="transform: rotateZ(180deg);"
-                  viewBox="0 0 30 30"
-                >
-                  <path
-                    class="stroke"
-                    d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
-                  />
-                  <path
-                    class="fill"
-                    d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                  />
-                </svg>
-              </div>,
-            }
-          }
-          unstable_arrowStyles={Object {}}
-          unstable_disclosureRef={
-            Object {
-              "current": null,
-            }
-          }
-          unstable_idCountRef={
-            Object {
-              "current": 0,
-            }
-          }
-          unstable_originalPlacement="top"
-          unstable_popoverRef={
-            Object {
-              "current": <div
-                class="tooltip"
-                hidden=""
-                id="id-test"
-                role="tooltip"
-                style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
-              >
-                <div
-                  class="arrow"
-                  style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
-                >
-                  <svg
-                    style="transform: rotateZ(180deg);"
-                    viewBox="0 0 30 30"
+            <ForwardRef(TooltipReference)
+              animated={false}
+              animating={false}
+              as="span"
+              baseId="id-test"
+              className="root"
+              hide={[Function]}
+              place={[Function]}
+              placement="top"
+              setAnimated={[Function]}
+              setBaseId={[Function]}
+              setVisible={[Function]}
+              show={[Function]}
+              stopAnimation={[Function]}
+              toggle={[Function]}
+              unstable_arrowRef={
+                Object {
+                  "current": <div
+                    class="arrow"
+                    style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                   >
-                    <path
-                      class="stroke"
-                      d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
-                    />
-                    <path
-                      class="fill"
-                      d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                    />
-                  </svg>
-                </div>
-                View job #100
-              </div>,
-            }
-          }
-          unstable_popoverStyles={
-            Object {
-              "left": "100%",
-              "position": "fixed",
-              "top": "100%",
-            }
-          }
-          unstable_referenceRef={
-            Object {
-              "current": <span
-                aria-describedby="id-test"
-                class="root"
-                tabindex="0"
-              >
-                Job #100
-              </span>,
-            }
-          }
-          unstable_setTimeout={[Function]}
-          unstable_timeout={0}
-          unstable_update={[Function]}
-          visible={false}
-        >
-          <Portal>
-            <Portal
-              containerInfo={
-                <div
-                  class="__reakit-portal"
-                >
-                  <div
+                    <svg
+                      style="transform: rotateZ(180deg);"
+                      viewBox="0 0 30 30"
+                    >
+                      <path
+                        class="stroke"
+                        d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                      />
+                      <path
+                        class="fill"
+                        d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                      />
+                    </svg>
+                  </div>,
+                }
+              }
+              unstable_arrowStyles={Object {}}
+              unstable_disclosureRef={
+                Object {
+                  "current": null,
+                }
+              }
+              unstable_idCountRef={
+                Object {
+                  "current": 0,
+                }
+              }
+              unstable_originalPlacement="top"
+              unstable_popoverRef={
+                Object {
+                  "current": <div
                     class="tooltip"
                     hidden=""
                     id="id-test"
@@ -308,79 +138,153 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                       </svg>
                     </div>
                     View job #100
-                  </div>
-                </div>
-              }
-            >
-              <div
-                className="tooltip"
-                hidden={true}
-                id="id-test"
-                onAnimationEnd={[Function]}
-                onTransitionEnd={[Function]}
-                role="tooltip"
-                style={
-                  Object {
-                    "display": "none",
-                    "left": "100%",
-                    "pointerEvents": "none",
-                    "position": "fixed",
-                    "top": "100%",
-                  }
+                  </div>,
                 }
+              }
+              unstable_popoverStyles={
+                Object {
+                  "left": "100%",
+                  "position": "fixed",
+                  "top": "100%",
+                }
+              }
+              unstable_referenceRef={
+                Object {
+                  "current": <span
+                    aria-describedby="id-test"
+                    class="root"
+                    tabindex="0"
+                  >
+                    Job #100
+                  </span>,
+                }
+              }
+              unstable_setTimeout={[Function]}
+              unstable_timeout={0}
+              unstable_update={[Function]}
+              visible={false}
+            >
+              <span
+                aria-describedby="id-test"
+                className="root"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                tabIndex={0}
               >
-                <ForwardRef(TooltipArrow)
-                  animated={false}
-                  animating={false}
-                  baseId="id-test"
-                  className="arrow"
-                  hide={[Function]}
-                  place={[Function]}
-                  placement="top"
-                  setAnimated={[Function]}
-                  setBaseId={[Function]}
-                  setVisible={[Function]}
-                  show={[Function]}
-                  size={12}
-                  stopAnimation={[Function]}
-                  toggle={[Function]}
-                  unstable_arrowRef={
-                    Object {
-                      "current": <div
-                        class="arrow"
-                        style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                Job #100
+              </span>
+            </ForwardRef(TooltipReference)>
+            <ForwardRef(Tooltip)
+              animated={false}
+              animating={false}
+              baseId="id-test"
+              className="tooltip"
+              hide={[Function]}
+              place={[Function]}
+              placement="top"
+              setAnimated={[Function]}
+              setBaseId={[Function]}
+              setVisible={[Function]}
+              show={[Function]}
+              stopAnimation={[Function]}
+              toggle={[Function]}
+              unstable_arrowRef={
+                Object {
+                  "current": <div
+                    class="arrow"
+                    style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                  >
+                    <svg
+                      style="transform: rotateZ(180deg);"
+                      viewBox="0 0 30 30"
+                    >
+                      <path
+                        class="stroke"
+                        d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                      />
+                      <path
+                        class="fill"
+                        d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                      />
+                    </svg>
+                  </div>,
+                }
+              }
+              unstable_arrowStyles={Object {}}
+              unstable_disclosureRef={
+                Object {
+                  "current": null,
+                }
+              }
+              unstable_idCountRef={
+                Object {
+                  "current": 0,
+                }
+              }
+              unstable_originalPlacement="top"
+              unstable_popoverRef={
+                Object {
+                  "current": <div
+                    class="tooltip"
+                    hidden=""
+                    id="id-test"
+                    role="tooltip"
+                    style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
+                  >
+                    <div
+                      class="arrow"
+                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                    >
+                      <svg
+                        style="transform: rotateZ(180deg);"
+                        viewBox="0 0 30 30"
                       >
-                        <svg
-                          style="transform: rotateZ(180deg);"
-                          viewBox="0 0 30 30"
-                        >
-                          <path
-                            class="stroke"
-                            d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
-                          />
-                          <path
-                            class="fill"
-                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                          />
-                        </svg>
-                      </div>,
-                    }
-                  }
-                  unstable_arrowStyles={Object {}}
-                  unstable_disclosureRef={
-                    Object {
-                      "current": null,
-                    }
-                  }
-                  unstable_idCountRef={
-                    Object {
-                      "current": 0,
-                    }
-                  }
-                  unstable_originalPlacement="top"
-                  unstable_popoverRef={
-                    Object {
-                      "current": <div
+                        <path
+                          class="stroke"
+                          d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                        />
+                        <path
+                          class="fill"
+                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                        />
+                      </svg>
+                    </div>
+                    View job #100
+                  </div>,
+                }
+              }
+              unstable_popoverStyles={
+                Object {
+                  "left": "100%",
+                  "position": "fixed",
+                  "top": "100%",
+                }
+              }
+              unstable_referenceRef={
+                Object {
+                  "current": <span
+                    aria-describedby="id-test"
+                    class="root"
+                    tabindex="0"
+                  >
+                    Job #100
+                  </span>,
+                }
+              }
+              unstable_setTimeout={[Function]}
+              unstable_timeout={0}
+              unstable_update={[Function]}
+              visible={false}
+            >
+              <Portal>
+                <Portal
+                  containerInfo={
+                    <div
+                      class="__reakit-portal"
+                    >
+                      <div
                         class="tooltip"
                         hidden=""
                         id="id-test"
@@ -406,357 +310,480 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                           </svg>
                         </div>
                         View job #100
-                      </div>,
-                    }
+                      </div>
+                    </div>
                   }
-                  unstable_popoverStyles={
-                    Object {
-                      "left": "100%",
-                      "position": "fixed",
-                      "top": "100%",
-                    }
-                  }
-                  unstable_referenceRef={
-                    Object {
-                      "current": <span
-                        aria-describedby="id-test"
-                        class="root"
-                        tabindex="0"
-                      >
-                        Job #100
-                      </span>,
-                    }
-                  }
-                  unstable_setTimeout={[Function]}
-                  unstable_timeout={0}
-                  unstable_update={[Function]}
-                  visible={false}
                 >
                   <div
-                    className="arrow"
+                    className="tooltip"
+                    hidden={true}
+                    id="id-test"
+                    onAnimationEnd={[Function]}
+                    onTransitionEnd={[Function]}
+                    role="tooltip"
                     style={
                       Object {
-                        "fontSize": 12,
-                        "height": "1em",
+                        "display": "none",
+                        "left": "100%",
                         "pointerEvents": "none",
+                        "position": "fixed",
                         "top": "100%",
-                        "width": "1em",
                       }
                     }
                   >
-                    <svg
-                      style={
+                    <ForwardRef(TooltipArrow)
+                      animated={false}
+                      animating={false}
+                      baseId="id-test"
+                      className="arrow"
+                      hide={[Function]}
+                      place={[Function]}
+                      placement="top"
+                      setAnimated={[Function]}
+                      setBaseId={[Function]}
+                      setVisible={[Function]}
+                      show={[Function]}
+                      size={12}
+                      stopAnimation={[Function]}
+                      toggle={[Function]}
+                      unstable_arrowRef={
                         Object {
-                          "transform": "rotateZ(180deg)",
+                          "current": <div
+                            class="arrow"
+                            style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                          >
+                            <svg
+                              style="transform: rotateZ(180deg);"
+                              viewBox="0 0 30 30"
+                            >
+                              <path
+                                class="stroke"
+                                d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                              />
+                              <path
+                                class="fill"
+                                d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                              />
+                            </svg>
+                          </div>,
                         }
                       }
-                      viewBox="0 0 30 30"
+                      unstable_arrowStyles={Object {}}
+                      unstable_disclosureRef={
+                        Object {
+                          "current": null,
+                        }
+                      }
+                      unstable_idCountRef={
+                        Object {
+                          "current": 0,
+                        }
+                      }
+                      unstable_originalPlacement="top"
+                      unstable_popoverRef={
+                        Object {
+                          "current": <div
+                            class="tooltip"
+                            hidden=""
+                            id="id-test"
+                            role="tooltip"
+                            style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
+                          >
+                            <div
+                              class="arrow"
+                              style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                            >
+                              <svg
+                                style="transform: rotateZ(180deg);"
+                                viewBox="0 0 30 30"
+                              >
+                                <path
+                                  class="stroke"
+                                  d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                                />
+                                <path
+                                  class="fill"
+                                  d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                />
+                              </svg>
+                            </div>
+                            View job #100
+                          </div>,
+                        }
+                      }
+                      unstable_popoverStyles={
+                        Object {
+                          "left": "100%",
+                          "position": "fixed",
+                          "top": "100%",
+                        }
+                      }
+                      unstable_referenceRef={
+                        Object {
+                          "current": <span
+                            aria-describedby="id-test"
+                            class="root"
+                            tabindex="0"
+                          >
+                            Job #100
+                          </span>,
+                        }
+                      }
+                      unstable_setTimeout={[Function]}
+                      unstable_timeout={0}
+                      unstable_update={[Function]}
+                      visible={false}
                     >
-                      <path
-                        className="stroke"
-                        d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
-                      />
-                      <path
-                        className="fill"
-                        d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                      />
-                    </svg>
+                      <div
+                        className="arrow"
+                        style={
+                          Object {
+                            "fontSize": 12,
+                            "height": "1em",
+                            "pointerEvents": "none",
+                            "top": "100%",
+                            "width": "1em",
+                          }
+                        }
+                      >
+                        <svg
+                          style={
+                            Object {
+                              "transform": "rotateZ(180deg)",
+                            }
+                          }
+                          viewBox="0 0 30 30"
+                        >
+                          <path
+                            className="stroke"
+                            d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                          />
+                          <path
+                            className="fill"
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          />
+                        </svg>
+                      </div>
+                    </ForwardRef(TooltipArrow)>
+                    View job #100
                   </div>
-                </ForwardRef(TooltipArrow)>
-                View job #100
-              </div>
-            </Portal>
-          </Portal>
-        </ForwardRef(Tooltip)>
-      </Tooltip>
-    </div>
-  </Router>
-</MemoryRouter>
+                </Portal>
+              </Portal>
+            </ForwardRef(Tooltip)>
+          </Tooltip>
+        </div>
+      </Router>
+    </MemoryRouter>
+  </Component>
+  <IconSprite
+    height="16"
+    style={
+      Object {
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
+      }
+    }
+    width="16"
+  >
+    <svg
+      height="16"
+      style={
+        Object {
+          "height": 0,
+          "position": "absolute",
+          "width": 0,
+        }
+      }
+      width="16"
+    >
+      <symbol
+        className="afeather afeather-arrow-down"
+        fill="none"
+        id="arrow"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 5v14M19 12l-7 7-7-7"
+        />
+      </symbol>
+      <symbol
+        className="bfeather bfeather-x-circle"
+        fill="none"
+        id="cancel"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="cfeather cfeather-clock"
+        fill="none"
+        id="clock"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 6v6l4 2"
+        />
+      </symbol>
+      <symbol
+        className="dfeather dfeather-x"
+        fill="none"
+        id="close"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 6L6 18M6 6l12 12"
+        />
+      </symbol>
+      <symbol
+        className="efeather efeather-git-commit"
+        fill="none"
+        id="commit"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+        />
+        <path
+          d="M1.05 12H7M17.01 12h5.95"
+        />
+      </symbol>
+      <symbol
+        className="ffeather ffeather-bar-chart"
+        fill="none"
+        id="filter"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 20V10M18 20V4M6 20v-4"
+        />
+      </symbol>
+      <symbol
+        className="gfeather gfeather-help-circle"
+        fill="none"
+        id="help"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"
+        />
+      </symbol>
+      <symbol
+        className="hfeather hfeather-menu"
+        fill="none"
+        id="menu"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 12h18M3 6h18M3 18h18"
+        />
+      </symbol>
+      <symbol
+        fill="currentColor"
+        id="sort"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </symbol>
+      <symbol
+        className="jfeather jfeather-alert-triangle"
+        fill="none"
+        id="warning"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"
+        />
+      </symbol>
+    </svg>
+  </IconSprite>
+</div>
 `;
 
 exports[`Storyshots UI/Tooltip default 1`] = `
-<MemoryRouter
-  initialEntries={
-    Array [
-      Object {
-        "key": "home",
-        "pathname": "/",
-      },
-    ]
-  }
->
-  <Router
-    history={
-      Object {
-        "action": "POP",
-        "block": [Function],
-        "canGo": [Function],
-        "createHref": [Function],
-        "entries": Array [
+<div>
+  <Component>
+    <MemoryRouter
+      initialEntries={
+        Array [
           Object {
-            "hash": "",
             "key": "home",
             "pathname": "/",
-            "search": "",
           },
-        ],
-        "go": [Function],
-        "goBack": [Function],
-        "goForward": [Function],
-        "index": 0,
-        "length": 1,
-        "listen": [Function],
-        "location": Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-        "push": [Function],
-        "replace": [Function],
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "height": "100%",
-          "padding": "64px",
-          "width": "100%",
-        }
+        ]
       }
     >
-      <Tooltip
-        as="span"
-        className=""
-        containerRef={null}
-        darkMode={true}
-        title="View job #100"
+      <Router
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "canGo": [Function],
+            "createHref": [Function],
+            "entries": Array [
+              Object {
+                "hash": "",
+                "key": "home",
+                "pathname": "/",
+                "search": "",
+              },
+            ],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "index": 0,
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "key": "home",
+              "pathname": "/",
+              "search": "",
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
       >
-        <ForwardRef(TooltipReference)
-          animated={false}
-          animating={false}
-          as="span"
-          baseId="id-test"
-          className="root"
-          hide={[Function]}
-          place={[Function]}
-          placement="top"
-          setAnimated={[Function]}
-          setBaseId={[Function]}
-          setVisible={[Function]}
-          show={[Function]}
-          stopAnimation={[Function]}
-          toggle={[Function]}
-          unstable_arrowRef={
+        <div
+          style={
             Object {
-              "current": <div
-                class="arrow"
-                style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
-              >
-                <svg
-                  style="transform: rotateZ(180deg);"
-                  viewBox="0 0 30 30"
-                >
-                  <path
-                    class="stroke"
-                    d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
-                  />
-                  <path
-                    class="fill"
-                    d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                  />
-                </svg>
-              </div>,
+              "height": "100%",
+              "padding": "64px",
+              "width": "100%",
             }
           }
-          unstable_arrowStyles={Object {}}
-          unstable_disclosureRef={
-            Object {
-              "current": null,
-            }
-          }
-          unstable_idCountRef={
-            Object {
-              "current": 0,
-            }
-          }
-          unstable_originalPlacement="top"
-          unstable_popoverRef={
-            Object {
-              "current": <div
-                class="tooltip tooltipDarkMode"
-                hidden=""
-                id="id-test"
-                role="tooltip"
-                style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
-              >
-                <div
-                  class="arrow"
-                  style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
-                >
-                  <svg
-                    style="transform: rotateZ(180deg);"
-                    viewBox="0 0 30 30"
-                  >
-                    <path
-                      class="stroke"
-                      d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
-                    />
-                    <path
-                      class="fill"
-                      d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                    />
-                  </svg>
-                </div>
-                View job #100
-              </div>,
-            }
-          }
-          unstable_popoverStyles={
-            Object {
-              "left": "100%",
-              "position": "fixed",
-              "top": "100%",
-            }
-          }
-          unstable_referenceRef={
-            Object {
-              "current": <span
-                aria-describedby="id-test"
-                class="root"
-                tabindex="0"
-              >
-                Job #100
-              </span>,
-            }
-          }
-          unstable_setTimeout={[Function]}
-          unstable_timeout={0}
-          unstable_update={[Function]}
-          visible={false}
         >
-          <span
-            aria-describedby="id-test"
-            className="root"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            tabIndex={0}
+          <Tooltip
+            as="span"
+            className=""
+            containerRef={null}
+            darkMode={true}
+            title="View job #100"
           >
-            Job #100
-          </span>
-        </ForwardRef(TooltipReference)>
-        <ForwardRef(Tooltip)
-          animated={false}
-          animating={false}
-          baseId="id-test"
-          className="tooltip tooltipDarkMode"
-          hide={[Function]}
-          place={[Function]}
-          placement="top"
-          setAnimated={[Function]}
-          setBaseId={[Function]}
-          setVisible={[Function]}
-          show={[Function]}
-          stopAnimation={[Function]}
-          toggle={[Function]}
-          unstable_arrowRef={
-            Object {
-              "current": <div
-                class="arrow"
-                style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
-              >
-                <svg
-                  style="transform: rotateZ(180deg);"
-                  viewBox="0 0 30 30"
-                >
-                  <path
-                    class="stroke"
-                    d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
-                  />
-                  <path
-                    class="fill"
-                    d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                  />
-                </svg>
-              </div>,
-            }
-          }
-          unstable_arrowStyles={Object {}}
-          unstable_disclosureRef={
-            Object {
-              "current": null,
-            }
-          }
-          unstable_idCountRef={
-            Object {
-              "current": 0,
-            }
-          }
-          unstable_originalPlacement="top"
-          unstable_popoverRef={
-            Object {
-              "current": <div
-                class="tooltip tooltipDarkMode"
-                hidden=""
-                id="id-test"
-                role="tooltip"
-                style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
-              >
-                <div
-                  class="arrow"
-                  style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
-                >
-                  <svg
-                    style="transform: rotateZ(180deg);"
-                    viewBox="0 0 30 30"
+            <ForwardRef(TooltipReference)
+              animated={false}
+              animating={false}
+              as="span"
+              baseId="id-test"
+              className="root"
+              hide={[Function]}
+              place={[Function]}
+              placement="top"
+              setAnimated={[Function]}
+              setBaseId={[Function]}
+              setVisible={[Function]}
+              show={[Function]}
+              stopAnimation={[Function]}
+              toggle={[Function]}
+              unstable_arrowRef={
+                Object {
+                  "current": <div
+                    class="arrow"
+                    style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                   >
-                    <path
-                      class="stroke"
-                      d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
-                    />
-                    <path
-                      class="fill"
-                      d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                    />
-                  </svg>
-                </div>
-                View job #100
-              </div>,
-            }
-          }
-          unstable_popoverStyles={
-            Object {
-              "left": "100%",
-              "position": "fixed",
-              "top": "100%",
-            }
-          }
-          unstable_referenceRef={
-            Object {
-              "current": <span
-                aria-describedby="id-test"
-                class="root"
-                tabindex="0"
-              >
-                Job #100
-              </span>,
-            }
-          }
-          unstable_setTimeout={[Function]}
-          unstable_timeout={0}
-          unstable_update={[Function]}
-          visible={false}
-        >
-          <Portal>
-            <Portal
-              containerInfo={
-                <div
-                  class="__reakit-portal"
-                >
-                  <div
+                    <svg
+                      style="transform: rotateZ(180deg);"
+                      viewBox="0 0 30 30"
+                    >
+                      <path
+                        class="stroke"
+                        d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                      />
+                      <path
+                        class="fill"
+                        d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                      />
+                    </svg>
+                  </div>,
+                }
+              }
+              unstable_arrowStyles={Object {}}
+              unstable_disclosureRef={
+                Object {
+                  "current": null,
+                }
+              }
+              unstable_idCountRef={
+                Object {
+                  "current": 0,
+                }
+              }
+              unstable_originalPlacement="top"
+              unstable_popoverRef={
+                Object {
+                  "current": <div
                     class="tooltip tooltipDarkMode"
                     hidden=""
                     id="id-test"
@@ -782,79 +809,153 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                       </svg>
                     </div>
                     View job #100
-                  </div>
-                </div>
-              }
-            >
-              <div
-                className="tooltip tooltipDarkMode"
-                hidden={true}
-                id="id-test"
-                onAnimationEnd={[Function]}
-                onTransitionEnd={[Function]}
-                role="tooltip"
-                style={
-                  Object {
-                    "display": "none",
-                    "left": "100%",
-                    "pointerEvents": "none",
-                    "position": "fixed",
-                    "top": "100%",
-                  }
+                  </div>,
                 }
+              }
+              unstable_popoverStyles={
+                Object {
+                  "left": "100%",
+                  "position": "fixed",
+                  "top": "100%",
+                }
+              }
+              unstable_referenceRef={
+                Object {
+                  "current": <span
+                    aria-describedby="id-test"
+                    class="root"
+                    tabindex="0"
+                  >
+                    Job #100
+                  </span>,
+                }
+              }
+              unstable_setTimeout={[Function]}
+              unstable_timeout={0}
+              unstable_update={[Function]}
+              visible={false}
+            >
+              <span
+                aria-describedby="id-test"
+                className="root"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                tabIndex={0}
               >
-                <ForwardRef(TooltipArrow)
-                  animated={false}
-                  animating={false}
-                  baseId="id-test"
-                  className="arrow"
-                  hide={[Function]}
-                  place={[Function]}
-                  placement="top"
-                  setAnimated={[Function]}
-                  setBaseId={[Function]}
-                  setVisible={[Function]}
-                  show={[Function]}
-                  size={12}
-                  stopAnimation={[Function]}
-                  toggle={[Function]}
-                  unstable_arrowRef={
-                    Object {
-                      "current": <div
-                        class="arrow"
-                        style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                Job #100
+              </span>
+            </ForwardRef(TooltipReference)>
+            <ForwardRef(Tooltip)
+              animated={false}
+              animating={false}
+              baseId="id-test"
+              className="tooltip tooltipDarkMode"
+              hide={[Function]}
+              place={[Function]}
+              placement="top"
+              setAnimated={[Function]}
+              setBaseId={[Function]}
+              setVisible={[Function]}
+              show={[Function]}
+              stopAnimation={[Function]}
+              toggle={[Function]}
+              unstable_arrowRef={
+                Object {
+                  "current": <div
+                    class="arrow"
+                    style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                  >
+                    <svg
+                      style="transform: rotateZ(180deg);"
+                      viewBox="0 0 30 30"
+                    >
+                      <path
+                        class="stroke"
+                        d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                      />
+                      <path
+                        class="fill"
+                        d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                      />
+                    </svg>
+                  </div>,
+                }
+              }
+              unstable_arrowStyles={Object {}}
+              unstable_disclosureRef={
+                Object {
+                  "current": null,
+                }
+              }
+              unstable_idCountRef={
+                Object {
+                  "current": 0,
+                }
+              }
+              unstable_originalPlacement="top"
+              unstable_popoverRef={
+                Object {
+                  "current": <div
+                    class="tooltip tooltipDarkMode"
+                    hidden=""
+                    id="id-test"
+                    role="tooltip"
+                    style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
+                  >
+                    <div
+                      class="arrow"
+                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                    >
+                      <svg
+                        style="transform: rotateZ(180deg);"
+                        viewBox="0 0 30 30"
                       >
-                        <svg
-                          style="transform: rotateZ(180deg);"
-                          viewBox="0 0 30 30"
-                        >
-                          <path
-                            class="stroke"
-                            d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
-                          />
-                          <path
-                            class="fill"
-                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                          />
-                        </svg>
-                      </div>,
-                    }
-                  }
-                  unstable_arrowStyles={Object {}}
-                  unstable_disclosureRef={
-                    Object {
-                      "current": null,
-                    }
-                  }
-                  unstable_idCountRef={
-                    Object {
-                      "current": 0,
-                    }
-                  }
-                  unstable_originalPlacement="top"
-                  unstable_popoverRef={
-                    Object {
-                      "current": <div
+                        <path
+                          class="stroke"
+                          d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                        />
+                        <path
+                          class="fill"
+                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                        />
+                      </svg>
+                    </div>
+                    View job #100
+                  </div>,
+                }
+              }
+              unstable_popoverStyles={
+                Object {
+                  "left": "100%",
+                  "position": "fixed",
+                  "top": "100%",
+                }
+              }
+              unstable_referenceRef={
+                Object {
+                  "current": <span
+                    aria-describedby="id-test"
+                    class="root"
+                    tabindex="0"
+                  >
+                    Job #100
+                  </span>,
+                }
+              }
+              unstable_setTimeout={[Function]}
+              unstable_timeout={0}
+              unstable_update={[Function]}
+              visible={false}
+            >
+              <Portal>
+                <Portal
+                  containerInfo={
+                    <div
+                      class="__reakit-portal"
+                    >
+                      <div
                         class="tooltip tooltipDarkMode"
                         hidden=""
                         id="id-test"
@@ -880,70 +981,363 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                           </svg>
                         </div>
                         View job #100
-                      </div>,
-                    }
+                      </div>
+                    </div>
                   }
-                  unstable_popoverStyles={
-                    Object {
-                      "left": "100%",
-                      "position": "fixed",
-                      "top": "100%",
-                    }
-                  }
-                  unstable_referenceRef={
-                    Object {
-                      "current": <span
-                        aria-describedby="id-test"
-                        class="root"
-                        tabindex="0"
-                      >
-                        Job #100
-                      </span>,
-                    }
-                  }
-                  unstable_setTimeout={[Function]}
-                  unstable_timeout={0}
-                  unstable_update={[Function]}
-                  visible={false}
                 >
                   <div
-                    className="arrow"
+                    className="tooltip tooltipDarkMode"
+                    hidden={true}
+                    id="id-test"
+                    onAnimationEnd={[Function]}
+                    onTransitionEnd={[Function]}
+                    role="tooltip"
                     style={
                       Object {
-                        "fontSize": 12,
-                        "height": "1em",
+                        "display": "none",
+                        "left": "100%",
                         "pointerEvents": "none",
+                        "position": "fixed",
                         "top": "100%",
-                        "width": "1em",
                       }
                     }
                   >
-                    <svg
-                      style={
+                    <ForwardRef(TooltipArrow)
+                      animated={false}
+                      animating={false}
+                      baseId="id-test"
+                      className="arrow"
+                      hide={[Function]}
+                      place={[Function]}
+                      placement="top"
+                      setAnimated={[Function]}
+                      setBaseId={[Function]}
+                      setVisible={[Function]}
+                      show={[Function]}
+                      size={12}
+                      stopAnimation={[Function]}
+                      toggle={[Function]}
+                      unstable_arrowRef={
                         Object {
-                          "transform": "rotateZ(180deg)",
+                          "current": <div
+                            class="arrow"
+                            style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                          >
+                            <svg
+                              style="transform: rotateZ(180deg);"
+                              viewBox="0 0 30 30"
+                            >
+                              <path
+                                class="stroke"
+                                d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                              />
+                              <path
+                                class="fill"
+                                d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                              />
+                            </svg>
+                          </div>,
                         }
                       }
-                      viewBox="0 0 30 30"
+                      unstable_arrowStyles={Object {}}
+                      unstable_disclosureRef={
+                        Object {
+                          "current": null,
+                        }
+                      }
+                      unstable_idCountRef={
+                        Object {
+                          "current": 0,
+                        }
+                      }
+                      unstable_originalPlacement="top"
+                      unstable_popoverRef={
+                        Object {
+                          "current": <div
+                            class="tooltip tooltipDarkMode"
+                            hidden=""
+                            id="id-test"
+                            role="tooltip"
+                            style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
+                          >
+                            <div
+                              class="arrow"
+                              style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                            >
+                              <svg
+                                style="transform: rotateZ(180deg);"
+                                viewBox="0 0 30 30"
+                              >
+                                <path
+                                  class="stroke"
+                                  d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                                />
+                                <path
+                                  class="fill"
+                                  d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                />
+                              </svg>
+                            </div>
+                            View job #100
+                          </div>,
+                        }
+                      }
+                      unstable_popoverStyles={
+                        Object {
+                          "left": "100%",
+                          "position": "fixed",
+                          "top": "100%",
+                        }
+                      }
+                      unstable_referenceRef={
+                        Object {
+                          "current": <span
+                            aria-describedby="id-test"
+                            class="root"
+                            tabindex="0"
+                          >
+                            Job #100
+                          </span>,
+                        }
+                      }
+                      unstable_setTimeout={[Function]}
+                      unstable_timeout={0}
+                      unstable_update={[Function]}
+                      visible={false}
                     >
-                      <path
-                        className="stroke"
-                        d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
-                      />
-                      <path
-                        className="fill"
-                        d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                      />
-                    </svg>
+                      <div
+                        className="arrow"
+                        style={
+                          Object {
+                            "fontSize": 12,
+                            "height": "1em",
+                            "pointerEvents": "none",
+                            "top": "100%",
+                            "width": "1em",
+                          }
+                        }
+                      >
+                        <svg
+                          style={
+                            Object {
+                              "transform": "rotateZ(180deg)",
+                            }
+                          }
+                          viewBox="0 0 30 30"
+                        >
+                          <path
+                            className="stroke"
+                            d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                          />
+                          <path
+                            className="fill"
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          />
+                        </svg>
+                      </div>
+                    </ForwardRef(TooltipArrow)>
+                    View job #100
                   </div>
-                </ForwardRef(TooltipArrow)>
-                View job #100
-              </div>
-            </Portal>
-          </Portal>
-        </ForwardRef(Tooltip)>
-      </Tooltip>
-    </div>
-  </Router>
-</MemoryRouter>
+                </Portal>
+              </Portal>
+            </ForwardRef(Tooltip)>
+          </Tooltip>
+        </div>
+      </Router>
+    </MemoryRouter>
+  </Component>
+  <IconSprite
+    height="16"
+    style={
+      Object {
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
+      }
+    }
+    width="16"
+  >
+    <svg
+      height="16"
+      style={
+        Object {
+          "height": 0,
+          "position": "absolute",
+          "width": 0,
+        }
+      }
+      width="16"
+    >
+      <symbol
+        className="afeather afeather-arrow-down"
+        fill="none"
+        id="arrow"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 5v14M19 12l-7 7-7-7"
+        />
+      </symbol>
+      <symbol
+        className="bfeather bfeather-x-circle"
+        fill="none"
+        id="cancel"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="cfeather cfeather-clock"
+        fill="none"
+        id="clock"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 6v6l4 2"
+        />
+      </symbol>
+      <symbol
+        className="dfeather dfeather-x"
+        fill="none"
+        id="close"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 6L6 18M6 6l12 12"
+        />
+      </symbol>
+      <symbol
+        className="efeather efeather-git-commit"
+        fill="none"
+        id="commit"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+        />
+        <path
+          d="M1.05 12H7M17.01 12h5.95"
+        />
+      </symbol>
+      <symbol
+        className="ffeather ffeather-bar-chart"
+        fill="none"
+        id="filter"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 20V10M18 20V4M6 20v-4"
+        />
+      </symbol>
+      <symbol
+        className="gfeather gfeather-help-circle"
+        fill="none"
+        id="help"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"
+        />
+      </symbol>
+      <symbol
+        className="hfeather hfeather-menu"
+        fill="none"
+        id="menu"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 12h18M3 6h18M3 18h18"
+        />
+      </symbol>
+      <symbol
+        fill="currentColor"
+        id="sort"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </symbol>
+      <symbol
+        className="jfeather jfeather-alert-triangle"
+        fill="none"
+        id="warning"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"
+        />
+      </symbol>
+    </svg>
+  </IconSprite>
+</div>
 `;

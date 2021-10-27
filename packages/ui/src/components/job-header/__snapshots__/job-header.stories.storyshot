@@ -1,212 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Components/JobHeader default 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <JobHeader
-      className=""
-      job={
-        Object {
-          "internalBuildNumber": 1,
-          "meta": Object {
-            "webpack": Object {
-              "builtAt": "2019-01-01T00:00:00.000Z",
-              "hash": "abcd1234",
-            },
-          },
-          "summary": Object {
-            "webpack": Object {
-              "totalSizeByTypeALL": Object {
-                "baseline": 900000,
-                "current": 1000000,
-              },
-            },
-          },
-        }
-      }
-      tag=""
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/JobHeader with custom content 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <JobHeader
-      className=""
-      job={
-        Object {
-          "internalBuildNumber": 1,
-          "meta": Object {
-            "webpack": Object {
-              "builtAt": "2019-01-01T00:00:00.000Z",
-              "hash": "abcd1234",
-            },
-          },
-          "summary": Object {
-            "webpack": Object {
-              "totalSizeByTypeALL": Object {
-                "baseline": 900000,
-                "current": 1000000,
-              },
-            },
-          },
-        }
-      }
-      tag=""
-    >
-      <p>
-        Lorem ipsum dolor sit amed
-      </p>
-    </JobHeader>
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
 
 exports[`Storyshots Components/JobHeader with tag 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "home",
-          "pathname": "/",
-          "search": "",
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "home",
-        "pathname": "/",
-        "search": "",
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <div
+<div>
+  <Component />
+  <IconSprite
+    height="16"
     style={
       Object {
-        "height": "100%",
-        "padding": "24px",
-        "width": "100%",
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
       }
     }
-  >
-    <JobHeader
-      className=""
-      job={
-        Object {
-          "internalBuildNumber": 1,
-          "meta": Object {
-            "webpack": Object {
-              "builtAt": "2019-01-01T00:00:00.000Z",
-              "hash": "abcd1234",
-            },
-          },
-          "summary": Object {
-            "webpack": Object {
-              "totalSizeByTypeALL": Object {
-                "baseline": 900000,
-                "current": 1000000,
-              },
-            },
-          },
-        }
-      }
-      tag="current"
-    />
-  </div>
-</Router>
+    width="16"
+  />
+</div>
 `;
