@@ -4,21 +4,21 @@ import template from 'lodash/template';
 import { INSIGHT_INFO } from '../../config/insights';
 import { getMetricRunInfo } from '../../utils/metrics';
 import { getMetricType } from '../utils';
+import { MetricId } from '../constants';
 
 const INFO_TEMPLATE = template(
   '<%= metric %> — <%= displayValue %> (<%= displayDeltaPercentage %>).',
 );
-const METRIC_NAME = 'totalSizeByTypeALL';
 
 export const extractAssetsSizeTotalInsight = (
   webpackStats,
   currentExtractedData,
   baselineBundleStats,
 ) => {
-  const currentValue = get(currentExtractedData, ['metrics', METRIC_NAME, 'value'], 0);
-  const baselineValue = get(baselineBundleStats, ['metrics', 'webpack', METRIC_NAME, 'value'], 0);
+  const currentValue = get(currentExtractedData, ['metrics', MetricId.BundleSize, 'value'], 0);
+  const baselineValue = get(baselineBundleStats, ['metrics', 'webpack', MetricId.BundleSize, 'value'], 0);
 
-  const metric = getMetricType(METRIC_NAME);
+  const metric = getMetricType(MetricId.BundleSize);
   const info = getMetricRunInfo(metric, currentValue, baselineValue);
   const { displayDeltaPercentage, displayValue } = info;
 

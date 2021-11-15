@@ -12,19 +12,34 @@ export const SECTIONS = [
   SECTION_WEBPACK_PACKAGES,
 ];
 
-export const SUMMARY_METRIC_PATHS = [
-  'totalSizeByTypeALL',
-  'totalInitialSizeJS',
-  'totalInitialSizeCSS',
-  'cacheInvalidation',
-  'moduleCount',
-  'duplicateModulesCount',
-  'duplicateCode',
-  'chunkCount',
-  'assetCount',
-  'packageCount',
-  'duplicatePackagesCount',
-];
+export enum MetricId {
+  BundleSize = 'totalSizeByTypeALL',
+  TotalInitialSizeJS = 'totalInitialSizeJS',
+  TotalInitialSizeCSS = 'totalInitialSizeCSS',
+  CacheInvalidation = 'cacheInvalidation',
+  ModuleName = 'moduleCount',
+  DuplicateModulesCount = 'duplicateModulesCount',
+  DuplicateCode = 'duplicateCode',
+  ChunkCount = 'chunkCount',
+  AssetCount = 'assetCount',
+  PackageCount = 'packageCount',
+  DuplicatePackagesCount = 'duplicatePackagesCount',
+}
+
+export const SIZE_BY_TYPE_METRIC_ID_ALL = 'ALL';
+export const SIZE_BY_TYPE_METRIC_ID_PREFIX = 'totalSizeByType';
+
+export enum SizeByTypeMetricId {
+  JS = 'totalSizeByTypeJS',
+  CSS = 'totalSizeByTypeCSS',
+  IMG = 'totalSizeByTypeIMG',
+  Media = 'totalSizeByTypeMEDIA',
+  Font = 'totalSizeByTypeFONT',
+  HTML = 'totalSizeByTypeHTML',
+  Other = 'totalSizeByTypeOTHER',
+}
+
+export const SUMMARY_METRIC_PATHS = Object.values(MetricId);
 
 const PACKAGE_PREFIX = /(?:node_modules|~)(?:\/\.pnpm)?/;
 const PACKAGE_SLUG = /[a-zA-Z0-9]+(?:[-|_|.]+[a-zA-Z0-9]+)*/;
