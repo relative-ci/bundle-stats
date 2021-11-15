@@ -4,11 +4,9 @@ import sum from 'lodash/sum';
 
 import { FILE_TYPE_CSS, FILE_TYPE_JS, FILE_TYPES } from '../../config/file-types';
 import { getFileType } from '../../utils/file-types';
+import { SIZE_BY_TYPE_METRIC_ID_PREFIX, SIZE_BY_TYPE_METRIC_ID_ALL } from '../constants';
 
-const METRIC_NAME_ALL = 'ALL';
-const METRIC_NAME_PREFIX = 'totalSizeByType';
-
-const getMetricName = (fileType) => `${METRIC_NAME_PREFIX}${fileType}`;
+const getMetricName = (fileType) => `${SIZE_BY_TYPE_METRIC_ID_PREFIX}${fileType}`;
 
 const generateInitialSizeByType = () => FILE_TYPES.reduce((accumulator, fileType) => ({
   ...accumulator,
@@ -52,7 +50,7 @@ export const extractAssetsSize = (webpackStats, currentExtractedData) => {
 
   const sizes = calculateTotalByType(bundleAssets);
   const generic = {
-    [getMetricName(METRIC_NAME_ALL)]: {
+    [getMetricName(SIZE_BY_TYPE_METRIC_ID_ALL)]: {
       value: sum(map(bundleAssets, 'value')),
     },
     ...calculateInitialTotals(bundleAssets),
