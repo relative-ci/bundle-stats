@@ -30,11 +30,11 @@ const extractFns = [
   extractBudgetsInsights,
 ];
 
-export const extract = (webpackStats, baseline) => extractFns.reduce(
+export const extract = (webpackStats, baseline, options) => extractFns.reduce(
   (agg, extractFn) => merge(
     {},
     agg,
-    extractFn(webpackStats, agg, baseline),
+    extractFn(webpackStats, agg, baseline, options),
   ),
   {}
 );
