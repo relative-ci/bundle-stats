@@ -14,7 +14,7 @@ const GENERIC_PROPS = ['meta', 'insights', 'metrics'];
 /*
  * Create job from stats
  */
-export const createJob = (source, baseline) => SOURCE_PATHS.reduce((agg, sourcePath) => {
+export const createJob = (source, baseline, options = {}) => SOURCE_PATHS.reduce((agg, sourcePath) => {
   const rawData = get(source, sourcePath);
 
   if (!rawData) {
@@ -27,7 +27,7 @@ export const createJob = (source, baseline) => SOURCE_PATHS.reduce((agg, sourceP
     return agg;
   }
 
-  const extractedData = sourceModule.extract(rawData, baseline);
+  const extractedData = sourceModule.extract(rawData, baseline, options[sourcePath]);
   const summary = createSummary(
     SOURCE_FNS[sourcePath].SUMMARY_METRIC_PATHS,
     get(baseline, `metrics.${sourcePath}`, {}),
