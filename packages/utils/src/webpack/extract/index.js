@@ -12,6 +12,7 @@ import { extractModulesCount } from './modules-count';
 import { extractModulesPackages } from './modules-packages';
 import { extractModulesPackagesCount } from './modules-packages-count';
 import { extractModulesPackagesDuplicate } from './modules-packages-duplicate';
+import extractBudgetsInsights from './budgets-insights';
 
 const extractFns = [
   extractAssets,
@@ -26,10 +27,14 @@ const extractFns = [
   extractModulesPackages,
   extractModulesPackagesCount,
   extractModulesPackagesDuplicate,
+  extractBudgetsInsights,
 ];
 
-export const extract = (webpackStats, baseline) => extractFns.reduce((agg, extractFn) => merge(
-  {},
-  agg,
-  extractFn(webpackStats, agg, baseline),
-), {});
+export const extract = (webpackStats, baseline) => extractFns.reduce(
+  (agg, extractFn) => merge(
+    {},
+    agg,
+    extractFn(webpackStats, agg, baseline),
+  ),
+  {}
+);
