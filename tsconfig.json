@@ -10,7 +10,7 @@
     "strict": true,
     "allowJs": true,
     "sourceMap": true,
-    "lib": ["ES2019.Array"],
+    "lib": ["ES2019.Array", "ES2019.Object"],
     "noEmit": true
   }
 }
