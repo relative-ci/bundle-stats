@@ -43,7 +43,7 @@
     "@simplyianm/babel-plugin-inline-react-svg": "1.2.0",
     "@storybook/addon-knobs": "6.3.1",
     "@storybook/addon-storyshots": "6.3.12",
-    "@storybook/addons": "6.2.9",
+    "@storybook/addons": "6.3.12",
     "@storybook/react": "6.2.9",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "26.6.3",
