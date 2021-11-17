@@ -1,7 +1,12 @@
-import { getMetricType } from '../utils';
+import get from 'lodash/get';
+
+interface OptionBudgetMetric {
+  metric: string;
+  value: number;
+}
 
 interface Options {
-  budgets?: Record<string, number>;
+  budgets?: Array<OptionBudgetMetric>;
 }
 
 interface BudgetInsight {
@@ -34,8 +39,9 @@ export default function extractBudgetsInsights(
 
   const insights: Array<[string, BudgetInsight]> = [];
 
-  Object.entries(budgetsOptions).forEach(([budgetMetricId, budgetValue]) => {
-    const currentValue = currentExtractedData?.metrics?.[budgetMetricId]?.value;
+  budgetsOptions.forEach((budgetOption) => {
+    const { metric: budgetMetricId, value: budgetValue } = budgetOption;
+    const currentValue = get(currentExtractedData, `metrics.${budgetMetricId}.value`);
 
     if (!currentValue) {
       return;
