@@ -9,7 +9,6 @@
   <a href="https://www.npmjs.com/package/bundle-stats"><img src="https://img.shields.io/npm/v/bundle-stats.svg" /></a>
   <img src="https://img.shields.io/node/v/bundle-stats.svg" alt="Node version" />
   <a href="https://circleci.com/gh/relative-ci/bundle-stats"><img alt="CircleCI badge" src="https://circleci.com/gh/relative-ci/bundle-stats.svg"/></a>
-  <img alt="Renovate" src="https://badges.renovateapi.com/github/relative-ci/bundle-stats?v=1" />
   <a href="https://lgtm.com/projects/g/relative-ci/bundle-stats/context:javascript"><img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/relative-ci/bundle-stats.svg?logo=lgtm&logoWidth=18"/></a>
 </p>
 <p align="center">
