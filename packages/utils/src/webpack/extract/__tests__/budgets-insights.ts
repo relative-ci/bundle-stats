@@ -22,9 +22,12 @@ describe('Webpack/extracts/extractBudgetsInsights', () => {
       },
       undefined,
       {
-        budgets: {
-          totalSizeByTypeALL: 10240,
-        },
+        budgets: [
+          {
+            metric: 'totalSizeByTypeALL',
+            value: 10240,
+          },
+        ],
       },
     );
 
@@ -32,6 +35,36 @@ describe('Webpack/extracts/extractBudgetsInsights', () => {
       insights: {
         budgets: {
           totalSizeByTypeALL: {
+            value: 11776,
+            budget: 10240,
+            overBudget: true,
+          },
+        },
+      },
+    });
+  });
+
+  test('should return budgets insights for sizes', () => {
+    const actual = extractBudgetsInsights(
+      undefined,
+      {
+        metrics: { sizes: { totalSizeByTypeJS: { value: 11776 } } },
+      },
+      undefined,
+      {
+        budgets: [
+          {
+            metric: 'sizes.totalSizeByTypeJS',
+            value: 10240,
+          },
+        ],
+      },
+    );
+
+    expect(actual).toEqual({
+      insights: {
+        budgets: {
+          'sizes.totalSizeByTypeJS': {
             value: 11776,
             budget: 10240,
             overBudget: true,
