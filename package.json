@@ -22,7 +22,7 @@
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.24.0",
-    "husky": "7.0.4",
+    "husky": "7.0.0",
     "lerna": "4.0.0",
     "lint-staged": "12.0.2",
     "mini-css-extract-plugin": "1.2.1",
@@ -41,7 +41,8 @@
     "install-dependencies": "npm install && npx lerna bootstrap --hoist",
     "release": "./scripts/release.sh",
     "test": "lerna run test",
-    "test-package": "cd packages/webpack-plugin && npm run test-package"
+    "test-package": "cd packages/webpack-plugin && npm run test-package",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
