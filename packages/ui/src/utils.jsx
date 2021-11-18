@@ -25,12 +25,14 @@ export const getRenderChildWithClassName = (className) => (child) => {
     return null;
   }
 
-  if (!child?.props) {
+  const { props } = child;
+
+  if (!props) {
     return <div className={className}>{child}</div>;
   }
 
   return React.cloneElement(child, {
-    ...child.props,
-    className: cx(className, child.props.className),
+    ...props,
+    className: cx(className, props.className), // eslint-disable-line react/prop-types
   });
 };
