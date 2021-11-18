@@ -10,7 +10,7 @@ import { WebpackSourceStruct } from './schemas';
 export default (webpackSource?: any): string => {
   try {
     WebpackSourceStruct(webpackSource);
-  } catch (err) {
+  } catch (err: any) {
     const { path, type } = err;
     const key = path[0];
     return `${I18N.INVALID}\n\nExpected a value of type \`${type}\` for \`${key}\``;
