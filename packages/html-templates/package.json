@@ -8,7 +8,7 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js --mode production",
     "lint": "../../node_modules/.bin/eslint . --ext .js,.jsx",
     "start": "cross-env NODE_ENV=development start-storybook -p 8090 -c build/storybook",
-    "test": "jest build/storybook"
+    "test": "jest build/storybook/storyshots.test.js"
   },
   "keywords": [],
   "author": {
@@ -52,7 +52,7 @@
     "html-webpack-inline-source-plugin": "0.0.10",
     "html-webpack-plugin": "3.2.0",
     "identity-obj-proxy": "3.0.0",
-    "jest": "26.6.3",
+    "jest": "27.3.1",
     "jest-date-mock": "1.0.8",
     "lodash": "4.17.21",
     "mini-css-extract-plugin": "1.2.1",
