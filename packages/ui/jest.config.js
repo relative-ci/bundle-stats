@@ -6,4 +6,5 @@ module.exports = {
     '\\.css$': 'identity-obj-proxy',
     '^.+\\.md?$': 'markdown-loader-jest',
   },
+  testEnvironment: 'jsdom',
 };

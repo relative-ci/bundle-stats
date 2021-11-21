@@ -35,12 +35,12 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/plugin-webpack-filter#readme",
   "devDependencies": {
-    "@types/jest": "26.0.24",
-    "jest": "26.6.3",
-    "jest-cli": "26.6.3",
+    "@types/jest": "27.0.3",
+    "jest": "27.3.1",
+    "jest-cli": "27.3.1",
     "jest-date-mock": "1.0.8",
-    "regenerator-runtime": "0.13.7",
-    "ts-jest": "26.5.6"
+    "regenerator-runtime": "0.13.9",
+    "ts-jest": "27.0.7"
   },
   "dependencies": {
     "superstruct": "^0.8.3"

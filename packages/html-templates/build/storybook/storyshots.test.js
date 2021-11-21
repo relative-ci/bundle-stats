@@ -7,6 +7,8 @@ import { advanceTo } from 'jest-date-mock';
 configure({ adapter: new Adapter() });
 const converter = new Stories2SnapsConverter();
 
+jest.mock('global', () => ({ ...global, window: { STORYBOOK_HOOKS_CONTEXT: '' } }));
+
 initStoryshots({
   framework: 'react',
   configPath: __dirname,
