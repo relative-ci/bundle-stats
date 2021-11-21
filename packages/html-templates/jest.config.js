@@ -10,4 +10,5 @@ module.exports = {
     'Fixtures/(.*)$': '<rootDir>/../../fixtures/$1',
     '@bundle-stats/(.*)/lib-esm/(.*)': '@bundle-stats/$1/lib/$2',
   },
+  testEnvironment: 'jsdom',
 };

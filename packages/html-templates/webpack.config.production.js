@@ -1,15 +1,14 @@
 const { merge } = require('webpack-merge');
 const StatsPlugin = require('stats-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 const { RelativeCiAgentWebpackPlugin } = require('@relative-ci/agent');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
-const getCommonConfig = require('../../build/webpack.config.common');
 const appCommonConfig = require('./webpack.config.common');
 const settings = require('./settings');
 
 const { rootDir } = settings;
 
-module.exports = merge(getCommonConfig(settings), appCommonConfig, {
+module.exports = merge(appCommonConfig, {
   plugins: [
     new StatsPlugin('../artifacts/webpack.stats.json', {
       context: rootDir,
@@ -29,7 +28,7 @@ module.exports = merge(getCommonConfig(settings), appCommonConfig, {
     }),
   ],
   optimization: {
-    minimizer: [new TerserPlugin({ sourceMap: true })],
+    minimizer: ['...', new CssMinimizerPlugin()],
     splitChunks: {
       cacheGroups: {
         vendors: {
