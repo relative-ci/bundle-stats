@@ -7,6 +7,10 @@
   white-space: nowrap;
 }
 
+.titleLabel {
+  flex: 0 0 auto;
+}
+
 .readMoreBtn {
   appearance: none;
   padding: 0;
@@ -24,6 +28,12 @@
 .readMoreBtn:focus {
   color: var(--color-primary-dark);
   text-decoration: none;
+}
+
+.budgetInfo {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .currentMetric {
@@ -53,6 +63,30 @@
 
 .loading.baselineMetric {
   width: 5em;
+}
+
+/* Budget over */
+.budgetOver .budgetIcon {
+  color: var(--color-danger-light);
+}
+
+.budgetOver .budgetIcon:hover,
+.budgetOver .budgetIcon:focus,
+.budgetOver .budgetIcon:active
+{
+  color: var(--color-danger);
+}
+
+/* Budget under */
+.budgetUnder .budgetIcon {
+  color: var(--color-success-light);
+}
+
+.budgetUnder .budgetIcon:hover,
+.budgetUnder .budgetIcon:focus,
+.budgetUnder .budgetIcon:active
+{
+  color: var(--color-success);
 }
 
 /* Size large */
