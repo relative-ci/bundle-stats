@@ -36,6 +36,13 @@ module.exports = {
     'prettier/prettier': 'warn',
     'no-unused-vars': ['warn', { varsIgnorePattern: '^[_]{1,}$' }],
     'implicit-arrow-linebreak': 'warn',
+    'react/function-component-definition': [
+      'warn',
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
+    ],
   },
   plugins: ['jest'],
   overrides: [

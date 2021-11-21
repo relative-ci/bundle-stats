@@ -8,7 +8,7 @@ const ACTION_RESET_ALL = 'RESET_ALL';
 const ACTION_SET = 'SET';
 
 const getSearchPattern = (search) => {
-  let searchPattern = new RegExp(/.*/);
+  let searchPattern = /.*/;
 
   if (!search || !search.trim()) {
     return searchPattern;

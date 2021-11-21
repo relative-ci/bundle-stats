@@ -1,8 +1,10 @@
 /* global module, require */
+/* eslint-disable import/no-import-module-exports */
 import { render } from 'preact';
 
 import './default.css';
 import { App } from './app';
+/* eslint-enable import/no-import-module-exports */
 
 const jobs = window.__INITIAL_DATA__; // eslint-disable-line no-underscore-dangle
 
