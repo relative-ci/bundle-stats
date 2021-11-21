@@ -15,12 +15,12 @@ Array [
     "filteredRelated": undefined,
     "info": Object {
       "development": true,
-      "size": 331477,
+      "size": 331734,
     },
     "isOverSizeLimit": false,
     "name": "bundle-stats.html",
     "related": Object {},
-    "size": 331477,
+    "size": 331734,
     "type": "asset",
   },
   Object {
@@ -88,12 +88,12 @@ Array [
     "filteredRelated": undefined,
     "info": Object {
       "development": true,
-      "size": 331477,
+      "size": 331734,
     },
     "isOverSizeLimit": false,
     "name": "bundle-stats.html",
     "related": Object {},
-    "size": 331477,
+    "size": 331734,
     "type": "asset",
   },
   Object {
