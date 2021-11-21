@@ -5,53 +5,69 @@ import { SummaryItem } from './summary-item';
 export default {
   title: 'Components/SummaryItem',
   component: SummaryItem,
+  decorators: [
+    (Story) => (
+      <div style={{ maxWidth: '320px' }}>
+        <Story />
+      </div>
+    ),
+  ],
+  args: {
+    loading: false,
+    id: 'webpack.totalSizeByTypeALL',
+    data: {
+      current: 120 * 1000,
+      baseline: 100 * 1000,
+    },
+  },
 };
 
-export const Standard = () => (
-  <SummaryItem
-    loading={false}
-    id="webpack.totalSizeByTypeALL"
-    data={{
-      current: 120 * 1000,
-      baseline: 100 * 1000,
-    }}
-  />
-);
+const Template = (args) => <SummaryItem {...args} />;
 
-export const SizeLarge = () => (
-  <SummaryItem
-    size="large"
-    loading={false}
-    id="webpack.totalSizeByTypeALL"
-    data={{
-      current: 120 * 1000,
-      baseline: 100 * 1000,
-    }}
-  />
-);
+export const Standard = Template.bind();
 
-export const ShowMetricDescription = () => (
-  <SummaryItem
-    loading={false}
-    id="webpack.totalSizeByTypeALL"
-    data={{
-      current: 120 * 1000,
-      baseline: 100 * 1000,
-    }}
-    showMetricDescription
-  />
-);
+export const SizeLarge = Template.bind();
 
-export const ShowDeltaFalse = () => (
-  <SummaryItem
-    loading={false}
-    id="webpack.totalSizeByTypeALL"
-    data={{
-      current: 120 * 1000,
-      baseline: 0,
-    }}
-    showDelta={false}
-  />
-);
+SizeLarge.args = {
+  size: 'large',
+};
 
-export const Loading = () => <SummaryItem loading id="webpack.totalSizeByTypeALL" />;
+export const ShowMetricDescription = Template.bind();
+
+ShowMetricDescription.args = {
+  showMetricDescription: true,
+};
+
+export const ShowDeltaFalse = Template.bind();
+
+ShowDeltaFalse.args = {
+  showDelta: false,
+};
+
+export const BudgetOver = Template.bind();
+
+BudgetOver.args = {
+  showMetricDescription: true,
+  budget: {
+    value: 120 * 1000,
+    budget: 100 * 1000,
+    overBudget: true,
+  },
+};
+
+export const BudgetUnder = Template.bind();
+
+BudgetUnder.args = {
+  showMetricDescription: true,
+  budget: {
+    value: 120 * 1000,
+    budget: 120 * 1024,
+    overBudget: false,
+  },
+};
+
+export const Loading = Template.bind();
+
+Loading.args = {
+  loading: true,
+};
