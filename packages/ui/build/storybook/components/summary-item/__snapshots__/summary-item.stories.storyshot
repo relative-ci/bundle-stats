@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components/Summary custom keys 1`] = `
+exports[`Storyshots Components/SummaryItem Loading 1`] = `
 <div>
   <Component />
   <IconSprite
@@ -17,7 +17,7 @@ exports[`Storyshots Components/Summary custom keys 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/Summary default 1`] = `
+exports[`Storyshots Components/SummaryItem Show Delta False 1`] = `
 <div>
   <Component />
   <IconSprite
@@ -34,7 +34,7 @@ exports[`Storyshots Components/Summary default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/Summary loading 1`] = `
+exports[`Storyshots Components/SummaryItem Show Metric Description 1`] = `
 <div>
   <Component />
   <IconSprite
@@ -51,7 +51,7 @@ exports[`Storyshots Components/Summary loading 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/Summary single run 1`] = `
+exports[`Storyshots Components/SummaryItem Size Large 1`] = `
 <div>
   <Component />
   <IconSprite
@@ -68,7 +68,7 @@ exports[`Storyshots Components/Summary single run 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/Summary with link 1`] = `
+exports[`Storyshots Components/SummaryItem Standard 1`] = `
 <div>
   <Component />
   <IconSprite
