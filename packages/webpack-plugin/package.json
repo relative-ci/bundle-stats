@@ -1,6 +1,6 @@
 {
   "name": "bundle-stats-webpack-plugin",
-  "version": "3.2.0",
+  "version": "3.2.1-beta.5",
   "description": "In-depth bundle analyzer for webpack(bundle size, assets, modules, packages)",
   "main": "lib/index.js",
   "types": "typings.d.ts",
@@ -44,8 +44,8 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/webpack-plugin#readme",
   "dependencies": {
-    "@bundle-stats/cli-utils": "^3.2.0",
-    "@bundle-stats/utils": "^3.2.0",
+    "@bundle-stats/cli-utils": "^3.2.1-beta.5",
+    "@bundle-stats/utils": "^3.2.1-beta.5",
     "core-js": "^3.16.2",
     "lodash": "^4.17.21"
   },
@@ -57,8 +57,8 @@
     "jest": "27.3.1",
     "jest-date-mock": "1.0.8",
     "memory-fs": "0.5.0",
-    "webpack4": "npm:webpack@4.46.0",
-    "webpack": "5.64.2"
+    "webpack": "5.64.2",
+    "webpack4": "npm:webpack@4.46.0"
   },
   "peerDependencies": {
     "webpack": "^4.0.0 || ^5.0.0"

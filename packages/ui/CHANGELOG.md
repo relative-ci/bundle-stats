@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.1-beta.5](https://github.com/relative-ci/bundle-stats/compare/v3.2.0...v3.2.1-beta.5) (2021-11-21)
+
+
+### Bug Fixes
+
+* **ui:** Regenerate package-lock.json ([8632b07](https://github.com/relative-ci/bundle-stats/commit/8632b072ffc240a1961056c08c165fbf1d986fc8))
+* **ui:** Remove unused icons ([8c337da](https://github.com/relative-ci/bundle-stats/commit/8c337da68a9628d9ef4c9d27f11747b0bc548f29))
+
+
+
+
+
 # [3.2.0](https://github.com/relative-ci/bundle-stats/compare/v3.1.3...v3.2.0) (2021-10-13)
 
 
