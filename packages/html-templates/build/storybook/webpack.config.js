@@ -1,7 +1,6 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
 
-const getCssConfig = require('../../../../build/configs/css');
 const getDefineConfig = require('../../../../build/configs/define');
 const getResolveConfig = require('../../../../build/configs/resolve');
 const getFilesConfig = require('../../../../build/configs/files');
@@ -13,7 +12,6 @@ module.exports = ({ config }) => {
 
   return merge(
     config,
-    getCssConfig(settings),
     getDefineConfig(settings),
     getFilesConfig(settings),
     getResolveConfig(settings),
