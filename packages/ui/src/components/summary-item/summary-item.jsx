@@ -5,6 +5,7 @@ import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { HoverCard } from '../../ui/hover-card';
 import { Icon } from '../../ui/icon';
+import { Tooltip } from '../../ui/tooltip';
 import { Skeleton } from '../../ui/skeleton';
 import { Stack } from '../../layout/stack';
 import { FlexStack } from '../../layout/flex-stack';
@@ -34,6 +35,48 @@ MetricInfo.defaultProps = {
   url: '',
 };
 
+const BudgetInfo = ({ className = '', budget, metric }) => {
+  const rootClassName = cx(
+    css.budgetIcon,
+    budget.overBudget ? css.budgetIconWarning : css.budgetIconSuccess,
+    className,
+  );
+
+  return (
+    <Tooltip
+      className={rootClassName}
+      title={
+        <>
+          {`Value is ${budget.overBudget ? 'over' : 'under'} `}
+          {metric.formatter(budget.budget)}
+          {` budget`}
+        </>
+      }
+    >
+      <Icon
+        glyph={budget.overBudget ? Icon.ICONS.WARNING : Icon.ICONS.CHECK_CIRCLE}
+        size="medium"
+      />
+    </Tooltip>
+  );
+};
+
+BudgetInfo.propTypes = {
+  budget: PropTypes.shape({
+    value: PropTypes.number,
+    budget: PropTypes.number,
+    overBudget: PropTypes.bool,
+  }).isRequired,
+  metric: PropTypes.shape({
+    formatter: PropTypes.func,
+  }).isRequired,
+  className: PropTypes.string,
+};
+
+BudgetInfo.defaultProps = {
+  className: '',
+};
+
 export const SummaryItem = ({
   className,
   as: Component,
@@ -43,6 +86,7 @@ export const SummaryItem = ({
   loading,
   showDelta,
   showMetricDescription,
+  budget,
   ...props
 }) => {
   const { baseline, current } = data || { baseline: 0, current: 0 };
@@ -51,18 +95,27 @@ export const SummaryItem = ({
   const runInfo = getMetricRunInfo(metric, current, baseline);
   const showMetricDescriptionTooltip = showMetricDescription && metric?.description;
 
-  const rootClassName = cx(css.root, className, css[size], showDelta && css.showDelta);
+  const rootClassName = cx(
+    css.root,
+    className,
+    css[size],
+    showDelta && css.showDelta,
+    budget?.overBudget && css.budgetOver,
+    budget?.overBudget === false && css.budgetUnder,
+  );
 
   return (
     <Stack space="xxxsmall" as={Component} className={rootClassName} {...props}>
       <FlexStack as="h3" space="xxxsmall" className={css.title}>
-        <span>{metric.label}</span>
+        <span className={css.titleLabel}>{metric.label}</span>
 
         {showMetricDescriptionTooltip && (
           <HoverCard className={css.icon} label={<Icon glyph="help" />}>
             <MetricInfo {...metric} />
           </HoverCard>
         )}
+
+        {budget && <BudgetInfo className={css.budgetInfo} metric={metric} budget={budget} />}
       </FlexStack>
 
       {!loading ? (
@@ -102,6 +155,7 @@ SummaryItem.defaultProps = {
   loading: false,
   showMetricDescription: false,
   showDelta: true,
+  budget: undefined,
 };
 
 SummaryItem.propTypes = {
@@ -128,4 +182,11 @@ SummaryItem.propTypes = {
 
   /** Show delta */
   showDelta: PropTypes.bool,
+
+  /** Budget data */
+  budget: PropTypes.shape({
+    value: PropTypes.number,
+    budget: PropTypes.number,
+    overBudget: PropTypes.bool,
+  }),
 };
