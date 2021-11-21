@@ -19,9 +19,7 @@ export const JobMeta = (props) => {
         return (
           <div className={css.item} key={key}>
             {title && (<h2 className={css.itemTitle}>{title}</h2>)}
-            {content.map((item) => (
-              <>{item}</>
-            ))}
+            {content.map((item) => item)}
           </div>
         );
       })}
