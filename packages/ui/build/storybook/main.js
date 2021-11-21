@@ -1,6 +1,18 @@
+const postcss = require('postcss');
+
 module.exports = {
   stories: ['../../src/**/*.stories.@(jsx|mdx)'],
-  addons: ['@storybook/addon-knobs'],
+  addons: [
+    '@storybook/addon-knobs',
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+        postcssLoaderOptions: {
+          implementation: postcss,
+        },
+      },
+    },
+],
   webpackFinal: (config) => {
     // CSS module support - rely on css-loader auto option
     // eslint-disable-next-line no-param-reassign
