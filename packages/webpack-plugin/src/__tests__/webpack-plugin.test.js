@@ -29,7 +29,9 @@ describe('webpack plugin', () => {
     compiler.run((error, stats) => {
       expect(error).toEqual(null);
       expect(stats.hasErrors()).toBe(false);
-      expect(stats.toJson({ source: false, assets: true }).assets).toMatchSnapshot();
+      const { assets } = stats.toJson({ source: false, assets: true });
+      const bundleStatsAsset = assets.find((asset) => asset.name.match(/bundle-stats\.html$/));
+      expect(bundleStatsAsset).toBeTruthy();
       done();
     });
   });
@@ -47,7 +49,9 @@ describe('webpack plugin', () => {
     compiler.run((error, stats) => {
       expect(error).toEqual(null);
       expect(stats.hasErrors()).toBe(false);
-      expect(stats.toJson({ source: false, assets: true }).assets).toMatchSnapshot();
+      const { assets } = stats.toJson({ source: false, assets: true });
+      const bundleStatsAsset = assets.find((asset) => asset.name.match(/bundle-stats\.html$/));
+      expect(bundleStatsAsset).toBeTruthy();
       done();
     });
   });
