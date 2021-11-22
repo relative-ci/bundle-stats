@@ -13,7 +13,7 @@ if (__DEVELOPMENT__) {
 let appElm = document.body.firstElementChild;
 
 const renderStandaloneApp = () => {
-  appElm = render(<App jobs={jobs} />, document.body, appElm);
+  appElm = render(<App jobs={jobs} />, document.getElementById('root'), appElm);
 };
 
 if (module.hot) {

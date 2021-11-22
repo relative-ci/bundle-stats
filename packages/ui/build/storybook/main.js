@@ -12,7 +12,7 @@ module.exports = {
         },
       },
     },
-],
+  ],
   webpackFinal: (config) => {
     // CSS module support - rely on css-loader auto option
     // eslint-disable-next-line no-param-reassign
@@ -30,5 +30,8 @@ module.exports = {
     };
 
     return config;
+  },
+  core: {
+    builder: 'webpack5',
   },
 };
