@@ -27,6 +27,7 @@ module.exports = merge(appCommonConfig, {
       },
     }),
   ],
+  devtool: 'hidden-source-map',
   optimization: {
     minimizer: ['...', new CssMinimizerPlugin()],
     splitChunks: {
