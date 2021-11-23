@@ -31,7 +31,7 @@ export const Box = (props) => {
     outline && css.outline,
   );
 
-  return <Component className={rootClassName} {...restProps} />;
+  return <Component {...restProps} className={rootClassName} />;
 };
 
 Box.defaultProps = {
