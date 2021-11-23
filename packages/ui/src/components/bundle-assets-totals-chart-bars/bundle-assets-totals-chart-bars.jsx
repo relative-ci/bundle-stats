@@ -13,6 +13,20 @@ import { Stack } from '../../layout/stack';
 import { SummaryItem } from '../summary-item';
 import css from './bundle-assets-totals-chart-bars.module.css';
 
+const getTooltip = (items, jobs, itemIndex, runIndex) => () => (
+  <SummaryItem
+    className={css.itemTooltip}
+    id={get(items, [itemIndex, 'key'])}
+    data={{
+      current: get(items, [itemIndex, 'runs', runIndex, 'value'], 0),
+      baseline: get(items, [itemIndex, 'runs', runIndex + 1, 'value'], 0),
+    }}
+    showDelta={runIndex < jobs.length - 1}
+    showBaselineValue={runIndex < jobs.length - 1}
+    size="large"
+  />
+);
+
 export const BundleAssetsTotalsChartBars = ({
   className,
   jobs,
@@ -43,20 +57,6 @@ export const BundleAssetsTotalsChartBars = ({
   });
   const colors = getColors(max(map(dataGraphs, (values) => values.length)));
 
-  const getTooltip = (itemIndex, runIndex) => () => (
-    <SummaryItem
-      className={css.itemTooltip}
-      id={get(items, [itemIndex, 'key'])}
-      data={{
-        current: get(items, [itemIndex, 'runs', runIndex, 'value'], 0),
-        baseline: get(items, [itemIndex, 'runs', runIndex + 1, 'value'], 0),
-      }}
-      showDelta={runIndex < jobs.length - 1}
-      showBaselineValue={runIndex < jobs.length - 1}
-      size="large"
-    />
-  );
-
   return (
     <Stack className={rootClassName} space="medium">
       {dataGraphs.map((data, runIndex) => {
@@ -66,7 +66,7 @@ export const BundleAssetsTotalsChartBars = ({
           value,
           color: colors[valueIndex],
           label: labels[valueIndex],
-          getItemTooltip: getTooltip(valueIndex, runIndex),
+          getItemTooltip: getTooltip(items, jobs, valueIndex, runIndex),
         }));
 
         return (

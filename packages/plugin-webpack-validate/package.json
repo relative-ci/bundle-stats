@@ -40,7 +40,8 @@
     "jest-cli": "27.3.1",
     "jest-date-mock": "1.0.8",
     "regenerator-runtime": "0.13.9",
-    "ts-jest": "27.0.7"
+    "ts-jest": "27.0.7",
+    "typescript": "4.5.2"
   },
   "dependencies": {
     "superstruct": "^0.8.3"

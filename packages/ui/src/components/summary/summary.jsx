@@ -11,6 +11,28 @@ import { ComponentLink } from '../component-link';
 import { SummaryItem } from '../summary-item';
 import css from './summary.module.css';
 
+const CustomSummaryItem = ({ className, metricOptions, SummaryItemCustomLink, ...props }) => (
+  <Box
+    padding={['xsmall', 'small']}
+    className={cx(className, css.summaryItemLink)}
+    {...props}
+    as={SummaryItemCustomLink}
+    {...metricOptions.link}
+  />
+);
+
+CustomSummaryItem.propTypes = {
+  className: PropTypes.string,
+  metricOptions: PropTypes.shape({
+    link: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+  }).isRequired,
+  SummaryItemCustomLink: PropTypes.elementType.isRequired,
+};
+
+CustomSummaryItem.defaultProps = {
+  className: '',
+};
+
 export const Summary = ({
   className,
   size,
@@ -25,15 +47,10 @@ export const Summary = ({
       {Array.from(METRIC_COMPONENT_LINKS).filter(([metricId]) => keys.includes(metricId)).map(
         ([metricId, metricOptions]) => (
           <SummaryItem
-            as={({ className: itemClassName, ...itemProps }) => (
-              <Box
-                padding={['xsmall', 'small']}
-                className={cx(itemClassName, css.summaryItemLink)}
-                {...itemProps}
-                as={SummaryItemCustomLink}
-                {...metricOptions.link}
-              />
-            )}
+            as={CustomSummaryItem}
+            className={css.item}
+            metricOptions={metricOptions}
+            SummaryItemCustomLink={SummaryItemCustomLink}
             size={size}
             key={metricId}
             id={metricId}
@@ -41,7 +58,6 @@ export const Summary = ({
             loading={loading}
             showMetricDescription
             showDelta={showSummaryItemDelta && metricOptions.showDelta !== false}
-            className={css.item}
           />
         )
       )}
