@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.1-beta.10](https://github.com/relative-ci/bundle-stats/compare/v3.2.0...v3.2.1-beta.10) (2021-11-23)
+
+
+### Bug Fixes
+
+* **html-templates:** Update app initilization ([8c5faa0](https://github.com/relative-ci/bundle-stats/commit/8c5faa07bc5b247131cb17d36f145155855efd53))
+
+
+
+
+
 # [3.2.0](https://github.com/relative-ci/bundle-stats/compare/v3.1.3...v3.2.0) (2021-10-13)
 
 
