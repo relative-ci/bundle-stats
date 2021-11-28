@@ -1,3 +1,8 @@
+.root {
+  position: relative;
+  padding-right: var(--space-xlarge);
+}
+
 .title {
   color: var(--color-text-ultra-light);
   font-weight: bold;

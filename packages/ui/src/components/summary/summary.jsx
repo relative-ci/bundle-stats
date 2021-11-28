@@ -16,6 +16,7 @@ export const Summary = ({
   size,
   keys,
   data,
+  budgets,
   loading,
   showSummaryItemDelta,
   summaryItemLink: SummaryItemCustomLink,
@@ -33,6 +34,7 @@ export const Summary = ({
             size={size}
             id={metricId}
             data={get(data, metricId)}
+            budget={get(budgets, metricId)}
             loading={loading}
             showMetricDescription
             showDelta={showSummaryItemDelta && metricOptions.showDelta !== false}
@@ -45,6 +47,7 @@ export const Summary = ({
 Summary.defaultProps = {
   className: '',
   data: null,
+  budgets: null,
   loading: false,
   size: '',
   keys: METRICS_WEBPACK_GENERAL,
@@ -56,12 +59,8 @@ Summary.propTypes = {
   className: PropTypes.string,
   size: PropTypes.string,
   keys: PropTypes.arrayOf(PropTypes.string),
-  data: PropTypes.shape({
-    [PropTypes.string]: PropTypes.shape({
-      baseline: PropTypes.number,
-      current: PropTypes.number,
-    }),
-  }),
+  data: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  budgets: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   loading: PropTypes.bool,
   showSummaryItemDelta: PropTypes.bool,
   summaryItemLink: PropTypes.elementType,
