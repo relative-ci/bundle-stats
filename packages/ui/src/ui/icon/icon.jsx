@@ -6,6 +6,7 @@ import css from './icon.module.css';
 
 const ICONS = {
   ARROW: 'arrow',
+  ARROW_RIGHT_CIRLCE: 'arrow-right-circle',
   CANCEL: 'cancel',
   CLOSE: 'close',
   CLOCK: 'clock',
