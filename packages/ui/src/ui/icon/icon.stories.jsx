@@ -1,22 +1,40 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
-import { getWrapperDecorator } from '../../stories';
 import { Icon } from '.';
 
-const stories = storiesOf('UI/Icon', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'UI/Icon',
+  component: Icon,
+};
 
-stories.add('default', () => <Icon glyph={Icon.ICONS.ARROW} />);
+const Template = (args) => <Icon {...args} />;
 
-stories.add('with size', () => <Icon glyph={Icon.ICONS.ARROW} size={Icon.SIZE_LARGE} />);
+export const Standard = Template.bind();
 
-stories.add('all', () => (
+Standard.args = {
+  glyph: Icon.ICONS.ARROW,
+};
+
+export const CustomSize = Template.bind();
+
+CustomSize.args = {
+  glyph: Icon.ICONS.ARROW,
+  size: Icon.SIZE_LARGE,
+};
+
+export const All = () => (
   <>
     {Object.values(Icon.ICONS).map((glyph) => (
-      <span style={{ margin: '0.3rem' }}>
+      <div
+        style={{
+          display: 'inline-block',
+          padding: '1rem',
+          textAlign: 'center',
+        }}
+      >
         <Icon glyph={glyph} key={glyph} />
-      </span>
+        <code style={{ display: 'block' }}>{glyph}</code>
+      </div>
     ))}
   </>
-));
+);
