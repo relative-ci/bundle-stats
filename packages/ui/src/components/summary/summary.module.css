@@ -4,7 +4,7 @@
 }
 
 .item {
-  padding: var(--space-small) var(--space-xxlarge) var(--space-small) var(--space-small);
+  padding: var(--space-small);
   flex: 1 0 25%; /* force equal sizes */
   position: relative;
   z-index: 1;

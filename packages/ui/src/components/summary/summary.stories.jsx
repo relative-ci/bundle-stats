@@ -16,8 +16,34 @@ const stories = storiesOf('Components/Summary', module);
 stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => <Summary data={MULTIPLE_JOBS[0].summary} />);
+stories.add('budgets', () => (
+  <Summary
+    data={MULTIPLE_JOBS[0].summary}
+    budgets={{
+      webpack: {
+        totalSizeByTypeALL: {
+          value: MULTIPLE_JOBS[0].summary.webpack.totalSizeByTypeALL,
+          budget: 1024 * 1024,
+          overBudget: false,
+        },
+        totalInitialSizeJS: {
+          value: MULTIPLE_JOBS[0].summary.webpack.totalInitialSizeJS,
+          budget: 512 * 1024,
+          overBudget: true,
+        },
+        totalInitialSizeCSS: {
+          value: MULTIPLE_JOBS[0].summary.webpack.totalInitialSizeCSS,
+          budget: 50 * 1024,
+          overBudget: false,
+        },
+      },
+    }}
+  />
+));
 
-stories.add('custom keys', () => <Summary keys={METRICS_WEBPACK_ASSETS} data={MULTIPLE_JOBS[0].summary} />);
+stories.add('custom keys', () => (
+  <Summary keys={METRICS_WEBPACK_ASSETS} data={MULTIPLE_JOBS[0].summary} />
+));
 
 stories.add('loading', () => <Summary loading />);
 

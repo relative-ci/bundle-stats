@@ -1,3 +1,8 @@
+.root {
+  position: relative;
+  padding-right: var(--space-xlarge);
+}
+
 .title {
   align-items: center;
   color: var(--color-text-ultra-light);
