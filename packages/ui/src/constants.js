@@ -47,11 +47,11 @@ export const ASSETS_SIZES_FILE_TYPE_MAP = FILE_TYPES.reduce(
 );
 
 export const METRICS_WEBPACK_GENERAL = [
-  'webpack.totalSizeByTypeALL',
-  'webpack.totalInitialSizeJS',
-  'webpack.totalInitialSizeCSS',
-  'webpack.cacheInvalidation',
+  'totalSizeByTypeALL',
+  'totalInitialSizeJS',
+  'totalInitialSizeCSS',
+  'cacheInvalidation',
 ];
-export const METRICS_WEBPACK_ASSETS = ['webpack.assetCount', 'webpack.chunkCount'];
-export const METRICS_WEBPACK_MODULES = ['webpack.moduleCount'];
-export const METRICS_WEBPACK_PACKAGES = ['webpack.packageCount', 'webpack.duplicatePackagesCount'];
+export const METRICS_WEBPACK_ASSETS = ['assetCount', 'chunkCount'];
+export const METRICS_WEBPACK_MODULES = ['moduleCount'];
+export const METRICS_WEBPACK_PACKAGES = ['packageCount', 'duplicatePackagesCount'];
