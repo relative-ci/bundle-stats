@@ -256,6 +256,24 @@ exports[`Storyshots UI/Table compact 1`] = `
         />
       </symbol>
       <symbol
+        className="feather feather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
+        />
+      </symbol>
+      <symbol
         className="feather feather-clock"
         fill="none"
         id="clock"
@@ -655,6 +673,24 @@ exports[`Storyshots UI/Table default 1`] = `
         />
       </symbol>
       <symbol
+        className="feather feather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
+        />
+      </symbol>
+      <symbol
         className="feather feather-clock"
         fill="none"
         id="clock"
@@ -943,6 +979,24 @@ exports[`Storyshots UI/Table empty 1`] = `
         />
         <path
           d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="feather feather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
         />
       </symbol>
       <symbol
@@ -1252,6 +1306,24 @@ exports[`Storyshots UI/Table empty with custom element 1`] = `
         />
         <path
           d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="feather feather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
         />
       </symbol>
       <symbol
@@ -1651,6 +1723,24 @@ exports[`Storyshots UI/Table outline 1`] = `
         />
         <path
           d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="feather feather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
         />
       </symbol>
       <symbol
@@ -2268,6 +2358,24 @@ exports[`Storyshots UI/Table with custom content and attributes 1`] = `
         />
       </symbol>
       <symbol
+        className="feather feather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
+        />
+      </symbol>
+      <symbol
         className="feather feather-clock"
         fill="none"
         id="clock"
@@ -2706,6 +2814,24 @@ exports[`Storyshots UI/Table with headers 1`] = `
         />
       </symbol>
       <symbol
+        className="feather feather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
+        />
+      </symbol>
+      <symbol
         className="feather feather-clock"
         fill="none"
         id="clock"
@@ -3141,6 +3267,24 @@ exports[`Storyshots UI/Table with headers and outline 1`] = `
         />
         <path
           d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="feather feather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
         />
       </symbol>
       <symbol
@@ -3610,6 +3754,24 @@ exports[`Storyshots UI/Table with multiple rows header 1`] = `
         />
       </symbol>
       <symbol
+        className="feather feather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
+        />
+      </symbol>
+      <symbol
         className="feather feather-clock"
         fill="none"
         id="clock"
@@ -4033,6 +4195,24 @@ exports[`Storyshots UI/Table with row headers 1`] = `
         />
         <path
           d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="feather feather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
         />
       </symbol>
       <symbol
