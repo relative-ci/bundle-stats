@@ -12,6 +12,8 @@ import { ComponentLink } from '../component-link';
 import { SummaryItem } from '../summary-item';
 import css from './summary.module.css';
 
+const getSourceMetricId = (fullMetricId) => fullMetricId.split('.').slice(1).join('.');
+
 export const Summary = ({
   className,
   size,
@@ -25,14 +27,14 @@ export const Summary = ({
   <Box outline className={cx(css.root, className)}>
     <FlexStack className={css.items}>
       {Array.from(METRIC_COMPONENT_LINKS)
-        .filter(([metricId]) => keys.includes(metricId))
+        .filter(([metricId]) => keys.includes(getSourceMetricId(metricId)))
         .map(([metricId, metricOptions]) => (
           <div key={metricId} className={css.item}>
             <SummaryItem
               size={size}
               id={metricId}
               data={get(data, metricId)}
-              budget={get(budgets, metricId)}
+              budget={get(budgets, getSourceMetricId(metricId))}
               loading={loading}
               showMetricDescription
               showDelta={showSummaryItemDelta && metricOptions.showDelta !== false}
