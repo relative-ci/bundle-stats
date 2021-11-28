@@ -87,6 +87,7 @@ const AppComponent = ({ version, jobs }) => {
           size="large"
           keys={METRICS_WEBPACK_GENERAL}
           data={jobs[0].summary}
+          budgets={jobs[0].insights?.webpack?.budgets}
           showSummaryItemDelta={jobs.length !== 1}
         />
       </Container>
@@ -119,6 +120,7 @@ const AppComponent = ({ version, jobs }) => {
                   <Summary
                     keys={METRICS_WEBPACK_ASSETS}
                     data={jobs[0].summary}
+                    budgets={jobs[0].insights?.webpack?.budgets}
                     showSummaryItemDelta={jobs.length !== 1}
                   />
                   <Box outline>
@@ -142,6 +144,7 @@ const AppComponent = ({ version, jobs }) => {
                   <Summary
                     keys={METRICS_WEBPACK_MODULES}
                     data={jobs[0].summary}
+                    budgets={jobs[0].insights?.webpack?.budgets}
                     showSummaryItemDelta={jobs.length !== 1}
                   />
                   <Box outline>
@@ -164,6 +167,7 @@ const AppComponent = ({ version, jobs }) => {
                   <Summary
                     keys={METRICS_WEBPACK_PACKAGES}
                     data={jobs[0].summary}
+                    budgets={jobs[0].insights?.webpack?.budgets}
                     showSummaryItemDelta={jobs.length !== 1}
                   />
                   <Box outline>
