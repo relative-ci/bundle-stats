@@ -172,6 +172,7 @@ const AppComponent = ({ version, jobs }) => {
     );
   }
 
+<<<<<<< HEAD
   return (
     <JobsProvider jobs={jobs}>
       <Layout jobs={jobs} version={version}>
@@ -182,6 +183,141 @@ const AppComponent = ({ version, jobs }) => {
             data={jobs[0].summary}
             budgets={jobs[0].insights?.webpack?.budgets}
             showSummaryItemDelta={jobs.length !== 1}
+=======
+  const { summary, insights } = useMemo(() => jobs[0], jobs);
+
+  const { duplicatePackagesCount } = summary.webpack;
+  const duplicatePackagesInsights = Boolean(
+    duplicatePackagesCount.current || duplicatePackagesCount.baseline,
+  );
+
+  return (
+    <Layout jobs={jobs} version={version}>
+      <Container className={css.summaryContainer}>
+        <Summary
+          size="large"
+          keys={METRICS_WEBPACK_GENERAL}
+          data={summary}
+          budgets={insights?.webpack?.budgets}
+          showSummaryItemDelta={jobs.length !== 1}
+        />
+      </Container>
+
+      <Container className={css.tabsContainer}>
+        <Tabs className={css.tabs}>
+          <NavLink exact to={URLS.OVERVIEW} activeClassName={css.tabActive}>
+            {I18N.OVERVIEW}
+          </NavLink>
+          <NavLink exact to={URLS.ASSETS} activeClassName={css.tabActive}>
+            {I18N.ASSETS}
+          </NavLink>
+          <NavLink exact to={URLS.MODULES} activeClassName={css.tabActive}>
+            {I18N.MODULES}
+          </NavLink>
+          <NavLink exact to={URLS.PACKAGES} activeClassName={css.tabActive}>
+            {I18N.PACKAGES}
+          </NavLink>
+        </Tabs>
+      </Container>
+
+      <div className={css.tabsContent}>
+        <Switch>
+          <Route
+            exact
+            path={URLS.ASSETS}
+            render={({ location }) => (
+              <Container>
+                <Stack space="medium">
+                  <Summary
+                    keys={METRICS_WEBPACK_ASSETS}
+                    data={summary}
+                    budgets={insights?.webpack?.budgets}
+                    showSummaryItemDelta={jobs.length !== 1}
+                  />
+                  <Box outline>
+                    <BundleAssets
+                      jobs={jobs}
+                      setState={bundleStatsSetState}
+                      {...bundleStatsState}
+                      key={`${location.pathname}_${location.search}`}
+                    />
+                  </Box>
+                </Stack>
+              </Container>
+            )}
+          />
+          <Route
+            exact
+            path={URLS.MODULES}
+            render={() => (
+              <Container>
+                <Stack space="medium">
+                  <Summary
+                    keys={METRICS_WEBPACK_MODULES}
+                    data={summary}
+                    budgets={insights?.webpack?.budgets}
+                    showSummaryItemDelta={jobs.length !== 1}
+                  />
+                  <Box outline>
+                    <BundleModules
+                      jobs={jobs}
+                      setState={bundleModulesSetState}
+                      {...bundleModulesState}
+                    />
+                  </Box>
+                </Stack>
+              </Container>
+            )}
+          />
+          <Route
+            exact
+            path={URLS.PACKAGES}
+            render={({ location }) => (
+              <Container>
+                <Stack space="medium">
+                  <Summary
+                    keys={METRICS_WEBPACK_PACKAGES}
+                    data={summary}
+                    budgets={insights?.webpack?.budgets}
+                    showSummaryItemDelta={jobs.length !== 1}
+                  />
+                  <Box outline>
+                    <BundlePackages
+                      jobs={jobs}
+                      {...bundlePackagesState}
+                      setState={bundlePackagesSetState}
+                      key={`${location.pathname}_${location.search}`}
+                    />
+                  </Box>
+                </Stack>
+              </Container>
+            )}
+          />
+          <Route
+            exact
+            path={URLS.OVERVIEW}
+            render={() => (
+              <Stack space="medium">
+                {duplicatePackagesInsights && (
+                  <Container>
+                    <DuplicatePackagesWarning
+                      duplicatePackagesCount={duplicatePackagesCount}
+                      showDelta={jobs.length > 1}
+                    />
+                  </Container>
+                )}
+                <Container>
+                  <Stack space="small">
+                    <TotalSizeTypeTitle />
+                    <BundleAssetsTotalsChartBars jobs={jobs} />
+                    <Box outline>
+                      <BundleAssetsTotalsTable jobs={jobs} />
+                    </Box>
+                  </Stack>
+                </Container>
+              </Stack>
+            )}
+>>>>>>> 7812671e (refactor(ui): App - memo summary, insights)
           />
         </Container>
         <Container className={css.tabsContainer}>
