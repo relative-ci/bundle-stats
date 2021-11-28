@@ -10,6 +10,10 @@
 <circle cx="12" cy="12" r="10"/>
 <path d="M15 9l-6 6M9 9l6 6"/>
 </symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle" viewBox="0 0 24 24" id="check-circle" xmlns="http://www.w3.org/2000/svg">
+<path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+<path d="M22 4L12 14.01l-3-3"/>
+</symbol>
 <symbol viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock" id="clock" xmlns="http://www.w3.org/2000/svg">
 <circle cx="12" cy="12" r="10"/>
 <path d="M12 6v6l4 2"/>
