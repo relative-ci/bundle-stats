@@ -36,6 +36,11 @@ stories.add('budgets', () => (
           budget: 50 * 1024,
           overBudget: false,
         },
+        chunkCount: {
+          value: MULTIPLE_JOBS[0].summary.webpack.chunkCount,
+          budget: 50,
+          overBudget: false,
+        },
       },
     }}
   />

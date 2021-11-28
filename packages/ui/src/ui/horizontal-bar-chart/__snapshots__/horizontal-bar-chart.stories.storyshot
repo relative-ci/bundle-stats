@@ -699,6 +699,24 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
         />
       </symbol>
       <symbol
+        className="feather feather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
+        />
+      </symbol>
+      <symbol
         className="feather feather-clock"
         fill="none"
         id="clock"
@@ -1538,6 +1556,24 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
         />
         <path
           d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="feather feather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
         />
       </symbol>
       <symbol
@@ -2395,6 +2431,24 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
         />
         <path
           d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="feather feather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
         />
       </symbol>
       <symbol
@@ -3310,6 +3364,24 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
         />
       </symbol>
       <symbol
+        className="feather feather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
+        />
+      </symbol>
+      <symbol
         className="feather feather-clock"
         fill="none"
         id="clock"
@@ -4149,6 +4221,24 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
         />
         <path
           d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="feather feather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
         />
       </symbol>
       <symbol
