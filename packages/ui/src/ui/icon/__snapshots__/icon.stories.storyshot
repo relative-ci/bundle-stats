@@ -1,0 +1,1096 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI/Icon all 1`] = `
+<div>
+  <Component>
+    <MemoryRouter
+      initialEntries={
+        Array [
+          Object {
+            "key": "home",
+            "pathname": "/",
+          },
+        ]
+      }
+    >
+      <Router
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "canGo": [Function],
+            "createHref": [Function],
+            "entries": Array [
+              Object {
+                "hash": "",
+                "key": "home",
+                "pathname": "/",
+                "search": "",
+              },
+            ],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "index": 0,
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "key": "home",
+              "pathname": "/",
+              "search": "",
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "padding": "24px",
+              "width": "100%",
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "margin": "0.3rem",
+              }
+            }
+          >
+            <Icon
+              as="span"
+              className=""
+              glyph="arrow"
+              key="arrow"
+              size="medium"
+            >
+              <span
+                className="root medium"
+              >
+                <svg
+                  className="icon"
+                >
+                  <use
+                    xlinkHref="#arrow"
+                  />
+                </svg>
+              </span>
+            </Icon>
+          </span>
+          <span
+            style={
+              Object {
+                "margin": "0.3rem",
+              }
+            }
+          >
+            <Icon
+              as="span"
+              className=""
+              glyph="cancel"
+              key="cancel"
+              size="medium"
+            >
+              <span
+                className="root medium"
+              >
+                <svg
+                  className="icon"
+                >
+                  <use
+                    xlinkHref="#cancel"
+                  />
+                </svg>
+              </span>
+            </Icon>
+          </span>
+          <span
+            style={
+              Object {
+                "margin": "0.3rem",
+              }
+            }
+          >
+            <Icon
+              as="span"
+              className=""
+              glyph="close"
+              key="close"
+              size="medium"
+            >
+              <span
+                className="root medium"
+              >
+                <svg
+                  className="icon"
+                >
+                  <use
+                    xlinkHref="#close"
+                  />
+                </svg>
+              </span>
+            </Icon>
+          </span>
+          <span
+            style={
+              Object {
+                "margin": "0.3rem",
+              }
+            }
+          >
+            <Icon
+              as="span"
+              className=""
+              glyph="clock"
+              key="clock"
+              size="medium"
+            >
+              <span
+                className="root medium"
+              >
+                <svg
+                  className="icon"
+                >
+                  <use
+                    xlinkHref="#clock"
+                  />
+                </svg>
+              </span>
+            </Icon>
+          </span>
+          <span
+            style={
+              Object {
+                "margin": "0.3rem",
+              }
+            }
+          >
+            <Icon
+              as="span"
+              className=""
+              glyph="check-circle"
+              key="check-circle"
+              size="medium"
+            >
+              <span
+                className="root medium"
+              >
+                <svg
+                  className="icon"
+                >
+                  <use
+                    xlinkHref="#check-circle"
+                  />
+                </svg>
+              </span>
+            </Icon>
+          </span>
+          <span
+            style={
+              Object {
+                "margin": "0.3rem",
+              }
+            }
+          >
+            <Icon
+              as="span"
+              className=""
+              glyph="commit"
+              key="commit"
+              size="medium"
+            >
+              <span
+                className="root medium"
+              >
+                <svg
+                  className="icon"
+                >
+                  <use
+                    xlinkHref="#commit"
+                  />
+                </svg>
+              </span>
+            </Icon>
+          </span>
+          <span
+            style={
+              Object {
+                "margin": "0.3rem",
+              }
+            }
+          >
+            <Icon
+              as="span"
+              className=""
+              glyph="filter"
+              key="filter"
+              size="medium"
+            >
+              <span
+                className="root medium"
+              >
+                <svg
+                  className="icon"
+                >
+                  <use
+                    xlinkHref="#filter"
+                  />
+                </svg>
+              </span>
+            </Icon>
+          </span>
+          <span
+            style={
+              Object {
+                "margin": "0.3rem",
+              }
+            }
+          >
+            <Icon
+              as="span"
+              className=""
+              glyph="help"
+              key="help"
+              size="medium"
+            >
+              <span
+                className="root medium"
+              >
+                <svg
+                  className="icon"
+                >
+                  <use
+                    xlinkHref="#help"
+                  />
+                </svg>
+              </span>
+            </Icon>
+          </span>
+          <span
+            style={
+              Object {
+                "margin": "0.3rem",
+              }
+            }
+          >
+            <Icon
+              as="span"
+              className=""
+              glyph="menu"
+              key="menu"
+              size="medium"
+            >
+              <span
+                className="root medium"
+              >
+                <svg
+                  className="icon"
+                >
+                  <use
+                    xlinkHref="#menu"
+                  />
+                </svg>
+              </span>
+            </Icon>
+          </span>
+          <span
+            style={
+              Object {
+                "margin": "0.3rem",
+              }
+            }
+          >
+            <Icon
+              as="span"
+              className=""
+              glyph="sort"
+              key="sort"
+              size="medium"
+            >
+              <span
+                className="root medium"
+              >
+                <svg
+                  className="icon"
+                >
+                  <use
+                    xlinkHref="#sort"
+                  />
+                </svg>
+              </span>
+            </Icon>
+          </span>
+          <span
+            style={
+              Object {
+                "margin": "0.3rem",
+              }
+            }
+          >
+            <Icon
+              as="span"
+              className=""
+              glyph="warning"
+              key="warning"
+              size="medium"
+            >
+              <span
+                className="root medium"
+              >
+                <svg
+                  className="icon"
+                >
+                  <use
+                    xlinkHref="#warning"
+                  />
+                </svg>
+              </span>
+            </Icon>
+          </span>
+        </div>
+      </Router>
+    </MemoryRouter>
+  </Component>
+  <IconSprite
+    height="16"
+    style={
+      Object {
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
+      }
+    }
+    width="16"
+  >
+    <svg
+      height="16"
+      style={
+        Object {
+          "height": 0,
+          "position": "absolute",
+          "width": 0,
+        }
+      }
+      width="16"
+    >
+      <symbol
+        className="afeather afeather-arrow-down"
+        fill="none"
+        id="arrow"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 5v14M19 12l-7 7-7-7"
+        />
+      </symbol>
+      <symbol
+        className="bfeather bfeather-x-circle"
+        fill="none"
+        id="cancel"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="cfeather cfeather-clock"
+        fill="none"
+        id="clock"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 6v6l4 2"
+        />
+      </symbol>
+      <symbol
+        className="dfeather dfeather-x"
+        fill="none"
+        id="close"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 6L6 18M6 6l12 12"
+        />
+      </symbol>
+      <symbol
+        className="efeather efeather-git-commit"
+        fill="none"
+        id="commit"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+        />
+        <path
+          d="M1.05 12H7M17.01 12h5.95"
+        />
+      </symbol>
+      <symbol
+        className="ffeather ffeather-bar-chart"
+        fill="none"
+        id="filter"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 20V10M18 20V4M6 20v-4"
+        />
+      </symbol>
+      <symbol
+        className="gfeather gfeather-help-circle"
+        fill="none"
+        id="help"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"
+        />
+      </symbol>
+      <symbol
+        className="hfeather hfeather-menu"
+        fill="none"
+        id="menu"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 12h18M3 6h18M3 18h18"
+        />
+      </symbol>
+      <symbol
+        fill="currentColor"
+        id="sort"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </symbol>
+      <symbol
+        className="jfeather jfeather-alert-triangle"
+        fill="none"
+        id="warning"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"
+        />
+      </symbol>
+    </svg>
+  </IconSprite>
+</div>
+`;
+
+exports[`Storyshots UI/Icon default 1`] = `
+<div>
+  <Component>
+    <MemoryRouter
+      initialEntries={
+        Array [
+          Object {
+            "key": "home",
+            "pathname": "/",
+          },
+        ]
+      }
+    >
+      <Router
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "canGo": [Function],
+            "createHref": [Function],
+            "entries": Array [
+              Object {
+                "hash": "",
+                "key": "home",
+                "pathname": "/",
+                "search": "",
+              },
+            ],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "index": 0,
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "key": "home",
+              "pathname": "/",
+              "search": "",
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "padding": "24px",
+              "width": "100%",
+            }
+          }
+        >
+          <Icon
+            as="span"
+            className=""
+            glyph="arrow"
+            size="medium"
+          >
+            <span
+              className="root medium"
+            >
+              <svg
+                className="icon"
+              >
+                <use
+                  xlinkHref="#arrow"
+                />
+              </svg>
+            </span>
+          </Icon>
+        </div>
+      </Router>
+    </MemoryRouter>
+  </Component>
+  <IconSprite
+    height="16"
+    style={
+      Object {
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
+      }
+    }
+    width="16"
+  >
+    <svg
+      height="16"
+      style={
+        Object {
+          "height": 0,
+          "position": "absolute",
+          "width": 0,
+        }
+      }
+      width="16"
+    >
+      <symbol
+        className="afeather afeather-arrow-down"
+        fill="none"
+        id="arrow"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 5v14M19 12l-7 7-7-7"
+        />
+      </symbol>
+      <symbol
+        className="bfeather bfeather-x-circle"
+        fill="none"
+        id="cancel"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="cfeather cfeather-clock"
+        fill="none"
+        id="clock"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 6v6l4 2"
+        />
+      </symbol>
+      <symbol
+        className="dfeather dfeather-x"
+        fill="none"
+        id="close"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 6L6 18M6 6l12 12"
+        />
+      </symbol>
+      <symbol
+        className="efeather efeather-git-commit"
+        fill="none"
+        id="commit"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+        />
+        <path
+          d="M1.05 12H7M17.01 12h5.95"
+        />
+      </symbol>
+      <symbol
+        className="ffeather ffeather-bar-chart"
+        fill="none"
+        id="filter"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 20V10M18 20V4M6 20v-4"
+        />
+      </symbol>
+      <symbol
+        className="gfeather gfeather-help-circle"
+        fill="none"
+        id="help"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"
+        />
+      </symbol>
+      <symbol
+        className="hfeather hfeather-menu"
+        fill="none"
+        id="menu"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 12h18M3 6h18M3 18h18"
+        />
+      </symbol>
+      <symbol
+        fill="currentColor"
+        id="sort"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </symbol>
+      <symbol
+        className="jfeather jfeather-alert-triangle"
+        fill="none"
+        id="warning"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"
+        />
+      </symbol>
+    </svg>
+  </IconSprite>
+</div>
+`;
+
+exports[`Storyshots UI/Icon with size 1`] = `
+<div>
+  <Component>
+    <MemoryRouter
+      initialEntries={
+        Array [
+          Object {
+            "key": "home",
+            "pathname": "/",
+          },
+        ]
+      }
+    >
+      <Router
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "canGo": [Function],
+            "createHref": [Function],
+            "entries": Array [
+              Object {
+                "hash": "",
+                "key": "home",
+                "pathname": "/",
+                "search": "",
+              },
+            ],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "index": 0,
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "key": "home",
+              "pathname": "/",
+              "search": "",
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "100%",
+              "padding": "24px",
+              "width": "100%",
+            }
+          }
+        >
+          <Icon
+            as="span"
+            className=""
+            glyph="arrow"
+            size="large"
+          >
+            <span
+              className="root large"
+            >
+              <svg
+                className="icon"
+              >
+                <use
+                  xlinkHref="#arrow"
+                />
+              </svg>
+            </span>
+          </Icon>
+        </div>
+      </Router>
+    </MemoryRouter>
+  </Component>
+  <IconSprite
+    height="16"
+    style={
+      Object {
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
+      }
+    }
+    width="16"
+  >
+    <svg
+      height="16"
+      style={
+        Object {
+          "height": 0,
+          "position": "absolute",
+          "width": 0,
+        }
+      }
+      width="16"
+    >
+      <symbol
+        className="afeather afeather-arrow-down"
+        fill="none"
+        id="arrow"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 5v14M19 12l-7 7-7-7"
+        />
+      </symbol>
+      <symbol
+        className="bfeather bfeather-x-circle"
+        fill="none"
+        id="cancel"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="cfeather cfeather-clock"
+        fill="none"
+        id="clock"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 6v6l4 2"
+        />
+      </symbol>
+      <symbol
+        className="dfeather dfeather-x"
+        fill="none"
+        id="close"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 6L6 18M6 6l12 12"
+        />
+      </symbol>
+      <symbol
+        className="efeather efeather-git-commit"
+        fill="none"
+        id="commit"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+        />
+        <path
+          d="M1.05 12H7M17.01 12h5.95"
+        />
+      </symbol>
+      <symbol
+        className="ffeather ffeather-bar-chart"
+        fill="none"
+        id="filter"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 20V10M18 20V4M6 20v-4"
+        />
+      </symbol>
+      <symbol
+        className="gfeather gfeather-help-circle"
+        fill="none"
+        id="help"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"
+        />
+      </symbol>
+      <symbol
+        className="hfeather hfeather-menu"
+        fill="none"
+        id="menu"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 12h18M3 6h18M3 18h18"
+        />
+      </symbol>
+      <symbol
+        fill="currentColor"
+        id="sort"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </symbol>
+      <symbol
+        className="jfeather jfeather-alert-triangle"
+        fill="none"
+        id="warning"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"
+        />
+      </symbol>
+    </svg>
+  </IconSprite>
+</div>
+`;
