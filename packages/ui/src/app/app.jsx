@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { HashRouter, NavLink, Route, Switch, useLocation } from 'react-router-dom';
 import { COMPONENT } from '@bundle-stats/utils';
@@ -75,7 +75,9 @@ const AppComponent = ({ version, jobs }) => {
     );
   }
 
-  const { duplicatePackagesCount } = jobs[0].summary.webpack;
+  const { summary, insights } = useMemo(() => jobs[0], jobs);
+
+  const { duplicatePackagesCount } = summary.webpack;
   const duplicatePackagesInsights = Boolean(
     duplicatePackagesCount.current || duplicatePackagesCount.baseline,
   );
@@ -86,8 +88,8 @@ const AppComponent = ({ version, jobs }) => {
         <Summary
           size="large"
           keys={METRICS_WEBPACK_GENERAL}
-          data={jobs[0].summary}
-          budgets={jobs[0].insights?.webpack?.budgets}
+          data={summary}
+          budgets={insights?.webpack?.budgets}
           showSummaryItemDelta={jobs.length !== 1}
         />
       </Container>
@@ -119,8 +121,8 @@ const AppComponent = ({ version, jobs }) => {
                 <Stack space="medium">
                   <Summary
                     keys={METRICS_WEBPACK_ASSETS}
-                    data={jobs[0].summary}
-                    budgets={jobs[0].insights?.webpack?.budgets}
+                    data={summary}
+                    budgets={insights?.webpack?.budgets}
                     showSummaryItemDelta={jobs.length !== 1}
                   />
                   <Box outline>
@@ -143,8 +145,8 @@ const AppComponent = ({ version, jobs }) => {
                 <Stack space="medium">
                   <Summary
                     keys={METRICS_WEBPACK_MODULES}
-                    data={jobs[0].summary}
-                    budgets={jobs[0].insights?.webpack?.budgets}
+                    data={summary}
+                    budgets={insights?.webpack?.budgets}
                     showSummaryItemDelta={jobs.length !== 1}
                   />
                   <Box outline>
@@ -166,8 +168,8 @@ const AppComponent = ({ version, jobs }) => {
                 <Stack space="medium">
                   <Summary
                     keys={METRICS_WEBPACK_PACKAGES}
-                    data={jobs[0].summary}
-                    budgets={jobs[0].insights?.webpack?.budgets}
+                    data={summary}
+                    budgets={insights?.webpack?.budgets}
                     showSummaryItemDelta={jobs.length !== 1}
                   />
                   <Box outline>
