@@ -29,7 +29,27 @@ const JOBS = createJobs([CURRENT_SOURCE, BASELINE_SOURCE], {
     budgets: [
       {
         metric: 'totalSizeByTypeALL',
-        value: 1024 * 1024,
+        value: 2 * 1024 * 1024,
+      },
+      {
+        metric: 'totalInitialSizeJS',
+        value: 512 * 1024,
+      },
+      {
+        metric: 'totalInitialSizeCSS',
+        value: 50 * 1024,
+      },
+      {
+        metric: 'chunkCount',
+        value: 50,
+      },
+      {
+        metric: 'moduleCount',
+        value: 2000,
+      },
+      {
+        metric: 'duplicatePackagesCount',
+        value: 5,
       },
     ],
   },

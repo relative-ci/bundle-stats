@@ -104,6 +104,7 @@ const AssetsContent = () => {
         <Summary
           keys={METRICS_WEBPACK_ASSETS}
           data={jobs?.[0]?.summary}
+          budgets={jobs[0].insights?.webpack?.budgets}
           showSummaryItemDelta={jobs?.length !== 1}
         />
         <Box outline>
@@ -126,6 +127,7 @@ const ModulesContent = () => {
         <Summary
           keys={METRICS_WEBPACK_MODULES}
           data={jobs?.[0]?.summary}
+          budgets={jobs[0].insights?.webpack?.budgets}
           showSummaryItemDelta={jobs?.length !== 1}
         />
         <Box outline>
@@ -148,6 +150,7 @@ const PackagesContent = () => {
         <Summary
           keys={METRICS_WEBPACK_PACKAGES}
           data={jobs?.[0]?.summary}
+          budgets={jobs[0].insights?.webpack?.budgets}
           showSummaryItemDelta={jobs?.length !== 1}
         />
         <Box outline>
@@ -177,10 +180,10 @@ const AppComponent = ({ version, jobs }) => {
             size="large"
             keys={METRICS_WEBPACK_GENERAL}
             data={jobs[0].summary}
+            budgets={jobs[0].insights?.webpack?.budgets}
             showSummaryItemDelta={jobs.length !== 1}
           />
         </Container>
-
         <Container className={css.tabsContainer}>
           <Tabs className={css.tabs}>
             <NavLink exact to={URLS.OVERVIEW} activeClassName={css.tabActive}>

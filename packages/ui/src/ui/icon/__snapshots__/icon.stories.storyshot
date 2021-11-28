@@ -413,7 +413,25 @@ exports[`Storyshots UI/Icon all 1`] = `
         />
       </symbol>
       <symbol
-        className="cfeather cfeather-clock"
+        className="cfeather cfeather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
+        />
+      </symbol>
+      <symbol
+        className="dfeather dfeather-clock"
         fill="none"
         id="clock"
         stroke="currentColor"
@@ -433,7 +451,7 @@ exports[`Storyshots UI/Icon all 1`] = `
         />
       </symbol>
       <symbol
-        className="dfeather dfeather-x"
+        className="efeather efeather-x"
         fill="none"
         id="close"
         stroke="currentColor"
@@ -448,7 +466,7 @@ exports[`Storyshots UI/Icon all 1`] = `
         />
       </symbol>
       <symbol
-        className="efeather efeather-git-commit"
+        className="ffeather ffeather-git-commit"
         fill="none"
         id="commit"
         stroke="currentColor"
@@ -468,7 +486,7 @@ exports[`Storyshots UI/Icon all 1`] = `
         />
       </symbol>
       <symbol
-        className="ffeather ffeather-bar-chart"
+        className="gfeather gfeather-bar-chart"
         fill="none"
         id="filter"
         stroke="currentColor"
@@ -483,7 +501,7 @@ exports[`Storyshots UI/Icon all 1`] = `
         />
       </symbol>
       <symbol
-        className="gfeather gfeather-help-circle"
+        className="hfeather hfeather-help-circle"
         fill="none"
         id="help"
         stroke="currentColor"
@@ -503,7 +521,7 @@ exports[`Storyshots UI/Icon all 1`] = `
         />
       </symbol>
       <symbol
-        className="hfeather hfeather-menu"
+        className="ifeather ifeather-menu"
         fill="none"
         id="menu"
         stroke="currentColor"
@@ -532,7 +550,7 @@ exports[`Storyshots UI/Icon all 1`] = `
         />
       </symbol>
       <symbol
-        className="jfeather jfeather-alert-triangle"
+        className="kfeather kfeather-alert-triangle"
         fill="none"
         id="warning"
         stroke="currentColor"
@@ -685,7 +703,25 @@ exports[`Storyshots UI/Icon default 1`] = `
         />
       </symbol>
       <symbol
-        className="cfeather cfeather-clock"
+        className="cfeather cfeather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
+        />
+      </symbol>
+      <symbol
+        className="dfeather dfeather-clock"
         fill="none"
         id="clock"
         stroke="currentColor"
@@ -705,7 +741,7 @@ exports[`Storyshots UI/Icon default 1`] = `
         />
       </symbol>
       <symbol
-        className="dfeather dfeather-x"
+        className="efeather efeather-x"
         fill="none"
         id="close"
         stroke="currentColor"
@@ -720,7 +756,7 @@ exports[`Storyshots UI/Icon default 1`] = `
         />
       </symbol>
       <symbol
-        className="efeather efeather-git-commit"
+        className="ffeather ffeather-git-commit"
         fill="none"
         id="commit"
         stroke="currentColor"
@@ -740,7 +776,7 @@ exports[`Storyshots UI/Icon default 1`] = `
         />
       </symbol>
       <symbol
-        className="ffeather ffeather-bar-chart"
+        className="gfeather gfeather-bar-chart"
         fill="none"
         id="filter"
         stroke="currentColor"
@@ -755,7 +791,7 @@ exports[`Storyshots UI/Icon default 1`] = `
         />
       </symbol>
       <symbol
-        className="gfeather gfeather-help-circle"
+        className="hfeather hfeather-help-circle"
         fill="none"
         id="help"
         stroke="currentColor"
@@ -775,7 +811,7 @@ exports[`Storyshots UI/Icon default 1`] = `
         />
       </symbol>
       <symbol
-        className="hfeather hfeather-menu"
+        className="ifeather ifeather-menu"
         fill="none"
         id="menu"
         stroke="currentColor"
@@ -804,7 +840,7 @@ exports[`Storyshots UI/Icon default 1`] = `
         />
       </symbol>
       <symbol
-        className="jfeather jfeather-alert-triangle"
+        className="kfeather kfeather-alert-triangle"
         fill="none"
         id="warning"
         stroke="currentColor"
@@ -957,7 +993,25 @@ exports[`Storyshots UI/Icon with size 1`] = `
         />
       </symbol>
       <symbol
-        className="cfeather cfeather-clock"
+        className="cfeather cfeather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
+        />
+      </symbol>
+      <symbol
+        className="dfeather dfeather-clock"
         fill="none"
         id="clock"
         stroke="currentColor"
@@ -977,7 +1031,7 @@ exports[`Storyshots UI/Icon with size 1`] = `
         />
       </symbol>
       <symbol
-        className="dfeather dfeather-x"
+        className="efeather efeather-x"
         fill="none"
         id="close"
         stroke="currentColor"
@@ -992,7 +1046,7 @@ exports[`Storyshots UI/Icon with size 1`] = `
         />
       </symbol>
       <symbol
-        className="efeather efeather-git-commit"
+        className="ffeather ffeather-git-commit"
         fill="none"
         id="commit"
         stroke="currentColor"
@@ -1012,7 +1066,7 @@ exports[`Storyshots UI/Icon with size 1`] = `
         />
       </symbol>
       <symbol
-        className="ffeather ffeather-bar-chart"
+        className="gfeather gfeather-bar-chart"
         fill="none"
         id="filter"
         stroke="currentColor"
@@ -1027,7 +1081,7 @@ exports[`Storyshots UI/Icon with size 1`] = `
         />
       </symbol>
       <symbol
-        className="gfeather gfeather-help-circle"
+        className="hfeather hfeather-help-circle"
         fill="none"
         id="help"
         stroke="currentColor"
@@ -1047,7 +1101,7 @@ exports[`Storyshots UI/Icon with size 1`] = `
         />
       </symbol>
       <symbol
-        className="hfeather hfeather-menu"
+        className="ifeather ifeather-menu"
         fill="none"
         id="menu"
         stroke="currentColor"
@@ -1076,7 +1130,7 @@ exports[`Storyshots UI/Icon with size 1`] = `
         />
       </symbol>
       <symbol
-        className="jfeather jfeather-alert-triangle"
+        className="kfeather kfeather-alert-triangle"
         fill="none"
         id="warning"
         stroke="currentColor"
