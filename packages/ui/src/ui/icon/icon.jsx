@@ -10,6 +10,7 @@ const ICONS = {
   CANCEL: 'cancel',
   CLOSE: 'close',
   CLOCK: 'clock',
+  CHECK_CIRCLE: 'check-circle',
   COMMIT: 'commit',
   FILTER: 'filter',
   HELP: 'help',
