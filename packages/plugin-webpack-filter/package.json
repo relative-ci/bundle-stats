@@ -39,7 +39,7 @@
     "@types/lodash": "4.14.177",
     "@types/webpack": "5.28.0",
     "core-js": "3.19.2",
-    "jest": "27.3.1",
+    "jest": "27.4.0",
     "jest-cli": "27.3.1",
     "jest-date-mock": "1.0.8",
     "lodash": "4.17.21",
