@@ -54,7 +54,7 @@
     "@babel/core": "7.16.0",
     "@babel/preset-env": "7.16.4",
     "@types/jest": "27.0.3",
-    "jest": "27.4.0",
+    "jest": "27.4.2",
     "jest-date-mock": "1.0.8",
     "memory-fs": "0.5.0",
     "webpack4": "npm:webpack@4.46.0",
