@@ -1,5 +1,4 @@
 .title {
-  margin: 0;
   color: var(--color-text-ultra-light);
   font-weight: bold;
   font-size: var(--size-xsmall);
@@ -31,20 +30,20 @@
   display: block;
   color: var(--color-heading);
   font-size: var(--size-large);
-  line-height: 1.3;
+  line-height: var(--space-medium);
   white-space: nowrap;
   font-weight: bold;
 }
 
 .delta {
-  margin: var(--space-xxxsmall) 0 0;
   font-size: var(--size-small);
+  line-height: var(--space-medium);
 }
 
 .baselineMetric {
   color: var(--color-text-light);
   font-size: var(--size-small);
-  line-height: 1.3;
+  line-height: var(--space-small);
 }
 
 /* Loading state */
@@ -60,9 +59,4 @@
 .large .currentMetric {
   font-size: var(--size-xxxlarge);
   line-height: var(--space-medium);
-  min-height: var(--space-medium);
-}
-
-.large .baselineMetric {
-  font-size: var(--size-medium);
 }
