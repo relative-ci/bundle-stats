@@ -14,8 +14,9 @@
 <circle cx="12" cy="12" r="10"/>
 <path d="M12 6v6l4 2"/>
 </symbol>
-<symbol viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x" id="close" xmlns="http://www.w3.org/2000/svg">
-<path d="M18 6L6 18M6 6l12 12"/>
+<symbol fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle" viewBox="0 0 24 24" id="close" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="10"/>
+<path d="M15 9l-6 6M9 9l6 6"/>
 </symbol>
 <symbol viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit" id="commit" xmlns="http://www.w3.org/2000/svg">
 <circle cx="12" cy="12" r="4"/>

@@ -3639,7 +3639,7 @@ exports[`Storyshots UI/Filters default 1`] = `
         />
       </symbol>
       <symbol
-        className="feather feather-x"
+        className="feather feather-x-circle"
         fill="none"
         id="close"
         stroke="currentColor"
@@ -3649,8 +3649,13 @@ exports[`Storyshots UI/Filters default 1`] = `
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
         <path
-          d="M18 6L6 18M6 6l12 12"
+          d="M15 9l-6 6M9 9l6 6"
         />
       </symbol>
       <symbol
@@ -6501,7 +6506,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
         />
       </symbol>
       <symbol
-        className="feather feather-x"
+        className="feather feather-x-circle"
         fill="none"
         id="close"
         stroke="currentColor"
@@ -6511,8 +6516,13 @@ exports[`Storyshots UI/Filters disable options 1`] = `
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
         <path
-          d="M18 6L6 18M6 6l12 12"
+          d="M15 9l-6 6M9 9l6 6"
         />
       </symbol>
       <symbol
@@ -51788,7 +51798,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
         />
       </symbol>
       <symbol
-        className="feather feather-x"
+        className="feather feather-x-circle"
         fill="none"
         id="close"
         stroke="currentColor"
@@ -51798,8 +51808,13 @@ exports[`Storyshots UI/Filters overflow 1`] = `
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
         <path
-          d="M18 6L6 18M6 6l12 12"
+          d="M15 9l-6 6M9 9l6 6"
         />
       </symbol>
       <symbol
