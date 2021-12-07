@@ -27,20 +27,20 @@
 
   /*
    * Color scheme:
-   * http://mcg.mbitson.com/#!?mcgpalette0=%23dd555e&mcgpalette1=%2363bf5e&mcgpalette2=%23f7e37d&mcgpalette3=%23484a4d&mcgpalette4=%233385d6&themename=mcgtheme
+   * http://mcg.mbitson.com/#!?mcgpalette0=%23dd555e&mcgpalette1=%2363bf5e&mcgpalette2=%23f7e37d&mcgpalette3=%23636568&mcgpalette4=%233385d6&themename=mcgtheme
    * https://coolors.co/3385d6-dd555e-63bf5e-f7e37d-192339
    */
   --color-gray-25: #fafafa;
-  --color-gray-50: #e9e9ea;
-  --color-gray-100: #c8c9ca;
-  --color-gray-200: #a4a5a6;
-  --color-gray-300: #7f8082;
-  --color-gray-400: #636568;
-  --color-gray-500: #484a4d;
-  --color-gray-600: #414346;
-  --color-gray-700: #383a3d;
-  --color-gray-800: #303234;
-  --color-gray-900: #212225;
+  --color-gray-50: #eceded;
+  --color-gray-100: #d0d1d2;
+  --color-gray-200: #b1b2b4;
+  --color-gray-300: #929395;
+  --color-gray-400: #7a7c7f;
+  --color-gray-500: #636568;
+  --color-gray-600: #5b5d60;
+  --color-gray-700: #515355;
+  --color-gray-800: #47494b;
+  --color-gray-900: #35373a;
 
   --color-gray-ultra-light: var(--color-gray-200);
   --color-gray-light: var(--color-gray-300);
