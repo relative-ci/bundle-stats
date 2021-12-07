@@ -24,7 +24,16 @@ const BASELINE_SOURCE = {
   },
 };
 
-const JOBS = createJobs([CURRENT_SOURCE, BASELINE_SOURCE]);
+const JOBS = createJobs([CURRENT_SOURCE, BASELINE_SOURCE], {
+  webpack: {
+    budgets: [
+      {
+        metric: 'totalSizeByTypeALL',
+        value: 1024 * 1024,
+      },
+    ],
+  },
+});
 const NO_BASELINE_JOBS = createJobs([CURRENT_SOURCE]);
 
 const MULTIPLE_JOBS = createJobs([
@@ -43,22 +52,13 @@ const MULTIPLE_JOBS = createJobs([
 
 const [CURRENT_JOB, BASELINE_JOB] = JOBS;
 
-const EMPTY_BASELINE = createJobs([
-  { webpack: currentData.rawData.webpack },
-  { webpack: null },
-]);
+const EMPTY_BASELINE = createJobs([{ webpack: currentData.rawData.webpack }, { webpack: null }]);
 
 const stories = storiesOf('App', module);
 
-stories.addDecorator((storyFn) => (
-  <div style={{ margin: '-1rem' }}>
-    {storyFn()}
-  </div>
-));
+stories.addDecorator((storyFn) => <div style={{ margin: '-1rem' }}>{storyFn()}</div>);
 
-stories.add('default', () => (
-  <App jobs={[CURRENT_JOB, BASELINE_JOB]} version="1.0" />
-));
+stories.add('default', () => <App jobs={[CURRENT_JOB, BASELINE_JOB]} version="1.0" />);
 
 stories.add('no insights', () => (
   <App
@@ -72,18 +72,10 @@ stories.add('no insights', () => (
   />
 ));
 
-stories.add('no baseline', () => (
-  <App jobs={NO_BASELINE_JOBS} version="1.0" />
-));
+stories.add('no baseline', () => <App jobs={NO_BASELINE_JOBS} version="1.0" />);
 
-stories.add('empty baseline', () => (
-  <App jobs={EMPTY_BASELINE} version="1.0" />
-));
+stories.add('empty baseline', () => <App jobs={EMPTY_BASELINE} version="1.0" />);
 
-stories.add('multiple baselines', () => (
-  <App jobs={MULTIPLE_JOBS} version="1.0" />
-));
+stories.add('multiple baselines', () => <App jobs={MULTIPLE_JOBS} version="1.0" />);
 
-stories.add('empty', () => (
-  <App verison="1.0"/>
-));
+stories.add('empty', () => <App verison="1.0" />);

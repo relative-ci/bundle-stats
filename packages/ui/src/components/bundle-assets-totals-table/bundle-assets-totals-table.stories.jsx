@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 
 import baselineStats from '../../../__mocks__/webpack-stats.baseline.json';
@@ -7,20 +6,28 @@ import currentStats from '../../../__mocks__/webpack-stats.current.json';
 import { getWrapperDecorator } from '../../stories';
 import { BundleAssetsTotalsTable } from '.';
 
-const JOBS = createJobs([
-  { webpack: currentStats },
-  { webpack: baselineStats },
-]);
+export default {
+  title: 'Components/BundleAssetsTotalsTable',
+  component: BundleAssetsTotalsTable,
+  decorators: [getWrapperDecorator()],
+};
 
-const [currentJob] = JOBS;
+const Template = (args) => <BundleAssetsTotalsTable {...args} />;
 
-const stories = storiesOf('Components/BundleAssetsTotalsTable', module);
-stories.addDecorator(getWrapperDecorator());
+export const SingleJob = Template.bind();
 
-stories.add('default', () => <BundleAssetsTotalsTable jobs={[currentJob]} />);
+SingleJob.args = {
+  jobs: createJobs([{ webpack: currentStats }]),
+};
 
-stories.add('multiple jobs', () => <BundleAssetsTotalsTable jobs={JOBS} />);
+export const MultipleJobs = Template.bind();
 
-const JOBS_EMPTY_BASELINE = createJobs([{ webpack: currentStats }, null]);
+MultipleJobs.args = {
+  jobs: createJobs([{ webpack: currentStats }, { webpack: baselineStats }]),
+};
 
-stories.add('empty baseline', () => <BundleAssetsTotalsTable jobs={JOBS_EMPTY_BASELINE} />);
+export const EmptyBaseline = Template.bind();
+
+EmptyBaseline.args = {
+  jobs: createJobs([{ webpack: currentStats }, null]),
+};

@@ -5,33 +5,12 @@ import { get } from 'lodash';
 import { METRIC_COMPONENT_LINKS } from '@bundle-stats/utils';
 
 import { METRICS_WEBPACK_GENERAL } from '../../constants';
+import { Icon } from '../../ui/icon';
 import { Box } from '../../layout/box';
 import { FlexStack } from '../../layout/flex-stack';
 import { ComponentLink } from '../component-link';
 import { SummaryItem } from '../summary-item';
 import css from './summary.module.css';
-
-const CustomSummaryItem = ({ className, metricOptions, SummaryItemCustomLink, ...props }) => (
-  <Box
-    padding={['xsmall', 'small']}
-    className={cx(className, css.summaryItemLink)}
-    {...props}
-    as={SummaryItemCustomLink}
-    {...metricOptions.link}
-  />
-);
-
-CustomSummaryItem.propTypes = {
-  className: PropTypes.string,
-  metricOptions: PropTypes.shape({
-    link: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-  }).isRequired,
-  SummaryItemCustomLink: PropTypes.elementType.isRequired,
-};
-
-CustomSummaryItem.defaultProps = {
-  className: '',
-};
 
 export const Summary = ({
   className,
@@ -44,23 +23,25 @@ export const Summary = ({
 }) => (
   <Box outline className={cx(css.root, className)}>
     <FlexStack className={css.items}>
-      {Array.from(METRIC_COMPONENT_LINKS).filter(([metricId]) => keys.includes(metricId)).map(
-        ([metricId, metricOptions]) => (
-          <SummaryItem
-            as={CustomSummaryItem}
-            className={css.item}
-            metricOptions={metricOptions}
-            SummaryItemCustomLink={SummaryItemCustomLink}
-            size={size}
-            key={metricId}
-            id={metricId}
-            data={get(data, metricId)}
-            loading={loading}
-            showMetricDescription
-            showDelta={showSummaryItemDelta && metricOptions.showDelta !== false}
-          />
-        )
-      )}
+      {Array.from(METRIC_COMPONENT_LINKS)
+        .filter(([metricId]) => keys.includes(metricId))
+        .map(([metricId, metricOptions]) => (
+          <div key={metricId} className={css.item}>
+            <SummaryItem
+              size={size}
+              id={metricId}
+              data={get(data, metricId)}
+              loading={loading}
+              showMetricDescription
+              showDelta={showSummaryItemDelta && metricOptions.showDelta !== false}
+            />
+            {!loading && (
+              <SummaryItemCustomLink {...metricOptions.link} className={css.readMore}>
+                <Icon className={css.readMoreIcon} glyph={Icon.ICONS.ARROW_RIGHT_CIRLCE} />
+              </SummaryItemCustomLink>
+            )}
+          </div>
+        ))}
     </FlexStack>
   </Box>
 );

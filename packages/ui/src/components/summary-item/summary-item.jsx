@@ -11,7 +11,7 @@ import { Metric } from '../metric';
 import { Delta } from '../delta';
 import css from './summary-item.module.css';
 
-const MetricInfo = ({ description, url }) => {
+const MetricInfoPopover = ({ description, url }) => {
   // Workaround cases where the parent is a link
   const readMoreOnClick = () => {
     window.open(url);
@@ -31,12 +31,12 @@ const MetricInfo = ({ description, url }) => {
   );
 };
 
-MetricInfo.propTypes = {
+MetricInfoPopover.propTypes = {
   description: PropTypes.string.isRequired,
   url: PropTypes.string,
 };
 
-MetricInfo.defaultProps = {
+MetricInfoPopover.defaultProps = {
   url: '',
 };
 
@@ -57,14 +57,7 @@ export const SummaryItem = ({
   const runInfo = getMetricRunInfo(metric, current, baseline);
   const showMetricDescriptionTooltip = showMetricDescription && metric?.description;
 
-  const rootClassName = cx(
-    css.root,
-    className,
-    css[size],
-    showMetricDescription && css.showMetricDescription,
-    showMetricDescriptionTooltip && css.showMetricDescription,
-    showDelta && css.showDelta,
-  );
+  const rootClassName = cx(css.root, className, css[size], showDelta && css.showDelta);
 
   return (
     <Stack space="xxsmall" as={Component} className={rootClassName} {...props}>
@@ -73,13 +66,13 @@ export const SummaryItem = ({
 
         {showMetricDescriptionTooltip && (
           <Popover className={css.icon} icon="help">
-            <MetricInfo {...metric} />
+            <MetricInfoPopover {...metric} />
           </Popover>
         )}
       </FlexStack>
 
-      <Stack>
-        {!loading ? (
+      {!loading ? (
+        <Stack>
           <Metric
             className={css.currentMetric}
             value={current}
@@ -95,16 +88,14 @@ export const SummaryItem = ({
               />
             )}
           </Metric>
-        ) : (
-          <Skeleton className={cx(css.currentMetric, css.loading)} />
-        )}
-
-        {!loading ? (
           <Metric className={css.baselineMetric} value={baseline} formatter={metric.formatter} />
-        ) : (
+        </Stack>
+      ) : (
+        <Stack>
+          <Skeleton className={cx(css.currentMetric, css.loading)} />
           <Skeleton className={cx(css.baselineMetric, css.loading)} />
-        )}
-      </Stack>
+        </Stack>
+      )}
     </Stack>
   );
 };

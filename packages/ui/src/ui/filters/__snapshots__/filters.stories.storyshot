@@ -3564,7 +3564,7 @@ exports[`Storyshots UI/Filters default 1`] = `
       width="16"
     >
       <symbol
-        className="afeather afeather-arrow-down"
+        className="feather feather-arrow-down"
         fill="none"
         id="arrow"
         stroke="currentColor"
@@ -3579,7 +3579,27 @@ exports[`Storyshots UI/Filters default 1`] = `
         />
       </symbol>
       <symbol
-        className="bfeather bfeather-x-circle"
+        className="feather feather-arrow-right-circle"
+        fill="none"
+        id="arrow-right-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 16l4-4-4-4M8 12h8"
+        />
+      </symbol>
+      <symbol
+        className="feather feather-x-circle"
         fill="none"
         id="cancel"
         stroke="currentColor"
@@ -3599,7 +3619,7 @@ exports[`Storyshots UI/Filters default 1`] = `
         />
       </symbol>
       <symbol
-        className="cfeather cfeather-clock"
+        className="feather feather-clock"
         fill="none"
         id="clock"
         stroke="currentColor"
@@ -3619,7 +3639,7 @@ exports[`Storyshots UI/Filters default 1`] = `
         />
       </symbol>
       <symbol
-        className="dfeather dfeather-x"
+        className="feather feather-x-circle"
         fill="none"
         id="close"
         stroke="currentColor"
@@ -3629,12 +3649,17 @@ exports[`Storyshots UI/Filters default 1`] = `
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
         <path
-          d="M18 6L6 18M6 6l12 12"
+          d="M15 9l-6 6M9 9l6 6"
         />
       </symbol>
       <symbol
-        className="efeather efeather-git-commit"
+        className="feather feather-git-commit"
         fill="none"
         id="commit"
         stroke="currentColor"
@@ -3654,7 +3679,7 @@ exports[`Storyshots UI/Filters default 1`] = `
         />
       </symbol>
       <symbol
-        className="ffeather ffeather-bar-chart"
+        className="feather feather-bar-chart"
         fill="none"
         id="filter"
         stroke="currentColor"
@@ -3669,7 +3694,7 @@ exports[`Storyshots UI/Filters default 1`] = `
         />
       </symbol>
       <symbol
-        className="gfeather gfeather-help-circle"
+        className="feather feather-help-circle"
         fill="none"
         id="help"
         stroke="currentColor"
@@ -3689,7 +3714,7 @@ exports[`Storyshots UI/Filters default 1`] = `
         />
       </symbol>
       <symbol
-        className="hfeather hfeather-menu"
+        className="feather feather-menu"
         fill="none"
         id="menu"
         stroke="currentColor"
@@ -3718,7 +3743,7 @@ exports[`Storyshots UI/Filters default 1`] = `
         />
       </symbol>
       <symbol
-        className="jfeather jfeather-alert-triangle"
+        className="feather feather-alert-triangle"
         fill="none"
         id="warning"
         stroke="currentColor"
@@ -6406,7 +6431,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
       width="16"
     >
       <symbol
-        className="afeather afeather-arrow-down"
+        className="feather feather-arrow-down"
         fill="none"
         id="arrow"
         stroke="currentColor"
@@ -6421,7 +6446,27 @@ exports[`Storyshots UI/Filters disable options 1`] = `
         />
       </symbol>
       <symbol
-        className="bfeather bfeather-x-circle"
+        className="feather feather-arrow-right-circle"
+        fill="none"
+        id="arrow-right-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 16l4-4-4-4M8 12h8"
+        />
+      </symbol>
+      <symbol
+        className="feather feather-x-circle"
         fill="none"
         id="cancel"
         stroke="currentColor"
@@ -6441,7 +6486,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
         />
       </symbol>
       <symbol
-        className="cfeather cfeather-clock"
+        className="feather feather-clock"
         fill="none"
         id="clock"
         stroke="currentColor"
@@ -6461,7 +6506,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
         />
       </symbol>
       <symbol
-        className="dfeather dfeather-x"
+        className="feather feather-x-circle"
         fill="none"
         id="close"
         stroke="currentColor"
@@ -6471,12 +6516,17 @@ exports[`Storyshots UI/Filters disable options 1`] = `
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
         <path
-          d="M18 6L6 18M6 6l12 12"
+          d="M15 9l-6 6M9 9l6 6"
         />
       </symbol>
       <symbol
-        className="efeather efeather-git-commit"
+        className="feather feather-git-commit"
         fill="none"
         id="commit"
         stroke="currentColor"
@@ -6496,7 +6546,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
         />
       </symbol>
       <symbol
-        className="ffeather ffeather-bar-chart"
+        className="feather feather-bar-chart"
         fill="none"
         id="filter"
         stroke="currentColor"
@@ -6511,7 +6561,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
         />
       </symbol>
       <symbol
-        className="gfeather gfeather-help-circle"
+        className="feather feather-help-circle"
         fill="none"
         id="help"
         stroke="currentColor"
@@ -6531,7 +6581,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
         />
       </symbol>
       <symbol
-        className="hfeather hfeather-menu"
+        className="feather feather-menu"
         fill="none"
         id="menu"
         stroke="currentColor"
@@ -6560,7 +6610,7 @@ exports[`Storyshots UI/Filters disable options 1`] = `
         />
       </symbol>
       <symbol
-        className="jfeather jfeather-alert-triangle"
+        className="feather feather-alert-triangle"
         fill="none"
         id="warning"
         stroke="currentColor"
@@ -51673,7 +51723,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
       width="16"
     >
       <symbol
-        className="afeather afeather-arrow-down"
+        className="feather feather-arrow-down"
         fill="none"
         id="arrow"
         stroke="currentColor"
@@ -51688,7 +51738,27 @@ exports[`Storyshots UI/Filters overflow 1`] = `
         />
       </symbol>
       <symbol
-        className="bfeather bfeather-x-circle"
+        className="feather feather-arrow-right-circle"
+        fill="none"
+        id="arrow-right-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 16l4-4-4-4M8 12h8"
+        />
+      </symbol>
+      <symbol
+        className="feather feather-x-circle"
         fill="none"
         id="cancel"
         stroke="currentColor"
@@ -51708,7 +51778,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
         />
       </symbol>
       <symbol
-        className="cfeather cfeather-clock"
+        className="feather feather-clock"
         fill="none"
         id="clock"
         stroke="currentColor"
@@ -51728,7 +51798,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
         />
       </symbol>
       <symbol
-        className="dfeather dfeather-x"
+        className="feather feather-x-circle"
         fill="none"
         id="close"
         stroke="currentColor"
@@ -51738,12 +51808,17 @@ exports[`Storyshots UI/Filters overflow 1`] = `
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
         <path
-          d="M18 6L6 18M6 6l12 12"
+          d="M15 9l-6 6M9 9l6 6"
         />
       </symbol>
       <symbol
-        className="efeather efeather-git-commit"
+        className="feather feather-git-commit"
         fill="none"
         id="commit"
         stroke="currentColor"
@@ -51763,7 +51838,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
         />
       </symbol>
       <symbol
-        className="ffeather ffeather-bar-chart"
+        className="feather feather-bar-chart"
         fill="none"
         id="filter"
         stroke="currentColor"
@@ -51778,7 +51853,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
         />
       </symbol>
       <symbol
-        className="gfeather gfeather-help-circle"
+        className="feather feather-help-circle"
         fill="none"
         id="help"
         stroke="currentColor"
@@ -51798,7 +51873,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
         />
       </symbol>
       <symbol
-        className="hfeather hfeather-menu"
+        className="feather feather-menu"
         fill="none"
         id="menu"
         stroke="currentColor"
@@ -51827,7 +51902,7 @@ exports[`Storyshots UI/Filters overflow 1`] = `
         />
       </symbol>
       <symbol
-        className="jfeather jfeather-alert-triangle"
+        className="feather feather-alert-triangle"
         fill="none"
         id="warning"
         stroke="currentColor"

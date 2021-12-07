@@ -1,13 +1,13 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
-import { getWrapperDecorator } from '../../stories';
 import { SummaryItem } from './summary-item';
 
-const stories = storiesOf('Components/SummaryItem', module);
-stories.addDecorator(getWrapperDecorator({ maxWidth: '320px' }));
+export default {
+  title: 'Components/SummaryItem',
+  component: SummaryItem,
+};
 
-stories.add('default', () => (
+export const Standard = () => (
   <SummaryItem
     loading={false}
     id="webpack.totalSizeByTypeALL"
@@ -16,9 +16,9 @@ stories.add('default', () => (
       baseline: 100 * 1000,
     }}
   />
-));
+);
 
-stories.add('size large', () => (
+export const SizeLarge = () => (
   <SummaryItem
     size="large"
     loading={false}
@@ -28,9 +28,9 @@ stories.add('size large', () => (
       baseline: 100 * 1000,
     }}
   />
-));
+);
 
-stories.add('showMetricDescription', () => (
+export const ShowMetricDescription = () => (
   <SummaryItem
     loading={false}
     id="webpack.totalSizeByTypeALL"
@@ -40,9 +40,9 @@ stories.add('showMetricDescription', () => (
     }}
     showMetricDescription
   />
-));
+);
 
-stories.add('showDelta false', () => (
+export const ShowDeltaFalse = () => (
   <SummaryItem
     loading={false}
     id="webpack.totalSizeByTypeALL"
@@ -52,6 +52,6 @@ stories.add('showDelta false', () => (
     }}
     showDelta={false}
   />
-));
+);
 
-stories.add('loading', () => <SummaryItem loading id="webpack.totalSizeByTypeALL" />);
+export const Loading = () => <SummaryItem loading id="webpack.totalSizeByTypeALL" />;

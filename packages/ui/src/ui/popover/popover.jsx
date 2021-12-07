@@ -14,7 +14,7 @@ import css from './popover.module.css';
 export const Popover = ({ className, icon, label, ariaLabel, children }) => {
   const popover = usePopoverState({
     baseId: process.env.NODE_ENV === 'test' && 'id-test',
-    gutter: 24,
+    gutter: 12,
     modal: true,
     placement: 'top',
   });
@@ -32,7 +32,7 @@ export const Popover = ({ className, icon, label, ariaLabel, children }) => {
       event.preventDefault();
       popover.toggle();
     },
-    [popover]
+    [popover],
   );
 
   return (
@@ -47,7 +47,7 @@ export const Popover = ({ className, icon, label, ariaLabel, children }) => {
         {label && <span className={css.label}>{label}</span>}
       </UIPopoverDisclosure>
       <UIPopover className={css.popover} {...popover} tabIndex={0}>
-        <UIPopoverArrow className={css.arrow} {...popover} size={24} />
+        <UIPopoverArrow className={css.arrow} {...popover} size={16} />
 
         {typeof children === 'function' ? children({ popoverToggle: popover.toggle }) : children}
 

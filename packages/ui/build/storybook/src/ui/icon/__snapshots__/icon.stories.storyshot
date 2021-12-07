@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components/BundleAssetsTotalsTable default 1`] = `
+exports[`Storyshots UI/Icon All 1`] = `
 <div>
   <Component />
   <IconSprite
@@ -17,7 +17,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/BundleAssetsTotalsTable empty baseline 1`] = `
+exports[`Storyshots UI/Icon Custom Size 1`] = `
 <div>
   <Component />
   <IconSprite
@@ -34,7 +34,7 @@ exports[`Storyshots Components/BundleAssetsTotalsTable empty baseline 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/BundleAssetsTotalsTable multiple jobs 1`] = `
+exports[`Storyshots UI/Icon Standard 1`] = `
 <div>
   <Component />
   <IconSprite
