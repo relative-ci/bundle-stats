@@ -44,14 +44,14 @@
   "devDependencies": {
     "@types/jest": "27.0.3",
     "@types/lodash": "4.14.177",
-    "core-js": "3.19.1",
-    "jest": "27.3.1",
-    "jest-cli": "27.3.1",
+    "core-js": "3.19.3",
+    "jest": "27.4.3",
+    "jest-cli": "27.4.3",
     "jest-date-mock": "1.0.8",
     "lodash": "4.17.21",
     "regenerator-runtime": "0.13.9",
     "rimraf": "3.0.2",
-    "ts-jest": "27.0.7",
+    "ts-jest": "27.1.1",
     "typescript": "4.5.2"
   },
   "peerDependencies": {
