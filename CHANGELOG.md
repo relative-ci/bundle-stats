@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.2-beta.0](https://github.com/relative-ci/bundle-stats/compare/v3.2.1...v3.2.2-beta.0) (2021-12-08)
+
+
+### Bug Fixes
+
+* **ui:** Icons sprite - no prefix ([b0cd04f](https://github.com/relative-ci/bundle-stats/commit/b0cd04f7f11b9a76cc98d6edf0b306ba2d89ea1b))
+* **ui:** SummaryItem - remove unused styles ([f9cb800](https://github.com/relative-ci/bundle-stats/commit/f9cb800515aa943b6e932f056fbd8a8887b00791))
+
+
+### Features
+
+* **ui:** Icon - add arrow-right-circle ([4c58204](https://github.com/relative-ci/bundle-stats/commit/4c582045fb4aa25c717204a8eafb562679266583))
+* **ui:** Summary - use read more icon to navigate ([71578bd](https://github.com/relative-ci/bundle-stats/commit/71578bd0679504d7290087368ce592e8ad81036e))
+
+
+
+
+
 ## [3.2.1](https://github.com/relative-ci/bundle-stats/compare/v3.2.0...v3.2.1) (2021-11-23)
 
 

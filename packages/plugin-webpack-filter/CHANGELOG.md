@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.2-beta.0](https://github.com/relative-ci/bundle-stats/compare/v3.2.1...v3.2.2-beta.0) (2021-12-08)
+
+**Note:** Version bump only for package @bundle-stats/plugin-webpack-filter
+
+
+
+
+
 ## [3.2.1](https://github.com/relative-ci/bundle-stats/compare/v3.2.0...v3.2.1) (2021-11-23)
 
 **Note:** Version bump only for package @bundle-stats/plugin-webpack-filter
