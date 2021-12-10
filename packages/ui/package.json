@@ -45,7 +45,7 @@
     "@storybook/addon-knobs": "6.4.0",
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/addon-storyshots": "6.4.8",
-    "@storybook/addons": "6.4.8",
+    "@storybook/addons": "6.4.9",
     "@storybook/builder-webpack5": "6.4.8",
     "@storybook/manager-webpack5": "6.4.8",
     "@storybook/react": "6.4.8",
