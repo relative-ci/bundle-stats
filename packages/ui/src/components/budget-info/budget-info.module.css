@@ -1,0 +1,23 @@
+/* Budget over */
+.over .icon {
+  color: var(--color-danger-light);
+}
+
+.over .icon:hover,
+.over .icon:focus,
+.over .icon:active
+{
+  color: var(--color-danger);
+}
+
+/* Budget under */
+.under .icon {
+  color: var(--color-success-light);
+}
+
+.under .icon:hover,
+.under .icon:focus,
+.under .icon:active
+{
+  color: var(--color-success);
+}

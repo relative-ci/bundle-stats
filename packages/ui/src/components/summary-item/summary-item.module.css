@@ -70,30 +70,6 @@
   width: 5em;
 }
 
-/* Budget over */
-.budgetOver .budgetIcon {
-  color: var(--color-danger-light);
-}
-
-.budgetOver .budgetIcon:hover,
-.budgetOver .budgetIcon:focus,
-.budgetOver .budgetIcon:active
-{
-  color: var(--color-danger);
-}
-
-/* Budget under */
-.budgetUnder .budgetIcon {
-  color: var(--color-success-light);
-}
-
-.budgetUnder .budgetIcon:hover,
-.budgetUnder .budgetIcon:focus,
-.budgetUnder .budgetIcon:active
-{
-  color: var(--color-success);
-}
-
 /* Size large */
 .large .currentMetric {
   font-size: var(--size-xxxlarge);
