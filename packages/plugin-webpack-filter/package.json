@@ -40,7 +40,7 @@
     "@types/webpack": "5.28.0",
     "core-js": "3.19.3",
     "jest": "27.4.3",
-    "jest-cli": "27.4.3",
+    "jest-cli": "27.4.4",
     "jest-date-mock": "1.0.8",
     "lodash": "4.17.21",
     "regenerator-runtime": "0.13.9",
