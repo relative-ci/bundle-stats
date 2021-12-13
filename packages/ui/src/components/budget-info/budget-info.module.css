@@ -1,3 +1,8 @@
+.root {
+  display: inline-block;
+  line-height: 1em;
+}
+
 /* Budget over */
 .over .icon {
   color: var(--color-danger-light);
