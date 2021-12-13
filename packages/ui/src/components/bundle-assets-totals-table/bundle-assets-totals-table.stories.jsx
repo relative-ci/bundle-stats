@@ -31,3 +31,22 @@ export const EmptyBaseline = Template.bind();
 EmptyBaseline.args = {
   jobs: createJobs([{ webpack: currentStats }, null]),
 };
+
+export const WithBudgets = Template.bind();
+
+WithBudgets.args = {
+  jobs: createJobs([{ webpack: currentStats }, { webpack: baselineStats }], {
+    webpack: {
+      budgets: [
+        {
+          metric: 'sizes.totalSizeByTypeJS',
+          value: 2 * 1024 * 1024,
+        },
+        {
+          metric: 'sizes.totalSizeByTypeCSS',
+          value: 20 * 1024,
+        },
+      ],
+    },
+  }),
+};
