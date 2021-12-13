@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
-import { Icon } from '../../ui/icon';
 import { Popover } from '../../ui/popover';
-import { Tooltip } from '../../ui/tooltip';
 import { Skeleton } from '../../ui/skeleton';
 import { Stack } from '../../layout/stack';
 import { FlexStack } from '../../layout/flex-stack';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
+import { BudgetInfo } from '../budget-info';
 import css from './summary-item.module.css';
 
 const MetricInfoPopover = ({ description, url }) => {
@@ -42,48 +41,6 @@ MetricInfoPopover.defaultProps = {
   url: '',
 };
 
-const BudgetInfo = ({ className = '', budget, metric }) => {
-  const rootClassName = cx(
-    css.budgetIcon,
-    budget.overBudget ? css.budgetIconWarning : css.budgetIconSuccess,
-    className,
-  );
-
-  return (
-    <Tooltip
-      className={rootClassName}
-      title={
-        <>
-          {`Value is ${budget.overBudget ? 'over' : 'under'} `}
-          {metric.formatter(budget.budget)}
-          {` budget`}
-        </>
-      }
-    >
-      <Icon
-        glyph={budget.overBudget ? Icon.ICONS.WARNING : Icon.ICONS.CHECK_CIRCLE}
-        size="medium"
-      />
-    </Tooltip>
-  );
-};
-
-BudgetInfo.propTypes = {
-  budget: PropTypes.shape({
-    value: PropTypes.number,
-    budget: PropTypes.number,
-    overBudget: PropTypes.bool,
-  }).isRequired,
-  metric: PropTypes.shape({
-    formatter: PropTypes.func,
-  }).isRequired,
-  className: PropTypes.string,
-};
-
-BudgetInfo.defaultProps = {
-  className: '',
-};
-
 export const SummaryItem = ({
   className,
   as: Component,
@@ -101,15 +58,7 @@ export const SummaryItem = ({
   const metric = getGlobalMetricType(id);
   const runInfo = getMetricRunInfo(metric, current, baseline);
   const showMetricDescriptionTooltip = showMetricDescription && metric?.description;
-
-  const rootClassName = cx(
-    css.root,
-    className,
-    css[size],
-    showDelta && css.showDelta,
-    budget?.overBudget && css.budgetOver,
-    budget?.overBudget === false && css.budgetUnder,
-  );
+  const rootClassName = cx(css.root, className, css[size], showDelta && css.showDelta);
 
   return (
     <Stack space="xxsmall" as={Component} className={rootClassName} {...props}>
