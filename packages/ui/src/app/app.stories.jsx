@@ -51,6 +51,14 @@ const JOBS = createJobs([CURRENT_SOURCE, BASELINE_SOURCE], {
         metric: 'duplicatePackagesCount',
         value: 5,
       },
+      {
+        metric: 'sizes.totalSizeByTypeJS',
+        value: 2 * 1024 * 1024,
+      },
+      {
+        metric: 'sizes.totalSizeByTypeCSS',
+        value: 20 * 1024,
+      },
     ],
   },
 });
