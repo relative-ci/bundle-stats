@@ -52,7 +52,7 @@
   "devDependencies": {
     "@babel/cli": "7.16.0",
     "@babel/core": "7.16.0",
-    "@babel/preset-env": "7.16.4",
+    "@babel/preset-env": "7.16.5",
     "@types/jest": "27.0.3",
     "jest": "27.4.5",
     "jest-date-mock": "1.0.8",

@@ -39,7 +39,7 @@
     "@babel/cli": "7.16.0",
     "@babel/core": "7.16.0",
     "@babel/plugin-proposal-class-properties": "7.16.5",
-    "@babel/preset-env": "7.16.4",
+    "@babel/preset-env": "7.16.5",
     "@babel/preset-react": "7.16.5",
     "@simplyianm/babel-plugin-inline-react-svg": "1.2.0",
     "@storybook/addon-knobs": "6.4.0",
