@@ -1,0 +1,53 @@
+.groupHeader {
+  width: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.groupTitle {
+  width: 100%;
+  align-items: center;
+}
+
+.groupTitle:hover {
+  color: var(--color-text-dark);
+  text-decoration: underline;
+}
+
+.groupTitleToggle {
+  margin: 0 0 0 auto !important;
+}
+
+.danger .groupIcon {
+  color: var(--color-danger);
+}
+
+.success .groupIcon {
+  color: var(--color-success);
+}
+
+.groupContent {
+  padding-top: 0px;
+  background: transparent;
+}
+
+.budget {
+  display: block;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.budgetLabel,
+.budgetValue {
+  color: var(--color-text-dark);
+  font-weight: 500;
+}
+
+.budget:hover,
+.budget:focus,
+.budget:active {
+  color: var(--color-text);
+  text-decoration: underline;
+}
