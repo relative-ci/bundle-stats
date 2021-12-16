@@ -6,10 +6,15 @@ import { Box } from '../../layout/box';
 import css from './alert.module.css';
 
 export const Alert = (props) => {
-  const { className, kind, children } = props;
+  const { className, kind, children, ...restProps } = props;
 
   return (
-    <Box padding={['xsmall', 'small']} outline className={cx(css.root, className, css[kind])}>
+    <Box
+      padding={['xsmall', 'small']}
+      outline
+      className={cx(css.root, className, css[kind])}
+      {...restProps}
+    >
       {children}
     </Box>
   );
