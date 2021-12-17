@@ -72,13 +72,13 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                     "anchorRect": null,
                     "anchorRef": Object {
                       "current": <button
-                        aria-controls="id-hrmged"
+                        aria-controls="id-gxwxph"
                         aria-expanded="false"
                         aria-haspopup="menu"
                         class="button"
                         data-command=""
                         data-disclosure=""
-                        id="id-nx53fb"
+                        id="id-cln45b"
                         type="button"
                       >
                         <div
@@ -117,7 +117,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                         class="dropdown"
                         data-dialog=""
                         hidden=""
-                        id="id-hrmged"
+                        id="id-gxwxph"
                         role="menu"
                         style="position: relative; display: none;"
                         tabindex="-1"
@@ -138,7 +138,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                       class="dropdown"
                       data-dialog=""
                       hidden=""
-                      id="id-hrmged"
+                      id="id-gxwxph"
                       role="menu"
                       style="position: relative; display: none;"
                       tabindex="-1"
@@ -155,13 +155,13 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                     "currentPlacement": "bottom-start",
                     "disclosureRef": Object {
                       "current": <button
-                        aria-controls="id-hrmged"
+                        aria-controls="id-gxwxph"
                         aria-expanded="false"
                         aria-haspopup="menu"
                         class="button"
                         data-command=""
                         data-disclosure=""
-                        id="id-nx53fb"
+                        id="id-cln45b"
                         type="button"
                       >
                         <div
@@ -219,7 +219,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                           class="dropdown"
                           data-dialog=""
                           hidden=""
-                          id="id-hrmged"
+                          id="id-gxwxph"
                           role="menu"
                           style="position: relative; display: none;"
                           tabindex="-1"
@@ -267,13 +267,13 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                 tabIndex={null}
               >
                 <button
-                  aria-controls="id-hrmged"
+                  aria-controls="id-gxwxph"
                   aria-expanded={false}
                   aria-haspopup="menu"
                   className="button"
                   data-command=""
                   data-disclosure=""
-                  id="id-nx53fb"
+                  id="id-cln45b"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onClickCapture={[Function]}
@@ -335,13 +335,13 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                     "anchorRect": null,
                     "anchorRef": Object {
                       "current": <button
-                        aria-controls="id-hrmged"
+                        aria-controls="id-gxwxph"
                         aria-expanded="false"
                         aria-haspopup="menu"
                         class="button"
                         data-command=""
                         data-disclosure=""
-                        id="id-nx53fb"
+                        id="id-cln45b"
                         type="button"
                       >
                         <div
@@ -380,7 +380,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                         class="dropdown"
                         data-dialog=""
                         hidden=""
-                        id="id-hrmged"
+                        id="id-gxwxph"
                         role="menu"
                         style="position: relative; display: none;"
                         tabindex="-1"
@@ -401,7 +401,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                       class="dropdown"
                       data-dialog=""
                       hidden=""
-                      id="id-hrmged"
+                      id="id-gxwxph"
                       role="menu"
                       style="position: relative; display: none;"
                       tabindex="-1"
@@ -418,13 +418,13 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                     "currentPlacement": "bottom-start",
                     "disclosureRef": Object {
                       "current": <button
-                        aria-controls="id-hrmged"
+                        aria-controls="id-gxwxph"
                         aria-expanded="false"
                         aria-haspopup="menu"
                         class="button"
                         data-command=""
                         data-disclosure=""
-                        id="id-nx53fb"
+                        id="id-cln45b"
                         type="button"
                       >
                         <div
@@ -482,7 +482,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                           class="dropdown"
                           data-dialog=""
                           hidden=""
-                          id="id-hrmged"
+                          id="id-gxwxph"
                           role="menu"
                           style="position: relative; display: none;"
                           tabindex="-1"
@@ -543,7 +543,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                       className="dropdown"
                       data-dialog=""
                       hidden={true}
-                      id="id-hrmged"
+                      id="id-gxwxph"
                       onAnimationEnd={[Function]}
                       onBlur={[Function]}
                       onBlurCapture={[Function]}
@@ -607,6 +607,26 @@ exports[`Storyshots UI/Dropdown default 1`] = `
       width="16"
     >
       <symbol
+        className="feather feather-alert-circle"
+        fill="none"
+        id="alert-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 8v4M12 16h.01"
+        />
+      </symbol>
+      <symbol
         className="feather feather-arrow-down"
         fill="none"
         id="arrow"
@@ -659,6 +679,24 @@ exports[`Storyshots UI/Dropdown default 1`] = `
         />
         <path
           d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="feather feather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
         />
       </symbol>
       <symbol
@@ -877,13 +915,13 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                     "anchorRect": null,
                     "anchorRef": Object {
                       "current": <button
-                        aria-controls="id-6amckl"
+                        aria-controls="id-4tm45k"
                         aria-expanded="false"
                         aria-haspopup="menu"
                         class="button"
                         data-command=""
                         data-disclosure=""
-                        id="id-97mahm"
+                        id="id-m32fim"
                         type="button"
                       >
                         <div
@@ -922,7 +960,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                         class="dropdown"
                         data-dialog=""
                         hidden=""
-                        id="id-6amckl"
+                        id="id-4tm45k"
                         role="menu"
                         style="position: relative; display: none;"
                         tabindex="-1"
@@ -940,7 +978,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                       class="dropdown"
                       data-dialog=""
                       hidden=""
-                      id="id-6amckl"
+                      id="id-4tm45k"
                       role="menu"
                       style="position: relative; display: none;"
                       tabindex="-1"
@@ -954,13 +992,13 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                     "currentPlacement": "bottom-start",
                     "disclosureRef": Object {
                       "current": <button
-                        aria-controls="id-6amckl"
+                        aria-controls="id-4tm45k"
                         aria-expanded="false"
                         aria-haspopup="menu"
                         class="button"
                         data-command=""
                         data-disclosure=""
-                        id="id-97mahm"
+                        id="id-m32fim"
                         type="button"
                       >
                         <div
@@ -1018,7 +1056,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                           class="dropdown"
                           data-dialog=""
                           hidden=""
-                          id="id-6amckl"
+                          id="id-4tm45k"
                           role="menu"
                           style="position: relative; display: none;"
                           tabindex="-1"
@@ -1063,13 +1101,13 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                 tabIndex={null}
               >
                 <button
-                  aria-controls="id-6amckl"
+                  aria-controls="id-4tm45k"
                   aria-expanded={false}
                   aria-haspopup="menu"
                   className="button"
                   data-command=""
                   data-disclosure=""
-                  id="id-97mahm"
+                  id="id-m32fim"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onClickCapture={[Function]}
@@ -1131,13 +1169,13 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                     "anchorRect": null,
                     "anchorRef": Object {
                       "current": <button
-                        aria-controls="id-6amckl"
+                        aria-controls="id-4tm45k"
                         aria-expanded="false"
                         aria-haspopup="menu"
                         class="button"
                         data-command=""
                         data-disclosure=""
-                        id="id-97mahm"
+                        id="id-m32fim"
                         type="button"
                       >
                         <div
@@ -1176,7 +1214,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                         class="dropdown"
                         data-dialog=""
                         hidden=""
-                        id="id-6amckl"
+                        id="id-4tm45k"
                         role="menu"
                         style="position: relative; display: none;"
                         tabindex="-1"
@@ -1194,7 +1232,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                       class="dropdown"
                       data-dialog=""
                       hidden=""
-                      id="id-6amckl"
+                      id="id-4tm45k"
                       role="menu"
                       style="position: relative; display: none;"
                       tabindex="-1"
@@ -1208,13 +1246,13 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                     "currentPlacement": "bottom-start",
                     "disclosureRef": Object {
                       "current": <button
-                        aria-controls="id-6amckl"
+                        aria-controls="id-4tm45k"
                         aria-expanded="false"
                         aria-haspopup="menu"
                         class="button"
                         data-command=""
                         data-disclosure=""
-                        id="id-97mahm"
+                        id="id-m32fim"
                         type="button"
                       >
                         <div
@@ -1272,7 +1310,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                           class="dropdown"
                           data-dialog=""
                           hidden=""
-                          id="id-6amckl"
+                          id="id-4tm45k"
                           role="menu"
                           style="position: relative; display: none;"
                           tabindex="-1"
@@ -1330,7 +1368,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                       className="dropdown"
                       data-dialog=""
                       hidden={true}
-                      id="id-6amckl"
+                      id="id-4tm45k"
                       onAnimationEnd={[Function]}
                       onBlur={[Function]}
                       onBlurCapture={[Function]}
@@ -1392,6 +1430,26 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
       width="16"
     >
       <symbol
+        className="feather feather-alert-circle"
+        fill="none"
+        id="alert-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 8v4M12 16h.01"
+        />
+      </symbol>
+      <symbol
         className="feather feather-arrow-down"
         fill="none"
         id="arrow"
@@ -1444,6 +1502,24 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
         />
         <path
           d="M15 9l-6 6M9 9l6 6"
+        />
+      </symbol>
+      <symbol
+        className="feather feather-check-circle"
+        fill="none"
+        id="check-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        />
+        <path
+          d="M22 4L12 14.01l-3-3"
         />
       </symbol>
       <symbol
