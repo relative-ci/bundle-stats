@@ -10,9 +10,9 @@ interface Options {
 }
 
 interface BudgetInsight {
-  value: number;
-  budget: number;
-  overBudget: boolean;
+  currentValue: number;
+  budgetValue: number;
+  failed: boolean;
 }
 
 interface BudgetsInsights {
@@ -48,9 +48,9 @@ export default function extractBudgetsInsights(
     }
 
     const budgetInsight = {
-      value: currentValue,
-      budget: budgetValue,
-      overBudget: currentValue > budgetValue,
+      currentValue,
+      budgetValue,
+      failed: currentValue > budgetValue,
     };
 
     insights.push([budgetMetricId, budgetInsight]);

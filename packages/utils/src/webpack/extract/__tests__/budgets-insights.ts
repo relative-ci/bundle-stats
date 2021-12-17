@@ -35,9 +35,9 @@ describe('Webpack/extracts/extractBudgetsInsights', () => {
       insights: {
         budgets: {
           totalSizeByTypeALL: {
-            value: 11776,
-            budget: 10240,
-            overBudget: true,
+            currentValue: 11776,
+            budgetValue: 10240,
+            failed: true,
           },
         },
       },
@@ -65,9 +65,9 @@ describe('Webpack/extracts/extractBudgetsInsights', () => {
       insights: {
         budgets: {
           'sizes.totalSizeByTypeJS': {
-            value: 11776,
-            budget: 10240,
-            overBudget: true,
+            currentValue: 11776,
+            budgetValue: 10240,
+            failed: true,
           },
         },
       },
