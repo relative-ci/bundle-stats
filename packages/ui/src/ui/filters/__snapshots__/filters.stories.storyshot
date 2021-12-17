@@ -3564,6 +3564,26 @@ exports[`Storyshots UI/Filters default 1`] = `
       width="16"
     >
       <symbol
+        className="feather feather-alert-circle"
+        fill="none"
+        id="alert-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 8v4M12 16h.01"
+        />
+      </symbol>
+      <symbol
         className="feather feather-arrow-down"
         fill="none"
         id="arrow"
@@ -6448,6 +6468,26 @@ exports[`Storyshots UI/Filters disable options 1`] = `
       }
       width="16"
     >
+      <symbol
+        className="feather feather-alert-circle"
+        fill="none"
+        id="alert-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 8v4M12 16h.01"
+        />
+      </symbol>
       <symbol
         className="feather feather-arrow-down"
         fill="none"
@@ -51758,6 +51798,26 @@ exports[`Storyshots UI/Filters overflow 1`] = `
       }
       width="16"
     >
+      <symbol
+        className="feather feather-alert-circle"
+        fill="none"
+        id="alert-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 8v4M12 16h.01"
+        />
+      </symbol>
       <symbol
         className="feather feather-arrow-down"
         fill="none"
