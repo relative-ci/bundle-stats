@@ -12,15 +12,15 @@ import { ComponentLink } from '../component-link';
 import css from './budget-insights.module.css';
 
 const Budget = (props) => {
-  const { className, metricKey, CustomLink, overBudget, budget } = props;
+  const { className, metricKey, CustomLink, failed, budgetValue } = props;
   const metric = getGlobalMetricType(metricKey);
   const componentLinkOptions = METRIC_COMPONENT_LINKS.get(metricKey);
 
   return (
     <CustomLink className={cx(css.budget, className)} {...componentLinkOptions?.link}>
       <span className={css.budgetLabel}>{metric.label}</span>
-      {` is ${overBudget ? 'over' : 'under'} `}
-      <span className={css.budgetValue}>{metric.formatter(budget)}</span>
+      {` is ${failed ? 'over' : 'under'} `}
+      <span className={css.budgetValue}>{metric.formatter(budgetValue)}</span>
       {` budget`}
     </CustomLink>
   );
@@ -29,9 +29,9 @@ const Budget = (props) => {
 Budget.propTypes = {
   className: PropTypes.string,
   metricKey: PropTypes.string.isRequired,
-  overBudget: PropTypes.bool.isRequired,
-  value: PropTypes.number.isRequired,
-  budget: PropTypes.number.isRequired,
+  failed: PropTypes.bool.isRequired,
+  currentValue: PropTypes.number.isRequired,
+  budgetValue: PropTypes.number.isRequired,
   CustomLink: PropTypes.elementType.isRequired,
 };
 
@@ -106,7 +106,7 @@ export const BudgetInsights = (props) => {
     const failed = [];
 
     Object.entries(budgets).forEach(([key, budget]) => {
-      if (budget.overBudget) {
+      if (budget.failed) {
         failed.push([key, budget]);
       } else {
         passed.push([key, budget]);
