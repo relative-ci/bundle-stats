@@ -1,5 +1,7 @@
 import get from 'lodash/get';
 
+import { getMetricType } from '../utils';
+
 interface OptionBudgetMetric {
   metric: string;
   value: number;
@@ -42,15 +44,18 @@ export default function extractBudgetsInsights(
   budgetsOptions.forEach((budgetOption) => {
     const { metric: budgetMetricId, value: budgetValue } = budgetOption;
     const currentValue = get(currentExtractedData, `metrics.${budgetMetricId}.value`);
+    const metric = getMetricType(budgetMetricId);
 
     if (!currentValue) {
       return;
     }
 
+    const isValueOverBudget = currentValue > budgetValue;
+
     const budgetInsight = {
       currentValue,
       budgetValue,
-      failed: currentValue > budgetValue,
+      failed: metric.biggerIsBetter ? !isValueOverBudget : isValueOverBudget,
     };
 
     insights.push([budgetMetricId, budgetInsight]);

@@ -11,18 +11,21 @@ export const metrics = {
     description: 'Sum of all assets emitted by webpack.',
     url: 'https://relative-ci.com/documentation/metrics-and-data#assets',
     type: METRIC_TYPE_FILE_SIZE,
+    biggerIsBetter: false,
   },
   [MetricId.TotalInitialSizeJS]: {
     label: 'Initial JS',
     description: 'Sum of all JavaScript assets that are labeled as initial(eg: vendor.js, app.js).',
     url: 'https://relative-ci.com/documentation/metrics-and-data#assets',
     type: METRIC_TYPE_FILE_SIZE,
+    biggerIsBetter: false,
   },
   [MetricId.TotalInitialSizeCSS]: {
     label: 'Initial CSS',
     description: 'Sum of all CSS assets that are labeled as initial(eg: vendor.css, app.css).',
     url: 'https://relative-ci.com/documentation/metrics-and-data#assets',
     type: METRIC_TYPE_FILE_SIZE,
+    biggerIsBetter: false,
   },
   [MetricId.CacheInvalidation]: {
     label: 'Cache Invalidation',
@@ -70,30 +73,37 @@ export const metrics = {
     [SizeByTypeMetricId.JS]: {
       label: 'JS',
       type: METRIC_TYPE_FILE_SIZE,
+      biggerIsBetter: false,
     },
     [SizeByTypeMetricId.CSS]: {
       label: 'CSS',
       type: METRIC_TYPE_FILE_SIZE,
+      biggerIsBetter: false,
     },
     [SizeByTypeMetricId.IMG]: {
       label: 'IMG',
       type: METRIC_TYPE_FILE_SIZE,
+      biggerIsBetter: false,
     },
     [SizeByTypeMetricId.Media]: {
       label: 'Media',
       type: METRIC_TYPE_FILE_SIZE,
+      biggerIsBetter: false,
     },
     [SizeByTypeMetricId.Font]: {
       label: 'Fonts',
       type: METRIC_TYPE_FILE_SIZE,
+      biggerIsBetter: false,
     },
     [SizeByTypeMetricId.HTML]: {
       label: 'HTML',
       type: METRIC_TYPE_FILE_SIZE,
+      biggerIsBetter: false,
     },
     [SizeByTypeMetricId.Other]: {
       label: 'Other',
       type: METRIC_TYPE_FILE_SIZE,
+      biggerIsBetter: false,
     },
   },
 };
