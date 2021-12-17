@@ -69,7 +69,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                   "anchorRect": null,
                   "anchorRef": Object {
                     "current": <span
-                      aria-labelledby="id-oenpwn"
+                      aria-labelledby="id-rz3pkg"
                       class="root"
                       tabindex="0"
                     >
@@ -107,7 +107,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                   "contentElement": <div
                     class="tooltip"
                     hidden=""
-                    id="id-oenpwn"
+                    id="id-rz3pkg"
                     role="tooltip"
                     style="display: none;"
                   >
@@ -155,7 +155,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                       <div
                         class="tooltip"
                         hidden=""
-                        id="id-oenpwn"
+                        id="id-rz3pkg"
                         role="tooltip"
                         style="display: none;"
                       >
@@ -203,7 +203,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
               }
             >
               <span
-                aria-labelledby="id-oenpwn"
+                aria-labelledby="id-rz3pkg"
                 className="root"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -221,7 +221,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                   "anchorRect": null,
                   "anchorRef": Object {
                     "current": <span
-                      aria-labelledby="id-oenpwn"
+                      aria-labelledby="id-rz3pkg"
                       class="root"
                       tabindex="0"
                     >
@@ -259,7 +259,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                   "contentElement": <div
                     class="tooltip"
                     hidden=""
-                    id="id-oenpwn"
+                    id="id-rz3pkg"
                     role="tooltip"
                     style="display: none;"
                   >
@@ -307,7 +307,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                       <div
                         class="tooltip"
                         hidden=""
-                        id="id-oenpwn"
+                        id="id-rz3pkg"
                         role="tooltip"
                         style="display: none;"
                       >
@@ -357,7 +357,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
               <Portal
                 containerInfo={
                   <div
-                    id="id-l4jutx"
+                    id="id-scxwnp"
                   >
                     <div
                       role="presentation"
@@ -366,7 +366,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                       <div
                         class="tooltip"
                         hidden=""
-                        id="id-oenpwn"
+                        id="id-rz3pkg"
                         role="tooltip"
                         style="display: none;"
                       >
@@ -410,7 +410,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                   <div
                     className="tooltip"
                     hidden={true}
-                    id="id-oenpwn"
+                    id="id-rz3pkg"
                     onAnimationEnd={[Function]}
                     onTransitionEnd={[Function]}
                     role="tooltip"
@@ -428,7 +428,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                           "anchorRect": null,
                           "anchorRef": Object {
                             "current": <span
-                              aria-labelledby="id-oenpwn"
+                              aria-labelledby="id-rz3pkg"
                               class="root"
                               tabindex="0"
                             >
@@ -466,7 +466,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                           "contentElement": <div
                             class="tooltip"
                             hidden=""
-                            id="id-oenpwn"
+                            id="id-rz3pkg"
                             role="tooltip"
                             style="display: none;"
                           >
@@ -514,7 +514,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                               <div
                                 class="tooltip"
                                 hidden=""
-                                id="id-oenpwn"
+                                id="id-rz3pkg"
                                 role="tooltip"
                                 style="display: none;"
                               >
@@ -628,6 +628,26 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
       }
       width="16"
     >
+      <symbol
+        className="feather feather-alert-circle"
+        fill="none"
+        id="alert-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 8v4M12 16h.01"
+        />
+      </symbol>
       <symbol
         className="feather feather-arrow-down"
         fill="none"
@@ -914,7 +934,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                   "anchorRect": null,
                   "anchorRef": Object {
                     "current": <span
-                      aria-labelledby="id-n14qbt"
+                      aria-labelledby="id-38j1go"
                       class="root"
                       tabindex="0"
                     >
@@ -952,7 +972,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                   "contentElement": <div
                     class="tooltip tooltipDarkMode"
                     hidden=""
-                    id="id-n14qbt"
+                    id="id-38j1go"
                     role="tooltip"
                     style="display: none;"
                   >
@@ -1000,7 +1020,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                       <div
                         class="tooltip tooltipDarkMode"
                         hidden=""
-                        id="id-n14qbt"
+                        id="id-38j1go"
                         role="tooltip"
                         style="display: none;"
                       >
@@ -1048,7 +1068,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
               }
             >
               <span
-                aria-labelledby="id-n14qbt"
+                aria-labelledby="id-38j1go"
                 className="root"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -1066,7 +1086,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                   "anchorRect": null,
                   "anchorRef": Object {
                     "current": <span
-                      aria-labelledby="id-n14qbt"
+                      aria-labelledby="id-38j1go"
                       class="root"
                       tabindex="0"
                     >
@@ -1104,7 +1124,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                   "contentElement": <div
                     class="tooltip tooltipDarkMode"
                     hidden=""
-                    id="id-n14qbt"
+                    id="id-38j1go"
                     role="tooltip"
                     style="display: none;"
                   >
@@ -1152,7 +1172,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                       <div
                         class="tooltip tooltipDarkMode"
                         hidden=""
-                        id="id-n14qbt"
+                        id="id-38j1go"
                         role="tooltip"
                         style="display: none;"
                       >
@@ -1202,7 +1222,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
               <Portal
                 containerInfo={
                   <div
-                    id="id-peql6e"
+                    id="id-lh83jn"
                   >
                     <div
                       role="presentation"
@@ -1211,7 +1231,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                       <div
                         class="tooltip tooltipDarkMode"
                         hidden=""
-                        id="id-n14qbt"
+                        id="id-38j1go"
                         role="tooltip"
                         style="display: none;"
                       >
@@ -1255,7 +1275,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                   <div
                     className="tooltip tooltipDarkMode"
                     hidden={true}
-                    id="id-n14qbt"
+                    id="id-38j1go"
                     onAnimationEnd={[Function]}
                     onTransitionEnd={[Function]}
                     role="tooltip"
@@ -1273,7 +1293,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                           "anchorRect": null,
                           "anchorRef": Object {
                             "current": <span
-                              aria-labelledby="id-n14qbt"
+                              aria-labelledby="id-38j1go"
                               class="root"
                               tabindex="0"
                             >
@@ -1311,7 +1331,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                           "contentElement": <div
                             class="tooltip tooltipDarkMode"
                             hidden=""
-                            id="id-n14qbt"
+                            id="id-38j1go"
                             role="tooltip"
                             style="display: none;"
                           >
@@ -1359,7 +1379,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                               <div
                                 class="tooltip tooltipDarkMode"
                                 hidden=""
-                                id="id-n14qbt"
+                                id="id-38j1go"
                                 role="tooltip"
                                 style="display: none;"
                               >
@@ -1473,6 +1493,26 @@ exports[`Storyshots UI/Tooltip default 1`] = `
       }
       width="16"
     >
+      <symbol
+        className="feather feather-alert-circle"
+        fill="none"
+        id="alert-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 8v4M12 16h.01"
+        />
+      </symbol>
       <symbol
         className="feather feather-arrow-down"
         fill="none"
