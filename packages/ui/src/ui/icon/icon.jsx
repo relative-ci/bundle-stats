@@ -5,6 +5,7 @@ import cx from 'classnames';
 import css from './icon.module.css';
 
 const ICONS = {
+  ALERT_CIRCLE: 'alert-circle',
   ARROW: 'arrow',
   ARROW_RIGHT_CIRLCE: 'arrow-right-circle',
   CANCEL: 'cancel',
