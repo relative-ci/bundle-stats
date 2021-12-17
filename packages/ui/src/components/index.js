@@ -4,6 +4,7 @@ export { BundleAssetsTotalsTable } from './bundle-assets-totals-table';
 export { BundleAssetsTotalsChartBars } from './bundle-assets-totals-chart-bars';
 export { BundlePackages } from './bundle-packages';
 export { BundleModules } from './bundle-modules';
+export { BudgetInsights } from './budget-insights';
 export { ComponentLink } from './component-link';
 export { DuplicatePackagesWarning } from './duplicate-packages-warning';
 export { Delta } from './delta';
