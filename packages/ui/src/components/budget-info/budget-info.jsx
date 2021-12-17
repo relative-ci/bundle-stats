@@ -8,7 +8,7 @@ import { Tooltip } from '../../ui/tooltip';
 import css from './budget-info.module.css';
 
 export const BudgetInfo = ({ className = '', budget, metric }) => {
-  const rootClassName = cx(css.root, budget.overBudget ? css.over : css.under, className);
+  const rootClassName = cx(css.root, budget.failed ? css.over : css.under, className);
 
   return (
     <Tooltip
@@ -16,15 +16,15 @@ export const BudgetInfo = ({ className = '', budget, metric }) => {
       title={
         <>
           <strong>{metric.label}</strong>
-          {` is ${budget.overBudget ? 'over' : 'under'} `}
-          {metric.formatter(budget.budget)}
+          {` is ${budget.failed ? 'over' : 'under'} `}
+          {metric.formatter(budget.budgetValue)}
           {` budget`}
         </>
       }
     >
       <Icon
         className={css.icon}
-        glyph={budget.overBudget ? Icon.ICONS.ALERT_CIRCLE : Icon.ICONS.CHECK_CIRCLE}
+        glyph={budget.failed ? Icon.ICONS.ALERT_CIRCLE : Icon.ICONS.CHECK_CIRCLE}
         size="medium"
       />
     </Tooltip>
@@ -33,9 +33,9 @@ export const BudgetInfo = ({ className = '', budget, metric }) => {
 
 BudgetInfo.propTypes = {
   budget: PropTypes.shape({
-    value: PropTypes.number,
-    budget: PropTypes.number,
-    overBudget: PropTypes.bool,
+    currentValue: PropTypes.number,
+    budgetValue: PropTypes.number,
+    failed: PropTypes.bool,
   }).isRequired,
   metric: PropTypes.shape({
     label: PropTypes.string,
