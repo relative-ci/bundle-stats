@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0-alpha.0](https://github.com/relative-ci/bundle-stats/compare/v3.2.2...v3.3.0-alpha.0) (2021-12-17)
+
+
+### Bug Fixes
+
+* **ui:** Alert - allow to override props ([4d52999](https://github.com/relative-ci/bundle-stats/commit/4d52999e80427f95bac30d0123cc149566b54282))
+
+
+### Features
+
+* App - add BudgetInsights ([4068e33](https://github.com/relative-ci/bundle-stats/commit/4068e334465f6eb624b92790da11306d711718f6))
+* **ui:** App - pass budgets info to Summary ([102a4c1](https://github.com/relative-ci/bundle-stats/commit/102a4c1b4a8ab445c1a39ba8d19fba88b0c259d5))
+* **ui:** BudgetInsights component ([4458395](https://github.com/relative-ci/bundle-stats/commit/44583958a83458285b896c5564b03df0960fb992))
+* **ui:** BundleAssetsTotalsTable - add budgets ([b2fa86e](https://github.com/relative-ci/bundle-stats/commit/b2fa86eb1ec2ad1e4ea183a4f4dee2eefa4cfddc))
+* **ui:** Icon - add check-circle icon ([1bc3707](https://github.com/relative-ci/bundle-stats/commit/1bc3707a868ca216da5b9e500ba0536d0163b168))
+* **ui:** Icon - alert-circle icon ([9ae82bc](https://github.com/relative-ci/bundle-stats/commit/9ae82bcac0ff55511eafb158322b571e09a4de60))
+* **ui:** SummaryItem - budgets ([591bb41](https://github.com/relative-ci/bundle-stats/commit/591bb414f7aa93c2e1f4208f1dfedffa037e5225))
+
+
+### Performance Improvements
+
+* **ui:** BundleAssetsTotalsTable - use memo / callback ([22ec007](https://github.com/relative-ci/bundle-stats/commit/22ec00772b1b27d19d89a106fbcf93ac49b3d57e))
+
+
+
+
+
 ## [3.2.2](https://github.com/relative-ci/bundle-stats/compare/v3.2.1...v3.2.2) (2021-12-08)
 
 
