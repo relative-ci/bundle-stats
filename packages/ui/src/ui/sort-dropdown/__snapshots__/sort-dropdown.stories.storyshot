@@ -87,17 +87,17 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                   className="button"
                   state={
                     Object {
-                      "activeId": "id-tsrglk",
+                      "activeId": "id-3st6gm",
                       "anchorRect": null,
                       "anchorRef": Object {
                         "current": <button
-                          aria-controls="id-00ygnc"
+                          aria-controls="id-qwhsyb"
                           aria-expanded="false"
                           aria-haspopup="menu"
                           class="button"
                           data-command=""
                           data-disclosure=""
-                          id="id-u65qo7"
+                          id="id-on9zvi"
                           type="button"
                         >
                           <div
@@ -136,7 +136,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                           class="dropdown"
                           data-dialog=""
                           hidden=""
-                          id="id-00ygnc"
+                          id="id-qwhsyb"
                           role="menu"
                           style="position: relative; display: none;"
                           tabindex="-1"
@@ -145,7 +145,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             class="items"
                           >
                             <div
-                              activeid="id-tsrglk"
+                              activeid="id-3st6gm"
                               anchorref="[object Object]"
                               arrowpadding="4"
                               arrowref="[object Object]"
@@ -158,7 +158,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               data-composite-hover=""
                               disclosureref="[object Object]"
                               hidetimeout="0"
-                              id="id-tsrglk"
+                              id="id-3st6gm"
                               initialfocus="container"
                               items="[object Object],[object Object]"
                               moves="0"
@@ -192,7 +192,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               </span>
                             </div>
                             <div
-                              activeid="id-tsrglk"
+                              activeid="id-3st6gm"
                               anchorref="[object Object]"
                               arrowpadding="4"
                               arrowref="[object Object]"
@@ -204,7 +204,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               data-composite-hover=""
                               disclosureref="[object Object]"
                               hidetimeout="0"
-                              id="id-x9l1bq"
+                              id="id-rven74"
                               initialfocus="container"
                               items="[object Object],[object Object]"
                               moves="0"
@@ -246,7 +246,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                         class="dropdown"
                         data-dialog=""
                         hidden=""
-                        id="id-00ygnc"
+                        id="id-qwhsyb"
                         role="menu"
                         style="position: relative; display: none;"
                         tabindex="-1"
@@ -255,7 +255,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                           class="items"
                         >
                           <div
-                            activeid="id-tsrglk"
+                            activeid="id-3st6gm"
                             anchorref="[object Object]"
                             arrowpadding="4"
                             arrowref="[object Object]"
@@ -268,7 +268,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             data-composite-hover=""
                             disclosureref="[object Object]"
                             hidetimeout="0"
-                            id="id-tsrglk"
+                            id="id-3st6gm"
                             initialfocus="container"
                             items="[object Object],[object Object]"
                             moves="0"
@@ -302,7 +302,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             </span>
                           </div>
                           <div
-                            activeid="id-tsrglk"
+                            activeid="id-3st6gm"
                             anchorref="[object Object]"
                             arrowpadding="4"
                             arrowref="[object Object]"
@@ -314,7 +314,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             data-composite-hover=""
                             disclosureref="[object Object]"
                             hidetimeout="0"
-                            id="id-x9l1bq"
+                            id="id-rven74"
                             initialfocus="container"
                             items="[object Object],[object Object]"
                             moves="0"
@@ -352,13 +352,13 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                       "currentPlacement": "bottom-start",
                       "disclosureRef": Object {
                         "current": <button
-                          aria-controls="id-00ygnc"
+                          aria-controls="id-qwhsyb"
                           aria-expanded="false"
                           aria-haspopup="menu"
                           class="button"
                           data-command=""
                           data-disclosure=""
-                          id="id-u65qo7"
+                          id="id-on9zvi"
                           type="button"
                         >
                           <div
@@ -399,10 +399,10 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                       "items": Array [
                         Object {
                           "disabled": false,
-                          "id": "id-tsrglk",
+                          "id": "id-3st6gm",
                           "ref": Object {
                             "current": <div
-                              activeid="id-tsrglk"
+                              activeid="id-3st6gm"
                               anchorref="[object Object]"
                               arrowpadding="4"
                               arrowref="[object Object]"
@@ -415,7 +415,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               data-composite-hover=""
                               disclosureref="[object Object]"
                               hidetimeout="0"
-                              id="id-tsrglk"
+                              id="id-3st6gm"
                               initialfocus="container"
                               items="[object Object],[object Object]"
                               moves="0"
@@ -453,10 +453,10 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                         },
                         Object {
                           "disabled": false,
-                          "id": "id-x9l1bq",
+                          "id": "id-rven74",
                           "ref": Object {
                             "current": <div
-                              activeid="id-tsrglk"
+                              activeid="id-3st6gm"
                               anchorref="[object Object]"
                               arrowpadding="4"
                               arrowref="[object Object]"
@@ -468,7 +468,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               data-composite-hover=""
                               disclosureref="[object Object]"
                               hidetimeout="0"
-                              id="id-x9l1bq"
+                              id="id-rven74"
                               initialfocus="container"
                               items="[object Object],[object Object]"
                               moves="0"
@@ -524,7 +524,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             class="dropdown"
                             data-dialog=""
                             hidden=""
-                            id="id-00ygnc"
+                            id="id-qwhsyb"
                             role="menu"
                             style="position: relative; display: none;"
                             tabindex="-1"
@@ -533,7 +533,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               class="items"
                             >
                               <div
-                                activeid="id-tsrglk"
+                                activeid="id-3st6gm"
                                 anchorref="[object Object]"
                                 arrowpadding="4"
                                 arrowref="[object Object]"
@@ -546,7 +546,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                 data-composite-hover=""
                                 disclosureref="[object Object]"
                                 hidetimeout="0"
-                                id="id-tsrglk"
+                                id="id-3st6gm"
                                 initialfocus="container"
                                 items="[object Object],[object Object]"
                                 moves="0"
@@ -580,7 +580,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                 </span>
                               </div>
                               <div
-                                activeid="id-tsrglk"
+                                activeid="id-3st6gm"
                                 anchorref="[object Object]"
                                 arrowpadding="4"
                                 arrowref="[object Object]"
@@ -592,7 +592,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                 data-composite-hover=""
                                 disclosureref="[object Object]"
                                 hidetimeout="0"
-                                id="id-x9l1bq"
+                                id="id-rven74"
                                 initialfocus="container"
                                 items="[object Object],[object Object]"
                                 moves="0"
@@ -661,13 +661,13 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                   tabIndex={null}
                 >
                   <button
-                    aria-controls="id-00ygnc"
+                    aria-controls="id-qwhsyb"
                     aria-expanded={false}
                     aria-haspopup="menu"
                     className="button"
                     data-command=""
                     data-disclosure=""
-                    id="id-u65qo7"
+                    id="id-on9zvi"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onClickCapture={[Function]}
@@ -725,17 +725,17 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                   className="dropdown"
                   state={
                     Object {
-                      "activeId": "id-tsrglk",
+                      "activeId": "id-3st6gm",
                       "anchorRect": null,
                       "anchorRef": Object {
                         "current": <button
-                          aria-controls="id-00ygnc"
+                          aria-controls="id-qwhsyb"
                           aria-expanded="false"
                           aria-haspopup="menu"
                           class="button"
                           data-command=""
                           data-disclosure=""
-                          id="id-u65qo7"
+                          id="id-on9zvi"
                           type="button"
                         >
                           <div
@@ -774,7 +774,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                           class="dropdown"
                           data-dialog=""
                           hidden=""
-                          id="id-00ygnc"
+                          id="id-qwhsyb"
                           role="menu"
                           style="position: relative; display: none;"
                           tabindex="-1"
@@ -783,7 +783,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             class="items"
                           >
                             <div
-                              activeid="id-tsrglk"
+                              activeid="id-3st6gm"
                               anchorref="[object Object]"
                               arrowpadding="4"
                               arrowref="[object Object]"
@@ -796,7 +796,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               data-composite-hover=""
                               disclosureref="[object Object]"
                               hidetimeout="0"
-                              id="id-tsrglk"
+                              id="id-3st6gm"
                               initialfocus="container"
                               items="[object Object],[object Object]"
                               moves="0"
@@ -830,7 +830,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               </span>
                             </div>
                             <div
-                              activeid="id-tsrglk"
+                              activeid="id-3st6gm"
                               anchorref="[object Object]"
                               arrowpadding="4"
                               arrowref="[object Object]"
@@ -842,7 +842,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               data-composite-hover=""
                               disclosureref="[object Object]"
                               hidetimeout="0"
-                              id="id-x9l1bq"
+                              id="id-rven74"
                               initialfocus="container"
                               items="[object Object],[object Object]"
                               moves="0"
@@ -884,7 +884,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                         class="dropdown"
                         data-dialog=""
                         hidden=""
-                        id="id-00ygnc"
+                        id="id-qwhsyb"
                         role="menu"
                         style="position: relative; display: none;"
                         tabindex="-1"
@@ -893,7 +893,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                           class="items"
                         >
                           <div
-                            activeid="id-tsrglk"
+                            activeid="id-3st6gm"
                             anchorref="[object Object]"
                             arrowpadding="4"
                             arrowref="[object Object]"
@@ -906,7 +906,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             data-composite-hover=""
                             disclosureref="[object Object]"
                             hidetimeout="0"
-                            id="id-tsrglk"
+                            id="id-3st6gm"
                             initialfocus="container"
                             items="[object Object],[object Object]"
                             moves="0"
@@ -940,7 +940,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             </span>
                           </div>
                           <div
-                            activeid="id-tsrglk"
+                            activeid="id-3st6gm"
                             anchorref="[object Object]"
                             arrowpadding="4"
                             arrowref="[object Object]"
@@ -952,7 +952,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             data-composite-hover=""
                             disclosureref="[object Object]"
                             hidetimeout="0"
-                            id="id-x9l1bq"
+                            id="id-rven74"
                             initialfocus="container"
                             items="[object Object],[object Object]"
                             moves="0"
@@ -990,13 +990,13 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                       "currentPlacement": "bottom-start",
                       "disclosureRef": Object {
                         "current": <button
-                          aria-controls="id-00ygnc"
+                          aria-controls="id-qwhsyb"
                           aria-expanded="false"
                           aria-haspopup="menu"
                           class="button"
                           data-command=""
                           data-disclosure=""
-                          id="id-u65qo7"
+                          id="id-on9zvi"
                           type="button"
                         >
                           <div
@@ -1037,10 +1037,10 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                       "items": Array [
                         Object {
                           "disabled": false,
-                          "id": "id-tsrglk",
+                          "id": "id-3st6gm",
                           "ref": Object {
                             "current": <div
-                              activeid="id-tsrglk"
+                              activeid="id-3st6gm"
                               anchorref="[object Object]"
                               arrowpadding="4"
                               arrowref="[object Object]"
@@ -1053,7 +1053,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               data-composite-hover=""
                               disclosureref="[object Object]"
                               hidetimeout="0"
-                              id="id-tsrglk"
+                              id="id-3st6gm"
                               initialfocus="container"
                               items="[object Object],[object Object]"
                               moves="0"
@@ -1091,10 +1091,10 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                         },
                         Object {
                           "disabled": false,
-                          "id": "id-x9l1bq",
+                          "id": "id-rven74",
                           "ref": Object {
                             "current": <div
-                              activeid="id-tsrglk"
+                              activeid="id-3st6gm"
                               anchorref="[object Object]"
                               arrowpadding="4"
                               arrowref="[object Object]"
@@ -1106,7 +1106,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               data-composite-hover=""
                               disclosureref="[object Object]"
                               hidetimeout="0"
-                              id="id-x9l1bq"
+                              id="id-rven74"
                               initialfocus="container"
                               items="[object Object],[object Object]"
                               moves="0"
@@ -1162,7 +1162,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             class="dropdown"
                             data-dialog=""
                             hidden=""
-                            id="id-00ygnc"
+                            id="id-qwhsyb"
                             role="menu"
                             style="position: relative; display: none;"
                             tabindex="-1"
@@ -1171,7 +1171,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               class="items"
                             >
                               <div
-                                activeid="id-tsrglk"
+                                activeid="id-3st6gm"
                                 anchorref="[object Object]"
                                 arrowpadding="4"
                                 arrowref="[object Object]"
@@ -1184,7 +1184,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                 data-composite-hover=""
                                 disclosureref="[object Object]"
                                 hidetimeout="0"
-                                id="id-tsrglk"
+                                id="id-3st6gm"
                                 initialfocus="container"
                                 items="[object Object],[object Object]"
                                 moves="0"
@@ -1218,7 +1218,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                 </span>
                               </div>
                               <div
-                                activeid="id-tsrglk"
+                                activeid="id-3st6gm"
                                 anchorref="[object Object]"
                                 arrowpadding="4"
                                 arrowref="[object Object]"
@@ -1230,7 +1230,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                 data-composite-hover=""
                                 disclosureref="[object Object]"
                                 hidetimeout="0"
-                                id="id-x9l1bq"
+                                id="id-rven74"
                                 initialfocus="container"
                                 items="[object Object],[object Object]"
                                 moves="0"
@@ -1312,7 +1312,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                         className="dropdown"
                         data-dialog=""
                         hidden={true}
-                        id="id-00ygnc"
+                        id="id-qwhsyb"
                         onAnimationEnd={[Function]}
                         onBlur={[Function]}
                         onBlurCapture={[Function]}
@@ -1339,18 +1339,18 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                           className="items"
                         >
                           <ForwardRef(Role)
-                            activeId="id-tsrglk"
+                            activeId="id-3st6gm"
                             anchorRect={null}
                             anchorRef={
                               Object {
                                 "current": <button
-                                  aria-controls="id-00ygnc"
+                                  aria-controls="id-qwhsyb"
                                   aria-expanded="false"
                                   aria-haspopup="menu"
                                   class="button"
                                   data-command=""
                                   data-disclosure=""
-                                  id="id-u65qo7"
+                                  id="id-on9zvi"
                                   type="button"
                                 >
                                   <div
@@ -1393,7 +1393,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                   class="dropdown"
                                   data-dialog=""
                                   hidden=""
-                                  id="id-00ygnc"
+                                  id="id-qwhsyb"
                                   role="menu"
                                   style="position: relative; display: none;"
                                   tabindex="-1"
@@ -1402,7 +1402,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                     class="items"
                                   >
                                     <div
-                                      activeid="id-tsrglk"
+                                      activeid="id-3st6gm"
                                       anchorref="[object Object]"
                                       arrowpadding="4"
                                       arrowref="[object Object]"
@@ -1415,7 +1415,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       data-composite-hover=""
                                       disclosureref="[object Object]"
                                       hidetimeout="0"
-                                      id="id-tsrglk"
+                                      id="id-3st6gm"
                                       initialfocus="container"
                                       items="[object Object],[object Object]"
                                       moves="0"
@@ -1449,7 +1449,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       </span>
                                     </div>
                                     <div
-                                      activeid="id-tsrglk"
+                                      activeid="id-3st6gm"
                                       anchorref="[object Object]"
                                       arrowpadding="4"
                                       arrowref="[object Object]"
@@ -1461,7 +1461,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       data-composite-hover=""
                                       disclosureref="[object Object]"
                                       hidetimeout="0"
-                                      id="id-x9l1bq"
+                                      id="id-rven74"
                                       initialfocus="container"
                                       items="[object Object],[object Object]"
                                       moves="0"
@@ -1506,7 +1506,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                 class="dropdown"
                                 data-dialog=""
                                 hidden=""
-                                id="id-00ygnc"
+                                id="id-qwhsyb"
                                 role="menu"
                                 style="position: relative; display: none;"
                                 tabindex="-1"
@@ -1515,7 +1515,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                   class="items"
                                 >
                                   <div
-                                    activeid="id-tsrglk"
+                                    activeid="id-3st6gm"
                                     anchorref="[object Object]"
                                     arrowpadding="4"
                                     arrowref="[object Object]"
@@ -1528,7 +1528,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                     data-composite-hover=""
                                     disclosureref="[object Object]"
                                     hidetimeout="0"
-                                    id="id-tsrglk"
+                                    id="id-3st6gm"
                                     initialfocus="container"
                                     items="[object Object],[object Object]"
                                     moves="0"
@@ -1562,7 +1562,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                     </span>
                                   </div>
                                   <div
-                                    activeid="id-tsrglk"
+                                    activeid="id-3st6gm"
                                     anchorref="[object Object]"
                                     arrowpadding="4"
                                     arrowref="[object Object]"
@@ -1574,7 +1574,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                     data-composite-hover=""
                                     disclosureref="[object Object]"
                                     hidetimeout="0"
-                                    id="id-x9l1bq"
+                                    id="id-rven74"
                                     initialfocus="container"
                                     items="[object Object],[object Object]"
                                     moves="0"
@@ -1614,13 +1614,13 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             disclosureRef={
                               Object {
                                 "current": <button
-                                  aria-controls="id-00ygnc"
+                                  aria-controls="id-qwhsyb"
                                   aria-expanded="false"
                                   aria-haspopup="menu"
                                   class="button"
                                   data-command=""
                                   data-disclosure=""
-                                  id="id-u65qo7"
+                                  id="id-on9zvi"
                                   type="button"
                                 >
                                   <div
@@ -1662,10 +1662,10 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               Array [
                                 Object {
                                   "disabled": false,
-                                  "id": "id-tsrglk",
+                                  "id": "id-3st6gm",
                                   "ref": Object {
                                     "current": <div
-                                      activeid="id-tsrglk"
+                                      activeid="id-3st6gm"
                                       anchorref="[object Object]"
                                       arrowpadding="4"
                                       arrowref="[object Object]"
@@ -1678,7 +1678,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       data-composite-hover=""
                                       disclosureref="[object Object]"
                                       hidetimeout="0"
-                                      id="id-tsrglk"
+                                      id="id-3st6gm"
                                       initialfocus="container"
                                       items="[object Object],[object Object]"
                                       moves="0"
@@ -1716,10 +1716,10 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                 },
                                 Object {
                                   "disabled": false,
-                                  "id": "id-x9l1bq",
+                                  "id": "id-rven74",
                                   "ref": Object {
                                     "current": <div
-                                      activeid="id-tsrglk"
+                                      activeid="id-3st6gm"
                                       anchorref="[object Object]"
                                       arrowpadding="4"
                                       arrowref="[object Object]"
@@ -1731,7 +1731,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       data-composite-hover=""
                                       disclosureref="[object Object]"
                                       hidetimeout="0"
-                                      id="id-x9l1bq"
+                                      id="id-rven74"
                                       initialfocus="container"
                                       items="[object Object],[object Object]"
                                       moves="0"
@@ -1791,7 +1791,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                     class="dropdown"
                                     data-dialog=""
                                     hidden=""
-                                    id="id-00ygnc"
+                                    id="id-qwhsyb"
                                     role="menu"
                                     style="position: relative; display: none;"
                                     tabindex="-1"
@@ -1800,7 +1800,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       class="items"
                                     >
                                       <div
-                                        activeid="id-tsrglk"
+                                        activeid="id-3st6gm"
                                         anchorref="[object Object]"
                                         arrowpadding="4"
                                         arrowref="[object Object]"
@@ -1813,7 +1813,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                         data-composite-hover=""
                                         disclosureref="[object Object]"
                                         hidetimeout="0"
-                                        id="id-tsrglk"
+                                        id="id-3st6gm"
                                         initialfocus="container"
                                         items="[object Object],[object Object]"
                                         moves="0"
@@ -1847,7 +1847,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                         </span>
                                       </div>
                                       <div
-                                        activeid="id-tsrglk"
+                                        activeid="id-3st6gm"
                                         anchorref="[object Object]"
                                         arrowpadding="4"
                                         arrowref="[object Object]"
@@ -1859,7 +1859,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                         data-composite-hover=""
                                         disclosureref="[object Object]"
                                         hidetimeout="0"
-                                        id="id-x9l1bq"
+                                        id="id-rven74"
                                         initialfocus="container"
                                         items="[object Object],[object Object]"
                                         moves="0"
@@ -1926,18 +1926,18 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             visible={false}
                           >
                             <div
-                              activeId="id-tsrglk"
+                              activeId="id-3st6gm"
                               anchorRect={null}
                               anchorRef={
                                 Object {
                                   "current": <button
-                                    aria-controls="id-00ygnc"
+                                    aria-controls="id-qwhsyb"
                                     aria-expanded="false"
                                     aria-haspopup="menu"
                                     class="button"
                                     data-command=""
                                     data-disclosure=""
-                                    id="id-u65qo7"
+                                    id="id-on9zvi"
                                     type="button"
                                   >
                                     <div
@@ -1980,7 +1980,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                     class="dropdown"
                                     data-dialog=""
                                     hidden=""
-                                    id="id-00ygnc"
+                                    id="id-qwhsyb"
                                     role="menu"
                                     style="position: relative; display: none;"
                                     tabindex="-1"
@@ -1989,7 +1989,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       class="items"
                                     >
                                       <div
-                                        activeid="id-tsrglk"
+                                        activeid="id-3st6gm"
                                         anchorref="[object Object]"
                                         arrowpadding="4"
                                         arrowref="[object Object]"
@@ -2002,7 +2002,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                         data-composite-hover=""
                                         disclosureref="[object Object]"
                                         hidetimeout="0"
-                                        id="id-tsrglk"
+                                        id="id-3st6gm"
                                         initialfocus="container"
                                         items="[object Object],[object Object]"
                                         moves="0"
@@ -2036,7 +2036,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                         </span>
                                       </div>
                                       <div
-                                        activeid="id-tsrglk"
+                                        activeid="id-3st6gm"
                                         anchorref="[object Object]"
                                         arrowpadding="4"
                                         arrowref="[object Object]"
@@ -2048,7 +2048,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                         data-composite-hover=""
                                         disclosureref="[object Object]"
                                         hidetimeout="0"
-                                        id="id-x9l1bq"
+                                        id="id-rven74"
                                         initialfocus="container"
                                         items="[object Object],[object Object]"
                                         moves="0"
@@ -2093,7 +2093,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                   class="dropdown"
                                   data-dialog=""
                                   hidden=""
-                                  id="id-00ygnc"
+                                  id="id-qwhsyb"
                                   role="menu"
                                   style="position: relative; display: none;"
                                   tabindex="-1"
@@ -2102,7 +2102,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                     class="items"
                                   >
                                     <div
-                                      activeid="id-tsrglk"
+                                      activeid="id-3st6gm"
                                       anchorref="[object Object]"
                                       arrowpadding="4"
                                       arrowref="[object Object]"
@@ -2115,7 +2115,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       data-composite-hover=""
                                       disclosureref="[object Object]"
                                       hidetimeout="0"
-                                      id="id-tsrglk"
+                                      id="id-3st6gm"
                                       initialfocus="container"
                                       items="[object Object],[object Object]"
                                       moves="0"
@@ -2149,7 +2149,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       </span>
                                     </div>
                                     <div
-                                      activeid="id-tsrglk"
+                                      activeid="id-3st6gm"
                                       anchorref="[object Object]"
                                       arrowpadding="4"
                                       arrowref="[object Object]"
@@ -2161,7 +2161,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       data-composite-hover=""
                                       disclosureref="[object Object]"
                                       hidetimeout="0"
-                                      id="id-x9l1bq"
+                                      id="id-rven74"
                                       initialfocus="container"
                                       items="[object Object],[object Object]"
                                       moves="0"
@@ -2204,13 +2204,13 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               disclosureRef={
                                 Object {
                                   "current": <button
-                                    aria-controls="id-00ygnc"
+                                    aria-controls="id-qwhsyb"
                                     aria-expanded="false"
                                     aria-haspopup="menu"
                                     class="button"
                                     data-command=""
                                     data-disclosure=""
-                                    id="id-u65qo7"
+                                    id="id-on9zvi"
                                     type="button"
                                   >
                                     <div
@@ -2246,17 +2246,17 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               hide={[Function]}
                               hideAll={[Function]}
                               hideTimeout={0}
-                              id="id-tsrglk"
+                              id="id-3st6gm"
                               includesBaseElement={false}
                               initialFocus="container"
                               items={
                                 Array [
                                   Object {
                                     "disabled": false,
-                                    "id": "id-tsrglk",
+                                    "id": "id-3st6gm",
                                     "ref": Object {
                                       "current": <div
-                                        activeid="id-tsrglk"
+                                        activeid="id-3st6gm"
                                         anchorref="[object Object]"
                                         arrowpadding="4"
                                         arrowref="[object Object]"
@@ -2269,7 +2269,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                         data-composite-hover=""
                                         disclosureref="[object Object]"
                                         hidetimeout="0"
-                                        id="id-tsrglk"
+                                        id="id-3st6gm"
                                         initialfocus="container"
                                         items="[object Object],[object Object]"
                                         moves="0"
@@ -2307,10 +2307,10 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                   },
                                   Object {
                                     "disabled": false,
-                                    "id": "id-x9l1bq",
+                                    "id": "id-rven74",
                                     "ref": Object {
                                       "current": <div
-                                        activeid="id-tsrglk"
+                                        activeid="id-3st6gm"
                                         anchorref="[object Object]"
                                         arrowpadding="4"
                                         arrowref="[object Object]"
@@ -2322,7 +2322,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                         data-composite-hover=""
                                         disclosureref="[object Object]"
                                         hidetimeout="0"
-                                        id="id-x9l1bq"
+                                        id="id-rven74"
                                         initialfocus="container"
                                         items="[object Object],[object Object]"
                                         moves="0"
@@ -2394,7 +2394,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       class="dropdown"
                                       data-dialog=""
                                       hidden=""
-                                      id="id-00ygnc"
+                                      id="id-qwhsyb"
                                       role="menu"
                                       style="position: relative; display: none;"
                                       tabindex="-1"
@@ -2403,7 +2403,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                         class="items"
                                       >
                                         <div
-                                          activeid="id-tsrglk"
+                                          activeid="id-3st6gm"
                                           anchorref="[object Object]"
                                           arrowpadding="4"
                                           arrowref="[object Object]"
@@ -2416,7 +2416,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                           data-composite-hover=""
                                           disclosureref="[object Object]"
                                           hidetimeout="0"
-                                          id="id-tsrglk"
+                                          id="id-3st6gm"
                                           initialfocus="container"
                                           items="[object Object],[object Object]"
                                           moves="0"
@@ -2450,7 +2450,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                           </span>
                                         </div>
                                         <div
-                                          activeid="id-tsrglk"
+                                          activeid="id-3st6gm"
                                           anchorref="[object Object]"
                                           arrowpadding="4"
                                           arrowref="[object Object]"
@@ -2462,7 +2462,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                           data-composite-hover=""
                                           disclosureref="[object Object]"
                                           hidetimeout="0"
-                                          id="id-x9l1bq"
+                                          id="id-rven74"
                                           initialfocus="container"
                                           items="[object Object],[object Object]"
                                           moves="0"
@@ -2556,18 +2556,18 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             </div>
                           </ForwardRef(Role)>
                           <ForwardRef(Role)
-                            activeId="id-tsrglk"
+                            activeId="id-3st6gm"
                             anchorRect={null}
                             anchorRef={
                               Object {
                                 "current": <button
-                                  aria-controls="id-00ygnc"
+                                  aria-controls="id-qwhsyb"
                                   aria-expanded="false"
                                   aria-haspopup="menu"
                                   class="button"
                                   data-command=""
                                   data-disclosure=""
-                                  id="id-u65qo7"
+                                  id="id-on9zvi"
                                   type="button"
                                 >
                                   <div
@@ -2610,7 +2610,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                   class="dropdown"
                                   data-dialog=""
                                   hidden=""
-                                  id="id-00ygnc"
+                                  id="id-qwhsyb"
                                   role="menu"
                                   style="position: relative; display: none;"
                                   tabindex="-1"
@@ -2619,7 +2619,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                     class="items"
                                   >
                                     <div
-                                      activeid="id-tsrglk"
+                                      activeid="id-3st6gm"
                                       anchorref="[object Object]"
                                       arrowpadding="4"
                                       arrowref="[object Object]"
@@ -2632,7 +2632,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       data-composite-hover=""
                                       disclosureref="[object Object]"
                                       hidetimeout="0"
-                                      id="id-tsrglk"
+                                      id="id-3st6gm"
                                       initialfocus="container"
                                       items="[object Object],[object Object]"
                                       moves="0"
@@ -2666,7 +2666,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       </span>
                                     </div>
                                     <div
-                                      activeid="id-tsrglk"
+                                      activeid="id-3st6gm"
                                       anchorref="[object Object]"
                                       arrowpadding="4"
                                       arrowref="[object Object]"
@@ -2678,7 +2678,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       data-composite-hover=""
                                       disclosureref="[object Object]"
                                       hidetimeout="0"
-                                      id="id-x9l1bq"
+                                      id="id-rven74"
                                       initialfocus="container"
                                       items="[object Object],[object Object]"
                                       moves="0"
@@ -2723,7 +2723,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                 class="dropdown"
                                 data-dialog=""
                                 hidden=""
-                                id="id-00ygnc"
+                                id="id-qwhsyb"
                                 role="menu"
                                 style="position: relative; display: none;"
                                 tabindex="-1"
@@ -2732,7 +2732,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                   class="items"
                                 >
                                   <div
-                                    activeid="id-tsrglk"
+                                    activeid="id-3st6gm"
                                     anchorref="[object Object]"
                                     arrowpadding="4"
                                     arrowref="[object Object]"
@@ -2745,7 +2745,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                     data-composite-hover=""
                                     disclosureref="[object Object]"
                                     hidetimeout="0"
-                                    id="id-tsrglk"
+                                    id="id-3st6gm"
                                     initialfocus="container"
                                     items="[object Object],[object Object]"
                                     moves="0"
@@ -2779,7 +2779,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                     </span>
                                   </div>
                                   <div
-                                    activeid="id-tsrglk"
+                                    activeid="id-3st6gm"
                                     anchorref="[object Object]"
                                     arrowpadding="4"
                                     arrowref="[object Object]"
@@ -2791,7 +2791,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                     data-composite-hover=""
                                     disclosureref="[object Object]"
                                     hidetimeout="0"
-                                    id="id-x9l1bq"
+                                    id="id-rven74"
                                     initialfocus="container"
                                     items="[object Object],[object Object]"
                                     moves="0"
@@ -2831,13 +2831,13 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             disclosureRef={
                               Object {
                                 "current": <button
-                                  aria-controls="id-00ygnc"
+                                  aria-controls="id-qwhsyb"
                                   aria-expanded="false"
                                   aria-haspopup="menu"
                                   class="button"
                                   data-command=""
                                   data-disclosure=""
-                                  id="id-u65qo7"
+                                  id="id-on9zvi"
                                   type="button"
                                 >
                                   <div
@@ -2879,10 +2879,10 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               Array [
                                 Object {
                                   "disabled": false,
-                                  "id": "id-tsrglk",
+                                  "id": "id-3st6gm",
                                   "ref": Object {
                                     "current": <div
-                                      activeid="id-tsrglk"
+                                      activeid="id-3st6gm"
                                       anchorref="[object Object]"
                                       arrowpadding="4"
                                       arrowref="[object Object]"
@@ -2895,7 +2895,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       data-composite-hover=""
                                       disclosureref="[object Object]"
                                       hidetimeout="0"
-                                      id="id-tsrglk"
+                                      id="id-3st6gm"
                                       initialfocus="container"
                                       items="[object Object],[object Object]"
                                       moves="0"
@@ -2933,10 +2933,10 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                 },
                                 Object {
                                   "disabled": false,
-                                  "id": "id-x9l1bq",
+                                  "id": "id-rven74",
                                   "ref": Object {
                                     "current": <div
-                                      activeid="id-tsrglk"
+                                      activeid="id-3st6gm"
                                       anchorref="[object Object]"
                                       arrowpadding="4"
                                       arrowref="[object Object]"
@@ -2948,7 +2948,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       data-composite-hover=""
                                       disclosureref="[object Object]"
                                       hidetimeout="0"
-                                      id="id-x9l1bq"
+                                      id="id-rven74"
                                       initialfocus="container"
                                       items="[object Object],[object Object]"
                                       moves="0"
@@ -3008,7 +3008,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                     class="dropdown"
                                     data-dialog=""
                                     hidden=""
-                                    id="id-00ygnc"
+                                    id="id-qwhsyb"
                                     role="menu"
                                     style="position: relative; display: none;"
                                     tabindex="-1"
@@ -3017,7 +3017,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       class="items"
                                     >
                                       <div
-                                        activeid="id-tsrglk"
+                                        activeid="id-3st6gm"
                                         anchorref="[object Object]"
                                         arrowpadding="4"
                                         arrowref="[object Object]"
@@ -3030,7 +3030,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                         data-composite-hover=""
                                         disclosureref="[object Object]"
                                         hidetimeout="0"
-                                        id="id-tsrglk"
+                                        id="id-3st6gm"
                                         initialfocus="container"
                                         items="[object Object],[object Object]"
                                         moves="0"
@@ -3064,7 +3064,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                         </span>
                                       </div>
                                       <div
-                                        activeid="id-tsrglk"
+                                        activeid="id-3st6gm"
                                         anchorref="[object Object]"
                                         arrowpadding="4"
                                         arrowref="[object Object]"
@@ -3076,7 +3076,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                         data-composite-hover=""
                                         disclosureref="[object Object]"
                                         hidetimeout="0"
-                                        id="id-x9l1bq"
+                                        id="id-rven74"
                                         initialfocus="container"
                                         items="[object Object],[object Object]"
                                         moves="0"
@@ -3143,18 +3143,18 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                             visible={false}
                           >
                             <div
-                              activeId="id-tsrglk"
+                              activeId="id-3st6gm"
                               anchorRect={null}
                               anchorRef={
                                 Object {
                                   "current": <button
-                                    aria-controls="id-00ygnc"
+                                    aria-controls="id-qwhsyb"
                                     aria-expanded="false"
                                     aria-haspopup="menu"
                                     class="button"
                                     data-command=""
                                     data-disclosure=""
-                                    id="id-u65qo7"
+                                    id="id-on9zvi"
                                     type="button"
                                   >
                                     <div
@@ -3197,7 +3197,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                     class="dropdown"
                                     data-dialog=""
                                     hidden=""
-                                    id="id-00ygnc"
+                                    id="id-qwhsyb"
                                     role="menu"
                                     style="position: relative; display: none;"
                                     tabindex="-1"
@@ -3206,7 +3206,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       class="items"
                                     >
                                       <div
-                                        activeid="id-tsrglk"
+                                        activeid="id-3st6gm"
                                         anchorref="[object Object]"
                                         arrowpadding="4"
                                         arrowref="[object Object]"
@@ -3219,7 +3219,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                         data-composite-hover=""
                                         disclosureref="[object Object]"
                                         hidetimeout="0"
-                                        id="id-tsrglk"
+                                        id="id-3st6gm"
                                         initialfocus="container"
                                         items="[object Object],[object Object]"
                                         moves="0"
@@ -3253,7 +3253,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                         </span>
                                       </div>
                                       <div
-                                        activeid="id-tsrglk"
+                                        activeid="id-3st6gm"
                                         anchorref="[object Object]"
                                         arrowpadding="4"
                                         arrowref="[object Object]"
@@ -3265,7 +3265,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                         data-composite-hover=""
                                         disclosureref="[object Object]"
                                         hidetimeout="0"
-                                        id="id-x9l1bq"
+                                        id="id-rven74"
                                         initialfocus="container"
                                         items="[object Object],[object Object]"
                                         moves="0"
@@ -3310,7 +3310,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                   class="dropdown"
                                   data-dialog=""
                                   hidden=""
-                                  id="id-00ygnc"
+                                  id="id-qwhsyb"
                                   role="menu"
                                   style="position: relative; display: none;"
                                   tabindex="-1"
@@ -3319,7 +3319,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                     class="items"
                                   >
                                     <div
-                                      activeid="id-tsrglk"
+                                      activeid="id-3st6gm"
                                       anchorref="[object Object]"
                                       arrowpadding="4"
                                       arrowref="[object Object]"
@@ -3332,7 +3332,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       data-composite-hover=""
                                       disclosureref="[object Object]"
                                       hidetimeout="0"
-                                      id="id-tsrglk"
+                                      id="id-3st6gm"
                                       initialfocus="container"
                                       items="[object Object],[object Object]"
                                       moves="0"
@@ -3366,7 +3366,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       </span>
                                     </div>
                                     <div
-                                      activeid="id-tsrglk"
+                                      activeid="id-3st6gm"
                                       anchorref="[object Object]"
                                       arrowpadding="4"
                                       arrowref="[object Object]"
@@ -3378,7 +3378,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       data-composite-hover=""
                                       disclosureref="[object Object]"
                                       hidetimeout="0"
-                                      id="id-x9l1bq"
+                                      id="id-rven74"
                                       initialfocus="container"
                                       items="[object Object],[object Object]"
                                       moves="0"
@@ -3420,13 +3420,13 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               disclosureRef={
                                 Object {
                                   "current": <button
-                                    aria-controls="id-00ygnc"
+                                    aria-controls="id-qwhsyb"
                                     aria-expanded="false"
                                     aria-haspopup="menu"
                                     class="button"
                                     data-command=""
                                     data-disclosure=""
-                                    id="id-u65qo7"
+                                    id="id-on9zvi"
                                     type="button"
                                   >
                                     <div
@@ -3462,17 +3462,17 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                               hide={[Function]}
                               hideAll={[Function]}
                               hideTimeout={0}
-                              id="id-x9l1bq"
+                              id="id-rven74"
                               includesBaseElement={false}
                               initialFocus="container"
                               items={
                                 Array [
                                   Object {
                                     "disabled": false,
-                                    "id": "id-tsrglk",
+                                    "id": "id-3st6gm",
                                     "ref": Object {
                                       "current": <div
-                                        activeid="id-tsrglk"
+                                        activeid="id-3st6gm"
                                         anchorref="[object Object]"
                                         arrowpadding="4"
                                         arrowref="[object Object]"
@@ -3485,7 +3485,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                         data-composite-hover=""
                                         disclosureref="[object Object]"
                                         hidetimeout="0"
-                                        id="id-tsrglk"
+                                        id="id-3st6gm"
                                         initialfocus="container"
                                         items="[object Object],[object Object]"
                                         moves="0"
@@ -3523,10 +3523,10 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                   },
                                   Object {
                                     "disabled": false,
-                                    "id": "id-x9l1bq",
+                                    "id": "id-rven74",
                                     "ref": Object {
                                       "current": <div
-                                        activeid="id-tsrglk"
+                                        activeid="id-3st6gm"
                                         anchorref="[object Object]"
                                         arrowpadding="4"
                                         arrowref="[object Object]"
@@ -3538,7 +3538,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                         data-composite-hover=""
                                         disclosureref="[object Object]"
                                         hidetimeout="0"
-                                        id="id-x9l1bq"
+                                        id="id-rven74"
                                         initialfocus="container"
                                         items="[object Object],[object Object]"
                                         moves="0"
@@ -3610,7 +3610,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                       class="dropdown"
                                       data-dialog=""
                                       hidden=""
-                                      id="id-00ygnc"
+                                      id="id-qwhsyb"
                                       role="menu"
                                       style="position: relative; display: none;"
                                       tabindex="-1"
@@ -3619,7 +3619,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                         class="items"
                                       >
                                         <div
-                                          activeid="id-tsrglk"
+                                          activeid="id-3st6gm"
                                           anchorref="[object Object]"
                                           arrowpadding="4"
                                           arrowref="[object Object]"
@@ -3632,7 +3632,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                           data-composite-hover=""
                                           disclosureref="[object Object]"
                                           hidetimeout="0"
-                                          id="id-tsrglk"
+                                          id="id-3st6gm"
                                           initialfocus="container"
                                           items="[object Object],[object Object]"
                                           moves="0"
@@ -3666,7 +3666,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                           </span>
                                         </div>
                                         <div
-                                          activeid="id-tsrglk"
+                                          activeid="id-3st6gm"
                                           anchorref="[object Object]"
                                           arrowpadding="4"
                                           arrowref="[object Object]"
@@ -3678,7 +3678,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                           data-composite-hover=""
                                           disclosureref="[object Object]"
                                           hidetimeout="0"
-                                          id="id-x9l1bq"
+                                          id="id-rven74"
                                           initialfocus="container"
                                           items="[object Object],[object Object]"
                                           moves="0"
@@ -3805,6 +3805,26 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
       }
       width="16"
     >
+      <symbol
+        className="feather feather-alert-circle"
+        fill="none"
+        id="alert-circle"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="M12 8v4M12 16h.01"
+        />
+      </symbol>
       <symbol
         className="feather feather-arrow-down"
         fill="none"
