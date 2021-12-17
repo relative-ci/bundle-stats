@@ -13,6 +13,7 @@ import {
 import { Box } from '../layout/box';
 import { Container } from '../ui/container';
 import { DuplicatePackagesWarning } from '../components/duplicate-packages-warning';
+import { BudgetInsights } from '../components/budget-insights';
 import { Summary } from '../components/summary';
 import { BundleAssets } from '../components/bundle-assets';
 import { BundleAssetsTotalsChartBars } from '../components/bundle-assets-totals-chart-bars';
@@ -195,6 +196,11 @@ const AppComponent = ({ version, jobs }) => {
                       duplicatePackagesCount={duplicatePackagesCount}
                       showDelta={jobs.length > 1}
                     />
+                  </Container>
+                )}
+                {insights?.webpack?.budgets && (
+                  <Container>
+                    <BudgetInsights source="webpack" budgets={insights.webpack.budgets} />
                   </Container>
                 )}
                 <Container>
