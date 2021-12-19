@@ -29,9 +29,22 @@ export const BudgetInfo = ({ className = '', metricId, budgetInsight }) => {
   const { className: insightTypeClassName, glyph } = INSIGHT_TYPE_MAP[budgetInsightInfo.type];
 
   const rootClassName = cx(css.root, insightTypeClassName, className);
+  const { data: messageData } = budgetInsightInfo.message;
 
   return (
-    <Tooltip className={rootClassName} title={budgetInsightInfo.data.text}>
+    <Tooltip
+      className={rootClassName}
+      title={
+        <>
+          <strong>{messageData.metricLabel}</strong>
+          {` value (`}
+          <strong>{messageData.currentValue}</strong>
+          {`) is ${messageData.diffLabel} `}
+          <strong>{messageData.budgetValue}</strong>
+          {` budget `}
+        </>
+      }
+    >
       <Icon className={css.icon} glyph={glyph} size="medium" />
     </Tooltip>
   );
