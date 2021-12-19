@@ -23,44 +23,44 @@ Default.args = {
   source: 'webpack',
   budgets: {
     totalSizeByTypeALL: {
-      value: 2097917,
-      budget: 2097152,
-      overBudget: true,
+      currentValue: 2097917,
+      budgetValue: 2097152,
+      failed: true,
     },
     totalInitialSizeJS: {
-      value: 1265645,
-      budget: 524288,
-      overBudget: true,
+      currentValue: 1265645,
+      budgetValue: 524288,
+      failed: true,
     },
     totalInitialSizeCSS: {
-      value: 48866,
-      budget: 51200,
-      overBudget: false,
+      currentValue: 48866,
+      budgetValue: 51200,
+      failed: false,
     },
     chunkCount: {
-      value: 12,
-      budget: 50,
-      overBudget: false,
+      currentValue: 12,
+      budgetValue: 50,
+      failed: false,
     },
     moduleCount: {
-      value: 1059,
-      budget: 2000,
-      overBudget: false,
+      currentValue: 1059,
+      budgetValue: 2000,
+      failed: false,
     },
     duplicatePackagesCount: {
-      value: 13,
-      budget: 5,
-      overBudget: true,
+      currentValue: 13,
+      budgetValue: 5,
+      failed: true,
     },
     'sizes.totalSizeByTypeJS': {
-      value: 1981470,
-      budget: 2097152,
-      overBudget: false,
+      currentValue: 1981470,
+      budgetValue: 2097152,
+      failed: false,
     },
     'sizes.totalSizeByTypeCSS': {
-      value: 56091,
-      budget: 20480,
-      overBudget: true,
+      currentValue: 56091,
+      budgetValue: 20480,
+      failed: true,
     },
   },
 };
@@ -71,14 +71,14 @@ FailedBudgets.args = {
   source: 'webpack',
   budgets: {
     totalSizeByTypeALL: {
-      value: 2097917,
-      budget: 2097152,
-      overBudget: true,
+      currentValue: 2097917,
+      budgetValue: 2097152,
+      failed: true,
     },
     totalInitialSizeJS: {
-      value: 1265645,
-      budget: 524288,
-      overBudget: true,
+      currentValue: 1265645,
+      budgetValue: 524288,
+      failed: true,
     },
   },
 };
@@ -89,9 +89,9 @@ SingleBudget.args = {
   source: 'webpack',
   budgets: {
     totalInitialSizeJS: {
-      value: 524288,
-      budget: 1265645,
-      overBudget: false,
+      currentValue: 524288,
+      budgetValue: 1265645,
+      failed: false,
     },
   },
 };

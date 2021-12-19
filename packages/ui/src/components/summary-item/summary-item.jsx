@@ -71,7 +71,7 @@ export const SummaryItem = ({
           </Popover>
         )}
 
-        {budget && <BudgetInfo className={css.budgetInfo} metric={metric} budget={budget} />}
+        {budget && <BudgetInfo className={css.budgetInfo} metricId={id} budgetInsight={budget} />}
       </FlexStack>
 
       {!loading ? (
@@ -139,10 +139,10 @@ SummaryItem.propTypes = {
   /** Show delta */
   showDelta: PropTypes.bool,
 
-  /** Budget data */
+  /** Budget insight data */
   budget: PropTypes.shape({
-    value: PropTypes.number,
-    budget: PropTypes.number,
-    overBudget: PropTypes.bool,
+    currentBalue: PropTypes.number,
+    budgetValue: PropTypes.number,
+    failed: PropTypes.bool,
   }),
 };
