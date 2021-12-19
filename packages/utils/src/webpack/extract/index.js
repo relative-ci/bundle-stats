@@ -1,5 +1,6 @@
 import merge from 'lodash/merge';
 
+import * as budgetsInsights from '../../transformers/budgets-insights';
 import { extractAssets } from './assets';
 import { extractAssetsCacheInvalidation } from './assets-cache-invalidation';
 import { extractAssetsChunkCount } from './assets-chunk-count';
@@ -12,7 +13,6 @@ import { extractModulesCount } from './modules-count';
 import { extractModulesPackages } from './modules-packages';
 import { extractModulesPackagesCount } from './modules-packages-count';
 import { extractModulesPackagesDuplicate } from './modules-packages-duplicate';
-import extractBudgetsInsights from './budgets-insights';
 
 const extractFns = [
   extractAssets,
@@ -27,14 +27,11 @@ const extractFns = [
   extractModulesPackages,
   extractModulesPackagesCount,
   extractModulesPackagesDuplicate,
-  extractBudgetsInsights,
+  budgetsInsights.getExtract('webpack'),
 ];
 
-export const extract = (webpackStats, baseline, options) => extractFns.reduce(
-  (agg, extractFn) => merge(
+export const extract = (webpackStats, baseline, options) =>
+  extractFns.reduce(
+    (agg, extractFn) => merge({}, agg, extractFn(webpackStats, agg, baseline, options)),
     {},
-    agg,
-    extractFn(webpackStats, agg, baseline, options),
-  ),
-  {}
-);
+  );
