@@ -22,24 +22,24 @@ stories.add('budgets', () => (
     budgets={{
       webpack: {
         totalSizeByTypeALL: {
-          value: MULTIPLE_JOBS[0].summary.webpack.totalSizeByTypeALL,
-          budget: 1024 * 1024,
-          overBudget: false,
+          currentValue: MULTIPLE_JOBS[0].summary.webpack.totalSizeByTypeALL.current,
+          budgetValue: 1024 * 1024,
+          failed: false,
         },
         totalInitialSizeJS: {
-          value: MULTIPLE_JOBS[0].summary.webpack.totalInitialSizeJS,
-          budget: 512 * 1024,
-          overBudget: true,
+          currentValue: MULTIPLE_JOBS[0].summary.webpack.totalInitialSizeJS.current,
+          budgetValue: 512 * 1024,
+          failed: true,
         },
         totalInitialSizeCSS: {
-          value: MULTIPLE_JOBS[0].summary.webpack.totalInitialSizeCSS,
-          budget: 50 * 1024,
-          overBudget: false,
+          currentValue: MULTIPLE_JOBS[0].summary.webpack.totalInitialSizeCSS.current,
+          budgetValue: 50 * 1024,
+          failed: false,
         },
         chunkCount: {
-          value: MULTIPLE_JOBS[0].summary.webpack.chunkCount,
-          budget: 50,
-          overBudget: false,
+          currentValue: MULTIPLE_JOBS[0].summary.webpack.chunkCount.current,
+          budgetValue: 50,
+          failed: false,
         },
       },
     }}

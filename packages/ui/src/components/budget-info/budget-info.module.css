@@ -3,26 +3,38 @@
   line-height: 1em;
 }
 
-/* Budget over */
-.over .icon {
-  color: var(--color-danger-light);
-}
-
-.over .icon:hover,
-.over .icon:focus,
-.over .icon:active
-{
+/* Budget error */
+.error .icon {
   color: var(--color-danger);
 }
 
-/* Budget under */
-.under .icon {
+.error .icon:hover,
+.error .icon:focus,
+.error .icon:active
+{
+  color: var(--color-danger-light);
+}
+
+/* Budget success */
+.success .icon {
+  color: var(--color-success);
+}
+
+.success .icon:hover,
+.success .icon:focus,
+.success .icon:active
+{
   color: var(--color-success-light);
 }
 
-.under .icon:hover,
-.under .icon:focus,
-.under .icon:active
+/* Budget warning */
+.warning .icon {
+  color: var(--color-warning-dark);
+}
+
+.warning .icon:hover,
+.warning .icon:focus,
+.warning .icon:active
 {
-  color: var(--color-success);
+  color: var(--color-warning);
 }
