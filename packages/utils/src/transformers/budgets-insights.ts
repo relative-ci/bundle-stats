@@ -1,5 +1,4 @@
 import get from 'lodash/get';
-import template from 'lodash/template';
 
 import { InsightType } from '../constants';
 import { getGlobalMetricType } from '../utils';
@@ -21,11 +20,14 @@ interface BudgetInsight {
 
 interface BudgetInsightInfo {
   type: InsightType;
-  data: {
-    text: string;
-    md: string;
+  message: {
+    template: string;
+    data: Record<string, unknown>;
   };
-  source: BudgetInsight;
+  source: {
+    metricId: string;
+    budgetInsight: BudgetInsight;
+  };
 }
 
 interface BudgetInsights {
@@ -84,8 +86,6 @@ export const getExtract =
     };
   };
 
-const infoTemplate = template('<%= metric %> is <%= diff %> <%= value %> budget');
-
 const resolveDiffLabel = (budgetInsight: BudgetInsight): string => {
   const { currentValue, budgetValue } = budgetInsight;
 
@@ -112,23 +112,32 @@ const resolveType = (budgetInsight: BudgetInsight): InsightType => {
   return InsightType.SUCCESS;
 };
 
+// Add escapes for (|) to avoid lodash.template syntax errors
+// eslint-disable-next-line no-useless-escape
+export const INFO_MESSAGE_TEMPLATE = '<%= metricLabel %> value \(<%= currentValue %>\) is <%= diffLabel %> <%= budgetValue %> budget';
+
 export const getInfo = (globalMetricId: string, budgetInsight: BudgetInsight): BudgetInsightInfo => {
   const metric = getGlobalMetricType(globalMetricId);
 
-  const diff = resolveDiffLabel(budgetInsight);
+  const diffLabel = resolveDiffLabel(budgetInsight);
   const type = resolveType(budgetInsight);
-  const value = metric.formatter(budgetInsight.budgetValue);
+  const currentValue = metric.formatter(budgetInsight.currentValue);
+  const budgetValue = metric.formatter(budgetInsight.budgetValue);
 
   return {
     type,
-    data: {
-      text: infoTemplate({ metric: metric.label, diff, value }),
-      md: infoTemplate({
-        metric: `**${metric.label}**`,
-        diff,
-        value: `**${value}**`,
-      }),
+    message: {
+      template: INFO_MESSAGE_TEMPLATE,
+      data: {
+        metricLabel: metric.label,
+        diffLabel,
+        currentValue,
+        budgetValue,
+      },
     },
-    source: budgetInsight,
+    source: {
+      metricId: globalMetricId,
+      budgetInsight,
+    },
   };
 };
