@@ -1,7 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { METRIC_COMPONENT_LINKS, getGlobalMetricType } from '@bundle-stats/utils';
+import { METRIC_COMPONENT_LINKS } from '@bundle-stats/utils';
+import * as budgetsInsightsTransformer from '@bundle-stats/utils/lib-esm/transformers/budgets-insights';
 
 import { Box } from '../../layout/box';
 import { Stack } from '../../layout/stack';
@@ -12,26 +13,25 @@ import { ComponentLink } from '../component-link';
 import css from './budget-insights.module.css';
 
 const Budget = (props) => {
-  const { className, metricKey, CustomLink, failed, budgetValue } = props;
-  const metric = getGlobalMetricType(metricKey);
-  const componentLinkOptions = METRIC_COMPONENT_LINKS.get(metricKey);
+  const { className, metricId, budgetInsight, CustomLink } = props;
+  const componentLinkOptions = METRIC_COMPONENT_LINKS.get(metricId);
+  const budgetInsightInfo = budgetsInsightsTransformer.getInfo(metricId, budgetInsight);
 
   return (
     <CustomLink className={cx(css.budget, className)} {...componentLinkOptions?.link}>
-      <span className={css.budgetLabel}>{metric.label}</span>
-      {` is ${failed ? 'over' : 'under'} `}
-      <span className={css.budgetValue}>{metric.formatter(budgetValue)}</span>
-      {` budget`}
+      {budgetInsightInfo.data.text}
     </CustomLink>
   );
 };
 
 Budget.propTypes = {
   className: PropTypes.string,
-  metricKey: PropTypes.string.isRequired,
-  failed: PropTypes.bool.isRequired,
-  currentValue: PropTypes.number.isRequired,
-  budgetValue: PropTypes.number.isRequired,
+  metricId: PropTypes.string.isRequired,
+  budgetInsight: PropTypes.shape({
+    currentValue: PropTypes.number.isRequired,
+    budgetValue: PropTypes.number.isRequired,
+    failed: PropTypes.bool.isRequired,
+  }).isRequired,
   CustomLink: PropTypes.elementType.isRequired,
 };
 
@@ -73,10 +73,9 @@ const BudgetsGroup = (props) => {
             {budgets.map(([key, budget]) => (
               <Budget
                 key={key}
-                source={source}
-                metricKey={`${source}.${key}`}
+                metricId={`${source}.${key}`}
+                budgetInsight={budget}
                 CustomLink={CustomLink}
-                {...budget}
               />
             ))}
           </Stack>
