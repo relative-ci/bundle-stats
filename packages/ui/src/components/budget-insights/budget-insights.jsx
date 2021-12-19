@@ -16,10 +16,16 @@ const Budget = (props) => {
   const { className, metricId, budgetInsight, CustomLink } = props;
   const componentLinkOptions = METRIC_COMPONENT_LINKS.get(metricId);
   const budgetInsightInfo = budgetsInsightsTransformer.getInfo(metricId, budgetInsight);
+  const { data: messageData } = budgetInsightInfo.message;
 
   return (
     <CustomLink className={cx(css.budget, className)} {...componentLinkOptions?.link}>
-      {budgetInsightInfo.data.text}
+      <strong>{messageData.metricLabel}</strong>
+      {` value (`}
+      <strong>{messageData.currentValue}</strong>
+      {`) is ${messageData.diffLabel} `}
+      <strong>{messageData.budgetValue}</strong>
+      {` budget `}
     </CustomLink>
   );
 };
