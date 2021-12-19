@@ -4,7 +4,6 @@ import cx from 'classnames';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { HoverCard } from '../../ui/hover-card';
-import { Icon } from '../../ui/icon';
 import { Skeleton } from '../../ui/skeleton';
 import { Stack } from '../../layout/stack';
 import { Metric } from '../metric';
@@ -63,7 +62,7 @@ export const SummaryItem = ({
         ) : (
           metric.label
         )}
-        {budget && <BudgetInfo className={css.budgetInfo} metric={metric} budget={budget} />}
+        {budget && <BudgetInfo className={css.budgetInfo} metricId={id} budgetInsight={budget} />}
       </h3>
 
       {!loading ? (
@@ -131,10 +130,10 @@ SummaryItem.propTypes = {
   /** Show delta */
   showDelta: PropTypes.bool,
 
-  /** Budget data */
+  /** Budget insight data */
   budget: PropTypes.shape({
-    value: PropTypes.number,
-    budget: PropTypes.number,
-    overBudget: PropTypes.bool,
+    currentBalue: PropTypes.number,
+    budgetValue: PropTypes.number,
+    failed: PropTypes.bool,
   }),
 };
