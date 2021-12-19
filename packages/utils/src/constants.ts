@@ -165,3 +165,9 @@ export interface BrowsertimeMetrics {
   visualComplete95: MetricRun;
   visualComplete99: MetricRun;
 }
+
+export enum InsightType {
+  ERROR = 'ERROR',
+  INFO = 'INFO',
+  WARNING = 'WARNING',
+}
