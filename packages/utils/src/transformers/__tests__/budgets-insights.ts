@@ -1,4 +1,4 @@
-import { getExtract } from '../budgets-insights';
+import { getInfo, getExtract } from '../budgets-insights';
 
 describe('transformers/budgetsInsights', () => {
   describe('extract', () => {
@@ -76,6 +76,71 @@ describe('transformers/budgetsInsights', () => {
               failed: true,
             },
           },
+        },
+      });
+    });
+  });
+
+  describe('getInfo', () => {
+    test('should get failed budget insight', () => {
+      expect(
+        getInfo('webpack.totalSizeByTypeALL', {
+          currentValue: 512 * 1024,
+          budgetValue: 256 * 1024,
+          failed: true,
+        }),
+      ).toEqual({
+        type: 'ERROR',
+        data: {
+          md: '**Bundle Size** is over **256KB** budget',
+          text: 'Bundle Size is over 256KB budget',
+        },
+        source: {
+          currentValue: 512 * 1024,
+          budgetValue: 256 * 1024,
+          failed: true,
+        },
+      });
+    });
+
+    test('should get success budget insight', () => {
+      expect(
+        getInfo('webpack.totalSizeByTypeALL', {
+          currentValue: 512 * 1024,
+          budgetValue: 1024 * 1024,
+          failed: false,
+        }),
+      ).toEqual({
+        type: 'SUCCESS',
+        data: {
+          md: '**Bundle Size** is under **1MB** budget',
+          text: 'Bundle Size is under 1MB budget',
+        },
+        source: {
+          currentValue: 512 * 1024,
+          budgetValue: 1024 * 1024,
+          failed: false,
+        },
+      });
+    });
+
+    test('should get equal budget insight', () => {
+      expect(
+        getInfo('webpack.totalSizeByTypeALL', {
+          currentValue: 512 * 1024,
+          budgetValue: 512 * 1024,
+          failed: false,
+        }),
+      ).toEqual({
+        type: 'WARNING',
+        data: {
+          md: '**Bundle Size** is equal with **512KB** budget',
+          text: 'Bundle Size is equal with 512KB budget',
+        },
+        source: {
+          currentValue: 512 * 1024,
+          budgetValue: 512 * 1024,
+          failed: false,
         },
       });
     });
