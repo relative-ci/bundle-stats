@@ -26,13 +26,12 @@ export const BundleAssetsTotalsTable = ({
       const [_, ...metricSlugs] = item.key.split('.');
       const metricKey = metricSlugs.join('.');
       const budget = get(budgets, metricKey);
-      const metric = webpack.getMetricType(metricKey);
 
       return (
         <CustomComponentLink section={section} title={title} params={params}>
           <FlexStack space="xxsmall" className={css.itemTitleText}>
             <span>{item.label}</span>
-            {budget && <BudgetInfo budget={budget} metric={metric} />}
+            {budget && <BudgetInfo metricId={item.key} budgetInsight={budget} />}
           </FlexStack>
         </CustomComponentLink>
       );

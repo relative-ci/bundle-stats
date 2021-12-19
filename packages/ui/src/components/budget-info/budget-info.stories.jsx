@@ -9,26 +9,33 @@ stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => (
   <BudgetInfo
-    budget={{
-      budget: 300,
-      value: 250,
-      overBudget: false,
-    }}
-    metric={{
-      formatter: (v) => v,
+    metricId="webpack.assetCount"
+    budgetInsight={{
+      budgetValue: 300,
+      currentValue: 250,
+      failed: false,
     }}
   />
 ));
 
-stories.add('over', () => (
+stories.add('error', () => (
   <BudgetInfo
-    budget={{
-      budget: 300,
-      value: 350,
-      overBudget: true,
+    metricId="webpack.assetCount"
+    budgetInsight={{
+      budgetValue: 300,
+      currentValue: 350,
+      failed: true,
     }}
-    metric={{
-      formatter: (v) => v,
+  />
+));
+
+stories.add('warning', () => (
+  <BudgetInfo
+    metricId="webpack.assetCount"
+    budgetInsight={{
+      budgetValue: 300,
+      currentValue: 300,
+      failed: false,
     }}
   />
 ));

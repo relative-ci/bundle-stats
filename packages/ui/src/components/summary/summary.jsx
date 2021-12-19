@@ -34,7 +34,7 @@ export const Summary = ({
               size={size}
               id={metricId}
               data={get(data, metricId)}
-              budget={get(budgets, getSourceMetricId(metricId))}
+              budget={get(budgets, metricId)}
               loading={loading}
               showMetricDescription
               showDelta={showSummaryItemDelta && metricOptions.showDelta !== false}

@@ -44,25 +44,25 @@ ShowDeltaFalse.args = {
   showDelta: false,
 };
 
-export const BudgetOver = Template.bind();
+export const BudgetError = Template.bind();
 
-BudgetOver.args = {
+BudgetError.args = {
   showMetricDescription: true,
   budget: {
-    value: 120 * 1000,
-    budget: 100 * 1000,
-    overBudget: true,
+    currentValue: 120 * 1000,
+    budgetValue: 100 * 1000,
+    failed: true,
   },
 };
 
-export const BudgetUnder = Template.bind();
+export const BudgetSuccess = Template.bind();
 
-BudgetUnder.args = {
+BudgetSuccess.args = {
   showMetricDescription: true,
   budget: {
-    value: 120 * 1000,
-    budget: 120 * 1024,
-    overBudget: false,
+    currentValue: 120 * 1000,
+    budgetValue: 120 * 1024,
+    failed: false,
   },
 };
 
