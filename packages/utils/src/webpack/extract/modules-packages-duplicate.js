@@ -3,7 +3,7 @@ import map from 'lodash/map';
 import orderBy from 'lodash/orderBy';
 import sum from 'lodash/sum';
 
-import { INSIGHT_WARNING } from '../../config';
+import { InsightType } from '../../constants';
 
 export const extractModulesPackagesDuplicate = (webpackStats, currentExtractedData) => {
   const source = get(currentExtractedData, 'metrics.packages', {});
@@ -89,7 +89,7 @@ export const extractModulesPackagesDuplicate = (webpackStats, currentExtractedDa
   return {
     insights: {
       duplicatePackages: {
-        type: INSIGHT_WARNING,
+        type: InsightType.WARNING,
         data,
       },
     },
