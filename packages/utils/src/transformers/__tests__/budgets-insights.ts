@@ -1,4 +1,4 @@
-import { getInfo, getExtract } from '../budgets-insights';
+import { INFO_MESSAGE_TEMPLATE, getInfo, getExtract } from '../budgets-insights';
 
 describe('transformers/budgetsInsights', () => {
   describe('extract', () => {
@@ -91,14 +91,22 @@ describe('transformers/budgetsInsights', () => {
         }),
       ).toEqual({
         type: 'ERROR',
-        data: {
-          md: '**Bundle Size** is over **256KB** budget',
-          text: 'Bundle Size is over 256KB budget',
+        message: {
+          template: INFO_MESSAGE_TEMPLATE,
+          data: {
+            metricLabel: 'Bundle Size',
+            diffLabel: 'over',
+            currentValue: '512KB',
+            budgetValue: '256KB',
+          },
         },
         source: {
-          currentValue: 512 * 1024,
-          budgetValue: 256 * 1024,
-          failed: true,
+          metricId: 'webpack.totalSizeByTypeALL',
+          budgetInsight: {
+            currentValue: 512 * 1024,
+            budgetValue: 256 * 1024,
+            failed: true,
+          },
         },
       });
     });
@@ -112,14 +120,22 @@ describe('transformers/budgetsInsights', () => {
         }),
       ).toEqual({
         type: 'SUCCESS',
-        data: {
-          md: '**Bundle Size** is under **1MB** budget',
-          text: 'Bundle Size is under 1MB budget',
+        message: {
+          template: INFO_MESSAGE_TEMPLATE,
+          data: {
+            metricLabel: 'Bundle Size',
+            diffLabel: 'under',
+            currentValue: '512KB',
+            budgetValue: '1MB',
+          },
         },
         source: {
-          currentValue: 512 * 1024,
-          budgetValue: 1024 * 1024,
-          failed: false,
+          metricId: 'webpack.totalSizeByTypeALL',
+          budgetInsight: {
+            currentValue: 512 * 1024,
+            budgetValue: 1024 * 1024,
+            failed: false,
+          },
         },
       });
     });
@@ -133,14 +149,22 @@ describe('transformers/budgetsInsights', () => {
         }),
       ).toEqual({
         type: 'WARNING',
-        data: {
-          md: '**Bundle Size** is equal with **512KB** budget',
-          text: 'Bundle Size is equal with 512KB budget',
+        message: {
+          template: INFO_MESSAGE_TEMPLATE,
+          data: {
+            metricLabel: 'Bundle Size',
+            diffLabel: 'equal with',
+            currentValue: '512KB',
+            budgetValue: '512KB',
+          },
         },
         source: {
-          currentValue: 512 * 1024,
-          budgetValue: 512 * 1024,
-          failed: false,
+          metricId: 'webpack.totalSizeByTypeALL',
+          budgetInsight: {
+            currentValue: 512 * 1024,
+            budgetValue: 512 * 1024,
+            failed: false,
+          },
         },
       });
     });
