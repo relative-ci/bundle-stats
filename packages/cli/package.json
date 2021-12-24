@@ -51,7 +51,7 @@
     "listr": "^0.14.3",
     "lodash": "4.17.21",
     "update-notifier": "5.1.0",
-    "yargs": "17.3.0"
+    "yargs": "17.3.1"
   },
   "devDependencies": {
     "jest": "27.4.5"
