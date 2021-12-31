@@ -40,7 +40,7 @@
     "@babel/core": "7.16.5",
     "@babel/plugin-proposal-class-properties": "7.16.5",
     "@babel/preset-env": "7.16.5",
-    "@babel/preset-react": "7.16.5",
+    "@babel/preset-react": "7.16.7",
     "@simplyianm/babel-plugin-inline-react-svg": "1.2.0",
     "@storybook/addon-knobs": "6.4.0",
     "@storybook/addon-postcss": "2.0.0",
