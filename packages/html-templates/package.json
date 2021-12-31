@@ -28,7 +28,7 @@
   "devDependencies": {
     "@babel/core": "7.16.5",
     "@babel/preset-env": "7.16.5",
-    "@babel/preset-react": "7.16.5",
+    "@babel/preset-react": "7.16.7",
     "@bundle-stats/ui": "3.2.2",
     "@bundle-stats/utils": "3.2.2",
     "@moonwalker/orbit-ui": "1.14.26",
