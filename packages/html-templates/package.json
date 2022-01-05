@@ -62,7 +62,7 @@
     "postcss": "8.4.5",
     "postcss-loader": "6.2.1",
     "preact": "10.6.4",
-    "prop-types": "15.8.0",
+    "prop-types": "15.8.1",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-router-dom": "5.3.0",
