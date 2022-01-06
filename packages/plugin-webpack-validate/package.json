@@ -37,7 +37,7 @@
   "devDependencies": {
     "@types/jest": "27.4.0",
     "jest": "27.4.6",
-    "jest-cli": "27.4.6",
+    "jest-cli": "27.4.7",
     "jest-date-mock": "1.0.8",
     "regenerator-runtime": "0.13.9",
     "ts-jest": "27.1.2",
