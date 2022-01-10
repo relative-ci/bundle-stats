@@ -30,11 +30,11 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/cli-utils#readme",
   "dependencies": {
-    "@bundle-stats/html-templates": "^3.2.2",
-    "@bundle-stats/utils": "^3.2.2",
+    "@bundle-stats/html-templates": "3.2.2",
+    "@bundle-stats/utils": "3.2.2",
     "core-js": "3.20.0",
-    "find-cache-dir": "^3.1.0",
-    "fs-extra": "^10.0.0",
+    "find-cache-dir": "3.1.0",
+    "fs-extra": "10.0.0",
     "lodash": "4.17.21"
   },
   "devDependencies": {
