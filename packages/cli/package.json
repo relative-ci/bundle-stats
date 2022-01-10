@@ -43,12 +43,12 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/cli#readme",
   "dependencies": {
-    "@bundle-stats/cli-utils": "^3.2.2",
-    "@bundle-stats/utils": "^3.2.2",
-    "boxen": "^5.0.0",
+    "@bundle-stats/cli-utils": "3.2.2",
+    "@bundle-stats/utils": "3.2.2",
+    "boxen": "5.0.0",
     "core-js": "3.20.0",
-    "fs-extra": "^10.0.0",
-    "listr": "^0.14.3",
+    "fs-extra": "10.0.0",
+    "listr": "0.14.3",
     "lodash": "4.17.21",
     "update-notifier": "5.1.0",
     "yargs": "17.3.0"

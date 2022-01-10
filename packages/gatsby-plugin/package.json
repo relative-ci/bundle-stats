@@ -38,6 +38,6 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/gatsby-plugin#readme",
   "dependencies": {
-    "bundle-stats-webpack-plugin": "^3.2.2"
+    "bundle-stats-webpack-plugin": "3.2.2"
   }
 }

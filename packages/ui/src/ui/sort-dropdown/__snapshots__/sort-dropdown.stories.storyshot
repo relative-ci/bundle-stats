@@ -245,7 +245,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                       hidden=""
                       id="id-test"
                       role="menu"
-                      style="display: none; position: fixed; left: 100%; top: 100%;"
+                      style="display: none; position: fixed; left: 0px; top: 0px;"
                       tabindex="-1"
                     >
                       <div
@@ -305,9 +305,9 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                 }
                 unstable_popoverStyles={
                   Object {
-                    "left": "100%",
+                    "left": "0",
                     "position": "fixed",
-                    "top": "100%",
+                    "top": "0",
                   }
                 }
                 unstable_referenceRef={
@@ -572,7 +572,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                       hidden=""
                       id="id-test"
                       role="menu"
-                      style="display: none; position: fixed; left: 100%; top: 100%;"
+                      style="display: none; position: fixed; left: 0px; top: 0px;"
                       tabindex="-1"
                     >
                       <div
@@ -632,9 +632,9 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                 }
                 unstable_popoverStyles={
                   Object {
-                    "left": "100%",
+                    "left": "0",
                     "position": "fixed",
-                    "top": "100%",
+                    "top": "0",
                   }
                 }
                 unstable_referenceRef={
@@ -695,7 +695,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                           hidden=""
                           id="id-test"
                           role="menu"
-                          style="display: none; position: fixed; left: 100%; top: 100%;"
+                          style="display: none; position: fixed; left: 0px; top: 0px;"
                           tabindex="-1"
                         >
                           <div
@@ -775,9 +775,9 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                       style={
                         Object {
                           "display": "none",
-                          "left": "100%",
+                          "left": "0",
                           "position": "fixed",
-                          "top": "100%",
+                          "top": "0",
                         }
                       }
                       tabIndex={-1}
@@ -952,7 +952,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                 hidden=""
                                 id="id-test"
                                 role="menu"
-                                style="display: none; position: fixed; left: 100%; top: 100%;"
+                                style="display: none; position: fixed; left: 0px; top: 0px;"
                                 tabindex="-1"
                               >
                                 <div
@@ -1012,9 +1012,9 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                           }
                           unstable_popoverStyles={
                             Object {
-                              "left": "100%",
+                              "left": "0",
                               "position": "fixed",
-                              "top": "100%",
+                              "top": "0",
                             }
                           }
                           unstable_referenceRef={
@@ -1271,7 +1271,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                 hidden=""
                                 id="id-test"
                                 role="menu"
-                                style="display: none; position: fixed; left: 100%; top: 100%;"
+                                style="display: none; position: fixed; left: 0px; top: 0px;"
                                 tabindex="-1"
                               >
                                 <div
@@ -1331,9 +1331,9 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                           }
                           unstable_popoverStyles={
                             Object {
-                              "left": "100%",
+                              "left": "0",
                               "position": "fixed",
-                              "top": "100%",
+                              "top": "0",
                             }
                           }
                           unstable_referenceRef={
