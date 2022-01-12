@@ -56,6 +56,7 @@ yarn add --dev bundle-stats
 ## Webpack configuration
 
 The CLI is consuming the Webpack stats json. The following [stats options](https://webpack.js.org/configuration/stats) are required:
+
 ```js
 {
   stats: {
@@ -67,6 +68,12 @@ The CLI is consuming the Webpack stats json. The following [stats options](https
     hash: true
   }
 }
+```
+
+You can output the stats json file using [webpack-cli](https://www.npmjs.com/package/webpack-cli):
+
+```shell
+npx webpack --mode production --json artifacts/webpack-stats.json
 ```
 
 ## Usage
