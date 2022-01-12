@@ -22,7 +22,6 @@ const DEFAULT_OPTIONS = {
   outDir: '',
   silent: false,
   stats: {
-    context: process.cwd(),
     assets: true,
     entrypoints: true,
     chunks: true,
@@ -105,16 +104,7 @@ export class BundleStatsWebpackPlugin {
   }
 
   apply(compiler) {
-    const options = merge(
-      {},
-      DEFAULT_OPTIONS,
-      {
-        stats: {
-          context: compiler.options?.context,
-        },
-      },
-      this.options,
-    );
+    const options = merge({}, DEFAULT_OPTIONS, this.options);
 
     if (isWebpack5) {
       compiler.hooks.thisCompilation.tap(PLUGIN_NAME, (compilation) => {
