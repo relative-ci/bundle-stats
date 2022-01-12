@@ -35,7 +35,7 @@
     "@relative-ci/agent": "3.0.0",
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/addon-storyshots": "6.4.10",
-    "@storybook/builder-webpack5": "6.4.10",
+    "@storybook/builder-webpack5": "6.4.12",
     "@storybook/manager-webpack5": "6.4.12",
     "@storybook/react": "6.4.10",
     "autoprefixer": "10.4.2",
