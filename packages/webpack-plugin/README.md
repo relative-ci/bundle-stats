@@ -68,7 +68,6 @@ module.exports = {
   ```js
   {
     stats: {
-      context: WEBPACK_CONTEXT,
       assets: true,
       entrypoints: true,
       chunks: true,

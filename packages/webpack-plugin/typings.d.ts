@@ -5,12 +5,6 @@ export class BundleStatsWebpackPlugin {
 declare namespace BundleStatsWebpackPlugin {
   interface WebpackStatsOptions {
     /**
-     * Application context
-     * Default: webpack context.
-     */
-    context?: String;
-
-    /**
      * Output webpack assets information
      * Default: `true`.
      */
@@ -80,7 +74,7 @@ declare namespace BundleStatsWebpackPlugin {
 
     /**
      * webpack stats options
-     * Default: `{ context: WEBPACK_CONTEXT, assets: true, entrypoints: true, chunks: true, modules: true, hash: true, builtAt: true }`.
+     * Default: `{ assets: true, entrypoints: true, chunks: true, modules: true, hash: true, builtAt: true }`.
      */
     stats?: Partial<WebpackStatsOptions>
   }
