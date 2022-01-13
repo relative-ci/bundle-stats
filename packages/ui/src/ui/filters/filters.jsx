@@ -18,25 +18,15 @@ const Filter = (props) => {
     <div className={rootClassName}>
       {/* eslint-disable */}
       <FlexStack space="xxxsmall" as="label" className={css.filterCheckbox}>
-      {/* eslint-enabled */}
-        <input
-          className={css.filterInput}
-          type="checkbox"
-          id={id}
-          name={name}
-          {...inputProps}
-        />
+        {/* eslint-enabled */}
+        <input className={css.filterInput} type="checkbox" id={id} name={name} {...inputProps} />
         <span className={css.filterLabel} title={label}>
           {label}
         </span>
       </FlexStack>
 
       {getOnOnlyClick && (
-        <button
-          className={css.filterOnlyButton}
-          type="button"
-          onClick={getOnOnlyClick(name)}
-        >
+        <button className={css.filterOnlyButton} type="button" onClick={getOnOnlyClick(name)}>
           only
         </button>
       )}
@@ -62,8 +52,12 @@ const FilterGroup = (props) => {
   const { label: groupLabel, ...groupData } = data;
 
   const groupItems = Object.entries(groupData);
-  const groupCheckboxes = groupItems.filter(([itemKey, item]) => typeof item?.defaultValue !== 'undefined');
-  const isGroupChecked = groupCheckboxes.map(([itemKey]) => get(values, `${groupKey}.${itemKey}`)).reduce((agg, val) => agg && val, true);
+  const groupCheckboxes = groupItems.filter(
+    ([itemKey, item]) => typeof item?.defaultValue !== 'undefined',
+  );
+  const isGroupChecked = groupCheckboxes
+    .map(([itemKey]) => get(values, `${groupKey}.${itemKey}`))
+    .reduce((agg, val) => agg && val, true);
 
   const filterSuffix = getGroupFiltersLabelSuffix(groupItems);
   const hasCustomFilterSuffix = !Object.values(LABELS).includes(filterSuffix);
@@ -71,27 +65,30 @@ const FilterGroup = (props) => {
     <>
       {`${groupLabel}:`}
       &nbsp;
-      <span className={cx(hasCustomFilterSuffix && css.labelSuffixCustom)}>
-        {filterSuffix}
-      </span>
+      <span className={cx(hasCustomFilterSuffix && css.labelSuffixCustom)}>{filterSuffix}</span>
     </>
   );
 
-  const getOnGroupCheck = (value, overrides = {}) => () => {
-    const newFilters = groupCheckboxes.reduce((agg, [itemKey]) => ({
-      ...agg,
-      [`${groupKey}.${itemKey}`]: value,
-    }), {});
+  const getOnGroupCheck =
+    (value, overrides = {}) =>
+    () => {
+      const newFilters = groupCheckboxes.reduce(
+        (agg, [itemKey]) => ({
+          ...agg,
+          [`${groupKey}.${itemKey}`]: value,
+        }),
+        {},
+      );
 
-    toggleFilters({
-      ...newFilters,
-      ...overrides,
-    });
-  };
+      toggleFilters({
+        ...newFilters,
+        ...overrides,
+      });
+    };
 
   return (
     <Dropdown label={dropdownLabel} ariaLabel={`${groupLabel}: ${filterSuffix}`}>
-      {({ MenuItem, menu, menuItemClassName }) => {
+      {({ MenuItem, menuItemClassName }) => {
         return (
           <>
             <div className={css.filterGroupItems}>
@@ -100,7 +97,7 @@ const FilterGroup = (props) => {
                 const getOnOnlyClick = () => getOnGroupCheck(false, { [id]: true });
 
                 return (
-                  <MenuItem key={id} {...menu} className={cx(menuItemClassName, css.filterGroupItem)}>
+                  <MenuItem key={id} className={cx(menuItemClassName, css.filterGroupItem)}>
                     <Filter
                       name={id}
                       label={itemData.label}
@@ -138,7 +135,7 @@ const FilterGroup = (props) => {
             </div>
           </>
         );
-    }}
+      }}
     </Dropdown>
   );
 };
@@ -152,13 +149,7 @@ FilterGroup.propTypes = {
 };
 
 export const Filters = (props) => {
-  const {
-    className,
-    values,
-    filters,
-    toggleFilter,
-    toggleFilters,
-  } = props;
+  const { className, values, filters, toggleFilter, toggleFilters } = props;
 
   const onCheckboxChange = ({ target }) => toggleFilter(target.name, target.checked);
   const rootClassName = cx(css.root, className);

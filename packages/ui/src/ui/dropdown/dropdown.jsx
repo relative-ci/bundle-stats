@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { Menu, MenuItem, MenuButton, useMenuState } from 'reakit/Menu';
+import * as BaseDropdownMenu from '@radix-ui/react-dropdown-menu';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Icon } from '../icon';
@@ -11,29 +11,28 @@ export const Dropdown = (props) => {
   const { className, label, ariaLabel, glyph, activeLabel, children } = props;
   const rootClassName = cx(css.root, activeLabel && css.activeLabel, className);
 
-  const menu = useMenuState({baseId: process.env.NODE_ENV === 'test' && 'id-test', modal: true });
-
   return (
-    <>
-      <MenuButton {...menu} className={rootClassName} tabIndex={null}>
+    <BaseDropdownMenu.Root>
+      <BaseDropdownMenu.Trigger className={rootClassName}>
         <FlexStack space="xxxsmall" className={css.label}>
           {glyph && <Icon className={css.labelIcon} glyph={glyph} />}
           {label}
         </FlexStack>
-      </MenuButton>
-      <Menu {...menu} aria-label={ariaLabel || label} className={css.dropdown}>
+      </BaseDropdownMenu.Trigger>
+      <BaseDropdownMenu.Content
+        className={css.dropdown}
+        aria-label={ariaLabel || label}
+        align="start"
+      >
         {typeof children === 'function'
-          ?
-            children({
-              MenuItem,
-              menu,
+          ? children({
+              MenuItem: BaseDropdownMenu.Item,
               menuItemClassName: css.menuItem,
               menuItemActiveClassName: css.menuItemActive,
             })
-          : children
-        }
-      </Menu>
-    </>
+          : children}
+      </BaseDropdownMenu.Content>
+    </BaseDropdownMenu.Root>
   );
 };
 
@@ -57,9 +56,6 @@ Dropdown.propTypes = {
 
   /** Icon glyph */
   glyph: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-
-  /** Dropdown open state */
-  open: PropTypes.bool.isRequired,
 
   /** Active label flag */
   activeLabel: PropTypes.bool,

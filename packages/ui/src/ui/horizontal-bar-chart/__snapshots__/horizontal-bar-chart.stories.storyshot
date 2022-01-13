@@ -216,7 +216,7 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-0"
+                                contentId="radix-12"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -486,7 +486,7 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-1"
+                                contentId="radix-13"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -756,7 +756,7 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-2"
+                                contentId="radix-14"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -1026,7 +1026,7 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-3"
+                                contentId="radix-15"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -1296,7 +1296,7 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-4"
+                                contentId="radix-16"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -1873,7 +1873,7 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-5"
+                                contentId="radix-17"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -2143,7 +2143,7 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-6"
+                                contentId="radix-18"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -2413,7 +2413,7 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-7"
+                                contentId="radix-19"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -2683,7 +2683,7 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-8"
+                                contentId="radix-20"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -2953,7 +2953,7 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-9"
+                                contentId="radix-21"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -3545,7 +3545,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-15"
+                                contentId="radix-27"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -3815,7 +3815,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-16"
+                                contentId="radix-28"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -4085,7 +4085,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-17"
+                                contentId="radix-29"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -4355,7 +4355,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-18"
+                                contentId="radix-30"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -4625,7 +4625,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-19"
+                                contentId="radix-31"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -5238,7 +5238,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-20"
+                                contentId="radix-32"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -5518,7 +5518,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-21"
+                                contentId="radix-33"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -5798,7 +5798,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-22"
+                                contentId="radix-34"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -6078,7 +6078,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-23"
+                                contentId="radix-35"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -6358,7 +6358,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-24"
+                                contentId="radix-36"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -6939,7 +6939,7 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-10"
+                                contentId="radix-22"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -7209,7 +7209,7 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-11"
+                                contentId="radix-23"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -7479,7 +7479,7 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-12"
+                                contentId="radix-24"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -7749,7 +7749,7 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-13"
+                                contentId="radix-25"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}
@@ -8019,7 +8019,7 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                               }
                             >
                               <TooltipProvider
-                                contentId="radix-14"
+                                contentId="radix-26"
                                 onClose={[Function]}
                                 onFocus={[Function]}
                                 onOpen={[Function]}

@@ -169,7 +169,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                       }
                     >
                       <TooltipProvider
-                        contentId="radix-26"
+                        contentId="radix-40"
                         onClose={[Function]}
                         onFocus={[Function]}
                         onOpen={[Function]}
@@ -694,7 +694,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                       }
                     >
                       <TooltipProvider
-                        contentId="radix-25"
+                        contentId="radix-39"
                         onClose={[Function]}
                         onFocus={[Function]}
                         onOpen={[Function]}
