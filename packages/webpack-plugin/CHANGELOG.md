@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.4-alpha.0](https://github.com/relative-ci/bundle-stats/compare/v3.2.3...v3.2.4-alpha.0) (2022-01-13)
+
+
+### Bug Fixes
+
+* **webpack-plugin:** Remove stats context option ([f28682f](https://github.com/relative-ci/bundle-stats/commit/f28682fe36a61dfccd99b3cf9902b246358ce7e2))
+
+
+
+
+
 ## [3.2.3](https://github.com/relative-ci/bundle-stats/compare/v3.2.2...v3.2.3) (2022-01-10)
 
 **Note:** Version bump only for package bundle-stats-webpack-plugin

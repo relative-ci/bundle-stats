@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.4-alpha.0](https://github.com/relative-ci/bundle-stats/compare/v3.2.3...v3.2.4-alpha.0) (2022-01-13)
+
+
+### Bug Fixes
+
+* **ui:** Icon - center by default ([889753c](https://github.com/relative-ci/bundle-stats/commit/889753c0feb236130a2707fbc352310ef07c7740))
+* **ui:** Remove popover component ([e07d7a9](https://github.com/relative-ci/bundle-stats/commit/e07d7a91640f67b4f99320e1af92f1092a6e610d))
+* **webpack-plugin:** Remove stats context option ([f28682f](https://github.com/relative-ci/bundle-stats/commit/f28682fe36a61dfccd99b3cf9902b246358ce7e2))
+
+
+### Features
+
+* **ui:** Add hover card ([e27169e](https://github.com/relative-ci/bundle-stats/commit/e27169e4dd1e313f6903bd70f5ffc1e1cc147f9a))
+
+
+
+
+
 ## [3.2.3](https://github.com/relative-ci/bundle-stats/compare/v3.2.2...v3.2.3) (2022-01-10)
 
 **Note:** Version bump only for package @bundle-state/bundle-stats
