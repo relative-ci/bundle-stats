@@ -5,7 +5,7 @@ import I18N from '../../i18n';
 import { Dropdown } from '../../ui/dropdown';
 
 export const MetricsTableOptions = (props) => {
-  const { className,  handleViewAll, handleResetFilters, ...restProps } = props;
+  const { className, handleViewAll, handleResetFilters, ...restProps } = props;
 
   return (
     <Dropdown className={className} glyph="menu" {...restProps}>
