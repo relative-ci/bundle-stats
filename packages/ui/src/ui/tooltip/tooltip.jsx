@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import * as BaseTooltip from '@radix-ui/react-tooltip';
+import {
+  Tooltip as UITooltip,
+  TooltipArrow as UITooltipArrow,
+  TooltipReference as UITooltipReference,
+  useTooltipState,
+} from 'reakit/Tooltip';
 
 import css from './tooltip.module.css';
-
-const OFFSET = 9;
-const DELAY = 200;
 
 export const Tooltip = (props) => {
   const {
@@ -20,24 +22,29 @@ export const Tooltip = (props) => {
   } = props;
 
   const rootClassName = cx(css.root, className);
-  const tooltipClassName = cx(css.tooltip, darkMode && css.tooltipDarkMode);
+  const tooltipProps = useTooltipState({
+    baseId: process.env.NODE_ENV === 'test' && 'id-test',
+    placement: 'top',
+  });
 
   return (
-    <BaseTooltip.Provider>
-      <BaseTooltip.Root delayDuration={DELAY}>
-        <BaseTooltip.Trigger asChild>
-          <Component className={rootClassName} {...restProps}>
-            {children}
-          </Component>
-        </BaseTooltip.Trigger>
-        {title && (
-          <BaseTooltip.Content className={tooltipClassName}>
-            <BaseTooltip.Arrow className={css.arrow} startOffset={OFFSET} offset={OFFSET} />
-            {title}
-          </BaseTooltip.Content>
-        )}
-      </BaseTooltip.Root>
-    </BaseTooltip.Provider>
+    <>
+      <UITooltipReference
+        as={Component}
+        className={rootClassName}
+        {...ref ? { ref } : {}}
+        {...restProps}
+        {...tooltipProps}
+      >
+        {children}
+      </UITooltipReference>
+      {title && (
+        <UITooltip {...tooltipProps} className={cx(css.tooltip, darkMode && css.tooltipDarkMode)}>
+          <UITooltipArrow {...tooltipProps} className={css.arrow} size={12} />
+          {title}
+        </UITooltip>
+      )}
+    </>
   );
 };
 

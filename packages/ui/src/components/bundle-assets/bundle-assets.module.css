@@ -8,11 +8,6 @@
   margin-right: -1px; /** collapse border */
 }
 
-.assetName {
-  display: inline-flex;
-  align-items: center;
-}
-
 .notPredictive {
   margin-right: var(--space-xxsmall);
   display: inline-block;

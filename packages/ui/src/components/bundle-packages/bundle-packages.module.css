@@ -12,8 +12,20 @@
   margin-right: -1px; /** collapse border */
 }
 
-.packageNames {
-  align-items: center;
+.duplicate {
+  margin-right: var(--space-xxxsmall);
+  display: inline-block;
+  width: var(--space-small);
+  height: var(--space-small);
+  font-size: 10px;
+  font-weight: bold;
+  line-height: var(--space-small);
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+
+  background: var(--color-danger);
+  color: var(--color-light);
 }
 
 .packageName {
@@ -26,56 +38,27 @@
 
 .packageName + .packageName::before {
   display: inline-block;
-  margin: 0 var(--space-xxxsmall) 0 0;
+  margin: 0 var(--space-xxxsmall);
   content: '/';
   color: var(--color-text-ultra-light);
 }
 
-.packageNameLabel {
-  display: inline-flex;
-  align-items: center;
+.packagePopover {
+  min-width: 320px;
 }
 
-.packageNameDuplicate {
-  margin-right: var(--space-xxxsmall);
-  display: inline-block;
-  width: var(--space-xsmall);
-  height: var(--space-xsmall);
-  font-size: 8px;
-  font-weight: bold;
-  line-height: var(--space-xsmall);
-  text-align: center;
-  text-transform: uppercase;
-  vertical-align: middle;
-
-  background: var(--color-danger);
-  color: var(--color-light);
-}
-
-.packageName:hover,
-.packageName:active,
-.packageName:focus {
-  text-decoration: none !important;
-}
-
-.packageName:hover .packageNameText,
-.packageName:active .packageNameText,
-.packageName:focus .packageNameText {
-  text-decoration: underline !important;
-}
-
-.packageCardTitleIndex {
+.packagePopoverTitleIndex {
   color: var(--color-text-light);
   font-weight: normal;
 }
 
-.packageCardPathValue {
+.packagePopoverPathValue {
   padding: var(--space-xxxsmall);
   background: var(--color-highlight-warning);
   font-family: var(--font-family-monospace);
 }
 
-.packageCardList {
+.packagePopoverList {
   padding: 0;
   list-style: inside;
 }

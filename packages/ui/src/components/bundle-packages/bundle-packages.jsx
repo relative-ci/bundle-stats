@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import {
@@ -15,7 +15,7 @@ import { Stack } from '../../layout/stack';
 import { FlexStack } from '../../layout/flex-stack';
 import { EmptySet } from '../../ui/empty-set';
 import { Filters } from '../../ui/filters';
-import { HoverCard } from '../../ui/hover-card';
+import { Popover } from '../../ui/popover';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Toolbar } from '../../ui/toolbar';
 import { FileName } from '../../ui/file-name';
@@ -26,29 +26,28 @@ import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
 import css from './bundle-packages.module.css';
 
-const PackageCard = ({ name, fullName, path, duplicate, CustomComponentLink }) => {
-  const normalizedPackagePath =
-    path || `node_modules/${fullName.split(PACKAGES_SEPARATOR).join('/node_modules/')}/`;
+const PackagePopoverContent = ({ name, fullName, path, duplicate, CustomComponentLink }) => {
+  const normalizedPackagePath = path || `node_modules/${fullName.split(PACKAGES_SEPARATOR).join('/node_modules/')}/`;
   const [normalizedName, packageId] = name.split(PACKAGE_ID_SEPARATOR);
 
   return (
-    <Stack space="xxsmall" className={css.packageCard}>
+    <Stack space="xxsmall" className={css.packagePopover}>
       <Stack space="xxxsmall">
-        <h3 className={css.packageCardTitle}>
+        <h3 className={css.packagePopoverTitle}>
           {normalizedName}
           {packageId && (
-            <span className={css.packageCardTitleIndex}>
+            <span className={css.packagePopoverTitleIndex}>
               {`${PACKAGE_ID_SEPARATOR}${packageId}`}
             </span>
           )}
         </h3>
-        <p className={css.packageCardPath}>
-          <FileName className={css.packageCardPathValue} name={normalizedPackagePath} />
+        <p className={css.packagePopoverPath}>
+          <FileName className={css.packagePopoverPathValue} name={normalizedPackagePath} />
         </p>
       </Stack>
 
-      <ul className={css.packageCardList}>
-        <li className={css.packageCardItem}>
+      <ul className={css.packagePopoverList}>
+        <li className={css.packagePopoverItem}>
           <a
             href={`https://www.npmjs.com/package/${normalizedName}`}
             target="_blank"
@@ -57,7 +56,7 @@ const PackageCard = ({ name, fullName, path, duplicate, CustomComponentLink }) =
             npmjs.com
           </a>
         </li>
-        <li className={css.packageCardItem}>
+        <li className={css.packagePopoverItem}>
           <a
             href={`https://bundlephobia.com/result?p=${normalizedName}`}
             target="_blank"
@@ -68,7 +67,7 @@ const PackageCard = ({ name, fullName, path, duplicate, CustomComponentLink }) =
         </li>
       </ul>
 
-      <Stack space="xxxsmall" className={css.packageCardActions}>
+      <Stack space="xxxsmall" className={css.packagePopover.actions}>
         {duplicate && (
           <div>
             <CustomComponentLink {...getBundlePackagesByNameComponentLink(normalizedName)}>
@@ -85,7 +84,7 @@ const PackageCard = ({ name, fullName, path, duplicate, CustomComponentLink }) =
   );
 };
 
-PackageCard.propTypes = {
+PackagePopoverContent.propTypes = {
   name: PropTypes.string.isRequired,
   path: PropTypes.string,
   fullName: PropTypes.string.isRequired,
@@ -93,7 +92,7 @@ PackageCard.propTypes = {
   CustomComponentLink: PropTypes.elementType.isRequired,
 };
 
-PackageCard.defaultProps = {
+PackagePopoverContent.defaultProps = {
   path: '',
 };
 
@@ -102,33 +101,28 @@ const PackageRowHeader = ({ item, CustomComponentLink }) => {
   const { path } = item.runs[0] || {};
 
   return (
-    <FlexStack space="xxxsmall" className={css.packageNames}>
+    <span className={css.packageNames}>
       {packageNames.map((packageName, index) => {
-        const label = (
-          <FlexStack space="xxxsmall" className={css.packageNameLabel}>
-            {/* Render duplicate flag only for the last entry */}
-            {index === packageNames.length - 1 && item.duplicate && (
-              <span className={css.packageNameDuplicate} title="Duplicate package">
-                D
-              </span>
-            )}
-            <span className={css.packageNameText}>{packageName}</span>
-          </FlexStack>
+        // Render duplicate flag only for the last entry
+        const duplicateFlag = index === packageNames.length - 1 && item.duplicate && (
+          <span className={css.duplicate} title="Duplicate package">
+            D
+          </span>
         );
 
         return (
-          <HoverCard label={label} key={packageName} className={css.packageName}>
-            <PackageCard
+          <Popover className={css.packageName} icon={duplicateFlag} label={packageName}>
+            <PackagePopoverContent
               name={packageName}
               path={path}
               fullName={item.label}
               duplicate={item.duplicate}
               CustomComponentLink={CustomComponentLink}
             />
-          </HoverCard>
+          </Popover>
         );
       })}
-    </FlexStack>
+    </span>
   );
 };
 

@@ -5,8 +5,7 @@ import cx from 'classnames';
 import I18N from '../../i18n';
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
-import { Icon } from '../../ui/icon';
-import { HoverCard } from '../../ui/hover-card';
+import { Popover } from '../../ui/popover';
 import css from './metrics-table-title.module.css';
 
 export const MetricsTableTitle = (props) => {
@@ -19,7 +18,7 @@ export const MetricsTableTitle = (props) => {
         <span>{title}</span>
         {info && <span className={css.info}>{info}</span>}
         {(popoverInfo || popoverHref) && (
-          <HoverCard label={<Icon glyph="help" />}>
+          <Popover icon="help">
             <Stack space="xxxsmall">
               {popoverInfo && <p>{popoverInfo}</p>}
               {popoverHref && (
@@ -30,7 +29,7 @@ export const MetricsTableTitle = (props) => {
                 </p>
               )}
             </Stack>
-          </HoverCard>
+          </Popover>
         )}
       </FlexStack>
     </Stack>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
+exports[`Storyshots UI/Popover default 1`] = `
 <div>
   <Component>
     <MemoryRouter
@@ -54,24 +54,26 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
             }
           }
         >
-          <Tooltip
-            as="span"
+          <Popover
+            ariaLabel="View more info"
             className=""
-            containerRef={null}
-            darkMode={false}
-            title="View job #100"
+            icon=""
+            label="Job #100"
           >
-            <ForwardRef(TooltipReference)
+            <ForwardRef(PopoverDisclosure)
               animated={false}
               animating={false}
-              as="span"
+              aria-label="View more info"
               baseId="id-test"
-              className="root"
+              className="button"
               hide={[Function]}
+              modal={true}
+              onClick={[Function]}
               place={[Function]}
               placement="top"
               setAnimated={[Function]}
               setBaseId={[Function]}
+              setModal={[Function]}
               setVisible={[Function]}
               show={[Function]}
               stopAnimation={[Function]}
@@ -80,7 +82,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                 Object {
                   "current": <div
                     class="arrow"
-                    style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                    style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                   >
                     <svg
                       style="transform: rotateZ(180deg);"
@@ -101,7 +103,21 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
               unstable_arrowStyles={Object {}}
               unstable_disclosureRef={
                 Object {
-                  "current": null,
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="dialog"
+                    aria-label="View more info"
+                    class="button"
+                    type="button"
+                  >
+                    
+                    <span
+                      class="label"
+                    >
+                      Job #100
+                    </span>
+                  </button>,
                 }
               }
               unstable_idCountRef={
@@ -113,15 +129,18 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
               unstable_popoverRef={
                 Object {
                   "current": <div
-                    class="tooltip"
+                    aria-modal="true"
+                    class="popover"
+                    data-dialog="true"
                     hidden=""
                     id="id-test"
-                    role="tooltip"
-                    style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
+                    role="dialog"
+                    style="display: none; position: fixed; left: 100%; top: 100%;"
+                    tabindex="0"
                   >
                     <div
                       class="arrow"
-                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                      style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                     >
                       <svg
                         style="transform: rotateZ(180deg);"
@@ -137,7 +156,19 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                         />
                       </svg>
                     </div>
-                    View job #100
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    <button
+                      class="root closeBtn medium"
+                      type="button"
+                    >
+                      <svg
+                        class="icon"
+                      >
+                        <use
+                          xlink:href="#close"
+                        />
+                      </svg>
+                    </button>
                   </div>,
                 }
               }
@@ -150,51 +181,70 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
               }
               unstable_referenceRef={
                 Object {
-                  "current": <span
-                    aria-describedby="id-test"
-                    class="root"
-                    tabindex="0"
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="dialog"
+                    aria-label="View more info"
+                    class="button"
+                    type="button"
                   >
-                    Job #100
-                  </span>,
+                    
+                    <span
+                      class="label"
+                    >
+                      Job #100
+                    </span>
+                  </button>,
                 }
               }
-              unstable_setTimeout={[Function]}
-              unstable_timeout={0}
               unstable_update={[Function]}
               visible={false}
             >
-              <span
-                aria-describedby="id-test"
-                className="root"
-                onBlur={[Function]}
-                onFocus={[Function]}
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-                tabIndex={0}
+              <button
+                aria-controls="id-test"
+                aria-expanded={false}
+                aria-haspopup="dialog"
+                aria-label="View more info"
+                className="button"
+                onClick={[Function]}
+                onClickCapture={[Function]}
+                onKeyDown={[Function]}
+                onKeyPressCapture={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseDownCapture={[Function]}
+                type="button"
               >
-                Job #100
-              </span>
-            </ForwardRef(TooltipReference)>
-            <ForwardRef(Tooltip)
+                <span
+                  className="label"
+                >
+                  Job #100
+                </span>
+              </button>
+            </ForwardRef(PopoverDisclosure)>
+            <ForwardRef(Popover)
               animated={false}
               animating={false}
               baseId="id-test"
-              className="tooltip"
+              className="popover"
               hide={[Function]}
+              modal={true}
               place={[Function]}
               placement="top"
               setAnimated={[Function]}
               setBaseId={[Function]}
+              setModal={[Function]}
               setVisible={[Function]}
               show={[Function]}
               stopAnimation={[Function]}
+              tabIndex={0}
               toggle={[Function]}
               unstable_arrowRef={
                 Object {
                   "current": <div
                     class="arrow"
-                    style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                    style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                   >
                     <svg
                       style="transform: rotateZ(180deg);"
@@ -215,7 +265,21 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
               unstable_arrowStyles={Object {}}
               unstable_disclosureRef={
                 Object {
-                  "current": null,
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="dialog"
+                    aria-label="View more info"
+                    class="button"
+                    type="button"
+                  >
+                    
+                    <span
+                      class="label"
+                    >
+                      Job #100
+                    </span>
+                  </button>,
                 }
               }
               unstable_idCountRef={
@@ -227,15 +291,18 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
               unstable_popoverRef={
                 Object {
                   "current": <div
-                    class="tooltip"
+                    aria-modal="true"
+                    class="popover"
+                    data-dialog="true"
                     hidden=""
                     id="id-test"
-                    role="tooltip"
-                    style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
+                    role="dialog"
+                    style="display: none; position: fixed; left: 100%; top: 100%;"
+                    tabindex="0"
                   >
                     <div
                       class="arrow"
-                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                      style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                     >
                       <svg
                         style="transform: rotateZ(180deg);"
@@ -251,7 +318,19 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                         />
                       </svg>
                     </div>
-                    View job #100
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    <button
+                      class="root closeBtn medium"
+                      type="button"
+                    >
+                      <svg
+                        class="icon"
+                      >
+                        <use
+                          xlink:href="#close"
+                        />
+                      </svg>
+                    </button>
                   </div>,
                 }
               }
@@ -264,17 +343,23 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
               }
               unstable_referenceRef={
                 Object {
-                  "current": <span
-                    aria-describedby="id-test"
-                    class="root"
-                    tabindex="0"
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="dialog"
+                    aria-label="View more info"
+                    class="button"
+                    type="button"
                   >
-                    Job #100
-                  </span>,
+                    
+                    <span
+                      class="label"
+                    >
+                      Job #100
+                    </span>
+                  </button>,
                 }
               }
-              unstable_setTimeout={[Function]}
-              unstable_timeout={0}
               unstable_update={[Function]}
               visible={false}
             >
@@ -285,15 +370,18 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                       class="__reakit-portal"
                     >
                       <div
-                        class="tooltip"
+                        aria-modal="true"
+                        class="popover"
+                        data-dialog="true"
                         hidden=""
                         id="id-test"
-                        role="tooltip"
-                        style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
+                        role="dialog"
+                        style="display: none; position: fixed; left: 100%; top: 100%;"
+                        tabindex="0"
                       >
                         <div
                           class="arrow"
-                          style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                          style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                         >
                           <svg
                             style="transform: rotateZ(180deg);"
@@ -309,48 +397,66 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                             />
                           </svg>
                         </div>
-                        View job #100
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        <button
+                          class="root closeBtn medium"
+                          type="button"
+                        >
+                          <svg
+                            class="icon"
+                          >
+                            <use
+                              xlink:href="#close"
+                            />
+                          </svg>
+                        </button>
                       </div>
                     </div>
                   }
                 >
                   <div
-                    className="tooltip"
+                    aria-modal={true}
+                    className="popover"
+                    data-dialog={true}
                     hidden={true}
                     id="id-test"
                     onAnimationEnd={[Function]}
+                    onBlur={[Function]}
+                    onKeyDown={[Function]}
                     onTransitionEnd={[Function]}
-                    role="tooltip"
+                    role="dialog"
                     style={
                       Object {
                         "display": "none",
                         "left": "100%",
-                        "pointerEvents": "none",
                         "position": "fixed",
                         "top": "100%",
                       }
                     }
+                    tabIndex={0}
                   >
-                    <ForwardRef(TooltipArrow)
+                    <ForwardRef(PopoverArrow)
                       animated={false}
                       animating={false}
                       baseId="id-test"
                       className="arrow"
                       hide={[Function]}
+                      modal={true}
                       place={[Function]}
                       placement="top"
                       setAnimated={[Function]}
                       setBaseId={[Function]}
+                      setModal={[Function]}
                       setVisible={[Function]}
                       show={[Function]}
-                      size={12}
+                      size={16}
                       stopAnimation={[Function]}
                       toggle={[Function]}
                       unstable_arrowRef={
                         Object {
                           "current": <div
                             class="arrow"
-                            style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                            style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                           >
                             <svg
                               style="transform: rotateZ(180deg);"
@@ -371,7 +477,21 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                       unstable_arrowStyles={Object {}}
                       unstable_disclosureRef={
                         Object {
-                          "current": null,
+                          "current": <button
+                            aria-controls="id-test"
+                            aria-expanded="false"
+                            aria-haspopup="dialog"
+                            aria-label="View more info"
+                            class="button"
+                            type="button"
+                          >
+                            
+                            <span
+                              class="label"
+                            >
+                              Job #100
+                            </span>
+                          </button>,
                         }
                       }
                       unstable_idCountRef={
@@ -383,15 +503,18 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                       unstable_popoverRef={
                         Object {
                           "current": <div
-                            class="tooltip"
+                            aria-modal="true"
+                            class="popover"
+                            data-dialog="true"
                             hidden=""
                             id="id-test"
-                            role="tooltip"
-                            style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
+                            role="dialog"
+                            style="display: none; position: fixed; left: 100%; top: 100%;"
+                            tabindex="0"
                           >
                             <div
                               class="arrow"
-                              style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                              style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                             >
                               <svg
                                 style="transform: rotateZ(180deg);"
@@ -407,7 +530,19 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                                 />
                               </svg>
                             </div>
-                            View job #100
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            <button
+                              class="root closeBtn medium"
+                              type="button"
+                            >
+                              <svg
+                                class="icon"
+                              >
+                                <use
+                                  xlink:href="#close"
+                                />
+                              </svg>
+                            </button>
                           </div>,
                         }
                       }
@@ -420,17 +555,23 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                       }
                       unstable_referenceRef={
                         Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root"
-                            tabindex="0"
+                          "current": <button
+                            aria-controls="id-test"
+                            aria-expanded="false"
+                            aria-haspopup="dialog"
+                            aria-label="View more info"
+                            class="button"
+                            type="button"
                           >
-                            Job #100
-                          </span>,
+                            
+                            <span
+                              class="label"
+                            >
+                              Job #100
+                            </span>
+                          </button>,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
                       unstable_update={[Function]}
                       visible={false}
                     >
@@ -438,7 +579,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                         className="arrow"
                         style={
                           Object {
-                            "fontSize": 12,
+                            "fontSize": 16,
                             "height": "1em",
                             "pointerEvents": "none",
                             "top": "100%",
@@ -464,13 +605,35 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                           />
                         </svg>
                       </div>
-                    </ForwardRef(TooltipArrow)>
-                    View job #100
+                    </ForwardRef(PopoverArrow)>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    <Icon
+                      as="button"
+                      className="closeBtn"
+                      glyph="close"
+                      onClick={[Function]}
+                      size="medium"
+                      type="button"
+                    >
+                      <button
+                        className="root closeBtn medium"
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        <svg
+                          className="icon"
+                        >
+                          <use
+                            xlinkHref="#close"
+                          />
+                        </svg>
+                      </button>
+                    </Icon>
                   </div>
                 </Portal>
               </Portal>
-            </ForwardRef(Tooltip)>
-          </Tooltip>
+            </ForwardRef(Popover)>
+          </Popover>
         </div>
       </Router>
     </MemoryRouter>
@@ -696,7 +859,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
 </div>
 `;
 
-exports[`Storyshots UI/Tooltip default 1`] = `
+exports[`Storyshots UI/Popover with icon 1`] = `
 <div>
   <Component>
     <MemoryRouter
@@ -750,24 +913,26 @@ exports[`Storyshots UI/Tooltip default 1`] = `
             }
           }
         >
-          <Tooltip
-            as="span"
+          <Popover
+            ariaLabel="View more info"
             className=""
-            containerRef={null}
-            darkMode={true}
-            title="View job #100"
+            icon="help"
+            label=""
           >
-            <ForwardRef(TooltipReference)
+            <ForwardRef(PopoverDisclosure)
               animated={false}
               animating={false}
-              as="span"
+              aria-label="View more info"
               baseId="id-test"
-              className="root"
+              className="button"
               hide={[Function]}
+              modal={true}
+              onClick={[Function]}
               place={[Function]}
               placement="top"
               setAnimated={[Function]}
               setBaseId={[Function]}
+              setModal={[Function]}
               setVisible={[Function]}
               show={[Function]}
               stopAnimation={[Function]}
@@ -776,7 +941,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                 Object {
                   "current": <div
                     class="arrow"
-                    style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                    style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                   >
                     <svg
                       style="transform: rotateZ(180deg);"
@@ -797,7 +962,27 @@ exports[`Storyshots UI/Tooltip default 1`] = `
               unstable_arrowStyles={Object {}}
               unstable_disclosureRef={
                 Object {
-                  "current": null,
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="dialog"
+                    aria-label="View more info"
+                    class="button"
+                    type="button"
+                  >
+                    <span
+                      class="root icon medium"
+                    >
+                      <svg
+                        class="icon"
+                      >
+                        <use
+                          xlink:href="#help"
+                        />
+                      </svg>
+                    </span>
+                    
+                  </button>,
                 }
               }
               unstable_idCountRef={
@@ -809,15 +994,18 @@ exports[`Storyshots UI/Tooltip default 1`] = `
               unstable_popoverRef={
                 Object {
                   "current": <div
-                    class="tooltip tooltipDarkMode"
+                    aria-modal="true"
+                    class="popover"
+                    data-dialog="true"
                     hidden=""
                     id="id-test"
-                    role="tooltip"
-                    style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
+                    role="dialog"
+                    style="display: none; position: fixed; left: 100%; top: 100%;"
+                    tabindex="0"
                   >
                     <div
                       class="arrow"
-                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                      style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                     >
                       <svg
                         style="transform: rotateZ(180deg);"
@@ -833,7 +1021,19 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                         />
                       </svg>
                     </div>
-                    View job #100
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    <button
+                      class="root closeBtn medium"
+                      type="button"
+                    >
+                      <svg
+                        class="icon"
+                      >
+                        <use
+                          xlink:href="#close"
+                        />
+                      </svg>
+                    </button>
                   </div>,
                 }
               }
@@ -846,51 +1046,89 @@ exports[`Storyshots UI/Tooltip default 1`] = `
               }
               unstable_referenceRef={
                 Object {
-                  "current": <span
-                    aria-describedby="id-test"
-                    class="root"
-                    tabindex="0"
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="dialog"
+                    aria-label="View more info"
+                    class="button"
+                    type="button"
                   >
-                    Job #100
-                  </span>,
+                    <span
+                      class="root icon medium"
+                    >
+                      <svg
+                        class="icon"
+                      >
+                        <use
+                          xlink:href="#help"
+                        />
+                      </svg>
+                    </span>
+                    
+                  </button>,
                 }
               }
-              unstable_setTimeout={[Function]}
-              unstable_timeout={0}
               unstable_update={[Function]}
               visible={false}
             >
-              <span
-                aria-describedby="id-test"
-                className="root"
-                onBlur={[Function]}
-                onFocus={[Function]}
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-                tabIndex={0}
+              <button
+                aria-controls="id-test"
+                aria-expanded={false}
+                aria-haspopup="dialog"
+                aria-label="View more info"
+                className="button"
+                onClick={[Function]}
+                onClickCapture={[Function]}
+                onKeyDown={[Function]}
+                onKeyPressCapture={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseDownCapture={[Function]}
+                type="button"
               >
-                Job #100
-              </span>
-            </ForwardRef(TooltipReference)>
-            <ForwardRef(Tooltip)
+                <Icon
+                  as="span"
+                  className="icon"
+                  glyph="help"
+                  size="medium"
+                >
+                  <span
+                    className="root icon medium"
+                  >
+                    <svg
+                      className="icon"
+                    >
+                      <use
+                        xlinkHref="#help"
+                      />
+                    </svg>
+                  </span>
+                </Icon>
+              </button>
+            </ForwardRef(PopoverDisclosure)>
+            <ForwardRef(Popover)
               animated={false}
               animating={false}
               baseId="id-test"
-              className="tooltip tooltipDarkMode"
+              className="popover"
               hide={[Function]}
+              modal={true}
               place={[Function]}
               placement="top"
               setAnimated={[Function]}
               setBaseId={[Function]}
+              setModal={[Function]}
               setVisible={[Function]}
               show={[Function]}
               stopAnimation={[Function]}
+              tabIndex={0}
               toggle={[Function]}
               unstable_arrowRef={
                 Object {
                   "current": <div
                     class="arrow"
-                    style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                    style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                   >
                     <svg
                       style="transform: rotateZ(180deg);"
@@ -911,7 +1149,27 @@ exports[`Storyshots UI/Tooltip default 1`] = `
               unstable_arrowStyles={Object {}}
               unstable_disclosureRef={
                 Object {
-                  "current": null,
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="dialog"
+                    aria-label="View more info"
+                    class="button"
+                    type="button"
+                  >
+                    <span
+                      class="root icon medium"
+                    >
+                      <svg
+                        class="icon"
+                      >
+                        <use
+                          xlink:href="#help"
+                        />
+                      </svg>
+                    </span>
+                    
+                  </button>,
                 }
               }
               unstable_idCountRef={
@@ -923,15 +1181,18 @@ exports[`Storyshots UI/Tooltip default 1`] = `
               unstable_popoverRef={
                 Object {
                   "current": <div
-                    class="tooltip tooltipDarkMode"
+                    aria-modal="true"
+                    class="popover"
+                    data-dialog="true"
                     hidden=""
                     id="id-test"
-                    role="tooltip"
-                    style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
+                    role="dialog"
+                    style="display: none; position: fixed; left: 100%; top: 100%;"
+                    tabindex="0"
                   >
                     <div
                       class="arrow"
-                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                      style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                     >
                       <svg
                         style="transform: rotateZ(180deg);"
@@ -947,7 +1208,19 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                         />
                       </svg>
                     </div>
-                    View job #100
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    <button
+                      class="root closeBtn medium"
+                      type="button"
+                    >
+                      <svg
+                        class="icon"
+                      >
+                        <use
+                          xlink:href="#close"
+                        />
+                      </svg>
+                    </button>
                   </div>,
                 }
               }
@@ -960,17 +1233,29 @@ exports[`Storyshots UI/Tooltip default 1`] = `
               }
               unstable_referenceRef={
                 Object {
-                  "current": <span
-                    aria-describedby="id-test"
-                    class="root"
-                    tabindex="0"
+                  "current": <button
+                    aria-controls="id-test"
+                    aria-expanded="false"
+                    aria-haspopup="dialog"
+                    aria-label="View more info"
+                    class="button"
+                    type="button"
                   >
-                    Job #100
-                  </span>,
+                    <span
+                      class="root icon medium"
+                    >
+                      <svg
+                        class="icon"
+                      >
+                        <use
+                          xlink:href="#help"
+                        />
+                      </svg>
+                    </span>
+                    
+                  </button>,
                 }
               }
-              unstable_setTimeout={[Function]}
-              unstable_timeout={0}
               unstable_update={[Function]}
               visible={false}
             >
@@ -981,15 +1266,18 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                       class="__reakit-portal"
                     >
                       <div
-                        class="tooltip tooltipDarkMode"
+                        aria-modal="true"
+                        class="popover"
+                        data-dialog="true"
                         hidden=""
                         id="id-test"
-                        role="tooltip"
-                        style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
+                        role="dialog"
+                        style="display: none; position: fixed; left: 100%; top: 100%;"
+                        tabindex="0"
                       >
                         <div
                           class="arrow"
-                          style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                          style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                         >
                           <svg
                             style="transform: rotateZ(180deg);"
@@ -1005,48 +1293,66 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                             />
                           </svg>
                         </div>
-                        View job #100
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        <button
+                          class="root closeBtn medium"
+                          type="button"
+                        >
+                          <svg
+                            class="icon"
+                          >
+                            <use
+                              xlink:href="#close"
+                            />
+                          </svg>
+                        </button>
                       </div>
                     </div>
                   }
                 >
                   <div
-                    className="tooltip tooltipDarkMode"
+                    aria-modal={true}
+                    className="popover"
+                    data-dialog={true}
                     hidden={true}
                     id="id-test"
                     onAnimationEnd={[Function]}
+                    onBlur={[Function]}
+                    onKeyDown={[Function]}
                     onTransitionEnd={[Function]}
-                    role="tooltip"
+                    role="dialog"
                     style={
                       Object {
                         "display": "none",
                         "left": "100%",
-                        "pointerEvents": "none",
                         "position": "fixed",
                         "top": "100%",
                       }
                     }
+                    tabIndex={0}
                   >
-                    <ForwardRef(TooltipArrow)
+                    <ForwardRef(PopoverArrow)
                       animated={false}
                       animating={false}
                       baseId="id-test"
                       className="arrow"
                       hide={[Function]}
+                      modal={true}
                       place={[Function]}
                       placement="top"
                       setAnimated={[Function]}
                       setBaseId={[Function]}
+                      setModal={[Function]}
                       setVisible={[Function]}
                       show={[Function]}
-                      size={12}
+                      size={16}
                       stopAnimation={[Function]}
                       toggle={[Function]}
                       unstable_arrowRef={
                         Object {
                           "current": <div
                             class="arrow"
-                            style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                            style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                           >
                             <svg
                               style="transform: rotateZ(180deg);"
@@ -1067,7 +1373,27 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                       unstable_arrowStyles={Object {}}
                       unstable_disclosureRef={
                         Object {
-                          "current": null,
+                          "current": <button
+                            aria-controls="id-test"
+                            aria-expanded="false"
+                            aria-haspopup="dialog"
+                            aria-label="View more info"
+                            class="button"
+                            type="button"
+                          >
+                            <span
+                              class="root icon medium"
+                            >
+                              <svg
+                                class="icon"
+                              >
+                                <use
+                                  xlink:href="#help"
+                                />
+                              </svg>
+                            </span>
+                            
+                          </button>,
                         }
                       }
                       unstable_idCountRef={
@@ -1079,15 +1405,18 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                       unstable_popoverRef={
                         Object {
                           "current": <div
-                            class="tooltip tooltipDarkMode"
+                            aria-modal="true"
+                            class="popover"
+                            data-dialog="true"
                             hidden=""
                             id="id-test"
-                            role="tooltip"
-                            style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
+                            role="dialog"
+                            style="display: none; position: fixed; left: 100%; top: 100%;"
+                            tabindex="0"
                           >
                             <div
                               class="arrow"
-                              style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                              style="font-size: 16px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
                             >
                               <svg
                                 style="transform: rotateZ(180deg);"
@@ -1103,7 +1432,19 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                                 />
                               </svg>
                             </div>
-                            View job #100
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            <button
+                              class="root closeBtn medium"
+                              type="button"
+                            >
+                              <svg
+                                class="icon"
+                              >
+                                <use
+                                  xlink:href="#close"
+                                />
+                              </svg>
+                            </button>
                           </div>,
                         }
                       }
@@ -1116,17 +1457,29 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                       }
                       unstable_referenceRef={
                         Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root"
-                            tabindex="0"
+                          "current": <button
+                            aria-controls="id-test"
+                            aria-expanded="false"
+                            aria-haspopup="dialog"
+                            aria-label="View more info"
+                            class="button"
+                            type="button"
                           >
-                            Job #100
-                          </span>,
+                            <span
+                              class="root icon medium"
+                            >
+                              <svg
+                                class="icon"
+                              >
+                                <use
+                                  xlink:href="#help"
+                                />
+                              </svg>
+                            </span>
+                            
+                          </button>,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
                       unstable_update={[Function]}
                       visible={false}
                     >
@@ -1134,7 +1487,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                         className="arrow"
                         style={
                           Object {
-                            "fontSize": 12,
+                            "fontSize": 16,
                             "height": "1em",
                             "pointerEvents": "none",
                             "top": "100%",
@@ -1160,13 +1513,35 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                           />
                         </svg>
                       </div>
-                    </ForwardRef(TooltipArrow)>
-                    View job #100
+                    </ForwardRef(PopoverArrow)>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    <Icon
+                      as="button"
+                      className="closeBtn"
+                      glyph="close"
+                      onClick={[Function]}
+                      size="medium"
+                      type="button"
+                    >
+                      <button
+                        className="root closeBtn medium"
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        <svg
+                          className="icon"
+                        >
+                          <use
+                            xlinkHref="#close"
+                          />
+                        </svg>
+                      </button>
+                    </Icon>
                   </div>
                 </Portal>
               </Portal>
-            </ForwardRef(Tooltip)>
-          </Tooltip>
+            </ForwardRef(Popover)>
+          </Popover>
         </div>
       </Router>
     </MemoryRouter>

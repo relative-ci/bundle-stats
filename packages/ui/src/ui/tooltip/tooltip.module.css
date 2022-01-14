@@ -1,7 +1,4 @@
 .root {
-  appearance: none;
-  border: none;
-  background: none;
   position: relative;
   color: inherit;
   line-height: inherit;
@@ -23,7 +20,8 @@
   line-height: var(--space-small);
 }
 
-.arrow {
+.arrow svg {
+  display: block;
   fill: var(--color-light);
 }
 
@@ -32,6 +30,6 @@
   color: var(--color-light);
 }
 
-.tooltipDarkMode .arrow {
+.tooltipDarkMode .arrow svg {
   fill: var(--color-text);
 }

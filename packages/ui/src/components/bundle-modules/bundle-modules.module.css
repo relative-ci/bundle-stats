@@ -11,3 +11,7 @@
   max-width: 240px;
   margin-right: -1px; /** collapse border */
 }
+
+.namePopover {
+  min-width: 280px;
+}
