@@ -13,10 +13,11 @@ export const SortDropdown = (props) => {
   const customLabel = fields[field] ? `Ordered by ${fields[field].label}` : label;
 
   return (
-    <Dropdown className={rootClassName} label={customLabel} glyph="sort">
-      {({ MenuItem, menuItemClassName, menuItemActiveClassName }) => {
+    <Dropdown className={rootClassName} label={customLabel} glyph="sort" align="right">
+      {({ MenuItem, menu, menuItemClassName, menuItemActiveClassName }) => {
         const getButtonOnClick = (newField, newDirection) => () => {
           onChange({ field: newField, direction: newDirection });
+          menu.toggle();
         };
 
         return (
@@ -25,20 +26,21 @@ export const SortDropdown = (props) => {
               const buttonProps =
                 direction === 'asc'
                   ? {
-                      className: css.itemAsc,
-                      onClick: getButtonOnClick(key, 'desc'),
-                      title: `Order data by ${item.label} descending`,
-                    }
+                    className: css.itemAsc,
+                    onClick: getButtonOnClick(key, 'desc'),
+                    title: `Order data by ${item.label} descending`,
+                  }
                   : {
-                      onClick: getButtonOnClick(key, 'asc'),
-                      title: `Order data by ${item.label} ascending`,
-                    };
+                    onClick: getButtonOnClick(key, 'asc'),
+                    title: `Order data by ${item.label} ascending`,
+                  };
 
               const isActive = field === key;
 
               return (
                 <MenuItem
                   key={key}
+                  {...menu}
                   {...buttonProps}
                   className={cx(
                     buttonProps.className,

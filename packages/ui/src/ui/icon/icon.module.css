@@ -1,6 +1,5 @@
 .root {
   display: inline-block;
-  vertical-align: middle; /** center align when parent display is inline/inline-block **/
 }
 
 .icon {

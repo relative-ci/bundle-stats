@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get, isEmpty, map } from 'lodash';
@@ -18,7 +18,7 @@ import { FlexStack } from '../../layout/flex-stack';
 import { EmptySet } from '../../ui/empty-set';
 import { FileName } from '../../ui/file-name';
 import { Filters } from '../../ui/filters';
-import { HoverCard } from '../../ui/hover-card';
+import { Popover } from '../../ui/popover';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Toolbar } from '../../ui/toolbar';
 import { MetricsTable } from '../metrics-table';
@@ -30,18 +30,31 @@ import css from './bundle-modules.module.css';
 
 const RowHeader = ({ row, chunks, labels, CustomComponentLink }) => {
   const chunkIds = map(chunks, 'id');
+
+  const [showPopopver, setPopover] = useState(false);
+  const handleOnMouseEnter = useCallback(() => setPopover(true), [showPopopver]);
   const content = <FileName name={row.label} />;
 
   return (
-    <HoverCard label={content}>
-      <ModuleInfo
-        item={row}
-        chunks={chunks}
-        chunkIds={chunkIds}
-        labels={labels}
-        customComponentLink={CustomComponentLink}
-      />
-    </HoverCard>
+    <div onMouseEnter={handleOnMouseEnter}>
+      {!showPopopver ?
+        content
+        : (
+        <Popover ariaLabel="View module info" label={content}>
+          {({ popoverToggle }) => (
+            <ModuleInfo
+              className={css.namePopover}
+              item={row}
+              chunks={chunks}
+              chunkIds={chunkIds}
+              labels={labels}
+              customComponentLink={CustomComponentLink}
+              onClick={popoverToggle}
+            />
+          )}
+        </Popover>
+      )}
+    </div>
   );
 };
 
@@ -63,17 +76,9 @@ RowHeader.defaultProps = {
   chunks: [],
 };
 
-const getRenderRowHeader =
-  ({ labels, chunks, CustomComponentLink }) =>
-  (row) =>
-    (
-      <RowHeader
-        row={row}
-        chunks={chunks}
-        labels={labels}
-        CustomComponentLink={CustomComponentLink}
-      />
-    );
+const getRenderRowHeader = ({ labels, chunks, CustomComponentLink }) => (row) => (
+  <RowHeader row={row} chunks={chunks} labels={labels} CustomComponentLink={CustomComponentLink} />
+);
 
 export const BundleModules = ({
   className,
@@ -235,12 +240,10 @@ BundleModules.propTypes = {
   jobs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 
   /** Chunks data */
-  chunks: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-    }),
-  ).isRequired,
+  chunks: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+  })).isRequired,
 
   /** total row count */
   totalRowCount: PropTypes.number,
