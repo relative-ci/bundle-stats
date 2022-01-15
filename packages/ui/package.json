@@ -76,7 +76,7 @@
   },
   "peerDependencies": {
     "classnames": "2.2.6",
-    "core-js": "3.16.2",
+    "core-js": "3.20.2",
     "lodash": "4.17.21",
     "prop-types": "15.7.2",
     "react": "16.14.0",
