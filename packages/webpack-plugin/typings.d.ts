@@ -1,5 +1,7 @@
 export class BundleStatsWebpackPlugin {
   constructor(options?: Partial<BundleStatsWebpackPlugin.Options>) {}
+
+  apply(compiler: Compiler): void;
 };
 
 declare namespace BundleStatsWebpackPlugin {
