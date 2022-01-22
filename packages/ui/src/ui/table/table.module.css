@@ -13,10 +13,6 @@
   text-align: left;
 }
 
-tr:last-child .cell {
-  border-bottom-width: 1px;
-}
-
 .root thead .cell {
   border-width: 0 0 2px;
   text-transform: uppercase;
