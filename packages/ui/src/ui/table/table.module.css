@@ -44,10 +44,6 @@ tr:last-child .cell {
   text-decoration: underline;
 }
 
-.root tbody tr:nth-child(odd) .cell {
-  background-color: var(--color-highlight);
-}
-
 .root tbody tr:hover .cell {
   background-color: var(--color-highlight-warning);
 }
