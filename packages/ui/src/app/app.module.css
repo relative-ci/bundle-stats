@@ -6,6 +6,10 @@
   padding-top: var(--header-height);
 }
 
+.footer {
+  border-top: 1px solid var(--color-outline);
+}
+
 .empty {
   padding-top: var(--space-large);
   min-height: 80vh;
@@ -37,6 +41,7 @@
   padding-top: var(--space-medium);
   padding-bottom: var(--space-medium);
   min-height: 480px;
+  background: var(--color-highlight);
 }
 
 @media (min-width: 600px) {
