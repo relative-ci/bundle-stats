@@ -31,6 +31,7 @@
 }
 
 .flag {
+  border-radius: 2px;
   display: inline-block;
   width: var(--space-xsmall);
   height: var(--space-xsmall);
