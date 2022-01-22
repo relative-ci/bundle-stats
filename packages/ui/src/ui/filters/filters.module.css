@@ -11,6 +11,7 @@
 }
 
 .filterInput {
+  border-radius: var(--radius-small) 0 0 var(--radius-small);
   flex: 0 0 auto;
   height: 1em;
   cursor: pointer;
@@ -129,9 +130,18 @@
 }
 
 .item {
+  border-radius: 0;
   position: relative;
   flex: 0 0 auto;
   margin-right: -1px;
+}
+
+.item:first-child {
+  border-radius: var(--radius-small) 0 0 var(--radius-small);
+}
+
+.item:last-child {
+  border-radius: 0 var(--radius-small) var(--radius-small) 0;
 }
 
 .item:hover {

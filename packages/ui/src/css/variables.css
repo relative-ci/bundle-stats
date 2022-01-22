@@ -170,7 +170,7 @@
   --color-outline-warning: var(--color-yellow-200);
   --color-outline-danger: var(--color-red-100);
 
-  --color-shadow: rgba(0, 0, 0, 0.2);
+  --color-shadow: rgba(0, 0, 0, 0.1);
 
   --transition-in: all 0.2s ease-in;
   --transition-out: all 0.17s ease-out;

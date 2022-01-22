@@ -11,27 +11,25 @@ export const Dropdown = (props) => {
   const { className, label, ariaLabel, glyph, activeLabel, children } = props;
   const rootClassName = cx(css.root, activeLabel && css.activeLabel, className);
 
-  const menu = useMenuState({baseId: process.env.NODE_ENV === 'test' && 'id-test', modal: true });
+  const menu = useMenuState({ baseId: process.env.NODE_ENV === 'test' && 'id-test', modal: true });
 
   return (
     <>
       <MenuButton {...menu} className={rootClassName} tabIndex={null}>
-        <FlexStack space="xxxsmall" className={css.label}>
+        <FlexStack space="xxxsmall">
           {glyph && <Icon className={css.labelIcon} glyph={glyph} />}
           {label}
         </FlexStack>
       </MenuButton>
       <Menu {...menu} aria-label={ariaLabel || label} className={css.dropdown}>
         {typeof children === 'function'
-          ?
-            children({
+          ? children({
               MenuItem,
               menu,
               menuItemClassName: css.menuItem,
               menuItemActiveClassName: css.menuItemActive,
             })
-          : children
-        }
+          : children}
       </Menu>
     </>
   );
