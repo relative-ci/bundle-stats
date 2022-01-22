@@ -58,8 +58,12 @@ Layout.defaultProps = {
 
 const AppComponent = ({ version, jobs }) => {
   const [bundleStatsState, bundleStatsSetState] = useComponentQueryState(COMPONENT.BUNDLE_ASSETS);
-  const [bundlePackagesState, bundlePackagesSetState] = useComponentQueryState(COMPONENT.BUNDLE_PACKAGES);
-  const [bundleModulesState, bundleModulesSetState] = useComponentQueryState(COMPONENT.BUNDLE_MODULES);
+  const [bundlePackagesState, bundlePackagesSetState] = useComponentQueryState(
+    COMPONENT.BUNDLE_PACKAGES,
+  );
+  const [bundleModulesState, bundleModulesSetState] = useComponentQueryState(
+    COMPONENT.BUNDLE_MODULES,
+  );
 
   if (jobs.length === 0) {
     return (
@@ -178,19 +182,19 @@ const AppComponent = ({ version, jobs }) => {
             exact
             path={URLS.OVERVIEW}
             render={() => (
-              <Stack space="large">
-                {duplicatePackagesInsights && (
-                  <Container>
-                    <DuplicatePackagesWarning
-                      duplicatePackagesCount={duplicatePackagesCount}
-                      showDelta={jobs.length > 1}
-                    />
-                  </Container>
-                )}
+              <Stack space="medium">
                 <Container>
-                  <Stack space="small">
-                    <TotalSizeTypeTitle />
-                    <BundleAssetsTotalsChartBars jobs={jobs} />
+                  <Stack space="medium">
+                    {duplicatePackagesInsights && (
+                      <DuplicatePackagesWarning
+                        duplicatePackagesCount={duplicatePackagesCount}
+                        showDelta={jobs.length > 1}
+                      />
+                    )}
+                    <Stack space="small">
+                      <TotalSizeTypeTitle />
+                      <BundleAssetsTotalsChartBars jobs={jobs} />
+                    </Stack>
                     <Box outline>
                       <BundleAssetsTotalsTable jobs={jobs} />
                     </Box>

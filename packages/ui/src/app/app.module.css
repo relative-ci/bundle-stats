@@ -13,8 +13,8 @@
 }
 
 .summaryContainer {
-  padding-top: var(--space-large);
-  padding-bottom: var(--space-small);
+  padding-top: var(--space-medium);
+  padding-bottom: var(--space-xsmall);
 }
 
 .tabsContainer {
@@ -34,8 +34,8 @@
 }
 
 .tabsContent {
-  padding-top: var(--space-large);
-  padding-bottom: var(--space-large);
+  padding-top: var(--space-medium);
+  padding-bottom: var(--space-medium);
   min-height: 480px;
 }
 
