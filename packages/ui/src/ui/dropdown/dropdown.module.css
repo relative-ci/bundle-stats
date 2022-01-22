@@ -2,15 +2,9 @@
   background: none;
   border: none;
   padding: 0;
-}
 
-.root:focus {
-  outline: none;
-  box-shadow: 0 0 var(--space-xxxsmall) var(--color-shadow);
-}
-
-.label {
   border: 1px solid var(--color-outline);
+  border-radius: var(--radius-small);
   padding: calc(var(--space-xxsmall) - 1px);
   display: flex;
   align-items: center;
@@ -24,7 +18,11 @@
   color: var(--color-text-light);
 }
 
-.label:hover {
+.root:hover,
+.root:focus,
+.root:active {
+  outline: none;
+  box-shadow: 0 0 var(--space-xxxsmall) var(--color-shadow);
   border-color: var(--color-outline-dark);
   color: var(--color-text);
 }
@@ -33,6 +31,7 @@
   position: absolute;
   left: 0;
   top: 100%;
+  border-radius: var(--radius-small);
   box-shadow: 0 2px var(--space-xxsmall) var(--color-shadow);
   background: var(--color-background);
   min-width: 180px;

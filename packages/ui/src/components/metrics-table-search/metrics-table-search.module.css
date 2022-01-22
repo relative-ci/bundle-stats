@@ -5,6 +5,7 @@
 }
 
 .input {
+  border-radius: var(--radius-small) 0 0 var(--radius-small);
   height: var(--space-large);
   border-color: var(--color-outline);
 }
@@ -21,12 +22,12 @@
   cursor: pointer;
   border-radius: 50%;
   position: absolute;
-  right: 0;
+  right: 2px;
   top: 50%;
   transform: translateY(-50%);
-  padding: var(--space-xxsmall);
-  width: var(--space-large);
-  height: var(--space-large);
+  padding: var(--space-xxxsmall);
+  width: var(--space-medium);
+  height: var(--space-medium);
   background: radial-gradient(var(--color-background) 50%, transparent);
   color: var(--color-text-ultra-light);
   transition: var(--transition-in);
