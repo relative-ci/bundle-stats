@@ -35,11 +35,6 @@
   font-weight: bold;
 }
 
-.delta {
-  font-size: var(--size-small);
-  line-height: var(--space-medium);
-}
-
 .baselineMetric {
   color: var(--color-text-light);
   font-size: var(--size-small);
@@ -59,4 +54,8 @@
 .large .currentMetric {
   font-size: var(--size-xxxlarge);
   line-height: var(--space-medium);
+}
+
+.large .delta {
+  font-size: var(--size-small);
 }

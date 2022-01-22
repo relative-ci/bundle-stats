@@ -1,6 +1,5 @@
 .root {
   display: block;
-  letter-spacing: 0.05em;
 }
 
 .displayUnit {
@@ -24,7 +23,12 @@
   margin-top: -2px;
 }
 
+.inline .display {
+  vertical-align: middle;
+}
+
 .inline .delta {
-  display: inline-block;
+  display: inline;
+  vertical-align: middle;
   margin: 0 0 0 var(--space-xxxsmall);
 }
