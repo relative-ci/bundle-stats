@@ -13,17 +13,21 @@
 }
 
 .duplicate {
-  margin-right: var(--space-xxxsmall);
+  border-radius: 2px;
   display: inline-block;
-  width: var(--space-small);
-  height: var(--space-small);
-  font-size: 10px;
+  width: var(--space-xsmall);
+  height: var(--space-xsmall);
+  font-family: var(--font-family);
+  font-size: 8px;
   font-weight: bold;
-  line-height: var(--space-small);
+  background: var(--color-highlight);
+  color: var(--color-text-light);
+  line-height: var(--space-xsmall);
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
 
+  margin-right: var(--space-xxxsmall);
   background: var(--color-danger);
   color: var(--color-light);
 }
