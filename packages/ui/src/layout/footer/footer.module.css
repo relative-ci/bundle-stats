@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-.inner {
-  border-top: 2px solid var(--color-outline);
-}
-
 .navItem {
   display: inline-block;
   margin: 0 var(--space-xxxsmall);

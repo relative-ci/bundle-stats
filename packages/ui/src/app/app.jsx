@@ -42,7 +42,7 @@ const Layout = ({ jobs, version, ...props }) => (
   <div className={css.root}>
     <Header className={css.header} jobs={jobs} />
     <main className={css.main} {...props} />
-    <Footer version={version} />
+    <Footer className={css.footer} version={version} />
   </div>
 );
 
