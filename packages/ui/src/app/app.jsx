@@ -12,6 +12,7 @@ import {
 } from '../constants';
 import { Box } from '../layout/box';
 import { Container } from '../ui/container';
+import { Separator } from '../ui/separator';
 import { DuplicatePackagesWarning } from '../components/duplicate-packages-warning';
 import { Summary } from '../components/summary';
 import { BundleAssets } from '../components/bundle-assets';
@@ -191,11 +192,14 @@ const AppComponent = ({ version, jobs }) => {
                         showDelta={jobs.length > 1}
                       />
                     )}
-                    <Stack space="small">
-                      <TotalSizeTypeTitle />
-                      <BundleAssetsTotalsChartBars jobs={jobs} />
-                    </Stack>
                     <Box outline>
+                      <Box padding="small">
+                        <Stack space="small">
+                          <TotalSizeTypeTitle />
+                          <BundleAssetsTotalsChartBars jobs={jobs} />
+                        </Stack>
+                      </Box>
+                      <Separator />
                       <BundleAssetsTotalsTable jobs={jobs} />
                     </Box>
                   </Stack>
