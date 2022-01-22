@@ -55,7 +55,3 @@
   font-size: var(--size-xxxlarge);
   line-height: var(--space-medium);
 }
-
-.large .delta {
-  font-size: var(--size-small);
-}

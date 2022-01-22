@@ -78,7 +78,6 @@ export const SummaryItem = ({
             value={current}
             formatter={metric.formatter}
             enhanced
-            inline
           >
             {showDelta && (
               <Delta

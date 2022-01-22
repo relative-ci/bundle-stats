@@ -2,12 +2,18 @@
   display: block;
 }
 
+.display {
+  vertical-align: middle;
+}
+
 .displayUnit {
   color: var(--color-text-ultra-light);
 }
 
 .delta {
-  display: block;
+  display: inline;
+  vertical-align: middle;
+  margin: 0 0 0 var(--space-xxxsmall);
   font-size: var(--size-xsmall);
 }
 
@@ -21,14 +27,4 @@
   top: 100%;
   line-height: 1;
   margin-top: -2px;
-}
-
-.inline .display {
-  vertical-align: middle;
-}
-
-.inline .delta {
-  display: inline;
-  vertical-align: middle;
-  margin: 0 0 0 var(--space-xxxsmall);
 }
