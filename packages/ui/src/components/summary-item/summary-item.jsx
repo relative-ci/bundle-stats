@@ -84,6 +84,7 @@ export const SummaryItem = ({
                 className={css.delta}
                 displayValue={runInfo.displayDeltaPercentage}
                 deltaType={runInfo.deltaType}
+                inverted
               />
             )}
           </Metric>

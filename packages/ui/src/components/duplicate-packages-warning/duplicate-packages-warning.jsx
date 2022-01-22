@@ -39,6 +39,7 @@ export const DuplicatePackagesWarning = (props) => {
             className={css.titleDelta}
             displayValue={metricRunInfo.displayDelta}
             deltaType={metricRunInfo.deltaType}
+            inverted
           />
         )}
         {` duplicate ${metricRunInfo.value === 1 ? 'package' : 'packages'}.`}
