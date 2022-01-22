@@ -203,7 +203,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                       type="button"
                     >
                       <div
-                        class="label root space--xxxsmall"
+                        class="root space--xxxsmall"
                       >
                         <span
                           class="root item labelIcon medium"
@@ -320,7 +320,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                       type="button"
                     >
                       <div
-                        class="label root space--xxxsmall"
+                        class="root space--xxxsmall"
                       >
                         <span
                           class="root item labelIcon medium"
@@ -372,11 +372,11 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                 >
                   <FlexStack
                     as="div"
-                    className="label"
+                    className=""
                     space="xxxsmall"
                   >
                     <div
-                      className="label root space--xxxsmall"
+                      className="root space--xxxsmall"
                     >
                       <Icon
                         as="span"
@@ -530,7 +530,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                       type="button"
                     >
                       <div
-                        class="label root space--xxxsmall"
+                        class="root space--xxxsmall"
                       >
                         <span
                           class="root item labelIcon medium"
@@ -647,7 +647,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                       type="button"
                     >
                       <div
-                        class="label root space--xxxsmall"
+                        class="root space--xxxsmall"
                       >
                         <span
                           class="root item labelIcon medium"
@@ -910,7 +910,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                 type="button"
                               >
                                 <div
-                                  class="label root space--xxxsmall"
+                                  class="root space--xxxsmall"
                                 >
                                   <span
                                     class="root item labelIcon medium"
@@ -1027,7 +1027,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                 type="button"
                               >
                                 <div
-                                  class="label root space--xxxsmall"
+                                  class="root space--xxxsmall"
                                 >
                                   <span
                                     class="root item labelIcon medium"
@@ -1229,7 +1229,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                 type="button"
                               >
                                 <div
-                                  class="label root space--xxxsmall"
+                                  class="root space--xxxsmall"
                                 >
                                   <span
                                     class="root item labelIcon medium"
@@ -1346,7 +1346,7 @@ exports[`Storyshots UI/SortDropdown default 1`] = `
                                 type="button"
                               >
                                 <div
-                                  class="label root space--xxxsmall"
+                                  class="root space--xxxsmall"
                                 >
                                   <span
                                     class="root item labelIcon medium"

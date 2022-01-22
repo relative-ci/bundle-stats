@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { BUNDLE_PACKAGES_DUPLICATE, METRIC_TYPE_NUMERIC, METRIC_TYPES, getMetricRunInfo } from '@bundle-stats/utils';
+import {
+  BUNDLE_PACKAGES_DUPLICATE,
+  METRIC_TYPE_NUMERIC,
+  METRIC_TYPES,
+  getMetricRunInfo,
+} from '@bundle-stats/utils';
 
 import { Alert } from '../../ui/alert';
 import { ComponentLink } from '../component-link';
@@ -32,7 +37,6 @@ export const DuplicatePackagesWarning = (props) => {
         {showDelta && metricRunInfo.delta !== 0 && (
           <Delta
             className={css.titleDelta}
-            inverted
             displayValue={metricRunInfo.displayDelta}
             deltaType={metricRunInfo.deltaType}
           />
