@@ -182,19 +182,19 @@ const AppComponent = ({ version, jobs }) => {
             exact
             path={URLS.OVERVIEW}
             render={() => (
-              <Stack space="large">
-                {duplicatePackagesInsights && (
-                  <Container>
-                    <DuplicatePackagesWarning
-                      duplicatePackagesCount={duplicatePackagesCount}
-                      showDelta={jobs.length > 1}
-                    />
-                  </Container>
-                )}
+              <Stack space="medium">
                 <Container>
-                  <Stack space="small">
-                    <TotalSizeTypeTitle />
-                    <BundleAssetsTotalsChartBars jobs={jobs} />
+                  <Stack space="medium">
+                    {duplicatePackagesInsights && (
+                      <DuplicatePackagesWarning
+                        duplicatePackagesCount={duplicatePackagesCount}
+                        showDelta={jobs.length > 1}
+                      />
+                    )}
+                    <Stack space="small">
+                      <TotalSizeTypeTitle />
+                      <BundleAssetsTotalsChartBars jobs={jobs} />
+                    </Stack>
                     <Box outline>
                       <BundleAssetsTotalsTable jobs={jobs} />
                     </Box>
