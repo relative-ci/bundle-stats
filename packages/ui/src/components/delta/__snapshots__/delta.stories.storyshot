@@ -34,6 +34,23 @@ exports[`Storyshots Components/Delta empty 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/Delta inverted 1`] = `
+<div>
+  <Component />
+  <IconSprite
+    height="16"
+    style={
+      Object {
+        "height": 0,
+        "position": "absolute",
+        "width": 0,
+      }
+    }
+    width="16"
+  />
+</div>
+`;
+
 exports[`Storyshots Components/Delta negative 1`] = `
 <div>
   <Component />

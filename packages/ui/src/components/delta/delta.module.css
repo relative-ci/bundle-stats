@@ -1,37 +1,64 @@
 .root {
+  white-space: nowrap;
+}
+
+.HIGH_NEGATIVE {
+  color: var(--color-red-dark);
+}
+
+.NEGATIVE {
+  color: var(--color-red);
+}
+
+.LOW_NEGATIVE {
+  color: var(--color-red-light);
+}
+
+.LOW_POSITIVE {
+  color: var(--color-green-light);
+}
+
+.POSITIVE {
+  color: var(--color-green);
+}
+
+.HIGH_POSITIVE {
+  color: var(--color-green-dark);
+}
+
+.inverted {
   padding: 2px;
   border-radius: 2px;
-  white-space: nowrap;
   background: var(--color-gray-ultra-light);
   color: var(--color-light);
 }
 
-.HIGH_NEGATIVE {
+.inverted.HIGH_NEGATIVE {
   background: var(--color-red-dark);
   color: var(--color-highlight-danger);
 }
 
-.NEGATIVE {
+.inverted.NEGATIVE {
   background: var(--color-red);
   color: var(--color-highlight-danger);
 }
 
-.LOW_NEGATIVE {
+.inverted.LOW_NEGATIVE {
   background: var(--color-red-light);
   color: var(--color-highlight-danger);
 }
 
-.LOW_POSITIVE {
+.inverted.LOW_POSITIVE {
   background: var(--color-green-light);
   color: var(--color-highlight-success);
 }
 
-.POSITIVE {
+.inverted.POSITIVE {
   background: var(--color-green);
   color: var(--color-highlight-success);
 }
 
-.HIGH_POSITIVE {
+.inverted.HIGH_POSITIVE {
   background: var(--color-green-dark);
   color: var(--color-highlight-success);
 }

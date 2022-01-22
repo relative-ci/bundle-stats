@@ -16,3 +16,5 @@ stories.add('slightlyNegative', () => <Delta displayValue="1%" deltaType="LOW_NE
 stories.add('slightlyPositive', () => <Delta displayValue="1%" deltaType="LOW_POSITIVE" />);
 
 stories.add('empty', () => <Delta displayValue="0%" deltaType="NO_CHANGE" />);
+
+stories.add('inverted', () => <Delta displayValue="1%" deltaType="LOW_NEGATIVE" inverted />);
