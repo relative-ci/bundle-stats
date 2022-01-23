@@ -1,4 +1,5 @@
 .title {
+  font-size: var(--size-large);
   line-height: 1;
   font-weight: bold;
   vertical-align: top;

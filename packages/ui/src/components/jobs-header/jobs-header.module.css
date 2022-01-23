@@ -1,11 +1,8 @@
 .root {
   align-items: stretch;
-  flex-wrap: wrap;
   padding: var(--space-small) 0;
 }
 
 .item {
-  flex: 0 0 auto;
-  padding: 0 var(--space-medium);
-  border-left: 1px solid var(--color-outline);
+  flex: 1 1 50%;
 }
