@@ -1,9 +1,9 @@
 .inner {
-  display: flex;
   align-items: center;
 }
 
 .branding {
+  margin-right: var(--space-small);
   padding: var(--space-small);
   flex: 0 0 auto;
   color: var(--color-text);
@@ -13,18 +13,4 @@
 
 .jobs {
   flex: 1 1 auto;
-}
-
-.tools {
-  border-left: 1px solid var(--color-outline);
-  padding: var(--space-small);
-  margin: 0 0 0 auto;
-  display: flex;
-  align-items: center;
-  color: var(--color-text-light);
-}
-
-.toolsGithub {
-  color: inherit;
-  width: var(--space-medium);
 }
