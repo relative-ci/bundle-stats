@@ -1,18 +1,29 @@
+@import url("~modern-css-reset/dist/reset.css");
+
 :root {
   --chart-height: 180px;
 }
 
+/** modern-css-reset updates */
+pre,
+ul,
+ol,
+button {
+  margin: 0;
+}
+
 html {
+  font-family: var(--font-family);
   font-size: 81.25%;
-  line-height: 1.8461;
+  line-height: 1.6;
 }
 
 body {
+  background: var(--color-background);
   color: var(--color-text);
 }
 
-h1, h2, h3, h4, h5 {
-  margin-bottom: var(--space-small);
+h1, h2, h3, h4, h5, h6 {
   color: var(--color-heading);
   font-weight: 500;
 }

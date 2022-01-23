@@ -1,8 +1,8 @@
 import React from 'react';
 
 import '../../src/css/variables.css';
-import '../../src/css/default.css';
 import IconSprite from '../../src/assets/icons.svg';
+import '../../src/css/default.css';
 
 export const decorators = [
   (Story) => (
