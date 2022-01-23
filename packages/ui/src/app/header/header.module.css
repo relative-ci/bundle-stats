@@ -2,15 +2,22 @@
   align-items: center;
 }
 
-.branding {
-  margin-right: var(--space-small);
-  padding: var(--space-small);
-  flex: 0 0 auto;
-  color: var(--color-text);
-  display: flex;
-  align-items: center;
-}
-
 .jobs {
   flex: 1 1 auto;
+  overflow-x: auto;
+}
+
+.options {
+  flex: 0 0 var(--space-large);
+}
+
+.option {
+  display: inline-block;
+}
+
+.github {
+  display: block;
+  color: var(--color-text-ultra-light);
+  width: var(--space-medium);
+  height: var(--space-medium);
 }
