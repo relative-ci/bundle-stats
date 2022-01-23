@@ -11,8 +11,8 @@ import {
   URLS,
 } from '../constants';
 import { Box } from '../layout/box';
+import { Separator } from '../layout/separator';
 import { Container } from '../ui/container';
-import { Separator } from '../ui/separator';
 import { DuplicatePackagesWarning } from '../components/duplicate-packages-warning';
 import { Summary } from '../components/summary';
 import { BundleAssets } from '../components/bundle-assets';
