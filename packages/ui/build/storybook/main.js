@@ -12,6 +12,7 @@ module.exports = {
         },
       },
     },
+    '@storybook/addon-essentials',
   ],
   webpackFinal: (config) => {
     // CSS module support - rely on css-loader auto option
