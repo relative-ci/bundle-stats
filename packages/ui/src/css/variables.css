@@ -23,7 +23,7 @@
   --size-xxlarge: 1.424rem;
   --size-xxxlarge: 1.602rem;
 
-  --line-height: var(--space-medium);
+  --line-height: 1.6em;
 
   /*
    * Color scheme:
