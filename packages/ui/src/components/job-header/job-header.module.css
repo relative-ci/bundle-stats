@@ -1,37 +1,32 @@
 .title {
   font-size: var(--size-large);
-  line-height: 1;
-  font-weight: bold;
   vertical-align: top;
 }
 
 .tag {
   padding: var(--space-xxxsmall);
   margin-left: var(--space-xxxsmall);
-  background-color: var(--color-highlight);
+  background: var(--color-highlight);
   color: var(--color-text-light);
   display: inline-block;
-  font-size: 9px;
+  font-size: var(--size-xsmall);
   line-height: var(--space-xxsmall);
   font-weight: normal;
   vertical-align: top;
 }
 
-.meta {
-  color: var(--color-text-light);
-}
-
 .metaItem {
   display: inline-flex;
   align-items: center;
+  white-space: nowrap;
 }
 
 .metaIcon {
   width: var(--space-small);
   height: var(--space-small);
-  margin-right: var(--space-xxxsmall);
+  color: var(--color-text-ultra-light);
 }
 
 .metaLabel {
-  line-height: var(--space-small);
+  color: var(--color-text-light);
 }

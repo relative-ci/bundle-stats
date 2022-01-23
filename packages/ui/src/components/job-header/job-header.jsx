@@ -17,26 +17,30 @@ export const JobHeader = (props) => {
   const rootClassName = cx(css.root, className);
 
   return (
-    <Stack className={rootClassName} space="xxsmall">
+    <Stack className={rootClassName} space="xxxsmall">
       <h1 className={css.title}>
         <span>{`#${job.internalBuildNumber}`}</span>
         {tag && <span className={css.tag}>{tag}</span>}
       </h1>
       <FlexStack className={css.meta} space="xxsmall">
         {builtAt && (
-          <span className={css.metaItem} title={`${formatDate(builtAt)} ${formatTime(builtAt)}`}>
+          <FlexStack
+            className={css.metaItem}
+            title={`${formatDate(builtAt)} ${formatTime(builtAt)}`}
+            space="xxxsmall"
+          >
             <Icon glyph="clock" className={css.metaIcon} />
             <span className={css.metaLabel}>
               {formatDistanceToNow(new Date(builtAt), { addSuffix: true })}
             </span>
-          </span>
+          </FlexStack>
         )}
 
         {hash && (
-          <span className={css.metaItem} title="Webpack bundle hash">
+          <FlexStack span className={css.metaItem} title="Webpack bundle hash" space="xxxsmall">
             <Icon glyph="commit" className={css.metaIcon} />
             <span className={css.metaLabel}>{hash}</span>
-          </span>
+          </FlexStack>
         )}
 
         <div className={css.content}>{children}</div>
