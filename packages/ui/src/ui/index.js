@@ -12,7 +12,6 @@ export { Logo } from './logo';
 export { Panels } from './panels';
 export { Popover } from './popover';
 export { Skeleton } from './skeleton';
-export { Separator } from './separator';
 export { SortDropdown } from './sort-dropdown';
 export { Table } from './table';
 export { Tabs } from './tabs';
