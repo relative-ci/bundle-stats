@@ -4,15 +4,15 @@
 
 .outline {
   border: 1px solid var(--color-outline);
-  border-radius: var(--radius-small);
+  border-radius: var(--radius-medium);
 }
 
 .outline > :first-child {
-  border-radius: var(--radius-small) var(--radius-medium) 0 0;
+  border-radius: var(--radius-large) var(--radius-medium) 0 0;
 }
 
 .outline > :last-child {
-  border-radius: 0 0 var(--radius-small) var(--radius-medium);
+  border-radius: 0 0 var(--radius-large) var(--radius-medium);
 }
 
 .padding-xxxsmall {

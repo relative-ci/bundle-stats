@@ -12,7 +12,7 @@
 
 .tooltip {
   padding: var(--space-xxxsmall) var(--space-xxsmall);
-  border-radius: var(--radius-small);
+  border-radius: var(--radius-large);
   background: var(--color-light);
   color: var(--color-text);
   filter: drop-shadow(0 0 var(--space-xxxsmall) var(--color-shadow));

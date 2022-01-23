@@ -4,7 +4,7 @@
   padding: 0;
 
   border: 1px solid var(--color-outline);
-  border-radius: var(--radius-small);
+  border-radius: var(--radius-medium);
   padding: calc(var(--space-xxsmall) - 1px);
   display: flex;
   align-items: center;
@@ -31,7 +31,7 @@
   position: absolute;
   left: 0;
   top: 100%;
-  border-radius: var(--radius-small);
+  border-radius: var(--radius-medium);
   box-shadow: 0 2px var(--space-xxsmall) var(--color-shadow);
   background: var(--color-background);
   min-width: 180px;

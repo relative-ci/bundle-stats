@@ -5,7 +5,7 @@
 }
 
 .input {
-  border-radius: var(--radius-small) 0 0 var(--radius-small);
+  border-radius: var(--radius-medium) 0 0 var(--radius-medium);
   height: var(--space-large);
   border-color: var(--color-outline);
 }

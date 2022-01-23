@@ -13,7 +13,7 @@
 }
 
 .duplicate {
-  border-radius: 2px;
+  border-radius: var(--radius-small);
   display: inline-block;
   width: var(--space-xsmall);
   height: var(--space-xsmall);
