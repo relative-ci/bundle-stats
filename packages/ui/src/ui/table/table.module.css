@@ -14,7 +14,7 @@
 }
 
 .root thead .cell {
-  border-width: 0 0 2px;
+  border-width: 0 0 1px;
   text-transform: uppercase;
   vertical-align: top;
 }
