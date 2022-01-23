@@ -13,17 +13,17 @@
   --space-xxlarge: 48px;
   --space-xxxlarge: 64px;
 
-  /* Typography scale */
-  --size-xsmall: 0.77rem;
+  /* Typography scale - https://type-scale.com 1.2 */
+  --size-xsmall: 0.8rem;
   --size-small: 0.92rem;
   --size: 1rem;
   --size-medium: var(--size);
-  --size-large: 1.125rem;
-  --size-xlarge: 1.266rem;
-  --size-xxlarge: 1.424rem;
-  --size-xxxlarge: 1.602rem;
+  --size-large: 1.2rem;
+  --size-xlarge: 1.44rem;
+  --size-xxlarge: 1.728rem;
+  --size-xxxlarge: 2.074rem;
 
-  --line-height: 1.6em;
+  --line-height: 1.66em;
 
   /*
    * Color scheme:

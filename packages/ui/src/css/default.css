@@ -1,9 +1,5 @@
 @import url("~modern-css-reset/dist/reset.css");
 
-:root {
-  --chart-height: 180px;
-}
-
 /** modern-css-reset updates */
 pre,
 ul,
@@ -15,22 +11,21 @@ button {
 html {
   font-family: var(--font-family);
   font-size: 81.25%;
-  line-height: 1.6;
 }
 
 body {
   background: var(--color-background);
   color: var(--color-text);
+  line-height: var(--line-height);
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-heading);
-  font-weight: 500;
+  font-weight: bold;
 }
 
 h1 {
   font-size: var(--size-xxxlarge);
-  line-height: var(--space-xlarge)
 }
 
 h2 {
