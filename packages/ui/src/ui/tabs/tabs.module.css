@@ -7,8 +7,7 @@
   position: relative;
   display: inline-block;
   padding: var(--space-xsmall) 0;
-  color: var(--color-text-ultra-light);
-  font-weight: bold;
+  color: var(--color-text-light);
   text-decoration: none;
 }
 
