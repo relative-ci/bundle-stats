@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.5-alpha.0](https://github.com/relative-ci/bundle-stats/compare/v3.2.4...v3.2.5-alpha.0) (2022-01-23)
+
+
+### Bug Fixes
+
+* **ui:** Add - add content background ([7eae6d0](https://github.com/relative-ci/bundle-stats/commit/7eae6d06212f108d1c7b550fab684c2608275273))
+* **ui:** Add border-radius to flags ([2059ef9](https://github.com/relative-ci/bundle-stats/commit/2059ef9f84b9d1f36a84d0b5a9190f99cdce9cb2))
+* **ui:** App - decrease vertical spacing between components ([192fc8e](https://github.com/relative-ci/bundle-stats/commit/192fc8e003582abb11b10b84202b451d8e3891aa))
+* **ui:** Box - add border-radius to outline ([ed752f7](https://github.com/relative-ci/bundle-stats/commit/ed752f7b8e4748283925ef201c3997c18a9df3d2))
+* **ui:** Delta - readd inverted variation ([55c0217](https://github.com/relative-ci/bundle-stats/commit/55c0217309ed24bf604f17b920c3c39df5359e4d))
+* **ui:** Footer - container separator ([e76f50b](https://github.com/relative-ci/bundle-stats/commit/e76f50becbcf754c2c888caa42f4e4b73d666cc1))
+* **ui:** Header - add logo back ([de20e84](https://github.com/relative-ci/bundle-stats/commit/de20e84c8b93db96d743ab1d3d9d6e4fec554574))
+* **ui:** JobHeaders - tweak styles ([f0107f1](https://github.com/relative-ci/bundle-stats/commit/f0107f1acecf1bdec34ebe7f9311f7fb4207a74c))
+* **ui:** Metric - always use inline variation ([2862b68](https://github.com/relative-ci/bundle-stats/commit/2862b68b68ced1f9caf6aa4bf4dab9c9d7ab32de))
+* **ui:** Move separator to layout ([fcb97c9](https://github.com/relative-ci/bundle-stats/commit/fcb97c9930cc9ff85fc2aff2f116c1cb126ca581))
+* **ui:** Shift radius scale ([554ca52](https://github.com/relative-ci/bundle-stats/commit/554ca52cd16035c1af0820f3f3d2b2394e5accba))
+* **ui:** Table - 1px thead sep ([8193b7f](https://github.com/relative-ci/bundle-stats/commit/8193b7f682c8be8c28e841bcc7a88b63de9c01ee))
+* **ui:** Table - remove last row bottom line ([880a879](https://github.com/relative-ci/bundle-stats/commit/880a879830b3965c1643da6e7f4d8dbbec8c5e7c))
+* **ui:** Table - remove odd styles ([d691c15](https://github.com/relative-ci/bundle-stats/commit/d691c15d73da350402f7b337864b7c10f26d331e))
+* **ui:** Tabs - increase contrast ([c21d688](https://github.com/relative-ci/bundle-stats/commit/c21d68821a03a9cbaf706d13114e4bc895e80869))
+* **ui:** Update layout ([fb2ace8](https://github.com/relative-ci/bundle-stats/commit/fb2ace84bb04617a313d9f7a024eeaf7781b44b4))
+* **ui:** Variables - increase outline contrast ([2a2768a](https://github.com/relative-ci/bundle-stats/commit/2a2768aef9162ad47adfe5ecb74aad0d3f1fbb60))
+
+
+### Features
+
+* **ui:** Separator component ([937df0c](https://github.com/relative-ci/bundle-stats/commit/937df0ca7dfb778eec583c67afc6727a0affa98e))
+
+
+
+
+
 ## [3.2.4](https://github.com/relative-ci/bundle-stats/compare/v3.2.3...v3.2.4) (2022-01-17)
 
 
