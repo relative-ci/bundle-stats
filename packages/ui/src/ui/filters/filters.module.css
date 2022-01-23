@@ -11,7 +11,7 @@
 }
 
 .filterInput {
-  border-radius: var(--radius-small) 0 0 var(--radius-small);
+  border-radius: var(--radius-medium) 0 0 var(--radius-medium);
   flex: 0 0 auto;
   height: 1em;
   cursor: pointer;
@@ -137,11 +137,11 @@
 }
 
 .item:first-child {
-  border-radius: var(--radius-small) 0 0 var(--radius-small);
+  border-radius: var(--radius-medium) 0 0 var(--radius-medium);
 }
 
 .item:last-child {
-  border-radius: 0 var(--radius-small) var(--radius-small) 0;
+  border-radius: 0 var(--radius-medium) var(--radius-medium) 0;
 }
 
 .item:hover {

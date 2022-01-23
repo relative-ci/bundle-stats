@@ -181,9 +181,9 @@
   --layer-high: 1000;
   --layer-xhigh: 10000;
 
-  --radius-small: var(--space-xxxsmall);
-  --radius-medium: var(--space-xxsmall);
-  --radius-large: var(--space-small);
+  --radius-small: calc(var(--space-xxxsmall) / 2);
+  --radius-medium: var(--space-xxxsmall);
+  --radius-large: var(--space-xxsmall);
 
   /** Layout */
   --max-width: 80rem;

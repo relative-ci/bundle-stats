@@ -28,7 +28,7 @@
 
 .inverted {
   padding: 2px;
-  border-radius: 2px;
+  border-radius: var(--radius-small);
   background: var(--color-gray-ultra-light);
   color: var(--color-light);
 }
