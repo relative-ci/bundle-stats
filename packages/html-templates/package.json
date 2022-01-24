@@ -70,7 +70,7 @@
     "rimraf": "3.0.2",
     "stats-webpack-plugin": "0.7.0",
     "webpack": "5.67.0",
-    "webpack-cli": "4.9.1",
+    "webpack-cli": "4.9.2",
     "webpack-merge": "5.8.0"
   }
 }
