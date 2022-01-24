@@ -11,6 +11,7 @@ module.exports = {
         },
       },
     },
+    '@storybook/addon-essentials',
   ],
   core: {
     builder: 'webpack5',
