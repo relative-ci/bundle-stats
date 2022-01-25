@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/html-templates",
-  "version": "3.2.4",
+  "version": "3.2.5-alpha.1",
   "description": "HTML templates for report generation.",
   "main": "index.js",
   "scripts": {
@@ -29,8 +29,8 @@
     "@babel/core": "7.16.12",
     "@babel/preset-env": "7.16.11",
     "@babel/preset-react": "7.16.7",
-    "@bundle-stats/ui": "^3.2.4",
-    "@bundle-stats/utils": "^3.2.4",
+    "@bundle-stats/ui": "^3.2.5-alpha.1",
+    "@bundle-stats/utils": "^3.2.5-alpha.1",
     "@moonwalker/orbit-ui": "1.14.26",
     "@storybook/addon-essentials": "6.4.14",
     "@storybook/addon-postcss": "2.0.0",
