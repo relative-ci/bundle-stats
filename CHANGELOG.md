@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.5-alpha.4](https://github.com/relative-ci/bundle-stats/compare/v3.2.4...v3.2.5-alpha.4) (2022-01-25)
+
+
+### Bug Fixes
+
+* Remove setup-node cache input ([3434797](https://github.com/relative-ci/bundle-stats/commit/3434797e83a69c523a5ac6816852f8ac602037a7))
+
+
+
+
+
 ## [3.2.5-alpha.3](https://github.com/relative-ci/bundle-stats/compare/v3.2.5-alpha.2...v3.2.5-alpha.3) (2022-01-25)
 
 **Note:** Version bump only for package @bundle-state/bundle-stats
