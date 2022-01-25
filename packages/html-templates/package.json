@@ -32,7 +32,6 @@
     "@bundle-stats/ui": "^3.2.4",
     "@bundle-stats/utils": "^3.2.4",
     "@moonwalker/orbit-ui": "1.14.26",
-    "@relative-ci/agent": "3.1.0",
     "@storybook/addon-essentials": "6.4.14",
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/addon-storyshots": "6.4.14",

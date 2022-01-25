@@ -1,6 +1,9 @@
 name: build
 on:
-  push
+  push:
+    branches:
+      - master
+  pull_request:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,10 +25,20 @@ jobs:
           */*/node_modules
         key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
 
-    - run: npx lerna bootstrap --hoist
-    - run: npm run build
-      env:
-        RELATIVE_CI_KEY: ${{ secrets.RELATIVE_CI_KEY }}
-    - run: npm run lint
-    - run: npm test
-    - run: npm run test-package
+    - name: Install dependencies
+      run: npx lerna bootstrap --hoist
+
+    - name: Build
+      run: npm run build
+
+    - name: Lint
+      run: npm run lint
+
+    - name: Test
+      run: npm test && npm run test-package
+
+    - name: Upload RelativeCI artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: relative-ci-artifacts
+        path: packages/html-templates/artifacts

@@ -1,0 +1,25 @@
+name: RelativeCI
+
+on:
+  workflow_run:
+    workflows: ["build"]
+    types:
+      - completed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+
+      - name: Send webpack stats to RelativeCI
+        uses: relative-ci/agent-action@workflow-run-support
+        with:
+          # Webpack stats path relative to the artifacts folder
+          webpackStatsFile: ./webpack-stats.json
+          # Artifact uploaded during the Build workflow
+          artifactName: 'relative-ci-artifacts'
+          # RelativeCI project key
+          key: ${{ secrets.RELATIVE_CI_KEY }}
