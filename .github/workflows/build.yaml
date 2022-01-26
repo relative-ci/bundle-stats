@@ -160,7 +160,7 @@ jobs:
     - run: npm run release
       env:
         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        NPM_TOM: ${{secrets.NPM_TOKEN}}
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   publish-gpr:
     needs:
@@ -205,3 +205,4 @@ jobs:
     - run: npm run release
       env:
         NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
