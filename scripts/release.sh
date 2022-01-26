@@ -6,7 +6,9 @@ const tag = execSync('git tag -l --points-at HEAD').toString().trim();
 const matchTag = tag.match(/^v\d*\.\d*\.\d*-(\w*)\..*$/);
 const distTag = (matchTag && matchTag[1]) || 'latest';
 
-const options = ['publish', 'from-git', `--dist-tag ${distTag}`, '--yes' ];
+const options = ['publish', 'from-git', `--dist-tag ${distTag}`, '--no-git-reset', '--yes' ];
+
+console.log({ tag, matchTag, distTag });
 
 console.log(`Running lerna with "${options.join(' ')}"`);
 
