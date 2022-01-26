@@ -136,6 +136,8 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
+        always-auth: true
+        registry-url: 'https://registry.npmjs.org'
         node-version: ${{ matrix.node-version }}
     - name: Restore cache
       uses: actions/cache@v2
@@ -181,8 +183,9 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}
+        always-auth: true
         registry-url: https://npm.pkg.github.com/
+        node-version: ${{ matrix.node-version }}
     - name: Restore cache
       uses: actions/cache@v2
       with:
