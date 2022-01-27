@@ -137,8 +137,8 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-        registry-url: https://registry.npmjs.org/
-        scope: @bundle-stats
+        registry-url: 'https://registry.npmjs.org/'
+        scope: '@bundle-stats'
     - name: Restore cache
       uses: actions/cache@v2
       with:
@@ -184,8 +184,8 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-        registry-url: https://npm.pkg.github.com/
-        scope: @bundle-stats
+        registry-url: 'https://npm.pkg.github.com/'
+        scope: '@bundle-stats'
     - name: Restore cache
       uses: actions/cache@v2
       with:
