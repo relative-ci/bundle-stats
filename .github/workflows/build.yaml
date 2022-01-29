@@ -3,7 +3,10 @@ on:
   push:
     branches:
       - master
+    tags:
+      - v*
   pull_request:
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,7 +19,83 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+    - name: Restore cache
+      uses: actions/cache@v2
+      with:
+        path: |
+          node_modules
+          */*/node_modules
+        key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+
+    - name: Install dependencies
+      run: npm run install-dependencies
+
+    - name: Build
+      run: npm run build
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-artifacts
+        retention-days: 1
+        # add glob on the first directory to force paths relative to current directory
+        path: |
+          packages*/*/lib/**
+          packages*/*/lib-esm/**
+          packages*/*/dist/**
+
+    - name: Upload RelativeCI artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: relative-ci-artifacts
+        retention-days: 1
+        path: packages/html-templates/artifacts
+
+  lint:
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Restore cache
+      uses: actions/cache@v2
+      with:
+        path: |
+          node_modules
+          */*/node_modules
+        key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+
+    - name: Install dependencies
+      run: npm run install-dependencies
+
+    - name: Download build
+      uses: actions/download-artifact@v2
+      with:
+        name: build-artifacts
+
+    - name: Lint
+      run: npm run lint
+
+  test:
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
     - name: Restore cache
       uses: actions/cache@v2
       with:
@@ -28,17 +107,60 @@ jobs:
     - name: Install dependencies
       run: npx lerna bootstrap --hoist
 
-    - name: Build
-      run: npm run build
-
-    - name: Lint
-      run: npm run lint
+    - name: Download build
+      uses: actions/download-artifact@v2
+      with:
+        name: build-artifacts
 
     - name: Test
-      run: npm test && npm run test-package
+      run: npm test
 
-    - name: Upload RelativeCI artifacts
-      uses: actions/upload-artifact@v2
+    - name: Test webpack-plugin package
+      run: npm run test-package
+
+  publish:
+    needs:
+      - build
+      - lint
+      - test
+
+    if: contains(github.ref, 'refs/tags/v')
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
       with:
-        name: relative-ci-artifacts
-        path: packages/html-templates/artifacts
+        node-version: ${{ matrix.node-version }}
+        registry-url: 'https://registry.npmjs.org/'
+        scope: '@bundle-stats'
+
+    - run: echo '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}' > ~/.npmrc
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+    - name: Restore cache
+      uses: actions/cache@v2
+      with:
+        path: |
+          node_modules
+          */*/node_modules
+        key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+
+    - name: Install dependencies
+      run: npm run install-dependencies
+
+    - name: Download build
+      uses: actions/download-artifact@v2
+      with:
+        name: build-artifacts
+
+    - run: npm run release
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
