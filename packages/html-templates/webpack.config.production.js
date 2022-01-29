@@ -1,6 +1,5 @@
 const { merge } = require('webpack-merge');
 const StatsPlugin = require('stats-webpack-plugin');
-const { RelativeCiAgentWebpackPlugin } = require('@relative-ci/agent');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const appCommonConfig = require('./webpack.config.common');
@@ -10,7 +9,7 @@ const { rootDir } = settings;
 
 module.exports = merge(appCommonConfig, {
   plugins: [
-    new StatsPlugin('../artifacts/webpack.stats.json', {
+    new StatsPlugin('../artifacts/webpack-stats.json', {
       context: rootDir,
       assets: true,
       entrypoints: true,
@@ -20,11 +19,7 @@ module.exports = merge(appCommonConfig, {
       timings: true,
       children: false,
       source: false,
-    }),
-    new RelativeCiAgentWebpackPlugin({
-      stats: {
-        excludeAssets: [/index.html$/],
-      },
+      excludeAssets: [/index.html$/],
     }),
   ],
   devtool: 'hidden-source-map',

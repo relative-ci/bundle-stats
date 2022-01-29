@@ -2,5 +2,10 @@
   "packages": [
     "packages/*"
   ],
-  "version": "3.2.3-alpha.2"
+  "version": "3.2.5-alpha.21",
+  "command": {
+    "publish": {
+      "verifyAccess": false
+    }
+  }
 }
