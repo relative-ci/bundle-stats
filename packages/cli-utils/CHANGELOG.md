@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.5-beta.1](https://github.com/relative-ci/bundle-stats/compare/v3.2.5-beta.0...v3.2.5-beta.1) (2022-01-29)
+
+
+### Reverts
+
+* Revert "fix: Remove setup-node cache input" ([9e63575](https://github.com/relative-ci/bundle-stats/commit/9e635753e57a4a16cc6e43d3658a499865ded1c4))
+
+
+
+
+
 ## [3.2.4](https://github.com/relative-ci/bundle-stats/compare/v3.2.3...v3.2.4) (2022-01-17)
 
 **Note:** Version bump only for package @bundle-stats/cli-utils
