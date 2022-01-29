@@ -139,6 +139,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         registry-url: 'https://registry.npmjs.org/'
         scope: '@bundle-stats'
+
+    - run: echo '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}' > ~/.npmrc
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
     - name: Restore cache
       uses: actions/cache@v2
       with:
@@ -185,7 +190,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         registry-url: 'https://npm.pkg.github.com/'
-        scope: '@bundle-stats'
+
+    - run: echo '//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}' > ~/.npmrc
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
     - name: Restore cache
       uses: actions/cache@v2
       with:
