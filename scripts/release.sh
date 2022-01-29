@@ -7,15 +7,15 @@ const matchTag = tag.match(/^v\d*\.\d*\.\d*-(\w*)\..*$/);
 const distTag = (matchTag && matchTag[1]) || 'latest';
 
 const options = [
-  'publish',
-  'from-git',
-  `--dist-tag ${distTag}`,
-  '--no-git-reset',
-  '--no-changelog',
-  '--no-git-tag-version',
-  '--no-push',
-  '--yes'
-];
+   'publish',
+   'from-git',
+   `--dist-tag ${distTag}`,
+   '--no-git-reset',
+   '--no-changelog',
+   '--no-git-tag-version',
+   '--no-push',
+   '--yes'
+ ];
 
 console.log(`Running lerna with "${options.join(' ')}"`);
 
