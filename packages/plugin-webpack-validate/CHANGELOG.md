@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.5-alpha.22](https://github.com/relative-ci/bundle-stats/compare/v3.2.4...v3.2.5-alpha.22) (2022-01-29)
+
+
+### Bug Fixes
+
+* Remove setup-node cache input ([5a9db83](https://github.com/relative-ci/bundle-stats/commit/5a9db830ef164b9113318e844266593c6114c7b3))
+
+
+
+
+
 ## [3.2.5-alpha.21](https://github.com/relative-ci/bundle-stats/compare/v3.2.5-alpha.20...v3.2.5-alpha.21) (2022-01-29)
 
 **Note:** Version bump only for package @bundle-stats/plugin-webpack-validate
