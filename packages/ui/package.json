@@ -49,7 +49,7 @@
     "@storybook/addons": "6.4.17",
     "@storybook/builder-webpack5": "6.4.14",
     "@storybook/manager-webpack5": "6.4.14",
-    "@storybook/react": "6.4.14",
+    "@storybook/react": "6.4.17",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "27.4.6",
     "babel-plugin-lodash": "3.3.4",
