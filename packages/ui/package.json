@@ -67,7 +67,7 @@
     "jest": "27.4.7",
     "jest-date-mock": "1.0.8",
     "lodash": "4.17.21",
-    "postcss": "8.4.5",
+    "postcss": "8.4.6",
     "prop-types": "15.8.1",
     "react": "16.14.0",
     "react-dom": "16.14.0",
