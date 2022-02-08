@@ -1,6 +1,5 @@
 .root {
   align-items: stretch;
-  padding: var(--space-small) 0;
 }
 
 .item {

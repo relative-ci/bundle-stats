@@ -2,13 +2,6 @@
   --header-height: 0px;
 }
 
-.root {
-}
-
-.header {
-  border-bottom: 1px solid var(--color-outline);
-}
-
 .footer {
   border-top: 1px solid var(--color-outline);
 }
@@ -20,7 +13,6 @@
 }
 
 .summaryContainer {
-  padding-top: var(--space-medium);
   padding-bottom: var(--space-xsmall);
 }
 
@@ -40,14 +32,17 @@
   padding-top: var(--space-medium);
   padding-bottom: var(--space-medium);
   min-height: 480px;
+  background: var(--color-highlight);
 }
 
 @media (min-width: 600px) {
   :root {
-    --header-height: 106px;
+    --header-height: calc(45px + 2 * var(--space-medium));
   }
 
   .header {
+    border-bottom: 1px solid transparent;
+    padding: var(--space-medium) 0;
     position: sticky;
     z-index: var(--layer-high);
     top: 0;

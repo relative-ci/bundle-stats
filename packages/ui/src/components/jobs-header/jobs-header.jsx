@@ -15,7 +15,7 @@ export const JobsHeader = (props) => {
   return (
     <FlexStack className={rootClassName} space="small">
       {jobs?.map((job, index) => (
-        <Box key={job.internalBuildNumber || index} className={css.item} padding="small" outline>
+        <Box key={job.internalBuildNumber || index} className={css.item}>
           <JobHeader job={job} tag={index === 0 ? I18N.CURRENT : I18N.BASELINE} />
         </Box>
       ))}
