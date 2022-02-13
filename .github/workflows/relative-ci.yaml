@@ -17,9 +17,7 @@ jobs:
       - name: Send webpack stats to RelativeCI
         uses: relative-ci/agent-action@workflow-run-support
         with:
-          # Webpack stats path relative to the artifacts folder
-          webpackStatsFile: ./webpack-stats.json
-          # Artifact uploaded during the Build workflow
-          artifactName: 'relative-ci-artifacts'
           # RelativeCI project key
           key: ${{ secrets.RELATIVE_CI_KEY }}
+          # GitHub token
+          token: ${{ secrets.GITHUB_TOKEN }}

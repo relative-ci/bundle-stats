@@ -44,12 +44,10 @@ jobs:
           packages*/*/lib-esm/**
           packages*/*/dist/**
 
-    - name: Upload RelativeCI artifacts
-      uses: actions/upload-artifact@v2
+    - name: Upload webpack stats artifact
+      uses: relative-ci/agent-upload-artifact-action@v1
       with:
-        name: relative-ci-artifacts
-        retention-days: 1
-        path: packages/html-templates/artifacts
+        webpackStatsFile: ./packages/html-templates/artifacts/webpack-stats.json
 
   lint:
     needs:
