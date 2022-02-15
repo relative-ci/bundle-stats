@@ -1,0 +1,5 @@
+.root {
+  background: var(--color-outline);
+  width: 100%;
+  height: 1px;
+}

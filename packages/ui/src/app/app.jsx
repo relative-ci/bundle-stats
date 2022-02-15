@@ -58,8 +58,12 @@ Layout.defaultProps = {
 
 const AppComponent = ({ version, jobs }) => {
   const [bundleStatsState, bundleStatsSetState] = useComponentQueryState(COMPONENT.BUNDLE_ASSETS);
-  const [bundlePackagesState, bundlePackagesSetState] = useComponentQueryState(COMPONENT.BUNDLE_PACKAGES);
-  const [bundleModulesState, bundleModulesSetState] = useComponentQueryState(COMPONENT.BUNDLE_MODULES);
+  const [bundlePackagesState, bundlePackagesSetState] = useComponentQueryState(
+    COMPONENT.BUNDLE_PACKAGES,
+  );
+  const [bundleModulesState, bundleModulesSetState] = useComponentQueryState(
+    COMPONENT.BUNDLE_MODULES,
+  );
 
   if (jobs.length === 0) {
     return (
