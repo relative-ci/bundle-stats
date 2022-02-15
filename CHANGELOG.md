@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.5](https://github.com/relative-ci/bundle-stats/compare/v3.2.4...v3.2.5) (2022-02-15)
+
+
+### Bug Fixes
+
+* **ui:** Move separator to layout ([abc34e7](https://github.com/relative-ci/bundle-stats/commit/abc34e73a0ffb5ae2f4d52538d4f854e1c5857dc))
+* **ui:** Variables - increase outline contrast ([beacc32](https://github.com/relative-ci/bundle-stats/commit/beacc32cf98a49aa150d1820d68f140aebafbc6e))
+* Build - run install-dependencies ([79d39f7](https://github.com/relative-ci/bundle-stats/commit/79d39f7e80b77ad0f4fbd8e8bee8d4ad1f8fb51f))
+* Remove setup-node cache input ([b6f9ded](https://github.com/relative-ci/bundle-stats/commit/b6f9ded844322d5e28f92e69b6caa639f58c6f2c))
+* Use agent-action@v2 ([6f57d36](https://github.com/relative-ci/bundle-stats/commit/6f57d360cb53442fc7c7ddf2852d11c91f1e7d0e))
+
+
+### Features
+
+* **ui:** Separator component ([1b9e56f](https://github.com/relative-ci/bundle-stats/commit/1b9e56f170834a0a111f8d19fab220d6e7f69095))
+
+
+
+
+
 ## [3.2.4](https://github.com/relative-ci/bundle-stats/compare/v3.2.3...v3.2.4) (2022-01-17)
 
 
