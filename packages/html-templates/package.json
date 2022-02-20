@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/html-templates#readme",
   "devDependencies": {
-    "@babel/core": "7.17.3",
+    "@babel/core": "7.17.5",
     "@babel/preset-env": "7.16.11",
     "@babel/preset-react": "7.16.7",
     "@bundle-stats/ui": "^3.2.5",
@@ -69,7 +69,7 @@
     "react-test-renderer": "16.14.0",
     "rimraf": "3.0.2",
     "stats-webpack-plugin": "0.7.0",
-    "webpack": "5.69.0",
+    "webpack": "5.69.1",
     "webpack-cli": "4.9.2",
     "webpack-merge": "5.8.0"
   }
