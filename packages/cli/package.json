@@ -47,7 +47,7 @@
     "@bundle-stats/utils": "^3.2.5",
     "boxen": "5.0.0",
     "core-js": "3.20.2",
-    "fs-extra": "10.0.0",
+    "fs-extra": "10.0.1",
     "listr": "0.14.3",
     "lodash": "4.17.21",
     "update-notifier": "5.1.0",
