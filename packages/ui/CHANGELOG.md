@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.6-beta.1](https://github.com/relative-ci/bundle-stats/compare/v3.2.5...v3.2.6-beta.1) (2022-02-25)
+
+
+### Bug Fixes
+
+* **ui:** Add border-radius to flags ([4f7663b](https://github.com/relative-ci/bundle-stats/commit/4f7663b29a954cf1ace9caa9739acd9f37aa3b95))
+* **ui:** Box - add border-radius to outline ([bd78d20](https://github.com/relative-ci/bundle-stats/commit/bd78d2052db4b781afc3a1d9e8dd583986d0093d))
+* **ui:** Normlize border-radius usage ([e8a6b30](https://github.com/relative-ci/bundle-stats/commit/e8a6b302729112d75a82c74ef1d952fc639d16ab))
+* **ui:** Table - remove last row bottom line ([9398a93](https://github.com/relative-ci/bundle-stats/commit/9398a936e1d937aed188f96ce56ebfa56f3af7d7))
+
+
+### Features
+
+* **ui:** Add Tag component ([f796f9c](https://github.com/relative-ci/bundle-stats/commit/f796f9c909703dab3a513059215a2ce24bc12244))
+
+
+
+
+
 ## [3.2.5](https://github.com/relative-ci/bundle-stats/compare/v3.2.4...v3.2.5) (2022-02-15)
 
 
