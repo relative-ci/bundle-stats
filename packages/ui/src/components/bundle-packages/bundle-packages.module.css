@@ -12,24 +12,12 @@
   margin-right: -1px; /** collapse border */
 }
 
-.duplicate {
-  border-radius: 2px;
-  display: inline-block;
-  width: var(--space-xsmall);
-  height: var(--space-xsmall);
-  font-family: var(--font-family);
-  font-size: 8px;
-  font-weight: bold;
-  background: var(--color-highlight);
-  color: var(--color-text-light);
-  line-height: var(--space-xsmall);
-  text-align: center;
-  text-transform: uppercase;
-  vertical-align: middle;
-
+.tagDuplicate {
   margin-right: var(--space-xxxsmall);
-  background: var(--color-danger);
-  color: var(--color-light);
+}
+
+.tagDuplicate::before {
+  content: 'd';
 }
 
 .packageName {
