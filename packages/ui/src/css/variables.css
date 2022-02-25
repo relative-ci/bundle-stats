@@ -183,7 +183,7 @@
 
   --radius-small: 2px;
   --radius-medium: var(--space-xxxsmall);
-  --radius-large: var(--space-small);
+  --radius-large: var(--space-xxsmall);
 
   /** Layout */
   --max-width: 80rem;

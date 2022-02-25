@@ -15,4 +15,5 @@ export { Skeleton } from './skeleton';
 export { SortDropdown } from './sort-dropdown';
 export { Table } from './table';
 export { Tabs } from './tabs';
+export { Tag } from './tag';
 export { Tooltip } from './tooltip';
