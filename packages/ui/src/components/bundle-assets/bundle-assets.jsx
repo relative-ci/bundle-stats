@@ -2,7 +2,12 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get, map } from 'lodash';
-import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, FILE_TYPE_LABELS } from '@bundle-stats/utils';
+import {
+  ASSET_ENTRY_TYPE,
+  ASSET_FILE_TYPE,
+  ASSET_FILTERS,
+  FILE_TYPE_LABELS,
+} from '@bundle-stats/utils';
 
 import config from '../../config.json';
 import I18N from '../../i18n';
@@ -11,6 +16,7 @@ import { Icon } from '../../ui/icon';
 import { FileName } from '../../ui/file-name';
 import { Popover } from '../../ui/popover';
 import { Tooltip } from '../../ui/tooltip';
+import { Tag } from '../../ui/tag';
 import { Filters } from '../../ui/filters';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { EmptySet } from '../../ui/empty-set';
@@ -71,47 +77,58 @@ TooltipNotPredictive.propTypes = {
   runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };
 
-const getRenderRowHeader = ({ labels, CustomComponentLink, chunks }) => (item) => {
-  const { label, isNotPredictive, runs, isChunk, isEntry, isInitial } = item;
+const getRenderRowHeader =
+  ({ labels, CustomComponentLink, chunks }) =>
+  (item) => {
+    const { label, isNotPredictive, runs, isChunk, isEntry, isInitial } = item;
 
-  return (
-    <Popover
-      label={<FileName name={label} />}
-      icon={
-        <div className={css.assetInfoFlags}>
-          {isNotPredictive && (
-            <Tooltip className={css.notPredictive} title={<TooltipNotPredictive runs={runs} />}>
-              <Icon className={css.notPredictiveIcon} glyph="warning" />
-            </Tooltip>
-          )}
-          {isChunk && (
-            <span title="Chunk" className={css.flagChunk}>
-              c
-            </span>
-          )}
-          {isEntry && (
-            <span title="Entrypoint" className={css.flagEntry}>
-              e
-            </span>
-          )}
-          {isInitial && (
-            <span title="Initial" className={css.flagInitial}>
-              i
-            </span>
-          )}
-        </div>
-      }
-    >
-      <AssetInfo
-        className={css.assetInfo}
-        item={item}
-        labels={labels}
-        chunks={chunks}
-        CustomComponentLink={CustomComponentLink}
-      />
-    </Popover>
-  );
-};
+    return (
+      <Popover
+        label={<FileName name={label} />}
+        icon={
+          <div className={css.assetInfoFlags}>
+            {isNotPredictive && (
+              <Tooltip className={css.notPredictive} title={<TooltipNotPredictive runs={runs} />}>
+                <Icon className={css.notPredictiveIcon} glyph="warning" />
+              </Tooltip>
+            )}
+            {isChunk && (
+              <Tag
+                title="Chunk"
+                size={Tag.SIZES.SMALL}
+                kind={Tag.KINDS.INFO}
+                className={cx(css.tag, css.tagChunk)}
+              />
+            )}
+            {isEntry && (
+              <Tag
+                title="Entrypoint"
+                size={Tag.SIZES.SMALL}
+                kind={Tag.KINDS.INFO}
+                className={cx(css.tag, css.tagEntry)}
+              />
+            )}
+            {isInitial && (
+              <Tag
+                title="Initial"
+                size={Tag.SIZES.SMALL}
+                kind={Tag.KINDS.INFO}
+                className={cx(css.tag, css.tagInitial)}
+              />
+            )}
+          </div>
+        }
+      >
+        <AssetInfo
+          className={css.assetInfo}
+          item={item}
+          labels={labels}
+          chunks={chunks}
+          CustomComponentLink={CustomComponentLink}
+        />
+      </Popover>
+    );
+  };
 
 export const BundleAssets = (props) => {
   const {

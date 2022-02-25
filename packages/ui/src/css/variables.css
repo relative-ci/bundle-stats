@@ -170,7 +170,7 @@
   --color-outline-warning: var(--color-yellow-200);
   --color-outline-danger: var(--color-red-100);
 
-  --color-shadow: rgba(0, 0, 0, 0.2);
+  --color-shadow: rgba(0, 0, 0, 0.1);
 
   --transition-in: all 0.2s ease-in;
   --transition-out: all 0.17s ease-out;
@@ -181,9 +181,9 @@
   --layer-high: 1000;
   --layer-xhigh: 10000;
 
-  --radius-small: var(--space-xxxsmall);
-  --radius-medium: var(--space-xxsmall);
-  --radius-large: var(--space-small);
+  --radius-small: 2px;
+  --radius-medium: var(--space-xxxsmall);
+  --radius-large: var(--space-xxsmall);
 
   /** Layout */
   --max-width: 80rem;

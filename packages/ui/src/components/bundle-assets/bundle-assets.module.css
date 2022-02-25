@@ -30,41 +30,28 @@
   display: none;
 }
 
-.flag {
-  display: inline-block;
-  width: var(--space-xsmall);
-  height: var(--space-xsmall);
-  font-family: var(--font-family);
-  font-size: 8px;
-  font-weight: bold;
-  background: var(--color-highlight);
-  color: var(--color-text-light);
-  line-height: var(--space-xsmall);
-  text-align: center;
-  text-transform: uppercase;
-  vertical-align: middle;
-}
-
-.flag + .flag {
+.tag + .tag {
   margin-left: 2px;
 }
 
-.flagEntry {
-  composes: flag;
+.tagEntry {
   background: var(--color-info-light);
-  color: var(--color-background);
 }
 
-.flagInitial {
-  composes: flag;
-  background: var(--color-info-light);
-  color: var(--color-background);
+.tagEntry::before {
+  content: 'e';
 }
 
-.flagChunk {
-  composes: flag;
-  background: var(--color-info);
-  color: var(--color-background);
+.tagInitial {
+  background: var(--color-info-light);
+}
+
+.tagInitial::before {
+  content: 'i';
+}
+
+.tagChunk::before {
+  content: 'c';
 }
 
 /* Tooltip not predictive */

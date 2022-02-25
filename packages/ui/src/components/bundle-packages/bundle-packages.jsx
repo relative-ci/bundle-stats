@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import {
@@ -17,6 +17,7 @@ import { EmptySet } from '../../ui/empty-set';
 import { Filters } from '../../ui/filters';
 import { Popover } from '../../ui/popover';
 import { SortDropdown } from '../../ui/sort-dropdown';
+import { Tag } from '../../ui/tag';
 import { Toolbar } from '../../ui/toolbar';
 import { FileName } from '../../ui/file-name';
 import { ComponentLink } from '../component-link';
@@ -27,7 +28,8 @@ import { MetricsTableTitle } from '../metrics-table-title';
 import css from './bundle-packages.module.css';
 
 const PackagePopoverContent = ({ name, fullName, path, duplicate, CustomComponentLink }) => {
-  const normalizedPackagePath = path || `node_modules/${fullName.split(PACKAGES_SEPARATOR).join('/node_modules/')}/`;
+  const normalizedPackagePath =
+    path || `node_modules/${fullName.split(PACKAGES_SEPARATOR).join('/node_modules/')}/`;
   const [normalizedName, packageId] = name.split(PACKAGE_ID_SEPARATOR);
 
   return (
@@ -105,9 +107,12 @@ const PackageRowHeader = ({ item, CustomComponentLink }) => {
       {packageNames.map((packageName, index) => {
         // Render duplicate flag only for the last entry
         const duplicateFlag = index === packageNames.length - 1 && item.duplicate && (
-          <span className={css.duplicate} title="Duplicate package">
-            D
-          </span>
+          <Tag
+            title="Duplicate package"
+            kind={Tag.KINDS.DANGER}
+            size={Tag.SIZES.SMALL}
+            className={css.tagDuplicate}
+          />
         );
 
         return (

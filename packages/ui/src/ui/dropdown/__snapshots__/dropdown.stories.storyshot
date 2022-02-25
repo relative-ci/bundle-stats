@@ -118,7 +118,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                     type="button"
                   >
                     <div
-                      class="label root space--xxxsmall"
+                      class="root space--xxxsmall"
                     >
                       <span
                         class="root item labelIcon medium"
@@ -191,7 +191,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                     type="button"
                   >
                     <div
-                      class="label root space--xxxsmall"
+                      class="root space--xxxsmall"
                     >
                       <span
                         class="root item labelIcon medium"
@@ -243,11 +243,11 @@ exports[`Storyshots UI/Dropdown default 1`] = `
               >
                 <FlexStack
                   as="div"
-                  className="label"
+                  className=""
                   space="xxxsmall"
                 >
                   <div
-                    className="label root space--xxxsmall"
+                    className="root space--xxxsmall"
                   >
                     <Icon
                       as="span"
@@ -335,7 +335,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                     type="button"
                   >
                     <div
-                      class="label root space--xxxsmall"
+                      class="root space--xxxsmall"
                     >
                       <span
                         class="root item labelIcon medium"
@@ -408,7 +408,7 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                     type="button"
                   >
                     <div
-                      class="label root space--xxxsmall"
+                      class="root space--xxxsmall"
                     >
                       <span
                         class="root item labelIcon medium"
@@ -855,7 +855,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                     type="button"
                   >
                     <div
-                      class="label root space--xxxsmall"
+                      class="root space--xxxsmall"
                     >
                       <span
                         class="root item labelIcon medium"
@@ -925,7 +925,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                     type="button"
                   >
                     <div
-                      class="label root space--xxxsmall"
+                      class="root space--xxxsmall"
                     >
                       <span
                         class="root item labelIcon medium"
@@ -977,11 +977,11 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
               >
                 <FlexStack
                   as="div"
-                  className="label"
+                  className=""
                   space="xxxsmall"
                 >
                   <div
-                    className="label root space--xxxsmall"
+                    className="root space--xxxsmall"
                   >
                     <Icon
                       as="span"
@@ -1069,7 +1069,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                     type="button"
                   >
                     <div
-                      class="label root space--xxxsmall"
+                      class="root space--xxxsmall"
                     >
                       <span
                         class="root item labelIcon medium"
@@ -1139,7 +1139,7 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                     type="button"
                   >
                     <div
-                      class="label root space--xxxsmall"
+                      class="root space--xxxsmall"
                     >
                       <span
                         class="root item labelIcon medium"
@@ -1581,7 +1581,7 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
                     type="button"
                   >
                     <div
-                      class="label root space--xxxsmall"
+                      class="root space--xxxsmall"
                     >
                       <span
                         class="root item labelIcon medium"
@@ -1654,7 +1654,7 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
                     type="button"
                   >
                     <div
-                      class="label root space--xxxsmall"
+                      class="root space--xxxsmall"
                     >
                       <span
                         class="root item labelIcon medium"
@@ -1706,11 +1706,11 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
               >
                 <FlexStack
                   as="div"
-                  className="label"
+                  className=""
                   space="xxxsmall"
                 >
                   <div
-                    className="label root space--xxxsmall"
+                    className="root space--xxxsmall"
                   >
                     <Icon
                       as="span"
@@ -1798,7 +1798,7 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
                     type="button"
                   >
                     <div
-                      class="label root space--xxxsmall"
+                      class="root space--xxxsmall"
                     >
                       <span
                         class="root item labelIcon medium"
@@ -1871,7 +1871,7 @@ exports[`Storyshots UI/Dropdown with right alignement 1`] = `
                     type="button"
                   >
                     <div
-                      class="label root space--xxxsmall"
+                      class="root space--xxxsmall"
                     >
                       <span
                         class="root item labelIcon medium"

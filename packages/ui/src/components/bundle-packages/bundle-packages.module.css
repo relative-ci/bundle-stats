@@ -12,20 +12,12 @@
   margin-right: -1px; /** collapse border */
 }
 
-.duplicate {
+.tagDuplicate {
   margin-right: var(--space-xxxsmall);
-  display: inline-block;
-  width: var(--space-small);
-  height: var(--space-small);
-  font-size: 10px;
-  font-weight: bold;
-  line-height: var(--space-small);
-  text-align: center;
-  text-transform: uppercase;
-  vertical-align: middle;
+}
 
-  background: var(--color-danger);
-  color: var(--color-light);
+.tagDuplicate::before {
+  content: 'd';
 }
 
 .packageName {

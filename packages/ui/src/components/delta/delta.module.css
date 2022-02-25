@@ -28,6 +28,7 @@
 }
 
 .inverted {
+  border-radius: var(--radius-small);
   background-color: var(--color-gray-ultra-light);
   color: var(--color-light);
 }
