@@ -14,7 +14,7 @@ import I18N from '../../i18n';
 import { FlexStack } from '../../layout/flex-stack';
 import { Icon } from '../../ui/icon';
 import { FileName } from '../../ui/file-name';
-import { Popover } from '../../ui/popover';
+import { HoverCard } from '../../ui/hover-card';
 import { Tooltip } from '../../ui/tooltip';
 import { Tag } from '../../ui/tag';
 import { Filters } from '../../ui/filters';
@@ -83,40 +83,42 @@ const getRenderRowHeader =
     const { label, isNotPredictive, runs, isChunk, isEntry, isInitial } = item;
 
     return (
-      <Popover
-        label={<FileName name={label} />}
-        icon={
-          <div className={css.assetInfoFlags}>
-            {isNotPredictive && (
-              <Tooltip className={css.notPredictive} title={<TooltipNotPredictive runs={runs} />}>
-                <Icon className={css.notPredictiveIcon} glyph="warning" />
-              </Tooltip>
-            )}
-            {isChunk && (
-              <Tag
-                title="Chunk"
-                size={Tag.SIZES.SMALL}
-                kind={Tag.KINDS.INFO}
-                className={cx(css.tag, css.tagChunk)}
-              />
-            )}
-            {isEntry && (
-              <Tag
-                title="Entrypoint"
-                size={Tag.SIZES.SMALL}
-                kind={Tag.KINDS.INFO}
-                className={cx(css.tag, css.tagEntry)}
-              />
-            )}
-            {isInitial && (
-              <Tag
-                title="Initial"
-                size={Tag.SIZES.SMALL}
-                kind={Tag.KINDS.INFO}
-                className={cx(css.tag, css.tagInitial)}
-              />
-            )}
-          </div>
+      <HoverCard
+        label={
+          <FlexStack space="xxxsmall" className={css.assetName}>
+            <div className={css.assetInfoFlags}>
+              {isNotPredictive && (
+                <Tooltip className={css.notPredictive} title={<TooltipNotPredictive runs={runs} />}>
+                  <Icon className={css.notPredictiveIcon} glyph="warning" />
+                </Tooltip>
+              )}
+              {isChunk && (
+                <Tag
+                  title="Chunk"
+                  size={Tag.SIZES.SMALL}
+                  kind={Tag.KINDS.INFO}
+                  className={cx(css.tag, css.tagChunk)}
+                />
+              )}
+              {isEntry && (
+                <Tag
+                  title="Entrypoint"
+                  size={Tag.SIZES.SMALL}
+                  kind={Tag.KINDS.INFO}
+                  className={cx(css.tag, css.tagEntry)}
+                />
+              )}
+              {isInitial && (
+                <Tag
+                  title="Initial"
+                  size={Tag.SIZES.SMALL}
+                  kind={Tag.KINDS.INFO}
+                  className={cx(css.tag, css.tagInitial)}
+                />
+              )}
+            </div>
+            <FileName name={label} />
+          </FlexStack>
         }
       >
         <AssetInfo
@@ -126,7 +128,7 @@ const getRenderRowHeader =
           chunks={chunks}
           CustomComponentLink={CustomComponentLink}
         />
-      </Popover>
+      </HoverCard>
     );
   };
 

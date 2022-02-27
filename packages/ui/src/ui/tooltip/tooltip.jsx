@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import {
   Tooltip as UITooltip,
+  TooltipAnchor as UITooltipAnchor,
   TooltipArrow as UITooltipArrow,
-  TooltipReference as UITooltipReference,
   useTooltipState,
-} from 'reakit/Tooltip';
+} from 'ariakit/tooltip';
 
 import css from './tooltip.module.css';
 
@@ -21,26 +21,22 @@ export const Tooltip = (props) => {
     ...restProps
   } = props;
 
-  const rootClassName = cx(css.root, className);
-  const tooltipProps = useTooltipState({
-    baseId: process.env.NODE_ENV === 'test' && 'id-test',
-    placement: 'top',
-  });
+  const tooltip = useTooltipState({ placement: 'top' });
 
   return (
     <>
-      <UITooltipReference
+      <UITooltipAnchor
         as={Component}
-        className={rootClassName}
-        {...ref ? { ref } : {}}
+        className={cx(css.root, className)}
+        state={tooltip}
+        {...(ref ? { ref } : {})}
         {...restProps}
-        {...tooltipProps}
       >
         {children}
-      </UITooltipReference>
+      </UITooltipAnchor>
       {title && (
-        <UITooltip {...tooltipProps} className={cx(css.tooltip, darkMode && css.tooltipDarkMode)}>
-          <UITooltipArrow {...tooltipProps} className={css.arrow} size={12} />
+        <UITooltip state={tooltip} className={cx(css.tooltip, darkMode && css.tooltipDarkMode)}>
+          <UITooltipArrow state={tooltip} className={css.arrow} size={12} />
           {title}
         </UITooltip>
       )}

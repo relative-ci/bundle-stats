@@ -15,7 +15,7 @@
     "generate-svg-sprite": "npx svg-sprite -s --si --no-svg-namespace-classnames src/assets/icons/*.svg && mv symbol/svg/sprite.symbol.svg src/assets/icons.svg",
     "lint": "../../node_modules/.bin/eslint . --ext .jsx,.js",
     "start": "cross-env NODE_ENV=development start-storybook -c ./build/storybook -p 8080",
-    "test": "npm run test:unit && npm run test:storyshots",
+    "test": "npm run test:unit",
     "test:unit": "jest src --passWithNoTests",
     "test:storyshots": "jest build/storybook ",
     "chromatic": "chromatic --exit-zero-on-changes"
@@ -86,10 +86,10 @@
   },
   "dependencies": {
     "@bundle-stats/utils": "^3.2.5",
+    "ariakit": "2.0.0-alpha.18",
     "date-fns": "2.28.0",
     "modern-css-reset": "1.4.0",
     "query-string": "7.1.1",
-    "reakit": "1.3.11",
     "use-query-params": "1.2.3"
   }
 }

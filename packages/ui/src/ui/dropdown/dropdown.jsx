@@ -1,37 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { Menu, MenuItem, MenuButton, useMenuState } from 'reakit/Menu';
+import { Menu, MenuButton, MenuItem, useMenuState } from 'ariakit/menu';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Icon } from '../icon';
 import css from './dropdown.module.css';
 
 export const Dropdown = (props) => {
-  const { className, label, ariaLabel, glyph, activeLabel, children } = props;
-  const rootClassName = cx(css.root, activeLabel && css.activeLabel, className);
-
-  const menu = useMenuState({ baseId: process.env.NODE_ENV === 'test' && 'id-test', modal: true });
+  const { className, label, ariaLabel, glyph, children } = props;
+  const rootClassName = cx(css.root, className);
+  const menuState = useMenuState();
 
   return (
-    <>
-      <MenuButton {...menu} className={rootClassName} tabIndex={null}>
+    <div className={rootClassName}>
+      <MenuButton state={menuState} className={css.button} tabIndex={null}>
         <FlexStack space="xxxsmall">
           {glyph && <Icon className={css.labelIcon} glyph={glyph} />}
           {label}
         </FlexStack>
       </MenuButton>
-      <Menu {...menu} aria-label={ariaLabel || label} className={css.dropdown}>
+      <Menu state={menuState} aria-label={ariaLabel || label} className={css.dropdown}>
         {typeof children === 'function'
           ? children({
               MenuItem,
-              menu,
+              menu: menuState,
               menuItemClassName: css.menuItem,
               menuItemActiveClassName: css.menuItemActive,
             })
           : children}
       </Menu>
-    </>
+    </div>
   );
 };
 
@@ -40,7 +39,6 @@ Dropdown.defaultProps = {
   label: null,
   ariaLabel: '',
   glyph: null,
-  activeLabel: false,
 };
 
 Dropdown.propTypes = {
@@ -55,12 +53,6 @@ Dropdown.propTypes = {
 
   /** Icon glyph */
   glyph: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-
-  /** Dropdown open state */
-  open: PropTypes.bool.isRequired,
-
-  /** Active label flag */
-  activeLabel: PropTypes.bool,
 
   /** Content */
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]).isRequired,

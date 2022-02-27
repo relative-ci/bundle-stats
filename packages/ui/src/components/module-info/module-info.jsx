@@ -51,11 +51,7 @@ export const ModuleInfo = (props) => {
               </div>
             )}
 
-            <FileName
-              className={css.fileName}
-              as="code"
-              name={run?.name || '-'}
-            />
+            <FileName className={css.fileName} as="code" name={run?.name || '-'} />
           </Stack>
         );
       })}

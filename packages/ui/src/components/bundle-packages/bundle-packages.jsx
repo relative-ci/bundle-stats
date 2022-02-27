@@ -15,7 +15,7 @@ import { Stack } from '../../layout/stack';
 import { FlexStack } from '../../layout/flex-stack';
 import { EmptySet } from '../../ui/empty-set';
 import { Filters } from '../../ui/filters';
-import { Popover } from '../../ui/popover';
+import { HoverCard } from '../../ui/hover-card';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Tag } from '../../ui/tag';
 import { Toolbar } from '../../ui/toolbar';
@@ -116,7 +116,15 @@ const PackageRowHeader = ({ item, CustomComponentLink }) => {
         );
 
         return (
-          <Popover className={css.packageName} icon={duplicateFlag} label={packageName}>
+          <HoverCard
+            className={css.packageName}
+            label={
+              <FlexStack space="xxxsmall" className={css.packageNameLabel}>
+                {duplicateFlag}
+                <span>{packageName}</span>
+              </FlexStack>
+            }
+          >
             <PackagePopoverContent
               name={packageName}
               path={path}
@@ -124,7 +132,7 @@ const PackageRowHeader = ({ item, CustomComponentLink }) => {
               duplicate={item.duplicate}
               CustomComponentLink={CustomComponentLink}
             />
-          </Popover>
+          </HoverCard>
         );
       })}
     </span>

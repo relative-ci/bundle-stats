@@ -18,13 +18,17 @@ const ICONS = {
   WARNING: 'warning',
 };
 
-export const Icon = ({ className, glyph, as: Component, size, ...restProps }) => (
-  <Component className={cx(css.root, className, css[size])} {...restProps}>
-    <svg className={css.icon}>
-      <use xlinkHref={`#${glyph}`} />
-    </svg>
-  </Component>
-);
+export const Icon = (props) => {
+  const { className, glyph, as: Component, size, ...restProps } = props;
+
+  return (
+    <Component className={cx(css.root, className, css[size])} {...restProps}>
+      <svg className={css.icon}>
+        <use xlinkHref={`#${glyph}`} />
+      </svg>
+    </Component>
+  );
+};
 
 Icon.ICONS = ICONS;
 
