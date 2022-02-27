@@ -61,112 +61,142 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
             darkMode={false}
             title="View job #100"
           >
-            <ForwardRef(TooltipReference)
-              animated={false}
-              animating={false}
+            <ForwardRef(Role)
               as="span"
-              baseId="id-test"
               className="root"
-              hide={[Function]}
-              place={[Function]}
-              placement="top"
-              setAnimated={[Function]}
-              setBaseId={[Function]}
-              setVisible={[Function]}
-              show={[Function]}
-              stopAnimation={[Function]}
-              toggle={[Function]}
-              unstable_arrowRef={
+              id="id-test"
+              state={
                 Object {
-                  "current": <div
-                    class="arrow"
-                    style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
-                  >
-                    <svg
-                      style="transform: rotateZ(180deg);"
-                      viewBox="0 0 30 30"
+                  "anchorRect": null,
+                  "anchorRef": Object {
+                    "current": <span
+                      aria-labelledby="id-test-tooltip"
+                      class="root"
+                      id="id-test"
+                      tabindex="0"
                     >
-                      <path
-                        class="stroke"
-                        d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
-                      />
-                      <path
-                        class="fill"
-                        d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                      />
-                    </svg>
-                  </div>,
-                }
-              }
-              unstable_arrowStyles={Object {}}
-              unstable_disclosureRef={
-                Object {
-                  "current": null,
-                }
-              }
-              unstable_idCountRef={
-                Object {
-                  "current": 0,
-                }
-              }
-              unstable_originalPlacement="top"
-              unstable_popoverRef={
-                Object {
-                  "current": <div
-                    class="tooltip"
-                    hidden=""
-                    id="id-test"
-                    role="tooltip"
-                    style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
-                  >
-                    <div
+                      Job #100
+                    </span>,
+                  },
+                  "animated": false,
+                  "animating": false,
+                  "arrowPadding": 4,
+                  "arrowRef": Object {
+                    "current": <div
+                      aria-hidden="true"
                       class="arrow"
-                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
                     >
                       <svg
-                        style="transform: rotateZ(180deg);"
+                        display="block"
+                        transform="rotate(180 0 0)"
                         viewBox="0 0 30 30"
                       >
                         <path
-                          class="stroke"
-                          d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          fill="none"
                         />
                         <path
-                          class="fill"
                           d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          stroke="none"
+                        />
+                      </svg>
+                    </div>,
+                  },
+                  "contentElement": <div
+                    class="tooltip"
+                    hidden=""
+                    id="id-test-tooltip"
+                    role="tooltip"
+                    style="display: none;"
+                  >
+                    <div
+                      aria-hidden="true"
+                      class="arrow"
+                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                    >
+                      <svg
+                        display="block"
+                        transform="rotate(180 0 0)"
+                        viewBox="0 0 30 30"
+                      >
+                        <path
+                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          fill="none"
+                        />
+                        <path
+                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          stroke="none"
                         />
                       </svg>
                     </div>
                     View job #100
                   </div>,
+                  "currentPlacement": "top",
+                  "disclosureRef": Object {
+                    "current": null,
+                  },
+                  "fixed": false,
+                  "flip": true,
+                  "gutter": 8,
+                  "hide": [Function],
+                  "mounted": false,
+                  "padding": 8,
+                  "placement": "top",
+                  "popoverRef": Object {
+                    "current": <div
+                      style="position: absolute; left: 0px; top: 0px; margin: 0px;"
+                    >
+                      <div
+                        class="tooltip"
+                        hidden=""
+                        id="id-test-tooltip"
+                        role="tooltip"
+                        style="display: none;"
+                      >
+                        <div
+                          aria-hidden="true"
+                          class="arrow"
+                          style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                        >
+                          <svg
+                            display="block"
+                            transform="rotate(180 0 0)"
+                            viewBox="0 0 30 30"
+                          >
+                            <path
+                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                              fill="none"
+                            />
+                            <path
+                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                              stroke="none"
+                            />
+                          </svg>
+                        </div>
+                        View job #100
+                      </div>
+                    </div>,
+                  },
+                  "preventOverflow": true,
+                  "render": [Function],
+                  "renderCallback": undefined,
+                  "setAnchorRect": [Function],
+                  "setContentElement": [Function],
+                  "setVisible": [Function],
+                  "shift": 0,
+                  "show": [Function],
+                  "stopAnimation": [Function],
+                  "timeout": 0,
+                  "toggle": [Function],
+                  "visible": false,
                 }
               }
-              unstable_popoverStyles={
-                Object {
-                  "left": "100%",
-                  "position": "fixed",
-                  "top": "100%",
-                }
-              }
-              unstable_referenceRef={
-                Object {
-                  "current": <span
-                    aria-describedby="id-test"
-                    class="root"
-                    tabindex="0"
-                  >
-                    Job #100
-                  </span>,
-                }
-              }
-              unstable_setTimeout={[Function]}
-              unstable_timeout={0}
-              unstable_update={[Function]}
-              visible={false}
             >
               <span
-                aria-describedby="id-test"
+                aria-labelledby="id-test-tooltip"
                 className="root"
+                id="id-test"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onMouseEnter={[Function]}
@@ -175,301 +205,361 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
               >
                 Job #100
               </span>
-            </ForwardRef(TooltipReference)>
-            <ForwardRef(Tooltip)
-              animated={false}
-              animating={false}
-              baseId="id-test"
+            </ForwardRef(Role)>
+            <ForwardRef(Role)
               className="tooltip"
-              hide={[Function]}
-              place={[Function]}
-              placement="top"
-              setAnimated={[Function]}
-              setBaseId={[Function]}
-              setVisible={[Function]}
-              show={[Function]}
-              stopAnimation={[Function]}
-              toggle={[Function]}
-              unstable_arrowRef={
+              id="id-test-tooltip"
+              state={
                 Object {
-                  "current": <div
-                    class="arrow"
-                    style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
-                  >
-                    <svg
-                      style="transform: rotateZ(180deg);"
-                      viewBox="0 0 30 30"
+                  "anchorRect": null,
+                  "anchorRef": Object {
+                    "current": <span
+                      aria-labelledby="id-test-tooltip"
+                      class="root"
+                      id="id-test"
+                      tabindex="0"
                     >
-                      <path
-                        class="stroke"
-                        d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
-                      />
-                      <path
-                        class="fill"
-                        d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                      />
-                    </svg>
-                  </div>,
-                }
-              }
-              unstable_arrowStyles={Object {}}
-              unstable_disclosureRef={
-                Object {
-                  "current": null,
-                }
-              }
-              unstable_idCountRef={
-                Object {
-                  "current": 0,
-                }
-              }
-              unstable_originalPlacement="top"
-              unstable_popoverRef={
-                Object {
-                  "current": <div
-                    class="tooltip"
-                    hidden=""
-                    id="id-test"
-                    role="tooltip"
-                    style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
-                  >
-                    <div
+                      Job #100
+                    </span>,
+                  },
+                  "animated": false,
+                  "animating": false,
+                  "arrowPadding": 4,
+                  "arrowRef": Object {
+                    "current": <div
+                      aria-hidden="true"
                       class="arrow"
-                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
                     >
                       <svg
-                        style="transform: rotateZ(180deg);"
+                        display="block"
+                        transform="rotate(180 0 0)"
                         viewBox="0 0 30 30"
                       >
                         <path
-                          class="stroke"
-                          d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          fill="none"
                         />
                         <path
-                          class="fill"
                           d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          stroke="none"
+                        />
+                      </svg>
+                    </div>,
+                  },
+                  "contentElement": <div
+                    class="tooltip"
+                    hidden=""
+                    id="id-test-tooltip"
+                    role="tooltip"
+                    style="display: none;"
+                  >
+                    <div
+                      aria-hidden="true"
+                      class="arrow"
+                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                    >
+                      <svg
+                        display="block"
+                        transform="rotate(180 0 0)"
+                        viewBox="0 0 30 30"
+                      >
+                        <path
+                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          fill="none"
+                        />
+                        <path
+                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          stroke="none"
                         />
                       </svg>
                     </div>
                     View job #100
                   </div>,
-                }
-              }
-              unstable_popoverStyles={
-                Object {
-                  "left": "100%",
-                  "position": "fixed",
-                  "top": "100%",
-                }
-              }
-              unstable_referenceRef={
-                Object {
-                  "current": <span
-                    aria-describedby="id-test"
-                    class="root"
-                    tabindex="0"
-                  >
-                    Job #100
-                  </span>,
-                }
-              }
-              unstable_setTimeout={[Function]}
-              unstable_timeout={0}
-              unstable_update={[Function]}
-              visible={false}
-            >
-              <Portal>
-                <Portal
-                  containerInfo={
-                    <div
-                      class="__reakit-portal"
+                  "currentPlacement": "top",
+                  "disclosureRef": Object {
+                    "current": null,
+                  },
+                  "fixed": false,
+                  "flip": true,
+                  "gutter": 8,
+                  "hide": [Function],
+                  "mounted": false,
+                  "padding": 8,
+                  "placement": "top",
+                  "popoverRef": Object {
+                    "current": <div
+                      style="position: absolute; left: 0px; top: 0px; margin: 0px;"
                     >
                       <div
                         class="tooltip"
                         hidden=""
-                        id="id-test"
+                        id="id-test-tooltip"
                         role="tooltip"
-                        style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
+                        style="display: none;"
                       >
                         <div
+                          aria-hidden="true"
                           class="arrow"
-                          style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                          style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
                         >
                           <svg
-                            style="transform: rotateZ(180deg);"
+                            display="block"
+                            transform="rotate(180 0 0)"
                             viewBox="0 0 30 30"
                           >
                             <path
-                              class="stroke"
-                              d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                              fill="none"
                             />
                             <path
-                              class="fill"
                               d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                              stroke="none"
+                            />
+                          </svg>
+                        </div>
+                        View job #100
+                      </div>
+                    </div>,
+                  },
+                  "preventOverflow": true,
+                  "render": [Function],
+                  "renderCallback": undefined,
+                  "setAnchorRect": [Function],
+                  "setContentElement": [Function],
+                  "setVisible": [Function],
+                  "shift": 0,
+                  "show": [Function],
+                  "stopAnimation": [Function],
+                  "timeout": 0,
+                  "toggle": [Function],
+                  "visible": false,
+                }
+              }
+            >
+              <Portal
+                containerInfo={
+                  <div
+                    id="id-test-tooltip-portal"
+                  >
+                    <div
+                      style="position: absolute; left: 0px; top: 0px; margin: 0px;"
+                    >
+                      <div
+                        class="tooltip"
+                        hidden=""
+                        id="id-test-tooltip"
+                        role="tooltip"
+                        style="display: none;"
+                      >
+                        <div
+                          aria-hidden="true"
+                          class="arrow"
+                          style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                        >
+                          <svg
+                            display="block"
+                            transform="rotate(180 0 0)"
+                            viewBox="0 0 30 30"
+                          >
+                            <path
+                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                              fill="none"
+                            />
+                            <path
+                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                              stroke="none"
                             />
                           </svg>
                         </div>
                         View job #100
                       </div>
                     </div>
-                  }
-                >
+                  </div>
+                }
+              >
+                <div>
                   <div
                     className="tooltip"
                     hidden={true}
-                    id="id-test"
+                    id="id-test-tooltip"
                     onAnimationEnd={[Function]}
                     onTransitionEnd={[Function]}
                     role="tooltip"
                     style={
                       Object {
                         "display": "none",
-                        "left": "100%",
-                        "pointerEvents": "none",
-                        "position": "fixed",
-                        "top": "100%",
                       }
                     }
                   >
-                    <ForwardRef(TooltipArrow)
-                      animated={false}
-                      animating={false}
-                      baseId="id-test"
+                    <ForwardRef(Role)
                       className="arrow"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
                       size={12}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      state={
                         Object {
-                          "current": <div
-                            class="arrow"
-                            style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
-                          >
-                            <svg
-                              style="transform: rotateZ(180deg);"
-                              viewBox="0 0 30 30"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              aria-labelledby="id-test-tooltip"
+                              class="root"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              <path
-                                class="stroke"
-                                d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
-                              />
-                              <path
-                                class="fill"
-                                d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                              />
-                            </svg>
-                          </div>,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": <div
-                            class="tooltip"
-                            hidden=""
-                            id="id-test"
-                            role="tooltip"
-                            style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
-                          >
-                            <div
+                              Job #100
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": <div
+                              aria-hidden="true"
                               class="arrow"
-                              style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                              style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
                             >
                               <svg
-                                style="transform: rotateZ(180deg);"
+                                display="block"
+                                transform="rotate(180 0 0)"
                                 viewBox="0 0 30 30"
                               >
                                 <path
-                                  class="stroke"
-                                  d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                                  d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                  fill="none"
                                 />
                                 <path
-                                  class="fill"
                                   d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                  stroke="none"
+                                />
+                              </svg>
+                            </div>,
+                          },
+                          "contentElement": <div
+                            class="tooltip"
+                            hidden=""
+                            id="id-test-tooltip"
+                            role="tooltip"
+                            style="display: none;"
+                          >
+                            <div
+                              aria-hidden="true"
+                              class="arrow"
+                              style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                            >
+                              <svg
+                                display="block"
+                                transform="rotate(180 0 0)"
+                                viewBox="0 0 30 30"
+                              >
+                                <path
+                                  d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                  fill="none"
+                                />
+                                <path
+                                  d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                  stroke="none"
                                 />
                               </svg>
                             </div>
                             View job #100
                           </div>,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": <div
+                              style="position: absolute; left: 0px; top: 0px; margin: 0px;"
+                            >
+                              <div
+                                class="tooltip"
+                                hidden=""
+                                id="id-test-tooltip"
+                                role="tooltip"
+                                style="display: none;"
+                              >
+                                <div
+                                  aria-hidden="true"
+                                  class="arrow"
+                                  style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                                >
+                                  <svg
+                                    display="block"
+                                    transform="rotate(180 0 0)"
+                                    viewBox="0 0 30 30"
+                                  >
+                                    <path
+                                      d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                      fill="none"
+                                    />
+                                    <path
+                                      d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                      stroke="none"
+                                    />
+                                  </svg>
+                                </div>
+                                View job #100
+                              </div>
+                            </div>,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root"
-                            tabindex="0"
-                          >
-                            Job #100
-                          </span>,
-                        }
-                      }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <div
+                        aria-hidden={true}
                         className="arrow"
                         style={
                           Object {
+                            "fill": "none",
                             "fontSize": 12,
                             "height": "1em",
                             "pointerEvents": "none",
-                            "top": "100%",
+                            "position": "absolute",
+                            "stroke": "none",
+                            "strokeWidth": 0,
                             "width": "1em",
                           }
                         }
                       >
                         <svg
-                          style={
-                            Object {
-                              "transform": "rotateZ(180deg)",
-                            }
-                          }
+                          display="block"
+                          transform="rotate(180 0 0)"
                           viewBox="0 0 30 30"
                         >
                           <path
-                            className="stroke"
-                            d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            fill="none"
                           />
                           <path
-                            className="fill"
                             d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            stroke="none"
                           />
                         </svg>
                       </div>
-                    </ForwardRef(TooltipArrow)>
+                    </ForwardRef(Role)>
                     View job #100
                   </div>
-                </Portal>
+                </div>
               </Portal>
-            </ForwardRef(Tooltip)>
+            </ForwardRef(Role)>
           </Tooltip>
         </div>
       </Router>
@@ -757,112 +847,142 @@ exports[`Storyshots UI/Tooltip default 1`] = `
             darkMode={true}
             title="View job #100"
           >
-            <ForwardRef(TooltipReference)
-              animated={false}
-              animating={false}
+            <ForwardRef(Role)
               as="span"
-              baseId="id-test"
               className="root"
-              hide={[Function]}
-              place={[Function]}
-              placement="top"
-              setAnimated={[Function]}
-              setBaseId={[Function]}
-              setVisible={[Function]}
-              show={[Function]}
-              stopAnimation={[Function]}
-              toggle={[Function]}
-              unstable_arrowRef={
+              id="id-test"
+              state={
                 Object {
-                  "current": <div
-                    class="arrow"
-                    style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
-                  >
-                    <svg
-                      style="transform: rotateZ(180deg);"
-                      viewBox="0 0 30 30"
+                  "anchorRect": null,
+                  "anchorRef": Object {
+                    "current": <span
+                      aria-labelledby="id-test-tooltip"
+                      class="root"
+                      id="id-test"
+                      tabindex="0"
                     >
-                      <path
-                        class="stroke"
-                        d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
-                      />
-                      <path
-                        class="fill"
-                        d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                      />
-                    </svg>
-                  </div>,
-                }
-              }
-              unstable_arrowStyles={Object {}}
-              unstable_disclosureRef={
-                Object {
-                  "current": null,
-                }
-              }
-              unstable_idCountRef={
-                Object {
-                  "current": 0,
-                }
-              }
-              unstable_originalPlacement="top"
-              unstable_popoverRef={
-                Object {
-                  "current": <div
-                    class="tooltip tooltipDarkMode"
-                    hidden=""
-                    id="id-test"
-                    role="tooltip"
-                    style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
-                  >
-                    <div
+                      Job #100
+                    </span>,
+                  },
+                  "animated": false,
+                  "animating": false,
+                  "arrowPadding": 4,
+                  "arrowRef": Object {
+                    "current": <div
+                      aria-hidden="true"
                       class="arrow"
-                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
                     >
                       <svg
-                        style="transform: rotateZ(180deg);"
+                        display="block"
+                        transform="rotate(180 0 0)"
                         viewBox="0 0 30 30"
                       >
                         <path
-                          class="stroke"
-                          d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          fill="none"
                         />
                         <path
-                          class="fill"
                           d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          stroke="none"
+                        />
+                      </svg>
+                    </div>,
+                  },
+                  "contentElement": <div
+                    class="tooltip tooltipDarkMode"
+                    hidden=""
+                    id="id-test-tooltip"
+                    role="tooltip"
+                    style="display: none;"
+                  >
+                    <div
+                      aria-hidden="true"
+                      class="arrow"
+                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                    >
+                      <svg
+                        display="block"
+                        transform="rotate(180 0 0)"
+                        viewBox="0 0 30 30"
+                      >
+                        <path
+                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          fill="none"
+                        />
+                        <path
+                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          stroke="none"
                         />
                       </svg>
                     </div>
                     View job #100
                   </div>,
+                  "currentPlacement": "top",
+                  "disclosureRef": Object {
+                    "current": null,
+                  },
+                  "fixed": false,
+                  "flip": true,
+                  "gutter": 8,
+                  "hide": [Function],
+                  "mounted": false,
+                  "padding": 8,
+                  "placement": "top",
+                  "popoverRef": Object {
+                    "current": <div
+                      style="position: absolute; left: 0px; top: 0px; margin: 0px;"
+                    >
+                      <div
+                        class="tooltip tooltipDarkMode"
+                        hidden=""
+                        id="id-test-tooltip"
+                        role="tooltip"
+                        style="display: none;"
+                      >
+                        <div
+                          aria-hidden="true"
+                          class="arrow"
+                          style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                        >
+                          <svg
+                            display="block"
+                            transform="rotate(180 0 0)"
+                            viewBox="0 0 30 30"
+                          >
+                            <path
+                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                              fill="none"
+                            />
+                            <path
+                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                              stroke="none"
+                            />
+                          </svg>
+                        </div>
+                        View job #100
+                      </div>
+                    </div>,
+                  },
+                  "preventOverflow": true,
+                  "render": [Function],
+                  "renderCallback": undefined,
+                  "setAnchorRect": [Function],
+                  "setContentElement": [Function],
+                  "setVisible": [Function],
+                  "shift": 0,
+                  "show": [Function],
+                  "stopAnimation": [Function],
+                  "timeout": 0,
+                  "toggle": [Function],
+                  "visible": false,
                 }
               }
-              unstable_popoverStyles={
-                Object {
-                  "left": "100%",
-                  "position": "fixed",
-                  "top": "100%",
-                }
-              }
-              unstable_referenceRef={
-                Object {
-                  "current": <span
-                    aria-describedby="id-test"
-                    class="root"
-                    tabindex="0"
-                  >
-                    Job #100
-                  </span>,
-                }
-              }
-              unstable_setTimeout={[Function]}
-              unstable_timeout={0}
-              unstable_update={[Function]}
-              visible={false}
             >
               <span
-                aria-describedby="id-test"
+                aria-labelledby="id-test-tooltip"
                 className="root"
+                id="id-test"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onMouseEnter={[Function]}
@@ -871,301 +991,361 @@ exports[`Storyshots UI/Tooltip default 1`] = `
               >
                 Job #100
               </span>
-            </ForwardRef(TooltipReference)>
-            <ForwardRef(Tooltip)
-              animated={false}
-              animating={false}
-              baseId="id-test"
+            </ForwardRef(Role)>
+            <ForwardRef(Role)
               className="tooltip tooltipDarkMode"
-              hide={[Function]}
-              place={[Function]}
-              placement="top"
-              setAnimated={[Function]}
-              setBaseId={[Function]}
-              setVisible={[Function]}
-              show={[Function]}
-              stopAnimation={[Function]}
-              toggle={[Function]}
-              unstable_arrowRef={
+              id="id-test-tooltip"
+              state={
                 Object {
-                  "current": <div
-                    class="arrow"
-                    style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
-                  >
-                    <svg
-                      style="transform: rotateZ(180deg);"
-                      viewBox="0 0 30 30"
+                  "anchorRect": null,
+                  "anchorRef": Object {
+                    "current": <span
+                      aria-labelledby="id-test-tooltip"
+                      class="root"
+                      id="id-test"
+                      tabindex="0"
                     >
-                      <path
-                        class="stroke"
-                        d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
-                      />
-                      <path
-                        class="fill"
-                        d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                      />
-                    </svg>
-                  </div>,
-                }
-              }
-              unstable_arrowStyles={Object {}}
-              unstable_disclosureRef={
-                Object {
-                  "current": null,
-                }
-              }
-              unstable_idCountRef={
-                Object {
-                  "current": 0,
-                }
-              }
-              unstable_originalPlacement="top"
-              unstable_popoverRef={
-                Object {
-                  "current": <div
-                    class="tooltip tooltipDarkMode"
-                    hidden=""
-                    id="id-test"
-                    role="tooltip"
-                    style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
-                  >
-                    <div
+                      Job #100
+                    </span>,
+                  },
+                  "animated": false,
+                  "animating": false,
+                  "arrowPadding": 4,
+                  "arrowRef": Object {
+                    "current": <div
+                      aria-hidden="true"
                       class="arrow"
-                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
                     >
                       <svg
-                        style="transform: rotateZ(180deg);"
+                        display="block"
+                        transform="rotate(180 0 0)"
                         viewBox="0 0 30 30"
                       >
                         <path
-                          class="stroke"
-                          d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          fill="none"
                         />
                         <path
-                          class="fill"
                           d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          stroke="none"
+                        />
+                      </svg>
+                    </div>,
+                  },
+                  "contentElement": <div
+                    class="tooltip tooltipDarkMode"
+                    hidden=""
+                    id="id-test-tooltip"
+                    role="tooltip"
+                    style="display: none;"
+                  >
+                    <div
+                      aria-hidden="true"
+                      class="arrow"
+                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                    >
+                      <svg
+                        display="block"
+                        transform="rotate(180 0 0)"
+                        viewBox="0 0 30 30"
+                      >
+                        <path
+                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          fill="none"
+                        />
+                        <path
+                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                          stroke="none"
                         />
                       </svg>
                     </div>
                     View job #100
                   </div>,
-                }
-              }
-              unstable_popoverStyles={
-                Object {
-                  "left": "100%",
-                  "position": "fixed",
-                  "top": "100%",
-                }
-              }
-              unstable_referenceRef={
-                Object {
-                  "current": <span
-                    aria-describedby="id-test"
-                    class="root"
-                    tabindex="0"
-                  >
-                    Job #100
-                  </span>,
-                }
-              }
-              unstable_setTimeout={[Function]}
-              unstable_timeout={0}
-              unstable_update={[Function]}
-              visible={false}
-            >
-              <Portal>
-                <Portal
-                  containerInfo={
-                    <div
-                      class="__reakit-portal"
+                  "currentPlacement": "top",
+                  "disclosureRef": Object {
+                    "current": null,
+                  },
+                  "fixed": false,
+                  "flip": true,
+                  "gutter": 8,
+                  "hide": [Function],
+                  "mounted": false,
+                  "padding": 8,
+                  "placement": "top",
+                  "popoverRef": Object {
+                    "current": <div
+                      style="position: absolute; left: 0px; top: 0px; margin: 0px;"
                     >
                       <div
                         class="tooltip tooltipDarkMode"
                         hidden=""
-                        id="id-test"
+                        id="id-test-tooltip"
                         role="tooltip"
-                        style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
+                        style="display: none;"
                       >
                         <div
+                          aria-hidden="true"
                           class="arrow"
-                          style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                          style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
                         >
                           <svg
-                            style="transform: rotateZ(180deg);"
+                            display="block"
+                            transform="rotate(180 0 0)"
                             viewBox="0 0 30 30"
                           >
                             <path
-                              class="stroke"
-                              d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                              fill="none"
                             />
                             <path
-                              class="fill"
                               d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                              stroke="none"
+                            />
+                          </svg>
+                        </div>
+                        View job #100
+                      </div>
+                    </div>,
+                  },
+                  "preventOverflow": true,
+                  "render": [Function],
+                  "renderCallback": undefined,
+                  "setAnchorRect": [Function],
+                  "setContentElement": [Function],
+                  "setVisible": [Function],
+                  "shift": 0,
+                  "show": [Function],
+                  "stopAnimation": [Function],
+                  "timeout": 0,
+                  "toggle": [Function],
+                  "visible": false,
+                }
+              }
+            >
+              <Portal
+                containerInfo={
+                  <div
+                    id="id-test-tooltip-portal"
+                  >
+                    <div
+                      style="position: absolute; left: 0px; top: 0px; margin: 0px;"
+                    >
+                      <div
+                        class="tooltip tooltipDarkMode"
+                        hidden=""
+                        id="id-test-tooltip"
+                        role="tooltip"
+                        style="display: none;"
+                      >
+                        <div
+                          aria-hidden="true"
+                          class="arrow"
+                          style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                        >
+                          <svg
+                            display="block"
+                            transform="rotate(180 0 0)"
+                            viewBox="0 0 30 30"
+                          >
+                            <path
+                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                              fill="none"
+                            />
+                            <path
+                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                              stroke="none"
                             />
                           </svg>
                         </div>
                         View job #100
                       </div>
                     </div>
-                  }
-                >
+                  </div>
+                }
+              >
+                <div>
                   <div
                     className="tooltip tooltipDarkMode"
                     hidden={true}
-                    id="id-test"
+                    id="id-test-tooltip"
                     onAnimationEnd={[Function]}
                     onTransitionEnd={[Function]}
                     role="tooltip"
                     style={
                       Object {
                         "display": "none",
-                        "left": "100%",
-                        "pointerEvents": "none",
-                        "position": "fixed",
-                        "top": "100%",
                       }
                     }
                   >
-                    <ForwardRef(TooltipArrow)
-                      animated={false}
-                      animating={false}
-                      baseId="id-test"
+                    <ForwardRef(Role)
                       className="arrow"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
                       size={12}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      state={
                         Object {
-                          "current": <div
-                            class="arrow"
-                            style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
-                          >
-                            <svg
-                              style="transform: rotateZ(180deg);"
-                              viewBox="0 0 30 30"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              aria-labelledby="id-test-tooltip"
+                              class="root"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              <path
-                                class="stroke"
-                                d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
-                              />
-                              <path
-                                class="fill"
-                                d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                              />
-                            </svg>
-                          </div>,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": <div
-                            class="tooltip tooltipDarkMode"
-                            hidden=""
-                            id="id-test"
-                            role="tooltip"
-                            style="display: none; position: fixed; left: 100%; top: 100%; pointer-events: none;"
-                          >
-                            <div
+                              Job #100
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": <div
+                              aria-hidden="true"
                               class="arrow"
-                              style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; top: 100%;"
+                              style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
                             >
                               <svg
-                                style="transform: rotateZ(180deg);"
+                                display="block"
+                                transform="rotate(180 0 0)"
                                 viewBox="0 0 30 30"
                               >
                                 <path
-                                  class="stroke"
-                                  d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                                  d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                  fill="none"
                                 />
                                 <path
-                                  class="fill"
                                   d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                  stroke="none"
+                                />
+                              </svg>
+                            </div>,
+                          },
+                          "contentElement": <div
+                            class="tooltip tooltipDarkMode"
+                            hidden=""
+                            id="id-test-tooltip"
+                            role="tooltip"
+                            style="display: none;"
+                          >
+                            <div
+                              aria-hidden="true"
+                              class="arrow"
+                              style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                            >
+                              <svg
+                                display="block"
+                                transform="rotate(180 0 0)"
+                                viewBox="0 0 30 30"
+                              >
+                                <path
+                                  d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                  fill="none"
+                                />
+                                <path
+                                  d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                  stroke="none"
                                 />
                               </svg>
                             </div>
                             View job #100
                           </div>,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": <div
+                              style="position: absolute; left: 0px; top: 0px; margin: 0px;"
+                            >
+                              <div
+                                class="tooltip tooltipDarkMode"
+                                hidden=""
+                                id="id-test-tooltip"
+                                role="tooltip"
+                                style="display: none;"
+                              >
+                                <div
+                                  aria-hidden="true"
+                                  class="arrow"
+                                  style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                                >
+                                  <svg
+                                    display="block"
+                                    transform="rotate(180 0 0)"
+                                    viewBox="0 0 30 30"
+                                  >
+                                    <path
+                                      d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                      fill="none"
+                                    />
+                                    <path
+                                      d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                      stroke="none"
+                                    />
+                                  </svg>
+                                </div>
+                                View job #100
+                              </div>
+                            </div>,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root"
-                            tabindex="0"
-                          >
-                            Job #100
-                          </span>,
-                        }
-                      }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <div
+                        aria-hidden={true}
                         className="arrow"
                         style={
                           Object {
+                            "fill": "none",
                             "fontSize": 12,
                             "height": "1em",
                             "pointerEvents": "none",
-                            "top": "100%",
+                            "position": "absolute",
+                            "stroke": "none",
+                            "strokeWidth": 0,
                             "width": "1em",
                           }
                         }
                       >
                         <svg
-                          style={
-                            Object {
-                              "transform": "rotateZ(180deg)",
-                            }
-                          }
+                          display="block"
+                          transform="rotate(180 0 0)"
                           viewBox="0 0 30 30"
                         >
                           <path
-                            className="stroke"
-                            d="M23.7,27.1L17,19.9C16.5,19.3,15.8,19,15,19s-1.6,0.3-2.1,0.9l-6.6,7.2C5.3,28.1,3.4,29,2,29h26 C26.7,29,24.6,28.1,23.7,27.1z"
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            fill="none"
                           />
                           <path
-                            className="fill"
                             d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            stroke="none"
                           />
                         </svg>
                       </div>
-                    </ForwardRef(TooltipArrow)>
+                    </ForwardRef(Role)>
                     View job #100
                   </div>
-                </Portal>
+                </div>
               </Portal>
-            </ForwardRef(Tooltip)>
+            </ForwardRef(Role)>
           </Tooltip>
         </div>
       </Router>

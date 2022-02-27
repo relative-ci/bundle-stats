@@ -104,73 +104,65 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              JS
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                JS
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -183,7 +175,7 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                           JS
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -211,73 +203,65 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              CSS
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                CSS
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -290,7 +274,7 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                           CSS
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -318,73 +302,65 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              IMG
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                IMG
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -397,7 +373,7 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                           IMG
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -425,73 +401,65 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              Others
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                Others
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -504,7 +472,7 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                           Others
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -532,73 +500,65 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              HTML
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                HTML
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -611,7 +571,7 @@ exports[`Storyshots UI/HorizontalBarChart default 1`] = `
                           HTML
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -946,73 +906,65 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              JS
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                JS
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -1025,7 +977,7 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                           JS
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -1053,73 +1005,65 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              CSS
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                CSS
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -1132,7 +1076,7 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                           CSS
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -1160,73 +1104,65 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              IMG
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                IMG
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -1239,7 +1175,7 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                           IMG
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -1267,73 +1203,65 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              Others
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                Others
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -1346,7 +1274,7 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                           Others
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -1374,73 +1302,65 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              HTML
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                HTML
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -1453,7 +1373,7 @@ exports[`Storyshots UI/HorizontalBarChart empty values 1`] = `
                           HTML
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -1803,73 +1723,65 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              JS
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                JS
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -1882,7 +1794,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                           JS
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -1910,73 +1822,65 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              CSS
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                CSS
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -1989,7 +1893,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                           CSS
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -2017,73 +1921,65 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              IMG
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                IMG
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -2096,7 +1992,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                           IMG
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -2124,73 +2020,65 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              Others
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                Others
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -2203,7 +2091,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                           Others
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -2231,73 +2119,65 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              HTML
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                HTML
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -2310,7 +2190,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom colors 1`] = `
                           HTML
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -2679,75 +2559,67 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              <h3>
-                                JS
-                              </h3>
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                <h3>
+                                  JS
+                                </h3>
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -2762,7 +2634,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                           </h3>
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -2794,75 +2666,67 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              <h3>
-                                JS
-                              </h3>
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                <h3>
+                                  JS
+                                </h3>
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -2877,7 +2741,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                           </h3>
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -2909,75 +2773,67 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              <h3>
-                                JS
-                              </h3>
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                <h3>
+                                  JS
+                                </h3>
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -2992,7 +2848,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                           </h3>
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -3024,75 +2880,67 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              <h3>
-                                JS
-                              </h3>
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                <h3>
+                                  JS
+                                </h3>
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -3107,7 +2955,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                           </h3>
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -3139,75 +2987,67 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              <h3>
-                                JS
-                              </h3>
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                <h3>
+                                  JS
+                                </h3>
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -3222,7 +3062,7 @@ exports[`Storyshots UI/HorizontalBarChart with custom label 1`] = `
                           </h3>
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -3557,73 +3397,65 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              JS
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                JS
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -3636,7 +3468,7 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                           JS
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -3664,73 +3496,65 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              CSS
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                CSS
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -3743,7 +3567,7 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                           CSS
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -3771,73 +3595,65 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              IMG
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                IMG
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -3850,7 +3666,7 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                           IMG
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -3878,73 +3694,65 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              Others
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                Others
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -3957,7 +3765,7 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                           Others
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
@@ -3985,73 +3793,65 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                     darkMode={false}
                     title={null}
                   >
-                    <ForwardRef(TooltipReference)
-                      animated={false}
-                      animating={false}
+                    <ForwardRef(Role)
                       as="span"
-                      baseId="id-test"
                       className="root itemContent"
-                      hide={[Function]}
-                      place={[Function]}
-                      placement="top"
-                      setAnimated={[Function]}
-                      setBaseId={[Function]}
-                      setVisible={[Function]}
-                      show={[Function]}
-                      stopAnimation={[Function]}
-                      toggle={[Function]}
-                      unstable_arrowRef={
+                      id="id-test"
+                      state={
                         Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_arrowStyles={Object {}}
-                      unstable_disclosureRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_idCountRef={
-                        Object {
-                          "current": 0,
-                        }
-                      }
-                      unstable_originalPlacement="top"
-                      unstable_popoverRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
-                      unstable_popoverStyles={
-                        Object {
-                          "left": "100%",
-                          "position": "fixed",
-                          "top": "100%",
-                        }
-                      }
-                      unstable_referenceRef={
-                        Object {
-                          "current": <span
-                            aria-describedby="id-test"
-                            class="root itemContent"
-                            tabindex="0"
-                          >
-                            <span
-                              class="itemLabel"
+                          "anchorRect": null,
+                          "anchorRef": Object {
+                            "current": <span
+                              class="root itemContent"
+                              id="id-test"
+                              tabindex="0"
                             >
-                              HTML
-                            </span>
-                          </span>,
+                              <span
+                                class="itemLabel"
+                              >
+                                HTML
+                              </span>
+                            </span>,
+                          },
+                          "animated": false,
+                          "animating": false,
+                          "arrowPadding": 4,
+                          "arrowRef": Object {
+                            "current": null,
+                          },
+                          "contentElement": null,
+                          "currentPlacement": "top",
+                          "disclosureRef": Object {
+                            "current": null,
+                          },
+                          "fixed": false,
+                          "flip": true,
+                          "gutter": 8,
+                          "hide": [Function],
+                          "mounted": false,
+                          "padding": 8,
+                          "placement": "top",
+                          "popoverRef": Object {
+                            "current": null,
+                          },
+                          "preventOverflow": true,
+                          "render": [Function],
+                          "renderCallback": undefined,
+                          "setAnchorRect": [Function],
+                          "setContentElement": [Function],
+                          "setVisible": [Function],
+                          "shift": 0,
+                          "show": [Function],
+                          "stopAnimation": [Function],
+                          "timeout": 0,
+                          "toggle": [Function],
+                          "visible": false,
                         }
                       }
-                      unstable_setTimeout={[Function]}
-                      unstable_timeout={0}
-                      unstable_update={[Function]}
-                      visible={false}
                     >
                       <span
-                        aria-describedby="id-test"
                         className="root itemContent"
+                        id="id-test"
                         onBlur={[Function]}
                         onFocus={[Function]}
                         onMouseEnter={[Function]}
@@ -4064,7 +3864,7 @@ exports[`Storyshots UI/HorizontalBarChart with maxValue 1`] = `
                           HTML
                         </span>
                       </span>
-                    </ForwardRef(TooltipReference)>
+                    </ForwardRef(Role)>
                   </Tooltip>
                 </span>
               </HorizontalBarChartItem>
