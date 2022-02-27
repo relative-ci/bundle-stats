@@ -22,7 +22,6 @@ export const Tooltip = (props) => {
   } = props;
 
   const tooltip = useTooltipState({ placement: 'top' });
-  const baseId = process.env.NODE_ENV === 'test' && 'id-test';
 
   return (
     <>
@@ -32,16 +31,11 @@ export const Tooltip = (props) => {
         state={tooltip}
         {...(ref ? { ref } : {})}
         {...restProps}
-        {...(baseId && { id: baseId })}
       >
         {children}
       </UITooltipAnchor>
       {title && (
-        <UITooltip
-          state={tooltip}
-          className={cx(css.tooltip, darkMode && css.tooltipDarkMode)}
-          {...(baseId && { id: `${baseId}-tooltip` })}
-        >
+        <UITooltip state={tooltip} className={cx(css.tooltip, darkMode && css.tooltipDarkMode)}>
           <UITooltipArrow state={tooltip} className={css.arrow} size={12} />
           {title}
         </UITooltip>

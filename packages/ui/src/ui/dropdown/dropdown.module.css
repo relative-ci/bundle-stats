@@ -1,4 +1,8 @@
 .root {
+  display: inline-block;
+}
+
+.button {
   background: none;
   border: none;
   padding: 0;
@@ -18,9 +22,9 @@
   color: var(--color-text-light);
 }
 
-.root:hover,
-.root:focus,
-.root:active {
+.button:hover,
+.button:focus,
+.button:active {
   outline: none;
   box-shadow: 0 0 var(--space-xxxsmall) var(--color-shadow);
   border-color: var(--color-outline-dark);
@@ -42,10 +46,6 @@
 .dropdown:focus {
   outline: none;
   box-shadow: 0 2px var(--space-xsmall) var(--color-shadow);
-}
-
-.activeLabel .label {
-  color: var(--color-text);
 }
 
 .menuItem {

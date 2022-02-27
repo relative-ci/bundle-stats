@@ -8,23 +8,7 @@ const stories = storiesOf('UI/Dropdown', module);
 stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => (
-  <Dropdown
-    glyph="filter"
-    label="Toggle"
-  >
-    <ul>
-      <li>Option 1</li>
-      <li>Option 2</li>
-    </ul>
-  </Dropdown>
-));
-
-stories.add('with right alignement', () => (
-  <Dropdown
-    glyph="filter"
-    label="Toggle"
-    align="right"
-  >
+  <Dropdown glyph="filter" label="Toggle">
     <ul>
       <li>Option 1</li>
       <li>Option 2</li>
@@ -33,12 +17,11 @@ stories.add('with right alignement', () => (
 ));
 
 stories.add('with render function', () => (
-  <Dropdown
-    glyph="filter"
-    label="Toggle"
-  >
-    {({ dropdownToggle }) => (
-      <button type="button" onClick={dropdownToggle}>Toggle dropdown</button>
+  <Dropdown glyph="filter" label="Toggle">
+    {({ menu }) => (
+      <button type="button" onClick={menu.toggle}>
+        Toggle dropdown
+      </button>
     )}
   </Dropdown>
 ));
