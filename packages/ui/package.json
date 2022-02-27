@@ -15,7 +15,7 @@
     "generate-svg-sprite": "npx svg-sprite -s --si --no-svg-namespace-classnames src/assets/icons/*.svg && mv symbol/svg/sprite.symbol.svg src/assets/icons.svg",
     "lint": "../../node_modules/.bin/eslint . --ext .jsx,.js",
     "start": "cross-env NODE_ENV=development start-storybook -c ./build/storybook -p 8080",
-    "test": "npm run test:unit && npm run test:storyshots",
+    "test": "npm run test:unit",
     "test:unit": "jest src --passWithNoTests",
     "test:storyshots": "jest build/storybook ",
     "chromatic": "chromatic --exit-zero-on-changes"
