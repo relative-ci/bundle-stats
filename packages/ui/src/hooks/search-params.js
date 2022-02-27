@@ -25,7 +25,8 @@ const getSearchPattern = (search) => {
 };
 
 const getSearchReducer =
-  ({ defaultFilters, allEntriesFilters, setParentState }) => (state, action) => {
+  ({ defaultFilters, allEntriesFilters, setParentState }) =>
+  (state, action) => {
     const { type, payload } = action;
 
     switch (type) {
@@ -116,29 +117,35 @@ export const useSearchParams = ({
   // Update state when the custom filters/search are changing - initial load or route updates
   useLayoutEffect(() => {
     // Run a deep comparison to prevent circular setState triggering
-    if (parentSearch === search || isEqual(parentFilters, filters)) {
+    if (parentSearch === search && isEqual(initialFilters, filters)) {
       return;
     }
 
     dispatch({ type: ACTION_SET, payload: generateState(initialFilters, parentSearch) });
-  }, [search, filters, parentFilters, parentSearch]);
+  }, [dispatch, search, filters, parentSearch, initialFilters]);
 
   /** Callbacks */
-  const handleUpdateSearch = useCallback((newValue) => {
-    dispatch({ type: ACTION_SET_SEARCH, payload: newValue });
-  }, []);
+  const handleUpdateSearch = useCallback(
+    (newValue) => {
+      dispatch({ type: ACTION_SET_SEARCH, payload: newValue });
+    },
+    [dispatch],
+  );
 
-  const handleUpdateFilters = useCallback((newFilters) => {
-    dispatch({ type: ACTION_SET_FILTERS, payload: newFilters });
-  }, []);
+  const handleUpdateFilters = useCallback(
+    (newFilters) => {
+      dispatch({ type: ACTION_SET_FILTERS, payload: newFilters });
+    },
+    [dispatch],
+  );
 
   const handleResetFilters = useCallback(() => {
     dispatch({ type: ACTION_RESET_DEFAULT });
-  }, []);
+  }, [dispatch]);
 
   const handleResetAllFilters = useCallback(() => {
     dispatch({ type: ACTION_RESET_ALL });
-  }, []);
+  }, [dispatch]);
 
   return {
     search,
