@@ -1,0 +1,52 @@
+.root {
+  display: inline-block;
+}
+
+.anchor {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+
+a.anchor,
+buton.anchor {
+  cursor: pointer;
+}
+
+a.anchor:hover,
+button.anchor:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.hoverCard {
+  padding: var(--space-xsmall) var(--space-large) var(--space-xsmall) var(--space-small);
+  border-radius: var(--radius-medium);
+  max-width: 320px;
+  outline: none;
+  filter: drop-shadow(0 0 var(--space-xxsmall) var(--color-shadow));
+  will-change: filter;
+  background: var(--color-light);
+  font-size: var(--size-small);
+}
+
+.closeBtn {
+  position: absolute;
+  right: 0;
+  top: var(--space-xxxsmall);
+  width: var(--space-large);
+  height: var(--space-large);
+  padding: var(--space-xxsmall);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-ultra-light);
+  transition: var(--transition-out);
+}
+
+.closeBtn:hover,
+.closeBtn:active,
+.closeBtn:focus {
+  color: var(--color-text-light);
+  transition: var(--transition-in);
+}
