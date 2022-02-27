@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
-import { Popover } from '../../ui/popover';
+import { HoverCard } from '../../ui/hover-card';
+import { Icon } from '../../ui/icon';
 import { Skeleton } from '../../ui/skeleton';
 import { Stack } from '../../layout/stack';
 import { FlexStack } from '../../layout/flex-stack';
@@ -11,32 +12,25 @@ import { Metric } from '../metric';
 import { Delta } from '../delta';
 import css from './summary-item.module.css';
 
-const MetricInfoPopover = ({ description, url }) => {
-  // Workaround cases where the parent is a link
-  const readMoreOnClick = () => {
-    window.open(url);
-  };
+const MetricInfo = ({ description, url }) => (
+  <Stack space="xxxsmall">
+    <p>{description}</p>
+    {url && (
+      <p>
+        <a href={url} className={css.readMoreLink}>
+          Read more
+        </a>
+      </p>
+    )}
+  </Stack>
+);
 
-  return (
-    <Stack space="xxxsmall">
-      <p>{description}</p>
-      {url && (
-        <p>
-          <button type="button" className={css.readMoreBtn} onClick={readMoreOnClick}>
-            Read more
-          </button>
-        </p>
-      )}
-    </Stack>
-  );
-};
-
-MetricInfoPopover.propTypes = {
+MetricInfo.propTypes = {
   description: PropTypes.string.isRequired,
   url: PropTypes.string,
 };
 
-MetricInfoPopover.defaultProps = {
+MetricInfo.defaultProps = {
   url: '',
 };
 
@@ -65,9 +59,9 @@ export const SummaryItem = ({
         <span>{metric.label}</span>
 
         {showMetricDescriptionTooltip && (
-          <Popover className={css.icon} icon="help">
-            <MetricInfoPopover {...metric} />
-          </Popover>
+          <HoverCard className={css.icon} label={<Icon glyph="help" />}>
+            <MetricInfo {...metric} />
+          </HoverCard>
         )}
       </FlexStack>
 

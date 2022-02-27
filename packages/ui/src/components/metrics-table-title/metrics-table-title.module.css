@@ -1,5 +1,7 @@
 .root {
+  align-items: center;
   font-weight: bold;
+  line-height: var(--space-small);
   text-transform: uppercase;
   color: var(--color-text-light);
 }

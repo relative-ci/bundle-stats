@@ -35,6 +35,10 @@
   color: var(--color-text-ultra-light);
 }
 
+.packageNameLabel {
+  align-items: center;
+}
+
 .packagePopover {
   min-width: 320px;
 }

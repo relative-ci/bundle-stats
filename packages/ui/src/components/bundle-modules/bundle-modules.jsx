@@ -18,7 +18,7 @@ import { FlexStack } from '../../layout/flex-stack';
 import { EmptySet } from '../../ui/empty-set';
 import { FileName } from '../../ui/file-name';
 import { Filters } from '../../ui/filters';
-import { Popover } from '../../ui/popover';
+import { HoverCard } from '../../ui/hover-card';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Toolbar } from '../../ui/toolbar';
 import { MetricsTable } from '../metrics-table';
@@ -37,11 +37,11 @@ const RowHeader = ({ row, chunks, labels, CustomComponentLink }) => {
 
   return (
     <div onMouseEnter={handleOnMouseEnter}>
-      {!showPopopver ?
+      {!showPopopver ? (
         content
-        : (
-        <Popover ariaLabel="View module info" label={content}>
-          {({ popoverToggle }) => (
+      ) : (
+        <HoverCard label={content}>
+          {({ close }) => (
             <ModuleInfo
               className={css.namePopover}
               item={row}
@@ -49,10 +49,10 @@ const RowHeader = ({ row, chunks, labels, CustomComponentLink }) => {
               chunkIds={chunkIds}
               labels={labels}
               customComponentLink={CustomComponentLink}
-              onClick={popoverToggle}
+              onClick={close}
             />
           )}
-        </Popover>
+        </HoverCard>
       )}
     </div>
   );
@@ -76,9 +76,17 @@ RowHeader.defaultProps = {
   chunks: [],
 };
 
-const getRenderRowHeader = ({ labels, chunks, CustomComponentLink }) => (row) => (
-  <RowHeader row={row} chunks={chunks} labels={labels} CustomComponentLink={CustomComponentLink} />
-);
+const getRenderRowHeader =
+  ({ labels, chunks, CustomComponentLink }) =>
+  (row) =>
+    (
+      <RowHeader
+        row={row}
+        chunks={chunks}
+        labels={labels}
+        CustomComponentLink={CustomComponentLink}
+      />
+    );
 
 export const BundleModules = ({
   className,
@@ -240,10 +248,12 @@ BundleModules.propTypes = {
   jobs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 
   /** Chunks data */
-  chunks: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
-    name: PropTypes.string,
-  })).isRequired,
+  chunks: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+    }),
+  ).isRequired,
 
   /** total row count */
   totalRowCount: PropTypes.number,
