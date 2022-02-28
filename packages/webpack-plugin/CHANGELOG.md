@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.6-beta.3](https://github.com/relative-ci/bundle-stats/compare/v3.2.6-beta.2...v3.2.6-beta.3) (2022-02-28)
+
+**Note:** Version bump only for package bundle-stats-webpack-plugin
+
+
+
+
+
 ## [3.2.6-beta.2](https://github.com/relative-ci/bundle-stats/compare/v3.2.5...v3.2.6-beta.2) (2022-02-27)
 
 **Note:** Version bump only for package bundle-stats-webpack-plugin
