@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.6-beta.5](https://github.com/relative-ci/bundle-stats/compare/v3.2.5...v3.2.6-beta.5) (2022-03-03)
+
+
+### Bug Fixes
+
+* **ui:** Add border-radius to flags ([4f7663b](https://github.com/relative-ci/bundle-stats/commit/4f7663b29a954cf1ace9caa9739acd9f37aa3b95))
+* **ui:** Box - add border-radius to outline ([bd78d20](https://github.com/relative-ci/bundle-stats/commit/bd78d2052db4b781afc3a1d9e8dd583986d0093d))
+* **ui:** Filters - fix border radius ([de014b5](https://github.com/relative-ci/bundle-stats/commit/de014b5d81b1e46a726789e93fa049e8577c2d4b))
+* **ui:** Footer - update border ([7c76df8](https://github.com/relative-ci/bundle-stats/commit/7c76df85090649189b4b52e1dace53c96466402d))
+* **ui:** HoverCard - align close icon ([bd179a8](https://github.com/relative-ci/bundle-stats/commit/bd179a8b74fd7627cc056f52ddeced95211a6ae4))
+* **ui:** Normlize border-radius usage ([e8a6b30](https://github.com/relative-ci/bundle-stats/commit/e8a6b302729112d75a82c74ef1d952fc639d16ab))
+* **ui:** SearchParams - trigger filter change correctly ([0c331d2](https://github.com/relative-ci/bundle-stats/commit/0c331d2704382cd72d42363db539107fe22ed2ee))
+* **ui:** SummaryItem - update vertical spacing ([b4c57dc](https://github.com/relative-ci/bundle-stats/commit/b4c57dc6692d496fc45b3f66515fa4357307ff12))
+* **ui:** Table - correct outline variation ([82804d1](https://github.com/relative-ci/bundle-stats/commit/82804d13a2016332042dd38a21a4a4b0dbb0c928))
+* **ui:** Table - remove last row bottom line ([9398a93](https://github.com/relative-ci/bundle-stats/commit/9398a936e1d937aed188f96ce56ebfa56f3af7d7))
+
+
+### Features
+
+* **ui:** Add HoverCard component ([6ee79d5](https://github.com/relative-ci/bundle-stats/commit/6ee79d52bf5d02445e3cfca9f41841e5c710355f))
+* **ui:** Add Tag component ([f796f9c](https://github.com/relative-ci/bundle-stats/commit/f796f9c909703dab3a513059215a2ce24bc12244))
+
+
+
+
+
 ## [3.2.5](https://github.com/relative-ci/bundle-stats/compare/v3.2.4...v3.2.5) (2022-02-15)
 
 
