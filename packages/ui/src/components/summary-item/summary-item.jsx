@@ -54,7 +54,7 @@ export const SummaryItem = ({
   const rootClassName = cx(css.root, className, css[size], showDelta && css.showDelta);
 
   return (
-    <Stack space="xxsmall" as={Component} className={rootClassName} {...props}>
+    <Stack space="xxxsmall" as={Component} className={rootClassName} {...props}>
       <FlexStack as="h3" space="xxxsmall" className={css.title}>
         <span>{metric.label}</span>
 
