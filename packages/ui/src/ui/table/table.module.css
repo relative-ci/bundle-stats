@@ -1,7 +1,7 @@
 .root {
   border-width: 0;
   width: 100%;
-  border-collapse: collapse;
+  border-spacing: 0;
   empty-cells: show;
   background: var(--color-background);
 }
@@ -25,6 +25,10 @@
 
 .root tbody .cell {
   font-weight: normal;
+}
+
+.root tbody tr:first-child .cell {
+  border-top: 0;
 }
 
 .root tbody .cell a {
@@ -58,12 +62,27 @@
 
 /* outline variation */
 .outline {
+  --table-radius: var(--radius-medium);
   border: 1px solid var(--color-outline);
-  border-width: 0 1px;
+  border-radius: var(--table-radius);
 }
 
-.outline thead tr:first-child .cell {
-  border-top-width: 1px;
+.outline thead tr:first-child .cell:first-child,
+.outline tbody:first-child tr:first-child .cell:first-child {
+  border-top-left-radius: var(--table-radius);
+}
+
+.outline thead tr:first-child .cell:last-child,
+.outline tbody:first-child tr:first-child .cell:last-child {
+  border-top-right-radius: var(--table-radius);
+}
+
+.outline tbody:last-child tr:last-child .cell:first-child {
+  border-bottom-left-radius: var(--table-radius);
+}
+
+.outline tbody:last-child tr:last-child .cell:last-child {
+  border-bottom-right-radius: var(--table-radius);
 }
 
 .outline.empty {
