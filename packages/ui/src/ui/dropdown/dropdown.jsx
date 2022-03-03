@@ -8,13 +8,13 @@ import { Icon } from '../icon';
 import css from './dropdown.module.css';
 
 export const Dropdown = (props) => {
-  const { className, label, ariaLabel, glyph, children } = props;
+  const { className, buttonClassName, label, ariaLabel, glyph, children } = props;
   const rootClassName = cx(css.root, className);
   const menuState = useMenuState();
 
   return (
     <div className={rootClassName}>
-      <MenuButton state={menuState} className={css.button} tabIndex={null}>
+      <MenuButton state={menuState} className={cx(css.button, buttonClassName)} tabIndex={null}>
         <FlexStack space="xxxsmall">
           {glyph && <Icon className={css.labelIcon} glyph={glyph} />}
           {label}
@@ -36,6 +36,7 @@ export const Dropdown = (props) => {
 
 Dropdown.defaultProps = {
   className: '',
+  buttonClassName: '',
   label: null,
   ariaLabel: '',
   glyph: null,
@@ -44,6 +45,9 @@ Dropdown.defaultProps = {
 Dropdown.propTypes = {
   /** Adopted child class name */
   className: PropTypes.string,
+
+  /** Button adopted child class name */
+  buttonClassName: PropTypes.string,
 
   /** Button label */
   label: PropTypes.node,

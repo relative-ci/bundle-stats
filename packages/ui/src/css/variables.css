@@ -181,7 +181,7 @@
   --layer-high: 1000;
   --layer-xhigh: 10000;
 
-  --radius-small: 2px;
+  --radius-small: 3px;
   --radius-medium: var(--space-xxxsmall);
   --radius-large: var(--space-xxsmall);
 

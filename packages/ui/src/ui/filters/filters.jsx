@@ -9,7 +9,7 @@ import { getGroupFiltersLabelSuffix, LABELS } from './filters.utils';
 import css from './filters.module.css';
 
 const Filter = (props) => {
-  const { className, label, name, getOnOnlyClick, ...inputProps } = props;
+  const { className, buttonClassName, label, name, getOnOnlyClick, ...inputProps } = props;
   const id = `filter-${name}`;
 
   const rootClassName = cx(css.filter, className);
@@ -17,7 +17,7 @@ const Filter = (props) => {
   return (
     <div className={rootClassName}>
       {/* eslint-disable */}
-      <FlexStack space="xxxsmall" as="label" className={css.filterCheckbox}>
+      <FlexStack space="xxxsmall" as="label" className={cx(css.filterCheckbox, buttonClassName)}>
         {/* eslint-enabled */}
         <input className={css.filterInput} type="checkbox" id={id} name={name} {...inputProps} />
         <span className={css.filterLabel} title={label}>
@@ -36,6 +36,7 @@ const Filter = (props) => {
 
 Filter.propTypes = {
   className: PropTypes.string,
+  buttonClassName: PropTypes.string,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   getOnOnlyClick: PropTypes.func,
@@ -43,11 +44,13 @@ Filter.propTypes = {
 
 Filter.defaultProps = {
   className: '',
+  buttonClassName: '',
   getOnOnlyClick: null,
 };
 
 const FilterGroup = (props) => {
-  const { className, groupKey, data, values, onCheckboxChange, toggleFilters } = props;
+  const { className, buttonClassName, groupKey, data, values, onCheckboxChange, toggleFilters } =
+    props;
 
   const { label: groupLabel, ...groupData } = data;
 
@@ -89,6 +92,7 @@ const FilterGroup = (props) => {
   return (
     <Dropdown
       className={className}
+      buttonClassName={buttonClassName}
       label={dropdownLabel}
       ariaLabel={`${groupLabel}: ${filterSuffix}`}
     >
@@ -150,6 +154,7 @@ const FilterGroup = (props) => {
 
 FilterGroup.propTypes = {
   className: PropTypes.string,
+  buttonClassName: PropTypes.string,
   groupKey: PropTypes.string.isRequired,
   data: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   values: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
@@ -159,6 +164,7 @@ FilterGroup.propTypes = {
 
 FilterGroup.defaultProps = {
   className: '',
+  buttonClassName: '',
 };
 
 export const Filters = (props) => {
@@ -176,6 +182,7 @@ export const Filters = (props) => {
               <Filter
                 key={name}
                 className={cx(css.item, css.filterStandalone)}
+                buttonClassName={css.itemButton}
                 name={name}
                 label={data.label}
                 onChange={onCheckboxChange}
@@ -188,6 +195,7 @@ export const Filters = (props) => {
           return (
             <FilterGroup
               className={css.item}
+              buttonClassName={css.itemButton}
               key={name}
               groupKey={name}
               data={data}

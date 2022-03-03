@@ -130,17 +130,16 @@
 }
 
 .item {
-  border-radius: 0;
   position: relative;
   flex: 0 0 auto;
   margin-right: -1px;
 }
 
-.item:first-child {
-  border-radius: var(--radius-small) 0 0 var(--radius-small);
+.itemButton {
+  border-radius: 0px;
 }
 
-.item:last-child {
+.item:last-child .itemButton {
   border-radius: 0 var(--radius-small) var(--radius-small) 0;
 }
 
