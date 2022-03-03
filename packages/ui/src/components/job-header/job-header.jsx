@@ -8,6 +8,7 @@ import { SOURCE_PATH_WEBPACK_STATS, formatDate, formatTime } from '@bundle-stats
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { Icon } from '../../ui/icon';
+import { Tag } from '../../ui/tag';
 import css from './job-header.module.css';
 
 export const JobHeader = (props) => {
@@ -20,7 +21,7 @@ export const JobHeader = (props) => {
     <Stack className={rootClassName} space="xxsmall">
       <h1 className={css.title}>
         <span>{`#${job.internalBuildNumber}`}</span>
-        {tag && <span className={css.tag}>{tag}</span>}
+        {tag && <Tag className={css.tag}>{tag}</Tag>}
       </h1>
       <FlexStack className={css.meta} space="xxsmall">
         {builtAt && (

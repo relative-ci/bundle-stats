@@ -1,22 +1,20 @@
 .title {
+  font-size: var(--size-xlarge);
   line-height: 1;
   font-weight: bold;
   vertical-align: top;
 }
 
 .tag {
-  padding: var(--space-xxxsmall);
-  margin-left: var(--space-xxxsmall);
-  background-color: var(--color-highlight);
-  color: var(--color-text-light);
-  display: inline-block;
-  font-size: 9px;
-  line-height: var(--space-xxsmall);
-  font-weight: normal;
+  margin-left: var(--space-xxsmall);
   vertical-align: top;
+  outline: 1px solid var(--color-outline);
+  background: var(--color-highlight);
+  color: var(--color-text-light);
 }
 
 .meta {
+  font-size: var(--size-small);
   color: var(--color-text-light);
 }
 
