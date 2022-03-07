@@ -199,7 +199,7 @@ export const BundlePackages = (props) => {
           </FlexStack>
         )}
       >
-        <FlexStack>
+        <FlexStack space="xxsmall">
           <MetricsTableSearch
             className={css.toolbarSearch}
             placeholder="Search by name"

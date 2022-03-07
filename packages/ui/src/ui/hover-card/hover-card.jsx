@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import {
@@ -32,6 +32,14 @@ export const HoverCard = (props) => {
   // Fallback to span if no href
   const Component = resolveComponent(as, href);
 
+  const handleOnClose = useCallback(
+    (event) => {
+      state.hide();
+      event.preventDefault();
+    },
+    [state],
+  );
+
   return (
     <div className={cx(css.root, className)}>
       <HovercardAnchor state={state} href={href} className={css.anchor} as={Component}>
@@ -51,7 +59,7 @@ export const HoverCard = (props) => {
           as="button"
           type="button"
           className={css.closeBtn}
-          onClick={state.hide}
+          onClick={handleOnClose}
         />
       </Hovercard>
     </div>

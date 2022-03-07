@@ -192,7 +192,7 @@ export const BundleModules = ({
           </FlexStack>
         )}
       >
-        <FlexStack>
+        <FlexStack space="xxsmall">
           <MetricsTableSearch
             className={css.toolbarSearch}
             search={search}

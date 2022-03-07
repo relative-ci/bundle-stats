@@ -172,7 +172,7 @@ export const BundleAssets = (props) => {
       <Toolbar
         className={css.toolbar}
         renderActions={({ actionClassName }) => (
-          <FlexStack space="xsmall" className={cx(css.dropdown, actionClassName)}>
+          <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
             <SortDropdown fields={sortFields} {...sort} onChange={updateSort} />
             <MetricsTableOptions
               handleViewAll={resetAllFilters}
@@ -181,7 +181,7 @@ export const BundleAssets = (props) => {
           </FlexStack>
         )}
       >
-        <FlexStack>
+        <FlexStack space="xxsmall">
           <MetricsTableSearch
             className={css.toolbarSearch}
             placeholder="Search by name"

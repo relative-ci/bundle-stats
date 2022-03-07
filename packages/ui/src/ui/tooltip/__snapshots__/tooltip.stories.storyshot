@@ -64,15 +64,13 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
             <ForwardRef(Role)
               as="span"
               className="root"
-              id="id-test"
               state={
                 Object {
                   "anchorRect": null,
                   "anchorRef": Object {
                     "current": <span
-                      aria-labelledby="id-test-tooltip"
+                      aria-labelledby="id-oenpwn"
                       class="root"
-                      id="id-test"
                       tabindex="0"
                     >
                       Job #100
@@ -85,49 +83,55 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                     "current": <div
                       aria-hidden="true"
                       class="arrow"
-                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                      style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                     >
                       <svg
                         display="block"
-                        transform="rotate(180 0 0)"
                         viewBox="0 0 30 30"
                       >
-                        <path
-                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                          fill="none"
-                        />
-                        <path
-                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                          stroke="none"
-                        />
+                        <g
+                          transform="rotate(180 15 15)"
+                        >
+                          <path
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            fill="none"
+                          />
+                          <path
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            stroke="none"
+                          />
+                        </g>
                       </svg>
                     </div>,
                   },
                   "contentElement": <div
                     class="tooltip"
                     hidden=""
-                    id="id-test-tooltip"
+                    id="id-oenpwn"
                     role="tooltip"
                     style="display: none;"
                   >
                     <div
                       aria-hidden="true"
                       class="arrow"
-                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                      style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                     >
                       <svg
                         display="block"
-                        transform="rotate(180 0 0)"
                         viewBox="0 0 30 30"
                       >
-                        <path
-                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                          fill="none"
-                        />
-                        <path
-                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                          stroke="none"
-                        />
+                        <g
+                          transform="rotate(180 15 15)"
+                        >
+                          <path
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            fill="none"
+                          />
+                          <path
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            stroke="none"
+                          />
+                        </g>
                       </svg>
                     </div>
                     View job #100
@@ -145,33 +149,37 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                   "placement": "top",
                   "popoverRef": Object {
                     "current": <div
+                      role="presentation"
                       style="position: absolute; left: 0px; top: 0px; margin: 0px;"
                     >
                       <div
                         class="tooltip"
                         hidden=""
-                        id="id-test-tooltip"
+                        id="id-oenpwn"
                         role="tooltip"
                         style="display: none;"
                       >
                         <div
                           aria-hidden="true"
                           class="arrow"
-                          style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                          style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                         >
                           <svg
                             display="block"
-                            transform="rotate(180 0 0)"
                             viewBox="0 0 30 30"
                           >
-                            <path
-                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                              fill="none"
-                            />
-                            <path
-                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                              stroke="none"
-                            />
+                            <g
+                              transform="rotate(180 15 15)"
+                            >
+                              <path
+                                d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                fill="none"
+                              />
+                              <path
+                                d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                stroke="none"
+                              />
+                            </g>
                           </svg>
                         </div>
                         View job #100
@@ -181,6 +189,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                   "preventOverflow": true,
                   "render": [Function],
                   "renderCallback": undefined,
+                  "sameWidth": false,
                   "setAnchorRect": [Function],
                   "setContentElement": [Function],
                   "setVisible": [Function],
@@ -194,9 +203,8 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
               }
             >
               <span
-                aria-labelledby="id-test-tooltip"
+                aria-labelledby="id-oenpwn"
                 className="root"
-                id="id-test"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onMouseEnter={[Function]}
@@ -208,15 +216,13 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
             </ForwardRef(Role)>
             <ForwardRef(Role)
               className="tooltip"
-              id="id-test-tooltip"
               state={
                 Object {
                   "anchorRect": null,
                   "anchorRef": Object {
                     "current": <span
-                      aria-labelledby="id-test-tooltip"
+                      aria-labelledby="id-oenpwn"
                       class="root"
-                      id="id-test"
                       tabindex="0"
                     >
                       Job #100
@@ -229,49 +235,55 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                     "current": <div
                       aria-hidden="true"
                       class="arrow"
-                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                      style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                     >
                       <svg
                         display="block"
-                        transform="rotate(180 0 0)"
                         viewBox="0 0 30 30"
                       >
-                        <path
-                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                          fill="none"
-                        />
-                        <path
-                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                          stroke="none"
-                        />
+                        <g
+                          transform="rotate(180 15 15)"
+                        >
+                          <path
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            fill="none"
+                          />
+                          <path
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            stroke="none"
+                          />
+                        </g>
                       </svg>
                     </div>,
                   },
                   "contentElement": <div
                     class="tooltip"
                     hidden=""
-                    id="id-test-tooltip"
+                    id="id-oenpwn"
                     role="tooltip"
                     style="display: none;"
                   >
                     <div
                       aria-hidden="true"
                       class="arrow"
-                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                      style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                     >
                       <svg
                         display="block"
-                        transform="rotate(180 0 0)"
                         viewBox="0 0 30 30"
                       >
-                        <path
-                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                          fill="none"
-                        />
-                        <path
-                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                          stroke="none"
-                        />
+                        <g
+                          transform="rotate(180 15 15)"
+                        >
+                          <path
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            fill="none"
+                          />
+                          <path
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            stroke="none"
+                          />
+                        </g>
                       </svg>
                     </div>
                     View job #100
@@ -289,33 +301,37 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                   "placement": "top",
                   "popoverRef": Object {
                     "current": <div
+                      role="presentation"
                       style="position: absolute; left: 0px; top: 0px; margin: 0px;"
                     >
                       <div
                         class="tooltip"
                         hidden=""
-                        id="id-test-tooltip"
+                        id="id-oenpwn"
                         role="tooltip"
                         style="display: none;"
                       >
                         <div
                           aria-hidden="true"
                           class="arrow"
-                          style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                          style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                         >
                           <svg
                             display="block"
-                            transform="rotate(180 0 0)"
                             viewBox="0 0 30 30"
                           >
-                            <path
-                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                              fill="none"
-                            />
-                            <path
-                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                              stroke="none"
-                            />
+                            <g
+                              transform="rotate(180 15 15)"
+                            >
+                              <path
+                                d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                fill="none"
+                              />
+                              <path
+                                d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                stroke="none"
+                              />
+                            </g>
                           </svg>
                         </div>
                         View job #100
@@ -325,6 +341,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                   "preventOverflow": true,
                   "render": [Function],
                   "renderCallback": undefined,
+                  "sameWidth": false,
                   "setAnchorRect": [Function],
                   "setContentElement": [Function],
                   "setVisible": [Function],
@@ -340,36 +357,40 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
               <Portal
                 containerInfo={
                   <div
-                    id="id-test-tooltip-portal"
+                    id="id-l4jutx"
                   >
                     <div
+                      role="presentation"
                       style="position: absolute; left: 0px; top: 0px; margin: 0px;"
                     >
                       <div
                         class="tooltip"
                         hidden=""
-                        id="id-test-tooltip"
+                        id="id-oenpwn"
                         role="tooltip"
                         style="display: none;"
                       >
                         <div
                           aria-hidden="true"
                           class="arrow"
-                          style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                          style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                         >
                           <svg
                             display="block"
-                            transform="rotate(180 0 0)"
                             viewBox="0 0 30 30"
                           >
-                            <path
-                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                              fill="none"
-                            />
-                            <path
-                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                              stroke="none"
-                            />
+                            <g
+                              transform="rotate(180 15 15)"
+                            >
+                              <path
+                                d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                fill="none"
+                              />
+                              <path
+                                d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                stroke="none"
+                              />
+                            </g>
                           </svg>
                         </div>
                         View job #100
@@ -378,11 +399,18 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                   </div>
                 }
               >
-                <div>
+                <div
+                  role="presentation"
+                  style={
+                    Object {
+                      "position": "fixed",
+                    }
+                  }
+                >
                   <div
                     className="tooltip"
                     hidden={true}
-                    id="id-test-tooltip"
+                    id="id-oenpwn"
                     onAnimationEnd={[Function]}
                     onTransitionEnd={[Function]}
                     role="tooltip"
@@ -400,9 +428,8 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                           "anchorRect": null,
                           "anchorRef": Object {
                             "current": <span
-                              aria-labelledby="id-test-tooltip"
+                              aria-labelledby="id-oenpwn"
                               class="root"
-                              id="id-test"
                               tabindex="0"
                             >
                               Job #100
@@ -415,49 +442,55 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                             "current": <div
                               aria-hidden="true"
                               class="arrow"
-                              style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                              style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                             >
                               <svg
                                 display="block"
-                                transform="rotate(180 0 0)"
                                 viewBox="0 0 30 30"
                               >
-                                <path
-                                  d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                                  fill="none"
-                                />
-                                <path
-                                  d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                                  stroke="none"
-                                />
+                                <g
+                                  transform="rotate(180 15 15)"
+                                >
+                                  <path
+                                    d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                    fill="none"
+                                  />
+                                  <path
+                                    d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                    stroke="none"
+                                  />
+                                </g>
                               </svg>
                             </div>,
                           },
                           "contentElement": <div
                             class="tooltip"
                             hidden=""
-                            id="id-test-tooltip"
+                            id="id-oenpwn"
                             role="tooltip"
                             style="display: none;"
                           >
                             <div
                               aria-hidden="true"
                               class="arrow"
-                              style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                              style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                             >
                               <svg
                                 display="block"
-                                transform="rotate(180 0 0)"
                                 viewBox="0 0 30 30"
                               >
-                                <path
-                                  d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                                  fill="none"
-                                />
-                                <path
-                                  d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                                  stroke="none"
-                                />
+                                <g
+                                  transform="rotate(180 15 15)"
+                                >
+                                  <path
+                                    d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                    fill="none"
+                                  />
+                                  <path
+                                    d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                    stroke="none"
+                                  />
+                                </g>
                               </svg>
                             </div>
                             View job #100
@@ -475,33 +508,37 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                           "placement": "top",
                           "popoverRef": Object {
                             "current": <div
+                              role="presentation"
                               style="position: absolute; left: 0px; top: 0px; margin: 0px;"
                             >
                               <div
                                 class="tooltip"
                                 hidden=""
-                                id="id-test-tooltip"
+                                id="id-oenpwn"
                                 role="tooltip"
                                 style="display: none;"
                               >
                                 <div
                                   aria-hidden="true"
                                   class="arrow"
-                                  style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                                  style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                                 >
                                   <svg
                                     display="block"
-                                    transform="rotate(180 0 0)"
                                     viewBox="0 0 30 30"
                                   >
-                                    <path
-                                      d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                                      fill="none"
-                                    />
-                                    <path
-                                      d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                                      stroke="none"
-                                    />
+                                    <g
+                                      transform="rotate(180 15 15)"
+                                    >
+                                      <path
+                                        d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                        fill="none"
+                                      />
+                                      <path
+                                        d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                        stroke="none"
+                                      />
+                                    </g>
                                   </svg>
                                 </div>
                                 View job #100
@@ -511,6 +548,7 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                           "preventOverflow": true,
                           "render": [Function],
                           "renderCallback": undefined,
+                          "sameWidth": false,
                           "setAnchorRect": [Function],
                           "setContentElement": [Function],
                           "setVisible": [Function],
@@ -541,17 +579,20 @@ exports[`Storyshots UI/Tooltip darkMode:false 1`] = `
                       >
                         <svg
                           display="block"
-                          transform="rotate(180 0 0)"
                           viewBox="0 0 30 30"
                         >
-                          <path
-                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                            fill="none"
-                          />
-                          <path
-                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                            stroke="none"
-                          />
+                          <g
+                            transform="rotate(180 15 15)"
+                          >
+                            <path
+                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                              fill="none"
+                            />
+                            <path
+                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                              stroke="none"
+                            />
+                          </g>
                         </svg>
                       </div>
                     </ForwardRef(Role)>
@@ -850,15 +891,13 @@ exports[`Storyshots UI/Tooltip default 1`] = `
             <ForwardRef(Role)
               as="span"
               className="root"
-              id="id-test"
               state={
                 Object {
                   "anchorRect": null,
                   "anchorRef": Object {
                     "current": <span
-                      aria-labelledby="id-test-tooltip"
+                      aria-labelledby="id-n14qbt"
                       class="root"
-                      id="id-test"
                       tabindex="0"
                     >
                       Job #100
@@ -871,49 +910,55 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                     "current": <div
                       aria-hidden="true"
                       class="arrow"
-                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                      style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                     >
                       <svg
                         display="block"
-                        transform="rotate(180 0 0)"
                         viewBox="0 0 30 30"
                       >
-                        <path
-                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                          fill="none"
-                        />
-                        <path
-                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                          stroke="none"
-                        />
+                        <g
+                          transform="rotate(180 15 15)"
+                        >
+                          <path
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            fill="none"
+                          />
+                          <path
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            stroke="none"
+                          />
+                        </g>
                       </svg>
                     </div>,
                   },
                   "contentElement": <div
                     class="tooltip tooltipDarkMode"
                     hidden=""
-                    id="id-test-tooltip"
+                    id="id-n14qbt"
                     role="tooltip"
                     style="display: none;"
                   >
                     <div
                       aria-hidden="true"
                       class="arrow"
-                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                      style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                     >
                       <svg
                         display="block"
-                        transform="rotate(180 0 0)"
                         viewBox="0 0 30 30"
                       >
-                        <path
-                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                          fill="none"
-                        />
-                        <path
-                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                          stroke="none"
-                        />
+                        <g
+                          transform="rotate(180 15 15)"
+                        >
+                          <path
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            fill="none"
+                          />
+                          <path
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            stroke="none"
+                          />
+                        </g>
                       </svg>
                     </div>
                     View job #100
@@ -931,33 +976,37 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                   "placement": "top",
                   "popoverRef": Object {
                     "current": <div
+                      role="presentation"
                       style="position: absolute; left: 0px; top: 0px; margin: 0px;"
                     >
                       <div
                         class="tooltip tooltipDarkMode"
                         hidden=""
-                        id="id-test-tooltip"
+                        id="id-n14qbt"
                         role="tooltip"
                         style="display: none;"
                       >
                         <div
                           aria-hidden="true"
                           class="arrow"
-                          style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                          style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                         >
                           <svg
                             display="block"
-                            transform="rotate(180 0 0)"
                             viewBox="0 0 30 30"
                           >
-                            <path
-                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                              fill="none"
-                            />
-                            <path
-                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                              stroke="none"
-                            />
+                            <g
+                              transform="rotate(180 15 15)"
+                            >
+                              <path
+                                d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                fill="none"
+                              />
+                              <path
+                                d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                stroke="none"
+                              />
+                            </g>
                           </svg>
                         </div>
                         View job #100
@@ -967,6 +1016,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                   "preventOverflow": true,
                   "render": [Function],
                   "renderCallback": undefined,
+                  "sameWidth": false,
                   "setAnchorRect": [Function],
                   "setContentElement": [Function],
                   "setVisible": [Function],
@@ -980,9 +1030,8 @@ exports[`Storyshots UI/Tooltip default 1`] = `
               }
             >
               <span
-                aria-labelledby="id-test-tooltip"
+                aria-labelledby="id-n14qbt"
                 className="root"
-                id="id-test"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onMouseEnter={[Function]}
@@ -994,15 +1043,13 @@ exports[`Storyshots UI/Tooltip default 1`] = `
             </ForwardRef(Role)>
             <ForwardRef(Role)
               className="tooltip tooltipDarkMode"
-              id="id-test-tooltip"
               state={
                 Object {
                   "anchorRect": null,
                   "anchorRef": Object {
                     "current": <span
-                      aria-labelledby="id-test-tooltip"
+                      aria-labelledby="id-n14qbt"
                       class="root"
-                      id="id-test"
                       tabindex="0"
                     >
                       Job #100
@@ -1015,49 +1062,55 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                     "current": <div
                       aria-hidden="true"
                       class="arrow"
-                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                      style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                     >
                       <svg
                         display="block"
-                        transform="rotate(180 0 0)"
                         viewBox="0 0 30 30"
                       >
-                        <path
-                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                          fill="none"
-                        />
-                        <path
-                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                          stroke="none"
-                        />
+                        <g
+                          transform="rotate(180 15 15)"
+                        >
+                          <path
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            fill="none"
+                          />
+                          <path
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            stroke="none"
+                          />
+                        </g>
                       </svg>
                     </div>,
                   },
                   "contentElement": <div
                     class="tooltip tooltipDarkMode"
                     hidden=""
-                    id="id-test-tooltip"
+                    id="id-n14qbt"
                     role="tooltip"
                     style="display: none;"
                   >
                     <div
                       aria-hidden="true"
                       class="arrow"
-                      style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                      style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                     >
                       <svg
                         display="block"
-                        transform="rotate(180 0 0)"
                         viewBox="0 0 30 30"
                       >
-                        <path
-                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                          fill="none"
-                        />
-                        <path
-                          d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                          stroke="none"
-                        />
+                        <g
+                          transform="rotate(180 15 15)"
+                        >
+                          <path
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            fill="none"
+                          />
+                          <path
+                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                            stroke="none"
+                          />
+                        </g>
                       </svg>
                     </div>
                     View job #100
@@ -1075,33 +1128,37 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                   "placement": "top",
                   "popoverRef": Object {
                     "current": <div
+                      role="presentation"
                       style="position: absolute; left: 0px; top: 0px; margin: 0px;"
                     >
                       <div
                         class="tooltip tooltipDarkMode"
                         hidden=""
-                        id="id-test-tooltip"
+                        id="id-n14qbt"
                         role="tooltip"
                         style="display: none;"
                       >
                         <div
                           aria-hidden="true"
                           class="arrow"
-                          style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                          style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                         >
                           <svg
                             display="block"
-                            transform="rotate(180 0 0)"
                             viewBox="0 0 30 30"
                           >
-                            <path
-                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                              fill="none"
-                            />
-                            <path
-                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                              stroke="none"
-                            />
+                            <g
+                              transform="rotate(180 15 15)"
+                            >
+                              <path
+                                d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                fill="none"
+                              />
+                              <path
+                                d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                stroke="none"
+                              />
+                            </g>
                           </svg>
                         </div>
                         View job #100
@@ -1111,6 +1168,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                   "preventOverflow": true,
                   "render": [Function],
                   "renderCallback": undefined,
+                  "sameWidth": false,
                   "setAnchorRect": [Function],
                   "setContentElement": [Function],
                   "setVisible": [Function],
@@ -1126,36 +1184,40 @@ exports[`Storyshots UI/Tooltip default 1`] = `
               <Portal
                 containerInfo={
                   <div
-                    id="id-test-tooltip-portal"
+                    id="id-peql6e"
                   >
                     <div
+                      role="presentation"
                       style="position: absolute; left: 0px; top: 0px; margin: 0px;"
                     >
                       <div
                         class="tooltip tooltipDarkMode"
                         hidden=""
-                        id="id-test-tooltip"
+                        id="id-n14qbt"
                         role="tooltip"
                         style="display: none;"
                       >
                         <div
                           aria-hidden="true"
                           class="arrow"
-                          style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                          style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                         >
                           <svg
                             display="block"
-                            transform="rotate(180 0 0)"
                             viewBox="0 0 30 30"
                           >
-                            <path
-                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                              fill="none"
-                            />
-                            <path
-                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                              stroke="none"
-                            />
+                            <g
+                              transform="rotate(180 15 15)"
+                            >
+                              <path
+                                d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                fill="none"
+                              />
+                              <path
+                                d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                stroke="none"
+                              />
+                            </g>
                           </svg>
                         </div>
                         View job #100
@@ -1164,11 +1226,18 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                   </div>
                 }
               >
-                <div>
+                <div
+                  role="presentation"
+                  style={
+                    Object {
+                      "position": "fixed",
+                    }
+                  }
+                >
                   <div
                     className="tooltip tooltipDarkMode"
                     hidden={true}
-                    id="id-test-tooltip"
+                    id="id-n14qbt"
                     onAnimationEnd={[Function]}
                     onTransitionEnd={[Function]}
                     role="tooltip"
@@ -1186,9 +1255,8 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                           "anchorRect": null,
                           "anchorRef": Object {
                             "current": <span
-                              aria-labelledby="id-test-tooltip"
+                              aria-labelledby="id-n14qbt"
                               class="root"
-                              id="id-test"
                               tabindex="0"
                             >
                               Job #100
@@ -1201,49 +1269,55 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                             "current": <div
                               aria-hidden="true"
                               class="arrow"
-                              style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                              style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                             >
                               <svg
                                 display="block"
-                                transform="rotate(180 0 0)"
                                 viewBox="0 0 30 30"
                               >
-                                <path
-                                  d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                                  fill="none"
-                                />
-                                <path
-                                  d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                                  stroke="none"
-                                />
+                                <g
+                                  transform="rotate(180 15 15)"
+                                >
+                                  <path
+                                    d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                    fill="none"
+                                  />
+                                  <path
+                                    d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                    stroke="none"
+                                  />
+                                </g>
                               </svg>
                             </div>,
                           },
                           "contentElement": <div
                             class="tooltip tooltipDarkMode"
                             hidden=""
-                            id="id-test-tooltip"
+                            id="id-n14qbt"
                             role="tooltip"
                             style="display: none;"
                           >
                             <div
                               aria-hidden="true"
                               class="arrow"
-                              style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                              style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                             >
                               <svg
                                 display="block"
-                                transform="rotate(180 0 0)"
                                 viewBox="0 0 30 30"
                               >
-                                <path
-                                  d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                                  fill="none"
-                                />
-                                <path
-                                  d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                                  stroke="none"
-                                />
+                                <g
+                                  transform="rotate(180 15 15)"
+                                >
+                                  <path
+                                    d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                    fill="none"
+                                  />
+                                  <path
+                                    d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                    stroke="none"
+                                  />
+                                </g>
                               </svg>
                             </div>
                             View job #100
@@ -1261,33 +1335,37 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                           "placement": "top",
                           "popoverRef": Object {
                             "current": <div
+                              role="presentation"
                               style="position: absolute; left: 0px; top: 0px; margin: 0px;"
                             >
                               <div
                                 class="tooltip tooltipDarkMode"
                                 hidden=""
-                                id="id-test-tooltip"
+                                id="id-n14qbt"
                                 role="tooltip"
                                 style="display: none;"
                               >
                                 <div
                                   aria-hidden="true"
                                   class="arrow"
-                                  style="font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0; position: absolute;"
+                                  style="position: absolute; font-size: 12px; width: 1em; height: 1em; pointer-events: none; fill: none; stroke: none; stroke-width: 0;"
                                 >
                                   <svg
                                     display="block"
-                                    transform="rotate(180 0 0)"
                                     viewBox="0 0 30 30"
                                   >
-                                    <path
-                                      d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                                      fill="none"
-                                    />
-                                    <path
-                                      d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                                      stroke="none"
-                                    />
+                                    <g
+                                      transform="rotate(180 15 15)"
+                                    >
+                                      <path
+                                        d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                        fill="none"
+                                      />
+                                      <path
+                                        d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                                        stroke="none"
+                                      />
+                                    </g>
                                   </svg>
                                 </div>
                                 View job #100
@@ -1297,6 +1375,7 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                           "preventOverflow": true,
                           "render": [Function],
                           "renderCallback": undefined,
+                          "sameWidth": false,
                           "setAnchorRect": [Function],
                           "setContentElement": [Function],
                           "setVisible": [Function],
@@ -1327,17 +1406,20 @@ exports[`Storyshots UI/Tooltip default 1`] = `
                       >
                         <svg
                           display="block"
-                          transform="rotate(180 0 0)"
                           viewBox="0 0 30 30"
                         >
-                          <path
-                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                            fill="none"
-                          />
-                          <path
-                            d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
-                            stroke="none"
-                          />
+                          <g
+                            transform="rotate(180 15 15)"
+                          >
+                            <path
+                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                              fill="none"
+                            />
+                            <path
+                              d="M23,27.8c1.1,1.2,3.4,2.2,5,2.2h2H0h2c1.7,0,3.9-1,5-2.2l6.6-7.2c0.7-0.8,2-0.8,2.7,0L23,27.8L23,27.8z"
+                              stroke="none"
+                            />
+                          </g>
                         </svg>
                       </div>
                     </ForwardRef(Role)>
