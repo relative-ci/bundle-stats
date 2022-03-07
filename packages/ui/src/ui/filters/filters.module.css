@@ -132,17 +132,8 @@
 .item {
   position: relative;
   flex: 0 0 auto;
-  margin-right: -1px;
 }
 
 .itemButton {
-  border-radius: 0px;
-}
-
-.item:last-child .itemButton {
-  border-radius: 0 var(--radius-small) var(--radius-small) 0;
-}
-
-.item:hover {
-  z-index: var(--layer-low); /* show collapsed border */
+  border-radius: var(--radius-small);
 }

@@ -55,68 +55,91 @@ exports[`Storyshots UI/Dropdown default 1`] = `
           }
         >
           <Dropdown
-            activeLabel={false}
             ariaLabel=""
+            buttonClassName=""
             className=""
             glyph="filter"
             label="Toggle"
           >
-            <ForwardRef(Role)
+            <div
               className="root"
-              id="id-test"
-              state={
-                Object {
-                  "activeId": undefined,
-                  "anchorRect": null,
-                  "anchorRef": Object {
-                    "current": <button
-                      aria-controls="id-test-menu"
-                      aria-expanded="false"
-                      aria-haspopup="dialog"
-                      class="root"
-                      data-command=""
-                      data-disclosure=""
-                      id="id-test"
-                      type="button"
-                    >
-                      <div
-                        class="root space--xxxsmall"
+            >
+              <ForwardRef(Role)
+                className="button"
+                state={
+                  Object {
+                    "activeId": undefined,
+                    "anchorRect": null,
+                    "anchorRef": Object {
+                      "current": <button
+                        aria-controls="id-hrmged"
+                        aria-expanded="false"
+                        aria-haspopup="menu"
+                        class="button"
+                        data-command=""
+                        data-disclosure=""
+                        id="id-nx53fb"
+                        type="button"
                       >
-                        <span
-                          class="root item labelIcon medium"
-                        >
-                          <svg
-                            class="icon"
-                          >
-                            <use
-                              xlink:href="#filter"
-                            />
-                          </svg>
-                        </span>
                         <div
-                          class="item"
+                          class="root space--xxxsmall"
                         >
-                          Toggle
+                          <span
+                            class="root item labelIcon medium"
+                          >
+                            <svg
+                              class="icon"
+                            >
+                              <use
+                                xlink:href="#filter"
+                              />
+                            </svg>
+                          </span>
+                          <div
+                            class="item"
+                          >
+                            Toggle
+                          </div>
                         </div>
-                      </div>
-                    </button>,
-                  },
-                  "animated": false,
-                  "animating": false,
-                  "arrowPadding": 4,
-                  "arrowRef": Object {
-                    "current": null,
-                  },
-                  "autoFocusOnShow": false,
-                  "baseRef": Object {
-                    "current": <div
+                      </button>,
+                    },
+                    "animated": false,
+                    "animating": false,
+                    "arrowPadding": 4,
+                    "arrowRef": Object {
+                      "current": null,
+                    },
+                    "autoFocusOnShow": false,
+                    "baseRef": Object {
+                      "current": <div
+                        aria-label="Toggle"
+                        aria-orientation="vertical"
+                        class="dropdown"
+                        data-dialog=""
+                        hidden=""
+                        id="id-hrmged"
+                        role="menu"
+                        style="position: relative; display: none;"
+                        tabindex="-1"
+                      >
+                        <ul>
+                          <li>
+                            Option 1
+                          </li>
+                          <li>
+                            Option 2
+                          </li>
+                        </ul>
+                      </div>,
+                    },
+                    "contentElement": <div
                       aria-label="Toggle"
                       aria-orientation="vertical"
                       class="dropdown"
                       data-dialog=""
                       hidden=""
-                      id="id-test-menu"
-                      role="dialog"
+                      id="id-hrmged"
+                      role="menu"
                       style="position: relative; display: none;"
                       tabindex="-1"
                     >
@@ -129,259 +152,257 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                         </li>
                       </ul>
                     </div>,
-                  },
-                  "contentElement": <div
-                    aria-label="Toggle"
-                    aria-orientation="vertical"
-                    class="dropdown"
-                    data-dialog=""
-                    hidden=""
-                    id="id-test-menu"
-                    role="dialog"
-                    style="position: relative; display: none;"
-                    tabindex="-1"
-                  >
-                    <ul>
-                      <li>
-                        Option 1
-                      </li>
-                      <li>
-                        Option 2
-                      </li>
-                    </ul>
-                  </div>,
-                  "currentPlacement": "bottom-start",
-                  "disclosureRef": Object {
-                    "current": <button
-                      aria-controls="id-test-menu"
-                      aria-expanded="false"
-                      aria-haspopup="dialog"
-                      class="root"
-                      data-command=""
-                      data-disclosure=""
-                      id="id-test"
-                      type="button"
-                    >
-                      <div
-                        class="root space--xxxsmall"
+                    "currentPlacement": "bottom-start",
+                    "disclosureRef": Object {
+                      "current": <button
+                        aria-controls="id-hrmged"
+                        aria-expanded="false"
+                        aria-haspopup="menu"
+                        class="button"
+                        data-command=""
+                        data-disclosure=""
+                        id="id-nx53fb"
+                        type="button"
                       >
-                        <span
-                          class="root item labelIcon medium"
-                        >
-                          <svg
-                            class="icon"
-                          >
-                            <use
-                              xlink:href="#filter"
-                            />
-                          </svg>
-                        </span>
                         <div
-                          class="item"
+                          class="root space--xxxsmall"
                         >
-                          Toggle
+                          <span
+                            class="root item labelIcon medium"
+                          >
+                            <svg
+                              class="icon"
+                            >
+                              <use
+                                xlink:href="#filter"
+                              />
+                            </svg>
+                          </span>
+                          <div
+                            class="item"
+                          >
+                            Toggle
+                          </div>
                         </div>
-                      </div>
-                    </button>,
-                  },
-                  "disclosureVisible": false,
-                  "down": [Function],
-                  "first": [Function],
-                  "fixed": false,
-                  "flip": true,
-                  "focusLoop": false,
-                  "focusShift": false,
-                  "focusWrap": false,
-                  "gutter": undefined,
-                  "hide": [Function],
-                  "hideAll": [Function],
-                  "hideTimeout": 0,
-                  "includesBaseElement": false,
-                  "initialFocus": "container",
-                  "items": Array [],
-                  "last": [Function],
-                  "mounted": false,
-                  "move": [Function],
-                  "moves": 0,
-                  "next": [Function],
-                  "orientation": "vertical",
-                  "padding": 8,
-                  "placement": "bottom-start",
-                  "popoverRef": Object {
-                    "current": <div
-                      role="presentation"
-                      style="position: absolute; left: 0px; top: 0px; margin: 0px;"
-                    >
-                      <div
-                        aria-label="Toggle"
-                        aria-orientation="vertical"
-                        class="dropdown"
-                        data-dialog=""
-                        hidden=""
-                        id="id-test-menu"
-                        role="dialog"
-                        style="position: relative; display: none;"
-                        tabindex="-1"
+                      </button>,
+                    },
+                    "down": [Function],
+                    "first": [Function],
+                    "fixed": false,
+                    "flip": true,
+                    "focusLoop": false,
+                    "focusShift": false,
+                    "focusWrap": false,
+                    "gutter": undefined,
+                    "hide": [Function],
+                    "hideAll": [Function],
+                    "hideTimeout": 0,
+                    "includesBaseElement": false,
+                    "initialFocus": "container",
+                    "items": Array [],
+                    "last": [Function],
+                    "mounted": false,
+                    "move": [Function],
+                    "moves": 0,
+                    "next": [Function],
+                    "orientation": "vertical",
+                    "padding": 8,
+                    "placement": "bottom-start",
+                    "popoverRef": Object {
+                      "current": <div
+                        role="presentation"
+                        style="position: absolute; left: 0px; top: 0px; margin: 0px;"
                       >
-                        <ul>
-                          <li>
-                            Option 1
-                          </li>
-                          <li>
-                            Option 2
-                          </li>
-                        </ul>
-                      </div>
-                    </div>,
-                  },
-                  "preventOverflow": true,
-                  "previous": [Function],
-                  "registerItem": [Function],
-                  "render": [Function],
-                  "renderCallback": undefined,
-                  "rtl": false,
-                  "setActiveId": [Function],
-                  "setAnchorRect": [Function],
-                  "setAutoFocusOnShow": [Function],
-                  "setContentElement": [Function],
-                  "setDisclosureVisible": [Function],
-                  "setInitialFocus": [Function],
-                  "setItems": [Function],
-                  "setMoves": [Function],
-                  "setValue": [Function],
-                  "setValues": [Function],
-                  "setVisible": [Function],
-                  "shift": 0,
-                  "show": [Function],
-                  "showTimeout": 150,
-                  "stopAnimation": [Function],
-                  "timeout": 150,
-                  "toggle": [Function],
-                  "up": [Function],
-                  "values": Object {},
-                  "virtualFocus": false,
-                  "visible": false,
+                        <div
+                          aria-label="Toggle"
+                          aria-orientation="vertical"
+                          class="dropdown"
+                          data-dialog=""
+                          hidden=""
+                          id="id-hrmged"
+                          role="menu"
+                          style="position: relative; display: none;"
+                          tabindex="-1"
+                        >
+                          <ul>
+                            <li>
+                              Option 1
+                            </li>
+                            <li>
+                              Option 2
+                            </li>
+                          </ul>
+                        </div>
+                      </div>,
+                    },
+                    "preventOverflow": true,
+                    "previous": [Function],
+                    "registerItem": [Function],
+                    "render": [Function],
+                    "renderCallback": undefined,
+                    "rtl": false,
+                    "sameWidth": false,
+                    "setActiveId": [Function],
+                    "setAnchorRect": [Function],
+                    "setAutoFocusOnShow": [Function],
+                    "setContentElement": [Function],
+                    "setInitialFocus": [Function],
+                    "setItems": [Function],
+                    "setMoves": [Function],
+                    "setValue": [Function],
+                    "setValues": [Function],
+                    "setVisible": [Function],
+                    "shift": 0,
+                    "show": [Function],
+                    "showTimeout": 150,
+                    "stopAnimation": [Function],
+                    "timeout": 150,
+                    "toggle": [Function],
+                    "up": [Function],
+                    "values": Object {},
+                    "virtualFocus": false,
+                    "visible": false,
+                  }
                 }
-              }
-              tabIndex={null}
-            >
-              <button
-                aria-controls="id-test-menu"
-                aria-expanded={false}
-                aria-haspopup="dialog"
-                className="root"
-                data-command=""
-                data-disclosure=""
-                id="id-test"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onClickCapture={[Function]}
-                onFocus={[Function]}
-                onFocusCapture={[Function]}
-                onKeyDown={[Function]}
-                onKeyDownCapture={[Function]}
-                onKeyPressCapture={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseDownCapture={[Function]}
-                onMouseMove={[Function]}
                 tabIndex={null}
-                type="button"
               >
-                <FlexStack
-                  as="div"
-                  className=""
-                  space="xxxsmall"
+                <button
+                  aria-controls="id-hrmged"
+                  aria-expanded={false}
+                  aria-haspopup="menu"
+                  className="button"
+                  data-command=""
+                  data-disclosure=""
+                  id="id-nx53fb"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onClickCapture={[Function]}
+                  onFocus={[Function]}
+                  onFocusCapture={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyDownCapture={[Function]}
+                  onKeyPressCapture={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseDownCapture={[Function]}
+                  onMouseMove={[Function]}
+                  tabIndex={null}
+                  type="button"
                 >
-                  <div
-                    className="root space--xxxsmall"
+                  <FlexStack
+                    as="div"
+                    className=""
+                    space="xxxsmall"
                   >
-                    <Icon
-                      as="span"
-                      className="item labelIcon"
-                      glyph="filter"
-                      key=".0"
-                      size="medium"
-                    >
-                      <span
-                        className="root item labelIcon medium"
-                      >
-                        <svg
-                          className="icon"
-                        >
-                          <use
-                            xlinkHref="#filter"
-                          />
-                        </svg>
-                      </span>
-                    </Icon>
                     <div
-                      className="item"
-                      key=".1"
+                      className="root space--xxxsmall"
                     >
-                      Toggle
-                    </div>
-                  </div>
-                </FlexStack>
-              </button>
-            </ForwardRef(Role)>
-            <ForwardRef(Role)
-              aria-label="Toggle"
-              className="dropdown"
-              id="id-test-menu"
-              state={
-                Object {
-                  "activeId": undefined,
-                  "anchorRect": null,
-                  "anchorRef": Object {
-                    "current": <button
-                      aria-controls="id-test-menu"
-                      aria-expanded="false"
-                      aria-haspopup="dialog"
-                      class="root"
-                      data-command=""
-                      data-disclosure=""
-                      id="id-test"
-                      type="button"
-                    >
-                      <div
-                        class="root space--xxxsmall"
+                      <Icon
+                        as="span"
+                        className="item labelIcon"
+                        glyph="filter"
+                        key=".0"
+                        size="medium"
                       >
                         <span
-                          class="root item labelIcon medium"
+                          className="root item labelIcon medium"
                         >
                           <svg
-                            class="icon"
+                            className="icon"
                           >
                             <use
-                              xlink:href="#filter"
+                              xlinkHref="#filter"
                             />
                           </svg>
                         </span>
-                        <div
-                          class="item"
-                        >
-                          Toggle
-                        </div>
+                      </Icon>
+                      <div
+                        className="item"
+                        key=".1"
+                      >
+                        Toggle
                       </div>
-                    </button>,
-                  },
-                  "animated": false,
-                  "animating": false,
-                  "arrowPadding": 4,
-                  "arrowRef": Object {
-                    "current": null,
-                  },
-                  "autoFocusOnShow": false,
-                  "baseRef": Object {
-                    "current": <div
+                    </div>
+                  </FlexStack>
+                </button>
+              </ForwardRef(Role)>
+              <ForwardRef(Role)
+                aria-label="Toggle"
+                className="dropdown"
+                state={
+                  Object {
+                    "activeId": undefined,
+                    "anchorRect": null,
+                    "anchorRef": Object {
+                      "current": <button
+                        aria-controls="id-hrmged"
+                        aria-expanded="false"
+                        aria-haspopup="menu"
+                        class="button"
+                        data-command=""
+                        data-disclosure=""
+                        id="id-nx53fb"
+                        type="button"
+                      >
+                        <div
+                          class="root space--xxxsmall"
+                        >
+                          <span
+                            class="root item labelIcon medium"
+                          >
+                            <svg
+                              class="icon"
+                            >
+                              <use
+                                xlink:href="#filter"
+                              />
+                            </svg>
+                          </span>
+                          <div
+                            class="item"
+                          >
+                            Toggle
+                          </div>
+                        </div>
+                      </button>,
+                    },
+                    "animated": false,
+                    "animating": false,
+                    "arrowPadding": 4,
+                    "arrowRef": Object {
+                      "current": null,
+                    },
+                    "autoFocusOnShow": false,
+                    "baseRef": Object {
+                      "current": <div
+                        aria-label="Toggle"
+                        aria-orientation="vertical"
+                        class="dropdown"
+                        data-dialog=""
+                        hidden=""
+                        id="id-hrmged"
+                        role="menu"
+                        style="position: relative; display: none;"
+                        tabindex="-1"
+                      >
+                        <ul>
+                          <li>
+                            Option 1
+                          </li>
+                          <li>
+                            Option 2
+                          </li>
+                        </ul>
+                      </div>,
+                    },
+                    "contentElement": <div
                       aria-label="Toggle"
                       aria-orientation="vertical"
                       class="dropdown"
                       data-dialog=""
                       hidden=""
-                      id="id-test-menu"
-                      role="dialog"
+                      id="id-hrmged"
+                      role="menu"
                       style="position: relative; display: none;"
                       tabindex="-1"
                     >
@@ -394,186 +415,170 @@ exports[`Storyshots UI/Dropdown default 1`] = `
                         </li>
                       </ul>
                     </div>,
-                  },
-                  "contentElement": <div
-                    aria-label="Toggle"
-                    aria-orientation="vertical"
-                    class="dropdown"
-                    data-dialog=""
-                    hidden=""
-                    id="id-test-menu"
-                    role="dialog"
-                    style="position: relative; display: none;"
-                    tabindex="-1"
-                  >
-                    <ul>
-                      <li>
-                        Option 1
-                      </li>
-                      <li>
-                        Option 2
-                      </li>
-                    </ul>
-                  </div>,
-                  "currentPlacement": "bottom-start",
-                  "disclosureRef": Object {
-                    "current": <button
-                      aria-controls="id-test-menu"
-                      aria-expanded="false"
-                      aria-haspopup="dialog"
-                      class="root"
-                      data-command=""
-                      data-disclosure=""
-                      id="id-test"
-                      type="button"
-                    >
-                      <div
-                        class="root space--xxxsmall"
+                    "currentPlacement": "bottom-start",
+                    "disclosureRef": Object {
+                      "current": <button
+                        aria-controls="id-hrmged"
+                        aria-expanded="false"
+                        aria-haspopup="menu"
+                        class="button"
+                        data-command=""
+                        data-disclosure=""
+                        id="id-nx53fb"
+                        type="button"
                       >
-                        <span
-                          class="root item labelIcon medium"
-                        >
-                          <svg
-                            class="icon"
-                          >
-                            <use
-                              xlink:href="#filter"
-                            />
-                          </svg>
-                        </span>
                         <div
-                          class="item"
+                          class="root space--xxxsmall"
                         >
-                          Toggle
+                          <span
+                            class="root item labelIcon medium"
+                          >
+                            <svg
+                              class="icon"
+                            >
+                              <use
+                                xlink:href="#filter"
+                              />
+                            </svg>
+                          </span>
+                          <div
+                            class="item"
+                          >
+                            Toggle
+                          </div>
                         </div>
-                      </div>
-                    </button>,
-                  },
-                  "disclosureVisible": false,
-                  "down": [Function],
-                  "first": [Function],
-                  "fixed": false,
-                  "flip": true,
-                  "focusLoop": false,
-                  "focusShift": false,
-                  "focusWrap": false,
-                  "gutter": undefined,
-                  "hide": [Function],
-                  "hideAll": [Function],
-                  "hideTimeout": 0,
-                  "includesBaseElement": false,
-                  "initialFocus": "container",
-                  "items": Array [],
-                  "last": [Function],
-                  "mounted": false,
-                  "move": [Function],
-                  "moves": 0,
-                  "next": [Function],
-                  "orientation": "vertical",
-                  "padding": 8,
-                  "placement": "bottom-start",
-                  "popoverRef": Object {
-                    "current": <div
-                      role="presentation"
-                      style="position: absolute; left: 0px; top: 0px; margin: 0px;"
-                    >
-                      <div
-                        aria-label="Toggle"
-                        aria-orientation="vertical"
-                        class="dropdown"
-                        data-dialog=""
-                        hidden=""
-                        id="id-test-menu"
-                        role="dialog"
-                        style="position: relative; display: none;"
-                        tabindex="-1"
+                      </button>,
+                    },
+                    "down": [Function],
+                    "first": [Function],
+                    "fixed": false,
+                    "flip": true,
+                    "focusLoop": false,
+                    "focusShift": false,
+                    "focusWrap": false,
+                    "gutter": undefined,
+                    "hide": [Function],
+                    "hideAll": [Function],
+                    "hideTimeout": 0,
+                    "includesBaseElement": false,
+                    "initialFocus": "container",
+                    "items": Array [],
+                    "last": [Function],
+                    "mounted": false,
+                    "move": [Function],
+                    "moves": 0,
+                    "next": [Function],
+                    "orientation": "vertical",
+                    "padding": 8,
+                    "placement": "bottom-start",
+                    "popoverRef": Object {
+                      "current": <div
+                        role="presentation"
+                        style="position: absolute; left: 0px; top: 0px; margin: 0px;"
                       >
-                        <ul>
-                          <li>
-                            Option 1
-                          </li>
-                          <li>
-                            Option 2
-                          </li>
-                        </ul>
-                      </div>
-                    </div>,
-                  },
-                  "preventOverflow": true,
-                  "previous": [Function],
-                  "registerItem": [Function],
-                  "render": [Function],
-                  "renderCallback": undefined,
-                  "rtl": false,
-                  "setActiveId": [Function],
-                  "setAnchorRect": [Function],
-                  "setAutoFocusOnShow": [Function],
-                  "setContentElement": [Function],
-                  "setDisclosureVisible": [Function],
-                  "setInitialFocus": [Function],
-                  "setItems": [Function],
-                  "setMoves": [Function],
-                  "setValue": [Function],
-                  "setValues": [Function],
-                  "setVisible": [Function],
-                  "shift": 0,
-                  "show": [Function],
-                  "showTimeout": 150,
-                  "stopAnimation": [Function],
-                  "timeout": 150,
-                  "toggle": [Function],
-                  "up": [Function],
-                  "values": Object {},
-                  "virtualFocus": false,
-                  "visible": false,
+                        <div
+                          aria-label="Toggle"
+                          aria-orientation="vertical"
+                          class="dropdown"
+                          data-dialog=""
+                          hidden=""
+                          id="id-hrmged"
+                          role="menu"
+                          style="position: relative; display: none;"
+                          tabindex="-1"
+                        >
+                          <ul>
+                            <li>
+                              Option 1
+                            </li>
+                            <li>
+                              Option 2
+                            </li>
+                          </ul>
+                        </div>
+                      </div>,
+                    },
+                    "preventOverflow": true,
+                    "previous": [Function],
+                    "registerItem": [Function],
+                    "render": [Function],
+                    "renderCallback": undefined,
+                    "rtl": false,
+                    "sameWidth": false,
+                    "setActiveId": [Function],
+                    "setAnchorRect": [Function],
+                    "setAutoFocusOnShow": [Function],
+                    "setContentElement": [Function],
+                    "setInitialFocus": [Function],
+                    "setItems": [Function],
+                    "setMoves": [Function],
+                    "setValue": [Function],
+                    "setValues": [Function],
+                    "setVisible": [Function],
+                    "shift": 0,
+                    "show": [Function],
+                    "showTimeout": 150,
+                    "stopAnimation": [Function],
+                    "timeout": 150,
+                    "toggle": [Function],
+                    "up": [Function],
+                    "values": Object {},
+                    "virtualFocus": false,
+                    "visible": false,
+                  }
                 }
-              }
-            >
-              <HeadingLevel>
-                <div
-                  role="presentation"
-                >
+              >
+                <HeadingLevel>
                   <div
-                    aria-label="Toggle"
-                    aria-orientation="vertical"
-                    className="dropdown"
-                    data-dialog=""
-                    hidden={true}
-                    id="id-test-menu"
-                    onAnimationEnd={[Function]}
-                    onBlur={[Function]}
-                    onBlurCapture={[Function]}
-                    onClickCapture={[Function]}
-                    onFocus={[Function]}
-                    onFocusCapture={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyDownCapture={[Function]}
-                    onKeyPressCapture={[Function]}
-                    onKeyUpCapture={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseDownCapture={[Function]}
-                    onTransitionEnd={[Function]}
-                    role="dialog"
+                    role="presentation"
                     style={
                       Object {
-                        "display": "none",
-                        "position": "relative",
+                        "position": "fixed",
                       }
                     }
-                    tabIndex={-1}
                   >
-                    <ul>
-                      <li>
-                        Option 1
-                      </li>
-                      <li>
-                        Option 2
-                      </li>
-                    </ul>
+                    <div
+                      aria-label="Toggle"
+                      aria-orientation="vertical"
+                      className="dropdown"
+                      data-dialog=""
+                      hidden={true}
+                      id="id-hrmged"
+                      onAnimationEnd={[Function]}
+                      onBlur={[Function]}
+                      onBlurCapture={[Function]}
+                      onClickCapture={[Function]}
+                      onFocus={[Function]}
+                      onFocusCapture={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyDownCapture={[Function]}
+                      onKeyPressCapture={[Function]}
+                      onKeyUpCapture={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseDownCapture={[Function]}
+                      onTransitionEnd={[Function]}
+                      role="menu"
+                      style={
+                        Object {
+                          "display": "none",
+                          "position": "relative",
+                        }
+                      }
+                      tabIndex={-1}
+                    >
+                      <ul>
+                        <li>
+                          Option 1
+                        </li>
+                        <li>
+                          Option 2
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-              </HeadingLevel>
-            </ForwardRef(Role)>
+                </HeadingLevel>
+              </ForwardRef(Role)>
+            </div>
           </Dropdown>
         </div>
       </Router>
@@ -855,68 +860,88 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
           }
         >
           <Dropdown
-            activeLabel={false}
             ariaLabel=""
+            buttonClassName=""
             className=""
             glyph="filter"
             label="Toggle"
           >
-            <ForwardRef(Role)
+            <div
               className="root"
-              id="id-test"
-              state={
-                Object {
-                  "activeId": undefined,
-                  "anchorRect": null,
-                  "anchorRef": Object {
-                    "current": <button
-                      aria-controls="id-test-menu"
-                      aria-expanded="false"
-                      aria-haspopup="dialog"
-                      class="root"
-                      data-command=""
-                      data-disclosure=""
-                      id="id-test"
-                      type="button"
-                    >
-                      <div
-                        class="root space--xxxsmall"
+            >
+              <ForwardRef(Role)
+                className="button"
+                state={
+                  Object {
+                    "activeId": undefined,
+                    "anchorRect": null,
+                    "anchorRef": Object {
+                      "current": <button
+                        aria-controls="id-6amckl"
+                        aria-expanded="false"
+                        aria-haspopup="menu"
+                        class="button"
+                        data-command=""
+                        data-disclosure=""
+                        id="id-97mahm"
+                        type="button"
                       >
-                        <span
-                          class="root item labelIcon medium"
-                        >
-                          <svg
-                            class="icon"
-                          >
-                            <use
-                              xlink:href="#filter"
-                            />
-                          </svg>
-                        </span>
                         <div
-                          class="item"
+                          class="root space--xxxsmall"
                         >
-                          Toggle
+                          <span
+                            class="root item labelIcon medium"
+                          >
+                            <svg
+                              class="icon"
+                            >
+                              <use
+                                xlink:href="#filter"
+                              />
+                            </svg>
+                          </span>
+                          <div
+                            class="item"
+                          >
+                            Toggle
+                          </div>
                         </div>
-                      </div>
-                    </button>,
-                  },
-                  "animated": false,
-                  "animating": false,
-                  "arrowPadding": 4,
-                  "arrowRef": Object {
-                    "current": null,
-                  },
-                  "autoFocusOnShow": false,
-                  "baseRef": Object {
-                    "current": <div
+                      </button>,
+                    },
+                    "animated": false,
+                    "animating": false,
+                    "arrowPadding": 4,
+                    "arrowRef": Object {
+                      "current": null,
+                    },
+                    "autoFocusOnShow": false,
+                    "baseRef": Object {
+                      "current": <div
+                        aria-label="Toggle"
+                        aria-orientation="vertical"
+                        class="dropdown"
+                        data-dialog=""
+                        hidden=""
+                        id="id-6amckl"
+                        role="menu"
+                        style="position: relative; display: none;"
+                        tabindex="-1"
+                      >
+                        <button
+                          type="button"
+                        >
+                          Toggle dropdown
+                        </button>
+                      </div>,
+                    },
+                    "contentElement": <div
                       aria-label="Toggle"
                       aria-orientation="vertical"
                       class="dropdown"
                       data-dialog=""
                       hidden=""
-                      id="id-test-menu"
-                      role="dialog"
+                      id="id-6amckl"
+                      role="menu"
                       style="position: relative; display: none;"
                       tabindex="-1"
                     >
@@ -926,253 +951,251 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                         Toggle dropdown
                       </button>
                     </div>,
-                  },
-                  "contentElement": <div
-                    aria-label="Toggle"
-                    aria-orientation="vertical"
-                    class="dropdown"
-                    data-dialog=""
-                    hidden=""
-                    id="id-test-menu"
-                    role="dialog"
-                    style="position: relative; display: none;"
-                    tabindex="-1"
-                  >
-                    <button
-                      type="button"
-                    >
-                      Toggle dropdown
-                    </button>
-                  </div>,
-                  "currentPlacement": "bottom-start",
-                  "disclosureRef": Object {
-                    "current": <button
-                      aria-controls="id-test-menu"
-                      aria-expanded="false"
-                      aria-haspopup="dialog"
-                      class="root"
-                      data-command=""
-                      data-disclosure=""
-                      id="id-test"
-                      type="button"
-                    >
-                      <div
-                        class="root space--xxxsmall"
+                    "currentPlacement": "bottom-start",
+                    "disclosureRef": Object {
+                      "current": <button
+                        aria-controls="id-6amckl"
+                        aria-expanded="false"
+                        aria-haspopup="menu"
+                        class="button"
+                        data-command=""
+                        data-disclosure=""
+                        id="id-97mahm"
+                        type="button"
                       >
-                        <span
-                          class="root item labelIcon medium"
-                        >
-                          <svg
-                            class="icon"
-                          >
-                            <use
-                              xlink:href="#filter"
-                            />
-                          </svg>
-                        </span>
                         <div
-                          class="item"
+                          class="root space--xxxsmall"
                         >
-                          Toggle
+                          <span
+                            class="root item labelIcon medium"
+                          >
+                            <svg
+                              class="icon"
+                            >
+                              <use
+                                xlink:href="#filter"
+                              />
+                            </svg>
+                          </span>
+                          <div
+                            class="item"
+                          >
+                            Toggle
+                          </div>
                         </div>
-                      </div>
-                    </button>,
-                  },
-                  "disclosureVisible": false,
-                  "down": [Function],
-                  "first": [Function],
-                  "fixed": false,
-                  "flip": true,
-                  "focusLoop": false,
-                  "focusShift": false,
-                  "focusWrap": false,
-                  "gutter": undefined,
-                  "hide": [Function],
-                  "hideAll": [Function],
-                  "hideTimeout": 0,
-                  "includesBaseElement": false,
-                  "initialFocus": "container",
-                  "items": Array [],
-                  "last": [Function],
-                  "mounted": false,
-                  "move": [Function],
-                  "moves": 0,
-                  "next": [Function],
-                  "orientation": "vertical",
-                  "padding": 8,
-                  "placement": "bottom-start",
-                  "popoverRef": Object {
-                    "current": <div
-                      role="presentation"
-                      style="position: absolute; left: 0px; top: 0px; margin: 0px;"
-                    >
-                      <div
-                        aria-label="Toggle"
-                        aria-orientation="vertical"
-                        class="dropdown"
-                        data-dialog=""
-                        hidden=""
-                        id="id-test-menu"
-                        role="dialog"
-                        style="position: relative; display: none;"
-                        tabindex="-1"
+                      </button>,
+                    },
+                    "down": [Function],
+                    "first": [Function],
+                    "fixed": false,
+                    "flip": true,
+                    "focusLoop": false,
+                    "focusShift": false,
+                    "focusWrap": false,
+                    "gutter": undefined,
+                    "hide": [Function],
+                    "hideAll": [Function],
+                    "hideTimeout": 0,
+                    "includesBaseElement": false,
+                    "initialFocus": "container",
+                    "items": Array [],
+                    "last": [Function],
+                    "mounted": false,
+                    "move": [Function],
+                    "moves": 0,
+                    "next": [Function],
+                    "orientation": "vertical",
+                    "padding": 8,
+                    "placement": "bottom-start",
+                    "popoverRef": Object {
+                      "current": <div
+                        role="presentation"
+                        style="position: absolute; left: 0px; top: 0px; margin: 0px;"
                       >
-                        <button
-                          type="button"
+                        <div
+                          aria-label="Toggle"
+                          aria-orientation="vertical"
+                          class="dropdown"
+                          data-dialog=""
+                          hidden=""
+                          id="id-6amckl"
+                          role="menu"
+                          style="position: relative; display: none;"
+                          tabindex="-1"
                         >
-                          Toggle dropdown
-                        </button>
-                      </div>
-                    </div>,
-                  },
-                  "preventOverflow": true,
-                  "previous": [Function],
-                  "registerItem": [Function],
-                  "render": [Function],
-                  "renderCallback": undefined,
-                  "rtl": false,
-                  "setActiveId": [Function],
-                  "setAnchorRect": [Function],
-                  "setAutoFocusOnShow": [Function],
-                  "setContentElement": [Function],
-                  "setDisclosureVisible": [Function],
-                  "setInitialFocus": [Function],
-                  "setItems": [Function],
-                  "setMoves": [Function],
-                  "setValue": [Function],
-                  "setValues": [Function],
-                  "setVisible": [Function],
-                  "shift": 0,
-                  "show": [Function],
-                  "showTimeout": 150,
-                  "stopAnimation": [Function],
-                  "timeout": 150,
-                  "toggle": [Function],
-                  "up": [Function],
-                  "values": Object {},
-                  "virtualFocus": false,
-                  "visible": false,
+                          <button
+                            type="button"
+                          >
+                            Toggle dropdown
+                          </button>
+                        </div>
+                      </div>,
+                    },
+                    "preventOverflow": true,
+                    "previous": [Function],
+                    "registerItem": [Function],
+                    "render": [Function],
+                    "renderCallback": undefined,
+                    "rtl": false,
+                    "sameWidth": false,
+                    "setActiveId": [Function],
+                    "setAnchorRect": [Function],
+                    "setAutoFocusOnShow": [Function],
+                    "setContentElement": [Function],
+                    "setInitialFocus": [Function],
+                    "setItems": [Function],
+                    "setMoves": [Function],
+                    "setValue": [Function],
+                    "setValues": [Function],
+                    "setVisible": [Function],
+                    "shift": 0,
+                    "show": [Function],
+                    "showTimeout": 150,
+                    "stopAnimation": [Function],
+                    "timeout": 150,
+                    "toggle": [Function],
+                    "up": [Function],
+                    "values": Object {},
+                    "virtualFocus": false,
+                    "visible": false,
+                  }
                 }
-              }
-              tabIndex={null}
-            >
-              <button
-                aria-controls="id-test-menu"
-                aria-expanded={false}
-                aria-haspopup="dialog"
-                className="root"
-                data-command=""
-                data-disclosure=""
-                id="id-test"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onClickCapture={[Function]}
-                onFocus={[Function]}
-                onFocusCapture={[Function]}
-                onKeyDown={[Function]}
-                onKeyDownCapture={[Function]}
-                onKeyPressCapture={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseDownCapture={[Function]}
-                onMouseMove={[Function]}
                 tabIndex={null}
-                type="button"
               >
-                <FlexStack
-                  as="div"
-                  className=""
-                  space="xxxsmall"
+                <button
+                  aria-controls="id-6amckl"
+                  aria-expanded={false}
+                  aria-haspopup="menu"
+                  className="button"
+                  data-command=""
+                  data-disclosure=""
+                  id="id-97mahm"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onClickCapture={[Function]}
+                  onFocus={[Function]}
+                  onFocusCapture={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyDownCapture={[Function]}
+                  onKeyPressCapture={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseDownCapture={[Function]}
+                  onMouseMove={[Function]}
+                  tabIndex={null}
+                  type="button"
                 >
-                  <div
-                    className="root space--xxxsmall"
+                  <FlexStack
+                    as="div"
+                    className=""
+                    space="xxxsmall"
                   >
-                    <Icon
-                      as="span"
-                      className="item labelIcon"
-                      glyph="filter"
-                      key=".0"
-                      size="medium"
-                    >
-                      <span
-                        className="root item labelIcon medium"
-                      >
-                        <svg
-                          className="icon"
-                        >
-                          <use
-                            xlinkHref="#filter"
-                          />
-                        </svg>
-                      </span>
-                    </Icon>
                     <div
-                      className="item"
-                      key=".1"
+                      className="root space--xxxsmall"
                     >
-                      Toggle
-                    </div>
-                  </div>
-                </FlexStack>
-              </button>
-            </ForwardRef(Role)>
-            <ForwardRef(Role)
-              aria-label="Toggle"
-              className="dropdown"
-              id="id-test-menu"
-              state={
-                Object {
-                  "activeId": undefined,
-                  "anchorRect": null,
-                  "anchorRef": Object {
-                    "current": <button
-                      aria-controls="id-test-menu"
-                      aria-expanded="false"
-                      aria-haspopup="dialog"
-                      class="root"
-                      data-command=""
-                      data-disclosure=""
-                      id="id-test"
-                      type="button"
-                    >
-                      <div
-                        class="root space--xxxsmall"
+                      <Icon
+                        as="span"
+                        className="item labelIcon"
+                        glyph="filter"
+                        key=".0"
+                        size="medium"
                       >
                         <span
-                          class="root item labelIcon medium"
+                          className="root item labelIcon medium"
                         >
                           <svg
-                            class="icon"
+                            className="icon"
                           >
                             <use
-                              xlink:href="#filter"
+                              xlinkHref="#filter"
                             />
                           </svg>
                         </span>
-                        <div
-                          class="item"
-                        >
-                          Toggle
-                        </div>
+                      </Icon>
+                      <div
+                        className="item"
+                        key=".1"
+                      >
+                        Toggle
                       </div>
-                    </button>,
-                  },
-                  "animated": false,
-                  "animating": false,
-                  "arrowPadding": 4,
-                  "arrowRef": Object {
-                    "current": null,
-                  },
-                  "autoFocusOnShow": false,
-                  "baseRef": Object {
-                    "current": <div
+                    </div>
+                  </FlexStack>
+                </button>
+              </ForwardRef(Role)>
+              <ForwardRef(Role)
+                aria-label="Toggle"
+                className="dropdown"
+                state={
+                  Object {
+                    "activeId": undefined,
+                    "anchorRect": null,
+                    "anchorRef": Object {
+                      "current": <button
+                        aria-controls="id-6amckl"
+                        aria-expanded="false"
+                        aria-haspopup="menu"
+                        class="button"
+                        data-command=""
+                        data-disclosure=""
+                        id="id-97mahm"
+                        type="button"
+                      >
+                        <div
+                          class="root space--xxxsmall"
+                        >
+                          <span
+                            class="root item labelIcon medium"
+                          >
+                            <svg
+                              class="icon"
+                            >
+                              <use
+                                xlink:href="#filter"
+                              />
+                            </svg>
+                          </span>
+                          <div
+                            class="item"
+                          >
+                            Toggle
+                          </div>
+                        </div>
+                      </button>,
+                    },
+                    "animated": false,
+                    "animating": false,
+                    "arrowPadding": 4,
+                    "arrowRef": Object {
+                      "current": null,
+                    },
+                    "autoFocusOnShow": false,
+                    "baseRef": Object {
+                      "current": <div
+                        aria-label="Toggle"
+                        aria-orientation="vertical"
+                        class="dropdown"
+                        data-dialog=""
+                        hidden=""
+                        id="id-6amckl"
+                        role="menu"
+                        style="position: relative; display: none;"
+                        tabindex="-1"
+                      >
+                        <button
+                          type="button"
+                        >
+                          Toggle dropdown
+                        </button>
+                      </div>,
+                    },
+                    "contentElement": <div
                       aria-label="Toggle"
                       aria-orientation="vertical"
                       class="dropdown"
                       data-dialog=""
                       hidden=""
-                      id="id-test-menu"
-                      role="dialog"
+                      id="id-6amckl"
+                      role="menu"
                       style="position: relative; display: none;"
                       tabindex="-1"
                     >
@@ -1182,178 +1205,165 @@ exports[`Storyshots UI/Dropdown with render function 1`] = `
                         Toggle dropdown
                       </button>
                     </div>,
-                  },
-                  "contentElement": <div
-                    aria-label="Toggle"
-                    aria-orientation="vertical"
-                    class="dropdown"
-                    data-dialog=""
-                    hidden=""
-                    id="id-test-menu"
-                    role="dialog"
-                    style="position: relative; display: none;"
-                    tabindex="-1"
-                  >
-                    <button
-                      type="button"
-                    >
-                      Toggle dropdown
-                    </button>
-                  </div>,
-                  "currentPlacement": "bottom-start",
-                  "disclosureRef": Object {
-                    "current": <button
-                      aria-controls="id-test-menu"
-                      aria-expanded="false"
-                      aria-haspopup="dialog"
-                      class="root"
-                      data-command=""
-                      data-disclosure=""
-                      id="id-test"
-                      type="button"
-                    >
-                      <div
-                        class="root space--xxxsmall"
+                    "currentPlacement": "bottom-start",
+                    "disclosureRef": Object {
+                      "current": <button
+                        aria-controls="id-6amckl"
+                        aria-expanded="false"
+                        aria-haspopup="menu"
+                        class="button"
+                        data-command=""
+                        data-disclosure=""
+                        id="id-97mahm"
+                        type="button"
                       >
-                        <span
-                          class="root item labelIcon medium"
-                        >
-                          <svg
-                            class="icon"
-                          >
-                            <use
-                              xlink:href="#filter"
-                            />
-                          </svg>
-                        </span>
                         <div
-                          class="item"
+                          class="root space--xxxsmall"
                         >
-                          Toggle
+                          <span
+                            class="root item labelIcon medium"
+                          >
+                            <svg
+                              class="icon"
+                            >
+                              <use
+                                xlink:href="#filter"
+                              />
+                            </svg>
+                          </span>
+                          <div
+                            class="item"
+                          >
+                            Toggle
+                          </div>
                         </div>
-                      </div>
-                    </button>,
-                  },
-                  "disclosureVisible": false,
-                  "down": [Function],
-                  "first": [Function],
-                  "fixed": false,
-                  "flip": true,
-                  "focusLoop": false,
-                  "focusShift": false,
-                  "focusWrap": false,
-                  "gutter": undefined,
-                  "hide": [Function],
-                  "hideAll": [Function],
-                  "hideTimeout": 0,
-                  "includesBaseElement": false,
-                  "initialFocus": "container",
-                  "items": Array [],
-                  "last": [Function],
-                  "mounted": false,
-                  "move": [Function],
-                  "moves": 0,
-                  "next": [Function],
-                  "orientation": "vertical",
-                  "padding": 8,
-                  "placement": "bottom-start",
-                  "popoverRef": Object {
-                    "current": <div
-                      role="presentation"
-                      style="position: absolute; left: 0px; top: 0px; margin: 0px;"
-                    >
-                      <div
-                        aria-label="Toggle"
-                        aria-orientation="vertical"
-                        class="dropdown"
-                        data-dialog=""
-                        hidden=""
-                        id="id-test-menu"
-                        role="dialog"
-                        style="position: relative; display: none;"
-                        tabindex="-1"
+                      </button>,
+                    },
+                    "down": [Function],
+                    "first": [Function],
+                    "fixed": false,
+                    "flip": true,
+                    "focusLoop": false,
+                    "focusShift": false,
+                    "focusWrap": false,
+                    "gutter": undefined,
+                    "hide": [Function],
+                    "hideAll": [Function],
+                    "hideTimeout": 0,
+                    "includesBaseElement": false,
+                    "initialFocus": "container",
+                    "items": Array [],
+                    "last": [Function],
+                    "mounted": false,
+                    "move": [Function],
+                    "moves": 0,
+                    "next": [Function],
+                    "orientation": "vertical",
+                    "padding": 8,
+                    "placement": "bottom-start",
+                    "popoverRef": Object {
+                      "current": <div
+                        role="presentation"
+                        style="position: absolute; left: 0px; top: 0px; margin: 0px;"
                       >
-                        <button
-                          type="button"
+                        <div
+                          aria-label="Toggle"
+                          aria-orientation="vertical"
+                          class="dropdown"
+                          data-dialog=""
+                          hidden=""
+                          id="id-6amckl"
+                          role="menu"
+                          style="position: relative; display: none;"
+                          tabindex="-1"
                         >
-                          Toggle dropdown
-                        </button>
-                      </div>
-                    </div>,
-                  },
-                  "preventOverflow": true,
-                  "previous": [Function],
-                  "registerItem": [Function],
-                  "render": [Function],
-                  "renderCallback": undefined,
-                  "rtl": false,
-                  "setActiveId": [Function],
-                  "setAnchorRect": [Function],
-                  "setAutoFocusOnShow": [Function],
-                  "setContentElement": [Function],
-                  "setDisclosureVisible": [Function],
-                  "setInitialFocus": [Function],
-                  "setItems": [Function],
-                  "setMoves": [Function],
-                  "setValue": [Function],
-                  "setValues": [Function],
-                  "setVisible": [Function],
-                  "shift": 0,
-                  "show": [Function],
-                  "showTimeout": 150,
-                  "stopAnimation": [Function],
-                  "timeout": 150,
-                  "toggle": [Function],
-                  "up": [Function],
-                  "values": Object {},
-                  "virtualFocus": false,
-                  "visible": false,
+                          <button
+                            type="button"
+                          >
+                            Toggle dropdown
+                          </button>
+                        </div>
+                      </div>,
+                    },
+                    "preventOverflow": true,
+                    "previous": [Function],
+                    "registerItem": [Function],
+                    "render": [Function],
+                    "renderCallback": undefined,
+                    "rtl": false,
+                    "sameWidth": false,
+                    "setActiveId": [Function],
+                    "setAnchorRect": [Function],
+                    "setAutoFocusOnShow": [Function],
+                    "setContentElement": [Function],
+                    "setInitialFocus": [Function],
+                    "setItems": [Function],
+                    "setMoves": [Function],
+                    "setValue": [Function],
+                    "setValues": [Function],
+                    "setVisible": [Function],
+                    "shift": 0,
+                    "show": [Function],
+                    "showTimeout": 150,
+                    "stopAnimation": [Function],
+                    "timeout": 150,
+                    "toggle": [Function],
+                    "up": [Function],
+                    "values": Object {},
+                    "virtualFocus": false,
+                    "visible": false,
+                  }
                 }
-              }
-            >
-              <HeadingLevel>
-                <div
-                  role="presentation"
-                >
+              >
+                <HeadingLevel>
                   <div
-                    aria-label="Toggle"
-                    aria-orientation="vertical"
-                    className="dropdown"
-                    data-dialog=""
-                    hidden={true}
-                    id="id-test-menu"
-                    onAnimationEnd={[Function]}
-                    onBlur={[Function]}
-                    onBlurCapture={[Function]}
-                    onClickCapture={[Function]}
-                    onFocus={[Function]}
-                    onFocusCapture={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyDownCapture={[Function]}
-                    onKeyPressCapture={[Function]}
-                    onKeyUpCapture={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseDownCapture={[Function]}
-                    onTransitionEnd={[Function]}
-                    role="dialog"
+                    role="presentation"
                     style={
                       Object {
-                        "display": "none",
-                        "position": "relative",
+                        "position": "fixed",
                       }
                     }
-                    tabIndex={-1}
                   >
-                    <button
-                      onClick={[Function]}
-                      type="button"
+                    <div
+                      aria-label="Toggle"
+                      aria-orientation="vertical"
+                      className="dropdown"
+                      data-dialog=""
+                      hidden={true}
+                      id="id-6amckl"
+                      onAnimationEnd={[Function]}
+                      onBlur={[Function]}
+                      onBlurCapture={[Function]}
+                      onClickCapture={[Function]}
+                      onFocus={[Function]}
+                      onFocusCapture={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyDownCapture={[Function]}
+                      onKeyPressCapture={[Function]}
+                      onKeyUpCapture={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseDownCapture={[Function]}
+                      onTransitionEnd={[Function]}
+                      role="menu"
+                      style={
+                        Object {
+                          "display": "none",
+                          "position": "relative",
+                        }
+                      }
+                      tabIndex={-1}
                     >
-                      Toggle dropdown
-                    </button>
+                      <button
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Toggle dropdown
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </HeadingLevel>
-            </ForwardRef(Role)>
+                </HeadingLevel>
+              </ForwardRef(Role)>
+            </div>
           </Dropdown>
         </div>
       </Router>
