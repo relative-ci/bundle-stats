@@ -6995,14 +6995,18 @@
           "name": "./node_modules/material-design-lite/src/mdlComponentHandler.js",
           "size": 17306,
           "chunks": [
-            0
+            0,
+            1,
+            4
           ]
         },
         {
           "name": "./node_modules/material-design-lite/src/button/button.js",
           "size": 3614,
           "chunks": [
-            0
+            0,
+            1,
+            4
           ]
         },
         {
@@ -7016,7 +7020,9 @@
           "name": "./node_modules/material-design-lite/src/spinner/spinner.js",
           "size": 4592,
           "chunks": [
-            0
+            0,
+            1,
+            4
           ]
         },
         {

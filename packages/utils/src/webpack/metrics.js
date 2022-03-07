@@ -51,6 +51,20 @@ export const metrics = {
     type: METRIC_TYPE_NUMERIC,
     biggerIsBetter: false,
   },
+  duplicateModulesCount: {
+    label: 'Duplicate Modules',
+    description: 'Total number of modules that belong to more than one chunk.',
+    url: 'https://relative-ci.com/documentation/metrics-and-data#modules-1',
+    type: METRIC_TYPE_NUMERIC,
+    biggerIsBetter: false,
+  },
+  duplicateCode: {
+    label: 'Duplicate Code',
+    description: 'The percentage of duplicate module total size',
+    url: 'https://relative-ci.com/documentation/metrics-and-data#modules-1',
+    type: METRIC_TYPE_PERCENTAGE,
+    biggerIsBetter: false,
+  },
   packageCount: {
     label: 'Packages',
     description: 'Total number of packages bundled by webpack.',

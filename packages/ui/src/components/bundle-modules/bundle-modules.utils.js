@@ -12,9 +12,10 @@ import {
 import { SORT_BY_NAME, SORT_BY_SIZE, SORT_BY_DELTA } from './bundle-modules.constants';
 
 export const addRowSourceFlag = (row) => {
-  const { key } = row;
+  const { key, runs } = row;
   const thirdParty = Boolean(key.match(MODULE_PATH_PACKAGES));
-  return { ...row, thirdParty };
+  const duplicated = Boolean(runs.find((run) => run?.duplicated === true));
+  return { ...row, thirdParty, duplicated };
 };
 
 export const getCustomSort = (sortBy) => (item) => {
@@ -39,10 +40,16 @@ export const getRowFilter = (filters) => (row) => {
     return false;
   }
 
+  // Skip not duplicated rows
+  if (filters[MODULE_FILTERS.DUPLICATED] && !row.duplicated) {
+    return false;
+  }
+
   // Skip not matching source type
   if (
     !(
-      (filters[`${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.FIRST_PARTY}`] && row.thirdParty === false) ||
+      (filters[`${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.FIRST_PARTY}`] &&
+        row.thirdParty === false) ||
       (filters[`${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.THIRD_PARTY}`] && row.thirdParty === true)
     )
   ) {

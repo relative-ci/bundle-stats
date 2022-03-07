@@ -47,6 +47,7 @@ export interface Metric {
 export interface ModuleMetric extends Metric {
   name: string;
   chunkIds: Array<String>;
+  duplicated: boolean;
 }
 
 export interface PackageMetric extends Metric {
@@ -55,6 +56,8 @@ export interface PackageMetric extends Metric {
 
 export interface WebpackMetricsModules {
   metrics: {
+    duplicateCode: MetricRun;
+    duplicateModulesCount: MetricRun;
     modules: Record<string, ModuleMetric>;
   };
 }

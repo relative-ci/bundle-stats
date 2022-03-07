@@ -18,6 +18,8 @@ export const SUMMARY_METRIC_PATHS = [
   'totalInitialSizeCSS',
   'cacheInvalidation',
   'moduleCount',
+  'duplicateModulesCount',
+  'duplicateCode',
   'chunkCount',
   'assetCount',
   'packageCount',
@@ -31,11 +33,12 @@ const VERSION = /@[\w|\-|_|.]+/;
 // Extract package paths from module path
 // https://regex101.com/r/22Leep/6
 /* eslint-disable prettier/prettier */
-export const MODULE_PATH_PACKAGES = new RegExp([
-  // match dependency directory (eg: `node_modules/`, `node_modules/.pnpm/`)
-  `(?:${PACKAGE_PREFIX.source}/)`,
-  // match package name
-  '(?:',
+export const MODULE_PATH_PACKAGES = new RegExp(
+  [
+    // match dependency directory (eg: `node_modules/`, `node_modules/.pnpm/`)
+    `(?:${PACKAGE_PREFIX.source}/)`,
+    // match package name
+    '(?:',
     // match `@organization/` or `@organization+`(pnpm)
     `(?:@${PACKAGE_SLUG.source}[/|+])?`,
     // match github.com+organization+
@@ -44,40 +47,45 @@ export const MODULE_PATH_PACKAGES = new RegExp([
     `(?:${PACKAGE_SLUG.source})`,
     // match version
     `(?:${VERSION.source})?`,
-  ')',
+    ')',
 
-  // Match pnpm peer dependencies (eg: package-a@version_package-b@version)
-  '(?:_',
+    // Match pnpm peer dependencies (eg: package-a@version_package-b@version)
+    '(?:_',
     `(?:@${PACKAGE_SLUG.source}[/|+])?`,
     `(?:${PACKAGE_SLUG.source})`,
     `(?:@${PACKAGE_SLUG.source})?`,
-  ')*',
-  '/',
-].join(''), 'g');
+    ')*',
+    '/',
+  ].join(''),
+  'g',
+);
 /* eslint-enable prettier/prettier */
 
 // Extract package name from package path
 // https://regex101.com/r/tTlU0W/6
 /* eslint-disable prettier/prettier */
-export const PACKAGE_PATH_NAME = new RegExp([
-  `(?:${PACKAGE_PREFIX.source}/)`,
-  // match dependency
-  '(?:',
+export const PACKAGE_PATH_NAME = new RegExp(
+  [
+    `(?:${PACKAGE_PREFIX.source}/)`,
+    // match dependency
+    '(?:',
     '(',
-      `(?:@${PACKAGE_SLUG.source}[/|+])?`,
-      `(?:(?:${PACKAGE_SLUG.source}\\+)*)`,
-      `(?:${PACKAGE_SLUG.source})`,
+    `(?:@${PACKAGE_SLUG.source}[/|+])?`,
+    `(?:(?:${PACKAGE_SLUG.source}\\+)*)`,
+    `(?:${PACKAGE_SLUG.source})`,
     ')',
     `(?:${VERSION.source})?`,
-  ')',
-  // match peer dependency
-  '(?:_',
+    ')',
+    // match peer dependency
+    '(?:_',
     '(',
-      `(?:@${PACKAGE_SLUG.source}[/|+])?`,
-      `(?:${PACKAGE_SLUG.source})`,
+    `(?:@${PACKAGE_SLUG.source}[/|+])?`,
+    `(?:${PACKAGE_SLUG.source})`,
     ')',
     `(?:@${PACKAGE_SLUG.source})`,
-  ')*',
-  '/',
-].join(''), 'g');
+    ')*',
+    '/',
+  ].join(''),
+  'g',
+);
 /* eslint-enable prettier/prettier */

@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { uniqBy, map } from 'lodash';
 import {
+  MODULE_FILTERS,
   getModuleChunkFilters,
   getModuleSourceTypeFilters,
   getModuleFileTypeFilters,
@@ -33,12 +34,14 @@ export const BundleModules = (props) => {
         ...getModuleSourceTypeFilters(true),
         ...getModuleChunkFilters(chunkIds, true),
         ...getModuleFileTypeFilters(true),
+        [MODULE_FILTERS.DUPLICATED]: false,
       },
       allEntriesFilters: {
         changed: false,
         ...getModuleSourceTypeFilters(true),
         ...getModuleChunkFilters(chunkIds, true),
         ...getModuleFileTypeFilters(true),
+        [MODULE_FILTERS.DUPLICATED]: false,
       },
     }),
     [jobs],

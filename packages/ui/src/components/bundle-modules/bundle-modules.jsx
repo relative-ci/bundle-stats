@@ -20,6 +20,7 @@ import { FileName } from '../../ui/file-name';
 import { Filters } from '../../ui/filters';
 import { HoverCard } from '../../ui/hover-card';
 import { SortDropdown } from '../../ui/sort-dropdown';
+import { Tag } from '../../ui/tag';
 import { Toolbar } from '../../ui/toolbar';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
@@ -33,7 +34,17 @@ const RowHeader = ({ row, chunks, labels, CustomComponentLink }) => {
 
   const [showHoverCard, setHoverCard] = useState(false);
   const handleOnMouseEnter = useCallback(() => setHoverCard(true), [showHoverCard]);
-  const content = useMemo(() => <FileName name={row.label} />, [row.label]);
+  const content = useMemo(
+    () => (
+      <span className={css.name}>
+        {row.duplicated && (
+          <Tag className={css.nameTagDuplicated} size="small" kind={Tag.KINDS.DANGER} />
+        )}
+        <FileName className={css.nameText} name={row.label} />
+      </span>
+    ),
+    [row],
+  );
 
   if (!showHoverCard) {
     return <div onMouseEnter={handleOnMouseEnter}>{content}</div>;
@@ -56,6 +67,7 @@ const RowHeader = ({ row, chunks, labels, CustomComponentLink }) => {
 RowHeader.propTypes = {
   row: PropTypes.shape({
     label: PropTypes.string,
+    duplicated: PropTypes.bool,
   }).isRequired,
   chunks: PropTypes.arrayOf(
     PropTypes.shape({
@@ -116,6 +128,11 @@ export const BundleModules = ({
     [MODULE_FILTERS.CHANGED]: {
       label: 'Changed',
       defaultValue: filters.changed,
+      disabled: jobs.length <= 1,
+    },
+    [MODULE_FILTERS.DUPLICATED]: {
+      label: 'Duplicated',
+      defaultValue: filters[MODULE_FILTERS.DUPLICATED],
       disabled: jobs.length <= 1,
     },
     [MODULE_SOURCE_TYPE]: {

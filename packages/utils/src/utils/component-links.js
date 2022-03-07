@@ -45,13 +45,14 @@ export const getModuleSourceTypeFilters = (value = true) => ({
   [`${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.THIRD_PARTY}`]: value,
 });
 
-export const getModuleChunkFilters = (chunkIds, value) => chunkIds.reduce(
-  (agg, chunkId) => ({
-    ...agg,
-    [`${MODULE_CHUNK}.${chunkId}`]: value,
-  }),
-  {},
-);
+export const getModuleChunkFilters = (chunkIds, value) =>
+  chunkIds.reduce(
+    (agg, chunkId) => ({
+      ...agg,
+      [`${MODULE_CHUNK}.${chunkId}`]: value,
+    }),
+    {},
+  );
 
 export const getModuleFileTypeFilters = (value = true) =>
   MODULE_SOURCE_FILE_TYPES.reduce(
@@ -143,6 +144,19 @@ export const BUNDLE_MODULES = {
       filters: {
         // Keep a filter to allow the merge and skip default
         [MODULE_FILTERS.CHANGED]: false,
+      },
+    },
+  },
+};
+
+export const BUNDLE_MODULES_DUPLICATE = {
+  section: SECTIONS.MODULES,
+  title: I18N.COMPONENT_LINK_MODULES_DUPLICATE,
+  params: {
+    [COMPONENT.BUNDLE_MODULES]: {
+      filters: {
+        [MODULE_FILTERS.CHANGED]: false,
+        [MODULE_FILTERS.DUPLICATED]: true,
       },
     },
   },
@@ -257,6 +271,8 @@ export const METRIC_COMPONENT_LINKS = new Map([
   ['webpack.assetCount', { link: BUNDLE_ASSETS_COUNT }],
   ['webpack.chunkCount', { link: BUNDLE_ASSETS_CHUNK_COUNT }],
   ['webpack.moduleCount', { link: BUNDLE_MODULES }],
+  ['webpack.duplicateModulesCount', { link: BUNDLE_MODULES_DUPLICATE }],
+  ['webpack.duplicateCode', { link: BUNDLE_MODULES_DUPLICATE }],
   ['webpack.packageCount', { link: BUNLDE_PACKAGES_COUNT }],
   ['webpack.duplicatePackagesCount', { link: BUNDLE_PACKAGES_DUPLICATE }],
 ]);

@@ -6,9 +6,10 @@ export default {
   COMPONENT_LINK_BUNDLE_ASSETS_COUNT: 'View all assets',
   COMPONENT_LINK_BUNDLE_ASSETS_CHUNK_COUNT: 'View all chunks',
   COMPONENT_LINK_MODULES: 'View modules',
+  COMPONENT_LINK_MODULES_DUPLICATE: 'View duplicate modules',
   COMPONENT_LINK_CHUNK_MODULES: 'View chunk modules',
   COMPONENT_LINK_PACKAGES_COUNT: 'View all packages',
   COMPONENT_LINK_PACKAGES_DUPLICATE: 'View all duplicate packages',
   COMPONENT_LINK_VIEW_PACKAGE: 'View package',
-  COMPONENT_LINK_BUNDLE_ASSETS_BY_FILE_TYPE: 'View all <%= label %> assets'
+  COMPONENT_LINK_BUNDLE_ASSETS_BY_FILE_TYPE: 'View all <%= label %> assets',
 };
