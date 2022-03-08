@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.7-beta.1](https://github.com/relative-ci/bundle-stats/compare/v3.2.6...v3.2.7-beta.1) (2022-03-08)
+
+
+### Bug Fixes
+
+* **utils:** FileTypes - add missing extensions ([260f046](https://github.com/relative-ci/bundle-stats/commit/260f046c177625c1d877156739aa4e83e3f878a5))
+
+
+
+
+
 ## [3.2.6](https://github.com/relative-ci/bundle-stats/compare/v3.2.5...v3.2.6) (2022-03-04)
 
 **Note:** Version bump only for package @bundle-stats/utils
