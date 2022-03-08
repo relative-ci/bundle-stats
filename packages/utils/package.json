@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/utils",
-  "version": "3.2.7-beta.1",
+  "version": "3.2.7-beta.2",
   "description": "BundleStats utils",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
