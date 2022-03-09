@@ -2,7 +2,7 @@
   "packages": [
     "packages/*"
   ],
-  "version": "3.2.7-beta.2",
+  "version": "3.2.7-beta.3",
   "command": {
     "publish": {
       "verifyAccess": false
