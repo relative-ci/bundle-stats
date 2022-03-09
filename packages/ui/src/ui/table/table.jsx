@@ -4,53 +4,6 @@ import cx from 'classnames';
 
 import css from './table.module.css';
 
-const THead = (props) => <thead {...props} />
-
-const TBody = (props) => <tbody {...props} />;
-
-const Tr = (props) => {
-  const { className, ...restProps } = props;
-  return <tr className={cx(css.row, className)} {...restProps} />;
-};
-
-Tr.defaultProps = {
-  className: '',
-};
-
-Tr.propTypes = {
-  /** Adopted child class name */
-  className: PropTypes.string,
-};
-
-const Th = (props) => {
-  const { className, ...restProps } = props;
-
-  return <th className={cx(css.cell, className)} {...restProps} />;
-};
-
-Th.defaultProps = {
-  className: '',
-};
-
-Th.propTypes = {
-  /** Adopted child class name */
-  className: PropTypes.string,
-};
-
-const Td = (props) => {
-  const { className, ...restProps } = props;
-  return <td className={cx(css.cell, className)} {...restProps} />;
-};
-
-Td.defaultProps = {
-  className: '',
-};
-
-Td.propTypes = {
-  /** Adopted child class name */
-  className: PropTypes.string,
-};
-
 export const Table = ({ className, emptyMessage, compact, outline, children }) => {
   const rootClassName = cx(css.root, className, compact && css.compact, outline && css.outline);
 
@@ -61,11 +14,11 @@ export const Table = ({ className, emptyMessage, compact, outline, children }) =
   return <table className={rootClassName}>{children}</table>;
 };
 
-Table.THead = THead;
-Table.TBody = TBody;
-Table.Th = Th;
-Table.Tr = Tr;
-Table.Td = Td;
+Table.THead = 'thead';
+Table.TBody = 'tbody';
+Table.Tr = 'tr';
+Table.Th = 'th';
+Table.Td = 'td';
 
 Table.defaultProps = {
   className: '',

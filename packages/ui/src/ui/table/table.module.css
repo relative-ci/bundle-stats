@@ -4,48 +4,51 @@
   border-spacing: 0;
   empty-cells: show;
   background: var(--color-background);
-}
-
-.cell {
-  border: 1px solid var(--color-outline);
-  border-width: 1px 0 0;
-  padding: var(--space-small) var(--space-small);
   text-align: left;
 }
 
-.root thead .cell {
+.root th,
+.root td {
+  border: 1px solid var(--color-outline);
+  border-width: 1px 0 0;
+  padding: var(--space-small);
+}
+
+.root thead th {
   border-width: 0 0 1px;
   text-transform: uppercase;
   vertical-align: top;
   background: var(--color-highlight);
 }
 
-.root thead .cell:empty {
+.root thead th:empty {
   display: none;
 }
 
-.root tbody .cell {
+.root tbody th {
   font-weight: normal;
 }
 
-.root tbody tr:first-child .cell {
+.root tbody tr:first-child td,
+.root tbody tr:first-child th {
   border-top: 0;
 }
 
-.root tbody .cell a {
+.root tbody td a {
   color: inherit;
   text-decoration: none;
 }
 
-.root tbody .cell a:hover,
-.root tbody .cell a:focus,
-.root tbody .cell a:active
+.root tbody td a:hover,
+.root tbody td a:focus,
+.root tbody td a:active
 {
   color: var(--color-primary);
   text-decoration: underline;
 }
 
-.root tbody tr:hover .cell {
+.root tbody tr:hover th,
+.root tbody tr:hover td {
   background-color: var(--color-highlight-warning);
 }
 
@@ -64,21 +67,21 @@
   border-radius: var(--table-radius);
 }
 
-.outline thead tr:first-child .cell:first-child,
-.outline tbody:first-child tr:first-child .cell:first-child {
+.outline thead:first-child tr:first-child th:first-child,
+.outline tbody:first-child tr:first-child td:first-child {
   border-top-left-radius: var(--table-radius);
 }
 
-.outline thead tr:first-child .cell:last-child,
-.outline tbody:first-child tr:first-child .cell:last-child {
+.outline thead tr:first-child th:last-child,
+.outline tbody:first-child tr:first-child td:last-child {
   border-top-right-radius: var(--table-radius);
 }
 
-.outline tbody:last-child tr:last-child .cell:first-child {
+.outline tbody:last-child tr:last-child td:first-child {
   border-bottom-left-radius: var(--table-radius);
 }
 
-.outline tbody:last-child tr:last-child .cell:last-child {
+.outline tbody:last-child tr:last-child td:last-child {
   border-bottom-right-radius: var(--table-radius);
 }
 
@@ -87,7 +90,8 @@
 }
 
 /* compact variation */
-.compact .cell {
+.compact td,
+.compact th {
   padding-top: var(--space-xsmall);
   padding-bottom: var(--space-xsmall);
 }
