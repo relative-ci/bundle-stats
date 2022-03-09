@@ -182,7 +182,7 @@ const AppComponent = ({ version, jobs }) => {
             exact
             path={URLS.OVERVIEW}
             render={() => (
-              <Stack space="large">
+              <Stack space="medium">
                 {duplicatePackagesInsights && (
                   <Container>
                     <DuplicatePackagesWarning
