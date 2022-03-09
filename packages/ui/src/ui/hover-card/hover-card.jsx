@@ -9,7 +9,6 @@ import {
   useHovercardState,
 } from 'ariakit/hovercard';
 
-import { Icon } from '../icon';
 import css from './hover-card.module.css';
 
 const resolveComponent = (as, href) => {
@@ -53,14 +52,6 @@ export const HoverCard = (props) => {
       >
         <HovercardArrow size={24} />
         {typeof children === 'function' ? children({ close: state.hide }) : children}
-        <Icon
-          glyph="close"
-          size="small"
-          as="button"
-          type="button"
-          className={css.closeBtn}
-          onClick={handleOnClose}
-        />
       </Hovercard>
     </div>
   );
