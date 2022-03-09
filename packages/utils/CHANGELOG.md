@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.7-beta.5](https://github.com/relative-ci/bundle-stats/compare/v3.2.7-beta.4...v3.2.7-beta.5) (2022-03-09)
+
+**Note:** Version bump only for package @bundle-stats/utils
+
+
+
+
+
 ## [3.2.7-beta.4](https://github.com/relative-ci/bundle-stats/compare/v3.2.6...v3.2.7-beta.4) (2022-03-09)
 
 
