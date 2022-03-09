@@ -10,8 +10,8 @@ export const FILE_TYPE_OTHER = 'OTHER';
 export const FILE_TYPE_PATTERNS = {
   [FILE_TYPE_CSS]: /\.css$/,
   [FILE_TYPE_JS]: /\.js$/,
-  [FILE_TYPE_IMG]: /\.(png|jpe?g|webp|gif|svg|ico|avif)$/,
-  [FILE_TYPE_MEDIA]: /\.(mp4|mp3|mov|webm|ogg)$/,
+  [FILE_TYPE_IMG]: /\.(a?png|jpe?g|webp|gif|svg|ico|avif)$/,
+  [FILE_TYPE_MEDIA]: /\.(mp4|mp3|m4a|aac|mov|webm|wav|ogg)$/,
   [FILE_TYPE_FONT]: /\.(woff|woff2|ttf|otf|eot)$/,
   [FILE_TYPE_HTML]: /\.(html?)$/,
 };
