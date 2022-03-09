@@ -16,7 +16,7 @@ export const Header = ({ className, jobs }) => (
 
 Header.propTypes = {
   className: PropTypes.string,
-  jobs: PropTypes.arrayOf(PropTypes.object),
+  jobs: PropTypes.arrayOf(PropTypes.object), // eslint-disable-line react/forbid-prop-types
 };
 
 Header.defaultProps = {
