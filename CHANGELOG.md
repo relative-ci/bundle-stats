@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.7](https://github.com/relative-ci/bundle-stats/compare/v3.2.6...v3.2.7) (2022-03-10)
+
+
+### Bug Fixes
+
+* **ui:** App - consistent vertical spacing ([4f29d3d](https://github.com/relative-ci/bundle-stats/commit/4f29d3d47edc7f89858f0948d0cdc1e22ce5b157))
+* **ui:** HoverCard - prevent default on close ([9fae6a4](https://github.com/relative-ci/bundle-stats/commit/9fae6a4825d1a016e3b626168f73ca0a90213d10))
+* **ui:** MetricsTable - consistent toolbar spacing ([fcaf38d](https://github.com/relative-ci/bundle-stats/commit/fcaf38df698329bc00bc267e72289fec8064cc61))
+* **utils:** FileTypes - add apng, m4a, aac,oga,wav,aac ([1b556c1](https://github.com/relative-ci/bundle-stats/commit/1b556c13b051bab122bfa05bb9b048d646399dbe))
+* **utils:** FileTypes - add missing extensions ([260f046](https://github.com/relative-ci/bundle-stats/commit/260f046c177625c1d877156739aa4e83e3f878a5))
+
+
+
+
+
 ## [3.2.6](https://github.com/relative-ci/bundle-stats/compare/v3.2.5...v3.2.6) (2022-03-04)
 
 
