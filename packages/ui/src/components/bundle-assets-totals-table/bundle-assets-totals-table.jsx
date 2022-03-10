@@ -11,6 +11,7 @@ export const BundleAssetsTotalsTable = ({
   className,
   jobs,
   customComponentLink: CustomComponentLink,
+  ...restProps
 }) => {
   const items = webpack.compareBySection.sizes(jobs);
 
@@ -32,6 +33,7 @@ export const BundleAssetsTotalsTable = ({
       items={items}
       renderRowHeader={renderRowHeader}
       showHeaderSum
+      {...restProps}
     />
   );
 };

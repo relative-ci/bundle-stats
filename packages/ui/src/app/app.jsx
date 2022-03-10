@@ -195,9 +195,7 @@ const AppComponent = ({ version, jobs }) => {
                   <Stack space="small">
                     <TotalSizeTypeTitle />
                     <BundleAssetsTotalsChartBars jobs={jobs} />
-                    <Box outline>
-                      <BundleAssetsTotalsTable jobs={jobs} />
-                    </Box>
+                    <BundleAssetsTotalsTable jobs={jobs} outline />
                   </Stack>
                 </Container>
               </Stack>

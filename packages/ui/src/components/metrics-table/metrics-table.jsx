@@ -164,6 +164,7 @@ export const MetricsTable = ({
   showHeaderSum,
   headerRows,
   title,
+  ...restProps
 }) => {
   const { headers, columnClassNames } = useMemo(() => {
     const headerColumns = getHeaderRows(runs, items, showHeaderSum, title);
@@ -183,7 +184,7 @@ export const MetricsTable = ({
   );
 
   return (
-    <Table className={rootClassName} compact>
+    <Table className={rootClassName} compact {...restProps}>
       <Table.THead>
         {headers.map((headerRow) => {
           const { cells, className: rowClassName } = headerRow.cells
