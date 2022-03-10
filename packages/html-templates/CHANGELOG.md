@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0-alpha.4](https://github.com/relative-ci/bundle-stats/compare/v3.2.7...v3.3.0-alpha.4) (2022-03-10)
+
+**Note:** Version bump only for package @bundle-stats/html-templates
+
+
+
+
+
 ## [3.2.7](https://github.com/relative-ci/bundle-stats/compare/v3.2.6...v3.2.7) (2022-03-10)
 
 **Note:** Version bump only for package @bundle-stats/html-templates

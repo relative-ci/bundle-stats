@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0-alpha.4](https://github.com/relative-ci/bundle-stats/compare/v3.2.7...v3.3.0-alpha.4) (2022-03-10)
+
+
+### Bug Fixes
+
+* **utils:** Budgets - take biggerIsBetter in consideration ([6158dbd](https://github.com/relative-ci/bundle-stats/commit/6158dbd722d723743209df88d946bf771f585c6f))
+* **utils:** Export constants ([d4b13dd](https://github.com/relative-ci/bundle-stats/commit/d4b13ddf567a647ae5547e10c37b50591ebabafb))
+* **utils:** Webpack budgets - use array options ([a4def80](https://github.com/relative-ci/bundle-stats/commit/a4def801665feec8e49a9af0309f3b3780f58165))
+
+
+### Features
+
+* **utils:** Add budgets-insights ([de408fd](https://github.com/relative-ci/bundle-stats/commit/de408fd5b3812a922a714aa64aaa015476ed5c88))
+* **utils:** BudgetsInsights - add getInfo ([685050d](https://github.com/relative-ci/bundle-stats/commit/685050d386df968cbcb94a90ebabb550cf42310c))
+* **utils:** Pass source options to extraction fns ([8d1d9e3](https://github.com/relative-ci/bundle-stats/commit/8d1d9e35154b0998dce30aa1e7f75a9826d9a931))
+
+
+
+
+
 ## [3.2.7](https://github.com/relative-ci/bundle-stats/compare/v3.2.6...v3.2.7) (2022-03-10)
 
 

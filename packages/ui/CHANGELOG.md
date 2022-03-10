@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0-alpha.4](https://github.com/relative-ci/bundle-stats/compare/v3.2.7...v3.3.0-alpha.4) (2022-03-10)
+
+
+### Bug Fixes
+
+* **ui:** Alert - allow to override props ([3cb5414](https://github.com/relative-ci/bundle-stats/commit/3cb54149f1c16afb05e589314b2ddace8c253e33))
+* **ui:** Summary - pass budget data to SummaryItem ([0af9efc](https://github.com/relative-ci/bundle-stats/commit/0af9efced374ec245b4174066cc761e614f9a38b))
+* **utils:** Budgets - take biggerIsBetter in consideration ([6158dbd](https://github.com/relative-ci/bundle-stats/commit/6158dbd722d723743209df88d946bf771f585c6f))
+
+
+### Features
+
+* App - add BudgetInsights ([067eba6](https://github.com/relative-ci/bundle-stats/commit/067eba67ee7724457660d1c6f4516483aec8040f))
+* **ui:** App - pass budgets info to Summary ([70e1e64](https://github.com/relative-ci/bundle-stats/commit/70e1e6407b009c72ebfb52b0e1566b1b8f2b3251))
+* **ui:** BudgetInsights component ([f42a645](https://github.com/relative-ci/bundle-stats/commit/f42a64508ef97449c73a7bdcd2c9a99aecec3eed))
+* **ui:** BundleAssetsTotalsTable - add budgets ([fe9f3c1](https://github.com/relative-ci/bundle-stats/commit/fe9f3c18939ad430119c5381c5bc42a3dcdadb63))
+* **ui:** Icon - add check-circle icon ([6b2b31e](https://github.com/relative-ci/bundle-stats/commit/6b2b31e6812d1eb8736cb729117d0dd79938a912))
+* **ui:** Icon - alert-circle icon ([3cfa80d](https://github.com/relative-ci/bundle-stats/commit/3cfa80d18930e2251e9cb1d94fb98c2a46f681bf))
+* **ui:** SummaryItem - budgets ([7ffe7fb](https://github.com/relative-ci/bundle-stats/commit/7ffe7fb9585311d02bfa840f2ff6fd9fcde02184))
+
+
+### Performance Improvements
+
+* **ui:** BundleAssetsTotalsTable - use memo / callback ([d8c25ce](https://github.com/relative-ci/bundle-stats/commit/d8c25cee935ce953508ca6e4e2c0a483f33b80a3))
+
+
+
+
+
 ## [3.2.7](https://github.com/relative-ci/bundle-stats/compare/v3.2.6...v3.2.7) (2022-03-10)
 
 

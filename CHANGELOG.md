@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0-alpha.4](https://github.com/relative-ci/bundle-stats/compare/v3.2.7...v3.3.0-alpha.4) (2022-03-10)
+
+
+### Bug Fixes
+
+* **ui:** Alert - allow to override props ([3cb5414](https://github.com/relative-ci/bundle-stats/commit/3cb54149f1c16afb05e589314b2ddace8c253e33))
+* **ui:** Summary - pass budget data to SummaryItem ([0af9efc](https://github.com/relative-ci/bundle-stats/commit/0af9efced374ec245b4174066cc761e614f9a38b))
+* **utils:** Budgets - take biggerIsBetter in consideration ([6158dbd](https://github.com/relative-ci/bundle-stats/commit/6158dbd722d723743209df88d946bf771f585c6f))
+* **utils:** Export constants ([d4b13dd](https://github.com/relative-ci/bundle-stats/commit/d4b13ddf567a647ae5547e10c37b50591ebabafb))
+* **utils:** Webpack budgets - use array options ([a4def80](https://github.com/relative-ci/bundle-stats/commit/a4def801665feec8e49a9af0309f3b3780f58165))
+
+
+### Features
+
+* **utils:** BudgetsInsights - add getInfo ([685050d](https://github.com/relative-ci/bundle-stats/commit/685050d386df968cbcb94a90ebabb550cf42310c))
+* App - add BudgetInsights ([067eba6](https://github.com/relative-ci/bundle-stats/commit/067eba67ee7724457660d1c6f4516483aec8040f))
+* **ui:** App - pass budgets info to Summary ([70e1e64](https://github.com/relative-ci/bundle-stats/commit/70e1e6407b009c72ebfb52b0e1566b1b8f2b3251))
+* **ui:** BudgetInsights component ([f42a645](https://github.com/relative-ci/bundle-stats/commit/f42a64508ef97449c73a7bdcd2c9a99aecec3eed))
+* **ui:** BundleAssetsTotalsTable - add budgets ([fe9f3c1](https://github.com/relative-ci/bundle-stats/commit/fe9f3c18939ad430119c5381c5bc42a3dcdadb63))
+* **ui:** Icon - add check-circle icon ([6b2b31e](https://github.com/relative-ci/bundle-stats/commit/6b2b31e6812d1eb8736cb729117d0dd79938a912))
+* **ui:** Icon - alert-circle icon ([3cfa80d](https://github.com/relative-ci/bundle-stats/commit/3cfa80d18930e2251e9cb1d94fb98c2a46f681bf))
+* **ui:** SummaryItem - budgets ([7ffe7fb](https://github.com/relative-ci/bundle-stats/commit/7ffe7fb9585311d02bfa840f2ff6fd9fcde02184))
+* **utils:** Add budgets-insights ([de408fd](https://github.com/relative-ci/bundle-stats/commit/de408fd5b3812a922a714aa64aaa015476ed5c88))
+* **utils:** Pass source options to extraction fns ([8d1d9e3](https://github.com/relative-ci/bundle-stats/commit/8d1d9e35154b0998dce30aa1e7f75a9826d9a931))
+
+
+### Performance Improvements
+
+* **ui:** BundleAssetsTotalsTable - use memo / callback ([d8c25ce](https://github.com/relative-ci/bundle-stats/commit/d8c25cee935ce953508ca6e4e2c0a483f33b80a3))
+
+
+
+
+
 ## [3.2.7](https://github.com/relative-ci/bundle-stats/compare/v3.2.6...v3.2.7) (2022-03-10)
 
 
