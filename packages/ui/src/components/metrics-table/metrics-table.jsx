@@ -12,7 +12,8 @@ import styles from './metrics-table.module.css';
 
 const METRIC_TYPE_DATA = getGlobalMetricType(null, METRIC_TYPE_FILE_SIZE);
 
-const getRowsRunTotal = (rows, runIndex) => sum(rows.map((row) => get(row, `runs[${runIndex}].value`, 0)));
+const getRowsRunTotal = (rows, runIndex) =>
+  sum(rows.map((row) => get(row, `runs[${runIndex}].value`, 0)));
 
 const getHeaderLabelCells = (rows) => (run, runIndex, runs) => {
   const isBaseline = runIndex === runs.length - 1;
@@ -102,45 +103,57 @@ const getHeaderRows = (runs, items, showHeaderSum, title) => [
     : []),
 ];
 
-const generateRowCells = (item, index, items) => {
-  const isBaseline = index === items.length - 1;
+const MetricsTableRow = ({ item, renderRowHeader }) => (
+  <Table.Tr className={cx(!item.changed && styles.unchanged)}>
+    <Table.Th className={styles.metricName}>{renderRowHeader(item)}</Table.Th>
 
-  // eslint-disable-next-line react/destructuring-assignment
-  if (!item || typeof item.value === 'undefined') {
-    return ['-', ...(!isBaseline ? [''] : [])];
-  }
+    {item.runs.map((run, index) => {
+      const isBaseline = index === item.runs.length - 1;
+      const valueClassName = cx(styles.value, !isBaseline && styles.current);
 
-  const { displayValue, deltaPercentage, displayDeltaPercentage, deltaType } = item;
+      // Empty cells if no value
+      if (!run || typeof run.value === 'undefined') {
+        return (
+          <>
+            <Table.Td className={valueClassName}>-</Table.Td>
+            {!isBaseline && <Table.Td className={styles.delta} />}
+          </>
+        );
+      }
 
-  const cells = [<Metric value={displayValue} />];
+      const { displayValue, deltaPercentage, displayDeltaPercentage, deltaType } = run;
 
-  if (!isBaseline) {
-    cells.push(
-      typeof deltaPercentage === 'number' && (
-        <Delta displayValue={displayDeltaPercentage} deltaType={deltaType} />
-      ),
-    );
-  }
+      return (
+        <>
+          <Table.Td className={valueClassName}>
+            <Metric value={displayValue} />
+          </Table.Td>
+          {!isBaseline && typeof deltaPercentage === 'number' && (
+            <Table.Td className={styles.delta}>
+              <Delta displayValue={displayDeltaPercentage} deltaType={deltaType} />
+            </Table.Td>
+          )}
+        </>
+      );
+    })}
+  </Table.Tr>
+);
 
-  return cells;
+MetricsTableRow.propTypes = {
+  item: PropTypes.shape({
+    changed: PropTypes.bool,
+    runs: PropTypes.arrayOf(
+      PropTypes.shape({
+        value: PropTypes.number,
+        displayValue: PropTypes.string,
+        deltaPercentage: PropTypes.number,
+        displayDeltaPercentage: PropTypes.string,
+        deltaType: PropTypes.string,
+      }),
+    ),
+  }).isRequired,
+  renderRowHeader: PropTypes.func.isRequired,
 };
-
-const getRows = (runs, items, renderRowHeader) =>
-  items.map((item, index) => {
-    const { changed } = item;
-
-    return {
-      key: item?.key || index,
-      className: changed ? '' : styles.unchanged,
-      cells: [
-        // Metric name
-        renderRowHeader(item),
-
-        // Metric item values
-        ...item.runs.map(generateRowCells).flat(),
-      ],
-    };
-  });
 
 export const MetricsTable = ({
   className,
@@ -151,17 +164,17 @@ export const MetricsTable = ({
   showHeaderSum,
   headerRows,
   title,
+  ...restProps
 }) => {
   const { headers, columnClassNames } = useMemo(() => {
     const headerColumns = getHeaderRows(runs, items, showHeaderSum, title);
+
     return {
       headers: [...headerRows, ...headerColumns],
       // First header row has the column class names
       columnClassNames: headerColumns[0].cells.map((headerColumn) => headerColumn.className),
     };
   }, [headerRows, runs, items, showHeaderSum, title]);
-
-  const rows = useMemo(() => getRows(runs, items, renderRowHeader), [runs, items, renderRowHeader]);
 
   const rootClassName = cx(
     styles.root,
@@ -171,7 +184,7 @@ export const MetricsTable = ({
   );
 
   return (
-    <Table className={rootClassName} compact>
+    <Table className={rootClassName} compact {...restProps}>
       <Table.THead>
         {headers.map((headerRow) => {
           const { cells, className: rowClassName } = headerRow.cells
@@ -188,13 +201,9 @@ export const MetricsTable = ({
         })}
       </Table.THead>
       <Table.TBody>
-        {!isEmpty(rows) ? (
-          rows.map(({ key, className: rowClassName, cells }) => (
-            <Table.Tr key={key} className={rowClassName}>
-              {cells.map((cell, index) => (
-                <Table.Td className={columnClassNames[index]}>{cell}</Table.Td>
-              ))}
-            </Table.Tr>
+        {!isEmpty(items) ? (
+          items.map((item) => (
+            <MetricsTableRow key={item.key} item={item} renderRowHeader={renderRowHeader} />
           ))
         ) : (
           <Table.Tr>

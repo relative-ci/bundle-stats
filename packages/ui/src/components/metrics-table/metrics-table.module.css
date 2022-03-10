@@ -1,11 +1,11 @@
-.jobName a {
+.root a {
   color: inherit;
   text-decoration: none;
 }
 
-.jobName a:hover,
-.jobName a:active,
-.jobName a:focus {
+.root a:hover,
+.root a:active,
+.root a:focus {
   color: var(--color-primary);
   text-decoration: underline;
 }
@@ -15,18 +15,18 @@
   width: 100%;
 }
 
-.value {
+.root .value {
   padding-left: var(--space-large);
   text-align: right;
 }
 
-.delta {
+.root .delta {
   padding-left: 0;
   text-align: left;
   font-size: var(--size-xsmall);
 }
 
-.value.current {
+.root .value.current {
   padding-right: var(--space-xxsmall);
 }
 
@@ -45,6 +45,7 @@
 }
 
 /** rows */
+.multipleRuns .unchanged th,
 .multipleRuns .unchanged td {
   color: var(--color-text-light);
 }

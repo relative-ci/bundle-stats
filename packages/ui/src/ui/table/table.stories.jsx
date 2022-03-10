@@ -203,26 +203,32 @@ stories.add('with custom content and attributes', () => (
         <Th> </Th>
         <Th style={{ textAlign: 'right' }}>Col A (right)</Th>
         <Th style={{ textAlign: 'center' }}>Col B (center)</Th>
-        <Th style={{ textDecoration: 'underline' }}>Col C(undefiner)</Th>
+        <Th style={{ textDecoration: 'underline' }}>Col C(underline)</Th>
       </Tr>
     </THead>
     <TBody>
       <Tr>
-        <Th><strong>row 1</strong></Th>
+        <Th>
+          <strong>row 1</strong>
+        </Th>
         <Td style={{ textAlign: 'right' }}>a1</Td>
         <Td style={{ textAlign: 'center', color: 'red' }}>b1</Td>
         <Td style={{ textDecoration: 'underline' }}>c1</Td>
       </Tr>
       <Tr style={{ color: 'blue', fontSize: '1.5em' }}>
-        <Th><strong>row 2</strong></Th>
+        <Th>
+          <strong>row 2</strong>
+        </Th>
         <Td style={{ textAlign: 'right' }}>a2</Td>
-        <Td style={{ textAlign: 'center'}}>b2</Td>
+        <Td style={{ textAlign: 'center' }}>b2</Td>
         <Td style={{ textDecoration: 'underline' }}>c2</Td>
       </Tr>
       <Tr>
-        <Th><strong>row 3</strong></Th>
+        <Th>
+          <strong>row 3</strong>
+        </Th>
         <Td style={{ textAlign: 'right' }}>a3</Td>
-        <Td style={{ textAlign: 'center'}}>b3</Td>
+        <Td style={{ textAlign: 'center' }}>b3</Td>
         <Td style={{ textDecoration: 'underline' }}>c3</Td>
       </Tr>
     </TBody>

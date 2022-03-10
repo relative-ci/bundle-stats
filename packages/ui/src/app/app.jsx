@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { HashRouter, NavLink, Route, Switch, useLocation } from 'react-router-dom';
 import { COMPONENT } from '@bundle-stats/utils';
@@ -56,16 +56,110 @@ Layout.defaultProps = {
   version: null,
 };
 
-const AppComponent = ({ version, jobs }) => {
-  const [bundleStatsState, bundleStatsSetState] = useComponentQueryState(COMPONENT.BUNDLE_ASSETS);
-  const [bundlePackagesState, bundlePackagesSetState] = useComponentQueryState(
-    COMPONENT.BUNDLE_PACKAGES,
+const JobsContext = React.createContext({ jobs: [] });
+const JobsProvider = ({ jobs, ...restProps }) => {
+  const value = useMemo(() => ({ jobs }), [jobs]);
+  return <JobsContext.Provider value={value} {...restProps} />;
+};
+
+JobsProvider.propTypes = {
+  jobs: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+const OverviewContent = () => {
+  const { jobs } = useContext(JobsContext);
+  const { duplicatePackagesCount } = jobs[0].summary.webpack;
+  const duplicatePackagesInsights = Boolean(
+    duplicatePackagesCount.current || duplicatePackagesCount.baseline,
   );
+
+  return (
+    <Stack space="medium">
+      {duplicatePackagesInsights && (
+        <Container>
+          <DuplicatePackagesWarning
+            duplicatePackagesCount={duplicatePackagesCount}
+            showDelta={jobs.length > 1}
+          />
+        </Container>
+      )}
+      <Container>
+        <Stack space="small">
+          <TotalSizeTypeTitle />
+          <BundleAssetsTotalsChartBars jobs={jobs} />
+          <BundleAssetsTotalsTable jobs={jobs} outline />
+        </Stack>
+      </Container>
+    </Stack>
+  );
+};
+
+const AssetsContent = () => {
+  const [bundleStatsState, bundleStatsSetState] = useComponentQueryState(COMPONENT.BUNDLE_ASSETS);
+  const { jobs } = useContext(JobsContext);
+
+  return (
+    <Container>
+      <Stack space="medium">
+        <Summary
+          keys={METRICS_WEBPACK_ASSETS}
+          data={jobs?.[0]?.summary}
+          showSummaryItemDelta={jobs?.length !== 1}
+        />
+        <Box outline>
+          <BundleAssets jobs={jobs} setState={bundleStatsSetState} {...bundleStatsState} />
+        </Box>
+      </Stack>
+    </Container>
+  );
+};
+
+const ModulesContent = () => {
   const [bundleModulesState, bundleModulesSetState] = useComponentQueryState(
     COMPONENT.BUNDLE_MODULES,
   );
+  const { jobs } = useContext(JobsContext);
 
-  if (jobs.length === 0) {
+  return (
+    <Container>
+      <Stack space="medium">
+        <Summary
+          keys={METRICS_WEBPACK_MODULES}
+          data={jobs?.[0]?.summary}
+          showSummaryItemDelta={jobs?.length !== 1}
+        />
+        <Box outline>
+          <BundleModules jobs={jobs} setState={bundleModulesSetState} {...bundleModulesState} />
+        </Box>
+      </Stack>
+    </Container>
+  );
+};
+
+const PackagesContent = () => {
+  const [bundlePackagesState, bundlePackagesSetState] = useComponentQueryState(
+    COMPONENT.BUNDLE_PACKAGES,
+  );
+  const { jobs } = useContext(JobsContext);
+
+  return (
+    <Container>
+      <Stack space="medium">
+        <Summary
+          keys={METRICS_WEBPACK_PACKAGES}
+          data={jobs?.[0]?.summary}
+          showSummaryItemDelta={jobs?.length !== 1}
+        />
+        <Box outline>
+          <BundlePackages jobs={jobs} {...bundlePackagesState} setState={bundlePackagesSetState} />
+        </Box>
+      </Stack>
+    </Container>
+  );
+};
+
+const AppComponent = ({ version, jobs }) => {
+  if (jobs?.length === 0) {
     return (
       <Layout version={version}>
         <Container>
@@ -75,137 +169,45 @@ const AppComponent = ({ version, jobs }) => {
     );
   }
 
-  const { duplicatePackagesCount } = jobs[0].summary.webpack;
-  const duplicatePackagesInsights = Boolean(
-    duplicatePackagesCount.current || duplicatePackagesCount.baseline,
-  );
-
   return (
-    <Layout jobs={jobs} version={version}>
-      <Container className={css.summaryContainer}>
-        <Summary
-          size="large"
-          keys={METRICS_WEBPACK_GENERAL}
-          data={jobs[0].summary}
-          showSummaryItemDelta={jobs.length !== 1}
-        />
-      </Container>
+    <JobsProvider jobs={jobs}>
+      <Layout jobs={jobs} version={version}>
+        <Container className={css.summaryContainer}>
+          <Summary
+            size="large"
+            keys={METRICS_WEBPACK_GENERAL}
+            data={jobs[0].summary}
+            showSummaryItemDelta={jobs.length !== 1}
+          />
+        </Container>
 
-      <Container className={css.tabsContainer}>
-        <Tabs className={css.tabs}>
-          <NavLink exact to={URLS.OVERVIEW} activeClassName={css.tabActive}>
-            {I18N.OVERVIEW}
-          </NavLink>
-          <NavLink exact to={URLS.ASSETS} activeClassName={css.tabActive}>
-            {I18N.ASSETS}
-          </NavLink>
-          <NavLink exact to={URLS.MODULES} activeClassName={css.tabActive}>
-            {I18N.MODULES}
-          </NavLink>
-          <NavLink exact to={URLS.PACKAGES} activeClassName={css.tabActive}>
-            {I18N.PACKAGES}
-          </NavLink>
-        </Tabs>
-      </Container>
+        <Container className={css.tabsContainer}>
+          <Tabs className={css.tabs}>
+            <NavLink exact to={URLS.OVERVIEW} activeClassName={css.tabActive}>
+              {I18N.OVERVIEW}
+            </NavLink>
+            <NavLink exact to={URLS.ASSETS} activeClassName={css.tabActive}>
+              {I18N.ASSETS}
+            </NavLink>
+            <NavLink exact to={URLS.MODULES} activeClassName={css.tabActive}>
+              {I18N.MODULES}
+            </NavLink>
+            <NavLink exact to={URLS.PACKAGES} activeClassName={css.tabActive}>
+              {I18N.PACKAGES}
+            </NavLink>
+          </Tabs>
+        </Container>
 
-      <div className={css.tabsContent}>
-        <Switch>
-          <Route
-            exact
-            path={URLS.ASSETS}
-            render={({ location }) => (
-              <Container>
-                <Stack space="medium">
-                  <Summary
-                    keys={METRICS_WEBPACK_ASSETS}
-                    data={jobs[0].summary}
-                    showSummaryItemDelta={jobs.length !== 1}
-                  />
-                  <Box outline>
-                    <BundleAssets
-                      jobs={jobs}
-                      setState={bundleStatsSetState}
-                      {...bundleStatsState}
-                      key={`${location.pathname}_${location.search}`}
-                    />
-                  </Box>
-                </Stack>
-              </Container>
-            )}
-          />
-          <Route
-            exact
-            path={URLS.MODULES}
-            render={() => (
-              <Container>
-                <Stack space="medium">
-                  <Summary
-                    keys={METRICS_WEBPACK_MODULES}
-                    data={jobs[0].summary}
-                    showSummaryItemDelta={jobs.length !== 1}
-                  />
-                  <Box outline>
-                    <BundleModules
-                      jobs={jobs}
-                      setState={bundleModulesSetState}
-                      {...bundleModulesState}
-                    />
-                  </Box>
-                </Stack>
-              </Container>
-            )}
-          />
-          <Route
-            exact
-            path={URLS.PACKAGES}
-            render={({ location }) => (
-              <Container>
-                <Stack space="medium">
-                  <Summary
-                    keys={METRICS_WEBPACK_PACKAGES}
-                    data={jobs[0].summary}
-                    showSummaryItemDelta={jobs.length !== 1}
-                  />
-                  <Box outline>
-                    <BundlePackages
-                      jobs={jobs}
-                      {...bundlePackagesState}
-                      setState={bundlePackagesSetState}
-                      key={`${location.pathname}_${location.search}`}
-                    />
-                  </Box>
-                </Stack>
-              </Container>
-            )}
-          />
-          <Route
-            exact
-            path={URLS.OVERVIEW}
-            render={() => (
-              <Stack space="medium">
-                {duplicatePackagesInsights && (
-                  <Container>
-                    <DuplicatePackagesWarning
-                      duplicatePackagesCount={duplicatePackagesCount}
-                      showDelta={jobs.length > 1}
-                    />
-                  </Container>
-                )}
-                <Container>
-                  <Stack space="small">
-                    <TotalSizeTypeTitle />
-                    <BundleAssetsTotalsChartBars jobs={jobs} />
-                    <Box outline>
-                      <BundleAssetsTotalsTable jobs={jobs} />
-                    </Box>
-                  </Stack>
-                </Container>
-              </Stack>
-            )}
-          />
-        </Switch>
-      </div>
-    </Layout>
+        <div className={css.tabsContent}>
+          <Switch>
+            <Route exact path={URLS.ASSETS} component={AssetsContent} />
+            <Route exact path={URLS.MODULES} component={ModulesContent} />
+            <Route exact path={URLS.PACKAGES} component={PackagesContent} />
+            <Route exact path={URLS.OVERVIEW} component={OverviewContent} />
+          </Switch>
+        </div>
+      </Layout>
+    </JobsProvider>
   );
 };
 
