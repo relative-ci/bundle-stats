@@ -7,8 +7,11 @@ const ACTION_RESET_DEFAULT = 'RESET_DEFAULT';
 const ACTION_RESET_ALL = 'RESET_ALL';
 const ACTION_SET = 'SET';
 
+const SEARCH_DEFAULT = '';
+const SEARCH_DEFAULT_PATTERN = /.*/;
+
 const getSearchPattern = (search) => {
-  let searchPattern = /.*/;
+  let searchPattern = SEARCH_DEFAULT_PATTERN;
 
   if (!search || !search.trim()) {
     return searchPattern;
@@ -31,52 +34,51 @@ const getSearchReducer =
 
     switch (type) {
       case ACTION_SET_FILTERS: {
-        setParentState({
+        const newState = {
           filters: payload,
           search: state.search,
-        });
-
-        return {
-          ...state,
-          filters: payload,
         };
+        setParentState(newState);
+        return newState;
       }
 
       case ACTION_SET_SEARCH: {
-        setParentState({
+        const newState = {
           filters: state.filters,
           search: payload,
-        });
+        };
+
+        setParentState(newState);
 
         return {
-          ...state,
-          search: payload,
+          ...newState,
           searchPattern: getSearchPattern(payload),
         };
       }
 
       case ACTION_RESET_DEFAULT: {
-        setParentState({
+        const newState = {
           filters: defaultFilters,
-          search: '',
-        });
+          search: SEARCH_DEFAULT,
+        };
+
+        setParentState(newState);
 
         return {
-          filters: defaultFilters,
-          search: '',
+          ...newState,
           searchPattern: getSearchPattern(),
         };
       }
 
       case ACTION_RESET_ALL: {
-        setParentState({
+        const newState = {
           filters: allEntriesFilters,
-          search: '',
-        });
+          search: SEARCH_DEFAULT,
+        };
+        setParentState(newState);
 
         return {
-          filters: allEntriesFilters,
-          search: '',
+          ...newState,
           searchPattern: getSearchPattern(),
         };
       }
@@ -97,7 +99,7 @@ export const generateState = (filters, search) => ({
 });
 
 export const useSearchParams = ({
-  search: parentSearch,
+  search: parentSearch = SEARCH_DEFAULT,
 
   filters: parentFilters,
   defaultFilters,
