@@ -20,7 +20,7 @@ export const ModuleInfo = (props) => {
   } = props;
 
   return (
-    <Stack space="small" className={className}>
+    <Stack space="xsmall" className={className}>
       {item.runs.map((run, index) => {
         const TitleComponent = index !== 0 ? 'h4' : 'h3';
         const key = `module-info-${run?.name || index}-${index}`;
@@ -30,7 +30,7 @@ export const ModuleInfo = (props) => {
             <TitleComponent>{labels[index]}</TitleComponent>
             {index === 0 && !isEmpty(run?.chunkIds) && (
               <div className={css.chunks}>
-                <strong className={css.chunksTitle}>Chunks:</strong>
+                <span className={css.chunksTitle}>Chunks:</span>
                 {run.chunkIds.map((chunkId) => {
                   const chunk = find(chunks, { id: chunkId });
 
