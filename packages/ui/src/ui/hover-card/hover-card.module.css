@@ -8,14 +8,12 @@
   text-decoration: none;
 }
 
-a.anchor,
-buton.anchor {
-  cursor: pointer;
+.anchor:hover {
+  color: var(--color-primary);
 }
 
-a.anchor:hover,
-button.anchor:hover {
-  text-decoration: underline;
+.anchor:focus {
+  outline: 0;
 }
 
 .hoverCard {

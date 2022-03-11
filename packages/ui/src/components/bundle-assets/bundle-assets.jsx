@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get, map } from 'lodash';
@@ -77,60 +77,90 @@ TooltipNotPredictive.propTypes = {
   runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };
 
-const getRenderRowHeader =
-  ({ labels, CustomComponentLink, chunks }) =>
-  (item) => {
-    const { label, isNotPredictive, runs, isChunk, isEntry, isInitial } = item;
+const RowHeader = ({ row, labels, chunks, CustomComponentLink }) => {
+  const { label, isNotPredictive, runs, isChunk, isEntry, isInitial } = row;
+  const [showHoverCard, setHoverCard] = useState(false);
+  const handleOnMouseEnter = useCallback(() => setHoverCard(true), [showHoverCard]);
 
-    return (
-      <HoverCard
-        label={
-          <FlexStack space="xxxsmall" className={css.assetName}>
-            <div className={css.assetInfoFlags}>
-              {isNotPredictive && (
-                <Tooltip className={css.notPredictive} title={<TooltipNotPredictive runs={runs} />}>
-                  <Icon className={css.notPredictiveIcon} glyph="warning" />
-                </Tooltip>
-              )}
-              {isChunk && (
-                <Tag
-                  title="Chunk"
-                  size={Tag.SIZES.SMALL}
-                  kind={Tag.KINDS.INFO}
-                  className={cx(css.tag, css.tagChunk)}
-                />
-              )}
-              {isEntry && (
-                <Tag
-                  title="Entrypoint"
-                  size={Tag.SIZES.SMALL}
-                  kind={Tag.KINDS.INFO}
-                  className={cx(css.tag, css.tagEntry)}
-                />
-              )}
-              {isInitial && (
-                <Tag
-                  title="Initial"
-                  size={Tag.SIZES.SMALL}
-                  kind={Tag.KINDS.INFO}
-                  className={cx(css.tag, css.tagInitial)}
-                />
-              )}
-            </div>
-            <FileName name={label} />
-          </FlexStack>
-        }
-      >
-        <AssetInfo
-          className={css.assetInfo}
-          item={item}
-          labels={labels}
-          chunks={chunks}
-          CustomComponentLink={CustomComponentLink}
-        />
-      </HoverCard>
-    );
-  };
+  const content = useMemo(
+    () => (
+      <span className={css.assetName}>
+        <span className={css.assetNameTags}>
+          {isNotPredictive && (
+            <Tooltip className={css.notPredictive} title={<TooltipNotPredictive runs={runs} />}>
+              <Icon className={css.notPredictiveIcon} glyph="warning" />
+            </Tooltip>
+          )}
+          {isChunk && (
+            <Tag
+              className={cx(css.assetNameTag, css.assetNameTagChunk)}
+              title="Chunk"
+              size={Tag.SIZES.SMALL}
+              kind={Tag.KINDS.INFO}
+            />
+          )}
+          {isEntry && (
+            <Tag
+              className={cx(css.assetNameTag, css.assetNameTagEntry)}
+              title="Entrypoint"
+              size={Tag.SIZES.SMALL}
+              kind={Tag.KINDS.INFO}
+            />
+          )}
+          {isInitial && (
+            <Tag
+              className={cx(css.assetNameTag, css.assetNameTagInitial)}
+              title="Initial"
+              size={Tag.SIZES.SMALL}
+              kind={Tag.KINDS.INFO}
+            />
+          )}
+        </span>
+        <FileName className={css.assetNameText} name={label} />
+      </span>
+    ),
+    [isChunk, isEntry, isInitial, isNotPredictive, runs],
+  );
+
+  if (!showHoverCard) {
+    return <span onMouseEnter={handleOnMouseEnter}>{content}</span>;
+  }
+
+  return (
+    <HoverCard label={content}>
+      <AssetInfo
+        className={css.assetInfo}
+        item={row}
+        labels={labels}
+        chunks={chunks}
+        CustomComponentLink={CustomComponentLink}
+      />
+    </HoverCard>
+  );
+};
+
+RowHeader.propTypes = {
+  row: PropTypes.shape({
+    label: PropTypes.string,
+    isNotPredictive: PropTypes.bool,
+    isChunk: PropTypes.bool,
+    isInitial: PropTypes.bool,
+    isEntry: PropTypes.bool,
+    runs: PropTypes.arrayOf(PropTypes.object),
+  }).isRequired,
+  chunks: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+    }),
+  ),
+  labels: PropTypes.arrayOf(PropTypes.string).isRequired,
+  CustomComponentLink: PropTypes.elementType.isRequired,
+};
+
+RowHeader.defaultProps = {
+  chunks: [],
+};
 
 export const BundleAssets = (props) => {
   const {
@@ -160,11 +190,16 @@ export const BundleAssets = (props) => {
     />
   );
 
-  const chunks = jobs[0]?.meta?.webpack?.chunks || [];
-
-  const renderRowHeader = useMemo(
-    () => getRenderRowHeader({ labels: map(jobs, 'label'), CustomComponentLink, chunks }),
-    [jobs, chunks],
+  const renderRowHeader = useCallback(
+    (row) => (
+      <RowHeader
+        row={row}
+        labels={map(jobs, 'label')}
+        chunks={jobs[0]?.meta?.webpack?.chunks || []}
+        CustomComponentLink={CustomComponentLink}
+      />
+    ),
+    [jobs, CustomComponentLink],
   );
 
   return (

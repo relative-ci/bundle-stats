@@ -8,10 +8,7 @@
   margin-right: -1px; /** collapse border */
 }
 
-.assetName {
-  display: inline-flex;
-  align-items: center;
-}
+.assetName {}
 
 .notPredictive {
   margin-right: var(--space-xxsmall);
@@ -26,37 +23,46 @@
   vertical-align: top;
 }
 
-.assetInfoFlags {
-  display: inline-block;
+.assetNameTags {
+  display: inline;
   margin-right: var(--space-xxxsmall);
 }
 
-.assetInfoFlags:empty {
+.assetNameTags:empty {
   display: none;
 }
 
-.tag + .tag {
+.assetNameTag {
+  vertical-align: middle;
+}
+
+.assetNameTag + .assetNameTag {
   margin-left: 2px;
 }
 
-.tagEntry {
+.assetNameTagEntry {
   background: var(--color-info-light);
 }
 
-.tagEntry::before {
+.assetNameTagEntry::before {
   content: 'e';
 }
 
-.tagInitial {
+.assetNameTagInitial {
   background: var(--color-info-light);
 }
 
-.tagInitial::before {
+.assetNameTagInitial::before {
   content: 'i';
 }
 
-.tagChunk::before {
+.assetNameTagChunk::before {
   content: 'c';
+}
+
+.assetNameText {
+  display: inline;
+  vertical-align: middle;
 }
 
 /* Tooltip not predictive */

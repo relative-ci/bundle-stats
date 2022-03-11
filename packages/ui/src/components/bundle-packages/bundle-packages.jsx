@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import {
@@ -98,49 +98,86 @@ PackagePopoverContent.defaultProps = {
   path: '',
 };
 
-const PackageRowHeader = ({ item, CustomComponentLink }) => {
-  const packageNames = item.label.split(PACKAGES_SEPARATOR);
-  const { path } = item.runs[0] || {};
+const PackageName = ({ packageName, path, showDuplicateFlag, row, CustomComponentLink }) => {
+  const [showHoverCard, setHoverCard] = useState(false);
+  const handleOnMouseEnter = useCallback(() => setHoverCard(true), [showHoverCard]);
 
-  return (
-    <span className={css.packageNames}>
-      {packageNames.map((packageName, index) => {
-        // Render duplicate flag only for the last entry
-        const duplicateFlag = index === packageNames.length - 1 && item.duplicate && (
+  const label = useMemo(
+    () => (
+      <>
+        {showDuplicateFlag && row.duplicate && (
           <Tag
+            className={css.packageNameTagDuplicate}
             title="Duplicate package"
             kind={Tag.KINDS.DANGER}
             size={Tag.SIZES.SMALL}
-            className={css.tagDuplicate}
           />
-        );
+        )}
+        <span className={css.packageNameLabel}>{packageName}</span>
+      </>
+    ),
+    [packageName, showDuplicateFlag, row],
+  );
 
-        return (
-          <HoverCard
-            className={css.packageName}
-            label={
-              <FlexStack space="xxxsmall" className={css.packageNameLabel}>
-                {duplicateFlag}
-                <span>{packageName}</span>
-              </FlexStack>
-            }
-          >
-            <PackagePopoverContent
-              name={packageName}
-              path={path}
-              fullName={item.label}
-              duplicate={item.duplicate}
-              CustomComponentLink={CustomComponentLink}
-            />
-          </HoverCard>
-        );
-      })}
+  if (!showHoverCard) {
+    return (
+      <span className={css.packageName} onMouseEnter={handleOnMouseEnter}>
+        {label}
+      </span>
+    );
+  }
+
+  return (
+    <HoverCard className={css.packageName} label={<span className={css.packageName}>{label}</span>}>
+      <PackagePopoverContent
+        name={packageName}
+        path={path}
+        fullName={row.label}
+        duplicate={row.duplicate}
+        CustomComponentLink={CustomComponentLink}
+      />
+    </HoverCard>
+  );
+};
+
+PackageName.propTypes = {
+  packageName: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+  showDuplicateFlag: PropTypes.bool.isRequired,
+  row: PropTypes.shape({
+    label: PropTypes.string,
+    duplicate: PropTypes.bool,
+    runs: PropTypes.arrayOf(
+      PropTypes.shape({
+        path: PropTypes.string,
+      }),
+    ).isRequired,
+  }).isRequired,
+  CustomComponentLink: PropTypes.elementType.isRequired,
+};
+
+const RowHeader = ({ row, CustomComponentLink }) => {
+  const packageNames = row.label.split(PACKAGES_SEPARATOR);
+  const { path } = row.runs[0] || {};
+
+  return (
+    <span className={css.packageNames}>
+      {packageNames.map((packageName, index) => (
+        <PackageName
+          packageName={packageName}
+          path={path}
+          // Render duplicate flag only for the last entry
+          showDuplicateFlag={index === packageNames.length - 1}
+          row={row}
+          CustomComponentLink={CustomComponentLink}
+        />
+      ))}
     </span>
   );
 };
 
-PackageRowHeader.propTypes = {
-  item: PropTypes.shape({
+RowHeader.propTypes = {
+  row: PropTypes.shape({
     label: PropTypes.string,
     duplicate: PropTypes.bool,
     runs: PropTypes.arrayOf(
@@ -181,7 +218,7 @@ export const BundlePackages = (props) => {
   );
 
   const renderRowHeader = useCallback(
-    (item) => <PackageRowHeader item={item} CustomComponentLink={CustomComponentLink} />,
+    (row) => <RowHeader row={row} CustomComponentLink={CustomComponentLink} />,
     [CustomComponentLink],
   );
 

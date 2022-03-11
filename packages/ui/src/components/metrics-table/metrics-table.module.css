@@ -18,16 +18,26 @@
 .root .value {
   padding-left: var(--space-large);
   text-align: right;
+  vertical-align: baseline;
 }
 
 .root .delta {
   padding-left: 0;
   text-align: left;
   font-size: var(--size-xsmall);
+  vertical-align: baseline;
+}
+
+.root tbody .delta {
+  line-height: 1.6rem; /* baseline alignment with the value */
 }
 
 .root .value.current {
   padding-right: var(--space-xxsmall);
+}
+
+.jobName {
+  white-space: nowrap;
 }
 
 /* columns overrides for showHeaderSum */
