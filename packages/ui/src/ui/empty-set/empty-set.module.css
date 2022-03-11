@@ -1,5 +1,5 @@
-.text {
-  margin-bottom: 0;
+.root {
+  color: var(--color-text-light);
 }
 
 .action {
