@@ -36,6 +36,10 @@
   padding-right: var(--space-xxsmall);
 }
 
+.jobName {
+  white-space: nowrap;
+}
+
 /* columns overrides for showHeaderSum */
 .showHeaderSum .headerRowColumns .value,
 .showHeaderSum .headerRowColumns .delta {
