@@ -33,23 +33,23 @@ const PackagePopoverContent = ({ name, fullName, path, duplicate, CustomComponen
   const [normalizedName, packageId] = name.split(PACKAGE_ID_SEPARATOR);
 
   return (
-    <Stack space="xxsmall" className={css.packagePopover}>
+    <Stack space="xsmall" className={css.packageHoverCard}>
       <Stack space="xxxsmall">
-        <h3 className={css.packagePopoverTitle}>
+        <h3 className={css.packageHoverCardTitle}>
           {normalizedName}
           {packageId && (
-            <span className={css.packagePopoverTitleIndex}>
+            <span className={css.packageHoverCardTitleIndex}>
               {`${PACKAGE_ID_SEPARATOR}${packageId}`}
             </span>
           )}
         </h3>
-        <p className={css.packagePopoverPath}>
-          <FileName className={css.packagePopoverPathValue} name={normalizedPackagePath} />
+        <p className={css.packageHoverCardPath}>
+          <FileName className={css.packageHoverCardPathValue} name={normalizedPackagePath} />
         </p>
       </Stack>
 
-      <ul className={css.packagePopoverList}>
-        <li className={css.packagePopoverItem}>
+      <ul className={css.packageHoverCardList}>
+        <li className={css.packageHoverCardItem}>
           <a
             href={`https://www.npmjs.com/package/${normalizedName}`}
             target="_blank"
@@ -58,7 +58,7 @@ const PackagePopoverContent = ({ name, fullName, path, duplicate, CustomComponen
             npmjs.com
           </a>
         </li>
-        <li className={css.packagePopoverItem}>
+        <li className={css.packageHoverCardItem}>
           <a
             href={`https://bundlephobia.com/result?p=${normalizedName}`}
             target="_blank"
@@ -69,7 +69,7 @@ const PackagePopoverContent = ({ name, fullName, path, duplicate, CustomComponen
         </li>
       </ul>
 
-      <Stack space="xxxsmall" className={css.packagePopover.actions}>
+      <Stack space="xxxsmall" className={css.packageHoverCardActions}>
         {duplicate && (
           <div>
             <CustomComponentLink {...getBundlePackagesByNameComponentLink(normalizedName)}>

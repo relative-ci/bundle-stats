@@ -42,22 +42,19 @@
 }
 
 
-.packagePopover {
-  min-width: 320px;
-}
-
-.packagePopoverTitleIndex {
+.packageHoverCardTitleIndex {
   color: var(--color-text-light);
   font-weight: normal;
 }
 
-.packagePopoverPathValue {
+.packageHoverCardPathValue {
+  width: 100%;
   padding: var(--space-xxxsmall);
   background: var(--color-highlight-warning);
   font-family: var(--font-family-monospace);
 }
 
-.packagePopoverList {
+.packageHoverCardList {
   padding: 0;
   list-style: inside;
 }
