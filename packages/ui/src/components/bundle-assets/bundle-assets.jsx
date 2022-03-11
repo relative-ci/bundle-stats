@@ -146,7 +146,7 @@ RowHeader.propTypes = {
     isChunk: PropTypes.bool,
     isInitial: PropTypes.bool,
     isEntry: PropTypes.bool,
-    runs: PropTypes.arrayOf(PropTypes.object),
+    runs: PropTypes.arrayOf(PropTypes.object), // eslint-disable-line react/forbid-prop-types
   }).isRequired,
   chunks: PropTypes.arrayOf(
     PropTypes.shape({
