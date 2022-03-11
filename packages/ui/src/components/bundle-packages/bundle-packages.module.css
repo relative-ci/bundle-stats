@@ -12,15 +12,8 @@
   margin-right: -1px; /** collapse border */
 }
 
-.tagDuplicate {
-  margin-right: var(--space-xxxsmall);
-}
-
-.tagDuplicate::before {
-  content: 'd';
-}
-
 .packageName {
+  display: inline-block;
   color: var(--color-text-light);
 }
 
@@ -35,9 +28,19 @@
   color: var(--color-text-ultra-light);
 }
 
-.packageNameLabel {
-  align-items: center;
+.packageNameTagDuplicate {
+  margin-right: var(--space-xxxsmall);
+  vertical-align: middle;
 }
+
+.packageNameLabel {
+  vertical-align: middle;
+}
+
+.packageNameTagDuplicate::before {
+  content: 'd';
+}
+
 
 .packagePopover {
   min-width: 320px;

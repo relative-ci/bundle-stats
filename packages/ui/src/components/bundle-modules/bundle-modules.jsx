@@ -31,30 +31,28 @@ import css from './bundle-modules.module.css';
 const RowHeader = ({ row, chunks, labels, CustomComponentLink }) => {
   const chunkIds = map(chunks, 'id');
 
-  const [showPopopver, setPopover] = useState(false);
-  const handleOnMouseEnter = useCallback(() => setPopover(true), [showPopopver]);
-  const content = <FileName name={row.label} />;
+  const [showHoverCard, setHoverCard] = useState(false);
+  const handleOnMouseEnter = useCallback(() => setHoverCard(true), [showHoverCard]);
+  const content = useMemo(() => <FileName name={row.label} />, [row.label]);
+
+  if (!showHoverCard) {
+    return <div onMouseEnter={handleOnMouseEnter}>{content}</div>;
+  }
 
   return (
-    <div onMouseEnter={handleOnMouseEnter}>
-      {!showPopopver ? (
-        content
-      ) : (
-        <HoverCard label={content}>
-          {({ close }) => (
-            <ModuleInfo
-              className={css.namePopover}
-              item={row}
-              chunks={chunks}
-              chunkIds={chunkIds}
-              labels={labels}
-              customComponentLink={CustomComponentLink}
-              onClick={close}
-            />
-          )}
-        </HoverCard>
+    <HoverCard label={content}>
+      {({ close }) => (
+        <ModuleInfo
+          className={css.namePopover}
+          item={row}
+          chunks={chunks}
+          chunkIds={chunkIds}
+          labels={labels}
+          customComponentLink={CustomComponentLink}
+          onClick={close}
+        />
       )}
-    </div>
+    </HoverCard>
   );
 };
 
@@ -76,18 +74,6 @@ RowHeader.defaultProps = {
   chunks: [],
 };
 
-const getRenderRowHeader =
-  ({ labels, chunks, CustomComponentLink }) =>
-  (row) =>
-    (
-      <RowHeader
-        row={row}
-        chunks={chunks}
-        labels={labels}
-        CustomComponentLink={CustomComponentLink}
-      />
-    );
-
 export const BundleModules = ({
   className,
   jobs,
@@ -108,11 +94,18 @@ export const BundleModules = ({
 }) => {
   const rootClassName = cx(css.root, className);
 
-  const labels = useMemo(() => map(jobs, 'label'), [jobs]);
-  const renderRowHeader = useMemo(
-    () => getRenderRowHeader({ labels, chunks, CustomComponentLink }),
-    [labels, chunks],
+  const renderRowHeader = useCallback(
+    (row) => (
+      <RowHeader
+        row={row}
+        chunks={chunks}
+        labels={map(jobs, 'label')}
+        CustomComponentLink={CustomComponentLink}
+      />
+    ),
+    [jobs, chunks, CustomComponentLink],
   );
+
   const emptyMessage = (
     <EmptySet
       resources="modules"
