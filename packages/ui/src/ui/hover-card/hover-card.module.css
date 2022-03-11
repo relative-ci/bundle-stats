@@ -19,7 +19,8 @@
 .hoverCard {
   padding: var(--space-xsmall) var(--space-small);
   border-radius: var(--radius-medium);
-  max-width: 320px;
+  width: calc(100vw - 2 * var(--space-small));
+  max-width: 360px;
   outline: none;
   filter: drop-shadow(0 0 var(--space-xxsmall) var(--color-shadow));
   will-change: filter;
