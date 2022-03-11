@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.9-beta.0](https://github.com/relative-ci/bundle-stats/compare/v3.2.8...v3.2.9-beta.0) (2022-03-11)
+
+
+### Bug Fixes
+
+* **ui:** App - replace box with table outline ([592e066](https://github.com/relative-ci/bundle-stats/commit/592e06603ddd3095cfb64786bbacd75863452ec6))
+* **ui:** BundleAssets - inline asset name when long ([9000ca3](https://github.com/relative-ci/bundle-stats/commit/9000ca30ccd9ed268d5e0a588fd4dc7fa11fb9dd))
+* **ui:** Consistent HoverCard usage ([a51c927](https://github.com/relative-ci/bundle-stats/commit/a51c9274067d50eaea235fc4220c9d64553901d3))
+* **ui:** EmptySet - add spacing ([e784e10](https://github.com/relative-ci/bundle-stats/commit/e784e1098f56945d8c2a7ecdac192f441c80a973))
+* **ui:** HoverCard - improve hover/active states ([75f881a](https://github.com/relative-ci/bundle-stats/commit/75f881a8251c40ea5852b44747493527310b7e32))
+* **ui:** MetricsTable - baseline align value & delta ([aa8e440](https://github.com/relative-ci/bundle-stats/commit/aa8e440a90dd052ef5807d90b598a065931260e6))
+* **ui:** MetricsTable - job name header nowrap ([06c6606](https://github.com/relative-ci/bundle-stats/commit/06c6606beea1c5c6bebe46c1d3bb6c9c14324def))
+* **ui:** PackageHoverCard - fix layout ([6e1d362](https://github.com/relative-ci/bundle-stats/commit/6e1d362bcf97a11310b7cc1f2e8231b5207c1a3c))
+* **ui:** Tooltip - workaround filter on safari ([ae9b4ca](https://github.com/relative-ci/bundle-stats/commit/ae9b4ca4ea5c6fd8c56b6f9f02d22fdb321ecad8))
+* **ui:** useSearchParams - prevent triggering route change twice ([27b692c](https://github.com/relative-ci/bundle-stats/commit/27b692c5f3edf74a1692d9488b6a2d60c3210c99))
+
+
+### Performance Improvements
+
+* **ui:** App - replace route render fns with components ([da4d9a8](https://github.com/relative-ci/bundle-stats/commit/da4d9a82e96db12f47838af0b3e68da26b4faf56))
+* **ui:** MetricsTable - optimize row rendering ([02cfab0](https://github.com/relative-ci/bundle-stats/commit/02cfab0b2d3f12b6e4369d6994f4a63e05b65cff))
+* **ui:** MetricsTable - row component ([0ffe212](https://github.com/relative-ci/bundle-stats/commit/0ffe212e46cc2805a77ed64b510e323bbf7232bc))
+* **ui:** Table - remove custom child components ([856e02d](https://github.com/relative-ci/bundle-stats/commit/856e02d3ad97e54598bf96cf8a252fe53b6b2c3b))
+
+
+
+
+
 ## [3.2.8](https://github.com/relative-ci/bundle-stats/compare/v3.2.7...v3.2.8) (2022-03-10)
 
 **Note:** Version bump only for package @bundle-stats/ui
