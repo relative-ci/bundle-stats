@@ -24,20 +24,12 @@ const resolveComponent = (as, href) => {
 };
 
 export const HoverCard = (props) => {
-  const { className, href, as, label, children } = props;
+  const { className, hoverCardClassName, href, as, label, children } = props;
   const state = useHovercardState({ gutter: 8 });
   const hoverCardProps = useHovercard({ state, portal: true });
 
   // Fallback to span if no href
   const Component = resolveComponent(as, href);
-
-  const handleOnClose = useCallback(
-    (event) => {
-      state.hide();
-      event.preventDefault();
-    },
-    [state],
-  );
 
   return (
     <div className={cx(css.root, className)}>
@@ -47,7 +39,7 @@ export const HoverCard = (props) => {
       <Hovercard
         {...hoverCardProps}
         state={state}
-        className={css.hoverCard}
+        className={cx(css.hoverCard, hoverCardClassName)}
         style={{ zIndex: 10000 }}
       >
         <HovercardArrow size={24} />
@@ -60,6 +52,8 @@ export const HoverCard = (props) => {
 HoverCard.propTypes = {
   /** Adopted child class name */
   className: PropTypes.string,
+  /** Adopted child class name for hover card */
+  hoverCardClassName: PropTypes.string,
   /** Anchor label */
   label: PropTypes.node,
   /** Anchor href */
@@ -72,6 +66,7 @@ HoverCard.propTypes = {
 
 HoverCard.defaultProps = {
   className: '',
+  hoverCardClassName: '',
   label: '',
   as: '',
   href: '',
