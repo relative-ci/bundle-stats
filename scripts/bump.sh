@@ -23,4 +23,4 @@ RELEASE_ARGS="${PRERELEASE_ARG} ${@}"
 
 echo "Running lerna version with '${RELEASE_ARGS}'."
 
-./node_modules/.bin/lerna version --conventional-commits $RELEASE_ARGS --message "$MESSAGE"
+./node_modules/.bin/lerna version $RELEASE_ARGS --message "$MESSAGE"
