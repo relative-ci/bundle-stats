@@ -53,5 +53,9 @@ export const METRICS_WEBPACK_GENERAL = [
   'webpack.cacheInvalidation',
 ];
 export const METRICS_WEBPACK_ASSETS = ['webpack.assetCount', 'webpack.chunkCount'];
-export const METRICS_WEBPACK_MODULES = ['webpack.moduleCount'];
+export const METRICS_WEBPACK_MODULES = [
+  'webpack.moduleCount',
+  'webpack.duplicateModulesCount',
+  'webpack.duplicateCode',
+];
 export const METRICS_WEBPACK_PACKAGES = ['webpack.packageCount', 'webpack.duplicatePackagesCount'];

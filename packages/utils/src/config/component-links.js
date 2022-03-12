@@ -14,6 +14,7 @@ export const ASSET_FILTERS = {
 
 export const MODULE_FILTERS = {
   CHANGED: 'changed',
+  DUPLICATED: 'md',
   FIRST_PARTY: 'fp',
   THIRD_PARTY: 'tp',
 };

@@ -19,6 +19,12 @@ describe('createSummary', () => {
       moduleCount: {
         value: 0,
       },
+      duplicateModulesCount: {
+        value: 0,
+      },
+      duplicateCode: {
+        value: 0,
+      },
       chunkCount: {
         value: 2,
       },
@@ -51,6 +57,14 @@ describe('createSummary', () => {
         current: 0,
       },
       moduleCount: {
+        baseline: 0,
+        current: 0,
+      },
+      duplicateModulesCount: {
+        baseline: 0,
+        current: 0,
+      },
+      duplicateCode: {
         baseline: 0,
         current: 0,
       },
@@ -92,6 +106,12 @@ describe('createSummary', () => {
         moduleCount: {
           value: 2,
         },
+        duplicateModulesCount: {
+          value: 0,
+        },
+        duplicateCode: {
+          value: 0,
+        },
         chunkCount: {
           value: 2,
         },
@@ -120,6 +140,12 @@ describe('createSummary', () => {
         },
         moduleCount: {
           value: 3,
+        },
+        duplicateModulesCount: {
+          value: 0,
+        },
+        duplicateCode: {
+          value: 0,
         },
         chunkCount: {
           value: 3,
@@ -156,6 +182,14 @@ describe('createSummary', () => {
       moduleCount: {
         baseline: 2,
         current: 3,
+      },
+      duplicateModulesCount: {
+        baseline: 0,
+        current: 0,
+      },
+      duplicateCode: {
+        baseline: 0,
+        current: 0,
       },
       chunkCount: {
         baseline: 2,

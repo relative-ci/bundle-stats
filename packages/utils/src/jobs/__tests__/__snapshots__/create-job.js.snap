@@ -86,6 +86,12 @@ Object {
       "chunkCount": Object {
         "value": 2,
       },
+      "duplicateCode": Object {
+        "value": 0,
+      },
+      "duplicateModulesCount": Object {
+        "value": 0,
+      },
       "duplicatePackagesCount": Object {
         "value": 1,
       },
@@ -97,6 +103,7 @@ Object {
           "chunkIds": Array [
             "1",
           ],
+          "duplicated": false,
           "name": "module-a",
           "value": 1000,
         },
@@ -104,6 +111,7 @@ Object {
           "chunkIds": Array [
             "1",
           ],
+          "duplicated": false,
           "name": "module-b",
           "value": 2000,
         },
@@ -111,6 +119,7 @@ Object {
           "chunkIds": Array [
             "1",
           ],
+          "duplicated": false,
           "name": "node_modules/package-a/index.js",
           "value": 1000,
         },
@@ -118,6 +127,7 @@ Object {
           "chunkIds": Array [
             "1",
           ],
+          "duplicated": false,
           "name": "node_modules/package-a/node_modules/package-c/index.js",
           "value": 1000,
         },
@@ -125,6 +135,7 @@ Object {
           "chunkIds": Array [
             "1",
           ],
+          "duplicated": false,
           "name": "node_modules/package-b/index.js",
           "value": 1000,
         },
@@ -132,6 +143,7 @@ Object {
           "chunkIds": Array [
             "1",
           ],
+          "duplicated": false,
           "name": "node_modules/package-c/index.js",
           "value": 1000,
         },
@@ -306,6 +318,14 @@ Object {
         "baseline": 0,
         "current": 2,
       },
+      "duplicateCode": Object {
+        "baseline": 0,
+        "current": 0,
+      },
+      "duplicateModulesCount": Object {
+        "baseline": 0,
+        "current": 0,
+      },
       "duplicatePackagesCount": Object {
         "baseline": 0,
         "current": 1,
@@ -421,6 +441,12 @@ Object {
       "chunkCount": Object {
         "value": 2,
       },
+      "duplicateCode": Object {
+        "value": 0,
+      },
+      "duplicateModulesCount": Object {
+        "value": 0,
+      },
       "duplicatePackagesCount": Object {
         "value": 1,
       },
@@ -432,6 +458,7 @@ Object {
           "chunkIds": Array [
             "1",
           ],
+          "duplicated": false,
           "name": "module-a",
           "value": 1000,
         },
@@ -439,6 +466,7 @@ Object {
           "chunkIds": Array [
             "1",
           ],
+          "duplicated": false,
           "name": "module-b",
           "value": 2000,
         },
@@ -446,6 +474,7 @@ Object {
           "chunkIds": Array [
             "1",
           ],
+          "duplicated": false,
           "name": "node_modules/package-a/index.js",
           "value": 1000,
         },
@@ -453,6 +482,7 @@ Object {
           "chunkIds": Array [
             "1",
           ],
+          "duplicated": false,
           "name": "node_modules/package-a/node_modules/package-c/index.js",
           "value": 1000,
         },
@@ -460,6 +490,7 @@ Object {
           "chunkIds": Array [
             "1",
           ],
+          "duplicated": false,
           "name": "node_modules/package-b/index.js",
           "value": 1000,
         },
@@ -467,6 +498,7 @@ Object {
           "chunkIds": Array [
             "1",
           ],
+          "duplicated": false,
           "name": "node_modules/package-c/index.js",
           "value": 1000,
         },
@@ -640,6 +672,14 @@ Object {
       "chunkCount": Object {
         "baseline": 2,
         "current": 2,
+      },
+      "duplicateCode": Object {
+        "baseline": 0,
+        "current": 0,
+      },
+      "duplicateModulesCount": Object {
+        "baseline": 0,
+        "current": 0,
       },
       "duplicatePackagesCount": Object {
         "baseline": 0,
