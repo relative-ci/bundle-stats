@@ -13,9 +13,14 @@ import { SORT_BY_NAME, SORT_BY_SIZE, SORT_BY_DELTA } from './bundle-modules.cons
 
 export const addRowSourceFlag = (row) => {
   const { key, runs } = row;
-  const thirdParty = Boolean(key.match(MODULE_PATH_PACKAGES));
-  const duplicated = Boolean(runs.find((run) => run?.duplicated === true));
-  return { ...row, thirdParty, duplicated };
+
+  // @NOTE Assign instead destructuring for perf reasons
+  // eslint-disable-next-line no-param-reassign
+  row.thirdParty = Boolean(key.match(MODULE_PATH_PACKAGES));
+  // eslint-disable-next-line no-param-reassign
+  row.duplicated = Boolean(runs.find((run) => run?.duplicated === true));
+
+  return row;
 };
 
 export const getCustomSort = (sortBy) => (item) => {
