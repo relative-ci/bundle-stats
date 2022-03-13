@@ -4,10 +4,8 @@ import cx from 'classnames';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { HoverCard } from '../../ui/hover-card';
-import { Icon } from '../../ui/icon';
 import { Skeleton } from '../../ui/skeleton';
 import { Stack } from '../../layout/stack';
-import { FlexStack } from '../../layout/flex-stack';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
 import css from './summary-item.module.css';
@@ -17,9 +15,9 @@ const MetricInfo = ({ description, url }) => (
     <p>{description}</p>
     {url && (
       <p>
-        <a href={url} className={css.readMoreLink}>
+        <button type="button" onClick={() => window.open(url)} className={css.readMoreLink}>
           Read more
-        </a>
+        </button>
       </p>
     )}
   </Stack>
@@ -54,16 +52,16 @@ export const SummaryItem = ({
   const rootClassName = cx(css.root, className, css[size], showDelta && css.showDelta);
 
   return (
-    <Stack space="xxxsmall" as={Component} className={rootClassName} {...props}>
-      <FlexStack as="h3" space="xxxsmall" className={css.title}>
-        <span>{metric.label}</span>
-
-        {showMetricDescriptionTooltip && (
-          <HoverCard className={css.icon} label={<Icon glyph="help" />}>
+    <Stack space="xxsmall" as={Component} className={rootClassName} {...props}>
+      <h3 className={css.title}>
+        {showMetricDescriptionTooltip ? (
+          <HoverCard label={metric.label}>
             <MetricInfo {...metric} />
           </HoverCard>
+        ) : (
+          metric.label
         )}
-      </FlexStack>
+      </h3>
 
       {!loading ? (
         <Stack>
