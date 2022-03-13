@@ -31,6 +31,10 @@ export const HoverCard = (props) => {
   // Fallback to span if no href
   const Component = resolveComponent(as, href);
 
+  const handleOnClick = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <div className={cx(css.root, className)}>
       <HovercardAnchor state={state} href={href} className={css.anchor} as={Component}>
@@ -41,6 +45,7 @@ export const HoverCard = (props) => {
         state={state}
         className={cx(css.hoverCard, hoverCardClassName)}
         style={{ zIndex: 10000 }}
+        onClick={handleOnClick}
       >
         <HovercardArrow size={24} />
         {typeof children === 'function' ? children({ close: state.hide }) : children}
