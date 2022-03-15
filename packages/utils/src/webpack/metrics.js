@@ -60,7 +60,7 @@ export const metrics = {
   },
   duplicateCode: {
     label: 'Duplicate Code',
-    description: 'The percentage of duplicate module total size',
+    description: 'The percentage of total duplicate module size from the total module size.',
     url: 'https://relative-ci.com/documentation/metrics-and-data#modules-1',
     type: METRIC_TYPE_PERCENTAGE,
     biggerIsBetter: false,
