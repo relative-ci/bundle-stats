@@ -12,11 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    # Cache packages when the branch is not update-dependencies or dependabot/*
+    - name: Resolve caching
+      id: cache
+      if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
+      run: echo "::set-output name=PACKAGE::npm"
     - name: Use Node.js
       uses: actions/setup-node@v3.0.0
       with:
         node-version-file: ".nvmrc"
-        cache: "npm"
+        cache: ${{ steps.cache.outputs.PACKAGE }}
         cache-dependency-path: "**/package-lock.json"
 
     - name: Install dependencies
@@ -48,11 +53,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    # Cache packages when the branch is not update-dependencies or dependabot/*
+    - name: Resolve caching
+      id: cache
+      if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
+      run: echo "::set-output name=PACKAGE::npm"
     - name: Use Node.js
       uses: actions/setup-node@v3.0.0
       with:
         node-version-file: ".nvmrc"
-        cache: "npm"
+        cache: ${{ steps.cache.outputs.PACKAGE }}
         cache-dependency-path: "**/package-lock.json"
 
     - name: Install dependencies
@@ -72,11 +82,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    # Cache packages when the branch is not update-dependencies or dependabot/*
+    - name: Resolve caching
+      id: cache
+      if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
+      run: echo "::set-output name=PACKAGE::npm"
     - name: Use Node.js
       uses: actions/setup-node@v3.0.0
       with:
         node-version-file: ".nvmrc"
-        cache: "npm"
+        cache: ${{ steps.cache.outputs.PACKAGE }}
         cache-dependency-path: "**/package-lock.json"
 
     - name: Install dependencies
@@ -105,11 +120,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    # Cache packages when the branch is not update-dependencies or dependabot/*
+    - name: Resolve caching
+      id: cache
+      if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
+      run: echo "::set-output name=PACKAGE::npm"
     - name: Use Node.js
       uses: actions/setup-node@v3.0.0
       with:
         node-version-file: ".nvmrc"
-        cache: "npm"
+        cache: ${{ steps.cache.outputs.PACKAGE }}
         cache-dependency-path: "**/package-lock.json"
     - run: echo '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}' > ~/.npmrc
       env:
