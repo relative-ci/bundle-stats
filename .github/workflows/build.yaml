@@ -16,13 +16,8 @@ jobs:
       uses: actions/setup-node@v3.0.0
       with:
         node-version-file: ".nvmrc"
-    - name: Restore cache
-      uses: actions/cache@v2
-      with:
-        path: |
-          node_modules
-          */*/node_modules
-        key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+        cache: "npm"
+        cache-dependency-path: "**/package-lock.json"
 
     - name: Install dependencies
       run: npm run install-dependencies
@@ -57,13 +52,8 @@ jobs:
       uses: actions/setup-node@v3.0.0
       with:
         node-version-file: ".nvmrc"
-    - name: Restore cache
-      uses: actions/cache@v2
-      with:
-        path: |
-          node_modules
-          */*/node_modules
-        key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+        cache: "npm"
+        cache-dependency-path: "**/package-lock.json"
 
     - name: Install dependencies
       run: npm run install-dependencies
@@ -86,13 +76,8 @@ jobs:
       uses: actions/setup-node@v3.0.0
       with:
         node-version-file: ".nvmrc"
-    - name: Restore cache
-      uses: actions/cache@v2
-      with:
-        path: |
-          node_modules
-          */*/node_modules
-        key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+        cache: "npm"
+        cache-dependency-path: "**/package-lock.json"
 
     - name: Install dependencies
       run: npx lerna bootstrap --hoist
@@ -124,17 +109,11 @@ jobs:
       uses: actions/setup-node@v3.0.0
       with:
         node-version-file: ".nvmrc"
+        cache: "npm"
+        cache-dependency-path: "**/package-lock.json"
     - run: echo '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}' > ~/.npmrc
       env:
         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-
-    - name: Restore cache
-      uses: actions/cache@v2
-      with:
-        path: |
-          node_modules
-          */*/node_modules
-        key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
 
     - name: Install dependencies
       run: npm run install-dependencies
