@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@types/jest": "27.4.1",
-    "@types/lodash": "4.14.179",
+    "@types/lodash": "4.14.180",
     "core-js": "3.20.2",
     "jest": "27.5.1",
     "jest-cli": "27.5.1",
@@ -55,7 +55,7 @@
     "typescript": "4.6.2"
   },
   "peerDependencies": {
-    "core-js": "3.20.2",
-    "lodash": "4.17.21"
+    "core-js": "^3.0.0",
+    "lodash": "^4.0.0"
   }
 }

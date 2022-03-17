@@ -47,7 +47,7 @@ const Layout = ({ jobs, version, ...props }) => (
 );
 
 Layout.propTypes = {
-  jobs: PropTypes.arrayOf(PropTypes.object),
+  jobs: PropTypes.arrayOf(PropTypes.object), // eslint-disable-line react/forbid-prop-types
   version: PropTypes.string,
 };
 
@@ -63,7 +63,7 @@ const JobsProvider = ({ jobs, ...restProps }) => {
 };
 
 JobsProvider.propTypes = {
-  jobs: PropTypes.arrayOf(PropTypes.object).isRequired,
+  jobs: PropTypes.arrayOf(PropTypes.object).isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
 const OverviewContent = () => {
