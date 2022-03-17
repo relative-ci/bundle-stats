@@ -12,17 +12,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    # Cache packages when the branch is not update-dependencies or dependabot/*
+    - name: Resolve caching
+      id: cache
+      if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
+      run: echo "::set-output name=PACKAGE::npm"
     - name: Use Node.js
       uses: actions/setup-node@v3.0.0
       with:
         node-version-file: ".nvmrc"
-    - name: Restore cache
-      uses: actions/cache@v2
-      with:
-        path: |
-          node_modules
-          */*/node_modules
-        key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+        cache: ${{ steps.cache.outputs.PACKAGE }}
+        cache-dependency-path: "**/package-lock.json"
 
     - name: Install dependencies
       run: npm run install-dependencies
@@ -53,17 +53,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    # Cache packages when the branch is not update-dependencies or dependabot/*
+    - name: Resolve caching
+      id: cache
+      if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
+      run: echo "::set-output name=PACKAGE::npm"
     - name: Use Node.js
       uses: actions/setup-node@v3.0.0
       with:
         node-version-file: ".nvmrc"
-    - name: Restore cache
-      uses: actions/cache@v2
-      with:
-        path: |
-          node_modules
-          */*/node_modules
-        key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+        cache: ${{ steps.cache.outputs.PACKAGE }}
+        cache-dependency-path: "**/package-lock.json"
 
     - name: Install dependencies
       run: npm run install-dependencies
@@ -82,17 +82,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    # Cache packages when the branch is not update-dependencies or dependabot/*
+    - name: Resolve caching
+      id: cache
+      if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
+      run: echo "::set-output name=PACKAGE::npm"
     - name: Use Node.js
       uses: actions/setup-node@v3.0.0
       with:
         node-version-file: ".nvmrc"
-    - name: Restore cache
-      uses: actions/cache@v2
-      with:
-        path: |
-          node_modules
-          */*/node_modules
-        key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+        cache: ${{ steps.cache.outputs.PACKAGE }}
+        cache-dependency-path: "**/package-lock.json"
 
     - name: Install dependencies
       run: npx lerna bootstrap --hoist
@@ -120,21 +120,20 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    # Cache packages when the branch is not update-dependencies or dependabot/*
+    - name: Resolve caching
+      id: cache
+      if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
+      run: echo "::set-output name=PACKAGE::npm"
     - name: Use Node.js
       uses: actions/setup-node@v3.0.0
       with:
         node-version-file: ".nvmrc"
+        cache: ${{ steps.cache.outputs.PACKAGE }}
+        cache-dependency-path: "**/package-lock.json"
     - run: echo '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}' > ~/.npmrc
       env:
         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-
-    - name: Restore cache
-      uses: actions/cache@v2
-      with:
-        path: |
-          node_modules
-          */*/node_modules
-        key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
 
     - name: Install dependencies
       run: npm run install-dependencies
