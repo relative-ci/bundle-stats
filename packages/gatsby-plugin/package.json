@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-bundle-stats",
-  "version": "3.3.1-beta.4",
+  "version": "3.3.1-beta.5",
   "description": "In-depth bundle analyzer for webpack(bundle size, assets, modules)",
   "main": "index.js",
   "engines": {
@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/gatsby-plugin#readme",
   "dependencies": {
-    "bundle-stats-webpack-plugin": "^3.3.1-beta.4"
+    "bundle-stats-webpack-plugin": "^3.3.1-beta.5"
   },
   "gitHead": "9b934bd62ffc6e8ee0bf0dda521c497d3b307ec4"
 }
