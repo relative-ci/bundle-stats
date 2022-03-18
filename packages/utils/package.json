@@ -57,5 +57,6 @@
   "peerDependencies": {
     "core-js": "^3.0.0",
     "lodash": "^4.0.0"
-  }
+  },
+  "gitHead": "9b934bd62ffc6e8ee0bf0dda521c497d3b307ec4"
 }

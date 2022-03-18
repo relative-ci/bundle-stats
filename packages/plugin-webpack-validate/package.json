@@ -45,5 +45,6 @@
   },
   "dependencies": {
     "superstruct": "0.8.3"
-  }
+  },
+  "gitHead": "9b934bd62ffc6e8ee0bf0dda521c497d3b307ec4"
 }

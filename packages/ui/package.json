@@ -91,5 +91,6 @@
     "modern-css-reset": "1.4.0",
     "query-string": "7.1.1",
     "use-query-params": "1.2.3"
-  }
+  },
+  "gitHead": "9b934bd62ffc6e8ee0bf0dda521c497d3b307ec4"
 }
