@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/plugin-webpack-filter",
-  "version": "3.3.1-beta.5",
+  "version": "3.3.1-beta.6",
   "description": "BundleStats webpack filter plugin",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
