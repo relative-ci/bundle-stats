@@ -131,9 +131,7 @@ jobs:
         node-version-file: ".nvmrc"
         cache: ${{ steps.cache.outputs.PACKAGE }}
         cache-dependency-path: "**/package-lock.json"
-    - run: echo '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}' > ~/.npmrc
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        registry-url: 'https://registry.npmjs.org'
 
     - name: Install dependencies
       run: npm run install-dependencies
