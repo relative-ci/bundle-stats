@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/plugin-webpack-filter",
-  "version": "3.3.1-beta.7",
+  "version": "3.3.1-beta.8",
   "description": "BundleStats webpack filter plugin",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
@@ -50,5 +50,6 @@
   "peerDependencies": {
     "core-js": "^3.0.0",
     "lodash": "^4.0.0"
-  }
+  },
+  "gitHead": "2dd94206f3d76fcea5381b20df97d949c38a32d6"
 }
