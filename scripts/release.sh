@@ -12,7 +12,7 @@ const options = [
    `--dist-tag ${distTag}`,
    '--no-git-reset',
    '--no-changelog',
-   '--git-tag-version',
+   '--no-git-tag-version',
    '--no-push',
    '--yes'
  ];
