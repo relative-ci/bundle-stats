@@ -131,7 +131,7 @@ export const BundleModules = ({
       disabled: jobs.length <= 1,
     },
     [MODULE_FILTERS.DUPLICATED]: {
-      label: 'Duplicated',
+      label: 'Duplicate',
       defaultValue: filters[MODULE_FILTERS.DUPLICATED],
       disabled: jobs.length <= 1,
     },
