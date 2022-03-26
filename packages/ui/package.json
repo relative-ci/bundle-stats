@@ -37,7 +37,7 @@
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/ui#readme",
   "devDependencies": {
     "@babel/cli": "7.17.6",
-    "@babel/core": "7.17.7",
+    "@babel/core": "7.17.8",
     "@babel/plugin-proposal-class-properties": "7.16.7",
     "@babel/preset-env": "7.16.11",
     "@babel/preset-react": "7.16.7",
@@ -57,7 +57,7 @@
     "chromatic": "6.5.3",
     "classnames": "2.3.1",
     "colormap": "2.3.2",
-    "core-js": "3.20.2",
+    "core-js": "3.21.1",
     "cross-env": "7.0.3",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.6",
