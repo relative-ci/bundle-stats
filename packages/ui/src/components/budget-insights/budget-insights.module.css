@@ -20,11 +20,15 @@
   margin: 0 0 0 auto !important;
 }
 
-.danger .groupIcon {
+.group-danger .groupIcon {
   color: var(--color-danger);
 }
 
-.success .groupIcon {
+.group-warning .groupIcon {
+  color: var(--color-warning);
+}
+
+.group-success .groupIcon {
   color: var(--color-success);
 }
 

@@ -1,5 +1,7 @@
 import get from 'lodash/get';
+import template from 'lodash/template';
 
+import * as types from '../types';
 import { InsightType } from '../constants';
 import { getGlobalMetricType } from '../utils';
 
@@ -12,33 +14,119 @@ interface Options {
   budgets?: Array<OptionBudgetMetric>;
 }
 
-interface BudgetInsight {
+interface BudgetInsightMetricData {
   currentValue: number;
   budgetValue: number;
   failed: boolean;
 }
 
-interface BudgetInsightInfo {
+interface BudgetInsightMetric {
+  /** Metric budget insight type */
   type: InsightType;
   message: {
-    template: string;
-    data: Record<string, unknown>;
+    text: string;
+    md: string;
   };
-  source: {
-    metricId: string;
-    budgetInsight: BudgetInsight;
-  };
+  /** Metric budget check data */
+  data: BudgetInsightMetricData;
 }
 
-interface BudgetInsights {
-  [metricId: string]: BudgetInsight;
+interface BudgetInsight extends types.Insight {
+  data: {
+    [metricId: string]: BudgetInsightMetric;
+  };
 }
 
 interface BudgetsInsightsOutput {
   insights: {
-    budgets: BudgetInsights;
+    budgets: BudgetInsight;
   };
 }
+
+const resolveType = (insights: Array<[string, BudgetInsightMetric]>): InsightType => {
+  if (insights.find(([_, { type }]) => type === InsightType.ERROR)) {
+    return InsightType.ERROR;
+  }
+
+  if (insights.find(([_, { type }]) => type === InsightType.WARNING)) {
+    return InsightType.WARNING;
+  }
+
+  return InsightType.SUCCESS;
+};
+
+// 3/3 budget checks passed
+// 2/3 budget checks failed
+// 1 failed, 1 warning, 2 success
+
+const budgetInsightTemplate = template(
+  '<%= count %>/<%= total %> budget checks <%= status %>'
+);
+
+const resolveStatus = (failedCount: number, warningCount: number): string => {
+  if (failedCount) {
+    return 'failed';
+  }
+
+  if (warningCount) {
+    return 'warned';
+  }
+
+  return 'passed';
+};
+
+const getMessage = (insights: Array<[string, BudgetInsightMetric]>) => {
+  const total = insights.length;
+  const failedCount = insights.filter(([___, insight]) => insight.type === InsightType.ERROR).length;
+  const warningCount = insights.filter(([___, insight]) => insight.type === InsightType.WARNING).length;
+  const count = failedCount || warningCount || total;
+  const status = resolveStatus(failedCount, warningCount);
+
+  return {
+    text: budgetInsightTemplate({
+      count,
+      total,
+      status,
+    }),
+    md: budgetInsightTemplate({
+      count: `**${count}**`,
+      total: `**${total}**`,
+      status,
+    }),
+  };
+};
+
+const budgetInsightMetricTemplate = template(
+  // Add escapes for (|) to avoid lodash.template syntax errors
+  // eslint-disable-next-line no-useless-escape
+  '<%= metricLabel %> value \(<%= currentValue %>\) is <%= diffLabel %> <%= budgetValue %> budget',
+);
+
+const resolveDiffLabel = (metricBudgetInsight: BudgetInsightMetricData): string => {
+  const { currentValue, budgetValue } = metricBudgetInsight;
+
+  if (currentValue > budgetValue) {
+    return 'over';
+  }
+
+  if (currentValue < budgetValue) {
+    return 'under';
+  }
+
+  return 'equal with';
+};
+
+const resolveBudgetInsightMetricType = (metricBudgetInsight: BudgetInsightMetricData): InsightType => {
+  if (metricBudgetInsight.failed) {
+    return InsightType.ERROR;
+  }
+
+  if (metricBudgetInsight.currentValue === metricBudgetInsight.budgetValue) {
+    return InsightType.WARNING;
+  }
+
+  return InsightType.SUCCESS;
+};
 
 export const getExtract =
   (source: string) => (
@@ -53,91 +141,72 @@ export const getExtract =
       return null;
     }
 
-    const insights: Array<[string, BudgetInsight]> = [];
+    const insights: Array<[string, BudgetInsightMetric]> = [];
 
     budgetsOptions.forEach((budgetOption) => {
-      const { metric: budgetMetricId, value: budgetValue } = budgetOption;
-      const currentValue = get(currentExtractedData, `metrics.${budgetMetricId}.value`);
-      const metric = getGlobalMetricType(`${source}.${budgetMetricId}`);
+      const { metric: sourceMetricId, value: budgetValue } = budgetOption;
+      const currentValue = get(currentExtractedData, `metrics.${sourceMetricId}.value`);
+      const metricData = getGlobalMetricType(`${source}.${sourceMetricId}`);
 
       if (!currentValue) {
         return;
       }
 
       const isValueOverBudget = currentValue > budgetValue;
+      const failed = metricData.biggerIsBetter ? !isValueOverBudget : isValueOverBudget;
 
-      const budgetInsight = {
+      const budgetInsightMetricData = {
         currentValue,
         budgetValue,
-        failed: metric.biggerIsBetter ? !isValueOverBudget : isValueOverBudget,
+        failed,
       };
 
-      insights.push([budgetMetricId, budgetInsight]);
+      // Message template data
+      const diffLabel = resolveDiffLabel(budgetInsightMetricData);
+      const type = resolveBudgetInsightMetricType(budgetInsightMetricData);
+      const currentFormattedValue = metricData.formatter(currentValue);
+      const budgetFormattedValue = metricData.formatter(budgetValue);
+
+      const messageText = budgetInsightMetricTemplate({
+        metricLabel: metricData.label,
+        currentValue: currentFormattedValue,
+        diffLabel,
+        budgetValue: budgetFormattedValue,
+      });
+      const messageMd = budgetInsightMetricTemplate({
+        metricLabel: `**${metricData.label}**`,
+        currentValue: `**${currentFormattedValue}**`,
+        diffLabel,
+        budgetValue: `**${budgetFormattedValue}**`,
+      });
+
+      insights.push([
+        sourceMetricId,
+        {
+          type,
+          message: {
+            text: messageText,
+            md: messageMd,
+          },
+          data: budgetInsightMetricData,
+        },
+      ]);
     });
 
     if (insights.length === 0) {
       return null;
     }
 
+    const type = resolveType(insights);
+    const message = getMessage(insights);
+
     return {
       insights: {
-        budgets: Object.fromEntries(insights),
+        budgets: {
+          type,
+          message,
+          data: Object.fromEntries(insights),
+        },
       },
     };
   };
-
-const resolveDiffLabel = (budgetInsight: BudgetInsight): string => {
-  const { currentValue, budgetValue } = budgetInsight;
-
-  if (currentValue > budgetValue) {
-    return 'over';
-  }
-
-  if (currentValue < budgetValue) {
-    return 'under';
-  }
-
-  return 'equal with';
-};
-
-const resolveType = (budgetInsight: BudgetInsight): InsightType => {
-  if (budgetInsight.failed) {
-    return InsightType.ERROR;
-  }
-
-  if (budgetInsight.currentValue === budgetInsight.budgetValue) {
-    return InsightType.WARNING;
-  }
-
-  return InsightType.SUCCESS;
-};
-
-// Add escapes for (|) to avoid lodash.template syntax errors
-// eslint-disable-next-line no-useless-escape
-export const INFO_MESSAGE_TEMPLATE = '<%= metricLabel %> value \(<%= currentValue %>\) is <%= diffLabel %> <%= budgetValue %> budget';
-
-export const getInfo = (globalMetricId: string, budgetInsight: BudgetInsight): BudgetInsightInfo => {
-  const metric = getGlobalMetricType(globalMetricId);
-
-  const diffLabel = resolveDiffLabel(budgetInsight);
-  const type = resolveType(budgetInsight);
-  const currentValue = metric.formatter(budgetInsight.currentValue);
-  const budgetValue = metric.formatter(budgetInsight.budgetValue);
-
-  return {
-    type,
-    message: {
-      template: INFO_MESSAGE_TEMPLATE,
-      data: {
-        metricLabel: metric.label,
-        diffLabel,
-        currentValue,
-        budgetValue,
-      },
-    },
-    source: {
-      metricId: globalMetricId,
-      budgetInsight,
-    },
-  };
-};

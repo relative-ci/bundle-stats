@@ -9,33 +9,48 @@ stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => (
   <BudgetInfo
-    metricId="webpack.assetCount"
     budgetInsight={{
-      budgetValue: 300,
-      currentValue: 250,
-      failed: false,
+      type: 'SUCCESS',
+      message: {
+        text: 'Metric is under the budget',
+      },
+      data: {
+        budgetValue: 300,
+        currentValue: 250,
+        failed: false,
+      },
     }}
   />
 ));
 
 stories.add('error', () => (
   <BudgetInfo
-    metricId="webpack.assetCount"
     budgetInsight={{
-      budgetValue: 300,
-      currentValue: 350,
-      failed: true,
+      type: 'ERROR',
+      message: {
+        text: 'Metric is over the budget',
+      },
+      data: {
+        budgetValue: 300,
+        currentValue: 250,
+        failed: false,
+      },
     }}
   />
 ));
 
 stories.add('warning', () => (
   <BudgetInfo
-    metricId="webpack.assetCount"
     budgetInsight={{
-      budgetValue: 300,
-      currentValue: 300,
-      failed: false,
+      type: 'WARNING',
+      message: {
+        text: 'Metric is equal the budget',
+      },
+      data: {
+        budgetValue: 300,
+        currentValue: 250,
+        failed: false,
+      },
     }}
   />
 ));

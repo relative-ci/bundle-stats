@@ -49,9 +49,16 @@ export const BudgetError = Template.bind();
 BudgetError.args = {
   showMetricDescription: true,
   budget: {
-    currentValue: 120 * 1000,
-    budgetValue: 100 * 1000,
-    failed: true,
+    type: 'ERROR',
+    message: {
+      text: 'Metric is over the budget',
+      md: 'Metric is over the budget',
+    },
+    data: {
+      currentValue: 120 * 1000,
+      budgetValue: 100 * 1000,
+      failed: true,
+    },
   },
 };
 
@@ -60,9 +67,16 @@ export const BudgetSuccess = Template.bind();
 BudgetSuccess.args = {
   showMetricDescription: true,
   budget: {
-    currentValue: 120 * 1000,
-    budgetValue: 120 * 1024,
-    failed: false,
+    type: 'SUCCESS',
+    message: {
+      text: 'Metric is under the budget',
+      md: 'Metric is under the budget',
+    },
+    data: {
+      currentValue: 120 * 1000,
+      budgetValue: 120 * 1024,
+      failed: false,
+    },
   },
 };
 

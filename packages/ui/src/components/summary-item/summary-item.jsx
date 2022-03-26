@@ -62,7 +62,7 @@ export const SummaryItem = ({
         ) : (
           metric.label
         )}
-        {budget && <BudgetInfo className={css.budgetInfo} metricId={id} budgetInsight={budget} />}
+        {budget && <BudgetInfo className={css.budgetInfo} budgetInsight={budget} />}
       </h3>
 
       {!loading ? (
@@ -131,9 +131,5 @@ SummaryItem.propTypes = {
   showDelta: PropTypes.bool,
 
   /** Budget insight data */
-  budget: PropTypes.shape({
-    currentBalue: PropTypes.number,
-    budgetValue: PropTypes.number,
-    failed: PropTypes.bool,
-  }),
+  budget: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };

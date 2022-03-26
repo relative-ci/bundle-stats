@@ -2,7 +2,6 @@ import React, { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { METRIC_COMPONENT_LINKS } from '@bundle-stats/utils';
-import * as budgetsInsightsTransformer from '@bundle-stats/utils/lib-esm/transformers/budgets-insights';
 
 import { Box } from '../../layout/box';
 import { Stack } from '../../layout/stack';
@@ -13,19 +12,12 @@ import { ComponentLink } from '../component-link';
 import css from './budget-insights.module.css';
 
 const Budget = (props) => {
-  const { className, metricId, budgetInsight, CustomLink } = props;
+  const { className, metricId, budget, CustomLink } = props;
   const componentLinkOptions = METRIC_COMPONENT_LINKS.get(metricId);
-  const budgetInsightInfo = budgetsInsightsTransformer.getInfo(metricId, budgetInsight);
-  const { data: messageData } = budgetInsightInfo.message;
 
   return (
     <CustomLink className={cx(css.budget, className)} {...componentLinkOptions?.link}>
-      <strong>{messageData.metricLabel}</strong>
-      {` value (`}
-      <strong>{messageData.currentValue}</strong>
-      {`) is ${messageData.diffLabel} `}
-      <strong>{messageData.budgetValue}</strong>
-      {` budget `}
+      {budget.message.text}
     </CustomLink>
   );
 };
@@ -33,10 +25,15 @@ const Budget = (props) => {
 Budget.propTypes = {
   className: PropTypes.string,
   metricId: PropTypes.string.isRequired,
-  budgetInsight: PropTypes.shape({
-    currentValue: PropTypes.number.isRequired,
-    budgetValue: PropTypes.number.isRequired,
-    failed: PropTypes.bool.isRequired,
+  budget: PropTypes.shape({
+    message: PropTypes.shape({
+      text: PropTypes.string,
+    }),
+    data: PropTypes.shape({
+      currentValue: PropTypes.number.isRequired,
+      budgetValue: PropTypes.number.isRequired,
+      failed: PropTypes.bool.isRequired,
+    }),
   }).isRequired,
   CustomLink: PropTypes.elementType.isRequired,
 };
@@ -103,44 +100,57 @@ BudgetsGroup.defaultProps = {
   className: '',
 };
 
+const BUDGET_ALERT_KIND = new Map([
+  ['ERROR', 'danger'],
+  ['WARNING', 'warning'],
+  ['SUCCESS', 'success'],
+]);
+
+const BUDGET_ICON = new Map([
+  ['ERROR', Icon.ICONS.ALERT_CIRCLE],
+  ['WARNING', Icon.ICONS.WARNING],
+  ['SUCCESS', Icon.ICONS.CHECK_CIRCLE],
+]);
+
 export const BudgetInsights = (props) => {
   const { className, source, budgets, CustomLink } = props;
+  const [showBudgets, setShowBudgets] = useState(false);
 
-  const [failedBudgets, passedBudgets] = useMemo(() => {
-    const passed = [];
-    const failed = [];
-
-    Object.entries(budgets).forEach(([key, budget]) => {
-      if (budget.failed) {
-        failed.push([key, budget]);
-      } else {
-        passed.push([key, budget]);
-      }
-    });
-
-    return [failed, passed];
-  }, [budgets]);
+  const iconGlyph = BUDGET_ICON.get(budgets.type);
+  const alertKind = BUDGET_ALERT_KIND.get(budgets.type);
+  const rootClassName = cx(css.group, className, css[`group-${alertKind}`]);
 
   return (
-    <Stack className={className} space="xsmall">
-      {failedBudgets.length > 0 && (
-        <BudgetsGroup
-          kind="danger"
-          source={source}
-          budgets={failedBudgets}
-          CustomLink={CustomLink}
-        />
-      )}
+    <Alert kind={alertKind} padding="none" className={rootClassName}>
+      <Box
+        padding={['xsmall', 'small']}
+        className={css.groupHeader}
+        as="button"
+        type="button"
+        onClick={() => setShowBudgets(!showBudgets)}
+      >
+        <FlexStack space="xxsmall" className={css.groupTitle}>
+          {iconGlyph && <Icon className={css.groupIcon} glyph={iconGlyph} />}
+          <span>{budgets.message.text}</span>
+          <span className={css.groupTitleToggle}>{showBudgets ? 'hide' : 'show'} all</span>
+        </FlexStack>
+      </Box>
 
-      {passedBudgets.length > 0 && (
-        <BudgetsGroup
-          kind="success"
-          source={source}
-          budgets={passedBudgets}
-          CustomLink={CustomLink}
-        />
+      {showBudgets && (
+        <Box padding={['xsmall', 'small']} className={css.groupContent}>
+          <Stack space="none">
+            {Object.entries(budgets.data).map(([key, budget]) => (
+              <Budget
+                key={key}
+                metricId={`${source}.${key}`}
+                budget={budget}
+                CustomLink={CustomLink}
+              />
+            ))}
+          </Stack>
+        </Box>
       )}
-    </Stack>
+    </Alert>
   );
 };
 

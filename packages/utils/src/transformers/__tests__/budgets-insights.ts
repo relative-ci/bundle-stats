@@ -1,4 +1,4 @@
-import { INFO_MESSAGE_TEMPLATE, getInfo, getExtract } from '../budgets-insights';
+import { getExtract } from '../budgets-insights';
 
 describe('transformers/budgetsInsights', () => {
   describe('extract', () => {
@@ -38,10 +38,24 @@ describe('transformers/budgetsInsights', () => {
       expect(actual).toEqual({
         insights: {
           budgets: {
-            totalSizeByTypeALL: {
-              currentValue: 11776,
-              budgetValue: 10240,
-              failed: true,
+            type: 'ERROR',
+            message: {
+              text: '1/1 budget checks failed',
+              md: '**1**/**1** budget checks failed',
+            },
+            data: {
+              totalSizeByTypeALL: {
+                type: 'ERROR',
+                message: {
+                  text: 'Bundle Size value (11.5KB) is over 10KB budget',
+                  md: '**Bundle Size** value (**11.5KB**) is over **10KB** budget',
+                },
+                data: {
+                  currentValue: 11776,
+                  budgetValue: 10240,
+                  failed: true,
+                },
+              },
             },
           },
         },
@@ -70,100 +84,25 @@ describe('transformers/budgetsInsights', () => {
       expect(actual).toEqual({
         insights: {
           budgets: {
-            'sizes.totalSizeByTypeJS': {
-              currentValue: 11776,
-              budgetValue: 10240,
-              failed: true,
+            type: 'ERROR',
+            message: {
+              text: '1/1 budget checks failed',
+              md: '**1**/**1** budget checks failed',
             },
-          },
-        },
-      });
-    });
-  });
-
-  describe('getInfo', () => {
-    test('should get failed budget insight', () => {
-      expect(
-        getInfo('webpack.totalSizeByTypeALL', {
-          currentValue: 512 * 1024,
-          budgetValue: 256 * 1024,
-          failed: true,
-        }),
-      ).toEqual({
-        type: 'ERROR',
-        message: {
-          template: INFO_MESSAGE_TEMPLATE,
-          data: {
-            metricLabel: 'Bundle Size',
-            diffLabel: 'over',
-            currentValue: '512KB',
-            budgetValue: '256KB',
-          },
-        },
-        source: {
-          metricId: 'webpack.totalSizeByTypeALL',
-          budgetInsight: {
-            currentValue: 512 * 1024,
-            budgetValue: 256 * 1024,
-            failed: true,
-          },
-        },
-      });
-    });
-
-    test('should get success budget insight', () => {
-      expect(
-        getInfo('webpack.totalSizeByTypeALL', {
-          currentValue: 512 * 1024,
-          budgetValue: 1024 * 1024,
-          failed: false,
-        }),
-      ).toEqual({
-        type: 'SUCCESS',
-        message: {
-          template: INFO_MESSAGE_TEMPLATE,
-          data: {
-            metricLabel: 'Bundle Size',
-            diffLabel: 'under',
-            currentValue: '512KB',
-            budgetValue: '1MB',
-          },
-        },
-        source: {
-          metricId: 'webpack.totalSizeByTypeALL',
-          budgetInsight: {
-            currentValue: 512 * 1024,
-            budgetValue: 1024 * 1024,
-            failed: false,
-          },
-        },
-      });
-    });
-
-    test('should get equal budget insight', () => {
-      expect(
-        getInfo('webpack.totalSizeByTypeALL', {
-          currentValue: 512 * 1024,
-          budgetValue: 512 * 1024,
-          failed: false,
-        }),
-      ).toEqual({
-        type: 'WARNING',
-        message: {
-          template: INFO_MESSAGE_TEMPLATE,
-          data: {
-            metricLabel: 'Bundle Size',
-            diffLabel: 'equal with',
-            currentValue: '512KB',
-            budgetValue: '512KB',
-          },
-        },
-        source: {
-          metricId: 'webpack.totalSizeByTypeALL',
-          budgetInsight: {
-            currentValue: 512 * 1024,
-            budgetValue: 512 * 1024,
-            failed: false,
+            data: {
+              'sizes.totalSizeByTypeJS': {
+                type: 'ERROR',
+                message: {
+                  text: 'JS value (11.5KB) is over 10KB budget',
+                  md: '**JS** value (**11.5KB**) is over **10KB** budget',
+                },
+                data: {
+                  currentValue: 11776,
+                  budgetValue: 10240,
+                  failed: true,
+                },
+              },
+            },
           },
         },
       });

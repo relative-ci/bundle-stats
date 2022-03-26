@@ -2,7 +2,6 @@ import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { InsightType } from '@bundle-stats/utils';
-import * as budgetsInsightsTransformer from '@bundle-stats/utils/lib-esm/transformers/budgets-insights';
 
 import { Icon } from '../../ui/icon';
 import { Tooltip } from '../../ui/tooltip';
@@ -24,38 +23,29 @@ const INSIGHT_TYPE_MAP = {
   },
 };
 
-export const BudgetInfo = ({ className = '', metricId, budgetInsight }) => {
-  const budgetInsightInfo = budgetsInsightsTransformer.getInfo(metricId, budgetInsight);
-  const { className: insightTypeClassName, glyph } = INSIGHT_TYPE_MAP[budgetInsightInfo.type];
+export const BudgetInfo = ({ className = '', budgetInsight }) => {
+  const { className: insightTypeClassName, glyph } = INSIGHT_TYPE_MAP[budgetInsight.type];
 
   const rootClassName = cx(css.root, insightTypeClassName, className);
-  const { data: messageData } = budgetInsightInfo.message;
 
   return (
-    <Tooltip
-      className={rootClassName}
-      title={
-        <>
-          <strong>{messageData.metricLabel}</strong>
-          {` value (`}
-          <strong>{messageData.currentValue}</strong>
-          {`) is ${messageData.diffLabel} `}
-          <strong>{messageData.budgetValue}</strong>
-          {` budget `}
-        </>
-      }
-    >
+    <Tooltip className={rootClassName} title={budgetInsight.message.text}>
       <Icon className={css.icon} glyph={glyph} size="medium" />
     </Tooltip>
   );
 };
 
 BudgetInfo.propTypes = {
-  metricId: PropTypes.string.isRequired,
   budgetInsight: PropTypes.shape({
-    currentValue: PropTypes.number,
-    budgetValue: PropTypes.number,
-    failed: PropTypes.bool,
+    type: PropTypes.string,
+    message: PropTypes.shape({
+      text: PropTypes.string,
+    }),
+    data: PropTypes.shape({
+      currentValue: PropTypes.number,
+      budgetValue: PropTypes.number,
+      failed: PropTypes.bool,
+    }),
   }).isRequired,
   className: PropTypes.string,
 };

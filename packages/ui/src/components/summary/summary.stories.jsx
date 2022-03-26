@@ -20,26 +20,54 @@ stories.add('budgets', () => (
   <Summary
     data={MULTIPLE_JOBS[0].summary}
     budgets={{
-      webpack: {
+      data: {
         totalSizeByTypeALL: {
-          currentValue: MULTIPLE_JOBS[0].summary.webpack.totalSizeByTypeALL.current,
-          budgetValue: 1024 * 1024,
-          failed: false,
+          type: 'ERROR',
+          message: {
+            text: 'Metric is over the budget',
+            md: 'Metric is over the budget',
+          },
+          data: {
+            currentValue: MULTIPLE_JOBS[0].summary.webpack.totalSizeByTypeALL.current,
+            budgetValue: 1024 * 1024,
+            failed: false,
+          },
         },
         totalInitialSizeJS: {
-          currentValue: MULTIPLE_JOBS[0].summary.webpack.totalInitialSizeJS.current,
-          budgetValue: 512 * 1024,
-          failed: true,
+          type: 'WARNING',
+          message: {
+            text: 'Metric is over the budget',
+            md: 'Metric is over the budget',
+          },
+          data: {
+            currentValue: MULTIPLE_JOBS[0].summary.webpack.totalInitialSizeJS.current,
+            budgetValue: 512 * 1024,
+            failed: true,
+          },
         },
         totalInitialSizeCSS: {
-          currentValue: MULTIPLE_JOBS[0].summary.webpack.totalInitialSizeCSS.current,
-          budgetValue: 50 * 1024,
-          failed: false,
+          type: 'SUCCESS',
+          message: {
+            text: 'Metric is under the budget',
+            md: 'Metric is under the budget',
+          },
+          data: {
+            currentValue: MULTIPLE_JOBS[0].summary.webpack.totalInitialSizeCSS.current,
+            budgetValue: 50 * 1024,
+            failed: false,
+          },
         },
         chunkCount: {
-          currentValue: MULTIPLE_JOBS[0].summary.webpack.chunkCount.current,
-          budgetValue: 50,
-          failed: false,
+          type: 'SUCCESS',
+          message: {
+            text: 'Metric is under the budget',
+            md: 'Metric is under the budget',
+          },
+          data: {
+            currentValue: MULTIPLE_JOBS[0].summary.webpack.chunkCount.current,
+            budgetValue: 50,
+            failed: false,
+          },
         },
       },
     }}
