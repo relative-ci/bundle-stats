@@ -86,7 +86,7 @@
   },
   "dependencies": {
     "@bundle-stats/utils": "^3.3.3",
-    "ariakit": "2.0.0-alpha.19",
+    "ariakit": "2.0.0-alpha.20",
     "date-fns": "^2.28.0",
     "modern-css-reset": "^1.4.0",
     "query-string": "^7.1.0",
