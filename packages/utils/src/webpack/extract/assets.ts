@@ -1,17 +1,46 @@
-import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 
 import { getAssetName, normalizeChunkId } from '../utils';
 
 const IGNORE_PATTERN = /\.(map|LICENSE\.txt)$/;
 
-export const extractAssets = (webpackStats) => {
-  const webpackAssets = get(webpackStats, 'assets', []);
-  const webpackChunks = get(webpackStats, 'chunks', []);
-  const webpackEntrypoints = get(webpackStats, 'entrypoints', {});
+interface WebpackStatsAsset {
+  name: string;
+  size: number;
+}
 
-  const entryItems = Object.values(webpackEntrypoints)
-    .map(({ assets: items }) => items)
+interface WebpackStatsEntrypointAsset {
+  name: string;
+}
+
+interface WebpackStatsEntrypoint {
+  // Webpack 5 provides { name, size }
+  assets: Array<WebpackStatsEntrypointAsset | string>;
+}
+
+type WebpackStatsEntrypoints = Record<string, WebpackStatsEntrypoint>;
+
+interface WebpackStatsChunk {
+  id: string;
+  entry: boolean;
+  initial: boolean;
+  files: Array<string>;
+  names: Array<string>;
+}
+
+export const extractAssets = (webpackStats: any) => {
+  const webpackAssets: Array<WebpackStatsAsset> = webpackStats?.assets || [];
+  const webpackChunks: Array<WebpackStatsChunk> = webpackStats?.chunks || [];
+  const webpackEntrypoints: WebpackStatsEntrypoints = webpackStats?.entrypoints || {};
+
+  const entrypointsAssets = Object.values(webpackEntrypoints)
+    .map(({ assets: items }) => items.map((item) => {
+      if (typeof item === 'object') {
+        return item.name;
+      }
+
+      return item;
+    }))
     .flat();
 
   const initialItems = webpackChunks
@@ -43,7 +72,7 @@ export const extractAssets = (webpackStats) => {
       [normalizedName]: {
         name: baseName,
         value: size,
-        isEntry: entryItems.includes(name),
+        isEntry: entrypointsAssets.includes(name),
         isInitial: initialItems.includes(name),
         isChunk: Boolean(assetChunk),
         ...(assetChunk ? { chunkId: assetChunk.id } : {}),
@@ -57,10 +86,10 @@ export const extractAssets = (webpackStats) => {
     },
     ...(!isEmpty(normalizedChunks)
       ? {
-          meta: {
-            chunks: normalizedChunks.map(({ id, name }) => ({ id, name })),
-          },
-        }
+        meta: {
+          chunks: normalizedChunks.map(({ id, name }) => ({ id, name })),
+        },
+      }
       : {}),
   };
 };
