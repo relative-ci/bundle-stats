@@ -10,8 +10,8 @@ export const extractAssets = (webpackStats) => {
   const webpackChunks = get(webpackStats, 'chunks', []);
   const webpackEntrypoints = get(webpackStats, 'entrypoints', {});
 
-  const entryItems = Object.values(webpackEntrypoints)
-    .map(({ assets: items }) => items)
+  const entrypointsAssets = Object.values(webpackEntrypoints)
+    .map(({ assets: items }) => items.map((item) => item.name || item))
     .flat();
 
   const initialItems = webpackChunks
@@ -43,7 +43,7 @@ export const extractAssets = (webpackStats) => {
       [normalizedName]: {
         name: baseName,
         value: size,
-        isEntry: entryItems.includes(name),
+        isEntry: entrypointsAssets.includes(name),
         isInitial: initialItems.includes(name),
         isChunk: Boolean(assetChunk),
         ...(assetChunk ? { chunkId: assetChunk.id } : {}),
