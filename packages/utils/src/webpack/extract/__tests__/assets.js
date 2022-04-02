@@ -63,7 +63,7 @@ describe('Webpack/extract/assets', () => {
           {
             id: '2',
             name: 'app',
-          }
+          },
         ],
       },
       metrics: {
@@ -90,6 +90,56 @@ describe('Webpack/extract/assets', () => {
             isEntry: false,
             isInitial: false,
             isChunk: false,
+          },
+        },
+      },
+    };
+
+    expect(actual).toEqual(expected);
+  });
+
+  test('should extract entry flag from webpack5 structure', () => {
+    const actual = extractAssets({
+      assets: [
+        {
+          name: 'js/main.bc22113.js',
+          size: 100,
+        },
+      ],
+      chunks: [
+        {
+          entry: true,
+          id: '1',
+          initial: true,
+          files: ['js/main.bc22113.js'],
+          names: ['main'],
+        },
+      ],
+      entrypoints: {
+        main: {
+          assets: [{ name: 'js/main.bc22113.js' }],
+        },
+      },
+    });
+
+    const expected = {
+      meta: {
+        chunks: [
+          {
+            id: '1',
+            name: 'main',
+          },
+        ],
+      },
+      metrics: {
+        assets: {
+          'js/main.js': {
+            name: 'js/main.bc22113.js',
+            value: 100,
+            isEntry: true,
+            isInitial: true,
+            isChunk: true,
+            chunkId: '1',
           },
         },
       },
@@ -197,7 +247,7 @@ describe('Webpack/extract/assets', () => {
           {
             id: '2',
             name: 'app',
-          }
+          },
         ],
       },
       metrics: {
