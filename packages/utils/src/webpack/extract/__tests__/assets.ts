@@ -2,7 +2,7 @@ import { extractAssets } from '../assets';
 
 describe('Webpack/extract/assets', () => {
   test('should return empty', () => {
-    const actual = extractAssets();
+    const actual = extractAssets({});
     expect(actual).toEqual({ metrics: { assets: {} } });
   });
 
