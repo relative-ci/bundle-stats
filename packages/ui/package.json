@@ -48,7 +48,7 @@
     "@storybook/addon-storyshots": "6.4.19",
     "@storybook/addons": "6.4.19",
     "@storybook/builder-webpack5": "6.4.19",
-    "@storybook/manager-webpack5": "6.4.19",
+    "@storybook/manager-webpack5": "6.4.20",
     "@storybook/react": "6.4.19",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "27.5.1",
