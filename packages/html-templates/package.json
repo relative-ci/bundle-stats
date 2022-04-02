@@ -34,7 +34,7 @@
     "@moonwalker/orbit-ui": "1.14.26",
     "@storybook/addon-essentials": "6.4.19",
     "@storybook/addon-postcss": "2.0.0",
-    "@storybook/addon-storyshots": "6.4.19",
+    "@storybook/addon-storyshots": "6.4.20",
     "@storybook/builder-webpack5": "6.4.19",
     "@storybook/manager-webpack5": "6.4.20",
     "@storybook/react": "6.4.19",
