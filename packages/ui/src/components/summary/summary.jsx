@@ -5,7 +5,6 @@ import { get } from 'lodash';
 import { METRIC_COMPONENT_LINKS } from '@bundle-stats/utils';
 
 import { METRICS_WEBPACK_GENERAL } from '../../constants';
-import { Icon } from '../../ui/icon';
 import { Box } from '../../layout/box';
 import { FlexStack } from '../../layout/flex-stack';
 import { ComponentLink } from '../component-link';
@@ -26,21 +25,18 @@ export const Summary = ({
       {Array.from(METRIC_COMPONENT_LINKS)
         .filter(([metricId]) => keys.includes(metricId))
         .map(([metricId, metricOptions]) => (
-          <div key={metricId} className={css.item}>
-            <SummaryItem
-              size={size}
-              id={metricId}
-              data={get(data, metricId)}
-              loading={loading}
-              showMetricDescription
-              showDelta={showSummaryItemDelta && metricOptions.showDelta !== false}
-            />
-            {!loading && (
-              <SummaryItemCustomLink {...metricOptions.link} className={css.readMore}>
-                <Icon className={css.readMoreIcon} glyph={Icon.ICONS.ARROW_RIGHT_CIRLCE} />
-              </SummaryItemCustomLink>
-            )}
-          </div>
+          <SummaryItem
+            key={metricId}
+            className={css.item}
+            as={SummaryItemCustomLink}
+            {...metricOptions.link}
+            size={size}
+            id={metricId}
+            data={get(data, metricId)}
+            loading={loading}
+            showMetricDescription
+            showDelta={showSummaryItemDelta && metricOptions.showDelta !== false}
+          />
         ))}
     </FlexStack>
   </Box>

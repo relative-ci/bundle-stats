@@ -4,51 +4,7 @@
 }
 
 .item {
-  padding: var(--space-small) var(--space-xxlarge) var(--space-small) var(--space-small);
-  flex: 1 0 25%; /* force equal sizes */
-  position: relative;
-  z-index: 1;
-}
-
-.item::before {
-  content: '';
-  display: block;
-  width: 1px;
-  position: absolute;
-  left: -1px;
-  top: var(--space-small);
-  bottom: var(--space-small);
-  background: var(--color-outline);
-}
-
-.readMore {
-  display: block;
-  position: absolute;
-  right: 0;
-  bottom: 0;
   padding: var(--space-small);
-  color: var(--color-text-ultra-light);
-  transition: var(--transition-out);
-}
-
-.readMore:hover,
-.readMore:focus {
-  color: var(--color-primary);
-  transition: var(--transition-in);
-}
-
-.readMoreIcon {
-  display: block;
-}
-
-/** hover state */
-.readMore {
-  opacity: 0;
-}
-
-.item:hover .readMore,
-.item:active .readMore,
-.item:focus .readMore {
-  opacity: 1;
-  transition: var(--transition-in);
+  flex: 1 0 25%; /* force equal sizes */
+  text-decoration: none;
 }
