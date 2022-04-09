@@ -37,7 +37,7 @@
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/ui#readme",
   "devDependencies": {
     "@babel/cli": "7.17.6",
-    "@babel/core": "7.17.8",
+    "@babel/core": "7.17.9",
     "@babel/plugin-proposal-class-properties": "7.16.7",
     "@babel/preset-env": "7.16.11",
     "@babel/preset-react": "7.16.7",
@@ -86,7 +86,7 @@
   },
   "dependencies": {
     "@bundle-stats/utils": "^3.3.5",
-    "ariakit": "2.0.0-alpha.20",
+    "ariakit": "2.0.0-alpha.21",
     "date-fns": "^2.28.0",
     "modern-css-reset": "^1.4.0",
     "query-string": "^7.1.0",
