@@ -47,8 +47,8 @@ describe('transformers/budgetsInsights', () => {
               totalSizeByTypeALL: {
                 type: 'ERROR',
                 message: {
-                  text: 'Bundle Size value (11.5KB) is over 10KB budget',
-                  md: '**Bundle Size** value (**11.5KB**) is over **10KB** budget',
+                  text: 'Bundle Size is above budget (11.5KB / 10KB)',
+                  md: '**Bundle Size** is above budget (**11.5KB** / **10KB**)',
                 },
                 data: {
                   currentValue: 11776,
@@ -93,8 +93,8 @@ describe('transformers/budgetsInsights', () => {
               'sizes.totalSizeByTypeJS': {
                 type: 'ERROR',
                 message: {
-                  text: 'JS value (11.5KB) is over 10KB budget',
-                  md: '**JS** value (**11.5KB**) is over **10KB** budget',
+                  text: 'JS is above budget (11.5KB / 10KB)',
+                  md: '**JS** is above budget (**11.5KB** / **10KB**)',
                 },
                 data: {
                   currentValue: 11776,

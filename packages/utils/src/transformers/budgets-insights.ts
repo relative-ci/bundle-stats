@@ -99,18 +99,18 @@ const getMessage = (insights: Array<[string, BudgetInsightMetric]>) => {
 const budgetInsightMetricTemplate = template(
   // Add escapes for (|) to avoid lodash.template syntax errors
   // eslint-disable-next-line no-useless-escape
-  '<%= metricLabel %> value \(<%= currentValue %>\) is <%= diffLabel %> <%= budgetValue %> budget',
+  '<%= metricLabel %> is <%= diffLabel %> budget \(<%= currentValue %> / <%= budgetValue %>\)',
 );
 
 const resolveDiffLabel = (metricBudgetInsight: BudgetInsightMetricData): string => {
   const { currentValue, budgetValue } = metricBudgetInsight;
 
   if (currentValue > budgetValue) {
-    return 'over';
+    return 'above';
   }
 
   if (currentValue < budgetValue) {
-    return 'under';
+    return 'below';
   }
 
   return 'equal with';
