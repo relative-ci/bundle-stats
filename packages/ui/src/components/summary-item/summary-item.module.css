@@ -4,18 +4,13 @@
 }
 
 .title {
+  align-items: center;
   color: var(--color-text-ultra-light);
   font-weight: bold;
   font-size: var(--size-xsmall);
   line-height: 1;
   text-transform: uppercase;
   white-space: nowrap;
-}
-
-.budgetInfo {
-  position: absolute;
-  right: 0;
-  top: 0;
 }
 
 .currentMetric {

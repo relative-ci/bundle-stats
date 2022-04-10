@@ -5,6 +5,7 @@ import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { HoverCard } from '../../ui/hover-card';
 import { Skeleton } from '../../ui/skeleton';
+import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
@@ -54,7 +55,7 @@ export const SummaryItem = ({
 
   return (
     <Stack space="xxsmall" as={Component} className={rootClassName} {...props}>
-      <h3 className={css.title}>
+      <FlexStack space="xxxsmall" as="h3" className={css.title}>
         {showMetricDescriptionTooltip ? (
           <HoverCard label={metric.label}>
             <MetricInfo {...metric} />
@@ -63,7 +64,7 @@ export const SummaryItem = ({
           metric.label
         )}
         {budget && <BudgetInfo className={css.budgetInfo} budgetInsight={budget} />}
-      </h3>
+      </FlexStack>
 
       {!loading ? (
         <Stack>
