@@ -16,7 +16,10 @@ const Budget = (props) => {
   const componentLinkOptions = METRIC_COMPONENT_LINKS.get(metricId);
 
   return (
-    <CustomLink className={cx(css.budget, className)} {...componentLinkOptions?.link}>
+    <CustomLink
+      className={cx(css.budget, className, budget.type === 'SUCCESS' && css.budgetSuccess)}
+      {...componentLinkOptions?.link}
+    >
       {budget.message.text}
     </CustomLink>
   );
@@ -26,6 +29,7 @@ Budget.propTypes = {
   className: PropTypes.string,
   metricId: PropTypes.string.isRequired,
   budget: PropTypes.shape({
+    type: PropTypes.string,
     message: PropTypes.shape({
       text: PropTypes.string,
     }),
@@ -39,64 +43,6 @@ Budget.propTypes = {
 };
 
 Budget.defaultProps = {
-  className: '',
-};
-
-const BudgetsGroup = (props) => {
-  const { className, kind, source, budgets, CustomLink } = props;
-  const [showBudgets, setShowBudgets] = useState(false);
-
-  const isFailed = kind === 'danger';
-
-  return (
-    <Alert kind={kind} padding="none" className={cx(css.group, css[kind], className)}>
-      <Box
-        padding={['xsmall', 'small']}
-        className={css.groupHeader}
-        as="button"
-        type="button"
-        onClick={() => setShowBudgets(!showBudgets)}
-      >
-        <FlexStack space="xxsmall" className={css.groupTitle}>
-          <Icon
-            className={css.groupIcon}
-            glyph={isFailed ? Icon.ICONS.ALERT_CIRCLE : Icon.ICONS.CHECK_CIRCLE}
-          />
-          <span>
-            <strong>{budgets.length}</strong>
-            {` budget ${budgets.length > 1 ? 'checks' : 'check'} ${isFailed ? 'failed' : 'passed'}`}
-          </span>
-          <span className={css.groupTitleToggle}>{showBudgets ? 'hide' : 'show'} all</span>
-        </FlexStack>
-      </Box>
-
-      {showBudgets && (
-        <Box padding={['xsmall', 'small']} className={css.groupContent}>
-          <Stack space="none">
-            {budgets.map(([key, budget]) => (
-              <Budget
-                key={key}
-                metricId={`${source}.${key}`}
-                budgetInsight={budget}
-                CustomLink={CustomLink}
-              />
-            ))}
-          </Stack>
-        </Box>
-      )}
-    </Alert>
-  );
-};
-
-BudgetsGroup.propTypes = {
-  className: PropTypes.string,
-  kind: PropTypes.oneOf(['success', 'danger']).isRequired,
-  source: PropTypes.string.isRequired,
-  budgets: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-  CustomLink: PropTypes.elementType.isRequired,
-};
-
-BudgetsGroup.defaultProps = {
   className: '',
 };
 
@@ -120,6 +66,17 @@ export const BudgetInsights = (props) => {
   const alertKind = BUDGET_ALERT_KIND.get(budgets.type);
   const rootClassName = cx(css.group, className, css[`group-${alertKind}`]);
 
+  const budgetItems = useMemo(() => {
+    const items = Object.entries(budgets.data);
+
+    // When there are errors/warnings, sort budget items first
+    if (['ERROR', 'WARNING'].includes(budgets.type)) {
+      items.sort((a) => (a[1].type === budgets.type ? -1 : 1));
+    }
+
+    return items;
+  }, [budgets]);
+
   return (
     <Alert kind={alertKind} padding="none" className={rootClassName}>
       <Box
@@ -139,7 +96,7 @@ export const BudgetInsights = (props) => {
       {showBudgets && (
         <Box padding={['xsmall', 'small']} className={css.groupContent}>
           <Stack space="none">
-            {Object.entries(budgets.data).map(([key, budget]) => (
+            {budgetItems.map(([key, budget]) => (
               <Budget
                 key={key}
                 metricId={`${source}.${key}`}

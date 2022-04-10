@@ -43,6 +43,10 @@
   text-decoration: none;
 }
 
+.budgetSuccess {
+  color: var(--color-text-light);
+}
+
 .budgetLabel,
 .budgetValue {
   color: var(--color-text-dark);
