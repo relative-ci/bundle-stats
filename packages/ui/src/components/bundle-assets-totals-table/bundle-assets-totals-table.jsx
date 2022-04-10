@@ -18,7 +18,7 @@ export const BundleAssetsTotalsTable = ({
   ...restProps
 }) => {
   const items = useMemo(() => webpack.compareBySection.sizes(jobs), [jobs]);
-  const budgets = jobs[0].insights?.webpack?.budgets;
+  const budgets = jobs[0].insights?.webpack?.budgets?.data;
 
   const renderRowHeader = useCallback(
     (item) => {
@@ -30,9 +30,9 @@ export const BundleAssetsTotalsTable = ({
 
       return (
         <CustomComponentLink section={section} title={title} params={params}>
-          <FlexStack space="xxsmall" className={css.itemTitleText}>
+          <FlexStack space="xxxsmall" className={css.itemTitleText}>
             <span>{item.label}</span>
-            {budget && <BudgetInfo metricId={item.key} budgetInsight={budget} />}
+            {budget && <BudgetInfo budgetInsight={budget} />}
           </FlexStack>
         </CustomComponentLink>
       );
