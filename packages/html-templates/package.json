@@ -37,7 +37,7 @@
     "@storybook/addon-storyshots": "6.4.21",
     "@storybook/builder-webpack5": "6.4.21",
     "@storybook/manager-webpack5": "6.4.21",
-    "@storybook/react": "6.4.21",
+    "@storybook/react": "6.4.22",
     "autoprefixer": "10.4.4",
     "babel-jest": "27.5.1",
     "babel-loader": "8.2.4",
