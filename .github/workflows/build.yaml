@@ -18,7 +18,7 @@ jobs:
       if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
       run: echo "::set-output name=PACKAGE::npm"
     - name: Use Node.js
-      uses: actions/setup-node@v3.1.0
+      uses: actions/setup-node@v3.1.1
       with:
         node-version-file: ".nvmrc"
         cache: ${{ steps.cache.outputs.PACKAGE }}
@@ -31,7 +31,7 @@ jobs:
       run: npm run build
 
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: build-artifacts
         retention-days: 1
@@ -59,7 +59,7 @@ jobs:
       if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
       run: echo "::set-output name=PACKAGE::npm"
     - name: Use Node.js
-      uses: actions/setup-node@v3.1.0
+      uses: actions/setup-node@v3.1.1
       with:
         node-version-file: ".nvmrc"
         cache: ${{ steps.cache.outputs.PACKAGE }}
@@ -69,7 +69,7 @@ jobs:
       run: npm run install-dependencies
 
     - name: Download build
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: build-artifacts
 
@@ -88,7 +88,7 @@ jobs:
       if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
       run: echo "::set-output name=PACKAGE::npm"
     - name: Use Node.js
-      uses: actions/setup-node@v3.1.0
+      uses: actions/setup-node@v3.1.1
       with:
         node-version-file: ".nvmrc"
         cache: ${{ steps.cache.outputs.PACKAGE }}
@@ -98,7 +98,7 @@ jobs:
       run: npx lerna bootstrap --hoist
 
     - name: Download build
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: build-artifacts
 
@@ -126,7 +126,7 @@ jobs:
       if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
       run: echo "::set-output name=PACKAGE::npm"
     - name: Use Node.js
-      uses: actions/setup-node@v3.1.0
+      uses: actions/setup-node@v3.1.1
       with:
         node-version-file: ".nvmrc"
         cache: ${{ steps.cache.outputs.PACKAGE }}
@@ -137,7 +137,7 @@ jobs:
       run: npm run install-dependencies
 
     - name: Download build
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: build-artifacts
 
