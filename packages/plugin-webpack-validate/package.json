@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/plugin-webpack-filter#readme",
   "devDependencies": {
-    "@types/jest": "27.4.1",
+    "@types/jest": "27.5.0",
     "jest": "27.5.1",
     "jest-cli": "27.5.1",
     "jest-date-mock": "1.0.8",
