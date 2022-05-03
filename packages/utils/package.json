@@ -46,7 +46,7 @@
     "@types/lodash": "4.14.182",
     "core-js": "3.22.4",
     "jest": "27.5.1",
-    "jest-cli": "27.5.1",
+    "jest-cli": "28.0.3",
     "jest-date-mock": "1.0.8",
     "lodash": "4.17.21",
     "regenerator-runtime": "0.13.9",
