@@ -38,7 +38,7 @@
     "@types/jest": "27.5.0",
     "@types/lodash": "4.14.182",
     "@types/webpack": "5.28.0",
-    "core-js": "3.22.4",
+    "core-js": "3.22.5",
     "jest": "27.5.1",
     "jest-cli": "27.5.1",
     "jest-date-mock": "1.0.8",
