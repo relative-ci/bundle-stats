@@ -27,7 +27,7 @@
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/html-templates#readme",
   "devDependencies": {
     "@babel/core": "7.17.12",
-    "@babel/preset-env": "7.17.12",
+    "@babel/preset-env": "7.18.0",
     "@babel/preset-react": "7.17.12",
     "@bundle-stats/ui": "^3.3.8",
     "@bundle-stats/utils": "^3.3.8",
@@ -59,7 +59,7 @@
     "jest-date-mock": "1.0.8",
     "lodash": "4.17.21",
     "mini-css-extract-plugin": "2.6.0",
-    "postcss": "8.4.13",
+    "postcss": "8.4.14",
     "postcss-loader": "6.2.1",
     "preact": "10.7.2",
     "prop-types": "15.8.1",
