@@ -45,7 +45,7 @@
     "@storybook/addon-essentials": "6.5.4",
     "@storybook/addon-knobs": "6.4.0",
     "@storybook/addon-postcss": "2.0.0",
-    "@storybook/addon-storyshots": "6.5.3",
+    "@storybook/addon-storyshots": "6.5.4",
     "@storybook/addons": "6.5.4",
     "@storybook/builder-webpack5": "6.5.3",
     "@storybook/manager-webpack5": "6.5.3",
@@ -86,7 +86,7 @@
   },
   "dependencies": {
     "@bundle-stats/utils": "^3.3.8",
-    "ariakit": "2.0.0-next.27",
+    "ariakit": "2.0.0-next.28",
     "date-fns": "^2.28.0",
     "modern-css-reset": "^1.4.0",
     "query-string": "^7.1.0",
