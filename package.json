@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "@tsconfig/node10": "1.0.8",
-    "@typescript-eslint/eslint-plugin": "5.26.0",
+    "@typescript-eslint/eslint-plugin": "5.27.0",
     "@typescript-eslint/parser": "5.27.0",
     "babel-eslint": "10.1.0",
     "dotenv": "16.0.1",
@@ -18,7 +18,7 @@
     "eslint-import-resolver-node": "0.3.6",
     "eslint-import-resolver-webpack": "0.13.2",
     "eslint-plugin-import": "2.26.0",
-    "eslint-plugin-jest": "26.4.2",
+    "eslint-plugin-jest": "26.4.6",
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.30.0",
