@@ -18,7 +18,7 @@ jobs:
       if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
       run: echo "::set-output name=PACKAGE::npm"
     - name: Use Node.js
-      uses: actions/setup-node@v3.1.1
+      uses: actions/setup-node@v3.2.0
       with:
         node-version-file: ".nvmrc"
         cache: ${{ steps.cache.outputs.PACKAGE }}
@@ -59,7 +59,7 @@ jobs:
       if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
       run: echo "::set-output name=PACKAGE::npm"
     - name: Use Node.js
-      uses: actions/setup-node@v3.1.1
+      uses: actions/setup-node@v3.2.0
       with:
         node-version-file: ".nvmrc"
         cache: ${{ steps.cache.outputs.PACKAGE }}
@@ -88,7 +88,7 @@ jobs:
       if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
       run: echo "::set-output name=PACKAGE::npm"
     - name: Use Node.js
-      uses: actions/setup-node@v3.1.1
+      uses: actions/setup-node@v3.2.0
       with:
         node-version-file: ".nvmrc"
         cache: ${{ steps.cache.outputs.PACKAGE }}
@@ -126,7 +126,7 @@ jobs:
       if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
       run: echo "::set-output name=PACKAGE::npm"
     - name: Use Node.js
-      uses: actions/setup-node@v3.1.1
+      uses: actions/setup-node@v3.2.0
       with:
         node-version-file: ".nvmrc"
         cache: ${{ steps.cache.outputs.PACKAGE }}
