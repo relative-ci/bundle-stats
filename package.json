@@ -3,7 +3,7 @@
   "private": true,
   "description": "Analyze webpack stats(bundle size, assets, modules, packages) and compare the results between different builds.",
   "engines": {
-    "node": ">= 12.0"
+    "node": ">= 14.0"
   },
   "devDependencies": {
     "@tsconfig/node10": "1.0.8",

@@ -10,7 +10,7 @@
     "lib": "lib"
   },
   "engines": {
-    "node": ">= 12.0"
+    "node": ">= 14.0"
   },
   "scripts": {
     "lint": "../../node_modules/.bin/eslint . --ext .js",
