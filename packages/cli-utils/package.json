@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/cli-utils",
-  "version": "3.3.8",
+  "version": "3.3.9-alpha.0",
   "description": "BundleStats CLI utilities",
   "main": "lib/index.js",
   "directories": {
@@ -30,8 +30,8 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/cli-utils#readme",
   "dependencies": {
-    "@bundle-stats/html-templates": "^3.3.8",
-    "@bundle-stats/utils": "^3.3.8",
+    "@bundle-stats/html-templates": "^3.3.9-alpha.0",
+    "@bundle-stats/utils": "^3.3.9-alpha.0",
     "core-js": "^3.21.0",
     "find-cache-dir": "^3.1.0",
     "fs-extra": "^10.0.1",
