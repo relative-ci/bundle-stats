@@ -1,3 +1,5 @@
+import { validate } from 'superstruct';
+
 import * as I18N from './i18n';
 import { WebpackSourceStruct } from './schemas';
 
@@ -8,12 +10,15 @@ import { WebpackSourceStruct } from './schemas';
  * @return {String} Message, if invalid, empty string if valid
  */
 export default (webpackSource?: any): string => {
-  try {
-    WebpackSourceStruct(webpackSource);
-  } catch (err: any) {
-    const { path, type } = err;
-    const key = path[0];
-    return `${I18N.INVALID}\n\nExpected a value of type \`${type}\` for \`${key}\``;
+  const res = validate(webpackSource, WebpackSourceStruct);
+
+  if (res?.[0]) {
+    const failures = res[0].failures();
+    let output = `${I18N.INVALID}`;
+    failures.forEach((failure) => {
+      output += `\n${failure.path.join('.')} - ${failure.message}`;
+    });
+    return output;
   }
 
   return '';

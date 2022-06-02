@@ -99,23 +99,23 @@ describe('Webpack/validate', () => {
   });
 
   test('should return message if data is missing', () => {
-    expect(validate()).toMatch(/assets,modules,chunks/);
-    expect(validate({})).toMatch(/name,size/);
-    expect(validate({ assets: [] })).toMatch(/notEmptyArray/);
-    expect(validate({ assets: [{}] })).toMatch(/name,size/);
-    expect(validate({ assets: [{ size: 100 }] })).toMatch(/name,size/);
+    expect(validate()).toMatch(/undefined/);
+    expect(validate({})).toMatch(/assets/);
+    expect(validate({ assets: [] })).toMatch(/nonempty/);
+    expect(validate({ assets: [{}] })).toMatch(/size/);
+    expect(validate({ assets: [{ size: 100 }] })).toMatch(/name/);
     expect(
       validate({
         assets: [{ name: 'main.js', size: 100 }],
         modules: [{ name: 'module-a' }],
       }),
-    ).toMatch(/name,size/);
+    ).toMatch(/size/);
     expect(
       validate({
         assets: [{ name: 'main.js', size: 100 }],
         modules: [{ name: 'module-a', size: 10, chunks: [1] }],
         chunks: [{ id: 1 }],
       }),
-    ).toMatch(/id,entry,initial/);
+    ).toMatch(/entry/);
   });
 });
