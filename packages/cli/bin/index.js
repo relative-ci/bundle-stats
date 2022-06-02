@@ -30,7 +30,8 @@ if (demo) {
       path.resolve(__dirname, '../__fixtures__/webpack-stats-baseline.json'),
     ],
   });
-  return;
+
+  process.exit(0);
 }
 
 const args = yargs
@@ -69,8 +70,7 @@ const args = yargs
   .alias('d', 'out-dir')
   .alias('h', 'help')
   .alias('v', 'version')
-  .help()
-  .argv;
+  .help().argv;
 
 const {
   compare,
@@ -78,9 +78,15 @@ const {
 
   html,
   json,
-  outDir, _: artifactFilepaths,
+  outDir,
+  _: artifactFilepaths,
 } = args;
 
 run({
-  baseline, compare, html, json, outDir, artifactFilepaths,
+  baseline,
+  compare,
+  html,
+  json,
+  outDir,
+  artifactFilepaths,
 });
