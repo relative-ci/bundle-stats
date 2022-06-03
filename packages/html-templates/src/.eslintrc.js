@@ -9,7 +9,6 @@ module.exports = {
     'jest/globals': true,
   },
   plugins: ['jest'],
-  parser: 'babel-eslint',
   settings: {
     'import/resolver': {
       webpack: {
@@ -30,9 +29,12 @@ module.exports = {
         json: 'alwaus',
       },
     ],
-    'import/no-unresolved': ['error', {
-      ignore: ['@bundle-stats'],
-    }],
+    'import/no-unresolved': [
+      'error',
+      {
+        ignore: ['@bundle-stats'],
+      },
+    ],
     'import/prefer-default-export': 'off',
     'react/no-unknown-property': 'off',
     'react/react-in-jsx-scope': 'off',

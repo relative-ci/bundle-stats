@@ -1,9 +1,10 @@
 module.exports = {
   root: true,
   extends: ['airbnb', 'plugin:prettier/recommended'],
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
     sourceType: 'module',
+    requireConfigFile: false,
     ecmaFeatures: {
       jsx: true,
     },
