@@ -1,9 +1,8 @@
-const webpack4 = require('webpack4');
+const webpack4 = require('webpack4'); // eslint-disable-line
 const MemoryFS = require('memory-fs');
 const { advanceTo } = require('jest-date-mock');
 
-// eslint-disable-next-line global-require
-jest.mock('webpack', () => require('../../../../node_modules/webpack4'));
+jest.mock('webpack', () => require('./node_modules/webpack4')); // eslint-disable-line
 
 const config = require('./app/webpack.config');
 
