@@ -66,6 +66,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
     # Cache packages when the branch is not update-dependencies or dependabot/*
     - name: Resolve caching
       id: cache
@@ -79,8 +80,8 @@ jobs:
         cache-dependency-path: "**/package-lock.json"
         registry-url: 'https://registry.npmjs.org'
 
-    - name: Install dependencies
-      run: npm run install-dependencies
+    - name: Install monorepo dependencies
+      run: npm install
 
     - name: Download build
       uses: actions/download-artifact@v3
