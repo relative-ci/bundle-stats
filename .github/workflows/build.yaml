@@ -8,7 +8,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -30,6 +30,15 @@ jobs:
     - name: Build
       run: npm run build
 
+    - name: Lint
+      run: npm run lint
+
+    - name: Test
+      run: npm test
+
+    - name: Test webpack-plugin package
+      run: npm run test-package
+
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3
       with:
@@ -47,71 +56,8 @@ jobs:
       with:
         webpackStatsFile: ./packages/html-templates/artifacts/webpack-stats.json
 
-  lint:
-    needs:
-      - build
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    # Cache packages when the branch is not update-dependencies or dependabot/*
-    - name: Resolve caching
-      id: cache
-      if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
-      run: echo "::set-output name=PACKAGE::npm"
-    - name: Use Node.js
-      uses: actions/setup-node@v3.2.0
-      with:
-        node-version-file: ".nvmrc"
-        cache: ${{ steps.cache.outputs.PACKAGE }}
-        cache-dependency-path: "**/package-lock.json"
-
-    - name: Install dependencies
-      run: npm run install-dependencies
-
-    - name: Download build
-      uses: actions/download-artifact@v3
-      with:
-        name: build-artifacts
-
-    - name: Lint
-      run: npm run lint
-
-  test:
-    needs:
-      - build
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    # Cache packages when the branch is not update-dependencies or dependabot/*
-    - name: Resolve caching
-      id: cache
-      if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
-      run: echo "::set-output name=PACKAGE::npm"
-    - name: Use Node.js
-      uses: actions/setup-node@v3.2.0
-      with:
-        node-version-file: ".nvmrc"
-        cache: ${{ steps.cache.outputs.PACKAGE }}
-        cache-dependency-path: "**/package-lock.json"
-
-    - name: Install dependencies
-      run: npx lerna bootstrap --hoist
-
-    - name: Download build
-      uses: actions/download-artifact@v3
-      with:
-        name: build-artifacts
-
-    - name: Test
-      run: npm test
-
-    - name: Test webpack-plugin package
-      run: npm run test-package
-
   publish:
     needs:
-      - build
-      - lint
       - test
 
     if: contains(github.ref, 'refs/tags/v')
