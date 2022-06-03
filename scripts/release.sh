@@ -10,7 +10,6 @@ const options = [
    'publish',
    'from-git',
    `--dist-tag ${distTag}`,
-   '--no-git-reset',
    '--no-changelog',
    '--no-git-tag-version',
    '--no-push',
