@@ -13,7 +13,7 @@ const options = [
    '--no-changelog',
    '--no-git-tag-version',
    '--no-push',
-   '--no-git-reset',
+   '--git-reset',
    '--yes'
  ];
 
