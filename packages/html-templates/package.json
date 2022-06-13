@@ -36,7 +36,7 @@
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/addon-storyshots": "6.5.9",
     "@storybook/builder-webpack5": "6.5.9",
-    "@storybook/manager-webpack5": "6.5.8",
+    "@storybook/manager-webpack5": "6.5.9",
     "@storybook/react": "6.5.9",
     "autoprefixer": "10.4.7",
     "babel-jest": "28.1.1",
