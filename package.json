@@ -6,7 +6,7 @@
     "node": ">= 14.0"
   },
   "devDependencies": {
-    "@babel/core": "7.18.2",
+    "@babel/core": "7.18.5",
     "@babel/eslint-parser": "7.18.2",
     "@tsconfig/node10": "1.0.9",
     "@typescript-eslint/eslint-plugin": "5.28.0",
