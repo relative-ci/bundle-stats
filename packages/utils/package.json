@@ -44,7 +44,7 @@
   "devDependencies": {
     "@types/jest": "28.1.2",
     "@types/lodash": "4.14.182",
-    "core-js": "3.23.1",
+    "core-js": "3.23.2",
     "jest": "27.5.1",
     "jest-cli": "28.1.1",
     "jest-date-mock": "1.0.8",
