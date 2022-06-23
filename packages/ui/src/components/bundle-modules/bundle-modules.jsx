@@ -133,7 +133,6 @@ export const BundleModules = ({
     [MODULE_FILTERS.DUPLICATED]: {
       label: 'Duplicate',
       defaultValue: filters[MODULE_FILTERS.DUPLICATED],
-      disabled: jobs.length <= 1,
     },
     [MODULE_SOURCE_TYPE]: {
       label: 'Source',
