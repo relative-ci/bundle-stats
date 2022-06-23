@@ -28,8 +28,8 @@ import { MetricsTableTitle } from '../metrics-table-title';
 import css from './bundle-packages.module.css';
 
 const PackagePopoverContent = ({ name, fullName, path, duplicate, CustomComponentLink }) => {
-  const normalizedPackagePath =
-    path || `node_modules/${fullName.split(PACKAGES_SEPARATOR).join('/node_modules/')}/`;
+  const fallbackPackagePath = `node_modules/${fullName.split(PACKAGES_SEPARATOR).join('/node_modules/')}`;
+  const normalizedPackagePath = `${path || fallbackPackagePath}/`;
   const [normalizedName, packageId] = name.split(PACKAGE_ID_SEPARATOR);
 
   return (
