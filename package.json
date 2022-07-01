@@ -10,7 +10,7 @@
     "@babel/eslint-parser": "7.18.2",
     "@tsconfig/node10": "1.0.9",
     "@typescript-eslint/eslint-plugin": "5.30.3",
-    "@typescript-eslint/parser": "5.30.0",
+    "@typescript-eslint/parser": "5.30.3",
     "babel-eslint": "10.1.0",
     "dotenv": "16.0.1",
     "eslint": "8.18.0",
