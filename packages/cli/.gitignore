@@ -8,3 +8,6 @@ Thumbs.db
 *.log
 yarn.lock
 dist
+lib
+lib-esm
+types
