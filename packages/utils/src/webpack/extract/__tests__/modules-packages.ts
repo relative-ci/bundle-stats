@@ -250,6 +250,7 @@ describe('Webpack/extract', () => {
               duplicated: false,
             },
           },
+          moduleCount: { value: 10 },
         },
       });
 

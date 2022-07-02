@@ -26,6 +26,7 @@ export const extractModules = (webpackStats?: any): WebpackMetricsModules => {
         duplicateCode: { value: 0 },
         duplicateModulesCount: { value: 0 },
         modules: {},
+        moduleCount: { value: 0 },
       },
     };
   }
@@ -50,6 +51,7 @@ export const extractModules = (webpackStats?: any): WebpackMetricsModules => {
     return agg;
   }, [] as Array<WebpackModule>);
 
+  let moduleCount = 0;
   let totalCodeSize = 0;
   let duplicateCodeSize = 0;
   let duplicateModulesCount = 0;
@@ -67,6 +69,7 @@ export const extractModules = (webpackStats?: any): WebpackMetricsModules => {
     const instances = chunks.length;
     const duplicateInstances = instances - 1;
 
+    moduleCount += instances;
     duplicateModulesCount += duplicateInstances;
     duplicateCodeSize += duplicateInstances * size;
     totalCodeSize += instances * size;
@@ -92,6 +95,9 @@ export const extractModules = (webpackStats?: any): WebpackMetricsModules => {
       },
       duplicateModulesCount: {
         value: duplicateModulesCount,
+      },
+      moduleCount: {
+        value: moduleCount,
       },
     },
   };

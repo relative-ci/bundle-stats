@@ -59,6 +59,7 @@ export interface WebpackMetricsModules {
     duplicateCode: MetricRun;
     duplicateModulesCount: MetricRun;
     modules: Record<string, ModuleMetric>;
+    moduleCount: MetricRun;
   };
 }
 
