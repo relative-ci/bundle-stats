@@ -8,7 +8,6 @@ import { extractAssetsSize } from './assets-size';
 import { extractAssetsSizeTotalInsight } from './assets-size-total-insight';
 import { extractMeta } from './meta';
 import { extractModules } from './modules';
-import { extractModulesCount } from './modules-count';
 import { extractModulesPackages } from './modules-packages';
 import { extractModulesPackagesCount } from './modules-packages-count';
 import { extractModulesPackagesDuplicate } from './modules-packages-duplicate';
@@ -22,14 +21,10 @@ const extractFns = [
   extractAssetsSizeTotalInsight,
   extractMeta,
   extractModules,
-  extractModulesCount,
   extractModulesPackages,
   extractModulesPackagesCount,
   extractModulesPackagesDuplicate,
 ];
 
-export const extract = (webpackStats, baseline) => extractFns.reduce((agg, extractFn) => merge(
-  {},
-  agg,
-  extractFn(webpackStats, agg, baseline),
-), {});
+export const extract = (webpackStats, baseline) =>
+  extractFns.reduce((agg, extractFn) => merge({}, agg, extractFn(webpackStats, agg, baseline)), {});

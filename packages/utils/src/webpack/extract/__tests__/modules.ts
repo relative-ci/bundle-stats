@@ -10,6 +10,7 @@ describe('Webpack/extract/modules', () => {
         duplicateCode: { value: 0 },
         duplicateModulesCount: { value: 0 },
         modules: {},
+        moduleCount: { value: 0 },
       },
     });
   });
@@ -59,6 +60,7 @@ describe('Webpack/extract/modules', () => {
             duplicated: false,
           },
         },
+        moduleCount: { value: 6 },
       },
     });
   });
@@ -120,6 +122,7 @@ describe('Webpack/extract/modules', () => {
             duplicated: false,
           },
         },
+        moduleCount: { value: 8 },
       },
     });
   });
@@ -170,6 +173,7 @@ describe('Webpack/extract/modules', () => {
             duplicated: true,
           },
         },
+        moduleCount: { value: 4 },
       },
     });
   });
