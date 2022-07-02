@@ -25,7 +25,7 @@ jobs:
         cache-dependency-path: "**/package-lock.json"
 
     - name: Install dependencies
-      run: npm run install-dependencies
+      run: npm ci && npx lerna bootstrap --hoist
 
     - name: Build
       run: npm run build
@@ -76,7 +76,7 @@ jobs:
         registry-url: 'https://registry.npmjs.org'
 
     - name: Install monorepo dependencies
-      run: npm install
+      run: npm ci
 
     - name: Download build
       uses: actions/download-artifact@v3
