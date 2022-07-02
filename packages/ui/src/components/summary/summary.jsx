@@ -20,23 +20,28 @@ export const Summary = ({
   showSummaryItemDelta,
   summaryItemLink: SummaryItemCustomLink,
 }) => (
-  <Box outline className={cx(css.root, className)}>
-    <FlexStack className={css.items}>
+  <Box className={cx(css.root, className)}>
+    <FlexStack space="small" className={css.items}>
       {Array.from(METRIC_COMPONENT_LINKS)
         .filter(([metricId]) => keys.includes(metricId))
         .map(([metricId, metricOptions]) => (
-          <SummaryItem
+          <Box
             key={metricId}
-            className={css.item}
+            outline
+            padding="small"
             as={SummaryItemCustomLink}
             {...metricOptions.link}
-            size={size}
-            id={metricId}
-            data={get(data, metricId)}
-            loading={loading}
-            showMetricDescription
-            showDelta={showSummaryItemDelta && metricOptions.showDelta !== false}
-          />
+            className={css.item}
+          >
+            <SummaryItem
+              size={size}
+              id={metricId}
+              data={get(data, metricId)}
+              loading={loading}
+              showMetricDescription
+              showDelta={showSummaryItemDelta && metricOptions.showDelta !== false}
+            />
+          </Box>
         ))}
     </FlexStack>
   </Box>
