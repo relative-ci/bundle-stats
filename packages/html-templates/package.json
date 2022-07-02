@@ -3,6 +3,7 @@
   "version": "3.3.9",
   "description": "HTML templates for report generation.",
   "main": "index.js",
+  "types": "types.d.ts",
   "scripts": {
     "prebuild": "rimraf ./dist",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js --mode production",

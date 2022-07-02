@@ -1,12 +1,11 @@
 /* eslint-disable no-console */
-const path = require('path');
-const { readJSON, outputFile } = require('fs-extra');
-const Listr = require('listr');
-const { get } = require('lodash');
-const boxen = require('boxen');
-
-require('@bundle-stats/utils/lib/polyfills');
-const {
+import path from 'path';
+import { readJSON, outputFile } from 'fs-extra';
+import Listr from 'listr';
+import { get } from 'lodash';
+import boxen from 'boxen';
+import '@bundle-stats/utils/lib/polyfills';
+import {
   DELTA_TYPE_HIGH_NEGATIVE,
   DELTA_TYPE_NEGATIVE,
   DELTA_TYPE_LOW_NEGATIVE,
@@ -16,17 +15,19 @@ const {
   DELTA_TYPE_HIGH_POSITIVE,
   createJobs,
   createReport,
-} = require('@bundle-stats/utils');
-const { filter, validate } = require('@bundle-stats/utils/lib/webpack');
-const {
+} from '@bundle-stats/utils';
+import webpackFilter from '@bundle-stats/plugin-webpack-filter';
+import webpackValidate from '@bundle-stats/plugin-webpack-validate';
+import {
   TEXT,
   createArtifacts,
   getBaselineStatsFilepath,
   getReportInfo,
   readBaseline,
   writeBaseline,
-} = require('@bundle-stats/cli-utils');
-const LOCALES = require('../locales.json');
+} from '@bundle-stats/cli-utils';
+
+import LOCALES from './locales.json';
 
 const REPORT_INFO_COLORS = {
   [DELTA_TYPE_HIGH_NEGATIVE]: 'red',
@@ -38,12 +39,23 @@ const REPORT_INFO_COLORS = {
   [DELTA_TYPE_HIGH_POSITIVE]: 'green',
 };
 
-const getReportInfoBorderColor = (reportInfo) => {
+const getReportInfoBorderColor = (reportInfo: any) => {
   const { deltaType } = reportInfo.info;
   return REPORT_INFO_COLORS[deltaType];
 };
 
-module.exports = ({ baseline, compare, html, json, outDir, artifactFilepaths }) => {
+interface RunOptions {
+  baseline: boolean;
+  compare: boolean;
+  html: boolean;
+  json: boolean;
+  outDir: string;
+  artifactFilepaths: Array<string>;
+}
+
+export default async function run(options: RunOptions): Promise<void> {
+  const { baseline, compare, html, json, outDir, artifactFilepaths } = options;
+
   const tasks = new Listr([
     {
       title: 'Read Webpack stats files',
@@ -51,7 +63,7 @@ module.exports = ({ baseline, compare, html, json, outDir, artifactFilepaths }) 
         const sources = await Promise.all(artifactFilepaths.map((filepath) => readJSON(filepath)));
 
         sources.forEach((source, index) => {
-          const invalid = validate(source);
+          const invalid = webpackValidate(source);
 
           if (invalid) {
             throw new Error(
@@ -60,7 +72,7 @@ module.exports = ({ baseline, compare, html, json, outDir, artifactFilepaths }) 
           }
         });
 
-        ctx.sources = sources.map((source) => ({ webpack: filter(source) }));
+        ctx.sources = sources.map((source) => ({ webpack: webpackFilter(source) }));
       },
     },
     {
@@ -70,7 +82,7 @@ module.exports = ({ baseline, compare, html, json, outDir, artifactFilepaths }) 
         // eslint-disable-next-line no-param-reassign
         task.title = `${task.title} (${baselineFilepath})`;
 
-        ctx.sources = ctx.sources.concat([{ webpack: filter(ctx.baselineStats) }]);
+        ctx.sources = ctx.sources.concat([{ webpack: webpackFilter(ctx.baselineStats) }]);
       },
       skip: async (ctx) => {
         if (!compare) {
@@ -97,7 +109,7 @@ module.exports = ({ baseline, compare, html, json, outDir, artifactFilepaths }) 
       title: 'Write baseline data',
       task: (ctx, task) => {
         const stats = get(ctx, 'sources[0]webpack');
-        const filteredWebpackStats = filter(stats);
+        const filteredWebpackStats = webpackFilter(stats) as JSON;
         const baselineFilepath = path.relative(process.cwd(), getBaselineStatsFilepath());
 
         return writeBaseline(filteredWebpackStats).then(() => {
@@ -124,7 +136,7 @@ module.exports = ({ baseline, compare, html, json, outDir, artifactFilepaths }) 
       title: 'Save reports',
       task: (ctx) =>
         new Listr(
-          Object.values(ctx.artifacts).map(({ filename, output }) => ({
+          Object.values(ctx.artifacts).map(({ filename, output }: any) => ({
             title: filename,
             task: async () => {
               const filepath = path.join(outDir, filename);
@@ -138,24 +150,27 @@ module.exports = ({ baseline, compare, html, json, outDir, artifactFilepaths }) 
     },
   ]);
 
-  tasks
-    .run()
-    .then(({ output, report }) => {
-      const reportInfo = getReportInfo(report);
+  let result = null;
 
-      if (reportInfo) {
-        const infoBox = boxen(reportInfo.text, {
-          padding: 1,
-          borderColor: getReportInfoBorderColor(reportInfo),
-        });
+  try {
+    result = await tasks.run();
+  } catch (err: any) {
+    console.error(err.message);
+  }
 
-        console.log(`\n${infoBox}`);
-      }
+  const { output, report } = result;
 
-      console.log('\nArtifacts:');
-      output.map((reportPath) => console.log(`- ${reportPath}`));
-    })
-    .catch((err) => {
-      console.error(err.message);
+  const reportInfo = getReportInfo(report);
+
+  if (reportInfo) {
+    const infoBox = boxen(reportInfo.text, {
+      padding: 1,
+      borderColor: getReportInfoBorderColor(reportInfo),
     });
-};
+
+    console.log(`\n${infoBox}`);
+  }
+
+  console.log('\nArtifacts:');
+  output.map((reportPath: any) => console.log(`- ${reportPath}`));
+}

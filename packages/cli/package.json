@@ -2,10 +2,12 @@
   "name": "bundle-stats",
   "version": "3.3.9",
   "description": "In-depth bundle analyzer for webpack(bundle size, assets, modules, packages)",
-  "main": "lib/index.js",
   "bin": {
     "bundle-stats": "bin/index.js"
   },
+  "main": "lib/index.js",
+  "module": "lib-esm/index.js",
+  "types": "types/index.d.ts",
   "directories": {
     "lib": "lib"
   },
@@ -13,8 +15,11 @@
     "node": ">= 14.0"
   },
   "scripts": {
+    "build": "npm run build-lib && npm run build-esm",
+    "build-lib": "rm -fr ./lib && ../../node_modules/.bin/tsc --rootDir ./src --project tsconfig.lib.json --outDir ./lib",
+    "build-esm": "rm -fr ./lib-esm && rm -fr ./types && ../../node_modules/.bin/tsc --rootDir ./src --project tsconfig.esm.json --outDir ./lib-esm",
     "lint": "../../node_modules/.bin/eslint . --ext .js",
-    "test": "jest --passWithNoTests src "
+    "test": "jest --passWithNoTests"
   },
   "keywords": [
     "webpack",
@@ -45,15 +50,20 @@
   "dependencies": {
     "@bundle-stats/cli-utils": "^3.3.9",
     "@bundle-stats/utils": "^3.3.9",
-    "boxen": "^7.0.0",
+    "@bundle-stats/plugin-webpack-filter": "^3.3.9",
+    "@bundle-stats/plugin-webpack-validate": "^3.3.9",
+    "boxen": "^5.0.0",
     "core-js": "^3.21.0",
     "fs-extra": "^10.0.0",
     "listr": "^0.14.3",
     "lodash": "^4.17.0",
-    "update-notifier": "^6.0.1",
-    "yargs": "^17.4.0"
+    "update-notifier": "^5.0.0",
+    "yargs": "^17.4.0",
+    "typescript": "4.7.4"
   },
   "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/listr": "^0.14.4",
     "jest": "27.5.1"
   }
 }

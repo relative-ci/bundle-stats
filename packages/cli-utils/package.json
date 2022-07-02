@@ -3,6 +3,8 @@
   "version": "3.3.9",
   "description": "BundleStats CLI utilities",
   "main": "lib/index.js",
+  "module": "lib-esm/index.js",
+  "types": "types/index.d.ts",
   "directories": {
     "lib": "lib"
   },
@@ -10,7 +12,9 @@
     "node": ">= 14.0"
   },
   "scripts": {
-    "build": "babel src -d lib",
+    "build": "npm run build-lib && npm run build-esm",
+    "build-lib": "rm -fr ./lib && ../../node_modules/.bin/tsc --rootDir ./src --project tsconfig.lib.json --outDir ./lib",
+    "build-esm": "rm -fr ./lib-esm && rm -fr ./types && ../../node_modules/.bin/tsc --rootDir ./src --project tsconfig.esm.json --outDir ./lib-esm",
     "lint": "../../node_modules/.bin/eslint . --ext .js",
     "test": "jest --passWithNoTests src "
   },
@@ -34,13 +38,11 @@
     "@bundle-stats/utils": "^3.3.9",
     "core-js": "^3.21.0",
     "find-cache-dir": "^3.1.0",
-    "fs-extra": "^10.0.1",
-    "lodash": "^4.17.0"
+    "fs-extra": "^10.0.1"
   },
   "devDependencies": {
-    "@babel/cli": "7.18.6",
-    "@babel/core": "7.18.6",
-    "@babel/preset-env": "7.18.6",
-    "jest": "27.5.1"
+    "@types/find-cache-dir": "^3.2.1",
+    "jest": "27.5.1",
+    "typescript": "4.7.4"
   }
 }
