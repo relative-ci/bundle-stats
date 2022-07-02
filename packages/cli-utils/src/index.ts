@@ -1,5 +1,3 @@
-import { get } from 'lodash';
-
 import * as T from './text';
 
 export * from './baseline';
@@ -8,4 +6,6 @@ export * from './constants';
 
 export const TEXT = T;
 
-export const getReportInfo = (report) => get(report, 'insights.webpack.assetsSizeTotal.data');
+export function getReportInfo(report: any): any {
+  return report?.insights?.webpack?.assetsSizeTotal?.data;
+}
