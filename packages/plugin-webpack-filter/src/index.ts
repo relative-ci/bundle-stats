@@ -14,13 +14,16 @@ interface BundleStatsOptions {
   pathIgnorePattern?: string;
 }
 
-type WebpackStatsFilteredAsset = Pick<StatsAsset, 'name' | 'size'>;
+export interface WebpackStatsFilteredAsset {
+  name: string;
+  size: number;
+}
 
-interface WebpackStatsFileteredEntrypoint {
+export interface WebpackStatsFileteredEntrypoint {
   assets: Array<string>;
 }
 
-interface WebpackStatsFilteredChunk {
+export interface WebpackStatsFilteredChunk {
   entry: boolean;
   id: number | string;
   initial: boolean;
@@ -28,11 +31,11 @@ interface WebpackStatsFilteredChunk {
   names: Array<string>;
 }
 
-interface WebpackStatsFileteredModule extends Pick<StatsModule, 'name' | 'size' | 'chunks'> {
+export interface WebpackStatsFileteredModule extends Pick<StatsModule, 'name' | 'size' | 'chunks'> {
   modules?: Array<Pick<StatsModule, 'name' | 'size'>>;
 }
 
-interface WebpackStatsFiltered {
+export interface WebpackStatsFiltered {
   builtAt?: string;
   hash?: string;
   assets?: Array<WebpackStatsFilteredAsset>;
