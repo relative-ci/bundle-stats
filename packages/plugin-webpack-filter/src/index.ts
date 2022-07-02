@@ -1,12 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { StatsAsset, StatsCompilation, StatsModule } from 'webpack';
-import flow from 'lodash/fp/flow';
-import fromPairs from 'lodash/fp/fromPairs';
-import get from 'lodash/fp/get';
-import map from 'lodash/fp/map';
-import _filter from 'lodash/fp/filter';
-import pick from 'lodash/fp/pick';
-import toPairs from 'lodash/fp/toPairs';
+import { StatsCompilation } from 'webpack';
 
 const PATH_IGNORE_PATTERN = '.map$';
 
@@ -16,79 +9,139 @@ interface BundleStatsOptions {
 
 export interface WebpackStatsFilteredAsset {
   name: string;
-  size: number;
+  size?: number;
 }
 
-export interface WebpackStatsFileteredEntrypoint {
-  assets: Array<string>;
+export interface WebpackStatsFilteredEntrypoint {
+  /** List of entrypoint assets. Webpack 5 provides an asset object */
+  assets: Array<WebpackStatsFilteredAsset | string>;
 }
+
+export type WebpackStatsFilteredEntrypoints = Record<string, WebpackStatsFilteredEntrypoint>;
 
 export interface WebpackStatsFilteredChunk {
   entry: boolean;
   id: number | string;
   initial: boolean;
-  files: Array<string>;
-  names: Array<string>;
+  files?: Array<string>;
+  names?: Array<string>;
 }
 
-export interface WebpackStatsFileteredModule extends Pick<StatsModule, 'name' | 'size' | 'chunks'> {
-  modules?: Array<Pick<StatsModule, 'name' | 'size'>>;
+export interface WebpackStatsFilteredModule {
+  name: string;
+  size?: number;
+  chunks: Array<string | number>;
+}
+
+export interface WebpackStatsFilteredConcatenatedModule {
+  name: string;
+  size?: number;
+}
+
+export interface WebpackStatsFilteredRootModule extends WebpackStatsFilteredModule {
+  modules?: Array<WebpackStatsFilteredConcatenatedModule>;
 }
 
 export interface WebpackStatsFiltered {
-  builtAt?: string;
+  builtAt?: number;
   hash?: string;
   assets?: Array<WebpackStatsFilteredAsset>;
-  entrypoints?: Record<string, WebpackStatsFileteredEntrypoint>;
+  entrypoints?: WebpackStatsFilteredEntrypoints;
   chunks?: Array<WebpackStatsFilteredChunk>;
-  modules?: Array<WebpackStatsFileteredModule>;
+  modules?: Array<WebpackStatsFilteredRootModule>;
 }
 
 /**
  * Filter webpack stats data
  */
 export default (
-  source: StatsCompilation, options: BundleStatsOptions = {},
+  source: StatsCompilation,
+  options: BundleStatsOptions = {},
 ): WebpackStatsFiltered => {
   const pathIgnorePattern = new RegExp(options.pathIgnorePattern || PATH_IGNORE_PATTERN);
 
   // meta
-  const builtAt = get('builtAt')(source);
-  const hash = get('hash')(source);
+  const { builtAt, hash } = source;
 
   // rawData
-  const assets = flow([
-    get('assets'),
-    map(pick(['name', 'size'])),
-    // Skip assets with empty name or ignore pattern
-    _filter(({ name }) => name && !pathIgnorePattern.test(name)),
-  ])(source);
+  const assets =
+    source.assets?.reduce((agg, asset) => {
+      // Skip assets with empty name or ignore pattern
+      if (!asset.name || pathIgnorePattern.test(asset.name)) {
+        return agg;
+      }
 
-  const entrypoints = flow([
-    get('entrypoints'),
-    toPairs,
-    map(([key, value]) => [key, pick('assets')(value)]),
-    fromPairs,
-  ])(source);
+      agg.push({
+        name: asset.name,
+        size: asset.size,
+      });
 
-  const chunks = flow([
-    get('chunks'),
-    map(pick(['id', 'entry', 'initial', 'files', 'names'])),
-    // Skip chunks with empty id
-    _filter(({ id }) => id !== null && typeof id !== 'undefined'),
-  ])(source);
+      return agg;
+    }, [] as Array<WebpackStatsFilteredAsset>) || [];
 
-  const modules = source?.modules?.map(
-    ({ name, size, chunks: moduleChunks, modules: concatenatedModules }) => ({
-      name,
-      size,
-      chunks: moduleChunks?.filter((chunkId) => chunkId !== null && typeof chunkId !== 'undefined'),
-      modules: concatenatedModules?.map((concatenatedModule) => ({
-        name: concatenatedModule.name,
-        size: concatenatedModule.size,
-      })),
-    }),
-  );
+  const entrypoints = Object.entries(source?.entrypoints || {}).reduce((agg, [key, value]) => {
+    // eslint-disable-next-line no-param-reassign
+    agg[key] = {
+      assets: value.assets as Array<WebpackStatsFilteredAsset | string>,
+    };
+
+    return agg;
+  }, {} as WebpackStatsFilteredEntrypoints);
+
+  const chunks =
+    source.chunks?.reduce((agg, chunk) => {
+      // Skip chunks with empty ids
+      if (typeof chunk.id === 'undefined' || chunk.id === null) {
+        return agg;
+      }
+
+      agg.push({
+        id: chunk.id,
+        entry: chunk.entry,
+        initial: chunk.initial,
+        files: chunk.files,
+        names: chunk.names,
+      });
+
+      return agg;
+    }, [] as Array<WebpackStatsFilteredChunk>) || [];
+
+  const modules =
+    source.modules?.reduce((agg, moduleStats) => {
+      if (!moduleStats.name) {
+        return agg;
+      }
+
+      const moduleChunks =
+        moduleStats.chunks?.filter(
+          (chunkId) => chunkId !== null && typeof chunkId !== 'undefined',
+        ) || [];
+
+      const concatenatedModules = moduleStats.modules?.reduce(
+        (aggConcatenatedModules, concatenatedModule) => {
+          if (!concatenatedModule.name) {
+            return aggConcatenatedModules;
+          }
+
+          aggConcatenatedModules.push({
+            name: concatenatedModule.name,
+            size: concatenatedModule.size,
+          });
+
+          return aggConcatenatedModules;
+        },
+        [] as Array<WebpackStatsFilteredConcatenatedModule>,
+      );
+
+      agg.push({
+        name: moduleStats.name,
+        size: moduleStats.size,
+        chunks: moduleChunks,
+        ...(concatenatedModules && { modules: concatenatedModules }),
+      });
+
+      return agg;
+    }, [] as Array<WebpackStatsFilteredRootModule>) || [];
 
   return {
     builtAt,
