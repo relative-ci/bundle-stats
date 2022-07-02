@@ -4,7 +4,11 @@
 }
 
 .item {
-  padding: var(--space-small);
-  flex: 1 0 25%; /* force equal sizes */
+  flex: 1 0 10%; /* force equal sizes */
+  min-width: 16em;
   text-decoration: none;
+}
+
+.item:hover {
+  border-color: var(--color-outline-dark);
 }

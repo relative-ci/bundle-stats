@@ -10,7 +10,7 @@
 .currentMetric {
   display: block;
   color: var(--color-heading);
-  font-size: var(--size-large);
+  font-size: var(--size-xlarge);
   line-height: var(--space-medium);
   white-space: nowrap;
   font-weight: bold;
