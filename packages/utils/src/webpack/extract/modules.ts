@@ -1,24 +1,14 @@
-import isEmpty from 'lodash/isEmpty';
 import round from 'lodash/round';
+import { WebpackStatsFiltered, WebpackStatsFilteredRootModule } from '@bundle-stats/plugin-webpack-filter';
 
 import { ModuleMetric, WebpackMetricsModules } from '../../constants';
 import { getModuleName, normalizeChunkId } from '../utils';
 
-interface WebpackModule {
-  name: string;
-  size: number;
-  chunks: Array<string | number>;
-}
-
-interface WebpackModuleWithConcatenatedModules extends WebpackModule {
-  modules: Array<Pick<WebpackModule, 'name' | 'size'>>;
-}
-
 /*
  * Extract webpack modules array to an object with metrics
  */
-export const extractModules = (webpackStats?: any): WebpackMetricsModules => {
-  const modulesSource: Array<WebpackModuleWithConcatenatedModules> = webpackStats?.modules || [];
+export const extractModules = (webpackStats?: WebpackStatsFiltered): WebpackMetricsModules => {
+  const modulesSource = webpackStats?.modules;
 
   if (!modulesSource) {
     return {
@@ -49,7 +39,7 @@ export const extractModules = (webpackStats?: any): WebpackMetricsModules => {
     );
 
     return agg;
-  }, [] as Array<WebpackModule>);
+  }, [] as Array<WebpackStatsFilteredRootModule>);
 
   let moduleCount = 0;
   let totalCodeSize = 0;
@@ -58,11 +48,11 @@ export const extractModules = (webpackStats?: any): WebpackMetricsModules => {
 
   // Normalize module entries
   const modules = allModules.reduce((agg, moduleEntry) => {
-    const { name, size, chunks } = moduleEntry;
+    const { name, size = 0, chunks } = moduleEntry;
     const normalizedName = getModuleName(name);
 
     // skip modules that do not belong to any chunk
-    if (isEmpty(chunks)) {
+    if (!chunks || chunks?.length === 0) {
       return agg;
     }
 

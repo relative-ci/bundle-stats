@@ -66,7 +66,7 @@ export const getPackageMetaFromModulePath = (modulePath: string) => {
 };
 
 export const extractModulesPackages = (
-  webpackStats?: any,
+  _?: unknown,
   currentExtractedData?: WebpackMetricsModules,
 ): WebpackMetricsPackages => {
   const modules = Object.entries(currentExtractedData?.metrics?.modules || {});
@@ -105,7 +105,7 @@ export const extractModulesPackages = (
 
     // Same package name, but different paths (eg: symlinks)
     const existingPackageWithEqualPath = Object.entries(agg).find(
-      ([_, packageData]) => packageData.path === packageMeta.path,
+      ([__, packageData]) => packageData.path === packageMeta.path,
     );
 
     if (existingPackageWithEqualPath) {
@@ -125,7 +125,7 @@ export const extractModulesPackages = (
       Object.keys(agg)
         .map((id) => id.split('~'))
         .filter(([id]) => id === packageMeta.id)
-        .map(([_, index]) => parseInt(index, 10)),
+        .map(([__, index]) => parseInt(index, 10)),
     ) || 0;
 
     const packageName = [packageMeta.id, lastIndex + 1].join(PACKAGE_ID_SEPARATOR);
