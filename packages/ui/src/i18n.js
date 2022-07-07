@@ -12,10 +12,12 @@ export default {
 
   READ_MORE: 'Read more',
 
-  ASSETS_INFO: 'Asset size is the disk file size',
-  ASSET_TOTALS_INFO: 'Total file type size is the disk size of the corresponding assets.',
-  MODULES_INFO: 'Module size is the estimated size (stat size) before any production optimization (eg: minification).',
-  PACKAGES_INFO: 'Package size is the estimated size (stat size) of the contained modules before any production optimization(eg: minification).',
+  ASSETS_INFO: 'Asset size - the size of the file produced by webpack',
+  ASSET_TOTALS_INFO: 'The total size of the assets produced by webpack by type',
+  MODULES_INFO:
+    'Module size - module file size before any transformation(ex: babel, typescript) or before any production optimization(ex: terser minification)',
+  PACKAGES_INFO:
+    "Package size - the total package's module size before any transformation(ex: babel, typescript) or before any production optimization(ex: terser minification)",
 
   RESET_FILTERS: 'Reset filters',
   VIEW_ALL: 'View all entries',
