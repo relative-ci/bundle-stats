@@ -1,36 +1,12 @@
 import isEmpty from 'lodash/isEmpty';
 import { WebpackStatsFiltered } from '@bundle-stats/plugin-webpack-filter';
 
+import { MetricsAssets, Assets } from '../types';
 import { getAssetName, normalizeChunkId } from '../utils';
 
 const IGNORE_PATTERN = /\.(map|LICENSE\.txt)$/;
 
-interface WebpackMetaChunk {
-  id: string;
-  name: string;
-}
-
-interface WebpackAssetMetric {
-  name: string;
-  value: number;
-  isEntry: boolean;
-  isInitial: boolean;
-  isChunk: boolean;
-  chunkId?: string;
-}
-
-type WebpackAssets = Record<string, WebpackAssetMetric>;
-
-interface WebpackAssetsExtracted {
-  metrics: {
-    assets: WebpackAssets;
-  };
-  meta?: {
-    chunks: Array<WebpackMetaChunk>;
-  };
-}
-
-export const extractAssets = (webpackStats: WebpackStatsFiltered): WebpackAssetsExtracted => {
+export const extractAssets = (webpackStats: WebpackStatsFiltered): MetricsAssets => {
   const webpackAssets = webpackStats.assets;
   const webpackChunks = webpackStats.chunks;
   const webpackEntrypoints = webpackStats.entrypoints || {};
@@ -93,7 +69,7 @@ export const extractAssets = (webpackStats: WebpackStatsFiltered): WebpackAssets
       };
 
       return agg;
-    }, {} as WebpackAssets) || {};
+    }, {} as Assets) || {};
 
   return {
     metrics: {

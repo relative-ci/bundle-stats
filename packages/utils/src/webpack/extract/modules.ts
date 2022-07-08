@@ -1,13 +1,13 @@
 import round from 'lodash/round';
 import { WebpackStatsFiltered, WebpackStatsFilteredRootModule } from '@bundle-stats/plugin-webpack-filter';
 
-import { ModuleMetric, WebpackMetricsModules } from '../../constants';
+import { Module, MetricsModules } from '../types';
 import { getModuleName, normalizeChunkId } from '../utils';
 
 /*
  * Extract webpack modules array to an object with metrics
  */
-export const extractModules = (webpackStats?: WebpackStatsFiltered): WebpackMetricsModules => {
+export const extractModules = (webpackStats?: WebpackStatsFiltered): MetricsModules => {
   const modulesSource = webpackStats?.modules;
 
   if (!modulesSource) {
@@ -73,7 +73,7 @@ export const extractModules = (webpackStats?: WebpackStatsFiltered): WebpackMetr
     };
 
     return agg;
-  }, {} as Record<string, ModuleMetric>);
+  }, {} as Record<string, Module>);
 
   const duplicateCode = totalCodeSize ? round((duplicateCodeSize / totalCodeSize) * 100, 2) : 0;
 

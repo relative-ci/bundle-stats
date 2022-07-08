@@ -3,7 +3,7 @@ import last from 'lodash/last';
 import isEmpty from 'lodash/isEmpty';
 
 import { PACKAGES_SEPARATOR, PACKAGE_ID_SEPARATOR } from '../../config';
-import { PackageMetric, WebpackMetricsModules, WebpackMetricsPackages } from '../../constants';
+import { Package, MetricsModules, MetricsPackages } from '../types';
 import { MODULE_PATH_PACKAGES, PACKAGE_PATH_NAME } from '../constants';
 
 const uniqLast = (data: Array<unknown>) => {
@@ -67,8 +67,8 @@ export const getPackageMetaFromModulePath = (modulePath: string) => {
 
 export const extractModulesPackages = (
   _?: unknown,
-  currentExtractedData?: WebpackMetricsModules,
-): WebpackMetricsPackages => {
+  currentExtractedData?: MetricsModules,
+): MetricsPackages => {
   const modules = Object.entries(currentExtractedData?.metrics?.modules || {});
 
   const packages = modules.reduce((agg, [modulePath, { value }]) => {
@@ -138,7 +138,7 @@ export const extractModulesPackages = (
         value,
       },
     };
-  }, {} as Record<string, PackageMetric>);
+  }, {} as Record<string, Package>);
 
   return { metrics: { packages } };
 };

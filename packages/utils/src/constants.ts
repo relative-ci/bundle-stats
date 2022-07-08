@@ -44,31 +44,6 @@ export interface Metric {
   value: number;
 }
 
-export interface ModuleMetric extends Metric {
-  name: string;
-  chunkIds: Array<String>;
-  duplicated: boolean;
-}
-
-export interface PackageMetric extends Metric {
-  path: string;
-}
-
-export interface WebpackMetricsModules {
-  metrics: {
-    duplicateCode: MetricRun;
-    duplicateModulesCount: MetricRun;
-    modules: Record<string, ModuleMetric>;
-    moduleCount: MetricRun;
-  };
-}
-
-export interface WebpackMetricsPackages {
-  metrics: {
-    packages: Record<string, PackageMetric>;
-  };
-}
-
 export interface LighthouseSource {
   lighthouseVersion: string;
   fetchTime: string;
