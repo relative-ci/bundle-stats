@@ -85,20 +85,6 @@
           "size": 48381
         }
       ],
-      "entrypoints": {
-        "main": {
-          "assets": [
-            "vendors.8b6bb4f.css",
-            "vendors.176a5f6.js",
-            "vendors.8b6bb4f.css.map",
-            "vendors.176a5f6.js.map",
-            "main.e7aed2d.css",
-            "main.75d52d9.js",
-            "main.e7aed2d.css.map",
-            "main.75d52d9.js.map"
-          ]
-        }
-      },
       "chunks": [
         {
           "id": 0,
@@ -116,7 +102,7 @@
         },
         {
           "id": 1,
-          "entry": false,
+          "entry": true,
           "initial": true,
           "files": [
             "vendors.8b6bb4f.css",

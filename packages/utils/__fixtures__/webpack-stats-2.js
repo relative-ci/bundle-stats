@@ -55,10 +55,7 @@ module.exports = {
       id: 1,
       initial: true,
       modules: [],
-      files: [
-        'main.css',
-        'main.js',
-      ],
+      files: ['main.css', 'main.js'],
       names: ['main'],
       origins: [],
       parents: [],
@@ -67,19 +64,6 @@ module.exports = {
       size: 60000,
     },
   ],
-  entrypoints: {
-    main: {
-      assets: [
-        'main.css',
-        'main.css.map',
-        'main.js',
-        'main.js.map',
-      ],
-      childAssets: {},
-      children: {},
-      chunks: [1, 0],
-    },
-  },
   modules: [
     {
       assets: [],

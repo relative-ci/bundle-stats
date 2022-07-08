@@ -46,11 +46,6 @@ describe('Webpack/extract/assets', () => {
           names: ['app'],
         },
       ],
-      entrypoints: {
-        main: {
-          assets: ['js/main.bc22113.js'],
-        },
-      },
     });
 
     const expected = {
@@ -115,11 +110,6 @@ describe('Webpack/extract/assets', () => {
           names: ['main'],
         },
       ],
-      entrypoints: {
-        main: {
-          assets: [{ name: 'js/main.bc22113.js' }],
-        },
-      },
     });
 
     const expected = {
@@ -148,7 +138,7 @@ describe('Webpack/extract/assets', () => {
     expect(actual).toEqual(expected);
   });
 
-  test('should return metrics when chunks and entrypoints are missing', () => {
+  test('should return metrics when chunks are missing', () => {
     const actual = extractAssets({
       assets: [
         {
@@ -230,11 +220,6 @@ describe('Webpack/extract/assets', () => {
           names: ['app'],
         },
       ],
-      entrypoints: {
-        main: {
-          assets: ['js/main.bc22113.js?test=abcd'],
-        },
-      },
     });
 
     const expected = {

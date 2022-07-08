@@ -79,20 +79,6 @@
       "size": 573665
     }
   ],
-  "entrypoints": {
-    "main": {
-      "assets": [
-        "1.2428c.css",
-        "vendor.6858d.js",
-        "1.2428c.css.map",
-        "vendor.6858d.js.map",
-        "main.bd313.css",
-        "main.af1dbc34.js",
-        "main.bd313.css.map",
-        "main.af1dbc34.js.map"
-      ]
-    }
-  },
   "chunks": [
     {
       "id": 0,
@@ -110,7 +96,7 @@
     },
     {
       "id": 1,
-      "entry": false,
+      "entry": true,
       "initial": true,
       "files": [
         "1.2428c.css",

@@ -9,33 +9,19 @@ const IGNORE_PATTERN = /\.(map|LICENSE\.txt)$/;
 export const extractAssets = (webpackStats: WebpackStatsFiltered): MetricsAssets => {
   const webpackAssets = webpackStats.assets;
   const webpackChunks = webpackStats.chunks;
-  const webpackEntrypoints = webpackStats.entrypoints || {};
 
-  const entrypointsAssets = Object.values(webpackEntrypoints)
-    .map(({ assets: items }) =>
-      items.map((item) => {
-        if (typeof item === 'object') {
-          return item.name;
-        }
+  let initialAssetNames: Array<string> = [];
+  let entryAssetNames: Array<string> = [];
 
-        return item;
-      }),
-    )
-    .flat();
+  webpackChunks?.forEach((webpackChunk) => {
+    if (webpackChunk.initial && webpackChunk.files && webpackChunk.files?.length > 0) {
+      initialAssetNames = initialAssetNames.concat(webpackChunk.files);
+    }
 
-  const initialItems = webpackChunks
-    ?.reduce((agg, chunk) => {
-      if (!chunk.initial) {
-        return agg;
-      }
-
-      // Reassign is faster
-      // eslint-disable-next-line no-param-reassign
-      agg = agg.concat(chunk.files || []);
-
-      return agg;
-    }, [] as Array<string>)
-    .flat();
+    if (webpackChunk.entry && webpackChunk.files && webpackChunk.files?.length > 0) {
+      entryAssetNames = entryAssetNames.concat(webpackChunk.files);
+    }
+  });
 
   const normalizedChunks = webpackChunks?.map(({ id, names, files }) => ({
     id: normalizeChunkId(id),
@@ -62,10 +48,10 @@ export const extractAssets = (webpackStats: WebpackStatsFiltered): MetricsAssets
       agg[normalizedName] = {
         name: baseName,
         value: size || 0,
-        isEntry: entrypointsAssets.includes(name),
-        isInitial: initialItems?.includes(name) || false,
+        isEntry: entryAssetNames.includes(name),
+        isInitial: initialAssetNames.includes(name),
         isChunk: Boolean(assetChunk),
-        ...(assetChunk ? { chunkId: assetChunk.id } : {}),
+        ...(assetChunk && { chunkId: assetChunk.id }),
       };
 
       return agg;

@@ -106,20 +106,6 @@
       "size": 38673
     }
   ],
-  "entrypoints": {
-    "main": {
-      "assets": [
-        "vendors.5024abb.css",
-        "vendors.278dc2f.js",
-        "vendors.5024abb.css.map",
-        "vendors.278dc2f.js.map",
-        "main.12dd8b1.css",
-        "main.a0929a4.js",
-        "main.12dd8b1.css.map",
-        "main.a0929a4.js.map"
-      ]
-    }
-  },
   "chunks": [
     {
       "id": 0,
@@ -193,7 +179,7 @@
     },
     {
       "id": 5,
-      "entry": false,
+      "entry": true,
       "initial": true,
       "files": [
         "vendors.5024abb.css",

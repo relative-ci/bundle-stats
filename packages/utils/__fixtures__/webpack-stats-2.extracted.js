@@ -28,16 +28,6 @@ module.exports = {
       names: ['main'],
     },
   ],
-  entrypoints: {
-    main: {
-      assets: [
-        'main.b1c2d3e.css',
-        'main.b1c2d3e.css.map',
-        'main.b2c3d4e.js',
-        'main.b2c3d4e.js.map',
-      ],
-    },
-  },
   modules: [
     {
       chunks: [1],

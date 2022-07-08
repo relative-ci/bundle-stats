@@ -13,12 +13,6 @@ declare namespace BundleStatsWebpackPlugin {
     assets?: Boolean;
 
     /**
-     * Output webpack entrypoints information
-     * Default: `true`.
-     */
-    entrypoints?: Boolean;
-
-    /**
      * Output webpack chunks information
      * Default: `true`.
      */
@@ -76,8 +70,8 @@ declare namespace BundleStatsWebpackPlugin {
 
     /**
      * webpack stats options
-     * Default: `{ assets: true, entrypoints: true, chunks: true, modules: true, hash: true, builtAt: true }`.
+     * Default: `{ assets: true: true, chunks: true, modules: true, hash: true, builtAt: true }`.
      */
-    stats?: Partial<WebpackStatsOptions>
+    stats?: Partial<WebpackStatsOptions>;
   }
 }

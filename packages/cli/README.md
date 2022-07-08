@@ -61,7 +61,6 @@ The CLI is consuming the Webpack stats json. The following [stats options](https
 {
   stats: {
     assets: true,
-    entrypoints: true,
     chunks: true,
     modules: true,
     builtAt: true,

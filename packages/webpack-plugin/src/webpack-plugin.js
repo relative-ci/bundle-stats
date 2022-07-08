@@ -23,7 +23,6 @@ const DEFAULT_OPTIONS = {
   silent: false,
   stats: {
     assets: true,
-    entrypoints: true,
     chunks: true,
     modules: true,
     hash: true,
