@@ -20,7 +20,7 @@
   padding: var(--space-xsmall) var(--space-small);
   border-radius: var(--radius-medium);
   width: calc(100vw - 2 * var(--space-small));
-  max-width: 360px;
+  max-width: 340px;
   outline: none;
   filter: drop-shadow(0 0 var(--space-xxsmall) var(--color-shadow));
   will-change: filter;
