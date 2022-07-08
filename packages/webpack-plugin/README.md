@@ -69,7 +69,6 @@ module.exports = {
   {
     stats: {
       assets: true,
-      entrypoints: true,
       chunks: true,
       modules: true,
       builtAt: true,

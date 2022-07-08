@@ -12,13 +12,6 @@ export interface WebpackStatsFilteredAsset {
   size?: number;
 }
 
-export interface WebpackStatsFilteredEntrypoint {
-  /** List of entrypoint assets. Webpack 5 provides an asset object */
-  assets: Array<WebpackStatsFilteredAsset | string>;
-}
-
-export type WebpackStatsFilteredEntrypoints = Record<string, WebpackStatsFilteredEntrypoint>;
-
 export interface WebpackStatsFilteredChunk {
   entry: boolean;
   id: number | string;
@@ -46,7 +39,6 @@ export interface WebpackStatsFiltered {
   builtAt?: number;
   hash?: string;
   assets?: Array<WebpackStatsFilteredAsset>;
-  entrypoints?: WebpackStatsFilteredEntrypoints;
   chunks?: Array<WebpackStatsFilteredChunk>;
   modules?: Array<WebpackStatsFilteredRootModule>;
 }
@@ -78,15 +70,6 @@ export default (
 
       return agg;
     }, [] as Array<WebpackStatsFilteredAsset>) || [];
-
-  const entrypoints = Object.entries(source?.entrypoints || {}).reduce((agg, [key, value]) => {
-    // eslint-disable-next-line no-param-reassign
-    agg[key] = {
-      assets: value.assets as Array<WebpackStatsFilteredAsset | string>,
-    };
-
-    return agg;
-  }, {} as WebpackStatsFilteredEntrypoints);
 
   const chunks =
     source.chunks?.reduce((agg, chunk) => {
@@ -147,7 +130,6 @@ export default (
     builtAt,
     hash,
     assets,
-    entrypoints,
     chunks,
     modules,
   };

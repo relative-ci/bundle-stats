@@ -242,16 +242,6 @@ Object {
           ],
         },
       ],
-      "entrypoints": Object {
-        "main": Object {
-          "assets": Array [
-            "main.a1b2c3d.css",
-            "main.a1b2c3d.css.map",
-            "main.a2b3c4d.js",
-            "main.a2b3c4d.js.map",
-          ],
-        },
-      },
       "hash": "abcd1234",
       "modules": Array [
         Object {
@@ -597,16 +587,6 @@ Object {
           ],
         },
       ],
-      "entrypoints": Object {
-        "main": Object {
-          "assets": Array [
-            "main.a1b2c3d.css",
-            "main.a1b2c3d.css.map",
-            "main.a2b3c4d.js",
-            "main.a2b3c4d.js.map",
-          ],
-        },
-      },
       "hash": "abcd1234",
       "modules": Array [
         Object {
