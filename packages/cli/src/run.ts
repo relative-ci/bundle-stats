@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import path from 'path';
 import { readJSON, outputFile } from 'fs-extra';
-import Listr from 'listr';
+import { Listr } from 'listr2';
 import { get } from 'lodash';
 import boxen from 'boxen';
 import '@bundle-stats/utils/lib/polyfills';
