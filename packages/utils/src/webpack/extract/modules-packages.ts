@@ -3,7 +3,7 @@ import last from 'lodash/last';
 import isEmpty from 'lodash/isEmpty';
 
 import { PACKAGES_SEPARATOR, PACKAGE_ID_SEPARATOR } from '../../config';
-import { PackageMetric, WebpackMetricsModules, WebpackMetricsPackages } from '../../constants';
+import { Package, MetricsModules, MetricsPackages } from '../types';
 import { MODULE_PATH_PACKAGES, PACKAGE_PATH_NAME } from '../constants';
 
 const uniqLast = (data: Array<unknown>) => {
@@ -66,9 +66,9 @@ export const getPackageMetaFromModulePath = (modulePath: string) => {
 };
 
 export const extractModulesPackages = (
-  webpackStats?: any,
-  currentExtractedData?: WebpackMetricsModules,
-): WebpackMetricsPackages => {
+  _?: unknown,
+  currentExtractedData?: MetricsModules,
+): MetricsPackages => {
   const modules = Object.entries(currentExtractedData?.metrics?.modules || {});
 
   const packages = modules.reduce((agg, [modulePath, { value }]) => {
@@ -105,7 +105,7 @@ export const extractModulesPackages = (
 
     // Same package name, but different paths (eg: symlinks)
     const existingPackageWithEqualPath = Object.entries(agg).find(
-      ([_, packageData]) => packageData.path === packageMeta.path,
+      ([__, packageData]) => packageData.path === packageMeta.path,
     );
 
     if (existingPackageWithEqualPath) {
@@ -125,7 +125,7 @@ export const extractModulesPackages = (
       Object.keys(agg)
         .map((id) => id.split('~'))
         .filter(([id]) => id === packageMeta.id)
-        .map(([_, index]) => parseInt(index, 10)),
+        .map(([__, index]) => parseInt(index, 10)),
     ) || 0;
 
     const packageName = [packageMeta.id, lastIndex + 1].join(PACKAGE_ID_SEPARATOR);
@@ -138,7 +138,7 @@ export const extractModulesPackages = (
         value,
       },
     };
-  }, {} as Record<string, PackageMetric>);
+  }, {} as Record<string, Package>);
 
   return { metrics: { packages } };
 };
