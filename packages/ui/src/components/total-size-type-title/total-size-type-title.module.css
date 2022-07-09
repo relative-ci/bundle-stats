@@ -5,3 +5,21 @@
   line-height: var(--space-medium);
   text-transform: uppercase;
 }
+
+.readMoreLink {
+  appearance: none;
+  background: none;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  color: var(--color-primary);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.readMoreLink:hover,
+.readMoreLink:active,
+.readMoreLink:focus {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
