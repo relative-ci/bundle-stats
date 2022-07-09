@@ -91,7 +91,7 @@
 }
 
 .filterGroupItems {
-  max-height: calc(20 * (var(--space-small) + 2 * var(--space-xxxsmall)));
+  max-height: calc(10 * (var(--space-small) + 2 * var(--space-xxxsmall)));
   overflow: auto;
 }
 
