@@ -23,9 +23,9 @@ export const MetricsTableTitle = (props) => {
             {popoverInfo && <p>{popoverInfo}</p>}
             {popoverHref && (
               <p>
-                <a href={popoverHref} target="_blank" rel="noreferrer">
+                <button type="button" onClick={() => window.open(popoverHref)} className={css.readMoreLink}>
                   {I18N.READ_MORE}
-                </a>
+                </button>
               </p>
             )}
           </Stack>

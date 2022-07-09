@@ -17,9 +17,13 @@ export const TotalSizeTypeTitle = ({ className }) => (
       <Stack space="xxxsmall">
         <p>{I18N.ASSET_TOTALS_INFO}</p>
         <p>
-          <a href={config.documentation.assets} target="_blank" rel="noreferrer">
+          <button
+            type="button"
+            onClick={() => window.open(config.documentation.assets)}
+            className={css.readMoreLink}
+          >
             {I18N.READ_MORE}
-          </a>
+          </button>
         </p>
       </Stack>
     </HoverCard>
