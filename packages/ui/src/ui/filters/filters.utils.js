@@ -64,3 +64,24 @@ export const getGroupFiltersLabelSuffix = (filters) => {
 
   return `${suffix}${skippedLabels > 0 ? ` +${skippedLabels}` : ''}`;
 };
+
+export const getInitialValues = (key, filters) => {
+  if (typeof filters?.defaultValue !== 'undefined') {
+    return {
+      [key]: filters.defaultValue,
+    };
+  }
+
+  if (typeof filters === 'object') {
+    return Object.entries(filters).map(([groupKey, groupFilters]) => getInitialValues(
+      [...key ? [key] : [], groupKey].join('.'),
+      groupFilters,
+    )).reduce((agg, current) => ({
+      ...agg,
+      ...current,
+    }), {});
+  }
+
+  return {};
+};
+
