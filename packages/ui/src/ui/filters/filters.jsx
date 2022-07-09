@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { get } from 'lodash';
+import { get, map } from 'lodash';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Dropdown } from '../dropdown';
@@ -170,7 +170,13 @@ FilterGroup.defaultProps = {
 export const Filters = (props) => {
   const { className, values, filters, toggleFilter, toggleFilters } = props;
 
-  const onCheckboxChange = ({ target }) => toggleFilter(target.name, target.checked);
+  const onCheckboxChange = useCallback(
+    (event) => {
+      const { name } = event.target;
+      toggleFilter(name, !values[name]);
+    },
+    [toggleFilter, values]
+  );
   const rootClassName = cx(css.root, className);
 
   return (
