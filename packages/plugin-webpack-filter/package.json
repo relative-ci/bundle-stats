@@ -38,7 +38,7 @@
     "@types/jest": "28.1.4",
     "@types/webpack": "5.28.0",
     "core-js": "3.23.4",
-    "jest": "27.5.1",
+    "jest": "28.1.2",
     "jest-cli": "28.1.2",
     "jest-date-mock": "1.0.8",
     "regenerator-runtime": "0.13.9",
