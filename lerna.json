@@ -2,7 +2,7 @@
   "packages": [
     "packages/*"
   ],
-  "version": "4.0.0-rc.4",
+  "version": "4.0.0-rc.5",
   "command": {
     "publish": {
       "verifyAccess": false
