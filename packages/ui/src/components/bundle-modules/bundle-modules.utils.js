@@ -87,7 +87,11 @@ export const useModuleFilterByChunk = ({ jobs, filters, chunkIds }) => {
     }
 
     const jobsWithFilteredData = jobs.map((job) => {
-      const modules = job?.metrics?.webpack?.modules || {};
+      const modules = job?.metrics?.webpack?.modules;
+
+      if (!modules) {
+        return job;
+      }
 
       const filteredModules = Object.entries(modules).reduce((agg, [moduleId, moduleEntry]) => {
         const match = intersection(moduleEntry.chunkIds, includedChunkIds);
