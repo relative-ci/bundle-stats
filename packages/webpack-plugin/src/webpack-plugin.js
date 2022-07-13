@@ -62,15 +62,18 @@ const generateReports = async (compilation, options) => {
 
   try {
     if (compare) {
-      baselineStats = await readBaseline();
-      baselineStats = filter(baselineStats);
+      const baselineStatsData = await readBaseline();
+      baselineStats = filter(baselineStatsData);
       if (!options.silent) logger.info(`Read baseline from ${baselineFilepath}`);
     }
   } catch (err) {
     logger.warn(TEXT.PLUGIN_BASELINE_MISSING_WARN);
   }
 
-  const jobs = createJobs([{ webpack: data }, ...(compare ? [{ webpack: baselineStats }] : [])]);
+  const jobs = createJobs([
+    { webpack: data },
+    ...(compare && baselineStats ? [{ webpack: baselineStats }] : []),
+  ]);
   const report = createReport(jobs);
   const artifacts = createArtifacts(jobs, report, { html, json });
 
