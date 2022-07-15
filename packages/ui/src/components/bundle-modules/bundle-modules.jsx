@@ -29,6 +29,61 @@ import { MetricsTableTitle } from '../metrics-table-title';
 import { ModuleInfo } from '../module-info';
 import css from './bundle-modules.module.css';
 
+const getFilters = ({ filters, compareMode, chunks }) => ({
+    [MODULE_FILTERS.CHANGED]: {
+      label: 'Changed',
+      defaultValue: filters.changed,
+      disabled: !compareMode,
+    },
+    [MODULE_FILTERS.DUPLICATED]: {
+      label: 'Duplicate',
+      defaultValue: filters[MODULE_FILTERS.DUPLICATED],
+    },
+    [MODULE_SOURCE_TYPE]: {
+      label: 'Source',
+      [MODULE_FILTERS.FIRST_PARTY]: {
+        label: 'First party',
+        defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.FIRST_PARTY}`, true),
+      },
+      [MODULE_FILTERS.THIRD_PARTY]: {
+        label: 'Third party',
+        defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.THIRD_PARTY}`, true),
+      },
+    },
+
+    // When chunks data available, list available chunks as filters
+    ...(!isEmpty(chunks) && {
+      [MODULE_CHUNK]: {
+        label: 'Chunk',
+        ...chunks.reduce(
+          (chunkFilters, { id, name }) => ({
+            ...chunkFilters,
+            [id]: {
+              label: name,
+              defaultValue: get(filters, `${MODULE_CHUNK}.${id}`, true),
+            },
+          }),
+          {},
+        ),
+      },
+    }),
+
+    // Module source types
+    [MODULE_FILE_TYPE]: {
+      label: 'File type',
+      ...MODULE_SOURCE_FILE_TYPES.reduce(
+        (agg, fileType) => ({
+          ...agg,
+          [fileType]: {
+            label: FILE_TYPE_LABELS[fileType],
+            defaultValue: get(filters, `${MODULE_FILE_TYPE}.${fileType}`, true),
+          },
+        }),
+        {},
+      ),
+    },
+})
+
 const RowHeader = ({ row, chunks, labels, CustomComponentLink }) => {
   const chunkIds = map(chunks, 'id');
 
@@ -103,6 +158,20 @@ export const BundleModules = ({
 }) => {
   const rootClassName = cx(css.root, className);
 
+  const dropdownFilters = useMemo(
+    () => getFilters({ filters, chunks, compareMode: jobs.length > 1 }),
+    [jobs, filters, chunks]
+  );
+
+  const metricsTableTitle = useMemo(() => (
+    <MetricsTableTitle
+      title={I18N.MODULES}
+      info={`(${items.length}/${totalRowCount})`}
+      popoverInfo={I18N.MODULES_INFO}
+      popoverHref={config.documentation.modules}
+    />
+  ), [items, totalRowCount]);
+
   const renderRowHeader = useCallback(
     (row) => (
       <RowHeader
@@ -115,69 +184,14 @@ export const BundleModules = ({
     [jobs, chunks, CustomComponentLink],
   );
 
-  const emptyMessage = (
+  const emptyMessage = useMemo(() => (
     <EmptySet
       resources="modules"
       filtered={totalRowCount !== 0}
       handleResetFilters={resetFilters}
       handleViewAll={resetAllFilters}
     />
-  );
-
-  const dropdownFilters = {
-    [MODULE_FILTERS.CHANGED]: {
-      label: 'Changed',
-      defaultValue: filters.changed,
-      disabled: jobs.length <= 1,
-    },
-    [MODULE_FILTERS.DUPLICATED]: {
-      label: 'Duplicate',
-      defaultValue: filters[MODULE_FILTERS.DUPLICATED],
-    },
-    [MODULE_SOURCE_TYPE]: {
-      label: 'Source',
-      [MODULE_FILTERS.FIRST_PARTY]: {
-        label: 'First party',
-        defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.FIRST_PARTY}`, true),
-      },
-      [MODULE_FILTERS.THIRD_PARTY]: {
-        label: 'Third party',
-        defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.THIRD_PARTY}`, true),
-      },
-    },
-
-    // When chunks data available, list available chunks as filters
-    ...(!isEmpty(chunks) && {
-      [MODULE_CHUNK]: {
-        label: 'Chunk',
-        ...chunks.reduce(
-          (chunkFilters, { id, name }) => ({
-            ...chunkFilters,
-            [id]: {
-              label: name,
-              defaultValue: get(filters, `${MODULE_CHUNK}.${id}`, true),
-            },
-          }),
-          {},
-        ),
-      },
-    }),
-
-    // Module source types
-    [MODULE_FILE_TYPE]: {
-      label: 'File type',
-      ...MODULE_SOURCE_FILE_TYPES.reduce(
-        (agg, fileType) => ({
-          ...agg,
-          [fileType]: {
-            label: FILE_TYPE_LABELS[fileType],
-            defaultValue: get(filters, `${MODULE_FILE_TYPE}.${fileType}`, true),
-          },
-        }),
-        {},
-      ),
-    },
-  };
+  ), [totalRowCount, resetFilters, resetAllFilters]);
 
   return (
     <div className={rootClassName}>
@@ -221,14 +235,7 @@ export const BundleModules = ({
         renderRowHeader={renderRowHeader}
         emptyMessage={emptyMessage}
         showHeaderSum
-        title={
-          <MetricsTableTitle
-            title={I18N.MODULES}
-            info={`(${items.length}/${totalRowCount})`}
-            popoverInfo={I18N.MODULES_INFO}
-            popoverHref={config.documentation.modules}
-          />
-        }
+        title={metricsTableTitle}
       />
     </div>
   );
