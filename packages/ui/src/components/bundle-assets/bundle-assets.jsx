@@ -49,6 +49,37 @@ const getFileTypeFilters = (filters) =>
       {},
     );
 
+const getFilters = ({ comareMode, filters }) => ({
+  [ASSET_FILTERS.CHANGED]: {
+    label: 'Changed',
+    defaultValue: filters[ASSET_FILTERS.CHANGED],
+    disabled: !compareMode,
+  },
+  [ASSET_ENTRY_TYPE]: {
+    label: 'Entry type',
+    [ASSET_FILTERS.ENTRY]: {
+      label: 'Entry',
+      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`, true),
+    },
+    [ASSET_FILTERS.INITIAL]: {
+      label: 'Initial',
+      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`, true),
+    },
+    [ASSET_FILTERS.CHUNK]: {
+      label: 'Chunk',
+      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`, true),
+    },
+    [ASSET_FILTERS.ASSET]: {
+      label: 'Asset',
+      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ASSET}`, true),
+    },
+  },
+  [ASSET_FILE_TYPE]: {
+    label: 'File type',
+    ...getFileTypeFilters(filters),
+  },
+});
+
 const TooltipNotPredictive = ({ runs }) => (
   <div className={css.tooltipNotPredictive}>
     <p className={css.tooltipNotPredictiveText}>File name is the same, but the size has changed:</p>
@@ -181,14 +212,19 @@ export const BundleAssets = (props) => {
     customComponentLink: CustomComponentLink,
   } = props;
 
-  const emptyMessage = (
-    <EmptySet
-      resources="assets"
-      filtered={totalRowCount !== 0}
-      handleResetFilters={resetFilters}
-      handleViewAll={resetAllFilters}
-    />
+  const dropdownFilters = useMemo(
+    () => getFilters({ compareMode: jobs?.length > 1, filters }),
+    [jobs, filters],
   );
+
+  const metricsTableTitle = useMemo(() => (
+    <MetricsTableTitle
+      title={I18N.ASSETS}
+      info={`(${items.length}/${totalRowCount})`}
+      popoverInfo={I18N.ASSETS_INFO}
+      popoverHref={config.documentation.assets}
+    />
+  ), [items, totalRowCount]);
 
   const renderRowHeader = useCallback(
     (row) => (
@@ -201,6 +237,15 @@ export const BundleAssets = (props) => {
     ),
     [jobs, CustomComponentLink],
   );
+
+  const emptyMessage = useMemo(() => (
+    <EmptySet
+      resources="assets"
+      filtered={totalRowCount !== 0}
+      handleResetFilters={resetFilters}
+      handleViewAll={resetAllFilters}
+    />
+  ), [totalRowCount, resetFilters, resetAllFilters]);
 
   return (
     <section className={cx(css.root, className)}>
@@ -225,36 +270,7 @@ export const BundleAssets = (props) => {
           />
           <Filters
             className={css.toolbarFilters}
-            filters={{
-              [ASSET_FILTERS.CHANGED]: {
-                label: 'Changed',
-                defaultValue: filters[ASSET_FILTERS.CHANGED],
-                disabled: jobs.length <= 1,
-              },
-              [ASSET_ENTRY_TYPE]: {
-                label: 'Entry type',
-                [ASSET_FILTERS.ENTRY]: {
-                  label: 'Entry',
-                  defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`, true),
-                },
-                [ASSET_FILTERS.INITIAL]: {
-                  label: 'Initial',
-                  defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`, true),
-                },
-                [ASSET_FILTERS.CHUNK]: {
-                  label: 'Chunk',
-                  defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`, true),
-                },
-                [ASSET_FILTERS.ASSET]: {
-                  label: 'Asset',
-                  defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ASSET}`, true),
-                },
-              },
-              [ASSET_FILE_TYPE]: {
-                label: 'File type',
-                ...getFileTypeFilters(filters),
-              },
-            }}
+            filters={dropdownFilters}
             hasActiveFilters={hasActiveFilters}
             onChange={updateFilters}
           />
@@ -267,14 +283,7 @@ export const BundleAssets = (props) => {
           renderRowHeader={renderRowHeader}
           emptyMessage={emptyMessage}
           showHeaderSum
-          title={
-            <MetricsTableTitle
-              title={I18N.ASSETS}
-              info={`(${items.length}/${totalRowCount})`}
-              popoverInfo={I18N.ASSETS_INFO}
-              popoverHref={config.documentation.assets}
-            />
-          }
+          title={metricsTableTitle}
         />
       </main>
     </section>
