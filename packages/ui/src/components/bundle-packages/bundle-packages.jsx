@@ -229,7 +229,7 @@ export const BundlePackages = (props) => {
   const metricsTableTitle = useMemo(() => (
     <MetricsTableTitle
       title={I18N.PACKAGES}
-      info={`(${items.length}/${totalRowCount})`}
+      info={`${items.length}/${totalRowCount}`}
       popoverInfo={I18N.PACKAGES_INFO}
       popoverHref={config.documentation.packages}
     />

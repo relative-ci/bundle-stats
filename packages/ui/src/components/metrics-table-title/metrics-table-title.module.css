@@ -1,14 +1,20 @@
 .root {
+}
+
+.title {
+  color: var(--color-text-light);
   align-items: center;
   font-weight: bold;
-  line-height: var(--space-small);
   text-transform: uppercase;
-  color: var(--color-text-light);
+}
+
+.hoverCard {
+  line-height: 1;
 }
 
 .info {
+  font-size: var(--size-xsmall);
   font-weight: normal;
-  text-transform: none;
 }
 
 .readMoreLink {

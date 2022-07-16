@@ -14,24 +14,26 @@ export const MetricsTableTitle = (props) => {
   const rootClassName = cx(css.root, className);
 
   return (
-    <FlexStack space="xxxsmall" className={rootClassName}>
-      <span>{title}</span>
-      {info && <span className={css.info}>{info}</span>}
-      {(popoverInfo || popoverHref) && (
-        <HoverCard label={<Icon glyph="help" />}>
-          <Stack space="xxxsmall">
-            {popoverInfo && <p>{popoverInfo}</p>}
-            {popoverHref && (
-              <p>
-                <button type="button" onClick={() => window.open(popoverHref)} className={css.readMoreLink}>
-                  {I18N.READ_MORE}
-                </button>
-              </p>
-            )}
-          </Stack>
-        </HoverCard>
-      )}
-    </FlexStack>
+    <Stack className={rootClassName}>
+      <FlexStack space="xxxsmall" className={css.title}>
+        <span>{title}</span>
+        {(popoverInfo || popoverHref) && (
+          <HoverCard label={<Icon glyph="help" />} className={css.hoverCard}>
+            <Stack space="xxxsmall">
+              {popoverInfo && <p>{popoverInfo}</p>}
+              {popoverHref && (
+                <p>
+                  <button type="button" onClick={() => window.open(popoverHref)} className={css.readMoreLink}>
+                    {I18N.READ_MORE}
+                  </button>
+                </p>
+              )}
+            </Stack>
+          </HoverCard>
+        )}
+      </FlexStack>
+      {info && <p className={css.info}>{info}</p>}
+    </Stack>
   );
 };
 

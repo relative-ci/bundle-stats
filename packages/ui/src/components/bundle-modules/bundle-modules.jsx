@@ -166,7 +166,7 @@ export const BundleModules = ({
   const metricsTableTitle = useMemo(() => (
     <MetricsTableTitle
       title={I18N.MODULES}
-      info={`(${items.length}/${totalRowCount})`}
+      info={`${items.length}/${totalRowCount}`}
       popoverInfo={I18N.MODULES_INFO}
       popoverHref={config.documentation.modules}
     />

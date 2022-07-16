@@ -220,7 +220,7 @@ export const BundleAssets = (props) => {
   const metricsTableTitle = useMemo(() => (
     <MetricsTableTitle
       title={I18N.ASSETS}
-      info={`(${items.length}/${totalRowCount})`}
+      info={`${items.length}/${totalRowCount}`}
       popoverInfo={I18N.ASSETS_INFO}
       popoverHref={config.documentation.assets}
     />
