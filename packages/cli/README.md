@@ -1,6 +1,11 @@
 <p align="center">
   <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank"><img alt="BundleStats screenshot" width="640" src="https://raw.githubusercontent.com/relative-ci/bundle-stats/master/bundle-stats.png"/></a>
 </p>
+<p align="center">
+  <strong>Demo:</strong>
+  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank">Compare multiple builds</a>,
+  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-single-job.html" target="_blank">Single build</a>
+</p>
 <h1 align="center">BundleStats</h1>
 <p align="center">
   Analyze webpack stats(bundle size, assets, modules, packages) and compare the results between different builds.
