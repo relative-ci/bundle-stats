@@ -49,7 +49,7 @@ const getFileTypeFilters = (filters) =>
       {},
     );
 
-const getFilters = ({ comareMode, filters }) => ({
+const getFilters = ({ compareMode, filters }) => ({
   [ASSET_FILTERS.CHANGED]: {
     label: 'Changed',
     defaultValue: filters[ASSET_FILTERS.CHANGED],
