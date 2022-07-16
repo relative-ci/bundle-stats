@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { get, map } from 'lodash';
+import { get } from 'lodash';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Dropdown } from '../dropdown';
@@ -58,8 +58,8 @@ const FilterGroup = (props) => {
   const groupCheckboxes = groupItems.filter(
     ([itemKey, item]) => typeof item?.defaultValue !== 'undefined',
   );
-  const isGroupChecked = groupCheckboxes
-    .map(([itemKey]) => get(values, `${groupKey}.${itemKey}`))
+  const areAllGroupItemsChecked = groupCheckboxes
+    .map(([itemKey]) => values?.[`${groupKey}.${itemKey}`])
     .reduce((agg, val) => agg && val, true);
 
   const filterSuffix = getGroupFiltersLabelSuffix(groupItems);
@@ -123,7 +123,7 @@ const FilterGroup = (props) => {
               })}
             </div>
             <div className={css.filterGroupActions}>
-              {isGroupChecked ? (
+              {areAllGroupItemsChecked ? (
                 <MenuItem
                   id="clear-all"
                   as="button"

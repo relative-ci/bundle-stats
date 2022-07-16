@@ -27,6 +27,19 @@ import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
 import css from './bundle-packages.module.css';
 
+const getDropdownFilters = ({ compareMode, filters }) => ({
+  [PACKAGE_FILTERS.CHANGED]: {
+    label: 'Changed',
+    defaultValue: filters[PACKAGE_FILTERS.CHANGED],
+    disabled: !compareMode,
+  },
+  [PACKAGE_FILTERS.DUPLICATE]: {
+    label: 'Duplicate',
+    defaultValue: filters[PACKAGE_FILTERS.DUPLICATE],
+  },
+});
+
+
 const PackagePopoverContent = ({ name, fullName, path, duplicate, CustomComponentLink }) => {
   const fallbackPackagePath = `node_modules/${fullName.split(PACKAGES_SEPARATOR).join('/node_modules/')}`;
   const normalizedPackagePath = `${path || fallbackPackagePath}/`;
@@ -208,19 +221,33 @@ export const BundlePackages = (props) => {
     customComponentLink: CustomComponentLink,
   } = props;
 
-  const emptyMessage = (
+  const dropdownFilters = useMemo(
+    () => getDropdownFilters({ compareMode: jobs?.length > 1, filters }),
+    [jobs, filters],
+  );
+
+  const metricsTableTitle = useMemo(() => (
+    <MetricsTableTitle
+      title={I18N.PACKAGES}
+      info={`${items.length}/${totalRowCount}`}
+      popoverInfo={I18N.PACKAGES_INFO}
+      popoverHref={config.documentation.packages}
+    />
+  ), [items, totalRowCount]);
+
+  const renderRowHeader = useCallback(
+    (row) => <RowHeader row={row} CustomComponentLink={CustomComponentLink} />,
+    [CustomComponentLink],
+  );
+
+  const emptyMessage = useMemo(() => (
     <EmptySet
       resources="packages"
       filtered={totalRowCount !== 0}
       handleResetFilters={resetFilters}
       handleViewAll={resetAllFilters}
     />
-  );
-
-  const renderRowHeader = useCallback(
-    (row) => <RowHeader row={row} CustomComponentLink={CustomComponentLink} />,
-    [CustomComponentLink],
-  );
+  ), [totalRowCount, resetFilters, resetAllFilters]);
 
   return (
     <section className={cx(css.root, className)}>
@@ -244,17 +271,7 @@ export const BundlePackages = (props) => {
             updateSearch={updateSearch}
           />
           <Filters
-            filters={{
-              [PACKAGE_FILTERS.CHANGED]: {
-                label: 'Changed',
-                defaultValue: filters[PACKAGE_FILTERS.CHANGED],
-                disabled: jobs.length <= 1,
-              },
-              [PACKAGE_FILTERS.DUPLICATE]: {
-                label: 'Duplicate',
-                defaultValue: filters[PACKAGE_FILTERS.DUPLICATE],
-              },
-            }}
+            filters={dropdownFilters}
             label={`Filters (${items.length}/${totalRowCount})`}
             onChange={updateFilters}
             hasActiveFilters={hasActiveFilters}
@@ -268,14 +285,7 @@ export const BundlePackages = (props) => {
           emptyMessage={emptyMessage}
           renderRowHeader={renderRowHeader}
           showHeaderSum
-          title={
-            <MetricsTableTitle
-              title={I18N.PACKAGES}
-              info={`(${items.length}/${totalRowCount})`}
-              popoverInfo={I18N.PACKAGES_INFO}
-              popoverHref={config.documentation.packages}
-            />
-          }
+          title={metricsTableTitle}
         />
       </main>
     </section>
