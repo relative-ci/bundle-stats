@@ -57,7 +57,7 @@
     "chromatic": "6.7.0",
     "classnames": "2.3.1",
     "colormap": "2.3.2",
-    "core-js": "3.23.4",
+    "core-js": "3.23.5",
     "cross-env": "7.0.3",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.6",
