@@ -5,6 +5,7 @@ export { EmptySet } from './empty-set';
 export { FileName } from './file-name';
 export { Filters } from './filters';
 export { HorizontalBarChart } from './horizontal-bar-chart';
+export { HoverCard } from './hover-card';
 export { Icon } from './icon';
 export { Input } from './input';
 export { Loader } from './loader';
