@@ -59,7 +59,7 @@ export const getRowFilter = (filters) => (item) => {
       (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`] && item.isEntry) ||
       (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`] && item.isInitial) ||
       (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`] && item.isChunk) ||
-      (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ASSET}`] && item.isAsset)
+      (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.OTHER}`] && item.isAsset)
     )
   ) {
     return false;

@@ -32,7 +32,7 @@ export const getAssetFileTypeFilters = (value = true) =>
   );
 
 export const getAssetEntryTypeFilters = (value = true) =>
-  [ASSET_FILTERS.ENTRY, ASSET_FILTERS.INITIAL, ASSET_FILTERS.CHUNK, ASSET_FILTERS.ASSET].reduce(
+  [ASSET_FILTERS.ENTRY, ASSET_FILTERS.INITIAL, ASSET_FILTERS.CHUNK, ASSET_FILTERS.OTHER].reduce(
     (agg, entryTypeFilter) => ({
       ...agg,
       [`${ASSET_ENTRY_TYPE}.${entryTypeFilter}`]: value,
