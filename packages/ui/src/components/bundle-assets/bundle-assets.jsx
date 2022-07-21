@@ -69,9 +69,9 @@ const getFilters = ({ compareMode, filters }) => ({
       label: 'Chunk',
       defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`, true),
     },
-    [ASSET_FILTERS.ASSET]: {
-      label: 'Asset',
-      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ASSET}`, true),
+    [ASSET_FILTERS.OTHER]: {
+      label: 'Other',
+      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.OTHER}`, true),
     },
   },
   [ASSET_FILE_TYPE]: {

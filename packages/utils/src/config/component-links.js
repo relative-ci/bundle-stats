@@ -5,7 +5,7 @@ export const MODULE_FILE_TYPE = 'mft';
 export const MODULE_SOURCE_TYPE = 'mst';
 
 export const ASSET_FILTERS = {
-  ASSET: 'asset',
+  OTHER: 'asset',
   CHANGED: 'changed',
   ENTRY: 'entrypoint',
   INITIAL: 'initial',
