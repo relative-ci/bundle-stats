@@ -1,9 +1,17 @@
-.title {
+.root {
   color: var(--color-text-light);
+  align-items: center;
+}
+
+.text {
   font-weight: bold;
   font-size: var(--size-medium);
   line-height: var(--space-medium);
   text-transform: uppercase;
+}
+
+.anchor {
+  display: block;
 }
 
 .readMoreLink {

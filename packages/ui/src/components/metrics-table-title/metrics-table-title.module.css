@@ -2,14 +2,14 @@
 }
 
 .title {
-  color: var(--color-text-light);
   align-items: center;
+  color: var(--color-text-light);
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.hoverCard {
-  line-height: 1;
+.anchor {
+  display: block;
 }
 
 .info {
