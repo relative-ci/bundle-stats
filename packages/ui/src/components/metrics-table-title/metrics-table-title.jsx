@@ -18,7 +18,7 @@ export const MetricsTableTitle = (props) => {
       <FlexStack space="xxxsmall" className={css.title}>
         <span>{title}</span>
         {(popoverInfo || popoverHref) && (
-          <HoverCard label={<Icon glyph="help" />} className={css.hoverCard}>
+          <HoverCard label={<Icon glyph="help" />} anchorClassName={css.anchor}>
             <Stack space="xxxsmall">
               {popoverInfo && <p>{popoverInfo}</p>}
               {popoverHref && (

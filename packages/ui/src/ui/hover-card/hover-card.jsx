@@ -24,7 +24,7 @@ const resolveComponent = (as, href) => {
 };
 
 export const HoverCard = (props) => {
-  const { className, hoverCardClassName, href, as, label, children } = props;
+  const { className, anchorClassName, hoverCardClassName, href, as, label, children } = props;
   const state = useHovercardState({ gutter: 8 });
   const hoverCardProps = useHovercard({ state, portal: true });
 
@@ -37,7 +37,12 @@ export const HoverCard = (props) => {
 
   return (
     <div className={cx(css.root, className)}>
-      <HovercardAnchor state={state} href={href} className={css.anchor} as={Component}>
+      <HovercardAnchor
+        state={state}
+        href={href}
+        className={cx(css.anchor, anchorClassName)}
+        as={Component}
+      >
         {label}
       </HovercardAnchor>
       <Hovercard
@@ -59,6 +64,8 @@ HoverCard.propTypes = {
   className: PropTypes.string,
   /** Adopted child class name for hover card */
   hoverCardClassName: PropTypes.string,
+  /** Adopted child class name for anchor */
+  anchorClassName: PropTypes.string,
   /** Anchor label */
   label: PropTypes.node,
   /** Anchor href */
@@ -72,6 +79,7 @@ HoverCard.propTypes = {
 HoverCard.defaultProps = {
   className: '',
   hoverCardClassName: '',
+  anchorClassName: '',
   label: '',
   as: '',
   href: '',
