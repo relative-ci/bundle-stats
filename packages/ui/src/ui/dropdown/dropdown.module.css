@@ -61,6 +61,7 @@
   color: var(--color-text-light);
   font-size: var(--size-small);
   line-height: inherit;
+  text-decoration: none;
 }
 
 .menuItem:hover {
