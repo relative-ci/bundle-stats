@@ -4,7 +4,9 @@
 }
 
 .itemIcon {
-  display: none;
+  flex: 0 0 auto;
+  visibility: hidden;
+  margin-right: var(--space-xxxsmall);
 }
 
 .itemLabel {
@@ -15,6 +17,6 @@
   transform: rotate(180deg);
 }
 
-.item.active .itemIcon {
-  display: block;
+.itemActive .itemIcon {
+  visibility: visible;
 }
