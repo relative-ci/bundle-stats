@@ -8,23 +8,15 @@
 }
 
 .currentMetric {
-  display: block;
   color: var(--color-heading);
   font-size: var(--size-xlarge);
-  line-height: var(--space-medium);
   white-space: nowrap;
   font-weight: bold;
-}
-
-.delta {
-  font-size: var(--size-small);
-  line-height: var(--space-medium);
 }
 
 .baselineMetric {
   color: var(--color-text-light);
   font-size: var(--size-small);
-  line-height: var(--space-small);
 }
 
 .readMoreLink {
@@ -63,5 +55,4 @@
 /* Size large */
 .large .currentMetric {
   font-size: var(--size-xxxlarge);
-  line-height: var(--space-medium);
 }
