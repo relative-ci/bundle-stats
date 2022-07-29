@@ -1,5 +1,9 @@
 /* Checkbox + label + button */
 .filter {
+  /* Update MenuItem padding */
+  padding-top: calc(var(--space-xxxsmall) / 2);
+  padding-bottom: calc(var(--space-xxxsmall) / 2);
+
   position: relative;
   width: 100%;
   max-width: 240px;
@@ -11,7 +15,6 @@
 }
 
 .filterInput {
-  border-radius: var(--radius-small) 0 0 var(--radius-small);
   flex: 0 0 auto;
   height: 1em;
   cursor: pointer;
@@ -26,17 +29,17 @@
 }
 
 .filterOnlyButton {
-  padding: var(--space-xxsmall);
+  padding: var(--space-xxxsmall) var(--space-xsmall);
   display: none;
   appearance: none;
   border: none;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255) 30%);
   cursor: pointer;
-  line-height: 1;
   position: absolute;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
+  bottom: 0;
+  line-height: var(--space-xsmall);
 }
 
 /** filter disabled state */
@@ -63,6 +66,7 @@
 
 /** Filter standard variation */
 .filterStandalone {
+  padding: 0;
   width: auto;
   color: var(--color-text-light);
   z-index: var(--layout-xlow); /* show collapsed border */
@@ -95,16 +99,11 @@
   overflow: auto;
 }
 
-.filterGroupItem {
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
 .filterGroupActions {
-  margin-top: var(--space-xxsmall);
+  margin-top: var(--space-xxxsmall);
   padding-top: var(--space-xxxsmall);
   padding-bottom: var(--space-xxxsmall);
-  margin-bottom: calc(0px - var(--space-xsmall));
+  margin-bottom: calc(0px - var(--space-xxsmall));
   border-top: 1px solid var(--color-outline);
 }
 
