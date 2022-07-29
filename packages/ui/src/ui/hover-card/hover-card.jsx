@@ -25,7 +25,7 @@ const resolveComponent = (as, href) => {
 
 export const HoverCard = (props) => {
   const { className, anchorClassName, hoverCardClassName, href, as, label, children } = props;
-  const state = useHovercardState({ gutter: 8 });
+  const state = useHovercardState({ gutter: 8, timeout: 700 });
   const hoverCardProps = useHovercard({ state, portal: true });
 
   // Fallback to span if no href

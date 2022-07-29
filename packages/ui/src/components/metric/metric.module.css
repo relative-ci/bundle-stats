@@ -1,27 +1,17 @@
 .root {
-  display: block;
   letter-spacing: 0.05em;
 }
 
 .displayUnit {
-  color: var(--color-text-ultra-light);
+  font-size: var(--size-small);
 }
 
 .delta {
-  display: block;
-  font-size: var(--size-xsmall);
+  font-size: var(--size-small);
 }
 
-.anchored {
-  position: relative;
-}
-
-.anchored .delta {
-  position: absolute;
-  right: 0;
-  top: 100%;
-  line-height: 1;
-  margin-top: -2px;
+.inline .display {
+  display: inline-block;
 }
 
 .inline .delta {
