@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { get } from 'lodash';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Dropdown } from '../dropdown';
@@ -9,13 +8,21 @@ import { getGroupFiltersLabelSuffix, LABELS } from './filters.utils';
 import css from './filters.module.css';
 
 const Filter = (props) => {
-  const { className, buttonClassName, label, name, getOnOnlyClick, ...inputProps } = props;
-  const id = `filter-${name}`;
+  const {
+    className,
+    as: Component = 'div',
+    buttonClassName,
+    label,
+    name,
+    getOnOnlyClick,
+    ...inputProps
+  } = props;
 
+  const id = `filter-${name}`;
   const rootClassName = cx(css.filter, className);
 
   return (
-    <div className={rootClassName}>
+    <Component className={rootClassName}>
       {/* eslint-disable */}
       <FlexStack space="xxxsmall" as="label" className={cx(css.filterCheckbox, buttonClassName)}>
         {/* eslint-enabled */}
@@ -30,12 +37,13 @@ const Filter = (props) => {
           only
         </button>
       )}
-    </div>
+    </Component>
   );
 };
 
 Filter.propTypes = {
   className: PropTypes.string,
+  as: PropTypes.elementType,
   buttonClassName: PropTypes.string,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
@@ -44,6 +52,7 @@ Filter.propTypes = {
 
 Filter.defaultProps = {
   className: '',
+  as: 'div',
   buttonClassName: '',
   getOnOnlyClick: null,
 };
@@ -105,20 +114,17 @@ const FilterGroup = (props) => {
                 const getOnOnlyClick = () => getOnGroupCheck(false, { [id]: true });
 
                 return (
-                  <MenuItem
+                  <Filter
                     key={id}
-                    {...menu}
-                    className={cx(menuItemClassName, css.filterGroupItem)}
-                  >
-                    <Filter
-                      name={id}
-                      label={itemData.label}
-                      onChange={onCheckboxChange}
-                      checked={values[id]}
-                      disabled={itemData.disabled}
-                      getOnOnlyClick={getOnOnlyClick}
-                    />
-                  </MenuItem>
+                    className={menuItemClassName}
+                    as={MenuItem}
+                    name={id}
+                    label={itemData.label}
+                    onChange={onCheckboxChange}
+                    checked={values[id]}
+                    disabled={itemData.disabled}
+                    getOnOnlyClick={getOnOnlyClick}
+                  />
                 );
               })}
             </div>

@@ -40,7 +40,7 @@
   background: var(--color-background);
   min-width: 180px;
   z-index: var(--layer-high);
-  padding: var(--space-xsmall) 0;
+  padding: var(--space-xxsmall) 0;
 }
 
 .dropdown:focus {
@@ -55,12 +55,13 @@
   width: 100%;
   outline: none;
   border: 0;
-  padding: var(--space-xxxsmall) var(--space-small);
+  padding: var(--space-xxxsmall) var(--space-xsmall);
   background: none;
   text-align: left;
   color: var(--color-text-light);
   font-size: var(--size-small);
   line-height: inherit;
+  text-decoration: none;
 }
 
 .menuItem:hover {

@@ -1,10 +1,69 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import { Dropdown } from '../dropdown';
 import { Icon } from '../icon';
 import css from './sort-dropdown.module.css';
+
+const Item = ({
+  className,
+  as: Component,
+  id,
+  label,
+  active,
+  direction,
+  defaultDirection,
+  getButtonOnClick,
+  ...restProps }) => {
+
+  const buttonProps = useMemo(() => {
+    let resolveNextDirection = defaultDirection;
+
+    if (active) {
+      resolveNextDirection = direction === 'asc' ? 'desc' : 'asc';
+    }
+
+    if (resolveNextDirection === 'desc') {
+      return {
+        className: css.itemAsc,
+        onClick: getButtonOnClick(id, 'desc'),
+        title: `Order data by ${label} descending`,
+      };
+    }
+
+    return {
+      onClick: getButtonOnClick(id, 'asc'),
+      title: `Order data by ${label} ascending`,
+    };
+  }, [active, direction, defaultDirection, id, label]);
+
+  return (
+    <Component
+      {...restProps}
+      {...buttonProps}
+      className={cx(className, css.item, active && css.itemActive, buttonProps.className)}
+    >
+      <Icon className={css.itemIcon} glyph="arrow" />
+      <span className={css.itemLabel}>{label}</span>
+    </Component>
+  );
+};
+
+Item.propTypes = {
+  className: PropTypes.string,
+  as: PropTypes.element.isRequired,
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  active: PropTypes.bool.isRequired,
+  direction: PropTypes.string.isRequired,
+  defaultDirection: PropTypes.string.isRequired,
+  getButtonOnClick: PropTypes.func.isRequired,
+};
+
+Item.defaultProps = {
+  className: '',
+};
 
 export const SortDropdown = (props) => {
   const { className, label, fields, field, direction, onChange } = props;
@@ -23,36 +82,20 @@ export const SortDropdown = (props) => {
         return (
           <div className={css.items}>
             {Object.entries(fields).map(([key, item]) => {
-              const buttonProps =
-                direction === 'asc'
-                  ? {
-                    className: css.itemAsc,
-                    onClick: getButtonOnClick(key, 'desc'),
-                    title: `Order data by ${item.label} descending`,
-                  }
-                  : {
-                    onClick: getButtonOnClick(key, 'asc'),
-                    title: `Order data by ${item.label} ascending`,
-                  };
-
               const isActive = field === key;
 
               return (
-                <MenuItem
+                <Item
                   key={key}
-                  {...menu}
-                  {...buttonProps}
-                  className={cx(
-                    buttonProps.className,
-                    menuItemClassName,
-                    css.item,
-                    isActive && menuItemActiveClassName,
-                    isActive && css.active,
-                  )}
-                >
-                  <span className={css.itemLabel}>{item.label}</span>
-                  <Icon className={css.itemIcon} glyph="arrow" />
-                </MenuItem>
+                  as={MenuItem}
+                  className={cx(menuItemClassName, isActive && menuItemActiveClassName)}
+                  id={key}
+                  label={item.label}
+                  direction={direction}
+                  defaultDirection={item.defaultDirection}
+                  active={isActive}
+                  getButtonOnClick={getButtonOnClick}
+                />
               );
             })}
           </div>
