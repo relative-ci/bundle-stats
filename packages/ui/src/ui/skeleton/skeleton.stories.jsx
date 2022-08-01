@@ -1,10 +1,22 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
-import { getWrapperDecorator } from '../../stories';
 import { Skeleton } from '.';
 
-const stories = storiesOf('UI/Skeleton', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'UI/Skeleton',
+  component: Skeleton,
+}
 
-stories.add('default', () => <Skeleton />);
+export const MultipleTextLines = () => (
+  <>
+    <Skeleton as="h1" style={{ outline: '1px solid magenta' }} />
+    <Skeleton as="h2" style={{  outline: '1px solid magenta' }} />
+    <Skeleton as="p" style={{ outline: '1px solid magenta' }} />
+  </>
+);
+
+export const Block = () => (
+  <div style={{ outline: '1px solid magenta' }}>
+    <Skeleton as="div" block />
+  </div>
+);

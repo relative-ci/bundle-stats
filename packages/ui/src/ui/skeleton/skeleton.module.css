@@ -1,8 +1,8 @@
 .root {
-  display: block;
-  background: linear-gradient(transparent 10%, currentColor 10.1%, currentColor 90%, transparent 90.1%);
+  background: linear-gradient(transparent 12.5%, currentColor 12.6%, currentColor 86.4%, transparent 86.5%);
   opacity: 0.06;
   pointer-events: none;
+  min-width: 6em;
 }
 
 /** empty char to keep the text height */
@@ -10,4 +10,8 @@
   display: inline-block;
   content: '\A0';
   color: transparent;
+}
+
+.block {
+  background: currentColor;
 }
