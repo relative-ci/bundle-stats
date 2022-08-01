@@ -84,8 +84,8 @@ export const SummaryItem = ({
         </Stack>
       ) : (
         <Stack>
-          <Skeleton className={cx(css.currentMetric, css.loading)} />
-          <Skeleton className={cx(css.baselineMetric, css.loading)} />
+          <Skeleton as="p" className={cx(css.currentMetric, css.loading)} />
+          <Skeleton as="p" className={cx(css.baselineMetric, css.loading)} />
         </Stack>
       )}
     </Stack>
