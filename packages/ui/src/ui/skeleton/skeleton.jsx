@@ -5,16 +5,20 @@ import cx from 'classnames';
 import css from './skeleton.module.css';
 
 export const Skeleton = (props) => {
-  const { className, ...restProps } = props;
-  const rootClassName = cx(css.root, className);
+  const { className, as: Component, block, ...restProps } = props;
+  const rootClassName = cx(css.root, className, block && css.block);
 
-  return <span className={rootClassName} {...restProps} />;
+  return <Component className={rootClassName} {...restProps} />;
 };
 
 Skeleton.propTypes = {
   className: PropTypes.string,
+  as: PropTypes.elementType,
+  block: PropTypes.bool,
 };
 
 Skeleton.defaultProps = {
   className: '',
+  as: 'span',
+  block: false,
 };
