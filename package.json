@@ -9,7 +9,7 @@
     "@babel/core": "7.18.9",
     "@babel/eslint-parser": "7.18.9",
     "@tsconfig/node14": "1.0.3",
-    "@typescript-eslint/eslint-plugin": "5.31.0",
+    "@typescript-eslint/eslint-plugin": "5.32.0",
     "@typescript-eslint/parser": "5.31.0",
     "babel-eslint": "10.1.0",
     "dotenv": "16.0.1",
