@@ -39,7 +39,7 @@
     "@bundle-stats/plugin-webpack-validate": "^4.0.4",
     "convert-units": "3.0.0-beta.4",
     "query-string": "^7.1.0",
-    "serialize-query-params": "^1.3.0"
+    "serialize-query-params": "^2.0.0"
   },
   "devDependencies": {
     "@types/jest": "28.1.4",
