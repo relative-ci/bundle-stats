@@ -33,7 +33,7 @@
     "@bundle-stats/ui": "^4.0.4",
     "@bundle-stats/utils": "^4.0.4",
     "@moonwalker/orbit-ui": "1.14.26",
-    "@storybook/addon-essentials": "6.5.9",
+    "@storybook/addon-essentials": "6.5.10",
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/addon-storyshots": "6.5.9",
     "@storybook/builder-webpack5": "6.5.9",
