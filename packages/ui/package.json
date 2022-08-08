@@ -90,6 +90,6 @@
     "date-fns": "^2.28.0",
     "modern-css-reset": "^1.4.0",
     "query-string": "^7.1.0",
-    "use-query-params": "^1.2.3"
+    "use-query-params": "^2.0.0"
   }
 }
