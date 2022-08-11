@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
@@ -10,18 +10,28 @@ import { Metric } from '../metric';
 import { Delta } from '../delta';
 import css from './summary-item.module.css';
 
-const MetricInfo = ({ description, url }) => (
-  <Stack space="xxxsmall">
-    <p>{description}</p>
-    {url && (
-      <p>
-        <button type="button" onClick={() => window.open(url)} className={css.readMoreLink}>
-          Read more
-        </button>
-      </p>
-    )}
-  </Stack>
-);
+const MetricInfo = ({ description, url }) => {
+  // The component parent can be rendered inside an anchor tag, using button
+  // to avoid using nesting links
+  const onClick = useCallback(() => {
+    if (url) {
+      window.open(url);
+    }
+  }, [url]);
+
+  return (
+    <Stack space="xxxsmall">
+      <p>{description}</p>
+      {url && (
+        <p>
+          <button type="button" onClick={onClick} className={css.readMoreLink}>
+            Read more
+          </button>
+        </p>
+      )}
+    </Stack>
+  );
+};
 
 MetricInfo.propTypes = {
   description: PropTypes.string.isRequired,
