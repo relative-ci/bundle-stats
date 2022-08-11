@@ -19,6 +19,6 @@ Skeleton.propTypes = {
 
 Skeleton.defaultProps = {
   className: '',
-  as: 'span',
+  as: 'p',
   block: false,
 };

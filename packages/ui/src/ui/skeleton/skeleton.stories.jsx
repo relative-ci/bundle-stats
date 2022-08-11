@@ -12,6 +12,7 @@ export const MultipleTextLines = () => (
     <Skeleton as="h1" style={{ outline: '1px solid magenta' }} />
     <Skeleton as="h2" style={{  outline: '1px solid magenta' }} />
     <Skeleton as="p" style={{ outline: '1px solid magenta' }} />
+    <Skeleton style={{ outline: '1px solid pink' }} />
   </>
 );
 
