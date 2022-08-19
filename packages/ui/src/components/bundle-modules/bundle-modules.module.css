@@ -22,5 +22,6 @@
 }
 
 .nameText {
+  display: inline;
   vertical-align: middle;
 }
