@@ -16,6 +16,12 @@ const Template = (props) => <Tooltip {...props}>Job #123</Tooltip>;
 
 export const Default = Template.bind();
 
+export const LongTooltip = Template.bind();
+
+LongTooltip.args = {
+  title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie neque id lectus mollis, et imperdiet libero porta.',
+};
+
 export const DarkModeFalse = Template.bind();
 
 DarkModeFalse.args = {
