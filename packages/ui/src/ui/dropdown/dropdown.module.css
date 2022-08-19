@@ -10,8 +10,6 @@
   border: 1px solid var(--color-outline);
   border-radius: var(--radius-small);
   padding: calc(var(--space-xxsmall) - 1px);
-  display: flex;
-  align-items: center;
 
   background: none;
   font-size: var(--size-small);
@@ -29,6 +27,10 @@
   box-shadow: 0 0 var(--space-xxxsmall) var(--color-shadow);
   border-color: var(--color-outline-dark);
   color: var(--color-text);
+}
+
+.label {
+  align-items: center;
 }
 
 .dropdown {
