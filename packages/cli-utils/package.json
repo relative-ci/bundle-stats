@@ -43,6 +43,6 @@
   "devDependencies": {
     "@types/find-cache-dir": "^3.2.1",
     "jest": "27.5.1",
-    "typescript": "4.8.2"
+    "typescript": "4.8.3"
   }
 }
