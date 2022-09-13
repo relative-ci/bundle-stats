@@ -45,7 +45,7 @@
     "@storybook/addon-essentials": "6.5.11",
     "@storybook/addon-knobs": "6.4.0",
     "@storybook/addon-postcss": "2.0.0",
-    "@storybook/addon-storyshots": "6.5.10",
+    "@storybook/addon-storyshots": "6.5.11",
     "@storybook/addons": "6.5.11",
     "@storybook/builder-webpack5": "6.5.10",
     "@storybook/manager-webpack5": "6.5.10",
