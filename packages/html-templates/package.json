@@ -38,7 +38,7 @@
     "@storybook/builder-webpack5": "6.5.11",
     "@storybook/manager-webpack5": "6.5.11",
     "@storybook/react": "6.5.11",
-    "autoprefixer": "10.4.9",
+    "autoprefixer": "10.4.10",
     "babel-jest": "29.0.3",
     "babel-loader": "8.2.5",
     "babel-plugin-preact-require": "1.0.0",
