@@ -37,7 +37,7 @@
   "dependencies": {
     "@bundle-stats/plugin-webpack-filter": "^4.0.6",
     "@bundle-stats/plugin-webpack-validate": "^4.0.6",
-    "convert-units": "3.0.0-beta.4",
+    "convert-units": "3.0.0-beta.5",
     "query-string": "^7.1.0",
     "serialize-query-params": "^2.0.1"
   },
