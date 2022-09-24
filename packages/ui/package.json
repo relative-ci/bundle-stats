@@ -54,7 +54,7 @@
     "babel-jest": "29.0.3",
     "babel-plugin-lodash": "3.3.4",
     "babel-plugin-require-context-hook": "1.0.0",
-    "chromatic": "6.9.0",
+    "chromatic": "6.10.0",
     "classnames": "2.3.2",
     "colormap": "2.3.2",
     "core-js": "3.25.2",
