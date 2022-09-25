@@ -19,9 +19,9 @@ stories.add('default', () => (
     render={({ className }) => (
       <div className={className}>
         <Tabs>
-          <span>Totals</span>
-          <span>Assets</span>
-          <span>Modules</span>
+          <Tabs.Item>Totals</Tabs.Item>
+          <Tabs.Item>Assets</Tabs.Item>
+          <Tabs.Item>Modules</Tabs.Item>
         </Tabs>
       </div>
     )}
@@ -43,9 +43,9 @@ stories.add('menu on the right', () => (
     renderRight={({ className }) => (
       <div className={className} style={{ flexBasis: '100%' }}>
         <Tabs>
-          <span>Totals</span>
-          <span>Assets</span>
-          <span>Modules</span>
+          <Tabs.Item>Totals</Tabs.Item>
+          <Tabs.Item>Assets</Tabs.Item>
+          <Tabs.Item>Modules</Tabs.Item>
         </Tabs>
       </div>
     )}

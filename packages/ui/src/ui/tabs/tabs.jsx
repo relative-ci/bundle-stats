@@ -4,22 +4,24 @@ import cx from 'classnames';
 
 import css from './tabs.module.css';
 
-const cloneElement = (element) => {
-  const { className, isTabActive, ...restProps } = element.props;
+const Item = ({ isTabActive, as: Component, className,...restProps }) => (
+  <Component className={cx(css.item, className, isTabActive && css.itemActive)} {...restProps} />
+);
 
-  return React.cloneElement(
-    element,
-    {
-      ...restProps,
-      className: cx(css.item, isTabActive && css.itemActive, className),
-    },
-  );
+Item.defaultProps = {
+  isTabActive: false,
+  className: '',
+  as: 'span',
 };
 
-export const Tabs = ({ className, children }) => (
-  <nav className={cx(css.root, className)}>
-    {React.Children.map(children, cloneElement)}
-  </nav>
+Item.propTypes = {
+  isTabActive: PropTypes.bool,
+  className: PropTypes.string,
+  as: PropTypes.elementType,
+};
+
+export const Tabs = ({ className, ...restProps }) => (
+  <nav className={cx(css.root, className)} {...restProps} />
 );
 
 Tabs.defaultProps = {
@@ -33,3 +35,5 @@ Tabs.propTypes = {
   /** Component children */
   children: PropTypes.node.isRequired,
 };
+
+Tabs.Item = Item;

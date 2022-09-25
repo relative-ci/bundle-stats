@@ -12,7 +12,7 @@ describe('format', () => {
     expect(formatFileSize(0)).toEqual('0B');
     expect(formatFileSize(0.1)).toEqual('0.1B');
     expect(formatFileSize(100)).toEqual('100B');
-    expect(formatFileSize(100000)).toEqual('97.66KB');
+    expect(formatFileSize(100000)).toEqual('100KB');
   });
 
   test('formatDuration', () => {

@@ -9,8 +9,8 @@ stories.addDecorator(getWrapperDecorator());
 
 stories.add('default', () => (
   <Tabs>
-    <span isTabActive>Option A</span>
-    <span>Option B</span>
-    <span>Option C</span>
+    <Tabs.Item isTabActive>Option A</Tabs.Item>
+    <Tabs.Item>Option B</Tabs.Item>
+    <Tabs.Item>Option C</Tabs.Item>
   </Tabs>
 ));

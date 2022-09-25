@@ -183,18 +183,18 @@ const AppComponent = ({ version, jobs }) => {
 
         <Container className={css.tabsContainer}>
           <Tabs className={css.tabs}>
-            <NavLink exact to={URLS.OVERVIEW} activeClassName={css.tabActive}>
+            <Tabs.Item as={NavLink} exact to={URLS.OVERVIEW} activeClassName={css.tabActive}>
               {I18N.OVERVIEW}
-            </NavLink>
-            <NavLink exact to={URLS.ASSETS} activeClassName={css.tabActive}>
+            </Tabs.Item>
+            <Tabs.Item as={NavLink} exact to={URLS.ASSETS} activeClassName={css.tabActive}>
               {I18N.ASSETS}
-            </NavLink>
-            <NavLink exact to={URLS.MODULES} activeClassName={css.tabActive}>
+            </Tabs.Item>
+            <Tabs.Item as={NavLink} exact to={URLS.MODULES} activeClassName={css.tabActive}>
               {I18N.MODULES}
-            </NavLink>
-            <NavLink exact to={URLS.PACKAGES} activeClassName={css.tabActive}>
+            </Tabs.Item>
+            <Tabs.Item as={NavLink} exact to={URLS.PACKAGES} activeClassName={css.tabActive}>
               {I18N.PACKAGES}
-            </NavLink>
+            </Tabs.Item>
           </Tabs>
         </Container>
 
