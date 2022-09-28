@@ -54,7 +54,7 @@
   "devDependencies": {
     "@babel/cli": "7.18.10",
     "@babel/core": "7.19.1",
-    "@babel/preset-env": "7.19.1",
+    "@babel/preset-env": "7.19.3",
     "@types/jest": "29.0.3",
     "jest": "27.5.1",
     "jest-date-mock": "1.0.8",
