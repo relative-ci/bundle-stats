@@ -48,7 +48,7 @@
     "core-js": "3.25.3",
     "cross-env": "7.0.3",
     "css-loader": "6.7.1",
-    "css-minimizer-webpack-plugin": "4.1.0",
+    "css-minimizer-webpack-plugin": "4.2.0",
     "dotenv": "16.0.3",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.6",
