@@ -19,9 +19,10 @@ describe('format', () => {
   test('formatDuration', () => {
     expect(formatDuration()).toEqual('0ms');
     expect(formatDuration(0)).toEqual('0ms');
-    expect(formatDuration(0.1)).toEqual('100mu');
+    expect(formatDuration(0.1)).toEqual('0.1ms');
     expect(formatDuration(100)).toEqual('100ms');
     expect(formatDuration(2200)).toEqual('2.2s');
+    expect(formatDuration(2130000)).toEqual('35.5min');
   });
 
   test('formatNumber', () => {

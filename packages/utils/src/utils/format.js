@@ -1,14 +1,14 @@
-import configureMeasurements, { time } from 'convert-units';
 import round from 'lodash/round';
-
-const convert = configureMeasurements({ time });
 
 const FILE_SIZE_MULTIPLIERS = {
   KiB: 1024,
   MiB: 1024 * 1024,
 };
 
-const DURATION_UNIT = 'ms';
+const DURATION_MULTIPLIERS = {
+  s: 1000,
+  min: 60 * 1000,
+};
 
 export const formatFileSize = (val) => {
   if (typeof val !== 'number') {
@@ -27,13 +27,19 @@ export const formatFileSize = (val) => {
 };
 
 export const formatDuration = (val) => {
-  const res = convert(val).from(DURATION_UNIT).toBest();
-
-  if (res) {
-    return `${round(res.val, 4)}${res.unit}`;
+  if (typeof val !== 'number') {
+    return `${0}ms`;
   }
 
-  return `${round(val || 0, 4)}${DURATION_UNIT}`;
+  if (val < DURATION_MULTIPLIERS.s) {
+    return `${val}ms`;
+  }
+
+  if (val < DURATION_MULTIPLIERS.min) {
+    return `${round(val / DURATION_MULTIPLIERS.s, 1)}s`;
+  }
+
+  return `${round(val / DURATION_MULTIPLIERS.min, 1)}min`;
 };
 
 export const formatNumber = (val) => `${val}`;
