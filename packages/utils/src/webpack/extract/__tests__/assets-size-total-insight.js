@@ -10,15 +10,15 @@ describe('Webpack/extracts/extractAssetsSizeTotalInsight', () => {
       insights: {
         assetsSizeTotal: {
           data: {
-            md: '*Bundle Size* — *10KB* (*+100%*).',
-            text: 'Bundle Size — 10KB (+100%).',
+            md: '*Bundle Size* — *9.77KB* (*+100%*).',
+            text: 'Bundle Size — 9.77KB (+100%).',
             info: {
               delta: 10000,
               deltaPercentage: 100,
               deltaType: 'HIGH_NEGATIVE',
-              displayDelta: '+10KB',
+              displayDelta: '+9.77KB',
               displayDeltaPercentage: '+100%',
-              displayValue: '10KB',
+              displayValue: '9.77KB',
               value: 10000,
             },
           },
@@ -39,15 +39,15 @@ describe('Webpack/extracts/extractAssetsSizeTotalInsight', () => {
       insights: {
         assetsSizeTotal: {
           data: {
-            md: '*Bundle Size* — *10KB* (*-50%*).',
-            text: 'Bundle Size — 10KB (-50%).',
+            md: '*Bundle Size* — *9.77KB* (*-50%*).',
+            text: 'Bundle Size — 9.77KB (-50%).',
             info: {
               delta: -10000,
               deltaPercentage: -50,
               deltaType: 'POSITIVE',
-              displayDelta: '-10KB',
+              displayDelta: '-9.77KB',
               displayDeltaPercentage: '-50%',
-              displayValue: '10KB',
+              displayValue: '9.77KB',
               value: 10000,
             },
           },
