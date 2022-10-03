@@ -1,19 +1,29 @@
-import configureMeasurements, { digital, time } from 'convert-units';
+import configureMeasurements, { time } from 'convert-units';
 import round from 'lodash/round';
 
-const convert = configureMeasurements({ digital, time });
+const convert = configureMeasurements({ time });
 
-const FILE_SIZE_UNIT = 'B';
+const FILE_SIZE_MULTIPLIERS = {
+  KiB: 1024,
+  MiB: 1024 * 1024,
+};
+
 const DURATION_UNIT = 'ms';
 
 export const formatFileSize = (val) => {
-  const res = convert(val).from(FILE_SIZE_UNIT).toBest();
-
-  if (res) {
-    return `${round(res.val, 2)}${res.unit}`;
+  if (typeof val !== 'number') {
+    return `0B`;
   }
 
-  return `${round(val || 0, 2)}${FILE_SIZE_UNIT}`;
+  if (val < FILE_SIZE_MULTIPLIERS.KiB) {
+    return `${val}B`;
+  }
+
+  if (val < FILE_SIZE_MULTIPLIERS.MiB) {
+    return `${round(val / FILE_SIZE_MULTIPLIERS.KiB, 2)}KiB`;
+  }
+
+  return `${round(val / FILE_SIZE_MULTIPLIERS.MiB, 2)}MiB`;
 };
 
 export const formatDuration = (val) => {

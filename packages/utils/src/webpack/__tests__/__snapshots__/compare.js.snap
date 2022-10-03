@@ -48,7 +48,7 @@ Array [
         "deltaType": "NEGATIVE",
         "displayDelta": "+500B",
         "displayDeltaPercentage": "+33.33%",
-        "displayValue": "1.95KB",
+        "displayValue": "1.95KiB",
         "duplicated": false,
         "name": "module-b",
         "value": 2000,
@@ -57,7 +57,7 @@ Array [
         "chunkIds": Array [
           "1",
         ],
-        "displayValue": "1.46KB",
+        "displayValue": "1.46KiB",
         "duplicated": false,
         "name": "module-b",
         "value": 1500,
