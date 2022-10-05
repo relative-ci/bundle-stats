@@ -91,6 +91,7 @@ export default (
 
   const modules =
     source.modules?.reduce((agg, moduleStats) => {
+      // Skip modules without name
       if (!moduleStats.name) {
         return agg;
       }
