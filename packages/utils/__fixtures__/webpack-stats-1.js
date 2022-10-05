@@ -80,6 +80,11 @@ module.exports = {
   ],
   modules: [
     {
+      type: 'hidden modules',
+      filteredChildren: 2,
+      size: 10,
+    },
+    {
       assets: [],
       built: true,
       cacheable: true,

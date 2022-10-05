@@ -29,6 +29,12 @@ export const WebpackSourceModuleStruct = type({
   modules: optional(array(type({ name: string(), size: number() }))),
 });
 
+export const WebpackSourceModuleHiddenStruct = type({
+  type: string(),
+  filteredChildren: number(),
+  size: number(),
+});
+
 export const WebpackSourceChunkStruct = type({
   id: nullable(union([number(), string()])),
   entry: boolean(),
@@ -44,6 +50,6 @@ export const WebpackSourceStruct = type({
     array(union([WebpackSourceAssetStruct, WebpackSourceAssetHiddenStruct])),
     nonempty(array()),
   ]),
-  modules: optional(array(WebpackSourceModuleStruct)),
+  modules: optional(array(union([WebpackSourceModuleStruct, WebpackSourceModuleHiddenStruct]))),
   chunks: optional(array(WebpackSourceChunkStruct)),
 });

@@ -24,6 +24,11 @@ describe('Webpack/validate', () => {
             size: 10,
             chunks: [1],
           },
+          {
+            type: 'hidden modules',
+            filteredChildren: 2,
+            size: 10,
+          },
         ],
       }),
     ).toEqual('');
