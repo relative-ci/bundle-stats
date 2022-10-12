@@ -6,7 +6,7 @@
 .item {
   position: relative;
   display: inline-block;
-  padding: var(--space-xsmall) 0;
+  padding: var(--space-xsmall) var(--space-small);
   color: var(--color-text-ultra-light);
   font-weight: bold;
   text-decoration: none;
@@ -24,7 +24,7 @@
 }
 
 .item:hover {
-  color: var(--color-text-light);
+  color: var(--color-primary-dark);
   outline: none;
 }
 
@@ -41,5 +41,5 @@
 }
 
 .item + .item {
-  margin-left: var(--space-medium);
+  _margin-left: var(--space-medium);
 }
