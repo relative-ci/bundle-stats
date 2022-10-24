@@ -13,6 +13,7 @@ import css from './tooltip.module.css';
 export const Tooltip = (props) => {
   const {
     className,
+    tooltipClassName,
     title,
     children,
     as: Component,
@@ -35,7 +36,7 @@ export const Tooltip = (props) => {
         {children}
       </UITooltipAnchor>
       {title && (
-        <UITooltip state={tooltip} className={cx(css.tooltip, darkMode && css.tooltipDarkMode)}>
+        <UITooltip state={tooltip} className={cx(css.tooltip, tooltipClassName, darkMode && css.tooltipDarkMode)}>
           <UITooltipArrow state={tooltip} className={css.arrow} size={12} />
           {title}
         </UITooltip>
@@ -46,6 +47,7 @@ export const Tooltip = (props) => {
 
 Tooltip.defaultProps = {
   className: '',
+  tooltipClassName: '',
   title: '',
   as: 'span',
   containerRef: null,
@@ -54,6 +56,7 @@ Tooltip.defaultProps = {
 
 Tooltip.propTypes = {
   className: PropTypes.string,
+  tooltipClassName: PropTypes.string,
   title: PropTypes.node,
   children: PropTypes.node.isRequired,
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
