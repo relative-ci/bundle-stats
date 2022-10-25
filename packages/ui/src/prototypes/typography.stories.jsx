@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Container, Logo } from '../ui';
 import { getWrapperDecorator } from '../stories';
 import { Header, SubHeader } from '../layout';
+import CHART_COLORS from '../chart-colors.json';
 import content from './typography.md';
 import css from './typography.module.css';
 
@@ -54,6 +55,20 @@ const Item = ({ colorName, valueName = 'normal' }) => {
   );
 };
 
+// eslint-disable-next-line react/prop-types
+const ItemColorValue = ({ value }) => (
+  <div
+    style={{
+      background: value,
+      color: 'var(--color-light)',
+      padding: '12px',
+      flex: '1 1 20%',
+    }}
+  >
+    {value}
+  </div>
+);
+
 const COLORS = [
   'blue',
   'red',
@@ -93,5 +108,17 @@ stories.add('color sheme', () => (
         ))}
       </div>
     ))}
+
+    <hr />
+
+    <h3>Chart colors</h3>
+    <div style={{ display: 'flex', marginBottom: '24px', flexWrap: 'wrap' }}>
+      {CHART_COLORS.map((color) => (
+        <ItemColorValue
+          key={color}
+          value={color}
+        />
+      ))}
+    </div>
   </Container>
 ));
