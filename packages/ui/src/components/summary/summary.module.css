@@ -9,6 +9,9 @@
   text-decoration: none;
 }
 
-.item:hover {
+.item:hover,
+.item:active,
+.item:focus {
   border-color: var(--color-outline-dark);
+  outline: none;
 }

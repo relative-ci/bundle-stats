@@ -6,7 +6,7 @@
 .item {
   position: relative;
   display: inline-block;
-  padding: var(--space-xsmall) 0;
+  padding: var(--space-xsmall) var(--space-small);
   color: var(--color-text-ultra-light);
   font-weight: bold;
   text-decoration: none;
@@ -23,12 +23,16 @@
   background: transparent;
 }
 
-.item:hover {
-  color: var(--color-text-light);
+.item:hover,
+.item:active,
+.item:focus {
+  color: var(--color-primary-dark);
   outline: none;
 }
 
-.item:hover::after {
+.item:hover::after,
+.item:active::after,
+.item:focus::after {
   background: currentColor;
 }
 
@@ -41,5 +45,5 @@
 }
 
 .item + .item {
-  margin-left: var(--space-medium);
+  _margin-left: var(--space-medium);
 }
