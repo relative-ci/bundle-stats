@@ -55,6 +55,7 @@ const Item = ({ colorName, valueName = 'normal' }) => {
   );
 };
 
+// eslint-disable-next-line react/prop-types
 const ItemColorValue = ({ value }) => (
   <div
     style={{
