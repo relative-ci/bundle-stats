@@ -24,6 +24,7 @@
   --size-xxxlarge: 1.602rem;
 
   --line-height: 1.66em;
+  --line-height-heading: 1.33em;
 
   /*
    * Color scheme:
@@ -182,9 +183,9 @@
   --layer-high: 1000;
   --layer-xhigh: 10000;
 
-  --radius-small: 3px;
-  --radius-medium: var(--space-xxxsmall);
-  --radius-large: var(--space-xxsmall);
+  --radius-small: 2px;
+  --radius-medium: 3px;
+  --radius-large: 5px;
 
   /** Layout */
   --max-width: 80rem;
