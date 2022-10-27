@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
+import { Icon } from '../../ui/icon';
 import { HoverCard } from '../../ui/hover-card';
 import { Skeleton } from '../../ui/skeleton';
+import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
@@ -63,15 +65,17 @@ export const SummaryItem = ({
 
   return (
     <Stack space="xxsmall" as={Component} className={rootClassName} {...props}>
-      <h3 className={css.title}>
-        {showMetricDescriptionTooltip ? (
-          <HoverCard label={metric.label}>
+      <FlexStack space="xxxsmall" as="h3" className={css.title}>
+        <span>
+          {metric.label}
+        </span>
+
+        {showMetricDescriptionTooltip && (
+          <HoverCard label={<Icon glyph={Icon.ICONS.HELP} />} className={css.titleIcon}>
             <MetricInfo {...metric} />
           </HoverCard>
-        ) : (
-          metric.label
         )}
-      </h3>
+      </FlexStack>
 
       {!loading ? (
         <Stack>

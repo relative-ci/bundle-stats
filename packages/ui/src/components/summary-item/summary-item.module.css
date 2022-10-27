@@ -2,14 +2,19 @@
   color: var(--color-text-ultra-light);
   font-weight: bold;
   font-size: var(--size-xsmall);
-  line-height: 1;
   text-transform: uppercase;
   white-space: nowrap;
+  align-items: center;
+}
+
+.titleIcon {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .currentMetric {
   color: var(--color-heading);
-  font-size: var(--size-xlarge);
+  font-size: var(--size-large);
   white-space: nowrap;
   font-weight: bold;
 }
@@ -38,8 +43,9 @@
 }
 
 /* Hover state */
-.root:hover .title {
-  color: var(--color-text-light);
+.root:hover .titleIcon {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 
