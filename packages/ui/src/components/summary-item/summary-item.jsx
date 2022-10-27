@@ -62,7 +62,7 @@ export const SummaryItem = ({
   const rootClassName = cx(css.root, className, css[size], showDelta && css.showDelta);
 
   return (
-    <Stack space="xxxsmall" as={Component} className={rootClassName} {...props}>
+    <Stack space="xxsmall" as={Component} className={rootClassName} {...props}>
       <h3 className={css.title}>
         {showMetricDescriptionTooltip ? (
           <HoverCard label={metric.label}>
