@@ -183,9 +183,9 @@
   --layer-high: 1000;
   --layer-xhigh: 10000;
 
-  --radius-small: 2px;
-  --radius-medium: 3px;
-  --radius-large: 5px;
+  --radius-small: 3px;
+  --radius-medium: 5px;
+  --radius-large: 9px;
 
   /** Layout */
   --max-width: 80rem;
