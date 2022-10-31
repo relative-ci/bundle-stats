@@ -2,7 +2,7 @@ import map from 'lodash/map';
 import orderBy from 'lodash/orderBy';
 import sum from 'lodash/sum';
 
-import { INSIGHT_WARNING } from '../../config';
+import { InsightType } from '../../config';
 import { Packages } from '../types';
 
 interface DuplicatePackage {
@@ -35,7 +35,7 @@ export const extractModulesPackagesDuplicate = (_: any, currentExtractedData: an
     packagesByName[name] = existingPackageData;
   });
 
-  // Filter, sum and count duplicate packages
+  // Filter, count and sum the duplicate packages
   let count = 0;
   const duplicatePackages: Array<DuplicatePackageGroup> = [];
 
@@ -92,7 +92,7 @@ export const extractModulesPackagesDuplicate = (_: any, currentExtractedData: an
   return {
     insights: {
       duplicatePackages: {
-        type: INSIGHT_WARNING,
+        type: InsightType.WARNING,
         data,
       },
     },
