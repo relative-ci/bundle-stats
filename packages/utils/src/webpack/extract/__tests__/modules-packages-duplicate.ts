@@ -2,7 +2,7 @@ import { extractModulesPackagesDuplicate } from '../modules-packages-duplicate';
 
 describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
   test('should return empty', () => {
-    const actual = extractModulesPackagesDuplicate();
+    const actual = extractModulesPackagesDuplicate(null, null);
     expect(actual).toEqual({
       metrics: { duplicatePackagesCount: { value: 0 } },
     });
