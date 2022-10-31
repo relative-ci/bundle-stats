@@ -1,4 +1,4 @@
-import { INSIGHT_INFO } from '../../config/insights';
+import { InsightType } from '../../config/insights';
 import { getMetricRunInfo } from '../../utils/metrics';
 import { getMetricType } from '../utils';
 
@@ -18,7 +18,7 @@ export const extractAssetsSizeTotalInsight = (_, currentExtractedData, baselineB
   return {
     insights: {
       assetsSizeTotal: {
-        type: INSIGHT_INFO,
+        type: InsightType.INFO,
         data: {
           text: getText({ metric: metric.label, displayValue, displayDeltaPercentage }),
           md: getText({
