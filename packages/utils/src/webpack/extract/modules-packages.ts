@@ -51,7 +51,7 @@ export const getPackageMetaFromModulePath = (modulePath: string) => {
     return null;
   }
 
-  const name = last(names);
+  const name = last(names) as string;
 
   // Get package full path
   // @NOTE use the last path to prevent getting incorrect results on packages with similar names

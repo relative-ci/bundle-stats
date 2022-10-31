@@ -42,6 +42,7 @@ export interface MetricsModules {
 }
 
 export interface Package extends Metric {
+  name: string;
   path: string;
 }
 
