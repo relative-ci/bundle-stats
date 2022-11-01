@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@types/jest": "29.1.1",
-    "@types/lodash": "4.14.186",
+    "@types/lodash": "4.14.187",
     "core-js": "3.26.0",
     "jest": "27.5.1",
     "jest-cli": "28.1.3",
