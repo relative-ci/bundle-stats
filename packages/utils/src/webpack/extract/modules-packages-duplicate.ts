@@ -80,7 +80,7 @@ export const extractModulesPackagesDuplicate = (_: any, currentExtractedData: an
   );
 
   // Generate v2 data structure
-  // @TODO remove in v3.0
+  // @TODO remove in v4.0
   const data = Object.entries(duplicatePackagesByName).reduce(
     (agg, [packageName, duplicatePackageData]) => ({
       ...agg,
