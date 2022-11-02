@@ -4,7 +4,7 @@ import pick from 'lodash/pick';
  * Filter Lightouse source file
  *
  * @param {Object} source
- * @return {import('../../types').LighthouseSource}
+ * @return {import('../constants').LighthouseSource}
  */
 export const filter = (source) => {
   // filter meta data
@@ -20,10 +20,13 @@ export const filter = (source) => {
   );
 
   // filter audits
-  const audits = Object.entries(source.audits).reduce((agg, [auditId, auditData]) => ({
-    ...agg,
-    [auditId]: pick(auditData, ['score', 'numericValue']),
-  }), {});
+  const audits = Object.entries(source.audits).reduce(
+    (agg, [auditId, auditData]) => ({
+      ...agg,
+      [auditId]: pick(auditData, ['score', 'numericValue']),
+    }),
+    {},
+  );
 
   return {
     ...meta,
