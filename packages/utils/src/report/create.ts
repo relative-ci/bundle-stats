@@ -1,6 +1,7 @@
 import isEmpty from 'lodash/isEmpty';
 
 import { SOURCE_PATHS } from '../config';
+import { MetricRunInfo } from '../constants';
 import { getGlobalMetricType, getMetricRunInfo } from '../utils/metrics';
 import * as webpack from '../webpack';
 /* @ts-ignore */
@@ -11,35 +12,50 @@ interface JobSummary {
   baseline: number;
 }
 
-export const createReport = (jobs: Array<any>) => {
+interface ReportMetricRunInfo extends MetricRunInfo {
+  label: string;
+}
+
+type ReportSummary = Record<string, Array<ReportMetricRunInfo>>;
+
+interface JobRun {
+  internalBuildNumber: number;
+}
+
+interface Report {
+  createdAt: string;
+  version: string;
+  summary: ReportSummary;
+  runs: Array<JobRun>;
+}
+
+export const createReport = (jobs: Array<any>): Report => {
   const insights = jobs[0]?.insights;
 
-  const summary = SOURCE_PATHS.reduce((agg, sourceId) => {
+  // Add summary report data
+  const summary: Record<string, Array<ReportMetricRunInfo>> = {};
+
+  SOURCE_PATHS.forEach((sourceId) => {
     const sourceSummary = jobs[0]?.summary?.[sourceId] as JobSummary;
 
     if (!sourceSummary) {
-      return agg;
+      return;
     }
 
-    const output = Object.entries(sourceSummary).map(([metricId, summaryData]) => {
+    const summaryEntries = Object.entries(sourceSummary).map(([metricId, summaryData]) => {
       const metric = getGlobalMetricType(`${sourceId}.${metricId}`);
-
       const { current = 0, baseline = 0 } = summaryData;
-      const info = getMetricRunInfo(metric, current, baseline);
+      const data = getMetricRunInfo(metric, current, baseline);
 
-      return {
-        label: metric.label,
-        ...info,
-      };
+      return Object.assign(data, { label: metric.label });
     });
 
-    return {
-      ...agg,
-      [sourceId]: output,
-    };
+    summary[sourceId] = summaryEntries;
   }, {});
 
-  return {
+  const sectionsData = webpack.compare(jobs);
+
+  return Object.assign(sectionsData, {
     createdAt: new Date().toISOString(),
     version,
 
@@ -52,8 +68,5 @@ export const createReport = (jobs: Array<any>) => {
 
     // Add insights if available
     ...(!isEmpty(insights) ? { insights } : {}),
-
-    // Add webpack sections comparisons
-    ...webpack.compare(jobs),
-  };
+  });
 };
