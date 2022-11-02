@@ -14,17 +14,18 @@ import { metrics as browsertimeMeticTypes } from '../browsertime/metrics';
  * @param {Object} metrics
  * @return {Function}
  */
-export const createGetMetricType = (metrics) =>
+export const createGetMetricType =
+  (metrics) =>
   /**
    * Get metric type data
    *
    * @param {String} key Metric key
    * @param {String} [type] Default metric type
-   * @return {import('../../types').MetricType}
+   * @return {import('../constants').MetricType}
    */
   // eslint-disable-next-line implicit-arrow-linebreak
   (key, type) => {
-    /** @type {import('../../types').MetricTypeConfig} */
+    /** @type {import('../constants').MetricTypeConfig} */
     const metric = get(metrics, key);
 
     if (metric && metric.type) {
@@ -47,8 +48,8 @@ export const createGetMetricType = (metrics) =>
  * Get global metric type
  *
  * @param {String} key Metric key
- * @param {import('../../types').MetricTypeType} [type] Default metric type
- * @return {import('../../types').MetricType}
+ * @param {import('../constants').MetricTypeType} [type] Default metric type
+ * @return {import('../constants').MetricType}
  */
 export const getGlobalMetricType = createGetMetricType({
   webpack: webpackMetricTypes,
@@ -60,11 +61,11 @@ export const getGlobalMetricType = createGetMetricType({
  *
  * Get metric information
  *
- * @param {import('../../types').MetricType} metric Metric data
+ * @param {import('../constants').MetricType} metric Metric data
  * @param {number} currentValue Current value
  * @param {number} baselineValue Baseline value
  *
- * @return {import('../../types').MetricRunInfo}
+ * @return {import('../constants').MetricRunInfo}
  */
 export const getMetricRunInfo = (metric, currentValue, baselineValue) => {
   const { formatter, biggerIsBetter } = metric;
