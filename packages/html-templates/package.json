@@ -51,7 +51,7 @@
     "css-minimizer-webpack-plugin": "4.2.2",
     "dotenv": "16.0.3",
     "enzyme": "3.11.0",
-    "enzyme-adapter-react-16": "1.15.6",
+    "enzyme-adapter-react-16": "1.15.7",
     "enzyme-to-json": "3.6.2",
     "html-webpack-plugin": "5.5.0",
     "identity-obj-proxy": "3.0.0",
