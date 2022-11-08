@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`report / createReport multiple sources 1`] = `
-Object {
-  "assets": Array [
-    Object {
+{
+  "assets": [
+    {
       "biggerIsBetter": false,
       "changed": true,
       "key": "main.css",
       "label": "main.css",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "chunkId": "1",
           "delta": -1000,
           "deltaPercentage": -9.09090909,
@@ -23,7 +23,7 @@ Object {
           "name": "main.a1b2c3d.css",
           "value": 10000,
         },
-        Object {
+        {
           "chunkId": "1",
           "displayValue": "10.74KiB",
           "isChunk": true,
@@ -34,13 +34,13 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": true,
       "key": "main.js",
       "label": "main.js",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "chunkId": "1",
           "delta": 1000,
           "deltaPercentage": 2.04081633,
@@ -54,7 +54,7 @@ Object {
           "name": "main.a2b3c4d.js",
           "value": 50000,
         },
-        Object {
+        {
           "chunkId": "1",
           "displayValue": "47.85KiB",
           "isChunk": true,
@@ -65,13 +65,13 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "logo.png",
       "label": "logo.png",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 0,
           "deltaPercentage": 0,
           "deltaType": "NO_CHANGE",
@@ -84,7 +84,7 @@ Object {
           "name": "logo.a3b4c5d.png",
           "value": 1000,
         },
-        Object {
+        {
           "displayValue": "1000B",
           "isChunk": false,
           "isEntry": false,
@@ -94,13 +94,13 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "index.html",
       "label": "index.html",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 0,
           "deltaPercentage": 0,
           "deltaType": "NO_CHANGE",
@@ -113,7 +113,7 @@ Object {
           "name": "index.html",
           "value": 2000,
         },
-        Object {
+        {
           "displayValue": "1.95KiB",
           "isChunk": false,
           "isEntry": false,
@@ -125,11 +125,11 @@ Object {
     },
   ],
   "createdAt": "2019-01-10T00:00:00.000Z",
-  "insights": Object {
-    "webpack": Object {
-      "assetsSizeTotal": Object {
-        "data": Object {
-          "info": Object {
+  "insights": {
+    "webpack": {
+      "assetsSizeTotal": {
+        "data": {
+          "info": {
             "delta": 0,
             "deltaPercentage": 0,
             "deltaType": "NO_CHANGE",
@@ -143,9 +143,9 @@ Object {
         },
         "type": "INFO",
       },
-      "duplicatePackages": Object {
-        "data": Object {
-          "package-c": Array [
+      "duplicatePackages": {
+        "data": {
+          "package-c": [
             "package-a:package-c",
             "package-c",
           ],
@@ -154,15 +154,15 @@ Object {
       },
     },
   },
-  "modules": Array [
-    Object {
+  "modules": [
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "module-a",
       "label": "module-a",
-      "runs": Array [
-        Object {
-          "chunkIds": Array [
+      "runs": [
+        {
+          "chunkIds": [
             "1",
           ],
           "delta": 0,
@@ -175,8 +175,8 @@ Object {
           "name": "module-a",
           "value": 1000,
         },
-        Object {
-          "chunkIds": Array [
+        {
+          "chunkIds": [
             "1",
           ],
           "displayValue": "1000B",
@@ -186,14 +186,14 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": true,
       "key": "module-b",
       "label": "module-b",
-      "runs": Array [
-        Object {
-          "chunkIds": Array [
+      "runs": [
+        {
+          "chunkIds": [
             "1",
           ],
           "delta": 500,
@@ -206,8 +206,8 @@ Object {
           "name": "module-b",
           "value": 2000,
         },
-        Object {
-          "chunkIds": Array [
+        {
+          "chunkIds": [
             "1",
           ],
           "displayValue": "1.46KiB",
@@ -217,14 +217,14 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "node_modules/package-a/index.js",
       "label": "node_modules/package-a/index.js",
-      "runs": Array [
-        Object {
-          "chunkIds": Array [
+      "runs": [
+        {
+          "chunkIds": [
             "1",
           ],
           "delta": 0,
@@ -237,8 +237,8 @@ Object {
           "name": "node_modules/package-a/index.js",
           "value": 1000,
         },
-        Object {
-          "chunkIds": Array [
+        {
+          "chunkIds": [
             "1",
           ],
           "displayValue": "1000B",
@@ -248,14 +248,14 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": true,
       "key": "node_modules/package-a/node_modules/package-c/index.js",
       "label": "node_modules/package-a/node_modules/package-c/index.js",
-      "runs": Array [
-        Object {
-          "chunkIds": Array [
+      "runs": [
+        {
+          "chunkIds": [
             "1",
           ],
           "delta": 1000,
@@ -271,14 +271,14 @@ Object {
         null,
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "node_modules/package-b/index.js",
       "label": "node_modules/package-b/index.js",
-      "runs": Array [
-        Object {
-          "chunkIds": Array [
+      "runs": [
+        {
+          "chunkIds": [
             "1",
           ],
           "delta": 0,
@@ -291,8 +291,8 @@ Object {
           "name": "node_modules/package-b/index.js",
           "value": 1000,
         },
-        Object {
-          "chunkIds": Array [
+        {
+          "chunkIds": [
             "1",
           ],
           "displayValue": "1000B",
@@ -302,14 +302,14 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "node_modules/package-c/index.js",
       "label": "node_modules/package-c/index.js",
-      "runs": Array [
-        Object {
-          "chunkIds": Array [
+      "runs": [
+        {
+          "chunkIds": [
             "1",
           ],
           "delta": 0,
@@ -322,8 +322,8 @@ Object {
           "name": "node_modules/package-c/index.js",
           "value": 1000,
         },
-        Object {
-          "chunkIds": Array [
+        {
+          "chunkIds": [
             "1",
           ],
           "displayValue": "1000B",
@@ -334,14 +334,14 @@ Object {
       ],
     },
   ],
-  "packages": Array [
-    Object {
+  "packages": [
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "package-a",
       "label": "package-a",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 0,
           "deltaPercentage": 0,
           "deltaType": "NO_CHANGE",
@@ -352,7 +352,7 @@ Object {
           "path": "node_modules/package-a",
           "value": 1000,
         },
-        Object {
+        {
           "displayValue": "1000B",
           "name": "package-a",
           "path": "node_modules/package-a",
@@ -360,13 +360,13 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": true,
       "key": "package-a:package-c",
       "label": "package-a:package-c",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 1000,
           "deltaPercentage": 100,
           "deltaType": "HIGH_NEGATIVE",
@@ -380,13 +380,13 @@ Object {
         null,
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "package-b",
       "label": "package-b",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 0,
           "deltaPercentage": 0,
           "deltaType": "NO_CHANGE",
@@ -397,7 +397,7 @@ Object {
           "path": "node_modules/package-b",
           "value": 1000,
         },
-        Object {
+        {
           "displayValue": "1000B",
           "name": "package-b",
           "path": "node_modules/package-b",
@@ -405,13 +405,13 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "package-c",
       "label": "package-c",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 0,
           "deltaPercentage": 0,
           "deltaType": "NO_CHANGE",
@@ -422,7 +422,7 @@ Object {
           "path": "node_modules/package-c",
           "value": 1000,
         },
-        Object {
+        {
           "displayValue": "1000B",
           "name": "package-c",
           "path": "node_modules/package-c",
@@ -431,13 +431,13 @@ Object {
       ],
     },
   ],
-  "runs": Array [
-    Object {
+  "runs": [
+    {
       "internalBuildNumber": 2,
-      "webpack": Object {
+      "webpack": {
         "builtAt": "2019-01-01T00:00:00.000Z",
-        "chunks": Array [
-          Object {
+        "chunks": [
+          {
             "id": "1",
             "name": "main",
           },
@@ -445,12 +445,12 @@ Object {
         "hash": "abcd1234",
       },
     },
-    Object {
+    {
       "internalBuildNumber": 1,
-      "webpack": Object {
+      "webpack": {
         "builtAt": "2019-01-01T00:00:00.000Z",
-        "chunks": Array [
-          Object {
+        "chunks": [
+          {
             "id": "1",
             "name": "main",
           },
@@ -459,14 +459,14 @@ Object {
       },
     },
   ],
-  "sizes": Array [
-    Object {
+  "sizes": [
+    {
       "biggerIsBetter": false,
       "changed": true,
       "key": "webpack.sizes.totalSizeByTypeJS",
       "label": "JS",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 1000,
           "deltaPercentage": 2.04081633,
           "deltaType": "LOW_NEGATIVE",
@@ -475,19 +475,19 @@ Object {
           "displayValue": "48.83KiB",
           "value": 50000,
         },
-        Object {
+        {
           "displayValue": "47.85KiB",
           "value": 49000,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": true,
       "key": "webpack.sizes.totalSizeByTypeCSS",
       "label": "CSS",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": -1000,
           "deltaPercentage": -9.09090909,
           "deltaType": "POSITIVE",
@@ -496,19 +496,19 @@ Object {
           "displayValue": "9.77KiB",
           "value": 10000,
         },
-        Object {
+        {
           "displayValue": "10.74KiB",
           "value": 11000,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.sizes.totalSizeByTypeIMG",
       "label": "IMG",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 0,
           "deltaPercentage": 0,
           "deltaType": "NO_CHANGE",
@@ -517,19 +517,19 @@ Object {
           "displayValue": "1000B",
           "value": 1000,
         },
-        Object {
+        {
           "displayValue": "1000B",
           "value": 1000,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.sizes.totalSizeByTypeMEDIA",
       "label": "Media",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 0,
           "deltaPercentage": 0,
           "deltaType": "NO_CHANGE",
@@ -538,19 +538,19 @@ Object {
           "displayValue": "0B",
           "value": 0,
         },
-        Object {
+        {
           "displayValue": "0B",
           "value": 0,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.sizes.totalSizeByTypeFONT",
       "label": "Fonts",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 0,
           "deltaPercentage": 0,
           "deltaType": "NO_CHANGE",
@@ -559,19 +559,19 @@ Object {
           "displayValue": "0B",
           "value": 0,
         },
-        Object {
+        {
           "displayValue": "0B",
           "value": 0,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.sizes.totalSizeByTypeHTML",
       "label": "HTML",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 0,
           "deltaPercentage": 0,
           "deltaType": "NO_CHANGE",
@@ -580,19 +580,19 @@ Object {
           "displayValue": "1.95KiB",
           "value": 2000,
         },
-        Object {
+        {
           "displayValue": "1.95KiB",
           "value": 2000,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.sizes.totalSizeByTypeOTHER",
       "label": "Other",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 0,
           "deltaPercentage": 0,
           "deltaType": "NO_CHANGE",
@@ -601,21 +601,21 @@ Object {
           "displayValue": "0B",
           "value": 0,
         },
-        Object {
+        {
           "displayValue": "0B",
           "value": 0,
         },
       ],
     },
   ],
-  "stats": Array [
-    Object {
+  "stats": [
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.totalSizeByTypeALL",
       "label": "Bundle Size",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 0,
           "deltaPercentage": 0,
           "deltaType": "NO_CHANGE",
@@ -624,19 +624,19 @@ Object {
           "displayValue": "61.52KiB",
           "value": 63000,
         },
-        Object {
+        {
           "displayValue": "61.52KiB",
           "value": 63000,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": true,
       "key": "webpack.totalInitialSizeJS",
       "label": "Initial JS",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 1000,
           "deltaPercentage": 2.04081633,
           "deltaType": "LOW_NEGATIVE",
@@ -645,19 +645,19 @@ Object {
           "displayValue": "48.83KiB",
           "value": 50000,
         },
-        Object {
+        {
           "displayValue": "47.85KiB",
           "value": 49000,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": true,
       "key": "webpack.totalInitialSizeCSS",
       "label": "Initial CSS",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": -1000,
           "deltaPercentage": -9.09090909,
           "deltaType": "POSITIVE",
@@ -666,19 +666,19 @@ Object {
           "displayValue": "9.77KiB",
           "value": 10000,
         },
-        Object {
+        {
           "displayValue": "10.74KiB",
           "value": 11000,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": true,
       "key": "webpack.cacheInvalidation",
       "label": "Cache Invalidation",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 95.24,
           "deltaPercentage": 100,
           "deltaType": "HIGH_NEGATIVE",
@@ -687,19 +687,19 @@ Object {
           "displayValue": "95.24%",
           "value": 95.24,
         },
-        Object {
+        {
           "displayValue": "0%",
           "value": 0,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": true,
       "key": "webpack.moduleCount",
       "label": "Modules",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 1,
           "deltaPercentage": 20,
           "deltaType": "NEGATIVE",
@@ -708,19 +708,19 @@ Object {
           "displayValue": "6",
           "value": 6,
         },
-        Object {
+        {
           "displayValue": "5",
           "value": 5,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.duplicateModulesCount",
       "label": "Duplicate Modules",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 0,
           "deltaPercentage": 0,
           "deltaType": "NO_CHANGE",
@@ -729,19 +729,19 @@ Object {
           "displayValue": "0",
           "value": 0,
         },
-        Object {
+        {
           "displayValue": "0",
           "value": 0,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.duplicateCode",
       "label": "Duplicate Code",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 0,
           "deltaPercentage": 0,
           "deltaType": "NO_CHANGE",
@@ -750,19 +750,19 @@ Object {
           "displayValue": "0%",
           "value": 0,
         },
-        Object {
+        {
           "displayValue": "0%",
           "value": 0,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.chunkCount",
       "label": "Chunks",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 0,
           "deltaPercentage": 0,
           "deltaType": "NO_CHANGE",
@@ -771,19 +771,19 @@ Object {
           "displayValue": "2",
           "value": 2,
         },
-        Object {
+        {
           "displayValue": "2",
           "value": 2,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.assetCount",
       "label": "Assets",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 0,
           "deltaPercentage": 0,
           "deltaType": "NO_CHANGE",
@@ -792,19 +792,19 @@ Object {
           "displayValue": "4",
           "value": 4,
         },
-        Object {
+        {
           "displayValue": "4",
           "value": 4,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": true,
       "key": "webpack.packageCount",
       "label": "Packages",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 1,
           "deltaPercentage": 33.33333333,
           "deltaType": "NEGATIVE",
@@ -813,19 +813,19 @@ Object {
           "displayValue": "4",
           "value": 4,
         },
-        Object {
+        {
           "displayValue": "3",
           "value": 3,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": true,
       "key": "webpack.duplicatePackagesCount",
       "label": "Duplicate Packages",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "delta": 1,
           "deltaPercentage": 100,
           "deltaType": "HIGH_NEGATIVE",
@@ -834,16 +834,16 @@ Object {
           "displayValue": "1",
           "value": 1,
         },
-        Object {
+        {
           "displayValue": "0",
           "value": 0,
         },
       ],
     },
   ],
-  "summary": Object {
-    "webpack": Array [
-      Object {
+  "summary": {
+    "webpack": [
+      {
         "delta": 0,
         "deltaPercentage": 0,
         "deltaType": "NO_CHANGE",
@@ -853,7 +853,7 @@ Object {
         "label": "Bundle Size",
         "value": 63000,
       },
-      Object {
+      {
         "delta": 1000,
         "deltaPercentage": 2.04081633,
         "deltaType": "LOW_NEGATIVE",
@@ -863,7 +863,7 @@ Object {
         "label": "Initial JS",
         "value": 50000,
       },
-      Object {
+      {
         "delta": -1000,
         "deltaPercentage": -9.09090909,
         "deltaType": "POSITIVE",
@@ -873,7 +873,7 @@ Object {
         "label": "Initial CSS",
         "value": 10000,
       },
-      Object {
+      {
         "delta": 95.24,
         "deltaPercentage": 100,
         "deltaType": "HIGH_NEGATIVE",
@@ -883,7 +883,7 @@ Object {
         "label": "Cache Invalidation",
         "value": 95.24,
       },
-      Object {
+      {
         "delta": 1,
         "deltaPercentage": 20,
         "deltaType": "NEGATIVE",
@@ -893,7 +893,7 @@ Object {
         "label": "Modules",
         "value": 6,
       },
-      Object {
+      {
         "delta": 0,
         "deltaPercentage": 0,
         "deltaType": "NO_CHANGE",
@@ -903,7 +903,7 @@ Object {
         "label": "Duplicate Modules",
         "value": 0,
       },
-      Object {
+      {
         "delta": 0,
         "deltaPercentage": 0,
         "deltaType": "NO_CHANGE",
@@ -913,7 +913,7 @@ Object {
         "label": "Duplicate Code",
         "value": 0,
       },
-      Object {
+      {
         "delta": 0,
         "deltaPercentage": 0,
         "deltaType": "NO_CHANGE",
@@ -923,7 +923,7 @@ Object {
         "label": "Chunks",
         "value": 2,
       },
-      Object {
+      {
         "delta": 0,
         "deltaPercentage": 0,
         "deltaType": "NO_CHANGE",
@@ -933,7 +933,7 @@ Object {
         "label": "Assets",
         "value": 4,
       },
-      Object {
+      {
         "delta": 1,
         "deltaPercentage": 33.33333333,
         "deltaType": "NEGATIVE",
@@ -943,7 +943,7 @@ Object {
         "label": "Packages",
         "value": 4,
       },
-      Object {
+      {
         "delta": 1,
         "deltaPercentage": 100,
         "deltaType": "HIGH_NEGATIVE",
@@ -959,15 +959,15 @@ Object {
 `;
 
 exports[`report / createReport single source 1`] = `
-Object {
-  "assets": Array [
-    Object {
+{
+  "assets": [
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "main.css",
       "label": "main.css",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "chunkId": "1",
           "displayValue": "9.77KiB",
           "isChunk": true,
@@ -978,13 +978,13 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "main.js",
       "label": "main.js",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "chunkId": "1",
           "displayValue": "48.83KiB",
           "isChunk": true,
@@ -995,13 +995,13 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "logo.png",
       "label": "logo.png",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "1000B",
           "isChunk": false,
           "isEntry": false,
@@ -1011,13 +1011,13 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "index.html",
       "label": "index.html",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "1.95KiB",
           "isChunk": false,
           "isEntry": false,
@@ -1029,11 +1029,11 @@ Object {
     },
   ],
   "createdAt": "2019-01-10T00:00:00.000Z",
-  "insights": Object {
-    "webpack": Object {
-      "assetsSizeTotal": Object {
-        "data": Object {
-          "info": Object {
+  "insights": {
+    "webpack": {
+      "assetsSizeTotal": {
+        "data": {
+          "info": {
             "delta": 63000,
             "deltaPercentage": 100,
             "deltaType": "HIGH_NEGATIVE",
@@ -1047,9 +1047,9 @@ Object {
         },
         "type": "INFO",
       },
-      "duplicatePackages": Object {
-        "data": Object {
-          "package-c": Array [
+      "duplicatePackages": {
+        "data": {
+          "package-c": [
             "package-a:package-c",
             "package-c",
           ],
@@ -1058,15 +1058,15 @@ Object {
       },
     },
   },
-  "modules": Array [
-    Object {
+  "modules": [
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "module-a",
       "label": "module-a",
-      "runs": Array [
-        Object {
-          "chunkIds": Array [
+      "runs": [
+        {
+          "chunkIds": [
             "1",
           ],
           "displayValue": "1000B",
@@ -1076,14 +1076,14 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "module-b",
       "label": "module-b",
-      "runs": Array [
-        Object {
-          "chunkIds": Array [
+      "runs": [
+        {
+          "chunkIds": [
             "1",
           ],
           "displayValue": "1.95KiB",
@@ -1093,14 +1093,14 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "node_modules/package-a/index.js",
       "label": "node_modules/package-a/index.js",
-      "runs": Array [
-        Object {
-          "chunkIds": Array [
+      "runs": [
+        {
+          "chunkIds": [
             "1",
           ],
           "displayValue": "1000B",
@@ -1110,14 +1110,14 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "node_modules/package-a/node_modules/package-c/index.js",
       "label": "node_modules/package-a/node_modules/package-c/index.js",
-      "runs": Array [
-        Object {
-          "chunkIds": Array [
+      "runs": [
+        {
+          "chunkIds": [
             "1",
           ],
           "displayValue": "1000B",
@@ -1127,14 +1127,14 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "node_modules/package-b/index.js",
       "label": "node_modules/package-b/index.js",
-      "runs": Array [
-        Object {
-          "chunkIds": Array [
+      "runs": [
+        {
+          "chunkIds": [
             "1",
           ],
           "displayValue": "1000B",
@@ -1144,14 +1144,14 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "node_modules/package-c/index.js",
       "label": "node_modules/package-c/index.js",
-      "runs": Array [
-        Object {
-          "chunkIds": Array [
+      "runs": [
+        {
+          "chunkIds": [
             "1",
           ],
           "displayValue": "1000B",
@@ -1162,14 +1162,14 @@ Object {
       ],
     },
   ],
-  "packages": Array [
-    Object {
+  "packages": [
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "package-a",
       "label": "package-a",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "1000B",
           "name": "package-a",
           "path": "node_modules/package-a",
@@ -1177,13 +1177,13 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "package-a:package-c",
       "label": "package-a:package-c",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "1000B",
           "name": "package-c",
           "path": "node_modules/package-a/node_modules/package-c",
@@ -1191,13 +1191,13 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "package-b",
       "label": "package-b",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "1000B",
           "name": "package-b",
           "path": "node_modules/package-b",
@@ -1205,13 +1205,13 @@ Object {
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "package-c",
       "label": "package-c",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "1000B",
           "name": "package-c",
           "path": "node_modules/package-c",
@@ -1220,13 +1220,13 @@ Object {
       ],
     },
   ],
-  "runs": Array [
-    Object {
+  "runs": [
+    {
       "internalBuildNumber": 1,
-      "webpack": Object {
+      "webpack": {
         "builtAt": "2019-01-01T00:00:00.000Z",
-        "chunks": Array [
-          Object {
+        "chunks": [
+          {
             "id": "1",
             "name": "main",
           },
@@ -1235,229 +1235,229 @@ Object {
       },
     },
   ],
-  "sizes": Array [
-    Object {
+  "sizes": [
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.sizes.totalSizeByTypeJS",
       "label": "JS",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "48.83KiB",
           "value": 50000,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.sizes.totalSizeByTypeCSS",
       "label": "CSS",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "9.77KiB",
           "value": 10000,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.sizes.totalSizeByTypeIMG",
       "label": "IMG",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "1000B",
           "value": 1000,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.sizes.totalSizeByTypeMEDIA",
       "label": "Media",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "0B",
           "value": 0,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.sizes.totalSizeByTypeFONT",
       "label": "Fonts",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "0B",
           "value": 0,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.sizes.totalSizeByTypeHTML",
       "label": "HTML",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "1.95KiB",
           "value": 2000,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.sizes.totalSizeByTypeOTHER",
       "label": "Other",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "0B",
           "value": 0,
         },
       ],
     },
   ],
-  "stats": Array [
-    Object {
+  "stats": [
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.totalSizeByTypeALL",
       "label": "Bundle Size",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "61.52KiB",
           "value": 63000,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.totalInitialSizeJS",
       "label": "Initial JS",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "48.83KiB",
           "value": 50000,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.totalInitialSizeCSS",
       "label": "Initial CSS",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "9.77KiB",
           "value": 10000,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.cacheInvalidation",
       "label": "Cache Invalidation",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "0%",
           "value": 0,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.moduleCount",
       "label": "Modules",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "6",
           "value": 6,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.duplicateModulesCount",
       "label": "Duplicate Modules",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "0",
           "value": 0,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.duplicateCode",
       "label": "Duplicate Code",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "0%",
           "value": 0,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.chunkCount",
       "label": "Chunks",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "2",
           "value": 2,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.assetCount",
       "label": "Assets",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "4",
           "value": 4,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.packageCount",
       "label": "Packages",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "4",
           "value": 4,
         },
       ],
     },
-    Object {
+    {
       "biggerIsBetter": false,
       "changed": false,
       "key": "webpack.duplicatePackagesCount",
       "label": "Duplicate Packages",
-      "runs": Array [
-        Object {
+      "runs": [
+        {
           "displayValue": "1",
           "value": 1,
         },
       ],
     },
   ],
-  "summary": Object {
-    "webpack": Array [
-      Object {
+  "summary": {
+    "webpack": [
+      {
         "delta": 63000,
         "deltaPercentage": 100,
         "deltaType": "HIGH_NEGATIVE",
@@ -1467,7 +1467,7 @@ Object {
         "label": "Bundle Size",
         "value": 63000,
       },
-      Object {
+      {
         "delta": 50000,
         "deltaPercentage": 100,
         "deltaType": "HIGH_NEGATIVE",
@@ -1477,7 +1477,7 @@ Object {
         "label": "Initial JS",
         "value": 50000,
       },
-      Object {
+      {
         "delta": 10000,
         "deltaPercentage": 100,
         "deltaType": "HIGH_NEGATIVE",
@@ -1487,7 +1487,7 @@ Object {
         "label": "Initial CSS",
         "value": 10000,
       },
-      Object {
+      {
         "delta": 0,
         "deltaPercentage": 0,
         "deltaType": "NO_CHANGE",
@@ -1497,7 +1497,7 @@ Object {
         "label": "Cache Invalidation",
         "value": 0,
       },
-      Object {
+      {
         "delta": 6,
         "deltaPercentage": 100,
         "deltaType": "HIGH_NEGATIVE",
@@ -1507,7 +1507,7 @@ Object {
         "label": "Modules",
         "value": 6,
       },
-      Object {
+      {
         "delta": 0,
         "deltaPercentage": 0,
         "deltaType": "NO_CHANGE",
@@ -1517,7 +1517,7 @@ Object {
         "label": "Duplicate Modules",
         "value": 0,
       },
-      Object {
+      {
         "delta": 0,
         "deltaPercentage": 0,
         "deltaType": "NO_CHANGE",
@@ -1527,7 +1527,7 @@ Object {
         "label": "Duplicate Code",
         "value": 0,
       },
-      Object {
+      {
         "delta": 2,
         "deltaPercentage": 100,
         "deltaType": "HIGH_NEGATIVE",
@@ -1537,7 +1537,7 @@ Object {
         "label": "Chunks",
         "value": 2,
       },
-      Object {
+      {
         "delta": 4,
         "deltaPercentage": 100,
         "deltaType": "HIGH_NEGATIVE",
@@ -1547,7 +1547,7 @@ Object {
         "label": "Assets",
         "value": 4,
       },
-      Object {
+      {
         "delta": 4,
         "deltaPercentage": 100,
         "deltaType": "HIGH_NEGATIVE",
@@ -1557,7 +1557,7 @@ Object {
         "label": "Packages",
         "value": 4,
       },
-      Object {
+      {
         "delta": 1,
         "deltaPercentage": 100,
         "deltaType": "HIGH_NEGATIVE",

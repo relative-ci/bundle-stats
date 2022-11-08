@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`createJob no baseline 1`] = `
-Object {
-  "insights": Object {
-    "webpack": Object {
-      "assetsSizeTotal": Object {
-        "data": Object {
-          "info": Object {
+{
+  "insights": {
+    "webpack": {
+      "assetsSizeTotal": {
+        "data": {
+          "info": {
             "delta": 63000,
             "deltaPercentage": 100,
             "deltaType": "HIGH_NEGATIVE",
@@ -20,9 +20,9 @@ Object {
         },
         "type": "INFO",
       },
-      "duplicatePackages": Object {
-        "data": Object {
-          "package-c": Array [
+      "duplicatePackages": {
+        "data": {
+          "package-c": [
             "package-a:package-c",
             "package-c",
           ],
@@ -31,11 +31,11 @@ Object {
       },
     },
   },
-  "meta": Object {
-    "webpack": Object {
+  "meta": {
+    "webpack": {
       "builtAt": "2019-01-01T00:00:00.000Z",
-      "chunks": Array [
-        Object {
+      "chunks": [
+        {
           "id": "1",
           "name": "main",
         },
@@ -43,27 +43,27 @@ Object {
       "hash": "abcd1234",
     },
   },
-  "metrics": Object {
-    "webpack": Object {
-      "assetCount": Object {
+  "metrics": {
+    "webpack": {
+      "assetCount": {
         "value": 4,
       },
-      "assets": Object {
-        "index.html": Object {
+      "assets": {
+        "index.html": {
           "isChunk": false,
           "isEntry": false,
           "isInitial": false,
           "name": "index.html",
           "value": 2000,
         },
-        "logo.png": Object {
+        "logo.png": {
           "isChunk": false,
           "isEntry": false,
           "isInitial": false,
           "name": "logo.a3b4c5d.png",
           "value": 1000,
         },
-        "main.css": Object {
+        "main.css": {
           "chunkId": "1",
           "isChunk": true,
           "isEntry": true,
@@ -71,7 +71,7 @@ Object {
           "name": "main.a1b2c3d.css",
           "value": 10000,
         },
-        "main.js": Object {
+        "main.js": {
           "chunkId": "1",
           "isChunk": true,
           "isEntry": true,
@@ -80,67 +80,67 @@ Object {
           "value": 50000,
         },
       },
-      "cacheInvalidation": Object {
+      "cacheInvalidation": {
         "value": 0,
       },
-      "chunkCount": Object {
+      "chunkCount": {
         "value": 2,
       },
-      "duplicateCode": Object {
+      "duplicateCode": {
         "value": 0,
       },
-      "duplicateModulesCount": Object {
+      "duplicateModulesCount": {
         "value": 0,
       },
-      "duplicatePackagesCount": Object {
+      "duplicatePackagesCount": {
         "value": 1,
       },
-      "moduleCount": Object {
+      "moduleCount": {
         "value": 6,
       },
-      "modules": Object {
-        "module-a": Object {
-          "chunkIds": Array [
+      "modules": {
+        "module-a": {
+          "chunkIds": [
             "1",
           ],
           "duplicated": false,
           "name": "module-a",
           "value": 1000,
         },
-        "module-b": Object {
-          "chunkIds": Array [
+        "module-b": {
+          "chunkIds": [
             "1",
           ],
           "duplicated": false,
           "name": "module-b",
           "value": 2000,
         },
-        "node_modules/package-a/index.js": Object {
-          "chunkIds": Array [
+        "node_modules/package-a/index.js": {
+          "chunkIds": [
             "1",
           ],
           "duplicated": false,
           "name": "node_modules/package-a/index.js",
           "value": 1000,
         },
-        "node_modules/package-a/node_modules/package-c/index.js": Object {
-          "chunkIds": Array [
+        "node_modules/package-a/node_modules/package-c/index.js": {
+          "chunkIds": [
             "1",
           ],
           "duplicated": false,
           "name": "node_modules/package-a/node_modules/package-c/index.js",
           "value": 1000,
         },
-        "node_modules/package-b/index.js": Object {
-          "chunkIds": Array [
+        "node_modules/package-b/index.js": {
+          "chunkIds": [
             "1",
           ],
           "duplicated": false,
           "name": "node_modules/package-b/index.js",
           "value": 1000,
         },
-        "node_modules/package-c/index.js": Object {
-          "chunkIds": Array [
+        "node_modules/package-c/index.js": {
+          "chunkIds": [
             "1",
           ],
           "duplicated": false,
@@ -148,144 +148,144 @@ Object {
           "value": 1000,
         },
       },
-      "packageCount": Object {
+      "packageCount": {
         "value": 4,
       },
-      "packages": Object {
-        "package-a": Object {
+      "packages": {
+        "package-a": {
           "name": "package-a",
           "path": "node_modules/package-a",
           "value": 1000,
         },
-        "package-a:package-c": Object {
+        "package-a:package-c": {
           "name": "package-c",
           "path": "node_modules/package-a/node_modules/package-c",
           "value": 1000,
         },
-        "package-b": Object {
+        "package-b": {
           "name": "package-b",
           "path": "node_modules/package-b",
           "value": 1000,
         },
-        "package-c": Object {
+        "package-c": {
           "name": "package-c",
           "path": "node_modules/package-c",
           "value": 1000,
         },
       },
-      "sizes": Object {
-        "totalSizeByTypeCSS": Object {
+      "sizes": {
+        "totalSizeByTypeCSS": {
           "value": 10000,
         },
-        "totalSizeByTypeFONT": Object {
+        "totalSizeByTypeFONT": {
           "value": 0,
         },
-        "totalSizeByTypeHTML": Object {
+        "totalSizeByTypeHTML": {
           "value": 2000,
         },
-        "totalSizeByTypeIMG": Object {
+        "totalSizeByTypeIMG": {
           "value": 1000,
         },
-        "totalSizeByTypeJS": Object {
+        "totalSizeByTypeJS": {
           "value": 50000,
         },
-        "totalSizeByTypeMEDIA": Object {
+        "totalSizeByTypeMEDIA": {
           "value": 0,
         },
-        "totalSizeByTypeOTHER": Object {
+        "totalSizeByTypeOTHER": {
           "value": 0,
         },
       },
-      "totalInitialSizeCSS": Object {
+      "totalInitialSizeCSS": {
         "value": 10000,
       },
-      "totalInitialSizeJS": Object {
+      "totalInitialSizeJS": {
         "value": 50000,
       },
-      "totalSizeByTypeALL": Object {
+      "totalSizeByTypeALL": {
         "value": 63000,
       },
     },
   },
-  "rawData": Object {
-    "webpack": Object {
-      "assets": Array [
-        Object {
+  "rawData": {
+    "webpack": {
+      "assets": [
+        {
           "name": "main.a1b2c3d.css",
           "size": 10000,
         },
-        Object {
+        {
           "name": "main.a2b3c4d.js",
           "size": 50000,
         },
-        Object {
+        {
           "name": "logo.a3b4c5d.png",
           "size": 1000,
         },
-        Object {
+        {
           "name": "index.html",
           "size": 2000,
         },
       ],
       "builtAt": 1546300800000,
-      "chunks": Array [
-        Object {
+      "chunks": [
+        {
           "entry": true,
-          "files": Array [
+          "files": [
             "main.a1b2c3d.css",
             "main.a2b3c4d.js",
           ],
           "id": 1,
           "initial": true,
-          "names": Array [
+          "names": [
             "main",
           ],
         },
       ],
       "hash": "abcd1234",
-      "modules": Array [
-        Object {
-          "chunks": Array [
+      "modules": [
+        {
+          "chunks": [
             1,
           ],
           "name": "module-a",
           "size": 1000,
         },
-        Object {
-          "chunks": Array [
+        {
+          "chunks": [
             1,
           ],
           "name": "module-b",
           "size": 2000,
         },
-        Object {
-          "chunks": Array [],
+        {
+          "chunks": [],
           "name": "module-c",
           "size": 1000,
         },
-        Object {
-          "chunks": Array [
+        {
+          "chunks": [
             1,
           ],
           "name": "node_modules/package-a/index.js",
           "size": 1000,
         },
-        Object {
-          "chunks": Array [
+        {
+          "chunks": [
             1,
           ],
           "name": "node_modules/package-a/node_modules/package-c/index.js",
           "size": 1000,
         },
-        Object {
-          "chunks": Array [
+        {
+          "chunks": [
             1,
           ],
           "name": "node_modules/package-b/index.js",
           "size": 1000,
         },
-        Object {
-          "chunks": Array [
+        {
+          "chunks": [
             1,
           ],
           "name": "node_modules/package-c/index.js",
@@ -294,49 +294,49 @@ Object {
       ],
     },
   },
-  "summary": Object {
-    "webpack": Object {
-      "assetCount": Object {
+  "summary": {
+    "webpack": {
+      "assetCount": {
         "baseline": 0,
         "current": 4,
       },
-      "cacheInvalidation": Object {
+      "cacheInvalidation": {
         "baseline": 0,
         "current": 0,
       },
-      "chunkCount": Object {
+      "chunkCount": {
         "baseline": 0,
         "current": 2,
       },
-      "duplicateCode": Object {
+      "duplicateCode": {
         "baseline": 0,
         "current": 0,
       },
-      "duplicateModulesCount": Object {
+      "duplicateModulesCount": {
         "baseline": 0,
         "current": 0,
       },
-      "duplicatePackagesCount": Object {
+      "duplicatePackagesCount": {
         "baseline": 0,
         "current": 1,
       },
-      "moduleCount": Object {
+      "moduleCount": {
         "baseline": 0,
         "current": 6,
       },
-      "packageCount": Object {
+      "packageCount": {
         "baseline": 0,
         "current": 4,
       },
-      "totalInitialSizeCSS": Object {
+      "totalInitialSizeCSS": {
         "baseline": 0,
         "current": 10000,
       },
-      "totalInitialSizeJS": Object {
+      "totalInitialSizeJS": {
         "baseline": 0,
         "current": 50000,
       },
-      "totalSizeByTypeALL": Object {
+      "totalSizeByTypeALL": {
         "baseline": 0,
         "current": 63000,
       },
@@ -346,12 +346,12 @@ Object {
 `;
 
 exports[`createJob with baseline 1`] = `
-Object {
-  "insights": Object {
-    "webpack": Object {
-      "assetsSizeTotal": Object {
-        "data": Object {
-          "info": Object {
+{
+  "insights": {
+    "webpack": {
+      "assetsSizeTotal": {
+        "data": {
+          "info": {
             "delta": 0,
             "deltaPercentage": 0,
             "deltaType": "NO_CHANGE",
@@ -365,9 +365,9 @@ Object {
         },
         "type": "INFO",
       },
-      "duplicatePackages": Object {
-        "data": Object {
-          "package-c": Array [
+      "duplicatePackages": {
+        "data": {
+          "package-c": [
             "package-a:package-c",
             "package-c",
           ],
@@ -376,11 +376,11 @@ Object {
       },
     },
   },
-  "meta": Object {
-    "webpack": Object {
+  "meta": {
+    "webpack": {
       "builtAt": "2019-01-01T00:00:00.000Z",
-      "chunks": Array [
-        Object {
+      "chunks": [
+        {
           "id": "1",
           "name": "main",
         },
@@ -388,27 +388,27 @@ Object {
       "hash": "abcd1234",
     },
   },
-  "metrics": Object {
-    "webpack": Object {
-      "assetCount": Object {
+  "metrics": {
+    "webpack": {
+      "assetCount": {
         "value": 4,
       },
-      "assets": Object {
-        "index.html": Object {
+      "assets": {
+        "index.html": {
           "isChunk": false,
           "isEntry": false,
           "isInitial": false,
           "name": "index.html",
           "value": 2000,
         },
-        "logo.png": Object {
+        "logo.png": {
           "isChunk": false,
           "isEntry": false,
           "isInitial": false,
           "name": "logo.a3b4c5d.png",
           "value": 1000,
         },
-        "main.css": Object {
+        "main.css": {
           "chunkId": "1",
           "isChunk": true,
           "isEntry": true,
@@ -416,7 +416,7 @@ Object {
           "name": "main.a1b2c3d.css",
           "value": 10000,
         },
-        "main.js": Object {
+        "main.js": {
           "chunkId": "1",
           "isChunk": true,
           "isEntry": true,
@@ -425,67 +425,67 @@ Object {
           "value": 50000,
         },
       },
-      "cacheInvalidation": Object {
+      "cacheInvalidation": {
         "value": 95.24,
       },
-      "chunkCount": Object {
+      "chunkCount": {
         "value": 2,
       },
-      "duplicateCode": Object {
+      "duplicateCode": {
         "value": 0,
       },
-      "duplicateModulesCount": Object {
+      "duplicateModulesCount": {
         "value": 0,
       },
-      "duplicatePackagesCount": Object {
+      "duplicatePackagesCount": {
         "value": 1,
       },
-      "moduleCount": Object {
+      "moduleCount": {
         "value": 6,
       },
-      "modules": Object {
-        "module-a": Object {
-          "chunkIds": Array [
+      "modules": {
+        "module-a": {
+          "chunkIds": [
             "1",
           ],
           "duplicated": false,
           "name": "module-a",
           "value": 1000,
         },
-        "module-b": Object {
-          "chunkIds": Array [
+        "module-b": {
+          "chunkIds": [
             "1",
           ],
           "duplicated": false,
           "name": "module-b",
           "value": 2000,
         },
-        "node_modules/package-a/index.js": Object {
-          "chunkIds": Array [
+        "node_modules/package-a/index.js": {
+          "chunkIds": [
             "1",
           ],
           "duplicated": false,
           "name": "node_modules/package-a/index.js",
           "value": 1000,
         },
-        "node_modules/package-a/node_modules/package-c/index.js": Object {
-          "chunkIds": Array [
+        "node_modules/package-a/node_modules/package-c/index.js": {
+          "chunkIds": [
             "1",
           ],
           "duplicated": false,
           "name": "node_modules/package-a/node_modules/package-c/index.js",
           "value": 1000,
         },
-        "node_modules/package-b/index.js": Object {
-          "chunkIds": Array [
+        "node_modules/package-b/index.js": {
+          "chunkIds": [
             "1",
           ],
           "duplicated": false,
           "name": "node_modules/package-b/index.js",
           "value": 1000,
         },
-        "node_modules/package-c/index.js": Object {
-          "chunkIds": Array [
+        "node_modules/package-c/index.js": {
+          "chunkIds": [
             "1",
           ],
           "duplicated": false,
@@ -493,144 +493,144 @@ Object {
           "value": 1000,
         },
       },
-      "packageCount": Object {
+      "packageCount": {
         "value": 4,
       },
-      "packages": Object {
-        "package-a": Object {
+      "packages": {
+        "package-a": {
           "name": "package-a",
           "path": "node_modules/package-a",
           "value": 1000,
         },
-        "package-a:package-c": Object {
+        "package-a:package-c": {
           "name": "package-c",
           "path": "node_modules/package-a/node_modules/package-c",
           "value": 1000,
         },
-        "package-b": Object {
+        "package-b": {
           "name": "package-b",
           "path": "node_modules/package-b",
           "value": 1000,
         },
-        "package-c": Object {
+        "package-c": {
           "name": "package-c",
           "path": "node_modules/package-c",
           "value": 1000,
         },
       },
-      "sizes": Object {
-        "totalSizeByTypeCSS": Object {
+      "sizes": {
+        "totalSizeByTypeCSS": {
           "value": 10000,
         },
-        "totalSizeByTypeFONT": Object {
+        "totalSizeByTypeFONT": {
           "value": 0,
         },
-        "totalSizeByTypeHTML": Object {
+        "totalSizeByTypeHTML": {
           "value": 2000,
         },
-        "totalSizeByTypeIMG": Object {
+        "totalSizeByTypeIMG": {
           "value": 1000,
         },
-        "totalSizeByTypeJS": Object {
+        "totalSizeByTypeJS": {
           "value": 50000,
         },
-        "totalSizeByTypeMEDIA": Object {
+        "totalSizeByTypeMEDIA": {
           "value": 0,
         },
-        "totalSizeByTypeOTHER": Object {
+        "totalSizeByTypeOTHER": {
           "value": 0,
         },
       },
-      "totalInitialSizeCSS": Object {
+      "totalInitialSizeCSS": {
         "value": 10000,
       },
-      "totalInitialSizeJS": Object {
+      "totalInitialSizeJS": {
         "value": 50000,
       },
-      "totalSizeByTypeALL": Object {
+      "totalSizeByTypeALL": {
         "value": 63000,
       },
     },
   },
-  "rawData": Object {
-    "webpack": Object {
-      "assets": Array [
-        Object {
+  "rawData": {
+    "webpack": {
+      "assets": [
+        {
           "name": "main.a1b2c3d.css",
           "size": 10000,
         },
-        Object {
+        {
           "name": "main.a2b3c4d.js",
           "size": 50000,
         },
-        Object {
+        {
           "name": "logo.a3b4c5d.png",
           "size": 1000,
         },
-        Object {
+        {
           "name": "index.html",
           "size": 2000,
         },
       ],
       "builtAt": 1546300800000,
-      "chunks": Array [
-        Object {
+      "chunks": [
+        {
           "entry": true,
-          "files": Array [
+          "files": [
             "main.a1b2c3d.css",
             "main.a2b3c4d.js",
           ],
           "id": 1,
           "initial": true,
-          "names": Array [
+          "names": [
             "main",
           ],
         },
       ],
       "hash": "abcd1234",
-      "modules": Array [
-        Object {
-          "chunks": Array [
+      "modules": [
+        {
+          "chunks": [
             1,
           ],
           "name": "module-a",
           "size": 1000,
         },
-        Object {
-          "chunks": Array [
+        {
+          "chunks": [
             1,
           ],
           "name": "module-b",
           "size": 2000,
         },
-        Object {
-          "chunks": Array [],
+        {
+          "chunks": [],
           "name": "module-c",
           "size": 1000,
         },
-        Object {
-          "chunks": Array [
+        {
+          "chunks": [
             1,
           ],
           "name": "node_modules/package-a/index.js",
           "size": 1000,
         },
-        Object {
-          "chunks": Array [
+        {
+          "chunks": [
             1,
           ],
           "name": "node_modules/package-a/node_modules/package-c/index.js",
           "size": 1000,
         },
-        Object {
-          "chunks": Array [
+        {
+          "chunks": [
             1,
           ],
           "name": "node_modules/package-b/index.js",
           "size": 1000,
         },
-        Object {
-          "chunks": Array [
+        {
+          "chunks": [
             1,
           ],
           "name": "node_modules/package-c/index.js",
@@ -639,49 +639,49 @@ Object {
       ],
     },
   },
-  "summary": Object {
-    "webpack": Object {
-      "assetCount": Object {
+  "summary": {
+    "webpack": {
+      "assetCount": {
         "baseline": 4,
         "current": 4,
       },
-      "cacheInvalidation": Object {
+      "cacheInvalidation": {
         "baseline": 0,
         "current": 95.24,
       },
-      "chunkCount": Object {
+      "chunkCount": {
         "baseline": 2,
         "current": 2,
       },
-      "duplicateCode": Object {
+      "duplicateCode": {
         "baseline": 0,
         "current": 0,
       },
-      "duplicateModulesCount": Object {
+      "duplicateModulesCount": {
         "baseline": 0,
         "current": 0,
       },
-      "duplicatePackagesCount": Object {
+      "duplicatePackagesCount": {
         "baseline": 0,
         "current": 1,
       },
-      "moduleCount": Object {
+      "moduleCount": {
         "baseline": 5,
         "current": 6,
       },
-      "packageCount": Object {
+      "packageCount": {
         "baseline": 3,
         "current": 4,
       },
-      "totalInitialSizeCSS": Object {
+      "totalInitialSizeCSS": {
         "baseline": 11000,
         "current": 10000,
       },
-      "totalInitialSizeJS": Object {
+      "totalInitialSizeJS": {
         "baseline": 49000,
         "current": 50000,
       },
-      "totalSizeByTypeALL": Object {
+      "totalSizeByTypeALL": {
         "baseline": 63000,
         "current": 63000,
       },

@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`utils / metrics / getMetricRunInfo should return the info 1`] = `
-Object {
-  "info": Object {
+{
+  "info": {
     "delta": 1000,
     "deltaPercentage": 10,
     "deltaType": "NEGATIVE",
@@ -11,7 +11,7 @@ Object {
     "displayValue": "11000",
     "value": 11000,
   },
-  "infoWithOverlyPositiveDelta": Object {
+  "infoWithOverlyPositiveDelta": {
     "delta": -6000,
     "deltaPercentage": -60,
     "deltaType": "HIGH_POSITIVE",
@@ -20,7 +20,7 @@ Object {
     "displayValue": "4000",
     "value": 4000,
   },
-  "infoWithSlightlyNegativeDelta": Object {
+  "infoWithSlightlyNegativeDelta": {
     "delta": 1,
     "deltaPercentage": 0.01,
     "deltaType": "LOW_NEGATIVE",
@@ -29,7 +29,7 @@ Object {
     "displayValue": "10001",
     "value": 10001,
   },
-  "infoWithoutBaseline": Object {
+  "infoWithoutBaseline": {
     "displayValue": "10000",
     "value": 10000,
   },
