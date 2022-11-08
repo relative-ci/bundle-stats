@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`report / addRowMetricData should add data 1`] = `
-Array [
-  Object {
+[
+  {
     "biggerIsBetter": false,
     "changed": true,
     "key": "webpack.totalSizeByTypeALL",
     "label": "Bundle Size",
-    "runs": Array [
-      Object {
+    "runs": [
+      {
         "delta": -10,
         "deltaPercentage": -9.09090909,
         "deltaType": "POSITIVE",
@@ -17,19 +17,19 @@ Array [
         "displayValue": "100B",
         "value": 100,
       },
-      Object {
+      {
         "displayValue": "110B",
         "value": 110,
       },
     ],
   },
-  Object {
+  {
     "biggerIsBetter": false,
     "changed": true,
     "key": "webpack.duplicatePackagesCount",
     "label": "Duplicate Packages",
-    "runs": Array [
-      Object {
+    "runs": [
+      {
         "delta": 10,
         "deltaPercentage": 100,
         "deltaType": "HIGH_NEGATIVE",
@@ -41,13 +41,13 @@ Array [
       null,
     ],
   },
-  Object {
+  {
     "biggerIsBetter": false,
     "changed": false,
     "key": "webpack.mdoulesCount",
     "label": "webpack.mdoulesCount",
-    "runs": Array [
-      Object {
+    "runs": [
+      {
         "delta": 0,
         "deltaPercentage": 0,
         "deltaType": "NO_CHANGE",
@@ -56,20 +56,20 @@ Array [
         "displayValue": "100",
         "value": 100,
       },
-      Object {
+      {
         "displayValue": "100",
         "value": 100,
       },
     ],
   },
-  Object {
+  {
     "biggerIsBetter": false,
     "changed": true,
     "key": "webpack.cacheInvalidation",
     "label": "Cache Invalidation",
-    "runs": Array [
+    "runs": [
       null,
-      Object {
+      {
         "displayValue": "10%",
         "value": 10,
       },
@@ -79,14 +79,14 @@ Array [
 `;
 
 exports[`report / addRowMetricData should add data with metric type 1`] = `
-Array [
-  Object {
+[
+  {
     "biggerIsBetter": false,
     "changed": true,
     "key": "metric1",
     "label": "metric1",
-    "runs": Array [
-      Object {
+    "runs": [
+      {
         "delta": -10,
         "deltaPercentage": -9.09090909,
         "deltaType": "POSITIVE",
@@ -95,19 +95,19 @@ Array [
         "displayValue": "100B",
         "value": 100,
       },
-      Object {
+      {
         "displayValue": "110B",
         "value": 110,
       },
     ],
   },
-  Object {
+  {
     "biggerIsBetter": false,
     "changed": true,
     "key": "metric2",
     "label": "metric2",
-    "runs": Array [
-      Object {
+    "runs": [
+      {
         "delta": 10,
         "deltaPercentage": 100,
         "deltaType": "HIGH_NEGATIVE",
@@ -119,26 +119,26 @@ Array [
       null,
     ],
   },
-  Object {
+  {
     "biggerIsBetter": false,
     "changed": true,
     "key": "metric3",
     "label": "metric3",
-    "runs": Array [
+    "runs": [
       null,
-      Object {
+      {
         "displayValue": "10B",
         "value": 10,
       },
     ],
   },
-  Object {
+  {
     "biggerIsBetter": false,
     "changed": false,
     "key": "metric4",
     "label": "metric4",
-    "runs": Array [
-      Object {
+    "runs": [
+      {
         "delta": 0,
         "deltaPercentage": 0,
         "deltaType": "NO_CHANGE",
@@ -147,7 +147,7 @@ Array [
         "displayValue": "100B",
         "value": 100,
       },
-      Object {
+      {
         "displayValue": "100B",
         "value": 100,
       },
