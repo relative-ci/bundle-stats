@@ -29,7 +29,7 @@
     "lerna": "6.0.3",
     "lint-staged": "13.0.3",
     "prettier": "2.7.1",
-    "typescript": "4.8.4"
+    "typescript": "4.9.3"
   },
   "scripts": {
     "build": "lerna run build",
