@@ -48,3 +48,10 @@ stories.add('single item', () => (
     <Box outline>Lorem ipsum</Box>
   </FlexStack>
 ));
+
+stories.add('with alignItems', () => (
+  <FlexStack alignItems="center" space="medium">
+    <h1>Title</h1>
+    <a href="#test">Option 1</a>
+  </FlexStack>
+));

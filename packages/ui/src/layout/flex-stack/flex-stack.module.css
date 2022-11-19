@@ -8,6 +8,7 @@
   margin-right: 0;
 }
 
+/** Space variation */
 .space--xxxsmall > .item {
   margin: 0 var(--space-xxxsmall) 0 0;
 }
@@ -42,4 +43,25 @@
 
 .space--xxxlarge > .item {
   margin: 0 var(--space-xxxlarge) 0 0;
+}
+
+/** Align items variation */
+.root {
+  align-items: stretch;
+}
+
+.align-items--flex-start {
+  align-items: flex-start;
+}
+
+.align-items--flex-end {
+  align-items: flex-end;
+}
+
+.align-items--center {
+  align-items: center;
+}
+
+.align-items--baseline {
+  align-items: baseline;
 }

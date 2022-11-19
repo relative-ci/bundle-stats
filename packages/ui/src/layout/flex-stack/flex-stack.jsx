@@ -6,9 +6,15 @@ import { NO_SPACE, SPACES } from '../../constants';
 import { getRenderChildWithClassName } from '../../utils';
 import css from './flex-stack.module.css';
 
-export const FlexStack = (props) => {
-  const { as: Component, className, space, children, ...restProps } = props;
-  const rootClassName = cx(className, css.root, css[`space--${space}`]);
+export const FlexStack = ({
+  as: Component = 'div',
+  className = '',
+  space = '',
+  children = null,
+  alignItems = '',
+  ...restProps
+}) => {
+  const rootClassName = cx(className, css.root, css[`space--${space}`], css[`align-items--${alignItems}`]);
 
   return (
     <Component {...restProps} className={rootClassName}>
@@ -22,6 +28,8 @@ FlexStack.defaultProps = {
   className: '',
   children: null,
   space: NO_SPACE,
+  alignItems: undefined,
+  inline: false,
 };
 
 FlexStack.propTypes = {
@@ -29,4 +37,6 @@ FlexStack.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   space: PropTypes.oneOf(SPACES),
+  alignItems: PropTypes.oneOf(['stretch', 'center', 'flex-start', 'flex-end', 'baseline']),
+  inline: PropTypes.bool,
 };
