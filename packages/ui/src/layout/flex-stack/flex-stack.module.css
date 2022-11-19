@@ -65,3 +65,8 @@
 .align-items--baseline {
   align-items: baseline;
 }
+
+/** Inline variation */
+.inline {
+  display: inline-flex;
+}

@@ -10,11 +10,18 @@ export const FlexStack = ({
   as: Component = 'div',
   className = '',
   space = '',
+  inline = false,
   children = null,
   alignItems = '',
   ...restProps
 }) => {
-  const rootClassName = cx(className, css.root, css[`space--${space}`], css[`align-items--${alignItems}`]);
+  const rootClassName = cx(
+    className,
+    css.root,
+    css[`space--${space}`],
+    css[`align-items--${alignItems}`],
+    inline && css.inline,
+  );
 
   return (
     <Component {...restProps} className={rootClassName}>
