@@ -1,4 +1,4 @@
-import { isDate } from 'lodash';
+import isDate from 'lodash/isDate';
 
 // @ts-ignore
 const getNavigatorLanguages = () => (typeof window !== 'undefined' && typeof window.navigator !== 'undefined' && window.navigator.languages) || 'en';
