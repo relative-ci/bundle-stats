@@ -192,16 +192,19 @@ The option can be disabled using `--no-compare` option.
 
 ## Related projects
 
-### :cyclone: [relative-ci.com](https://relative-ci.com)
+### :cyclone: [relative-ci.com](https://relative-ci.com?utm_medium=bundle-stats-cli)
 
-Specialized insights for web bundles:
+#### In-depth webpack bundle analysis and monitoring
 
-- Analyze and monitor webpack stats(bundle size, assets, modules, packages)
-- GitHub Check, GitHub Pull Request, and Slack integrations
-- Support for all major CI services (CircleCI, GitHub Actions, Gitlab CI, Jenkins, Travis CI)
-- Free for OpenSource, developers and small teams
+RelativeCI automates webpack bundle analysis, monitoring, and alerting so you can identify and fix bundle regressions before shipping to production:
 
-[Try for free](https://relative-ci.com?utm_source=github&utm_medium=bundle-stats)
+- :crystal_ball: Analyze webpack bundle stats on every build
+- :chart_with_upwards_trend: Monitor webpack bundle stats changes and identify tendencies over extended periods
+- :bell: Get notified via GitHub Checks, GitHub Pull Request comments, and Slack notifications
+- :hammer: Support for all major CI services (CircleCI, GitHub Actions, Gitlab CI, Jenkins, Travis CI)
+- :two_hearts: Always free for Open Source
+
+[Try for free](https://relative-ci.com?utm_medium=bundle-stats-cli)
 
 ### :first_quarter_moon: [relative-ci/compare](https://compare.relative-ci.com)
 
@@ -211,4 +214,4 @@ Standalone web application to compare Webpack/Lighthouse/Browsertime stats.
 
 ### :zap: [bundle-stats-action](https://github.com/vio/bundle-stats-action)
 
-Github Action that generates [bundle-stats](https://github.com/relative-ci/bundle-stats) reports for webpack.
+Github Action that generates [bundle-stats](https://github.com/relative-ci/bundle-stats) reports.
