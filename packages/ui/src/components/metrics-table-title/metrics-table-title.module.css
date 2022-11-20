@@ -2,13 +2,17 @@
 }
 
 .title {
-  align-items: center;
   color: var(--color-text-light);
+  font-size: 1em;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 .anchor {
+  display: block;
+}
+
+.anchorIcon {
   display: block;
 }
 

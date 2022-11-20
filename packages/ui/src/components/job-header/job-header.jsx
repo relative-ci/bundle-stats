@@ -23,21 +23,21 @@ export const JobHeader = (props) => {
         <span>{`#${job.internalBuildNumber}`}</span>
         {tag && <Tag className={css.tag}>{tag}</Tag>}
       </h1>
-      <FlexStack className={css.meta} space="xxsmall">
+      <FlexStack space="xxsmall" className={css.meta}>
         {builtAt && (
-          <span className={css.metaItem} title={`${formatDate(builtAt)} ${formatTime(builtAt)}`}>
-            <Icon glyph="clock" className={css.metaIcon} />
-            <span className={css.metaLabel}>
+          <FlexStack space="xxxsmall" alignItems="center" inline as="span" title={`${formatDate(builtAt)} ${formatTime(builtAt)}`}>
+            <Icon glyph="clock" />
+            <span>
               {formatDistanceToNow(new Date(builtAt), { addSuffix: true })}
             </span>
-          </span>
+          </FlexStack>
         )}
 
         {hash && (
-          <span className={css.metaItem} title="Webpack bundle hash">
-            <Icon glyph="commit" className={css.metaIcon} />
-            <span className={css.metaLabel}>{hash}</span>
-          </span>
+          <FlexStack space="xxxsmall" alignItems="center" inline title="Webpack bundle hash">
+            <Icon glyph="commit" />
+            <span>{hash}</span>
+          </FlexStack>
         )}
 
         <div className={css.content}>{children}</div>

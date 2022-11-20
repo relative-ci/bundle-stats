@@ -29,10 +29,6 @@
   color: var(--color-text);
 }
 
-.label {
-  align-items: center;
-}
-
 .dropdown {
   position: absolute;
   left: 0;

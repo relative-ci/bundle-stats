@@ -4,7 +4,6 @@
   font-size: var(--size-xsmall);
   text-transform: uppercase;
   white-space: nowrap;
-  align-items: center;
 }
 
 .titleIcon {

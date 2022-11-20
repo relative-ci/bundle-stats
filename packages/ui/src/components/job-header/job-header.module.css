@@ -17,18 +17,3 @@
   font-size: var(--size-small);
   color: var(--color-text-light);
 }
-
-.metaItem {
-  display: inline-flex;
-  align-items: center;
-}
-
-.metaIcon {
-  width: var(--space-small);
-  height: var(--space-small);
-  margin-right: var(--space-xxxsmall);
-}
-
-.metaLabel {
-  line-height: var(--space-small);
-}

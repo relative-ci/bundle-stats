@@ -15,7 +15,7 @@ export const Dropdown = (props) => {
   return (
     <div className={rootClassName}>
       <MenuButton state={menuState} className={cx(css.button, buttonClassName)} tabIndex={null}>
-        <FlexStack space="xxxsmall" className={css.label}>
+        <FlexStack space="xxxsmall" alignItems="center" className={css.label}>
           {glyph && <Icon className={css.labelIcon} glyph={glyph} />}
           {label && <span className={css.labelText}>{label}</span>}
         </FlexStack>
