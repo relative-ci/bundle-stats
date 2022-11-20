@@ -24,7 +24,7 @@ const Filter = (props) => {
   return (
     <Component className={rootClassName}>
       {/* eslint-disable */}
-      <FlexStack space="xxxsmall" as="label" className={cx(css.filterCheckbox, buttonClassName)}>
+      <FlexStack space="xxxsmall" alignItems="center" as="label" className={cx(css.filterCheckbox, buttonClassName)}>
         {/* eslint-enabled */}
         <input className={css.filterInput} type="checkbox" id={id} name={name} {...inputProps} />
         <span className={css.filterLabel} title={label}>
@@ -187,7 +187,7 @@ export const Filters = (props) => {
 
   return (
     <form className={rootClassName}>
-      <FlexStack space="xxsmall" className={css.items}>
+      <FlexStack space="xxsmall" alignItems="flex-start" className={css.items}>
         {Object.entries(filters).map(([name, data]) => {
           if (typeof data?.defaultValue !== 'undefined') {
             return (

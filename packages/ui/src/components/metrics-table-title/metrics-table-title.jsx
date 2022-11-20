@@ -15,10 +15,11 @@ export const MetricsTableTitle = (props) => {
 
   return (
     <Stack className={rootClassName}>
-      <FlexStack space="xxxsmall" className={css.title}>
+      <FlexStack space="xxxsmall" alignItems="center" as="h3" className={css.title}>
         <span>{title}</span>
+
         {(popoverInfo || popoverHref) && (
-          <HoverCard label={<Icon glyph="help" />} anchorClassName={css.anchor}>
+          <HoverCard label={<Icon glyph="help" className={css.anchorIcon} />} anchorClassName={css.anchor}>
             <Stack space="xxxsmall">
               {popoverInfo && <p>{popoverInfo}</p>}
               {popoverHref && (

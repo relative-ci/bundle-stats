@@ -65,7 +65,7 @@ export const SummaryItem = ({
 
   return (
     <Stack space="xxsmall" as={Component} className={rootClassName} {...props}>
-      <FlexStack space="xxxsmall" as="h3" className={css.title}>
+      <FlexStack space="xxxsmall" alignItems="center" as="h3" className={css.title}>
         <span>
           {metric.label}
         </span>

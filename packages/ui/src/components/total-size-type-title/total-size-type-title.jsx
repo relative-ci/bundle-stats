@@ -11,7 +11,7 @@ import { HoverCard } from '../../ui/hover-card';
 import css from './total-size-type-title.module.css';
 
 export const TotalSizeTypeTitle = ({ className }) => (
-  <FlexStack space="xxxsmall" className={cx(css.root, className)}>
+  <FlexStack space="xxxsmall" alignItems="center" className={cx(css.root, className)}>
     <span className={css.text}>{I18N.ASSET_TOTALS}</span>
     <HoverCard label={<Icon glyph="help" />} anchorClassName={css.anchor}>
       <Stack space="xxxsmall">
