@@ -53,13 +53,13 @@
   },
   "devDependencies": {
     "@babel/cli": "7.19.3",
-    "@babel/core": "7.19.6",
-    "@babel/preset-env": "7.19.4",
+    "@babel/core": "7.20.2",
+    "@babel/preset-env": "7.20.2",
     "@types/jest": "29.1.1",
     "jest": "27.5.1",
     "jest-date-mock": "1.0.8",
     "memory-fs": "0.5.0",
-    "webpack": "5.74.0"
+    "webpack": "5.75.0"
   },
   "peerDependencies": {
     "webpack": "^4.0.0 || ^5.0.0"
