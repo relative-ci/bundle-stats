@@ -1,8 +1,8 @@
 export class BundleStatsWebpackPlugin {
   constructor(options?: Partial<BundleStatsWebpackPlugin.Options>) {}
 
-  apply(compiler: Compiler): void;
-};
+  apply(compiler: BundleStatsWebpackPlugin.Compiler): void;
+}
 
 declare namespace BundleStatsWebpackPlugin {
   interface WebpackStatsOptions {
@@ -74,4 +74,6 @@ declare namespace BundleStatsWebpackPlugin {
      */
     stats?: Partial<WebpackStatsOptions>;
   }
+
+  type Compiler = import('webpack').Compiler;
 }
