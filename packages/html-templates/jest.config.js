@@ -9,6 +9,7 @@ module.exports = {
     '\\.css$': 'identity-obj-proxy',
     'Fixtures/(.*)$': '<rootDir>/../../fixtures/$1',
     '@bundle-stats/(.*)/lib-esm/(.*)': '@bundle-stats/$1/lib/$2',
+    '^preact$': '<rootDir>/../../node_modules/preact/dist/preact.js',
   },
   testEnvironment: 'jsdom',
 };
