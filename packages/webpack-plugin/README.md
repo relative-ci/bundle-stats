@@ -14,6 +14,7 @@
   <a href="https://www.npmjs.com/package/bundle-stats-webpack-plugin"><img src="https://img.shields.io/npm/v/bundle-stats-webpack-plugin.svg" /></a>
   <img src="https://img.shields.io/node/v/bundle-stats-webpack-plugin.svg" alt="Node version" />
   <a href="https://github.com/relative-ci/bundle-stats/actions/workflows/build.yaml"><img alt="GitHub action" src="https://github.com/relative-ci/bundle-stats/actions/workflows/build.yaml/badge.svg" /></a>
+  <a href="https://github.com/relative-ci/bundle-stats/actions/workflows/codeql.yml"><img alt="CodeQL" src="https://github.com/relative-ci/bundle-stats/actions/workflows/codeql.yml/badge.svg"/></a>
 </p>
 <p align="center">
 - <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html#/"><strong>Bundle size</strong> and totals by file type(css, js, img, etc)</a><br />
