@@ -1,51 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`webpack plugin package webpack5 1`] = `
-Array [
-  Object {
-    "auxiliaryChunkIdHints": Array [],
-    "auxiliaryChunkNames": Array [],
-    "auxiliaryChunks": Array [],
+[
+  {
+    "auxiliaryChunkIdHints": [],
+    "auxiliaryChunkNames": [],
+    "auxiliaryChunks": [],
     "cached": false,
-    "chunkIdHints": Array [],
-    "chunkNames": Array [],
-    "chunks": Array [],
+    "chunkIdHints": [],
+    "chunkNames": [],
+    "chunks": [],
     "comparedForEmit": false,
     "emitted": true,
     "filteredRelated": undefined,
-    "info": Object {
+    "info": {
       "development": true,
       "size": 0,
     },
     "isOverSizeLimit": false,
     "name": "bundle-stats.html",
-    "related": Object {},
+    "related": {},
     "size": 0,
     "type": "asset",
   },
-  Object {
-    "auxiliaryChunkIdHints": Array [],
-    "auxiliaryChunkNames": Array [],
-    "auxiliaryChunks": Array [],
+  {
+    "auxiliaryChunkIdHints": [],
+    "auxiliaryChunkNames": [],
+    "auxiliaryChunks": [],
     "cached": false,
-    "chunkIdHints": Array [],
-    "chunkNames": Array [
+    "chunkIdHints": [],
+    "chunkNames": [
       "main",
     ],
-    "chunks": Array [
+    "chunks": [
       179,
     ],
     "comparedForEmit": false,
     "emitted": true,
     "filteredRelated": undefined,
-    "info": Object {
+    "info": {
       "javascriptModule": false,
       "minimized": true,
       "size": 27,
     },
     "isOverSizeLimit": false,
     "name": "main.js",
-    "related": Object {},
+    "related": {},
     "size": 27,
     "type": "asset",
   },
