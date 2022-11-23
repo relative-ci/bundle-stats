@@ -1,7 +1,7 @@
 import isDate from 'lodash/isDate';
 
 // @ts-ignore
-const getNavigatorLanguages = () => (typeof window !== 'undefined' && typeof window.navigator !== 'undefined' && window.navigator.languages) || 'en';
+const getNavigatorLanguages = (): Array<string> | string => (typeof window !== 'undefined' && typeof window.navigator !== 'undefined' && window.navigator.languages) || 'en';
 
 const getResultAsString = (value?: Date | string | number): string => {
   if (isDate(value)) {
