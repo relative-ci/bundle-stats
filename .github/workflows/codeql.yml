@@ -1,12 +1,7 @@
 name: "CodeQL"
 
 on:
-  push:
-    branches: [ "master", "budgets", "enhance-duplicate-packages", "extract-metric-details", "next", "tree-map-component", "update-dependencies" ]
-  pull_request:
-    branches: [ "master" ]
-  schedule:
-    - cron: "33 18 * * 4"
+  push
 
 jobs:
   analyze:
