@@ -1,9 +1,5 @@
 @import url("~modern-css-reset/dist/reset.css");
 
-:root {
-  --chart-height: 180px;
-}
-
 /** modern-css-reset updates */
 pre,
 ul,
@@ -31,7 +27,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: var(--size-xxxlarge);
-  line-height: var(--space-xlarge)
 }
 
 h2 {
