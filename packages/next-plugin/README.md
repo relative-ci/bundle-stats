@@ -12,6 +12,7 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/next-plugin-bundle-stats"><img src="https://img.shields.io/npm/v/next-plugin-bundle-stats.svg" /></a>
+  <a href="https://www.npmjs.com/package/next-plugin-bundle-stats"><img src="https://img.shields.io/npm/dm/next-plugin-bundle-stats.svg" /></a>
   <img src="https://img.shields.io/node/v/next-plugin-bundle-stats.svg" alt="Node version" />
   <a href="https://github.com/relative-ci/bundle-stats/actions/workflows/build.yaml"><img alt="GitHub action" src="https://github.com/relative-ci/bundle-stats/actions/workflows/build.yaml/badge.svg" /></a>
   <a href="https://github.com/relative-ci/bundle-stats/actions/workflows/codeql.yml"><img alt="CodeQL" src="https://github.com/relative-ci/bundle-stats/actions/workflows/codeql.yml/badge.svg"/></a>
@@ -66,6 +67,26 @@ module.exports = withBundleStats({
   outDir: '../artifacts'
 });
 ```
+
+## Other packages
+
+### [`bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/cli)
+
+[![npm](https://img.shields.io/npm/v/bundle-stats)](https://www.npmjs.com/package/bundle-stats) [![npm](https://img.shields.io/npm/dm/bundle-stats)](https://www.npmjs.com/package/bundle-stats)
+
+CLI to generate bundle stats report.
+
+### [`bundle-stats-webpack-plugin`](https://github.com/relative-ci/bundle-stats/tree/master/packages/webpack-plugin)
+
+[![npm](https://img.shields.io/npm/v/bundle-stats-webpack-plugin)](https://www.npmjs.com/package/bundle-stats-webpack-plugin) [![npm](https://img.shields.io/npm/dm/bundle-stats-webpack-plugin)](https://www.npmjs.com/package/bundle-stats-webpack-plugin)
+
+Webpack plugin to generate bundle stats report.
+
+### [`gatsby-plugin-bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/gatsby-plugin)
+
+[![npm](https://img.shields.io/npm/v/gatsby-plugin-bundle-stats)](https://www.npmjs.com/package/gatsby-plugin-bundle-stats) [![npm](https://img.shields.io/npm/dm/gatsby-plugin-bundle-stats)](https://www.npmjs.com/package/gatsby-plugin-bundle-stats)
+
+[Gatsby](https://www.gatsbyjs.org) plugin for [bundle-stats](https://github.com/relative-ci/bundle-stats/tree/master/packages/webpack-plugin).
 
 ## Related projects
 
