@@ -7,20 +7,20 @@ import { Icon } from '../icon';
 import css from './sort-dropdown.module.css';
 
 const Item = ({
-  className,
   as: Component,
   id,
   label,
-  active,
+  isActive,
   direction,
   defaultDirection,
   getButtonOnClick,
-  ...restProps }) => {
+  ...restProps
+}) => {
 
   const buttonProps = useMemo(() => {
     let resolveNextDirection = defaultDirection;
 
-    if (active) {
+    if (isActive) {
       resolveNextDirection = direction === 'asc' ? 'desc' : 'asc';
     }
 
@@ -36,13 +36,14 @@ const Item = ({
       onClick: getButtonOnClick(id, 'asc'),
       title: `Order data by ${label} ascending`,
     };
-  }, [active, direction, defaultDirection, id, label]);
+  }, [isActive, direction, defaultDirection, id, label]);
 
   return (
     <Component
       {...restProps}
       {...buttonProps}
-      className={cx(className, css.item, active && css.itemActive, buttonProps.className)}
+      isActive={isActive}
+      className={cx(css.item, isActive && css.itemActive, buttonProps.className)}
     >
       <Icon className={css.itemIcon} glyph="arrow" />
       <span className={css.itemLabel}>{label}</span>
@@ -81,23 +82,18 @@ export const SortDropdown = (props) => {
 
         return (
           <div className={css.items}>
-            {Object.entries(fields).map(([key, item]) => {
-              const isActive = field === key;
-
-              return (
-                <Item
-                  key={key}
-                  as={MenuItem}
-                  className={cx(menuItemClassName, isActive && menuItemActiveClassName)}
-                  id={key}
-                  label={item.label}
-                  direction={direction}
-                  defaultDirection={item.defaultDirection}
-                  active={isActive}
-                  getButtonOnClick={getButtonOnClick}
-                />
-              );
-            })}
+            {Object.entries(fields).map(([key, item]) => (
+              <Item
+                key={key}
+                as={MenuItem}
+                isActive={field === key}
+                id={key}
+                label={item.label}
+                direction={direction}
+                defaultDirection={item.defaultDirection}
+                getButtonOnClick={getButtonOnClick}
+              />
+            ))}
           </div>
         );
       }}

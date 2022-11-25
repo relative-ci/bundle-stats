@@ -20,11 +20,12 @@
   color: var(--color-text-light);
 }
 
+.button[aria-expanded=true],
 .button:hover,
 .button:focus,
 .button:active {
   outline: none;
-  box-shadow: 0 0 var(--space-xxxsmall) var(--color-shadow);
+  box-shadow: var(--shadow-layer);
   border-color: var(--color-outline-dark);
   color: var(--color-text);
 }
@@ -34,26 +35,26 @@
   left: 0;
   top: 100%;
   border-radius: var(--radius-medium);
-  box-shadow: 0 2px var(--space-xxsmall) var(--color-shadow);
+  box-shadow: var(--shadow-layer-high);
   background: var(--color-background);
-  min-width: 180px;
+  min-width: 12em;
   z-index: var(--layer-high);
-  padding: var(--space-xxsmall) 0;
+  padding: var(--space-xxxsmall);
 }
 
 .dropdown:focus {
   outline: none;
-  box-shadow: 0 2px var(--space-xsmall) var(--color-shadow);
 }
 
-.menuItem {
+.item {
   display: block;
   appearance: none;
   cursor: pointer;
   width: 100%;
   outline: none;
   border: 0;
-  padding: var(--space-xxxsmall) var(--space-xsmall);
+  border-radius: var(--radius-small);
+  padding: calc(var(--space-xxxsmall) / 2) var(--space-xxxsmall);
   background: none;
   text-align: left;
   color: var(--color-text-light);
@@ -62,14 +63,22 @@
   text-decoration: none;
 }
 
-.menuItem:hover {
+.item[data-active-item],
+.item:hover,
+.item:focus,
+.item:active {
+  background: var(--color-highlight);
   color: var(--color-text);
 }
 
-.menuItemActive {
+.itemActive {
+  background: var(--color-highlight-info);
   color: var(--color-primary);
 }
 
-.menuItemActive:hover {
+.itemActive:hover,
+.itemActive:focus,
+.itemActive:active {
+  background: var(--color-highlight-info);
   color: var(--color-primary-dark);
 }

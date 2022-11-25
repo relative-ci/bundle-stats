@@ -1,27 +1,42 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { Dropdown } from '.';
 
-const stories = storiesOf('UI/Dropdown', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'UI/Dropdown',
+  component: Dropdown,
+  decorators: [getWrapperDecorator()],
+};
 
-stories.add('default', () => (
+export const Defualt = () => (
   <Dropdown glyph="filter" label="Toggle">
-    <ul>
-      <li>Option 1</li>
-      <li>Option 2</li>
-    </ul>
+    <Dropdown.Item>
+      Option 1
+    </Dropdown.Item>
+    <Dropdown.Item>
+      Option 2
+    </Dropdown.Item>
   </Dropdown>
-));
+);
 
-stories.add('with render function', () => (
+export const WithRenderFn = () => (
   <Dropdown glyph="filter" label="Toggle">
-    {({ menu }) => (
-      <button type="button" onClick={menu.toggle}>
-        Toggle dropdown
-      </button>
+    {({ MenuItem, menuItemClassName, menu }) => (
+      <>
+        <MenuItem className={menuItemClassName}>
+          Option 1
+        </MenuItem>
+        <MenuItem className={menuItemClassName}>
+          Option 2
+        </MenuItem>
+        <MenuItem className={menuItemClassName}>
+          Option 3
+        </MenuItem>
+        <button type="button" onClick={menu.toggle}>
+          Toggle dropdown
+        </button>
+      </>
     )}
   </Dropdown>
-));
+);
