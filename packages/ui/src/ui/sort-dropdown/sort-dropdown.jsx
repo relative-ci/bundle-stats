@@ -56,7 +56,7 @@ Item.propTypes = {
   as: PropTypes.element.isRequired,
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  active: PropTypes.bool.isRequired,
+  isActive: PropTypes.bool.isRequired,
   direction: PropTypes.string.isRequired,
   defaultDirection: PropTypes.string.isRequired,
   getButtonOnClick: PropTypes.func.isRequired,

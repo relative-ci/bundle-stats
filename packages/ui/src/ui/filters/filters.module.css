@@ -79,8 +79,11 @@
   border: 1px solid var(--color-outline);
 }
 
-.filterStandalone:hover {
+.filterStandalone:hover .filterCheckbox,
+.filterStandalone:active .filterCheckbox,
+.filterStandalone:focus .filterCheckbox {
   z-index: var(--layout-xlow); /* show collapsed border */
+  box-shadow: var(--shadow-layer);
 }
 
 .filterStandalone:hover .filterCheckbox {

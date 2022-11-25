@@ -22,7 +22,7 @@
   width: calc(100vw - 2 * var(--space-small));
   max-width: 340px;
   outline: none;
-  filter: drop-shadow(0 0 var(--space-xxsmall) var(--color-shadow));
+  filter: drop-shadow(var(--shadow-layer-high));
   will-change: filter;
   background: var(--color-light);
   font-size: var(--size-small);
