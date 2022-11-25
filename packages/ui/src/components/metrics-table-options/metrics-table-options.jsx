@@ -9,35 +9,16 @@ export const MetricsTableOptions = (props) => {
 
   return (
     <Dropdown className={className} glyph="menu" {...restProps}>
-      {({ MenuItem, menu, menuItemClassName }) => {
-        const getButtonOnClick = (handler) => () => {
-          handler();
-          menu.toggle();
-        };
-
-        return (
-          <>
-            {handleResetFilters && (
-              <MenuItem
-                {...menu}
-                className={menuItemClassName}
-                onClick={getButtonOnClick(handleResetFilters)}
-              >
-                {I18N.RESET_FILTERS}
-              </MenuItem>
-            )}
-            {handleViewAll && (
-              <MenuItem
-                {...menu}
-                className={menuItemClassName}
-                onClick={getButtonOnClick(handleViewAll)}
-              >
-                {I18N.VIEW_ALL}
-              </MenuItem>
-            )}
-          </>
-        );
-      }}
+      {handleResetFilters && (
+        <Dropdown.Item onClick={handleResetFilters}>
+          {I18N.RESET_FILTERS}
+        </Dropdown.Item>
+      )}
+      {handleViewAll && (
+        <Dropdown.Item onClick={handleViewAll}>
+          {I18N.VIEW_ALL}
+        </Dropdown.Item>
+      )}
     </Dropdown>
   );
 };

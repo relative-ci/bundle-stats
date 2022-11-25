@@ -27,7 +27,7 @@ export const EmptySet = (props) => {
   ];
 
   return (
-    <Stack space="xxsmall" className={css.root}>
+    <Stack space="xxxsmall" className={css.root}>
       <p>{message}</p>
       {filtered &&
         actions.map((action, index) => (

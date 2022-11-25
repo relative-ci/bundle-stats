@@ -16,7 +16,7 @@
   background: var(--color-light);
   max-width: 24em;
   color: var(--color-text);
-  filter: drop-shadow(0 0 var(--space-xxxsmall) var(--color-shadow));
+  filter: drop-shadow(var(--shadow-layer));
   will-change: filter;
   font-size: var(--size-xsmall);
   line-height: var(--space-small);

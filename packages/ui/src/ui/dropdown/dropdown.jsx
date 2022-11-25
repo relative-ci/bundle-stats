@@ -7,6 +7,20 @@ import { FlexStack } from '../../layout/flex-stack';
 import { Icon } from '../icon';
 import css from './dropdown.module.css';
 
+const Item = ({ className = '', isActive = false, ...restProps }) => (
+  <MenuItem className={cx(css.item, className, isActive && css.itemActive)} {...restProps} />
+);
+
+Item.propTypes = {
+  className: PropTypes.string,
+  isActive: PropTypes.bool,
+};
+
+Item.defaultProps = {
+  className: '',
+  isActive: false,
+};
+
 export const Dropdown = (props) => {
   const { className, buttonClassName, label, ariaLabel, glyph, children } = props;
   const rootClassName = cx(css.root, className);
@@ -23,10 +37,10 @@ export const Dropdown = (props) => {
       <Menu state={menuState} aria-label={ariaLabel || label} className={css.dropdown}>
         {typeof children === 'function'
           ? children({
-              MenuItem,
+              MenuItem: Item,
               menu: menuState,
-              menuItemClassName: css.menuItem,
-              menuItemActiveClassName: css.menuItemActive,
+              menuItemClassName: css.item,
+              menuItemActiveClassName: css.itemActive,
             })
           : children}
       </Menu>
@@ -61,3 +75,5 @@ Dropdown.propTypes = {
   /** Content */
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]).isRequired,
 };
+
+Dropdown.Item = Item;

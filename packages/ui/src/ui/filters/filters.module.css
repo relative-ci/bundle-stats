@@ -28,16 +28,17 @@
 }
 
 .filterOnlyButton {
-  padding: var(--space-xxxsmall) var(--space-xsmall);
+  padding: var(--space-xxxsmall);
   display: none;
   appearance: none;
   border: none;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255) 30%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), var(--color-highlight) 30%);
   cursor: pointer;
   position: absolute;
   right: 0;
   top: 0;
   bottom: 0;
+  font-size: var(--size-small);
   line-height: var(--space-xsmall);
 }
 
@@ -78,8 +79,11 @@
   border: 1px solid var(--color-outline);
 }
 
-.filterStandalone:hover {
+.filterStandalone:hover .filterCheckbox,
+.filterStandalone:active .filterCheckbox,
+.filterStandalone:focus .filterCheckbox {
   z-index: var(--layout-xlow); /* show collapsed border */
+  box-shadow: var(--shadow-layer);
 }
 
 .filterStandalone:hover .filterCheckbox {
@@ -102,7 +106,7 @@
   margin-top: var(--space-xxxsmall);
   padding-top: var(--space-xxxsmall);
   padding-bottom: var(--space-xxxsmall);
-  margin-bottom: calc(0px - var(--space-xxsmall));
+  margin-bottom: calc(0px - var(--space-xxxsmall));
   border-top: 1px solid var(--color-outline);
 }
 
