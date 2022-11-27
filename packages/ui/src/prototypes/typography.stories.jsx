@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { Container, Icon } from '../ui';
 import { getWrapperDecorator } from '../stories';
-import { Header, SubHeader } from '../layout';
+import { Header } from '../layout';
 import CHART_COLORS from '../chart-colors.json';
 import content from './typography.md';
 import css from './typography.module.css';
@@ -23,11 +23,6 @@ stories.add('typography', () => (
           </h1>
         </div>
       )}
-    />
-    <SubHeader
-      className={css.subheader}
-      title="HTML Ipsum presents"
-      subtitle="Documentation"
     />
     <main className={css.main}>
       <Container dangerouslySetInnerHTML={{ __html: content }} />
