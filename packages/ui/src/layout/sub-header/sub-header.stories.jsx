@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
-import { Logo } from '../../ui/logo';
+import { Icon } from '../../ui/icon';
 import { SubHeader } from '.';
 
 const stories = storiesOf('Layout/SubHeader', module);
@@ -23,7 +23,7 @@ stories.add('with icon', () => (
   <SubHeader
     title="Webpack"
     subtitle="Tools"
-    icon={<Logo kind="webpack" style={{ width: '48px' }} />}
+    icon={<Icon glyph="clock" size="large" />}
   />
 ));
 
@@ -31,7 +31,7 @@ stories.add('with children', () => (
   <SubHeader
     title="Webpack"
     subtitle="Tools"
-    icon={<Logo kind="webpack" style={{ width: '72px' }} />}
+    icon={<Icon glyph="clock" size="large" />}
   >
     <a href="#webpack">Visit webpack.js.org</a>
   </SubHeader>
@@ -41,7 +41,7 @@ stories.add('with right side links', () => (
   <SubHeader
     title="Webpack"
     subtitle="Tools"
-    icon={<Logo kind="webpack" style={{ width: '72px' }} />}
+    icon={<Icon glyph="clock" size="large" />}
     rightSide={(
       <span>Read more</span>
     )}
@@ -55,7 +55,7 @@ stories.add('with small size', () => (
     size="small"
     title="Webpack"
     subtitle="Tools"
-    icon={<Logo kind="webpack" style={{ width: '72px' }} />}
+    icon={<Icon glyph="clock" />}
     rightSide={(
       <span>Read more</span>
     )}

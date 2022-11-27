@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
-import { Logo } from '../../ui/logo';
 import { Tabs } from '../../ui/tabs';
 import { Header } from '.';
 
@@ -13,7 +12,7 @@ stories.add('default', () => (
   <Header
     renderLeft={({ className }) => (
       <div className={className}>
-        <Logo />
+        Title
       </div>
     )}
     render={({ className }) => (
@@ -27,7 +26,7 @@ stories.add('default', () => (
     )}
     renderRight={({ className }) => (
       <div className={className}>
-        <Logo kind="github" />
+        Option
       </div>
     )}
   />
@@ -37,7 +36,7 @@ stories.add('menu on the right', () => (
   <Header
     renderLeft={({ className }) => (
       <div className={className}>
-        <Logo />
+        Title
       </div>
     )}
     renderRight={({ className }) => (

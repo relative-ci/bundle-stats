@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Container, Logo } from '../ui';
+import { Container, Icon } from '../ui';
 import { getWrapperDecorator } from '../stories';
 import { Header, SubHeader } from '../layout';
 import CHART_COLORS from '../chart-colors.json';
@@ -18,7 +18,7 @@ stories.add('typography', () => (
       renderLeft={(sideProps) => (
         <div {...sideProps}>
           <h1 className={css.headerTitle}>
-            <Logo className={css.headerLogo} />
+            <Icon glyph="clock" className={css.headerLogo} />
             <span>BundleStats</span>
           </h1>
         </div>

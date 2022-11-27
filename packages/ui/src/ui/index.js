@@ -9,7 +9,6 @@ export { HoverCard } from './hover-card';
 export { Icon } from './icon';
 export { Input } from './input';
 export { Loader } from './loader';
-export { Logo } from './logo';
 export { Panels } from './panels';
 export { Skeleton } from './skeleton';
 export { SortDropdown } from './sort-dropdown';
