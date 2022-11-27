@@ -11,3 +11,4 @@ artifacts
 lib
 lib-esm
 storybook-static
+types

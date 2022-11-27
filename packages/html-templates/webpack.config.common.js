@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const { merge } = require('webpack-merge');
 const HtmlPlugin = require('html-webpack-plugin');
 
@@ -31,7 +32,12 @@ module.exports = merge(
         {
           test: /\.jsx?$/,
           loader: 'babel-loader',
-          exclude: /node_modules/,
+          include: [
+            srcDir,
+            /bundle-stats\/ui/,
+            path.join(settings.rootDir, '../ui'), // required for linked packages
+            /storybook/,
+          ],
           options: {
             cacheDirectory: isDevelopment,
           },
