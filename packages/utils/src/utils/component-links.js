@@ -1,4 +1,3 @@
-import template from 'lodash/template';
 import { stringify } from 'query-string';
 import { JsonParam, encodeQueryParams } from 'serialize-query-params';
 
@@ -221,7 +220,7 @@ export const BUNDLE_PACKAGES_DUPLICATE = {
 
 export const getBundleAssetsFileTypeComponentLink = (fileType, label) => ({
   section: SECTIONS.ASSETS,
-  title: template(I18N.COMPONENT_LINK_BUNDLE_ASSETS_BY_FILE_TYPE)({ label }),
+  title: I18N.COMPONENT_LINK_BUNDLE_ASSETS_BY_FILE_TYPE({ label }),
   params: {
     [COMPONENT.BUNDLE_ASSETS]: {
       filters: {

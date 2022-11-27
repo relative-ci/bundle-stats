@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { get } from 'lodash';
-import { formatDistanceToNow } from 'date-fns';
-import { SOURCE_PATH_WEBPACK_STATS, formatDate, formatTime } from '@bundle-stats/utils';
+import { SOURCE_PATH_WEBPACK_STATS, formatDateTime } from '@bundle-stats/utils';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
@@ -25,10 +24,10 @@ export const JobHeader = (props) => {
       </h1>
       <FlexStack space="xxsmall" className={css.meta}>
         {builtAt && (
-          <FlexStack space="xxxsmall" alignItems="center" inline as="span" title={`${formatDate(builtAt)} ${formatTime(builtAt)}`}>
+          <FlexStack space="xxxsmall" alignItems="center" inline as="span" title={builtAt}>
             <Icon glyph="clock" />
             <span>
-              {formatDistanceToNow(new Date(builtAt), { addSuffix: true })}
+              {formatDateTime({ dateStyle: 'medium', timeStyle: 'medium' }, builtAt)}
             </span>
           </FlexStack>
         )}
