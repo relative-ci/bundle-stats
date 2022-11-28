@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { uniqBy, map } from 'lodash';
+import uniqBy from 'lodash/uniqBy';
 import {
   MODULE_FILTERS,
   getModuleChunkFilters,
@@ -25,7 +25,7 @@ export const BundleModules = (props) => {
   const { jobs, filters, search, setState, sortBy, direction, ...restProps } = props;
 
   const chunks = uniqBy(jobs.map((job) => job?.meta?.webpack?.chunks || []).flat(), ({ id }) => id);
-  const chunkIds = map(chunks, 'id');
+  const chunkIds = chunks?.map(({ id }) => id);
 
   const { defaultFilters, allEntriesFilters } = useMemo(
     () => ({

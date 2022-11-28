@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { get, map, max, sum } from 'lodash';
+import map from 'lodash/map';
+import max from 'lodash/max';
+import sum from 'lodash/sum';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 import { getBundleAssetsFileTypeComponentLink } from '@bundle-stats/utils';
 
@@ -16,10 +18,10 @@ import css from './bundle-assets-totals-chart-bars.module.css';
 const getTooltip = (items, jobs, itemIndex, runIndex) => () => (
   <SummaryItem
     className={css.itemTooltip}
-    id={get(items, [itemIndex, 'key'])}
+    id={items?.[itemIndex]?.key}
     data={{
-      current: get(items, [itemIndex, 'runs', runIndex, 'value'], 0),
-      baseline: get(items, [itemIndex, 'runs', runIndex + 1, 'value'], 0),
+      current: items?.[itemIndex]?.runs?.[runIndex]?.value || 0,
+      baseline: items?.[itemIndex]?.runs?.[runIndex + 1]?.value || 0,
     }}
     showDelta={runIndex < jobs.length - 1}
     showBaselineValue={runIndex < jobs.length - 1}
@@ -39,7 +41,7 @@ export const BundleAssetsTotalsChartBars = ({
 
   items.forEach(({ runs }) => {
     runs.forEach((run, runIndex) => {
-      dataGraphs[runIndex] = [...(dataGraphs[runIndex] || []), get(run, 'value', 0)];
+      dataGraphs[runIndex] = [...(dataGraphs[runIndex] || []), run?.value || 0];
     });
   });
 

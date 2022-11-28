@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
-import { get, intersection, merge } from 'lodash';
+import intersection from 'lodash/intersection';
+import merge from 'lodash/merge';
+import get from 'lodash/get';
 import { MODULE_PATH_PACKAGES } from '@bundle-stats/utils/lib-esm/webpack';
 import {
   MODULE_CHUNK,
@@ -29,11 +31,11 @@ export const getCustomSort = (sortBy) => (item) => {
   }
 
   if (sortBy === SORT_BY_SIZE) {
-    return get(item, 'runs[0].value', 0);
+    return item?.runs?.[0]?.value || 0;
   }
 
   if (sortBy === SORT_BY_DELTA) {
-    return get(item, 'runs[0].deltaPercentage', 0);
+    return item?.runs?.[0]?.deltaPercentage || 0;
   }
 
   return [!item.changed, item.key];

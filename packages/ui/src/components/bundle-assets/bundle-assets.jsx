@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { get, map } from 'lodash';
+import get from 'lodash/get';
 import {
   ASSET_ENTRY_TYPE,
   ASSET_FILE_TYPE,
@@ -230,7 +230,7 @@ export const BundleAssets = (props) => {
     (row) => (
       <RowHeader
         row={row}
-        labels={map(jobs, 'label')}
+        labels={jobs?.map(({ label }) => label)}
         chunks={jobs[0]?.meta?.webpack?.chunks || []}
         CustomComponentLink={CustomComponentLink}
       />

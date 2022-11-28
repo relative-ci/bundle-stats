@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { get } from 'lodash';
+import get from 'lodash/get';
 import { SOURCE_PATH_WEBPACK_STATS, formatDateTime } from '@bundle-stats/utils';
 
 import { FlexStack } from '../../layout/flex-stack';

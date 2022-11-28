@@ -1,7 +1,8 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { get, isEmpty, map } from 'lodash';
+import isEmpty from 'lodash/isEmpty';
+import get from 'lodash/get';
 import {
   FILE_TYPE_LABELS,
   MODULE_SOURCE_FILE_TYPES,
@@ -85,7 +86,7 @@ const getFilters = ({ filters, compareMode, chunks }) => ({
 })
 
 const RowHeader = ({ row, chunks, labels, CustomComponentLink }) => {
-  const chunkIds = map(chunks, 'id');
+  const chunkIds = chunks?.map(({ id }) => id);
 
   const [showHoverCard, setHoverCard] = useState(false);
   const handleOnMouseEnter = useCallback(() => setHoverCard(true), [showHoverCard]);
@@ -177,7 +178,7 @@ export const BundleModules = ({
       <RowHeader
         row={row}
         chunks={chunks}
-        labels={map(jobs, 'label')}
+        labels={jobs?.map(({ label }) => label)}
         CustomComponentLink={CustomComponentLink}
       />
     ),

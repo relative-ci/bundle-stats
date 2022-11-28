@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 import { SvgIcons } from '@bundle-stats/ui/lib-esm/assets/icons.svg.js';
 
-
 /* eslint-disable */
 import currentData from 'Fixtures/job.current.json'; // eslint-disable-line
 import baselineData from 'Fixtures/job.baseline.json'; // eslint-disable-line

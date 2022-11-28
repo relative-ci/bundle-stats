@@ -1,5 +1,4 @@
 import React from 'react';
-import { clone, cloneDeep } from 'lodash';
 import { storiesOf } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 
