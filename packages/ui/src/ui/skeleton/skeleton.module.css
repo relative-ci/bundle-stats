@@ -1,19 +1,8 @@
-@keyframes anim {
-  from {
-    opacity: 0.06
-  }
-
-  to {
-    opacity: 0.12;
-  }
-}
-
 .root {
   background: linear-gradient(transparent 10%, currentColor 10.1%, currentColor 89.9%, transparent 90%);
-  opacity: 0.06;
+  opacity: 0.05;
   pointer-events: none;
   min-width: 6em;
-  animation: 2s 1s infinite alternate anim;
 }
 
 /** empty char to keep the text height */
