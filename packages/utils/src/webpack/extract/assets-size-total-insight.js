@@ -1,22 +1,15 @@
-import get from 'lodash/get';
-import template from 'lodash/template';
-
 import { INSIGHT_INFO } from '../../config/insights';
 import { getMetricRunInfo } from '../../utils/metrics';
 import { getMetricType } from '../utils';
 
-const INFO_TEMPLATE = template(
-  '<%= metric %> — <%= displayValue %> (<%= displayDeltaPercentage %>).',
-);
 const METRIC_NAME = 'totalSizeByTypeALL';
 
-export const extractAssetsSizeTotalInsight = (
-  webpackStats,
-  currentExtractedData,
-  baselineBundleStats,
-) => {
-  const currentValue = get(currentExtractedData, ['metrics', METRIC_NAME, 'value'], 0);
-  const baselineValue = get(baselineBundleStats, ['metrics', 'webpack', METRIC_NAME, 'value'], 0);
+const getText = ({ metric, displayValue, displayDeltaPercentage }) =>
+  `${metric} — ${displayValue} (${displayDeltaPercentage}).`;
+
+export const extractAssetsSizeTotalInsight = (_, currentExtractedData, baselineBundleStats) => {
+  const currentValue = currentExtractedData?.metrics?.[METRIC_NAME]?.value || 0;
+  const baselineValue = baselineBundleStats?.metrics?.webpack?.[METRIC_NAME]?.value || 0;
 
   const metric = getMetricType(METRIC_NAME);
   const info = getMetricRunInfo(metric, currentValue, baselineValue);
@@ -27,8 +20,8 @@ export const extractAssetsSizeTotalInsight = (
       assetsSizeTotal: {
         type: INSIGHT_INFO,
         data: {
-          text: INFO_TEMPLATE({ metric: metric.label, displayValue, displayDeltaPercentage }),
-          md: INFO_TEMPLATE({
+          text: getText({ metric: metric.label, displayValue, displayDeltaPercentage }),
+          md: getText({
             metric: `*${metric.label}*`,
             displayValue: `*${displayValue}*`,
             displayDeltaPercentage: `*${displayDeltaPercentage}*`,

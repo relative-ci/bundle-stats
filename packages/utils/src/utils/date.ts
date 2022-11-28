@@ -49,25 +49,23 @@ export const formatDateTime = (
   return result;
 };
 
-export const formatDate = (value?: Date | string | number): string =>
-  formatDateTime(
-    {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-    },
-    value,
-  );
+export const formatDate = (
+  value?: Date | string | number,
+  formatterOptions: Intl.DateTimeFormatOptions = {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+  },
+): string => formatDateTime(formatterOptions, value);
 
-export const formatTime = (value?: Date | string | number): string =>
-  formatDateTime(
-    {
-      // Workaround CI node issue
-      ...(process.env.NODE_ENV !== 'test' && {
-        hour: '2-digit',
-      }),
-      minute: '2-digit',
-      second: '2-digit',
-    },
-    value,
-  );
+export const formatTime = (
+  value?: Date | string | number,
+  formatterOptions: Intl.DateTimeFormatOptions = {
+    // Workaround CI node issue
+    ...(process.env.NODE_ENV !== 'test' && {
+      hour: '2-digit',
+    }),
+    minute: '2-digit',
+    second: '2-digit',
+  },
+): string => formatDateTime(formatterOptions, value);

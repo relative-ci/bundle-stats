@@ -1,5 +1,6 @@
 import React from 'react';
-import { merge, set } from 'lodash';
+import merge from 'lodash/merge';
+import set from 'lodash/set';
 import { storiesOf } from '@storybook/react';
 import { PACKAGE_FILTERS, createJobs } from '@bundle-stats/utils';
 

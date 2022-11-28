@@ -1,4 +1,4 @@
-import { get, flatten, uniq } from 'lodash';
+import uniq from 'lodash/uniq';
 import { PACKAGE_FILTERS } from '@bundle-stats/utils';
 
 import { SORT_BY_NAME, SORT_BY_DELTA, SORT_BY_SIZE } from './bundle-packages.constants';
@@ -10,7 +10,7 @@ export const getDuplicatePackages = (jobs) => {
     return Object.values(insightsData).flat();
   });
 
-  return uniq(flatten(jobsDuplicatePackages));
+  return uniq(jobsDuplicatePackages?.flat());
 };
 
 export const getRowFilter = (filters) => (item) => {
@@ -31,11 +31,11 @@ export const getCustomSort = (sortId) => (item) => {
   }
 
   if (sortId === SORT_BY_DELTA) {
-    return get(item, 'runs[0].deltaPercentage', 0);
+    return item?.runs?.[0]?.deltaPercentage || 0;
   }
 
   if (sortId === SORT_BY_SIZE) {
-    return get(item, 'runs[0].value', 0);
+    return item?.runs?.[0]?.value || 0;
   }
 
   return [!item.changed, item.key];

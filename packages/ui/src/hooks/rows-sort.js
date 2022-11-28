@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { orderBy } from 'lodash';
+import orderBy from 'lodash/orderBy';
 
 export const useRowsSort = ({
   rows,

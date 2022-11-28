@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { get, round, sum } from 'lodash';
+import round from 'lodash/round';
+import sum from 'lodash/sum';
 import cx from 'classnames';
 
 import { getColors } from '../../utils';
@@ -20,8 +21,8 @@ class HorizontalBarChartItem extends React.Component {
   }
 
   componentDidMount() {
-    const wrapperWidth = get(this, 'ref.current.clientWidth', 0);
-    const textWidth = get(this, 'textRef.current.scrollWidth', 0);
+    const wrapperWidth = this.ref?.current?.clientWidth || 0;
+    const textWidth = this.textRef?.current?.scrollWidth || 0;
 
     if (wrapperWidth >= (textWidth + 2 * 4)) {
       this.setState({ isTextOverflowing: false });

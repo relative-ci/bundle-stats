@@ -1,6 +1,7 @@
 /* global module */
 import { storiesOf } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
+import { SvgIcons } from '@bundle-stats/ui/lib-esm/assets/icons.svg.js';
 
 /* eslint-disable */
 import currentData from 'Fixtures/job.current.json'; // eslint-disable-line
@@ -52,6 +53,7 @@ const stories = storiesOf('App', module);
 stories.addDecorator((storyFn) => (
   <div style={{ margin: '-1rem' }}>
     {storyFn()}
+    <SvgIcons />
   </div>
 ));
 

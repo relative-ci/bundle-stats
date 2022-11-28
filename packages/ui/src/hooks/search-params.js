@@ -1,5 +1,6 @@
 import { useCallback, useLayoutEffect, useReducer } from 'react';
-import { isEqual, merge } from 'lodash';
+import isEqual from 'lodash/isEqual';
+import merge from 'lodash/merge';
 
 const ACTION_SET_FILTERS = 'SET_FILTERS';
 const ACTION_SET_SEARCH = 'SET_SEARCH';

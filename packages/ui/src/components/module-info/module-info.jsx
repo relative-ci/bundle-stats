@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { isEmpty, find, noop } from 'lodash';
+import isEmpty from 'lodash/isEmpty';
+import noop from 'lodash/noop';
 import { getBundleModulesByChunk } from '@bundle-stats/utils';
 
 import { Stack } from '../../layout/stack';
@@ -32,7 +33,7 @@ export const ModuleInfo = (props) => {
               <div className={css.chunks}>
                 <span className={css.chunksTitle}>Chunks:</span>
                 {run.chunkIds.map((chunkId) => {
-                  const chunk = find(chunks, { id: chunkId });
+                  const chunk = chunks?.find(({ id }) => id === chunkId);
 
                   if (!chunk) {
                     return null;

@@ -2,7 +2,8 @@ import React, { useCallback } from 'react';
 import { JsonParam, QueryParamProvider, useQueryParams } from 'use-query-params';
 import { ReactRouter5Adapter } from 'use-query-params/adapters/react-router-5'
 import { parse, stringify } from 'query-string'
-import { isEqual, merge } from 'lodash';
+import isEqual from 'lodash/isEqual';
+import merge from 'lodash/merge';
 
 export const QueryStateProvider = (props) => (
   <QueryParamProvider

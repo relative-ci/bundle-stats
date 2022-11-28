@@ -1,9 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Container, Logo } from '../ui';
+import { Container } from '../ui';
 import { getWrapperDecorator } from '../stories';
-import { Header, SubHeader } from '../layout';
 import CHART_COLORS from '../chart-colors.json';
 import content from './typography.md';
 import css from './typography.module.css';
@@ -12,27 +11,9 @@ const stories = storiesOf('Prototypes/Styleguide', module);
 stories.addDecorator(getWrapperDecorator());
 
 stories.add('typography', () => (
-  <>
-    <Header
-      className={css.header}
-      renderLeft={(sideProps) => (
-        <div {...sideProps}>
-          <h1 className={css.headerTitle}>
-            <Logo className={css.headerLogo} />
-            <span>BundleStats</span>
-          </h1>
-        </div>
-      )}
-    />
-    <SubHeader
-      className={css.subheader}
-      title="HTML Ipsum presents"
-      subtitle="Documentation"
-    />
-    <main className={css.main}>
-      <Container dangerouslySetInnerHTML={{ __html: content }} />
-    </main>
-  </>
+  <main className={css.main}>
+    <Container dangerouslySetInnerHTML={{ __html: content }} />
+  </main>
 ));
 
 // eslint-disable-next-line react/prop-types

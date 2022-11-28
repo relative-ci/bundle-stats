@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { debounce } from 'lodash';
+import debounce from 'lodash/debounce';
 
 import { Icon } from '../../ui/icon';
 import { Input } from '../../ui/input';
