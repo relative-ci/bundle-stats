@@ -12,10 +12,6 @@ module.exports = {
     ],
     '@babel/preset-react',
   ],
-  plugins: [
-    'babel-plugin-lodash',
-    ['@simplyianm/babel-plugin-inline-react-svg', { noReactAutoImport: true, svgo: false }],
-  ],
   env: {
     test: {
       presets: [

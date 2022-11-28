@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { find, map } from 'lodash';
 import { getBundleModulesByChunk, getModuleFileType } from '@bundle-stats/utils';
 
 import { Stack } from '../../layout/stack';
@@ -10,13 +9,13 @@ import { ComponentLink } from '../component-link';
 import css from './asset-info.module.css';
 
 const ChunkModulesLink = ({ as: Component, chunks, chunkId, name }) => {
-  const chunk = find(chunks, { id: chunkId });
+  const chunk = chunks?.find(({ id }) => id === chunkId );
 
   if (!chunk) {
     return null;
   }
 
-  const chunkIds = map(chunks, 'id');
+  const chunkIds = chunks?.map(({ id }) => ({ id }));
   const fileType = getModuleFileType(name);
 
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { get } from 'lodash';
+import get from 'lodash/get';
 import { METRIC_COMPONENT_LINKS } from '@bundle-stats/utils';
 
 import { METRICS_WEBPACK_GENERAL } from '../../constants';

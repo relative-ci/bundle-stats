@@ -1,4 +1,3 @@
-import { get } from 'lodash';
 import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, getFileType } from '@bundle-stats/utils';
 
 import { SORT_BY_NAME, SORT_BY_DELTA, SORT_BY_SIZE } from './bundle-assets.constants';
@@ -78,11 +77,11 @@ export const getCustomSort = (sortId) => (item) => {
   }
 
   if (sortId === SORT_BY_DELTA) {
-    return get(item, 'runs[0].deltaPercentage', 0);
+    return item?.runs?.[0]?.deltaPercentage || 0;
   }
 
   if (sortId === SORT_BY_SIZE) {
-    return get(item, 'runs[0].value', 0);
+    return item?.runs?.[0]?.value || 0;
   }
 
   return [

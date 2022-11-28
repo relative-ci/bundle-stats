@@ -1,6 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import { storiesOf } from '@storybook/react';
-import { get } from 'lodash';
+import get from 'lodash/get';
 
 import { getWrapperDecorator } from '../../stories';
 import { Filters } from '.';
