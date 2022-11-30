@@ -60,7 +60,7 @@
     "lodash": "4.17.21",
     "mini-css-extract-plugin": "2.7.1",
     "postcss": "8.4.19",
-    "postcss-loader": "7.0.1",
+    "postcss-loader": "7.0.2",
     "preact": "10.10.6",
     "prop-types": "15.8.1",
     "react": "16.14.0",
