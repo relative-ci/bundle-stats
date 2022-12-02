@@ -46,7 +46,7 @@
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/addon-storyshots": "6.5.14",
     "@storybook/addons": "6.5.13",
-    "@storybook/builder-webpack5": "6.5.13",
+    "@storybook/builder-webpack5": "6.5.14",
     "@storybook/manager-webpack5": "6.5.13",
     "@storybook/react": "6.5.14",
     "babel-plugin-require-context-hook": "1.0.0",
