@@ -5,6 +5,7 @@ import {
   Hovercard,
   HovercardAnchor,
   HovercardArrow,
+  useHovercard,
   useHovercardState,
 } from 'ariakit/hovercard';
 
@@ -14,6 +15,7 @@ export const HoverCard = (props) => {
   const { className, anchorClassName, hoverCardClassName, href, as, label, children } = props;
 
   const state = useHovercardState({ gutter: 8, timeout: 700 });
+  const hovercardProps = useHovercard({ state, portal: true });
 
   // Fallback to span if no href
   const Component = useMemo(() => {
@@ -39,8 +41,8 @@ export const HoverCard = (props) => {
         {label}
       </HovercardAnchor>
       <Hovercard
+        {...hovercardProps}
         state={state}
-        portal
         className={cx(css.hoverCard, hoverCardClassName)}
         style={{ zIndex: 10000 }}
       >
