@@ -6,11 +6,6 @@
   white-space: nowrap;
 }
 
-.titleIcon {
-  opacity: 0;
-  pointer-events: none;
-}
-
 .currentMetric {
   color: var(--color-heading);
   font-size: var(--size-large);
@@ -40,13 +35,6 @@
   color: var(--color-primary-dark);
   text-decoration: none;
 }
-
-/* Hover state */
-.root:hover .titleIcon {
-  opacity: 1;
-  pointer-events: auto;
-}
-
 
 /* Loading state */
 .loading.currentMetric {

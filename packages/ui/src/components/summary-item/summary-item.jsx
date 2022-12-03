@@ -13,8 +13,7 @@ import { Delta } from '../delta';
 import css from './summary-item.module.css';
 
 const MetricInfo = ({ description, url }) => {
-  // The component parent can be rendered inside an anchor tag, using button
-  // to avoid using nesting links
+  // The component parent can be rendered inside a link, use button to avoid using nested links
   const onClick = useCallback(() => {
     if (url) {
       window.open(url);
