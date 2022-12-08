@@ -70,7 +70,7 @@
     "react-router-dom": "5.3.4",
     "react-test-renderer": "18.2.0",
     "rimraf": "3.0.2",
-    "typescript": "4.9.3"
+    "typescript": "4.9.4"
   },
   "peerDependencies": {
     "classnames": "^2.0.0",
