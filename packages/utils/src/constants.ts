@@ -67,6 +67,14 @@ export interface Job extends JobData {
   label: string;
 }
 
+export type ConditionOperator = 'smallerThan' | 'smallerThanInclusive' | 'equal' | 'notEqual' | 'greaterThan' | 'greaterThanInclusive';
+
+export interface Condition {
+  fact: string;
+  operator: ConditionOperator;
+  value: number;
+}
+
 export interface LighthouseSource {
   lighthouseVersion: string;
   fetchTime: string;
