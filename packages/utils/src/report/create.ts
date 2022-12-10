@@ -1,16 +1,11 @@
 import isEmpty from 'lodash/isEmpty';
 
 import { SOURCE_PATHS } from '../config';
-import { MetricRunInfo } from '../constants';
+import { MetricRunInfo, Job, JobSummarySource } from '../constants';
 import { getGlobalMetricType, getMetricRunInfo } from '../utils/metrics';
 import * as webpack from '../webpack';
 /* @ts-ignore */
 import { version } from '../../package.json';
-
-interface JobSummary {
-  current: number;
-  baseline: number;
-}
 
 interface ReportMetricRunInfo extends MetricRunInfo {
   label: string;
@@ -29,14 +24,14 @@ interface Report {
   runs: Array<JobRun>;
 }
 
-export const createReport = (jobs: Array<any>): Report => {
+export const createReport = (jobs: Array<Job>): Report => {
   const insights = jobs[0]?.insights;
 
   // Add summary report data
   const summary: Record<string, Array<ReportMetricRunInfo>> = {};
 
   SOURCE_PATHS.forEach((sourceId) => {
-    const sourceSummary = jobs[0]?.summary?.[sourceId] as JobSummary;
+    const sourceSummary = jobs[0]?.summary?.[sourceId] as JobSummarySource;
 
     if (!sourceSummary) {
       return;
