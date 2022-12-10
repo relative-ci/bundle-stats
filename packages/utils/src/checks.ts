@@ -1,41 +1,45 @@
 import get from 'lodash/get';
 
-import { MetricRunInfo } from './constants';
-
-export type CheckConditionOperator = 'smallerThan' | 'smallerThanInclusive' | 'equal' | 'notEqual' | 'greaterThan' | 'greaterThanInclusive';
-
-export interface CheckCondition {
-  fact: string;
-  operator: CheckConditionOperator;
-  value: number;
-  inactive?: boolean;
-}
+import { Condition, MetricRunInfo } from './constants';
 
 export enum CheckStatus {
-  Failure = 'FAILURE',
-  Warning = 'WARNING',
-  Success = 'SUCCESS',
+  FAILURE = 'FAILURE',
+  WARNING = 'WARNING',
+  SUCCESS = 'SUCCESS',
 }
 
 export interface CheckSkipped {
-  condition: CheckCondition;
+  /**
+   * The condition config
+   */
+  condition: Condition;
 }
 
 export interface CheckEvaluated extends CheckSkipped {
-  metricData: MetricRunInfo;
-  status: CheckStatus;
+  /**
+   * Checked metric value
+   */
+  value: number;
+  /**
+   * Metric run info data
+   */
+  data: MetricRunInfo;
+  /**
+   * Check condition matched flag
+   */
+  matched: boolean;
+  /**
+   * Check status when the condition matched
+   */
+  status?: CheckStatus;
 }
 
 export type CheckResult = CheckSkipped | CheckEvaluated;
 
-export const evaluate = (
-  condition: CheckCondition,
-  payload: any,
-  status: CheckStatus,
-): CheckResult => {
-  const metricValue = get(payload, condition.fact);
+export const evaluate = (condition: Condition, payload: any, status: CheckStatus): CheckResult => {
+  const value = get(payload, condition.fact);
 
-  if (typeof metricValue === 'undefined') {
+  if (typeof value === 'undefined') {
     return {
       condition,
     };
@@ -45,41 +49,48 @@ export const evaluate = (
 
   switch (condition.operator) {
     case 'smallerThan':
-      result = metricValue < condition.value;
+      result = value < condition.value;
       break;
     case 'smallerThanInclusive':
-      result = metricValue <= condition.value;
+      result = value <= condition.value;
       break;
     case 'equal':
-      result = metricValue === condition.value;
+      result = value === condition.value;
       break;
     case 'notEqual':
-      result = metricValue !== condition.value;
+      result = value !== condition.value;
       break;
     case 'greaterThan':
-      result = metricValue > condition.value;
+      result = value > condition.value;
       break;
     case 'greaterThanInclusive':
-      result = metricValue >= condition.value;
+      result = value >= condition.value;
       break;
     default: {
       result = false;
     }
   }
 
+  // Get the parent (metric) key path
+  const metricKeyPath = condition.fact.split('.').slice(0, -1).join('.');
+  const data = get(payload, metricKeyPath);
+
+  // Check condition did not match
   if (!result) {
     return {
       condition,
+      value,
+      data,
+      matched: false,
     };
   }
 
-  // Get the parent (metric) key path
-  const metricKeyPath = condition.fact.split('.').slice(0, -1).join('.');
-  const metricData = get(payload, metricKeyPath);
-
+  // Check condition matched
   return {
     condition,
-    metricData,
+    value,
+    data,
+    matched: true,
     status,
   };
 };

@@ -5,16 +5,16 @@ describe('Checks', () => {
     expect(
       checks.evaluate(
         {
-          fact: 'summary.webpack.fileSizeByTypeALL.deltaValue',
+          fact: 'webpack.fileSizeByTypeALL.delta',
           operator: 'greaterThan',
           value: 0,
         },
         {},
-        checks.CheckStatus.Failure,
+        checks.CheckStatus.FAILURE,
       ),
     ).toEqual({
       condition: {
-        fact: 'summary.webpack.fileSizeByTypeALL.deltaValue',
+        fact: 'webpack.fileSizeByTypeALL.delta',
         operator: 'greaterThan',
         value: 0,
       },
@@ -25,27 +25,30 @@ describe('Checks', () => {
     expect(
       checks.evaluate(
         {
-          fact: 'summary.webpack.fileSizeByTypeALL.deltaValue',
+          fact: 'webpack.fileSizeByTypeALL.delta',
           operator: 'greaterThan',
           value: 0,
         },
         {
-          summary: {
-            webpack: {
-              fileSizeByTypeALL: {
-                deltaValue: 0,
-              },
+          webpack: {
+            fileSizeByTypeALL: {
+              delta: 0,
             },
           },
         },
-        checks.CheckStatus.Failure,
+        checks.CheckStatus.FAILURE,
       ),
     ).toEqual({
       condition: {
-        fact: 'summary.webpack.fileSizeByTypeALL.deltaValue',
+        fact: 'webpack.fileSizeByTypeALL.delta',
         operator: 'greaterThan',
         value: 0,
       },
+      value: 0,
+      data: {
+        delta: 0,
+      },
+      matched: false,
     });
   });
 
@@ -53,31 +56,31 @@ describe('Checks', () => {
     expect(
       checks.evaluate(
         {
-          fact: 'summary.webpack.fileSizeByTypeALL.deltaValue',
+          fact: 'webpack.fileSizeByTypeALL.delta',
           operator: 'greaterThan',
           value: 0,
         },
         {
-          summary: {
-            webpack: {
-              fileSizeByTypeALL: {
-                deltaValue: 1,
-              },
+          webpack: {
+            fileSizeByTypeALL: {
+              delta: 1,
             },
           },
         },
-        checks.CheckStatus.Failure,
+        checks.CheckStatus.FAILURE,
       ),
     ).toEqual({
       condition: {
-        fact: 'summary.webpack.fileSizeByTypeALL.deltaValue',
+        fact: 'webpack.fileSizeByTypeALL.delta',
         operator: 'greaterThan',
         value: 0,
       },
-      metricData: {
-        deltaValue: 1,
+      value: 1,
+      data: {
+        delta: 1,
       },
-      status: checks.CheckStatus.Failure,
+      matched: true,
+      status: checks.CheckStatus.FAILURE,
     });
   });
 });
