@@ -1,23 +1,20 @@
 import get from 'lodash/get';
 
-interface JobSummaryItem {
-  baseline: number;
-  current: number;
-}
+import { JobMetricsSource, JobSummaryItem } from '../constants';
 
 type JobSummary = Record<string, JobSummaryItem>;
 
 export const createSummary = (
   metricPaths: Array<string>,
-  baselineSourceMetrics: any,
-  currentSourceMetrics: any,
+  baselineMetricsSource: JobMetricsSource | null | undefined,
+  currentMetricsSource: JobMetricsSource,
 ): JobSummary => {
   const result: JobSummary = {};
 
   metricPaths.forEach((metric) => {
     result[metric] = {
-      baseline: get(baselineSourceMetrics, `${metric}.value`, 0),
-      current: get(currentSourceMetrics, `${metric}.value`, 0),
+      baseline: get(baselineMetricsSource, `${metric}.value`, 0) as number,
+      current: get(currentMetricsSource, `${metric}.value`, 0) as number,
     };
   });
 
