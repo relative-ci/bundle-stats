@@ -1,9 +1,11 @@
+export type SourceData = Record<string, unknown>;
+
 export enum MetricTypeType {
   'METRIC_TYPE_NUMERIC',
   'METRIC_TYPE_SCORE',
   'METRIC_TYPE_FILE_SIZE',
   'METRIC_TYPE_DURATION',
-  'METRIC_TYPE_PERCENTAGE'
+  'METRIC_TYPE_PERCENTAGE',
 }
 
 export interface MetricTypeConfig {
@@ -38,6 +40,30 @@ export interface MetricRunInfo {
   displayDelta?: string;
   displayDeltaPercentage?: string;
   deltaType?: MetricRunInfoDeltaType;
+}
+
+export interface JobSummaryItem {
+  baseline: number;
+  current: number;
+}
+export type JobSummarySource = Record<string, JobSummaryItem>;
+export type JobSummary = Record<string, JobSummarySource>;
+
+export type JobMetricsSource = Record<string, MetricRun | Record<string, MetricRun>>;
+export type JobMetrics = Record<string, JobMetricsSource>;
+
+export interface JobData {
+  meta?: any;
+  insights?: any;
+  summary?: JobSummary;
+  metrics?: JobMetrics;
+  rawData?: any;
+}
+
+export interface Job extends JobData {
+  internalBuildNumber: number;
+  // @TODO(v5): Remove or move to report
+  label: string;
 }
 
 export interface LighthouseSource {
