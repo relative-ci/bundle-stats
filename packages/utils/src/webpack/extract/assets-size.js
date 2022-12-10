@@ -4,34 +4,39 @@ import sum from 'lodash/sum';
 
 import { FILE_TYPE_CSS, FILE_TYPE_JS, FILE_TYPES } from '../../config/file-types';
 import { getFileType } from '../../utils/file-types';
+import { METRIC_TOTALS_PREFIX, METRIC_TOTALS_SUFIX_ALL } from '../types';
 
-const METRIC_NAME_ALL = 'ALL';
-const METRIC_NAME_PREFIX = 'totalSizeByType';
+const getMetricName = (fileType) => `${METRIC_TOTALS_PREFIX}${fileType}`;
 
-const getMetricName = (fileType) => `${METRIC_NAME_PREFIX}${fileType}`;
+const generateInitialSizeByType = () =>
+  FILE_TYPES.reduce(
+    (accumulator, fileType) => ({
+      ...accumulator,
+      [getMetricName(fileType)]: {
+        value: 0,
+      },
+    }),
+    {},
+  );
 
-const generateInitialSizeByType = () => FILE_TYPES.reduce((accumulator, fileType) => ({
-  ...accumulator,
-  [getMetricName(fileType)]: {
-    value: 0,
-  },
-}), {});
+const calculateTotalByType = (assets) =>
+  assets.reduce((accumulator, current) => {
+    const fileType = getFileType(current.name);
+    const statName = getMetricName(fileType);
+    const value = accumulator[statName].value + current.value;
 
-const calculateTotalByType = (assets) => assets.reduce((accumulator, current) => {
-  const fileType = getFileType(current.name);
-  const statName = getMetricName(fileType);
-  const value = accumulator[statName].value + current.value;
+    return {
+      ...accumulator,
+      [statName]: {
+        value,
+      },
+    };
+  }, generateInitialSizeByType());
 
-  return {
-    ...accumulator,
-    [statName]: {
-      value,
-    },
-  };
-}, generateInitialSizeByType());
-
-const getFilterInitialAssetsByType = (fileType) => ({ name, isInitial }) =>
-  getFileType(name) === fileType && isInitial; // eslint-disable-line implicit-arrow-linebreak
+const getFilterInitialAssetsByType =
+  (fileType) =>
+  ({ name, isInitial }) =>
+    getFileType(name) === fileType && isInitial; // eslint-disable-line implicit-arrow-linebreak
 
 const calculateInitialTotals = (assets) => {
   const cssAssets = assets.filter(getFilterInitialAssetsByType(FILE_TYPE_CSS));
@@ -52,7 +57,7 @@ export const extractAssetsSize = (webpackStats, currentExtractedData) => {
 
   const sizes = calculateTotalByType(bundleAssets);
   const generic = {
-    [getMetricName(METRIC_NAME_ALL)]: {
+    [getMetricName(METRIC_TOTALS_SUFIX_ALL)]: {
       value: sum(map(bundleAssets, 'value')),
     },
     ...calculateInitialTotals(bundleAssets),

@@ -40,10 +40,6 @@ export interface MetricRunInfo {
   deltaType?: MetricRunInfoDeltaType;
 }
 
-export interface Metric {
-  value: number;
-}
-
 export interface LighthouseSource {
   lighthouseVersion: string;
   fetchTime: string;
