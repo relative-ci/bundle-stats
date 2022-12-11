@@ -37,9 +37,10 @@ export interface MetricRunInfo {
   value: number;
   displayValue: string;
   delta?: number;
+  deltaPercentage?: number;
+  deltaType?: MetricRunInfoDeltaType;
   displayDelta?: string;
   displayDeltaPercentage?: string;
-  deltaType?: MetricRunInfoDeltaType;
 }
 
 export interface JobSummaryItem {
