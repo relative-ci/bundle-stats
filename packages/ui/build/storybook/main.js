@@ -1,7 +1,7 @@
 const postcss = require('postcss');
 
 module.exports = {
-  stories: ['../../src/**/*.stories.@(jsx|mdx)'],
+  stories: ['../../src/**/*.stories.@(jsx|tsx|mdx)'],
   addons: [
     '@storybook/addon-knobs',
     {
