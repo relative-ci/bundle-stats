@@ -15,7 +15,7 @@ const ChunkModulesLink = ({ as: Component, chunks, chunkId, name }) => {
     return null;
   }
 
-  const chunkIds = chunks?.map(({ id }) => ({ id }));
+  const chunkIds = chunks?.map(({ id }) => id);
   const fileType = getModuleFileType(name);
 
   return (
