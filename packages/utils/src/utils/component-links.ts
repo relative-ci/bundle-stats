@@ -21,53 +21,77 @@ import {
 } from '../config/component-links';
 import I18N from '../i18n';
 
-export const getAssetFileTypeFilters = (value = true) =>
-  FILE_TYPES.reduce(
-    (agg, fileTypeFilter) => ({
-      ...agg,
-      [`${ASSET_FILE_TYPE}.${fileTypeFilter}`]: value,
-    }),
-    {},
+export type ComponentLinkFilters = Record<string, boolean>;
+
+export interface ComponentLinkParams {
+  search?: string;
+  filters: ComponentLinkFilters;
+}
+
+export interface ComponentLink {
+  title: string;
+  section: string;
+  params?: {
+    [key: string]: ComponentLinkParams;
+  };
+}
+
+export const getAssetFileTypeFilters = (value = true): ComponentLinkFilters => {
+  const filters = {} as ComponentLinkFilters;
+
+  FILE_TYPES.forEach((fileTypeFilter) => {
+    filters[`${ASSET_FILE_TYPE}.${fileTypeFilter}`] = value;
+  });
+
+  return filters;
+};
+
+export const getAssetEntryTypeFilters = (value = true): ComponentLinkFilters => {
+  const filters = {} as ComponentLinkFilters;
+
+  [ASSET_FILTERS.ENTRY, ASSET_FILTERS.INITIAL, ASSET_FILTERS.CHUNK, ASSET_FILTERS.OTHER].forEach(
+    (entryTypeFilter) => {
+      filters[`${ASSET_ENTRY_TYPE}.${entryTypeFilter}`] = value;
+    },
   );
 
-export const getAssetEntryTypeFilters = (value = true) =>
-  [ASSET_FILTERS.ENTRY, ASSET_FILTERS.INITIAL, ASSET_FILTERS.CHUNK, ASSET_FILTERS.OTHER].reduce(
-    (agg, entryTypeFilter) => ({
-      ...agg,
-      [`${ASSET_ENTRY_TYPE}.${entryTypeFilter}`]: value,
-    }),
-    {},
-  );
+  return filters;
+};
 
-export const getModuleSourceTypeFilters = (value = true) => ({
+export const getModuleSourceTypeFilters = (value = true): ComponentLinkFilters => ({
   [`${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.FIRST_PARTY}`]: value,
   [`${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.THIRD_PARTY}`]: value,
 });
 
-export const getModuleChunkFilters = (chunkIds, value) =>
-  chunkIds.reduce(
-    (agg, chunkId) => ({
-      ...agg,
-      [`${MODULE_CHUNK}.${chunkId}`]: value,
-    }),
-    {},
-  );
+export const getModuleChunkFilters = (
+  chunkIds: Array<string>,
+  value: boolean,
+): ComponentLinkFilters => {
+  const filters = {} as ComponentLinkFilters;
 
-export const getModuleFileTypeFilters = (value = true) =>
-  MODULE_SOURCE_FILE_TYPES.reduce(
-    (agg, fileType) => ({
-      ...agg,
-      [`${MODULE_FILE_TYPE}.${fileType}`]: value,
-    }),
-    {},
-  );
+  chunkIds.forEach((chunkId) => {
+    filters[`${MODULE_CHUNK}.${chunkId}`] = value;
+  });
 
-export const TOTALS = {
+  return filters;
+};
+
+export const getModuleFileTypeFilters = (value = true): ComponentLinkFilters => {
+  const filters = {} as ComponentLinkFilters;
+
+  MODULE_SOURCE_FILE_TYPES.forEach((fileType) => {
+    filters[`${MODULE_FILE_TYPE}.${fileType}`] = value;
+  });
+
+  return filters;
+};
+
+export const TOTALS: ComponentLink = {
   section: SECTIONS.TOTALS,
   title: I18N.COMPONENT_LINK_TOTALS,
 };
 
-export const BUNDLE_ASSETS_INITIAL_JS = {
+export const BUNDLE_ASSETS_INITIAL_JS: ComponentLink = {
   section: SECTIONS.ASSETS,
   title: I18N.COMPONENT_LINK_BUNDLE_ASSETS_INITIAL_JS,
   params: {
@@ -82,7 +106,7 @@ export const BUNDLE_ASSETS_INITIAL_JS = {
   },
 };
 
-export const BUNDLE_ASSETS_INITIAL_CSS = {
+export const BUNDLE_ASSETS_INITIAL_CSS: ComponentLink = {
   section: SECTIONS.ASSETS,
   title: I18N.COMPONENT_LINK_BUNDLE_ASSETS_INITIAL_CSS,
   params: {
@@ -97,7 +121,7 @@ export const BUNDLE_ASSETS_INITIAL_CSS = {
   },
 };
 
-export const BUNDLE_ASSETS_CACHE_INVALIDATION = {
+export const BUNDLE_ASSETS_CACHE_INVALIDATION: ComponentLink = {
   section: SECTIONS.ASSETS,
   title: I18N.COMPONENT_LINK_BUNDLE_ASSETS_CACHE_INVALIDATION,
   params: {
@@ -109,7 +133,7 @@ export const BUNDLE_ASSETS_CACHE_INVALIDATION = {
   },
 };
 
-export const BUNDLE_ASSETS_COUNT = {
+export const BUNDLE_ASSETS_COUNT: ComponentLink = {
   section: SECTIONS.ASSETS,
   title: I18N.COMPONENT_LINK_BUNDLE_ASSETS_COUNT,
   params: {
@@ -122,7 +146,7 @@ export const BUNDLE_ASSETS_COUNT = {
   },
 };
 
-export const BUNDLE_ASSETS_CHUNK_COUNT = {
+export const BUNDLE_ASSETS_CHUNK_COUNT: ComponentLink = {
   section: SECTIONS.ASSETS,
   title: I18N.COMPONENT_LINK_BUNDLE_ASSETS_CHUNK_COUNT,
   params: {
@@ -135,7 +159,7 @@ export const BUNDLE_ASSETS_CHUNK_COUNT = {
   },
 };
 
-export const BUNDLE_MODULES = {
+export const BUNDLE_MODULES: ComponentLink = {
   section: SECTIONS.MODULES,
   title: I18N.COMPONENT_LINK_MODULES,
   params: {
@@ -148,7 +172,7 @@ export const BUNDLE_MODULES = {
   },
 };
 
-export const BUNDLE_MODULES_DUPLICATE = {
+export const BUNDLE_MODULES_DUPLICATE: ComponentLink = {
   section: SECTIONS.MODULES,
   title: I18N.COMPONENT_LINK_MODULES_DUPLICATE,
   params: {
@@ -161,7 +185,7 @@ export const BUNDLE_MODULES_DUPLICATE = {
   },
 };
 
-export const getBundleModulesBySearch = (search) => ({
+export const getBundleModulesBySearch = (search: string): ComponentLink => ({
   section: SECTIONS.MODULES,
   title: I18N.COMPONENT_LINK_MODULES,
   params: {
@@ -175,7 +199,11 @@ export const getBundleModulesBySearch = (search) => ({
   },
 });
 
-export const getBundleModulesByChunk = (chunkIds, chunkId, fileType = '') => ({
+export const getBundleModulesByChunk = (
+  chunkIds: Array<string>,
+  chunkId: string,
+  fileType = '',
+): ComponentLink => ({
   section: SECTIONS.MODULES,
   title: I18N.COMPONENT_LINK_CHUNK_MODULES,
   params: {
@@ -193,7 +221,7 @@ export const getBundleModulesByChunk = (chunkIds, chunkId, fileType = '') => ({
   },
 });
 
-export const BUNLDE_PACKAGES_COUNT = {
+export const BUNLDE_PACKAGES_COUNT: ComponentLink = {
   section: SECTIONS.PACKAGES,
   title: I18N.COMPONENT_LINK_PACKAGES_COUNT,
   params: {
@@ -206,7 +234,7 @@ export const BUNLDE_PACKAGES_COUNT = {
   },
 };
 
-export const BUNDLE_PACKAGES_DUPLICATE = {
+export const BUNDLE_PACKAGES_DUPLICATE: ComponentLink = {
   section: SECTIONS.PACKAGES,
   title: I18N.COMPONENT_LINK_PACKAGES_DUPLICATE,
   params: {
@@ -218,7 +246,10 @@ export const BUNDLE_PACKAGES_DUPLICATE = {
   },
 };
 
-export const getBundleAssetsFileTypeComponentLink = (fileType, label) => ({
+export const getBundleAssetsFileTypeComponentLink = (
+  fileType: string,
+  label: string,
+): ComponentLink => ({
   section: SECTIONS.ASSETS,
   title: I18N.COMPONENT_LINK_BUNDLE_ASSETS_BY_FILE_TYPE({ label }),
   params: {
@@ -231,7 +262,7 @@ export const getBundleAssetsFileTypeComponentLink = (fileType, label) => ({
   },
 });
 
-export const getBundlePackagesByNameComponentLink = (search) => ({
+export const getBundlePackagesByNameComponentLink = (search: string): ComponentLink => ({
   section: SECTIONS.PACKAGES,
   title: I18N.COMPONENT_LINK_VIEW_PACKAGE,
   params: {
