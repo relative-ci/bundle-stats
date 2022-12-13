@@ -9,6 +9,7 @@
 .currentMetric {
   color: var(--color-heading);
   font-size: var(--size-large);
+  line-height: var(--line-height-heading);
   white-space: nowrap;
   font-weight: bold;
 }
@@ -16,6 +17,7 @@
 .baselineMetric {
   color: var(--color-text-light);
   font-size: var(--size-small);
+  line-height: var(--line-height-heading);
 }
 
 .readMoreLink {
