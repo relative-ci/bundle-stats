@@ -37,7 +37,7 @@
   "dependencies": {
     "@bundle-stats/plugin-webpack-filter": "^4.1.6",
     "@bundle-stats/plugin-webpack-validate": "^4.1.6",
-    "query-string": "^7.1.0",
+    "query-string": "^8.0.3",
     "serialize-query-params": "^2.0.1"
   },
   "devDependencies": {
