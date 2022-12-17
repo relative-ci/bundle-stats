@@ -48,12 +48,12 @@ module.exports = {
   plugins: ['jest'],
   overrides: [
     {
-      files: '*.ts',
+      files: ['*.ts', '*.tsx'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
         project: './tsconfig.json',
       },
-      extends: ['airbnb-typescript/base'],
+      extends: ['airbnb-typescript'],
       plugins: ['@typescript-eslint'],
       rules: {
         'import/prefer-default-export': 'off',
