@@ -3,24 +3,24 @@ import { storiesOf } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 
 /* eslint-disable */
-import currentData from '../../../../fixtures/job.current.json'; // eslint-disable-line
-import baselineData from '../../../../fixtures/job.baseline.json'; // eslint-disable-line
+import currentData from '../../../../fixtures/job.current.json';
+import baselineData from '../../../../fixtures/job.baseline.json';
 /* eslint-enable */
 import { App } from '.';
 
 const CURRENT_SOURCE = {
   webpack: {
-    builtAt: currentData.builtAt,
-    hash: currentData.hash,
     ...currentData.rawData.webpack,
+    builtAt: currentData.createdAt,
+    hash: currentData.commit,
   },
 };
 
 const BASELINE_SOURCE = {
   webpack: {
-    builtAt: baselineData.builtAt,
-    hash: baselineData.hash,
     ...baselineData.rawData.webpack,
+    builtAt: baselineData.createdAt,
+    hash: baselineData.commit,
   },
 };
 
@@ -41,9 +41,9 @@ const MULTIPLE_JOBS = createJobs([
   BASELINE_SOURCE,
   {
     webpack: {
-      builtAt: baselineData.builtAt,
-      hash: 'aaaa1111',
       ...baselineData.rawData.webpack,
+      builtAt: baselineData.createdAt,
+      hash: 'aaaa1111',
       assets: baselineData.rawData.webpack.assets.filter((asset) => asset.name.match(/.(css|js)$/)),
       modules: baselineData.rawData.webpack.modules.slice(0, 100),
     },
@@ -52,7 +52,7 @@ const MULTIPLE_JOBS = createJobs([
 
 const [CURRENT_JOB, BASELINE_JOB] = JOBS;
 
-const EMPTY_BASELINE = createJobs([{ webpack: currentData.rawData.webpack }, { webpack: null }]);
+const EMPTY_BASELINE = createJobs([CURRENT_SOURCE, { webpack: null }]);
 
 const stories = storiesOf('App', module);
 
