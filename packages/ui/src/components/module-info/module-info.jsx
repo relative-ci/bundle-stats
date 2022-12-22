@@ -52,7 +52,18 @@ export const ModuleInfo = (props) => {
               </div>
             )}
 
-            <FileName className={css.fileName} as="code" name={run?.name || '-'} />
+            <p>Name: <FileName className={css.fileName} as="code" name={run?.name || '-'} /></p>
+
+            {run?.issuerPath && (
+              <Stack>
+                <p>Issuer path:</p>
+                {run?.issuerPath?.map((issuer) => (
+                  <p className={css.issuer} key={issuer}>
+                    <FileName className={css.fileName} as="code" name={issuer} />
+                  </p>
+                ))}
+              </Stack>
+            )}
           </Stack>
         );
       })}

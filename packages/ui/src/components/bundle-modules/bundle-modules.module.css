@@ -25,3 +25,7 @@
   display: inline;
   vertical-align: middle;
 }
+
+.hoverCard {
+  max-width: 480px;
+}

@@ -107,7 +107,7 @@ const RowHeader = ({ row, chunks, labels, CustomComponentLink }) => {
   }
 
   return (
-    <HoverCard label={content}>
+    <HoverCard label={content} hoverCardClassName={css.hoverCard}>
       <ModuleInfo
         className={css.namePopover}
         item={row}

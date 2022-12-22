@@ -27,6 +27,7 @@ export const WebpackSourceModuleStruct = type({
   size: number(),
   chunks: array(nullable(union([number(), string()]))),
   modules: optional(array(type({ name: string(), size: number() }))),
+  issuerPath: nullable(array(type({ name: optional(string()) }))),
 });
 
 export const WebpackSourceModuleHiddenStruct = type({

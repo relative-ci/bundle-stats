@@ -26,8 +26,9 @@ export interface MetricsAssets {
 
 export interface Module extends Metric {
   name: string;
-  chunkIds: Array<String>;
+  chunkIds: Array<string>;
   duplicated: boolean;
+  issuerPath?: Array<string>;
 }
 
 export type Modules = Record<string, Module>;

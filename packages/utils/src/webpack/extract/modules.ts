@@ -48,7 +48,7 @@ export const extractModules = (webpackStats?: WebpackStatsFiltered): MetricsModu
 
   // Normalize module entries
   const modules = allModules.reduce((agg, moduleEntry) => {
-    const { name, size = 0, chunks } = moduleEntry;
+    const { name, size = 0, chunks, issuerPath } = moduleEntry;
     const normalizedName = getModuleName(name);
 
     // skip modules that do not belong to any chunk
@@ -70,6 +70,7 @@ export const extractModules = (webpackStats?: WebpackStatsFiltered): MetricsModu
       value: size,
       chunkIds: chunks.map(normalizeChunkId),
       duplicated: Boolean(duplicateInstances),
+      issuerPath: issuerPath?.map((issuer) => issuer.name),
     };
 
     return agg;

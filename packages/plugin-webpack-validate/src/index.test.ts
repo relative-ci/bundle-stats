@@ -23,6 +23,11 @@ describe('Webpack/validate', () => {
             name: 'node_modules/package-a/main.js',
             size: 10,
             chunks: [1],
+            issuerPath: [
+              {
+                name: './index.js',
+              },
+            ],
           },
           {
             type: 'hidden modules',
@@ -40,6 +45,7 @@ describe('Webpack/validate', () => {
             name: './main.js  + 2 concantenated modules',
             size: 10,
             chunks: [1],
+            issuerPath: [{ name: './index.js' }],
             modules: [
               {
                 name: './main.js',

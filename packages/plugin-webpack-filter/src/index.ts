@@ -20,15 +20,21 @@ export interface WebpackStatsFilteredChunk {
   names?: Array<string>;
 }
 
+export interface WebpackStatsFilteredModuleIssuer {
+  name: string;
+}
+
 export interface WebpackStatsFilteredModule {
   name: string;
   size?: number;
   chunks: Array<string | number>;
+  issuerPath?: Array<WebpackStatsFilteredModuleIssuer>;
 }
 
 export interface WebpackStatsFilteredConcatenatedModule {
   name: string;
   size?: number;
+  issuer?: string;
 }
 
 export interface WebpackStatsFilteredRootModule extends WebpackStatsFilteredModule {
@@ -117,10 +123,21 @@ export default (
         [] as Array<WebpackStatsFilteredConcatenatedModule>,
       );
 
+      const issuerPath: Array<WebpackStatsFilteredModuleIssuer> = [];
+
+      moduleStats.issuerPath?.forEach((issuer) => {
+        if (issuer?.name) {
+          issuerPath.push({
+            name: issuer.name,
+          });
+        }
+      });
+
       agg.push({
         name: moduleStats.name,
         size: moduleStats.size,
         chunks: moduleChunks,
+        issuerPath,
         ...(concatenatedModules && { modules: concatenatedModules }),
       });
 

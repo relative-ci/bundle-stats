@@ -48,21 +48,25 @@ module.exports = {
       chunks: [1],
       name: 'node_modules/package-a/index.js',
       size: 1000,
+      issuerPath: [{ name: 'module-a' }],
     },
     {
       chunks: [1],
       name: 'node_modules/package-a/node_modules/package-c/index.js',
       size: 1000,
+      issuerPath: [{ name: 'module-a' }, { name: 'node_modules/package-a/index.js' }],
     },
     {
       chunks: [1],
       name: 'node_modules/package-b/index.js',
       size: 1000,
+      issuerPath: [{ name: 'module-b' }],
     },
     {
       chunks: [1],
       name: 'node_modules/package-c/index.js',
       size: 1000,
+      issuerPath: [{ name: 'module-c' }],
     },
   ],
 };
