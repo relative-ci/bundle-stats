@@ -1,21 +1,40 @@
-.chunksTitle {
-  margin-right: var(--space-xxxsmall);
+.titleTag {
+  border: 1px solid var(--color-outline);
+  background: var(--color-highlight);
+  color: var(--color-text-light);
 }
 
-.chunksItems {
-  display: inline;
+.run:first-child .title {
+  font-size: var(--size-xlarge);
 }
 
 .chunksItem {
   overflow-wrap: break-word;
 }
 
-.chunksItem + .chunksItem {
-  margin-left: var(--space-xxxsmall);
-}
-
 .fileName {
   max-width: 100%;
   padding: 2px;
   background: var(--color-highlight-warning);
+}
+
+.reasonLink {
+  text-decoration: underline;
+}
+
+.reasonLink .reason {
+  text-decoration: inherit;
+}
+
+.reason {
+  display: inline;
+}
+
+.list {
+  padding: 0 0 0 var(--space-small);
+  list-style: outside;
+}
+
+.list li::marker {
+  color: var(--color-text-ultra-light);
 }

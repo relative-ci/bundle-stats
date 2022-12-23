@@ -107,15 +107,17 @@ const RowHeader = ({ row, chunks, labels, CustomComponentLink }) => {
   }
 
   return (
-    <HoverCard label={content}>
-      <ModuleInfo
-        className={css.namePopover}
-        item={row}
-        chunks={chunks}
-        chunkIds={chunkIds}
-        labels={labels}
-        customComponentLink={CustomComponentLink}
-      />
+    <HoverCard label={content} hoverCardClassName={css.nameHoverCard}>
+      {({ close }) => (
+        <ModuleInfo
+          item={row}
+          chunks={chunks}
+          chunkIds={chunkIds}
+          labels={labels}
+          customComponentLink={CustomComponentLink}
+          onClick={close}
+        />
+      )}
     </HoverCard>
   );
 };
