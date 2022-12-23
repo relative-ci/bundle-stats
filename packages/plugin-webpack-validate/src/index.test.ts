@@ -40,10 +40,20 @@ describe('Webpack/validate', () => {
             name: './main.js  + 2 concantenated modules',
             size: 10,
             chunks: [1],
+            reasons: [
+              {
+                module: './index.js',
+              },
+            ],
             modules: [
               {
                 name: './main.js',
                 size: 3,
+                reasons: [
+                  {
+                    module: './index.js',
+                  },
+                ],
               },
               {
                 name: './main-dependency-1.js',
