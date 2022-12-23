@@ -84,6 +84,12 @@ export const extractModules = (webpackStats?: WebpackStatsFiltered): MetricsModu
 
   modulesByName.forEach((moduleEntry, normalizedName) => {
     const { name, size = 0, chunks } = moduleEntry;
+    const normalizedName = getModuleName(name);
+
+    // skip modules that are orphane(do not belong to any chunk)
+    if (!chunks || chunks?.length === 0) {
+      return agg;
+    }
 
     const instances = chunks.length;
     const duplicateInstances = instances - 1;
@@ -92,6 +98,7 @@ export const extractModules = (webpackStats?: WebpackStatsFiltered): MetricsModu
     moduleCount += instances;
     totalCodeSize += instances * size;
 
+    const reasons = moduleEntry.reasons?.map((reason) => getModuleName(reason.module));
     if (duplicated) {
       duplicateModulesCount += duplicateInstances;
       duplicateCodeSize += duplicateInstances * size;
@@ -102,6 +109,7 @@ export const extractModules = (webpackStats?: WebpackStatsFiltered): MetricsModu
       value: size,
       chunkIds: chunks.map(normalizeChunkId),
       ...(duplicated && { duplicated }),
+      ...(reasons && { reasons }),
     };
   }, {} as Record<string, Module>);
 

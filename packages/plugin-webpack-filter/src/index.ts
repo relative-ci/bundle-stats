@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { StatsCompilation } from 'webpack';
+import { StatsCompilation, StatsModule } from 'webpack';
 
 const PATH_IGNORE_PATTERN = '.map$';
 
@@ -20,15 +20,21 @@ export interface WebpackStatsFilteredChunk {
   names?: Array<string>;
 }
 
+export interface WebpackStatsFilteredModuleReason {
+  module: string;
+}
+
 export interface WebpackStatsFilteredModule {
   name: string;
   size?: number;
   chunks: Array<string | number>;
+  reasons?: Array<WebpackStatsFilteredModuleReason>;
 }
 
 export interface WebpackStatsFilteredConcatenatedModule {
   name: string;
   size?: number;
+  reasons?: Array<WebpackStatsFilteredModuleReason>;
 }
 
 export interface WebpackStatsFilteredRootModule extends WebpackStatsFilteredModule {
@@ -42,6 +48,28 @@ export interface WebpackStatsFiltered {
   chunks?: Array<WebpackStatsFilteredChunk>;
   modules?: Array<WebpackStatsFilteredRootModule>;
 }
+
+const getReasons = (
+  moduleData: StatsModule,
+): Array<WebpackStatsFilteredModuleReason> | undefined => {
+  const reasonsByModule: Record<string, WebpackStatsFilteredModuleReason> = {};
+
+  moduleData.reasons?.forEach((reason) => {
+    // Add the reason module only once
+    // webpack adds one entry for import and one entry for every reference
+    if (reason.module && !reasonsByModule[reason.module]) {
+      reasonsByModule[reason.module] = { module: reason.module };
+    }
+  });
+
+  const reasons = Object.values(reasonsByModule);
+
+  if (reasons.length === 0) {
+    return undefined;
+  }
+
+  return reasons;
+};
 
 /**
  * Filter webpack stats data
@@ -107,9 +135,12 @@ export default (
             return aggConcatenatedModules;
           }
 
+          const reasons = getReasons(concatenatedModule);
+
           aggConcatenatedModules.push({
             name: concatenatedModule.name,
             size: concatenatedModule.size,
+            ...(reasons && { reasons }),
           });
 
           return aggConcatenatedModules;
@@ -117,11 +148,14 @@ export default (
         [] as Array<WebpackStatsFilteredConcatenatedModule>,
       );
 
+      const reasons = getReasons(moduleStats);
+
       agg.push({
         name: moduleStats.name,
         size: moduleStats.size,
         chunks: moduleChunks,
         ...(concatenatedModules && { modules: concatenatedModules }),
+        ...(reasons && { reasons }),
       });
 
       return agg;

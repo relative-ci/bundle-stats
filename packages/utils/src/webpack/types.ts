@@ -52,6 +52,7 @@ export interface Module extends MetricRun {
   name: string;
   chunkIds: Array<string>;
   duplicated?: boolean;
+  reasons?: Array<string>;
 }
 
 export type Modules = Record<string, Module>;

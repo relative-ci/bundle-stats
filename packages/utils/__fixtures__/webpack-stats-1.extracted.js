@@ -53,6 +53,11 @@ module.exports = {
       chunks: [1],
       name: 'node_modules/package-a/node_modules/package-c/index.js',
       size: 1000,
+      reasons: [
+        {
+          module: 'node_modules/package-a/index.js',
+        },
+      ],
     },
     {
       chunks: [1],
