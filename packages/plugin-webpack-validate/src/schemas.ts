@@ -22,11 +22,22 @@ export const WebpackSourceAssetHiddenStruct = type({
   size: number(),
 });
 
+export const WebpackSourceModuleReasonStruct = type({
+  module: string(),
+});
+
 export const WebpackSourceModuleStruct = type({
   name: string(),
   size: number(),
   chunks: array(nullable(union([number(), string()]))),
-  modules: optional(array(type({ name: string(), size: number() }))),
+  modules: optional(
+    array(type({
+      name: string(),
+      size: number(),
+      reasons: optional(array(WebpackSourceModuleReasonStruct)),
+    })),
+  ),
+  reasons: optional(array(WebpackSourceModuleReasonStruct)),
 });
 
 export const WebpackSourceModuleHiddenStruct = type({

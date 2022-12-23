@@ -266,6 +266,9 @@ exports[`report / createReport multiple sources 1`] = `
           "displayValue": "1000B",
           "duplicated": false,
           "name": "node_modules/package-a/node_modules/package-c/index.js",
+          "reasons": [
+            "node_modules/package-a/index.js",
+          ],
           "value": 1000,
         },
         null,
@@ -1123,6 +1126,9 @@ exports[`report / createReport single source 1`] = `
           "displayValue": "1000B",
           "duplicated": false,
           "name": "node_modules/package-a/node_modules/package-c/index.js",
+          "reasons": [
+            "node_modules/package-a/index.js",
+          ],
           "value": 1000,
         },
       ],

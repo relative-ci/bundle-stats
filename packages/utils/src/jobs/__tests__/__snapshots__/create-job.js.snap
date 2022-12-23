@@ -129,6 +129,9 @@ exports[`createJob no baseline 1`] = `
           ],
           "duplicated": false,
           "name": "node_modules/package-a/node_modules/package-c/index.js",
+          "reasons": [
+            "node_modules/package-a/index.js",
+          ],
           "value": 1000,
         },
         "node_modules/package-b/index.js": {
@@ -275,6 +278,11 @@ exports[`createJob no baseline 1`] = `
             1,
           ],
           "name": "node_modules/package-a/node_modules/package-c/index.js",
+          "reasons": [
+            {
+              "module": "node_modules/package-a/index.js",
+            },
+          ],
           "size": 1000,
         },
         {
@@ -474,6 +482,9 @@ exports[`createJob with baseline 1`] = `
           ],
           "duplicated": false,
           "name": "node_modules/package-a/node_modules/package-c/index.js",
+          "reasons": [
+            "node_modules/package-a/index.js",
+          ],
           "value": 1000,
         },
         "node_modules/package-b/index.js": {
@@ -620,6 +631,11 @@ exports[`createJob with baseline 1`] = `
             1,
           ],
           "name": "node_modules/package-a/node_modules/package-c/index.js",
+          "reasons": [
+            {
+              "module": "node_modules/package-a/index.js",
+            },
+          ],
           "size": 1000,
         },
         {

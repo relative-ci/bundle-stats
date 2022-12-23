@@ -51,7 +51,7 @@ export const extractModules = (webpackStats?: WebpackStatsFiltered): MetricsModu
     const { name, size = 0, chunks } = moduleEntry;
     const normalizedName = getModuleName(name);
 
-    // skip modules that do not belong to any chunk
+    // skip modules that are orphane(do not belong to any chunk)
     if (!chunks || chunks?.length === 0) {
       return agg;
     }
@@ -64,12 +64,15 @@ export const extractModules = (webpackStats?: WebpackStatsFiltered): MetricsModu
     duplicateCodeSize += duplicateInstances * size;
     totalCodeSize += instances * size;
 
+    const reasons = moduleEntry.reasons?.map((reason) => getModuleName(reason.module));
+
     // eslint-disable-next-line no-param-reassign
     agg[normalizedName] = {
       name,
       value: size,
       chunkIds: chunks.map(normalizeChunkId),
       duplicated: Boolean(duplicateInstances),
+      ...(reasons && { reasons }),
     };
 
     return agg;
