@@ -10,8 +10,7 @@ import {
   MODULE_CHUNK,
   MODULE_FILTERS,
   MODULE_FILE_TYPE,
-  SECTIONS,
-  COMPONENT,
+  getBundleModulesEntry,
 } from '@bundle-stats/utils';
 
 import config from '../../config.json';
@@ -31,87 +30,60 @@ import { ModuleInfo } from '../module-info';
 import css from './bundle-modules.module.css';
 
 const getFilters = ({ filters, compareMode, chunks }) => ({
-    [MODULE_FILTERS.CHANGED]: {
-      label: 'Changed',
-      defaultValue: filters.changed,
-      disabled: !compareMode,
-    },
-    [MODULE_FILTERS.DUPLICATED]: {
-      label: 'Duplicate',
-      defaultValue: filters[MODULE_FILTERS.DUPLICATED],
-    },
+  [MODULE_FILTERS.CHANGED]: {
+    label: 'Changed',
+    defaultValue: filters.changed,
+    disabled: !compareMode,
+  },
+  [MODULE_FILTERS.DUPLICATED]: {
+    label: 'Duplicate',
+    defaultValue: filters[MODULE_FILTERS.DUPLICATED],
+  },
 
-    // When chunks data available, list available chunks as filters
-    ...(!isEmpty(chunks) && {
-      [MODULE_CHUNK]: {
-        label: 'Chunk',
-        ...chunks.reduce(
-          (chunkFilters, { id, name }) => ({
-            ...chunkFilters,
-            [id]: {
-              label: name,
-              defaultValue: get(filters, `${MODULE_CHUNK}.${id}`, true),
-            },
-          }),
-          {},
-        ),
-      },
-    }),
-
-    [MODULE_SOURCE_TYPE]: {
-      label: 'Source',
-      [MODULE_FILTERS.FIRST_PARTY]: {
-        label: 'First party',
-        defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.FIRST_PARTY}`, true),
-      },
-      [MODULE_FILTERS.THIRD_PARTY]: {
-        label: 'Third party',
-        defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.THIRD_PARTY}`, true),
-      },
-    },
-
-    // Module source types
-    [MODULE_FILE_TYPE]: {
-      label: 'File type',
-      ...MODULE_SOURCE_FILE_TYPES.reduce(
-        (agg, fileType) => ({
-          ...agg,
-          [fileType]: {
-            label: FILE_TYPE_LABELS[fileType],
-            defaultValue: get(filters, `${MODULE_FILE_TYPE}.${fileType}`, true),
+  // When chunks data available, list available chunks as filters
+  ...(!isEmpty(chunks) && {
+    [MODULE_CHUNK]: {
+      label: 'Chunk',
+      ...chunks.reduce(
+        (chunkFilters, { id, name }) => ({
+          ...chunkFilters,
+          [id]: {
+            label: name,
+            defaultValue: get(filters, `${MODULE_CHUNK}.${id}`, true),
           },
         }),
         {},
       ),
     },
-})
+  }),
 
-const RowHeader = ({ row, filters, search, customComponentLink: CustomComponentLink }) => (
-  <CustomComponentLink
-    section={SECTIONS.MODULES}
-    params={{ [COMPONENT.BUNDLE_MODULES]: { filters, search, entryId: row.key } }}
-    className={css.name}
-  >
-    {row.duplicated && (
-      <Tag className={css.nameTagDuplicated} size="small" kind={Tag.KINDS.DANGER} />
-    )}
-    <FileName className={css.nameText} name={row.label} />
-  </CustomComponentLink>
-);
+  [MODULE_SOURCE_TYPE]: {
+    label: 'Source',
+    [MODULE_FILTERS.FIRST_PARTY]: {
+      label: 'First party',
+      defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.FIRST_PARTY}`, true),
+    },
+    [MODULE_FILTERS.THIRD_PARTY]: {
+      label: 'Third party',
+      defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.THIRD_PARTY}`, true),
+    },
+  },
 
-RowHeader.propTypes = {
-  row: PropTypes.shape({
-    label: PropTypes.string,
-    duplicated: PropTypes.bool,
-  }).isRequired,
-  search: PropTypes.string,
-  filters: PropTypes.object,
-  customComponentLink: PropTypes.elementType.isRequired,
-};
-
-RowHeader.defaultProps = {
-  chunks: [],
-};
+  // Module source types
+  [MODULE_FILE_TYPE]: {
+    label: 'File type',
+    ...MODULE_SOURCE_FILE_TYPES.reduce(
+      (agg, fileType) => ({
+        ...agg,
+        [fileType]: {
+          label: FILE_TYPE_LABELS[fileType],
+          defaultValue: get(filters, `${MODULE_FILE_TYPE}.${fileType}`, true),
+        },
+      }),
+      {},
+    ),
+  },
+});
 
 export const BundleModules = ({
   className,
@@ -139,45 +111,56 @@ export const BundleModules = ({
 
   const dropdownFilters = useMemo(
     () => getFilters({ filters, chunks, compareMode: jobs.length > 1 }),
-    [jobs, filters, chunks]
+    [jobs, filters, chunks],
   );
 
-  const metricsTableTitle = useMemo(() => (
-    <MetricsTableTitle
-      title={I18N.MODULES}
-      info={`${items.length}/${totalRowCount}`}
-      popoverInfo={I18N.MODULES_INFO}
-      popoverHref={config.documentation.modules}
-    />
-  ), [items, totalRowCount]);
+  const metricsTableTitle = useMemo(
+    () => (
+      <MetricsTableTitle
+        title={I18N.MODULES}
+        info={`${items.length}/${totalRowCount}`}
+        popoverInfo={I18N.MODULES_INFO}
+        popoverHref={config.documentation.modules}
+      />
+    ),
+    [items, totalRowCount],
+  );
+
+  const getEntryComponentLinkProps = useCallback(
+    (moduleEntryId) => getBundleModulesEntry(moduleEntryId, search, filters),
+    [filters, search],
+  );
 
   const renderRowHeader = useCallback(
     (row) => (
-      <RowHeader
-        row={row}
-        filters={filters}
-        search={search}
-        customComponentLink={CustomComponentLink}
-      />
+      <CustomComponentLink {...getEntryComponentLinkProps(row.key)} className={css.name}>
+        {row.duplicated && (
+          <Tag className={css.nameTagDuplicated} size="small" kind={Tag.KINDS.DANGER} />
+        )}
+        <FileName className={css.nameText} name={row.label} />
+      </CustomComponentLink>
     ),
-    [jobs, chunks, CustomComponentLink, filters, search],
+    [jobs, chunks, CustomComponentLink, getEntryComponentLinkProps],
   );
 
-  const emptyMessage = useMemo(() => (
-    <EmptySet
-      resources="modules"
-      filtered={totalRowCount !== 0}
-      handleResetFilters={resetFilters}
-      handleViewAll={resetAllFilters}
-    />
-  ), [totalRowCount, resetFilters, resetAllFilters]);
+  const emptyMessage = useMemo(
+    () => (
+      <EmptySet
+        resources="modules"
+        filtered={totalRowCount !== 0}
+        handleResetFilters={resetFilters}
+        handleViewAll={resetAllFilters}
+      />
+    ),
+    [totalRowCount, resetFilters, resetAllFilters],
+  );
 
   const entryItem = useMemo(() => {
     if (!entryId) {
       return null;
     }
 
-    return allItems.find(({ key }) => key === entryId)
+    return allItems.find(({ key }) => key === entryId);
   }, [allItems, entryId]);
 
   return (
@@ -230,6 +213,7 @@ export const BundleModules = ({
           chunkIds={chunks?.map(({ id }) => id)}
           labels={jobLabels}
           customComponentLink={CustomComponentLink}
+          getEntryComponentLinkProps={getEntryComponentLinkProps}
           onClose={hideEntryInfo}
         />
       )}
@@ -240,8 +224,10 @@ export const BundleModules = ({
 BundleModules.defaultProps = {
   className: '',
   items: [],
+  allItems: [],
   jobs: [],
   totalRowCount: 0,
+  entryId: '',
   hasActiveFilters: false,
   customComponentLink: ComponentLink,
 };
@@ -252,6 +238,9 @@ BundleModules.propTypes = {
 
   /** Rows data */
   items: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+
+  /** All rows data */
+  allItems: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 
   /** Jobs data */
   jobs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
@@ -278,6 +267,7 @@ BundleModules.propTypes = {
   filters: PropTypes.shape({
     changed: PropTypes.bool,
   }).isRequired,
+  entryId: PropTypes.string,
 
   hasActiveFilters: PropTypes.bool,
 

@@ -1,3 +1,10 @@
 .chunksItems {
   display: inline;
 }
+
+.reasons {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  list-style-position: inside;
+}
