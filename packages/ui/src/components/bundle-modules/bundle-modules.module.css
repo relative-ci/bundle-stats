@@ -25,3 +25,7 @@
   display: inline;
   vertical-align: middle;
 }
+
+.nameHoverCard {
+  max-width: 480px;
+}
