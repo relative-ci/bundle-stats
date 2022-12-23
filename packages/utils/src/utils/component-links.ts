@@ -257,6 +257,22 @@ export const getBundleModulesBySearch = (search: string): ComponentLink => ({
   },
 });
 
+export const getBundleModulesEntry = (
+  entryId: string,
+  search = '',
+  filters: ComponentLinkFilters = {},
+): ComponentLink => ({
+  section: SECTIONS.MODULES,
+  title: I18N.COMPONENT_LINK_MODULE,
+  params: {
+    [COMPONENT.BUNDLE_MODULES]: {
+      search,
+      filters,
+      entryId,
+    },
+  },
+});
+
 export const getBundleModulesByChunk = (
   chunkIds: Array<string>,
   chunkId: string,
