@@ -106,6 +106,9 @@ exports[`Webpack/compare should compare all modules 1`] = `
         "displayDeltaPercentage": "+100%",
         "displayValue": "1000B",
         "name": "node_modules/package-a/node_modules/package-c/index.js",
+        "reasons": [
+          "node_modules/package-a/index.js",
+        ],
         "value": 1000,
       },
       null,

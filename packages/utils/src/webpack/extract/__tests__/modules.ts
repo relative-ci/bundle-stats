@@ -42,6 +42,8 @@ describe('Webpack/extract/modules', () => {
             name: 'node_modules/package-a/node_modules/package-c/index.js',
             value: 1000,
             chunkIds: ['1'],
+            duplicated: false,
+            reasons: ['node_modules/package-a/index.js'],
           },
           'node_modules/package-b/index.js': {
             name: 'node_modules/package-b/index.js',
