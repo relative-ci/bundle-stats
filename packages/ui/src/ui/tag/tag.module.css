@@ -29,11 +29,11 @@
 /** default: medium */
 .root {
   border-radius: var(--radius-medium);
-  padding: var(--space-xxxsmall);
+  padding: calc(var(--space-xxxsmall) / 2) var(--space-xxxsmall);
   min-width: var(--space-small);
   height: var(--space-small);
   font-size: 9px;
-  line-height: 1;
+  line-height: var(--space-xsmall);
 }
 
 .small {
