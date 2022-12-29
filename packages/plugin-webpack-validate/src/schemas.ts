@@ -23,7 +23,7 @@ export const WebpackSourceAssetHiddenStruct = type({
 });
 
 export const WebpackSourceModuleReasonStruct = type({
-  module: string(),
+  module: optional(nullable(string())),
 });
 
 export const WebpackSourceModuleStruct = type({
@@ -31,11 +31,13 @@ export const WebpackSourceModuleStruct = type({
   size: number(),
   chunks: array(nullable(union([number(), string()]))),
   modules: optional(
-    array(type({
-      name: string(),
-      size: number(),
-      reasons: optional(array(WebpackSourceModuleReasonStruct)),
-    })),
+    array(
+      type({
+        name: string(),
+        size: number(),
+        reasons: optional(array(WebpackSourceModuleReasonStruct)),
+      }),
+    ),
   ),
   reasons: optional(array(WebpackSourceModuleReasonStruct)),
 });
