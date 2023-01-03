@@ -1,11 +1,11 @@
 export type SourceData = Record<string, unknown>;
 
 export enum MetricTypeType {
-  'METRIC_TYPE_NUMERIC',
-  'METRIC_TYPE_SCORE',
-  'METRIC_TYPE_FILE_SIZE',
-  'METRIC_TYPE_DURATION',
-  'METRIC_TYPE_PERCENTAGE',
+  'METRIC_TYPE_NUMERIC' = 'METRIC_TYPE_NUMERIC',
+  'METRIC_TYPE_SCORE' = 'METRIC_TYPE_SCORE',
+  'METRIC_TYPE_FILE_SIZE' = 'METRIC_TYPE_FILE_SIZE',
+  'METRIC_TYPE_DURATION' = 'METRIC_TYPE_DURATION',
+  'METRIC_TYPE_PERCENTAGE' = 'METRIC_TYPE_PERCENTAGE',
 }
 
 export interface MetricTypeConfig {
@@ -20,13 +20,13 @@ export interface MetricType extends MetricTypeConfig {
 }
 
 export enum MetricRunInfoDeltaType {
-  'HIGH_NEGATIVE',
-  'NEGATIVE',
-  'LOW_NEGATIVE',
-  'NO_CHANGE',
-  'LOW_POSITIVE',
-  'POSITIVE',
-  'HIGH_POSITIVE',
+  'HIGH_NEGATIVE' = 'HIGH_NEGATIVE',
+  'NEGATIVE' = 'NEGATIVE',
+  'LOW_NEGATIVE' = 'LOW_NEGATIVE',
+  'NO_CHANGE' = 'NO_CHANGE',
+  'LOW_POSITIVE' = 'LOW_POSITIVE',
+  'POSITIVE' = 'POSITIVE',
+  'HIGH_POSITIVE' = 'HIGH_POSITIVE',
 }
 
 export interface MetricRun {
