@@ -1,9 +1,11 @@
+export type SourceData = Record<string, unknown>;
+
 export enum MetricTypeType {
-  'METRIC_TYPE_NUMERIC',
-  'METRIC_TYPE_SCORE',
-  'METRIC_TYPE_FILE_SIZE',
-  'METRIC_TYPE_DURATION',
-  'METRIC_TYPE_PERCENTAGE'
+  'METRIC_TYPE_NUMERIC' = 'METRIC_TYPE_NUMERIC',
+  'METRIC_TYPE_SCORE' = 'METRIC_TYPE_SCORE',
+  'METRIC_TYPE_FILE_SIZE' = 'METRIC_TYPE_FILE_SIZE',
+  'METRIC_TYPE_DURATION' = 'METRIC_TYPE_DURATION',
+  'METRIC_TYPE_PERCENTAGE' = 'METRIC_TYPE_PERCENTAGE',
 }
 
 export interface MetricTypeConfig {
@@ -18,13 +20,13 @@ export interface MetricType extends MetricTypeConfig {
 }
 
 export enum MetricRunInfoDeltaType {
-  'HIGH_NEGATIVE',
-  'NEGATIVE',
-  'LOW_NEGATIVE',
-  'NO_CHANGE',
-  'LOW_POSITIVE',
-  'POSITIVE',
-  'HIGH_POSITIVE',
+  'HIGH_NEGATIVE' = 'HIGH_NEGATIVE',
+  'NEGATIVE' = 'NEGATIVE',
+  'LOW_NEGATIVE' = 'LOW_NEGATIVE',
+  'NO_CHANGE' = 'NO_CHANGE',
+  'LOW_POSITIVE' = 'LOW_POSITIVE',
+  'POSITIVE' = 'POSITIVE',
+  'HIGH_POSITIVE' = 'HIGH_POSITIVE',
 }
 
 export interface MetricRun {
@@ -35,13 +37,34 @@ export interface MetricRunInfo {
   value: number;
   displayValue: string;
   delta?: number;
+  deltaPercentage?: number;
+  deltaType?: MetricRunInfoDeltaType;
   displayDelta?: string;
   displayDeltaPercentage?: string;
-  deltaType?: MetricRunInfoDeltaType;
 }
 
-export interface Metric {
-  value: number;
+export interface JobSummaryItem {
+  baseline: number;
+  current: number;
+}
+export type JobSummarySource = Record<string, JobSummaryItem>;
+export type JobSummary = Record<string, JobSummarySource>;
+
+export type JobMetricsSource = Record<string, MetricRun | Record<string, MetricRun>>;
+export type JobMetrics = Record<string, JobMetricsSource>;
+
+export interface JobData {
+  meta?: any;
+  insights?: any;
+  summary?: JobSummary;
+  metrics?: JobMetrics;
+  rawData?: any;
+}
+
+export interface Job extends JobData {
+  internalBuildNumber: number;
+  // @TODO(v5): Remove or move to report
+  label: string;
 }
 
 export interface LighthouseSource {

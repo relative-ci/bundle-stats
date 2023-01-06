@@ -150,7 +150,7 @@ export default async function run(options: RunOptions): Promise<void> {
     },
   ]);
 
-  let result = null;
+  let result = {} as { output: any; report: any };
 
   try {
     result = await tasks.run();
@@ -172,5 +172,5 @@ export default async function run(options: RunOptions): Promise<void> {
   }
 
   console.log('\nArtifacts:');
-  output.map((reportPath: any) => console.log(`- ${reportPath}`));
+  output?.map((reportPath: any) => console.log(`- ${reportPath}`));
 }
