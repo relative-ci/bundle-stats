@@ -31,7 +31,7 @@ export const getCustomSort = (sortId) => (item) => {
   }
 
   if (sortId === SORT_BY_DELTA) {
-    return item?.runs?.[0]?.deltaPercentage || 0;
+    return item?.runs?.[0]?.delta || 0;
   }
 
   if (sortId === SORT_BY_SIZE) {
