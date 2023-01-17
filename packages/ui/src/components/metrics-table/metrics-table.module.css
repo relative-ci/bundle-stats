@@ -67,6 +67,23 @@
   text-align: center;
 }
 
+.root .showAllItems {
+  background: none !important;
+  text-align: center;
+}
+
+/** show all */
+.showAllItemsButton {
+  appearance: none;
+  background: none;
+  margin: 0;
+  border: 0;
+  padding: var(--space-xxxsmall);
+  color: var(--color-primary);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 /** Breakpoints */
 .root tr {
   display: flex;

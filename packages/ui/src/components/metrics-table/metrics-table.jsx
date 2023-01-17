@@ -12,6 +12,7 @@ import { JobName } from '../job-name';
 import styles from './metrics-table.module.css';
 
 const METRIC_TYPE_DATA = getGlobalMetricType(null, METRIC_TYPE_FILE_SIZE);
+const VISIBLE_COUNT = 100;
 
 const getRowsRunTotal = (rows, runIndex) => sum(rows.map((row) => row?.runs?.[runIndex]?.value || 0));
 
@@ -164,6 +165,8 @@ export const MetricsTable = ({
   showHeaderSum,
   headerRows,
   title,
+  showAllItems,
+  setShowAllItems,
   ...restProps
 }) => {
   const { headers, columnClassNames } = useMemo(() => {
@@ -183,6 +186,11 @@ export const MetricsTable = ({
     showHeaderSum && styles.showHeaderSum,
   );
 
+  const showEmpty = isEmpty(items);
+  const showItems = !showEmpty;
+  const hasHiddenItems = items?.length > VISIBLE_COUNT;
+  const visibleItems = !hasHiddenItems || showAllItems ? items : items?.slice(0, VISIBLE_COUNT);
+
   return (
     <Table className={rootClassName} compact {...restProps}>
       <Table.THead>
@@ -201,16 +209,45 @@ export const MetricsTable = ({
         })}
       </Table.THead>
       <Table.TBody>
-        {!isEmpty(items) ? (
-          items.map((item) => (
-            <MetricsTableRow key={item.key} item={item} renderRowHeader={renderRowHeader} />
-          ))
-        ) : (
+        {showEmpty && (
           <Table.Tr>
             <Table.Td className={styles.empty} colSpan={columnClassNames?.length || 1}>
               {emptyMessage}
             </Table.Td>
           </Table.Tr>
+        )}
+
+        {showItems && (
+          <>
+            {visibleItems.map((item) => (
+              <MetricsTableRow key={item.key} item={item} renderRowHeader={renderRowHeader} />
+            ))}
+
+            {hasHiddenItems && (
+              <Table.Tr>
+                <Table.Td className={styles.showAllItems} colSpan={columnClassNames?.length || 1}>
+                  {showAllItems ? (
+                      <button
+                        onClick={() => setShowAllItems(false)}
+                        type="button"
+                        className={styles.showAllItemsButton}
+                      >
+                        Show less
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => setShowAllItems(true)}
+                        type="button"
+                        className={styles.showAllItemsButton}
+                      >
+                        Show all
+                      </button>
+                    )
+                  }
+                </Table.Td>
+              </Table.Tr>
+            )}
+          </>
         )}
       </Table.TBody>
     </Table>
