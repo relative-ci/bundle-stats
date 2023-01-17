@@ -24,8 +24,21 @@ import { SORT_BY } from './bundle-modules.constants';
 export const BundleModules = (props) => {
   const { jobs, filters, search, setState, sortBy, direction, ...restProps } = props;
 
-  const chunks = uniqBy(jobs.map((job) => job?.meta?.webpack?.chunks || []).flat(), ({ id }) => id);
-  const chunkIds = chunks?.map(({ id }) => id);
+  const { chunks, chunkIds } = useMemo(
+    () => {
+      const bundleChunks = uniqBy(
+        jobs.map((job) => job?.meta?.webpack?.chunks || []).flat(),
+        ({ id }) => id
+      );
+      const bundleChunkIds = bundleChunks?.map(({ id }) => id);
+
+      return {
+        chunks: bundleChunks,
+        chunkIds: bundleChunkIds,
+      };
+    },
+    [jobs],
+  );
 
   const { defaultFilters, allEntriesFilters } = useMemo(
     () => ({
