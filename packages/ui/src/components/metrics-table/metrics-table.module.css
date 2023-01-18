@@ -15,6 +15,10 @@
   width: 100%;
 }
 
+.tableHeaderRunMetric {
+  text-transform: none;
+}
+
 .root .value {
   padding-left: var(--space-large);
   text-align: right;
@@ -65,6 +69,29 @@
   padding-top: var(--space-xxxlarge);
   padding-bottom: var(--space-xxxlarge);
   text-align: center;
+}
+
+.root .showAllItems {
+  background: none !important;
+  text-align: center;
+}
+
+/** show all */
+.showAllItemsButton {
+  appearance: none;
+  background: none;
+  margin: 0;
+  border: 0;
+  padding: var(--space-xxxsmall);
+  color: var(--color-primary);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.showAllItemsButton:hover,
+.showAllItemsButton:focus,
+.showAllItemsButton:active {
+  color: var(--color-primary-dark);
 }
 
 /** Breakpoints */

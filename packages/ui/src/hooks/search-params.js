@@ -1,4 +1,4 @@
-import { useCallback, useLayoutEffect, useReducer } from 'react';
+import { useCallback, useLayoutEffect, useMemo, useReducer } from 'react';
 import isEqual from 'lodash/isEqual';
 import merge from 'lodash/merge';
 
@@ -150,14 +150,26 @@ export const useSearchParams = ({
     dispatch({ type: ACTION_RESET_ALL });
   }, [dispatch]);
 
-  return {
-    search,
-    searchPattern,
-    filters,
-    hasActiveFilters: !isEqual(allEntriesFilters, filters),
-    updateSearch: handleUpdateSearch,
-    updateFilters: handleUpdateFilters,
-    resetFilters: handleResetFilters,
-    resetAllFilters: handleResetAllFilters,
-  };
+  return useMemo(
+    () => ({
+      search,
+      searchPattern,
+      filters,
+      hasActiveFilters: !isEqual(allEntriesFilters, filters),
+      updateSearch: handleUpdateSearch,
+      updateFilters: handleUpdateFilters,
+      resetFilters: handleResetFilters,
+      resetAllFilters: handleResetAllFilters,
+    }),
+    [
+      search,
+      searchPattern,
+      filters,
+      allEntriesFilters,
+      handleUpdateSearch,
+      handleUpdateFilters,
+      handleResetFilters,
+      handleResetAllFilters,
+    ],
+  );
 };
