@@ -6,6 +6,11 @@
   white-space: nowrap;
 }
 
+.titleIcon {
+  margin-top: -4px !important;
+  margin-bottom: -4px !important;
+}
+
 .currentMetric {
   color: var(--color-heading);
   font-size: var(--size-large);
