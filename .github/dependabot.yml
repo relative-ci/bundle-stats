@@ -12,4 +12,4 @@ updates:
       interval: "daily"
       time: "02:00"
     target-branch: "update-dependencies"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 20
