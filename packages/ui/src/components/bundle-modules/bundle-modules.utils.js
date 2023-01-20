@@ -35,7 +35,7 @@ export const getCustomSort = (sortBy) => (item) => {
   }
 
   if (sortBy === SORT_BY_DELTA) {
-    return item?.runs?.[0]?.delta || 0;
+    return item?.runs?.[0]?.delta ? Math.abs(item.runs[0].delta) : 0;
   }
 
   return [!item.changed, item.key];
