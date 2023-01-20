@@ -12,7 +12,7 @@ import { JobName } from '../job-name';
 import styles from './metrics-table.module.css';
 
 const METRIC_TYPE_DATA = getGlobalMetricType(null, METRIC_TYPE_FILE_SIZE);
-const VISIBLE_COUNT = 100;
+const VISIBLE_COUNT = 500;
 
 const getRowsRunTotal = (rows, runIndex) => sum(rows.map((row) => row?.runs?.[runIndex]?.value || 0));
 
