@@ -13,7 +13,7 @@ export function getBaselineStatsFilepath(from?: string): string {
   return path.join(path.relative(from, BASELINE_STATS_DIR), BASELINE_STATS_BASE);
 }
 
-export async function readBaseline(from?: string): Promise<string> {
+export async function readBaseline(from?: string): Promise<object> {
   return readJSON(getBaselineStatsFilepath(from));
 }
 
