@@ -43,12 +43,64 @@ export interface MetricRunInfo {
   displayDeltaPercentage?: string;
 }
 
+export type ConditionOperator = 'smallerThan' | 'smallerThanInclusive' | 'equal' | 'notEqual' | 'greaterThan' | 'greaterThanInclusive';
+
+export interface Condition {
+  fact: string;
+  operator: ConditionOperator;
+  value: number;
+}
+
+export enum BudgetStatus {
+  FAILURE = 'FAILURE',
+  WARNING = 'WARNING',
+  SUCCESS = 'SUCCESS',
+}
+
+export interface BudgetConfig {
+  /**
+   * The condition config
+   */
+  condition: Condition;
+  /**
+   * User status when the condition is matched
+   */
+  status: BudgetStatus;
+  /**
+   * User message to display when the condition is matched
+   */
+  message?: string;
+}
+
+export interface BudgetSkipped {
+  config: BudgetConfig;
+}
+
+export interface BudgetEvaluated {
+  config: BudgetConfig;
+  /**
+   * The metric value that is checked
+   */
+  value: number;
+  /**
+   * Metric run info data
+   */
+  data: MetricRunInfo;
+  /**
+   * Budget matched flag
+   */
+  matched: boolean;
+}
+
+export type BudgetResult = BudgetSkipped | BudgetEvaluated;
+
 export interface JobSummaryItem {
   baseline: number;
   current: number;
 }
 export type JobSummarySource = Record<string, JobSummaryItem>;
 export type JobSummary = Record<string, JobSummarySource>;
+export type JobBudgets = Record<string, Array<BudgetResult>>;
 
 export type JobMetricsSource = Record<string, MetricRun | Record<string, MetricRun>>;
 export type JobMetrics = Record<string, JobMetricsSource>;
@@ -57,6 +109,7 @@ export interface JobData {
   meta?: any;
   insights?: any;
   summary?: JobSummary;
+  budgets?: JobBudgets;
   metrics?: JobMetrics;
   rawData?: any;
 }
@@ -65,14 +118,6 @@ export interface Job extends JobData {
   internalBuildNumber: number;
   // @TODO(v5): Remove or move to report
   label: string;
-}
-
-export type ConditionOperator = 'smallerThan' | 'smallerThanInclusive' | 'equal' | 'notEqual' | 'greaterThan' | 'greaterThanInclusive';
-
-export interface Condition {
-  fact: string;
-  operator: ConditionOperator;
-  value: number;
 }
 
 export interface LighthouseSource {

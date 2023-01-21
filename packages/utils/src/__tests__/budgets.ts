@@ -1,3 +1,5 @@
+import { BudgetStatus } from '../constants';
+
 import * as budgets from '../budgets';
 
 describe('Budgets', () => {
@@ -6,22 +8,22 @@ describe('Budgets', () => {
       budgets.evaluate(
         {
           condition: {
-            fact: 'webpack.fileSizeByTypeALL.delta',
+            fact: 'webpack.totalSizeByTypeALL.delta',
             operator: 'greaterThan',
             value: 0,
           },
-          status: budgets.BudgetStatus.FAILURE,
+          status: BudgetStatus.FAILURE,
         },
         {},
       ),
     ).toEqual({
       config: {
         condition: {
-          fact: 'webpack.fileSizeByTypeALL.delta',
+          fact: 'webpack.totalSizeByTypeALL.delta',
           operator: 'greaterThan',
           value: 0,
         },
-        status: budgets.BudgetStatus.FAILURE,
+        status: BudgetStatus.FAILURE,
       },
     });
   });
@@ -31,15 +33,15 @@ describe('Budgets', () => {
       budgets.evaluate(
         {
           condition: {
-            fact: 'webpack.fileSizeByTypeALL.delta',
+            fact: 'webpack.totalSizeByTypeALL.delta',
             operator: 'greaterThan',
             value: 0,
           },
-          status: budgets.BudgetStatus.FAILURE,
+          status: BudgetStatus.FAILURE,
         },
         {
           webpack: {
-            fileSizeByTypeALL: {
+            totalSizeByTypeALL: {
               delta: 0,
             },
           },
@@ -48,11 +50,11 @@ describe('Budgets', () => {
     ).toEqual({
       config: {
         condition: {
-          fact: 'webpack.fileSizeByTypeALL.delta',
+          fact: 'webpack.totalSizeByTypeALL.delta',
           operator: 'greaterThan',
           value: 0,
         },
-        status: budgets.BudgetStatus.FAILURE,
+        status: BudgetStatus.FAILURE,
       },
       value: 0,
       data: {
@@ -67,15 +69,15 @@ describe('Budgets', () => {
       budgets.evaluate(
         {
           condition: {
-            fact: 'webpack.fileSizeByTypeALL.delta',
+            fact: 'webpack.totalSizeByTypeALL.delta',
             operator: 'greaterThan',
             value: 0,
           },
-          status: budgets.BudgetStatus.FAILURE,
+          status: BudgetStatus.FAILURE,
         },
         {
           webpack: {
-            fileSizeByTypeALL: {
+            totalSizeByTypeALL: {
               delta: 1,
             },
           },
@@ -84,11 +86,11 @@ describe('Budgets', () => {
     ).toEqual({
       config: {
         condition: {
-          fact: 'webpack.fileSizeByTypeALL.delta',
+          fact: 'webpack.totalSizeByTypeALL.delta',
           operator: 'greaterThan',
           value: 0,
         },
-        status: budgets.BudgetStatus.FAILURE,
+        status: BudgetStatus.FAILURE,
       },
       value: 1,
       data: {

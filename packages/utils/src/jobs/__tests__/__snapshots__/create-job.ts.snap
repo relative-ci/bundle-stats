@@ -2,6 +2,9 @@
 
 exports[`createJob no baseline 1`] = `
 {
+  "budgets": {
+    "webpack": undefined,
+  },
   "insights": {
     "webpack": {
       "assetsSizeTotal": {
@@ -345,8 +348,381 @@ exports[`createJob no baseline 1`] = `
 }
 `;
 
+exports[`createJob should evaluate budgets 1`] = `
+{
+  "budgets": {
+    "webpack": [
+      {
+        "config": {
+          "condition": {
+            "fact": "webpack.totalSizeByTypeALL.value",
+            "operator": "greaterThan",
+            "value": 50000,
+          },
+          "status": "FAILURE",
+        },
+        "data": {
+          "delta": 0,
+          "deltaPercentage": 0,
+          "deltaType": "NO_CHANGE",
+          "displayDelta": "0B",
+          "displayDeltaPercentage": "0%",
+          "displayValue": "61.52KiB",
+          "value": 63000,
+        },
+        "matched": true,
+        "value": 63000,
+      },
+    ],
+  },
+  "insights": {
+    "webpack": {
+      "assetsSizeTotal": {
+        "data": {
+          "info": {
+            "delta": 0,
+            "deltaPercentage": 0,
+            "deltaType": "NO_CHANGE",
+            "displayDelta": "0B",
+            "displayDeltaPercentage": "0%",
+            "displayValue": "61.52KiB",
+            "value": 63000,
+          },
+          "md": "*Bundle Size* — *61.52KiB* (*0%*).",
+          "text": "Bundle Size — 61.52KiB (0%).",
+        },
+        "type": "INFO",
+      },
+      "duplicatePackages": {
+        "data": {
+          "package-c": [
+            "package-a:package-c",
+            "package-c",
+          ],
+        },
+        "type": "WARNING",
+      },
+    },
+  },
+  "meta": {
+    "webpack": {
+      "builtAt": "2019-01-01T00:00:00.000Z",
+      "chunks": [
+        {
+          "id": "1",
+          "name": "main",
+        },
+      ],
+      "hash": "abcd1234",
+    },
+  },
+  "metrics": {
+    "webpack": {
+      "assetCount": {
+        "value": 4,
+      },
+      "assets": {
+        "index.html": {
+          "isChunk": false,
+          "isEntry": false,
+          "isInitial": false,
+          "name": "index.html",
+          "value": 2000,
+        },
+        "logo.png": {
+          "isChunk": false,
+          "isEntry": false,
+          "isInitial": false,
+          "name": "logo.a3b4c5d.png",
+          "value": 1000,
+        },
+        "main.css": {
+          "chunkId": "1",
+          "isChunk": true,
+          "isEntry": true,
+          "isInitial": true,
+          "name": "main.a1b2c3d.css",
+          "value": 10000,
+        },
+        "main.js": {
+          "chunkId": "1",
+          "isChunk": true,
+          "isEntry": true,
+          "isInitial": true,
+          "name": "main.a2b3c4d.js",
+          "value": 50000,
+        },
+      },
+      "cacheInvalidation": {
+        "value": 95.24,
+      },
+      "chunkCount": {
+        "value": 2,
+      },
+      "duplicateCode": {
+        "value": 0,
+      },
+      "duplicateModulesCount": {
+        "value": 0,
+      },
+      "duplicatePackagesCount": {
+        "value": 1,
+      },
+      "moduleCount": {
+        "value": 6,
+      },
+      "modules": {
+        "module-a": {
+          "chunkIds": [
+            "1",
+          ],
+          "duplicated": false,
+          "name": "module-a",
+          "value": 1000,
+        },
+        "module-b": {
+          "chunkIds": [
+            "1",
+          ],
+          "duplicated": false,
+          "name": "module-b",
+          "value": 2000,
+        },
+        "node_modules/package-a/index.js": {
+          "chunkIds": [
+            "1",
+          ],
+          "duplicated": false,
+          "name": "node_modules/package-a/index.js",
+          "value": 1000,
+        },
+        "node_modules/package-a/node_modules/package-c/index.js": {
+          "chunkIds": [
+            "1",
+          ],
+          "duplicated": false,
+          "name": "node_modules/package-a/node_modules/package-c/index.js",
+          "value": 1000,
+        },
+        "node_modules/package-b/index.js": {
+          "chunkIds": [
+            "1",
+          ],
+          "duplicated": false,
+          "name": "node_modules/package-b/index.js",
+          "value": 1000,
+        },
+        "node_modules/package-c/index.js": {
+          "chunkIds": [
+            "1",
+          ],
+          "duplicated": false,
+          "name": "node_modules/package-c/index.js",
+          "value": 1000,
+        },
+      },
+      "packageCount": {
+        "value": 4,
+      },
+      "packages": {
+        "package-a": {
+          "name": "package-a",
+          "path": "node_modules/package-a",
+          "value": 1000,
+        },
+        "package-a:package-c": {
+          "name": "package-c",
+          "path": "node_modules/package-a/node_modules/package-c",
+          "value": 1000,
+        },
+        "package-b": {
+          "name": "package-b",
+          "path": "node_modules/package-b",
+          "value": 1000,
+        },
+        "package-c": {
+          "name": "package-c",
+          "path": "node_modules/package-c",
+          "value": 1000,
+        },
+      },
+      "sizes": {
+        "totalSizeByTypeCSS": {
+          "value": 10000,
+        },
+        "totalSizeByTypeFONT": {
+          "value": 0,
+        },
+        "totalSizeByTypeHTML": {
+          "value": 2000,
+        },
+        "totalSizeByTypeIMG": {
+          "value": 1000,
+        },
+        "totalSizeByTypeJS": {
+          "value": 50000,
+        },
+        "totalSizeByTypeMEDIA": {
+          "value": 0,
+        },
+        "totalSizeByTypeOTHER": {
+          "value": 0,
+        },
+      },
+      "totalInitialSizeCSS": {
+        "value": 10000,
+      },
+      "totalInitialSizeJS": {
+        "value": 50000,
+      },
+      "totalSizeByTypeALL": {
+        "value": 63000,
+      },
+    },
+  },
+  "rawData": {
+    "webpack": {
+      "assets": [
+        {
+          "name": "main.a1b2c3d.css",
+          "size": 10000,
+        },
+        {
+          "name": "main.a2b3c4d.js",
+          "size": 50000,
+        },
+        {
+          "name": "logo.a3b4c5d.png",
+          "size": 1000,
+        },
+        {
+          "name": "index.html",
+          "size": 2000,
+        },
+      ],
+      "builtAt": 1546300800000,
+      "chunks": [
+        {
+          "entry": true,
+          "files": [
+            "main.a1b2c3d.css",
+            "main.a2b3c4d.js",
+          ],
+          "id": 1,
+          "initial": true,
+          "names": [
+            "main",
+          ],
+        },
+      ],
+      "hash": "abcd1234",
+      "modules": [
+        {
+          "chunks": [
+            1,
+          ],
+          "name": "module-a",
+          "size": 1000,
+        },
+        {
+          "chunks": [
+            1,
+          ],
+          "name": "module-b",
+          "size": 2000,
+        },
+        {
+          "chunks": [],
+          "name": "module-c",
+          "size": 1000,
+        },
+        {
+          "chunks": [
+            1,
+          ],
+          "name": "node_modules/package-a/index.js",
+          "size": 1000,
+        },
+        {
+          "chunks": [
+            1,
+          ],
+          "name": "node_modules/package-a/node_modules/package-c/index.js",
+          "size": 1000,
+        },
+        {
+          "chunks": [
+            1,
+          ],
+          "name": "node_modules/package-b/index.js",
+          "size": 1000,
+        },
+        {
+          "chunks": [
+            1,
+          ],
+          "name": "node_modules/package-c/index.js",
+          "size": 1000,
+        },
+      ],
+    },
+  },
+  "summary": {
+    "webpack": {
+      "assetCount": {
+        "baseline": 4,
+        "current": 4,
+      },
+      "cacheInvalidation": {
+        "baseline": 0,
+        "current": 95.24,
+      },
+      "chunkCount": {
+        "baseline": 2,
+        "current": 2,
+      },
+      "duplicateCode": {
+        "baseline": 0,
+        "current": 0,
+      },
+      "duplicateModulesCount": {
+        "baseline": 0,
+        "current": 0,
+      },
+      "duplicatePackagesCount": {
+        "baseline": 0,
+        "current": 1,
+      },
+      "moduleCount": {
+        "baseline": 5,
+        "current": 6,
+      },
+      "packageCount": {
+        "baseline": 3,
+        "current": 4,
+      },
+      "totalInitialSizeCSS": {
+        "baseline": 11000,
+        "current": 10000,
+      },
+      "totalInitialSizeJS": {
+        "baseline": 49000,
+        "current": 50000,
+      },
+      "totalSizeByTypeALL": {
+        "baseline": 63000,
+        "current": 63000,
+      },
+    },
+  },
+}
+`;
+
 exports[`createJob with baseline 1`] = `
 {
+  "budgets": {
+    "webpack": undefined,
+  },
   "insights": {
     "webpack": {
       "assetsSizeTotal": {

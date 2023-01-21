@@ -5,7 +5,9 @@ import { createSummary } from './create-summary';
 import * as webpack from '../webpack';
 import * as lighthouse from '../lighthouse';
 import * as browsertime from '../browsertime';
-import { JobData, JobMetricsSource, SourceData } from '../constants';
+import { BudgetConfig, JobData, JobMetricsSource, MetricRunInfo, SourceData } from '../constants';
+import { getGlobalMetricType, getMetricRunInfo } from '../utils';
+import { evaluate } from '../budgets';
 
 interface SourceResult {
   meta: {};
@@ -15,12 +17,16 @@ interface SourceResult {
 
 interface SourceModule {
   SUMMARY_METRIC_PATHS: Array<string>;
-  extract: (rawData: any, balien: any) => any;
+  extract: (rawData: any, baseline: any) => any;
 }
 
 const SOURCE_MODULES: Record<string, SourceModule> = { webpack, lighthouse, browsertime };
 
-export const createJob = (source: SourceData, baseline?: JobData): JobData =>
+export const createJob = (
+  source: SourceData,
+  baseline?: JobData,
+  budgetConfigs?: Array<BudgetConfig>,
+): JobData =>
   SOURCE_PATHS.reduce((agg, sourcePath) => {
     const rawData = source[sourcePath];
 
@@ -42,6 +48,19 @@ export const createJob = (source: SourceData, baseline?: JobData): JobData =>
       extractedData?.metrics,
     );
 
+    // Summary data payload
+    const summaryData: Record<string, Record<string, MetricRunInfo>> = {
+      [sourcePath]: {},
+    };
+
+    Object.entries(summary).forEach(([id, summaryItem]) => {
+      const metric = getGlobalMetricType(`${sourcePath}.${id}`);
+      const runInfo = getMetricRunInfo(metric, summaryItem.current, summaryItem.baseline);
+      summaryData[sourcePath][id] = runInfo;
+    });
+
+    const budgets = budgetConfigs?.map((budgetConfig) => evaluate(budgetConfig, summaryData));
+
     return merge({}, agg, {
       meta: {
         [sourcePath]: extractedData.meta,
@@ -51,6 +70,9 @@ export const createJob = (source: SourceData, baseline?: JobData): JobData =>
       },
       summary: {
         [sourcePath]: summary,
+      },
+      budgets: {
+        [sourcePath]: budgets,
       },
       metrics: {
         [sourcePath]: extractedData.metrics,
