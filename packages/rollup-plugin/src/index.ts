@@ -16,7 +16,7 @@ export const bundleState = (options: BundleStatsOptions = {}): Plugin => ({
       this.emitFile({
         type: 'asset',
         fileName,
-        source: JSON.stringify(output),
+        source: output,
       });
     });
   },
