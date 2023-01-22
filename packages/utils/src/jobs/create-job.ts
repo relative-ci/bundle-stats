@@ -1,4 +1,3 @@
-import { SOURCE_PATHS } from '../config';
 import { createSummary } from './create-summary';
 import * as webpack from '../webpack';
 import * as lighthouse from '../lighthouse';
@@ -27,7 +26,7 @@ export const createJob = (
 ): JobData => {
   const job: JobData = {};
 
-  SOURCE_PATHS.forEach((sourcePath) => {
+  Object.values(Source).forEach((sourcePath) => {
     const rawData = source[sourcePath];
 
     if (!rawData) {
@@ -45,7 +44,7 @@ export const createJob = (
 
     const summary = createSummary(
       SOURCE_MODULES[sourcePath].SUMMARY_METRIC_PATHS,
-      baseline?.metrics?.[sourcePath as Source],
+      baseline?.metrics?.[sourcePath],
       extractedData?.metrics,
     );
 
@@ -72,17 +71,18 @@ export const createJob = (
       [JobSectionId.rawData]: rawData,
     };
 
-    Object.entries(dataMap).forEach(([dataId, data]: [JobSectionId, unknown]) => {
+    Object.entries(dataMap).forEach(([key, data]) => {
       if (!data) {
         return;
       }
 
+      const dataId = key as JobSectionId;
+
       if (!job[dataId]) {
-        job[dataId] = {};
+        job[dataId] = {} as any;
       }
 
-      job[dataId][sourcePath] = data;
-
+      (job[dataId] as JobSection)[sourcePath] = data;
     });
   });
 
