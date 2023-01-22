@@ -1,5 +1,3 @@
-import merge from 'lodash/merge';
-
 import { SOURCE_PATHS } from '../config';
 import { createSummary } from './create-summary';
 import * as webpack from '../webpack';
@@ -26,20 +24,23 @@ export const createJob = (
   source: SourceData,
   baseline?: JobData,
   budgetConfigs?: Array<BudgetConfig>,
-): JobData =>
-  SOURCE_PATHS.reduce((agg, sourcePath) => {
+): JobData => {
+  const job: JobData = {};
+
+  SOURCE_PATHS.forEach((sourcePath) => {
     const rawData = source[sourcePath];
 
     if (!rawData) {
-      return agg;
+      return;
     }
 
     const sourceModule = SOURCE_MODULES[sourcePath];
 
     if (!sourceModule) {
-      return agg;
+      return;
     }
 
+    // 1. Get data
     const extractedData: SourceResult = sourceModule.extract(rawData, baseline);
 
     const summary = createSummary(
@@ -48,7 +49,7 @@ export const createJob = (
       extractedData?.metrics,
     );
 
-    // Summary data payload
+    // 2. Evaluate budgets
     const summaryData: Record<string, Record<string, MetricRunInfo>> = {
       [sourcePath]: {},
     };
@@ -61,24 +62,45 @@ export const createJob = (
 
     const budgets = budgetConfigs?.map((budgetConfig) => evaluate(budgetConfig, summaryData));
 
-    return merge({}, agg, {
-      meta: {
-        [sourcePath]: extractedData.meta,
-      },
-      insights: {
-        [sourcePath]: extractedData.insights,
-      },
-      summary: {
-        [sourcePath]: summary,
-      },
-      budgets: {
-        [sourcePath]: budgets,
-      },
-      metrics: {
-        [sourcePath]: extractedData.metrics,
-      },
-      rawData: {
-        [sourcePath]: rawData,
-      },
-    });
-  }, {});
+    // 3. Add data to job object
+    if (job.meta) {
+      job.meta[sourcePath] = extractedData.meta;
+    } else {
+      job.meta = { [sourcePath]: extractedData.meta };
+    }
+
+    if (job.insights) {
+      job.insights[sourcePath] = extractedData.insights;
+    } else {
+      job.insights = { [sourcePath]: extractedData.insights };
+    }
+
+    if (job.summary) {
+      job.summary[sourcePath] = summary;
+    } else {
+      job.summary = { [sourcePath]: summary };
+    }
+
+    if (budgets) {
+      if (job.budgets) {
+        job.budgets[sourcePath] = budgets;
+      } else {
+        job.budgets = { [sourcePath]: budgets };
+      }
+    }
+
+    if (job.metrics) {
+      job.metrics[sourcePath] = extractedData.metrics;
+    } else {
+      job.metrics = { [sourcePath]: extractedData.metrics };
+    }
+
+    if (job.rawData) {
+      job.rawData[sourcePath] = rawData;
+    } else {
+      job.rawData = { [sourcePath]: rawData };
+    }
+  });
+
+  return job;
+};

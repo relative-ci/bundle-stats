@@ -2,9 +2,6 @@
 
 exports[`createJob no baseline 1`] = `
 {
-  "budgets": {
-    "webpack": undefined,
-  },
   "insights": {
     "webpack": {
       "assetsSizeTotal": {
@@ -720,9 +717,6 @@ exports[`createJob should evaluate budgets 1`] = `
 
 exports[`createJob with baseline 1`] = `
 {
-  "budgets": {
-    "webpack": undefined,
-  },
   "insights": {
     "webpack": {
       "assetsSizeTotal": {
