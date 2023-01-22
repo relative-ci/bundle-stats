@@ -1,3 +1,9 @@
+export enum Source {
+  webpack = 'webpack',
+  lighthouse = 'lighthouse',
+  browsertime = 'browsertime',
+}
+
 export type SourceData = Record<string, unknown>;
 
 export enum MetricTypeType {
@@ -94,24 +100,34 @@ export interface BudgetEvaluated {
 
 export type BudgetResult = BudgetSkipped | BudgetEvaluated;
 
+export type JobSection<T = object> = Record<Source, T>;
+
 export interface JobSummaryItem {
   baseline: number;
   current: number;
 }
 export type JobSummarySource = Record<string, JobSummaryItem>;
-export type JobSummary = Record<string, JobSummarySource>;
-export type JobBudgets = Record<string, Array<BudgetResult>>;
-
+export type JobSummary = JobSection<JobSummarySource>;
+export type JobBudgets = JobSection<Array<BudgetResult>>;
 export type JobMetricsSource = Record<string, MetricRun | Record<string, MetricRun>>;
-export type JobMetrics = Record<string, JobMetricsSource>;
+export type JobMetrics = JobSection<JobMetricsSource>;
+
+export enum JobSectionId {
+  meta = 'meta',
+  insights = 'insights',
+  summary = 'summary',
+  budgets = 'budgets',
+  metrics = 'metrics',
+  rawData = 'rawData',
+}
 
 export interface JobData {
-  meta?: any;
-  insights?: any;
-  summary?: JobSummary;
-  budgets?: JobBudgets;
-  metrics?: JobMetrics;
-  rawData?: any;
+  [JobSectionId.meta]?: JobSection;
+  [JobSectionId.insights]?: JobSection;
+  [JobSectionId.summary]?: JobSummary;
+  [JobSectionId.budgets]?: JobBudgets;
+  [JobSectionId.metrics]?: JobMetrics;
+  [JobSectionId.rawData]?: JobSection;
 }
 
 export interface Job extends JobData {

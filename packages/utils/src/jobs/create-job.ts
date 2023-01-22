@@ -3,7 +3,7 @@ import { createSummary } from './create-summary';
 import * as webpack from '../webpack';
 import * as lighthouse from '../lighthouse';
 import * as browsertime from '../browsertime';
-import { BudgetConfig, JobData, JobMetricsSource, MetricRunInfo, SourceData } from '../constants';
+import { BudgetConfig, JobData, JobMetricsSource, JobSection, JobSectionId, MetricRunInfo, Source, SourceData } from '../constants';
 import { getGlobalMetricType, getMetricRunInfo } from '../utils';
 import { evaluate } from '../budgets';
 
@@ -45,7 +45,7 @@ export const createJob = (
 
     const summary = createSummary(
       SOURCE_MODULES[sourcePath].SUMMARY_METRIC_PATHS,
-      baseline?.metrics?.[sourcePath],
+      baseline?.metrics?.[sourcePath as Source],
       extractedData?.metrics,
     );
 
@@ -63,43 +63,27 @@ export const createJob = (
     const budgets = budgetConfigs?.map((budgetConfig) => evaluate(budgetConfig, summaryData));
 
     // 3. Add data to job object
-    if (job.meta) {
-      job.meta[sourcePath] = extractedData.meta;
-    } else {
-      job.meta = { [sourcePath]: extractedData.meta };
-    }
+    const dataMap = {
+      [JobSectionId.meta]: extractedData.meta,
+      [JobSectionId.insights]: extractedData.insights,
+      [JobSectionId.summary]: summary,
+      [JobSectionId.budgets]: budgets,
+      [JobSectionId.metrics]: extractedData.metrics,
+      [JobSectionId.rawData]: rawData,
+    };
 
-    if (job.insights) {
-      job.insights[sourcePath] = extractedData.insights;
-    } else {
-      job.insights = { [sourcePath]: extractedData.insights };
-    }
-
-    if (job.summary) {
-      job.summary[sourcePath] = summary;
-    } else {
-      job.summary = { [sourcePath]: summary };
-    }
-
-    if (budgets) {
-      if (job.budgets) {
-        job.budgets[sourcePath] = budgets;
-      } else {
-        job.budgets = { [sourcePath]: budgets };
+    Object.entries(dataMap).forEach(([dataId, data]: [JobSectionId, unknown]) => {
+      if (!data) {
+        return;
       }
-    }
 
-    if (job.metrics) {
-      job.metrics[sourcePath] = extractedData.metrics;
-    } else {
-      job.metrics = { [sourcePath]: extractedData.metrics };
-    }
+      if (!job[dataId]) {
+        job[dataId] = {};
+      }
 
-    if (job.rawData) {
-      job.rawData[sourcePath] = rawData;
-    } else {
-      job.rawData = { [sourcePath]: rawData };
-    }
+      job[dataId][sourcePath] = data;
+
+    });
   });
 
   return job;
