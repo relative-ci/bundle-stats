@@ -6,7 +6,6 @@
     "bundle-stats": "bin/index.js"
   },
   "main": "lib/index.js",
-  "module": "lib-esm/index.js",
   "types": "types/index.d.ts",
   "directories": {
     "lib": "lib"
@@ -15,9 +14,7 @@
     "node": ">= 14.0"
   },
   "scripts": {
-    "build": "npm run build-lib && npm run build-esm",
-    "build-lib": "rm -fr ./lib && ../../node_modules/.bin/tsc --rootDir ./src --project tsconfig.lib.json --outDir ./lib",
-    "build-esm": "rm -fr ./lib-esm && rm -fr ./types && ../../node_modules/.bin/tsc --rootDir ./src --project tsconfig.esm.json --outDir ./lib-esm",
+    "build": "rm -fr ./lib && ../../node_modules/.bin/tsc --rootDir ./src --project tsconfig.lib.json --outDir ./lib",
     "lint": "../../node_modules/.bin/eslint . --ext .js",
     "test": "jest --passWithNoTests"
   },
