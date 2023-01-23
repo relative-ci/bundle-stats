@@ -51,7 +51,7 @@
     "@storybook/react": "6.5.15",
     "@types/react": "18.0.26",
     "babel-plugin-require-context-hook": "1.0.0",
-    "chromatic": "6.14.0",
+    "chromatic": "6.15.0",
     "classnames": "2.3.2",
     "colormap": "2.3.2",
     "cross-env": "7.0.3",
