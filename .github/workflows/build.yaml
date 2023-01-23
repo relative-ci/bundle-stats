@@ -44,6 +44,13 @@ jobs:
     - name: Test webpack-plugin package
       run: npm run test-package
 
+    ## CLI E2E testing
+    - name: Install Playwright Browsers
+      run: cd packages/cli && npx playwright install --with-deps
+
+    - name: CLI - E2E testing
+      run: cd packages/cli && npm run test:e2e
+
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3
       with:
