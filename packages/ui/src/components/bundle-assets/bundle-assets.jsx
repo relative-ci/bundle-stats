@@ -158,9 +158,8 @@ const RowHeader = ({ row, labels, chunks, CustomComponentLink }) => {
   }
 
   return (
-    <HoverCard label={content}>
+    <HoverCard label={content} hoverCardClassName={css.assetInfo}>
       <AssetInfo
-        className={css.assetInfo}
         item={row}
         labels={labels}
         chunks={chunks}

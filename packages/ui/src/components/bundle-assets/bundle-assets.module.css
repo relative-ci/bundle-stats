@@ -85,5 +85,6 @@
 }
 
 .assetInfo {
-  min-width: 280px;
+  width: 100vw;
+  max-width: 420px;
 }
