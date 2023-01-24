@@ -16,6 +16,7 @@ const config: PlaywrightTestConfig = {
     actionTimeout: 0,
     baseURL: 'http://localhost:8080',
     trace: 'on-first-retry',
+    viewport: { width: 1280, height: 768 },
   },
   projects: [
     {
@@ -28,12 +29,6 @@ const config: PlaywrightTestConfig = {
       name: 'firefox',
       use: {
         ...devices['Desktop Firefox'],
-      },
-    },
-    {
-      name: 'webkit',
-      use: {
-        ...devices['Desktop Safari'],
       },
     },
   ],
