@@ -10,6 +10,7 @@ yarn.lock
 dist
 lib
 types
+screenshots
 /test-results/
 /playwright-report/
 /playwright/.cache/
