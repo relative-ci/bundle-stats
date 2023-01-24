@@ -12,11 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+
     # Cache packages when the branch is not update-dependencies or dependabot/*
     - name: Resolve caching
       id: cache
       if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
       run: echo "::set-output name=PACKAGE::npm"
+
     - name: Use Node.js
       uses: actions/setup-node@v3.6.0
       with:
@@ -43,6 +45,18 @@ jobs:
 
     - name: Test webpack-plugin package
       run: npm run test-package
+
+    - name: Report E2E tests - install dependencies
+      working-directory: packages/cli
+      run: npx playwright install --with-deps
+
+    - name: Report E2E tests - run
+      working-directory: packages/cli
+      run: npm run test:e2e
+
+    - name: Report E2E tests - upload screenshots
+      working-directory: packages/cli
+      run: node node_modules/.bin/argos upload ./screenshots
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3
