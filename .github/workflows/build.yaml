@@ -55,6 +55,7 @@ jobs:
       run: npm run test:e2e
 
     - name: Report E2E tests - upload screenshots
+      if: ${{ startsWith(github.ref, 'refs/heads/') }}
       working-directory: packages/cli
       run: node node_modules/.bin/argos upload ./screenshots
 
