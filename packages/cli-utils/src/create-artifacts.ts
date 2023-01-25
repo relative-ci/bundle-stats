@@ -1,14 +1,18 @@
+import type { Job } from '@bundle-stats/utils';
 import htmlTemplates from '@bundle-stats/html-templates';
 
 import { INITIAL_DATA_PATTERN, OUTPUT_FILENAME, OutputType } from './constants';
 
-type CreateArtifactFn = (jobs: Array<any>, report: any) => string;
+type CreateArtifactFn = (jobs: Array<Job>, report: any) => string;
 
 export const createHTMLArtifact: CreateArtifactFn = (jobs) => {
+  // Remove job rawData
+  const initialDataJobs = jobs.map((job) => Object.assign({}, job, { rawData: undefined }));
+
   // Inject data into the template
   let output = htmlTemplates.replace(
     INITIAL_DATA_PATTERN,
-    `window.__INITIAL_DATA__ = ${JSON.stringify(jobs)}`,
+    `window.__INITIAL_DATA__ = ${JSON.stringify(initialDataJobs)}`,
   );
 
   // Add total bundle size info into the title
