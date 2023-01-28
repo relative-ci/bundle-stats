@@ -1,3 +1,9 @@
+export enum Source {
+  webpack = 'webpack',
+  lighthouse = 'lighthouse',
+  browsertime = 'browsertime',
+}
+
 export type SourceData = Record<string, unknown>;
 
 export enum MetricTypeType {
@@ -43,22 +49,85 @@ export interface MetricRunInfo {
   displayDeltaPercentage?: string;
 }
 
+export type ConditionOperator = 'smallerThan' | 'smallerThanInclusive' | 'equal' | 'notEqual' | 'greaterThan' | 'greaterThanInclusive';
+
+export interface Condition {
+  fact: string;
+  operator: ConditionOperator;
+  value: number;
+}
+
+export enum BudgetStatus {
+  FAILURE = 'FAILURE',
+  WARNING = 'WARNING',
+  SUCCESS = 'SUCCESS',
+}
+
+export interface BudgetConfig {
+  /**
+   * The condition config
+   */
+  condition: Condition;
+  /**
+   * User status when the condition is matched
+   */
+  status: BudgetStatus;
+  /**
+   * User message to display when the condition is matched
+   */
+  message?: string;
+}
+
+export interface BudgetSkipped {
+  config: BudgetConfig;
+}
+
+export interface BudgetEvaluated {
+  config: BudgetConfig;
+  /**
+   * The metric value that is checked
+   */
+  value: number;
+  /**
+   * Metric run info data
+   */
+  data: MetricRunInfo;
+  /**
+   * Budget matched flag
+   */
+  matched: boolean;
+}
+
+export type BudgetResult = BudgetSkipped | BudgetEvaluated;
+
+export type JobSection<T = object> = Record<Source, T>;
+
 export interface JobSummaryItem {
   baseline: number;
   current: number;
 }
 export type JobSummarySource = Record<string, JobSummaryItem>;
-export type JobSummary = Record<string, JobSummarySource>;
-
+export type JobSummary = JobSection<JobSummarySource>;
+export type JobBudgets = JobSection<Array<BudgetResult>>;
 export type JobMetricsSource = Record<string, MetricRun | Record<string, MetricRun>>;
-export type JobMetrics = Record<string, JobMetricsSource>;
+export type JobMetrics = JobSection<JobMetricsSource>;
+
+export enum JobSectionId {
+  meta = 'meta',
+  insights = 'insights',
+  summary = 'summary',
+  budgets = 'budgets',
+  metrics = 'metrics',
+  rawData = 'rawData',
+}
 
 export interface JobData {
-  meta?: any;
-  insights?: any;
-  summary?: JobSummary;
-  metrics?: JobMetrics;
-  rawData?: any;
+  [JobSectionId.meta]?: JobSection;
+  [JobSectionId.insights]?: JobSection;
+  [JobSectionId.summary]?: JobSummary;
+  [JobSectionId.budgets]?: JobBudgets;
+  [JobSectionId.metrics]?: JobMetrics;
+  [JobSectionId.rawData]?: JobSection;
 }
 
 export interface Job extends JobData {

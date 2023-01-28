@@ -1,7 +1,6 @@
 import isEmpty from 'lodash/isEmpty';
 
-import { SOURCE_PATHS } from '../config';
-import { MetricRunInfo, Job, JobSummarySource } from '../constants';
+import { MetricRunInfo, Job, JobSummarySource, Source } from '../constants';
 import { getGlobalMetricType, getMetricRunInfo } from '../utils/metrics';
 import * as webpack from '../webpack';
 /* @ts-ignore */
@@ -30,22 +29,22 @@ export const createReport = (jobs: Array<Job>): Report => {
   // Add summary report data
   const summary: Record<string, Array<ReportMetricRunInfo>> = {};
 
-  SOURCE_PATHS.forEach((sourceId) => {
-    const sourceSummary = jobs[0]?.summary?.[sourceId] as JobSummarySource;
+  Object.values(Source).forEach((source) => {
+    const sourceSummary = jobs[0]?.summary?.[source] as JobSummarySource;
 
     if (!sourceSummary) {
       return;
     }
 
     const summaryEntries = Object.entries(sourceSummary).map(([metricId, summaryData]) => {
-      const metric = getGlobalMetricType(`${sourceId}.${metricId}`);
+      const metric = getGlobalMetricType(`${source}.${metricId}`);
       const { current = 0, baseline = 0 } = summaryData;
       const data = getMetricRunInfo(metric, current, baseline);
 
       return Object.assign(data, { label: metric.label });
     });
 
-    summary[sourceId] = summaryEntries;
+    summary[source] = summaryEntries;
   }, {});
 
   const sectionsData = webpack.compare(jobs);

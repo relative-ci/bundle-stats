@@ -1,0 +1,22 @@
+.checkMetric {
+  display: inline;
+}
+
+.checkMetric::before {
+  content: ' (';
+}
+
+.checkMetric::after {
+  content: ') ';
+}
+
+.checkMetricDelta {
+  padding: 2px;
+  font-size: 8px;
+  vertical-align: super;
+}
+
+.checkThreshold {
+  display: inline;
+  font-weight: bold;
+}
