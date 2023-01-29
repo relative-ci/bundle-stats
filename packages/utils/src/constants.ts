@@ -1,3 +1,11 @@
+import { InsightType } from './config/insights';
+
+export enum Source {
+  webpack = 'webpack',
+  lighthouse = 'lighthouse',
+  browsertime = 'browsertime',
+}
+
 export type SourceData = Record<string, unknown>;
 
 export enum MetricTypeType {
@@ -43,22 +51,52 @@ export interface MetricRunInfo {
   displayDeltaPercentage?: string;
 }
 
+export type JobSection<T = object> = Record<Source, T>;
+
+export enum JobSectionId {
+  meta = 'meta',
+  insights = 'insights',
+  summary = 'summary',
+  metrics = 'metrics',
+  rawData = 'rawData',
+}
+
 export interface JobSummaryItem {
   baseline: number;
   current: number;
 }
+
+export interface JobInsight<T = object> {
+  type: InsightType;
+  data: T;
+}
+
+export interface JobInsightAssetsSizeTotalData {
+  text: string;
+  md: string;
+  info: MetricRunInfo;
+}
+export type JobInsightDuplicatePackageData = Record<string, Array<string>>;
+
 export type JobSummarySource = Record<string, JobSummaryItem>;
-export type JobSummary = Record<string, JobSummarySource>;
+export type JobSummary = JobSection<JobSummarySource>;
+
+export interface JobInsights {
+  [Source.webpack]: {
+    assetsSizeTotal: JobInsight<JobInsightAssetsSizeTotalData>;
+    duplicatePackages: JobInsight<JobInsightDuplicatePackageData>;
+  };
+}
 
 export type JobMetricsSource = Record<string, MetricRun | Record<string, MetricRun>>;
-export type JobMetrics = Record<string, JobMetricsSource>;
+export type JobMetrics = JobSection<JobMetricsSource>;
 
 export interface JobData {
-  meta?: any;
-  insights?: any;
-  summary?: JobSummary;
-  metrics?: JobMetrics;
-  rawData?: any;
+  [JobSectionId.meta]?: JobSection;
+  [JobSectionId.insights]?: JobInsights;
+  [JobSectionId.summary]?: JobSummary;
+  [JobSectionId.metrics]?: JobMetrics;
+  [JobSectionId.rawData]?: JobSection;
 }
 
 export interface Job extends JobData {

@@ -3,6 +3,7 @@ import orderBy from 'lodash/orderBy';
 import sum from 'lodash/sum';
 
 import { InsightType } from '../../config';
+import { JobInsights, MetricRun } from '../../constants';
 import { Packages } from '../types';
 
 interface DuplicatePackage {
@@ -16,7 +17,19 @@ interface DuplicatePackageGroup {
   children: Array<DuplicatePackage>;
 }
 
-export const extractModulesPackagesDuplicate = (_: any, currentExtractedData: any) => {
+interface ModulesPackagesDuplicateData {
+  insights?: {
+    duplicatePackages: JobInsights['webpack']['duplicatePackages'];
+  };
+  metrics: {
+    duplicatePackagesCount: MetricRun;
+  };
+}
+
+export const extractModulesPackagesDuplicate = (
+  _: any,
+  currentExtractedData: any,
+): ModulesPackagesDuplicateData => {
   const source: Packages = currentExtractedData?.metrics?.packages || {};
 
   // Group packages by name(uniq)

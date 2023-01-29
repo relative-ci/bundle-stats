@@ -1,11 +1,10 @@
 import merge from 'lodash/merge';
 
-import { SOURCE_PATHS } from '../config';
 import { createSummary } from './create-summary';
 import * as webpack from '../webpack';
 import * as lighthouse from '../lighthouse';
 import * as browsertime from '../browsertime';
-import { JobData, JobMetricsSource, SourceData } from '../constants';
+import { JobData, JobMetricsSource, Source, SourceData } from '../constants';
 
 interface SourceResult {
   meta: {};
@@ -21,7 +20,7 @@ interface SourceModule {
 const SOURCE_MODULES: Record<string, SourceModule> = { webpack, lighthouse, browsertime };
 
 export const createJob = (source: SourceData, baseline?: JobData): JobData =>
-  SOURCE_PATHS.reduce((agg, sourcePath) => {
+  Object.values(Source).reduce((agg, sourcePath) => {
     const rawData = source[sourcePath];
 
     if (!rawData) {
