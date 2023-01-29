@@ -3,7 +3,7 @@ import orderBy from 'lodash/orderBy';
 import sum from 'lodash/sum';
 
 import { InsightType } from '../../config';
-import { JobInsights, MetricRun } from '../../constants';
+import { JobInsightDuplicatePackageData, JobInsights, MetricRun } from '../../constants';
 import { Packages } from '../types';
 
 interface DuplicatePackage {
@@ -81,7 +81,8 @@ export const extractModulesPackagesDuplicate = (
     };
   }
 
-  const duplicatePackagesByName = orderBy(duplicatePackages, 'value', 'desc').reduce(
+  // Group duplicate packages by name and order children by value
+  const duplicatePackagesByName: Record<string, DuplicatePackageGroup> = orderBy(duplicatePackages, 'value', 'desc').reduce(
     (agg, { name, ...duplicatePackageData }: DuplicatePackageGroup) => ({
       ...agg,
       [name]: {
@@ -93,14 +94,16 @@ export const extractModulesPackagesDuplicate = (
   );
 
   // Generate v2 data structure
-  // @TODO remove in v4.0
-  const data = Object.entries(duplicatePackagesByName).reduce(
-    (agg, [packageName, duplicatePackageData]) => ({
-      ...agg,
-      [packageName]: (duplicatePackageData as DuplicatePackageGroup).children.map(({ id }) => id),
-    }),
-    {},
-  );
+  // @TODO remove in v5.0
+  const data: JobInsightDuplicatePackageData = {};
+
+  Object.entries(duplicatePackagesByName).forEach(([packageName, packageData]) => {
+    if (!data[packageName]) {
+      data[packageName] = [];
+    }
+
+    data[packageName] = packageData.children.map(({ id }) => id);
+  });
 
   return {
     insights: {
