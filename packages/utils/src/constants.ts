@@ -76,7 +76,12 @@ export interface JobInsightAssetsSizeTotalData {
   md: string;
   info: MetricRunInfo;
 }
-export type JobInsightDuplicatePackageData = Record<string, Array<string>>;
+export type JobInsightDuplicatePackagesData = Record<string, Array<string>>;
+
+export interface JobInsightDuplicatePackagesV3Data {
+  text: string;
+  packages: Record<string, Array<string>>;
+}
 
 export type JobSummarySource = Record<string, JobSummaryItem>;
 export type JobSummary = JobSection<JobSummarySource>;
@@ -84,7 +89,8 @@ export type JobSummary = JobSection<JobSummarySource>;
 export interface JobInsights {
   [Source.webpack]: {
     assetsSizeTotal: JobInsight<JobInsightAssetsSizeTotalData>;
-    duplicatePackages: JobInsight<JobInsightDuplicatePackageData>;
+    duplicatePackages?: JobInsight<JobInsightDuplicatePackagesData>;
+    duplicatePackagesV3?: JobInsight<JobInsightDuplicatePackagesV3Data>;
   };
 }
 

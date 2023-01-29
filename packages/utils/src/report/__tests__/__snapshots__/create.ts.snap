@@ -152,6 +152,18 @@ exports[`report / createReport multiple sources 1`] = `
         },
         "type": "WARNING",
       },
+      "duplicatePackagesV3": {
+        "data": {
+          "packages": {
+            "package-c": [
+              "package-a:package-c",
+              "package-c",
+            ],
+          },
+          "text": "Bundle introduced 1 duplicate package",
+        },
+        "type": "ERROR",
+      },
     },
   },
   "modules": [
@@ -1055,6 +1067,18 @@ exports[`report / createReport single source 1`] = `
           ],
         },
         "type": "WARNING",
+      },
+      "duplicatePackagesV3": {
+        "data": {
+          "packages": {
+            "package-c": [
+              "package-a:package-c",
+              "package-c",
+            ],
+          },
+          "text": "Bundle introduced 1 duplicate package",
+        },
+        "type": "ERROR",
       },
     },
   },

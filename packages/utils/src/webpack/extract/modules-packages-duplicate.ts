@@ -3,7 +3,14 @@ import orderBy from 'lodash/orderBy';
 import sum from 'lodash/sum';
 
 import { InsightType } from '../../config';
-import { JobInsightDuplicatePackageData, JobInsights, MetricRun } from '../../constants';
+import {
+  Job,
+  JobInsight,
+  JobInsightDuplicatePackagesData,
+  JobInsightDuplicatePackagesV3Data,
+  JobInsights,
+  MetricRun,
+} from '../../constants';
 import { Packages } from '../types';
 
 interface DuplicatePackage {
@@ -18,17 +25,114 @@ interface DuplicatePackageGroup {
 }
 
 interface ModulesPackagesDuplicateData {
-  insights?: {
-    duplicatePackages: JobInsights['webpack']['duplicatePackages'];
+  insights: {
+    duplicatePackages?: JobInsights['webpack']['duplicatePackages'];
+    duplicatePackagesV3: JobInsights['webpack']['duplicatePackagesV3'];
   };
   metrics: {
     duplicatePackagesCount: MetricRun;
   };
 }
 
+export const getDuplicatePackagesInsight = (
+  duplicatePackagesMap: Record<string, Array<string>>,
+  baselineDuplicatePackagesMap?: Record<string, Array<string>>,
+): JobInsight<JobInsightDuplicatePackagesV3Data> => {
+  const duplicateInstances: Array<string> = [];
+  const baselineDuplicateInstances: Array<string> = [];
+  const newDuplicateInstances: Array<string> = [];
+  const removedDuplicateInstances: Array<string> = [];
+
+  Object.entries(duplicatePackagesMap).forEach(([id, instances]) => {
+    instances.forEach((duplicateInstance) => {
+      if (duplicateInstance === id) {
+        return;
+      }
+
+      duplicateInstances.push(duplicateInstance);
+
+      if (baselineDuplicatePackagesMap?.[id]?.includes(duplicateInstance)) {
+        return;
+      }
+
+      newDuplicateInstances.push(duplicateInstance);
+    });
+  });
+
+  if (baselineDuplicatePackagesMap) {
+    Object.entries(baselineDuplicatePackagesMap).forEach(([id, instances]) => {
+      instances.forEach((duplicateInstance) => {
+        if (duplicateInstance === id) {
+          return;
+        }
+
+        baselineDuplicateInstances.push(duplicateInstance);
+
+        if (duplicatePackagesMap?.[id]?.includes(duplicateInstance)) {
+          return;
+        }
+
+        removedDuplicateInstances.push(duplicateInstance);
+      });
+    });
+  }
+
+  const duplicateInstancesCount = duplicateInstances.length;
+  const newDuplicateInstancesCount = newDuplicateInstances.length;
+  const removedDuplicateInstancesCount = removedDuplicateInstances.length;
+
+  let text: string;
+  let insightType: InsightType;
+
+  if (newDuplicateInstancesCount > 0 && removedDuplicateInstancesCount > 0) {
+    // New duplicate packages and removed duplicates
+    const item =
+      newDuplicateInstancesCount > 1 || removedDuplicateInstancesCount > 1 ? 'packages' : 'package';
+    text = `Bundle introduced ${newDuplicateInstancesCount} and removed ${removedDuplicateInstancesCount} duplicate ${item}`;
+    insightType = InsightType.ERROR;
+  } else if (newDuplicateInstancesCount > 0 && baselineDuplicatePackagesMap) {
+    // New duplicate packages and baseline comparison
+    const item = newDuplicateInstancesCount > 1 ? 'packages' : 'package';
+    text = `Bundle introduced ${newDuplicateInstancesCount} duplicate ${item}`;
+    insightType = InsightType.ERROR;
+  } else if (newDuplicateInstancesCount > 0) {
+    // New duplicate packages and no baseline
+    const item = newDuplicateInstancesCount > 1 ? 'packages' : 'package';
+    text = `Bundle contains ${newDuplicateInstancesCount} duplicate ${item}`;
+    insightType = InsightType.WARNING;
+  } else if (removedDuplicateInstancesCount > 0) {
+    // Removed duplicate packages
+    const item = removedDuplicateInstancesCount > 1 ? 'packages' : 'package';
+    text = `Bundle removed ${removedDuplicateInstancesCount} duplicate ${item}`;
+    insightType = InsightType.INFO;
+  } else if (
+    newDuplicateInstancesCount === 0 &&
+    removedDuplicateInstancesCount === 0 &&
+    duplicateInstancesCount > 0
+  ) {
+    // No change comparred with the baseline
+    const item = duplicateInstancesCount > 1 ? 'packages' : 'package';
+    text = `Bundle contains ${duplicateInstancesCount} duplicate ${item}`;
+    insightType = InsightType.WARNING;
+  } else {
+    // No change
+    text = 'Bundle does not contain duplicate packages';
+    insightType = InsightType.INFO;
+  }
+
+  return {
+    type: insightType,
+    data: {
+      text,
+      packages: duplicatePackagesMap,
+    },
+  };
+};
+
 export const extractModulesPackagesDuplicate = (
   _: any,
   currentExtractedData: any,
+  baselineJob?: Job,
 ): ModulesPackagesDuplicateData => {
   const source: Packages = currentExtractedData?.metrics?.packages || {};
 
@@ -71,8 +175,16 @@ export const extractModulesPackagesDuplicate = (
     });
   });
 
+  const baselineDuplicatePackages =
+    baselineJob?.insights?.webpack?.duplicatePackagesV3?.data?.packages ||
+    baselineJob?.insights?.webpack?.duplicatePackages?.data ||
+    {};
+
   if (!count) {
     return {
+      insights: {
+        duplicatePackagesV3: getDuplicatePackagesInsight({}, baselineDuplicatePackages),
+      },
       metrics: {
         duplicatePackagesCount: {
           value: count,
@@ -82,7 +194,11 @@ export const extractModulesPackagesDuplicate = (
   }
 
   // Group duplicate packages by name and order children by value
-  const duplicatePackagesByName: Record<string, DuplicatePackageGroup> = orderBy(duplicatePackages, 'value', 'desc').reduce(
+  const duplicatePackagesByName: Record<string, DuplicatePackageGroup> = orderBy(
+    duplicatePackages,
+    'value',
+    'desc',
+  ).reduce(
     (agg, { name, ...duplicatePackageData }: DuplicatePackageGroup) => ({
       ...agg,
       [name]: {
@@ -95,22 +211,26 @@ export const extractModulesPackagesDuplicate = (
 
   // Generate v2 data structure
   // @TODO remove in v5.0
-  const data: JobInsightDuplicatePackageData = {};
+  const duplicatePackagesData: JobInsightDuplicatePackagesData = {};
 
   Object.entries(duplicatePackagesByName).forEach(([packageName, packageData]) => {
-    if (!data[packageName]) {
-      data[packageName] = [];
+    if (!duplicatePackagesData[packageName]) {
+      duplicatePackagesData[packageName] = [];
     }
 
-    data[packageName] = packageData.children.map(({ id }) => id);
+    duplicatePackagesData[packageName] = packageData.children.map(({ id }) => id);
   });
 
   return {
     insights: {
       duplicatePackages: {
         type: InsightType.WARNING,
-        data,
+        data: duplicatePackagesData,
       },
+      duplicatePackagesV3: getDuplicatePackagesInsight(
+        duplicatePackagesData,
+        baselineDuplicatePackages,
+      ),
     },
     metrics: {
       duplicatePackagesCount: {
