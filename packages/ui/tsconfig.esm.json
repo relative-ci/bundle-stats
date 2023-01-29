@@ -9,5 +9,5 @@
     "declarationDir": "./types",
     "noEmit": false
   },
-  "exclude": ["**/__tests__/*", "**/*.stories.jsx"]
+  "exclude": ["**/__tests__/*", "**/*.stories.*"]
 }
