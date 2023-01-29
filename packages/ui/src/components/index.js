@@ -6,6 +6,7 @@ export { BundlePackages } from './bundle-packages';
 export { BundleModules } from './bundle-modules';
 export { ComponentLink } from './component-link';
 export { DuplicatePackagesWarning } from './duplicate-packages-warning';
+export { DuplicatePackagesInsight } from './duplicate-packages-insight';
 export { Delta } from './delta';
 export { JobName } from './job-name';
 export { JobHeader } from './job-header';
