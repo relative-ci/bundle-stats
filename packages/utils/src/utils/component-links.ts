@@ -221,7 +221,7 @@ export const getBundleModulesByChunk = (
   },
 });
 
-export const BUNLDE_PACKAGES_COUNT: ComponentLink = {
+export const BUNDLE_PACKAGES_COUNT: ComponentLink = {
   section: SECTIONS.PACKAGES,
   title: I18N.COMPONENT_LINK_PACKAGES_COUNT,
   params: {
@@ -303,6 +303,6 @@ export const METRIC_COMPONENT_LINKS = new Map([
   ['webpack.moduleCount', { link: BUNDLE_MODULES }],
   ['webpack.duplicateModulesCount', { link: BUNDLE_MODULES_DUPLICATE }],
   ['webpack.duplicateCode', { link: BUNDLE_MODULES_DUPLICATE }],
-  ['webpack.packageCount', { link: BUNLDE_PACKAGES_COUNT }],
+  ['webpack.packageCount', { link: BUNDLE_PACKAGES_COUNT }],
   ['webpack.duplicatePackagesCount', { link: BUNDLE_PACKAGES_DUPLICATE }],
 ]);
