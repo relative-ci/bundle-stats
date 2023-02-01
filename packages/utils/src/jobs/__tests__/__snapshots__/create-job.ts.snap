@@ -29,6 +29,18 @@ exports[`createJob no baseline 1`] = `
         },
         "type": "WARNING",
       },
+      "duplicatePackagesV3": {
+        "data": {
+          "packages": {
+            "package-c": [
+              "package-a:package-c",
+              "package-c",
+            ],
+          },
+          "text": "Bundle introduced 1 duplicate package",
+        },
+        "type": "ERROR",
+      },
     },
   },
   "meta": {
@@ -373,6 +385,18 @@ exports[`createJob with baseline 1`] = `
           ],
         },
         "type": "WARNING",
+      },
+      "duplicatePackagesV3": {
+        "data": {
+          "packages": {
+            "package-c": [
+              "package-a:package-c",
+              "package-c",
+            ],
+          },
+          "text": "Bundle introduced 1 duplicate package",
+        },
+        "type": "ERROR",
       },
     },
   },

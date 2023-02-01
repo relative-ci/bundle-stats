@@ -12,7 +12,7 @@ import {
 } from '../constants';
 import { Box } from '../layout/box';
 import { Container } from '../ui/container';
-import { DuplicatePackagesWarning } from '../components/duplicate-packages-warning';
+import { DuplicatePackagesInsight } from '../components/duplicate-packages-insight';
 import { Summary } from '../components/summary';
 import { BundleAssets } from '../components/bundle-assets';
 import { BundleAssetsTotalsChartBars } from '../components/bundle-assets-totals-chart-bars';
@@ -68,17 +68,16 @@ JobsProvider.propTypes = {
 
 const OverviewContent = () => {
   const { jobs } = useContext(JobsContext);
-  const { duplicatePackagesCount } = jobs[0].summary.webpack;
-  const duplicatePackagesInsights = Boolean(
-    duplicatePackagesCount.current || duplicatePackagesCount.baseline,
-  );
+  const duplicatePackagesInsight = jobs[0].insights?.webpack?.duplicatePackagesV3;
 
   return (
     <Stack space="medium">
-      {duplicatePackagesInsights && (
+      {duplicatePackagesInsight && (
         <Container>
-          <DuplicatePackagesWarning
-            duplicatePackagesCount={duplicatePackagesCount}
+          <DuplicatePackagesInsight
+            type={duplicatePackagesInsight.type}
+            data={duplicatePackagesInsight.data}
+            summary={jobs[0].summary.webpack?.duplicatePackagesCount}
             showDelta={jobs.length > 1}
           />
         </Container>

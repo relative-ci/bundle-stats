@@ -1,7 +1,6 @@
 import isEmpty from 'lodash/isEmpty';
 
-import { SOURCE_PATHS } from '../config';
-import { MetricRunInfo, Job, JobSummarySource } from '../constants';
+import { MetricRunInfo, Job, JobSummarySource, Source } from '../constants';
 import { getGlobalMetricType, getMetricRunInfo } from '../utils/metrics';
 import * as webpack from '../webpack';
 /* @ts-ignore */
@@ -30,7 +29,7 @@ export const createReport = (jobs: Array<Job>): Report => {
   // Add summary report data
   const summary: Record<string, Array<ReportMetricRunInfo>> = {};
 
-  SOURCE_PATHS.forEach((sourceId) => {
+  Object.values(Source).forEach((sourceId) => {
     const sourceSummary = jobs[0]?.summary?.[sourceId] as JobSummarySource;
 
     if (!sourceSummary) {

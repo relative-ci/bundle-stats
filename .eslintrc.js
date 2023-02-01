@@ -58,6 +58,7 @@ module.exports = {
       rules: {
         'import/prefer-default-export': 'off',
         'implicit-arrow-linebreak': 'warn',
+        'react/require-default-props': 'off',
         '@typescript-eslint/comma-dangle': 'warn',
         '@typescript-eslint/no-unused-vars': ['warn', { varsIgnorePattern: '^[_]{1,}$' }],
         // '@typescript-eslint/implicit-arrow-linebreak': 'warn',
