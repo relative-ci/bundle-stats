@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import get from 'lodash/get';
-import { SOURCE_PATH_WEBPACK_STATS, formatDateTime } from '@bundle-stats/utils';
+import { Source, formatDateTime } from '@bundle-stats/utils';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
@@ -13,7 +13,7 @@ import css from './job-header.module.css';
 export const JobHeader = (props) => {
   const { className, tag, job, children } = props;
 
-  const { builtAt, hash } = get(job, `meta.${SOURCE_PATH_WEBPACK_STATS}`, {});
+  const { builtAt, hash } = get(job, `meta.${Source.webpack}`, {});
   const rootClassName = cx(css.root, className);
 
   return (
