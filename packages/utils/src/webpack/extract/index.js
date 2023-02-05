@@ -11,6 +11,7 @@ import { extractModules } from './modules';
 import { extractModulesPackages } from './modules-packages';
 import { extractModulesPackagesCount } from './modules-packages-count';
 import { extractModulesPackagesDuplicate } from './modules-packages-duplicate';
+import { extractModulesPackagesNewInsight } from './modules-packages-new-insight';
 
 const extractFns = [
   extractAssets,
@@ -24,6 +25,7 @@ const extractFns = [
   extractModulesPackages,
   extractModulesPackagesCount,
   extractModulesPackagesDuplicate,
+  extractModulesPackagesNewInsight,
 ];
 
 export const extract = (webpackStats, baseline) =>

@@ -180,5 +180,28 @@ exports[`Webpack/compare should compare all modules 1`] = `
       },
     ],
   },
+  {
+    "biggerIsBetter": false,
+    "changed": true,
+    "key": "node_modules/package-d/index.js",
+    "label": "node_modules/package-d/index.js",
+    "runs": [
+      {
+        "chunkIds": [
+          "1",
+        ],
+        "delta": 1000,
+        "deltaPercentage": 100,
+        "deltaType": "HIGH_NEGATIVE",
+        "displayDelta": "+1000B",
+        "displayDeltaPercentage": "+100%",
+        "displayValue": "1000B",
+        "duplicated": false,
+        "name": "node_modules/package-d/index.js",
+        "value": 1000,
+      },
+      null,
+    ],
+  },
 ]
 `;
