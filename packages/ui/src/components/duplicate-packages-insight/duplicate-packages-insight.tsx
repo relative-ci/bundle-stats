@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   BUNDLE_PACKAGES_DUPLICATE,
+  BUNDLE_PACKAGES_DUPLICATE_NEW,
   BUNDLE_PACKAGES_COUNT,
   InsightType,
   JobSummaryItem,
@@ -41,13 +42,10 @@ export const DuplicatePackagesInsight = (props: DuplicatePackagesInsightProps) =
 
   const metric = getGlobalMetricType('webpack.duplicatePackageCount');
 
-  const metricRunInfo = getMetricRunInfo(
-    metric,
-    summary.current,
-    summary.baseline,
-  );
+  const metricRunInfo = getMetricRunInfo(metric, summary.current, summary.baseline);
 
-  const hasDuplicatePackages = metricRunInfo.value > 0 || (metricRunInfo && (metricRunInfo.delta !== 0));
+  const hasDuplicatePackages =
+    metricRunInfo.value > 0 || (metricRunInfo && metricRunInfo.delta !== 0);
 
   return (
     <Alert kind={AlertKindMap.get(type)} {...restProps}>
@@ -66,12 +64,17 @@ export const DuplicatePackagesInsight = (props: DuplicatePackagesInsightProps) =
         </span>
       )}
       <span className={css.link}>
-        {hasDuplicatePackages ? (
-          <CustomComponentLink {...BUNDLE_PACKAGES_DUPLICATE as any}>
+        {hasDuplicatePackages && metricRunInfo?.delta !== 0 ? (
+          <CustomComponentLink {...(BUNDLE_PACKAGES_DUPLICATE_NEW as any)}>
             View duplicate packages
           </CustomComponentLink>
         ) : (
-          <CustomComponentLink {...BUNDLE_PACKAGES_COUNT as any}>
+          <CustomComponentLink {...(BUNDLE_PACKAGES_DUPLICATE as any)}>
+            View duplicate packages
+          </CustomComponentLink>
+        )}
+        {!hasDuplicatePackages && (
+          <CustomComponentLink {...(BUNDLE_PACKAGES_COUNT as any)}>
             View packages
           </CustomComponentLink>
         )}
