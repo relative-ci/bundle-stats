@@ -64,15 +64,17 @@ export const DuplicatePackagesInsight = (props: DuplicatePackagesInsightProps) =
         </span>
       )}
       <span className={css.link}>
-        {hasDuplicatePackages && metricRunInfo?.delta !== 0 ? (
-          <CustomComponentLink {...(BUNDLE_PACKAGES_DUPLICATE_NEW as any)}>
-            View duplicate packages
-          </CustomComponentLink>
-        ) : (
-          <CustomComponentLink {...(BUNDLE_PACKAGES_DUPLICATE as any)}>
-            View duplicate packages
-          </CustomComponentLink>
-        )}
+        {hasDuplicatePackages &&
+          (typeof metricRunInfo?.delta !== 'undefined' && metricRunInfo.delta !== 0 ? (
+            <CustomComponentLink {...(BUNDLE_PACKAGES_DUPLICATE_NEW as any)}>
+              View duplicate packages
+            </CustomComponentLink>
+          ) : (
+            <CustomComponentLink {...(BUNDLE_PACKAGES_DUPLICATE as any)}>
+              View duplicate packages
+            </CustomComponentLink>
+          ))}
+
         {!hasDuplicatePackages && (
           <CustomComponentLink {...(BUNDLE_PACKAGES_COUNT as any)}>
             View packages
