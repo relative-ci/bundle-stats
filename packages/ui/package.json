@@ -84,6 +84,6 @@
     "ariakit": "2.0.0-next.43",
     "modern-css-reset": "1.4.0",
     "query-string": "7.1.3",
-    "use-query-params": "2.1.2"
+    "use-query-params": "2.2.0"
   }
 }
