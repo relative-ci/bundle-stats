@@ -86,6 +86,19 @@ export const SvgIcons = (props) => (
       <path d="M1.05 12H7M17.01 12h5.95" />
     </symbol>
     <symbol
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      viewBox="0 0 24 24"
+      id="error"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 8v4M12 16h.01" />
+    </symbol>
+    <symbol
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -111,6 +124,19 @@ export const SvgIcons = (props) => (
     >
       <circle cx="12" cy="12" r="10" />
       <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" />
+    </symbol>
+    <symbol
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      viewBox="0 0 24 24"
+      id="info"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 16v-4M12 8h.01" />
     </symbol>
     <symbol
       viewBox="0 0 24 24"
