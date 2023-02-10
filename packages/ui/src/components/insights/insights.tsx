@@ -21,9 +21,10 @@ interface InsightEntry {
   link: any;
 }
 
-const normalizedInsights = (
-  { duplicatePackages, newPackages }: Partial<JobInsightsType['webpack']>,
-): Array<InsightEntry> => {
+const normalizedInsights = ({
+  duplicatePackages,
+  newPackages,
+}: Partial<JobInsightsType['webpack']>): Array<InsightEntry> => {
   const insightsByLevel: Record<InsightType, Array<InsightEntry>> = {
     [InsightType.ERROR]: [],
     [InsightType.WARNING]: [],
