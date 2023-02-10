@@ -72,23 +72,20 @@ export interface JobSummaryItem {
 
 export interface JobInsight<T = object> {
   type: InsightType;
-  data: T;
+  data: T & { text?: string };
 }
 
 export interface JobInsightAssetsSizeTotalData {
-  text: string;
   md: string;
   info: MetricRunInfo;
 }
 export type JobInsightDuplicatePackagesData = Record<string, Array<string>>;
 
 export interface JobInsightDuplicatePackagesV3Data {
-  text: string;
   packages: Record<string, Array<string>>;
 }
 
 export interface JobInsightNewPackagesData {
-  text: string;
   packages: Array<string>;
 }
 
