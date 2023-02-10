@@ -80,7 +80,7 @@ describe('Webpack/extracts/extractModulesPackagesNewInsight', () => {
     expect(actual).toEqual({
       insights: {
         newPackages: {
-          type: 'WARNING',
+          type: 'warning',
           data: {
             text: 'Bundle introduced one new package: package-b',
             packages: ['package-b'],
@@ -148,7 +148,7 @@ describe('Webpack/extracts/extractModulesPackagesNewInsight', () => {
     expect(actual).toEqual({
       insights: {
         newPackages: {
-          type: 'WARNING',
+          type: 'warning',
           data: {
             text: 'Bundle introduced 2 new packages: package-c, package-d',
             packages: ['package-c', 'package-d'],

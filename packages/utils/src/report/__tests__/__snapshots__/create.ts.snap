@@ -141,7 +141,7 @@ exports[`report / createReport multiple sources 1`] = `
           "md": "*Bundle Size* — *61.52KiB* (*0%*).",
           "text": "Bundle Size — 61.52KiB (0%).",
         },
-        "type": "INFO",
+        "type": "info",
       },
       "duplicatePackages": {
         "data": {
@@ -150,7 +150,7 @@ exports[`report / createReport multiple sources 1`] = `
             "package-c",
           ],
         },
-        "type": "WARNING",
+        "type": "warning",
       },
       "duplicatePackagesV3": {
         "data": {
@@ -162,7 +162,7 @@ exports[`report / createReport multiple sources 1`] = `
           },
           "text": "Bundle introduced 1 duplicate package",
         },
-        "type": "ERROR",
+        "type": "error",
       },
       "newPackages": {
         "data": {
@@ -171,7 +171,7 @@ exports[`report / createReport multiple sources 1`] = `
           ],
           "text": "Bundle introduced one new package: package-d",
         },
-        "type": "WARNING",
+        "type": "warning",
       },
     },
   },
@@ -1109,7 +1109,7 @@ exports[`report / createReport single source 1`] = `
           "md": "*Bundle Size* — *61.52KiB* (*+100%*).",
           "text": "Bundle Size — 61.52KiB (+100%).",
         },
-        "type": "INFO",
+        "type": "info",
       },
       "duplicatePackages": {
         "data": {
@@ -1118,7 +1118,7 @@ exports[`report / createReport single source 1`] = `
             "package-c",
           ],
         },
-        "type": "WARNING",
+        "type": "warning",
       },
       "duplicatePackagesV3": {
         "data": {
@@ -1130,7 +1130,7 @@ exports[`report / createReport single source 1`] = `
           },
           "text": "Bundle introduced 1 duplicate package",
         },
-        "type": "ERROR",
+        "type": "error",
       },
     },
   },

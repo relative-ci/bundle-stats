@@ -18,7 +18,7 @@ exports[`createJob no baseline 1`] = `
           "md": "*Bundle Size* — *61.52KiB* (*+100%*).",
           "text": "Bundle Size — 61.52KiB (+100%).",
         },
-        "type": "INFO",
+        "type": "info",
       },
       "duplicatePackages": {
         "data": {
@@ -27,7 +27,7 @@ exports[`createJob no baseline 1`] = `
             "package-c",
           ],
         },
-        "type": "WARNING",
+        "type": "warning",
       },
       "duplicatePackagesV3": {
         "data": {
@@ -39,7 +39,7 @@ exports[`createJob no baseline 1`] = `
           },
           "text": "Bundle introduced 1 duplicate package",
         },
-        "type": "ERROR",
+        "type": "error",
       },
     },
   },
@@ -395,7 +395,7 @@ exports[`createJob with baseline 1`] = `
           "md": "*Bundle Size* — *61.52KiB* (*0%*).",
           "text": "Bundle Size — 61.52KiB (0%).",
         },
-        "type": "INFO",
+        "type": "info",
       },
       "duplicatePackages": {
         "data": {
@@ -404,7 +404,7 @@ exports[`createJob with baseline 1`] = `
             "package-c",
           ],
         },
-        "type": "WARNING",
+        "type": "warning",
       },
       "duplicatePackagesV3": {
         "data": {
@@ -416,7 +416,7 @@ exports[`createJob with baseline 1`] = `
           },
           "text": "Bundle introduced 1 duplicate package",
         },
-        "type": "ERROR",
+        "type": "error",
       },
       "newPackages": {
         "data": {
@@ -425,7 +425,7 @@ exports[`createJob with baseline 1`] = `
           ],
           "text": "Bundle introduced one new package: package-d",
         },
-        "type": "WARNING",
+        "type": "warning",
       },
     },
   },

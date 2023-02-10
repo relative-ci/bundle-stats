@@ -1,5 +1,3 @@
-import { InsightType } from './config/insights';
-
 export enum Source {
   webpack = 'webpack',
   lighthouse = 'lighthouse',
@@ -8,12 +6,18 @@ export enum Source {
 
 export type SourceData = Record<string, unknown>;
 
+export enum InsightType {
+  ERROR = 'error',
+  INFO = 'info',
+  WARNING = 'warning',
+}
+
 export enum MetricTypeType {
-  'METRIC_TYPE_NUMERIC' = 'METRIC_TYPE_NUMERIC',
-  'METRIC_TYPE_SCORE' = 'METRIC_TYPE_SCORE',
-  'METRIC_TYPE_FILE_SIZE' = 'METRIC_TYPE_FILE_SIZE',
-  'METRIC_TYPE_DURATION' = 'METRIC_TYPE_DURATION',
-  'METRIC_TYPE_PERCENTAGE' = 'METRIC_TYPE_PERCENTAGE',
+  METRIC_TYPE_NUMERIC = 'METRIC_TYPE_NUMERIC',
+  METRIC_TYPE_SCORE = 'METRIC_TYPE_SCORE',
+  METRIC_TYPE_FILE_SIZE = 'METRIC_TYPE_FILE_SIZE',
+  METRIC_TYPE_DURATION = 'METRIC_TYPE_DURATION',
+  METRIC_TYPE_PERCENTAGE = 'METRIC_TYPE_PERCENTAGE',
 }
 
 export interface MetricTypeConfig {

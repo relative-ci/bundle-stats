@@ -1,5 +1,4 @@
-import { InsightType } from '../../config';
-import { Job, JobInsights } from '../../constants';
+import { InsightType, Job, JobInsights } from '../../constants';
 import { Packages } from '../types';
 
 interface ModulesPackagesNewData {
