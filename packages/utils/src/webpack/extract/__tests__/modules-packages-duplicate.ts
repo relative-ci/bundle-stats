@@ -7,18 +7,20 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
   describe.only('getDuplicatePackagesInsight', () => {
     test('should return insight when there are no duplicate packages', () => {
       expect(getDuplicatePackagesInsight({})).toEqual({
-        type: 'INFO',
+        type: 'info',
         data: {
           packages: {},
           text: 'Bundle does not contain duplicate packages',
         },
+        changes: false,
       });
       expect(getDuplicatePackagesInsight({}, {})).toEqual({
-        type: 'INFO',
+        type: 'info',
         data: {
           packages: {},
           text: 'Bundle does not contain duplicate packages',
         },
+        changes: false,
       });
     });
 
@@ -29,7 +31,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           'package-b': ['package-b', 'package-b~1'],
         }),
       ).toEqual({
-        type: 'WARNING',
+        type: 'warning',
         data: {
           packages: {
             'package-a': ['package-a', 'package-a~1'],
@@ -37,6 +39,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           },
           text: 'Bundle contains 2 duplicate packages',
         },
+        changes: false,
       });
     });
 
@@ -53,7 +56,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           },
         ),
       ).toEqual({
-        type: 'WARNING',
+        type: 'warning',
         data: {
           packages: {
             'package-a': ['package-a', 'package-a~1'],
@@ -61,6 +64,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           },
           text: 'Bundle contains 2 duplicate packages',
         },
+        changes: false,
       });
     });
 
@@ -77,7 +81,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           },
         ),
       ).toEqual({
-        type: 'ERROR',
+        type: 'error',
         data: {
           packages: {
             'package-a': ['package-a', 'package-a~1', 'package-a~2'],
@@ -85,6 +89,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           },
           text: 'Bundle introduced 1 duplicate package',
         },
+        changes: true,
       });
     });
 
@@ -99,11 +104,12 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           },
         ),
       ).toEqual({
-        type: 'ERROR',
+        type: 'error',
         data: {
           packages: { 'package-a': ['package-a', 'package-a~1'] },
           text: 'Bundle introduced 1 and removed 1 duplicate package',
         },
+        changes: true,
       });
     });
   });
@@ -113,7 +119,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
     expect(actual).toEqual({
       insights: {
         duplicatePackagesV3: {
-          type: 'INFO',
+          type: 'info',
           data: {
             text: 'Bundle does not contain duplicate packages',
             packages: {},
@@ -121,6 +127,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
         },
       },
       metrics: { duplicatePackagesCount: { value: 0 } },
+      changes: false,
     });
   });
 
@@ -159,14 +166,14 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
     expect(actual).toEqual({
       insights: {
         duplicatePackages: {
-          type: 'WARNING',
+          type: 'warning',
           data: {
             'package-c': ['org/package-d:package-c', 'package-c~1', 'package-c'],
             'package-a': ['package-a', 'package-b:package-a'],
           },
         },
         duplicatePackagesV3: {
-          type: 'ERROR',
+          type: 'error',
           data: {
             text: 'Bundle introduced 5 duplicate packages',
             packages: {
@@ -174,6 +181,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
               'package-a': ['package-a', 'package-b:package-a'],
             },
           },
+          changes: true,
         },
       },
       metrics: {
@@ -221,7 +229,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
         insights: {
           webpack: {
             duplicatePackages: {
-              type: 'WARNING',
+              type: 'warning',
               data: {
                 'package-c': ['org/package-d:package-c', 'package-c'],
                 'package-a': ['package-a', 'package-b:package-a'],
@@ -235,14 +243,14 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
     expect(actual).toEqual({
       insights: {
         duplicatePackages: {
-          type: 'WARNING',
+          type: 'warning',
           data: {
             'package-c': ['org/package-d:package-c', 'package-c~1', 'package-c'],
             'package-a': ['package-a', 'package-b:package-a'],
           },
         },
         duplicatePackagesV3: {
-          type: 'ERROR',
+          type: 'error',
           data: {
             text: 'Bundle introduced 1 duplicate package',
             packages: {
@@ -250,6 +258,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
               'package-a': ['package-a', 'package-b:package-a'],
             },
           },
+          changes: true,
         },
       },
       metrics: {
