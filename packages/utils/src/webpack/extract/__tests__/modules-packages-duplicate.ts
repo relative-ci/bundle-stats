@@ -12,6 +12,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           packages: {},
           text: 'Bundle does not contain duplicate packages',
         },
+        changes: false,
       });
       expect(getDuplicatePackagesInsight({}, {})).toEqual({
         type: 'info',
@@ -19,6 +20,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           packages: {},
           text: 'Bundle does not contain duplicate packages',
         },
+        changes: false,
       });
     });
 
@@ -37,6 +39,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           },
           text: 'Bundle contains 2 duplicate packages',
         },
+        changes: false,
       });
     });
 
@@ -61,6 +64,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           },
           text: 'Bundle contains 2 duplicate packages',
         },
+        changes: false,
       });
     });
 
@@ -85,6 +89,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           },
           text: 'Bundle introduced 1 duplicate package',
         },
+        changes: true,
       });
     });
 
@@ -104,6 +109,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           packages: { 'package-a': ['package-a', 'package-a~1'] },
           text: 'Bundle introduced 1 and removed 1 duplicate package',
         },
+        changes: true,
       });
     });
   });
@@ -121,6 +127,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
         },
       },
       metrics: { duplicatePackagesCount: { value: 0 } },
+      changes: false,
     });
   });
 
@@ -174,6 +181,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
               'package-a': ['package-a', 'package-b:package-a'],
             },
           },
+          changes: true,
         },
       },
       metrics: {
@@ -250,6 +258,7 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
               'package-a': ['package-a', 'package-b:package-a'],
             },
           },
+          changes: true,
         },
       },
       metrics: {

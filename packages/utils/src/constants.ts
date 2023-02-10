@@ -71,8 +71,18 @@ export interface JobSummaryItem {
 }
 
 export interface JobInsight<T = object> {
+  /**
+   * Insight type
+   */
   type: InsightType;
+  /**
+   * Insight result data
+   */
   data: T & { text?: string };
+  /**
+   * Flag if the insight result is due to changes between jobs
+   */
+  changes?: boolean;
 }
 
 export interface JobInsightAssetsSizeTotalData {

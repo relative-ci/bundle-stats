@@ -85,6 +85,7 @@ describe('Webpack/extracts/extractModulesPackagesNewInsight', () => {
             text: 'Bundle introduced one new package: package-b',
             packages: ['package-b'],
           },
+          changes: true,
         },
       },
     });
@@ -153,6 +154,7 @@ describe('Webpack/extracts/extractModulesPackagesNewInsight', () => {
             text: 'Bundle introduced 2 new packages: package-c, package-d',
             packages: ['package-c', 'package-d'],
           },
+          changes: true,
         },
       },
     });

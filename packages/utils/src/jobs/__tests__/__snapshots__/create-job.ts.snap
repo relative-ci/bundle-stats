@@ -30,6 +30,7 @@ exports[`createJob no baseline 1`] = `
         "type": "warning",
       },
       "duplicatePackagesV3": {
+        "changes": true,
         "data": {
           "packages": {
             "package-c": [
@@ -407,6 +408,7 @@ exports[`createJob with baseline 1`] = `
         "type": "warning",
       },
       "duplicatePackagesV3": {
+        "changes": true,
         "data": {
           "packages": {
             "package-c": [
@@ -419,6 +421,7 @@ exports[`createJob with baseline 1`] = `
         "type": "error",
       },
       "newPackages": {
+        "changes": true,
         "data": {
           "packages": [
             "package-d",

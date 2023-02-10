@@ -27,15 +27,13 @@ const getText = (newPackages: Array<string>) => {
 
   const text = `Bundle introduced ${newPackages.length} new packages: ${firstNewPackages.join(', ')}`;
 
-  if (otherPackages.length === 0) {
+  const otherPackagesCount = otherPackages.length;
+
+  if (otherPackagesCount === 0) {
     return text;
   }
 
-  if (otherPackages.length === 1) {
-    return `${text} and one more`;
-  }
-
-  return `${text} and ${otherPackages.length} more`;
+  return `${text} and ${otherPackagesCount > 1 ? otherPackagesCount : 'one'} more`;
 };
 
 export const extractModulesPackagesNewInsight = (
@@ -54,8 +52,8 @@ export const extractModulesPackagesNewInsight = (
   const currentPackages = getPackageNames(currentMetricPackages);
   const baselinePackages = getPackageNames(baselineMetricPackages);
 
+  // Process current packages and save if they are not available on the baseline job
   const newPackages: Array<string> = [];
-
   currentPackages.forEach((packageName) => {
     if (!baselinePackages.has(packageName)) {
       newPackages.push(packageName);
@@ -74,6 +72,7 @@ export const extractModulesPackagesNewInsight = (
           text: getText(newPackages),
           packages: newPackages,
         },
+        changes: true,
       },
     },
   };
