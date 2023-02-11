@@ -83,7 +83,6 @@ export const getDuplicatePackagesInsight = (
 
   let text: string;
   let insightType: InsightType;
-  let changes = false;
 
   if (newDuplicateInstancesCount > 0 && removedDuplicateInstancesCount > 0) {
     // New duplicate packages and removed duplicates
@@ -91,13 +90,11 @@ export const getDuplicatePackagesInsight = (
       newDuplicateInstancesCount > 1 || removedDuplicateInstancesCount > 1 ? 'packages' : 'package';
     text = `Bundle introduced ${newDuplicateInstancesCount} and removed ${removedDuplicateInstancesCount} duplicate ${item}`;
     insightType = InsightType.ERROR;
-    changes = true;
   } else if (newDuplicateInstancesCount > 0 && baselineDuplicatePackagesMap) {
     // New duplicate packages and baseline comparison
     const item = newDuplicateInstancesCount > 1 ? 'packages' : 'package';
     text = `Bundle introduced ${newDuplicateInstancesCount} duplicate ${item}`;
     insightType = InsightType.ERROR;
-    changes = true;
   } else if (newDuplicateInstancesCount > 0) {
     // New duplicate packages and no baseline
     const item = newDuplicateInstancesCount > 1 ? 'packages' : 'package';
@@ -108,7 +105,6 @@ export const getDuplicatePackagesInsight = (
     const item = removedDuplicateInstancesCount > 1 ? 'packages' : 'package';
     text = `Bundle removed ${removedDuplicateInstancesCount} duplicate ${item}`;
     insightType = InsightType.INFO;
-    changes = true;
   } else if (
     newDuplicateInstancesCount === 0 &&
     removedDuplicateInstancesCount === 0 &&
@@ -130,7 +126,6 @@ export const getDuplicatePackagesInsight = (
       text,
       packages: duplicatePackagesMap,
     },
-    changes
   };
 };
 

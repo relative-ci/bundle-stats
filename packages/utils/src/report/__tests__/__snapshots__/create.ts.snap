@@ -153,7 +153,6 @@ exports[`report / createReport multiple sources 1`] = `
         "type": "warning",
       },
       "duplicatePackagesV3": {
-        "changes": true,
         "data": {
           "packages": {
             "package-c": [
@@ -166,7 +165,6 @@ exports[`report / createReport multiple sources 1`] = `
         "type": "error",
       },
       "newPackages": {
-        "changes": true,
         "data": {
           "packages": [
             "package-d",
@@ -1123,7 +1121,6 @@ exports[`report / createReport single source 1`] = `
         "type": "warning",
       },
       "duplicatePackagesV3": {
-        "changes": true,
         "data": {
           "packages": {
             "package-c": [
