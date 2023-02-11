@@ -27,7 +27,6 @@ Default.args = {
       text: 'Bundle introduced 2 new packages: package-c, package-d',
       packages: ['package-c', 'package-d'],
     },
-    changes: true,
   },
 };
 
@@ -40,7 +39,6 @@ Info.args = {
       packages: { 'package-a': ['package-a', 'package-a~1'] },
       text: 'Bundle removed 1 duplicate packages',
     },
-    changes: false,
   },
   newPackages: {
     type: 'warning',
@@ -48,6 +46,5 @@ Info.args = {
       text: 'Bundle introduced 2 new packages: package-c, package-d',
       packages: ['package-c', 'package-d'],
     },
-    changes: true,
   },
 };
