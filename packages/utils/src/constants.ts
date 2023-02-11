@@ -99,6 +99,10 @@ export interface JobInsightNewPackagesData {
   packages: Array<string>;
 }
 
+export interface JobInsightNewAssetsData {
+  assets: Array<string>;
+}
+
 export type JobSummarySource = Record<string, JobSummaryItem>;
 export type JobSummary = JobSection<JobSummarySource>;
 
@@ -108,6 +112,7 @@ export interface JobInsights {
     duplicatePackages?: JobInsight<JobInsightDuplicatePackagesData>;
     duplicatePackagesV3?: JobInsight<JobInsightDuplicatePackagesV3Data>;
     newPackages?: JobInsight<JobInsightNewPackagesData>;
+    newAssets?: JobInsight<JobInsightNewAssetsData>;
   };
 }
 
