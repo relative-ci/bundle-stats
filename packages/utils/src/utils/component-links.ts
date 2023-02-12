@@ -234,6 +234,19 @@ export const BUNDLE_PACKAGES_COUNT: ComponentLink = {
   },
 };
 
+export const BUNDLE_PACKAGES_CHANGED: ComponentLink = {
+  section: SECTIONS.PACKAGES,
+  title: I18N.COMPONENT_LINK_PACKAGES_CHANGED,
+  params: {
+    [COMPONENT.BUNDLE_PACKAGES]: {
+      filters: {
+        // Keep a filter to allow the merge and skip default
+        [PACKAGE_FILTERS.CHANGED]: true,
+      },
+    },
+  },
+};
+
 export const BUNDLE_PACKAGES_DUPLICATE: ComponentLink = {
   section: SECTIONS.PACKAGES,
   title: I18N.COMPONENT_LINK_PACKAGES_DUPLICATE,

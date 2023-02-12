@@ -1,5 +1,5 @@
 import { InsightType, JobInsight, JobInsights } from '../constants';
-import { BUNDLE_PACKAGES_DUPLICATE, BUNDLE_PACKAGES_COUNT } from './component-links';
+import { BUNDLE_PACKAGES_DUPLICATE, BUNDLE_PACKAGES_CHANGE } from './component-links';
 
 interface InsightEntry {
   /**
@@ -40,7 +40,7 @@ export const getInsightList = (insights: Partial<JobInsights['webpack']>): Array
     insightsByLevel[newPackages.type].push({
       name: 'newPackages',
       insight: newPackages,
-      link: BUNDLE_PACKAGES_COUNT,
+      link: BUNDLE_PACKAGES_CHANGE,
     });
   }
 
