@@ -246,6 +246,19 @@ export const BUNDLE_PACKAGES_DUPLICATE: ComponentLink = {
   },
 };
 
+export const BUNDLE_PACKAGES_DUPLICATE_NEW: ComponentLink = {
+  section: SECTIONS.PACKAGES,
+  title: I18N.COMPONENT_LINK_PACKAGES_DUPLICATE,
+  params: {
+    [COMPONENT.BUNDLE_PACKAGES]: {
+      filters: {
+        [PACKAGE_FILTERS.CHANGED]: true,
+        [PACKAGE_FILTERS.DUPLICATE]: true,
+      },
+    },
+  },
+};
+
 export const getBundleAssetsFileTypeComponentLink = (
   fileType: string,
   label: string,
