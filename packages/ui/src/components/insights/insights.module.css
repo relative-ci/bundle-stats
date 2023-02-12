@@ -1,23 +1,21 @@
 .icon {
-  outline: 3px solid transparent;
+  padding: 3px;
+  box-sizing: content-box;
   border-radius: 50%;
   background: var(--color-highlight);
 }
 
 .error .icon {
-  outline-color: var(--color-red-50);
   background: var(--color-red-50);
   color: var(--color-danger);
 }
 
 .warning .icon {
-  outline-color: var(--color-yellow-100);
   background: var(--color-yellow-100);
   color: var(--color-warning-dark);
 }
 
 .info .icon {
-  outline-color: var(--color-highlight-info);
   background: var(--color-highlight-info);
   color: var(--color-info);
 }
