@@ -1,5 +1,7 @@
 .eslintignore
 .eslintrc.js
+jsconfig.json
+tsconfig.*
 __fixtures__
 !__fixtures__/webpack-stats-*.json
 jest.config.js

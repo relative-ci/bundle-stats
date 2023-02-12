@@ -4,5 +4,6 @@ __fixtures__
 jest.config.js
 jest.setup.js
 jsconfig.js
+tsconfig.*
 src
 test

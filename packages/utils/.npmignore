@@ -7,5 +7,4 @@ __fixtures__
 jsconfig.json
 jest.config.js
 jest.global.js
-tsconfig.json
-tsconfig.esm.json
+tsconfig.*
