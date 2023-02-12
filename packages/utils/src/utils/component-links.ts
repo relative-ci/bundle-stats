@@ -259,9 +259,9 @@ export const BUNDLE_PACKAGES_DUPLICATE: ComponentLink = {
   },
 };
 
-export const BUNDLE_PACKAGES_DUPLICATE_NEW: ComponentLink = {
+export const BUNDLE_PACKAGES_DUPLICATE_CHANGED: ComponentLink = {
   section: SECTIONS.PACKAGES,
-  title: I18N.COMPONENT_LINK_PACKAGES_DUPLICATE,
+  title: I18N.COMPONENT_LINK_PACKAGES_DUPLICATE_CHANGED,
   params: {
     [COMPONENT.BUNDLE_PACKAGES]: {
       filters: {

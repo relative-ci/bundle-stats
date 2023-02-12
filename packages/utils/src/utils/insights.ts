@@ -1,5 +1,9 @@
 import { InsightType, JobInsight, JobInsights } from '../constants';
-import { BUNDLE_PACKAGES_DUPLICATE, BUNDLE_PACKAGES_CHANGE } from './component-links';
+import {
+  BUNDLE_PACKAGES_DUPLICATE,
+  BUNDLE_PACKAGES_CHANGED,
+  BUNDLE_PACKAGES_DUPLICATE_CHANGED,
+} from './component-links';
 
 interface InsightEntry {
   /**
@@ -32,7 +36,10 @@ export const getInsightList = (insights: Partial<JobInsights['webpack']>): Array
     insightsByLevel[duplicatePackages.type].push({
       name: 'duplicatePackages',
       insight: duplicatePackages,
-      link: BUNDLE_PACKAGES_DUPLICATE,
+      link:
+        duplicatePackages.type === InsightType.WARNING
+          ? BUNDLE_PACKAGES_DUPLICATE
+          : BUNDLE_PACKAGES_DUPLICATE_CHANGED,
     });
   }
 
@@ -40,7 +47,7 @@ export const getInsightList = (insights: Partial<JobInsights['webpack']>): Array
     insightsByLevel[newPackages.type].push({
       name: 'newPackages',
       insight: newPackages,
-      link: BUNDLE_PACKAGES_CHANGE,
+      link: BUNDLE_PACKAGES_CHANGED,
     });
   }
 
