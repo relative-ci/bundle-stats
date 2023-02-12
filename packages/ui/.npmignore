@@ -3,6 +3,7 @@
 __mocks__
 jest.config.js
 jsconfig.json
+tsconfig.*
 build
 scripts
 src/prototypes

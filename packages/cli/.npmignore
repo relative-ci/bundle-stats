@@ -1,5 +1,8 @@
 .eslintignore
 .eslintrc.js
+jsconfig.json
+playwright.config.ts
+tsconfig.*
 __fixtures__
 !__fixtures__/webpack-stats-*.json
 jest.config.js
