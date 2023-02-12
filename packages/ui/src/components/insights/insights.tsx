@@ -1,12 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import {
-  BUNDLE_PACKAGES_DUPLICATE,
-  BUNDLE_PACKAGES_COUNT,
-  InsightType,
-  JobInsight,
-  JobInsights as JobInsightsType,
-} from '@bundle-stats/utils';
+import { InsightType, getInsightList } from '@bundle-stats/utils';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
@@ -14,45 +8,6 @@ import { Icon } from '../../ui/icon';
 import { ComponentLink } from '../component-link';
 // @ts-ignore
 import css from './insights.module.css';
-
-interface InsightEntry {
-  name: string;
-  insight: JobInsight;
-  link: any;
-}
-
-const normalizedInsights = ({
-  duplicatePackages,
-  newPackages,
-}: Partial<JobInsightsType['webpack']>): Array<InsightEntry> => {
-  const insightsByLevel: Record<InsightType, Array<InsightEntry>> = {
-    [InsightType.ERROR]: [],
-    [InsightType.WARNING]: [],
-    [InsightType.INFO]: [],
-  };
-
-  if (duplicatePackages) {
-    insightsByLevel[duplicatePackages.type].push({
-      name: 'duplicatePackages',
-      insight: duplicatePackages,
-      link: BUNDLE_PACKAGES_DUPLICATE,
-    });
-  }
-
-  if (newPackages) {
-    insightsByLevel[newPackages.type].push({
-      name: 'newPackages',
-      insight: newPackages,
-      link: BUNDLE_PACKAGES_COUNT,
-    });
-  }
-
-  return [
-    ...(insightsByLevel[InsightType.ERROR] || []),
-    ...(insightsByLevel[InsightType.WARNING] || []),
-    ...(insightsByLevel[InsightType.INFO] || []),
-  ];
-};
 
 const InsightTypeIconMap = new Map([
   [InsightType.ERROR, Icon.ICONS.ERROR],
@@ -74,7 +29,7 @@ export const Insights = (props: InsightsProps) => {
     ...restProps
   } = props;
 
-  const insights = normalizedInsights({ duplicatePackages, newPackages });
+  const insights = getInsightList({ duplicatePackages, newPackages });
 
   return (
     <Stack space="xxsmall" {...restProps}>
