@@ -1,5 +1,3 @@
-import { InsightType } from './config/insights';
-
 export enum Source {
   webpack = 'webpack',
   lighthouse = 'lighthouse',
@@ -8,12 +6,18 @@ export enum Source {
 
 export type SourceData = Record<string, unknown>;
 
+export enum InsightType {
+  ERROR = 'error',
+  INFO = 'info',
+  WARNING = 'warning',
+}
+
 export enum MetricTypeType {
-  'METRIC_TYPE_NUMERIC' = 'METRIC_TYPE_NUMERIC',
-  'METRIC_TYPE_SCORE' = 'METRIC_TYPE_SCORE',
-  'METRIC_TYPE_FILE_SIZE' = 'METRIC_TYPE_FILE_SIZE',
-  'METRIC_TYPE_DURATION' = 'METRIC_TYPE_DURATION',
-  'METRIC_TYPE_PERCENTAGE' = 'METRIC_TYPE_PERCENTAGE',
+  METRIC_TYPE_NUMERIC = 'METRIC_TYPE_NUMERIC',
+  METRIC_TYPE_SCORE = 'METRIC_TYPE_SCORE',
+  METRIC_TYPE_FILE_SIZE = 'METRIC_TYPE_FILE_SIZE',
+  METRIC_TYPE_DURATION = 'METRIC_TYPE_DURATION',
+  METRIC_TYPE_PERCENTAGE = 'METRIC_TYPE_PERCENTAGE',
 }
 
 export interface MetricTypeConfig {
@@ -68,19 +72,21 @@ export interface JobSummaryItem {
 
 export interface JobInsight<T = object> {
   type: InsightType;
-  data: T;
+  data: T & { text?: string };
 }
 
 export interface JobInsightAssetsSizeTotalData {
-  text: string;
   md: string;
   info: MetricRunInfo;
 }
 export type JobInsightDuplicatePackagesData = Record<string, Array<string>>;
 
 export interface JobInsightDuplicatePackagesV3Data {
-  text: string;
   packages: Record<string, Array<string>>;
+}
+
+export interface JobInsightNewPackagesData {
+  packages: Array<string>;
 }
 
 export type JobSummarySource = Record<string, JobSummaryItem>;
@@ -91,6 +97,7 @@ export interface JobInsights {
     assetsSizeTotal: JobInsight<JobInsightAssetsSizeTotalData>;
     duplicatePackages?: JobInsight<JobInsightDuplicatePackagesData>;
     duplicatePackagesV3?: JobInsight<JobInsightDuplicatePackagesV3Data>;
+    newPackages?: JobInsight<JobInsightNewPackagesData>;
   };
 }
 

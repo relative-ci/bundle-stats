@@ -1,4 +1,4 @@
-import { InsightType } from '../../config/insights';
+import { InsightType } from '../../constants';
 import { getMetricRunInfo } from '../../utils/metrics';
 import { getMetricType } from '../utils';
 import { Metric } from '../types';

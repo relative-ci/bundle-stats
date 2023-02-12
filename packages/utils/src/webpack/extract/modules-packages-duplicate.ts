@@ -2,8 +2,8 @@ import map from 'lodash/map';
 import orderBy from 'lodash/orderBy';
 import sum from 'lodash/sum';
 
-import { InsightType } from '../../config';
 import {
+  InsightType,
   Job,
   JobInsight,
   JobInsightDuplicatePackagesData,

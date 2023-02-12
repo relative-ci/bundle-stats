@@ -12,7 +12,6 @@ import {
 } from '../constants';
 import { Box } from '../layout/box';
 import { Container } from '../ui/container';
-import { DuplicatePackagesInsight } from '../components/duplicate-packages-insight';
 import { Summary } from '../components/summary';
 import { BundleAssets } from '../components/bundle-assets';
 import { BundleAssetsTotalsChartBars } from '../components/bundle-assets-totals-chart-bars';
@@ -22,11 +21,13 @@ import { Stack } from '../layout/stack';
 import { BundleAssetsTotalsTable } from '../components/bundle-assets-totals-table';
 import { BundleModules } from '../components/bundle-modules';
 import { BundlePackages } from '../components/bundle-packages';
+import { Insights } from '../components/insights';
 import { TotalSizeTypeTitle } from '../components/total-size-type-title';
 import { QueryStateProvider, useComponentQueryState } from '../query-state';
 import I18N from '../i18n';
 import { Header } from './header';
 import css from './app.module.css';
+import { MetricsTableTitle } from '../components';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -68,18 +69,27 @@ JobsProvider.propTypes = {
 
 const OverviewContent = () => {
   const { jobs } = useContext(JobsContext);
+
   const duplicatePackagesInsight = jobs[0].insights?.webpack?.duplicatePackagesV3;
+  const newPackagesInsight = jobs[0].insights?.webpack?.newPackages;
+
+  console.info(duplicatePackagesInsight, newPackagesInsight);
 
   return (
     <Stack space="medium">
-      {duplicatePackagesInsight && (
+      {(duplicatePackagesInsight || newPackagesInsight) && (
         <Container>
-          <DuplicatePackagesInsight
-            type={duplicatePackagesInsight.type}
-            data={duplicatePackagesInsight.data}
-            summary={jobs[0].summary.webpack?.duplicatePackagesCount}
-            showDelta={jobs.length > 1}
-          />
+          <Stack space="xsmall">
+            <MetricsTableTitle title="Insights" />
+            <Box padding="small" outline>
+              <Insights
+                duplicatePackages={duplicatePackagesInsight}
+                newPackages={newPackagesInsight}
+                summary={jobs[0].summary?.webpack}
+                showDelta={jobs.length > 1}
+              />
+            </Box>
+          </Stack>
         </Container>
       )}
       <Container>

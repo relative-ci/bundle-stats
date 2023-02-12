@@ -22,7 +22,7 @@ describe('Webpack/extracts/extractAssetsSizeTotalInsight', () => {
               value: 10000,
             },
           },
-          type: 'INFO',
+          type: 'info',
         },
       },
     });
@@ -51,7 +51,7 @@ describe('Webpack/extracts/extractAssetsSizeTotalInsight', () => {
               value: 10000,
             },
           },
-          type: 'INFO',
+          type: 'info',
         },
       },
     });

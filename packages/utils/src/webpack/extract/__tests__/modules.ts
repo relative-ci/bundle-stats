@@ -60,8 +60,14 @@ describe('Webpack/extract/modules', () => {
             chunkIds: ['1'],
             duplicated: false,
           },
+          'node_modules/package-d/index.js': {
+            name: 'node_modules/package-d/index.js',
+            value: 1000,
+            chunkIds: ['1'],
+            duplicated: false,
+          },
         },
-        moduleCount: { value: 6 },
+        moduleCount: { value: 7 },
       },
     });
   });

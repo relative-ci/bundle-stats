@@ -18,7 +18,7 @@ exports[`createJob no baseline 1`] = `
           "md": "*Bundle Size* — *61.52KiB* (*+100%*).",
           "text": "Bundle Size — 61.52KiB (+100%).",
         },
-        "type": "INFO",
+        "type": "info",
       },
       "duplicatePackages": {
         "data": {
@@ -27,7 +27,7 @@ exports[`createJob no baseline 1`] = `
             "package-c",
           ],
         },
-        "type": "WARNING",
+        "type": "warning",
       },
       "duplicatePackagesV3": {
         "data": {
@@ -39,7 +39,7 @@ exports[`createJob no baseline 1`] = `
           },
           "text": "Bundle introduced 1 duplicate package",
         },
-        "type": "ERROR",
+        "type": "error",
       },
     },
   },
@@ -108,7 +108,7 @@ exports[`createJob no baseline 1`] = `
         "value": 1,
       },
       "moduleCount": {
-        "value": 6,
+        "value": 7,
       },
       "modules": {
         "module-a": {
@@ -162,9 +162,17 @@ exports[`createJob no baseline 1`] = `
           "name": "node_modules/package-c/index.js",
           "value": 1000,
         },
+        "node_modules/package-d/index.js": {
+          "chunkIds": [
+            "1",
+          ],
+          "duplicated": false,
+          "name": "node_modules/package-d/index.js",
+          "value": 1000,
+        },
       },
       "packageCount": {
-        "value": 4,
+        "value": 5,
       },
       "packages": {
         "package-a": {
@@ -185,6 +193,11 @@ exports[`createJob no baseline 1`] = `
         "package-c": {
           "name": "package-c",
           "path": "node_modules/package-c",
+          "value": 1000,
+        },
+        "package-d": {
+          "name": "package-d",
+          "path": "node_modules/package-d",
           "value": 1000,
         },
       },
@@ -311,6 +324,13 @@ exports[`createJob no baseline 1`] = `
           "name": "node_modules/package-c/index.js",
           "size": 1000,
         },
+        {
+          "chunks": [
+            1,
+          ],
+          "name": "node_modules/package-d/index.js",
+          "size": 1000,
+        },
       ],
     },
   },
@@ -342,11 +362,11 @@ exports[`createJob no baseline 1`] = `
       },
       "moduleCount": {
         "baseline": 0,
-        "current": 6,
+        "current": 7,
       },
       "packageCount": {
         "baseline": 0,
-        "current": 4,
+        "current": 5,
       },
       "totalInitialSizeCSS": {
         "baseline": 0,
@@ -383,7 +403,7 @@ exports[`createJob with baseline 1`] = `
           "md": "*Bundle Size* — *61.52KiB* (*0%*).",
           "text": "Bundle Size — 61.52KiB (0%).",
         },
-        "type": "INFO",
+        "type": "info",
       },
       "duplicatePackages": {
         "data": {
@@ -392,7 +412,7 @@ exports[`createJob with baseline 1`] = `
             "package-c",
           ],
         },
-        "type": "WARNING",
+        "type": "warning",
       },
       "duplicatePackagesV3": {
         "data": {
@@ -404,7 +424,16 @@ exports[`createJob with baseline 1`] = `
           },
           "text": "Bundle introduced 1 duplicate package",
         },
-        "type": "ERROR",
+        "type": "error",
+      },
+      "newPackages": {
+        "data": {
+          "packages": [
+            "package-d",
+          ],
+          "text": "Bundle introduced one new package: package-d",
+        },
+        "type": "warning",
       },
     },
   },
@@ -473,7 +502,7 @@ exports[`createJob with baseline 1`] = `
         "value": 1,
       },
       "moduleCount": {
-        "value": 6,
+        "value": 7,
       },
       "modules": {
         "module-a": {
@@ -527,9 +556,17 @@ exports[`createJob with baseline 1`] = `
           "name": "node_modules/package-c/index.js",
           "value": 1000,
         },
+        "node_modules/package-d/index.js": {
+          "chunkIds": [
+            "1",
+          ],
+          "duplicated": false,
+          "name": "node_modules/package-d/index.js",
+          "value": 1000,
+        },
       },
       "packageCount": {
-        "value": 4,
+        "value": 5,
       },
       "packages": {
         "package-a": {
@@ -550,6 +587,11 @@ exports[`createJob with baseline 1`] = `
         "package-c": {
           "name": "package-c",
           "path": "node_modules/package-c",
+          "value": 1000,
+        },
+        "package-d": {
+          "name": "package-d",
+          "path": "node_modules/package-d",
           "value": 1000,
         },
       },
@@ -676,6 +718,13 @@ exports[`createJob with baseline 1`] = `
           "name": "node_modules/package-c/index.js",
           "size": 1000,
         },
+        {
+          "chunks": [
+            1,
+          ],
+          "name": "node_modules/package-d/index.js",
+          "size": 1000,
+        },
       ],
     },
   },
@@ -707,11 +756,11 @@ exports[`createJob with baseline 1`] = `
       },
       "moduleCount": {
         "baseline": 5,
-        "current": 6,
+        "current": 7,
       },
       "packageCount": {
         "baseline": 3,
-        "current": 4,
+        "current": 5,
       },
       "totalInitialSizeCSS": {
         "baseline": 11000,
