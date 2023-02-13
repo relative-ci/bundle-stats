@@ -40,7 +40,7 @@ export const Treemap = ({ className, data, Item }) => {
     const height = containerRef?.current?.clientHeight || 210;
 
     const values = data.map(({ value }) => value);
-    const itemCoordinates = squarify(values, width, height, 0, 0);
+    const itemCoordinates = squarify(values, 100, 100, 0, 0);
 
     const newItems = data.map((item, index) => {
       const coordinates = itemCoordinates[index];
@@ -49,10 +49,10 @@ export const Treemap = ({ className, data, Item }) => {
       return {
         ...item,
         style: {
-          left: coordinates[0],
-          top: coordinates[1],
-          width: coordinates[2] - coordinates[0],
-          height: coordinates[3] - coordinates[1],
+          left: `${coordinates[0]}%`,
+          top: `${coordinates[1]}%`,
+          width: `${coordinates[2] - coordinates[0]}%`,
+          height: `${coordinates[3] - coordinates[1]}%`,
         },
       };
     });

@@ -1,6 +1,5 @@
 .root {
   position: relative;
-  border: 1px solid var(--color-outline);
 }
 
 .root::before {
@@ -18,14 +17,15 @@
 }
 
 .item::before {
-  left: 2px;
-  top: 2px;
-  right: 2px;
-  bottom: 2px;
+  left: 1px;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
   content: '';
   position: absolute;
   display: block;
-  outline: 1px solid var(--color-outline);
+  border: 1px solid var(--color-outline);
+  border-radius: var(--radius-small);
 }
 
 .itemLabel {
