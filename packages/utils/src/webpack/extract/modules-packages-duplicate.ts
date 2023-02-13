@@ -100,6 +100,12 @@ export const getDuplicatePackagesInsight = (
     const item = newDuplicateInstancesCount > 1 ? 'packages' : 'package';
     text = `Bundle contains ${newDuplicateInstancesCount} duplicate ${item}`;
     insightType = InsightType.WARNING;
+  } else if (removedDuplicateInstancesCount > 0 && duplicateInstancesCount > 0) {
+    // Removed duplicate packages, but there are duplicate packages remaining
+    const itemRemoved = removedDuplicateInstancesCount > 1 ? 'packages' : 'package';
+    const itemRemaining = duplicateInstancesCount > 1 ? 'packages' : 'package';
+    text = `Bundle removed ${removedDuplicateInstancesCount} duplicate ${itemRemoved}, ${duplicateInstancesCount} duplicate ${itemRemaining} remaining`;
+    insightType = InsightType.WARNING;
   } else if (removedDuplicateInstancesCount > 0) {
     // Removed duplicate packages
     const item = removedDuplicateInstancesCount > 1 ? 'packages' : 'package';
