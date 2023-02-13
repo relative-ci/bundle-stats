@@ -106,6 +106,44 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
         },
       });
     });
+
+    test('should return insight when there are removed duplicate packages and remaining duplicate packages', () => {
+      expect(
+        getDuplicatePackagesInsight(
+          {
+            'package-b': ['package-b', 'package-b~1'],
+          },
+          {
+            'package-a': ['package-a', 'package-a~1'],
+            'package-b': ['package-b', 'package-b~1'],
+          },
+        ),
+      ).toEqual({
+        type: 'warning',
+        data: {
+          packages: { 'package-b': ['package-b', 'package-b~1'] },
+          text: 'Bundle removed 1 duplicate package, 1 duplicate package remaining',
+        },
+      });
+    });
+
+    test('should return insight when all duplicate packages are removed', () => {
+      expect(
+        getDuplicatePackagesInsight(
+          {},
+          {
+            'package-a': ['package-a', 'package-a~1'],
+            'package-b': ['package-b', 'package-b~1'],
+          },
+        ),
+      ).toEqual({
+        type: 'info',
+        data: {
+          packages: {},
+          text: 'Bundle removed 2 duplicate packages',
+        },
+      });
+    });
   });
 
   test('should return empty', () => {
