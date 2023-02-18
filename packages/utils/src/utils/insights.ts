@@ -1,11 +1,11 @@
-import { InsightType, JobInsight, JobInsights } from '../constants';
+import { InsightType, JobInsight, JobInsightsInfo } from '../constants';
 import {
   BUNDLE_PACKAGES_DUPLICATE,
   BUNDLE_PACKAGES_CHANGED,
   BUNDLE_PACKAGES_DUPLICATE_CHANGED,
 } from './component-links';
 
-interface InsightEntry {
+interface InsightListItem {
   /**
    * Inight name
    */
@@ -23,10 +23,10 @@ interface InsightEntry {
 /**
  * Get the insigh list ordered by level type
  */
-export const getInsightList = (insights: Partial<JobInsights['webpack']>): Array<InsightEntry> => {
+export const getInsightList = (insights: JobInsightsInfo): Array<InsightListItem> => {
   const { duplicatePackages, newPackages } = insights;
 
-  const insightsByLevel: Record<InsightType, Array<InsightEntry>> = {
+  const insightsByLevel: Record<InsightType, Array<InsightListItem>> = {
     [InsightType.ERROR]: [],
     [InsightType.WARNING]: [],
     [InsightType.INFO]: [],

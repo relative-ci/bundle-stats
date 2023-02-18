@@ -101,6 +101,11 @@ export interface JobInsights {
   };
 }
 
+export interface JobInsightsInfo {
+  duplicatePackages?: JobInsights['webpack']['duplicatePackagesV3'];
+  newPackages?: JobInsights['webpack']['newPackages'];
+}
+
 export type JobMetricsSource = Record<string, MetricRun | Record<string, MetricRun>>;
 export type JobMetrics = JobSection<JobMetricsSource>;
 

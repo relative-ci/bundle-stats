@@ -1,5 +1,5 @@
 import React from 'react';
-import { getInsightList } from '@bundle-stats/utils';
+import { JobInsightsInfo, getInsightList } from '@bundle-stats/utils';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
@@ -9,24 +9,22 @@ import { InsightIcon } from '../insight-icon';
 import css from './insights.module.css';
 
 interface InsightsProps extends React.HTMLAttributes<HTMLDivElement> {
-  duplicatePackages: any;
-  newPackages: any;
+  insights: JobInsightsInfo;
   customComponentLink?: React.ElementType;
 }
 
 export const Insights = (props: InsightsProps) => {
   const {
-    duplicatePackages,
-    newPackages,
+    insights,
     customComponentLink: CustomComponentLink = ComponentLink,
     ...restProps
   } = props;
 
-  const insights = getInsightList({ duplicatePackages, newPackages });
+  const insightList = getInsightList(insights);
 
   return (
     <Stack space="xxsmall" {...restProps}>
-      {insights.map(({ name, insight, link }) => {
+      {insightList.map(({ name, insight, link }) => {
         const { text } = insight.data as { text: string };
         return (
           <FlexStack

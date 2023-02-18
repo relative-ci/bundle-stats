@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
+import isEmpty from 'lodash/isEmpty';
 import { HashRouter, NavLink, Route, Switch, useLocation } from 'react-router-dom';
 import { COMPONENT } from '@bundle-stats/utils';
 
@@ -70,24 +71,34 @@ JobsProvider.propTypes = {
 const OverviewContent = () => {
   const { jobs } = useContext(JobsContext);
 
-  const duplicatePackagesInsight = jobs[0].insights?.webpack?.duplicatePackagesV3;
-  const newPackagesInsight = jobs[0].insights?.webpack?.newPackages;
+  const insightsByName = useMemo(() => {
+    const webpackInsights = jobs?.[0]?.insights?.webpack;
 
-  console.info(duplicatePackagesInsight, newPackagesInsight);
+    if (!webpackInsights) {
+      return null
+    }
+
+    const res = {
+      ...(webpackInsights.duplicatePackagesV3 && { duplicatePackages: webpackInsights.duplicatePackagesV3 }),
+      ...(webpackInsights.newPackages && { newPackages: webpackInsights.newPackages }),
+    };
+
+    if (isEmpty(res)) {
+      return null;
+    }
+
+    return res;
+  }, [jobs]);
+
 
   return (
     <Stack space="medium">
-      {(duplicatePackagesInsight || newPackagesInsight) && (
+      {insightsByName && (
         <Container>
           <Stack space="xsmall">
             <MetricsTableTitle title="Insights" />
             <Box padding="small" outline>
-              <Insights
-                duplicatePackages={duplicatePackagesInsight}
-                newPackages={newPackagesInsight}
-                summary={jobs[0].summary?.webpack}
-                showDelta={jobs.length > 1}
-              />
+              <Insights insights={insightsByName} />
             </Box>
           </Stack>
         </Container>
