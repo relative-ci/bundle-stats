@@ -1,11 +1,13 @@
-import { InsightType, JobInsight, JobInsights } from '../constants';
+import isEmpty from 'lodash/isEmpty';
+
+import { InsightType, JobInsight, JobInsightsInfo } from '../constants';
 import {
   BUNDLE_PACKAGES_DUPLICATE,
   BUNDLE_PACKAGES_CHANGED,
   BUNDLE_PACKAGES_DUPLICATE_CHANGED,
 } from './component-links';
 
-interface InsightEntry {
+interface InsightListItem {
   /**
    * Inight name
    */
@@ -23,10 +25,10 @@ interface InsightEntry {
 /**
  * Get the insigh list ordered by level type
  */
-export const getInsightList = (insights: Partial<JobInsights['webpack']>): Array<InsightEntry> => {
+export const getInsightList = (insights: JobInsightsInfo): Array<InsightListItem> => {
   const { duplicatePackages, newPackages } = insights;
 
-  const insightsByLevel: Record<InsightType, Array<InsightEntry>> = {
+  const insightsByLevel: Record<InsightType, Array<InsightListItem>> = {
     [InsightType.ERROR]: [],
     [InsightType.WARNING]: [],
     [InsightType.INFO]: [],
@@ -56,4 +58,25 @@ export const getInsightList = (insights: Partial<JobInsights['webpack']>): Array
     ...(insightsByLevel[InsightType.WARNING] || []),
     ...(insightsByLevel[InsightType.INFO] || []),
   ];
+};
+
+/**
+ * Show only the insights that are introduced by a change
+ */
+export const getChangedInsights = (normalizedInsights: JobInsightsInfo): JobInsightsInfo | null => {
+  const res: JobInsightsInfo = {};
+
+  if (normalizedInsights.duplicatePackages?.type === InsightType.ERROR) {
+    res.duplicatePackages = normalizedInsights.duplicatePackages;
+  }
+
+  if (normalizedInsights.newPackages) {
+    res.newPackages = normalizedInsights.newPackages;
+  }
+
+  if (isEmpty(res)) {
+    return null;
+  }
+
+  return res;
 };

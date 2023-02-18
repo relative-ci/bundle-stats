@@ -1,3 +1,4 @@
+import isEmpty from 'lodash/isEmpty';
 import map from 'lodash/map';
 import orderBy from 'lodash/orderBy';
 import sum from 'lodash/sum';
@@ -90,7 +91,7 @@ export const getDuplicatePackagesInsight = (
       newDuplicateInstancesCount > 1 || removedDuplicateInstancesCount > 1 ? 'packages' : 'package';
     text = `Bundle introduced ${newDuplicateInstancesCount} and removed ${removedDuplicateInstancesCount} duplicate ${item}`;
     insightType = InsightType.ERROR;
-  } else if (newDuplicateInstancesCount > 0 && baselineDuplicatePackagesMap) {
+  } else if (newDuplicateInstancesCount > 0 && !isEmpty(baselineDuplicatePackagesMap)) {
     // New duplicate packages and baseline comparison
     const item = newDuplicateInstancesCount > 1 ? 'packages' : 'package';
     text = `Bundle introduced ${newDuplicateInstancesCount} duplicate ${item}`;

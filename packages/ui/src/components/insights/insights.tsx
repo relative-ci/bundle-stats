@@ -1,42 +1,31 @@
 import React from 'react';
-import cx from 'classnames';
-import { InsightType, getInsightList } from '@bundle-stats/utils';
+import { JobInsightsInfo, getInsightList } from '@bundle-stats/utils';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
-import { Icon } from '../../ui/icon';
 import { ComponentLink } from '../component-link';
+import { InsightIcon } from '../insight-icon';
 // @ts-ignore
 import css from './insights.module.css';
 
-const InsightTypeIconMap = new Map([
-  [InsightType.ERROR, Icon.ICONS.ERROR],
-  [InsightType.WARNING, Icon.ICONS.WARNING],
-  [InsightType.INFO, Icon.ICONS.INFO],
-]);
-
 interface InsightsProps extends React.HTMLAttributes<HTMLDivElement> {
-  duplicatePackages: any;
-  newPackages: any;
+  insights: JobInsightsInfo;
   customComponentLink?: React.ElementType;
 }
 
 export const Insights = (props: InsightsProps) => {
   const {
-    duplicatePackages,
-    newPackages,
+    insights,
     customComponentLink: CustomComponentLink = ComponentLink,
     ...restProps
   } = props;
 
-  const insights = getInsightList({ duplicatePackages, newPackages });
+  const insightList = getInsightList(insights);
 
   return (
     <Stack space="xxsmall" {...restProps}>
-      {insights.map(({ name, insight, link }) => {
-        const glyph = InsightTypeIconMap.get(insight.type);
+      {insightList.map(({ name, insight, link }) => {
         const { text } = insight.data as { text: string };
-
         return (
           <FlexStack
             key={name}
@@ -44,9 +33,9 @@ export const Insights = (props: InsightsProps) => {
             alignItems="center"
             as={CustomComponentLink}
             {...link}
-            className={cx(css.entry, css[insight.type])}
+            className={css.entry}
           >
-            {glyph && <Icon glyph={glyph} className={css.icon} />}
+            <InsightIcon type={insight.type} className={css.icon} />
             <span>{text}</span>
           </FlexStack>
         );
