@@ -1,3 +1,5 @@
+import isEmpty from 'lodash/isEmpty';
+
 import { InsightType, JobInsight, JobInsightsInfo } from '../constants';
 import {
   BUNDLE_PACKAGES_DUPLICATE,
@@ -56,4 +58,25 @@ export const getInsightList = (insights: JobInsightsInfo): Array<InsightListItem
     ...(insightsByLevel[InsightType.WARNING] || []),
     ...(insightsByLevel[InsightType.INFO] || []),
   ];
+};
+
+/**
+ * Show only the insights that are introduced by a change
+ */
+export const getChangedInsights = (normalizedInsights: JobInsightsInfo): JobInsightsInfo | null => {
+  const res: JobInsightsInfo = {};
+
+  if (normalizedInsights.duplicatePackages?.type === InsightType.ERROR) {
+    res.duplicatePackages = normalizedInsights.duplicatePackages;
+  }
+
+  if (normalizedInsights.newPackages) {
+    res.newPackages = normalizedInsights.newPackages;
+  }
+
+  if (isEmpty(res)) {
+    return null;
+  }
+
+  return res;
 };
