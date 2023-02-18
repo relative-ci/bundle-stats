@@ -160,9 +160,9 @@ exports[`report / createReport multiple sources 1`] = `
               "package-c",
             ],
           },
-          "text": "Bundle introduced 1 duplicate package",
+          "text": "Bundle contains 1 duplicate package",
         },
-        "type": "error",
+        "type": "warning",
       },
       "newPackages": {
         "data": {
@@ -1128,9 +1128,9 @@ exports[`report / createReport single source 1`] = `
               "package-c",
             ],
           },
-          "text": "Bundle introduced 1 duplicate package",
+          "text": "Bundle contains 1 duplicate package",
         },
-        "type": "error",
+        "type": "warning",
       },
     },
   },

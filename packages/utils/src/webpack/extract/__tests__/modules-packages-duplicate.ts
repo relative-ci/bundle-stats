@@ -38,6 +38,22 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           text: 'Bundle contains 2 duplicate packages',
         },
       });
+
+      expect(
+        getDuplicatePackagesInsight({
+          'package-a': ['package-a', 'package-a~1'],
+          'package-b': ['package-b', 'package-b~1'],
+        }, {}),
+      ).toEqual({
+        type: 'warning',
+        data: {
+          packages: {
+            'package-a': ['package-a', 'package-a~1'],
+            'package-b': ['package-b', 'package-b~1'],
+          },
+          text: 'Bundle contains 2 duplicate packages',
+        },
+      });
     });
 
     test('should return insight when there are duplicate packages but no baseline change', () => {
