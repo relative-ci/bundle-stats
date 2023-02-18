@@ -6,6 +6,7 @@ export { BundlePackages } from './bundle-packages';
 export { BundleModules } from './bundle-modules';
 export { ComponentLink } from './component-link';
 export { Delta } from './delta';
+export { InsightIcon } from './insight-icon';
 export { Insights } from './insights';
 export { JobName } from './job-name';
 export { JobHeader } from './job-header';

@@ -1,0 +1,24 @@
+.root {
+  width: calc(var(--space-small) + 6px);
+  height: calc(var(--space-small) + 6px);
+  padding: 3px;
+  border-radius: 50%;
+  background: var(--color-highlight);
+}
+
+.error {
+  background: var(--color-red-50);
+  color: var(--color-danger);
+}
+
+.warning {
+  padding-top: 1px;
+  background: var(--color-yellow-200);
+  color: var(--color-yellow-900);
+}
+
+.info {
+  background: var(--color-highlight-info);
+  color: var(--color-info);
+}
+
