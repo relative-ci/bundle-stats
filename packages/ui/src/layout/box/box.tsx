@@ -5,12 +5,13 @@ import { NO_SPACE, SPACES } from '../../constants';
 // @ts-ignore
 import css from './box.module.css';
 
-interface BoxProps extends React.HTMLAttributes<'div'> {
+interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
   as?: React.ElementType;
   padding?: typeof SPACES | Array<typeof SPACES>;
   horizontalPadding?: string;
   verticalPadding?: string;
   outline?: boolean;
+  outlineHover?: boolean;
 }
 
 export const Box = (props: BoxProps) => {
@@ -21,6 +22,7 @@ export const Box = (props: BoxProps) => {
     horizontalPadding = '',
     verticalPadding = '',
     outline = false,
+    outlineHover = false,
     ...restProps
   } = props;
 
@@ -37,6 +39,7 @@ export const Box = (props: BoxProps) => {
     resolvedVerticalPadding && css[`vertical-padding-${resolvedVerticalPadding}`],
     resolvedHorizontalPadding && css[`horizontal-padding-${resolvedHorizontalPadding}`],
     outline && css.outline,
+    outlineHover && css.outlineHover,
   );
 
   return <Component {...restProps} className={rootClassName} />;

@@ -9,8 +9,7 @@ export default {
   decorators: [getWrapperDecorator()],
 };
 
-const Template = (props: any) => <Box style={{ outline: '1px dotted magenta' }} {...props}>Lorem ipsum</Box>;
-
+const Template = (props: any) => <Box style={{ border: '1px dotted magenta' }} {...props}>Lorem ipsum</Box>;
 
 export const Default = Template.bind({});
 
@@ -37,4 +36,9 @@ WithHorizontalAndVerticalPadding.args = {
 export const WithOutline = Template.bind({});
 WithOutline.args = {
   outline: true,
+};
+
+export const WithOutlineHover = Template.bind({});
+WithOutlineHover.args = {
+  outlineHover: true,
 };
