@@ -83,11 +83,7 @@
 .filterStandalone:active .filterCheckbox,
 .filterStandalone:focus .filterCheckbox {
   z-index: var(--layout-xlow); /* show collapsed border */
-  box-shadow: var(--shadow-layer);
-}
-
-.filterStandalone:hover .filterCheckbox {
-  border-color: var(--color-outline-dark);
+  box-shadow: var(--outline-hover);
   color: var(--color-text);
 }
 

@@ -28,6 +28,7 @@ export const Summary = ({
           <Box
             key={metricId}
             outline
+            outlineHover
             padding="small"
             as={SummaryItemCustomLink}
             {...metricOptions.link}

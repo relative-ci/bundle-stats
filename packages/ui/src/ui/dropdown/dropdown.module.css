@@ -25,8 +25,7 @@
 .button:focus,
 .button:active {
   outline: none;
-  box-shadow: var(--shadow-layer);
-  border-color: var(--color-outline-dark);
+  box-shadow: var(--outline-hover);
   color: var(--color-text);
 }
 
