@@ -61,7 +61,7 @@
   },
   "devDependencies": {
     "@argos-ci/cli": "^0.4.3",
-    "@argos-ci/playwright": "^0.0.1",
+    "@argos-ci/playwright": "^0.0.2",
     "@playwright/test": "^1.29.2",
     "@types/fs-extra": "^11.0.0",
     "@types/listr": "^0.14.4",
