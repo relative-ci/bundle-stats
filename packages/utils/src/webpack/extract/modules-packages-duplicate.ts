@@ -26,9 +26,9 @@ interface DuplicatePackageGroup {
 }
 
 interface ModulesPackagesDuplicateData {
-  insights: {
+  insights?: {
     duplicatePackages?: JobInsights['webpack']['duplicatePackages'];
-    duplicatePackagesV3: JobInsights['webpack']['duplicatePackagesV3'];
+    duplicatePackagesV3?: JobInsights['webpack']['duplicatePackagesV3'];
   };
   metrics: {
     duplicatePackagesCount: MetricRun;
@@ -38,7 +38,7 @@ interface ModulesPackagesDuplicateData {
 export const getDuplicatePackagesInsight = (
   duplicatePackagesMap: Record<string, Array<string>>,
   baselineDuplicatePackagesMap?: Record<string, Array<string>>,
-): JobInsight<JobInsightDuplicatePackagesV3Data> => {
+): JobInsight<JobInsightDuplicatePackagesV3Data> | null => {
   const duplicateInstances: Array<string> = [];
   const baselineDuplicateInstances: Array<string> = [];
   const newDuplicateInstances: Array<string> = [];
@@ -82,8 +82,8 @@ export const getDuplicatePackagesInsight = (
   const newDuplicateInstancesCount = newDuplicateInstances.length;
   const removedDuplicateInstancesCount = removedDuplicateInstances.length;
 
-  let text: string;
-  let insightType: InsightType;
+  let text = '';
+  let insightType: InsightType | null = null;
 
   if (newDuplicateInstancesCount > 0 && removedDuplicateInstancesCount > 0) {
     // New duplicate packages and removed duplicates
@@ -122,9 +122,11 @@ export const getDuplicatePackagesInsight = (
     text = `Bundle contains ${duplicateInstancesCount} duplicate ${item}`;
     insightType = InsightType.WARNING;
   } else {
-    // No change
-    text = 'Bundle does not contain duplicate packages';
-    insightType = InsightType.INFO;
+    // No change - noop
+  }
+
+  if (!text || !insightType) {
+    return null;
   }
 
   return {
@@ -187,11 +189,15 @@ export const extractModulesPackagesDuplicate = (
     baselineJob?.insights?.webpack?.duplicatePackages?.data ||
     {};
 
+  const noDuplicatesDuplicatePackagesV3 = getDuplicatePackagesInsight({}, baselineDuplicatePackages);
+
   if (!count) {
     return {
-      insights: {
-        duplicatePackagesV3: getDuplicatePackagesInsight({}, baselineDuplicatePackages),
-      },
+      ...(noDuplicatesDuplicatePackagesV3 && {
+        insights: {
+          duplicatePackagesV3: noDuplicatesDuplicatePackagesV3,
+        },
+      }),
       metrics: {
         duplicatePackagesCount: {
           value: count,
@@ -228,16 +234,18 @@ export const extractModulesPackagesDuplicate = (
     duplicatePackagesData[packageName] = packageData.children.map(({ id }) => id);
   });
 
+  const duplicatePackagesV3 = getDuplicatePackagesInsight(
+    duplicatePackagesData,
+    baselineDuplicatePackages,
+  );
+
   return {
     insights: {
       duplicatePackages: {
         type: InsightType.WARNING,
         data: duplicatePackagesData,
       },
-      duplicatePackagesV3: getDuplicatePackagesInsight(
-        duplicatePackagesData,
-        baselineDuplicatePackages,
-      ),
+      ...(duplicatePackagesV3 && { duplicatePackagesV3 }),
     },
     metrics: {
       duplicatePackagesCount: {
