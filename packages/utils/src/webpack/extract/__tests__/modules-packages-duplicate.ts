@@ -5,21 +5,9 @@ import {
 
 describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
   describe.only('getDuplicatePackagesInsight', () => {
-    test('should return insight when there are no duplicate packages', () => {
-      expect(getDuplicatePackagesInsight({})).toEqual({
-        type: 'info',
-        data: {
-          packages: {},
-          text: 'Bundle does not contain duplicate packages',
-        },
-      });
-      expect(getDuplicatePackagesInsight({}, {})).toEqual({
-        type: 'info',
-        data: {
-          packages: {},
-          text: 'Bundle does not contain duplicate packages',
-        },
-      });
+    test('should not return insight when there are no duplicate packages', () => {
+      expect(getDuplicatePackagesInsight({})).toBeFalsy();
+      expect(getDuplicatePackagesInsight({}, {})).toBeFalsy();
     });
 
     test('should return insight when there are duplicate packages', () => {
@@ -159,22 +147,6 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           text: 'Bundle removed 2 duplicate packages',
         },
       });
-    });
-  });
-
-  test('should return empty', () => {
-    const actual = extractModulesPackagesDuplicate(null, null);
-    expect(actual).toEqual({
-      insights: {
-        duplicatePackagesV3: {
-          type: 'info',
-          data: {
-            text: 'Bundle does not contain duplicate packages',
-            packages: {},
-          },
-        },
-      },
-      metrics: { duplicatePackagesCount: { value: 0 } },
     });
   });
 
