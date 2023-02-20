@@ -5,13 +5,7 @@
 }
 
 .input {
-  border-radius: var(--radius-small);
   height: var(--space-large);
-  border-color: var(--color-outline);
-}
-
-.input:focus {
-  border-color: var(--color-outline-dark);
 }
 
 .cancelButton {

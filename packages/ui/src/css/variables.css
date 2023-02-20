@@ -190,6 +190,8 @@
   --radius-medium: 5px;
   --radius-large: 9px;
 
+  --outline-hover: 0 0 0 3px var(--color-highlight);
+
   /** Layout */
   --max-width: 80rem;
 }

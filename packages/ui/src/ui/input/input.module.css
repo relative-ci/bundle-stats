@@ -1,6 +1,6 @@
 .root {
-  border: 1px solid var(--color-outline);;
-  border-radius: 0;
+  border: 1px solid var(--color-outline);
+  border-radius: var(--radius-small);
   color: var(--color-text-light);
   width: 100%;
   transition: var(--transition-in);
@@ -25,8 +25,7 @@
 }
 
 .root:focus {
-  border-color: var(--color-outline-dark);
-  box-shadow: var(--shadow-layer);
+  box-shadow: var(--outline-hover);
   color: inherit;
   transition: var(--transition-out);
 }

@@ -15,6 +15,17 @@
   border-radius: 0 0 var(--radius-medium) var(--radius-medium);
 }
 
+.outlineHover {
+  transition: var(--transition-out);
+}
+
+.outlineHover:focus,
+.outlineHover:active,
+.outlineHover:hover {
+  box-shadow: var(--outline-hover);
+  transition: var(--transition-in);
+}
+
 .padding-xxxsmall {
   padding: var(--space-xxxsmall);
 }
