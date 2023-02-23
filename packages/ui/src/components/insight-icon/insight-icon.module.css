@@ -13,7 +13,7 @@
 
 .warning {
   padding-top: 1px;
-  background: var(--color-yellow-200);
+  background: var(--color-yellow-100);
   color: var(--color-yellow-900);
 }
 
