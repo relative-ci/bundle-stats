@@ -31,17 +31,18 @@
    * https://coolors.co/287acc-da444e-55b950-f6e179-192339
    * http://mcg.mbitson.com/#!?mcgpalette0=%23da444e&mcgpalette1=%2355b950&mcgpalette2=%23f6e179&mcgpalette3=%23505861&mcgpalette4=%23287acc&themename=mcgtheme
    */
-  --color-gray-25: #F7F7F7;
-  --color-gray-50 : #eaebec;
-  --color-gray-100: #cbcdd0;
-  --color-gray-200: #a8acb0;
-  --color-gray-300: #858a90;
-  --color-gray-400: #6a7179;
-  --color-gray-500: #505861;
-  --color-gray-600: #495059;
-  --color-gray-700: #40474f;
-  --color-gray-800: #373d45;
-  --color-gray-900: #272d33;
+  --color-gray-25: #f7f7f9;
+  --color-gray-50: #ececee;
+  --color-gray-100: #ced0d4;
+  --color-gray-200: #aeb1b7;
+  --color-gray-300: #8e929a;
+  --color-gray-400: #757a85;
+  --color-gray-500: #5d636f;
+  --color-gray-600: #555b67;
+  --color-gray-700: #4b515c;
+  --color-gray-800: #414752;
+  --color-gray-900: #303540;
+
 
   --color-gray-ultra-light: var(--color-gray-200);
   --color-gray-light: var(--color-gray-300);
