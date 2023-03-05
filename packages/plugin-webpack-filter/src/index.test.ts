@@ -23,11 +23,11 @@ describe('Webpack filter', () => {
 
   test('should return meta', () => {
     const actual = filter(webpackStats as any);
-    expect(webpackStatsExtracted).toEqual(actual);
+    expect(actual).toEqual(webpackStatsExtracted);
   });
 
   test('should filter concatenated modules', () => {
     const actual = filter(webpackStatsConcatenatedModules as any);
-    expect(webpackStatsConcatenatedModulesExtracted).toEqual(actual);
+    expect(actual).toEqual(webpackStatsConcatenatedModulesExtracted);
   });
 });

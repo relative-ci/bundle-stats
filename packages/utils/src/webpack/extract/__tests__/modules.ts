@@ -27,43 +27,36 @@ describe('Webpack/extract/modules', () => {
             name: 'module-a',
             value: 1000,
             chunkIds: ['1'],
-            duplicated: false,
           },
           'module-b': {
             name: 'module-b',
             value: 2000,
             chunkIds: ['1'],
-            duplicated: false,
           },
           'node_modules/package-a/index.js': {
             name: 'node_modules/package-a/index.js',
             value: 1000,
             chunkIds: ['1'],
-            duplicated: false,
           },
           'node_modules/package-a/node_modules/package-c/index.js': {
             name: 'node_modules/package-a/node_modules/package-c/index.js',
             value: 1000,
             chunkIds: ['1'],
-            duplicated: false,
           },
           'node_modules/package-b/index.js': {
             name: 'node_modules/package-b/index.js',
             value: 1000,
             chunkIds: ['1'],
-            duplicated: false,
           },
           'node_modules/package-c/index.js': {
             name: 'node_modules/package-c/index.js',
             value: 1000,
             chunkIds: ['1'],
-            duplicated: false,
           },
           'node_modules/package-d/index.js': {
             name: 'node_modules/package-d/index.js',
             value: 1000,
             chunkIds: ['1'],
-            duplicated: false,
           },
         },
         moduleCount: { value: 7 },
@@ -76,59 +69,68 @@ describe('Webpack/extract/modules', () => {
 
     expect(actual).toEqual({
       metrics: {
-        duplicateCode: { value: 0 },
-        duplicateModulesCount: { value: 0 },
+        duplicateCode: { value: 7.5 },
+        duplicateModulesCount: { value: 2 },
         modules: {
           'module-a': {
             name: 'module-a',
             value: 1000,
             chunkIds: ['1'],
-            duplicated: false,
           },
           './module-b': {
             name: './module-b',
             value: 500,
             chunkIds: ['1'],
-            duplicated: false,
           },
           './module-b-1': {
             name: './module-b-1',
-            value: 1000,
+            value: 400,
             chunkIds: ['1'],
-            duplicated: false,
           },
-          './module-b-2': {
-            name: './module-b-2',
+          './module-b-c.css': {
+            name: './module-b-c.css',
             value: 500,
-            chunkIds: ['1'],
-            duplicated: false,
+            chunkIds: ['1', '2'],
+            duplicated: true,
+          },
+          './module-b-c.js': {
+            name: './module-b-c.js',
+            value: 100,
+            chunkIds: ['1', '2'],
+            duplicated: true,
+          },
+          './module-c': {
+            name: './module-c',
+            value: 500,
+            chunkIds: ['2'],
+          },
+          './module-c-1': {
+            name: './module-c-1',
+            value: 400,
+            chunkIds: ['2'],
           },
           'node_modules/package-a/index.js': {
             name: 'node_modules/package-a/index.js',
             value: 1000,
             chunkIds: ['1'],
-            duplicated: false,
           },
           'node_modules/package-a/node_modules/package-c/index.js': {
             name: 'node_modules/package-a/node_modules/package-c/index.js',
             value: 1000,
             chunkIds: ['1'],
-            duplicated: false,
           },
           'node_modules/package-b/index.js': {
             name: 'node_modules/package-b/index.js',
             value: 1000,
             chunkIds: ['1'],
-            duplicated: false,
           },
           'node_modules/package-c/index.js': {
             name: 'node_modules/package-c/index.js',
             value: 1000,
             chunkIds: ['1'],
-            duplicated: false,
           },
         },
-        moduleCount: { value: 8 },
+        moduleCount: { value: 13 },
       },
     });
   });
@@ -164,13 +166,11 @@ describe('Webpack/extract/modules', () => {
             name: 'module-a',
             value: 1000,
             chunkIds: ['1'],
-            duplicated: false,
           },
           'module-b': {
             name: 'module-b',
             value: 2000,
             chunkIds: ['1'],
-            duplicated: false,
           },
           'module-c': {
             name: 'module-c',
