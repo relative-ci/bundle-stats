@@ -115,7 +115,6 @@ exports[`createJob no baseline 1`] = `
           "chunkIds": [
             "1",
           ],
-          "duplicated": false,
           "name": "module-a",
           "value": 1000,
         },
@@ -123,7 +122,6 @@ exports[`createJob no baseline 1`] = `
           "chunkIds": [
             "1",
           ],
-          "duplicated": false,
           "name": "module-b",
           "value": 2000,
         },
@@ -131,7 +129,6 @@ exports[`createJob no baseline 1`] = `
           "chunkIds": [
             "1",
           ],
-          "duplicated": false,
           "name": "node_modules/package-a/index.js",
           "value": 1000,
         },
@@ -139,7 +136,6 @@ exports[`createJob no baseline 1`] = `
           "chunkIds": [
             "1",
           ],
-          "duplicated": false,
           "name": "node_modules/package-a/node_modules/package-c/index.js",
           "value": 1000,
         },
@@ -147,7 +143,6 @@ exports[`createJob no baseline 1`] = `
           "chunkIds": [
             "1",
           ],
-          "duplicated": false,
           "name": "node_modules/package-b/index.js",
           "value": 1000,
         },
@@ -155,7 +150,6 @@ exports[`createJob no baseline 1`] = `
           "chunkIds": [
             "1",
           ],
-          "duplicated": false,
           "name": "node_modules/package-c/index.js",
           "value": 1000,
         },
@@ -163,7 +157,6 @@ exports[`createJob no baseline 1`] = `
           "chunkIds": [
             "1",
           ],
-          "duplicated": false,
           "name": "node_modules/package-d/index.js",
           "value": 1000,
         },
@@ -501,7 +494,6 @@ exports[`createJob with baseline 1`] = `
           "chunkIds": [
             "1",
           ],
-          "duplicated": false,
           "name": "module-a",
           "value": 1000,
         },
@@ -509,7 +501,6 @@ exports[`createJob with baseline 1`] = `
           "chunkIds": [
             "1",
           ],
-          "duplicated": false,
           "name": "module-b",
           "value": 2000,
         },
@@ -517,7 +508,6 @@ exports[`createJob with baseline 1`] = `
           "chunkIds": [
             "1",
           ],
-          "duplicated": false,
           "name": "node_modules/package-a/index.js",
           "value": 1000,
         },
@@ -525,7 +515,6 @@ exports[`createJob with baseline 1`] = `
           "chunkIds": [
             "1",
           ],
-          "duplicated": false,
           "name": "node_modules/package-a/node_modules/package-c/index.js",
           "value": 1000,
         },
@@ -533,7 +522,6 @@ exports[`createJob with baseline 1`] = `
           "chunkIds": [
             "1",
           ],
-          "duplicated": false,
           "name": "node_modules/package-b/index.js",
           "value": 1000,
         },
@@ -541,7 +529,6 @@ exports[`createJob with baseline 1`] = `
           "chunkIds": [
             "1",
           ],
-          "duplicated": false,
           "name": "node_modules/package-c/index.js",
           "value": 1000,
         },
@@ -549,7 +536,6 @@ exports[`createJob with baseline 1`] = `
           "chunkIds": [
             "1",
           ],
-          "duplicated": false,
           "name": "node_modules/package-d/index.js",
           "value": 1000,
         },

@@ -51,7 +51,7 @@ export interface MetricsAssets {
 export interface Module extends MetricRun {
   name: string;
   chunkIds: Array<String>;
-  duplicated: boolean;
+  duplicated?: boolean;
 }
 
 export type Modules = Record<string, Module>;

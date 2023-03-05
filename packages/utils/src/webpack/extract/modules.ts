@@ -85,24 +85,23 @@ export const extractModules = (webpackStats?: WebpackStatsFiltered): MetricsModu
   modulesByName.forEach((moduleEntry, normalizedName) => {
     const { name, size = 0, chunks } = moduleEntry;
 
-    if (modules[normalizedName]) {
-      return;
-    }
-
     const instances = chunks.length;
     const duplicateInstances = instances - 1;
+    const duplicated = duplicateInstances > 0;
 
     moduleCount += instances;
-    duplicateModulesCount += duplicateInstances;
-    duplicateCodeSize += duplicateInstances * size;
     totalCodeSize += instances * size;
 
-    // eslint-disable-next-line no-param-reassign
+    if (duplicated) {
+      duplicateModulesCount += duplicateInstances;
+      duplicateCodeSize += duplicateInstances * size;
+    }
+
     modules[normalizedName] = {
       name,
       value: size,
       chunkIds: chunks.map(normalizeChunkId),
-      duplicated: Boolean(duplicateInstances),
+      ...(duplicated && { duplicated }),
     };
   }, {} as Record<string, Module>);
 
