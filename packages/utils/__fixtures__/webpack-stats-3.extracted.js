@@ -36,7 +36,7 @@ module.exports = {
     },
     {
       chunks: [1],
-      name: './module-b + 2 concatenated modules',
+      name: './module-b + 3 concatenated modules',
       size: 2000,
       modules: [
         {
@@ -45,11 +45,38 @@ module.exports = {
         },
         {
           name: './module-b-1',
+          size: 400,
+        },
+        {
+          name: './module-b-c.css',
           size: 1000,
         },
         {
-          name: './module-b-2',
+          name: './module-b-c.js',
+          size: 100,
+        },
+      ],
+    },
+    {
+      chunks: [2],
+      name: './module-c + 3 concatenated modules',
+      size: 2000,
+      modules: [
+        {
+          name: './module-c',
           size: 500,
+        },
+        {
+          name: './module-c-1',
+          size: 400,
+        },
+        {
+          name: './module-b-c.css',
+          size: 1000,
+        },
+        {
+          name: './module-b-c.js',
+          size: 100,
         },
       ],
     },
@@ -72,6 +99,11 @@ module.exports = {
       chunks: [1],
       name: 'node_modules/package-c/index.js',
       size: 1000,
+    },
+    {
+      chunks: [1, 2],
+      name: './module-b-c.css',
+      size: 500,
     },
   ],
 };

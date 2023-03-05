@@ -76,8 +76,8 @@ describe('Webpack/extract/modules', () => {
 
     expect(actual).toEqual({
       metrics: {
-        duplicateCode: { value: 0 },
-        duplicateModulesCount: { value: 0 },
+        duplicateCode: { value: 7.5 },
+        duplicateModulesCount: { value: 2 },
         modules: {
           'module-a': {
             name: 'module-a',
@@ -93,14 +93,32 @@ describe('Webpack/extract/modules', () => {
           },
           './module-b-1': {
             name: './module-b-1',
-            value: 1000,
+            value: 400,
             chunkIds: ['1'],
             duplicated: false,
           },
-          './module-b-2': {
-            name: './module-b-2',
+          './module-b-c.css': {
+            name: './module-b-c.css',
             value: 500,
-            chunkIds: ['1'],
+            chunkIds: ['1', '2'],
+            duplicated: true,
+          },
+          './module-b-c.js': {
+            name: './module-b-c.js',
+            value: 100,
+            chunkIds: ['1', '2'],
+            duplicated: true,
+          },
+          './module-c': {
+            name: './module-c',
+            value: 500,
+            chunkIds: ['2'],
+            duplicated: false,
+          },
+          './module-c-1': {
+            name: './module-c-1',
+            value: 400,
+            chunkIds: ['2'],
             duplicated: false,
           },
           'node_modules/package-a/index.js': {
@@ -128,7 +146,7 @@ describe('Webpack/extract/modules', () => {
             duplicated: false,
           },
         },
-        moduleCount: { value: 8 },
+        moduleCount: { value: 13 },
       },
     });
   });
