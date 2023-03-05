@@ -9,7 +9,7 @@ import { Metric } from './types';
 export const metrics = {
   [Metric.BUNDLE_SIZE]: {
     label: 'Bundle Size',
-    description: 'The total size of the assets produced by webpack',
+    description: 'The total size of the assets processed by the bundler',
     url: 'https://relative-ci.com/documentation/metrics-and-data#assets',
     type: METRIC_TYPE_FILE_SIZE,
   },
@@ -48,14 +48,14 @@ export const metrics = {
   },
   [Metric.MODULE_COUNT]: {
     label: 'Modules',
-    description: 'The total number of modules bundled by webpack',
+    description: 'The total number of bundled modules',
     url: 'https://relative-ci.com/documentation/metrics-and-data#modules-1',
     type: METRIC_TYPE_NUMERIC,
     biggerIsBetter: false,
   },
   [Metric.DUPLICATE_MODULES_COUNT]: {
     label: 'Duplicate Modules',
-    description: 'The total number of modules that belong to more than one chunk',
+    description: 'The total number of module instances bundled into multiple chunks',
     url: 'https://relative-ci.com/documentation/metrics-and-data#modules-1',
     type: METRIC_TYPE_NUMERIC,
     biggerIsBetter: false,
@@ -69,14 +69,14 @@ export const metrics = {
   },
   [Metric.PACKAGE_COUNT]: {
     label: 'Packages',
-    description: 'The total number of packages bundled by webpack',
+    description: 'The total number of bundled packages',
     url: 'https://relative-ci.com/documentation/metrics-and-data#packages',
     type: METRIC_TYPE_NUMERIC,
     biggerIsBetter: false,
   },
   [Metric.DUPLICATE_PACKAGES_COUNT]: {
     label: 'Duplicate Packages',
-    description: 'The total number of duplicate packages',
+    description: 'The total number of bundled duplicate package instances',
     url: 'https://relative-ci.com/documentation/metrics-and-data#packages',
     type: METRIC_TYPE_NUMERIC,
     biggerIsBetter: false,
