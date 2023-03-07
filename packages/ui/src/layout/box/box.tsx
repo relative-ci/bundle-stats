@@ -5,16 +5,20 @@ import { NO_SPACE, SPACES } from '../../tokens';
 // @ts-ignore
 import css from './box.module.css';
 
-interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
-  as?: React.ElementType;
-  padding?: typeof SPACES | Array<typeof SPACES>;
-  horizontalPadding?: string;
-  verticalPadding?: string;
+type SpaceValue = (typeof SPACES)[number];
+
+interface BoxProps<T extends React.ElementType> {
+  as?: T;
+  padding?: SpaceValue | [SpaceValue, SpaceValue];
+  horizontalPadding?: SpaceValue;
+  verticalPadding?: SpaceValue;
   outline?: boolean;
   outlineHover?: boolean;
 }
 
-export const Box = (props: BoxProps) => {
+export const Box = <T extends React.ElementType = 'div'>(
+  props: BoxProps<T> & Omit<React.ComponentProps<T>, keyof BoxProps<T>>,
+) => {
   const {
     className = '',
     as: Component = 'div',
