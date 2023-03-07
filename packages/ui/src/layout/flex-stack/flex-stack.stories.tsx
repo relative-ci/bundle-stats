@@ -1,38 +1,40 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { Box } from '../box';
 import { FlexStack } from '.';
 
-const stories = storiesOf('Layout/FlexStack', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'Layout/FlexStack',
+  component: FlexStack,
+  decorators: [getWrapperDecorator()],
+};
 
-stories.add('default', () => (
+export const Default = () => (
   <FlexStack>
     <Box outline>Lorem ipsum 1</Box>
     <Box outline>Lorem ipsum 2</Box>
     {null}
     Lorem ipsum 3
   </FlexStack>
-));
+);
 
-stories.add('with custom wrapper', () => (
+export const withCustomWrapper = () => (
   <FlexStack as="main" className="wrapper">
     <Box outline>Lorem ipsum 1</Box>
     <Box outline>Lorem ipsum 2</Box>
   </FlexStack>
-));
+);
 
-stories.add('with large space', () => (
+export const withLargeSpace = () => (
   <FlexStack space="large">
     <Box outline>Lorem ipsum 1</Box>
     <Box outline>Lorem ipsum 2</Box>
     <Box outline>Lorem ipsum 3</Box>
   </FlexStack>
-));
+);
 
-stories.add('with nested stack', () => (
+export const withNestedStack = () => (
   <FlexStack space="large">
     <Box outline>Lorem ipsum 1</Box>
     <Box outline>Lorem ipsum 2</Box>
@@ -41,17 +43,17 @@ stories.add('with nested stack', () => (
       <Box outline>Lorem ipsum 3.2</Box>
     </FlexStack>
   </FlexStack>
-));
+);
 
-stories.add('single item', () => (
+export const singleItem = () => (
   <FlexStack>
     <Box outline>Lorem ipsum</Box>
   </FlexStack>
-));
+);
 
-stories.add('with alignItems', () => (
+export const withAlignItems = () => (
   <FlexStack alignItems="center" space="medium">
     <h1>Title</h1>
     <a href="#test">Option 1</a>
   </FlexStack>
-));
+);
