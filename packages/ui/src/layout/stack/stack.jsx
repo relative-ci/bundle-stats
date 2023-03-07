@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { NO_SPACE, SPACES } from '../../constants';
+import { NO_SPACE, SPACES } from '../../tokens';
 import { getRenderChildWithClassName } from '../../utils';
 import css from './stack.module.css';
 
