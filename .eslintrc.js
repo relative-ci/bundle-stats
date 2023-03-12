@@ -61,6 +61,7 @@ module.exports = {
         'react/require-default-props': 'off',
         '@typescript-eslint/comma-dangle': 'warn',
         '@typescript-eslint/no-unused-vars': ['warn', { varsIgnorePattern: '^[_]{1,}$' }],
+        'react/prop-types': 'off',
         // '@typescript-eslint/implicit-arrow-linebreak': 'warn',
       },
     },
