@@ -1,14 +1,14 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { SummaryItem } from './summary-item';
+import { MetricRunInfo } from './metric-run-info';
 
 export default {
-  title: 'Components/SummaryItem',
-  component: SummaryItem,
+  title: 'Components/MetricRunInfo',
+  component: MetricRunInfo,
 } as Meta;
 
-const Template: Story = (args) => <SummaryItem id="webpack.totalSizeByTypeALL" {...args} />;
+const Template: Story = (args) => <MetricRunInfo id="webpack.totalSizeByTypeALL" {...args} />;
 
 export const Default = Template.bind({});
 

@@ -9,7 +9,7 @@ import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
-import css from './summary-item.module.css';
+import css from './metric-run-info.module.css';
 
 // Separate value and unit
 const EXTRACT_VALUE_UNIT_PATTERN = /([\d|.|,| ]*)(\w*|%)$/;
@@ -27,7 +27,7 @@ const getMetricParams = (value: string) => {
   };
 };
 
-export interface SummaryItemProps {
+export interface MetricRunInfoProps {
   title?: string;
   titleHoverCard?: React.ReactNode;
   titleTooltip?: React.ReactNode;
@@ -42,7 +42,7 @@ export interface SummaryItemProps {
   loading?: boolean;
 }
 
-export const SummaryItem = ({
+export const MetricRunInfo = ({
   className = '',
   title = '',
   titleHoverCard = null,
@@ -55,7 +55,7 @@ export const SummaryItem = ({
   size = 'medium',
   loading = false,
   ...restProps
-}: SummaryItemProps & React.ComponentProps<'div'>) => {
+}: MetricRunInfoProps & React.ComponentProps<'div'>) => {
   const metricParams = getMetricParams(current);
   const rootClassName = cx(css.root, className, css[size], delta && css.showDelta);
 
