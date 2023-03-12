@@ -38,7 +38,7 @@ const MetricInfo = ({ description, url }: MetricInfoProps) => {
   );
 };
 
-interface SummaryItemProps {
+export interface SummaryItemProps {
   id: string;
 
   as?: React.ElementType;
