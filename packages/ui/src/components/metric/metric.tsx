@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import css from './metric.module.css';
@@ -7,7 +6,35 @@ import css from './metric.module.css';
 // Separate value and unit
 const EXTRACT_VALUE_UNIT_PATTERN = /([\d|.|,| ]*)(\w*|%)$/;
 
-export const Metric = ({ className, value, formatter, inline, children, enhanced }) => {
+export interface MetricProps {
+  /**
+   * Metric value
+   */
+  value?: string | number;
+  /**
+   * Metric value formatter
+   */
+  formatter?: (val: string | number) => string;
+  /**
+   * Inline variant - render children inline
+   */
+  inline?: boolean;
+  /**
+   * enhanced variant - extract and style unit
+   */
+  enhanced?: boolean;
+}
+
+export const Metric = (props: MetricProps & React.ComponentProps<'div'>) => {
+  const {
+    className = '',
+    value = 0,
+    formatter = (val) => val.toString(),
+    inline = false,
+    enhanced = false,
+    children = null,
+  } = props;
+
   const { displayValue, displayUnit } = useMemo(() => {
     const formattedValue = formatter?.(value);
 
@@ -42,22 +69,4 @@ export const Metric = ({ className, value, formatter, inline, children, enhanced
       <div className={css.delta}>{children}</div>
     </div>
   );
-};
-
-Metric.defaultProps = {
-  className: '',
-  enhanced: false,
-  inline: false,
-  value: 0,
-  children: [],
-  formatter: (val) => val,
-};
-
-Metric.propTypes = {
-  className: PropTypes.string,
-  enhanced: PropTypes.bool,
-  inline: PropTypes.bool,
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  formatter: PropTypes.func,
-  children: PropTypes.node,
 };
