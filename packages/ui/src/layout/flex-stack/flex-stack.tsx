@@ -3,14 +3,13 @@ import cx from 'classnames';
 
 import { NO_SPACE, SPACES } from '../../tokens';
 import { getRenderChildWithClassName } from '../../utils';
-// @ts-ignore
 import css from './flex-stack.module.css';
 
 type SpaceValue = (typeof SPACES)[number];
 
 interface FlexStackProps<T extends React.ElementType> {
   as?: T;
-  space?: typeof SPACES[number];
+  space?: SpaceValue;
   inline?: boolean;
   alignItems?: 'top' | 'center' | 'bottom';
 }

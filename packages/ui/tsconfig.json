@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "globals.d.ts"],
+  "plugins": [{"name": "typescript-plugin-css-modules"}],
   "compilerOptions": {
     "jsx": "react"
   }
