@@ -31,7 +31,18 @@ module.exports = {
       { js: 'never', jsx: 'never', ts: 'never', tsx: 'never' },
     ],
     'import/prefer-default-export': 'off',
-    'import/no-extraneous-dependencies': ['error', { peerDependencies: true }],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        peerDependencies: true,
+        devDependencies: [
+          '**/*.stories.jsx',
+          '**/__tests__/*.js',
+          '**/storybook/*.js',
+          '**/jest/*.js',
+        ],
+      },
+    ],
     'react/static-property-placement': 'off',
     'react/jsx-props-no-spreading': 'off',
     'prettier/prettier': 'warn',
@@ -57,10 +68,23 @@ module.exports = {
       plugins: ['@typescript-eslint'],
       rules: {
         'import/prefer-default-export': 'off',
+        'import/no-extraneous-dependencies': [
+          'error',
+          {
+            peerDependencies: true,
+            devDependencies: [
+              '**/*.stories.tsx',
+              '**/__tests__/*.ts',
+              '**/storybook/*.ts',
+              '**/jest/*.ts',
+            ],
+          },
+        ],
         'implicit-arrow-linebreak': 'warn',
         'react/require-default-props': 'off',
         '@typescript-eslint/comma-dangle': 'warn',
         '@typescript-eslint/no-unused-vars': ['warn', { varsIgnorePattern: '^[_]{1,}$' }],
+        'react/prop-types': 'off',
         // '@typescript-eslint/implicit-arrow-linebreak': 'warn',
       },
     },

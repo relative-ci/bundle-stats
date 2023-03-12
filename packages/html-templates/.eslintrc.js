@@ -16,5 +16,18 @@ module.exports = {
         json: 'alwaus',
       },
     ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        peerDependencies: true,
+        devDependencies: [
+          '**/*.stories.jsx',
+          '**/__tests__/*.js',
+          '**/storybook/*.js',
+          '**/jest/*.js',
+          '*.js',
+        ],
+      },
+    ],
   },
 };
