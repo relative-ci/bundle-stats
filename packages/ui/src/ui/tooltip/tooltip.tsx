@@ -7,7 +7,6 @@ import {
   useTooltipState,
 } from 'ariakit/tooltip';
 
-// @ts-ignore
 import css from './tooltip.module.css';
 
 interface TooltipProps<T extends React.ElementType> {

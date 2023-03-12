@@ -2,7 +2,6 @@ import React from 'react';
 import cx from 'classnames';
 
 import { NO_SPACE, SPACES } from '../../tokens';
-// @ts-ignore
 import css from './box.module.css';
 
 type SpaceValue = (typeof SPACES)[number];

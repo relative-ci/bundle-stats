@@ -3,7 +3,6 @@ import cx from 'classnames';
 import { InsightType } from '@bundle-stats/utils';
 
 import { Icon } from '../../ui/icon';
-// @ts-ignore
 import css from './insight-icon.module.css';
 
 const InsightTypeIconMap = new Map([
@@ -24,4 +23,3 @@ export const InsightIcon = (props: InsightIconProps) => {
 
   return <Icon glyph={glyph} className={rootClassName} />;
 };
-
