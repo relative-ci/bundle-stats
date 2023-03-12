@@ -1,72 +1,42 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import cx from 'classnames';
 
 import css from './metric.module.css';
-
-// Separate value and unit
-const EXTRACT_VALUE_UNIT_PATTERN = /([\d|.|,| ]*)(\w*|%)$/;
 
 export interface MetricProps {
   /**
    * Metric value
    */
-  value?: string | number;
+  value?: string;
   /**
-   * Metric value formatter
+   * Metric value unit
    */
-  formatter?: (val: string | number) => string;
+  unit?: string;
   /**
    * Inline variant - render children inline
    */
   inline?: boolean;
-  /**
-   * enhanced variant - extract and style unit
-   */
-  enhanced?: boolean;
 }
 
 export const Metric = (props: MetricProps & React.ComponentProps<'div'>) => {
   const {
     className = '',
-    value = 0,
-    formatter = (val) => val.toString(),
+    value = '0',
+    unit = '',
     inline = false,
-    enhanced = false,
     children = null,
+    ...restProps
   } = props;
-
-  const { displayValue, displayUnit } = useMemo(() => {
-    const formattedValue = formatter?.(value);
-
-    if (!formattedValue) {
-      return { displayValue: value };
-    }
-
-    if (!enhanced) {
-      return { displayValue: formattedValue };
-    }
-
-    const matches = formattedValue.match(EXTRACT_VALUE_UNIT_PATTERN);
-
-    if (!matches) {
-      return { displayValue: value };
-    }
-
-    return {
-      displayUnit: matches[2],
-      displayValue: matches[1],
-    };
-  }, [formatter, value]);
 
   const rootClassName = cx(className, css.root, inline && css.inline);
 
   return (
-    <div className={rootClassName}>
+    <div className={rootClassName} {...restProps}>
       <div className={css.display}>
-        <span className={css.displayValue}>{displayValue}</span>
-        {displayUnit && <span className={css.displayUnit}>{displayUnit}</span>}
+        <span className={css.displayValue}>{value}</span>
+        {unit && <span className={css.displayUnit}>{unit}</span>}
       </div>
-      <div className={css.delta}>{children}</div>
+      {children && <div className={css.content}>{children}</div>}
     </div>
   );
 };

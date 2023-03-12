@@ -11,6 +11,22 @@ import { Metric } from '../metric';
 import { Delta } from '../delta';
 import css from './summary-item.module.css';
 
+// Separate value and unit
+const EXTRACT_VALUE_UNIT_PATTERN = /([\d|.|,| ]*)(\w*|%)$/;
+
+const getMetricParams = (value: string) => {
+  const matches = value.match(EXTRACT_VALUE_UNIT_PATTERN);
+
+  if (!matches) {
+    return { value, unit: '' };
+  }
+
+  return {
+    value: matches[1],
+    unit: matches[2],
+  };
+};
+
 interface MetricInfoProps {
   description: string;
   url?: string;
@@ -69,8 +85,9 @@ export const SummaryItem = ({
 
   const metric = getGlobalMetricType(id);
   const runInfo = getMetricRunInfo(metric, current, baseline);
-  const showMetricDescriptionTooltip = showMetricDescription && metric?.description;
+  const metricParams = getMetricParams(runInfo.displayValue);
 
+  const showMetricDescriptionTooltip = showMetricDescription && metric?.description;
   const rootClassName = cx(css.root, className, css[size], showDelta && css.showDelta);
 
   return (
@@ -89,9 +106,8 @@ export const SummaryItem = ({
         <Stack>
           <Metric
             className={css.currentMetric}
-            value={current}
-            formatter={metric.formatter}
-            enhanced
+            value={metricParams.value}
+            unit={metricParams.unit}
             inline
           >
             {showDelta && (
@@ -102,7 +118,7 @@ export const SummaryItem = ({
               />
             )}
           </Metric>
-          <Metric className={css.baselineMetric} value={baseline} formatter={metric.formatter} />
+          <Metric className={css.baselineMetric} value={metric.formatter(baseline)} />
         </Stack>
       ) : (
         <Stack>

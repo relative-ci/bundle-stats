@@ -6,7 +6,7 @@
   font-size: var(--size-small);
 }
 
-.delta {
+.content {
   font-size: var(--size-small);
 }
 
@@ -14,7 +14,7 @@
   display: inline-block;
 }
 
-.inline .delta {
+.inline .content {
   display: inline-block;
   margin: 0 0 0 var(--space-xxxsmall);
 }

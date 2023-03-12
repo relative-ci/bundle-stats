@@ -16,27 +16,20 @@ const Template: Story = (args) => <Metric {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
-  value: 100,
-  formatter: (v: number) => `${v}ms`,
+  value: '100',
 };
 
-export const WithFormattedValue = Template.bind({});
+export const WithUnit = Template.bind({});
 
-WithFormattedValue.args = {
-  value: '100KiB',
-};
-
-export const Enhanced = Template.bind({});
-
-Enhanced.args = {
-  ...Default.args,
-  enhanced: true,
+WithUnit.args = {
+  value: '100',
+  unit: 'KiB',
 };
 
 export const WithDelta = Template.bind({});
 
 WithDelta.args = {
-  ...Default.args,
+  ...WithUnit.args,
   children: <Delta displayValue="+10%" deltaType="POSITIVE" />,
 };
 
