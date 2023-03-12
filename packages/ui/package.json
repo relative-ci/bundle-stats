@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/ui",
-  "version": "4.2.5-beta.0",
+  "version": "4.2.5-beta.1",
   "description": "UI components for BundleStats projects.",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
@@ -69,8 +69,8 @@
     "react-router-dom": "5.3.4",
     "react-test-renderer": "18.2.0",
     "rimraf": "4.2.0",
-    "typescript-plugin-css-modules": "4.2.3",
-    "typescript": "4.9.5"
+    "typescript": "4.9.5",
+    "typescript-plugin-css-modules": "4.2.3"
   },
   "peerDependencies": {
     "classnames": "^2.0.0",
@@ -81,7 +81,7 @@
     "react-router-dom": "^5.0.0"
   },
   "dependencies": {
-    "@bundle-stats/utils": "^4.2.5-beta.0",
+    "@bundle-stats/utils": "^4.2.5-beta.1",
     "ariakit": "2.0.0-next.43",
     "modern-css-reset": "1.4.0",
     "query-string": "7.1.3",
