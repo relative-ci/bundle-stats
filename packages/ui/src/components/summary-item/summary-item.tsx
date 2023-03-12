@@ -1,5 +1,4 @@
 import React, { useCallback } from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
@@ -12,7 +11,12 @@ import { Metric } from '../metric';
 import { Delta } from '../delta';
 import css from './summary-item.module.css';
 
-const MetricInfo = ({ description, url }) => {
+interface MetricInfoProps {
+  description: string;
+  url?: string;
+}
+
+const MetricInfo = ({ description, url }: MetricInfoProps) => {
   // The component parent can be rendered inside a link, use button to avoid using nested links
   const onClick = useCallback(() => {
     if (url) {
@@ -34,26 +38,33 @@ const MetricInfo = ({ description, url }) => {
   );
 };
 
-MetricInfo.propTypes = {
-  description: PropTypes.string.isRequired,
-  url: PropTypes.string,
-};
+interface SummaryItemProps {
+  id: string;
 
-MetricInfo.defaultProps = {
-  url: '',
-};
+  as?: React.ElementType;
+  size?: 'medium' | 'large';
+
+  loading?: boolean;
+  data?: {
+    current: number;
+    baseline: number;
+  };
+
+  showMetricDescription?: boolean;
+  showDelta?: boolean;
+}
 
 export const SummaryItem = ({
-  className,
-  as: Component,
-  size,
   id,
-  data,
-  loading,
-  showDelta,
-  showMetricDescription,
-  ...props
-}) => {
+  className = '',
+  as: Component = 'div',
+  size = 'medium',
+  data = undefined,
+  loading = false,
+  showMetricDescription = false,
+  showDelta = true,
+  ...restProps
+}: SummaryItemProps & React.ComponentProps<'div'>) => {
   const { baseline, current } = data || { baseline: 0, current: 0 };
 
   const metric = getGlobalMetricType(id);
@@ -63,11 +74,9 @@ export const SummaryItem = ({
   const rootClassName = cx(css.root, className, css[size], showDelta && css.showDelta);
 
   return (
-    <Stack space="xxsmall" as={Component} className={rootClassName} {...props}>
+    <Stack space="xxsmall" as={Component} className={rootClassName} {...restProps}>
       <FlexStack space="xxxsmall" alignItems="center" as="h3" className={css.title}>
-        <span>
-          {metric.label}
-        </span>
+        <span>{metric.label}</span>
 
         {showMetricDescriptionTooltip && (
           <HoverCard label={<Icon glyph={Icon.ICONS.HELP} />} className={css.titleIcon}>
@@ -88,8 +97,8 @@ export const SummaryItem = ({
             {showDelta && (
               <Delta
                 className={css.delta}
-                displayValue={runInfo.displayDeltaPercentage}
-                deltaType={runInfo.deltaType}
+                displayValue={runInfo.displayDeltaPercentage || ''}
+                deltaType={runInfo.deltaType || ''}
               />
             )}
           </Metric>
@@ -103,40 +112,4 @@ export const SummaryItem = ({
       )}
     </Stack>
   );
-};
-
-SummaryItem.defaultProps = {
-  className: '',
-  as: 'div',
-  data: null,
-  size: 'medium',
-  loading: false,
-  showMetricDescription: false,
-  showDelta: true,
-};
-
-SummaryItem.propTypes = {
-  /** Adopted child class name */
-  className: PropTypes.string,
-
-  /** Custom component */
-  as: PropTypes.elementType,
-
-  /** Size modifier */
-  size: PropTypes.oneOf(['medium', 'large']),
-
-  /** Metric id */
-  id: PropTypes.string.isRequired,
-
-  /** Loading flag */
-  loading: PropTypes.bool,
-
-  /** Summary data */
-  data: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-
-  /** Show description */
-  showMetricDescription: PropTypes.bool,
-
-  /** Show delta */
-  showDelta: PropTypes.bool,
 };
