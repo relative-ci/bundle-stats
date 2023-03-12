@@ -13,44 +13,37 @@ const Template: Story = (args) => <SummaryItem id="webpack.totalSizeByTypeALL" {
 export const Default = Template.bind({});
 
 Default.args = {
-  data: {
-    current: 120 * 1000,
-    baseline: 100 * 1000,
-  },
+  title: 'Bundle Size',
+  current: '120KiB',
+  baseline: '100KiB',
+  delta: '+20%',
+  deltaType: 'HIGH_NEGATIVE',
 };
 
 export const SizeLarge = Template.bind({});
 
 SizeLarge.args = {
-  data: {
-    current: 120 * 1000,
-    baseline: 100 * 1000,
-  },
+  ...Default.args,
   size: 'large',
 };
 
-export const ShowMetricDescription = Template.bind({});
+export const TitleHoverCard = Template.bind({});
 
-ShowMetricDescription.args = {
-  data: {
-    current: 120 * 1000,
-    baseline: 100 * 1000,
-  },
-  showMetricDescription: true,
+TitleHoverCard.args = {
+  ...Default.args,
+  titleHoverCard: 'Info',
 };
 
-export const ShowDeltaFalse = Template.bind({});
+export const TitleTooltip = Template.bind({});
 
-ShowDeltaFalse.args = {
-  data: {
-    current: 120 * 1000,
-    baseline: 0,
-  },
-  showDelta: false,
+TitleTooltip.args = {
+  ...Default.args,
+  titleTooltip: 'Info',
 };
 
 export const Loading = Template.bind({});
 
 Loading.args = {
+  title: 'Bundle Size',
   loading: true,
 };

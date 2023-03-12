@@ -5,7 +5,7 @@ import map from 'lodash/map';
 import max from 'lodash/max';
 import sum from 'lodash/sum';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
-import { getBundleAssetsFileTypeComponentLink } from '@bundle-stats/utils';
+import { getBundleAssetsFileTypeComponentLink, getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { ASSETS_SIZES_FILE_TYPE_MAP } from '../../constants';
 import { HorizontalBarChart } from '../../ui/horizontal-bar-chart';
@@ -15,19 +15,27 @@ import { Stack } from '../../layout/stack';
 import { SummaryItem } from '../summary-item';
 import css from './bundle-assets-totals-chart-bars.module.css';
 
-const getTooltip = (items, jobs, itemIndex, runIndex) => () => (
-  <SummaryItem
-    className={css.itemTooltip}
-    id={items?.[itemIndex]?.key}
-    data={{
-      current: items?.[itemIndex]?.runs?.[runIndex]?.value || 0,
-      baseline: items?.[itemIndex]?.runs?.[runIndex + 1]?.value || 0,
-    }}
-    showDelta={runIndex < jobs.length - 1}
-    showBaselineValue={runIndex < jobs.length - 1}
-    size="large"
-  />
-);
+const getTooltip = (items, jobs, itemIndex, runIndex) => () => {
+  const metricId = items?.[itemIndex]?.key;
+  const metric = getGlobalMetricType(metricId);
+  const current = items?.[itemIndex]?.runs?.[runIndex]?.value || 0;
+  const baseline = items?.[itemIndex]?.runs?.[runIndex + 1]?.value || 0;
+  const metricRunInfo = getMetricRunInfo(metric, current, baseline);
+
+  return (
+    <SummaryItem
+      className={css.itemTooltip}
+      title={metric.label}
+      current={metricRunInfo.displayValue}
+      {...(runIndex < jobs.length - 1 && {
+        baseline: metric.formatter(baseline),
+        delta: metricRunInfo.displayDeltaPercentage,
+        deltaType: metricRunInfo.deltaType,
+      })}
+      size="large"
+    />
+  );
+};
 
 export const BundleAssetsTotalsChartBars = ({
   className,
