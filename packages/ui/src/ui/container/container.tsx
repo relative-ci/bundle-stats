@@ -1,7 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
 
-// @ts-ignore
 import css from './container.module.css';
 
 interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {

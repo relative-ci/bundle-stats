@@ -5,7 +5,6 @@ import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { ComponentLink } from '../component-link';
 import { InsightIcon } from '../insight-icon';
-// @ts-ignore
 import css from './insights.module.css';
 
 interface InsightsProps extends React.HTMLAttributes<HTMLDivElement> {
