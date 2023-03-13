@@ -7,13 +7,14 @@
 }
 
 .titleIcon {
+  flex: 0 0 var(--space-small);
   margin-top: -4px !important;
   margin-bottom: -4px !important;
 }
 
 .currentMetric {
   color: var(--color-heading);
-  font-size: var(--size-large);
+  font-size: var(--size-xlarge);
   line-height: var(--line-height-heading);
   white-space: nowrap;
   font-weight: bold;
@@ -21,7 +22,7 @@
 
 .baselineMetric {
   color: var(--color-text-light);
-  font-size: var(--size-small);
+  font-size: var(--size-medium);
   line-height: var(--line-height-heading);
 }
 

@@ -64,7 +64,6 @@ export const RunInfo = ({
       {title && (
         <FlexStack space="xxxsmall" alignItems="center" as="h3" className={css.title}>
           <span>{title}</span>
-
           {titleHoverCard && (
             <HoverCard label={<Icon glyph={Icon.ICONS.HELP} />} className={css.titleIcon}>
               {titleHoverCard}
