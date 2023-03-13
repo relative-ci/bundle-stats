@@ -14,6 +14,7 @@
 
 .anchorIcon {
   display: block;
+  margin: -2px 0; /* compensate for the vertical space */
 }
 
 .info {
