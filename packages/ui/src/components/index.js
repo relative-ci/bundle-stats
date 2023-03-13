@@ -13,7 +13,7 @@ export { JobHeader } from './job-header';
 export { JobsHeader } from './jobs-header';
 export { LighthouseTable } from './lighthouse-table';
 export { Metric } from './metric';
-export { MetricRunInfo, MetricRunInfoProps } from './metric-run-info';
+export { RunInfo, RunInfoProps } from './run-info';
 export { MetricsTable } from './metrics-table';
 export { MetricsTableOptions } from './metrics-table-options';
 export { MetricsTableSearch } from './metrics-table-search';

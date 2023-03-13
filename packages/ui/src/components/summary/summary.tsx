@@ -8,7 +8,7 @@ import { Box } from '../../layout/box';
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { ComponentLink } from '../component-link';
-import { MetricRunInfo, MetricRunInfoProps } from '../metric-run-info';
+import { RunInfo, RunInfoProps } from '../run-info';
 import css from './summary.module.css';
 
 interface MetricInfoProps {
@@ -44,7 +44,7 @@ interface SummaryItemData {
 }
 
 interface SummaryProps {
-  size?: MetricRunInfoProps['size'];
+  size?: RunInfoProps['size'];
   keys?: Array<string>;
   data?: Record<string, SummaryItemData> | null;
   loading?: boolean;
@@ -80,7 +80,7 @@ const SummaryItem = (props: SummaryItemProps & React.ComponentProps<'div'>) => {
       {...componentLink?.link}
       className={className}
     >
-      <MetricRunInfo
+      <RunInfo
         title={metric.label}
         titleHoverCard={<MetricInfo description={metric.description} url={metric.url} />}
         current={metricRunInfo.displayValue}

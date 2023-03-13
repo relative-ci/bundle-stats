@@ -12,7 +12,7 @@ import { HorizontalBarChart } from '../../ui/horizontal-bar-chart';
 import { ComponentLink } from '../component-link'
 import { getColors } from '../../utils';
 import { Stack } from '../../layout/stack';
-import { MetricRunInfo } from '../metric-run-info';
+import { RunInfo } from '../run-info';
 import css from './bundle-assets-totals-chart-bars.module.css';
 
 const getTooltip = (items, jobs, itemIndex, runIndex) => () => {
@@ -23,7 +23,7 @@ const getTooltip = (items, jobs, itemIndex, runIndex) => () => {
   const metricRunInfo = getMetricRunInfo(metric, current, baseline);
 
   return (
-    <MetricRunInfo
+    <RunInfo
       className={css.itemTooltip}
       title={metric.label}
       current={metricRunInfo.displayValue}
