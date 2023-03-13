@@ -17,21 +17,16 @@ import css from './bundle-assets-totals-chart-bars.module.css';
 
 const getTooltip = (items, jobs, itemIndex, runIndex) => () => {
   const metricId = items?.[itemIndex]?.key;
-  const metric = getGlobalMetricType(metricId);
   const current = items?.[itemIndex]?.runs?.[runIndex]?.value || 0;
-  const baseline = items?.[itemIndex]?.runs?.[runIndex + 1]?.value || 0;
-  const metricRunInfo = getMetricRunInfo(metric, current, baseline);
+  const baseline = items?.[itemIndex]?.runs?.[runIndex + 1]?.value;
 
   return (
     <MetricRunInfo
       className={css.itemTooltip}
-      title={metric.label}
-      current={metricRunInfo.displayValue}
-      {...(runIndex < jobs.length - 1 && {
-        baseline: metric.formatter(baseline),
-        delta: metricRunInfo.displayDeltaPercentage,
-        deltaType: metricRunInfo.deltaType,
-      })}
+      metricId={metricId}
+      current={current}
+      baseline={baseline}
+      showMetridDescription={false}
       size="large"
     />
   );

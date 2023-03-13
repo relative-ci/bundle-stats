@@ -1,101 +1,67 @@
-import React from 'react';
-import cx from 'classnames';
+import React, { useCallback } from 'react';
+import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
-import { Icon } from '../../ui/icon';
-import { HoverCard } from '../../ui/hover-card';
-import { Tooltip } from '../../ui/tooltip';
-import { Skeleton } from '../../ui/skeleton';
-import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
-import { Metric } from '../metric';
-import { Delta } from '../delta';
+import { RunInfo, RunInfoProps } from '../run-info';
 import css from './metric-run-info.module.css';
 
-// Separate value and unit
-const EXTRACT_VALUE_UNIT_PATTERN = /([\d|.|,| ]*)(\w*|%)$/;
+interface MetricInfoProps {
+  description: string;
+  url?: string;
+}
 
-const getMetricParams = (value: string) => {
-  const matches = value.match(EXTRACT_VALUE_UNIT_PATTERN);
+const MetricHoverCard = ({ description, url }: MetricInfoProps) => {
+  // The component parent can be rendered inside a link, use button to avoid using nested links
+  const onClick = useCallback(() => {
+    if (url) {
+      window.open(url);
+    }
+  }, [url]);
 
-  if (!matches) {
-    return { value, unit: '' };
-  }
-
-  return {
-    value: matches[1],
-    unit: matches[2],
-  };
+  return (
+    <Stack space="xxxsmall">
+      <p>{description}</p>
+      {url && (
+        <p>
+          <button type="button" onClick={onClick} className={css.readMoreLink}>
+            Read more
+          </button>
+        </p>
+      )}
+    </Stack>
+  );
 };
 
 export interface MetricRunInfoProps {
-  title?: string;
-  titleHoverCard?: React.ReactNode;
-  titleTooltip?: React.ReactNode;
-  current?: string;
-  baseline?: string;
-  delta?: string;
-  deltaType?: string;
-
-  as?: React.ElementType;
-  size?: 'medium' | 'large';
-
-  loading?: boolean;
+  metricId: string;
+  current: number;
+  baseline?: number;
+  showDelta?: boolean;
+  showMetridDescription?: boolean;
+  size?: RunInfoProps['size'];
+  loading?: RunInfoProps['loading'];
 }
 
-export const MetricRunInfo = ({
-  className = '',
-  title = '',
-  titleHoverCard = null,
-  titleTooltip = null,
-  current = '',
-  baseline = '',
-  delta = '',
-  deltaType = '',
-  as: Component = 'div',
-  size = 'medium',
-  loading = false,
-  ...restProps
-}: MetricRunInfoProps & React.ComponentProps<'div'>) => {
-  const metricParams = getMetricParams(current);
-  const rootClassName = cx(css.root, className, css[size], delta && css.showDelta);
+export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'div'>) => {
+  const { metricId, current, baseline = undefined, showDelta = true, showMetridDescription = true, ...restProps } = props;
+
+  const metric = getGlobalMetricType(metricId);
+  const metricRunInfo = getMetricRunInfo(metric, current, baseline || 0);
+  const showBaseline = typeof baseline !== 'undefined';
 
   return (
-    <Stack space="xxsmall" as={Component} className={rootClassName} {...restProps}>
-      {title && (
-        <FlexStack space="xxxsmall" alignItems="center" as="h3" className={css.title}>
-          <span>{title}</span>
-
-          {titleHoverCard && (
-            <HoverCard label={<Icon glyph={Icon.ICONS.HELP} />} className={css.titleIcon}>
-              {titleHoverCard}
-            </HoverCard>
-          )}
-          {titleTooltip && (
-            <Tooltip title={titleTooltip} className={css.titleIcon}>
-              <Icon glyph={Icon.ICONS.HELP} />
-            </Tooltip>
-          )}
-        </FlexStack>
-      )}
-
-      {!loading ? (
-        <Stack>
-          <Metric
-            className={css.currentMetric}
-            value={metricParams.value}
-            unit={metricParams.unit}
-            inline
-          >
-            {delta && <Delta className={css.delta} displayValue={delta} deltaType={deltaType} />}
-          </Metric>
-          <Metric className={css.baselineMetric} value={baseline} />
-        </Stack>
-      ) : (
-        <Stack>
-          <Skeleton as="p" className={cx(css.currentMetric, css.loading)} />
-          <Skeleton as="p" className={cx(css.baselineMetric, css.loading)} />
-        </Stack>
-      )}
-    </Stack>
+    <RunInfo
+      title={metric.label}
+      titleHoverCard={showMetridDescription && <MetricHoverCard description={metric.description} url={metric.url} />}
+      current={metricRunInfo.displayValue}
+      {...(showBaseline && {
+        baseline: metric.formatter(baseline),
+      })}
+      {...(showDelta && showBaseline && {
+        delta: metricRunInfo.displayDeltaPercentage,
+        deltaType: metricRunInfo.deltaType,
+      })}
+      {...restProps}
+    />
   );
 };
