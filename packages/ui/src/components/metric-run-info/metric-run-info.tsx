@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { Stack } from '../../layout/stack';
@@ -37,22 +37,37 @@ export interface MetricRunInfoProps {
   current: number;
   baseline?: number;
   showDelta?: boolean;
-  showMetridDescription?: boolean;
+  showMetricDescription?: boolean;
   size?: RunInfoProps['size'];
   loading?: RunInfoProps['loading'];
 }
 
 export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'div'>) => {
-  const { metricId, current, baseline = undefined, showDelta = true, showMetridDescription = true, ...restProps } = props;
+  const {
+    metricId,
+    current,
+    baseline = undefined,
+    showDelta = true,
+    showMetricDescription = true,
+    ...restProps
+  } = props;
 
   const metric = getGlobalMetricType(metricId);
   const metricRunInfo = getMetricRunInfo(metric, current, baseline || 0);
   const showBaseline = typeof baseline !== 'undefined';
 
+  const titleHoverCard = useMemo(() => {
+    if (showMetricDescription) {
+      return <MetricHoverCard description={metric.description} url={metric.url} />;
+    }
+
+    return null;
+  }, [showMetricDescription, metric]);
+
   return (
     <RunInfo
       title={metric.label}
-      titleHoverCard={showMetridDescription && <MetricHoverCard description={metric.description} url={metric.url} />}
+      titleHoverCard={titleHoverCard}
       current={metricRunInfo.displayValue}
       {...(showBaseline && {
         baseline: metric.formatter(baseline),
