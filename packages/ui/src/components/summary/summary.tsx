@@ -10,27 +10,14 @@ import { ComponentLink } from '../component-link';
 import { MetricRunInfo, MetricRunInfoProps } from '../metric-run-info';
 import css from './summary.module.css';
 
-interface SummaryItemData {
-  current: number;
-  baseline: number;
-}
-
-interface SummaryProps {
-  size?: MetricRunInfoProps['size'];
-  keys?: Array<string>;
-  data?: Record<string, SummaryItemData> | null;
-  loading?: boolean;
-  showSummaryItemDelta?: boolean;
-  summaryItemLink?: React.ElementType;
-}
-
 interface SummaryItemProps {
   metricId: string;
-  data?: SummaryProps['data'];
-  summaryItemLink: SummaryProps['summaryItemLink'];
-  size: SummaryProps['size'];
-  loading: SummaryProps['loading'];
-  showSummaryItemDelta: SummaryProps['showSummaryItemDelta'];
+  data?: Record<string, SummaryItemData> | null;
+  customLink: React.ElementType;
+  size?: MetricRunInfoProps['size'];
+  loading: boolean;
+  showDelta: boolean;
+  showBaseline: boolean;
 }
 
 const SummaryItem = (props: SummaryItemProps & React.ComponentProps<'div'>) => {
@@ -38,10 +25,11 @@ const SummaryItem = (props: SummaryItemProps & React.ComponentProps<'div'>) => {
     className = '',
     metricId,
     data,
-    summaryItemLink: SummaryItemCustomLink,
+    customLink: SummaryItemCustomLink,
     size,
     loading,
-    showSummaryItemDelta,
+    showDelta,
+    showBaseline,
   } = props;
 
   const componentLink = METRIC_COMPONENT_LINKS.get(metricId);
@@ -61,13 +49,29 @@ const SummaryItem = (props: SummaryItemProps & React.ComponentProps<'div'>) => {
         metricId={metricId}
         current={metricData.current}
         baseline={metricData.baseline}
-        showDelta={showSummaryItemDelta && componentLink?.showDelta}
+        showDelta={showDelta && componentLink?.showDelta}
+        showBaseline={showBaseline}
         size={size}
         loading={loading}
       />
     </Box>
   );
 };
+
+interface SummaryItemData {
+  current: number;
+  baseline: number;
+}
+
+interface SummaryProps {
+  size?: MetricRunInfoProps['size'];
+  keys?: Array<string>;
+  data?: SummaryItemProps['data'];
+  loading?: boolean;
+  showSummaryItemDelta?: SummaryItemProps['showDelta'];
+  showSummaryItemBaseline?: SummaryItemProps['showBaseline'];
+  summaryItemLink?: SummaryItemProps['customLink'];
+}
 
 export const Summary = ({
   className = '',
@@ -76,6 +80,7 @@ export const Summary = ({
   data = null,
   loading = false,
   showSummaryItemDelta = true,
+  showSummaryItemBaseline = true,
   summaryItemLink = ComponentLink,
 }: SummaryProps & React.ComponentProps<'div'>) => (
   <Box className={cx(css.root, className)}>
@@ -86,10 +91,11 @@ export const Summary = ({
           className={css.item}
           metricId={metricId}
           data={data}
-          summaryItemLink={summaryItemLink}
+          customLink={summaryItemLink}
           size={size}
           loading={loading}
-          showSummaryItemDelta={showSummaryItemDelta}
+          showDelta={showSummaryItemDelta}
+          showBaseline={showSummaryItemBaseline}
         />
       ))}
     </FlexStack>

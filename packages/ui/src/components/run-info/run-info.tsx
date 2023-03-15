@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import cx from 'classnames';
 
 import { Icon } from '../../ui/icon';
@@ -14,24 +14,21 @@ import css from './run-info.module.css';
 // Separate value and unit
 const EXTRACT_VALUE_UNIT_PATTERN = /([\d|.|,| ]*)(\w*|%)$/;
 
-const getMetricParams = (value: string) => {
+const getMetricParams = (value: string): [string, string?] => {
   const matches = value.match(EXTRACT_VALUE_UNIT_PATTERN);
 
   if (!matches) {
-    return { value, unit: '' };
+    return [value];
   }
 
-  return {
-    value: matches[1],
-    unit: matches[2],
-  };
+  return [matches[1], matches[2]];
 };
 
 export interface RunInfoProps {
   title?: string;
   titleHoverCard?: React.ReactNode;
   titleTooltip?: React.ReactNode;
-  current?: string;
+  current?: React.ReactNode;
   baseline?: string;
   delta?: string;
   deltaType?: string;
@@ -40,6 +37,7 @@ export interface RunInfoProps {
   size?: 'medium' | 'large';
 
   loading?: boolean;
+  enhance?: boolean;
 }
 
 export const RunInfo = ({
@@ -54,10 +52,18 @@ export const RunInfo = ({
   as: Component = 'div',
   size = 'medium',
   loading = false,
+  enhance = false,
   ...restProps
 }: RunInfoProps & React.ComponentProps<'div'>) => {
-  const metricParams = getMetricParams(current);
   const rootClassName = cx(css.root, className, css[size], delta && css.showDelta);
+
+  const currentValueParams: [React.ReactNode, string?] = useMemo(() => {
+    if (!enhance || typeof current !== 'string') {
+      return [current];
+    }
+
+    return getMetricParams(current);
+  }, [current, enhance]);
 
   return (
     <Stack space="xxsmall" as={Component} className={rootClassName} {...restProps}>
@@ -81,8 +87,8 @@ export const RunInfo = ({
         <Stack>
           <Metric
             className={css.currentMetric}
-            value={metricParams.value}
-            unit={metricParams.unit}
+            value={currentValueParams[0]}
+            unit={currentValueParams[1]}
             inline
           >
             {delta && <Delta className={css.delta} displayValue={delta} deltaType={deltaType} />}

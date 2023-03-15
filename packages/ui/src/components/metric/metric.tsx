@@ -7,7 +7,7 @@ export interface MetricProps {
   /**
    * Metric value
    */
-  value?: string;
+  value?: React.ReactNode;
   /**
    * Metric value unit
    */

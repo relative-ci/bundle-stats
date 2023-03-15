@@ -125,6 +125,7 @@ const AssetsContent = () => {
           keys={METRICS_WEBPACK_ASSETS}
           data={jobs?.[0]?.summary}
           showSummaryItemDelta={jobs?.length !== 1}
+          showSummaryItemBaseline={jobs?.length !== 1}
         />
         <Box outline>
           <BundleAssets jobs={jobs} setState={bundleStatsSetState} {...bundleStatsState} />
@@ -147,6 +148,7 @@ const ModulesContent = () => {
           keys={METRICS_WEBPACK_MODULES}
           data={jobs?.[0]?.summary}
           showSummaryItemDelta={jobs?.length !== 1}
+          showSummaryItemBaseline={jobs?.length !== 1}
         />
         <Box outline>
           <BundleModules jobs={jobs} setState={bundleModulesSetState} {...bundleModulesState} />
@@ -169,6 +171,7 @@ const PackagesContent = () => {
           keys={METRICS_WEBPACK_PACKAGES}
           data={jobs?.[0]?.summary}
           showSummaryItemDelta={jobs?.length !== 1}
+          showSummaryItemBaseline={jobs?.length !== 1}
         />
         <Box outline>
           <BundlePackages jobs={jobs} {...bundlePackagesState} setState={bundlePackagesSetState} />
@@ -198,6 +201,7 @@ const AppComponent = ({ version, jobs }) => {
             keys={METRICS_WEBPACK_GENERAL}
             data={jobs[0].summary}
             showSummaryItemDelta={jobs.length !== 1}
+            showSummaryItemBaseline={jobs?.length !== 1}
           />
         </Container>
 

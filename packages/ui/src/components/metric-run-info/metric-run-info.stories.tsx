@@ -23,6 +23,7 @@ export const NoBaseline = Template.bind({});
 NoBaseline.args = {
   metricId: 'webpack.totalSizeByTypeALL',
   current: 120 * 1024,
+  showBaseline: false,
 };
 
 export const NoDelta = Template.bind({});

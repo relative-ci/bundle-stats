@@ -44,6 +44,7 @@ export const SingleRun = Template.bind({});
 SingleRun.args = {
   data: SINGLE_JOB[0].summary,
   showSummaryItemDelta: false,
+  showSummaryItemBaseline: false,
 };
 
 export const WithLink = Template.bind({});
