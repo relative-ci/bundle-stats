@@ -38,6 +38,7 @@ export interface MetricRunInfoProps {
   baseline?: number;
   showDelta?: boolean;
   showMetricDescription?: boolean;
+  showBaseline?: boolean;
   size?: RunInfoProps['size'];
   loading?: RunInfoProps['loading'];
 }
@@ -46,15 +47,15 @@ export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'
   const {
     metricId,
     current,
-    baseline = undefined,
+    baseline = 0,
     showDelta = true,
     showMetricDescription = true,
+    showBaseline = true,
     ...restProps
   } = props;
 
   const metric = getGlobalMetricType(metricId);
   const metricRunInfo = getMetricRunInfo(metric, current, baseline || 0);
-  const showBaseline = typeof baseline !== 'undefined';
 
   const titleHoverCard = useMemo(() => {
     if (showMetricDescription) {
