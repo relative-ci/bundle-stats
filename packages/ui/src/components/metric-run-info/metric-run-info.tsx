@@ -69,6 +69,7 @@ export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'
     <RunInfo
       title={metric.label}
       titleHoverCard={titleHoverCard}
+      enhance
       current={metricRunInfo.displayValue}
       {...(showBaseline && {
         baseline: metric.formatter(baseline),
