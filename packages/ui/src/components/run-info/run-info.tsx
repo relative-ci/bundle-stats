@@ -36,6 +36,7 @@ export interface RunInfoProps {
   as?: React.ElementType;
   size?: 'medium' | 'large';
 
+  showBaseline?: boolean;
   loading?: boolean;
   enhance?: boolean;
 }
@@ -51,6 +52,7 @@ export const RunInfo = ({
   deltaType = '',
   as: Component = 'div',
   size = 'medium',
+  showBaseline = true,
   loading = false,
   enhance = false,
   ...restProps
@@ -93,12 +95,12 @@ export const RunInfo = ({
           >
             {delta && <Delta className={css.delta} displayValue={delta} deltaType={deltaType} />}
           </Metric>
-          <Metric className={css.baselineMetric} value={baseline} />
+          {showBaseline && <Metric className={css.baselineMetric} value={baseline} />}
         </Stack>
       ) : (
         <Stack>
           <Skeleton as="p" className={cx(css.currentMetric, css.loading)} />
-          <Skeleton as="p" className={cx(css.baselineMetric, css.loading)} />
+          {showBaseline && <Skeleton as="p" className={cx(css.baselineMetric, css.loading)} />}
         </Stack>
       )}
     </Stack>
