@@ -14,7 +14,7 @@ import css from './hover-card.module.css';
 export const HoverCard = (props) => {
   const { className, anchorClassName, hoverCardClassName, href, as, label, children } = props;
 
-  const state = useHovercardState({ gutter: 8, timeout: 700 });
+  const state = useHovercardState({ gutter: 8, timeout: 800 });
   const hovercardProps = useHovercard({ state, portal: true });
 
   // Fallback to span if no href
