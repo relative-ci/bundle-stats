@@ -6,17 +6,17 @@
     "node": ">= 14.0"
   },
   "devDependencies": {
-    "@babel/core": "7.21.0",
-    "@babel/eslint-parser": "7.19.1",
+    "@babel/core": "7.21.3",
+    "@babel/eslint-parser": "7.21.3",
     "@tsconfig/node14": "1.0.3",
-    "@typescript-eslint/eslint-plugin": "5.54.1",
-    "@typescript-eslint/parser": "5.54.1",
+    "@typescript-eslint/eslint-plugin": "5.56.0",
+    "@typescript-eslint/parser": "5.56.0",
     "babel-eslint": "10.1.0",
     "dotenv": "16.0.3",
     "eslint": "8.36.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-airbnb-typescript": "17.0.0",
-    "eslint-config-prettier": "8.7.0",
+    "eslint-config-prettier": "8.8.0",
     "eslint-import-resolver-node": "0.3.7",
     "eslint-import-resolver-webpack": "0.13.2",
     "eslint-plugin-import": "2.27.5",
@@ -28,7 +28,7 @@
     "husky": "8.0.3",
     "lerna": "6.5.1",
     "lint-staged": "13.2.0",
-    "prettier": "2.8.4",
+    "prettier": "2.8.6",
     "typescript": "4.9.5"
   },
   "scripts": {
