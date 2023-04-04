@@ -34,7 +34,7 @@
     "@bundle-stats/utils": "^4.2.5",
     "@storybook/addon-essentials": "6.5.16",
     "@storybook/addon-postcss": "2.0.0",
-    "@storybook/addon-storyshots": "6.5.16",
+    "@storybook/addon-storyshots": "7.0.2",
     "@storybook/builder-webpack5": "6.5.16",
     "@storybook/manager-webpack5": "6.5.16",
     "@storybook/react": "7.0.2",
