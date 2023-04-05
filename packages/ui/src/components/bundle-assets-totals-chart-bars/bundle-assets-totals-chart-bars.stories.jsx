@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 
 import currentData from '../../../__mocks__/webpack-stats.current.json';
@@ -17,14 +16,16 @@ const EMPTY_BASELINE = createJobs([
   { webpack: null },
 ]);
 
-const stories = storiesOf('Components/BundleAssetsTotalsChartBars', module);
+export default {
+  title: 'Components/BundleAssetsTotalsChartBars',
+  component: BundleAssetsTotalsChartBars,
+  decorators: [getWrapperDecorator()],
+};
 
-stories.addDecorator(getWrapperDecorator());
-
-stories.add('component', () => (
+export const Component = () => (
   <BundleAssetsTotalsChartBars jobs={JOBS} />
-));
+);
 
-stories.add('empty baseline', () => (
+export const EmptyBaseline = () => (
   <BundleAssetsTotalsChartBars jobs={EMPTY_BASELINE} />
-));
+);

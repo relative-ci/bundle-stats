@@ -1,13 +1,15 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { ModuleInfo } from '.';
 
-const stories = storiesOf('Components/ModuleInfo', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'Components/ModuleInfo',
+  component: ModuleInfo,
+  decorators: [getWrapperDecorator()],
+};
 
-stories.add('default', () => (
+export const Default = () => (
   <ModuleInfo
     item={{
       runs: [
@@ -32,4 +34,4 @@ stories.add('default', () => (
     chunkIds={['1', '2']}
     labels={['Job #2', 'Job #1']}
   />
-));
+);

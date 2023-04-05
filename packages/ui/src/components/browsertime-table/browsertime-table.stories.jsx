@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 import * as browsertime from '@bundle-stats/utils/lib-esm/browsertime';
 
@@ -15,8 +14,11 @@ const JOBS = createJobs([
   { browsertime: browsertimeFixtures },
 ]);
 
-const stories = storiesOf('Components/BrowsertimeTable', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'Components/BrowsertimeTable',
+  component: BrowsertimeTable,
+  decorators: [getWrapperDecorator()],
+};
 
-stories.add('default', () => <BrowsertimeTable jobs={JOBS} />);
-stories.add('no baseline', () => <BrowsertimeTable jobs={[JOBS[1]]} />);
+export const Default = () => <BrowsertimeTable jobs={JOBS} />;
+export const NoBaseline = () => <BrowsertimeTable jobs={[JOBS[1]]} />;

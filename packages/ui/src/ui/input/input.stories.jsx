@@ -1,11 +1,13 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { Input } from '.';
 
-const stories = storiesOf('UI/Input', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'UI/Input',
+  component: Input,
+  decorators: [getWrapperDecorator()],
+};
 
-stories.add('default', () => <Input placeholder="Search" />);
-stories.add('with size', () => <Input size="small" placeholder="Search" />);
+export const Default = () => <Input placeholder="Search" />;
+export const WithSize = () => <Input size="small" placeholder="Search" />;

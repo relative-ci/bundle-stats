@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { MetricsTable } from '.';
@@ -204,18 +203,21 @@ const ITEMS_MULTIPLE_RUNS = [
   },
 ];
 
-const stories = storiesOf('Components/MetricsTable', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'Components/MetricsTable',
+  component: MetricsTable,
+  decorators: [getWrapperDecorator()],
+};
 
-stories.add('default', () => (
+export const Default = () => (
   <MetricsTable runs={RUNS.slice(0, 1)} items={ITEMS_SINGLE_RUN} />
-));
+);
 
-stories.add('multiple runs', () => (
+export const MultipleRuns = () => (
   <MetricsTable runs={RUNS} items={ITEMS_MULTIPLE_RUNS} />
-));
+);
 
-stories.add('with header rows', () => (
+export const WithHeaderRows = () => (
   <MetricsTable
     runs={RUNS}
     items={ITEMS_MULTIPLE_RUNS}
@@ -232,6 +234,6 @@ stories.add('with header rows', () => (
       ]
     ]}
   />
-));
+);
 
-stories.add('empty', () =><MetricsTable runs={RUNS} items={[]} />);
+export const Empty = () =><MetricsTable runs={RUNS} items={[]} />;

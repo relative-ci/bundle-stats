@@ -1,15 +1,17 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { Table } from '.';
 
 const { THead, TBody, Td, Tr, Th } = Table;
 
-const stories = storiesOf('UI/Table', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'UI/Table',
+  component: Table,
+  decorators: [getWrapperDecorator()],
+};
 
-stories.add('default', () => (
+export const Default = () => (
   <Table>
     <TBody>
       <Tr>
@@ -29,9 +31,9 @@ stories.add('default', () => (
       </Tr>
     </TBody>
   </Table>
-));
+);
 
-stories.add('compact', () => (
+export const Compact = () => (
   <Table compact>
     <TBody>
       <Tr>
@@ -51,9 +53,9 @@ stories.add('compact', () => (
       </Tr>
     </TBody>
   </Table>
-));
+);
 
-stories.add('outline', () => (
+export const Outline = () => (
   <Table outline>
     <TBody>
       <Tr>
@@ -73,14 +75,14 @@ stories.add('outline', () => (
       </Tr>
     </TBody>
   </Table>
-));
+);
 
-stories.add('empty', () => <Table />);
-stories.add('empty with custom element', () => (
+export const Empty = () => <Table />;
+export const EmptyWithCustomElement = () => (
   <Table emptyMessage={<p style={{ outline: '1px solid lightgray' }}>No items available</p>} />
-));
+);
 
-stories.add('with headers', () => (
+export const WithHeaders = () => (
   <Table>
     <THead>
       <Tr>
@@ -107,9 +109,9 @@ stories.add('with headers', () => (
       </Tr>
     </TBody>
   </Table>
-));
+);
 
-stories.add('with headers and outline', () => (
+export const WithHeadersAndOutline = () => (
   <Table outline>
     <THead>
       <Tr>
@@ -136,9 +138,9 @@ stories.add('with headers and outline', () => (
       </Tr>
     </TBody>
   </Table>
-));
+);
 
-stories.add('with multiple rows header', () => (
+export const WithMultipleRowsHeader = () => (
   <Table>
     <THead>
       <Tr>
@@ -169,9 +171,9 @@ stories.add('with multiple rows header', () => (
       </Tr>
     </TBody>
   </Table>
-));
+);
 
-stories.add('with row headers', () => (
+export const WithRowHeaders = () => (
   <Table>
     <TBody>
       <Tr>
@@ -194,9 +196,9 @@ stories.add('with row headers', () => (
       </Tr>
     </TBody>
   </Table>
-));
+);
 
-stories.add('with custom content and attributes', () => (
+export const WithCustomContentAndAttributes = () => (
   <Table>
     <THead>
       <Tr>
@@ -233,4 +235,4 @@ stories.add('with custom content and attributes', () => (
       </Tr>
     </TBody>
   </Table>
-));
+);

@@ -1,11 +1,13 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { JobHeader } from '.';
 
-const stories = storiesOf('Components/JobHeader', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'Components/JobHeader',
+  component: JobHeader,
+  decorators: [getWrapperDecorator()],
+};
 
 const JOB = {
   internalBuildNumber: 1,
@@ -25,12 +27,12 @@ const JOB = {
   },
 };
 
-stories.add('default', () => <JobHeader job={JOB} />);
+export const Default = () => <JobHeader job={JOB} />;
 
-stories.add('with tag', () => <JobHeader job={JOB} tag="current" />);
+export const WithTag = () => <JobHeader job={JOB} tag="current" />;
 
-stories.add('with custom content', () => (
+export const WithCustomContent = () => (
   <JobHeader job={JOB}>
     <p>Lorem ipsum dolor sit amed</p>
   </JobHeader>
-));
+);

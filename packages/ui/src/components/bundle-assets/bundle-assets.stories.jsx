@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, FILE_TYPE_JS, createJobs } from '@bundle-stats/utils';
 import merge from 'lodash/merge';
 import set from 'lodash/set';
@@ -13,14 +12,17 @@ const JOBS = createJobs([{ webpack: currentStats }, { webpack: baselineStats }])
 const [currentJob, baselineJob] = JOBS;
 const setState = (params) => console.info(params);
 
-const stories = storiesOf('Components/BundleAssets', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'Components/BundleAssets',
+  component: BundleAssets,
+  decorators: [getWrapperDecorator()],
+};
 
-stories.add('default', () => <BundleAssets jobs={[baselineJob]} setState={setState} />);
+export const Default = () => <BundleAssets jobs={[baselineJob]} setState={setState} />;
 
-stories.add('multiple jobs', () => <BundleAssets jobs={JOBS} setState={setState} />);
+export const MultipleJobs = () => <BundleAssets jobs={JOBS} setState={setState} />;
 
-stories.add('custom filters', () => (
+export const CustomFilters = () => (
   <BundleAssets
     jobs={JOBS}
     filters={{
@@ -29,22 +31,22 @@ stories.add('custom filters', () => (
     }}
     setState={setState}
   />
-));
+);
 
-const JOBS_EMPTY_BASELINE = createJobs([{ webpack: currentStats }, null]);
+const JOBS_EMPTY_BASELINE = createJobs([{ webpack: currentStats }, {}]);
 
-stories.add('empty baseline', () => (
+export const EmptyBaseline = () => (
   <BundleAssets jobs={JOBS_EMPTY_BASELINE} setState={setState} />
-));
+);
 
-stories.add('no assets', () => (
+export const NoAssets = () => (
   <BundleAssets
     jobs={JOBS.map((job) => set(merge({}, job), 'metrics.webpack.assets', {}))}
     setState={setState}
   />
-));
+);
 
-stories.add('empty filtered data', () => (
+export const EmptyFilteredData = () => (
   <BundleAssets
     jobs={[
       set(merge({}, currentJob), 'metrics.webpack.assets', { 'main.js': { value: 100 } }),
@@ -53,9 +55,9 @@ stories.add('empty filtered data', () => (
     search="vendors"
     setState={setState}
   />
-));
+);
 
-stories.add('not predictive', () => (
+export const NotPredictive = () => (
   <BundleAssets
     jobs={[
       set(merge({}, currentJob), 'metrics.webpack.assets', {
@@ -73,4 +75,4 @@ stories.add('not predictive', () => (
     ]}
     setState={setState}
   />
-));
+);

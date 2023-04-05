@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 
 /* eslint-disable */
@@ -54,13 +53,17 @@ const [CURRENT_JOB, BASELINE_JOB] = JOBS;
 
 const EMPTY_BASELINE = createJobs([CURRENT_SOURCE, { webpack: null }]);
 
-const stories = storiesOf('App', module);
+export default {
+  title: 'App',
+  component: App,
+  decorators: [
+    (Story) => <div style={{ margin: '-1rem' }}><Story /></div>,
+  ],
+};
 
-stories.addDecorator((storyFn) => <div style={{ margin: '-1rem' }}>{storyFn()}</div>);
+export const Default = () => <App jobs={[CURRENT_JOB, BASELINE_JOB]} version="1.0" />;
 
-stories.add('default', () => <App jobs={[CURRENT_JOB, BASELINE_JOB]} version="1.0" />);
-
-stories.add('no insights', () => (
+export const NoInsights = () => (
   <App
     jobs={[
       {
@@ -70,12 +73,12 @@ stories.add('no insights', () => (
       BASELINE_JOB,
     ]}
   />
-));
+);
 
-stories.add('no baseline', () => <App jobs={NO_BASELINE_JOBS} version="1.0" />);
+export const NoBaseline = () => <App jobs={NO_BASELINE_JOBS} version="1.0" />;
 
-stories.add('empty baseline', () => <App jobs={EMPTY_BASELINE} version="1.0" />);
+export const EmptyBaseline = () => <App jobs={EMPTY_BASELINE} version="1.0" />;
 
-stories.add('multiple baselines', () => <App jobs={MULTIPLE_JOBS} version="1.0" />);
+export const MultipleBaselines = () => <App jobs={MULTIPLE_JOBS} version="1.0" />;
 
-stories.add('empty', () => <App verison="1.0" />);
+export const Empty = () => <App verison="1.0" />;

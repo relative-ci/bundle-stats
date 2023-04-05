@@ -1,19 +1,21 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { Toolbar } from '.';
 
-const stories = storiesOf('UI/Toolbar', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'UI/Toolbar',
+  component: Toolbar,
+  decorators: [getWrapperDecorator()],
+};
 
-stories.add('default', () => (
+export const Default = () => (
   <Toolbar>
     <div>Content</div>
   </Toolbar>
-));
+);
 
-stories.add('with actions', () => (
+export const WithActions = () => (
   <Toolbar
     renderActions={({ actionClassName }) => (
       <>
@@ -24,4 +26,4 @@ stories.add('with actions', () => (
   >
     Content
   </Toolbar>
-));
+);

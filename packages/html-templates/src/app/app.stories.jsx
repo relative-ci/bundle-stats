@@ -1,5 +1,3 @@
-/* global module */
-import { storiesOf } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 import { SvgIcons } from '@bundle-stats/ui/lib-esm/assets/icons.svg.js';
 
@@ -43,25 +41,24 @@ const MULTIPLE_JOBS = createJobs([
 
 const [CURRENT_JOB, BASELINE_JOB] = JOBS;
 
-const EMPTY_BASELINE = createJobs([
-  { webpack: currentData.rawData.webpack },
-  { webpack: null },
-]);
+const EMPTY_BASELINE = createJobs([{ webpack: currentData.rawData.webpack }, { webpack: null }]);
 
-const stories = storiesOf('App', module);
+export default {
+  title: 'App',
+  component: App,
+  decorators: [
+    (Story) => (
+      <div style={{ margin: '-1rem' }}>
+        <Story />
+        <SvgIcons />
+      </div>
+    ),
+  ],
+};
 
-stories.addDecorator((storyFn) => (
-  <div style={{ margin: '-1rem' }}>
-    {storyFn()}
-    <SvgIcons />
-  </div>
-));
+export const Default = () => <App jobs={[CURRENT_JOB, BASELINE_JOB]} />;
 
-stories.add('default', () => (
-  <App jobs={[CURRENT_JOB, BASELINE_JOB]} />
-));
-
-stories.add('no insights', () => (
+export const NoInsights = () => (
   <App
     jobs={[
       {
@@ -71,20 +68,12 @@ stories.add('no insights', () => (
       BASELINE_JOB,
     ]}
   />
-));
+);
 
-stories.add('no baseline', () => (
-  <App jobs={[CURRENT_JOB]} />
-));
+export const NoBaseline = () => <App jobs={[CURRENT_JOB]} />;
 
-stories.add('empty baseline', () => (
-  <App jobs={EMPTY_BASELINE} />
-));
+export const EmptyBaseline = () => <App jobs={EMPTY_BASELINE} />;
 
-stories.add('multiple baselines', () => (
-  <App jobs={MULTIPLE_JOBS} />
-));
+export const MultipleBaselines = () => <App jobs={MULTIPLE_JOBS} />;
 
-stories.add('empty', () => (
-  <App />
-));
+export const Empty = () => <App />;

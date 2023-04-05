@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Container } from '../ui';
 import { getWrapperDecorator } from '../stories';
@@ -7,14 +6,16 @@ import CHART_COLORS from '../chart-colors.json';
 import content from './typography.md';
 import css from './typography.module.css';
 
-const stories = storiesOf('Prototypes/Styleguide', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'Prototypes/Styleguide',
+  decorators: [getWrapperDecorator()],
+};
 
-stories.add('typography', () => (
-  <main className={css.main}>
-    <Container dangerouslySetInnerHTML={{ __html: content }} />
-  </main>
-));
+export const Typography = () => (
+ <main className={css.main}>
+   <Container dangerouslySetInnerHTML={{ __html: content }} />
+ </main>
+);
 
 // eslint-disable-next-line react/prop-types
 const Item = ({ colorName, valueName = 'normal' }) => {
@@ -66,7 +67,7 @@ const NAMES = [
   'ultra-dark',
 ];
 
-stories.add('color sheme', () => (
+export const ColorScheme = () => (
   <Container>
     <Item colorName="branding" valueName="light" />
     <Item colorName="branding" />
@@ -102,4 +103,4 @@ stories.add('color sheme', () => (
       ))}
     </div>
   </Container>
-));
+);

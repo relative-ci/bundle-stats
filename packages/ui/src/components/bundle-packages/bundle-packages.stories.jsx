@@ -1,7 +1,6 @@
 import React from 'react';
 import merge from 'lodash/merge';
 import set from 'lodash/set';
-import { storiesOf } from '@storybook/react';
 import { PACKAGE_FILTERS, createJobs } from '@bundle-stats/utils';
 
 import baselineStats from '../../../__mocks__/webpack-stats.baseline.json';
@@ -15,14 +14,17 @@ const JOBS = createJobs([
 ]);
 const [currentJob, baselineJob] = JOBS;
 
-const stories = storiesOf('Components/BundlePackages', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'Components/BundlePackages',
+  component: BundlePackages,
+  decorators: [getWrapperDecorator()],
+};
 
-stories.add('default', () => <BundlePackages jobs={[baselineJob]} />);
+export const Default = () => <BundlePackages jobs={[baselineJob]} />;
 
-stories.add('multiple jobs', () => <BundlePackages jobs={JOBS} />);
+export const MultipleJobs = () => <BundlePackages jobs={JOBS} />;
 
-stories.add('custom filters', () => (
+export const CustomFilters = () => (
   <BundlePackages
     jobs={JOBS}
     filters={{
@@ -30,29 +32,29 @@ stories.add('custom filters', () => (
       [PACKAGE_FILTERS.DUPLICATE]: true,
     }}
   />
-));
+);
 
-stories.add('empty packages', () => (
+export const EmptyPackages = () => (
   <BundlePackages
     jobs={[
       set(merge({}, currentJob), 'metrics.webpack.packages', {}),
       set(merge({}, baselineJob), 'metrics.webpack.packages', {}),
     ]}
   />
-));
+);
 
-stories.add('empty filtered packages', () => (
+export const EmptyFilteredPackages = () => (
   <BundlePackages
     jobs={[
       set(merge({}, currentJob), 'metrics.webpack.packages', { 'package-a': { value: 100 } }),
       set(merge({}, baselineJob), 'metrics.webpack.packages', { 'package-a': { value: 100 } }),
     ]}
   />
-));
+);
 
 const JOBS_EMPTY_BASELINE = createJobs([
   { webpack: currentStats },
   { webpack: null },
 ]);
 
-stories.add('empty baseline', () => <BundlePackages jobs={JOBS_EMPTY_BASELINE} />);
+export const EmptyBaseline = () => <BundlePackages jobs={JOBS_EMPTY_BASELINE} />;

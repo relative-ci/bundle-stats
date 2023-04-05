@@ -1,12 +1,14 @@
 import React, {useCallback, useState} from 'react';
-import { storiesOf } from '@storybook/react';
 import get from 'lodash/get';
 
 import { getWrapperDecorator } from '../../stories';
 import { Filters } from '.';
 
-const stories = storiesOf('UI/Filters', module);
-stories.addDecorator(getWrapperDecorator({ paddingLeft: '200px' }));
+export default {
+  title: 'UI/Filters',
+  component: Filters,
+  decorators: [getWrapperDecorator({ paddingLeft: '200px' })],
+};
 
 const FiltersState = ({ children }) => {
   const [values, setValues] = useState({ changed: true, 'assetType.entrypoint': true });
@@ -22,7 +24,7 @@ const FiltersState = ({ children }) => {
   return children(values, handleSetValues);
 };
 
-stories.add('default', () => (
+export const Default = () => (
   <FiltersState>
     {(values, setValues) => (
       <Filters
@@ -55,9 +57,9 @@ stories.add('default', () => (
       />
     )}
   </FiltersState>
-));
+);
 
-stories.add('overflow', () => (
+export const Overflow = () => (
   <FiltersState>
     {(values, setValues) => (
       <Filters
@@ -86,9 +88,9 @@ stories.add('overflow', () => (
       />
     )}
   </FiltersState>
-));
+);
 
-stories.add('disable options', () => (
+export const DisableOptions = () => (
   <Filters
     onChange={(state) => {
       console.log(state); // eslint-disable-line no-console
@@ -121,4 +123,4 @@ stories.add('disable options', () => (
       },
     }}
   />
-));
+);

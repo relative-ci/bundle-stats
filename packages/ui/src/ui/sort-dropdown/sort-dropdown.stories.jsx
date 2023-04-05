@@ -1,13 +1,15 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { SortDropdown } from '.';
 
-const stories = storiesOf('UI/SortDropdown', module);
-stories.addDecorator(getWrapperDecorator({ paddingLeft: '200px' }));
+export default {
+  title: 'UI/SortDropdown',
+  component: SortDropdown,
+  decorators: [getWrapperDecorator({ paddingLeft: '200px' })],
+};
 
-stories.add('default', () => (
+export const Default = () => (
   <SortDropdown
     onChange={(state) => {
       console.log(state); // eslint-disable-line no-console
@@ -22,4 +24,4 @@ stories.add('default', () => (
     }}
     field="size"
   />
-));
+);
