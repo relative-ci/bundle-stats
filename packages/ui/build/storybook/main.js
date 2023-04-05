@@ -32,6 +32,9 @@ module.exports = {
 
     return config;
   },
+  typescript: {
+    reactDocgen: 'react-docgen-typescript-plugin',
+  },
   core: {
     builder: 'webpack5',
   },
