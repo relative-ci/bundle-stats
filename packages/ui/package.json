@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/ui#readme",
   "devDependencies": {
-    "@babel/preset-env": "7.20.2",
+    "@babel/preset-env": "7.21.4",
     "@babel/preset-react": "7.18.6",
     "@storybook/addon-essentials": "6.5.16",
     "@storybook/addon-knobs": "6.4.0",
@@ -68,8 +68,8 @@
     "react-dom": "17.0.2",
     "react-router-dom": "5.3.4",
     "react-test-renderer": "18.2.0",
-    "rimraf": "4.4.0",
-    "typescript": "4.9.5",
+    "rimraf": "4.4.1",
+    "typescript": "5.0.3",
     "typescript-plugin-css-modules": "5.0.0"
   },
   "peerDependencies": {
@@ -85,6 +85,6 @@
     "ariakit": "2.0.0-next.43",
     "modern-css-reset": "1.4.0",
     "query-string": "7.1.3",
-    "use-query-params": "2.2.0"
+    "use-query-params": "2.2.1"
   }
 }

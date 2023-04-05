@@ -40,8 +40,8 @@
     "jest-cli": "29.5.0",
     "jest-date-mock": "1.0.8",
     "regenerator-runtime": "0.13.11",
-    "ts-jest": "29.0.5",
-    "typescript": "4.9.5"
+    "ts-jest": "29.1.0",
+    "typescript": "5.0.3"
   },
   "dependencies": {
     "lodash": "4.17.21",
