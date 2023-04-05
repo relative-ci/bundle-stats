@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Meta, Story } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { Box } from '.';
@@ -7,9 +8,13 @@ export default {
   title: 'Layout/Box',
   component: Box,
   decorators: [getWrapperDecorator()],
-};
+} as Meta<typeof Box>;
 
-const Template = (props: any) => <Box style={{ border: '1px dotted magenta' }} {...props}>Lorem ipsum</Box>;
+const Template: Story = (props: any) => (
+  <Box style={{ border: '1px dotted magenta' }} {...props}>
+    Lorem ipsum
+  </Box>
+);
 
 export const Default = Template.bind({});
 
