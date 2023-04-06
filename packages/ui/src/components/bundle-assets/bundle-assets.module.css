@@ -41,7 +41,7 @@
 }
 
 .assetNameTagEntry {
-  background: var(--color-info-light);
+  background: var(--color-info-dark);
 }
 
 .assetNameTagEntry::before {
@@ -49,11 +49,15 @@
 }
 
 .assetNameTagInitial {
-  background: var(--color-info-light);
+  background: var(--color-info);
 }
 
 .assetNameTagInitial::before {
   content: 'i';
+}
+
+.assetNameTagChunk {
+  background: var(--color-info-light);
 }
 
 .assetNameTagChunk::before {

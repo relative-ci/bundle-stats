@@ -122,14 +122,6 @@ const RowHeader = ({ row, labels, chunks, CustomComponentLink }) => {
               <Icon className={css.notPredictiveIcon} glyph="warning" />
             </Tooltip>
           )}
-          {isChunk && (
-            <Tag
-              className={cx(css.assetNameTag, css.assetNameTagChunk)}
-              title="Chunk"
-              size={Tag.SIZES.SMALL}
-              kind={Tag.KINDS.INFO}
-            />
-          )}
           {isEntry && (
             <Tag
               className={cx(css.assetNameTag, css.assetNameTagEntry)}
@@ -142,6 +134,14 @@ const RowHeader = ({ row, labels, chunks, CustomComponentLink }) => {
             <Tag
               className={cx(css.assetNameTag, css.assetNameTagInitial)}
               title="Initial"
+              size={Tag.SIZES.SMALL}
+              kind={Tag.KINDS.INFO}
+            />
+          )}
+          {isChunk && (
+            <Tag
+              className={cx(css.assetNameTag, css.assetNameTagChunk)}
+              title="Chunk"
               size={Tag.SIZES.SMALL}
               kind={Tag.KINDS.INFO}
             />

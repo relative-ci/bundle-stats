@@ -1,6 +1,7 @@
 .root {
-  white-space: nowrap;
   color: var(--color-gray-ultra-light);
+  font-family: var(--font-family-fixed);
+  white-space: nowrap;
 }
 
 .HIGH_NEGATIVE {

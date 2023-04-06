@@ -8,7 +8,7 @@ export const MetricsTableOptions = (props) => {
   const { className,  handleViewAll, handleResetFilters, ...restProps } = props;
 
   return (
-    <Dropdown className={className} glyph="menu" {...restProps}>
+    <Dropdown className={className} glyph="more-vertical" {...restProps}>
       {handleResetFilters && (
         <Dropdown.Item onClick={handleResetFilters}>
           {I18N.RESET_FILTERS}
