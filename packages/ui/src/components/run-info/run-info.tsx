@@ -68,7 +68,7 @@ export const RunInfo = ({
   }, [current, enhance]);
 
   return (
-    <Stack space="xxsmall" as={Component} className={rootClassName} {...restProps}>
+    <Component className={rootClassName} {...restProps}>
       {title && (
         <FlexStack space="xxxsmall" alignItems="center" as="h3" className={css.title}>
           <span>{title}</span>
@@ -86,7 +86,7 @@ export const RunInfo = ({
       )}
 
       {!loading ? (
-        <Stack>
+        <Stack className={css.info}>
           <Metric
             className={css.currentMetric}
             value={currentValueParams[0]}
@@ -98,11 +98,11 @@ export const RunInfo = ({
           {showBaseline && <Metric className={css.baselineMetric} value={baseline} />}
         </Stack>
       ) : (
-        <Stack>
+        <Stack className={css.info}>
           <Skeleton as="p" className={cx(css.currentMetric, css.loading)} />
           {showBaseline && <Skeleton as="p" className={cx(css.baselineMetric, css.loading)} />}
         </Stack>
       )}
-    </Stack>
+    </Component>
   );
 };

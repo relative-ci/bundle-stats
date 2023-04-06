@@ -12,9 +12,13 @@
   margin-bottom: -4px !important;
 }
 
+.info {
+  margin-top: var(--space-xxsmall);
+}
+
 .currentMetric {
   color: var(--color-heading);
-  font-size: var(--size-xlarge);
+  font-size: var(--size-xxlarge);
   line-height: var(--line-height-heading);
   white-space: nowrap;
   font-weight: bold;
@@ -22,7 +26,7 @@
 
 .baselineMetric {
   color: var(--color-text-light);
-  font-size: var(--size-medium);
+  font-size: var(--size-small);
   line-height: var(--line-height-heading);
 }
 
@@ -36,6 +40,14 @@
 }
 
 /* Size large */
+.large .info {
+  margin-top: var(--space-xxsmall);
+}
+
 .large .currentMetric {
   font-size: var(--size-xxxlarge);
+}
+
+.large .baselineMetric {
+  font-size: var(--size-medium);
 }
