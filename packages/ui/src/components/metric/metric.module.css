@@ -1,5 +1,5 @@
 .root {
-  letter-spacing: 0.05em;
+  font-family: var(--font-family-fixed);
 }
 
 .displayUnit {
