@@ -1,31 +1,33 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { HorizontalBarChart } from '.';
 
-const stories = storiesOf('UI/HorizontalBarChart', module);
-stories.addDecorator(getWrapperDecorator({ paddingTop: '128px' }));
+export default {
+  title: 'UI/HorizontalBarChart',
+  component: HorizontalBarChart,
+  decorators: [getWrapperDecorator({ paddingTop: '128px' })],
+};
 
-stories.add('default', () => (
+export const Default = () => (
   <HorizontalBarChart
     data={{
       labels: ['JS', 'CSS', 'IMG', 'Others', 'HTML'],
       values: [300, 200, 300, 0, 20],
     }}
   />
-));
+);
 
-stories.add('empty values', () => (
+export const EmptyValues = () => (
   <HorizontalBarChart
     data={{
       labels: ['JS', 'CSS', 'IMG', 'Others', 'HTML'],
       values: [0, 0, 0, 0, 0],
     }}
   />
-));
+);
 
-stories.add('with maxValue', () => (
+export const WithMaxValue = () => (
   <HorizontalBarChart
     data={{
       labels: ['JS', 'CSS', 'IMG', 'Others', 'HTML'],
@@ -33,9 +35,9 @@ stories.add('with maxValue', () => (
     }}
     maxValue={1200}
   />
-));
+);
 
-stories.add('with custom colors', () => (
+export const WithCustomColors = () => (
   <HorizontalBarChart
     data={{
       labels: ['JS', 'CSS', 'IMG', 'Others', 'HTML'],
@@ -63,9 +65,9 @@ stories.add('with custom colors', () => (
       ],
     }}
   />
-));
+);
 
-stories.add('with custom label', () => (
+export const WithCustomLabel = () => (
   <HorizontalBarChart
     data={{
       labels: ['JS', 'CSS', 'IMG', 'Others', 'HTML'],
@@ -108,4 +110,4 @@ stories.add('with custom label', () => (
       ],
     }}
   />
-));
+);

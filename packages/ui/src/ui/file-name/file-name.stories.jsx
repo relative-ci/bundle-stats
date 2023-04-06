@@ -1,9 +1,13 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
+import { getWrapperDecorator } from '../../stories';
 import { FileName } from './file-name';
 
-const stories = storiesOf('Ui/FileName', module);
+export default {
+  title: 'Ui/FileName',
+  component: FileName,
+  decorators: [getWrapperDecorator()],
+};
 
 const NAMES = [
   'styles.css',
@@ -12,7 +16,7 @@ const NAMES = [
   'rreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordreallylongwordeallylongword',
 ];
 
-stories.add('default', () => (
+export const Default = () => (
   <div>
     {NAMES.map((name) => (
       <div key={name} style={{ padding: '12px', outline: '1px dotted lightpink', margin: '12px' }}>
@@ -20,4 +24,4 @@ stories.add('default', () => (
       </div>
     ))}
   </div>
-));
+);

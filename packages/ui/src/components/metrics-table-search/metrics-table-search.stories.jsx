@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { MetricsTableSearch } from '.';
 
-const stories = storiesOf('Components/MetricsTableSearch', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'Components/MetricsTableSearch',
+  component: MetricsTableSearch,
+  decorators: [getWrapperDecorator()],
+};
 
 const MetricsTableWithState = () => {
   const [search, updateSearch] = useState('');
@@ -15,4 +17,4 @@ const MetricsTableWithState = () => {
   );
 };
 
-stories.add('default', () => <MetricsTableWithState />);
+export const Default = () => <MetricsTableWithState />;

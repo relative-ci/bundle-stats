@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 
 import baselineStatsFixtures from '../../../__mocks__/webpack-stats.baseline.json';
@@ -22,22 +21,25 @@ const { baselineStats, currentStats } = process.env.NODE_ENV !== 'development'
 
 const JOBS = createJobs([{ webpack: currentStats }, { webpack: baselineStats }]);
 
-const stories = storiesOf('Components/BundleModules', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'Components/BundleModules',
+  component: BundleModules,
+  decorators: [getWrapperDecorator()]
+};
 
-stories.add('default', () => (
+export const Default = () => (
   <BundleModules jobs={[JOBS[1]]} />
-));
+);
 
-stories.add('multiple jobs', () => (
+export const MultipleJobs = () => (
   <BundleModules jobs={JOBS} />
-));
+);
 
-const JOBS_EMPTY_BASELINE = createJobs([{ webpack: currentStats }, null]);
+const JOBS_EMPTY_BASELINE = createJobs([{ webpack: currentStats }, {}]);
 
-stories.add('empty baseline', () => (
+export const EmptyBaseline = () => (
   <BundleModules jobs={JOBS_EMPTY_BASELINE} />
-));
+);
 
 // Module moved between chunks
 const JOBS_MOVED_MODULE = createJobs([
@@ -134,10 +136,7 @@ const JOBS_MOVED_MODULE = createJobs([
   },
 ]);
 
-const chunkFiltersStories = storiesOf('Components/BundleModules/chunk filters', module);
-chunkFiltersStories.addDecorator(getWrapperDecorator());
-
-chunkFiltersStories.add('chunk with module moved in', () => (
+export const ChunkFiltersWithModuleMovedIn = () => (
   <BundleModules
     filters={{
       changed: false,
@@ -147,9 +146,9 @@ chunkFiltersStories.add('chunk with module moved in', () => (
     }}
     jobs={[...JOBS_MOVED_MODULE]}
   />
-));
+);
 
-chunkFiltersStories.add('chunk with module moved out', () => (
+export const ChunkFiltersWithModuleMovedOut = () => (
   <BundleModules
     filters={{
       changed: false,
@@ -159,9 +158,9 @@ chunkFiltersStories.add('chunk with module moved out', () => (
     }}
     jobs={[...JOBS_MOVED_MODULE]}
   />
-));
+);
 
-chunkFiltersStories.add('removed chunk', () => (
+export const ChunkFiltersWithRemovedChunk = () => (
   <BundleModules
     filters={{
       changed: false,
@@ -171,4 +170,4 @@ chunkFiltersStories.add('removed chunk', () => (
     }}
     jobs={[...JOBS_MOVED_MODULE]}
   />
-));
+);

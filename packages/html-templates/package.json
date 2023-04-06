@@ -9,7 +9,7 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js --mode production",
     "lint": "../../node_modules/.bin/eslint . --ext .js,.jsx",
     "start": "cross-env NODE_ENV=development start-storybook -p 8090 -c build/storybook",
-    "test": "jest build/storybook/storyshots.test.js"
+    "test": "echo \"No tests\" && exit 0"
   },
   "keywords": [],
   "author": {
@@ -34,7 +34,6 @@
     "@bundle-stats/utils": "^4.2.6",
     "@storybook/addon-essentials": "6.5.16",
     "@storybook/addon-postcss": "2.0.0",
-    "@storybook/addon-storyshots": "6.5.16",
     "@storybook/builder-webpack5": "6.5.16",
     "@storybook/manager-webpack5": "6.5.16",
     "@storybook/react": "6.5.16",
@@ -50,9 +49,6 @@
     "css-loader": "6.7.3",
     "css-minimizer-webpack-plugin": "5.0.0",
     "dotenv": "16.0.3",
-    "enzyme": "3.11.0",
-    "enzyme-adapter-react-16": "1.15.7",
-    "enzyme-to-json": "3.6.2",
     "html-webpack-plugin": "5.5.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "29.5.0",

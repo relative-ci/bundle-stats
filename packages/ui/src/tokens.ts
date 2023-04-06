@@ -21,3 +21,11 @@ export const SPACES = [
   SPACE_XXLARGE,
   SPACE_XXXLARGE,
 ] as const;
+
+export const KIND = {
+  DEFAULT: 'default',
+  SUCCESS: 'success',
+  INFO: 'info',
+  WARNING: 'warning',
+  DANGER: 'danger',
+} as const;

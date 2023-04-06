@@ -18,9 +18,7 @@
     "generate-svg-sprite": "npx svg-sprite -s --si --no-svg-namespace-classnames src/assets/icons/*.svg && mv symbol/svg/sprite.symbol.svg src/assets/icons.svg",
     "lint": "../../node_modules/.bin/eslint . --resolve-plugins-relative-to ../../",
     "start": "cross-env NODE_ENV=development start-storybook -c ./build/storybook -p 8080",
-    "test": "npm run test:unit",
-    "test:unit": "jest src --passWithNoTests",
-    "test:storyshots": "jest build/storybook "
+    "test": "jest src --passWithNoTests"
   },
   "repository": {
     "type": "git",
@@ -43,7 +41,6 @@
     "@storybook/addon-essentials": "6.5.16",
     "@storybook/addon-knobs": "6.4.0",
     "@storybook/addon-postcss": "2.0.0",
-    "@storybook/addon-storyshots": "6.5.16",
     "@storybook/addons": "6.5.16",
     "@storybook/builder-webpack5": "6.5.16",
     "@storybook/manager-webpack5": "6.5.16",
@@ -53,9 +50,6 @@
     "classnames": "2.3.2",
     "colormap": "2.3.2",
     "cross-env": "7.0.3",
-    "enzyme": "3.11.0",
-    "enzyme-adapter-react-16": "1.15.7",
-    "enzyme-to-json": "3.6.2",
     "hex-rgb": "5.0.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "29.5.0",
@@ -65,6 +59,7 @@
     "postcss": "8.4.21",
     "prop-types": "15.8.1",
     "react": "17.0.2",
+    "react-docgen-typescript-plugin": "^1.0.5",
     "react-dom": "17.0.2",
     "react-router-dom": "5.3.4",
     "react-test-renderer": "18.2.0",

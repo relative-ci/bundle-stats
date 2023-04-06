@@ -1,13 +1,15 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { JobsHeader } from '.';
 
-const stories = storiesOf('Components/JobsHeader', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'Components/JobsHeader',
+  component: JobsHeader,
+  decorators: [getWrapperDecorator()],
+};
 
-stories.add('default', () => (
+export const Default = () => (
   <JobsHeader
     jobs={[
       {
@@ -29,9 +31,9 @@ stories.add('default', () => (
       },
     ]}
   />
-));
+);
 
-stories.add('multiple jobs', () => (
+export const MultipleJobs = () => (
   <JobsHeader
     jobs={[
       {
@@ -70,45 +72,4 @@ stories.add('multiple jobs', () => (
       },
     ]}
   />
-));
-
-stories.add('multiple equal jobs', () => (
-  <JobsHeader
-    jobs={[
-      {
-        internalBuildNumber: 1,
-        meta: {
-          webpack: {
-            builtAt: '2019-01-01T00:00:00.000Z',
-            hash: 'abcd1234',
-          },
-        },
-        summary: {
-          webpack: {
-            totalSizeByTypeALL: {
-              current: 1000000,
-              baseline: 1000000,
-            },
-          },
-        },
-      },
-      {
-        internalBuildNumber: 2,
-        meta: {
-          webpack: {
-            builtAt: '2019-01-02T00:00:00.000Z',
-            hash: 'efgh1234',
-          },
-        },
-        summary: {
-          webpack: {
-            totalSizeByTypeALL: {
-              current: 1000000,
-              baseline: 1000000,
-            },
-          },
-        },
-      },
-    ]}
-  />
-));
+);

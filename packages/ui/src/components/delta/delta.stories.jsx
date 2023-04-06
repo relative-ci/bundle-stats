@@ -1,51 +1,53 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { Delta } from '.';
 
-const stories = storiesOf('Components/Delta', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'Components/Delta',
+  component: Delta,
+  decorators: [getWrapperDecorator()],
+};
 
-stories.add('default', () => (
+export const Default = () => (
   <Delta
     displayValue="20%"
     deltaType="POSITIVE"
   />
-));
+);
 
-stories.add('negative', () => (
+export const Negative = () => (
   <Delta
     displayValue="20%"
     deltaType="NEGATIVE"
   />
-));
+);
 
-stories.add('slightlyNegative', () => (
+export const SlightlyNegative = () => (
   <Delta
     displayValue="1%"
     deltaType="LOW_NEGATIVE"
   />
-));
+);
 
-stories.add('slightlyPositive', () => (
+export const SlightlyPositive = () => (
   <Delta
     displayValue="1%"
     deltaType="LOW_POSITIVE"
   />
-));
+);
 
-stories.add('empty', () => (
+export const Empty = () => (
   <Delta
     displayValue="0%"
     deltaType="NO_CHANGE"
   />
-));
+);
 
-stories.add('inverted', () => (
+export const Inverted = () => (
   <Delta
     displayValue="1%"
     deltaType="LOW_NEGATIVE"
     inverted
   />
-));
+);

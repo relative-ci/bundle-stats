@@ -1,13 +1,15 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { JobMeta } from '.';
 
-const stories = storiesOf('Components/JobMeta', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'Components/JobMeta',
+  component: JobMeta,
+  decorators: [getWrapperDecorator()],
+};
 
-stories.add('default', () => (
+export const Default = () => (
   <JobMeta
     meta={[
       {
@@ -24,4 +26,4 @@ stories.add('default', () => (
       },
     ]}
   />
-));
+);

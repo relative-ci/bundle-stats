@@ -1,11 +1,13 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { Loader } from '.';
 
-const stories = storiesOf('UI/Loader', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'UI/Loader',
+  component: Loader,
+  decorators: [getWrapperDecorator()],
+};
 
-stories.add('default', () => <Loader />);
-stories.add('with size', () => <Loader size={Loader.SIZE_LARGE} />);
+export const Default = () => <Loader />;
+export const WithSize = () => <Loader size={Loader.SIZE_LARGE} />;

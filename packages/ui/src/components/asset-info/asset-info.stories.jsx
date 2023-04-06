@@ -1,13 +1,15 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { AssetInfo } from '.';
 
-const stories = storiesOf('Components/AssetInfo', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'Components/AssetInfo',
+  component: AssetInfo,
+  decorators: [getWrapperDecorator()],
+};
 
-stories.add('default', () => (
+export const Default = () => (
   <AssetInfo
     item={{
       runs: [
@@ -21,9 +23,9 @@ stories.add('default', () => (
     }}
     labels={['Job #2', 'Job #1']}
   />
-));
+);
 
-stories.add('with chunks', () => (
+export const WithChunks = () => (
   <AssetInfo
     item={{
       runs: [
@@ -49,4 +51,4 @@ stories.add('with chunks', () => (
     ]}
     labels={['Job #2', 'Job #1']}
   />
-));
+);

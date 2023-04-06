@@ -1,20 +1,22 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { EmptySet } from '.';
 
-const stories = storiesOf('UI/EmptySet', module);
-stories.addDecorator(getWrapperDecorator());
+export default {
+  title: 'UI/EmptySet',
+  component: EmptySet,
+  decorators: [getWrapperDecorator()],
+};
 
-stories.add('default', () => (
+export const Default = () => (
   <EmptySet
     resources="assets"
     filtered handleResetFilters={() => console.log('RESET_FILTERS')}
     handleViewAll={() => console.log('VIEW_ALL')}
   />
-));
+);
 
-stories.add('empty', () => (
+export const Empty = () => (
   <EmptySet resources="assets" filtered={false} />
-));
+);

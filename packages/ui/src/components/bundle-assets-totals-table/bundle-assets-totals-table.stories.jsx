@@ -29,5 +29,5 @@ MultipleJobs.args = {
 export const EmptyBaseline = Template.bind();
 
 EmptyBaseline.args = {
-  jobs: createJobs([{ webpack: currentStats }, null]),
+  jobs: createJobs([{ webpack: currentStats }, {}]),
 };

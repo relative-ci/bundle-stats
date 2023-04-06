@@ -1,24 +1,26 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { JobName } from '.';
 
-const stories = storiesOf('Components/JobName', module);
-stories.addDecorator(getWrapperDecorator({ padding: '64px' }));
+export default {
+  title: 'Components/JobName',
+  component: JobName,
+  decorators: [getWrapperDecorator({ padding: '64px' })],
+};
 
-stories.add('default', () => <JobName title="View job details" internalBuildNumber={10} />);
+export const Default = () => <JobName title="View job details" internalBuildNumber={10} />;
 
-stories.add('custom component', () => (
+export const CustomComponent = () => (
   <JobName
     title="View job details"
     internalBuildNumber={10}
     as={(props) => <strong {...props} />}
   />
-));
+);
 
-stories.add('render', () => (
+export const Render = () => (
   <JobName title="View job details">
     <a href="https://relative-ci.com/test">#10</a>
   </JobName>
-));
+);
