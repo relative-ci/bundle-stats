@@ -16,6 +16,7 @@ const ICONS = {
   INFO: 'info',
   HELP: 'help',
   MENU: 'menu',
+  MORE_VERTICAL: 'more-vertical',
   SORT: 'sort',
   WARNING: 'warning',
 };

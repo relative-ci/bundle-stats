@@ -40,6 +40,11 @@
 <symbol viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu" id="menu" xmlns="http://www.w3.org/2000/svg">
 <path d="M3 12h18M3 6h18M3 18h18"/>
 </symbol>
+<symbol fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" id="more-vertical" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="1"/>
+<circle cx="12" cy="5" r="1"/>
+<circle cx="12" cy="19" r="1"/>
+</symbol>
 <symbol viewBox="0 0 24 24" fill="currentColor" id="sort" xmlns="http://www.w3.org/2000/svg">
 <path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/>
 <path d="M0 0h24v24H0z" fill="none"/>
