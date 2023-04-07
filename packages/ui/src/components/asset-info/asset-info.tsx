@@ -48,14 +48,14 @@ interface AssetInfoProps {
   };
   chunks?: Array<MetaChunk>;
   labels: Array<string>;
-  CustomComponentLink?: React.ElementType;
+  customComponentLink?: React.ElementType;
 }
 
 export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) => {
   const {
     className = '',
     chunks = null,
-    CustomComponentLink = ComponentLink,
+    customComponentLink: CustomComponentLink = ComponentLink,
     item,
     labels,
   } = props;

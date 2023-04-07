@@ -1,27 +1,42 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import cx from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import noop from 'lodash/noop';
-import { getBundleModulesByChunk } from '@bundle-stats/utils';
+import { MetricRunInfo, getBundleModulesByChunk } from '@bundle-stats/utils';
+import { Module, MetaChunk } from '@bundle-stats/utils/types/webpack';
 
 import { Stack } from '../../layout/stack';
 import { FileName } from '../../ui/file-name';
 import { ComponentLink } from '../component-link';
 import css from './module-info.module.css';
 
-export const ModuleInfo = (props) => {
+interface ModuleInfoProps {
+  item: {
+    label: string;
+    changed?: boolean;
+    runs: Array<Module & MetricRunInfo>;
+  };
+  chunks?: Array<MetaChunk>;
+  chunkIds?: Array<string>;
+  labels: Array<string>;
+  customComponentLink?: React.ElementType;
+}
+
+export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>) => {
   const {
-    className,
+    className = '',
     item,
     labels,
-    chunks,
-    chunkIds,
-    customComponentLink: CustomComponentLink,
-    onClick,
+    chunks = [],
+    chunkIds = [],
+    customComponentLink: CustomComponentLink = ComponentLink,
+    onClick = noop,
   } = props;
 
+  const rootClassName = cx(css.root, className);
+
   return (
-    <Stack space="xsmall" className={className}>
+    <Stack space="xsmall" className={rootClassName}>
       {item.runs.map((run, index) => {
         const TitleComponent = index !== 0 ? 'h4' : 'h3';
         const key = `module-info-${run?.name || index}-${index}`;
@@ -58,36 +73,4 @@ export const ModuleInfo = (props) => {
       })}
     </Stack>
   );
-};
-
-ModuleInfo.propTypes = {
-  className: PropTypes.string,
-  item: PropTypes.shape({
-    key: PropTypes.string,
-    runs: PropTypes.arrayOf(
-      PropTypes.shape({
-        key: PropTypes.string,
-        name: PropTypes.string,
-        chunkIds: PropTypes.arrayOf(PropTypes.string),
-      }),
-    ),
-  }).isRequired,
-  labels: PropTypes.arrayOf(PropTypes.string).isRequired,
-  chunks: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-    }),
-  ),
-  chunkIds: PropTypes.arrayOf(PropTypes.string),
-  customComponentLink: PropTypes.elementType,
-  onClick: PropTypes.func,
-};
-
-ModuleInfo.defaultProps = {
-  className: '',
-  chunks: [],
-  chunkIds: [],
-  customComponentLink: ComponentLink,
-  onClick: noop,
 };

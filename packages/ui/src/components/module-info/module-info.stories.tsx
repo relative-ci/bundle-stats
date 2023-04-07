@@ -12,6 +12,7 @@ export default {
 export const Default = () => (
   <ModuleInfo
     item={{
+      label: './node_modules/lodash/fp/_baseConvert.js',
       runs: [
         {
           key: './node_modules/lodash/fp/_baseConvert.js',
