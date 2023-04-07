@@ -9,6 +9,20 @@ export default {
   decorators: [getWrapperDecorator()],
 };
 
+const RUNS = [
+  {
+    name: 'static/vendor.abcd1234.js',
+    value: 982690,
+    chunkId: '1',
+  },
+  {
+    name: 'static/vendor.defg5678.js',
+    value: 1022530,
+    displayValue: '998.56KiB',
+    chunkId: '2',
+  },
+];
+
 export const Default = () => (
   <AssetInfo
     item={{
@@ -18,18 +32,7 @@ export const Default = () => (
       isEntry: true,
       isInitial: true,
       isNotPredicative: false,
-      runs: [
-        {
-          name: 'static/vendor.abcd1234.js',
-          displayValue: '959.66KiB',
-          displayDeltaPercentage: '-3.9%',
-          deltaType: 'LOW_POSITIVE',
-        },
-        {
-          name: 'static/vendor.defg5678.js',
-          displayValue: '998.56KiB',
-        },
-      ],
+      runs: RUNS,
     }}
     labels={['Job #2', 'Job #1']}
   />
@@ -41,19 +44,10 @@ export const WithChunks = () => (
       label: 'static/vendor.js',
       changed: true,
       isChunk: true,
-      isEntry: false,
+      isEntry: true,
       isInitial: true,
       isNotPredicative: false,
-      runs: [
-        {
-          name: 'static/vendor.abcd1234.js',
-          chunkId: '1',
-        },
-        {
-          name: 'static/vendor.defg5678.js',
-          chunkId: '2',
-        },
-      ],
+      runs: RUNS,
     }}
     chunks={[
       {

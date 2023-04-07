@@ -1,17 +1,3 @@
-.fileName {
-  max-width: 100%;
-  padding: 0 2px;
-  background: var(--color-highlight-warning);
-}
-
-.label {
-  font-size: var(--size-medium);
-}
-
-.runLabel {
-  font-size: var(--size-medium);
-}
-
 .assetNameTagEntry {
   background: var(--color-info-dark);
 }
@@ -22,8 +8,4 @@
 
 .assetNameTagChunk {
   background: var(--color-info-light);
-}
-
-.runs {
-  font-size: var(--size-small);
 }
