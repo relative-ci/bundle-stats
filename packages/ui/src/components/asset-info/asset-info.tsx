@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import cx from 'classnames';
 import { MetricRunInfo, getBundleModulesByChunk, getModuleFileType } from '@bundle-stats/utils';
 import { Asset, MetaChunk } from '@bundle-stats/utils/types/webpack';
@@ -62,8 +62,12 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
 
   const currentRun = item.runs?.[0];
 
-  return (
-    <EntryInfo className={cx(css.root, className)} item={item} labels={labels}>
+  const tags = useMemo(() => {
+    if (!item.isEntry && !item.isInitial && !item.isChunk) {
+      return null;
+    }
+
+    return (
       <FlexStack space="xxxsmall" alignItems="center" className={css.tags}>
         {item.isEntry && (
           <Tag className={cx(css.assetNameTag, css.assetNameTagEntry)} kind={Tag.KINDS.INFO}>
@@ -81,7 +85,11 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
           </Tag>
         )}
       </FlexStack>
+    );
+  }, [item]);
 
+  return (
+    <EntryInfo item={item} labels={labels} tags={tags} className={cx(css.root, className)}>
       {currentRun?.chunkId && chunks && (
         <ChunkModulesLink
           as={CustomComponentLink}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import cx from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import noop from 'lodash/noop';
@@ -37,14 +37,20 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
   const rootClassName = cx(css.root, className);
   const currentRun = item.runs?.[0];
 
-  return (
-    <EntryInfo className={rootClassName} item={item} labels={labels}>
-      {item.duplicated && (
-        <div>
-          <Tag kind="danger">Duplicate</Tag>
-        </div>
-      )}
+  const tags = useMemo(() => {
+    if (!item.duplicated) {
+      return null;
+    }
 
+    return (
+      <div>
+        <Tag kind="danger">Duplicate</Tag>
+      </div>
+    );
+  }, [item]);
+
+  return (
+    <EntryInfo item={item} labels={labels} tags={tags} className={rootClassName}>
       {!isEmpty(currentRun?.chunkIds) && (
         <div className={css.chunks}>
           <span className={css.chunksTitle}>Chunks:</span>

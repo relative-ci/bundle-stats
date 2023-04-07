@@ -12,24 +12,30 @@ export default {
 export const Default = () => (
   <ModuleInfo
     item={{
-      label: './node_modules/lodash/fp/_baseConvert.js',
+      label: './node_modules/lodash/fp/merge.js',
+      duplicated: true,
       runs: [
         {
-          key: './node_modules/lodash/fp/_baseConvert.js',
-          name: './node_modules/lodash/fp/_baseConvert.js',
-          chunkIds: ['2'],
+          name: './node_modules/lodash/fp/merge.js',
+          chunkIds: ['1', '2'],
+          value: 1024 * 4,
         },
         {
-          key: './node_modules/lodash/fp/_baseConvert.js',
-          name: './node_modules/lodash/fp/_baseConvert.js',
-          chunkIds: ['2'],
+          name: './node_modules/lodash/fp/merge.js',
+          chunkIds: ['1', '2'],
+          value: 1024 * 3,
+          displayValue: '3KiB',
         },
-      ],
+      ] as any,
     }}
     chunks={[
       {
+        id: '1',
+        name: 'chunk-1',
+      },
+      {
         id: '2',
-        name: 'vendors',
+        name: 'chunk-2',
       },
     ]}
     chunkIds={['1', '2']}

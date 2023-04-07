@@ -35,7 +35,7 @@ export const Added = () => (
   <EntryInfo
     item={{
       label: 'static/vendor.js',
-      runs: [RUNS[0], null],
+      runs: [RUNS[0], null] as any,
     }}
     labels={['Job #2', 'Job #1']}
   />
@@ -45,7 +45,7 @@ export const Removed = () => (
   <EntryInfo
     item={{
       label: 'static/vendor.js',
-      runs: [null, RUNS[1]],
+      runs: [null, RUNS[1]] as any,
     }}
     labels={['Job #2', 'Job #1']}
   />
@@ -58,6 +58,7 @@ export const WithCustomContent = () => (
       runs: RUNS as any,
     }}
     labels={['Job #2', 'Job #1']}
+    tags={<strong>Some tags</strong>}
   >
     <div>
       Custom entry info

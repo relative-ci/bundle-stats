@@ -28,7 +28,7 @@ export const Default = () => (
     name="lodash~1"
     item={{
       label: 'lodash',
-      duplicate: false,
+      duplicate: true,
       runs: RUNS as any,
     }}
     labels={['Job #2', 'Job #1']}

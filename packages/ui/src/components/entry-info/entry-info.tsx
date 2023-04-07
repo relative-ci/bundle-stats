@@ -14,6 +14,7 @@ interface EntryRun {
 }
 
 interface EntryInfoProps {
+  itemTitle?: React.ReactNode;
   item: {
     label: string;
     runs: Array<EntryRun & MetricRunInfo>;
@@ -21,16 +22,19 @@ interface EntryInfoProps {
   labels: Array<string>;
   runNameSelector?: string;
   runNameLabel?: string;
+  tags?: React.ReactNode;
 }
 
 export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) => {
   const {
     className = '',
+    itemTitle = null,
     item,
     labels,
     runNameSelector = 'name',
     runNameLabel = 'Path',
     children,
+    tags = null,
   } = props;
 
   const baselineRun = item.runs.length > 1 ? item.runs?.[item.runs.length - 1] : null;
@@ -45,8 +49,9 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
   return (
     <Stack space="small" className={cx(css.root, className)}>
       <Stack space="xxxsmall">
+        {tags}
         <h3 className={css.label}>
-          <FileName as="code" name={item.label} className={css.fileName} />
+          <FileName as="code" name={itemTitle || item.label} className={css.fileName} />
         </h3>
       </Stack>
 
