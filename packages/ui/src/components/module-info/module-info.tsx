@@ -62,13 +62,14 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
             }
 
             return (
-              <CustomComponentLink
+              <Tag
+                as={CustomComponentLink}
                 {...getBundleModulesByChunk(chunkIds, chunkId)}
                 onClick={onClick}
                 className={css.chunksItem}
               >
                 {chunk.name}
-              </CustomComponentLink>
+              </Tag>
             );
           })}
         </div>
