@@ -5,6 +5,7 @@ import { METRIC_TYPES, MetricRunInfo, getMetricRunInfo } from '@bundle-stats/uti
 import { Stack } from '../../layout/stack';
 import { Separator } from '../../layout/separator';
 import { FileName } from '../../ui/file-name';
+import { Table } from '../../ui/table';
 import { RunInfo } from '../run-info';
 import css from './entry-info.module.css';
 
@@ -48,22 +49,35 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
         size="large"
       />
 
-      <Separator />
+      {children && (
+        <Stack space="small">
+          <Separator />
+          <Stack space="xxxsmall">{children}</Stack>
+        </Stack>
+      )}
 
-      {children && <Stack space="xxxsmall">{children}</Stack>}
+      <Table outline className={css.runs}>
+        <Table.THead>
+          <Table.Tr>
+            <Table.Th className={css.runsCell}>&nbsp;</Table.Th>
+            <Table.Th className={css.runsCell}>Path</Table.Th>
+          </Table.Tr>
+        </Table.THead>
+        <Table.TBody>
+          {item.runs.map((run, index) => {
+            const key = `info-${run?.name || index}-${index}`;
 
-      <Stack space="xsmall" className={css.runs}>
-        {item.runs.map((run, index) => {
-          const key = `info-${run?.name || index}-${index}`;
-
-          return (
-            <Stack space="xxxsmall" key={key}>
-              <h4 className={css.runLabel}>{labels[index]}</h4>
-              <FileName className={css.fileName} as="code" name={run?.name || '-'} />
-            </Stack>
-          );
-        })}
-      </Stack>
+            return (
+              <Table.Tr key={key}>
+                <Table.Th className={css.runsCell}>{labels[index]}</Table.Th>
+                <Table.Td className={css.runsCell}>
+                  <FileName className={css.fileName} as="code" name={run?.name || '-'} />
+                </Table.Td>
+              </Table.Tr>
+            );
+          })}
+        </Table.TBody>
+      </Table>
     </Stack>
   );
 };

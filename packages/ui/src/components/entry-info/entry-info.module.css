@@ -8,10 +8,10 @@
   font-size: var(--size-medium);
 }
 
-.runLabel {
-  font-size: var(--size-medium);
-}
-
 .runs {
   font-size: var(--size-small);
+}
+
+.runs .runsCell {
+  padding: var(--space-xxxsmall) var(--space-xxsmall);
 }
