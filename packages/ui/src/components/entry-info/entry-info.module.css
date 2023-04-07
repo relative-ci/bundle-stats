@@ -15,3 +15,19 @@
 .runs .runsCell {
   padding: var(--space-xxxsmall) var(--space-xxsmall);
 }
+
+.runs .runsColJob {
+  white-space: nowrap;
+}
+
+.runs .runsColName {
+  width: 100%;
+}
+
+.runs .runsColSize {
+  text-align: right;
+}
+
+.size {
+  font-family: var(--font-family-fixed);
+}

@@ -19,10 +19,19 @@ interface EntryInfoProps {
     runs: Array<EntryRun & MetricRunInfo>;
   };
   labels: Array<string>;
+  runNameSelector?: string;
+  runNameLabel?: string;
 }
 
 export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) => {
-  const { className = '', item, labels, children } = props;
+  const {
+    className = '',
+    item,
+    labels,
+    runNameSelector = 'name',
+    runNameLabel = 'Path',
+    children,
+  } = props;
 
   const baselineRun = item.runs.length > 1 ? item.runs?.[item.runs.length - 1] : null;
 
@@ -59,8 +68,9 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
       <Table outline className={css.runs}>
         <Table.THead>
           <Table.Tr>
-            <Table.Th className={css.runsCell}>&nbsp;</Table.Th>
-            <Table.Th className={css.runsCell}>Path</Table.Th>
+            <Table.Th className={cx(css.runsCell, css.runsColJob)}>&nbsp;</Table.Th>
+            <Table.Th className={cx(css.runsCell, css.runsColName)}>{runNameLabel}</Table.Th>
+            <Table.Th className={cx(css.runsCell, css.runsColSize)}>Size</Table.Th>
           </Table.Tr>
         </Table.THead>
         <Table.TBody>
@@ -69,9 +79,18 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
 
             return (
               <Table.Tr key={key}>
-                <Table.Th className={css.runsCell}>{labels[index]}</Table.Th>
-                <Table.Td className={css.runsCell}>
-                  <FileName className={css.fileName} as="code" name={run?.name || '-'} />
+                <Table.Th className={cx(css.runsCell, css.runsColJob)}>{labels[index]}</Table.Th>
+                <Table.Td className={cx(css.runsCell, css.runsColName)}>
+                  <FileName
+                    className={css.fileName}
+                    as="code"
+                    name={(run as any)?.[runNameSelector] || '-'}
+                  />
+                </Table.Td>
+                <Table.Td className={cx(css.runsCell, css.runsColSize)}>
+                  <span className={css.size}>
+                    {typeof run?.value !== 'undefined' ? run.value : '-'}
+                  </span>
                 </Table.Td>
               </Table.Tr>
             );
