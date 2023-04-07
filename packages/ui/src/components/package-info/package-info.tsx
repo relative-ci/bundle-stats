@@ -6,7 +6,7 @@ import {
   getBundleModulesBySearch,
   getBundlePackagesByNameComponentLink,
 } from '@bundle-stats/utils';
-import { Package, MetaChunk } from '@bundle-stats/utils/types/webpack';
+import { Package } from '@bundle-stats/utils/types/webpack';
 
 import { Stack } from '../../layout/stack';
 import { ComponentLink } from '../component-link';
@@ -47,7 +47,7 @@ export const PackageInfo = (props: PackageInfoProps & React.ComponentProps<'div'
   );
 
   return (
-    <EntryInfo item={packageItem} labels={labels} className={className}>
+    <EntryInfo item={packageItem} labels={labels} runNameSelector="path" className={className}>
       <p>Path: <FileName name={normalizedPackagePath} className={css.fileName} /></p>
       <Stack space="xxxsmall" className={css.packageHoverCardActions}>
         {item.duplicate && (
