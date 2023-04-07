@@ -5,9 +5,8 @@ import noop from 'lodash/noop';
 import { MetricRunInfo, getBundleModulesByChunk } from '@bundle-stats/utils';
 import { Module, MetaChunk } from '@bundle-stats/utils/types/webpack';
 
-import { Stack } from '../../layout/stack';
-import { FileName } from '../../ui/file-name';
 import { ComponentLink } from '../component-link';
+import { EntryInfo } from '../entry-info';
 import css from './module-info.module.css';
 
 interface ModuleInfoProps {
@@ -34,43 +33,32 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
   } = props;
 
   const rootClassName = cx(css.root, className);
+  const currentRun = item.runs?.[0];
 
   return (
-    <Stack space="xsmall" className={rootClassName}>
-      {item.runs.map((run, index) => {
-        const TitleComponent = index !== 0 ? 'h4' : 'h3';
-        const key = `module-info-${run?.name || index}-${index}`;
+    <EntryInfo className={rootClassName} item={item} labels={labels}>
+      {!isEmpty(currentRun?.chunkIds) && (
+        <div className={css.chunks}>
+          <span className={css.chunksTitle}>Chunks:</span>
+          {currentRun.chunkIds.map((chunkId) => {
+            const chunk = chunks?.find(({ id }) => id === chunkId);
 
-        return (
-          <Stack space="xxxsmall" key={key}>
-            <TitleComponent>{labels[index]}</TitleComponent>
-            {index === 0 && !isEmpty(run?.chunkIds) && (
-              <div className={css.chunks}>
-                <span className={css.chunksTitle}>Chunks:</span>
-                {run.chunkIds.map((chunkId) => {
-                  const chunk = chunks?.find(({ id }) => id === chunkId);
+            if (!chunk) {
+              return null;
+            }
 
-                  if (!chunk) {
-                    return null;
-                  }
-
-                  return (
-                    <CustomComponentLink
-                      {...getBundleModulesByChunk(chunkIds, chunkId)}
-                      onClick={onClick}
-                      className={css.chunksItem}
-                    >
-                      {chunk.name}
-                    </CustomComponentLink>
-                  );
-                })}
-              </div>
-            )}
-
-            <FileName className={css.fileName} as="code" name={run?.name || '-'} />
-          </Stack>
-        );
-      })}
-    </Stack>
+            return (
+              <CustomComponentLink
+                {...getBundleModulesByChunk(chunkIds, chunkId)}
+                onClick={onClick}
+                className={css.chunksItem}
+              >
+                {chunk.name}
+              </CustomComponentLink>
+            );
+          })}
+        </div>
+      )}
+    </EntryInfo>
   );
 };

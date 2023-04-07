@@ -13,9 +13,3 @@
 .chunksItem + .chunksItem {
   margin-left: var(--space-xxxsmall);
 }
-
-.fileName {
-  max-width: 100%;
-  padding: 2px;
-  background: var(--color-highlight-warning);
-}
