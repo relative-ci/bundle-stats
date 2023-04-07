@@ -15,13 +15,13 @@ import { FlexStack } from '../../layout/flex-stack';
 import { Icon } from '../../ui/icon';
 import { FileName } from '../../ui/file-name';
 import { HoverCard } from '../../ui/hover-card';
-import { Tooltip } from '../../ui/tooltip';
 import { Tag } from '../../ui/tag';
 import { Filters } from '../../ui/filters';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { EmptySet } from '../../ui/empty-set';
 import { Toolbar } from '../../ui/toolbar';
 import { AssetInfo } from '../asset-info';
+import { AssetNotPredictive } from '../asset-not-predictive';
 import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableSearch } from '../metrics-table-search';
@@ -80,48 +80,27 @@ const getFilters = ({ compareMode, filters }) => ({
   },
 });
 
-const TooltipNotPredictive = ({ runs }) => (
-  <div className={css.tooltipNotPredictive}>
-    <p className={css.tooltipNotPredictiveText}>File name is the same, but the size has changed:</p>
-    <table className={css.tooltipTable}>
-      <tr>
-        {runs.map(({ name, value }, index) => {
-          const key = index;
-          return (
-            <tr key={key}>
-              <th>{RUNS_LABELS[index]}</th>
-              <td>{name}</td>
-              <td>{value}</td>
-            </tr>
-          );
-        })}
-      </tr>
-    </table>
-  </div>
-);
-
-TooltipNotPredictive.defaultProps = {
-  runs: [],
-};
-
-TooltipNotPredictive.propTypes = {
-  runs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
-};
-
 const RowHeader = ({ row, labels, chunks, CustomComponentLink }) => {
   const { label, isNotPredictive, runs, isChunk, isEntry, isInitial } = row;
   const [showHoverCard, setHoverCard] = useState(false);
   const handleOnMouseEnter = useCallback(() => setHoverCard(true), [showHoverCard]);
 
+  const contentIsNotPredictive = useMemo(() => {
+    if (!isNotPredictive) {
+      return null;
+    }
+
+    return (
+      <HoverCard label={<Icon className={css.notPredictiveIcon} glyph="warning" />} className={css.notPredictive} anchorClassName={css.notPredictiveAnchor}>
+        <AssetNotPredictive runs={runs} labels={RUNS_LABELS} />
+      </HoverCard>
+    );
+  }, [isNotPredictive, runs]);
+
   const content = useMemo(
     () => (
       <span className={css.assetName}>
         <span className={css.assetNameTags}>
-          {isNotPredictive && (
-            <Tooltip className={css.notPredictive} title={<TooltipNotPredictive runs={runs} />}>
-              <Icon className={css.notPredictiveIcon} glyph="warning" />
-            </Tooltip>
-          )}
           {isEntry && (
             <Tag
               className={cx(css.assetNameTag, css.assetNameTagEntry)}
@@ -150,23 +129,31 @@ const RowHeader = ({ row, labels, chunks, CustomComponentLink }) => {
         <FileName className={css.assetNameText} name={label} />
       </span>
     ),
-    [isChunk, isEntry, isInitial, isNotPredictive, runs],
+    [isChunk, isEntry, isInitial, runs],
   );
 
   if (!showHoverCard) {
-    return <span onMouseEnter={handleOnMouseEnter}>{content}</span>;
+    return (
+      <span className={css.assetNameWrapper}>
+        {contentIsNotPredictive}
+        <span onMouseEnter={handleOnMouseEnter}>{content}</span>
+      </span>
+    );
   }
 
   return (
-    <HoverCard label={content}>
-      <AssetInfo
-        className={css.assetInfo}
-        item={row}
-        labels={labels}
-        chunks={chunks}
-        CustomComponentLink={CustomComponentLink}
-      />
-    </HoverCard>
+    <span className={css.assetNameWrapper}>
+      {contentIsNotPredictive}
+      <HoverCard label={content}>
+        <AssetInfo
+          className={css.assetInfo}
+          item={row}
+          labels={labels}
+          chunks={chunks}
+          CustomComponentLink={CustomComponentLink}
+        />
+      </HoverCard>
+    </span>
   );
 };
 

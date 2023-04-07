@@ -8,6 +8,9 @@
   margin-right: -1px; /** collapse border */
 }
 
+.assetNameWrapper {
+}
+
 .assetName {}
 
 .notPredictive {
@@ -15,12 +18,12 @@
   display: inline-block;
   width: var(--space-small);
   height: var(--space-small);
-  vertical-align: middle;
 }
+
+.notPredictiveAnchor {}
 
 .notPredictiveIcon {
   color: var(--color-warning-dark);
-  vertical-align: top;
 }
 
 .assetNameTags {
@@ -69,25 +72,7 @@
   vertical-align: middle;
 }
 
-/* Tooltip not predictive */
-.tooltipNotPredictive {
-  text-align: left;
-}
-
-.tooltipNotPredictiveText {
-  margin-bottom: var(--space-xxxsmall);
-}
-
-.tooltipNotPredictiveName {
-  display: block;
-  line-height: var(--line-height-heading);
-}
-
 .search {
   margin: 0;
   width: 100%;
-}
-
-.assetInfo {
-  min-width: 280px;
 }
