@@ -66,29 +66,17 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
     <EntryInfo className={cx(css.root, className)} item={item} labels={labels}>
       <FlexStack space="xxxsmall" alignItems="center" className={css.tags}>
         {item.isEntry && (
-          <Tag
-            className={cx(css.assetNameTag, css.assetNameTagEntry)}
-            size={Tag.SIZES.SMALL}
-            kind={Tag.KINDS.INFO}
-          >
+          <Tag className={cx(css.assetNameTag, css.assetNameTagEntry)} kind={Tag.KINDS.INFO}>
             Entrypoint
           </Tag>
         )}
         {item.isInitial && (
-          <Tag
-            className={cx(css.assetNameTag, css.assetNameTagInitial)}
-            size={Tag.SIZES.SMALL}
-            kind={Tag.KINDS.INFO}
-          >
+          <Tag className={cx(css.assetNameTag, css.assetNameTagInitial)} kind={Tag.KINDS.INFO}>
             Initial
           </Tag>
         )}
         {item.isChunk && (
-          <Tag
-            className={cx(css.assetNameTag, css.assetNameTagChunk)}
-            size={Tag.SIZES.SMALL}
-            kind={Tag.KINDS.INFO}
-          >
+          <Tag className={cx(css.assetNameTag, css.assetNameTagChunk)} kind={Tag.KINDS.INFO}>
             Chunk
           </Tag>
         )}

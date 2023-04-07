@@ -5,6 +5,7 @@ import noop from 'lodash/noop';
 import { MetricRunInfo, getBundleModulesByChunk } from '@bundle-stats/utils';
 import { Module, MetaChunk } from '@bundle-stats/utils/types/webpack';
 
+import { Tag } from '../../ui/tag';
 import { ComponentLink } from '../component-link';
 import { EntryInfo } from '../entry-info';
 import css from './module-info.module.css';
@@ -13,6 +14,7 @@ interface ModuleInfoProps {
   item: {
     label: string;
     changed?: boolean;
+    duplicated?: boolean;
     runs: Array<Module & MetricRunInfo>;
   };
   chunks?: Array<MetaChunk>;
@@ -37,6 +39,12 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
 
   return (
     <EntryInfo className={rootClassName} item={item} labels={labels}>
+      {item.duplicated && (
+        <div>
+          <Tag kind="danger">Duplicate</Tag>
+        </div>
+      )}
+
       {!isEmpty(currentRun?.chunkIds) && (
         <div className={css.chunks}>
           <span className={css.chunksTitle}>Chunks:</span>

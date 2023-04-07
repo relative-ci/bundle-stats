@@ -11,6 +11,7 @@ import { Package } from '@bundle-stats/utils/types/webpack';
 import { Stack } from '../../layout/stack';
 import { ComponentLink } from '../component-link';
 import { FileName } from '../../ui/file-name';
+import { Tag } from '../../ui/tag';
 import { EntryInfo } from '../entry-info';
 import css from './package-info.module.css';
 
@@ -48,6 +49,11 @@ export const PackageInfo = (props: PackageInfoProps & React.ComponentProps<'div'
 
   return (
     <EntryInfo item={packageItem} labels={labels} runNameSelector="path" className={className}>
+      {item.duplicate && (
+        <div>
+          <Tag kind="danger">Duplicate</Tag>
+        </div>
+      )}
       <p>Path: <FileName name={normalizedPackagePath} className={css.fileName} /></p>
       <Stack space="xxxsmall" className={css.packageHoverCardActions}>
         {item.duplicate && (
