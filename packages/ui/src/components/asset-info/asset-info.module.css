@@ -1,9 +1,29 @@
 .fileName {
   max-width: 100%;
-  padding: 2px;
+  padding: 0 2px;
   background: var(--color-highlight-warning);
 }
 
-.viewModules {
-  display: block;
+.label {
+  font-size: var(--size-medium);
+}
+
+.runLabel {
+  font-size: var(--size-medium);
+}
+
+.assetNameTagEntry {
+  background: var(--color-info-dark);
+}
+
+.assetNameTagInitial {
+  background: var(--color-info);
+}
+
+.assetNameTagChunk {
+  background: var(--color-info-light);
+}
+
+.runs {
+  font-size: var(--size-small);
 }

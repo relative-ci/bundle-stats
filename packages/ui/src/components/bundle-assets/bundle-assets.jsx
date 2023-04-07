@@ -144,7 +144,7 @@ const RowHeader = ({ row, labels, chunks, CustomComponentLink }) => {
   return (
     <span className={css.assetNameWrapper}>
       {contentIsNotPredictive}
-      <HoverCard label={content}>
+      <HoverCard label={content} hoverCardClassName={css.hoverCard}>
         <AssetInfo
           className={css.assetInfo}
           item={row}

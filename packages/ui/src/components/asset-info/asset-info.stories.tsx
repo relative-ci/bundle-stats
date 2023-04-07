@@ -12,12 +12,22 @@ export default {
 export const Default = () => (
   <AssetInfo
     item={{
+      label: 'static/vendor.js',
+      changed: true,
+      isChunk: true,
+      isEntry: true,
+      isInitial: true,
+      isNotPredicative: false,
       runs: [
         {
           name: 'static/vendor.abcd1234.js',
+          displayValue: '959.66KiB',
+          displayDeltaPercentage: '-3.9%',
+          deltaType: 'LOW_POSITIVE',
         },
         {
           name: 'static/vendor.defg5678.js',
+          displayValue: '998.56KiB',
         },
       ],
     }}
@@ -28,6 +38,12 @@ export const Default = () => (
 export const WithChunks = () => (
   <AssetInfo
     item={{
+      label: 'static/vendor.js',
+      changed: true,
+      isChunk: true,
+      isEntry: false,
+      isInitial: true,
+      isNotPredicative: false,
       runs: [
         {
           name: 'static/vendor.abcd1234.js',

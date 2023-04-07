@@ -1,11 +1,15 @@
 import React from 'react';
 import cx from 'classnames';
-import { getBundleModulesByChunk, getModuleFileType } from '@bundle-stats/utils';
-import type { Asset, MetaChunk } from '@bundle-stats/utils/types/webpack';
+import { MetricRunInfo, getBundleModulesByChunk, getModuleFileType } from '@bundle-stats/utils';
+import { Asset, MetaChunk } from '@bundle-stats/utils/types/webpack';
 
 import { Stack } from '../../layout/stack';
+import { FlexStack } from '../../layout/flex-stack';
+import { Separator } from '../../layout/separator';
 import { FileName } from '../../ui/file-name';
+import { Tag } from '../../ui/tag';
 import { ComponentLink } from '../component-link';
+import { RunInfo } from '../run-info';
 import css from './asset-info.module.css';
 
 interface ChunkModulesLinkProps {
@@ -37,7 +41,13 @@ const ChunkModulesLink = ({ as: Component, chunks, chunkId, name }: ChunkModules
 
 interface AssetInfoProps {
   item: {
-    runs: Array<Asset>;
+    label: string;
+    changed?: boolean;
+    isChunk?: boolean;
+    isEntry?: boolean;
+    isInitial?: boolean;
+    isNotPredicative?: boolean;
+    runs: Array<Asset & MetricRunInfo>;
   };
   chunks?: Array<MetaChunk>;
   labels: Array<string>;
@@ -53,28 +63,78 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
     labels,
   } = props;
 
+  const currentRun = item.runs?.[0];
+  const baselineRun = item.runs.length > 1 ? item.runs?.[item.runs.length - 1] : null;
+
   return (
-    <Stack space="xsmall" className={cx(css.root, className)}>
-      {item.runs.map((run, index) => {
-        const Title = index !== 0 ? 'h4' : 'h3';
-        const key = `asset-info-${run?.name || index}-${index}`;
+    <Stack space="small" className={cx(css.root, className)}>
+      <Stack space="xxxsmall">
+        <FlexStack space="xxxsmall" alignItems="center" className={css.tags}>
+          {item.isEntry && (
+            <Tag
+              className={cx(css.assetNameTag, css.assetNameTagEntry)}
+              size={Tag.SIZES.SMALL}
+              kind={Tag.KINDS.INFO}
+            >
+              Entrypoint
+            </Tag>
+          )}
+          {item.isInitial && (
+            <Tag
+              className={cx(css.assetNameTag, css.assetNameTagInitial)}
+              size={Tag.SIZES.SMALL}
+              kind={Tag.KINDS.INFO}
+            >
+              Initial
+            </Tag>
+          )}
+          {item.isChunk && (
+            <Tag
+              className={cx(css.assetNameTag, css.assetNameTagChunk)}
+              size={Tag.SIZES.SMALL}
+              kind={Tag.KINDS.INFO}
+            >
+              Chunk
+            </Tag>
+          )}
+        </FlexStack>
+        <h3 className={css.label}>
+          <FileName as="code" name={item.label} className={css.fileName} />
+        </h3>
+      </Stack>
 
-        return (
-          <Stack space="xxxsmall" key={key}>
-            <Title>{labels[index]}</Title>
-            <FileName className={css.fileName} as="code" name={run?.name || '-'} />
+      <RunInfo
+        current={currentRun?.displayValue}
+        delta={currentRun?.displayDeltaPercentage}
+        baseline={baselineRun?.displayValue}
+        showBaseline={Boolean(baselineRun)}
+        size="large"
+      />
 
-            {index === 0 && run?.chunkId && chunks && (
-              <ChunkModulesLink
-                as={CustomComponentLink}
-                chunks={chunks}
-                chunkId={run?.chunkId}
-                name={run?.name}
-              />
-            )}
-          </Stack>
-        );
-      })}
+      <Separator />
+
+      <Stack space="xsmall" className={css.runs}>
+        {item.runs.map((run, index) => {
+          const key = `asset-info-${run?.name || index}-${index}`;
+
+          return (
+            <Stack space="xxxsmall" key={key}>
+              <h4 className={css.runLabel}>{labels[index]}</h4>
+              <FileName className={css.fileName} as="code" name={run?.name || '-'} />
+              <div>
+                {index === 0 && run?.chunkId && chunks && (
+                  <ChunkModulesLink
+                    as={CustomComponentLink}
+                    chunks={chunks}
+                    chunkId={run?.chunkId}
+                    name={run?.name}
+                  />
+                )}
+              </div>
+            </Stack>
+          );
+        })}
+      </Stack>
     </Stack>
   );
 };
