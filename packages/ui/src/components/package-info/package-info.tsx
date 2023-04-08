@@ -1,5 +1,7 @@
 import React, { useMemo } from 'react';
+import noop from 'lodash/noop';
 import {
+  BUNDLE_PACKAGES_DUPLICATE,
   PACKAGES_SEPARATOR,
   PACKAGE_ID_SEPARATOR,
   MetricRunInfo,
@@ -34,6 +36,7 @@ export const PackageInfo = (props: PackageInfoProps & React.ComponentProps<'div'
     item,
     labels,
     customComponentLink: CustomComponentLink = ComponentLink,
+    onClick = noop
   } = props;
 
   const fallbackPackagePath = `node_modules/${item.label.split(PACKAGES_SEPARATOR).join('/node_modules/')}`;
@@ -54,7 +57,7 @@ export const PackageInfo = (props: PackageInfoProps & React.ComponentProps<'div'
 
     return (
       <div>
-        <Tag kind="danger">Duplicate</Tag>
+        <Tag as={CustomComponentLink} {...BUNDLE_PACKAGES_DUPLICATE} onClick={onClick} kind="danger">Duplicate</Tag>
       </div>
     );
   }, [item]);

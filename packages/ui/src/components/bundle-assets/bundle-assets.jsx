@@ -145,13 +145,16 @@ const RowHeader = ({ row, labels, chunks, CustomComponentLink }) => {
     <span className={css.assetNameWrapper}>
       {contentIsNotPredictive}
       <HoverCard label={content} hoverCardClassName={css.hoverCard}>
-        <AssetInfo
-          className={css.assetInfo}
-          item={row}
-          labels={labels}
-          chunks={chunks}
-          CustomComponentLink={CustomComponentLink}
-        />
+        {({ close }) =>  (
+          <AssetInfo
+            className={css.assetInfo}
+            item={row}
+            labels={labels}
+            chunks={chunks}
+            CustomComponentLink={CustomComponentLink}
+            onClick={close}
+          />
+        )}
       </HoverCard>
     </span>
   );

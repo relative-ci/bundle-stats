@@ -8,8 +8,6 @@
 
 .chunksItem {
   overflow-wrap: break-word;
-  background: var(--color-highlight);
-  color: var(--color-text-light);
   text-decoration: none;
   text-transform: none;
   font-weight: normal;
@@ -18,11 +16,4 @@
 
 .chunksItem + .chunksItem {
   margin-left: var(--space-xxxsmall);
-}
-
-.chunksItem:hover,
-.chunksItem:focus,
-.chunksItem:active {
-  background: var(--color-outline);
-  color: var(--color-text);
 }

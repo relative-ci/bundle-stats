@@ -1,3 +1,13 @@
+.assetNameTag {
+  color: var(--color-background);
+}
+
+.assetNameTag:hover,
+.assetNameTag:active,
+.assetNameTag:focus {
+  color: var(--color-background);
+}
+
 .assetNameTagEntry {
   background: var(--color-info-dark);
 }

@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import cx from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import noop from 'lodash/noop';
-import { MetricRunInfo, getBundleModulesByChunk } from '@bundle-stats/utils';
+import { BUNDLE_MODULES_DUPLICATE, MetricRunInfo, getBundleModulesByChunk } from '@bundle-stats/utils';
 import { Module, MetaChunk } from '@bundle-stats/utils/types/webpack';
 
 import { Tag } from '../../ui/tag';
@@ -21,7 +21,6 @@ interface ModuleInfoProps {
   chunkIds?: Array<string>;
   labels: Array<string>;
   customComponentLink?: React.ElementType;
-  onChunkClick?: () => void;
 }
 
 export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>) => {
@@ -32,7 +31,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
     chunks = [],
     chunkIds = [],
     customComponentLink: CustomComponentLink = ComponentLink,
-    onChunkClick = noop,
+    onClick = noop,
   } = props;
 
   const rootClassName = cx(css.root, className);
@@ -45,7 +44,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
 
     return (
       <div>
-        <Tag kind="danger">Duplicate</Tag>
+        <Tag as={CustomComponentLink} {...BUNDLE_MODULES_DUPLICATE} onClick={onClick} kind="danger">Duplicate</Tag>
       </div>
     );
   }, [item]);
@@ -66,7 +65,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
               <Tag
                 as={CustomComponentLink}
                 {...getBundleModulesByChunk(chunkIds, chunkId)}
-                onClick={onChunkClick}
+                onClick={onClick}
                 className={css.chunksItem}
               >
                 {chunk.name}

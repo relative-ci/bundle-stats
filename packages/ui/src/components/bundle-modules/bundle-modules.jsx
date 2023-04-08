@@ -115,7 +115,7 @@ const RowHeader = ({ row, chunks, labels, CustomComponentLink }) => {
           chunkIds={chunkIds}
           labels={labels}
           customComponentLink={CustomComponentLink}
-          onChunkClick={close}
+          onClick={close}
         />
       )}
     </HoverCard>

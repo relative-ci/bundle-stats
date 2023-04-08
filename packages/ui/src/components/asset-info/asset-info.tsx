@@ -1,6 +1,12 @@
 import React, { useMemo } from 'react';
 import cx from 'classnames';
-import { MetricRunInfo, getBundleModulesByChunk, getModuleFileType } from '@bundle-stats/utils';
+import noop from 'lodash/noop';
+import {
+  MetricRunInfo,
+  getBundleModulesByChunk,
+  getBundleAssetsByEntryType,
+  getModuleFileType,
+} from '@bundle-stats/utils';
 import { Asset, MetaChunk } from '@bundle-stats/utils/types/webpack';
 
 import { FlexStack } from '../../layout/flex-stack';
@@ -16,7 +22,13 @@ interface ChunkModulesLinkProps {
   name: string;
 }
 
-const ChunkModulesLink = ({ as: Component, chunks, chunkId, name }: ChunkModulesLinkProps) => {
+const ChunkModulesLink = ({
+  as: Component,
+  chunks,
+  chunkId,
+  name,
+  onClick,
+}: ChunkModulesLinkProps & React.ComponentProps<'a'>) => {
   const chunk = chunks?.find(({ id }) => id === chunkId);
 
   if (!chunk) {
@@ -30,6 +42,7 @@ const ChunkModulesLink = ({ as: Component, chunks, chunkId, name }: ChunkModules
     <Component
       className={css.viewModules}
       {...getBundleModulesByChunk(chunkIds, chunkId, fileType)}
+      onClick={onClick}
     >
       View chunk modules
     </Component>
@@ -58,6 +71,7 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
     customComponentLink: CustomComponentLink = ComponentLink,
     item,
     labels,
+    onClick = noop,
   } = props;
 
   const currentRun = item.runs?.[0];
@@ -70,17 +84,32 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
     return (
       <FlexStack space="xxxsmall" alignItems="center" className={css.tags}>
         {item.isEntry && (
-          <Tag className={cx(css.assetNameTag, css.assetNameTagEntry)} kind={Tag.KINDS.INFO}>
+          <Tag
+            as={CustomComponentLink}
+            {...getBundleAssetsByEntryType('entry')}
+            onClick={onClick}
+            className={cx(css.assetNameTag, css.assetNameTagEntry)}
+          >
             Entrypoint
           </Tag>
         )}
         {item.isInitial && (
-          <Tag className={cx(css.assetNameTag, css.assetNameTagInitial)} kind={Tag.KINDS.INFO}>
+          <Tag
+            as={CustomComponentLink}
+            {...getBundleAssetsByEntryType('initial')}
+            onClick={onClick}
+            className={cx(css.assetNameTag, css.assetNameTagInitial)}
+          >
             Initial
           </Tag>
         )}
         {item.isChunk && (
-          <Tag className={cx(css.assetNameTag, css.assetNameTagChunk)} kind={Tag.KINDS.INFO}>
+          <Tag
+            as={CustomComponentLink}
+            {...getBundleAssetsByEntryType('chunk')}
+            onClick={onClick}
+            className={cx(css.assetNameTag, css.assetNameTagChunk)}
+          >
             Chunk
           </Tag>
         )}
@@ -96,6 +125,7 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
           chunks={chunks}
           chunkId={currentRun?.chunkId}
           name={currentRun?.name}
+          onClick={onClick}
         />
       )}
     </EntryInfo>

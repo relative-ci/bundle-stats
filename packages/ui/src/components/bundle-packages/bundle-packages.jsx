@@ -68,12 +68,15 @@ const PackageName = ({ packageName, showDetails, row, labels, CustomComponentLin
 
   return (
     <HoverCard label={label} className={css.packageName} hoverCardClassName={css.hoverCard}>
-      <PackageInfo
-        name={packageName}
-        item={row}
-        labels={labels}
-        CustomComponentLink={CustomComponentLink}
-      />
+      {({ close }) => (
+        <PackageInfo
+          name={packageName}
+          item={row}
+          labels={labels}
+          CustomComponentLink={CustomComponentLink}
+          onClick={close}
+        />
+      )}
     </HoverCard>
   );
 };

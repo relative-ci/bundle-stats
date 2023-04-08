@@ -185,6 +185,24 @@ export const BUNDLE_MODULES_DUPLICATE: ComponentLink = {
   },
 };
 
+export const getBundleAssetsByEntryType = (
+  assetType: 'entry' | 'initial' | 'chunk',
+): ComponentLink => ({
+  section: SECTIONS.ASSETS,
+  title: I18N.COMPONENT_LINK_BUNDLE_ASSETS_BY_ENTRY_TYPE(assetType),
+  params: {
+    [COMPONENT.BUNDLE_ASSETS]: {
+      filters: {
+        [ASSET_FILTERS.CHANGED]: false,
+        ...getAssetEntryTypeFilters(false),
+        [`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`]: assetType === 'entry',
+        [`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`]: assetType === 'initial',
+        [`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`]: assetType === 'chunk',
+      },
+    },
+  },
+});
+
 export const getBundleModulesBySearch = (search: string): ComponentLink => ({
   section: SECTIONS.MODULES,
   title: I18N.COMPONENT_LINK_MODULES,
