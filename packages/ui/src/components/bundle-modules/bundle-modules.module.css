@@ -27,7 +27,6 @@
 }
 
 .hoverCard {
-  width: calc(100vw - var(--space-small));
-  max-width: 480px;
+  max-width: var(--entry-info-hovercard-width);
 }
 
