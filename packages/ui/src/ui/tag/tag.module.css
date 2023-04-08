@@ -2,10 +2,24 @@
   display: inline-block;
   font-family: var(--font-family);
   font-weight: bold;
-  background: var(--color-text-light);
+  background: var(--color-text-ultra-light);
   color: var(--color-light);
   text-align: center;
   text-transform: uppercase;
+}
+
+a.root {
+  text-decoration: none;
+  transition: var(--transition-out);
+}
+
+a.root:hover,
+a.root:focus,
+a.root:active {
+  opacity: 0.8;
+  color: var(--color-light);
+  text-decoration: none;
+  transition: var(--transition-in);
 }
 
 /** Kind variation */

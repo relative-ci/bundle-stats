@@ -195,4 +195,5 @@
 
   /** Layout */
   --max-width: 80rem;
+  --entry-info-hovercard-width: 540px;
 }

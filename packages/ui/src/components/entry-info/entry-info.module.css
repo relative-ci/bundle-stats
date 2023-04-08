@@ -1,0 +1,33 @@
+.fileName {
+  max-width: 100%;
+  padding: 0 2px;
+  background: var(--color-highlight-warning);
+}
+
+.label {
+  font-size: var(--size-medium);
+}
+
+.runs {
+  font-size: var(--size-small);
+}
+
+.runs .runsCell {
+  padding: var(--space-xxxsmall) var(--space-xxsmall);
+}
+
+.runs .runsColJob {
+  white-space: nowrap;
+}
+
+.runs .runsColName {
+  width: 100%;
+}
+
+.runs .runsColSize {
+  text-align: right;
+}
+
+.size {
+  font-family: var(--font-family-fixed);
+}

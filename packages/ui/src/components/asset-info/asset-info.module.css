@@ -1,9 +1,21 @@
-.fileName {
-  max-width: 100%;
-  padding: 2px;
-  background: var(--color-highlight-warning);
+.assetNameTag {
+  color: var(--color-background);
 }
 
-.viewModules {
-  display: block;
+.assetNameTag:hover,
+.assetNameTag:active,
+.assetNameTag:focus {
+  color: var(--color-background);
+}
+
+.assetNameTagEntry {
+  background: var(--color-info-dark);
+}
+
+.assetNameTagInitial {
+  background: var(--color-info);
+}
+
+.assetNameTagChunk {
+  background: var(--color-info-light);
 }

@@ -29,3 +29,9 @@ export const KIND = {
   WARNING: 'warning',
   DANGER: 'danger',
 } as const;
+
+export const SIZE = {
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+} as const;

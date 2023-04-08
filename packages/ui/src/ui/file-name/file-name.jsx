@@ -24,5 +24,5 @@ FileName.propTypes = {
   as: PropTypes.elementType,
 
   /** File name source  */
-  name: PropTypes.string,
+  name: PropTypes.string | PropTypes.node,
 };

@@ -1,0 +1,13 @@
+.fileName {
+  padding: 0 2px;
+  background: var(--color-highlight-warning);
+}
+
+.external {
+  padding: 0;
+  list-style: inside disc;
+}
+
+.packageTitleId {
+  color: var(--color-text-ultra-light);
+}

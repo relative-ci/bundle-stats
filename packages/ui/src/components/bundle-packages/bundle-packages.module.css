@@ -12,6 +12,10 @@
   margin-right: -1px; /** collapse border */
 }
 
+.hoverCard {
+  max-width: var(--entry-info-hovercard-width);
+}
+
 .packageName {
   display: inline-block;
   color: var(--color-text-light);

@@ -1,3 +1,6 @@
+import React from 'react';
+import { Meta, Story } from '@storybook/react';
+
 import { Tag } from '.';
 
 export default {
@@ -16,11 +19,13 @@ export default {
   args: {
     children: 'tag',
   },
-};
+} as Meta;
 
-export const Default = Tag.bind();
+const Template: Story = (args) => <Tag {...args} />;
 
-export const OneLetter = Tag.bind();
+export const Default = Template.bind({});
+
+export const OneLetter = Template.bind({});
 
 OneLetter.args = {
   children: 'd',

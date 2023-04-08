@@ -50,7 +50,7 @@ export interface MetricsAssets {
 
 export interface Module extends MetricRun {
   name: string;
-  chunkIds: Array<String>;
+  chunkIds: Array<string>;
   duplicated?: boolean;
 }
 
