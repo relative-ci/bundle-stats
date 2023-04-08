@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-bundle-stats",
-  "version": "4.3.0-beta.3",
+  "version": "4.3.0-beta.4",
   "description": "In-depth bundle analyzer for rollup(bundle size, assets, modules, packages)",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
@@ -47,7 +47,7 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/rollup-plugin#readme",
   "dependencies": {
-    "@bundle-stats/cli-utils": "^4.3.0-beta.2",
+    "@bundle-stats/cli-utils": "^4.3.0-beta.4",
     "rollup-plugin-webpack-stats": "0.2.0"
   },
   "devDependencies": {
