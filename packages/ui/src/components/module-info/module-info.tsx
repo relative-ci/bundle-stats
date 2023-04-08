@@ -21,6 +21,7 @@ interface ModuleInfoProps {
   chunkIds?: Array<string>;
   labels: Array<string>;
   customComponentLink?: React.ElementType;
+  onChunkClick?: () => void;
 }
 
 export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>) => {
@@ -31,7 +32,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
     chunks = [],
     chunkIds = [],
     customComponentLink: CustomComponentLink = ComponentLink,
-    onClick = noop,
+    onChunkClick = noop,
   } = props;
 
   const rootClassName = cx(css.root, className);
@@ -65,7 +66,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
               <Tag
                 as={CustomComponentLink}
                 {...getBundleModulesByChunk(chunkIds, chunkId)}
-                onClick={onClick}
+                onClick={onChunkClick}
                 className={css.chunksItem}
               >
                 {chunk.name}
