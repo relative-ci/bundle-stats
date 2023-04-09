@@ -73,7 +73,7 @@ const PackageName = ({ packageName, showDetails, row, labels, CustomComponentLin
           name={packageName}
           item={row}
           labels={labels}
-          CustomComponentLink={CustomComponentLink}
+          customComponentLink={CustomComponentLink}
           onClick={close}
         />
       )}
