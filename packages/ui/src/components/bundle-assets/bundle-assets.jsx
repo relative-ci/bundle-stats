@@ -151,7 +151,7 @@ const RowHeader = ({ row, labels, chunks, CustomComponentLink }) => {
             item={row}
             labels={labels}
             chunks={chunks}
-            CustomComponentLink={CustomComponentLink}
+            customComponentLink={CustomComponentLink}
             onClick={close}
           />
         )}
