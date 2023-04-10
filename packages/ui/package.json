@@ -65,7 +65,7 @@
     "react-test-renderer": "18.2.0",
     "rimraf": "5.0.0",
     "typescript": "5.0.4",
-    "typescript-plugin-css-modules": "5.0.0"
+    "typescript-plugin-css-modules": "5.0.1"
   },
   "peerDependencies": {
     "classnames": "^2.0.0",
