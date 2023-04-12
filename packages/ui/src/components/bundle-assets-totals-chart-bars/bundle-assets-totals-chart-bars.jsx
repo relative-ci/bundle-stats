@@ -12,6 +12,7 @@ import { HorizontalBarChart } from '../../ui/horizontal-bar-chart';
 import { ComponentLink } from '../component-link'
 import { getColors } from '../../utils';
 import { Stack } from '../../layout/stack';
+import { JobName } from '../job-name';
 import { MetricRunInfo } from '../metric-run-info';
 import css from './bundle-assets-totals-chart-bars.module.css';
 
@@ -63,7 +64,7 @@ export const BundleAssetsTotalsChartBars = ({
   const colors = getColors(max(map(dataGraphs, (values) => values.length)));
 
   return (
-    <Stack className={rootClassName} space="medium">
+    <Stack className={rootClassName} space="small">
       {dataGraphs.map((data, runIndex) => {
         const { internalBuildNumber } = jobs[runIndex];
 
@@ -76,7 +77,7 @@ export const BundleAssetsTotalsChartBars = ({
 
         return (
           <div key={internalBuildNumber || runIndex} className={css.item}>
-            <h3 className={css.itemTitle}>{`Job #${internalBuildNumber}`}</h3>
+            <h3 className={css.itemTitle}><JobName internalBuildNumber={internalBuildNumber} /></h3>
             <HorizontalBarChart
               className={css.itemChart}
               data={{ labels, values }}

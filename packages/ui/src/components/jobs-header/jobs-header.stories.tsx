@@ -20,14 +20,6 @@ export const Default = () => (
             hash: 'abcd1234',
           },
         },
-        summary: {
-          webpack: {
-            totalSizeByTypeALL: {
-              current: 1000000,
-              baseline: 900000,
-            },
-          },
-        },
       },
     ]}
   />
@@ -44,14 +36,6 @@ export const MultipleJobs = () => (
             hash: 'abcd1234',
           },
         },
-        summary: {
-          webpack: {
-            totalSizeByTypeALL: {
-              current: 1000000,
-              baseline: 900000,
-            },
-          },
-        },
       },
       {
         internalBuildNumber: 2,
@@ -59,14 +43,6 @@ export const MultipleJobs = () => (
           webpack: {
             builtAt: '2019-01-02T00:00:00.000Z',
             hash: 'efgh1234',
-          },
-        },
-        summary: {
-          webpack: {
-            totalSizeByTypeALL: {
-              current: 900000,
-              baseline: 0,
-            },
           },
         },
       },

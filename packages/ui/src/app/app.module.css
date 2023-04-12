@@ -14,7 +14,7 @@
 
 .summaryContainer {
   padding-top: var(--space-medium);
-  padding-bottom: var(--space-small);
+  padding-bottom: var(--space-xsmall);
 }
 
 .tabsContainer {
@@ -42,7 +42,7 @@
 
 @media (min-width: 600px) {
   :root {
-    --header-height: 72px;
+    --header-height: 52px;
   }
 
   .header {
