@@ -9,7 +9,6 @@ export { Delta } from './delta';
 export { InsightIcon } from './insight-icon';
 export { Insights } from './insights';
 export { JobName } from './job-name';
-export { JobHeader } from './job-header';
 export { JobsHeader } from './jobs-header';
 export { LighthouseTable } from './lighthouse-table';
 export { Metric } from './metric';
