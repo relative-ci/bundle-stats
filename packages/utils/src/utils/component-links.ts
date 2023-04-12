@@ -25,6 +25,7 @@ export type ComponentLinkFilters = Record<string, boolean>;
 
 export interface ComponentLinkParams {
   search?: string;
+  entryId?: string;
   filters: ComponentLinkFilters;
 }
 
@@ -159,6 +160,51 @@ export const BUNDLE_ASSETS_CHUNK_COUNT: ComponentLink = {
   },
 };
 
+export const getBundleAsset = (entryId: string): ComponentLink => ({
+  section: SECTIONS.ASSETS,
+  title: 'View asset details' as any,
+  params: {
+    [COMPONENT.BUNDLE_ASSETS]: {
+      entryId,
+      filters: {},
+    },
+  },
+});
+
+export const getBundleAssetsByEntryType = (
+  assetType: 'entry' | 'initial' | 'chunk',
+): ComponentLink => ({
+  section: SECTIONS.ASSETS,
+  title: I18N.COMPONENT_LINK_BUNDLE_ASSETS_BY_ENTRY_TYPE(assetType),
+  params: {
+    [COMPONENT.BUNDLE_ASSETS]: {
+      filters: {
+        [ASSET_FILTERS.CHANGED]: false,
+        ...getAssetEntryTypeFilters(false),
+        [`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`]: assetType === 'entry',
+        [`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`]: assetType === 'initial',
+        [`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`]: assetType === 'chunk',
+      },
+    },
+  },
+});
+
+export const getBundleAssetsFileTypeComponentLink = (
+  fileType: string,
+  label: string = fileType,
+): ComponentLink => ({
+  section: SECTIONS.ASSETS,
+  title: I18N.COMPONENT_LINK_BUNDLE_ASSETS_BY_FILE_TYPE({ label }),
+  params: {
+    [COMPONENT.BUNDLE_ASSETS]: {
+      filters: {
+        ...getAssetFileTypeFilters(false),
+        [`${ASSET_FILE_TYPE}.${fileType}`]: true,
+      },
+    },
+  },
+});
+
 export const BUNDLE_MODULES: ComponentLink = {
   section: SECTIONS.MODULES,
   title: I18N.COMPONENT_LINK_MODULES,
@@ -184,24 +230,6 @@ export const BUNDLE_MODULES_DUPLICATE: ComponentLink = {
     },
   },
 };
-
-export const getBundleAssetsByEntryType = (
-  assetType: 'entry' | 'initial' | 'chunk',
-): ComponentLink => ({
-  section: SECTIONS.ASSETS,
-  title: I18N.COMPONENT_LINK_BUNDLE_ASSETS_BY_ENTRY_TYPE(assetType),
-  params: {
-    [COMPONENT.BUNDLE_ASSETS]: {
-      filters: {
-        [ASSET_FILTERS.CHANGED]: false,
-        ...getAssetEntryTypeFilters(false),
-        [`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`]: assetType === 'entry',
-        [`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`]: assetType === 'initial',
-        [`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`]: assetType === 'chunk',
-      },
-    },
-  },
-});
 
 export const getBundleModulesBySearch = (search: string): ComponentLink => ({
   section: SECTIONS.MODULES,
@@ -289,22 +317,6 @@ export const BUNDLE_PACKAGES_DUPLICATE_CHANGED: ComponentLink = {
     },
   },
 };
-
-export const getBundleAssetsFileTypeComponentLink = (
-  fileType: string,
-  label: string,
-): ComponentLink => ({
-  section: SECTIONS.ASSETS,
-  title: I18N.COMPONENT_LINK_BUNDLE_ASSETS_BY_FILE_TYPE({ label }),
-  params: {
-    [COMPONENT.BUNDLE_ASSETS]: {
-      filters: {
-        ...getAssetFileTypeFilters(false),
-        [`${ASSET_FILE_TYPE}.${fileType}`]: true,
-      },
-    },
-  },
-});
 
 export const getBundlePackagesByNameComponentLink = (search: string): ComponentLink => ({
   section: SECTIONS.PACKAGES,

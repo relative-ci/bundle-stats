@@ -2,9 +2,11 @@ import React, { useMemo } from 'react';
 import cx from 'classnames';
 import noop from 'lodash/noop';
 import {
+  FILE_TYPE_LABELS,
   MetricRunInfo,
   getBundleModulesByChunk,
   getBundleAssetsByEntryType,
+  getBundleAssetsFileTypeComponentLink,
   getModuleFileType,
 } from '@bundle-stats/utils';
 import { Asset, MetaChunk } from '@bundle-stats/utils/types/webpack';
@@ -57,6 +59,7 @@ interface AssetInfoProps {
     isEntry?: boolean;
     isInitial?: boolean;
     isNotPredicative?: boolean;
+    fileType?: string;
     runs: Array<Asset & MetricRunInfo>;
   };
   chunks?: Array<MetaChunk>;
@@ -117,17 +120,33 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
     );
   }, [item]);
 
+  const fileTypeLabel = FILE_TYPE_LABELS[item.fileType as keyof typeof FILE_TYPE_LABELS];
+
   return (
     <EntryInfo item={item} labels={labels} tags={tags} className={cx(css.root, className)}>
-      {currentRun?.chunkId && chunks && (
-        <ChunkModulesLink
-          as={CustomComponentLink}
-          chunks={chunks}
-          chunkId={currentRun?.chunkId}
-          name={currentRun?.name}
-          onClick={onClick}
-        />
-      )}
+      <>
+        {item.fileType && (
+          <p>
+            <span>File type: </span>
+            <Tag
+              as={CustomComponentLink}
+              {...getBundleAssetsFileTypeComponentLink(item.fileType, fileTypeLabel)}
+              onClick={onClick}
+            >
+              {fileTypeLabel}
+            </Tag>
+          </p>
+        )}
+        {currentRun?.chunkId && chunks && (
+          <ChunkModulesLink
+            as={CustomComponentLink}
+            chunks={chunks}
+            chunkId={currentRun?.chunkId}
+            name={currentRun?.name}
+            onClick={onClick}
+          />
+        )}
+      </>
     </EntryInfo>
   );
 };
