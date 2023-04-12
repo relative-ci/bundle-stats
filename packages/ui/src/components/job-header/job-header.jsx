@@ -18,29 +18,32 @@ export const JobHeader = (props) => {
 
   return (
     <Stack className={rootClassName} space="xxsmall">
-      <h1 className={css.title}>
-        <span>{`#${job.internalBuildNumber}`}</span>
-        {tag && <Tag className={css.tag}>{tag}</Tag>}
-      </h1>
-      <FlexStack space="xxsmall" className={css.meta}>
+      <FlexStack space="xsmall" alignItems="center">
+        <FlexStack space="xxxsmall" as="h1" className={css.title}>
+          <span>{`#${job.internalBuildNumber}`}</span>
+          {tag && <Tag className={css.tag}>{tag}</Tag>}
+        </FlexStack>
+
         {builtAt && (
-          <FlexStack space="xxxsmall" alignItems="center" inline as="span" title={builtAt}>
-            <Icon glyph="clock" />
-            <span>
+          <FlexStack space="xxxsmall" alignItems="center" inline as="span" title={builtAt} className={css.meta}>
+            <Icon glyph="clock" className={css.metaIcon} />
+            <span className={css.metaText}>
               {formatDateTime({ dateStyle: 'medium', timeStyle: 'medium' }, builtAt)}
             </span>
           </FlexStack>
         )}
 
         {hash && (
-          <FlexStack space="xxxsmall" alignItems="center" inline title="Webpack bundle hash">
-            <Icon glyph="commit" />
-            <span>{hash}</span>
+          <FlexStack space="xxxsmall" alignItems="center" inline title="Webpack bundle hash" className={css.meta}>
+            <Icon glyph="commit" className={css.metaIcon} />
+            <span className={css.metaText}>{hash.slice(0, 7)}</span>
           </FlexStack>
         )}
-
-        <div className={css.content}>{children}</div>
       </FlexStack>
+      {children && (<FlexStack space="xxsmall" className={css.meta}>
+          <div className={css.content}>{children}</div>
+        </FlexStack>
+      )}
     </Stack>
   );
 };

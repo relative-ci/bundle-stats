@@ -42,7 +42,7 @@
 
 @media (min-width: 600px) {
   :root {
-    --header-height: 72px;
+    --header-height: 52px;
   }
 
   .header {
