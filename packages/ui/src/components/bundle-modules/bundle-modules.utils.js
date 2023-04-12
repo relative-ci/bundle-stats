@@ -23,7 +23,7 @@ export const addRowFlags = (row) => {
   // eslint-disable-next-line no-param-reassign
   row.duplicated = Boolean(runs.find((run) => run?.duplicated === true));
   // eslint-disable-next-line no-param-reassign
-  row.sourceFileType = getModuleSourceFileType(row.key);
+  row.fileType = getModuleSourceFileType(row.key);
 
   return row;
 };
@@ -67,7 +67,7 @@ export const getRowFilter = (filters) => (row) => {
   }
 
   // Skip not matching source file types
-  if (!filters[`${MODULE_FILE_TYPE}.${row.sourceFileType}`]) {
+  if (!filters[`${MODULE_FILE_TYPE}.${row.fileType}`]) {
     return false;
   }
 

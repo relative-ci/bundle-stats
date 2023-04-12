@@ -16,6 +16,7 @@ import {
   MODULE_FILE_TYPE,
   MODULE_FILTERS,
   MODULE_SOURCE_TYPE,
+  MODULE_SOURCE_TYPE_LABELS,
   PACKAGE_FILTERS,
   SECTIONS,
 } from '../config/component-links';
@@ -262,6 +263,35 @@ export const getBundleModulesByChunk = (
           ...getModuleFileTypeFilters(false),
           [`${MODULE_FILE_TYPE}.${fileType}`]: true,
         }),
+      },
+    },
+  },
+});
+
+export const getBundleModulesByFileTpe = (
+  fileType: string,
+  fileTypeLabel?: string,
+): ComponentLink => ({
+  section: SECTIONS.MODULES,
+  title: I18N.COMPONENT_LINK_MODULES_BY_FILE_TYPE(fileTypeLabel || fileType),
+  params: {
+    [COMPONENT.BUNDLE_MODULES]: {
+      filters: {
+        ...getModuleFileTypeFilters(false),
+        [`${MODULE_FILE_TYPE}.${fileType}`]: true,
+      },
+    },
+  },
+});
+
+export const getBundleModulesBySource = (thirdParty: boolean, label = ''): ComponentLink => ({
+  section: SECTIONS.MODULES,
+  title: I18N.COMPONENT_LINK_MODULES_BY_SOURCE(label),
+  params: {
+    [COMPONENT.BUNDLE_MODULES]: {
+      filters: {
+        [`${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.THIRD_PARTY}`]: thirdParty,
+        [`${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.FIRST_PARTY}`]: !thirdParty,
       },
     },
   },
