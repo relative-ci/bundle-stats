@@ -64,7 +64,7 @@ export const BundleAssetsTotalsChartBars = ({
   const colors = getColors(max(map(dataGraphs, (values) => values.length)));
 
   return (
-    <Stack className={rootClassName} space="medium">
+    <Stack className={rootClassName} space="small">
       {dataGraphs.map((data, runIndex) => {
         const { internalBuildNumber } = jobs[runIndex];
 

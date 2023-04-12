@@ -6,7 +6,7 @@
   position: absolute;
   right: 0;
   bottom: 100%;
-  margin: 0 0 var(--space-xxxsmall);
+  margin: 0 0 2px;
 
   color: var(--color-text-light);
   font-size: var(--size-xsmall);
