@@ -17,6 +17,7 @@ import { FileName } from '../../ui/file-name';
 import { Tag } from '../../ui/tag';
 import { EntryInfo } from '../entry-info';
 import css from './package-info.module.css';
+import { Icon } from '../../ui';
 
 interface PackageInfoProps {
   name: string;
@@ -72,7 +73,10 @@ export const PackageInfo = (props: PackageInfoProps & React.ComponentProps<'div'
       className={className}
     >
       <Stack space="small">
-        <p>Path: <FileName name={normalizedPackagePath} className={css.fileName} /></p>
+        <p>
+          <span className={css.label}>Path</span>
+          <FileName name={normalizedPackagePath} className={css.fileName} />
+        </p>
 
         <Stack space="xxxsmall">
           {item.duplicate && (
@@ -89,22 +93,30 @@ export const PackageInfo = (props: PackageInfoProps & React.ComponentProps<'div'
         </Stack>
 
         <FlexStack space="xsmall" alignItems="center" className={css.external}>
-          <a
+          <FlexStack
+            space="xxxsmall"
+            alignItems="center"
+            as="a"
             href={`https://www.npmjs.com/package/${normalizedName}`}
             target="_blank"
             rel="noreferrer"
             className={css.externalLink}
           >
-            npmjs.com
-          </a>
-          <a
+            <span>npmjs.com</span>
+            <Icon glyph={Icon.ICONS.EXTERNAL_LINK} size="small"/>
+          </FlexStack>
+          <FlexStack
+            space="xxxsmall"
+            alignItems="center"
+            as="a"
             href={`https://bundlephobia.com/result?p=${normalizedName}`}
             target="_blank"
             rel="noreferrer"
             className={css.externalLink}
           >
-            bundlephobia.com
-          </a>
+            <span>bundlephobia.com</span>
+            <Icon glyph={Icon.ICONS.EXTERNAL_LINK} size="small"/>
+          </FlexStack>
         </FlexStack>
       </Stack>
     </EntryInfo>

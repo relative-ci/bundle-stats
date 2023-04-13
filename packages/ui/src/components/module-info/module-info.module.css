@@ -1,5 +1,10 @@
-.chunksTitle {
-  margin-right: var(--space-xxxsmall);
+.label {
+  display: inline-block;
+  min-width: 6em;
+}
+
+.label::after {
+  content: ' ';
 }
 
 .chunksItems {

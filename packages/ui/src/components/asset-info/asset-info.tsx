@@ -12,6 +12,7 @@ import {
 import { Asset, MetaChunk } from '@bundle-stats/utils/types/webpack';
 
 import { FlexStack } from '../../layout/flex-stack';
+import { Stack } from '../../layout/stack';
 import { Tag } from '../../ui/tag';
 import { ComponentLink } from '../component-link';
 import { EntryInfo } from '../entry-info';
@@ -124,10 +125,10 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
 
   return (
     <EntryInfo item={item} labels={labels} tags={tags} className={cx(css.root, className)}>
-      <>
+      <Stack space="small">
         {item.fileType && (
           <p>
-            <span>File type: </span>
+            <span className={css.label}>File type</span>
             <Tag
               as={CustomComponentLink}
               {...getBundleAssetsFileTypeComponentLink(item.fileType, fileTypeLabel)}
@@ -137,6 +138,7 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
             </Tag>
           </p>
         )}
+
         {currentRun?.chunkId && chunks && (
           <ChunkModulesLink
             as={CustomComponentLink}
@@ -146,7 +148,7 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
             onClick={onClick}
           />
         )}
-      </>
+      </Stack>
     </EntryInfo>
   );
 };

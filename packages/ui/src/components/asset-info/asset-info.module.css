@@ -19,3 +19,13 @@
 .assetNameTagChunk {
   background: var(--color-info-light);
 }
+
+.label {
+  display: inline-block;
+  min-width: 6em;
+}
+
+.label::after {
+  content: ' ';
+}
+

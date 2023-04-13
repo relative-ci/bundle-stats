@@ -71,7 +71,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
     <EntryInfo item={item} labels={labels} tags={tags} className={rootClassName}>
       {!isEmpty(currentRun?.chunkIds) && (
         <div className={css.chunks}>
-          <span className={css.chunksTitle}>Chunks:</span>
+          <span className={css.label}>Chunks</span>
           {currentRun.chunkIds.map((chunkId) => {
             const chunk = chunks?.find(({ id }) => id === chunkId);
 
@@ -95,7 +95,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
 
       {item?.fileType && (
         <p>
-          <span>File type: </span>
+          <span className={css.label}>File type</span>
           <Tag
             as={CustomComponentLink}
             {...getBundleModulesByFileTpe(item.fileType, fileTypeLabel)}
@@ -107,7 +107,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
       )}
 
       <p>
-        <span>Source: </span>
+        <span className={css.label}>Source</span>
         <Tag
           as={CustomComponentLink}
           {...getBundleModulesBySource(item.thirdParty || false, sourceTypeLabel)}
