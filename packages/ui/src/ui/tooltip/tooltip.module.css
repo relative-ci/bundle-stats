@@ -19,7 +19,6 @@
   filter: drop-shadow(var(--shadow-layer));
   will-change: filter;
   font-size: var(--size-xsmall);
-  text-align: center;
 }
 
 .arrow svg {
