@@ -9,7 +9,7 @@ export const FILE_TYPE_OTHER = 'OTHER';
 
 export const FILE_TYPE_PATTERNS = {
   [FILE_TYPE_CSS]: /\.css$/,
-  [FILE_TYPE_JS]: /\.js$/,
+  [FILE_TYPE_JS]: /\.(js|cjs|mjs)$/,
   [FILE_TYPE_IMG]: /\.(a?png|jpe?g|webp|gif|svg|ico|avif)$/,
   [FILE_TYPE_MEDIA]: /\.(mp4|mp3|m4a|aac|mov|webm|wav|ogg)$/,
   [FILE_TYPE_FONT]: /\.(woff|woff2|ttf|otf|eot)$/,
@@ -34,14 +34,14 @@ export const FILE_TYPES = [...Object.keys(FILE_TYPE_PATTERNS), FILE_TYPE_OTHER];
  */
 export const MODULE_SOURCE_PATTERNS = {
   [FILE_TYPE_CSS]: /\.(css|styl|sass|scss|less)$/,
-  [FILE_TYPE_JS]: /\.(jsx?|tsx?|mjs)$/,
+  [FILE_TYPE_JS]: /\.(jsx?|tsx?|cjs|mjs)$/,
 };
 
 export const MODULE_SOURCE_FILE_TYPES = [...Object.keys(MODULE_SOURCE_PATTERNS), FILE_TYPE_OTHER];
 
 export const MODULE_DESTINATION_PATTERNS = {
   [FILE_TYPE_CSS]: /\.css$/,
-  [FILE_TYPE_JS]: /\.(js|mjs)$/,
+  [FILE_TYPE_JS]: /\.(js|cjs|mjs)$/,
 };
 
 export const MODULE_DESTINATION_FILE_TYPES = Object.keys(MODULE_DESTINATION_PATTERNS);
