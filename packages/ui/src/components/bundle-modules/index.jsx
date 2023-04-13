@@ -14,7 +14,7 @@ import { useRowsSort } from '../../hooks/rows-sort';
 import { useSearchParams } from '../../hooks/search-params';
 import { BundleModules as BundleModulesComponent } from './bundle-modules';
 import {
-  addRowSourceFlag,
+  addRowFlags,
   getRowFilter,
   getCustomSort,
   useModuleFilterByChunk,
@@ -75,7 +75,7 @@ export const BundleModules = (props) => {
   });
 
   const { rows, totalRowCount } = useMemo(() => {
-    const result = webpack.compareBySection.modules(filteredJobsByChunkIds, [addRowSourceFlag]);
+    const result = webpack.compareBySection.modules(filteredJobsByChunkIds, [addRowFlags]);
     return { rows: result, totalRowCount: result.length };
   }, [filteredJobsByChunkIds]);
 

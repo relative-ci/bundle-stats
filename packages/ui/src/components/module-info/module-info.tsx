@@ -2,7 +2,15 @@ import React, { useMemo } from 'react';
 import cx from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import noop from 'lodash/noop';
-import { BUNDLE_MODULES_DUPLICATE, MetricRunInfo, getBundleModulesByChunk } from '@bundle-stats/utils';
+import {
+  BUNDLE_MODULES_DUPLICATE,
+  FILE_TYPE_LABELS,
+  MODULE_SOURCE_TYPE_LABELS,
+  MetricRunInfo,
+  getBundleModulesByChunk,
+  getBundleModulesByFileTpe,
+  getBundleModulesBySource,
+} from '@bundle-stats/utils';
 import { Module, MetaChunk } from '@bundle-stats/utils/types/webpack';
 
 import { Tag } from '../../ui/tag';
@@ -15,6 +23,8 @@ interface ModuleInfoProps {
     label: string;
     changed?: boolean;
     duplicated?: boolean;
+    thirdParty?: boolean;
+    fileType?: string;
     runs: Array<Module & MetricRunInfo>;
   };
   chunks?: Array<MetaChunk>;
@@ -44,16 +54,24 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
 
     return (
       <div>
-        <Tag as={CustomComponentLink} {...BUNDLE_MODULES_DUPLICATE} onClick={onClick} kind="danger">Duplicate</Tag>
+        <Tag as={CustomComponentLink} {...BUNDLE_MODULES_DUPLICATE} onClick={onClick} kind="danger">
+          Duplicate
+        </Tag>
       </div>
     );
   }, [item]);
+
+  const fileTypeLabel = FILE_TYPE_LABELS[item.fileType as keyof typeof FILE_TYPE_LABELS];
+
+  const sourceTypeLabel = item.thirdParty
+    ? MODULE_SOURCE_TYPE_LABELS.THIRD_PARTY
+    : MODULE_SOURCE_TYPE_LABELS.FIRST_PARTY;
 
   return (
     <EntryInfo item={item} labels={labels} tags={tags} className={rootClassName}>
       {!isEmpty(currentRun?.chunkIds) && (
         <div className={css.chunks}>
-          <span className={css.chunksTitle}>Chunks:</span>
+          <span className={css.label}>Chunks</span>
           {currentRun.chunkIds.map((chunkId) => {
             const chunk = chunks?.find(({ id }) => id === chunkId);
 
@@ -74,6 +92,30 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
           })}
         </div>
       )}
+
+      {item?.fileType && (
+        <p>
+          <span className={css.label}>File type</span>
+          <Tag
+            as={CustomComponentLink}
+            {...getBundleModulesByFileTpe(item.fileType, fileTypeLabel)}
+            onClick={onClick}
+          >
+            {fileTypeLabel}
+          </Tag>
+        </p>
+      )}
+
+      <p>
+        <span className={css.label}>Source</span>
+        <Tag
+          as={CustomComponentLink}
+          {...getBundleModulesBySource(item.thirdParty || false, sourceTypeLabel)}
+          onClick={onClick}
+        >
+          {sourceTypeLabel}
+        </Tag>
+      </p>
     </EntryInfo>
   );
 };

@@ -36,3 +36,8 @@ export const COMPONENT = {
   BUNDLE_MODULES: 'bm',
   BUNDLE_PACKAGES: 'bp',
 };
+
+export const MODULE_SOURCE_TYPE_LABELS = {
+  FIRST_PARTY: 'First party',
+  THIRD_PARTY: 'Third party',
+};

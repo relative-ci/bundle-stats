@@ -13,14 +13,17 @@ import {
 
 import { SORT_BY_NAME, SORT_BY_SIZE, SORT_BY_DELTA } from './bundle-modules.constants';
 
-export const addRowSourceFlag = (row) => {
+export const addRowFlags = (row) => {
   const { key, runs } = row;
 
   // @NOTE Assign instead destructuring for perf reasons
+
   // eslint-disable-next-line no-param-reassign
   row.thirdParty = Boolean(key.match(MODULE_PATH_PACKAGES));
   // eslint-disable-next-line no-param-reassign
   row.duplicated = Boolean(runs.find((run) => run?.duplicated === true));
+  // eslint-disable-next-line no-param-reassign
+  row.fileType = getModuleSourceFileType(row.key);
 
   return row;
 };
@@ -64,8 +67,7 @@ export const getRowFilter = (filters) => (row) => {
   }
 
   // Skip not matching source file types
-  const fileType = getModuleSourceFileType(row.key);
-  if (!filters[`${MODULE_FILE_TYPE}.${fileType}`]) {
+  if (!filters[`${MODULE_FILE_TYPE}.${row.fileType}`]) {
     return false;
   }
 

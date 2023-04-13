@@ -40,17 +40,6 @@ const getFilters = ({ filters, compareMode, chunks }) => ({
       label: 'Duplicate',
       defaultValue: filters[MODULE_FILTERS.DUPLICATED],
     },
-    [MODULE_SOURCE_TYPE]: {
-      label: 'Source',
-      [MODULE_FILTERS.FIRST_PARTY]: {
-        label: 'First party',
-        defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.FIRST_PARTY}`, true),
-      },
-      [MODULE_FILTERS.THIRD_PARTY]: {
-        label: 'Third party',
-        defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.THIRD_PARTY}`, true),
-      },
-    },
 
     // When chunks data available, list available chunks as filters
     ...(!isEmpty(chunks) && {
@@ -68,6 +57,18 @@ const getFilters = ({ filters, compareMode, chunks }) => ({
         ),
       },
     }),
+
+    [MODULE_SOURCE_TYPE]: {
+      label: 'Source',
+      [MODULE_FILTERS.FIRST_PARTY]: {
+        label: 'First party',
+        defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.FIRST_PARTY}`, true),
+      },
+      [MODULE_FILTERS.THIRD_PARTY]: {
+        label: 'Third party',
+        defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.THIRD_PARTY}`, true),
+      },
+    },
 
     // Module source types
     [MODULE_FILE_TYPE]: {

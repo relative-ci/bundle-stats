@@ -8,8 +8,8 @@ export const addRowAssetFlags = (row) => {
   const isEntry = runs.map((run) => run?.isEntry).includes(true);
   const isInitial = runs.map((run) => run?.isInitial).includes(true);
   const isChunk = runs.map((run) => run?.isChunk).includes(true);
-
   const isAsset = !(isEntry || isInitial || isChunk);
+  const fileType = getFileType(row.key);
 
   return {
     ...row,
@@ -17,6 +17,7 @@ export const addRowAssetFlags = (row) => {
     isInitial,
     isChunk,
     isAsset,
+    fileType,
   };
 };
 
@@ -64,7 +65,7 @@ export const getRowFilter = (filters) => (item) => {
     return false;
   }
 
-  if (!filters[`${ASSET_FILE_TYPE}.${getFileType(item.key)}`]) {
+  if (!filters[`${ASSET_FILE_TYPE}.${item.fileType}`]) {
     return false;
   }
 
