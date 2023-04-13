@@ -37,19 +37,29 @@ export const PackageInfo = (props: PackageInfoProps & React.ComponentProps<'div'
     item,
     labels,
     customComponentLink: CustomComponentLink = ComponentLink,
-    onClick = noop
+    onClick = noop,
   } = props;
 
-  const fallbackPackagePath = `node_modules/${item.label.split(PACKAGES_SEPARATOR).join('/node_modules/')}`;
+  const fallbackPackagePath = `node_modules/${item.label
+    .split(PACKAGES_SEPARATOR)
+    .join('/node_modules/')}`;
   const normalizedPackagePath = `${item.runs?.[0]?.path || fallbackPackagePath}/`;
   const [normalizedName, packageId] = name.split(PACKAGE_ID_SEPARATOR);
 
-  const packageTitle = useMemo(() => (
-    <span className={css.packageTitle}>
-      <span className={css.packageTitleText}>{normalizedName}</span>
-      {packageId && <span className={css.packageTitleId}>{PACKAGE_ID_SEPARATOR}{packageId}</span>}
-    </span>
-  ), [normalizedName, packageId]);
+  const packageTitle = useMemo(
+    () => (
+      <span className={css.packageTitle}>
+        <span className={css.packageTitleText}>{normalizedName}</span>
+        {packageId && (
+          <span className={css.packageTitleId}>
+            {PACKAGE_ID_SEPARATOR}
+            {packageId}
+          </span>
+        )}
+      </span>
+    ),
+    [normalizedName, packageId],
+  );
 
   const tags = useMemo(() => {
     if (!item.duplicate) {
@@ -58,7 +68,14 @@ export const PackageInfo = (props: PackageInfoProps & React.ComponentProps<'div'
 
     return (
       <div>
-        <Tag as={CustomComponentLink} {...BUNDLE_PACKAGES_DUPLICATE} onClick={onClick} kind="danger">Duplicate</Tag>
+        <Tag
+          as={CustomComponentLink}
+          {...BUNDLE_PACKAGES_DUPLICATE}
+          onClick={onClick}
+          kind="danger"
+        >
+          Duplicate
+        </Tag>
       </div>
     );
   }, [item]);
@@ -81,7 +98,7 @@ export const PackageInfo = (props: PackageInfoProps & React.ComponentProps<'div'
         <Stack space="xxxsmall">
           {item.duplicate && (
             <div>
-              <CustomComponentLink {...getBundlePackagesByNameComponentLink(normalizedName)}>
+              <CustomComponentLink {...getBundlePackagesByNameComponentLink(normalizedName)} onClick={onClick}>
                 View all duplicate instances
               </CustomComponentLink>
             </div>
@@ -103,7 +120,7 @@ export const PackageInfo = (props: PackageInfoProps & React.ComponentProps<'div'
             className={css.externalLink}
           >
             <span>npmjs.com</span>
-            <Icon glyph={Icon.ICONS.EXTERNAL_LINK} size="small"/>
+            <Icon glyph={Icon.ICONS.EXTERNAL_LINK} size="small" />
           </FlexStack>
           <FlexStack
             space="xxxsmall"
@@ -115,7 +132,7 @@ export const PackageInfo = (props: PackageInfoProps & React.ComponentProps<'div'
             className={css.externalLink}
           >
             <span>bundlephobia.com</span>
-            <Icon glyph={Icon.ICONS.EXTERNAL_LINK} size="small"/>
+            <Icon glyph={Icon.ICONS.EXTERNAL_LINK} size="small" />
           </FlexStack>
         </FlexStack>
       </Stack>
