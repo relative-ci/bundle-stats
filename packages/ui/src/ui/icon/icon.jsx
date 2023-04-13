@@ -12,6 +12,7 @@ const ICONS = {
   CLOCK: 'clock',
   COMMIT: 'commit',
   ERROR: 'error',
+  EXTERNAL_LINK: 'external-link',
   FILTER: 'filter',
   INFO: 'info',
   HELP: 'help',
