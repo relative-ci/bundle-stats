@@ -55,7 +55,7 @@
     "jest-date-mock": "1.0.8",
     "lodash": "4.17.21",
     "mini-css-extract-plugin": "2.7.5",
-    "postcss": "8.4.21",
+    "postcss": "8.4.22",
     "postcss-loader": "7.2.4",
     "preact": "10.10.6",
     "prop-types": "15.8.1",
