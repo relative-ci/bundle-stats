@@ -12,6 +12,11 @@
   text-align: center;
 }
 
+.header {
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-outline);
+}
+
 .summaryContainer {
   padding-top: var(--space-medium);
   padding-bottom: var(--space-xsmall);
@@ -52,8 +57,6 @@
     top: 0;
     right: 0;
     height: var(--header-height);
-    background-color: var(--color-background);
-    border-bottom: 1px solid var(--color-outline);
   }
 
   .tabsContainer {
