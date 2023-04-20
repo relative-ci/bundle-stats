@@ -1,5 +1,5 @@
 .root {
-  --summary-gap: var(--space-xsmall);
+  --summary-gap: var(--space-small);
   width: 100%;
 }
 
