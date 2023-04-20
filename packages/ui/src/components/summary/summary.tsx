@@ -84,20 +84,20 @@ export const Summary = ({
   summaryItemLink = ComponentLink,
 }: SummaryProps & React.ComponentProps<'div'>) => (
   <Box className={cx(css.root, className)}>
-    <FlexStack space="small" className={css.items}>
-      {keys.map((metricId) => (
-        <SummaryItem
-          key={metricId}
-          className={css.item}
-          metricId={metricId}
-          data={data}
-          customLink={summaryItemLink}
-          size={size}
-          loading={loading}
-          showDelta={showSummaryItemDelta}
-          showBaseline={showSummaryItemBaseline}
-        />
-      ))}
-    </FlexStack>
+    <div className={css.items}>
+        {keys.map((metricId) => (
+          <SummaryItem
+            key={metricId}
+            className={css.item}
+            metricId={metricId}
+            data={data}
+            customLink={summaryItemLink}
+            size={size}
+            loading={loading}
+            showDelta={showSummaryItemDelta}
+            showBaseline={showSummaryItemBaseline}
+          />
+        ))}
+      </div>
   </Box>
 );

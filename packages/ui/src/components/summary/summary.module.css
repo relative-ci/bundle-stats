@@ -1,10 +1,20 @@
 .root {
+  --summary-gap: var(--space-xsmall);
   width: 100%;
 }
 
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + var(--summary-gap));
+  margin-top: calc(0px - var(--summary-gap));
+  margin-left: calc(0px - var(--summary-gap));
+}
+
 .item {
+  margin: var(--summary-gap) 0 0 var(--summary-gap);
   flex: 1 0 10%; /* force equal sizes */
-  min-width: 16em;
+  min-width: 14em;
   text-decoration: none;
 }
 
@@ -25,4 +35,3 @@
   color: var(--color-primary-dark);
   text-decoration: none;
 }
-
