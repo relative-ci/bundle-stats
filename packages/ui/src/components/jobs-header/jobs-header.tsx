@@ -29,43 +29,42 @@ export const Item = (props: ItemProps & React.ComponentProps<'div'>) => {
   const rootClassName = cx(css.item, className);
 
   return (
-    <Stack className={rootClassName} space="xxsmall">
-      <FlexStack space="xsmall" alignItems="center">
-        <FlexStack space="xxxsmall" as="h1" className={css.itemTitle}>
-          <span>{`#${job.internalBuildNumber}`}</span>
-          {tag && <Tag className={css.itemTag}>{tag}</Tag>}
-        </FlexStack>
-
-        {builtAt && (
-          <FlexStack
-            space="xxxsmall"
-            alignItems="center"
-            inline
-            as="span"
-            title={builtAt}
-            className={css.itemMeta}
-          >
-            <Icon glyph="clock" className={css.itemMetaIcon} />
-            <span className={css.itemMetaText}>
-              {formatDateTime({ dateStyle: 'medium', timeStyle: 'medium' }, builtAt)}
-            </span>
-          </FlexStack>
-        )}
-
-        {hash && (
-          <FlexStack
-            space="xxxsmall"
-            alignItems="center"
-            inline
-            title="Webpack bundle hash"
-            className={css.itemMeta}
-          >
-            <Icon glyph="commit" className={css.itemMetaIcon} />
-            <span className={css.itemMetaText}>{hash.slice(0, 7)}</span>
-          </FlexStack>
-        )}
+    <FlexStack space="xsmall" alignItems="center" className={rootClassName}>
+      <FlexStack space="xxxsmall" as="h1" className={css.itemTitle}>
+        <span>{`#${job.internalBuildNumber}`}</span>
+        {tag && <Tag className={css.itemTag}>{tag}</Tag>}
       </FlexStack>
-    </Stack>
+
+      {builtAt && (
+        <FlexStack
+          space="xxxsmall"
+          alignItems="center"
+          inline
+          as="span"
+          title={builtAt}
+          className={css.itemMeta}
+        >
+          <Icon glyph="clock" className={css.itemMetaIcon} />
+          <span className={css.itemMetaText}>
+            {formatDateTime({ dateStyle: 'medium', timeStyle: 'medium' }, builtAt)}
+          </span>
+        </FlexStack>
+      )}
+
+      {hash && (
+        <FlexStack
+          space="xxxsmall"
+          alignItems="center"
+          inline
+          as="span"
+          title="Webpack bundle hash"
+          className={css.itemMeta}
+        >
+          <Icon glyph="commit" className={css.itemMetaIcon} />
+          <span className={css.itemMetaText}>{hash.slice(0, 7)}</span>
+        </FlexStack>
+      )}
+    </FlexStack>
   );
 };
 
@@ -78,7 +77,7 @@ export const JobsHeader = (props: JobsHeaderProps & React.ComponentProps<'header
   const rootClassName = cx(css.root, className);
 
   return (
-    <FlexStack className={rootClassName}>
+    <header className={rootClassName}>
       {jobs?.map((job, index) => (
         <Item
           key={job.internalBuildNumber || index}
@@ -86,6 +85,6 @@ export const JobsHeader = (props: JobsHeaderProps & React.ComponentProps<'header
           tag={index === 0 ? I18N.CURRENT : I18N.BASELINE}
         />
       ))}
-    </FlexStack>
+    </header>
   );
 };

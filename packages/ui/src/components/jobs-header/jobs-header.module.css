@@ -1,11 +1,31 @@
 .root {
   padding: var(--space-small) 0;
+  width: 100%;
+  display: flex;
 }
 
 .item {
-  flex: 0 0 auto;
+  position: relative;
+  flex: 1 0 10%;
+  max-width: 50%;
+  overflow: hidden;
   padding: 0 var(--space-small);
   border-left: 1px solid var(--color-outline);
+}
+
+.item::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: var(--space-xxsmall);
+  background: linear-gradient(90deg, transparent, var(--color-background));
+}
+
+.item + .item {
+  margin-left: var(--space-small);
 }
 
 .item:first-child {
@@ -31,4 +51,13 @@
 .itemMeta {
   font-size: var(--size-small);
   color: var(--color-text-light);
+}
+
+.itemMetaIcon {
+  flex: 0 0 auto;
+}
+
+.itemMetaText {
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
