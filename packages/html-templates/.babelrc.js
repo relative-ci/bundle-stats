@@ -12,7 +12,7 @@ module.exports = {
     ],
     ['@babel/preset-react', { pragma: 'h' }],
   ],
-  plugins: ['babel-plugin-preact-require'],
+  plugins: ['babel-plugin-preact-require', 'babel-plugin-lodash'],
   env: {
     development: {
       presets: [
@@ -44,7 +44,7 @@ module.exports = {
         ],
         '@babel/preset-react',
       ],
-      plugins: ['babel-plugin-react-require', 'babel-plugin-require-context-hook'],
+      plugins: ['babel-plugin-react-require', 'babel-plugin-lodash', 'babel-plugin-require-context-hook'],
     },
   },
 };
