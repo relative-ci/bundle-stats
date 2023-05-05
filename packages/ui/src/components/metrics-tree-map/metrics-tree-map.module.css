@@ -1,0 +1,21 @@
+.root {
+  position: relative;
+}
+
+.root::after {
+  position: relative;
+  z-index: 1;
+  content: '';
+  display: block;
+  padding-top: 56.25%;
+  width: 1px;
+}
+
+.chart {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}

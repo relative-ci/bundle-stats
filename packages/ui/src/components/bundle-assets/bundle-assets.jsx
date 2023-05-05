@@ -25,6 +25,7 @@ import { Toolbar } from '../../ui/toolbar';
 import { AssetInfo } from '../asset-info';
 import { AssetNotPredictive } from '../asset-not-predictive';
 import { ComponentLink } from '../component-link';
+import { MetricsTreeMap } from '../metrics-tree-map';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
@@ -250,6 +251,7 @@ export const BundleAssets = (props) => {
           </FlexStack>
         </Toolbar>
         <main>
+          <MetricsTreeMap items={items} />
           <MetricsTable
             runs={jobs}
             items={items}
