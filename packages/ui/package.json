@@ -44,7 +44,7 @@
     "@storybook/addons": "6.5.16",
     "@storybook/builder-webpack5": "6.5.16",
     "@storybook/manager-webpack5": "6.5.16",
-    "@storybook/react": "6.5.16",
+    "@storybook/react": "7.0.9",
     "@types/react": "18.0.37",
     "babel-plugin-require-context-hook": "1.0.0",
     "classnames": "2.3.2",
