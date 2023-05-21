@@ -6,6 +6,15 @@ import { RunInfo } from './run-info';
 export default {
   title: 'Components/RunInfo',
   component: RunInfo,
+  args: {
+    size: 'medium',
+  },
+  argTypes: {
+    size: {
+      options: ['small', 'medium', 'large'],
+      control: { type: 'select' },
+    },
+  },
 } as Meta;
 
 const Template: Story = (args) => <RunInfo id="webpack.totalSizeByTypeALL" {...args} />;

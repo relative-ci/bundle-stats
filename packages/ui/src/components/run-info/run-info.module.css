@@ -52,7 +52,15 @@
   transition: var(--ui-transition-in);
 }
 
-/* Size large */
+/* Size variation */
+.small .info {
+  margin-top: var(--space-xxxsmall);
+}
+
+.small .currentMetric {
+  font-size: var(--size-xlarge);
+}
+
 .large .info {
   margin-top: var(--space-xxsmall);
 }
