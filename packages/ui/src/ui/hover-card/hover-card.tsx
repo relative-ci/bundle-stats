@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import {
   Hovercard,
@@ -11,8 +10,26 @@ import {
 
 import css from './hover-card.module.css';
 
-export const HoverCard = (props) => {
-  const { className, anchorClassName, hoverCardClassName, href, as, label, children } = props;
+export interface HoverCardProps {
+  className?: string;
+  anchorClassName?: string;
+  hoverCardClassName?: string;
+  href?: string;
+  as?: React.ElementType;
+  label: React.ReactNode;
+  children?: React.ReactNode | (({ close }: { close: () => void }) => React.ReactNode);
+}
+
+export const HoverCard = (props: HoverCardProps) => {
+  const {
+    className = '',
+    anchorClassName = '',
+    hoverCardClassName = '',
+    href = '',
+    as = null,
+    label,
+    children,
+  } = props;
 
   const state = useHovercardState({ gutter: 8, timeout: 800 });
   const hovercardProps = useHovercard({ state, portal: true });
@@ -51,30 +68,4 @@ export const HoverCard = (props) => {
       </Hovercard>
     </div>
   );
-};
-
-HoverCard.propTypes = {
-  /** Adopted child class name */
-  className: PropTypes.string,
-  /** Adopted child class name for hover card */
-  hoverCardClassName: PropTypes.string,
-  /** Adopted child class name for anchor */
-  anchorClassName: PropTypes.string,
-  /** Anchor label */
-  label: PropTypes.node,
-  /** Anchor href */
-  href: PropTypes.string,
-  /** Anchor component */
-  as: PropTypes.elementType,
-  /** Hover card component */
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
-};
-
-HoverCard.defaultProps = {
-  className: '',
-  hoverCardClassName: '',
-  anchorClassName: '',
-  label: '',
-  as: '',
-  href: '',
 };

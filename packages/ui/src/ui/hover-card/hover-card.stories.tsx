@@ -1,15 +1,16 @@
 import React from 'react';
+import { Meta, Story } from '@storybook/react';
 
-import { HoverCard } from '.';
+import { HoverCard, HoverCardProps } from '.';
 
 export default {
   title: 'UI/HoverCard',
   component: HoverCard,
-};
+} as Meta;
 
-const Template = (props) => (
+const Template: Story<HoverCardProps> = (props) => (
   <>
-    <HoverCard {...props} style={{ zIndex: 2 }} />
+    <HoverCard {...props} />
     <p style={{ position: 'relative', zIndex: 1, maxWidth: 360 }}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in neque ante. Curabitur
       vehicula, lorem sit amet fringilla dapibus, justo mauris varius elit, ut fermentum leo velit
