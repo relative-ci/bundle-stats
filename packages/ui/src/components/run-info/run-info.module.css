@@ -39,6 +39,19 @@
   width: 5em;
 }
 
+/* Hover state */
+.titleIcon span[aria-controls=""] {
+  opacity: 0;
+  visibility: none;
+  transition: var(--ui-transition-out);
+}
+
+.root:hover .titleIcon span {
+  opacity: 1;
+  visibility: visible;
+  transition: var(--ui-transition-in);
+}
+
 /* Size large */
 .large .info {
   margin-top: var(--space-xxsmall);
