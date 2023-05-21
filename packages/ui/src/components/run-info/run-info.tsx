@@ -34,7 +34,7 @@ export interface RunInfoProps {
   deltaType?: string;
 
   as?: React.ElementType;
-  size?: 'medium' | 'large';
+  size?: 'small' | 'medium' | 'large';
 
   showBaseline?: boolean;
   loading?: boolean;

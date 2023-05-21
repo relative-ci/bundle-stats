@@ -39,7 +39,28 @@
   width: 5em;
 }
 
-/* Size large */
+/* Hover state */
+.titleIcon span[aria-controls=""] {
+  opacity: 0;
+  visibility: none;
+  transition: var(--ui-transition-out);
+}
+
+.root:hover .titleIcon span {
+  opacity: 1;
+  visibility: visible;
+  transition: var(--ui-transition-in);
+}
+
+/* Size variation */
+.small .info {
+  margin-top: var(--space-xxxsmall);
+}
+
+.small .currentMetric {
+  font-size: var(--size-xlarge);
+}
+
 .large .info {
   margin-top: var(--space-xxsmall);
 }
