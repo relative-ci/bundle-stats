@@ -39,6 +39,7 @@ export const Tooltip = <T extends React.ElementType = 'span'>(
         as={Component as React.ElementType}
         className={cx(css.root, className)}
         state={tooltip}
+        aria-controls={tooltip.open ? tooltip.contentElement?.id : ''}
         {...(ref ? { ref } : {})}
         {...restProps}
       />

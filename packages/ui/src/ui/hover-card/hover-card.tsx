@@ -54,6 +54,7 @@ export const HoverCard = (props: HoverCardProps) => {
         href={href}
         className={cx(css.anchor, anchorClassName)}
         as={Component}
+        aria-controls={state.open ? hovercardProps.id : ''}
       >
         {label}
       </HovercardAnchor>
