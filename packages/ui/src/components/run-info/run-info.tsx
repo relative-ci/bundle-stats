@@ -73,12 +73,15 @@ export const RunInfo = ({
         <FlexStack space="xxxsmall" alignItems="center" as="h3" className={css.title}>
           <span>{title}</span>
           {titleHoverCard && (
-            <HoverCard label={<Icon glyph={Icon.ICONS.HELP} />} className={css.titleIcon}>
+            <HoverCard
+              label={<Icon glyph={Icon.ICONS.HELP} />}
+              className={cx(css.titleIcon, css.titleHoverCardIcon)}
+            >
               {titleHoverCard}
             </HoverCard>
           )}
           {titleTooltip && (
-            <Tooltip title={titleTooltip} className={css.titleIcon}>
+            <Tooltip title={titleTooltip} className={cx(css.titleIcon, css.titleTooltipIcon)}>
               <Icon glyph={Icon.ICONS.HELP} />
             </Tooltip>
           )}

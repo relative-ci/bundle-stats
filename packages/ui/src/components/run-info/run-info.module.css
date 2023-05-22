@@ -40,13 +40,15 @@
 }
 
 /* Hover state */
-.titleIcon span[aria-controls=""] {
+.titleHoverCardIcon span[aria-controls=""],
+.titleTooltipIcon[aria-controls=""] {
   opacity: 0;
   visibility: none;
   transition: var(--ui-transition-out);
 }
 
-.root:hover .titleIcon span {
+.root:hover .titleHoverCardIcon span,
+.root:hover .titleTooltipIcon {
   opacity: 1;
   visibility: visible;
   transition: var(--ui-transition-in);
