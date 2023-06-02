@@ -1,9 +1,14 @@
 /* eslint-disable no-console */
 import path from 'path';
-import { readJSON, outputFile } from 'fs-extra';
+import { createReadStream } from 'fs';
+import { outputFile } from 'fs-extra';
 import { Listr } from 'listr2';
 import { get } from 'lodash';
 import boxen from 'boxen';
+import { parser } from 'stream-json';
+import { chain } from 'stream-chain';
+import Asm from 'stream-json/Assembler';
+import type { StatsCompilation } from 'webpack';
 import '@bundle-stats/utils/lib/polyfills';
 import {
   DELTA_TYPE_HIGH_NEGATIVE,
@@ -60,7 +65,16 @@ export default async function run(options: RunOptions): Promise<void> {
     {
       title: 'Read Webpack stats files',
       task: async (ctx) => {
-        const sources = await Promise.all(artifactFilepaths.map((filepath) => readJSON(filepath)));
+        const sources = await Promise.all(
+          artifactFilepaths.map((filepath) => {
+            const pipeline = chain([createReadStream(filepath), parser()]);
+            const asm = Asm.connectTo(pipeline);
+
+            return new Promise<StatsCompilation>((fulfill) => {
+              asm.on('done', (data) => fulfill(data.current));
+            });
+          }),
+        );
 
         sources.forEach((source, index) => {
           const invalid = webpackValidate(source);
