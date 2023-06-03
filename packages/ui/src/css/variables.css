@@ -195,5 +195,6 @@
 
   /** Layout */
   --max-width: 80rem;
-  --entry-info-hovercard-width: 540px;
+  --entry-info-width: 640px;
+  --entry-info-top: var(--header-height);
 }

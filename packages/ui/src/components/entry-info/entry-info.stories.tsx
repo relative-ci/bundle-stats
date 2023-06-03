@@ -1,4 +1,5 @@
 import React from 'react';
+import { action } from '@storybook/addon-actions'; // eslint-disable-line import/no-extraneous-dependencies
 
 import { getWrapperDecorator } from '../../stories';
 import { EntryInfo } from '.';
@@ -28,6 +29,7 @@ export const Default = () => (
       runs: RUNS as any,
     }}
     labels={['Job #2', 'Job #1']}
+    onClose={action('CLOSE')}
   />
 );
 
@@ -38,6 +40,7 @@ export const Added = () => (
       runs: [RUNS[0], null] as any,
     }}
     labels={['Job #2', 'Job #1']}
+    onClose={action('CLOSE')}
   />
 );
 
@@ -48,6 +51,7 @@ export const Removed = () => (
       runs: [null, RUNS[1]] as any,
     }}
     labels={['Job #2', 'Job #1']}
+    onClose={action('CLOSE')}
   />
 );
 
@@ -58,10 +62,14 @@ export const WithCustomContent = () => (
       runs: RUNS as any,
     }}
     labels={['Job #2', 'Job #1']}
-    tags={<strong>Some tags</strong>}
+    tags={<span>Critical tags</span>}
+    onClose={action('CLOSE')}
   >
     <div>
-      Custom entry info
+      <EntryInfo.Meta label="Meta 1">value 1</EntryInfo.Meta>
+      <EntryInfo.Meta label="Meta 2">value 2</EntryInfo.Meta>
     </div>
+    <div>custom entry info 1</div>
+    <div>custom entry info 2</div>
   </EntryInfo>
 );

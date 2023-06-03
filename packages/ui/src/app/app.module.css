@@ -62,6 +62,6 @@
   .tabsContainer {
     position: sticky;
     top: var(--header-height);
-    z-index: 100;
+    z-index: calc(var(--layer-high) - 1);
   }
 }

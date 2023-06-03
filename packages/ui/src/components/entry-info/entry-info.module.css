@@ -1,3 +1,57 @@
+.root {
+  position: fixed;
+  right: 0;
+  top: var(--entry-info-top);
+  bottom: 0;
+  width: 100vw;
+  max-width: var(--entry-info-width);
+  z-index: calc(var(--layer-high) - 1);
+  background: #fff;
+  box-shadow: var(--shadow-layer-high);
+}
+
+/** layout - full height content */
+.root {
+  display: flex;
+  flex-flow: column;
+}
+
+.header {
+  flex: 0 0 auto;
+}
+
+.contentWrapper {
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+/** header */
+.header {
+  /** space for close icon */
+  padding-right: calc(var(--space-medium) + var(--space-xxxsmall) + var(--space-xsmall));
+  border-bottom: 1px solid var(--color-outline);
+}
+
+.headerClose {
+  appearance: none;
+  background: none;
+  border: 0;
+  display: block;
+  padding: var(--space-xxxsmall);
+  position: absolute;
+  right: calc(var(--space-small) - var(--space-xxxsmall));
+  top: calc(var(--space-small) - var(--space-xxxsmall));
+  color: var(--color-text-ultra-light);
+  cursor: pointer;
+}
+
+.headerClose:hover,
+.headerClose:active,
+.headerClose:focus {
+  color: var(--color-text-light);
+}
+
+/** comon components */
 .fileName {
   max-width: 100%;
   padding: 0 2px;
@@ -30,4 +84,9 @@
 
 .size {
   font-family: var(--font-family-fixed);
+}
+
+.metaLabel {
+  margin-right: .6em;
+  color: var(--color-text-light);
 }
