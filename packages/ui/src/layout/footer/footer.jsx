@@ -24,16 +24,15 @@ export const Footer = ({ className, version }) => (
         <div>
           <nav className={css.nav}>
             <ExternalLink
-              href={config.githubUrl}
+              href={config.gitHubUrl}
               className={cx(css.navItem, css.navLink)}
               title="In-depth bundle analyzer for webpack(bundle size, assets, modules, packages)"
             >
-              {`BundleStats `}
-              {version}
+              {`BundleStats ${version}`}
             </ExternalLink>
             <span className={css.navItem}>
               <ExternalLink
-                href={`${config.githubUrl}/issues`}
+                href={`${config.gitHubUrl}/issues`}
                 className={css.navLink}
                 title="Navigate to GitHub and open issue"
               >

@@ -1,0 +1,37 @@
+.jobs {
+  flex: 1 1 auto;
+}
+
+.tools {
+  flex: 0 0 auto;
+}
+
+.toolsGitHub {
+  display: block;
+  border-radius: 50%;
+  opacity: 0.8;
+  transition: var(--transition-out);
+}
+
+.toolsGitHub:hover,
+.toolsGitHub:focus,
+.toolsGitHub:active {
+  opacity: 1;
+  transition: var(--transition-in);
+}
+
+.toolsGitHubIcon {
+  display: block;
+}
+
+@media (min-width: 1140px) {
+  .tools {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    padding: 0 var(--space-small);
+  }
+}
