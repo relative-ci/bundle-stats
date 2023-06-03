@@ -13,6 +13,7 @@ const ICONS = {
   ERROR: 'error',
   EXTERNAL_LINK: 'external-link',
   FILTER: 'filter',
+  GITHUB: 'github',
   INFO: 'info',
   HELP: 'help',
   MENU: 'menu',
