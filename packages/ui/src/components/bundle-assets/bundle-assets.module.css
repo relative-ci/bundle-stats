@@ -68,8 +68,20 @@
 }
 
 .assetNameText {
-  display: inline;
+  display: inline-block;
   vertical-align: middle;
+}
+
+.root .assetName:hover,
+.root .assetName:active,
+.root .assetName:focus {
+  text-decoration: none;
+}
+
+.root .assetName:hover .assetNameText,
+.root .assetName:active .assetNameText,
+.root .assetName:focus .assetNameText {
+  text-decoration: underline;
 }
 
 .search {

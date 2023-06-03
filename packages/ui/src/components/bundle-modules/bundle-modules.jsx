@@ -91,13 +91,12 @@ const RowHeader = ({ row, filters, search, customComponentLink: CustomComponentL
   <CustomComponentLink
     section={SECTIONS.MODULES}
     params={{ [COMPONENT.BUNDLE_MODULES]: { filters, search, entryId: row.key } }}
+    className={css.name}
   >
-    <span className={css.name}>
-      {row.duplicated && (
-        <Tag className={css.nameTagDuplicated} size="small" kind={Tag.KINDS.DANGER} />
-      )}
-      <FileName className={css.nameText} name={row.label} />
-    </span>
+    {row.duplicated && (
+      <Tag className={css.nameTagDuplicated} size="small" kind={Tag.KINDS.DANGER} />
+    )}
+    <FileName className={css.nameText} name={row.label} />
   </CustomComponentLink>
 );
 

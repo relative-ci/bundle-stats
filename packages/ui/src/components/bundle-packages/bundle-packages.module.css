@@ -45,20 +45,14 @@
   content: 'd';
 }
 
-
-.packageHoverCardTitleIndex {
-  color: var(--color-text-light);
-  font-weight: normal;
+.root .packageName:hover,
+.root .packageName:active,
+.root .packageName:focus {
+  text-decoration: none;
 }
 
-.packageHoverCardPathValue {
-  width: 100%;
-  padding: var(--space-xxxsmall);
-  background: var(--color-highlight-warning);
-  font-family: var(--font-family-monospace);
-}
-
-.packageHoverCardList {
-  padding: 0;
-  list-style: inside;
+.root .packageName:hover .packageNameLabel,
+.root .packageName:active .packageNameLabel,
+.root .packageName:focus .packageNameLabel {
+  text-decoration: underline;
 }

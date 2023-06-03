@@ -44,14 +44,14 @@
 .titleTooltipIcon[aria-controls=""] {
   opacity: 0;
   visibility: none;
-  transition: var(--ui-transition-out);
+  transition: opacity var(--transition-duration-out) ease-out, color var(--transition-duration-out) ease-out, visibility 0s;
 }
 
 .root:hover .titleHoverCardIcon span,
 .root:hover .titleTooltipIcon {
   opacity: 1;
   visibility: visible;
-  transition: var(--ui-transition-in);
+  transition: opacity var(--transition-duration-in) ease-in, color var(--transition-duration-in) ease-in, visibility 0s;
 }
 
 /* Size variation */

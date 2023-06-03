@@ -1,11 +1,10 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import get from 'lodash/get';
 import { METRIC_COMPONENT_LINKS } from '@bundle-stats/utils';
 
 import { METRICS_WEBPACK_GENERAL } from '../../constants';
 import { Box } from '../../layout/box';
-import { FlexStack } from '../../layout/flex-stack';
 import { ComponentLink } from '../component-link';
 import { MetricRunInfo, MetricRunInfoProps } from '../metric-run-info';
 import css from './summary.module.css';

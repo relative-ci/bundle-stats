@@ -1,7 +1,7 @@
 {
   "appName": "RelativeCI",
   "siteUrl": "https://relative-ci.com",
-  "githubUrl": "https://github.com/relative-ci/bundle-stats",
+  "gitHubUrl": "https://github.com/relative-ci/bundle-stats",
   "documentation" : {
     "assets": "https://relative-ci.com/documentation/metrics-and-data#assets",
     "modules": "https://relative-ci.com/documentation/metrics-and-data#modules",

@@ -175,8 +175,10 @@
 
   --color-shadow: rgba(0, 0, 0, 0.2);
 
-  --transition-in: all 0.2s ease-in;
-  --transition-out: all 0.17s ease-out;
+  --transition-duration-in: 0.2s;
+  --transition-duration-out: 0.17s;
+  --transition-in: all var(--transition-duration-in) ease-in;
+  --transition-out: all var(--transition-duration-out) ease-out;
 
   --layer-xlow: 1;
   --layer-low: 10;
