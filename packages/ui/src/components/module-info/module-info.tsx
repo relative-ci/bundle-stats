@@ -13,6 +13,7 @@ import {
 } from '@bundle-stats/utils';
 import { Module, MetaChunk } from '@bundle-stats/utils/types/webpack';
 
+import { Stack } from '../../layout/stack';
 import { Tag } from '../../ui/tag';
 import { ComponentLink } from '../component-link';
 import { EntryInfo } from '../entry-info';
@@ -31,6 +32,7 @@ interface ModuleInfoProps {
   chunkIds?: Array<string>;
   labels: Array<string>;
   customComponentLink?: React.ElementType;
+  onClose: () => void;
 }
 
 export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>) => {
@@ -42,6 +44,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
     chunkIds = [],
     customComponentLink: CustomComponentLink = ComponentLink,
     onClick = noop,
+    onClose,
   } = props;
 
   const rootClassName = cx(css.root, className);
@@ -54,7 +57,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
 
     return (
       <div>
-        <Tag as={CustomComponentLink} {...BUNDLE_MODULES_DUPLICATE} onClick={onClick} kind="danger">
+        <Tag as={CustomComponentLink} {...BUNDLE_MODULES_DUPLICATE} kind="danger">
           Duplicate
         </Tag>
       </div>
@@ -68,54 +71,46 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
     : MODULE_SOURCE_TYPE_LABELS.FIRST_PARTY;
 
   return (
-    <EntryInfo item={item} labels={labels} tags={tags} className={rootClassName}>
-      {!isEmpty(currentRun?.chunkIds) && (
-        <div className={css.chunks}>
-          <span className={css.label}>Chunks</span>
-          {currentRun.chunkIds.map((chunkId) => {
-            const chunk = chunks?.find(({ id }) => id === chunkId);
+    <EntryInfo item={item} labels={labels} tags={tags} onClose={onClose} className={rootClassName}>
+      <Stack space="xxxsmall">
+        {!isEmpty(currentRun?.chunkIds) && (
+          <EntryInfo.Meta label="Chunks" className={css.chunks}>
+            {currentRun.chunkIds.map((chunkId) => {
+              const chunk = chunks?.find(({ id }) => id === chunkId);
 
-            if (!chunk) {
-              return null;
-            }
+              if (!chunk) {
+                return null;
+              }
 
-            return (
-              <Tag
-                as={CustomComponentLink}
-                {...getBundleModulesByChunk(chunkIds, chunkId)}
-                onClick={onClick}
-                className={css.chunksItem}
-              >
-                {chunk.name}
-              </Tag>
-            );
-          })}
-        </div>
-      )}
+              return (
+                <CustomComponentLink
+                  {...getBundleModulesByChunk(chunkIds, chunkId)}
+                  className={css.chunksItem}
+                >
+                  {chunk.name}
+                </CustomComponentLink>
+              );
+            })}
+          </EntryInfo.Meta>
+        )}
 
-      {item?.fileType && (
-        <p>
-          <span className={css.label}>File type</span>
-          <Tag
-            as={CustomComponentLink}
-            {...getBundleModulesByFileTpe(item.fileType, fileTypeLabel)}
+        {item?.fileType && (
+          <EntryInfo.Meta label="File type">
+            <CustomComponentLink {...getBundleModulesByFileTpe(item.fileType, fileTypeLabel)}>
+              {fileTypeLabel}
+            </CustomComponentLink>
+          </EntryInfo.Meta>
+        )}
+
+        <EntryInfo.Meta label="Source">
+          <CustomComponentLink
+            {...getBundleModulesBySource(item.thirdParty || false, sourceTypeLabel)}
             onClick={onClick}
           >
-            {fileTypeLabel}
-          </Tag>
-        </p>
-      )}
-
-      <p>
-        <span className={css.label}>Source</span>
-        <Tag
-          as={CustomComponentLink}
-          {...getBundleModulesBySource(item.thirdParty || false, sourceTypeLabel)}
-          onClick={onClick}
-        >
-          {sourceTypeLabel}
-        </Tag>
-      </p>
+            {sourceTypeLabel}
+          </CustomComponentLink>
+        </EntryInfo.Meta>
+      </Stack>
     </EntryInfo>
   );
 };

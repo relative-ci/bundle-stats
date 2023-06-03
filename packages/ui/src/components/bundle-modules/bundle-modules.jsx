@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import isEmpty from 'lodash/isEmpty';
@@ -10,6 +10,8 @@ import {
   MODULE_CHUNK,
   MODULE_FILTERS,
   MODULE_FILE_TYPE,
+  SECTIONS,
+  COMPONENT,
 } from '@bundle-stats/utils';
 
 import config from '../../config.json';
@@ -19,7 +21,6 @@ import { FlexStack } from '../../layout/flex-stack';
 import { EmptySet } from '../../ui/empty-set';
 import { FileName } from '../../ui/file-name';
 import { Filters } from '../../ui/filters';
-import { HoverCard } from '../../ui/hover-card';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Tag } from '../../ui/tag';
 import { Toolbar } from '../../ui/toolbar';
@@ -86,56 +87,28 @@ const getFilters = ({ filters, compareMode, chunks }) => ({
     },
 })
 
-const RowHeader = ({ row, chunks, labels, CustomComponentLink }) => {
-  const chunkIds = chunks?.map(({ id }) => id);
-
-  const [showHoverCard, setHoverCard] = useState(false);
-  const handleOnMouseEnter = useCallback(() => setHoverCard(true), [showHoverCard]);
-  const content = useMemo(
-    () => (
-      <span className={css.name}>
-        {row.duplicated && (
-          <Tag className={css.nameTagDuplicated} size="small" kind={Tag.KINDS.DANGER} />
-        )}
-        <FileName className={css.nameText} name={row.label} />
-      </span>
-    ),
-    [row],
-  );
-
-  if (!showHoverCard) {
-    return <div onMouseEnter={handleOnMouseEnter}>{content}</div>;
-  }
-
-  return (
-    <HoverCard label={content} hoverCardClassName={css.hoverCard}>
-      {({ close }) => (
-        <ModuleInfo
-          item={row}
-          chunks={chunks}
-          chunkIds={chunkIds}
-          labels={labels}
-          customComponentLink={CustomComponentLink}
-          onClick={close}
-        />
+const RowHeader = ({ row, filters, search, customComponentLink: CustomComponentLink }) => (
+  <CustomComponentLink
+    section={SECTIONS.MODULES}
+    params={{ [COMPONENT.BUNDLE_MODULES]: { filters, search, entryId: row.key } }}
+  >
+    <span className={css.name}>
+      {row.duplicated && (
+        <Tag className={css.nameTagDuplicated} size="small" kind={Tag.KINDS.DANGER} />
       )}
-    </HoverCard>
-  );
-};
+      <FileName className={css.nameText} name={row.label} />
+    </span>
+  </CustomComponentLink>
+);
 
 RowHeader.propTypes = {
   row: PropTypes.shape({
     label: PropTypes.string,
     duplicated: PropTypes.bool,
   }).isRequired,
-  chunks: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-    }),
-  ),
-  labels: PropTypes.arrayOf(PropTypes.string).isRequired,
-  CustomComponentLink: PropTypes.elementType.isRequired,
+  search: PropTypes.string,
+  filters: PropTypes.object,
+  customComponentLink: PropTypes.elementType.isRequired,
 };
 
 RowHeader.defaultProps = {
@@ -152,6 +125,7 @@ export const BundleModules = ({
   resetFilters,
   resetAllFilters,
   filters,
+  entryId,
   sortFields,
   sort,
   updateSort,
@@ -159,6 +133,8 @@ export const BundleModules = ({
   updateSearch,
   hasActiveFilters,
   customComponentLink: CustomComponentLink,
+  allItems,
+  hideEntryInfo,
 }) => {
   const rootClassName = cx(css.root, className);
 
@@ -180,12 +156,12 @@ export const BundleModules = ({
     (row) => (
       <RowHeader
         row={row}
-        chunks={chunks}
-        labels={jobs?.map(({ label }) => label)}
-        CustomComponentLink={CustomComponentLink}
+        filters={filters}
+        search={search}
+        customComponentLink={CustomComponentLink}
       />
     ),
-    [jobs, chunks, CustomComponentLink],
+    [jobs, chunks, CustomComponentLink, filters, search],
   );
 
   const emptyMessage = useMemo(() => (
@@ -198,50 +174,63 @@ export const BundleModules = ({
   ), [totalRowCount, resetFilters, resetAllFilters]);
 
   return (
-    <div className={rootClassName}>
-      <Toolbar
-        className={css.toolbar}
-        renderActions={({ actionClassName }) => (
-          <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
-            <SortDropdown
-              className={css.tableDropdown}
-              fields={sortFields}
-              onChange={updateSort}
-              {...sort}
+    <>
+      <div className={rootClassName}>
+        <Toolbar
+          className={css.toolbar}
+          renderActions={({ actionClassName }) => (
+            <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
+              <SortDropdown
+                className={css.tableDropdown}
+                fields={sortFields}
+                onChange={updateSort}
+                {...sort}
+              />
+              <MetricsTableOptions
+                handleViewAll={resetAllFilters}
+                handleResetFilters={resetFilters}
+              />
+            </FlexStack>
+          )}
+        >
+          <FlexStack space="xxsmall">
+            <MetricsTableSearch
+              className={css.toolbarSearch}
+              search={search}
+              updateSearch={updateSearch}
+              placeholder="Search by name"
             />
-            <MetricsTableOptions
-              handleViewAll={resetAllFilters}
-              handleResetFilters={resetFilters}
+            <Filters
+              className={css.tableDropdown}
+              filters={dropdownFilters}
+              onChange={updateFilters}
+              hasActiveFilters={hasActiveFilters}
             />
           </FlexStack>
-        )}
-      >
-        <FlexStack space="xxsmall">
-          <MetricsTableSearch
-            className={css.toolbarSearch}
-            search={search}
-            updateSearch={updateSearch}
-            placeholder="Search by name"
-          />
-          <Filters
-            className={css.tableDropdown}
-            filters={dropdownFilters}
-            onChange={updateFilters}
-            hasActiveFilters={hasActiveFilters}
-          />
-        </FlexStack>
-      </Toolbar>
+        </Toolbar>
 
-      <MetricsTable
-        className={css.table}
-        items={items}
-        runs={jobs}
-        renderRowHeader={renderRowHeader}
-        emptyMessage={emptyMessage}
-        showHeaderSum
-        title={metricsTableTitle}
-      />
-    </div>
+        <MetricsTable
+          className={css.table}
+          items={items}
+          runs={jobs}
+          renderRowHeader={renderRowHeader}
+          emptyMessage={emptyMessage}
+          showHeaderSum
+          title={metricsTableTitle}
+        />
+      </div>
+      {entryId && (
+        <ModuleInfo
+          className={css.moduleInfo}
+          item={allItems.find(({ key }) => key === entryId)}
+          chunks={chunks}
+          chunkIds={chunks?.map(({ id }) => id)}
+          labels={jobs.map(({ label }) => label)}
+          customComponentLink={CustomComponentLink}
+          onClose={hideEntryInfo}
+        />
+      )}
+    </>
   );
 };
 
@@ -303,4 +292,5 @@ BundleModules.propTypes = {
   search: PropTypes.string.isRequired,
   updateSearch: PropTypes.func.isRequired,
   customComponentLink: PropTypes.elementType,
+  hideEntryInfo: PropTypes.func.isRequired,
 };

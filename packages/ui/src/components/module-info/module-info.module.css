@@ -1,12 +1,3 @@
-.label {
-  display: inline-block;
-  min-width: 6em;
-}
-
-.label::after {
-  content: ' ';
-}
-
 .chunksItems {
   display: inline;
 }

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import uniqBy from 'lodash/uniqBy';
 import {
@@ -94,6 +94,10 @@ export const BundleModules = (props) => {
     getCustomSort,
   });
 
+  const hideEntryInfo = useCallback(() => {
+    setState({ entryId: '' });
+  }, [setState]);
+
   return (
     <BundleModulesComponent
       jobs={jobs}
@@ -101,7 +105,9 @@ export const BundleModules = (props) => {
       {...restProps}
       {...searchParams}
       {...sortParams}
+      allItems={rows}
       totalRowCount={totalRowCount}
+      hideEntryInfo={hideEntryInfo}
     />
   );
 };

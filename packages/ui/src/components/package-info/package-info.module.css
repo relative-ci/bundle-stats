@@ -11,13 +11,3 @@
 .packageTitleId {
   color: var(--color-text-ultra-light);
 }
-
-.label {
-  display: inline-block;
-  min-width: 6em;
-}
-
-.label::after {
-  content: ' ';
-}
-

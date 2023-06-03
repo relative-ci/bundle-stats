@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { PACKAGE_FILTERS } from '@bundle-stats/utils';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack/compare';
@@ -56,13 +56,19 @@ export const BundlePackages = (props) => {
     getCustomSort,
   });
 
+  const hideEntryInfo = useCallback(() => {
+    setState({ entryId: '' });
+  }, [setState]);
+
   return (
     <BundlePackagesComponent
       jobs={jobs}
       {...restProps}
       {...searchParams}
       {...sortParams}
+      allItems={rows}
       totalRowCount={totalRowCount}
+      hideEntryInfo={hideEntryInfo}
     />
   );
 };

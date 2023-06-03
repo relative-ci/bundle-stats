@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import get from 'lodash/get';
@@ -6,7 +6,9 @@ import {
   ASSET_ENTRY_TYPE,
   ASSET_FILE_TYPE,
   ASSET_FILTERS,
+  COMPONENT,
   FILE_TYPE_LABELS,
+  SECTIONS,
 } from '@bundle-stats/utils';
 
 import config from '../../config.json';
@@ -80,26 +82,26 @@ const getFilters = ({ compareMode, filters }) => ({
   },
 });
 
-const RowHeader = ({ row, labels, chunks, CustomComponentLink }) => {
+const RowHeader = ({ row, customComponentLink: CustomComponentLink, filters, search }) => {
   const { label, isNotPredictive, runs, isChunk, isEntry, isInitial } = row;
-  const [showHoverCard, setHoverCard] = useState(false);
-  const handleOnMouseEnter = useCallback(() => setHoverCard(true), [showHoverCard]);
 
-  const contentIsNotPredictive = useMemo(() => {
-    if (!isNotPredictive) {
-      return null;
-    }
+  return (
+    <span className={css.assetNameWrapper}>
+      {isNotPredictive && (
+        <HoverCard
+          label={<Icon className={css.notPredictiveIcon} glyph="warning" />}
+          className={css.notPredictive}
+          anchorClassName={css.notPredictiveAnchor}
+        >
+          <AssetNotPredictive runs={runs} labels={RUNS_LABELS} />
+        </HoverCard>
+      )}
 
-    return (
-      <HoverCard label={<Icon className={css.notPredictiveIcon} glyph="warning" />} className={css.notPredictive} anchorClassName={css.notPredictiveAnchor}>
-        <AssetNotPredictive runs={runs} labels={RUNS_LABELS} />
-      </HoverCard>
-    );
-  }, [isNotPredictive, runs]);
-
-  const content = useMemo(
-    () => (
-      <span className={css.assetName}>
+      <CustomComponentLink
+        section={SECTIONS.ASSETS}
+        params={{ [COMPONENT.BUNDLE_ASSETS]: { filters, search, entryId: row.key } }}
+        className={css.assetName}
+      >
         <span className={css.assetNameTags}>
           {isEntry && (
             <Tag
@@ -127,35 +129,7 @@ const RowHeader = ({ row, labels, chunks, CustomComponentLink }) => {
           )}
         </span>
         <FileName className={css.assetNameText} name={label} />
-      </span>
-    ),
-    [isChunk, isEntry, isInitial, runs],
-  );
-
-  if (!showHoverCard) {
-    return (
-      <span className={css.assetNameWrapper}>
-        {contentIsNotPredictive}
-        <span onMouseEnter={handleOnMouseEnter}>{content}</span>
-      </span>
-    );
-  }
-
-  return (
-    <span className={css.assetNameWrapper}>
-      {contentIsNotPredictive}
-      <HoverCard label={content} hoverCardClassName={css.hoverCard}>
-        {({ close }) =>  (
-          <AssetInfo
-            className={css.assetInfo}
-            item={row}
-            labels={labels}
-            chunks={chunks}
-            customComponentLink={CustomComponentLink}
-            onClick={close}
-          />
-        )}
-      </HoverCard>
+      </CustomComponentLink>
     </span>
   );
 };
@@ -188,11 +162,13 @@ export const BundleAssets = (props) => {
     className,
     jobs,
     items,
+    allItems,
     updateFilters,
     resetFilters,
     resetAllFilters,
     totalRowCount,
     filters,
+    entryId,
     hasActiveFilters,
     sortFields,
     sort,
@@ -200,6 +176,7 @@ export const BundleAssets = (props) => {
     search,
     updateSearch,
     customComponentLink: CustomComponentLink,
+    hideEntryInfo,
   } = props;
 
   const dropdownFilters = useMemo(
@@ -220,12 +197,12 @@ export const BundleAssets = (props) => {
     (row) => (
       <RowHeader
         row={row}
-        labels={jobs?.map(({ label }) => label)}
-        chunks={jobs[0]?.meta?.webpack?.chunks || []}
-        CustomComponentLink={CustomComponentLink}
+        customComponentLink={CustomComponentLink}
+        filters={filters}
+        search={search}
       />
     ),
-    [jobs, CustomComponentLink],
+    [CustomComponentLink, filters, search],
   );
 
   const emptyMessage = useMemo(() => (
@@ -238,45 +215,58 @@ export const BundleAssets = (props) => {
   ), [totalRowCount, resetFilters, resetAllFilters]);
 
   return (
-    <section className={cx(css.root, className)}>
-      <Toolbar
-        className={css.toolbar}
-        renderActions={({ actionClassName }) => (
-          <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
-            <SortDropdown fields={sortFields} {...sort} onChange={updateSort} />
-            <MetricsTableOptions
-              handleViewAll={resetAllFilters}
-              handleResetFilters={resetFilters}
+    <>
+      <section className={cx(css.root, className)}>
+        <Toolbar
+          className={css.toolbar}
+          renderActions={({ actionClassName }) => (
+            <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
+              <SortDropdown fields={sortFields} {...sort} onChange={updateSort} />
+              <MetricsTableOptions
+                handleViewAll={resetAllFilters}
+                handleResetFilters={resetFilters}
+              />
+            </FlexStack>
+          )}
+        >
+          <FlexStack space="xxsmall">
+            <MetricsTableSearch
+              className={css.toolbarSearch}
+              placeholder="Search by name"
+              search={search}
+              updateSearch={updateSearch}
+            />
+            <Filters
+              className={css.toolbarFilters}
+              filters={dropdownFilters}
+              hasActiveFilters={hasActiveFilters}
+              onChange={updateFilters}
             />
           </FlexStack>
-        )}
-      >
-        <FlexStack space="xxsmall">
-          <MetricsTableSearch
-            className={css.toolbarSearch}
-            placeholder="Search by name"
-            search={search}
-            updateSearch={updateSearch}
+        </Toolbar>
+        <main>
+          <MetricsTable
+            runs={jobs}
+            items={items}
+            renderRowHeader={renderRowHeader}
+            emptyMessage={emptyMessage}
+            showHeaderSum
+            title={metricsTableTitle}
           />
-          <Filters
-            className={css.toolbarFilters}
-            filters={dropdownFilters}
-            hasActiveFilters={hasActiveFilters}
-            onChange={updateFilters}
-          />
-        </FlexStack>
-      </Toolbar>
-      <main>
-        <MetricsTable
-          runs={jobs}
-          items={items}
-          renderRowHeader={renderRowHeader}
-          emptyMessage={emptyMessage}
-          showHeaderSum
-          title={metricsTableTitle}
+        </main>
+      </section>
+
+      {entryId && (
+        <AssetInfo
+          className={css.assetInfo}
+          item={allItems.find(({ key }) => key === entryId)}
+          labels={jobs?.map(({ label }) => label)}
+          chunks={jobs[0]?.meta?.webpack?.chunks || []}
+          customComponentLink={CustomComponentLink}
+          onClose={hideEntryInfo}
         />
-      </main>
-    </section>
+      )}
+    </>
   );
 };
 
@@ -285,6 +275,7 @@ BundleAssets.defaultProps = {
   totalRowCount: 0,
   hasActiveFilters: false,
   customComponentLink: ComponentLink,
+  entryId: '',
 };
 
 BundleAssets.propTypes = {
@@ -318,7 +309,9 @@ BundleAssets.propTypes = {
   totalRowCount: PropTypes.number,
   filters: PropTypes.shape({
     changed: PropTypes.bool,
+    id: PropTypes.string,
   }).isRequired,
+  entryId: PropTypes.string,
   hasActiveFilters: PropTypes.bool,
   sortFields: PropTypes.shape({
     [PropTypes.string]: PropTypes.shape({
@@ -333,5 +326,9 @@ BundleAssets.propTypes = {
     direction: PropTypes.string,
   }).isRequired,
   updateSort: PropTypes.func.isRequired,
+  allItems: PropTypes.arrayOf(PropTypes.shape({
+    key: PropTypes.string,
+  })),
   customComponentLink: PropTypes.elementType,
+  hideEntryInfo: PropTypes.func.isRequired,
 };
