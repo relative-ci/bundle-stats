@@ -1,30 +1,37 @@
-.inner {
-  display: flex;
-  align-items: center;
-}
-
-.branding {
-  padding: var(--space-small);
-  flex: 0 0 auto;
-  color: var(--color-text);
-  display: flex;
-  align-items: center;
-}
-
 .jobs {
   flex: 1 1 auto;
 }
 
 .tools {
-  border-left: 1px solid var(--color-outline);
-  padding: var(--space-small);
-  margin: 0 0 0 auto;
-  display: flex;
-  align-items: center;
-  color: var(--color-text-light);
+  flex: 0 0 auto;
 }
 
-.toolsGithub {
-  color: inherit;
-  width: var(--space-medium);
+.toolsGitHub {
+  display: block;
+  border-radius: 50%;
+  opacity: 0.8;
+  transition: var(--transition-out);
+}
+
+.toolsGitHub:hover,
+.toolsGitHub:focus,
+.toolsGitHub:active {
+  opacity: 1;
+  transition: var(--transition-in);
+}
+
+.toolsGitHubIcon {
+  display: block;
+}
+
+@media (min-width: 1140px) {
+  .tools {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    padding: 0 var(--space-small);
+  }
 }

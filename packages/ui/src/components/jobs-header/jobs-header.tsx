@@ -4,7 +4,6 @@ import { formatDateTime } from '@bundle-stats/utils';
 
 import I18N from '../../i18n';
 import { FlexStack } from '../../layout/flex-stack';
-import { Stack } from '../../layout/stack';
 import { Icon } from '../../ui/icon';
 import { Tag } from '../../ui/tag';
 import css from './jobs-header.module.css';
