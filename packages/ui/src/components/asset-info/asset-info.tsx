@@ -12,7 +12,6 @@ import {
 import { Asset, MetaChunk } from '@bundle-stats/utils/types/webpack';
 
 import { FlexStack } from '../../layout/flex-stack';
-import { Stack } from '../../layout/stack';
 import { Tag } from '../../ui/tag';
 import { ComponentLink } from '../component-link';
 import { EntryInfo } from '../entry-info';
@@ -59,13 +58,14 @@ interface AssetInfoProps {
     isChunk?: boolean;
     isEntry?: boolean;
     isInitial?: boolean;
-    isNotPredicative?: boolean;
+    isNotPredictive?: boolean;
     fileType?: string;
     runs: Array<Asset & MetricRunInfo>;
   };
   chunks?: Array<MetaChunk>;
   labels: Array<string>;
   customComponentLink?: React.ElementType;
+  onClose: () => void;
 }
 
 export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) => {
@@ -76,6 +76,7 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
     item,
     labels,
     onClick = noop,
+    onClose,
   } = props;
 
   const currentRun = item.runs?.[0];
@@ -124,22 +125,26 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
   const fileTypeLabel = FILE_TYPE_LABELS[item.fileType as keyof typeof FILE_TYPE_LABELS];
 
   return (
-    <EntryInfo item={item} labels={labels} tags={tags} className={cx(css.root, className)}>
-      <Stack space="small">
-        {item.fileType && (
-          <p>
-            <span className={css.label}>File type</span>
-            <Tag
-              as={CustomComponentLink}
-              {...getBundleAssetsFileTypeComponentLink(item.fileType, fileTypeLabel)}
-              onClick={onClick}
-            >
-              {fileTypeLabel}
-            </Tag>
-          </p>
-        )}
+    <EntryInfo
+      item={item}
+      labels={labels}
+      tags={tags}
+      onClose={onClose}
+      className={cx(css.root, className)}
+    >
+      {item.fileType && (
+        <EntryInfo.Meta label="File type">
+          <CustomComponentLink
+            {...getBundleAssetsFileTypeComponentLink(item.fileType, fileTypeLabel)}
+            onClick={onClick}
+          >
+            {fileTypeLabel}
+          </CustomComponentLink>
+        </EntryInfo.Meta>
+      )}
 
-        {currentRun?.chunkId && chunks && (
+      {currentRun?.chunkId && chunks && (
+        <div>
           <ChunkModulesLink
             as={CustomComponentLink}
             chunks={chunks}
@@ -147,8 +152,8 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
             name={currentRun?.name}
             onClick={onClick}
           />
-        )}
-      </Stack>
+        </div>
+      )}
     </EntryInfo>
   );
 };

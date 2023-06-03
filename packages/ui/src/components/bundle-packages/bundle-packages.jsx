@@ -1,14 +1,13 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { PACKAGE_FILTERS, PACKAGES_SEPARATOR } from '@bundle-stats/utils';
+import { COMPONENT, PACKAGE_FILTERS, PACKAGES_SEPARATOR, SECTIONS } from '@bundle-stats/utils';
 
 import config from '../../config.json';
 import I18N from '../../i18n';
 import { FlexStack } from '../../layout/flex-stack';
 import { EmptySet } from '../../ui/empty-set';
 import { Filters } from '../../ui/filters';
-import { HoverCard } from '../../ui/hover-card';
 import { SortDropdown } from '../../ui/sort-dropdown';
 import { Tag } from '../../ui/tag';
 import { Toolbar } from '../../ui/toolbar';
@@ -32,52 +31,27 @@ const getDropdownFilters = ({ compareMode, filters }) => ({
   },
 });
 
-const PackageName = ({ packageName, showDetails, row, labels, CustomComponentLink }) => {
-  const [showHoverCard, setHoverCard] = useState(false);
-
-  const handleOnMouseEnter = useCallback(() => {
-    if (showDetails) {
-      setHoverCard(true);
+const PackageName = ({ packageName, showDetails, row, filters, search, CustomComponentLink }) => {
+  const params = useMemo(() => ({
+    [COMPONENT.BUNDLE_PACKAGES]: {
+      filters,
+      search,
+      entryId: showDetails ? row.key : packageName
     }
-  }, [setHoverCard, showDetails]);
-
-  const label = useMemo(
-    () => (
-      <>
-        {showDetails && row.duplicate && (
-          <Tag
-            className={css.packageNameTagDuplicate}
-            title="Duplicate package"
-            kind={Tag.KINDS.DANGER}
-            size={Tag.SIZES.SMALL}
-          />
-        )}
-        <span className={css.packageNameLabel}>{packageName}</span>
-      </>
-    ),
-    [packageName, showDetails, row],
-  );
-
-  if (!showHoverCard) {
-    return (
-      <span className={css.packageName} onMouseEnter={handleOnMouseEnter}>
-        {label}
-      </span>
-    );
-  }
+  }), [filters, search, row, packageName]);
 
   return (
-    <HoverCard label={label} className={css.packageName} hoverCardClassName={css.hoverCard}>
-      {({ close }) => (
-        <PackageInfo
-          name={packageName}
-          item={row}
-          labels={labels}
-          customComponentLink={CustomComponentLink}
-          onClick={close}
+    <CustomComponentLink section={SECTIONS.PACKAGES} params={params} className={css.packageName}>
+      {showDetails && row.duplicate && (
+        <Tag
+          className={css.packageNameTagDuplicate}
+          title="Duplicate package"
+          kind={Tag.KINDS.DANGER}
+          size={Tag.SIZES.SMALL}
         />
       )}
-    </HoverCard>
+      <span className={css.packageNameLabel}>{packageName}</span>
+    </CustomComponentLink>
   );
 };
 
@@ -94,9 +68,11 @@ PackageName.propTypes = {
     ).isRequired,
   }).isRequired,
   CustomComponentLink: PropTypes.elementType.isRequired,
+  filters: PropTypes.object, // eslint-disable-line react/forbid-props
+  search: PropTypes.string,
 };
 
-const RowHeader = ({ row, labels, CustomComponentLink }) => {
+const RowHeader = ({ row, labels, CustomComponentLink, filters, search }) => {
   const packageNames = row.label.split(PACKAGES_SEPARATOR);
 
   return (
@@ -108,6 +84,8 @@ const RowHeader = ({ row, labels, CustomComponentLink }) => {
           labels={labels}
           showDetails={index === packageNames.length - 1}
           CustomComponentLink={CustomComponentLink}
+          filters={filters}
+          search={search}
         />
       ))}
     </span>
@@ -125,6 +103,8 @@ RowHeader.propTypes = {
     ).isRequired,
   }).isRequired,
   CustomComponentLink: PropTypes.elementType.isRequired,
+  filters: PropTypes.object, // eslint-disable-line react/forbid-props
+  search: PropTypes.string,
 };
 
 export const BundlePackages = (props) => {
@@ -144,6 +124,9 @@ export const BundlePackages = (props) => {
     updateSearch,
     hasActiveFilters,
     customComponentLink: CustomComponentLink,
+    entryId,
+    allItems,
+    hideEntryInfo,
   } = props;
 
   const dropdownFilters = useMemo(
@@ -169,9 +152,11 @@ export const BundlePackages = (props) => {
         row={row}
         labels={jobs.map((job) => job?.label)}
         CustomComponentLink={CustomComponentLink}
+        filters={filters}
+        search={search}
       />
     ),
-    [CustomComponentLink, jobs],
+    [CustomComponentLink, jobs, filters, search],
   );
 
   const emptyMessage = useMemo(
@@ -187,45 +172,56 @@ export const BundlePackages = (props) => {
   );
 
   return (
-    <section className={cx(css.root, className)}>
-      <Toolbar
-        className={css.toolbar}
-        renderActions={({ actionClassName }) => (
-          <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
-            <SortDropdown fields={sortFields} {...sort} onChange={updateSort} />
-            <MetricsTableOptions
-              handleViewAll={resetAllFilters}
-              handleResetFilters={resetFilters}
+    <>
+      <section className={cx(css.root, className)}>
+        <Toolbar
+          className={css.toolbar}
+          renderActions={({ actionClassName }) => (
+            <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
+              <SortDropdown fields={sortFields} {...sort} onChange={updateSort} />
+              <MetricsTableOptions
+                handleViewAll={resetAllFilters}
+                handleResetFilters={resetFilters}
+              />
+            </FlexStack>
+          )}
+        >
+          <FlexStack space="xxsmall">
+            <MetricsTableSearch
+              className={css.toolbarSearch}
+              placeholder="Search by name"
+              search={search}
+              updateSearch={updateSearch}
+            />
+            <Filters
+              filters={dropdownFilters}
+              label={`Filters (${items.length}/${totalRowCount})`}
+              onChange={updateFilters}
+              hasActiveFilters={hasActiveFilters}
             />
           </FlexStack>
-        )}
-      >
-        <FlexStack space="xxsmall">
-          <MetricsTableSearch
-            className={css.toolbarSearch}
-            placeholder="Search by name"
-            search={search}
-            updateSearch={updateSearch}
+        </Toolbar>
+        <main>
+          <MetricsTable
+            runs={jobs}
+            items={items}
+            emptyMessage={emptyMessage}
+            renderRowHeader={renderRowHeader}
+            showHeaderSum
+            title={metricsTableTitle}
           />
-          <Filters
-            filters={dropdownFilters}
-            label={`Filters (${items.length}/${totalRowCount})`}
-            onChange={updateFilters}
-            hasActiveFilters={hasActiveFilters}
-          />
-        </FlexStack>
-      </Toolbar>
-      <main>
-        <MetricsTable
-          runs={jobs}
-          items={items}
-          emptyMessage={emptyMessage}
-          renderRowHeader={renderRowHeader}
-          showHeaderSum
-          title={metricsTableTitle}
+        </main>
+      </section>
+      {entryId && (
+        <PackageInfo
+          className={css.packageInfo}
+          item={allItems.find(({ key }) => key === entryId)}
+          labels={jobs?.map(({ label }) => label)}
+          customComponentLink={CustomComponentLink}
+          onClose={hideEntryInfo}
         />
-      </main>
-    </section>
+      )}
+    </>
   );
 };
 
@@ -276,5 +272,9 @@ BundlePackages.propTypes = {
   updateSort: PropTypes.func.isRequired,
   search: PropTypes.string.isRequired,
   updateSearch: PropTypes.func.isRequired,
+  allItems: PropTypes.arrayOf(PropTypes.shape({
+    key: PropTypes.string,
+  })),
   customComponentLink: PropTypes.elementType,
+  hideEntryInfo: PropTypes.func.isRequired,
 };

@@ -72,10 +72,6 @@
   vertical-align: middle;
 }
 
-.hoverCard {
-  max-width: var(--entry-info-hovercard-width);
-}
-
 .search {
   margin: 0;
   width: 100%;

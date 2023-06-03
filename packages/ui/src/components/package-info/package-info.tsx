@@ -20,7 +20,6 @@ import css from './package-info.module.css';
 import { Icon } from '../../ui';
 
 interface PackageInfoProps {
-  name: string;
   item: {
     label: string;
     duplicate?: boolean;
@@ -28,18 +27,20 @@ interface PackageInfoProps {
   };
   labels: Array<string>;
   customComponentLink?: React.ElementType;
+  onClose: () => void;
 }
 
 export const PackageInfo = (props: PackageInfoProps & React.ComponentProps<'div'>) => {
   const {
     className = '',
-    name,
     item,
     labels,
     customComponentLink: CustomComponentLink = ComponentLink,
-    onClick = noop,
+    onClose,
   } = props;
 
+  const packages = item.label.split(PACKAGES_SEPARATOR);
+  const name = packages[packages.length - 1];
   const fallbackPackagePath = `node_modules/${item.label
     .split(PACKAGES_SEPARATOR)
     .join('/node_modules/')}`;
@@ -68,12 +69,7 @@ export const PackageInfo = (props: PackageInfoProps & React.ComponentProps<'div'
 
     return (
       <div>
-        <Tag
-          as={CustomComponentLink}
-          {...BUNDLE_PACKAGES_DUPLICATE}
-          onClick={onClick}
-          kind="danger"
-        >
+        <Tag as={CustomComponentLink} {...BUNDLE_PACKAGES_DUPLICATE} kind="danger">
           Duplicate
         </Tag>
       </div>
@@ -87,55 +83,53 @@ export const PackageInfo = (props: PackageInfoProps & React.ComponentProps<'div'
       labels={labels}
       tags={tags}
       runNameSelector="path"
+      onClose={onClose}
       className={className}
     >
-      <Stack space="small">
-        <p>
-          <span className={css.label}>Path</span>
-          <FileName name={normalizedPackagePath} className={css.fileName} />
-        </p>
+      <EntryInfo.Meta label="Path">
+        <FileName name={normalizedPackagePath} className={css.fileName} />
+      </EntryInfo.Meta>
 
-        <Stack space="xxxsmall">
-          {item.duplicate && (
-            <div>
-              <CustomComponentLink {...getBundlePackagesByNameComponentLink(normalizedName)} onClick={onClick}>
-                View all duplicate instances
-              </CustomComponentLink>
-            </div>
-          )}
+      <Stack space="xxxsmall">
+        {item.duplicate && (
+          <div>
+            <CustomComponentLink {...getBundlePackagesByNameComponentLink(normalizedName)}>
+              View all duplicate instances
+            </CustomComponentLink>
+          </div>
+        )}
 
-          <CustomComponentLink {...getBundleModulesBySearch(normalizedPackagePath)}>
-            Search modules by package path
-          </CustomComponentLink>
-        </Stack>
-
-        <FlexStack space="xsmall" alignItems="center" className={css.external}>
-          <FlexStack
-            space="xxxsmall"
-            alignItems="center"
-            as="a"
-            href={`https://www.npmjs.com/package/${normalizedName}`}
-            target="_blank"
-            rel="noreferrer"
-            className={css.externalLink}
-          >
-            <span>npmjs.com</span>
-            <Icon glyph={Icon.ICONS.EXTERNAL_LINK} size="small" />
-          </FlexStack>
-          <FlexStack
-            space="xxxsmall"
-            alignItems="center"
-            as="a"
-            href={`https://bundlephobia.com/result?p=${normalizedName}`}
-            target="_blank"
-            rel="noreferrer"
-            className={css.externalLink}
-          >
-            <span>bundlephobia.com</span>
-            <Icon glyph={Icon.ICONS.EXTERNAL_LINK} size="small" />
-          </FlexStack>
-        </FlexStack>
+        <CustomComponentLink {...getBundleModulesBySearch(normalizedPackagePath)}>
+          Search modules by package path
+        </CustomComponentLink>
       </Stack>
+
+      <FlexStack space="xsmall" alignItems="center" className={css.external}>
+        <FlexStack
+          space="xxxsmall"
+          alignItems="center"
+          as="a"
+          href={`https://www.npmjs.com/package/${normalizedName}`}
+          target="_blank"
+          rel="noreferrer"
+          className={css.externalLink}
+        >
+          <span>npmjs.com</span>
+          <Icon glyph={Icon.ICONS.EXTERNAL_LINK} size="small" />
+        </FlexStack>
+        <FlexStack
+          space="xxxsmall"
+          alignItems="center"
+          as="a"
+          href={`https://bundlephobia.com/result?p=${normalizedName}`}
+          target="_blank"
+          rel="noreferrer"
+          className={css.externalLink}
+        >
+          <span>bundlephobia.com</span>
+          <Icon glyph={Icon.ICONS.EXTERNAL_LINK} size="small" />
+        </FlexStack>
+      </FlexStack>
     </EntryInfo>
   );
 };
