@@ -22,11 +22,18 @@
 }
 
 .nameText {
-  display: inline;
+  display: inline-block;
   vertical-align: middle;
 }
 
-.hoverCard {
-  max-width: var(--entry-info-hovercard-width);
+.root .name:hover,
+.root .name:active,
+.root .name:focus {
+  text-decoration: none;
 }
 
+.root .name:hover .nameText,
+.root .name:active .nameText,
+.root .name:focus .nameText {
+  text-decoration: underline;
+}
