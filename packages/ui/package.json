@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/ui",
-  "version": "4.4.0-beta.2",
+  "version": "4.4.0-beta.3",
   "description": "UI components for BundleStats projects.",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
@@ -76,7 +76,7 @@
     "react-router-dom": "^5.0.0"
   },
   "dependencies": {
-    "@bundle-stats/utils": "^4.4.0-beta.2",
+    "@bundle-stats/utils": "^4.4.0-beta.3",
     "ariakit": "2.0.0-next.44",
     "modern-css-reset": "1.4.0",
     "query-string": "7.1.3",
