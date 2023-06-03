@@ -6,6 +6,7 @@
   "types": "types.d.ts",
   "scripts": {
     "prebuild": "rimraf ./dist",
+
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js --mode production",
     "lint": "../../node_modules/.bin/eslint . --ext .js,.jsx",
     "start": "cross-env NODE_ENV=development start-storybook -p 8090 -c build/storybook",
@@ -62,7 +63,6 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-router-dom": "5.3.4",
-    "react-test-renderer": "18.2.0",
     "rimraf": "4.4.1",
     "stats-webpack-plugin": "0.7.0",
     "webpack": "5.86.0",

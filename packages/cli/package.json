@@ -11,7 +11,7 @@
     "lib": "lib"
   },
   "engines": {
-    "node": ">= 14.0"
+    "node": ">= 16.0"
   },
   "scripts": {
     "build": "rm -fr ./lib && ../../node_modules/.bin/tsc --rootDir ./src --project tsconfig.lib.json --outDir ./lib",

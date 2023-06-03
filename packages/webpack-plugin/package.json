@@ -8,7 +8,7 @@
     "lib": "lib"
   },
   "engines": {
-    "node": ">= 14.0"
+    "node": ">= 16.0"
   },
   "scripts": {
     "build": "babel src -d lib",
