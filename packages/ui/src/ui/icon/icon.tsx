@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import css from './icon.module.css';
@@ -7,7 +6,7 @@ import css from './icon.module.css';
 const ICONS = {
   ARROW: 'arrow',
   ARROW_RIGHT_CIRLCE: 'arrow-right-circle',
-  CANCEL: 'cancel',
+  CANCEL: 'close',
   CLOSE: 'close',
   CLOCK: 'clock',
   COMMIT: 'commit',
@@ -20,10 +19,24 @@ const ICONS = {
   MORE_VERTICAL: 'more-vertical',
   SORT: 'sort',
   WARNING: 'warning',
-};
+} as const;
 
-export const Icon = (props) => {
-  const { className, glyph, as: Component, size, ...restProps } = props;
+const SIZE = {
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+} as const;
+
+export type IconGlyph = (typeof ICONS)[keyof typeof ICONS];
+
+interface IconProps {
+  glyph: IconGlyph;
+  size?: (typeof SIZE)[keyof typeof SIZE];
+  as?: React.ElementType;
+}
+
+export const Icon = (props: IconProps & React.ComponentProps<'span'>) => {
+  const { className = '', glyph, as: Component = 'span', size = SIZE.MEDIUM, ...restProps } = props;
 
   return (
     <Component className={cx(css.root, className, css[size])} {...restProps}>
@@ -36,20 +49,7 @@ export const Icon = (props) => {
 
 Icon.ICONS = ICONS;
 
-Icon.SIZE_SMALL = 'small';
-Icon.SIZE_MEDIUM = 'medium';
-Icon.SIZE_LARGE = 'large';
-Icon.SIZES = [Icon.SIZE_SMALL, Icon.SIZE_MEDIUM, Icon.SIZE_LARGE];
-
-Icon.defaultProps = {
-  className: '',
-  as: 'span',
-  size: Icon.SIZE_MEDIUM,
-};
-
-Icon.propTypes = {
-  className: PropTypes.string,
-  glyph: PropTypes.oneOfType([PropTypes.oneOf(Object.values(ICONS)), PropTypes.node]).isRequired,
-  as: PropTypes.node,
-  size: PropTypes.oneOf(Icon.SIZES),
-};
+Icon.SIZE_SMALL = SIZE.SMALL;
+Icon.SIZE_MEDIUM = SIZE.MEDIUM;
+Icon.SIZE_LARGE = SIZE.LARGE;
+Icon.SIZES = Object.values(SIZE);
