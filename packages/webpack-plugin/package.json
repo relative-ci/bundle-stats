@@ -51,7 +51,7 @@
     "lodash": "^4.17.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.21.5",
+    "@babel/cli": "7.22.5",
     "@babel/core": "7.22.1",
     "@babel/preset-env": "7.22.5",
     "@types/jest": "29.5.2",
