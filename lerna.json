@@ -1,5 +1,4 @@
 {
-  "useWorkspaces": true,
   "version": "4.4.0",
   "command": {
     "publish": {
