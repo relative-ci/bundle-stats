@@ -1,14 +1,26 @@
 {
-  "name": "@bundle-state/bundle-stats",
+  "name": "bundle-stats-workspaces",
+  "workspaces": [
+     "packages/cli",
+     "packages/cli-utils",
+     "packages/gatsby-plugin",
+     "packages/html-templates",
+     "packages/next-plugin",
+     "packages/plugin-webpack-filter",
+     "packages/plugin-webpack-validate",
+     "packages/ui",
+     "packages/utils",
+     "packages/webpack-plugin"
+  ],
   "private": true,
   "description": "Analyze webpack stats(bundle size, assets, modules, packages) and compare the results between different builds.",
   "engines": {
-    "node": ">= 14.0"
+    "node": ">= 16.0"
   },
   "devDependencies": {
     "@babel/core": "7.22.5",
     "@babel/eslint-parser": "7.22.5",
-    "@tsconfig/node14": "1.0.3",
+    "@tsconfig/node16": "1.0.4",
     "@typescript-eslint/eslint-plugin": "5.59.9",
     "@typescript-eslint/parser": "5.59.9",
     "babel-eslint": "10.1.0",
@@ -38,7 +50,6 @@
     "format": "prettier --write \"**/*.{js,jsx}\"",
     "lerna": "lerna",
     "lint": "lerna exec 'npm run lint -- --quiet'",
-    "install-dependencies": "npm install && npx lerna bootstrap --hoist",
     "release": "./scripts/release.sh",
     "test": "lerna run test",
     "test-package": "cd packages/webpack-plugin && npm run test-package",
