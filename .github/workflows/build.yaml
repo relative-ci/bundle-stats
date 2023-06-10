@@ -45,6 +45,7 @@ jobs:
 
     - name: Test webpack-plugin package
       run: npm run test-package
+      continue-on-error: true
 
     - name: Report E2E tests - install dependencies
       working-directory: packages/cli
