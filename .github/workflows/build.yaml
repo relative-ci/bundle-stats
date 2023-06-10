@@ -27,7 +27,7 @@ jobs:
         cache-dependency-path: "**/package-lock.json"
 
     - name: Install dependencies
-      run: npm ci && npx lerna bootstrap --hoist
+      run: npm ci
 
     - name: Build
       run: npm run build
