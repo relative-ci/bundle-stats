@@ -1,0 +1,37 @@
+{
+  "name": "@bundle-stats/core",
+  "version": "4.4.0",
+  "description": "BundleStats core functionality",
+  "main": "lib/index.js",
+  "module": "lib-esm/index.js",
+  "types": "types/index.d.ts",
+  "sideEffects": false,
+  "engines": {
+    "node": ">= 16.0"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "npm run build-lib && npm run build-esm",
+    "build-lib": "rm -fr ./lib && npx tsc --rootDir ./src --project tsconfig.lib.json --outDir ./lib",
+    "build-esm": "rm -fr ./lib-esm && rm -fr ./types && npx tsc --rootDir ./src --project tsconfig.esm.json --outDir ./lib-esm",
+    "lint": "npx eslint . --ext .js,.ts --resolve-plugins-relative-to ../../",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Viorel Cojocaru",
+    "email": "vio@beanon.com",
+    "url": "https://beanon.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/relative-ci/bundle-stats.git"
+  },
+  "bugs": {
+    "url": "https://github.com/relative-ci/bundle-stats/issues"
+  },
+  "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/core#readme"
+}

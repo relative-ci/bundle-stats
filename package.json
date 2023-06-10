@@ -3,6 +3,7 @@
   "workspaces": [
      "packages/cli",
      "packages/cli-utils",
+     "packages/core",
      "packages/gatsby-plugin",
      "packages/html-templates",
      "packages/next-plugin",
