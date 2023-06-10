@@ -14,9 +14,8 @@
     "build": "babel src -d lib",
     "lint": "../../node_modules/.bin/eslint . --ext .js",
     "test": "TZ=UTC jest src ",
-    "pretest-package": "cd test/package && npm init -y && npm i -D webpack4@npm:webpack@4",
-    "test-package": "TZ=UTC jest test/package/*.test.js",
-    "posttest-package": "cd test/package && rm -fr node_modules package.json package-lock.json"
+    "pretest-package": "cd test/package && npm ci",
+    "test-package": "TZ=UTC jest test/package/*.test.js"
   },
   "keywords": [
     "webpack",
