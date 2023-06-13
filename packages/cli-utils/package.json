@@ -9,7 +9,7 @@
     "lib": "lib"
   },
   "engines": {
-    "node": ">= 14.0"
+    "node": ">= 16.0"
   },
   "scripts": {
     "build": "npm run build-lib && npm run build-esm",
