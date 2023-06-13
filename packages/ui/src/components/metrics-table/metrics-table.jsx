@@ -24,7 +24,7 @@ const getHeaderLabelCells = (rows) => (run, runIndex, runs) => {
 
   if (!run) {
     return [
-      { children: '-', className, colSpan: isBaseline ? 1 : 2 },
+      { children: '-', className, colSpan: isBaseline ? 1 : 3 },
     ];
   }
 
@@ -45,7 +45,7 @@ const getHeaderLabelCells = (rows) => (run, runIndex, runs) => {
     {
       children: jobName,
       className,
-      colSpan: isBaseline ? 1 : 2,
+      colSpan: isBaseline ? 1 : 3,
     },
   ];
 };
@@ -71,11 +71,20 @@ const getHeaderTotalCells = (rows) => (run, runIndex, runs) => {
           {
             children: (
               <Delta
-                displayValue={infoTotal.displayDeltaPercentage}
+                displayValue={infoTotal.displayDelta}
                 deltaType={infoTotal.deltaType}
               />
             ),
             className: styles.delta,
+          },
+          {
+            children: (
+              <Delta
+                displayValue={infoTotal.displayDeltaPercentage}
+                deltaType={infoTotal.deltaType}
+              />
+            ),
+            className: cx(styles.delta, styles.deltaPercentage),
           },
         ]
       : []),
@@ -121,11 +130,12 @@ const MetricsTableRow = ({ item, renderRowHeader }) => (
           <>
             <Table.Td className={valueClassName}>-</Table.Td>
             {!isBaseline && <Table.Td className={styles.delta} />}
+            {!isBaseline && <Table.Td className={cx(styles.delta, styles.deltaPercentage)} />}
           </>
         );
       }
 
-      const { displayValue, deltaPercentage, displayDeltaPercentage, deltaType } = run;
+      const { displayValue, deltaPercentage, displayDelta, displayDeltaPercentage, deltaType } = run;
 
       return (
         <>
@@ -133,9 +143,14 @@ const MetricsTableRow = ({ item, renderRowHeader }) => (
             <Metric value={displayValue} />
           </Table.Td>
           {!isBaseline && typeof deltaPercentage === 'number' && (
-            <Table.Td className={styles.delta}>
-              <Delta displayValue={displayDeltaPercentage} deltaType={deltaType} />
-            </Table.Td>
+            <>
+              <Table.Td className={styles.delta}>
+                <Delta displayValue={displayDelta} deltaType={deltaType} />
+              </Table.Td>
+              <Table.Td className={cx(styles.delta, styles.deltaPercentage)}>
+                <Delta displayValue={displayDeltaPercentage} deltaType={deltaType} />
+              </Table.Td>
+            </>
           )}
         </>
       );
