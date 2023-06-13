@@ -52,7 +52,7 @@ export const MetricsTableSearch = (props) => {
       />
       {search && (
         <button className={css.cancelButton} type="button" onClick={handleClearValue}>
-          <Icon className={css.cancelButtonIcon} glyph="cancel" />
+          <Icon className={css.cancelButtonIcon} glyph={Icon.ICONS.CANCEL} />
         </button>
       )}
     </div>
