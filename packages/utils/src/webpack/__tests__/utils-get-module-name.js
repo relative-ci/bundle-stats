@@ -24,6 +24,9 @@ describe('Webpack/utils/getModuleName', () => {
     expect(getModuleName('./node_modules/lodash/_apply.js + 7 modules')).toBe(
       './node_modules/lodash/_apply.js',
     );
+    expect(getModuleName('./node_modules/lodash/_apply.js+7modules')).toBe(
+      './node_modules/lodash/_apply.js',
+    );
   });
 
   test('should remove invalid node_modules prefix', () => {
