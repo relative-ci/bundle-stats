@@ -45,7 +45,7 @@ const Item = ({
       isActive={isActive}
       className={cx(css.item, isActive && css.itemActive, buttonProps.className)}
     >
-      <Icon className={css.itemIcon} glyph="arrow" />
+      <Icon className={css.itemIcon} glyph={Icon.ICONS.ARROW} />
       <span className={css.itemLabel}>{label}</span>
     </Component>
   );

@@ -26,7 +26,7 @@ export const JobHeader = (props) => {
 
         {builtAt && (
           <FlexStack space="xxxsmall" alignItems="center" inline as="span" title={builtAt} className={css.meta}>
-            <Icon glyph="clock" className={css.metaIcon} />
+            <Icon glyph={Icon.ICONS.CLOCK} className={css.metaIcon} />
             <span className={css.metaText}>
               {formatDateTime({ dateStyle: 'medium', timeStyle: 'medium' }, builtAt)}
             </span>
@@ -35,7 +35,7 @@ export const JobHeader = (props) => {
 
         {hash && (
           <FlexStack space="xxxsmall" alignItems="center" inline title="Webpack bundle hash" className={css.meta}>
-            <Icon glyph="commit" className={css.metaIcon} />
+            <Icon glyph={Icon.ICONS.COMMIT} className={css.metaIcon} />
             <span className={css.metaText}>{hash.slice(0, 7)}</span>
           </FlexStack>
         )}

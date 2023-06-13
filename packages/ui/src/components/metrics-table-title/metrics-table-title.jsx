@@ -19,7 +19,7 @@ export const MetricsTableTitle = (props) => {
         <span>{title}</span>
 
         {(popoverInfo || popoverHref) && (
-          <HoverCard label={<Icon glyph="help" className={css.anchorIcon} />} anchorClassName={css.anchor}>
+          <HoverCard label={<Icon glyph={Icon.ICONS.HELP} className={css.anchorIcon} />} anchorClassName={css.anchor}>
             <Stack space="xxxsmall">
               {popoverInfo && <p>{popoverInfo}</p>}
               {popoverHref && (

@@ -43,7 +43,7 @@ export const Item = (props: ItemProps & React.ComponentProps<'div'>) => {
           title={builtAt}
           className={css.itemMeta}
         >
-          <Icon glyph="clock" className={css.itemMetaIcon} />
+          <Icon glyph={Icon.ICONS.CLOCK} className={css.itemMetaIcon} />
           <span className={css.itemMetaText}>
             {formatDateTime({ dateStyle: 'medium', timeStyle: 'medium' }, builtAt)}
           </span>
@@ -59,7 +59,7 @@ export const Item = (props: ItemProps & React.ComponentProps<'div'>) => {
           title="Webpack bundle hash"
           className={css.itemMeta}
         >
-          <Icon glyph="commit" className={css.itemMetaIcon} />
+          <Icon glyph={Icon.ICONS.COMMIT} className={css.itemMetaIcon} />
           <span className={css.itemMetaText}>{hash.slice(0, 7)}</span>
         </FlexStack>
       )}

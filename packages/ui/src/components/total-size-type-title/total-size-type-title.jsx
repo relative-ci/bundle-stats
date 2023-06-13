@@ -13,7 +13,7 @@ import css from './total-size-type-title.module.css';
 export const TotalSizeTypeTitle = ({ className }) => (
   <FlexStack space="xxxsmall" alignItems="center" className={cx(css.root, className)}>
     <span className={css.text}>{I18N.ASSET_TOTALS}</span>
-    <HoverCard label={<Icon glyph="help" />} anchorClassName={css.anchor}>
+    <HoverCard label={<Icon glyph={Icon.ICONS.HELP} />} anchorClassName={css.anchor}>
       <Stack space="xxxsmall">
         <p>{I18N.ASSET_TOTALS_INFO}</p>
         <p>
