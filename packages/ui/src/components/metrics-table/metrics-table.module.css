@@ -27,17 +27,13 @@
 
 .root .delta {
   padding-left: 0;
-  text-align: left;
+  text-align: right;
   font-size: var(--size-xsmall);
   vertical-align: baseline;
 }
 
 .root tbody .delta {
   line-height: 1.6rem; /* baseline alignment with the value */
-}
-
-.root .value.current {
-  padding-right: var(--space-xxsmall);
 }
 
 .jobName {
@@ -52,9 +48,9 @@
 }
 
 .headerRowTotals th {
-  padding-top: 0 !important;
+  padding-top: var(--space-xxxsmall) !important;
   font-weight: normal;
-  font-size: var(--size-xsmall);
+  font-size: var(--size-small);
   vertical-align: middle;
 }
 

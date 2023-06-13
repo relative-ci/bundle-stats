@@ -24,8 +24,7 @@ const getHeaderLabelCells = (rows) => (run, runIndex, runs) => {
 
   if (!run) {
     return [
-      { children: '-', className },
-      ...(!isBaseline ? [{ children: ' ', className: styles.delta }] : []),
+      { children: '-', className, colSpan: isBaseline ? 1 : 2 },
     ];
   }
 
@@ -41,11 +40,13 @@ const getHeaderLabelCells = (rows) => (run, runIndex, runs) => {
     </JobName>
   );
 
+  // Value column
   return [
-    // Value column
-    { children: jobName, className },
-    // Delta column
-    ...(!isBaseline ? [{ children: ' ', className: cx(styles.delta) }] : []),
+    {
+      children: jobName,
+      className,
+      colSpan: isBaseline ? 1 : 2,
+    },
   ];
 };
 
