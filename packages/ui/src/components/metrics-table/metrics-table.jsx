@@ -5,7 +5,9 @@ import isEmpty from 'lodash/isEmpty';
 import sum from 'lodash/sum';
 import { METRIC_TYPE_FILE_SIZE, getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
+import { Icon } from '../../ui/icon';
 import { Table } from '../../ui/table';
+import { Stack } from '../../layout/stack';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
 import { JobName } from '../job-name';
@@ -212,7 +214,12 @@ export const MetricsTable = ({
         {showEmpty && (
           <Table.Tr>
             <Table.Td className={styles.empty} colSpan={columnClassNames?.length || 1}>
-              {emptyMessage}
+              <Stack space="xxsmall">
+                <div>
+                  <Icon glyph={Icon.ICONS.INFO} className={styles.emptyIcon} size="large" />
+                </div>
+                {emptyMessage}
+              </Stack>
             </Table.Td>
           </Table.Tr>
         )}

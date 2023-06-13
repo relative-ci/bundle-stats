@@ -66,9 +66,15 @@
 
 .root .empty {
   background: none !important;
-  padding-top: var(--space-xxxlarge);
-  padding-bottom: var(--space-xxxlarge);
+  padding-top: calc(var(--space-xxxlarge) * 2);
+  padding-bottom: calc(var(--space-xxxlarge) * 2);
   text-align: center;
+}
+
+.emptyIcon {
+  color: var(--color-outline-dark);
+  width: var(--space-large);
+  height: var(--space-large);
 }
 
 .root .showAllItems {
