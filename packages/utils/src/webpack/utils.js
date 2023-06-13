@@ -55,7 +55,7 @@ export const getAssetName = (assetFilepath) => {
 const NAME_WITH_LOADERS = /!/;
 
 // ./src/index.jsx + 27 modules
-const NAME_WITH_MODULES = /\s\+\s\d*\smodules$/;
+const NAME_WITH_MODULES = /\s?\+\s?\d*\s?modules$/;
 
 // css ../node_modules../node_modules/package-a
 const INVALID_CSS_PREFIX = /^css\s.*node_modules(?!\/)/;

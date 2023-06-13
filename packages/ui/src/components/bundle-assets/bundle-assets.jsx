@@ -89,7 +89,7 @@ const RowHeader = ({ row, customComponentLink: CustomComponentLink, filters, sea
     <span className={css.assetNameWrapper}>
       {isNotPredictive && (
         <HoverCard
-          label={<Icon className={css.notPredictiveIcon} glyph="warning" />}
+          label={<Icon className={css.notPredictiveIcon} glyph={Icon.ICONS.WARNING} />}
           className={css.notPredictive}
           anchorClassName={css.notPredictiveAnchor}
         >
