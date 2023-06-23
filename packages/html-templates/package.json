@@ -33,7 +33,7 @@
     "@babel/preset-react": "7.22.5",
     "@bundle-stats/ui": "^4.4.0",
     "@bundle-stats/utils": "^4.4.0",
-    "@storybook/addon-essentials": "7.0.22",
+    "@storybook/addon-essentials": "7.0.23",
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/builder-webpack5": "7.0.23",
     "@storybook/manager-webpack5": "6.5.16",
