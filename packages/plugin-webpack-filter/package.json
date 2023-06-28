@@ -43,7 +43,7 @@
     "jest-date-mock": "1.0.8",
     "regenerator-runtime": "0.13.11",
     "ts-jest": "29.1.0",
-    "typescript": "5.1.3"
+    "typescript": "5.1.5"
   },
   "peerDependencies": {
     "core-js": "^3.0.0"
