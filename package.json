@@ -18,7 +18,7 @@
     "node": ">= 16.0"
   },
   "devDependencies": {
-    "@babel/core": "7.22.6",
+    "@babel/core": "7.22.8",
     "@babel/eslint-parser": "7.22.7",
     "@tsconfig/node16": "1.0.4",
     "@typescript-eslint/eslint-plugin": "5.61.0",
