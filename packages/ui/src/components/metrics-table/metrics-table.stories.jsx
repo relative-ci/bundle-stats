@@ -217,6 +217,10 @@ export const MultipleRuns = () => (
   <MetricsTable runs={RUNS} items={ITEMS_MULTIPLE_RUNS} />
 );
 
+export const WithHeaderSum = () => (
+  <MetricsTable runs={RUNS} items={[ITEMS_MULTIPLE_RUNS[0], ITEMS_MULTIPLE_RUNS[4]]} showHeaderSum />
+);
+
 export const WithHeaderRows = () => (
   <MetricsTable
     runs={RUNS}

@@ -15,108 +15,68 @@ import styles from './metrics-table.module.css';
 
 const METRIC_TYPE_DATA = getGlobalMetricType(null, METRIC_TYPE_FILE_SIZE);
 const VISIBLE_COUNT = 500;
+const BASELINE_COLUMN_SPAN = 1;
+const CURRENT_COLUMN_SPAN = 3;
+const BASELINE_TITLE = 'Baseline';
+const CURRENT_TITLE = 'Current';
 
 const getRowsRunTotal = (rows, runIndex) => sum(rows.map((row) => row?.runs?.[runIndex]?.value || 0));
 
-const getHeaderLabelCells = (rows) => (run, runIndex, runs) => {
-  const isBaseline = runIndex === runs.length - 1;
-  const className = cx(styles.value, isBaseline ? styles.baseline : styles.current);
+const ColumnJob = ({ run, isBaseline }) => {
+  const colSpan = isBaseline ? BASELINE_COLUMN_SPAN : CURRENT_COLUMN_SPAN;
 
   if (!run) {
-    return [
-      { children: '-', className, colSpan: isBaseline ? 1 : 3 },
-    ];
+    return (
+      <Table.Th colSpan={colSpan}>-</Table.Th>
+    );
   }
 
   const { label, internalBuildNumber } = run;
 
-  const jobName = (
-    <JobName
-      title={runIndex === 0 ? 'Current' : 'Baseline'}
-      internalBuildNumber={internalBuildNumber}
-      className={styles.jobName}
-    >
-      {label}
-    </JobName>
+  return (
+    <Table.Th className={styles.job} colSpan={colSpan}>
+      <JobName
+        title={isBaseline ? BASELINE_TITLE : CURRENT_TITLE }
+        internalBuildNumber={internalBuildNumber}
+        className={styles.jobName}
+      >
+        {label}
+      </JobName>
+    </Table.Th>
   );
-
-  // Value column
-  return [
-    {
-      children: jobName,
-      className,
-      colSpan: isBaseline ? 1 : 3,
-    },
-  ];
 };
 
-const getHeaderTotalCells = (rows) => (run, runIndex, runs) => {
-  const isBaseline = runIndex === runs.length - 1;
-  const className = cx(styles.value, isBaseline ? styles.baseline : styles.current);
-
+const ColumnSum = ({ rows, isBaseline, runIndex }) => {
   const currentRunTotal = getRowsRunTotal(rows, runIndex);
   const baselineRunTotal = !isBaseline && getRowsRunTotal(rows, runIndex + 1);
   const infoTotal = getMetricRunInfo(METRIC_TYPE_DATA, currentRunTotal, baselineRunTotal);
 
-  return [
-    // Value column
-    {
-      children: <Metric className={styles.tableHeaderRunMetric} value={infoTotal.displayValue} />,
-      className,
-    },
-
-    // Delta column
-    ...(!isBaseline
-      ? [
-          {
-            children: (
-              <Delta
-                displayValue={infoTotal.displayDelta}
-                deltaType={infoTotal.deltaType}
-              />
-            ),
-            className: styles.delta,
-          },
-          {
-            children: (
-              <Delta
-                displayValue={infoTotal.displayDeltaPercentage}
-                deltaType={infoTotal.deltaType}
-              />
-            ),
-            className: cx(styles.delta, styles.deltaPercentage),
-          },
-        ]
-      : []),
-  ];
+  return (
+    <>
+      <Table.Th className={cx(styles.value, styles.sum)}>
+        <Metric className={styles.tableHeaderRunMetric} value={infoTotal.displayValue} />
+      </Table.Th>
+      {!isBaseline && (
+        <>
+          <Table.Th className={cx(styles.delta, styles.sum)}>
+            <Delta
+              displayValue={infoTotal.displayDelta}
+              deltaType={infoTotal.deltaType}
+            />
+          </Table.Th>
+          <Table.Th className={cx(styles.delta, styles.sum)}>
+            <Delta
+              displayValue={infoTotal.displayDeltaPercentage}
+              deltaType={infoTotal.deltaType}
+            />
+          </Table.Th>
+        </>
+      )}
+    </>
+  );
 };
 
-const getHeaderRows = (runs, items, showHeaderSum, title) => [
-  {
-    className: styles.headerRowColumns,
-    cells: [
-      // Metric name column - one empty strying to render the column
-      {
-        children: title || ' ',
-        className: styles.metricName,
-        rowSpan: showHeaderSum ? 2 : 1,
-      },
-
-      // Runs
-      ...runs.map(getHeaderLabelCells(items)).flat(),
-    ],
-  },
-  ...(showHeaderSum
-    ? [
-        {
-          className: styles.headerRowTotals,
-          cells: runs.map(getHeaderTotalCells(items)).flat(),
-        },
-      ]
-    : []),
-];
-
-const MetricsTableRow = ({ item, renderRowHeader }) => (
+const Row = ({ item, renderRowHeader }) => (
   <Table.Tr className={cx(!item.changed && styles.unchanged)}>
     <Table.Th className={styles.metricName}>{renderRowHeader(item)}</Table.Th>
 
@@ -158,7 +118,7 @@ const MetricsTableRow = ({ item, renderRowHeader }) => (
   </Table.Tr>
 );
 
-MetricsTableRow.propTypes = {
+Row.propTypes = {
   item: PropTypes.shape({
     changed: PropTypes.bool,
     runs: PropTypes.arrayOf(
@@ -181,21 +141,13 @@ export const MetricsTable = ({
   items,
   emptyMessage,
   showHeaderSum,
-  headerRows,
+  headerRows: parentHeaderRows,
   title,
   showAllItems,
   setShowAllItems,
   ...restProps
 }) => {
-  const { headers, columnClassNames } = useMemo(() => {
-    const headerColumns = getHeaderRows(runs, items, showHeaderSum, title);
-
-    return {
-      headers: [...headerRows, ...headerColumns],
-      // First header row has the column class names
-      columnClassNames: headerColumns[0].cells.map((headerColumn) => headerColumn.className),
-    };
-  }, [headerRows, runs, items, showHeaderSum, title]);
+  const columnCount = (runs.length - 1) * CURRENT_COLUMN_SPAN + BASELINE_COLUMN_SPAN + 1;
 
   const rootClassName = cx(
     styles.root,
@@ -212,24 +164,22 @@ export const MetricsTable = ({
   return (
     <Table className={rootClassName} compact {...restProps}>
       <Table.THead>
-        {headers.map((headerRow) => {
-          const { cells, className: rowClassName } = headerRow.cells
-            ? headerRow
-            : { cells: headerRow };
-
-          return (
-            <Table.Tr className={rowClassName}>
-              {cells.map((header) => (
-                <Table.Th {...header} />
-              ))}
-            </Table.Tr>
-          );
-        })}
+        <Table.Tr className={styles.headerRow}>
+          <Table.Th className={styles.metricName} rowSpan={showHeaderSum ? 2 : 1}>
+            {title || ' '}
+          </Table.Th>
+          {runs.map((run, runIndex) => <ColumnJob run={run} isBaseline={runIndex === runs.length - 1} />)}
+        </Table.Tr>
+        {showHeaderSum && (
+          <Table.Tr className={styles.headerRow}>
+            {runs.map((run, runIndex) => <ColumnSum rows={items} isBaseline={runIndex === runs.length - 1} runIndex={runIndex} />)}
+          </Table.Tr>
+        )}
       </Table.THead>
       <Table.TBody>
         {showEmpty && (
           <Table.Tr>
-            <Table.Td className={styles.empty} colSpan={columnClassNames?.length || 1}>
+            <Table.Td className={styles.empty} colSpan={columnCount}>
               <Stack space="xxsmall">
                 <div>
                   <Icon glyph={Icon.ICONS.INFO} className={styles.emptyIcon} size="large" />
@@ -243,12 +193,12 @@ export const MetricsTable = ({
         {showItems && (
           <>
             {visibleItems.map((item) => (
-              <MetricsTableRow key={item.key} item={item} renderRowHeader={renderRowHeader} />
+              <Row key={item.key} item={item} renderRowHeader={renderRowHeader} />
             ))}
 
             {hasHiddenItems && (
               <Table.Tr>
-                <Table.Td className={styles.showAllItems} colSpan={columnClassNames?.length || 1}>
+                <Table.Td className={styles.showAllItems} colSpan={columnCount}>
                   {showAllItems ? (
                       <button
                         onClick={() => setShowAllItems(false)}

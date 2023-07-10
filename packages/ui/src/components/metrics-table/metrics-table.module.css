@@ -19,6 +19,10 @@
   text-transform: none;
 }
 
+.root .job {
+  text-align: right;
+}
+
 .root .value {
   padding-left: var(--space-large);
   text-align: right;
@@ -33,7 +37,7 @@
 }
 
 .root tbody .delta {
-  line-height: 1.6rem; /* baseline alignment with the value */
+  line-height: 1.6rem; /* baseline alignment with the column value */
 }
 
 .jobName {
@@ -41,16 +45,14 @@
 }
 
 /* columns overrides for showHeaderSum */
-.showHeaderSum .headerRowColumns .value,
-.showHeaderSum .headerRowColumns .delta {
+.showHeaderSum .headerRow .job {
   border-bottom: 0;
   padding-bottom: 0;
 }
 
-.headerRowTotals th {
-  padding-top: var(--space-xxxsmall) !important;
-  font-weight: normal;
-  font-size: var(--size-small);
+.showHeaderSum .headerRow .sum {
+  padding-top: var(--space-xxxsmall);
+  font-size: var(--size-xsmall);
   vertical-align: middle;
 }
 
