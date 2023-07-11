@@ -18,8 +18,10 @@
 }
 
 .info {
+  color: var(--color-text-light);
+  font-family: var(--font-family-fixed);
   font-size: var(--size-xsmall);
-  font-weight: normal;
+  font-weight: bold;
 }
 
 .readMoreLink {
