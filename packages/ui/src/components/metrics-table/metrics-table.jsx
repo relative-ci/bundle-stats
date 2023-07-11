@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import isEmpty from 'lodash/isEmpty';
@@ -141,7 +141,6 @@ export const MetricsTable = ({
   items,
   emptyMessage,
   showHeaderSum,
-  headerRows: parentHeaderRows,
   title,
   showAllItems,
   setShowAllItems,
@@ -232,7 +231,6 @@ MetricsTable.defaultProps = {
   renderRowHeader: (item) => item.label,
   emptyMessage: 'No entries found.',
   showHeaderSum: false,
-  headerRows: [],
   title: '',
 };
 
@@ -258,15 +256,5 @@ MetricsTable.propTypes = {
   ).isRequired,
   emptyMessage: PropTypes.element,
   showHeaderSum: PropTypes.bool,
-  headerRows: PropTypes.arrayOf(
-    PropTypes.arrayOf(
-      PropTypes.oneOfType([
-        PropTypes.element,
-        PropTypes.shape({
-          children: PropTypes.node,
-        }),
-      ]),
-    ),
-  ),
   title: PropTypes.element,
 };

@@ -221,23 +221,4 @@ export const WithHeaderSum = () => (
   <MetricsTable runs={RUNS} items={[ITEMS_MULTIPLE_RUNS[0], ITEMS_MULTIPLE_RUNS[4]]} showHeaderSum />
 );
 
-export const WithHeaderRows = () => (
-  <MetricsTable
-    runs={RUNS}
-    items={ITEMS_MULTIPLE_RUNS}
-    headerRows={[
-      [
-        'Metric',
-        {
-          children: 'Colspan',
-          colSpan: 1 + (RUNS.length - 1) * 2 + 1,
-          style: {
-            textAlign: 'center'
-          }
-        }
-      ]
-    ]}
-  />
-);
-
 export const Empty = () =><MetricsTable runs={RUNS} items={[]} />;
