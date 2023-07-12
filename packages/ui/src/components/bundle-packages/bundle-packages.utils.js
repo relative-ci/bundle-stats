@@ -1,4 +1,5 @@
 import uniq from 'lodash/uniq';
+import get from 'lodash/get';
 import { PACKAGE_FILTERS } from '@bundle-stats/utils';
 
 import { SORT_BY_NAME, SORT_BY_DELTA, SORT_BY_SIZE } from './bundle-packages.constants';
@@ -36,6 +37,10 @@ export const getCustomSort = (sortId) => (item) => {
 
   if (sortId === SORT_BY_SIZE) {
     return item?.runs?.[0]?.value || 0;
+  }
+
+  if (sortId) {
+    return Math.abs(get(item, sortId) || 0);
   }
 
   return [!item.changed, item.key];

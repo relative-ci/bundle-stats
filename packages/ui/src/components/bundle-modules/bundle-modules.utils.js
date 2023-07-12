@@ -41,6 +41,10 @@ export const getCustomSort = (sortBy) => (item) => {
     return item?.runs?.[0]?.delta ? Math.abs(item.runs[0].delta) : 0;
   }
 
+  if (sortBy) {
+    return Math.abs(get(item, sortBy) || 0);
+  }
+
   return [!item.changed, item.key];
 };
 

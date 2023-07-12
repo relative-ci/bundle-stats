@@ -209,6 +209,8 @@ export const BundlePackages = (props) => {
             renderRowHeader={renderRowHeader}
             showHeaderSum
             title={metricsTableTitle}
+            sort={sort}
+            updateSort={updateSort}
           />
         </main>
       </section>

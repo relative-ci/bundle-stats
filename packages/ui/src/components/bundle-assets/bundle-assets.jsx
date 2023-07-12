@@ -252,6 +252,8 @@ export const BundleAssets = (props) => {
             emptyMessage={emptyMessage}
             showHeaderSum
             title={metricsTableTitle}
+            sort={sort}
+            updateSort={updateSort}
           />
         </main>
       </section>

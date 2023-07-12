@@ -216,6 +216,8 @@ export const BundleModules = ({
           emptyMessage={emptyMessage}
           showHeaderSum
           title={metricsTableTitle}
+          sort={sort}
+          updateSort={updateSort}
         />
       </div>
       {entryId && (
