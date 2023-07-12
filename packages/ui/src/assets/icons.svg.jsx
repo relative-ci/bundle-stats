@@ -9,7 +9,6 @@ export const SvgIcons = (props) => (
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="feather feather-arrow-down"
       id="arrow"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -21,7 +20,6 @@ export const SvgIcons = (props) => (
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="feather feather-arrow-right-circle"
       viewBox="0 0 24 24"
       id="arrow-right-circle"
       xmlns="http://www.w3.org/2000/svg"
@@ -30,13 +28,36 @@ export const SvgIcons = (props) => (
       <path d="M12 16l4-4-4-4M8 12h8" />
     </symbol>
     <symbol
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      viewBox="0 0 24 24"
+      id="chevron-down"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M6 9l6 6 6-6" />
+    </symbol>
+    <symbol
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      viewBox="0 0 24 24"
+      id="chevron-up"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M18 15l-6-6-6 6" />
+    </symbol>
+    <symbol
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="feather feather-clock"
       id="clock"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -49,7 +70,6 @@ export const SvgIcons = (props) => (
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="feather feather-x-circle"
       viewBox="0 0 24 24"
       id="close"
       xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +84,6 @@ export const SvgIcons = (props) => (
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="feather feather-git-commit"
       id="commit"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -90,7 +109,6 @@ export const SvgIcons = (props) => (
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="feather feather-external-link"
       viewBox="0 0 24 24"
       id="external-link"
       xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +122,6 @@ export const SvgIcons = (props) => (
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="feather feather-bar-chart"
       id="filter"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -125,7 +142,6 @@ export const SvgIcons = (props) => (
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="feather feather-help-circle"
       id="help"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -152,7 +168,6 @@ export const SvgIcons = (props) => (
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="feather feather-menu"
       id="menu"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -183,7 +198,6 @@ export const SvgIcons = (props) => (
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="feather feather-alert-triangle"
       id="warning"
       xmlns="http://www.w3.org/2000/svg"
     >
