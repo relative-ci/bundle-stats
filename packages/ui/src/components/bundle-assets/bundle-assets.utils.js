@@ -1,4 +1,3 @@
-import get from 'lodash/get';
 import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, getFileType } from '@bundle-stats/utils';
 
 export const addRowAssetFlags = (row) => {
@@ -71,17 +70,11 @@ export const getRowFilter = (filters) => (item) => {
   return true;
 };
 
-export const getCustomSort = (sortId) => (item) => {
-  if (sortId) {
-    return Math.abs(get(item, sortId) || 0);
-  }
-
-  return [
-    !item.isNotPredictive,
-    !item.changed,
-    !item.isInitial,
-    !item.isEntry,
-    !item.isChunk,
-    item.key,
-  ];
-};
+export const getCustomSort = (item) => [
+  !item.isNotPredictive,
+  !item.changed,
+  !item.isInitial,
+  !item.isEntry,
+  !item.isChunk,
+  item.key,
+];

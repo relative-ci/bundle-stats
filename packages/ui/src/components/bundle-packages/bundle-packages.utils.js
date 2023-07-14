@@ -1,5 +1,4 @@
 import uniq from 'lodash/uniq';
-import get from 'lodash/get';
 import { PACKAGE_FILTERS } from '@bundle-stats/utils';
 
 // Get a list of duplicate packages across jobs
@@ -24,13 +23,7 @@ export const getRowFilter = (filters) => (item) => {
   return true;
 };
 
-export const getCustomSort = (sortId) => (item) => {
-  if (sortId) {
-    return Math.abs(get(item, sortId) || 0);
-  }
-
-  return [!item.changed, item.key];
-};
+export const getCustomSort = (item) => [!item.changed, item.key];
 
 export const getAddRowDuplicateFlag = (duplicateJobs) => (row) => ({
   ...row,

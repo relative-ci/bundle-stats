@@ -2,14 +2,10 @@ import React, { useCallback } from 'react';
 import cx from 'classnames';
 
 import { SORT } from '../../constants';
+import type { SortAction } from '../../types';
 import { Icon } from '../../ui/icon';
 import { Tooltip } from '../../ui/tooltip';
 import css from './sort-button.module.css';
-
-interface SortAction {
-  field: string;
-  direction: string;
-}
 
 interface SortInfo {
   direction: string;
@@ -31,21 +27,11 @@ const getToggleAction = (sort: SortAction, field: string, label: string): SortIn
   return { direction: '', title: 'Reset order' };
 };
 
-const getAscAction = (sort: SortAction, field: string, label: string): SortInfo => {
-  // Reset sort if already sorted
-  if (sort?.field === field && sort?.direction === SORT.ASC) {
-    return { direction: '', title: 'Reset order' };
-  }
-
+const getAscAction = (label: string): SortInfo => {
   return { direction: SORT.ASC, title: `Order ${label} ascending` };
 };
 
-const getDescAction = (sort: SortAction, field: string, label: string): SortInfo => {
-  // Reset sort if already sorted
-  if (sort?.field === field && sort?.direction === SORT.DESC) {
-    return { direction: '', title: 'Reset order' };
-  }
-
+const getDescAction = (label: string): SortInfo => {
   return { direction: SORT.DESC, title: `Order ${label} descending` };
 };
 
@@ -62,14 +48,14 @@ export const SortButton = (props: SortButtonProps & React.ComponentProps<'div'>)
 
   const field = `${fieldPath}.${fieldName}`;
   const toggleAction = getToggleAction(sort, field, label);
-  const ascAction = getAscAction(sort, field, label);
-  const descAction = getDescAction(sort, field, label);
+  const ascAction = getAscAction(label);
+  const descAction = getDescAction(label);
   const isSorted = sort.field === field;
 
   const getOrderOnClick = useCallback(
     (action: SortInfo) => () => {
       if (action.direction) {
-        updateSort({ field, direction: action.direction });
+        updateSort({ field, direction: action.direction as SortAction['direction'] });
         return;
       }
 
@@ -101,11 +87,7 @@ export const SortButton = (props: SortButtonProps & React.ComponentProps<'div'>)
           isSorted && sort.direction === SORT.ASC && css.directionActive,
         )}
       >
-        <Icon
-          glyph={Icon.ICONS.CHEVRON_UP}
-          size="small"
-          className={css.directionIcon}
-        />
+        <Icon glyph={Icon.ICONS.CHEVRON_UP} size="small" className={css.directionIcon} />
       </Tooltip>
       <Tooltip
         title={descAction.title}
@@ -119,11 +101,7 @@ export const SortButton = (props: SortButtonProps & React.ComponentProps<'div'>)
           isSorted && sort.direction === SORT.DESC && css.directionActive,
         )}
       >
-        <Icon
-          glyph={Icon.ICONS.CHEVRON_DOWN}
-          size="small"
-          className={css.directionIcon}
-        />
+        <Icon glyph={Icon.ICONS.CHEVRON_DOWN} size="small" className={css.directionIcon} />
       </Tooltip>
     </div>
   );

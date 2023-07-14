@@ -26,13 +26,7 @@ export const addRowFlags = (row) => {
   return row;
 };
 
-export const getCustomSort = (sortBy) => (item) => {
-  if (sortBy) {
-    return Math.abs(get(item, sortBy) || 0);
-  }
-
-  return [!item.changed, item.key];
-};
+export const getCustomSort = (item) => [!item.changed, item.key];
 
 export const getRowFilter = (filters) => (row) => {
   // Skip not changed rows
