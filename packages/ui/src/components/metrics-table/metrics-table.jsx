@@ -1,18 +1,17 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import sum from 'lodash/sum';
 import { METRIC_TYPE_FILE_SIZE, getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
-import { SORT } from '../../constants';
 import { Icon } from '../../ui/icon';
 import { Table } from '../../ui/table';
-import { Tooltip } from '../../ui/tooltip';
 import { Stack } from '../../layout/stack';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
 import { JobName } from '../job-name';
+import { SortButton } from '../sort-button';
 import styles from './metrics-table.module.css';
 
 const METRIC_TYPE_DATA = getGlobalMetricType(null, METRIC_TYPE_FILE_SIZE);
@@ -47,118 +46,6 @@ const ColumnJob = ({ run, isBaseline }) => {
   );
 };
 
-const getToggleAction = (sort, field, label) => {
-  // Sort the column desc if not currently sorted
-  if (sort?.field !== field) {
-    return { direction: SORT.DESC, title: `Order ${label} descending` };
-  }
-
-  // Resort asc if the column is already sorted descending
-  if (sort?.direction === SORT.DESC) {
-    return { direction: SORT.ASC, title: `Order ${label} ascending` };
-  }
-
-  // Reset
-  return { direction: '', title: 'Reset order' };
-};
-
-const getAscAction = (sort, field, label) => {
-  // Reset sort if already sorted
-  if (sort?.field === field && sort?.direction === SORT.ASC) {
-    return { direction: '', title: 'Reset order' };
-  }
-
-  return { direction: SORT.ASC, title: `Order ${label} ascending` };
-};
-
-const getDescAction = (sort, field, label) => {
-  // Reset sort if already sorted
-  if (sort?.field === field && sort?.direction === SORT.DESC) {
-    return { direction: '', title: 'Reset order' };
-  }
-
-  return { direction: SORT.DESC, title: `Order ${label} descending` };
-};
-
-const ColumnSort = ({ fieldPath, fieldName, label, updateSort, children, sort }) => {
-  const field = `${fieldPath}.${fieldName}`;
-  const toggleAction = getToggleAction(sort, field, label);
-  const ascAction = getAscAction(sort, field, label);
-  const descAction = getDescAction(sort, field, label);
-
-  const getOrderOnClick = useCallback(
-    (action) => () => {
-      if (!updateSort) {
-        return;
-      }
-
-      if (action.direction) {
-        updateSort({ field, direction: action.direction });
-        return;
-      }
-
-      updateSort({ field: '', direction: '' });
-    },
-    [field, updateSort, toggleAction],
-  );
-
-  if (!updateSort) {
-    return children;
-  }
-
-  const isSorted = sort.field === field;
-
-  return (
-    <div className={cx(styles.sort, isSorted && styles.sortActive)}>
-      <Tooltip
-        title={toggleAction.title}
-        as="button"
-        type="button"
-        onClick={getOrderOnClick(toggleAction)}
-        className={cx(styles.sortButton, styles.sortButtonToggle)}
-      >
-        {children}
-      </Tooltip>
-      <Tooltip
-        title={ascAction.title}
-        as="button"
-        type="button"
-        onClick={getOrderOnClick(ascAction)}
-        className={cx(
-          styles.sortButton,
-          styles.sortButtonDirection,
-          styles.sortButtonDirectionAsc,
-          isSorted && sort.direction === 'asc' && styles.sortButtonDirectionActive,
-        )}
-      >
-        <Icon
-          glyph={Icon.ICONS.CHEVRON_UP}
-          size="small"
-          className={styles.sortButtonDirectionIcon}
-        />
-      </Tooltip>
-      <Tooltip
-        title={descAction.title}
-        as="button"
-        type="button"
-        onClick={getOrderOnClick(descAction)}
-        className={cx(
-          styles.sortButton,
-          styles.sortButtonDirection,
-          styles.sortButtonDirectionDesc,
-          isSorted && sort.direction === 'desc' && styles.sortButtonDirectionActive,
-        )}
-      >
-        <Icon
-          glyph={Icon.ICONS.CHEVRON_DOWN}
-          size="small"
-          className={styles.sortButtonDirectionIcon}
-        />
-      </Tooltip>
-    </div>
-  );
-};
-
 const ColumnSum = ({ rows, isBaseline, runIndex, updateSort, sort }) => {
   const currentRunTotal = getRowsRunTotal(rows, runIndex);
   const baselineRunTotal = !isBaseline && getRowsRunTotal(rows, runIndex + 1);
@@ -168,42 +55,57 @@ const ColumnSum = ({ rows, isBaseline, runIndex, updateSort, sort }) => {
   return (
     <>
       <Table.Th className={cx(styles.value, styles.sum)}>
-        <ColumnSort
-          fieldPath={fieldPath}
-          fieldName="value"
-          label="absolute value"
-          updateSort={updateSort}
-          sort={sort}
-        >
-          <Metric className={styles.tableHeaderRunMetric} value={infoTotal.displayValue} />
-        </ColumnSort>
+        {(updateSort && sort) ? (
+          <SortButton
+            fieldPath={fieldPath}
+            fieldName="value"
+            label="absolute value"
+            updateSort={updateSort}
+            sort={sort}
+          >
+            <Metric value={infoTotal.displayValue} />
+          </SortButton>
+        ) : (
+          <Metric value={infoTotal.displayValue} />
+        )}
       </Table.Th>
       {!isBaseline && (
         <>
           <Table.Th className={cx(styles.delta, styles.sum)}>
-            <ColumnSort
-              fieldPath={fieldPath}
-              fieldName="delta"
-              label="absolute change"
-              updateSort={updateSort}
-              sort={sort}
-            >
+            {(updateSort && sort) ? (
+              <SortButton
+                fieldPath={fieldPath}
+                fieldName="delta"
+                label="absolute change"
+                updateSort={updateSort}
+                sort={sort}
+              >
+                <Delta displayValue={infoTotal.displayDelta} deltaType={infoTotal.deltaType} />
+              </SortButton>
+            ) : (
               <Delta displayValue={infoTotal.displayDelta} deltaType={infoTotal.deltaType} />
-            </ColumnSort>
+            )}
           </Table.Th>
           <Table.Th className={cx(styles.delta, styles.sum)}>
-            <ColumnSort
-              fieldPath={fieldPath}
-              fieldName="deltaPercentage"
-              label="absolute percentual change"
-              updateSort={updateSort}
-              sort={sort}
-            >
+            {(updateSort && sort) ? (
+              <SortButton
+                fieldPath={fieldPath}
+                fieldName="deltaPercentage"
+                label="absolute percentual change"
+                updateSort={updateSort}
+                sort={sort}
+              >
+                <Delta
+                  displayValue={infoTotal.displayDeltaPercentage}
+                  deltaType={infoTotal.deltaType}
+                />
+              </SortButton>
+            ) : (
               <Delta
                 displayValue={infoTotal.displayDeltaPercentage}
                 deltaType={infoTotal.deltaType}
               />
-            </ColumnSort>
+            )}
           </Table.Th>
         </>
       )}

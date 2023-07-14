@@ -15,10 +15,6 @@
   width: 100%;
 }
 
-.tableHeaderRunMetric {
-  text-transform: none;
-}
-
 .root .job {
   padding-right: calc(var(--space-xxxsmall) + var(--space-small));
   text-align: right;
@@ -44,95 +40,6 @@
   white-space: nowrap;
 }
 
-.sort {
-  --icon-dimension: 15px;
-  display: inline-block;
-  margin: calc(0px - var(--space-xxxsmall));
-  margin-right: calc(0px - 1px - var(--icon-dimension));
-  border-radius: var(--radius-small);
-  position: relative;
-}
-
-.sortButton {
-  appearance: none;
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  background: transparent;
-  transition: var(--transition-out);
-}
-
-.sortButtonToggle {
-  padding: var(--space-xxxsmall);
-  padding-right: calc(1px + var(--icon-dimension));
-}
-
-.sortButtonDirection {
-  position: absolute;
-  padding: 2px;
-  display: block;
-  overflow: hidden;
-  right: -2px; /* compensate for the button padding */
-  color: var(--color-text-ultra-light);
-  transition: var(--transition-out);
-}
-
-.sortButtonDirectionIcon {
-  display: block;
-  width: var(--icon-dimension);
-  height: var(--icon-dimension);
-}
-
-.sortButtonDirectionActive {
-  color: var(--color-text);
-  transition: var(--transition-in);
-}
-
-.sortButtonDirection:hover,
-.sortButtonDirection:active,
-.sortButtonDirection:focus {
-  color: var(--color-text-dark);
-  transition: var(--transition-in);
-}
-.sortButtonDirectionAsc {
-  padding-bottom: 0;
-  bottom: 50%;
-}
-
-.sortButtonDirectionAsc .sortButtonDirectionIcon {
-  transform: translateY(3px);
-}
-
-.sortButtonDirectionDesc {
-  padding-top: 0;
-  top: 50%;
-}
-
-.sortButtonDirectionDesc .sortButtonDirectionIcon {
-  transform: translateY(-5px);
-}
-
-.sort:hover,
-.sort:active,
-.sort:focus {
-  background: var(--color-outline);
-}
-
-.sortButtonDirection {
-  pointer-events: none;
-  opacity: 0;
-}
-
-.sortActive .sortButtonDirection,
-.sort:hover .sortButtonDirection,
-.sort:active .sortButtonDirection,
-.sort:focus .sortButtonDirection {
-  pointer-events: auto;
-  opacity: 1;
-  transition: var(--transition-in);
-}
-
 /* columns overrides for showHeaderSum */
 .showHeaderSum .headerRow .job {
   border-bottom: 0;
@@ -143,6 +50,7 @@
   padding-top: var(--space-xxxsmall);
   font-size: var(--size-small);
   vertical-align: middle;
+  text-transform: none;
 }
 
 /** rows */
