@@ -6,7 +6,6 @@ import * as webpack from '@bundle-stats/utils/lib-esm/webpack/compare';
 import { useRowsFilter } from '../../hooks/rows-filter';
 import { useRowsSort } from '../../hooks/rows-sort';
 import { useSearchParams } from '../../hooks/search-params';
-import { SORT_BY } from './bundle-packages.constants';
 import { BundlePackages as BundlePackagesComponent } from './bundle-packages';
 import { getDuplicatePackages, getAddRowDuplicateFlag, getRowFilter, getCustomSort } from './bundle-packages.utils';
 
@@ -50,7 +49,6 @@ export const BundlePackages = (props) => {
 
   const sortParams = useRowsSort({
     rows: filteredRows,
-    sortFields: SORT_BY,
     sortBy,
     sortDirection: direction,
     getCustomSort,

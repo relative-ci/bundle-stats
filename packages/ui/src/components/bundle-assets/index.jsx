@@ -12,7 +12,6 @@ import { useRowsSort } from '../../hooks/rows-sort';
 import { useSearchParams } from '../../hooks/search-params';
 import { BundleAssets as BundleAssetsComponent } from './bundle-assets';
 import { addRowAssetFlags, addRowIsNotPredictive, getRowFilter, getCustomSort } from './bundle-assets.utils';
-import { SORT_BY } from './bundle-assets.constants';
 
 export const BundleAssets = (props) => {
   const { jobs, filters, search, setState, sortBy, direction, ...restProps } = props;
@@ -55,7 +54,6 @@ export const BundleAssets = (props) => {
 
   const sortParams = useRowsSort({
     rows: filteredRows,
-    sortFields: SORT_BY,
     sortBy,
     sortDirection: direction,
     getCustomSort,

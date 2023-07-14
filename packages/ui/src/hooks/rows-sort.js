@@ -3,7 +3,6 @@ import orderBy from 'lodash/orderBy';
 
 export const useRowsSort = ({
   rows,
-  sortFields,
   sortBy = 'size',
   sortDirection = 'desc',
   getCustomSort,
@@ -16,7 +15,6 @@ export const useRowsSort = ({
   );
 
   return {
-    sortFields,
     sort,
     updateSort,
     items: orderedRows,

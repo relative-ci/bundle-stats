@@ -11,8 +11,6 @@ import {
   getModuleSourceFileType,
 } from '@bundle-stats/utils';
 
-import { SORT_BY_NAME, SORT_BY_SIZE, SORT_BY_DELTA } from './bundle-modules.constants';
-
 export const addRowFlags = (row) => {
   const { key, runs } = row;
 
@@ -29,18 +27,6 @@ export const addRowFlags = (row) => {
 };
 
 export const getCustomSort = (sortBy) => (item) => {
-  if (sortBy === SORT_BY_NAME) {
-    return item.key;
-  }
-
-  if (sortBy === SORT_BY_SIZE) {
-    return item?.runs?.[0]?.value || 0;
-  }
-
-  if (sortBy === SORT_BY_DELTA) {
-    return item?.runs?.[0]?.delta ? Math.abs(item.runs[0].delta) : 0;
-  }
-
   if (sortBy) {
     return Math.abs(get(item, sortBy) || 0);
   }

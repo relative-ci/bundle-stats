@@ -21,7 +21,6 @@ import { FlexStack } from '../../layout/flex-stack';
 import { EmptySet } from '../../ui/empty-set';
 import { FileName } from '../../ui/file-name';
 import { Filters } from '../../ui/filters';
-import { SortDropdown } from '../../ui/sort-dropdown';
 import { Tag } from '../../ui/tag';
 import { Toolbar } from '../../ui/toolbar';
 import { MetricsTable } from '../metrics-table';
@@ -125,7 +124,6 @@ export const BundleModules = ({
   resetAllFilters,
   filters,
   entryId,
-  sortFields,
   sort,
   updateSort,
   search,
@@ -179,12 +177,6 @@ export const BundleModules = ({
           className={css.toolbar}
           renderActions={({ actionClassName }) => (
             <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
-              <SortDropdown
-                className={css.tableDropdown}
-                fields={sortFields}
-                onChange={updateSort}
-                {...sort}
-              />
               <MetricsTableOptions
                 handleViewAll={resetAllFilters}
                 handleResetFilters={resetFilters}
@@ -279,12 +271,6 @@ BundleModules.propTypes = {
 
   hasActiveFilters: PropTypes.bool,
 
-  sortFields: PropTypes.shape({
-    [PropTypes.string]: PropTypes.shape({
-      label: PropTypes.string,
-      defaultDirection: PropTypes.bool,
-    }),
-  }).isRequired,
   sort: PropTypes.shape({
     sortBy: PropTypes.string,
     direction: PropTypes.string,

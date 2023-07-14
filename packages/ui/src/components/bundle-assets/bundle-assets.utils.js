@@ -1,8 +1,6 @@
 import get from 'lodash/get';
 import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, getFileType } from '@bundle-stats/utils';
 
-import { SORT_BY_NAME, SORT_BY_DELTA, SORT_BY_SIZE } from './bundle-assets.constants';
-
 export const addRowAssetFlags = (row) => {
   const { runs } = row;
 
@@ -74,18 +72,6 @@ export const getRowFilter = (filters) => (item) => {
 };
 
 export const getCustomSort = (sortId) => (item) => {
-  if (sortId === SORT_BY_NAME) {
-    return item.key;
-  }
-
-  if (sortId === SORT_BY_DELTA) {
-    return item?.runs?.[0]?.delta ? Math.abs(item.runs[0].delta) : 0;
-  }
-
-  if (sortId === SORT_BY_SIZE) {
-    return item?.runs?.[0]?.value || 0;
-  }
-
   if (sortId) {
     return Math.abs(get(item, sortId) || 0);
   }

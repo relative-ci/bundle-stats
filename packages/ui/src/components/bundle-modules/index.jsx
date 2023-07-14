@@ -19,7 +19,6 @@ import {
   getCustomSort,
   useModuleFilterByChunk,
 } from './bundle-modules.utils';
-import { SORT_BY } from './bundle-modules.constants';
 
 export const BundleModules = (props) => {
   const { jobs, filters, search, setState, sortBy, direction, ...restProps } = props;
@@ -88,7 +87,6 @@ export const BundleModules = (props) => {
 
   const sortParams = useRowsSort({
     rows: filteredRows,
-    sortFields: SORT_BY,
     sortBy,
     sortDirection: direction,
     getCustomSort,
