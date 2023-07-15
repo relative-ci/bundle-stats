@@ -71,30 +71,28 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
         <Stack space="small">
           {tags && <div>{tags}</div>}
 
-          <Stack space="xxxsmall">
-            <h3 className={css.label}>
-              <FileName as="code" name={itemTitle || item.label} className={css.fileName} />
-            </h3>
+          <h3 className={css.label}>
+            <FileName as="code" name={itemTitle || item.label} className={css.fileName} />
+          </h3>
 
-            <RunInfo
-              current={metricRunInfo.displayValue}
-              delta={metricRunInfo.displayDeltaPercentage}
-              deltaPercentage={metricRunInfo.displayDelta}
-              deltaType={metricRunInfo.deltaType}
-              baseline={baselineRun?.displayValue || '0B'}
-              size="large"
-            />
-          </Stack>
+          <RunInfo
+            current={metricRunInfo.displayValue}
+            delta={metricRunInfo.displayDeltaPercentage}
+            deltaPercentage={metricRunInfo.displayDelta}
+            deltaType={metricRunInfo.deltaType}
+            baseline={baselineRun?.displayValue || '0B'}
+            size="large"
+          />
         </Stack>
         <button type="button" onClick={onClose} className={css.headerClose}>
-          <Icon glyph={Icon.ICONS.CLOSE} />
+          <Icon glyph={Icon.ICONS.CLOSE} size="large" />
         </button>
       </Box>
       <Box padding="small" as="main" className={css.contentWrapper}>
         <Stack space="small" className={css.content}>
           {children}
 
-          <Table outline className={css.runs}>
+          <Table outline compact className={css.runs}>
             <Table.THead>
               <Table.Tr>
                 <Table.Th className={cx(css.runsCell, css.runsColJob)}>&nbsp;</Table.Th>
