@@ -29,6 +29,13 @@ Default.args = {
   deltaType: 'HIGH_NEGATIVE',
 };
 
+export const DeltaPercentage = Template.bind({});
+
+DeltaPercentage.args = {
+  ...Default.args,
+  deltaPercentage: '+20KiB',
+};
+
 export const SizeLarge = Template.bind({});
 
 SizeLarge.args = {
