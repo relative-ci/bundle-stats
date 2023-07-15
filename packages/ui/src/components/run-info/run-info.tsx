@@ -31,6 +31,7 @@ export interface RunInfoProps {
   current?: React.ReactNode;
   baseline?: string;
   delta?: string;
+  deltaPercentage?: string;
   deltaType?: string;
 
   as?: React.ElementType;
@@ -49,6 +50,7 @@ export const RunInfo = ({
   current = '',
   baseline = '',
   delta = '',
+  deltaPercentage = '',
   deltaType = '',
   as: Component = 'div',
   size = 'medium',
@@ -57,7 +59,7 @@ export const RunInfo = ({
   enhance = false,
   ...restProps
 }: RunInfoProps & React.ComponentProps<'div'>) => {
-  const rootClassName = cx(css.root, className, css[size], delta && css.showDelta);
+  const rootClassName = cx(css.root, className, css[size], (delta || deltaPercentage) && css.showDelta);
 
   const currentValueParams: [React.ReactNode, string?] = useMemo(() => {
     if (!enhance || typeof current !== 'string') {
@@ -96,7 +98,17 @@ export const RunInfo = ({
             unit={currentValueParams[1]}
             inline
           >
-            {delta && <Delta className={css.delta} displayValue={delta} deltaType={deltaType} />}
+            {(delta || deltaPercentage) && (
+              <FlexStack space="xxxsmall" alignItems="center">
+                {deltaPercentage && (
+                  <FlexStack space="xxxsmall" alignItems="center">
+                    <Delta className={css.delta} displayValue={deltaPercentage} deltaType={deltaType} />
+                    {' / '}
+                  </FlexStack>
+                )}
+                {delta && <Delta className={css.delta} displayValue={delta} deltaType={deltaType} />}
+              </FlexStack>
+            )}
           </Metric>
           {showBaseline && <Metric className={css.baselineMetric} value={baseline} />}
         </Stack>

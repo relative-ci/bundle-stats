@@ -30,6 +30,7 @@
   /** space for close icon */
   padding-right: calc(var(--space-medium) + var(--space-xxxsmall) + var(--space-xsmall));
   border-bottom: 1px solid var(--color-outline);
+  background: var(--color-highlight);
 }
 
 .headerClose {
@@ -67,10 +68,6 @@
   font-size: var(--size-small);
 }
 
-.runs .runsCell {
-  padding: var(--space-xxxsmall) var(--space-xxsmall);
-}
-
 .runs .runsColJob {
   white-space: nowrap;
 }
@@ -88,6 +85,7 @@
 }
 
 .metaLabel {
-  margin-right: .6em;
-  color: var(--color-text-light);
+  display: inline-block;
+  margin-right: var(--space-xxxsmall);
+  min-width: 5em;
 }
