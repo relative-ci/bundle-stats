@@ -79,6 +79,7 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
             <RunInfo
               current={metricRunInfo.displayValue}
               delta={metricRunInfo.displayDeltaPercentage}
+              deltaPercentage={metricRunInfo.displayDelta}
               deltaType={metricRunInfo.deltaType}
               baseline={baselineRun?.displayValue || '0B'}
               size="large"
