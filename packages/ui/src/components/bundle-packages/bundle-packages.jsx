@@ -8,7 +8,6 @@ import I18N from '../../i18n';
 import { FlexStack } from '../../layout/flex-stack';
 import { EmptySet } from '../../ui/empty-set';
 import { Filters } from '../../ui/filters';
-import { SortDropdown } from '../../ui/sort-dropdown';
 import { Tag } from '../../ui/tag';
 import { Toolbar } from '../../ui/toolbar';
 import { ComponentLink } from '../component-link';
@@ -117,7 +116,6 @@ export const BundlePackages = (props) => {
     resetAllFilters,
     totalRowCount,
     filters,
-    sortFields,
     sort,
     updateSort,
     search,
@@ -178,7 +176,6 @@ export const BundlePackages = (props) => {
           className={css.toolbar}
           renderActions={({ actionClassName }) => (
             <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
-              <SortDropdown fields={sortFields} {...sort} onChange={updateSort} />
               <MetricsTableOptions
                 handleViewAll={resetAllFilters}
                 handleResetFilters={resetFilters}
@@ -209,6 +206,8 @@ export const BundlePackages = (props) => {
             renderRowHeader={renderRowHeader}
             showHeaderSum
             title={metricsTableTitle}
+            sort={sort}
+            updateSort={updateSort}
           />
         </main>
       </section>
@@ -259,12 +258,6 @@ BundlePackages.propTypes = {
     changed: PropTypes.bool,
   }).isRequired,
   hasActiveFilters: PropTypes.bool,
-  sortFields: PropTypes.shape({
-    [PropTypes.string]: PropTypes.shape({
-      label: PropTypes.string,
-      defaultDirection: PropTypes.bool,
-    }),
-  }).isRequired,
   sort: PropTypes.shape({
     sortBy: PropTypes.string,
     direction: PropTypes.string,

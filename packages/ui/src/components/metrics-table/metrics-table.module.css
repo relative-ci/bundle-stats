@@ -15,11 +15,8 @@
   width: 100%;
 }
 
-.tableHeaderRunMetric {
-  text-transform: none;
-}
-
 .root .job {
+  padding-right: calc(var(--space-xxxsmall) + var(--space-small));
   text-align: right;
 }
 
@@ -30,7 +27,6 @@
 }
 
 .root .delta {
-  padding-left: 0;
   text-align: right;
   font-size: var(--size-xsmall);
   vertical-align: baseline;
@@ -52,8 +48,9 @@
 
 .showHeaderSum .headerRow .sum {
   padding-top: var(--space-xxxsmall);
-  font-size: var(--size-xsmall);
+  font-size: var(--size-small);
   vertical-align: middle;
+  text-transform: none;
 }
 
 /** rows */

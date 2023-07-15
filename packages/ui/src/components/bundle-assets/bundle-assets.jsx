@@ -19,7 +19,6 @@ import { FileName } from '../../ui/file-name';
 import { HoverCard } from '../../ui/hover-card';
 import { Tag } from '../../ui/tag';
 import { Filters } from '../../ui/filters';
-import { SortDropdown } from '../../ui/sort-dropdown';
 import { EmptySet } from '../../ui/empty-set';
 import { Toolbar } from '../../ui/toolbar';
 import { AssetInfo } from '../asset-info';
@@ -170,7 +169,6 @@ export const BundleAssets = (props) => {
     filters,
     entryId,
     hasActiveFilters,
-    sortFields,
     sort,
     updateSort,
     search,
@@ -221,7 +219,6 @@ export const BundleAssets = (props) => {
           className={css.toolbar}
           renderActions={({ actionClassName }) => (
             <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
-              <SortDropdown fields={sortFields} {...sort} onChange={updateSort} />
               <MetricsTableOptions
                 handleViewAll={resetAllFilters}
                 handleResetFilters={resetFilters}
@@ -252,6 +249,8 @@ export const BundleAssets = (props) => {
             emptyMessage={emptyMessage}
             showHeaderSum
             title={metricsTableTitle}
+            sort={sort}
+            updateSort={updateSort}
           />
         </main>
       </section>
@@ -313,12 +312,6 @@ BundleAssets.propTypes = {
   }).isRequired,
   entryId: PropTypes.string,
   hasActiveFilters: PropTypes.bool,
-  sortFields: PropTypes.shape({
-    [PropTypes.string]: PropTypes.shape({
-      label: PropTypes.string,
-      defaultDirection: PropTypes.bool,
-    }),
-  }).isRequired,
   search: PropTypes.string.isRequired,
   updateSearch: PropTypes.func.isRequired,
   sort: PropTypes.shape({

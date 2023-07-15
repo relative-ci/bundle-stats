@@ -35,3 +35,8 @@ export const METRICS_WEBPACK_MODULES = [
   'webpack.duplicateCode',
 ];
 export const METRICS_WEBPACK_PACKAGES = ['webpack.packageCount', 'webpack.duplicatePackagesCount'];
+
+export const SORT = {
+  ASC: 'asc',
+  DESC: 'desc',
+};

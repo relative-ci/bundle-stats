@@ -10,7 +10,6 @@ export { Icon } from './icon';
 export { Input } from './input';
 export { Loader } from './loader';
 export { Skeleton } from './skeleton';
-export { SortDropdown } from './sort-dropdown';
 export { Table } from './table';
 export { Tabs } from './tabs';
 export { Tag } from './tag';

@@ -1,0 +1,89 @@
+.root {
+  --icon-dimension: 15px;
+  display: inline-block;
+  margin: calc(0px - var(--space-xxxsmall));
+  margin-right: calc(0px - 1px - var(--icon-dimension));
+  border-radius: var(--radius-small);
+  position: relative;
+}
+
+.button {
+  appearance: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  transition: var(--transition-out);
+}
+
+.toggle {
+  padding: var(--space-xxxsmall);
+  padding-right: calc(1px + var(--icon-dimension));
+}
+
+.direction {
+  position: absolute;
+  padding: 2px;
+  display: block;
+  overflow: hidden;
+  right: -2px; /* compensate for the button padding */
+  color: var(--color-text-ultra-light);
+  transition: var(--transition-out);
+}
+
+.directionIcon {
+  display: block;
+  width: var(--icon-dimension);
+  height: var(--icon-dimension);
+}
+
+.directionActive {
+  color: var(--color-text);
+  transition: var(--transition-in);
+}
+
+.direction:hover,
+.direction:active,
+.direction:focus {
+  color: var(--color-text-dark);
+  transition: var(--transition-in);
+}
+
+.directionAsc {
+  padding-bottom: 0;
+  bottom: 50%;
+}
+
+.directionAsc .directionIcon {
+  transform: translateY(3px);
+}
+
+.directionDesc {
+  padding-top: 0;
+  top: 50%;
+}
+
+.directionDesc .directionIcon {
+  transform: translateY(-5px);
+}
+
+.root:hover,
+.root:active,
+.root:focus {
+  background: var(--color-outline);
+}
+
+.direction {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.active .direction,
+.root:hover .direction,
+.root:active .direction,
+.root:focus .direction {
+  pointer-events: auto;
+  opacity: 1;
+  transition: var(--transition-in);
+}
