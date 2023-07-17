@@ -87,8 +87,8 @@ export const BundleModules = (props) => {
 
   const sortParams = useRowsSort({
     rows: filteredRows,
-    fieldPath: sortBy,
-    direction,
+    initialField: sortBy,
+    initialDirection: direction,
     getCustomSort,
   });
 

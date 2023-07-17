@@ -7,8 +7,8 @@ import { SORT } from '../constants';
 
 interface UseRowsSortParams {
   rows: Array<unknown>;
-  fieldPath: string;
-  direction: SortAction['direction'];
+  initialField: string;
+  initialDirection: SortAction['direction'];
   getCustomSort: (item: unknown) => Array<string | number | boolean>;
 }
 
@@ -23,11 +23,11 @@ export const getSortFn =
 
 export const useRowsSort = ({
   rows,
-  fieldPath = 'runs[0].delta',
-  direction = 'desc',
+  initialField = 'runs[0].delta',
+  initialDirection = 'desc',
   getCustomSort,
 }: UseRowsSortParams) => {
-  const [sort, updateSort] = useState({ field: fieldPath, direction });
+  const [sort, updateSort] = useState({ field: initialField, direction: initialDirection });
 
   const orderedRows = useMemo(
     () =>
@@ -35,7 +35,7 @@ export const useRowsSort = ({
         rows,
         getSortFn(sort.field, getCustomSort),
         // if direction is empty (reset), sort asc
-        direction !== '' ? direction : (SORT.ASC as any),
+        sort.direction !== '' ? sort.direction : (SORT.ASC as any),
       ),
     [rows, sort],
   );
