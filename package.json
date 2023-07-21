@@ -29,7 +29,7 @@
     "lerna": "6.6.2",
     "lint-staged": "13.2.3",
     "prettier": "2.8.8",
-    "rimraf": "4.4.1",
+    "rimraf": "5.0.1",
     "typescript": "5.1.6"
   },
   "scripts": {
