@@ -5,11 +5,11 @@ updates:
     schedule:
       interval: "daily"
       time: "02:00"
-    target-branch: "update-dependencies"
+    target-branch: "master"
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "daily"
       time: "02:00"
-    target-branch: "update-dependencies"
+    target-branch: "master"
     open-pull-requests-limit: 20
