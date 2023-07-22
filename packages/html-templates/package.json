@@ -65,7 +65,7 @@
     "react-test-renderer": "18.2.0",
     "rimraf": "5.0.1",
     "stats-webpack-plugin": "0.7.0",
-    "webpack": "5.86.0",
+    "webpack": "5.88.2",
     "webpack-cli": "5.1.4",
     "webpack-merge": "5.9.0"
   }
