@@ -52,7 +52,6 @@
     "lint": "lerna exec 'npm run lint -- --quiet'",
     "release": "./scripts/release.sh",
     "test": "lerna run test",
-    "test-package": "cd packages/webpack-plugin && npm run test-package",
     "prepare": "husky install"
   },
   "repository": {
