@@ -24,7 +24,6 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           cache: ${{ steps.cache.outputs.PACKAGE }}
-          cache-dependency-path: "**/package-lock.json"
 
       - name: Install dependencies
         run: npm ci
@@ -67,7 +66,6 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           cache: ${{ steps.cache.outputs.PACKAGE }}
-          cache-dependency-path: "**/package-lock.json"
 
       - name: Install dependencies
         run: npm ci
@@ -98,7 +96,6 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
-          cache-dependency-path: "**/package-lock.json"
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
@@ -124,7 +121,6 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
-          cache-dependency-path: "**/package-lock.json"
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
@@ -170,7 +166,6 @@ jobs:
         with:
           node-version: ${{ matrix.version }}
           cache: "npm"
-          cache-dependency-path: "**/package-lock.json"
           registry-url: 'https://registry.npmjs.org'
 
       - name: Download build files
@@ -220,7 +215,6 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
-          cache-dependency-path: "**/package-lock.json"
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install monorepo dependencies
