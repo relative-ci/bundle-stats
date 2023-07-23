@@ -1,0 +1,19 @@
+storage: .verdaccio-storage
+packages:
+  'bundle-stats':
+    access: $all
+    publish: $anonymous
+  'bundle-stats-webpack-plugin':
+    access: $all
+    publish: $anonymous
+  'gatsby-plugin-bundle-stats':
+    access: $all
+    publish: $anonymous
+  'next-plugin-bundle-stats':
+    access: $all
+    publish: $anonymous
+  '@bundle-stats/*':
+    access: $all
+    publish: $anonymous
+publish:
+  allow_offline: true

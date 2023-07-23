@@ -112,79 +112,6 @@ jobs:
       - name: Test
         run: npm test
 
-  test-webpack-plugin-build:
-    needs:
-      - build
-    strategy:
-      matrix:
-        version: [20, 18, 16, 14]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      # Cache packages when the branch is not update-dependencies or dependabot/*
-      - name: Resolve caching
-        id: cache
-        if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
-        run: echo "PACKAGE=npm" >> $GITHUB_OUTPUT
-
-      - name: Use Node.js
-        uses: actions/setup-node@v3.7.0
-        with:
-          node-version: ${{ matrix.version }}
-          cache: "npm"
-          cache-dependency-path: "**/package-lock.json"
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Install Node ${{ matrix.version }} dependencies
-        run: npm install
-
-      - name: Download build files
-        uses: actions/download-artifact@v3
-        with:
-          name: build-artifacts
-
-      - name: Test build
-        run: npm run test:build
-        working-directory: packages/webpack-plugin
-        continue-on-error: true
-
-  test-cli-build:
-    needs:
-      - build
-    strategy:
-      matrix:
-        version: [20, 18, 16, 14]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      # Cache packages when the branch is not update-dependencies or dependabot/*
-      - name: Resolve caching
-        id: cache
-        if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
-        run: echo "PACKAGE=npm" >> $GITHUB_OUTPUT
-
-      - name: Use Node.js
-        uses: actions/setup-node@v3.7.0
-        with:
-          node-version: ${{ matrix.version }}
-          cache: "npm"
-          cache-dependency-path: "**/package-lock.json"
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Install Node ${{ matrix.version }} dependencies
-        run: npm install
-
-      - name: Download build files
-        uses: actions/download-artifact@v3
-        with:
-          name: build-artifacts
-
-      - name: Test build
-        run: npm run test:build
-        working-directory: packages/cli
-
   test-e2e:
     needs:
       - build
@@ -222,18 +149,69 @@ jobs:
         working-directory: packages/cli
         run: node node_modules/.bin/argos upload ./screenshots
 
-  publish:
+  test-packages:
     needs:
-      - test
-      - test-e2e
-      - test-webpack-plugin-build
-      - test-cli-build
+      - build
+    strategy:
+      matrix:
+        version: [20, 18, 16, 14]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      # Cache packages when the branch is not update-dependencies or dependabot/*
+      - name: Resolve caching
+        id: cache
+        if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
+        run: echo "PACKAGE=npm" >> $GITHUB_OUTPUT
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3.7.0
+        with:
+          node-version: ${{ matrix.version }}
+          cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Download build files
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
+
+      - name: Install dependencies
+        run: npm install -g lerna@6.6.2 verdaccio@5.26.1
+
+      - name: Run local npm registry
+        run: ./scripts/local-registry.sh &
+
+      - name: Publish bundle-stats packages locally
+        run: sleep 20 && ./scripts/local-registry-publish.sh
+
+      - name: Test CLI package
+        run: npm run test:build
+        working-directory: packages/cli
+
+      - name: Test webpack-plugin package
+        run: npm run test:build
+        working-directory: packages/webpack-plugin
+
+  tests:
+    needs:
       - lint
-
-    if: contains(github.ref, 'refs/tags/v')
-
+      - test-unit
+      - test-e2e
+      - test-packages
     runs-on: ubuntu-latest
 
+    steps:
+      - run: echo "Tests done."
+
+  publish:
+    # Run only for version tags
+    if: contains(github.ref, 'refs/tags/v')
+    needs:
+      - tests
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
 
