@@ -80,7 +80,7 @@ jobs:
       - name: Lint
         run: npm run lint
 
-  test:
+  test-unit:
     needs:
       - build
     runs-on: ubuntu-latest

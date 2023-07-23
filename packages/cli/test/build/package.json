@@ -1,0 +1,11 @@
+{
+  "name": "test-bundle-stats",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "bundle-stats": "*",
+    "jest": "^29.6.1"
+  }
+}

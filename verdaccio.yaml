@@ -17,3 +17,7 @@ packages:
     publish: $anonymous
 publish:
   allow_offline: true
+uplinks:
+  npmjs:
+    url: https://registry.npmjs.org/
+    max_fails: 100
