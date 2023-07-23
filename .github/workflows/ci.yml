@@ -149,6 +149,7 @@ jobs:
     needs:
       - build
     strategy:
+      fail-fast: false
       matrix:
         version: [20, 18, 16, 14]
     runs-on: ubuntu-latest
