@@ -22,6 +22,9 @@
     "type": "git",
     "url": "git+https://github.com/relative-ci/bundle-stats.git"
   },
+  "publishConfig": {
+    "provenance": true
+  },
   "bugs": {
     "url": "https://github.com/relative-ci/bundle-stats/issues"
   },
