@@ -1,9 +1,6 @@
-# @bundle-stats/html-templates
+# plugin-webpack-filter
 
-[![](https://img.shields.io/npm/v/html-templates.svg)](https://www.npmjs.com/package/html-templates)
-[![Relative CI](https://badges.relative-ci.com/badges/V1bXuieJbYttHCS75L8G)](https://app.relative-ci.com/projects/V1bXuieJbYttHCS75L8G)
-
-HTML report for [bundle-stats](https://github.com/relative-ci/bundle-stats)
+Webpack filter plugin for [bundle-stats](https://github.com/relative-ci/bundle-stats#README)
 
 ## Related projects
 
