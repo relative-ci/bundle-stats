@@ -38,6 +38,7 @@ module.exports = {
         devDependencies: [
           '**/*.stories.jsx',
           '**/__tests__/*.js',
+          '**/test/**/*.js',
           '**/storybook/*.js',
           '**/jest/*.js',
         ],

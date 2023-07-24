@@ -1,0 +1,31 @@
+storage: .verdaccio-storage
+packages:
+  'bundle-stats':
+    access: $all
+    publish: $anonymous
+  'bundle-stats-webpack-plugin':
+    access: $all
+    publish: $anonymous
+  'gatsby-plugin-bundle-stats':
+    access: $all
+    publish: $anonymous
+  'next-plugin-bundle-stats':
+    access: $all
+    publish: $anonymous
+  '@bundle-stats/*':
+    access: $all
+    publish: $anonymous
+  '@*/*':
+    access: $all
+    publish: $all
+    proxy: npmjs
+  '**':
+    access: $all
+    publish: $all
+    proxy: npmjs
+publish:
+  allow_offline: true
+uplinks:
+  npmjs:
+    url: https://registry.npmjs.org/
+    max_fails: 100

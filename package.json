@@ -1,5 +1,17 @@
 {
-  "name": "@bundle-state/bundle-stats",
+  "name": "bundle-stats-workspaces",
+  "workspaces": [
+    "packages/cli",
+    "packages/cli-utils",
+    "packages/gatsby-plugin",
+    "packages/html-templates",
+    "packages/next-plugin",
+    "packages/plugin-webpack-filter",
+    "packages/plugin-webpack-validate",
+    "packages/ui",
+    "packages/utils",
+    "packages/webpack-plugin"
+  ],
   "private": true,
   "description": "Analyze webpack stats(bundle size, assets, modules, packages) and compare the results between different builds.",
   "engines": {
@@ -30,7 +42,8 @@
     "lint-staged": "13.2.3",
     "prettier": "2.8.8",
     "rimraf": "5.0.1",
-    "typescript": "5.1.6"
+    "typescript": "5.1.6",
+    "verdaccio": "5.26.1"
   },
   "scripts": {
     "build": "lerna run build",
@@ -38,10 +51,8 @@
     "format": "prettier --write \"**/*.{js,jsx}\"",
     "lerna": "lerna",
     "lint": "lerna exec 'npm run lint -- --quiet'",
-    "install-dependencies": "npm install && npx lerna bootstrap --hoist",
     "release": "./scripts/release.sh",
     "test": "lerna run test",
-    "test-package": "cd packages/webpack-plugin && npm run test-package",
     "prepare": "husky install"
   },
   "repository": {
