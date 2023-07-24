@@ -131,15 +131,15 @@ jobs:
         with:
           name: build-artifacts
 
-      - name: Report E2E tests - install dependencies
+      - name: Install E2E tests dependencies
         working-directory: packages/cli
         run: npx playwright install --with-deps
 
-      - name: Report E2E tests - run
+      - name: Run E2E tests
         working-directory: packages/cli
         run: npm run test:e2e
 
-      - name: Report E2E tests - upload screenshots
+      - name: E2E tests - upload screenshots
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         continue-on-error: true
         working-directory: packages/cli
