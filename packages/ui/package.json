@@ -31,9 +31,6 @@
     "url": "https://beanon.com"
   },
   "license": "MIT",
-  "publishConfig": {
-    "provenance": true
-  },
   "bugs": {
     "url": "https://github.com/relative-ci/bundle-stats/issues"
   },
