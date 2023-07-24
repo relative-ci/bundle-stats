@@ -18,8 +18,8 @@
     "lint": "../../node_modules/.bin/eslint . --ext .js",
     "serve-demo": "./bin/index.js --demo && http-server dist",
     "test": "echo \"No tests\" && exit 0",
-    "pretest:build": "cd test/build && npm install --legacy-peer-deps --force",
-    "test:build": "cd test/build && npm test",
+    "pretest:package": "cd test/package && npm install --force",
+    "test:package": "cd test/package && npm test --",
     "test:e2e": "playwright test"
   },
   "keywords": [
