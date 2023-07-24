@@ -145,14 +145,14 @@ jobs:
         working-directory: packages/cli
         run: node node_modules/.bin/argos upload ./screenshots
 
-  test-packages:
+  test-package-cli:
     needs:
       - build
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         version: [20, 18, 16, 14]
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
 
@@ -183,12 +183,56 @@ jobs:
       - name: Publish bundle-stats packages locally
         run: sleep 20 && ./scripts/local-registry-publish.sh
 
-      - name: Test CLI package
+      - name: Test package
         run: npm run test:build
         working-directory: packages/cli
 
-      - name: Test webpack-plugin package
-        run: npm run test:build
+  test-package-webpack-plugin:
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [20, 18, 16, 14]
+        webpack: ['webpack4', 'webpack5']
+        exclude:
+          - webpack: 'webpack4'
+            version: 18
+          - webpack: 'webpack4'
+            version: 20
+    steps:
+      - uses: actions/checkout@v3
+
+      # Cache packages when the branch is not update-dependencies or dependabot/*
+      - name: Resolve caching
+        id: cache
+        if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
+        run: echo "PACKAGE=npm" >> $GITHUB_OUTPUT
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3.7.0
+        with:
+          node-version: ${{ matrix.version }}
+          cache: "npm"
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Download build files
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
+
+      - name: Install dependencies
+        run: npm install -g lerna@6.6.2 verdaccio@5.26.1
+
+      - name: Run local npm registry
+        run: ./scripts/local-registry.sh &
+
+      - name: Publish bundle-stats packages locally
+        run: sleep 20 && ./scripts/local-registry-publish.sh
+
+      - name: Test package
+        run: npm run test:build -- -t ${{ matrix.webpack }}
         working-directory: packages/webpack-plugin
 
   tests:
@@ -196,9 +240,9 @@ jobs:
       - lint
       - test-unit
       - test-e2e
-      - test-packages
+      - test-package-cli
+      - test-package-webpack-plugin
     runs-on: ubuntu-latest
-
     steps:
       - run: echo "Tests done."
 

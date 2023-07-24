@@ -15,7 +15,7 @@
     "lint": "../../node_modules/.bin/eslint . --ext .js",
     "test": "TZ=UTC jest src ",
     "pretest:build": "cd test/package && npm install --force",
-    "test:build": "cd test/package && npm test"
+    "test:build": "cd test/package && npm test --"
   },
   "keywords": [
     "webpack",
