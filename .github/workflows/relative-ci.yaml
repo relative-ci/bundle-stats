@@ -10,10 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v3.7.0
-        with:
-          node-version: '16.x'
-
       - name: Send webpack stats to RelativeCI
         uses: relative-ci/agent-action@v2
         with:
