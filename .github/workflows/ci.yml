@@ -184,7 +184,7 @@ jobs:
         run: sleep 20 && ./scripts/local-registry-publish.sh
 
       - name: Test package
-        run: npm run test:build
+        run: npm run test:package
         working-directory: packages/cli
 
   test-package-webpack-plugin:
@@ -232,7 +232,7 @@ jobs:
         run: sleep 20 && ./scripts/local-registry-publish.sh
 
       - name: Test package
-        run: npm run test:build -- -t ${{ matrix.webpack }}
+        run: npm run test:package -- -t ${{ matrix.webpack }}
         working-directory: packages/webpack-plugin
 
   tests:
