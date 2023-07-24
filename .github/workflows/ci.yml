@@ -153,6 +153,7 @@ jobs:
       fail-fast: false
       matrix:
         version: [20, 18, 16, 14]
+    name: CLI nodejs ${{ matrix.version }}
     steps:
       - uses: actions/checkout@v3
 
@@ -201,6 +202,7 @@ jobs:
             version: 18
           - webpack: 'webpack4'
             version: 20
+    name: ${{ matrix.webpack }} plugin nodejs ${{ matrix.version }}
     steps:
       - uses: actions/checkout@v3
 
