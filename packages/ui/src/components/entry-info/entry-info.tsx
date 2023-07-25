@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import { Portal } from 'ariakit/portal';
+import { Portal } from '@ariakit/react';
 import { METRIC_TYPE_CONFIGS, MetricRunInfo, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { Box } from '../../layout/box';

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { Menu, MenuButton, MenuItem, useMenuState } from 'ariakit/menu';
+import { Menu, MenuButton, MenuItem, useMenuStore } from '@ariakit/react';
 
 import { Button, BUTTON_SIZE } from '../button';
 import css from './dropdown.module.css';
@@ -23,7 +23,7 @@ Item.defaultProps = {
 export const Dropdown = (props) => {
   const { className, buttonClassName, label, ariaLabel, glyph, disabled, children } = props;
   const rootClassName = cx(css.root, className);
-  const menuState = useMenuState();
+  const menu = useMenuStore();
 
   return (
     <div className={rootClassName}>
@@ -33,17 +33,17 @@ export const Dropdown = (props) => {
         size={BUTTON_SIZE.SMALL}
         glyph={glyph}
         disabled={disabled}
-        state={menuState}
+        store={menu}
         tabIndex={null}
         className={cx(css.button, buttonClassName)}
       >
         {label}
       </MenuButton>
-      <Menu state={menuState} aria-label={ariaLabel || label} className={css.dropdown}>
+      <Menu store={menu} aria-label={ariaLabel || label} className={css.dropdown}>
         {typeof children === 'function'
           ? children({
               MenuItem: Item,
-              menu: menuState,
+              menu,
               menuItemClassName: css.item,
               menuItemActiveClassName: css.itemActive,
             })
