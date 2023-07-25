@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { Menu, MenuButton, MenuItem, useMenuState } from 'ariakit/menu';
+import { Menu, MenuButton, MenuItem, useMenuStore } from '@ariakit/react';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Icon } from '../icon';
@@ -24,26 +24,21 @@ Item.defaultProps = {
 export const Dropdown = (props) => {
   const { className, buttonClassName, label, ariaLabel, glyph, disabled, children } = props;
   const rootClassName = cx(css.root, className);
-  const menuState = useMenuState();
+  const menu = useMenuStore();
 
   return (
     <div className={rootClassName}>
-      <MenuButton
-        state={menuState}
-        className={cx(css.button, buttonClassName)}
-        disabled={disabled}
-        tabIndex={null}
-      >
+      <MenuButton store={menu} className={cx(css.button, buttonClassName)} tabIndex={null}>
         <FlexStack space="xxxsmall" alignItems="center" className={css.label}>
           {glyph && <Icon className={css.labelIcon} glyph={glyph} />}
           {label && <span className={css.labelText}>{label}</span>}
         </FlexStack>
       </MenuButton>
-      <Menu state={menuState} aria-label={ariaLabel || label} className={css.dropdown}>
+      <Menu store={menu} aria-label={ariaLabel || label} className={css.dropdown}>
         {typeof children === 'function'
           ? children({
               MenuItem: Item,
-              menu: menuState,
+              menu,
               menuItemClassName: css.item,
               menuItemActiveClassName: css.itemActive,
             })
