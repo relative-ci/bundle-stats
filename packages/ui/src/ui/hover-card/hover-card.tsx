@@ -1,12 +1,11 @@
 import React, { useMemo } from 'react';
 import cx from 'classnames';
 import {
-  Hovercard,
-  HovercardAnchor,
-  HovercardArrow,
-  useHovercard,
-  useHovercardState,
-} from 'ariakit/hovercard';
+  Hovercard as BaseHoverCard,
+  HovercardAnchor as BaseHoverCardAnchor,
+  HovercardArrow as BaseHoverCardArrow,
+  useHovercardStore,
+} from '@ariakit/react';
 
 import css from './hover-card.module.css';
 
@@ -31,8 +30,8 @@ export const HoverCard = (props: HoverCardProps) => {
     children,
   } = props;
 
-  const state = useHovercardState({ gutter: 8, timeout: 300, placement: 'top' });
-  const hovercardProps = useHovercard({ state, portal: true });
+  const hovercard = useHovercardStore({ timeout: 800, placement: 'top' });
+  const state = hovercard.getState();
 
   // Fallback to span if no href
   const Component = useMemo(() => {
@@ -49,23 +48,18 @@ export const HoverCard = (props: HoverCardProps) => {
 
   return (
     <div className={cx(css.root, className)}>
-      <HovercardAnchor
-        state={state}
+      <BaseHoverCardAnchor
+        store={hovercard}
         href={href}
         className={cx(css.anchor, anchorClassName)}
-        as={Component}
-        aria-controls={state.open ? hovercardProps.id : ''}
+        aria-controls={state.open ? 'hovercard' : ''}
       >
-        {label}
-      </HovercardAnchor>
-      <Hovercard
-        {...hovercardProps}
-        state={state}
-        className={cx(css.hoverCard, hoverCardClassName)}
-      >
-        <HovercardArrow size={24} />
-        {typeof children === 'function' ? children({ close: state.hide }) : children}
-      </Hovercard>
+        <Component>{label}</Component>
+      </BaseHoverCardAnchor>
+      <BaseHoverCard store={hovercard} portal className={cx(css.hoverCard, hoverCardClassName)}>
+        <BaseHoverCardArrow size={24} />
+        {typeof children === 'function' ? children({ close: hovercard.hide }) : children}
+      </BaseHoverCard>
     </div>
   );
 };

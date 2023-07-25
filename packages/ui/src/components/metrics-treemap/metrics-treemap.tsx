@@ -12,7 +12,7 @@ import React, {
 import { useHoverDirty, useMeasure } from 'react-use';
 import cx from 'classnames';
 import { HierarchyRectangularNode, hierarchy, treemap, treemapSquarify } from 'd3';
-import { Tooltip, TooltipArrow, TooltipAnchor } from 'ariakit/tooltip';
+import { Tooltip, TooltipArrow, TooltipAnchor } from '@ariakit/react';
 import {
   type ReportMetricRow,
   type MetricRunInfo,
@@ -128,15 +128,15 @@ const TileContent = forwardRef((props: TileContentProps, ref: Ref<HTMLDivElement
 const TileContentWithTooltip = (props: TileContentProps & { parentRef: RefObject<Element> }) => {
   const { label, sizeDisplay, item, runInfo, parentRef } = props;
 
-  const tooltipState = useTooltipStateWithMouseFollow({ parentRef });
+  const { tooltip, getAnchorRect } = useTooltipStateWithMouseFollow({ parentRef });
 
   return (
     <>
-      <TooltipAnchor state={tooltipState} className={css.tileContentTooltipAnchor}>
+      <TooltipAnchor store={tooltip} className={css.tileContentTooltipAnchor}>
         <TileContent label={label} sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
       </TooltipAnchor>
-      <Tooltip state={tooltipState} className={css.tooltip}>
-        <TooltipArrow state={tooltipState} size={16} className={css.tileTooltipArrow} />
+      <Tooltip store={tooltip} gutter={16} getAnchorRect={getAnchorRect} className={css.tooltip}>
+        <TooltipArrow store={tooltip} size={16} className={css.tileTooltipArrow} />
         <TileTooltipContent item={item} />
       </Tooltip>
     </>
@@ -258,15 +258,15 @@ type TileGroupTitleContentWithTooltipProps = {
 const TileGroupTitleContentWithTooltip = (props: TileGroupTitleContentWithTooltipProps) => {
   const { parentRef, tooltipContent, ...restProps } = props;
 
-  const tooltipState = useTooltipStateWithMouseFollow({ parentRef });
+  const { tooltip, getAnchorRect } = useTooltipStateWithMouseFollow({ parentRef });
 
   return (
     <>
-      <TooltipAnchor state={tooltipState} className={css.tileContentTooltipAnchor}>
+      <TooltipAnchor store={tooltip} className={css.tileContentTooltipAnchor}>
         <TileGroupTitleContent {...restProps} />
       </TooltipAnchor>
-      <Tooltip state={tooltipState} className={css.tooltip}>
-        <TooltipArrow state={tooltipState} size={16} className={css.tileTooltipArrow} />
+      <Tooltip store={tooltip} gutter={16} getAnchorRect={getAnchorRect} className={css.tooltip}>
+        <TooltipArrow store={tooltip} size={16} className={css.tileTooltipArrow} />
         <TileGroupTitleTooltipContent {...tooltipContent} />
       </Tooltip>
     </>
