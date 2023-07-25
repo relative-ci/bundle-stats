@@ -13,11 +13,11 @@
     "prebuild-esm": "npx rimraf ./lib-esm ./types",
     "build-esm": "../../node_modules/.bin/tsc --rootDir ./src --project tsconfig.esm.json --outDir ./lib-esm",
     "build-assets-esm": "rsync -arm --include '*/' --include '*.json' --include '*.css' --include 'icons.svg' --exclude '*' src/ lib-esm",
-    "build-storybook": "npx build-storybook -c ./build/storybook",
+    "build-storybook": "storybook build -c ./build/storybook",
     "generate-chart-colors": "node scripts/generate-chart-colors.js",
     "generate-svg-sprite": "npx svg-sprite -s --si --no-svg-namespace-classnames src/assets/icons/*.svg && mv symbol/svg/sprite.symbol.svg src/assets/icons.svg",
     "lint": "../../node_modules/.bin/eslint . --resolve-plugins-relative-to ../../",
-    "start": "cross-env NODE_ENV=development start-storybook -c ./build/storybook -p 8080",
+    "start": "cross-env NODE_ENV=development storybook dev -c ./build/storybook -p 8080",
     "test": "jest src --passWithNoTests"
   },
   "repository": {
@@ -54,13 +54,12 @@
     "jest-date-mock": "1.0.8",
     "jest-environment-jsdom": "29.6.2",
     "lodash": "4.17.21",
-    "postcss": "8.4.27",
     "prop-types": "15.8.1",
     "react": "17.0.2",
-    "react-docgen-typescript-plugin": "^1.0.5",
     "react-dom": "17.0.2",
     "react-router-dom": "5.3.4",
     "rimraf": "5.0.1",
+    "storybook": "7.1.1",
     "typescript": "5.1.6",
     "typescript-plugin-css-modules": "5.0.1"
   },

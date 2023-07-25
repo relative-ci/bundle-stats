@@ -1,41 +1,24 @@
-const postcss = require('postcss');
+const { dirname, join } = require('path');
+
+function getAbsolutePath(value) {
+  return dirname(join(__dirname, '../../../../node_modules', value, 'package.json'));
+}
 
 module.exports = {
+  framework: getAbsolutePath('@storybook/react-webpack5'),
   stories: ['../../src/**/*.stories.@(jsx|tsx|mdx)'],
   addons: [
-    '@storybook/addon-knobs',
+    getAbsolutePath('@storybook/addon-essentials'),
     {
-      name: '@storybook/addon-postcss',
+      name: getAbsolutePath('@storybook/preset-scss'),
       options: {
-        postcssLoaderOptions: {
-          implementation: postcss,
+        cssLoaderOptions: {
+          modules: { localIdentName: '[name]__[local]--[hash:base64:5]' },
         },
       },
     },
-    '@storybook/addon-essentials',
   ],
-  webpackFinal: (config) => {
-    // CSS module support - rely on css-loader auto option
-    // eslint-disable-next-line no-param-reassign
-    config.module.rules[3] = {
-      test: /\.css/,
-      use: [
-        'style-loader',
-        {
-          loader: 'css-loader',
-          options: {
-            modules: true,
-          },
-        },
-      ],
-    };
-
-    return config;
-  },
-  typescript: {
-    reactDocgen: 'react-docgen-typescript-plugin',
-  },
-  core: {
-    builder: 'webpack5',
+  docs: {
+    autodocs: true,
   },
 };
