@@ -1,7 +1,7 @@
 import React from 'react';
 
 import cx from 'classnames';
-import { Button as ButtonBaseComponent } from 'ariakit/button';
+import { Button as ButtonBaseComponent } from '@ariakit/react/button';
 
 import { Icon as BaseIcon } from '../icon';
 import css from './button.module.css';
