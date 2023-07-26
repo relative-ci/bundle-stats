@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import intersection from 'lodash/intersection';
+import union from 'lodash/union';
 import merge from 'lodash/merge';
 import get from 'lodash/get';
 import { MODULE_PATH_PACKAGES } from '@bundle-stats/utils/lib-esm/webpack';
@@ -28,40 +29,38 @@ export const addRowFlags = (row) => {
 
 export const getCustomSort = (item) => [!item.changed, item.key];
 
-export const getRowFilter = (filters) => (row) => {
-  // Skip not changed rows
-  if (filters[MODULE_FILTERS.CHANGED] && !row.changed) {
-    return false;
-  }
+export const generateGetRowFilter =
+  ({ chunkIds }) =>
+  (filters) =>
+  (row) => {
+    // Skip not changed rows
+    if (filters[MODULE_FILTERS.CHANGED] && !row.changed) {
+      return false;
+    }
 
-  // Skip not duplicated rows
-  if (filters[MODULE_FILTERS.DUPLICATED] && !row.duplicated) {
-    return false;
-  }
+    // Skip not duplicated rows
+    if (filters[MODULE_FILTERS.DUPLICATED] && !row.duplicated) {
+      return false;
+    }
 
-  // Skip not matching source type
-  if (
-    !(
-      (filters[`${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.FIRST_PARTY}`] &&
-        row.thirdParty === false) ||
-      (filters[`${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.THIRD_PARTY}`] && row.thirdParty === true)
-    )
-  ) {
-    return false;
-  }
+    // Skip not matching source type
+    if (
+      !(
+        (filters[`${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.FIRST_PARTY}`] &&
+          row.thirdParty === false) ||
+        (filters[`${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.THIRD_PARTY}`] && row.thirdParty === true)
+      )
+    ) {
+      return false;
+    }
 
-  // Skip not matching source file types
-  if (!filters[`${MODULE_FILE_TYPE}.${row.fileType}`]) {
-    return false;
-  }
+    // Skip not matching source file types
+    if (!filters[`${MODULE_FILE_TYPE}.${row.fileType}`]) {
+      return false;
+    }
 
-  return true;
-};
-
-export const useModuleFilterByChunk = ({ jobs, filters, chunkIds }) => {
-  const filteredJobs = useMemo(() => {
     // List of chunkIds with filter value set to `true`
-    const includedChunkIds = chunkIds.reduce((agg, chunkId) => {
+    const checkedChunkIds = chunkIds.reduce((agg, chunkId) => {
       if (get(filters, `${MODULE_CHUNK}.${chunkId}`)) {
         return [...agg, chunkId];
       }
@@ -69,37 +68,14 @@ export const useModuleFilterByChunk = ({ jobs, filters, chunkIds }) => {
       return agg;
     }, []);
 
-    // If all the filters are included, return jobs as they are
-    if (includedChunkIds.length === chunkIds.length) {
-      return jobs;
+    // Filter if any of the chunkIds are checked
+    if (checkedChunkIds.length !== chunkIds.length) {
+      const rowRunsChunkIds = row?.runs?.map((run) => run?.chunkIds || []) || [];
+      const rowChunkIds = union(...rowRunsChunkIds);
+      const matchedChunkIds = intersection(rowChunkIds, checkedChunkIds);
+
+      return matchedChunkIds.length > 0;
     }
 
-    const jobsWithFilteredData = jobs.map((job) => {
-      const modules = job?.metrics?.webpack?.modules;
-
-      if (!modules) {
-        return job;
-      }
-
-      const filteredModules = Object.entries(modules).reduce((agg, [moduleId, moduleEntry]) => {
-        const match = intersection(moduleEntry.chunkIds, includedChunkIds);
-
-        if (match.length > 0) {
-          agg[moduleId] = moduleEntry; // eslint-disable-line no-param-reassign
-        }
-
-        return agg;
-      }, {});
-
-      // Copy job data into a new object to prevent mutations of the original data
-      const newJob = merge({}, job);
-      newJob.metrics.webpack.modules = filteredModules;
-
-      return newJob;
-    });
-
-    return jobsWithFilteredData;
-  }, [jobs, filters, chunkIds]);
-
-  return filteredJobs;
-};
+    return true;
+  };

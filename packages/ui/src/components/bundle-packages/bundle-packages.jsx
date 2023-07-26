@@ -127,6 +127,8 @@ export const BundlePackages = (props) => {
     hideEntryInfo,
   } = props;
 
+  const jobLabels = jobs?.map((job) => job?.label);
+
   const dropdownFilters = useMemo(
     () => getDropdownFilters({ compareMode: jobs?.length > 1, filters }),
     [jobs, filters],
@@ -148,13 +150,13 @@ export const BundlePackages = (props) => {
     (row) => (
       <RowHeader
         row={row}
-        labels={jobs.map((job) => job?.label)}
+        labels={jobLabels}
         CustomComponentLink={CustomComponentLink}
         filters={filters}
         search={search}
       />
     ),
-    [CustomComponentLink, jobs, filters, search],
+    [CustomComponentLink, jobLabels, filters, search],
   );
 
   const emptyMessage = useMemo(
@@ -168,6 +170,14 @@ export const BundlePackages = (props) => {
     ),
     [totalRowCount, resetFilters, resetAllFilters],
   );
+
+  const entryItem = useMemo(() => {
+    if (!entryId) {
+      return null;
+    }
+
+    return allItems.find(({ key }) => key === entryId)
+  }, [allItems, entryId]);
 
   return (
     <>
@@ -211,11 +221,11 @@ export const BundlePackages = (props) => {
           />
         </main>
       </section>
-      {entryId && (
+      {entryItem && (
         <PackageInfo
           className={css.packageInfo}
-          item={allItems.find(({ key }) => key === entryId)}
-          labels={jobs?.map(({ label }) => label)}
+          item={entryItem}
+          labels={jobLabels}
           customComponentLink={CustomComponentLink}
           onClose={hideEntryInfo}
         />

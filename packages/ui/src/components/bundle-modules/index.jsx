@@ -13,31 +13,23 @@ import { useRowsFilter } from '../../hooks/rows-filter';
 import { useRowsSort } from '../../hooks/rows-sort';
 import { useSearchParams } from '../../hooks/search-params';
 import { BundleModules as BundleModulesComponent } from './bundle-modules';
-import {
-  addRowFlags,
-  getRowFilter,
-  getCustomSort,
-  useModuleFilterByChunk,
-} from './bundle-modules.utils';
+import { addRowFlags, generateGetRowFilter, getCustomSort } from './bundle-modules.utils';
 
 export const BundleModules = (props) => {
   const { jobs, filters, search, setState, sortBy, direction, ...restProps } = props;
 
-  const { chunks, chunkIds } = useMemo(
-    () => {
-      const bundleChunks = uniqBy(
-        jobs.map((job) => job?.meta?.webpack?.chunks || []).flat(),
-        ({ id }) => id
-      );
-      const bundleChunkIds = bundleChunks?.map(({ id }) => id);
+  const { chunks, chunkIds } = useMemo(() => {
+    const bundleChunks = uniqBy(
+      jobs.map((job) => job?.meta?.webpack?.chunks || []).flat(),
+      ({ id }) => id,
+    );
+    const bundleChunkIds = bundleChunks?.map(({ id }) => id);
 
-      return {
-        chunks: bundleChunks,
-        chunkIds: bundleChunkIds,
-      };
-    },
-    [jobs],
-  );
+    return {
+      chunks: bundleChunks,
+      chunkIds: bundleChunkIds,
+    };
+  }, [jobs]);
 
   const { defaultFilters, allEntriesFilters } = useMemo(
     () => ({
@@ -67,22 +59,16 @@ export const BundleModules = (props) => {
     setState,
   });
 
-  const filteredJobsByChunkIds = useModuleFilterByChunk({
-    jobs,
-    filters: searchParams.filters,
-    chunkIds,
-  });
-
   const { rows, totalRowCount } = useMemo(() => {
-    const result = webpack.compareBySection.modules(filteredJobsByChunkIds, [addRowFlags]);
+    const result = webpack.compareBySection.modules(jobs, [addRowFlags]);
     return { rows: result, totalRowCount: result.length };
-  }, [filteredJobsByChunkIds]);
+  }, [jobs]);
 
   const filteredRows = useRowsFilter({
     rows,
     searchPattern: searchParams.searchPattern,
     filters: searchParams.filters,
-    getRowFilter,
+    getRowFilter: generateGetRowFilter({ chunkIds }),
   });
 
   const sortParams = useRowsSort({
