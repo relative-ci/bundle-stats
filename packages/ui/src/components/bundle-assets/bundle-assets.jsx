@@ -177,6 +177,8 @@ export const BundleAssets = (props) => {
     hideEntryInfo,
   } = props;
 
+  const jobLabels = jobs?.map((job) => job?.label);
+
   const dropdownFilters = useMemo(
     () => getFilters({ compareMode: jobs?.length > 1, filters }),
     [jobs, filters],
@@ -211,6 +213,14 @@ export const BundleAssets = (props) => {
       handleViewAll={resetAllFilters}
     />
   ), [totalRowCount, resetFilters, resetAllFilters]);
+
+  const entryItem = useMemo(() => {
+    if (!entryId) {
+      return null;
+    }
+
+    return allItems.find(({ key }) => key === entryId)
+  }, [allItems, entryId]);
 
   return (
     <>
@@ -255,11 +265,11 @@ export const BundleAssets = (props) => {
         </main>
       </section>
 
-      {entryId && (
+      {entryItem && (
         <AssetInfo
           className={css.assetInfo}
-          item={allItems.find(({ key }) => key === entryId)}
-          labels={jobs?.map(({ label }) => label)}
+          item={entryItem}
+          labels={jobLabels}
           chunks={jobs[0]?.meta?.webpack?.chunks || []}
           customComponentLink={CustomComponentLink}
           onClose={hideEntryInfo}

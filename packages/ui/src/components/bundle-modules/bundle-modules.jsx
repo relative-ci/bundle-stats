@@ -135,6 +135,8 @@ export const BundleModules = ({
 }) => {
   const rootClassName = cx(css.root, className);
 
+  const jobLabels = jobs?.map((job) => job?.label);
+
   const dropdownFilters = useMemo(
     () => getFilters({ filters, chunks, compareMode: jobs.length > 1 }),
     [jobs, filters, chunks]
@@ -169,6 +171,14 @@ export const BundleModules = ({
       handleViewAll={resetAllFilters}
     />
   ), [totalRowCount, resetFilters, resetAllFilters]);
+
+  const entryItem = useMemo(() => {
+    if (!entryId) {
+      return null;
+    }
+
+    return allItems.find(({ key }) => key === entryId)
+  }, [allItems, entryId]);
 
   return (
     <>
@@ -212,13 +222,13 @@ export const BundleModules = ({
           updateSort={updateSort}
         />
       </div>
-      {entryId && (
+      {entryItem && (
         <ModuleInfo
           className={css.moduleInfo}
-          item={allItems.find(({ key }) => key === entryId)}
+          item={entryItem}
           chunks={chunks}
           chunkIds={chunks?.map(({ id }) => id)}
-          labels={jobs.map(({ label }) => label)}
+          labels={jobLabels}
           customComponentLink={CustomComponentLink}
           onClose={hideEntryInfo}
         />
