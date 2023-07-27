@@ -95,8 +95,7 @@ jobs:
         uses: actions/setup-node@v3.7.0
         with:
           node-version-file: ".nvmrc"
-          cache: "npm"
-          registry-url: 'https://registry.npmjs.org'
+          cache: ${{ steps.cache.outputs.PACKAGE }}
 
       - name: Install dependencies
         run: npm ci
@@ -116,12 +115,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      # Cache packages when the branch is not update-dependencies or dependabot/*
+      - name: Resolve caching
+        id: cache
+        if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
+        run: echo "PACKAGE=npm" >> $GITHUB_OUTPUT
+
       - name: Use Node.js
         uses: actions/setup-node@v3.7.0
         with:
           node-version-file: ".nvmrc"
-          cache: "npm"
-          registry-url: 'https://registry.npmjs.org'
+          cache: ${{ steps.cache.outputs.PACKAGE }}
 
       - name: Install dependencies
         run: npm ci
@@ -167,8 +171,7 @@ jobs:
         uses: actions/setup-node@v3.7.0
         with:
           node-version: ${{ matrix.version }}
-          cache: "npm"
-          registry-url: 'https://registry.npmjs.org'
+          cache: ${{ steps.cache.outputs.PACKAGE }}
 
       - name: Download build files
         uses: actions/download-artifact@v3
@@ -216,8 +219,7 @@ jobs:
         uses: actions/setup-node@v3.7.0
         with:
           node-version: ${{ matrix.version }}
-          cache: "npm"
-          registry-url: 'https://registry.npmjs.org'
+          cache: ${{ steps.cache.outputs.PACKAGE }}
 
       - name: Download build files
         uses: actions/download-artifact@v3
@@ -259,12 +261,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      # Cache packages when the branch is not update-dependencies or dependabot/*
+      - name: Resolve caching
+        id: cache
+        if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
+        run: echo "PACKAGE=npm" >> $GITHUB_OUTPUT
+
       - name: Use Node.js
         uses: actions/setup-node@v3.7.0
         with:
           node-version-file: ".nvmrc"
-          cache: "npm"
-          registry-url: 'https://registry.npmjs.org'
+          cache: ${{ steps.cache.outputs.PACKAGE }}
 
       - name: Install monorepo dependencies
         run: npm ci
