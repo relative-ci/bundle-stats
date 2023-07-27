@@ -32,7 +32,7 @@ jobs:
         run: npm run build
 
       - name: Upload webpack stats file
-        uses: relative-ci/agent-upload-artifact-action@v1
+        uses: relative-ci/agent-upload-artifact-action@v1.0.3
         with:
           webpackStatsFile: ./packages/html-templates/artifacts/webpack-stats.json
 
