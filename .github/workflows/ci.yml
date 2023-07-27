@@ -209,17 +209,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Cache packages when the branch is not update-dependencies or dependabot/*
-      - name: Resolve caching
-        id: cache
-        if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
-        run: echo "PACKAGE=npm" >> $GITHUB_OUTPUT
-
       - name: Use Node.js
         uses: actions/setup-node@v3.7.0
         with:
           node-version: ${{ matrix.version }}
-          cache: ${{ steps.cache.outputs.PACKAGE }}
 
       - name: Download build files
         uses: actions/download-artifact@v3
