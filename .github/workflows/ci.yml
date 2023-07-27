@@ -265,6 +265,7 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           cache: ${{ steps.cache.outputs.PACKAGE }}
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Install monorepo dependencies
         run: npm ci
