@@ -1,13 +1,9 @@
 /* eslint-disable no-console */
 import path from 'path';
-import { createReadStream } from 'fs';
 import { outputFile } from 'fs-extra';
 import { Listr } from 'listr2';
 import { get } from 'lodash';
 import boxen from 'boxen';
-import { parser } from 'stream-json';
-import { chain } from 'stream-chain';
-import Asm from 'stream-json/Assembler';
 import type { StatsCompilation } from 'webpack';
 import '@bundle-stats/utils/lib/polyfills';
 import {
@@ -29,6 +25,7 @@ import {
   getBaselineStatsFilepath,
   getReportInfo,
   readBaseline,
+  readJSONStream,
   writeBaseline,
 } from '@bundle-stats/cli-utils';
 
@@ -66,14 +63,7 @@ export default async function run(options: RunOptions): Promise<void> {
       title: 'Read Webpack stats files',
       task: async (ctx) => {
         const sources = await Promise.all(
-          artifactFilepaths.map((filepath) => {
-            const pipeline = chain([createReadStream(filepath), parser()]);
-            const asm = Asm.connectTo(pipeline);
-
-            return new Promise<StatsCompilation>((fulfill) => {
-              asm.on('done', (data) => fulfill(data.current));
-            });
-          }),
+          artifactFilepaths.map((filepath) => readJSONStream<StatsCompilation>(filepath)),
         );
 
         sources.forEach((source, index) => {
@@ -150,17 +140,17 @@ export default async function run(options: RunOptions): Promise<void> {
       title: 'Save reports',
       task: (ctx) =>
         new Listr(
-          Object.values(ctx.artifacts).map(({ filename, output }: any) => ({
-            title: filename,
-            task: async () => {
-              const filepath = path.join(outDir, filename);
-              await outputFile(filepath, output);
+        Object.values(ctx.artifacts).map(({ filename, output }: any) => ({
+          title: filename,
+          task: async () => {
+            const filepath = path.join(outDir, filename);
+            await outputFile(filepath, output);
 
-              ctx.output = [...(ctx.output ? ctx.output : []), filepath];
-            },
-          })),
-          { concurrent: true },
-        ),
+            ctx.output = [...(ctx.output ? ctx.output : []), filepath];
+          },
+        })),
+        { concurrent: true },
+      ),
     },
   ]);
 
