@@ -11,6 +11,7 @@ module.exports = {
       },
     ],
     '@babel/preset-react',
+    '@babel/preset-typescript',
   ],
   env: {
     test: {
@@ -26,6 +27,7 @@ module.exports = {
           },
         ],
         '@babel/preset-react',
+        '@babel/preset-typescript',
       ],
       plugins: ['require-context-hook'],
     },

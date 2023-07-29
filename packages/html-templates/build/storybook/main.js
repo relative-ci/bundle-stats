@@ -1,19 +1,21 @@
-const postcss = require('postcss');
+const { dirname, join } = require('path');
+
+function getAbsolutePath(value) {
+  return dirname(join(__dirname, '../../../../node_modules', value, 'package.json'));
+}
 
 module.exports = {
-  stories: ['../../src/**/*.stories.jsx'],
+  framework: getAbsolutePath('@storybook/react-webpack5'),
+  stories: ['../../src/**/*.stories.@(jsx|tsx|mdx)'],
   addons: [
+    getAbsolutePath('@storybook/addon-essentials'),
     {
-      name: '@storybook/addon-postcss',
+      name: getAbsolutePath('@storybook/preset-scss'),
       options: {
-        postcssLoaderOptions: {
-          implementation: postcss,
+        cssLoaderOptions: {
+          modules: { localIdentName: '[name]__[local]--[hash:base64:5]' },
         },
       },
     },
-    '@storybook/addon-essentials',
   ],
-  core: {
-    builder: 'webpack5',
-  },
 };
