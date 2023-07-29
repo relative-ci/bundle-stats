@@ -1,4 +1,4 @@
-import { stringify } from 'query-string';
+import queryString from 'query-string';
 import { JsonParam, encodeQueryParams } from 'serialize-query-params';
 
 import {
@@ -370,7 +370,7 @@ export const getComponentStateQueryString = (params = {}) => {
     {},
   );
 
-  return stringify(encodeQueryParams(meta, params));
+  return queryString.stringify(encodeQueryParams(meta, params));
 };
 
 export const METRIC_COMPONENT_LINKS = new Map([
