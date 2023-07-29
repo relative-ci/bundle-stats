@@ -50,6 +50,7 @@ module.exports = {
     'prettier/prettier': 'warn',
     'no-unused-vars': ['warn', { varsIgnorePattern: '^[_]{1,}$' }],
     'implicit-arrow-linebreak': 'warn',
+    indent: 'warn',
     'react/function-component-definition': [
       'warn',
       {
@@ -87,6 +88,7 @@ module.exports = {
         'react/require-default-props': 'off',
         '@typescript-eslint/comma-dangle': 'warn',
         '@typescript-eslint/no-unused-vars': ['warn', { varsIgnorePattern: '^[_]{1,}$' }],
+        '@typescript-eslint/indent': 'warn',
         'react/prop-types': 'off',
         // '@typescript-eslint/implicit-arrow-linebreak': 'warn',
       },
