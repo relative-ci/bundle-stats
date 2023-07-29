@@ -36,6 +36,7 @@ module.exports = {
       {
         peerDependencies: true,
         devDependencies: [
+          'build/**/*.js',
           '**/*.stories.jsx',
           '**/__tests__/*.js',
           '**/test/**/*.js',
@@ -74,6 +75,7 @@ module.exports = {
           {
             peerDependencies: true,
             devDependencies: [
+              'build/**/*.ts',
               '**/*.stories.tsx',
               '**/__tests__/*.ts',
               '**/storybook/*.ts',

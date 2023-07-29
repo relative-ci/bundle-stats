@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 module.exports = (settings) => {
   const { isProduction, isDevelopment, rootDir } = settings;
-  const pkg = require(path.join(rootDir, 'package.json'));
+  const pkg = require(path.join(rootDir, 'package.json')); // eslint-disable-line global-require,import/no-dynamic-require
 
   return {
     plugins: [
