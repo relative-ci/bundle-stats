@@ -41,7 +41,7 @@
     "husky": "8.0.3",
     "lerna": "7.1.4",
     "lint-staged": "13.2.3",
-    "prettier": "3.0.0",
+    "prettier": "3.0.1",
     "rimraf": "5.0.1",
     "typescript": "5.1.6",
     "verdaccio": "5.26.1"
