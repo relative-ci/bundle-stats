@@ -63,7 +63,7 @@
     "react-router-dom": "5.3.4",
     "rimraf": "5.0.1",
     "stats-webpack-plugin": "0.7.0",
-    "storybook": "7.2.0",
+    "storybook": "7.2.1",
     "webpack": "5.88.2",
     "webpack-cli": "5.1.4",
     "webpack-merge": "5.9.0"
