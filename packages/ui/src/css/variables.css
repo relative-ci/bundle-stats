@@ -29,20 +29,19 @@
   /*
    * Color scheme:
    * https://coolors.co/287acc-da444e-55b950-f6e179-192339
-   * http://mcg.mbitson.com/#!?mcgpalette0=%23da444e&mcgpalette1=%2355b950&mcgpalette2=%23f6e179&mcgpalette3=%23505861&mcgpalette4=%23287acc&themename=mcgtheme
+   * http://mcg.mbitson.com/#!?mcgpalette0=%23da444e&mcgpalette1=%2355b950&mcgpalette2=%23f6e179&mcgpalette3=%23353138&mcgpalette4=%23287acc&themename=mcgtheme
+   * https://hihayk.github.io/scale/#4/5/50/90/-51/0/0/14/353138/53/49/56/white
    */
-  --color-gray-25: #f7f7f9;
-  --color-gray-50: #ececee;
-  --color-gray-100: #ced0d4;
-  --color-gray-200: #aeb1b7;
-  --color-gray-300: #8e929a;
-  --color-gray-400: #757a85;
-  --color-gray-500: #5d636f;
-  --color-gray-600: #555b67;
-  --color-gray-700: #4b515c;
-  --color-gray-800: #414752;
-  --color-gray-900: #303540;
-
+  --color-gray-25: #f9f9fa;
+  --color-gray-50: #e8e8e9;
+  --color-gray-200: #a2a0a4;
+  --color-gray-300: #7e7b80;
+  --color-gray-400: #59565c;
+  --color-gray-500: #353138;
+  --color-gray-600: #302b31;
+  --color-gray-700: #2a252a;
+  --color-gray-800: #231e22;
+  --color-gray-900: #1c181b;
 
   --color-gray-ultra-light: var(--color-gray-200);
   --color-gray-light: var(--color-gray-300);
