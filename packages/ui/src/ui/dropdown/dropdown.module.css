@@ -62,6 +62,10 @@
   text-decoration: none;
 }
 
+.item + .item {
+  margin-top: calc(var(--space-xxxsmall) / 2);
+}
+
 .item[data-active-item],
 .item:hover,
 .item:focus,
