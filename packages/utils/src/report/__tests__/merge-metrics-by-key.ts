@@ -22,7 +22,7 @@ describe('merge metrics by keys', () => {
       },
       {
         key: 'metric2',
-        runs: [{ value: 10 }, null],
+        runs: [{ value: 10 }, { value: 0 }],
       },
       {
         key: 'metric4',
@@ -30,7 +30,7 @@ describe('merge metrics by keys', () => {
       },
       {
         key: 'metric3',
-        runs: [null, { value: 10 }],
+        runs: [{ value: 0 }, { value: 10 }],
       },
     ]);
   });
