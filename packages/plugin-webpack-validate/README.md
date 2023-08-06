@@ -4,19 +4,19 @@ Webpack validator plugin for [bundle-stats](https://github.com/relative-ci/bundl
 
 ## Related projects
 
-### :cyclone: [relative-ci.com](https://relative-ci.com?utm_medium=bundle-stats)
+### :cyclone: [relative-ci.com](https://relative-ci.com?utm_medium=bundle-stats-plugin-validate)
 
-#### In-depth webpack bundle analysis and monitoring
+#### Optimize your web app's performance with automated bundle stats analysis and monitoring.
 
-RelativeCI automates webpack bundle analysis, monitoring, and alerting so you can identify and fix bundle regressions before shipping to production:
+- :crystal_ball: In-depth bundle stats analysis for every build
+- :chart_with_upwards_trend: Monitor bundle stats changes and identify opportunities for optimizations
+- :bell: [Rule based automated review flow](https://relative-ci.com/documentation/setup/configure/integrations/github-commit-status-review?utm_medium=bundle-stats-plugin-validate), or get notified via [GitHub Pull Request comments](https://relative-ci.com/documentation/setup/configure/integrations/github-pull-request-comment?utm_medium=bundle-stats-plugin-validate), [GitHub check reports](https://relative-ci.com/documentation/setup/configure/integrations/github-check-report?utm_medium=bundle-stats-plugin-validate) and [Slack messages](https://relative-ci.com/documentation/setup/configure/integrations/slack-notification?utm_medium=bundle-stats-plugin-validate)
+- :wrench: Support for **webpack** and beta support for **Vite**/**Rollup**
+- :hammer: Support for all major CI services(CircleCI, GitHub Actions, Gitlab CI, Jenkins, Travis CI)
+- :nut_and_bolt: Support for **npm**, **yarn** and **pnpm**; support for monorepos
+- :two_hearts: **Always free** for **Open Source**
 
-- :crystal_ball: Analyze webpack bundle stats on every build
-- :chart_with_upwards_trend: Monitor webpack bundle stats changes and identify tendencies over extended periods
-- :bell: Get notified via GitHub Checks, GitHub Pull Request comments, and Slack notifications
-- :hammer: Support for all major CI services (CircleCI, GitHub Actions, Gitlab CI, Jenkins, Travis CI)
-- :two_hearts: Always free for Open Source
-
-[Try for free](https://relative-ci.com?utm_medium=bundle-stats)
+[:rocket: Get started](https://relative-ci.com?utm_medium=bundle-stats-plugin-validate)
 
 ### :first_quarter_moon: [relative-ci/compare](https://compare.relative-ci.com)
 
