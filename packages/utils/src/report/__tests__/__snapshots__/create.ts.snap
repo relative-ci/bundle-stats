@@ -282,7 +282,10 @@ exports[`report / createReport multiple sources 1`] = `
           "name": "node_modules/package-a/node_modules/package-c/index.js",
           "value": 1000,
         },
-        null,
+        {
+          "displayValue": "0B",
+          "value": 0,
+        },
       ],
     },
     {
@@ -362,7 +365,10 @@ exports[`report / createReport multiple sources 1`] = `
           "name": "node_modules/package-d/index.js",
           "value": 1000,
         },
-        null,
+        {
+          "displayValue": "0B",
+          "value": 0,
+        },
       ],
     },
   ],
@@ -409,7 +415,10 @@ exports[`report / createReport multiple sources 1`] = `
           "path": "node_modules/package-a/node_modules/package-c",
           "value": 1000,
         },
-        null,
+        {
+          "displayValue": "0B",
+          "value": 0,
+        },
       ],
     },
     {
@@ -479,7 +488,10 @@ exports[`report / createReport multiple sources 1`] = `
           "path": "node_modules/package-d",
           "value": 1000,
         },
-        null,
+        {
+          "displayValue": "0B",
+          "value": 0,
+        },
       ],
     },
   ],

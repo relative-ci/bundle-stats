@@ -4,10 +4,11 @@ import * as types from './types';
 
 type RunMetrics = Record<string, types.MetricValue>;
 
-const mergeWithRuns = (runIndex: number, runsCount: number) =>
+const mergeWithRuns =
+  (runIndex: number, runsCount: number) =>
   (aggregated: any, currentRun: any): Array<types.MetricValue | null> => {
-    // if there are no runs, just create an array and fill it with `null`
-    const runs = aggregated || Array(runsCount).fill(null);
+    // if there are no runs, just create an array with empty values
+    const runs = aggregated || Array(runsCount).fill({ value: 0 });
     runs[runIndex] = currentRun;
 
     return runs;
