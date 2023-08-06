@@ -3,7 +3,14 @@
   font-weight: bold;
   font-size: var(--size-xsmall);
   text-transform: uppercase;
+}
+
+.titleText {
+  max-width: 100%;
+  flex: 1 1 auto;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .titleIcon {

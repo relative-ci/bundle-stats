@@ -59,7 +59,12 @@ export const RunInfo = ({
   enhance = false,
   ...restProps
 }: RunInfoProps & React.ComponentProps<'div'>) => {
-  const rootClassName = cx(css.root, className, css[size], (delta || deltaPercentage) && css.showDelta);
+  const rootClassName = cx(
+    css.root,
+    className,
+    css[size],
+    (delta || deltaPercentage) && css.showDelta,
+  );
 
   const currentValueParams: [React.ReactNode, string?] = useMemo(() => {
     if (!enhance || typeof current !== 'string') {
@@ -73,7 +78,7 @@ export const RunInfo = ({
     <Component className={rootClassName} {...restProps}>
       {title && (
         <FlexStack space="xxxsmall" alignItems="center" as="h3" className={css.title}>
-          <span>{title}</span>
+          <span className={css.titleText}>{title}</span>
           {titleHoverCard && (
             <HoverCard
               label={<Icon glyph={Icon.ICONS.HELP} />}
@@ -102,11 +107,17 @@ export const RunInfo = ({
               <FlexStack space="xxxsmall" alignItems="center">
                 {deltaPercentage && (
                   <FlexStack space="xxxsmall" alignItems="center">
-                    <Delta className={css.delta} displayValue={deltaPercentage} deltaType={deltaType} />
+                    <Delta
+                      className={css.delta}
+                      displayValue={deltaPercentage}
+                      deltaType={deltaType}
+                    />
                     {' / '}
                   </FlexStack>
                 )}
-                {delta && <Delta className={css.delta} displayValue={delta} deltaType={deltaType} />}
+                {delta && (
+                  <Delta className={css.delta} displayValue={delta} deltaType={deltaType} />
+                )}
               </FlexStack>
             )}
           </Metric>
