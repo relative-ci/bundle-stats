@@ -75,7 +75,7 @@ export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'
       {...(showBaseline && {
         baseline: metric.formatter(baseline),
       })}
-      {...(showDelta && showBaseline && {
+      {...(showDelta && {
         delta: metricRunInfo.displayDeltaPercentage,
         deltaType: metricRunInfo.deltaType,
       })}

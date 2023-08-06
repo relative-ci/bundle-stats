@@ -86,7 +86,7 @@ const ColumnSum = ({ rows, isBaseline, runIndex, updateSort, sort }) => {
               <Delta displayValue={infoTotal.displayDelta} deltaType={infoTotal.deltaType} />
             )}
           </Table.Th>
-          <Table.Th className={cx(styles.delta, styles.sum)}>
+          <Table.Th className={cx(styles.delta, styles.deltaPercentage, styles.sum)}>
             {(updateSort && sort) ? (
               <SortButton
                 fieldPath={fieldPath}

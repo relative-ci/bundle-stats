@@ -12,24 +12,29 @@
 
 /* columns */
 .metricName {
-  width: 100%;
+  width: 55%;
 }
 
 .root .job {
-  padding-right: calc(var(--space-xxxsmall) + var(--space-small));
   text-align: right;
 }
 
 .root .value {
-  padding-left: var(--space-large);
   text-align: right;
   vertical-align: baseline;
+  width: 15%;
 }
 
 .root .delta {
   text-align: right;
   font-size: var(--size-xsmall);
   vertical-align: baseline;
+  width: 10%;
+  color: pink;
+}
+
+.root .deltaPercentage {
+  width: 5%;
 }
 
 .root tbody .delta {

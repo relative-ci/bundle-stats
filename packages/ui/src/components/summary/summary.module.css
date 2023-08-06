@@ -3,6 +3,14 @@
   width: 100%;
 }
 
+.wrapper {
+  width: 100%;
+}
+
+.wrapper + .wrapper {
+  margin-top: var(--summary-gap);
+}
+
 .items {
   display: flex;
   flex-wrap: wrap;
@@ -14,8 +22,12 @@
 .item {
   margin: var(--summary-gap) 0 0 var(--summary-gap);
   flex: 1 0 10%; /* force equal sizes */
-  min-width: 14em;
+  min-width: 12em;
   text-decoration: none;
+}
+
+.itemSmall {
+  min-width: 8em;
 }
 
 .readMoreLink {

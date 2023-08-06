@@ -4,16 +4,9 @@ import isEmpty from 'lodash/isEmpty';
 import { HashRouter, NavLink, Route, Switch, useLocation } from 'react-router-dom';
 import { COMPONENT } from '@bundle-stats/utils';
 
-import {
-  METRICS_WEBPACK_ASSETS,
-  METRICS_WEBPACK_GENERAL,
-  METRICS_WEBPACK_MODULES,
-  METRICS_WEBPACK_PACKAGES,
-  URLS,
-} from '../constants';
+import { URLS } from '../constants';
 import { Box } from '../layout/box';
 import { Container } from '../ui/container';
-import { Summary } from '../components/summary';
 import { BundleAssets } from '../components/bundle-assets';
 import { BundleAssetsTotalsChartBars } from '../components/bundle-assets-totals-chart-bars';
 import { Tabs } from '../ui/tabs';
@@ -23,6 +16,7 @@ import { BundleAssetsTotalsTable } from '../components/bundle-assets-totals-tabl
 import { BundleModules } from '../components/bundle-modules';
 import { BundlePackages } from '../components/bundle-packages';
 import { Insights } from '../components/insights';
+import { Summary } from '../components/summary';
 import { TotalSizeTypeTitle } from '../components/total-size-type-title';
 import { QueryStateProvider, useComponentQueryState } from '../query-state';
 import I18N from '../i18n';
@@ -120,17 +114,9 @@ const AssetsContent = () => {
 
   return (
     <Container>
-      <Stack space="medium">
-        <Summary
-          keys={METRICS_WEBPACK_ASSETS}
-          data={jobs?.[0]?.summary}
-          showSummaryItemDelta={jobs?.length !== 1}
-          showSummaryItemBaseline={jobs?.length !== 1}
-        />
         <Box outline>
           <BundleAssets jobs={jobs} setState={bundleStatsSetState} {...bundleStatsState} />
         </Box>
-      </Stack>
     </Container>
   );
 };
@@ -143,17 +129,9 @@ const ModulesContent = () => {
 
   return (
     <Container>
-      <Stack space="medium">
-        <Summary
-          keys={METRICS_WEBPACK_MODULES}
-          data={jobs?.[0]?.summary}
-          showSummaryItemDelta={jobs?.length !== 1}
-          showSummaryItemBaseline={jobs?.length !== 1}
-        />
         <Box outline>
           <BundleModules jobs={jobs} setState={bundleModulesSetState} {...bundleModulesState} />
         </Box>
-      </Stack>
     </Container>
   );
 };
@@ -166,17 +144,9 @@ const PackagesContent = () => {
 
   return (
     <Container>
-      <Stack space="medium">
-        <Summary
-          keys={METRICS_WEBPACK_PACKAGES}
-          data={jobs?.[0]?.summary}
-          showSummaryItemDelta={jobs?.length !== 1}
-          showSummaryItemBaseline={jobs?.length !== 1}
-        />
         <Box outline>
           <BundlePackages jobs={jobs} {...bundlePackagesState} setState={bundlePackagesSetState} />
         </Box>
-      </Stack>
     </Container>
   );
 };
@@ -197,8 +167,6 @@ const AppComponent = ({ version, jobs }) => {
       <Layout jobs={jobs} version={version}>
         <Container className={css.summaryContainer}>
           <Summary
-            size="large"
-            keys={METRICS_WEBPACK_GENERAL}
             data={jobs[0].summary}
             showSummaryItemDelta={jobs.length !== 1}
             showSummaryItemBaseline={jobs?.length !== 1}
