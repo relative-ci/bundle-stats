@@ -195,7 +195,7 @@
   --outline-hover: 0 0 0 3px var(--color-highlight);
 
   /** Layout */
-  --max-width: 80rem;
+  --max-width: 94rem;
   --entry-info-width: 640px;
   --entry-info-top: var(--header-height);
 }
