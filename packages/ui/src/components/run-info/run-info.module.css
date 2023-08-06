@@ -62,16 +62,8 @@
 }
 
 /* Size variation */
-.small .info {
-  margin-top: var(--space-xxxsmall);
-}
-
 .small .currentMetric {
-  font-size: var(--size-xlarge);
-}
-
-.large .info {
-  margin-top: var(--space-xxsmall);
+  font-size: var(--size-large);
 }
 
 .large .currentMetric {
