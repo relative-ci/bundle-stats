@@ -61,6 +61,9 @@ describe('webpack plugin', () => {
     // Create default baseline file
     const outputDir = path.join(__dirname, '../../node_modules/.cache/bundle-stats');
     const baselineFilepath = path.join(outputDir, 'baseline.json');
+    // Create custom baseline file
+    const customOutputDir = path.join(__dirname, 'dist');
+    const customBaselineFilepath = path.join(customOutputDir, 'custom-baseline.json');
 
     beforeEach(async () => {
       await fs.mkdir(outputDir, { recursive: true });
@@ -76,12 +79,26 @@ describe('webpack plugin', () => {
         }),
       );
 
+      await fs.mkdir(customOutputDir, { recursive: true });
+      await fs.writeFile(
+        customBaselineFilepath,
+        JSON.stringify({
+          assets: [
+            {
+              name: 'main.js',
+              size: 25,
+            },
+          ],
+        }),
+      );
+
       jest.spyOn(global.console, 'info');
       jest.spyOn(global.console, 'warn');
     });
 
     afterEach(async () => {
       await fs.rm(baselineFilepath);
+      await fs.rm(customBaselineFilepath);
     });
 
     test('should compare with baseline.json', (done) => {
@@ -109,6 +126,47 @@ describe('webpack plugin', () => {
         const { assets } = stats.toJson({ source: false, assets: true });
         const bundleStatsAsset = assets.find((asset) => asset.name.match(/bundle-stats\.html$/));
         expect(bundleStatsAsset).toBeTruthy();
+        done();
+      });
+    });
+
+    test('should compare and save baseline with custom baseline.json', (done) => {
+      expect.assertions(7);
+
+      const compiler = webpack({
+        mode: 'production',
+        output: {
+          path: path.join(__dirname, 'dist'),
+        },
+        context: CONTEXT,
+        plugins: [
+          new BundleStatsWebpackPlugin({
+            compare: true,
+            baseline: true,
+            baselineFilepath: './custom-baseline.json',
+          }),
+        ],
+      });
+      compiler.outputFileSystem = new MemoryFS();
+
+      compiler.run((error, stats) => {
+        expect(error).toEqual(null);
+        expect(stats.hasErrors()).toBe(false);
+
+        /* eslint-disable no-console */
+        expect(console.warn).not.toBeCalledWith('Missing baseline stats, see "baseline" option.');
+        expect(console.info).toBeCalledWith('Read baseline from custom-baseline.json');
+        expect(console.info).toBeCalledWith('Bundle Size — 27B (+8%).');
+        /* eslint-enable no-console */
+
+        const { assets } = stats.toJson({ source: false, assets: true });
+
+        const bundleStatsAsset = assets.find((asset) => asset.name.match(/bundle-stats\.html$/));
+        expect(bundleStatsAsset).toBeTruthy();
+
+        const baselineAsset = assets.find((asset) => asset.name === 'custom-baseline.json');
+        expect(baselineAsset).toBeTruthy();
+
         done();
       });
     });
