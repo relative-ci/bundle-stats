@@ -26,6 +26,12 @@ export interface ReportOptions {
   baseline?: boolean;
 
   /**
+   * Custom baseline file path relative to the output dir
+   * Default: node_modules/.cache/bundle-stats/baseline.json
+   */
+  baselineFilepath?: string;
+
+  /**
    * Output html report
    * Default: `true`.
    */
@@ -89,12 +95,12 @@ export const generateReports = async (
     data.builtAt = Date.now();
   }
 
-  const baselineFilepath = getBaselineStatsFilepath(outputPath);
+  const baselineFilepath = getBaselineStatsFilepath(options.baselineFilepath, outputPath);
   let baselineStats = null;
 
   try {
     if (compare) {
-      const baselineStatsData = await readBaseline();
+      const baselineStatsData = await readBaseline(options.baselineFilepath);
       baselineStats = filter(baselineStatsData);
       if (!options.silent) logger.info(`Read baseline from ${baselineFilepath}`);
     }

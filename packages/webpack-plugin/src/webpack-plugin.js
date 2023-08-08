@@ -1,3 +1,4 @@
+import path from 'path';
 import webpack from 'webpack';
 import { merge } from 'lodash';
 import { generateReports } from '@bundle-stats/cli-utils';
@@ -6,6 +7,7 @@ import * as CONFIG from './config';
 
 const DEFAULT_OPTIONS = {
   baseline: Boolean(process.env.BUNDLE_STATS_BASELINE),
+  baselineFilepath: undefined,
   stats: {
     assets: true,
     chunks: true,
@@ -25,7 +27,7 @@ export class BundleStatsWebpackPlugin {
   }
 
   apply(compiler) {
-    const options = merge({}, DEFAULT_OPTIONS, this.options);
+    const { baselineFilepath, ...options } = merge({}, DEFAULT_OPTIONS, this.options);
 
     if (isWebpack5) {
       compiler.hooks.thisCompilation.tap(PLUGIN_NAME, (compilation) => {
@@ -35,11 +37,16 @@ export class BundleStatsWebpackPlugin {
             stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT,
           },
           async () => {
+            const outputPath = compilation?.options?.output?.path;
+
             const newAssets = await generateReports(
               compilation.getStats().toJson(options.stats),
-              options,
               {
-                outputPath: compilation?.options?.output?.path,
+                ...options,
+                baselineFilepath: baselineFilepath && path.join(outputPath, baselineFilepath),
+              },
+              {
+                outputPath,
                 invalidOptionsUrl: CONFIG.OPTIONS_URL,
                 logger:
                   compilation.getInfrastructureLogger &&
@@ -60,11 +67,16 @@ export class BundleStatsWebpackPlugin {
     }
 
     compiler.hooks.emit.tapAsync(PLUGIN_NAME, async (compilation, callback) => {
+      const outputPath = compilation?.options?.output?.path;
+
       const newAssets = await generateReports(
         compilation.getStats().toJson(options.stats),
-        options,
         {
-          outputPath: compilation?.options?.output?.path,
+          ...options,
+          baselineFilepath: baselineFilepath && path.join(outputPath, baselineFilepath),
+        },
+        {
+          outputPath,
           invalidOptionsUrl: CONFIG.OPTIONS_URL,
           logger:
             compilation.getInfrastructureLogger && compilation.getInfrastructureLogger(PLUGIN_NAME),
