@@ -156,12 +156,20 @@ jobs:
   test-package-cli:
     needs:
       - build
-    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        version: [20, 18, 16, 14]
-    name: CLI nodejs ${{ matrix.version }}
+        os: [windows-latest, ubuntu-latest]
+        node: [20, 18, 16, 14]
+        exclude:
+          - os: windows-latest
+            node: 20
+          - os: windows-latest
+            node: 18
+          - os: windows-latest
+            node: 16
+    runs-on: ${{ matrix.os }}
+    name: CLI ${{ matrix.os }} nodejs ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v3
 
@@ -174,7 +182,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3.7.0
         with:
-          node-version: ${{ matrix.version }}
+          node-version: ${{ matrix.node }}
           cache: ${{ steps.cache.outputs.PACKAGE }}
 
       - name: Download build files
@@ -198,25 +206,32 @@ jobs:
   test-package-webpack-plugin:
     needs:
       - build
-    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        version: [20, 18, 16, 14]
+        os: [windows-latest, ubuntu-latest]
+        node: [20, 18, 16, 14]
         webpack: ['webpack4', 'webpack5']
         exclude:
           - webpack: 'webpack4'
-            version: 18
+            node: 18
           - webpack: 'webpack4'
-            version: 20
-    name: ${{ matrix.webpack }} plugin nodejs ${{ matrix.version }}
+            node: 20
+          - os: windows-latest
+            node: 20
+          - os: windows-latest
+            node: 18
+          - os: windows-latest
+            node: 16
+    runs-on: ${{ matrix.os }}
+    name: ${{ matrix.webpack }} plugin ${{ matrix.os }} nodejs ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v3
 
       - name: Use Node.js
         uses: actions/setup-node@v3.7.0
         with:
-          node-version: ${{ matrix.version }}
+          node-version: ${{ matrix.node }}
 
       - name: Download build files
         uses: actions/download-artifact@v3
