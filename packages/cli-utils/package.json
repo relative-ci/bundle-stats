@@ -38,9 +38,11 @@
     "@bundle-stats/plugin-webpack-filter": "^4.5.2",
     "@bundle-stats/plugin-webpack-validate": "^4.5.2",
     "@bundle-stats/utils": "^4.5.2",
+    "@types/lodash": "4.14.196",
     "core-js": "^3.21.0",
     "find-cache-dir": "^3.1.0",
     "fs-extra": "^11.0.0",
+    "lodash": "^4.17.21",
     "stream-chain": "^2.2.5",
     "stream-json": "^1.8.0"
   },
@@ -50,5 +52,8 @@
     "@types/stream-json": "^1.7.3",
     "jest": "29.6.2",
     "typescript": "5.1.6"
+  },
+  "peerDependencies": {
+    "lodash": "^4.0.0"
   }
 }

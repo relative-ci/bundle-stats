@@ -91,17 +91,19 @@ $ bundle-stats -h
 Usage: bundle-stats OPTIONS [WEBPACK_STATS_FILE]...
 
 Options:
-  --compare      Use local saved stats for comparison  [boolean] [default: true]
-  --baseline     Save current stats as baseline       [boolean] [default: false]
-
-  --html         Save HTML report                      [boolean] [default: true]
-  --json         Save JSON data                       [boolean] [default: false]
-
-  --demo         Generate demo reports                          [default: false]
-
-  -d, --out-dir  Output directory                            [default: "./dist"]
-  -h, --help     Show help                                             [boolean]
-  -v, --version  Show version number                                   [boolean]
+      --demo               Generate demo reports      [boolean] [default: false]
+      --compare            Use local saved stats for comparison
+                                                       [boolean] [default: true]
+      --baseline           Save current stats as baseline
+                                                      [boolean] [default: false]
+      --baseline-filepath  Baseline filepath, default:
+                           node_modules/.cache/bundle-stats/baseline.json
+                                                                        [string]
+      --html               Save HTML report            [boolean] [default: true]
+      --json               Save JSON data             [boolean] [default: false]
+  -d, --out-dir            Output directory                             [string]
+  -h, --help               Show help                                   [boolean]
+  -v, --version            Show version number                         [boolean]
 ```
 
 ```shell

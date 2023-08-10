@@ -66,11 +66,12 @@ module.exports = {
 
 ### `BundleStatsWebpackPlugin(options)`
 
-- `compare` - use local saved stats for comparison (default `true`).
+- `compare` - use local saved baseline for comparison (default `true`).
 - `baseline` - save current webpack stats as baseline (default `false`).
 - `html` - output html report (default `true`).
 - `json` - output json report (default `false`).
 - `outDir` - output directory relative to webpack `output.path` (default `''`).
+- `baselineFilepath` - baseline filepath relative to webpack `output.path` (default 'node_modules/.cache/bundle-stats/baseline.json')
 - `silent` - stop logging info and only log warning and error (default `false`).
 - `stats` - [Webpack stats](https://webpack.js.org/configuration/stats) options
   default:

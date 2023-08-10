@@ -53,6 +53,11 @@ export default async function cli(pkg: object) {
       type: 'boolean',
       default: false,
     })
+    .option('baseline-filepath', {
+      description: 'Baseline filepath, default: node_modules/.cache/bundle-stats/baseline.json',
+      type: 'string',
+      default: undefined,
+    })
     .option('html', {
       description: 'Save HTML report',
       type: 'boolean',
@@ -75,11 +80,12 @@ export default async function cli(pkg: object) {
     .parseSync();
 
   await run({
-    baseline: args.baseline,
+    outDir: args.outDir,
     compare: args.compare,
+    baseline: args.baseline,
+    baselineFilepath: args.baselineFilepath,
     html: args.html,
     json: args.json,
-    outDir: args.outDir,
     artifactFilepaths: args._ as Array<string>,
   });
 }

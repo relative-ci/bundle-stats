@@ -48,6 +48,7 @@ const getReportInfoBorderColor = (reportInfo: any) => {
 
 interface RunOptions {
   baseline: boolean;
+  baselineFilepath?: string;
   compare: boolean;
   html: boolean;
   json: boolean;
@@ -56,7 +57,7 @@ interface RunOptions {
 }
 
 export default async function run(options: RunOptions): Promise<void> {
-  const { baseline, compare, html, json, outDir, artifactFilepaths } = options;
+  const { baseline, baselineFilepath, compare, html, json, outDir, artifactFilepaths } = options;
 
   const tasks = new Listr([
     {
@@ -82,9 +83,12 @@ export default async function run(options: RunOptions): Promise<void> {
     {
       title: 'Read baseline data',
       task: async (ctx, task) => {
-        const baselineFilepath = path.relative(process.cwd(), getBaselineStatsFilepath());
+        const relativeBaselineFilepath = path.relative(
+          process.cwd(),
+          getBaselineStatsFilepath(baselineFilepath),
+        );
         // eslint-disable-next-line no-param-reassign
-        task.title = `${task.title} (${baselineFilepath})`;
+        task.title = `${task.title} (${relativeBaselineFilepath})`;
 
         ctx.sources = ctx.sources.concat([{ webpack: webpackFilter(ctx.baselineStats) }]);
       },
@@ -100,7 +104,7 @@ export default async function run(options: RunOptions): Promise<void> {
         let baselineStats = {};
 
         try {
-          baselineStats = await readBaseline();
+          baselineStats = await readBaseline(baselineFilepath);
           ctx.baselineStats = baselineStats;
         } catch (err) {
           return TEXT.CLI_BASELINE_MISSING_WARN;
@@ -114,11 +118,14 @@ export default async function run(options: RunOptions): Promise<void> {
       task: (ctx, task) => {
         const stats = get(ctx, 'sources[0]webpack');
         const filteredWebpackStats = webpackFilter(stats) as JSON;
-        const baselineFilepath = path.relative(process.cwd(), getBaselineStatsFilepath());
+        const relativeBaselineFilepath = path.relative(
+          process.cwd(),
+          getBaselineStatsFilepath(baselineFilepath),
+        );
 
-        return writeBaseline(filteredWebpackStats).then(() => {
+        return writeBaseline(filteredWebpackStats, relativeBaselineFilepath).then(() => {
           // eslint-disable-next-line no-param-reassign
-          task.title = `${task.title} (${baselineFilepath})`;
+          task.title = `${task.title} (${relativeBaselineFilepath})`;
         });
       },
       skip: () => !baseline && TEXT.CLI_NO_BASELINE,
