@@ -41,7 +41,7 @@
     "@babel/preset-typescript": "7.22.5",
     "@storybook/addon-essentials": "7.2.3",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/react": "7.2.2",
+    "@storybook/react": "7.2.3",
     "@storybook/react-webpack5": "7.2.3",
     "@types/react": "18.2.20",
     "babel-plugin-require-context-hook": "1.0.0",
