@@ -32,7 +32,7 @@
     "@babel/preset-react": "7.22.5",
     "@bundle-stats/ui": "^4.6.2",
     "@bundle-stats/utils": "^4.6.2",
-    "@storybook/addon-essentials": "7.2.3",
+    "@storybook/addon-essentials": "7.3.0",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "7.2.3",
     "@storybook/react-webpack5": "7.2.3",
