@@ -34,7 +34,7 @@
     "@bundle-stats/utils": "^4.6.2",
     "@storybook/addon-essentials": "7.3.1",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/react": "7.3.1",
+    "@storybook/react": "7.3.2",
     "@storybook/react-webpack5": "7.3.1",
     "autoprefixer": "10.4.15",
     "babel-jest": "29.6.2",
