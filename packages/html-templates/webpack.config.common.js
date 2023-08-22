@@ -3,9 +3,9 @@ const path = require('path');
 const { merge } = require('webpack-merge');
 const HtmlPlugin = require('html-webpack-plugin');
 
-const getDefineConfig = require('../../build/configs/define');
-const getResolveConfig = require('../../build/configs/resolve');
 const getCSSConfig = require('./build/webpack/css');
+const getDefineConfig = require('./build/webpack/define');
+const getResolveConfig = require('./build/webpack/resolve');
 const appConfig = require('./src/config.json');
 const settings = require('./settings');
 

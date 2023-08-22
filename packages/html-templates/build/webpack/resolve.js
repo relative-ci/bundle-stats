@@ -6,7 +6,7 @@ module.exports = () => ({
     alias: {
       react: 'preact/compat',
       'react-dom': 'preact/compat',
-      Fixtures: path.join(__dirname, '../../fixtures'),
+      Fixtures: path.join(__dirname, '../../../../fixtures'),
     },
   },
 });
