@@ -1,13 +1,16 @@
 import React from 'react';
 import { createJobs } from '@bundle-stats/utils';
 
-import baselineStatsFixtures from '../../../__mocks__/webpack-stats.baseline.json';
-import currentStatsFixtures from '../../../__mocks__/webpack-stats.current.json';
+/* eslint-disable import/no-relative-packages */
+import baselineStatsFixtures from '../../../../../fixtures/webpack-stats.baseline.json';
+import currentStatsFixtures from '../../../../../fixtures/webpack-stats.current.json';
+/* eslint-enable import/no-relative-packages */
 import { getWrapperDecorator } from '../../stories';
 import { BundleModules } from '.';
 
 // Limit the side of the modules when not in dev mode (chromatic limit, snapshot too large)
-const { baselineStats, currentStats } = process.env.NODE_ENV !== 'development'
+const { baselineStats, currentStats } =
+  process.env.NODE_ENV !== 'development'
     ? {
         // eslint-disable-next-line prefer-object-spread
         baselineStats: Object.assign({}, baselineStatsFixtures, {
@@ -17,29 +20,24 @@ const { baselineStats, currentStats } = process.env.NODE_ENV !== 'development'
         currentStats: Object.assign({}, currentStatsFixtures, {
           modules: currentStatsFixtures.modules.slice(0, 100),
         }),
-    } : { baselineStats: baselineStatsFixtures, currentStats: currentStatsFixtures };
+      }
+    : { baselineStats: baselineStatsFixtures, currentStats: currentStatsFixtures };
 
 const JOBS = createJobs([{ webpack: currentStats }, { webpack: baselineStats }]);
 
 export default {
   title: 'Components/BundleModules',
   component: BundleModules,
-  decorators: [getWrapperDecorator()]
+  decorators: [getWrapperDecorator()],
 };
 
-export const Default = () => (
-  <BundleModules jobs={[JOBS[1]]} />
-);
+export const Default = () => <BundleModules jobs={[JOBS[1]]} />;
 
-export const MultipleJobs = () => (
-  <BundleModules jobs={JOBS} />
-);
+export const MultipleJobs = () => <BundleModules jobs={JOBS} />;
 
 const JOBS_EMPTY_BASELINE = createJobs([{ webpack: currentStats }, {}]);
 
-export const EmptyBaseline = () => (
-  <BundleModules jobs={JOBS_EMPTY_BASELINE} />
-);
+export const EmptyBaseline = () => <BundleModules jobs={JOBS_EMPTY_BASELINE} />;
 
 // Module moved between chunks
 const JOBS_MOVED_MODULE = createJobs([

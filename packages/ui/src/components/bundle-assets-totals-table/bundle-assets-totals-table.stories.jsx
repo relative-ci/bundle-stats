@@ -1,8 +1,10 @@
 import React from 'react';
 import { createJobs } from '@bundle-stats/utils';
 
-import baselineStats from '../../../__mocks__/webpack-stats.baseline.json';
-import currentStats from '../../../__mocks__/webpack-stats.current.json';
+/* eslint-disable import/no-relative-packages */
+import baselineStats from '../../../../../fixtures/webpack-stats.baseline.json';
+import currentStats from '../../../../../fixtures/webpack-stats.current.json';
+/* eslint-enable import/no-relative-packages */
 import { getWrapperDecorator } from '../../stories';
 import { BundleAssetsTotalsTable } from '.';
 

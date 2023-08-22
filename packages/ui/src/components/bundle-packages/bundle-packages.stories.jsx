@@ -3,15 +3,14 @@ import merge from 'lodash/merge';
 import set from 'lodash/set';
 import { PACKAGE_FILTERS, createJobs } from '@bundle-stats/utils';
 
-import baselineStats from '../../../__mocks__/webpack-stats.baseline.json';
-import currentStats from '../../../__mocks__/webpack-stats.current.json';
+/* eslint-disable import/no-relative-packages */
+import baselineStats from '../../../../../fixtures/webpack-stats.baseline.json';
+import currentStats from '../../../../../fixtures/webpack-stats.current.json';
+/* eslint-enable import/no-relative-packages */
 import { getWrapperDecorator } from '../../stories';
 import { BundlePackages } from '.';
 
-const JOBS = createJobs([
-  { webpack: currentStats },
-  { webpack: baselineStats },
-]);
+const JOBS = createJobs([{ webpack: currentStats }, { webpack: baselineStats }]);
 const [currentJob, baselineJob] = JOBS;
 
 export default {
@@ -52,9 +51,6 @@ export const EmptyFilteredPackages = () => (
   />
 );
 
-const JOBS_EMPTY_BASELINE = createJobs([
-  { webpack: currentStats },
-  { webpack: null },
-]);
+const JOBS_EMPTY_BASELINE = createJobs([{ webpack: currentStats }, { webpack: null }]);
 
 export const EmptyBaseline = () => <BundlePackages jobs={JOBS_EMPTY_BASELINE} />;
