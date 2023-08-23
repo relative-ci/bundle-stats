@@ -27,8 +27,8 @@ export default async function cli(pkg: object) {
       json: true,
       outDir: DEFAULT_OUTPUT_DIR,
       artifactFilepaths: [
-        path.resolve(__dirname, '../__fixtures__/webpack-stats-current.json'),
-        path.resolve(__dirname, '../__fixtures__/webpack-stats-baseline.json'),
+        path.resolve(__dirname, '../__fixtures__/webpack-stats.current.json'),
+        path.resolve(__dirname, '../__fixtures__/webpack-stats.baseline.json'),
       ],
     });
 

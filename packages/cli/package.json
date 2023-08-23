@@ -14,6 +14,8 @@
     "node": ">= 14.0"
   },
   "scripts": {
+    "copy-fixtures": "rm -fr __fixtures__ && mkdir __fixtures__ && cp ../../fixtures/webpack-stats.*.json __fixtures__/",
+    "prebuild": "npm run copy-fixtures",
     "build": "rm -fr ./lib && ../../node_modules/.bin/tsc --rootDir ./src --project tsconfig.lib.json --outDir ./lib",
     "lint": "eslint",
     "serve-demo": "./bin/index.js --demo && http-server dist",
