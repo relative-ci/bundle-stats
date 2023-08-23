@@ -1,10 +1,10 @@
 import { createJobs } from '@bundle-stats/utils';
 import { SvgIcons } from '@bundle-stats/ui/lib-esm/assets/icons.svg.js';
 
-/* eslint-disable */
-import currentData from 'Fixtures/job.current.json'; // eslint-disable-line
-import baselineData from 'Fixtures/job.baseline.json'; // eslint-disable-line
-/* eslint-enable */
+/* eslint-disable import/no-extraneous-dependencies */
+import currentData from 'Fixtures/job.current';
+import baselineData from 'Fixtures/job.baseline';
+/* eslint-enable import/no-extraneous-dependencies */
 import { App } from '.';
 
 const CURRENT_SOURCE = {

@@ -48,6 +48,7 @@ jobs:
             packages*/*/lib-esm/**
             packages*/*/dist/**
             packages*/*/types/**
+            packages/cli/__fixtures__/*
 
   lint:
     needs:

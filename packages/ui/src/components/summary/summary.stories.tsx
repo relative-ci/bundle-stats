@@ -2,8 +2,10 @@ import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 
-import baselineData from '../../../__mocks__/webpack-stats.baseline.json';
-import currentData from '../../../__mocks__/webpack-stats.current.json';
+/* eslint-disable import/no-relative-packages */
+import baselineData from '../../../../../fixtures/webpack-stats.baseline.json';
+import currentData from '../../../../../fixtures/webpack-stats.current.json';
+/* eslint-enable import/no-relative-packages */
 import { METRICS_WEBPACK_ASSETS } from '../../constants';
 import { getWrapperDecorator } from '../../stories';
 import { Summary } from '.';

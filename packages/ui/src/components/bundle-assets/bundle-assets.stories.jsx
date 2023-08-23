@@ -1,10 +1,18 @@
 import React from 'react';
-import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, FILE_TYPE_JS, createJobs } from '@bundle-stats/utils';
+import {
+  ASSET_ENTRY_TYPE,
+  ASSET_FILE_TYPE,
+  ASSET_FILTERS,
+  FILE_TYPE_JS,
+  createJobs,
+} from '@bundle-stats/utils';
 import merge from 'lodash/merge';
 import set from 'lodash/set';
 
-import baselineStats from '../../../__mocks__/webpack-stats.baseline.json';
-import currentStats from '../../../__mocks__/webpack-stats.current.json';
+/* eslint-disable import/no-relative-packages */
+import baselineStats from '../../../../../fixtures/webpack-stats.baseline.json';
+import currentStats from '../../../../../fixtures/webpack-stats.current.json';
+/* eslint-enable import/no-relative-packages */
 import { getWrapperDecorator } from '../../stories';
 import { BundleAssets } from '.';
 
@@ -35,9 +43,7 @@ export const CustomFilters = () => (
 
 const JOBS_EMPTY_BASELINE = createJobs([{ webpack: currentStats }, {}]);
 
-export const EmptyBaseline = () => (
-  <BundleAssets jobs={JOBS_EMPTY_BASELINE} setState={setState} />
-);
+export const EmptyBaseline = () => <BundleAssets jobs={JOBS_EMPTY_BASELINE} setState={setState} />;
 
 export const NoAssets = () => (
   <BundleAssets

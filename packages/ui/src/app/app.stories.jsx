@@ -1,10 +1,10 @@
 import React from 'react';
 import { createJobs } from '@bundle-stats/utils';
 
-/* eslint-disable */
-import currentData from '../../../../fixtures/job.current.json';
-import baselineData from '../../../../fixtures/job.baseline.json';
-/* eslint-enable */
+/* eslint-disable import/no-unresolved, import/no-relative-packages */
+import currentData from '../../../../fixtures/job.current';
+import baselineData from '../../../../fixtures/job.baseline';
+/* eslint-enable import/no-unresolved, import/no-relative-packages */
 import { App } from '.';
 
 const CURRENT_SOURCE = {
@@ -57,7 +57,11 @@ export default {
   title: 'App',
   component: App,
   decorators: [
-    (Story) => <div style={{ margin: '-1rem' }}><Story /></div>,
+    (Story) => (
+      <div style={{ margin: '-1rem' }}>
+        <Story />
+      </div>
+    ),
   ],
 };
 

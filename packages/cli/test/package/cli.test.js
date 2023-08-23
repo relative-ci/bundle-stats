@@ -21,7 +21,7 @@ describe('CLI', () => {
   });
 
   test('should generate single report', async () => {
-    const { stdout } = await exec('npx bundle-stats ../../__fixtures__/webpack-stats-current.json');
+    const { stdout } = await exec('npx bundle-stats ../../__fixtures__/webpack-stats.current.json');
 
     const htmlReport = await fs.readFile('dist/bundle-stats.html', 'utf8');
     expect(htmlReport).toContain('Bundle Size — 2MiB (+100%). - BundleStats');
@@ -31,7 +31,7 @@ describe('CLI', () => {
 
   test('should generate compared report', async () => {
     const { stdout } = await exec(
-      'npx bundle-stats ../../__fixtures__/webpack-stats-current.json ../../__fixtures__/webpack-stats-baseline.json',
+      'npx bundle-stats ../../__fixtures__/webpack-stats.current.json ../../__fixtures__/webpack-stats.baseline.json',
     );
 
     const htmlReport = await fs.readFile('dist/bundle-stats.html', 'utf8');
@@ -52,7 +52,7 @@ describe('CLI', () => {
 
     test('should generate report in a custom relative directory', async () => {
       const { stdout } = await exec(
-        'npx bundle-stats --out-dir custom-outdir ../../__fixtures__/webpack-stats-current.json ../../__fixtures__/webpack-stats-baseline.json',
+        'npx bundle-stats --out-dir custom-outdir ../../__fixtures__/webpack-stats.current.json ../../__fixtures__/webpack-stats.baseline.json',
       );
 
       const htmlReport = await fs.readFile('custom-outdir/bundle-stats.html', 'utf8');
@@ -63,7 +63,7 @@ describe('CLI', () => {
 
     test('should generate report in a custom absolute directory', async () => {
       const { stdout } = await exec(
-        `npx bundle-stats --out-dir ${absoluteOutDir} ../../__fixtures__/webpack-stats-current.json ../../__fixtures__/webpack-stats-baseline.json`,
+        `npx bundle-stats --out-dir ${absoluteOutDir} ../../__fixtures__/webpack-stats.current.json ../../__fixtures__/webpack-stats.baseline.json`,
       );
 
       const htmlReport = await fs.readFile(path.join(absoluteOutDir, 'bundle-stats.html'), 'utf8');
@@ -95,7 +95,7 @@ describe('CLI', () => {
 
     test('should generate report successfully when baseline is missing', async () => {
       const { stdout } = await exec(
-        'npx bundle-stats --compare ../../__fixtures__/webpack-stats-current.json',
+        'npx bundle-stats --compare ../../__fixtures__/webpack-stats.current.json',
       );
 
       const htmlReport = await fs.readFile('dist/bundle-stats.html', 'utf8');
@@ -107,10 +107,10 @@ describe('CLI', () => {
     test('should generate report with default baseline', async () => {
       // prime default baseline
       await fs.mkdir(baselineDefaultDirectory, { recursive: true });
-      await fs.copyFile('../../__fixtures__/webpack-stats-baseline.json', baselineDefaultFilepath);
+      await fs.copyFile('../../__fixtures__/webpack-stats.baseline.json', baselineDefaultFilepath);
 
       const { stdout } = await exec(
-        'npx bundle-stats --compare --baseline ../../__fixtures__/webpack-stats-current.json',
+        'npx bundle-stats --compare --baseline ../../__fixtures__/webpack-stats.current.json',
       );
 
       const htmlReport = await fs.readFile('dist/bundle-stats.html', 'utf8');
@@ -123,10 +123,10 @@ describe('CLI', () => {
     test('should generate report with custom relative baseline filepath', async () => {
       // prime custom baseline
       await fs.mkdir(baselineCustomDirectory, { recursive: true });
-      await fs.copyFile('../../__fixtures__/webpack-stats-baseline.json', baselineCustomFilepath);
+      await fs.copyFile('../../__fixtures__/webpack-stats.baseline.json', baselineCustomFilepath);
 
       const { stdout } = await exec(
-        `npx bundle-stats --compare --baseline --baseline-filepath ${baselineCustomFilepath} ../../__fixtures__/webpack-stats-current.json`,
+        `npx bundle-stats --compare --baseline --baseline-filepath ${baselineCustomFilepath} ../../__fixtures__/webpack-stats.current.json`,
       );
 
       const htmlReport = await fs.readFile('dist/bundle-stats.html', 'utf8');
@@ -140,12 +140,12 @@ describe('CLI', () => {
       // prime custom baseline
       await fs.mkdir(baselineCustomAbsoluteDirectory, { recursive: true });
       await fs.copyFile(
-        '../../__fixtures__/webpack-stats-baseline.json',
+        '../../__fixtures__/webpack-stats.baseline.json',
         baselineCustomAbsoluteFilepath,
       );
 
       const { stdout } = await exec(
-        `npx bundle-stats --compare --baseline --baseline-filepath ${baselineCustomAbsoluteFilepath} ../../__fixtures__/webpack-stats-current.json`,
+        `npx bundle-stats --compare --baseline --baseline-filepath ${baselineCustomAbsoluteFilepath} ../../__fixtures__/webpack-stats.current.json`,
       );
 
       const htmlReport = await fs.readFile('dist/bundle-stats.html', 'utf8');

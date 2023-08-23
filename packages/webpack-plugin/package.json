@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "babel src -d lib",
-    "lint": "../../node_modules/.bin/eslint . --ext .js",
+    "lint": "eslint",
     "test": "TZ=UTC jest src ",
     "pretest:package": "cd test/package && npm install --force",
     "test:package": "cd test/package && npm test --"

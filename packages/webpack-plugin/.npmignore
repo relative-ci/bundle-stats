@@ -1,9 +1,11 @@
+.babelrc.js
 .eslintignore
 .eslintrc.js
 __fixtures__
 jest.config.js
 jest.setup.js
-jsconfig.js
+jsconfig.json
 tsconfig.*
 src
 test
+**/__tests__/*

@@ -1,5 +1,5 @@
 /* eslint-env node */
-const getResolveConfig = require('../../../build/configs/resolve');
+const getResolveConfig = require('../build/webpack/resolve');
 
 module.exports = {
   extends: 'airbnb',
