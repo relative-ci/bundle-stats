@@ -7,7 +7,7 @@
   "scripts": {
     "prebuild": "rimraf ./dist",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js --mode production",
-    "lint": "../../node_modules/.bin/eslint . --ext .js,.jsx",
+    "lint": "eslint",
     "start": "cross-env NODE_ENV=development storybook dev -c ./build/storybook -p 8090",
     "test": "echo \"No tests\" && exit 0"
   },

@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "rm -fr ./lib && ../../node_modules/.bin/tsc --rootDir ./src --project tsconfig.lib.json --outDir ./lib",
-    "lint": "../../node_modules/.bin/eslint . --ext .js",
+    "lint": "eslint",
     "serve-demo": "./bin/index.js --demo && http-server dist",
     "test": "echo \"No tests\" && exit 0",
     "pretest:package": "cd test/package && npm install --force",

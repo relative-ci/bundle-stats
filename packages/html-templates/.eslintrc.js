@@ -27,6 +27,7 @@ module.exports = {
           '**/jest/*.js',
           '**/build/**/*.js',
           '**/settings.js',
+          '**/postcss.cofig.js',
           '**/webpack.config.*.js',
         ],
       },
