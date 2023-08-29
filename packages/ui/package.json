@@ -7,11 +7,11 @@
   "types": "types/index.d.ts",
   "scripts": {
     "build": "npm run build-lib && npm run build-esm && npm run build-assets-lib && npm run build-assets-esm",
-    "prebuild-lib": "npx rimraf ./lib",
-    "build-lib": "../../node_modules/.bin/tsc --rootDir ./src --project tsconfig.lib.json --outDir ./lib",
+    "prebuild-lib": "rimraf ./lib",
+    "build-lib": "tsc --rootDir ./src --project tsconfig.lib.json --outDir ./lib",
     "build-assets-lib": "rsync -arm --include '*/' --include '*.json' --include '*.css' --include 'icons.svg' --exclude '*' src/ lib",
-    "prebuild-esm": "npx rimraf ./lib-esm ./types",
-    "build-esm": "../../node_modules/.bin/tsc --rootDir ./src --project tsconfig.esm.json --outDir ./lib-esm",
+    "prebuild-esm": "rimraf ./lib-esm ./types",
+    "build-esm": "tsc --rootDir ./src --project tsconfig.esm.json --outDir ./lib-esm",
     "build-assets-esm": "rsync -arm --include '*/' --include '*.json' --include '*.css' --include 'icons.svg' --exclude '*' src/ lib-esm",
     "build-storybook": "storybook build -c ./build/storybook",
     "generate-chart-colors": "node scripts/generate-chart-colors.js",
@@ -27,8 +27,8 @@
   "keywords": [],
   "author": {
     "name": "Viorel Cojocaru",
-    "email": "vio@beanon.com",
-    "url": "https://beanon.com"
+    "email": "vio@relative-ci.com",
+    "url": "https://relative-ci.com"
   },
   "license": "MIT",
   "bugs": {

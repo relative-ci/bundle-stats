@@ -14,9 +14,9 @@
     "node": ">= 14.0"
   },
   "scripts": {
-    "copy-fixtures": "rm -fr __fixtures__ && mkdir __fixtures__ && cp ../../fixtures/webpack-stats.*.json __fixtures__/",
-    "prebuild": "npm run copy-fixtures",
-    "build": "rm -fr ./lib && ../../node_modules/.bin/tsc --rootDir ./src --project tsconfig.lib.json --outDir ./lib",
+    "copy-fixtures": "./scripts/copy-fixtures.sh",
+    "build": "npm run clean && npm run copy-fixtures && tsc --rootDir ./src --project tsconfig.json --outDir ./lib",
+    "clean": "rimraf lib",
     "lint": "eslint",
     "serve-demo": "./bin/index.js --demo && http-server dist",
     "test": "echo \"No tests\" && exit 0",
@@ -38,8 +38,8 @@
   ],
   "author": {
     "name": "Viorel Cojocaru",
-    "email": "vio@beanon.com",
-    "url": "https://beanon.com"
+    "email": "vio@relative-ci.com",
+    "url": "https://relative-ci.com"
   },
   "license": "MIT",
   "repository": {
@@ -70,6 +70,7 @@
     "@types/yargs": "^17.0.20",
     "http-server": "14.1.1",
     "jest": "29.6.4",
+    "rimraf": "5.0.1",
     "typescript": "5.1.6"
   }
 }

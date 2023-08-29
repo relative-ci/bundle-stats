@@ -14,16 +14,16 @@
   },
   "scripts": {
     "build": "npm run build-lib && npm run build-esm",
-    "build-lib": "npx rimraf ./lib && ../../node_modules/.bin/tsc --rootDir ./src --project tsconfig.lib.json --outDir ./lib",
-    "build-esm": "npx rimraf ./lib-esm ./types && ../../node_modules/.bin/tsc --rootDir ./src --project tsconfig.esm.json --outDir ./lib-esm",
+    "build-lib": "rimraf ./lib && tsc --rootDir ./src --project tsconfig.lib.json --outDir ./lib",
+    "build-esm": "rimraf ./lib-esm ./types && tsc --rootDir ./src --project tsconfig.esm.json --outDir ./lib-esm",
     "lint": "eslint",
     "test": "TZ=UTC jest src --maxWorkers=4"
   },
   "keywords": [],
   "author": {
     "name": "Viorel Cojocaru",
-    "email": "vio@beanon.com",
-    "url": "https://beanon.com"
+    "email": "vio@relative-ci.com",
+    "url": "https://relative-ci.com"
   },
   "license": "MIT",
   "repository": {
