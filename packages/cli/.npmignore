@@ -9,3 +9,4 @@ jest.config.js
 jsconfig.js
 src
 test
+scripts
