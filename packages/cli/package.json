@@ -15,7 +15,7 @@
   },
   "scripts": {
     "copy-fixtures": "./scripts/copy-fixtures.sh",
-    "build": "npm run clean && npm run copy-fixtures && npx tsc --rootDir ./src --project tsconfig.json --outDir ./lib",
+    "build": "npm run clean && npm run copy-fixtures && tsc --rootDir ./src --project tsconfig.json --outDir ./lib",
     "clean": "rimraf lib",
     "lint": "eslint",
     "serve-demo": "./bin/index.js --demo && http-server dist",
