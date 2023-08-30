@@ -1,0 +1,65 @@
+{
+  "name": "rollup-plugin-bundle-stats",
+  "version": "4.6.3",
+  "description": "In-depth bundle analyzer for rollup(bundle size, assets, modules, packages)",
+  "main": "lib/index.js",
+  "types": "types/index.d.ts",
+  "sideEffects": false,
+  "engines": {
+    "node": ">= 14.0"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "npm run clean && tsc --rootDir ./src --project tsconfig.json --outDir ./lib",
+    "clean": "rimraf lib types",
+    "lint": "eslint",
+    "test:package": "cd test/package && npm test --"
+  },
+  "keywords": [
+    "rollup",
+    "rollup-plugin",
+    "bundle-size",
+    "bundle-analyzer",
+    "bundle-stats",
+    "stats",
+    "bundle",
+    "size",
+    "assets",
+    "chunks",
+    "modules"
+  ],
+  "author": {
+    "name": "Viorel Cojocaru",
+    "email": "vio@relative-ci.com",
+    "url": "https://relative-ci.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/relative-ci/bundle-stats.git"
+  },
+  "bugs": {
+    "url": "https://github.com/relative-ci/bundle-stats/issues"
+  },
+  "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/rollup-plugin#readme",
+  "dependencies": {
+    "@bundle-stats/cli-utils": "^4.6.3",
+    "rollup-plugin-webpack-stats": "0.2.1"
+  },
+  "devDependencies": {
+    "@types/jest": "29.5.3",
+    "core-js": "3.31.1",
+    "jest": "29.6.4",
+    "jest-cli": "29.6.4",
+    "regenerator-runtime": "0.14.0",
+    "rimraf": "5.0.1",
+    "rollup": "3.10.1",
+    "ts-jest": "29.1.1",
+    "typescript": "5.1.6"
+  },
+  "peerDependencies": {
+    "rollup": "^3.0.0"
+  }
+}

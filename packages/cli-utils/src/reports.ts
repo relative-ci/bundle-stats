@@ -20,7 +20,7 @@ export interface ReportOptions {
   compare?: boolean;
 
   /**
-   * Save current webpack stats as baseline
+   * Save current stats as baseline
    * Default: `false`.
    */
   baseline?: boolean;
@@ -47,13 +47,13 @@ export interface ReportOptions {
    * Output directory relative to webpack `output.path`
    * Default: `''`.
    */
-  outDir?: String;
+  outDir?: string;
 
   /**
    * Skip logging
    * Default: `false`
    */
-  silent?: boolean
+  silent?: boolean;
 }
 
 interface ReportPluginOptions {

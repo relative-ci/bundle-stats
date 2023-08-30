@@ -246,6 +246,42 @@ jobs:
         run: npm run test:package -- -t ${{ matrix.webpack }}
         working-directory: packages/webpack-plugin
 
+  test-package-rollup-plugin:
+    needs:
+      - build
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        node: [14]
+    runs-on: ${{ matrix.os }}
+    name: rollup plugin ${{ matrix.os }} nodejs ${{ matrix.node }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3.8.1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Download build files
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
+
+      - name: Install dependencies
+        run: npm install -g lerna verdaccio
+
+      - name: Run local npm registry
+        run: ./scripts/local-registry.sh &
+
+      - name: Publish bundle-stats packages locally
+        run: sleep 20 && ./scripts/local-registry-publish.sh
+
+      - name: Test package
+        run: npm run test:package
+        working-directory: packages/rollup-plugin
+
   tests:
     needs:
       - lint
@@ -253,6 +289,7 @@ jobs:
       - test-e2e
       - test-package-cli
       - test-package-webpack-plugin
+      - test-package-rollup-plugin
     runs-on: ubuntu-latest
     steps:
       - run: echo "Tests done."

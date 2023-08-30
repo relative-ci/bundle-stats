@@ -1,0 +1,14 @@
+{
+  "name": "test-rollup-plugin-bundle-stats",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "rollup -c",
+    "pretest": "npm install --force",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "rollup-plugin-bundle-stats": "*",
+    "rollup": "3.10.1",
+    "jest": "^29.6.1"
+  }
+}
