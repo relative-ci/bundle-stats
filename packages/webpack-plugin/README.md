@@ -164,6 +164,12 @@ CLI to generate bundle stats report.
 
 [Next.js](https://nextjs.org) plugin for [bundle-stats](https://github.com/relative-ci/bundle-stats/tree/master/packages/webpack-plugin).
 
+### [`rollup-plugin-bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/rollup-plugin)
+
+[![npm](https://img.shields.io/npm/v/rollup-plugin-bundle-stats)](https://www.npmjs.com/package/rollup-plugin-bundle-stats) [![npm](https://img.shields.io/npm/dm/rollup-plugin-bundle-stats)](https://www.npmjs.com/package/rollup-plugin-bundle-stats)
+
+Rollup plugin to generate bundle stats report.
+
 ## Related projects
 
 ### :cyclone: [relative-ci.com](https://relative-ci.com?utm_medium=bundle-stats-webpack-plugin)
