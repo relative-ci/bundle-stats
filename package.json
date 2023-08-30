@@ -8,6 +8,7 @@
     "packages/next-plugin",
     "packages/plugin-webpack-filter",
     "packages/plugin-webpack-validate",
+    "packages/rollup-plugin",
     "packages/ui",
     "packages/utils",
     "packages/webpack-plugin"

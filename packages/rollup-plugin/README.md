@@ -1,20 +1,22 @@
+# rollup-plugin-bundle-stats
+
 <p align="center">
-  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank"><img alt="BundleStats screenshot" src="https://raw.githubusercontent.com/relative-ci/bundle-stats/master/bundle-stats.gif"/></a>
+  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank"><img alt="BundleStats screenshot" width="768" src="https://raw.githubusercontent.com/relative-ci/bundle-stats/master/bundle-stats.png"/></a>
 </p>
 <p align="center">
   <strong>Demo:</strong>
   <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank">Compare multiple builds</a>,
   <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-single-job.html" target="_blank">Single build</a>
 </p>
-<h1 align="center">BundleStats webpack plugin</h1>
+<h1 align="center">BundleStats rollup plugin</h1>
 <p align="center">
-  Analyze webpack stats(bundle size, assets, modules, packages) and compare the results between different builds.
+  Analyze rollup stats(bundle size, assets, modules, packages) and compare the results between different builds.
 </p>
 <p align="center">
-  <a href="https://www.npmjs.com/package/bundle-stats-webpack-plugin"><img src="https://img.shields.io/npm/v/bundle-stats-webpack-plugin.svg" /></a>
-  <a href="https://www.npmjs.com/package/bundle-stats-webpack-plugin"><img src="https://img.shields.io/npm/dm/bundle-stats-webpack-plugin.svg" /></a>
-  <img src="https://img.shields.io/node/v/bundle-stats-webpack-plugin.svg" alt="Node version" />
-  <a href="https://github.com/relative-ci/bundle-stats/actions/workflows/ci.yml"><img alt="GitHub action" src="https://github.com/relative-ci/bundle-stats/actions/workflows/ci.yml/badge.svg" /></a>
+  <a href="https://www.npmjs.com/package/rollup-plugin-bundle-stats"><img src="https://img.shields.io/npm/v/rollup-plugin-bundle-stats.svg" /></a>
+  <a href="https://www.npmjs.com/package/rollup-plugin-bundle-stats"><img src="https://img.shields.io/npm/dm/rollup-plugin-bundle-stats.svg" /></a>
+  <img src="https://img.shields.io/node/v/rollup-plugin-bundle-stats.svg" alt="Node version" />
+  <a href="https://github.com/relative-ci/bundle-stats/actions/workflows/build.yaml"><img alt="GitHub action" src="https://github.com/relative-ci/bundle-stats/actions/workflows/build.yaml/badge.svg" /></a>
   <a href="https://github.com/relative-ci/bundle-stats/actions/workflows/codeql.yml"><img alt="CodeQL" src="https://github.com/relative-ci/bundle-stats/actions/workflows/codeql.yml/badge.svg"/></a>
 </p>
 <p align="center">
@@ -31,9 +33,7 @@
 
 ## Table of Contents
 - [Install](#install)
-- [Webpack configuration](#webpack-configuration)
-  - [BundleStatsWebpackPlugin(options)](#bundlestatswebpackpluginoptions)
-  - [Use with create-react-app](#use-with-create-react-app)
+- [Configure](#configure)
 - [Compare mode](#compare-mode)
 - [Other packages](#other-packages)
 - [Related projects](#related-projects)
@@ -41,92 +41,41 @@
 ## Install
 
 ```shell
-npm install --dev bundle-stats-webpack-plugin
+npm install --dev rollup-plugin-bundle-stats
 ```
 
 or
 
 ```shell
-yarn add --dev bundle-stats-webpack-plugin
+yarn add --dev rollup-plugin-bundle-stats
 ```
 
-## Webpack configuration
+## Configure
 
 ```js
-// webpack.config.js
-const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin');
+// rollup.config.js
+const { bundleStats } = require('rollup-plugin-bundle-stats');
 
 module.exports = {
   ...,
   plugins: [
-    new BundleStatsWebpackPlugin()
+    bundleStats()
   ]
 }
 ```
 
-### `BundleStatsWebpackPlugin(options)`
+### Options
 
-- `compare` - use local saved baseline for comparison (default `true`).
+- `compare` - use local saved stats for comparison (default `true`).
 - `baseline` - save current webpack stats as baseline (default `false`).
 - `html` - output html report (default `true`).
 - `json` - output json report (default `false`).
-- `outDir` - output directory relative to webpack `output.path` (default `''`).
-- `baselineFilepath` - baseline filepath relative to webpack `output.path` (default 'node_modules/.cache/bundle-stats/baseline.json')
+- `outDir` - output directory inside rollup output director `output.dir` (default `''`).
 - `silent` - stop logging info and only log warning and error (default `false`).
-- `stats` - [Webpack stats](https://webpack.js.org/configuration/stats) options
-  default:
-  ```js
-  {
-    stats: {
-      assets: true,
-      chunks: true,
-      modules: true,
-      builtAt: true,
-      hash: true
-    }
-  }
-  ```
-
-### Use with create-react-app
-
-You will need to customize the default webpack config. That can be done by using [react-app-rewired](https://github.com/timarney/react-app-rewired) which is one of create-react-app's custom config solutions. You will also need [customize-cra](https://github.com/arackaf/customize-cra).
-
-```shell
-npm install --dev customize-cra react-app-rewired
-```
-
-or
-
-```shell
-yarn add customize-cra react-app-rewired --dev
-```
-
-Change your default scripts in `package.json` to:
-
-```json
-/* package.json */
-"scripts": {
-  "start": "react-app-rewired start",
-  "build": "react-app-rewired build",
-  "test": "react-app-rewired test"
-}
-```
-
-Create a file `config-overrides.js` at the same level as `package.json`.
-
-```js
-// config-overrides.js
-const { override, addWebpackPlugin } = require('customize-cra');
-const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin');
-
-module.exports = override(
-  addWebpackPlugin(new BundleStatsWebpackPlugin()),
-);
-```
 
 ## Compare mode
 
-In `compare` mode, the metrics are compared against an existing(`node_modules/.cache/bundle-stats/baseline.json`) Webpack stats file(baseline). To generate the baseline webpack stats, set `BUNDLE_STATS_BASELINE` environmental variable to `true` or set `BundleStatsWebpackPlugin` `baseline` option to `true`:
+In `compare` mode, the metrics are compared against an existing(`node_modules/.cache/bundle-stats/baseline.json`) rollup stats file(baseline). To generate the baseline webpack stats, set `BUNDLE_STATS_BASELINE` environmental variable to `true` or set the plugin `baseline` option to `true`:
 
 ```shell
 # Checkout to the branch/tag/commit where you want to generate the baseline
@@ -142,7 +91,7 @@ $ git checkout MY_FEATURE_BRANCH
 $ npm run build
 ```
 
-The option can be disabled by setting `BundleStatsWebpackPlugin` `compare` option to `false`.
+The option can be disabled by setting the plugin `compare` option to `false`.
 
 ## Other packages
 
@@ -151,6 +100,12 @@ The option can be disabled by setting `BundleStatsWebpackPlugin` `compare` optio
 [![npm](https://img.shields.io/npm/v/bundle-stats)](https://www.npmjs.com/package/bundle-stats) [![npm](https://img.shields.io/npm/dm/bundle-stats)](https://www.npmjs.com/package/bundle-stats)
 
 CLI to generate bundle stats report.
+
+### [`bundle-stats-webpack-plugin`](https://github.com/relative-ci/bundle-stats/tree/master/packages/webpack-plugin)
+
+[![npm](https://img.shields.io/npm/v/bundle-stats-webpack-plugin)](https://www.npmjs.com/package/bundle-stats-webpack-plugin) [![npm](https://img.shields.io/npm/dm/bundle-stats-webpack-plugin)](https://www.npmjs.com/package/bundle-stats-webpack-plugin)
+
+Webpack plugin to generate bundle stats report.
 
 ### [`gatsby-plugin-bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/gatsby-plugin)
 
@@ -172,19 +127,19 @@ Rollup plugin to generate bundle stats report.
 
 ## Related projects
 
-### :cyclone: [relative-ci.com](https://relative-ci.com?utm_medium=bundle-stats-webpack-plugin)
+### :cyclone: [relative-ci.com](https://relative-ci.com?utm_medium=rollup-plugin-bundle-stats)
 
-#### Optimize your web app's performance with automated bundle stats analysis and monitoring.
+#### In-depth webpack bundle analysis and monitoring
 
-- :crystal_ball: In-depth bundle stats analysis for every build
-- :chart_with_upwards_trend: Monitor bundle stats changes and identify opportunities for optimizations
-- :bell: [Rule based automated review flow](https://relative-ci.com/documentation/setup/configure/integrations/github-commit-status-review?utm_medium=bundle-stats-webpack-plugin), or get notified via [GitHub Pull Request comments](https://relative-ci.com/documentation/setup/configure/integrations/github-pull-request-comment?utm_medium=bundle-stats-webpack-plugin), [GitHub check reports](https://relative-ci.com/documentation/setup/configure/integrations/github-check-report?utm_medium=bundle-stats-webpack-plugin) and [Slack messages](https://relative-ci.com/documentation/setup/configure/integrations/slack-notification?utm_medium=bundle-stats-webpack-plugin)
-- :wrench: Support for **webpack** and beta support for **Vite**/**Rollup**
-- :hammer: Support for all major CI services(CircleCI, GitHub Actions, Gitlab CI, Jenkins, Travis CI)
-- :nut_and_bolt: Support for **npm**, **yarn** and **pnpm**; support for monorepos
-- :two_hearts: **Always free** for **Open Source**
+RelativeCI automates webpack bundle analysis, monitoring, and alerting so you can identify and fix bundle regressions before shipping to production:
 
-[:rocket: Get started](https://relative-ci.com?utm_medium=bundle-stats-webpack-plugin)
+- :crystal_ball: Analyze webpack bundle stats on every build
+- :chart_with_upwards_trend: Monitor webpack bundle stats changes and identify tendencies over extended periods
+- :bell: Get notified via GitHub Checks, GitHub Pull Request comments, and Slack notifications
+- :hammer: Support for all major CI services (CircleCI, GitHub Actions, Gitlab CI, Jenkins, Travis CI)
+- :two_hearts: Always free for Open Source
+
+[Try for free](https://relative-ci.com?utm_medium=rollup-plugin-bundle-stats)
 
 ### :first_quarter_moon: [relative-ci/compare](https://compare.relative-ci.com)
 
