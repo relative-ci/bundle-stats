@@ -1,7 +1,7 @@
 # rollup-plugin-bundle-stats
 
 <p align="center">
-  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank"><img alt="BundleStats screenshot" width="768" src="https://raw.githubusercontent.com/relative-ci/bundle-stats/master/bundle-stats.png"/></a>
+  <a href="https://relative-ci.com/tools/webpack-bundle-stats/demo-multiple-jobs.html" target="_blank"><img alt="BundleStats screenshot" src="https://raw.githubusercontent.com/relative-ci/bundle-stats/master/bundle-stats.gif"/></a>
 </p>
 <p align="center">
   <strong>Demo:</strong>
@@ -16,7 +16,7 @@
   <a href="https://www.npmjs.com/package/rollup-plugin-bundle-stats"><img src="https://img.shields.io/npm/v/rollup-plugin-bundle-stats.svg" /></a>
   <a href="https://www.npmjs.com/package/rollup-plugin-bundle-stats"><img src="https://img.shields.io/npm/dm/rollup-plugin-bundle-stats.svg" /></a>
   <img src="https://img.shields.io/node/v/rollup-plugin-bundle-stats.svg" alt="Node version" />
-  <a href="https://github.com/relative-ci/bundle-stats/actions/workflows/build.yaml"><img alt="GitHub action" src="https://github.com/relative-ci/bundle-stats/actions/workflows/build.yaml/badge.svg" /></a>
+  <a href="https://github.com/relative-ci/bundle-stats/actions/workflows/ci.yml"><img alt="GitHub action" src="https://github.com/relative-ci/bundle-stats/actions/workflows/ci.yml/badge.svg" /></a>
   <a href="https://github.com/relative-ci/bundle-stats/actions/workflows/codeql.yml"><img alt="CodeQL" src="https://github.com/relative-ci/bundle-stats/actions/workflows/codeql.yml/badge.svg"/></a>
 </p>
 <p align="center">
