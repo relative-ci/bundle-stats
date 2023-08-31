@@ -92,8 +92,10 @@ export const generateReports = async (
 ): Promise<ReportAssets> => {
   const { compare, baseline, html, json, outDir } = merge({}, DEFAULT_OPTIONS, options);
   const { invalidOptionsUrl: invalidParamsUrl, outputPath, logger = console } = pluginOptions;
+
   const newAssets: ReportAssets = {};
 
+  // Check if the source has a valid structure
   const invalid = validate(source);
 
   if (invalid) {
@@ -102,7 +104,7 @@ export const generateReports = async (
 
   const data = filter(source);
 
-  // Webpack builtAt is not available yet
+  // Bundler builtAt might not be available yet
   if (!data.builtAt) {
     data.builtAt = Date.now();
   }
@@ -110,35 +112,43 @@ export const generateReports = async (
   const baselineFilepath = getBaselineStatsFilepath(options.baselineFilepath, outputPath);
   let baselineStats = null;
 
-  try {
-    if (compare) {
+  if (compare) {
+    try {
       const baselineStatsData = await readBaseline(options.baselineFilepath);
       baselineStats = filter(baselineStatsData);
-      if (!options.silent) logger.info(`Read baseline from ${baselineFilepath}`);
+
+      if (!options.silent) {
+        logger.info(`Read baseline from ${baselineFilepath}`);
+      }
+    } catch (err) {
+      logger.warn(TEXT.PLUGIN_BASELINE_MISSING_WARN);
     }
-  } catch (err) {
-    logger.warn(TEXT.PLUGIN_BASELINE_MISSING_WARN);
   }
 
-  const jobs = createJobs([
-    { webpack: data },
-    ...(compare && baselineStats ? [{ webpack: baselineStats }] : []),
-  ]);
+  const sources = [{ webpack: data }];
+
+  if (baselineStats) {
+    sources.push({ webpack: baselineStats });
+  }
+
+  const jobs = createJobs(sources);
   const report = createReport(jobs);
   const artifacts = createArtifacts(jobs, report, { html, json });
 
   Object.values(artifacts).forEach(({ filename, output }) => {
     const filepath = path.join(outDir, filename);
-
     // eslint-disable-next-line no-param-reassign
     newAssets[filepath] = output;
   });
 
+  // Save baseline JSON file if option is set
   if (baseline) {
     // eslint-disable-next-line no-param-reassign
     newAssets[baselineFilepath] = JSON.stringify(data);
 
-    if (!options.silent) logger.info(`Write baseline data to ${baselineFilepath}`);
+    if (!options.silent) {
+      logger.info(`Write baseline data to ${baselineFilepath}`);
+    }
   }
 
   const info = getReportInfo(report);
