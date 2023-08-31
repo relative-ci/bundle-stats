@@ -26,7 +26,10 @@ export interface ReportOptions {
   baseline?: boolean;
 
   /**
-   * Custom baseline file path relative to the output dir
+   * Custom absolute baseline file path
+   *  - relative to the output dir or absolute file when the output path is present
+   *  or
+   *  - absolute path when the output path is missing
    * Default: node_modules/.cache/bundle-stats/baseline.json
    */
   baselineFilepath?: string;
@@ -57,18 +60,27 @@ export interface ReportOptions {
 }
 
 interface ReportPluginOptions {
+  /**
+   * Absolute path for the output directory
+   */
   outputPath?: string;
+  /**
+   * Custom logger
+   */
   logger?: Console;
+  /**
+   * Documentation URL for the invalid options
+   */
   invalidOptionsUrl?: string;
 }
 
 type ReportAssets = Record<string, string>;
 
 const DEFAULT_OPTIONS = {
-  compare: true,
-  baseline: Boolean(process.env.BUNDLE_STATS_BASELINE),
   html: true,
   json: false,
+  compare: true,
+  baseline: Boolean(process.env.BUNDLE_STATS_BASELINE),
   outDir: '',
   silent: false,
 };

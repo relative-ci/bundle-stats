@@ -2,11 +2,16 @@ import path from 'path';
 import { readJSON, outputJSON } from 'fs-extra';
 import findCacheDir from 'find-cache-dir';
 
-const BASELINE_STATS_DIR = findCacheDir({ name: 'bundle-stats' }) || path.join(process.cwd(), './node_modules/.cache');
-const BASELINE_STATS_BASE = 'baseline.json';
+export const BASELINE_STATS_DIR =
+  findCacheDir({ name: 'bundle-stats' }) || path.join(process.cwd(), './node_modules/.cache');
+export const BASELINE_STATS_BASE = 'baseline.json';
 
-export function getBaselineStatsFilepath(outputFilepath?: string, relativeTo?: string): string {
-  const absoluteFilepath = outputFilepath || path.join(BASELINE_STATS_DIR, BASELINE_STATS_BASE);
+export function getBaselineStatsFilepath(
+  absoluteOutputFilepath?: string,
+  relativeTo?: string,
+): string {
+  const absoluteFilepath =
+    absoluteOutputFilepath || path.join(BASELINE_STATS_DIR, BASELINE_STATS_BASE);
 
   if (!relativeTo) {
     return absoluteFilepath;
