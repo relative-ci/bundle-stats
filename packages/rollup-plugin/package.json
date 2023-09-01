@@ -49,7 +49,7 @@
     "rollup-plugin-webpack-stats": "0.2.1"
   },
   "devDependencies": {
-    "@types/jest": "29.5.3",
+    "@types/jest": "29.5.4",
     "core-js": "3.32.1",
     "jest": "29.6.4",
     "jest-cli": "29.6.4",
