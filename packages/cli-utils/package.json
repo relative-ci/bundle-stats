@@ -44,7 +44,6 @@
     "@types/lodash": "4.14.198",
     "core-js": "^3.21.0",
     "find-cache-dir": "^3.1.0",
-    "fs-extra": "^11.0.0",
     "lodash": "^4.17.21",
     "stream-chain": "^2.2.5",
     "stream-json": "^1.8.0"
