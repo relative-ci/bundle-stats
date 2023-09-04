@@ -22,8 +22,8 @@ export function getBaselineStatsFilepath(
 
 export async function readBaseline(outputFilepath?: string, relativeTo?: string): Promise<object> {
   const filepath = getBaselineStatsFilepath(outputFilepath, relativeTo);
-  const file = await fs.readFile(filepath);
-  return file.toJSON();
+  const file = await fs.readFile(filepath, 'utf8');
+  return JSON.parse(file);
 }
 
 export async function writeBaseline(data: JSON, outputFilepath?: string): Promise<void> {

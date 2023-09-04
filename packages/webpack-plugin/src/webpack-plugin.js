@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import { merge } from 'lodash';
 import { generateReports } from '@bundle-stats/cli-utils';
+import validate from '@bundle-stats/plugin-webpack-validate';
 
 import * as CONFIG from './config';
 
@@ -38,24 +39,31 @@ export class BundleStatsWebpackPlugin {
           },
           async () => {
             const outputPath = compilation?.options?.output?.path;
+            const stats = compilation.getStats().toJson(options.stats);
+            const logger = compilation.getInfrastructureLogger
+              ? compilation.getInfrastructureLogger(PLUGIN_NAME)
+              : console;
+
+            const invalid = validate(stats);
+
+            if (invalid) {
+              logger.warn([invalid, CONFIG.OPTIONS_URL].join('\n'));
+            }
 
             const newAssets = await generateReports(
-              compilation.getStats().toJson(options.stats),
+              stats,
               {
                 ...options,
                 baselineFilepath: baselineFilepath && path.join(outputPath, baselineFilepath),
               },
               {
                 outputPath,
-                invalidOptionsUrl: CONFIG.OPTIONS_URL,
-                logger:
-                  compilation.getInfrastructureLogger &&
-                  compilation.getInfrastructureLogger(PLUGIN_NAME),
+                logger,
               },
             );
 
-            Object.entries(newAssets).forEach(([filename, source]) => {
-              compilation.emitAsset(filename, new webpack.sources.RawSource(source), {
+            Object.entries(newAssets).forEach(([filename, report]) => {
+              compilation.emitAsset(filename, new webpack.sources.RawSource(report.source), {
                 development: true,
               });
             });
@@ -68,26 +76,34 @@ export class BundleStatsWebpackPlugin {
 
     compiler.hooks.emit.tapAsync(PLUGIN_NAME, async (compilation, callback) => {
       const outputPath = compilation?.options?.output?.path;
+      const stats = compilation.getStats().toJson(options.stats);
+      const logger = compilation.getInfrastructureLogger
+        ? compilation.getInfrastructureLogger(PLUGIN_NAME)
+        : console;
+
+      const invalid = validate(stats);
+
+      if (invalid) {
+        logger.warn([invalid, CONFIG.OPTIONS_URL].join('\n'));
+      }
 
       const newAssets = await generateReports(
-        compilation.getStats().toJson(options.stats),
+        stats,
         {
           ...options,
           baselineFilepath: baselineFilepath && path.join(outputPath, baselineFilepath),
         },
         {
           outputPath,
-          invalidOptionsUrl: CONFIG.OPTIONS_URL,
-          logger:
-            compilation.getInfrastructureLogger && compilation.getInfrastructureLogger(PLUGIN_NAME),
+          logger,
         },
       );
 
-      Object.entries(newAssets).forEach(([filename, source]) => {
+      Object.entries(newAssets).forEach(([filename, report]) => {
         // eslint-disable-next-line no-param-reassign
         compilation.assets[filename] = {
           size: () => 0,
-          source: () => source,
+          source: () => report.source,
         };
       });
 

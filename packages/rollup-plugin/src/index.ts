@@ -18,11 +18,11 @@ export const bundleStats = (options: BundleStatsOptions = {}): Plugin => ({
     const source = bundleToWebpackStats(bundle);
     const reports = await generateReports(source, options);
 
-    Object.entries(reports).forEach(([fileName, output]) => {
+    Object.entries(reports).forEach(([fileName, report]) => {
       this.emitFile({
         type: 'asset',
         fileName,
-        source: output,
+        source: report.source,
       });
     });
   },
