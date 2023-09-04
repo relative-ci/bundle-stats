@@ -29,7 +29,7 @@
   "devDependencies": {
     "@babel/core": "7.22.15",
     "@babel/preset-env": "7.22.14",
-    "@babel/preset-react": "7.22.5",
+    "@babel/preset-react": "7.22.15",
     "@bundle-stats/ui": "^4.6.3",
     "@bundle-stats/utils": "^4.6.3",
     "@storybook/addon-essentials": "7.4.0",
