@@ -41,7 +41,7 @@
     "@bundle-stats/plugin-webpack-filter": "^4.6.3",
     "@bundle-stats/plugin-webpack-validate": "^4.6.3",
     "@bundle-stats/utils": "^4.6.3",
-    "@types/lodash": "4.14.197",
+    "@types/lodash": "4.14.198",
     "core-js": "^3.21.0",
     "find-cache-dir": "^3.1.0",
     "fs-extra": "^11.0.0",
