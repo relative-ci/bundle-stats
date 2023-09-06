@@ -27,7 +27,7 @@ jobs:
 
       # Workaround npm/nx optional install issue - https://github.com/nrwl/nx/issues/15452
       - name: Install dependencies
-        run: npm ci && npm install --no-save @nx/nx-linux-x64-gnu
+        run: npm install --no-save @nx/nx-linux-x64-gnu && npm ci
 
       - name: Build
         run: npm run build
@@ -71,7 +71,7 @@ jobs:
 
       # Workaround npm/nx optional install issue - https://github.com/nrwl/nx/issues/15452
       - name: Install dependencies
-        run: npm ci && npm install --no-save @nx/nx-linux-x64-gnu
+        run: npm install --no-save @nx/nx-linux-x64-gnu && npm ci
 
       - name: Download build files
         uses: actions/download-artifact@v3
@@ -102,7 +102,7 @@ jobs:
 
       # Workaround npm/nx optional install issue - https://github.com/nrwl/nx/issues/15452
       - name: Install dependencies
-        run: npm ci && npm install --no-save @nx/nx-linux-x64-gnu
+        run: npm install --no-save @nx/nx-linux-x64-gnu && npm ci
 
       - name: Download build files
         uses: actions/download-artifact@v3
@@ -133,7 +133,7 @@ jobs:
 
       # Workaround npm/nx optional install issue - https://github.com/nrwl/nx/issues/15452
       - name: Install dependencies
-        run: npm ci && npm install --no-save @nx/nx-linux-x64-gnu
+        run: npm install --no-save @nx/nx-linux-x64-gnu && npm ci
 
       - name: Download build files
         uses: actions/download-artifact@v3
@@ -320,7 +320,7 @@ jobs:
 
       # Workaround npm/nx optional install issue - https://github.com/nrwl/nx/issues/15452
       - name: Install dependencies
-        run: npm ci && npm install --no-save @nx/nx-linux-x64-gnu
+        run: npm install --no-save @nx/nx-linux-x64-gnu && npm ci
 
       - name: Download build
         uses: actions/download-artifact@v3
