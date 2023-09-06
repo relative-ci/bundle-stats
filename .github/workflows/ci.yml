@@ -186,7 +186,7 @@ jobs:
           name: build-artifacts
 
       - name: Install dependencies
-        run: npm install -g lerna verdaccio
+        run: npm install -g lerna@6 verdaccio
 
       - name: Run local npm registry
         run: ./scripts/local-registry.sh &
@@ -234,7 +234,7 @@ jobs:
           name: build-artifacts
 
       - name: Install dependencies
-        run: npm install -g lerna verdaccio
+        run: npm install -g lerna@6 verdaccio
 
       - name: Run local npm registry
         run: ./scripts/local-registry.sh &
@@ -270,7 +270,7 @@ jobs:
           name: build-artifacts
 
       - name: Install dependencies
-        run: npm install -g lerna verdaccio
+        run: npm install -g lerna@6 verdaccio
 
       - name: Run local npm registry
         run: ./scripts/local-registry.sh &
