@@ -55,7 +55,7 @@ jobs:
         run: ./scripts/local-registry.sh &
 
       - name: Publish bundle-stats packages locally
-        run: sleep 20 && ./scripts/local-registry-publish.sh
+        run: ./scripts/local-registry-publish.sh
 
       - name: Upload local registry files
         uses: actions/upload-artifact@v3
