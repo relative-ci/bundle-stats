@@ -50,6 +50,21 @@ jobs:
             packages*/*/types/**
             packages/cli/__fixtures__/*
 
+      # Publish new version to local registry
+      - name: Run local npm registry
+        run: ./scripts/local-registry.sh &
+
+      - name: Publish bundle-stats packages locally
+        run: sleep 20 && ./scripts/local-registry-publish.sh
+
+      - name: Upload local registry files
+        uses: actions/upload-artifact@v3
+        with:
+          name: local-registry
+          retention-days: 1
+          path: |
+            .verdaccio-storage*/**/*
+
   lint:
     needs:
       - build
@@ -185,14 +200,16 @@ jobs:
         with:
           name: build-artifacts
 
+      - name: Download local registry files
+        uses: actions/download-artifact@v3
+        with:
+          name: local-registry
+
       - name: Install dependencies
-        run: npm install -g lerna@6 verdaccio
+        run: npm install -g verdaccio
 
       - name: Run local npm registry
         run: ./scripts/local-registry.sh &
-
-      - name: Publish bundle-stats packages locally
-        run: sleep 20 && ./scripts/local-registry-publish.sh
 
       - name: Test package
         run: npm run test:package
@@ -233,14 +250,16 @@ jobs:
         with:
           name: build-artifacts
 
+      - name: Download local registry files
+        uses: actions/download-artifact@v3
+        with:
+          name: local-registry
+
       - name: Install dependencies
-        run: npm install -g lerna@6 verdaccio
+        run: npm install -g verdaccio
 
       - name: Run local npm registry
         run: ./scripts/local-registry.sh &
-
-      - name: Publish bundle-stats packages locally
-        run: sleep 20 && ./scripts/local-registry-publish.sh
 
       - name: Test package
         run: npm run test:package -- -t ${{ matrix.webpack }}
@@ -269,14 +288,16 @@ jobs:
         with:
           name: build-artifacts
 
+      - name: Download local registry files
+        uses: actions/download-artifact@v3
+        with:
+          name: local-registry
+
       - name: Install dependencies
-        run: npm install -g lerna@6 verdaccio
+        run: npm install -g verdaccio
 
       - name: Run local npm registry
         run: ./scripts/local-registry.sh &
-
-      - name: Publish bundle-stats packages locally
-        run: sleep 20 && ./scripts/local-registry-publish.sh
 
       - name: Test package
         run: npm run test:package
