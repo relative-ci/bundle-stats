@@ -89,6 +89,7 @@ describe('generateAssets', () => {
   describe('baseline', () => {
     test('should generate reports and save current stats to default baseline', async () => {
       const baselineFilepath = path.join(BASELINE_STATS_DIR, BASELINE_STATS_BASE);
+      const relativeBaselineFilepath = path.relative(process.cwd(), baselineFilepath);
 
       const reports = await generateReports(SOURCE_CURRENT, { baseline: true });
 
@@ -96,7 +97,7 @@ describe('generateAssets', () => {
       expect(reports['bundle-stats.html'].type).toEqual('report');
       expect(reports['bundle-stats.html'].source).toMatch('Bundle Size — 12KiB (+100%)');
 
-      expect(reports[baselineFilepath].type).toEqual('baseline');
+      expect(reports[relativeBaselineFilepath].type).toEqual('baseline');
     });
 
     test('should generate reports and save current stats to relative baseline', async () => {
@@ -117,6 +118,7 @@ describe('generateAssets', () => {
 
     test('should generate reports and save current stats to custom baseline', async () => {
       const baselineFilepath = path.join(__dirname, 'custom-baseline.json');
+      const relativeBaselineFilepath = path.relative(process.cwd(), baselineFilepath);
 
       const reports = await generateReports(SOURCE_CURRENT, { baseline: true, baselineFilepath });
 
@@ -124,7 +126,7 @@ describe('generateAssets', () => {
       expect(reports['bundle-stats.html'].type).toEqual('report');
       expect(reports['bundle-stats.html'].source).toMatch('Bundle Size — 12KiB (+100%)');
 
-      expect(reports[baselineFilepath].type).toEqual('baseline');
+      expect(reports[relativeBaselineFilepath].type).toEqual('baseline');
     });
   });
 });

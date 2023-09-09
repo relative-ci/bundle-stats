@@ -121,9 +121,15 @@ describe('CLI', () => {
     });
 
     test('should generate report with custom relative baseline filepath', async () => {
-      // prime custom baseline
-      await fs.mkdir(baselineCustomDirectory, { recursive: true });
-      await fs.copyFile('../../__fixtures__/webpack-stats.baseline.json', baselineCustomFilepath);
+      // prime relative custom baseline
+      const baselineCustomRelativeDirectory = path.join('dist', baselineCustomDirectory);
+      const baselineCustomRelativeFilepath = path.join('dist', baselineCustomFilepath);
+
+      await fs.mkdir(baselineCustomRelativeDirectory, { recursive: true });
+      await fs.copyFile(
+        '../../__fixtures__/webpack-stats.baseline.json',
+        baselineCustomRelativeFilepath,
+      );
 
       const { stdout } = await exec(
         `npx bundle-stats --compare --baseline --baseline-filepath ${baselineCustomFilepath} ../../__fixtures__/webpack-stats.current.json`,
@@ -132,8 +138,10 @@ describe('CLI', () => {
       const htmlReport = await fs.readFile('dist/bundle-stats.html', 'utf8');
       expect(htmlReport).toContain('Bundle Size — 2MiB (-3.11%). - BundleStats');
 
-      expect(stdout).toContain(`[SUCCESS] Write baseline data (${baselineCustomFilepath})`);
+      expect(stdout).toContain(`[SUCCESS] Write baseline data (${baselineCustomRelativeFilepath})`);
       expect(stdout).toContain('[SUCCESS] Save reports');
+
+      await fs.rm(baselineCustomRelativeDirectory, { recursive: true, force: true });
     });
 
     test('should generate report with custom absolute baseline filepath', async () => {

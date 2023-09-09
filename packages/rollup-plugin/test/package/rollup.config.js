@@ -1,4 +1,3 @@
-const path = require('path');
 const { defineConfig } = require('rollup');
 const { bundleStats } = require('rollup-plugin-bundle-stats');
 

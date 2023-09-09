@@ -5,7 +5,7 @@ import filter from '@bundle-stats/plugin-webpack-filter';
 
 import * as TEXT from './text';
 import { createArtifacts } from './create-artifacts';
-import { getBaselineStatsFilepath, readBaseline } from './baseline';
+import { getBaselinePath, getBaselineRelativePath, readBaseline } from './baseline';
 
 export function getReportInfo(report: any): any {
   return report?.insights?.webpack?.assetsSizeTotal?.data;
@@ -73,6 +73,7 @@ interface ReportAssets {
   [filepath: string]: {
     type: 'report' | 'baseline';
     source: string;
+    filepath: string;
   };
 }
 
@@ -91,7 +92,7 @@ export const generateReports = async (
   pluginOptions: ReportPluginOptions = {},
 ): Promise<ReportAssets> => {
   const { compare, baseline, html, json, outDir } = merge({}, DEFAULT_OPTIONS, options);
-  const { outputPath, logger = console } = pluginOptions;
+  const { outputPath = process.cwd(), logger = console } = pluginOptions;
 
   const newAssets: ReportAssets = {};
 
@@ -102,16 +103,18 @@ export const generateReports = async (
     data.builtAt = Date.now();
   }
 
-  const baselineFilepath = getBaselineStatsFilepath(options.baselineFilepath, outputPath);
+  const baselineAbsolutePath = getBaselinePath(outputPath, outDir, options.baselineFilepath);
+  const baselinePath = getBaselineRelativePath(outputPath, outDir, baselineAbsolutePath);
+
   let baselineStats = null;
 
   if (compare) {
     try {
-      const baselineStatsData = await readBaseline(options.baselineFilepath);
+      const baselineStatsData = await readBaseline(baselineAbsolutePath);
       baselineStats = filter(baselineStatsData);
 
       if (!options.silent) {
-        logger.info(`${TEXT.BASELINE_READING} ${baselineFilepath}`);
+        logger.info(`${TEXT.BASELINE_READING} ${baselinePath}`);
       }
     } catch (err) {
       logger.warn(TEXT.BASELINE_MISSING);
@@ -129,20 +132,22 @@ export const generateReports = async (
   const artifacts = createArtifacts(jobs, report, { html, json });
 
   Object.values(artifacts).forEach(({ filename, output }) => {
-    const filepath = path.join(outDir, filename);
+    const relativeFilepath = path.join(outDir, filename);
     // eslint-disable-next-line no-param-reassign
-    newAssets[filepath] = {
+    newAssets[relativeFilepath] = {
       type: 'report',
       source: output,
+      filepath: path.join(outputPath, relativeFilepath),
     };
   });
 
   // Save baseline JSON file if option is set
   if (baseline) {
     // eslint-disable-next-line no-param-reassign
-    newAssets[baselineFilepath] = {
+    newAssets[baselinePath] = {
       type: 'baseline',
       source: JSON.stringify(data),
+      filepath: baselineAbsolutePath,
     };
   }
 

@@ -1,6 +1,7 @@
 node_modules
 **/__tests__
 __fixtures__
+__mocks__
 .editorconfig
 .eslintignore
 .eslintrc.js

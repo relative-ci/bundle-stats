@@ -6,27 +6,42 @@ export const BASELINE_STATS_DIR =
   findCacheDir({ name: 'bundle-stats' }) || path.join(process.cwd(), './node_modules/.cache');
 export const BASELINE_STATS_BASE = 'baseline.json';
 
-export function getBaselineStatsFilepath(
-  absoluteOutputFilepath?: string,
-  relativeTo?: string,
-): string {
-  const absoluteFilepath =
-    absoluteOutputFilepath || path.join(BASELINE_STATS_DIR, BASELINE_STATS_BASE);
-
-  if (!relativeTo) {
-    return absoluteFilepath;
+/**
+ * Get baseline absolute filepath
+ */
+export const getBaselinePath = (
+  outputPath = process.cwd(),
+  outputDir = '',
+  filepath = '',
+): string => {
+  if (!filepath) {
+    return path.join(BASELINE_STATS_DIR, BASELINE_STATS_BASE);
   }
 
-  return path.relative(relativeTo, absoluteFilepath);
-}
+  if (path.isAbsolute(filepath)) {
+    return filepath;
+  }
 
-export async function readBaseline(outputFilepath?: string, relativeTo?: string): Promise<object> {
-  const filepath = getBaselineStatsFilepath(outputFilepath, relativeTo);
-  const file = await fs.readFile(filepath, 'utf8');
+  return path.join(outputPath, outputDir, filepath);
+};
+
+/**
+ * Get baseline relative filepath
+ */
+export const getBaselineRelativePath = (
+  outputPath = process.cwd(),
+  outputDir = '',
+  filepath = '',
+): string => {
+  const absoluteFilepath = getBaselinePath(outputPath, outputDir, filepath);
+  return path.relative(path.join(outputPath, outputDir), absoluteFilepath);
+};
+
+export async function readBaseline(baselineFilepath: string): Promise<object> {
+  const file = await fs.readFile(baselineFilepath, 'utf-8');
   return JSON.parse(file);
 }
 
-export async function writeBaseline(data: JSON, outputFilepath?: string): Promise<void> {
-  const filepath = getBaselineStatsFilepath(outputFilepath);
-  return fs.writeFile(filepath, JSON.stringify(data));
+export async function writeBaseline(data: JSON, baselineFilepath: string): Promise<void> {
+  return fs.writeFile(baselineFilepath, JSON.stringify(data));
 }
