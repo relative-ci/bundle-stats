@@ -27,7 +27,7 @@ jobs:
 
       # Workaround npm/nx optional install issue - https://github.com/nrwl/nx/issues/15452
       - name: Install dependencies
-        run: npm ci && npm install --no-save @nx/nx-linux-x64-gnu
+        run: npm install --no-save @nx/nx-linux-x64-gnu && npm ci
 
       - name: Build
         run: npm run build
@@ -50,6 +50,21 @@ jobs:
             packages*/*/types/**
             packages/cli/__fixtures__/*
 
+      # Publish new version to local registry
+      - name: Run local npm registry
+        run: ./scripts/local-registry.sh &
+
+      - name: Publish bundle-stats packages locally
+        run: ./scripts/local-registry-publish.sh
+
+      - name: Upload local registry files
+        uses: actions/upload-artifact@v3
+        with:
+          name: local-registry
+          retention-days: 1
+          path: |
+            .verdaccio-storage*/**/*
+
   lint:
     needs:
       - build
@@ -71,7 +86,7 @@ jobs:
 
       # Workaround npm/nx optional install issue - https://github.com/nrwl/nx/issues/15452
       - name: Install dependencies
-        run: npm ci && npm install --no-save @nx/nx-linux-x64-gnu
+        run: npm install --no-save @nx/nx-linux-x64-gnu && npm ci
 
       - name: Download build files
         uses: actions/download-artifact@v3
@@ -102,7 +117,7 @@ jobs:
 
       # Workaround npm/nx optional install issue - https://github.com/nrwl/nx/issues/15452
       - name: Install dependencies
-        run: npm ci && npm install --no-save @nx/nx-linux-x64-gnu
+        run: npm install --no-save @nx/nx-linux-x64-gnu && npm ci
 
       - name: Download build files
         uses: actions/download-artifact@v3
@@ -133,7 +148,7 @@ jobs:
 
       # Workaround npm/nx optional install issue - https://github.com/nrwl/nx/issues/15452
       - name: Install dependencies
-        run: npm ci && npm install --no-save @nx/nx-linux-x64-gnu
+        run: npm install --no-save @nx/nx-linux-x64-gnu && npm ci
 
       - name: Download build files
         uses: actions/download-artifact@v3
@@ -185,14 +200,16 @@ jobs:
         with:
           name: build-artifacts
 
+      - name: Download local registry files
+        uses: actions/download-artifact@v3
+        with:
+          name: local-registry
+
       - name: Install dependencies
-        run: npm install -g lerna verdaccio
+        run: npm install -g verdaccio
 
       - name: Run local npm registry
         run: ./scripts/local-registry.sh &
-
-      - name: Publish bundle-stats packages locally
-        run: sleep 20 && ./scripts/local-registry-publish.sh
 
       - name: Test package
         run: npm run test:package
@@ -233,14 +250,16 @@ jobs:
         with:
           name: build-artifacts
 
+      - name: Download local registry files
+        uses: actions/download-artifact@v3
+        with:
+          name: local-registry
+
       - name: Install dependencies
-        run: npm install -g lerna verdaccio
+        run: npm install -g verdaccio
 
       - name: Run local npm registry
         run: ./scripts/local-registry.sh &
-
-      - name: Publish bundle-stats packages locally
-        run: sleep 20 && ./scripts/local-registry-publish.sh
 
       - name: Test package
         run: npm run test:package -- -t ${{ matrix.webpack }}
@@ -253,7 +272,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        node: [14]
+        node: [16]
     runs-on: ${{ matrix.os }}
     name: rollup plugin ${{ matrix.os }} nodejs ${{ matrix.node }}
     steps:
@@ -269,14 +288,16 @@ jobs:
         with:
           name: build-artifacts
 
+      - name: Download local registry files
+        uses: actions/download-artifact@v3
+        with:
+          name: local-registry
+
       - name: Install dependencies
-        run: npm install -g lerna verdaccio
+        run: npm install -g verdaccio
 
       - name: Run local npm registry
         run: ./scripts/local-registry.sh &
-
-      - name: Publish bundle-stats packages locally
-        run: sleep 20 && ./scripts/local-registry-publish.sh
 
       - name: Test package
         run: npm run test:package
@@ -320,7 +341,7 @@ jobs:
 
       # Workaround npm/nx optional install issue - https://github.com/nrwl/nx/issues/15452
       - name: Install dependencies
-        run: npm ci && npm install --no-save @nx/nx-linux-x64-gnu
+        run: npm install --no-save @nx/nx-linux-x64-gnu && npm ci
 
       - name: Download build
         uses: actions/download-artifact@v3
