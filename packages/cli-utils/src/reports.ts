@@ -109,8 +109,12 @@ export const generateReports = async (
     try {
       const baselineStatsData = await readBaseline(options.baselineFilepath);
       baselineStats = filter(baselineStatsData);
+
+      if (!options.silent) {
+        logger.info(`${TEXT.BASELINE_READING} ${baselineFilepath}`);
+      }
     } catch (err) {
-      logger.warn(TEXT.PLUGIN_BASELINE_MISSING_WARN);
+      logger.warn(TEXT.BASELINE_MISSING);
     }
   }
 

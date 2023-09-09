@@ -107,7 +107,7 @@ export default async function run(options: RunOptions): Promise<void> {
           baselineStats = await readBaseline(baselineFilepath);
           ctx.baselineStats = baselineStats;
         } catch (err) {
-          return TEXT.CLI_BASELINE_MISSING_WARN;
+          return TEXT.BASELINE_MISSING;
         }
 
         return false;
