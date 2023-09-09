@@ -14,9 +14,11 @@ interface BundleStatsOptions extends Omit<ReportOptions, 'outDir'> {
 
 export const bundleStats = (options: BundleStatsOptions = {}): Plugin => ({
   name: NAME,
-  async generateBundle(_, bundle) {
+  async generateBundle(outputOptions, bundle) {
     const source = bundleToWebpackStats(bundle);
-    const reports = await generateReports(source, options);
+    const reports = await generateReports(source, options, {
+      outputPath: outputOptions.dir,
+    });
 
     Object.entries(reports).forEach(([fileName, report]) => {
       this.emitFile({

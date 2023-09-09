@@ -47,7 +47,7 @@ describe('rollup plugin package', () => {
     });
   });
 
-  describe('baseline', () => {
+  describe('compare', () => {
     test('should generate bundle stats reports with default baseline', async () => {
       // Prime baseline.json
       const baselineDir = path.join(__dirname, 'node_modules/.cache/bundle-stats');
@@ -66,6 +66,85 @@ describe('rollup plugin package', () => {
       );
 
       const bundle = await rollup(rollupConfig());
+      const res = await bundle.generate({});
+
+      const asset = res.output[1];
+      expect(asset.fileName).toEqual('bundle-stats.html');
+      expect(asset.source).toContain('Bundle Size — 28B (-12.5%)');
+
+      await fs.rm(baselinePath, { force: true });
+    });
+
+    test.skip('should generate bundle stats reports with custom baseline', async () => {
+      // Prime baseline.json
+      const baselinePath = path.join(__dirname, 'dist', 'custom-baseline.json');
+      await fs.writeFile(
+        baselinePath,
+        JSON.stringify({
+          assets: [
+            {
+              name: './index.js',
+              size: 32,
+            },
+          ],
+        }),
+      );
+
+      const bundle = await rollup(rollupConfig({ baselineFilepath: 'custom-baseline.json' }));
+      const res = await bundle.generate({});
+
+      const asset = res.output[1];
+      expect(asset.fileName).toEqual('bundle-stats.html');
+      expect(asset.source).toContain('Bundle Size — 28B (-12.5%)');
+
+      await fs.rm(baselinePath, { force: true });
+    });
+  });
+
+  describe.skip('baseline', () => {
+    test('should generate bundle stats reports with default baseline and save', async () => {
+      // Prime baseline.json
+      const baselineDir = path.join(__dirname, 'node_modules/.cache/bundle-stats');
+      const baselinePath = path.join(baselineDir, 'baseline.json');
+      await fs.mkdir(baselineDir, { recursive: true });
+      await fs.writeFile(
+        baselinePath,
+        JSON.stringify({
+          assets: [
+            {
+              name: './index.js',
+              size: 32,
+            },
+          ],
+        }),
+      );
+
+      const bundle = await rollup(rollupConfig({ baseline: true }));
+      const res = await bundle.generate({});
+
+      const asset = res.output[1];
+      expect(asset.fileName).toEqual('bundle-stats.html');
+      expect(asset.source).toContain('Bundle Size — 28B (-12.5%)');
+
+      await fs.rm(baselinePath, { force: true });
+    });
+
+    test('should generate bundle stats reports with custom baseline and save', async () => {
+      // Prime baseline.json
+      const baselinePath = path.join(__dirname, 'custom-baseline.json');
+      await fs.writeFile(
+        baselinePath,
+        JSON.stringify({
+          assets: [
+            {
+              name: './index.js',
+              size: 32,
+            },
+          ],
+        }),
+      );
+
+      const bundle = await rollup(rollupConfig({ baseline: true }));
       const res = await bundle.generate({});
 
       const asset = res.output[1];
