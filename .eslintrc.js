@@ -38,6 +38,7 @@ module.exports = {
         devDependencies: [
           'build/**/*.js',
           '**/*.stories.jsx',
+          '**/__mocks__/**/*.js',
           '**/__tests__/*.js',
           '**/test/**/*.js',
           '**/storybook/*.js',
@@ -78,6 +79,7 @@ module.exports = {
             devDependencies: [
               'build/**/*.ts',
               '**/*.stories.tsx',
+              '**/__mocks__/**/*.ts',
               '**/__tests__/*.ts',
               '**/storybook/*.ts',
               '**/jest/*.ts',

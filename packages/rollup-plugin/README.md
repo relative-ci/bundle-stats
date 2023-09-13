@@ -68,6 +68,7 @@ module.exports = {
 
 - `compare` - use local saved stats for comparison (default `true`).
 - `baseline` - save current webpack stats as baseline (default `false`).
+- `baselineFilepath` - baseline absolute filepath or relative filepath to `output.dir` (default 'node_modules/.cache/bundle-stats/baseline.json')
 - `html` - output html report (default `true`).
 - `json` - output json report (default `false`).
 - `outDir` - output directory inside rollup output director `output.dir` (default `''`).

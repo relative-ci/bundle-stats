@@ -22,7 +22,8 @@ import webpackValidate from '@bundle-stats/plugin-webpack-validate';
 import {
   TEXT,
   createArtifacts,
-  getBaselineStatsFilepath,
+  getBaselinePath,
+  getBaselineRelativePath,
   getReportInfo,
   readBaseline,
   readJSONStream,
@@ -59,6 +60,10 @@ interface RunOptions {
 export default async function run(options: RunOptions): Promise<void> {
   const { baseline, baselineFilepath, compare, html, json, outDir, artifactFilepaths } = options;
 
+  const baselineAbsolutePath = getBaselinePath(process.cwd(), outDir, baselineFilepath);
+  // Generate relative path relative to process.cwd()
+  const baselinePath = getBaselineRelativePath(process.cwd(), '', baselineAbsolutePath);
+
   const tasks = new Listr([
     {
       title: 'Read Webpack stats files',
@@ -83,12 +88,8 @@ export default async function run(options: RunOptions): Promise<void> {
     {
       title: 'Read baseline data',
       task: async (ctx, task) => {
-        const relativeBaselineFilepath = path.relative(
-          process.cwd(),
-          getBaselineStatsFilepath(baselineFilepath),
-        );
         // eslint-disable-next-line no-param-reassign
-        task.title = `${task.title} (${relativeBaselineFilepath})`;
+        task.title = `${task.title} (${baselinePath})`;
 
         ctx.sources = ctx.sources.concat([{ webpack: webpackFilter(ctx.baselineStats) }]);
       },
@@ -104,10 +105,10 @@ export default async function run(options: RunOptions): Promise<void> {
         let baselineStats = {};
 
         try {
-          baselineStats = await readBaseline(baselineFilepath);
+          baselineStats = await readBaseline(baselineAbsolutePath);
           ctx.baselineStats = baselineStats;
         } catch (err) {
-          return TEXT.CLI_BASELINE_MISSING_WARN;
+          return TEXT.BASELINE_MISSING;
         }
 
         return false;
@@ -118,14 +119,10 @@ export default async function run(options: RunOptions): Promise<void> {
       task: (ctx, task) => {
         const stats = get(ctx, 'sources[0]webpack');
         const filteredWebpackStats = webpackFilter(stats) as JSON;
-        const relativeBaselineFilepath = path.relative(
-          process.cwd(),
-          getBaselineStatsFilepath(baselineFilepath),
-        );
 
-        return writeBaseline(filteredWebpackStats, relativeBaselineFilepath).then(() => {
+        return writeBaseline(filteredWebpackStats, baselineAbsolutePath).then(() => {
           // eslint-disable-next-line no-param-reassign
-          task.title = `${task.title} (${relativeBaselineFilepath})`;
+          task.title = `${task.title} (${baselinePath})`;
         });
       },
       skip: () => !baseline && TEXT.CLI_NO_BASELINE,

@@ -2,11 +2,10 @@ import path from 'path';
 import merge from 'lodash/merge';
 import { createJobs, createReport } from '@bundle-stats/utils';
 import filter from '@bundle-stats/plugin-webpack-filter';
-import validate from '@bundle-stats/plugin-webpack-validate';
 
 import * as TEXT from './text';
 import { createArtifacts } from './create-artifacts';
-import { getBaselineStatsFilepath, readBaseline } from './baseline';
+import { getBaselinePath, getBaselineRelativePath, readBaseline } from './baseline';
 
 export function getReportInfo(report: any): any {
   return report?.insights?.webpack?.assetsSizeTotal?.data;
@@ -26,7 +25,10 @@ export interface ReportOptions {
   baseline?: boolean;
 
   /**
-   * Custom baseline file path relative to the output dir
+   * Custom absolute baseline file path
+   *  - relative to the output dir or absolute file when the output path is present
+   *  or
+   *  - absolute path when the output path is missing
    * Default: node_modules/.cache/bundle-stats/baseline.json
    */
   baselineFilepath?: string;
@@ -57,18 +59,29 @@ export interface ReportOptions {
 }
 
 interface ReportPluginOptions {
+  /**
+   * Absolute path for the output directory
+   */
   outputPath?: string;
+  /**
+   * Custom logger
+   */
   logger?: Console;
-  invalidOptionsUrl?: string;
 }
 
-type ReportAssets = Record<string, string>;
+interface ReportAssets {
+  [filepath: string]: {
+    type: 'report' | 'baseline';
+    source: string;
+    filepath: string;
+  };
+}
 
 const DEFAULT_OPTIONS = {
-  compare: true,
-  baseline: Boolean(process.env.BUNDLE_STATS_BASELINE),
   html: true,
   json: false,
+  compare: true,
+  baseline: Boolean(process.env.BUNDLE_STATS_BASELINE),
   outDir: '',
   silent: false,
 };
@@ -79,54 +92,63 @@ export const generateReports = async (
   pluginOptions: ReportPluginOptions = {},
 ): Promise<ReportAssets> => {
   const { compare, baseline, html, json, outDir } = merge({}, DEFAULT_OPTIONS, options);
-  const { invalidOptionsUrl: invalidParamsUrl, outputPath, logger = console } = pluginOptions;
+  const { outputPath = process.cwd(), logger = console } = pluginOptions;
+
   const newAssets: ReportAssets = {};
-
-  const invalid = validate(source);
-
-  if (invalid) {
-    logger.warn([invalid, invalidParamsUrl].join('\n'));
-  }
 
   const data = filter(source);
 
-  // Webpack builtAt is not available yet
+  // Bundler builtAt might not be available yet
   if (!data.builtAt) {
     data.builtAt = Date.now();
   }
 
-  const baselineFilepath = getBaselineStatsFilepath(options.baselineFilepath, outputPath);
+  const baselineAbsolutePath = getBaselinePath(outputPath, outDir, options.baselineFilepath);
+  const baselinePath = getBaselineRelativePath(outputPath, outDir, baselineAbsolutePath);
+
   let baselineStats = null;
 
-  try {
-    if (compare) {
-      const baselineStatsData = await readBaseline(options.baselineFilepath);
+  if (compare) {
+    try {
+      const baselineStatsData = await readBaseline(baselineAbsolutePath);
       baselineStats = filter(baselineStatsData);
-      if (!options.silent) logger.info(`Read baseline from ${baselineFilepath}`);
+
+      if (!options.silent) {
+        logger.info(`${TEXT.BASELINE_READING} ${baselinePath}`);
+      }
+    } catch (err) {
+      logger.warn(TEXT.BASELINE_MISSING);
     }
-  } catch (err) {
-    logger.warn(TEXT.PLUGIN_BASELINE_MISSING_WARN);
   }
 
-  const jobs = createJobs([
-    { webpack: data },
-    ...(compare && baselineStats ? [{ webpack: baselineStats }] : []),
-  ]);
+  const sources = [{ webpack: data }];
+
+  if (baselineStats) {
+    sources.push({ webpack: baselineStats });
+  }
+
+  const jobs = createJobs(sources);
   const report = createReport(jobs);
   const artifacts = createArtifacts(jobs, report, { html, json });
 
   Object.values(artifacts).forEach(({ filename, output }) => {
-    const filepath = path.join(outDir, filename);
-
+    const relativeFilepath = path.join(outDir, filename);
     // eslint-disable-next-line no-param-reassign
-    newAssets[filepath] = output;
+    newAssets[relativeFilepath] = {
+      type: 'report',
+      source: output,
+      filepath: path.join(outputPath, relativeFilepath),
+    };
   });
 
+  // Save baseline JSON file if option is set
   if (baseline) {
     // eslint-disable-next-line no-param-reassign
-    newAssets[baselineFilepath] = JSON.stringify(data);
-
-    if (!options.silent) logger.info(`Write baseline data to ${baselineFilepath}`);
+    newAssets[baselinePath] = {
+      type: 'baseline',
+      source: JSON.stringify(data),
+      filepath: baselineAbsolutePath,
+    };
   }
 
   const info = getReportInfo(report);

@@ -1,78 +1,98 @@
 const path = require('path');
+const { vol } = require('memfs'); // eslint-disable-line
 const fs = require('fs/promises');
 const { rollup } = require('rollup');
 
 const rollupConfig = require('./rollup.config');
 
-describe('rollup plugin package', () => {
-  test('should generate bundle stats report', async () => {
-    const bundle = await rollup(rollupConfig());
-    const res = await bundle.generate({});
+const SOURCE_BASELINE = {
+  assets: [
+    {
+      name: 'index.js',
+      size: 20,
+    },
+  ],
+};
 
-    expect(res.output[1]).toMatchObject({
-      fileName: 'bundle-stats.html',
-    });
+jest.mock('fs/promises');
+
+async function build(bundleStatsConfig) {
+  const config = rollupConfig(bundleStatsConfig);
+  const bundle = await rollup(config);
+  await bundle.generate(config.output);
+}
+
+describe('rollup plugin package', () => {
+  beforeEach(() => {
+    vol.reset();
+  });
+
+  test('should generate bundle stats report', async () => {
+    await build();
+
+    const reportFile = await fs.readFile(path.join(__dirname, 'dist/bundle-stats.html'), 'utf-8');
+    expect(reportFile).toContain('<title>Bundle Size — 28B (+100%). - BundleStats</title>');
   });
 
   test('should generate bundle stats report with json output', async () => {
-    const bundle = await rollup(
-      rollupConfig({
-        json: true,
-      }),
-    );
+    await build({ json: true });
 
-    const res = await bundle.generate({});
+    const reportHTML = await fs.readFile(path.join(__dirname, 'dist/bundle-stats.html'), 'utf-8');
+    const reportJSON = await fs.readFile(path.join(__dirname, 'dist/bundle-stats.json'), 'utf-8');
 
-    expect(res.output[2]).toMatchObject({
-      fileName: 'bundle-stats.json',
-    });
+    expect(reportHTML).toContain('<title>Bundle Size — 28B (+100%). - BundleStats</title>');
+    expect(reportJSON).toContain('"text": "Bundle Size — 28B (+100%)."');
   });
 
   test('should generate bundle stats reports with custom outDir', async () => {
-    const bundle = await rollup(
-      rollupConfig({
-        json: true,
-        outDir: 'artifacts',
-      }),
+    await build({ json: true, outDir: 'artifacts' });
+
+    const reportHTML = await fs.readFile(
+      path.join(__dirname, 'dist/artifacts/bundle-stats.html'),
+      'utf-8',
+    );
+    const reportJSON = await fs.readFile(
+      path.join(__dirname, 'dist/artifacts/bundle-stats.json'),
+      'utf-8',
     );
 
-    const res = await bundle.generate({});
-
-    expect(res.output[1]).toMatchObject({
-      fileName: 'artifacts/bundle-stats.html',
-    });
-
-    expect(res.output[2]).toMatchObject({
-      fileName: 'artifacts/bundle-stats.json',
-    });
+    expect(reportHTML).toContain('<title>Bundle Size — 28B (+100%). - BundleStats</title>');
+    expect(reportJSON).toContain('"text": "Bundle Size — 28B (+100%)."');
   });
 
-  describe('baseline', () => {
-    test('should generate bundle stats reports with default baseline', async () => {
+  describe('compare with baseline', () => {
+    test('should generate bundle stats reports with default baseline and save', async () => {
       // Prime baseline.json
-      const baselineDir = path.join(__dirname, 'node_modules/.cache/bundle-stats');
-      const baselinePath = path.join(baselineDir, 'baseline.json');
-      await fs.mkdir(baselineDir, { recursive: true });
-      await fs.writeFile(
-        baselinePath,
-        JSON.stringify({
-          assets: [
-            {
-              name: './index.js',
-              size: 32,
-            },
-          ],
-        }),
-      );
+      const baselinePath = path.join(__dirname, 'node_modules/.cache/bundle-stats/baseline.json');
 
-      const bundle = await rollup(rollupConfig());
-      const res = await bundle.generate({});
+      vol.fromJSON({
+        [baselinePath]: JSON.stringify(SOURCE_BASELINE),
+      });
 
-      const asset = res.output[1];
-      expect(asset.fileName).toEqual('bundle-stats.html');
-      expect(asset.source).toContain('Bundle Size — 28B (-12.5%)');
+      await build({ baseline: true });
 
-      await fs.rm(baselinePath, { force: true });
+      const reportHTML = await fs.readFile(path.join(__dirname, 'dist/bundle-stats.html'), 'utf-8');
+      expect(reportHTML).toContain('<title>Bundle Size — 28B (+40%). - BundleStats</title>');
+
+      const baselineContent = await fs.readFile(baselinePath, 'utf-8');
+      expect(baselineContent).toContain('"size":28');
+    });
+
+    test('should generate bundle stats reports with custom baseline and save', async () => {
+      // Prime baseline.json
+      const baselinePath = path.join(__dirname, 'dist', 'custom-baseline.json');
+
+      vol.fromJSON({
+        [baselinePath]: JSON.stringify(SOURCE_BASELINE),
+      });
+
+      await build({ baseline: true, baselineFilepath: 'custom-baseline.json' });
+
+      const reportHTML = await fs.readFile(path.join(__dirname, 'dist/bundle-stats.html'), 'utf-8');
+      expect(reportHTML).toContain('<title>Bundle Size — 28B (+40%). - BundleStats</title>');
+
+      const baselineContent = await fs.readFile(baselinePath, 'utf-8');
+      expect(baselineContent).toContain('"size":28');
     });
   });
 });

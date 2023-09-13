@@ -12,6 +12,9 @@ packages:
   'next-plugin-bundle-stats':
     access: $all
     publish: $anonymous
+  'rollup-plugin-bundle-stats':
+    access: $all
+    publish: $anonymous
   '@bundle-stats/*':
     access: $all
     publish: $anonymous
