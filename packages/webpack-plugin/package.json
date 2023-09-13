@@ -46,6 +46,7 @@
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/webpack-plugin#readme",
   "dependencies": {
     "@bundle-stats/cli-utils": "^4.6.3",
+    "@bundle-stats/plugin-webpack-validate": "^4.6.3",
     "core-js": "^3.21.0",
     "lodash": "^4.17.0"
   },

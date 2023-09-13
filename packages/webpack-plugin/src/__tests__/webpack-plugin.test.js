@@ -102,8 +102,6 @@ describe('webpack plugin', () => {
     });
 
     test('should compare with baseline.json', (done) => {
-      expect.assertions(6);
-
       const compiler = webpack({
         mode: 'production',
         context: CONTEXT,
@@ -118,7 +116,7 @@ describe('webpack plugin', () => {
         /* eslint-disable no-console */
         expect(console.warn).not.toBeCalledWith('Missing baseline stats, see "baseline" option.');
         expect(console.info).toBeCalledWith(
-          'Read baseline from ../node_modules/.cache/bundle-stats/baseline.json',
+          'Reading baseline data from ../node_modules/.cache/bundle-stats/baseline.json',
         );
         expect(console.info).toBeCalledWith('Bundle Size — 27B (+35%).');
         /* eslint-enable no-console */
@@ -131,8 +129,6 @@ describe('webpack plugin', () => {
     });
 
     test('should compare and save baseline with custom baseline.json', (done) => {
-      expect.assertions(7);
-
       const compiler = webpack({
         mode: 'production',
         output: {
@@ -155,7 +151,7 @@ describe('webpack plugin', () => {
 
         /* eslint-disable no-console */
         expect(console.warn).not.toBeCalledWith('Missing baseline stats, see "baseline" option.');
-        expect(console.info).toBeCalledWith('Read baseline from custom-baseline.json');
+        expect(console.info).toBeCalledWith('Reading baseline data from custom-baseline.json');
         expect(console.info).toBeCalledWith('Bundle Size — 27B (+8%).');
         /* eslint-enable no-console */
 
