@@ -3,9 +3,9 @@ on:
   push:
     branches:
       - master
+      - fix-baseline-write
     tags:
       - v*
-  pull_request:
 
 jobs:
   build:
