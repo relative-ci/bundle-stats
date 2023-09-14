@@ -64,6 +64,13 @@ export default async function run(options: RunOptions): Promise<void> {
   // Generate relative path relative to process.cwd()
   const baselinePath = getBaselineRelativePath(process.cwd(), '', baselineAbsolutePath);
 
+  console.log({
+    dirname: __dirname,
+    cwd: process.cwd(),
+    baselineAbsolutePath,
+    baselinePath,
+  });
+
   const tasks = new Listr([
     {
       title: 'Read Webpack stats files',
