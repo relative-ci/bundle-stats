@@ -64,13 +64,6 @@ export default async function run(options: RunOptions): Promise<void> {
   // Generate relative path relative to process.cwd()
   const baselinePath = getBaselineRelativePath(process.cwd(), '', baselineAbsolutePath);
 
-  console.log({
-    dirname: __dirname,
-    cwd: process.cwd(),
-    baselineAbsolutePath,
-    baselinePath,
-  });
-
   const tasks = new Listr([
     {
       title: 'Read Webpack stats files',
@@ -125,9 +118,9 @@ export default async function run(options: RunOptions): Promise<void> {
       title: 'Write baseline data',
       task: (ctx, task) => {
         const stats = get(ctx, 'sources[0]webpack');
-        const filteredWebpackStats = webpackFilter(stats) as JSON;
+        const filteredWebpackStats = webpackFilter(stats) as Record<string, unknown>;
 
-        return writeBaseline(filteredWebpackStats, baselineAbsolutePath).then(() => {
+        return writeBaseline(baselineAbsolutePath, filteredWebpackStats).then(() => {
           // eslint-disable-next-line no-param-reassign
           task.title = `${task.title} (${baselinePath})`;
         });

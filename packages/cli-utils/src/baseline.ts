@@ -42,6 +42,9 @@ export async function readBaseline(baselineFilepath: string): Promise<object> {
   return JSON.parse(file);
 }
 
-export async function writeBaseline(data: JSON, baselineFilepath: string): Promise<void> {
+export async function writeBaseline(
+  baselineFilepath: string,
+  data: Record<string, unknown>,
+): Promise<void> {
   return fs.writeFile(baselineFilepath, JSON.stringify(data));
 }
