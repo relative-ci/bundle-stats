@@ -40,13 +40,13 @@
     "@bundle-stats/html-templates": "^4.6.3",
     "@bundle-stats/plugin-webpack-filter": "^4.6.3",
     "@bundle-stats/utils": "^4.6.3",
-    "find-cache-dir": "^3.1.0",
+    "find-cache-dir": "^5.0.0",
     "lodash": "^4.17.21",
     "stream-chain": "^2.2.5",
     "stream-json": "^1.8.0"
   },
   "devDependencies": {
-    "@types/find-cache-dir": "^3.2.1",
+    "@types/find-cache-dir": "^5.0.0",
     "@types/lodash": "4.14.198",
     "@types/stream-chain": "^2.0.1",
     "@types/stream-json": "^1.7.3",
