@@ -24,7 +24,7 @@
     "@tsconfig/node14": "14.1.0",
     "@types/react": "18.2.21",
     "@typescript-eslint/eslint-plugin": "6.7.0",
-    "@typescript-eslint/parser": "6.7.0",
+    "@typescript-eslint/parser": "6.7.2",
     "babel-eslint": "10.1.0",
     "dotenv": "16.3.1",
     "eslint": "8.49.0",
