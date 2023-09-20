@@ -1,1 +1,3 @@
-export { fs } from 'memfs';
+const { vol } = require('memfs');
+
+module.exports = vol;

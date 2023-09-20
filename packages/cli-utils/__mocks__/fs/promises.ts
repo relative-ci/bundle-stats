@@ -1,3 +1,3 @@
-import { fs } from 'memfs';
+const { vol } = require('memfs');
 
-export default fs.promises;
+module.exports = vol.promises;

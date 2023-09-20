@@ -5,7 +5,8 @@ import filter from '@bundle-stats/plugin-webpack-filter';
 
 import * as TEXT from './text';
 import { createArtifacts } from './create-artifacts';
-import { getBaselinePath, getBaselineRelativePath, readBaseline } from './baseline';
+import { readJSONStream } from './fs';
+import { getBaselinePath, getBaselineRelativePath } from './baseline';
 
 export function getReportInfo(report: any): any {
   return report?.insights?.webpack?.assetsSizeTotal?.data;
@@ -110,8 +111,8 @@ export const generateReports = async (
 
   if (compare) {
     try {
-      const baselineStatsData = await readBaseline(baselineAbsolutePath);
-      baselineStats = filter(baselineStatsData);
+      const baselineStatsData = await readJSONStream(baselineAbsolutePath);
+      baselineStats = filter(baselineStatsData as any);
 
       if (!options.silent) {
         logger.info(`${TEXT.BASELINE_READING} ${baselinePath}`);
