@@ -64,9 +64,8 @@ export default async function run(options: RunOptions): Promise<void> {
   // Generate relative path relative to process.cwd()
   const baselinePath = getBaselineRelativePath(process.cwd(), '', baselineAbsolutePath);
 
-  console.log({
-    dirname: __dirname || '__dirname__ is missing',
-    cwd: process.cwd() || 'process.cwd is empty',
+  console.log('RUN', {
+    cwd: process.cwd(),
     baselineAbsolutePath,
     baselinePath,
   });
