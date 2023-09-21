@@ -4,6 +4,7 @@ import yargs from 'yargs';
 import updateNotifier from 'update-notifier';
 
 import run from './run';
+import info from '../package.json';
 
 const DEFAULT_OUTPUT_DIR = './dist';
 const WEEK_IN_MS = 1000 * 60 * 60 * 24 * 7;
@@ -34,6 +35,8 @@ export default async function cli(pkg: object) {
 
     return;
   }
+
+  console.info('CLI', info.version, info.name);
 
   const args = yargs
     .usage('Usage: $0 OPTIONS [STATS_FILE]...')
