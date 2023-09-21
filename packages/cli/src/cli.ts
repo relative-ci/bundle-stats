@@ -4,6 +4,7 @@ import yargs from 'yargs';
 import updateNotifier from 'update-notifier';
 
 import run from './run';
+// @ts-ignore
 import info from '../package.json';
 
 const DEFAULT_OUTPUT_DIR = './dist';
