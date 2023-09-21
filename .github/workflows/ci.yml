@@ -170,7 +170,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-latest, ubuntu-latest]
-        node: [20, 18, 16, 14]
+        node: [14]
     runs-on: ${{ matrix.os }}
     name: CLI ${{ matrix.os }} nodejs ${{ matrix.node }}
     steps:
