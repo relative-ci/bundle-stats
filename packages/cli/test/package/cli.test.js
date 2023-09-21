@@ -128,10 +128,12 @@ describe('CLI', () => {
       await fs.mkdir(baselineCustomRelativeDirectory, { recursive: true });
       await fs.copyFile(
         '../../__fixtures__/webpack-stats.baseline.json',
-        baselineCustomRelativeFilepath,
+        path.join(__dirname, baselineCustomRelativeFilepath),
       );
 
       console.log({
+        dirname: __dirname || '__dirname__ is missing',
+        cwd: process.cwd() || 'process.cwd is empty',
         baselineCustomRelativeDirectory,
         baselineCustomRelativeFilepath,
       });
