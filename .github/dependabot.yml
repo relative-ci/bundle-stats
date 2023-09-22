@@ -13,3 +13,8 @@ updates:
       time: "02:00"
     target-branch: "master"
     open-pull-requests-limit: 20
+    groups:
+      storybook:
+        patterns:
+          - "storybook"
+          - "@storybook/*"
