@@ -67,7 +67,7 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
 
   return (
     <Portal className={cx(css.root, className)}>
-      <Box padding="small" as="header" className={css.header}>
+      <Box padding="medium" as="header" className={css.header}>
         <Stack space="small">
           {tags && <div>{tags}</div>}
 
@@ -88,7 +88,7 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
           <Icon glyph={Icon.ICONS.CLOSE} size="large" />
         </button>
       </Box>
-      <Box padding="small" as="main" className={css.contentWrapper}>
+      <Box padding="medium" as="main" className={css.contentWrapper}>
         <Stack space="small" className={css.content}>
           {children}
 
@@ -106,7 +106,9 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
 
                 return (
                   <Table.Tr key={key}>
-                    <Table.Th className={cx(css.runsCell, css.runsColJob)}>{labels[index]}</Table.Th>
+                    <Table.Th className={cx(css.runsCell, css.runsColJob)}>
+                      {labels[index]}
+                    </Table.Th>
                     <Table.Td className={cx(css.runsCell, css.runsColName)}>
                       <FileName
                         className={css.fileName}

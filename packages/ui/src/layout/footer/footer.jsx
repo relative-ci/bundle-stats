@@ -4,6 +4,7 @@ import cx from 'classnames';
 
 import config from '../../config.json';
 import { Container } from '../../ui/container';
+import I18N from '../../i18n';
 import { Box } from '../box';
 import { Stack } from '../stack';
 import css from './footer.module.css';
@@ -26,7 +27,7 @@ export const Footer = ({ className, version }) => (
             <ExternalLink
               href={config.gitHubUrl}
               className={cx(css.navItem, css.navLink)}
-              title="In-depth bundle analyzer for webpack(bundle size, assets, modules, packages)"
+              title={I18N.GITHUB_LINK_TITLE}
             >
               {`BundleStats ${version}`}
             </ExternalLink>
@@ -34,9 +35,9 @@ export const Footer = ({ className, version }) => (
               <ExternalLink
                 href={`${config.gitHubUrl}/issues`}
                 className={css.navLink}
-                title="Navigate to GitHub and open issue"
+                title={I18N.REPORT_ISSUE_LINK_TITLE}
               >
-                Report issue
+                {I18N.REPORT_ISSUE}
               </ExternalLink>
             </span>
             <span className={css.navItem}>
@@ -44,9 +45,9 @@ export const Footer = ({ className, version }) => (
               <ExternalLink
                 className={css.navLink}
                 href={config.siteUrl}
-                title="Go to RelativeCI - Specialized insights for web bundles"
+                title={I18N.APP_LINK_TITLE}
               >
-                RelativeCI
+                {config.appName}
               </ExternalLink>
             </span>
           </nav>
