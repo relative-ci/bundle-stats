@@ -7,7 +7,7 @@ import validate from '@bundle-stats/plugin-webpack-validate';
 import * as CONFIG from './config';
 
 const DEFAULT_OPTIONS = {
-  baseline: Boolean(process.env.BUNDLE_STATS_BASELINE),
+  baseline: process.env.BUNDLE_STATS_BASELINE === 'true',
   baselineFilepath: undefined,
   stats: {
     assets: true,
