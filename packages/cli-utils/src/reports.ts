@@ -81,7 +81,7 @@ const DEFAULT_OPTIONS = {
   html: true,
   json: false,
   compare: true,
-  baseline: Boolean(process.env.BUNDLE_STATS_BASELINE),
+  baseline: process.env.BUNDLE_STATS_BASELINE === 'true',
   outDir: '',
   silent: false,
 };

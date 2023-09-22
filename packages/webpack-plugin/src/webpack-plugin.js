@@ -7,8 +7,6 @@ import validate from '@bundle-stats/plugin-webpack-validate';
 import * as CONFIG from './config';
 
 const DEFAULT_OPTIONS = {
-  baseline: Boolean(process.env.BUNDLE_STATS_BASELINE),
-  baselineFilepath: undefined,
   stats: {
     assets: true,
     chunks: true,
@@ -28,7 +26,7 @@ export class BundleStatsWebpackPlugin {
   }
 
   apply(compiler) {
-    const { baselineFilepath, ...options } = merge({}, DEFAULT_OPTIONS, this.options);
+    const options = merge({}, DEFAULT_OPTIONS, this.options);
 
     if (isWebpack5) {
       compiler.hooks.thisCompilation.tap(PLUGIN_NAME, (compilation) => {
@@ -53,8 +51,9 @@ export class BundleStatsWebpackPlugin {
             const newAssets = await generateReports(
               stats,
               {
-                ...options,
-                baselineFilepath: baselineFilepath && path.join(outputPath, baselineFilepath),
+                baseline: options.baseline,
+                baselineFilepath:
+                  options.baselineFilepath && path.join(outputPath, options.baselineFilepath),
               },
               {
                 outputPath,
@@ -90,8 +89,9 @@ export class BundleStatsWebpackPlugin {
       const newAssets = await generateReports(
         stats,
         {
-          ...options,
-          baselineFilepath: baselineFilepath && path.join(outputPath, baselineFilepath),
+          baseline: options.baseline,
+          baselineFilepath:
+            options.baselineFilepath && path.join(outputPath, options.baselineFilepath),
         },
         {
           outputPath,
