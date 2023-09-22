@@ -30,7 +30,6 @@
   /** space for close icon */
   padding-right: calc(var(--space-medium) + var(--space-xxxsmall) + var(--space-xsmall));
   border-bottom: 1px solid var(--color-outline);
-  background: var(--color-highlight);
 }
 
 .headerClose {

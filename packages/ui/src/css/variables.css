@@ -197,6 +197,6 @@
 
   /** Layout */
   --max-width: 88rem;
-  --entry-info-width: 640px;
+  --entry-info-width: 64rem;
   --entry-info-top: var(--header-height);
 }
