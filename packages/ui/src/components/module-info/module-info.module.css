@@ -10,6 +10,6 @@
   font-size: 1em;
 }
 
-.chunksItem + .chunksItem {
-  margin-left: var(--space-xxxsmall);
+.chunksItem + .chunksItem::before {
+  content: ', ';
 }
