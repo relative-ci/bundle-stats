@@ -120,20 +120,28 @@ describe('CLI', () => {
       expect(stdout).toContain('[SUCCESS] Save reports');
     });
 
-    test('should generate report with custom relative baseline filepath', async () => {
+    test.only('should generate report with custom relative baseline filepath', async () => {
       // prime relative custom baseline
       const baselineCustomRelativeDirectory = path.join('dist', baselineCustomDirectory);
       const baselineCustomRelativeFilepath = path.join('dist', baselineCustomFilepath);
 
-      await fs.mkdir(baselineCustomRelativeDirectory, { recursive: true });
+      await fs.mkdir(path.join(__dirname, baselineCustomRelativeDirectory), { recursive: true });
       await fs.copyFile(
         '../../__fixtures__/webpack-stats.baseline.json',
-        baselineCustomRelativeFilepath,
+        path.join(__dirname, baselineCustomRelativeFilepath),
       );
+
+      console.log('TEST', {
+        cwd: process.cwd() || 'process.cwd is empty',
+        baselineCustomRelativeDirectory,
+        baselineCustomRelativeFilepath,
+      });
 
       const { stdout } = await exec(
         `npx bundle-stats --compare --baseline --baseline-filepath ${baselineCustomFilepath} ../../__fixtures__/webpack-stats.current.json`,
       );
+
+      console.log(stdout);
 
       const htmlReport = await fs.readFile('dist/bundle-stats.html', 'utf8');
       expect(htmlReport).toContain('Bundle Size — 2MiB (-3.11%). - BundleStats');
