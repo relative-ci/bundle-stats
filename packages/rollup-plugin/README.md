@@ -53,6 +53,7 @@ yarn add --dev rollup-plugin-bundle-stats
 
 ## Configure
 
+### Rollup
 ```js
 // rollup.config.js
 const { bundleStats } = require('rollup-plugin-bundle-stats');
@@ -62,7 +63,20 @@ module.exports = {
   plugins: [
     bundleStats()
   ]
-}
+};
+```
+
+### Vite
+```js
+// vite.config.js
+const { bundleStats } = require('rollup-plugin-bundle-stats');
+
+module.exports = {
+  ...,
+  plugins: [
+    bundleStats()
+  ]
+};
 ```
 
 ### Options
