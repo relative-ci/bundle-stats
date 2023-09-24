@@ -83,7 +83,12 @@
   font-family: var(--font-family-fixed);
 }
 
+.meta {
+  width: 100%;
+}
+
 .metaLabel {
+  flex: 0 0 auto;
   padding: 2px 0;
   display: inline-block;
   margin-right: var(--space-xxxsmall);
