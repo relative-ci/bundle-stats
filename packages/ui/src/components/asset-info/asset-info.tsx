@@ -14,7 +14,7 @@ import { Asset, MetaChunk } from '@bundle-stats/utils/types/webpack';
 import { FlexStack } from '../../layout/flex-stack';
 import { Tag } from '../../ui/tag';
 import { ComponentLink } from '../component-link';
-import { EntryInfo } from '../entry-info';
+import { EntryInfo, EntryInfoMetaLink } from '../entry-info';
 import css from './asset-info.module.css';
 
 interface ChunkModulesLinkProps {
@@ -134,12 +134,13 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
     >
       {item.fileType && (
         <EntryInfo.Meta label="File type">
-          <CustomComponentLink
+          <EntryInfoMetaLink
+            as={CustomComponentLink}
             {...getBundleAssetsFileTypeComponentLink(item.fileType, fileTypeLabel)}
             onClick={onClick}
           >
             {fileTypeLabel}
-          </CustomComponentLink>
+          </EntryInfoMetaLink>
         </EntryInfo.Meta>
       )}
 

@@ -1,15 +1,3 @@
 .chunksItems {
   display: inline;
 }
-
-.chunksItem {
-  overflow-wrap: break-word;
-  text-decoration: none;
-  text-transform: none;
-  font-weight: normal;
-  font-size: 1em;
-}
-
-.chunksItem + .chunksItem {
-  margin-left: var(--space-xxxsmall);
-}

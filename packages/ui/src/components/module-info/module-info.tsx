@@ -16,7 +16,7 @@ import { Module, MetaChunk } from '@bundle-stats/utils/types/webpack';
 import { Stack } from '../../layout/stack';
 import { Tag } from '../../ui/tag';
 import { ComponentLink } from '../component-link';
-import { EntryInfo } from '../entry-info';
+import { EntryInfo, EntryInfoMetaLink } from '../entry-info';
 import css from './module-info.module.css';
 
 interface ModuleInfoProps {
@@ -83,12 +83,13 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
               }
 
               return (
-                <CustomComponentLink
+                <EntryInfoMetaLink
+                  as={CustomComponentLink}
                   {...getBundleModulesByChunk(chunkIds, chunkId)}
                   className={css.chunksItem}
                 >
                   {chunk.name}
-                </CustomComponentLink>
+                </EntryInfoMetaLink>
               );
             })}
           </EntryInfo.Meta>
@@ -96,19 +97,23 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
 
         {item?.fileType && (
           <EntryInfo.Meta label="File type">
-            <CustomComponentLink {...getBundleModulesByFileTpe(item.fileType, fileTypeLabel)}>
+            <EntryInfoMetaLink
+              as={CustomComponentLink}
+              {...getBundleModulesByFileTpe(item.fileType, fileTypeLabel)}
+            >
               {fileTypeLabel}
-            </CustomComponentLink>
+            </EntryInfoMetaLink>
           </EntryInfo.Meta>
         )}
 
         <EntryInfo.Meta label="Source">
-          <CustomComponentLink
+          <EntryInfoMetaLink
+            as={CustomComponentLink}
             {...getBundleModulesBySource(item.thirdParty || false, sourceTypeLabel)}
             onClick={onClick}
           >
             {sourceTypeLabel}
-          </CustomComponentLink>
+          </EntryInfoMetaLink>
         </EntryInfo.Meta>
       </Stack>
     </EntryInfo>
