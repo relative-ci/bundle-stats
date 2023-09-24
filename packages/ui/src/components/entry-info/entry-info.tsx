@@ -11,6 +11,15 @@ import { Table } from '../../ui/table';
 import { RunInfo } from '../run-info';
 import css from './entry-info.module.css';
 
+interface EntryInfoMetaLinkProps {
+  as?: React.ElementType;
+}
+
+export const EntryInfoMetaLink = (props: EntryInfoMetaLinkProps & React.ComponentProps<'a'>) => {
+  const { as: BaseComponent = 'a', className = '', ...restProps } = props;
+  return <BaseComponent className={cx(css.metaLink, className)} {...restProps} />;
+};
+
 interface EntryInfoMetaProps {
   label: string;
 }

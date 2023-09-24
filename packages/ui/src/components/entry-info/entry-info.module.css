@@ -84,7 +84,33 @@
 }
 
 .metaLabel {
+  padding: 2px 0;
   display: inline-block;
   margin-right: var(--space-xxxsmall);
-  min-width: 5em;
+  min-width: 6em;
+  color: var(--color-text-light);
+}
+
+.metaLink {
+  padding: 2px var(--space-xxxsmall);
+  border-radius: var(--radius-small);
+  background: var(--color-highlight);
+  transition: var(--transition-out);
+
+  overflow-wrap: break-word;
+  text-decoration: none;
+  text-transform: none;
+  font-weight: normal;
+}
+
+.metaLink + .metaLink {
+  margin-left: var(--space-xxsmall);
+}
+
+.metaLink:hover,
+.metaLink:active,
+.metaLink:focus {
+  transition: var(--transition-in);
+  background: var(--color-outline);
+  color: var(--color-primary-dark);
 }
