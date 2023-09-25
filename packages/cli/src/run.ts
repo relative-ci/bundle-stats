@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import path from 'path';
-import { outputFile } from 'fs-extra';
 import { Listr } from 'listr2';
 import { get } from 'lodash';
 import boxen from 'boxen';
@@ -25,9 +24,8 @@ import {
   getBaselinePath,
   getBaselineRelativePath,
   getReportInfo,
-  readBaseline,
   readJSONStream,
-  writeBaseline,
+  writeJSON,
 } from '@bundle-stats/cli-utils';
 
 import LOCALES from './locales.json';
@@ -63,13 +61,6 @@ export default async function run(options: RunOptions): Promise<void> {
   const baselineAbsolutePath = getBaselinePath(process.cwd(), outDir, baselineFilepath);
   // Generate relative path relative to process.cwd()
   const baselinePath = getBaselineRelativePath(process.cwd(), '', baselineAbsolutePath);
-
-  console.log({
-    dirname: __dirname,
-    cwd: process.cwd(),
-    baselineAbsolutePath,
-    baselinePath,
-  });
 
   const tasks = new Listr([
     {
@@ -112,7 +103,7 @@ export default async function run(options: RunOptions): Promise<void> {
         let baselineStats = {};
 
         try {
-          baselineStats = await readBaseline(baselineAbsolutePath);
+          baselineStats = await readJSONStream(baselineAbsolutePath);
           ctx.baselineStats = baselineStats;
         } catch (err) {
           return TEXT.BASELINE_MISSING;
@@ -125,9 +116,9 @@ export default async function run(options: RunOptions): Promise<void> {
       title: 'Write baseline data',
       task: (ctx, task) => {
         const stats = get(ctx, 'sources[0]webpack');
-        const filteredWebpackStats = webpackFilter(stats) as JSON;
+        const filteredWebpackStats = webpackFilter(stats) as Record<string, unknown>;
 
-        return writeBaseline(filteredWebpackStats, baselineAbsolutePath).then(() => {
+        return writeJSON(baselineAbsolutePath, filteredWebpackStats).then(() => {
           // eslint-disable-next-line no-param-reassign
           task.title = `${task.title} (${baselinePath})`;
         });
@@ -155,7 +146,7 @@ export default async function run(options: RunOptions): Promise<void> {
           title: filename,
           task: async () => {
             const filepath = path.join(outDir, filename);
-            await outputFile(filepath, output);
+            await writeJSON(filepath, output);
 
             ctx.output = [...(ctx.output ? ctx.output : []), filepath];
           },

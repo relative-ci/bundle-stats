@@ -1,5 +1,4 @@
 import path from 'path';
-import fs from 'fs/promises';
 import findCacheDir from 'find-cache-dir';
 
 export const BASELINE_STATS_DIR =
@@ -36,12 +35,3 @@ export const getBaselineRelativePath = (
   const absoluteFilepath = getBaselinePath(outputPath, outputDir, filepath);
   return path.relative(path.join(outputPath, outputDir), absoluteFilepath);
 };
-
-export async function readBaseline(baselineFilepath: string): Promise<object> {
-  const file = await fs.readFile(baselineFilepath, 'utf-8');
-  return JSON.parse(file);
-}
-
-export async function writeBaseline(data: JSON, baselineFilepath: string): Promise<void> {
-  return fs.writeFile(baselineFilepath, JSON.stringify(data));
-}

@@ -24,7 +24,7 @@ const SOURCE_BASELINE = {
   ],
 };
 
-describe('generateAssets', () => {
+describe('generateReports', () => {
   test('should generate reports with default options', async () => {
     const reports = await generateReports(SOURCE_CURRENT, {});
 
