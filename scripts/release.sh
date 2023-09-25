@@ -16,7 +16,7 @@ const options = [
    '--yes',
    '--concurrency 1',
    '--loglevel debug',
-   '--max-buffer 10485760',
+   '--max-buffer 104857600',
  ];
 
 console.log(`Running lerna with "${options.join(' ')}"`);
