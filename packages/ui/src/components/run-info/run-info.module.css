@@ -39,11 +39,13 @@
 
 /* Loading state */
 .loading.currentMetric {
-  width: 8em;
+  min-width: 0;
+  max-width: 8em;
 }
 
 .loading.baselineMetric {
-  width: 5em;
+  min-width: 0;
+  max-width: 5em;
 }
 
 /* Hover state */
