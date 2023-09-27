@@ -58,7 +58,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "5.3.4",
-    "rimraf": "5.0.4",
+    "rimraf": "5.0.5",
     "storybook": "7.4.5",
     "typescript": "5.1.6",
     "typescript-plugin-css-modules": "5.0.1"
