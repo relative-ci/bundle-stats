@@ -26,7 +26,7 @@ export class BundleStatsWebpackPlugin {
   }
 
   apply(compiler) {
-    const options = merge({}, DEFAULT_OPTIONS, this.options);
+    const { stats, ...options } = merge({}, DEFAULT_OPTIONS, this.options);
 
     if (isWebpack5) {
       compiler.hooks.thisCompilation.tap(PLUGIN_NAME, (compilation) => {
@@ -37,21 +37,21 @@ export class BundleStatsWebpackPlugin {
           },
           async () => {
             const outputPath = compilation?.options?.output?.path;
-            const stats = compilation.getStats().toJson(options.stats);
+            const compilationStats = compilation.getStats().toJson(stats);
             const logger = compilation.getInfrastructureLogger
               ? compilation.getInfrastructureLogger(PLUGIN_NAME)
               : console;
 
-            const invalid = validate(stats);
+            const invalid = validate(compilationStats);
 
             if (invalid) {
               logger.warn([invalid, CONFIG.OPTIONS_URL].join('\n'));
             }
 
             const newAssets = await generateReports(
-              stats,
+              compilationStats,
               {
-                baseline: options.baseline,
+                ...options,
                 baselineFilepath:
                   options.baselineFilepath && path.join(outputPath, options.baselineFilepath),
               },
@@ -75,21 +75,21 @@ export class BundleStatsWebpackPlugin {
 
     compiler.hooks.emit.tapAsync(PLUGIN_NAME, async (compilation, callback) => {
       const outputPath = compilation?.options?.output?.path;
-      const stats = compilation.getStats().toJson(options.stats);
+      const compilationStats = compilation.getStats().toJson(stats);
       const logger = compilation.getInfrastructureLogger
         ? compilation.getInfrastructureLogger(PLUGIN_NAME)
         : console;
 
-      const invalid = validate(stats);
+      const invalid = validate(compilationStats);
 
       if (invalid) {
         logger.warn([invalid, CONFIG.OPTIONS_URL].join('\n'));
       }
 
       const newAssets = await generateReports(
-        stats,
+        compilationStats,
         {
-          baseline: options.baseline,
+          ...options,
           baselineFilepath:
             options.baselineFilepath && path.join(outputPath, options.baselineFilepath),
         },
