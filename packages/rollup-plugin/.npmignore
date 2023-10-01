@@ -10,3 +10,5 @@ jest.config.js
 jest.global.js
 tsconfig.json
 tsconfig.esm.json
+src
+test

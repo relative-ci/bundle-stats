@@ -1,6 +1,7 @@
 .eslintignore
 .eslintrc.js
 __mocks__
+CHANGELOG.md
 jest.config.js
 jsconfig.json
 tsconfig.*

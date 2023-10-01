@@ -5,6 +5,7 @@ playwright.config.ts
 tsconfig.*
 __fixtures__
 !__fixtures__/webpack-stats-*.json
+CHANGELOG.md
 jest.config.js
 jsconfig.js
 src
