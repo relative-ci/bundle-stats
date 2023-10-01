@@ -163,7 +163,7 @@ export const BUNDLE_ASSETS_CHUNK_COUNT: ComponentLink = {
 
 export const getBundleAsset = (entryId: string): ComponentLink => ({
   section: SECTIONS.ASSETS,
-  title: 'View asset details' as any,
+  title: I18N.COMPONENT_LINK_BUNDLE_ASSET_DETAILS,
   params: {
     [COMPONENT.BUNDLE_ASSETS]: {
       entryId,
