@@ -1,10 +1,11 @@
-node_modules
-**/__tests__
-__fixtures__
 .editorconfig
 .eslintignore
 .eslintrc.js
+CHANGELOG.md
+__fixtures__
+**/__tests__
 jsconfig.json
 jest.config.js
 jest.global.js
 tsconfig.*
+node_modules
