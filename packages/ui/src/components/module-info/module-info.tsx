@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import cx from 'classnames';
 import isEmpty from 'lodash/isEmpty';
-import noop from 'lodash/noop';
 import {
   BUNDLE_MODULES_DUPLICATE,
   FILE_TYPE_LABELS,
@@ -14,6 +13,7 @@ import {
 import { Module, MetaChunk } from '@bundle-stats/utils/types/webpack';
 
 import { Stack } from '../../layout/stack';
+import { FileName } from '../../ui/file-name';
 import { Tag } from '../../ui/tag';
 import { ComponentLink } from '../component-link';
 import { EntryInfo, EntryInfoMetaLink } from '../entry-info';
@@ -32,6 +32,7 @@ interface ModuleInfoProps {
   chunkIds?: Array<string>;
   labels: Array<string>;
   customComponentLink?: React.ElementType;
+  getEntryComponentLinkProps: (entryId: string) => Record<string, unknown>;
   onClose: () => void;
 }
 
@@ -43,7 +44,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
     chunks = [],
     chunkIds = [],
     customComponentLink: CustomComponentLink = ComponentLink,
-    onClick = noop,
+    getEntryComponentLinkProps,
     onClose,
   } = props;
 
@@ -110,11 +111,28 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
           <EntryInfoMetaLink
             as={CustomComponentLink}
             {...getBundleModulesBySource(item.thirdParty || false, sourceTypeLabel)}
-            onClick={onClick}
           >
             {sourceTypeLabel}
           </EntryInfoMetaLink>
         </EntryInfo.Meta>
+
+        {item?.runs?.[0].reasons && (
+          <EntryInfo.Meta label="Reasons">
+            <ul className={css.reasons}>
+              {item.runs[0].reasons.map((reason) => (
+                <li key={reason}>
+                  <EntryInfoMetaLink
+                    as={CustomComponentLink}
+                    {...getEntryComponentLinkProps(reason)}
+                    className={css.reasonLink}
+                  >
+                    <FileName name={reason} className={css.reason} />
+                  </EntryInfoMetaLink>
+                </li>
+              ))}
+            </ul>
+          </EntryInfo.Meta>
+        )}
       </Stack>
     </EntryInfo>
   );

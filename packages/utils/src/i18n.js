@@ -7,6 +7,7 @@ export default {
   COMPONENT_LINK_BUNDLE_ASSETS_COUNT: 'View assets',
   COMPONENT_LINK_BUNDLE_ASSETS_CHUNK_COUNT: 'View chunks',
   COMPONENT_LINK_MODULES: 'View modules',
+  COMPONENT_LINK_MODULE: 'View module information',
   COMPONENT_LINK_MODULES_DUPLICATE: 'View duplicate modules',
   COMPONENT_LINK_MODULES_BY_FILE_TYPE: (fileType) => `View ${fileType} modules`,
   COMPONENT_LINK_MODULES_BY_SOURCE: (source) => `View ${source} modules`,

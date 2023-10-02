@@ -4,6 +4,7 @@ import { Portal } from 'ariakit/portal';
 import { METRIC_TYPES, MetricRunInfo, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { Box } from '../../layout/box';
+import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { FileName } from '../../ui/file-name';
 import { Icon } from '../../ui/icon';
@@ -29,10 +30,10 @@ const EntryInfoMeta = ({
   label,
   children,
 }: EntryInfoMetaProps & React.ComponentProps<'p'>) => (
-  <p className={cx(css.meta, className)}>
+  <FlexStack space="xsmall" alignItems="top" className={cx(css.meta, className)}>
     <span className={css.metaLabel}>{label}</span>
     <span className={css.metaContent}>{children}</span>
-  </p>
+  </FlexStack>
 );
 
 interface EntryRun {
