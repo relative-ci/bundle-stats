@@ -6,7 +6,18 @@ import {
 import { FILE_TYPE_LABELS } from '../config/file-types';
 import { Metric } from './types';
 
-export const metrics = {
+interface WebpackMetricConfig {
+  label: string;
+  description?: string;
+  url?: string;
+  type: string;
+  /**
+   * Increased values are regressions, decreased values are improvements
+   */
+  biggerIsBetter?: boolean;
+}
+
+export const metrics: Record<Metric, WebpackMetricConfig> = {
   [Metric.BUNDLE_SIZE]: {
     label: 'Bundle Size',
     description: 'The total file size of the assets generated or processed by the bundler',
