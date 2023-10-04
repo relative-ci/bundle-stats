@@ -59,7 +59,7 @@ const SummaryItem = (props: SummaryItemProps & React.ComponentProps<'div'>) => {
         metricId={metricId}
         current={metricData.current}
         baseline={metricData.baseline}
-        showDelta={showDelta && componentLink?.showDelta}
+        showDelta={showDelta}
         showBaseline={showBaseline}
         size={size}
         loading={loading}

@@ -29,6 +29,14 @@ NoBaseline.args = {
 export const NoDelta = Template.bind({});
 
 NoDelta.args = {
-  ...Default.args,
+  ...NoBaseline.args,
   showDelta: false,
+};
+
+export const MetricNoDelta = Template.bind({});
+
+MetricNoDelta.args = {
+  metricId: 'webpack.cacheInvalidation',
+  current: 85,
+  baseline: 50,
 };

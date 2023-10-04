@@ -377,13 +377,7 @@ export const METRIC_COMPONENT_LINKS = new Map([
   ['webpack.totalSizeByTypeALL', { link: TOTALS }],
   ['webpack.totalInitialSizeJS', { link: BUNDLE_ASSETS_INITIAL_JS }],
   ['webpack.totalInitialSizeCSS', { link: BUNDLE_ASSETS_INITIAL_CSS }],
-  [
-    'webpack.cacheInvalidation',
-    {
-      link: BUNDLE_ASSETS_CACHE_INVALIDATION,
-      showDelta: false,
-    },
-  ],
+  ['webpack.cacheInvalidation', { link: BUNDLE_ASSETS_CACHE_INVALIDATION }],
   ['webpack.assetCount', { link: BUNDLE_ASSETS_COUNT }],
   ['webpack.chunkCount', { link: BUNDLE_ASSETS_CHUNK_COUNT }],
   ['webpack.moduleCount', { link: BUNDLE_MODULES }],
