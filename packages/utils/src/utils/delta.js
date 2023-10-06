@@ -41,9 +41,7 @@ export const getDelta = (baseline, current) => {
  */
 export const formatDelta = (value, formatter) => {
   // eslint-disable-next-line no-nested-ternary
-  let sign = value > 0
-    ? '+'
-    : (value < 0 ? '-' : '');
+  let sign = value > 0 ? '+' : value < 0 ? '-' : '';
 
   let absValue = Math.abs(value);
 
@@ -64,8 +62,8 @@ export const formatDelta = (value, formatter) => {
  * Get delta type
  *
  * @param {number} deltaValue Delta value
- * @param {Boolean} biggerIsBetter Metric flag
- * @return {string} Delta type
+ * @param {Boolean} [biggerIsBetter] Metric flag
+ * @return {import('../constants').MetricRunInfoDeltaType} Delta type
  */
 export const getDeltaType = (deltaValue, biggerIsBetter) => {
   if (deltaValue === 0) {
