@@ -1,5 +1,6 @@
 import path from 'path';
 import merge from 'lodash/merge';
+import type { JobInsightAssetsSizeTotalData } from '@bundle-stats/utils';
 import { createJobs, createReport } from '@bundle-stats/utils';
 import filter from '@bundle-stats/plugin-webpack-filter';
 
@@ -7,7 +8,7 @@ import * as TEXT from './text';
 import { createArtifacts } from './create-artifacts';
 import { getBaselinePath, getBaselineRelativePath, readBaseline } from './baseline';
 
-export function getReportInfo(report: any): any {
+export function getReportInfo(report: any): JobInsightAssetsSizeTotalData {
   return report?.insights?.webpack?.assetsSizeTotal?.data;
 }
 

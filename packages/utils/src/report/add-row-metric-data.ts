@@ -3,6 +3,7 @@ import get from 'lodash/get';
 import { getGlobalMetricType, getMetricRunInfo } from '../utils/metrics';
 import { getMetricChanged } from './get-metric-changed';
 import * as types from './types';
+import { MetricTypes } from '../constants';
 
 /**
  * Add row metric diff data
@@ -15,7 +16,7 @@ export const getAddRowMetricData = (metricType?: string) => (row: types.ReportRo
   // - if the key is not matching an existing metric, use the default metricType
   const metric = getGlobalMetricType(
     key,
-    typeof metricType === 'string' && metricType, // explicit, avoid passing of map cb params
+    typeof metricType === 'string' ? (metricType as MetricTypes) : undefined, // explicit, avoid passing of map cb params
   );
   const { biggerIsBetter, label } = metric;
 
@@ -28,7 +29,7 @@ export const getAddRowMetricData = (metricType?: string) => (row: types.ReportRo
       metric,
       run.value,
       // Get baseline value only if not the latest run
-      (index + 1 < runs.length) ? get(runs, [index + 1, 'value'], 0) : undefined,
+      index + 1 < runs.length ? get(runs, [index + 1, 'value'], 0) : undefined,
     );
 
     return {

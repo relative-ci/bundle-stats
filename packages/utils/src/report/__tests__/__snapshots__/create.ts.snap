@@ -737,7 +737,7 @@ exports[`report / createReport multiple sources 1`] = `
       ],
     },
     {
-      "biggerIsBetter": undefined,
+      "biggerIsBetter": null,
       "changed": true,
       "key": "webpack.cacheInvalidation",
       "label": "Cache Invalidation",
@@ -758,7 +758,7 @@ exports[`report / createReport multiple sources 1`] = `
       ],
     },
     {
-      "biggerIsBetter": undefined,
+      "biggerIsBetter": null,
       "changed": true,
       "key": "webpack.moduleCount",
       "label": "Modules",
@@ -779,7 +779,7 @@ exports[`report / createReport multiple sources 1`] = `
       ],
     },
     {
-      "biggerIsBetter": false,
+      "biggerIsBetter": null,
       "changed": false,
       "key": "webpack.duplicateModulesCount",
       "label": "Duplicate Modules",
@@ -821,7 +821,7 @@ exports[`report / createReport multiple sources 1`] = `
       ],
     },
     {
-      "biggerIsBetter": undefined,
+      "biggerIsBetter": null,
       "changed": false,
       "key": "webpack.chunkCount",
       "label": "Chunks",
@@ -842,7 +842,7 @@ exports[`report / createReport multiple sources 1`] = `
       ],
     },
     {
-      "biggerIsBetter": undefined,
+      "biggerIsBetter": null,
       "changed": false,
       "key": "webpack.assetCount",
       "label": "Assets",
@@ -1459,7 +1459,7 @@ exports[`report / createReport single source 1`] = `
       ],
     },
     {
-      "biggerIsBetter": undefined,
+      "biggerIsBetter": null,
       "changed": false,
       "key": "webpack.cacheInvalidation",
       "label": "Cache Invalidation",
@@ -1471,7 +1471,7 @@ exports[`report / createReport single source 1`] = `
       ],
     },
     {
-      "biggerIsBetter": undefined,
+      "biggerIsBetter": null,
       "changed": false,
       "key": "webpack.moduleCount",
       "label": "Modules",
@@ -1483,7 +1483,7 @@ exports[`report / createReport single source 1`] = `
       ],
     },
     {
-      "biggerIsBetter": false,
+      "biggerIsBetter": null,
       "changed": false,
       "key": "webpack.duplicateModulesCount",
       "label": "Duplicate Modules",
@@ -1507,7 +1507,7 @@ exports[`report / createReport single source 1`] = `
       ],
     },
     {
-      "biggerIsBetter": undefined,
+      "biggerIsBetter": null,
       "changed": false,
       "key": "webpack.chunkCount",
       "label": "Chunks",
@@ -1519,7 +1519,7 @@ exports[`report / createReport single source 1`] = `
       ],
     },
     {
-      "biggerIsBetter": undefined,
+      "biggerIsBetter": null,
       "changed": false,
       "key": "webpack.assetCount",
       "label": "Assets",

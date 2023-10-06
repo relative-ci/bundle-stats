@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import sum from 'lodash/sum';
-import { METRIC_TYPE_FILE_SIZE, getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
+import { MetricTypes, getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { Icon } from '../../ui/icon';
 import { Table } from '../../ui/table';
@@ -14,7 +14,7 @@ import { JobName } from '../job-name';
 import { SortButton } from '../sort-button';
 import styles from './metrics-table.module.css';
 
-const METRIC_TYPE_DATA = getGlobalMetricType(null, METRIC_TYPE_FILE_SIZE);
+const METRIC_TYPE_DATA = getGlobalMetricType(null, MetricTypes.FileSize);
 const VISIBLE_COUNT = 500;
 const BASELINE_COLUMN_SPAN = 1;
 const CURRENT_COLUMN_SPAN = 3;

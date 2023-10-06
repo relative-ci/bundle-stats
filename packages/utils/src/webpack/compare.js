@@ -1,4 +1,4 @@
-import { METRIC_TYPE_FILE_SIZE } from '../config/metrics';
+import { MetricTypes } from '../constants';
 import { compareMetrics } from '../report/compare-metrics';
 import {
   SECTION_WEBPACK_STATS,
@@ -18,9 +18,8 @@ import { selectors } from './selectors';
  *
  * @return {Object[]} Compared stats metrics
  */
-const compareStats = (jobs, rowTransformers) => compareMetrics(
-  jobs, selectors.stats, undefined, rowTransformers,
-);
+const compareStats = (jobs, rowTransformers) =>
+  compareMetrics(jobs, selectors.stats, undefined, rowTransformers);
 
 /**
  * Compare size metrics
@@ -30,7 +29,8 @@ const compareStats = (jobs, rowTransformers) => compareMetrics(
  *
  * @return {Object[]} Compared size metrics
  */
-const compareSizes = (jobs, rowTransformers) => compareMetrics(jobs, selectors.sizes, undefined, rowTransformers);
+const compareSizes = (jobs, rowTransformers) =>
+  compareMetrics(jobs, selectors.sizes, undefined, rowTransformers);
 
 /**
  * Compare asset metrics
@@ -40,7 +40,8 @@ const compareSizes = (jobs, rowTransformers) => compareMetrics(jobs, selectors.s
  *
  * @return {Object[]} Compared asset metrics
  */
-const compareAssets = (jobs, rowTransformers) => compareMetrics(jobs, selectors.assets, METRIC_TYPE_FILE_SIZE, rowTransformers);
+const compareAssets = (jobs, rowTransformers) =>
+  compareMetrics(jobs, selectors.assets, MetricTypes.FileSize, rowTransformers);
 
 /**
  * Compare all modules
@@ -49,7 +50,8 @@ const compareAssets = (jobs, rowTransformers) => compareMetrics(jobs, selectors.
  * @param {Array<Function>} [rowTransformers]
  * @return {Object[]} Compared module metrics
  */
-const compareModules = (jobs, rowTransformers) => compareMetrics(jobs, selectors.modules, METRIC_TYPE_FILE_SIZE, rowTransformers);
+const compareModules = (jobs, rowTransformers) =>
+  compareMetrics(jobs, selectors.modules, MetricTypes.FileSize, rowTransformers);
 
 /**
  * Compare package metrics
@@ -59,7 +61,8 @@ const compareModules = (jobs, rowTransformers) => compareMetrics(jobs, selectors
  *
  * @return {Object[]} Compared package metrics
  */
-const comparePackages = (jobs, rowTransformers) => compareMetrics(jobs, selectors.packages, METRIC_TYPE_FILE_SIZE, rowTransformers);
+const comparePackages = (jobs, rowTransformers) =>
+  compareMetrics(jobs, selectors.packages, MetricTypes.FileSize, rowTransformers);
 
 export const compareBySection = {
   [SECTION_WEBPACK_STATS]: compareStats,
@@ -75,7 +78,11 @@ export const compareBySection = {
  * @param {Object[]} jobs - List of jobs to compare
  * @return {Object} Compared metrics by section
  */
-export const compare = (jobs) => SECTIONS.reduce((agg, sectionId) => ({
-  ...agg,
-  [sectionId]: compareBySection[sectionId](jobs),
-}), {});
+export const compare = (jobs) =>
+  SECTIONS.reduce(
+  (agg, sectionId) => ({
+    ...agg,
+    [sectionId]: compareBySection[sectionId](jobs),
+  }),
+  {},
+);

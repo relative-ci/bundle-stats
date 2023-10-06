@@ -12,37 +12,71 @@ export enum InsightType {
   WARNING = 'warning',
 }
 
-export enum MetricTypeType {
-  METRIC_TYPE_NUMERIC = 'METRIC_TYPE_NUMERIC',
-  METRIC_TYPE_SCORE = 'METRIC_TYPE_SCORE',
-  METRIC_TYPE_FILE_SIZE = 'METRIC_TYPE_FILE_SIZE',
-  METRIC_TYPE_DURATION = 'METRIC_TYPE_DURATION',
-  METRIC_TYPE_PERCENTAGE = 'METRIC_TYPE_PERCENTAGE',
+/**
+ * Generic metric type names
+ */
+export enum MetricTypes {
+  Numeric = 'METRIC_TYPE_NUMERIC',
+  Score = 'METRIC_TYPE_SCORE',
+  FileSize = 'METRIC_TYPE_FILE_SIZE',
+  Duration = 'METRIC_TYPE_DURATION',
+  Percentage = 'METRIC_TYPE_PERCENTAGE',
 }
 
+/**
+ * Metric type base configuration
+ */
 export interface MetricTypeConfig {
+  /**
+   * Increased values are regressions, decreased values are improvements
+   */
+  biggerIsBetter?: boolean | null;
+  /**
+   * Value formatter
+   */
+  formatter: (value: number | null) => string;
+}
+
+/**
+ * Source metric configuration
+ */
+export interface MetricConfig {
   label: string;
-  description: string;
-  type: MetricTypeType;
+  type: MetricTypes;
+  description?: string;
+  /**
+   * Documentation URL
+   */
+  url?: string;
+  /**
+   * Positive delta values are regressions and negative delta values are improvements
+   * overrides MetricTypeConfig['biggerIsBetter']
+   */
+  biggerIsBetter?: MetricTypeConfig['biggerIsBetter'];
+  /**
+   * Do not show the delta
+   */
+  skipDelta?: boolean;
 }
 
-export interface MetricType extends MetricTypeConfig {
-  formatter: Function;
-  biggerIsBetter: boolean;
-}
+export type Metric = MetricTypeConfig & MetricConfig;
 
-export enum MetricRunInfoDeltaType {
-  'HIGH_NEGATIVE' = 'HIGH_NEGATIVE',
-  'NEGATIVE' = 'NEGATIVE',
-  'LOW_NEGATIVE' = 'LOW_NEGATIVE',
-  'NO_CHANGE' = 'NO_CHANGE',
-  'LOW_POSITIVE' = 'LOW_POSITIVE',
-  'POSITIVE' = 'POSITIVE',
-  'HIGH_POSITIVE' = 'HIGH_POSITIVE',
-}
+export type MetricRunInfoDeltaType =
+  | 'HIGH_NEGATIVE'
+  | 'NEGATIVE'
+  | 'LOW_NEGATIVE'
+  | 'NO_CHANGE'
+  | 'LOW_POSITIVE'
+  | 'POSITIVE'
+  | 'HIGH_POSITIVE';
 
 export interface MetricRun {
   value: number;
+}
+
+export interface MetricRunDelta {
+  delta: number;
+  deltaPercentage: number;
 }
 
 export interface MetricRunInfo {
@@ -77,6 +111,7 @@ export interface JobInsight<T = object> {
 
 export interface JobInsightAssetsSizeTotalData {
   md: string;
+  text: string;
   info: MetricRunInfo;
 }
 export type JobInsightDuplicatePackagesData = Record<string, Array<string>>;
@@ -160,10 +195,10 @@ export interface BrowsertimeSource {
   info?: {
     browsertime: {
       version: string;
-    }
+    };
     timestamp: string;
     url: string;
-  }
+  };
   statistics?: {
     timings: {
       firstPaint: BrowsertimeSourceMetric;
@@ -179,12 +214,12 @@ export interface BrowsertimeSource {
         redirectionTime: BrowsertimeSourceMetric;
         serverConnectionTime: BrowsertimeSourceMetric;
         serverResponseTime: BrowsertimeSourceMetric;
-      }
+      };
       paintTiming: {
         'first-contentful-paint': BrowsertimeSourceMetric;
-      }
+      };
       rumSpeedIndex: BrowsertimeSourceMetric;
-    }
+    };
     visualmetrics: {
       FirstVisualChange: BrowsertimeSourceMetric;
       LastVisualChange: BrowsertimeSourceMetric;
@@ -193,8 +228,8 @@ export interface BrowsertimeSource {
       VisualComplete85: BrowsertimeSourceMetric;
       VisualComplete95: BrowsertimeSourceMetric;
       VisualComplete99: BrowsertimeSourceMetric;
-    }
-  }
+    };
+  };
 }
 
 export interface BrowsertimeMetrics {
