@@ -6,17 +6,8 @@ import { get } from 'lodash';
 import boxen from 'boxen';
 import type { StatsCompilation } from 'webpack';
 import '@bundle-stats/utils/lib/polyfills';
-import {
-  DELTA_TYPE_HIGH_NEGATIVE,
-  DELTA_TYPE_NEGATIVE,
-  DELTA_TYPE_LOW_NEGATIVE,
-  DELTA_TYPE_NO_CHANGE,
-  DELTA_TYPE_LOW_POSITIVE,
-  DELTA_TYPE_POSITIVE,
-  DELTA_TYPE_HIGH_POSITIVE,
-  createJobs,
-  createReport,
-} from '@bundle-stats/utils';
+import { createJobs, createReport } from '@bundle-stats/utils';
+import type { MetricRunInfoDeltaType } from '@bundle-stats/utils';
 import webpackFilter from '@bundle-stats/plugin-webpack-filter';
 import webpackValidate from '@bundle-stats/plugin-webpack-validate';
 import {
@@ -32,19 +23,14 @@ import {
 
 import LOCALES from './locales.json';
 
-const REPORT_INFO_COLORS = {
-  [DELTA_TYPE_HIGH_NEGATIVE]: 'red',
-  [DELTA_TYPE_NEGATIVE]: 'red',
-  [DELTA_TYPE_LOW_NEGATIVE]: 'yellow',
-  [DELTA_TYPE_NO_CHANGE]: 'gray',
-  [DELTA_TYPE_LOW_POSITIVE]: 'green',
-  [DELTA_TYPE_POSITIVE]: 'green',
-  [DELTA_TYPE_HIGH_POSITIVE]: 'green',
-};
-
-const getReportInfoBorderColor = (reportInfo: any) => {
-  const { deltaType } = reportInfo.info;
-  return REPORT_INFO_COLORS[deltaType];
+const REPORT_INFO_COLORS: Record<MetricRunInfoDeltaType, string> = {
+  HIGH_NEGATIVE: 'red',
+  NEGATIVE: 'red',
+  LOW_NEGATIVE: 'yellow',
+  NO_CHANGE: 'gray',
+  LOW_POSITIVE: 'green',
+  POSITIVE: 'green',
+  HIGH_POSITIVE: 'green',
 };
 
 interface RunOptions {
@@ -177,10 +163,12 @@ export default async function run(options: RunOptions): Promise<void> {
 
   const reportInfo = getReportInfo(report);
 
-  if (reportInfo) {
+  if (reportInfo?.text) {
     const infoBox = boxen(reportInfo.text, {
       padding: 1,
-      borderColor: getReportInfoBorderColor(reportInfo),
+      borderColor: reportInfo.info?.deltaType
+        ? REPORT_INFO_COLORS[reportInfo.info.deltaType]
+        : REPORT_INFO_COLORS.NO_CHANGE,
     });
 
     console.log(`\n${infoBox}`);

@@ -74,6 +74,11 @@ export interface MetricRun {
   value: number;
 }
 
+export interface MetricRunDelta {
+  delta: number;
+  deltaPercentage: number;
+}
+
 export interface MetricRunInfo {
   value: number;
   displayValue: string;
@@ -106,6 +111,7 @@ export interface JobInsight<T = object> {
 
 export interface JobInsightAssetsSizeTotalData {
   md: string;
+  text: string;
   info: MetricRunInfo;
 }
 export type JobInsightDuplicatePackagesData = Record<string, Array<string>>;
