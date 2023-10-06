@@ -63,7 +63,7 @@ exports[`report / addRowMetricData should add data 1`] = `
     ],
   },
   {
-    "biggerIsBetter": undefined,
+    "biggerIsBetter": null,
     "changed": true,
     "key": "webpack.cacheInvalidation",
     "label": "Cache Invalidation",

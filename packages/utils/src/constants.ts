@@ -30,7 +30,7 @@ export interface MetricTypeConfig {
   /**
    * Increased values are regressions, decreased values are improvements
    */
-  biggerIsBetter?: boolean;
+  biggerIsBetter?: boolean | null;
   /**
    * Value formatter
    */
@@ -52,7 +52,7 @@ export interface MetricConfig {
    * Positive delta values are regressions and negative delta values are improvements
    * overrides MetricTypeConfig['biggerIsBetter']
    */
-  biggerIsBetter?: boolean;
+  biggerIsBetter?: MetricTypeConfig['biggerIsBetter'];
   /**
    * Do not show the delta
    */

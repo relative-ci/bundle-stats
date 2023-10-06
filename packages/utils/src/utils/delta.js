@@ -62,7 +62,7 @@ export const formatDelta = (value, formatter) => {
  * Get delta type
  *
  * @param {number} deltaValue Delta value
- * @param {Boolean} [biggerIsBetter] Metric flag
+ * @param {boolean | null} [biggerIsBetter] Metric flag
  * @return {import('../constants').MetricRunInfoDeltaType} Delta type
  */
 export const getDeltaType = (deltaValue, biggerIsBetter) => {
