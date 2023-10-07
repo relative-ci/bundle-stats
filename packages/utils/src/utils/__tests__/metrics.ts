@@ -81,6 +81,7 @@ describe('utils / metrics', () => {
         displayDelta: '+1KiB',
         displayDeltaPercentage: '+10%',
         displayValue: '11KiB',
+        regression: true,
         value: 11264,
       });
     });
@@ -100,6 +101,7 @@ describe('utils / metrics', () => {
         displayDelta: '+256B',
         displayDeltaPercentage: '+2.5%',
         displayValue: '10.25KiB',
+        regression: true,
         value: 10496,
       });
     });
@@ -112,6 +114,7 @@ describe('utils / metrics', () => {
         displayDelta: '-6KiB',
         displayDeltaPercentage: '-60%',
         displayValue: '4KiB',
+        regression: false,
         value: 4096,
       });
     });
