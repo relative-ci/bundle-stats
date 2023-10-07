@@ -12,12 +12,12 @@ export default {
 
   READ_MORE: 'Read more',
 
-  ASSETS_INFO: 'Asset size - the size of the file produced by webpack',
-  ASSET_TOTALS_INFO: 'The total size of the assets produced by webpack by type',
+  ASSETS_INFO: 'Asset size - the size of the file produced by the bundler',
+  ASSET_TOTALS_INFO: 'The total size of the assets produce by the bundler, by file type',
   MODULES_INFO:
-    'Module size - module source size before any production optimization(ex: terser minification)',
+    'Module size - module source size before any production optimization(ex: minification)',
   PACKAGES_INFO:
-    "Package size - the total package's module size before any production optimization(ex: terser minification)",
+    "Package size - the total package's module size before any production optimization(ex: minification)",
 
   RESET_FILTERS: 'Reset filters',
   VIEW_ALL: 'View all entries',
