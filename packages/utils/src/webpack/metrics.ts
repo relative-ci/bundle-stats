@@ -60,7 +60,7 @@ export const metrics: WebpackMetrics = {
     description: 'The total number of modules that belong to more than one chunk',
     url: 'https://relative-ci.com/documentation/metrics-and-data#modules-1',
     type: MetricTypes.Numeric,
-    biggerIsBetter: null,
+    biggerIsBetter: false,
   },
   [Metric.DUPLICATE_CODE]: {
     label: 'Duplicate Code',
