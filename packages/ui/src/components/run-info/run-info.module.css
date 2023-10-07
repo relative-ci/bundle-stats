@@ -15,8 +15,8 @@
 
 .titleIcon {
   flex: 0 0 var(--space-small);
-  margin-top: -4px !important;
-  margin-bottom: -4px !important;
+  margin-top: -3px !important;
+  margin-bottom: -3px !important;
 }
 
 .info {
@@ -52,7 +52,7 @@
 .titleHoverCardIcon span[aria-controls=""],
 .titleTooltipIcon[aria-controls=""] {
   opacity: 0;
-  visibility: none;
+  visibility: hidden;
   transition: opacity var(--transition-duration-out) ease-out, color var(--transition-duration-out) ease-out, visibility 0s;
 }
 
