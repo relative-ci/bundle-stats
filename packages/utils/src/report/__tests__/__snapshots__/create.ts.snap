@@ -21,6 +21,7 @@ exports[`report / createReport multiple sources 1`] = `
           "isEntry": true,
           "isInitial": true,
           "name": "main.a1b2c3d.css",
+          "regression": false,
           "value": 10000,
         },
         {
@@ -52,6 +53,7 @@ exports[`report / createReport multiple sources 1`] = `
           "isEntry": true,
           "isInitial": true,
           "name": "main.a2b3c4d.js",
+          "regression": true,
           "value": 50000,
         },
         {
@@ -82,6 +84,7 @@ exports[`report / createReport multiple sources 1`] = `
           "isEntry": false,
           "isInitial": false,
           "name": "logo.a3b4c5d.png",
+          "regression": undefined,
           "value": 1000,
         },
         {
@@ -111,6 +114,7 @@ exports[`report / createReport multiple sources 1`] = `
           "isEntry": false,
           "isInitial": false,
           "name": "index.html",
+          "regression": undefined,
           "value": 2000,
         },
         {
@@ -136,6 +140,7 @@ exports[`report / createReport multiple sources 1`] = `
             "displayDelta": "0B",
             "displayDeltaPercentage": "0%",
             "displayValue": "61.52KiB",
+            "regression": undefined,
             "value": 63000,
           },
           "md": "*Bundle Size* — *61.52KiB* (*0%*).",
@@ -193,6 +198,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDeltaPercentage": "0%",
           "displayValue": "1000B",
           "name": "module-a",
+          "regression": undefined,
           "value": 1000,
         },
         {
@@ -222,6 +228,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDeltaPercentage": "+33.33%",
           "displayValue": "1.95KiB",
           "name": "module-b",
+          "regression": true,
           "value": 2000,
         },
         {
@@ -251,6 +258,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDeltaPercentage": "0%",
           "displayValue": "1000B",
           "name": "node_modules/package-a/index.js",
+          "regression": undefined,
           "value": 1000,
         },
         {
@@ -280,6 +288,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDeltaPercentage": "+100%",
           "displayValue": "1000B",
           "name": "node_modules/package-a/node_modules/package-c/index.js",
+          "regression": true,
           "value": 1000,
         },
         {
@@ -305,6 +314,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDeltaPercentage": "0%",
           "displayValue": "1000B",
           "name": "node_modules/package-b/index.js",
+          "regression": undefined,
           "value": 1000,
         },
         {
@@ -334,6 +344,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDeltaPercentage": "0%",
           "displayValue": "1000B",
           "name": "node_modules/package-c/index.js",
+          "regression": undefined,
           "value": 1000,
         },
         {
@@ -363,6 +374,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDeltaPercentage": "+100%",
           "displayValue": "1000B",
           "name": "node_modules/package-d/index.js",
+          "regression": true,
           "value": 1000,
         },
         {
@@ -388,6 +400,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayValue": "1000B",
           "name": "package-a",
           "path": "node_modules/package-a",
+          "regression": undefined,
           "value": 1000,
         },
         {
@@ -413,6 +426,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayValue": "1000B",
           "name": "package-c",
           "path": "node_modules/package-a/node_modules/package-c",
+          "regression": true,
           "value": 1000,
         },
         {
@@ -436,6 +450,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayValue": "1000B",
           "name": "package-b",
           "path": "node_modules/package-b",
+          "regression": undefined,
           "value": 1000,
         },
         {
@@ -461,6 +476,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayValue": "1000B",
           "name": "package-c",
           "path": "node_modules/package-c",
+          "regression": undefined,
           "value": 1000,
         },
         {
@@ -486,6 +502,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayValue": "1000B",
           "name": "package-d",
           "path": "node_modules/package-d",
+          "regression": true,
           "value": 1000,
         },
         {
@@ -537,6 +554,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "+1000B",
           "displayDeltaPercentage": "+2.04%",
           "displayValue": "48.83KiB",
+          "regression": true,
           "value": 50000,
         },
         {
@@ -558,6 +576,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "-1000B",
           "displayDeltaPercentage": "-9.09%",
           "displayValue": "9.77KiB",
+          "regression": false,
           "value": 10000,
         },
         {
@@ -579,6 +598,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "1000B",
+          "regression": undefined,
           "value": 1000,
         },
         {
@@ -600,6 +620,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "0B",
+          "regression": undefined,
           "value": 0,
         },
         {
@@ -621,6 +642,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "0B",
+          "regression": undefined,
           "value": 0,
         },
         {
@@ -642,6 +664,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "1.95KiB",
+          "regression": undefined,
           "value": 2000,
         },
         {
@@ -663,6 +686,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "0B",
+          "regression": undefined,
           "value": 0,
         },
         {
@@ -686,6 +710,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "0B",
           "displayDeltaPercentage": "0%",
           "displayValue": "61.52KiB",
+          "regression": undefined,
           "value": 63000,
         },
         {
@@ -707,6 +732,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "+1000B",
           "displayDeltaPercentage": "+2.04%",
           "displayValue": "48.83KiB",
+          "regression": true,
           "value": 50000,
         },
         {
@@ -728,6 +754,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "-1000B",
           "displayDeltaPercentage": "-9.09%",
           "displayValue": "9.77KiB",
+          "regression": false,
           "value": 10000,
         },
         {
@@ -749,6 +776,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "+95.24%",
           "displayDeltaPercentage": "+100%",
           "displayValue": "95.24%",
+          "regression": null,
           "value": 95.24,
         },
         {
@@ -770,6 +798,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "+2",
           "displayDeltaPercentage": "+40%",
           "displayValue": "7",
+          "regression": null,
           "value": 7,
         },
         {
@@ -791,6 +820,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "0",
           "displayDeltaPercentage": "0%",
           "displayValue": "0",
+          "regression": null,
           "value": 0,
         },
         {
@@ -812,6 +842,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "0%",
           "displayDeltaPercentage": "0%",
           "displayValue": "0%",
+          "regression": undefined,
           "value": 0,
         },
         {
@@ -833,6 +864,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "0",
           "displayDeltaPercentage": "0%",
           "displayValue": "2",
+          "regression": null,
           "value": 2,
         },
         {
@@ -854,6 +886,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "0",
           "displayDeltaPercentage": "0%",
           "displayValue": "4",
+          "regression": null,
           "value": 4,
         },
         {
@@ -875,6 +908,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "+2",
           "displayDeltaPercentage": "+66.67%",
           "displayValue": "5",
+          "regression": true,
           "value": 5,
         },
         {
@@ -896,6 +930,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "+1",
           "displayDeltaPercentage": "+100%",
           "displayValue": "1",
+          "regression": true,
           "value": 1,
         },
         {
@@ -915,6 +950,7 @@ exports[`report / createReport multiple sources 1`] = `
         "displayDeltaPercentage": "0%",
         "displayValue": "61.52KiB",
         "label": "Bundle Size",
+        "regression": undefined,
         "value": 63000,
       },
       {
@@ -925,6 +961,7 @@ exports[`report / createReport multiple sources 1`] = `
         "displayDeltaPercentage": "+2.04%",
         "displayValue": "48.83KiB",
         "label": "Initial JS",
+        "regression": true,
         "value": 50000,
       },
       {
@@ -935,6 +972,7 @@ exports[`report / createReport multiple sources 1`] = `
         "displayDeltaPercentage": "-9.09%",
         "displayValue": "9.77KiB",
         "label": "Initial CSS",
+        "regression": false,
         "value": 10000,
       },
       {
@@ -945,6 +983,7 @@ exports[`report / createReport multiple sources 1`] = `
         "displayDeltaPercentage": "+100%",
         "displayValue": "95.24%",
         "label": "Cache Invalidation",
+        "regression": null,
         "value": 95.24,
       },
       {
@@ -955,6 +994,7 @@ exports[`report / createReport multiple sources 1`] = `
         "displayDeltaPercentage": "+40%",
         "displayValue": "7",
         "label": "Modules",
+        "regression": null,
         "value": 7,
       },
       {
@@ -965,6 +1005,7 @@ exports[`report / createReport multiple sources 1`] = `
         "displayDeltaPercentage": "0%",
         "displayValue": "0",
         "label": "Duplicate Modules",
+        "regression": null,
         "value": 0,
       },
       {
@@ -975,6 +1016,7 @@ exports[`report / createReport multiple sources 1`] = `
         "displayDeltaPercentage": "0%",
         "displayValue": "0%",
         "label": "Duplicate Code",
+        "regression": undefined,
         "value": 0,
       },
       {
@@ -985,6 +1027,7 @@ exports[`report / createReport multiple sources 1`] = `
         "displayDeltaPercentage": "0%",
         "displayValue": "2",
         "label": "Chunks",
+        "regression": null,
         "value": 2,
       },
       {
@@ -995,6 +1038,7 @@ exports[`report / createReport multiple sources 1`] = `
         "displayDeltaPercentage": "0%",
         "displayValue": "4",
         "label": "Assets",
+        "regression": null,
         "value": 4,
       },
       {
@@ -1005,6 +1049,7 @@ exports[`report / createReport multiple sources 1`] = `
         "displayDeltaPercentage": "+66.67%",
         "displayValue": "5",
         "label": "Packages",
+        "regression": true,
         "value": 5,
       },
       {
@@ -1015,6 +1060,7 @@ exports[`report / createReport multiple sources 1`] = `
         "displayDeltaPercentage": "+100%",
         "displayValue": "1",
         "label": "Duplicate Packages",
+        "regression": true,
         "value": 1,
       },
     ],
@@ -1104,6 +1150,7 @@ exports[`report / createReport single source 1`] = `
             "displayDelta": "+61.52KiB",
             "displayDeltaPercentage": "+100%",
             "displayValue": "61.52KiB",
+            "regression": true,
             "value": 63000,
           },
           "md": "*Bundle Size* — *61.52KiB* (*+100%*).",
@@ -1565,6 +1612,7 @@ exports[`report / createReport single source 1`] = `
         "displayDeltaPercentage": "+100%",
         "displayValue": "61.52KiB",
         "label": "Bundle Size",
+        "regression": true,
         "value": 63000,
       },
       {
@@ -1575,6 +1623,7 @@ exports[`report / createReport single source 1`] = `
         "displayDeltaPercentage": "+100%",
         "displayValue": "48.83KiB",
         "label": "Initial JS",
+        "regression": true,
         "value": 50000,
       },
       {
@@ -1585,6 +1634,7 @@ exports[`report / createReport single source 1`] = `
         "displayDeltaPercentage": "+100%",
         "displayValue": "9.77KiB",
         "label": "Initial CSS",
+        "regression": true,
         "value": 10000,
       },
       {
@@ -1595,6 +1645,7 @@ exports[`report / createReport single source 1`] = `
         "displayDeltaPercentage": "0%",
         "displayValue": "0%",
         "label": "Cache Invalidation",
+        "regression": null,
         "value": 0,
       },
       {
@@ -1605,6 +1656,7 @@ exports[`report / createReport single source 1`] = `
         "displayDeltaPercentage": "+100%",
         "displayValue": "7",
         "label": "Modules",
+        "regression": null,
         "value": 7,
       },
       {
@@ -1615,6 +1667,7 @@ exports[`report / createReport single source 1`] = `
         "displayDeltaPercentage": "0%",
         "displayValue": "0",
         "label": "Duplicate Modules",
+        "regression": null,
         "value": 0,
       },
       {
@@ -1625,6 +1678,7 @@ exports[`report / createReport single source 1`] = `
         "displayDeltaPercentage": "0%",
         "displayValue": "0%",
         "label": "Duplicate Code",
+        "regression": undefined,
         "value": 0,
       },
       {
@@ -1635,6 +1689,7 @@ exports[`report / createReport single source 1`] = `
         "displayDeltaPercentage": "+100%",
         "displayValue": "2",
         "label": "Chunks",
+        "regression": null,
         "value": 2,
       },
       {
@@ -1645,6 +1700,7 @@ exports[`report / createReport single source 1`] = `
         "displayDeltaPercentage": "+100%",
         "displayValue": "4",
         "label": "Assets",
+        "regression": null,
         "value": 4,
       },
       {
@@ -1655,6 +1711,7 @@ exports[`report / createReport single source 1`] = `
         "displayDeltaPercentage": "+100%",
         "displayValue": "5",
         "label": "Packages",
+        "regression": true,
         "value": 5,
       },
       {
@@ -1665,6 +1722,7 @@ exports[`report / createReport single source 1`] = `
         "displayDeltaPercentage": "+100%",
         "displayValue": "1",
         "label": "Duplicate Packages",
+        "regression": true,
         "value": 1,
       },
     ],

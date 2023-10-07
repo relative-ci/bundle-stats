@@ -51,11 +51,23 @@ export function getMetricRunInfo(
     displayValue: formatter(current),
   };
 
+  // Skip computing delta fields when the baseline is missing
   if (typeof baseline === 'undefined') {
     return runInfo;
   }
 
   const { delta, deltaPercentage } = getDelta({ value: baseline }, { value: current });
+
+  // Resolve regression/improvement flag
+  let regression;
+
+  if (biggerIsBetter === null) {
+    regression = null;
+  } else if ((biggerIsBetter === true && delta > 0) || (biggerIsBetter === false && delta < 0)) {
+    regression = false;
+  } else if ((biggerIsBetter === false && delta > 0) || (biggerIsBetter === true && delta < 0)) {
+    regression = true;
+  }
 
   return {
     ...runInfo,
@@ -64,5 +76,6 @@ export function getMetricRunInfo(
     displayDelta: formatDelta(delta, formatter),
     displayDeltaPercentage: formatDelta(deltaPercentage, formatPercentage),
     deltaType: getDeltaType(deltaPercentage, biggerIsBetter),
+    regression,
   };
 }
