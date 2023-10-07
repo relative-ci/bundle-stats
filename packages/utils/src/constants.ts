@@ -61,14 +61,17 @@ export interface MetricConfig {
 
 export type Metric = MetricTypeConfig & MetricConfig;
 
-export type MetricRunInfoDeltaType =
-  | 'HIGH_NEGATIVE'
-  | 'NEGATIVE'
-  | 'LOW_NEGATIVE'
-  | 'NO_CHANGE'
-  | 'LOW_POSITIVE'
-  | 'POSITIVE'
-  | 'HIGH_POSITIVE';
+export enum DeltaType {
+  HIGH_NEGATIVE = 'HIGH_NEGATIVE',
+  NEGATIVE = 'NEGATIVE',
+  LOW_NEGATIVE = 'LOW_NEGATIVE',
+  NO_CHANGE = 'NO_CHANGE',
+  LOW_POSITIVE = 'LOW_POSITIVE',
+  POSITIVE = 'POSITIVE',
+  HIGH_POSITIVE = 'HIGH_POSITIVE',
+}
+
+export type MetricRunInfoDeltaType = `${DeltaType}`;
 
 export interface MetricRun {
   value: number;
