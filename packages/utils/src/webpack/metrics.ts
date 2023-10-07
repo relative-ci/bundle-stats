@@ -78,7 +78,7 @@ export const metrics: WebpackMetrics = {
   },
   [Metric.DUPLICATE_PACKAGES_COUNT]: {
     label: 'Duplicate Packages',
-    description: 'The total number of duplicate packages',
+    description: 'The total number of duplicate bundled packages',
     url: 'https://relative-ci.com/documentation/metrics-and-data#packages',
     type: MetricTypes.Numeric,
     biggerIsBetter: false,
