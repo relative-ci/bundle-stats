@@ -1,4 +1,4 @@
-import { METRIC_TYPE_FILE_SIZE } from '../../config/metrics';
+import { MetricTypes } from '../../constants';
 import { getAddRowMetricData } from '../add-row-metric-data';
 
 describe('report / addRowMetricData', () => {
@@ -25,7 +25,7 @@ describe('report / addRowMetricData', () => {
         ],
       },
       {
-        key: 'webpack.mdoulesCount',
+        key: 'webpack.moduleCount',
         runs: [
           {
             value: 100,
@@ -96,7 +96,7 @@ describe('report / addRowMetricData', () => {
       },
     ];
 
-    const addRowMetricData = getAddRowMetricData(METRIC_TYPE_FILE_SIZE);
+    const addRowMetricData = getAddRowMetricData(MetricTypes.FileSize);
     const actual = rows.map(addRowMetricData);
 
     expect(actual).toMatchSnapshot();

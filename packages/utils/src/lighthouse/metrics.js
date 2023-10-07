@@ -1,55 +1,53 @@
-import {
-  METRIC_TYPE_SCORE, METRIC_TYPE_DURATION, METRIC_TYPE_FILE_SIZE, METRIC_TYPE_NUMERIC,
-} from '../config/metrics';
+import { MetricTypes } from '../constants';
 
 export const metrics = {
   score: {
     label: 'Score',
-    type: METRIC_TYPE_SCORE,
+    type: MetricTypes.Score,
   },
   performanceScore: {
     label: 'Performance',
-    type: METRIC_TYPE_SCORE,
+    type: MetricTypes.Score,
   },
   accessibilityScore: {
     label: 'Accessibility',
-    type: METRIC_TYPE_SCORE,
+    type: MetricTypes.Score,
   },
   bestPracticesScore: {
     label: 'Best Practices',
-    type: METRIC_TYPE_SCORE,
+    type: MetricTypes.Score,
   },
   seoScore: {
     label: 'SEO',
-    type: METRIC_TYPE_SCORE,
+    type: MetricTypes.Score,
   },
   pwaScore: {
     label: 'PWA',
-    type: METRIC_TYPE_SCORE,
+    type: MetricTypes.Score,
   },
 
   speedIndex: {
     label: 'Perceptual Speed Index',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   firstMeaningfulPaint: {
     label: 'First Meaningful Paint',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   timeToFirstByte: {
     label: 'Time To First Byte',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   firstInteractive: {
     label: 'First Interactive',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   totalByteWeight: {
     label: 'Total Weight',
-    type: METRIC_TYPE_FILE_SIZE,
+    type: MetricTypes.FileSize,
   },
   domSize: {
     label: 'DOM Size',
-    type: METRIC_TYPE_NUMERIC,
+    type: MetricTypes.Numeric,
   },
 };

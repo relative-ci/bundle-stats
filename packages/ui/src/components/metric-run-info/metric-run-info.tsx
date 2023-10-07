@@ -9,7 +9,7 @@ import css from './metric-run-info.module.css';
 
 interface MetricInfoProps {
   title: string;
-  description: string;
+  description?: string;
   url?: string;
 }
 
@@ -67,7 +67,7 @@ export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'
   const metricRunInfo = getMetricRunInfo(metric, current, baseline || 0);
 
   const titleHoverCard = useMemo(() => {
-    if (showMetricDescription) {
+    if (showMetricDescription && (metric.description || metric.url)) {
       return (
         <MetricHoverCard title={metric.label} description={metric.description} url={metric.url} />
       );

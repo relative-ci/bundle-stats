@@ -1,88 +1,88 @@
-import { METRIC_TYPE_DURATION } from '../config/metrics';
+import { MetricTypes } from '../constants';
 
 export const metrics = {
   firstPaint: {
     label: 'First Paint',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   fullyLoaded: {
     label: 'Fully Loaded',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   backEndTime: {
     label: 'BackEnd Time',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   domContentLoadedTime: {
     label: 'DOM Content Loaded Time',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   domInteractiveTime: {
     label: 'DOM Interactive Time',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   domainLookupTime: {
     label: 'Domain Lookup Time',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   frontEndTime: {
     label: 'FrontEnd Time',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   pageDownloadTime: {
     label: 'Page Download Time',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   pageLoadTime: {
     label: 'Page Load Time',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   redirectionTime: {
     label: 'Redirection Time',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   serverConnectionTime: {
     label: 'Server Connection Time',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   serverResponseTime: {
     label: 'Server Response Time',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   firstContentfulPaint: {
     label: 'First Contentful Paint',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   rumSpeedIndex: {
     label: 'RUM Speed Index',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   firstVisualChange: {
     label: 'First Visual Change',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   lastVisualChange: {
     label: 'Last Visual Change',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   perceptualSpeedIndex: {
     label: 'Perceptual SpeedIndex',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   speedIndex: {
     label: 'Speed Index',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   visualComplete85: {
     label: 'Visual Complete 85',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   visualComplete95: {
     label: 'Visual Complete 95',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
   visualComplete99: {
     label: 'Visual Complete 99',
-    type: METRIC_TYPE_DURATION,
+    type: MetricTypes.Duration,
   },
 };

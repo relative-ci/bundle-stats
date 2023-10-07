@@ -44,7 +44,7 @@ export const createReport = (jobs: Array<Job>): Report => {
       return Object.assign(data, { label: metric.label });
     });
 
-    summary[sourceId] = summaryEntries;
+    summary[sourceId] = summaryEntries as any;
   }, {});
 
   const sectionsData = webpack.compare(jobs);
