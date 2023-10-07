@@ -87,6 +87,7 @@ export interface MetricRunInfo {
   deltaType?: MetricRunInfoDeltaType;
   displayDelta?: string;
   displayDeltaPercentage?: string;
+  regression?: boolean | null;
 }
 
 export type JobSection<T = object> = Record<Source, T>;

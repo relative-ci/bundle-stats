@@ -25,7 +25,7 @@ describe('report / addRowMetricData', () => {
         ],
       },
       {
-        key: 'webpack.mdoulesCount',
+        key: 'webpack.moduleCount',
         runs: [
           {
             value: 100,

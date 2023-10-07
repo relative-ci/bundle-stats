@@ -15,6 +15,7 @@ exports[`report / addRowMetricData should add data 1`] = `
         "displayDelta": "-10B",
         "displayDeltaPercentage": "-9.09%",
         "displayValue": "100B",
+        "regression": false,
         "value": 100,
       },
       {
@@ -36,16 +37,17 @@ exports[`report / addRowMetricData should add data 1`] = `
         "displayDelta": "+10",
         "displayDeltaPercentage": "+100%",
         "displayValue": "10",
+        "regression": true,
         "value": 10,
       },
       null,
     ],
   },
   {
-    "biggerIsBetter": false,
+    "biggerIsBetter": null,
     "changed": false,
-    "key": "webpack.mdoulesCount",
-    "label": "webpack.mdoulesCount",
+    "key": "webpack.moduleCount",
+    "label": "Modules",
     "runs": [
       {
         "delta": 0,
@@ -54,6 +56,7 @@ exports[`report / addRowMetricData should add data 1`] = `
         "displayDelta": "0",
         "displayDeltaPercentage": "0%",
         "displayValue": "100",
+        "regression": null,
         "value": 100,
       },
       {
@@ -93,6 +96,7 @@ exports[`report / addRowMetricData should add data with metric type 1`] = `
         "displayDelta": "-10B",
         "displayDeltaPercentage": "-9.09%",
         "displayValue": "100B",
+        "regression": false,
         "value": 100,
       },
       {
@@ -114,6 +118,7 @@ exports[`report / addRowMetricData should add data with metric type 1`] = `
         "displayDelta": "+10B",
         "displayDeltaPercentage": "+100%",
         "displayValue": "10B",
+        "regression": true,
         "value": 10,
       },
       null,
@@ -145,6 +150,7 @@ exports[`report / addRowMetricData should add data with metric type 1`] = `
         "displayDelta": "0B",
         "displayDeltaPercentage": "0%",
         "displayValue": "100B",
+        "regression": undefined,
         "value": 100,
       },
       {
