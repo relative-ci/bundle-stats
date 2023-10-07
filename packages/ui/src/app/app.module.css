@@ -28,7 +28,7 @@
 }
 
 .tabs {
-  margin-bottom: -1px;
+  border-bottom: 0;
 }
 
 .tabActive {
