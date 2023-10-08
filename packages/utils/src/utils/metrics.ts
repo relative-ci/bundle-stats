@@ -76,6 +76,6 @@ export function getMetricRunInfo(
     displayDelta: formatDelta(delta, formatter),
     displayDeltaPercentage: formatDelta(deltaPercentage, formatPercentage),
     deltaType: getDeltaType(deltaPercentage, biggerIsBetter),
-    regression,
+    ...(typeof regression !== 'undefined' && { regression }),
   };
 }

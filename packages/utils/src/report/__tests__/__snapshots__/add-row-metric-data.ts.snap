@@ -150,7 +150,6 @@ exports[`report / addRowMetricData should add data with metric type 1`] = `
         "displayDelta": "0B",
         "displayDeltaPercentage": "0%",
         "displayValue": "100B",
-        "regression": undefined,
         "value": 100,
       },
       {
