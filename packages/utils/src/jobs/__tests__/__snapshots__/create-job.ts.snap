@@ -384,7 +384,6 @@ exports[`createJob with baseline 1`] = `
             "displayDelta": "0B",
             "displayDeltaPercentage": "0%",
             "displayValue": "61.52KiB",
-            "regression": undefined,
             "value": 63000,
           },
           "md": "*Bundle Size* — *61.52KiB* (*0%*).",

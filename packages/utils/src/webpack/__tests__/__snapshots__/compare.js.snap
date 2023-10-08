@@ -19,7 +19,6 @@ exports[`Webpack/compare should compare all modules 1`] = `
         "displayDeltaPercentage": "0%",
         "displayValue": "1000B",
         "name": "module-a",
-        "regression": undefined,
         "value": 1000,
       },
       {
@@ -79,7 +78,6 @@ exports[`Webpack/compare should compare all modules 1`] = `
         "displayDeltaPercentage": "0%",
         "displayValue": "1000B",
         "name": "node_modules/package-a/index.js",
-        "regression": undefined,
         "value": 1000,
       },
       {
@@ -135,7 +133,6 @@ exports[`Webpack/compare should compare all modules 1`] = `
         "displayDeltaPercentage": "0%",
         "displayValue": "1000B",
         "name": "node_modules/package-b/index.js",
-        "regression": undefined,
         "value": 1000,
       },
       {
@@ -165,7 +162,6 @@ exports[`Webpack/compare should compare all modules 1`] = `
         "displayDeltaPercentage": "0%",
         "displayValue": "1000B",
         "name": "node_modules/package-c/index.js",
-        "regression": undefined,
         "value": 1000,
       },
       {
