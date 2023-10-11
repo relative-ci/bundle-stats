@@ -40,11 +40,6 @@ module.exports = {
       size: 2000,
     },
     {
-      chunks: [],
-      name: 'module-c',
-      size: 1000,
-    },
-    {
       chunks: [1],
       name: 'node_modules/package-a/index.js',
       size: 1000,
