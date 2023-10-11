@@ -101,6 +101,11 @@ export default (
           (chunkId) => chunkId !== null && typeof chunkId !== 'undefined',
         ) || [];
 
+      // Skip modules that do not belong to any chunk
+      if (moduleChunks.length === 0) {
+        return agg;
+      }
+
       const concatenatedModules = moduleStats.modules?.reduce(
         (aggConcatenatedModules, concatenatedModule) => {
           if (!concatenatedModule.name) {
