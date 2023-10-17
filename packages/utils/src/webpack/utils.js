@@ -6,10 +6,10 @@ import { PACKAGES_SEPARATOR, PACKAGE_ID_SEPARATOR } from '../config';
 import { createGetMetricType } from '../utils/metrics';
 import { metrics } from './metrics';
 
-// Md5 hash matcher
+// Match hex hash
 const HASH_PATTERN = '[a-f|0-9]{5,32}';
 
-// Match has prefix
+// Match hash separator
 const HASH_SEPARATOR_PATTERN = '[-|.]';
 
 // Match multiple extensions: .js, .js.gz, .min.js, .chunk.js
@@ -19,7 +19,7 @@ const PATTERNS = [
   // Match path/name-HASH.ext, path/name.HASH.ext, path/name-HASH.chunk.ext
   `(.*)${HASH_SEPARATOR_PATTERN}${HASH_PATTERN}(${EXTENSION_PATTERN.source})$`,
 
-  // Match static/HASH
+  // Match static/HASH.ext
   `(static)/${HASH_PATTERN}(.*${EXTENSION_PATTERN.source})$`,
 ].map((pattern) => new RegExp(pattern));
 
