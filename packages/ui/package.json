@@ -43,7 +43,7 @@
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "7.5.0",
     "@storybook/react-webpack5": "7.5.0",
-    "@types/react": "18.2.28",
+    "@types/react": "18.2.29",
     "babel-plugin-require-context-hook": "1.0.0",
     "classnames": "2.3.2",
     "colormap": "2.3.2",
