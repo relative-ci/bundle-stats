@@ -1,15 +1,54 @@
 import { useCallback, useLayoutEffect, useMemo, useReducer } from 'react';
 import isEqual from 'lodash/isEqual';
+import isEmpty from 'lodash/isEmpty';
 import merge from 'lodash/merge';
 
 const ACTION_SET_FILTERS = 'SET_FILTERS';
 const ACTION_SET_SEARCH = 'SET_SEARCH';
 const ACTION_RESET_DEFAULT = 'RESET_DEFAULT';
 const ACTION_RESET_ALL = 'RESET_ALL';
-const ACTION_SET = 'SET';
+const ACTION_UPDATE_LOCAL = 'UPDATE_LOCAL';
 
 const SEARCH_DEFAULT = '';
 const SEARCH_DEFAULT_PATTERN = /.*/;
+
+/**
+ * Get the differences between the custom and default filters
+ */
+const filterChanges = (defaultFilters = {}, customFilters = {}) => {
+  const filters = {};
+
+  Object.entries(customFilters).forEach(([key, value]) => {
+    if (defaultFilters[key] !== value) {
+      filters[key] = value;
+    }
+  });
+
+  if (isEmpty(filters)) {
+    return undefined;
+  }
+
+  return filters;
+};
+
+/**
+ * Check if there are any custom filter changes
+ */
+const hasFilterChanges = (defaultFilters = {}, customFilters = {}) => {
+  const filterEntries = Object.entries(customFilters);
+  let diff = false;
+
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0 && !diff; i < filterEntries.length; i++) {
+    const [key, value] = filterEntries[i];
+
+    if (defaultFilters[key] !== value) {
+      diff = true;
+    }
+  }
+
+  return diff;
+};
 
 const getSearchPattern = (search) => {
   let searchPattern = SEARCH_DEFAULT_PATTERN;
@@ -39,7 +78,14 @@ const getSearchReducer =
           filters: payload,
           search: state.search,
         };
-        setParentState(newState);
+
+        const newParentState = {
+          filters: filterChanges(allEntriesFilters, payload),
+          search: state.search,
+        };
+
+        setParentState(newParentState);
+
         return newState;
       }
 
@@ -84,7 +130,10 @@ const getSearchReducer =
         };
       }
 
-      case ACTION_SET: {
+      /**
+       * Update local state and do not trigger a parent state change
+       */
+      case ACTION_UPDATE_LOCAL: {
         return payload;
       }
 
@@ -118,14 +167,22 @@ export const useSearchParams = ({
   );
 
   // Update state when the custom filters/search are changing - initial load or route updates
-  useLayoutEffect(() => {
-    // Run a deep comparison to prevent circular setState triggering
-    if (parentSearch === search && isEqual(initialFilters, filters)) {
-      return;
-    }
+  useLayoutEffect(
+    () => {
+      const searchChanged = parentSearch !== search;
+      const filtersChanged = hasFilterChanges(filters, parentFilters);
 
-    dispatch({ type: ACTION_SET, payload: generateState(initialFilters, parentSearch) });
-  }, [dispatch, search, filters, parentSearch, initialFilters]);
+      // Skip when there are no changes
+      if (!searchChanged && !filtersChanged) {
+        return;
+      }
+
+      // Update search & filters
+      dispatch({ type: ACTION_UPDATE_LOCAL, payload: generateState(initialFilters, parentSearch) });
+    },
+    // Run only when parent props are changing
+    [parentSearch, parentFilters],
+  );
 
   /** Callbacks */
   const handleUpdateSearch = useCallback(
