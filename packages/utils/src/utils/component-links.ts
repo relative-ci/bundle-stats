@@ -257,7 +257,6 @@ export const getBundleModulesByChunk = (
     [COMPONENT.BUNDLE_MODULES]: {
       filters: {
         [MODULE_FILTERS.CHANGED]: false,
-        ...getModuleChunkFilters(chunkIds, false),
         [`${MODULE_CHUNK}.${chunkId}`]: true,
         ...(fileType && {
           ...getModuleFileTypeFilters(false),
@@ -277,7 +276,6 @@ export const getBundleModulesByFileTpe = (
   params: {
     [COMPONENT.BUNDLE_MODULES]: {
       filters: {
-        ...getModuleFileTypeFilters(false),
         [`${MODULE_FILE_TYPE}.${fileType}`]: true,
       },
     },
