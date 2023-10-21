@@ -5,24 +5,24 @@ import { HashRouter, NavLink, Route, Switch, useLocation } from 'react-router-do
 import { COMPONENT } from '@bundle-stats/utils';
 
 import { URLS } from '../constants';
-import { Box } from '../layout/box';
-import { Container } from '../ui/container';
 import { BundleAssets } from '../components/bundle-assets';
 import { BundleAssetsTotalsChartBars } from '../components/bundle-assets-totals-chart-bars';
-import { Tabs } from '../ui/tabs';
-import { Footer } from '../layout/footer';
-import { Stack } from '../layout/stack';
 import { BundleAssetsTotalsTable } from '../components/bundle-assets-totals-table';
 import { BundleModules } from '../components/bundle-modules';
 import { BundlePackages } from '../components/bundle-packages';
 import { Insights } from '../components/insights';
+import { MetricsTableTitle } from '../components';
 import { Summary } from '../components/summary';
 import { TotalSizeTypeTitle } from '../components/total-size-type-title';
+import { Box } from '../layout/box';
+import { Footer } from '../layout/footer';
+import { Stack } from '../layout/stack';
+import { Container } from '../ui/container';
+import { Tabs } from '../ui/tabs';
 import { QueryStateProvider, useComponentQueryState } from '../query-state';
 import I18N from '../i18n';
 import { Header } from './header';
 import css from './app.module.css';
-import { MetricsTableTitle } from '../components';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -69,11 +69,13 @@ const OverviewContent = () => {
     const webpackInsights = jobs?.[0]?.insights?.webpack;
 
     if (!webpackInsights) {
-      return null
+      return null;
     }
 
     const res = {
-      ...(webpackInsights.duplicatePackagesV3 && { duplicatePackages: webpackInsights.duplicatePackagesV3 }),
+      ...(webpackInsights.duplicatePackagesV3 && {
+        duplicatePackages: webpackInsights.duplicatePackagesV3,
+      }),
       ...(webpackInsights.newPackages && { newPackages: webpackInsights.newPackages }),
     };
 
@@ -83,7 +85,6 @@ const OverviewContent = () => {
 
     return res;
   }, [jobs]);
-
 
   return (
     <Stack space="medium">
@@ -114,9 +115,9 @@ const AssetsContent = () => {
 
   return (
     <Container>
-        <Box outline>
-          <BundleAssets jobs={jobs} setState={bundleStatsSetState} {...bundleStatsState} />
-        </Box>
+      <Box outline>
+        <BundleAssets jobs={jobs} setState={bundleStatsSetState} {...bundleStatsState} />
+      </Box>
     </Container>
   );
 };
@@ -129,9 +130,9 @@ const ModulesContent = () => {
 
   return (
     <Container>
-        <Box outline>
-          <BundleModules jobs={jobs} setState={bundleModulesSetState} {...bundleModulesState} />
-        </Box>
+      <Box outline>
+        <BundleModules jobs={jobs} setState={bundleModulesSetState} {...bundleModulesState} />
+      </Box>
     </Container>
   );
 };
@@ -144,9 +145,9 @@ const PackagesContent = () => {
 
   return (
     <Container>
-        <Box outline>
-          <BundlePackages jobs={jobs} {...bundlePackagesState} setState={bundlePackagesSetState} />
-        </Box>
+      <Box outline>
+        <BundlePackages jobs={jobs} {...bundlePackagesState} setState={bundlePackagesSetState} />
+      </Box>
     </Container>
   );
 };
