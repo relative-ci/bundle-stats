@@ -27,7 +27,7 @@ export type ComponentLinkFilters = Record<string, boolean>;
 export interface ComponentLinkParams {
   search?: string;
   entryId?: string;
-  filters: ComponentLinkFilters;
+  filters?: ComponentLinkFilters;
 }
 
 export interface ComponentLink {
@@ -359,7 +359,9 @@ export const getBundlePackagesByNameComponentLink = (search: string): ComponentL
   },
 });
 
-export const getComponentStateQueryString = (params = {}) => {
+type ComponentStateQueryStringParams = Record<string, ComponentLinkParams>;
+
+export const getComponentStateQueryString = (params: ComponentStateQueryStringParams = {}) => {
   const meta = Object.keys(params).reduce(
     (agg, componentName) => ({
       ...agg,
