@@ -2,7 +2,6 @@ import React, { useCallback } from 'react';
 import isEqual from 'lodash/isEqual';
 import { QueryParamProvider, useQueryParams } from 'use-query-params';
 import { ReactRouter5Adapter } from 'use-query-params/adapters/react-router-5';
-import { parse, stringify } from 'query-string';
 import { COMPONENT_STATE_META } from '@bundle-stats/utils';
 
 interface QueryStateProviderProps {
@@ -10,14 +9,7 @@ interface QueryStateProviderProps {
 }
 
 export const QueryStateProvider = (props: QueryStateProviderProps) => (
-  <QueryParamProvider
-    adapter={ReactRouter5Adapter}
-    options={{
-      searchStringToObject: parse,
-      objectToSearchString: stringify,
-    }}
-    {...props}
-  />
+  <QueryParamProvider adapter={ReactRouter5Adapter} {...props} />
 );
 
 export const useComponentQueryState = (componentName: string) => {
