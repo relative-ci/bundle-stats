@@ -5,7 +5,11 @@ import { JsonParam, QueryParamProvider, useQueryParams } from 'use-query-params'
 import { ReactRouter5Adapter } from 'use-query-params/adapters/react-router-5';
 import { parse, stringify } from 'query-string';
 
-export const QueryStateProvider = (props) => (
+interface QueryStateProviderProps {
+  children: React.ReactNode;
+}
+
+export const QueryStateProvider = (props: QueryStateProviderProps) => (
   <QueryParamProvider
     adapter={ReactRouter5Adapter}
     options={{
@@ -16,7 +20,7 @@ export const QueryStateProvider = (props) => (
   />
 );
 
-export const useComponentQueryState = (componentName) => {
+export const useComponentQueryState = (componentName: string) => {
   const [search, setSearch] = useQueryParams({
     [componentName]: JsonParam,
   });
@@ -24,7 +28,7 @@ export const useComponentQueryState = (componentName) => {
   const state = search[componentName];
 
   const setState = useCallback(
-    (newState) => {
+    (newState: Record<string, unknown>) => {
       const newComponentState = merge({}, state, newState);
 
       // Deep check to prevent unnecessary state changes
