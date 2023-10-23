@@ -1,5 +1,5 @@
-import { stringify } from 'query-string';
-import { JsonParam, encodeQueryParams } from 'serialize-query-params';
+import { parse, stringify } from 'query-string';
+import { JsonParam, decodeQueryParams, encodeQueryParams } from 'serialize-query-params';
 
 import {
   FILE_TYPES,
@@ -363,17 +363,19 @@ export const getBundlePackagesByNameComponentLink = (search: string): ComponentL
 
 type ComponentStateQueryStringParams = Record<string, ComponentLinkParams>;
 
-export const getComponentStateQueryString = (params: ComponentStateQueryStringParams = {}) => {
-  const meta = Object.keys(params).reduce(
-    (agg, componentName) => ({
-      ...agg,
-      [componentName]: JsonParam,
-    }),
-    {},
-  );
+export const COMPONENT_STATE_META = {
+  [COMPONENT.BUNDLE_ASSETS]: JsonParam,
+  [COMPONENT.BUNDLE_MODULES]: JsonParam,
+  [COMPONENT.BUNDLE_PACKAGES]: JsonParam,
+} as const;
 
-  return stringify(encodeQueryParams(meta, params));
+export const getComponentStateQueryString = (params: ComponentStateQueryStringParams = {}) => {
+  return stringify(encodeQueryParams(COMPONENT_STATE_META, params));
 };
+
+export const decodeComponentStateQueryString = (
+  queryString: string,
+): ComponentStateQueryStringParams => decodeQueryParams(COMPONENT_STATE_META, parse(queryString));
 
 export const METRIC_COMPONENT_LINKS = new Map([
   ['webpack.totalSizeByTypeALL', { link: TOTALS }],

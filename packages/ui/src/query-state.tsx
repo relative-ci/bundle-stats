@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import isEqual from 'lodash/isEqual';
-import merge from 'lodash/merge';
-import { JsonParam, QueryParamProvider, useQueryParams } from 'use-query-params';
+import { QueryParamProvider, useQueryParams } from 'use-query-params';
 import { ReactRouter5Adapter } from 'use-query-params/adapters/react-router-5';
 import { parse, stringify } from 'query-string';
+import { COMPONENT_STATE_META } from '@bundle-stats/utils';
 
 interface QueryStateProviderProps {
   children: React.ReactNode;
@@ -21,25 +21,23 @@ export const QueryStateProvider = (props: QueryStateProviderProps) => (
 );
 
 export const useComponentQueryState = (componentName: string) => {
-  const [search, setSearch] = useQueryParams({
-    [componentName]: JsonParam,
+  const [queryState, setQueryState] = useQueryParams({
+    [componentName]: COMPONENT_STATE_META[componentName],
   });
 
-  const state = search[componentName];
+  const componentState = queryState[componentName];
 
   const setState = useCallback(
     (newState: Record<string, unknown>) => {
-      const newComponentState = merge({}, state, newState);
-
       // Deep check to prevent unnecessary state changes
-      if (isEqual(newComponentState, state)) {
+      if (isEqual(componentState, newState)) {
         return;
       }
 
-      setSearch({ [componentName]: newComponentState });
+      setQueryState({ [componentName]: newState });
     },
-    [state],
+    [componentState],
   );
 
-  return [state, setState];
+  return [componentState, setState];
 };
