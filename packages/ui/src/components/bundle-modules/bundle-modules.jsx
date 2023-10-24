@@ -30,7 +30,16 @@ import { MetricsTableTitle } from '../metrics-table-title';
 import { ModuleInfo } from '../module-info';
 import css from './bundle-modules.module.css';
 
-const getFilters = ({ filters, compareMode, chunks }) => ({
+const getFilters = ({ filters, compareMode, chunks }) => {
+  const chunkFilter = { label: 'Chunk' };
+  chunks?.forEach((chunk) => {
+    chunkFilter[chunk.id] = {
+      label: chunk.name,
+      defaultValue: filters[`${MODULE_CHUNK}.${chunk.id}`] || true,
+    };
+  });
+
+  return {
     [MODULE_FILTERS.CHANGED]: {
       label: 'Changed',
       defaultValue: filters.changed,
@@ -41,21 +50,9 @@ const getFilters = ({ filters, compareMode, chunks }) => ({
       defaultValue: filters[MODULE_FILTERS.DUPLICATED],
     },
 
-    // When chunks data available, list available chunks as filters
+    // When chunks data is available, list available chunks as filters
     ...(!isEmpty(chunks) && {
-      [MODULE_CHUNK]: {
-        label: 'Chunk',
-        ...chunks.reduce(
-          (chunkFilters, { id, name }) => ({
-            ...chunkFilters,
-            [id]: {
-              label: name,
-              defaultValue: get(filters, `${MODULE_CHUNK}.${id}`, true),
-            },
-          }),
-          {},
-        ),
-      },
+      [MODULE_CHUNK]: chunkFilter,
     }),
 
     [MODULE_SOURCE_TYPE]: {
@@ -84,7 +81,8 @@ const getFilters = ({ filters, compareMode, chunks }) => ({
         {},
       ),
     },
-})
+  };
+};
 
 const RowHeader = ({ row, filters, search, customComponentLink: CustomComponentLink }) => (
   <CustomComponentLink
