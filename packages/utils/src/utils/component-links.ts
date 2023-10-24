@@ -1,5 +1,14 @@
 import { parse, stringify } from 'query-string';
-import { JsonParam, decodeQueryParams, encodeQueryParams } from 'serialize-query-params';
+import {
+  BooleanParam,
+  JsonParam,
+  ObjectParam,
+  QueryParamConfig,
+  StringParam,
+  decodeQueryParams,
+  encodeQueryParams,
+} from 'serialize-query-params';
+import isEmpty from 'lodash/isEmpty';
 
 import {
   FILE_TYPES,
@@ -361,21 +370,102 @@ export const getBundlePackagesByNameComponentLink = (search: string): ComponentL
   },
 });
 
-type ComponentStateQueryStringParams = Record<string, ComponentLinkParams>;
+/**
+ * Custom section params encoder/decoder
+ *
+ * @NOTE To keep the length of the query string small when using a lot of filters (ex: chunks)
+ * we use different encoding/decoding algorithms depending on the property type:
+ *
+ * - section: JsonParam
+ *   - search: StringParam
+ *   - entryId: StringParam
+ *   - filters: ObjectParam
+ *      - value: BooleanParam
+ */
+export const ComponentStateParam: QueryParamConfig<any, any> = {
+  encode: (sectionState) => {
+    if (!sectionState) {
+      return undefined;
+    }
+
+    const search = StringParam.encode(sectionState.search);
+    const entryId = StringParam.encode(sectionState.entryId);
+
+    const filters = ObjectParam.encode(
+      Object.entries(sectionState.filters || {}).reduce(
+        (agg, [key, val]) => ({
+          ...agg,
+          [key]: BooleanParam.encode(val as boolean),
+        }),
+        {},
+      ),
+    );
+
+    return JsonParam.encode({
+      ...(search && { search }),
+      ...(entryId && { entryId }),
+      ...(!isEmpty(filters) && { filters }),
+    });
+  },
+  decode: (queryString) => {
+    const params = JsonParam.decode(queryString);
+
+    if (isEmpty(params)) {
+      return undefined;
+    }
+
+    const search = StringParam.decode(params.search);
+    const entryId = StringParam.decode(params.entryId);
+
+    let filters: Record<string, boolean> = {};
+
+    // Decode filters if typeof is string (mixed encoding)
+    // .1 ObjectParam
+    // .2 BooleanParam
+    if (typeof params.filters === 'string') {
+      const decodedFilters = ObjectParam.decode(params.filters);
+
+      Object.entries(decodedFilters || {}).forEach(([key, value]) => {
+        const filterDecodedValue = BooleanParam.decode(value);
+
+        if (typeof filterDecodedValue !== 'undefined' && filterDecodedValue !== null) {
+          filters[key] = filterDecodedValue;
+        }
+      });
+    } else if (typeof params.filters === 'object') {
+      // Use directly if already decoded (JSON encoding - obsolete)
+      filters = params.filters;
+    }
+
+    // Include only the truthy values
+    const result = {
+      ...(search && { search }),
+      ...(entryId && { entryId }),
+      ...(!isEmpty(filters) && { filters }),
+    };
+
+    if (isEmpty(result)) {
+      return undefined;
+    }
+
+    return result;
+  },
+};
 
 export const COMPONENT_STATE_META = {
-  [COMPONENT.BUNDLE_ASSETS]: JsonParam,
-  [COMPONENT.BUNDLE_MODULES]: JsonParam,
-  [COMPONENT.BUNDLE_PACKAGES]: JsonParam,
+  [COMPONENT.BUNDLE_ASSETS]: ComponentStateParam,
+  [COMPONENT.BUNDLE_MODULES]: ComponentStateParam,
+  [COMPONENT.BUNDLE_PACKAGES]: ComponentStateParam,
 } as const;
+
+type ComponentStateQueryStringParams = Record<string, ComponentLinkParams>;
 
 export const getComponentStateQueryString = (params: ComponentStateQueryStringParams = {}) => {
   return stringify(encodeQueryParams(COMPONENT_STATE_META, params));
 };
 
-export const decodeComponentStateQueryString = (
-  queryString: string,
-): ComponentStateQueryStringParams => decodeQueryParams(COMPONENT_STATE_META, parse(queryString));
+export const getComponentStateData = (queryString: string): ComponentStateQueryStringParams =>
+  decodeQueryParams(COMPONENT_STATE_META, parse(queryString));
 
 export const METRIC_COMPONENT_LINKS = new Map([
   ['webpack.totalSizeByTypeALL', { link: TOTALS }],
