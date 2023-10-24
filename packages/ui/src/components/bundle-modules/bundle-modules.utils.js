@@ -1,7 +1,5 @@
-import { useMemo } from 'react';
 import intersection from 'lodash/intersection';
 import union from 'lodash/union';
-import merge from 'lodash/merge';
 import get from 'lodash/get';
 import { MODULE_PATH_PACKAGES } from '@bundle-stats/utils/lib-esm/webpack';
 import {
@@ -33,6 +31,7 @@ export const generateGetRowFilter =
   ({ chunkIds }) =>
   (filters) =>
   (row) => {
+    // eslint-disable-line prettier/prettier
     // Skip not changed rows
     if (filters[MODULE_FILTERS.CHANGED] && !row.changed) {
       return false;
