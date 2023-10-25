@@ -35,7 +35,7 @@ const getFilters = ({ filters, compareMode, chunks }) => {
   chunks?.forEach((chunk) => {
     chunkFilter[chunk.id] = {
       label: chunk.name,
-      defaultValue: filters[`${MODULE_CHUNK}.${chunk.id}`] || true,
+      defaultValue: filters[`${MODULE_CHUNK}.${chunk.id}`] ?? true,
     };
   });
 
