@@ -125,7 +125,7 @@ export const useSearchParams = ({
     }
 
     dispatch({ type: ACTION_SET, payload: generateState(initialFilters, parentSearch) });
-  }, [dispatch, search, filters, parentSearch, initialFilters]);
+  }, [parentSearch, parentFilters]);
 
   /** Callbacks */
   const handleUpdateSearch = useCallback(
