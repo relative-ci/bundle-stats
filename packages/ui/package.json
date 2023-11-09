@@ -38,7 +38,7 @@
   "devDependencies": {
     "@babel/preset-env": "7.23.3",
     "@babel/preset-react": "7.22.15",
-    "@babel/preset-typescript": "7.23.2",
+    "@babel/preset-typescript": "7.23.3",
     "@storybook/addon-essentials": "7.5.3",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "7.5.3",
