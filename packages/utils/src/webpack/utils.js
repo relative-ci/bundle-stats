@@ -7,13 +7,13 @@ import { createGetMetricType } from '../utils/metrics';
 import { metrics } from './metrics';
 
 // Match hex hash
-const HASH_PATTERN = '[a-f|0-9]{5,32}';
+const HASH_PATTERN = '[a-f0-9]{5,32}';
 
 // Match hash separator
-const HASH_SEPARATOR_PATTERN = '[-|.]';
+const HASH_SEPARATOR_PATTERN = '[-.]';
 
 // Match multiple extensions: .js, .js.gz, .min.js, .chunk.js
-const EXTENSION_PATTERN = /(?:\.[a-z|0-9]{2,}){1,}/;
+const EXTENSION_PATTERN = /(?:\.[a-z0-9]{2,}){1,}/;
 
 const PATTERNS = [
   // Match path/name-HASH.ext, path/name.HASH.ext, path/name-HASH.chunk.ext
