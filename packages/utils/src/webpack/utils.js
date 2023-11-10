@@ -27,28 +27,24 @@ const NO_BASENAME = /(^|.*\/)\..*$/;
 
 /**
  * Extract (guess) filename from a hashed filename
+ * @param {string} [assetFilepath]
+ * @returns {string}
  */
 export const getAssetName = (assetFilepath) => {
   if (!assetFilepath) {
     return '';
   }
 
-  let result;
-
-  for (let i = 0; i < PATTERNS.length && !result; i += 1) {
+  for (let i = 0; i < PATTERNS.length; i += 1) {
     const pattern = PATTERNS[i];
     const extracted = assetFilepath.replace(pattern, '$1$2');
 
     if (extracted && extracted !== assetFilepath && !NO_BASENAME.test(extracted)) {
-      result = extracted;
+      return extracted;
     }
   }
 
-  if (!result) {
-    return assetFilepath;
-  }
-
-  return result;
+  return assetFilepath;
 };
 
 // css ./node_modules/css-loader/dist/cjs.js??ref--6-0!./src/assets/styles/default.styl
@@ -60,6 +56,11 @@ const NAME_WITH_MODULES = /\s?\+\s?\d*\s?modules$/;
 // css ../node_modules../node_modules/package-a
 const INVALID_CSS_PREFIX = /^css\s.*node_modules(?!\/)/;
 
+/**
+ * Extract normalize module name
+ * @param {string} [name]
+ * @return {string}
+ */
 export const getModuleName = (name) => {
   if (!name) {
     return '';
@@ -89,6 +90,9 @@ export const getModuleName = (name) => {
  *
  * The metric is the ratio between the total file size of the files that have changed (exclude
  * deleted, added) and the total file size
+ *
+ * @param {Array<object>} rows
+ * @return {Number}
  */
 export const calculateCacheInvalidation = (rows) => {
   let cached = 0;
@@ -114,12 +118,20 @@ export const calculateCacheInvalidation = (rows) => {
   return round((invalidated / cached) * 100, 2);
 };
 
+/**
+ * @param {Array<unknown>} runs
+ * @return {Boolean}
+ */
 export const getMetricAdded = (runs) => {
   const [current, baseline] = map(runs, 'value');
 
   return Boolean(current !== null && !baseline);
 };
 
+/**
+ * @param {Array<unknown>} runs
+ * @return {Boolean}
+ */
 export const getMetricDeleted = (runs) => {
   const [current, baseline] = map(runs, 'value');
 
