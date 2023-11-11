@@ -6,7 +6,7 @@ import { metrics } from './metrics';
 
 // Hex patterns
 const HEX_HASH_PATTERN = '[a-f0-9]{5,32}';
-const HEX_HASH_SEPARATOR_PATTERN = '[-_.]';
+const HEX_HASH_SEPARATOR_PATTERN = '[-_.~]';
 
 // Base64URL patterns
 const BASE64URL_HASH_PATTERN = '[A-Za-z0-9_-]{4,}';
