@@ -24,6 +24,15 @@ describe('Webpack/utils/getAssetName', () => {
     expect(getAssetName('d249062c08abb6b31a03.js')).toBe('d249062c08abb6b31a03.js');
   });
 
+  test('should remove the hex hash when the separator is "_"', () => {
+    expect(getAssetName('main_d2490.js')).toBe('main.js');
+    expect(getAssetName('main_d249062c08abb6b31a03.js')).toBe('main.js');
+    expect(getAssetName('main_d249062c08abb6b31a03.min.js')).toBe('main.min.js');
+    expect(getAssetName('0_d249062c08abb6b31a03.js')).toBe('0.js');
+    expect(getAssetName('assets/js/main_d249062c08abb6b31a03.js')).toBe('assets/js/main.js');
+    expect(getAssetName('d249062c08abb6b31a03.js')).toBe('d249062c08abb6b31a03.js');
+  });
+
   test('should remove the hex hash when it has the minimum length', () => {
     expect(getAssetName('login-chunk.d2490.js')).toBe('login-chunk.js');
     expect(getAssetName('web-app/login-chunk.d2490.js')).toBe('web-app/login-chunk.js');

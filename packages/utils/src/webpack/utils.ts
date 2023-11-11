@@ -8,13 +8,13 @@ import { metrics } from './metrics';
 const HASH_PATTERN = '[a-f0-9]{5,32}';
 
 // Match hash separator
-const HASH_SEPARATOR_PATTERN = '[-.]';
+const HASH_SEPARATOR_PATTERN = '[-_.]';
 
 // Match multiple extensions: .js, .js.gz, .min.js, .chunk.js
 const EXTENSION_PATTERN = /(?:\.[a-z0-9]{2,}){1,}/;
 
 const PATTERNS = [
-  // Match path/name-HASH.ext, path/name.HASH.ext, path/name-HASH.chunk.ext
+  // Match path/name-HASH.EXT, path/name.HASH.EXT, path/name_HASH.EXT, path/name-HASH.chunk.EXT
   `(.*)${HASH_SEPARATOR_PATTERN}${HASH_PATTERN}(${EXTENSION_PATTERN.source})$`,
 
   // Match static/HASH.ext
@@ -26,21 +26,21 @@ const NO_BASENAME = /(^|.*\/)\..*$/;
 /**
  * Extract (guess) filename from a hashed filename
  */
-export const getAssetName = (assetFilepath?: string | null): string => {
-  if (!assetFilepath) {
+export const getAssetName = (statsAssetPath?: string | null): string => {
+  if (!statsAssetPath) {
     return '';
   }
 
   for (let i = 0; i < PATTERNS.length; i += 1) {
     const pattern = PATTERNS[i];
-    const extracted: string = assetFilepath.replace(pattern, '$1$2');
+    const extracted: string = statsAssetPath.replace(pattern, '$1$2');
 
-    if (extracted && extracted !== assetFilepath && !NO_BASENAME.test(extracted)) {
+    if (extracted && extracted !== statsAssetPath && !NO_BASENAME.test(extracted)) {
       return extracted;
     }
   }
 
-  return assetFilepath;
+  return statsAssetPath;
 };
 
 // css ./node_modules/css-loader/dist/cjs.js??ref--6-0!./src/assets/styles/default.styl
