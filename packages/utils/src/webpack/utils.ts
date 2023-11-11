@@ -4,21 +4,26 @@ import { PACKAGES_SEPARATOR, PACKAGE_ID_SEPARATOR } from '../config';
 import { createGetMetricType } from '../utils/metrics';
 import { metrics } from './metrics';
 
-// Match hex hash
-const HASH_PATTERN = '[a-f0-9]{5,32}';
+// Hex patterns
+const HEX_HASH_PATTERN = '[a-f0-9]{5,32}';
+const HEX_HASH_SEPARATOR_PATTERN = '[-_.]';
 
-// Match hash separator
-const HASH_SEPARATOR_PATTERN = '[-_.]';
+// Base64URL patterns
+const BASE64URL_HASH_PATTERN = '[A-Za-z0-9_-]{4,}';
+const BASE64URL_SEPARATOR_PATTERN = '[.~]';
 
 // Match multiple extensions: .js, .js.gz, .min.js, .chunk.js
 const EXTENSION_PATTERN = /(?:\.[a-z0-9]{2,}){1,}/;
 
 const PATTERNS = [
-  // Match path/name-HASH.EXT, path/name.HASH.EXT, path/name_HASH.EXT, path/name-HASH.chunk.EXT
-  `(.*)${HASH_SEPARATOR_PATTERN}${HASH_PATTERN}(${EXTENSION_PATTERN.source})$`,
+  // Match path/name-HEXHASH.EXT, path/name.HEXHASH.EXT, path/name_HEXHASH.EXT, path/name-HEXHASH.chunk.EXT
+  `(.*)${HEX_HASH_SEPARATOR_PATTERN}${HEX_HASH_PATTERN}(${EXTENSION_PATTERN.source})$`,
+
+  // Match path/name-BASE64URLHASH.EXT, path/name.BASE64URLHASH.EXT, path/name_BASE64URLHASH.EXT, path/name-BASE64URLHASH.chunk.EXT
+  `(.*)${BASE64URL_SEPARATOR_PATTERN}${BASE64URL_HASH_PATTERN}(${EXTENSION_PATTERN.source})$`,
 
   // Match static/HASH.ext
-  `(static)/${HASH_PATTERN}(.*${EXTENSION_PATTERN.source})$`,
+  `(static)/${HEX_HASH_PATTERN}(.*${EXTENSION_PATTERN.source})$`,
 ].map((pattern) => new RegExp(pattern));
 
 const NO_BASENAME = /(^|.*\/)\..*$/;
