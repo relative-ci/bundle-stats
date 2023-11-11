@@ -19,11 +19,11 @@ const PATTERNS = [
   // Match path/name-HEXHASH.EXT, path/name.HEXHASH.EXT, path/name_HEXHASH.EXT, path/name-HEXHASH.chunk.EXT
   `(.*)${HEX_HASH_SEPARATOR_PATTERN}${HEX_HASH_PATTERN}(${EXTENSION_PATTERN.source})$`,
 
-  // Match path/name-BASE64URLHASH.EXT, path/name.BASE64URLHASH.EXT, path/name_BASE64URLHASH.EXT, path/name-BASE64URLHASH.chunk.EXT
-  `(.*)${BASE64URL_SEPARATOR_PATTERN}${BASE64URL_HASH_PATTERN}(${EXTENSION_PATTERN.source})$`,
-
   // Match static/HASH.ext
   `(static)/${HEX_HASH_PATTERN}(.*${EXTENSION_PATTERN.source})$`,
+
+  // Match path/name-BASE64URLHASH.EXT, path/name.BASE64URLHASH.EXT, path/name_BASE64URLHASH.EXT, path/name-BASE64URLHASH.chunk.EXT
+  `(.*)${BASE64URL_SEPARATOR_PATTERN}${BASE64URL_HASH_PATTERN}(${EXTENSION_PATTERN.source})$`,
 ].map((pattern) => new RegExp(pattern));
 
 const NO_BASENAME = /(^|.*\/)\..*$/;
