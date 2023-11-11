@@ -1,5 +1,3 @@
-import last from 'lodash/last';
-import map from 'lodash/map';
 import round from 'lodash/round';
 
 import { PACKAGES_SEPARATOR, PACKAGE_ID_SEPARATOR } from '../config';
@@ -27,17 +25,15 @@ const NO_BASENAME = /(^|.*\/)\..*$/;
 
 /**
  * Extract (guess) filename from a hashed filename
- * @param {string} [assetFilepath]
- * @returns {string}
  */
-export const getAssetName = (assetFilepath) => {
+export const getAssetName = (assetFilepath?: string | null): string => {
   if (!assetFilepath) {
     return '';
   }
 
   for (let i = 0; i < PATTERNS.length; i += 1) {
     const pattern = PATTERNS[i];
-    const extracted = assetFilepath.replace(pattern, '$1$2');
+    const extracted: string = assetFilepath.replace(pattern, '$1$2');
 
     if (extracted && extracted !== assetFilepath && !NO_BASENAME.test(extracted)) {
       return extracted;
@@ -58,16 +54,15 @@ const INVALID_CSS_PREFIX = /^css\s.*node_modules(?!\/)/;
 
 /**
  * Extract normalize module name
- * @param {string} [name]
- * @return {string}
  */
-export const getModuleName = (name) => {
+export const getModuleName = (name?: string | null) => {
   if (!name) {
     return '';
   }
 
   if (NAME_WITH_LOADERS.test(name)) {
-    const normalizedName = last(name.split(NAME_WITH_LOADERS));
+    const segments = name.split(NAME_WITH_LOADERS);
+    const normalizedName = segments[segments.length - 1];
 
     if (normalizedName?.trim()) {
       return normalizedName;
@@ -90,11 +85,8 @@ export const getModuleName = (name) => {
  *
  * The metric is the ratio between the total file size of the files that have changed (exclude
  * deleted, added) and the total file size
- *
- * @param {Array<object>} rows
- * @return {Number}
  */
-export const calculateCacheInvalidation = (rows) => {
+export const calculateCacheInvalidation = (rows: Array<any>): number => {
   let cached = 0;
   let invalidated = 0;
 
@@ -118,50 +110,33 @@ export const calculateCacheInvalidation = (rows) => {
   return round((invalidated / cached) * 100, 2);
 };
 
-/**
- * @param {Array<unknown>} runs
- * @return {Boolean}
- */
-export const getMetricAdded = (runs) => {
-  const [current, baseline] = map(runs, 'value');
+export const getMetricAdded = (runs: Array<any>): boolean => {
+  const [current, baseline] = runs?.map((run) => run?.value) || [];
 
   return Boolean(current !== null && !baseline);
 };
 
-/**
- * @param {Array<unknown>} runs
- * @return {Boolean}
- */
-export const getMetricDeleted = (runs) => {
-  const [current, baseline] = map(runs, 'value');
+export const getMetricDeleted = (runs: Array<any>) => {
+  const [current, baseline] = runs?.map((run) => run?.value) || [];
 
   return Boolean(baseline !== null && !current);
 };
 
 /**
  * Get webpack metric data
- *
- * @param {String} key - Webpack metric key
- * @return {Object} Metric data
  */
 export const getMetricType = createGetMetricType(metrics);
 
 /**
  * Get public package name from package id
- *
- * @param {String} packageId
- * @return {String} public package name
  */
-export const getPackagePublicName = (packageId) => {
+export const getPackagePublicName = (packageId: string): string => {
   // Split packages
-  const name = last(packageId.split(PACKAGES_SEPARATOR));
+  const packageNames = packageId.split(PACKAGES_SEPARATOR);
+  const name = packageNames[packageNames.length - 1];
 
   // Strip package suffix (eg: ~1)
   return name.split(PACKAGE_ID_SEPARATOR)[0];
 };
 
-/**
- * @param {String|Number} chunkId
- * @return {String}
- */
-export const normalizeChunkId = (chunkId) => chunkId.toString();
+export const normalizeChunkId = (chunkId: string | number): string => chunkId.toString();
