@@ -1,5 +1,14 @@
-import { stringify } from 'query-string';
-import { JsonParam, encodeQueryParams } from 'serialize-query-params';
+import { parse, stringify } from 'query-string';
+import {
+  BooleanParam,
+  JsonParam,
+  ObjectParam,
+  QueryParamConfig,
+  StringParam,
+  decodeQueryParams,
+  encodeQueryParams,
+} from 'serialize-query-params';
+import isEmpty from 'lodash/isEmpty';
 
 import {
   FILE_TYPES,
@@ -27,7 +36,7 @@ export type ComponentLinkFilters = Record<string, boolean>;
 export interface ComponentLinkParams {
   search?: string;
   entryId?: string;
-  filters: ComponentLinkFilters;
+  filters?: ComponentLinkFilters;
 }
 
 export interface ComponentLink {
@@ -361,17 +370,116 @@ export const getBundlePackagesByNameComponentLink = (search: string): ComponentL
   },
 });
 
-export const getComponentStateQueryString = (params = {}) => {
-  const meta = Object.keys(params).reduce(
-    (agg, componentName) => ({
-      ...agg,
-      [componentName]: JsonParam,
-    }),
-    {},
-  );
+/**
+ * Custom section params encoder/decoder
+ *
+ * @NOTE To keep the length of the query string small when using a lot of filters (ex: chunks)
+ * we use different encoding/decoding algorithms depending on the property type:
+ *
+ * - section: JsonParam
+ *   - search: StringParam
+ *   - entryId: StringParam
+ *   - filters: ObjectParam
+ *      - value: BooleanParam
+ */
+export const ComponentStateParam: QueryParamConfig<any, any> = {
+  encode: (sectionState) => {
+    if (!sectionState) {
+      return undefined;
+    }
 
-  return stringify(encodeQueryParams(meta, params));
+    const search = StringParam.encode(sectionState.search);
+    const entryId = StringParam.encode(sectionState.entryId);
+
+    const filtersEncodedValues: Record<string, string> = {};
+    Object.entries(sectionState.filters || {}).forEach(([key, val]) => {
+      filtersEncodedValues[key] = BooleanParam.encode(!!val) as string;
+    });
+    const filters = ObjectParam.encode(filtersEncodedValues);
+
+    const data = {} as any;
+
+    if (search) {
+      data.search = search;
+    }
+
+    if (entryId) {
+      data.entryId = entryId;
+    }
+
+    if (!isEmpty(filters)) {
+      data.filters = filters;
+    }
+
+    return JsonParam.encode(data);
+  },
+  decode: (queryString) => {
+    const params = JsonParam.decode(queryString);
+
+    if (isEmpty(params)) {
+      return undefined;
+    }
+
+    const search = StringParam.decode(params.search);
+    const entryId = StringParam.decode(params.entryId);
+
+    let filters: Record<string, boolean> = {};
+
+    // Decode filters if typeof is string (mixed encoding)
+    // .1 ObjectParam
+    // .2 BooleanParam
+    if (typeof params.filters === 'string') {
+      const decodedFilters = ObjectParam.decode(params.filters);
+
+      Object.entries(decodedFilters || {}).forEach(([key, value]) => {
+        const filterDecodedValue = BooleanParam.decode(value);
+
+        if (typeof filterDecodedValue !== 'undefined' && filterDecodedValue !== null) {
+          filters[key] = filterDecodedValue;
+        }
+      });
+    } else if (typeof params.filters === 'object') {
+      // Use directly if already decoded (JSON encoding - obsolete)
+      filters = params.filters;
+    }
+
+    // Include only the truthy values
+    const result: Record<string, any> = {};
+
+    if (search) {
+      result.search = search;
+    }
+
+    if (entryId) {
+      result.entryId = entryId;
+    }
+
+    if (!isEmpty(filters)) {
+      result.filters = filters;
+    }
+
+    if (isEmpty(result)) {
+      return undefined;
+    }
+
+    return result;
+  },
 };
+
+export const COMPONENT_STATE_META = {
+  [COMPONENT.BUNDLE_ASSETS]: ComponentStateParam,
+  [COMPONENT.BUNDLE_MODULES]: ComponentStateParam,
+  [COMPONENT.BUNDLE_PACKAGES]: ComponentStateParam,
+} as const;
+
+type ComponentStateQueryStringParams = Record<string, ComponentLinkParams>;
+
+export const getComponentStateQueryString = (params: ComponentStateQueryStringParams = {}) => {
+  return stringify(encodeQueryParams(COMPONENT_STATE_META, params));
+};
+
+export const getComponentStateData = (queryString: string): ComponentStateQueryStringParams =>
+  decodeQueryParams(COMPONENT_STATE_META, parse(queryString));
 
 export const METRIC_COMPONENT_LINKS = new Map([
   ['webpack.totalSizeByTypeALL', { link: TOTALS }],

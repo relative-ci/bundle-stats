@@ -44,6 +44,7 @@
     "@storybook/react": "7.5.3",
     "@storybook/react-webpack5": "7.5.3",
     "@types/react": "18.2.37",
+    "@types/react-router-dom": "5.3.3",
     "babel-plugin-require-context-hook": "1.0.0",
     "classnames": "2.3.2",
     "colormap": "2.3.2",
@@ -75,7 +76,6 @@
     "@bundle-stats/utils": "^4.8.0",
     "ariakit": "2.0.0-next.44",
     "modern-css-reset": "1.4.0",
-    "query-string": "7.1.3",
     "use-query-params": "2.2.1"
   }
 }
