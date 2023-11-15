@@ -391,21 +391,27 @@ export const ComponentStateParam: QueryParamConfig<any, any> = {
     const search = StringParam.encode(sectionState.search);
     const entryId = StringParam.encode(sectionState.entryId);
 
-    const filters = ObjectParam.encode(
-      Object.entries(sectionState.filters || {}).reduce(
-        (agg, [key, val]) => ({
-          ...agg,
-          [key]: BooleanParam.encode(val as boolean),
-        }),
-        {},
-      ),
-    );
-
-    return JsonParam.encode({
-      ...(search && { search }),
-      ...(entryId && { entryId }),
-      ...(!isEmpty(filters) && { filters }),
+    const filtersEncodedValues: Record<string, string> = {};
+    Object.entries(sectionState.filters || {}).forEach(([key, val]) => {
+      filtersEncodedValues[key] = BooleanParam.encode(!!val) as string;
     });
+    const filters = ObjectParam.encode(filtersEncodedValues);
+
+    const data = {} as any;
+
+    if (search) {
+      data.search = search;
+    }
+
+    if (entryId) {
+      data.entryId = entryId;
+    }
+
+    if (!isEmpty(filters)) {
+      data.filters = filters;
+    }
+
+    return JsonParam.encode(data);
   },
   decode: (queryString) => {
     const params = JsonParam.decode(queryString);
@@ -438,11 +444,19 @@ export const ComponentStateParam: QueryParamConfig<any, any> = {
     }
 
     // Include only the truthy values
-    const result = {
-      ...(search && { search }),
-      ...(entryId && { entryId }),
-      ...(!isEmpty(filters) && { filters }),
-    };
+    const result: Record<string, any> = {};
+
+    if (search) {
+      result.search = search;
+    }
+
+    if (entryId) {
+      result.entryId = entryId;
+    }
+
+    if (!isEmpty(filters)) {
+      result.filters = filters;
+    }
 
     if (isEmpty(result)) {
       return undefined;
