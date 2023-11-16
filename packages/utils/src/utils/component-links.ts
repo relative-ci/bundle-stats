@@ -1,4 +1,3 @@
-import { parse, stringify } from 'query-string';
 import {
   BooleanParam,
   JsonParam,
@@ -475,11 +474,15 @@ export const COMPONENT_STATE_META = {
 type ComponentStateQueryStringParams = Record<string, ComponentLinkParams>;
 
 export const getComponentStateQueryString = (params: ComponentStateQueryStringParams = {}) => {
-  return stringify(encodeQueryParams(COMPONENT_STATE_META, params));
+  const data = encodeQueryParams(COMPONENT_STATE_META, params);
+  const searchParams = new URLSearchParams(data as Record<string, string>);
+  return searchParams.toString();
 };
 
-export const getComponentStateData = (queryString: string): ComponentStateQueryStringParams =>
-  decodeQueryParams(COMPONENT_STATE_META, parse(queryString));
+export const getComponentStateData = (queryString: string): ComponentStateQueryStringParams => {
+  const params = new URLSearchParams(queryString);
+  return decodeQueryParams(COMPONENT_STATE_META, Object.fromEntries(params.entries()));
+};
 
 export const METRIC_COMPONENT_LINKS = new Map([
   ['webpack.totalSizeByTypeALL', { link: TOTALS }],
