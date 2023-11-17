@@ -25,7 +25,7 @@ export const WebpackSourceAssetHiddenStruct = type({
 export const WebpackSourceModuleStruct = type({
   name: string(),
   size: number(),
-  chunks: array(nullable(union([number(), string()]))),
+  chunks: optional(array(nullable(union([number(), string()])))),
   modules: optional(array(type({ name: string(), size: number() }))),
 });
 

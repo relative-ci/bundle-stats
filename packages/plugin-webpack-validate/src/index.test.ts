@@ -29,6 +29,11 @@ describe('Webpack/validate', () => {
             filteredChildren: 2,
             size: 10,
           },
+          {
+            type: 'module',
+            name: 'container entry',
+            size: 10,
+          },
         ],
       }),
     ).toEqual('');
