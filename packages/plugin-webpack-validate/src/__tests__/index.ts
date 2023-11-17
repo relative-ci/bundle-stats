@@ -1,4 +1,4 @@
-import validate from '.';
+import validate from '..';
 
 describe('Webpack/validate', () => {
   test('should return empty string if valid', () => {
