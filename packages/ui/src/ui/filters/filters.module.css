@@ -28,21 +28,21 @@
 }
 
 .filterOnlyButton {
-  padding: calc(var(--space-xxxsmall) / 2 - 1px) var(--space-xxxsmall);
+  padding: 0 var(--space-xxxsmall);
   display: none;
   appearance: none;
   border: none;
   border-radius: var(--radius-small);
   cursor: pointer;
   position: absolute;
-  right: 1px;
-  top: 1px;
-  bottom: 1px;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
   transition: var(--transition-in);
   background: var(--color-info);
   color: var(--color-background);
-  font-size: var(--size-small);
-  line-height: var(--space-xsmall);
+  font-size: var(--size-xsmall);
+  line-height: var(--line-height-header);
 }
 
 .filterOnlyButton:hover,
@@ -61,7 +61,7 @@
   top: 0;
   right: 100%;
   bottom: 0;
-  width: var(--space-medium);
+  width: var(--space-small);
   background: linear-gradient(90deg, rgba(255, 255, 255, 0), var(--color-highlight) 75%);
 }
 
