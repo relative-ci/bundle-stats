@@ -53,17 +53,13 @@
   outline: none;
   border: 0;
   border-radius: var(--radius-small);
-  padding: calc(var(--space-xxxsmall) / 2) var(--space-xxxsmall);
+  padding: var(--space-xxxsmall) var(--space-xxxsmall);
   background: none;
   text-align: left;
   color: var(--color-text-light);
   font-size: var(--size-small);
   line-height: inherit;
   text-decoration: none;
-}
-
-.item + .item {
-  margin-top: calc(var(--space-xxxsmall) / 2);
 }
 
 .item[data-active-item],
