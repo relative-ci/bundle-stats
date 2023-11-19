@@ -370,6 +370,27 @@ export const getBundlePackagesByNameComponentLink = (search: string): ComponentL
 });
 
 /**
+ * Custom URI ecoding/decoding that encodes the params used by ObjectParam as separators: `_`, `-`
+ */
+const CUSTOM_ENCODING_URI_CHARS_PATTERN = /(_|-)/g;
+const CUSTOM_ENCODING_URI_CODE_PATTERN = /(%(?:2D|5F))/g;
+
+function customEncodeURIComponent(value: string): string {
+  return encodeURIComponent(value).replace(
+    CUSTOM_ENCODING_URI_CHARS_PATTERN,
+    (char) => `%${char.charCodeAt(0).toString(16).toUpperCase()}`,
+  );
+}
+
+function customDecodeURIComponent(value: string): string {
+  const encodedURI = value.replace(CUSTOM_ENCODING_URI_CODE_PATTERN, (code) =>
+    String.fromCharCode(parseInt(code.replace(/^%/, ''), 16)),
+  );
+
+  return decodeURIComponent(encodedURI);
+}
+
+/**
  * Custom section params encoder/decoder
  *
  * @NOTE To keep the length of the query string small when using a lot of filters (ex: chunks)
@@ -392,7 +413,7 @@ export const ComponentStateParam: QueryParamConfig<any, any> = {
 
     const filtersEncodedValues: Record<string, string> = {};
     Object.entries(sectionState.filters || {}).forEach(([key, val]) => {
-      filtersEncodedValues[key] = BooleanParam.encode(!!val) as string;
+      filtersEncodedValues[customEncodeURIComponent(key)] = BooleanParam.encode(!!val) as string;
     });
     const filters = ObjectParam.encode(filtersEncodedValues);
 
@@ -434,7 +455,7 @@ export const ComponentStateParam: QueryParamConfig<any, any> = {
         const filterDecodedValue = BooleanParam.decode(value);
 
         if (typeof filterDecodedValue !== 'undefined' && filterDecodedValue !== null) {
-          filters[key] = filterDecodedValue;
+          filters[customDecodeURIComponent(key)] = filterDecodedValue;
         }
       });
     } else if (typeof params.filters === 'object') {

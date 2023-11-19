@@ -29,7 +29,7 @@ describe('component links', () => {
     test('should decode component state from mixed encoder query string', () => {
       expect(
         getComponentStateData(
-          'ba=%7B%22search%22%3A%22%22%2C%22filters%22%3A%22changed-1%22%7D&bm=%7B%22search%22%3A%22query%22%2C%22filters%22%3A%22changed-0%22%7D',
+          'ba=%7B%22search%22%3A%22%22%2C%22filters%22%3A%22changed-1%22%7D&bm=%7B%22search%22%3A%22query%22%2C%22filters%22%3A%22changed-0_c.123-0_c.234-1_c.chunks%252Fnamed%252Dfilter%255F1-1_c.chunks%252Fnamed%252Dfilter%255F2-0%22%7D',
         ),
       ).toEqual({
         ba: {
@@ -41,6 +41,10 @@ describe('component links', () => {
           search: 'query',
           filters: {
             changed: false,
+            'c.123': false,
+            'c.234': true,
+            'c.chunks/named-filter_1': true,
+            'c.chunks/named-filter_2': false,
           },
         },
       });
@@ -65,20 +69,15 @@ describe('component links', () => {
             search: 'query',
             filters: {
               changed: false,
-              'c.100': false,
-              'c.200': false,
-              'c.300': false,
-              'c.400': false,
-              'c.500': false,
-              'c.600': false,
-              'c.700': false,
-              'c.800': false,
-              'c.900': false,
+              'c.123': false,
+              'c.234': true,
+              'c.chunks/named-filter_1': true,
+              'c.chunks/named-filter_2': false,
             },
           },
         }),
       ).toEqual(
-        'ba=%7B%22filters%22%3A%22changed-1%22%7D&bm=%7B%22search%22%3A%22query%22%2C%22filters%22%3A%22changed-0_c.100-0_c.200-0_c.300-0_c.400-0_c.500-0_c.600-0_c.700-0_c.800-0_c.900-0%22%7D',
+        'ba=%7B%22filters%22%3A%22changed-1%22%7D&bm=%7B%22search%22%3A%22query%22%2C%22filters%22%3A%22changed-0_c.123-0_c.234-1_c.chunks%252Fnamed%252Dfilter%255F1-1_c.chunks%252Fnamed%252Dfilter%255F2-0%22%7D',
       );
     });
   });
