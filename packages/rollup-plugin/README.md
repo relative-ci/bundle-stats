@@ -60,6 +60,11 @@ const { bundleStats } = require('rollup-plugin-bundle-stats');
 
 module.exports = {
   ...,
+  output: {
+    assetFileNames: 'assets/[name].[hash][extname]',
+    chunkFileNames: 'assets/[name].[hash].js',
+    entryFileNames: 'assets/[name].[hash].js',
+  },
   plugins: [
     bundleStats()
   ]
@@ -73,6 +78,15 @@ const { bundleStats } = require('rollup-plugin-bundle-stats');
 
 module.exports = {
   ...,
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name].[hash][extname]',
+        chunkFileNames: 'assets/[name].[hash].js',
+        entryFileNames: 'assets/[name].[hash].js',
+      },
+    },
+  },
   plugins: [
     bundleStats()
   ]
