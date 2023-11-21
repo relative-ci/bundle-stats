@@ -266,4 +266,95 @@ describe('Webpack/extract/assets', () => {
 
     expect(actual).toEqual(expected);
   });
+
+  test('should return metrics when normalized asset names are colliding', () => {
+    const actual = extractAssets({
+      assets: [
+        {
+          name: 'js/main.bc22113.js',
+          size: 100,
+        },
+        {
+          name: 'css/app.22929ab.js',
+          size: 100,
+        },
+        {
+          name: 'css/app.abc123.js',
+          size: 100,
+        },
+      ],
+      chunks: [
+        {
+          entry: true,
+          id: '1',
+          initial: true,
+          files: ['js/main.bc22113.js'],
+          names: ['main'],
+        },
+        {
+          entry: false,
+          id: '2',
+          initial: false,
+          files: ['css/app.22929ab.js'],
+          names: ['app'],
+        },
+        {
+          entry: false,
+          id: '3',
+          initial: false,
+          files: ['css/app.abc123.js'],
+          names: ['app'],
+        },
+      ],
+    });
+
+    const expected = {
+      meta: {
+        chunks: [
+          {
+            id: '1',
+            name: 'main',
+          },
+          {
+            id: '2',
+            name: 'app',
+          },
+          {
+            id: '3',
+            name: 'app',
+          },
+        ],
+      },
+      metrics: {
+        assets: {
+          'js/main.js': {
+            name: 'js/main.bc22113.js',
+            value: 100,
+            isEntry: true,
+            isInitial: true,
+            isChunk: true,
+            chunkId: '1',
+          },
+          'css/app.js': {
+            name: 'css/app.22929ab.js',
+            value: 100,
+            isEntry: false,
+            isInitial: false,
+            isChunk: true,
+            chunkId: '2',
+          },
+          'css/app.abc123.js': {
+            name: 'css/app.abc123.js',
+            value: 100,
+            isEntry: false,
+            isInitial: false,
+            isChunk: true,
+            chunkId: '3',
+          },
+        },
+      },
+    };
+
+    expect(actual).toEqual(expected);
+  });
 });

@@ -43,9 +43,7 @@ export const extractAssets = (webpackStats: WebpackStatsFiltered): MetricsAssets
       const normalizedName = getAssetName(baseName);
       const { size, name } = asset;
 
-      // Reassign for perf
-      // eslint-disable-next-line no-param-reassign
-      agg[normalizedName] = {
+      const entry = {
         name: baseName,
         value: size || 0,
         isEntry: entryAssetNames.includes(name),
@@ -53,6 +51,14 @@ export const extractAssets = (webpackStats: WebpackStatsFiltered): MetricsAssets
         isChunk: Boolean(assetChunk),
         ...(assetChunk && { chunkId: assetChunk.id }),
       };
+
+      if (agg[normalizedName]) {
+        // eslint-disable-next-line no-param-reassign
+        agg[baseName] = entry;
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        agg[normalizedName] = entry;
+      }
 
       return agg;
     }, {} as Assets) || {};
@@ -63,10 +69,10 @@ export const extractAssets = (webpackStats: WebpackStatsFiltered): MetricsAssets
     },
     ...(!isEmpty(normalizedChunks)
       ? {
-        meta: {
-          chunks: normalizedChunks?.map(({ id, name }) => ({ id, name })) || [],
-        },
-      }
+          meta: {
+            chunks: normalizedChunks?.map(({ id, name }) => ({ id, name })) || [],
+          },
+        }
       : {}),
   };
 };
