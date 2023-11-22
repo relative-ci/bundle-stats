@@ -63,27 +63,34 @@ or
 yarn add --dev bundle-stats
 ```
 
-## Webpack configuration
+## Output webpack stats
 
-The CLI is consuming the Webpack stats json. The following [stats options](https://webpack.js.org/configuration/stats) are required:
+The CLI is consuming the Webpack stats JSON file. The following [webpack stats options](https://webpack.js.org/configuration/stats) are needed:
 
 ```js
 {
   stats: {
+    // required
     assets: true,
     chunks: true,
     modules: true,
+    // optional
     builtAt: true,
     hash: true
   }
 }
 ```
 
-You can output the stats json file using [webpack-cli](https://www.npmjs.com/package/webpack-cli):
+[How to configure webpack for better debugging and monitoring](https://relative-ci.com/documentation/guides/webpack-config)
+
+You can output the webpack stats JSON file using [webpack-cli](https://www.npmjs.com/package/webpack-cli) `--json` option:
 
 ```shell
 npx webpack --mode production --json artifacts/webpack-stats.json
 ```
+
+- [How to output webpack stats JSON file using webpack-cli](https://relative-ci.com/documentation/guides/webpack-stats/webpack-cli)
+- [How to output webpack stats JSON file using webpack-stats-plugin](https://relative-ci.com/documentation/guides/webpack-stats/webpack-stats-plugin)
 
 ## Usage
 

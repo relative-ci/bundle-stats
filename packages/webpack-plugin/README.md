@@ -64,7 +64,6 @@ module.exports = {
   ]
 }
 ```
-
 ### `BundleStatsWebpackPlugin(options)`
 
 - `compare` - use local saved baseline for comparison (default `true`).
@@ -87,6 +86,8 @@ module.exports = {
     }
   }
   ```
+
+[How to configure webpack for better debugging and monitoring](https://relative-ci.com/documentation/guides/webpack-config)
 
 ### Use with create-react-app
 

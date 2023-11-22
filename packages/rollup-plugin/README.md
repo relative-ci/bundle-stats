@@ -93,6 +93,8 @@ module.exports = {
 };
 ```
 
+[How to configure Vite for better debugging and monitoring](https://relative-ci.com/documentation/guides/vite-config)
+
 ### Options
 
 - `compare` - use local saved stats for comparison (default `true`).
