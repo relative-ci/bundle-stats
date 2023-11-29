@@ -37,3 +37,7 @@
 .root .name:focus .nameText {
   text-decoration: underline;
 }
+
+.root .colChunkCount {
+  width: 5%;
+}

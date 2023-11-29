@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import get from 'lodash/get';
+import uniq from 'lodash/uniq';
 import {
   FILE_TYPE_LABELS,
   MODULE_SOURCE_FILE_TYPES,
@@ -161,6 +162,46 @@ export const BundleModules = ({
     [jobs, chunks, CustomComponentLink, filters, search],
   );
 
+  const renderHeaderCustomCells = useCallback(() => {
+    return [
+      {
+        className: css.colChunkCount,
+        children: 'Chunks',
+      },
+    ];
+  }, []);
+
+  const renderHeaderCustomSumCells = useCallback((tableItems) => {
+    const uniqChunks = uniq(tableItems.map((item) => item.runs[0].chunkIds).flat());
+
+    return [
+      {
+        className: css.colChunkCount,
+        children: uniqChunks.length,
+      },
+    ];
+  }, []);
+
+  const renderRowCustomCells = useCallback((item) => {
+    const run = item.runs[0];
+
+    if (!run) {
+      return [
+        {
+          className: css.colChunkCount,
+          children: null,
+        },
+      ];
+    }
+
+    return [
+      {
+        className: css.colChunkCount,
+        children: run.chunkIds?.length || 1,
+      },
+    ];
+  }, []);
+
   const emptyMessage = useMemo(() => (
     <EmptySet
       resources="modules"
@@ -212,7 +253,10 @@ export const BundleModules = ({
           className={css.table}
           items={items}
           runs={jobs}
+          renderHeaderCustomCells={renderHeaderCustomCells}
+          renderHeaderCustomSumCells={renderHeaderCustomSumCells}
           renderRowHeader={renderRowHeader}
+          renderRowCustomCells={renderRowCustomCells}
           emptyMessage={emptyMessage}
           showHeaderSum
           title={metricsTableTitle}
