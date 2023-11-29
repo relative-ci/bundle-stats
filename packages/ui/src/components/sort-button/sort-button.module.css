@@ -68,9 +68,9 @@
   transform: translateY(-5px);
 }
 
-.root:hover,
-.root:active,
-.root:focus {
+.interactive:hover,
+.interactive:active,
+.interactive:focus {
   background: var(--color-outline);
 }
 
@@ -80,9 +80,9 @@
 }
 
 .active .direction,
-.root:hover .direction,
-.root:active .direction,
-.root:focus .direction {
+.interactive:hover .direction,
+.interactive:hover:active .direction,
+.interactive:hover:focus .direction {
   pointer-events: auto;
   opacity: 1;
   transition: var(--transition-in);

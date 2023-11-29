@@ -12,7 +12,7 @@ interface SortInfo {
   title: string;
 }
 
-const getToggleAction = ( field: string, label: string, sort?: SortAction): SortInfo => {
+const getToggleAction = (field: string, label: string, sort?: SortAction): SortInfo => {
   // Sort the column desc if not currently sorted
   if (sort?.field !== field) {
     return { direction: SORT.DESC, title: `Order ${label} descending` };
@@ -68,14 +68,12 @@ export const SortButton = (props: SortButtonProps & React.ComponentProps<'div'>)
     [field, updateSort, toggleAction],
   );
 
-  const rootClassName = cx(css.root, className, isSorted && css.active);
-
   if (!updateSort) {
-    return <div className={rootClassName}>{children}</div>;
+    return <div className={cx(css.root, className)}>{children}</div>;
   }
 
   return (
-    <div className={rootClassName}>
+    <div className={cx(css.root, css.interactive, className, isSorted && css.active)}>
       <Tooltip
         title={toggleAction.title}
         as="button"
