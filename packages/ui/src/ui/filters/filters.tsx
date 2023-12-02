@@ -19,7 +19,7 @@ interface FilterProps extends React.ComponentProps<'input'> {
   getOnOnlyClick?: (name: string) => () => void;
 }
 
-const Filter = (props: FilterProps) => {
+export const Filter = (props: FilterProps) => {
   const {
     className = '',
     as: Component = 'div',

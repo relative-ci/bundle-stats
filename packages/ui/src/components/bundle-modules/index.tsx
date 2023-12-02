@@ -65,12 +65,17 @@ export const BundleModules = (props: BundleModulesProps) => {
   });
 
   const { rows, totalRowCount } = useMemo(() => {
-    const result = webpack.compareBySection.modules(jobs, [addRowFlags]);
+    let result;
+    if (moduleMetric === ModuleMetric.TOTAL_SIZE) {
+      result = webpack.compareModuleDuplicateSize(jobs, [addRowFlags]);
+    } else if (moduleMetric === ModuleMetric.SIZE) {
+      result = webpack.compareBySection.modules(jobs, [addRowFlags]);
+    }
     return {
       rows: result as Array<types.ReportMetricModuleRow>,
       totalRowCount: result.length,
     };
-  }, [jobs]);
+  }, [jobs, moduleMetric]);
 
   const filteredRows = useRowsFilter({
     rows,
