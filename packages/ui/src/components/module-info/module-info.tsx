@@ -48,7 +48,6 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
   } = props;
 
   const rootClassName = cx(css.root, className);
-  const currentRun = item.runs?.[0];
 
   const tags = useMemo(() => {
     if (!item.duplicated) {
@@ -73,26 +72,30 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
   return (
     <EntryInfo item={item} labels={labels} tags={tags} onClose={onClose} className={rootClassName}>
       <Stack space="xxxsmall">
-        {!isEmpty(currentRun?.chunkIds) && (
-          <EntryInfo.Meta label="Chunks" className={css.chunks}>
-            {currentRun.chunkIds.map((chunkId) => {
-              const chunk = chunks?.find(({ id }) => id === chunkId);
+        {item.runs?.map(
+          (currentRun, index) =>
+            !isEmpty(currentRun?.chunkIds) && (
+              <EntryInfo.Meta label="Chunks" className={css.chunks}>
+                Job #{index + 1}:
+                {currentRun.chunkIds.map((chunkId) => {
+                  const chunk = chunks?.find(({ id }) => id === chunkId);
 
-              if (!chunk) {
-                return null;
-              }
+                  if (!chunk) {
+                    return null;
+                  }
 
-              return (
-                <EntryInfoMetaLink
-                  as={CustomComponentLink}
-                  {...getBundleModulesByChunk(chunkIds, chunkId)}
-                  className={css.chunksItem}
-                >
-                  {chunk.name}
-                </EntryInfoMetaLink>
-              );
-            })}
-          </EntryInfo.Meta>
+                  return (
+                    <EntryInfoMetaLink
+                      as={CustomComponentLink}
+                      {...getBundleModulesByChunk(chunkIds, chunkId)}
+                      className={css.chunksItem}
+                    >
+                      {chunk.name}
+                    </EntryInfoMetaLink>
+                  );
+                })}
+              </EntryInfo.Meta>
+          ),
         )}
 
         {item?.fileType && (
