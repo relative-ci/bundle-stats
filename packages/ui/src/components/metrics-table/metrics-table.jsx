@@ -55,57 +55,42 @@ const ColumnSum = ({ rows, isBaseline, runIndex, updateSort, sort }) => {
   return (
     <>
       <Table.Th className={cx(styles.value, styles.sum)}>
-        {(updateSort && sort) ? (
-          <SortButton
-            fieldPath={fieldPath}
-            fieldName="value"
-            label="absolute value"
-            updateSort={updateSort}
-            sort={sort}
-          >
-            <Metric value={infoTotal.displayValue} />
-          </SortButton>
-        ) : (
+        <SortButton
+          fieldPath={fieldPath}
+          fieldName="value"
+          label="absolute value"
+          updateSort={updateSort}
+          sort={sort}
+        >
           <Metric value={infoTotal.displayValue} />
-        )}
+        </SortButton>
       </Table.Th>
       {!isBaseline && (
         <>
           <Table.Th className={cx(styles.delta, styles.sum)}>
-            {(updateSort && sort) ? (
-              <SortButton
-                fieldPath={fieldPath}
-                fieldName="delta"
-                label="absolute change"
-                updateSort={updateSort}
-                sort={sort}
-              >
-                <Delta displayValue={infoTotal.displayDelta} deltaType={infoTotal.deltaType} />
-              </SortButton>
-            ) : (
+            <SortButton
+              fieldPath={fieldPath}
+              fieldName="delta"
+              label="absolute change"
+              updateSort={updateSort}
+              sort={sort}
+            >
               <Delta displayValue={infoTotal.displayDelta} deltaType={infoTotal.deltaType} />
-            )}
+            </SortButton>
           </Table.Th>
           <Table.Th className={cx(styles.delta, styles.deltaPercentage, styles.sum)}>
-            {(updateSort && sort) ? (
-              <SortButton
-                fieldPath={fieldPath}
-                fieldName="deltaPercentage"
-                label="absolute percentual change"
-                updateSort={updateSort}
-                sort={sort}
-              >
-                <Delta
-                  displayValue={infoTotal.displayDeltaPercentage}
-                  deltaType={infoTotal.deltaType}
-                />
-              </SortButton>
-            ) : (
+            <SortButton
+              fieldPath={fieldPath}
+              fieldName="deltaPercentage"
+              label="absolute percentual change"
+              updateSort={updateSort}
+              sort={sort}
+            >
               <Delta
                 displayValue={infoTotal.displayDeltaPercentage}
                 deltaType={infoTotal.deltaType}
               />
-            )}
+            </SortButton>
           </Table.Th>
         </>
       )}
