@@ -47,7 +47,7 @@
     "regenerator-runtime": "0.14.0",
     "rimraf": "5.0.5",
     "ts-jest": "29.1.1",
-    "typescript": "5.1.6"
+    "typescript": "5.3.2"
   },
   "peerDependencies": {
     "core-js": "^3.0.0"
