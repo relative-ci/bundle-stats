@@ -1,5 +1,5 @@
 .root {
-  --icon-dimension: 15px;
+  --icon-dimension: 13px;
   display: inline-block;
   margin: calc(0px - var(--space-xxxsmall));
   margin-right: calc(0px - 1px - var(--icon-dimension));
@@ -18,13 +18,13 @@
 }
 
 .toggle {
-  padding: var(--space-xxxsmall);
+  padding: 1px var(--space-xxxsmall);
   padding-right: calc(1px + var(--icon-dimension));
 }
 
 .direction {
   position: absolute;
-  padding: 2px;
+  padding: 1px;
   display: block;
   overflow: hidden;
   right: -2px; /* compensate for the button padding */
