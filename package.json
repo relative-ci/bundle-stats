@@ -52,6 +52,7 @@
     "bump": "./scripts/bump.sh",
     "format": "prettier --write \"**/*.{js,jsx}\"",
     "lerna": "lerna",
+    "preinstall": "lerna exec 'npm i --package-lock-only --workspaces false'",
     "lint": "lerna exec 'npm run lint -- --quiet'",
     "release": "./scripts/release.sh",
     "test": "lerna run test",
