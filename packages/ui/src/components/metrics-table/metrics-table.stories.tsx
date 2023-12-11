@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { MetricRunInfoDeltaType } from '@bundle-stats/utils';
 import { getWrapperDecorator } from '../../stories';
 import { MetricsTable } from '.';
 
@@ -91,7 +92,7 @@ const ITEMS_MULTIPLE_RUNS = [
         displayDelta: '+700KB',
         deltaPercentage: 613.98,
         displayDeltaPercentage: '+613.98%',
-        deltaType: 'HIGH_NEGATIVE',
+        deltaType: 'HIGH_NEGATIVE' as MetricRunInfoDeltaType,
       },
       {
         value: 122331,
@@ -112,7 +113,7 @@ const ITEMS_MULTIPLE_RUNS = [
         displayDelta: '+20ms',
         deltaPercentage: 2.0408163,
         displayDeltaPercentage: '+2.04%',
-        deltaType: 'LOW_NEGATIVE',
+        deltaType: 'LOW_NEGATIVE' as MetricRunInfoDeltaType,
       },
       {
         value: 980,
@@ -133,7 +134,7 @@ const ITEMS_MULTIPLE_RUNS = [
         displayDelta: '+10',
         deltaPercentage: 14.2857143,
         displayDeltaPercentage: '+14.29%',
-        deltaType: 'POSITIVE',
+        deltaType: 'POSITIVE' as MetricRunInfoDeltaType,
       },
       {
         value: 70,
@@ -154,7 +155,7 @@ const ITEMS_MULTIPLE_RUNS = [
         displayDelta: '+2',
         deltaPercentage: 2.5641026,
         displayDeltaPercentage: '+2.56%',
-        deltaType: 'LOW_POSITIVE',
+        deltaType: 'LOW_POSITIVE' as MetricRunInfoDeltaType,
       },
       {
         value: 78,
@@ -175,7 +176,7 @@ const ITEMS_MULTIPLE_RUNS = [
         displayDelta: '+100%',
         deltaPercentage: 100,
         displayDeltaPercentage: '+100%',
-        deltaType: 'HIGH_NEGATIVE',
+        deltaType: 'HIGH_NEGATIVE' as MetricRunInfoDeltaType,
       },
       null,
     ],
@@ -193,7 +194,7 @@ const ITEMS_MULTIPLE_RUNS = [
         displayDelta: '0',
         deltaPercentage: 0,
         displayDeltaPercentage: '0%',
-        deltaType: 'NO_CHANGE',
+        deltaType: 'NO_CHANGE' as MetricRunInfoDeltaType,
       },
       {
         value: 80,
@@ -209,16 +210,16 @@ export default {
   decorators: [getWrapperDecorator()],
 };
 
-export const Default = () => (
-  <MetricsTable runs={RUNS.slice(0, 1)} items={ITEMS_SINGLE_RUN} />
-);
+export const Default = () => <MetricsTable runs={RUNS.slice(0, 1)} items={ITEMS_SINGLE_RUN} />;
 
-export const MultipleRuns = () => (
-  <MetricsTable runs={RUNS} items={ITEMS_MULTIPLE_RUNS} />
-);
+export const MultipleRuns = () => <MetricsTable runs={RUNS} items={ITEMS_MULTIPLE_RUNS} />;
 
 export const WithHeaderSum = () => (
-  <MetricsTable runs={RUNS} items={[ITEMS_MULTIPLE_RUNS[0], ITEMS_MULTIPLE_RUNS[4]]} showHeaderSum />
+  <MetricsTable
+    runs={RUNS}
+    items={[ITEMS_MULTIPLE_RUNS[0], ITEMS_MULTIPLE_RUNS[4]]}
+    showHeaderSum
+  />
 );
 
-export const Empty = () =><MetricsTable runs={RUNS} items={[]} />;
+export const Empty = () => <MetricsTable runs={RUNS} items={[]} />;
