@@ -76,6 +76,17 @@ export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'
     return null;
   }, [showMetricDescription, metric]);
 
+  const deltaProps = useMemo(() => {
+    if (!showDelta || metric.skipDelta || !('delta' in metricRunInfo)) {
+      return {};
+    }
+
+    return {
+      delta: metricRunInfo.displayDeltaPercentage,
+      deltaType: metricRunInfo.deltaType,
+    };
+  }, [metricRunInfo]);
+
   return (
     <RunInfo
       title={metric.label}
@@ -86,11 +97,7 @@ export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'
       {...(showBaseline && {
         baseline: metric.formatter(baseline),
       })}
-      {...(showDelta &&
-        !metric.skipDelta && {
-          delta: metricRunInfo.displayDeltaPercentage,
-          deltaType: metricRunInfo.deltaType,
-        })}
+      {...deltaProps}
       {...restProps}
     />
   );

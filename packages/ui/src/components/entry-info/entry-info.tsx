@@ -72,7 +72,7 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
     METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE,
     item.runs?.[0]?.value,
     baselineRun?.value || 0,
-  );
+  ) as MetricRunInfo;
 
   return (
     <Portal className={cx(css.root, className)}>
