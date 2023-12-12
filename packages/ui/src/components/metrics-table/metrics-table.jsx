@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import isEmpty from 'lodash/isEmpty';
+import noop from 'lodash/noop';
 import sum from 'lodash/sum';
 import { MetricTypes, getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
@@ -55,57 +56,42 @@ const ColumnSum = ({ rows, isBaseline, runIndex, updateSort, sort }) => {
   return (
     <>
       <Table.Th className={cx(styles.value, styles.sum)}>
-        {(updateSort && sort) ? (
-          <SortButton
-            fieldPath={fieldPath}
-            fieldName="value"
-            label="absolute value"
-            updateSort={updateSort}
-            sort={sort}
-          >
-            <Metric value={infoTotal.displayValue} />
-          </SortButton>
-        ) : (
+        <SortButton
+          fieldPath={fieldPath}
+          fieldName="value"
+          label="absolute value"
+          updateSort={updateSort}
+          sort={sort}
+        >
           <Metric value={infoTotal.displayValue} />
-        )}
+        </SortButton>
       </Table.Th>
       {!isBaseline && (
         <>
           <Table.Th className={cx(styles.delta, styles.sum)}>
-            {(updateSort && sort) ? (
-              <SortButton
-                fieldPath={fieldPath}
-                fieldName="delta"
-                label="absolute change"
-                updateSort={updateSort}
-                sort={sort}
-              >
-                <Delta displayValue={infoTotal.displayDelta} deltaType={infoTotal.deltaType} />
-              </SortButton>
-            ) : (
+            <SortButton
+              fieldPath={fieldPath}
+              fieldName="delta"
+              label="absolute change"
+              updateSort={updateSort}
+              sort={sort}
+            >
               <Delta displayValue={infoTotal.displayDelta} deltaType={infoTotal.deltaType} />
-            )}
+            </SortButton>
           </Table.Th>
           <Table.Th className={cx(styles.delta, styles.deltaPercentage, styles.sum)}>
-            {(updateSort && sort) ? (
-              <SortButton
-                fieldPath={fieldPath}
-                fieldName="deltaPercentage"
-                label="absolute percentual change"
-                updateSort={updateSort}
-                sort={sort}
-              >
-                <Delta
-                  displayValue={infoTotal.displayDeltaPercentage}
-                  deltaType={infoTotal.deltaType}
-                />
-              </SortButton>
-            ) : (
+            <SortButton
+              fieldPath={fieldPath}
+              fieldName="deltaPercentage"
+              label="absolute percentual change"
+              updateSort={updateSort}
+              sort={sort}
+            >
               <Delta
                 displayValue={infoTotal.displayDeltaPercentage}
                 deltaType={infoTotal.deltaType}
               />
-            )}
+            </SortButton>
           </Table.Th>
         </>
       )}
@@ -113,48 +99,61 @@ const ColumnSum = ({ rows, isBaseline, runIndex, updateSort, sort }) => {
   );
 };
 
-const Row = ({ item, renderRowHeader }) => (
-  <Table.Tr className={cx(!item.changed && styles.unchanged)}>
-    <Table.Th className={styles.metricName}>{renderRowHeader(item)}</Table.Th>
+const Row = (props) => {
+  const { item, renderHeader, renderCustomCells } = props;
 
-    {item.runs.map((run, index) => {
-      const isBaseline = index === item.runs.length - 1;
-      const valueClassName = cx(styles.value, !isBaseline && styles.current);
+  const rowHeader = useMemo(() => renderHeader(item), [renderHeader, item]);
+  const customCells = useMemo(() => renderCustomCells(item), [renderCustomCells, item]);
 
-      // Empty cells if no value
-      if (!run || typeof run.value === 'undefined') {
+  return (
+    <Table.Tr className={cx(!item.changed && styles.unchanged)}>
+      <Table.Th className={styles.metricName}>{rowHeader}</Table.Th>
+
+      {customCells
+        ? customCells.map((customCell) => (
+          <Table.Td {...customCell} className={cx(styles.value, customCell.className)} />
+        ))
+        : null}
+
+      {item.runs.map((run, index) => {
+        const isBaseline = index === item.runs.length - 1;
+        const valueClassName = cx(styles.value, !isBaseline && styles.current);
+
+        // Empty cells if no value
+        if (!run || typeof run.value === 'undefined') {
+          return (
+            <>
+              <Table.Td className={valueClassName}>-</Table.Td>
+              {!isBaseline && <Table.Td className={styles.delta} />}
+              {!isBaseline && <Table.Td className={cx(styles.delta, styles.deltaPercentage)} />}
+            </>
+          );
+        }
+
+        const { displayValue, deltaPercentage, displayDelta, displayDeltaPercentage, deltaType } =
+          run;
+
         return (
           <>
-            <Table.Td className={valueClassName}>-</Table.Td>
-            {!isBaseline && <Table.Td className={styles.delta} />}
-            {!isBaseline && <Table.Td className={cx(styles.delta, styles.deltaPercentage)} />}
+            <Table.Td className={valueClassName}>
+              <Metric value={displayValue} />
+            </Table.Td>
+            {!isBaseline && typeof deltaPercentage === 'number' && (
+              <>
+                <Table.Td className={styles.delta}>
+                  <Delta displayValue={displayDelta} deltaType={deltaType} />
+                </Table.Td>
+                <Table.Td className={cx(styles.delta, styles.deltaPercentage)}>
+                  <Delta displayValue={displayDeltaPercentage} deltaType={deltaType} />
+                </Table.Td>
+              </>
+            )}
           </>
         );
-      }
-
-      const { displayValue, deltaPercentage, displayDelta, displayDeltaPercentage, deltaType } =
-        run;
-
-      return (
-        <>
-          <Table.Td className={valueClassName}>
-            <Metric value={displayValue} />
-          </Table.Td>
-          {!isBaseline && typeof deltaPercentage === 'number' && (
-            <>
-              <Table.Td className={styles.delta}>
-                <Delta displayValue={displayDelta} deltaType={deltaType} />
-              </Table.Td>
-              <Table.Td className={cx(styles.delta, styles.deltaPercentage)}>
-                <Delta displayValue={displayDeltaPercentage} deltaType={deltaType} />
-              </Table.Td>
-            </>
-          )}
-        </>
-      );
-    })}
-  </Table.Tr>
-);
+      })}
+    </Table.Tr>
+  );
+};
 
 Row.propTypes = {
   item: PropTypes.shape({
@@ -169,12 +168,16 @@ Row.propTypes = {
       }),
     ),
   }).isRequired,
-  renderRowHeader: PropTypes.func.isRequired,
+  renderHeader: PropTypes.func.isRequired,
+  renderCustomCells: PropTypes.func.isRequired,
 };
 
 export const MetricsTable = ({
   className,
   renderRowHeader,
+  renderRowCustomCells,
+  renderHeaderCustomCells,
+  renderHeaderCustomSumCells,
   runs,
   items,
   emptyMessage,
@@ -199,6 +202,8 @@ export const MetricsTable = ({
   const showItems = !showEmpty;
   const hasHiddenItems = items?.length > VISIBLE_COUNT;
   const visibleItems = !hasHiddenItems || showAllItems ? items : items?.slice(0, VISIBLE_COUNT);
+  const headerCustomCells = renderHeaderCustomCells();
+  const headerCustomSumCells = renderHeaderCustomSumCells(items);
 
   return (
     <Table className={rootClassName} compact {...restProps}>
@@ -207,12 +212,39 @@ export const MetricsTable = ({
           <Table.Th className={styles.metricName} rowSpan={showHeaderSum ? 2 : 1}>
             {title || ' '}
           </Table.Th>
+          {headerCustomCells
+            ? headerCustomCells.map((headerCustomCell) => (
+                <Table.Th
+                  {...headerCustomCell}
+                  className={cx(styles.job, headerCustomCell.className)}
+                />
+            ))
+            : null}
           {runs.map((run, runIndex) => (
             <ColumnJob run={run} isBaseline={runIndex === runs.length - 1} />
           ))}
         </Table.Tr>
+
         {showHeaderSum && (
           <Table.Tr className={styles.headerRow}>
+            {headerCustomSumCells
+              ? headerCustomSumCells.map((headerCustomSumCell) => (
+                  <Table.Th
+                    {...headerCustomSumCell}
+                    className={cx(styles.value, styles.sum, headerCustomSumCell.className)}
+                  >
+                    <SortButton
+                      fieldPath="runs[0]"
+                      fieldName="chunkCount"
+                      label="chunk count"
+                      updateSort={updateSort}
+                      sort={sort}
+                    >
+                      {headerCustomSumCell.children}
+                    </SortButton>
+                  </Table.Th>
+              ))
+              : null}
             {runs.map((run, runIndex) => (
               <ColumnSum
                 rows={items}
@@ -242,7 +274,12 @@ export const MetricsTable = ({
         {showItems && (
           <>
             {visibleItems.map((item) => (
-              <Row key={item.key} item={item} renderRowHeader={renderRowHeader} />
+              <Row
+                key={item.key}
+                item={item}
+                renderHeader={renderRowHeader}
+                renderCustomCells={renderRowCustomCells}
+              />
             ))}
 
             {hasHiddenItems && (
@@ -278,6 +315,9 @@ export const MetricsTable = ({
 MetricsTable.defaultProps = {
   className: '',
   renderRowHeader: (item) => item.label,
+  renderRowCustomCells: noop,
+  renderHeaderCustomCells: noop,
+  renderHeaderCustomSumCells: noop,
   emptyMessage: 'No entries found.',
   showHeaderSum: false,
   title: '',
@@ -286,6 +326,9 @@ MetricsTable.defaultProps = {
 MetricsTable.propTypes = {
   className: PropTypes.string,
   renderRowHeader: PropTypes.func,
+  renderRowCustomCells: PropTypes.func,
+  renderHeaderCustomCells: PropTypes.func,
+  renderHeaderCustomSumCells: PropTypes.func,
   runs: PropTypes.arrayOf(
     PropTypes.shape({
       internalBuildNumber: PropTypes.number,

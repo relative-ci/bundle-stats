@@ -21,6 +21,12 @@ export const addRowFlags = (row) => {
   // eslint-disable-next-line no-param-reassign
   row.fileType = getModuleSourceFileType(row.key);
 
+  // Add chunk count field
+  if (runs?.[0]) {
+    // eslint-disable-next-line no-param-reassign
+    row.runs[0].chunkCount = row.runs[0].chunkIds?.length || 0;
+  }
+
   return row;
 };
 
