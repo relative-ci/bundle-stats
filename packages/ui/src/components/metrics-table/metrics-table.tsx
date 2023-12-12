@@ -111,7 +111,7 @@ const SumColumn = ({ rows, isBaseline, runIndex, updateSort, sort }: ColumnSumPr
               updateSort={updateSort}
               sort={sort}
             >
-              <Delta displayValue={total.displayDelta || ''} deltaType={total.deltaType || ''} />
+              <Delta displayValue={total.displayDelta} deltaType={total.deltaType} />
             </SortButton>
           </Table.Th>
           <Table.Th className={cx(css.delta, css.deltaPercentage, css.sum)}>
@@ -122,10 +122,7 @@ const SumColumn = ({ rows, isBaseline, runIndex, updateSort, sort }: ColumnSumPr
               updateSort={updateSort}
               sort={sort}
             >
-              <Delta
-                displayValue={total.displayDeltaPercentage || ''}
-                deltaType={total.deltaType || ''}
-              />
+              <Delta displayValue={total.displayDeltaPercentage} deltaType={total.deltaType} />
             </SortButton>
           </Table.Th>
         </>
@@ -163,16 +160,13 @@ const Row = ({ className = '', item, renderHeader, ...restProps }: RowProps) => 
           <Table.Td className={valueClassName}>
             <Metric value={run.displayValue} />
           </Table.Td>
-          {!isBaseline && typeof run.deltaPercentage === 'number' && (
+          {!isBaseline && (
             <>
               <Table.Td className={css.delta}>
-                <Delta displayValue={run.displayDelta || ''} deltaType={run.deltaType || ''} />
+                <Delta displayValue={run.displayDelta} deltaType={run.deltaType} />
               </Table.Td>
               <Table.Td className={cx(css.delta, css.deltaPercentage)}>
-                <Delta
-                  displayValue={run.displayDeltaPercentage || ''}
-                  deltaType={run.deltaType || ''}
-                />
+                <Delta displayValue={run.displayDeltaPercentage} deltaType={run.deltaType} />
               </Table.Td>
             </>
           )}

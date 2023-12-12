@@ -82,14 +82,17 @@ export interface MetricRunDelta {
   deltaPercentage: number;
 }
 
-export interface MetricRunInfo {
+export interface MetricRunInfoBaseline {
   value: number;
   displayValue: string;
-  delta?: number;
-  deltaPercentage?: number;
-  deltaType?: MetricRunInfoDeltaType;
-  displayDelta?: string;
-  displayDeltaPercentage?: string;
+}
+
+export interface MetricRunInfo extends MetricRunInfoBaseline {
+  delta: number;
+  deltaPercentage: number;
+  deltaType: MetricRunInfoDeltaType;
+  displayDelta: string;
+  displayDeltaPercentage: string;
   regression?: boolean | null;
 }
 
