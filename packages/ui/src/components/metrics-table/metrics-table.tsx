@@ -16,14 +16,13 @@ import { Metric } from '../metric';
 import { Delta } from '../delta';
 import { JobName } from '../job-name';
 import { SortButton } from '../sort-button';
+import * as I18N from './metrics-table.i18n';
 import css from './metrics-table.module.css';
 
 const METRIC_TYPE = METRIC_TYPE_CONFIGS[MetricTypes.FileSize];
 const VISIBLE_COUNT = 500;
 const BASELINE_COLUMN_SPAN = 1;
 const CURRENT_COLUMN_SPAN = 3;
-const BASELINE_TITLE = 'Baseline';
-const CURRENT_TITLE = 'Current';
 
 interface Run {
   /**
@@ -54,17 +53,16 @@ interface JobColumnProps {
 
 const JobColumn = ({ run, isBaseline }: JobColumnProps) => {
   const colSpan = isBaseline ? BASELINE_COLUMN_SPAN : CURRENT_COLUMN_SPAN;
+  const { label, internalBuildNumber } = run;
 
   if (!run) {
     return <Table.Th colSpan={colSpan}>-</Table.Th>;
   }
 
-  const { label, internalBuildNumber } = run;
-
   return (
-    <Table.Th className={css.job} colSpan={colSpan}>
+    <Table.Th className={css.jobCol} colSpan={colSpan}>
       <JobName
-        title={isBaseline ? BASELINE_TITLE : CURRENT_TITLE}
+        title={isBaseline ? I18N.BASELINE_TITLE : I18N.CURRENT_TITLE}
         internalBuildNumber={internalBuildNumber}
         className={css.jobName}
       >
@@ -200,7 +198,7 @@ export const MetricsTable = ({
   sort,
   updateSort,
   renderRowHeader = (item: any) => item.label,
-  emptyMessage = 'No message found.',
+  emptyMessage = I18N.EMPTY_MESSAGE,
   showAllItems,
   setShowAllItems,
   ...restProps
@@ -273,7 +271,7 @@ export const MetricsTable = ({
                       type="button"
                       className={css.showAllItemsButton}
                     >
-                      Show less
+                      {I18N.SHOW_LESS}
                     </button>
                   ) : (
                     <button
@@ -281,7 +279,7 @@ export const MetricsTable = ({
                       type="button"
                       className={css.showAllItemsButton}
                     >
-                      Show all
+                      {I18N.SHOW_ALL}
                     </button>
                   )}
                 </Table.Td>
