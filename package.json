@@ -22,7 +22,7 @@
     "@babel/core": "7.23.6",
     "@babel/eslint-parser": "7.23.3",
     "@tsconfig/node14": "14.1.0",
-    "@types/react": "18.2.43",
+    "@types/react": "18.2.45",
     "@typescript-eslint/eslint-plugin": "6.14.0",
     "@typescript-eslint/parser": "6.14.0",
     "babel-eslint": "10.1.0",
