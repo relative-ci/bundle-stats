@@ -3,3 +3,4 @@ export * from './compare-metrics';
 export * from './create';
 export * from './get-metric-changed';
 export * from './merge-metrics-by-key';
+export * from './types';
