@@ -1,54 +1,27 @@
 import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import uniqBy from 'lodash/uniqBy';
-import {
-  MODULE_FILTERS,
-  getModuleChunkFilters,
-  getModuleSourceTypeFilters,
-  getModuleFileTypeFilters,
-} from '@bundle-stats/utils';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import { useRowsFilter } from '../../hooks/rows-filter';
 import { useRowsSort } from '../../hooks/rows-sort';
 import { useSearchParams } from '../../hooks/search-params';
 import { BundleModules as BundleModulesComponent } from './bundle-modules';
-import { addRowFlags, generateGetRowFilter, getCustomSort } from './bundle-modules.utils';
+import {
+  addRowFlags,
+  extractChunkData,
+  generateGetRowFilter,
+  generateFilters,
+  getCustomSort,
+} from './bundle-modules.utils';
 
 export const BundleModules = (props) => {
   const { jobs, filters, search, setState, sortBy, direction, ...restProps } = props;
 
-  const { chunks, chunkIds } = useMemo(() => {
-    const bundleChunks = uniqBy(
-      jobs.map((job) => job?.meta?.webpack?.chunks || []).flat(),
-      ({ id }) => id,
-    );
-    const bundleChunkIds = bundleChunks?.map(({ id }) => id);
-
-    return {
-      chunks: bundleChunks,
-      chunkIds: bundleChunkIds,
-    };
-  }, [jobs]);
+  const { chunks, chunkIds } = useMemo(() => extractChunkData(jobs), [jobs]);
 
   const { defaultFilters, allEntriesFilters } = useMemo(
-    () => ({
-      defaultFilters: {
-        changed: jobs?.length > 1,
-        ...getModuleSourceTypeFilters(true),
-        ...getModuleChunkFilters(chunkIds, true),
-        ...getModuleFileTypeFilters(true),
-        [MODULE_FILTERS.DUPLICATED]: false,
-      },
-      allEntriesFilters: {
-        changed: false,
-        ...getModuleSourceTypeFilters(true),
-        ...getModuleChunkFilters(chunkIds, true),
-        ...getModuleFileTypeFilters(true),
-        [MODULE_FILTERS.DUPLICATED]: false,
-      },
-    }),
-    [jobs],
+    () => generateFilters(chunkIds, jobs.length > 1),
+    [chunkIds, jobs],
   );
 
   const searchParams = useSearchParams({

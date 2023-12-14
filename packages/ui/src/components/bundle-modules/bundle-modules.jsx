@@ -1,18 +1,7 @@
 import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import isEmpty from 'lodash/isEmpty';
-import get from 'lodash/get';
-import {
-  FILE_TYPE_LABELS,
-  MODULE_SOURCE_FILE_TYPES,
-  MODULE_SOURCE_TYPE,
-  MODULE_CHUNK,
-  MODULE_FILTERS,
-  MODULE_FILE_TYPE,
-  SECTIONS,
-  COMPONENT,
-} from '@bundle-stats/utils';
+import { SECTIONS, COMPONENT } from '@bundle-stats/utils';
 
 import config from '../../config.json';
 import I18N from '../../i18n';
@@ -29,60 +18,7 @@ import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
 import { ModuleInfo } from '../module-info';
 import css from './bundle-modules.module.css';
-
-const getFilters = ({ filters, compareMode, chunks }) => {
-  const chunkFilter = { label: 'Chunk' };
-  chunks?.forEach((chunk) => {
-    chunkFilter[chunk.id] = {
-      label: chunk.name,
-      defaultValue: filters[`${MODULE_CHUNK}.${chunk.id}`] ?? true,
-    };
-  });
-
-  return {
-    [MODULE_FILTERS.CHANGED]: {
-      label: 'Changed',
-      defaultValue: filters.changed,
-      disabled: !compareMode,
-    },
-    [MODULE_FILTERS.DUPLICATED]: {
-      label: 'Duplicate',
-      defaultValue: filters[MODULE_FILTERS.DUPLICATED],
-    },
-
-    // When chunks data is available, list available chunks as filters
-    ...(!isEmpty(chunks) && {
-      [MODULE_CHUNK]: chunkFilter,
-    }),
-
-    [MODULE_SOURCE_TYPE]: {
-      label: 'Source',
-      [MODULE_FILTERS.FIRST_PARTY]: {
-        label: 'First party',
-        defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.FIRST_PARTY}`, true),
-      },
-      [MODULE_FILTERS.THIRD_PARTY]: {
-        label: 'Third party',
-        defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.THIRD_PARTY}`, true),
-      },
-    },
-
-    // Module source types
-    [MODULE_FILE_TYPE]: {
-      label: 'File type',
-      ...MODULE_SOURCE_FILE_TYPES.reduce(
-        (agg, fileType) => ({
-          ...agg,
-          [fileType]: {
-            label: FILE_TYPE_LABELS[fileType],
-            defaultValue: get(filters, `${MODULE_FILE_TYPE}.${fileType}`, true),
-          },
-        }),
-        {},
-      ),
-    },
-  };
-};
+import { generateFilterFieldsData } from './bundle-modules.utils';
 
 const RowHeader = ({ row, filters, search, customComponentLink: CustomComponentLink }) => (
   <CustomComponentLink
@@ -135,8 +71,8 @@ export const BundleModules = ({
 
   const jobLabels = jobs?.map((job) => job?.label);
 
-  const dropdownFilters = useMemo(
-    () => getFilters({ filters, chunks, compareMode: jobs.length > 1 }),
+  const filterFieldsData = useMemo(
+    () => generateFilterFieldsData({ filters, chunks, compareMode: jobs.length > 1 }),
     [jobs, filters, chunks]
   );
 
@@ -201,7 +137,7 @@ export const BundleModules = ({
             />
             <Filters
               className={css.tableDropdown}
-              filters={dropdownFilters}
+              filters={filterFieldsData}
               onChange={updateFilters}
               hasActiveFilters={hasActiveFilters}
             />
