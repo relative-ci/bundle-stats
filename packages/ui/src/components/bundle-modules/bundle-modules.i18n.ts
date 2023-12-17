@@ -1,3 +1,4 @@
+export const SEARCH = 'Search by module name';
 export const CHANGED = 'Changed';
 export const DUPLICATE = 'Duplicate';
 export const CHUNK = 'Chunk';

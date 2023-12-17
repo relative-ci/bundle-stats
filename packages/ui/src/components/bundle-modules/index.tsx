@@ -1,11 +1,12 @@
 import React, { useCallback, useMemo } from 'react';
-import PropTypes from 'prop-types';
+// @ts-ignore
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
+import type { SortAction } from '../../types';
 import { useRowsFilter } from '../../hooks/rows-filter';
 import { useRowsSort } from '../../hooks/rows-sort';
 import { useSearchParams } from '../../hooks/search-params';
-import { BundleModules as BundleModulesComponent } from './bundle-modules';
+import { BundleModules as BaseComponent } from './bundle-modules';
 import {
   addRowFlags,
   extractChunkData,
@@ -13,8 +14,36 @@ import {
   generateFilters,
   getCustomSort,
 } from './bundle-modules.utils';
+import * as types from './bundle-modules.types';
 
-export const BundleModules = (props) => {
+interface BundleModulesProps
+  extends Omit<
+    React.ComponentProps<typeof BaseComponent>,
+    | 'jobs'
+    | 'items'
+    | 'chunks'
+    | 'updateFilters'
+    | 'resetFilters'
+    | 'resetAllFilters'
+    | 'filters'
+    | 'sort'
+    | 'updateSort'
+    | 'search'
+    | 'updateSearch'
+    | 'entryId'
+    | 'allItems'
+    | 'totalRowCount'
+    | 'hideEntryInfo'
+  > {
+  jobs: Array<types.Job>;
+  filters: Record<string, boolean>;
+  search?: string;
+  setState: (params: any) => void;
+  sortBy?: string;
+  direction?: SortAction['direction'];
+}
+
+export const BundleModules = (props: BundleModulesProps) => {
   const { jobs, filters, search, setState, sortBy, direction, ...restProps } = props;
 
   const { chunks, chunkIds } = useMemo(() => extractChunkData(jobs), [jobs]);
@@ -34,7 +63,10 @@ export const BundleModules = (props) => {
 
   const { rows, totalRowCount } = useMemo(() => {
     const result = webpack.compareBySection.modules(jobs, [addRowFlags]);
-    return { rows: result, totalRowCount: result.length };
+    return {
+      rows: result as Array<types.ReportMetricModuleRow>,
+      totalRowCount: result.length,
+    };
   }, [jobs]);
 
   const filteredRows = useRowsFilter({
@@ -56,7 +88,7 @@ export const BundleModules = (props) => {
   }, [setState]);
 
   return (
-    <BundleModulesComponent
+    <BaseComponent
       jobs={jobs}
       chunks={chunks}
       {...restProps}
@@ -67,20 +99,4 @@ export const BundleModules = (props) => {
       hideEntryInfo={hideEntryInfo}
     />
   );
-};
-
-BundleModules.propTypes = {
-  jobs: PropTypes.arrayOf(PropTypes.object).isRequired, // eslint-disable-line react/forbid-prop-types
-  filters: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  search: PropTypes.string,
-  sortBy: PropTypes.string,
-  direction: PropTypes.string,
-  setState: PropTypes.func.isRequired,
-};
-
-BundleModules.defaultProps = {
-  filters: undefined,
-  search: undefined,
-  sortBy: undefined,
-  direction: undefined,
 };

@@ -18,16 +18,10 @@ import {
   getModuleSourceTypeFilters,
   getModuleFileTypeFilters,
 } from '@bundle-stats/utils';
-import { ReportMetricRun } from '@bundle-stats/utils/types/report/types';
+import type { ReportMetricRun } from '@bundle-stats/utils/types/report/types';
 
+import type { Chunk, ReportMetricModuleRow } from './bundle-modules.types';
 import * as I18N from './bundle-modules.i18n';
-
-type ReportMetricModuleRow = {
-  thirdParty: boolean;
-  duplicated: boolean;
-  fileType: string;
-} & ReportMetricRun &
-  Module;
 
 export const addRowFlags = (row: Module & ReportMetricRow): ReportMetricModuleRow => {
   const { key, runs } = row;
@@ -141,7 +135,7 @@ interface GetFiltersFormDataParams {
   /**
    * Chunk data
    */
-  chunks: Array<{ id: string; name: string }>;
+  chunks: Array<Chunk>;
   /**
    * Compare mode
    */

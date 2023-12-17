@@ -34,7 +34,7 @@ export const Filters = (props) => {
         onChange(nextValues);
       }
     },
-    [onChange, setValues, values]
+    [onChange, setValues, values],
   );
 
   const toggleFilters = useCallback(
@@ -61,10 +61,13 @@ export const Filters = (props) => {
 };
 
 Filters.defaultProps = {
+  className: '',
   onChange: null,
 };
 
 Filters.propTypes = {
+  className: PropTypes.string,
+
   /** Filter config */
   filters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 
