@@ -1,12 +1,21 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import isEqual from 'lodash/isEqual';
 import merge from 'lodash/merge';
 
+import { FilterFieldsData } from '../../types';
 import { getInitialValues } from './filters.utils';
 import { Filters as BaseComponent } from './filters';
 
-export const Filters = (props) => {
+interface FiltersProps
+  extends Omit<
+    React.ComponentProps<typeof BaseComponent>,
+    'onChange' | 'filters' | 'values' | 'toggleFilter' | 'toggleFilters'
+  > {
+  onChange?: (newValues: Record<string, boolean>) => void;
+  filters: FilterFieldsData;
+}
+
+export const Filters = (props: FiltersProps) => {
   const { onChange, filters, ...restProps } = props;
   const [values, setValues] = useState(getInitialValues('', filters));
 
@@ -26,7 +35,7 @@ export const Filters = (props) => {
   );
 
   const toggleFilter = useCallback(
-    (key, value) => {
+    (key: string, value: boolean) => {
       const nextValues = merge({}, values, { [key]: value });
       setValues(nextValues);
 
@@ -38,7 +47,7 @@ export const Filters = (props) => {
   );
 
   const toggleFilters = useCallback(
-    (newFilters) => {
+    (newFilters: Record<string, boolean>) => {
       const nextValues = merge({}, values, newFilters);
       setValues(nextValues);
 
@@ -58,19 +67,4 @@ export const Filters = (props) => {
       toggleFilters={toggleFilters}
     />
   );
-};
-
-Filters.defaultProps = {
-  className: '',
-  onChange: null,
-};
-
-Filters.propTypes = {
-  className: PropTypes.string,
-
-  /** Filter config */
-  filters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-
-  /** OnChange handler */
-  onChange: PropTypes.func,
 };

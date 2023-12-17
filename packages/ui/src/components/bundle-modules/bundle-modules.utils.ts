@@ -20,7 +20,8 @@ import {
 } from '@bundle-stats/utils';
 import type { ReportMetricRun } from '@bundle-stats/utils/types/report/types';
 
-import type { Chunk, ReportMetricModuleRow } from './bundle-modules.types';
+import type { FilterFieldsData, FilterGroupFieldData } from '../../types';
+import type { Chunk, Job, ReportMetricModuleRow } from './bundle-modules.types';
 import * as I18N from './bundle-modules.i18n';
 
 export const addRowFlags = (row: Module & ReportMetricRow): ReportMetricModuleRow => {
@@ -96,7 +97,7 @@ export const generateGetRowFilter =
   };
 /* eslint-enable prettier/prettier */
 
-export const extractChunkData = (jobs: Array<any>) => {
+export const extractChunkData = (jobs: Array<Job>) => {
   const jobChunks = jobs.map((job) => job?.meta?.webpack?.chunks || []);
   const chunks = uniqBy(jobChunks.flat(), ({ id }) => id);
 
@@ -141,14 +142,6 @@ interface GetFiltersFormDataParams {
    */
   compareMode: boolean;
 }
-
-interface FilterFieldData {
-  label: string;
-  defaultValue: boolean;
-  disabled?: boolean;
-}
-type FilterGroupFieldData = { label: string } & { [key: string]: FilterFieldData };
-type FilterFieldsData = Record<string, FilterFieldData | FilterGroupFieldData>;
 
 /**
  * Generate filter fields data

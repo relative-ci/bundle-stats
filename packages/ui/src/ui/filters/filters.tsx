@@ -1,17 +1,26 @@
 import React, { useCallback } from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import type { FilterFieldsData, FilterGroupFieldData } from '../../types';
 import { FlexStack } from '../../layout/flex-stack';
 import { Dropdown } from '../dropdown';
+import * as I18N from './filters.i18n';
 import { getGroupFiltersLabelSuffix, LABELS } from './filters.utils';
 import css from './filters.module.css';
 
-const Filter = (props) => {
+interface FilterProps extends React.ComponentProps<'input'> {
+  as?: React.ElementType;
+  buttonClassName?: string;
+  label: string;
+  name: string;
+  getOnOnlyClick?: (name: string) => () => void;
+}
+
+const Filter = (props: FilterProps) => {
   const {
-    className,
+    className = '',
     as: Component = 'div',
-    buttonClassName,
+    buttonClassName = '',
     label,
     name,
     getOnOnlyClick,
@@ -24,16 +33,21 @@ const Filter = (props) => {
   return (
     <Component className={rootClassName}>
       {/* eslint-disable */}
-      <FlexStack space="xxxsmall" alignItems="center" as="label" className={cx(css.filterCheckbox, buttonClassName)}>
+      <FlexStack
+        space="xxxsmall"
+        alignItems="center"
+        as="label"
+        className={cx(css.filterCheckbox, buttonClassName)}
+      >
         {/* eslint-enabled */}
-        <input className={css.filterInput} type="checkbox" id={id} name={name} {...inputProps} />
-        <span className={css.filterLabel} title={label}>
+        <input type="checkbox" id={id} name={name} {...inputProps} className={css.filterInput} />
+        <span title={label} className={css.filterLabel}>
           {label}
         </span>
       </FlexStack>
 
       {getOnOnlyClick && (
-        <button className={css.filterOnlyButton} type="button" onClick={getOnOnlyClick(name)}>
+        <button type="button" onClick={getOnOnlyClick(name)} className={css.filterOnlyButton}>
           only
         </button>
       )}
@@ -41,31 +55,31 @@ const Filter = (props) => {
   );
 };
 
-Filter.propTypes = {
-  className: PropTypes.string,
-  as: PropTypes.elementType,
-  buttonClassName: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  getOnOnlyClick: PropTypes.func,
-};
+interface FilterGroupProps extends React.ComponentProps<'div'> {
+  buttonClassName?: string;
+  groupKey: string;
+  data: FilterGroupFieldData;
+  values: Record<string, boolean>;
+  onCheckboxChange: FilterProps['onChange'];
+  toggleFilters: (newFilters: Record<string, boolean>) => void;
+}
 
-Filter.defaultProps = {
-  className: '',
-  as: 'div',
-  buttonClassName: '',
-  getOnOnlyClick: null,
-};
-
-const FilterGroup = (props) => {
-  const { className, buttonClassName, groupKey, data, values, onCheckboxChange, toggleFilters } =
-    props;
+const FilterGroup = (props: FilterGroupProps) => {
+  const {
+    className = '',
+    buttonClassName = '',
+    groupKey,
+    data,
+    values,
+    onCheckboxChange,
+    toggleFilters,
+  } = props;
 
   const { label: groupLabel, ...groupData } = data;
 
   const groupItems = Object.entries(groupData);
   const groupCheckboxes = groupItems.filter(
-    ([itemKey, item]) => typeof item?.defaultValue !== 'undefined',
+    ([_, item]) => typeof item?.defaultValue !== 'undefined',
   );
   const areAllGroupItemsChecked = groupCheckboxes
     .map(([itemKey]) => values?.[`${groupKey}.${itemKey}`])
@@ -82,7 +96,7 @@ const FilterGroup = (props) => {
   );
 
   const getOnGroupCheck =
-    (value, overrides = {}) =>
+    (value: boolean, overrides = {}) =>
     () => {
       const newFilters = groupCheckboxes.reduce(
         (agg, [itemKey]) => ({
@@ -105,7 +119,7 @@ const FilterGroup = (props) => {
       label={dropdownLabel}
       ariaLabel={`${groupLabel}: ${filterSuffix}`}
     >
-      {({ MenuItem, menu, menuItemClassName }) => {
+      {({ MenuItem, menuItemClassName }) => {
         return (
           <>
             <div className={css.filterGroupItems}>
@@ -137,7 +151,7 @@ const FilterGroup = (props) => {
                   type="button"
                   onClick={getOnGroupCheck(false)}
                 >
-                  Clear all
+                  {I18N.CLEAR}
                 </MenuItem>
               ) : (
                 <MenuItem
@@ -147,7 +161,7 @@ const FilterGroup = (props) => {
                   type="button"
                   onClick={getOnGroupCheck(true)}
                 >
-                  Check all
+                  {I18N.CHECK}
                 </MenuItem>
               )}
             </div>
@@ -158,38 +172,30 @@ const FilterGroup = (props) => {
   );
 };
 
-FilterGroup.propTypes = {
-  className: PropTypes.string,
-  buttonClassName: PropTypes.string,
-  groupKey: PropTypes.string.isRequired,
-  data: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-  values: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-  onCheckboxChange: PropTypes.func.isRequired,
-  toggleFilters: PropTypes.func.isRequired,
-};
+interface FiltersProps extends React.ComponentProps<'div'> {
+  values: Record<string, boolean>;
+  filters: FilterFieldsData;
+  toggleFilter: (name: string, value: boolean) => void;
+  toggleFilters: FilterGroupProps['toggleFilters'];
+}
 
-FilterGroup.defaultProps = {
-  className: '',
-  buttonClassName: '',
-};
-
-export const Filters = (props) => {
-  const { className, values, filters, toggleFilter, toggleFilters } = props;
+export const Filters = (props: FiltersProps) => {
+  const { className = '', values, filters, toggleFilter, toggleFilters } = props;
 
   const onCheckboxChange = useCallback(
-    (event) => {
+    (event: any) => {
       const { name } = event.target;
       toggleFilter(name, !values[name]);
     },
-    [toggleFilter, values]
+    [toggleFilter, values],
   );
   const rootClassName = cx(css.root, className);
 
   return (
     <form className={rootClassName}>
-      <FlexStack space="xxsmall" alignItems="flex-start" className={css.items}>
+      <FlexStack space="xxsmall" alignItems="top" className={css.items}>
         {Object.entries(filters).map(([name, data]) => {
-          if (typeof data?.defaultValue !== 'undefined') {
+          if ('defaultValue' in data) {
             return (
               <Filter
                 key={name}
@@ -199,7 +205,7 @@ export const Filters = (props) => {
                 label={data.label}
                 onChange={onCheckboxChange}
                 checked={values[name]}
-                disabled={data.disabled}
+                disabled={data.disabled as boolean}
               />
             );
           }
@@ -220,15 +226,4 @@ export const Filters = (props) => {
       </FlexStack>
     </form>
   );
-};
-
-Filters.defaultProps = {
-  className: '',
-};
-
-Filters.propTypes = {
-  className: PropTypes.string,
-  values: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-  filters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-  toggleFilter: PropTypes.func.isRequired,
 };

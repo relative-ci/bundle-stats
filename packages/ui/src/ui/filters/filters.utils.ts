@@ -1,3 +1,5 @@
+import type { FilterFieldData, FilterFieldsData, FilterGroupFieldData } from '../../types';
+
 const FILTER_SUFFIX_MAX_LENGTH = 18;
 const ELLIPSES = '...';
 const JOIN = ', ';
@@ -7,13 +9,8 @@ export const LABELS = {
   ALL: 'all',
 };
 
-/**
- * @param {Array<Array>} filters
- * @return {String}
- */
-export const getGroupFiltersLabelSuffix = (filters) => {
+export const getGroupFiltersLabelSuffix = (filters: Array<[string, FilterFieldData]>): string => {
   const filterCount = filters.length;
-  // eslint-disable-next-line no-unused-vars
   const checkedFilters = filters.filter(([_, { defaultValue }]) => defaultValue);
   const filterCheckedCount = checkedFilters.length;
 
@@ -65,23 +62,32 @@ export const getGroupFiltersLabelSuffix = (filters) => {
   return `${suffix}${skippedLabels > 0 ? ` +${skippedLabels}` : ''}`;
 };
 
-export const getInitialValues = (key, filters) => {
-  if (typeof filters?.defaultValue !== 'undefined') {
+export const getInitialValues = (
+  key: string,
+  filtersData: FilterFieldsData | FilterFieldData | FilterGroupFieldData | string,
+): Record<string, boolean> => {
+  if (typeof filtersData !== 'object') {
+    return {};
+  }
+
+  if ('defaultValue' in filtersData) {
     return {
-      [key]: filters.defaultValue,
+      [key]: (filtersData as FilterFieldData).defaultValue,
     };
   }
 
-  if (typeof filters === 'object') {
-    return Object.entries(filters).map(([groupKey, groupFilters]) => getInitialValues(
-      [...key ? [key] : [], groupKey].join('.'),
-      groupFilters,
-    )).reduce((agg, current) => ({
-      ...agg,
-      ...current,
-    }), {});
-  }
+  let result = {};
 
-  return {};
+  Object.entries(filtersData).forEach(([groupKey, groupFilters]) => {
+    if (typeof groupFilters === 'object') {
+      const fullKey = [...(key ? [key] : []), groupKey].join('.');
+      const groupInitialValues = getInitialValues(fullKey, groupFilters as any);
+      result = {
+        ...result,
+        ...groupInitialValues,
+      };
+    }
+  });
+
+  return result;
 };
-
