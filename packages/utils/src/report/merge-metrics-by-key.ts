@@ -4,19 +4,20 @@ import * as types from './types';
 
 type RunMetrics = Record<string, types.MetricValue>;
 
+/* eslint-disable prettier/prettier */
 const mergeWithRuns =
-  (runIndex: number, runsCount: number) =>
-  (aggregated: any, currentRun: any): Array<types.MetricValue | null> => {
+  (runIndex: number, runsCount: number) => (aggregated: any, currentRun: any): Array<types.MetricValue | null> => {
     // if there are no runs, just create an array with empty values
     const runs = aggregated || Array(runsCount).fill({ value: 0 });
     runs[runIndex] = currentRun;
 
     return runs;
   };
+/* eslint-enable prettier/prettier */
 
 export const mergeMetricsByKey = (
   runs: Array<RunMetrics>,
-  rowTransformers?: Array<(row: types.ReportRow) => types.ReportRow>,
+  rowTransformers?: Array<types.MetricReportRowTransformFn>,
 ): Array<types.ReportRow> => {
   const runsCount = runs.length;
 

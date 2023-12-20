@@ -1,4 +1,4 @@
-import { getGroupFiltersLabelSuffix } from '../filters.utils';
+import { getGroupFiltersLabelSuffix, getInitialValues } from '../filters.utils';
 
 describe('UI / Filters / utils', () => {
   describe('getGroupFiltersLabelSuffix', () => {
@@ -69,6 +69,28 @@ describe('UI / Filters / utils', () => {
       ]);
 
       expect(suffix).toEqual('CSS, JS, IMG, Media +2');
+    });
+  });
+
+  describe('getInitialValues', () => {
+    test('should return initial values', () => {
+      const initialValues = getInitialValues('', {
+        changed: {
+          label: 'Changed',
+          defaultValue: false,
+        },
+        fileType: {
+          label: 'File type',
+          CSS: { label: 'CSS', defaultValue: false },
+          JS: { label: 'JS', defaultValue: true },
+        },
+      });
+
+      expect(initialValues).toEqual({
+        changed: false,
+        'fileType.CSS': false,
+        'fileType.JS': true,
+      });
     });
   });
 });

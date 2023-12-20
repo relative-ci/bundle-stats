@@ -4,7 +4,13 @@ import PropTypes from 'prop-types';
 import { Tooltip } from '../../ui/tooltip';
 import css from './job-name.module.css';
 
-export const JobName = ({ as: Component, title, internalBuildNumber, children, ...restProps }) => (
+export const JobName = ({
+  as: Component = 'span',
+  title,
+  internalBuildNumber,
+  children,
+  ...restProps
+}) => (
   <Tooltip className={css.root} as={Component} title={title} {...restProps}>
     {children || `Job #${internalBuildNumber}`}
   </Tooltip>

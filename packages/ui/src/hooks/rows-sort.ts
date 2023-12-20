@@ -7,9 +7,9 @@ import { SORT } from '../constants';
 
 interface UseRowsSortParams {
   rows: Array<unknown>;
-  initialField: string;
-  initialDirection: SortAction['direction'];
-  getCustomSort: (item: unknown) => Array<string | number | boolean>;
+  initialField?: string;
+  initialDirection?: SortAction['direction'];
+  getCustomSort: (item: any) => Array<string | number | boolean>;
 }
 
 export const getSortFn =
@@ -32,11 +32,11 @@ export const useRowsSort = ({
   const orderedRows = useMemo(
     () =>
       orderBy(
-        rows,
-        getSortFn(sort.field, getCustomSort),
-        // if direction is empty (reset), sort asc
-        sort.direction !== '' ? sort.direction : (SORT.ASC as any),
-      ),
+      rows,
+      getSortFn(sort.field, getCustomSort),
+      // if direction is empty (reset), sort asc
+      sort.direction !== '' ? sort.direction : (SORT.ASC as any),
+    ),
     [rows, sort],
   );
 

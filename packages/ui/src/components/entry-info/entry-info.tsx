@@ -9,6 +9,7 @@ import { FileName } from '../../ui/file-name';
 import { Icon } from '../../ui/icon';
 import { Table } from '../../ui/table';
 import { RunInfo } from '../run-info';
+import * as I18N from './entry-info.i18n';
 import css from './entry-info.module.css';
 
 interface EntryInfoMetaLinkProps {
@@ -59,7 +60,7 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
     item,
     labels,
     runNameSelector = 'name',
-    runNameLabel = 'Path',
+    runNameLabel = I18N.PATH,
     children,
     tags = null,
     onClose,
@@ -72,7 +73,7 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
     METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE,
     item.runs?.[0]?.value,
     baselineRun?.value || 0,
-  );
+  ) as MetricRunInfo;
 
   return (
     <Portal className={cx(css.root, className)}>
@@ -93,7 +94,12 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
             size="large"
           />
         </Stack>
-        <button type="button" onClick={onClose} className={css.headerClose}>
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label={I18N.CLOSE_TITLE}
+          className={css.headerClose}
+        >
           <Icon glyph={Icon.ICONS.CLOSE} size="large" />
         </button>
       </Box>
@@ -106,7 +112,7 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
               <Table.Tr>
                 <Table.Th className={cx(css.runsCell, css.runsColJob)}>&nbsp;</Table.Th>
                 <Table.Th className={cx(css.runsCell, css.runsColName)}>{runNameLabel}</Table.Th>
-                <Table.Th className={cx(css.runsCell, css.runsColSize)}>Size</Table.Th>
+                <Table.Th className={cx(css.runsCell, css.runsColSize)}>{I18N.SIZE}</Table.Th>
               </Table.Tr>
             </Table.THead>
             <Table.TBody>

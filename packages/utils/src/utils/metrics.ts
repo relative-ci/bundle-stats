@@ -1,6 +1,13 @@
 import get from 'lodash/get';
 
-import { MetricRunInfo, Metric, MetricTypes, MetricConfig, MetricTypeConfig } from '../constants';
+import {
+  MetricRunInfo,
+  MetricRunInfoBaseline,
+  Metric,
+  MetricTypes,
+  MetricConfig,
+  MetricTypeConfig,
+} from '../constants';
 import { METRIC_TYPE_CONFIGS } from '../config';
 import { metrics as webpackMetricTypes } from '../webpack/metrics';
 import { metrics as lighthouseMetricTypes } from '../lighthouse/metrics';
@@ -43,7 +50,7 @@ export function getMetricRunInfo(
   metricType: MetricTypeConfig,
   current: number,
   baseline?: number,
-): MetricRunInfo {
+): MetricRunInfo | MetricRunInfoBaseline {
   const { formatter, biggerIsBetter } = metricType;
 
   const runInfo = {

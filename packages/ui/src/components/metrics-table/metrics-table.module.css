@@ -15,7 +15,7 @@
   width: 55%;
 }
 
-.root .job {
+.root .jobCol {
   text-align: right;
 }
 
@@ -46,7 +46,7 @@
 }
 
 /* columns overrides for showHeaderSum */
-.showHeaderSum .headerRow .job {
+.showHeaderSum .headerRow .jobCol {
   border-bottom: 0;
   padding-bottom: 0;
 }

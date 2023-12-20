@@ -12,7 +12,7 @@ interface SortInfo {
   title: string;
 }
 
-const getToggleAction = (sort: SortAction, field: string, label: string): SortInfo => {
+const getToggleAction = (field: string, label: string, sort?: SortAction): SortInfo => {
   // Sort the column desc if not currently sorted
   if (sort?.field !== field) {
     return { direction: SORT.DESC, title: `Order ${label} descending` };
@@ -39,21 +39,25 @@ interface SortButtonProps {
   fieldPath: string;
   fieldName: string;
   label: string;
-  sort: SortAction;
-  updateSort: (params: SortAction) => void;
+  sort?: SortAction;
+  updateSort?: (params: SortAction) => void;
 }
 
 export const SortButton = (props: SortButtonProps & React.ComponentProps<'div'>) => {
   const { className = '', children, fieldPath, fieldName, label, sort, updateSort } = props;
 
   const field = `${fieldPath}.${fieldName}`;
-  const toggleAction = getToggleAction(sort, field, label);
+  const toggleAction = getToggleAction(field, label, sort);
   const ascAction = getAscAction(label);
   const descAction = getDescAction(label);
-  const isSorted = sort.field === field;
+  const isSorted = sort?.field === field;
 
   const getOrderOnClick = useCallback(
     (action: SortInfo) => () => {
+      if (!updateSort) {
+        return;
+      }
+
       if (action.direction) {
         updateSort({ field, direction: action.direction as SortAction['direction'] });
         return;
@@ -64,8 +68,12 @@ export const SortButton = (props: SortButtonProps & React.ComponentProps<'div'>)
     [field, updateSort, toggleAction],
   );
 
+  if (!updateSort) {
+    return <div className={cx(css.root, className)}>{children}</div>;
+  }
+
   return (
-    <div className={cx(css.root, className, isSorted && css.active)}>
+    <div className={cx(css.root, css.interactive, className, isSorted && css.active)}>
       <Tooltip
         title={toggleAction.title}
         as="button"
