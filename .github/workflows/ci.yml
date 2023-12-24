@@ -264,9 +264,15 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        node: [16]
+        node: [16, 18]
+        rollup: [3, 4]
+        exclude:
+          - rollup: 3
+            node: 18
+          - rollup: 4
+            node: 16
     runs-on: ${{ matrix.os }}
-    name: rollup plugin ${{ matrix.os }} nodejs ${{ matrix.node }}
+    name: rollup ${{ matrix.rollup}} plugin nodejs ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v4
 
@@ -285,11 +291,17 @@ jobs:
         with:
           name: local-registry
 
-      - name: Install dependencies
+      - name: Install verdaccio
         run: npm install -g verdaccio
 
       - name: Run local npm registry
         run: ./scripts/local-registry.sh &
+
+      - name: Install test dependencies
+        run: |
+            npm install --force
+            npm install --no-save --force rollup@${{ matrix.rollup }}
+        working-directory: packages/rollup-plugin/test/package
 
       - name: Test package
         run: npm run test:package

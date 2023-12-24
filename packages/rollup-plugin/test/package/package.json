@@ -3,13 +3,11 @@
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
-    "pretest": "npm install --force",
     "test": "jest"
   },
   "devDependencies": {
     "memfs": "4.2.1",
     "rollup-plugin-bundle-stats": "*",
-    "rollup": "3.10.1",
     "jest": "^29.6.1"
   }
 }
