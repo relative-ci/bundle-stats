@@ -36,19 +36,11 @@ const RUNS_LABELS = [RUN_TITLE_CURRENT, RUN_TITLE_BASELINE];
 
 const getFileTypeFilters = (filters) =>
   Object.entries(FILE_TYPE_LABELS)
-    .map(([id, label]) => ({
-      [id]: {
-        label,
-        defaultValue: get(filters, `${ASSET_FILE_TYPE}.${id}`, true),
-      },
-    }))
-    .reduce(
-      (agg, current) => ({
-        ...agg,
-        ...current,
-      }),
-      {},
-    );
+    .map(([key, label]) => ({
+      key,
+      label,
+      defaultValue: get(filters, `${ASSET_FILE_TYPE}.${key}`, true),
+    }));
 
 const getFilters = ({ compareMode, filters }) => ({
   [ASSET_FILTERS.CHANGED]: {
@@ -58,26 +50,32 @@ const getFilters = ({ compareMode, filters }) => ({
   },
   [ASSET_ENTRY_TYPE]: {
     label: 'Entry type',
-    [ASSET_FILTERS.ENTRY]: {
-      label: 'Entry',
-      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`, true),
-    },
-    [ASSET_FILTERS.INITIAL]: {
-      label: 'Initial',
-      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`, true),
-    },
-    [ASSET_FILTERS.CHUNK]: {
-      label: 'Chunk',
-      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`, true),
-    },
-    [ASSET_FILTERS.OTHER]: {
-      label: 'Other',
-      defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.OTHER}`, true),
-    },
+    children: [
+      {
+        key: ASSET_FILTERS.ENTRY,
+        label: 'Entry',
+        defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`, true),
+      },
+      {
+        key: ASSET_FILTERS.INITIAL,
+        label: 'Initial',
+        defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`, true),
+      },
+      {
+        key: ASSET_FILTERS.CHUNK,
+        label: 'Chunk',
+        defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`, true),
+      },
+      {
+        key: ASSET_FILTERS.OTHER,
+        label: 'Other',
+        defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.OTHER}`, true),
+      },
+    ],
   },
   [ASSET_FILE_TYPE]: {
     label: 'File type',
-    ...getFileTypeFilters(filters),
+    children: getFileTypeFilters(filters),
   },
 });
 

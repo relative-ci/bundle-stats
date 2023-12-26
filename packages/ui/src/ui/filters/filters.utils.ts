@@ -9,9 +9,9 @@ export const LABELS = {
   ALL: 'all',
 };
 
-export const getGroupFiltersLabelSuffix = (filters: Array<[string, FilterFieldData]>): string => {
+export const getGroupFiltersLabelSuffix = (filters: FilterGroupFieldData['children']): string => {
   const filterCount = filters.length;
-  const checkedFilters = filters.filter(([_, { defaultValue }]) => defaultValue);
+  const checkedFilters = filters.filter(({ defaultValue }) => defaultValue);
   const filterCheckedCount = checkedFilters.length;
 
   if (filterCheckedCount === 0) {
@@ -23,7 +23,7 @@ export const getGroupFiltersLabelSuffix = (filters: Array<[string, FilterFieldDa
   }
 
   // eslint-disable-next-line no-unused-vars
-  const checkedFilterLabels = checkedFilters.map(([_, { label }]) => label);
+  const checkedFilterLabels = checkedFilters.map(({ label }) => label);
 
   let suffix = '';
   let inlinedLabelCount = 0;
@@ -74,6 +74,17 @@ export const getInitialValues = (
     return {
       [key]: (filtersData as FilterFieldData).defaultValue,
     };
+  }
+
+  if ('children' in filtersData) {
+    const result = {} as Record<string, boolean>;
+
+    (filtersData as FilterGroupFieldData).children.forEach(({ key: childKey, defaultValue }) => {
+      const fullKey = [...(key ? [key] : []), childKey].join('.');
+      result[fullKey] = defaultValue;
+    });
+
+    return result;
   }
 
   let result = {};
