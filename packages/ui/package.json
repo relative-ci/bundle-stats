@@ -46,7 +46,7 @@
     "@types/react": "18.2.45",
     "@types/react-router-dom": "5.3.3",
     "babel-plugin-require-context-hook": "1.0.0",
-    "classnames": "2.3.2",
+    "classnames": "2.3.3",
     "colormap": "2.3.2",
     "cross-env": "7.0.3",
     "hex-rgb": "5.0.0",
