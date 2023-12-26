@@ -75,14 +75,10 @@ const FilterGroup = (props: FilterGroupProps) => {
     toggleFilters,
   } = props;
 
-  const { label: groupLabel, ...groupData } = data;
+  const { label: groupLabel, children: groupItems } = data;
 
-  const groupItems = Object.entries(groupData);
-  const groupCheckboxes = groupItems.filter(
-    ([_, item]) => typeof item?.defaultValue !== 'undefined',
-  );
-  const areAllGroupItemsChecked = groupCheckboxes
-    .map(([itemKey]) => values?.[`${groupKey}.${itemKey}`])
+  const areAllGroupItemsChecked = groupItems
+    .map(({ key: itemKey }) => values?.[`${groupKey}.${itemKey}`])
     .reduce((agg, val) => agg && val, true);
 
   const filterSuffix = getGroupFiltersLabelSuffix(groupItems);
@@ -98,8 +94,8 @@ const FilterGroup = (props: FilterGroupProps) => {
   const getOnGroupCheck =
     (value: boolean, overrides = {}) =>
     () => {
-      const newFilters = groupCheckboxes.reduce(
-        (agg, [itemKey]) => ({
+      const newFilters = groupItems.reduce(
+        (agg, { key: itemKey }) => ({
           ...agg,
           [`${groupKey}.${itemKey}`]: value,
         }),
@@ -123,7 +119,7 @@ const FilterGroup = (props: FilterGroupProps) => {
         return (
           <>
             <div className={css.filterGroupItems}>
-              {groupItems.map(([itemKey, itemData]) => {
+              {groupItems.map(({ key: itemKey, ...itemData }) => {
                 const id = [groupKey, itemKey].join('.');
                 const getOnOnlyClick = () => getOnGroupCheck(false, { [id]: true });
 

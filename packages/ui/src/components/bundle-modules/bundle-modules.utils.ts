@@ -3,6 +3,7 @@ import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import union from 'lodash/union';
 import uniqBy from 'lodash/uniqBy';
+import orderBy from 'lodash/orderBy';
 import type { MetricRunInfo, ReportMetricRow } from '@bundle-stats/utils';
 // @ts-ignore
 import { MODULE_PATH_PACKAGES, type Module } from '@bundle-stats/utils/lib-esm/webpack';
@@ -164,34 +165,41 @@ export const generateFilterFieldsData = (params: GetFiltersFormDataParams): Filt
 
   result[MODULE_SOURCE_TYPE] = {
     label: I18N.SOURCE,
-    [MODULE_FILTERS.FIRST_PARTY]: {
-      label: I18N.SOURCE_FIRST_PARTY,
-      defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.FIRST_PARTY}`, true),
-    },
-    [MODULE_FILTERS.THIRD_PARTY]: {
-      label: I18N.SOURCE_THIRD_PARTY,
-      defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.THIRD_PARTY}`, true),
-    },
+    children: [
+      {
+        key: MODULE_FILTERS.FIRST_PARTY,
+        label: I18N.SOURCE_FIRST_PARTY,
+        defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.FIRST_PARTY}`, true),
+      },
+      {
+        key: MODULE_FILTERS.THIRD_PARTY,
+        label: I18N.SOURCE_THIRD_PARTY,
+        defaultValue: get(filters, `${MODULE_SOURCE_TYPE}.${MODULE_FILTERS.THIRD_PARTY}`, true),
+      },
+    ],
   } as FilterGroupFieldData;
 
   if (!isEmpty(chunks)) {
-    const chunksFilter = { label: I18N.CHUNK } as FilterGroupFieldData;
-    chunks?.forEach((chunk) => {
-      chunksFilter[chunk.id] = {
+    const chunksFilter = { label: I18N.CHUNK, children: [] } as FilterGroupFieldData;
+    const chunksOrderedByName = orderBy(chunks, 'name');
+    chunksOrderedByName.forEach((chunk) => {
+      chunksFilter.children.push({
+        key: chunk.id,
         label: chunk.name,
         defaultValue: filters[`${MODULE_CHUNK}.${chunk.id}`] ?? true,
-      };
+      });
     });
 
     result[MODULE_CHUNK] = chunksFilter;
   }
 
-  const moduleFileTypeFilter = { label: I18N.FILE_TYPE } as FilterGroupFieldData;
+  const moduleFileTypeFilter = { label: I18N.FILE_TYPE, children: [] } as FilterGroupFieldData;
   MODULE_SOURCE_FILE_TYPES.forEach((fileType: string) => {
-    moduleFileTypeFilter[fileType] = {
+    moduleFileTypeFilter.children.push({
+      key: fileType,
       label: FILE_TYPE_LABELS[fileType as keyof typeof FILE_TYPE_LABELS],
       defaultValue: get(filters, `${MODULE_FILE_TYPE}.${fileType}`, true),
-    };
+    });
   });
 
   result[MODULE_FILE_TYPE] = moduleFileTypeFilter;

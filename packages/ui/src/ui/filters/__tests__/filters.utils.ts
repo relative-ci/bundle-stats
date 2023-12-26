@@ -4,13 +4,13 @@ describe('UI / Filters / utils', () => {
   describe('getGroupFiltersLabelSuffix', () => {
     test('should return none', () => {
       const suffix = getGroupFiltersLabelSuffix([
-        ['CSS', { label: 'CSS', defaultValue: false }],
-        ['JS', { label: 'JS', defaultValue: false }],
-        ['IMG', { label: 'IMG', defaultValue: false }],
-        ['MEDIA', { label: 'Media', defaultValue: false }],
-        ['FONTS', { label: 'Fonts', defaultValue: false }],
-        ['HTML', { label: 'HTML', defaultValue: false }],
-        ['OTHER', { label: 'Other', defaultValue: false }],
+        { key: 'CSS', label: 'CSS', defaultValue: false },
+        { key: 'JS', label: 'JS', defaultValue: false },
+        { key: 'IMG', label: 'IMG', defaultValue: false },
+        { key: 'MEDIA', label: 'Media', defaultValue: false },
+        { key: 'FONTS', label: 'Fonts', defaultValue: false },
+        { key: 'HTML', label: 'HTML', defaultValue: false },
+        { key: 'OTHER', label: 'Other', defaultValue: false },
       ]);
 
       expect(suffix).toEqual('none');
@@ -18,26 +18,26 @@ describe('UI / Filters / utils', () => {
 
     test('should return all', () => {
       const suffix = getGroupFiltersLabelSuffix([
-        ['CSS', { label: 'CSS', defaultValue: true }],
-        ['JS', { label: 'JS', defaultValue: true }],
-        ['IMG', { label: 'IMG', defaultValue: true }],
-        ['MEDIA', { label: 'Media', defaultValue: true }],
-        ['FONTS', { label: 'Fonts', defaultValue: true }],
-        ['HTML', { label: 'HTML', defaultValue: true }],
-        ['OTHER', { label: 'Other', defaultValue: true }],
+        { key: 'CSS', label: 'CSS', defaultValue: true },
+        { key: 'JS', label: 'JS', defaultValue: true },
+        { key: 'IMG', label: 'IMG', defaultValue: true },
+        { key: 'MEDIA', label: 'Media', defaultValue: true },
+        { key: 'FONTS', label: 'Fonts', defaultValue: true },
+        { key: 'HTML', label: 'HTML', defaultValue: true },
+        { key: 'OTHER', label: 'Other', defaultValue: true },
       ]);
 
       expect(suffix).toEqual('all');
     });
     test('should return checked filters', () => {
       const suffix = getGroupFiltersLabelSuffix([
-        ['CSS', { label: 'CSS', defaultValue: true }],
-        ['JS', { label: 'JS', defaultValue: true }],
-        ['IMG', { label: 'IMG', defaultValue: false }],
-        ['MEDIA', { label: 'Media', defaultValue: false }],
-        ['FONTS', { label: 'Fonts', defaultValue: false }],
-        ['HTML', { label: 'HTML', defaultValue: false }],
-        ['OTHER', { label: 'Other', defaultValue: false }],
+        { key: 'CSS', label: 'CSS', defaultValue: true },
+        { key: 'JS', label: 'JS', defaultValue: true },
+        { key: 'IMG', label: 'IMG', defaultValue: false },
+        { key: 'MEDIA', label: 'Media', defaultValue: false },
+        { key: 'FONTS', label: 'Fonts', defaultValue: false },
+        { key: 'HTML', label: 'HTML', defaultValue: false },
+        { key: 'OTHER', label: 'Other', defaultValue: false },
       ]);
 
       expect(suffix).toEqual('CSS, JS');
@@ -45,13 +45,13 @@ describe('UI / Filters / utils', () => {
 
     test('should crop last filter if need it', () => {
       const suffix = getGroupFiltersLabelSuffix([
-        ['CSS', { label: 'CSS', defaultValue: true }],
-        ['JS', { label: 'JS', defaultValue: true }],
-        ['IMG', { label: 'IMG', defaultValue: true }],
-        ['MEDIA', { label: 'Meeeeeeedia', defaultValue: true }],
-        ['FONTS', { label: 'Fonts', defaultValue: false }],
-        ['HTML', { label: 'HTML', defaultValue: false }],
-        ['OTHER', { label: 'Other', defaultValue: false }],
+        { key: 'CSS', label: 'CSS', defaultValue: true },
+        { key: 'JS', label: 'JS', defaultValue: true },
+        { key: 'IMG', label: 'IMG', defaultValue: true },
+        { key: 'MEDIA', label: 'Meeeeeeedia', defaultValue: true },
+        { key: 'FONTS', label: 'Fonts', defaultValue: false },
+        { key: 'HTML', label: 'HTML', defaultValue: false },
+        { key: 'OTHER', label: 'Other', defaultValue: false },
       ]);
 
       expect(suffix).toEqual('CSS, JS, IMG, Mee...');
@@ -59,13 +59,13 @@ describe('UI / Filters / utils', () => {
 
     test('should crop and add remaining filters count', () => {
       const suffix = getGroupFiltersLabelSuffix([
-        ['CSS', { label: 'CSS', defaultValue: true }],
-        ['JS', { label: 'JS', defaultValue: true }],
-        ['IMG', { label: 'IMG', defaultValue: true }],
-        ['MEDIA', { label: 'Media', defaultValue: true }],
-        ['FONTS', { label: 'Fonts', defaultValue: true }],
-        ['HTML', { label: 'HTML', defaultValue: true }],
-        ['OTHER', { label: 'Other', defaultValue: false }],
+        { key: 'CSS', label: 'CSS', defaultValue: true },
+        { key: 'JS', label: 'JS', defaultValue: true },
+        { key: 'IMG', label: 'IMG', defaultValue: true },
+        { key: 'MEDIA', label: 'Media', defaultValue: true },
+        { key: 'FONTS', label: 'Fonts', defaultValue: true },
+        { key: 'HTML', label: 'HTML', defaultValue: true },
+        { key: 'OTHER', label: 'Other', defaultValue: false },
       ]);
 
       expect(suffix).toEqual('CSS, JS, IMG, Media +2');
@@ -81,8 +81,10 @@ describe('UI / Filters / utils', () => {
         },
         fileType: {
           label: 'File type',
-          CSS: { label: 'CSS', defaultValue: false },
-          JS: { label: 'JS', defaultValue: true },
+          children: [
+            { key: 'CSS', label: 'CSS', defaultValue: false },
+            { key: 'JS', label: 'JS', defaultValue: true },
+          ],
         },
       });
 
