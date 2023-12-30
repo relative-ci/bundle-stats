@@ -92,7 +92,7 @@ const SumColumn = ({ rows, isBaseline, runIndex, updateSort, sort }: ColumnSumPr
         <SortButton
           fieldPath={fieldPath}
           fieldName="value"
-          label="absolute value"
+          label={I18N.SORT_VALUE}
           updateSort={updateSort}
           sort={sort}
         >
@@ -105,7 +105,7 @@ const SumColumn = ({ rows, isBaseline, runIndex, updateSort, sort }: ColumnSumPr
             <SortButton
               fieldPath={fieldPath}
               fieldName="delta"
-              label="absolute change"
+              label={I18N.SORT_CHANGE}
               updateSort={updateSort}
               sort={sort}
             >
@@ -118,7 +118,7 @@ const SumColumn = ({ rows, isBaseline, runIndex, updateSort, sort }: ColumnSumPr
             <SortButton
               fieldPath={fieldPath}
               fieldName="deltaPercentage"
-              label="absolute percentual change"
+              label={I18N.SORT_PERCENTUAL_CHANGE}
               updateSort={updateSort}
               sort={sort}
             >
