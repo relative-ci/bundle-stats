@@ -1,9 +1,11 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import cx from 'classnames';
 
 import type { FilterFieldsData, FilterGroupFieldData } from '../../types';
 import { FlexStack } from '../../layout/flex-stack';
+import { Stack } from '../../layout/stack';
 import { Dropdown } from '../dropdown';
+import { InputSearch } from '../input-search';
 import * as I18N from './filters.i18n';
 import { getGroupFiltersLabelSuffix, LABELS } from './filters.utils';
 import css from './filters.module.css';
@@ -75,6 +77,8 @@ const FilterGroup = (props: FilterGroupProps) => {
     toggleFilters,
   } = props;
 
+  const [search, setSearch] = useState('');
+
   const { label: groupLabel, children: groupItems } = data;
 
   const areAllGroupItemsChecked = groupItems
@@ -108,6 +112,14 @@ const FilterGroup = (props: FilterGroupProps) => {
       });
     };
 
+  const filteredGroupItems = useMemo(() => {
+    if (!search) {
+      return groupItems;
+    }
+
+    return groupItems.filter((item) => item.label.match(new RegExp(`${search}`, 'i')));
+  }, [search, groupItems]);
+
   return (
     <Dropdown
       className={className}
@@ -118,8 +130,32 @@ const FilterGroup = (props: FilterGroupProps) => {
       {({ MenuItem, menuItemClassName }) => {
         return (
           <>
+            {groupItems.length > 10 && (
+              <div className={css.filterGroupSearchWrapper}>
+                <InputSearch
+                  defaultValue={search}
+                  onChange={setSearch}
+                  placeholder={I18N.CHUNKS_SEARCH}
+                  debounceWait={0}
+                />
+              </div>
+            )}
             <div className={css.filterGroupItems}>
-              {groupItems.map(({ key: itemKey, ...itemData }) => {
+              {filteredGroupItems.length === 0 && (
+                <Stack className={css.filterGroupSearchNotFound}>
+                  <p>{I18N.CHUNKS_NOT_FOUND}</p>
+                  <div>
+                    <button
+                      type="button"
+                      onClick={() => setSearch('')}
+                      className={css.filterGroupSearchNotFoundClear}
+                    >
+                      {I18N.CHUNKS_SEARCH_CLEAR}
+                    </button>
+                  </div>
+                </Stack>
+              )}
+              {filteredGroupItems.map(({ key: itemKey, ...itemData }) => {
                 const id = [groupKey, itemKey].join('.');
                 const getOnOnlyClick = () => getOnGroupCheck(false, { [id]: true });
 
@@ -138,29 +174,31 @@ const FilterGroup = (props: FilterGroupProps) => {
                 );
               })}
             </div>
-            <div className={css.filterGroupActions}>
-              {areAllGroupItemsChecked ? (
-                <MenuItem
-                  id="clear-all"
-                  as="button"
-                  className={menuItemClassName}
-                  type="button"
-                  onClick={getOnGroupCheck(false)}
-                >
-                  {I18N.CLEAR}
-                </MenuItem>
-              ) : (
-                <MenuItem
-                  id="clear-all"
-                  as="button"
-                  className={menuItemClassName}
-                  type="button"
-                  onClick={getOnGroupCheck(true)}
-                >
-                  {I18N.CHECK}
-                </MenuItem>
-              )}
-            </div>
+            {filteredGroupItems.length !== 0 && (
+              <div className={css.filterGroupActions}>
+                {areAllGroupItemsChecked ? (
+                  <MenuItem
+                    id="clear-all"
+                    as="button"
+                    className={menuItemClassName}
+                    type="button"
+                    onClick={getOnGroupCheck(false)}
+                  >
+                    {I18N.CLEAR}
+                  </MenuItem>
+                ) : (
+                  <MenuItem
+                    id="clear-all"
+                    as="button"
+                    className={menuItemClassName}
+                    type="button"
+                    onClick={getOnGroupCheck(true)}
+                  >
+                    {I18N.CHECK}
+                  </MenuItem>
+                )}
+              </div>
+            )}
           </>
         );
       }}
