@@ -116,6 +116,33 @@
   text-transform: lowercase;
 }
 
+.filterGroupSearch {
+  position: relative;
+  padding-bottom: var(--space-xxxsmall);
+  margin-bottom: var(--space-xxxsmall);
+  border-bottom: 1px solid var(--color-outline);
+}
+
+.filterGroupSearchInput {
+  padding-top: var(--space-xxxsmall);
+  padding-bottom: var(--space-xxxsmall);
+}
+
+.filterGroupSearchClear {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  appearance: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  color: inherit;
+}
+
 .filterGroupItems {
   max-height: calc(10 * (var(--space-small) + 2 * var(--space-xxxsmall)));
   overflow: auto;

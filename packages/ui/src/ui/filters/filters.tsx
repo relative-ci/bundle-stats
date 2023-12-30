@@ -1,9 +1,11 @@
-import React, { useCallback } from 'react';
+import React, { ChangeEvent, useCallback, useMemo, useState } from 'react';
 import cx from 'classnames';
 
 import type { FilterFieldsData, FilterGroupFieldData } from '../../types';
 import { FlexStack } from '../../layout/flex-stack';
 import { Dropdown } from '../dropdown';
+import { Icon } from '../icon';
+import { Input } from '../input';
 import * as I18N from './filters.i18n';
 import { getGroupFiltersLabelSuffix, LABELS } from './filters.utils';
 import css from './filters.module.css';
@@ -75,6 +77,8 @@ const FilterGroup = (props: FilterGroupProps) => {
     toggleFilters,
   } = props;
 
+  const [search, setSearch] = useState('');
+
   const { label: groupLabel, children: groupItems } = data;
 
   const areAllGroupItemsChecked = groupItems
@@ -108,6 +112,14 @@ const FilterGroup = (props: FilterGroupProps) => {
       });
     };
 
+  const filteredGroupItems = useMemo(() => {
+    if (!search) {
+      return groupItems;
+    }
+
+    return groupItems.filter((item) => item.label.match(new RegExp(`${search}`, 'i')));
+  }, [search, groupItems]);
+
   return (
     <Dropdown
       className={className}
@@ -118,8 +130,29 @@ const FilterGroup = (props: FilterGroupProps) => {
       {({ MenuItem, menuItemClassName }) => {
         return (
           <>
+            {groupItems.length > 10 && (
+              <div className={css.filterGroupSearch}>
+                <Input
+                  size="small"
+                  type="text"
+                  defaultValue={search}
+                  onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    setSearch(event.target.value)
+                  }
+                  placeholder="Chunk name"
+                  className={css.filterGroupSearchInput}
+                />
+                <button type="button" className={css.filterGroupSearchClear}>
+                  <Icon
+                    glyph={Icon.ICONS.CLOSE}
+                    size="small"
+                    className={css.filterGroupSearchClearIcon}
+                  />
+                </button>
+              </div>
+            )}
             <div className={css.filterGroupItems}>
-              {groupItems.map(({ key: itemKey, ...itemData }) => {
+              {filteredGroupItems.map(({ key: itemKey, ...itemData }) => {
                 const id = [groupKey, itemKey].join('.');
                 const getOnOnlyClick = () => getOnGroupCheck(false, { [id]: true });
 
