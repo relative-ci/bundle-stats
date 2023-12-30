@@ -18,7 +18,7 @@ export const getSortFn =
       return getCustomSort(item);
     }
 
-    return Math.abs(get(item, fieldPath) || 0);
+    return get(item, fieldPath) || 0;
   };
 
 export const useRowsSort = ({
