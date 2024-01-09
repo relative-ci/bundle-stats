@@ -7,13 +7,13 @@ import config from '../../config.json';
 import I18N from '../../i18n';
 import { ComponentLink } from '../component-link';
 import { FlexStack } from '../../layout/flex-stack';
+import { InputSearch } from '../../ui/input-search';
 import { EmptySet } from '../../ui/empty-set';
 import { FileName } from '../../ui/file-name';
 import { Filters } from '../../ui/filters';
 import { Tag } from '../../ui/tag';
 import { Toolbar } from '../../ui/toolbar';
 import { MetricsTable } from '../metrics-table';
-import { MetricsTableSearch } from '../metrics-table-search';
 import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
 import { ModuleInfo } from '../module-info';
@@ -159,11 +159,11 @@ export const BundleModules = (props: BundleModulesProps) => {
           )}
         >
           <FlexStack space="xxsmall">
-            <MetricsTableSearch
+            <InputSearch
               className={css.toolbarSearch}
-              search={search}
-              updateSearch={updateSearch}
               placeholder={I18N_MODULES.SEARCH}
+              defaultValue={search}
+              onChange={updateSearch}
             />
             <Filters
               className={css.tableDropdown}

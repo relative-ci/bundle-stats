@@ -15,7 +15,6 @@ export { Metric } from './metric';
 export { MetricRunInfo, MetricRunInfoProps } from './metric-run-info';
 export { MetricsTable } from './metrics-table';
 export { MetricsTableOptions } from './metrics-table-options';
-export { MetricsTableSearch } from './metrics-table-search';
 export { MetricsTableTitle } from './metrics-table-title';
 export { ModuleInfo } from './module-info';
 export { RunInfo, RunInfoProps } from './run-info';

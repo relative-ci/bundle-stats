@@ -8,6 +8,7 @@ export { HorizontalBarChart } from './horizontal-bar-chart';
 export { HoverCard } from './hover-card';
 export { Icon } from './icon';
 export { Input } from './input';
+export { InputSearch } from './input-search';
 export { Loader } from './loader';
 export { Skeleton } from './skeleton';
 export { Table } from './table';
