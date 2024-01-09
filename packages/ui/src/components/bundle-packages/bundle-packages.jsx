@@ -6,13 +6,13 @@ import { COMPONENT, PACKAGE_FILTERS, PACKAGES_SEPARATOR, SECTIONS } from '@bundl
 import config from '../../config.json';
 import I18N from '../../i18n';
 import { FlexStack } from '../../layout/flex-stack';
+import { InputSearch } from '../../ui/input-search';
 import { EmptySet } from '../../ui/empty-set';
 import { Filters } from '../../ui/filters';
 import { Tag } from '../../ui/tag';
 import { Toolbar } from '../../ui/toolbar';
 import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
-import { MetricsTableSearch } from '../metrics-table-search';
 import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
 import { PackageInfo } from '../package-info';
@@ -194,11 +194,11 @@ export const BundlePackages = (props) => {
           )}
         >
           <FlexStack space="xxsmall">
-            <MetricsTableSearch
+            <InputSearch
               className={css.toolbarSearch}
               placeholder="Search by name"
-              search={search}
-              updateSearch={updateSearch}
+              defaultValue={search}
+              onChange={updateSearch}
             />
             <Filters
               filters={dropdownFilters}

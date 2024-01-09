@@ -15,6 +15,7 @@ import config from '../../config.json';
 import I18N from '../../i18n';
 import { FlexStack } from '../../layout/flex-stack';
 import { Icon } from '../../ui/icon';
+import { InputSearch } from '../../ui/input-search';
 import { FileName } from '../../ui/file-name';
 import { HoverCard } from '../../ui/hover-card';
 import { Tag } from '../../ui/tag';
@@ -25,7 +26,6 @@ import { AssetInfo } from '../asset-info';
 import { AssetNotPredictive } from '../asset-not-predictive';
 import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
-import { MetricsTableSearch } from '../metrics-table-search';
 import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
 import css from './bundle-assets.module.css';
@@ -235,11 +235,11 @@ export const BundleAssets = (props) => {
           )}
         >
           <FlexStack space="xxsmall">
-            <MetricsTableSearch
+            <InputSearch
               className={css.toolbarSearch}
               placeholder="Search by name"
-              search={search}
-              updateSearch={updateSearch}
+              defaultValue={search}
+              onChange={updateSearch}
             />
             <Filters
               className={css.toolbarFilters}
