@@ -10,4 +10,4 @@ export default {
 };
 
 export const Default = () => <Input placeholder="Search" />;
-export const WithSize = () => <Input size="small" placeholder="Search" />;
+export const WithSize = () => <Input placeholder="Search" size="small" />;
