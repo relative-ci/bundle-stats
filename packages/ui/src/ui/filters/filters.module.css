@@ -10,13 +10,11 @@
 }
 
 .filterCheckbox {
-  cursor: pointer;
 }
 
 .filterInput {
   flex: 0 0 auto;
   height: 1em;
-  cursor: pointer;
 }
 
 .filterLabel {

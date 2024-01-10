@@ -11,12 +11,11 @@
   border-radius: var(--radius-small);
   padding: calc(var(--space-xxsmall) - 1px);
 
+  appearance: none;
   background: none;
   font-size: var(--size-small);
   line-height: var(--space-small);
   white-space: nowrap;
-  appearance: none;
-  cursor: pointer;
   color: var(--color-text-light);
 }
 
@@ -48,7 +47,6 @@
 .item {
   display: block;
   appearance: none;
-  cursor: pointer;
   width: 100%;
   outline: none;
   border: 0;
