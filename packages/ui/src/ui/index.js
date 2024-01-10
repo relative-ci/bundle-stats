@@ -1,4 +1,5 @@
 export { Alert } from './alert';
+export { Button } from './button';
 export { Container } from './container';
 export { Dropdown } from './dropdown';
 export { EmptySet } from './empty-set';

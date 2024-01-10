@@ -190,8 +190,8 @@
   --shadow-layer-high: 0 0 var(--space-xxsmall) var(--color-shadow);
 
   --radius-small: 3px;
-  --radius-medium: 5px;
-  --radius-large: 9px;
+  --radius-medium: 4px;
+  --radius-large: 6px;
 
   --outline-hover: 0 0 0 3px var(--color-highlight);
 
