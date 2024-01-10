@@ -9,33 +9,16 @@
 }
 
 .cancelButton {
-  appearance: none;
-  padding: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
-  border-radius: 50%;
   position: absolute;
-  right: 2px;
+  right: var(--space-xxxsmall);
   top: 50%;
   transform: translateY(-50%);
-  padding: var(--space-xxxsmall);
-  width: var(--space-medium);
-  height: var(--space-medium);
   background: radial-gradient(var(--color-background) 50%, transparent);
   color: var(--color-text-ultra-light);
-  transition: var(--transition-in);
 }
 
 .cancelButton:focus,
 .cancelButton:hover,
 .cancelButton:active {
   color: var(--color-text-light);
-  transition: var(--transition-out);
-}
-
-.cancelButtonIcon {
-  display: block;
-  width: var(--space-small);
-  height: var(--space-small);
 }

@@ -1,0 +1,217 @@
+.root {
+  appearance: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  transition: var(--transition-out);
+  color: var(--color-text);
+  line-height: 1.1;
+}
+
+.root:hover,
+.root:active,
+.root:focus {
+  color: var(--color-text-dark);
+  transition: var(--transition-in);
+}
+
+/**
+ * Kind variation
+ */
+.primary {
+  color: var(--color-primary);
+}
+
+.primary:hover,
+.primary:active,
+.primary:focus {
+  color: var(--color-primary-dark);
+}
+
+.secondary {
+  color: var(--color-secondary);
+}
+
+.secondary:hover,
+.secondary:active,
+.secondary:focus {
+  color: var(--color-secondary-dark);
+}
+
+.danger {
+  color: var(--color-danger);
+}
+
+.danger:hover,
+.danger:active,
+.danger:focus {
+  color: var(--color-danger-dark);
+}
+
+.warning {
+  color: var(--color-warning);
+}
+
+.warning:hover,
+.warning:active,
+.warning:focus {
+  color: var(--color-warning-dark);
+}
+
+.info {
+  color: var(--color-info);
+}
+
+.info:hover,
+.info:active,
+.info:focus {
+  color: var(--color-info-dark);
+}
+
+.success {
+  color: var(--color-success);
+}
+
+.success:hover,
+.success:active,
+.success:focus {
+  color: var(--color-success-dark);
+}
+
+/**
+ * Solid Kind variation
+ */
+.solid {
+  background: var(--color-text-light);
+  color: var(--color-background);
+}
+
+.solid:hover,
+.solid:active,
+.solid:focus {
+  background: var(--color-text);
+  color: var(--color-background);
+}
+
+.solid--primary {
+  background: var(--color-primary);
+}
+
+.solid--primary:hover,
+.solid--primary:active,
+.solid--primary:focus {
+  background: var(--color-primary-dark);
+}
+
+.solid--secondary {
+  background: var(--color-secondary);
+}
+
+.solid--secondary:hover,
+.solid--secondary:active,
+.solid--secondary:focus {
+  background: var(--color-secondary-dark);
+}
+
+.solid--danger {
+  background: var(--color-danger);
+}
+
+.solid--danger:hover,
+.solid--danger:active,
+.solid--danger:focus {
+  background: var(--color-danger-dark);
+}
+
+.solid--warning {
+  background: var(--color-warning);
+}
+
+.solid--warning:hover,
+.solid--warning:active,
+.solid--warning:focus {
+  background: var(--color-warning-dark);
+}
+
+.solid--info {
+  background: var(--color-info);
+}
+
+.solid--info:hover,
+.solid--info:active,
+.solid--info:focus {
+  background: var(--color-info-dark);
+}
+
+.solid--success {
+  background: var(--color-success);
+}
+
+.solid--success:hover,
+.solid--success:active,
+.solid--success:focus {
+  background: var(--color-success-dark);
+}
+
+/**
+ * Outline variation
+ */
+.outline {
+  border: 1px solid currentColor;
+}
+
+/**
+ * Size variation
+ */
+.small {
+  font-size: var(--size-small);
+}
+
+.medium {
+  font-size: var(--size-medium);
+}
+
+.large {
+  font-size: var(--size-large);
+}
+
+/**
+ * Padding variation
+ */
+.padding--small {
+  padding: var(--space-xxxsmall);
+}
+
+.padding--medium {
+  padding: var(--space-xxsmall);
+}
+
+.padding--large {
+  padding: var(--space-xsmall);
+}
+
+/**
+ * Radius variation
+ */
+.radius--small {
+  border-radius: var(--radius-small);
+}
+
+.radius--medium {
+  border-radius: var(--radius-medium);
+}
+
+.radius--large {
+  border-radius: var(--radius-large);
+}
+
+.radius--circle {
+  border-radius: 50%;
+}
+
+/**
+ * Disabled state
+ */
+.root[disabled] {
+  filter: grayscale(1);
+}

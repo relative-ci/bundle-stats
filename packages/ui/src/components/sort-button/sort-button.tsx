@@ -3,6 +3,7 @@ import cx from 'classnames';
 
 import { SORT } from '../../constants';
 import type { SortAction } from '../../types';
+import { Button } from '../../ui/button';
 import { Icon } from '../../ui/icon';
 import { Tooltip } from '../../ui/tooltip';
 import css from './sort-button.module.css';
@@ -76,20 +77,19 @@ export const SortButton = (props: SortButtonProps & React.ComponentProps<'div'>)
     <div className={cx(css.root, css.interactive, className, isSorted && css.active)}>
       <Tooltip
         title={toggleAction.title}
-        as="button"
+        as={Button}
         type="button"
         onClick={getOrderOnClick(toggleAction)}
-        className={cx(css.button, css.toggle)}
+        className={css.toggle}
       >
         {children}
       </Tooltip>
       <Tooltip
         title={ascAction.title}
-        as="button"
+        as={Button}
         type="button"
         onClick={getOrderOnClick(ascAction)}
         className={cx(
-          css.button,
           css.direction,
           css.directionAsc,
           isSorted && sort.direction === SORT.ASC && css.directionActive,
@@ -99,11 +99,10 @@ export const SortButton = (props: SortButtonProps & React.ComponentProps<'div'>)
       </Tooltip>
       <Tooltip
         title={descAction.title}
-        as="button"
+        as={Button}
         type="button"
         onClick={getOrderOnClick(descAction)}
         className={cx(
-          css.button,
           css.direction,
           css.directionDesc,
           isSorted && sort.direction === SORT.DESC && css.directionActive,

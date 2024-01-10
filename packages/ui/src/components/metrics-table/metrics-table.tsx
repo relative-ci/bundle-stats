@@ -9,6 +9,7 @@ import {
   getMetricRunInfo,
 } from '@bundle-stats/utils';
 
+import { Button } from '../../ui/button';
 import { Icon } from '../../ui/icon';
 import { Table } from '../../ui/table';
 import { Stack } from '../../layout/stack';
@@ -274,21 +275,23 @@ export const MetricsTable = ({
               <Table.Tr>
                 <Table.Td className={css.showAllItems} colSpan={columnCount}>
                   {showAllItems ? (
-                    <button
+                    <Button
+                      padding="small"
+                      kind="primary"
                       onClick={() => setShowAllItems(false)}
                       type="button"
-                      className={css.showAllItemsButton}
                     >
                       {I18N.SHOW_LESS}
-                    </button>
+                    </Button>
                   ) : (
-                    <button
+                    <Button
+                      padding="small"
+                      kind="primary"
                       onClick={() => setShowAllItems(true)}
                       type="button"
-                      className={css.showAllItemsButton}
                     >
                       {I18N.SHOW_ALL}
-                    </button>
+                    </Button>
                   )}
                 </Table.Td>
               </Table.Tr>

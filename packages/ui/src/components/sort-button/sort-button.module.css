@@ -7,16 +7,6 @@
   position: relative;
 }
 
-.button {
-  appearance: none;
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  background: transparent;
-  transition: var(--transition-out);
-}
-
 .toggle {
   padding: 1px var(--space-xxxsmall);
   padding-right: calc(1px + var(--icon-dimension));

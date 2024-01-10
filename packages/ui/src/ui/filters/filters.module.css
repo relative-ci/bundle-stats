@@ -10,13 +10,11 @@
 }
 
 .filterCheckbox {
-  cursor: pointer;
 }
 
 .filterInput {
   flex: 0 0 auto;
   height: 1em;
-  cursor: pointer;
 }
 
 .filterLabel {
@@ -28,29 +26,12 @@
 }
 
 .filterOnlyButton {
-  padding: 0 var(--space-xxxsmall);
   display: none;
-  appearance: none;
-  border: none;
-  border-radius: var(--radius-small);
-  cursor: pointer;
   position: absolute;
   right: 2px;
   top: 50%;
   transform: translateY(-50%);
-  transition: var(--transition-in);
-  background: var(--color-info);
-  color: var(--color-background);
   font-size: var(--size-xsmall);
-  line-height: var(--line-height-header);
-}
-
-.filterOnlyButton:hover,
-.filterOnlyButton:active,
-.filterOnlyButton:focus {
-  transition: var(--transition-out);
-  background: var(--color-info-dark);
-  color: var(--color-background);
 }
 
 /** cover item text */
@@ -129,22 +110,6 @@
   color: var(--color-text-light);
 }
 
-.filterGroupSearchNotFoundClear {
-  outline: none;
-  appearance: none;
-  border: none;
-  background: none;
-  cursor: pointer;
-  white-space: nowrap;
-  color: var(--color-text-dark);
-}
-
-.filterGroupSearchNotFoundClear:hover,
-.filterGroupSearchNotFoundClear:active,
-.filterGroupSearchNotFoundClear:focus {
-  color: var(--color-text-dark);
-}
-
 .filterGroupItems {
   max-height: calc(10 * (var(--space-small) + 2 * var(--space-xxxsmall)));
   overflow: auto;
@@ -156,23 +121,6 @@
   padding-bottom: var(--space-xxxsmall);
   margin-bottom: calc(0px - var(--space-xxxsmall));
   border-top: 1px solid var(--color-outline);
-}
-
-/* clear / check all */
-.filterGroupButton {
-  margin-top: calc(0px - var(--space-xxxsmall));
-  margin-bottom: calc(0px - var(--space-xxxsmall));
-  margin-right: calc(0px - var(--space-xxxsmall));
-  padding: var(--space-xxxsmall) 0;
-  outline: none;
-  appearance: none;
-  border: none;
-  background: none;
-  cursor: pointer;
-  white-space: nowrap;
-  color: var(--color-primary);
-  font-size: var(--size-small);
-  line-height: 1;
 }
 
 .item {

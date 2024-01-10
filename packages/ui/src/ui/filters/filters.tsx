@@ -4,6 +4,7 @@ import cx from 'classnames';
 import type { FilterFieldsData, FilterGroupFieldData } from '../../types';
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
+import { Button } from '../button';
 import { Dropdown } from '../dropdown';
 import { InputSearch } from '../input-search';
 import * as I18N from './filters.i18n';
@@ -49,9 +50,16 @@ const Filter = (props: FilterProps) => {
       </FlexStack>
 
       {getOnOnlyClick && (
-        <button type="button" onClick={getOnOnlyClick(name)} className={css.filterOnlyButton}>
-          only
-        </button>
+        <Button
+          kind="info"
+          solid
+          size="small"
+          type="button"
+          onClick={getOnOnlyClick(name)}
+          className={css.filterOnlyButton}
+        >
+          {I18N.ONLY}
+        </Button>
       )}
     </Component>
   );
@@ -135,7 +143,7 @@ const FilterGroup = (props: FilterGroupProps) => {
                 <InputSearch
                   defaultValue={search}
                   onChange={setSearch}
-                  placeholder={I18N.CHUNKS_SEARCH}
+                  placeholder={I18N.GROUP_SEARCH}
                   debounceWait={0}
                 />
               </div>
@@ -143,15 +151,17 @@ const FilterGroup = (props: FilterGroupProps) => {
             <div className={css.filterGroupItems}>
               {filteredGroupItems.length === 0 && (
                 <Stack className={css.filterGroupSearchNotFound}>
-                  <p>{I18N.CHUNKS_NOT_FOUND}</p>
+                  <p>{I18N.GROUP_NOT_FOUND}</p>
                   <div>
-                    <button
+                    <Button
+                      size="small"
+                      kind="primary"
                       type="button"
                       onClick={() => setSearch('')}
                       className={css.filterGroupSearchNotFoundClear}
                     >
-                      {I18N.CHUNKS_SEARCH_CLEAR}
-                    </button>
+                      {I18N.GROUP_SEARCH_CLEAR}
+                    </Button>
                   </div>
                 </Stack>
               )}

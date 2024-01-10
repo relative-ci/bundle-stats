@@ -5,6 +5,7 @@ import cx from 'classnames';
 import I18N from '../../i18n';
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
+import { Button } from '../../ui/button';
 import { Icon } from '../../ui/icon';
 import { HoverCard } from '../../ui/hover-card';
 import css from './metrics-table-title.module.css';
@@ -19,14 +20,17 @@ export const MetricsTableTitle = (props) => {
         <span>{title}</span>
 
         {(popoverInfo || popoverHref) && (
-          <HoverCard label={<Icon glyph={Icon.ICONS.HELP} className={css.anchorIcon} />} anchorClassName={css.anchor}>
+          <HoverCard
+            label={<Icon glyph={Icon.ICONS.HELP} className={css.anchorIcon} />}
+            anchorClassName={css.anchor}
+          >
             <Stack space="xxxsmall">
               {popoverInfo && <p>{popoverInfo}</p>}
               {popoverHref && (
                 <p>
-                  <button type="button" onClick={() => window.open(popoverHref)} className={css.readMoreLink}>
+                  <Button kind="primary" type="button" onClick={() => window.open(popoverHref)}>
                     {I18N.READ_MORE}
-                  </button>
+                  </Button>
                 </p>
               )}
             </Stack>
