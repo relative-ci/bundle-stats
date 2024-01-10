@@ -6,6 +6,7 @@ import { METRIC_TYPE_CONFIGS, MetricRunInfo, getMetricRunInfo } from '@bundle-st
 import { Box } from '../../layout/box';
 import { Stack } from '../../layout/stack';
 import { FileName } from '../../ui/file-name';
+import { Button } from '../../ui/button';
 import { Icon } from '../../ui/icon';
 import { Table } from '../../ui/table';
 import { RunInfo } from '../run-info';
@@ -94,14 +95,15 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
             size="large"
           />
         </Stack>
-        <button
+        <Button
+          radius="circle"
           type="button"
           onClick={onClose}
           aria-label={I18N.CLOSE_TITLE}
           className={css.headerClose}
         >
           <Icon glyph={Icon.ICONS.CLOSE} size="large" />
-        </button>
+        </Button>
       </Box>
       <Box padding="medium" as="main" className={css.contentWrapper}>
         <Stack space="small" className={css.content}>

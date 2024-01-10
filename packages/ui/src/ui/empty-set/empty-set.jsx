@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Stack } from '../../layout/stack';
 import I18N from '../../i18n';
+import { Stack } from '../../layout/stack';
+import { Button } from '../button';
 import css from './empty-set.module.css';
 
 export const EmptySet = (props) => {
@@ -12,16 +13,16 @@ export const EmptySet = (props) => {
   const actions = [
     ...(handleResetFilters
       ? [
-          <button className={css.action} type="button" onClick={handleResetFilters}>
+          <Button kind="primary" type="button" onClick={handleResetFilters} className={css.action}>
             {I18N.RESET_FILTERS}
-          </button>,
+          </Button>,
         ]
       : []),
     ...(handleViewAll
       ? [
-          <button className={css.action} type="button" onClick={handleViewAll}>
+          <Button kind="primary" type="button" onClick={handleViewAll} className={css.action}>
             {I18N.VIEW_ALL}
-          </button>,
+          </Button>,
         ]
       : []),
   ];

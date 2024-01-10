@@ -6,6 +6,7 @@ import config from '../../config.json';
 import I18N from '../../i18n';
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
+import { Button } from '../../ui/button';
 import { Icon } from '../../ui/icon';
 import { HoverCard } from '../../ui/hover-card';
 import css from './total-size-type-title.module.css';
@@ -17,13 +18,14 @@ export const TotalSizeTypeTitle = ({ className }) => (
       <Stack space="xxxsmall">
         <p>{I18N.ASSET_TOTALS_INFO}</p>
         <p>
-          <button
+          <Button
+            kind="primary"
             type="button"
             onClick={() => window.open(config.documentation.assets)}
             className={css.readMoreLink}
           >
             {I18N.READ_MORE}
-          </button>
+          </Button>
         </p>
       </Stack>
     </HoverCard>

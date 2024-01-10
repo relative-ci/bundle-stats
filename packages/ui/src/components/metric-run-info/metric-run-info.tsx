@@ -3,6 +3,7 @@ import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { Stack } from '../../layout/stack';
 import { FlexStack } from '../../layout/flex-stack';
+import { Button } from '../../ui/button';
 import { Icon } from '../../ui/icon';
 import { RunInfo, RunInfoProps } from '../run-info';
 import css from './metric-run-info.module.css';
@@ -28,12 +29,12 @@ const MetricHoverCard = ({ title, description, url }: MetricInfoProps) => {
         <p className={css.metricHoverCardDescription}>{description}</p>
         {url && (
           <div>
-            <button type="button" onClick={onClick} className={css.readMoreLink}>
+            <Button kind="primary" type="button" onClick={onClick} className={css.readMoreLink}>
               <FlexStack alignItems="center" space="xxxsmall">
                 <span>Read more</span>
                 <Icon glyph={Icon.ICONS.EXTERNAL_LINK} size="small" />
               </FlexStack>
-            </button>
+            </Button>
           </div>
         )}
       </Stack>

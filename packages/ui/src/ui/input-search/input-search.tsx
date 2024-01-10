@@ -3,6 +3,7 @@ import cx from 'classnames';
 import debounce from 'lodash/debounce';
 import noop from 'lodash/noop';
 
+import { Button } from '../button';
 import { Icon } from '../icon';
 import { Input } from '../input';
 
@@ -68,14 +69,16 @@ export const InputSearch = (
         autoComplete="off"
       />
       {value && (
-        <button
-          className={css.cancelButton}
+        <Button
+          radius="circle"
+          padding="small"
           type="button"
           onClick={clearButtonOnClick}
           aria-label="Clear search"
+          className={css.cancelButton}
         >
           <Icon className={css.cancelButtonIcon} glyph={Icon.ICONS.CANCEL} />
-        </button>
+        </Button>
       )}
     </div>
   );
