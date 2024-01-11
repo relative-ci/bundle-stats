@@ -1,8 +1,6 @@
 .root {
   --icon-dimension: 13px;
   display: inline-block;
-  margin: calc(0px - var(--space-xxxsmall));
-  margin-right: calc(0px - 1px - var(--icon-dimension));
   border-radius: var(--radius-small);
   position: relative;
 }
@@ -56,6 +54,11 @@
 
 .directionDesc .directionIcon {
   transform: translateY(-5px);
+}
+
+.interactive {
+  margin: calc(0px - var(--space-xxxsmall));
+  margin-right: calc(0px - 1px - var(--icon-dimension));
 }
 
 .interactive:hover,
