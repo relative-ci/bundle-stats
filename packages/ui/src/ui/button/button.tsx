@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+import { Button as ButtonBaseComponent } from 'ariakit/button';
 
 import css from './button.module.css';
 
@@ -22,22 +23,20 @@ type Size = (typeof SIZE)[keyof typeof SIZE];
 type Kind = (typeof KIND)[keyof typeof KIND];
 
 interface ButtonProps {
-  as?: React.ElementType;
   outline?: boolean;
   solid?: boolean;
-  kind?: Kind;
+  kind?: Kind | 'default';
   size?: Size;
   radius?: Size | 'circle' | 'none';
   padding?: Size | 'none';
 }
 
-export const Button = (props: ButtonProps & React.ComponentProps<'button'>) => {
+export const Button = (props: ButtonProps & React.ComponentProps<typeof ButtonBaseComponent>) => {
   const {
     className = '',
-    as: Component = 'button',
     outline = false,
     solid = false,
-    kind = '',
+    kind = 'default',
     size = 'medium',
     radius = '',
     padding = '',
@@ -52,7 +51,9 @@ export const Button = (props: ButtonProps & React.ComponentProps<'button'>) => {
     css.root,
     css[size],
     kind && css[kind],
+
     outline && css.outline,
+    outline && css[`outline--${kind}`],
 
     solid && css.solid,
     solid && css[`solid--${kind}`],
@@ -64,7 +65,7 @@ export const Button = (props: ButtonProps & React.ComponentProps<'button'>) => {
     className,
   );
 
-  return <Component {...restProps} className={rootClassName} />;
+  return <ButtonBaseComponent {...restProps} className={rootClassName} />;
 };
 
 Button.SIZE = SIZE;

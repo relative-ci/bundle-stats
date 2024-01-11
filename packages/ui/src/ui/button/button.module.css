@@ -4,14 +4,14 @@
   border: 0;
   background: none;
   transition: var(--transition-out);
-  color: var(--color-text);
-  line-height: 1.1;
+  color: var(--color-text-ultra-light);
+  line-height: 1;
 }
 
 .root:hover,
 .root:active,
 .root:focus {
-  color: var(--color-text-dark);
+  color: var(--color-text-light);
   transition: var(--transition-in);
 }
 
@@ -89,6 +89,7 @@
 .solid:hover,
 .solid:active,
 .solid:focus {
+  box-shadow: var(--outline-hover);
   background: var(--color-text);
   color: var(--color-background);
 }
@@ -157,7 +158,74 @@
  * Outline variation
  */
 .outline {
-  border: 1px solid currentColor;
+  border: 1px solid var(--color-outline);
+}
+
+.outline:hover,
+.outline:active,
+.outline:focus {
+  box-shadow: var(--outline-hover);
+  border-color: var(--color-outline-dark);
+}
+
+.outline--primary {
+  border-color: var(--color-outline-primary);
+}
+
+.outline--primary:hover,
+.outline--primary:active,
+.outline--primary:focus {
+  border-color: var(--color-outline-primary-dark);
+}
+
+.outline--secondary {
+  border-color: var(--color-outline-secondary);
+}
+
+.outline--secondary:hover,
+.outline--secondary:active,
+.outline--secondary:focus {
+  border-color: var(--color-outline-secondary-dark);
+}
+
+.outline--danger {
+  border-color: var(--color-outline-danger);
+}
+
+.outline--danger:hover,
+.outline--danger:active,
+.outline--danger:focus {
+  border-color: var(--color-outline-danger-dark);
+}
+
+.outline--warning {
+  border-color: var(--color-outline-warning);
+}
+
+.outline--warning:hover,
+.outline--warning:active,
+.outline--warning:focus {
+  border-color: var(--color-outline-warning-dark);
+}
+
+.outline--info {
+  border-color: var(--color-outline-info);
+}
+
+.outline--info:hover,
+.outline--info:active,
+.outline--info:focus {
+  border-color: var(--color-outline-info-dark);
+}
+
+.outline--success {
+  border-color: var(--color-outline-success);
+}
+
+.outline--success:hover,
+.outline--success:active,
+.outline--success:focus {
+  border-color: var(--color-outline-success-dark);
 }
 
 /**
@@ -179,15 +247,15 @@
  * Padding variation
  */
 .padding--small {
-  padding: var(--space-xxxsmall);
-}
-
-.padding--medium {
   padding: var(--space-xxsmall);
 }
 
+.padding--medium {
+  padding:  var(--space-xsmall);
+}
+
 .padding--large {
-  padding: var(--space-xsmall);
+  padding: var(--space-small);
 }
 
 /**
