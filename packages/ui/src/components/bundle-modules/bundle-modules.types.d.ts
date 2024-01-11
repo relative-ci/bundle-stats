@@ -13,7 +13,7 @@ export type ReportMetricModuleRow = {
 } & ReportMetricRun &
   Module;
 
-interface Job {
+export interface Job {
   label: string;
   internalBuildNumber: number;
   meta?: {

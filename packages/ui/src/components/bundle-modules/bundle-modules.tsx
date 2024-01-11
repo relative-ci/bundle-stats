@@ -18,9 +18,12 @@ import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
 import { ModuleInfo } from '../module-info';
 import { generateFilterFieldsData } from './bundle-modules.utils';
+import { ModuleMetric } from './bundle-modules.constants';
 import type { Chunk, Job, ReportMetricModuleRow } from './bundle-modules.types';
 import * as I18N_MODULES from './bundle-modules.i18n';
 import css from './bundle-modules.module.css';
+import { Box } from '../../layout';
+import { Button } from '../../ui';
 
 interface RowHeaderProps {
   row: ReportMetricModuleRow;
@@ -68,6 +71,9 @@ interface BundleModulesProps extends React.ComponentProps<'div'> {
   entryId?: string;
   hideEntryInfo: () => void;
 
+  moduleMetric: ModuleMetric;
+  setModuleMetric: (newValue: ModuleMetric) => void;
+
   customComponentLink: React.ElementType;
 }
 
@@ -89,6 +95,8 @@ export const BundleModules = (props: BundleModulesProps) => {
     updateSearch,
     entryId,
     hideEntryInfo,
+    moduleMetric,
+    setModuleMetric,
     customComponentLink: CustomComponentLink = ComponentLink,
   } = props;
 
@@ -172,6 +180,28 @@ export const BundleModules = (props: BundleModulesProps) => {
             />
           </FlexStack>
         </Toolbar>
+        <Box padding={['xsmall', 'small']} className={css.metricSelector}>
+          <FlexStack space="xxsmall" as="nav">
+            <Button
+              outline
+              kind={moduleMetric === ModuleMetric.SIZE ? 'primary' : 'default'}
+              size="small"
+              type="button"
+              onClick={() => setModuleMetric(ModuleMetric.SIZE)}
+            >
+              Module size
+            </Button>
+            <Button
+              outline
+              kind={moduleMetric === ModuleMetric.TOTAL_SIZE ? 'primary' : 'default'}
+              size="small"
+              type="button"
+              onClick={() => setModuleMetric(ModuleMetric.TOTAL_SIZE)}
+            >
+              Total size
+            </Button>
+          </FlexStack>
+        </Box>
         <MetricsTable
           className={css.table}
           items={items}
