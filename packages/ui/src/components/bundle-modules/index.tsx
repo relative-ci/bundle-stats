@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 // @ts-ignore
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
@@ -14,6 +14,7 @@ import {
   generateFilters,
   getCustomSort,
 } from './bundle-modules.utils';
+import { ModuleMetric } from './bundle-modules.constants';
 import * as types from './bundle-modules.types';
 
 interface BundleModulesProps
@@ -45,6 +46,8 @@ interface BundleModulesProps
 
 export const BundleModules = (props: BundleModulesProps) => {
   const { jobs, filters, search, setState, sortBy, direction, ...restProps } = props;
+
+  const [moduleMetric, setModuleMetric] = useState<ModuleMetric>(ModuleMetric.SIZE);
 
   const { chunks, chunkIds } = useMemo(() => extractChunkData(jobs), [jobs]);
 
@@ -97,6 +100,8 @@ export const BundleModules = (props: BundleModulesProps) => {
       allItems={rows}
       totalRowCount={totalRowCount}
       hideEntryInfo={hideEntryInfo}
+      moduleMetric={moduleMetric}
+      setModuleMetric={setModuleMetric}
     />
   );
 };
