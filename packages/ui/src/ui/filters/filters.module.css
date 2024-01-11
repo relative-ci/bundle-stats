@@ -31,6 +31,7 @@
   right: 2px;
   top: 50%;
   transform: translateY(-50%);
+  padding: var(--space-xxxsmall);
   font-size: var(--size-xsmall);
 }
 
