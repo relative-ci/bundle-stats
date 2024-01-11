@@ -28,8 +28,8 @@
 
   /*
    * Color scheme:
-   * https://coolors.co/287acc-da444e-55b950-f6e179-192339
-   * http://mcg.mbitson.com/#!?mcgpalette0=%23da444e&mcgpalette1=%2355b950&mcgpalette2=%23f3d966&mcgpalette3=%23353138&mcgpalette4=%23287acc&themename=mcgtheme
+   * https://coolors.co/287acc-da444e-55b950-efcc1a-192339
+   * http://mcg.mbitson.com/#!?mcgpalette0=%23da444e&mcgpalette1=%2355b950&mcgpalette2=%23efcc1a&mcgpalette3=%23353138&mcgpalette4=%23287acc&themename=mcgtheme
    * https://hihayk.github.io/scale/#4/5/50/90/-51/0/0/14/353138/53/49/56/white
    */
   --color-gray-25: #f9f9fa;
@@ -104,16 +104,16 @@
   --color-green-ultra-dark: var(--color-green-900);
 
   --color-yellow-25: #fffdf2;
-  --color-yellow-50: #fefaed;
-  --color-yellow-100: #fbf4d1;
-  --color-yellow-200: #f9ecb3;
-  --color-yellow-300: #f7e494;
-  --color-yellow-400: #f5df7d;
-  --color-yellow-500: #f3d966;
-  --color-yellow-600: #f1d55e;
-  --color-yellow-700: #efcf53;
-  --color-yellow-800: #edca49;
-  --color-yellow-900: #eac038;
+  --color-yellow-50: #fdf9e4;
+  --color-yellow-100: #faf0ba;
+  --color-yellow-200: #f7e68d;
+  --color-yellow-300: #f4db5f;
+  --color-yellow-400: #f1d43c;
+  --color-yellow-500: #efcc1a;
+  --color-yellow-600: #edc717;
+  --color-yellow-700: #ebc013;
+  --color-yellow-800: #e8b90f;
+  --color-yellow-900: #e4ad08;
 
   --color-yellow-light-background: var(--color-yellow-25);
   --color-yellow-ultra-light: var(--color-yellow-100);
@@ -189,8 +189,8 @@
   --shadow-layer: 0 0 var(--space-xxxsmall) var(--color-shadow);
   --shadow-layer-high: 0 0 var(--space-xxsmall) var(--color-shadow);
 
-  --radius-small: 3px;
-  --radius-medium: 4px;
+  --radius-small: 4px;
+  --radius-medium: 5px;
   --radius-large: 6px;
 
   --outline-hover: 0 0 0 3px var(--color-highlight);
