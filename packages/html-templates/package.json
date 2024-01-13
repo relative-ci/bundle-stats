@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/html-templates",
-  "version": "4.8.4",
+  "version": "4.9.0",
   "description": "HTML templates for report generation.",
   "main": "index.js",
   "types": "types.d.ts",
@@ -30,7 +30,7 @@
     "@babel/core": "7.23.7",
     "@babel/preset-env": "7.23.8",
     "@babel/preset-react": "7.23.3",
-    "@bundle-stats/ui": "^4.8.4",
+    "@bundle-stats/ui": "4.9.0",
     "@bundle-stats/utils": "^4.8.4",
     "@storybook/addon-essentials": "7.6.7",
     "@storybook/preset-scss": "^1.0.3",
