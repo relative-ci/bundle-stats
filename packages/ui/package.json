@@ -40,7 +40,6 @@
     "@babel/preset-react": "7.23.3",
     "@babel/preset-typescript": "7.23.3",
     "@storybook/addon-essentials": "7.6.8",
-    "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "7.6.8",
     "@storybook/react-webpack5": "7.6.8",
     "@types/react": "18.2.48",
