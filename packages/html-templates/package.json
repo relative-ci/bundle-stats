@@ -33,7 +33,6 @@
     "@bundle-stats/ui": "4.9.0",
     "@bundle-stats/utils": "^4.8.4",
     "@storybook/addon-essentials": "7.6.8",
-    "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "7.6.8",
     "@storybook/react-webpack5": "7.6.8",
     "autoprefixer": "10.4.16",
