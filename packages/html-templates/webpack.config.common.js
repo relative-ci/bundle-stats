@@ -37,6 +37,7 @@ module.exports = merge(
             /bundle-stats\/ui/,
             path.join(settings.rootDir, '../ui'), // required for linked packages
             /storybook/,
+            /@nivo/,
           ],
           options: {
             cacheDirectory: isDevelopment,
