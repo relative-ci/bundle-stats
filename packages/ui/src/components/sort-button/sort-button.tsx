@@ -75,18 +75,10 @@ export const SortButton = (props: SortButtonProps & React.ComponentProps<'div'>)
 
   return (
     <div className={cx(css.root, css.interactive, className, isSorted && css.active)}>
-      <Tooltip
-        title={toggleAction.title}
-        as={Button}
-        type="button"
-        onClick={getOrderOnClick(toggleAction)}
-        className={css.toggle}
-      >
-        {children}
-      </Tooltip>
-      <Tooltip
-        title={ascAction.title}
-        as={Button}
+      <Button type="button" onClick={getOrderOnClick(toggleAction)} className={css.toggle}>
+        <Tooltip title={toggleAction.title}>{children}</Tooltip>
+      </Button>
+      <Button
         type="button"
         onClick={getOrderOnClick(ascAction)}
         className={cx(
@@ -95,11 +87,11 @@ export const SortButton = (props: SortButtonProps & React.ComponentProps<'div'>)
           isSorted && sort.direction === SORT.ASC && css.directionActive,
         )}
       >
-        <Icon glyph={Icon.ICONS.CHEVRON_UP} size="small" className={css.directionIcon} />
-      </Tooltip>
-      <Tooltip
-        title={descAction.title}
-        as={Button}
+        <Tooltip title={ascAction.title}>
+          <Icon glyph={Icon.ICONS.CHEVRON_UP} size="small" className={css.directionIcon} />
+        </Tooltip>
+      </Button>
+      <Button
         type="button"
         onClick={getOrderOnClick(descAction)}
         className={cx(
@@ -108,8 +100,10 @@ export const SortButton = (props: SortButtonProps & React.ComponentProps<'div'>)
           isSorted && sort.direction === SORT.DESC && css.directionActive,
         )}
       >
-        <Icon glyph={Icon.ICONS.CHEVRON_DOWN} size="small" className={css.directionIcon} />
-      </Tooltip>
+        <Tooltip title={descAction.title}>
+          <Icon glyph={Icon.ICONS.CHEVRON_DOWN} size="small" className={css.directionIcon} />
+        </Tooltip>
+      </Button>
     </div>
   );
 };
