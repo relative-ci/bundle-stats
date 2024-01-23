@@ -39,18 +39,18 @@ declare namespace BundleStatsWebpackPlugin {
     builtAt?: Boolean;
   }
 
-  interface Options extends ReportOptions {
+  interface Options extends Omit<ReportOptions, 'baselineFilepath', 'outDir'> {
     /**
-     * Compare the current build stats with the saved baseline
-     *
-     */
-    baseline?: boolean;
-
-    /**
-     * Custom baseline file path
-     *  Default: node_modules/.cache/bundle-stats/baseline.json
+     * Custom baseline file path relative to webpack output directory (output.path)
+     * Default: `node_modules/.cache/bundle-stats/baseline.json`
      */
     baselineFilepath?: string;
+
+    /**
+     * Output directory relative to webpack output directory (output.path)
+     * Default: `''`.
+     */
+    outDir?: string;
 
     /**
      * webpack stats options
