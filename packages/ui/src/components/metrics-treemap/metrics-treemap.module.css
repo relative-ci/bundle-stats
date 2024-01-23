@@ -1,0 +1,151 @@
+.root {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: var(--color-background);
+}
+
+.canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  fill: var(--color-text);
+  font-family: var(--font-family);
+}
+
+/** Tile overlay fill background transition */
+.root {
+  transition: var(--ui-transition-out);
+  transition-property: opacity;
+}
+
+.tileOverlay {
+  fill: var(--color-outline);
+  transition: var(--ui-transition-out);
+  transition-property: opacity;
+  opacity: 0.4;
+}
+
+.root .tile:hover .tileOverlay {
+  transition: var(--ui-transition-in);
+  opacity: 0.8;
+}
+
+/** Tile content */
+.tileContent {
+  appearance: none;
+  border: 0;
+  border-radius: none;
+  padding: 0;
+  background: none;
+
+  width: 100%;
+  height: 100%;
+  padding: var(--space-xxsmall) var(--space-small);
+  display: flex;
+  align-items: center;
+  font-family: var(--font-family-fixed);
+  font-size: var(--size-small);
+  line-height: var(--line-height-heading);
+  text-align: left;
+}
+
+.tileContentWrapper {
+  width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-flow: column;
+  gap: 4px;
+}
+
+.tileContentLabel {
+  margin-right: calc(0px - var(--space-xxsmall)); /* take more space if necessary */
+  margin-bottom: calc(0px - 2px);
+  flex: 1 1 auto;
+  max-width: calc(100% + var(--space-xxsmall));  /* take more space if necessary */
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.tileContentValue {
+  flex: 0 0 auto;
+  max-width: calc(100% + var(--space-xxsmall));
+  margin-right: calc(0px - var(--space-xxsmall)); /* take more space if necessary */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tileContentMetric {
+  font-weight: bold;
+}
+
+.tileContentDelta {
+  margin-left: var(--space-xxxsmall);
+}
+
+/** Tile size variation */
+.tileSmall .tileContent {
+  font-size: var(--size-xsmall);
+}
+
+.tileSmall .tileContentLabel {
+  margin-top: 0;
+}
+
+/** Tile diff variation */
+.tile-NO_CHANGE .tileContent {
+  color: var(--color-text-light);
+}
+
+.tile-HIGH_NEGATIVE .tileOverlay {
+  fill: var(--color-red-100);
+}
+
+.tile-NEGATIVE .tileOverlay {
+  fill: var(--color-red-50);
+}
+
+.tile-LOW_NEGATIVE .tileOverlay {
+  fill: var(--color-red-25);
+}
+
+.tile-LOW_POSITIVE .tileOverlay {
+  fill: var(--color-green-25);
+}
+
+.tile-POSITIVE .tileOverlay {
+  fill: var(--color-green-50);
+}
+
+.tile-HIGH_POSITIVE .tileOverlay {
+  fill: var(--color-green-100);
+}
+
+
+/** empty message */
+.emptyMessage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emptyMessageWrapper {
+  max-width: 100%;
+  text-align: center;
+}
+
+/** tooltip content */
+.tooltip {
+  padding: var(--space-small);
+  min-width: 280px;
+}
+
+.tooltipContentTitle {
+  font-size: var(--size-medium);
+}
