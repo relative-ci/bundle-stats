@@ -1,0 +1,184 @@
+.root {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: var(--color-background);
+}
+
+.canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  fill: var(--color-text);
+  font-family: var(--font-family);
+  background: var(--color-outline);
+}
+
+/** Tile overlay fill background transition */
+.root {
+  transition: var(--ui-transition-out);
+  transition-property: opacity;
+}
+
+.leafBackground {
+  fill: var(--color-background);
+}
+
+.leafBackdrop {
+  fill: var(--color-background);
+  transition: var(--ui-transition-out);
+  transition-property: opacity;
+  opacity: 0.2;
+}
+
+.leaf:hover .leafBackdrop {
+  transition: var(--ui-transition-in);
+  opacity: 0.5;
+}
+
+/** Leaf wrapper button */
+.leafAction {
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-family-fixed);
+  font-size: var(--size-small);
+  line-height: var(--line-height-heading);
+  text-align: left;
+}
+
+.leafContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: var(--space-xxsmall) var(--space-xxsmall);
+  gap: var(--space-xxsmall);
+  line-height: var(--line-height-heading);
+}
+
+/** Align label to other elements on the first column leafs */
+.leafWrapper[x="0"] .leafContent {
+  padding-left: var(--space-small);
+}
+
+.leadContentLabel {
+  flex: 0 1 auto;
+  width: 100%;
+  min-width: 0;
+  max-height: calc(2em * var(--line-height-heading));
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.leadContentValue {
+  flex: 0 0 auto;
+  max-width: calc(100% + var(--space-xxsmall));
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.leadContentMetric {
+  font-weight: bold;
+}
+
+.leadContentDelta {
+  margin-left: var(--space-xxxsmall);
+}
+
+/** Tile size variation */
+.leafSmall .leafContent {
+  padding: var(--space-xxxsmall) var(--space-xxsmall);
+  gap: 0;
+  font-size: var(--size-xsmall);
+}
+
+.leafSmall .leadContentLabel {
+  margin-top: 0;
+}
+
+/** Tile diff variation */
+.leaf-NO_CHANGE .leafBackdrop {
+  fill: transparent;
+}
+
+.leaf-NO_CHANGE .leafAction {
+  color: var(--color-text-light);
+}
+
+.leaf-HIGH_NEGATIVE .leafBackdrop {
+  fill: var(--color-red-100);
+}
+
+.leaf-NEGATIVE .leafBackdrop {
+  fill: var(--color-red-50);
+}
+
+.leaf-LOW_NEGATIVE .leafBackdrop {
+  fill: var(--color-red-25);
+}
+
+.leaf-LOW_POSITIVE .leafBackdrop {
+  fill: var(--color-green-25);
+}
+
+.leaf-POSITIVE .leafBackdrop {
+  fill: var(--color-green-50);
+}
+
+.leaf-HIGH_POSITIVE .leafBackdrop {
+  fill: var(--color-green-100);
+}
+
+/** empty message */
+.emptyMessage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emptyMessageWrapper {
+  max-width: 100%;
+  text-align: center;
+}
+
+/** tooltip */
+.leafContentTooltipAnchor {
+  width: 100%;
+  height: 100%;
+}
+
+.tooltip {
+  z-index: var(--layer-xxhigh);
+  padding: var(--space-xsmall) var(--space-small);
+  border-radius: var(--radius-medium);
+  width: calc(100vw - 2 * var(--space-small));
+  max-width: 340px;
+  outline: none;
+  filter: drop-shadow(var(--shadow-layer-high));
+  will-change: filter;
+  background: var(--color-light);
+  font-size: var(--size-small);
+}
+
+.leafTooltipArrow svg {
+  display: block;
+  fill: var(--color-background) !important;
+}
+
+.leafTooltipContentTitle {
+  font-size: var(--size-medium);
+}
