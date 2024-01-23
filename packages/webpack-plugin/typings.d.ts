@@ -39,12 +39,18 @@ declare namespace BundleStatsWebpackPlugin {
     builtAt?: Boolean;
   }
 
-  interface Options extends Omit<ReportOptions, 'baselineFilepath'> {
+  interface Options extends Omit<ReportOptions, 'baselineFilepath', 'outDir'> {
     /**
-     * Custom baseline file path relative to webpack output directory
-     * Default: node_modules/.cache/bundle-stats/baseline.json
+     * Custom baseline file path relative to webpack output directory (output.path)
+     * Default: `node_modules/.cache/bundle-stats/baseline.json`
      */
     baselineFilepath?: string;
+
+    /**
+     * Output directory relative to webpack output directory (output.path)
+     * Default: `''`.
+     */
+    outDir?: string;
 
     /**
      * webpack stats options
