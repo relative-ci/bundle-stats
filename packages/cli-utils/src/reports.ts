@@ -115,10 +115,10 @@ export const generateReports = async (
       baselineStats = filter(baselineStatsData);
 
       if (!options.silent) {
-        logger.info(`${TEXT.BASELINE_READING} ${baselinePath}`);
+        logger.info(`${TEXT.BASELINE_READING} ${baselinePath}.`);
       }
     } catch (err) {
-      logger.warn(TEXT.BASELINE_MISSING);
+      logger.warn(`${TEXT.BASELINE_READING} ${baselinePath}. ${TEXT.BASELINE_MISSING}`);
     }
   }
 
@@ -150,6 +150,10 @@ export const generateReports = async (
       source: JSON.stringify(data),
       filepath: baselineAbsolutePath,
     };
+
+    if (!options.silent) {
+      logger.info(`${TEXT.BASELINE_WRITING} ${baselinePath}`);
+    }
   }
 
   const info = getReportInfo(report);

@@ -34,7 +34,7 @@ export const getBaselineRelativePath = (
   filepath = '',
 ): string => {
   const absoluteFilepath = getBaselinePath(outputPath, outputDir, filepath);
-  return path.relative(path.join(outputPath, outputDir), absoluteFilepath);
+  return path.relative(outputPath, absoluteFilepath);
 };
 
 export async function readBaseline(baselineFilepath: string): Promise<object> {
