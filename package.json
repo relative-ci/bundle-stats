@@ -19,7 +19,7 @@
     "node": ">= 14.0"
   },
   "devDependencies": {
-    "@babel/core": "7.23.7",
+    "@babel/core": "7.23.9",
     "@babel/eslint-parser": "7.23.3",
     "@tsconfig/node14": "14.1.0",
     "@types/react": "18.2.48",
