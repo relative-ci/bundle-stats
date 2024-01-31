@@ -54,7 +54,7 @@
     "lodash": "4.17.21",
     "mini-css-extract-plugin": "2.7.7",
     "postcss": "8.4.33",
-    "postcss-loader": "8.0.0",
+    "postcss-loader": "8.1.0",
     "preact": "10.19.3",
     "prop-types": "15.8.1",
     "react": "18.2.0",
