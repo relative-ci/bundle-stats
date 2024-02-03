@@ -8,8 +8,10 @@ interface FilterFieldData {
   defaultValue: boolean;
   disabled?: boolean;
 }
+
 type FilterGroupFieldData = {
   label: string;
   children: Array<{ key: string } & FilterFieldData>;
 };
+
 type FilterFieldsData = Record<string, FilterFieldData | FilterGroupFieldData>;

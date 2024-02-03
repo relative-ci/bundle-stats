@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { PACKAGE_FILTERS } from '@bundle-stats/utils';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack/compare';
@@ -6,6 +6,7 @@ import * as webpack from '@bundle-stats/utils/lib-esm/webpack/compare';
 import { useRowsFilter } from '../../hooks/rows-filter';
 import { useRowsSort } from '../../hooks/rows-sort';
 import { useSearchParams } from '../../hooks/search-params';
+import { useShowEntry } from '../../hooks/show-entry';
 import { BundlePackages as BundlePackagesComponent } from './bundle-packages';
 import { getDuplicatePackages, getAddRowDuplicateFlag, getRowFilter, getCustomSort } from './bundle-packages.utils';
 
@@ -54,9 +55,7 @@ export const BundlePackages = (props) => {
     getCustomSort,
   });
 
-  const hideEntryInfo = useCallback(() => {
-    setState({ entryId: '' });
-  }, [setState]);
+  const { hideEntryInfo, showEntryInfo } = useShowEntry({ setState });
 
   return (
     <BundlePackagesComponent
@@ -67,6 +66,7 @@ export const BundlePackages = (props) => {
       allItems={rows}
       totalRowCount={totalRowCount}
       hideEntryInfo={hideEntryInfo}
+      showEntryInfo={showEntryInfo}
     />
   );
 };
