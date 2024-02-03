@@ -6,14 +6,12 @@ import { COMPONENT } from '@bundle-stats/utils';
 
 import { URLS } from '../constants';
 import { BundleAssets } from '../components/bundle-assets';
-import { BundleAssetsTotalsChartBars } from '../components/bundle-assets-totals-chart-bars';
 import { BundleAssetsTotals } from '../components/bundle-assets-totals';
 import { BundleModules } from '../components/bundle-modules';
 import { BundlePackages } from '../components/bundle-packages';
 import { Insights } from '../components/insights';
 import { MetricsTableTitle } from '../components';
 import { Summary } from '../components/summary';
-import { TotalSizeTypeTitle } from '../components/total-size-type-title';
 import { Box } from '../layout/box';
 import { Footer } from '../layout/footer';
 import { Stack } from '../layout/stack';
@@ -99,11 +97,9 @@ const OverviewContent = () => {
         </Container>
       )}
       <Container>
-        <Stack space="small">
-          <TotalSizeTypeTitle />
-          <BundleAssetsTotalsChartBars jobs={jobs} />
-          <BundleAssetsTotals jobs={jobs} outline />
-        </Stack>
+        <Box outline>
+          <BundleAssetsTotals jobs={jobs} />
+        </Box>
       </Container>
     </Stack>
   );
