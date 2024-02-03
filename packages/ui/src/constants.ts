@@ -40,3 +40,8 @@ export const SORT = {
   ASC: 'asc',
   DESC: 'desc',
 };
+
+export enum MetricsDisplayType {
+  TABLE = 'table',
+  TREEMAP = 'treemap',
+}

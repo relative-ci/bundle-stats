@@ -2,10 +2,11 @@ import React, { useCallback, useMemo } from 'react';
 import cx from 'classnames';
 import { SECTIONS, COMPONENT } from '@bundle-stats/utils';
 
-import type { SortAction } from '../../types';
+import { SortAction } from '../../types';
 import config from '../../config.json';
 import I18N from '../../i18n';
 import { Box } from '../../layout/box';
+import { MetricsDisplayType } from '../../constants';
 import { FlexStack } from '../../layout/flex-stack';
 import { Button } from '../../ui/button';
 import { EmptySet } from '../../ui/empty-set';
@@ -17,7 +18,9 @@ import { Toolbar } from '../../ui/toolbar';
 import { Tooltip } from '../../ui/tooltip';
 import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
+import { MetricsTreemap } from '../metrics-treemap';
 import { MetricsTableOptions } from '../metrics-table-options';
+import { MetricsDisplaySelector } from '../metrics-display-selector';
 import { MetricsTableTitle } from '../metrics-table-title';
 import { ModuleInfo } from '../module-info';
 import { generateFilterFieldsData } from './bundle-modules.utils';
@@ -25,6 +28,7 @@ import { ModuleMetric } from './bundle-modules.constants';
 import type { Chunk, Job, ReportMetricModuleRow } from './bundle-modules.types';
 import * as I18N_MODULES from './bundle-modules.i18n';
 import css from './bundle-modules.module.css';
+import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
 
 interface RowHeaderProps {
   row: ReportMetricModuleRow;
@@ -74,6 +78,7 @@ interface BundleModulesProps extends React.ComponentProps<'div'> {
 
   entryId?: string;
   hideEntryInfo: () => void;
+  showEntryInfo: (entryId: string) => void;
 
   moduleMetric: ModuleMetric;
   setModuleMetric: (newValue: ModuleMetric) => void;
@@ -101,11 +106,14 @@ export const BundleModules = (props: BundleModulesProps) => {
     hideEntryInfo,
     moduleMetric,
     setModuleMetric,
+    showEntryInfo,
     customComponentLink: CustomComponentLink = ComponentLink,
   } = props;
 
   const rootClassName = cx(css.root, className);
   const jobLabels = jobs?.map((job) => job?.label);
+
+  const [displayType, setDisplayType] = useMetricsDisplayType();
 
   const filterFieldsData = useMemo(
     () => generateFilterFieldsData({ filters, chunks, compareMode: jobs.length > 1 }),
@@ -164,6 +172,7 @@ export const BundleModules = (props: BundleModulesProps) => {
           className={css.toolbar}
           renderActions={({ actionClassName }) => (
             <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
+              <MetricsDisplaySelector onSelect={setDisplayType} value={displayType} />
               <MetricsTableOptions
                 handleViewAll={resetAllFilters}
                 handleResetFilters={resetFilters}
@@ -207,17 +216,22 @@ export const BundleModules = (props: BundleModulesProps) => {
             </Button>
           </FlexStack>
         </Box>
-        <MetricsTable
-          className={css.table}
-          items={items}
-          runs={jobs}
-          renderRowHeader={renderRowHeader}
-          emptyMessage={emptyMessage}
-          showHeaderSum
-          title={metricsTableTitle}
-          sort={sort}
-          updateSort={updateSort}
-        />
+        {displayType === MetricsDisplayType.TABLE && (
+          <MetricsTable
+            className={css.table}
+            items={items}
+            runs={jobs}
+            renderRowHeader={renderRowHeader}
+            emptyMessage={emptyMessage}
+            showHeaderSum
+            title={metricsTableTitle}
+            sort={sort}
+            updateSort={updateSort}
+          />
+        )}
+        {displayType === MetricsDisplayType.TREEMAP && (
+          <MetricsTreemap emptyMessage={emptyMessage} items={items} onItemClick={showEntryInfo} />
+        )}
       </div>
       {entryItem && (
         <ModuleInfo

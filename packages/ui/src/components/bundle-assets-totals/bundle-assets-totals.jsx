@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { getBundleAssetsFileTypeComponentLink } from '@bundle-stats/utils';
+import { useHistory } from 'react-router-dom';
+import {
+  getBundleAssetsFileTypeComponentLink,
+  getComponentStateQueryString,
+} from '@bundle-stats/utils';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
-import { ASSETS_SIZES_FILE_TYPE_MAP } from '../../constants';
+import { ASSETS_SIZES_FILE_TYPE_MAP, SECTION_URLS, MetricsDisplayType } from '../../constants';
+import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
+import { Toolbar } from '../../ui/toolbar';
+import { MetricsTreemap } from '../metrics-treemap';
+import { MetricsDisplaySelector } from '../metrics-display-selector';
+import { TotalSizeTypeTitle } from '../total-size-type-title';
 import { MetricsTable } from '../metrics-table';
 import { ComponentLink } from '../component-link';
+import css from './bundle-assets-totals.module.css';
 
 export const BundleAssetsTotals = ({
   className,
@@ -13,6 +23,9 @@ export const BundleAssetsTotals = ({
   customComponentLink: CustomComponentLink,
   ...restProps
 }) => {
+  const [displayType, setDisplayType] = useMetricsDisplayType();
+  const history = useHistory();
+
   const items = webpack.compareBySection.sizes(jobs);
 
   const renderRowHeader = (item) => {
@@ -26,15 +39,41 @@ export const BundleAssetsTotals = ({
     );
   };
 
+  const handleMetricsTreemapItemClick = useCallback(
+    (entryId) => {
+      const fileType = ASSETS_SIZES_FILE_TYPE_MAP[entryId];
+      const { section, params } = getBundleAssetsFileTypeComponentLink(fileType, '');
+      const search = getComponentStateQueryString(params);
+      const nextUrl = `${SECTION_URLS[section]}?${search}`;
+
+      history.push(nextUrl);
+    },
+    [history],
+  );
+
   return (
-    <MetricsTable
-      className={className}
-      runs={jobs}
-      items={items}
-      renderRowHeader={renderRowHeader}
-      showHeaderSum
-      {...restProps}
-    />
+    <div className={className}>
+      <Toolbar
+        className={css.toolbar}
+        renderActions={() => (
+          <MetricsDisplaySelector onSelect={setDisplayType} value={displayType} />
+        )}
+      >
+        <TotalSizeTypeTitle />
+      </Toolbar>
+      {displayType === MetricsDisplayType.TABLE && (
+        <MetricsTable
+          runs={jobs}
+          items={items}
+          renderRowHeader={renderRowHeader}
+          showHeaderSum
+          {...restProps}
+        />
+      )}
+      {displayType === MetricsDisplayType.TREEMAP && (
+        <MetricsTreemap items={items} onItemClick={handleMetricsTreemapItemClick} />
+      )}
+    </div>
   );
 };
 

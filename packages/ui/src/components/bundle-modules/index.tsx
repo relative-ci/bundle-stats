@@ -6,6 +6,7 @@ import type { SortAction } from '../../types';
 import { useRowsFilter } from '../../hooks/rows-filter';
 import { useRowsSort } from '../../hooks/rows-sort';
 import { useSearchParams } from '../../hooks/search-params';
+import { useEntryInfo } from '../../hooks/entry-info';
 import { BundleModules as BaseComponent } from './bundle-modules';
 import {
   addRowFlags,
@@ -61,6 +62,7 @@ interface BundleModulesProps
     | 'allItems'
     | 'totalRowCount'
     | 'hideEntryInfo'
+    | 'showEntryInfo'
   > {
   jobs: Array<types.Job>;
   filters: Record<string, boolean>;
@@ -118,9 +120,7 @@ export const BundleModules = (props: BundleModulesProps) => {
     getCustomSort,
   });
 
-  const hideEntryInfo = useCallback(() => {
-    setState({ entryId: '' });
-  }, [setState]);
+  const [hideEntryInfo, showEntryInfo] = useEntryInfo({ setState });
 
   return (
     <BaseComponent
@@ -134,6 +134,7 @@ export const BundleModules = (props: BundleModulesProps) => {
       hideEntryInfo={hideEntryInfo}
       moduleMetric={moduleMetric}
       setModuleMetric={setModuleMetric}
+      showEntryInfo={showEntryInfo}
     />
   );
 };
