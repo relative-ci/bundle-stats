@@ -18,6 +18,8 @@ const ICONS = {
   GITHUB: 'github',
   INFO: 'info',
   HELP: 'help',
+  TABLE: 'table',
+  TREEMAP: 'treemap',
   MENU: 'menu',
   MORE_VERTICAL: 'more-vertical',
   SORT: 'sort',
