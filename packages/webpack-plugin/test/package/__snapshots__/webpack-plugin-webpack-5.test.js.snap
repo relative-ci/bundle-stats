@@ -33,7 +33,7 @@ exports[`webpack plugin package webpack5 1`] = `
       "main",
     ],
     "chunks": [
-      179,
+      590,
     ],
     "comparedForEmit": false,
     "emitted": true,
