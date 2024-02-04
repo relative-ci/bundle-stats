@@ -16,12 +16,12 @@
   "private": true,
   "description": "Analyze webpack stats(bundle size, assets, modules, packages) and compare the results between different builds.",
   "engines": {
-    "node": ">= 14.0"
+    "node": ">= 18.0"
   },
   "devDependencies": {
     "@babel/core": "7.23.9",
     "@babel/eslint-parser": "7.23.10",
-    "@tsconfig/node14": "14.1.0",
+    "@tsconfig/node18": "18.2.2",
     "@types/react": "18.2.54",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
@@ -43,8 +43,8 @@
     "lerna": "8.1.2",
     "lint-staged": "15.2.2",
     "prettier": "3.2.5",
-    "rimraf": "5.0.5",
     "react-is": "^16.13.1",
+    "rimraf": "5.0.5",
     "typescript": "5.1.6",
     "verdaccio": "^5.26.2"
   },
