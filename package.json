@@ -42,7 +42,7 @@
     "husky": "9.0.10",
     "lerna": "8.0.2",
     "lint-staged": "15.2.1",
-    "prettier": "3.2.4",
+    "prettier": "3.2.5",
     "rimraf": "5.0.5",
     "react-is": "^16.13.1",
     "typescript": "5.1.6",
