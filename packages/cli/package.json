@@ -11,7 +11,7 @@
     "lib": "lib"
   },
   "engines": {
-    "node": ">= 14.0"
+    "node": ">= 18.0"
   },
   "scripts": {
     "copy-fixtures": "./scripts/copy-fixtures.sh",
