@@ -119,7 +119,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        node: [20, 18, 16, 14]
+        node: [20, 18]
     runs-on: ${{ matrix.os }}
     name: CLI ${{ matrix.os }} nodejs ${{ matrix.node }}
     steps:
@@ -159,19 +159,13 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-latest, ubuntu-latest]
-        node: [20, 18, 16, 14]
+        node: [20, 18]
         webpack: ['webpack4', 'webpack5']
         exclude:
           - webpack: 'webpack4'
-            node: 18
-          - webpack: 'webpack4'
             node: 20
           - os: windows-latest
             node: 20
-          - os: windows-latest
-            node: 18
-          - os: windows-latest
-            node: 16
     runs-on: ${{ matrix.os }}
     name: ${{ matrix.webpack }} plugin ${{ matrix.os }} nodejs ${{ matrix.node }}
     steps:
@@ -211,13 +205,11 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        node: [16, 18]
+        node: [20, 18]
         rollup: [3, 4]
         exclude:
           - rollup: 3
-            node: 18
-          - rollup: 4
-            node: 16
+            node: 20
     runs-on: ${{ matrix.os }}
     name: rollup ${{ matrix.rollup}} plugin nodejs ${{ matrix.node }}
     steps:
