@@ -15,7 +15,7 @@
     "build-assets-esm": "rsync -arm --include '*/' --include '*.json' --include '*.css' --include 'icons.svg' --exclude '*' src/ lib-esm",
     "build-storybook": "storybook build -c ./build/storybook",
     "generate-chart-colors": "node scripts/generate-chart-colors.js",
-    "generate-svg-sprite": "npx svg-sprite -s --si --no-svg-namespace-classnames src/assets/icons/*.svg && mv symbol/svg/sprite.symbol.svg src/assets/icons.svg",
+    "generate-svg-sprite": "npx svg-sprite -s --si --no-svg-namespace-classnames src/assets/icons/*.svg && mv symbol/svg/sprite.css.svg src/assets/icons.svg",
     "lint": "eslint",
     "start": "cross-env NODE_ENV=development storybook dev -c ./build/storybook -p 8080",
     "test": "jest src --passWithNoTests"
