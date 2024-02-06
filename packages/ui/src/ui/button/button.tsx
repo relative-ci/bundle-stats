@@ -63,6 +63,7 @@ export const Button = <T extends React.ElementType = 'button'>(
     solid && css[`solid--${kind}`],
 
     resolvedPadding && css[`padding--${resolvedPadding}`],
+    resolvedPadding && outline && css[`outline--padding--${resolvedPadding}`],
     resolvedRadius && css[`radius--${resolvedRadius}`],
 
     css[size],
