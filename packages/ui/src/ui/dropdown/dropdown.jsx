@@ -4,6 +4,7 @@ import cx from 'classnames';
 import { Menu, MenuButton, MenuItem, useMenuState } from 'ariakit/menu';
 
 import { FlexStack } from '../../layout/flex-stack';
+import { Button } from '../button';
 import { Icon } from '../icon';
 import css from './dropdown.module.css';
 
@@ -28,7 +29,14 @@ export const Dropdown = (props) => {
 
   return (
     <div className={rootClassName}>
-      <MenuButton state={menuState} className={cx(css.button, buttonClassName)} tabIndex={null}>
+      <MenuButton
+        as={Button}
+        outline
+        size={Button.SIZE.SMALL}
+        state={menuState}
+        tabIndex={null}
+        className={cx(css.button, buttonClassName)}
+      >
         <FlexStack space="xxxsmall" alignItems="center" className={css.label}>
           {glyph && <Icon className={css.labelIcon} glyph={glyph} />}
           {label && <span className={css.labelText}>{label}</span>}

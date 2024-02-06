@@ -22,16 +22,19 @@ const KIND = {
 type Size = (typeof SIZE)[keyof typeof SIZE];
 type Kind = (typeof KIND)[keyof typeof KIND];
 
-interface ButtonProps {
+interface ButtonProps<T extends React.ElementType> {
   outline?: boolean;
   solid?: boolean;
   kind?: Kind | 'default';
   size?: Size;
   radius?: Size | 'circle' | 'none';
   padding?: Size | 'none';
+  as?: T;
 }
 
-export const Button = (props: ButtonProps & React.ComponentProps<typeof ButtonBaseComponent>) => {
+export const Button = <T extends React.ElementType = 'button'>(
+  props: ButtonProps<T> & Omit<React.ComponentPropsWithoutRef<T>, keyof ButtonProps<T>>,
+) => {
   const {
     className = '',
     outline = false,
@@ -40,6 +43,7 @@ export const Button = (props: ButtonProps & React.ComponentProps<typeof ButtonBa
     size = 'medium',
     radius = '',
     padding = '',
+    as: Component = ButtonBaseComponent,
     ...restProps
   } = props;
 
@@ -59,13 +63,14 @@ export const Button = (props: ButtonProps & React.ComponentProps<typeof ButtonBa
     solid && css[`solid--${kind}`],
 
     resolvedPadding && css[`padding--${resolvedPadding}`],
+    resolvedPadding && outline && css[`outline--padding--${resolvedPadding}`],
     resolvedRadius && css[`radius--${resolvedRadius}`],
 
     css[size],
     className,
   );
 
-  return <ButtonBaseComponent {...restProps} className={rootClassName} />;
+  return <Component {...restProps} className={rootClassName} />;
 };
 
 Button.SIZE = SIZE;

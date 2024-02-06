@@ -250,12 +250,24 @@
   padding: var(--space-xxsmall);
 }
 
+.outline--padding--small {
+  padding: calc(var(--space-xxsmall) - 1px);
+}
+
 .padding--medium {
   padding:  var(--space-xsmall);
 }
 
+.outline--padding--medium {
+  padding:  calc(var(--space-xsmall) - 1px);
+}
+
 .padding--large {
   padding: var(--space-small);
+}
+
+.outline--padding--large {
+  padding: calc(var(--space-small) - 1px);
 }
 
 /**
