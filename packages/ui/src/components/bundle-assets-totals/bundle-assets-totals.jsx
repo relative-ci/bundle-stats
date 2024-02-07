@@ -7,7 +7,7 @@ import { ASSETS_SIZES_FILE_TYPE_MAP } from '../../constants';
 import { MetricsTable } from '../metrics-table';
 import { ComponentLink } from '../component-link';
 
-export const BundleAssetsTotalsTable = ({
+export const BundleAssetsTotals = ({
   className,
   jobs,
   customComponentLink: CustomComponentLink,
@@ -38,13 +38,13 @@ export const BundleAssetsTotalsTable = ({
   );
 };
 
-BundleAssetsTotalsTable.defaultProps = {
+BundleAssetsTotals.defaultProps = {
   className: '',
   jobs: [],
   customComponentLink: ComponentLink,
 };
 
-BundleAssetsTotalsTable.propTypes = {
+BundleAssetsTotals.propTypes = {
   /** Addopted child class name */
   className: PropTypes.string,
 

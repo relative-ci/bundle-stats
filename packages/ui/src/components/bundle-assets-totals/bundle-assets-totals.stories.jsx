@@ -6,15 +6,15 @@ import baselineStats from '../../../../../fixtures/webpack-stats.baseline.json';
 import currentStats from '../../../../../fixtures/webpack-stats.current.json';
 /* eslint-enable import/no-relative-packages */
 import { getWrapperDecorator } from '../../stories';
-import { BundleAssetsTotalsTable } from '.';
+import { BundleAssetsTotals } from '.';
 
 export default {
-  title: 'Components/BundleAssetsTotalsTable',
-  component: BundleAssetsTotalsTable,
+  title: 'Components/BundleAssetsTotals',
+  component: BundleAssetsTotals,
   decorators: [getWrapperDecorator()],
 };
 
-const Template = (args) => <BundleAssetsTotalsTable {...args} />;
+const Template = (args) => <BundleAssetsTotals {...args} />;
 
 export const SingleJob = Template.bind();
 
