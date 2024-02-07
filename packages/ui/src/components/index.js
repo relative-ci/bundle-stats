@@ -1,7 +1,6 @@
 export { BrowsertimeTable } from './browsertime-table';
 export { BundleAssets } from './bundle-assets';
 export { BundleAssetsTotals } from './bundle-assets-totals';
-export { BundleAssetsTotalsChartBars } from './bundle-assets-totals-chart-bars';
 export { BundlePackages } from './bundle-packages';
 export { BundleModules } from './bundle-modules';
 export { ComponentLink } from './component-link';
