@@ -7,7 +7,7 @@ import { COMPONENT } from '@bundle-stats/utils';
 import { URLS } from '../constants';
 import { BundleAssets } from '../components/bundle-assets';
 import { BundleAssetsTotalsChartBars } from '../components/bundle-assets-totals-chart-bars';
-import { BundleAssetsTotalsTable } from '../components/bundle-assets-totals-table';
+import { BundleAssetsTotals } from '../components/bundle-assets-totals';
 import { BundleModules } from '../components/bundle-modules';
 import { BundlePackages } from '../components/bundle-packages';
 import { Insights } from '../components/insights';
@@ -102,7 +102,7 @@ const OverviewContent = () => {
         <Stack space="small">
           <TotalSizeTypeTitle />
           <BundleAssetsTotalsChartBars jobs={jobs} />
-          <BundleAssetsTotalsTable jobs={jobs} outline />
+          <BundleAssetsTotals jobs={jobs} outline />
         </Stack>
       </Container>
     </Stack>
