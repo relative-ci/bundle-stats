@@ -185,6 +185,7 @@
   --layer: 100;
   --layer-high: 1000;
   --layer-xhigh: 10000;
+  --layer-xxhigh: 100000;
 
   --shadow-layer: 0 0 var(--space-xxxsmall) var(--color-shadow);
   --shadow-layer-high: 0 0 var(--space-xxsmall) var(--color-shadow);

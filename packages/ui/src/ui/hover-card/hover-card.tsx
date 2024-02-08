@@ -31,7 +31,7 @@ export const HoverCard = (props: HoverCardProps) => {
     children,
   } = props;
 
-  const state = useHovercardState({ gutter: 8, timeout: 800 });
+  const state = useHovercardState({ gutter: 8, timeout: 300 });
   const hovercardProps = useHovercard({ state, portal: true });
 
   // Fallback to span if no href
@@ -62,7 +62,6 @@ export const HoverCard = (props: HoverCardProps) => {
         {...hovercardProps}
         state={state}
         className={cx(css.hoverCard, hoverCardClassName)}
-        style={{ zIndex: 10000 }}
       >
         <HovercardArrow size={24} />
         {typeof children === 'function' ? children({ close: state.hide }) : children}
