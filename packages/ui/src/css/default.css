@@ -53,7 +53,6 @@ code {
   font-family: var(--font-family-fixed);
 }
 
-/** Orbit updates */
 a {
   color: var(--color-primary);
 }
@@ -63,67 +62,6 @@ a:active,
 a:focus {
   color: var(--color-primary-dark);
   outline: none;
-}
-
-.ui-button--primary {
-  background: var(--color-primary);
-}
-
-.ui-button--primary:active,
-.ui-button--primary:focus,
-.ui-button--primary:hover {
-  background: var(--color-primary-dark);
-}
-
-.ui-button--secondary {
-  background: var(--color-secondary);
-}
-
-.ui-button--secondary:active,
-.ui-button--secondary:focus,
-.ui-button--secondary:hover {
-  background: var(--color-secondary-dark);
-}
-
-.ui-button--info {
-  background: var(--color-info);
-}
-
-.ui-button--info:active,
-.ui-button--info:focus,
-.ui-button--info:hover {
-  background: var(--color-info-dark);
-}
-
-.ui-button--success {
-  background: var(--color-success);
-}
-
-.ui-button--success:active,
-.ui-button--success:focus,
-.ui-button--success:hover {
-  background: var(--color-success-dark);
-}
-
-
-.ui-button--warning {
-  background: var(--color-warning);
-}
-
-.ui-button--warning:active,
-.ui-button--warning:focus,
-.ui-button--warning:hover {
-  background: var(--color-warning-dark);
-}
-
-.ui-button--danger {
-  background: var(--color-danger);
-}
-
-.ui-button--danger:active,
-.ui-button--danger:focus,
-.ui-button--danger:hover {
-  background: var(--color-danger-dark);
 }
 
 .__reakit-portal {
