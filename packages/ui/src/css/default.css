@@ -63,8 +63,3 @@ a:focus {
   color: var(--color-primary-dark);
   outline: none;
 }
-
-.__reakit-portal {
-  z-index: var(--layer-xhigh);
-  position: relative;
-}
