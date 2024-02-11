@@ -20,7 +20,9 @@ export const useComponentQueryState = (componentName: string) => {
   const componentState = queryState[componentName];
 
   const setState = useCallback(
-    (newState: Record<string, unknown>) => {
+    (updates: Record<string, unknown>) => {
+      const newState = { ...componentState, ...updates };
+
       // Deep check to prevent unnecessary state changes
       if (isEqual(componentState, newState)) {
         return;
