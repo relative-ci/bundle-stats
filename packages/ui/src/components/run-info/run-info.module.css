@@ -31,8 +31,15 @@
   font-weight: bold;
 }
 
+.deltaValue + .deltaValue::before {
+  margin-left: calc(var(--space-xxxsmall) / 2);
+  margin-right: calc(var(--space-xxxsmall) / 2);
+  content: '/';
+  color: var(--color-text-ultra-light);
+}
+
 .baselineMetric {
-  color: var(--color-text-light);
+  color: var(--color-text-ultra-light);
   font-size: var(--size-small);
   line-height: var(--line-height-heading);
 }
@@ -74,4 +81,8 @@
 
 .large .baselineMetric {
   font-size: var(--size-medium);
+}
+
+.large .delta {
+  margin-left: var(--space-xxxsmall);
 }

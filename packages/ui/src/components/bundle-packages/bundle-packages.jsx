@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { COMPONENT, PACKAGE_FILTERS, PACKAGES_SEPARATOR, SECTIONS } from '@bundle-stats/utils';
@@ -16,6 +16,7 @@ import { MetricsTable } from '../metrics-table';
 import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
 import { PackageInfo } from '../package-info';
+import { SEARCH_PLACEHOLDER } from './bundle-packages.i18n';
 import css from './bundle-packages.module.css';
 
 const getDropdownFilters = ({ compareMode, filters }) => ({
@@ -196,7 +197,7 @@ export const BundlePackages = (props) => {
           <FlexStack space="xxsmall">
             <InputSearch
               className={css.toolbarSearch}
-              placeholder="Search by name"
+              placeholder={SEARCH_PLACEHOLDER}
               defaultValue={search}
               onChange={updateSearch}
             />
@@ -239,6 +240,7 @@ BundlePackages.defaultProps = {
   totalRowCount: 0,
   hasActiveFilters: false,
   customComponentLink: ComponentLink,
+  entryId: '',
 };
 
 BundlePackages.propTypes = {
@@ -277,7 +279,8 @@ BundlePackages.propTypes = {
   updateSearch: PropTypes.func.isRequired,
   allItems: PropTypes.arrayOf(PropTypes.shape({
     key: PropTypes.string,
-  })),
+  })).isRequired,
   customComponentLink: PropTypes.elementType,
+  entryId: PropTypes.string,
   hideEntryInfo: PropTypes.func.isRequired,
 };

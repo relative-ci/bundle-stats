@@ -29,7 +29,7 @@ export const Item = (props: ItemProps & React.ComponentProps<'div'>) => {
 
   return (
     <FlexStack space="xsmall" alignItems="center" className={rootClassName}>
-      <FlexStack space="xxxsmall" as="h1" className={css.itemTitle}>
+      <FlexStack space="xxsmall" as="h1" className={css.itemTitle}>
         <span>{`#${job.internalBuildNumber}`}</span>
         {tag && <Tag className={css.itemTag}>{tag}</Tag>}
       </FlexStack>

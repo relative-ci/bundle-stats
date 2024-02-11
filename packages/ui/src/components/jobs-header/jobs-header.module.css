@@ -49,12 +49,13 @@
 }
 
 .itemMeta {
-  font-size: var(--size-small);
   color: var(--color-text-light);
+  font-size: var(--size-small);
 }
 
 .itemMetaIcon {
   flex: 0 0 auto;
+  color: var(--color-text-ultra-light);
 }
 
 .itemMetaText {

@@ -22,8 +22,9 @@ export const Header = ({ className = '', jobs }: HeaderProps & React.ComponentPr
           href={config.gitHubUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className={css.toolsGitHub}
           title={I18N.GITHUB_LINK_TITLE}
+          aria-label={I18N.GITHUB_LINK_TITLE}
+          className={css.toolsGitHub}
         >
           <Icon glyph={Icon.ICONS.GITHUB} size="large" className={css.toolsGitHubIcon} />
         </a>

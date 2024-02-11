@@ -38,6 +38,14 @@ export const All = () => (
             </Button>
           ))}
         </FlexStack>
+        <h3>Active</h3>
+        <FlexStack space="small" alignItems="top">
+          {Object.values(Button.KIND).map((kind) => (
+            <Button kind={kind} key={kind} active>
+              Action {kind}
+            </Button>
+          ))}
+        </FlexStack>
         <h3>Disabled</h3>
         <FlexStack space="small" alignItems="top">
           {Object.values(Button.KIND).map((kind) => (
@@ -63,6 +71,17 @@ export const All = () => (
             ))}
           </FlexStack>
         ))}
+        <h3>Active</h3>
+        <FlexStack space="small" alignItems="top">
+          <Button outline active>
+            Action default
+          </Button>
+          {Object.values(Button.KIND).map((kind) => (
+            <Button outline kind={kind} key={kind} active>
+              Action {kind}
+            </Button>
+          ))}
+        </FlexStack>
         <h3>Disabled</h3>
         <FlexStack space="small" alignItems="top">
           <Button outline disabled>
@@ -91,6 +110,17 @@ export const All = () => (
             ))}
           </FlexStack>
         ))}
+        <h3>Active</h3>
+        <FlexStack space="small" alignItems="top">
+          <Button solid active>
+            Action default
+          </Button>
+          {Object.values(Button.KIND).map((kind) => (
+            <Button solid kind={kind} key={kind} active>
+              Action {kind}
+            </Button>
+          ))}
+        </FlexStack>
         <h3>Disabled</h3>
         <FlexStack space="small" alignItems="top">
           <Button solid disabled>
