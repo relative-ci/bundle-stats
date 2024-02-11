@@ -13,7 +13,8 @@ interface MetricsDisplaySelectorProps {
 }
 
 export const MetricsDisplaySelector = (
-  props: MetricsDisplaySelectorProps & React.ComponentProps<typeof FlexStack>,
+  props: MetricsDisplaySelectorProps &
+    Omit<React.ComponentProps<typeof FlexStack>, 'onSelect' | 'value'>,
 ) => {
   const { className = '', value, onSelect, ...restProps } = props;
 
