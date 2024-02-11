@@ -25,6 +25,7 @@ type Kind = (typeof KIND)[keyof typeof KIND];
 interface ButtonProps<T extends React.ElementType> {
   outline?: boolean;
   solid?: boolean;
+  active?: boolean;
   kind?: Kind | 'default';
   size?: Size;
   radius?: Size | 'circle' | 'none';
@@ -39,6 +40,7 @@ export const Button = <T extends React.ElementType = 'button'>(
     className = '',
     outline = false,
     solid = false,
+    active = false,
     kind = 'default',
     size = 'medium',
     radius = '',
@@ -65,6 +67,9 @@ export const Button = <T extends React.ElementType = 'button'>(
     resolvedPadding && css[`padding--${resolvedPadding}`],
     resolvedPadding && outline && css[`outline--padding--${resolvedPadding}`],
     resolvedRadius && css[`radius--${resolvedRadius}`],
+
+    active && css.active,
+    active && outline && css[`active-outline-${kind}`],
 
     css[size],
     className,

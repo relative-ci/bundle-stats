@@ -290,6 +290,47 @@
 }
 
 /**
+ * Active variation
+ */
+.active {
+  text-decoration: underline;
+}
+
+.active-outline-default {
+  background: var(--color-highlight);
+  text-decoration: none;
+}
+
+.active-outline-primary {
+  background: var(--color-highlight-primary);
+  text-decoration: none;
+}
+.active-outline-secondary {
+  background: var(--color-highlight-secondary);
+  text-decoration: none;
+}
+
+.active-outline-info {
+  background: var(--color-highlight-info);
+  text-decoration: none;
+}
+
+.active-outline-success {
+  background: var(--color-highlight-success);
+  text-decoration: none;
+}
+
+.active-outline-warning {
+  background: var(--color-highlight-warning);
+  text-decoration: none;
+}
+
+.active-outline-danger {
+  background: var(--color-highlight-danger);
+  text-decoration: none;
+}
+
+/**
  * Disabled state
  */
 .root[disabled] {
