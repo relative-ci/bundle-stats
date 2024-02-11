@@ -98,27 +98,24 @@ export const RunInfo = ({
       {!loading ? (
         <Stack className={css.info}>
           <Metric
-            className={css.currentMetric}
             value={currentValueParams[0]}
             unit={currentValueParams[1]}
             inline
+            className={css.currentMetric}
           >
             {(delta || deltaPercentage) && (
-              <FlexStack space="xxxsmall" alignItems="center">
+              <span className={css.delta}>
                 {deltaPercentage && (
-                  <FlexStack space="xxxsmall" alignItems="center">
-                    <Delta
-                      className={css.delta}
-                      displayValue={deltaPercentage}
-                      deltaType={deltaType}
-                    />
-                    {' / '}
-                  </FlexStack>
+                  <Delta
+                    displayValue={deltaPercentage}
+                    deltaType={deltaType}
+                    className={css.deltaValue}
+                  />
                 )}
                 {delta && (
-                  <Delta className={css.delta} displayValue={delta} deltaType={deltaType} />
+                  <Delta displayValue={delta} deltaType={deltaType} className={css.deltaValue} />
                 )}
-              </FlexStack>
+              </span>
             )}
           </Metric>
           {showBaseline && <Metric className={css.baselineMetric} value={baseline} />}
