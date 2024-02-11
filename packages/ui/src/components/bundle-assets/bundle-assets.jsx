@@ -28,6 +28,7 @@ import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
+import { SEARCH_PLACEHOLDER } from './bundle-assets.i18n';
 import css from './bundle-assets.module.css';
 
 const RUN_TITLE_CURRENT = 'Current';
@@ -237,7 +238,7 @@ export const BundleAssets = (props) => {
           <FlexStack space="xxsmall">
             <InputSearch
               className={css.toolbarSearch}
-              placeholder="Search by name"
+              placeholder={SEARCH_PLACEHOLDER}
               defaultValue={search}
               onChange={updateSearch}
             />
