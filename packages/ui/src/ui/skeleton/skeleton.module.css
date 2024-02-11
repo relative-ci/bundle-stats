@@ -3,6 +3,7 @@
   opacity: 0.05;
   pointer-events: none;
   min-width: 6em;
+  border-radius: var(--radius-medium);
 }
 
 /** empty char to keep the text height */
