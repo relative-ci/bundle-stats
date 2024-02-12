@@ -28,6 +28,10 @@
   color: var(--color-text);
 }
 
+.button[disabled] {
+  color: var(--color-text-ultra-light);
+}
+
 .dropdown {
   position: absolute;
   left: 0;

@@ -22,13 +22,18 @@ Item.defaultProps = {
 };
 
 export const Dropdown = (props) => {
-  const { className, buttonClassName, label, ariaLabel, glyph, children } = props;
+  const { className, buttonClassName, label, ariaLabel, glyph, disabled, children } = props;
   const rootClassName = cx(css.root, className);
   const menuState = useMenuState();
 
   return (
     <div className={rootClassName}>
-      <MenuButton state={menuState} className={cx(css.button, buttonClassName)} tabIndex={null}>
+      <MenuButton
+        state={menuState}
+        className={cx(css.button, buttonClassName)}
+        disabled={disabled}
+        tabIndex={null}
+      >
         <FlexStack space="xxxsmall" alignItems="center" className={css.label}>
           {glyph && <Icon className={css.labelIcon} glyph={glyph} />}
           {label && <span className={css.labelText}>{label}</span>}
@@ -54,6 +59,7 @@ Dropdown.defaultProps = {
   label: null,
   ariaLabel: '',
   glyph: null,
+  disabled: false,
 };
 
 Dropdown.propTypes = {
@@ -71,6 +77,9 @@ Dropdown.propTypes = {
 
   /** Icon glyph */
   glyph: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+
+  /** Dropdown button disabled attribute */
+  disabled: PropTypes.bool,
 
   /** Content */
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]).isRequired,
