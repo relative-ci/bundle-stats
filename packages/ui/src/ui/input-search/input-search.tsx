@@ -71,14 +71,12 @@ export const InputSearch = (
       {value && (
         <Button
           radius="circle"
-          padding="small"
+          glyph={Icon.ICONS.CANCEL}
           type="button"
           onClick={clearButtonOnClick}
           aria-label="Clear search"
           className={css.cancelButton}
-        >
-          <Icon className={css.cancelButtonIcon} glyph={Icon.ICONS.CANCEL} />
-        </Button>
+        />
       )}
     </div>
   );

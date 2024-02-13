@@ -1,6 +1,7 @@
 export { Alert } from './alert';
 export { Button } from './button';
 export { Container } from './container';
+export { ControlGroup } from './control-group';
 export { Dropdown } from './dropdown';
 export { EmptySet } from './empty-set';
 export { FileName } from './file-name';

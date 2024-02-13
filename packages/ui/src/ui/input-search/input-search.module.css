@@ -13,12 +13,6 @@
   right: var(--space-xxxsmall);
   top: 50%;
   transform: translateY(-50%);
+  padding: var(--space-xxxsmall);
   background: radial-gradient(var(--color-background) 50%, transparent);
-  color: var(--color-text-ultra-light);
-}
-
-.cancelButton:focus,
-.cancelButton:hover,
-.cancelButton:active {
-  color: var(--color-text-light);
 }

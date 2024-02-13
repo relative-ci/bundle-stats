@@ -1,0 +1,23 @@
+.root > *:not(:first-child) {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+
+  margin-left: -1px;
+}
+
+.root > *:not(:last-child) {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.root > * {
+  position: relative;
+  z-index: 0;
+}
+
+.root > *:hover,
+.root > *:active,
+.root > *:focus {
+  z-index: 1;
+  box-shadow: none;
+}

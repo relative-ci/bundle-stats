@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { Button as ButtonBaseComponent } from 'ariakit/button';
 
+import { Icon as BaseIcon } from '../icon';
 import css from './button.module.css';
 
 const SIZE = {
@@ -31,6 +32,9 @@ interface ButtonProps<T extends React.ElementType> {
   radius?: Size | 'circle' | 'none';
   padding?: Size | 'none';
   as?: T;
+  Icon?: React.ElementType;
+  glyph?: React.ComponentProps<typeof BaseIcon>['glyph'];
+  rightGlyph?: React.ComponentProps<typeof BaseIcon>['glyph'];
 }
 
 export const Button = <T extends React.ElementType = 'button'>(
@@ -46,6 +50,10 @@ export const Button = <T extends React.ElementType = 'button'>(
     radius = '',
     padding = '',
     as: Component = ButtonBaseComponent,
+    children,
+    Icon = BaseIcon,
+    glyph,
+    rightGlyph,
     ...restProps
   } = props;
 
@@ -75,7 +83,13 @@ export const Button = <T extends React.ElementType = 'button'>(
     className,
   );
 
-  return <Component {...restProps} className={rootClassName} />;
+  return (
+    <Component {...restProps} className={rootClassName}>
+      {glyph && <Icon glyph={glyph} size={size} className={css.glyph} />}
+      {children && <span className={css.content}>{children}</span>}
+      {rightGlyph && <Icon glyph={glyph} size={size} className={css.glyph} />}
+    </Component>
+  );
 };
 
 Button.SIZE = SIZE;

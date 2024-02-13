@@ -1,11 +1,18 @@
 .root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xxsmall);
   appearance: none;
   padding: 0;
   border: 0;
   background: none;
   transition: var(--transition-out);
   color: var(--color-text-ultra-light);
-  line-height: 1;
+  font-family: var(--font-family);
+}
+
+a.root {
+  text-decoration: none;
 }
 
 .root:hover,
@@ -13,6 +20,15 @@
 .root:focus {
   color: var(--color-text-light);
   transition: var(--transition-in);
+}
+
+.glyph {
+  flex: 0 0 auto;
+}
+
+.text {
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 /**
@@ -233,14 +249,27 @@
  */
 .small {
   font-size: var(--size-small);
+  gap: var(--space-xxxsmall);
+  line-height: var(--space-xsmall);
+}
+
+.small .glyph {
+  width: calc(var(--space-xsmall) + 2px);
+  height: calc(var(--space-xsmall) + 2px);
+  margin-top: -1px;
+  margin-bottom: -1px;
 }
 
 .medium {
   font-size: var(--size-medium);
+  gap: var(--space-xxsmall);
+  line-height: var(--space-small);
 }
 
 .large {
   font-size: var(--size-large);
+  gap: var(--space-xxsmall);
+  line-height: var(--space-small);
 }
 
 /**
