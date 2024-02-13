@@ -1,12 +1,14 @@
 .root {
   display: inline-flex;
   align-items: center;
+  gap: var(--space-xxsmall);
   appearance: none;
   padding: 0;
   border: 0;
   background: none;
   transition: var(--transition-out);
   color: var(--color-text-ultra-light);
+  font-family: var(--font-family);
 }
 
 a.root {
@@ -18,6 +20,15 @@ a.root {
 .root:focus {
   color: var(--color-text-light);
   transition: var(--transition-in);
+}
+
+.glyph {
+  flex: 0 0 auto;
+}
+
+.text {
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 /**
@@ -238,44 +249,54 @@ a.root {
  */
 .small {
   font-size: var(--size-small);
-  line-height: var(--space-small);
+  gap: var(--space-xxxsmall);
+  line-height: var(--space-xsmall);
+}
+
+.small .glyph {
+  width: calc(var(--space-xsmall) + 2px);
+  height: calc(var(--space-xsmall) + 2px);
+  margin-top: -1px;
+  margin-bottom: -1px;
 }
 
 .medium {
   font-size: var(--size-medium);
+  gap: var(--space-xxsmall);
   line-height: var(--space-small);
 }
 
 .large {
   font-size: var(--size-large);
-  line-height: var(--space-medium);
+  gap: var(--space-xxsmall);
+  line-height: var(--space-small);
 }
 
 /**
  * Padding variation
  */
 .padding--small {
-  padding: var(--space-xxsmall) var(--space-xsmall);
+  padding: var(--space-xxsmall);
 }
 
 .outline--padding--small {
-  padding: calc(var(--space-xxsmall) - 1px) calc(var(--space-xsmall) - 1px);
+  padding: calc(var(--space-xxsmall) - 1px);
 }
 
 .padding--medium {
-  padding:  var(--space-xsmall) var(--space-small);
+  padding:  var(--space-xsmall);
 }
 
 .outline--padding--medium {
-  padding:  calc(var(--space-xsmall) - 1px) calc(var(--space-small) - 1px);
+  padding:  calc(var(--space-xsmall) - 1px);
 }
 
 .padding--large {
-  padding: var(--space-small) var(--space-medium);
+  padding: var(--space-small);
 }
 
 .outline--padding--large {
-  padding: calc(var(--space-small) - 1px) calc(var(--space-medium) - 1px);
+  padding: calc(var(--space-small) - 1px);
 }
 
 /**
