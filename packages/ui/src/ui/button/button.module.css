@@ -1,11 +1,16 @@
 .root {
+  display: inline-flex;
+  align-items: center;
   appearance: none;
   padding: 0;
   border: 0;
   background: none;
   transition: var(--transition-out);
   color: var(--color-text-ultra-light);
-  line-height: 1;
+}
+
+a.root {
+  text-decoration: none;
 }
 
 .root:hover,
@@ -233,41 +238,44 @@
  */
 .small {
   font-size: var(--size-small);
+  line-height: var(--space-small);
 }
 
 .medium {
   font-size: var(--size-medium);
+  line-height: var(--space-small);
 }
 
 .large {
   font-size: var(--size-large);
+  line-height: var(--space-medium);
 }
 
 /**
  * Padding variation
  */
 .padding--small {
-  padding: var(--space-xxsmall);
+  padding: var(--space-xxsmall) var(--space-xsmall);
 }
 
 .outline--padding--small {
-  padding: calc(var(--space-xxsmall) - 1px);
+  padding: calc(var(--space-xxsmall) - 1px) calc(var(--space-xsmall) - 1px);
 }
 
 .padding--medium {
-  padding:  var(--space-xsmall);
+  padding:  var(--space-xsmall) var(--space-small);
 }
 
 .outline--padding--medium {
-  padding:  calc(var(--space-xsmall) - 1px);
+  padding:  calc(var(--space-xsmall) - 1px) calc(var(--space-small) - 1px);
 }
 
 .padding--large {
-  padding: var(--space-small);
+  padding: var(--space-small) var(--space-medium);
 }
 
 .outline--padding--large {
-  padding: calc(var(--space-small) - 1px);
+  padding: calc(var(--space-small) - 1px) calc(var(--space-medium) - 1px);
 }
 
 /**

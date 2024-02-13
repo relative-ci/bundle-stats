@@ -46,6 +46,14 @@ export const All = () => (
             </Button>
           ))}
         </FlexStack>
+        <h3>As link</h3>
+        <FlexStack space="small" alignItems="top">
+          {Object.values(Button.KIND).map((kind) => (
+            <Button kind={kind} key={kind} as="a" href="#">
+              Action {kind}
+            </Button>
+          ))}
+        </FlexStack>
         <h3>Disabled</h3>
         <FlexStack space="small" alignItems="top">
           {Object.values(Button.KIND).map((kind) => (
