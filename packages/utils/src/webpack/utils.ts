@@ -20,19 +20,36 @@ const PATTERNS = [
   //       path/name.HEXHASH.EXT,
   //       path/name_HEXHASH.EXT,
   //       path/name-HEXHASH.chunk.EXT
-  `(.*)${HEX_HASH_SEPARATOR_PATTERN}${HEX_HASH_PATTERN}(${EXTENSION_PATTERN.source})$`,
+  {
+    pattern: new RegExp(
+      `(.*)${HEX_HASH_SEPARATOR_PATTERN}${HEX_HASH_PATTERN}(${EXTENSION_PATTERN.source})$`,
+    ),
+    replace: '$1$2',
+  },
 
   // Match path/name-BASE64URLHASH.EXT,
   //       path/name.BASE64URLHASH.EXT,
   //       path/name_BASE64URLHASH.EXT,
   //       path/name-BASE64URLHASH.chunk.EXT
-  `(.*)${BASE64URL_SEPARATOR_PATTERN}${BASE64URL_HASH_PATTERN}(${EXTENSION_PATTERN.source})$`,
+  {
+    pattern: new RegExp(
+      `(.*)${BASE64URL_SEPARATOR_PATTERN}${BASE64URL_HASH_PATTERN}(${EXTENSION_PATTERN.source})$`,
+    ),
+    replace: '$1$2',
+  },
+
   // Match static/HEXHASH.ext
-  `(static)/${HEX_HASH_PATTERN}(.*${EXTENSION_PATTERN.source})$`,
+  {
+    pattern: new RegExp(`(static)/${HEX_HASH_PATTERN}(.*${EXTENSION_PATTERN.source})$`),
+    replace: '$1$2',
+  },
 
   // Match static/HEXHASH/_name.ext
-  `(static)/${BASE64URL_HASH_PATTERN}(/_.*${EXTENSION_PATTERN.source})$`,
-].map((pattern) => new RegExp(pattern));
+  {
+    pattern: new RegExp(`(static)/${BASE64URL_HASH_PATTERN}/(_.*${EXTENSION_PATTERN.source})$`),
+    replace: '$1/[hash]/$2',
+  },
+];
 
 const NO_BASENAME = /(^|.*\/)\..*$/;
 
@@ -45,8 +62,9 @@ export const getAssetName = (statsAssetPath?: string | null): string => {
   }
 
   for (let i = 0; i < PATTERNS.length; i += 1) {
-    const pattern = PATTERNS[i];
-    const extracted: string = statsAssetPath.replace(pattern, '$1$2');
+    const { pattern, replace } = PATTERNS[i];
+
+    const extracted: string = statsAssetPath.replace(pattern, replace);
 
     if (extracted && extracted !== statsAssetPath && !NO_BASENAME.test(extracted)) {
       return extracted;

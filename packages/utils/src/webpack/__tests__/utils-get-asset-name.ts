@@ -56,10 +56,10 @@ describe('Webpack/utils/getAssetName', () => {
 
     test('should remove base64 hash when matching next manifests', () => {
       expect(getAssetName('static/JyGdYu5ApqW15bVPkT0MK/_buildManifest.js')).toBe(
-        'static/_buildManifest.js',
+        'static/[hash]/_buildManifest.js',
       );
       expect(getAssetName('static/gzzXRvk7zbHlZFnyz0PfQ/_ssgManifest.js')).toBe(
-        'static/_ssgManifest.js',
+        'static/[hash]/_ssgManifest.js',
       );
     });
 
