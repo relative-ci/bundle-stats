@@ -16,14 +16,22 @@ const BASE64URL_SEPARATOR_PATTERN = '[.~]';
 const EXTENSION_PATTERN = /(?:\.[a-z0-9]{2,}){1,}/;
 
 const PATTERNS = [
-  // Match path/name-HEXHASH.EXT, path/name.HEXHASH.EXT, path/name_HEXHASH.EXT, path/name-HEXHASH.chunk.EXT
+  // Match path/name-HEXHASH.EXT,
+  //       path/name.HEXHASH.EXT,
+  //       path/name_HEXHASH.EXT,
+  //       path/name-HEXHASH.chunk.EXT
   `(.*)${HEX_HASH_SEPARATOR_PATTERN}${HEX_HASH_PATTERN}(${EXTENSION_PATTERN.source})$`,
 
-  // Match static/HASH.ext
+  // Match path/name-BASE64URLHASH.EXT,
+  //       path/name.BASE64URLHASH.EXT,
+  //       path/name_BASE64URLHASH.EXT,
+  //       path/name-BASE64URLHASH.chunk.EXT
+  `(.*)${BASE64URL_SEPARATOR_PATTERN}${BASE64URL_HASH_PATTERN}(${EXTENSION_PATTERN.source})$`,
+  // Match static/HEXHASH.ext
   `(static)/${HEX_HASH_PATTERN}(.*${EXTENSION_PATTERN.source})$`,
 
-  // Match path/name-BASE64URLHASH.EXT, path/name.BASE64URLHASH.EXT, path/name_BASE64URLHASH.EXT, path/name-BASE64URLHASH.chunk.EXT
-  `(.*)${BASE64URL_SEPARATOR_PATTERN}${BASE64URL_HASH_PATTERN}(${EXTENSION_PATTERN.source})$`,
+  // Match static/HEXHASH/_name.ext
+  `(static)/${BASE64URL_HASH_PATTERN}(/_.*${EXTENSION_PATTERN.source})$`,
 ].map((pattern) => new RegExp(pattern));
 
 const NO_BASENAME = /(^|.*\/)\..*$/;

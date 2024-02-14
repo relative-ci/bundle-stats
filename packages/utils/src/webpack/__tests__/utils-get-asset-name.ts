@@ -50,8 +50,17 @@ describe('Webpack/utils/getAssetName', () => {
       expect(getAssetName('login-abcde-chunk.js')).toBe('login-abcde-chunk.js');
     });
 
-    test('should remove the hash when it is provided as a slug', () => {
+    test('should remove the hash when it is provided as a slug inside a static folder', () => {
       expect(getAssetName('static/d2490/pages/app.js')).toBe('static/pages/app.js');
+    });
+
+    test('should remove base64 hash when matching next manifests', () => {
+      expect(getAssetName('static/JyGdYu5ApqW15bVPkT0MK/_buildManifest.js')).toBe(
+        'static/_buildManifest.js',
+      );
+      expect(getAssetName('static/gzzXRvk7zbHlZFnyz0PfQ/_ssgManifest.js')).toBe(
+        'static/_ssgManifest.js',
+      );
     });
 
     test('should not remove hash when it is provided as filename', () => {
