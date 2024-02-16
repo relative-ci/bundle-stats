@@ -188,6 +188,7 @@ export const BundleModules = (props: BundleModulesProps) => {
               size="small"
               type="button"
               onClick={() => setModuleMetric(ModuleMetric.SIZE)}
+              title="Size (excluding duplicate modules)"
             >
               Module size
             </Button>
@@ -197,6 +198,7 @@ export const BundleModules = (props: BundleModulesProps) => {
               size="small"
               type="button"
               onClick={() => setModuleMetric(ModuleMetric.TOTAL_SIZE)}
+              title="Size (including duplicate modules)"
             >
               Total size
             </Button>
