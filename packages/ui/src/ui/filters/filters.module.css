@@ -33,6 +33,7 @@
   transform: translateY(-50%);
   padding: var(--space-xxxsmall);
   font-size: var(--size-xsmall);
+  line-height: 1.1;
 }
 
 /** cover item text */

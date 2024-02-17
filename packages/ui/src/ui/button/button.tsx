@@ -5,13 +5,13 @@ import { Button as ButtonBaseComponent } from 'ariakit/button';
 import { Icon as BaseIcon } from '../icon';
 import css from './button.module.css';
 
-const SIZE = {
+export const BUTTON_SIZE = {
   SMALL: 'small',
   MEDIUM: 'medium',
   LARGE: 'large',
 } as const;
 
-const KIND = {
+export const BUTTON_KIND = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
   DANGE: 'danger',
@@ -20,8 +20,8 @@ const KIND = {
   SUCCES: 'success',
 } as const;
 
-type Size = (typeof SIZE)[keyof typeof SIZE];
-type Kind = (typeof KIND)[keyof typeof KIND];
+type Size = (typeof BUTTON_SIZE)[keyof typeof BUTTON_SIZE];
+type Kind = (typeof BUTTON_KIND)[keyof typeof BUTTON_KIND];
 
 interface ButtonProps<T extends React.ElementType> {
   outline?: boolean;
@@ -37,7 +37,7 @@ interface ButtonProps<T extends React.ElementType> {
   rightGlyph?: React.ComponentProps<typeof BaseIcon>['glyph'];
 }
 
-export const Button = <T extends React.ElementType = 'button'>(
+const ButtonComponent = <T extends React.ElementType = 'button'>(
   props: ButtonProps<T> & Omit<React.ComponentPropsWithoutRef<T>, keyof ButtonProps<T>>,
 ) => {
   const {
@@ -92,5 +92,4 @@ export const Button = <T extends React.ElementType = 'button'>(
   );
 };
 
-Button.SIZE = SIZE;
-Button.KIND = KIND;
+export const Button = React.forwardRef(ButtonComponent);
