@@ -250,14 +250,12 @@ a.root {
 .small {
   font-size: var(--size-small);
   gap: var(--space-xxxsmall);
-  line-height: var(--space-xsmall);
+  line-height: var(--space-small);
 }
 
 .small .glyph {
   width: calc(var(--space-xsmall) + 2px);
   height: calc(var(--space-xsmall) + 2px);
-  margin-top: -1px;
-  margin-bottom: -1px;
 }
 
 .medium {
