@@ -5,7 +5,6 @@ import merge from 'lodash/merge';
 import { FilterFieldsData } from '../../types';
 import { getInitialValues } from './filters.utils';
 import { Filters as BaseComponent } from './filters';
-export { Filter } from './filters';
 
 interface FiltersProps
   extends Omit<
