@@ -81,6 +81,30 @@ const getModulesMetrics = (job) => get(job, 'metrics.webpack.modules', {});
 
 /**
  *
+ * Select webpack module size including duplication
+ *
+ * @param {Object} job Job data
+ * @param {Object} job.metrics Job metrics
+ * @param {Object} job.metrics.webpack Job webpack metrics
+ * @param {Object} job.metrics.webpack.modules Job webpack module metrics
+ *
+ * @return {Object} Webpack module metrics
+ */
+export const getModuleDuplicateSize = (job) => {
+  const modules = get(job, 'metrics.webpack.modules', {});
+  return Object.keys(modules).reduce((modulesWithDupes, key) => {
+    const module = modules[key];
+    // eslint-disable-next-line no-param-reassign
+    modulesWithDupes[key] = {
+      ...module,
+      value: module.value * module.chunkIds.length,
+    };
+    return modulesWithDupes;
+  }, {});
+};
+
+/**
+ *
  * Get package metrics
  *
  * @param {Object} job Job data

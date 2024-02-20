@@ -9,7 +9,7 @@ import {
   SECTION_WEBPACK_PACKAGES,
   SECTIONS,
 } from './constants';
-import { selectors } from './selectors';
+import { selectors, getModuleDuplicateSize } from './selectors';
 
 const compareStats = (jobs: Array<unknown>, rowTransformers?: Array<MetricReportRowTransformFn>) =>
   compareMetrics(jobs, selectors.stats, undefined, rowTransformers);
@@ -24,6 +24,11 @@ const compareModules = (
   jobs: Array<unknown>,
   rowTransformers?: Array<MetricReportRowTransformFn>,
 ) => compareMetrics(jobs, selectors.modules, MetricTypes.FileSize, rowTransformers);
+
+export const compareModuleDuplicateSize = (
+  jobs: Array<unknown>,
+  rowTransformers?: Array<MetricReportRowTransformFn>,
+) => compareMetrics(jobs, getModuleDuplicateSize, MetricTypes.FileSize, rowTransformers);
 
 const comparePackages = (
   jobs: Array<unknown>,
