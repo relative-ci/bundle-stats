@@ -24,6 +24,7 @@ import * as I18N_MODULES from './bundle-modules.i18n';
 import css from './bundle-modules.module.css';
 import { Box } from '../../layout';
 import { Button } from '../../ui';
+import { Tooltip } from '../../ui/tooltip';
 
 interface RowHeaderProps {
   row: ReportMetricModuleRow;
@@ -188,9 +189,8 @@ export const BundleModules = (props: BundleModulesProps) => {
               size="small"
               type="button"
               onClick={() => setModuleMetric(ModuleMetric.SIZE)}
-              title="Size (excluding duplicate modules)"
             >
-              Module size
+              <Tooltip title="Size (excluding duplicate modules)">Module size</Tooltip>
             </Button>
             <Button
               outline
@@ -198,9 +198,8 @@ export const BundleModules = (props: BundleModulesProps) => {
               size="small"
               type="button"
               onClick={() => setModuleMetric(ModuleMetric.TOTAL_SIZE)}
-              title="Size (including duplicate modules)"
             >
-              Total size
+              <Tooltip title="Size (including duplicate modules)">Module total size</Tooltip>
             </Button>
           </FlexStack>
         </Box>
