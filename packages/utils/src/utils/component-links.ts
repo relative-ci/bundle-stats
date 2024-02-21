@@ -35,6 +35,7 @@ export type ComponentLinkFilters = Record<string, boolean>;
 export interface ComponentLinkParams {
   search?: string;
   entryId?: string;
+  metric?: string;
   filters?: ComponentLinkFilters;
 }
 
@@ -410,6 +411,7 @@ export const ComponentStateParam: QueryParamConfig<any, any> = {
 
     const search = StringParam.encode(sectionState.search);
     const entryId = StringParam.encode(sectionState.entryId);
+    const metric = StringParam.encode(sectionState.metric);
 
     const filtersEncodedValues: Record<string, string> = {};
     Object.entries(sectionState.filters || {}).forEach(([key, val]) => {
@@ -427,6 +429,10 @@ export const ComponentStateParam: QueryParamConfig<any, any> = {
       data.entryId = entryId;
     }
 
+    if (metric) {
+      data.metric = metric;
+    }
+
     if (!isEmpty(filters)) {
       data.filters = filters;
     }
@@ -442,6 +448,7 @@ export const ComponentStateParam: QueryParamConfig<any, any> = {
 
     const search = StringParam.decode(params.search);
     const entryId = StringParam.decode(params.entryId);
+    const metric = StringParam.decode(params.metric);
 
     let filters: Record<string, boolean> = {};
 
@@ -472,6 +479,10 @@ export const ComponentStateParam: QueryParamConfig<any, any> = {
 
     if (entryId) {
       result.entryId = entryId;
+    }
+
+    if (metric) {
+      result.metric = metric;
     }
 
     if (!isEmpty(filters)) {

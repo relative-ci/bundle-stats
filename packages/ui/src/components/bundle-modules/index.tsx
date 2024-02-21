@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo } from 'react';
 // @ts-ignore
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
@@ -17,6 +17,33 @@ import {
 import { ModuleMetric } from './bundle-modules.constants';
 import * as types from './bundle-modules.types';
 
+interface UseMetricParams {
+  metric?: string;
+  setState: ({ metric }: { metric: ModuleMetric }) => void;
+}
+
+function useModuleMetric(params: UseMetricParams): [ModuleMetric, (value: ModuleMetric) => void] {
+  const { metric, setState } = params;
+
+  const moduleMetric: ModuleMetric = useMemo(() => {
+    if (Object.values(ModuleMetric).includes(metric as ModuleMetric)) {
+      return metric as ModuleMetric;
+    }
+    return ModuleMetric.SIZE;
+  }, [metric]);
+
+  const setModuleMetric = useCallback(
+    (newModuleMetric: ModuleMetric) => {
+      if (newModuleMetric !== metric) {
+        setState({ metric: newModuleMetric });
+      }
+    },
+    [metric, setState],
+  );
+
+  return useMemo(() => [moduleMetric, setModuleMetric], [moduleMetric, setModuleMetric]);
+}
+
 interface BundleModulesProps
   extends Omit<
     React.ComponentProps<typeof BaseComponent>,
@@ -31,7 +58,6 @@ interface BundleModulesProps
     | 'updateSort'
     | 'search'
     | 'updateSearch'
-    | 'entryId'
     | 'allItems'
     | 'totalRowCount'
     | 'hideEntryInfo'
@@ -39,15 +65,16 @@ interface BundleModulesProps
   jobs: Array<types.Job>;
   filters: Record<string, boolean>;
   search?: string;
+  metric?: string;
   setState: (params: any) => void;
   sortBy?: string;
   direction?: SortAction['direction'];
 }
 
 export const BundleModules = (props: BundleModulesProps) => {
-  const { jobs, filters, search, setState, sortBy, direction, ...restProps } = props;
+  const { jobs, filters, search, setState, sortBy, direction, metric = '', ...restProps } = props;
 
-  const [moduleMetric, setModuleMetric] = useState<ModuleMetric>(ModuleMetric.SIZE);
+  const [moduleMetric, setModuleMetric] = useModuleMetric({ metric, setState });
 
   const { chunks, chunkIds } = useMemo(() => extractChunkData(jobs), [jobs]);
 
