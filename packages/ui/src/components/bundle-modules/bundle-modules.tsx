@@ -185,7 +185,7 @@ export const BundleModules = (props: BundleModulesProps) => {
           <FlexStack space="xxsmall" as="nav">
             <Button
               outline
-              kind={moduleMetric === ModuleMetric.SIZE ? 'primary' : 'default'}
+              active={moduleMetric === ModuleMetric.SIZE}
               size="small"
               type="button"
               onClick={() => setModuleMetric(ModuleMetric.SIZE)}
@@ -194,7 +194,7 @@ export const BundleModules = (props: BundleModulesProps) => {
             </Button>
             <Button
               outline
-              kind={moduleMetric === ModuleMetric.TOTAL_SIZE ? 'primary' : 'default'}
+              active={moduleMetric === ModuleMetric.TOTAL_SIZE}
               size="small"
               type="button"
               onClick={() => setModuleMetric(ModuleMetric.TOTAL_SIZE)}
