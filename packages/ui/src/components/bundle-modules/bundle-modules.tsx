@@ -30,16 +30,17 @@ interface RowHeaderProps {
   row: ReportMetricModuleRow;
   filters?: any;
   search?: string;
+  moduleMetric?: string;
   customComponentLink: React.ElementType;
 }
 
 const RowHeader = (props: RowHeaderProps) => {
-  const { row, filters, search, customComponentLink: CustomComponentLink } = props;
+  const { row, filters, search, moduleMetric, customComponentLink: CustomComponentLink } = props;
 
   return (
     <CustomComponentLink
       section={SECTIONS.MODULES}
-      params={{ [COMPONENT.BUNDLE_MODULES]: { filters, search, entryId: row.key } }}
+      params={{ [COMPONENT.BUNDLE_MODULES]: { filters, search, entryId: row.key, moduleMetric } }}
       className={css.name}
     >
       {row.duplicated && (
@@ -127,6 +128,7 @@ export const BundleModules = (props: BundleModulesProps) => {
         row={row}
         filters={filters}
         search={search}
+        moduleMetric={moduleMetric}
         customComponentLink={CustomComponentLink}
       />
     ),
