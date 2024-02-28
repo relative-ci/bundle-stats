@@ -174,6 +174,19 @@ describe('Webpack/extract', () => {
           path: './node_modules/.pnpm/github.com+org-a+repo-a@abcd1234/node_modules/repo-a',
         });
       });
+
+      test('should skip module federation module paths', () => {
+        expect(
+          getPackageMetaFromModulePath(
+            'provide shared module (default) react@17.0.2 = ../node_modules/react/index.js',
+          ),
+        ).toEqual(null);
+        expect(
+          getPackageMetaFromModulePath(
+            'consume shared module (default) react@^17.0.2 (singleton) (fallback: ../node_modules/react/index.js) (eager)',
+          ),
+        ).toEqual(null);
+      });
     });
   });
 
