@@ -22,6 +22,11 @@ const uniqLast = (data: Array<unknown>) => {
  * Heuristics to extract package id, name, and path from a module path
  */
 export const getPackageMetaFromModulePath = (modulePath: string) => {
+  // Skip module federation entries
+  if (modulePath.match(/^(provide|consume) shared module/)) {
+    return null;
+  }
+
   const paths = modulePath.match(MODULE_PATH_PACKAGES);
 
   // No package paths found, skip
@@ -41,7 +46,11 @@ export const getPackageMetaFromModulePath = (modulePath: string) => {
           return [];
         }
 
-        return [...found].flat().slice(1).filter(Boolean).map((name) => name.replace(/\+/g, '/'));
+        return [...found]
+          .flat()
+          .slice(1)
+          .filter(Boolean)
+          .map((name) => name.replace(/\+/g, '/'));
       })
       .flat(),
   );
@@ -71,74 +80,78 @@ export const extractModulesPackages = (
 ): MetricsPackages => {
   const modules = Object.entries(currentExtractedData?.metrics?.modules || {});
 
-  const packages = modules.reduce((agg, [modulePath, { value }]) => {
-    const packageMeta = getPackageMetaFromModulePath(modulePath);
+  const packages = modules.reduce(
+    (agg, [modulePath, { value }]) => {
+      const packageMeta = getPackageMetaFromModulePath(modulePath);
 
-    if (!packageMeta) {
-      return agg;
-    }
+      if (!packageMeta) {
+        return agg;
+      }
 
-    const existingPackageData = agg[packageMeta.id];
+      const existingPackageData = agg[packageMeta.id];
 
-    // New package data
-    if (!existingPackageData) {
+      // New package data
+      if (!existingPackageData) {
+        return {
+          ...agg,
+          [packageMeta.id]: {
+            name: packageMeta.name,
+            path: packageMeta.path,
+            value,
+          },
+        };
+      }
+
+      // Existing package info
+      if (existingPackageData.path === packageMeta.path) {
+        return {
+          ...agg,
+          [packageMeta.id]: {
+            ...existingPackageData,
+            value: existingPackageData.value + value,
+          },
+        };
+      }
+
+      // Same package name, but different paths (eg: symlinks)
+      const existingPackageWithEqualPath = Object.entries(agg).find(
+        ([__, packageData]) => packageData.path === packageMeta.path,
+      );
+
+      if (existingPackageWithEqualPath) {
+        const [name, data] = existingPackageWithEqualPath;
+
+        return {
+          ...agg,
+          [name]: {
+            ...data,
+            value: data.value + value,
+          },
+        };
+      }
+
+      // New package name & data
+      const lastIndex =
+        max(
+          Object.keys(agg)
+            .map((id) => id.split('~'))
+            .filter(([id]) => id === packageMeta.id)
+            .map(([__, index]) => parseInt(index, 10)),
+        ) || 0;
+
+      const packageName = [packageMeta.id, lastIndex + 1].join(PACKAGE_ID_SEPARATOR);
+
       return {
         ...agg,
-        [packageMeta.id]: {
+        [packageName]: {
           name: packageMeta.name,
           path: packageMeta.path,
           value,
         },
       };
-    }
-
-    // Existing package info
-    if (existingPackageData.path === packageMeta.path) {
-      return {
-        ...agg,
-        [packageMeta.id]: {
-          ...existingPackageData,
-          value: existingPackageData.value + value,
-        },
-      };
-    }
-
-    // Same package name, but different paths (eg: symlinks)
-    const existingPackageWithEqualPath = Object.entries(agg).find(
-      ([__, packageData]) => packageData.path === packageMeta.path,
-    );
-
-    if (existingPackageWithEqualPath) {
-      const [name, data] = existingPackageWithEqualPath;
-
-      return {
-        ...agg,
-        [name]: {
-          ...data,
-          value: data.value + value,
-        },
-      };
-    }
-
-    // New package name & data
-    const lastIndex = max(
-      Object.keys(agg)
-        .map((id) => id.split('~'))
-        .filter(([id]) => id === packageMeta.id)
-        .map(([__, index]) => parseInt(index, 10)),
-    ) || 0;
-
-    const packageName = [packageMeta.id, lastIndex + 1].join(PACKAGE_ID_SEPARATOR);
-
-    return {
-      ...agg,
-      [packageName]: {
-        name: packageMeta.name,
-        path: packageMeta.path,
-        value,
-      },
-    };
-  }, {} as Record<string, Package>);
+    },
+    {} as Record<string, Package>,
+  );
 
   return { metrics: { packages } };
 };
