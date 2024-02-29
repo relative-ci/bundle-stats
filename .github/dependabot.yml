@@ -18,3 +18,9 @@ updates:
         patterns:
           - "storybook"
           - "@storybook/*"
+      babel:
+        patterns:
+          - "@babel/*"
+      typescript-eslint:
+        patterns:
+          - "@typescript-eslint/*"
