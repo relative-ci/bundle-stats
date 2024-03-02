@@ -142,8 +142,25 @@
 
 /** tooltip content */
 .tooltip {
-  padding: var(--space-small);
-  min-width: 280px;
+  z-index: var(--layer-xxhigh);
+  padding: var(--space-xsmall) var(--space-small);
+  border-radius: var(--radius-medium);
+  width: calc(100vw - 2 * var(--space-small));
+  max-width: 340px;
+  outline: none;
+  filter: drop-shadow(var(--shadow-layer-high));
+  will-change: filter;
+  background: var(--color-light);
+  font-size: var(--size-small);
+}
+
+.tooltipArrow {
+  border: var(--space-xxsmall) solid var(--color-background);
+  border-width: var(--space-xxsmall) var(--space-xxsmall) 0;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  position: absolute;
+  top: 100%;
 }
 
 .tooltipContentTitle {

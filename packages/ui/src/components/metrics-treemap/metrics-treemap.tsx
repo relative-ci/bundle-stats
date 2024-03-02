@@ -1,12 +1,19 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 import cx from 'classnames';
 import { useMeasure } from 'react-use';
 import type { ReportMetricRow, MetricRunInfo, MetricRunInfoBaseline } from '@bundle-stats/utils';
 import { hierarchy, treemap, treemapSquarify } from 'd3';
+import {
+  FloatingPortal,
+  useClientPoint,
+  useFloating,
+  useHover,
+  useInteractions,
+} from '@floating-ui/react';
+import { arrow, offset } from '@floating-ui/react-dom';
 
 import { Stack } from '../../layout/stack';
 import { FileName } from '../../ui/file-name';
-import { Tooltip } from '../../ui/tooltip';
 import { Delta } from '../delta';
 import { RunInfo } from '../run-info';
 import css from './metrics-treemap.module.css';
@@ -57,7 +64,7 @@ const TooltipContent = (props: TooltipContentProps) => {
   const baselineRun = data.runs[data.runs.length - 1] as MetricRunInfoBaseline;
 
   return (
-    <Stack space="small">
+    <Stack space="small" className={css.tooltipContent}>
       <h3 className={css.tooltipContentTitle}>
         <FileName as="code" name={data.label} />
       </h3>
@@ -71,10 +78,10 @@ const TooltipContent = (props: TooltipContentProps) => {
   );
 };
 
-const TileButton = (props: React.ComponentProps<'button'>) => (
+const TileButton = forwardRef((props: React.ComponentProps<'button'>, ref) => (
   // @ts-expect-error
-  <button type="button" xmlns="http://www.w3.org/1999/xhtml" {...props} />
-);
+  <button type="button" xmlns="http://www.w3.org/1999/xhtml" ref={ref} {...props} />
+));
 
 interface TreeNode {
   id: string;
@@ -103,6 +110,18 @@ const Tile = (props: LeafProps) => {
   const { item } = data;
   const runInfo = item.runs?.[0] as MetricRunInfo;
 
+  const [isOpen, setIsOpen] = useState(false);
+  const arrowRef = useRef(null);
+  const { refs, floatingStyles, context, middlewareData } = useFloating({
+    placement: 'top',
+    open: isOpen,
+    onOpenChange: setIsOpen,
+    middleware: [arrow({ element: arrowRef }), offset(16)],
+  });
+  const clientPoint = useClientPoint(context);
+  const hover = useHover(context);
+  const { getReferenceProps, getFloatingProps } = useInteractions([hover, clientPoint]);
+
   const tileSizeDisplay = useMemo(() => resolveTileSizeDisplay(width, height), [width, height]);
 
   const handleOnClick = useCallback(() => {
@@ -122,27 +141,43 @@ const Tile = (props: LeafProps) => {
     >
       <rect x={x} y={y} width={width} height={height} className={css.tileOverlay} />
       <foreignObject height={height} width={width} x={x} y={y}>
-        <Tooltip
-          title={<TooltipContent data={item} />}
-          tooltipClassName={css.tooltip}
-          darkMode={false}
+        <TileButton
+          onClick={handleOnClick}
+          className={css.tileContent}
+          ref={refs.setReference}
+          {...getReferenceProps()}
         >
-          <TileButton onClick={handleOnClick} className={css.tileContent}>
-            {tileSizeDisplay !== 'minimal' && (
-              <div className={css.tileContentWrapper}>
-                <p className={css.tileContentLabel}>{item.label}</p>
-                <p className={css.tileContentValue}>
-                  <span className={css.tileContentMetric}>{runInfo.displayValue}</span>
-                  <Delta
-                    className={css.tileContentDelta}
-                    displayValue={runInfo.displayDeltaPercentage}
-                    deltaType={runInfo.deltaType}
-                  />
-                </p>
-              </div>
-            )}
-          </TileButton>
-        </Tooltip>
+          {tileSizeDisplay !== 'minimal' && (
+            <div className={css.tileContentWrapper}>
+              <p className={css.tileContentLabel}>{item.label}</p>
+              <p className={css.tileContentValue}>
+                <span className={css.tileContentMetric}>{runInfo.displayValue}</span>
+                <Delta
+                  className={css.tileContentDelta}
+                  displayValue={runInfo.displayDeltaPercentage}
+                  deltaType={runInfo.deltaType}
+                />
+              </p>
+            </div>
+          )}
+        </TileButton>
+        {isOpen && (
+          <FloatingPortal>
+            <div
+              ref={refs.setFloating}
+              style={floatingStyles}
+              {...getFloatingProps()}
+              className={css.tooltip}
+            >
+              <div
+                ref={arrowRef}
+                style={{ left: middlewareData.arrow?.x }}
+                className={css.tooltipArrow}
+              />
+              <TooltipContent data={item} />
+            </div>
+          </FloatingPortal>
+        )}
       </foreignObject>
     </g>
   );
