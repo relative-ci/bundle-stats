@@ -34,7 +34,7 @@
 
 .leaf:hover .leafBackdrop {
   transition: var(--ui-transition-in);
-  opacity: 0.5;
+  opacity: 0.1;
 }
 
 /** Leaf wrapper button */
@@ -107,7 +107,7 @@
 
 /** Tile diff variation */
 .leaf-NO_CHANGE .leafBackdrop {
-  fill: transparent;
+  fill: var(--color-gray-25);
 }
 
 .leaf-NO_CHANGE .leafAction {

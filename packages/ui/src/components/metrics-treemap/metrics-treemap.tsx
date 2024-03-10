@@ -1,9 +1,9 @@
-import React, { forwardRef, useCallback, useMemo, useRef } from 'react';
+import React, { RefObject, forwardRef, useCallback, useMemo, useRef } from 'react';
+import { useDebounce, useHoverDirty, useMeasure, useMouseHovered } from 'react-use';
 import cx from 'classnames';
-import { useHoverDirty, useMeasure } from 'react-use';
 import type { ReportMetricRow, MetricRunInfo, MetricRunInfoBaseline } from '@bundle-stats/utils';
-import { hierarchy, treemap, treemapSquarify } from 'd3';
-import { Tooltip, TooltipArrow, TooltipAnchor, useTooltipState } from 'ariakit/tooltip';
+import { hierarchy, treemap, treemapSquarify, window } from 'd3';
+import { Tooltip, TooltipArrow, TooltipAnchor, useTooltipState, useTooltip } from 'ariakit/tooltip';
 
 import { Stack } from '../../layout/stack';
 import { FileName } from '../../ui/file-name';
@@ -102,10 +102,32 @@ const LeafContent = forwardRef((props: LeafContentProps, ref: React.Ref<HTMLDivE
   );
 });
 
-const LeafContentWithTooltip = (props: LeafContentProps) => {
-  const { sizeDisplay, item, runInfo } = props;
+const LeafContentWithTooltip = (props: LeafContentProps & { parentRef: RefObject<Element> }) => {
+  const { sizeDisplay, item, runInfo, parentRef } = props;
 
-  const tooltipState = useTooltipState({ gutter: 8 });
+  const pointer = useMouseHovered(parentRef, { whenHovered: true });
+
+  // Return custom rect based on the mouse position
+  const getAnchorRect = useCallback(() => {
+    // Skip custom component rect area if the pointer position is empty
+    if (pointer.docX === 0 && pointer.docY === 0 && pointer.elW === 0 && pointer.elH === 0) {
+      return null;
+    }
+
+    const newRect = {
+      x: pointer.docX - (document?.defaultView?.scrollX ?? 0),
+      y: pointer.docY - (document?.defaultView?.scrollY ?? 0),
+      w: 1,
+      h: 1,
+    };
+
+    return newRect;
+  }, [pointer.docX, pointer.docY]);
+
+  const tooltipState = useTooltipState({ gutter: 8, getAnchorRect, timeout: 120 });
+
+  // Update tooltip position when poiner values are changing
+  useDebounce(tooltipState.render, 10, [pointer.docX, pointer.docY]);
 
   return (
     <>
@@ -155,8 +177,9 @@ const Leaf = (props: LeafProps) => {
 
   const sizeDisplay = useMemo(() => resolveLeafSizeDisplay(width, height), [width, height]);
   const handleOnClick = useCallback(() => onClick?.(item.key), [item.key]);
-  const leadContentRef = useRef<HTMLElement>(null);
-  const hover = useHoverDirty(leadContentRef);
+
+  const leafContentRef = useRef<HTMLElement>(null);
+  const hover = useHoverDirty(leafContentRef);
 
   const leafClassName = cx(
     css.leaf,
@@ -169,9 +192,14 @@ const Leaf = (props: LeafProps) => {
       <rect x={x} y={y} width={width} height={height} className={css.leafBackground} />
       <rect x={x} y={y} width={width} height={height} className={css.leafBackdrop} />
       <foreignObject height={height} width={width} x={x} y={y} className={css.leafWrapper}>
-        <LeafAction onClick={handleOnClick} ref={leadContentRef} className={css.leafAction}>
+        <LeafAction onClick={handleOnClick} ref={leafContentRef} className={css.leafAction}>
           {hover ? (
-            <LeafContentWithTooltip sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
+            <LeafContentWithTooltip
+              sizeDisplay={sizeDisplay}
+              item={item}
+              runInfo={runInfo}
+              parentRef={leafContentRef}
+            />
           ) : (
             <LeafContent sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
           )}
