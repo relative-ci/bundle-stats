@@ -256,6 +256,7 @@ a.root {
 .small .glyph {
   width: calc(var(--space-xsmall) + 2px);
   height: calc(var(--space-xsmall) + 2px);
+  margin: 1px; /* compensate to keep the same height when the text is not provided */
 }
 
 .medium {
