@@ -25,26 +25,22 @@ export const MetricsDisplaySelector = (
         active={value === MetricsDisplayType.TABLE}
         size="small"
         type="button"
+        glyph={Icon.ICONS.TABLE}
         onClick={() => onSelect(MetricsDisplayType.TABLE)}
         className={css.button}
       >
-        <FlexStack space="xxxsmall" alignItems="center">
-          <Icon glyph={Icon.ICONS.TABLE} className={css.icon} />
-          <span>Table</span>
-        </FlexStack>
+        Table
       </Button>
       <Button
         outline
         active={value === MetricsDisplayType.TREEMAP}
         size="small"
         type="button"
+        glyph={Icon.ICONS.TREEMAP}
         onClick={() => onSelect(MetricsDisplayType.TREEMAP)}
         className={cx(css.button)}
       >
-        <FlexStack space="xxxsmall" alignItems="center">
-          <Icon glyph={Icon.ICONS.TREEMAP} className={css.icon} />
-          <span>Treemap</span>
-        </FlexStack>
+        Treemap
       </Button>
     </FlexStack>
   );
