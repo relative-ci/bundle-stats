@@ -40,7 +40,9 @@ const RowHeader = (props: RowHeaderProps) => {
   return (
     <CustomComponentLink
       section={SECTIONS.MODULES}
-      params={{ [COMPONENT.BUNDLE_MODULES]: { filters, search, entryId: row.key, moduleMetric } }}
+      params={{
+        [COMPONENT.BUNDLE_MODULES]: { filters, search, entryId: row.key, metric: moduleMetric },
+      }}
       className={css.name}
     >
       {row.duplicated && (
@@ -132,7 +134,7 @@ export const BundleModules = (props: BundleModulesProps) => {
         customComponentLink={CustomComponentLink}
       />
     ),
-    [jobs, chunks, CustomComponentLink, filters, search],
+    [jobs, chunks, CustomComponentLink, filters, search, moduleMetric],
   );
 
   const emptyMessage = useMemo(
