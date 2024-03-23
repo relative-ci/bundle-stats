@@ -12,7 +12,7 @@ import { RunInfo } from '../run-info';
 import css from './metrics-treemap.module.css';
 
 const SQUARIFY_RATIO = 1.78;
-const PADDING_OUTER = 0;
+const PADDING_OUTER = 1;
 const PADDING_INNER = 1;
 
 type TileSizeDisplay = 'minimal' | 'small' | 'default';
@@ -87,7 +87,7 @@ const LeafContent = forwardRef((props: LeafContentProps, ref: React.Ref<HTMLDivE
 
   return (
     <div className={css.leafContent} ref={ref}>
-      <p className={css.leadContentLabel}>{item.label}</p>
+      <FileName as="p" className={css.leadContentLabel} name={item.label} />
       {sizeDisplay !== 'small' && (
         <p className={css.leadContentValue}>
           <span className={css.leadContentMetric}>{runInfo.displayValue}</span>
@@ -189,7 +189,6 @@ const Leaf = (props: LeafProps) => {
 
   return (
     <g className={leafClassName}>
-      <rect x={x} y={y} width={width} height={height} className={css.leafBackground} />
       <rect x={x} y={y} width={width} height={height} className={css.leafBackdrop} />
       <foreignObject height={height} width={width} x={x} y={y} className={css.leafWrapper}>
         <LeafAction onClick={handleOnClick} ref={leafContentRef} className={css.leafAction}>

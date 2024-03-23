@@ -12,7 +12,7 @@
   height: 100%;
   fill: var(--color-text);
   font-family: var(--font-family);
-  background: var(--color-outline);
+  background: var(--color-background);
 }
 
 /** Tile overlay fill background transition */
@@ -21,20 +21,16 @@
   transition-property: opacity;
 }
 
-.leafBackground {
-  fill: var(--color-background);
-}
-
 .leafBackdrop {
   fill: var(--color-background);
   transition: var(--ui-transition-out);
   transition-property: opacity;
-  opacity: 0.2;
+  opacity: 0.6;
 }
 
 .leaf:hover .leafBackdrop {
   transition: var(--ui-transition-in);
-  opacity: 0.1;
+  opacity: 0.4;
 }
 
 /** Leaf wrapper button */
@@ -61,7 +57,7 @@
   flex-flow: column;
   justify-content: center;
   padding: var(--space-xxsmall) var(--space-xxsmall);
-  gap: var(--space-xxsmall);
+  gap: var(--space-xxxsmall);
   line-height: var(--line-height-heading);
 }
 
@@ -76,7 +72,6 @@
   min-width: 0;
   max-height: calc(2em * var(--line-height-heading));
   overflow: hidden;
-  word-break: break-word;
 }
 
 .leadContentValue {
@@ -107,7 +102,12 @@
 
 /** Tile diff variation */
 .leaf-NO_CHANGE .leafBackdrop {
-  fill: var(--color-gray-25);
+  fill: var(--color-gray-50);
+  opacity: 0.4;
+}
+
+.leaf-NO_CHANGE:hover .leafBackdrop {
+  opacity: 0.2;
 }
 
 .leaf-NO_CHANGE .leafAction {
