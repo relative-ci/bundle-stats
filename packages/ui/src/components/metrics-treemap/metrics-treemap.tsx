@@ -2,8 +2,8 @@ import React, { RefObject, forwardRef, useCallback, useMemo, useRef } from 'reac
 import { useDebounce, useHoverDirty, useMeasure, useMouseHovered } from 'react-use';
 import cx from 'classnames';
 import type { ReportMetricRow, MetricRunInfo, MetricRunInfoBaseline } from '@bundle-stats/utils';
-import { hierarchy, treemap, treemapSquarify, window } from 'd3';
-import { Tooltip, TooltipArrow, TooltipAnchor, useTooltipState, useTooltip } from 'ariakit/tooltip';
+import { hierarchy, treemap, treemapSquarify } from 'd3';
+import { Tooltip, TooltipArrow, TooltipAnchor, useTooltipState } from 'ariakit/tooltip';
 
 import { Stack } from '../../layout/stack';
 import { FileName } from '../../ui/file-name';
