@@ -15,7 +15,7 @@
     "build-assets-esm": "rsync -arm --include '*/' --include '*.json' --include '*.css' --include 'icons.svg' --exclude '*' src/ lib-esm",
     "build-storybook": "storybook build -c ./build/storybook",
     "generate-chart-colors": "node scripts/generate-chart-colors.js",
-    "generate-svg-sprite": "npx svg-sprite -s --si --no-svg-namespace-classnames src/assets/icons/*.svg && mv symbol/svg/sprite.symbol.svg src/assets/icons.svg",
+    "generate-svg-sprite": "npx svg-sprite -s --si --no-svg-namespace-classnames src/assets/icons/*.svg && mv symbol/svg/sprite.css.svg src/assets/icons.svg",
     "lint": "eslint",
     "start": "cross-env NODE_ENV=development storybook dev -c ./build/storybook -p 8080",
     "test": "jest src --passWithNoTests"
@@ -42,6 +42,7 @@
     "@storybook/addon-essentials": "7.6.17",
     "@storybook/react": "7.6.17",
     "@storybook/react-webpack5": "7.6.17",
+    "@types/d3": "7.4.3",
     "@types/react": "18.2.67",
     "@types/react-router-dom": "5.3.3",
     "babel-plugin-require-context-hook": "1.0.0",
@@ -74,7 +75,9 @@
   "dependencies": {
     "@bundle-stats/utils": "^4.12.2",
     "ariakit": "2.0.0-next.44",
+    "d3": "^7.8.5",
     "modern-css-reset": "1.4.0",
+    "react-use": "^17.5.0",
     "use-query-params": "2.2.1"
   }
 }

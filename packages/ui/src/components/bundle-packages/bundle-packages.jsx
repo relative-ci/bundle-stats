@@ -18,6 +18,10 @@ import { MetricsTableTitle } from '../metrics-table-title';
 import { PackageInfo } from '../package-info';
 import { SEARCH_PLACEHOLDER } from './bundle-packages.i18n';
 import css from './bundle-packages.module.css';
+import { MetricsDisplaySelector } from '../metrics-display-selector';
+import { MetricsDisplayType } from '../../constants';
+import { MetricsTreemap } from '../metrics-treemap';
+import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
 
 const getDropdownFilters = ({ compareMode, filters }) => ({
   [PACKAGE_FILTERS.CHANGED]: {
@@ -126,9 +130,12 @@ export const BundlePackages = (props) => {
     entryId,
     allItems,
     hideEntryInfo,
+    showEntryInfo,
   } = props;
 
   const jobLabels = jobs?.map((job) => job?.label);
+
+  const [displayType, setDisplayType] = useMetricsDisplayType();
 
   const dropdownFilters = useMemo(
     () => getDropdownFilters({ compareMode: jobs?.length > 1, filters }),
@@ -187,6 +194,7 @@ export const BundlePackages = (props) => {
           className={css.toolbar}
           renderActions={({ actionClassName }) => (
             <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
+              <MetricsDisplaySelector onSelect={setDisplayType} value={displayType} />
               <MetricsTableOptions
                 handleViewAll={resetAllFilters}
                 handleResetFilters={resetFilters}
@@ -210,16 +218,21 @@ export const BundlePackages = (props) => {
           </FlexStack>
         </Toolbar>
         <main>
-          <MetricsTable
-            runs={jobs}
-            items={items}
-            emptyMessage={emptyMessage}
-            renderRowHeader={renderRowHeader}
-            showHeaderSum
-            title={metricsTableTitle}
-            sort={sort}
-            updateSort={updateSort}
-          />
+          {displayType === MetricsDisplayType.TABLE && (
+            <MetricsTable
+              runs={jobs}
+              items={items}
+              emptyMessage={emptyMessage}
+              renderRowHeader={renderRowHeader}
+              showHeaderSum
+              title={metricsTableTitle}
+              sort={sort}
+              updateSort={updateSort}
+            />
+          )}
+          {displayType === MetricsDisplayType.TREEMAP && (
+            <MetricsTreemap emptyMessage={emptyMessage} items={items} onItemClick={showEntryInfo} />
+          )}
         </main>
       </section>
       {entryItem && (
@@ -283,4 +296,5 @@ BundlePackages.propTypes = {
   customComponentLink: PropTypes.elementType,
   entryId: PropTypes.string,
   hideEntryInfo: PropTypes.func.isRequired,
+  showEntryInfo: PropTypes.func.isRequired,
 };

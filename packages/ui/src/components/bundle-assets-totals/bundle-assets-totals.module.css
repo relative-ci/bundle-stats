@@ -1,0 +1,7 @@
+.title {
+  color: var(--color-text-light);
+}
+
+.toolbar {
+  border-bottom: 1px solid var(--color-outline);
+}

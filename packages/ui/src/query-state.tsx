@@ -30,7 +30,7 @@ export const useComponentQueryState = (componentName: string) => {
 
       setQueryState({ [componentName]: newState });
     },
-    [componentState],
+    [componentState, setQueryState],
   );
 
   return [componentState, setState];

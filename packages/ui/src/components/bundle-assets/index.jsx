@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 import { ASSET_FILTERS } from '@bundle-stats/utils';
@@ -10,8 +10,14 @@ import {
 import { useRowsFilter } from '../../hooks/rows-filter';
 import { useRowsSort } from '../../hooks/rows-sort';
 import { useSearchParams } from '../../hooks/search-params';
+import { useEntryInfo } from '../../hooks/entry-info';
 import { BundleAssets as BundleAssetsComponent } from './bundle-assets';
-import { addRowAssetFlags, addRowIsNotPredictive, getRowFilter, getCustomSort } from './bundle-assets.utils';
+import {
+  addRowAssetFlags,
+  addRowIsNotPredictive,
+  getRowFilter,
+  getCustomSort,
+} from './bundle-assets.utils';
 
 export const BundleAssets = (props) => {
   const { jobs, filters, search, setState, sortBy, direction, ...restProps } = props;
@@ -59,9 +65,7 @@ export const BundleAssets = (props) => {
     getCustomSort,
   });
 
-  const hideEntryInfo = useCallback(() => {
-    setState({ entryId: '' });
-  }, [setState]);
+  const [hideEntryInfo, showEntryInfo] = useEntryInfo({ setState });
 
   return (
     <BundleAssetsComponent
@@ -72,6 +76,7 @@ export const BundleAssets = (props) => {
       allItems={rows}
       totalRowCount={totalRowCount}
       hideEntryInfo={hideEntryInfo}
+      showEntryInfo={showEntryInfo}
     />
   );
 };
