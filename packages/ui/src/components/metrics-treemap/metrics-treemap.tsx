@@ -176,7 +176,7 @@ const Leaf = (props: LeafProps) => {
   const runInfo = item.runs?.[0] as MetricRunInfo;
 
   const sizeDisplay = useMemo(() => resolveLeafSizeDisplay(width, height), [width, height]);
-  const handleOnClick = useCallback(() => onClick?.(item.key), [item.key]);
+  const handleOnClick = useCallback(() => onClick?.(item.key), [item.key, onClick]);
 
   const leafContentRef = useRef<HTMLElement>(null);
   const hover = useHoverDirty(leafContentRef);
