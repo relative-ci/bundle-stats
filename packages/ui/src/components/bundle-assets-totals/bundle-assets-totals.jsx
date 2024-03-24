@@ -17,23 +17,11 @@ import { MetricsTable } from '../metrics-table';
 import { ComponentLink } from '../component-link';
 import css from './bundle-assets-totals.module.css';
 
-/**
- * @param {object} params
- * @param {string} params.entryId
- * @param {string} params.section
- * @param {string} params.queryParams
- */
-function defaultOnTreemapItemClick(params, history) {
-  const { section, queryParams } = params;
-  const nextUrl = `${SECTION_URLS[section]}?${queryParams}`;
-  history.push(nextUrl);
-}
-
 export const BundleAssetsTotals = ({
   className,
   jobs,
   customComponentLink: CustomComponentLink,
-  onTreemapItemClick = defaultOnTreemapItemClick,
+  onTreemapItemClick,
   ...restProps
 }) => {
   const [displayType, setDisplayType] = useMetricsDisplayType();
@@ -57,7 +45,9 @@ export const BundleAssetsTotals = ({
       const fileType = ASSETS_SIZES_FILE_TYPE_MAP[entryId];
       const { section, params } = getBundleAssetsFileTypeComponentLink(fileType, '');
       const queryParams = getComponentStateQueryString(params);
-      onTreemapItemClick({ entryId, section, queryParams }, history);
+
+      const nextUrl = `${SECTION_URLS[section]}?${queryParams}`;
+      history.push(nextUrl);
     },
     [history],
   );
@@ -82,7 +72,10 @@ export const BundleAssetsTotals = ({
         />
       )}
       {displayType === MetricsDisplayType.TREEMAP && (
-        <MetricsTreemap items={items} onItemClick={handleMetricsTreemapItemClick} />
+        <MetricsTreemap
+          items={items}
+          onItemClick={onTreemapItemClick || handleMetricsTreemapItemClick}
+        />
       )}
     </div>
   );
@@ -92,7 +85,7 @@ BundleAssetsTotals.defaultProps = {
   className: '',
   jobs: [],
   customComponentLink: ComponentLink,
-  onTreemapItemClick: defaultOnTreemapItemClick,
+  onTreemapItemClick: undefined,
 };
 
 BundleAssetsTotals.propTypes = {
@@ -104,5 +97,8 @@ BundleAssetsTotals.propTypes = {
 
   customComponentLink: PropTypes.elementType,
 
+  /**
+   * Treemap item onClick
+   */
   onTreemapItemClick: PropTypes.func,
 };
