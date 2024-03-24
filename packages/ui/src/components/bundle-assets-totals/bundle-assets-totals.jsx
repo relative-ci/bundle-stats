@@ -17,10 +17,23 @@ import { MetricsTable } from '../metrics-table';
 import { ComponentLink } from '../component-link';
 import css from './bundle-assets-totals.module.css';
 
+/**
+ * @param {object} params
+ * @param {string} params.entryId
+ * @param {string} params.section
+ * @param {string} params.queryParams
+ */
+function defaultOnTreemapItemClick(params, history) {
+  const { section, queryParams } = params;
+  const nextUrl = `${SECTION_URLS[section]}?${queryParams}`;
+  history.push(nextUrl);
+}
+
 export const BundleAssetsTotals = ({
   className,
   jobs,
   customComponentLink: CustomComponentLink,
+  onTreemapItemClick = defaultOnTreemapItemClick,
   ...restProps
 }) => {
   const [displayType, setDisplayType] = useMetricsDisplayType();
@@ -43,10 +56,8 @@ export const BundleAssetsTotals = ({
     (entryId) => {
       const fileType = ASSETS_SIZES_FILE_TYPE_MAP[entryId];
       const { section, params } = getBundleAssetsFileTypeComponentLink(fileType, '');
-      const search = getComponentStateQueryString(params);
-      const nextUrl = `${SECTION_URLS[section]}?${search}`;
-
-      history.push(nextUrl);
+      const queryParams = getComponentStateQueryString(params);
+      onTreemapItemClick({ entryId, section, queryParams }, history);
     },
     [history],
   );
@@ -81,6 +92,7 @@ BundleAssetsTotals.defaultProps = {
   className: '',
   jobs: [],
   customComponentLink: ComponentLink,
+  onTreemapItemClick: defaultOnTreemapItemClick,
 };
 
 BundleAssetsTotals.propTypes = {
@@ -91,4 +103,6 @@ BundleAssetsTotals.propTypes = {
   jobs: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 
   customComponentLink: PropTypes.elementType,
+
+  onTreemapItemClick: PropTypes.func,
 };
