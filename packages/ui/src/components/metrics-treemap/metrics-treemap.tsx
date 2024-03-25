@@ -124,10 +124,10 @@ const LeafContentWithTooltip = (props: LeafContentProps & { parentRef: RefObject
     return newRect;
   }, [pointer.docX, pointer.docY]);
 
-  const tooltipState = useTooltipState({ gutter: 8, getAnchorRect, timeout: 120 });
+  const tooltipState = useTooltipState({ gutter: 12, getAnchorRect, timeout: 120 });
 
   // Update tooltip position when poiner values are changing
-  useDebounce(tooltipState.render, 10, [pointer.docX, pointer.docY]);
+  useDebounce(tooltipState.render, 5, [pointer.docX, pointer.docY]);
 
   return (
     <>
@@ -188,23 +188,20 @@ const Leaf = (props: LeafProps) => {
   );
 
   return (
-    <g className={leafClassName}>
-      <rect x={x} y={y} width={width} height={height} className={css.leafBackdrop} />
-      <foreignObject height={height} width={width} x={x} y={y} className={css.leafWrapper}>
-        <LeafAction onClick={handleOnClick} ref={leafContentRef} className={css.leafAction}>
-          {hover ? (
-            <LeafContentWithTooltip
-              sizeDisplay={sizeDisplay}
-              item={item}
-              runInfo={runInfo}
-              parentRef={leafContentRef}
-            />
-          ) : (
-            <LeafContent sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
-          )}
-        </LeafAction>
-      </foreignObject>
-    </g>
+    <foreignObject height={height} width={width} x={x} y={y} className={leafClassName}>
+      <LeafAction onClick={handleOnClick} ref={leafContentRef} className={css.leafAction}>
+        {hover ? (
+          <LeafContentWithTooltip
+            sizeDisplay={sizeDisplay}
+            item={item}
+            runInfo={runInfo}
+            parentRef={leafContentRef}
+          />
+        ) : (
+          <LeafContent sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
+        )}
+      </LeafAction>
+    </foreignObject>
   );
 };
 
