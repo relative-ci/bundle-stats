@@ -188,23 +188,20 @@ const Leaf = (props: LeafProps) => {
   );
 
   return (
-    <g className={leafClassName}>
-      <rect x={x} y={y} width={width} height={height} className={css.leafBackdrop} />
-      <foreignObject height={height} width={width} x={x} y={y} className={css.leafWrapper}>
-        <LeafAction onClick={handleOnClick} ref={leafContentRef} className={css.leafAction}>
-          {hover ? (
-            <LeafContentWithTooltip
-              sizeDisplay={sizeDisplay}
-              item={item}
-              runInfo={runInfo}
-              parentRef={leafContentRef}
-            />
-          ) : (
-            <LeafContent sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
-          )}
-        </LeafAction>
-      </foreignObject>
-    </g>
+    <foreignObject height={height} width={width} x={x} y={y} className={leafClassName}>
+      <LeafAction onClick={handleOnClick} ref={leafContentRef} className={css.leafAction}>
+        {hover ? (
+          <LeafContentWithTooltip
+            sizeDisplay={sizeDisplay}
+            item={item}
+            runInfo={runInfo}
+            parentRef={leafContentRef}
+          />
+        ) : (
+          <LeafContent sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
+        )}
+      </LeafAction>
+    </foreignObject>
   );
 };
 
