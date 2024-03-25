@@ -172,7 +172,14 @@
   will-change: filter;
   background: var(--color-light);
   font-size: var(--size-small);
+  pointer-events: none;
 }
+
+/* prevent tooltip portal wrapper from capturing events */
+div[role="presentation"]:has(.tooltip) {
+  pointer-events: none;
+}
+
 
 .leafTooltipArrow svg {
   display: block;

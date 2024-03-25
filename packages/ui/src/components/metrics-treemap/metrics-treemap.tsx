@@ -124,10 +124,10 @@ const LeafContentWithTooltip = (props: LeafContentProps & { parentRef: RefObject
     return newRect;
   }, [pointer.docX, pointer.docY]);
 
-  const tooltipState = useTooltipState({ gutter: 8, getAnchorRect, timeout: 120 });
+  const tooltipState = useTooltipState({ gutter: 12, getAnchorRect, timeout: 120 });
 
   // Update tooltip position when poiner values are changing
-  useDebounce(tooltipState.render, 10, [pointer.docX, pointer.docY]);
+  useDebounce(tooltipState.render, 5, [pointer.docX, pointer.docY]);
 
   return (
     <>
