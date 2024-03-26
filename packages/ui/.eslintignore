@@ -3,3 +3,4 @@ lib
 lib-esm
 types
 !**/.*.js
+treemap-squarify.js
