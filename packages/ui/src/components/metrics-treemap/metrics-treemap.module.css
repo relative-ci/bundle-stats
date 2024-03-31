@@ -22,15 +22,13 @@
 }
 
 /** Leaf wrapper button */
-.leafAction {
-  position: relative;
+.leaf {
+  position: absolute;
   appearance: none;
   border: 0;
   border-radius: 0;
   padding: 0;
   background: none;
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   font-family: var(--font-family-fixed);
@@ -39,7 +37,7 @@
   text-align: left;
 }
 
-.leafAction::before {
+.leaf::before {
   content: "";
   display: block;
   position: absolute;
@@ -55,7 +53,7 @@
   opacity: 0.6;
 }
 
-.leaf:hover .leafAction::before {
+.leaf:hover::before {
   transition: var(--ui-transition-in);
   opacity: 0.4;
 }
@@ -113,40 +111,40 @@
 }
 
 /** Tile diff variation */
-.leaf-NO_CHANGE .leafAction {
+.leaf-NO_CHANGE {
   color: var(--color-text-light);
 }
 
-.leaf-NO_CHANGE .leafAction::before {
+.leaf-NO_CHANGE::before {
   color: var(--color-gray-50);
   opacity: 0.4;
 }
 
-.leaf-NO_CHANGE:hover .leafAction::before {
+.leaf-NO_CHANGE:hover::before {
   opacity: 0.2;
 }
 
-.leaf-HIGH_NEGATIVE .leafAction::before {
+.leaf-HIGH_NEGATIVE::before {
   color: var(--color-red-100);
 }
 
-.leaf-NEGATIVE .leafAction::before {
+.leaf-NEGATIVE::before {
   color: var(--color-red-50);
 }
 
-.leaf-LOW_NEGATIVE .leafAction::before {
+.leaf-LOW_NEGATIVE::before {
   color: var(--color-red-25);
 }
 
-.leaf-LOW_POSITIVE .leafAction::before {
+.leaf-LOW_POSITIVE::before {
   color: var(--color-green-25);
 }
 
-.leaf-POSITIVE .leafAction::before {
+.leaf-POSITIVE::before {
   color: var(--color-green-50);
 }
 
-.leaf-HIGH_POSITIVE .leafAction::before {
+.leaf-HIGH_POSITIVE::before {
   color: var(--color-green-100);
 }
 
