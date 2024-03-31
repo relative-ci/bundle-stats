@@ -142,11 +142,6 @@ const LeafContentWithTooltip = (props: LeafContentProps & { parentRef: RefObject
   );
 };
 
-const LeafAction = forwardRef((props: React.ComponentProps<'button'>, ref) => (
-  // @ts-expect-error
-  <button type="button" xmlns="http://www.w3.org/1999/xhtml" ref={ref} {...props} />
-));
-
 interface TreeNode {
   id: string;
   value: number;
@@ -161,8 +156,8 @@ interface RootTree {
 }
 
 interface LeafProps {
-  x: number;
-  y: number;
+  left: number;
+  top: number;
   width: number;
   height: number;
   data: TreeNode;
@@ -170,7 +165,7 @@ interface LeafProps {
 }
 
 const Leaf = (props: LeafProps) => {
-  const { x, y, width, height, data, onClick } = props;
+  const { left, top, width, height, data, onClick } = props;
 
   const { item } = data;
   const runInfo = item.runs?.[0] as MetricRunInfo;
@@ -178,7 +173,7 @@ const Leaf = (props: LeafProps) => {
   const sizeDisplay = useMemo(() => resolveLeafSizeDisplay(width, height), [width, height]);
   const handleOnClick = useCallback(() => onClick?.(item.key), [item.key, onClick]);
 
-  const leafContentRef = useRef<HTMLElement>(null);
+  const leafContentRef = useRef<HTMLButtonElement>(null);
   const hover = useHoverDirty(leafContentRef);
 
   const leafClassName = cx(
@@ -188,20 +183,24 @@ const Leaf = (props: LeafProps) => {
   );
 
   return (
-    <foreignObject height={height} width={width} x={x} y={y} className={leafClassName}>
-      <LeafAction onClick={handleOnClick} ref={leafContentRef} className={css.leafAction}>
-        {hover ? (
-          <LeafContentWithTooltip
-            sizeDisplay={sizeDisplay}
-            item={item}
-            runInfo={runInfo}
-            parentRef={leafContentRef}
-          />
-        ) : (
-          <LeafContent sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
-        )}
-      </LeafAction>
-    </foreignObject>
+    <button
+      type="button"
+      onClick={handleOnClick}
+      ref={leafContentRef}
+      style={{ left, top, width, height }}
+      className={leafClassName}
+    >
+      {hover ? (
+        <LeafContentWithTooltip
+          sizeDisplay={sizeDisplay}
+          item={item}
+          runInfo={runInfo}
+          parentRef={leafContentRef}
+        />
+      ) : (
+        <LeafContent sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
+      )}
+    </button>
   );
 };
 
@@ -275,7 +274,7 @@ export const MetricsTreemap = (props: MetricsTreemapProps & React.ComponentProps
   return (
     <div className={cx(css.root, className)} {...restProps} ref={containerRef}>
       {cells.length > 0 ? (
-        <svg viewBox={`0 0 ${width} ${height}`} className={css.canvas}>
+        <div className={css.canvas}>
           {cells.map((leaf) => {
             if (!leaf.parent) {
               return null;
@@ -283,17 +282,17 @@ export const MetricsTreemap = (props: MetricsTreemapProps & React.ComponentProps
 
             return (
               <Leaf
-                x={leaf.x0}
-                y={leaf.y0}
+                data={leaf.data as TreeNode}
+                left={leaf.x0}
+                top={leaf.y0}
                 width={leaf.x1 - leaf.x0}
                 height={leaf.y1 - leaf.y0}
-                data={leaf.data as TreeNode}
                 onClick={onItemClick}
                 key={leaf.id}
               />
             );
           })}
-        </svg>
+        </div>
       ) : (
         <div className={css.emptyMessage}>
           <div className={css.emptyMessageWrapper}>{emptyMessage}</div>
