@@ -3,6 +3,7 @@
   display: inline-block;
   border-radius: var(--radius-small);
   position: relative;
+  color: var(--color-text-ultra-light);
 }
 
 .toggle {

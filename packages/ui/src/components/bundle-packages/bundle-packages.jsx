@@ -10,9 +10,11 @@ import { InputSearch } from '../../ui/input-search';
 import { EmptySet } from '../../ui/empty-set';
 import { Filters } from '../../ui/filters';
 import { Tag } from '../../ui/tag';
+import { Table } from '../../ui/table';
 import { Toolbar } from '../../ui/toolbar';
 import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
+import { MetricsTableHeader } from '../metrics-table-header';
 import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
 import { PackageInfo } from '../package-info';
@@ -231,7 +233,17 @@ export const BundlePackages = (props) => {
             />
           )}
           {displayType === MetricsDisplayType.TREEMAP && (
-            <MetricsTreemap emptyMessage={emptyMessage} items={items} onItemClick={showEntryInfo} />
+            <>
+              <Table compact>
+                <MetricsTableHeader
+                  metricTitle={metricsTableTitle}
+                  showSum
+                  jobs={jobs}
+                  rows={items}
+                />
+              </Table>
+              <MetricsTreemap emptyMessage={emptyMessage} items={items} onItemClick={showEntryInfo} />
+            </>
           )}
         </main>
       </section>

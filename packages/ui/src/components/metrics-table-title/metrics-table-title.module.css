@@ -1,8 +1,9 @@
 .root {
+  color: var(--color-text-ultra-light);
 }
 
 .title {
-  color: var(--color-text-light);
+  color: inherit;
   font-size: 1em;
   font-weight: bold;
   text-transform: uppercase;
@@ -18,8 +19,6 @@
 }
 
 .info {
-  color: var(--color-text-light);
   font-family: var(--font-family-fixed);
-  font-size: var(--size-xsmall);
-  font-weight: bold;
+  font-weight: normal;
 }

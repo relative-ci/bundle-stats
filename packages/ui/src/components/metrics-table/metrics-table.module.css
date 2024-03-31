@@ -10,52 +10,9 @@
   text-decoration: underline;
 }
 
-/* columns */
-.metricName {
-  width: 55%;
-}
-
-.root .jobCol {
-  text-align: right;
-}
-
-.root .value {
-  text-align: right;
-  vertical-align: baseline;
-  width: 15%;
-}
-
+.root .value,
 .root .delta {
   text-align: right;
-  font-size: var(--size-xsmall);
-  vertical-align: baseline;
-  width: 10%;
-  color: pink;
-}
-
-.root .deltaPercentage {
-  width: 5%;
-}
-
-.root tbody .delta {
-  line-height: 1.6rem; /* baseline alignment with the column value */
-}
-
-.jobName {
-  white-space: nowrap;
-}
-
-/* columns overrides for showHeaderSum */
-.showHeaderSum .headerRow .jobCol {
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-
-.showHeaderSum .headerRow .sum {
-  padding-top: var(--space-xxxsmall);
-  font-size: var(--size-small);
-  vertical-align: middle;
-  text-transform: none;
 }
 
 /** rows */
