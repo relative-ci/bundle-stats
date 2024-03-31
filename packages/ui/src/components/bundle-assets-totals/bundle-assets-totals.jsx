@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import {
@@ -7,15 +7,17 @@ import {
 } from '@bundle-stats/utils';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
+import config from '../../config.json';
 import { ASSETS_SIZES_FILE_TYPE_MAP, SECTION_URLS, MetricsDisplayType } from '../../constants';
 import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
+import I18N from '../../i18n';
 import { Toolbar } from '../../ui/toolbar';
 import { Table } from '../../ui/table';
 import { MetricsDisplaySelector } from '../metrics-display-selector';
 import { MetricsTable } from '../metrics-table';
+import { MetricsTableTitle } from '../metrics-table-title';
 import { MetricsTableHeader } from '../metrics-table-header';
 import { MetricsTreemap } from '../metrics-treemap';
-import { TotalSizeTypeTitle } from '../total-size-type-title';
 import { ComponentLink } from '../component-link';
 import css from './bundle-assets-totals.module.css';
 
@@ -54,6 +56,17 @@ export const BundleAssetsTotals = ({
     [history],
   );
 
+  const metricsTableTitle = useMemo(
+    () => (
+      <MetricsTableTitle
+        title={I18N.ASSET_TOTALS}
+        popoverInfo={I18N.ASSET_TOTALS_INFO}
+        popoverHref={config.documentation.assets}
+      />
+    ),
+    [],
+  );
+
   return (
     <div className={className}>
       <Toolbar
@@ -61,11 +74,10 @@ export const BundleAssetsTotals = ({
         renderActions={() => (
           <MetricsDisplaySelector onSelect={setDisplayType} value={displayType} />
         )}
-      >
-        <TotalSizeTypeTitle />
-      </Toolbar>
+      />
       {displayType === MetricsDisplayType.TABLE && (
         <MetricsTable
+          title={metricsTableTitle}
           runs={jobs}
           items={items}
           renderRowHeader={renderRowHeader}
@@ -76,11 +88,7 @@ export const BundleAssetsTotals = ({
       {displayType === MetricsDisplayType.TREEMAP && (
         <>
           <Table compact>
-            <MetricsTableHeader
-              showSum
-              jobs={jobs}
-              rows={items}
-            />
+            <MetricsTableHeader metricTitle={metricsTableTitle} showSum jobs={jobs} rows={items} />
           </Table>
           <MetricsTreemap
             items={items}
