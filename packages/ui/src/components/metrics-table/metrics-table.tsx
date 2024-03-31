@@ -1,13 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import isEmpty from 'lodash/isEmpty';
-import sum from 'lodash/sum';
-import {
-  METRIC_TYPE_CONFIGS,
-  type MetricRunInfo,
-  MetricTypes,
-  getMetricRunInfo,
-} from '@bundle-stats/utils';
+import type { ReportMetricRow } from '@bundle-stats/utils';
 
 import { Button } from '../../ui/button';
 import { Icon } from '../../ui/icon';
@@ -15,128 +9,17 @@ import { Table } from '../../ui/table';
 import { Stack } from '../../layout/stack';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
-import { JobName } from '../job-name';
-import { SortButton } from '../sort-button';
+import { MetricsTableHeader } from '../metrics-table-header';
 import * as I18N from './metrics-table.i18n';
 import css from './metrics-table.module.css';
 
-const METRIC_TYPE = METRIC_TYPE_CONFIGS[MetricTypes.FileSize];
 const VISIBLE_COUNT = 500;
 const BASELINE_COLUMN_SPAN = 1;
 const CURRENT_COLUMN_SPAN = 3;
 
-interface Run {
-  /**
-   * Run job label
-   */
-  label?: React.ReactNode;
-  /**
-   * Job internal build number
-   */
-  internalBuildNumber: number;
-}
-
-interface Item {
-  key: string;
-  label?: string;
-  changed: boolean;
-  biggerIsBetter: boolean;
-  runs: Array<MetricRunInfo | null>;
-}
-
-const getRowsRunTotal = (rows: Array<Item>, runIndex: number): number =>
-  sum(rows.map((row) => row?.runs?.[runIndex]?.value || 0));
-
-interface JobColumnProps {
-  run: Run;
-  isBaseline: boolean;
-}
-
-const JobColumn = ({ run, isBaseline }: JobColumnProps) => {
-  const colSpan = isBaseline ? BASELINE_COLUMN_SPAN : CURRENT_COLUMN_SPAN;
-  const { label, internalBuildNumber } = run;
-
-  if (!run) {
-    return <Table.Th colSpan={colSpan}>-</Table.Th>;
-  }
-
-  return (
-    <Table.Th className={css.jobCol} colSpan={colSpan}>
-      <JobName
-        title={isBaseline ? I18N.BASELINE_TITLE : I18N.CURRENT_TITLE}
-        internalBuildNumber={internalBuildNumber}
-        className={css.jobName}
-      >
-        {label}
-      </JobName>
-    </Table.Th>
-  );
-};
-
-interface ColumnSumProps {
-  rows: Array<Item>;
-  isBaseline: boolean;
-  runIndex: number;
-  sort?: any;
-  updateSort?: (val: any) => void;
-}
-
-const SumColumn = ({ rows, isBaseline, runIndex, updateSort, sort }: ColumnSumProps) => {
-  const currentRunTotal = getRowsRunTotal(rows, runIndex);
-  const baselineRunTotal = !isBaseline ? getRowsRunTotal(rows, runIndex + 1) : 0;
-  const total = getMetricRunInfo(METRIC_TYPE, currentRunTotal, baselineRunTotal);
-  const fieldPath = `runs[${runIndex}]`;
-
-  return (
-    <>
-      <Table.Th className={cx(css.value, css.sum)}>
-        <SortButton
-          fieldPath={fieldPath}
-          fieldName="value"
-          label={I18N.SORT_VALUE}
-          updateSort={updateSort}
-          sort={sort}
-        >
-          <Metric value={total.displayValue} />
-        </SortButton>
-      </Table.Th>
-      {!isBaseline && (
-        <>
-          <Table.Th className={cx(css.delta, css.sum)}>
-            <SortButton
-              fieldPath={fieldPath}
-              fieldName="delta"
-              label={I18N.SORT_CHANGE}
-              updateSort={updateSort}
-              sort={sort}
-            >
-              {'delta' in total && (
-                <Delta displayValue={total.displayDelta} deltaType={total.deltaType} />
-              )}
-            </SortButton>
-          </Table.Th>
-          <Table.Th className={cx(css.delta, css.deltaPercentage, css.sum)}>
-            <SortButton
-              fieldPath={fieldPath}
-              fieldName="deltaPercentage"
-              label={I18N.SORT_PERCENTUAL_CHANGE}
-              updateSort={updateSort}
-              sort={sort}
-            >
-              {'delta' in total && (
-                <Delta displayValue={total.displayDeltaPercentage} deltaType={total.deltaType} />
-              )}
-            </SortButton>
-          </Table.Th>
-        </>
-      )}
-    </>
-  );
-};
-
 interface RowProps extends React.ComponentProps<typeof Table.Tr> {
-  item: Item;
-  renderHeader: (item: Item) => React.ReactNode;
+  item: ReportMetricRow;
+  renderHeader: (item: ReportMetricRow) => React.ReactNode;
 }
 
 const Row = ({ className = '', item, renderHeader, ...restProps }: RowProps) => (
@@ -185,14 +68,15 @@ const Row = ({ className = '', item, renderHeader, ...restProps }: RowProps) => 
 
 interface MetricsTableProps extends Omit<React.ComponentProps<typeof Table>, 'title'> {
   runs: Array<{
+    label: string;
     internalBuildNumber: number;
   }>;
-  items: Array<Item>;
+  items: Array<ReportMetricRow>;
   title?: React.ReactNode;
   showHeaderSum?: boolean;
   sort?: any;
   updateSort?: (val: any) => void;
-  renderRowHeader?: (item: Item) => React.ReactNode;
+  renderRowHeader?: (item: ReportMetricRow) => React.ReactNode;
   emptyMessage?: React.ReactNode;
   showAllItems: boolean;
   setShowAllItems: (value: boolean) => void;
@@ -203,7 +87,7 @@ export const MetricsTable = ({
   runs,
   items,
   showHeaderSum = false,
-  title = '',
+  title,
   sort,
   updateSort,
   renderRowHeader = (item: any) => item.label,
@@ -214,12 +98,7 @@ export const MetricsTable = ({
 }: MetricsTableProps) => {
   const columnCount = (runs.length - 1) * CURRENT_COLUMN_SPAN + BASELINE_COLUMN_SPAN + 1;
 
-  const rootClassName = cx(
-    css.root,
-    className,
-    runs.length > 1 && css.multipleRuns,
-    showHeaderSum && css.showHeaderSum,
-  );
+  const rootClassName = cx(css.root, className, runs.length > 1 && css.multipleRuns);
 
   const showEmpty = isEmpty(items);
   const showItems = !showEmpty;
@@ -228,29 +107,14 @@ export const MetricsTable = ({
 
   return (
     <Table className={rootClassName} compact {...restProps}>
-      <Table.THead>
-        <Table.Tr className={css.headerRow}>
-          <Table.Th className={css.metricName} rowSpan={showHeaderSum ? 2 : 1}>
-            {title || ' '}
-          </Table.Th>
-          {runs.map((run, runIndex) => (
-            <JobColumn run={run} isBaseline={runIndex === runs.length - 1} />
-          ))}
-        </Table.Tr>
-        {showHeaderSum && (
-          <Table.Tr className={css.headerRow}>
-            {runs.map((_, runIndex) => (
-              <SumColumn
-                rows={items}
-                isBaseline={runIndex === runs.length - 1}
-                runIndex={runIndex}
-                updateSort={updateSort}
-                sort={sort}
-              />
-            ))}
-          </Table.Tr>
-        )}
-      </Table.THead>
+      <MetricsTableHeader
+        metricTitle={title}
+        showSum={showHeaderSum}
+        jobs={runs}
+        rows={items}
+        sort={sort}
+        updateSort={updateSort}
+      />
       <Table.TBody>
         {showEmpty && (
           <Table.Tr>
