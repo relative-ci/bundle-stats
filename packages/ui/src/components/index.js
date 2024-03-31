@@ -18,4 +18,3 @@ export { MetricsTableTitle } from './metrics-table-title';
 export { ModuleInfo } from './module-info';
 export { RunInfo, RunInfoProps } from './run-info';
 export { Summary } from './summary';
-export { TotalSizeTypeTitle } from './total-size-type-title';

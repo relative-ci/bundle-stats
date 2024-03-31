@@ -21,6 +21,7 @@ import { InputSearch } from '../../ui/input-search';
 import { FileName } from '../../ui/file-name';
 import { HoverCard } from '../../ui/hover-card';
 import { Tag } from '../../ui/tag';
+import { Table } from '../../ui/table';
 import { Filters } from '../../ui/filters';
 import { EmptySet } from '../../ui/empty-set';
 import { Toolbar } from '../../ui/toolbar';
@@ -30,9 +31,10 @@ import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
-import { SEARCH_PLACEHOLDER } from './bundle-assets.i18n';
 import { MetricsDisplaySelector } from '../metrics-display-selector';
+import { MetricsTableHeader } from '../metrics-table-header';
 import { MetricsTreemap } from '../metrics-treemap';
+import { SEARCH_PLACEHOLDER } from './bundle-assets.i18n';
 import css from './bundle-assets.module.css';
 
 const RUN_TITLE_CURRENT = 'Current';
@@ -272,7 +274,21 @@ export const BundleAssets = (props) => {
             />
           )}
           {displayType === MetricsDisplayType.TREEMAP && (
-            <MetricsTreemap emptyMessage={emptyMessage} items={items} onItemClick={showEntryInfo} />
+            <>
+              <Table compact>
+                <MetricsTableHeader
+                  metricTitle={metricsTableTitle}
+                  showSum
+                  jobs={jobs}
+                  rows={items}
+                />
+              </Table>
+              <MetricsTreemap
+                emptyMessage={emptyMessage}
+                items={items}
+                onItemClick={showEntryInfo}
+              />
+            </>
           )}
         </main>
       </section>
