@@ -10,10 +10,12 @@ import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 import { ASSETS_SIZES_FILE_TYPE_MAP, SECTION_URLS, MetricsDisplayType } from '../../constants';
 import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
 import { Toolbar } from '../../ui/toolbar';
-import { MetricsTreemap } from '../metrics-treemap';
+import { Table } from '../../ui/table';
 import { MetricsDisplaySelector } from '../metrics-display-selector';
-import { TotalSizeTypeTitle } from '../total-size-type-title';
 import { MetricsTable } from '../metrics-table';
+import { MetricsTableHeader } from '../metrics-table-header';
+import { MetricsTreemap } from '../metrics-treemap';
+import { TotalSizeTypeTitle } from '../total-size-type-title';
 import { ComponentLink } from '../component-link';
 import css from './bundle-assets-totals.module.css';
 
@@ -72,10 +74,19 @@ export const BundleAssetsTotals = ({
         />
       )}
       {displayType === MetricsDisplayType.TREEMAP && (
-        <MetricsTreemap
-          items={items}
-          onItemClick={onTreemapItemClick || handleMetricsTreemapItemClick}
-        />
+        <>
+          <Table compact>
+            <MetricsTableHeader
+              showSum
+              jobs={jobs}
+              rows={items}
+            />
+          </Table>
+          <MetricsTreemap
+            items={items}
+            onItemClick={onTreemapItemClick || handleMetricsTreemapItemClick}
+          />
+        </>
       )}
     </div>
   );

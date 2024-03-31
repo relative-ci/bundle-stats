@@ -14,10 +14,12 @@ import { FileName } from '../../ui/file-name';
 import { Filters } from '../../ui/filters';
 import { InputSearch } from '../../ui/input-search';
 import { Tag } from '../../ui/tag';
+import { Table } from '../../ui/table';
 import { Toolbar } from '../../ui/toolbar';
 import { Tooltip } from '../../ui/tooltip';
 import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
+import { MetricsTableHeader } from '../metrics-table-header';
 import { MetricsTreemap } from '../metrics-treemap';
 import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsDisplaySelector } from '../metrics-display-selector';
@@ -230,7 +232,17 @@ export const BundleModules = (props: BundleModulesProps) => {
           />
         )}
         {displayType === MetricsDisplayType.TREEMAP && (
-          <MetricsTreemap emptyMessage={emptyMessage} items={items} onItemClick={showEntryInfo} />
+          <>
+            <Table compact>
+              <MetricsTableHeader
+                metricTitle={metricsTableTitle}
+                showSum
+                jobs={jobs}
+                rows={items}
+              />
+            </Table>
+            <MetricsTreemap emptyMessage={emptyMessage} items={items} onItemClick={showEntryInfo} />
+          </>
         )}
       </div>
       {entryItem && (
