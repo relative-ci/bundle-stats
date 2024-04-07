@@ -5,7 +5,7 @@ import type { FilterFieldsData, FilterGroupFieldData } from '../../types';
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { Button } from '../button';
-import { Dropdown } from '../dropdown';
+import { Dropdown, DropdownItem } from '../dropdown';
 import { InputSearch } from '../input-search';
 import * as I18N from './filters.i18n';
 import { getGroupFiltersLabelSuffix, LABELS } from './filters.utils';
@@ -135,83 +135,64 @@ const FilterGroup = (props: FilterGroupProps) => {
       label={dropdownLabel}
       ariaLabel={`${groupLabel}: ${filterSuffix}`}
     >
-      {({ MenuItem, menuItemClassName }) => {
-        return (
-          <>
-            {groupItems.length > 10 && (
-              <div className={css.filterGroupSearchWrapper}>
-                <InputSearch
-                  defaultValue={search}
-                  onChange={setSearch}
-                  placeholder={I18N.GROUP_SEARCH}
-                  debounceWait={0}
-                />
-              </div>
-            )}
-            <div className={css.filterGroupItems}>
-              {filteredGroupItems.length === 0 && (
-                <Stack className={css.filterGroupSearchNotFound}>
-                  <p>{I18N.GROUP_NOT_FOUND}</p>
-                  <div>
-                    <Button
-                      size="small"
-                      kind="primary"
-                      type="button"
-                      onClick={() => setSearch('')}
-                      className={css.filterGroupSearchNotFoundClear}
-                    >
-                      {I18N.GROUP_SEARCH_CLEAR}
-                    </Button>
-                  </div>
-                </Stack>
-              )}
-              {filteredGroupItems.map(({ key: itemKey, ...itemData }) => {
-                const id = [groupKey, itemKey].join('.');
-                const getOnOnlyClick = () => getOnGroupCheck(false, { [id]: true });
-
-                return (
-                  <Filter
-                    key={id}
-                    className={menuItemClassName}
-                    as={MenuItem}
-                    name={id}
-                    label={itemData.label}
-                    onChange={onCheckboxChange}
-                    checked={values[id]}
-                    disabled={itemData.disabled}
-                    getOnOnlyClick={getOnOnlyClick}
-                  />
-                );
-              })}
+      {groupItems.length > 10 && (
+        <div className={css.filterGroupSearchWrapper}>
+          <InputSearch
+            defaultValue={search}
+            onChange={setSearch}
+            placeholder={I18N.GROUP_SEARCH}
+            debounceWait={0}
+          />
+        </div>
+      )}
+      <div className={css.filterGroupItems}>
+        {filteredGroupItems.length === 0 && (
+          <Stack className={css.filterGroupSearchNotFound}>
+            <p>{I18N.GROUP_NOT_FOUND}</p>
+            <div>
+              <Button
+                size="small"
+                kind="primary"
+                type="button"
+                onClick={() => setSearch('')}
+                className={css.filterGroupSearchNotFoundClear}
+              >
+                {I18N.GROUP_SEARCH_CLEAR}
+              </Button>
             </div>
-            {filteredGroupItems.length !== 0 && (
-              <div className={css.filterGroupActions}>
-                {areAllGroupItemsChecked ? (
-                  <MenuItem
-                    id="clear-all"
-                    as="button"
-                    className={menuItemClassName}
-                    type="button"
-                    onClick={getOnGroupCheck(false)}
-                  >
-                    {I18N.CLEAR}
-                  </MenuItem>
-                ) : (
-                  <MenuItem
-                    id="clear-all"
-                    as="button"
-                    className={menuItemClassName}
-                    type="button"
-                    onClick={getOnGroupCheck(true)}
-                  >
-                    {I18N.CHECK}
-                  </MenuItem>
-                )}
-              </div>
-            )}
-          </>
-        );
-      }}
+          </Stack>
+        )}
+        {filteredGroupItems.map(({ key: itemKey, ...itemData }) => {
+          const id = [groupKey, itemKey].join('.');
+          const getOnOnlyClick = () => getOnGroupCheck(false, { [id]: true });
+
+          return (
+            <Filter
+              key={id}
+              as={DropdownItem}
+              name={id}
+              label={itemData.label}
+              onChange={onCheckboxChange}
+              checked={values[id]}
+              disabled={itemData.disabled}
+              getOnOnlyClick={getOnOnlyClick}
+            />
+          );
+        })}
+      </div>
+      {filteredGroupItems.length !== 0 && (
+        <div className={css.filterGroupActions}>
+          {areAllGroupItemsChecked ? (
+            <DropdownItem id="clear-all" onClick={getOnGroupCheck(false)} role="button">
+              {I18N.CLEAR}
+            </DropdownItem>
+          ) : (
+            <DropdownItem id="clear-all" onClick={getOnGroupCheck(true)} role="button">
+              {I18N.CHECK}
+            </DropdownItem>
+          )}
+        </div>
+      )}
     </Dropdown>
   );
 };
@@ -255,16 +236,16 @@ export const Filters = (props: FiltersProps) => {
           }
 
           return (
-            <FilterGroup
-              className={css.item}
-              buttonClassName={css.itemButton}
-              key={name}
-              groupKey={name}
-              data={data}
-              values={values}
-              onCheckboxChange={onCheckboxChange}
-              toggleFilters={toggleFilters}
-            />
+            <div className={css.item} key={name}>
+              <FilterGroup
+                buttonClassName={css.itemButton}
+                groupKey={name}
+                data={data}
+                values={values}
+                onCheckboxChange={onCheckboxChange}
+                toggleFilters={toggleFilters}
+              />
+            </div>
           );
         })}
       </FlexStack>
