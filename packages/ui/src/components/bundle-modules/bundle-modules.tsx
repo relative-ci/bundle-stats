@@ -9,6 +9,7 @@ import { Box } from '../../layout/box';
 import { MetricsDisplayType } from '../../constants';
 import { FlexStack } from '../../layout/flex-stack';
 import { Button } from '../../ui/button';
+import { ControlGroup } from '../../ui/control-group';
 import { EmptySet } from '../../ui/empty-set';
 import { FileName } from '../../ui/file-name';
 import { Filters } from '../../ui/filters';
@@ -197,7 +198,7 @@ export const BundleModules = (props: BundleModulesProps) => {
           </FlexStack>
         </Toolbar>
         <Box padding={['xsmall', 'small']} className={css.metricSelector}>
-          <FlexStack space="xxsmall" as="nav">
+          <ControlGroup as="nav">
             <Button
               outline
               active={moduleMetric === ModuleMetric.SIZE}
@@ -216,7 +217,7 @@ export const BundleModules = (props: BundleModulesProps) => {
             >
               <Tooltip title="Size (including duplicate modules)">Module total size</Tooltip>
             </Button>
-          </FlexStack>
+          </ControlGroup>
         </Box>
         {displayType === MetricsDisplayType.TABLE && (
           <MetricsTable

@@ -34,7 +34,7 @@ const JobColumn = ({ job, isBaseline }: JobColumnProps) => {
   }
 
   return (
-    <Table.Th className={css.job} colSpan={colSpan}>
+    <Table.Th className={cx(css.col, css.job)} colSpan={colSpan}>
       <JobName
         title={isBaseline ? I18N.BASELINE_TITLE : I18N.CURRENT_TITLE}
         internalBuildNumber={internalBuildNumber}
@@ -65,7 +65,7 @@ const SumColumn = ({ rows, isBaseline, runIndex, updateSort, sort }: ColumnSumPr
 
   return (
     <>
-      <Table.Th className={cx(css.value, css.sum)}>
+      <Table.Th className={cx(css.col, css.value, css.sum)}>
         <SortButton
           fieldPath={fieldPath}
           fieldName="value"
@@ -78,7 +78,7 @@ const SumColumn = ({ rows, isBaseline, runIndex, updateSort, sort }: ColumnSumPr
       </Table.Th>
       {!isBaseline && (
         <>
-          <Table.Th className={cx(css.delta, css.sum)}>
+          <Table.Th className={cx(css.col, css.delta, css.sum)}>
             <SortButton
               fieldPath={fieldPath}
               fieldName="delta"
@@ -91,7 +91,7 @@ const SumColumn = ({ rows, isBaseline, runIndex, updateSort, sort }: ColumnSumPr
               )}
             </SortButton>
           </Table.Th>
-          <Table.Th className={cx(css.delta, css.deltaPercentage, css.sum)}>
+          <Table.Th className={cx(css.col, css.delta, css.deltaPercentage, css.sum)}>
             <SortButton
               fieldPath={fieldPath}
               fieldName="deltaPercentage"
@@ -146,8 +146,8 @@ export const MetricsTableHeader = (
 
   return (
     <Table.THead className={rootClassName}>
-      <Table.Tr className={css.headerRow}>
-        <Table.Th className={css.metricName} rowSpan={showSum ? 2 : 1}>
+      <Table.Tr>
+        <Table.Th className={cx(css.col, css.metric)} rowSpan={showSum ? 2 : 1}>
           {metricTitle || ' '}
         </Table.Th>
         {jobs.map((job, runIndex) => (
@@ -155,7 +155,7 @@ export const MetricsTableHeader = (
         ))}
       </Table.Tr>
       {showSum && (
-        <Table.Tr className={css.headerRow}>
+        <Table.Tr>
           {jobs.map((_, runIndex) => (
             <SumColumn
               rows={rows}

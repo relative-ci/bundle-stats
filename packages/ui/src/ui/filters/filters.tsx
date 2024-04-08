@@ -5,85 +5,51 @@ import type { FilterFieldsData, FilterGroupFieldData } from '../../types';
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { Button } from '../button';
-import { Dropdown } from '../dropdown';
+import { ControlGroup } from '../control-group';
+import { Dropdown, DropdownItem } from '../dropdown';
 import { InputSearch } from '../input-search';
 import * as I18N from './filters.i18n';
 import { getGroupFiltersLabelSuffix, LABELS } from './filters.utils';
 import css from './filters.module.css';
 
-interface FilterProps extends React.ComponentProps<'input'> {
-  as?: React.ElementType;
-  buttonClassName?: string;
+interface FilterBooleanProps extends React.ComponentProps<'input'> {
   label: string;
-  name: string;
-  getOnOnlyClick?: (name: string) => () => void;
 }
 
-const Filter = (props: FilterProps) => {
-  const {
-    className = '',
-    as: Component = 'div',
-    buttonClassName = '',
-    label,
-    name,
-    getOnOnlyClick,
-    ...inputProps
-  } = props;
-
-  const id = `filter-${name}`;
-  const rootClassName = cx(css.filter, className);
+const Filter = (props: FilterBooleanProps) => {
+  const { className = '', label, name, ...inputProps } = props;
 
   return (
-    <Component className={rootClassName}>
-      {/* eslint-disable */}
-      <FlexStack
-        space="xxxsmall"
-        alignItems="center"
-        as="label"
-        className={cx(css.filterCheckbox, buttonClassName)}
-      >
-        {/* eslint-enabled */}
-        <input type="checkbox" id={id} name={name} {...inputProps} className={css.filterInput} />
-        <span title={label} className={css.filterLabel}>
-          {label}
-        </span>
-      </FlexStack>
-
-      {getOnOnlyClick && (
-        <Button
-          kind="info"
-          solid
-          size="small"
-          type="button"
-          onClick={getOnOnlyClick(name)}
-          className={css.filterOnlyButton}
-        >
-          {I18N.ONLY}
-        </Button>
-      )}
-    </Component>
+    <FlexStack
+      space="xxxsmall"
+      alignItems="center"
+      as="label"
+      className={cx(css.filter, className)}
+    >
+      <input
+        type="checkbox"
+        id={`filter-${name}`}
+        name={name}
+        {...inputProps}
+        className={css.filterControl}
+      />
+      <span title={label} className={css.filterLabel}>
+        {label}
+      </span>
+    </FlexStack>
   );
 };
 
 interface FilterGroupProps extends React.ComponentProps<'div'> {
-  buttonClassName?: string;
   groupKey: string;
   data: FilterGroupFieldData;
   values: Record<string, boolean>;
-  onCheckboxChange: FilterProps['onChange'];
+  onCheckboxChange: FilterBooleanProps['onChange'];
   toggleFilters: (newFilters: Record<string, boolean>) => void;
 }
 
 const FilterGroup = (props: FilterGroupProps) => {
-  const {
-    className = '',
-    buttonClassName = '',
-    groupKey,
-    data,
-    values,
-    onCheckboxChange,
-    toggleFilters,
-  } = props;
+  const { className = '', groupKey, data, values, onCheckboxChange, toggleFilters } = props;
 
   const [search, setSearch] = useState('');
 
@@ -99,7 +65,9 @@ const FilterGroup = (props: FilterGroupProps) => {
     <>
       {`${groupLabel}:`}
       &nbsp;
-      <span className={cx(hasCustomFilterSuffix && css.labelSuffixCustom)}>{filterSuffix}</span>
+      <span className={cx(hasCustomFilterSuffix && css.filterGroupLabelSuffixCustom)}>
+        {filterSuffix}
+      </span>
     </>
   );
 
@@ -130,88 +98,79 @@ const FilterGroup = (props: FilterGroupProps) => {
 
   return (
     <Dropdown
-      className={className}
-      buttonClassName={buttonClassName}
+      buttonClassName={className}
       label={dropdownLabel}
       ariaLabel={`${groupLabel}: ${filterSuffix}`}
     >
-      {({ MenuItem, menuItemClassName }) => {
-        return (
-          <>
-            {groupItems.length > 10 && (
-              <div className={css.filterGroupSearchWrapper}>
-                <InputSearch
-                  defaultValue={search}
-                  onChange={setSearch}
-                  placeholder={I18N.GROUP_SEARCH}
-                  debounceWait={0}
-                />
-              </div>
-            )}
-            <div className={css.filterGroupItems}>
-              {filteredGroupItems.length === 0 && (
-                <Stack className={css.filterGroupSearchNotFound}>
-                  <p>{I18N.GROUP_NOT_FOUND}</p>
-                  <div>
-                    <Button
-                      size="small"
-                      kind="primary"
-                      type="button"
-                      onClick={() => setSearch('')}
-                      className={css.filterGroupSearchNotFoundClear}
-                    >
-                      {I18N.GROUP_SEARCH_CLEAR}
-                    </Button>
-                  </div>
-                </Stack>
-              )}
-              {filteredGroupItems.map(({ key: itemKey, ...itemData }) => {
-                const id = [groupKey, itemKey].join('.');
-                const getOnOnlyClick = () => getOnGroupCheck(false, { [id]: true });
-
-                return (
-                  <Filter
-                    key={id}
-                    className={menuItemClassName}
-                    as={MenuItem}
-                    name={id}
-                    label={itemData.label}
-                    onChange={onCheckboxChange}
-                    checked={values[id]}
-                    disabled={itemData.disabled}
-                    getOnOnlyClick={getOnOnlyClick}
-                  />
-                );
-              })}
+      {groupItems.length > 10 && (
+        <div className={css.filterGroupSearchWrapper}>
+          <InputSearch
+            defaultValue={search}
+            onChange={setSearch}
+            placeholder={I18N.GROUP_SEARCH}
+            debounceWait={0}
+          />
+        </div>
+      )}
+      <div className={css.filterGroupItems}>
+        {filteredGroupItems.length === 0 && (
+          <Stack className={css.filterGroupSearchNotFound}>
+            <p>{I18N.GROUP_NOT_FOUND}</p>
+            <div>
+              <Button
+                size="small"
+                kind="primary"
+                type="button"
+                onClick={() => setSearch('')}
+                className={css.filterGroupSearchNotFoundClear}
+              >
+                {I18N.GROUP_SEARCH_CLEAR}
+              </Button>
             </div>
-            {filteredGroupItems.length !== 0 && (
-              <div className={css.filterGroupActions}>
-                {areAllGroupItemsChecked ? (
-                  <MenuItem
-                    id="clear-all"
-                    as="button"
-                    className={menuItemClassName}
-                    type="button"
-                    onClick={getOnGroupCheck(false)}
-                  >
-                    {I18N.CLEAR}
-                  </MenuItem>
-                ) : (
-                  <MenuItem
-                    id="clear-all"
-                    as="button"
-                    className={menuItemClassName}
-                    type="button"
-                    onClick={getOnGroupCheck(true)}
-                  >
-                    {I18N.CHECK}
-                  </MenuItem>
-                )}
-              </div>
-            )}
-          </>
-        );
-      }}
+          </Stack>
+        )}
+        {filteredGroupItems.map(({ key: itemKey, ...itemData }) => {
+          const id = [groupKey, itemKey].join('.');
+          const getOnOnlyClick = () => getOnGroupCheck(false, { [id]: true });
+
+          return (
+            <DropdownItem key={id} className={css.filterGroupItem}>
+              <Filter
+                label={itemData.label}
+                name={id}
+                onChange={onCheckboxChange}
+                checked={values[id]}
+                disabled={itemData.disabled}
+                className={css.filterGroupItemFilter}
+              />
+              <Button
+                kind="info"
+                solid
+                size="small"
+                type="button"
+                onClick={getOnOnlyClick()}
+                disabled={itemData.disabled}
+                className={css.filterGroupOnlyButton}
+              >
+                {I18N.ONLY}
+              </Button>
+            </DropdownItem>
+          );
+        })}
+      </div>
+      {filteredGroupItems.length !== 0 && (
+        <div className={css.filterGroupActions}>
+          {areAllGroupItemsChecked ? (
+            <DropdownItem id="clear-all" onClick={getOnGroupCheck(false)} role="button">
+              {I18N.CLEAR}
+            </DropdownItem>
+          ) : (
+            <DropdownItem id="clear-all" onClick={getOnGroupCheck(true)} role="button">
+              {I18N.CHECK}
+            </DropdownItem>
+          )}
+        </div>
+      )}
     </Dropdown>
   );
 };
@@ -226,6 +185,9 @@ interface FiltersProps extends React.ComponentProps<'div'> {
 export const Filters = (props: FiltersProps) => {
   const { className = '', values, filters, toggleFilter, toggleFilters } = props;
 
+  /**
+   * Toggle filter value on checkbox change
+   */
   const onCheckboxChange = useCallback(
     (event: any) => {
       const { name } = event.target;
@@ -233,41 +195,41 @@ export const Filters = (props: FiltersProps) => {
     },
     [toggleFilter, values],
   );
-  const rootClassName = cx(css.root, className);
+
+  const filterList = Object.entries(filters);
+  const filterCount = filterList.length;
 
   return (
-    <form className={rootClassName}>
-      <FlexStack space="xxsmall" alignItems="top" className={css.items}>
-        {Object.entries(filters).map(([name, data]) => {
-          if ('defaultValue' in data) {
-            return (
-              <Filter
-                key={name}
-                className={cx(css.item, css.filterStandalone)}
-                buttonClassName={css.itemButton}
-                name={name}
-                label={data.label}
-                onChange={onCheckboxChange}
-                checked={values[name]}
-                disabled={data.disabled as boolean}
-              />
-            );
-          }
+    <ControlGroup className={cx(css.root, className)}>
+      {filterList.map(([name, data], index) => {
+        const lastItem = index === filterCount - 1;
 
+        if ('defaultValue' in data) {
           return (
-            <FilterGroup
-              className={css.item}
-              buttonClassName={css.itemButton}
+            <Filter
+              name={name}
+              label={data.label}
+              onChange={onCheckboxChange}
+              checked={values[name]}
+              disabled={data.disabled as boolean}
               key={name}
-              groupKey={name}
-              data={data}
-              values={values}
-              onCheckboxChange={onCheckboxChange}
-              toggleFilters={toggleFilters}
+              className={cx(css.filterSingle, lastItem && css.itemLast)}
             />
           );
-        })}
-      </FlexStack>
-    </form>
+        }
+
+        return (
+          <FilterGroup
+            groupKey={name}
+            data={data}
+            values={values}
+            onCheckboxChange={onCheckboxChange}
+            toggleFilters={toggleFilters}
+            className={cx(lastItem && css.itemLast)}
+            key={name}
+          />
+        );
+      })}
+    </ControlGroup>
   );
 };

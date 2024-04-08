@@ -1,9 +1,16 @@
 /* columns */
-.root .metricName {
+.root .col {
+  padding-top: var(--space-xxsmall);
+  padding-bottom: var(--space-xxsmall);
+}
+
+.root .metric {
   width: 55%;
+  vertical-align: middle;
 }
 
 .root .job {
+  padding-top: var(--space-xxsmall);
   text-align: right;
 }
 
@@ -30,13 +37,13 @@
 }
 
 /* columns overrides for showHeaderSum */
-.showHeaderSum .headerRow .job {
+.showHeaderSum .job {
   border-bottom: 0;
   padding-bottom: 0;
 }
 
-.showHeaderSum .headerRow .sum {
-  padding-top: var(--space-xxxsmall);
+.showHeaderSum .sum {
+  padding-top: 0;
   font-size: var(--size-small);
   vertical-align: middle;
   text-transform: none;

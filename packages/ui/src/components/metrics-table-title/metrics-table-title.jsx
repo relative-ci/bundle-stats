@@ -15,7 +15,7 @@ export const MetricsTableTitle = (props) => {
   const rootClassName = cx(css.root, className);
 
   return (
-    <Stack space="xxxsmall" className={rootClassName}>
+    <Stack space="none" className={rootClassName}>
       <FlexStack space="xxxsmall" alignItems="center" as="h3" className={css.title}>
         <span>{title}</span>
 
