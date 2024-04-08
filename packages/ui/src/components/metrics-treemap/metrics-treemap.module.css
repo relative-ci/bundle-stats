@@ -72,7 +72,7 @@
 }
 
 /** Align label to other elements on the first column leafs */
-.leaf[x="1"] .leafContent {
+.leafFirstCol .leafContent {
   padding-left: var(--space-small);
 }
 

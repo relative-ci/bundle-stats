@@ -1,18 +1,18 @@
-/* Checkbox + label + button */
-.filter {
-  /* Update MenuItem padding */
-  padding-top: calc(var(--space-xxxsmall) / 2);
-  padding-bottom: calc(var(--space-xxxsmall) / 2);
+/* explicit ControlGroup last item styles to override ariakit injected sibling nodes */
+.itemLast {
+  border-top-right-radius: var(--radius-small) !important;
+  border-bottom-right-radius: var(--radius-small) !important;
+}
 
+/* Filter (label with input + text) */
+.filter {
   position: relative;
   width: 100%;
   max-width: 240px;
+  color: var(--color-text);
 }
 
-.filterCheckbox {
-}
-
-.filterInput {
+.filterControl {
   flex: 0 0 auto;
   height: 1em;
 }
@@ -25,7 +25,42 @@
   text-overflow: ellipsis;
 }
 
-.filterOnlyButton {
+.filterControl[disabled] + .filterLabel {
+  color: var(--color-text-light);
+}
+
+.filter:hover {
+  color: var(--color-dark);
+}
+
+/** Filter single */
+.filterSingle {
+  padding: calc(var(--space-xxsmall) - 1px);
+  border: 1px solid var(--color-outline);
+  border-radius: var(--radius-small);
+  font-size: var(--size-small);
+  line-height: var(--space-small);
+  color: var(--color-text-ultra-light);
+}
+
+.filterSingle:hover,
+.filterSingle:active,
+.filterSingle:focus {
+  border-color: var(--color-outline-dark);
+}
+
+/** Filter group */
+.filterGroupItems {
+  max-height: calc(10 * (var(--space-small) + 2 * var(--space-xxxsmall)));
+  overflow: auto;
+}
+
+.filterGroupItem {
+  position: relative;
+  padding-right: 10em;
+}
+
+.filterGroupOnlyButton {
   display: none;
   position: absolute;
   right: 2px;
@@ -37,7 +72,7 @@
 }
 
 /** cover item text */
-.filterOnlyButton::before {
+.filterGroupOnlyButton::before {
   content: ' ';
   display: block;
   position: absolute;
@@ -48,53 +83,13 @@
   background: linear-gradient(90deg, rgba(255, 255, 255, 0), var(--color-highlight) 75%);
 }
 
-/** filter disabled state */
-.filterInput[disabled] + .filterLabel {
-  color: var(--color-text-light);
-}
-
-.filterInput[disabled] + .filterOnlyButton {
-  display: none;
-}
-
 /** filter hover state */
-.filter {
-  color: var(--color-text);
-}
-
-.filter:hover {
-  color: var(--color-dark);
-}
-
-.filter:hover .filterOnlyButton {
+.filterGroupItem:hover .filterGroupOnlyButton {
   display: block;
 }
 
-/** Filter standard variation */
-.filterStandalone {
-  padding: 0;
-  width: auto;
-  color: var(--color-text-light);
-  z-index: var(--layout-xlow); /* show collapsed border */
-  font-size: var(--size-small);
-  line-height: var(--space-small);
-}
-
-.filterStandalone .filterCheckbox {
-  padding: calc(var(--space-xxsmall) - 1px) calc(var(--space-xxsmall) - 1px);
-  border: 1px solid var(--color-outline);
-}
-
-.filterStandalone:hover .filterCheckbox,
-.filterStandalone:active .filterCheckbox,
-.filterStandalone:focus .filterCheckbox {
-  z-index: var(--layout-xlow); /* show collapsed border */
-  box-shadow: var(--outline-hover);
-  color: var(--color-text);
-}
-
 /** Filter group variation */
-.labelSuffixCustom {
+.filterGroupLabelSuffixCustom {
   color: var(--color-text);
   text-transform: lowercase;
 }
@@ -112,24 +107,10 @@
   color: var(--color-text-light);
 }
 
-.filterGroupItems {
-  max-height: calc(10 * (var(--space-small) + 2 * var(--space-xxxsmall)));
-  overflow: auto;
-}
-
 .filterGroupActions {
   margin-top: var(--space-xxxsmall);
   padding-top: var(--space-xxxsmall);
   padding-bottom: var(--space-xxxsmall);
   margin-bottom: calc(0px - var(--space-xxxsmall));
   border-top: 1px solid var(--color-outline);
-}
-
-.item {
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.itemButton {
-  border-radius: var(--radius-small);
 }

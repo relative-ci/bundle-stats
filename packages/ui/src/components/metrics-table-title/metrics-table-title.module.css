@@ -19,6 +19,7 @@
 }
 
 .info {
+  font-size: var(--size-small);
   font-family: var(--font-family-fixed);
   font-weight: normal;
 }
