@@ -11,9 +11,9 @@ import { Delta } from '../delta';
 import { RunInfo } from '../run-info';
 import css from './metrics-treemap.module.css';
 
-const SQUARIFY_RATIO = 1.78;
-const PADDING_OUTER = 1;
-const PADDING_INNER = 1;
+const SQUARIFY_RATIO = 1.33;
+const PADDING_OUTER = 0;
+const PADDING_INNER = 2;
 
 type TileSizeDisplay = 'minimal' | 'small' | 'default';
 
@@ -180,6 +180,7 @@ const Leaf = (props: LeafProps) => {
     css.leaf,
     css[`leaf-${runInfo.deltaType}`],
     sizeDisplay === 'small' && css.leafSmall,
+    left === 0 && css.leafFirstCol,
   );
 
   return (
