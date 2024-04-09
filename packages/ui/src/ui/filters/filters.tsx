@@ -50,10 +50,9 @@ interface FilterGroupProps extends React.ComponentProps<'div'> {
 
 const FilterGroup = (props: FilterGroupProps) => {
   const { className = '', groupKey, data, values, onCheckboxChange, toggleFilters } = props;
+  const { label: groupLabel, children: groupItems } = data;
 
   const [search, setSearch] = useState('');
-
-  const { label: groupLabel, children: groupItems } = data;
 
   const areAllGroupItemsChecked = groupItems
     .map(({ key: itemKey }) => values?.[`${groupKey}.${itemKey}`])
@@ -98,7 +97,7 @@ const FilterGroup = (props: FilterGroupProps) => {
 
   return (
     <Dropdown
-      buttonClassName={className}
+      className={className}
       label={dropdownLabel}
       ariaLabel={`${groupLabel}: ${filterSuffix}`}
     >

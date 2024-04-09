@@ -13,6 +13,7 @@
 }
 
 .filterControl {
+  margin: 0;
   flex: 0 0 auto;
   height: 1em;
 }
@@ -41,12 +42,14 @@
   font-size: var(--size-small);
   line-height: var(--space-small);
   color: var(--color-text-ultra-light);
+  transition: var(--transition-out);
 }
 
 .filterSingle:hover,
 .filterSingle:active,
 .filterSingle:focus {
   border-color: var(--color-outline-dark);
+  transition: var(--transition-in);
 }
 
 /** Filter group */
@@ -57,7 +60,10 @@
 
 .filterGroupItem {
   position: relative;
-  padding-right: 10em;
+}
+
+.filterGroupItemFilter {
+  padding-right: 24px; /* space for only button */
 }
 
 .filterGroupOnlyButton {
@@ -76,6 +82,7 @@
   content: ' ';
   display: block;
   position: absolute;
+  pointer-events: none;
   top: 0;
   right: 100%;
   bottom: 0;

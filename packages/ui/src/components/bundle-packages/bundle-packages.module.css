@@ -2,14 +2,9 @@
   color: var(--color-text-light);
 }
 
-.toolbar {
-  border-bottom: 1px solid var(--color-outline);
-}
-
 .toolbarSearch {
   width: 100%;
   max-width: 240px;
-  margin-right: -1px; /** collapse border */
 }
 
 .hoverCard {

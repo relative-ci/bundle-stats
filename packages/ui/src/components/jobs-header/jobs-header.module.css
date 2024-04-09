@@ -24,10 +24,6 @@
   background: linear-gradient(90deg, transparent, var(--color-background));
 }
 
-.item + .item {
-  margin-left: var(--space-small);
-}
-
 .item:first-child {
   border-left: 0;
   padding-left: 0;

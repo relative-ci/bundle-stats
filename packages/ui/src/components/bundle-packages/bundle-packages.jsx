@@ -5,7 +5,9 @@ import { COMPONENT, PACKAGE_FILTERS, PACKAGES_SEPARATOR, SECTIONS } from '@bundl
 
 import config from '../../config.json';
 import I18N from '../../i18n';
+import { Box } from '../../layout/box';
 import { FlexStack } from '../../layout/flex-stack';
+import { Stack } from '../../layout/stack';
 import { InputSearch } from '../../ui/input-search';
 import { EmptySet } from '../../ui/empty-set';
 import { Filters } from '../../ui/filters';
@@ -191,7 +193,7 @@ export const BundlePackages = (props) => {
 
   return (
     <>
-      <section className={cx(css.root, className)}>
+      <Stack space="xsmall" as="section" className={cx(css.root, className)}>
         <Toolbar
           className={css.toolbar}
           renderActions={({ actionClassName }) => (
@@ -219,7 +221,7 @@ export const BundlePackages = (props) => {
             />
           </FlexStack>
         </Toolbar>
-        <main>
+        <Box outline as="main">
           {displayType === MetricsDisplayType.TABLE && (
             <MetricsTable
               runs={jobs}
@@ -245,8 +247,8 @@ export const BundlePackages = (props) => {
               <MetricsTreemap emptyMessage={emptyMessage} items={items} onItemClick={showEntryInfo} />
             </>
           )}
-        </main>
-      </section>
+        </Box>
+      </Stack>
       {entryItem && (
         <PackageInfo
           className={css.packageInfo}

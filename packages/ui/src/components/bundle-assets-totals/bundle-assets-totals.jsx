@@ -13,13 +13,14 @@ import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
 import I18N from '../../i18n';
 import { Toolbar } from '../../ui/toolbar';
 import { Table } from '../../ui/table';
+import { Box } from '../../layout/box';
+import { Stack } from '../../layout/stack';
 import { MetricsDisplaySelector } from '../metrics-display-selector';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableTitle } from '../metrics-table-title';
 import { MetricsTableHeader } from '../metrics-table-header';
 import { MetricsTreemap } from '../metrics-treemap';
 import { ComponentLink } from '../component-link';
-import css from './bundle-assets-totals.module.css';
 
 export const BundleAssetsTotals = ({
   className,
@@ -68,35 +69,36 @@ export const BundleAssetsTotals = ({
   );
 
   return (
-    <div className={className}>
+    <Stack space="xsmall" as="section" className={className}>
       <Toolbar
-        className={css.toolbar}
         renderActions={() => (
           <MetricsDisplaySelector onSelect={setDisplayType} value={displayType} />
         )}
       />
-      {displayType === MetricsDisplayType.TABLE && (
-        <MetricsTable
-          title={metricsTableTitle}
-          runs={jobs}
-          items={items}
-          renderRowHeader={renderRowHeader}
-          showHeaderSum
-          {...restProps}
-        />
-      )}
-      {displayType === MetricsDisplayType.TREEMAP && (
-        <>
-          <Table compact>
-            <MetricsTableHeader metricTitle={metricsTableTitle} showSum jobs={jobs} rows={items} />
-          </Table>
-          <MetricsTreemap
+      <Box outline as="main">
+        {displayType === MetricsDisplayType.TABLE && (
+          <MetricsTable
+            title={metricsTableTitle}
+            runs={jobs}
             items={items}
-            onItemClick={onTreemapItemClick || handleMetricsTreemapItemClick}
+            renderRowHeader={renderRowHeader}
+            showHeaderSum
+            {...restProps}
           />
-        </>
-      )}
-    </div>
+        )}
+        {displayType === MetricsDisplayType.TREEMAP && (
+          <>
+            <Table compact>
+              <MetricsTableHeader metricTitle={metricsTableTitle} showSum jobs={jobs} rows={items} />
+            </Table>
+            <MetricsTreemap
+              items={items}
+              onItemClick={onTreemapItemClick || handleMetricsTreemapItemClick}
+            />
+          </>
+        )}
+      </Box>
+    </Stack>
   );
 };
 
