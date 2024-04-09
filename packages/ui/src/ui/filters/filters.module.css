@@ -41,12 +41,14 @@
   font-size: var(--size-small);
   line-height: var(--space-small);
   color: var(--color-text-ultra-light);
+  transition: var(--transition-out);
 }
 
 .filterSingle:hover,
 .filterSingle:active,
 .filterSingle:focus {
   border-color: var(--color-outline-dark);
+  transition: var(--transition-in);
 }
 
 /** Filter group */
