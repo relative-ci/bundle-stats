@@ -18,8 +18,8 @@
 }
 
 .summaryContainer {
-  padding-top: var(--space-medium);
-  padding-bottom: var(--space-xsmall);
+  padding-top: var(--space-small);
+  padding-bottom: var(--space-xxsmall);
 }
 
 .tabsContainer {

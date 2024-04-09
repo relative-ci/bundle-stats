@@ -97,9 +97,7 @@ const OverviewContent = () => {
         </Container>
       )}
       <Container>
-        <Box outline>
-          <BundleAssetsTotals jobs={jobs} />
-        </Box>
+        <BundleAssetsTotals jobs={jobs} />
       </Container>
     </Stack>
   );
@@ -111,9 +109,7 @@ const AssetsContent = () => {
 
   return (
     <Container>
-      <Box outline>
-        <BundleAssets jobs={jobs} setState={bundleStatsSetState} {...bundleStatsState} />
-      </Box>
+      <BundleAssets jobs={jobs} setState={bundleStatsSetState} {...bundleStatsState} />
     </Container>
   );
 };
@@ -126,9 +122,7 @@ const ModulesContent = () => {
 
   return (
     <Container>
-      <Box outline>
-        <BundleModules jobs={jobs} setState={bundleModulesSetState} {...bundleModulesState} />
-      </Box>
+      <BundleModules jobs={jobs} setState={bundleModulesSetState} {...bundleModulesState} />
     </Container>
   );
 };
@@ -141,9 +135,7 @@ const PackagesContent = () => {
 
   return (
     <Container>
-      <Box outline>
-        <BundlePackages jobs={jobs} {...bundlePackagesState} setState={bundlePackagesSetState} />
-      </Box>
+      <BundlePackages jobs={jobs} {...bundlePackagesState} setState={bundlePackagesSetState} />
     </Container>
   );
 };

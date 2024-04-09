@@ -5,9 +5,10 @@ import { SECTIONS, COMPONENT } from '@bundle-stats/utils';
 import { SortAction } from '../../types';
 import config from '../../config.json';
 import I18N from '../../i18n';
-import { Box } from '../../layout/box';
 import { MetricsDisplayType } from '../../constants';
+import { Box } from '../../layout/box';
 import { FlexStack } from '../../layout/flex-stack';
+import { Stack } from '../../layout/stack';
 import { Button } from '../../ui/button';
 import { ControlGroup } from '../../ui/control-group';
 import { EmptySet } from '../../ui/empty-set';
@@ -170,7 +171,7 @@ export const BundleModules = (props: BundleModulesProps) => {
 
   return (
     <>
-      <div className={rootClassName}>
+      <Stack space="xsmall" as="section" className={rootClassName}>
         <Toolbar
           className={css.toolbar}
           renderActions={({ actionClassName }) => (
@@ -197,55 +198,57 @@ export const BundleModules = (props: BundleModulesProps) => {
             />
           </FlexStack>
         </Toolbar>
-        <Box padding={['xsmall', 'small']} className={css.metricSelector}>
-          <ControlGroup as="nav">
-            <Button
-              outline
-              active={moduleMetric === ModuleMetric.SIZE}
-              size="small"
-              type="button"
-              onClick={() => setModuleMetric(ModuleMetric.SIZE)}
-            >
-              <Tooltip title="Size (excluding duplicate modules)">Module size</Tooltip>
-            </Button>
-            <Button
-              outline
-              active={moduleMetric === ModuleMetric.TOTAL_SIZE}
-              size="small"
-              type="button"
-              onClick={() => setModuleMetric(ModuleMetric.TOTAL_SIZE)}
-            >
-              <Tooltip title="Size (including duplicate modules)">Module total size</Tooltip>
-            </Button>
-          </ControlGroup>
+        <Box outline as="main">
+          <Box padding={['xsmall', 'small']} className={css.metricSelector}>
+            <ControlGroup as="nav">
+              <Button
+                outline
+                active={moduleMetric === ModuleMetric.SIZE}
+                size="small"
+                type="button"
+                onClick={() => setModuleMetric(ModuleMetric.SIZE)}
+              >
+                <Tooltip title="Size (excluding duplicate modules)">Module size</Tooltip>
+              </Button>
+              <Button
+                outline
+                active={moduleMetric === ModuleMetric.TOTAL_SIZE}
+                size="small"
+                type="button"
+                onClick={() => setModuleMetric(ModuleMetric.TOTAL_SIZE)}
+              >
+                <Tooltip title="Size (including duplicate modules)">Module total size</Tooltip>
+              </Button>
+            </ControlGroup>
+          </Box>
+          {displayType === MetricsDisplayType.TABLE && (
+            <MetricsTable
+              className={css.table}
+              items={items}
+              runs={jobs}
+              renderRowHeader={renderRowHeader}
+              emptyMessage={emptyMessage}
+              showHeaderSum
+              title={metricsTableTitle}
+              sort={sort}
+              updateSort={updateSort}
+            />
+          )}
+          {displayType === MetricsDisplayType.TREEMAP && (
+            <>
+              <Table compact>
+                <MetricsTableHeader
+                  metricTitle={metricsTableTitle}
+                  showSum
+                  jobs={jobs}
+                  rows={items}
+                />
+              </Table>
+              <MetricsTreemap emptyMessage={emptyMessage} items={items} onItemClick={showEntryInfo} />
+            </>
+          )}
         </Box>
-        {displayType === MetricsDisplayType.TABLE && (
-          <MetricsTable
-            className={css.table}
-            items={items}
-            runs={jobs}
-            renderRowHeader={renderRowHeader}
-            emptyMessage={emptyMessage}
-            showHeaderSum
-            title={metricsTableTitle}
-            sort={sort}
-            updateSort={updateSort}
-          />
-        )}
-        {displayType === MetricsDisplayType.TREEMAP && (
-          <>
-            <Table compact>
-              <MetricsTableHeader
-                metricTitle={metricsTableTitle}
-                showSum
-                jobs={jobs}
-                rows={items}
-              />
-            </Table>
-            <MetricsTreemap emptyMessage={emptyMessage} items={items} onItemClick={showEntryInfo} />
-          </>
-        )}
-      </div>
+      </Stack>
       {entryItem && (
         <ModuleInfo
           className={css.moduleInfo}

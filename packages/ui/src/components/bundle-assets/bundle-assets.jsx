@@ -15,7 +15,9 @@ import config from '../../config.json';
 import I18N from '../../i18n';
 import { MetricsDisplayType } from '../../constants';
 import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
+import { Box } from '../../layout/box';
 import { FlexStack } from '../../layout/flex-stack';
+import { Stack } from '../../layout/stack';
 import { Icon } from '../../ui/icon';
 import { InputSearch } from '../../ui/input-search';
 import { FileName } from '../../ui/file-name';
@@ -232,9 +234,8 @@ export const BundleAssets = (props) => {
 
   return (
     <>
-      <section className={cx(css.root, className)}>
+      <Stack space="xsmall" as="section" className={cx(css.root, className)}>
         <Toolbar
-          className={css.toolbar}
           renderActions={({ actionClassName }) => (
             <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
               <MetricsDisplaySelector onSelect={setDisplayType} value={displayType} />
@@ -260,7 +261,7 @@ export const BundleAssets = (props) => {
             />
           </FlexStack>
         </Toolbar>
-        <main>
+        <Box outline as="main">
           {displayType === MetricsDisplayType.TABLE && (
             <MetricsTable
               runs={jobs}
@@ -290,8 +291,8 @@ export const BundleAssets = (props) => {
               />
             </>
           )}
-        </main>
-      </section>
+        </Box>
+      </Stack>
 
       {entryItem && (
         <AssetInfo

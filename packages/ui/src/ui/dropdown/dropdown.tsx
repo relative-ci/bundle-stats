@@ -18,7 +18,6 @@ export const DropdownItem = (props: DropdownItemProps & React.ComponentProps<typ
 };
 
 interface DropdownProps {
-  buttonClassName?: string;
   dropdownClassName?: string;
   label?: React.ReactNode;
   ariaLabel?: string;
@@ -28,7 +27,7 @@ interface DropdownProps {
 
 export const Dropdown = (props: DropdownProps & React.ComponentProps<'div'>) => {
   const {
-    buttonClassName = '',
+    className = '',
     dropdownClassName = '',
     label = null,
     ariaLabel = '',
@@ -50,7 +49,7 @@ export const Dropdown = (props: DropdownProps & React.ComponentProps<'div'>) => 
         disabled={disabled}
         state={menuState}
         tabIndex={null}
-        className={cx(css.button, buttonClassName)}
+        className={cx(css.button, className)}
       >
         {label}
       </MenuButton>
