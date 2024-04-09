@@ -13,6 +13,7 @@
 }
 
 .filterControl {
+  margin: 0;
   flex: 0 0 auto;
   height: 1em;
 }
