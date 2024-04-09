@@ -60,7 +60,10 @@
 
 .filterGroupItem {
   position: relative;
-  padding-right: 10em;
+}
+
+.filterGroupItemFilter {
+  padding-right: 24px; /* space for only button */
 }
 
 .filterGroupOnlyButton {
@@ -79,6 +82,7 @@
   content: ' ';
   display: block;
   position: absolute;
+  pointer-events: none;
   top: 0;
   right: 100%;
   bottom: 0;
