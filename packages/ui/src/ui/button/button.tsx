@@ -1,4 +1,5 @@
 import React from 'react';
+
 import cx from 'classnames';
 import { Button as ButtonBaseComponent } from 'ariakit/button';
 
@@ -50,7 +51,7 @@ const ButtonComponent = <T extends React.ElementType = 'button'>(
     radius = '',
     padding = '',
     as: Component = ButtonBaseComponent,
-    children,
+    children = null,
     Icon = BaseIcon,
     glyph,
     rightGlyph,
@@ -61,10 +62,12 @@ const ButtonComponent = <T extends React.ElementType = 'button'>(
   const resolvedPadding = padding || ((outline || solid) && size);
   const resolvedRadius = radius || ((outline || solid) && size);
 
+  const resolvedSize = Object.values(BUTTON_SIZE).includes(size) ? size : BUTTON_SIZE.MEDIUM;
+
   const rootClassName = cx(
     css.root,
-    css[size],
     kind && css[kind],
+    css[resolvedSize],
 
     outline && css.outline,
     outline && css[`outline--${kind}`],
@@ -72,22 +75,20 @@ const ButtonComponent = <T extends React.ElementType = 'button'>(
     solid && css.solid,
     solid && css[`solid--${kind}`],
 
-    resolvedPadding && css[`padding--${resolvedPadding}`],
-    resolvedPadding && outline && css[`outline--padding--${resolvedPadding}`],
+    resolvedPadding && css.padding,
     resolvedRadius && css[`radius--${resolvedRadius}`],
 
     active && css.active,
     active && outline && css[`active-outline-${kind}`],
 
-    css[size],
     className,
   );
 
   return (
     <Component {...restProps} className={rootClassName}>
-      {glyph && <Icon glyph={glyph} size={size} className={css.glyph} />}
+      {glyph && <Icon glyph={glyph} className={css.glyph} />}
       {children && <span className={css.content}>{children}</span>}
-      {rightGlyph && <Icon glyph={glyph} size={size} className={css.glyph} />}
+      {rightGlyph && <Icon glyph={rightGlyph} className={css.glyph} />}
     </Component>
   );
 };

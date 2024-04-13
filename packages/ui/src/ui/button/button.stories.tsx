@@ -62,7 +62,14 @@ export const All = () => (
         <h3>With icon</h3>
         <Items>
           {Object.values(BUTTON_KIND).map((kind) => (
-            <Button glyph={Icon.ICONS.ARROW_RIGHT_CIRLCE} kind={kind} key={kind}>
+            <Button glyph={Icon.ICONS.ARROW_RIGHT_CIRCLE} kind={kind} key={kind}>
+              Action {kind}
+            </Button>
+          ))}
+        </Items>
+        <Items>
+          {Object.values(BUTTON_KIND).map((kind) => (
+            <Button rightGlyph={Icon.ICONS.ARROW_RIGHT_CIRCLE} kind={kind} key={kind}>
               Action {kind}
             </Button>
           ))}
@@ -106,12 +113,12 @@ export const All = () => (
         <h3>With icon</h3>
         {Object.values(BUTTON_SIZE).map((size) => (
           <Items key={size}>
-            <Button glyph={Icon.ICONS.ARROW_RIGHT_CIRLCE} outline size={size}>
+            <Button glyph={Icon.ICONS.ARROW_RIGHT_CIRCLE} outline size={size}>
               Action default
             </Button>
             {Object.values(BUTTON_KIND).map((kind) => (
               <Button
-                glyph={Icon.ICONS.ARROW_RIGHT_CIRLCE}
+                glyph={Icon.ICONS.ARROW_RIGHT_CIRCLE}
                 outline
                 kind={kind}
                 size={size}
@@ -125,10 +132,10 @@ export const All = () => (
         <h3>Only icon</h3>
         {Object.values(BUTTON_SIZE).map((size) => (
           <Items key={size}>
-            <Button glyph={Icon.ICONS.ARROW_RIGHT_CIRLCE} outline size={size} />
+            <Button glyph={Icon.ICONS.ARROW_RIGHT_CIRCLE} outline size={size} />
             {Object.values(BUTTON_KIND).map((kind) => (
               <Button
-                glyph={Icon.ICONS.ARROW_RIGHT_CIRLCE}
+                glyph={Icon.ICONS.ARROW_RIGHT_CIRCLE}
                 outline
                 kind={kind}
                 size={size}
@@ -179,12 +186,12 @@ export const All = () => (
         <h3>With icon</h3>
         {Object.values(BUTTON_SIZE).map((size) => (
           <Items key={size}>
-            <Button glyph={Icon.ICONS.ARROW_RIGHT_CIRLCE} solid size={size}>
+            <Button glyph={Icon.ICONS.ARROW_RIGHT_CIRCLE} solid size={size}>
               Action default
             </Button>
             {Object.values(BUTTON_KIND).map((kind) => (
               <Button
-                glyph={Icon.ICONS.ARROW_RIGHT_CIRLCE}
+                glyph={Icon.ICONS.ARROW_RIGHT_CIRCLE}
                 solid
                 kind={kind}
                 size={size}
@@ -198,10 +205,10 @@ export const All = () => (
         <h3>Only icon</h3>
         {Object.values(BUTTON_SIZE).map((size) => (
           <Items key={size}>
-            <Button glyph={Icon.ICONS.ARROW_RIGHT_CIRLCE} solid size={size} />
+            <Button glyph={Icon.ICONS.ARROW_RIGHT_CIRCLE} solid size={size} />
             {Object.values(BUTTON_KIND).map((kind) => (
               <Button
-                glyph={Icon.ICONS.ARROW_RIGHT_CIRLCE}
+                glyph={Icon.ICONS.ARROW_RIGHT_CIRCLE}
                 solid
                 kind={kind}
                 size={size}
