@@ -5,7 +5,7 @@ import css from './icon.module.css';
 
 const ICONS = {
   ARROW: 'arrow',
-  ARROW_RIGHT_CIRLCE: 'arrow-right-circle',
+  ARROW_RIGHT_CIRCLE: 'arrow-right-circle',
   CANCEL: 'close',
   CHEVRON_DOWN: 'chevron-down',
   CHEVRON_UP: 'chevron-up',
