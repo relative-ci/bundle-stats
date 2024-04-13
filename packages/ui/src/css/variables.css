@@ -192,9 +192,9 @@
   --shadow-layer: 0 0 var(--space-xxxsmall) var(--color-shadow);
   --shadow-layer-high: 0 0 var(--space-xxsmall) var(--color-shadow);
 
-  --radius-small: 4px;
-  --radius-medium: 5px;
-  --radius-large: 6px;
+  --radius-small: 5px;
+  --radius-medium: 7px;
+  --radius-large: 9px;
 
   --outline-hover: 0 0 0 3px var(--color-highlight);
 

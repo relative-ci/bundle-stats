@@ -67,6 +67,13 @@ export const All = () => (
             </Button>
           ))}
         </Items>
+        <Items>
+          {Object.values(BUTTON_KIND).map((kind) => (
+            <Button rightGlyph={Icon.ICONS.ARROW_RIGHT_CIRLCE} kind={kind} key={kind}>
+              Action {kind}
+            </Button>
+          ))}
+        </Items>
         <h3>Disabled</h3>
         <Items>
           {Object.values(BUTTON_KIND).map((kind) => (
