@@ -29,7 +29,7 @@ const VERTICAL_SPACING = 4;
 const LINE_HEIGHT = 16;
 const LINE_HEIGHT_SMALL = 13.3;
 
-function resolveLeafSizeDisplay(width: number, height: number): TileSizeDisplay {
+function resolveTileSizeDisplay(width: number, height: number): TileSizeDisplay {
   if (
     height > PADDING_TOP + PADDING_BOTTOM + VERTICAL_SPACING + LINE_HEIGHT * 2 &&
     width > PADDING_LEFT + PADDING_RIGHT + 128
@@ -47,19 +47,19 @@ function resolveLeafSizeDisplay(width: number, height: number): TileSizeDisplay 
   return 'minimal';
 }
 
-interface LeafTooltipContentProps {
+interface TileTooltipContentProps {
   item: ReportMetricRow;
 }
 
-const LeafTooltipContent = (props: LeafTooltipContentProps) => {
+const TileTooltipContent = (props: TileTooltipContentProps) => {
   const { item } = props;
 
   const currentRun = item.runs[0] as MetricRunInfo;
   const baselineRun = item.runs[item.runs.length - 1] as MetricRunInfoBaseline;
 
   return (
-    <Stack space="small" className={css.leafTooltipContent}>
-      <h3 className={css.leafTooltipContentTitle}>
+    <Stack space="small" className={css.tileTooltipContent}>
+      <h3 className={css.tileTooltipContentTitle}>
         <FileName as="code" name={item.label} />
       </h3>
       <RunInfo
@@ -72,21 +72,21 @@ const LeafTooltipContent = (props: LeafTooltipContentProps) => {
   );
 };
 
-interface LeafContentProps {
+interface TileContentProps {
   sizeDisplay: 'minimal' | 'small' | 'default';
   item: ReportMetricRow;
   runInfo: MetricRunInfo;
 }
 
-const LeafContent = forwardRef((props: LeafContentProps, ref: React.Ref<HTMLDivElement>) => {
+const TileContent = forwardRef((props: TileContentProps, ref: React.Ref<HTMLDivElement>) => {
   const { sizeDisplay, item, runInfo } = props;
 
   if (sizeDisplay === 'minimal') {
-    return <div className={css.leafContent} ref={ref} />;
+    return <div className={css.tileContent} ref={ref} />;
   }
 
   return (
-    <div className={css.leafContent} ref={ref}>
+    <div className={css.tileContent} ref={ref}>
       <FileName as="p" className={css.leadContentLabel} name={item.label} />
       {sizeDisplay !== 'small' && (
         <p className={css.leadContentValue}>
@@ -102,7 +102,7 @@ const LeafContent = forwardRef((props: LeafContentProps, ref: React.Ref<HTMLDivE
   );
 });
 
-const LeafContentWithTooltip = (props: LeafContentProps & { parentRef: RefObject<Element> }) => {
+const TileContentWithTooltip = (props: TileContentProps & { parentRef: RefObject<Element> }) => {
   const { sizeDisplay, item, runInfo, parentRef } = props;
 
   const pointer = useMouseHovered(parentRef, { whenHovered: true });
@@ -131,12 +131,12 @@ const LeafContentWithTooltip = (props: LeafContentProps & { parentRef: RefObject
 
   return (
     <>
-      <TooltipAnchor state={tooltipState} className={css.leafContentTooltipAnchor}>
-        <LeafContent sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
+      <TooltipAnchor state={tooltipState} className={css.tileContentTooltipAnchor}>
+        <TileContent sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
       </TooltipAnchor>
       <Tooltip state={tooltipState} className={css.tooltip}>
-        <TooltipArrow state={tooltipState} size={16} className={css.leafTooltipArrow} />
-        <LeafTooltipContent item={item} />
+        <TooltipArrow state={tooltipState} size={16} className={css.tileTooltipArrow} />
+        <TileTooltipContent item={item} />
       </Tooltip>
     </>
   );
@@ -155,7 +155,7 @@ interface RootTree {
   children: Array<TreeNode>;
 }
 
-interface LeafProps {
+interface TileProps {
   left: number;
   top: number;
   width: number;
@@ -164,42 +164,42 @@ interface LeafProps {
   onClick?: (id: string) => void;
 }
 
-const Leaf = (props: LeafProps) => {
+const Tile = (props: TileProps) => {
   const { left, top, width, height, data, onClick } = props;
 
   const { item } = data;
   const runInfo = item.runs?.[0] as MetricRunInfo;
 
-  const sizeDisplay = useMemo(() => resolveLeafSizeDisplay(width, height), [width, height]);
+  const sizeDisplay = useMemo(() => resolveTileSizeDisplay(width, height), [width, height]);
   const handleOnClick = useCallback(() => onClick?.(item.key), [item.key, onClick]);
 
-  const leafContentRef = useRef<HTMLButtonElement>(null);
-  const hover = useHoverDirty(leafContentRef);
+  const contentRef = useRef<HTMLButtonElement>(null);
+  const hover = useHoverDirty(contentRef);
 
-  const leafClassName = cx(
-    css.leaf,
-    css[`leaf-${runInfo.deltaType}`],
-    sizeDisplay === 'small' && css.leafSmall,
-    left === 0 && css.leafFirstCol,
+  const className = cx(
+    css.tile,
+    css[`tile-${runInfo.deltaType}`],
+    sizeDisplay === 'small' && css.tileSmall,
+    left === 0 && css.tileFirstCol,
   );
 
   return (
     <button
       type="button"
       onClick={handleOnClick}
-      ref={leafContentRef}
+      ref={contentRef}
       style={{ left, top, width, height }}
-      className={leafClassName}
+      className={className}
     >
       {hover ? (
-        <LeafContentWithTooltip
+        <TileContentWithTooltip
           sizeDisplay={sizeDisplay}
           item={item}
           runInfo={runInfo}
-          parentRef={leafContentRef}
+          parentRef={contentRef}
         />
       ) : (
-        <LeafContent sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
+        <TileContent sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
       )}
     </button>
   );
@@ -217,8 +217,8 @@ function useMetricsTreemapHierarchy(params: UseMetricsTreemapHierarchyParams) {
   const treemapHierarchy = useMemo(() => {
     const children = items.map((item) => {
       /**
-       * Set leaf value to the largest run value to allow to
-       * display the impact of deleted / items
+       * Set tile value to the largest run value to allow to
+       * display the impact of deleted/new entries
        */
       const values = item.runs.map((run) => run?.value || 0);
       const value = Math.max(...values);
@@ -245,7 +245,7 @@ function useMetricsTreemapHierarchy(params: UseMetricsTreemapHierarchyParams) {
     return customHierarchy;
   }, [items]);
 
-  const cells = useMemo(() => {
+  const tiles = useMemo(() => {
     const createTremapLayout = treemap()
       .size([width, height])
       .tile(treemapSquarify.ratio(SQUARIFY_RATIO))
@@ -254,10 +254,10 @@ function useMetricsTreemapHierarchy(params: UseMetricsTreemapHierarchyParams) {
     // @ts-expect-error
     const tremapLayout = createTremapLayout(treemapHierarchy);
 
-    return tremapLayout.leaves().filter((leaf) => Boolean(leaf.parent));
+    return tremapLayout.leaves().filter((tile) => Boolean(tile.parent));
   }, [height, width, treemapHierarchy]);
 
-  return cells;
+  return tiles;
 }
 
 interface MetricsTreemapProps {
@@ -270,26 +270,26 @@ export const MetricsTreemap = (props: MetricsTreemapProps & React.ComponentProps
   const { className = '', items, onItemClick, emptyMessage = 'No data', ...restProps } = props;
 
   const [containerRef, { width, height }] = useMeasure<HTMLDivElement>();
-  const cells = useMetricsTreemapHierarchy({ items, width, height });
+  const tiles = useMetricsTreemapHierarchy({ items, width, height });
 
   return (
     <div className={cx(css.root, className)} {...restProps} ref={containerRef}>
-      {cells.length > 0 ? (
+      {tiles.length > 0 ? (
         <div className={css.canvas}>
-          {cells.map((leaf) => {
-            if (!leaf.parent) {
+          {tiles.map((tile) => {
+            if (!tile.parent) {
               return null;
             }
 
             return (
-              <Leaf
-                data={leaf.data as TreeNode}
-                left={leaf.x0}
-                top={leaf.y0}
-                width={leaf.x1 - leaf.x0}
-                height={leaf.y1 - leaf.y0}
+              <Tile
+                data={tile.data as TreeNode}
+                left={tile.x0}
+                top={tile.y0}
+                width={tile.x1 - tile.x0}
+                height={tile.y1 - tile.y0}
                 onClick={onItemClick}
-                key={leaf.id}
+                key={tile.id}
               />
             );
           })}
