@@ -42,11 +42,11 @@
       "size": 1356
     },
     {
-      "name": "main.75d52d9.js",
+      "name": "assets/js/main.75d52d9.js",
       "size": 215291
     },
     {
-      "name": "main.e7aed2d.css",
+      "name": "assets/css/main.e7aed2d.css",
       "size": 17402
     },
     {
@@ -54,7 +54,7 @@
       "size": 5934
     },
     {
-      "name": "relative-ci-logo.svg",
+      "name": "assets/images/relative-ci-logo.svg",
       "size": 2092
     },
     {
@@ -66,11 +66,11 @@
       "size": 380
     },
     {
-      "name": "vendors.176a5f6.js",
+      "name": "assets/js/vendors.176a5f6.js",
       "size": 1823712
     },
     {
-      "name": "vendors.8b6bb4f.css",
+      "name": "assets/css/vendors.8b6bb4f.css",
       "size": 48381
     }
   ],
@@ -80,10 +80,10 @@
       "entry": true,
       "initial": true,
       "files": [
-        "main.e7aed2d.css",
-        "main.75d52d9.js",
-        "main.e7aed2d.css.map",
-        "main.75d52d9.js.map"
+        "assets/css/main.e7aed2d.css",
+        "assets/js/main.75d52d9.js",
+        "assets/css/main.e7aed2d.css.map",
+        "assets/js/main.75d52d9.js.map"
       ],
       "names": [
         "main"

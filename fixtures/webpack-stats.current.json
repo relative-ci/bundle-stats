@@ -42,27 +42,27 @@
       "size": 1356
     },
     {
-      "name": "login.3fc183e.css",
+      "name": "assets/chunks/login.3fc183e.css",
       "size": 154
     },
     {
-      "name": "login.49220d2.js",
+      "name": "assets/chunks/login.49220d2.js",
       "size": 762
     },
     {
-      "name": "login~signup.00bcc36.css",
+      "name": "assets/chunks/login~signup.00bcc36.css",
       "size": 242
     },
     {
-      "name": "login~signup.7fe771f.js",
+      "name": "assets/chunks/login~signup.7fe771f.js",
       "size": 275986
     },
     {
-      "name": "main.12dd8b1.css",
+      "name": "assets/css/main.12dd8b1.css",
       "size": 10193
     },
     {
-      "name": "main.a0929a4.js",
+      "name": "assets/js/main.a0929a4.js",
       "size": 139281
     },
     {
@@ -70,15 +70,15 @@
       "size": 5934
     },
     {
-      "name": "project.6f85cd9.css",
+      "name": "assets/chunks/project.6f85cd9.css",
       "size": 6603
     },
     {
-      "name": "project.deaf2dc.js",
+      "name": "assets/chunks/project.deaf2dc.js",
       "size": 438041
     },
     {
-      "name": "relative-ci-logo.svg",
+      "name": "assets/images/relative-ci-logo.svg",
       "size": 2092
     },
     {
@@ -86,11 +86,11 @@
       "size": 29
     },
     {
-      "name": "signup.83e1afe.js",
+      "name": "assets/chunks/signup.83e1afe.js",
       "size": 1009
     },
     {
-      "name": "signup.9ab12e1.css",
+      "name": "assets/chunks/signup.9ab12e1.css",
       "size": 226
     },
     {
@@ -98,11 +98,11 @@
       "size": 380
     },
     {
-      "name": "vendors.278dc2f.js",
+      "name": "assets/js/vendors.278dc2f.js",
       "size": 1126364
     },
     {
-      "name": "vendors.5024abb.css",
+      "name": "assets/css/vendors.5024abb.css",
       "size": 38673
     }
   ],
@@ -112,10 +112,10 @@
       "entry": false,
       "initial": false,
       "files": [
-        "login~signup.00bcc36.css",
-        "login~signup.7fe771f.js",
-        "login~signup.00bcc36.css.map",
-        "login~signup.7fe771f.js.map"
+        "assets/chunks/login~signup.00bcc36.css",
+        "assets/chunks/login~signup.7fe771f.js",
+        "assets/chunks/login~signup.00bcc36.css.map",
+        "assets/chunks/login~signup.7fe771f.js.map"
       ],
       "names": [
         "login~signup"
@@ -126,10 +126,10 @@
       "entry": false,
       "initial": false,
       "files": [
-        "login.3fc183e.css",
-        "login.49220d2.js",
-        "login.3fc183e.css.map",
-        "login.49220d2.js.map"
+        "assets/chunks/login.3fc183e.css",
+        "assets/chunks/login.49220d2.js",
+        "assets/chunks/login.3fc183e.css.map",
+        "assets/chunks/login.49220d2.js.map"
       ],
       "names": [
         "login"
@@ -140,10 +140,10 @@
       "entry": true,
       "initial": true,
       "files": [
-        "main.12dd8b1.css",
-        "main.a0929a4.js",
-        "main.12dd8b1.css.map",
-        "main.a0929a4.js.map"
+        "assets/css/main.12dd8b1.css",
+        "assets/js/main.a0929a4.js",
+        "assets/css/main.12dd8b1.css.map",
+        "assets/js/main.a0929a4.js.map"
       ],
       "names": [
         "main"
@@ -154,10 +154,10 @@
       "entry": false,
       "initial": false,
       "files": [
-        "project.6f85cd9.css",
-        "project.deaf2dc.js",
-        "project.6f85cd9.css.map",
-        "project.deaf2dc.js.map"
+        "assets/chunks/project.6f85cd9.css",
+        "assets/chunks/project.deaf2dc.js",
+        "assets/chunks/project.6f85cd9.css.map",
+        "assets/chunks/project.deaf2dc.js.map"
       ],
       "names": [
         "project"
@@ -168,10 +168,10 @@
       "entry": false,
       "initial": false,
       "files": [
-        "signup.9ab12e1.css",
-        "signup.83e1afe.js",
-        "signup.9ab12e1.css.map",
-        "signup.83e1afe.js.map"
+        "assets/chunks/signup.9ab12e1.css",
+        "assets/chunks/signup.83e1afe.js",
+        "assets/chunks/signup.9ab12e1.css.map",
+        "assets/chunks/signup.83e1afe.js.map"
       ],
       "names": [
         "signup"
