@@ -22,7 +22,7 @@
 }
 
 /** Leaf wrapper button */
-.leaf {
+.tile {
   position: absolute;
   appearance: none;
   border: 0;
@@ -37,7 +37,7 @@
   text-align: left;
 }
 
-.leaf::before {
+.tile::before {
   content: "";
   display: block;
   position: absolute;
@@ -53,12 +53,12 @@
   opacity: 0.6;
 }
 
-.leaf:hover::before {
+.tile:hover::before {
   transition: var(--ui-transition-in);
   opacity: 0.4;
 }
 
-.leafContent {
+.tileContent {
   position: relative;
   z-index: 1;
   width: 100%;
@@ -71,8 +71,8 @@
   line-height: var(--line-height-heading);
 }
 
-/** Align label to other elements on the first column leafs */
-.leafFirstCol .leafContent {
+/** Align label to other elements on the first column cells */
+.tileFirstCol .tileContent {
   padding-left: var(--space-small);
 }
 
@@ -100,51 +100,51 @@
 }
 
 /** Tile size variation */
-.leafSmall .leafContent {
+.tileSmall .tileContent {
   padding: var(--space-xxxsmall) var(--space-xxsmall);
   gap: 0;
   font-size: var(--size-xsmall);
 }
 
-.leafSmall .leadContentLabel {
+.tileSmall .leadContentLabel {
   margin-top: 0;
 }
 
 /** Tile diff variation */
-.leaf-NO_CHANGE {
+.tile-NO_CHANGE {
   color: var(--color-text-light);
 }
 
-.leaf-NO_CHANGE::before {
+.tile-NO_CHANGE::before {
   color: var(--color-gray-50);
   opacity: 0.4;
 }
 
-.leaf-NO_CHANGE:hover::before {
+.tile-NO_CHANGE:hover::before {
   opacity: 0.2;
 }
 
-.leaf-HIGH_NEGATIVE::before {
+.tile-HIGH_NEGATIVE::before {
   color: var(--color-red-100);
 }
 
-.leaf-NEGATIVE::before {
+.tile-NEGATIVE::before {
   color: var(--color-red-50);
 }
 
-.leaf-LOW_NEGATIVE::before {
+.tile-LOW_NEGATIVE::before {
   color: var(--color-red-25);
 }
 
-.leaf-LOW_POSITIVE::before {
+.tile-LOW_POSITIVE::before {
   color: var(--color-green-25);
 }
 
-.leaf-POSITIVE::before {
+.tile-POSITIVE::before {
   color: var(--color-green-50);
 }
 
-.leaf-HIGH_POSITIVE::before {
+.tile-HIGH_POSITIVE::before {
   color: var(--color-green-100);
 }
 
@@ -166,7 +166,7 @@
 }
 
 /** tooltip */
-.leafContentTooltipAnchor {
+.tileContentTooltipAnchor {
   width: 100%;
   height: 100%;
 }
@@ -191,11 +191,11 @@ div[role="presentation"]:has(.tooltip) {
 }
 
 
-.leafTooltipArrow svg {
+.tileTooltipArrow svg {
   display: block;
   fill: var(--color-background) !important;
 }
 
-.leafTooltipContentTitle {
+.tileTooltipContentTitle {
   font-size: var(--size-medium);
 }
