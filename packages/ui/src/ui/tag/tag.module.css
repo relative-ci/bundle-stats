@@ -42,7 +42,7 @@ a.root:active {
 /** Size variation */
 /** default: medium */
 .root {
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-small);
   padding: calc(var(--space-xxxsmall) / 2) var(--space-xxxsmall);
   min-width: var(--space-small);
   height: var(--space-small);
@@ -51,7 +51,7 @@ a.root:active {
 }
 
 .small {
-  border-radius: var(--radius-small);
+  border-radius: var(--radius-xsmall);
   padding: calc(var(--space-xxxsmall) / 2);
   height: var(--space-xsmall);
   min-width: var(--space-xsmall);
@@ -60,7 +60,7 @@ a.root:active {
 }
 
 .large {
-  border-radius: var(--radius-large);
+  border-radius: var(--radius-medium);
   padding: var(--space-xxxsmall) var(--space-xxsmall);
   min-width: var(--space-medium);
   height: var(--space-medium);

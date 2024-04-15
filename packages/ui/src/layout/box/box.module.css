@@ -8,11 +8,13 @@
 }
 
 .outline > :first-child {
-  border-radius: var(--radius-medium) var(--radius-medium) 0 0;
+  border-top-left-radius: var(--radius-medium);
+  border-top-right-radius: var(--radius-medium);
 }
 
 .outline > :last-child {
-  border-radius: 0 0 var(--radius-medium) var(--radius-medium);
+  border-bottom-left-radius: var(--radius-medium);
+  border-bottom-right-radius: var(--radius-medium);
 }
 
 .outlineHover {
