@@ -2,6 +2,9 @@
   position: relative;
   aspect-ratio: 16/9;
   background: var(--color-background);
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  overflow: hidden;
 }
 
 .canvas {
