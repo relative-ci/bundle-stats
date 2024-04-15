@@ -35,6 +35,7 @@
   font-size: var(--size-small);
   line-height: var(--line-height-heading);
   text-align: left;
+  transition: var(--ui-transition-out);
 }
 
 .tile::before {
@@ -47,15 +48,19 @@
   width: 100%;
   height: 100%;
   background-color: currentColor;
-  color: var(--color-background);
+  color: var(--color-highlight);
   transition: var(--ui-transition-out);
   transition-property: opacity;
-  opacity: 0.6;
+  opacity: 0.75;
+}
+
+.tile:hover {
+  transition: var(--ui-transition-in);
 }
 
 .tile:hover::before {
   transition: var(--ui-transition-in);
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 .tileContent {

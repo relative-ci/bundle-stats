@@ -22,6 +22,14 @@ import { MetricsTableHeader } from '../metrics-table-header';
 import { MetricsTreemap } from '../metrics-treemap';
 import { ComponentLink } from '../component-link';
 
+const metricsTableTitle = (
+  <MetricsTableTitle
+    title={I18N.ASSET_TOTALS}
+    popoverInfo={I18N.ASSET_TOTALS_INFO}
+    popoverHref={config.documentation.assets}
+  />
+);
+
 export const BundleAssetsTotals = ({
   className,
   jobs,
@@ -32,18 +40,21 @@ export const BundleAssetsTotals = ({
   const [displayType, setDisplayType] = useMetricsDisplayType();
   const history = useHistory();
 
-  const items = webpack.compareBySection.sizes(jobs);
+  const items = useMemo(() => webpack.compareBySection.sizes(jobs), [jobs]);
 
-  const renderRowHeader = (item) => {
-    const fileType = ASSETS_SIZES_FILE_TYPE_MAP[item.key];
-    const { section, title, params } = getBundleAssetsFileTypeComponentLink(fileType, item.label);
+  const renderRowHeader = useCallback(
+    (item) => {
+      const fileType = ASSETS_SIZES_FILE_TYPE_MAP[item.key];
+      const { section, title, params } = getBundleAssetsFileTypeComponentLink(fileType, item.label);
 
-    return (
-      <CustomComponentLink section={section} title={title} params={params}>
-        {item.label}
-      </CustomComponentLink>
-    );
-  };
+      return (
+        <CustomComponentLink section={section} title={title} params={params}>
+          {item.label}
+        </CustomComponentLink>
+      );
+    },
+    [CustomComponentLink],
+  );
 
   const handleMetricsTreemapItemClick = useCallback(
     (entryId) => {
@@ -55,17 +66,6 @@ export const BundleAssetsTotals = ({
       history.push(nextUrl);
     },
     [history],
-  );
-
-  const metricsTableTitle = useMemo(
-    () => (
-      <MetricsTableTitle
-        title={I18N.ASSET_TOTALS}
-        popoverInfo={I18N.ASSET_TOTALS_INFO}
-        popoverHref={config.documentation.assets}
-      />
-    ),
-    [],
   );
 
   return (
@@ -89,7 +89,12 @@ export const BundleAssetsTotals = ({
         {displayType === MetricsDisplayType.TREEMAP && (
           <>
             <Table compact>
-              <MetricsTableHeader metricTitle={metricsTableTitle} showSum jobs={jobs} rows={items} />
+              <MetricsTableHeader
+                metricTitle={metricsTableTitle}
+                showSum
+                jobs={jobs}
+                rows={items}
+              />
             </Table>
             <MetricsTreemap
               items={items}
