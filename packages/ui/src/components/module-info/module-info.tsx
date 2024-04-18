@@ -76,7 +76,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
           (currentRun, index) =>
             !isEmpty(currentRun?.chunkIds) && (
               <EntryInfo.Meta label="Chunks" className={css.chunks}>
-                Job #{index + 1}:
+                {labels[index]}:
                 {currentRun.chunkIds.map((chunkId) => {
                   const chunk = chunks?.find(({ id }) => id === chunkId);
 
