@@ -13,9 +13,22 @@
   top: 0;
   width: 100%;
   height: 100%;
-  fill: var(--color-text);
-  font-family: var(--font-family);
   background: var(--color-background);
+}
+
+.tileGroup {
+  position: absolute;
+}
+
+.tileGroupTitle {
+  width: 100%;
+  padding: 2px var(--space-xxsmall);
+  background: var(--color-highlight);
+  font-size: 10px;
+  line-height: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /** Tile overlay fill background transition */
@@ -84,7 +97,7 @@
   padding-left: var(--space-small);
 }
 
-.leadContentLabel {
+.tileContentLabel {
   flex: 0 1 auto;
   width: 100%;
   min-width: 0;
@@ -92,18 +105,18 @@
   overflow: hidden;
 }
 
-.leadContentValue {
+.tileContentValue {
   flex: 0 0 auto;
   max-width: calc(100% + var(--space-xxsmall));
   white-space: nowrap;
   overflow: hidden;
 }
 
-.leadContentMetric {
+.tileContentMetric {
   font-weight: bold;
 }
 
-.leadContentDelta {
+.tileContentDelta {
   margin-left: var(--space-xxxsmall);
 }
 
@@ -114,7 +127,7 @@
   font-size: var(--size-xsmall);
 }
 
-.tileSmall .leadContentLabel {
+.tileSmall .tileContentLabel {
   margin-top: 0;
 }
 

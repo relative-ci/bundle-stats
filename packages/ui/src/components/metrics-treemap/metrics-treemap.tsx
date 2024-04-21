@@ -1,19 +1,22 @@
 import React, { RefObject, forwardRef, useCallback, useMemo, useRef } from 'react';
 import { useDebounce, useHoverDirty, useMeasure, useMouseHovered } from 'react-use';
 import cx from 'classnames';
-import type { ReportMetricRow, MetricRunInfo, MetricRunInfoBaseline } from '@bundle-stats/utils';
 import { hierarchy, treemap, treemapSquarify } from 'd3';
 import { Tooltip, TooltipArrow, TooltipAnchor, useTooltipState } from 'ariakit/tooltip';
+import type { ReportMetricRow, MetricRunInfo, MetricRunInfoBaseline } from '@bundle-stats/utils';
 
 import { Stack } from '../../layout/stack';
 import { FileName } from '../../ui/file-name';
 import { Delta } from '../delta';
 import { RunInfo } from '../run-info';
+import type { TreeNode, TreeRootNode } from './metrics-treemap.constants';
 import css from './metrics-treemap.module.css';
+import { getTreeNodes, getTreeNodesGroupedByPath } from './metrics-treemap.utils';
 
 const SQUARIFY_RATIO = 1.33;
 const PADDING_OUTER = 0;
 const PADDING_INNER = 2;
+const GROUPED_PADDING_TOP = 16;
 
 type TileSizeDisplay = 'minimal' | 'small' | 'default';
 
@@ -73,8 +76,17 @@ const TileTooltipContent = (props: TileTooltipContentProps) => {
 };
 
 interface TileContentProps {
-  sizeDisplay: 'minimal' | 'small' | 'default';
+  /**
+   * Tile id - metric label or basename for grouped tiles
+   */
   item: ReportMetricRow;
+  /**
+   * The estimated size of the tile
+   */
+  sizeDisplay: 'minimal' | 'small' | 'default';
+  /**
+   * Metric run info
+   */
   runInfo: MetricRunInfo;
 }
 
@@ -87,12 +99,12 @@ const TileContent = forwardRef((props: TileContentProps, ref: React.Ref<HTMLDivE
 
   return (
     <div className={css.tileContent} ref={ref}>
-      <FileName as="p" className={css.leadContentLabel} name={item.label} />
+      <FileName as="p" className={css.tileContentLabel} name={item.label} />
       {sizeDisplay !== 'small' && (
-        <p className={css.leadContentValue}>
-          <span className={css.leadContentMetric}>{runInfo.displayValue}</span>
+        <p className={css.tileContentValue}>
+          <span className={css.tileContentMetric}>{runInfo.displayValue}</span>
           <Delta
-            className={css.leadContentDelta}
+            className={css.tileContentDelta}
             displayValue={runInfo.displayDeltaPercentage}
             deltaType={runInfo.deltaType}
           />
@@ -141,19 +153,6 @@ const TileContentWithTooltip = (props: TileContentProps & { parentRef: RefObject
     </>
   );
 };
-
-interface TreeNode {
-  id: string;
-  value: number;
-  item: ReportMetricRow;
-  children?: Array<TreeNode>;
-}
-
-interface RootTree {
-  id: string;
-  value: number;
-  children: Array<TreeNode>;
-}
 
 interface TileProps {
   left: number;
@@ -205,40 +204,86 @@ const Tile = (props: TileProps) => {
   );
 };
 
+interface TileGroupProps extends React.ComponentProps<'div'> {
+  /**
+   * Group noodes
+   */
+  nodes: Array<any>;
+  /**
+   * On click tile handler
+   */
+  onItemClick: TileProps['onClick'];
+  /**
+   * Node coordinates
+   */
+  left?: number;
+  top?: number;
+  width?: number;
+  height?: number;
+
+  title?: string;
+}
+
+const TileGroup = (props: TileGroupProps) => {
+  const { title = '', nodes, onItemClick, left, top, width, height } = props;
+
+  return (
+    <>
+      {title && (
+        <div className={css.tileGroup} style={{ left, top, width, height }}>
+          <div className={css.tileGroupTitle}>{title}</div>
+        </div>
+      )}
+      {nodes.map((node) => {
+        if (node.children) {
+          return (
+            <TileGroup
+              title={node.data.id}
+              left={node.x0}
+              top={node.y0}
+              width={node.x1 - node.x0}
+              height={node.y1 - node.y0}
+              nodes={node.children}
+              onItemClick={onItemClick}
+              className={css.tileGroup}
+              key={node.data.id}
+            />
+          );
+        }
+
+        return (
+          <Tile
+            data={node.data as TreeNode}
+            left={node.x0}
+            top={node.y0}
+            width={node.x1 - node.x0}
+            height={node.y1 - node.y0}
+            onClick={onItemClick}
+            key={node.data.id}
+          />
+        );
+      })}
+    </>
+  );
+};
+
 interface UseMetricsTreemapHierarchyParams {
   items: Array<ReportMetricRow>;
   width: number;
   height: number;
+  grouped: boolean;
 }
 
 function useMetricsTreemapHierarchy(params: UseMetricsTreemapHierarchyParams) {
-  const { items, width, height } = params;
+  const { items, width, height, grouped } = params;
 
   const treemapHierarchy = useMemo(() => {
-    const children = items.map((item) => {
-      /**
-       * Set tile value to the largest run value to allow to
-       * display the impact of deleted/new entries
-       */
-      const values = item.runs.map((run) => run?.value || 0);
-      const value = Math.max(...values);
+    const treemapData = grouped ? getTreeNodesGroupedByPath(items) : getTreeNodes(items);
 
-      return {
-        id: item.key,
-        value,
-        item,
-      };
-    });
+    const customHierarchy = hierarchy<TreeRootNode>(treemapData);
 
-    const treemapData = {
-      id: 'root',
-      name: 'root',
-      value: 0,
-      children,
-    };
-
-    const customHierarchy = hierarchy<RootTree>(treemapData);
     customHierarchy.sum((node) => node.value);
+    // sort by value descending for all cases
     // @ts-expect-error
     customHierarchy.sort((a, b) => b.value - a.value);
 
@@ -246,15 +291,20 @@ function useMetricsTreemapHierarchy(params: UseMetricsTreemapHierarchyParams) {
   }, [items]);
 
   const tiles = useMemo(() => {
-    const createTremapLayout = treemap()
+    let createTremapLayout = treemap()
       .size([width, height])
       .tile(treemapSquarify.ratio(SQUARIFY_RATIO))
       .paddingOuter(PADDING_OUTER)
       .paddingInner(PADDING_INNER);
+
+    // Add padding top for group title
+    if (grouped) {
+      createTremapLayout = createTremapLayout.paddingTop(GROUPED_PADDING_TOP);
+    }
+
     // @ts-expect-error
     const tremapLayout = createTremapLayout(treemapHierarchy);
-
-    return tremapLayout.leaves().filter((tile) => Boolean(tile.parent));
+    return tremapLayout.children || [];
   }, [height, width, treemapHierarchy]);
 
   return tiles;
@@ -263,36 +313,28 @@ function useMetricsTreemapHierarchy(params: UseMetricsTreemapHierarchyParams) {
 interface MetricsTreemapProps {
   items: Array<ReportMetricRow>;
   emptyMessage?: React.ReactNode;
+  grouped?: boolean;
   onItemClick?: (entryId: string) => void;
 }
 
 export const MetricsTreemap = (props: MetricsTreemapProps & React.ComponentProps<'div'>) => {
-  const { className = '', items, onItemClick, emptyMessage = 'No data', ...restProps } = props;
+  const {
+    className = '',
+    items,
+    onItemClick,
+    emptyMessage = 'No data',
+    grouped = false,
+    ...restProps
+  } = props;
 
   const [containerRef, { width, height }] = useMeasure<HTMLDivElement>();
-  const tiles = useMetricsTreemapHierarchy({ items, width, height });
+  const nodes = useMetricsTreemapHierarchy({ items, width, height, grouped });
 
   return (
     <div className={cx(css.root, className)} {...restProps} ref={containerRef}>
-      {tiles.length > 0 ? (
+      {nodes.length > 0 ? (
         <div className={css.canvas}>
-          {tiles.map((tile) => {
-            if (!tile.parent) {
-              return null;
-            }
-
-            return (
-              <Tile
-                data={tile.data as TreeNode}
-                left={tile.x0}
-                top={tile.y0}
-                width={tile.x1 - tile.x0}
-                height={tile.y1 - tile.y0}
-                onClick={onItemClick}
-                key={tile.id}
-              />
-            );
-          })}
+          <TileGroup nodes={nodes} onItemClick={onItemClick} />
         </div>
       ) : (
         <div className={css.emptyMessage}>

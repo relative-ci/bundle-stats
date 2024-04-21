@@ -2,22 +2,40 @@ import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from '@storybook/addon-actions';
+import { createJobs } from '@bundle-stats/utils';
+import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
-// eslint-disable-next-line import/no-relative-packages
+/* eslint-disable import/no-relative-packages */
+import baselineData from '../../../../../fixtures/webpack-stats.baseline.json';
+import currentData from '../../../../../fixtures/webpack-stats.current.json';
 import moduleItemsFixture from '../../../../../fixtures/module-items.json';
+/* eslint-enable import/no-relative-packages */
 import { MetricsTreemap } from '.';
 
-export default {
+const meta: Meta<typeof MetricsTreemap> = {
   title: 'Components/MetricsTreemap',
   component: MetricsTreemap,
-} as Meta;
+  args: {
+    onItemClick: action('CLICK'),
+  },
+};
 
-export const Default: StoryObj = {
-  render: (props: React.ComponentProps<typeof MetricsTreemap>) => (
-    <MetricsTreemap style={{ maxWidth: 'var(--max-width)' }} {...props} />
-  ),
+type Story = StoryObj<typeof meta>;
+
+export default meta;
+
+const MULTIPLE_JOBS = createJobs([{ webpack: currentData }, { webpack: baselineData }]);
+
+export const Assets: Story = {
+  render: (props) => <MetricsTreemap style={{ maxWidth: 'var(--max-width)' }} {...props} />,
+  args: {
+    items: webpack.compareBySection.assets(MULTIPLE_JOBS),
+  },
+};
+
+export const Modules: Story = {
+  render: (props) => <MetricsTreemap style={{ maxWidth: 'var(--max-width)' }} {...props} />,
   args: {
     items: moduleItemsFixture,
-    onItemClick: action('CLICK'),
   },
 };
