@@ -10,7 +10,7 @@ import baselineData from '../../../../../fixtures/webpack-stats.baseline.json';
 import currentData from '../../../../../fixtures/webpack-stats.current.json';
 import moduleItemsFixture from '../../../../../fixtures/module-items.json';
 /* eslint-enable import/no-relative-packages */
-import { MetricsTreemap } from '.';
+import { MetricsTreemap, getTreemapNodes, getTreemapNodesGroupedByPath } from '.';
 
 const meta: Meta<typeof MetricsTreemap> = {
   title: 'Components/MetricsTreemap',
@@ -29,13 +29,29 @@ const MULTIPLE_JOBS = createJobs([{ webpack: currentData }, { webpack: baselineD
 export const Assets: Story = {
   render: (props) => <MetricsTreemap style={{ maxWidth: 'var(--max-width)' }} {...props} />,
   args: {
-    items: webpack.compareBySection.assets(MULTIPLE_JOBS),
+    treeNodes: getTreemapNodes(webpack.compareBySection.assets(MULTIPLE_JOBS)),
+  },
+};
+
+export const AssetsNested: Story = {
+  render: (props) => <MetricsTreemap style={{ maxWidth: 'var(--max-width)' }} {...props} />,
+  args: {
+    treeNodes: getTreemapNodesGroupedByPath(webpack.compareBySection.assets(MULTIPLE_JOBS)),
+    nested: true,
   },
 };
 
 export const Modules: Story = {
   render: (props) => <MetricsTreemap style={{ maxWidth: 'var(--max-width)' }} {...props} />,
   args: {
-    items: moduleItemsFixture,
+    treeNodes: getTreemapNodes(moduleItemsFixture),
+  },
+};
+
+export const ModulesNested: Story = {
+  render: (props) => <MetricsTreemap style={{ maxWidth: 'var(--max-width)' }} {...props} />,
+  args: {
+    treeNodes: getTreemapNodesGroupedByPath(moduleItemsFixture),
+    nested: true,
   },
 };

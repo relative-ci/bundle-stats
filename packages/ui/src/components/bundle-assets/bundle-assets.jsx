@@ -35,7 +35,7 @@ import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
 import { MetricsDisplaySelector } from '../metrics-display-selector';
 import { MetricsTableHeader } from '../metrics-table-header';
-import { MetricsTreemap } from '../metrics-treemap';
+import { MetricsTreemap, getTreemapNodes } from '../metrics-treemap';
 import { SEARCH_PLACEHOLDER } from './bundle-assets.i18n';
 import css from './bundle-assets.module.css';
 
@@ -285,8 +285,8 @@ export const BundleAssets = (props) => {
                 />
               </Table>
               <MetricsTreemap
+                treeNodes={getTreemapNodes(items)}
                 emptyMessage={emptyMessage}
-                items={items}
                 onItemClick={showEntryInfo}
               />
             </>

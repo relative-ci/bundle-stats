@@ -11,7 +11,6 @@ import { Delta } from '../delta';
 import { RunInfo } from '../run-info';
 import type { TreeNode, TreeRootNode } from './metrics-treemap.constants';
 import css from './metrics-treemap.module.css';
-import { getTreeNodes, getTreeNodesGroupedByPath } from './metrics-treemap.utils';
 
 const SQUARIFY_RATIO = 1.33;
 const PADDING_OUTER = 0;
@@ -268,19 +267,17 @@ const TileGroup = (props: TileGroupProps) => {
 };
 
 interface UseMetricsTreemapHierarchyParams {
-  items: Array<ReportMetricRow>;
+  treeNodes: TreeRootNode;
   width: number;
   height: number;
-  grouped: boolean;
+  nested: boolean;
 }
 
 function useMetricsTreemapHierarchy(params: UseMetricsTreemapHierarchyParams) {
-  const { items, width, height, grouped } = params;
+  const { treeNodes, width, height, nested } = params;
 
   const treemapHierarchy = useMemo(() => {
-    const treemapData = grouped ? getTreeNodesGroupedByPath(items) : getTreeNodes(items);
-
-    const customHierarchy = hierarchy<TreeRootNode>(treemapData);
+    const customHierarchy = hierarchy<TreeRootNode>(treeNodes);
 
     customHierarchy.sum((node) => node.value);
     // sort by value descending for all cases
@@ -288,7 +285,7 @@ function useMetricsTreemapHierarchy(params: UseMetricsTreemapHierarchyParams) {
     customHierarchy.sort((a, b) => b.value - a.value);
 
     return customHierarchy;
-  }, [items]);
+  }, [treeNodes]);
 
   const tiles = useMemo(() => {
     let createTremapLayout = treemap()
@@ -298,7 +295,7 @@ function useMetricsTreemapHierarchy(params: UseMetricsTreemapHierarchyParams) {
       .paddingInner(PADDING_INNER);
 
     // Add padding top for group title
-    if (grouped) {
+    if (nested) {
       createTremapLayout = createTremapLayout.paddingTop(GROUPED_PADDING_TOP);
     }
 
@@ -311,24 +308,24 @@ function useMetricsTreemapHierarchy(params: UseMetricsTreemapHierarchyParams) {
 }
 
 interface MetricsTreemapProps {
-  items: Array<ReportMetricRow>;
+  treeNodes: TreeRootNode;
   emptyMessage?: React.ReactNode;
-  grouped?: boolean;
+  nested?: boolean;
   onItemClick?: (entryId: string) => void;
 }
 
 export const MetricsTreemap = (props: MetricsTreemapProps & React.ComponentProps<'div'>) => {
   const {
     className = '',
-    items,
+    treeNodes,
     onItemClick,
     emptyMessage = 'No data',
-    grouped = false,
+    nested = false,
     ...restProps
   } = props;
 
   const [containerRef, { width, height }] = useMeasure<HTMLDivElement>();
-  const nodes = useMetricsTreemapHierarchy({ items, width, height, grouped });
+  const nodes = useMetricsTreemapHierarchy({ treeNodes, width, height, nested });
 
   return (
     <div className={cx(css.root, className)} {...restProps} ref={containerRef}>

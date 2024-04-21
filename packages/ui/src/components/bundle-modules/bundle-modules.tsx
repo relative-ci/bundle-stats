@@ -22,7 +22,7 @@ import { Tooltip } from '../../ui/tooltip';
 import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableHeader } from '../metrics-table-header';
-import { MetricsTreemap } from '../metrics-treemap';
+import { MetricsTreemap, getTreemapNodes } from '../metrics-treemap';
 import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsDisplaySelector } from '../metrics-display-selector';
 import { MetricsTableTitle } from '../metrics-table-title';
@@ -244,7 +244,11 @@ export const BundleModules = (props: BundleModulesProps) => {
                   rows={items}
                 />
               </Table>
-              <MetricsTreemap emptyMessage={emptyMessage} items={items} onItemClick={showEntryInfo} />
+              <MetricsTreemap
+                treeNodes={getTreemapNodes(items)}
+                emptyMessage={emptyMessage}
+                onItemClick={showEntryInfo}
+              />
             </>
           )}
         </Box>

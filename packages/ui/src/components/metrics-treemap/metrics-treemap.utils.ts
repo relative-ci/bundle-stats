@@ -7,8 +7,6 @@ import type {
   TreeRootNode,
 } from './metrics-treemap.constants';
 
-const ROOT_FALLBACK_SLUG = '.';
-
 /**
  * Set node value to the largest run value to allow to
  * display the impact of deleted/new entries
@@ -18,7 +16,10 @@ function getReportMetricRowMaxValue(item: ReportMetricRow): number {
   return Math.max(...values);
 }
 
-export function getTreeNodes(items: Array<ReportMetricRow>): TreeRootNode {
+/**
+ * Generate treemap node list(flat)
+ */
+export function getTreemapNodes(items: Array<ReportMetricRow>): TreeRootNode {
   const rootChildren: Array<TreeNode> = items.map((item) => ({
     id: item.key,
     value: getReportMetricRowMaxValue(item),
@@ -33,14 +34,9 @@ export function getTreeNodes(items: Array<ReportMetricRow>): TreeRootNode {
   };
 }
 
-function normalizeSlug(segment?: string): string {
-  if (!segment) {
-    return ROOT_FALLBACK_SLUG;
-  }
-
-  return segment;
-}
-
+/**
+ * Recursively set treemap nodes
+ */
 function setTreeNode(nodes: TreeNodeChildren, slugs: Array<string>, newNode: TreeNode): void {
   const [currentSlug, ...restSlug] = slugs;
 
@@ -72,7 +68,10 @@ function setTreeNode(nodes: TreeNodeChildren, slugs: Array<string>, newNode: Tre
   setTreeNode(parentNode.children, restSlug, newNode);
 }
 
-export function getTreeNodesGroupedByPath(items: Array<ReportMetricRow>): TreeRootNode {
+/**
+ * Generate treemap nodes tree by directory
+ */
+export function getTreemapNodesGroupedByPath(items: Array<ReportMetricRow>): TreeRootNode {
   const treeNodes: TreeNodeChildren = [];
 
   items.forEach((item) => {

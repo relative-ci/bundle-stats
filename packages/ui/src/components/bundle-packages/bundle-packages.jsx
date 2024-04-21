@@ -24,7 +24,7 @@ import { SEARCH_PLACEHOLDER } from './bundle-packages.i18n';
 import css from './bundle-packages.module.css';
 import { MetricsDisplaySelector } from '../metrics-display-selector';
 import { MetricsDisplayType } from '../../constants';
-import { MetricsTreemap } from '../metrics-treemap';
+import { MetricsTreemap, getTreemapNodes } from '../metrics-treemap';
 import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
 
 const getDropdownFilters = ({ compareMode, filters }) => ({
@@ -244,7 +244,11 @@ export const BundlePackages = (props) => {
                   rows={items}
                 />
               </Table>
-              <MetricsTreemap emptyMessage={emptyMessage} items={items} onItemClick={showEntryInfo} />
+              <MetricsTreemap
+                treeNodes={getTreemapNodes(items)}
+                emptyMessage={emptyMessage}
+                onItemClick={showEntryInfo}
+              />
             </>
           )}
         </Box>

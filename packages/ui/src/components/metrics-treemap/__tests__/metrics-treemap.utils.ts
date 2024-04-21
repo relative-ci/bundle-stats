@@ -1,8 +1,8 @@
-import { getTreeNodesGroupedByPath } from '../metrics-treemap.utils';
+import { getTreemapNodesGroupedByPath } from '../metrics-treemap.utils';
 
 describe('MetricsTreemap / getTreeNodesGroupedByPath', () => {
   test('should group tree ndoes by path', () => {
-    const actual = getTreeNodesGroupedByPath([
+    const actual = getTreemapNodesGroupedByPath([
       {
         key: './src/app.jsx',
         runs: [{ value: 100 }],
