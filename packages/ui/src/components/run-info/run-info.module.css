@@ -31,6 +31,10 @@
   font-weight: bold;
 }
 
+.delta {
+  font-weight: normal;
+}
+
 .deltaValue + .deltaValue::before {
   margin-left: calc(var(--space-xxxsmall) / 2);
   margin-right: calc(var(--space-xxxsmall) / 2);
@@ -72,17 +76,13 @@
 
 /* Size variation */
 .small .currentMetric {
-  font-size: var(--size-large);
-}
-
-.large .currentMetric {
-  font-size: var(--size-xxxlarge);
-}
-
-.large .baselineMetric {
   font-size: var(--size-medium);
 }
 
-.large .delta {
-  margin-left: var(--space-xxxsmall);
+.large .currentMetric {
+  font-size: var(--size-xxlarge);
+}
+
+.large .baselineMetric {
+  font-size: var(--size-small);
 }
