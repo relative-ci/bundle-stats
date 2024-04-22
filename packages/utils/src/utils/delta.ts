@@ -64,19 +64,26 @@ export function getDeltaType(
   deltaPercentageValue: number,
   biggerIsBetter?: MetricTypeConfig['biggerIsBetter'],
 ): MetricRunInfoDeltaType {
+  // No change
+  if (deltaPercentageValue === 0) {
+    return 'NO_CHANGE';
+  }
+
+  // Change + no regression/improvement
+  if (biggerIsBetter === null) {
+    return 'CHANGE';
+  }
+
   if (deltaPercentageValue < -50) {
     return biggerIsBetter ? 'HIGH_NEGATIVE' : 'HIGH_POSITIVE';
   }
+
   if (deltaPercentageValue < -5) {
     return biggerIsBetter ? 'NEGATIVE' : 'POSITIVE';
   }
 
   if (deltaPercentageValue < 0) {
     return biggerIsBetter ? 'LOW_NEGATIVE' : 'LOW_POSITIVE';
-  }
-
-  if (deltaPercentageValue === 0) {
-    return 'NO_CHANGE';
   }
 
   if (deltaPercentageValue <= 5) {
