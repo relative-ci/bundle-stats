@@ -813,7 +813,7 @@ exports[`report / createReport multiple sources 1`] = `
       ],
     },
     {
-      "biggerIsBetter": false,
+      "biggerIsBetter": null,
       "changed": false,
       "key": "webpack.duplicateCode",
       "label": "Duplicate Code",
@@ -825,6 +825,7 @@ exports[`report / createReport multiple sources 1`] = `
           "displayDelta": "0%",
           "displayDeltaPercentage": "0%",
           "displayValue": "0%",
+          "regression": null,
           "value": 0,
         },
         {
@@ -996,6 +997,7 @@ exports[`report / createReport multiple sources 1`] = `
         "displayDeltaPercentage": "0%",
         "displayValue": "0%",
         "label": "Duplicate Code",
+        "regression": null,
         "value": 0,
       },
       {
@@ -1521,7 +1523,7 @@ exports[`report / createReport single source 1`] = `
       ],
     },
     {
-      "biggerIsBetter": false,
+      "biggerIsBetter": null,
       "changed": false,
       "key": "webpack.duplicateCode",
       "label": "Duplicate Code",
@@ -1656,6 +1658,7 @@ exports[`report / createReport single source 1`] = `
         "displayDeltaPercentage": "0%",
         "displayValue": "0%",
         "label": "Duplicate Code",
+        "regression": null,
         "value": 0,
       },
       {
