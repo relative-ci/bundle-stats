@@ -4,6 +4,10 @@
   white-space: nowrap;
 }
 
+.CHANGE {
+  color: var(--color-info);
+}
+
 .HIGH_NEGATIVE {
   color: var(--color-red-dark);
 }
@@ -29,9 +33,14 @@
 }
 
 .inverted {
-  border-radius: var(--radius-small);
+  padding: 0 2px;
+  border-radius: var(--radius-xsmall);
   background-color: var(--color-gray-ultra-light);
   color: var(--color-light);
+}
+
+.inverted.CHANGE {
+  background: var(--color-info-light);
 }
 
 .inverted.HIGH_NEGATIVE {
