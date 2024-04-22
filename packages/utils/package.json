@@ -45,7 +45,7 @@
     "core-js": "3.37.0",
     "jest": "29.7.0",
     "jest-cli": "29.7.0",
-    "jest-date-mock": "1.0.9",
+    "jest-date-mock": "1.0.10",
     "lodash": "4.17.21",
     "regenerator-runtime": "0.14.1",
     "rimraf": "5.0.5",
