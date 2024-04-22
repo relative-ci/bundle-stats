@@ -756,7 +756,7 @@ exports[`report / createReport multiple sources 1`] = `
         {
           "delta": 95.24,
           "deltaPercentage": 100,
-          "deltaType": "HIGH_NEGATIVE",
+          "deltaType": "CHANGE",
           "displayDelta": "+95.24%",
           "displayDeltaPercentage": "+100%",
           "displayValue": "95.24%",
@@ -778,7 +778,7 @@ exports[`report / createReport multiple sources 1`] = `
         {
           "delta": 2,
           "deltaPercentage": 40,
-          "deltaType": "NEGATIVE",
+          "deltaType": "CHANGE",
           "displayDelta": "+2",
           "displayDeltaPercentage": "+40%",
           "displayValue": "7",
@@ -960,7 +960,7 @@ exports[`report / createReport multiple sources 1`] = `
       {
         "delta": 95.24,
         "deltaPercentage": 100,
-        "deltaType": "HIGH_NEGATIVE",
+        "deltaType": "CHANGE",
         "displayDelta": "+95.24%",
         "displayDeltaPercentage": "+100%",
         "displayValue": "95.24%",
@@ -971,7 +971,7 @@ exports[`report / createReport multiple sources 1`] = `
       {
         "delta": 2,
         "deltaPercentage": 40,
-        "deltaType": "NEGATIVE",
+        "deltaType": "CHANGE",
         "displayDelta": "+2",
         "displayDeltaPercentage": "+40%",
         "displayValue": "7",
@@ -1632,7 +1632,7 @@ exports[`report / createReport single source 1`] = `
       {
         "delta": 7,
         "deltaPercentage": 100,
-        "deltaType": "HIGH_NEGATIVE",
+        "deltaType": "CHANGE",
         "displayDelta": "+7",
         "displayDeltaPercentage": "+100%",
         "displayValue": "7",
@@ -1664,7 +1664,7 @@ exports[`report / createReport single source 1`] = `
       {
         "delta": 2,
         "deltaPercentage": 100,
-        "deltaType": "HIGH_NEGATIVE",
+        "deltaType": "CHANGE",
         "displayDelta": "+2",
         "displayDeltaPercentage": "+100%",
         "displayValue": "2",
@@ -1675,7 +1675,7 @@ exports[`report / createReport single source 1`] = `
       {
         "delta": 4,
         "deltaPercentage": 100,
-        "deltaType": "HIGH_NEGATIVE",
+        "deltaType": "CHANGE",
         "displayDelta": "+4",
         "displayDeltaPercentage": "+100%",
         "displayValue": "4",
