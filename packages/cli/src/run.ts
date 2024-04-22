@@ -24,6 +24,7 @@ import {
 import LOCALES from './locales.json';
 
 const REPORT_INFO_COLORS: Record<MetricRunInfoDeltaType, string> = {
+  CHANGE: 'blue',
   HIGH_NEGATIVE: 'red',
   NEGATIVE: 'red',
   LOW_NEGATIVE: 'yellow',
