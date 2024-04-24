@@ -72,11 +72,11 @@ export const BundleAssetsTotals = ({
     <Stack space="xsmall" as="section" className={className}>
       <Toolbar
         renderActions={() => (
-          <MetricsDisplaySelector onSelect={setDisplayType} value={displayType} />
+          <MetricsDisplaySelector onSelect={setDisplayType} value={displayType.value} />
         )}
       />
       <Box outline as="main">
-        {displayType === MetricsDisplayType.TABLE && (
+        {displayType.value === MetricsDisplayType.TABLE && (
           <MetricsTable
             title={metricsTableTitle}
             runs={jobs}
@@ -86,7 +86,7 @@ export const BundleAssetsTotals = ({
             {...restProps}
           />
         )}
-        {displayType === MetricsDisplayType.TREEMAP && (
+        {displayType.value === MetricsDisplayType.TREEMAP && (
           <>
             <Table compact>
               <MetricsTableHeader

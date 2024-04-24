@@ -35,13 +35,17 @@ import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
 import { MetricsDisplaySelector } from '../metrics-display-selector';
 import { MetricsTableHeader } from '../metrics-table-header';
-import { MetricsTreemap, getTreemapNodes } from '../metrics-treemap';
+import { MetricsTreemap, getTreemapNodes, getTreemapNodesGroupedByPath } from '../metrics-treemap';
 import { SEARCH_PLACEHOLDER } from './bundle-assets.i18n';
 import css from './bundle-assets.module.css';
 
 const RUN_TITLE_CURRENT = 'Current';
 const RUN_TITLE_BASELINE = 'Baseline';
 const RUNS_LABELS = [RUN_TITLE_CURRENT, RUN_TITLE_BASELINE];
+
+const DISPLAY_TYPE_GROUPS = {
+  [MetricsDisplayType.TREEMAP]: ['folder'],
+};
 
 const getFileTypeFilters = (filters) =>
   Object.entries(FILE_TYPE_LABELS)
@@ -187,7 +191,7 @@ export const BundleAssets = (props) => {
 
   const jobLabels = jobs?.map((job) => job?.label);
 
-  const [displayType, setDisplayType] = useMetricsDisplayType();
+  const [displayType, setDisplayType] = useMetricsDisplayType(DISPLAY_TYPE_GROUPS);
 
   const dropdownFilters = useMemo(
     () => getFilters({ compareMode: jobs?.length > 1, filters }),
@@ -238,7 +242,12 @@ export const BundleAssets = (props) => {
         <Toolbar
           renderActions={({ actionClassName }) => (
             <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
-              <MetricsDisplaySelector onSelect={setDisplayType} value={displayType} />
+              <MetricsDisplaySelector
+                value={displayType.value}
+                groupBy={displayType.groupBy}
+                groups={DISPLAY_TYPE_GROUPS}
+                onSelect={setDisplayType}
+              />
               <MetricsTableOptions
                 handleViewAll={resetAllFilters}
                 handleResetFilters={resetFilters}
@@ -262,7 +271,7 @@ export const BundleAssets = (props) => {
           </FlexStack>
         </Toolbar>
         <Box outline as="main">
-          {displayType === MetricsDisplayType.TABLE && (
+          {displayType.value === MetricsDisplayType.TABLE && (
             <MetricsTable
               runs={jobs}
               items={items}
@@ -274,7 +283,7 @@ export const BundleAssets = (props) => {
               updateSort={updateSort}
             />
           )}
-          {displayType === MetricsDisplayType.TREEMAP && (
+          {displayType.value === MetricsDisplayType.TREEMAP && (
             <>
               <Table compact>
                 <MetricsTableHeader
@@ -285,7 +294,7 @@ export const BundleAssets = (props) => {
                 />
               </Table>
               <MetricsTreemap
-                treeNodes={getTreemapNodes(items)}
+                treeNodes={displayType.groupBy === 'folder' ? getTreemapNodesGroupedByPath(items) : getTreemapNodes(items)}
                 emptyMessage={emptyMessage}
                 onItemClick={showEntryInfo}
               />
