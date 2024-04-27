@@ -167,6 +167,43 @@ RowHeader.defaultProps = {
   chunks: [],
 };
 
+const ViewMetricsTreemap = (props) => {
+  const { metricsTableTitle, jobs, items, displayType, emptyMessage, showEntryInfo } = props;
+
+  const treeNodes = useMemo(() => {
+    if (displayType.groupBy === 'folder') {
+      return getTreemapNodesGroupedByPath(items);
+    }
+
+    return getTreemapNodes(items);
+  }, [items, displayType.groupBy]);
+
+  return (
+    <>
+      <Table compact>
+        <MetricsTableHeader metricTitle={metricsTableTitle} showSum jobs={jobs} rows={items} />
+      </Table>
+      <MetricsTreemap
+        treeNodes={treeNodes}
+        nested={Boolean(displayType.groupBy)}
+        emptyMessage={emptyMessage}
+        onItemClick={showEntryInfo}
+      />
+    </>
+  );
+};
+
+ViewMetricsTreemap.propTypes = {
+  jobs: PropTypes.arrayOf(PropTypes.object).isRequired, // eslint-disable-line react/forbid-prop-types
+  items: PropTypes.arrayOf(PropTypes.object).isRequired, // eslint-disable-line react/forbid-prop-types
+  metricsTableTitle: PropTypes.node.isRequired,
+  displayType: PropTypes.shape({
+    groupBy: PropTypes.string,
+  }).isRequired,
+  emptyMessage: PropTypes.node.isRequired,
+  showEntryInfo: PropTypes.bool.isRequired,
+};
+
 export const BundleAssets = (props) => {
   const {
     className,
@@ -284,21 +321,13 @@ export const BundleAssets = (props) => {
             />
           )}
           {displayType.value === MetricsDisplayType.TREEMAP && (
-            <>
-              <Table compact>
-                <MetricsTableHeader
-                  metricTitle={metricsTableTitle}
-                  showSum
-                  jobs={jobs}
-                  rows={items}
-                />
-              </Table>
-              <MetricsTreemap
-                treeNodes={displayType.groupBy === 'folder' ? getTreemapNodesGroupedByPath(items) : getTreemapNodes(items)}
-                emptyMessage={emptyMessage}
-                onItemClick={showEntryInfo}
-              />
-            </>
+            <ViewMetricsTreemap
+              jobs={jobs}
+              items={items}
+              displayType={displayType}
+              emptyMessage={emptyMessage}
+              showEntryInfo={showEntryInfo}
+            />
           )}
         </Box>
       </Stack>
