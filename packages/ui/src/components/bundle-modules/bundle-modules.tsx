@@ -1,4 +1,4 @@
-import React, { ComponentProps, useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import cx from 'classnames';
 import { SECTIONS, COMPONENT } from '@bundle-stats/utils';
 
@@ -72,10 +72,12 @@ interface ViewMetricsTreemapProps {
   displayType: { value: MetricsDisplayType; groupBy?: string };
   emptyMessage: React.ReactNode;
   showEntryInfo: React.ComponentProps<typeof MetricsTreemap>['onItemClick'];
+  updateSearch: (newSerarch: string) => void;
 }
 
 const ViewMetricsTreemap = (props: ViewMetricsTreemapProps) => {
-  const { metricsTableTitle, jobs, items, displayType, emptyMessage, showEntryInfo } = props;
+  const { metricsTableTitle, jobs, items, displayType, emptyMessage, showEntryInfo, updateSearch } =
+    props;
 
   const treeNodes = useMemo(() => {
     if (displayType.groupBy === 'folder') {
@@ -84,6 +86,21 @@ const ViewMetricsTreemap = (props: ViewMetricsTreemapProps) => {
 
     return getTreemapNodes(items);
   }, [items, displayType]);
+
+  const onGroupClick = useCallback(
+    (groupPath: string) => {
+      // Search by group path
+      // 1. use `^` to match only the string beggining
+      // 2. add `/` suffix to match only exact directories
+      // 3. if the group path is empty(root), clear search
+      if (groupPath) {
+        updateSearch(`^${groupPath}/`);
+      } else {
+        updateSearch('');
+      }
+    },
+    [updateSearch],
+  );
 
   return (
     <>
@@ -95,6 +112,7 @@ const ViewMetricsTreemap = (props: ViewMetricsTreemapProps) => {
         nested={Boolean(displayType.groupBy)}
         emptyMessage={emptyMessage}
         onItemClick={showEntryInfo}
+        onGroupClick={onGroupClick}
       />
     </>
   );
@@ -286,6 +304,7 @@ export const BundleModules = (props: BundleModulesProps) => {
               displayType={displayType}
               emptyMessage={emptyMessage}
               showEntryInfo={showEntryInfo}
+              updateSearch={updateSearch}
             />
           )}
         </Box>

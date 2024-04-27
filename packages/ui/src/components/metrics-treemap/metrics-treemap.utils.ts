@@ -1,11 +1,8 @@
 import type { ReportMetricRow } from '@bundle-stats/utils';
 
-import type {
-  TreeNode,
-  TreeNodeChildren,
-  TreeParentNode,
-  TreeRootNode,
-} from './metrics-treemap.constants';
+import type { TreeLeaf, TreeNodeChildren, TreeNode } from './metrics-treemap.constants';
+
+const ROOT_LABEL = '(root)';
 
 /**
  * Set node value to the largest run value to allow to
@@ -19,16 +16,17 @@ function getReportMetricRowMaxValue(item: ReportMetricRow): number {
 /**
  * Generate treemap node list(flat)
  */
-export function getTreemapNodes(items: Array<ReportMetricRow>): TreeRootNode {
-  const rootChildren: Array<TreeNode> = items.map((item) => ({
+export function getTreemapNodes(items: Array<ReportMetricRow>): TreeNode {
+  const rootChildren: Array<TreeLeaf> = items.map((item) => ({
     id: item.key,
+    label: item.key,
     value: getReportMetricRowMaxValue(item),
     item,
   }));
 
   return {
-    id: 'root',
-    name: 'root',
+    id: '',
+    label: ROOT_LABEL,
     value: 0,
     children: rootChildren,
   };
@@ -37,21 +35,31 @@ export function getTreemapNodes(items: Array<ReportMetricRow>): TreeRootNode {
 /**
  * Recursively set treemap nodes
  */
-function setTreeNode(nodes: TreeNodeChildren, slugs: Array<string>, newNode: TreeNode): void {
-  const [currentSlug, ...restSlug] = slugs;
+function setTreeNode(
+  nodes: TreeNodeChildren,
+  slugs: Array<string>,
+  currentSlugId: number,
+  newNode: TreeLeaf,
+): void {
+  const baseSlugs = slugs.slice(0, currentSlugId);
+  const [currentSlug, ...restSlug] = slugs.slice(currentSlugId);
 
+  // Add to current nodes if there are no child nodes
   if (!currentSlug) {
     nodes.push(newNode);
     return;
   }
 
-  // Check for an existing parent
-  let parentNode = nodes.find((treeNode) => treeNode.id === currentSlug) as TreeParentNode;
+  const currentNodePath = [...baseSlugs, currentSlug].join('/');
 
-  // Create a new parentNode if necessary
+  // Check for existing parent in current nodes
+  let parentNode = nodes.find((treeNode) => treeNode.id === currentNodePath) as TreeNode;
+
+  // Create the new parentNode if missing
   if (!parentNode) {
     parentNode = {
-      id: currentSlug,
+      id: currentNodePath,
+      label: currentSlug,
       value: 0,
       children: [],
     };
@@ -59,43 +67,40 @@ function setTreeNode(nodes: TreeNodeChildren, slugs: Array<string>, newNode: Tre
     nodes.push(parentNode);
   }
 
-  // Node parent
+  // If there are no other slugs, the new node is as leaf and we add it to the parent
   if (restSlug.length === 0) {
     parentNode.children.push(newNode);
     return;
   }
 
-  setTreeNode(parentNode.children, restSlug, newNode);
+  setTreeNode(parentNode.children, slugs, currentSlugId + 1, newNode);
 }
 
 /**
  * Generate treemap nodes tree by directory
  */
-export function getTreemapNodesGroupedByPath(items: Array<ReportMetricRow>): TreeRootNode {
+export function getTreemapNodesGroupedByPath(items: Array<ReportMetricRow>): TreeNode {
   const treeNodes: TreeNodeChildren = [];
 
   items.forEach((item) => {
-    const normalizedPath = item.key.replace(/^\.\//, ''); // replace './' prefix
-    const slugs = normalizedPath.split('/');
+    // const normalizedPath = item.key.replace(/^\.?\//, ''); // replace './' or '/' prefix
+    const slugs = item.key.split('/');
     const baseSlugs = slugs.slice(0, -1);
-    const id = slugs.slice(-1)[0];
+    const baseName = slugs.slice(-1)[0];
 
     const treeNode = {
-      id,
+      id: item.key,
+      label: baseName,
       value: getReportMetricRowMaxValue(item),
-      item: {
-        ...item,
-        // Set label to baseline
-        label: id,
-      },
+      item,
     };
 
-    setTreeNode(treeNodes, baseSlugs, treeNode);
+    setTreeNode(treeNodes, baseSlugs, 0, treeNode);
   });
 
   return {
-    id: 'root',
-    name: 'root',
+    id: '',
+    label: ROOT_LABEL,
     value: 0,
     children: treeNodes,
   };

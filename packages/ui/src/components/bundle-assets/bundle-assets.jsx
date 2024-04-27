@@ -168,7 +168,7 @@ RowHeader.defaultProps = {
 };
 
 const ViewMetricsTreemap = (props) => {
-  const { metricsTableTitle, jobs, items, displayType, emptyMessage, showEntryInfo } = props;
+  const { metricsTableTitle, jobs, items, displayType, emptyMessage, showEntryInfo, updateSearch } = props;
 
   const treeNodes = useMemo(() => {
     if (displayType.groupBy === 'folder') {
@@ -177,6 +177,21 @@ const ViewMetricsTreemap = (props) => {
 
     return getTreemapNodes(items);
   }, [items, displayType.groupBy]);
+
+  const onGroupClick = useCallback(
+    (groupPath) => {
+      // Search by group path
+      // 1. use `^` to match only the string beggining
+      // 2. add `/` suffix to match only exact directories
+      // 3. if the group path is empty(root), clear search
+      if (groupPath) {
+        updateSearch(`^${groupPath}/`);
+      } else {
+        updateSearch('');
+      }
+    },
+    [updateSearch],
+  );
 
   return (
     <>
@@ -188,6 +203,7 @@ const ViewMetricsTreemap = (props) => {
         nested={Boolean(displayType.groupBy)}
         emptyMessage={emptyMessage}
         onItemClick={showEntryInfo}
+        onGroupClick={onGroupClick}
       />
     </>
   );
@@ -201,7 +217,8 @@ ViewMetricsTreemap.propTypes = {
     groupBy: PropTypes.string,
   }).isRequired,
   emptyMessage: PropTypes.node.isRequired,
-  showEntryInfo: PropTypes.bool.isRequired,
+  showEntryInfo: PropTypes.func.isRequired,
+  updateSearch: PropTypes.func.isRequired,
 };
 
 export const BundleAssets = (props) => {
@@ -327,6 +344,7 @@ export const BundleAssets = (props) => {
               displayType={displayType}
               emptyMessage={emptyMessage}
               showEntryInfo={showEntryInfo}
+              updateSearch={updateSearch}
             />
           )}
         </Box>

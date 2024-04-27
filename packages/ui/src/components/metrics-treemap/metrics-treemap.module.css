@@ -22,13 +22,25 @@
 
 .tileGroupTitle {
   width: 100%;
-  padding: 2px var(--space-xxsmall);
-  background: var(--color-highlight);
+  padding: 2px var(--space-xxxsmall);
+  color: var(--color-text);
   font-size: 10px;
   line-height: 1em;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.nested .tileGroup {
+  background: rgba(128, 128, 128, 0.05);
+}
+
+.nested .tileGroup:hover {
+  background: rgba(128, 128, 128, 0.08);
+}
+
+.nested .tileGroup:hover .tileGroupTitle {
+  color: var(--color-text-dark);
 }
 
 /** Tile overlay fill background transition */
@@ -44,7 +56,7 @@
   border: 0;
   border-radius: 0;
   padding: 0;
-  background: none;
+  background: var(--color-background);
   display: flex;
   align-items: center;
   font-family: var(--font-family-fixed);
@@ -138,7 +150,7 @@
 
 .tile-NO_CHANGE::before {
   color: var(--color-gray-50);
-  opacity: 0.4;
+  opacity: 0.3;
 }
 
 .tile-NO_CHANGE:hover::before {
@@ -218,5 +230,5 @@ div[role="presentation"]:has(.tooltip) {
 }
 
 .tileTooltipContentTitle {
-  font-size: var(--size-medium);
+  font-size: var(--size-small);
 }

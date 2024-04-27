@@ -1,22 +1,17 @@
 import type { ReportMetricRow } from '@bundle-stats/utils';
 
-export interface TreeNode {
+export interface TreeLeaf {
   id: string;
+  label: string;
   value: number;
   item: ReportMetricRow;
 }
 
-export interface TreeParentNode {
-  id: string;
-  value: number;
-  children: Array<TreeNode | TreeParentNode>;
-}
+export type TreeNodeChildren = Array<TreeNode | TreeLeaf>;
 
-export type TreeNodeChildren = Array<TreeParentNode | TreeNode>;
-
-export interface TreeRootNode {
+export interface TreeNode {
   id: string;
-  name: string;
+  label: string;
   value: number;
   children: TreeNodeChildren;
 }

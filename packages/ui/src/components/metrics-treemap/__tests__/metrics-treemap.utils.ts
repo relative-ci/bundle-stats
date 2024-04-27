@@ -30,84 +30,97 @@ describe('MetricsTreemap / getTreeNodesGroupedByPath', () => {
     ] as any);
 
     expect(actual).toStrictEqual({
-      id: 'root',
-      name: 'root',
+      id: '',
+      label: '(root)',
       value: 0,
       children: [
         {
-          id: 'src',
+          id: '.',
+          label: '.',
           value: 0,
           children: [
             {
-              id: 'app.jsx',
-              value: 100,
-              item: {
-                key: './src/app.jsx',
-                label: 'app.jsx',
-                runs: [{ value: 100 }],
-              },
-            },
-            {
-              id: 'components',
+              id: './src',
+              label: 'src',
               value: 0,
               children: [
                 {
-                  id: 'header.jsx',
+                  id: './src/app.jsx',
+                  label: 'app.jsx',
                   value: 100,
                   item: {
-                    key: './src/components/header.jsx',
-                    label: 'header.jsx',
+                    key: './src/app.jsx',
                     runs: [{ value: 100 }],
                   },
                 },
                 {
-                  id: 'footer.jsx',
-                  value: 100,
-                  item: {
-                    key: './src/components/footer.jsx',
-                    label: 'footer.jsx',
-                    runs: [{ value: 100 }],
-                  },
-                },
-              ],
-            },
-            {
-              id: 'ui',
-              value: 0,
-              children: [
-                {
-                  id: 'button.jsx',
-                  value: 100,
-                  item: {
-                    key: './src/ui/button.jsx',
-                    label: 'button.jsx',
-                    runs: [{ value: 100 }],
-                  },
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: 'node_modules',
-          value: 0,
-          children: [
-            {
-              id: 'react',
-              value: 0,
-              children: [
-                {
-                  id: 'dist',
+                  id: './src/components',
+                  label: 'components',
                   value: 0,
                   children: [
                     {
-                      id: 'react.production.js',
+                      id: './src/components/header.jsx',
+                      label: 'header.jsx',
                       value: 100,
                       item: {
-                        key: './node_modules/react/dist/react.production.js',
-                        label: 'react.production.js',
+                        key: './src/components/header.jsx',
                         runs: [{ value: 100 }],
                       },
+                    },
+                    {
+                      id: './src/components/footer.jsx',
+                      label: 'footer.jsx',
+                      value: 100,
+                      item: {
+                        key: './src/components/footer.jsx',
+                        runs: [{ value: 100 }],
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: './src/ui',
+                  label: 'ui',
+                  value: 0,
+                  children: [
+                    {
+                      id: './src/ui/button.jsx',
+                      label: 'button.jsx',
+                      value: 100,
+                      item: {
+                        key: './src/ui/button.jsx',
+                        runs: [{ value: 100 }],
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              id: './node_modules',
+              label: 'node_modules',
+              value: 0,
+              children: [
+                {
+                  id: './node_modules/react',
+                  label: 'react',
+                  value: 0,
+                  children: [
+                    {
+                      id: './node_modules/react/dist',
+                      label: 'dist',
+                      value: 0,
+                      children: [
+                        {
+                          id: './node_modules/react/dist/react.production.js',
+                          label: 'react.production.js',
+                          value: 100,
+                          item: {
+                            key: './node_modules/react/dist/react.production.js',
+                            runs: [{ value: 100 }],
+                          },
+                        },
+                      ],
                     },
                   ],
                 },
@@ -117,10 +130,10 @@ describe('MetricsTreemap / getTreeNodesGroupedByPath', () => {
         },
         {
           id: 'favicon.ico',
+          label: 'favicon.ico',
           value: 10,
           item: {
             key: 'favicon.ico',
-            label: 'favicon.ico',
             runs: [{ value: 10 }],
           },
         },
