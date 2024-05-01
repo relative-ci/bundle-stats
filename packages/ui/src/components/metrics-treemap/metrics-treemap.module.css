@@ -28,7 +28,7 @@
   padding: 2px var(--space-xxxsmall);
   color: var(--color-text);
   font-size: 10px;
-  line-height: 1em;
+  line-height: 12px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -42,21 +42,23 @@
 
 /** Tile group nested variation */
 .nested .tileGroup {
-  background: rgba(128, 128, 128, 0.05);
+  background: rgba(200, 200, 200, 0.1);
+  outline: 1px solid rgba(255, 255, 255, 0.6);
 }
 
-.nested .tileGroup:hover {
-  background: rgba(128, 128, 128, 0.08);
-}
-
-.nested .tileGroup:hover .tileGroupTitle {
-  color: var(--color-text-dark);
+/** Update background for current tileGroup and its children */
+.nested .tileGroup:has(> .tileGroupTitle:hover),
+.nested .tileGroup:has(> .tileGroupTitle:hover) .tileGroup,
+.nested .tileGroup:has(> .tile:hover),
+.nested .tileGroup:has(> .tile:hover) .tileGroup {
+  background: rgba(200, 200, 200, 0.2);
 }
 
 /** Leaf wrapper button */
 .tile {
   position: absolute;
   appearance: none;
+  outline: 1px solid rgba(255, 255, 255, 0.6);
   border: 0;
   border-radius: 0;
   padding: 0;
@@ -83,13 +85,13 @@
   color: var(--color-highlight);
   transition: var(--ui-transition-out);
   transition-property: opacity;
-  opacity: 0.75;
+  opacity: 0.8;
 }
 
 .tile:hover::before {
   transition: var(--ui-transition-in);
   transition-property: opacity;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .tileContent {
@@ -156,11 +158,11 @@
 
 .tile-NO_CHANGE::before {
   color: var(--color-gray-50);
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 .tile-NO_CHANGE:hover::before {
-  opacity: 0.2;
+  opacity: 0.3;
 }
 
 .tile-HIGH_NEGATIVE::before {

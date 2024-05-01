@@ -38,6 +38,7 @@ const getSearchReducer =
         const newState = {
           filters: payload,
           search: state.search,
+          searchPattern: getSearchPattern(state.search),
         };
         setParentState(newState);
         return newState;
