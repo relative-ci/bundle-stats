@@ -23,8 +23,8 @@ import type { TreeLeaf, TreeNode, Tree } from './metrics-treemap.constants';
 import css from './metrics-treemap.module.css';
 
 const SQUARIFY_RATIO = 1.33;
-const PADDING_OUTER = 2;
-const PADDING_INNER = 2;
+const PADDING_OUTER = 1;
+const PADDING_INNER = 1;
 const GROUPED_PADDING_TOP = 16;
 
 /**
