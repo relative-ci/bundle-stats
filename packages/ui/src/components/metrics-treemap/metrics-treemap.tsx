@@ -98,6 +98,10 @@ const TileTooltipContent = (props: TileTooltipContentProps) => {
 
 interface TileContentProps {
   /**
+   * Node label
+   */
+  label: string;
+  /**
    * Tile id - metric label or basename for grouped tiles
    */
   item: ReportMetricRow;
@@ -112,7 +116,7 @@ interface TileContentProps {
 }
 
 const TileContent = forwardRef((props: TileContentProps, ref: Ref<HTMLDivElement>) => {
-  const { sizeDisplay, item, runInfo } = props;
+  const { label, sizeDisplay, item, runInfo } = props;
 
   if (sizeDisplay === 'minimal') {
     return <div className={css.tileContent} ref={ref} />;
@@ -120,7 +124,7 @@ const TileContent = forwardRef((props: TileContentProps, ref: Ref<HTMLDivElement
 
   return (
     <div className={css.tileContent} ref={ref}>
-      <FileName as="p" className={css.tileContentLabel} name={item.label} />
+      <FileName as="p" className={css.tileContentLabel} name={label || item.label} />
       {sizeDisplay !== 'small' && (
         <p className={css.tileContentValue}>
           <span className={css.tileContentMetric}>{runInfo.displayValue}</span>
@@ -136,7 +140,7 @@ const TileContent = forwardRef((props: TileContentProps, ref: Ref<HTMLDivElement
 });
 
 const TileContentWithTooltip = (props: TileContentProps & { parentRef: RefObject<Element> }) => {
-  const { sizeDisplay, item, runInfo, parentRef } = props;
+  const { label, sizeDisplay, item, runInfo, parentRef } = props;
 
   const pointer = useMouseHovered(parentRef, { whenHovered: true });
 
@@ -165,7 +169,7 @@ const TileContentWithTooltip = (props: TileContentProps & { parentRef: RefObject
   return (
     <>
       <TooltipAnchor state={tooltipState} className={css.tileContentTooltipAnchor}>
-        <TileContent sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
+        <TileContent label={label} sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
       </TooltipAnchor>
       <Tooltip state={tooltipState} className={css.tooltip}>
         <TooltipArrow state={tooltipState} size={16} className={css.tileTooltipArrow} />
@@ -187,7 +191,7 @@ interface TileProps {
 const Tile = (props: TileProps) => {
   const { left, top, width, height, data, onClick } = props;
 
-  const { item } = data;
+  const { item, label } = data;
   const runInfo = item.runs?.[0] as MetricRunInfo;
 
   const sizeDisplay = useMemo(() => resolveTileSizeDisplay(width, height), [width, height]);
@@ -220,13 +224,14 @@ const Tile = (props: TileProps) => {
     >
       {hover ? (
         <TileContentWithTooltip
+          label={label}
           sizeDisplay={sizeDisplay}
           item={item}
           runInfo={runInfo}
           parentRef={contentRef}
         />
       ) : (
-        <TileContent sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
+        <TileContent label={label} sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
       )}
     </button>
   );
