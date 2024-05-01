@@ -70,6 +70,7 @@ export const InputSearch = (
       />
       {value && (
         <Button
+          size="small"
           radius="circle"
           glyph={Icon.ICONS.CANCEL}
           type="button"
