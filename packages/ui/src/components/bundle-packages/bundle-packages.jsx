@@ -24,8 +24,12 @@ import { SEARCH_PLACEHOLDER } from './bundle-packages.i18n';
 import css from './bundle-packages.module.css';
 import { MetricsDisplaySelector } from '../metrics-display-selector';
 import { MetricsDisplayType } from '../../constants';
-import { MetricsTreemap } from '../metrics-treemap';
+import { MetricsTreemap, getTreemapNodes, getTreemapNodesGroupedByPath } from '../metrics-treemap';
 import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
+
+const DISPLAY_TYPE_GROUPS = {
+  [MetricsDisplayType.TREEMAP]: ['folder'],
+};
 
 const getDropdownFilters = ({ compareMode, filters }) => ({
   [PACKAGE_FILTERS.CHANGED]: {
@@ -115,6 +119,60 @@ RowHeader.propTypes = {
   search: PropTypes.string,
 };
 
+const ViewMetricsTreemap = (props) => {
+  const { metricsTableTitle, jobs, items, displayType, emptyMessage, showEntryInfo, updateSearch } = props;
+
+  const treeNodes = useMemo(() => {
+    if (displayType.groupBy === 'folder') {
+      return getTreemapNodesGroupedByPath(items);
+    }
+
+    return getTreemapNodes(items);
+  }, [items, displayType.groupBy]);
+
+  const onGroupClick = useCallback(
+    (groupPath) => {
+      // Search by group path
+      // 1. use `^` to match only the string beggining
+      // 2. add `/` suffix to match only exact directories
+      // 3. if the group path is empty(root), clear search
+      if (groupPath) {
+        updateSearch(`^${groupPath}/`);
+      } else {
+        updateSearch('');
+      }
+    },
+    [updateSearch],
+  );
+
+  return (
+    <>
+      <Table compact>
+        <MetricsTableHeader metricTitle={metricsTableTitle} showSum jobs={jobs} rows={items} />
+      </Table>
+      <MetricsTreemap
+        treeNodes={treeNodes}
+        nested={Boolean(displayType.groupBy)}
+        emptyMessage={emptyMessage}
+        onItemClick={showEntryInfo}
+        onGroupClick={onGroupClick}
+      />
+    </>
+  );
+};
+
+ViewMetricsTreemap.propTypes = {
+  jobs: PropTypes.arrayOf(PropTypes.object).isRequired, // eslint-disable-line react/forbid-prop-types
+  items: PropTypes.arrayOf(PropTypes.object).isRequired, // eslint-disable-line react/forbid-prop-types
+  metricsTableTitle: PropTypes.node.isRequired,
+  displayType: PropTypes.shape({
+    groupBy: PropTypes.string,
+  }).isRequired,
+  emptyMessage: PropTypes.node.isRequired,
+  showEntryInfo: PropTypes.func.isRequired,
+  updateSearch: PropTypes.func.isRequired,
+};
+
 export const BundlePackages = (props) => {
   const {
     className,
@@ -139,7 +197,7 @@ export const BundlePackages = (props) => {
 
   const jobLabels = jobs?.map((job) => job?.label);
 
-  const [displayType, setDisplayType] = useMetricsDisplayType();
+  const [displayType, setDisplayType] = useMetricsDisplayType(DISPLAY_TYPE_GROUPS);
 
   const dropdownFilters = useMemo(
     () => getDropdownFilters({ compareMode: jobs?.length > 1, filters }),
@@ -198,7 +256,7 @@ export const BundlePackages = (props) => {
           className={css.toolbar}
           renderActions={({ actionClassName }) => (
             <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
-              <MetricsDisplaySelector onSelect={setDisplayType} value={displayType} />
+              <MetricsDisplaySelector onSelect={setDisplayType} value={displayType.value} groupBy={displayType.groupBy} groups={DISPLAY_TYPE_GROUPS} />
               <MetricsTableOptions
                 handleViewAll={resetAllFilters}
                 handleResetFilters={resetFilters}
@@ -222,7 +280,7 @@ export const BundlePackages = (props) => {
           </FlexStack>
         </Toolbar>
         <Box outline as="main">
-          {displayType === MetricsDisplayType.TABLE && (
+          {displayType.value === MetricsDisplayType.TABLE && (
             <MetricsTable
               runs={jobs}
               items={items}
@@ -234,18 +292,15 @@ export const BundlePackages = (props) => {
               updateSort={updateSort}
             />
           )}
-          {displayType === MetricsDisplayType.TREEMAP && (
-            <>
-              <Table compact>
-                <MetricsTableHeader
-                  metricTitle={metricsTableTitle}
-                  showSum
-                  jobs={jobs}
-                  rows={items}
-                />
-              </Table>
-              <MetricsTreemap emptyMessage={emptyMessage} items={items} onItemClick={showEntryInfo} />
-            </>
+          {displayType.value === MetricsDisplayType.TREEMAP && (
+            <ViewMetricsTreemap
+              jobs={jobs}
+              items={items}
+              displayType={displayType}
+              emptyMessage={emptyMessage}
+              showEntryInfo={showEntryInfo}
+              updateSearch={updateSearch}
+            />
           )}
         </Box>
       </Stack>

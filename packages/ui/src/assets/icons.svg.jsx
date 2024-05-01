@@ -9,7 +9,6 @@ export const SvgIcons = (props) => (
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="feather feather-arrow-down"
       id="arrow"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -21,7 +20,6 @@ export const SvgIcons = (props) => (
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="feather feather-arrow-right-circle"
       viewBox="0 0 24 24"
       id="arrow-right-circle"
       xmlns="http://www.w3.org/2000/svg"
@@ -30,12 +28,23 @@ export const SvgIcons = (props) => (
       <path d="m12 16 4-4-4-4M8 12h8" />
     </symbol>
     <symbol
+      viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lucide lucide-chevron-down"
+      id="check"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M20 6 9 17l-5-5" />
+    </symbol>
+    <symbol
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       viewBox="0 0 24 24"
       id="chevron-down"
       xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +57,6 @@ export const SvgIcons = (props) => (
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lucide lucide-chevron-up"
       viewBox="0 0 24 24"
       id="chevron-up"
       xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +70,6 @@ export const SvgIcons = (props) => (
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="feather feather-clock"
       id="clock"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -75,7 +82,6 @@ export const SvgIcons = (props) => (
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="feather feather-x-circle"
       viewBox="0 0 24 24"
       id="close"
       xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +96,6 @@ export const SvgIcons = (props) => (
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="feather feather-git-commit"
       id="commit"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -116,7 +121,6 @@ export const SvgIcons = (props) => (
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="feather feather-external-link"
       viewBox="0 0 24 24"
       id="external-link"
       xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +134,6 @@ export const SvgIcons = (props) => (
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="feather feather-bar-chart"
       id="filter"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -151,7 +154,6 @@ export const SvgIcons = (props) => (
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="feather feather-help-circle"
       id="help"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -178,7 +180,6 @@ export const SvgIcons = (props) => (
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="feather feather-menu"
       id="menu"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -233,7 +234,6 @@ export const SvgIcons = (props) => (
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="feather feather-alert-triangle"
       id="warning"
       xmlns="http://www.w3.org/2000/svg"
     >

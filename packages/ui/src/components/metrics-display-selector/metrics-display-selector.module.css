@@ -1,10 +1,18 @@
-.button {
-  text-decoration: none;
+.buttonActive {
+  background: var(--color-highlight);
 }
 
-.buttonActive,
-.buttonActive:active,
-.buttonActive:focus {
-  color: var(--color-primary);
-  border-color: var(--color-primary);
+/* explicit ControlGroup last item styles to override ariakit injected sibling nodes */
+.itemLast {
+  border-top-right-radius: var(--radius-small) !important;
+  border-bottom-right-radius: var(--radius-small) !important;
+}
+
+.dropdownItemIcon {
+  opacity: 0;
+  transition: var(--transition-out);
+}
+
+.dropdownItemActive .dropdownItemIcon {
+  opacity: 1;
 }
