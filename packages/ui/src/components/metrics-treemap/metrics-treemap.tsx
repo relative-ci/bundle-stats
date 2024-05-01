@@ -39,19 +39,19 @@ const VERTICAL_SPACING = 4;
 const LINE_HEIGHT = 16;
 const LINE_HEIGHT_SMALL = 13.3;
 
-type TileSizeDisplay = 'minimal' | 'small' | 'default';
-
 function resolveTileGroupSizeDisplay(width: number, height: number): TileSizeDisplay {
-  if (height < 16 || width < 32) {
+  if (height < GROUPED_PADDING_TOP || width < 24) {
     return 'minimal';
   }
 
-  if (height < 24 && width < 96) {
+  if (height < GROUPED_PADDING_TOP + 8) {
     return 'small';
   }
 
   return 'default';
 }
+
+type TileSizeDisplay = 'minimal' | 'small' | 'default';
 
 function resolveTileSizeDisplay(width: number, height: number): TileSizeDisplay {
   if (
@@ -205,7 +205,8 @@ const Tile = (props: TileProps) => {
   const className = cx(
     css.tile,
     css[`tile-${runInfo.deltaType}`],
-    sizeDisplay === 'small' && css.tileSmall,
+    sizeDisplay === 'small' && css.tileSizeSmall,
+    sizeDisplay === 'default' && css.tileSizeDefault,
     left === 0 && css.tileFirstCol,
   );
 
@@ -296,7 +297,10 @@ const TileGroup = (props: TileGroupProps) => {
     [onGroupClick, id],
   );
 
-  const displaySize = resolveTileGroupSizeDisplay(width || 0, height || 0);
+  const displaySize = useMemo(
+    () => resolveTileGroupSizeDisplay(width || 0, height || 0),
+    [width, height],
+  );
 
   if (title && displaySize === 'minimal') {
     return (
@@ -329,7 +333,7 @@ const TileGroup = (props: TileGroupProps) => {
       onClick={onClick}
       role="button"
       aria-label="View children entries"
-      className={css.tileGroup}
+      className={cx(css.tileGroup, css.tileGroupSizeDefault)}
       style={{ left, top, width, height }}
     >
       {title && <div className={css.tileGroupTitle}>{title}</div>}

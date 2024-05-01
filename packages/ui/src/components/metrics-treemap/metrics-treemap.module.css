@@ -16,6 +16,9 @@
   background: var(--color-background);
 }
 
+/**
+ * Tile group
+ */
 .tileGroup {
   position: absolute;
 }
@@ -31,6 +34,13 @@
   text-overflow: ellipsis;
 }
 
+/** Tile group size variation */
+.tileGroupSizeDefault {
+  transition: var(--ui-transition-in);
+  transition-property: left top width height;
+}
+
+/** Tile group nested variation */
 .nested .tileGroup {
   background: rgba(128, 128, 128, 0.05);
 }
@@ -41,12 +51,6 @@
 
 .nested .tileGroup:hover .tileGroupTitle {
   color: var(--color-text-dark);
-}
-
-/** Tile overlay fill background transition */
-.root {
-  transition: var(--ui-transition-out);
-  transition-property: opacity;
 }
 
 /** Leaf wrapper button */
@@ -82,12 +86,9 @@
   opacity: 0.75;
 }
 
-.tile:hover {
-  transition: var(--ui-transition-in);
-}
-
 .tile:hover::before {
   transition: var(--ui-transition-in);
+  transition-property: opacity;
   opacity: 0.5;
 }
 
@@ -133,14 +134,19 @@
 }
 
 /** Tile size variation */
-.tileSmall .tileContent {
+.tileSizeSmall .tileContent {
   padding: var(--space-xxxsmall) var(--space-xxsmall);
   gap: 0;
   font-size: var(--size-xsmall);
 }
 
-.tileSmall .tileContentLabel {
+.tileSizeSmall .tileContentLabel {
   margin-top: 0;
+}
+
+.tileSizeDefault {
+  transition: var(--ui-transition-in);
+  transition-property: left top width height;
 }
 
 /** Tile diff variation */
@@ -218,12 +224,6 @@
   pointer-events: none;
 }
 
-/* prevent tooltip portal wrapper from capturing events */
-div[role="presentation"]:has(.tooltip) {
-  pointer-events: none;
-}
-
-
 .tileTooltipArrow svg {
   display: block;
   fill: var(--color-background) !important;
@@ -231,4 +231,9 @@ div[role="presentation"]:has(.tooltip) {
 
 .tileTooltipContentTitle {
   font-size: var(--size-small);
+}
+
+/* prevent tooltip portal wrapper from capturing events */
+div[role="presentation"]:has(.tooltip) {
+  pointer-events: none;
 }
