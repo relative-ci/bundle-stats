@@ -1,6 +1,9 @@
 import React, {
-  MouseEventHandler,
-  RefObject,
+  type ComponentProps,
+  type MouseEventHandler,
+  type ReactNode,
+  type Ref,
+  type RefObject,
   forwardRef,
   useCallback,
   useMemo,
@@ -16,7 +19,7 @@ import { Stack } from '../../layout/stack';
 import { FileName } from '../../ui/file-name';
 import { Delta } from '../delta';
 import { RunInfo } from '../run-info';
-import type { TreeLeaf, TreeNode, TreeNodeChildren } from './metrics-treemap.constants';
+import type { TreeLeaf, TreeNode, Tree } from './metrics-treemap.constants';
 import css from './metrics-treemap.module.css';
 
 const SQUARIFY_RATIO = 1.33;
@@ -108,7 +111,7 @@ interface TileContentProps {
   runInfo: MetricRunInfo;
 }
 
-const TileContent = forwardRef((props: TileContentProps, ref: React.Ref<HTMLDivElement>) => {
+const TileContent = forwardRef((props: TileContentProps, ref: Ref<HTMLDivElement>) => {
   const { sizeDisplay, item, runInfo } = props;
 
   if (sizeDisplay === 'minimal') {
@@ -229,7 +232,7 @@ const Tile = (props: TileProps) => {
   /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus */
 };
 
-interface TileGroupProps extends React.ComponentProps<'div'> {
+interface TileGroupProps extends ComponentProps<'div'> {
   /**
    * Node title
    */
@@ -241,7 +244,7 @@ interface TileGroupProps extends React.ComponentProps<'div'> {
   /**
    * Node children
    */
-  childNodes: HierarchyRectangularNode<TreeNode | TreeLeaf>['children'];
+  childNodes: HierarchyRectangularNode<TreeNode>['children'];
   /**
    * On click tile handler
    */
@@ -367,7 +370,7 @@ const TileGroup = (props: TileGroupProps) => {
 };
 
 interface UseMetricsTreemapHierarchyParams {
-  treeNodes: TreeNode;
+  treeNodes: Tree;
   width: number;
   height: number;
   nested: boolean;
@@ -377,7 +380,7 @@ function useMetricsTreemapHierarchy(params: UseMetricsTreemapHierarchyParams) {
   const { treeNodes, width, height, nested } = params;
 
   const treemapHierarchy = useMemo(() => {
-    const customHierarchy = hierarchy<TreeNode>(treeNodes);
+    const customHierarchy = hierarchy<Tree>(treeNodes);
 
     customHierarchy.sum((node) => node.value);
     // sort by value descending for all cases
@@ -400,21 +403,21 @@ function useMetricsTreemapHierarchy(params: UseMetricsTreemapHierarchyParams) {
     }
 
     // @ts-expect-error
-    return createTremapLayout(treemapHierarchy) as HierarchyRectangularNode<TreeNode | TreeLeaf>;
+    return createTremapLayout(treemapHierarchy) as HierarchyRectangularNode<TreeNode>;
   }, [height, width, treemapHierarchy]);
 
   return treemapNodes;
 }
 
 interface MetricsTreemapProps {
-  treeNodes: TreeNode;
-  emptyMessage?: React.ReactNode;
+  treeNodes: Tree;
+  emptyMessage?: ReactNode;
   nested?: boolean;
   onItemClick?: (entryId: string) => void;
   onGroupClick?: (entryId: string) => void;
 }
 
-export const MetricsTreemap = (props: MetricsTreemapProps & React.ComponentProps<'div'>) => {
+export const MetricsTreemap = (props: MetricsTreemapProps & ComponentProps<'div'>) => {
   const {
     className = '',
     treeNodes,
@@ -434,7 +437,7 @@ export const MetricsTreemap = (props: MetricsTreemapProps & React.ComponentProps
       {...restProps}
       ref={containerRef}
     >
-      {rootNode?.children && rootNode.children.length > 0 ? (
+      {rootNode.children && rootNode.children.length > 0 ? (
         <div className={css.canvas}>
           <TileGroup
             title={nested ? rootNode.data.label : undefined}

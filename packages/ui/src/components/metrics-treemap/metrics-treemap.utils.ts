@@ -1,6 +1,6 @@
 import type { ReportMetricRow } from '@bundle-stats/utils';
 
-import type { TreeLeaf, TreeNodeChildren, TreeNode } from './metrics-treemap.constants';
+import type { TreeLeaf, TreeNodeChildren, Tree } from './metrics-treemap.constants';
 
 const ROOT_LABEL = '(root)';
 
@@ -16,7 +16,7 @@ function getReportMetricRowMaxValue(item: ReportMetricRow): number {
 /**
  * Generate treemap node list(flat)
  */
-export function getTreemapNodes(items: Array<ReportMetricRow>): TreeNode {
+export function getTreemapNodes(items: Array<ReportMetricRow>): Tree {
   const rootChildren: Array<TreeLeaf> = items.map((item) => ({
     id: item.key,
     label: item.key,
@@ -53,7 +53,7 @@ function setTreeNode(
   const currentNodePath = [...baseSlugs, currentSlug].join('/');
 
   // Check for existing parent in current nodes
-  let parentNode = nodes.find((treeNode) => treeNode.id === currentNodePath) as TreeNode;
+  let parentNode = nodes.find((treeNode) => treeNode.id === currentNodePath) as Tree;
 
   // Create the new parentNode if missing
   if (!parentNode) {
@@ -79,7 +79,7 @@ function setTreeNode(
 /**
  * Generate treemap nodes tree by directory
  */
-export function getTreemapNodesGroupedByPath(items: Array<ReportMetricRow>): TreeNode {
+export function getTreemapNodesGroupedByPath(items: Array<ReportMetricRow>): Tree {
   const treeNodes: TreeNodeChildren = [];
 
   items.forEach((item) => {
