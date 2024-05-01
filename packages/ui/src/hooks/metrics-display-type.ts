@@ -4,53 +4,111 @@ import { StringParam, useQueryParams } from 'use-query-params';
 
 import { MetricsDisplayType } from '../constants';
 
-const DEFAULT_DISPLAY_TYPE = MetricsDisplayType.TABLE;
-const PARAM_NAME = 'dt';
+const DEFAULT_VALUE = MetricsDisplayType.TABLE;
+const DEFAULT_GROUP_BY = '';
 
-type UseMetricsDisplayType = [MetricsDisplayType, (value: MetricsDisplayType) => void];
+// Display type query param name
+const QUERY_PARAM_VALUE = 'dt';
+// Display type group by param name
+const QUERY_PARAM_GROUP_BY = 'dtg';
 
-export const useMetricsDisplayType = (): UseMetricsDisplayType => {
-  const [{ [PARAM_NAME]: queryDisplayType }, setQueryParams] = useQueryParams({
-    [PARAM_NAME]: StringParam,
+type UseMetricsDisplayType = [
+  { value: MetricsDisplayType; groupBy?: string },
+  (value: MetricsDisplayType, newGroupBy?: string) => void,
+];
+
+export const useMetricsDisplayType = (
+  groups?: Partial<Record<MetricsDisplayType, Array<string>>>,
+): UseMetricsDisplayType => {
+  const [queryParams, setQueryParams] = useQueryParams({
+    [QUERY_PARAM_VALUE]: StringParam,
+    [QUERY_PARAM_GROUP_BY]: StringParam,
   });
-  const [storageDisplayType, setStoreageDisplayType] = useLocalStorage(
-    PARAM_NAME,
-    MetricsDisplayType.TABLE,
+
+  const { [QUERY_PARAM_VALUE]: queryParamValue, [QUERY_PARAM_GROUP_BY]: queryParamGroupBy } =
+    queryParams;
+
+  const [storageValue, setStorageValue] = useLocalStorage(QUERY_PARAM_VALUE, DEFAULT_VALUE);
+  const [storageGroupBy, setStorageGroupBy] = useLocalStorage(
+    QUERY_PARAM_GROUP_BY,
+    DEFAULT_GROUP_BY,
   );
 
-  const displayType = useMemo(() => {
-    const value = queryDisplayType || storageDisplayType;
+  /**
+   * Normalize display type value
+   */
+  const value = useMemo(() => {
+    const resolvedValue = queryParamValue || storageValue;
 
-    if (!value) {
-      return DEFAULT_DISPLAY_TYPE;
+    if (!resolvedValue) {
+      return DEFAULT_VALUE;
     }
 
-    if (!Object.values(MetricsDisplayType).includes(value as MetricsDisplayType)) {
-      return DEFAULT_DISPLAY_TYPE;
+    if (!Object.values(MetricsDisplayType).includes(resolvedValue as MetricsDisplayType)) {
+      return DEFAULT_VALUE;
     }
 
-    return value as MetricsDisplayType;
-  }, [queryDisplayType, storageDisplayType]);
+    return resolvedValue as MetricsDisplayType;
+  }, [queryParamValue, storageValue]);
 
+  /**
+   * Normalize display type group by
+   */
+  const groupBy = useMemo(() => {
+    const resolvedValue = queryParamGroupBy || storageGroupBy;
+
+    if (!resolvedValue) {
+      return DEFAULT_GROUP_BY;
+    }
+
+    if (!groups?.[value]?.includes(resolvedValue as MetricsDisplayType)) {
+      return DEFAULT_GROUP_BY;
+    }
+
+    return resolvedValue;
+  }, [queryParamGroupBy, storageGroupBy]);
+
+  /**
+   * Synchronize query params when values are different
+   */
   useEffect(() => {
-    // Update query string display type when missing
-    if (queryDisplayType !== displayType) {
-      setQueryParams({ [PARAM_NAME]: displayType });
+    if (value !== queryParamValue || groupBy !== queryParamGroupBy) {
+      setQueryParams({ [QUERY_PARAM_VALUE]: value, [QUERY_PARAM_GROUP_BY]: groupBy });
     }
+  }, [value, queryParamValue, groupBy, queryParamGroupBy, setQueryParams]);
 
-    // Update storage state when query string is set and different
-    if (storageDisplayType !== displayType) {
-      setStoreageDisplayType(queryDisplayType as MetricsDisplayType);
+  /**
+   * Synchronize storeage when values are different
+   */
+  useEffect(() => {
+    if (value !== storageValue) {
+      setStorageValue(value);
     }
-  }, [displayType, queryDisplayType, storageDisplayType, setQueryParams, setStoreageDisplayType]);
+    if (groupBy !== storageValue) {
+      setStorageGroupBy(groupBy);
+    }
+  }, [
+    value,
+    storageValue,
+    groupBy,
+    storageGroupBy,
+    setQueryParams,
+    setStorageValue,
+    setStorageGroupBy,
+  ]);
 
   const setDisplayType = useCallback(
-    (value: MetricsDisplayType) => {
-      setStoreageDisplayType(value);
-      setQueryParams({ [PARAM_NAME]: value });
+    (newValue: MetricsDisplayType, newGroupBy: string = DEFAULT_GROUP_BY) => {
+      setStorageValue(newValue);
+      setStorageGroupBy(newGroupBy);
+
+      setQueryParams({
+        [QUERY_PARAM_VALUE]: newValue,
+        [QUERY_PARAM_GROUP_BY]: newGroupBy,
+      });
     },
-    [setStoreageDisplayType, setQueryParams],
+    [setStorageValue, setQueryParams],
   );
 
-  return [displayType, setDisplayType];
+  return [{ value, groupBy }, setDisplayType];
 };

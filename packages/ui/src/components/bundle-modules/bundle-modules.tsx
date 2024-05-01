@@ -22,7 +22,7 @@ import { Tooltip } from '../../ui/tooltip';
 import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableHeader } from '../metrics-table-header';
-import { MetricsTreemap } from '../metrics-treemap';
+import { MetricsTreemap, getTreemapNodes, getTreemapNodesGroupedByPath } from '../metrics-treemap';
 import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsDisplaySelector } from '../metrics-display-selector';
 import { MetricsTableTitle } from '../metrics-table-title';
@@ -33,6 +33,10 @@ import type { Chunk, Job, ReportMetricModuleRow } from './bundle-modules.types';
 import * as I18N_MODULES from './bundle-modules.i18n';
 import css from './bundle-modules.module.css';
 import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
+
+const DISPLAY_TYPE_GROUPS = {
+  [MetricsDisplayType.TREEMAP]: ['folder'],
+};
 
 interface RowHeaderProps {
   row: ReportMetricModuleRow;
@@ -58,6 +62,59 @@ const RowHeader = (props: RowHeaderProps) => {
       )}
       <FileName className={css.nameText} name={row.label} />
     </CustomComponentLink>
+  );
+};
+
+interface ViewMetricsTreemapProps {
+  metricsTableTitle: React.ReactNode;
+  jobs: Array<any>;
+  items: Array<any>;
+  displayType: { value: MetricsDisplayType; groupBy?: string };
+  emptyMessage: React.ReactNode;
+  showEntryInfo: React.ComponentProps<typeof MetricsTreemap>['onItemClick'];
+  updateSearch: (newSerarch: string) => void;
+}
+
+const ViewMetricsTreemap = (props: ViewMetricsTreemapProps) => {
+  const { metricsTableTitle, jobs, items, displayType, emptyMessage, showEntryInfo, updateSearch } =
+    props;
+
+  const treeNodes = useMemo(() => {
+    if (displayType.groupBy === 'folder') {
+      return getTreemapNodesGroupedByPath(items);
+    }
+
+    return getTreemapNodes(items);
+  }, [items, displayType]);
+
+  const onGroupClick = useCallback(
+    (groupPath: string) => {
+      // Search by group path
+      // 1. use `^` to match only the string beggining
+      // 2. add `/` suffix to match only exact directories
+      // 3. if the group path is empty(root), clear search
+      if (groupPath) {
+        updateSearch(`^${groupPath}/`);
+      } else {
+        updateSearch('');
+      }
+    },
+    [updateSearch],
+  );
+
+  return (
+    <>
+      <Table compact>
+        <MetricsTableHeader metricTitle={metricsTableTitle} showSum jobs={jobs} rows={items} />
+      </Table>
+      <MetricsTreemap
+        treeNodes={treeNodes}
+        nested={Boolean(displayType.groupBy)}
+        emptyMessage={emptyMessage}
+        onItemClick={showEntryInfo}
+        onGroupClick={onGroupClick}
+      />
+    </>
   );
 };
 
@@ -117,7 +174,7 @@ export const BundleModules = (props: BundleModulesProps) => {
   const rootClassName = cx(css.root, className);
   const jobLabels = jobs?.map((job) => job?.label);
 
-  const [displayType, setDisplayType] = useMetricsDisplayType();
+  const [displayType, setDisplayType] = useMetricsDisplayType(DISPLAY_TYPE_GROUPS);
 
   const filterFieldsData = useMemo(
     () => generateFilterFieldsData({ filters, chunks, compareMode: jobs.length > 1 }),
@@ -176,7 +233,12 @@ export const BundleModules = (props: BundleModulesProps) => {
           className={css.toolbar}
           renderActions={({ actionClassName }) => (
             <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
-              <MetricsDisplaySelector onSelect={setDisplayType} value={displayType} />
+              <MetricsDisplaySelector
+                onSelect={setDisplayType}
+                value={displayType.value}
+                groupBy={displayType.groupBy}
+                groups={DISPLAY_TYPE_GROUPS}
+              />
               <MetricsTableOptions
                 handleViewAll={resetAllFilters}
                 handleResetFilters={resetFilters}
@@ -221,7 +283,7 @@ export const BundleModules = (props: BundleModulesProps) => {
               </Button>
             </ControlGroup>
           </Box>
-          {displayType === MetricsDisplayType.TABLE && (
+          {displayType.value === MetricsDisplayType.TABLE && (
             <MetricsTable
               className={css.table}
               items={items}
@@ -234,18 +296,16 @@ export const BundleModules = (props: BundleModulesProps) => {
               updateSort={updateSort}
             />
           )}
-          {displayType === MetricsDisplayType.TREEMAP && (
-            <>
-              <Table compact>
-                <MetricsTableHeader
-                  metricTitle={metricsTableTitle}
-                  showSum
-                  jobs={jobs}
-                  rows={items}
-                />
-              </Table>
-              <MetricsTreemap emptyMessage={emptyMessage} items={items} onItemClick={showEntryInfo} />
-            </>
+          {displayType.value === MetricsDisplayType.TREEMAP && (
+            <ViewMetricsTreemap
+              metricsTableTitle={metricsTableTitle}
+              jobs={jobs}
+              items={items}
+              displayType={displayType}
+              emptyMessage={emptyMessage}
+              showEntryInfo={showEntryInfo}
+              updateSearch={updateSearch}
+            />
           )}
         </Box>
       </Stack>

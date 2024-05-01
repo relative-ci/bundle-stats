@@ -1,24 +1,34 @@
-import React, { RefObject, forwardRef, useCallback, useMemo, useRef } from 'react';
+import React, {
+  type ComponentProps,
+  type MouseEventHandler,
+  type ReactNode,
+  type Ref,
+  type RefObject,
+  forwardRef,
+  useCallback,
+  useMemo,
+  useRef,
+} from 'react';
 import { useDebounce, useHoverDirty, useMeasure, useMouseHovered } from 'react-use';
 import cx from 'classnames';
-import type { ReportMetricRow, MetricRunInfo, MetricRunInfoBaseline } from '@bundle-stats/utils';
-import { hierarchy, treemap, treemapSquarify } from 'd3';
+import { HierarchyRectangularNode, hierarchy, treemap, treemapSquarify } from 'd3';
 import { Tooltip, TooltipArrow, TooltipAnchor, useTooltipState } from 'ariakit/tooltip';
+import type { ReportMetricRow, MetricRunInfo, MetricRunInfoBaseline } from '@bundle-stats/utils';
 
 import { Stack } from '../../layout/stack';
 import { FileName } from '../../ui/file-name';
 import { Delta } from '../delta';
 import { RunInfo } from '../run-info';
+import type { TreeLeaf, TreeNode, Tree } from './metrics-treemap.constants';
 import css from './metrics-treemap.module.css';
 
 const SQUARIFY_RATIO = 1.33;
-const PADDING_OUTER = 0;
+const PADDING_OUTER = 2;
 const PADDING_INNER = 2;
-
-type TileSizeDisplay = 'minimal' | 'small' | 'default';
+const GROUPED_PADDING_TOP = 16;
 
 /**
- * Resolve the tile size using predefined values to avoid
+ * Resolve the tile's size using predefined values to avoid
  * computing the size of the content for every tile
  */
 const PADDING_TOP = 4;
@@ -28,6 +38,20 @@ const PADDING_RIGHT = 4; // substracted to allow longer texts to not break
 const VERTICAL_SPACING = 4;
 const LINE_HEIGHT = 16;
 const LINE_HEIGHT_SMALL = 13.3;
+
+function resolveTileGroupSizeDisplay(width: number, height: number): TileSizeDisplay {
+  if (height < GROUPED_PADDING_TOP || width < 24) {
+    return 'minimal';
+  }
+
+  if (height < GROUPED_PADDING_TOP + 8) {
+    return 'small';
+  }
+
+  return 'default';
+}
+
+type TileSizeDisplay = 'minimal' | 'small' | 'default';
 
 function resolveTileSizeDisplay(width: number, height: number): TileSizeDisplay {
   if (
@@ -73,12 +97,21 @@ const TileTooltipContent = (props: TileTooltipContentProps) => {
 };
 
 interface TileContentProps {
-  sizeDisplay: 'minimal' | 'small' | 'default';
+  /**
+   * Tile id - metric label or basename for grouped tiles
+   */
   item: ReportMetricRow;
+  /**
+   * The estimated size of the tile
+   */
+  sizeDisplay: 'minimal' | 'small' | 'default';
+  /**
+   * Metric run info
+   */
   runInfo: MetricRunInfo;
 }
 
-const TileContent = forwardRef((props: TileContentProps, ref: React.Ref<HTMLDivElement>) => {
+const TileContent = forwardRef((props: TileContentProps, ref: Ref<HTMLDivElement>) => {
   const { sizeDisplay, item, runInfo } = props;
 
   if (sizeDisplay === 'minimal') {
@@ -87,12 +120,12 @@ const TileContent = forwardRef((props: TileContentProps, ref: React.Ref<HTMLDivE
 
   return (
     <div className={css.tileContent} ref={ref}>
-      <FileName as="p" className={css.leadContentLabel} name={item.label} />
+      <FileName as="p" className={css.tileContentLabel} name={item.label} />
       {sizeDisplay !== 'small' && (
-        <p className={css.leadContentValue}>
-          <span className={css.leadContentMetric}>{runInfo.displayValue}</span>
+        <p className={css.tileContentValue}>
+          <span className={css.tileContentMetric}>{runInfo.displayValue}</span>
           <Delta
-            className={css.leadContentDelta}
+            className={css.tileContentDelta}
             displayValue={runInfo.displayDeltaPercentage}
             deltaType={runInfo.deltaType}
           />
@@ -142,25 +175,12 @@ const TileContentWithTooltip = (props: TileContentProps & { parentRef: RefObject
   );
 };
 
-interface TreeNode {
-  id: string;
-  value: number;
-  item: ReportMetricRow;
-  children?: Array<TreeNode>;
-}
-
-interface RootTree {
-  id: string;
-  value: number;
-  children: Array<TreeNode>;
-}
-
 interface TileProps {
   left: number;
   top: number;
   width: number;
   height: number;
-  data: TreeNode;
+  data: TreeLeaf;
   onClick?: (id: string) => void;
 }
 
@@ -171,7 +191,13 @@ const Tile = (props: TileProps) => {
   const runInfo = item.runs?.[0] as MetricRunInfo;
 
   const sizeDisplay = useMemo(() => resolveTileSizeDisplay(width, height), [width, height]);
-  const handleOnClick = useCallback(() => onClick?.(item.key), [item.key, onClick]);
+  const handleOnClick: MouseEventHandler<HTMLButtonElement> = useCallback(
+    (event) => {
+      event.stopPropagation();
+      onClick?.(item.key);
+    },
+    [item.key, onClick],
+  );
 
   const contentRef = useRef<HTMLButtonElement>(null);
   const hover = useHoverDirty(contentRef);
@@ -179,7 +205,8 @@ const Tile = (props: TileProps) => {
   const className = cx(
     css.tile,
     css[`tile-${runInfo.deltaType}`],
-    sizeDisplay === 'small' && css.tileSmall,
+    sizeDisplay === 'small' && css.tileSizeSmall,
+    sizeDisplay === 'default' && css.tileSizeDefault,
     left === 0 && css.tileFirstCol,
   );
 
@@ -203,96 +230,232 @@ const Tile = (props: TileProps) => {
       )}
     </button>
   );
+  /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus */
+};
+
+interface TileGroupProps extends ComponentProps<'div'> {
+  /**
+   * Node title
+   */
+  title?: string;
+  /**
+   * Node id
+   */
+  id: string;
+  /**
+   * Node children
+   */
+  childNodes: HierarchyRectangularNode<TreeNode>['children'];
+  /**
+   * On click tile handler
+   */
+  onItemClick: TileProps['onClick'];
+  /**
+   * On click group title
+   */
+  onGroupClick?: (groupId: string) => void;
+
+  /**
+   * Node rectangle dimensions
+   */
+  width?: number;
+  height?: number;
+
+  /**
+   * Node rectangle relative coordinates (relative to parent)
+   */
+  left: number;
+  top: number;
+
+  /**
+   * Node rectangle absolute coordinates (relative to canvas)
+   */
+  absoluteLeft: number;
+  absoluteTop: number;
+}
+
+const TileGroup = (props: TileGroupProps) => {
+  const {
+    title = '',
+    id,
+    childNodes,
+    onItemClick,
+    onGroupClick,
+    left,
+    top,
+    width,
+    height,
+    absoluteLeft,
+    absoluteTop,
+  } = props;
+
+  const onClick: MouseEventHandler<HTMLDivElement> = useCallback(
+    (event) => {
+      onGroupClick?.(id);
+      event.stopPropagation();
+    },
+    [onGroupClick, id],
+  );
+
+  const displaySize = useMemo(
+    () => resolveTileGroupSizeDisplay(width || 0, height || 0),
+    [width, height],
+  );
+
+  if (title && displaySize === 'minimal') {
+    return (
+      <div
+        onClick={onClick}
+        role="button"
+        aria-label="View children entries"
+        className={css.tileGroup}
+        style={{ left, top, width, height }}
+      />
+    );
+  }
+
+  if (title && displaySize === 'small') {
+    return (
+      <div
+        onClick={onClick}
+        role="button"
+        aria-label="View children entries"
+        style={{ left, top, width, height }}
+        className={css.tileGroup}
+      >
+        <div className={css.tileGroupTitle}>{title}</div>
+      </div>
+    );
+  }
+
+  return (
+    <div
+      onClick={onClick}
+      role="button"
+      aria-label="View children entries"
+      className={cx(css.tileGroup, css.tileGroupSizeDefault)}
+      style={{ left, top, width, height }}
+    >
+      {title && <div className={css.tileGroupTitle}>{title}</div>}
+      {childNodes?.map((childNode) => {
+        if ('children' in childNode) {
+          return (
+            <TileGroup
+              title={childNode.data.label}
+              id={childNode.data.id}
+              childNodes={childNode.children}
+              left={childNode.x0 - absoluteLeft}
+              top={childNode.y0 - absoluteTop}
+              absoluteLeft={childNode.x0}
+              absoluteTop={childNode.y0}
+              width={childNode.x1 - childNode.x0}
+              height={childNode.y1 - childNode.y0}
+              onItemClick={onItemClick}
+              onGroupClick={onGroupClick}
+              key={childNode.data.id}
+            />
+          );
+        }
+
+        return (
+          <Tile
+            data={childNode.data as TreeLeaf}
+            left={childNode.x0 - absoluteLeft}
+            top={childNode.y0 - absoluteTop}
+            width={childNode.x1 - childNode.x0}
+            height={childNode.y1 - childNode.y0}
+            onClick={onItemClick}
+            key={childNode.data.id}
+          />
+        );
+      })}
+    </div>
+  );
 };
 
 interface UseMetricsTreemapHierarchyParams {
-  items: Array<ReportMetricRow>;
+  treeNodes: Tree;
   width: number;
   height: number;
+  nested: boolean;
 }
 
 function useMetricsTreemapHierarchy(params: UseMetricsTreemapHierarchyParams) {
-  const { items, width, height } = params;
+  const { treeNodes, width, height, nested } = params;
 
   const treemapHierarchy = useMemo(() => {
-    const children = items.map((item) => {
-      /**
-       * Set tile value to the largest run value to allow to
-       * display the impact of deleted/new entries
-       */
-      const values = item.runs.map((run) => run?.value || 0);
-      const value = Math.max(...values);
+    const customHierarchy = hierarchy<Tree>(treeNodes);
 
-      return {
-        id: item.key,
-        value,
-        item,
-      };
-    });
-
-    const treemapData = {
-      id: 'root',
-      name: 'root',
-      value: 0,
-      children,
-    };
-
-    const customHierarchy = hierarchy<RootTree>(treemapData);
     customHierarchy.sum((node) => node.value);
+    // sort by value descending for all cases
     // @ts-expect-error
     customHierarchy.sort((a, b) => b.value - a.value);
 
     return customHierarchy;
-  }, [items]);
+  }, [treeNodes]);
 
-  const tiles = useMemo(() => {
-    const createTremapLayout = treemap()
+  const treemapNodes = useMemo(() => {
+    let createTremapLayout = treemap()
       .size([width, height])
       .tile(treemapSquarify.ratio(SQUARIFY_RATIO))
       .paddingOuter(PADDING_OUTER)
       .paddingInner(PADDING_INNER);
-    // @ts-expect-error
-    const tremapLayout = createTremapLayout(treemapHierarchy);
 
-    return tremapLayout.leaves().filter((tile) => Boolean(tile.parent));
+    // Add padding top for group title
+    if (nested) {
+      createTremapLayout = createTremapLayout.paddingTop(GROUPED_PADDING_TOP);
+    }
+
+    // @ts-expect-error
+    return createTremapLayout(treemapHierarchy) as HierarchyRectangularNode<TreeNode>;
   }, [height, width, treemapHierarchy]);
 
-  return tiles;
+  return treemapNodes;
 }
 
 interface MetricsTreemapProps {
-  items: Array<ReportMetricRow>;
-  emptyMessage?: React.ReactNode;
+  treeNodes: Tree;
+  emptyMessage?: ReactNode;
+  nested?: boolean;
   onItemClick?: (entryId: string) => void;
+  onGroupClick?: (entryId: string) => void;
 }
 
-export const MetricsTreemap = (props: MetricsTreemapProps & React.ComponentProps<'div'>) => {
-  const { className = '', items, onItemClick, emptyMessage = 'No data', ...restProps } = props;
+export const MetricsTreemap = (props: MetricsTreemapProps & ComponentProps<'div'>) => {
+  const {
+    className = '',
+    treeNodes,
+    onItemClick,
+    onGroupClick,
+    emptyMessage = 'No data',
+    nested = false,
+    ...restProps
+  } = props;
 
   const [containerRef, { width, height }] = useMeasure<HTMLDivElement>();
-  const tiles = useMetricsTreemapHierarchy({ items, width, height });
+  const rootNode = useMetricsTreemapHierarchy({ treeNodes, width, height, nested });
 
   return (
-    <div className={cx(css.root, className)} {...restProps} ref={containerRef}>
-      {tiles.length > 0 ? (
+    <div
+      className={cx(css.root, nested && css.nested, className)}
+      {...restProps}
+      ref={containerRef}
+    >
+      {rootNode.children && rootNode.children.length > 0 ? (
         <div className={css.canvas}>
-          {tiles.map((tile) => {
-            if (!tile.parent) {
-              return null;
-            }
-
-            return (
-              <Tile
-                data={tile.data as TreeNode}
-                left={tile.x0}
-                top={tile.y0}
-                width={tile.x1 - tile.x0}
-                height={tile.y1 - tile.y0}
-                onClick={onItemClick}
-                key={tile.id}
-              />
-            );
-          })}
+          <TileGroup
+            title={nested ? rootNode.data.label : undefined}
+            id={rootNode.data.id}
+            childNodes={rootNode.children}
+            onItemClick={onItemClick}
+            onGroupClick={onGroupClick}
+            left={rootNode.x0}
+            top={rootNode.y0}
+            absoluteLeft={rootNode.x0}
+            absoluteTop={rootNode.y0}
+            width={rootNode.x1 - rootNode.x0}
+            height={rootNode.y1 - rootNode.y0}
+          />
         </div>
       ) : (
         <div className={css.emptyMessage}>

@@ -9,6 +9,7 @@ const ICONS = {
   CANCEL: 'close',
   CHEVRON_DOWN: 'chevron-down',
   CHEVRON_UP: 'chevron-up',
+  CHECK: 'check',
   CLOSE: 'close',
   CLOCK: 'clock',
   COMMIT: 'commit',

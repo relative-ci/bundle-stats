@@ -19,7 +19,7 @@ import { MetricsDisplaySelector } from '../metrics-display-selector';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableTitle } from '../metrics-table-title';
 import { MetricsTableHeader } from '../metrics-table-header';
-import { MetricsTreemap } from '../metrics-treemap';
+import { MetricsTreemap, getTreemapNodes } from '../metrics-treemap';
 import { ComponentLink } from '../component-link';
 
 const metricsTableTitle = (
@@ -72,11 +72,11 @@ export const BundleAssetsTotals = ({
     <Stack space="xsmall" as="section" className={className}>
       <Toolbar
         renderActions={() => (
-          <MetricsDisplaySelector onSelect={setDisplayType} value={displayType} />
+          <MetricsDisplaySelector onSelect={setDisplayType} value={displayType.value} />
         )}
       />
       <Box outline as="main">
-        {displayType === MetricsDisplayType.TABLE && (
+        {displayType.value === MetricsDisplayType.TABLE && (
           <MetricsTable
             title={metricsTableTitle}
             runs={jobs}
@@ -86,7 +86,7 @@ export const BundleAssetsTotals = ({
             {...restProps}
           />
         )}
-        {displayType === MetricsDisplayType.TREEMAP && (
+        {displayType.value === MetricsDisplayType.TREEMAP && (
           <>
             <Table compact>
               <MetricsTableHeader
@@ -98,6 +98,7 @@ export const BundleAssetsTotals = ({
             </Table>
             <MetricsTreemap
               items={items}
+              treeNodes={getTreemapNodes(items)}
               onItemClick={onTreemapItemClick || handleMetricsTreemapItemClick}
             />
           </>
