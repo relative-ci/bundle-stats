@@ -19,7 +19,7 @@ function getReportMetricRowMaxValue(item: ReportMetricRow): number {
 export function getTreemapNodes(items: Array<ReportMetricRow>): Tree {
   const rootChildren: Array<TreeLeaf> = items.map((item) => ({
     id: item.key,
-    label: item.key,
+    label: item.label,
     value: getReportMetricRowMaxValue(item),
     item,
   }));

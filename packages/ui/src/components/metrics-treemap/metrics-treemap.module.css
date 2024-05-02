@@ -91,7 +91,7 @@
 .tile:hover::before {
   transition: var(--ui-transition-in);
   transition-property: opacity;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .tileContent {
@@ -162,7 +162,7 @@
 }
 
 .tile-NO_CHANGE:hover::before {
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 .tile-HIGH_NEGATIVE::before {
@@ -174,11 +174,21 @@
 }
 
 .tile-LOW_NEGATIVE::before {
-  color: var(--color-red-25);
+  color: var(--color-red-50);
+  opacity: 0.6;
+}
+
+.tile-LOW_NEGATIVE:hover::before {
+  opacity: 0.5;
 }
 
 .tile-LOW_POSITIVE::before {
-  color: var(--color-green-25);
+  color: var(--color-green-50);
+  opacity: 0.6;
+}
+
+.tile-LOW_POSITIVE:hover::before {
+  opacity: 0.5;
 }
 
 .tile-POSITIVE::before {

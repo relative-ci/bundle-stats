@@ -12,9 +12,14 @@ const QUERY_PARAM_VALUE = 'dt';
 // Display type group by param name
 const QUERY_PARAM_GROUP_BY = 'dtg';
 
+type MetricsDisplayTypeData = {
+  value: MetricsDisplayType;
+  groupBy: string;
+};
+
 type UseMetricsDisplayType = [
   { value: MetricsDisplayType; groupBy?: string },
-  (value: MetricsDisplayType, newGroupBy?: string) => void,
+  (newDisplayType: MetricsDisplayType, newGroupBy?: string) => void,
 ];
 
 export const useMetricsDisplayType = (
@@ -27,18 +32,19 @@ export const useMetricsDisplayType = (
 
   const { [QUERY_PARAM_VALUE]: queryParamValue, [QUERY_PARAM_GROUP_BY]: queryParamGroupBy } =
     queryParams;
-
-  const [storageValue, setStorageValue] = useLocalStorage(QUERY_PARAM_VALUE, DEFAULT_VALUE);
-  const [storageGroupBy, setStorageGroupBy] = useLocalStorage(
-    QUERY_PARAM_GROUP_BY,
-    DEFAULT_GROUP_BY,
+  const [localStorage, setLocalStorage] = useLocalStorage<Partial<MetricsDisplayTypeData>>(
+    'storage',
+    {
+      value: DEFAULT_VALUE,
+      groupBy: DEFAULT_GROUP_BY,
+    },
   );
 
   /**
    * Normalize display type value
    */
   const value = useMemo(() => {
-    const resolvedValue = queryParamValue || storageValue;
+    const resolvedValue = queryParamValue ?? localStorage?.value;
 
     if (!resolvedValue) {
       return DEFAULT_VALUE;
@@ -49,13 +55,13 @@ export const useMetricsDisplayType = (
     }
 
     return resolvedValue as MetricsDisplayType;
-  }, [queryParamValue, storageValue]);
+  }, [queryParamValue, localStorage?.value]);
 
   /**
    * Normalize display type group by
    */
   const groupBy = useMemo(() => {
-    const resolvedValue = queryParamGroupBy || storageGroupBy;
+    const resolvedValue = queryParamGroupBy ?? localStorage?.groupBy;
 
     if (!resolvedValue) {
       return DEFAULT_GROUP_BY;
@@ -66,7 +72,7 @@ export const useMetricsDisplayType = (
     }
 
     return resolvedValue;
-  }, [queryParamGroupBy, storageGroupBy]);
+  }, [queryParamGroupBy, localStorage?.groupBy]);
 
   /**
    * Synchronize query params when values are different
@@ -78,37 +84,23 @@ export const useMetricsDisplayType = (
   }, [value, queryParamValue, groupBy, queryParamGroupBy, setQueryParams]);
 
   /**
-   * Synchronize storeage when values are different
+   * Synchronize storage when values are different
    */
   useEffect(() => {
-    if (value !== storageValue) {
-      setStorageValue(value);
+    if (value !== localStorage?.value || groupBy !== localStorage.groupBy) {
+      setLocalStorage({ value, groupBy });
     }
-    if (groupBy !== storageValue) {
-      setStorageGroupBy(groupBy);
-    }
-  }, [
-    value,
-    storageValue,
-    groupBy,
-    storageGroupBy,
-    setQueryParams,
-    setStorageValue,
-    setStorageGroupBy,
-  ]);
+  }, [value, groupBy, setLocalStorage, localStorage]);
 
   const setDisplayType = useCallback(
     (newValue: MetricsDisplayType, newGroupBy: string = DEFAULT_GROUP_BY) => {
-      setStorageValue(newValue);
-      setStorageGroupBy(newGroupBy);
-
       setQueryParams({
         [QUERY_PARAM_VALUE]: newValue,
         [QUERY_PARAM_GROUP_BY]: newGroupBy,
       });
     },
-    [setStorageValue, setQueryParams],
+    [setQueryParams],
   );
 
-  return [{ value, groupBy }, setDisplayType];
+  return useMemo(() => [{ value, groupBy }, setDisplayType], [value, groupBy, setDisplayType]);
 };
