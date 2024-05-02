@@ -4,7 +4,7 @@ import cx from 'classnames';
 
 import css from './loader.module.css';
 
-export const Loader = ({ className, size, ...restProps }) => (
+export const Loader = ({ className = '', size = 'medium', ...restProps }) => (
   <span className={cx(css.root, className, css[size])} {...restProps} />
 );
 

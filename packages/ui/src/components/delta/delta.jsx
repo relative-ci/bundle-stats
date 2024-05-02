@@ -4,7 +4,7 @@ import cx from 'classnames';
 
 import css from './delta.module.css';
 
-export const Delta = ({ className, displayValue, deltaType, inverted }) => {
+export const Delta = ({ className = '', displayValue, deltaType, inverted = false }) => {
   const rootClassName = cx(css.root, className, inverted && css.inverted, css[deltaType]);
   return <span className={rootClassName}>{displayValue}</span>;
 };
