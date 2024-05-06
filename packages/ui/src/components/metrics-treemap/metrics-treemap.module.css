@@ -42,8 +42,8 @@
 
 /** Tile group nested variation */
 .nested .tileGroup {
-  background: rgba(200, 200, 200, 0.1);
-  outline: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(200, 200, 200, 0.08);
+  outline: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 /** Update background for current tileGroup and its children */
@@ -51,7 +51,7 @@
 .nested .tileGroup:has(> .tileGroupTitle:hover) .tileGroup,
 .nested .tileGroup:has(> .tile:hover),
 .nested .tileGroup:has(> .tile:hover) .tileGroup {
-  background: rgba(200, 200, 200, 0.2);
+  background: rgba(200, 200, 200, 0.16);
 }
 
 /** Leaf wrapper button */
@@ -85,13 +85,13 @@
   color: var(--color-highlight);
   transition: var(--ui-transition-out);
   transition-property: opacity;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .tile:hover::before {
   transition: var(--ui-transition-in);
   transition-property: opacity;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .tileContent {
@@ -158,11 +158,6 @@
 
 .tile-NO_CHANGE::before {
   color: var(--color-gray-50);
-  opacity: 0.5;
-}
-
-.tile-NO_CHANGE:hover::before {
-  opacity: 0.4;
 }
 
 .tile-HIGH_NEGATIVE::before {
