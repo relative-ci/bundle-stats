@@ -13,7 +13,13 @@ import { useDebounce, useHoverDirty, useMeasure, useMouseHovered } from 'react-u
 import cx from 'classnames';
 import { HierarchyRectangularNode, hierarchy, treemap, treemapSquarify } from 'd3';
 import { Tooltip, TooltipArrow, TooltipAnchor, useTooltipState } from 'ariakit/tooltip';
-import type { ReportMetricRow, MetricRunInfo, MetricRunInfoBaseline } from '@bundle-stats/utils';
+import {
+  type ReportMetricRow,
+  type MetricRunInfo,
+  type MetricRunInfoBaseline,
+  getMetricRunInfo,
+  METRIC_TYPE_CONFIGS,
+} from '@bundle-stats/utils';
 
 import { Stack } from '../../layout/stack';
 import { FileName } from '../../ui/file-name';
@@ -21,11 +27,12 @@ import { Delta } from '../delta';
 import { RunInfo } from '../run-info';
 import type { TreeLeaf, TreeNode, Tree } from './metrics-treemap.constants';
 import css from './metrics-treemap.module.css';
+import { resolveGroupDeltaType } from './metrics-treemap.utils';
 
-const SQUARIFY_RATIO = 1.33;
+const SQUARIFY_RATIO = 1.66;
 const PADDING_OUTER = 1;
 const PADDING_INNER = 1;
-const GROUPED_PADDING_TOP = 16;
+const GROUPED_PADDING_TOP = 18;
 
 /**
  * Resolve the tile's size using predefined values to avoid
@@ -33,7 +40,7 @@ const GROUPED_PADDING_TOP = 16;
  */
 const PADDING_TOP = 4;
 const PADDING_BOTTOM = 2; // substracted to allow longer texts to appear
-const PADDING_LEFT = 16;
+const PADDING_LEFT = 2;
 const PADDING_RIGHT = 4; // substracted to allow longer texts to not break
 const VERTICAL_SPACING = 4;
 const LINE_HEIGHT = 16;
@@ -244,6 +251,10 @@ interface TileGroupProps extends ComponentProps<'div'> {
    */
   title?: string;
   /**
+   * Group sum
+   */
+  total?: Tree['total'];
+  /**
    * Node id
    */
   id: string;
@@ -282,6 +293,7 @@ interface TileGroupProps extends ComponentProps<'div'> {
 const TileGroup = (props: TileGroupProps) => {
   const {
     title = '',
+    total,
     id,
     childNodes,
     onItemClick,
@@ -333,21 +345,39 @@ const TileGroup = (props: TileGroupProps) => {
     );
   }
 
+  const metricRunInfo =
+    total &&
+    getMetricRunInfo(METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE, total.current, total.baseline);
+  const groupDeltaType = resolveGroupDeltaType(metricRunInfo);
+
   return (
     <div
       onClick={onClick}
       role="button"
       aria-label="View children entries"
-      className={cx(css.tileGroup, css.tileGroupSizeDefault)}
+      className={cx(css.tileGroup, css.tileGroupSizeDefault, css[`tileGroup--${groupDeltaType}`])}
       style={{ left, top, width, height }}
     >
-      {title && <div className={css.tileGroupTitle}>{title}</div>}
+      {title && (
+        <div className={css.tileGroupTitle}>
+          {title}
+          {metricRunInfo && (
+            <span className={css.tileGroupTitleTotal}>
+              {`${metricRunInfo.displayValue}`}
+              {'displayDelta' in metricRunInfo && ` (${metricRunInfo.displayDeltaPercentage})`}
+            </span>
+          )}
+        </div>
+      )}
       {childNodes?.map((childNode) => {
         if ('children' in childNode) {
+          const groupData = childNode.data as Tree;
+
           return (
             <TileGroup
-              title={childNode.data.label}
-              id={childNode.data.id}
+              title={groupData.label}
+              total={groupData.total}
+              id={groupData.id}
               childNodes={childNode.children}
               left={childNode.x0 - absoluteLeft}
               top={childNode.y0 - absoluteTop}
@@ -357,7 +387,7 @@ const TileGroup = (props: TileGroupProps) => {
               height={childNode.y1 - childNode.y0}
               onItemClick={onItemClick}
               onGroupClick={onGroupClick}
-              key={childNode.data.id}
+              key={groupData.id}
             />
           );
         }
@@ -446,10 +476,11 @@ export const MetricsTreemap = (props: MetricsTreemapProps & ComponentProps<'div'
       {...restProps}
       ref={containerRef}
     >
-      {rootNode.children && rootNode.children.length > 0 ? (
+      {rootNode.children && rootNode.children?.length > 0 ? (
         <div className={css.canvas}>
           <TileGroup
             title={nested ? rootNode.data.label : undefined}
+            total={(rootNode.data as Tree).total}
             id={rootNode.data.id}
             childNodes={rootNode.children}
             onItemClick={onItemClick}

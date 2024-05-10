@@ -1,5 +1,10 @@
 import type { ReportMetricRow } from '@bundle-stats/utils';
 
+export interface TreeTotal {
+  current: number;
+  baseline: number;
+}
+
 export interface TreeLeaf {
   /**
    * Node id - file/directory path
@@ -36,6 +41,10 @@ export interface Tree {
    * List of children nodes
    */
   children: TreeNodeChildren;
+  /**
+   * children total values for nested
+   */
+  total?: TreeTotal;
 }
 
 export type TreeNode = Tree | TreeLeaf;
