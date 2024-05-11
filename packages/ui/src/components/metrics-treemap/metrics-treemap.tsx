@@ -26,6 +26,7 @@ import { FileName } from '../../ui/file-name';
 import { Delta } from '../delta';
 import { RunInfo } from '../run-info';
 import type { TreeLeaf, TreeNode, Tree } from './metrics-treemap.constants';
+import * as I18N from './metrics-treemap.i18n';
 import css from './metrics-treemap.module.css';
 import { resolveGroupDeltaType } from './metrics-treemap.utils';
 
@@ -202,7 +203,7 @@ const Tile = (props: TileProps) => {
   const runInfo = item.runs?.[0] as MetricRunInfo;
 
   const sizeDisplay = useMemo(() => resolveTileSizeDisplay(width, height), [width, height]);
-  const handleOnClick: MouseEventHandler<HTMLButtonElement> = useCallback(
+  const handleOnClick: MouseEventHandler<HTMLDivElement> = useCallback(
     (event) => {
       event.stopPropagation();
       onClick?.(item.key);
@@ -210,7 +211,7 @@ const Tile = (props: TileProps) => {
     [item.key, onClick],
   );
 
-  const contentRef = useRef<HTMLButtonElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const hover = useHoverDirty(contentRef);
 
   const className = cx(
@@ -221,10 +222,12 @@ const Tile = (props: TileProps) => {
     left === 0 && css.tileFirstCol,
   );
 
+  /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus */
   return (
-    <button
-      type="button"
+    <div
       onClick={handleOnClick}
+      role="button"
+      aria-label={I18N.TILE_LABEL}
       ref={contentRef}
       style={{ left, top, width, height }}
       className={className}
@@ -240,9 +243,8 @@ const Tile = (props: TileProps) => {
       ) : (
         <TileContent label={label} sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
       )}
-    </button>
+    </div>
   );
-  /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus */
 };
 
 interface TileGroupProps extends ComponentProps<'div'> {
@@ -324,7 +326,7 @@ const TileGroup = (props: TileGroupProps) => {
       <div
         onClick={onClick}
         role="button"
-        aria-label="View children entries"
+        aria-label={I18N.TILE_GROUP_LABEL}
         className={css.tileGroup}
         style={{ left, top, width, height }}
       />
@@ -336,7 +338,7 @@ const TileGroup = (props: TileGroupProps) => {
       <div
         onClick={onClick}
         role="button"
-        aria-label="View children entries"
+        aria-label={I18N.TILE_GROUP_LABEL}
         style={{ left, top, width, height }}
         className={css.tileGroup}
       >
@@ -354,7 +356,7 @@ const TileGroup = (props: TileGroupProps) => {
     <div
       onClick={onClick}
       role="button"
-      aria-label="View children entries"
+      aria-label={I18N.TILE_GROUP_LABEL}
       className={cx(css.tileGroup, css.tileGroupSizeDefault, css[`tileGroup--${groupDeltaType}`])}
       style={{ left, top, width, height }}
     >
