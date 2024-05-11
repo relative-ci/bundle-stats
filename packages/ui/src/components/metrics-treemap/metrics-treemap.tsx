@@ -32,8 +32,10 @@ import { resolveGroupDeltaType } from './metrics-treemap.utils';
 
 const SQUARIFY_RATIO = 1.66;
 const PADDING_OUTER = 1;
-const PADDING_INNER = 1;
-const GROUPED_PADDING_TOP = 18;
+const PADDING_INNER = 2;
+const NESTED_PADDING = 4;
+const NESTED_PADDING_TOP = 16 + NESTED_PADDING * 2;
+const NESTED_PADDING_LEFT = 8;
 
 /**
  * Resolve the tile's size using predefined values to avoid
@@ -48,11 +50,11 @@ const LINE_HEIGHT = 16;
 const LINE_HEIGHT_SMALL = 13.3;
 
 function resolveTileGroupSizeDisplay(width: number, height: number): TileSizeDisplay {
-  if (height < GROUPED_PADDING_TOP || width < 24) {
+  if (height < NESTED_PADDING_TOP || width < 24) {
     return 'minimal';
   }
 
-  if (height < GROUPED_PADDING_TOP + 8) {
+  if (height < NESTED_PADDING_TOP + 8) {
     return 'small';
   }
 
@@ -436,12 +438,16 @@ function useMetricsTreemapHierarchy(params: UseMetricsTreemapHierarchyParams) {
     let createTremapLayout = treemap()
       .size([width, height])
       .tile(treemapSquarify.ratio(SQUARIFY_RATIO))
-      .paddingOuter(PADDING_OUTER)
-      .paddingInner(PADDING_INNER);
+      .paddingOuter(PADDING_OUTER);
 
     // Add padding top for group title
     if (nested) {
-      createTremapLayout = createTremapLayout.paddingTop(GROUPED_PADDING_TOP);
+      createTremapLayout = createTremapLayout
+        .padding(NESTED_PADDING)
+        .paddingLeft(NESTED_PADDING_LEFT)
+        .paddingTop(NESTED_PADDING_TOP);
+    } else {
+      createTremapLayout = createTremapLayout.paddingInner(PADDING_INNER);
     }
 
     // @ts-expect-error
