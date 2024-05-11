@@ -1,8 +1,8 @@
 import {
   DeltaType,
-  MetricRunInfo,
-  MetricRunInfoDeltaType,
-  ReportMetricRow,
+  type MetricRunInfoBaseline,
+  type MetricRunInfo,
+  type ReportMetricRow,
 } from '@bundle-stats/utils';
 
 import type { TreeLeaf, TreeNodeChildren, Tree, TreeTotal } from './metrics-treemap.constants';
@@ -143,7 +143,7 @@ export function getTreemapNodesGroupedByPath(items: Array<ReportMetricRow>): Tre
 }
 
 export function resolveGroupDeltaType(
-  metricRunInfo?: MetricRunInfo,
+  metricRunInfo?: MetricRunInfo | MetricRunInfoBaseline,
 ): DeltaType.NO_CHANGE | DeltaType.NEGATIVE | DeltaType.POSITIVE {
   if (!metricRunInfo) {
     return DeltaType.NO_CHANGE;

@@ -321,13 +321,19 @@ const TileGroup = (props: TileGroupProps) => {
     [width, height],
   );
 
+  const metricRunInfo =
+    total &&
+    getMetricRunInfo(METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE, total.current, total.baseline);
+  const groupDeltaType = resolveGroupDeltaType(metricRunInfo);
+  const rootClassName = cx(css.tileGroup, css[`tileGroup--${groupDeltaType}`]);
+
   if (title && displaySize === 'minimal') {
     return (
       <div
         onClick={onClick}
         role="button"
         aria-label={I18N.TILE_GROUP_LABEL}
-        className={css.tileGroup}
+        className={rootClassName}
         style={{ left, top, width, height }}
       />
     );
@@ -340,24 +346,19 @@ const TileGroup = (props: TileGroupProps) => {
         role="button"
         aria-label={I18N.TILE_GROUP_LABEL}
         style={{ left, top, width, height }}
-        className={css.tileGroup}
+        className={rootClassName}
       >
         <div className={css.tileGroupTitle}>{title}</div>
       </div>
     );
   }
 
-  const metricRunInfo =
-    total &&
-    getMetricRunInfo(METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE, total.current, total.baseline);
-  const groupDeltaType = resolveGroupDeltaType(metricRunInfo);
-
   return (
     <div
       onClick={onClick}
       role="button"
       aria-label={I18N.TILE_GROUP_LABEL}
-      className={cx(css.tileGroup, css.tileGroupSizeDefault, css[`tileGroup--${groupDeltaType}`])}
+      className={cx(rootClassName, css.tileGroupSizeDefault)}
       style={{ left, top, width, height }}
     >
       {title && (
