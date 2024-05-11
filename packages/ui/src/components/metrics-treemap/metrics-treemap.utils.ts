@@ -115,7 +115,6 @@ export function getTreemapNodesGroupedByPath(items: Array<ReportMetricRow>): Tre
   const total = { current: 0, baseline: 0 };
 
   items.forEach((item) => {
-    // const normalizedPath = item.key.replace(/^\.?\//, ''); // replace './' or '/' prefix
     const slugs = item.key.split('/');
     const baseSlugs = slugs.slice(0, -1);
     const baseName = slugs.slice(-1)[0];
