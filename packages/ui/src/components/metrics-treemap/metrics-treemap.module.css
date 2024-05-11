@@ -25,12 +25,11 @@
 
 .tileGroupTitle {
   width: 100%;
-  padding: 4px var(--space-xxxsmall);
+  padding: 4px 2px 4px var(--space-xxsmall);
   color: var(--color-text);
-  font-size: 10px;
   font-family: var(--font-family-fixed);
-  font-weight: 500;
-  line-height: 12px;
+  font-size: 10px;
+  line-height: 16px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -38,7 +37,6 @@
 
 .tileGroupTitleTotal {
   margin-left: var(--space-xxxsmall);
-  font-weight: 300;
 }
 
 /** Tile group size variation */
@@ -49,28 +47,23 @@
 
 /** Tile group nested variation */
 .nested .tileGroup {
-  background-color: rgba(27, 26, 33, 0.04);
-  outline: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(27, 26, 33, 0.05);
+  outline: 1px solid rgba(255, 255, 255, 0.75);
 }
 
 .nested .tileGroup:has(> .tileGroupTitle:hover),
 .nested .tileGroup:has(> .tile:hover) {
+  background-color: rgba(27, 26, 33, 0.1);
   outline: 1px solid rgba(255, 255, 255, 1);
-  background-color: rgba(27, 26, 33, 0.08);
-}
-
-.nested .tileGroup--NEGATIVE:has(> .tileGroupTitle:hover),
-.nested .tileGroup--NEGATIVE:has(> .tile:hover) {
-  background-color: rgba(194, 31, 37, 0.2);
 }
 
 .nested .tileGroup--NEGATIVE {
-  background-color: rgba(194, 31, 37, 0.1);
+  background-color: rgba(194, 31, 37, 0.05);
 }
 
 .nested .tileGroup--NEGATIVE:has(> .tileGroupTitle:hover),
 .nested .tileGroup--NEGATIVE:has(> .tile:hover) {
-  background-color: rgba(194, 31, 37, 0.2);
+  background-color: rgba(194, 31, 37, 0.1);
 }
 
 .nested .tileGroup--POSITIVE {
@@ -86,7 +79,7 @@
 .nested .tileGroup--POSITIVE > .tileGroup--NO_CHANGE,
 .nested .tileGroup--NEGATIVE > .tileGroup--NO_CHANGE {
   background-color: var(--color-background);
-  background-image: linear-gradient(rgba(27, 26, 33, 0.04), rgba(27, 26, 33, 0.04));
+  background-image: linear-gradient(rgba(27, 26, 33, 0.1), rgba(27, 26, 33, 0.1));
 }
 
 .nested .tileGroup--POSITIVE > .tileGroup--NO_CHANGE:has(> .tileGroupTitle:hover),
@@ -94,14 +87,13 @@
 .nested .tileGroup--NEGATIVE > .tileGroup--NO_CHANGE:has(> .tileGroupTitle:hover),
 .nested .tileGroup--NEGATIVE > .tileGroup--NEGATIVE > .tileGroup--NO_CHANGE:has(> .tile:hover) {
   background-color: var(--color-background);
-  background-image: linear-gradient(rgba(27, 26, 33, 0.08), rgba(27, 26, 33, 0.08));
+  background-image: linear-gradient(rgba(27, 26, 33, 0.1), rgba(27, 26, 33, 0.1));
 }
 
 /** Leaf wrapper button */
 .tile {
   position: absolute;
   appearance: none;
-  outline: 1px solid rgba(255, 255, 255, 1);
   border: 0;
   border-radius: 0;
   padding: 0;
@@ -186,6 +178,7 @@
 
 /** Tile diff variation */
 .tile {
+  outline: 1px solid rgba(255, 255, 255, 1);
   color: var(--color-text);
   transition: var(--ui-transition-out);
 }
