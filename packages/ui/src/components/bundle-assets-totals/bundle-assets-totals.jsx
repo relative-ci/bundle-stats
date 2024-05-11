@@ -97,7 +97,6 @@ export const BundleAssetsTotals = ({
               />
             </Table>
             <MetricsTreemap
-              items={items}
               treeNodes={getTreemapNodes(items)}
               onItemClick={onTreemapItemClick || handleMetricsTreemapItemClick}
             />
