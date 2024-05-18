@@ -41,16 +41,21 @@ const NESTED_PADDING_LEFT = 8;
  * Resolve the tile's size using predefined values to avoid
  * computing the size of the content for every tile
  */
-const PADDING_TOP = 4;
-const PADDING_BOTTOM = 2; // substracted to allow longer texts to appear
-const PADDING_LEFT = 2;
-const PADDING_RIGHT = 4; // substracted to allow longer texts to not break
-const VERTICAL_SPACING = 4;
+const PADDING_TOP = 8;
+const PADDING_BOTTOM = 8;
+const PADDING_LEFT = 8;
+const PADDING_RIGHT = 8;
 const LINE_HEIGHT = 16;
 const LINE_HEIGHT_SMALL = 13.3;
 
-function resolveTileGroupSizeDisplay(width: number, height: number): TileSizeDisplay {
-  if (height < NESTED_PADDING_TOP || width < 24) {
+type TileGroupSizeDisplay = 'minimal' | 'small' | 'default';
+
+function resolveTileGroupSizeDisplay(width: number, height: number): TileGroupSizeDisplay {
+  if (height < NESTED_PADDING_TOP) {
+    return 'minimal';
+  }
+
+  if (width < 24) {
     return 'minimal';
   }
 
@@ -64,21 +69,23 @@ function resolveTileGroupSizeDisplay(width: number, height: number): TileSizeDis
 type TileSizeDisplay = 'minimal' | 'small' | 'default';
 
 function resolveTileSizeDisplay(width: number, height: number): TileSizeDisplay {
-  if (
-    height > PADDING_TOP + PADDING_BOTTOM + VERTICAL_SPACING + LINE_HEIGHT * 2 &&
-    width > PADDING_LEFT + PADDING_RIGHT + 128
-  ) {
-    return 'default';
+  if (height < PADDING_TOP + PADDING_BOTTOM + LINE_HEIGHT_SMALL) {
+    return 'minimal';
   }
 
-  if (
-    height > PADDING_TOP + PADDING_BOTTOM + LINE_HEIGHT_SMALL * 2 &&
-    width > PADDING_LEFT + PADDING_BOTTOM + 48
-  ) {
+  if (width < PADDING_LEFT + PADDING_RIGHT + 42) {
+    return 'minimal';
+  }
+
+  if (height < PADDING_TOP + PADDING_TOP + LINE_HEIGHT * 2) {
     return 'small';
   }
 
-  return 'minimal';
+  if (width < PADDING_LEFT + PADDING_RIGHT + 96) {
+    return 'small';
+  }
+
+  return 'default';
 }
 
 interface TileTooltipContentProps {
@@ -118,7 +125,7 @@ interface TileContentProps {
   /**
    * The estimated size of the tile
    */
-  sizeDisplay: 'minimal' | 'small' | 'default';
+  sizeDisplay: TileSizeDisplay;
   /**
    * Metric run info
    */
@@ -128,23 +135,33 @@ interface TileContentProps {
 const TileContent = forwardRef((props: TileContentProps, ref: Ref<HTMLDivElement>) => {
   const { label, sizeDisplay, item, runInfo } = props;
 
+  // Render only the container
   if (sizeDisplay === 'minimal') {
     return <div className={css.tileContent} ref={ref} />;
+  }
+
+  const resolvedLabel = label || item.label;
+
+  // Render only the label
+  if (sizeDisplay === 'small') {
+    return (
+      <div className={css.tileContent} ref={ref}>
+        <p className={css.tileContentLabel}>{resolvedLabel}</p>
+      </div>
+    );
   }
 
   return (
     <div className={css.tileContent} ref={ref}>
       <p className={css.tileContentLabel}>{label || item.label}</p>
-      {sizeDisplay !== 'small' && (
-        <p className={css.tileContentValue}>
-          <span className={css.tileContentMetric}>{runInfo.displayValue}</span>
-          <Delta
-            className={css.tileContentDelta}
-            displayValue={runInfo.displayDeltaPercentage}
-            deltaType={runInfo.deltaType}
-          />
-        </p>
-      )}
+      <p className={css.tileContentValue}>
+        <span className={css.tileContentMetric}>{runInfo.displayValue}</span>
+        <Delta
+          className={css.tileContentDelta}
+          displayValue={runInfo.displayDeltaPercentage}
+          deltaType={runInfo.deltaType}
+        />
+      </p>
     </div>
   );
 });
@@ -371,7 +388,7 @@ const TileGroup = (props: TileGroupProps) => {
           {metricRunInfo && (
             <span className={css.tileGroupTitleTotal}>
               {`${metricRunInfo.displayValue}`}
-              {'displayDelta' in metricRunInfo && ` (${metricRunInfo.displayDeltaPercentage})`}
+              {'displayDelta' in metricRunInfo && `(${metricRunInfo.displayDeltaPercentage})`}
             </span>
           )}
         </div>

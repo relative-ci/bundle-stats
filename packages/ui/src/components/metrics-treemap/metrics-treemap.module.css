@@ -179,9 +179,8 @@
 
 /** Tile size variation */
 .tileSizeSmall .tileContent {
-  padding: var(--space-xxxsmall) var(--space-xxsmall);
-  gap: 0;
-  font-size: var(--size-xsmall);
+  padding: var(--space-xxxsmall);
+  font-size: 10px;
 }
 
 .tileSizeSmall .tileContentLabel {
