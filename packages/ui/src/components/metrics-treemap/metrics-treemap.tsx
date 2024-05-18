@@ -134,7 +134,7 @@ const TileContent = forwardRef((props: TileContentProps, ref: Ref<HTMLDivElement
 
   return (
     <div className={css.tileContent} ref={ref}>
-      <FileName as="p" className={css.tileContentLabel} name={label || item.label} />
+      <p className={css.tileContentLabel}>{label || item.label}</p>
       {sizeDisplay !== 'small' && (
         <p className={css.tileContentValue}>
           <span className={css.tileContentMetric}>{runInfo.displayValue}</span>
@@ -221,7 +221,7 @@ const Tile = (props: TileProps) => {
     css[`tile-${runInfo.deltaType}`],
     sizeDisplay === 'small' && css.tileSizeSmall,
     sizeDisplay === 'default' && css.tileSizeDefault,
-    left === 0 && css.tileFirstCol,
+    left === PADDING_INNER && css.tileFirstCol,
   );
 
   /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus */

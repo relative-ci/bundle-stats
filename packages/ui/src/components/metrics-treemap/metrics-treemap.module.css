@@ -141,7 +141,13 @@
   flex: 0 1 auto;
   width: 100%;
   min-width: 0;
-  max-height: calc(2em * var(--line-height-heading));
+  max-height: calc(2em * var(--line-height-heading)); /* render max 2 rows */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+  white-space: normal;
   overflow: hidden;
 }
 
@@ -173,7 +179,7 @@
 
 .tileSizeDefault {
   transition: var(--ui-transition-in);
-  transition-property: left top width height;
+  transition-property: left, top, width, height;
 }
 
 /** Tile diff variation */
@@ -196,7 +202,7 @@
 }
 
 .tile-NO_CHANGE {
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-light);
 }
 
 .tile-NO_CHANGE::before {
