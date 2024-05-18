@@ -24,8 +24,9 @@
 }
 
 .tileGroupTitle {
+  position: relative;
   width: 100%;
-  padding: 4px 2px 4px var(--space-xxsmall);
+  padding: var(--space-xxxsmall) 1px var(--space-xxxsmall) var(--space-xxsmall);
   color: var(--color-text);
   font-family: var(--font-family-fixed);
   font-size: 10px;
@@ -36,7 +37,17 @@
 }
 
 .tileGroupTitleTotal {
-  margin-left: var(--space-xxxsmall);
+  margin-left: var(--space-xxsmall);
+  color: var(--color-text-light);
+}
+
+.tileGroupTitle {
+  transition: var(--ui-transition-out);
+}
+
+.tileGroupTitle:hover .tileGroupTitleText {
+  text-decoration: underline;
+  transition: var(--ui-transition-in);
 }
 
 /** Tile group size variation */
@@ -141,7 +152,13 @@
   flex: 0 1 auto;
   width: 100%;
   min-width: 0;
-  max-height: calc(2em * var(--line-height-heading));
+  max-height: calc(2em * var(--line-height-heading)); /* render max 2 rows */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+  white-space: normal;
   overflow: hidden;
 }
 
@@ -162,9 +179,8 @@
 
 /** Tile size variation */
 .tileSizeSmall .tileContent {
-  padding: var(--space-xxxsmall) var(--space-xxsmall);
-  gap: 0;
-  font-size: var(--size-xsmall);
+  padding: var(--space-xxxsmall);
+  font-size: 10px;
 }
 
 .tileSizeSmall .tileContentLabel {
@@ -173,7 +189,7 @@
 
 .tileSizeDefault {
   transition: var(--ui-transition-in);
-  transition-property: left top width height;
+  transition-property: left, top, width, height;
 }
 
 /** Tile diff variation */
@@ -196,7 +212,7 @@
 }
 
 .tile-NO_CHANGE {
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-light);
 }
 
 .tile-NO_CHANGE::before {
