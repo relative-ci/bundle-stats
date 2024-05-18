@@ -1,7 +1,8 @@
 import React, { useCallback, useMemo } from 'react';
 import cx from 'classnames';
-import { SECTIONS, COMPONENT } from '@bundle-stats/utils';
+import { SECTIONS, COMPONENT, type Job } from '@bundle-stats/utils';
 
+import { WebpackChunk } from '@bundle-stats/utils';
 import { SortAction } from '../../types';
 import config from '../../config.json';
 import I18N from '../../i18n';
@@ -29,7 +30,7 @@ import { MetricsTableTitle } from '../metrics-table-title';
 import { ModuleInfo } from '../module-info';
 import { generateFilterFieldsData } from './bundle-modules.utils';
 import { ModuleMetric } from './bundle-modules.constants';
-import type { Chunk, Job, ReportMetricModuleRow } from './bundle-modules.types';
+import type { ReportMetricModuleRow } from './bundle-modules.types';
 import * as I18N_MODULES from './bundle-modules.i18n';
 import css from './bundle-modules.module.css';
 import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
@@ -122,7 +123,7 @@ interface BundleModulesProps extends React.ComponentProps<'div'> {
   jobs?: Array<Job>;
   items?: Array<ReportMetricModuleRow>;
   allItems?: Array<ReportMetricModuleRow>;
-  chunks?: Array<Chunk>;
+  chunks?: Array<WebpackChunk>;
 
   totalRowCount: number;
 
