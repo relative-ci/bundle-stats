@@ -350,7 +350,9 @@ const TileGroup = (props: TileGroupProps) => {
         style={{ left, top, width, height }}
         className={rootClassName}
       >
-        <div className={css.tileGroupTitle}>{title}</div>
+        <div className={css.tileGroupTitle}>
+          <span className={css.tileGroupTitleText}>{title}</span>
+        </div>
       </div>
     );
   }
@@ -365,7 +367,7 @@ const TileGroup = (props: TileGroupProps) => {
     >
       {title && (
         <div className={css.tileGroupTitle}>
-          {title}
+          <span className={css.tileGroupTitleText}>{title}</span>
           {metricRunInfo && (
             <span className={css.tileGroupTitleTotal}>
               {`${metricRunInfo.displayValue}`}

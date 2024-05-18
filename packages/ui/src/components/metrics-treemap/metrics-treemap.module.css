@@ -24,8 +24,9 @@
 }
 
 .tileGroupTitle {
+  position: relative;
   width: 100%;
-  padding: 4px 2px 4px var(--space-xxsmall);
+  padding: var(--space-xxxsmall) 1px var(--space-xxxsmall) var(--space-xxsmall);
   color: var(--color-text);
   font-family: var(--font-family-fixed);
   font-size: 10px;
@@ -36,7 +37,17 @@
 }
 
 .tileGroupTitleTotal {
-  margin-left: var(--space-xxxsmall);
+  margin-left: var(--space-xxsmall);
+  color: var(--color-text-light);
+}
+
+.tileGroupTitle {
+  transition: var(--ui-transition-out);
+}
+
+.tileGroupTitle:hover .tileGroupTitleText {
+  text-decoration: underline;
+  transition: var(--ui-transition-in);
 }
 
 /** Tile group size variation */
