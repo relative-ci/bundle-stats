@@ -11,6 +11,7 @@ import { useRowsFilter } from '../../hooks/rows-filter';
 import { useRowsSort } from '../../hooks/rows-sort';
 import { useSearchParams } from '../../hooks/search-params';
 import { useEntryInfo } from '../../hooks/entry-info';
+import { getJobsChunksData } from '../../utils/jobs';
 import { BundleAssets as BundleAssetsComponent } from './bundle-assets';
 import {
   addRowAssetFlags,
@@ -21,6 +22,8 @@ import {
 
 export const BundleAssets = (props) => {
   const { jobs, filters, search, setState, sortBy, direction, ...restProps } = props;
+
+  const { chunks } = useMemo(() => getJobsChunksData(jobs), [jobs]);
 
   const { defaultFilters, allEntriesFilters } = useMemo(
     () => ({
@@ -70,6 +73,7 @@ export const BundleAssets = (props) => {
   return (
     <BundleAssetsComponent
       jobs={jobs}
+      chunks={chunks}
       {...restProps}
       {...searchParams}
       {...sortParams}
