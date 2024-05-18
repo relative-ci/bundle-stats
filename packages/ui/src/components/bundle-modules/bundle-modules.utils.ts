@@ -2,12 +2,11 @@ import intersection from 'lodash/intersection';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import union from 'lodash/union';
-import uniqBy from 'lodash/uniqBy';
 import orderBy from 'lodash/orderBy';
-import type { MetricRunInfo, ReportMetricRow } from '@bundle-stats/utils';
-// @ts-ignore
-import { MODULE_PATH_PACKAGES, type Module } from '@bundle-stats/utils/lib-esm/webpack';
 import {
+  type WebpackChunk,
+  type MetricRunInfo,
+  type ReportMetricRow,
   FILE_TYPE_LABELS,
   MODULE_CHUNK,
   MODULE_FILTERS,
@@ -19,10 +18,12 @@ import {
   getModuleSourceTypeFilters,
   getModuleFileTypeFilters,
 } from '@bundle-stats/utils';
+// @ts-ignore
+import { MODULE_PATH_PACKAGES, type Module } from '@bundle-stats/utils/lib-esm/webpack';
 import type { ReportMetricRun } from '@bundle-stats/utils/types/report/types';
 
 import type { FilterFieldsData, FilterGroupFieldData } from '../../types';
-import type { Chunk, Job, ReportMetricModuleRow } from './bundle-modules.types';
+import type { ReportMetricModuleRow } from './bundle-modules.types';
 import * as I18N from './bundle-modules.i18n';
 
 export const addRowFlags = (row: Module & ReportMetricRow): ReportMetricModuleRow => {
@@ -98,18 +99,6 @@ export const generateGetRowFilter =
   };
 /* eslint-enable prettier/prettier */
 
-export const extractChunkData = (jobs: Array<Job>) => {
-  const jobChunks = jobs.map((job) => job?.meta?.webpack?.chunks || []);
-  const chunks = uniqBy(jobChunks.flat(), ({ id }) => id);
-
-  const chunkIds = chunks?.map(({ id }) => id);
-
-  return {
-    chunks,
-    chunkIds,
-  };
-};
-
 export const generateFilters = (chunkIds: Array<string>, multipleJobs: boolean) => {
   const allEntriesFilters = {
     [MODULE_FILTERS.CHANGED]: false,
@@ -137,7 +126,7 @@ interface GetFiltersFormDataParams {
   /**
    * Chunk data
    */
-  chunks: Array<Chunk>;
+  chunks: Array<WebpackChunk>;
   /**
    * Compare mode
    */

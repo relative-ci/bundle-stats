@@ -1,8 +1,10 @@
 import React, { useCallback, useMemo } from 'react';
+import type { Job } from '@bundle-stats/utils';
 // @ts-ignore
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
 import type { SortAction } from '../../types';
+import { getJobsChunksData } from '../../utils/jobs';
 import { useRowsFilter } from '../../hooks/rows-filter';
 import { useRowsSort } from '../../hooks/rows-sort';
 import { useSearchParams } from '../../hooks/search-params';
@@ -10,7 +12,6 @@ import { useEntryInfo } from '../../hooks/entry-info';
 import { BundleModules as BaseComponent } from './bundle-modules';
 import {
   addRowFlags,
-  extractChunkData,
   generateGetRowFilter,
   generateFilters,
   getCustomSort,
@@ -64,7 +65,7 @@ interface BundleModulesProps
     | 'hideEntryInfo'
     | 'showEntryInfo'
   > {
-  jobs: Array<types.Job>;
+  jobs: Array<Job>;
   filters: Record<string, boolean>;
   search?: string;
   metric?: string;
@@ -78,7 +79,7 @@ export const BundleModules = (props: BundleModulesProps) => {
 
   const [moduleMetric, setModuleMetric] = useModuleMetric({ metric, setState });
 
-  const { chunks, chunkIds } = useMemo(() => extractChunkData(jobs), [jobs]);
+  const { chunks, chunkIds } = useMemo(() => getJobsChunksData(jobs), [jobs]);
 
   const { defaultFilters, allEntriesFilters } = useMemo(
     () => generateFilters(chunkIds, jobs.length > 1),
