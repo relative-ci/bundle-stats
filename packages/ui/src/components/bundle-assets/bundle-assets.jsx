@@ -48,12 +48,11 @@ const DISPLAY_TYPE_GROUPS = {
 };
 
 const getFileTypeFilters = (filters) =>
-  Object.entries(FILE_TYPE_LABELS)
-    .map(([key, label]) => ({
-      key,
-      label,
-      defaultValue: get(filters, `${ASSET_FILE_TYPE}.${key}`, true),
-    }));
+  Object.entries(FILE_TYPE_LABELS).map(([key, label]) => ({
+    key,
+    label,
+    defaultValue: get(filters, `${ASSET_FILE_TYPE}.${key}`, true),
+  }));
 
 const getFilters = ({ compareMode, filters }) => ({
   [ASSET_FILTERS.CHANGED]: {
@@ -146,6 +145,7 @@ const RowHeader = ({ row, customComponentLink: CustomComponentLink, filters, sea
 
 RowHeader.propTypes = {
   row: PropTypes.shape({
+    key: PropTypes.string,
     label: PropTypes.string,
     isNotPredictive: PropTypes.bool,
     isChunk: PropTypes.bool,
@@ -153,23 +153,28 @@ RowHeader.propTypes = {
     isEntry: PropTypes.bool,
     runs: PropTypes.arrayOf(PropTypes.object), // eslint-disable-line react/forbid-prop-types
   }).isRequired,
-  chunks: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-    }),
-  ),
-  labels: PropTypes.arrayOf(PropTypes.string).isRequired,
-  CustomComponentLink: PropTypes.elementType.isRequired,
+  customComponentLink: PropTypes.elementType.isRequired,
+  filters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  search: PropTypes.string,
 };
 
 RowHeader.defaultProps = {
-  chunks: [],
+  search: '',
 };
 
 const ViewMetricsTreemap = (props) => {
-  const { metricsTableTitle, jobs, items, displayType, emptyMessage, showEntryInfo, updateSearch } = props;
+  const {
+    metricsTableTitle,
+    jobs,
+    items,
+    displayType,
+    emptyMessage,
+    showEntryInfo,
+    updateSearch,
+    search,
+  } = props;
 
+  // Get treenodes based on group
   const treeNodes = useMemo(() => {
     if (displayType.groupBy === 'folder') {
       return getTreemapNodesGroupedByPath(items);
@@ -178,19 +183,28 @@ const ViewMetricsTreemap = (props) => {
     return getTreemapNodes(items);
   }, [items, displayType.groupBy]);
 
+  // Search based on the group path on group title click
   const onGroupClick = useCallback(
     (groupPath) => {
+      // Clear seach when groupPath is emty (root)
+      if (groupPath === '') {
+        updateSearch('');
+        return;
+      }
       // Search by group path
       // 1. use `^` to match only the string beggining
-      // 2. add `/` suffix to match only exact directories
-      // 3. if the group path is empty(root), clear search
-      if (groupPath) {
-        updateSearch(`^${groupPath}/`);
-      } else {
+      // 2. add `/` suffix to exactly match the directory
+      const newSearch = `^${groupPath}/`;
+
+      // Reset search when toggling the same groupPath
+      if (newSearch === search) {
         updateSearch('');
+        return;
       }
+
+      updateSearch(`^${groupPath}/`);
     },
-    [updateSearch],
+    [updateSearch, search],
   );
 
   return (
@@ -219,12 +233,14 @@ ViewMetricsTreemap.propTypes = {
   emptyMessage: PropTypes.node.isRequired,
   showEntryInfo: PropTypes.func.isRequired,
   updateSearch: PropTypes.func.isRequired,
+  search: PropTypes.string.isRequired,
 };
 
 export const BundleAssets = (props) => {
   const {
     className,
     jobs,
+    chunks,
     items,
     allItems,
     updateFilters,
@@ -252,14 +268,17 @@ export const BundleAssets = (props) => {
     [jobs, filters],
   );
 
-  const metricsTableTitle = useMemo(() => (
-    <MetricsTableTitle
-      title={I18N.ASSETS}
-      info={`${items.length}/${totalRowCount}`}
-      popoverInfo={I18N.ASSETS_INFO}
-      popoverHref={config.documentation.assets}
-    />
-  ), [items, totalRowCount]);
+  const metricsTableTitle = useMemo(
+    () => (
+      <MetricsTableTitle
+        title={I18N.ASSETS}
+        info={`${items.length}/${totalRowCount}`}
+        popoverInfo={I18N.ASSETS_INFO}
+        popoverHref={config.documentation.assets}
+      />
+    ),
+    [items, totalRowCount],
+  );
 
   const renderRowHeader = useCallback(
     (row) => (
@@ -273,21 +292,24 @@ export const BundleAssets = (props) => {
     [CustomComponentLink, filters, search],
   );
 
-  const emptyMessage = useMemo(() => (
-    <EmptySet
-      resources="assets"
-      filtered={totalRowCount !== 0}
-      handleResetFilters={resetFilters}
-      handleViewAll={resetAllFilters}
-    />
-  ), [totalRowCount, resetFilters, resetAllFilters]);
+  const emptyMessage = useMemo(
+    () => (
+      <EmptySet
+        resources="assets"
+        filtered={totalRowCount !== 0}
+        handleResetFilters={resetFilters}
+        handleViewAll={resetAllFilters}
+      />
+    ),
+    [totalRowCount, resetFilters, resetAllFilters],
+  );
 
   const entryItem = useMemo(() => {
     if (!entryId) {
       return null;
     }
 
-    return allItems.find(({ key }) => key === entryId)
+    return allItems.find(({ key }) => key === entryId);
   }, [allItems, entryId]);
 
   return (
@@ -345,6 +367,7 @@ export const BundleAssets = (props) => {
               emptyMessage={emptyMessage}
               showEntryInfo={showEntryInfo}
               updateSearch={updateSearch}
+              search={search}
             />
           )}
         </Box>
@@ -355,7 +378,7 @@ export const BundleAssets = (props) => {
           className={css.assetInfo}
           item={entryItem}
           labels={jobLabels}
-          chunks={jobs[0]?.meta?.webpack?.chunks || []}
+          chunks={chunks}
           customComponentLink={CustomComponentLink}
           onClose={hideEntryInfo}
         />
@@ -378,13 +401,12 @@ BundleAssets.propTypes = {
     PropTypes.shape({
       internalBuildNumber: PropTypes.number,
       label: PropTypes.string,
-      meta: PropTypes.shape({
-        webpack: PropTypes.shape({
-          chunks: PropTypes.array, // eslint-disable-line react/forbid-prop-types
-        }),
-      }),
     }),
   ).isRequired,
+  chunks: PropTypes.arrayOf({
+    id: PropTypes.string,
+    name: PropTypes.string,
+  }).isRequired,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       key: PropTypes.string,
@@ -414,9 +436,11 @@ BundleAssets.propTypes = {
     direction: PropTypes.string,
   }).isRequired,
   updateSort: PropTypes.func.isRequired,
-  allItems: PropTypes.arrayOf(PropTypes.shape({
-    key: PropTypes.string,
-  })).isRequired,
+  allItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string,
+    }),
+  ).isRequired,
   customComponentLink: PropTypes.elementType,
   hideEntryInfo: PropTypes.func.isRequired,
   showEntryInfo: PropTypes.func.isRequired,

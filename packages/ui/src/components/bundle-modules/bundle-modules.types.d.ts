@@ -1,10 +1,5 @@
-import { Module } from '@bundle-stats/utils/lib-esm/webpack/types';
-import { ReportMetricRun } from '@bundle-stats/utils/types/report/types';
-
-export interface Chunk {
-  id: string;
-  name: string;
-}
+import type { Module } from '@bundle-stats/utils/lib-esm/webpack/types';
+import type { ReportMetricRun } from '@bundle-stats/utils/types/report/types';
 
 export type ReportMetricModuleRow = {
   thirdParty: boolean;
@@ -12,13 +7,3 @@ export type ReportMetricModuleRow = {
   fileType: string;
 } & ReportMetricRun &
   Module;
-
-export interface Job {
-  label: string;
-  internalBuildNumber: number;
-  meta?: {
-    webpack?: {
-      chunks?: Array<Chunk>;
-    };
-  };
-}

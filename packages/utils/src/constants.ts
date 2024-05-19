@@ -107,6 +107,20 @@ export enum JobSectionId {
   rawData = 'rawData',
 }
 
+export interface WebpackChunk {
+  id: string;
+  name: string;
+}
+
+export interface JobMeta {
+  [Source.webpack]: {
+    /**
+     * Webpack chunks data
+     */
+    chunks?: Array<WebpackChunk>;
+  };
+}
+
 export interface JobSummaryItem {
   baseline: number;
   current: number;
@@ -153,7 +167,7 @@ export type JobMetricsSource = Record<string, MetricRun | Record<string, MetricR
 export type JobMetrics = JobSection<JobMetricsSource>;
 
 export interface JobData {
-  [JobSectionId.meta]?: JobSection;
+  [JobSectionId.meta]?: JobMeta;
   [JobSectionId.insights]?: JobInsights;
   [JobSectionId.summary]?: JobSummary;
   [JobSectionId.metrics]?: JobMetrics;

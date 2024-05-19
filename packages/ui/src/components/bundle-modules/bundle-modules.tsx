@@ -1,7 +1,8 @@
 import React, { useCallback, useMemo } from 'react';
 import cx from 'classnames';
-import { SECTIONS, COMPONENT } from '@bundle-stats/utils';
+import { SECTIONS, COMPONENT, type Job } from '@bundle-stats/utils';
 
+import { WebpackChunk } from '@bundle-stats/utils';
 import { SortAction } from '../../types';
 import config from '../../config.json';
 import I18N from '../../i18n';
@@ -29,7 +30,7 @@ import { MetricsTableTitle } from '../metrics-table-title';
 import { ModuleInfo } from '../module-info';
 import { generateFilterFieldsData } from './bundle-modules.utils';
 import { ModuleMetric } from './bundle-modules.constants';
-import type { Chunk, Job, ReportMetricModuleRow } from './bundle-modules.types';
+import type { ReportMetricModuleRow } from './bundle-modules.types';
 import * as I18N_MODULES from './bundle-modules.i18n';
 import css from './bundle-modules.module.css';
 import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
@@ -73,12 +74,22 @@ interface ViewMetricsTreemapProps {
   emptyMessage: React.ReactNode;
   showEntryInfo: React.ComponentProps<typeof MetricsTreemap>['onItemClick'];
   updateSearch: (newSerarch: string) => void;
+  search: string;
 }
 
 const ViewMetricsTreemap = (props: ViewMetricsTreemapProps) => {
-  const { metricsTableTitle, jobs, items, displayType, emptyMessage, showEntryInfo, updateSearch } =
-    props;
+  const {
+    metricsTableTitle,
+    jobs,
+    items,
+    displayType,
+    emptyMessage,
+    showEntryInfo,
+    updateSearch,
+    search,
+  } = props;
 
+  // Get treenodes based on group
   const treeNodes = useMemo(() => {
     if (displayType.groupBy === 'folder') {
       return getTreemapNodesGroupedByPath(items);
@@ -87,19 +98,28 @@ const ViewMetricsTreemap = (props: ViewMetricsTreemapProps) => {
     return getTreemapNodes(items);
   }, [items, displayType]);
 
+  // Search based on the group path on group title click
   const onGroupClick = useCallback(
     (groupPath: string) => {
+      // Clear seach when groupPath is emty (root)
+      if (groupPath === '') {
+        updateSearch('');
+        return;
+      }
       // Search by group path
       // 1. use `^` to match only the string beggining
-      // 2. add `/` suffix to match only exact directories
-      // 3. if the group path is empty(root), clear search
-      if (groupPath) {
-        updateSearch(`^${groupPath}/`);
-      } else {
+      // 2. add `/` suffix to exactly match the directory
+      const newSearch = `^${groupPath}/`;
+
+      // Reset search when toggling the same groupPath
+      if (newSearch === search) {
         updateSearch('');
+        return;
       }
+
+      updateSearch(newSearch);
     },
-    [updateSearch],
+    [updateSearch, search],
   );
 
   return (
@@ -122,7 +142,7 @@ interface BundleModulesProps extends React.ComponentProps<'div'> {
   jobs?: Array<Job>;
   items?: Array<ReportMetricModuleRow>;
   allItems?: Array<ReportMetricModuleRow>;
-  chunks?: Array<Chunk>;
+  chunks?: Array<WebpackChunk>;
 
   totalRowCount: number;
 
@@ -305,6 +325,7 @@ export const BundleModules = (props: BundleModulesProps) => {
               emptyMessage={emptyMessage}
               showEntryInfo={showEntryInfo}
               updateSearch={updateSearch}
+              search={search}
             />
           )}
         </Box>
