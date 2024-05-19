@@ -88,6 +88,51 @@ function resolveTileSizeDisplay(width: number, height: number): TileSizeDisplay 
   return 'default';
 }
 
+interface UseTooltipStateWithMouseFollowOptions {
+  /**
+   * React ref to parent div
+   */
+  parentRef: Ref<HTMLDivElement>;
+  /**
+   * Tooltip gutter
+   */
+  gutter?: number;
+  /**
+   * Tooltip timeout
+   */
+  timeout?: number;
+}
+
+function useTooltipStateWithMouseFollow(options: UseTooltipStateWithMouseFollowOptions) {
+  const { parentRef, gutter = 16, timeout = 180 } = options;
+
+  const pointer = useMouseHovered(parentRef, { whenHovered: true });
+
+  // Return custom rect based on the mouse position
+  const getAnchorRect = useCallback(() => {
+    // Skip custom component rect area if the pointer position is empty
+    if (pointer.docX === 0 && pointer.docY === 0 && pointer.elW === 0 && pointer.elH === 0) {
+      return null;
+    }
+
+    const newRect = {
+      x: pointer.docX - (document?.defaultView?.scrollX ?? 0),
+      y: pointer.docY - (document?.defaultView?.scrollY ?? 0),
+      w: 1,
+      h: 1,
+    };
+
+    return newRect;
+  }, [pointer.docX, pointer.docY]);
+
+  const tooltipState = useTooltipState({ gutter, getAnchorRect, timeout });
+
+  // Update tooltip position when poiner values are changing
+  useDebounce(tooltipState.render, 5, [pointer.docX, pointer.docY]);
+
+  return tooltipState;
+}
+
 interface TileTooltipContentProps {
   item: ReportMetricRow;
 }
@@ -169,29 +214,7 @@ const TileContent = forwardRef((props: TileContentProps, ref: Ref<HTMLDivElement
 const TileContentWithTooltip = (props: TileContentProps & { parentRef: RefObject<Element> }) => {
   const { label, sizeDisplay, item, runInfo, parentRef } = props;
 
-  const pointer = useMouseHovered(parentRef, { whenHovered: true });
-
-  // Return custom rect based on the mouse position
-  const getAnchorRect = useCallback(() => {
-    // Skip custom component rect area if the pointer position is empty
-    if (pointer.docX === 0 && pointer.docY === 0 && pointer.elW === 0 && pointer.elH === 0) {
-      return null;
-    }
-
-    const newRect = {
-      x: pointer.docX - (document?.defaultView?.scrollX ?? 0),
-      y: pointer.docY - (document?.defaultView?.scrollY ?? 0),
-      w: 1,
-      h: 1,
-    };
-
-    return newRect;
-  }, [pointer.docX, pointer.docY]);
-
-  const tooltipState = useTooltipState({ gutter: 12, getAnchorRect, timeout: 120 });
-
-  // Update tooltip position when poiner values are changing
-  useDebounce(tooltipState.render, 5, [pointer.docX, pointer.docY]);
+  const tooltipState = useTooltipStateWithMouseFollow({ parentRef });
 
   return (
     <>
@@ -317,29 +340,7 @@ type TileGroupTitleContentWithTooltipProps = {
 const TileGroupTitleContentWithTooltip = (props: TileGroupTitleContentWithTooltipProps) => {
   const { parentRef, tooltipContent, ...restProps } = props;
 
-  const pointer = useMouseHovered(parentRef, { whenHovered: true });
-
-  // Return custom rect based on the mouse position
-  const getAnchorRect = useCallback(() => {
-    // Skip custom component rect area if the pointer position is empty
-    if (pointer.docX === 0 && pointer.docY === 0 && pointer.elW === 0 && pointer.elH === 0) {
-      return null;
-    }
-
-    const newRect = {
-      x: pointer.docX - (document?.defaultView?.scrollX ?? 0),
-      y: pointer.docY - (document?.defaultView?.scrollY ?? 0),
-      w: 1,
-      h: 1,
-    };
-
-    return newRect;
-  }, [pointer.docX, pointer.docY]);
-
-  const tooltipState = useTooltipState({ gutter: 12, getAnchorRect, timeout: 120 });
-
-  // Update tooltip position when poiner values are changing
-  useDebounce(tooltipState.render, 5, [pointer.docX, pointer.docY]);
+  const tooltipState = useTooltipStateWithMouseFollow({ parentRef });
 
   return (
     <>
