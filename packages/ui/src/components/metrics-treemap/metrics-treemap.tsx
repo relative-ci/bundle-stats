@@ -236,7 +236,7 @@ const TileGroupTitleContent = (props: TileGroupTitleContentProps) => {
   const { title, runInfo } = props;
 
   return (
-    <>
+    <div className={css.tileGroupTitleContent}>
       {title && <span className={css.tileGroupTitleText}>{title}</span>}
       {runInfo && (
         <span className={css.tileGroupTitleTotal}>
@@ -244,7 +244,7 @@ const TileGroupTitleContent = (props: TileGroupTitleContentProps) => {
           {'displayDelta' in runInfo && `(${runInfo.displayDeltaPercentage})`}
         </span>
       )}
-    </>
+    </div>
   );
 };
 

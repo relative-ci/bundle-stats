@@ -24,9 +24,12 @@
 }
 
 .tileGroupTitle {
-  position: relative;
   width: 100%;
-  padding: var(--space-xxxsmall) 1px var(--space-xxxsmall) var(--space-xxsmall);
+}
+
+.tileGroupTitleContent {
+  width: 100%;
+  padding: var(--space-xxxsmall) 2px var(--space-xxxsmall) var(--space-xxsmall);
   display: flex;
   align-items: center;
   color: var(--color-text);
@@ -66,7 +69,12 @@
 
 .tileGroup--minimal .tileGroupTitle,
 .tileGroup--small .tileGroupTitle {
-  min-height: 100%; /* full height when title is missing or we do not render any children */
+  height: 100%; /* full height when title is missing or we do not render any children */
+}
+
+.tileGroup--minimal .tileGroupTitleContent,
+.tileGroup--small .tileGroupTitleContent {
+  min-height: 100%;
 }
 
 /** Tile group nested variation */
