@@ -266,6 +266,116 @@ const Tile = (props: TileProps) => {
   );
 };
 
+interface TileGroupTitleTooltipContentProps {
+  title: string;
+  runInfo: MetricRunInfo;
+}
+
+const TileGroupTitleTooltipContent = (props: TileGroupTitleTooltipContentProps) => {
+  const { title, runInfo } = props;
+
+  return (
+    <Stack space="small" className={css.tileTooltip}>
+      <h3 className={css.tileTooltipContentTitle}>
+        <FileName as="code" name={title} />
+      </h3>
+      <RunInfo
+        current={runInfo.displayValue}
+        delta={runInfo.displayDeltaPercentage}
+        deltaType={runInfo.deltaType}
+      />
+    </Stack>
+  );
+};
+
+interface TileGroupTitleContentProps {
+  title?: string;
+  runInfo?: MetricRunInfo;
+}
+
+const TileGroupTitleContent = (props: TileGroupTitleContentProps) => {
+  const { title, runInfo } = props;
+
+  return (
+    <>
+      {title && <span className={css.tileGroupTitleText}>{title}</span>}
+      {runInfo && (
+        <span className={css.tileGroupTitleTotal}>
+          {runInfo.displayValue}
+          {'displayDelta' in runInfo && `(${runInfo.displayDeltaPercentage})`}
+        </span>
+      )}
+    </>
+  );
+};
+
+type TileGroupTitleContentWithTooltipProps = {
+  parentRef: Ref<HTMLDivElement>;
+  tooltipContent: TileGroupTitleTooltipContentProps;
+} & TileGroupTitleContentProps;
+
+const TileGroupTitleContentWithTooltip = (props: TileGroupTitleContentWithTooltipProps) => {
+  const { parentRef, tooltipContent, ...restProps } = props;
+
+  const pointer = useMouseHovered(parentRef, { whenHovered: true });
+
+  // Return custom rect based on the mouse position
+  const getAnchorRect = useCallback(() => {
+    // Skip custom component rect area if the pointer position is empty
+    if (pointer.docX === 0 && pointer.docY === 0 && pointer.elW === 0 && pointer.elH === 0) {
+      return null;
+    }
+
+    const newRect = {
+      x: pointer.docX - (document?.defaultView?.scrollX ?? 0),
+      y: pointer.docY - (document?.defaultView?.scrollY ?? 0),
+      w: 1,
+      h: 1,
+    };
+
+    return newRect;
+  }, [pointer.docX, pointer.docY]);
+
+  const tooltipState = useTooltipState({ gutter: 12, getAnchorRect, timeout: 120 });
+
+  // Update tooltip position when poiner values are changing
+  useDebounce(tooltipState.render, 5, [pointer.docX, pointer.docY]);
+
+  return (
+    <>
+      <TooltipAnchor state={tooltipState} className={css.tileContentTooltipAnchor}>
+        <TileGroupTitleContent {...restProps} />
+      </TooltipAnchor>
+      <Tooltip state={tooltipState} className={css.tooltip}>
+        <TooltipArrow state={tooltipState} size={16} className={css.tileTooltipArrow} />
+        <TileGroupTitleTooltipContent {...tooltipContent} />
+      </Tooltip>
+    </>
+  );
+};
+
+type TileGroupTitleProps = TileGroupTitleContentWithTooltipProps;
+
+const TileGroupTitle = (props: TileGroupTitleProps) => {
+  const { tooltipContent, ...restProps } = props;
+  const contentRef = useRef<HTMLDivElement>(null);
+  const hover = useHoverDirty(contentRef);
+
+  return (
+    <div className={css.tileGroupTitle} ref={contentRef}>
+      {hover ? (
+        <TileGroupTitleContentWithTooltip
+          parentRef={contentRef}
+          tooltipContent={tooltipContent}
+          {...restProps}
+        />
+      ) : (
+        <TileGroupTitleContent {...restProps} />
+      )}
+    </div>
+  );
+};
+
 interface TileGroupProps extends ComponentProps<'div'> {
   /**
    * Node title
@@ -340,11 +450,17 @@ const TileGroup = (props: TileGroupProps) => {
     [width, height],
   );
 
-  const metricRunInfo =
+  const runInfo =
     total &&
     getMetricRunInfo(METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE, total.current, total.baseline);
-  const groupDeltaType = resolveGroupDeltaType(metricRunInfo);
-  const rootClassName = cx(css.tileGroup, css[`tileGroup--${groupDeltaType}`]);
+  const groupDeltaType = resolveGroupDeltaType(runInfo);
+  const rootClassName = cx(
+    css.tileGroup,
+    css[`tileGroup--${groupDeltaType}`],
+    css[`tileGroup--${displaySize}`],
+  );
+
+  const tooltipContent = { title, runInfo };
 
   if (title && displaySize === 'minimal') {
     return (
@@ -354,7 +470,9 @@ const TileGroup = (props: TileGroupProps) => {
         aria-label={I18N.TILE_GROUP_LABEL}
         className={rootClassName}
         style={{ left, top, width, height }}
-      />
+      >
+        <TileGroupTitle tooltipContent={tooltipContent} />
+      </div>
     );
   }
 
@@ -367,9 +485,7 @@ const TileGroup = (props: TileGroupProps) => {
         style={{ left, top, width, height }}
         className={rootClassName}
       >
-        <div className={css.tileGroupTitle}>
-          <span className={css.tileGroupTitleText}>{title}</span>
-        </div>
+        <TileGroupTitle title={title} tooltipContent={tooltipContent} />
       </div>
     );
   }
@@ -382,17 +498,7 @@ const TileGroup = (props: TileGroupProps) => {
       className={cx(rootClassName, css.tileGroupSizeDefault)}
       style={{ left, top, width, height }}
     >
-      {title && (
-        <div className={css.tileGroupTitle}>
-          <span className={css.tileGroupTitleText}>{title}</span>
-          {metricRunInfo && (
-            <span className={css.tileGroupTitleTotal}>
-              {`${metricRunInfo.displayValue}`}
-              {'displayDelta' in metricRunInfo && `(${metricRunInfo.displayDeltaPercentage})`}
-            </span>
-          )}
-        </div>
-      )}
+      <TileGroupTitle title={title} runInfo={runInfo} tooltipContent={tooltipContent} />
       {childNodes?.map((childNode) => {
         if ('children' in childNode) {
           const groupData = childNode.data as Tree;
