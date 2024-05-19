@@ -92,7 +92,7 @@ interface UseTooltipStateWithMouseFollowOptions {
   /**
    * React ref to parent div
    */
-  parentRef: Ref<HTMLDivElement>;
+  parentRef: RefObject<Element>;
   /**
    * Tooltip gutter
    */
@@ -333,7 +333,7 @@ const TileGroupTitleContent = (props: TileGroupTitleContentProps) => {
 };
 
 type TileGroupTitleContentWithTooltipProps = {
-  parentRef: Ref<HTMLDivElement>;
+  parentRef: RefObject<Element>;
   tooltipContent: TileGroupTitleTooltipContentProps;
 } & TileGroupTitleContentProps;
 
@@ -355,7 +355,7 @@ const TileGroupTitleContentWithTooltip = (props: TileGroupTitleContentWithToolti
   );
 };
 
-type TileGroupTitleProps = TileGroupTitleContentWithTooltipProps;
+type TileGroupTitleProps = Omit<TileGroupTitleContentWithTooltipProps, 'parentRef'>;
 
 const TileGroupTitle = (props: TileGroupTitleProps) => {
   const { tooltipContent, ...restProps } = props;
@@ -451,17 +451,21 @@ const TileGroup = (props: TileGroupProps) => {
     [width, height],
   );
 
-  const runInfo =
-    total &&
-    getMetricRunInfo(METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE, total.current, total.baseline);
+  const runInfo = total
+    ? (getMetricRunInfo(
+        METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE,
+        total.current,
+        total.baseline,
+      ) as MetricRunInfo)
+    : undefined;
+
   const groupDeltaType = resolveGroupDeltaType(runInfo);
   const rootClassName = cx(
     css.tileGroup,
     css[`tileGroup--${groupDeltaType}`],
     css[`tileGroup--${displaySize}`],
   );
-
-  const tooltipContent = { title, runInfo };
+  const tooltipContent = { title, runInfo } as TileGroupTitleTooltipContentProps;
 
   if (title && displaySize === 'minimal') {
     return (
