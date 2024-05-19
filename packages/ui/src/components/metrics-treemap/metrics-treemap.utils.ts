@@ -1,3 +1,6 @@
+import { type RefObject, useCallback } from 'react';
+import { useDebounce, useMouseHovered } from 'react-use';
+import { useTooltipState } from 'ariakit/tooltip';
 import {
   DeltaType,
   type MetricRunInfoBaseline,
@@ -5,7 +8,15 @@ import {
   type ReportMetricRow,
 } from '@bundle-stats/utils';
 
-import type { TreeLeaf, TreeNodeChildren, Tree, TreeTotal } from './metrics-treemap.constants';
+import {
+  type TreeLeaf,
+  type TreeNodeChildren,
+  type Tree,
+  type TreeTotal,
+  type TileSizeDisplay,
+  type TileGroupSizeDisplay,
+  NESTED_PADDING_TOP,
+} from './metrics-treemap.constants';
 
 const ROOT_LABEL = '(root)';
 
@@ -159,4 +170,99 @@ export function resolveGroupDeltaType(
   }
 
   return DeltaType.NO_CHANGE;
+}
+
+/**
+ * Resolve the tile's size using predefined values to avoid
+ * computing the size of the content for every tile
+ */
+const PADDING_TOP = 8;
+const PADDING_BOTTOM = 8;
+const PADDING_LEFT = 8;
+const PADDING_RIGHT = 8;
+const LINE_HEIGHT = 16;
+const LINE_HEIGHT_SMALL = 13.3;
+
+export function resolveTileGroupSizeDisplay(width: number, height: number): TileGroupSizeDisplay {
+  if (height < NESTED_PADDING_TOP) {
+    return 'minimal';
+  }
+
+  if (width < 24) {
+    return 'minimal';
+  }
+
+  if (height < NESTED_PADDING_TOP + 8) {
+    return 'small';
+  }
+
+  return 'default';
+}
+
+export function resolveTileSizeDisplay(width: number, height: number): TileSizeDisplay {
+  if (height < PADDING_TOP + PADDING_BOTTOM + LINE_HEIGHT_SMALL) {
+    return 'minimal';
+  }
+
+  if (width < PADDING_LEFT + PADDING_RIGHT + 42) {
+    return 'minimal';
+  }
+
+  if (height < PADDING_TOP + PADDING_TOP + LINE_HEIGHT * 2) {
+    return 'small';
+  }
+
+  if (width < PADDING_LEFT + PADDING_RIGHT + 96) {
+    return 'small';
+  }
+
+  return 'default';
+}
+
+interface UseTooltipStateWithMouseFollowOptions {
+  /**
+   * React ref to parent div
+   */
+  parentRef: RefObject<Element>;
+  /**
+   * Tooltip gutter
+   */
+  gutter?: number;
+  /**
+   * Tooltip timeout
+   */
+  timeout?: number;
+}
+
+/**
+ * Ariakit tooltip state hook with mouse follow functionality
+ */
+export function useTooltipStateWithMouseFollow(options: UseTooltipStateWithMouseFollowOptions) {
+  const { parentRef, gutter = 16, timeout = 180 } = options;
+
+  const pointer = useMouseHovered(parentRef, { whenHovered: true });
+
+  // Return custom rect based on the mouse position
+  const getAnchorRect = useCallback(() => {
+    // Skip custom component rect area if the pointer position is empty
+    if (pointer.docX === 0 && pointer.docY === 0 && pointer.elW === 0 && pointer.elH === 0) {
+      return null;
+    }
+
+    const newRect = {
+      x: pointer.docX - (document?.defaultView?.scrollX ?? 0),
+      y: pointer.docY - (document?.defaultView?.scrollY ?? 0),
+      w: 1,
+      h: 1,
+    };
+
+    return newRect;
+  }, [pointer.docX, pointer.docY]);
+
+  const tooltipState = useTooltipState({ gutter, getAnchorRect, timeout });
+
+  // Update tooltip position when pointer values change
+  useDebounce(tooltipState.render, 10, [pointer.docX, pointer.docY]);
+
+  return tooltipState;
 }
