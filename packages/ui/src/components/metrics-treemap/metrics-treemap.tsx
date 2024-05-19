@@ -17,8 +17,9 @@ import {
   type ReportMetricRow,
   type MetricRunInfo,
   type MetricRunInfoBaseline,
-  getMetricRunInfo,
   METRIC_TYPE_CONFIGS,
+  formatFileSize,
+  getMetricRunInfo,
 } from '@bundle-stats/utils';
 
 import { Stack } from '../../layout/stack';
@@ -205,10 +206,11 @@ const Tile = (props: TileProps) => {
 interface TileGroupTitleTooltipContentProps {
   title: string;
   runInfo: MetricRunInfo;
+  baselineDisplayValue?: string;
 }
 
 const TileGroupTitleTooltipContent = (props: TileGroupTitleTooltipContentProps) => {
-  const { title, runInfo } = props;
+  const { title, runInfo, baselineDisplayValue } = props;
 
   return (
     <Stack space="small" className={css.tileTooltip}>
@@ -217,6 +219,7 @@ const TileGroupTitleTooltipContent = (props: TileGroupTitleTooltipContentProps) 
       </h3>
       <RunInfo
         current={runInfo.displayValue}
+        baseline={baselineDisplayValue}
         delta={runInfo.displayDeltaPercentage}
         deltaType={runInfo.deltaType}
       />
@@ -364,21 +367,36 @@ const TileGroup = (props: TileGroupProps) => {
     [width, height],
   );
 
-  const runInfo = total
-    ? (getMetricRunInfo(
-        METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE,
-        total.current,
-        total.baseline,
-      ) as MetricRunInfo)
-    : undefined;
+  // Prepare data
+  const [runInfo, baselineDisplayValue, deltaType] = useMemo(() => {
+    if (!total) {
+      return [];
+    }
 
-  const groupDeltaType = resolveGroupDeltaType(runInfo);
+    const resolvedRunInfo = getMetricRunInfo(
+      METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE,
+      total.current,
+      total.baseline,
+    ) as MetricRunInfo;
+    const resolvedBaselineDisplayValue = formatFileSize(total.baseline);
+    const resolvedDeltaType = resolveGroupDeltaType(resolvedRunInfo);
+
+    return [resolvedRunInfo, resolvedBaselineDisplayValue, resolvedDeltaType];
+  }, [total]);
+
   const rootClassName = cx(
     css.tileGroup,
-    css[`tileGroup--${groupDeltaType}`],
+    css[`tileGroup--${deltaType}`],
     css[`tileGroup--${displaySize}`],
   );
-  const tooltipContent = { title, runInfo } as TileGroupTitleTooltipContentProps;
+
+  // Tooltip data
+  // - by default show the node id (full path) as title
+  const tooltipContent = {
+    title: id || title,
+    runInfo,
+    baselineDisplayValue,
+  } as TileGroupTitleTooltipContentProps;
 
   if (title && displaySize === 'minimal') {
     return (
