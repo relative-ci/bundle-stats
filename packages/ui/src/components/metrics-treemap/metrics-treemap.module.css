@@ -24,16 +24,27 @@
 }
 
 .tileGroupTitle {
-  position: relative;
   width: 100%;
-  padding: var(--space-xxxsmall) 1px var(--space-xxxsmall) var(--space-xxsmall);
+}
+
+.tileGroupTitleContent {
+  width: 100%;
+  padding: var(--space-xxxsmall) 2px var(--space-xxxsmall) var(--space-xxsmall);
+  display: flex;
+  align-items: center;
   color: var(--color-text);
   font-family: var(--font-family-fixed);
   font-size: 10px;
-  line-height: 16px;
+  line-height: var(--space-small);
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.tileGroupTitleText,
+.tileGroupTitleTotal {
+  flex: 0 0 auto;
+  min-width: 0;
 }
 
 .tileGroupTitleTotal {
@@ -51,9 +62,19 @@
 }
 
 /** Tile group size variation */
-.tileGroupSizeDefault {
+.tileGroup {
   transition: var(--ui-transition-in);
   transition-property: left, top, width, height;
+}
+
+.tileGroup--minimal .tileGroupTitle,
+.tileGroup--small .tileGroupTitle {
+  height: 100%; /* full height when title is missing or we do not render any children */
+}
+
+.tileGroup--minimal .tileGroupTitleContent,
+.tileGroup--small .tileGroupTitleContent {
+  min-height: 100%;
 }
 
 /** Tile group nested variation */
