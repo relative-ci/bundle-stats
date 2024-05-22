@@ -1,6 +1,7 @@
 import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { escapeRegExp } from 'lodash/escapeRegExp';
 import { COMPONENT, PACKAGE_FILTERS, PACKAGES_SEPARATOR, SECTIONS } from '@bundle-stats/utils';
 
 import config from '../../config.json';
@@ -142,7 +143,7 @@ const ViewMetricsTreemap = (props) => {
       // Search by group path
       // 1. use `^` to match only the string beggining
       // 2. add `/` suffix to exactly match the directory
-      const newSearch = `^${groupPath}/`;
+      const newSearch = `^${escapeRegExp(groupPath)}/`;
 
       // Reset search when toggling the same groupPath
       if (newSearch === search) {
@@ -307,6 +308,7 @@ export const BundlePackages = (props) => {
             <ViewMetricsTreemap
               jobs={jobs}
               items={items}
+              metricsTableTitle={metricsTableTitle}
               displayType={displayType}
               emptyMessage={emptyMessage}
               showEntryInfo={showEntryInfo}

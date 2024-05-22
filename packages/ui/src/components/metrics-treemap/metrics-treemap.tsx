@@ -205,7 +205,7 @@ const Tile = (props: TileProps) => {
 
 interface TileGroupTitleTooltipContentProps {
   title: string;
-  runInfo: MetricRunInfo;
+  runInfo?: MetricRunInfo;
   baselineDisplayValue?: string;
 }
 
@@ -217,12 +217,14 @@ const TileGroupTitleTooltipContent = (props: TileGroupTitleTooltipContentProps) 
       <h3 className={css.tileTooltipContentTitle}>
         <FileName as="code" name={title} />
       </h3>
-      <RunInfo
-        current={runInfo.displayValue}
-        baseline={baselineDisplayValue}
-        delta={runInfo.displayDeltaPercentage}
-        deltaType={runInfo.deltaType}
-      />
+      {runInfo && (
+        <RunInfo
+          current={runInfo.displayValue}
+          baseline={baselineDisplayValue}
+          delta={runInfo.displayDeltaPercentage}
+          deltaType={runInfo.deltaType}
+        />
+      )}
     </Stack>
   );
 };
