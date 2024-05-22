@@ -363,6 +363,7 @@ export const BundleAssets = (props) => {
             <ViewMetricsTreemap
               jobs={jobs}
               items={items}
+              metricsTableTitle={metricsTableTitle}
               displayType={displayType}
               emptyMessage={emptyMessage}
               showEntryInfo={showEntryInfo}
