@@ -3654,7 +3654,7 @@
       ]
     },
     {
-      "name": "./src/_web/data/open-source-projects.js",
+      "name": "./src/common/data/open-source-projects.js",
       "size": 710,
       "chunks": [
         2
@@ -10125,7 +10125,7 @@
       ]
     },
     {
-      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-0!./node_modules/postcss-loader/dist/cjs.js??ref--6-1!./src/_web/src/components/layout/footer/footer.module.css",
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-0!./node_modules/postcss-loader/dist/cjs.js??ref--6-1!./src/common/src/components/layout/footer/footer.module.css",
       "size": 1115,
       "chunks": [
         2
@@ -10615,7 +10615,7 @@
       ]
     },
     {
-      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-0!./node_modules/postcss-loader/dist/cjs.js??ref--6-1!./src/_web/src/components/pricing/pricing.module.css",
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-0!./node_modules/postcss-loader/dist/cjs.js??ref--6-1!./src/common/src/components/profile/profile.module.css",
       "size": 1381,
       "chunks": [
         2
@@ -10657,7 +10657,7 @@
       ]
     },
     {
-      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-0!./node_modules/postcss-loader/dist/cjs.js??ref--6-1!./src/_web/src/components/ui-stack.module.css",
+      "name": "css ./node_modules/css-loader/dist/cjs.js??ref--6-0!./node_modules/postcss-loader/dist/cjs.js??ref--6-1!./src/common/src/components/ui-stack.module.css",
       "size": 191,
       "chunks": [
         2
