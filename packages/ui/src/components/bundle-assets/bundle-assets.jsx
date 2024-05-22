@@ -2,6 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import get from 'lodash/get';
+import escapeRegExp from 'lodash/escapeRegExp';
 import {
   ASSET_ENTRY_TYPE,
   ASSET_FILE_TYPE,
@@ -194,7 +195,7 @@ const ViewMetricsTreemap = (props) => {
       // Search by group path
       // 1. use `^` to match only the string beggining
       // 2. add `/` suffix to exactly match the directory
-      const newSearch = `^${groupPath}/`;
+      const newSearch = `^${escapeRegExp(groupPath)}/`;
 
       // Reset search when toggling the same groupPath
       if (newSearch === search) {
