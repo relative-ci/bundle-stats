@@ -79,18 +79,18 @@
 
 /** Tile group nested variation */
 .nested .tileGroup {
-  background-color: rgba(27, 26, 33, 0.05);
-  outline: 1px solid rgba(255, 255, 255, 0.75);
+  background-color: rgba(27, 26, 33, 0.03);
+  outline: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .nested .tileGroup:has(> .tileGroupTitle:hover),
 .nested .tileGroup:has(> .tile:hover) {
-  background-color: rgba(27, 26, 33, 0.1);
+  background-color: rgba(27, 26, 33, 0.06);
   outline: 1px solid rgba(255, 255, 255, 1);
 }
 
 .nested .tileGroup--NEGATIVE {
-  background-color: rgba(194, 31, 37, 0.05);
+  background-color: rgba(194, 31, 37, 0.04);
 }
 
 .nested .tileGroup--NEGATIVE:has(> .tileGroupTitle:hover),
@@ -99,7 +99,7 @@
 }
 
 .nested .tileGroup--POSITIVE {
-  background-color: rgba(42, 147, 39, 0.05);
+  background-color: rgba(42, 147, 39, 0.04);
 }
 
 .nested .tileGroup--POSITIVE:has(> .tileGroupTitle:hover),
@@ -224,7 +224,7 @@
   color: var(--color-highlight);
   transition: var(--ui-transition-out);
   transition-property: opacity;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .tile:hover::before {
@@ -238,6 +238,11 @@
 
 .tile-NO_CHANGE::before {
   color: var(--color-gray-50);
+  opacity: 0.4;
+}
+
+.tile-NO_CHANGE:hover::before {
+  opacity: 0.2;
 }
 
 .tile-HIGH_NEGATIVE::before {
@@ -250,20 +255,10 @@
 
 .tile-LOW_NEGATIVE::before {
   color: var(--color-red-50);
-  opacity: 0.6;
-}
-
-.tile-LOW_NEGATIVE:hover::before {
-  opacity: 0.5;
 }
 
 .tile-LOW_POSITIVE::before {
   color: var(--color-green-50);
-  opacity: 0.6;
-}
-
-.tile-LOW_POSITIVE:hover::before {
-  opacity: 0.5;
 }
 
 .tile-POSITIVE::before {

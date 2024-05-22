@@ -1,6 +1,7 @@
 import React, { useCallback, useMemo } from 'react';
 import cx from 'classnames';
 import { SECTIONS, COMPONENT, type Job } from '@bundle-stats/utils';
+import escapeRegExp from 'lodash/escapeRegExp';
 
 import { WebpackChunk } from '@bundle-stats/utils';
 import { SortAction } from '../../types';
@@ -109,7 +110,7 @@ const ViewMetricsTreemap = (props: ViewMetricsTreemapProps) => {
       // Search by group path
       // 1. use `^` to match only the string beggining
       // 2. add `/` suffix to exactly match the directory
-      const newSearch = `^${groupPath}/`;
+      const newSearch = `^${escapeRegExp(groupPath)}/`;
 
       // Reset search when toggling the same groupPath
       if (newSearch === search) {
