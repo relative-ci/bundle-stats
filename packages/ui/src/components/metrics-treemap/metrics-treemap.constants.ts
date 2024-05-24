@@ -2,7 +2,7 @@ import type { ReportMetricRow } from '@bundle-stats/utils';
 
 export interface TreeTotal {
   current: number;
-  baseline: number;
+  baseline?: number;
 }
 
 export interface TreeLeaf {

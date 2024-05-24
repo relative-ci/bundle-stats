@@ -52,13 +52,13 @@ function getItemValues(runs: ReportMetricRow['runs']): TreeTotal {
   const runCount = runs?.length;
   const current = runs[0]?.value || 0;
 
-  if (runCount < 2) {
-    return { current, baseline: 0 };
+  if (runs.length < 2) {
+    return { current, baseline: undefined };
   }
 
   return {
     current,
-    baseline: runs[runCount - 1]?.value || 0,
+    baseline: runs?.[runCount - 1]?.value,
   };
 }
 
@@ -85,6 +85,10 @@ function setTreeNode(
   // Check for existing parent in current nodes
   let parentNode = nodes.find((treeNode) => treeNode.id === currentNodePath) as Tree;
 
+  // accumulate children values
+  const nodeValues = getItemValues(newNode?.item?.runs);
+  const hasBaseline = typeof nodeValues.baseline !== 'undefined';
+
   // Create the new parentNode if missing
   if (!parentNode) {
     parentNode = {
@@ -94,19 +98,18 @@ function setTreeNode(
       children: [],
       total: {
         current: 0,
-        baseline: 0,
+        baseline: hasBaseline ? 0 : undefined,
       },
     };
 
     nodes.push(parentNode);
   }
 
-  // accumulate children values
-  const nodeValues = getItemValues(newNode?.item?.runs);
-
   parentNode.total = {
     current: (parentNode.total?.current || 0) + nodeValues.current,
-    baseline: (parentNode.total?.baseline || 0) + (nodeValues.baseline || 0),
+    baseline: hasBaseline
+      ? (parentNode.total?.baseline || 0) + (nodeValues.baseline || 0)
+      : undefined,
   };
 
   // If there are no other slugs, the new node is as leaf and we add it to the parent
@@ -123,7 +126,7 @@ function setTreeNode(
  */
 export function getTreemapNodesGroupedByPath(items: Array<ReportMetricRow>): Tree {
   const treeNodes: TreeNodeChildren = [];
-  const total = { current: 0, baseline: 0 };
+  const total: TreeTotal = { current: 0, baseline: undefined };
 
   items.forEach((item) => {
     const slugs = item.key.split('/');
@@ -138,9 +141,13 @@ export function getTreemapNodesGroupedByPath(items: Array<ReportMetricRow>): Tre
     };
 
     const childrenTotal = setTreeNode(treeNodes, baseSlugs, 0, treeNode);
+    console.log(childrenTotal);
 
-    total.current += childrenTotal.current || 0;
-    total.baseline += childrenTotal.baseline || 0;
+    total.current += childrenTotal.current;
+    total.baseline =
+      typeof childrenTotal.baseline !== 'undefined'
+        ? (total.baseline || 0) + childrenTotal.baseline
+        : undefined;
   });
 
   return {
