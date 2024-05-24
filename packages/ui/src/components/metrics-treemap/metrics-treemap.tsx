@@ -375,6 +375,8 @@ const TileGroup = (props: TileGroupProps) => {
       return [];
     }
 
+    console.info({ total });
+
     const resolvedRunInfo = getMetricRunInfo(
       METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE,
       total.current,
