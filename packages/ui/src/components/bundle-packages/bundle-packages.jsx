@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { escapeRegExp } from 'lodash/escapeRegExp';
+import escapeRegExp from 'lodash/escapeRegExp';
 import { COMPONENT, PACKAGE_FILTERS, PACKAGES_SEPARATOR, SECTIONS } from '@bundle-stats/utils';
 
 import config from '../../config.json';
