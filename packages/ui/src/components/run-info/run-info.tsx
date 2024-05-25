@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { type ReactNode, useMemo } from 'react';
 import cx from 'classnames';
 
 import { Icon } from '../../ui/icon';
@@ -25,17 +25,17 @@ const getMetricParams = (value: string): [string, string?] => {
 };
 
 export interface RunInfoProps {
-  title?: string;
-  titleHoverCard?: React.ReactNode;
-  titleTooltip?: React.ReactNode;
-  current?: React.ReactNode;
+  title?: ReactNode;
+  titleHoverCard?: ReactNode;
+  titleTooltip?: ReactNode;
+  current?: ReactNode;
   baseline?: string;
   delta?: string;
   deltaPercentage?: string;
   deltaType?: string;
 
   as?: React.ElementType;
-  size?: 'small' | 'medium' | 'large';
+  size?: 'small' | 'medium' | 'large' | 'xlarge';
 
   showBaseline?: boolean;
   loading?: boolean;
@@ -66,7 +66,7 @@ export const RunInfo = ({
     (delta || deltaPercentage) && css.showDelta,
   );
 
-  const currentValueParams: [React.ReactNode, string?] = useMemo(() => {
+  const currentValueParams: [ReactNode, string?] = useMemo(() => {
     if (!enhance || typeof current !== 'string') {
       return [current];
     }

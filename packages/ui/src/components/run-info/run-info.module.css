@@ -89,3 +89,7 @@
 .large .baselineMetric {
   font-size: var(--size-small);
 }
+
+.xlarge .currentMetric {
+  font-size: var(--size-xxxxlarge);
+}
