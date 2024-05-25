@@ -1,9 +1,9 @@
 import React, { useCallback, useMemo } from 'react';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
+import { Focusable } from 'ariakit/focusable';
 
 import { Stack } from '../../layout/stack';
 import { FlexStack } from '../../layout/flex-stack';
-import { Button } from '../../ui/button';
 import { Icon } from '../../ui/icon';
 import { RunInfo, RunInfoProps } from '../run-info';
 import css from './metric-run-info.module.css';
@@ -17,9 +17,11 @@ interface MetricInfoProps {
 const MetricHoverCard = ({ title, description, url }: MetricInfoProps) => {
   // The component parent can be rendered inside a link, use button to avoid using nested links
   const onClick = useCallback(() => {
-    if (url) {
-      window.open(url);
+    if (!url) {
+      return;
     }
+
+    window.open(url);
   }, [url]);
 
   return (
@@ -29,12 +31,12 @@ const MetricHoverCard = ({ title, description, url }: MetricInfoProps) => {
         <p className={css.metricHoverCardDescription}>{description}</p>
         {url && (
           <div>
-            <Button kind="primary" type="button" onClick={onClick} className={css.readMoreLink}>
+            <Focusable as="span" onClick={onClick} className={css.readMoreLink}>
               <FlexStack alignItems="center" space="xxxsmall">
                 <span>Read more</span>
                 <Icon glyph={Icon.ICONS.EXTERNAL_LINK} size="small" />
               </FlexStack>
-            </Button>
+            </Focusable>
           </div>
         )}
       </Stack>
