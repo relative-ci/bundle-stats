@@ -233,6 +233,10 @@
   opacity: 0.4;
 }
 
+.tile:hover .tileContentLabel {
+  text-decoration: underline;
+}
+
 .tile-NO_CHANGE {
   color: var(--color-text-light);
 }
