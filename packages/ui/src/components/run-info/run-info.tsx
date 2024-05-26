@@ -44,7 +44,7 @@ export interface RunInfoProps {
 
 export const RunInfo = ({
   className = '',
-  title = '',
+  title = null,
   titleHoverCard = null,
   titleTooltip = null,
   current = '',
@@ -58,7 +58,7 @@ export const RunInfo = ({
   loading = false,
   enhance = false,
   ...restProps
-}: RunInfoProps & React.ComponentProps<'div'>) => {
+}: RunInfoProps & Omit<React.ComponentProps<'div'>, 'title'>) => {
   const rootClassName = cx(
     css.root,
     className,

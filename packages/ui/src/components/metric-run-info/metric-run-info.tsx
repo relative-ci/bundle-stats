@@ -1,4 +1,4 @@
-import React, { type MouseEvent, useCallback, useMemo } from 'react';
+import React, { type MouseEvent, useCallback, useMemo, ElementType } from 'react';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 import { Focusable } from 'ariakit/focusable';
 
@@ -57,6 +57,7 @@ export interface MetricRunInfoProps {
   showDelta?: boolean;
   showMetricDescription?: boolean;
   showBaseline?: boolean;
+  titleWrapper?: ElementType;
   size?: RunInfoProps['size'];
   loading?: RunInfoProps['loading'];
 }
@@ -69,6 +70,7 @@ export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'
     showDelta = true,
     showMetricDescription = true,
     showBaseline = true,
+    titleWrapper: CustomTitleWrapper = React.Fragment,
     ...restProps
   } = props;
 
@@ -85,6 +87,11 @@ export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'
     return null;
   }, [showMetricDescription, metric]);
 
+  const title = useMemo(
+    () => <CustomTitleWrapper>{metric.label}</CustomTitleWrapper>,
+    [CustomTitleWrapper, metric.label],
+  );
+
   const deltaProps = useMemo(() => {
     if (!showDelta || metric.skipDelta || !('delta' in metricRunInfo)) {
       return {};
@@ -98,7 +105,7 @@ export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'
 
   return (
     <RunInfo
-      title={metric.label}
+      title={title}
       titleHoverCard={titleHoverCard}
       enhance
       current={metricRunInfo.displayValue}

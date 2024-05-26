@@ -41,6 +41,17 @@ MetricNoDelta.args = {
   baseline: 50,
 };
 
+export const CustomTitle = Template.bind({});
+
+CustomTitle.args = {
+  ...Default.args,
+  titleWrapper: ({ children, style, ...restProps }: React.ComponentProps<'h1'>) => (
+    <h1 style={{ ...style, fontStyle: 'italic' }} {...restProps}>
+      {children}
+    </h1>
+  ),
+};
+
 export const CustomComponent = Template.bind({});
 
 CustomComponent.args = {
