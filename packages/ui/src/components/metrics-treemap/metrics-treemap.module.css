@@ -25,6 +25,7 @@
 
 .tileGroupTitle {
   width: 100%;
+  cursor: default;
 }
 
 .tileGroupTitleContent {
