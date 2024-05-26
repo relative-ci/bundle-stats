@@ -25,7 +25,6 @@
 
 .currentMetric {
   color: var(--color-heading);
-  font-size: var(--size-xxlarge);
   line-height: var(--line-height-heading);
   white-space: nowrap;
   font-weight: bold;
@@ -56,7 +55,7 @@
 
 .loading.baselineMetric {
   min-width: 0;
-  max-width: 5em;
+  max-width: 8em;
 }
 
 /* Hover state */
@@ -75,14 +74,22 @@
 }
 
 /* Size variation */
+.currentMetric {
+  font-size: var(--size-xxlarge);
+}
+
 .small .currentMetric {
   font-size: var(--size-medium);
 }
 
 .large .currentMetric {
-  font-size: var(--size-xxlarge);
+  font-size: var(--size-xxxlarge);
 }
 
 .large .baselineMetric {
   font-size: var(--size-small);
+}
+
+.xlarge .currentMetric {
+  font-size: var(--size-xxxxlarge);
 }

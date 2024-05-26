@@ -40,3 +40,22 @@ MetricNoDelta.args = {
   current: 85,
   baseline: 50,
 };
+
+export const CustomTitle = Template.bind({});
+
+CustomTitle.args = {
+  ...Default.args,
+  titleWrapper: ({ children, style, ...restProps }: React.ComponentProps<'h1'>) => (
+    <h1 style={{ ...style, fontStyle: 'italic' }} {...restProps}>
+      {children}
+    </h1>
+  ),
+};
+
+export const CustomComponent = Template.bind({});
+
+CustomComponent.args = {
+  ...Default.args,
+  as: 'a',
+  href: 'https://google.com/search?query=bundle+stats',
+};

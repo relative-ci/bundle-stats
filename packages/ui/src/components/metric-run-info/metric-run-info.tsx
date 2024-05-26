@@ -1,9 +1,9 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { type MouseEvent, useCallback, useMemo, ElementType } from 'react';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
+import { Focusable } from 'ariakit/focusable';
 
 import { Stack } from '../../layout/stack';
 import { FlexStack } from '../../layout/flex-stack';
-import { Button } from '../../ui/button';
 import { Icon } from '../../ui/icon';
 import { RunInfo, RunInfoProps } from '../run-info';
 import css from './metric-run-info.module.css';
@@ -15,12 +15,20 @@ interface MetricInfoProps {
 }
 
 const MetricHoverCard = ({ title, description, url }: MetricInfoProps) => {
-  // The component parent can be rendered inside a link, use button to avoid using nested links
-  const onClick = useCallback(() => {
-    if (url) {
+  // The component parent can be rendered inside a link or a button
+  // use a focusable element with onClick to prevent DOM issues (a > button, a > a, etc)
+  const onClick = useCallback(
+    (event: MouseEvent<HTMLSpanElement>) => {
+      if (!url) {
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
       window.open(url);
-    }
-  }, [url]);
+    },
+    [url],
+  );
 
   return (
     <Stack space="xxsmall" className={css.metricHoverCard}>
@@ -29,12 +37,12 @@ const MetricHoverCard = ({ title, description, url }: MetricInfoProps) => {
         <p className={css.metricHoverCardDescription}>{description}</p>
         {url && (
           <div>
-            <Button kind="primary" type="button" onClick={onClick} className={css.readMoreLink}>
+            <Focusable as="span" onClick={onClick} className={css.readMoreLink}>
               <FlexStack alignItems="center" space="xxxsmall">
-                <span>Read more</span>
+                <span>Learn more</span>
                 <Icon glyph={Icon.ICONS.EXTERNAL_LINK} size="small" />
               </FlexStack>
-            </Button>
+            </Focusable>
           </div>
         )}
       </Stack>
@@ -49,6 +57,7 @@ export interface MetricRunInfoProps {
   showDelta?: boolean;
   showMetricDescription?: boolean;
   showBaseline?: boolean;
+  titleWrapper?: ElementType;
   size?: RunInfoProps['size'];
   loading?: RunInfoProps['loading'];
 }
@@ -61,6 +70,7 @@ export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'
     showDelta = true,
     showMetricDescription = true,
     showBaseline = true,
+    titleWrapper: CustomTitleWrapper = React.Fragment,
     ...restProps
   } = props;
 
@@ -77,6 +87,11 @@ export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'
     return null;
   }, [showMetricDescription, metric]);
 
+  const title = useMemo(
+    () => <CustomTitleWrapper>{metric.label}</CustomTitleWrapper>,
+    [CustomTitleWrapper, metric.label],
+  );
+
   const deltaProps = useMemo(() => {
     if (!showDelta || metric.skipDelta || !('delta' in metricRunInfo)) {
       return {};
@@ -90,7 +105,7 @@ export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'
 
   return (
     <RunInfo
-      title={metric.label}
+      title={title}
       titleHoverCard={titleHoverCard}
       enhance
       current={metricRunInfo.displayValue}
