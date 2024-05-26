@@ -25,6 +25,7 @@
 
 .tileGroupTitle {
   width: 100%;
+  cursor: default;
 }
 
 .tileGroupTitleContent {
@@ -230,6 +231,10 @@
 .tile:hover::before {
   transition: var(--ui-transition-in);
   opacity: 0.4;
+}
+
+.tile:hover .tileContentLabel {
+  text-decoration: underline;
 }
 
 .tile-NO_CHANGE {
