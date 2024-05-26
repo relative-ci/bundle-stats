@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { type MouseEvent, useCallback, useMemo } from 'react';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
 import { Focusable } from 'ariakit/focusable';
 
@@ -15,14 +15,20 @@ interface MetricInfoProps {
 }
 
 const MetricHoverCard = ({ title, description, url }: MetricInfoProps) => {
-  // The component parent can be rendered inside a link, use button to avoid using nested links
-  const onClick = useCallback(() => {
-    if (!url) {
-      return;
-    }
+  // The component parent can be rendered inside a link or a button
+  // use a focusable element with onClick to prevent DOM issues (a > button, a > a, etc)
+  const onClick = useCallback(
+    (event: MouseEvent<HTMLSpanElement>) => {
+      if (!url) {
+        return;
+      }
 
-    window.open(url);
-  }, [url]);
+      event.preventDefault();
+      event.stopPropagation();
+      window.open(url);
+    },
+    [url],
+  );
 
   return (
     <Stack space="xxsmall" className={css.metricHoverCard}>
@@ -33,7 +39,7 @@ const MetricHoverCard = ({ title, description, url }: MetricInfoProps) => {
           <div>
             <Focusable as="span" onClick={onClick} className={css.readMoreLink}>
               <FlexStack alignItems="center" space="xxxsmall">
-                <span>Read more</span>
+                <span>Learn more</span>
                 <Icon glyph={Icon.ICONS.EXTERNAL_LINK} size="small" />
               </FlexStack>
             </Focusable>
