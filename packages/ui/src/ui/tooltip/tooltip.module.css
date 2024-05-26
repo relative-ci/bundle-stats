@@ -11,15 +11,16 @@
 }
 
 .tooltip {
+  z-index: var(--layer-xxhigh);
   padding: var(--space-xxxsmall) var(--space-xxsmall);
   border-radius: var(--radius-small);
   background: var(--color-light);
-  max-width: 24em;
+  max-width: 28em;
   color: var(--color-text);
+  font-size: var(--size-xsmall);
+  text-align: center;
   filter: drop-shadow(var(--shadow-layer));
   will-change: filter;
-  font-size: var(--size-xsmall);
-  z-index: var(--layer-xxhigh);
 }
 
 .arrow svg {
