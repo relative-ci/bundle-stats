@@ -51,9 +51,9 @@
     "lodash": "^4.17.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.24.6",
-    "@babel/core": "7.24.6",
-    "@babel/preset-env": "7.24.6",
+    "@babel/cli": "7.24.7",
+    "@babel/core": "7.24.7",
+    "@babel/preset-env": "7.24.7",
     "@types/jest": "29.5.12",
     "jest": "29.7.0",
     "jest-date-mock": "1.0.10",
