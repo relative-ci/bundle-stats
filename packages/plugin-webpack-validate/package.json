@@ -44,7 +44,7 @@
     "jest-date-mock": "1.0.10",
     "regenerator-runtime": "0.14.1",
     "rimraf": "5.0.7",
-    "ts-jest": "29.1.4",
+    "ts-jest": "29.1.5",
     "typescript": "5.1.6"
   },
   "dependencies": {
