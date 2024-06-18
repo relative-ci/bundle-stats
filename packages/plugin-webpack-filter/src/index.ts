@@ -1,6 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { StatsCompilation } from 'webpack';
 
+import { normalizeModuleName } from './utils/normalize-module-name';
+
 const PATH_IGNORE_PATTERN = '.map$';
 
 interface BundleStatsOptions {
@@ -113,7 +115,7 @@ export default (
           }
 
           aggConcatenatedModules.push({
-            name: concatenatedModule.name,
+            name: normalizeModuleName(concatenatedModule.name),
             size: concatenatedModule.size,
           });
 
@@ -123,7 +125,7 @@ export default (
       );
 
       agg.push({
-        name: moduleStats.name,
+        name: normalizeModuleName(moduleStats.name),
         size: moduleStats.size,
         chunks: moduleChunks,
         ...(concatenatedModules && { modules: concatenatedModules }),
