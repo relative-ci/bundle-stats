@@ -6,4 +6,6 @@
   word-break: break-word;
   hyphens: auto;
   white-space: normal;
+  max-height: calc(2em * var(--line-height));
+  overflow: hidden;
 }
