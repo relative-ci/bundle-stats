@@ -54,19 +54,29 @@ See [bundle-stats-webpack-plugin options](https://github.com/relative-ci/bundle-
 
 ```js
 // In your next.config.js
-const withBundleStats = require('next-plugin-bundle-stats');
+const createBundleStatsPlugin = require('next-plugin-bundle-stats');
 
-module.exports = withBundleStats();
+const withBundleStatsPlugin = createBundleStatsPlugin();
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+
+module.exports = withBundleStatsPlugin(nextConfig);
 ```
 
 or with custom options:
 ```js
 // In your next.config.js
-const withBundleStats = require('next-plugin-bundle-stats');
+const createBundleStatsPlugin = require('next-plugin-bundle-stats');
 
-module.exports = withBundleStats({
+const withBundleStatsPlugin = createBundleStatsPlugin({
   outDir: '../artifacts'
 });
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+
+module.exports = withBundleStatsPlugin(nextConfig);
 ```
 
 ## Other packages
