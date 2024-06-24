@@ -245,7 +245,7 @@ interface UseTooltipStateWithMouseFollowOptions {
  * Ariakit tooltip state hook with mouse follow functionality
  */
 export function useTooltipStateWithMouseFollow(options: UseTooltipStateWithMouseFollowOptions) {
-  const { parentRef, gutter = 16, timeout = 180 } = options;
+  const { parentRef, gutter = 16, timeout = 240 } = options;
 
   const pointer = useMouseHovered(parentRef, { whenHovered: true });
 

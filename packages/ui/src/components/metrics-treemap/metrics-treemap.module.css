@@ -54,18 +54,18 @@
 }
 
 .tileGroupTitle {
-  transition: var(--ui-transition-out);
+  transition: var(--transition-out);
 }
 
 .tileGroupTitle:hover .tileGroupTitleText {
   text-decoration: underline;
-  transition: var(--ui-transition-in);
+  transition: var(--transition-in);
 }
 
 /** Tile group size variation */
 .tileGroup {
-  transition: var(--ui-transition-in);
-  transition-property: left, top, width, height;
+  transition: var(--transition-out);
+  transition-property: background-color, outline;
 }
 
 .tileGroup--minimal .tileGroupTitle,
@@ -81,13 +81,15 @@
 /** Tile group nested variation */
 .nested .tileGroup {
   background-color: rgba(27, 26, 33, 0.03);
-  outline: 1px solid rgba(255, 255, 255, 0.6);
+  outline: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 .nested .tileGroup:has(> .tileGroupTitle:hover),
 .nested .tileGroup:has(> .tile:hover) {
   background-color: rgba(27, 26, 33, 0.06);
   outline: 1px solid rgba(255, 255, 255, 1);
+  transition: var(--transition-in);
+  transition-property: background-color, outline;
 }
 
 .nested .tileGroup--NEGATIVE {
@@ -137,7 +139,8 @@
   font-size: var(--size-small);
   line-height: var(--line-height-heading);
   text-align: left;
-  transition: var(--ui-transition-out);
+  transition: var(--transition-out);
+  transition-property: opacity, background-color;
 }
 
 .tile::before {
@@ -209,27 +212,22 @@
   margin-top: 0;
 }
 
-.tileSizeDefault {
-  transition: var(--ui-transition-in);
-  transition-property: left, top, width, height;
-}
-
 /** Tile diff variation */
 .tile {
   outline: 1px solid rgba(255, 255, 255, 1);
   color: var(--color-text);
-  transition: var(--ui-transition-out);
 }
 
 .tile::before {
   color: var(--color-highlight);
-  transition: var(--ui-transition-out);
+  transition: var(--transition-out);
   transition-property: opacity;
   opacity: 0.6;
 }
 
 .tile:hover::before {
-  transition: var(--ui-transition-in);
+  transition: var(--transition-in);
+  transition-property: opacity;
   opacity: 0.4;
 }
 
