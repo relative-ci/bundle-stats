@@ -1,6 +1,6 @@
 import { type RefObject, useCallback } from 'react';
 import { useDebounce, useMouseHovered } from 'react-use';
-import { useTooltipState } from 'ariakit/tooltip';
+import { useTooltipStore } from '@ariakit/react';
 import {
   DeltaType,
   type MetricRunInfoBaseline,
@@ -232,10 +232,6 @@ interface UseTooltipStateWithMouseFollowOptions {
    */
   parentRef: RefObject<Element>;
   /**
-   * Tooltip gutter
-   */
-  gutter?: number;
-  /**
    * Tooltip timeout
    */
   timeout?: number;
@@ -245,7 +241,7 @@ interface UseTooltipStateWithMouseFollowOptions {
  * Ariakit tooltip state hook with mouse follow functionality
  */
 export function useTooltipStateWithMouseFollow(options: UseTooltipStateWithMouseFollowOptions) {
-  const { parentRef, gutter = 16, timeout = 240 } = options;
+  const { parentRef, timeout = 240 } = options;
 
   const pointer = useMouseHovered(parentRef, { whenHovered: true });
 
@@ -266,10 +262,10 @@ export function useTooltipStateWithMouseFollow(options: UseTooltipStateWithMouse
     return newRect;
   }, [pointer.docX, pointer.docY]);
 
-  const tooltipState = useTooltipState({ gutter, getAnchorRect, timeout });
+  const tooltip = useTooltipStore({ placement: 'top', timeout });
 
   // Update tooltip position when pointer values change
-  useDebounce(tooltipState.render, 10, [pointer.docX, pointer.docY]);
+  useDebounce(tooltip.render, 10, [pointer.docX, pointer.docY]);
 
-  return tooltipState;
+  return { tooltip, getAnchorRect };
 }
