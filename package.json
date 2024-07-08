@@ -43,7 +43,7 @@
     "lerna": "8.1.5",
     "lint-staged": "15.2.7",
     "prettier": "3.3.2",
-    "rimraf": "5.0.7",
+    "rimraf": "5.0.8",
     "react-is": "^16.13.1",
     "typescript": "5.1.6",
     "verdaccio": "^5.26.2"
