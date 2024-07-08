@@ -49,6 +49,6 @@
   },
   "dependencies": {
     "lodash": "4.17.21",
-    "superstruct": "1.0.4"
+    "superstruct": "2.0.2"
   }
 }
