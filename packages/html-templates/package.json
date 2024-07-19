@@ -60,7 +60,7 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-router-dom": "5.3.4",
-    "rimraf": "5.0.8",
+    "rimraf": "6.0.1",
     "stats-webpack-plugin": "0.7.0",
     "storybook": "7.6.17",
     "webpack": "5.93.0",
