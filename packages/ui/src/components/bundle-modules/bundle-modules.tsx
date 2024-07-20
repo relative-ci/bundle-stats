@@ -286,12 +286,12 @@ export const BundleModules = (props: BundleModulesProps) => {
             <ControlGroup as="nav">
               <Button
                 outline
-                active={moduleMetric === ModuleMetric.SIZE}
+                active={moduleMetric === ModuleMetric.TOTAL_SIZE}
                 size="small"
                 type="button"
-                onClick={() => setModuleMetric(ModuleMetric.SIZE)}
+                onClick={() => setModuleMetric(ModuleMetric.TOTAL_SIZE)}
               >
-                <Tooltip title="Module size (excluding duplicate modules)">Module size</Tooltip>
+                <Tooltip title="Module total size (including duplicate modules)">Module total size</Tooltip>
               </Button>
               <Button
                 outline
@@ -304,12 +304,12 @@ export const BundleModules = (props: BundleModulesProps) => {
               </Button>
               <Button
                 outline
-                active={moduleMetric === ModuleMetric.TOTAL_SIZE}
+                active={moduleMetric === ModuleMetric.SIZE}
                 size="small"
                 type="button"
-                onClick={() => setModuleMetric(ModuleMetric.TOTAL_SIZE)}
+                onClick={() => setModuleMetric(ModuleMetric.SIZE)}
               >
-                <Tooltip title="Module total size (including duplicate modules)">Module total size</Tooltip>
+                <Tooltip title="Module size (excluding duplicate modules)">Module size</Tooltip>
               </Button>
             </ControlGroup>
           </Box>
