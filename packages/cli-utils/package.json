@@ -55,6 +55,6 @@
     "memfs": "4.9.3",
     "rimraf": "6.0.1",
     "ts-jest": "29.2.3",
-    "typescript": "5.1.6"
+    "typescript": "5.5.3"
   }
 }
