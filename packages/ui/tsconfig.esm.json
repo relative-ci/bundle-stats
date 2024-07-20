@@ -3,11 +3,11 @@
   "compilerOptions": {
     "jsx": "react",
     "resolveJsonModule": true,
+    "moduleResolution": "bundler",
     "target": "ES2019",
     "module": "ES6",
     "declaration": true,
     "declarationDir": "./types",
     "noEmit": false
-  },
-  "exclude": ["**/__tests__/*", "**/*.stories.*"]
+  }
 }
