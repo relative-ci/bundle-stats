@@ -33,6 +33,7 @@
     "@bundle-stats/ui": "^4.13.3",
     "@bundle-stats/utils": "^4.13.3",
     "@storybook/addon-essentials": "8.2.4",
+    "@storybook/addon-webpack5-compiler-babel": "3.0.3",
     "@storybook/react": "8.2.4",
     "@storybook/react-webpack5": "8.2.4",
     "autoprefixer": "10.4.19",
