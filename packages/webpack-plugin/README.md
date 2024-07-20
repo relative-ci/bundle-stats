@@ -76,18 +76,43 @@ module.exports = {
 - `stats` - [Webpack stats](https://webpack.js.org/configuration/stats) options
   default:
   ```js
-  {
+  // webpack.config.js
+  module.exports = {
+    // ...
     stats: {
       assets: true,
       chunks: true,
       modules: true,
       builtAt: true,
-      hash: true
-    }
-  }
+      hash: true,
+    },
+  };
   ```
 
 [How to configure webpack for better debugging and monitoring](https://relative-ci.com/documentation/guides/webpack-config)
+
+#### How to exclude virtual modules
+
+Some plugins use virtual modules as an intermediary step when generating JS modules. For example, [vanilla-extract](https://github.com/vanilla-extract-css/vanilla-extract) creates a virtual module for every `.css.js`/`css.ts` file based on the loader module path and the filename/source as query parameters:
+
+```
+./node_modules/@vanilla-extract/webpack-plugin/vanilla.virtual.css?%7B%22fileName%22%3A%22src%2Fcomponents%2Fcomponent%2Fcomponent.css.ts.vanilla.css%22%2C%22source%22%3A%22...%22%7D
+```
+
+Inlining the encoded source and the filename causes an increase in the size of the output stats and adds unnecessary entries to the stats. To ignore vanilla-extract virtual modules from the stats and from the bundle analysis report, use [`excludeModules`](https://webpack.js.org/configuration/stats/#statsexcludemodules) option:
+
+
+```js
+// webpack.config.js
+module.exports = {
+  // ...
+  stats: {
+    excludeModules: [
+      /@vanilla-extract\/webpack-plugin\/vanilla-virtual\.css/,
+    ],
+  },
+};
+```
 
 ### Use with create-react-app
 
