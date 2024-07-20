@@ -7,8 +7,16 @@ function getAbsolutePath(value) {
 module.exports = {
   framework: getAbsolutePath('@storybook/react-webpack5'),
   stories: ['../../src/**/*.stories.@(jsx|tsx|mdx)'],
-  addons: [getAbsolutePath('@storybook/addon-essentials')],
+  addons: [
+    getAbsolutePath('@storybook/addon-essentials'),
+    getAbsolutePath('@storybook/addon-webpack5-compiler-babel'),
+  ],
+
   docs: {
     autodocs: true,
+  },
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
   },
 };
