@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/utils",
-  "version": "4.13.3",
+  "version": "4.13.4",
   "description": "BundleStats utils",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
@@ -35,8 +35,8 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/utils#readme",
   "dependencies": {
-    "@bundle-stats/plugin-webpack-filter": "^4.13.3",
-    "@bundle-stats/plugin-webpack-validate": "^4.13.3",
+    "@bundle-stats/plugin-webpack-filter": "^4.13.4",
+    "@bundle-stats/plugin-webpack-validate": "^4.13.4",
     "serialize-query-params": "2.0.2"
   },
   "devDependencies": {
