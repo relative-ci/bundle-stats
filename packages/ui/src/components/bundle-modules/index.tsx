@@ -18,6 +18,7 @@ import {
 } from './bundle-modules.utils';
 import { ModuleMetric } from './bundle-modules.constants';
 import * as types from './bundle-modules.types';
+import { ModuleInfo } from '../module-info';
 
 interface UseMetricParams {
   metric?: string;
@@ -98,8 +99,10 @@ export const BundleModules = (props: BundleModulesProps) => {
     let result: Array<types.ReportMetricModuleRow> = [];
 
     if (moduleMetric === ModuleMetric.TOTAL_SIZE) {
+      result = webpack.compareModuleTotalSize(jobs, [addRowFlags]);
+    } else if (moduleMetric === ModuleMetric.DUPLICATE_SIZE) {
       result = webpack.compareModuleDuplicateSize(jobs, [addRowFlags]);
-    } else if (moduleMetric === ModuleMetric.SIZE) {
+    } else {
       result = webpack.compareBySection.modules(jobs, [addRowFlags]);
     }
 

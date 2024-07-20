@@ -291,7 +291,16 @@ export const BundleModules = (props: BundleModulesProps) => {
                 type="button"
                 onClick={() => setModuleMetric(ModuleMetric.SIZE)}
               >
-                <Tooltip title="Size (excluding duplicate modules)">Module size</Tooltip>
+                <Tooltip title="Module size (excluding duplicate modules)">Module size</Tooltip>
+              </Button>
+              <Button
+                outline
+                active={moduleMetric === ModuleMetric.DUPLICATE_SIZE}
+                size="small"
+                type="button"
+                onClick={() => setModuleMetric(ModuleMetric.DUPLICATE_SIZE)}
+              >
+                <Tooltip title="Module duplicate size">Module duplicate size</Tooltip>
               </Button>
               <Button
                 outline
@@ -300,7 +309,7 @@ export const BundleModules = (props: BundleModulesProps) => {
                 type="button"
                 onClick={() => setModuleMetric(ModuleMetric.TOTAL_SIZE)}
               >
-                <Tooltip title="Size (including duplicate modules)">Module total size</Tooltip>
+                <Tooltip title="Module total size (including duplicate modules)">Module total size</Tooltip>
               </Button>
             </ControlGroup>
           </Box>
