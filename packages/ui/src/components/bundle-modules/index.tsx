@@ -95,14 +95,16 @@ export const BundleModules = (props: BundleModulesProps) => {
   });
 
   const { rows, totalRowCount } = useMemo(() => {
-    let result;
+    let result: Array<types.ReportMetricModuleRow> = [];
+
     if (moduleMetric === ModuleMetric.TOTAL_SIZE) {
       result = webpack.compareModuleDuplicateSize(jobs, [addRowFlags]);
     } else if (moduleMetric === ModuleMetric.SIZE) {
       result = webpack.compareBySection.modules(jobs, [addRowFlags]);
     }
+
     return {
-      rows: result as Array<types.ReportMetricModuleRow>,
+      rows: result,
       totalRowCount: result.length,
     };
   }, [jobs, moduleMetric]);

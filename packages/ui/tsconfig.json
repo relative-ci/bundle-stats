@@ -1,8 +1,9 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["src/**/*", "globals.d.ts"],
   "plugins": [{"name": "typescript-plugin-css-modules"}],
   "compilerOptions": {
     "jsx": "react"
-  }
+  },
+  "include": ["src/**/*", "globals.d.ts"],
+  "exclude": ["**/__tests__/*", "**/*.stories.*"]
 }

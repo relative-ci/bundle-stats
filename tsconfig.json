@@ -1,7 +1,6 @@
 {
   "extends": "@tsconfig/node14/tsconfig.json",
   "compilerOptions": {
-    "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
     "removeComments": true,
