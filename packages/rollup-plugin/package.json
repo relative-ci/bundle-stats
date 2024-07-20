@@ -57,7 +57,7 @@
     "memfs": "4.9.3",
     "regenerator-runtime": "0.14.1",
     "rimraf": "6.0.1",
-    "rollup": "4.18.1",
+    "rollup": "4.19.0",
     "ts-jest": "29.2.3",
     "typescript": "5.5.3"
   },
