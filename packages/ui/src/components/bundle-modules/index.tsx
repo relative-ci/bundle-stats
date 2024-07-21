@@ -31,7 +31,8 @@ function useModuleMetric(params: UseMetricParams): [ModuleMetric, (value: Module
     if (Object.values(ModuleMetric).includes(metric as ModuleMetric)) {
       return metric as ModuleMetric;
     }
-    return ModuleMetric.SIZE;
+
+    return ModuleMetric.TOTAL_SIZE;
   }, [metric]);
 
   const setModuleMetric = useCallback(
@@ -97,10 +98,12 @@ export const BundleModules = (props: BundleModulesProps) => {
   const { rows, totalRowCount } = useMemo(() => {
     let result: Array<types.ReportMetricModuleRow> = [];
 
-    if (moduleMetric === ModuleMetric.TOTAL_SIZE) {
-      result = webpack.compareModuleDuplicateSize(jobs, [addRowFlags]);
-    } else if (moduleMetric === ModuleMetric.SIZE) {
+    if (moduleMetric === ModuleMetric.SIZE) {
       result = webpack.compareBySection.modules(jobs, [addRowFlags]);
+    } else if (moduleMetric === ModuleMetric.DUPLICATE_SIZE) {
+      result = webpack.compareModuleDuplicateSize(jobs, [addRowFlags]);
+    } else {
+      result = webpack.compareModuleTotalSize(jobs, [addRowFlags]);
     }
 
     return {
