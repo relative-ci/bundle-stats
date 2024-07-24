@@ -1,3 +1,4 @@
+import type { ElementType } from 'react';
 import React from 'react';
 import cx from 'classnames';
 import { Portal } from 'ariakit/portal';
@@ -14,7 +15,7 @@ import * as I18N from './entry-info.i18n';
 import css from './entry-info.module.css';
 
 interface EntryInfoMetaLinkProps {
-  as?: React.ElementType;
+  as?: ElementType;
 }
 
 export const EntryInfoMetaLink = (props: EntryInfoMetaLinkProps & React.ComponentProps<'a'>) => {
@@ -31,10 +32,10 @@ const EntryInfoMeta = ({
   label,
   children,
 }: EntryInfoMetaProps & React.ComponentProps<'p'>) => (
-  <p className={cx(css.meta, className)}>
+  <div className={cx(css.meta, className)}>
     <span className={css.metaLabel}>{label}</span>
-    <span className={css.metaContent}>{children}</span>
-  </p>
+    <div className={css.metaContent}>{children}</div>
+  </div>
 );
 
 interface EntryRun {

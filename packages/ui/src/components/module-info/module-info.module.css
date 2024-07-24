@@ -1,3 +1,37 @@
 .chunksItems {
   display: inline;
 }
+
+.chunksItem-info {
+  color: var(--color-info);
+}
+
+.chunksItem-info:hover,
+.chunksItem-info:active,
+.chunksItem-info:focus {
+  color: var(--color-info-dark);
+}
+
+.chunksItem-danger {
+  color: var(--color-danger);
+}
+
+.chunksItem-danger:hover,
+.chunksItem-danger:active,
+.chunksItem-danger:focus {
+  color: var(--color-danger-dark);
+}
+
+.chunksItem-default {
+  color: var(--color-text-light);
+}
+
+.chunksItem-default:hover,
+.chunksItem-default:active,
+.chunksItem-default:focus {
+  color: var(--color-text);
+}
+
+.duplicateInstances {
+  padding: 4px 0; /* compensate for the Entry Label padding */
+}

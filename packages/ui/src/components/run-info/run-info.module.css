@@ -19,7 +19,7 @@
   margin-bottom: -3px !important;
 }
 
-.info {
+.title + .info {
   margin-top: var(--space-xxsmall);
 }
 
