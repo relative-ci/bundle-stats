@@ -86,7 +86,7 @@ export const PackageInfo = (props: PackageInfoProps & React.ComponentProps<'div'
       onClose={onClose}
       className={className}
     >
-      <EntryInfo.Meta label="Path">
+      <EntryInfo.Meta label="Path" tooltip="Package path">
         <FileName name={normalizedPackagePath} className={css.fileName} />
       </EntryInfo.Meta>
 

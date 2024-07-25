@@ -77,17 +77,21 @@
   font-family: var(--font-family-fixed);
 }
 
-.meta {
-  display: flex;
-  align-items: flex-start;
-}
+/**
+ * Meta element
+ */
+.meta {}
 
 .metaLabel {
-  padding: 2px 0;
   margin-right: var(--space-xxxsmall);
   min-width: 8em;
   flex: 0 1 6em;
   color: var(--color-text-light);
+}
+
+.metaLabelTooltip {
+  margin-left: var(--space-xxxsmall);
+  color: var(--color-text-ultra-light);
 }
 
 .metaContent {
@@ -98,6 +102,7 @@
 .metaLink {
   padding: 1px var(--space-xxxsmall);
   display: inline-block;
+  line-height: var(--line-height-heading);
   border-radius: var(--radius-small);
   background: var(--color-highlight);
   transition: var(--transition-out);
@@ -120,4 +125,11 @@
 .metaLink:focus {
   background: var(--color-outline);
   color: var(--color-primary-dark);
+}
+
+@media (min-width: 640px) {
+  .meta {
+    display: flex;
+    align-items: flex-start;
+  }
 }

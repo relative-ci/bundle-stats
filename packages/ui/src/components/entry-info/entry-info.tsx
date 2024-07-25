@@ -1,4 +1,4 @@
-import type { ElementType } from 'react';
+import type { ElementType, ReactNode } from 'react';
 import React from 'react';
 import cx from 'classnames';
 import { Portal } from 'ariakit/portal';
@@ -13,6 +13,7 @@ import { Table } from '../../ui/table';
 import { RunInfo } from '../run-info';
 import * as I18N from './entry-info.i18n';
 import css from './entry-info.module.css';
+import { Tooltip } from '../../ui';
 
 interface EntryInfoMetaLinkProps {
   as?: ElementType;
@@ -25,15 +26,24 @@ export const EntryInfoMetaLink = (props: EntryInfoMetaLinkProps & React.Componen
 
 interface EntryInfoMetaProps {
   label: string;
+  tooltip?: ReactNode;
 }
 
 const EntryInfoMeta = ({
   className = '',
   label,
+  tooltip,
   children,
 }: EntryInfoMetaProps & React.ComponentProps<'p'>) => (
   <div className={cx(css.meta, className)}>
-    <span className={css.metaLabel}>{label}</span>
+    <span className={css.metaLabel}>
+      {label}
+      {tooltip && (
+        <Tooltip title={tooltip} className={css.metaLabelTooltip}>
+          <Icon glyph="help" />
+        </Tooltip>
+      )}
+    </span>
     <div className={css.metaContent}>{children}</div>
   </div>
 );

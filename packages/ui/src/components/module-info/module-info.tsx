@@ -190,7 +190,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
     <EntryInfo item={item} labels={labels} tags={tags} onClose={onClose} className={rootClassName}>
       <Stack space="xxxsmall">
         {item?.fileType && (
-          <EntryInfo.Meta label="File type">
+          <EntryInfo.Meta label="File type" tooltip="Module file type: JS, CSS">
             <EntryInfoMetaLink
               as={CustomComponentLink}
               {...getBundleModulesByFileTpe(item.fileType, fileTypeLabel)}
@@ -200,7 +200,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
           </EntryInfo.Meta>
         )}
 
-        <EntryInfo.Meta label="Source">
+        <EntryInfo.Meta label="Source" tooltip="Module source type: first party, third party">
           <EntryInfoMetaLink
             as={CustomComponentLink}
             {...getBundleModulesBySource(item.thirdParty || false, sourceTypeLabel)}
@@ -211,7 +211,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
         </EntryInfo.Meta>
 
         {hasDuplicates && (
-          <EntryInfo.Meta label="Duplicates">
+          <EntryInfo.Meta label="Duplicates" tooltip="Module duplicate instances">
             <DuplicateInstances
               current={currentDuplicateInstances}
               baseline={baselineDuplicateInstances}
@@ -219,7 +219,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
           </EntryInfo.Meta>
         )}
 
-        <EntryInfo.Meta label="Chunks">
+        <EntryInfo.Meta label="Chunks" tooltip="Chunks that contain the module">
           <ChunksDelta
             runs={item.runs}
             chunks={chunks}
