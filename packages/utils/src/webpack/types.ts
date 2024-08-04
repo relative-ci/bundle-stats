@@ -48,12 +48,21 @@ export interface MetricsAssets {
   };
 }
 
+/**
+ * Metric run data for a module entry
+ */
 export interface Module extends MetricRun {
+  /* Module name */
   name: string;
+  /* Array of chunk IDs */
   chunkIds: Array<string>;
+  /* Flag to identify if the module is duplicated on the current job */
   duplicated?: boolean;
 }
 
+/**
+ * Collection of module metrics
+ */
 export type Modules = Record<string, Module>;
 
 export interface MetricsModules {

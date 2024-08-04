@@ -1,7 +1,9 @@
+import type { ElementType, ReactNode } from 'react';
 import React from 'react';
 import cx from 'classnames';
 import { Portal } from 'ariakit/portal';
-import { METRIC_TYPE_CONFIGS, MetricRunInfo, getMetricRunInfo } from '@bundle-stats/utils';
+import type { MetricRunInfo, ReportMetricRow } from '@bundle-stats/utils';
+import { METRIC_TYPE_CONFIGS, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { Box } from '../../layout/box';
 import { Stack } from '../../layout/stack';
@@ -12,9 +14,10 @@ import { Table } from '../../ui/table';
 import { RunInfo } from '../run-info';
 import * as I18N from './entry-info.i18n';
 import css from './entry-info.module.css';
+import { Tooltip } from '../../ui';
 
 interface EntryInfoMetaLinkProps {
-  as?: React.ElementType;
+  as?: ElementType;
 }
 
 export const EntryInfoMetaLink = (props: EntryInfoMetaLinkProps & React.ComponentProps<'a'>) => {
@@ -24,34 +27,60 @@ export const EntryInfoMetaLink = (props: EntryInfoMetaLinkProps & React.Componen
 
 interface EntryInfoMetaProps {
   label: string;
+  tooltip?: ReactNode;
 }
 
 const EntryInfoMeta = ({
   className = '',
   label,
+  tooltip,
   children,
 }: EntryInfoMetaProps & React.ComponentProps<'p'>) => (
-  <p className={cx(css.meta, className)}>
-    <span className={css.metaLabel}>{label}</span>
-    <span className={css.metaContent}>{children}</span>
-  </p>
+  <div className={cx(css.meta, className)}>
+    <span className={css.metaLabel}>
+      {label}
+      {tooltip && (
+        <Tooltip title={tooltip} className={css.metaLabelTooltip}>
+          <Icon glyph="help" />
+        </Tooltip>
+      )}
+    </span>
+    <div className={css.metaContent}>{children}</div>
+  </div>
 );
 
-interface EntryRun {
-  name: string;
+function defaultRenderRunInfo(item: ReportMetricRow) {
+  const baselineRun = item.runs.length > 1 ? item.runs?.[item.runs.length - 1] : null;
+
+  // Get the metric run info to handle added/removed cases when there are more than 2 jobs
+  const metricRunInfo = getMetricRunInfo(
+    METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE,
+    item.runs?.[0]?.value || 0,
+    baselineRun?.value || 0,
+  ) as MetricRunInfo;
+
+  return (
+    <RunInfo
+      current={metricRunInfo.displayValue}
+      delta={metricRunInfo.displayDeltaPercentage}
+      deltaPercentage={metricRunInfo.displayDelta}
+      deltaType={metricRunInfo.deltaType}
+      baseline={baselineRun?.displayValue || '0B'}
+      size="large"
+    />
+  );
 }
 
 interface EntryInfoProps {
   itemTitle?: React.ReactNode;
-  item: {
-    label: string;
-    runs: Array<EntryRun & MetricRunInfo>;
-  };
+  item: ReportMetricRow;
   labels: Array<string>;
   runNameSelector?: string;
   runNameLabel?: string;
+  runSizeLabel?: string;
   tags?: React.ReactNode;
   onClose: () => void;
+  renderRunInfo?: (item: ReportMetricRow) => React.ReactNode;
 }
 
 export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) => {
@@ -62,38 +91,22 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
     labels,
     runNameSelector = 'name',
     runNameLabel = I18N.PATH,
+    runSizeLabel = I18N.SIZE,
     children,
     tags = null,
     onClose,
+    renderRunInfo = defaultRenderRunInfo,
   } = props;
-
-  const baselineRun = item.runs.length > 1 ? item.runs?.[item.runs.length - 1] : null;
-
-  // Get the metric run info to handle added/removed cases
-  const metricRunInfo = getMetricRunInfo(
-    METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE,
-    item.runs?.[0]?.value,
-    baselineRun?.value || 0,
-  ) as MetricRunInfo;
 
   return (
     <Portal className={cx(css.root, className)}>
       <Box padding="medium" as="header" className={css.header}>
         <Stack space="small">
-          {tags && <div>{tags}</div>}
-
           <h3 className={css.label}>
             <FileName as="code" name={itemTitle || item.label} className={css.fileName} />
           </h3>
 
-          <RunInfo
-            current={metricRunInfo.displayValue}
-            delta={metricRunInfo.displayDeltaPercentage}
-            deltaPercentage={metricRunInfo.displayDelta}
-            deltaType={metricRunInfo.deltaType}
-            baseline={baselineRun?.displayValue || '0B'}
-            size="large"
-          />
+          <div>{renderRunInfo(item)}</div>
         </Stack>
         <Button
           radius="circle"
@@ -107,6 +120,8 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
       </Box>
       <Box padding="medium" as="main" className={css.contentWrapper}>
         <Stack space="small" className={css.content}>
+          {tags && <div>{tags}</div>}
+
           {children}
 
           <Table outline compact className={css.runs}>
@@ -114,7 +129,7 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
               <Table.Tr>
                 <Table.Th className={cx(css.runsCell, css.runsColJob)}>&nbsp;</Table.Th>
                 <Table.Th className={cx(css.runsCell, css.runsColName)}>{runNameLabel}</Table.Th>
-                <Table.Th className={cx(css.runsCell, css.runsColSize)}>{I18N.SIZE}</Table.Th>
+                <Table.Th className={cx(css.runsCell, css.runsColSize)}>{runSizeLabel}</Table.Th>
               </Table.Tr>
             </Table.THead>
             <Table.TBody>

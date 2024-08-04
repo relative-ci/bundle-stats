@@ -71,40 +71,66 @@
 
 .runs .runsColSize {
   text-align: right;
+  white-space: nowrap;
 }
 
 .size {
   font-family: var(--font-family-fixed);
 }
 
+/**
+ * Meta element
+ */
+.meta {}
+
 .metaLabel {
-  padding: 2px 0;
-  display: inline-block;
   margin-right: var(--space-xxxsmall);
-  min-width: 6em;
+  min-width: 8em;
+  flex: 0 1 6em;
   color: var(--color-text-light);
 }
 
+.metaLabelTooltip {
+  margin-left: var(--space-xxxsmall);
+  color: var(--color-text-ultra-light);
+}
+
+.metaContent {
+  padding: 1px 0;
+  flex: 0 1 auto;
+}
+
 .metaLink {
-  padding: 2px var(--space-xxxsmall);
+  padding: 1px var(--space-xxxsmall);
+  display: inline-block;
+  line-height: var(--line-height-heading);
   border-radius: var(--radius-small);
   background: var(--color-highlight);
   transition: var(--transition-out);
 
-  overflow-wrap: break-word;
   text-decoration: none;
   text-transform: none;
   font-weight: normal;
+  max-width: 16em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-.metaLink + .metaLink {
-  margin-left: var(--space-xxsmall);
+.metaLink {
+  margin-right: var(--space-xxxsmall);
 }
 
 .metaLink:hover,
 .metaLink:active,
 .metaLink:focus {
-  transition: var(--transition-in);
   background: var(--color-outline);
   color: var(--color-primary-dark);
+}
+
+@media (min-width: 640px) {
+  .meta {
+    display: flex;
+    align-items: flex-start;
+  }
 }
