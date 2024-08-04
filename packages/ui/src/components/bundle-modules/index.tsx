@@ -3,6 +3,7 @@ import type { Job } from '@bundle-stats/utils';
 // @ts-ignore
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
+import { ModuleSizeMetric } from '../../constants';
 import type { ReportMetricModuleRow, SortAction } from '../../types';
 import { getJobsChunksData } from '../../utils/jobs';
 import { useRowsFilter } from '../../hooks/rows-filter';
@@ -16,26 +17,27 @@ import {
   generateFilters,
   getCustomSort,
 } from './bundle-modules.utils';
-import { ModuleMetric } from './bundle-modules.constants';
 
 interface UseMetricParams {
   metric?: string;
-  setState: ({ metric }: { metric: ModuleMetric }) => void;
+  setState: ({ metric }: { metric: ModuleSizeMetric }) => void;
 }
 
-function useModuleMetric(params: UseMetricParams): [ModuleMetric, (value: ModuleMetric) => void] {
+function useModuleMetric(
+  params: UseMetricParams,
+): [ModuleSizeMetric, (value: ModuleSizeMetric) => void] {
   const { metric, setState } = params;
 
-  const moduleMetric: ModuleMetric = useMemo(() => {
-    if (Object.values(ModuleMetric).includes(metric as ModuleMetric)) {
-      return metric as ModuleMetric;
+  const moduleMetric: ModuleSizeMetric = useMemo(() => {
+    if (Object.values(ModuleSizeMetric).includes(metric as ModuleSizeMetric)) {
+      return metric as ModuleSizeMetric;
     }
 
-    return ModuleMetric.TOTAL_SIZE;
+    return ModuleSizeMetric.TOTAL_SIZE;
   }, [metric]);
 
   const setModuleMetric = useCallback(
-    (newModuleMetric: ModuleMetric) => {
+    (newModuleMetric: ModuleSizeMetric) => {
       if (newModuleMetric !== metric) {
         setState({ metric: newModuleMetric });
       }
@@ -97,9 +99,9 @@ export const BundleModules = (props: BundleModulesProps) => {
   const { rows, totalRowCount } = useMemo(() => {
     let result: Array<ReportMetricModuleRow> = [];
 
-    if (moduleMetric === ModuleMetric.SIZE) {
+    if (moduleMetric === ModuleSizeMetric.SIZE) {
       result = webpack.compareBySection.modules(jobs, [addRowFlags]);
-    } else if (moduleMetric === ModuleMetric.DUPLICATE_SIZE) {
+    } else if (moduleMetric === ModuleSizeMetric.DUPLICATE_SIZE) {
       result = webpack.compareModuleDuplicateSize(jobs, [addRowFlags]);
     } else {
       result = webpack.compareModuleTotalSize(jobs, [addRowFlags]);

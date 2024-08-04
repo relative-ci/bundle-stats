@@ -25,6 +25,7 @@ import { RunInfo } from '../run-info';
 import { EntryInfo, EntryInfoMetaLink } from '../entry-info';
 import css from './module-info.module.css';
 import { FlexStack } from '../../layout';
+import { ModuleSizeMetric, ModuleSizeMetrics } from '../../constants';
 
 interface DuplicateInstancesProps {
   current: number;
@@ -136,18 +137,20 @@ const ChunksDelta = (props: ChunksDeltaProps) => {
 interface ModuleSizeRunInfoProps {
   metric: MetricTypeConfig;
   title: string;
+  titleTooltip?: string;
   current?: number;
   baseline?: number;
 }
 
 const ModuleSizeRunInfo = (props: ModuleSizeRunInfoProps) => {
-  const { metric, title, current, baseline } = props;
+  const { metric, title, titleTooltip, current, baseline } = props;
 
   const runInfo = getMetricRunInfo(metric, current || 0, baseline || 0) as MetricRunInfo;
 
   return (
     <RunInfo
       title={title}
+      titleTooltip={titleTooltip}
       current={runInfo.displayValue}
       delta={runInfo.displayDeltaPercentage}
       deltaPercentage={runInfo.displayDelta}
@@ -171,13 +174,15 @@ const renderRunInfo = (item: ReportMetricRow) => {
         <>
           <ModuleSizeRunInfo
             metric={metric}
-            title="Total size"
+            title={ModuleSizeMetrics[ModuleSizeMetric.TOTAL_SIZE].label}
+            titleTooltip={ModuleSizeMetrics[ModuleSizeMetric.TOTAL_SIZE].tooltip}
             current={currentRun.sizeTotal}
             baseline={baselineRun.sizeTotal}
           />
           <ModuleSizeRunInfo
             metric={metric}
-            title="Duplicate size"
+            title={ModuleSizeMetrics[ModuleSizeMetric.DUPLICATE_SIZE].label}
+            titleTooltip={ModuleSizeMetrics[ModuleSizeMetric.DUPLICATE_SIZE].tooltip}
             current={currentRun.sizeDuplicate}
             baseline={baselineRun.sizeDuplicate}
           />
@@ -185,7 +190,8 @@ const renderRunInfo = (item: ReportMetricRow) => {
       )}
       <ModuleSizeRunInfo
         metric={metric}
-        title="Module size"
+        title={ModuleSizeMetrics[ModuleSizeMetric.SIZE].label}
+        titleTooltip={ModuleSizeMetrics[ModuleSizeMetric.SIZE].tooltip}
         current={currentRun.size}
         baseline={baselineRun.size}
       />

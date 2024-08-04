@@ -45,3 +45,24 @@ export enum MetricsDisplayType {
   TABLE = 'table',
   TREEMAP = 'treemap',
 }
+
+export enum ModuleSizeMetric {
+  SIZE = 'value',
+  DUPLICATE_SIZE = 'duplicateSize',
+  TOTAL_SIZE = 'totalSize',
+}
+
+export const ModuleSizeMetrics = {
+  [ModuleSizeMetric.SIZE]: {
+    label: 'Size',
+    tooltip: 'Module size (excluding duplicate modules)',
+  },
+  [ModuleSizeMetric.TOTAL_SIZE]: {
+    label: 'Total size',
+    tooltip: 'Module total size (including duplicate modules)',
+  },
+  [ModuleSizeMetric.DUPLICATE_SIZE]: {
+    label: 'Duplicate size',
+    tooltip: 'Module duplicate size',
+  },
+};

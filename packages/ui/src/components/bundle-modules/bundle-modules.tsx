@@ -2,12 +2,12 @@ import React, { useCallback, useMemo } from 'react';
 import cx from 'classnames';
 import { SECTIONS, COMPONENT, type Job, ReportMetricRow } from '@bundle-stats/utils';
 import escapeRegExp from 'lodash/escapeRegExp';
-
 import { WebpackChunk } from '@bundle-stats/utils';
+
 import type { ReportMetricModuleRow, SortAction } from '../../types';
 import config from '../../config.json';
 import I18N from '../../i18n';
-import { MetricsDisplayType } from '../../constants';
+import { MetricsDisplayType, ModuleSizeMetric, ModuleSizeMetrics } from '../../constants';
 import { Box } from '../../layout/box';
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
@@ -30,7 +30,6 @@ import { MetricsDisplaySelector } from '../metrics-display-selector';
 import { MetricsTableTitle } from '../metrics-table-title';
 import { ModuleInfo } from '../module-info';
 import { generateFilterFieldsData } from './bundle-modules.utils';
-import { ModuleMetric, ModuleMetrics } from './bundle-modules.constants';
 import * as I18N_MODULES from './bundle-modules.i18n';
 import css from './bundle-modules.module.css';
 import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
@@ -168,8 +167,8 @@ interface BundleModulesProps extends React.ComponentProps<'div'> {
   hideEntryInfo: () => void;
   showEntryInfo: (entryId: string) => void;
 
-  moduleMetric: ModuleMetric;
-  setModuleMetric: (newValue: ModuleMetric) => void;
+  moduleMetric: ModuleSizeMetric;
+  setModuleMetric: (newValue: ModuleSizeMetric) => void;
 
   customComponentLink: React.ElementType;
 }
@@ -292,32 +291,36 @@ export const BundleModules = (props: BundleModulesProps) => {
             <ControlGroup as="nav">
               <Button
                 outline
-                active={moduleMetric === ModuleMetric.TOTAL_SIZE}
+                active={moduleMetric === ModuleSizeMetric.TOTAL_SIZE}
                 size="small"
                 type="button"
-                onClick={() => setModuleMetric(ModuleMetric.TOTAL_SIZE)}
+                onClick={() => setModuleMetric(ModuleSizeMetric.TOTAL_SIZE)}
               >
-                <Tooltip title="Module total size (including duplicate modules)">
-                  Module total size
+                <Tooltip title={ModuleSizeMetrics[ModuleSizeMetric.TOTAL_SIZE].tooltip}>
+                  {ModuleSizeMetrics[ModuleSizeMetric.TOTAL_SIZE].label}
                 </Tooltip>
               </Button>
               <Button
                 outline
-                active={moduleMetric === ModuleMetric.DUPLICATE_SIZE}
+                active={moduleMetric === ModuleSizeMetric.DUPLICATE_SIZE}
                 size="small"
                 type="button"
-                onClick={() => setModuleMetric(ModuleMetric.DUPLICATE_SIZE)}
+                onClick={() => setModuleMetric(ModuleSizeMetric.DUPLICATE_SIZE)}
               >
-                <Tooltip title="Module duplicate size">Module duplicate size</Tooltip>
+                <Tooltip title={ModuleSizeMetrics[ModuleSizeMetric.DUPLICATE_SIZE].tooltip}>
+                  {ModuleSizeMetrics[ModuleSizeMetric.DUPLICATE_SIZE].label}
+                </Tooltip>
               </Button>
               <Button
                 outline
-                active={moduleMetric === ModuleMetric.SIZE}
+                active={moduleMetric === ModuleSizeMetric.SIZE}
                 size="small"
                 type="button"
-                onClick={() => setModuleMetric(ModuleMetric.SIZE)}
+                onClick={() => setModuleMetric(ModuleSizeMetric.SIZE)}
               >
-                <Tooltip title="Module size (excluding duplicate modules)">Module size</Tooltip>
+                <Tooltip title={ModuleSizeMetrics[ModuleSizeMetric.SIZE].tooltip}>
+                  {ModuleSizeMetrics[ModuleSizeMetric.SIZE].label}
+                </Tooltip>
               </Button>
             </ControlGroup>
           </Box>
@@ -355,7 +358,7 @@ export const BundleModules = (props: BundleModulesProps) => {
           chunks={chunks}
           chunkIds={chunks?.map(({ id }) => id)}
           labels={jobLabels}
-          metricLabel={ModuleMetrics[moduleMetric].label}
+          metricLabel={ModuleSizeMetrics[moduleMetric].label}
           customComponentLink={CustomComponentLink}
           onClose={hideEntryInfo}
         />
