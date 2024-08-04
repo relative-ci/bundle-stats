@@ -102,8 +102,6 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
     <Portal className={cx(css.root, className)}>
       <Box padding="medium" as="header" className={css.header}>
         <Stack space="small">
-          {tags && <div>{tags}</div>}
-
           <h3 className={css.label}>
             <FileName as="code" name={itemTitle || item.label} className={css.fileName} />
           </h3>
@@ -122,6 +120,8 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
       </Box>
       <Box padding="medium" as="main" className={css.contentWrapper}>
         <Stack space="small" className={css.content}>
+          {tags && <div>{tags}</div>}
+
           {children}
 
           <Table outline compact className={css.runs}>
