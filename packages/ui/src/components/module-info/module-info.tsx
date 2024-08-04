@@ -3,12 +3,12 @@ import React, { useMemo } from 'react';
 import cx from 'classnames';
 import orderBy from 'lodash/orderBy';
 import noop from 'lodash/noop';
+import type { MetricRunInfo, MetricTypeConfig, ReportMetricRow } from '@bundle-stats/utils';
 import {
+  METRIC_TYPE_CONFIGS,
   BUNDLE_MODULES_DUPLICATE,
   FILE_TYPE_LABELS,
   MODULE_SOURCE_TYPE_LABELS,
-  MetricRunInfo,
-  ReportMetricRow,
   formatNumber,
   getBundleModulesByChunk,
   getBundleModulesByFileTpe,
@@ -24,6 +24,7 @@ import { ComponentLink } from '../component-link';
 import { RunInfo } from '../run-info';
 import { EntryInfo, EntryInfoMetaLink } from '../entry-info';
 import css from './module-info.module.css';
+import { FlexStack } from '../../layout';
 
 interface DuplicateInstancesProps {
   current: number;
@@ -132,6 +133,66 @@ const ChunksDelta = (props: ChunksDeltaProps) => {
   );
 };
 
+interface ModuleSizeRunInfoProps {
+  metric: MetricTypeConfig;
+  title: string;
+  current?: number;
+  baseline?: number;
+}
+
+const ModuleSizeRunInfo = (props: ModuleSizeRunInfoProps) => {
+  const { metric, title, current, baseline } = props;
+
+  const runInfo = getMetricRunInfo(metric, current || 0, baseline || 0) as MetricRunInfo;
+
+  return (
+    <RunInfo
+      title={title}
+      current={runInfo.displayValue}
+      delta={runInfo.displayDeltaPercentage}
+      deltaPercentage={runInfo.displayDelta}
+      deltaType={runInfo.deltaType}
+      baseline={metric.formatter(baseline || 0)}
+    />
+  );
+};
+
+const renderRunInfo = (item: ReportMetricRow) => {
+  const itemModule = item as ReportMetricModuleRow;
+
+  const currentRun = itemModule.runs[0];
+  const baselineRun =
+    itemModule.runs.length > 1 ? itemModule.runs[itemModule.runs.length - 1] : null;
+  const metric = METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE;
+
+  return (
+    <FlexStack space="small" className={css.moduleSizes}>
+      {itemModule.duplicated && (
+        <>
+          <ModuleSizeRunInfo
+            metric={metric}
+            title="Total size"
+            current={currentRun.sizeTotal}
+            baseline={baselineRun.sizeTotal}
+          />
+          <ModuleSizeRunInfo
+            metric={metric}
+            title="Duplicate size"
+            current={currentRun.sizeDuplicate}
+            baseline={baselineRun.sizeDuplicate}
+          />
+        </>
+      )}
+      <ModuleSizeRunInfo
+        metric={metric}
+        title="Module size"
+        current={currentRun.size}
+        baseline={baselineRun.size}
+      />
+    </FlexStack>
+  );
+};
+
 interface ModuleInfoProps {
   item: ReportMetricModuleRow;
   chunks?: Array<MetaChunk>;
@@ -187,6 +248,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
       labels={labels}
       tags={tags}
       onClose={onClose}
+      renderRunInfo={renderRunInfo}
       className={rootClassName}
     >
       <Stack space="xxxsmall">

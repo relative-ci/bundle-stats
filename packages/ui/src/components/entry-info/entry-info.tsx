@@ -49,6 +49,28 @@ const EntryInfoMeta = ({
   </div>
 );
 
+function defaultRenderRunInfo(item: ReportMetricRow) {
+  const baselineRun = item.runs.length > 1 ? item.runs?.[item.runs.length - 1] : null;
+
+  // Get the metric run info to handle added/removed cases when there are more than 2 jobs
+  const metricRunInfo = getMetricRunInfo(
+    METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE,
+    item.runs?.[0]?.value || 0,
+    baselineRun?.value || 0,
+  ) as MetricRunInfo;
+
+  return (
+    <RunInfo
+      current={metricRunInfo.displayValue}
+      delta={metricRunInfo.displayDeltaPercentage}
+      deltaPercentage={metricRunInfo.displayDelta}
+      deltaType={metricRunInfo.deltaType}
+      baseline={baselineRun?.displayValue || '0B'}
+      size="large"
+    />
+  );
+}
+
 interface EntryInfoProps {
   itemTitle?: React.ReactNode;
   item: ReportMetricRow;
@@ -57,6 +79,7 @@ interface EntryInfoProps {
   runNameLabel?: string;
   tags?: React.ReactNode;
   onClose: () => void;
+  renderRunInfo?: (item: ReportMetricRow) => React.ReactNode;
 }
 
 export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) => {
@@ -70,16 +93,8 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
     children,
     tags = null,
     onClose,
+    renderRunInfo = defaultRenderRunInfo,
   } = props;
-
-  const baselineRun = item.runs.length > 1 ? item.runs?.[item.runs.length - 1] : null;
-
-  // Get the metric run info to handle added/removed cases
-  const metricRunInfo = getMetricRunInfo(
-    METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE,
-    item.runs?.[0]?.value || 0,
-    baselineRun?.value || 0,
-  ) as MetricRunInfo;
 
   return (
     <Portal className={cx(css.root, className)}>
@@ -91,14 +106,7 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
             <FileName as="code" name={itemTitle || item.label} className={css.fileName} />
           </h3>
 
-          <RunInfo
-            current={metricRunInfo.displayValue}
-            delta={metricRunInfo.displayDeltaPercentage}
-            deltaPercentage={metricRunInfo.displayDelta}
-            deltaType={metricRunInfo.deltaType}
-            baseline={baselineRun?.displayValue || '0B'}
-            size="large"
-          />
+          <div>{renderRunInfo(item)}</div>
         </Stack>
         <Button
           radius="circle"

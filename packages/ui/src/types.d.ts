@@ -24,5 +24,7 @@ export type ReportMetricModuleRow = {
   duplicated: boolean;
   fileType: string;
 } & Omit<ReportMetricRow, 'runs'> & {
-    runs: Array<(Module & ReportMetricRun) | null | undefined>;
+    runs: Array<
+      (Module & ReportMetricRun & { size: number; sizeDuplicate: number; sizeTotal: number }) | null
+    >;
   };

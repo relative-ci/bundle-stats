@@ -27,12 +27,12 @@ import { MODULE_PATH_PACKAGES } from '@bundle-stats/utils/lib-esm/webpack';
 import type { FilterFieldsData, FilterGroupFieldData, ReportMetricModuleRow } from '../../types';
 import * as I18N from './bundle-modules.i18n';
 
-export const addRowFlags = (row: Module & ReportMetricRow): ReportMetricModuleRow => {
+export const addRowFlags = (row: ReportMetricRow): ReportMetricModuleRow => {
   const { key, runs } = row;
 
+  // @NOTE Assign instead destructuring for perf reasons
   const moduleRow = row as any as ReportMetricModuleRow;
 
-  // @NOTE Assign instead destructuring for perf reasons
   // eslint-disable-next-line no-param-reassign
   moduleRow.thirdParty = Boolean(key.match(MODULE_PATH_PACKAGES));
   // Mark metric row as duplicated when at least one run is duplicated
@@ -42,6 +42,23 @@ export const addRowFlags = (row: Module & ReportMetricRow): ReportMetricModuleRo
   );
   // eslint-disable-next-line no-param-reassign
   moduleRow.fileType = getModuleSourceFileType(row.key);
+
+  // eslint-disable-next-line no-param-reassign
+  moduleRow.runs = row.runs.map((run) => {
+    if (!run) {
+      return run;
+    }
+
+    const moduleRun = run as Module & ReportMetricRun;
+    const chunkCount = moduleRun.chunkIds?.length || 0;
+
+    return {
+      ...moduleRun,
+      size: moduleRun.value,
+      sizeDuplicate: chunkCount > 1 ? (chunkCount - 1) * moduleRun.value : 0,
+      sizeTotal: chunkCount * moduleRun.value,
+    };
+  });
 
   return moduleRow;
 };

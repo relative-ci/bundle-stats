@@ -1,3 +1,7 @@
+.moduleSizes {
+  flex-wrap: wrap;
+}
+
 .chunksItems {
   display: inline;
 }
