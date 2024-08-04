@@ -19,8 +19,8 @@
     "node": ">= 14.0"
   },
   "devDependencies": {
-    "@babel/core": "7.24.9",
-    "@babel/eslint-parser": "7.24.8",
+    "@babel/core": "7.25.2",
+    "@babel/eslint-parser": "7.25.1",
     "@tsconfig/node14": "14.1.2",
     "@types/react": "18.3.3",
     "@typescript-eslint/eslint-plugin": "6.21.0",
@@ -39,13 +39,13 @@
     "eslint-plugin-prettier": "5.2.1",
     "eslint-plugin-react": "7.35.0",
     "eslint-plugin-react-hooks": "4.6.2",
-    "husky": "9.1.1",
-    "lerna": "8.1.6",
+    "husky": "9.1.4",
+    "lerna": "8.1.7",
     "lint-staged": "15.2.7",
     "prettier": "3.3.3",
     "rimraf": "6.0.1",
     "react-is": "^18.3.1",
-    "typescript": "5.5.3",
+    "typescript": "5.5.4",
     "verdaccio": "^5.26.2"
   },
   "scripts": {

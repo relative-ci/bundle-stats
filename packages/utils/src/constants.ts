@@ -74,6 +74,9 @@ export enum DeltaType {
 
 export type MetricRunInfoDeltaType = `${DeltaType}`;
 
+/**
+ * Metric data for a job/run
+ */
 export interface MetricRun {
   value: number;
 }
