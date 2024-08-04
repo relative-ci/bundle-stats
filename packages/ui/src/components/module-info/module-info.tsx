@@ -8,14 +8,16 @@ import {
   FILE_TYPE_LABELS,
   MODULE_SOURCE_TYPE_LABELS,
   MetricRunInfo,
+  ReportMetricRow,
   formatNumber,
   getBundleModulesByChunk,
   getBundleModulesByFileTpe,
   getBundleModulesBySource,
   getMetricRunInfo,
 } from '@bundle-stats/utils';
-import { Module, MetaChunk } from '@bundle-stats/utils/types/webpack';
+import type { Module, MetaChunk } from '@bundle-stats/utils/types/webpack';
 
+import type { ReportMetricModuleRow } from '../../types';
 import { Stack } from '../../layout/stack';
 import { Tag } from '../../ui/tag';
 import { ComponentLink } from '../component-link';
@@ -131,14 +133,7 @@ const ChunksDelta = (props: ChunksDeltaProps) => {
 };
 
 interface ModuleInfoProps {
-  item: {
-    label: string;
-    changed?: boolean;
-    duplicated?: boolean;
-    thirdParty?: boolean;
-    fileType?: string;
-    runs: Array<Module & MetricRunInfo>;
-  };
+  item: ReportMetricModuleRow;
   chunks?: Array<MetaChunk>;
   chunkIds?: Array<string>;
   labels: Array<string>;
@@ -187,7 +182,13 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
   const hasDuplicates = currentDuplicateInstances !== 0 || baselineDuplicateInstances !== 0;
 
   return (
-    <EntryInfo item={item} labels={labels} tags={tags} onClose={onClose} className={rootClassName}>
+    <EntryInfo
+      item={item as ReportMetricRow}
+      labels={labels}
+      tags={tags}
+      onClose={onClose}
+      className={rootClassName}
+    >
       <Stack space="xxxsmall">
         {item?.fileType && (
           <EntryInfo.Meta label="File type" tooltip="Module file type: JS, CSS">

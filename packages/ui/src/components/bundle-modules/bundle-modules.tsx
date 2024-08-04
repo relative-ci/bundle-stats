@@ -1,10 +1,10 @@
 import React, { useCallback, useMemo } from 'react';
 import cx from 'classnames';
-import { SECTIONS, COMPONENT, type Job } from '@bundle-stats/utils';
+import { SECTIONS, COMPONENT, type Job, ReportMetricRow } from '@bundle-stats/utils';
 import escapeRegExp from 'lodash/escapeRegExp';
 
 import { WebpackChunk } from '@bundle-stats/utils';
-import { SortAction } from '../../types';
+import type { ReportMetricModuleRow, SortAction } from '../../types';
 import config from '../../config.json';
 import I18N from '../../i18n';
 import { MetricsDisplayType } from '../../constants';
@@ -31,7 +31,6 @@ import { MetricsTableTitle } from '../metrics-table-title';
 import { ModuleInfo } from '../module-info';
 import { generateFilterFieldsData } from './bundle-modules.utils';
 import { ModuleMetric } from './bundle-modules.constants';
-import type { ReportMetricModuleRow } from './bundle-modules.types';
 import * as I18N_MODULES from './bundle-modules.i18n';
 import css from './bundle-modules.module.css';
 import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
@@ -41,7 +40,7 @@ const DISPLAY_TYPE_GROUPS = {
 };
 
 interface RowHeaderProps {
-  row: ReportMetricModuleRow;
+  row: ReportMetricRow;
   filters?: any;
   search?: string;
   moduleMetric?: string;
@@ -51,18 +50,25 @@ interface RowHeaderProps {
 const RowHeader = (props: RowHeaderProps) => {
   const { row, filters, search, moduleMetric, customComponentLink: CustomComponentLink } = props;
 
+  const moduleRow = row as ReportMetricModuleRow;
+
   return (
     <CustomComponentLink
       section={SECTIONS.MODULES}
       params={{
-        [COMPONENT.BUNDLE_MODULES]: { filters, search, entryId: row.key, metric: moduleMetric },
+        [COMPONENT.BUNDLE_MODULES]: {
+          filters,
+          search,
+          entryId: moduleRow.key,
+          metric: moduleMetric,
+        },
       }}
       className={css.name}
     >
-      {row.duplicated && (
+      {moduleRow.duplicated && (
         <Tag className={css.nameTagDuplicated} size="small" kind={Tag.KINDS.DANGER} />
       )}
-      <FileName className={css.nameText} name={row.label} />
+      <FileName className={css.nameText} name={moduleRow.label} />
     </CustomComponentLink>
   );
 };
@@ -215,7 +221,7 @@ export const BundleModules = (props: BundleModulesProps) => {
   );
 
   const renderRowHeader = useCallback(
-    (row: ReportMetricModuleRow) => (
+    (row: ReportMetricRow) => (
       <RowHeader
         row={row}
         filters={filters}
@@ -291,7 +297,9 @@ export const BundleModules = (props: BundleModulesProps) => {
                 type="button"
                 onClick={() => setModuleMetric(ModuleMetric.TOTAL_SIZE)}
               >
-                <Tooltip title="Module total size (including duplicate modules)">Module total size</Tooltip>
+                <Tooltip title="Module total size (including duplicate modules)">
+                  Module total size
+                </Tooltip>
               </Button>
               <Button
                 outline

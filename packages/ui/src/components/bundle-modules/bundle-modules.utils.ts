@@ -3,10 +3,13 @@ import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import union from 'lodash/union';
 import orderBy from 'lodash/orderBy';
+import type {
+  WebpackChunk,
+  MetricRunInfo,
+  ReportMetricRow,
+  ReportMetricRun,
+} from '@bundle-stats/utils';
 import {
-  type WebpackChunk,
-  type MetricRunInfo,
-  type ReportMetricRow,
   FILE_TYPE_LABELS,
   MODULE_CHUNK,
   MODULE_FILTERS,
@@ -18,26 +21,29 @@ import {
   getModuleSourceTypeFilters,
   getModuleFileTypeFilters,
 } from '@bundle-stats/utils';
-// @ts-ignore
-import { MODULE_PATH_PACKAGES, type Module } from '@bundle-stats/utils/lib-esm/webpack';
-import type { ReportMetricRun } from '@bundle-stats/utils/types/report/types';
+import type { Module } from '@bundle-stats/utils/types/webpack';
+import { MODULE_PATH_PACKAGES } from '@bundle-stats/utils/lib-esm/webpack';
 
-import type { FilterFieldsData, FilterGroupFieldData } from '../../types';
-import type { ReportMetricModuleRow } from './bundle-modules.types';
+import type { FilterFieldsData, FilterGroupFieldData, ReportMetricModuleRow } from '../../types';
 import * as I18N from './bundle-modules.i18n';
 
 export const addRowFlags = (row: Module & ReportMetricRow): ReportMetricModuleRow => {
   const { key, runs } = row;
 
+  const moduleRow = row as any as ReportMetricModuleRow;
+
   // @NOTE Assign instead destructuring for perf reasons
   // eslint-disable-next-line no-param-reassign
-  row.thirdParty = Boolean(key.match(MODULE_PATH_PACKAGES));
+  moduleRow.thirdParty = Boolean(key.match(MODULE_PATH_PACKAGES));
+  // Mark metric row as duplicated when at least one run is duplicated
   // eslint-disable-next-line no-param-reassign
-  row.duplicated = Boolean(runs.find((run: Module & ReportMetricRun) => run?.duplicated === true));
+  moduleRow.duplicated = Boolean(
+    runs.find((run) => (run as Module & ReportMetricRun)?.duplicated === true),
+  );
   // eslint-disable-next-line no-param-reassign
-  row.fileType = getModuleSourceFileType(row.key);
+  moduleRow.fileType = getModuleSourceFileType(row.key);
 
-  return row;
+  return moduleRow;
 };
 
 export const getCustomSort = (item: ReportMetricRow) => [!item.changed, item.key];
@@ -88,7 +94,7 @@ export const generateGetRowFilter =
       // Filter if any of the chunkIds are checked
       if (hasChunkFilters) {
         const rowRunsChunkIds =
-          row?.runs?.map((run: Module & MetricRunInfo) => run?.chunkIds || []) || [];
+          row?.runs?.map((run) => (run as Module & MetricRunInfo)?.chunkIds || []) || [];
         const rowChunkIds = union(...rowRunsChunkIds);
         const matchedChunkIds = intersection(rowChunkIds, checkedChunkIds);
         return matchedChunkIds.length > 0;

@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import noop from 'lodash/noop';
 import {
   BUNDLE_PACKAGES_DUPLICATE,
   PACKAGES_SEPARATOR,
@@ -79,7 +78,7 @@ export const PackageInfo = (props: PackageInfoProps & React.ComponentProps<'div'
   return (
     <EntryInfo
       itemTitle={packageTitle}
-      item={item}
+      item={item as any}
       labels={labels}
       tags={tags}
       runNameSelector="path"

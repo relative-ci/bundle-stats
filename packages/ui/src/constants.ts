@@ -39,7 +39,7 @@ export const METRICS_WEBPACK_PACKAGES = ['webpack.packageCount', 'webpack.duplic
 export const SORT = {
   ASC: 'asc',
   DESC: 'desc',
-};
+} as const;
 
 export enum MetricsDisplayType {
   TABLE = 'table',

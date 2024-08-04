@@ -2,7 +2,8 @@ import type { ElementType, ReactNode } from 'react';
 import React from 'react';
 import cx from 'classnames';
 import { Portal } from 'ariakit/portal';
-import { METRIC_TYPE_CONFIGS, MetricRunInfo, getMetricRunInfo } from '@bundle-stats/utils';
+import type { MetricRunInfo, ReportMetricRow } from '@bundle-stats/utils';
+import { METRIC_TYPE_CONFIGS, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { Box } from '../../layout/box';
 import { Stack } from '../../layout/stack';
@@ -48,16 +49,9 @@ const EntryInfoMeta = ({
   </div>
 );
 
-interface EntryRun {
-  name: string;
-}
-
 interface EntryInfoProps {
   itemTitle?: React.ReactNode;
-  item: {
-    label: string;
-    runs: Array<EntryRun & MetricRunInfo>;
-  };
+  item: ReportMetricRow;
   labels: Array<string>;
   runNameSelector?: string;
   runNameLabel?: string;
@@ -83,7 +77,7 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
   // Get the metric run info to handle added/removed cases
   const metricRunInfo = getMetricRunInfo(
     METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE,
-    item.runs?.[0]?.value,
+    item.runs?.[0]?.value || 0,
     baselineRun?.value || 0,
   ) as MetricRunInfo;
 

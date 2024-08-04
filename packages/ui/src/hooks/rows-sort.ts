@@ -5,15 +5,9 @@ import orderBy from 'lodash/orderBy';
 import type { SortAction } from '../types';
 import { SORT } from '../constants';
 
-interface UseRowsSortParams {
-  rows: Array<unknown>;
-  initialField?: string;
-  initialDirection?: SortAction['direction'];
-  getCustomSort: (item: any) => Array<string | number | boolean>;
-}
-
 export const getSortFn =
-  (fieldPath: string, getCustomSort: UseRowsSortParams['getCustomSort']) => (item: unknown) => {
+  <TRow>(fieldPath: string, getCustomSort: UseRowsSortParams<TRow>['getCustomSort']) =>
+  (item: TRow) => {
     if (!fieldPath) {
       return getCustomSort(item);
     }
@@ -21,12 +15,25 @@ export const getSortFn =
     return get(item, fieldPath) || 0;
   };
 
-export const useRowsSort = ({
+interface UseRowsSortParams<TRow> {
+  rows: Array<TRow>;
+  initialField?: string;
+  initialDirection?: SortAction['direction'];
+  getCustomSort: (item: any) => Array<string | number | boolean>;
+}
+
+interface UseRowsSort<TRow> {
+  items: Array<TRow>;
+  sort: SortAction;
+  updateSort: (params: SortAction) => void;
+}
+
+export const useRowsSort = <TRow>({
   rows,
   initialField = 'runs[0].delta',
   initialDirection = 'desc',
   getCustomSort,
-}: UseRowsSortParams) => {
+}: UseRowsSortParams<TRow>): UseRowsSort<TRow> => {
   const [sort, updateSort] = useState({ field: initialField, direction: initialDirection });
 
   const orderedRows = useMemo(

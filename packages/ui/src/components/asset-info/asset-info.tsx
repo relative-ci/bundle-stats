@@ -126,14 +126,17 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
 
   return (
     <EntryInfo
-      item={item}
+      item={item as any}
       labels={labels}
       tags={tags}
       onClose={onClose}
       className={cx(css.root, className)}
     >
       {item.fileType && (
-        <EntryInfo.Meta label="File type" tooltip="Asset file type: JS, CSS, image, media, fonts, HTML, or other">
+        <EntryInfo.Meta
+          label="File type"
+          tooltip="Asset file type: JS, CSS, image, media, fonts, HTML, or other"
+        >
           <EntryInfoMetaLink
             as={CustomComponentLink}
             {...getBundleAssetsFileTypeComponentLink(item.fileType, fileTypeLabel)}

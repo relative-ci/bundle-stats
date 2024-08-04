@@ -3,7 +3,7 @@ import type { Job } from '@bundle-stats/utils';
 // @ts-ignore
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
 
-import type { SortAction } from '../../types';
+import type { ReportMetricModuleRow, SortAction } from '../../types';
 import { getJobsChunksData } from '../../utils/jobs';
 import { useRowsFilter } from '../../hooks/rows-filter';
 import { useRowsSort } from '../../hooks/rows-sort';
@@ -17,7 +17,6 @@ import {
   getCustomSort,
 } from './bundle-modules.utils';
 import { ModuleMetric } from './bundle-modules.constants';
-import * as types from './bundle-modules.types';
 
 interface UseMetricParams {
   metric?: string;
@@ -96,7 +95,7 @@ export const BundleModules = (props: BundleModulesProps) => {
   });
 
   const { rows, totalRowCount } = useMemo(() => {
-    let result: Array<types.ReportMetricModuleRow> = [];
+    let result: Array<ReportMetricModuleRow> = [];
 
     if (moduleMetric === ModuleMetric.SIZE) {
       result = webpack.compareBySection.modules(jobs, [addRowFlags]);
@@ -117,7 +116,7 @@ export const BundleModules = (props: BundleModulesProps) => {
     searchPattern: searchParams.searchPattern,
     filters: searchParams.filters,
     getRowFilter: generateGetRowFilter({ chunkIds }),
-  });
+  }) as Array<ReportMetricModuleRow>;
 
   const sortParams = useRowsSort({
     rows: filteredRows,

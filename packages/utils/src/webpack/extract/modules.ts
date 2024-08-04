@@ -1,8 +1,11 @@
 import round from 'lodash/round';
 import union from 'lodash/union';
-import { WebpackStatsFiltered, WebpackStatsFilteredModule } from '@bundle-stats/plugin-webpack-filter';
+import {
+  WebpackStatsFiltered,
+  WebpackStatsFilteredModule,
+} from '@bundle-stats/plugin-webpack-filter';
 
-import { Module, MetricsModules } from '../types';
+import type { MetricsModules, Modules } from '../types';
 import { getModuleName, normalizeChunkId } from '../utils';
 
 /*
@@ -75,7 +78,7 @@ export const extractModules = (webpackStats?: WebpackStatsFiltered): MetricsModu
   });
 
   // Normalize module entries and extract metrics
-  const modules: Record<string, Module> = {};
+  const modules: Modules = {};
 
   let moduleCount = 0;
   let totalCodeSize = 0;
@@ -103,7 +106,7 @@ export const extractModules = (webpackStats?: WebpackStatsFiltered): MetricsModu
       chunkIds: chunks.map(normalizeChunkId),
       ...(duplicated && { duplicated }),
     };
-  }, {} as Record<string, Module>);
+  }, {} as Modules);
 
   const duplicateCode = totalCodeSize ? round((duplicateCodeSize / totalCodeSize) * 100, 2) : 0;
 
