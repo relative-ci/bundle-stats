@@ -33,7 +33,7 @@ interface DuplicateInstancesProps {
 
 const DuplicateInstances = ({ current, baseline }: DuplicateInstancesProps) => {
   const runInfo = getMetricRunInfo(
-    { biggerIsBetter: null, formatter: formatNumber },
+    { biggerIsBetter: false, formatter: formatNumber },
     current,
     baseline,
   ) as MetricRunInfo;
