@@ -77,6 +77,7 @@ interface EntryInfoProps {
   labels: Array<string>;
   runNameSelector?: string;
   runNameLabel?: string;
+  runSizeLabel?: string;
   tags?: React.ReactNode;
   onClose: () => void;
   renderRunInfo?: (item: ReportMetricRow) => React.ReactNode;
@@ -90,6 +91,7 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
     labels,
     runNameSelector = 'name',
     runNameLabel = I18N.PATH,
+    runSizeLabel = I18N.SIZE,
     children,
     tags = null,
     onClose,
@@ -127,7 +129,7 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
               <Table.Tr>
                 <Table.Th className={cx(css.runsCell, css.runsColJob)}>&nbsp;</Table.Th>
                 <Table.Th className={cx(css.runsCell, css.runsColName)}>{runNameLabel}</Table.Th>
-                <Table.Th className={cx(css.runsCell, css.runsColSize)}>{I18N.SIZE}</Table.Th>
+                <Table.Th className={cx(css.runsCell, css.runsColSize)}>{runSizeLabel}</Table.Th>
               </Table.Tr>
             </Table.THead>
             <Table.TBody>

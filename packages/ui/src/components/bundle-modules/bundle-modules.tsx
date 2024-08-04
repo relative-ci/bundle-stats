@@ -30,7 +30,7 @@ import { MetricsDisplaySelector } from '../metrics-display-selector';
 import { MetricsTableTitle } from '../metrics-table-title';
 import { ModuleInfo } from '../module-info';
 import { generateFilterFieldsData } from './bundle-modules.utils';
-import { ModuleMetric } from './bundle-modules.constants';
+import { ModuleMetric, ModuleMetrics } from './bundle-modules.constants';
 import * as I18N_MODULES from './bundle-modules.i18n';
 import css from './bundle-modules.module.css';
 import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
@@ -355,6 +355,7 @@ export const BundleModules = (props: BundleModulesProps) => {
           chunks={chunks}
           chunkIds={chunks?.map(({ id }) => id)}
           labels={jobLabels}
+          metricLabel={ModuleMetrics[moduleMetric].label}
           customComponentLink={CustomComponentLink}
           onClose={hideEntryInfo}
         />

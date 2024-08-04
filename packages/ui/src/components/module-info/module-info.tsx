@@ -198,6 +198,7 @@ interface ModuleInfoProps {
   chunks?: Array<MetaChunk>;
   chunkIds?: Array<string>;
   labels: Array<string>;
+  metricLabel?: string;
   customComponentLink?: React.ElementType;
   onClose: () => void;
 }
@@ -209,6 +210,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
     labels,
     chunks = [],
     chunkIds = [],
+    metricLabel = '',
     customComponentLink: CustomComponentLink = ComponentLink,
     onClick = noop,
     onClose,
@@ -249,6 +251,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
       tags={tags}
       onClose={onClose}
       renderRunInfo={renderRunInfo}
+      runSizeLabel={metricLabel}
       className={rootClassName}
     >
       <Stack space="xxxsmall">
