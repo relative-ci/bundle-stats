@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/plugin-webpack-validate",
-  "version": "4.13.4",
+  "version": "4.14.0",
   "description": "BundleStats webpack validate plugin",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
