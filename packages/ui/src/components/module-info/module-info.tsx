@@ -177,14 +177,14 @@ const renderRunInfo = (item: ReportMetricRow) => {
             title={ModuleSizeMetrics[ModuleSizeMetric.TOTAL_SIZE].label}
             titleTooltip={ModuleSizeMetrics[ModuleSizeMetric.TOTAL_SIZE].tooltip}
             current={currentRun.sizeTotal}
-            baseline={baselineRun.sizeTotal}
+            baseline={baselineRun?.sizeTotal || 0}
           />
           <ModuleSizeRunInfo
             metric={metric}
             title={ModuleSizeMetrics[ModuleSizeMetric.DUPLICATE_SIZE].label}
             titleTooltip={ModuleSizeMetrics[ModuleSizeMetric.DUPLICATE_SIZE].tooltip}
             current={currentRun.sizeDuplicate}
-            baseline={baselineRun.sizeDuplicate}
+            baseline={baselineRun?.sizeDuplicate || 0}
           />
         </>
       )}
@@ -193,7 +193,7 @@ const renderRunInfo = (item: ReportMetricRow) => {
         title={ModuleSizeMetrics[ModuleSizeMetric.SIZE].label}
         titleTooltip={ModuleSizeMetrics[ModuleSizeMetric.SIZE].tooltip}
         current={currentRun.size}
-        baseline={baselineRun.size}
+        baseline={baselineRun?.size || 0}
       />
     </FlexStack>
   );
