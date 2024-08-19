@@ -5,13 +5,21 @@
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
   "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib-esm/index.js",
+      "require": "./lib/index.js",
+      "types": "./types/index.d.ts"
+    }
+  },
   "scripts": {
     "build": "npm run build-lib && npm run build-esm && npm run build-assets-lib && npm run build-assets-esm",
     "prebuild-lib": "rimraf ./lib",
     "build-lib": "tsc --rootDir ./src --project tsconfig.lib.json --outDir ./lib",
     "build-assets-lib": "rsync -arm --include '*/' --include '*.json' --include '*.css' --include 'icons.svg' --exclude '*' src/ lib",
     "prebuild-esm": "rimraf ./lib-esm ./types",
-    "build-esm": "tsc --rootDir ./src --project tsconfig.esm.json --outDir ./lib-esm",
+    "build-esm": "tsc --rootDir ./src --project tsconfig.esm.json --outDir ./lib-esm && echo '{\"type\":\"module\"}' > lib-esm/package.json",
+
     "build-assets-esm": "rsync -arm --include '*/' --include '*.json' --include '*.css' --include 'icons.svg' --exclude '*' src/ lib-esm",
     "build-storybook": "storybook build -c ./build/storybook",
     "generate-chart-colors": "node scripts/generate-chart-colors.js",
