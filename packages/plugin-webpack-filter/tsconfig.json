@@ -1,5 +1,9 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["src/**/*"],
-  "exclude": ["**/*.test.ts"]
+  "include": ["src"],
+  "exclude": ["node_modules", "src/**/*.test.ts"],
+  "compilerOptions": {
+    "declaration": true,
+    "moduleResolution": "node"
+  }
 }
