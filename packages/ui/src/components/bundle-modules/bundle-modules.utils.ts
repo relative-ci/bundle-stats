@@ -49,14 +49,14 @@ export const addRowFlags = (row: ReportMetricRow): ReportMetricModuleRow => {
       return run;
     }
 
-    const moduleRun = run as Module & ReportMetricRun;
+    const moduleRun = run as Module & ReportMetricRun & { originalValue: number };
     const chunkCount = moduleRun.chunkIds?.length || 0;
 
     return {
       ...moduleRun,
-      size: moduleRun.value,
-      sizeDuplicate: chunkCount > 1 ? (chunkCount - 1) * moduleRun.value : 0,
-      sizeTotal: chunkCount * moduleRun.value,
+      size: moduleRun.originalValue,
+      sizeDuplicate: chunkCount > 1 ? (chunkCount - 1) * moduleRun.originalValue : 0,
+      sizeTotal: chunkCount * moduleRun.originalValue,
     };
   });
 

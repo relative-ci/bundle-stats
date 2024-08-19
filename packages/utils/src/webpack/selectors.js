@@ -26,10 +26,13 @@ const getStatsMetrics = (job) => {
   const metrics = pick(data, SUMMARY_METRIC_PATHS);
 
   // Rename metric keys
-  return Object.entries(metrics).reduce((agg, [key, value]) => ({
-    ...agg,
-    [`webpack.${key}`]: value,
-  }), {});
+  return Object.entries(metrics).reduce(
+    (agg, [key, value]) => ({
+      ...agg,
+      [`webpack.${key}`]: value,
+    }),
+    {},
+  );
 };
 
 /**
@@ -47,10 +50,13 @@ const getSizeMetrics = (job) => {
   const metrics = get(job, 'metrics.webpack.sizes', {});
 
   // List metrics by the metrics list
-  return Object.keys(metricTypes.sizes).reduce((agg, key) => ({
-    ...agg,
-    [`webpack.sizes.${key}`]: metrics[key],
-  }), {});
+  return Object.keys(metricTypes.sizes).reduce(
+    (agg, key) => ({
+      ...agg,
+      [`webpack.sizes.${key}`]: metrics[key],
+    }),
+    {},
+  );
 };
 
 /**
@@ -77,7 +83,20 @@ const getAssetsMetrics = (job) => get(job, 'metrics.webpack.assets', {});
  *
  * @return {Object} Webpack module metrics
  */
-const getModulesMetrics = (job) => get(job, 'metrics.webpack.modules', {});
+export const getModulesMetrics = (job) => {
+  const modules = get(job, 'metrics.webpack.modules', {});
+
+  const result = {};
+
+  Object.entries(modules).forEach(([moduleId, moduleData]) => {
+    result[moduleId] = {
+      ...moduleData,
+      originalValue: moduleData.value,
+    };
+  });
+
+  return result;
+};
 
 /**
  *
@@ -92,15 +111,18 @@ const getModulesMetrics = (job) => get(job, 'metrics.webpack.modules', {});
  */
 export const getModulesDuplicateSizeMetrics = (job) => {
   const modules = get(job, 'metrics.webpack.modules', {});
-  return Object.keys(modules).reduce((modulesWithDupes, key) => {
-    const module = modules[key];
-    // eslint-disable-next-line no-param-reassign
-    modulesWithDupes[key] = {
-      ...module,
-      value: module.value * (module.chunkIds.length - 1),
+
+  const result = {};
+
+  Object.entries(modules).forEach(([moduleId, moduleData]) => {
+    result[moduleId] = {
+      ...moduleData,
+      value: moduleData.value * (moduleData.chunkIds.length - 1),
+      originalValue: moduleData.value,
     };
-    return modulesWithDupes;
-  }, {});
+  });
+
+  return result;
 };
 
 /**
@@ -116,15 +138,18 @@ export const getModulesDuplicateSizeMetrics = (job) => {
  */
 export const getModulesTotalSizeMetrics = (job) => {
   const modules = get(job, 'metrics.webpack.modules', {});
-  return Object.keys(modules).reduce((modulesWithDupes, key) => {
-    const module = modules[key];
-    // eslint-disable-next-line no-param-reassign
-    modulesWithDupes[key] = {
-      ...module,
-      value: module.value * module.chunkIds.length,
+
+  const result = {};
+
+  Object.entries(modules).forEach(([moduleId, moduleData]) => {
+    result[moduleId] = {
+      ...moduleData,
+      value: moduleData.value * moduleData.chunkIds.length,
+      originalValue: moduleData.value,
     };
-    return modulesWithDupes;
-  }, {});
+  });
+
+  return result;
 };
 
 /**
