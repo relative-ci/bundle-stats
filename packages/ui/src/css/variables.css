@@ -30,7 +30,7 @@
   /*
    * Color scheme:
    * https://coolors.co/287acc-da444e-55b950-efcc1a-192339
-   * http://mcg.mbitson.com/#!?mcgpalette0=%23da444e&mcgpalette1=%2355b950&mcgpalette2=%23efcc1a&mcgpalette3=%232a2933&mcgpalette4=%23287acc&themename=bundle-stats
+   * http://mcg.mbitson.com/#!?mcgpalette0=%23da444e&mcgpalette1=%2355b950&mcgpalette2=%23ebc013&mcgpalette3=%232a2933&mcgpalette4=%23287acc&themename=bundle-stats
    * https://hihayk.github.io/scale/#4/5/50/90/-51/0/0/14/353138/53/49/56/white
    */
   --color-gray-25: #f9f9fa;
@@ -105,16 +105,16 @@
   --color-green-ultra-dark: var(--color-green-900);
 
   --color-yellow-25: #fffdf2;
-  --color-yellow-50: #fdf9e4;
-  --color-yellow-100: #faf0ba;
-  --color-yellow-200: #f7e68d;
-  --color-yellow-300: #f4db5f;
-  --color-yellow-400: #f1d43c;
-  --color-yellow-500: #efcc1a;
-  --color-yellow-600: #edc717;
-  --color-yellow-700: #ebc013;
-  --color-yellow-800: #e8b90f;
-  --color-yellow-900: #e4ad08;
+  --color-yellow-50: #fdf7e3;
+  --color-yellow-100: #f9ecb8;
+  --color-yellow-200: #f5e089;
+  --color-yellow-300: #f1d35a;
+  --color-yellow-400: #eec936;
+  --color-yellow-500: #ebc013;
+  --color-yellow-600: #e9ba11;
+  --color-yellow-700: #e5b20e;
+  --color-yellow-800: #e2aa0b;
+  --color-yellow-900: #dd9c06;
 
   --color-yellow-light-background: var(--color-yellow-25);
   --color-yellow-ultra-light: var(--color-yellow-100);
