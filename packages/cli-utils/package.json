@@ -42,7 +42,7 @@
     "@bundle-stats/utils": "^4.14.2",
     "find-cache-dir": "^3.1.0",
     "lodash": "^4.17.21",
-    "stream-chain": "^2.2.5",
+    "stream-chain": "^3.0.1",
     "stream-json": "^1.8.0"
   },
   "devDependencies": {
