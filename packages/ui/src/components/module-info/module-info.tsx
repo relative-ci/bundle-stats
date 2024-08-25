@@ -29,12 +29,15 @@ import { ModuleSizeMetric, ModuleSizeMetrics } from '../../constants';
 
 interface DuplicateInstancesProps {
   current: number;
-  baseline: number;
+  baseline?: number;
 }
 
 const DuplicateInstances = ({ current, baseline }: DuplicateInstancesProps) => {
   const runInfo = getMetricRunInfo(
-    { biggerIsBetter: false, formatter: formatNumber },
+    {
+      biggerIsBetter: false,
+      formatter: formatNumber,
+    },
     current,
     baseline,
   ) as MetricRunInfo;
@@ -145,7 +148,7 @@ interface ModuleSizeRunInfoProps {
 const ModuleSizeRunInfo = (props: ModuleSizeRunInfoProps) => {
   const { metric, title, titleTooltip, current, baseline } = props;
 
-  const runInfo = getMetricRunInfo(metric, current || 0, baseline || 0) as MetricRunInfo;
+  const runInfo = getMetricRunInfo(metric, current || 0, baseline) as MetricRunInfo;
 
   return (
     <RunInfo
@@ -155,7 +158,7 @@ const ModuleSizeRunInfo = (props: ModuleSizeRunInfoProps) => {
       delta={runInfo.displayDeltaPercentage}
       deltaPercentage={runInfo.displayDelta}
       deltaType={runInfo.deltaType}
-      baseline={metric.formatter(baseline || 0)}
+      baseline={baseline ? metric.formatter(baseline) : undefined}
     />
   );
 };
@@ -176,15 +179,15 @@ const renderRunInfo = (item: ReportMetricRow) => {
             metric={metric}
             title={ModuleSizeMetrics[ModuleSizeMetric.TOTAL_SIZE].label}
             titleTooltip={ModuleSizeMetrics[ModuleSizeMetric.TOTAL_SIZE].tooltip}
-            current={currentRun.sizeTotal}
-            baseline={baselineRun?.sizeTotal || 0}
+            current={currentRun?.sizeTotal}
+            baseline={baselineRun?.sizeTotal}
           />
           <ModuleSizeRunInfo
             metric={metric}
             title={ModuleSizeMetrics[ModuleSizeMetric.DUPLICATE_SIZE].label}
             titleTooltip={ModuleSizeMetrics[ModuleSizeMetric.DUPLICATE_SIZE].tooltip}
-            current={currentRun.sizeDuplicate}
-            baseline={baselineRun?.sizeDuplicate || 0}
+            current={currentRun?.sizeDuplicate}
+            baseline={baselineRun?.sizeDuplicate}
           />
         </>
       )}
@@ -192,8 +195,8 @@ const renderRunInfo = (item: ReportMetricRow) => {
         metric={metric}
         title={ModuleSizeMetrics[ModuleSizeMetric.SIZE].label}
         titleTooltip={ModuleSizeMetrics[ModuleSizeMetric.SIZE].tooltip}
-        current={currentRun.size}
-        baseline={baselineRun?.size || 0}
+        current={currentRun?.size}
+        baseline={baselineRun?.size}
       />
     </FlexStack>
   );
@@ -244,8 +247,12 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
     ? MODULE_SOURCE_TYPE_LABELS.THIRD_PARTY
     : MODULE_SOURCE_TYPE_LABELS.FIRST_PARTY;
 
-  const currentChunkCount = (item.runs[0]?.chunkIds || []).length;
-  const baselineChunkCount = (item.runs[item.runs.length - 1]?.chunkIds || []).length;
+  const currentRun = item.runs[0];
+  const baselineRun = item.runs.length > 1 ? item.runs[item.runs.length - 1] : undefined;
+
+  const currentChunkCount = currentRun?.chunkIds?.length || 0;
+  const baselineChunkCount = baselineRun?.chunkIds?.length || 0;
+
   const currentDuplicateInstances = currentChunkCount > 0 ? currentChunkCount - 1 : 0;
   const baselineDuplicateInstances = baselineChunkCount > 0 ? baselineChunkCount - 1 : 0;
   const hasDuplicates = currentDuplicateInstances !== 0 || baselineDuplicateInstances !== 0;
@@ -286,7 +293,7 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
           <EntryInfo.Meta label="Duplicates" tooltip="Module duplicate instances">
             <DuplicateInstances
               current={currentDuplicateInstances}
-              baseline={baselineDuplicateInstances}
+              baseline={baselineRun ? baselineDuplicateInstances : undefined}
             />
           </EntryInfo.Meta>
         )}
