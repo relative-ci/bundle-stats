@@ -30,7 +30,7 @@ import {
 } from '../config/component-links';
 import I18N from '../i18n';
 
-export type ComponentLinkFilters = Record<string, boolean>;
+export type ComponentLinkFilters = Record<string, boolean | string>;
 
 export interface ComponentLinkParams {
   search?: string;
@@ -224,6 +224,7 @@ export const BUNDLE_MODULES: ComponentLink = {
         // Keep a filter to allow the merge and skip default
         [MODULE_FILTERS.CHANGED]: false,
       },
+      [MODULE_FILTERS.METRIC]: 'totalSize',
     },
   },
 };
@@ -237,6 +238,7 @@ export const BUNDLE_MODULES_DUPLICATE: ComponentLink = {
         [MODULE_FILTERS.CHANGED]: false,
         [MODULE_FILTERS.DUPLICATED]: true,
       },
+      [MODULE_FILTERS.METRIC]: 'duplicateSize',
     },
   },
 };

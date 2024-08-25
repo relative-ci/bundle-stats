@@ -17,6 +17,7 @@ export const MODULE_FILTERS = {
   DUPLICATED: 'md',
   FIRST_PARTY: 'fp',
   THIRD_PARTY: 'tp',
+  METRIC: 'metric',
 };
 
 export const PACKAGE_FILTERS = {
