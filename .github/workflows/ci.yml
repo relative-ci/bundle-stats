@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.1.7
 
       # Cache packages when the branch is not update-dependencies or dependabot/*
       - name: Resolve caching
@@ -37,7 +37,7 @@ jobs:
           webpackStatsFile: ./packages/html-templates/artifacts/webpack-stats.json
 
       - name: Upload build files
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4.4.0
         with:
           name: build-artifacts
           retention-days: 1
@@ -57,10 +57,11 @@ jobs:
         run: ./scripts/local-registry-publish.sh
 
       - name: Upload local registry files
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4.4.0
         with:
           name: local-registry
           retention-days: 1
+          include-hidden-files: true
           path: |
             .verdaccio-storage*/**/*
 
@@ -69,7 +70,7 @@ jobs:
       - build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.1.7
 
       # Cache packages when the branch is not update-dependencies or dependabot/*
       - name: Resolve caching
@@ -88,7 +89,7 @@ jobs:
         run: npm ci
 
       - name: Download build files
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v4.1.8
         with:
           name: build-artifacts
 
@@ -100,7 +101,7 @@ jobs:
       - build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.1.7
 
       # Cache packages when the branch is not update-dependencies or dependabot/*
       - name: Resolve caching
@@ -119,7 +120,7 @@ jobs:
         run: npm ci
 
       - name: Download build files
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v4.1.8
         with:
           name: build-artifacts
 
@@ -131,7 +132,7 @@ jobs:
       - build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.1.7
 
       # Cache packages when the branch is not update-dependencies or dependabot/*
       - name: Resolve caching
@@ -150,7 +151,7 @@ jobs:
         run: npm ci
 
       - name: Download build files
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v4.1.8
         with:
           name: build-artifacts
 
@@ -173,7 +174,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     name: CLI ${{ matrix.os }} nodejs ${{ matrix.node }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.1.7
 
       # Cache packages when the branch is not update-dependencies or dependabot/*
       - name: Resolve caching
@@ -188,12 +189,12 @@ jobs:
           cache: ${{ steps.cache.outputs.PACKAGE }}
 
       - name: Download build files
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v4.1.8
         with:
           name: build-artifacts
 
       - name: Download local registry files
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v4.1.8
         with:
           name: local-registry
 
@@ -230,7 +231,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     name: ${{ matrix.webpack }} plugin ${{ matrix.os }} nodejs ${{ matrix.node }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.1.7
 
       - name: Use Node.js
         uses: actions/setup-node@v4.0.3
@@ -238,12 +239,12 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Download build files
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v4.1.8
         with:
           name: build-artifacts
 
       - name: Download local registry files
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v4.1.8
         with:
           name: local-registry
 
@@ -274,7 +275,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     name: rollup ${{ matrix.rollup}} plugin nodejs ${{ matrix.node }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.1.7
 
       - name: Use Node.js
         uses: actions/setup-node@v4.0.3
@@ -282,12 +283,12 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Download build files
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v4.1.8
         with:
           name: build-artifacts
 
       - name: Download local registry files
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v4.1.8
         with:
           name: local-registry
 
@@ -328,7 +329,7 @@ jobs:
     permissions:
       id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.1.7
 
       # Cache packages when the branch is not update-dependencies or dependabot/*
       - name: Resolve caching
@@ -348,7 +349,7 @@ jobs:
         run: npm ci
 
       - name: Download build
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v4.1.8
         with:
           name: build-artifacts
 
