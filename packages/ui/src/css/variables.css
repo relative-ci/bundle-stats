@@ -198,7 +198,7 @@
   --radius-medium: 7px;
   --radius-large: 9px;
 
-  --outline-hover: 0 0 0 3px var(--color-highlight);
+  --outline-hover: 0 0 0 var(--space-xxxsmall) var(--color-highlight);
 
   /** Layout */
   --max-width: 88rem;
