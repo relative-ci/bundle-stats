@@ -61,6 +61,7 @@ jobs:
         with:
           name: local-registry
           retention-days: 1
+          include-hidden-files: true
           path: |
             .verdaccio-storage*/**/*
 
