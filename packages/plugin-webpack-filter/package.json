@@ -45,7 +45,7 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/plugin-webpack-filter#readme",
   "devDependencies": {
-    "@types/jest": "29.5.12",
+    "@types/jest": "29.5.13",
     "@types/webpack": "5.28.5",
     "core-js": "3.38.1",
     "jest": "29.7.0",
