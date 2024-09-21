@@ -199,7 +199,7 @@ jobs:
           name: local-registry
 
       - name: Install dependencies
-        run: npm install -g verdaccio
+        run: npm install -g verdaccio@v5
 
       - name: Run local npm registry
         run: ./scripts/local-registry.sh &
@@ -249,7 +249,7 @@ jobs:
           name: local-registry
 
       - name: Install dependencies
-        run: npm install -g verdaccio
+        run: npm install -g verdaccio@v5
 
       - name: Run local npm registry
         run: ./scripts/local-registry.sh &
@@ -293,7 +293,7 @@ jobs:
           name: local-registry
 
       - name: Install verdaccio
-        run: npm install -g verdaccio
+        run: npm install -g verdaccio@v5
 
       - name: Run local npm registry
         run: ./scripts/local-registry.sh &
