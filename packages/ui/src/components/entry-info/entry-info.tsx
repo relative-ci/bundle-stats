@@ -1,7 +1,7 @@
 import type { ElementType, ReactNode } from 'react';
 import React from 'react';
 import cx from 'classnames';
-import { Portal } from 'ariakit/portal';
+import { Portal } from '@ariakit/react';
 import type { MetricRunInfo, ReportMetricRow } from '@bundle-stats/utils';
 import { METRIC_TYPE_CONFIGS, getMetricRunInfo } from '@bundle-stats/utils';
 

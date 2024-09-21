@@ -1,6 +1,6 @@
 import React, { type MouseEvent, useCallback, useMemo, ElementType } from 'react';
 import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
-import { Focusable } from 'ariakit/focusable';
+import { Focusable } from '@ariakit/react';
 
 import { Stack } from '../../layout/stack';
 import { FlexStack } from '../../layout/flex-stack';
@@ -37,7 +37,7 @@ const MetricHoverCard = ({ title, description, url }: MetricInfoProps) => {
         <p className={css.metricHoverCardDescription}>{description}</p>
         {url && (
           <div>
-            <Focusable as="span" onClick={onClick} className={css.readMoreLink}>
+            <Focusable onClick={onClick} className={css.readMoreLink}>
               <FlexStack alignItems="center" space="xxxsmall">
                 <span>Learn more</span>
                 <Icon glyph={Icon.ICONS.EXTERNAL_LINK} size="small" />

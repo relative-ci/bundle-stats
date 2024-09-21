@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import { Menu, MenuButton, MenuItem, useMenuState } from 'ariakit/menu';
+import { Menu, MenuButton, MenuItem, useMenuStore } from '@ariakit/react';
 
 import { Button, BUTTON_SIZE } from '../button';
 import css from './dropdown.module.css';
@@ -37,25 +37,28 @@ export const Dropdown = (props: DropdownProps & React.ComponentProps<'div'>) => 
   } = props;
 
   const dropdownAriaLabel = ariaLabel || (typeof label === 'string' ? label : '');
-  const menuState = useMenuState();
+  const menu = useMenuStore();
 
   return (
     <>
       <MenuButton
-        as={Button}
-        outline
-        size={BUTTON_SIZE.SMALL}
-        glyph={glyph}
-        disabled={disabled}
-        state={menuState}
-        tabIndex={null}
+        store={menu}
         className={cx(css.button, className)}
+        render={(menuButtonProps) => (
+          <Button
+            outline
+            size={BUTTON_SIZE.SMALL}
+            glyph={glyph}
+            disabled={disabled}
+            {...menuButtonProps}
+          />
+        )}
       >
         {label}
       </MenuButton>
       <Menu
         portal
-        state={menuState}
+        store={menu}
         aria-label={dropdownAriaLabel}
         className={cx(css.dropdown, dropdownClassName)}
       >
