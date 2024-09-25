@@ -6,6 +6,7 @@ import type { MetricRunInfo, ReportMetricRow } from '@bundle-stats/utils';
 import { METRIC_TYPE_CONFIGS, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { Box } from '../../layout/box';
+import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { FileName } from '../../ui/file-name';
 import { Button } from '../../ui/button';
@@ -14,7 +15,7 @@ import { Table } from '../../ui/table';
 import { RunInfo } from '../run-info';
 import * as I18N from './entry-info.i18n';
 import css from './entry-info.module.css';
-import { Tooltip } from '../../ui';
+import { CopyToClipboard, Tooltip } from '../../ui';
 
 interface EntryInfoMetaLinkProps {
   as?: ElementType;
@@ -102,10 +103,10 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
     <Portal className={cx(css.root, className)}>
       <Box padding="medium" as="header" className={css.header}>
         <Stack space="small">
-          <h3 className={css.label}>
+          <FlexStack space="xxxsmall" alignItems="center" as="h3" className={css.label}>
             <FileName as="code" name={itemTitle || item.label} className={css.fileName} />
-          </h3>
-
+            <CopyToClipboard text={item.label} />
+          </FlexStack>
           <div>{renderRunInfo(item)}</div>
         </Stack>
         <Button
@@ -135,6 +136,7 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
             <Table.TBody>
               {item.runs.map((run, index) => {
                 const key = `info-${run?.name || index}-${index}`;
+                const rowRun = run as any;
 
                 return (
                   <Table.Tr key={key}>
@@ -142,11 +144,23 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
                       {labels[index]}
                     </Table.Th>
                     <Table.Td className={cx(css.runsCell, css.runsColName)}>
-                      <FileName
-                        className={css.fileName}
-                        as="code"
-                        name={(run as any)?.[runNameSelector] || '-'}
-                      />
+                      {rowRun?.[runNameSelector] ? (
+                        <FlexStack
+                          space="xxxsmall"
+                          alignItems="center"
+                          as="h3"
+                          className={css.label}
+                        >
+                          <FileName
+                            as="code"
+                            name={rowRun[runNameSelector]}
+                            className={css.fileName}
+                          />
+                          <CopyToClipboard text={item.label} />
+                        </FlexStack>
+                      ) : (
+                        '-'
+                      )}
                     </Table.Td>
                     <Table.Td className={cx(css.runsCell, css.runsColSize)}>
                       <span className={css.size}>

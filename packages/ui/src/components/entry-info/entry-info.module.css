@@ -28,7 +28,7 @@
 /** header */
 .header {
   /** space for close icon */
-  padding-right: calc(var(--space-medium) + var(--space-xxxsmall) + var(--space-xsmall));
+  padding-right: calc(var(--space-xlarge) + var(--space-xxxsmall) + var(--space-xsmall));
   border-bottom: 1px solid var(--color-outline);
 }
 

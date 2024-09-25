@@ -13,6 +13,8 @@ const ICONS = {
   CLOSE: 'close',
   CLOCK: 'clock',
   COMMIT: 'commit',
+  CLIPBOARD: 'clipboard',
+  CLIPBOARD_CHECK: 'clipboard-check',
   ERROR: 'error',
   EXTERNAL_LINK: 'external-link',
   FILTER: 'filter',
