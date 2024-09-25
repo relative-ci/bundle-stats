@@ -1,0 +1,58 @@
+.root {
+  padding: var(--space-xxxsmall);
+}
+
+.wrapper {
+  display: flex;
+  gap: var(--space-xxsmall);
+  align-items: center;
+}
+
+.content {
+  flex: 1 1 auto;
+  white-space: nowrap;
+  line-height: 1.1;
+}
+
+.icon {
+  flex: 0 0 auto;
+  position: relative;
+  width: var(--space-small);
+  height: var(--space-small);
+}
+
+.iconCopy,
+.iconDone {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.iconCopy {
+  color: var(--color-text-ultra-light);
+}
+
+.iconDone {
+  color: var(--color-success);
+}
+
+/** done state */
+.iconCopy {
+  opacity: 1;
+  transition: var(--ui-transition-out);
+}
+
+.iconDone {
+  opacity: 0;
+  transition: var(--ui-transition-out);
+}
+
+.done .iconCopy {
+  opacity: 0;
+  transition: var(--ui-transition-in);
+}
+
+.done .iconDone {
+  opacity: 1;
+  transition: var(--ui-transition-in);
+}

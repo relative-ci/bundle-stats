@@ -1,5 +1,6 @@
 export { Alert } from './alert';
 export { Button } from './button';
+export { CopyToClipboard } from './copy-to-clipboard';
 export { Container } from './container';
 export { ControlGroup } from './control-group';
 export { Dropdown } from './dropdown';
