@@ -176,6 +176,7 @@
   --color-outline-warning: var(--color-yellow-200);
   --color-outline-danger: var(--color-red-100);
 
+  --color-backdrop: rgba(0, 0, 0, 0.05);
   --color-shadow: rgba(0, 0, 0, 0.2);
 
   --transition-duration-in: 0.2s;

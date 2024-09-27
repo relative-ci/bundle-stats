@@ -1,0 +1,89 @@
+.backdrop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999 !important;
+}
+
+.backdrop::before {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-backdrop);
+  filter:
+}
+
+.dialog {
+  --dialog-header-height: var(--space-medium);
+  --dialog-vspace: var(--space-xsmall);
+  --dialog-padding: var(--space-xsmall);
+
+  width: calc(100vw - 2 * var(--dialog-padding));
+  position: relative;
+  border-radius: var(--radius-medium);
+  padding: var(--dialog-padding);
+  background: var(--color-background);
+  box-shadow: 0 0 var(--space-medium) var(--color-shadow);
+}
+
+.header {
+  min-height: var(--dialog-header-height);
+}
+
+.header:empty {
+  display: none;
+}
+
+.headerClose {
+  position: absolute;
+  right: var(--space-xxsmall);
+  top: var(--space-xxsmall);
+  padding: var(--space-xxxsmall);
+  flex: 0 0 auto;
+  color: var(--color-outline-dark);
+}
+
+.headerClose:hover,
+.headerClose:focus,
+.headerClose:active {
+  color: var(--color-text-ultra-light);
+}
+
+.content {
+  width: 100%;
+  max-height: calc(100vh - 2 * var(--space-medium) - 2 * var(--dialog-padding) - var(--dialog-header-height) - var(--dialog-vspace));
+  padding-bottom: 0.3em; /* extra space to compensate for the title line-height and allow to show focus state correctly on buttons */
+  overflow: auto;
+}
+
+/** Width variation */
+.width--narrow {
+  max-width: 480px;
+}
+
+.width--medium {
+  max-width: 748px;
+}
+
+.width--wide {
+  max-width: 1024px;
+}
+
+.width--extra-wide {
+  max-width: var(--max-width);
+}
+
+/** Center variation */
+.center {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .dialog {
+    --dialog-vspace: var(--space-medium);
+    --dialog-padding: var(--space-large);
+  }
+}

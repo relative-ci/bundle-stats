@@ -3,6 +3,7 @@ export { Button } from './button';
 export { CopyToClipboard } from './copy-to-clipboard';
 export { Container } from './container';
 export { ControlGroup } from './control-group';
+export { Dialog } from './dialog';
 export { Dropdown } from './dropdown';
 export { EmptySet } from './empty-set';
 export { FileName } from './file-name';
