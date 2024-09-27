@@ -266,8 +266,8 @@ export const BundleModules = (props: BundleModulesProps) => {
                 groups={DISPLAY_TYPE_GROUPS}
               />
               <MetricsTableOptions
-                handleViewAll={resetAllFilters}
-                handleResetFilters={resetFilters}
+                onViewAllClick={resetAllFilters}
+                onResetClick={resetFilters}
               />
             </FlexStack>
           )}

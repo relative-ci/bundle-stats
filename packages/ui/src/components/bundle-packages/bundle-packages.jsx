@@ -270,8 +270,8 @@ export const BundlePackages = (props) => {
             <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
               <MetricsDisplaySelector onSelect={setDisplayType} value={displayType.value} groupBy={displayType.groupBy} groups={DISPLAY_TYPE_GROUPS} />
               <MetricsTableOptions
-                handleViewAll={resetAllFilters}
-                handleResetFilters={resetFilters}
+                onViewAllClick={resetAllFilters}
+                onResetClick={resetFilters}
               />
             </FlexStack>
           )}

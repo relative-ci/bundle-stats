@@ -5,19 +5,17 @@ import I18N from '../../i18n';
 import { Dropdown, DropdownItem } from '../../ui/dropdown';
 
 type MetricsTableOptionsProps = {
-  handleViewAll?: () => void;
-  handleResetFilters?: () => void;
+  onViewAllClick: () => void;
+  onResetClick: () => void;
 } & ComponentProps<typeof Dropdown>;
 
 export const MetricsTableOptions = (props: MetricsTableOptionsProps) => {
-  const { className = '', handleViewAll, handleResetFilters, ...restProps } = props;
+  const { onViewAllClick, onResetClick, ...restProps } = props;
 
   return (
-    <Dropdown className={className} glyph="more-vertical" {...restProps}>
-      {handleResetFilters && (
-        <DropdownItem onClick={handleResetFilters}>{I18N.RESET_FILTERS}</DropdownItem>
-      )}
-      {handleViewAll && <DropdownItem onClick={handleViewAll}>{I18N.VIEW_ALL}</DropdownItem>}
+    <Dropdown glyph="more-vertical" {...restProps}>
+      <DropdownItem onClick={onResetClick}>{I18N.RESET_FILTERS}</DropdownItem>
+      <DropdownItem onClick={onViewAllClick}>{I18N.VIEW_ALL}</DropdownItem>
     </Dropdown>
   );
 };

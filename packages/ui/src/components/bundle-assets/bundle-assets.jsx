@@ -326,8 +326,8 @@ export const BundleAssets = (props) => {
                 onSelect={setDisplayType}
               />
               <MetricsTableOptions
-                handleViewAll={resetAllFilters}
-                handleResetFilters={resetFilters}
+                onViewAllClick={resetAllFilters}
+                onResetClick={resetFilters}
               />
             </FlexStack>
           )}
