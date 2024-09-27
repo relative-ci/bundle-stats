@@ -1,5 +1,4 @@
 import React from 'react';
-
 import cx from 'classnames';
 import { Button as ButtonBaseComponent } from 'ariakit/button';
 
@@ -20,6 +19,8 @@ export const BUTTON_KIND = {
   INFO: 'info',
   SUCCES: 'success',
 } as const;
+
+export const BUTTON_GLYPHS = BaseIcon.ICONS;
 
 type Size = (typeof BUTTON_SIZE)[keyof typeof BUTTON_SIZE];
 type Kind = (typeof BUTTON_KIND)[keyof typeof BUTTON_KIND];
