@@ -15,6 +15,7 @@ const ICONS = {
   COMMIT: 'commit',
   CLIPBOARD: 'clipboard',
   CLIPBOARD_CHECK: 'clipboard-check',
+  DOWNLOAD: 'download',
   ERROR: 'error',
   EXTERNAL_LINK: 'external-link',
   FILTER: 'filter',
