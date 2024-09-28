@@ -17,4 +17,5 @@ export { Skeleton } from './skeleton';
 export { Table } from './table';
 export { Tabs } from './tabs';
 export { Tag } from './tag';
+export { Textarea } from './textarea';
 export { Tooltip } from './tooltip';
