@@ -3,6 +3,7 @@ import React, { useCallback, useState } from 'react';
 import cx from 'classnames';
 import { useCopyToClipboard } from 'react-use';
 
+import I18N from '../../i18n';
 import { Button } from '../button';
 import { Icon } from '../icon';
 import { Tooltip } from '../tooltip';
@@ -38,20 +39,15 @@ export const CopyToClipboard = (props: CopyToClipboardProps) => {
 
   return (
     <Tooltip
-      title={doneTimeout ? 'Copied' : 'Copy to clipboard'}
+      title={doneTimeout ? I18N.COPY_TO_CLIPBOARD_DONE : I18N.COPY_TO_CLIPBOARD}
       as={Button}
       type="button"
+      rightGlyph={doneTimeout ? Icon.ICONS.CLIPBOARD_CHECK : Icon.ICONS.CLIPBOARD}
       onClick={handleOnClick}
       className={rootClassName}
       {...restProps}
     >
-      <span className={css.wrapper}>
-        {children && <span className={css.content}>{children}</span>}
-        <span className={css.icon}>
-          <Icon className={css.iconCopy} glyph={Icon.ICONS.CLIPBOARD} />
-          <Icon className={css.iconDone} glyph={Icon.ICONS.CLIPBOARD_CHECK} />
-        </span>
-      </span>
+      {children}
     </Tooltip>
   );
 };

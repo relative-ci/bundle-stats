@@ -105,7 +105,7 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
         <Stack space="small">
           <FlexStack space="xxxsmall" alignItems="center" as="h3" className={css.label}>
             <FileName as="code" name={itemTitle || item.label} className={css.fileName} />
-            <CopyToClipboard text={item.label} />
+            <CopyToClipboard text={item.label} size="small" />
           </FlexStack>
           <div>{renderRunInfo(item)}</div>
         </Stack>
@@ -156,7 +156,7 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
                             name={rowRun[runNameSelector]}
                             className={css.fileName}
                           />
-                          <CopyToClipboard text={item.label} />
+                          <CopyToClipboard text={item.label} size="small" />
                         </FlexStack>
                       ) : (
                         '-'
