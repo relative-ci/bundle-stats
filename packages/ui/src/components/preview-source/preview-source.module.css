@@ -1,0 +1,28 @@
+.root {
+  position: relative;
+}
+
+.toolbar {
+  position: absolute;
+  z-index: 2;
+  top: var(--space-xsmall);
+  right: var(--space-xsmall);
+}
+
+/** fix control group with nested components */
+.downloadTooltip > a {
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+
+.downloadTooltip > a:hover,
+.downloadTooltip > a:active,
+.downloadTooltip > a:focus {
+  box-shadow: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  min-height: 50vh;
+}
