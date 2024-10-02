@@ -9,6 +9,7 @@ import I18N from '../../i18n';
 import { Box } from '../../layout/box';
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
+import { Dialog, useDialogState } from '../../ui/dialog';
 import { InputSearch } from '../../ui/input-search';
 import { EmptySet } from '../../ui/empty-set';
 import { Filters } from '../../ui/filters';
@@ -17,6 +18,7 @@ import { Table } from '../../ui/table';
 import { Toolbar } from '../../ui/toolbar';
 import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
+import { MetricsTableExport } from '../metrics-table-export';
 import { MetricsTableHeader } from '../metrics-table-header';
 import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
@@ -261,6 +263,12 @@ export const BundlePackages = (props) => {
     return allItems.find(({ key }) => key === entryId)
   }, [allItems, entryId]);
 
+  const exportDialog = useDialogState();
+
+  const handleExportClick = useCallback(() => {
+    exportDialog.toggle();
+  }, []);
+
   return (
     <>
       <Stack space="xsmall" as="section" className={cx(css.root, className)}>
@@ -272,6 +280,7 @@ export const BundlePackages = (props) => {
               <MetricsTableOptions
                 onViewAllClick={resetAllFilters}
                 onResetClick={resetFilters}
+                onExportClick={handleExportClick}
               />
             </FlexStack>
           )}
@@ -327,6 +336,10 @@ export const BundlePackages = (props) => {
           onClose={hideEntryInfo}
         />
       )}
+
+      <Dialog title={I18N.EXPORT} width="wide" state={exportDialog}>
+        {exportDialog.open && <MetricsTableExport items={items} download="bundle-stats--packages"/>}
+      </Dialog>
     </>
   );
 };
