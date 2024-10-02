@@ -1,7 +1,7 @@
 .root {
   white-space: nowrap;
   /** override tooltip styles */
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-ultra-light) !important;
 }
 
 /** done state */
