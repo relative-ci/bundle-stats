@@ -19,6 +19,7 @@ import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
 import { Box } from '../../layout/box';
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
+import { Dialog, useDialogState } from '../../ui/dialog';
 import { Icon } from '../../ui/icon';
 import { InputSearch } from '../../ui/input-search';
 import { FileName } from '../../ui/file-name';
@@ -32,6 +33,7 @@ import { AssetInfo } from '../asset-info';
 import { AssetNotPredictive } from '../asset-not-predictive';
 import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
+import { MetricsTableExport } from '../metrics-table-export';
 import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
 import { MetricsDisplaySelector } from '../metrics-display-selector';
@@ -313,6 +315,12 @@ export const BundleAssets = (props) => {
     return allItems.find(({ key }) => key === entryId);
   }, [allItems, entryId]);
 
+  const exportDialog = useDialogState();
+
+  const handleExportClick = useCallback(() => {
+    exportDialog.toggle();
+  }, []);
+
   return (
     <>
       <Stack space="xsmall" as="section" className={cx(css.root, className)}>
@@ -326,8 +334,9 @@ export const BundleAssets = (props) => {
                 onSelect={setDisplayType}
               />
               <MetricsTableOptions
-                handleViewAll={resetAllFilters}
-                handleResetFilters={resetFilters}
+                onViewAllClick={resetAllFilters}
+                onResetClick={resetFilters}
+                onExportClick={handleExportClick}
               />
             </FlexStack>
           )}
@@ -385,6 +394,10 @@ export const BundleAssets = (props) => {
           onClose={hideEntryInfo}
         />
       )}
+
+      <Dialog title={I18N.EXPORT} width="wide" state={exportDialog}>
+        {exportDialog.open && <MetricsTableExport items={items} download="bundle-stats--assets"/>}
+      </Dialog>
     </>
   );
 };

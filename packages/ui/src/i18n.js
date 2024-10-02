@@ -21,6 +21,10 @@ export default {
 
   RESET_FILTERS: 'Reset filters',
   VIEW_ALL: 'View all entries',
+  EXPORT: 'Export',
+
+  COPY_TO_CLIPBOARD: 'Copy to clipboard',
+  COPY_TO_CLIPBOARD_DONE: 'Copied to clipboard',
 
   GITHUB_LINK_TITLE: 'View BundleStats project on GitHub',
   REPORT_ISSUE: 'Report issue',

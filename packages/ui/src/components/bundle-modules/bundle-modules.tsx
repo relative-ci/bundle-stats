@@ -13,6 +13,7 @@ import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { Button } from '../../ui/button';
 import { ControlGroup } from '../../ui/control-group';
+import { Dialog, useDialogState } from '../../ui/dialog';
 import { EmptySet } from '../../ui/empty-set';
 import { FileName } from '../../ui/file-name';
 import { Filters } from '../../ui/filters';
@@ -23,6 +24,7 @@ import { Toolbar } from '../../ui/toolbar';
 import { Tooltip } from '../../ui/tooltip';
 import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
+import { MetricsTableExport } from '../metrics-table-export';
 import { MetricsTableHeader } from '../metrics-table-header';
 import { MetricsTreemap, getTreemapNodes, getTreemapNodesGroupedByPath } from '../metrics-treemap';
 import { MetricsTableOptions } from '../metrics-table-options';
@@ -252,6 +254,12 @@ export const BundleModules = (props: BundleModulesProps) => {
     return allItems.find(({ key }) => key === entryId);
   }, [allItems, entryId]);
 
+  const exportDialog = useDialogState();
+
+  const handleExportClick = useCallback(() => {
+    exportDialog.toggle();
+  }, []);
+
   return (
     <>
       <Stack space="xsmall" as="section" className={rootClassName}>
@@ -266,8 +274,9 @@ export const BundleModules = (props: BundleModulesProps) => {
                 groups={DISPLAY_TYPE_GROUPS}
               />
               <MetricsTableOptions
-                handleViewAll={resetAllFilters}
-                handleResetFilters={resetFilters}
+                onViewAllClick={resetAllFilters}
+                onResetClick={resetFilters}
+                onExportClick={handleExportClick}
               />
             </FlexStack>
           )}
@@ -363,6 +372,10 @@ export const BundleModules = (props: BundleModulesProps) => {
           onClose={hideEntryInfo}
         />
       )}
+
+      <Dialog title={I18N.EXPORT} width="wide" state={exportDialog}>
+        {exportDialog.open && <MetricsTableExport items={items} download="bundle-stats--modules"/>}
+      </Dialog>
     </>
   );
 };

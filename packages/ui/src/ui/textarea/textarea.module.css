@@ -1,0 +1,64 @@
+.root {
+  border: 1px solid var(--color-outline);
+  border-radius: var(--radius-small);
+  color: var(--color-text-light);
+  width: 100%;
+  resize: vertical;
+  transition: var(--transition-in);
+  appearance: none;
+  outline: none;
+}
+
+.root::-webkit-input-placeholder {
+  color: var(--color-text-light);
+}
+
+.root::-moz-placeholder {
+  color: var(--color-text-light);
+}
+
+.root:-ms-input-placeholder {
+  color: var(--color-text-light);
+}
+
+.root:-moz-placeholder {
+  color: var(--color-text-light);
+}
+
+.root:focus {
+  box-shadow: var(--outline-hover);
+  border-color: var(--color-outline-dark);
+  color: inherit;
+  transition: var(--transition-out);
+}
+
+.root[readonly=""] {
+  color: var(--color-text-light);
+}
+
+/**
+ * Source variation
+ */
+.previewSource {
+  font-family: var(--font-family-fixed);
+}
+
+/** Size modifier */
+/* default - medium */
+.root {
+  padding: var(--space-xsmall);
+  font-size: var(--size-medium);
+  line-height: calc(var(--space-medium) - 2px);
+}
+
+.small {
+  padding: var(--space-xxsmall);
+  font-size: var(--size-small);
+  line-height: calc(var(--space-small) - 2px);
+}
+
+.large {
+  padding: var(--space-small);
+  font-size: var(--size-large);
+  line-height: calc(var(--space-large) - 2px);
+}

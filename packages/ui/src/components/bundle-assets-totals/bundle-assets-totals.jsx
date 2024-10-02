@@ -15,12 +15,16 @@ import { Toolbar } from '../../ui/toolbar';
 import { Table } from '../../ui/table';
 import { Box } from '../../layout/box';
 import { Stack } from '../../layout/stack';
+import { Dialog, useDialogState } from '../../ui/dialog';
 import { MetricsDisplaySelector } from '../metrics-display-selector';
 import { MetricsTable } from '../metrics-table';
-import { MetricsTableTitle } from '../metrics-table-title';
+import { MetricsTableExport } from '../metrics-table-export';
 import { MetricsTableHeader } from '../metrics-table-header';
+import { MetricsTableOptions } from '../metrics-table-options';
+import { MetricsTableTitle } from '../metrics-table-title';
 import { MetricsTreemap, getTreemapNodes } from '../metrics-treemap';
 import { ComponentLink } from '../component-link';
+import { FlexStack } from '../../layout';
 
 const metricsTableTitle = (
   <MetricsTableTitle
@@ -68,42 +72,57 @@ export const BundleAssetsTotals = ({
     [history],
   );
 
+  const exportDialog = useDialogState();
+
+  const handleExportClick = useCallback(() => {
+    exportDialog.toggle();
+  }, []);
+
   return (
-    <Stack space="xsmall" as="section" className={className}>
-      <Toolbar
-        renderActions={() => (
-          <MetricsDisplaySelector onSelect={setDisplayType} value={displayType.value} />
-        )}
-      />
-      <Box outline as="main">
-        {displayType.value === MetricsDisplayType.TABLE && (
-          <MetricsTable
-            title={metricsTableTitle}
-            runs={jobs}
-            items={items}
-            renderRowHeader={renderRowHeader}
-            showHeaderSum
-            {...restProps}
-          />
-        )}
-        {displayType.value === MetricsDisplayType.TREEMAP && (
-          <>
-            <Table compact>
-              <MetricsTableHeader
-                metricTitle={metricsTableTitle}
-                showSum
-                jobs={jobs}
-                rows={items}
-              />
-            </Table>
-            <MetricsTreemap
-              treeNodes={getTreemapNodes(items)}
-              onItemClick={onTreemapItemClick || handleMetricsTreemapItemClick}
+    <>
+      <Stack space="xsmall" as="section" className={className}>
+        <Toolbar
+          renderActions={() => (
+            <FlexStack space="xxsmall">
+              <MetricsDisplaySelector onSelect={setDisplayType} value={displayType.value} />
+              <MetricsTableOptions onExportClick={handleExportClick} />
+            </FlexStack>
+          )}
+        />
+        <Box outline as="main">
+          {displayType.value === MetricsDisplayType.TABLE && (
+            <MetricsTable
+              title={metricsTableTitle}
+              runs={jobs}
+              items={items}
+              renderRowHeader={renderRowHeader}
+              showHeaderSum
+              {...restProps}
             />
-          </>
-        )}
-      </Box>
-    </Stack>
+          )}
+          {displayType.value === MetricsDisplayType.TREEMAP && (
+            <>
+              <Table compact>
+                <MetricsTableHeader
+                  metricTitle={metricsTableTitle}
+                  showSum
+                  jobs={jobs}
+                  rows={items}
+                />
+              </Table>
+              <MetricsTreemap
+                treeNodes={getTreemapNodes(items)}
+                onItemClick={onTreemapItemClick || handleMetricsTreemapItemClick}
+              />
+            </>
+          )}
+        </Box>
+      </Stack>
+
+      <Dialog title={I18N.EXPORT} width="wide" state={exportDialog}>
+        {exportDialog.open && <MetricsTableExport items={items} download="bundle-stats--totals" />}
+      </Dialog>
+    </>
   );
 };
 
