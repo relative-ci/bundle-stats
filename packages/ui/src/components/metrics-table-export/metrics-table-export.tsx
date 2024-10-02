@@ -6,7 +6,6 @@ import { Stack } from '../../layout/stack';
 import { Tabs } from '../../ui/tabs';
 import { PreviewSource } from '../preview-source';
 import css from './metrics-table-export.module.css';
-import { SOURCE } from '../bundle-modules/bundle-modules.i18n';
 
 const generateSourceJSON = (items: Array<ReportMetricRow>): string => {
   const output = items.map((item) => ({
@@ -93,6 +92,7 @@ export const MetricsTableExport = (props: MetricsTableExportProps) => {
               <PreviewSource
                 source={source.transformFn(items)}
                 download={`${download}.${source.extension}`}
+                className={css.panel}
                 key={source.label}
               />
           ),

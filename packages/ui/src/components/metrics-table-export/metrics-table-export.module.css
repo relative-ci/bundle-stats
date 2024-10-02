@@ -1,3 +1,8 @@
 .panels {
-  min-height: 60vh;
+}
+
+.panel {
+  min-height: 320px;
+  height: 60vh;
+  max-height: 480px;
 }

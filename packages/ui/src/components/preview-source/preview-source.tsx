@@ -39,7 +39,7 @@ export const PreviewSource = (props: PreviewSourceProps) => {
           </Tooltip>
         )}
       </ControlGroup>
-      <Textarea previewSource readOnly rows={6} className={css.content}>
+      <Textarea previewSource readOnly rows={12} className={css.content}>
         {source}
       </Textarea>
     </div>
