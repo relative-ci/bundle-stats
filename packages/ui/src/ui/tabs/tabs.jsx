@@ -4,7 +4,7 @@ import cx from 'classnames';
 
 import css from './tabs.module.css';
 
-const Item = ({ isTabActive, as: Component, className,...restProps }) => (
+const Item = ({ isTabActive, as: Component = 'span', className = '', ...restProps }) => (
   <Component className={cx(css.item, className, isTabActive && css.itemActive)} {...restProps} />
 );
 
@@ -20,7 +20,7 @@ Item.propTypes = {
   as: PropTypes.elementType,
 };
 
-export const Tabs = ({ className, ...restProps }) => (
+export const Tabs = ({ className = '', ...restProps }) => (
   <nav className={cx(css.root, className)} {...restProps} />
 );
 
