@@ -2,10 +2,11 @@ import type { ComponentProps } from 'react';
 import React, { useState } from 'react';
 import type { ReportMetricRow } from '@bundle-stats/utils';
 
-import { useTabState } from 'ariakit';
 import { Stack } from '../../layout/stack';
 import { Tabs } from '../../ui/tabs';
 import { PreviewSource } from '../preview-source';
+import css from './metrics-table-export.module.css';
+import { SOURCE } from '../bundle-modules/bundle-modules.i18n';
 
 const generateSourceJSON = (items: Array<ReportMetricRow>): string => {
   const output = items.map((item) => ({
@@ -50,6 +51,19 @@ const generateSourceCSV = (items: Array<ReportMetricRow>): string => {
   return output.join('\r');
 };
 
+const SOURCES = [
+  {
+    label: 'CSV',
+    transformFn: generateSourceCSV,
+    extension: '.csv',
+  },
+  {
+    label: 'JSON',
+    transformFn: generateSourceJSON,
+    extension: '.json',
+  },
+];
+
 type MetricsTableExportProps = {
   items: Array<ReportMetricRow>;
   download: string;
@@ -57,24 +71,33 @@ type MetricsTableExportProps = {
 
 export const MetricsTableExport = (props: MetricsTableExportProps) => {
   const { items, download, ...restProps } = props;
-  const [selectedId, setSelectedId] = useState('CSV');
+  const [selectedId, setSelectedId] = useState(SOURCES[0].label);
 
   return (
     <Stack space="small" {...restProps}>
       <Tabs>
-        <Tabs.Item onClick={() => setSelectedId('CSV')} isTabActive={selectedId === 'CSV'}>
-          CSV
-        </Tabs.Item>
-        <Tabs.Item onClick={() => setSelectedId('JSON')} isTabActive={selectedId === 'JSON'}>
-          JSON
-        </Tabs.Item>
+        {SOURCES.map((source) => (
+          <Tabs.Item
+            onClick={() => setSelectedId(source.label)}
+            isTabActive={selectedId === source.label}
+            key={source.label}
+          >
+            {source.label}
+          </Tabs.Item>
+        ))}
       </Tabs>
-      {selectedId === 'CSV' && (
-        <PreviewSource source={generateSourceCSV(items)} download={`${download}.csv`} />
-      )}
-      {selectedId === 'JSON' && (
-        <PreviewSource source={generateSourceJSON(items)} download={`${download}.json`} />
-      )}
+      <div className={css.panels}>
+        {SOURCES.map(
+          (source) =>
+            selectedId === source.label && (
+              <PreviewSource
+                source={source.transformFn(items)}
+                download={`${download}.${source.extension}`}
+                key={source.label}
+              />
+          ),
+        )}
+      </div>
     </Stack>
   );
 };
