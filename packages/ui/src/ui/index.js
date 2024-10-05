@@ -13,6 +13,7 @@ export { Icon } from './icon';
 export { Input } from './input';
 export { InputSearch } from './input-search';
 export { Loader } from './loader';
+export { Markdown } from './markdown';
 export { Skeleton } from './skeleton';
 export { Table } from './table';
 export { Tabs } from './tabs';
