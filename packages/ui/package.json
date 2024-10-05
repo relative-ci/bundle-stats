@@ -79,6 +79,7 @@
     "d3": "7.9.0",
     "modern-css-reset": "1.4.0",
     "react-use": "17.5.1",
+    "snarkdown": "2.0.0",
     "use-query-params": "2.2.1"
   }
 }

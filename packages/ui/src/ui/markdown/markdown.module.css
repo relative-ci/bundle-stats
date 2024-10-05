@@ -1,0 +1,7 @@
+.root code {
+  padding: 2px var(--space-xxxsmall);
+  background: var(--color-highlight);
+  outline: 1px solid var(--color-outline);
+  border-radius: var(--radius-small);
+  color: var(--color-text);
+}
