@@ -1,6 +1,6 @@
 .root {
-  background: linear-gradient(transparent 10%, currentColor 10.1%, currentColor 89.9%, transparent 90%);
-  opacity: 0.05;
+  background: var(--skeleton-inline-background);
+  opacity: var(--skeleton-opacity);
   pointer-events: none;
   min-width: 6em;
   border-radius: var(--radius-medium);
@@ -14,5 +14,5 @@
 }
 
 .block {
-  background: currentColor;
+  background: var(--skeleton-block-background);
 }
