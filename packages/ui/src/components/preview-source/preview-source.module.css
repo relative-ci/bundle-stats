@@ -7,6 +7,8 @@
   z-index: 2;
   top: var(--space-xsmall);
   right: var(--space-xsmall);
+  background: var(--color-background);
+  border-radius: var(--radius-medium);
 }
 
 /** fix control group with nested components */
@@ -21,8 +23,18 @@
   box-shadow: none;
 }
 
+/** Source content */
 .content {
   position: relative;
   z-index: 1;
   height: 100%;
+  background: var(--color-highlight);
+  color: var(--color-text);
+}
+
+/** Empty / loading state */
+.isEmpty .content {
+  pointer-events: none;
+  background: var(--skeleton-block-background);
+  opacity: var(--skeleton-opacity);
 }

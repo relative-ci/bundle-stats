@@ -33,3 +33,9 @@ export const Default: Story = {
     download: 'bundle-stats--assets.json',
   },
 };
+
+export const Empty: Story = {
+  args: {
+    download: 'bundle-stats--assets.json',
+  },
+};

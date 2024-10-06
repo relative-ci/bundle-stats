@@ -201,6 +201,10 @@
 
   --outline-hover: 0 0 0 var(--space-xxxsmall) var(--color-highlight);
 
+  --skeleton-inline-background: linear-gradient(transparent 10%, currentColor 10.1%, currentColor 89.9%, transparent 90%);
+  --skeleton-block-background: currentColor;
+  --skeleton-opacity: 0.06;
+
   /** Layout */
   --max-width: 88rem;
   --entry-info-width: 64rem;

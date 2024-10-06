@@ -61,11 +61,11 @@
 
 /** Width variation */
 .width--narrow {
-  max-width: 480px;
+  max-width: 360px;
 }
 
 .width--medium {
-  max-width: 748px;
+  max-width: 640px;
 }
 
 .width--wide {
@@ -73,7 +73,7 @@
 }
 
 .width--extra-wide {
-  max-width: var(--max-width);
+  max-width: calc(var(--max-width) + 2 * var(--space-medium));
 }
 
 /** Center variation */
