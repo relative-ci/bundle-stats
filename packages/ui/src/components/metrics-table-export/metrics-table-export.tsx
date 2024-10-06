@@ -5,7 +5,6 @@ import type { ReportMetricRow } from '@bundle-stats/utils';
 import { Stack } from '../../layout/stack';
 import { Tabs } from '../../ui/tabs';
 import { PreviewSource } from '../preview-source';
-import css from './metrics-table-export.module.css';
 
 const generateSourceJSON = (items: Array<ReportMetricRow>): string => {
   const output = items.map((item) => ({
@@ -54,12 +53,12 @@ const SOURCES = [
   {
     label: 'CSV',
     transformFn: generateSourceCSV,
-    extension: '.csv',
+    extension: 'csv',
   },
   {
     label: 'JSON',
     transformFn: generateSourceJSON,
-    extension: '.json',
+    extension: 'json',
   },
 ];
 
@@ -85,14 +84,14 @@ export const MetricsTableExport = (props: MetricsTableExportProps) => {
           </Tabs.Item>
         ))}
       </Tabs>
-      <div className={css.panels}>
+      <div>
         {SOURCES.map(
           (source) =>
             selectedId === source.label && (
               <PreviewSource
                 source={source.transformFn(items)}
+                rows={20}
                 download={`${download}.${source.extension}`}
-                className={css.panel}
                 key={source.label}
               />
           ),
