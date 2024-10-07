@@ -10,6 +10,7 @@
   color: var(--color-text-ultra-light);
   font-weight: bold;
   text-decoration: none;
+  cursor: default;
 }
 
 .item::after {
