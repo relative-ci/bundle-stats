@@ -36,6 +36,5 @@
 /** Empty / loading state */
 .isEmpty .content {
   pointer-events: none;
-  background: var(--skeleton-block-background);
-  opacity: var(--skeleton-opacity);
+  background: var(--color-highlight);
 }
