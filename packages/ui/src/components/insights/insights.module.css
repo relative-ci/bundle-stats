@@ -4,6 +4,7 @@
 
 .entry {
   color: inherit;
+  line-height: var(--line-height-heading);
   text-decoration: none;
 }
 
