@@ -52,10 +52,10 @@ const DISPLAY_TYPE_GROUPS = {
 
 const getFileTypeFilters = (filters) =>
   Object.entries(FILE_TYPE_LABELS).map(([key, label]) => ({
-    key,
-    label,
-    defaultValue: get(filters, `${ASSET_FILE_TYPE}.${key}`, true),
-  }));
+  key,
+  label,
+  defaultValue: get(filters, `${ASSET_FILE_TYPE}.${key}`, true),
+}));
 
 const getFilters = ({ compareMode, filters }) => ({
   [ASSET_FILTERS.CHANGED]: {
@@ -64,7 +64,7 @@ const getFilters = ({ compareMode, filters }) => ({
     disabled: !compareMode,
   },
   [ASSET_ENTRY_TYPE]: {
-    label: 'Entry type',
+    label: 'Type',
     children: [
       {
         key: ASSET_FILTERS.ENTRY,
@@ -396,7 +396,7 @@ export const BundleAssets = (props) => {
       )}
 
       <Dialog title={I18N.EXPORT} width="wide" state={exportDialog}>
-        {exportDialog.open && <MetricsTableExport items={items} download="bundle-stats--assets"/>}
+        {exportDialog.open && <MetricsTableExport items={items} download="bundle-stats--assets" />}
       </Dialog>
     </>
   );
