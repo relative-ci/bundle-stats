@@ -29,7 +29,19 @@ const SOURCE = JSON.stringify(
 
 export const Default: Story = {
   args: {
-    source: SOURCE,
+    source: JSON.stringify(
+      [
+        {
+          label: 'Hey',
+          runs: [
+            { value: 1, name: 'a' },
+            { value: 2, name: 'b' },
+          ],
+        },
+      ],
+      null,
+      2,
+    ),
     download: 'bundle-stats--assets.json',
   },
 };
