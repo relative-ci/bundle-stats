@@ -4,13 +4,13 @@ import cx from 'classnames';
 
 import css from './tabs.module.css';
 
-export type ItemProps<T extends ElementType> = {
+export type TabItemProps<T extends ElementType> = {
   isTabActive?: boolean;
   as?: T;
 } & ComponentProps<T>;
 
-const Item = <T extends ElementType = 'span'>(props: ItemProps<T>) => {
-  const { isTabActive = false, as: Component = 'span', className = '', ...restProps } = props;
+export const TabItem = <T extends ElementType = 'span'>(props: TabItemProps<T>) => {
+  const { className = '', as: Component = 'span', isTabActive = false, ...restProps } = props;
 
   return (
     <Component className={cx(css.item, className, isTabActive && css.itemActive)} {...restProps} />
@@ -25,4 +25,4 @@ export const Tabs = (props: TabsProps) => {
   return <nav className={cx(css.root, className)} {...restProps} />;
 };
 
-Tabs.Item = Item;
+Tabs.Item = TabItem;

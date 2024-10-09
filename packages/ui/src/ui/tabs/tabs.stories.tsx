@@ -2,7 +2,7 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
-import { Tabs } from '.';
+import { Tabs, TabItem } from '.';
 
 const meta: Meta<typeof Tabs> = {
   title: 'UI/Tabs',
@@ -17,9 +17,9 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: () => (
     <Tabs>
-      <Tabs.Item isTabActive>Option A</Tabs.Item>
-      <Tabs.Item>Option B</Tabs.Item>
-      <Tabs.Item>Option C</Tabs.Item>
+      <TabItem isTabActive>Option A</TabItem>
+      <TabItem>Option B</TabItem>
+      <TabItem>Option C</TabItem>
     </Tabs>
   ),
 };
