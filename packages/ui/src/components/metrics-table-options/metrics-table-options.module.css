@@ -1,0 +1,5 @@
+.group + .group {
+  margin-top: calc(var(--space-xxxsmall) / 2);
+  padding-top: calc(var(--space-xxxsmall) / 2);
+  border-top: 1px solid var(--color-outline);
+}

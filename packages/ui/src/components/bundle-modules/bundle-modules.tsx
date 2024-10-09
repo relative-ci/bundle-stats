@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import cx from 'classnames';
 import { SECTIONS, COMPONENT, type Job, ReportMetricRow } from '@bundle-stats/utils';
 import escapeRegExp from 'lodash/escapeRegExp';
@@ -255,8 +255,10 @@ export const BundleModules = (props: BundleModulesProps) => {
   }, [allItems, entryId]);
 
   const exportDialog = useDialogState();
+  const [exportSourceType, setExportSourceType] = useState<string | undefined>(undefined);
 
-  const handleExportClick = useCallback(() => {
+  const handleExportClick = useCallback((sourceType: string) => {
+    setExportSourceType(sourceType);
     exportDialog.toggle();
   }, []);
 
@@ -374,7 +376,13 @@ export const BundleModules = (props: BundleModulesProps) => {
       )}
 
       <Dialog title={I18N.EXPORT} width="wide" state={exportDialog}>
-        {exportDialog.open && <MetricsTableExport items={items} download="bundle-stats--modules"/>}
+        {exportDialog.open && (
+          <MetricsTableExport
+            items={items}
+            initialSourceType={exportSourceType}
+            download="bundle-stats--modules"
+          />
+        )}
       </Dialog>
     </>
   );

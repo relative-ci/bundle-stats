@@ -49,54 +49,58 @@ const generateSourceCSV = (items: Array<ReportMetricRow>): string => {
   return output.join('\r');
 };
 
-const SOURCES = [
-  {
+const SOURCES = {
+  csv: {
     label: 'CSV',
     transformFn: generateSourceCSV,
-    extension: 'csv',
+    extension: '.csv',
   },
-  {
+  json: {
     label: 'JSON',
     transformFn: generateSourceJSON,
-    extension: 'json',
+    extension: '.json',
   },
-];
+};
+
+const SOURCE_ENTRIES = Object.entries(SOURCES);
+const SOURCE_KEYS = Object.keys(SOURCES);
 
 type MetricsTableExportProps = {
   items: Array<ReportMetricRow>;
+  initialSourceType?: string;
   download: string;
 } & ComponentProps<typeof Stack>;
 
 export const MetricsTableExport = (props: MetricsTableExportProps) => {
-  const { items, download, ...restProps } = props;
-  const [selectedId, setSelectedId] = useState(SOURCES[0].label);
+  const { initialSourceType = SOURCE_KEYS[0], items, download, ...restProps } = props;
+  const [selectedSourceType, setSelectedSourceType] = useState(initialSourceType);
 
   return (
     <Stack space="small" {...restProps}>
       <Tabs>
-        {SOURCES.map((source, index) => (
+        {SOURCE_ENTRIES.map(([sourceId, source]) => (
           <TabItem
-            onClick={() => setSelectedId(source.label)}
-            isTabActive={selectedId === source.label}
-            id={`metrics-table-export-tab-${index}`}
-            aria-controls={`metrics-table-export-panel-${index}`}
-            key={source.label}
+            onClick={() => setSelectedSourceType(sourceId)}
+            isTabActive={selectedSourceType === sourceId}
+            id={`metrics-table-export-tab-${sourceId}`}
+            aria-controls={`metrics-table-export-panel-${sourceId}`}
+            key={sourceId}
           >
             {source.label}
           </TabItem>
         ))}
       </Tabs>
       <div>
-        {SOURCES.map(
-          (source, index) =>
-            selectedId === source.label && (
+        {SOURCE_ENTRIES.map(
+          ([sourceId, source]) =>
+            selectedSourceType === sourceId && (
               <PreviewSource
                 source={source.transformFn(items)}
                 rows={20}
-                download={`${download}.${source.extension}`}
+                download={`${download}${source.extension}`}
                 role="tabpanel"
-                id={`metrics-table-export-panel-${index}`}
-                aria-labelledby={`metrics-table-export-tab-${index}`}
+                id={`metrics-table-export-panel-${sourceId}`}
+                aria-labelledby={`metrics-table-export-tab-${sourceId}`}
                 key={source.label}
               />
           ),

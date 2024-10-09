@@ -22,6 +22,8 @@ export default {
   RESET_FILTERS: 'Reset filters',
   VIEW_ALL: 'View all entries',
   EXPORT: 'Export',
+  EXPORT_CSV: 'Export CSV',
+  EXPORT_JSON: 'Export JSON',
 
   COPY_TO_CLIPBOARD: 'Copy to clipboard',
   COPY_TO_CLIPBOARD_DONE: 'Copied to clipboard',
