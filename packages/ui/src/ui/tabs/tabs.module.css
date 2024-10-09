@@ -4,13 +4,16 @@
 }
 
 .item {
+  appearance: none;
+  background: none;
+  border: 0;
   position: relative;
   display: inline-block;
   padding: var(--space-xsmall) var(--space-small);
   color: var(--color-text-ultra-light);
   font-weight: bold;
   text-decoration: none;
-  cursor: default;
+  transition: var(--ui-transition-out);
 }
 
 .item::after {
@@ -27,8 +30,9 @@
 .item:hover,
 .item:active,
 .item:focus {
-  color: var(--color-primary-dark);
+  color: var(--color-primary);
   outline: none;
+  transition: var(--ui-transition-out);
 }
 
 .item:hover::after,
@@ -43,8 +47,4 @@
 
 .itemActive::after {
   background: currentColor;
-}
-
-.item + .item {
-  _margin-left: var(--space-medium);
 }

@@ -3,12 +3,12 @@ import React from 'react';
 
 import I18N from '../../i18n';
 import { Dropdown, DropdownItem } from '../../ui/dropdown';
-import { Separator } from '../../layout/separator';
+import css from './metrics-table-options.module.css';
 
 type MetricsTableOptionsProps = {
   onViewAllClick?: () => void;
   onResetClick?: () => void;
-  onExportClick?: () => void;
+  onExportClick?: (sourceType: string) => void;
 } & ComponentProps<typeof Dropdown>;
 
 export const MetricsTableOptions = (props: MetricsTableOptionsProps) => {
@@ -16,10 +16,18 @@ export const MetricsTableOptions = (props: MetricsTableOptionsProps) => {
 
   return (
     <Dropdown glyph="more-vertical" {...restProps}>
-      {onResetClick && <DropdownItem onClick={onResetClick}>{I18N.RESET_FILTERS}</DropdownItem>}
-      {onViewAllClick && <DropdownItem onClick={onViewAllClick}>{I18N.VIEW_ALL}</DropdownItem>}
-      {((onResetClick || onViewAllClick) && onExportClick) && <Separator />}
-      {onExportClick && <DropdownItem onClick={onExportClick}>{I18N.EXPORT}</DropdownItem>}
+      <div className={css.group}>
+        {onResetClick && <DropdownItem onClick={onResetClick}>{I18N.RESET_FILTERS}</DropdownItem>}
+        {onViewAllClick && <DropdownItem onClick={onViewAllClick}>{I18N.VIEW_ALL}</DropdownItem>}
+      </div>
+      <div className={css.group}>
+        {onExportClick && (
+          <>
+            <DropdownItem onClick={() => onExportClick('csv')}>{I18N.EXPORT_CSV}</DropdownItem>
+            <DropdownItem onClick={() => onExportClick('json')}>{I18N.EXPORT_JSON}</DropdownItem>
+          </>
+        )}
+      </div>
     </Dropdown>
   );
 };
