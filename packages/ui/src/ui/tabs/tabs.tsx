@@ -9,20 +9,24 @@ export type TabItemProps<T extends ElementType> = {
   as?: T;
 } & ComponentProps<T>;
 
-export const TabItem = <T extends ElementType = 'span'>(props: TabItemProps<T>) => {
-  const { className = '', as: Component = 'span', isTabActive = false, ...restProps } = props;
+export const TabItem = <T extends ElementType = 'button'>(props: TabItemProps<T>) => {
+  const { className = '', as: Component = 'button', isTabActive = false, ...restProps } = props;
 
   return (
-    <Component className={cx(css.item, className, isTabActive && css.itemActive)} {...restProps} />
+    <Component
+      role="tab"
+      className={cx(css.item, className, isTabActive && css.itemActive)}
+      {...restProps}
+    />
   );
 };
 
-export type TabsProps = ComponentProps<'nav'>;
+export type TabsProps = ComponentProps<'div'>;
 
 export const Tabs = (props: TabsProps) => {
   const { className = '', ...restProps } = props;
 
-  return <nav className={cx(css.root, className)} {...restProps} />;
+  return <div role="tablist" className={cx(css.root, className)} {...restProps} />;
 };
 
 Tabs.Item = TabItem;

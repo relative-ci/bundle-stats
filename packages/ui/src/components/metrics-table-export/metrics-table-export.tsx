@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import type { ReportMetricRow } from '@bundle-stats/utils';
 
 import { Stack } from '../../layout/stack';
-import { Tabs } from '../../ui/tabs';
+import { Tabs, TabItem } from '../../ui/tabs';
 import { PreviewSource } from '../preview-source';
 
 const generateSourceJSON = (items: Array<ReportMetricRow>): string => {
@@ -74,24 +74,29 @@ export const MetricsTableExport = (props: MetricsTableExportProps) => {
   return (
     <Stack space="small" {...restProps}>
       <Tabs>
-        {SOURCES.map((source) => (
-          <Tabs.Item
+        {SOURCES.map((source, index) => (
+          <TabItem
             onClick={() => setSelectedId(source.label)}
             isTabActive={selectedId === source.label}
+            id={`metrics-table-export-tab-${index}`}
+            aria-controls={`metrics-table-export-panel-${index}`}
             key={source.label}
           >
             {source.label}
-          </Tabs.Item>
+          </TabItem>
         ))}
       </Tabs>
       <div>
         {SOURCES.map(
-          (source) =>
+          (source, index) =>
             selectedId === source.label && (
               <PreviewSource
                 source={source.transformFn(items)}
                 rows={20}
                 download={`${download}.${source.extension}`}
+                role="tabpanel"
+                id={`metrics-table-export-panel-${index}`}
+                aria-labelledby={`metrics-table-export-tab-${index}`}
                 key={source.label}
               />
           ),

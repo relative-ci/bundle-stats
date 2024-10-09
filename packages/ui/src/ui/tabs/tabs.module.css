@@ -4,6 +4,9 @@
 }
 
 .item {
+  appearance: none;
+  background: none;
+  border: 0;
   position: relative;
   display: inline-block;
   padding: var(--space-xsmall) var(--space-small);
