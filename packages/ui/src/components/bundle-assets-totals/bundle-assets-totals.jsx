@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import {
@@ -73,8 +73,10 @@ export const BundleAssetsTotals = ({
   );
 
   const exportDialog = useDialogState();
+  const [exportSourceType, setExportSourceType] = useState(undefined);
 
-  const handleExportClick = useCallback(() => {
+  const handleExportClick = useCallback((sourceType) => {
+    setExportSourceType(sourceType);
     exportDialog.toggle();
   }, []);
 
@@ -120,7 +122,13 @@ export const BundleAssetsTotals = ({
       </Stack>
 
       <Dialog title={I18N.EXPORT} width="wide" state={exportDialog}>
-        {exportDialog.open && <MetricsTableExport items={items} download="bundle-stats--totals" />}
+        {exportDialog.open && (
+          <MetricsTableExport
+            items={items}
+            initialSourceType={exportSourceType}
+            download="bundle-stats--totals"
+          />
+        )}
       </Dialog>
     </>
   );

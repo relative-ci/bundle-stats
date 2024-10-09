@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import get from 'lodash/get';
@@ -316,8 +316,10 @@ export const BundleAssets = (props) => {
   }, [allItems, entryId]);
 
   const exportDialog = useDialogState();
+  const [exportSourceType, setExportSourceType] = useState(undefined);
 
-  const handleExportClick = useCallback(() => {
+  const handleExportClick = useCallback((sourceType) => {
+    setExportSourceType(sourceType);
     exportDialog.toggle();
   }, []);
 
@@ -396,7 +398,13 @@ export const BundleAssets = (props) => {
       )}
 
       <Dialog title={I18N.EXPORT} width="wide" state={exportDialog}>
-        {exportDialog.open && <MetricsTableExport items={items} download="bundle-stats--assets" />}
+        {exportDialog.open && (
+          <MetricsTableExport
+            items={items}
+            initialSourceType={exportSourceType}
+            download="bundle-stats--assets"
+          />
+        )}
       </Dialog>
     </>
   );
