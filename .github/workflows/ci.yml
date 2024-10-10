@@ -37,7 +37,7 @@ jobs:
           webpackStatsFile: ./packages/html-templates/artifacts/webpack-stats.json
 
       - name: Upload build files
-        uses: actions/upload-artifact@v4.4.2
+        uses: actions/upload-artifact@v4.4.3
         with:
           name: build-artifacts
           retention-days: 1
@@ -57,7 +57,7 @@ jobs:
         run: ./scripts/local-registry-publish.sh
 
       - name: Upload local registry files
-        uses: actions/upload-artifact@v4.4.2
+        uses: actions/upload-artifact@v4.4.3
         with:
           name: local-registry
           retention-days: 1
