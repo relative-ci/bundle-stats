@@ -36,9 +36,9 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/ui#readme",
   "devDependencies": {
-    "@babel/preset-env": "7.25.8",
-    "@babel/preset-react": "7.25.7",
-    "@babel/preset-typescript": "7.25.7",
+    "@babel/preset-env": "7.25.9",
+    "@babel/preset-react": "7.25.9",
+    "@babel/preset-typescript": "7.25.9",
     "@storybook/addon-essentials": "8.3.6",
     "@storybook/addon-webpack5-compiler-babel": "3.0.3",
     "@storybook/react": "8.3.6",
