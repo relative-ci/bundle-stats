@@ -1,5 +1,5 @@
 import type { ReportMetricRow } from '@bundle-stats/utils';
-import type { Module } from '@bundle-stats/utils/types/webpack/types';
+import type { Asset, Module } from '@bundle-stats/utils/types/webpack/types';
 
 export interface SortAction {
   field: string;
@@ -18,6 +18,33 @@ type FilterGroupFieldData = {
 };
 
 type FilterFieldsData = Record<string, FilterFieldData | FilterGroupFieldData>;
+
+export type ReportMetricAssetRow = {
+  /**
+   * Asset isEntry - at least one run has isEntry truthy
+   */
+  isEntry: boolean;
+  /**
+   * Asset isInitial - at least one run has isInitial truthy
+   */
+  isInitial: boolean;
+  /**
+   * Asset isChunk - at least one run has isChunk truthy
+   */
+  isChunk: boolean;
+  /**
+   * Asset isAsset - at least one run has isAsset truthy
+   */
+  isAsset: boolean;
+  /**
+   * Asset name is not predictive
+   */
+  isNotPredictive: boolean;
+  /**
+   * Report asset row isEntry - at least one run has isEntry
+   */
+  fileType: string;
+} & Omit<ReportMetricRow, 'runs'> & { runs: Array<(Asset & ReportMetricRun) | null> };
 
 export type ReportMetricModuleRow = {
   thirdParty: boolean;

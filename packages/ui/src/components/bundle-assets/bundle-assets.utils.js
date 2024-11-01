@@ -1,26 +1,20 @@
+/**
+ * @type {import('@bundle-stats/utils').ReportMetricRow} ReportMetricRow
+ * @type {import('../../types').ReportMetricAssetRow} ReportMetricAssetRow
+ */
+
 import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, getFileType } from '@bundle-stats/utils';
 
-export const addRowAssetFlags = (row) => {
-  const { runs } = row;
+/**
+ * Check if the asset cache is not predictive
+ *
+ * @param {ReportMetricRow} row
+ * @returns {boolean}
+ */
+const getIsNotPredictive = (row) => {
+  const { key, runs } = row;
 
-  const isEntry = runs.map((run) => run?.isEntry).includes(true);
-  const isInitial = runs.map((run) => run?.isInitial).includes(true);
-  const isChunk = runs.map((run) => run?.isChunk).includes(true);
-  const isAsset = !(isEntry || isInitial || isChunk);
-  const fileType = getFileType(row.key);
-
-  return {
-    ...row,
-    isEntry,
-    isInitial,
-    isChunk,
-    isAsset,
-    fileType,
-  };
-};
-
-export const getIsNotPredictive = (key, runs) =>
-  runs.reduce((agg, current, index) => {
+  return runs.reduce((agg, current, index) => {
     if (agg) {
       return agg;
     }
@@ -41,11 +35,34 @@ export const getIsNotPredictive = (key, runs) =>
 
     return agg;
   }, false);
+};
 
-export const addRowIsNotPredictive = (row) => ({
-  ...row,
-  isNotPredictive: getIsNotPredictive(row.key, row.runs),
-});
+/**
+ * Add asset row flags
+ *
+ * @param {ReportMetricRow} row
+ * @returns {ReportMetricAssetRow}
+ */
+export const addMetricReportAssetRowData = (row) => {
+  const { runs } = row;
+
+  const isEntry = runs.map((run) => run?.isEntry).includes(true);
+  const isInitial = runs.map((run) => run?.isInitial).includes(true);
+  const isChunk = runs.map((run) => run?.isChunk).includes(true);
+  const isAsset = !(isEntry || isInitial || isChunk);
+  const isNotPredictive = getIsNotPredictive(row);
+  const fileType = getFileType(row.key);
+
+  return {
+    ...row,
+    isEntry,
+    isInitial,
+    isChunk,
+    isAsset,
+    isNotPredictive,
+    fileType,
+  };
+};
 
 export const getRowFilter = (filters) => (item) => {
   if (filters[ASSET_FILTERS.CHANGED] && !item.changed) {
