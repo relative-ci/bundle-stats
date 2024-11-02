@@ -11,7 +11,7 @@ import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, getFileType } from '@
  * @param {ReportMetricRow} row
  * @returns {boolean}
  */
-const getIsNotPredictive = (row) => {
+export const getIsNotPredictive = (row) => {
   const { key, runs } = row;
 
   return runs.reduce((agg, current, index) => {
@@ -26,9 +26,9 @@ const getIsNotPredictive = (row) => {
     if (
       current &&
       runs[index + 1] &&
-      current.delta !== 0 &&
       key !== current.name &&
-      current.name === runs[index + 1].name
+      current.name === runs[index + 1].name &&
+      current.size !== runs[index + 1].size
     ) {
       return true;
     }
