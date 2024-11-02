@@ -1,16 +1,17 @@
+import type { ComponentProps } from 'react';
 import React from 'react';
 import cx from 'classnames';
 
 import { KIND, SIZE } from '../../tokens';
 import css from './tag.module.css';
 
-interface TagProps {
+export type TagProps = {
   as?: React.ElementType;
   kind?: (typeof KIND)[keyof typeof KIND];
   size?: (typeof SIZE)[keyof typeof SIZE];
-}
+} & ComponentProps<'span'>;
 
-export const Tag = (props: TagProps & React.ComponentProps<'span'>) => {
+export const Tag = (props: TagProps) => {
   const {
     className = '',
     as: Component = 'span',
