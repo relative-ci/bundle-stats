@@ -19,19 +19,21 @@ type FilterGroupFieldData = {
 
 type FilterFieldsData = Record<string, FilterFieldData | FilterGroupFieldData>;
 
+export type ReportMetricAssetRowMetaStatus = 'added' | 'removed';
+
 export type ReportMetricAssetRow = {
   /**
    * Asset isEntry - at least one run has isEntry truthy
    */
-  isEntry: boolean;
+  isEntry: ReportMetricAssetRowMetaStatus | boolean;
   /**
    * Asset isInitial - at least one run has isInitial truthy
    */
-  isInitial: boolean;
+  isInitial: ReportMetricAssetRowMetaStatus | boolean;
   /**
    * Asset isChunk - at least one run has isChunk truthy
    */
-  isChunk: boolean;
+  isChunk: ReportMetricAssetRowMetaStatus | boolean;
   /**
    * Asset isAsset - at least one run has isAsset truthy
    */

@@ -31,7 +31,30 @@
 }
 
 .assetNameTag {
+  overflow: hidden;
+  position: relative;
   vertical-align: middle;
+}
+
+.assetNameTag::before {
+  display:  block;
+  padding: 2px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 8px;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.assetNameTagAdded::before {
+  background: linear-gradient(-45deg, var(--color-danger) 50%, transparent 50%);
+}
+
+.assetNameTagRemoved::before {
+  background: linear-gradient(135deg, var(--color-danger) 50%, transparent 50%);
 }
 
 .assetNameTag + .assetNameTag {

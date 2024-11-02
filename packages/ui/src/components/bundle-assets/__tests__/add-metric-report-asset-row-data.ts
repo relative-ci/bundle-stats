@@ -11,7 +11,7 @@ describe('BundleAssets / addMetricReportAssetRowData', () => {
         runs: [
           {
             name: 'assets/main.abc123.js',
-            size: 1024 * 10,
+            value: 1024 * 10,
             isEntry: true,
             isChunk: true,
             isInitial: true,
@@ -32,7 +32,7 @@ describe('BundleAssets / addMetricReportAssetRowData', () => {
       runs: [
         {
           name: 'assets/main.abc123.js',
-          size: 1024 * 10,
+          value: 1024 * 10,
           isEntry: true,
           isChunk: true,
           isInitial: true,
@@ -51,7 +51,7 @@ describe('BundleAssets / addMetricReportAssetRowData', () => {
         runs: [
           {
             name: 'assets/main.abc123.js',
-            size: 1024 * 10,
+            value: 1024 * 10,
             isEntry: true,
             isChunk: true,
             isInitial: true,
@@ -73,7 +73,7 @@ describe('BundleAssets / addMetricReportAssetRowData', () => {
       runs: [
         {
           name: 'assets/main.abc123.js',
-          size: 1024 * 10,
+          value: 1024 * 10,
           isEntry: true,
           isChunk: true,
           isInitial: true,
@@ -94,7 +94,7 @@ describe('BundleAssets / addMetricReportAssetRowData', () => {
           null,
           {
             name: 'assets/main.abc123.js',
-            size: 1024 * 10,
+            value: 1024 * 10,
             isEntry: true,
             isChunk: true,
             isInitial: true,
@@ -116,7 +116,7 @@ describe('BundleAssets / addMetricReportAssetRowData', () => {
         null,
         {
           name: 'assets/main.abc123.js',
-          size: 1024 * 10,
+          value: 1024 * 10,
           isEntry: true,
           isChunk: true,
           isInitial: true,
@@ -135,14 +135,14 @@ describe('BundleAssets / addMetricReportAssetRowData', () => {
         runs: [
           {
             name: 'assets/main.abc123.js',
-            size: 1024 * 10,
+            value: 1024 * 10,
             isEntry: true,
             isChunk: true,
             isInitial: true,
           },
           {
             name: 'assets/main.abc123.js',
-            size: 1024 * 10,
+            value: 1024 * 10,
             isEntry: true,
             isChunk: true,
             isInitial: true,
@@ -163,14 +163,14 @@ describe('BundleAssets / addMetricReportAssetRowData', () => {
       runs: [
         {
           name: 'assets/main.abc123.js',
-          size: 1024 * 10,
+          value: 1024 * 10,
           isEntry: true,
           isChunk: true,
           isInitial: true,
         },
         {
           name: 'assets/main.abc123.js',
-          size: 1024 * 10,
+          value: 1024 * 10,
           isEntry: true,
           isChunk: true,
           isInitial: true,
