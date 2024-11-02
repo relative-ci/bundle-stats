@@ -141,7 +141,6 @@ export function getTreemapNodesGroupedByPath(items: Array<ReportMetricRow>): Tre
     };
 
     const childrenTotal = setTreeNode(treeNodes, baseSlugs, 0, treeNode);
-    console.log(childrenTotal);
 
     total.current += childrenTotal.current;
     total.baseline =
