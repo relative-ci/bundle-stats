@@ -94,6 +94,38 @@ const getFilters = ({ compareMode, filters }) => ({
   },
 });
 
+const AssetNameTag = (props) => {
+  const { className = '', title, status } = props;
+
+  const rootClassName = cx(
+    css.assetNameTag,
+    status === 'added' && css.assetNameTagAdded,
+    status === 'removed' && css.assetNameTagRemoved,
+    className,
+  );
+
+  return (
+    <Tag className={rootClassName} title={title} size={Tag.SIZES.SMALL} kind={Tag.KINDS.INFO} />
+  );
+};
+
+AssetNameTag.propTypes = {
+  className: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
+};
+
+AssetNameTag.defaultProps = {
+  className: '',
+};
+
+/**
+ * @param {object} props
+ * @param {import('../../types').ReportMetricAssetRow} props.row
+ * @param {import('react').ElementType} props.customComponentLink
+ * @param {object} props.filters
+ * @param {string} props.search
+ */
 const RowHeader = ({ row, customComponentLink: CustomComponentLink, filters, search }) => {
   const { label, isNotPredictive, runs, isChunk, isEntry, isInitial } = row;
 
@@ -116,28 +148,13 @@ const RowHeader = ({ row, customComponentLink: CustomComponentLink, filters, sea
       >
         <span className={css.assetNameTags}>
           {isEntry && (
-            <Tag
-              className={cx(css.assetNameTag, css.assetNameTagEntry)}
-              title="Entrypoint"
-              size={Tag.SIZES.SMALL}
-              kind={Tag.KINDS.INFO}
-            />
+            <AssetNameTag className={css.assetNameTagEntry} title="Entrypoint" status={isEntry} />
           )}
           {isInitial && (
-            <Tag
-              className={cx(css.assetNameTag, css.assetNameTagInitial)}
-              title="Initial"
-              size={Tag.SIZES.SMALL}
-              kind={Tag.KINDS.INFO}
-            />
+            <AssetNameTag className={css.assetNameTagInitial} title="Initial" status={isInitial} />
           )}
           {isChunk && (
-            <Tag
-              className={cx(css.assetNameTag, css.assetNameTagChunk)}
-              title="Chunk"
-              size={Tag.SIZES.SMALL}
-              kind={Tag.KINDS.INFO}
-            />
+            <AssetNameTag className={css.assetNameTagChunk} title="Chunk" status={isChunk} />
           )}
         </span>
         <FileName className={css.assetNameText} name={label} />
@@ -147,15 +164,7 @@ const RowHeader = ({ row, customComponentLink: CustomComponentLink, filters, sea
 };
 
 RowHeader.propTypes = {
-  row: PropTypes.shape({
-    key: PropTypes.string,
-    label: PropTypes.string,
-    isNotPredictive: PropTypes.bool,
-    isChunk: PropTypes.bool,
-    isInitial: PropTypes.bool,
-    isEntry: PropTypes.bool,
-    runs: PropTypes.arrayOf(PropTypes.object), // eslint-disable-line react/forbid-prop-types
-  }).isRequired,
+  row: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   customComponentLink: PropTypes.elementType.isRequired,
   filters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   search: PropTypes.string,

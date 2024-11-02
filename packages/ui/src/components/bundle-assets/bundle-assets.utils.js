@@ -1,6 +1,7 @@
 /**
  * @type {import('@bundle-stats/utils').ReportMetricRow} ReportMetricRow
  * @type {import('../../types').ReportMetricAssetRow} ReportMetricAssetRow
+ * @type {import('../../types').ReportMetricAssetRowMetaStatus} ReportMetricAssetRowFlagStatus
  */
 
 import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, getFileType } from '@bundle-stats/utils';
@@ -28,13 +29,45 @@ export const getIsNotPredictive = (row) => {
       runs[index + 1] &&
       key !== current.name &&
       current.name === runs[index + 1].name &&
-      current.size !== runs[index + 1].size
+      current.value !== runs[index + 1].value
     ) {
       return true;
     }
 
     return agg;
   }, false);
+};
+
+/**
+ * @param {Array<boolean>}
+ * @returns {ReportMetricAssetRowFlagStatus | boolean}
+ */
+export const getAssetMetaStatus = (values) => {
+  if (!values.includes(true)) {
+    return false;
+  }
+
+  // filter empty runs
+  const metaValues = values.filter((value) => typeof value !== 'undefined');
+
+  const current = metaValues[0];
+  const metaValuesLength = metaValues.length;
+
+  if (metaValuesLength === 1) {
+    return Boolean(current);
+  }
+
+  const baseline = metaValues[metaValuesLength - 1];
+
+  if (current && !baseline) {
+    return 'added';
+  }
+
+  if (!current && baseline) {
+    return 'removed';
+  }
+
+  return true;
 };
 
 /**
@@ -46,9 +79,20 @@ export const getIsNotPredictive = (row) => {
 export const addMetricReportAssetRowData = (row) => {
   const { runs } = row;
 
-  const isEntry = runs.map((run) => run?.isEntry).includes(true);
-  const isInitial = runs.map((run) => run?.isInitial).includes(true);
-  const isChunk = runs.map((run) => run?.isChunk).includes(true);
+  // Collect meta for each run
+  const runsEntry = [];
+  const runsInitial = [];
+  const runsChunk = [];
+
+  runs.forEach((run) => {
+    runsEntry.push(run?.isEntry);
+    runsInitial.push(run?.isInitial);
+    runsChunk.push(run?.isChunk);
+  });
+
+  const isEntry = getAssetMetaStatus(runsEntry);
+  const isInitial = getAssetMetaStatus(runsInitial);
+  const isChunk = getAssetMetaStatus(runsChunk);
   const isAsset = !(isEntry || isInitial || isChunk);
   const isNotPredictive = getIsNotPredictive(row);
   const fileType = getFileType(row.key);
