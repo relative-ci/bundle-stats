@@ -1,0 +1,83 @@
+.root {}
+
+.notPredictive {
+  margin-right: var(--space-xxsmall);
+  display: inline-block;
+  width: var(--space-small);
+  height: var(--space-small);
+}
+
+.notPredictiveAnchor {}
+
+.notPredictiveIcon {
+  color: var(--color-warning-dark);
+}
+
+.metaTags {
+  display: inline;
+  margin-right: var(--space-xxxsmall);
+}
+
+.metaTags:empty {
+  display: none;
+}
+
+.metaTag {
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+}
+
+.metaTag::before {
+  display:  block;
+  padding: 2px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 8px;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.metaTagAdded::before {
+  background: linear-gradient(-45deg, var(--color-danger) 50%, transparent 50%);
+}
+
+.metaTagRemoved::before {
+  background: linear-gradient(135deg, var(--color-danger) 50%, transparent 50%);
+}
+
+.metaTag + .metaTag {
+  margin-left: 2px;
+}
+
+.metaTagEntry {
+  background: var(--color-info-dark);
+}
+
+.metaTagEntry::before {
+  content: 'e';
+}
+
+.metaTagInitial {
+  background: var(--color-info);
+}
+
+.metaTagInitial::before {
+  content: 'i';
+}
+
+.metaTagChunk {
+  background: var(--color-info-light);
+}
+
+.metaTagChunk::before {
+  content: 'c';
+}
+
+.nameText {
+  display: inline-block;
+  vertical-align: middle;
+}
