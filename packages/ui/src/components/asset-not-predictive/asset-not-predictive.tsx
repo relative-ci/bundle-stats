@@ -1,3 +1,4 @@
+import type { ComponentProps } from 'react';
 import React from 'react';
 import cx from 'classnames';
 import type { Asset } from '@bundle-stats/utils/types/webpack';
@@ -6,19 +7,20 @@ import { Stack } from '../../layout/stack';
 import { Table } from '../../ui/table';
 import css from './asset-not-predictive.module.css';
 
-interface AssetNotPredictiveProps {
+export type AssetNotPredictiveProps = {
   runs?: Array<Asset>;
-  labels?: Array<string>
-}
+  labels?: Array<string>;
+} & ComponentProps<'div'>;
 
-export const AssetNotPredictive = (props: AssetNotPredictiveProps & React.ComponentProps<'div'>) => {
+export const AssetNotPredictive = (props: AssetNotPredictiveProps) => {
   const { className = '', runs = null, labels = null, ...restProps } = props;
 
   return (
-    <Stack space="xsmall" {...restProps} className={cx(css.root, className)}>
-      <p className={css.text}>
-        Asset file name is the same, but the size has changed.
-      </p>
+    <Stack space="small" {...restProps} className={cx(css.root, className)}>
+      <Stack space="xxxsmall">
+        <h3>Asset hash is not predictive</h3>
+        <p className={css.text}>File names are equal, but the size is different.</p>
+      </Stack>
       {runs && (
         <Table outline compact>
           <Table.THead>
