@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
+import merge from 'lodash/merge';
 
 /* eslint-disable import/no-unresolved, import/no-relative-packages */
 import currentData from '../../../../fixtures/job.current';
@@ -76,8 +77,41 @@ export const NoInsights: Story = {
   ),
 };
 
+export const AssetMetaChanges: Story = {
+  render: (args) => {
+    const current = merge({}, CURRENT_SOURCE);
+    const baseline = merge({}, CURRENT_SOURCE);
+
+    current.webpack.assets.push({
+      name: 'assets/js/vendors-auth.1a278dc.js',
+      size: 26364,
+    });
+    current.webpack.chunks.push({
+      id: 100,
+      entry: false,
+      initial: false,
+      files: ['assets/js/vendors-auth.1a278dc.js'],
+      names: ['vendors-auth'],
+    });
+
+    baseline.webpack.assets.push({
+      name: 'assets/js/vendors-auth.1a278dc.js',
+      size: 26364,
+    });
+    baseline.webpack.chunks.push({
+      id: 100,
+      entry: false,
+      initial: true,
+      files: ['assets/js/vendors-auth.1a278dc.js'],
+      names: ['vendors-auth'],
+    });
+
+    return <App jobs={createJobs([current, baseline])} {...args} />;
+  },
+};
+
 export const NoBaseline: Story = {
-  render: (args) => <App jobs={createJobs[CURRENT_SOURCE]} {...args} />,
+  render: (args) => <App jobs={createJobs([CURRENT_SOURCE])} {...args} />,
 };
 
 export const EmptyBaseline: Story = {
