@@ -1,6 +1,5 @@
 import React, { ElementType } from 'react';
 import cx from 'classnames';
-import { COMPONENT, SECTIONS } from '@bundle-stats/utils';
 
 import type { TagProps } from '../../ui/tag';
 import { Icon } from '../../ui/icon';
@@ -37,12 +36,10 @@ export type AssetNameProps = {
   className?: string;
   row: ReportMetricAssetRow;
   customComponentLink: ElementType;
-  filters: object;
-  search: string;
 };
 
 export const AssetName = (props: AssetNameProps) => {
-  const { className = '', customComponentLink: CustomComponentLink, row, filters, search } = props;
+  const { className = '', customComponentLink: CustomComponentLink, row } = props;
   const { label, isNotPredictive, runs, isChunk, isEntry, isInitial } = row;
 
   return (
@@ -57,11 +54,7 @@ export const AssetName = (props: AssetNameProps) => {
         </HoverCard>
       )}
 
-      <CustomComponentLink
-        section={SECTIONS.ASSETS}
-        params={{ [COMPONENT.BUNDLE_ASSETS]: { filters, search, entryId: row.key } }}
-        className={css.name}
-      >
+      <CustomComponentLink entryId={row.key} className={css.name}>
         <span className={css.metaTags}>
           {isEntry && <MetaTag className={css.metaTagEntry} title="Entrypoint" status={isEntry} />}
           {isInitial && (
