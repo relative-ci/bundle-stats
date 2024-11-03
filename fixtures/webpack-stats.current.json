@@ -182,10 +182,10 @@
       "entry": true,
       "initial": true,
       "files": [
-        "vendors.5024abb.css",
-        "vendors.278dc2f.js",
-        "vendors.5024abb.css.map",
-        "vendors.278dc2f.js.map"
+        "assets/css/vendors.5024abb.css",
+        "assets/js/vendors.278dc2f.js",
+        "assets/css/vendors.5024abb.css.map",
+        "assets/js/vendors.278dc2f.js.map"
       ],
       "names": [
         "vendors"
