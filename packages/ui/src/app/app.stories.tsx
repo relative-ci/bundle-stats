@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 
 /* eslint-disable import/no-unresolved, import/no-relative-packages */
@@ -23,17 +24,7 @@ const BASELINE_SOURCE = {
   },
 };
 
-const JOBS = createJobs([CURRENT_SOURCE, BASELINE_SOURCE], {
-  webpack: {
-    budgets: [
-      {
-        metric: 'totalSizeByTypeALL',
-        value: 1024 * 1024,
-      },
-    ],
-  },
-});
-const NO_BASELINE_JOBS = createJobs([CURRENT_SOURCE]);
+const JOBS = createJobs([CURRENT_SOURCE, BASELINE_SOURCE]);
 
 const MULTIPLE_JOBS = createJobs([
   CURRENT_SOURCE,
@@ -51,38 +42,52 @@ const MULTIPLE_JOBS = createJobs([
 
 const [CURRENT_JOB, BASELINE_JOB] = JOBS;
 
-const EMPTY_BASELINE = createJobs([CURRENT_SOURCE, { webpack: null }]);
-
-export default {
+const meta: Meta<typeof App> = {
   title: 'App',
   component: App,
-  decorators: [
-    (Story) => (
-      <div style={{ margin: '-1rem' }}>
-        <Story />
-      </div>
-    ),
-  ],
+  parameters: {
+    layout: 'fullscreen',
+  },
+  args: {
+    version: '1.0',
+  },
 };
 
-export const Default = () => <App jobs={[CURRENT_JOB, BASELINE_JOB]} version="1.0" />;
+export default meta;
 
-export const NoInsights = () => (
-  <App
-    jobs={[
-      {
-        ...CURRENT_JOB,
-        insights: undefined,
-      },
-      BASELINE_JOB,
-    ]}
-  />
-);
+type Story = StoryObj<typeof meta>;
 
-export const NoBaseline = () => <App jobs={NO_BASELINE_JOBS} version="1.0" />;
+export const Default: Story = {
+  render: (args) => <App jobs={JOBS} {...args} />,
+};
 
-export const EmptyBaseline = () => <App jobs={EMPTY_BASELINE} version="1.0" />;
+export const NoInsights: Story = {
+  render: (args) => (
+    <App
+      jobs={[
+        {
+          ...CURRENT_JOB,
+          insights: undefined,
+        },
+        BASELINE_JOB,
+      ]}
+      {...args}
+    />
+  ),
+};
 
-export const MultipleBaselines = () => <App jobs={MULTIPLE_JOBS} version="1.0" />;
+export const NoBaseline: Story = {
+  render: (args) => <App jobs={createJobs[CURRENT_SOURCE]} {...args} />,
+};
 
-export const Empty = () => <App verison="1.0" />;
+export const EmptyBaseline: Story = {
+  render: (args) => <App jobs={createJobs([CURRENT_SOURCE, { webpack: null }])} {...args} />,
+};
+
+export const MultipleBaselines: Story = {
+  render: (args) => <App jobs={MULTIPLE_JOBS} {...args} />,
+};
+
+export const Empty: Story = {
+  render: (args) => <App {...args} />,
+};
