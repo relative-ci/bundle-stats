@@ -7,7 +7,9 @@ import {
   ASSET_ENTRY_TYPE,
   ASSET_FILE_TYPE,
   ASSET_FILTERS,
+  COMPONENT,
   FILE_TYPE_LABELS,
+  SECTIONS,
 } from '@bundle-stats/utils';
 
 import config from '../../config.json';
@@ -202,13 +204,22 @@ export const BundleAssets = (props) => {
     [items, totalRowCount],
   );
 
+  const assetNameCustomComponentLink = useCallback(
+    ({ entryId: assetEntryId, ...assetNameRestProps }) => (
+      <CustomComponentLink
+        section={SECTIONS.ASSETS}
+        params={{ [COMPONENT.BUNDLE_ASSETS]: { filters, search, entryId: assetEntryId } }}
+        {...assetNameRestProps}
+      />
+    ),
+    [CustomComponentLink, filters, search],
+  );
+
   const renderRowHeader = useCallback(
     (row) => (
       <AssetName
         row={row}
-        customComponentLink={CustomComponentLink}
-        filters={filters}
-        search={search}
+        customComponentLink={assetNameCustomComponentLink}
         className={css.assetName}
       />
     ),
