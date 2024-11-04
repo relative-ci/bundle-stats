@@ -64,7 +64,7 @@
     "rimraf": "6.0.1",
     "stats-webpack-plugin": "0.7.0",
     "storybook": "8.4.1",
-    "webpack": "5.96.0",
+    "webpack": "5.96.1",
     "webpack-cli": "5.1.4",
     "webpack-merge": "6.0.1"
   }
