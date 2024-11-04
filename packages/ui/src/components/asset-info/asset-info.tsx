@@ -13,6 +13,7 @@ import { Asset, MetaChunk } from '@bundle-stats/utils/types/webpack';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Tag } from '../../ui/tag';
+import { AssetMetaTag } from '../asset-meta-tag';
 import { ComponentLink } from '../component-link';
 import { EntryInfo, EntryInfoMetaLink } from '../entry-info';
 import css from './asset-info.module.css';
@@ -89,34 +90,40 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
     return (
       <FlexStack space="xxxsmall" alignItems="center" className={css.tags}>
         {item.isEntry && (
-          <Tag
+          <AssetMetaTag
             as={CustomComponentLink}
             {...getBundleAssetsByEntryType('entry')}
             onClick={onClick}
-            className={cx(css.assetNameTag, css.assetNameTagEntry)}
+            tag="entry"
+            status={item.isEntry}
+            className={css.assetNameTag}
           >
             Entrypoint
-          </Tag>
+          </AssetMetaTag>
         )}
         {item.isInitial && (
-          <Tag
+          <AssetMetaTag
             as={CustomComponentLink}
             {...getBundleAssetsByEntryType('initial')}
             onClick={onClick}
+            tag="initial"
+            status={item.isInitial}
             className={cx(css.assetNameTag, css.assetNameTagInitial)}
           >
             Initial
-          </Tag>
+          </AssetMetaTag>
         )}
         {item.isChunk && (
-          <Tag
+          <AssetMetaTag
             as={CustomComponentLink}
             {...getBundleAssetsByEntryType('chunk')}
             onClick={onClick}
+            tag="chunk"
+            status={item.isChunk}
             className={cx(css.assetNameTag, css.assetNameTagChunk)}
           >
             Chunk
-          </Tag>
+          </AssetMetaTag>
         )}
       </FlexStack>
     );

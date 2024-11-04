@@ -145,12 +145,7 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
                     </Table.Th>
                     <Table.Td className={cx(css.runsCell, css.runsColName)}>
                       {rowRun?.[runNameSelector] ? (
-                        <FlexStack
-                          space="xxxsmall"
-                          alignItems="center"
-                          as="h3"
-                          className={css.label}
-                        >
+                        <FlexStack space="xxxsmall" alignItems="center" className={css.label}>
                           <FileName
                             as="code"
                             name={rowRun[runNameSelector]}

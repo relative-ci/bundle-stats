@@ -1,36 +1,18 @@
 import React, { ElementType } from 'react';
 import cx from 'classnames';
 
-import type { TagProps } from '../../ui/tag';
 import { Icon } from '../../ui/icon';
 import { FileName } from '../../ui/file-name';
 import { HoverCard } from '../../ui/hover-card';
-import { Tag } from '../../ui/tag';
 import { AssetNotPredictive } from '../asset-not-predictive';
 
+import { ReportMetricAssetRow } from '../../types';
+import { AssetMetaTag } from '../asset-meta-tag';
 import css from './asset-name.module.css';
-import { ReportMetricAssetRow, ReportMetricAssetRowMetaStatus } from '../../types';
 
 const RUN_TITLE_CURRENT = 'Current';
 const RUN_TITLE_BASELINE = 'Baseline';
 const RUNS_LABELS = [RUN_TITLE_CURRENT, RUN_TITLE_BASELINE];
-
-type MetaTagProps = { status: ReportMetricAssetRowMetaStatus | boolean } & TagProps;
-
-const MetaTag = (props: MetaTagProps) => {
-  const { className = '', title, status } = props;
-
-  const rootClassName = cx(
-    css.metaTag,
-    status === 'added' && css.metaTagAdded,
-    status === 'removed' && css.metaTagRemoved,
-    className,
-  );
-
-  return (
-    <Tag className={rootClassName} title={title} size={Tag.SIZES.SMALL} kind={Tag.KINDS.INFO} />
-  );
-};
 
 export type AssetNameProps = {
   className?: string;
@@ -56,11 +38,20 @@ export const AssetName = (props: AssetNameProps) => {
 
       <CustomComponentLink entryId={row.key} className={css.name}>
         <span className={css.metaTags}>
-          {isEntry && <MetaTag className={css.metaTagEntry} title="Entrypoint" status={isEntry} />}
-          {isInitial && (
-            <MetaTag className={css.metaTagInitial} title="Initial" status={isInitial} />
+          {isEntry && (
+            <AssetMetaTag className={css.metaTag} title="Entrypoint" tag="entry" status={isEntry} />
           )}
-          {isChunk && <MetaTag className={css.metaTagChunk} title="Chunk" status={isChunk} />}
+          {isInitial && (
+            <AssetMetaTag
+              className={css.metaTag}
+              title="Initial"
+              tag="initial"
+              status={isInitial}
+            />
+          )}
+          {isChunk && (
+            <AssetMetaTag className={css.metaTag} title="Chunk" tag="chunk" status={isChunk} />
+          )}
         </span>
         <FileName className={css.nameText} name={label} />
       </CustomComponentLink>
