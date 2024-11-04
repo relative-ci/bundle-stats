@@ -50,7 +50,17 @@ export const PreviewSource = (props: PreviewSourceProps) => {
           )}
         </ControlGroup>
       )}
-      <Textarea readOnly rows={rows} value={source} className={css.content} />
+      <Textarea
+        rows={rows}
+        value={source}
+        readOnly
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        spellCheck="false"
+        translate="no"
+        className={css.content}
+      />
     </div>
   );
 };
