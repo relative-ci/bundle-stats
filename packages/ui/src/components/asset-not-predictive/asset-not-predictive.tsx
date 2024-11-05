@@ -6,6 +6,7 @@ import type { AssetMetricRun } from '@bundle-stats/utils/types/webpack';
 import { Stack } from '../../layout/stack';
 import { Table } from '../../ui/table';
 import css from './asset-not-predictive.module.css';
+import { Alert } from '../../ui';
 
 export type AssetNotPredictiveProps = {
   runs?: Array<AssetMetricRun>;
@@ -17,10 +18,11 @@ export const AssetNotPredictive = (props: AssetNotPredictiveProps) => {
 
   return (
     <Stack space="small" {...restProps} className={cx(css.root, className)}>
-      <Stack space="xxxsmall">
-        <h3>Asset hash is not predictive</h3>
-        <p className={css.text}>File names are equal, but the size is different.</p>
-      </Stack>
+      <h3>Asset hash is not predictive</h3>
+      <Alert kind="warning">
+        File names are identical, but the size is different. Content changes without a hash change
+        can cause runtime errors.
+      </Alert>
       {runs && (
         <Table outline compact>
           <Table.THead>
@@ -34,8 +36,8 @@ export const AssetNotPredictive = (props: AssetNotPredictiveProps) => {
             {runs.map(({ name, value }, index) => (
               <Table.Tr key={name}>
                 <Table.Th>{labels?.[index]}</Table.Th>
-                <Table.Td>{name}</Table.Td>
-                <Table.Td className={css.tableValue}>{value}</Table.Td>
+                <Table.Td className={css.colName}>{name}</Table.Td>
+                <Table.Td className={css.colvalue}>{value}</Table.Td>
               </Table.Tr>
             ))}
           </Table.TBody>

@@ -1,3 +1,8 @@
-.tableValue {
+.colName {
+  width: 100%;
+  overflow: hidden;
+}
+
+.colValue {
   text-align: right;
 }

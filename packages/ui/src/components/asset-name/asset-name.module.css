@@ -1,5 +1,3 @@
-.root {}
-
 .notPredictive {
   margin-right: var(--space-xxsmall);
   display: inline-block;
@@ -7,10 +5,12 @@
   height: var(--space-small);
 }
 
-.notPredictiveAnchor {}
-
 .notPredictiveIcon {
   color: var(--color-warning-dark);
+}
+
+.notPredictiveHoverCard {
+  max-width: 480px;
 }
 
 .metaTags {

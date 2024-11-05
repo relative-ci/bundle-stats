@@ -1,12 +1,11 @@
 import React, { ElementType } from 'react';
-import cx from 'classnames';
 
 import { Icon } from '../../ui/icon';
 import { FileName } from '../../ui/file-name';
 import { HoverCard } from '../../ui/hover-card';
 import { AssetNotPredictive } from '../asset-not-predictive';
 
-import { ReportMetricAssetRow } from '../../types';
+import type { ReportMetricAssetRow } from '../../types';
 import { AssetMetaTag } from '../asset-meta-tag';
 import css from './asset-name.module.css';
 
@@ -25,12 +24,12 @@ export const AssetName = (props: AssetNameProps) => {
   const { label, isNotPredictive, runs, isChunk, isEntry, isInitial } = row;
 
   return (
-    <span className={cx(css.root, className)}>
+    <span className={className}>
       {isNotPredictive && (
         <HoverCard
           label={<Icon className={css.notPredictiveIcon} glyph={Icon.ICONS.WARNING} />}
           className={css.notPredictive}
-          anchorClassName={css.notPredictiveAnchor}
+          hoverCardClassName={css.notPredictiveHoverCard}
         >
           <AssetNotPredictive runs={runs} labels={RUNS_LABELS} />
         </HoverCard>
