@@ -1,4 +1,5 @@
-import React, { useCallback, useMemo } from 'react';
+import type { ComponentProps, ElementType, ReactNode } from 'react';
+import React, { useMemo } from 'react';
 import cx from 'classnames';
 import noop from 'lodash/noop';
 import {
@@ -11,17 +12,15 @@ import {
 } from '@bundle-stats/utils';
 import type { AssetMetricRun, MetaChunk } from '@bundle-stats/utils/types/webpack';
 
+import type { ReportMetricAssetRow } from '../../types';
 import { FlexStack } from '../../layout/flex-stack';
 import { AssetMetaTag } from '../asset-meta-tag';
 import { ComponentLink } from '../component-link';
 import { EntryInfo, EntryInfoMetaLink } from '../entry-info';
 import css from './asset-info.module.css';
-import { AssetName } from '../asset-name/asset-name';
-import { FileName } from '../../ui';
-import { ReportMetricAssetRow } from '../../types';
 
 interface ChunkModulesLinkProps {
-  as: React.ElementType;
+  as: ElementType;
   chunks: Array<MetaChunk>;
   chunkId: string;
   name: string;
@@ -33,7 +32,7 @@ const ChunkModulesLink = ({
   chunkId,
   name,
   onClick,
-}: ChunkModulesLinkProps & React.ComponentProps<'a'>) => {
+}: ChunkModulesLinkProps & ComponentProps<'a'>) => {
   const chunk = chunks?.find(({ id }) => id === chunkId);
 
   if (!chunk) {
@@ -54,6 +53,26 @@ const ChunkModulesLink = ({
   );
 };
 
+type AssetRunNameProps = {
+  run: ReportMetricAssetRow;
+  children: ReactNode;
+};
+
+const AssetRunName = (props: AssetRunNameProps) => {
+  const { run, children } = props;
+
+  return (
+    <>
+      <span className={css.runNameTags}>
+        {run.isEntry && <AssetMetaTag tag="entry" title="Entry" size="small" />}
+        {run.isInitial && <AssetMetaTag tag="initial" title="Initial" size="small" />}
+        {run.isChunk && <AssetMetaTag tag="chunk" title="Chunk" size="small" />}
+      </span>
+      {children}
+    </>
+  );
+};
+
 interface AssetInfoProps {
   item: {
     label: string;
@@ -67,11 +86,11 @@ interface AssetInfoProps {
   };
   chunks?: Array<MetaChunk>;
   labels: Array<string>;
-  customComponentLink?: React.ElementType;
+  customComponentLink?: ElementType;
   onClose: () => void;
 }
 
-export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) => {
+export const AssetInfo = (props: AssetInfoProps & ComponentProps<'div'>) => {
   const {
     className = '',
     chunks = null,
@@ -134,24 +153,6 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
     );
   }, [item]);
 
-  const RunName = useCallback(
-    (runNameProps: { children: React.ReactNode; run: ReportMetricAssetRow }) => {
-      const { run, children } = runNameProps;
-
-      return (
-        <>
-          <span className={css.runNameTags}>
-            {run.isEntry && <AssetMetaTag tag="entry" title="Entry" size="small" />}
-            {run.isInitial && <AssetMetaTag tag="initial" title="Initial" size="small" />}
-            {run.isChunk && <AssetMetaTag tag="chunk" title="Chunk" size="small" />}
-          </span>
-          {children}
-        </>
-      );
-    },
-    [],
-  );
-
   const fileTypeLabel = FILE_TYPE_LABELS[item.fileType as keyof typeof FILE_TYPE_LABELS];
 
   return (
@@ -160,7 +161,7 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
       labels={labels}
       tags={tags}
       onClose={onClose}
-      RunName={RunName}
+      RunName={AssetRunName}
       className={cx(css.root, className)}
     >
       {item.fileType && (

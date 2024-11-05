@@ -77,7 +77,7 @@ export const getAssetMetaStatus = (values) => {
  * @returns {ReportMetricAssetRow}
  */
 export const addMetricReportAssetRowData = (row) => {
-  const { runs } = row;
+  const { changed, runs } = row;
 
   // Collect meta for each run
   const runsEntry = [];
@@ -97,8 +97,16 @@ export const addMetricReportAssetRowData = (row) => {
   const isNotPredictive = getIsNotPredictive(row);
   const fileType = getFileType(row.key);
 
+  // Flag asset as changed if name and value are identical, if one of the meta tags is changed
+  const assetChanged =
+    changed ||
+    typeof isEntry !== 'boolean' ||
+    typeof isInitial !== 'boolean' ||
+    typeof isChunk !== 'boolean';
+
   return {
     ...row,
+    changed: assetChanged,
     isEntry,
     isInitial,
     isChunk,
