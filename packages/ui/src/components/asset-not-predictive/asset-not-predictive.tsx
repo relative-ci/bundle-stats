@@ -1,14 +1,14 @@
 import type { ComponentProps } from 'react';
 import React from 'react';
 import cx from 'classnames';
-import type { Asset } from '@bundle-stats/utils/types/webpack';
+import type { AssetMetricRun } from '@bundle-stats/utils/types/webpack';
 
 import { Stack } from '../../layout/stack';
 import { Table } from '../../ui/table';
 import css from './asset-not-predictive.module.css';
 
 export type AssetNotPredictiveProps = {
-  runs?: Array<Asset>;
+  runs?: Array<AssetMetricRun>;
   labels?: Array<string>;
 } & ComponentProps<'div'>;
 

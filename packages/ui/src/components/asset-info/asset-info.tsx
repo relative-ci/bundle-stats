@@ -9,7 +9,7 @@ import {
   getBundleAssetsFileTypeComponentLink,
   getModuleFileType,
 } from '@bundle-stats/utils';
-import { Asset, MetaChunk } from '@bundle-stats/utils/types/webpack';
+import type { AssetMetricRun, MetaChunk } from '@bundle-stats/utils/types/webpack';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { AssetMetaTag } from '../asset-meta-tag';
@@ -60,7 +60,7 @@ interface AssetInfoProps {
     isInitial?: boolean;
     isNotPredictive?: boolean;
     fileType?: string;
-    runs: Array<Asset & MetricRunInfo>;
+    runs: Array<AssetMetricRun & MetricRunInfo>;
   };
   chunks?: Array<MetaChunk>;
   labels: Array<string>;
