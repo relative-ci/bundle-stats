@@ -29,3 +29,12 @@
   content: ' ';
 }
 
+.runNameTags {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--space-xxxsmall) / 2);
+}
+
+.runNameTags:empty {
+  display: block;
+}

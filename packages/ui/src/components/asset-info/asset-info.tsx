@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import cx from 'classnames';
 import noop from 'lodash/noop';
 import {
@@ -16,6 +16,9 @@ import { AssetMetaTag } from '../asset-meta-tag';
 import { ComponentLink } from '../component-link';
 import { EntryInfo, EntryInfoMetaLink } from '../entry-info';
 import css from './asset-info.module.css';
+import { AssetName } from '../asset-name/asset-name';
+import { FileName } from '../../ui';
+import { ReportMetricAssetRow } from '../../types';
 
 interface ChunkModulesLinkProps {
   as: React.ElementType;
@@ -131,6 +134,24 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
     );
   }, [item]);
 
+  const RunName = useCallback(
+    (runNameProps: { children: React.ReactNode; run: ReportMetricAssetRow }) => {
+      const { run, children } = runNameProps;
+
+      return (
+        <>
+          <span className={css.runNameTags}>
+            {run.isEntry && <AssetMetaTag tag="entry" title="Entry" size="small" />}
+            {run.isInitial && <AssetMetaTag tag="initial" title="Initial" size="small" />}
+            {run.isChunk && <AssetMetaTag tag="chunk" title="Chunk" size="small" />}
+          </span>
+          {children}
+        </>
+      );
+    },
+    [],
+  );
+
   const fileTypeLabel = FILE_TYPE_LABELS[item.fileType as keyof typeof FILE_TYPE_LABELS];
 
   return (
@@ -139,6 +160,7 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
       labels={labels}
       tags={tags}
       onClose={onClose}
+      RunName={RunName}
       className={cx(css.root, className)}
     >
       {item.fileType && (
