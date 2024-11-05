@@ -94,10 +94,10 @@
       "entry": true,
       "initial": true,
       "files": [
-        "vendors.8b6bb4f.css",
-        "vendors.176a5f6.js",
-        "vendors.8b6bb4f.css.map",
-        "vendors.176a5f6.js.map"
+        "assets/css/vendors.8b6bb4f.css",
+        "assets/js/vendors.176a5f6.js",
+        "assets/css/vendors.8b6bb4f.css.map",
+        "assets/js/vendors.176a5f6.js.map"
       ],
       "names": [
         "vendors"

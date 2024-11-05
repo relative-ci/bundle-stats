@@ -13,12 +13,7 @@ import { useSearchParams } from '../../hooks/search-params';
 import { useEntryInfo } from '../../hooks/entry-info';
 import { getJobsChunksData } from '../../utils/jobs';
 import { BundleAssets as BundleAssetsComponent } from './bundle-assets';
-import {
-  addRowAssetFlags,
-  addRowIsNotPredictive,
-  getRowFilter,
-  getCustomSort,
-} from './bundle-assets.utils';
+import { addMetricReportAssetRowData, getRowFilter, getCustomSort } from './bundle-assets.utils';
 
 export const BundleAssets = (props) => {
   const { jobs, filters, search, setState, sortBy, direction, ...restProps } = props;
@@ -50,7 +45,7 @@ export const BundleAssets = (props) => {
   });
 
   const { rows, totalRowCount } = useMemo(() => {
-    const result = webpack.compareBySection.assets(jobs, [addRowAssetFlags, addRowIsNotPredictive]);
+    const result = webpack.compareBySection.assets(jobs, [addMetricReportAssetRowData]);
     return { rows: result, totalRowCount: result.length };
   }, [jobs]);
 

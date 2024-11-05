@@ -2,7 +2,7 @@ import type { ElementType, ReactNode } from 'react';
 import React from 'react';
 import cx from 'classnames';
 import { Portal } from 'ariakit/portal';
-import type { MetricRunInfo, ReportMetricRow } from '@bundle-stats/utils';
+import type { MetricRunInfo, ReportMetricRow, ReportMetricRun } from '@bundle-stats/utils';
 import { METRIC_TYPE_CONFIGS, getMetricRunInfo } from '@bundle-stats/utils';
 
 import { Box } from '../../layout/box';
@@ -72,6 +72,12 @@ function defaultRenderRunInfo(item: ReportMetricRow) {
   );
 }
 
+export type RenderRunNameProps<T extends ReportMetricRun = ReportMetricRun> = {
+  className?: string;
+  run: T;
+  runSelector: string;
+};
+
 interface EntryInfoProps {
   itemTitle?: React.ReactNode;
   item: ReportMetricRow;
@@ -82,6 +88,7 @@ interface EntryInfoProps {
   tags?: React.ReactNode;
   onClose: () => void;
   renderRunInfo?: (item: ReportMetricRow) => React.ReactNode;
+  RunName?: React.ElementType;
 }
 
 export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) => {
@@ -93,10 +100,11 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
     runNameSelector = 'name',
     runNameLabel = I18N.PATH,
     runSizeLabel = I18N.SIZE,
-    children,
     tags = null,
     onClose,
     renderRunInfo = defaultRenderRunInfo,
+    RunName = React.Fragment,
+    children,
   } = props;
 
   return (
@@ -145,17 +153,14 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
                     </Table.Th>
                     <Table.Td className={cx(css.runsCell, css.runsColName)}>
                       {rowRun?.[runNameSelector] ? (
-                        <FlexStack
-                          space="xxxsmall"
-                          alignItems="center"
-                          as="h3"
-                          className={css.label}
-                        >
-                          <FileName
-                            as="code"
-                            name={rowRun[runNameSelector]}
-                            className={css.fileName}
-                          />
+                        <FlexStack space="xxxsmall" alignItems="center" className={css.label}>
+                          <RunName run={rowRun} nameSelector={runNameSelector}>
+                            <FileName
+                              as="code"
+                              name={rowRun[runNameSelector]}
+                              className={className}
+                            />
+                          </RunName>
                           <CopyToClipboard text={item.label} size="small" />
                         </FlexStack>
                       ) : (

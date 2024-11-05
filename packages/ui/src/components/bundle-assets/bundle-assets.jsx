@@ -20,17 +20,12 @@ import { Box } from '../../layout/box';
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { Dialog, useDialogState } from '../../ui/dialog';
-import { Icon } from '../../ui/icon';
 import { InputSearch } from '../../ui/input-search';
-import { FileName } from '../../ui/file-name';
-import { HoverCard } from '../../ui/hover-card';
-import { Tag } from '../../ui/tag';
 import { Table } from '../../ui/table';
 import { Filters } from '../../ui/filters';
 import { EmptySet } from '../../ui/empty-set';
 import { Toolbar } from '../../ui/toolbar';
 import { AssetInfo } from '../asset-info';
-import { AssetNotPredictive } from '../asset-not-predictive';
 import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableExport } from '../metrics-table-export';
@@ -41,10 +36,7 @@ import { MetricsTableHeader } from '../metrics-table-header';
 import { MetricsTreemap, getTreemapNodes, getTreemapNodesGroupedByPath } from '../metrics-treemap';
 import { SEARCH_PLACEHOLDER } from './bundle-assets.i18n';
 import css from './bundle-assets.module.css';
-
-const RUN_TITLE_CURRENT = 'Current';
-const RUN_TITLE_BASELINE = 'Baseline';
-const RUNS_LABELS = [RUN_TITLE_CURRENT, RUN_TITLE_BASELINE];
+import { AssetName } from '../asset-name';
 
 const DISPLAY_TYPE_GROUPS = {
   [MetricsDisplayType.TREEMAP]: ['folder'],
@@ -93,77 +85,6 @@ const getFilters = ({ compareMode, filters }) => ({
     children: getFileTypeFilters(filters),
   },
 });
-
-const RowHeader = ({ row, customComponentLink: CustomComponentLink, filters, search }) => {
-  const { label, isNotPredictive, runs, isChunk, isEntry, isInitial } = row;
-
-  return (
-    <span className={css.assetNameWrapper}>
-      {isNotPredictive && (
-        <HoverCard
-          label={<Icon className={css.notPredictiveIcon} glyph={Icon.ICONS.WARNING} />}
-          className={css.notPredictive}
-          anchorClassName={css.notPredictiveAnchor}
-        >
-          <AssetNotPredictive runs={runs} labels={RUNS_LABELS} />
-        </HoverCard>
-      )}
-
-      <CustomComponentLink
-        section={SECTIONS.ASSETS}
-        params={{ [COMPONENT.BUNDLE_ASSETS]: { filters, search, entryId: row.key } }}
-        className={css.assetName}
-      >
-        <span className={css.assetNameTags}>
-          {isEntry && (
-            <Tag
-              className={cx(css.assetNameTag, css.assetNameTagEntry)}
-              title="Entrypoint"
-              size={Tag.SIZES.SMALL}
-              kind={Tag.KINDS.INFO}
-            />
-          )}
-          {isInitial && (
-            <Tag
-              className={cx(css.assetNameTag, css.assetNameTagInitial)}
-              title="Initial"
-              size={Tag.SIZES.SMALL}
-              kind={Tag.KINDS.INFO}
-            />
-          )}
-          {isChunk && (
-            <Tag
-              className={cx(css.assetNameTag, css.assetNameTagChunk)}
-              title="Chunk"
-              size={Tag.SIZES.SMALL}
-              kind={Tag.KINDS.INFO}
-            />
-          )}
-        </span>
-        <FileName className={css.assetNameText} name={label} />
-      </CustomComponentLink>
-    </span>
-  );
-};
-
-RowHeader.propTypes = {
-  row: PropTypes.shape({
-    key: PropTypes.string,
-    label: PropTypes.string,
-    isNotPredictive: PropTypes.bool,
-    isChunk: PropTypes.bool,
-    isInitial: PropTypes.bool,
-    isEntry: PropTypes.bool,
-    runs: PropTypes.arrayOf(PropTypes.object), // eslint-disable-line react/forbid-prop-types
-  }).isRequired,
-  customComponentLink: PropTypes.elementType.isRequired,
-  filters: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-  search: PropTypes.string,
-};
-
-RowHeader.defaultProps = {
-  search: '',
-};
 
 const ViewMetricsTreemap = (props) => {
   const {
@@ -283,13 +204,23 @@ export const BundleAssets = (props) => {
     [items, totalRowCount],
   );
 
+  const assetNameCustomComponentLink = useCallback(
+    ({ entryId: assetEntryId, ...assetNameRestProps }) => (
+      <CustomComponentLink
+        section={SECTIONS.ASSETS}
+        params={{ [COMPONENT.BUNDLE_ASSETS]: { filters, search, entryId: assetEntryId } }}
+        {...assetNameRestProps}
+      />
+    ),
+    [CustomComponentLink, filters, search],
+  );
+
   const renderRowHeader = useCallback(
     (row) => (
-      <RowHeader
+      <AssetName
         row={row}
-        customComponentLink={CustomComponentLink}
-        filters={filters}
-        search={search}
+        customComponentLink={assetNameCustomComponentLink}
+        className={css.assetName}
       />
     ),
     [CustomComponentLink, filters, search],

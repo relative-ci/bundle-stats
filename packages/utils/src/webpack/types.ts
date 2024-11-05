@@ -29,7 +29,7 @@ export interface MetaChunk {
   name: string;
 }
 
-export interface Asset extends MetricRun {
+export interface AssetMetricRun extends MetricRun {
   name: string;
   isEntry: boolean;
   isInitial: boolean;
@@ -37,7 +37,7 @@ export interface Asset extends MetricRun {
   chunkId?: string;
 }
 
-export type Assets = Record<string, Asset>;
+export type Assets = Record<string, AssetMetricRun>;
 
 export interface MetricsAssets {
   metrics: {

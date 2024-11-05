@@ -1,0 +1,56 @@
+.root {
+  --background-color: var(--color-info);
+  background: var(--background-color);
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+}
+
+.root::before {
+  display: block;
+  content: ' ';
+  padding: 2px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 8px;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* tag */
+.entry {
+  --background-color: var(--color-info-dark);
+}
+
+.entry:empty::before {
+  content: 'e';
+}
+
+.initial {
+  --background-color: var(--color-info);
+}
+
+.initial:empty::before {
+  content: 'i';
+}
+
+.chunk {
+  --background-color: var(--color-info-light);
+}
+
+.chunk:empty::before {
+  content: 'c';
+}
+
+/* status */
+.added {
+  background: linear-gradient(-45deg, var(--color-danger-light) 50%, var(--background-color) 50%) !important;
+}
+
+.removed {
+  background: linear-gradient(135deg, var(--color-danger-light) 50%, var(--background-color) 50%) !important;
+}
+

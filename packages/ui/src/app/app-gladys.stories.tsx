@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 
 /* eslint-disable import/no-unresolved, import/no-relative-packages */
@@ -20,16 +21,21 @@ const BASELINE_SOURCE = {
 
 const JOBS = createJobs([CURRENT_SOURCE, BASELINE_SOURCE]);
 
-export default {
+const meta: Meta<typeof App> = {
   title: 'App/Gladys',
   component: App,
-  decorators: [
-    (Story) => (
-      <div style={{ margin: '-1rem' }}>
-        <Story />
-      </div>
-    ),
-  ],
+  parameters: {
+    layout: 'fullscreen',
+  },
+  args: {
+    version: '1.0',
+  },
 };
 
-export const Default = () => <App jobs={JOBS} version="1.0" />;
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  render: (args) => <App jobs={JOBS} {...args} />,
+};

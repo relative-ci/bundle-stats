@@ -1,3 +1,4 @@
+import type { ComponentProps, ElementType, ReactNode } from 'react';
 import React, { useMemo } from 'react';
 import cx from 'classnames';
 import noop from 'lodash/noop';
@@ -9,16 +10,17 @@ import {
   getBundleAssetsFileTypeComponentLink,
   getModuleFileType,
 } from '@bundle-stats/utils';
-import { Asset, MetaChunk } from '@bundle-stats/utils/types/webpack';
+import type { AssetMetricRun, MetaChunk } from '@bundle-stats/utils/types/webpack';
 
+import type { ReportMetricAssetRow } from '../../types';
 import { FlexStack } from '../../layout/flex-stack';
-import { Tag } from '../../ui/tag';
+import { AssetMetaTag } from '../asset-meta-tag';
 import { ComponentLink } from '../component-link';
 import { EntryInfo, EntryInfoMetaLink } from '../entry-info';
 import css from './asset-info.module.css';
 
 interface ChunkModulesLinkProps {
-  as: React.ElementType;
+  as: ElementType;
   chunks: Array<MetaChunk>;
   chunkId: string;
   name: string;
@@ -30,7 +32,7 @@ const ChunkModulesLink = ({
   chunkId,
   name,
   onClick,
-}: ChunkModulesLinkProps & React.ComponentProps<'a'>) => {
+}: ChunkModulesLinkProps & ComponentProps<'a'>) => {
   const chunk = chunks?.find(({ id }) => id === chunkId);
 
   if (!chunk) {
@@ -51,6 +53,26 @@ const ChunkModulesLink = ({
   );
 };
 
+type AssetRunNameProps = {
+  run: ReportMetricAssetRow;
+  children: ReactNode;
+};
+
+const AssetRunName = (props: AssetRunNameProps) => {
+  const { run, children } = props;
+
+  return (
+    <>
+      <span className={css.runNameTags}>
+        {run.isEntry && <AssetMetaTag tag="entry" title="Entry" size="small" />}
+        {run.isInitial && <AssetMetaTag tag="initial" title="Initial" size="small" />}
+        {run.isChunk && <AssetMetaTag tag="chunk" title="Chunk" size="small" />}
+      </span>
+      {children}
+    </>
+  );
+};
+
 interface AssetInfoProps {
   item: {
     label: string;
@@ -60,15 +82,15 @@ interface AssetInfoProps {
     isInitial?: boolean;
     isNotPredictive?: boolean;
     fileType?: string;
-    runs: Array<Asset & MetricRunInfo>;
+    runs: Array<AssetMetricRun & MetricRunInfo>;
   };
   chunks?: Array<MetaChunk>;
   labels: Array<string>;
-  customComponentLink?: React.ElementType;
+  customComponentLink?: ElementType;
   onClose: () => void;
 }
 
-export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) => {
+export const AssetInfo = (props: AssetInfoProps & ComponentProps<'div'>) => {
   const {
     className = '',
     chunks = null,
@@ -89,34 +111,43 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
     return (
       <FlexStack space="xxxsmall" alignItems="center" className={css.tags}>
         {item.isEntry && (
-          <Tag
+          <AssetMetaTag
             as={CustomComponentLink}
             {...getBundleAssetsByEntryType('entry')}
             onClick={onClick}
-            className={cx(css.assetNameTag, css.assetNameTagEntry)}
+            tag="entry"
+            size="medium"
+            status={item.isEntry}
+            className={css.assetNameTag}
           >
             Entrypoint
-          </Tag>
+          </AssetMetaTag>
         )}
         {item.isInitial && (
-          <Tag
+          <AssetMetaTag
             as={CustomComponentLink}
             {...getBundleAssetsByEntryType('initial')}
             onClick={onClick}
+            tag="initial"
+            size="medium"
+            status={item.isInitial}
             className={cx(css.assetNameTag, css.assetNameTagInitial)}
           >
             Initial
-          </Tag>
+          </AssetMetaTag>
         )}
         {item.isChunk && (
-          <Tag
+          <AssetMetaTag
             as={CustomComponentLink}
             {...getBundleAssetsByEntryType('chunk')}
             onClick={onClick}
+            tag="chunk"
+            size="medium"
+            status={item.isChunk}
             className={cx(css.assetNameTag, css.assetNameTagChunk)}
           >
             Chunk
-          </Tag>
+          </AssetMetaTag>
         )}
       </FlexStack>
     );
@@ -130,6 +161,7 @@ export const AssetInfo = (props: AssetInfoProps & React.ComponentProps<'div'>) =
       labels={labels}
       tags={tags}
       onClose={onClose}
+      RunName={AssetRunName}
       className={cx(css.root, className)}
     >
       {item.fileType && (

@@ -1,0 +1,32 @@
+.notPredictive {
+  margin-right: var(--space-xxsmall);
+  display: inline-block;
+  width: var(--space-small);
+  height: var(--space-small);
+}
+
+.notPredictiveIcon {
+  color: var(--color-warning-dark);
+}
+
+.notPredictiveHoverCard {
+  max-width: 480px;
+}
+
+.metaTags {
+  display: inline;
+  margin-right: var(--space-xxxsmall);
+}
+
+.metaTag + .metaTag {
+  margin-left: calc(var(--space-xxxsmall) / 2);
+}
+
+.metaTags:empty {
+  display: none;
+}
+
+.nameText {
+  display: inline-block;
+  vertical-align: middle;
+}
