@@ -37,6 +37,8 @@ export interface ComponentLinkParams {
   entryId?: string;
   metric?: string;
   filters?: ComponentLinkFilters;
+  sortBy?: string;
+  direction?: string;
 }
 
 export interface ComponentLink {
@@ -402,6 +404,9 @@ function customDecodeURIComponent(value: string): string {
  * - section: JsonParam
  *   - search: StringParam
  *   - entryId: StringParam
+ *   - metric: StringParam
+ *   - sortBy: StringParam
+ *   - direction: StringParam
  *   - filters: ObjectParam
  *      - value: BooleanParam
  */
@@ -414,6 +419,8 @@ export const ComponentStateParam: QueryParamConfig<any, any> = {
     const search = StringParam.encode(sectionState.search);
     const entryId = StringParam.encode(sectionState.entryId);
     const metric = StringParam.encode(sectionState.metric);
+    const sortBy = StringParam.encode(sectionState.sortBy);
+    const direction = StringParam.encode(sectionState.direction);
 
     const filtersEncodedValues: Record<string, string> = {};
     Object.entries(sectionState.filters || {}).forEach(([key, val]) => {
@@ -435,6 +442,14 @@ export const ComponentStateParam: QueryParamConfig<any, any> = {
       data.metric = metric;
     }
 
+    if (sortBy) {
+      data.sortBy = sortBy;
+    }
+
+    if (direction) {
+      data.direction = direction;
+    }
+
     if (!isEmpty(filters)) {
       data.filters = filters;
     }
@@ -451,6 +466,8 @@ export const ComponentStateParam: QueryParamConfig<any, any> = {
     const search = StringParam.decode(params.search);
     const entryId = StringParam.decode(params.entryId);
     const metric = StringParam.decode(params.metric);
+    const sortBy = StringParam.decode(params.sortBy);
+    const direction = StringParam.decode(params.direction);
 
     let filters: Record<string, boolean> = {};
 
@@ -485,6 +502,14 @@ export const ComponentStateParam: QueryParamConfig<any, any> = {
 
     if (metric) {
       result.metric = metric;
+    }
+
+    if (sortBy) {
+      result.sortBy = sortBy;
+    }
+
+    if (direction) {
+      result.direction = direction;
     }
 
     if (!isEmpty(filters)) {

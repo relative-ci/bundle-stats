@@ -125,6 +125,7 @@ export const BundleModules = (props: BundleModulesProps) => {
     initialField: sortBy,
     initialDirection: direction,
     getCustomSort,
+    setQueryState: setState,
   });
 
   const [hideEntryInfo, showEntryInfo] = useEntryInfo({ setState });
