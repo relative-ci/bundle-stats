@@ -103,39 +103,35 @@ const OverviewContent = () => {
   );
 };
 
-const AssetsContent = () => {
-  const [bundleStatsState, bundleStatsSetState] = useComponentQueryState(COMPONENT.BUNDLE_ASSETS);
+const AssetsRoute = () => {
+  const [queryState, setQueryState] = useComponentQueryState(COMPONENT.BUNDLE_ASSETS);
   const { jobs } = useContext(JobsContext);
 
   return (
     <Container>
-      <BundleAssets jobs={jobs} setState={bundleStatsSetState} {...bundleStatsState} />
+      <BundleAssets jobs={jobs} setState={setQueryState} {...queryState} />
     </Container>
   );
 };
 
-const ModulesContent = () => {
-  const [bundleModulesState, bundleModulesSetState] = useComponentQueryState(
-    COMPONENT.BUNDLE_MODULES,
-  );
+const ModulesRoute = () => {
+  const [queryState, setQueryState] = useComponentQueryState(COMPONENT.BUNDLE_MODULES);
   const { jobs } = useContext(JobsContext);
 
   return (
     <Container>
-      <BundleModules jobs={jobs} setState={bundleModulesSetState} {...bundleModulesState} />
+      <BundleModules jobs={jobs} setState={setQueryState} {...queryState} />
     </Container>
   );
 };
 
-const PackagesContent = () => {
-  const [bundlePackagesState, bundlePackagesSetState] = useComponentQueryState(
-    COMPONENT.BUNDLE_PACKAGES,
-  );
+const PackagesRoute = () => {
+  const [queryState, setQueryState] = useComponentQueryState(COMPONENT.BUNDLE_PACKAGES);
   const { jobs } = useContext(JobsContext);
 
   return (
     <Container>
-      <BundlePackages jobs={jobs} {...bundlePackagesState} setState={bundlePackagesSetState} />
+      <BundlePackages jobs={jobs} setState={setQueryState} {...queryState} />
     </Container>
   );
 };
@@ -181,9 +177,9 @@ const AppComponent = ({ version, jobs }) => {
 
         <div className={css.tabsContent}>
           <Switch>
-            <Route exact path={URLS.ASSETS} component={AssetsContent} />
-            <Route exact path={URLS.MODULES} component={ModulesContent} />
-            <Route exact path={URLS.PACKAGES} component={PackagesContent} />
+            <Route exact path={URLS.ASSETS} component={AssetsRoute} />
+            <Route exact path={URLS.MODULES} component={ModulesRoute} />
+            <Route exact path={URLS.PACKAGES} component={PackagesRoute} />
             <Route exact path={URLS.OVERVIEW} component={OverviewContent} />
           </Switch>
         </div>
