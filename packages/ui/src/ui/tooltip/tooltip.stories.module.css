@@ -1,0 +1,8 @@
+.customTooltip {
+  padding: var(--space-large);
+  color: var(--color-danger);
+  font-size: var(--size-large);
+  text-align: left;
+  width: 100vw;
+  max-width: 480px;
+}

@@ -1,30 +1,41 @@
-import React from 'react';
-import { Story } from '@storybook/react'; // eslint-disable-line
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { getWrapperDecorator } from '../../stories';
 import { Tooltip } from '.';
+import css from './tooltip.stories.module.css';
 
-export default {
+const meta: Meta<typeof Tooltip> = {
   title: 'UI/Tooltip',
   component: Tooltip,
-  decorators: [getWrapperDecorator({ padding: '100px', textAlign: 'center' })],
   args: {
     title: 'View job #123',
+    children: 'Trigger',
+  },
+  parameters: {
+    layout: 'centered',
   },
 };
 
-const Template = (props: any) => <Tooltip {...props}>Job #123</Tooltip>;
+export default meta;
 
-export const Default: Story = Template.bind({});
+type Story = StoryObj<typeof meta>;
 
-export const LongTooltip: Story = Template.bind({});
+export const Default: Story = {};
 
-LongTooltip.args = {
-  title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie neque id lectus mollis, et imperdiet libero porta.',
+export const LongTitle: Story = {
+  args: {
+    title:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie neque id lectus mollis, et imperdiet libero porta.',
+  },
 };
 
-export const DarkModeFalse: Story = Template.bind({});
+export const DarkModeFalse: Story = {
+  args: {
+    darkMode: false,
+  },
+};
 
-DarkModeFalse.args = {
-  darkMode: false,
+export const CustomTooltip: Story = {
+  args: {
+    tooltipClassName: css.customTooltip,
+  },
 };
