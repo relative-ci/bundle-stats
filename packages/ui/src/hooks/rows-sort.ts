@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import get from 'lodash/get';
 import orderBy from 'lodash/orderBy';
 
@@ -20,6 +20,10 @@ interface UseRowsSortParams<TRow> {
   initialField?: string;
   initialDirection?: SortAction['direction'];
   getCustomSort: (item: any) => Array<string | number | boolean>;
+  setQueryState: (queryParams: {
+    sortBy: SortAction['field'];
+    direction: SortAction['direction'];
+  }) => void;
 }
 
 interface UseRowsSort<TRow> {
@@ -33,8 +37,19 @@ export const useRowsSort = <TRow>({
   initialField = 'runs[0].delta',
   initialDirection = 'desc',
   getCustomSort,
+  setQueryState,
 }: UseRowsSortParams<TRow>): UseRowsSort<TRow> => {
-  const [sort, updateSort] = useState({ field: initialField, direction: initialDirection });
+  const [sort, setSort] = useState({ field: initialField, direction: initialDirection });
+
+  const updateSort = useCallback(
+    (newState: SortAction) => {
+      // 1. Update local state
+      setSort(newState);
+      // 2. Update query state params
+      setQueryState({ sortBy: newState.field, direction: newState.direction });
+    },
+    [setQueryState, setSort],
+  );
 
   const orderedRows = useMemo(
     () =>
