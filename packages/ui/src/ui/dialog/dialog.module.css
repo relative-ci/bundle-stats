@@ -61,7 +61,7 @@
 
 /** Width variation */
 .width--narrow {
-  max-width: 360px;
+  max-width: 480px;
 }
 
 .width--medium {
@@ -69,7 +69,7 @@
 }
 
 .width--wide {
-  max-width: 1024px;
+  max-width: 960px;
 }
 
 .width--extra-wide {
