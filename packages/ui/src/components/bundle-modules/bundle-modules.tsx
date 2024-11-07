@@ -207,6 +207,7 @@ export const BundleModules = (props: BundleModulesProps) => {
           [COMPONENT.BUNDLE_MODULES]: {
             filters,
             search,
+            metric: moduleMetric,
             entryId: moduleEntryId,
             sortBy: sort.field,
             direction: sort.direction,
@@ -215,7 +216,7 @@ export const BundleModules = (props: BundleModulesProps) => {
         {...moduleNameRestProps}
       />
     ),
-    [CustomComponentLink, filters, search, sort],
+    [CustomComponentLink, filters, search, sort, moduleMetric],
   );
 
   const metricsTableTitle = useMemo(
