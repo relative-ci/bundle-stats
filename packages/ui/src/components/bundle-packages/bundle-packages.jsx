@@ -46,17 +46,9 @@ const getDropdownFilters = ({ compareMode, filters }) => ({
   },
 });
 
-const PackageName = ({ packageName, showDetails, row, filters, search, CustomComponentLink }) => {
-  const params = useMemo(() => ({
-    [COMPONENT.BUNDLE_PACKAGES]: {
-      filters,
-      search,
-      entryId: showDetails ? row.key : packageName
-    }
-  }), [filters, search, row, packageName]);
-
+const PackageName = ({ row, packageName, showDetails, EntryComponentLink }) => {
   return (
-    <CustomComponentLink section={SECTIONS.PACKAGES} params={params} className={css.packageName}>
+    <EntryComponentLink entryId={showDetails ? row.key : packageName} className={css.packageName}>
       {showDetails && row.duplicate && (
         <Tag
           className={css.packageNameTagDuplicate}
@@ -66,14 +58,13 @@ const PackageName = ({ packageName, showDetails, row, filters, search, CustomCom
         />
       )}
       <span className={css.packageNameLabel}>{packageName}</span>
-    </CustomComponentLink>
+    </EntryComponentLink>
   );
 };
 
 PackageName.propTypes = {
-  packageName: PropTypes.string.isRequired,
-  showDetails: PropTypes.bool.isRequired,
   row: PropTypes.shape({
+    key: PropTypes.string,
     label: PropTypes.string,
     duplicate: PropTypes.bool,
     runs: PropTypes.arrayOf(
@@ -82,12 +73,12 @@ PackageName.propTypes = {
       }),
     ).isRequired,
   }).isRequired,
-  CustomComponentLink: PropTypes.elementType.isRequired,
-  filters: PropTypes.object, // eslint-disable-line react/forbid-props
-  search: PropTypes.string,
+  packageName: PropTypes.string.isRequired,
+  showDetails: PropTypes.bool.isRequired,
+  EntryComponentLink: PropTypes.elementType.isRequired,
 };
 
-const RowHeader = ({ row, labels, CustomComponentLink, filters, search }) => {
+const RowHeader = ({ row, EntryComponentLink }) => {
   const packageNames = row.label.split(PACKAGES_SEPARATOR);
 
   return (
@@ -96,11 +87,8 @@ const RowHeader = ({ row, labels, CustomComponentLink, filters, search }) => {
         <PackageName
           packageName={packageName}
           row={row}
-          labels={labels}
           showDetails={index === packageNames.length - 1}
-          CustomComponentLink={CustomComponentLink}
-          filters={filters}
-          search={search}
+          EntryComponentLink={EntryComponentLink}
         />
       ))}
     </span>
@@ -117,13 +105,20 @@ RowHeader.propTypes = {
       }),
     ).isRequired,
   }).isRequired,
-  CustomComponentLink: PropTypes.elementType.isRequired,
-  filters: PropTypes.object, // eslint-disable-line react/forbid-props
-  search: PropTypes.string,
+  EntryComponentLink: PropTypes.elementType.isRequired,
 };
 
 const ViewMetricsTreemap = (props) => {
-  const { metricsTableTitle, jobs, items, displayType, emptyMessage, showEntryInfo, updateSearch, search } = props;
+  const {
+    metricsTableTitle,
+    jobs,
+    items,
+    displayType,
+    emptyMessage,
+    showEntryInfo,
+    updateSearch,
+    search,
+  } = props;
 
   // Get treenodes based on group
   const treeNodes = useMemo(() => {
@@ -230,17 +225,28 @@ export const BundlePackages = (props) => {
     [items, totalRowCount],
   );
 
-  const renderRowHeader = useCallback(
-    (row) => (
-      <RowHeader
-        row={row}
-        labels={jobLabels}
-        CustomComponentLink={CustomComponentLink}
-        filters={filters}
-        search={search}
+  const PackageNameCustomComponentLink = useCallback(
+    ({ entryId: packageEntryId, ...assetNameRestProps }) => (
+      <CustomComponentLink
+        section={SECTIONS.PACKAGES}
+        params={{
+          [COMPONENT.BUNDLE_PACKAGES]: {
+            filters,
+            search,
+            entryId: packageEntryId,
+            sortBy: sort.field,
+            direction: sort.direction,
+          },
+        }}
+        {...assetNameRestProps}
       />
     ),
-    [CustomComponentLink, jobLabels, filters, search],
+    [CustomComponentLink, filters, search, sort],
+  );
+
+  const renderRowHeader = useCallback(
+    (row) => <RowHeader row={row} EntryComponentLink={PackageNameCustomComponentLink} />,
+    [PackageNameCustomComponentLink],
   );
 
   const emptyMessage = useMemo(
@@ -260,7 +266,7 @@ export const BundlePackages = (props) => {
       return null;
     }
 
-    return allItems.find(({ key }) => key === entryId)
+    return allItems.find(({ key }) => key === entryId);
   }, [allItems, entryId]);
 
   const exportDialog = useDialogState();
@@ -278,7 +284,12 @@ export const BundlePackages = (props) => {
           className={css.toolbar}
           renderActions={({ actionClassName }) => (
             <FlexStack space="xxsmall" className={cx(css.dropdown, actionClassName)}>
-              <MetricsDisplaySelector onSelect={setDisplayType} value={displayType.value} groupBy={displayType.groupBy} groups={DISPLAY_TYPE_GROUPS} />
+              <MetricsDisplaySelector
+                onSelect={setDisplayType}
+                value={displayType.value}
+                groupBy={displayType.groupBy}
+                groups={DISPLAY_TYPE_GROUPS}
+              />
               <MetricsTableOptions
                 onViewAllClick={resetAllFilters}
                 onResetClick={resetFilters}
@@ -388,15 +399,17 @@ BundlePackages.propTypes = {
   }).isRequired,
   hasActiveFilters: PropTypes.bool,
   sort: PropTypes.shape({
-    sortBy: PropTypes.string,
+    field: PropTypes.string,
     direction: PropTypes.string,
   }).isRequired,
   updateSort: PropTypes.func.isRequired,
   search: PropTypes.string.isRequired,
   updateSearch: PropTypes.func.isRequired,
-  allItems: PropTypes.arrayOf(PropTypes.shape({
-    key: PropTypes.string,
-  })).isRequired,
+  allItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string,
+    }),
+  ).isRequired,
   customComponentLink: PropTypes.elementType,
   entryId: PropTypes.string,
   hideEntryInfo: PropTypes.func.isRequired,

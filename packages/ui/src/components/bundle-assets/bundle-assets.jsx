@@ -204,26 +204,30 @@ export const BundleAssets = (props) => {
     [items, totalRowCount],
   );
 
-  const assetNameCustomComponentLink = useCallback(
+  const EntryComponentLink = useCallback(
     ({ entryId: assetEntryId, ...assetNameRestProps }) => (
       <CustomComponentLink
         section={SECTIONS.ASSETS}
-        params={{ [COMPONENT.BUNDLE_ASSETS]: { filters, search, entryId: assetEntryId } }}
+        params={{
+          [COMPONENT.BUNDLE_ASSETS]: {
+            filters,
+            search,
+            entryId: assetEntryId,
+            sortBy: sort.field,
+            direction: sort.direction,
+          },
+        }}
         {...assetNameRestProps}
       />
     ),
-    [CustomComponentLink, filters, search],
+    [CustomComponentLink, filters, search, sort],
   );
 
   const renderRowHeader = useCallback(
     (row) => (
-      <AssetName
-        row={row}
-        customComponentLink={assetNameCustomComponentLink}
-        className={css.assetName}
-      />
+      <AssetName row={row} EntryComponentLink={EntryComponentLink} className={css.assetName} />
     ),
-    [CustomComponentLink, filters, search],
+    [EntryComponentLink],
   );
 
   const emptyMessage = useMemo(
@@ -386,7 +390,7 @@ BundleAssets.propTypes = {
   search: PropTypes.string.isRequired,
   updateSearch: PropTypes.func.isRequired,
   sort: PropTypes.shape({
-    sortBy: PropTypes.string,
+    field: PropTypes.string,
     direction: PropTypes.string,
   }).isRequired,
   updateSort: PropTypes.func.isRequired,
