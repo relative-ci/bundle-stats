@@ -1,3 +1,4 @@
+import type { ComponentProps, ElementType } from 'react';
 import React, { useCallback, useMemo, useState } from 'react';
 import cx from 'classnames';
 import { SECTIONS, COMPONENT, type Job, ReportMetricRow } from '@bundle-stats/utils';
@@ -42,35 +43,21 @@ const DISPLAY_TYPE_GROUPS = {
 
 interface RowHeaderProps {
   row: ReportMetricRow;
-  filters?: any;
-  search?: string;
-  moduleMetric?: string;
-  customComponentLink: React.ElementType;
+  EntryComponentLink: ElementType;
 }
 
 const RowHeader = (props: RowHeaderProps) => {
-  const { row, filters, search, moduleMetric, customComponentLink: CustomComponentLink } = props;
+  const { row, EntryComponentLink } = props;
 
   const moduleRow = row as ReportMetricModuleRow;
 
   return (
-    <CustomComponentLink
-      section={SECTIONS.MODULES}
-      params={{
-        [COMPONENT.BUNDLE_MODULES]: {
-          filters,
-          search,
-          entryId: moduleRow.key,
-          metric: moduleMetric,
-        },
-      }}
-      className={css.name}
-    >
+    <EntryComponentLink entryId={row.key} className={css.name}>
       {moduleRow.duplicated && (
         <Tag className={css.nameTagDuplicated} size="small" kind={Tag.KINDS.DANGER} />
       )}
       <FileName className={css.nameText} name={moduleRow.label} />
-    </CustomComponentLink>
+    </EntryComponentLink>
   );
 };
 
@@ -209,6 +196,28 @@ export const BundleModules = (props: BundleModulesProps) => {
     [jobs, filters, chunks],
   );
 
+  const EntryComponentLink = useCallback(
+    ({
+      entryId: moduleEntryId,
+      ...moduleNameRestProps
+    }: { entryId: string } & ComponentProps<typeof CustomComponentLink>) => (
+      <CustomComponentLink
+        section={SECTIONS.MODULES}
+        params={{
+          [COMPONENT.BUNDLE_MODULES]: {
+            filters,
+            search,
+            entryId: moduleEntryId,
+            sortBy: sort.field,
+            direction: sort.direction,
+          },
+        }}
+        {...moduleNameRestProps}
+      />
+    ),
+    [CustomComponentLink, filters, search, sort],
+  );
+
   const metricsTableTitle = useMemo(
     () => (
       <MetricsTableTitle
@@ -222,16 +231,8 @@ export const BundleModules = (props: BundleModulesProps) => {
   );
 
   const renderRowHeader = useCallback(
-    (row: ReportMetricRow) => (
-      <RowHeader
-        row={row}
-        filters={filters}
-        search={search}
-        moduleMetric={moduleMetric}
-        customComponentLink={CustomComponentLink}
-      />
-    ),
-    [jobs, chunks, CustomComponentLink, filters, search, moduleMetric],
+    (row: ReportMetricRow) => <RowHeader row={row} EntryComponentLink={EntryComponentLink} />,
+    [EntryComponentLink],
   );
 
   const emptyMessage = useMemo(

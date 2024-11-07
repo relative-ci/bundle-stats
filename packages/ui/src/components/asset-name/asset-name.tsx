@@ -16,11 +16,11 @@ const RUNS_LABELS = [RUN_TITLE_CURRENT, RUN_TITLE_BASELINE];
 export type AssetNameProps = {
   className?: string;
   row: ReportMetricAssetRow;
-  customComponentLink: ElementType;
+  EntryComponentLink: ElementType;
 };
 
 export const AssetName = (props: AssetNameProps) => {
-  const { className = '', customComponentLink: CustomComponentLink, row } = props;
+  const { className = '', EntryComponentLink, row } = props;
   const { label, isNotPredictive, runs, isChunk, isEntry, isInitial } = row;
 
   return (
@@ -35,7 +35,7 @@ export const AssetName = (props: AssetNameProps) => {
         </HoverCard>
       )}
 
-      <CustomComponentLink entryId={row.key} className={css.name}>
+      <EntryComponentLink entryId={row.key} className={css.name}>
         <span className={css.metaTags}>
           {isEntry && (
             <AssetMetaTag className={css.metaTag} title="Entrypoint" tag="entry" status={isEntry} />
@@ -53,7 +53,7 @@ export const AssetName = (props: AssetNameProps) => {
           )}
         </span>
         <FileName className={css.nameText} name={label} />
-      </CustomComponentLink>
+      </EntryComponentLink>
     </span>
   );
 };
