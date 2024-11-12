@@ -43,5 +43,6 @@ export async function readBaseline(baselineFilepath: string): Promise<object> {
 }
 
 export async function writeBaseline(data: JSON, baselineFilepath: string): Promise<void> {
-  return fs.writeFile(baselineFilepath, JSON.stringify(data));
+  await fs.mkdir(path.dirname(baselineFilepath), { recursive: true });
+  return fs.writeFile(baselineFilepath, JSON.stringify(data), {});
 }
