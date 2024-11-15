@@ -13,12 +13,16 @@ import { useSearchParams } from '../../hooks/search-params';
 import { useEntryInfo } from '../../hooks/entry-info';
 import { getJobsChunksData } from '../../utils/jobs';
 import { BundleAssets as BundleAssetsComponent } from './bundle-assets';
-import { addMetricReportAssetRowData, getRowFilter, getCustomSort } from './bundle-assets.utils';
+import {
+  addMetricReportAssetRowData,
+  generateGetRowFilter,
+  getCustomSort,
+} from './bundle-assets.utils';
 
 export const BundleAssets = (props) => {
   const { jobs, filters, search, setState, sortBy, direction, ...restProps } = props;
 
-  const { chunks } = useMemo(() => getJobsChunksData(jobs), [jobs]);
+  const { chunks, chunkIds } = useMemo(() => getJobsChunksData(jobs), [jobs]);
 
   const { defaultFilters, allEntriesFilters } = useMemo(
     () => ({
@@ -53,7 +57,7 @@ export const BundleAssets = (props) => {
     rows,
     searchPattern: searchParams.searchPattern,
     filters: searchParams.filters,
-    getRowFilter,
+    getRowFilter: generateGetRowFilter({ chunkIds }),
   });
 
   const sortParams = useRowsSort({

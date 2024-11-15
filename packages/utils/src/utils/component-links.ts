@@ -24,7 +24,6 @@ import {
   MODULE_FILE_TYPE,
   MODULE_FILTERS,
   MODULE_SOURCE_TYPE,
-  MODULE_SOURCE_TYPE_LABELS,
   PACKAGE_FILTERS,
   SECTIONS,
 } from '../config/component-links';

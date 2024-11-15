@@ -2,8 +2,11 @@ import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
+import orderBy from 'lodash/orderBy';
 import escapeRegExp from 'lodash/escapeRegExp';
 import {
+  ASSET_CHUNK,
   ASSET_ENTRY_TYPE,
   ASSET_FILE_TYPE,
   ASSET_FILTERS,
@@ -49,13 +52,31 @@ const getFileTypeFilters = (filters) =>
   defaultValue: get(filters, `${ASSET_FILE_TYPE}.${key}`, true),
 }));
 
-const getFilters = ({ compareMode, filters }) => ({
-  [ASSET_FILTERS.CHANGED]: {
-    label: 'Changed',
-    defaultValue: filters[ASSET_FILTERS.CHANGED],
-    disabled: !compareMode,
-  },
-  [ASSET_ENTRY_TYPE]: {
+const getFilters = ({ compareMode, filters, chunks }) => {
+  const result = {
+    [ASSET_FILTERS.CHANGED]: {
+      label: 'Changed',
+      defaultValue: filters[ASSET_FILTERS.CHANGED],
+      disabled: !compareMode,
+    },
+  };
+
+  if (!isEmpty(chunks)) {
+    const chunksFilter = { label: 'Chunks', children: [] };
+    const chunksOrderedByName = orderBy(chunks, 'name');
+
+    chunksOrderedByName.forEach((chunk) => {
+      chunksFilter.children.push({
+        key: chunk.id,
+        label: chunk.name,
+        defaultValue: filters[`${ASSET_CHUNK}.${chunk.id}`] ?? true,
+      });
+    });
+
+    result[ASSET_CHUNK] = chunksFilter;
+  }
+
+  result[ASSET_ENTRY_TYPE] = {
     label: 'Type',
     children: [
       {
@@ -79,12 +100,15 @@ const getFilters = ({ compareMode, filters }) => ({
         defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.OTHER}`, true),
       },
     ],
-  },
-  [ASSET_FILE_TYPE]: {
+  };
+
+  result[ASSET_FILE_TYPE] = {
     label: 'File type',
     children: getFileTypeFilters(filters),
-  },
-});
+  };
+
+  return result;
+};
 
 const ViewMetricsTreemap = (props) => {
   const {
@@ -187,8 +211,8 @@ export const BundleAssets = (props) => {
 
   const [displayType, setDisplayType] = useMetricsDisplayType(DISPLAY_TYPE_GROUPS);
 
-  const dropdownFilters = useMemo(
-    () => getFilters({ compareMode: jobs?.length > 1, filters }),
+  const filterFieldsData = useMemo(
+    () => getFilters({ compareMode: jobs?.length > 1, filters, chunks }),
     [jobs, filters],
   );
 
@@ -287,7 +311,7 @@ export const BundleAssets = (props) => {
             />
             <Filters
               className={css.toolbarFilters}
-              filters={dropdownFilters}
+              filters={filterFieldsData}
               hasActiveFilters={hasActiveFilters}
               onChange={updateFilters}
             />

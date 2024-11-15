@@ -4,7 +4,14 @@
  * @type {import('../../types').ReportMetricAssetRowMetaStatus} ReportMetricAssetRowFlagStatus
  */
 
-import { ASSET_ENTRY_TYPE, ASSET_FILE_TYPE, ASSET_FILTERS, getFileType } from '@bundle-stats/utils';
+import intersection from 'lodash/intersection';
+import {
+  ASSET_CHUNK,
+  ASSET_ENTRY_TYPE,
+  ASSET_FILE_TYPE,
+  ASSET_FILTERS,
+  getFileType,
+} from '@bundle-stats/utils';
 
 /**
  * Check if the asset cache is not predictive
@@ -116,28 +123,50 @@ export const addMetricReportAssetRowData = (row) => {
   };
 };
 
-export const getRowFilter = (filters) => (item) => {
-  if (filters[ASSET_FILTERS.CHANGED] && !item.changed) {
-    return false;
-  }
+/* eslint-disable prettier/prettier */
+export const generateGetRowFilter =
+  ({ chunkIds }) => (filters) => {
+    // List of chunkIds with filter value set to `true`
+    const checkedChunkIds = [];
 
-  if (
-    !(
-      (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`] && item.isEntry) ||
-      (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`] && item.isInitial) ||
-      (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`] && item.isChunk) ||
-      (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.OTHER}`] && item.isAsset)
-    )
-  ) {
-    return false;
-  }
+    chunkIds.forEach((chunkId) => {
+      if (filters[`${ASSET_CHUNK}.${chunkId}`]) {
+        checkedChunkIds.push(chunkId);
+      }
+    });
 
-  if (!filters[`${ASSET_FILE_TYPE}.${item.fileType}`]) {
-    return false;
-  }
+    const hasChunkFilters =
+      checkedChunkIds.length > 0 && checkedChunkIds.length !== chunkIds.length;
 
-  return true;
-};
+    return (item) => {
+      if (filters[ASSET_FILTERS.CHANGED] && !item.changed) {
+        return false;
+      }
+
+      if (
+        !(
+          (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`] && item.isEntry) ||
+          (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`] && item.isInitial) ||
+          (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`] && item.isChunk) ||
+          (filters[`${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.OTHER}`] && item.isAsset)
+        )
+      ) {
+        return false;
+      }
+
+      if (!filters[`${ASSET_FILE_TYPE}.${item.fileType}`]) {
+        return false;
+      }
+
+      // Filter if any of the chunkIds are checked
+      if (hasChunkFilters) {
+        const rowRunsChunkIds = item?.runs?.map((run) => run?.chunkId) || [];
+        return intersection(rowRunsChunkIds, checkedChunkIds).length > 0;
+      }
+
+      return true;
+    };
+  };
 
 export const getCustomSort = (item) => [
   !item.isNotPredictive,
