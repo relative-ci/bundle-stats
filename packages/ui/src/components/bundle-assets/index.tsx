@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
-import PropTypes from 'prop-types';
 import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
+import type { Job } from '@bundle-stats/utils';
 import { ASSET_FILTERS } from '@bundle-stats/utils';
 import {
   getAssetEntryTypeFilters,
@@ -18,12 +18,32 @@ import {
   generateGetRowFilter,
   getCustomSort,
 } from './bundle-assets.utils';
+import { ReportMetricAssetRow } from '../../types';
 
-export const BundleAssets = (props) => {
-  const { jobs, filters, search, setState, sortBy, direction, ...restProps } = props;
+export type BundleAssetsProps = {
+  jobs: Array<Job>;
+  filters?: Record<string, boolean>;
+  search?: string;
+  sortBy?: string;
+  direction?: string;
+  setState: () => void;
+};
 
+export const BundleAssets = (props: BundleAssetsProps) => {
+  const {
+    jobs,
+    filters = undefined,
+    search = undefined,
+    sortBy = undefined,
+    direction = undefined,
+    setState,
+    ...restProps
+  } = props;
+
+  // Get chunks data
   const { chunks, chunkIds } = useMemo(() => getJobsChunksData(jobs), [jobs]);
 
+  // Get filters
   const { defaultFilters, allEntriesFilters } = useMemo(
     () => ({
       defaultFilters: {
@@ -40,7 +60,8 @@ export const BundleAssets = (props) => {
     [jobs],
   );
 
-  const searchParams = useSearchParams({
+  // Get search params data
+  const searchProps = useSearchParams({
     search,
     filters,
     defaultFilters,
@@ -48,19 +69,22 @@ export const BundleAssets = (props) => {
     setState,
   });
 
+  // Get metric rows
   const { rows, totalRowCount } = useMemo(() => {
     const result = webpack.compareBySection.assets(jobs, [addMetricReportAssetRowData]);
     return { rows: result, totalRowCount: result.length };
   }, [jobs]);
 
+  // Filter rows
   const filteredRows = useRowsFilter({
     rows,
-    searchPattern: searchParams.searchPattern,
-    filters: searchParams.filters,
+    searchPattern: searchProps.searchPattern,
+    filters: searchProps.filters,
     getRowFilter: generateGetRowFilter({ chunkIds }),
   });
 
-  const sortParams = useRowsSort({
+  // Sort rows
+  const sortProps = useRowsSort<ReportMetricAssetRow>({
     rows: filteredRows,
     initialField: sortBy,
     initialDirection: direction,
@@ -72,31 +96,17 @@ export const BundleAssets = (props) => {
 
   return (
     <BundleAssetsComponent
+      {...restProps}
+      {...searchProps}
       jobs={jobs}
       chunks={chunks}
-      {...restProps}
-      {...searchParams}
-      {...sortParams}
+      sort={sortProps.sort}
+      items={sortProps.items}
       allItems={rows}
       totalRowCount={totalRowCount}
+      updateSort={sortProps.updateSort}
       hideEntryInfo={hideEntryInfo}
       showEntryInfo={showEntryInfo}
     />
   );
-};
-
-BundleAssets.propTypes = {
-  jobs: PropTypes.arrayOf(PropTypes.object).isRequired, // eslint-disable-line react/forbid-prop-types
-  filters: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  search: PropTypes.string,
-  sortBy: PropTypes.string,
-  direction: PropTypes.string,
-  setState: PropTypes.func.isRequired,
-};
-
-BundleAssets.defaultProps = {
-  filters: undefined,
-  search: undefined,
-  sortBy: undefined,
-  direction: undefined,
 };

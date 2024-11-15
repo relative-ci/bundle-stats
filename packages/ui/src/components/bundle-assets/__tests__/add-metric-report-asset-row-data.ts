@@ -41,7 +41,7 @@ describe('BundleAssets / addMetricReportAssetRowData', () => {
     });
   });
 
-  test('should add add data when baseline run is null', () => {
+  test('should add data when baseline run is null', () => {
     expect(
       addMetricReportAssetRowData({
         key: 'assets/main.js',
@@ -83,7 +83,7 @@ describe('BundleAssets / addMetricReportAssetRowData', () => {
     });
   });
 
-  test('should add add data when curent run is null', () => {
+  test('should add data when current run is null', () => {
     expect(
       addMetricReportAssetRowData({
         key: 'assets/main.js',

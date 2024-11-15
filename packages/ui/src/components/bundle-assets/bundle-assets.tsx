@@ -1,20 +1,11 @@
-import React, { useCallback, useMemo, useState } from 'react';
-import PropTypes from 'prop-types';
+import type { ElementType, ReactNode } from 'react';
+import React, { ComponentProps, useCallback, useMemo, useState } from 'react';
 import cx from 'classnames';
-import get from 'lodash/get';
-import isEmpty from 'lodash/isEmpty';
-import orderBy from 'lodash/orderBy';
 import escapeRegExp from 'lodash/escapeRegExp';
-import {
-  ASSET_CHUNK,
-  ASSET_ENTRY_TYPE,
-  ASSET_FILE_TYPE,
-  ASSET_FILTERS,
-  COMPONENT,
-  FILE_TYPE_LABELS,
-  SECTIONS,
-} from '@bundle-stats/utils';
+import type { Job, ReportMetricRow, WebpackChunk } from '@bundle-stats/utils';
+import { COMPONENT, SECTIONS } from '@bundle-stats/utils';
 
+import type { ReportMetricAssetRow, SortAction } from '../../types';
 import config from '../../config.json';
 import I18N from '../../i18n';
 import { MetricsDisplayType } from '../../constants';
@@ -29,6 +20,7 @@ import { Filters } from '../../ui/filters';
 import { EmptySet } from '../../ui/empty-set';
 import { Toolbar } from '../../ui/toolbar';
 import { AssetInfo } from '../asset-info';
+import { AssetName } from '../asset-name';
 import { ComponentLink } from '../component-link';
 import { MetricsTable } from '../metrics-table';
 import { MetricsTableExport } from '../metrics-table-export';
@@ -38,79 +30,25 @@ import { MetricsDisplaySelector } from '../metrics-display-selector';
 import { MetricsTableHeader } from '../metrics-table-header';
 import { MetricsTreemap, getTreemapNodes, getTreemapNodesGroupedByPath } from '../metrics-treemap';
 import { SEARCH_PLACEHOLDER } from './bundle-assets.i18n';
+import { getFilters } from './bundle-assets.utils';
 import css from './bundle-assets.module.css';
-import { AssetName } from '../asset-name';
 
 const DISPLAY_TYPE_GROUPS = {
   [MetricsDisplayType.TREEMAP]: ['folder'],
 };
 
-const getFileTypeFilters = (filters) =>
-  Object.entries(FILE_TYPE_LABELS).map(([key, label]) => ({
-  key,
-  label,
-  defaultValue: get(filters, `${ASSET_FILE_TYPE}.${key}`, true),
-}));
+interface ViewMetricsTreemapProps {
+  metricsTableTitle: ReactNode;
+  jobs: Array<Job>;
+  items: Array<ReportMetricAssetRow>;
+  displayType: { value: MetricsDisplayType; groupBy?: string };
+  emptyMessage: ReactNode;
+  showEntryInfo: (entryId: string) => void;
+  updateSearch: (search: string) => void;
+  search: string;
+}
 
-const getFilters = ({ compareMode, filters, chunks }) => {
-  const result = {
-    [ASSET_FILTERS.CHANGED]: {
-      label: 'Changed',
-      defaultValue: filters[ASSET_FILTERS.CHANGED],
-      disabled: !compareMode,
-    },
-  };
-
-  if (!isEmpty(chunks)) {
-    const chunksFilter = { label: 'Chunks', children: [] };
-    const chunksOrderedByName = orderBy(chunks, 'name');
-
-    chunksOrderedByName.forEach((chunk) => {
-      chunksFilter.children.push({
-        key: chunk.id,
-        label: chunk.name,
-        defaultValue: filters[`${ASSET_CHUNK}.${chunk.id}`] ?? true,
-      });
-    });
-
-    result[ASSET_CHUNK] = chunksFilter;
-  }
-
-  result[ASSET_ENTRY_TYPE] = {
-    label: 'Type',
-    children: [
-      {
-        key: ASSET_FILTERS.ENTRY,
-        label: 'Entry',
-        defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`, true),
-      },
-      {
-        key: ASSET_FILTERS.INITIAL,
-        label: 'Initial',
-        defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`, true),
-      },
-      {
-        key: ASSET_FILTERS.CHUNK,
-        label: 'Chunk',
-        defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`, true),
-      },
-      {
-        key: ASSET_FILTERS.OTHER,
-        label: 'Other',
-        defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.OTHER}`, true),
-      },
-    ],
-  };
-
-  result[ASSET_FILE_TYPE] = {
-    label: 'File type',
-    children: getFileTypeFilters(filters),
-  };
-
-  return result;
-};
-
-const ViewMetricsTreemap = (props) => {
+const ViewMetricsTreemap = (props: ViewMetricsTreemapProps) => {
   const {
     metricsTableTitle,
     jobs,
@@ -133,7 +71,7 @@ const ViewMetricsTreemap = (props) => {
 
   // Search based on the group path on group title click
   const onGroupClick = useCallback(
-    (groupPath) => {
+    (groupPath: string) => {
       // Clear seach when groupPath is emty (root)
       if (groupPath === '') {
         updateSearch('');
@@ -171,22 +109,29 @@ const ViewMetricsTreemap = (props) => {
   );
 };
 
-ViewMetricsTreemap.propTypes = {
-  jobs: PropTypes.arrayOf(PropTypes.object).isRequired, // eslint-disable-line react/forbid-prop-types
-  items: PropTypes.arrayOf(PropTypes.object).isRequired, // eslint-disable-line react/forbid-prop-types
-  metricsTableTitle: PropTypes.node.isRequired,
-  displayType: PropTypes.shape({
-    groupBy: PropTypes.string,
-  }).isRequired,
-  emptyMessage: PropTypes.node.isRequired,
-  showEntryInfo: PropTypes.func.isRequired,
-  updateSearch: PropTypes.func.isRequired,
-  search: PropTypes.string.isRequired,
-};
+export interface BundleAssetsProps extends ComponentProps<typeof Stack> {
+  jobs: Array<Job>;
+  chunks: Array<WebpackChunk>;
+  items: Array<ReportMetricAssetRow>;
+  allItems: Array<ReportMetricAssetRow>;
+  filters: Record<string, boolean>;
+  updateFilters: (newFilters: Record<string, boolean>) => void;
+  resetFilters: () => void;
+  resetAllFilters: () => void;
+  totalRowCount?: number;
+  entryId?: string;
+  sort: SortAction;
+  updateSort: (params: SortAction) => void;
+  search: string;
+  updateSearch: (search: string) => void;
+  customComponentLink?: ElementType;
+  hideEntryInfo: () => void;
+  showEntryInfo: (entryId: string) => void;
+}
 
-export const BundleAssets = (props) => {
+export const BundleAssets = (props: BundleAssetsProps) => {
   const {
-    className,
+    className = '',
     jobs,
     chunks,
     items,
@@ -194,15 +139,14 @@ export const BundleAssets = (props) => {
     updateFilters,
     resetFilters,
     resetAllFilters,
-    totalRowCount,
+    totalRowCount = 0,
     filters,
-    entryId,
-    hasActiveFilters,
+    entryId = '',
     sort,
     updateSort,
     search,
     updateSearch,
-    customComponentLink: CustomComponentLink,
+    customComponentLink: CustomComponentLink = ComponentLink,
     hideEntryInfo,
     showEntryInfo,
   } = props;
@@ -213,7 +157,7 @@ export const BundleAssets = (props) => {
 
   const filterFieldsData = useMemo(
     () => getFilters({ compareMode: jobs?.length > 1, filters, chunks }),
-    [jobs, filters],
+    [jobs, filters, chunks],
   );
 
   const metricsTableTitle = useMemo(
@@ -229,7 +173,10 @@ export const BundleAssets = (props) => {
   );
 
   const EntryComponentLink = useCallback(
-    ({ entryId: assetEntryId, ...assetNameRestProps }) => (
+    ({
+      entryId: assetEntryId,
+      ...assetNameRestProps
+    }: { entryId: string } & ComponentProps<typeof CustomComponentLink>) => (
       <CustomComponentLink
         section={SECTIONS.ASSETS}
         params={{
@@ -248,8 +195,12 @@ export const BundleAssets = (props) => {
   );
 
   const renderRowHeader = useCallback(
-    (row) => (
-      <AssetName row={row} EntryComponentLink={EntryComponentLink} className={css.assetName} />
+    (row: ReportMetricRow) => (
+      <AssetName
+        row={row as ReportMetricAssetRow}
+        EntryComponentLink={EntryComponentLink}
+        className={css.assetName}
+      />
     ),
     [EntryComponentLink],
   );
@@ -275,12 +226,15 @@ export const BundleAssets = (props) => {
   }, [allItems, entryId]);
 
   const exportDialog = useDialogState();
-  const [exportSourceType, setExportSourceType] = useState(undefined);
+  const [exportSourceType, setExportSourceType] = useState<string>();
 
-  const handleExportClick = useCallback((sourceType) => {
-    setExportSourceType(sourceType);
-    exportDialog.toggle();
-  }, []);
+  const handleExportClick = useCallback(
+    (sourceType: string) => {
+      setExportSourceType(sourceType);
+      exportDialog.toggle();
+    },
+    [exportDialog, setExportSourceType],
+  );
 
   return (
     <>
@@ -312,7 +266,6 @@ export const BundleAssets = (props) => {
             <Filters
               className={css.toolbarFilters}
               filters={filterFieldsData}
-              hasActiveFilters={hasActiveFilters}
               onChange={updateFilters}
             />
           </FlexStack>
@@ -367,63 +320,4 @@ export const BundleAssets = (props) => {
       </Dialog>
     </>
   );
-};
-
-BundleAssets.defaultProps = {
-  className: '',
-  totalRowCount: 0,
-  hasActiveFilters: false,
-  customComponentLink: ComponentLink,
-  entryId: '',
-};
-
-BundleAssets.propTypes = {
-  className: PropTypes.string,
-  jobs: PropTypes.arrayOf(
-    PropTypes.shape({
-      internalBuildNumber: PropTypes.number,
-      label: PropTypes.string,
-    }),
-  ).isRequired,
-  chunks: PropTypes.arrayOf({
-    id: PropTypes.string,
-    name: PropTypes.string,
-  }).isRequired,
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      key: PropTypes.string,
-      label: PropTypes.string,
-      runs: PropTypes.arrayOf(
-        PropTypes.shape({
-          displayValue: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-          displayDelta: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-        }),
-      ),
-    }),
-  ).isRequired,
-  updateFilters: PropTypes.func.isRequired,
-  resetFilters: PropTypes.func.isRequired,
-  resetAllFilters: PropTypes.func.isRequired,
-  totalRowCount: PropTypes.number,
-  filters: PropTypes.shape({
-    changed: PropTypes.bool,
-    id: PropTypes.string,
-  }).isRequired,
-  entryId: PropTypes.string,
-  hasActiveFilters: PropTypes.bool,
-  search: PropTypes.string.isRequired,
-  updateSearch: PropTypes.func.isRequired,
-  sort: PropTypes.shape({
-    field: PropTypes.string,
-    direction: PropTypes.string,
-  }).isRequired,
-  updateSort: PropTypes.func.isRequired,
-  allItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      key: PropTypes.string,
-    }),
-  ).isRequired,
-  customComponentLink: PropTypes.elementType,
-  hideEntryInfo: PropTypes.func.isRequired,
-  showEntryInfo: PropTypes.func.isRequired,
 };

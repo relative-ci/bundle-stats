@@ -2,15 +2,14 @@ import type { ComponentProps, ElementType, ReactNode } from 'react';
 import React, { useMemo } from 'react';
 import cx from 'classnames';
 import noop from 'lodash/noop';
+import type { WebpackChunk } from '@bundle-stats/utils';
 import {
   FILE_TYPE_LABELS,
-  MetricRunInfo,
   getBundleModulesByChunk,
   getBundleAssetsByEntryType,
   getBundleAssetsFileTypeComponentLink,
   getModuleFileType,
 } from '@bundle-stats/utils';
-import type { AssetMetricRun, MetaChunk } from '@bundle-stats/utils/types/webpack';
 
 import type { ReportMetricAssetRow } from '../../types';
 import { FlexStack } from '../../layout/flex-stack';
@@ -21,7 +20,7 @@ import css from './asset-info.module.css';
 
 interface ChunkModulesLinkProps {
   as: ElementType;
-  chunks: Array<MetaChunk>;
+  chunks: Array<WebpackChunk>;
   chunkId: string;
   name: string;
 }
@@ -74,17 +73,8 @@ const AssetRunName = (props: AssetRunNameProps) => {
 };
 
 interface AssetInfoProps {
-  item: {
-    label: string;
-    changed?: boolean;
-    isChunk?: boolean;
-    isEntry?: boolean;
-    isInitial?: boolean;
-    isNotPredictive?: boolean;
-    fileType?: string;
-    runs: Array<AssetMetricRun & MetricRunInfo>;
-  };
-  chunks?: Array<MetaChunk>;
+  item: ReportMetricAssetRow;
+  chunks?: Array<WebpackChunk>;
   labels: Array<string>;
   customComponentLink?: ElementType;
   onClose: () => void;
