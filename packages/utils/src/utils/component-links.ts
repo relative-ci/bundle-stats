@@ -16,6 +16,7 @@ import {
   MODULE_SOURCE_FILE_TYPES,
 } from '../config/file-types';
 import {
+  ASSET_CHUNK,
   ASSET_ENTRY_TYPE,
   ASSET_FILE_TYPE,
   ASSET_FILTERS,
@@ -211,6 +212,23 @@ export const getBundleAssetsFileTypeComponentLink = (
       filters: {
         ...getAssetFileTypeFilters(false),
         [`${ASSET_FILE_TYPE}.${fileType}`]: true,
+      },
+    },
+  },
+});
+
+export const getBundleAssetsByChunk = (
+  chunkIds: Array<string>,
+  chunkId: string,
+): ComponentLink => ({
+  section: SECTIONS.ASSETS,
+  title: I18N.COMPONENT_LINK_BUNDLE_ASSETS_CHUNKS,
+  params: {
+    [COMPONENT.BUNDLE_ASSETS]: {
+      filters: {
+        [ASSET_FILTERS.CHUNK]: false,
+        ...getModuleChunkFilters(chunkIds, false),
+        [`${ASSET_CHUNK}.${chunkId}`]: true,
       },
     },
   },

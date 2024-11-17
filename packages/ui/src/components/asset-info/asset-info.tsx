@@ -9,6 +9,7 @@ import {
   getBundleAssetsByEntryType,
   getBundleAssetsFileTypeComponentLink,
   getModuleFileType,
+  getBundleAssetsByChunk,
 } from '@bundle-stats/utils';
 
 import type { ReportMetricAssetRow } from '../../types';
@@ -20,31 +21,24 @@ import css from './asset-info.module.css';
 
 interface ChunkModulesLinkProps {
   as: ElementType;
-  chunks: Array<WebpackChunk>;
-  chunkId: string;
+  chunk: WebpackChunk;
+  chunkIds: Array<string>;
   name: string;
 }
 
 const ChunkModulesLink = ({
   as: Component,
-  chunks,
-  chunkId,
+  chunk,
+  chunkIds,
   name,
   onClick,
 }: ChunkModulesLinkProps & ComponentProps<'a'>) => {
-  const chunk = chunks?.find(({ id }) => id === chunkId);
-
-  if (!chunk) {
-    return null;
-  }
-
-  const chunkIds = chunks.map(({ id }) => id);
   const fileType = getModuleFileType(name);
 
   return (
     <Component
       className={css.viewModules}
-      {...getBundleModulesByChunk(chunkIds, chunkId, fileType)}
+      {...getBundleModulesByChunk(chunkIds, chunk.id, fileType)}
       onClick={onClick}
     >
       View chunk modules
@@ -144,6 +138,10 @@ export const AssetInfo = (props: AssetInfoProps & ComponentProps<'div'>) => {
   }, [item]);
 
   const fileTypeLabel = FILE_TYPE_LABELS[item.fileType as keyof typeof FILE_TYPE_LABELS];
+  const currentChunk = chunks?.find(
+    (chunk) => currentRun?.chunkId && currentRun.chunkId === chunk.id,
+  );
+  const chunkIds: Array<string> = chunks?.filter(Boolean).map((chunk) => chunk.id) || [];
 
   return (
     <EntryInfo
@@ -169,12 +167,27 @@ export const AssetInfo = (props: AssetInfoProps & ComponentProps<'div'>) => {
         </EntryInfo.Meta>
       )}
 
-      {currentRun?.chunkId && chunks && (
+      {currentChunk && (
+        <EntryInfo.Meta
+          label="Chunk"
+          tooltip="The bundler's chunk from witch the assets was originated"
+        >
+          <EntryInfoMetaLink
+            as={CustomComponentLink}
+            {...getBundleAssetsByChunk(chunkIds, currentRun.chunkId)}
+            onClick={onClick}
+          >
+            {currentChunk.name}
+          </EntryInfoMetaLink>
+        </EntryInfo.Meta>
+      )}
+
+      {currentChunk && (
         <div>
           <ChunkModulesLink
             as={CustomComponentLink}
-            chunks={chunks}
-            chunkId={currentRun?.chunkId}
+            chunk={currentChunk}
+            chunkIds={chunkIds}
             name={currentRun?.name}
             onClick={onClick}
           />
