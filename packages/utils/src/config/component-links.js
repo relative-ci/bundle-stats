@@ -1,4 +1,5 @@
 export const ASSET_ENTRY_TYPE = 'et';
+export const ASSET_CHUNK = 'c';
 export const ASSET_FILE_TYPE = 'ft';
 export const MODULE_CHUNK = 'c';
 export const MODULE_FILE_TYPE = 'mft';

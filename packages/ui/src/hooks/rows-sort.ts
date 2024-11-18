@@ -5,6 +5,21 @@ import orderBy from 'lodash/orderBy';
 import type { SortAction } from '../types';
 import { SORT } from '../constants';
 
+/**
+ * Get sort direction field from a string param
+ */
+const getSortDirection = (directionParam: string | undefined): SortAction['direction'] => {
+  if (typeof directionParam === 'undefined') {
+    return '';
+  }
+
+  if (['asc', 'desc'].includes(directionParam)) {
+    return directionParam as SortAction['direction'];
+  }
+
+  return '';
+};
+
 export const getSortFn =
   <TRow>(fieldPath: string, getCustomSort: UseRowsSortParams<TRow>['getCustomSort']) =>
   (item: TRow) => {
@@ -18,7 +33,7 @@ export const getSortFn =
 interface UseRowsSortParams<TRow> {
   rows: Array<TRow>;
   initialField?: string;
-  initialDirection?: SortAction['direction'];
+  initialDirection?: string;
   getCustomSort: (item: any) => Array<string | number | boolean>;
   setQueryState: (queryParams: {
     sortBy: SortAction['field'];
@@ -35,11 +50,14 @@ interface UseRowsSort<TRow> {
 export const useRowsSort = <TRow>({
   rows,
   initialField = 'runs[0].delta',
-  initialDirection = 'desc',
+  initialDirection,
   getCustomSort,
   setQueryState,
 }: UseRowsSortParams<TRow>): UseRowsSort<TRow> => {
-  const [sort, setSort] = useState({ field: initialField, direction: initialDirection });
+  const [sort, setSort] = useState({
+    field: initialField,
+    direction: getSortDirection(initialDirection),
+  });
 
   const updateSort = useCallback(
     (newState: SortAction) => {

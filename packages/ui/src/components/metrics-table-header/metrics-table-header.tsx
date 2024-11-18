@@ -12,7 +12,7 @@ import { Table } from '../../ui/table';
 import { Delta } from '../delta';
 import { JobName } from '../job-name';
 import { Metric } from '../metric';
-import { SortButton } from '../sort-button';
+import { SortButton, SortButtonProps } from '../sort-button';
 import * as I18N from './metrics-table-header.i18n';
 import css from './metrics-table-header.module.css';
 
@@ -53,8 +53,8 @@ interface ColumnSumProps {
   rows: Array<ReportMetricRow>;
   isBaseline: boolean;
   runIndex: number;
-  sort?: any;
-  updateSort?: (val: any) => void;
+  sort?: SortButtonProps['sort'];
+  updateSort?: SortButtonProps['updateSort'];
 }
 
 const SumColumn = ({ rows, isBaseline, runIndex, updateSort, sort }: ColumnSumProps) => {
@@ -110,7 +110,7 @@ const SumColumn = ({ rows, isBaseline, runIndex, updateSort, sort }: ColumnSumPr
   );
 };
 
-interface MetricsTableHeaderProps {
+export interface MetricsTableHeaderProps {
   /**
    * Metric column title
    */

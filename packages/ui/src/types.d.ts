@@ -12,9 +12,13 @@ interface FilterFieldData {
   disabled?: boolean;
 }
 
+interface ChildFilterFieldData extends FilterFieldData {
+  key: string;
+}
+
 type FilterGroupFieldData = {
   label: string;
-  children: Array<{ key: string } & FilterFieldData>;
+  children: Array<ChildFilterFieldData>;
 };
 
 type FilterFieldsData = Record<string, FilterFieldData | FilterGroupFieldData>;

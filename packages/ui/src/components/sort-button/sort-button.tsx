@@ -36,7 +36,7 @@ const getDescAction = (label: string): SortInfo => {
   return { direction: SORT.DESC, title: `Order ${label} descending` };
 };
 
-interface SortButtonProps {
+export interface SortButtonProps {
   fieldPath: string;
   fieldName: string;
   label: string;

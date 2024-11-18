@@ -9,7 +9,7 @@ import { Table } from '../../ui/table';
 import { Stack } from '../../layout/stack';
 import { Metric } from '../metric';
 import { Delta } from '../delta';
-import { MetricsTableHeader } from '../metrics-table-header';
+import { MetricsTableHeader, MetricsTableHeaderProps } from '../metrics-table-header';
 import * as I18N from './metrics-table.i18n';
 import css from './metrics-table.module.css';
 
@@ -74,8 +74,8 @@ interface MetricsTableProps extends Omit<React.ComponentProps<typeof Table>, 'ti
   items: Array<ReportMetricRow>;
   title?: React.ReactNode;
   showHeaderSum?: boolean;
-  sort?: any;
-  updateSort?: (val: any) => void;
+  sort?: MetricsTableHeaderProps['sort'];
+  updateSort?: MetricsTableHeaderProps['updateSort'];
   renderRowHeader?: (item: ReportMetricRow) => React.ReactNode;
   emptyMessage?: React.ReactNode;
   showAllItems: boolean;

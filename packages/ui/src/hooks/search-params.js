@@ -102,7 +102,6 @@ export const generateState = (filters, search) => ({
 
 export const useSearchParams = ({
   search: parentSearch = SEARCH_DEFAULT,
-
   filters: parentFilters,
   defaultFilters,
   allEntriesFilters,
