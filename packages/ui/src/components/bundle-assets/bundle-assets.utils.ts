@@ -19,6 +19,8 @@ import type {
   FilterGroupFieldData,
 } from '../../types';
 
+const NO_CHUNK_FILTER = 'NO_CHUNK';
+
 /**
  * Check if the asset cache is not predictive
  */
@@ -166,7 +168,17 @@ export const getFilters = ({
   };
 
   if (!isEmpty(chunks)) {
-    const chunksFilter: FilterGroupFieldData = { label: 'Chunks', children: [] };
+    const chunksFilter: FilterGroupFieldData = {
+      label: 'Chunks',
+      children: [
+        {
+          key: NO_CHUNK_FILTER,
+          label: 'No chunk',
+          defaultValue: filters[`${ASSET_CHUNK}.${NO_CHUNK_FILTER}`] ?? true,
+        },
+      ],
+    };
+
     const chunksOrderedByName = orderBy(chunks, 'name');
 
     chunksOrderedByName.forEach((chunk) => {
@@ -219,15 +231,17 @@ export const generateGetRowFilter =
   ({ chunkIds }: GenerateGetRowFilterOptions) => (filters: Record<string, unknown>) => {
     // List of chunkIds with filter value set to `true`
     const checkedChunkIds: Array<string> = [];
+    // List of chunks ids, including the NO_CHUNK
+    const filtersChunkIds = [NO_CHUNK_FILTER, ...chunkIds];
 
-    chunkIds.forEach((chunkId) => {
+    filtersChunkIds.forEach((chunkId) => {
       if (filters[`${ASSET_CHUNK}.${chunkId}`]) {
         checkedChunkIds.push(chunkId);
       }
     });
 
     const hasChunkFilters =
-      checkedChunkIds.length > 0 && checkedChunkIds.length !== chunkIds.length;
+      checkedChunkIds.length > 0 && checkedChunkIds.length !== filtersChunkIds.length;
 
     return (item: ReportMetricAssetRow) => {
       if (filters[ASSET_FILTERS.CHANGED] && !item.changed) {
@@ -251,7 +265,7 @@ export const generateGetRowFilter =
 
       // Filter if any of the chunkIds are checked
       if (hasChunkFilters) {
-        const rowRunsChunkIds = item?.runs?.map((run) => run?.chunkId) || [];
+        const rowRunsChunkIds = item?.runs?.map((run) => run?.chunkId || NO_CHUNK_FILTER) || [];
         return intersection(rowRunsChunkIds, checkedChunkIds).length > 0;
       }
 
