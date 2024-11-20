@@ -17,6 +17,7 @@ import { FlexStack } from '../../layout/flex-stack';
 import { AssetMetaTag } from '../asset-meta-tag';
 import { ComponentLink } from '../component-link';
 import { EntryInfo, EntryInfoMetaLink } from '../entry-info';
+import * as I18N from './asset-info.i18n';
 import css from './asset-info.module.css';
 
 interface ChunkModulesLinkProps {
@@ -57,9 +58,9 @@ const AssetRunName = (props: AssetRunNameProps) => {
   return (
     <>
       <span className={css.runNameTags}>
-        {run.isEntry && <AssetMetaTag tag="entry" title="Entry" size="small" />}
-        {run.isInitial && <AssetMetaTag tag="initial" title="Initial" size="small" />}
-        {run.isChunk && <AssetMetaTag tag="chunk" title="Chunk" size="small" />}
+        {run.isEntry && <AssetMetaTag tag="entry" title={I18N.ENTRY} size="small" />}
+        {run.isInitial && <AssetMetaTag tag="initial" title={I18N.INITIAL} size="small" />}
+        {run.isChunk && <AssetMetaTag tag="chunk" title={I18N.CHUNK} size="small" />}
       </span>
       {children}
     </>
@@ -104,7 +105,7 @@ export const AssetInfo = (props: AssetInfoProps & ComponentProps<'div'>) => {
             status={item.isEntry}
             className={css.assetNameTag}
           >
-            Entrypoint
+            {I18N.ENTRYPOINT}
           </AssetMetaTag>
         )}
         {item.isInitial && (
@@ -117,7 +118,7 @@ export const AssetInfo = (props: AssetInfoProps & ComponentProps<'div'>) => {
             status={item.isInitial}
             className={cx(css.assetNameTag, css.assetNameTagInitial)}
           >
-            Initial
+            {I18N.INITIAL}
           </AssetMetaTag>
         )}
         {item.isChunk && (
@@ -130,7 +131,7 @@ export const AssetInfo = (props: AssetInfoProps & ComponentProps<'div'>) => {
             status={item.isChunk}
             className={cx(css.assetNameTag, css.assetNameTagChunk)}
           >
-            Chunk
+            {I18N.CHUNK}
           </AssetMetaTag>
         )}
       </FlexStack>
@@ -153,10 +154,7 @@ export const AssetInfo = (props: AssetInfoProps & ComponentProps<'div'>) => {
       className={cx(css.root, className)}
     >
       {item.fileType && (
-        <EntryInfo.Meta
-          label="File type"
-          tooltip="Asset file type: JS, CSS, image, media, fonts, HTML, or other"
-        >
+        <EntryInfo.Meta label={I18N.FILE_TYPE} tooltip={I18N.FILE_TYPE_TOOLTIP}>
           <EntryInfoMetaLink
             as={CustomComponentLink}
             {...getBundleAssetsFileTypeComponentLink(item.fileType, fileTypeLabel)}
@@ -168,10 +166,7 @@ export const AssetInfo = (props: AssetInfoProps & ComponentProps<'div'>) => {
       )}
 
       {currentChunk && (
-        <EntryInfo.Meta
-          label="Chunk"
-          tooltip="The bundler's chunk from witch the assets was originated"
-        >
+        <EntryInfo.Meta label={I18N.CHUNK} tooltip={I18N.CHUNK_TOOLTIP}>
           <EntryInfoMetaLink
             as={CustomComponentLink}
             {...getBundleAssetsByChunk(chunkIds, currentRun.chunkId)}
