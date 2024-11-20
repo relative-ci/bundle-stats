@@ -29,7 +29,7 @@ import { MetricsTableTitle } from '../metrics-table-title';
 import { MetricsDisplaySelector } from '../metrics-display-selector';
 import { MetricsTableHeader } from '../metrics-table-header';
 import { MetricsTreemap, getTreemapNodes, getTreemapNodesGroupedByPath } from '../metrics-treemap';
-import { SEARCH_PLACEHOLDER } from './bundle-assets.i18n';
+import * as BUNDLE_ASSETS_I18N from './bundle-assets.i18n';
 import { getFilters } from './bundle-assets.utils';
 import css from './bundle-assets.module.css';
 
@@ -259,7 +259,7 @@ export const BundleAssets = (props: BundleAssetsProps) => {
           <FlexStack space="xxsmall">
             <InputSearch
               className={css.toolbarSearch}
-              placeholder={SEARCH_PLACEHOLDER}
+              placeholder={BUNDLE_ASSETS_I18N.SEARCH_PLACEHOLDER}
               defaultValue={search}
               onChange={updateSearch}
             />

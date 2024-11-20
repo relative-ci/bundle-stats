@@ -1,1 +1,9 @@
 export const SEARCH_PLACEHOLDER = 'Search by asset path';
+export const CHANGED = 'Changed';
+export const FILE_TYPE = 'File type';
+export const CHUNKS = 'Chunks';
+export const NO_CHUNK = 'No chunk';
+export const ENTRY = 'Entry';
+export const INITIAL = 'Initial';
+export const CHUNK = 'Chunk';
+export const OTHER = 'Other';
