@@ -12,12 +12,14 @@ import {
   FILE_TYPE_LABELS,
   getFileType,
 } from '@bundle-stats/utils';
+
 import type {
   FilterFieldsData,
   ReportMetricAssetRow,
   ReportMetricAssetRowMetaStatus,
   FilterGroupFieldData,
 } from '../../types';
+import * as I18N from './bundle-assets.i18n';
 
 const NO_CHUNK_FILTER = 'NO_CHUNK';
 
@@ -141,8 +143,8 @@ export const getCustomSort = (item: ReportMetricAssetRow): Array<boolean | strin
   item.key,
 ];
 
-const getFileTypeFilters = (filters: Record<string, unknown>): FilterGroupFieldData['children'] =>
-  Object.entries(FILE_TYPE_LABELS).map(([key, label]) => ({
+/* eslint-disable prettier/prettier */
+const getFileTypeFilters = (filters: Record<string, unknown>): FilterGroupFieldData['children'] => Object.entries(FILE_TYPE_LABELS).map(([key, label]) => ({
   key,
   label,
   defaultValue: get(filters, `${ASSET_FILE_TYPE}.${key}`, true) as boolean,
@@ -161,7 +163,7 @@ export const getFilters = ({
 }: GetFiltersOptions): FilterFieldsData => {
   const result: FilterFieldsData = {
     [ASSET_FILTERS.CHANGED]: {
-      label: 'Changed',
+      label: I18N.CHANGED,
       defaultValue: filters[ASSET_FILTERS.CHANGED],
       disabled: !compareMode,
     },
@@ -169,11 +171,11 @@ export const getFilters = ({
 
   if (!isEmpty(chunks)) {
     const chunksFilter: FilterGroupFieldData = {
-      label: 'Chunks',
+      label: I18N.CHUNKS,
       children: [
         {
           key: NO_CHUNK_FILTER,
-          label: 'No chunk',
+          label: I18N.NO_CHUNK,
           defaultValue: filters[`${ASSET_CHUNK}.${NO_CHUNK_FILTER}`] ?? true,
         },
       ],
@@ -193,33 +195,33 @@ export const getFilters = ({
   }
 
   result[ASSET_ENTRY_TYPE] = {
-    label: 'Type',
+    label: I18N.FILE_TYPE,
     children: [
       {
         key: ASSET_FILTERS.ENTRY,
-        label: 'Entry',
+        label: I18N.ENTRY,
         defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.ENTRY}`, true),
       },
       {
         key: ASSET_FILTERS.INITIAL,
-        label: 'Initial',
+        label: I18N.INITIAL,
         defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.INITIAL}`, true),
       },
       {
         key: ASSET_FILTERS.CHUNK,
-        label: 'Chunk',
+        label: I18N.CHUNK,
         defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.CHUNK}`, true),
       },
       {
         key: ASSET_FILTERS.OTHER,
-        label: 'Other',
+        label: I18N.OTHER,
         defaultValue: get(filters, `${ASSET_ENTRY_TYPE}.${ASSET_FILTERS.OTHER}`, true),
       },
     ],
   };
 
   result[ASSET_FILE_TYPE] = {
-    label: 'File type',
+    label: I18N.FILE_TYPE,
     children: getFileTypeFilters(filters),
   };
 
