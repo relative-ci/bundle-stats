@@ -3,7 +3,7 @@
   display: inline-block;
   border-radius: var(--radius-small);
   position: relative;
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-ultra-muted);
 }
 
 .toggle {
@@ -17,7 +17,7 @@
   display: block;
   overflow: hidden;
   right: -2px; /* compensate for the button padding */
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-ultra-muted);
   transition: var(--transition-out);
 }
 
@@ -35,7 +35,7 @@
 .direction:hover,
 .direction:active,
 .direction:focus {
-  color: var(--color-text-dark);
+  color: var(--color-text-intense);
   transition: var(--transition-in);
 }
 

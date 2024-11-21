@@ -1,5 +1,5 @@
 .root {
-  color: var(--color-gray-ultra-light);
+  color: var(--color-gray-ultra-muted);
   font-family: var(--font-family-fixed);
   white-space: nowrap;
 }
@@ -9,60 +9,60 @@
 }
 
 .HIGH_NEGATIVE {
-  color: var(--color-red-dark);
+  color: var(--color-red-intense);
 }
 
 .NEGATIVE {
-  color: var(--color-red-dark);
+  color: var(--color-red-intense);
 }
 
 .LOW_NEGATIVE {
-  color: var(--color-red-light);
+  color: var(--color-red-muted);
 }
 
 .LOW_POSITIVE {
-  color: var(--color-green-light);
+  color: var(--color-green-muted);
 }
 
 .POSITIVE {
-  color: var(--color-green-dark);
+  color: var(--color-green-intense);
 }
 
 .HIGH_POSITIVE {
-  color: var(--color-green-dark);
+  color: var(--color-green-intense);
 }
 
 .inverted {
   padding: 0 2px;
   border-radius: var(--radius-xsmall);
-  background-color: var(--color-gray-ultra-light);
-  color: var(--color-light);
+  background-color: var(--color-gray-ultra-muted);
+  color: var(--color-muted);
 }
 
 .inverted.CHANGE {
-  background: var(--color-info-light);
+  background: var(--color-info-muted);
 }
 
 .inverted.HIGH_NEGATIVE {
-  background: var(--color-red-dark);
+  background: var(--color-red-intense);
 }
 
 .inverted.NEGATIVE {
-  background: var(--color-red-dark);
+  background: var(--color-red-intense);
 }
 
 .inverted.LOW_NEGATIVE {
-  background: var(--color-red-light);
+  background: var(--color-red-muted);
 }
 
 .inverted.LOW_POSITIVE {
-  background: var(--color-green-light);
+  background: var(--color-green-muted);
 }
 
 .inverted.POSITIVE {
-  background: var(--color-green-dark);
+  background: var(--color-green-intense);
 }
 
 .inverted.HIGH_POSITIVE {
-  background: var(--color-green-dark);
+  background: var(--color-green-intense);
 }
