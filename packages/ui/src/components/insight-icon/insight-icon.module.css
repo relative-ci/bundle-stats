@@ -1,6 +1,6 @@
 .root {
-  width: calc(var(--space-small) + 6px);
-  height: calc(var(--space-small) + 6px);
+  width: calc(var(--space-4x) + 6px);
+  height: calc(var(--space-4x) + 6px);
   padding: 3px;
   border-radius: 50%;
   background: var(--color-highlight);

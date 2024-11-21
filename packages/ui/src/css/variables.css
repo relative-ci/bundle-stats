@@ -3,15 +3,15 @@
   --font-family-fixed: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   /* Spaces */
-  --space-xxxsmall: 4px;
-  --space-xxsmall: 8px;
-  --space-xsmall: 12px;
-  --space-small: 16px;
-  --space-medium: 24px;
-  --space-large: 32px;
-  --space-xlarge: 40px;
-  --space-xxlarge: 48px;
-  --space-xxxlarge: 64px;
+  --space: 4px;
+  --space-2x: 8px;
+  --space-3x: 12px;
+  --space-4x: 16px;
+  --space-6x: 24px;
+  --space-8x: 32px;
+  --space-10x: 40px;
+  --space-12x: 48px;
+  --space-16x: 64px;
 
   /* Typography scale */
   --size-xsmall: 0.77rem;
@@ -192,8 +192,8 @@
   --layer-xhigh: 10000;
   --layer-xxhigh: 100000;
 
-  --shadow-layer: 0 0 var(--space-xxxsmall) var(--color-shadow);
-  --shadow-layer-high: 0 0 var(--space-xxsmall) var(--color-shadow);
+  --shadow-layer: 0 0 var(--space) var(--color-shadow);
+  --shadow-layer-high: 0 0 var(--space-2x) var(--color-shadow);
 
   --radius-xsmall: 3px;
   --radius-small: 5px;
