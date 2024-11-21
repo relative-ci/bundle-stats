@@ -14,7 +14,7 @@
   z-index: var(--layer-high);
   padding: var(--space-xxxsmall) var(--space-xxsmall);
   border-radius: var(--radius-small);
-  background: var(--color-text);
+  background: var(--color-muted);
   max-width: 28em;
   color: var(--color-background);
   font-size: var(--size-small);
@@ -25,5 +25,5 @@
 
 .arrow svg {
   display: block;
-  fill: var(--color-text);
+  fill: var(--color-muted);
 }

@@ -12,6 +12,6 @@
 .readMoreLink:hover,
 .readMoreLink:focus,
 .readMoreLink:active {
-  color: var(--color-primary-dark);
+  color: var(--color-primary-intense);
   text-decoration: none;
 }

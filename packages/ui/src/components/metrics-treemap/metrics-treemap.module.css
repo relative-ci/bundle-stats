@@ -50,7 +50,7 @@
 
 .tileGroupTitleTotal {
   margin-left: var(--space-xxsmall);
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 .tileGroupTitle {
@@ -244,7 +244,7 @@
 }
 
 .tile-NO_CHANGE {
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 .tile-NO_CHANGE::before {
@@ -312,7 +312,7 @@
   outline: none;
   filter: drop-shadow(var(--shadow-layer-high));
   will-change: filter;
-  background: var(--color-light);
+  background: var(--color-muted);
   font-size: var(--size-small);
   pointer-events: none;
 }

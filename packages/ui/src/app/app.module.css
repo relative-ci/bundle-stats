@@ -24,7 +24,7 @@
 
 .tabsContainer {
   border-bottom: 1px solid var(--color-outline);
-  background: var(--color-light);
+  background: var(--color-muted);
 }
 
 .tabs {
