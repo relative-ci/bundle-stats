@@ -7,7 +7,7 @@
 }
 
 .toggle {
-  padding: 1px var(--space-xxxsmall);
+  padding: 1px var(--space);
   padding-right: calc(1px + var(--icon-dimension));
 }
 
@@ -58,7 +58,7 @@
 }
 
 .interactive {
-  margin: calc(0px - var(--space-xxxsmall));
+  margin: calc(0px - var(--space));
   margin-right: calc(0px - 1px - var(--icon-dimension));
 }
 

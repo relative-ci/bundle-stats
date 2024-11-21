@@ -11,16 +11,16 @@
 
 /** Size variation */
 .small {
-  width: var(--space-xsmall);
-  height: var(--space-xsmall);
+  width: var(--space-3x);
+  height: var(--space-3x);
 }
 
 .medium {
-  width: var(--space-small);
-  height: var(--space-small);
+  width: var(--space-4x);
+  height: var(--space-4x);
 }
 
 .large {
-  width: var(--space-medium);
-  height: var(--space-medium);
+  width: var(--space-6x);
+  height: var(--space-6x);
 }
