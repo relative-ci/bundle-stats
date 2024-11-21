@@ -8,12 +8,12 @@
 
 .navItem {
   display: inline-block;
-  margin: 0 var(--space-xxxsmall);
+  margin: 0 var(--space);
 }
 
 .navItem + .navItem::before {
   content: '•';
-  margin-right: var(--space-xxsmall);
+  margin-right: var(--space-2x);
   color: var(--color-text-ultra-light);
   font-size: var(--size-large);
 }

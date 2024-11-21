@@ -1,8 +1,8 @@
 .notPredictive {
-  margin-right: var(--space-xxsmall);
+  margin-right: var(--space-2x);
   display: inline-block;
-  width: var(--space-small);
-  height: var(--space-small);
+  width: var(--space-4x);
+  height: var(--space-4x);
 }
 
 .notPredictiveIcon {
@@ -15,11 +15,11 @@
 
 .metaTags {
   display: inline;
-  margin-right: var(--space-xxxsmall);
+  margin-right: var(--space);
 }
 
 .metaTag + .metaTag {
-  margin-left: calc(var(--space-xxxsmall) / 2);
+  margin-left: calc(var(--space) / 2);
 }
 
 .metaTags:empty {
