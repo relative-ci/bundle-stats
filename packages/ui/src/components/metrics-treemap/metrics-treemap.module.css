@@ -30,13 +30,13 @@
 
 .tileGroupTitleContent {
   width: 100%;
-  padding: var(--space-xxxsmall) 2px var(--space-xxxsmall) var(--space-xxsmall);
+  padding: var(--space) 2px var(--space) var(--space-2x);
   display: flex;
   align-items: center;
   color: var(--color-text);
   font-family: var(--font-family-fixed);
   font-size: 10px;
-  line-height: var(--space-small);
+  line-height: var(--space-4x);
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -49,7 +49,7 @@
 }
 
 .tileGroupTitleTotal {
-  margin-left: var(--space-xxsmall);
+  margin-left: var(--space-2x);
   color: var(--color-text-light);
 }
 
@@ -163,14 +163,14 @@
   display: flex;
   flex-flow: column;
   justify-content: center;
-  padding: var(--space-xxsmall) var(--space-xxsmall);
-  gap: var(--space-xxxsmall);
+  padding: var(--space-2x) var(--space-2x);
+  gap: var(--space);
   line-height: var(--line-height-heading);
 }
 
 /** Align label to other elements on the first column cells */
 .tileFirstCol .tileContent {
-  padding-left: var(--space-small);
+  padding-left: var(--space-4x);
 }
 
 .tileContentLabel {
@@ -190,7 +190,7 @@
 
 .tileContentValue {
   flex: 0 0 auto;
-  max-width: calc(100% + var(--space-xxsmall));
+  max-width: calc(100% + var(--space-2x));
   white-space: nowrap;
   overflow: hidden;
 }
@@ -200,12 +200,12 @@
 }
 
 .tileContentDelta {
-  margin-left: var(--space-xxxsmall);
+  margin-left: var(--space);
 }
 
 /** Tile size variation */
 .tileSizeSmall .tileContent {
-  padding: var(--space-xxxsmall);
+  padding: var(--space);
   font-size: 10px;
 }
 
@@ -298,9 +298,9 @@
 
 .tooltip {
   z-index: var(--layer-xxhigh);
-  padding: var(--space-xsmall) var(--space-small);
+  padding: var(--space-3x) var(--space-4x);
   border-radius: var(--radius-medium);
-  width: calc(100vw - 2 * var(--space-small));
+  width: calc(100vw - 2 * var(--space-4x));
   max-width: 340px;
   outline: none;
   filter: drop-shadow(var(--shadow-layer-high));

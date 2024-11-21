@@ -9,7 +9,7 @@
   border: 0;
   position: relative;
   display: inline-block;
-  padding: var(--space-xsmall) var(--space-small);
+  padding: var(--space-3x) var(--space-4x);
   color: var(--color-text-ultra-light);
   font-weight: bold;
   text-decoration: none;
