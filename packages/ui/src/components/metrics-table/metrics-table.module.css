@@ -23,15 +23,15 @@
 
 .root .empty {
   background: none !important;
-  padding-top: calc(var(--space-xxxlarge) * 2);
-  padding-bottom: calc(var(--space-xxxlarge) * 2);
+  padding-top: calc(var(--space-16x) * 2);
+  padding-bottom: calc(var(--space-16x) * 2);
   text-align: center;
 }
 
 .emptyIcon {
   color: var(--color-outline-dark);
-  width: var(--space-large);
-  height: var(--space-large);
+  width: var(--space-8x);
+  height: var(--space-8x);
 }
 
 .root .showAllItems {
