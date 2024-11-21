@@ -1,5 +1,5 @@
 .root {
-  padding: var(--space-small) 0;
+  padding: var(--space-4x) 0;
   width: 100%;
   display: flex;
 }
@@ -9,7 +9,7 @@
   flex: 1 0 10%;
   max-width: 50%;
   overflow: hidden;
-  padding: 0 var(--space-small);
+  padding: 0 var(--space-4x);
   border-left: 1px solid var(--color-outline);
 }
 
@@ -20,7 +20,7 @@
   top: 0;
   right: 0;
   bottom: 0;
-  width: var(--space-xxsmall);
+  width: var(--space-2x);
   background: linear-gradient(90deg, transparent, var(--color-background));
 }
 
@@ -37,7 +37,7 @@
 }
 
 .itemTag {
-  margin-left: var(--space-xxsmall);
+  margin-left: var(--space-2x);
   vertical-align: top;
   outline: 1px solid var(--color-outline);
   background: var(--color-highlight);

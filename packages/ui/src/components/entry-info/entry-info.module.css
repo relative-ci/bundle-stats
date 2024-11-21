@@ -28,14 +28,14 @@
 /** header */
 .header {
   /** space for close icon */
-  padding-right: calc(var(--space-xlarge) + var(--space-xxxsmall) + var(--space-xsmall));
+  padding-right: calc(var(--space-10x) + var(--space) + var(--space-3x));
   border-bottom: 1px solid var(--color-outline);
 }
 
 .headerClose {
   position: absolute;
-  right: calc(var(--space-small) - var(--space-xxxsmall));
-  top: calc(var(--space-small) - var(--space-xxxsmall));
+  right: calc(var(--space-4x) - var(--space));
+  top: calc(var(--space-4x) - var(--space));
   color: var(--color-text-ultra-light);
 }
 
@@ -84,14 +84,14 @@
 .meta {}
 
 .metaLabel {
-  margin-right: var(--space-xxxsmall);
+  margin-right: var(--space);
   min-width: 8em;
   flex: 0 1 6em;
   color: var(--color-text-light);
 }
 
 .metaLabelTooltip {
-  margin-left: var(--space-xxxsmall);
+  margin-left: var(--space);
   color: var(--color-text-ultra-light);
 }
 
@@ -101,7 +101,7 @@
 }
 
 .metaLink {
-  padding: 1px var(--space-xxxsmall);
+  padding: 1px var(--space);
   display: inline-block;
   line-height: var(--line-height-heading);
   border-radius: var(--radius-small);
@@ -118,7 +118,7 @@
 }
 
 .metaLink {
-  margin-right: var(--space-xxxsmall);
+  margin-right: var(--space);
 }
 
 .metaLink:hover,

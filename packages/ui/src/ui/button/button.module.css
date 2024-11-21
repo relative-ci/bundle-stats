@@ -7,7 +7,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: calc(max(var(--button-space), var(--space-xxsmall)) * 0.66);
+  gap: calc(max(var(--button-space), var(--space-2x)) * 0.66);
   appearance: none;
   padding: 0;
   border: var(--border-width) solid transparent;
@@ -182,39 +182,39 @@ a.root {
  * Size variation
  */
 .small {
-  --button-space: var(--space-xxsmall);
+  --button-space: var(--space-2x);
 
   font-size: var(--size-small);
-  line-height: var(--space-small);
+  line-height: var(--space-4x);
 }
 
 .small .glyph {
-  width: var(--space-small);
-  height: var(--space-small);
+  width: var(--space-4x);
+  height: var(--space-4x);
 }
 
 .medium {
-  --button-space: var(--space-xsmall);
+  --button-space: var(--space-3x);
 
   font-size: var(--size-medium);
-  line-height: calc(var(--space-small) + var(--space-xxxsmall));
+  line-height: calc(var(--space-4x) + var(--space));
 }
 
 .medium .glyph {
-  width: calc(var(--space-small) + var(--space-xxxsmall));
-  height: calc(var(--space-small) + var(--space-xxxsmall));
+  width: calc(var(--space-4x) + var(--space));
+  height: calc(var(--space-4x) + var(--space));
 }
 
 .large {
-  --button-space: var(--space-small);
+  --button-space: var(--space-4x);
 
   font-size: var(--size-large);
-  line-height: var(--space-medium);
+  line-height: var(--space-6x);
 }
 
 .large .glyph {
-  width: var(--space-medium);
-  height: var(--space-medium);
+  width: var(--space-6x);
+  height: var(--space-6x);
 }
 
 /**

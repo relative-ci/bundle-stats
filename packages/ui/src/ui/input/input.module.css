@@ -33,19 +33,19 @@
 /** Size modifier */
 /* default - medium */
 .root {
-  padding: var(--space-xsmall);
+  padding: var(--space-3x);
   font-size: 1rem;
-  line-height: calc(var(--space-small) - 2px);
+  line-height: calc(var(--space-4x) - 2px);
 }
 
 .small {
-  padding: var(--space-xxsmall);
+  padding: var(--space-2x);
   font-size: var(--size-small);
-  line-height: calc(var(--space-small) - 2px);
+  line-height: calc(var(--space-4x) - 2px);
 }
 
 .large {
-  padding: var(--space-small);
+  padding: var(--space-4x);
   font-size: var(--size-large);
-  line-height: calc(var(--space-large) - 2px);
+  line-height: calc(var(--space-8x) - 2px);
 }
