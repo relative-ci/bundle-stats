@@ -12,8 +12,8 @@
 }
 
 .headerLogo {
-  margin-right: var(--space-xsmall);
-  width: var(--space-large);
+  margin-right: var(--space-3x);
+  width: var(--space-8x);
 }
 
 .subheader {
