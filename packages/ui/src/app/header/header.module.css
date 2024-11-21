@@ -10,7 +10,7 @@
   display: block;
   border-radius: 50%;
   opacity: 0.8;
-  color: var(--color-text-ultra-dark);
+  color: var(--color-text-ultra-intense);
   transition: var(--transition-out);
 }
 
