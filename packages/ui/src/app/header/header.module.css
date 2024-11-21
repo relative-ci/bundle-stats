@@ -33,6 +33,6 @@
     height: var(--header-height);
     display: flex;
     align-items: center;
-    padding: 0 var(--space-small);
+    padding: 0 var(--space-4x);
   }
 }

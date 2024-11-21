@@ -11,7 +11,7 @@
 .root td {
   border: 1px solid var(--color-outline);
   border-width: 1px 0 0;
-  padding: var(--space-small);
+  padding: var(--space-4x);
 }
 
 .root thead th {
@@ -55,7 +55,7 @@
 .empty {
   border: 1px solid var(--color-outline);
   border-width: 1px 0;
-  padding: var(--space-xlarge) var(--space-medium);
+  padding: var(--space-10x) var(--space-6x);
   background: var(--color-background) !important;
   text-align: center;
 }
@@ -122,6 +122,6 @@
 /* compact variation */
 .compact td,
 .compact th {
-  padding-top: var(--space-xsmall);
-  padding-bottom: var(--space-xsmall);
+  padding-top: var(--space-3x);
+  padding-bottom: var(--space-3x);
 }
