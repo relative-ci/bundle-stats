@@ -1,7 +1,7 @@
 .root {
   border: 1px solid var(--color-outline);
   border-radius: var(--radius-small);
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
   width: 100%;
   resize: vertical;
   transition: var(--transition-in);
@@ -10,29 +10,29 @@
 }
 
 .root::-webkit-input-placeholder {
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 .root::-moz-placeholder {
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 .root:-ms-input-placeholder {
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 .root:-moz-placeholder {
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 .root:focus {
-  border-color: var(--color-outline-dark);
+  border-color: var(--color-outline-intense);
   color: inherit;
   transition: var(--transition-out);
 }
 
 .root[readonly=""] {
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 /** Size modifier */
