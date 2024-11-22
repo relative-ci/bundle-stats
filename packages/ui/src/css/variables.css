@@ -124,8 +124,7 @@
   --color-yellow-ultra-intense: var(--color-yellow-700);
   --color-yellow-intense: var(--color-yellow-900);
 
-  --color-intense: #111;
-  --color-muted: #fff;
+  --color-background: #fff;
 
   /* Functional color variables */
   --color-branding-muted: #2B76D4;

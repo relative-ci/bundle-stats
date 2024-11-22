@@ -31,7 +31,7 @@
 }
 
 .filter:hover {
-  color: var(--color-intense);
+  color: var(--color-text);
 }
 
 /** Filter single */
