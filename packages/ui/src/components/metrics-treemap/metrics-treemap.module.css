@@ -312,7 +312,7 @@
   outline: none;
   filter: drop-shadow(var(--shadow-layer-high));
   will-change: filter;
-  background: var(--color-muted);
+  background: var(--color-background);
   font-size: var(--size-small);
   pointer-events: none;
 }
