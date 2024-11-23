@@ -64,6 +64,13 @@
 <symbol viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu" id="menu" xmlns="http://www.w3.org/2000/svg">
 <path d="M3 12h18M3 6h18M3 18h18"/>
 </symbol>
+<symbol fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" id="monitor" xmlns="http://www.w3.org/2000/svg">
+<rect width="20" height="14" x="2" y="3" rx="2"/>
+<path d="M8 21h8m-4-4v4"/>
+</symbol>
+<symbol fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" id="moon" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/>
+</symbol>
 <symbol fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" id="more-vertical" xmlns="http://www.w3.org/2000/svg">
 <circle cx="12" cy="12" r="1"/>
 <circle cx="12" cy="5" r="1"/>
@@ -72,6 +79,10 @@
 <symbol viewBox="0 0 24 24" fill="currentColor" id="sort" xmlns="http://www.w3.org/2000/svg">
 <path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/>
 <path d="M0 0h24v24H0z" fill="none"/>
+</symbol>
+<symbol fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" id="sun" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="4"/>
+<path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
 </symbol>
 <symbol fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" id="table" xmlns="http://www.w3.org/2000/svg">
 <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/>
