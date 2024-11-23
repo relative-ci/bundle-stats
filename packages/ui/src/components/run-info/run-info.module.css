@@ -44,7 +44,7 @@
 }
 
 .baselineMetric {
-  color: var(--color-text-ultra-muted);
+  color: var(--color-text-muted);
   font-size: var(--size-small);
   line-height: var(--line-height-number);
   height: var(--line-height-number);

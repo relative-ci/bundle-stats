@@ -9,7 +9,7 @@
   position: relative;
   width: 100%;
   max-width: 240px;
-  color: var(--color-text);
+  color: var(--color-text-muted);
 }
 
 .filterControl {
@@ -28,7 +28,7 @@
 }
 
 .filterControl[disabled] + .filterLabel {
-  color: var(--color-text-muted);
+  color: var(--color-text-ultra-muted);
 }
 
 .filter:hover {
@@ -42,7 +42,7 @@
   border-radius: var(--radius-small);
   font-size: var(--size-small);
   line-height: var(--space-small);
-  color: var(--color-text-ultra-muted);
+  color: var(--color-text-muted);
   transition: var(--transition-out);
 }
 
@@ -50,6 +50,7 @@
 .filterSingle:active,
 .filterSingle:focus {
   border-color: var(--color-outline-intense);
+  color: var(--color-text);
   transition: var(--transition-in);
 }
 
