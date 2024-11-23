@@ -175,6 +175,57 @@
 }
 
 :root {
+  /* Functional color variables */
+  --color-text-ultra-muted: var(--gray-9);
+  --color-text-muted: var(--gray-10);
+  --color-text: var(--gray-11);
+  --color-text-intense: var(--gray-12);
+  --color-heading: var(--gray-12);
+
+  --color-branding-muted: var(--branding-8);
+  --color-branding: var(--branding-9);
+  --color-branding-intense: var(--branding-10);
+
+  --color-success-muted: var(--green-10);
+  --color-success: var(--green-11);
+  --color-success-intense: var(--green-12);
+
+  --color-info-muted: var(--blue-10);
+  --color-info: var(--blue-11);
+  --color-info-intense: var(--blue-12);
+
+  --color-warning-muted: var(--yellow-10);
+  --color-warning: var(--yellow-11);
+  --color-warning-intense: var(--yellow-12);
+
+  --color-danger-muted: var(--red-10);
+  --color-danger: var(--red-11);
+  --color-danger-intense: var(--red-12);
+
+  --color-primary-muted: var(--color-info-muted);
+  --color-primary: var(--color-info);
+  --color-primary-intense: var(--color-info-intense);
+
+  --color-secondary-muted: var(--color-success-muted);
+  --color-secondary: var(--color-success);
+  --color-secondary-intense: var(--color-success-intense);
+
+  --color-highlight: var(--gray-2);
+  --color-highlight-primary: var(--blue-2);
+  --color-highlight-secondary: var(--green-2);
+  --color-highlight-success: var(--green-2);
+  --color-highlight-info: var(--blue-2);
+  --color-highlight-warning: var(--yellow-2);
+  --color-highlight-danger: var(--red-3);
+
+  --color-outline: var(--gray-4);
+  --color-outline-intense: var(--gray-5);
+  --color-outline-success: var(--green-4);
+  --color-outline-info: var(--blue-4);
+  --color-outline-warning: var(--yellow-5);
+  --color-outline-danger: var(--red-4);
+
+  /** Font family */
   --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   --font-family-fixed: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
@@ -203,81 +254,6 @@
   --line-height: 1.66;
   --line-height-heading: 1.33;
   --line-height-number: 1.2em;
-
-  --color-gray-ultra-muted: var(--gray-9);
-  --color-gray-muted: var(--gray-10);
-  --color-gray: var(--gray-11);
-  --color-gray-intense: var(--gray-12);
-
-  --color-red-ultra-muted: var(--red-9);
-  --color-red-muted: var(--red-10);
-  --color-red: var(--red-11);
-  --color-red-intense: var(--red-12);
-
-  --color-blue-ultra-muted: var(--blue-9);
-  --color-blue-muted: var(--blue-10);
-  --color-blue: var(--blue-11);
-  --color-blue-intense: var(--blue-12);
-
-  --color-green-ultra-muted: var(--green-9);
-  --color-green-muted: var(--green-10);
-  --color-green: var(--green-11);
-  --color-green-intense: var(--green-12);
-
-  --color-yellow-ultra-muted: var(--yellow-9);
-  --color-yellow-muted: var(--yellow-10);
-  --color-yellow: var(--yellow-11);
-  --color-yellow-intense: var(--yellow-12);
-
-  /* Functional color variables */
-  --color-branding-muted: var(--branding-8);
-  --color-branding: var(--branding-9);
-  --color-branding-intense: var(--branding-10);
-
-  --color-text-ultra-muted: var(--color-gray-ultra-muted);
-  --color-text-muted: var(--color-gray-muted);
-  --color-text: var(--color-gray);
-  --color-text-intense: var(--color-gray-intense);
-  --color-heading: var(--color-gray-intense);
-
-  --color-success-muted: var(--color-green-muted);
-  --color-success: var(--color-green);
-  --color-success-intense: var(--color-green-intense);
-
-  --color-info-muted: var(--color-blue-muted);
-  --color-info: var(--color-blue);
-  --color-info-intense: var(--color-blue-intense);
-
-  --color-warning-muted: var(--color-yellow-muted);
-  --color-warning: var(--color-yellow);
-  --color-warning-intense: var(--color-yellow-intense);
-
-  --color-danger-muted: var(--color-red-muted);
-  --color-danger: var(--color-red);
-  --color-danger-intense: var(--color-red-intense);
-
-  --color-primary-muted: var(--color-blue-muted);
-  --color-primary: var(--color-blue);
-  --color-primary-intense: var(--color-blue-intense);
-
-  --color-secondary-muted: var(--color-green-muted);
-  --color-secondary: var(--color-green);
-  --color-secondary-intense: var(--color-green-intense);
-
-  --color-highlight: var(--gray-2);
-  --color-highlight-primary: var(--blue-2);
-  --color-highlight-secondary: var(--green-2);
-  --color-highlight-success: var(--green-2);
-  --color-highlight-info: var(--blue-2);
-  --color-highlight-warning: var(--yellow-2);
-  --color-highlight-danger: var(--red-3);
-
-  --color-outline: var(--gray-4);
-  --color-outline-intense: var(--gray-5);
-  --color-outline-success: var(--green-4);
-  --color-outline-info: var(--blue-4);
-  --color-outline-warning: var(--yellow-5);
-  --color-outline-danger: var(--red-4);
 
   --transition-duration-in: 0.2s;
   --transition-duration-out: 0.17s;

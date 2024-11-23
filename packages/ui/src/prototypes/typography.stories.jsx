@@ -49,19 +49,17 @@ const ItemColorValue = ({ value }) => (
   </div>
 );
 
-const COLORS = ['blue', 'red', 'green', 'yellow', 'gray'];
+const COLORS = ['branding', 'primary', 'secondary', 'success', 'info', 'warning', 'danger'];
 
-const NAMES = ['ultra-muted', 'muted', 'normal', 'intense'];
+const NAMES = ['muted', 'normal', 'intense'];
 
 export const ColorScheme = () => (
   <Container>
-    <Item colorName="branding" valueName="muted" />
-    <Item colorName="branding" />
-    <Item colorName="branding" valueName="intense" />
-
-    <hr />
-
-    <Item colorName="dark" />
+    <div style={{ display: 'flex', marginBottom: '24px' }}>
+      <Item colorName="text" valueName="muted" />
+      <Item colorName="text" />
+      <Item colorName="text" valueName="intense" />
+    </div>
 
     <hr />
 
