@@ -6,23 +6,7 @@
   flex: 0 0 auto;
 }
 
-.toolsGitHub {
-  display: block;
-  border-radius: 50%;
-  opacity: 0.8;
-  color: var(--color-text-intense);
-  transition: var(--transition-out);
-}
-
-.toolsGitHub:hover,
-.toolsGitHub:focus,
-.toolsGitHub:active {
-  opacity: 1;
-  transition: var(--transition-in);
-}
-
-.toolsGitHubIcon {
-  display: block;
+.toolsButton {
 }
 
 @media (min-width: 1140px) {
