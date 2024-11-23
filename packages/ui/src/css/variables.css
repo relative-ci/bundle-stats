@@ -215,7 +215,7 @@
   --color-highlight-secondary: var(--green-2);
   --color-highlight-success: var(--green-2);
   --color-highlight-info: var(--blue-3);
-  --color-highlight-warning: var(--yellow-3);
+  --color-highlight-warning: var(--yellow-2);
   --color-highlight-danger: var(--red-3);
 
   --color-outline: var(--gray-4);
