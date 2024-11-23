@@ -208,31 +208,26 @@
   --color-gray-muted: var(--gray-10);
   --color-gray: var(--gray-11);
   --color-gray-intense: var(--gray-12);
-  --color-gray-ultra-intense: var(--gray-12);
 
   --color-red-ultra-muted: var(--red-9);
   --color-red-muted: var(--red-10);
   --color-red: var(--red-11);
   --color-red-intense: var(--red-12);
-  --color-red-ultra-intense: var(--red-12);
 
   --color-blue-ultra-muted: var(--blue-9);
   --color-blue-muted: var(--blue-10);
   --color-blue: var(--blue-11);
   --color-blue-intense: var(--blue-12);
-  --color-blue-ultra-intense: var(--blue-12);
 
   --color-green-ultra-muted: var(--green-9);
   --color-green-muted: var(--green-10);
   --color-green: var(--green-11);
   --color-green-intense: var(--green-12);
-  --color-green-ultra-intense: var(--green-12);
 
   --color-yellow-ultra-muted: var(--yellow-9);
   --color-yellow-muted: var(--yellow-10);
   --color-yellow: var(--yellow-11);
   --color-yellow-intense: var(--yellow-12);
-  --color-yellow-ultra-intense: var(--yellow-12);
 
   /* Functional color variables */
   --color-branding-muted: var(--branding-8);
@@ -243,8 +238,7 @@
   --color-text-muted: var(--color-gray-muted);
   --color-text: var(--color-gray);
   --color-text-intense: var(--color-gray-intense);
-  --color-text-ultra-intense: var(--color-gray-ultra-intense);
-  --color-heading: var(--color-gray-ultra-intense);
+  --color-heading: var(--color-gray-intense);
 
   --color-success-muted: var(--color-green-muted);
   --color-success: var(--color-green);
