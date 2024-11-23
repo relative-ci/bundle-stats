@@ -6,7 +6,7 @@
   width: 100vw;
   max-width: var(--entry-info-width);
   z-index: calc(var(--layer-high) - 1);
-  background: #fff;
+  background: var(--color-background);
   box-shadow: var(--shadow-layer-high);
 }
 
