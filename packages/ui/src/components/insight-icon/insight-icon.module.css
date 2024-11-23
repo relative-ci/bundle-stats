@@ -14,7 +14,7 @@
 .warning {
   padding-top: 1px;
   background: var(--color-highlight-warning);
-  color: var(--color-yellow);
+  color: var(--color-warning);
 }
 
 .info {

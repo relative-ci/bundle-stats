@@ -1,5 +1,5 @@
 .root {
-  color: var(--color-gray-ultra-muted);
+  color: var(--color-text-ultra-muted);
   font-family: var(--font-family-fixed);
   white-space: nowrap;
 }
@@ -9,33 +9,33 @@
 }
 
 .HIGH_NEGATIVE {
-  color: var(--color-red-intense);
+  color: var(--color-danger-intense);
 }
 
 .NEGATIVE {
-  color: var(--color-red-intense);
+  color: var(--color-danger-intense);
 }
 
 .LOW_NEGATIVE {
-  color: var(--color-red-muted);
+  color: var(--color-danger-muted);
 }
 
 .LOW_POSITIVE {
-  color: var(--color-green-muted);
+  color: var(--color-success-muted);
 }
 
 .POSITIVE {
-  color: var(--color-green-intense);
+  color: var(--color-success-intense);
 }
 
 .HIGH_POSITIVE {
-  color: var(--color-green-intense);
+  color: var(--color-success-intense);
 }
 
 .inverted {
   padding: 0 2px;
   border-radius: var(--radius-xsmall);
-  background-color: var(--color-gray-ultra-muted);
+  background-color: var(--color-text-ultra-muted);
   color: var(--color-background);
 }
 
@@ -44,25 +44,25 @@
 }
 
 .inverted.HIGH_NEGATIVE {
-  background: var(--color-red-intense);
+  background: var(--color-danger-intense);
 }
 
 .inverted.NEGATIVE {
-  background: var(--color-red-intense);
+  background: var(--color-danger-intense);
 }
 
 .inverted.LOW_NEGATIVE {
-  background: var(--color-red-muted);
+  background: var(--color-danger-muted);
 }
 
 .inverted.LOW_POSITIVE {
-  background: var(--color-green-muted);
+  background: var(--color-success-muted);
 }
 
 .inverted.POSITIVE {
-  background: var(--color-green-intense);
+  background: var(--color-success-intense);
 }
 
 .inverted.HIGH_POSITIVE {
-  background: var(--color-green-intense);
+  background: var(--color-success-intense);
 }

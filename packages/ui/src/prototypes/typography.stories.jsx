@@ -25,7 +25,7 @@ const Item = ({ colorName, valueName = 'normal' }) => {
     <div
       style={{
         background: `var(--color-${colorFullName})`,
-        color: 'var(--color-light)',
+        color: 'var(--color-background)',
         padding: '12px',
         flex: '1 1 20%',
       }}

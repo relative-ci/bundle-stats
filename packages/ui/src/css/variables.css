@@ -243,12 +243,15 @@
   --color-success-muted: var(--color-green-muted);
   --color-success: var(--color-green);
   --color-success-intense: var(--color-green-intense);
+
   --color-info-muted: var(--color-blue-muted);
   --color-info: var(--color-blue);
   --color-info-intense: var(--color-blue-intense);
+
   --color-warning-muted: var(--color-yellow-muted);
   --color-warning: var(--color-yellow);
   --color-warning-intense: var(--color-yellow-intense);
+
   --color-danger-muted: var(--color-red-muted);
   --color-danger: var(--color-red);
   --color-danger-intense: var(--color-red-intense);
