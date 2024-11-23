@@ -83,10 +83,10 @@
   --yellow-11: #947300;
   --yellow-12: #443b1f;
 
-  --color-background: #FFF;
+  --color-background-rgba: 255, 255, 255;
+  --color-background: rgba(var(--color-background-rgba), 1);
   --color-backdrop: rgba(0, 0, 0, 0.05);
   --color-shadow: rgba(0, 0, 0, 0.25);
-
 }
 
 .dark-theme {
@@ -168,7 +168,8 @@
   --yellow-11: #fbd13d;
   --yellow-12: #f9e9b8;
 
-  --color-background: #111;
+  --color-background-rgba: 17, 17, 17;
+  --color-background: rgba(var(--color-background-rgba), 1);
   --color-backdrop: rgba(255, 255, 255, 0.05);
   --color-shadow: rgba(255, 255, 255, 0.15);
 }
