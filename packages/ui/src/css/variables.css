@@ -176,31 +176,31 @@
 
 :root {
   /* Functional color variables */
-  --color-text-ultra-muted: var(--gray-9);
-  --color-text-muted: var(--gray-10);
-  --color-text: var(--gray-11);
-  --color-text-intense: var(--gray-12);
+  --color-text-ultra-muted: var(--gray-8);
+  --color-text-muted: var(--gray-9);
+  --color-text: var(--gray-10);
+  --color-text-intense: var(--gray-11);
   --color-heading: var(--gray-12);
 
   --color-branding-muted: var(--branding-8);
-  --color-branding: var(--branding-9);
-  --color-branding-intense: var(--branding-10);
+  --color-branding: var(--branding-10);
+  --color-branding-intense: var(--branding-12);
 
-  --color-success-muted: var(--green-10);
-  --color-success: var(--green-11);
-  --color-success-intense: var(--green-12);
+  --color-success-muted: var(--green-8);
+  --color-success: var(--green-9);
+  --color-success-intense: var(--green-10);
 
-  --color-info-muted: var(--blue-10);
-  --color-info: var(--blue-11);
+  --color-info-muted: var(--blue-8);
+  --color-info: var(--blue-10);
   --color-info-intense: var(--blue-12);
 
-  --color-warning-muted: var(--yellow-10);
-  --color-warning: var(--yellow-11);
-  --color-warning-intense: var(--yellow-12);
+  --color-warning-muted: var(--yellow-9);
+  --color-warning: var(--yellow-10);
+  --color-warning-intense: var(--yellow-11);
 
-  --color-danger-muted: var(--red-10);
-  --color-danger: var(--red-11);
-  --color-danger-intense: var(--red-12);
+  --color-danger-muted: var(--red-8);
+  --color-danger: var(--red-9);
+  --color-danger-intense: var(--red-11);
 
   --color-primary-muted: var(--color-info-muted);
   --color-primary: var(--color-info);
@@ -214,8 +214,8 @@
   --color-highlight-primary: var(--blue-2);
   --color-highlight-secondary: var(--green-2);
   --color-highlight-success: var(--green-2);
-  --color-highlight-info: var(--blue-2);
-  --color-highlight-warning: var(--yellow-2);
+  --color-highlight-info: var(--blue-3);
+  --color-highlight-warning: var(--yellow-3);
   --color-highlight-danger: var(--red-3);
 
   --color-outline: var(--gray-4);
