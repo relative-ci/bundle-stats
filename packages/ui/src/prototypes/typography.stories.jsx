@@ -51,7 +51,7 @@ const ItemColorValue = ({ value }) => (
 
 const COLORS = ['blue', 'red', 'green', 'yellow', 'gray'];
 
-const NAMES = ['ultra-muted', 'muted', 'normal', 'intense', 'ultra-intense'];
+const NAMES = ['ultra-muted', 'muted', 'normal', 'intense'];
 
 export const ColorScheme = () => (
   <Container>
