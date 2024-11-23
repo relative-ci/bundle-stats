@@ -1,3 +1,178 @@
+/*
+ * Color scheme:
+ * https://coolors.co/287acc-da444e-55b950-efcc1a-192339
+ * https://hihayk.github.io/scale/#4/5/50/90/-51/0/0/14/353138/53/49/56/white
+ * https://www.radix-ui.com/colors/custom
+ */
+:root, .light-theme {
+  --branding-1: #fafdff;
+  --branding-2: #f2f9ff;
+  --branding-3: #e3f4ff;
+  --branding-4: #d3ecff;
+  --branding-5: #c2e2ff;
+  --branding-6: #aad5ff;
+  --branding-7: #8cc3ff;
+  --branding-8: #5fa9ff;
+  --branding-9: #1a477f;
+  --branding-10: #2b5892;
+  --branding-11: #1f6cc7;
+  --branding-12: #08376e;
+
+  --gray-1: #fcfcfe;
+  --gray-2: #f9f9fc;
+  --gray-3: #f0eff5;
+  --gray-4: #e8e7ef;
+  --gray-5: #e0e0ea;
+  --gray-6: #d9d8e3;
+  --gray-7: #cecddb;
+  --gray-8: #bbb9cc;
+  --gray-9: #8d8c9d;
+  --gray-10: #838192;
+  --gray-11: #646371;
+  --gray-12: #201f29;
+
+  --red-1: #fffcfc;
+  --red-2: #fff8f7;
+  --red-3: #feebea;
+  --red-4: #ffdcdb;
+  --red-5: #ffcecc;
+  --red-6: #fbbfbc;
+  --red-7: #f2aba9;
+  --red-8: #e8918f;
+  --red-9: #da444e;
+  --red-10: #cc3341;
+  --red-11: #c93340;
+  --red-12: #631a1f;
+
+  --blue-1: #fcfdff;
+  --blue-2: #f5f9fe;
+  --blue-3: #ebf3fc;
+  --blue-4: #ddecfe;
+  --blue-5: #cde2fc;
+  --blue-6: #b9d5f5;
+  --blue-7: #a1c4ed;
+  --blue-8: #7dade4;
+  --blue-9: #287acc;
+  --blue-10: #166cbd;
+  --blue-11: #2275c7;
+  --blue-12: #123559;
+
+  --green-1: #fbfefa;
+  --green-2: #f5fbf5;
+  --green-3: #e7f7e5;
+  --green-4: #d8f2d5;
+  --green-5: #c6eac2;
+  --green-6: #b0dfac;
+  --green-7: #93cf8e;
+  --green-8: #67bb62;
+  --green-9: #55b950;
+  --green-10: #4aad46;
+  --green-11: #2e7f2b;
+  --green-12: #223e20;
+
+  --yellow-1: #fefdfb;
+  --yellow-2: #fffbe9;
+  --yellow-3: #fff5c0;
+  --yellow-4: #ffec9b;
+  --yellow-5: #ffe278;
+  --yellow-6: #f5d674;
+  --yellow-7: #e2c568;
+  --yellow-8: #d0ae3b;
+  --yellow-9: #ffd00c;
+  --yellow-10: #f2c724;
+  --yellow-11: #947300;
+  --yellow-12: #443b1f;
+
+  --color-background: #FFF;
+  --color-backdrop: rgba(0, 0, 0, 0.05);
+  --color-shadow: rgba(0, 0, 0, 0.25);
+
+}
+
+.dark-theme {
+  --branding-1: #0a111c;
+  --branding-2: #0f1925;
+  --branding-3: #0f2746;
+  --branding-4: #0b3160;
+  --branding-5: #133d72;
+  --branding-6: #1e4b83;
+  --branding-7: #295a99;
+  --branding-8: #306bb6;
+  --branding-9: #3984e1;
+  --branding-10: #2b77d3;
+  --branding-11: #7fb7ff;
+  --branding-12: #cee3ff;
+
+  --gray-1: #111015;
+  --gray-2: #19191e;
+  --gray-3: #222229;
+  --gray-4: #2a2933;
+  --gray-5: #31303c;
+  --gray-6: #3a3947;
+  --gray-7: #474656;
+  --gray-8: #605f70;
+  --gray-9: #6e6c7e;
+  --gray-10: #7b7a8c;
+  --gray-11: #b3b2c5;
+  --gray-12: #eeeef2;
+
+  --red-1: #160f0f;
+  --red-2: #1f1313;
+  --red-3: #3a1314;
+  --red-4: #4f1116;
+  --red-5: #60191e;
+  --red-6: #712629;
+  --red-7: #8a3638;
+  --red-8: #b3474b;
+  --red-9: #da444e;
+  --red-10: #b94c50;
+  --red-11: #ff8e8e;
+  --red-12: #ffd2d0;
+
+  --blue-1: #08121d;
+  --blue-2: #0d1927;
+  --blue-3: #072848;
+  --blue-4: #003265;
+  --blue-5: #003e78;
+  --blue-6: #094d8a;
+  --blue-7: #175ea2;
+  --blue-8: #1c71c2;
+  --blue-9: #287acc;
+  --blue-10: #166cbd;
+  --blue-11: #6db9ff;
+  --blue-12: #c8e4ff;
+
+  --green-1: #0d130c;
+  --green-2: #141a13;
+  --green-3: #1b2a1a;
+  --green-4: #1e3a1c;
+  --green-5: #264824;
+  --green-6: #2e582b;
+  --green-7: #366833;
+  --green-8: #3e7a3a;
+  --green-9: #55b950;
+  --green-10: #48ad44;
+  --green-11: #71d26b;
+  --green-12: #bef2ba;
+
+  --yellow-1: #13110b;
+  --yellow-2: #1b1810;
+  --yellow-3: #2a230a;
+  --yellow-4: #382b00;
+  --yellow-5: #453500;
+  --yellow-6: #52430c;
+  --yellow-7: #65551e;
+  --yellow-8: #806c29;
+  --yellow-9: #ebc013;
+  --yellow-10: #e0b500;
+  --yellow-11: #fbd13d;
+  --yellow-12: #f9e9b8;
+
+  --color-background: #111;
+  --color-backdrop: rgba(255, 255, 255, 0.05);
+  --color-shadow: rgba(255, 255, 255, 0.15);
+}
+
 :root {
   --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   --font-family-fixed: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -28,108 +203,40 @@
   --line-height-heading: 1.33;
   --line-height-number: 1.2em;
 
-  /*
-   * Color scheme:
-   * https://coolors.co/287acc-da444e-55b950-efcc1a-192339
-   * http://mcg.mbitson.com/#!?mcgpalette0=%23da444e&mcgpalette1=%2355b950&mcgpalette2=%23ebc013&mcgpalette3=%232a2933&mcgpalette4=%23287acc&themename=bundle-stats
-   * https://hihayk.github.io/scale/#4/5/50/90/-51/0/0/14/353138/53/49/56/white
-   */
-  --color-gray-25: #f9f9f9;
-  --color-gray-50: #e5e5e7;
-  --color-gray-100: #d2d2d4;
-  --color-gray-200: #959499;
-  --color-gray-300: #6a6970;
-  --color-gray-400: #4a4952;
-  --color-gray-500: #2a2933;
-  --color-gray-600: #25242e;
-  --color-gray-700: #1f1f27;
-  --color-gray-800: #191920;
-  --color-gray-900: #0f0f14;
+  --color-gray-ultra-muted: var(--gray-9);
+  --color-gray-muted: var(--gray-10);
+  --color-gray: var(--gray-11);
+  --color-gray-intense: var(--gray-12);
+  --color-gray-ultra-intense: var(--gray-12);
 
-  --color-gray-ultra-muted: var(--color-gray-200);
-  --color-gray-muted: var(--color-gray-300);
-  --color-gray: var(--color-gray-500);
-  --color-gray-intense: var(--color-gray-700);
-  --color-gray-ultra-intense: var(--color-gray-900);
+  --color-red-ultra-muted: var(--red-9);
+  --color-red-muted: var(--red-10);
+  --color-red: var(--red-11);
+  --color-red-intense: var(--red-12);
+  --color-red-ultra-intense: var(--red-12);
 
-  --color-red-25: #fdf5f6;
-  --color-red-50: #fbe9ea;
-  --color-red-100: #f4c7ca;
-  --color-red-200: #eda2a7;
-  --color-red-300: #e57c83;
-  --color-red-400: #e06069;
-  --color-red-500: #da444e;
-  --color-red-600: #d63e47;
-  --color-red-700: #d0353d;
-  --color-red-800: #cb2d35;
-  --color-red-900: #c21f25;
-  --color-red-ultra-muted: var(--color-red-100);
-  --color-red-muted: var(--color-red-300);
-  --color-red: var(--color-red-500);
-  --color-red-intense: var(--color-red-700);
-  --color-red-ultra-intense: var(--color-red-900);
+  --color-blue-ultra-muted: var(--blue-9);
+  --color-blue-muted: var(--blue-10);
+  --color-blue: var(--blue-11);
+  --color-blue-intense: var(--blue-12);
+  --color-blue-ultra-intense: var(--blue-12);
 
-  --color-blue-25: #f3f8fd;
-  --color-blue-50: #e5eff9;
-  --color-blue-100: #bfd7f0;
-  --color-blue-200: #94bde6;
-  --color-blue-300: #69a2db;
-  --color-blue-400: #488ed4;
-  --color-blue-500: #287acc;
-  --color-blue-600: #2472c7;
-  --color-blue-700: #1e67c0;
-  --color-blue-800: #185db9;
-  --color-blue-900: #0f4aad;
+  --color-green-ultra-muted: var(--green-9);
+  --color-green-muted: var(--green-10);
+  --color-green: var(--green-11);
+  --color-green-intense: var(--green-12);
+  --color-green-ultra-intense: var(--green-12);
 
-  --color-blue-ultra-muted: var(--color-blue-100);
-  --color-blue-muted: var(--color-blue-300);
-  --color-blue: var(--color-blue-500);
-  --color-blue-intense: var(--color-blue-700);
-  --color-blue-ultra-intense: var(--color-blue-900);
-
-  --color-green-25: #f6fbf6;
-  --color-green-50: #ebf7ea;
-  --color-green-100: #cceacb;
-  --color-green-200: #aadca8;
-  --color-green-300: #88ce85;
-  --color-green-400: #6fc46a;
-  --color-green-500: #55b950;
-  --color-green-600: #4eb249;
-  --color-green-700: #44aa40;
-  --color-green-800: #3ba237;
-  --color-green-900: #2a9327;
-
-  --color-green-ultra-muted: var(--color-green-100);
-  --color-green-muted: var(--color-green-300);
-  --color-green: var(--color-green-500);
-  --color-green-intense: var(--color-green-700);
-  --color-green-ultra-intense: var(--color-green-900);
-
-  --color-yellow-25: #fffdf2;
-  --color-yellow-50: #fdf7e3;
-  --color-yellow-100: #f9ecb8;
-  --color-yellow-200: #f5e089;
-  --color-yellow-300: #f1d35a;
-  --color-yellow-400: #eec936;
-  --color-yellow-500: #ebc013;
-  --color-yellow-600: #e9ba11;
-  --color-yellow-700: #e5b20e;
-  --color-yellow-800: #e2aa0b;
-  --color-yellow-900: #dd9c06;
-
-  --color-yellow-muted-background: var(--color-yellow-25);
-  --color-yellow-ultra-muted: var(--color-yellow-100);
-  --color-yellow-muted: var(--color-yellow-300);
-  --color-yellow: var(--color-yellow-500);
-  --color-yellow-ultra-intense: var(--color-yellow-700);
-  --color-yellow-intense: var(--color-yellow-900);
-
-  --color-background: #fff;
+  --color-yellow-ultra-muted: var(--yellow-9);
+  --color-yellow-muted: var(--yellow-10);
+  --color-yellow: var(--yellow-11);
+  --color-yellow-intense: var(--yellow-12);
+  --color-yellow-ultra-intense: var(--yellow-12);
 
   /* Functional color variables */
-  --color-branding-muted: #2B76D4;
-  --color-branding: #1a477f;
-  --color-branding-intense: #09182A;
+  --color-branding-muted: var(--branding-8);
+  --color-branding: var(--branding-9);
+  --color-branding-intense: var(--branding-10);
 
   --color-text-ultra-muted: var(--color-gray-ultra-muted);
   --color-text-muted: var(--color-gray-muted);
@@ -159,25 +266,20 @@
   --color-secondary: var(--color-green);
   --color-secondary-intense: var(--color-green-intense);
 
-  --color-background: #fff;
-  --color-highlight: var(--color-gray-25);
-  --color-highlight-primary: var(--color-blue-25);
-  --color-highlight-secondary: var(--color-green-25);
-  --color-highlight-success: var(--color-green-25);
-  --color-highlight-info: var(--color-blue-25);
-  --color-highlight-warning: var(--color-yellow-25);
-  --color-highlight-danger: var(--color-red-25);
+  --color-highlight: var(--gray-2);
+  --color-highlight-primary: var(--blue-2);
+  --color-highlight-secondary: var(--green-2);
+  --color-highlight-success: var(--green-2);
+  --color-highlight-info: var(--blue-2);
+  --color-highlight-warning: var(--yellow-2);
+  --color-highlight-danger: var(--red-3);
 
-  --color-outline: var(--color-gray-50);
-  --color-outline-intense: var(--color-gray-100);
-
-  --color-outline-success: var(--color-green-100);
-  --color-outline-info: var(--color-blue-100);
-  --color-outline-warning: var(--color-yellow-200);
-  --color-outline-danger: var(--color-red-100);
-
-  --color-backdrop: rgba(0, 0, 0, 0.05);
-  --color-shadow: rgba(0, 0, 0, 0.25);
+  --color-outline: var(--gray-4);
+  --color-outline-intense: var(--gray-5);
+  --color-outline-success: var(--green-4);
+  --color-outline-info: var(--blue-4);
+  --color-outline-warning: var(--yellow-5);
+  --color-outline-danger: var(--red-4);
 
   --transition-duration-in: 0.2s;
   --transition-duration-out: 0.17s;

@@ -5,7 +5,7 @@
   bottom: 0;
   width: 100vw;
   max-width: var(--entry-info-width);
-  z-index: var(--layer-high);
+  z-index: calc(var(--layer-high) - 1);
   background: var(--color-background);
   box-shadow: var(--shadow-layer-high);
 }
