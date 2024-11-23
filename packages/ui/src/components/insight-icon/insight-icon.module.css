@@ -7,14 +7,14 @@
 }
 
 .error {
-  background: var(--color-red-50);
+  background: var(--color-highlight-danger);
   color: var(--color-danger);
 }
 
 .warning {
   padding-top: 1px;
-  background: var(--color-yellow-100);
-  color: var(--color-yellow-900);
+  background: var(--color-highlight-warning);
+  color: var(--color-yellow);
 }
 
 .info {

@@ -248,7 +248,7 @@
 }
 
 .tile-NO_CHANGE::before {
-  color: var(--color-gray-50);
+  color: var(--gray-3);
   opacity: 0.4;
 }
 
@@ -257,27 +257,27 @@
 }
 
 .tile-HIGH_NEGATIVE::before {
-  color: var(--color-red-100);
+  color: var(--red-2);
 }
 
 .tile-NEGATIVE::before {
-  color: var(--color-red-50);
+  color: var(--red-3);
 }
 
 .tile-LOW_NEGATIVE::before {
-  color: var(--color-red-50);
+  color: var(--red-4);
 }
 
 .tile-LOW_POSITIVE::before {
-  color: var(--color-green-50);
+  color: var(--green-2);
 }
 
 .tile-POSITIVE::before {
-  color: var(--color-green-50);
+  color: var(--green-3);
 }
 
 .tile-HIGH_POSITIVE::before {
-  color: var(--color-green-100);
+  color: var(--green-4);
 }
 
 /** empty message */
