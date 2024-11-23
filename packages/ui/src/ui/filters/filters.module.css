@@ -16,6 +16,7 @@
   margin: 0;
   flex: 0 0 auto;
   height: 1em;
+  background: var(--color-background);
 }
 
 .filterLabel {
@@ -87,7 +88,7 @@
   right: 100%;
   bottom: 0;
   width: var(--space-small);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0), var(--color-highlight) 75%);
+  background: linear-gradient(90deg, rgba(var(--color-background-rgb), 0), var(--color-highlight) 75%);
 }
 
 /** filter hover state */
