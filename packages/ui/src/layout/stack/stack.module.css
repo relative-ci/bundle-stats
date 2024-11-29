@@ -8,37 +8,37 @@
 }
 
 .space--xxxsmall > .item {
-  margin-bottom: var(--space-xxxsmall);
+  margin-bottom: var(--space);
 }
 
 .space--xxsmall > .item {
-  margin-bottom: var(--space-xxsmall);
+  margin-bottom: var(--space-2x);
 }
 
 .space--xsmall > .item {
-  margin-bottom: var(--space-xsmall);
+  margin-bottom: var(--space-3x);
 }
 
 .space--small > .item {
-  margin-bottom: var(--space-small);
+  margin-bottom: var(--space-4x);
 }
 
 .space--medium > .item {
-  margin-bottom: var(--space-medium);
+  margin-bottom: var(--space-6x);
 }
 
 .space--large > .item {
-  margin-bottom: var(--space-large);
+  margin-bottom: var(--space-8x);
 }
 
 .space--xlarge > .item {
-  margin-bottom: var(--space-xlarge);
+  margin-bottom: var(--space-10x);
 }
 
 .space--xxlarge > .item {
-  margin-bottom: var(--space-xxlarge);
+  margin-bottom: var(--space-12x);
 }
 
 .space--xxxlarge > .item {
-  margin-bottom: var(--space-xxxlarge);
+  margin-bottom: var(--space-16x);
 }

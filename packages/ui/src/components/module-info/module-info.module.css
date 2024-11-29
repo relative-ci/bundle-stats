@@ -13,7 +13,7 @@
 .chunksItem-info:hover,
 .chunksItem-info:active,
 .chunksItem-info:focus {
-  color: var(--color-info-dark);
+  color: var(--color-info-intense);
 }
 
 .chunksItem-danger {
@@ -23,11 +23,11 @@
 .chunksItem-danger:hover,
 .chunksItem-danger:active,
 .chunksItem-danger:focus {
-  color: var(--color-danger-dark);
+  color: var(--color-danger-intense);
 }
 
 .chunksItem-default {
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 .chunksItem-default:hover,
