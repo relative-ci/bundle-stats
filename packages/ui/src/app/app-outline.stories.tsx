@@ -21,6 +21,12 @@ const BASELINE_SOURCE = {
 
 const JOBS = createJobs([CURRENT_SOURCE, BASELINE_SOURCE]);
 
+/**
+ * stack: Vite, yarn
+ *
+ * - GitHub: https://github.com/outline/outline
+ * - RelativeCI project:  https://app.relative-ci.com/projects/TMqufq6bi8qzsOjEHSWY
+ */
 const meta: Meta<typeof App> = {
   title: 'App/Outline',
   component: App,
@@ -34,7 +40,7 @@ const meta: Meta<typeof App> = {
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof App>;
 
 export const Default: Story = {
   render: (args) => <App jobs={JOBS} {...args} />,

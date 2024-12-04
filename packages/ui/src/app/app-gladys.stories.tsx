@@ -21,6 +21,12 @@ const BASELINE_SOURCE = {
 
 const JOBS = createJobs([CURRENT_SOURCE, BASELINE_SOURCE]);
 
+/**
+ * stack: preact-cli, webpack, npm
+ *
+ * - GitHub: https://github.com/GladysAssistant/Gladys
+ * - RelativeCI project: https://app.relative-ci.com/projects/PUROh8FAVkDKmpUrqr4u
+ */
 const meta: Meta<typeof App> = {
   title: 'App/Gladys',
   component: App,
@@ -34,7 +40,7 @@ const meta: Meta<typeof App> = {
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof App>;
 
 export const Default: Story = {
   render: (args) => <App jobs={JOBS} {...args} />,
