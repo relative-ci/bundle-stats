@@ -1,0 +1,4543 @@
+{
+  "hash": "cb25bfc8d4d209dd",
+  "assets": [
+    {
+      "name": "/static/media/chava.d3af639c.webp",
+      "size": 3491992
+    },
+    {
+      "name": "/static/media/alexandercj.29017b64.png",
+      "size": 1713512
+    },
+    {
+      "name": "/static/media/daxe.e7ce5fcb.png",
+      "size": 1258923
+    },
+    {
+      "name": "/static/media/share-wide.02c34bd5.jpg",
+      "size": 1163642
+    },
+    {
+      "name": "/static/media/scottw.7158a319.png",
+      "size": 1148425
+    },
+    {
+      "name": "/static/media/share.3e6fe56c.jpg",
+      "size": 1092593
+    },
+    {
+      "name": "/static/media/participate.bc2564e9.png",
+      "size": 888459
+    },
+    {
+      "name": "/static/media/elih.6a5eac65.jpg",
+      "size": 637783
+    },
+    {
+      "name": "/static/media/tava.298887f4.png",
+      "size": 542519
+    },
+    {
+      "name": "/static/media/queer.bb1947e6.png",
+      "size": 532987
+    },
+    {
+      "name": "/static/media/leonardo2.8f596b8b.png",
+      "size": 497185
+    },
+    {
+      "name": "/static/media/leonardo1.8b99c046.png",
+      "size": 484108
+    },
+    {
+      "name": "/static/media/disabled.55625641.png",
+      "size": 479044
+    },
+    {
+      "name": "/static/media/leonardo4.ba8d84bc.png",
+      "size": 456962
+    },
+    {
+      "name": "/static/media/leonardo3.4ccbbb88.png",
+      "size": 452133
+    },
+    {
+      "name": "/static/media/immigrant.156d0079.png",
+      "size": 371409
+    },
+    {
+      "name": "/static/media/elder.0ec0d40c.png",
+      "size": 350873
+    },
+    {
+      "name": "/static/media/bipoc.468b42b5.png",
+      "size": 318402
+    },
+    {
+      "name": "static/chunks/pages/_app-81204bc4980cca33.js",
+      "size": 318198
+    },
+    {
+      "name": "/static/media/transman.601194d4.png",
+      "size": 312457
+    },
+    {
+      "name": "/static/media/transmasc.597da490.png",
+      "size": 284133
+    },
+    {
+      "name": "/static/media/hollister.e4339838.png",
+      "size": 278048
+    },
+    {
+      "name": "/static/media/standWithTrans.6cd66322.png",
+      "size": 249092
+    },
+    {
+      "name": "/static/media/kylp_t.d1f7283c.png",
+      "size": 236230
+    },
+    {
+      "name": "static/chunks/framework-4da79b1a8ce3cb6c.js",
+      "size": 210589
+    },
+    {
+      "name": "static/chunks/969-3c5be2166f99474c.js",
+      "size": 197522
+    },
+    {
+      "name": "/static/media/lambaLegal_t.7f375ebb.png",
+      "size": 178083
+    },
+    {
+      "name": "/static/media/nqapia_t.802a86c4.png",
+      "size": 175718
+    },
+    {
+      "name": "/static/media/app.87a8c156.png",
+      "size": 121498
+    },
+    {
+      "name": "/static/media/sage.97a09f14.png",
+      "size": 119663
+    },
+    {
+      "name": "static/chunks/main-7b19e0347898594f.js",
+      "size": 112405
+    },
+    {
+      "name": "static/chunks/polyfills-78c92fac7aa8fdd8.js",
+      "size": 91381
+    },
+    {
+      "name": "/static/media/immigrationEquality.f1c1ac19.png",
+      "size": 81021
+    },
+    {
+      "name": "/static/media/lush.e222e01e.png",
+      "size": 74138
+    },
+    {
+      "name": "/static/media/oasisLegal.a60791e2.png",
+      "size": 72041
+    },
+    {
+      "name": "/static/media/suggest.2ca30392.png",
+      "size": 70218
+    },
+    {
+      "name": "/static/media/mtpc.c22b16cb.png",
+      "size": 58405
+    },
+    {
+      "name": "/static/media/tmf-logo-rect-bw.abb688e5.png",
+      "size": 53741
+    },
+    {
+      "name": "/static/media/tmf-logo-rect-bw-cropped.402d75d4.png",
+      "size": 51745
+    },
+    {
+      "name": "static/media/6905431624c34d00-s.p.woff2",
+      "size": 50560
+    },
+    {
+      "name": "static/media/67354d9f27664b22-s.woff2",
+      "size": 34700
+    },
+    {
+      "name": "static/chunks/246-3870c046f78cb1ca.js",
+      "size": 34362
+    },
+    {
+      "name": "static/chunks/pages/category/[tag]/[[...storyId]]-46f5b9a9abd99b3b.js",
+      "size": 22944
+    },
+    {
+      "name": "static/chunks/pages/about-a9b216bf9d4174b8.js",
+      "size": 18094
+    },
+    {
+      "name": "static/chunks/pages/survey-ce3996b56901c41e.js",
+      "size": 17211
+    },
+    {
+      "name": "static/media/6d6d0e4a023f9f33-s.p.woff2",
+      "size": 15288
+    },
+    {
+      "name": "static/chunks/pages/story/[id]-1a2e0139df7ab3fc.js",
+      "size": 14909
+    },
+    {
+      "name": "static/chunks/pages/gallery-18887c28ab351bcd.js",
+      "size": 14853
+    },
+    {
+      "name": "static/chunks/953-455ccf0fe1cd47de.js",
+      "size": 14292
+    },
+    {
+      "name": "static/media/791334aa8b2b679f-s.p.woff2",
+      "size": 14120
+    },
+    {
+      "name": "/static/media/glaad.f4dba592.png",
+      "size": 12710
+    },
+    {
+      "name": "static/chunks/pages/share-28b524f1cfa62b5d.js",
+      "size": 12047
+    },
+    {
+      "name": "static/media/0822b6067e7c0dee-s.woff2",
+      "size": 11548
+    },
+    {
+      "name": "static/media/e889cd181219a83f-s.woff2",
+      "size": 10892
+    },
+    {
+      "name": "static/media/de555e6bc944c11a-s.woff2",
+      "size": 10636
+    },
+    {
+      "name": "static/chunks/279-96fc1fdfcac01e47.js",
+      "size": 10562
+    },
+    {
+      "name": "static/chunks/pages/index-6839c17f349048b0.js",
+      "size": 9147
+    },
+    {
+      "name": "static/chunks/pages/act-7f1e804649ac721e.js",
+      "size": 8317
+    },
+    {
+      "name": "static/media/29ffcd3df3f1cb91-s.woff2",
+      "size": 7596
+    },
+    {
+      "name": "static/media/4184cf5f191b83db-s.woff2",
+      "size": 7512
+    },
+    {
+      "name": "static/css/7228818c8c42a6d1.css",
+      "size": 6768
+    },
+    {
+      "name": "static/chunks/922-2133b428ac540909.js",
+      "size": 6701
+    },
+    {
+      "name": "static/chunks/pages/gallery/[slug]-6f8dafb22c25fd64.js",
+      "size": 6352
+    },
+    {
+      "name": "static/media/3cef106cd115e360-s.woff2",
+      "size": 5968
+    },
+    {
+      "name": "static/media/28cea0425961ab58-s.woff2",
+      "size": 5656
+    },
+    {
+      "name": "static/media/24cfcc12c15b03b9-s.woff2",
+      "size": 5360
+    },
+    {
+      "name": "static/media/0148c4ca3456ea72-s.woff2",
+      "size": 5344
+    },
+    {
+      "name": "/static/media/powered-by-vercel.a2517ec0.svg",
+      "size": 5336
+    },
+    {
+      "name": "static/media/a0c95037dd5c9387-s.woff2",
+      "size": 4552
+    },
+    {
+      "name": "static/media/b4c759cba7a5f011-s.woff2",
+      "size": 4464
+    },
+    {
+      "name": "build-manifest.json",
+      "size": 3652
+    },
+    {
+      "name": "static/chunks/webpack-08a97ac1f910250c.js",
+      "size": 3563
+    },
+    {
+      "name": "server/middleware-build-manifest.js",
+      "size": 3067
+    },
+    {
+      "name": "static/VdLwCbkQp_G0M1Z8C_YSm/_buildManifest.js",
+      "size": 1193
+    },
+    {
+      "name": "server/middleware-react-loadable-manifest.js",
+      "size": 305
+    },
+    {
+      "name": "react-loadable-manifest.json",
+      "size": 303
+    },
+    {
+      "name": "static/chunks/pages/_error-90b766d9bc8bd435.js",
+      "size": 247
+    },
+    {
+      "name": "server/next-font-manifest.js",
+      "size": 240
+    },
+    {
+      "name": "server/next-font-manifest.json",
+      "size": 211
+    },
+    {
+      "name": "static/VdLwCbkQp_G0M1Z8C_YSm/_ssgManifest.js",
+      "size": 77
+    }
+  ],
+  "chunks": [
+    {
+      "id": 179,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "static/chunks/main-7b19e0347898594f.js"
+      ],
+      "names": [
+        "main"
+      ]
+    },
+    {
+      "id": 214,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "static/chunks/pages/gallery-18887c28ab351bcd.js"
+      ],
+      "names": [
+        "pages/gallery"
+      ]
+    },
+    {
+      "id": 246,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "static/chunks/246-3870c046f78cb1ca.js"
+      ],
+      "names": []
+    },
+    {
+      "id": 272,
+      "entry": true,
+      "initial": true,
+      "files": [
+        "static/chunks/webpack-08a97ac1f910250c.js"
+      ],
+      "names": [
+        "webpack"
+      ]
+    },
+    {
+      "id": 279,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "static/chunks/279-96fc1fdfcac01e47.js"
+      ],
+      "names": []
+    },
+    {
+      "id": 347,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "static/chunks/pages/share-28b524f1cfa62b5d.js"
+      ],
+      "names": [
+        "pages/share"
+      ]
+    },
+    {
+      "id": 405,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "static/chunks/pages/index-6839c17f349048b0.js"
+      ],
+      "names": [
+        "pages/index"
+      ]
+    },
+    {
+      "id": 501,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "static/chunks/pages/act-7f1e804649ac721e.js"
+      ],
+      "names": [
+        "pages/act"
+      ]
+    },
+    {
+      "id": 521,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "static/chunks/pages/about-a9b216bf9d4174b8.js"
+      ],
+      "names": [
+        "pages/about"
+      ]
+    },
+    {
+      "id": 558,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "static/chunks/pages/gallery/[slug]-6f8dafb22c25fd64.js"
+      ],
+      "names": [
+        "pages/gallery/[slug]"
+      ]
+    },
+    {
+      "id": 634,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "static/chunks/pages/category/[tag]/[[...storyId]]-46f5b9a9abd99b3b.js"
+      ],
+      "names": [
+        "pages/category/[tag]/[[...storyId]]"
+      ]
+    },
+    {
+      "id": 774,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "static/chunks/framework-4da79b1a8ce3cb6c.js"
+      ],
+      "names": [
+        "framework"
+      ]
+    },
+    {
+      "id": 810,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "static/chunks/pages/story/[id]-1a2e0139df7ab3fc.js"
+      ],
+      "names": [
+        "pages/story/[id]"
+      ]
+    },
+    {
+      "id": 820,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "static/chunks/pages/_error-90b766d9bc8bd435.js"
+      ],
+      "names": [
+        "pages/_error"
+      ]
+    },
+    {
+      "id": 859,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "static/chunks/pages/survey-ce3996b56901c41e.js"
+      ],
+      "names": [
+        "pages/survey"
+      ]
+    },
+    {
+      "id": 888,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "static/css/7228818c8c42a6d1.css",
+        "static/chunks/pages/_app-81204bc4980cca33.js"
+      ],
+      "names": [
+        "pages/_app"
+      ]
+    },
+    {
+      "id": 922,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "static/chunks/922-2133b428ac540909.js"
+      ],
+      "names": []
+    },
+    {
+      "id": 953,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "static/chunks/953-455ccf0fe1cd47de.js"
+      ],
+      "names": []
+    },
+    {
+      "id": 969,
+      "entry": false,
+      "initial": true,
+      "files": [
+        "static/chunks/969-3c5be2166f99474c.js"
+      ],
+      "names": []
+    }
+  ],
+  "modules": [
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/next.js",
+      "size": 752,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=private-next-pages%2F_app.tsx&page=%2F_app!",
+      "size": 278,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=private-next-pages%2Fsurvey.tsx&page=%2Fsurvey!",
+      "size": 284,
+      "chunks": [
+        859
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=private-next-pages%2Fabout.tsx&page=%2Fabout!",
+      "size": 281,
+      "chunks": [
+        521
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=private-next-pages%2Fstory%2F%5Bid%5D.tsx&page=%2Fstory%2F%5Bid%5D!",
+      "size": 296,
+      "chunks": [
+        810
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=private-next-pages%2Fgallery%2Findex.tsx&page=%2Fgallery!",
+      "size": 293,
+      "chunks": [
+        214
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=private-next-pages%2Fshare.tsx&page=%2Fshare!",
+      "size": 281,
+      "chunks": [
+        347
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=private-next-pages%2Findex.tsx&page=%2F!",
+      "size": 271,
+      "chunks": [
+        405
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=private-next-pages%2Fcategory%2F%5Btag%5D%2F%5B%5B...storyId%5D%5D.tsx&page=%2Fcategory%2F%5Btag%5D%2F%5B%5B...storyId%5D%5D!",
+      "size": 353,
+      "chunks": [
+        634
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=private-next-pages%2Fact.tsx&page=%2Fact!",
+      "size": 275,
+      "chunks": [
+        501
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=private-next-pages%2Fgallery%2F%5Bslug%5D.tsx&page=%2Fgallery%2F%5Bslug%5D!",
+      "size": 308,
+      "chunks": [
+        558
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=next%2Fdist%2Fpages%2F_error&page=%2F_error!",
+      "size": 277,
+      "chunks": [
+        820
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/webpack.js",
+      "size": 2204,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/index.js",
+      "size": 32486,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/pages/_error.js",
+      "size": 5088,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./src/pages/_app.tsx + 4 modules",
+      "size": 15845,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./src/pages/_app.tsx",
+          "size": 5944
+        },
+        {
+          "name": "./node_modules/.pnpm/@vercel+analytics@1.3.1_next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18_hcsl5uq74gueazkuidbfmdrexu/node_modules/@vercel/analytics/dist/react/index.mjs",
+          "size": 4583
+        },
+        {
+          "name": "./node_modules/.pnpm/@vercel+speed-insights@1.0.11_next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-_nroioiisaoydec3xdd2fczqcay/node_modules/@vercel/speed-insights/dist/next/index.mjs",
+          "size": 4695
+        },
+        {
+          "name": "./public/powered-by-vercel.svg",
+          "size": 129
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+react-query-devtools@4.36.1_@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18._7so3kfcjh5wrfohcrcdehpw344/node_modules/@tanstack/react-query-devtools/build/lib/index.mjs",
+          "size": 494
+        }
+      ]
+    },
+    {
+      "name": "./src/pages/survey.tsx + 2 modules",
+      "size": 38150,
+      "chunks": [
+        859
+      ],
+      "modules": [
+        {
+          "name": "./src/pages/survey.tsx",
+          "size": 31670
+        },
+        {
+          "name": "./src/data/states.ts",
+          "size": 5611
+        },
+        {
+          "name": "./public/assets/share-wide.jpg",
+          "size": 869
+        }
+      ]
+    },
+    {
+      "name": "./src/pages/about.tsx + 13 modules",
+      "size": 17511,
+      "chunks": [
+        521
+      ],
+      "modules": [
+        {
+          "name": "./src/pages/about.tsx",
+          "size": 11501
+        },
+        {
+          "name": "./src/data/partners.ts",
+          "size": 1275
+        },
+        {
+          "name": "./public/assets/partners/glaad.png",
+          "size": 405
+        },
+        {
+          "name": "./public/assets/partners/hollister.png",
+          "size": 383
+        },
+        {
+          "name": "./public/assets/partners/immigrationEquality.png",
+          "size": 385
+        },
+        {
+          "name": "./public/assets/partners/kylp_t.png",
+          "size": 426
+        },
+        {
+          "name": "./public/assets/partners/lambaLegal_t.png",
+          "size": 357
+        },
+        {
+          "name": "./public/assets/partners/lush.png",
+          "size": 368
+        },
+        {
+          "name": "./public/assets/partners/mtpc.png",
+          "size": 386
+        },
+        {
+          "name": "./public/assets/partners/nqapia_t.png",
+          "size": 341
+        },
+        {
+          "name": "./public/assets/partners/oasisLegal.png",
+          "size": 355
+        },
+        {
+          "name": "./public/assets/partners/sage.png",
+          "size": 389
+        },
+        {
+          "name": "./public/assets/partners/standWithTrans.png",
+          "size": 398
+        },
+        {
+          "name": "./public/assets/partners/tava.png",
+          "size": 542
+        }
+      ]
+    },
+    {
+      "name": "./src/pages/story/[id].tsx",
+      "size": 2156,
+      "chunks": [
+        810
+      ]
+    },
+    {
+      "name": "./src/pages/gallery/index.tsx + 10 modules",
+      "size": 25391,
+      "chunks": [
+        214
+      ],
+      "modules": [
+        {
+          "name": "./src/pages/gallery/index.tsx",
+          "size": 13731
+        },
+        {
+          "name": "./src/data/artwork.ts",
+          "size": 7259
+        },
+        {
+          "name": "./public/artwork/alexandercj.png",
+          "size": 491
+        },
+        {
+          "name": "./public/artwork/chava.webp",
+          "size": 119
+        },
+        {
+          "name": "./public/artwork/daxe.png",
+          "size": 476
+        },
+        {
+          "name": "./public/artwork/elih.jpg",
+          "size": 877
+        },
+        {
+          "name": "./public/artwork/leonardo1.png",
+          "size": 473
+        },
+        {
+          "name": "./public/artwork/leonardo2.png",
+          "size": 461
+        },
+        {
+          "name": "./public/artwork/leonardo3.png",
+          "size": 461
+        },
+        {
+          "name": "./public/artwork/leonardo4.png",
+          "size": 497
+        },
+        {
+          "name": "./public/artwork/scottw.png",
+          "size": 546
+        }
+      ]
+    },
+    {
+      "name": "./src/pages/share.tsx + 1 modules",
+      "size": 8875,
+      "chunks": [
+        347
+      ],
+      "modules": [
+        {
+          "name": "./src/pages/share.tsx",
+          "size": 7987
+        },
+        {
+          "name": "./public/assets/share.jpg",
+          "size": 888
+        }
+      ]
+    },
+    {
+      "name": "./src/pages/index.tsx + 1 modules",
+      "size": 8362,
+      "chunks": [
+        405
+      ],
+      "modules": [
+        {
+          "name": "./src/pages/index.tsx",
+          "size": 7998
+        },
+        {
+          "name": "./public/assets/tmf-logo-rect-bw.png",
+          "size": 364
+        }
+      ]
+    },
+    {
+      "name": "./src/pages/category/[tag]/[[...storyId]].tsx + 1 modules",
+      "size": 12814,
+      "chunks": [
+        634
+      ],
+      "modules": [
+        {
+          "name": "./src/pages/category/[tag]/[[...storyId]].tsx",
+          "size": 7440
+        },
+        {
+          "name": "./src/layouts/CardDisplay.tsx",
+          "size": 5374
+        }
+      ]
+    },
+    {
+      "name": "./src/pages/act.tsx + 3 modules",
+      "size": 9514,
+      "chunks": [
+        501
+      ],
+      "modules": [
+        {
+          "name": "./src/pages/act.tsx",
+          "size": 8319
+        },
+        {
+          "name": "./public/assets/act/app.png",
+          "size": 367
+        },
+        {
+          "name": "./public/assets/act/participate.png",
+          "size": 489
+        },
+        {
+          "name": "./public/assets/act/suggest.png",
+          "size": 339
+        }
+      ]
+    },
+    {
+      "name": "./src/pages/gallery/[slug].tsx",
+      "size": 1567,
+      "chunks": [
+        558
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js",
+      "size": 214,
+      "chunks": [
+        774
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js",
+      "size": 190,
+      "chunks": [
+        774
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/polyfills/polyfill-module.js",
+      "size": 1288,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/client.js",
+      "size": 619,
+      "chunks": [
+        774
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/runtime-config.external.js",
+      "size": 635,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/portal/index.js",
+      "size": 1148,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/page-loader.js",
+      "size": 6009,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/performance-relayer.js",
+      "size": 3901,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/route-announcer.js",
+      "size": 3250,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/adapters.js",
+      "size": 4981,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/on-recoverable-error.js",
+      "size": 1227,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/tracing/tracer.js",
+      "size": 1970,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/tracing/report-to-socket.js",
+      "size": 1029,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/pages/_app.js",
+      "size": 1569,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/head.js",
+      "size": 51,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/image.js",
+      "size": 61,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/router.js",
+      "size": 49,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next-i18next@15.3.0_i18next@23.11.5_next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0__jxj7bxvbpavcvbcianl7jzixje/node_modules/next-i18next/dist/esm/index.js + 37 modules",
+      "size": 145537,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/next-i18next@15.3.0_i18next@23.11.5_next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0__jxj7bxvbpavcvbcianl7jzixje/node_modules/next-i18next/dist/esm/index.js",
+          "size": 176
+        },
+        {
+          "name": "./node_modules/.pnpm/react-i18next@14.1.2_i18next@23.11.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-i18next/dist/es/index.js",
+          "size": 847
+        },
+        {
+          "name": "./node_modules/.pnpm/next-i18next@15.3.0_i18next@23.11.5_next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0__jxj7bxvbpavcvbcianl7jzixje/node_modules/next-i18next/dist/esm/appWithTranslation.js",
+          "size": 5611
+        },
+        {
+          "name": "./node_modules/.pnpm/react-i18next@14.1.2_i18next@23.11.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-i18next/dist/es/Trans.js",
+          "size": 1025
+        },
+        {
+          "name": "./node_modules/.pnpm/react-i18next@14.1.2_i18next@23.11.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-i18next/dist/es/TransWithoutContext.js",
+          "size": 11186
+        },
+        {
+          "name": "./node_modules/.pnpm/react-i18next@14.1.2_i18next@23.11.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-i18next/dist/es/defaults.js",
+          "size": 543
+        },
+        {
+          "name": "./node_modules/.pnpm/react-i18next@14.1.2_i18next@23.11.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-i18next/dist/es/i18nInstance.js",
+          "size": 135
+        },
+        {
+          "name": "./node_modules/.pnpm/react-i18next@14.1.2_i18next@23.11.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-i18next/dist/es/context.js",
+          "size": 1528
+        },
+        {
+          "name": "./node_modules/.pnpm/react-i18next@14.1.2_i18next@23.11.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-i18next/dist/es/initReactI18next.js",
+          "size": 233
+        },
+        {
+          "name": "./node_modules/.pnpm/react-i18next@14.1.2_i18next@23.11.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-i18next/dist/es/useTranslation.js",
+          "size": 4540
+        },
+        {
+          "name": "./node_modules/.pnpm/react-i18next@14.1.2_i18next@23.11.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-i18next/dist/es/withTranslation.js",
+          "size": 1329
+        },
+        {
+          "name": "./node_modules/.pnpm/react-i18next@14.1.2_i18next@23.11.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-i18next/dist/es/Translation.js",
+          "size": 277
+        },
+        {
+          "name": "./node_modules/.pnpm/react-i18next@14.1.2_i18next@23.11.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-i18next/dist/es/I18nextProvider.js",
+          "size": 347
+        },
+        {
+          "name": "./node_modules/.pnpm/react-i18next@14.1.2_i18next@23.11.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-i18next/dist/es/withSSR.js",
+          "size": 759
+        },
+        {
+          "name": "./node_modules/.pnpm/react-i18next@14.1.2_i18next@23.11.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-i18next/dist/es/useSSR.js",
+          "size": 1035
+        },
+        {
+          "name": "./node_modules/.pnpm/@babel+runtime@7.24.5/node_modules/@babel/runtime/helpers/esm/defineProperty.js",
+          "size": 344
+        },
+        {
+          "name": "./node_modules/.pnpm/next-i18next@15.3.0_i18next@23.11.5_next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0__jxj7bxvbpavcvbcianl7jzixje/node_modules/next-i18next/dist/esm/config/createConfig.js",
+          "size": 13456
+        },
+        {
+          "name": "./node_modules/.pnpm/next-i18next@15.3.0_i18next@23.11.5_next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0__jxj7bxvbpavcvbcianl7jzixje/node_modules/next-i18next/dist/esm/utils.js",
+          "size": 1274
+        },
+        {
+          "name": "./node_modules/.pnpm/next-i18next@15.3.0_i18next@23.11.5_next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0__jxj7bxvbpavcvbcianl7jzixje/node_modules/next-i18next/dist/esm/createClient/browser.js",
+          "size": 683
+        },
+        {
+          "name": "./node_modules/.pnpm/html-parse-stringify@3.0.1/node_modules/html-parse-stringify/dist/html-parse-stringify.module.js",
+          "size": 2143
+        },
+        {
+          "name": "./node_modules/.pnpm/react-i18next@14.1.2_i18next@23.11.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-i18next/dist/es/utils.js",
+          "size": 3264
+        },
+        {
+          "name": "./node_modules/.pnpm/react-i18next@14.1.2_i18next@23.11.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-i18next/dist/es/unescape.js",
+          "size": 620
+        },
+        {
+          "name": "./node_modules/.pnpm/@babel+runtime@7.24.5/node_modules/@babel/runtime/helpers/esm/toPropertyKey.js",
+          "size": 205
+        },
+        {
+          "name": "./node_modules/.pnpm/@babel+runtime@7.24.5/node_modules/@babel/runtime/helpers/esm/typeof.js",
+          "size": 350
+        },
+        {
+          "name": "./node_modules/.pnpm/next-i18next@15.3.0_i18next@23.11.5_next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0__jxj7bxvbpavcvbcianl7jzixje/node_modules/next-i18next/dist/esm/config/defaultConfig.js",
+          "size": 698
+        },
+        {
+          "name": "./node_modules/.pnpm/@babel+runtime@7.24.5/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js",
+          "size": 632
+        },
+        {
+          "name": "./node_modules/.pnpm/@babel+runtime@7.24.5/node_modules/@babel/runtime/helpers/esm/slicedToArray.js",
+          "size": 409
+        },
+        {
+          "name": "./node_modules/.pnpm/@babel+runtime@7.24.5/node_modules/@babel/runtime/helpers/esm/toConsumableArray.js",
+          "size": 404
+        },
+        {
+          "name": "./node_modules/.pnpm/i18next@23.11.5/node_modules/i18next/dist/esm/i18next.js",
+          "size": 88876
+        },
+        {
+          "name": "./node_modules/.pnpm/@babel+runtime@7.24.5/node_modules/@babel/runtime/helpers/esm/toPrimitive.js",
+          "size": 387
+        },
+        {
+          "name": "./node_modules/.pnpm/@babel+runtime@7.24.5/node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js",
+          "size": 86
+        },
+        {
+          "name": "./node_modules/.pnpm/@babel+runtime@7.24.5/node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js",
+          "size": 687
+        },
+        {
+          "name": "./node_modules/.pnpm/@babel+runtime@7.24.5/node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js",
+          "size": 495
+        },
+        {
+          "name": "./node_modules/.pnpm/@babel+runtime@7.24.5/node_modules/@babel/runtime/helpers/esm/nonIterableRest.js",
+          "size": 210
+        },
+        {
+          "name": "./node_modules/.pnpm/@babel+runtime@7.24.5/node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js",
+          "size": 161
+        },
+        {
+          "name": "./node_modules/.pnpm/@babel+runtime@7.24.5/node_modules/@babel/runtime/helpers/esm/iterableToArray.js",
+          "size": 175
+        },
+        {
+          "name": "./node_modules/.pnpm/@babel+runtime@7.24.5/node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js",
+          "size": 207
+        },
+        {
+          "name": "./node_modules/.pnpm/@babel+runtime@7.24.5/node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js",
+          "size": 200
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Container/Container.js + 1 modules",
+      "size": 2449,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Container/Container.js",
+          "size": 2053
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Container/Container.styles.js",
+          "size": 396
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Text/Text.js + 1 modules",
+      "size": 6183,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Text/Text.js",
+          "size": 2779
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Text/Text.styles.js",
+          "size": 3404
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Anchor/Anchor.js + 1 modules",
+      "size": 3572,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Anchor/Anchor.js",
+          "size": 2246
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Anchor/Anchor.styles.js",
+          "size": 1326
+        }
+      ]
+    },
+    {
+      "name": "./src/styles/index.ts + 3 modules",
+      "size": 10765,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./src/styles/index.ts",
+          "size": 219
+        },
+        {
+          "name": "./src/styles/emotionCache.ts",
+          "size": 120
+        },
+        {
+          "name": "./src/styles/fonts.ts",
+          "size": 4348
+        },
+        {
+          "name": "./src/styles/theme.ts",
+          "size": 6078
+        }
+      ]
+    },
+    {
+      "name": "./src/utils/api.ts + 67 modules",
+      "size": 246782,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./src/utils/api.ts",
+          "size": 2466
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+client@10.45.2_@trpc+server@10.45.2/node_modules/@trpc/client/dist/index.mjs",
+          "size": 12326
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+next@10.45.2_@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@18.3.1___fp5mvj35ojhkebov55qflvr4gm/node_modules/@trpc/next/dist/index.mjs",
+          "size": 9145
+        },
+        {
+          "name": "./node_modules/.pnpm/superjson@2.2.1/node_modules/superjson/dist/index.js",
+          "size": 3798
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+server@10.45.2/node_modules/@trpc/server/dist/observable/index.mjs",
+          "size": 4304
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+client@10.45.2_@trpc+server@10.45.2/node_modules/@trpc/client/dist/splitLink-4c75f7be.mjs",
+          "size": 1370
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+client@10.45.2_@trpc+server@10.45.2/node_modules/@trpc/client/dist/TRPCClientError-38f9a32a.mjs",
+          "size": 1938
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+server@10.45.2/node_modules/@trpc/server/dist/shared/index.mjs",
+          "size": 305
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+client@10.45.2_@trpc+server@10.45.2/node_modules/@trpc/client/dist/transformResult-ace864b8.mjs",
+          "size": 1733
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+client@10.45.2_@trpc+server@10.45.2/node_modules/@trpc/client/dist/httpUtils-b9d0cb48.mjs",
+          "size": 4254
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+client@10.45.2_@trpc+server@10.45.2/node_modules/@trpc/client/dist/httpBatchLink-d0f9eac9.mjs",
+          "size": 8786
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+client@10.45.2_@trpc+server@10.45.2/node_modules/@trpc/client/dist/links/httpLink.mjs",
+          "size": 2459
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+client@10.45.2_@trpc+server@10.45.2/node_modules/@trpc/client/dist/links/loggerLink.mjs",
+          "size": 5299
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+client@10.45.2_@trpc+server@10.45.2/node_modules/@trpc/client/dist/links/wsLink.mjs",
+          "size": 9856
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+react-query@10.45.2_@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@1_k73333xpyywft3qjda6amypg5a/node_modules/@trpc/react-query/dist/index.mjs",
+          "size": 1498
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@tanstack/react-query/build/lib/QueryClientProvider.mjs",
+          "size": 1967
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+react-query@10.45.2_@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@1_k73333xpyywft3qjda6amypg5a/node_modules/@trpc/react-query/dist/shared/index.mjs",
+          "size": 464
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@tanstack/react-query/build/lib/Hydrate.mjs",
+          "size": 918
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/hydration.mjs",
+          "size": 3432
+        },
+        {
+          "name": "./node_modules/.pnpm/superjson@2.2.1/node_modules/superjson/dist/class-registry.js",
+          "size": 658
+        },
+        {
+          "name": "./node_modules/.pnpm/superjson@2.2.1/node_modules/superjson/dist/registry.js",
+          "size": 702
+        },
+        {
+          "name": "./node_modules/.pnpm/superjson@2.2.1/node_modules/superjson/dist/plainer.js",
+          "size": 6189
+        },
+        {
+          "name": "./node_modules/.pnpm/superjson@2.2.1/node_modules/superjson/dist/custom-transformer-registry.js",
+          "size": 462
+        },
+        {
+          "name": "./node_modules/.pnpm/copy-anything@3.0.5/node_modules/copy-anything/dist/index.js",
+          "size": 1117
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+server@10.45.2/node_modules/@trpc/server/dist/observable-ade1bad8.mjs",
+          "size": 2280
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+server@10.45.2/node_modules/@trpc/server/dist/index-f91d720c.mjs",
+          "size": 3039
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+server@10.45.2/node_modules/@trpc/server/dist/codes-c924c3db.mjs",
+          "size": 1295
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+server@10.45.2/node_modules/@trpc/server/dist/transformTRPCResponse-1153b421.mjs",
+          "size": 1564
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+server@10.45.2/node_modules/@trpc/server/dist/getCauseFromUnknown-2d66414a.mjs",
+          "size": 860
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+react-query@10.45.2_@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@1_k73333xpyywft3qjda6amypg5a/node_modules/@trpc/react-query/dist/createHooksInternal-063195fc.mjs",
+          "size": 22160
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+react-query@10.45.2_@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@1_k73333xpyywft3qjda6amypg5a/node_modules/@trpc/react-query/dist/getArrayQueryKey-86134f8b.mjs",
+          "size": 1308
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@tanstack/react-query/build/lib/useQuery.mjs",
+          "size": 347
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@tanstack/react-query/build/lib/isRestoring.mjs",
+          "size": 329
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@tanstack/react-query/build/lib/QueryErrorResetBoundary.mjs",
+          "size": 866
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@tanstack/react-query/build/lib/useMutation.mjs",
+          "size": 1365
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@tanstack/react-query/build/lib/useInfiniteQuery.mjs",
+          "size": 375
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@tanstack/react-query/build/lib/useQueries.mjs",
+          "size": 3585
+        },
+        {
+          "name": "./node_modules/.pnpm/@trpc+react-query@10.45.2_@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@1_k73333xpyywft3qjda6amypg5a/node_modules/@trpc/react-query/dist/queryClient-4d766c0c.mjs",
+          "size": 206
+        },
+        {
+          "name": "./node_modules/.pnpm/superjson@2.2.1/node_modules/superjson/dist/double-indexed-kv.js",
+          "size": 514
+        },
+        {
+          "name": "./node_modules/.pnpm/superjson@2.2.1/node_modules/superjson/dist/transformer.js",
+          "size": 7152
+        },
+        {
+          "name": "./node_modules/.pnpm/superjson@2.2.1/node_modules/superjson/dist/is.js",
+          "size": 1925
+        },
+        {
+          "name": "./node_modules/.pnpm/superjson@2.2.1/node_modules/superjson/dist/util.js",
+          "size": 1268
+        },
+        {
+          "name": "./node_modules/.pnpm/superjson@2.2.1/node_modules/superjson/dist/pathstringifier.js",
+          "size": 832
+        },
+        {
+          "name": "./node_modules/.pnpm/superjson@2.2.1/node_modules/superjson/dist/accessDeep.js",
+          "size": 3634
+        },
+        {
+          "name": "./node_modules/.pnpm/is-what@4.1.16/node_modules/is-what/dist/index.js",
+          "size": 4257
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/utils.mjs",
+          "size": 7535
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@tanstack/react-query/build/lib/useBaseQuery.mjs",
+          "size": 3075
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/notifyManager.mjs",
+          "size": 1898
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@tanstack/react-query/build/lib/suspense.mjs",
+          "size": 1231
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@tanstack/react-query/build/lib/errorBoundaryUtils.mjs",
+          "size": 918
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@tanstack/react-query/build/lib/utils.mjs",
+          "size": 335
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+react-query@4.36.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@tanstack/react-query/build/lib/useSyncExternalStore.mjs",
+          "size": 256
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/queryObserver.mjs",
+          "size": 19523
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/focusManager.mjs",
+          "size": 2184
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/retryer.mjs",
+          "size": 4386
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/onlineManager.mjs",
+          "size": 2110
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/mutationObserver.mjs",
+          "size": 4348
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/infiniteQueryObserver.mjs",
+          "size": 2613
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/queriesObserver.mjs",
+          "size": 5249
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/queryClient.mjs",
+          "size": 11752
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/queryCache.mjs",
+          "size": 2730
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/query.mjs",
+          "size": 13862
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/mutationCache.mjs",
+          "size": 2250
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/subscribable.mjs",
+          "size": 553
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/mutation.mjs",
+          "size": 8348
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/removable.mjs",
+          "size": 755
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/logger.mjs",
+          "size": 94
+        },
+        {
+          "name": "./node_modules/.pnpm/@tanstack+query-core@4.36.1/node_modules/@tanstack/query-core/build/lib/infiniteQueryBehavior.mjs",
+          "size": 6170
+        }
+      ]
+    },
+    {
+      "name": "./next-i18next.config.js",
+      "size": 2282,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Group/Group.js + 2 modules",
+      "size": 3458,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Group/Group.js",
+          "size": 2332
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Group/filter-falsy-children/filter-falsy-children.js",
+          "size": 214
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Group/Group.styles.js",
+          "size": 912
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Button/Button.js + 3 modules",
+      "size": 12920,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Button/Button.js",
+          "size": 4133
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Button/Button.styles.js",
+          "size": 5240
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Button/ButtonGroup/ButtonGroup.js",
+          "size": 2018
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Button/ButtonGroup/ButtonGroup.styles.js",
+          "size": 1529
+        }
+      ]
+    },
+    {
+      "name": "./src/components/index.tsx + 2 modules",
+      "size": 5567,
+      "chunks": [
+        347,
+        859,
+        922
+      ],
+      "modules": [
+        {
+          "name": "./src/components/index.tsx",
+          "size": 473
+        },
+        {
+          "name": "./src/components/BackHomeButton/BackHomeButton.tsx",
+          "size": 487
+        },
+        {
+          "name": "./src/components/ModalForm/ModalForm.tsx",
+          "size": 4607
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/AspectRatio/AspectRatio.js + 1 modules",
+      "size": 3525,
+      "chunks": [
+        279,
+        558,
+        969
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/AspectRatio/AspectRatio.js",
+          "size": 1911
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/AspectRatio/AspectRatio.styles.js",
+          "size": 1614
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Stack/Stack.js + 1 modules",
+      "size": 2363,
+      "chunks": [
+        246,
+        405,
+        521,
+        810
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Stack/Stack.js",
+          "size": 1986
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Stack/Stack.styles.js",
+          "size": 377
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/zod@3.23.8/node_modules/zod/lib/index.mjs",
+      "size": 149466,
+      "chunks": [
+        969
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/use-form.js + 17 modules",
+      "size": 21644,
+      "chunks": [
+        969
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/use-form.js",
+          "size": 8528
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/filter-errors/filter-errors.js",
+          "size": 405
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/lists/clear-list-state.js",
+          "size": 1069
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/validate/should-validate-on-change.js",
+          "size": 501
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/form-index.js",
+          "size": 108
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/paths/set-path.js",
+          "size": 680
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/validate/validate-field-value.js",
+          "size": 564
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/validate/validate-values.js",
+          "size": 1467
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/paths/get-path.js",
+          "size": 500
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/paths/reorder-path.js",
+          "size": 476
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/lists/reorder-errors.js",
+          "size": 1555
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/paths/remove-path.js",
+          "size": 391
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/lists/change-error-indices.js",
+          "size": 1958
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/paths/insert-path.js",
+          "size": 460
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/get-input-on-change/get-input-on-change.js",
+          "size": 761
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/get-status/get-status.js",
+          "size": 410
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/paths/get-splitted-path.js",
+          "size": 189
+        },
+        {
+          "name": "./node_modules/.pnpm/klona@2.0.6/node_modules/klona/full/index.mjs",
+          "size": 1622
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+form@6.0.21_react@18.3.1/node_modules/@mantine/form/esm/resolvers/zod-resolver/zod-resolver.js",
+      "size": 371,
+      "chunks": [
+        969
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Stepper/Stepper.js + 4 modules",
+      "size": 18657,
+      "chunks": [
+        969
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Stepper/Stepper.js",
+          "size": 5075
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Stepper/Stepper.styles.js",
+          "size": 3377
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Stepper/StepCompleted/StepCompleted.js",
+          "size": 177
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Stepper/Step/Step.js",
+          "size": 5213
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Stepper/Step/Step.styles.js",
+          "size": 4815
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/List/List.js + 4 modules",
+      "size": 7737,
+      "chunks": [
+        347,
+        969
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/List/List.js",
+          "size": 2687
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/List/List.styles.js",
+          "size": 1428
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/List/List.context.js",
+          "size": 234
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/List/ListItem/ListItem.js",
+          "size": 2504
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/List/ListItem/ListItem.styles.js",
+          "size": 884
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Checkbox/Checkbox.js + 3 modules",
+      "size": 10410,
+      "chunks": [
+        969
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Checkbox/Checkbox.js",
+          "size": 4042
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Checkbox/CheckboxGroup.context.js",
+          "size": 345
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Checkbox/Checkbox.styles.js",
+          "size": 3520
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Checkbox/CheckboxGroup/CheckboxGroup.js",
+          "size": 2503
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/TextInput/TextInput.js",
+      "size": 2052,
+      "chunks": [
+        969
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Textarea/Textarea.js + 5 modules",
+      "size": 12308,
+      "chunks": [
+        969
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Textarea/Textarea.js",
+          "size": 3996
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Textarea/Textarea.styles.js",
+          "size": 253
+        },
+        {
+          "name": "./node_modules/.pnpm/react-textarea-autosize@8.3.4_@types+react@18.3.3_react@18.3.1/node_modules/react-textarea-autosize/dist/react-textarea-autosize.browser.esm.js",
+          "size": 7056
+        },
+        {
+          "name": "./node_modules/.pnpm/use-latest@1.2.1_@types+react@18.3.3_react@18.3.1/node_modules/use-latest/dist/use-latest.esm.js",
+          "size": 304
+        },
+        {
+          "name": "./node_modules/.pnpm/use-composed-ref@1.3.0_react@18.3.1/node_modules/use-composed-ref/dist/use-composed-ref.esm.js",
+          "size": 603
+        },
+        {
+          "name": "./node_modules/.pnpm/use-isomorphic-layout-effect@1.1.2_@types+react@18.3.3_react@18.3.1/node_modules/use-isomorphic-layout-effect/dist/use-isomorphic-layout-effect.browser.esm.js",
+          "size": 96
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Radio/Radio.js + 4 modules",
+      "size": 11976,
+      "chunks": [
+        969
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Radio/Radio.js",
+          "size": 3966
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Radio/RadioIcon.js",
+          "size": 1679
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Radio/RadioGroup.context.js",
+          "size": 321
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Radio/Radio.styles.js",
+          "size": 3500
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Radio/RadioGroup/RadioGroup.js",
+          "size": 2510
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Select/Select.js + 50 modules",
+      "size": 340548,
+      "chunks": [
+        969
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Select/Select.js",
+          "size": 16871
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Select/DefaultItem/DefaultItem.js",
+          "size": 1512
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Select/Select.styles.js",
+          "size": 304
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-scroll-into-view/use-scroll-into-view.js",
+          "size": 2669
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+utils@6.0.21_react@18.3.1/node_modules/@mantine/utils/esm/group-options/group-options.js",
+          "size": 1285
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Select/filter-data/filter-data.js",
+          "size": 1057
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Select/SelectPopover/SelectPopover.js",
+          "size": 3842
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Popover/Popover.js",
+          "size": 5492
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Select/SelectScrollArea/SelectScrollArea.js",
+          "size": 1877
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ScrollArea/ScrollArea.js",
+          "size": 5606
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Select/SelectRightSection/get-select-right-section-props.js",
+          "size": 2270
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Select/SelectRightSection/ChevronIcon.js",
+          "size": 2744
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Select/SelectItems/SelectItems.js",
+          "size": 4326
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-scroll-into-view/utils/ease-in-out-quad.js",
+          "size": 145
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-scroll-into-view/utils/get-scroll-start.js",
+          "size": 395
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-scroll-into-view/utils/get-relative-position.js",
+          "size": 2044
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-scroll-into-view/utils/set-scroll-param.js",
+          "size": 440
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Select/SelectPopover/SelectPopover.styles.js",
+          "size": 300
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Popover/use-popover.js",
+          "size": 2508
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Floating/get-floating-position/get-floating-position.js",
+          "size": 441
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-click-outside/use-click-outside.js",
+          "size": 1066
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Popover/Popover.context.js",
+          "size": 301
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Popover/PopoverTarget/PopoverTarget.js",
+          "size": 2932
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Popover/PopoverDropdown/PopoverDropdown.js",
+          "size": 4691
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+utils@6.0.21_react@18.3.1/node_modules/@mantine/utils/esm/close-on-escape/close-on-escape.js",
+          "size": 448
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+utils@6.0.21_react@18.3.1/node_modules/@mantine/utils/esm/noop/noop.js",
+          "size": 75
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Floating/FloatingArrow/FloatingArrow.js",
+          "size": 2303
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ScrollArea/ScrollArea.styles.js",
+          "size": 2125
+        },
+        {
+          "name": "./node_modules/.pnpm/@radix-ui+react-scroll-area@1.0.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@radix-ui/react-scroll-area/dist/index.module.js",
+          "size": 41087
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Select/SelectRightSection/SelectRightSection.js",
+          "size": 1562
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Select/SelectItems/SelectItems.styles.js",
+          "size": 2623
+        },
+        {
+          "name": "./node_modules/.pnpm/@floating-ui+dom@1.6.4/node_modules/@floating-ui/dom/dist/floating-ui.dom.mjs",
+          "size": 24021
+        },
+        {
+          "name": "./node_modules/.pnpm/@floating-ui+react-dom@1.3.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@floating-ui/react-dom/dist/floating-ui.react-dom.esm.js",
+          "size": 5822
+        },
+        {
+          "name": "./node_modules/.pnpm/@floating-ui+react@0.19.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@floating-ui/react/dist/floating-ui.react.esm.js",
+          "size": 119269
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Floating/use-floating-auto-update.js",
+          "size": 892
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Popover/Popover.errors.js",
+          "size": 332
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Popover/PopoverDropdown/PopoverDropdown.styles.js",
+          "size": 838
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Floating/FloatingArrow/get-arrow-position-styles.js",
+          "size": 3427
+        },
+        {
+          "name": "./node_modules/.pnpm/@radix-ui+react-context@1.0.0_react@18.3.1/node_modules/@radix-ui/react-context/dist/index.module.js",
+          "size": 6122
+        },
+        {
+          "name": "./node_modules/.pnpm/@radix-ui+react-compose-refs@1.0.0_react@18.3.1/node_modules/@radix-ui/react-compose-refs/dist/index.module.js",
+          "size": 1097
+        },
+        {
+          "name": "./node_modules/.pnpm/@radix-ui+react-direction@1.0.0_react@18.3.1/node_modules/@radix-ui/react-direction/dist/index.module.js",
+          "size": 1311
+        },
+        {
+          "name": "./node_modules/.pnpm/@radix-ui+react-primitive@1.0.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@radix-ui/react-primitive/dist/index.module.js",
+          "size": 4268
+        },
+        {
+          "name": "./node_modules/.pnpm/@radix-ui+react-presence@1.0.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@radix-ui/react-presence/dist/index.module.js",
+          "size": 6572
+        },
+        {
+          "name": "./node_modules/.pnpm/@radix-ui+react-use-layout-effect@1.0.0_react@18.3.1/node_modules/@radix-ui/react-use-layout-effect/dist/index.module.js",
+          "size": 686
+        },
+        {
+          "name": "./node_modules/.pnpm/@radix-ui+primitive@1.0.0/node_modules/@radix-ui/primitive/dist/index.module.js",
+          "size": 609
+        },
+        {
+          "name": "./node_modules/.pnpm/@radix-ui+react-use-callback-ref@1.0.0_react@18.3.1/node_modules/@radix-ui/react-use-callback-ref/dist/index.module.js",
+          "size": 904
+        },
+        {
+          "name": "./node_modules/.pnpm/@radix-ui+number@1.0.0/node_modules/@radix-ui/number/dist/index.module.js",
+          "size": 228
+        },
+        {
+          "name": "./node_modules/.pnpm/@floating-ui+utils@0.2.2/node_modules/@floating-ui/utils/dist/floating-ui.utils.dom.mjs",
+          "size": 5016
+        },
+        {
+          "name": "./node_modules/.pnpm/@floating-ui+utils@0.2.2/node_modules/@floating-ui/utils/dist/floating-ui.utils.mjs",
+          "size": 4071
+        },
+        {
+          "name": "./node_modules/.pnpm/@floating-ui+core@1.6.1/node_modules/@floating-ui/core/dist/floating-ui.core.mjs",
+          "size": 34786
+        },
+        {
+          "name": "./node_modules/.pnpm/@radix-ui+react-slot@1.0.1_react@18.3.1/node_modules/@radix-ui/react-slot/dist/index.module.js",
+          "size": 4936
+        }
+      ]
+    },
+    {
+      "name": "./src/data/categoryImages.ts + 7 modules",
+      "size": 4203,
+      "chunks": [
+        405,
+        634,
+        810
+      ],
+      "modules": [
+        {
+          "name": "./src/data/categoryImages.ts",
+          "size": 896
+        },
+        {
+          "name": "./public/assets/characters/final/bipoc.png",
+          "size": 467
+        },
+        {
+          "name": "./public/assets/characters/final/disabled.png",
+          "size": 494
+        },
+        {
+          "name": "./public/assets/characters/final/elder.png",
+          "size": 479
+        },
+        {
+          "name": "./public/assets/characters/final/immigrant.png",
+          "size": 447
+        },
+        {
+          "name": "./public/assets/characters/final/queer.png",
+          "size": 491
+        },
+        {
+          "name": "./public/assets/characters/final/transman.png",
+          "size": 450
+        },
+        {
+          "name": "./public/assets/characters/final/transmasc.png",
+          "size": 479
+        }
+      ]
+    },
+    {
+      "name": "./src/layouts/IndividualStory/IndividualStory.tsx + 3 modules",
+      "size": 12868,
+      "chunks": [
+        634,
+        810
+      ],
+      "modules": [
+        {
+          "name": "./src/layouts/IndividualStory/IndividualStory.tsx",
+          "size": 6410
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Blockquote/Blockquote.js",
+          "size": 2606
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Blockquote/QuoteIcon.js",
+          "size": 1913
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Blockquote/Blockquote.styles.js",
+          "size": 1939
+        }
+      ]
+    },
+    {
+      "name": "./src/layouts/ArtItem.tsx",
+      "size": 7879,
+      "chunks": [
+        922
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/react@18.3.1/node_modules/react/cjs/react-jsx-runtime.production.min.js",
+      "size": 859,
+      "chunks": [
+        774
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/react@18.3.1/node_modules/react/cjs/react.production.min.js",
+      "size": 6930,
+      "chunks": [
+        774
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/constants.js",
+      "size": 13906,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/web-vitals/web-vitals.js",
+      "size": 7325,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/router.js",
+      "size": 6355,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/as-path-to-search-params.js",
+      "size": 484,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/lazy-dynamic/bailout-to-csr.js",
+      "size": 1101,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js",
+      "size": 3169,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/navigation.js",
+      "size": 64,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/image-external.js",
+      "size": 1485,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./src/components/Navbar/Navbar.tsx + 13 modules",
+      "size": 28180,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./src/components/Navbar/Navbar.tsx",
+          "size": 6214
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Drawer/Drawer.js",
+          "size": 3025
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Burger/Burger.js",
+          "size": 2279
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/AppShell/Header/Header.js",
+          "size": 1514
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Drawer/DrawerRoot/DrawerRoot.js",
+          "size": 3005
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Drawer/DrawerContent/DrawerContent.js",
+          "size": 2010
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Burger/Burger.styles.js",
+          "size": 1807
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/AppShell/VerticalSection/VerticalSection.js",
+          "size": 3397
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/AppShell/AppShell.context.js",
+          "size": 365
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/tss/Global.js",
+          "size": 405
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Drawer/DrawerRoot/DrawerRoot.styles.js",
+          "size": 814
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Drawer/Drawer.context.js",
+          "size": 246
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/AppShell/VerticalSection/VerticalSection.styles.js",
+          "size": 2542
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/AppShell/HorizontalSection/get-sorted-breakpoints/get-sorted-breakpoints.js",
+          "size": 557
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/MantineProvider.js + 4 modules",
+      "size": 13690,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/MantineProvider.js",
+          "size": 3798
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/utils/merge-theme/merge-theme.js",
+          "size": 3225
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/NormalizeCSS.js",
+          "size": 3188
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/GlobalStyles.js",
+          "size": 1689
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/MantineCssVariables.js",
+          "size": 1790
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/utils/rem/rem.js",
+      "size": 462,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/utils/get-size/get-size.js",
+      "size": 317,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Box/Box.js + 1 modules",
+      "size": 2581,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Box/Box.js",
+          "size": 1926
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Box/use-sx/use-sx.js",
+          "size": 655
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Box/style-system-props/extract-system-styles/extract-system-styles.js",
+      "size": 2100,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Box/style-system-props/get-system-styles/get-system-styles.js + 7 modules",
+      "size": 7687,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Box/style-system-props/get-system-styles/get-system-styles.js",
+          "size": 1970
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Box/style-system-props/system-props/system-props.js",
+          "size": 2359
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Box/style-system-props/get-responsive-value/get-responsive-value.js",
+          "size": 1726
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Box/style-system-props/value-getters/value-getters.js",
+          "size": 448
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Box/style-system-props/value-getters/get-default-value.js",
+          "size": 221
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Box/style-system-props/value-getters/get-color-value.js",
+          "size": 323
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Box/style-system-props/value-getters/get-font-size-value.js",
+          "size": 217
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Box/style-system-props/value-getters/get-spacing-value.js",
+          "size": 423
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+utils@6.0.21_react@18.3.1/node_modules/@mantine/utils/esm/create-polymorphic-component/create-polymorphic-component.js",
+      "size": 168,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ModalBase/ModalBase.js + 40 modules",
+      "size": 73442,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ModalBase/ModalBase.js",
+          "size": 5660
+        },
+        {
+          "name": "./node_modules/.pnpm/react-remove-scroll@2.5.9_@types+react@18.3.3_react@18.3.1/node_modules/react-remove-scroll/dist/es2015/Combination.js",
+          "size": 392
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Overlay/Overlay.js",
+          "size": 2525
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ModalBase/ModalBase.styles.js",
+          "size": 175
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ModalBase/use-lock-scroll.js",
+          "size": 872
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ModalBase/ModalBase.context.js",
+          "size": 264
+        },
+        {
+          "name": "./node_modules/.pnpm/react-remove-scroll@2.5.9_@types+react@18.3.3_react@18.3.1/node_modules/react-remove-scroll/dist/es2015/sidecar.js",
+          "size": 197
+        },
+        {
+          "name": "./node_modules/.pnpm/tslib@2.6.2/node_modules/tslib/tslib.es6.mjs",
+          "size": 16249
+        },
+        {
+          "name": "./node_modules/.pnpm/react-remove-scroll@2.5.9_@types+react@18.3.3_react@18.3.1/node_modules/react-remove-scroll/dist/es2015/UI.js",
+          "size": 2171
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ModalBase/ModalBaseCloseButton/ModalBaseCloseButton.js",
+          "size": 2002
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ModalBase/ModalBaseOverlay/ModalBaseOverlay.js",
+          "size": 2717
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Overlay/Overlay.styles.js",
+          "size": 1524
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ModalBase/ModalBaseContent/ModalBaseContent.js",
+          "size": 3194
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ModalBase/ModalBaseHeader/ModalBaseHeader.js",
+          "size": 1926
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ModalBase/ModalBaseTitle/ModalBaseTitle.js",
+          "size": 2064
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ModalBase/ModalBaseBody/ModalBaseBody.js",
+          "size": 2054
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ModalBase/NativeScrollArea/NativeScrollArea.js",
+          "size": 225
+        },
+        {
+          "name": "./node_modules/.pnpm/use-sidecar@1.1.2_@types+react@18.3.3_react@18.3.1/node_modules/use-sidecar/dist/es2015/exports.js",
+          "size": 597
+        },
+        {
+          "name": "./node_modules/.pnpm/react-remove-scroll@2.5.9_@types+react@18.3.3_react@18.3.1/node_modules/react-remove-scroll/dist/es2015/medium.js",
+          "size": 97
+        },
+        {
+          "name": "./node_modules/.pnpm/react-remove-scroll@2.5.9_@types+react@18.3.3_react@18.3.1/node_modules/react-remove-scroll/dist/es2015/SideEffect.js",
+          "size": 7524
+        },
+        {
+          "name": "./node_modules/.pnpm/react-remove-scroll-bar@2.3.6_@types+react@18.3.3_react@18.3.1/node_modules/react-remove-scroll-bar/dist/es2015/constants.js",
+          "size": 375
+        },
+        {
+          "name": "./node_modules/.pnpm/use-callback-ref@1.3.2_@types+react@18.3.3_react@18.3.1/node_modules/use-callback-ref/dist/es2015/useMergeRef.js",
+          "size": 1782
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ModalBase/ModalBaseCloseButton/ModalBaseCloseButton.styles.js",
+          "size": 233
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ModalBase/ModalBaseOverlay/ModalBaseOverlay.styles.js",
+          "size": 185
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ModalBase/ModalBaseContent/ModalBaseContent.styles.js",
+          "size": 377
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ModalBase/ModalBaseHeader/ModalBaseHeader.styles.js",
+          "size": 633
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ModalBase/ModalBaseTitle/ModalBaseTitle.styles.js",
+          "size": 293
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ModalBase/ModalBaseBody/ModalBaseBody.styles.js",
+          "size": 326
+        },
+        {
+          "name": "./node_modules/.pnpm/use-sidecar@1.1.2_@types+react@18.3.3_react@18.3.1/node_modules/use-sidecar/dist/es2015/medium.js",
+          "size": 2579
+        },
+        {
+          "name": "./node_modules/.pnpm/react-remove-scroll-bar@2.3.6_@types+react@18.3.3_react@18.3.1/node_modules/react-remove-scroll-bar/dist/es2015/index.js",
+          "size": 332
+        },
+        {
+          "name": "./node_modules/.pnpm/react-style-singleton@2.2.1_@types+react@18.3.3_react@18.3.1/node_modules/react-style-singleton/dist/es2015/index.js",
+          "size": 142
+        },
+        {
+          "name": "./node_modules/.pnpm/react-remove-scroll@2.5.9_@types+react@18.3.3_react@18.3.1/node_modules/react-remove-scroll/dist/es2015/handleScroll.js",
+          "size": 4210
+        },
+        {
+          "name": "./node_modules/.pnpm/react-remove-scroll@2.5.9_@types+react@18.3.3_react@18.3.1/node_modules/react-remove-scroll/dist/es2015/aggresiveCapture.js",
+          "size": 568
+        },
+        {
+          "name": "./node_modules/.pnpm/use-callback-ref@1.3.2_@types+react@18.3.3_react@18.3.1/node_modules/use-callback-ref/dist/es2015/useRef.js",
+          "size": 1211
+        },
+        {
+          "name": "./node_modules/.pnpm/use-callback-ref@1.3.2_@types+react@18.3.3_react@18.3.1/node_modules/use-callback-ref/dist/es2015/assignRef.js",
+          "size": 556
+        },
+        {
+          "name": "./node_modules/.pnpm/react-remove-scroll-bar@2.3.6_@types+react@18.3.3_react@18.3.1/node_modules/react-remove-scroll-bar/dist/es2015/component.js",
+          "size": 3395
+        },
+        {
+          "name": "./node_modules/.pnpm/react-style-singleton@2.2.1_@types+react@18.3.3_react@18.3.1/node_modules/react-style-singleton/dist/es2015/component.js",
+          "size": 602
+        },
+        {
+          "name": "./node_modules/.pnpm/react-style-singleton@2.2.1_@types+react@18.3.3_react@18.3.1/node_modules/react-style-singleton/dist/es2015/hook.js",
+          "size": 630
+        },
+        {
+          "name": "./node_modules/.pnpm/react-style-singleton@2.2.1_@types+react@18.3.3_react@18.3.1/node_modules/react-style-singleton/dist/es2015/singleton.js",
+          "size": 1286
+        },
+        {
+          "name": "./node_modules/.pnpm/react-remove-scroll-bar@2.3.6_@types+react@18.3.3_react@18.3.1/node_modules/react-remove-scroll-bar/dist/es2015/utils.js",
+          "size": 998
+        },
+        {
+          "name": "./node_modules/.pnpm/get-nonce@1.0.1/node_modules/get-nonce/dist/es2015/index.js",
+          "size": 300
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/utils/get-default-z-index/get-default-z-index.js",
+      "size": 237,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-id/use-id.js + 1 modules",
+      "size": 856,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-id/use-id.js",
+          "size": 598
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-id/use-react-id.js",
+          "size": 258
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-did-update/use-did-update.js",
+      "size": 394,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Portal/OptionalPortal.js + 1 modules",
+      "size": 4145,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Portal/OptionalPortal.js",
+          "size": 1645
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Portal/Portal.js",
+          "size": 2500
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/CloseButton/CloseButton.js + 3 modules",
+      "size": 10777,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/CloseButton/CloseButton.js",
+          "size": 2244
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ActionIcon/ActionIcon.js",
+          "size": 2865
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/ActionIcon/ActionIcon.styles.js",
+          "size": 3407
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/CloseButton/CloseIcon.js",
+          "size": 2261
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Loader/Loader.js + 3 modules",
+      "size": 12127,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Loader/Loader.js",
+          "size": 2313
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Loader/loaders/Bars.js",
+          "size": 4380
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Loader/loaders/Oval.js",
+          "size": 2203
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Loader/loaders/Dots.js",
+          "size": 3231
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/UnstyledButton/UnstyledButton.js + 1 modules",
+      "size": 3616,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/UnstyledButton/UnstyledButton.js",
+          "size": 2172
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/UnstyledButton/UnstyledButton.styles.js",
+          "size": 1444
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Transition/Transition.js + 3 modules",
+      "size": 9278,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Transition/Transition.js",
+          "size": 1191
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Transition/use-transition.js",
+          "size": 2081
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Transition/get-transition-styles/get-transition-styles.js",
+          "size": 1691
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Transition/transitions.js",
+          "size": 4315
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/FocusTrap/FocusTrap.js + 4 modules",
+      "size": 6623,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/FocusTrap/FocusTrap.js",
+          "size": 568
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-focus-trap/use-focus-trap.js",
+          "size": 2228
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-focus-trap/tabbable.js",
+          "size": 1717
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-focus-trap/create-aria-hider.js",
+          "size": 1444
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-focus-trap/scope-tab.js",
+          "size": 666
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-merged-ref/use-merged-ref.js + 1 modules",
+      "size": 624,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-merged-ref/use-merged-ref.js",
+          "size": 371
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/utils/assign-ref/assign-ref.js",
+          "size": 253
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Paper/Paper.js + 1 modules",
+      "size": 2875,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Paper/Paper.js",
+          "size": 2120
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Paper/Paper.styles.js",
+          "size": 755
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/process@0.11.10/node_modules/process/browser.js",
+      "size": 5418,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/path-browserify/index.js",
+      "size": 5375,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Input/Input.styles.js",
+      "size": 6007,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./src/components/Banner/Banner.tsx",
+      "size": 1245,
+      "chunks": [
+        347,
+        501,
+        521,
+        859,
+        922
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Flex/Flex.js + 1 modules",
+      "size": 2791,
+      "chunks": [
+        279,
+        558,
+        810,
+        969
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Flex/Flex.js",
+          "size": 2308
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Flex/flex-props.js",
+          "size": 483
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+utils@6.0.21_react@18.3.1/node_modules/@mantine/utils/esm/pack-sx/pack-sx.js",
+      "size": 120,
+      "chunks": [
+        279,
+        558,
+        810,
+        969
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Title/Title.js + 1 modules",
+      "size": 3962,
+      "chunks": [
+        279,
+        558,
+        810,
+        969
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Title/Title.js",
+          "size": 2108
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Title/Title.styles.js",
+          "size": 1854
+        }
+      ]
+    },
+    {
+      "name": "./src/components/statisticCard/StatisticCard.tsx",
+      "size": 1393,
+      "chunks": [
+        347,
+        521,
+        859,
+        922
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Card/Card.js + 4 modules",
+      "size": 6686,
+      "chunks": [
+        246,
+        501,
+        521
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Card/Card.js",
+          "size": 2732
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Card/CardSection/CardSection.js",
+          "size": 2247
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Card/Card.styles.js",
+          "size": 315
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Card/CardSection/CardSection.styles.js",
+          "size": 1101
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Card/Card.context.js",
+          "size": 291
+        }
+      ]
+    },
+    {
+      "name": "./src/components/storyPreviewCard/PreviewCard.tsx",
+      "size": 2620,
+      "chunks": [
+        347,
+        634,
+        859,
+        922
+      ]
+    },
+    {
+      "name": "./src/components/storyPreviewCarousel/StoryPreviewCarousel.tsx",
+      "size": 2001,
+      "chunks": [
+        347,
+        634,
+        859,
+        922
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js",
+      "size": 1177,
+      "chunks": [
+        969
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Checkbox/CheckboxIcon.js",
+      "size": 2343,
+      "chunks": [
+        969
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/InlineInput/InlineInput.js + 1 modules",
+      "size": 5165,
+      "chunks": [
+        969
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/InlineInput/InlineInput.js",
+          "size": 2785
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/InlineInput/InlineInput.styles.js",
+          "size": 2380
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Input/Input.js + 11 modules",
+      "size": 22670,
+      "chunks": [
+        969
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Input/Input.js",
+          "size": 4530
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Input/InputWrapper.context.js",
+          "size": 401
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Input/InputWrapper/InputWrapper.js",
+          "size": 5504
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Input/InputLabel/InputLabel.js",
+          "size": 2737
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Input/InputDescription/InputDescription.js",
+          "size": 2262
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Input/InputError/InputError.js",
+          "size": 2179
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Input/InputPlaceholder/InputPlaceholder.js",
+          "size": 1820
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Input/InputWrapper/InputWrapper.styles.js",
+          "size": 1130
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Input/InputLabel/InputLabel.styles.js",
+          "size": 597
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Input/InputDescription/InputDescription.styles.js",
+          "size": 468
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Input/InputError/InputError.styles.js",
+          "size": 446
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Input/InputWrapper/get-input-offsets.js",
+          "size": 596
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-uncontrolled/use-uncontrolled.js",
+      "size": 580,
+      "chunks": [
+        969
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Input/use-input-props.js",
+      "size": 3213,
+      "chunks": [
+        969
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Divider/Divider.js + 1 modules",
+      "size": 4975,
+      "chunks": [
+        521,
+        969
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Divider/Divider.js",
+          "size": 3155
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Divider/Divider.styles.js",
+          "size": 1820
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Grid/Grid.js + 4 modules",
+      "size": 10871,
+      "chunks": [
+        279
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Grid/Grid.js",
+          "size": 2580
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Grid/Col/Col.js",
+          "size": 3150
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Grid/Grid.styles.js",
+          "size": 1583
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Grid/Grid.context.js",
+          "size": 234
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Grid/Col/Col.styles.js",
+          "size": 3324
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Center/Center.js + 1 modules",
+      "size": 2259,
+      "chunks": [
+        347,
+        405,
+        501,
+        521,
+        634
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Center/Center.js",
+          "size": 1966
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Center/Center.styles.js",
+          "size": 293
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/slugify@1.6.6/node_modules/slugify/slugify.js",
+      "size": 9318,
+      "chunks": [
+        953
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/MediaQuery/MediaQuery.js + 1 modules",
+      "size": 1893,
+      "chunks": [
+        634,
+        953
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/MediaQuery/MediaQuery.js",
+          "size": 816
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/MediaQuery/MediaQuery.styles.js",
+          "size": 1077
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Modal/Modal.js + 4 modules",
+      "size": 9033,
+      "chunks": [
+        634,
+        953
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Modal/Modal.js",
+          "size": 3060
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Modal/ModalRoot/ModalRoot.js",
+          "size": 2755
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Modal/ModalContent/ModalContent.js",
+          "size": 2056
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Modal/ModalRoot/ModalRoot.styles.js",
+          "size": 922
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Modal/Modal.context.js",
+          "size": 240
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@swc+helpers@0.5.5/node_modules/@swc/helpers/esm/_interop_require_default.js",
+      "size": 151,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/index.js",
+      "size": 1363,
+      "chunks": [
+        774
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router-context.shared-runtime.js",
+      "size": 579,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/modern-browserslist-target.js",
+      "size": 652,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/router.js",
+      "size": 82174,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/lib/is-error.js",
+      "size": 1377,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/with-router.js",
+      "size": 1465,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/components/navigation.js",
+      "size": 10288,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/get-img-props.js",
+      "size": 19403,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/image-component.js",
+      "size": 14243,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/image-loader.js",
+      "size": 2638,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/hoist-non-react-statics@3.3.2/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js",
+      "size": 2743,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@babel+runtime@7.24.5/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js",
+      "size": 324,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@babel+runtime@7.24.5/node_modules/@babel/runtime/helpers/esm/extends.js",
+      "size": 416,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/link.js",
+      "size": 47,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/tss/create-styles.js + 1 modules",
+      "size": 4574,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/tss/create-styles.js",
+          "size": 3650
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/tss/utils/merge-class-names/merge-class-names.js",
+          "size": 924
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/default-theme.js + 1 modules",
+      "size": 5891,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/default-theme.js",
+          "size": 3488
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/default-colors.js",
+          "size": 2403
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/fns/breakpoints/breakpoints.js",
+      "size": 884,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/utils/filter-props/filter-props.js",
+      "size": 243,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1/node_modules/@emotion/react/dist/emotion-element-43c6fea0.browser.esm.js + 1 modules",
+      "size": 10040,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1/node_modules/@emotion/react/dist/emotion-element-43c6fea0.browser.esm.js",
+          "size": 9661
+        },
+        {
+          "name": "./node_modules/.pnpm/@emotion+weak-memoize@0.3.1/node_modules/@emotion/weak-memoize/dist/emotion-weak-memoize.esm.js",
+          "size": 379
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@emotion+cache@11.11.0/node_modules/@emotion/cache/dist/emotion-cache.browser.esm.js + 7 modules",
+      "size": 40981,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@emotion+cache@11.11.0/node_modules/@emotion/cache/dist/emotion-cache.browser.esm.js",
+          "size": 18854
+        },
+        {
+          "name": "./node_modules/.pnpm/stylis@4.2.0/node_modules/stylis/src/Tokenizer.js",
+          "size": 4723
+        },
+        {
+          "name": "./node_modules/.pnpm/stylis@4.2.0/node_modules/stylis/src/Utility.js",
+          "size": 2055
+        },
+        {
+          "name": "./node_modules/.pnpm/stylis@4.2.0/node_modules/stylis/src/Enum.js",
+          "size": 623
+        },
+        {
+          "name": "./node_modules/.pnpm/stylis@4.2.0/node_modules/stylis/src/Serializer.js",
+          "size": 1119
+        },
+        {
+          "name": "./node_modules/.pnpm/stylis@4.2.0/node_modules/stylis/src/Middleware.js",
+          "size": 3113
+        },
+        {
+          "name": "./node_modules/.pnpm/stylis@4.2.0/node_modules/stylis/src/Parser.js",
+          "size": 5718
+        },
+        {
+          "name": "./node_modules/.pnpm/@emotion+sheet@1.2.2/node_modules/@emotion/sheet/dist/emotion-sheet.browser.esm.js",
+          "size": 4776
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1/node_modules/@emotion/react/dist/emotion-react.browser.esm.js",
+      "size": 13664,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/tss/use-css.js + 3 modules",
+      "size": 3363,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/tss/use-css.js",
+          "size": 2394
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/tss/use-emotion-cache.js",
+          "size": 338
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/tss/default-emotion-cache.js",
+          "size": 216
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/tss/utils/use-guaranteed-memo/use-guaranteed-memo.js",
+          "size": 415
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/clsx@1.1.1/node_modules/clsx/dist/clsx.m.js",
+      "size": 659,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-isomorphic-effect/use-isomorphic-effect.js",
+      "size": 227,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/utils/random-id/random-id.js",
+      "size": 147,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-reduced-motion/use-reduced-motion.js",
+      "size": 285,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-media-query/use-media-query.js",
+      "size": 1211,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-window-event/use-window-event.js",
+      "size": 330,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-focus-return/use-focus-return.js",
+      "size": 1148,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+utils@6.0.21_react@18.3.1/node_modules/@mantine/utils/esm/create-safe-context/create-safe-context.js",
+      "size": 543,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+utils@6.0.21_react@18.3.1/node_modules/@mantine/utils/esm/is-element/is-element.js",
+      "size": 329,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/font/google/target.css?{\"path\":\"src/styles/fonts.ts\",\"import\":\"Work_Sans\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":[\"400\",\"500\",\"600\"],\"display\":\"swap\"}],\"variableName\":\"fontWorkSans\"}",
+      "size": 190,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/font/google/target.css?{\"path\":\"src/styles/fonts.ts\",\"import\":\"IBM_Plex_Sans\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":[\"300\",\"400\"],\"display\":\"swap\"}],\"variableName\":\"fontIbmPlexSans\"}",
+      "size": 198,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./public/assets/tmf-logo-rect-bw-cropped.png",
+      "size": 368,
+      "chunks": [
+        347,
+        501,
+        521,
+        634,
+        859,
+        922
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+carousel@6.0.21_@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_reac_pkubsvdq7mzwdueyuw5dju6tfu/node_modules/@mantine/carousel/esm/Carousel.js + 10 modules",
+      "size": 23706,
+      "chunks": [
+        246
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/SimpleGrid/get-sorted-breakpoints/get-sorted-breakpoints.js",
+          "size": 609
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__@mantine+hooks@_xj76fcdaokillvsk46yr6nmh3y/node_modules/@mantine/core/esm/Accordion/ChevronIcon.js",
+          "size": 2034
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+carousel@6.0.21_@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_reac_pkubsvdq7mzwdueyuw5dju6tfu/node_modules/@mantine/carousel/esm/Carousel.js",
+          "size": 8253
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/utils/clamp/clamp.js",
+          "size": 135
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+carousel@6.0.21_@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_reac_pkubsvdq7mzwdueyuw5dju6tfu/node_modules/@mantine/carousel/esm/Carousel.styles.js",
+          "size": 4915
+        },
+        {
+          "name": "./node_modules/.pnpm/embla-carousel-react@7.1.0_react@18.3.1/node_modules/embla-carousel-react/embla-carousel-react.esm.js",
+          "size": 2304
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+carousel@6.0.21_@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_reac_pkubsvdq7mzwdueyuw5dju6tfu/node_modules/@mantine/carousel/esm/Carousel.context.js",
+          "size": 295
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+carousel@6.0.21_@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_reac_pkubsvdq7mzwdueyuw5dju6tfu/node_modules/@mantine/carousel/esm/get-chevron-rotation.js",
+          "size": 339
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+carousel@6.0.21_@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_reac_pkubsvdq7mzwdueyuw5dju6tfu/node_modules/@mantine/carousel/esm/CarouselSlide/CarouselSlide.js",
+          "size": 2201
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+carousel@6.0.21_@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_reac_pkubsvdq7mzwdueyuw5dju6tfu/node_modules/@mantine/carousel/esm/Carousel.errors.js",
+          "size": 191
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+carousel@6.0.21_@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_reac_pkubsvdq7mzwdueyuw5dju6tfu/node_modules/@mantine/carousel/esm/CarouselSlide/CarouselSlide.styles.js",
+          "size": 2430
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@tabler+icons-react@2.47.0_react@18.3.1/node_modules/@tabler/icons-react/dist/esm/icons/IconChevronRight.js",
+      "size": 385,
+      "chunks": [
+        246
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@tabler+icons-react@2.47.0_react@18.3.1/node_modules/@tabler/icons-react/dist/esm/icons/IconChevronLeft.js",
+      "size": 381,
+      "chunks": [
+        246
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/embla-carousel-auto-height@7.1.0_embla-carousel@7.1.0/node_modules/embla-carousel-auto-height/embla-carousel-auto-height.esm.js",
+      "size": 2056,
+      "chunks": [
+        246
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/tss/get-styles-ref.js",
+      "size": 140,
+      "chunks": [
+        347,
+        969
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+hooks@6.0.21_react@18.3.1/node_modules/@mantine/hooks/esm/use-hover/use-hover.js",
+      "size": 836,
+      "chunks": [
+        953
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/server.browser.js",
+      "size": 658,
+      "chunks": [
+        774
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@swc+helpers@0.5.5/node_modules/@swc/helpers/esm/_interop_require_wildcard.js",
+      "size": 1294,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.production.min.js",
+      "size": 131685,
+      "chunks": [
+        774
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/mitt.js",
+      "size": 2157,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/handle-smooth-scroll.js",
+      "size": 1292,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/is-dynamic.js",
+      "size": 679,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/utils.js",
+      "size": 5966,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/add-base-path.js",
+      "size": 1025,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/parse-path.js",
+      "size": 1041,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/remove-trailing-slash.js",
+      "size": 552,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/interpolate-as.js",
+      "size": 2121,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/route-matcher.js",
+      "size": 1146,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/route-regex.js",
+      "size": 7538,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/add-locale.js",
+      "size": 1067,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/parse-relative-url.js",
+      "size": 1081,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/route-loader.js",
+      "size": 12748,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/script.js",
+      "size": 13978,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/is-plain-object.js",
+      "size": 1180,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/page-path/denormalize-page-path.js",
+      "size": 611,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/i18n/normalize-locale-path.js",
+      "size": 854,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./utils/resolve-rewrites (ignored)",
+      "size": 15,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/format-url.js",
+      "size": 3947,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/detect-domain-locale.js",
+      "size": 937,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/remove-locale.js",
+      "size": 1163,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/remove-base-path.js",
+      "size": 1095,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/has-base-path.js",
+      "size": 822,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/resolve-href.js",
+      "size": 3741,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/omit.js",
+      "size": 440,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/is-local-url.js",
+      "size": 854,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/lib/is-api-route.js",
+      "size": 373,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/get-next-pathname-info.js",
+      "size": 2479,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/format-next-pathname-info.js",
+      "size": 1290,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/compare-states.js",
+      "size": 1070,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/is-bot.js",
+      "size": 632,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/bloom-filter.js",
+      "size": 2965,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/image-config-context.shared-runtime.js",
+      "size": 685,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/image-config.js",
+      "size": 1296,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.js",
+      "size": 1139,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/head.js",
+      "size": 7664,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/utils/warn-once.js",
+      "size": 471,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/components/router-reducer/reducers/get-segment-value.js",
+      "size": 700,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/components/navigation.react-server.js",
+      "size": 2563,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js",
+      "size": 1210,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/image-blur-svg.js",
+      "size": 1495,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/react-is@16.13.1/node_modules/react-is/index.js",
+      "size": 196,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/link.js",
+      "size": 19874,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/attach-functions.js + 18 modules",
+      "size": 15226,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/attach-functions.js",
+          "size": 1831
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/fns/index.js",
+          "size": 1218
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/fns/font-styles/font-styles.js",
+          "size": 162
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/fns/theme-color/theme-color.js",
+          "size": 898
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/fns/primary-shade/primary-shade.js",
+          "size": 288
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/fns/focus-styles/focus-styles.js",
+          "size": 1285
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/fns/gradient/gradient.js",
+          "size": 1129
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/fns/rgba/rgba.js",
+          "size": 380
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/fns/cover/cover.js",
+          "size": 269
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/fns/darken/darken.js",
+          "size": 408
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/fns/lighten/lighten.js",
+          "size": 412
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/fns/radius/radius.js",
+          "size": 428
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/fns/variant/variant.js",
+          "size": 4192
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/fns/hover/hover.js",
+          "size": 231
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/fns/primary-color/primary-color.js",
+          "size": 305
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/fns/placeholder-styles/placeholder-styles.js",
+          "size": 250
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/fns/dimmed/dimmed.js",
+          "size": 173
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/functions/fns/gradient/get-gradient-color-stops/get-gradient-color-stops.js",
+          "size": 340
+        },
+        {
+          "name": "./node_modules/.pnpm/@mantine+styles@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_react@18.3.1__react-dom@18._t47jpu2r4hmocxqu64imyvbuby/node_modules/@mantine/styles/esm/theme/utils/to-rgba/to-rgba.js",
+          "size": 1027
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@emotion+serialize@1.1.4/node_modules/@emotion/serialize/dist/emotion-serialize.browser.esm.js + 3 modules",
+      "size": 13871,
+      "chunks": [
+        888
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@emotion+serialize@1.1.4/node_modules/@emotion/serialize/dist/emotion-serialize.browser.esm.js",
+          "size": 11090
+        },
+        {
+          "name": "./node_modules/.pnpm/@emotion+memoize@0.8.1/node_modules/@emotion/memoize/dist/emotion-memoize.esm.js",
+          "size": 202
+        },
+        {
+          "name": "./node_modules/.pnpm/@emotion+unitless@0.8.1/node_modules/@emotion/unitless/dist/emotion-unitless.esm.js",
+          "size": 924
+        },
+        {
+          "name": "./node_modules/.pnpm/@emotion+hash@0.9.1/node_modules/@emotion/hash/dist/emotion-hash.esm.js",
+          "size": 1655
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@emotion+use-insertion-effect-with-fallbacks@1.0.1_react@18.3.1/node_modules/@emotion/use-insertion-effect-with-fallbacks/dist/emotion-use-insertion-effect-with-fallbacks.browser.esm.js",
+      "size": 472,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@emotion+utils@1.2.1/node_modules/@emotion/utils/dist/emotion-utils.browser.esm.js",
+      "size": 1763,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "css ./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[6].oneOf[4].use[1]!./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[6].oneOf[4].use[2]!./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/font/google/target.css?{\"path\":\"src/styles/fonts.ts\",\"import\":\"Work_Sans\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":[\"400\",\"500\",\"600\"],\"display\":\"swap\"}],\"variableName\":\"fontWorkSans\"}",
+      "size": 3676,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "css ./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[6].oneOf[4].use[1]!./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[6].oneOf[4].use[2]!./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/font/google/target.css?{\"path\":\"src/styles/fonts.ts\",\"import\":\"IBM_Plex_Sans\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":[\"300\",\"400\"],\"display\":\"swap\"}],\"variableName\":\"fontIbmPlexSans\"}",
+      "size": 4340,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/embla-carousel@7.1.0/node_modules/embla-carousel/embla-carousel.esm.js",
+      "size": 42918,
+      "chunks": [
+        246
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@tabler+icons-react@2.47.0_react@18.3.1/node_modules/@tabler/icons-react/dist/esm/createReactComponent.js + 1 modules",
+      "size": 3186,
+      "chunks": [
+        246
+      ],
+      "modules": [
+        {
+          "name": "./node_modules/.pnpm/@tabler+icons-react@2.47.0_react@18.3.1/node_modules/@tabler/icons-react/dist/esm/createReactComponent.js",
+          "size": 2805
+        },
+        {
+          "name": "./node_modules/.pnpm/@tabler+icons-react@2.47.0_react@18.3.1/node_modules/@tabler/icons-react/dist/esm/defaultAttributes.js",
+          "size": 381
+        }
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/@mantine+carousel@6.0.21_@mantine+core@6.0.21_@emotion+react@11.11.4_@types+react@18.3.3_reac_pkubsvdq7mzwdueyuw5dju6tfu/node_modules/@mantine/carousel/esm/use-animation-offset-effect.js",
+      "size": 359,
+      "chunks": [
+        558,
+        953
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-server-legacy.browser.production.min.js",
+      "size": 35019,
+      "chunks": [
+        774
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js",
+      "size": 35597,
+      "chunks": [
+        774
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/deployment-id.js",
+      "size": 466,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/scheduler@0.23.2/node_modules/scheduler/index.js",
+      "size": 198,
+      "chunks": [
+        774
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.js",
+      "size": 608,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/future/helpers/interception-routes.js",
+      "size": 3692,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/querystring.js",
+      "size": 2124,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/head-manager.js",
+      "size": 8015,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/add-path-prefix.js",
+      "size": 536,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/normalize-trailing-slash.js",
+      "size": 1465,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/escape-regexp.js",
+      "size": 694,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/get-asset-path-from-route.js",
+      "size": 639,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/add-locale.js",
+      "size": 1049,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/path-has-prefix.js",
+      "size": 535,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/trusted-types.js",
+      "size": 1538,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/request-idle-callback.js",
+      "size": 1464,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/index.js",
+      "size": 634,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/page-path/normalize-path-sep.js",
+      "size": 505,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/i18n/detect-domain-locale.js",
+      "size": 962,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/remove-path-prefix.js",
+      "size": 1261,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/add-path-suffix.js",
+      "size": 536,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/app-router-context.shared-runtime.js",
+      "size": 1717,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/side-effect.js",
+      "size": 2744,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/amp-context.shared-runtime.js",
+      "size": 584,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/amp-mode.js",
+      "size": 419,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/components/redirect.js",
+      "size": 4587,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/components/not-found.js",
+      "size": 1262,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/void-elements@3.1.0/node_modules/void-elements/index.js",
+      "size": 338,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/react-is@16.13.1/node_modules/react-is/cjs/react-is.production.min.js",
+      "size": 2554,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/use-intersection.js",
+      "size": 3860,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/get-domain-locale.js",
+      "size": 1576,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/components/router-reducer/router-reducer-types.js",
+      "size": 2929,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/prop-types@15.8.1/node_modules/prop-types/index.js",
+      "size": 710,
+      "chunks": [
+        246
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/scheduler@0.23.2/node_modules/scheduler/cjs/scheduler.production.min.js",
+      "size": 4235,
+      "chunks": [
+        774
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/app-paths.js",
+      "size": 1469,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/router/utils/sorted-routes.js",
+      "size": 8451,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/components/request-async-storage.external.js",
+      "size": 1397,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/components/action-async-storage.external.js",
+      "size": 771,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/components/redirect-status-code.js",
+      "size": 983,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/normalize-locale-path.js",
+      "size": 898,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/use-sync-external-store@1.2.2_react@18.3.1/node_modules/use-sync-external-store/shim/index.js",
+      "size": 238,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/prop-types@15.8.1/node_modules/prop-types/factoryWithThrowingShims.js",
+      "size": 1639,
+      "chunks": [
+        246
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/page-path/ensure-leading-slash.js",
+      "size": 524,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/shared/lib/segment.js",
+      "size": 848,
+      "chunks": [
+        179
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/components/request-async-storage-instance.js",
+      "size": 765,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/components/action-async-storage-instance.js",
+      "size": 761,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/use-sync-external-store@1.2.2_react@18.3.1/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.production.min.js",
+      "size": 1045,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/prop-types@15.8.1/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "size": 314,
+      "chunks": [
+        246
+      ]
+    },
+    {
+      "name": "./node_modules/.pnpm/next@14.2.4_@babel+core@7.24.5_babel-plugin-macros@3.1.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/client/components/async-local-storage.js",
+      "size": 1476,
+      "chunks": [
+        888
+      ]
+    },
+    {
+      "name": "webpack/runtime/chunk loaded",
+      "size": 953,
+      "chunks": [
+        272
+      ]
+    },
+    {
+      "name": "webpack/runtime/compat get default export",
+      "size": 302,
+      "chunks": [
+        272
+      ]
+    },
+    {
+      "name": "webpack/runtime/create fake namespace object",
+      "size": 1209,
+      "chunks": [
+        272
+      ]
+    },
+    {
+      "name": "webpack/runtime/css loading",
+      "size": 0,
+      "chunks": [
+        272
+      ]
+    },
+    {
+      "name": "webpack/runtime/define property getters",
+      "size": 313,
+      "chunks": [
+        272
+      ]
+    },
+    {
+      "name": "webpack/runtime/ensure chunk",
+      "size": 336,
+      "chunks": [
+        272
+      ]
+    },
+    {
+      "name": "webpack/runtime/get javascript chunk filename",
+      "size": 161,
+      "chunks": [
+        272
+      ]
+    },
+    {
+      "name": "webpack/runtime/get mini-css chunk filename",
+      "size": 168,
+      "chunks": [
+        272
+      ]
+    },
+    {
+      "name": "webpack/runtime/hasOwnProperty shorthand",
+      "size": 103,
+      "chunks": [
+        272
+      ]
+    },
+    {
+      "name": "webpack/runtime/jsonp chunk loading",
+      "size": 3241,
+      "chunks": [
+        272
+      ]
+    },
+    {
+      "name": "webpack/runtime/load script",
+      "size": 1548,
+      "chunks": [
+        272
+      ]
+    },
+    {
+      "name": "webpack/runtime/make namespace object",
+      "size": 279,
+      "chunks": [
+        272
+      ]
+    },
+    {
+      "name": "webpack/runtime/nonce",
+      "size": 35,
+      "chunks": [
+        272
+      ]
+    },
+    {
+      "name": "webpack/runtime/publicPath",
+      "size": 34,
+      "chunks": [
+        272
+      ]
+    },
+    {
+      "name": "webpack/runtime/trusted types policy",
+      "size": 407,
+      "chunks": [
+        272
+      ]
+    },
+    {
+      "name": "webpack/runtime/trusted types script url",
+      "size": 97,
+      "chunks": [
+        272
+      ]
+    }
+  ]
+}

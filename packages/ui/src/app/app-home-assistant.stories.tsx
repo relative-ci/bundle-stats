@@ -34,8 +34,14 @@ const meta: Meta<typeof App> = {
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof App>;
 
+/**
+ * stack: Vite, yarn
+ *
+ * - GitHub: https://github.com/home-assistant/frontend
+ * - RelativeCI project: https://app.relative-ci.com/projects/ZyS69RCzSjYaQA6vUq06
+ */
 export const Default: Story = {
   render: (args) => <App jobs={JOBS} {...args} />,
 };

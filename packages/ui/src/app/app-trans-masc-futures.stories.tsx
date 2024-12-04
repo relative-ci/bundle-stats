@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 
 /* eslint-disable import/no-unresolved, import/no-relative-packages */
-import currentData from '../../../../fixtures/gladys/current.json';
-import baselineData from '../../../../fixtures/gladys/baseline.json';
+import currentData from '../../../../fixtures/trans-masc-futures/current.json';
+import baselineData from '../../../../fixtures/trans-masc-futures/baseline.json';
 import { metaBaseline, metaCurrent } from '../../../../fixtures/meta';
 /* eslint-enable import/no-unresolved, import/no-relative-packages */
 import { App } from '.';
@@ -22,13 +22,13 @@ const BASELINE_SOURCE = {
 const JOBS = createJobs([CURRENT_SOURCE, BASELINE_SOURCE]);
 
 /**
- * stack: preact-cli, webpack, npm
+ * stack: Next.JS, pnpm
  *
- * - GitHub: https://github.com/GladysAssistant/Gladys
- * - RelativeCI project: https://app.relative-ci.com/projects/PUROh8FAVkDKmpUrqr4u
+ * - GitHub: https://github.com/weareinreach/TransMascFutures
+ * - RelativeCI project: https://app.relative-ci.com/projects/KjzseHt4clXSZ8GDcFc7
  */
 const meta: Meta<typeof App> = {
-  title: 'App/Gladys',
+  title: 'App/TransMascFutures',
   component: App,
   parameters: {
     layout: 'fullscreen',
