@@ -13,20 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.2
 
-      # Cache packages when the branch is not update-dependencies or dependabot/*
-      - name: Resolve caching
-        id: cache
-        if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
-        run: echo "PACKAGE=npm" >> $GITHUB_OUTPUT
-
-      - name: Use Node.js
-        uses: actions/setup-node@v4.1.0
-        with:
-          node-version-file: ".nvmrc"
-          cache: ${{ steps.cache.outputs.PACKAGE }}
-
-      - name: Install dependencies
-        run: npm ci
+      - name: Setup node & npm
+        uses: relative-ci/.github/actions/setup-node-npm@main
 
       - name: Build
         run: npm run build
@@ -72,21 +60,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.2
 
-      # Cache packages when the branch is not update-dependencies or dependabot/*
-      - name: Resolve caching
-        id: cache
-        if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
-        run: echo "PACKAGE=npm" >> $GITHUB_OUTPUT
-
-      - name: Use Node.js
-        uses: actions/setup-node@v4.1.0
-        with:
-          node-version-file: ".nvmrc"
-          cache: ${{ steps.cache.outputs.PACKAGE }}
-
-      # Workaround npm/nx optional install issue - https://github.com/nrwl/nx/issues/15452
-      - name: Install dependencies
-        run: npm ci
+      - name: Setup node & npm
+        uses: relative-ci/.github/actions/setup-node-npm@main
 
       - name: Download build files
         uses: actions/download-artifact@v4.1.8
@@ -103,21 +78,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.2
 
-      # Cache packages when the branch is not update-dependencies or dependabot/*
-      - name: Resolve caching
-        id: cache
-        if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
-        run: echo "PACKAGE=npm" >> $GITHUB_OUTPUT
-
-      - name: Use Node.js
-        uses: actions/setup-node@v4.1.0
-        with:
-          node-version-file: ".nvmrc"
-          cache: ${{ steps.cache.outputs.PACKAGE }}
-
-      # Workaround npm/nx optional install issue - https://github.com/nrwl/nx/issues/15452
-      - name: Install dependencies
-        run: npm ci
+      - name: Setup node & npm
+        uses: relative-ci/.github/actions/setup-node-npm@main
 
       - name: Download build files
         uses: actions/download-artifact@v4.1.8
@@ -134,21 +96,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.2
 
-      # Cache packages when the branch is not update-dependencies or dependabot/*
-      - name: Resolve caching
-        id: cache
-        if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
-        run: echo "PACKAGE=npm" >> $GITHUB_OUTPUT
-
-      - name: Use Node.js
-        uses: actions/setup-node@v4.1.0
-        with:
-          node-version-file: ".nvmrc"
-          cache: ${{ steps.cache.outputs.PACKAGE }}
-
-      # Workaround npm/nx optional install issue - https://github.com/nrwl/nx/issues/15452
-      - name: Install dependencies
-        run: npm ci
+      - name: Setup node & npm
+        uses: relative-ci/.github/actions/setup-node-npm@main
 
       - name: Download build files
         uses: actions/download-artifact@v4.1.8
@@ -176,17 +125,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.2
 
-      # Cache packages when the branch is not update-dependencies or dependabot/*
-      - name: Resolve caching
-        id: cache
-        if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
-        run: echo "PACKAGE=npm" >> $GITHUB_OUTPUT
-
-      - name: Use Node.js
-        uses: actions/setup-node@v4.1.0
+      - name: Setup node & npm
+        uses: relative-ci/.github/actions/setup-node-npm@main
         with:
-          node-version: ${{ matrix.node }}
-          cache: ${{ steps.cache.outputs.PACKAGE }}
+          version: ${{ matrix.node }}
+          cache: never
+          install: false
 
       - name: Download build files
         uses: actions/download-artifact@v4.1.8
@@ -233,10 +177,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.2
 
-      - name: Use Node.js
-        uses: actions/setup-node@v4.1.0
+      - name: Setup node & npm
+        uses: relative-ci/.github/actions/setup-node-npm@main
         with:
-          node-version: ${{ matrix.node }}
+          version: ${{ matrix.node }}
+          cache: never
+          install: false
 
       - name: Download build files
         uses: actions/download-artifact@v4.1.8
@@ -277,10 +223,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.2
 
-      - name: Use Node.js
-        uses: actions/setup-node@v4.1.0
+      - name: Setup node & npm
+        uses: relative-ci/.github/actions/setup-node-npm@main
         with:
-          node-version: ${{ matrix.node }}
+          version: ${{ matrix.node }}
+          cache: never
+          install: false
 
       - name: Download build files
         uses: actions/download-artifact@v4.1.8
@@ -331,22 +279,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.2
 
-      # Cache packages when the branch is not update-dependencies or dependabot/*
-      - name: Resolve caching
-        id: cache
-        if: ${{ github.ref_name != 'update-dependencies' && !startsWith(github.ref_name, 'dependabot/') }}
-        run: echo "PACKAGE=npm" >> $GITHUB_OUTPUT
-
-      - name: Use Node.js
-        uses: actions/setup-node@v4.1.0
-        with:
-          node-version-file: ".nvmrc"
-          cache: ${{ steps.cache.outputs.PACKAGE }}
-          registry-url: 'https://registry.npmjs.org'
-
-      # Workaround npm/nx optional install issue - https://github.com/nrwl/nx/issues/15452
-      - name: Install dependencies
-        run: npm ci
+      - name: Setup node & npm
+        uses: relative-ci/.github/actions/setup-node-npm@main
 
       - name: Download build
         uses: actions/download-artifact@v4.1.8
