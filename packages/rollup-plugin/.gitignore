@@ -7,6 +7,4 @@ Thumbs.db
 *.sublime-workspace
 *.log
 yarn.lock
-lib
-lib-esm
-types
+dist
