@@ -1,5 +1,6 @@
 export const SEARCH_PLACEHOLDER = 'Search by asset path';
 export const CHANGED = 'Changed';
+export const ASSET_TYPE = 'Asset type';
 export const FILE_TYPE = 'File type';
 export const CHUNKS = 'Chunks';
 export const NO_CHUNK = 'No chunk';

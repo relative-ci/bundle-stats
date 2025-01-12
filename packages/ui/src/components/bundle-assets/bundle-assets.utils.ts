@@ -195,7 +195,7 @@ export const getFilters = ({
   }
 
   result[ASSET_ENTRY_TYPE] = {
-    label: I18N.FILE_TYPE,
+    label: I18N.ASSET_TYPE,
     children: [
       {
         key: ASSET_FILTERS.ENTRY,
