@@ -16,12 +16,12 @@
   "private": true,
   "description": "Analyze webpack stats(bundle size, assets, modules, packages) and compare the results between different builds.",
   "engines": {
-    "node": ">= 14.0"
+    "node": ">= 18.0"
   },
   "devDependencies": {
     "@babel/core": "7.26.0",
     "@babel/eslint-parser": "7.26.5",
-    "@tsconfig/node14": "14.1.2",
+    "@tsconfig/node18": "18.2.2",
     "@types/react": "18.3.13",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
