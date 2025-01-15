@@ -9,11 +9,13 @@ const getResolveConfig = require('./build/webpack/resolve');
 const appConfig = require('./src/config.json');
 const settings = require('./settings');
 
-const { isDevelopment, isProduction, srcDir, distDir } = settings;
+const { isDevelopment, isProduction, srcDir } = settings;
 const iconSprite = fs.readFileSync(
   require.resolve('@bundle-stats/ui/lib-esm/assets/icons.svg'),
   'utf-8',
 );
+
+const distDir = path.join(__dirname, 'dist-template');
 
 module.exports = merge(
   {

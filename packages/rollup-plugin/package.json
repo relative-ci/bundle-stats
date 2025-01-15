@@ -2,7 +2,7 @@
   "name": "rollup-plugin-bundle-stats",
   "version": "4.17.0",
   "description": "In-depth bundle analyzer for rollup(bundle size, assets, modules, packages)",
-  "main": "lib/index.js",
+  "main": "./dist/index.js",
   "types": "types/index.d.ts",
   "sideEffects": false,
   "engines": {
@@ -12,8 +12,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "build": "npm run clean && tsc --rootDir ./src --project tsconfig.json --outDir ./lib",
-    "clean": "rimraf lib types",
+    "build": "npm run clean && cd ../../ && rollup -c packages/rollup-plugin/rollup.config.mjs",
+    "clean": "rimraf dist",
     "lint": "eslint",
     "test:package": "cd test/package && npm test --"
   },
@@ -44,11 +44,12 @@
     "url": "https://github.com/relative-ci/bundle-stats/issues"
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/rollup-plugin#readme",
-  "dependencies": {
-    "@bundle-stats/cli-utils": "^4.17.0",
-    "rollup-plugin-webpack-stats": "0.4.1"
-  },
   "devDependencies": {
+    "@bundle-stats/cli-utils": "^4.17.0",
+    "@rollup/plugin-commonjs": "28.0.2",
+    "@rollup/plugin-json": "6.1.0",
+    "@rollup/plugin-node-resolve": "16.0.0",
+    "@rollup/plugin-typescript": "12.1.2",
     "@tsconfig/node16": "16.1.3",
     "@types/jest": "29.5.14",
     "core-js": "3.40.0",
@@ -58,6 +59,7 @@
     "regenerator-runtime": "0.14.1",
     "rimraf": "6.0.1",
     "rollup": "4.30.1",
+    "rollup-plugin-webpack-stats": "0.4.1",
     "ts-jest": "29.2.5",
     "typescript": "5.7.3"
   },

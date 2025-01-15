@@ -2,9 +2,10 @@
   "extends": "@tsconfig/node16/tsconfig.json",
   "compilerOptions": {
     "noEmit": false,
+    "module": "Node16",
     "declaration": true,
-    "declarationDir": "./types",
+    "declarationDir": "./dist",
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "node_modules"],
   "exclude": ["**/*.test.ts"]
 }
