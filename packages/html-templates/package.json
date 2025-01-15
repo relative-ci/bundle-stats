@@ -2,11 +2,12 @@
   "name": "@bundle-stats/html-templates",
   "version": "4.17.0",
   "description": "HTML templates for report generation.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "types": "types.d.ts",
   "scripts": {
     "prebuild": "rimraf ./dist",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js --mode production",
+    "build:template": "cross-env NODE_ENV=production webpack --config webpack.config.production.js --mode production",
+    "build": "npm run build:template && ./scripts/bundle-template.js",
     "lint": "eslint",
     "start": "cross-env NODE_ENV=development storybook dev -c ./build/storybook -p 8090",
     "test": "echo \"No tests\" && exit 0"

@@ -8,5 +8,6 @@ Thumbs.db
 *.log
 yarn.lock
 dist
+dist-template
 artifacts
 .env
