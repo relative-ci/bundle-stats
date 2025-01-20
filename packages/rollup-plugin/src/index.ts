@@ -1,7 +1,8 @@
 import * as path from 'path';
 import * as fs from 'fs/promises';
 import { Plugin } from 'rollup';
-import { bundleToWebpackStats } from 'rollup-plugin-webpack-stats';
+// @ts-ignore
+import { bundleToWebpackStats } from 'rollup-plugin-webpack-stats/transform';
 import { ReportOptions, generateReports } from '@bundle-stats/cli-utils';
 
 const NAME = 'bundleStats';
