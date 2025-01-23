@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-bundle-stats",
-  "version": "4.18.0",
+  "version": "4.18.1",
   "description": "In-depth bundle analyzer for rollup(bundle size, assets, modules, packages)",
   "main": "lib/index.js",
   "types": "types/index.d.ts",
