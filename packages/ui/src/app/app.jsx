@@ -5,6 +5,7 @@ import { HashRouter, NavLink, Route, Switch, useLocation } from 'react-router-do
 import { COMPONENT } from '@bundle-stats/utils';
 
 import { URLS } from '../constants';
+import { ThemeProvider } from '../context/theme';
 import { BundleAssets } from '../components/bundle-assets';
 import { BundleAssetsTotals } from '../components/bundle-assets-totals';
 import { BundleModules } from '../components/bundle-modules';
@@ -205,10 +206,12 @@ AppComponent.propTypes = {
 };
 
 export const App = (props) => (
-  <HashRouter>
-    <ScrollToTop />
-    <QueryStateProvider>
-      <AppComponent {...props} />
-    </QueryStateProvider>
-  </HashRouter>
+  <ThemeProvider>
+    <HashRouter>
+      <ScrollToTop />
+      <QueryStateProvider>
+        <AppComponent {...props} />
+      </QueryStateProvider>
+    </HashRouter>
+  </ThemeProvider>
 );
