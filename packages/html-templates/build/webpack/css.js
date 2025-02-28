@@ -26,6 +26,7 @@ module.exports = (settings) => {
               options: {
                 modules: {
                   auto: true,
+                  namedExport: false,
                   localIdentName: isDevelopment
                     ? '[path][name]__[local]-[hash:base64:5]'
                     : '[hash:base64:5]',
