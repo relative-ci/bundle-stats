@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@types/find-cache-dir": "^3.2.1",
-    "@types/lodash": "4.17.15",
+    "@types/lodash": "4.17.16",
     "@types/stream-chain": "^2.0.1",
     "@types/stream-json": "^1.7.3",
     "jest": "29.7.0",
