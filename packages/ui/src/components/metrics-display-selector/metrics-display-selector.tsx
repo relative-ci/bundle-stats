@@ -62,7 +62,7 @@ export const MetricsDisplaySelector = (
               type="button"
               glyph={displayProps.glyph}
               onClick={() => onSelect(displayType)}
-              className={isLast && css.itemLast}
+              className={cx(isLast && css.itemLast)}
               key={displayType}
             >
               {displayProps.label}
@@ -82,30 +82,46 @@ export const MetricsDisplaySelector = (
         ];
 
         return (
-          <Dropdown
-            glyph={displayProps.glyph}
-            label={displayProps.label}
-            className={cx(isLast && css.itemLast, isActive && css.buttonActive)}
+          <FlexStack
+            className={cx(css.dropdownGroup, isLast && css.itemLast, isActive && css.itemActive)}
             key={displayType}
           >
-            {displayGroupsData.map((displayGroupData) => {
-              const isGroupActive = isActive && displayGroupData.value === groupBy;
+            <Button
+              size="small"
+              glyph={displayProps.glyph}
+              onClick={() => onSelect(displayType)}
+              className={css.dropdownGroupButton}
+            >
+              {displayProps.label}
+            </Button>
+            <Dropdown
+              glyph={Icon.ICONS.CHEVRON_DOWN}
+              placement="bottom-end"
+              className={css.dropdownGroupAnchor}
+            >
+              {displayGroupsData.map((displayGroupData) => {
+                const isGroupActive = isActive && displayGroupData.value === groupBy;
 
-              return (
-                <DropdownItem
-                  onClick={() => onSelect(displayType, displayGroupData.value)}
-                  isActive={isGroupActive}
-                  className={cx(css.dropdownItem, isGroupActive && css.dropdownItemActive)}
-                  key={displayGroupData.value}
-                >
-                  <FlexStack space="xxxsmall" alignItems="center">
-                    <Icon glyph={Icon.ICONS.CHECK} size="small" className={css.dropdownItemIcon} />
-                    <span>{displayGroupData.label}</span>
-                  </FlexStack>
-                </DropdownItem>
-              );
-            })}
-          </Dropdown>
+                return (
+                  <DropdownItem
+                    onClick={() => onSelect(displayType, displayGroupData.value)}
+                    isActive={isGroupActive}
+                    className={cx(css.dropdownItem, isGroupActive && css.dropdownItemActive)}
+                    key={displayGroupData.value}
+                  >
+                    <FlexStack space="xxxsmall" alignItems="center">
+                      <Icon
+                        glyph={Icon.ICONS.CHECK}
+                        size="small"
+                        className={css.dropdownItemIcon}
+                      />
+                      <span>{displayGroupData.label}</span>
+                    </FlexStack>
+                  </DropdownItem>
+                );
+              })}
+            </Dropdown>
+          </FlexStack>
         );
       })}
     </ControlGroup>
