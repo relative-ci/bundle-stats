@@ -1,4 +1,30 @@
-.buttonActive {
+.dropdownGroup {
+  border: 1px solid var(--color-outline);
+}
+
+.dropdownGroupButton {
+  padding: calc(var(--space-xxsmall) - 1px);
+}
+
+.dropdownGroupAnchor {
+  border: none;
+  border-left: 1px solid var(--color-outline);
+  border-radius: 0;
+}
+
+.dropdownGroupAnchor:hover,
+.dropdownGroupAnchor:focus,
+.dropdownGroupAnchor:active {
+  border-color: var(--color-outline);
+  box-shadow: none;
+  background: none;
+}
+
+.dropdownGroup:hover {
+  border-color: var(--color-outline-dark);
+}
+
+.itemActive {
   background: var(--color-highlight);
 }
 

@@ -8,7 +8,7 @@ import { COMPONENT, SECTIONS } from '@bundle-stats/utils';
 import type { ReportMetricAssetRow, SortAction } from '../../types';
 import config from '../../config.json';
 import I18N from '../../i18n';
-import { MetricsDisplayType } from '../../constants';
+import { MetricsDisplayGroupBy, MetricsDisplayType } from '../../constants';
 import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
 import { Box } from '../../layout/box';
 import { FlexStack } from '../../layout/flex-stack';
@@ -34,7 +34,7 @@ import { getFilters } from './bundle-assets.utils';
 import css from './bundle-assets.module.css';
 
 const DISPLAY_TYPE_GROUPS = {
-  [MetricsDisplayType.TREEMAP]: ['folder'],
+  [MetricsDisplayType.TREEMAP]: [MetricsDisplayGroupBy.FOLDER],
 };
 
 interface ViewMetricsTreemapProps {

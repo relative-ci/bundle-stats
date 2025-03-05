@@ -2,10 +2,10 @@ import { useCallback, useEffect, useMemo } from 'react';
 import { useLocalStorage } from 'react-use';
 import { StringParam, useQueryParams } from 'use-query-params';
 
-import { MetricsDisplayType } from '../constants';
+import { MetricsDisplayType, MetricsDisplayGroupBy } from '../constants';
 
 const DEFAULT_VALUE = MetricsDisplayType.TABLE;
-const DEFAULT_GROUP_BY = '';
+const GROUP_BY_DEFAULT = MetricsDisplayGroupBy.FOLDER;
 
 // Display type query param name
 const QUERY_PARAM_VALUE = 'dt';
@@ -36,7 +36,7 @@ export const useMetricsDisplayType = (
     'storage',
     {
       value: DEFAULT_VALUE,
-      groupBy: DEFAULT_GROUP_BY,
+      groupBy: GROUP_BY_DEFAULT,
     },
   );
 
@@ -64,11 +64,14 @@ export const useMetricsDisplayType = (
     const resolvedValue = queryParamGroupBy ?? localStorage?.groupBy;
 
     if (!resolvedValue) {
-      return DEFAULT_GROUP_BY;
+      return GROUP_BY_DEFAULT;
     }
 
-    if (!groups?.[value]?.includes(resolvedValue as MetricsDisplayType)) {
-      return DEFAULT_GROUP_BY;
+    if (
+      resolvedValue !== MetricsDisplayGroupBy.NONE &&
+      !groups?.[value]?.includes(resolvedValue as MetricsDisplayType)
+    ) {
+      return GROUP_BY_DEFAULT;
     }
 
     return resolvedValue;
@@ -93,7 +96,7 @@ export const useMetricsDisplayType = (
   }, [value, groupBy, setLocalStorage, localStorage]);
 
   const setDisplayType = useCallback(
-    (newValue: MetricsDisplayType, newGroupBy: string = DEFAULT_GROUP_BY) => {
+    (newValue: MetricsDisplayType, newGroupBy: string = GROUP_BY_DEFAULT) => {
       setQueryParams({
         [QUERY_PARAM_VALUE]: newValue,
         [QUERY_PARAM_GROUP_BY]: newGroupBy,
