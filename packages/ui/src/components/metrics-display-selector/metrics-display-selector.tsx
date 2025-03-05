@@ -1,15 +1,17 @@
 import React from 'react';
 import cx from 'classnames';
 
-import { MetricsDisplayType } from '../../constants';
+import {
+  MetricsDisplayType,
+  MetricsDisplayGroupByDefault,
+  MetricsDisplayGroupBy,
+} from '../../constants';
 import { Button } from '../../ui/button';
 import { ControlGroup } from '../../ui/control-group';
 import { Dropdown, DropdownItem } from '../../ui/dropdown';
 import { Icon } from '../../ui/icon';
+import { FlexStack } from '../../layout/flex-stack';
 import css from './metrics-display-selector.module.css';
-import { FlexStack } from '../../layout';
-
-const DEFAULT_GROUP_BY = '';
 
 const METRICS_DISPLAY_MAP = {
   [MetricsDisplayType.TABLE]: {
@@ -35,7 +37,13 @@ export const MetricsDisplaySelector = (
   props: MetricsDisplaySelectorProps &
     Omit<React.ComponentProps<typeof ControlGroup>, 'onSelect' | 'value'>,
 ) => {
-  const { value, groupBy = DEFAULT_GROUP_BY, groups = {}, onSelect, ...restProps } = props;
+  const {
+    value,
+    groupBy = MetricsDisplayGroupByDefault,
+    groups = {},
+    onSelect,
+    ...restProps
+  } = props;
 
   return (
     <ControlGroup {...restProps}>
@@ -63,14 +71,14 @@ export const MetricsDisplaySelector = (
         }
 
         const displayGroupsData = [
-          {
-            value: DEFAULT_GROUP_BY,
-            label: 'No groups',
-          },
           ...displayGroups.map((displayGroup) => ({
             value: displayGroup,
             label: `Group by ${displayGroup}`,
           })),
+          {
+            value: MetricsDisplayGroupBy.NONE,
+            label: 'No group',
+          },
         ];
 
         return (

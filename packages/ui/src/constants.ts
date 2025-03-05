@@ -46,6 +46,15 @@ export enum MetricsDisplayType {
   TREEMAP = 'treemap',
 }
 
+export const MetricsDisplayTypeDefault = MetricsDisplayType.TABLE;
+
+export enum MetricsDisplayGroupBy {
+  FOLDER = 'folder',
+  NONE = 'no-group',
+}
+
+export const MetricsDisplayGroupByDefault = MetricsDisplayGroupBy.FOLDER;
+
 export enum ModuleSizeMetric {
   SIZE = 'value',
   DUPLICATE_SIZE = 'duplicateSize',

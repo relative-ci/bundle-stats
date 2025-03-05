@@ -26,12 +26,12 @@ import { PackageInfo } from '../package-info';
 import { SEARCH_PLACEHOLDER } from './bundle-packages.i18n';
 import css from './bundle-packages.module.css';
 import { MetricsDisplaySelector } from '../metrics-display-selector';
-import { MetricsDisplayType } from '../../constants';
+import { MetricsDisplayGroupBy, MetricsDisplayType } from '../../constants';
 import { MetricsTreemap, getTreemapNodes, getTreemapNodesGroupedByPath } from '../metrics-treemap';
 import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
 
 const DISPLAY_TYPE_GROUPS = {
-  [MetricsDisplayType.TREEMAP]: ['folder'],
+  [MetricsDisplayType.TREEMAP]: [MetricsDisplayGroupBy.FOLDER],
 };
 
 const getDropdownFilters = ({ compareMode, filters }) => ({

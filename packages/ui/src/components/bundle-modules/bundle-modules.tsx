@@ -8,7 +8,12 @@ import { WebpackChunk } from '@bundle-stats/utils';
 import type { ReportMetricModuleRow, SortAction } from '../../types';
 import config from '../../config.json';
 import I18N from '../../i18n';
-import { MetricsDisplayType, ModuleSizeMetric, ModuleSizeMetrics } from '../../constants';
+import {
+  MetricsDisplayGroupBy,
+  MetricsDisplayType,
+  ModuleSizeMetric,
+  ModuleSizeMetrics,
+} from '../../constants';
 import { Box } from '../../layout/box';
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
@@ -38,7 +43,7 @@ import css from './bundle-modules.module.css';
 import { useMetricsDisplayType } from '../../hooks/metrics-display-type';
 
 const DISPLAY_TYPE_GROUPS = {
-  [MetricsDisplayType.TREEMAP]: ['folder'],
+  [MetricsDisplayType.TREEMAP]: [MetricsDisplayGroupBy.FOLDER],
 };
 
 interface RowHeaderProps {
