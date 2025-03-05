@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import { Menu, MenuButton, MenuItem, useMenuState } from 'ariakit/menu';
+import { Menu, MenuButton, MenuItem, MenuStateProps, useMenuState } from 'ariakit/menu';
 
 import { Button, BUTTON_SIZE } from '../button';
 import css from './dropdown.module.css';
@@ -23,6 +23,7 @@ interface DropdownProps {
   ariaLabel?: string;
   glyph?: string;
   disabled?: boolean;
+  placement?: MenuStateProps['placement'];
 }
 
 export const Dropdown = (props: DropdownProps & React.ComponentProps<'div'>) => {
@@ -33,11 +34,12 @@ export const Dropdown = (props: DropdownProps & React.ComponentProps<'div'>) => 
     ariaLabel = '',
     glyph = '',
     disabled = false,
+    placement,
     children,
   } = props;
 
   const dropdownAriaLabel = ariaLabel || (typeof label === 'string' ? label : '');
-  const menuState = useMenuState();
+  const menuState = useMenuState({ placement });
 
   return (
     <>
