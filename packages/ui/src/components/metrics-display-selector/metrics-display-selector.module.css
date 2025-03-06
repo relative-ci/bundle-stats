@@ -1,5 +1,6 @@
 .dropdownGroup {
   border: 1px solid var(--color-outline);
+  transition: var(--transition-out);
 }
 
 .dropdownGroupButton {
@@ -22,6 +23,7 @@
 
 .dropdownGroup:hover {
   border-color: var(--color-outline-dark);
+  transition: var(--transition-in);
 }
 
 .itemActive {
@@ -41,4 +43,5 @@
 
 .dropdownItemActive .dropdownItemIcon {
   opacity: 1;
+  transition: var(--transition-in);
 }
