@@ -11,7 +11,7 @@
   left: 0;
   top: 100%;
   border-radius: var(--radius-medium);
-  box-shadow: var(--shadow-layer-high);
+  box-shadow: var(--shadow-layer);
   background: var(--color-background);
   min-width: 12em;
   z-index: var(--layer-high);

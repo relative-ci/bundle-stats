@@ -31,7 +31,7 @@
 }
 
 .delta {
-  font-weight: normal;
+  font-weight: bold;
 }
 
 .deltaValue + .deltaValue::before {

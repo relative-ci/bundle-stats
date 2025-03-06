@@ -16,5 +16,5 @@
 
 .inline .content {
   display: inline-block;
-  margin: 0 0 0 var(--space-xxxsmall);
+  margin: 0 0 0 var(--space-xxsmall);
 }

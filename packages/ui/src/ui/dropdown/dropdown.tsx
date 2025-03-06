@@ -24,6 +24,8 @@ interface DropdownProps {
   glyph?: string;
   disabled?: boolean;
   placement?: MenuStateProps['placement'];
+  gutter?: MenuStateProps['gutter'];
+  shift?: MenuStateProps['shift'];
 }
 
 export const Dropdown = (props: DropdownProps & React.ComponentProps<'div'>) => {
@@ -35,11 +37,13 @@ export const Dropdown = (props: DropdownProps & React.ComponentProps<'div'>) => 
     glyph = '',
     disabled = false,
     placement,
+    gutter = 4,
+    shift,
     children,
   } = props;
 
   const dropdownAriaLabel = ariaLabel || (typeof label === 'string' ? label : '');
-  const menuState = useMenuState({ placement });
+  const menuState = useMenuState({ placement, gutter, shift });
 
   return (
     <>
