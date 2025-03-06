@@ -97,6 +97,7 @@ export const MetricsDisplaySelector = (
             <Dropdown
               glyph={Icon.ICONS.CHEVRON_DOWN}
               placement="bottom-end"
+              shift={-1}
               className={css.dropdownGroupAnchor}
             >
               {displayGroupsData.map((displayGroupData) => {
