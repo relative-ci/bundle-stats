@@ -20,7 +20,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "build": "npm run clean && rollup -c",
+    "build": "npm run clean && rollup -c && npm run build-type",
+    "build-type": "echo '{\"type\":\"commonjs\"}' > lib/cjs/package.json && echo '{\"type\":\"module\"}' > lib/esm/package.json",
     "clean": "rimraf ./lib",
     "lint": "eslint",
     "test": "TZ=UTC jest src --maxWorkers=4"
