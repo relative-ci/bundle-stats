@@ -1,0 +1,30 @@
+{
+  "extends": "@tsconfig/node14/tsconfig.json",
+  "compilerOptions": {
+    /* dirs */
+    "rootDir": "./src",
+    "declarationDir": "./lib/types",
+    "types": ["node", "jest", "./typings.d.ts"],
+    /* module config */
+    "target": "es2020",
+    "lib": ["es2020", "es2022.error"],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    /* behaviour options */
+    "strict": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true,
+    "declaration": true,
+    "sourceMap": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "lib"]
+}
