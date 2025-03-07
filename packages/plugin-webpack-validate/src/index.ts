@@ -1,5 +1,5 @@
 import { validate } from 'superstruct';
-import get from 'lodash/get';
+import _ from 'lodash';
 
 import * as I18N from './i18n';
 import { WebpackSourceStruct } from './schemas';
@@ -17,7 +17,7 @@ function extractFailedStructure(
     return null;
   }
 
-  const source = get(webpackSource, failurePath);
+  const source = _.get(webpackSource, failurePath);
 
   // Return source as if the failure paths are pointing to an object
   if (typeof source === 'object') {
