@@ -8,5 +8,3 @@ Thumbs.db
 *.log
 yarn.lock
 lib
-lib-esm
-types
