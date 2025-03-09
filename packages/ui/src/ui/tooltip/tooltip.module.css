@@ -12,9 +12,9 @@
 
 .tooltip {
   z-index: var(--layer-xxhigh);
-  padding: var(--space-xxxsmall) var(--space-xxsmall);
+  padding: var(--space) var(--space-2x);
   border-radius: var(--radius-small);
-  background: var(--color-light);
+  background: var(--color-background);
   max-width: 28em;
   color: var(--color-text);
   font-size: var(--size-xsmall);
@@ -25,14 +25,14 @@
 
 .arrow svg {
   display: block;
-  fill: var(--color-light);
+  fill: var(--color-background);
 }
 
 .tooltipDarkMode {
-  background: var(--color-text-dark);
-  color: var(--color-light);
+  background: var(--color-text-intense);
+  color: var(--color-background);
 }
 
 .tooltipDarkMode .arrow svg {
-  fill: var(--color-text-dark);
+  fill: var(--color-text-intense);
 }

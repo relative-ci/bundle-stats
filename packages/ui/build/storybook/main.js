@@ -10,6 +10,7 @@ module.exports = {
   addons: [
     getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@storybook/addon-webpack5-compiler-babel'),
+    getAbsolutePath('@storybook/addon-themes'),
   ],
 
   docs: {

@@ -7,7 +7,7 @@
 }
 
 .empty {
-  padding-top: var(--space-large);
+  padding-top: var(--space-8x);
   min-height: 80vh;
   text-align: center;
 }
@@ -18,13 +18,13 @@
 }
 
 .summaryContainer {
-  padding-top: var(--space-small);
-  padding-bottom: var(--space-xxsmall);
+  padding-top: var(--space-4x);
+  padding-bottom: var(--space-2x);
 }
 
 .tabsContainer {
   border-bottom: 1px solid var(--color-outline);
-  background: var(--color-light);
+  background: var(--color-background);
 }
 
 .tabs {
@@ -40,8 +40,8 @@
 }
 
 .tabsContent {
-  padding-top: var(--space-medium);
-  padding-bottom: var(--space-medium);
+  padding-top: var(--space-6x);
+  padding-bottom: var(--space-6x);
   min-height: 480px;
 }
 
