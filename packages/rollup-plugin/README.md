@@ -17,6 +17,7 @@
   <a href="https://www.npmjs.com/package/rollup-plugin-bundle-stats"><img src="https://img.shields.io/npm/dm/rollup-plugin-bundle-stats.svg" /></a>
   <img src="https://img.shields.io/node/v/rollup-plugin-bundle-stats.svg" alt="Node version" />
   <a href="https://github.com/relative-ci/bundle-stats/actions/workflows/ci.yml"><img alt="GitHub action" src="https://github.com/relative-ci/bundle-stats/actions/workflows/ci.yml/badge.svg" /></a>
+  <a href="https://socket.dev/npm/package/rollup-plugin-bundle-stats/overview"><img alt="Socket" src="https://socket.dev/api/badge/npm/package/rollup-plugin-bundle-stats" /></a>
   <a href="https://github.com/relative-ci/bundle-stats/actions/workflows/codeql.yml"><img alt="CodeQL" src="https://github.com/relative-ci/bundle-stats/actions/workflows/codeql.yml/badge.svg"/></a>
 </p>
 <p align="center">
