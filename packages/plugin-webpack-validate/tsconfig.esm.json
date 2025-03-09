@@ -1,11 +1,6 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "moduleResolution": "bundler",
-    "target": "ES2019",
-    "module": "ES6",
-    "declaration": true,
-    "declarationDir": "./types",
-    "noEmit": false
+    "outDir": "./lib/esm"
   }
 }

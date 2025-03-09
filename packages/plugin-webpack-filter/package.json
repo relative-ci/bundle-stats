@@ -2,17 +2,17 @@
   "name": "@bundle-stats/plugin-webpack-filter",
   "version": "4.18.3",
   "description": "BundleStats webpack filter plugin",
-  "main": "lib/index.js",
-  "module": "lib-esm/index.js",
-  "types": "types/index.d.ts",
-  "sideEffects": false,
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./lib-esm/index.js",
-      "require": "./lib/index.js",
-      "types": "./types/index.d.ts"
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/index.js",
+      "types": "./lib/types/index.d.ts"
     }
   },
+  "sideEffects": false,
   "engines": {
     "node": ">= 14.0"
   },
@@ -20,12 +20,9 @@
     "lib": "lib"
   },
   "scripts": {
-    "build": "npm run clean && npm run build-lib && npm run build-esm",
-    "build-lib": "npm run clean-lib && tsc --rootDir ./src --project tsconfig.lib.json --outDir ./lib",
-    "build-esm": "npm run clean-esm && tsc --rootDir ./src --project tsconfig.esm.json --outDir ./lib-esm && echo '{\"type\":\"module\"}' > lib-esm/package.json",
-    "clean": "npm run clean-lib && npm run clean-esm",
-    "clean-lib": "rimraf lib",
-    "clean-esm": "rimraf lib-esm types",
+    "build": "npm run clean && rollup -c && npm run build-type",
+    "build-type": "echo '{\"type\":\"commonjs\"}' > lib/cjs/package.json && echo '{\"type\":\"module\"}' > lib/esm/package.json",
+    "clean": "rimraf ./lib",
     "lint": "eslint",
     "test": "TZ=UTC jest src --maxWorkers=4"
   },
@@ -45,6 +42,9 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/plugin-webpack-filter#readme",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "28.0.2",
+    "@rollup/plugin-node-resolve": "16.0.0",
+    "@rollup/plugin-typescript": "12.1.2",
     "@types/jest": "29.5.14",
     "@types/webpack": "5.28.5",
     "core-js": "3.41.0",
@@ -53,8 +53,12 @@
     "jest-date-mock": "1.0.10",
     "regenerator-runtime": "0.14.1",
     "rimraf": "6.0.1",
+    "rollup": "4.34.9",
     "ts-jest": "29.2.6",
     "typescript": "5.8.2"
+  },
+  "dependencies": {
+    "tslib": "2.8.1"
   },
   "peerDependencies": {
     "core-js": "^3.0.0"
