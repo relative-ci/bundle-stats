@@ -57,6 +57,9 @@
     "ts-jest": "29.2.6",
     "typescript": "5.8.2"
   },
+  "dependencies": {
+    "tslib": "2.8.1"
+  },
   "peerDependencies": {
     "core-js": "^3.0.0"
   }
