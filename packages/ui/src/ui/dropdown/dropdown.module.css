@@ -10,7 +10,7 @@
   position: absolute;
   left: 0;
   top: 100%;
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-small);
   box-shadow: var(--shadow-layer);
   background: var(--color-background);
   min-width: 12em;
