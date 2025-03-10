@@ -15,7 +15,6 @@ interface TooltipProps<T extends React.ElementType> {
   title?: React.ReactNode;
   as?: T;
   containerRef?: React.RefObject<HTMLElement>;
-  darkMode?: boolean;
 }
 
 export const Tooltip = <T extends React.ElementType = 'span'>(
@@ -27,7 +26,6 @@ export const Tooltip = <T extends React.ElementType = 'span'>(
     title = '',
     as: Component = 'span',
     containerRef: ref,
-    darkMode = true,
     ...restProps
   } = props;
 
@@ -44,10 +42,7 @@ export const Tooltip = <T extends React.ElementType = 'span'>(
         {...restProps}
       />
       {title && (
-        <UITooltip
-          state={tooltip}
-          className={cx(css.tooltip, tooltipClassName, darkMode && css.tooltipDarkMode)}
-        >
+        <UITooltip state={tooltip} className={cx(css.tooltip, tooltipClassName)}>
           <UITooltipArrow state={tooltip} className={css.arrow} size={12} />
           {title}
         </UITooltip>

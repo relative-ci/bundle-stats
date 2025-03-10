@@ -15,7 +15,7 @@ export const MetricsTableOptions = (props: MetricsTableOptionsProps) => {
   const { onViewAllClick, onResetClick, onExportClick, ...restProps } = props;
 
   return (
-    <Dropdown glyph="more-vertical" {...restProps}>
+    <Dropdown glyph="more-vertical" placement="bottom-end" {...restProps}>
       <div className={css.group}>
         {onResetClick && <DropdownItem onClick={onResetClick}>{I18N.RESET_FILTERS}</DropdownItem>}
         {onViewAllClick && <DropdownItem onClick={onViewAllClick}>{I18N.VIEW_ALL}</DropdownItem>}

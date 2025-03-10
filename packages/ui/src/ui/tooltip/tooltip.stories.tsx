@@ -28,12 +28,6 @@ export const LongTitle: Story = {
   },
 };
 
-export const DarkModeFalse: Story = {
-  args: {
-    darkMode: false,
-  },
-};
-
 export const CustomTooltip: Story = {
   args: {
     tooltipClassName: css.customTooltip,
