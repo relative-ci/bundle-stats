@@ -27,12 +27,3 @@
   display: block;
   fill: var(--color-light);
 }
-
-.tooltipDarkMode {
-  background: var(--color-text-dark);
-  color: var(--color-light);
-}
-
-.tooltipDarkMode .arrow svg {
-  fill: var(--color-text-dark);
-}
