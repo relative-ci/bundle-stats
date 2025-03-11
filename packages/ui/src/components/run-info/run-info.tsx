@@ -96,7 +96,7 @@ export const RunInfo = ({
       )}
 
       {!loading ? (
-        <Stack className={css.info}>
+        <Stack space="xxxsmall" className={css.info}>
           <Metric
             value={currentValueParams[0]}
             unit={currentValueParams[1]}
@@ -121,7 +121,7 @@ export const RunInfo = ({
           {showBaseline && <Metric className={css.baselineMetric} value={baseline} />}
         </Stack>
       ) : (
-        <Stack className={css.info}>
+        <Stack space="xxxsmall" className={css.info}>
           <Skeleton as="p" className={cx(css.currentMetric, css.loading)} />
           {showBaseline && <Skeleton as="p" className={cx(css.baselineMetric, css.loading)} />}
         </Stack>

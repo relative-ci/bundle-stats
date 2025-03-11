@@ -113,7 +113,6 @@ a.root {
 .solid:hover,
 .solid:active,
 .solid:focus {
-  box-shadow: var(--outline-hover);
   background: var(--color-text-light);
   color: var(--color-background);
 }
@@ -228,7 +227,6 @@ a.root {
 .outline:hover,
 .outline:active,
 .outline:focus {
-  box-shadow: var(--outline-hover);
   border-color: var(--color-outline-dark);
 }
 
