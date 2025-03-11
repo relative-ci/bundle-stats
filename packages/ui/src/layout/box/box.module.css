@@ -24,7 +24,7 @@
 .outlineHover:focus,
 .outlineHover:active,
 .outlineHover:hover {
-  box-shadow: var(--outline-hover);
+  border-color: var(--color-outline-dark);
   transition: var(--transition-in);
 }
 

@@ -26,7 +26,6 @@
 }
 
 .root:focus {
-  box-shadow: var(--outline-hover);
   border-color: var(--color-outline-dark);
   color: inherit;
   transition: var(--transition-out);

@@ -1,5 +1,6 @@
 .root {
   font-family: var(--font-family-fixed);
+  line-height: 1;
 }
 
 .displayUnit {
