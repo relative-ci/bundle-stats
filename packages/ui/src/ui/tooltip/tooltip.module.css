@@ -14,10 +14,10 @@
   z-index: var(--layer-xxhigh);
   padding: var(--space-xxxsmall) var(--space-xxsmall);
   border-radius: var(--radius-small);
-  background: var(--color-light);
+  background: var(--color-highlight);
   max-width: 28em;
-  color: var(--color-text);
-  font-size: var(--size-xsmall);
+  color: var(--color-text-light);
+  font-size: var(--size-small);
   text-align: center;
   filter: drop-shadow(var(--shadow-layer));
   will-change: filter;
@@ -25,5 +25,5 @@
 
 .arrow svg {
   display: block;
-  fill: var(--color-light);
+  fill: var(--color-highlight);
 }
