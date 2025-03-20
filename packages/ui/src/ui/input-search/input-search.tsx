@@ -67,6 +67,8 @@ export const InputSearch = (
         value={value}
         size="small"
         autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
       />
       {value && (
         <Button

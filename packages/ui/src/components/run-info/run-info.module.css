@@ -43,18 +43,19 @@
 .baselineMetric {
   color: var(--color-text-ultra-light);
   font-size: var(--size-small);
-  line-height: 1;
 }
 
 /* Loading state */
 .loading.currentMetric {
   min-width: 0;
   max-width: 8em;
+  height: 1em;
 }
 
 .loading.baselineMetric {
   min-width: 0;
   max-width: 8em;
+  height: 1em;
 }
 
 /* Hover state */

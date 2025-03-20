@@ -14,7 +14,7 @@
   z-index: var(--layer-xxhigh);
   padding: var(--space-xxxsmall) var(--space-xxsmall);
   border-radius: var(--radius-small);
-  background: var(--color-highlight);
+  background: var(--color-background);
   max-width: 28em;
   color: var(--color-text-light);
   font-size: var(--size-small);
