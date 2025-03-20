@@ -122,7 +122,7 @@ export const RunInfo = ({
         </Stack>
       ) : (
         <Stack space="xxxsmall" className={css.info}>
-          <Skeleton as="p" className={cx(css.currentMetric, css.loading)} />
+          <Skeleton className={cx(css.currentMetric, css.loading)} />
           {showBaseline && <Skeleton as="p" className={cx(css.baselineMetric, css.loading)} />}
         </Stack>
       )}
