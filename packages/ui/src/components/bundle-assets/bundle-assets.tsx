@@ -88,7 +88,7 @@ const ViewMetricsTreemap = (props: ViewMetricsTreemapProps) => {
         return;
       }
 
-      updateSearch(`^${groupPath}/`);
+      updateSearch(newSearch);
     },
     [updateSearch, search],
   );
