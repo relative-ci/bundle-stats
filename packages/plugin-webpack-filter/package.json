@@ -54,7 +54,7 @@
     "regenerator-runtime": "0.14.1",
     "rimraf": "6.0.1",
     "rollup": "4.37.0",
-    "ts-jest": "29.2.6",
+    "ts-jest": "29.3.0",
     "typescript": "5.8.2"
   },
   "dependencies": {
