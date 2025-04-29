@@ -196,7 +196,7 @@ CLI to generate bundle stats report.
 
 [![npm](https://img.shields.io/npm/v/rollup-plugin-bundle-stats)](https://www.npmjs.com/package/rollup-plugin-bundle-stats) [![npm](https://img.shields.io/npm/dm/rollup-plugin-bundle-stats)](https://www.npmjs.com/package/rollup-plugin-bundle-stats)
 
-Rollup plugin to generate bundle stats report.
+Rollup plugin to generate bundle stats report for vite/rolldown/rollup.
 
 ## Related projects
 
