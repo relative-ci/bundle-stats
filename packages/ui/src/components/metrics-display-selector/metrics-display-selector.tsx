@@ -50,6 +50,7 @@ export const MetricsDisplaySelector = (
       {displayTypes.map((displayType, index) => {
         const displayGroups = groups?.[displayType];
         const displayProps = METRICS_DISPLAY_MAP[displayType];
+        const isFirst = index === 0;
         const isLast = displayTypes.length - 1 === index;
         const isActive = displayType === value;
 
@@ -81,11 +82,15 @@ export const MetricsDisplaySelector = (
           },
         ];
 
+        const itemClassName = cx(
+          css.dropdownGroup,
+          isFirst && css.itemFirst,
+          isLast && css.itemLast,
+          isActive && css.itemActive,
+        );
+
         return (
-          <FlexStack
-            className={cx(css.dropdownGroup, isLast && css.itemLast, isActive && css.itemActive)}
-            key={displayType}
-          >
+          <FlexStack className={itemClassName} key={displayType}>
             <Button
               size="small"
               glyph={displayProps.glyph}

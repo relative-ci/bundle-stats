@@ -9,8 +9,19 @@
 
 .dropdownGroupAnchor {
   border: none;
-  border-left: 1px solid var(--color-outline);
   border-radius: 0;
+  position: relative;
+}
+
+.dropdownGroupAnchor::before {
+  content: '';
+  display: block;
+  width: 1px;
+  background: var(--color-outline-dark);
+  position: absolute;
+  left: 0;
+  top: var(--space-xxxsmall);
+  bottom: var(--space-xxxsmall);
 }
 
 .dropdownGroupAnchor:hover,
@@ -31,6 +42,11 @@
 }
 
 /* explicit ControlGroup last item styles to override ariakit injected sibling nodes */
+.itemFirst {
+  border-top-left-radius: var(--radius-small) !important;
+  border-bottom-left-radius: var(--radius-small) !important;
+}
+
 .itemLast {
   border-top-right-radius: var(--radius-small) !important;
   border-bottom-right-radius: var(--radius-small) !important;
