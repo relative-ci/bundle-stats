@@ -33,7 +33,7 @@
 
 ## Description
 
-Analyze webpack stats(bundle size, assets, modules, packages) and compare the results between different builds.
+Analyze Gatsby bundle stats(bundle size, assets, modules, packages) and compare the results between different builds.
 
 ## How to install
 

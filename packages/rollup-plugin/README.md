@@ -10,7 +10,7 @@
 </p>
 <h1 align="center">BundleStats rollup plugin</h1>
 <p align="center">
-  Analyze rollup/rolldown stats(bundle size, assets, modules, packages) and compare the results between different builds.
+  Analyze rollup/rolldown bundle stats(bundle size, assets, modules, packages) and compare the results between different builds.
 </p>
 <p align="center">
   <a href="https://www.npmjs.com/package/rollup-plugin-bundle-stats"><img src="https://img.shields.io/npm/v/rollup-plugin-bundle-stats.svg" /></a>

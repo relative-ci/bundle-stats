@@ -8,7 +8,7 @@
 </p>
 <h1 align="center">BundleStats</h1>
 <p align="center">
-  Analyze webpack stats(bundle size, assets, modules, packages) and compare the results between different builds.
+  Analyze bundle stats(bundle size, assets, modules, packages) and compare the results between different builds. Support for webpack, rspack, vite, rollup and rolldown.
 </p>
 <p align="center">
   <a href="https://www.npmjs.com/package/bundle-stats"><img src="https://img.shields.io/npm/v/bundle-stats.svg" /></a>
