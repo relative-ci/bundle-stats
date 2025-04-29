@@ -50,7 +50,7 @@ interface UseRowsSort<TRow> {
 export const useRowsSort = <TRow>({
   rows,
   initialField = 'runs[0].delta',
-  initialDirection,
+  initialDirection = 'desc',
   getCustomSort,
   setQueryState,
 }: UseRowsSortParams<TRow>): UseRowsSort<TRow> => {
