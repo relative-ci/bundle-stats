@@ -10,7 +10,7 @@
 </p>
 <h1 align="center">BundleStats rollup plugin</h1>
 <p align="center">
-  Analyze rollup stats(bundle size, assets, modules, packages) and compare the results between different builds.
+  Analyze rollup/rolldown bundle stats(bundle size, assets, modules, packages) and compare the results between different builds.
 </p>
 <p align="center">
   <a href="https://www.npmjs.com/package/rollup-plugin-bundle-stats"><img src="https://img.shields.io/npm/v/rollup-plugin-bundle-stats.svg" /></a>
@@ -54,24 +54,6 @@ yarn add --dev rollup-plugin-bundle-stats
 
 ## Configure
 
-### Rollup
-```js
-// rollup.config.js
-const { bundleStats } = require('rollup-plugin-bundle-stats');
-
-module.exports = {
-  ...,
-  output: {
-    assetFileNames: 'assets/[name].[hash][extname]',
-    chunkFileNames: 'assets/[name].[hash].js',
-    entryFileNames: 'assets/[name].[hash].js',
-  },
-  plugins: [
-    bundleStats()
-  ]
-};
-```
-
 ### Vite
 ```js
 // vite.config.js
@@ -93,6 +75,45 @@ module.exports = {
   ]
 };
 ```
+
+### Rollup
+```js
+// rollup.config.js
+const { bundleStats } = require('rollup-plugin-bundle-stats');
+
+module.exports = {
+  ...,
+  output: {
+    assetFileNames: 'assets/[name].[hash][extname]',
+    chunkFileNames: 'assets/[name].[hash].js',
+    entryFileNames: 'assets/[name].[hash].js',
+  },
+  plugins: [
+    bundleStats()
+  ]
+};
+```
+
+### Rolldown
+
+```js
+// rolldown.config.js
+import { defineConfig } from 'rolldown';
+import { bundleStats } from 'rollup-plugin-bundle-stats';
+
+export default defineConfig({
+  ...,
+  output: {
+    assetFileNames: 'assets/[name].[hash][extname]',
+    chunkFileNames: 'assets/[name].[hash].js',
+    entryFileNames: 'assets/[name].[hash].js',
+  },
+  plugins: [
+    bundleStats()
+  ]
+});
+```
+
 
 [How to configure Vite for better debugging and monitoring](https://relative-ci.com/documentation/guides/vite-config)
 
@@ -138,7 +159,7 @@ CLI to generate bundle stats report.
 
 [![npm](https://img.shields.io/npm/v/bundle-stats-webpack-plugin)](https://www.npmjs.com/package/bundle-stats-webpack-plugin) [![npm](https://img.shields.io/npm/dm/bundle-stats-webpack-plugin)](https://www.npmjs.com/package/bundle-stats-webpack-plugin)
 
-Webpack plugin to generate bundle stats report.
+Webpack plugin to generate bundle stats report for webpack/rspack.
 
 ### [`gatsby-plugin-bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/gatsby-plugin)
 

@@ -40,7 +40,7 @@ CLI to generate bundle stats report.
 
 [![npm](https://img.shields.io/npm/v/bundle-stats-webpack-plugin)](https://www.npmjs.com/package/bundle-stats-webpack-plugin) [![npm](https://img.shields.io/npm/dm/bundle-stats-webpack-plugin)](https://www.npmjs.com/package/bundle-stats-webpack-plugin)
 
-Webpack plugin to generate bundle stats report.
+Webpack plugin to generate bundle stats report for webpack/rspack.
 
 ### [`gatsby-plugin-bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/gatsby-plugin)
 
@@ -58,4 +58,4 @@ Webpack plugin to generate bundle stats report.
 
 [![npm](https://img.shields.io/npm/v/rollup-plugin-bundle-stats)](https://www.npmjs.com/package/rollup-plugin-bundle-stats) [![npm](https://img.shields.io/npm/dm/rollup-plugin-bundle-stats)](https://www.npmjs.com/package/rollup-plugin-bundle-stats)
 
-Rollup plugin to generate bundle stats report.
+Rollup plugin to generate bundle stats report for vite/rolldown/rollup.
