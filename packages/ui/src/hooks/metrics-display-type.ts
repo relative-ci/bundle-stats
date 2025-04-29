@@ -4,7 +4,7 @@ import { StringParam, useQueryParams } from 'use-query-params';
 
 import { MetricsDisplayType, MetricsDisplayGroupBy } from '../constants';
 
-const DEFAULT_VALUE = MetricsDisplayType.TABLE;
+const DEFAULT_VALUE = MetricsDisplayType.TREEMAP;
 const GROUP_BY_DEFAULT = MetricsDisplayGroupBy.FOLDER;
 
 // Display type query param name

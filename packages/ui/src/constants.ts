@@ -42,8 +42,8 @@ export const SORT = {
 } as const;
 
 export enum MetricsDisplayType {
-  TABLE = 'table',
   TREEMAP = 'treemap',
+  TABLE = 'table',
 }
 
 export const MetricsDisplayTypeDefault = MetricsDisplayType.TABLE;
