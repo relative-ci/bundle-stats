@@ -5,6 +5,7 @@ import type { ReportMetricRow } from '@bundle-stats/utils';
 import { Stack } from '../../layout/stack';
 import { Tabs, TabItem } from '../../ui/tabs';
 import { PreviewSource } from '../preview-source';
+import css from './metrics-table-export.module.css';
 
 const generateSourceJSON = (items: Array<ReportMetricRow>): string => {
   const output = items.map((item) => ({
@@ -73,11 +74,12 @@ type MetricsTableExportProps = {
 
 export const MetricsTableExport = (props: MetricsTableExportProps) => {
   const { initialSourceType = SOURCE_KEYS[0], items, download, ...restProps } = props;
+
   const [selectedSourceType, setSelectedSourceType] = useState(initialSourceType);
 
   return (
     <Stack space="small" {...restProps}>
-      <Tabs>
+      <Tabs className={css.tabs}>
         {SOURCE_ENTRIES.map(([sourceId, source]) => (
           <TabItem
             onClick={() => setSelectedSourceType(sourceId)}

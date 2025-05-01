@@ -37,6 +37,10 @@
   display: none;
 }
 
+.headerTitle {
+  font-weight: bold;
+}
+
 .headerClose {
   position: absolute;
   right: var(--space-xxsmall);

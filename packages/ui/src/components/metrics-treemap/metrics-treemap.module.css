@@ -177,6 +177,7 @@
   flex: 0 1 auto;
   width: 100%;
   min-width: 0;
+  line-height: var(--line-height-heading);
   max-height: calc(2em * var(--line-height-heading)); /* render max 2 rows */
   overflow-wrap: break-word;
   word-wrap: break-word;

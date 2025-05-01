@@ -1,0 +1,4 @@
+.tabs {
+  /* adjust verticals spacing with the tab top padding */
+  margin-top: calc(0px - var(--space-xsmall)) !important;
+}
