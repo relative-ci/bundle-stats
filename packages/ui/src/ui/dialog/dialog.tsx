@@ -52,7 +52,7 @@ export const Dialog = (props: DialogProps) => {
       <Stack space="medium">
         {title && (
           <header className={css.header}>
-            {typeof title === 'string' ? <h2>{title}</h2> : title}
+            {typeof title === 'string' ? <h2 className={css.headerTitle}>{title}</h2> : title}
           </header>
         )}
         <div className={cx(css.content, className)}>{children}</div>
