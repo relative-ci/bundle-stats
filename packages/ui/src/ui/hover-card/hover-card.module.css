@@ -18,13 +18,13 @@
 
 .hoverCard {
   z-index: var(--layer-xxhigh);
-  padding: var(--space-small);
+  padding: var(--space-4x);
   border-radius: var(--radius-medium);
-  width: calc(100vw - 2 * var(--space-small));
+  width: calc(100vw - 2 * var(--space-4x));
   max-width: 340px;
   outline: none;
   filter: drop-shadow(var(--shadow-layer-high));
   will-change: filter;
-  background: var(--color-light);
+  background: var(--color-background);
   font-size: var(--size-small);
 }
