@@ -286,3 +286,10 @@
   --entry-info-width: 64rem;
   --entry-info-top: var(--header-height);
 }
+
+.no-motion {
+  --transition-duration-in: 0s;
+  --transition-duration-out: 0s;
+  --transition-in: none;
+  --transition-out: none;
+}
