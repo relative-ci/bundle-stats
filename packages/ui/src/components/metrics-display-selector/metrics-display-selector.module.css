@@ -17,11 +17,11 @@
   content: '';
   display: block;
   width: 1px;
-  background: var(--color-outline-dark);
+  background: var(--color-outline);
   position: absolute;
   left: 0;
-  top: var(--space-xxxsmall);
-  bottom: var(--space-xxxsmall);
+  top: var(--space);
+  bottom: var(--space);
 }
 
 .dropdownGroupAnchor:hover,
