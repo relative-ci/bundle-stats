@@ -21,11 +21,15 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const updateClassList = useCallback((newTheme: ThemeName) => {
     const htmlElm = document.querySelector('html');
 
+    htmlElm?.classList.add('no-motion');
+
     if (newTheme === 'dark') {
       htmlElm?.classList.replace('light-theme', 'dark-theme');
     } else {
       htmlElm?.classList.replace('dark-theme', 'light-theme');
     }
+
+    htmlElm?.classList.remove('no-motion');
   }, []);
 
   const updateTheme = useCallback((nextTheme: ThemeName) => {
