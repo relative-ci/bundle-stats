@@ -26,7 +26,7 @@
 }
 
 .root:focus {
-  border-color: var(--color-outline-dark);
+  border-color: var(--color-outline-intense);
   color: inherit;
   transition: var(--transition-out);
 }
