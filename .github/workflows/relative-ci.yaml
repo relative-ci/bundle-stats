@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send webpack stats and build information to RelativeCI
-        uses: relative-ci/agent-action@v3.0.0-beta
+        uses: relative-ci/agent-action@v3
         with:
           # RelativeCI project key
           key: ${{ secrets.RELATIVE_CI_KEY }}
