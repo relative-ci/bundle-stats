@@ -9,7 +9,7 @@ import {
 import merge from 'lodash/merge';
 import set from 'lodash/set';
 import type { Meta, StoryObj } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 /* eslint-disable import/no-relative-packages */
 import baselineStats from '../../../../../fixtures/webpack-stats.baseline.json';

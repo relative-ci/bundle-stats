@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { action } from '@storybook/addon-actions'; // eslint-disable-line import/no-extraneous-dependencies
+import { action } from 'storybook/actions'; // eslint-disable-line import/no-extraneous-dependencies
 
 import { getWrapperDecorator } from '../../stories';
 import { AssetInfo } from '.';

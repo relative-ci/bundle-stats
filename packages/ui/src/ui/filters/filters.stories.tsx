@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { action } from '@storybook/addon-actions'; // eslint-disable-line
+import { action } from 'storybook/actions'; // eslint-disable-line
 
 import { getWrapperDecorator } from '../../stories';
 import { Filters } from '.';
