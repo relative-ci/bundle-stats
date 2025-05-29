@@ -1,6 +1,6 @@
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 import { getWrapperDecorator } from '../../stories';
 import { ModuleInfo } from '.';

@@ -1,4 +1,4 @@
-import { action } from '@storybook/addon-actions'; // eslint-disable-line
+import { action } from 'storybook/actions'; // eslint-disable-line
 import { Meta, StoryObj } from '@storybook/react';
 
 import { MetricsDisplayType } from '../../constants';

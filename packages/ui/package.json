@@ -39,7 +39,6 @@
     "@babel/preset-env": "7.27.2",
     "@babel/preset-react": "7.27.1",
     "@babel/preset-typescript": "7.27.1",
-    "@storybook/addon-essentials": "8.6.14",
     "@storybook/addon-webpack5-compiler-babel": "3.0.6",
     "@storybook/react": "9.0.0",
     "@storybook/react-webpack5": "9.0.0",

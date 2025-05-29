@@ -32,7 +32,6 @@
     "@babel/preset-react": "7.27.1",
     "@bundle-stats/ui": "4.20.1",
     "@bundle-stats/utils": "4.20.1",
-    "@storybook/addon-essentials": "8.6.14",
     "@storybook/addon-webpack5-compiler-babel": "3.0.6",
     "@storybook/react": "9.0.0",
     "@storybook/react-webpack5": "9.0.0",
