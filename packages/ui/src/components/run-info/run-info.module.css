@@ -3,6 +3,7 @@
   font-weight: bold;
   font-size: var(--size-xsmall);
   text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .titleText {
@@ -27,6 +28,8 @@
   color: var(--color-heading);
   white-space: nowrap;
   font-weight: bold;
+  line-height: var(--line-height-number);
+  height: var(--line-height-number);
 }
 
 .delta {
@@ -43,19 +46,19 @@
 .baselineMetric {
   color: var(--color-text-ultra-light);
   font-size: var(--size-small);
+  line-height: var(--line-height-number);
+  height: var(--line-height-number);
 }
 
 /* Loading state */
 .loading.currentMetric {
   min-width: 0;
   max-width: 8em;
-  height: 1em;
 }
 
 .loading.baselineMetric {
   min-width: 0;
   max-width: 8em;
-  height: 1em;
 }
 
 /* Hover state */
@@ -84,10 +87,6 @@
 
 .large .currentMetric {
   font-size: var(--size-xxxlarge);
-}
-
-.large .baselineMetric {
-  font-size: var(--size-small);
 }
 
 .xlarge .currentMetric {
