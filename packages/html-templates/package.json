@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/html-templates",
-  "version": "4.20.1",
+  "version": "4.20.2",
   "description": "HTML templates for report generation.",
   "main": "index.js",
   "types": "types.d.ts",
@@ -30,8 +30,8 @@
     "@babel/core": "7.27.4",
     "@babel/preset-env": "7.27.2",
     "@babel/preset-react": "7.27.1",
-    "@bundle-stats/ui": "4.20.1",
-    "@bundle-stats/utils": "4.20.1",
+    "@bundle-stats/ui": "4.20.2",
+    "@bundle-stats/utils": "4.20.2",
     "@storybook/addon-webpack5-compiler-babel": "3.0.6",
     "@storybook/react": "9.0.2",
     "@storybook/react-webpack5": "9.0.2",
