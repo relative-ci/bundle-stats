@@ -24,3 +24,9 @@ updates:
       typescript-eslint:
         patterns:
           - "@typescript-eslint/*"
+      jest:
+        patterns:
+          - "jest"
+          - "jest-cli"
+          - "babel-jest"
+          - "jest-environment-jsdom"
