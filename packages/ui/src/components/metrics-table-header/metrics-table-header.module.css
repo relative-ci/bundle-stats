@@ -1,7 +1,7 @@
 /* columns */
 .root .col {
-  padding-top: var(--space-xxsmall);
-  padding-bottom: var(--space-xxsmall);
+  padding-top: var(--space-2x);
+  padding-bottom: var(--space-2x);
 }
 
 .root .metric {
@@ -10,7 +10,7 @@
 }
 
 .root .job {
-  padding-top: var(--space-xxsmall);
+  padding-top: var(--space-2x);
   text-align: right;
 }
 

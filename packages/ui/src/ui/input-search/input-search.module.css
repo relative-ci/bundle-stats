@@ -5,14 +5,14 @@
 }
 
 .input {
-  height: var(--space-large);
+  height: var(--space-8x);
 }
 
 .cancelButton {
   position: absolute;
-  right: var(--space-xxxsmall);
+  right: var(--space);
   top: 50%;
   transform: translateY(-50%);
-  padding: var(--space-xxxsmall);
+  padding: var(--space);
   background: radial-gradient(var(--color-background) 50%, transparent);
 }
