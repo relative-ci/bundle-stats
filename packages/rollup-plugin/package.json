@@ -52,7 +52,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "28.0.6",
     "@rollup/plugin-node-resolve": "16.0.1",
-    "@rollup/plugin-typescript": "12.1.2",
+    "@rollup/plugin-typescript": "12.1.3",
     "@tsconfig/node16": "16.1.4",
     "@types/jest": "29.5.14",
     "core-js": "3.43.0",
