@@ -6,39 +6,39 @@
 
 /** Space variation */
 .space--xxxsmall {
-  gap: var(--space-xxxsmall);
+  gap: var(--space);
 }
 
 .space--xxsmall {
-  gap: var(--space-xxsmall);
+  gap: var(--space-2x);
 }
 
 .space--xsmall {
-  gap: var(--space-xsmall);
+  gap: var(--space-3x);
 }
 
 .space--small {
-  gap: var(--space-small);
+  gap: var(--space-4x);
 }
 
 .space--medium {
-  gap: var(--space-medium);
+  gap: var(--space-6x);
 }
 
 .space--large {
-  gap: var(--space-large);
+  gap: var(--space-8x);
 }
 
 .space--xlarge {
-  gap: var(--space-xlarge);
+  gap: var(--space-10x);
 }
 
 .space--xxlarge {
-  gap: var(--space-xxlarge);
+  gap: var(--space-12x);
 }
 
 .space--xxxlarge {
-  gap: var(--space-xxxlarge);
+  gap: var(--space-16x);
 }
 
 /** Align items variation */

@@ -9,7 +9,7 @@
 }
 
 .assetNameTagEntry {
-  background: var(--color-info-dark);
+  background: var(--color-info-intense);
 }
 
 .assetNameTagInitial {
@@ -17,7 +17,7 @@
 }
 
 .assetNameTagChunk {
-  background: var(--color-info-light);
+  background: var(--color-info-muted);
 }
 
 .label {
@@ -32,7 +32,7 @@
 .runNameTags {
   display: flex;
   align-items: center;
-  gap: calc(var(--space-xxxsmall) / 2);
+  gap: calc(var(--space) / 2);
 }
 
 .runNameTags:empty {

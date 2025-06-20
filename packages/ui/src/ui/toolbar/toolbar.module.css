@@ -3,7 +3,7 @@
 .content {}
 
 .actions {
-  margin-top: var(--space-xsmall);
+  margin-top: var(--space-3x);
   display: flex;
   align-items: center;
 }
@@ -13,7 +13,7 @@
 }
 
 .action + .action {
-  margin-left: var(--space-xsmall);
+  margin-left: var(--space-3x);
 }
 
 @media (min-width: 768px) {
@@ -28,7 +28,7 @@
 
   .actions {
     margin-top: 0;
-    margin-left: var(--space-small);
+    margin-left: var(--space-4x);
     flex: 0 0 auto;
   }
 }

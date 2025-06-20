@@ -5,8 +5,8 @@
 .toolbar {
   position: absolute;
   z-index: 2;
-  top: var(--space-xsmall);
-  right: var(--space-xsmall);
+  top: var(--space-3x);
+  right: var(--space-3x);
   background: var(--color-background);
   border-radius: var(--radius-medium);
 }

@@ -9,8 +9,8 @@
   border: 0;
   position: relative;
   display: inline-block;
-  padding: var(--space-xsmall) var(--space-small);
-  color: var(--color-text-ultra-light);
+  padding: var(--space-3x) var(--space-4x);
+  color: var(--color-text-ultra-muted);
   font-weight: bold;
   text-decoration: none;
   transition: var(--ui-transition-out);

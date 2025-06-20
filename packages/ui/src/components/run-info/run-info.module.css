@@ -1,5 +1,5 @@
 .title {
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-ultra-muted);
   font-weight: bold;
   font-size: var(--size-xsmall);
   text-transform: uppercase;
@@ -15,13 +15,13 @@
 }
 
 .titleIcon {
-  flex: 0 0 var(--space-small);
+  flex: 0 0 var(--space-4x);
   margin-top: -3px !important;
   margin-bottom: -3px !important;
 }
 
 .title + .info {
-  margin-top: var(--space-xxsmall);
+  margin-top: var(--space-2x);
 }
 
 .currentMetric {
@@ -37,14 +37,14 @@
 }
 
 .deltaValue + .deltaValue::before {
-  margin-left: calc(var(--space-xxxsmall) / 2);
-  margin-right: calc(var(--space-xxxsmall) / 2);
+  margin-left: calc(var(--space) / 2);
+  margin-right: calc(var(--space) / 2);
   content: '/';
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-ultra-muted);
 }
 
 .baselineMetric {
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-muted);
   font-size: var(--size-small);
   line-height: var(--line-height-number);
   height: var(--line-height-number);
