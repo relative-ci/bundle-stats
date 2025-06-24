@@ -29,12 +29,12 @@
   outline: none;
   border: 0;
   border-radius: var(--radius-small);
-  padding: var(--space-xxxsmall) calc(var(--space-xxxsmall) + var(--space-xxxsmall) / 2);
+  padding: calc(var(--space-xxxsmall) + var(--space-xxxsmall) / 2);
   background: none;
   text-align: left;
   color: var(--color-text-light);
   font-size: var(--size-small);
-  line-height: inherit;
+  line-height: var(--line-height);
   text-decoration: none;
   cursor: default;
 }
