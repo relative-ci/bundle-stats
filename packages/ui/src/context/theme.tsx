@@ -1,6 +1,10 @@
 import type { ReactNode } from 'react';
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useCookie } from 'react-use';
+import { wait } from '@bundle-stats/utils';
+
+// classList required timeout to allow to disable motion during the switch
+const CLASSLIST_UPDATE_TIMEOUT = 10;
 
 type ThemeName = 'light' | 'dark';
 
@@ -18,16 +22,20 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [cookieValue, setCookieValue] = useCookie('theme');
   const [name, setName] = useState<ThemeName>(cookieValue === 'dark' ? 'dark' : 'light');
 
-  const updateClassList = useCallback((newTheme: ThemeName) => {
+  const updateClassList = useCallback(async (newTheme: ThemeName) => {
     const htmlElm = document.querySelector('html');
 
     htmlElm?.classList.add('no-motion');
+
+    await wait(CLASSLIST_UPDATE_TIMEOUT);
 
     if (newTheme === 'dark') {
       htmlElm?.classList.replace('light-theme', 'dark-theme');
     } else {
       htmlElm?.classList.replace('dark-theme', 'light-theme');
     }
+
+    await wait(CLASSLIST_UPDATE_TIMEOUT);
 
     htmlElm?.classList.remove('no-motion');
   }, []);
