@@ -8,6 +8,11 @@ const CLASSLIST_UPDATE_TIMEOUT = 10;
 
 type ThemeName = 'light' | 'dark';
 
+const getCurrentTheme = (): ThemeName => {
+  const { matches } = window.matchMedia('(prefers-color-scheme: dark)');
+  return matches ? 'dark' : 'light';
+};
+
 type ThemeContextProps = {
   name: ThemeName;
   update: (newTheme: ThemeName) => void;
@@ -20,7 +25,7 @@ const ThemeContext = createContext<ThemeContextProps>({
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [cookieValue, setCookieValue] = useCookie('theme');
-  const [name, setName] = useState<ThemeName>(cookieValue === 'dark' ? 'dark' : 'light');
+  const [name, setName] = useState<ThemeName>((cookieValue as ThemeName) || getCurrentTheme());
 
   const updateClassList = useCallback(async (newTheme: ThemeName) => {
     const htmlElm = document.querySelector('html');
@@ -30,9 +35,11 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     await wait(CLASSLIST_UPDATE_TIMEOUT);
 
     if (newTheme === 'dark') {
-      htmlElm?.classList.replace('light-theme', 'dark-theme');
+      htmlElm?.classList.remove('light-theme');
+      htmlElm?.classList.add('dark-theme');
     } else {
-      htmlElm?.classList.replace('dark-theme', 'light-theme');
+      htmlElm?.classList.remove('dark-theme');
+      htmlElm?.classList.add('light-theme');
     }
 
     await wait(CLASSLIST_UPDATE_TIMEOUT);
