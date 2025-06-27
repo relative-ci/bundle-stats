@@ -1,5 +1,5 @@
 .title {
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 .toolbarSearch {
@@ -13,7 +13,7 @@
 
 .packageName {
   display: inline-block;
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 .packageName:last-child {
@@ -22,13 +22,13 @@
 
 .packageName + .packageName::before {
   display: inline-block;
-  margin: 0 var(--space-xxxsmall);
+  margin: 0 var(--space);
   content: '/';
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-ultra-muted);
 }
 
 .packageNameTagDuplicate {
-  margin-right: var(--space-xxxsmall);
+  margin-right: var(--space);
   vertical-align: middle;
 }
 

@@ -1,5 +1,5 @@
 .customTooltip {
-  padding: var(--space-large);
+  padding: var(--space-8x);
   color: var(--color-danger);
   font-size: var(--size-large);
   text-align: left;
