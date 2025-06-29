@@ -10,14 +10,14 @@ export default {
   CURRENT: 'current',
   BASELINE: 'baseline',
 
-  READ_MORE: 'Read more',
+  LEARN_MORE: 'Learn more about the metrics and data',
 
-  ASSETS_INFO: 'Asset size - the size of the file produced by the bundler',
-  ASSET_TOTALS_INFO: 'The total size of the assets produce by the bundler, by file type',
+  ASSETS_INFO: 'Asset size - size of the file outputted by the bundler',
+  ASSET_TOTALS_INFO: 'The total size of the assets outputted by the bundler, by file type',
   MODULES_INFO:
-    'Module size - module source size before any production optimization(ex: minification)',
+    'Module size - the module size(source or transformed) before any production optimization(module hoisting, tree-shaking, minification, etc.)',
   PACKAGES_INFO:
-    "Package size - the total package's module size before any production optimization(ex: minification)",
+    "Package size - the total package's module size(source or transformed) before any production optimization(module hoisting, tree-shaking, minification, etc.)",
 
   RESET_FILTERS: 'Reset filters',
   VIEW_ALL: 'View all entries',

@@ -24,12 +24,17 @@ export const MetricsTableTitle = (props) => {
             label={<Icon glyph={Icon.ICONS.HELP} className={css.anchorIcon} />}
             anchorClassName={css.anchor}
           >
-            <Stack space="xxxsmall">
+            <Stack space="xxsmall">
               {popoverInfo && <p>{popoverInfo}</p>}
               {popoverHref && (
                 <p>
-                  <Button kind="primary" type="button" onClick={() => window.open(popoverHref)}>
-                    {I18N.READ_MORE}
+                  <Button
+                    kind="primary"
+                    type="button"
+                    onClick={() => window.open(popoverHref)}
+                    className={css.readMore}
+                  >
+                    {I18N.LEARN_MORE}
                   </Button>
                 </p>
               )}
