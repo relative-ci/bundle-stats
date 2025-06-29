@@ -23,3 +23,8 @@
   font-family: var(--font-family-fixed);
   font-weight: normal;
 }
+
+.readMore {
+  cursor: pointer;
+  text-decoration: underline;
+}

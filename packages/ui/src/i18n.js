@@ -10,10 +10,10 @@ export default {
   CURRENT: 'current',
   BASELINE: 'baseline',
 
-  READ_MORE: 'Read more',
+  LEARN_MORE: 'Learn more about the metrics and data',
 
-  ASSETS_INFO: 'Asset size - size of the file outputed by the bundler',
-  ASSET_TOTALS_INFO: 'The total size of the assets outputed by the bundler, by file type',
+  ASSETS_INFO: 'Asset size - size of the file outputted by the bundler',
+  ASSET_TOTALS_INFO: 'The total size of the assets outputted by the bundler, by file type',
   MODULES_INFO:
     'Module size - the module size(source or transformed) before any production optimization(module hoisting, tree-shaking, minification, etc.)',
   PACKAGES_INFO:
