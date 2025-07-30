@@ -171,7 +171,7 @@
   --color-background-rgba: 17, 17, 17;
   --color-background: rgba(var(--color-background-rgba), 1);
   --color-backdrop: rgba(255, 255, 255, 0.05);
-  --color-shadow: rgba(255, 255, 255, 0.15);
+  --color-shadow: rgba(0, 0, 0, 0.6);
 }
 
 :root {
