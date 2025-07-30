@@ -1,17 +1,7 @@
 import type { ReactNode } from 'react';
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import { useCookie } from 'react-use';
-import { wait } from '@bundle-stats/utils';
 
-// classList required timeout to allow to disable motion during the switch
-const CLASSLIST_UPDATE_TIMEOUT = 10;
-
-type ThemeName = 'light' | 'dark';
-
-const getCurrentTheme = (): ThemeName => {
-  const { matches } = window.matchMedia('(prefers-color-scheme: dark)');
-  return matches ? 'dark' : 'light';
-};
+import { getCurrentTheme, switchTheme, useCookieTheme, type ThemeName } from '../utils/theme';
 
 type ThemeContextProps = {
   name: ThemeName;
@@ -23,47 +13,35 @@ const ThemeContext = createContext<ThemeContextProps>({
   update: () => {},
 });
 
-export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [cookieValue, setCookieValue] = useCookie('theme');
-  const [name, setName] = useState<ThemeName>((cookieValue as ThemeName) || getCurrentTheme());
+export type ThemeProviderProps = {
+  children: ReactNode;
+};
 
-  const updateClassList = useCallback(async (newTheme: ThemeName) => {
-    const htmlElm = document.querySelector('html');
+export const ThemeProvider = (props: ThemeProviderProps) => {
+  const { children } = props;
 
-    htmlElm?.classList.add('no-motion');
+  const [cookieValue, setCookieValue] = useCookieTheme();
+  const [theme, setTheme] = useState<ThemeName>((cookieValue as ThemeName) || getCurrentTheme());
 
-    await wait(CLASSLIST_UPDATE_TIMEOUT);
+  const updateTheme = useCallback(
+    (nextTheme: ThemeName) => {
+      setCookieValue(nextTheme);
+      switchTheme(nextTheme);
+    },
+    [setTheme, setCookieValue],
+  );
 
-    if (newTheme === 'dark') {
-      htmlElm?.classList.remove('light-theme');
-      htmlElm?.classList.add('dark-theme');
-    } else {
-      htmlElm?.classList.remove('dark-theme');
-      htmlElm?.classList.add('light-theme');
-    }
-
-    await wait(CLASSLIST_UPDATE_TIMEOUT);
-
-    htmlElm?.classList.remove('no-motion');
-  }, []);
-
-  const updateTheme = useCallback((nextTheme: ThemeName) => {
-    setName(nextTheme);
-    updateClassList(nextTheme);
-    setCookieValue(nextTheme);
-  }, []);
-
-  // Sync classList
+  // Sync classNames on load
   useEffect(() => {
-    updateClassList(name);
-  }, [name]);
+    switchTheme(theme);
+  }, [theme]);
 
   const value = useMemo(
     () => ({
-      name,
+      name: theme,
       update: updateTheme,
     }),
-    [name, updateTheme],
+    [theme, updateTheme],
   );
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
