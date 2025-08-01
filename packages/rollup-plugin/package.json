@@ -46,7 +46,7 @@
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/rollup-plugin#readme",
   "dependencies": {
     "@bundle-stats/cli-utils": "^4.21.1",
-    "rollup-plugin-webpack-stats": "2.1.0",
+    "rollup-plugin-webpack-stats": "2.1.1",
     "tslib": "2.8.1"
   },
   "devDependencies": {
