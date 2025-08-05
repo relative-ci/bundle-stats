@@ -49,7 +49,7 @@
     "lodash": "4.17.21",
     "regenerator-runtime": "0.14.1",
     "rimraf": "6.0.1",
-    "ts-jest": "29.4.0",
+    "ts-jest": "29.4.1",
     "typescript": "5.9.2"
   },
   "peerDependencies": {
