@@ -1,11 +1,30 @@
 {
-  "extends": "@tsconfig/node16/tsconfig.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "noEmit": false,
-    "module": "Node16",
+    /* dirs */
+    "rootDir": "./src",
+    "declarationDir": "./lib/types",
+    "types": ["node", "jest"],
+    /* module config */
+    "target": "es2020",
+    "lib": ["es2020", "es2022.error"],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    /* behaviour options */
+    "strict": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true,
     "declaration": true,
-    "declarationDir": "./lib",
+    "sourceMap": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["**/*.test.ts"]
+  "include": ["src"],
+  "exclude": ["node_modules", "lib"]
 }
