@@ -66,14 +66,18 @@
     "typescript": "5.9.2"
   },
   "peerDependencies": {
+    "rolldown": "^1.0.0-beta.0",
     "rollup": "^3.0.0 || ^4.0.0",
     "vite": "^5.0.0 || ^6.0.0 || ^7.0.0"
   },
   "peerDependenciesMeta": {
-    "vite": {
+    "rolldown": {
       "optional": true
     },
     "rollup": {
+      "optional": true
+    },
+    "vite": {
       "optional": true
     }
   }
