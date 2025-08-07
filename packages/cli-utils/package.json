@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/cli-utils",
-  "version": "4.21.1",
+  "version": "4.21.2",
   "description": "BundleStats CLI utilities",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
@@ -37,9 +37,9 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/cli-utils#readme",
   "dependencies": {
-    "@bundle-stats/html-templates": "^4.21.1",
-    "@bundle-stats/plugin-webpack-filter": "^4.21.1",
-    "@bundle-stats/utils": "^4.21.1",
+    "@bundle-stats/html-templates": "^4.21.2",
+    "@bundle-stats/plugin-webpack-filter": "^4.21.2",
+    "@bundle-stats/utils": "^4.21.2",
     "find-cache-dir": "^3.1.0",
     "lodash": "^4.17.21",
     "stream-chain": "^3.0.1",
