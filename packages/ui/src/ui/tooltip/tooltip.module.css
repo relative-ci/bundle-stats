@@ -11,7 +11,7 @@
 }
 
 .tooltip {
-  z-index: var(--layer-xxhigh);
+  z-index: var(--layer-high);
   padding: var(--space-xxxsmall) var(--space-xxsmall);
   border-radius: var(--radius-small);
   background: var(--color-text);

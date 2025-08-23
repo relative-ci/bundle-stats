@@ -17,7 +17,7 @@
 }
 
 .hoverCard {
-  z-index: var(--layer-xxhigh);
+  z-index: var(--layer-high);
   padding: var(--space-small);
   border-radius: var(--radius-medium);
   width: calc(100vw - 2 * var(--space-small));
