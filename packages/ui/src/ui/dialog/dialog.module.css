@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 99999 !important;
+  z-index: var(--layer-xxhigh);
 }
 
 .backdrop::before {
@@ -13,7 +13,6 @@
   width: 100%;
   height: 100%;
   background: var(--color-backdrop);
-  filter:
 }
 
 .dialog {
@@ -27,6 +26,7 @@
   padding: var(--dialog-padding);
   background: var(--color-background);
   box-shadow: 0 0 var(--space-medium) var(--color-shadow);
+  z-index: var(--layer-xxhigh);
 }
 
 .header {

@@ -188,8 +188,10 @@
   --layer-xlow: 1;
   --layer-low: 10;
   --layer: 100;
+  /** for components with overlays (tooltips, hovercards) */
   --layer-high: 1000;
   --layer-xhigh: 10000;
+  /** for dialogs/modals */
   --layer-xxhigh: 100000;
 
   --shadow-layer: 0 0 var(--space-xxxsmall) var(--color-shadow);
