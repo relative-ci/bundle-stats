@@ -58,7 +58,7 @@
     "boxen": "^5.0.0",
     "core-js": "^3.21.0",
     "fs-extra": "^11.0.0",
-    "listr2": "^5.0.1",
+    "listr2": "^9.0.4",
     "lodash": "^4.17.0",
     "update-notifier": "^5.0.0",
     "yargs": "^17.4.0"
