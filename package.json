@@ -41,7 +41,7 @@
     "eslint-plugin-react-hooks": "4.6.2",
     "husky": "9.1.7",
     "lerna": "8.2.4",
-    "lint-staged": "16.1.6",
+    "lint-staged": "16.2.0",
     "prettier": "3.6.2",
     "rimraf": "6.0.1",
     "react-is": "^18.3.1",
