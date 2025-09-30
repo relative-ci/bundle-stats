@@ -206,15 +206,15 @@ The option can be disabled using `--no-compare` option.
 
 ### :cyclone: [relative-ci.com](https://relative-ci.com?utm_medium=bundle-stats-cli)
 
-#### Optimize your web app's performance with automated bundle stats analysis and monitoring.
+#### Automated bundle analysis, reviews and monitoring - Quickly identify and fix bundle regressions before shipping to production.
 
 - :crystal_ball: In-depth bundle stats analysis for every build
 - :chart_with_upwards_trend: Monitor bundle stats changes and identify opportunities for optimizations
-- :bell: [Rule based automated review flow](https://relative-ci.com/documentation/setup/configure/integrations/github-commit-status-review?utm_medium=bundle-stats-cli), or get notified via [GitHub Pull Request comments](https://relative-ci.com/documentation/setup/configure/integrations/github-pull-request-comment?utm_medium=bundle-stats-cli), [GitHub check reports](https://relative-ci.com/documentation/setup/configure/integrations/github-check-report?utm_medium=bundle-stats-cli) and [Slack messages](https://relative-ci.com/documentation/setup/configure/integrations/slack-notification?utm_medium=bundle-stats-cli)
-- :wrench: Support for **webpack** and beta support for **Vite**/**Rollup**
+- :bell: Quick feedback with [rule based automated review flow](https://relative-ci.com/documentation/setup/configure/integrations/github-commit-status-review?utm_medium=bundle-stats-cli), [GitHub Pull Request comments](https://relative-ci.com/documentation/setup/configure/integrations/github-pull-request-comment?utm_medium=bundle-stats-cli), [GitHub check reports](https://relative-ci.com/documentation/setup/configure/integrations/github-check-report?utm_medium=bundle-stats-cli), or [Slack messages](https://relative-ci.com/documentation/setup/configure/integrations/slack-notification?utm_medium=bundle-stats-cli)
+- :wrench: Support for **webpack**, **vite**, **rspack**, **rollup**, **rolldown**
 - :hammer: Support for all major CI services(CircleCI, GitHub Actions, Gitlab CI, Jenkins, Travis CI)
 - :nut_and_bolt: Support for **npm**, **yarn** and **pnpm**; support for monorepos
-- :two_hearts: **Always free** for **Open Source**
+- :two_hearts: [**Always free** for **Open Source**](https://relative-ci.com/open-source?utm_medium=bundle-stats-cli)
 
 [:rocket: Get started](https://relative-ci.com?utm_medium=bundle-stats-cli)
 
