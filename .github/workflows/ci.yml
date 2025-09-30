@@ -303,5 +303,4 @@ jobs:
 
       - run: npm run release
         env:
-          NPM_CONFIG_PROVENANCE: true
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
