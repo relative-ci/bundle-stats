@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-bundle-stats",
-  "version": "4.21.3",
+  "version": "4.21.4",
   "description": "In-depth bundle analyzer for rollup(bundle size, assets, modules, packages)",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -45,7 +45,7 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/rollup-plugin#readme",
   "dependencies": {
-    "@bundle-stats/cli-utils": "^4.21.3",
+    "@bundle-stats/cli-utils": "^4.21.4",
     "rollup-plugin-webpack-stats": "2.1.5",
     "tslib": "2.8.1"
   },

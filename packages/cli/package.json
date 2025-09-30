@@ -1,6 +1,6 @@
 {
   "name": "bundle-stats",
-  "version": "4.21.3",
+  "version": "4.21.4",
   "description": "In-depth bundle analyzer for webpack(bundle size, assets, modules, packages)",
   "bin": {
     "bundle-stats": "bin/index.js"
@@ -51,10 +51,10 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/cli#readme",
   "dependencies": {
-    "@bundle-stats/cli-utils": "^4.21.3",
-    "@bundle-stats/plugin-webpack-filter": "^4.21.3",
-    "@bundle-stats/plugin-webpack-validate": "^4.21.3",
-    "@bundle-stats/utils": "^4.21.3",
+    "@bundle-stats/cli-utils": "^4.21.4",
+    "@bundle-stats/plugin-webpack-filter": "^4.21.4",
+    "@bundle-stats/plugin-webpack-validate": "^4.21.4",
+    "@bundle-stats/utils": "^4.21.4",
     "boxen": "^5.0.0",
     "core-js": "^3.21.0",
     "fs-extra": "^11.0.0",
