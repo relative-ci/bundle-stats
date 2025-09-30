@@ -48,7 +48,7 @@
     "babel-plugin-require-context-hook": "1.0.0",
     "classnames": "2.5.1",
     "colormap": "2.3.2",
-    "cross-env": "10.0.0",
+    "cross-env": "10.1.0",
     "hex-rgb": "5.0.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "29.7.0",
