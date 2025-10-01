@@ -55,7 +55,7 @@
     "rimraf": "6.0.1",
     "rollup": "4.52.3",
     "ts-jest": "29.4.4",
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   },
   "dependencies": {
     "tslib": "2.8.1"
