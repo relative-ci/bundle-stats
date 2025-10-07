@@ -86,5 +86,10 @@ Webpack plugin to generate bundle stats report for webpack/rspack.
 ### [`rollup-plugin-bundle-stats`](https://github.com/relative-ci/bundle-stats/tree/master/packages/rollup-plugin)
 
 [![npm](https://img.shields.io/npm/v/rollup-plugin-bundle-stats)](https://www.npmjs.com/package/rollup-plugin-bundle-stats) [![npm](https://img.shields.io/npm/dm/rollup-plugin-bundle-stats)](https://www.npmjs.com/package/rollup-plugin-bundle-stats)
+## Change summary
+
+- Updated the Webpack duplicate-code metric to report duplicate module size in bytes instead of percentages.
+- Adjusted metric configuration to use file-size formatting and treat higher duplicate values as regressions.
+- Refreshed extractor tests, duplicate-package insights, and report snapshots to align with the new byte-based metric.
 
 Rollup plugin to generate bundle stats report for vite/rolldown/rollup.
