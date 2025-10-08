@@ -66,6 +66,12 @@
 .tileGroup {
   transition: var(--transition-out);
   transition-property: background-color, outline;
+  border-radius: var(--radius-xsmall);
+}
+
+.tileGroup--minimal,
+.tileGroup--small {
+  border-radius: calc(var(--radius-xsmall) / 2);
 }
 
 .tileGroup--minimal .tileGroupTitle,
@@ -132,6 +138,7 @@
   border: 0;
   border-radius: 0;
   padding: 0;
+  border-radius: calc(var(--radius-xsmall) / 2);
   background: var(--color-background);
   display: flex;
   align-items: center;
