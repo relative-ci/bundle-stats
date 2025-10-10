@@ -47,7 +47,7 @@
     "@rollup/plugin-typescript": "12.1.4",
     "@types/jest": "29.5.14",
     "@types/webpack": "5.28.5",
-    "core-js": "3.45.1",
+    "core-js": "3.46.0",
     "jest": "29.7.0",
     "jest-cli": "29.7.0",
     "jest-date-mock": "1.0.10",
