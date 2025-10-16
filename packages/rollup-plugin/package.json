@@ -50,7 +50,7 @@
     "tslib": "2.8.1"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "28.0.7",
+    "@rollup/plugin-commonjs": "28.0.8",
     "@rollup/plugin-node-resolve": "16.0.3",
     "@rollup/plugin-typescript": "12.1.4",
     "@tsconfig/node16": "16.1.5",
