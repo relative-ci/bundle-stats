@@ -13,7 +13,7 @@
   border: var(--border-width) solid transparent;
   background: none;
   transition: var(--transition-out);
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-muted);
   font-family: var(--font-family);
   white-space: nowrap;
 }
@@ -26,7 +26,7 @@ a.root {
 .root:active,
 .root:focus {
   outline: none;
-  color: var(--color-text-light);
+  color: var(--color-text);
   transition: var(--transition-in);
 }
 
@@ -49,7 +49,7 @@ a.root {
 .primary:hover,
 .primary:active,
 .primary:focus {
-  color: var(--color-primary-dark);
+  color: var(--color-primary-intense);
 }
 
 .secondary {
@@ -59,7 +59,7 @@ a.root {
 .secondary:hover,
 .secondary:active,
 .secondary:focus {
-  color: var(--color-secondary-dark);
+  color: var(--color-secondary-intense);
 }
 
 .danger {
@@ -69,7 +69,7 @@ a.root {
 .danger:hover,
 .danger:active,
 .danger:focus {
-  color: var(--color-danger-dark);
+  color: var(--color-danger-intense);
 }
 
 .warning {
@@ -79,7 +79,7 @@ a.root {
 .warning:hover,
 .warning:active,
 .warning:focus {
-  color: var(--color-warning-dark);
+  color: var(--color-warning-intense);
 }
 
 .info {
@@ -89,7 +89,7 @@ a.root {
 .info:hover,
 .info:active,
 .info:focus {
-  color: var(--color-info-dark);
+  color: var(--color-info-intense);
 }
 
 .success {
@@ -99,21 +99,21 @@ a.root {
 .success:hover,
 .success:active,
 .success:focus {
-  color: var(--color-success-dark);
+  color: var(--color-success-intense);
 }
 
 /**
  * Solid Kind variation
  */
 .solid {
-  background: var(--color-text-ultra-light);
+  background: var(--color-text-ultra-muted);
   color: var(--color-background);
 }
 
 .solid:hover,
 .solid:active,
 .solid:focus {
-  background: var(--color-text-light);
+  background: var(--color-text-muted);
   color: var(--color-background);
 }
 
@@ -124,7 +124,7 @@ a.root {
 .solid--primary:hover,
 .solid--primary:active,
 .solid--primary:focus {
-  background: var(--color-primary-dark);
+  background: var(--color-primary-intense);
 }
 
 .solid--secondary {
@@ -134,7 +134,7 @@ a.root {
 .solid--secondary:hover,
 .solid--secondary:active,
 .solid--secondary:focus {
-  background: var(--color-secondary-dark);
+  background: var(--color-secondary-intense);
 }
 
 .solid--danger {
@@ -144,7 +144,7 @@ a.root {
 .solid--danger:hover,
 .solid--danger:active,
 .solid--danger:focus {
-  background: var(--color-danger-dark);
+  background: var(--color-danger-intense);
 }
 
 .solid--warning {
@@ -154,7 +154,7 @@ a.root {
 .solid--warning:hover,
 .solid--warning:active,
 .solid--warning:focus {
-  background: var(--color-warning-dark);
+  background: var(--color-warning-intense);
 }
 
 .solid--info {
@@ -164,7 +164,7 @@ a.root {
 .solid--info:hover,
 .solid--info:active,
 .solid--info:focus {
-  background: var(--color-info-dark);
+  background: var(--color-info-intense);
 }
 
 .solid--success {
@@ -174,7 +174,7 @@ a.root {
 .solid--success:hover,
 .solid--success:active,
 .solid--success:focus {
-  background: var(--color-success-dark);
+  background: var(--color-success-intense);
 }
 
 /**
@@ -227,7 +227,7 @@ a.root {
 .outline:hover,
 .outline:active,
 .outline:focus {
-  border-color: var(--color-outline-dark);
+  border-color: var(--color-outline-intense);
 }
 
 .outline--primary {
@@ -237,7 +237,7 @@ a.root {
 .outline--primary:hover,
 .outline--primary:active,
 .outline--primary:focus {
-  border-color: var(--color-outline-primary-dark);
+  border-color: var(--color-outline-primary-intense);
 }
 
 .outline--secondary {
@@ -247,7 +247,7 @@ a.root {
 .outline--secondary:hover,
 .outline--secondary:active,
 .outline--secondary:focus {
-  border-color: var(--color-outline-secondary-dark);
+  border-color: var(--color-outline-secondary-intense);
 }
 
 .outline--danger {
@@ -257,7 +257,7 @@ a.root {
 .outline--danger:hover,
 .outline--danger:active,
 .outline--danger:focus {
-  border-color: var(--color-outline-danger-dark);
+  border-color: var(--color-outline-danger-intense);
 }
 
 .outline--warning {
@@ -267,7 +267,7 @@ a.root {
 .outline--warning:hover,
 .outline--warning:active,
 .outline--warning:focus {
-  border-color: var(--color-outline-warning-dark);
+  border-color: var(--color-outline-warning-intense);
 }
 
 .outline--info {
@@ -277,7 +277,7 @@ a.root {
 .outline--info:hover,
 .outline--info:active,
 .outline--info:focus {
-  border-color: var(--color-outline-info-dark);
+  border-color: var(--color-outline-info-intense);
 }
 
 .outline--success {
@@ -287,7 +287,7 @@ a.root {
 .outline--success:hover,
 .outline--success:active,
 .outline--success:focus {
-  border-color: var(--color-outline-success-dark);
+  border-color: var(--color-outline-success-intense);
 }
 
 
