@@ -64,7 +64,7 @@ jobs:
         uses: relative-ci/.github/actions/setup-node-npm@v1.1.5
 
       - name: Download build files
-        uses: actions/download-artifact@v5.0.0
+        uses: actions/download-artifact@v6.0.0
         with:
           name: build-artifacts
 
@@ -82,7 +82,7 @@ jobs:
         uses: relative-ci/.github/actions/setup-node-npm@v1.1.5
 
       - name: Download build files
-        uses: actions/download-artifact@v5.0.0
+        uses: actions/download-artifact@v6.0.0
         with:
           name: build-artifacts
 
@@ -100,7 +100,7 @@ jobs:
         uses: relative-ci/.github/actions/setup-node-npm@v1.1.5
 
       - name: Download build files
-        uses: actions/download-artifact@v5.0.0
+        uses: actions/download-artifact@v6.0.0
         with:
           name: build-artifacts
 
@@ -133,12 +133,12 @@ jobs:
           install: false
 
       - name: Download build files
-        uses: actions/download-artifact@v5.0.0
+        uses: actions/download-artifact@v6.0.0
         with:
           name: build-artifacts
 
       - name: Download local registry files
-        uses: actions/download-artifact@v5.0.0
+        uses: actions/download-artifact@v6.0.0
         with:
           name: local-registry
 
@@ -193,12 +193,12 @@ jobs:
           install: false
 
       - name: Download build files
-        uses: actions/download-artifact@v5.0.0
+        uses: actions/download-artifact@v6.0.0
         with:
           name: build-artifacts
 
       - name: Download local registry files
-        uses: actions/download-artifact@v5.0.0
+        uses: actions/download-artifact@v6.0.0
         with:
           name: local-registry
 
@@ -245,12 +245,12 @@ jobs:
           install: false
 
       - name: Download build files
-        uses: actions/download-artifact@v5.0.0
+        uses: actions/download-artifact@v6.0.0
         with:
           name: build-artifacts
 
       - name: Download local registry files
-        uses: actions/download-artifact@v5.0.0
+        uses: actions/download-artifact@v6.0.0
         with:
           name: local-registry
 
@@ -297,7 +297,7 @@ jobs:
         uses: relative-ci/.github/actions/setup-node-npm@v1.1.5
 
       - name: Download build
-        uses: actions/download-artifact@v5.0.0
+        uses: actions/download-artifact@v6.0.0
         with:
           name: build-artifacts
 
