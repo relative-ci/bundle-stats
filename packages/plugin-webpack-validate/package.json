@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/plugin-webpack-validate",
-  "version": "4.21.4",
+  "version": "4.21.6",
   "description": "BundleStats webpack validate plugin",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
@@ -42,17 +42,17 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/plugin-webpack-filter#readme",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "28.0.6",
-    "@rollup/plugin-node-resolve": "16.0.1",
-    "@rollup/plugin-typescript": "12.1.4",
+    "@rollup/plugin-commonjs": "29.0.0",
+    "@rollup/plugin-node-resolve": "16.0.3",
+    "@rollup/plugin-typescript": "12.3.0",
     "@types/jest": "29.5.14",
     "jest": "29.7.0",
     "jest-cli": "29.7.0",
     "jest-date-mock": "1.0.10",
     "regenerator-runtime": "0.14.1",
-    "rimraf": "6.0.1",
-    "rollup": "4.52.3",
-    "ts-jest": "29.4.4",
+    "rimraf": "6.1.0",
+    "rollup": "4.52.5",
+    "ts-jest": "29.4.5",
     "typescript": "5.9.3"
   },
   "dependencies": {

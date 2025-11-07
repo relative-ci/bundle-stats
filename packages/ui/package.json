@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/ui",
-  "version": "4.21.4",
+  "version": "4.21.6",
   "description": "UI components for BundleStats projects.",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
@@ -36,12 +36,12 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/ui#readme",
   "devDependencies": {
-    "@babel/preset-env": "7.28.3",
-    "@babel/preset-react": "7.27.1",
-    "@babel/preset-typescript": "7.27.1",
+    "@babel/preset-env": "7.28.5",
+    "@babel/preset-react": "7.28.5",
+    "@babel/preset-typescript": "7.28.5",
     "@storybook/addon-webpack5-compiler-babel": "3.0.6",
-    "@storybook/react": "9.1.9",
-    "@storybook/react-webpack5": "9.1.9",
+    "@storybook/react": "9.1.15",
+    "@storybook/react-webpack5": "9.1.15",
     "@types/d3": "7.4.3",
     "@types/react": "18.3.13",
     "@types/react-router-dom": "5.3.3",
@@ -59,8 +59,8 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-router-dom": "5.3.4",
-    "rimraf": "6.0.1",
-    "storybook": "9.1.9",
+    "rimraf": "6.1.0",
+    "storybook": "9.1.15",
     "typescript": "5.9.3",
     "typescript-plugin-css-modules": "5.2.0"
   },
@@ -73,7 +73,7 @@
     "react-router-dom": "^5.0.0"
   },
   "dependencies": {
-    "@bundle-stats/utils": "^4.21.4",
+    "@bundle-stats/utils": "^4.21.6",
     "ariakit": "2.0.0-next.44",
     "d3": "7.9.0",
     "modern-css-reset": "1.4.0",
