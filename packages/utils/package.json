@@ -37,7 +37,8 @@
   "dependencies": {
     "@bundle-stats/plugin-webpack-filter": "^4.21.4",
     "@bundle-stats/plugin-webpack-validate": "^4.21.4",
-    "serialize-query-params": "2.0.2"
+    "serialize-query-params": "2.0.2",
+    "text-similarity-node": "^1.0.1"
   },
   "devDependencies": {
     "@types/jest": "29.5.14",
