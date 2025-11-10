@@ -53,7 +53,7 @@
     "jest-date-mock": "1.0.10",
     "regenerator-runtime": "0.14.1",
     "rimraf": "6.1.0",
-    "rollup": "4.52.5",
+    "rollup": "4.53.1",
     "ts-jest": "29.4.5",
     "typescript": "5.9.3"
   },
