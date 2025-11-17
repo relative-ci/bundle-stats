@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5.0.0
+      - uses: actions/checkout@v5.0.1
 
       - name: Setup node & npm
         uses: relative-ci/.github/actions/setup-node-npm@v1.1.5
@@ -58,7 +58,7 @@ jobs:
       - build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5.0.0
+      - uses: actions/checkout@v5.0.1
 
       - name: Setup node & npm
         uses: relative-ci/.github/actions/setup-node-npm@v1.1.5
@@ -76,7 +76,7 @@ jobs:
       - build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5.0.0
+      - uses: actions/checkout@v5.0.1
 
       - name: Setup node & npm
         uses: relative-ci/.github/actions/setup-node-npm@v1.1.5
@@ -94,7 +94,7 @@ jobs:
       - build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5.0.0
+      - uses: actions/checkout@v5.0.1
 
       - name: Setup node & npm
         uses: relative-ci/.github/actions/setup-node-npm@v1.1.5
@@ -123,7 +123,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     name: CLI ${{ matrix.os }} nodejs ${{ matrix.node }}
     steps:
-      - uses: actions/checkout@v5.0.0
+      - uses: actions/checkout@v5.0.1
 
       - name: Setup node & npm
         uses: relative-ci/.github/actions/setup-node-npm@v1.1.5
@@ -183,7 +183,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     name: ${{ matrix.webpack }} plugin ${{ matrix.os }} nodejs ${{ matrix.node }}
     steps:
-      - uses: actions/checkout@v5.0.0
+      - uses: actions/checkout@v5.0.1
 
       - name: Setup node & npm
         uses: relative-ci/.github/actions/setup-node-npm@v1.1.5
@@ -235,7 +235,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     name: rollup ${{ matrix.rollup}} plugin nodejs ${{ matrix.node }}
     steps:
-      - uses: actions/checkout@v5.0.0
+      - uses: actions/checkout@v5.0.1
 
       - name: Setup node & npm
         uses: relative-ci/.github/actions/setup-node-npm@v1.1.5
@@ -291,7 +291,7 @@ jobs:
     permissions:
       id-token: write
     steps:
-      - uses: actions/checkout@v5.0.0
+      - uses: actions/checkout@v5.0.1
 
       - name: Setup node & npm
         uses: relative-ci/.github/actions/setup-node-npm@v1.1.5
