@@ -3,12 +3,12 @@
 </p>
 <p align="center">
   Demos:
-  <a href="https://relative-ci.com/bundle-analyzer/bundle-stats/demo/bundle-analysis-comparison" target="_blank">Bundle analysis comparison</a> ·
+  <a href="https://relative-ci.com/bundle-analyzer/bundle-stats/demo/bundle-analysis-comparison" target="_blank">Bundle analysis comparison</a>·
   <a href="https://relative-ci.com/bundle-analyzer/bundle-stats/demo/bundle-analysis" target="_blank">Bundle analysis</a>
 </p>
 <h1 align="center">BundleStats</h1>
 <p align="center">
-  Analyze bundle stats(bundle size, assets, modules, packages) and compare the results between different builds. Support for webpack, rspack, vite, rollup and rolldown.
+  Analyze bundle stats(bundle size, assets, modules, packages) and compare the results between different builds. Support for webpack/rspack and vite/rolldown/rollup using <a href="https://github.com/relative-ci/bundle-stats/blob/master/packages/cli/README.md#viterolluprolldown-stats">rollup-plugin-webpack-stats</a>.
 </p>
 <p align="center">
   <a href="https://www.npmjs.com/package/bundle-stats"><img src="https://img.shields.io/npm/v/bundle-stats.svg" /></a>
@@ -64,9 +64,13 @@ or
 yarn add --dev bundle-stats
 ```
 
-## Output webpack stats
+## Output stats
 
-The CLI is consuming the Webpack stats JSON file. The following [webpack stats options](https://webpack.js.org/configuration/stats) are needed:
+The CLI expects stats files that follow the webpack stats schema. Follow the guides below to learn how to export compatible output from webpack/rspack or from vite/rollup/rolldown.
+
+### webpack/rspack stats
+
+You can customize the contents of the generated stats file by configuring the [webpack stats options](https://webpack.js.org/configuration/stats):
 
 ```js
 {
@@ -82,16 +86,29 @@ The CLI is consuming the Webpack stats JSON file. The following [webpack stats o
 }
 ```
 
-[How to configure webpack for better debugging and monitoring](https://relative-ci.com/documentation/guides/webpack-config)
+To output the the webpack stats JSON file you can use:
 
-You can output the webpack stats JSON file using [webpack-cli](https://www.npmjs.com/package/webpack-cli) `--json` option:
+#### 1. [webpack-cli](https://www.npmjs.com/package/webpack-cli) `--json` option:
 
 ```shell
 npx webpack --mode production --json artifacts/webpack-stats.json
 ```
 
-- [How to output webpack stats JSON file using webpack-cli](https://relative-ci.com/documentation/guides/webpack-stats/webpack-cli)
-- [How to output webpack stats JSON file using webpack-stats-plugin](https://relative-ci.com/documentation/guides/webpack-stats/webpack-stats-plugin)
+[Guide & examples: How to output webpack stats using the CLI](https://relative-ci.com/documentation/guides/webpack-stats/webpack-cli)
+
+#### 2. using `webpack-stats-plugin`
+
+[Guide & examples: How to output webpack stats JSON file using webpack-stats-plugin](https://relative-ci.com/documentation/guides/webpack-stats/webpack-stats-plugin)
+
+##### Learn more
+- [Guide: How to configure webpack for better debugging and monitoring](https://relative-ci.com/documentation/guides/webpack-config)
+
+### vite/rollup/rolldown stats
+
+[Guide & examples: How to output stats in Vite](https://relative-ci.com/documentation/guides/bundle-stats/vite)
+
+#### Learn more
+- [Guide How to configure vite for better debugging and monitoring](https://relative-ci.com/documentation/guides/vite-config)
 
 ## Usage
 
