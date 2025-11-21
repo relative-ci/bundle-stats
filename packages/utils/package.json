@@ -48,7 +48,7 @@
     "jest-date-mock": "1.0.10",
     "lodash": "4.17.21",
     "regenerator-runtime": "0.14.1",
-    "rimraf": "6.1.0",
+    "rimraf": "6.1.2",
     "ts-jest": "29.4.5",
     "typescript": "5.9.3"
   },

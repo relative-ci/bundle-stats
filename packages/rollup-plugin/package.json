@@ -60,7 +60,7 @@
     "jest-cli": "29.7.0",
     "memfs": "4.51.0",
     "regenerator-runtime": "0.14.1",
-    "rimraf": "6.1.0",
+    "rimraf": "6.1.2",
     "rollup": "4.53.3",
     "ts-jest": "29.4.5",
     "typescript": "5.9.3"
