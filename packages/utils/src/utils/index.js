@@ -5,3 +5,4 @@ export * from './insights';
 export * from './file-types';
 export * from './format';
 export * from './metrics';
+export * from './string-similarity';
