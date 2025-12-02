@@ -54,7 +54,7 @@
     "jest-cli": "29.7.0",
     "memfs": "4.51.1",
     "rimraf": "6.1.2",
-    "ts-jest": "29.4.5",
+    "ts-jest": "29.4.6",
     "typescript": "5.9.3"
   }
 }
