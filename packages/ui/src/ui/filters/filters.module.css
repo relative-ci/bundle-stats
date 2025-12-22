@@ -9,13 +9,14 @@
   position: relative;
   width: 100%;
   max-width: 240px;
-  color: var(--color-text);
+  color: var(--color-text-muted);
 }
 
 .filterControl {
   margin: 0;
   flex: 0 0 auto;
   height: 1em;
+  background: var(--color-background);
 }
 
 .filterLabel {
@@ -27,11 +28,11 @@
 }
 
 .filterControl[disabled] + .filterLabel {
-  color: var(--color-text-light);
+  color: var(--color-text-ultra-muted);
 }
 
 .filter:hover {
-  color: var(--color-dark);
+  color: var(--color-text);
 }
 
 /** Filter single */
@@ -41,14 +42,15 @@
   border-radius: var(--radius-small);
   font-size: var(--size-small);
   line-height: var(--space-small);
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-muted);
   transition: var(--transition-out);
 }
 
 .filterSingle:hover,
 .filterSingle:active,
 .filterSingle:focus {
-  border-color: var(--color-outline-dark);
+  border-color: var(--color-outline-intense);
+  color: var(--color-text);
   transition: var(--transition-in);
 }
 
@@ -87,7 +89,7 @@
   right: 100%;
   bottom: 0;
   width: var(--space-small);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0), var(--color-highlight) 75%);
+  background: linear-gradient(90deg, rgba(var(--color-background-rgb), 0), var(--color-highlight) 75%);
 }
 
 /** filter hover state */
@@ -111,7 +113,7 @@
   padding: var(--space-xxsmall) 0;
   text-align: center;
   font-size: var(--size-small);
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 .filterGroupActions {
