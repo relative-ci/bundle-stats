@@ -79,6 +79,6 @@
     "modern-css-reset": "1.4.0",
     "react-use": "17.6.0",
     "snarkdown": "2.0.0",
-    "use-query-params": "2.2.1"
+    "use-query-params": "2.2.2"
   }
 }
