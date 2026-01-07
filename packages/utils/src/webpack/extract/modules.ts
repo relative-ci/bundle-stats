@@ -1,4 +1,3 @@
-import round from 'lodash/round';
 import union from 'lodash/union';
 import {
   WebpackStatsFiltered,
@@ -81,7 +80,6 @@ export const extractModules = (webpackStats?: WebpackStatsFiltered): MetricsModu
   const modules: Modules = {};
 
   let moduleCount = 0;
-  let totalCodeSize = 0;
   let duplicateCodeSize = 0;
   let duplicateModulesCount = 0;
 
@@ -93,7 +91,6 @@ export const extractModules = (webpackStats?: WebpackStatsFiltered): MetricsModu
     const duplicated = duplicateInstances > 0;
 
     moduleCount += instances;
-    totalCodeSize += instances * size;
 
     if (duplicated) {
       duplicateModulesCount += duplicateInstances;
@@ -108,13 +105,11 @@ export const extractModules = (webpackStats?: WebpackStatsFiltered): MetricsModu
     };
   }, {} as Modules);
 
-  const duplicateCode = totalCodeSize ? round((duplicateCodeSize / totalCodeSize) * 100, 2) : 0;
-
   return {
     metrics: {
       modules,
       duplicateCode: {
-        value: duplicateCode,
+        value: duplicateCodeSize,
       },
       duplicateModulesCount: {
         value: duplicateModulesCount,
