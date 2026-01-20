@@ -52,7 +52,7 @@
     "@types/stream-json": "^1.7.3",
     "jest": "29.7.0",
     "jest-cli": "29.7.0",
-    "memfs": "4.54.0",
+    "memfs": "4.56.2",
     "rimraf": "6.1.2",
     "ts-jest": "29.4.6",
     "typescript": "5.9.3"
