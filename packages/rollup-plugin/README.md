@@ -8,9 +8,9 @@
   <a href="https://relative-ci.com/bundle-analyzer/bundle-stats/demo/bundle-analysis-comparison" target="_blank">Bundle analysis comparison</a> ·
   <a href="https://relative-ci.com/bundle-analyzer/bundle-stats/demo/bundle-analysis" target="_blank">Bundle analysis</a>
 </p>
-<h1 align="center">BundleStats rollup plugin</h1>
+<h1 align="center">BundleStats Rollup/Vite/Rolldown plugin</h1>
 <p align="center">
-  Analyze rollup/rolldown bundle stats(bundle size, assets, modules, packages) and compare the results between different builds.
+  Analyze Rollup/Vite/Rolldown bundle stats(bundle size, assets, modules, packages) and compare the results between different builds.
 </p>
 <p align="center">
   <a href="https://www.npmjs.com/package/rollup-plugin-bundle-stats"><img src="https://img.shields.io/npm/v/rollup-plugin-bundle-stats.svg" /></a>
@@ -198,4 +198,3 @@ Standalone web application to compare Webpack/Lighthouse/Browsertime stats.
 ### :zap: [bundle-stats-action](https://github.com/vio/bundle-stats-action)
 
 Github Action that generates [bundle-stats](https://github.com/relative-ci/bundle-stats) reports.
-
