@@ -1,7 +1,7 @@
 {
   "name": "rollup-plugin-bundle-stats",
   "version": "4.21.9",
-  "description": "In-depth bundle analyzer for rollup(bundle size, assets, modules, packages)",
+  "description": "Analyze Rollup/Vite/Rolldown bundle stats(bundle size, assets, modules, packages) and compare the results between different builds",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "sideEffects": false,
@@ -20,6 +20,10 @@
   "keywords": [
     "rollup",
     "rollup-plugin",
+    "vite",
+    "vite-plugin",
+    "rolldown",
+    "rolldown-plugin",
     "bundle-size",
     "bundle-analyzer",
     "bundle-stats",
