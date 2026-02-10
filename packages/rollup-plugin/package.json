@@ -66,6 +66,7 @@
     "regenerator-runtime": "0.14.1",
     "rimraf": "6.1.2",
     "rollup": "4.57.1",
+    "vite": "7.3.0",
     "ts-jest": "29.4.6",
     "typescript": "5.9.3"
   },
