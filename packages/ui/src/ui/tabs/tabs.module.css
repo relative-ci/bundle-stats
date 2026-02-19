@@ -10,7 +10,7 @@
   position: relative;
   display: inline-block;
   padding: var(--space-xsmall) var(--space-small);
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-ultra-muted);
   font-weight: bold;
   text-decoration: none;
   transition: var(--ui-transition-out);

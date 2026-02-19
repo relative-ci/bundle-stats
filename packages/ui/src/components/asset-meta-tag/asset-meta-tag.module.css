@@ -22,7 +22,7 @@
 
 /* tag */
 .entry {
-  --background-color: var(--color-info-dark);
+  --background-color: var(--color-info-intense);
 }
 
 .entry:empty::before {
@@ -38,7 +38,7 @@
 }
 
 .chunk {
-  --background-color: var(--color-info-light);
+  --background-color: var(--color-info-muted);
 }
 
 .chunk:empty::before {
@@ -47,10 +47,10 @@
 
 /* status */
 .added {
-  background: linear-gradient(-45deg, var(--color-danger-light) 50%, var(--background-color) 50%) !important;
+  background: linear-gradient(-45deg, var(--color-danger-muted) 50%, var(--background-color) 50%) !important;
 }
 
 .removed {
-  background: linear-gradient(135deg, var(--color-danger-light) 50%, var(--background-color) 50%) !important;
+  background: linear-gradient(135deg, var(--color-danger-muted) 50%, var(--background-color) 50%) !important;
 }
 
