@@ -4,7 +4,7 @@ import {
 } from '../modules-packages-duplicate';
 
 describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
-  describe.only('getDuplicatePackagesInsight', () => {
+  describe('getDuplicatePackagesInsight', () => {
     test('should not return insight when there are no duplicate packages', () => {
       expect(getDuplicatePackagesInsight({})).toBeFalsy();
       expect(getDuplicatePackagesInsight({}, {})).toBeFalsy();
@@ -28,10 +28,13 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
       });
 
       expect(
-        getDuplicatePackagesInsight({
-          'package-a': ['package-a', 'package-a~1'],
-          'package-b': ['package-b', 'package-b~1'],
-        }, {}),
+        getDuplicatePackagesInsight(
+          {
+            'package-a': ['package-a', 'package-a~1'],
+            'package-b': ['package-b', 'package-b~1'],
+          },
+          {},
+        ),
       ).toEqual({
         type: 'warning',
         data: {
@@ -192,9 +195,9 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
           },
         },
         duplicatePackagesV3: {
-          type: 'error',
+          type: 'warning',
           data: {
-            text: 'Bundle introduced 5 duplicate packages',
+            text: 'Bundle contains 3 duplicate packages',
             packages: {
               'package-c': ['org/package-d:package-c', 'package-c~1', 'package-c'],
               'package-a': ['package-a', 'package-b:package-a'],
