@@ -8,3 +8,5 @@ Thumbs.db
 *.log
 .npmrc
 yarn.lock
++# Test outputs
++**/jest-output.txt
