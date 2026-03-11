@@ -12,12 +12,17 @@ updates:
       interval: "daily"
       time: "02:00"
     target-branch: "master"
-    open-pull-requests-limit: 20
+    open-pull-requests-limit: 25
     groups:
       storybook:
         patterns:
           - "storybook"
           - "@storybook/*"
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "react-is"
       babel:
         patterns:
           - "@babel/*"
