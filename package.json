@@ -78,5 +78,10 @@
   "bugs": {
     "url": "https://github.com/relative-ci/bundle-stats/issues"
   },
-  "homepage": "https://github.com/relative-ci/bundle-stats#readme"
+  "homepage": "https://github.com/relative-ci/bundle-stats#readme",
+  "overrides": {
+    "eslint-plugin-jest": {
+      "@typescript-eslint/eslint-plugin": "$@typescript-eslint/eslint-plugin"
+    }
+  }
 }
