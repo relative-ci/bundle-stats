@@ -3,7 +3,7 @@
 }
 
 .button[disabled] {
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-ultra-muted);
 }
 
 .dropdown {
@@ -32,7 +32,7 @@
   padding: calc(var(--space-xxxsmall) + var(--space-xxxsmall) / 2);
   background: none;
   text-align: left;
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
   font-size: var(--size-small);
   line-height: var(--line-height);
   text-decoration: none;
@@ -56,5 +56,5 @@
 .itemActive:focus,
 .itemActive:active {
   background: var(--color-highlight-info);
-  color: var(--color-primary-dark);
+  color: var(--color-primary-intense);
 }

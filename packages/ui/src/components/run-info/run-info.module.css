@@ -1,5 +1,5 @@
 .title {
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-ultra-muted);
   font-weight: bold;
   font-size: var(--size-xsmall);
   text-transform: uppercase;
@@ -40,11 +40,11 @@
   margin-left: calc(var(--space-xxxsmall) / 2);
   margin-right: calc(var(--space-xxxsmall) / 2);
   content: '/';
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-ultra-muted);
 }
 
 .baselineMetric {
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-muted);
   font-size: var(--size-small);
   line-height: var(--line-height-number);
   height: var(--line-height-number);
