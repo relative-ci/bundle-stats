@@ -21,6 +21,12 @@
   <a href="https://github.com/relative-ci/bundle-stats/actions/workflows/codeql.yml"><img alt="CodeQL" src="https://github.com/relative-ci/bundle-stats/actions/workflows/codeql.yml/badge.svg"/></a>
 </p>
 <p align="center">
+  <a href="https://npmx.dev/package/rollup-plugin-bundle-stats"><img src="https://registry.vite.dev/api/badges?package=rollup-plugin-bundle-stats&tool=vite" alt="Vite compatibility"/></a>
+  <a href="https://npmx.dev/package/rollup-plugin-bundle-stats"><img src="https://registry.vite.dev/api/badges?package=rollup-plugin-bundle-stats&tool=rollup" alt="Rollup compatibility"/></a>
+  <a href="https://npmx.dev/package/rollup-plugin-bundle-stats"><img src="https://registry.vite.dev/api/badges?package=rollup-plugin-bundle-stats&tool=rolldown" alt="Rolldown compatibility"/></a>
+</p>
+
+<p align="center">
   <a href="https://app.relative-ci.com/projects/V1bXuieJbYttHCS75L8G"><img src="https://badges.relative-ci.com/badges/V1bXuieJbYttHCS75L8G?branch=master" alt="RelativeCI"></a>
 </p>
 <p align="center">
