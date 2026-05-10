@@ -5,7 +5,7 @@
   bottom: 0;
   width: 100vw;
   max-width: var(--entry-info-width);
-  z-index: var(--layer-high);
+  z-index: calc(var(--layer-high) - 1);
   background: var(--color-background);
   box-shadow: var(--shadow-layer-high);
 }
@@ -36,13 +36,13 @@
   position: absolute;
   right: calc(var(--space-small) - var(--space-xxxsmall));
   top: calc(var(--space-small) - var(--space-xxxsmall));
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-ultra-muted);
 }
 
 .headerClose:hover,
 .headerClose:active,
 .headerClose:focus {
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 /** comon components */
@@ -88,12 +88,12 @@
   margin-right: var(--space-xxxsmall);
   min-width: 8em;
   flex: 0 1 6em;
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 .metaLabelTooltip {
   margin-left: var(--space-xxxsmall);
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-ultra-muted);
 }
 
 .metaContent {
@@ -126,7 +126,7 @@
 .metaLink:active,
 .metaLink:focus {
   background: var(--color-outline);
-  color: var(--color-primary-dark);
+  color: var(--color-primary-intense);
 }
 
 @media (min-width: 640px) {

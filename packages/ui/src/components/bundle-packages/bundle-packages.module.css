@@ -1,5 +1,5 @@
 .title {
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 .toolbarSearch {
@@ -13,7 +13,7 @@
 
 .packageName {
   display: inline-block;
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 .packageName:last-child {
@@ -24,7 +24,7 @@
   display: inline-block;
   margin: 0 var(--space-xxxsmall);
   content: '/';
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-ultra-muted);
 }
 
 .packageNameTagDuplicate {

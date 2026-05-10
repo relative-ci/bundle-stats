@@ -4,7 +4,7 @@
 }
 
 .dropdownGroupButton {
-  padding: calc(var(--space-xxsmall) - 1px);
+  padding: calc(var(--space-2x) - 1px);
 }
 
 .dropdownGroupAnchor {
@@ -17,11 +17,11 @@
   content: '';
   display: block;
   width: 1px;
-  background: var(--color-outline-dark);
+  background: var(--color-outline);
   position: absolute;
   left: 0;
-  top: var(--space-xxxsmall);
-  bottom: var(--space-xxxsmall);
+  top: var(--space);
+  bottom: var(--space);
 }
 
 .dropdownGroupAnchor:hover,
@@ -33,7 +33,7 @@
 }
 
 .dropdownGroup:hover {
-  border-color: var(--color-outline-dark);
+  border-color: var(--color-outline-intense);
   transition: var(--transition-in);
 }
 

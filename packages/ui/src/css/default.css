@@ -60,6 +60,6 @@ a {
 a:hover,
 a:active,
 a:focus {
-  color: var(--color-primary-dark);
+  color: var(--color-primary-intense);
   outline: none;
 }

@@ -50,7 +50,7 @@
 
 .tileGroupTitleTotal {
   margin-left: var(--space-xxsmall);
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 .tileGroupTitle {
@@ -86,41 +86,41 @@
 
 /** Tile group nested variation */
 .nested .tileGroup {
-  background-color: rgba(27, 26, 33, 0.03);
-  outline: 1px solid rgba(255, 255, 255, 0.8);
+  background-color: rgba(var(--color-background-rgba), 0.1);
+  outline: 1px solid rgba(var(--color-background-rgba), 0.8);
 }
 
 .nested .tileGroup:has(> .tileGroupTitle:hover),
 .nested .tileGroup:has(> .tile:hover) {
-  background-color: rgba(27, 26, 33, 0.06);
-  outline: 1px solid rgba(255, 255, 255, 1);
+  background-color: rgba(var(--color-background-rgba), 0.06);
+  outline: 1px solid rgba(var(--color-background-rgba), 1);
   transition: var(--transition-in);
   transition-property: background-color, outline;
 }
 
 .nested .tileGroup--NEGATIVE {
-  background-color: rgba(194, 31, 37, 0.04);
+  background-color: rgba(240, 0, 0, 0.04);
 }
 
 .nested .tileGroup--NEGATIVE:has(> .tileGroupTitle:hover),
 .nested .tileGroup--NEGATIVE:has(> .tile:hover) {
-  background-color: rgba(194, 31, 37, 0.1);
+  background-color: rgba(240, 0, 0, 0.1);
 }
 
 .nested .tileGroup--POSITIVE {
-  background-color: rgba(42, 147, 39, 0.04);
+  background-color: rgba(0, 240, 0, 0.04);
 }
 
 .nested .tileGroup--POSITIVE:has(> .tileGroupTitle:hover),
 .nested .tileGroup--POSITIVE:has(> .tile:hover) {
-  background-color: rgba(42, 147, 39, 0.1);
+  background-color: rgba(0, 240, 0, 0.1);
 }
 
 /* reset bacground color when having a not changed group */
 .nested .tileGroup--POSITIVE > .tileGroup--NO_CHANGE,
 .nested .tileGroup--NEGATIVE > .tileGroup--NO_CHANGE {
   background-color: var(--color-background);
-  background-image: linear-gradient(rgba(27, 26, 33, 0.1), rgba(27, 26, 33, 0.1));
+  background-image: linear-gradient(var(--color-background-rgba), 0.1);
 }
 
 .nested .tileGroup--POSITIVE > .tileGroup--NO_CHANGE:has(> .tileGroupTitle:hover),
@@ -128,7 +128,7 @@
 .nested .tileGroup--NEGATIVE > .tileGroup--NO_CHANGE:has(> .tileGroupTitle:hover),
 .nested .tileGroup--NEGATIVE > .tileGroup--NEGATIVE > .tileGroup--NO_CHANGE:has(> .tile:hover) {
   background-color: var(--color-background);
-  background-image: linear-gradient(rgba(27, 26, 33, 0.1), rgba(27, 26, 33, 0.1));
+  background-image: linear-gradient(var(--color-background-rgba), 0.1);
 }
 
 /** Leaf wrapper button */
@@ -222,7 +222,7 @@
 
 /** Tile diff variation */
 .tile {
-  outline: 1px solid rgba(255, 255, 255, 1);
+  outline: 1px solid rgba(var(--color-background-rgba), 1);
   color: var(--color-text);
 }
 
@@ -244,11 +244,11 @@
 }
 
 .tile-NO_CHANGE {
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 .tile-NO_CHANGE::before {
-  color: var(--color-gray-50);
+  color: var(--gray-3);
   opacity: 0.4;
 }
 
@@ -257,27 +257,27 @@
 }
 
 .tile-HIGH_NEGATIVE::before {
-  color: var(--color-red-100);
+  color: var(--red-5);
 }
 
 .tile-NEGATIVE::before {
-  color: var(--color-red-50);
+  color: var(--red-4);
 }
 
 .tile-LOW_NEGATIVE::before {
-  color: var(--color-red-50);
+  color: var(--red-3);
 }
 
 .tile-LOW_POSITIVE::before {
-  color: var(--color-green-50);
+  color: var(--green-3);
 }
 
 .tile-POSITIVE::before {
-  color: var(--color-green-50);
+  color: var(--green-4);
 }
 
 .tile-HIGH_POSITIVE::before {
-  color: var(--color-green-100);
+  color: var(--green-5);
 }
 
 /** empty message */
@@ -312,7 +312,7 @@
   outline: none;
   filter: drop-shadow(var(--shadow-layer-high));
   will-change: filter;
-  background: var(--color-light);
+  background: var(--color-background);
   font-size: var(--size-small);
   pointer-events: none;
 }

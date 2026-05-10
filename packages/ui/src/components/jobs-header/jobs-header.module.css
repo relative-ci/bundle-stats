@@ -41,17 +41,17 @@
   vertical-align: top;
   outline: 1px solid var(--color-outline);
   background: var(--color-highlight);
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 .itemMeta {
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
   font-size: var(--size-small);
 }
 
 .itemMetaIcon {
   flex: 0 0 auto;
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-ultra-muted);
 }
 
 .itemMetaText {

@@ -47,13 +47,13 @@
   top: var(--space-xxsmall);
   padding: var(--space-xxxsmall);
   flex: 0 0 auto;
-  color: var(--color-outline-dark);
+  color: var(--color-outline-intense);
 }
 
 .headerClose:hover,
 .headerClose:focus,
 .headerClose:active {
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-ultra-muted);
 }
 
 .content {

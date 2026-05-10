@@ -24,7 +24,7 @@
 .outlineHover:focus,
 .outlineHover:active,
 .outlineHover:hover {
-  border-color: var(--color-outline-dark);
+  border-color: var(--color-outline-intense);
   transition: var(--transition-in);
 }
 

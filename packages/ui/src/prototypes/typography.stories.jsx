@@ -12,22 +12,20 @@ export default {
 };
 
 export const Typography = () => (
- <main className={css.main}>
-   <Container dangerouslySetInnerHTML={{ __html: content }} />
- </main>
+  <main className={css.main}>
+    <Container dangerouslySetInnerHTML={{ __html: content }} />
+  </main>
 );
 
 // eslint-disable-next-line react/prop-types
 const Item = ({ colorName, valueName = 'normal' }) => {
-  const colorFullName = valueName === 'normal'
-    ? colorName
-    : [colorName, valueName].join('-');
+  const colorFullName = valueName === 'normal' ? colorName : [colorName, valueName].join('-');
 
   return (
     <div
       style={{
         background: `var(--color-${colorFullName})`,
-        color: 'var(--color-light)',
+        color: 'var(--color-background)',
         padding: '12px',
         flex: '1 1 20%',
       }}
@@ -51,42 +49,24 @@ const ItemColorValue = ({ value }) => (
   </div>
 );
 
-const COLORS = [
-  'blue',
-  'red',
-  'green',
-  'yellow',
-  'gray',
-];
+const COLORS = ['branding', 'primary', 'secondary', 'success', 'info', 'warning', 'danger'];
 
-const NAMES = [
-  'ultra-light',
-  'light',
-  'normal',
-  'dark',
-  'ultra-dark',
-];
+const NAMES = ['muted', 'normal', 'intense'];
 
 export const ColorScheme = () => (
   <Container>
-    <Item colorName="branding" valueName="light" />
-    <Item colorName="branding" />
-    <Item colorName="branding" valueName="dark" />
-
-    <hr />
-
-    <Item colorName="dark" />
+    <div style={{ display: 'flex', marginBottom: '24px' }}>
+      <Item colorName="text" valueName="muted" />
+      <Item colorName="text" />
+      <Item colorName="text" valueName="intense" />
+    </div>
 
     <hr />
 
     {COLORS.map((colorName) => (
       <div style={{ display: 'flex', marginBottom: '24px' }}>
         {NAMES.map((valueName) => (
-          <Item
-            key={`${colorName}-${valueName}`}
-            colorName={colorName}
-            valueName={valueName}
-          />
+          <Item key={`${colorName}-${valueName}`} colorName={colorName} valueName={valueName} />
         ))}
       </div>
     ))}
@@ -96,10 +76,7 @@ export const ColorScheme = () => (
     <h3>Chart colors</h3>
     <div style={{ display: 'flex', marginBottom: '24px', flexWrap: 'wrap' }}>
       {CHART_COLORS.map((color) => (
-        <ItemColorValue
-          key={color}
-          value={color}
-        />
+        <ItemColorValue key={color} value={color} />
       ))}
     </div>
   </Container>
