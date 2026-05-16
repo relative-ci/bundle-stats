@@ -69,7 +69,7 @@ describe('Webpack/extract/modules', () => {
 
     expect(actual).toEqual({
       metrics: {
-        duplicateCode: { value: 7.5 },
+        duplicateCode: { value: 600 },
         duplicateModulesCount: { value: 2 },
         modules: {
           'module-a': {
@@ -159,7 +159,7 @@ describe('Webpack/extract/modules', () => {
 
     expect(actual).toEqual({
       metrics: {
-        duplicateCode: { value: 38.46 },
+        duplicateCode: { value: 5000 },
         duplicateModulesCount: { value: 1 },
         modules: {
           'module-a': {

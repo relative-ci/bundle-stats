@@ -64,10 +64,10 @@ export const metrics: WebpackMetrics = {
   },
   [Metric.DUPLICATE_CODE]: {
     label: 'Duplicate Code',
-    description: 'The percentage of total duplicate module size from the total module size',
+    description: 'Total size of duplicate modules included across chunks',
     url: 'https://relative-ci.com/documentation/metrics-and-data#modules-1',
-    type: MetricTypes.Percentage,
-    biggerIsBetter: null,
+    type: MetricTypes.FileSize,
+    biggerIsBetter: false,
   },
   [Metric.PACKAGE_COUNT]: {
     label: 'Packages',
