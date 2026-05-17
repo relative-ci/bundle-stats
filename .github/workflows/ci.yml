@@ -160,17 +160,17 @@ jobs:
       matrix:
         os: [windows-latest, ubuntu-latest]
         node: [26, 24, 22, 20, 18, 16, 14]
-        webpack: ['webpack4', 'webpack5']
+        webpack: ["webpack4", "webpack5"]
         exclude:
-          - webpack: 'webpack4'
+          - webpack: "webpack4"
             node: 26
-          - webpack: 'webpack4'
+          - webpack: "webpack4"
             node: 24
-          - webpack: 'webpack4'
+          - webpack: "webpack4"
             node: 22
-          - webpack: 'webpack4'
+          - webpack: "webpack4"
             node: 20
-          - webpack: 'webpack4'
+          - webpack: "webpack4"
             node: 18
           - os: windows-latest
             node: 26
