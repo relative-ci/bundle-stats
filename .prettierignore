@@ -1,2 +1,5 @@
+artifacts
 lib
 lib-esm
+node_modules
+storybook-static
