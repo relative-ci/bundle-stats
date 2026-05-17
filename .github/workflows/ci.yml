@@ -119,7 +119,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        node: [24, 22, 20, 18, 16, 14]
+        node: [26, 24, 22, 20, 18, 16, 14]
     runs-on: ${{ matrix.os }}
     name: CLI ${{ matrix.os }} nodejs ${{ matrix.node }}
     steps:
@@ -159,9 +159,11 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-latest, ubuntu-latest]
-        node: [24, 22, 20, 18, 16, 14]
+        node: [26, 24, 22, 20, 18, 16, 14]
         webpack: ['webpack4', 'webpack5']
         exclude:
+          - webpack: 'webpack4'
+            node: 26
           - webpack: 'webpack4'
             node: 24
           - webpack: 'webpack4'
@@ -170,6 +172,8 @@ jobs:
             node: 20
           - webpack: 'webpack4'
             node: 18
+          - os: windows-latest
+            node: 26
           - os: windows-latest
             node: 24
           - os: windows-latest
@@ -219,9 +223,11 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        node: [24, 22, 20, 18, 16]
+        node: [26, 24, 22, 20, 18, 16]
         rollup: [3, 4]
         exclude:
+          - rollup: 3
+            node: 26
           - rollup: 3
             node: 24
           - rollup: 3
@@ -262,8 +268,8 @@ jobs:
 
       - name: Install test dependencies
         run: |
-            npm install --force
-            npm install --no-save --force rollup@${{ matrix.rollup }}
+          npm install --force
+          npm install --no-save --force rollup@${{ matrix.rollup }}
         working-directory: packages/rollup-plugin/test/package
 
       - name: Test package
