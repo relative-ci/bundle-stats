@@ -7,6 +7,9 @@ export default defineConfig({
   outputOptions: {
     entryFileNames: '[name].js',
   },
+  deps: {
+    alwaysBundle: ['update-notifier'],
+  },
   dts: false,
   unbundle: false,
   hash: false,
