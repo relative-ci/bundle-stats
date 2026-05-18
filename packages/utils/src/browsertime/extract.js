@@ -36,12 +36,15 @@ const METRICS = {
  * @return @BrowsertimeMetricsRes
  */
 export const extract = (browsertimeSource) => {
-  const metrics = Object.entries(METRICS).reduce((agg, [key, browsertimeKey]) => ({
-    ...agg,
-    [key]: {
-      value: get(browsertimeSource, [...browsertimeKey.split('.'), 'median'], 0),
-    },
-  }), {});
+  const metrics = Object.entries(METRICS).reduce(
+    (agg, [key, browsertimeKey]) => ({
+      ...agg,
+      [key]: {
+        value: get(browsertimeSource, [...browsertimeKey.split('.'), 'median'], 0),
+      },
+    }),
+    {},
+  );
 
   return { metrics };
 };

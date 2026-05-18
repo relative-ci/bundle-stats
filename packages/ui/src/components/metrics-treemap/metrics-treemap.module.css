@@ -151,7 +151,7 @@
 }
 
 .tile::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   z-index: 1;
@@ -327,6 +327,6 @@
 }
 
 /* prevent tooltip portal wrapper from capturing events */
-div[role="presentation"]:has(.tooltip) {
+div[role='presentation']:has(.tooltip) {
   pointer-events: none;
 }

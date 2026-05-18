@@ -1,5 +1,5 @@
 import { createJobs } from '@bundle-stats/utils';
-import { SvgIcons } from '@bundle-stats/ui/lib-esm/assets/icons.svg.js';
+import { SvgIcons } from '@bundle-stats/ui/lib-esm/assets/icons.svg';
 
 /* eslint-disable import/no-extraneous-dependencies */
 import currentData from 'Fixtures/job.current';

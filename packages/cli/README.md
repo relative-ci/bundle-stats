@@ -32,6 +32,7 @@
 </p>
 
 ## Table of Contents
+
 - [Install as global dependency](#install-as-global-dependency)
 - [Install as dev dependency](#install-as-dev-dependency)
 - [Webpack configuration](#webpack-configuration)
@@ -101,6 +102,7 @@ npx webpack --mode production --json artifacts/webpack-stats.json
 [Guide & examples: How to output webpack stats JSON file using webpack-stats-plugin](https://relative-ci.com/documentation/guides/webpack-stats/webpack-stats-plugin)
 
 ##### Learn more
+
 - [Guide: How to configure webpack for better debugging and monitoring](https://relative-ci.com/documentation/guides/webpack-config)
 
 ### vite/rollup/rolldown stats
@@ -108,6 +110,7 @@ npx webpack --mode production --json artifacts/webpack-stats.json
 [Guide & examples: How to output stats in Vite](https://relative-ci.com/documentation/guides/bundle-stats/vite)
 
 #### Learn more
+
 - [Guide How to configure vite for better debugging and monitoring](https://relative-ci.com/documentation/guides/vite-config)
 
 ## Usage
@@ -244,7 +247,6 @@ Standalone web application to compare Webpack/Lighthouse/Browsertime stats.
 ### :zap: [bundle-stats-action](https://github.com/vio/bundle-stats-action)
 
 Github Action that generates [bundle-stats](https://github.com/relative-ci/bundle-stats) reports.
-
 
 ## Other packages
 

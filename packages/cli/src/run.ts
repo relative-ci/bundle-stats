@@ -131,17 +131,17 @@ export default async function run(options: RunOptions): Promise<void> {
       title: 'Save reports',
       task: (ctx) =>
         new Listr(
-        Object.values(ctx.artifacts).map(({ filename, output }: any) => ({
-          title: filename,
-          task: async () => {
-            const filepath = path.join(outDir, filename);
-            await outputFile(filepath, output);
+          Object.values(ctx.artifacts).map(({ filename, output }: any) => ({
+            title: filename,
+            task: async () => {
+              const filepath = path.join(outDir, filename);
+              await outputFile(filepath, output);
 
-            ctx.output = [...(ctx.output ? ctx.output : []), filepath];
-          },
-        })),
-        { concurrent: true },
-      ),
+              ctx.output = [...(ctx.output ? ctx.output : []), filepath];
+            },
+          })),
+          { concurrent: true },
+        ),
     },
   ]);
 

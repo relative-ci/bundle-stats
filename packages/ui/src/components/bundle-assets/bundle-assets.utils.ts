@@ -143,12 +143,12 @@ export const getCustomSort = (item: ReportMetricAssetRow): Array<boolean | strin
   item.key,
 ];
 
-/* eslint-disable prettier/prettier */
-const getFileTypeFilters = (filters: Record<string, unknown>): FilterGroupFieldData['children'] => Object.entries(FILE_TYPE_LABELS).map(([key, label]) => ({
-  key,
-  label,
-  defaultValue: get(filters, `${ASSET_FILE_TYPE}.${key}`, true) as boolean,
-}));
+const getFileTypeFilters = (filters: Record<string, unknown>): FilterGroupFieldData['children'] =>
+  Object.entries(FILE_TYPE_LABELS).map(([key, label]) => ({
+    key,
+    label,
+    defaultValue: get(filters, `${ASSET_FILE_TYPE}.${key}`, true) as boolean,
+  }));
 
 type GetFiltersOptions = {
   compareMode: boolean;
@@ -228,9 +228,9 @@ export const getFilters = ({
   return result;
 };
 
-/* eslint-disable prettier/prettier */
 export const generateGetRowFilter =
-  ({ chunkIds }: GenerateGetRowFilterOptions) => (filters: Record<string, unknown>) => {
+  ({ chunkIds }: GenerateGetRowFilterOptions) =>
+  (filters: Record<string, unknown>) => {
     // List of chunkIds with filter value set to `true`
     const checkedChunkIds: Array<string> = [];
     // List of chunks ids, including the NO_CHUNK

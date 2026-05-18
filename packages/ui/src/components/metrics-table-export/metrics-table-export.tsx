@@ -105,7 +105,7 @@ export const MetricsTableExport = (props: MetricsTableExportProps) => {
                 aria-labelledby={`metrics-table-export-tab-${sourceId}`}
                 key={source.label}
               />
-          ),
+            ),
         )}
       </div>
     </Stack>

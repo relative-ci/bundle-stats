@@ -33,17 +33,15 @@ export const addRowFlags = (row: ReportMetricRow): ReportMetricModuleRow => {
   // @NOTE Assign instead destructuring for perf reasons
   const moduleRow = row as any as ReportMetricModuleRow;
 
-  // eslint-disable-next-line no-param-reassign
   moduleRow.thirdParty = Boolean(key.match(MODULE_PATH_PACKAGES));
   // Mark metric row as duplicated when at least one run is duplicated
-  // eslint-disable-next-line no-param-reassign
+
   moduleRow.duplicated = Boolean(
     runs.find((run) => (run as Module & ReportMetricRun)?.duplicated === true),
   );
-  // eslint-disable-next-line no-param-reassign
+
   moduleRow.fileType = getModuleSourceFileType(row.key);
 
-  // eslint-disable-next-line no-param-reassign
   moduleRow.runs = row.runs.map((run) => {
     if (!run) {
       return run;
@@ -65,10 +63,9 @@ export const addRowFlags = (row: ReportMetricRow): ReportMetricModuleRow => {
 
 export const getCustomSort = (item: ReportMetricRow) => [!item.changed, item.key];
 
-/* eslint-disable prettier/prettier */
 export const generateGetRowFilter =
-  ({ chunkIds }: { chunkIds: Array<string> }) => (filters: Record<string, unknown>) => {
-    // eslint-disable-line prettier/prettier
+  ({ chunkIds }: { chunkIds: Array<string> }) =>
+  (filters: Record<string, unknown>) => {
     // List of chunkIds with filter value set to `true`
     const checkedChunkIds: Array<string> = [];
 
@@ -120,7 +117,6 @@ export const generateGetRowFilter =
       return true;
     };
   };
-/* eslint-enable prettier/prettier */
 
 export const generateFilters = (chunkIds: Array<string>, multipleJobs: boolean) => {
   const allEntriesFilters = {

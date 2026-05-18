@@ -189,7 +189,10 @@ export const extractModulesPackagesDuplicate = (
     baselineJob?.insights?.webpack?.duplicatePackages?.data ||
     {};
 
-  const noDuplicatesDuplicatePackagesV3 = getDuplicatePackagesInsight({}, baselineDuplicatePackages);
+  const noDuplicatesDuplicatePackagesV3 = getDuplicatePackagesInsight(
+    {},
+    baselineDuplicatePackages,
+  );
 
   if (!count) {
     return {

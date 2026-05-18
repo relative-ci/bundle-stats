@@ -41,8 +41,7 @@
 
 .root tbody td a:hover,
 .root tbody td a:focus,
-.root tbody td a:active
-{
+.root tbody td a:active {
   color: var(--color-primary);
   text-decoration: underline;
 }

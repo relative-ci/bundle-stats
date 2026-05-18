@@ -72,11 +72,11 @@ export const useRowsSort = <TRow>({
   const orderedRows = useMemo(
     () =>
       orderBy(
-      rows,
-      getSortFn(sort.field, getCustomSort),
-      // if direction is empty (reset), sort asc
-      sort.direction !== '' ? sort.direction : (SORT.ASC as any),
-    ),
+        rows,
+        getSortFn(sort.field, getCustomSort),
+        // if direction is empty (reset), sort asc
+        sort.direction !== '' ? sort.direction : (SORT.ASC as any),
+      ),
     [rows, sort],
   );
 

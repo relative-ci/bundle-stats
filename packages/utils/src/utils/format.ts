@@ -82,7 +82,7 @@ export function formatCommit(commitSha?: string): string {
   return commitSha.substr(0, 7);
 }
 
-export function formatPercentage(val?: number | null):string {
+export function formatPercentage(val?: number | null): string {
   if (typeof val !== 'number') {
     return '0%';
   }

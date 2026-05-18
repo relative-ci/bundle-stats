@@ -3,7 +3,7 @@ const StatsPlugin = require('stats-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const appCommonConfig = require('./webpack.config.common');
-const settings = require('./settings');
+const settings = require('./build/webpack-settings');
 
 const { rootDir } = settings;
 

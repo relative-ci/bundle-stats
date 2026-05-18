@@ -14,5 +14,5 @@ describe('Webpack/compare', () => {
   test('should compare all modules', () => {
     const result = compareBySection[SECTION_WEBPACK_MODULES](JOBS);
     expect(result).toMatchSnapshot();
-  })
+  });
 });

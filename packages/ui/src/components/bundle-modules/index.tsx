@@ -48,25 +48,24 @@ function useModuleMetric(
   return useMemo(() => [moduleMetric, setModuleMetric], [moduleMetric, setModuleMetric]);
 }
 
-interface BundleModulesProps
-  extends Omit<
-    React.ComponentProps<typeof BaseComponent>,
-    | 'jobs'
-    | 'items'
-    | 'chunks'
-    | 'updateFilters'
-    | 'resetFilters'
-    | 'resetAllFilters'
-    | 'filters'
-    | 'sort'
-    | 'updateSort'
-    | 'search'
-    | 'updateSearch'
-    | 'allItems'
-    | 'totalRowCount'
-    | 'hideEntryInfo'
-    | 'showEntryInfo'
-  > {
+interface BundleModulesProps extends Omit<
+  React.ComponentProps<typeof BaseComponent>,
+  | 'jobs'
+  | 'items'
+  | 'chunks'
+  | 'updateFilters'
+  | 'resetFilters'
+  | 'resetAllFilters'
+  | 'filters'
+  | 'sort'
+  | 'updateSort'
+  | 'search'
+  | 'updateSearch'
+  | 'allItems'
+  | 'totalRowCount'
+  | 'hideEntryInfo'
+  | 'showEntryInfo'
+> {
   jobs: Array<Job>;
   filters: Record<string, boolean>;
   search?: string;

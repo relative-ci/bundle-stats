@@ -1,6 +1,6 @@
 const { merge } = require('webpack-merge');
 
-const { publicDir } = require('./settings');
+const { publicDir } = require('./build/webpack-settings');
 const standaloneCommonConfig = require('./webpack.config.common');
 
 module.exports = merge(standaloneCommonConfig, {

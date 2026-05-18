@@ -5,20 +5,11 @@ import * as lighthouse from '@bundle-stats/utils/lib-esm/lighthouse';
 import { MetricsTable } from '../metrics-table';
 
 export const LighthouseTable = (props) => {
-  const {
-    className,
-    jobs,
-  } = props;
+  const { className, jobs } = props;
 
   const items = lighthouse.compare(jobs);
 
-  return (
-    <MetricsTable
-      className={className}
-      runs={jobs}
-      items={items}
-    />
-  );
+  return <MetricsTable className={className} runs={jobs} items={items} />;
 };
 
 LighthouseTable.defaultProps = {

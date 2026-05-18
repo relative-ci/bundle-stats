@@ -9,15 +9,11 @@ export default {
   decorators: [getWrapperDecorator()],
 };
 
-export const Default = () => (
-  <Footer />
-);
+export const Default = () => <Footer />;
 
 export const WithCustomContent = () => (
   <Footer>
     Version 1.0
-    <span style={{ margin: '1em' }}>
-      Contact
-    </span>
+    <span style={{ margin: '1em' }}>Contact</span>
   </Footer>
 );

@@ -52,11 +52,12 @@ export const compareBySection = {
 /**
  * Compare webpack sections
  */
-export const compare = (jobs: Array<unknown>) => SECTIONS.reduce(
-  (agg, sectionId) => ({
-    ...agg,
-    [sectionId]: compareBySection[sectionId as keyof typeof compareBySection](jobs),
-  }),
-  {},
-);
+export const compare = (jobs: Array<unknown>) =>
+  SECTIONS.reduce(
+    (agg, sectionId) => ({
+      ...agg,
+      [sectionId]: compareBySection[sectionId as keyof typeof compareBySection](jobs),
+    }),
+    {},
+  );
 /* eslint-enable prettier/prettier */

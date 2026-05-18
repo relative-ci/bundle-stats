@@ -18,7 +18,7 @@
     "clean": "npm run clean-lib && npm run clean-esm",
     "clean-lib": "rimraf lib",
     "clean-esm": "rimraf lib-esm types",
-    "lint": "eslint",
+    "lint": "eslint .",
     "test": "jest --passWithNoTests src"
   },
   "keywords": [],

@@ -6,11 +6,10 @@ import { FilterFieldsData } from '../../types';
 import { getInitialValues } from './filters.utils';
 import { Filters as BaseComponent } from './filters';
 
-interface FiltersProps
-  extends Omit<
-    React.ComponentProps<typeof BaseComponent>,
-    'onChange' | 'filters' | 'values' | 'toggleFilter' | 'toggleFilters'
-  > {
+interface FiltersProps extends Omit<
+  React.ComponentProps<typeof BaseComponent>,
+  'onChange' | 'filters' | 'values' | 'toggleFilter' | 'toggleFilters'
+> {
   onChange?: (newValues: Record<string, boolean>) => void;
   filters: FilterFieldsData;
 }

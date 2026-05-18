@@ -20,12 +20,15 @@ const METRIC_KEYS = {
 };
 
 export const extractCategoryScores = (lighthouseSource) => {
-  const metrics = Object.entries(METRIC_KEYS).reduce((agg, [metricKey, lighthouseCategoryId]) => ({
-    ...agg,
-    [metricKey]: {
-      value: get(lighthouseSource, ['categories', lighthouseCategoryId, 'score'], 0) * 100,
-    },
-  }), {});
+  const metrics = Object.entries(METRIC_KEYS).reduce(
+    (agg, [metricKey, lighthouseCategoryId]) => ({
+      ...agg,
+      [metricKey]: {
+        value: get(lighthouseSource, ['categories', lighthouseCategoryId, 'score'], 0) * 100,
+      },
+    }),
+    {},
+  );
 
   return { metrics };
 };

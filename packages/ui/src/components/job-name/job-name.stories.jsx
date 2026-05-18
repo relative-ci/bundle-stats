@@ -12,11 +12,7 @@ export default {
 export const Default = () => <JobName title="View job details" internalBuildNumber={10} />;
 
 export const CustomComponent = () => (
-  <JobName
-    title="View job details"
-    internalBuildNumber={10}
-    as={(props) => <strong {...props} />}
-  />
+  <JobName title="View job details" internalBuildNumber={10} as="strong" />
 );
 
 export const Render = () => (
