@@ -24,6 +24,7 @@ const config: Linter.Config[] = [
       'packages/*/lib/**',
       'packages/*/lib-esm/**',
       'packages/*/types/**',
+      'packages/*/storybook-static/**',
       'packages/html-templates/dist/**',
       // Test packages embedded in the repo
       'packages/cli/test/**',
