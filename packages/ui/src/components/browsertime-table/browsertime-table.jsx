@@ -5,20 +5,11 @@ import * as browsertime from '@bundle-stats/utils';
 import { MetricsTable } from '../metrics-table';
 
 export const BrowsertimeTable = (props) => {
-  const {
-    className,
-    jobs,
-  } = props;
+  const { className, jobs } = props;
 
   const items = browsertime.compare(jobs);
 
-  return (
-    <MetricsTable
-      className={className}
-      items={items}
-      runs={jobs}
-    />
-  );
+  return <MetricsTable className={className} items={items} runs={jobs} />;
 };
 
 BrowsertimeTable.defaultProps = {

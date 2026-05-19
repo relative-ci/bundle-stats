@@ -14,7 +14,7 @@
   "scripts": {
     "build": "npm run clean && rollup -c",
     "clean": "rimraf lib",
-    "lint": "eslint",
+    "lint": "eslint .",
     "test:package": "cd test/package && npm test --"
   },
   "keywords": [

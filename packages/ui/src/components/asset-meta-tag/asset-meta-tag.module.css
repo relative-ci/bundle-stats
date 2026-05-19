@@ -47,10 +47,17 @@
 
 /* status */
 .added {
-  background: linear-gradient(-45deg, var(--color-danger-light) 50%, var(--background-color) 50%) !important;
+  background: linear-gradient(
+    -45deg,
+    var(--color-danger-light) 50%,
+    var(--background-color) 50%
+  ) !important;
 }
 
 .removed {
-  background: linear-gradient(135deg, var(--color-danger-light) 50%, var(--background-color) 50%) !important;
+  background: linear-gradient(
+    135deg,
+    var(--color-danger-light) 50%,
+    var(--background-color) 50%
+  ) !important;
 }
-

@@ -14,6 +14,6 @@ export const getRenderChildWithClassName = (className: string) => (child: any) =
 
   return React.cloneElement(child, {
     ...props,
-    className: cx(className, props.className), // eslint-disable-line react/prop-types
+    className: cx(className, props.className),
   });
 };

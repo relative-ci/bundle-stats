@@ -5,9 +5,7 @@ import cx from 'classnames';
 import css from './file-name.module.css';
 
 export const FileName = ({ className, as: Component, name }) => (
-  <Component className={cx(css.root, className)}>
-    {name}
-  </Component>
+  <Component className={cx(css.root, className)}>{name}</Component>
 );
 
 FileName.defaultProps = {
@@ -24,5 +22,5 @@ FileName.propTypes = {
   as: PropTypes.elementType,
 
   /** File name source  */
-  name: PropTypes.string | PropTypes.node,
+  name: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 };

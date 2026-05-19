@@ -1,6 +1,8 @@
-.root { }
+.root {
+}
 
-.content {}
+.content {
+}
 
 .actions {
   margin-top: var(--space-xsmall);

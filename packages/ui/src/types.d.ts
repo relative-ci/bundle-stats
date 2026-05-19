@@ -21,7 +21,7 @@ type FilterGroupFieldData = {
   children: Array<ChildFilterFieldData>;
 };
 
-type FilterFieldsData = Record<string, FilterFieldData | FilterGroupFieldData>;
+export type FilterFieldsData = Record<string, FilterFieldData | FilterGroupFieldData>;
 
 export type ReportMetricAssetRowMetaStatus = 'added' | 'removed';
 

@@ -1,4 +1,4 @@
-@import url("~modern-css-reset/dist/reset.css");
+@import url('~modern-css-reset/dist/reset.css');
 
 /** modern-css-reset updates */
 pre,
@@ -19,7 +19,12 @@ body {
   line-height: var(--line-height);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--color-heading);
   font-weight: 500;
   line-height: var(--line-height-heading);

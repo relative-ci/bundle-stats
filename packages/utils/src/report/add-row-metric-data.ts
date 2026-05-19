@@ -10,7 +10,8 @@ import * as types from './types';
  * Add metric item data
  */
 export const getAddRowMetricData =
-  (metricType?: string) => (row: types.ReportRow): types.ReportMetricRow => {
+  (metricType?: string) =>
+  (row: types.ReportRow): types.ReportMetricRow => {
     const { key, runs } = row;
 
     // Resolve row metric

@@ -1533,11 +1533,7 @@
         "debugData": {
           "type": "debugdata",
           "impact": "serious",
-          "tags": [
-            "cat.color",
-            "wcag2aa",
-            "wcag143"
-          ]
+          "tags": ["cat.color", "wcag2aa", "wcag143"]
         }
       }
     },
@@ -1616,11 +1612,7 @@
         "debugData": {
           "type": "debugdata",
           "impact": "serious",
-          "tags": [
-            "cat.language",
-            "wcag2a",
-            "wcag311"
-          ]
+          "tags": ["cat.language", "wcag2a", "wcag311"]
         }
       }
     },
@@ -2610,9 +2602,7 @@
     }
   },
   "configSettings": {
-    "output": [
-      "json"
-    ],
+    "output": ["json"],
     "maxWaitForFcp": 15000,
     "maxWaitForLoad": 45000,
     "throttlingMethod": "simulate",

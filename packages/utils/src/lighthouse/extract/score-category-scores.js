@@ -23,7 +23,9 @@ const SCORES = [
 ];
 
 export const extractScoreCategoryScores = (lighthouseSource, currentExtractedData = {}) => {
-  const scores = SCORES.map((scoreKey) => get(currentExtractedData, ['metrics', scoreKey, 'value']));
+  const scores = SCORES.map((scoreKey) =>
+    get(currentExtractedData, ['metrics', scoreKey, 'value']),
+  );
   const score = { value: round(mean(scores), 2) };
 
   return { metrics: { score } };

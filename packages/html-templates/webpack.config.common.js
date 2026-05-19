@@ -7,7 +7,7 @@ const getCSSConfig = require('./build/webpack/css');
 const getDefineConfig = require('./build/webpack/define');
 const getResolveConfig = require('./build/webpack/resolve');
 const appConfig = require('./src/config.json');
-const settings = require('./settings');
+const settings = require('./build/webpack-settings');
 
 const { isDevelopment, isProduction, srcDir, distDir } = settings;
 const iconSprite = fs.readFileSync(

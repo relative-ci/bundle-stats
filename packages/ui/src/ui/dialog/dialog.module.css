@@ -58,7 +58,10 @@
 
 .content {
   width: 100%;
-  max-height: calc(100vh - 2 * var(--space-medium) - 2 * var(--dialog-padding) - var(--dialog-header-height) - var(--dialog-vspace));
+  max-height: calc(
+    100vh - 2 * var(--space-medium) - 2 * var(--dialog-padding) - var(--dialog-header-height) -
+      var(--dialog-vspace)
+  );
   padding-bottom: 0.3em; /* extra space to compensate for the title line-height and allow to show focus state correctly on buttons */
   overflow: auto;
 }

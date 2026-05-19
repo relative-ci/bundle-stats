@@ -12,16 +12,14 @@ export default {
 };
 
 export const Typography = () => (
- <main className={css.main}>
-   <Container dangerouslySetInnerHTML={{ __html: content }} />
- </main>
+  <main className={css.main}>
+    <Container dangerouslySetInnerHTML={{ __html: content }} />
+  </main>
 );
 
 // eslint-disable-next-line react/prop-types
 const Item = ({ colorName, valueName = 'normal' }) => {
-  const colorFullName = valueName === 'normal'
-    ? colorName
-    : [colorName, valueName].join('-');
+  const colorFullName = valueName === 'normal' ? colorName : [colorName, valueName].join('-');
 
   return (
     <div
@@ -51,21 +49,9 @@ const ItemColorValue = ({ value }) => (
   </div>
 );
 
-const COLORS = [
-  'blue',
-  'red',
-  'green',
-  'yellow',
-  'gray',
-];
+const COLORS = ['blue', 'red', 'green', 'yellow', 'gray'];
 
-const NAMES = [
-  'ultra-light',
-  'light',
-  'normal',
-  'dark',
-  'ultra-dark',
-];
+const NAMES = ['ultra-light', 'light', 'normal', 'dark', 'ultra-dark'];
 
 export const ColorScheme = () => (
   <Container>
@@ -82,11 +68,7 @@ export const ColorScheme = () => (
     {COLORS.map((colorName) => (
       <div style={{ display: 'flex', marginBottom: '24px' }}>
         {NAMES.map((valueName) => (
-          <Item
-            key={`${colorName}-${valueName}`}
-            colorName={colorName}
-            valueName={valueName}
-          />
+          <Item key={`${colorName}-${valueName}`} colorName={colorName} valueName={valueName} />
         ))}
       </div>
     ))}
@@ -96,10 +78,7 @@ export const ColorScheme = () => (
     <h3>Chart colors</h3>
     <div style={{ display: 'flex', marginBottom: '24px', flexWrap: 'wrap' }}>
       {CHART_COLORS.map((color) => (
-        <ItemColorValue
-          key={color}
-          value={color}
-        />
+        <ItemColorValue key={color} value={color} />
       ))}
     </div>
   </Container>

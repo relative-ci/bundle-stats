@@ -22,7 +22,6 @@ export const getGroupFiltersLabelSuffix = (filters: FilterGroupFieldData['childr
     return LABELS.ALL;
   }
 
-  // eslint-disable-next-line no-unused-vars
   const checkedFilterLabels = checkedFilters.map(({ label }) => label);
 
   let suffix = '';

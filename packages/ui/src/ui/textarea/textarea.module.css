@@ -31,7 +31,7 @@
   transition: var(--transition-out);
 }
 
-.root[readonly=""] {
+.root[readonly=''] {
   color: var(--color-text-light);
 }
 

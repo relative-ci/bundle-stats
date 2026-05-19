@@ -12,11 +12,10 @@ export default {
 export const Default = () => (
   <EmptySet
     resources="assets"
-    filtered handleResetFilters={() => console.log('RESET_FILTERS')}
+    filtered
+    handleResetFilters={() => console.log('RESET_FILTERS')}
     handleViewAll={() => console.log('VIEW_ALL')}
   />
 );
 
-export const Empty = () => (
-  <EmptySet resources="assets" filtered={false} />
-);
+export const Empty = () => <EmptySet resources="assets" filtered={false} />;

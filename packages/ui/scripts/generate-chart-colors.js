@@ -15,10 +15,12 @@ const COLORMAP_RECHARTS = [
   '#a4de6c',
   '#d0ed57',
   '#ffc658',
-].map(hexRgb).map(({ red, green, blue }, index) => ({
-  index,
-  rgb: [red, green, blue],
-}));
+]
+  .map(hexRgb)
+  .map(({ red, green, blue }, index) => ({
+    index,
+    rgb: [red, green, blue],
+  }));
 
 const COLORMAP = COLORMAP_RECHARTS;
 

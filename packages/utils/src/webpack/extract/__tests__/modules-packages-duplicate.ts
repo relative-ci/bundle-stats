@@ -28,10 +28,13 @@ describe('Webpack/extract/extractModulesPackagesDuplicate', () => {
       });
 
       expect(
-        getDuplicatePackagesInsight({
-          'package-a': ['package-a', 'package-a~1'],
-          'package-b': ['package-b', 'package-b~1'],
-        }, {}),
+        getDuplicatePackagesInsight(
+          {
+            'package-a': ['package-a', 'package-a~1'],
+            'package-b': ['package-b', 'package-b~1'],
+          },
+          {},
+        ),
       ).toEqual({
         type: 'warning',
         data: {

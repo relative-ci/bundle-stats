@@ -4,7 +4,7 @@ describe('lightouse / filter', () => {
   test('should filter lighthouse stats', () => {
     const actual = filter({
       userAgent: 'Mozilla/5.0',
-      environment: { },
+      environment: {},
       lighthouseVersion: '5.1.0',
       fetchTime: '2019-08-21T07:38:35.619Z',
       requestedUrl: 'http://localhost:5000/',

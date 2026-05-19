@@ -45,9 +45,9 @@ describe('CLI', () => {
 
     afterEach(() =>
       Promise.all([
-      fs.rm('custom-outdir', { recursive: true, force: true }),
-      fs.rm(absoluteOutDir, { recursive: true, force: true }),
-    ]),
+        fs.rm('custom-outdir', { recursive: true, force: true }),
+        fs.rm(absoluteOutDir, { recursive: true, force: true }),
+      ]),
     );
 
     test('should generate report in a custom relative directory', async () => {
@@ -86,11 +86,11 @@ describe('CLI', () => {
 
     afterEach(() =>
       Promise.all([
-      fs.rm('dist', { recursive: true, force: true }),
-      fs.rm(baselineDefaultDirectory, { recursive: true, force: true }),
-      fs.rm(baselineCustomDirectory, { recursive: true, force: true }),
-      fs.rm(baselineCustomAbsoluteDirectory, { recursive: true, force: true }),
-    ]),
+        fs.rm('dist', { recursive: true, force: true }),
+        fs.rm(baselineDefaultDirectory, { recursive: true, force: true }),
+        fs.rm(baselineCustomDirectory, { recursive: true, force: true }),
+        fs.rm(baselineCustomAbsoluteDirectory, { recursive: true, force: true }),
+      ]),
     );
 
     test('should generate report successfully when baseline is missing', async () => {

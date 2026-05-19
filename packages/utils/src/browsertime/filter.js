@@ -3,11 +3,7 @@ import merge from 'lodash/merge';
 import pick from 'lodash/pick';
 import set from 'lodash/set';
 
-const META_KEYS = [
-  'info.browsertime.version',
-  'info.timestamp',
-  'info.url',
-];
+const META_KEYS = ['info.browsertime.version', 'info.timestamp', 'info.url'];
 
 const METRICS_KEYS = [
   'statistics.timings.firstPaint',
@@ -49,10 +45,7 @@ export const filter = (browsertimeSource) => {
 
   const metrics = METRICS_KEYS.reduce((agg, key) => {
     // Browsertime is proving an array of results
-    const metricData = pick(
-      get(browsertimeSource, [0, ...key.split('.')], {}),
-      ['median'],
-    );
+    const metricData = pick(get(browsertimeSource, [0, ...key.split('.')], {}), ['median']);
     const filteredMetricData = set({}, key, metricData);
 
     return merge({}, agg, filteredMetricData);

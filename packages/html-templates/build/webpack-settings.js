@@ -1,8 +1,8 @@
 /* env node */
-const { resolve } = require('path');
+const { join, resolve } = require('path');
 const dotenv = require('dotenv');
 
-const rootDir = __dirname;
+const rootDir = join(__dirname, '../');
 const srcDir = resolve(rootDir, 'src');
 const distDir = resolve(rootDir, 'dist');
 const publicDir = resolve(rootDir, 'public');

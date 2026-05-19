@@ -21,12 +21,15 @@ const METRIC_KEYS = {
 };
 
 export const extractAudits = (lighthouseSource) => {
-  const metrics = Object.entries(METRIC_KEYS).reduce((agg, [metricKey, lighthouseAuditId]) => ({
-    ...agg,
-    [metricKey]: {
-      value: get(lighthouseSource, ['audits', lighthouseAuditId, 'numericValue'], 0),
-    },
-  }), {});
+  const metrics = Object.entries(METRIC_KEYS).reduce(
+    (agg, [metricKey, lighthouseAuditId]) => ({
+      ...agg,
+      [metricKey]: {
+        value: get(lighthouseSource, ['audits', lighthouseAuditId, 'numericValue'], 0),
+      },
+    }),
+    {},
+  );
 
   return { metrics };
 };

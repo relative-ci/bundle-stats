@@ -3,10 +3,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 import merge from 'lodash/merge';
 
-/* eslint-disable import/no-unresolved, import/no-relative-packages */
+/* eslint-disable import/no-relative-packages */
 import currentData from '../../../../fixtures/job.current';
 import baselineData from '../../../../fixtures/job.baseline';
-/* eslint-enable import/no-unresolved, import/no-relative-packages */
+/* eslint-enable import/no-relative-packages */
 import { App } from '.';
 
 const CURRENT_SOURCE = {

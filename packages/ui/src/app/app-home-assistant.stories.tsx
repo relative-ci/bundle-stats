@@ -2,11 +2,11 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 
-/* eslint-disable import/no-unresolved, import/no-relative-packages */
+/* eslint-disable import/no-relative-packages */
 import currentData from '../../../../fixtures/home-assistant/current.json';
 import baselineData from '../../../../fixtures/home-assistant/baseline.json';
 import { metaBaseline, metaCurrent } from '../../../../fixtures/meta';
-/* eslint-enable import/no-unresolved, import/no-relative-packages */
+/* eslint-enable import/no-relative-packages */
 import { App } from '.';
 
 const CURRENT_SOURCE = {

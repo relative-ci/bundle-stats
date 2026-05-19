@@ -1,6 +1,9 @@
 :root {
-  --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  --font-family-fixed: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family:
+    system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
+    Cantarell, 'Helvetica Neue', sans-serif;
+  --font-family-fixed:
+    SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
   /* Spaces */
   --space-xxxsmall: 4px;
@@ -128,9 +131,9 @@
   --color-light: #fff;
 
   /* Functional color variables */
-  --color-branding-light: #2B76D4;
+  --color-branding-light: #2b76d4;
   --color-branding: #1a477f;
-  --color-branding-dark: #09182A;
+  --color-branding-dark: #09182a;
 
   --color-text-ultra-light: var(--color-gray-ultra-light);
   --color-text-light: var(--color-gray-light);
@@ -202,7 +205,12 @@
   --radius-medium: 7px;
   --radius-large: 9px;
 
-  --skeleton-inline-background: linear-gradient(transparent 10%, currentColor 10.1%, currentColor 89.9%, transparent 90%);
+  --skeleton-inline-background: linear-gradient(
+    transparent 10%,
+    currentColor 10.1%,
+    currentColor 89.9%,
+    transparent 90%
+  );
   --skeleton-block-background: currentColor;
   --skeleton-opacity: 0.06;
 

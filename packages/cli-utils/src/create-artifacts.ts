@@ -6,7 +6,8 @@ import { INITIAL_DATA_PATTERN, OUTPUT_FILENAME, OutputType } from './constants';
 type CreateArtifactFn = (jobs: Array<Job>, report: any) => string;
 
 export const createHTMLArtifact: CreateArtifactFn = (jobs) => {
-  // Remove job rawData
+  // Remove job rawData - assign is faster
+  // eslint-disable-next-line prefer-object-spread
   const initialDataJobs = jobs.map((job) => Object.assign({}, job, { rawData: undefined }));
 
   // Inject data into the template

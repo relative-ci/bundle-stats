@@ -9,7 +9,7 @@ const getBuiltAt = (webpackStats, key) => {
   }
 
   try {
-    builtAt = (new Date(builtAtTime)).toISOString();
+    builtAt = new Date(builtAtTime).toISOString();
   } catch (error) {
     console.error('Error extracting builtAt value:', error.message); // eslint-disable-line no-console
   }
