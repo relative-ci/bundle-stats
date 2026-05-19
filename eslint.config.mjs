@@ -1,4 +1,3 @@
-import type { ESLint, Linter } from 'eslint';
 import { FlatCompat } from '@eslint/eslintrc';
 import { fixupConfigRules } from '@eslint/compat';
 import js from '@eslint/js';
@@ -8,6 +7,10 @@ import tsParser from '@typescript-eslint/parser';
 import pluginJest from 'eslint-plugin-jest';
 import prettierRecommended from 'eslint-plugin-prettier/recommended';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
@@ -15,11 +18,13 @@ const compat = new FlatCompat({
   allConfig: js.configs.all,
 });
 
-const config: Linter.Config[] = [
+const config = [
   // Global ignores — replaces all .eslintignore files
   {
     ignores: [
       '**/node_modules/**',
+      // Root config file (imports ESLint internals not tracked as package deps)
+      'eslint.config.mjs',
       // Build outputs
       'packages/*/lib/**',
       'packages/*/lib-esm/**',
@@ -40,7 +45,7 @@ const config: Linter.Config[] = [
   {
     files: ['**/*.{js,mjs,jsx,ts,tsx}'],
     plugins: {
-      jest: pluginJest as ESLint.Plugin,
+      jest: pluginJest,
     },
     languageOptions: {
       globals: {
@@ -139,7 +144,7 @@ const config: Linter.Config[] = [
       },
     },
     plugins: {
-      '@typescript-eslint': tsPlugin as unknown as ESLint.Plugin,
+      '@typescript-eslint': tsPlugin,
     },
     rules: {
       'import/prefer-default-export': 'off',
@@ -167,6 +172,15 @@ const config: Linter.Config[] = [
       'no-undef': 'off',
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': ['warn', { varsIgnorePattern: '^[_]{1,}$' }],
+    },
+  },
+
+  // Build/tool config files — imports come from devDependencies that may only exist
+  // in a package's own node_modules or the workspace root, so skip unresolved checks
+  {
+    files: ['**/*.config.{js,mjs,ts}', '**/webpack.config.*.{js,mjs}'],
+    rules: {
+      'import/no-unresolved': 'off',
     },
   },
 
