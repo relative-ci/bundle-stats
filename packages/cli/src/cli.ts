@@ -1,14 +1,13 @@
 import path from 'path';
 import yargs from 'yargs';
-// @ts-ignore
-import updateNotifier from 'update-notifier';
+import updateNotifier, { type Package } from 'update-notifier';
 
 import run from './run';
 
 const DEFAULT_OUTPUT_DIR = './dist';
 const WEEK_IN_MS = 1000 * 60 * 60 * 24 * 7;
 
-export default async function cli(pkg: object) {
+export default async function cli(pkg: Package) {
   // Show update notification
   const notifier = updateNotifier({ pkg, updateCheckInterval: WEEK_IN_MS });
 
