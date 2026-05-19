@@ -1,5 +1,6 @@
 import path from 'path';
 import yargs from 'yargs';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import updateNotifier, { type Package } from 'update-notifier';
 
 import run from './run';
