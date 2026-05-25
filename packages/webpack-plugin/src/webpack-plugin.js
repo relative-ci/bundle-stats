@@ -1,4 +1,3 @@
-import path from 'path';
 import webpack from 'webpack';
 import { merge } from 'lodash';
 import { generateReports } from '@bundle-stats/cli-utils';
@@ -48,18 +47,10 @@ export class BundleStatsWebpackPlugin {
               logger.warn([invalid, CONFIG.OPTIONS_URL].join('\n'));
             }
 
-            const newAssets = await generateReports(
-              compilationStats,
-              {
-                ...options,
-                baselineFilepath:
-                  options.baselineFilepath && path.join(outputPath, options.baselineFilepath),
-              },
-              {
-                outputPath,
-                logger,
-              },
-            );
+            const newAssets = await generateReports(compilationStats, options, {
+              outputPath,
+              logger,
+            });
 
             Object.entries(newAssets).forEach(([filename, report]) => {
               compilation.emitAsset(filename, new webpack.sources.RawSource(report.source), {
@@ -86,18 +77,10 @@ export class BundleStatsWebpackPlugin {
         logger.warn([invalid, CONFIG.OPTIONS_URL].join('\n'));
       }
 
-      const newAssets = await generateReports(
-        compilationStats,
-        {
-          ...options,
-          baselineFilepath:
-            options.baselineFilepath && path.join(outputPath, options.baselineFilepath),
-        },
-        {
-          outputPath,
-          logger,
-        },
-      );
+      const newAssets = await generateReports(compilationStats, options, {
+        outputPath,
+        logger,
+      });
 
       Object.entries(newAssets).forEach(([filename, report]) => {
         // eslint-disable-next-line no-param-reassign

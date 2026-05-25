@@ -26,7 +26,7 @@ export interface ReportOptions {
   baseline?: boolean;
 
   /**
-   * Custom absolute baseline file path
+   * Custom baseline file path
    *  - relative to the output dir or absolute file when the output path is present
    *  or
    *  - absolute path when the output path is missing
@@ -105,20 +105,26 @@ export const generateReports = async (
   }
 
   const baselineAbsolutePath = getBaselinePath(outputPath, outDir, options.baselineFilepath);
-  const baselinePath = getBaselineRelativePath(outputPath, outDir, baselineAbsolutePath);
+  const baselineRelativePath = getBaselineRelativePath(outputPath, outDir, baselineAbsolutePath);
+
+  // Log the configured value or the resolved one
+  const baselinePublicPath = options.baselineFilepath
+    ? options.baselineFilepath
+    : baselineRelativePath;
 
   let baselineStats = null;
 
+  // If compare mode, read baseline stats JSON file
   if (compare) {
     try {
       const baselineStatsData = await readBaseline(baselineAbsolutePath);
       baselineStats = filter(baselineStatsData);
 
       if (!options.silent) {
-        logger.info(`${TEXT.BASELINE_READING} ${baselinePath}.`);
+        logger.info(`${TEXT.BASELINE_READING} ${baselinePublicPath}.`);
       }
     } catch (err) {
-      logger.warn(`${TEXT.BASELINE_READING} ${baselinePath}. ${TEXT.BASELINE_MISSING}`);
+      logger.warn(`${TEXT.BASELINE_READING} ${baselinePublicPath}. ${TEXT.BASELINE_MISSING}`);
     }
   }
 
@@ -134,7 +140,7 @@ export const generateReports = async (
 
   Object.values(artifacts).forEach(({ filename, output }) => {
     const relativeFilepath = path.join(outDir, filename);
-    // eslint-disable-next-line no-param-reassign
+
     newAssets[relativeFilepath] = {
       type: 'report',
       source: output,
@@ -144,15 +150,14 @@ export const generateReports = async (
 
   // Save baseline JSON file if option is set
   if (baseline) {
-    // eslint-disable-next-line no-param-reassign
-    newAssets[baselinePath] = {
+    newAssets[baselineRelativePath] = {
       type: 'baseline',
       source: JSON.stringify(data),
       filepath: baselineAbsolutePath,
     };
 
     if (!options.silent) {
-      logger.info(`${TEXT.BASELINE_WRITING} ${baselinePath}`);
+      logger.info(`${TEXT.BASELINE_WRITING} ${baselineRelativePath}`);
     }
   }
 

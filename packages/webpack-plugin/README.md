@@ -72,7 +72,7 @@ module.exports = {
 - `html` - output html report (default `true`).
 - `json` - output json report (default `false`).
 - `outDir` - output directory relative to webpack `output.path` (default `''`).
-- `baselineFilepath` - baseline filepath relative to webpack `output.path` (default 'node_modules/.cache/bundle-stats/baseline.json')
+- `baselineFilepath` - baseline filepath relative to webpack `output.path` or absolute (default 'node_modules/.cache/bundle-stats/baseline.json')
 - `silent` - stop logging info and only log warning and error (default `false`).
 - `stats` - [Webpack stats](https://webpack.js.org/configuration/stats) options
   default:
@@ -223,4 +223,3 @@ Standalone web application to compare Webpack/Lighthouse/Browsertime stats.
 ### :zap: [bundle-stats-action](https://github.com/vio/bundle-stats-action)
 
 Github Action that generates [bundle-stats](https://github.com/relative-ci/bundle-stats) reports.
-
