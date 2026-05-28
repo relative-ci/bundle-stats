@@ -20,8 +20,7 @@
     "lint": "eslint .",
     "serve-demo": "./bin/index.js --demo && http-server dist",
     "test": "echo \"No tests\" && exit 0",
-    "pretest:package": "cd test/package && npm install --force",
-    "test:package": "cd test/package && npm test --",
+    "test:package": "cd test/package && npm install --force && npm test --",
     "test:e2e": "playwright test"
   },
   "keywords": [
