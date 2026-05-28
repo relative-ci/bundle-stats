@@ -14,8 +14,7 @@
     "build": "babel src -d lib",
     "lint": "eslint .",
     "test": "TZ=UTC jest src ",
-    "pretest:package": "cd test/package && npm install --force",
-    "test:package": "cd test/package && npm test --"
+    "test:package": "cd test/package && npm install --force && npm test --"
   },
   "keywords": [
     "webpack",
