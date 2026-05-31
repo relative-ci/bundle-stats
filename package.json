@@ -42,7 +42,7 @@
     "globals": "17.6.0",
     "husky": "9.1.7",
     "lerna": "9.0.7",
-    "lint-staged": "17.0.5",
+    "lint-staged": "17.0.6",
     "prettier": "3.8.3",
     "react-is": "^18.3.1",
     "rimraf": "6.1.3",
