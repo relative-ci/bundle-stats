@@ -114,11 +114,13 @@ describe('webpack plugin', () => {
         expect(stats.hasErrors()).toBe(false);
 
         /* eslint-disable no-console */
-        expect(console.warn).not.toBeCalledWith('Missing baseline stats, see "baseline" option.');
-        expect(console.info).toBeCalledWith(
+        expect(console.warn).not.toHaveBeenCalledWith(
+          'Missing baseline stats, see "baseline" option.',
+        );
+        expect(console.info).toHaveBeenCalledWith(
           'Reading baseline data from ../node_modules/.cache/bundle-stats/baseline.json.',
         );
-        expect(console.info).toBeCalledWith('Bundle Size — 27B (+35%).');
+        expect(console.info).toHaveBeenCalledWith('Bundle Size — 27B (+35%).');
         /* eslint-enable no-console */
 
         const { assets } = stats.toJson({ source: false, assets: true });
@@ -150,9 +152,13 @@ describe('webpack plugin', () => {
         expect(stats.hasErrors()).toBe(false);
 
         /* eslint-disable no-console */
-        expect(console.warn).not.toBeCalledWith('Missing baseline stats, see "baseline" option.');
-        expect(console.info).toBeCalledWith('Reading baseline data from ./custom-baseline.json.');
-        expect(console.info).toBeCalledWith('Bundle Size — 27B (+8%).');
+        expect(console.warn).not.toHaveBeenCalledWith(
+          'Missing baseline stats, see "baseline" option.',
+        );
+        expect(console.info).toHaveBeenCalledWith(
+          'Reading baseline data from ./custom-baseline.json.',
+        );
+        expect(console.info).toHaveBeenCalledWith('Bundle Size — 27B (+8%).');
         /* eslint-enable no-console */
 
         const { assets } = stats.toJson({ source: false, assets: true });
