@@ -16,7 +16,7 @@
   "private": true,
   "description": "Analyze webpack stats(bundle size, assets, modules, packages) and compare the results between different builds.",
   "engines": {
-    "node": ">= 14.0"
+    "node": ">= 20.0"
   },
   "devDependencies": {
     "@babel/core": "7.29.7",
