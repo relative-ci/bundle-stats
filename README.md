@@ -21,6 +21,12 @@ npm install --dev rollup-plugin-stats
 or
 
 ```shell
+pnpm add --save-dev rollup-plugin-stats
+```
+
+or
+
+```shell
 yarn add --dev rollup-plugin-stats
 ```
 
