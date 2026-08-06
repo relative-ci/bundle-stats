@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v7.0.1
 
       - name: "Setup node & npm"
-        uses: "relative-ci/.github/actions/setup-node-npm@v1.2.0"
+        uses: "relative-ci/.github/actions/setup-node-npm@v1.3.0"
 
       - name: "Lint"
         run: npm run lint
@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v7.0.1
 
       - name: "Setup node & npm"
-        uses: "relative-ci/.github/actions/setup-node-npm@v1.2.0"
+        uses: "relative-ci/.github/actions/setup-node-npm@v1.3.0"
 
       - name: "Test"
         run: npm run test:unit
@@ -42,10 +42,10 @@ jobs:
         uses: actions/checkout@v7.0.1
 
       - name: "Setup node & npm"
-        uses: "relative-ci/.github/actions/setup-node-npm@v1.2.0"
+        uses: "relative-ci/.github/actions/setup-node-npm@v1.3.0"
 
       - name: "Build"
-        run: yarn run build
+        run: npm run build
 
       - name: "Upload build files"
         uses: actions/upload-artifact@v7.0.1
@@ -80,7 +80,7 @@ jobs:
         uses: actions/checkout@v7.0.1
 
       - name: "Setup node & npm"
-        uses: "relative-ci/.github/actions/setup-node-npm@v1.2.0"
+        uses: "relative-ci/.github/actions/setup-node-npm@v1.3.0"
         with:
           cache: "never"
           version: ${{ matrix.node }}
@@ -124,7 +124,7 @@ jobs:
         uses: actions/checkout@v7.0.1
 
       - name: "Setup node & npm"
-        uses: "relative-ci/.github/actions/setup-node-npm@v1.2.0"
+        uses: "relative-ci/.github/actions/setup-node-npm@v1.3.0"
         with:
           cache: "never"
           version: ${{ matrix.node }}
@@ -173,7 +173,7 @@ jobs:
         uses: actions/checkout@v7.0.1
 
       - name: "Setup node & npm"
-        uses: "relative-ci/.github/actions/setup-node-npm@v1.2.0"
+        uses: "relative-ci/.github/actions/setup-node-npm@v1.3.0"
         with:
           cache: "never"
           version: ${{ matrix.node }}
@@ -221,7 +221,7 @@ jobs:
       - uses: actions/checkout@v7.0.1
 
       - name: "Setup node & npm"
-        uses: "relative-ci/.github/actions/setup-node-npm@v1.2.0"
+        uses: "relative-ci/.github/actions/setup-node-npm@v1.3.0"
 
       - name: "Download build"
         uses: actions/download-artifact@v8.0.1
