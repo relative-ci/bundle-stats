@@ -46,7 +46,7 @@
   "dependencies": {
     "@bundle-stats/cli-utils": "^4.22.2",
     "@bundle-stats/plugin-webpack-validate": "^4.22.2",
-    "core-js": "^3.21.0",
+    "core-js": "^3.50.0",
     "lodash": "^4.18.1"
   },
   "devDependencies": {
