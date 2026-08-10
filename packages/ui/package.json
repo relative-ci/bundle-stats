@@ -39,6 +39,7 @@
     "@babel/preset-env": "7.29.7",
     "@babel/preset-react": "7.29.7",
     "@babel/preset-typescript": "7.29.7",
+    "@storybook/addon-styling-webpack": "3.0.2",
     "@storybook/addon-webpack5-compiler-babel": "4.0.1",
     "@storybook/react": "10.5.7",
     "@storybook/react-webpack5": "10.5.7",
@@ -49,6 +50,7 @@
     "classnames": "2.5.1",
     "colormap": "2.3.2",
     "cross-env": "10.1.0",
+    "css-loader": "6.10.0",
     "hex-rgb": "5.0.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "30.4.2",
@@ -61,6 +63,7 @@
     "react-router-dom": "5.3.4",
     "rimraf": "6.1.3",
     "storybook": "10.5.7",
+    "style-loader": "4.0.0",
     "typescript": "5.9.3"
   },
   "peerDependencies": {
