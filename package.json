@@ -81,12 +81,21 @@
   },
   "homepage": "https://github.com/relative-ci/bundle-stats#readme",
   "overrides": {
-    "eslint-plugin-jest": {
-      "@typescript-eslint/eslint-plugin": "$@typescript-eslint/eslint-plugin"
-    },
     "eslint-config-airbnb": {
       "eslint": "$eslint",
       "eslint-plugin-react-hooks": "$eslint-plugin-react-hooks"
+    },
+    "eslint-plugin-import": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-jest": {
+      "@typescript-eslint/eslint-plugin": "$@typescript-eslint/eslint-plugin"
+    },
+    "eslint-plugin-jsx-a11y": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-react": {
+      "eslint": "$eslint"
     }
   },
   "dependencies": {
