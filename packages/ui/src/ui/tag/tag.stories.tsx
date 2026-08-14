@@ -1,9 +1,8 @@
-import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Tag } from '.';
+import { Tag, TagProps } from '.';
 
-export default {
+const meta = {
   title: 'UI/Tag',
   component: Tag,
   argTypes: {
@@ -19,14 +18,16 @@ export default {
   args: {
     children: 'tag',
   },
-} as Meta;
+} satisfies Meta<TagProps>;
 
-const Template: Story = (args) => <Tag {...args} />;
+export default meta;
 
-export const Default = Template.bind({});
+type Story = StoryObj<typeof meta>;
 
-export const OneLetter = Template.bind({});
+export const Default: Story = {};
 
-OneLetter.args = {
-  children: 'd',
+export const OneLetter: Story = {
+  args: {
+    children: 'd',
+  },
 };
