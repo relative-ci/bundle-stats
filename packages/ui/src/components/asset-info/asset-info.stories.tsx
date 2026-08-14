@@ -1,23 +1,20 @@
-import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { action } from 'storybook/actions';
 
 import { getWrapperDecorator } from '../../stories';
 import { AssetInfo } from '.';
 
-export default {
-  title: 'Components/AssetInfo',
-  component: AssetInfo,
-  decorators: [getWrapperDecorator()],
-} as Meta;
-
 const ITEM = {
+  key: 'static/vendor.js',
   label: 'static/vendor.js',
+  biggerIsBetter: false,
   changed: true,
+  isAsset: true,
   isChunk: true,
   isEntry: true,
   isInitial: true,
   isNotPredictive: false,
+  fileType: '',
   runs: [
     {
       name: 'static/vendor.abcd1234.js',
@@ -33,42 +30,53 @@ const ITEM = {
   ],
 };
 
-const Template = (props: Pick<React.ComponentProps<typeof AssetInfo>, 'chunks'>) => (
-  <AssetInfo item={ITEM} labels={['Job #2', 'Job #1']} onClose={action('CLOSE')} {...props} />
-);
+const meta = {
+  title: 'Components/AssetInfo',
+  component: AssetInfo,
+  decorators: [getWrapperDecorator()],
+  args: {
+    item: ITEM,
+    labels: ['Job #2', 'Job #1'],
+    onClose: action('CLOSE'),
+  },
+} satisfies Meta<typeof AssetInfo>;
 
-export const Default: Story = Template.bind({});
+export default meta;
 
-export const WithChunks: Story = Template.bind({});
+type Story = StoryObj<typeof meta>;
 
-WithChunks.args = {
-  chunks: [
-    {
-      id: '1',
-      name: 'vendor',
-    },
-    {
-      id: '2',
-      name: 'app~common~utils~shared',
-    },
-  ],
+export const Default: Story = {};
+
+export const WithChunks: Story = {
+  args: {
+    chunks: [
+      {
+        id: '1',
+        name: 'vendor',
+      },
+      {
+        id: '2',
+        name: 'app~common~utils~shared',
+      },
+    ],
+  },
 };
 
-export const WithFileType: Story = Template.bind({});
-
-WithFileType.args = {
-  chunks: [
-    {
-      id: '1',
-      name: 'vendor',
+export const WithFileType: Story = {
+  args: {
+    chunks: [
+      {
+        id: '1',
+        name: 'vendor',
+      },
+      {
+        id: '2',
+        name: 'app~common~utils~shared',
+      },
+    ],
+    item: {
+      ...ITEM,
+      fileType: 'JS',
     },
-    {
-      id: '2',
-      name: 'app~common~utils~shared',
-    },
-  ],
-  item: {
-    ...ITEM,
-    fileType: 'JS',
   },
 };

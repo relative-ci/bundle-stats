@@ -1,20 +1,25 @@
-import React from 'react';
-import { Meta } from '@storybook/react';
-import { action } from 'storybook/actions'; // eslint-disable-line
+import type { Meta, StoryObj } from '@storybook/react';
+import { action } from 'storybook/actions';
 
 import { getWrapperDecorator } from '../../stories';
 import { Filters } from '.';
 
-export default {
+const meta = {
   title: 'UI/Filters',
   component: Filters,
   decorators: [getWrapperDecorator({ paddingLeft: '200px' })],
-} as Meta;
+  args: {
+    onChange: action('CHANGE'),
+  },
+} satisfies Meta<typeof Filters>;
 
-export const Default = () => (
-  <Filters
-    onChange={action('CHANGE')}
-    filters={{
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    filters: {
       changed: {
         label: 'Changed',
         defaultValue: true,
@@ -44,14 +49,13 @@ export const Default = () => (
           },
         ],
       },
-    }}
-  />
-);
+    },
+  },
+};
 
-export const Overflow = () => (
-  <Filters
-    onChange={action('CHANGE')}
-    filters={{
+export const Overflow: Story = {
+  args: {
+    filters: {
       changed: {
         label: 'Changed',
         defaultValue: true,
@@ -66,14 +70,13 @@ export const Overflow = () => (
             defaultValue: true,
           })),
       },
-    }}
-  />
-);
+    },
+  },
+};
 
-export const DisableOptions = () => (
-  <Filters
-    onChange={action('CHANGE')}
-    filters={{
+export const DisableOptions: Story = {
+  args: {
+    filters: {
       changed: {
         label: 'Changed',
         defaultValue: false,
@@ -104,6 +107,6 @@ export const DisableOptions = () => (
           },
         ],
       },
-    }}
-  />
-);
+    },
+  },
+};

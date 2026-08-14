@@ -94,4 +94,11 @@ const ButtonComponent = <T extends React.ElementType = 'button'>(
   );
 };
 
-export const Button = React.forwardRef(ButtonComponent);
+// React.forwardRef collapses ButtonComponent's generic `as` parameter down to
+// its default ('button'), so cast back to a polymorphic signature to keep
+// `as`/its associated element props (e.g. `href` with `as="a"`) type-checked.
+export const Button = React.forwardRef(ButtonComponent) as <T extends React.ElementType = 'button'>(
+  props: ButtonProps<T> &
+    Omit<React.ComponentPropsWithoutRef<T>, keyof ButtonProps<T>> &
+    React.RefAttributes<Element>,
+) => React.ReactElement | null;

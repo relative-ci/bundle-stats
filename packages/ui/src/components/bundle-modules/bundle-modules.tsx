@@ -164,7 +164,7 @@ interface BundleModulesProps extends React.ComponentProps<'div'> {
   moduleMetric: ModuleSizeMetric;
   setModuleMetric: (newValue: ModuleSizeMetric) => void;
 
-  customComponentLink: React.ElementType;
+  customComponentLink?: React.ElementType;
 }
 
 export const BundleModules = (props: BundleModulesProps) => {

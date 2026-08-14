@@ -1,12 +1,12 @@
-import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { RunInfo } from './run-info';
 
-export default {
+const meta = {
   title: 'Components/RunInfo',
   component: RunInfo,
   args: {
+    id: 'webpack.totalSizeByTypeALL',
     size: 'medium',
   },
   argTypes: {
@@ -15,51 +15,53 @@ export default {
       control: { type: 'select' },
     },
   },
-} as Meta;
+} satisfies Meta<typeof RunInfo>;
 
-const Template: Story = (args) => <RunInfo id="webpack.totalSizeByTypeALL" {...args} />;
+export default meta;
 
-export const Default = Template.bind({});
+type Story = StoryObj<typeof meta>;
 
-Default.args = {
-  title: 'Bundle Size',
-  current: '120KiB',
-  baseline: '100KiB',
-  delta: '+20%',
-  deltaType: 'HIGH_NEGATIVE',
+export const Default: Story = {
+  args: {
+    title: 'Bundle Size',
+    current: '120KiB',
+    baseline: '100KiB',
+    delta: '+20%',
+    deltaType: 'HIGH_NEGATIVE',
+  },
 };
 
-export const DeltaPercentage = Template.bind({});
-
-DeltaPercentage.args = {
-  ...Default.args,
-  deltaPercentage: '+20KiB',
+export const DeltaPercentage: Story = {
+  args: {
+    ...Default.args,
+    deltaPercentage: '+20KiB',
+  },
 };
 
-export const SizeLarge = Template.bind({});
-
-SizeLarge.args = {
-  ...Default.args,
-  size: 'large',
+export const SizeLarge: Story = {
+  args: {
+    ...Default.args,
+    size: 'large',
+  },
 };
 
-export const TitleHoverCard = Template.bind({});
-
-TitleHoverCard.args = {
-  ...Default.args,
-  titleHoverCard: 'Info',
+export const TitleHoverCard: Story = {
+  args: {
+    ...Default.args,
+    titleHoverCard: 'Info',
+  },
 };
 
-export const TitleTooltip = Template.bind({});
-
-TitleTooltip.args = {
-  ...Default.args,
-  titleTooltip: 'Info',
+export const TitleTooltip: Story = {
+  args: {
+    ...Default.args,
+    titleTooltip: 'Info',
+  },
 };
 
-export const Loading = Template.bind({});
-
-Loading.args = {
-  title: 'Bundle Size',
-  loading: true,
+export const Loading: Story = {
+  args: {
+    title: 'Bundle Size',
+    loading: true,
+  },
 };

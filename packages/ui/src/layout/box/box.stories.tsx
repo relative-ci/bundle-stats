@@ -1,49 +1,56 @@
-import React from 'react';
-import type { Meta, Story } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { Box } from '.';
 
-export default {
+const meta = {
   title: 'Layout/Box',
   component: Box,
   decorators: [getWrapperDecorator()],
-} as Meta<typeof Box>;
+  args: {
+    style: { border: '1px dotted magenta' },
+    children: 'Lorem ipsum',
+  },
+} satisfies Meta<typeof Box>;
 
-const Template: Story = (props: any) => (
-  <Box style={{ border: '1px dotted magenta' }} {...props}>
-    Lorem ipsum
-  </Box>
-);
+export default meta;
 
-export const Default = Template.bind({});
+type Story = StoryObj<typeof meta>;
 
-export const WithPadding = Template.bind({});
-WithPadding.args = {
-  padding: 'medium',
+export const Default: Story = {};
+
+export const WithPadding: Story = {
+  args: {
+    padding: 'medium',
+  },
 };
 
-export const WithHorizontalPadding = Template.bind({});
-WithHorizontalPadding.args = {
-  horizontalPadding: 'medium',
+export const WithHorizontalPadding: Story = {
+  args: {
+    horizontalPadding: 'medium',
+  },
 };
 
-export const WithVerticalPadding = Template.bind({});
-WithVerticalPadding.args = {
-  verticalPadding: 'medium',
+export const WithVerticalPadding: Story = {
+  args: {
+    verticalPadding: 'medium',
+  },
 };
 
-export const WithHorizontalAndVerticalPadding = Template.bind({});
-WithHorizontalAndVerticalPadding.args = {
-  padding: ['xxsmall', 'medium'],
+export const WithHorizontalAndVerticalPadding: Story = {
+  args: {
+    padding: ['xxsmall', 'medium'],
+  },
 };
 
-export const WithOutline = Template.bind({});
-WithOutline.args = {
-  outline: true,
+export const WithOutline: Story = {
+  args: {
+    outline: true,
+  },
 };
 
-export const WithOutlineHover = Template.bind({});
-WithOutlineHover.args = {
-  outlineHover: true,
+export const WithOutlineHover: Story = {
+  args: {
+    outlineHover: true,
+  },
 };

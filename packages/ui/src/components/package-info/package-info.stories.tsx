@@ -1,13 +1,8 @@
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { action } from 'storybook/actions';
 
 import { getWrapperDecorator } from '../../stories';
 import { PackageInfo } from '.';
-
-export default {
-  title: 'Components/PackageInfo',
-  component: PackageInfo,
-  decorators: [getWrapperDecorator()],
-};
 
 const RUNS = [
   {
@@ -23,14 +18,24 @@ const RUNS = [
   },
 ];
 
-export const Default = () => (
-  <PackageInfo
-    name="lodash~1"
-    item={{
+const meta = {
+  title: 'Components/PackageInfo',
+  component: PackageInfo,
+  decorators: [getWrapperDecorator()],
+} satisfies Meta<typeof PackageInfo>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    item: {
       label: 'lodash',
       duplicate: true,
       runs: RUNS as any,
-    }}
-    labels={['Job #2', 'Job #1']}
-  />
-);
+    },
+    labels: ['Job #2', 'Job #1'],
+    onClose: action('CLOSE'),
+  },
+};
