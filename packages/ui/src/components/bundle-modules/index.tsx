@@ -65,6 +65,9 @@ interface BundleModulesProps extends Omit<
   | 'totalRowCount'
   | 'hideEntryInfo'
   | 'showEntryInfo'
+  | 'moduleMetric'
+  | 'setModuleMetric'
+  | 'customComponentLink'
 > {
   jobs: Array<Job>;
   filters: Record<string, boolean>;
@@ -73,6 +76,7 @@ interface BundleModulesProps extends Omit<
   setState: (params: any) => void;
   sortBy?: string;
   direction?: SortAction['direction'];
+  customComponentLink?: React.ElementType;
 }
 
 export const BundleModules = (props: BundleModulesProps) => {

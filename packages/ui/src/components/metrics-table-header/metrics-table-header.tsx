@@ -21,7 +21,7 @@ const BASELINE_COLUMN_SPAN = 1;
 const CURRENT_COLUMN_SPAN = 3;
 
 interface JobColumnProps {
-  job: { label: string; internalBuildNumber: number };
+  job: { label: React.ReactNode; internalBuildNumber: number };
   isBaseline: boolean;
 }
 
@@ -122,7 +122,7 @@ export interface MetricsTableHeaderProps {
   /**
    * Array of jobs
    */
-  jobs: Array<{ label: string; internalBuildNumber: number }>;
+  jobs: Array<{ label: React.ReactNode; internalBuildNumber: number }>;
   /**
    * Report rows
    */

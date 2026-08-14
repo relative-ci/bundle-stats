@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { InputSearch } from '.';
 
-export default {
+const meta = {
   title: 'UI/InputSearch',
   component: InputSearch,
   decorators: [getWrapperDecorator()],
-};
+} satisfies Meta<typeof InputSearch>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 const InputSearchWithState = () => {
   const [search, updateSearch] = useState('');
@@ -21,4 +26,6 @@ const InputSearchWithState = () => {
   );
 };
 
-export const Default = () => <InputSearchWithState />;
+export const Default: Story = {
+  render: () => <InputSearchWithState />,
+};

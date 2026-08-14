@@ -1,17 +1,21 @@
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { JobsHeader } from '.';
 
-export default {
+const meta = {
   title: 'Components/JobsHeader',
   component: JobsHeader,
   decorators: [getWrapperDecorator()],
-};
+} satisfies Meta<typeof JobsHeader>;
 
-export const Default = () => (
-  <JobsHeader
-    jobs={[
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    jobs: [
       {
         internalBuildNumber: 1,
         meta: {
@@ -21,13 +25,13 @@ export const Default = () => (
           },
         },
       },
-    ]}
-  />
-);
+    ],
+  },
+};
 
-export const MultipleJobs = () => (
-  <JobsHeader
-    jobs={[
+export const MultipleJobs: Story = {
+  args: {
+    jobs: [
       {
         internalBuildNumber: 1,
         meta: {
@@ -46,6 +50,6 @@ export const MultipleJobs = () => (
           },
         },
       },
-    ]}
-  />
-);
+    ],
+  },
+};

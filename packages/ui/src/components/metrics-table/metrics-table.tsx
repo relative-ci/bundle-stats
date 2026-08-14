@@ -68,7 +68,7 @@ const Row = ({ className = '', item, renderHeader, ...restProps }: RowProps) => 
 
 interface MetricsTableProps extends Omit<React.ComponentProps<typeof Table>, 'title'> {
   runs: Array<{
-    label: string;
+    label: React.ReactNode;
     internalBuildNumber: number;
   }>;
   items: Array<ReportMetricRow>;

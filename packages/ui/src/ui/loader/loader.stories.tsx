@@ -1,16 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
-import { Input } from '.';
+import { Loader } from '.';
 
 const meta = {
-  title: 'UI/Input',
-  component: Input,
+  title: 'UI/Loader',
+  component: Loader,
   decorators: [getWrapperDecorator()],
-  args: {
-    placeholder: 'Search',
-  },
-} satisfies Meta<typeof Input>;
+} satisfies Meta<typeof Loader>;
 
 export default meta;
 
@@ -20,6 +17,6 @@ export const Default: Story = {};
 
 export const WithSize: Story = {
   args: {
-    size: 'small',
+    size: Loader.SIZE_LARGE,
   },
 };

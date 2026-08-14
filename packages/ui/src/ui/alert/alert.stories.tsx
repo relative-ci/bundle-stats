@@ -1,39 +1,43 @@
-import React from 'react';
-import type { Meta, Story } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { Alert } from '.';
 
-export default {
+const meta = {
   title: 'UI/Alert',
   component: Alert,
   decorators: [getWrapperDecorator()],
-} as Meta<typeof Alert>;
+  args: {
+    children: 'Lorem ipsum',
+  },
+} satisfies Meta<typeof Alert>;
 
-const Template: Story = (args) => <Alert {...args}>Lorem ipsum</Alert>;
+export default meta;
 
-export const Default = Template.bind({});
+type Story = StoryObj<typeof meta>;
 
-export const WithKindSuccess = Template.bind({});
+export const Default: Story = {};
 
-WithKindSuccess.args = {
-  kind: 'success',
+export const WithKindSuccess: Story = {
+  args: {
+    kind: 'success',
+  },
 };
 
-export const WithKindInfo = Template.bind({});
-
-WithKindInfo.args = {
-  kind: 'info',
+export const WithKindInfo: Story = {
+  args: {
+    kind: 'info',
+  },
 };
 
-export const WithKindWarning = Template.bind({});
-
-WithKindWarning.args = {
-  kind: 'warning',
+export const WithKindWarning: Story = {
+  args: {
+    kind: 'warning',
+  },
 };
 
-export const WithKindDanger = Template.bind({});
-
-WithKindDanger.args = {
-  kind: 'danger',
+export const WithKindDanger: Story = {
+  args: {
+    kind: 'danger',
+  },
 };
