@@ -20,15 +20,18 @@ const getSortDirection = (directionParam: string | undefined): SortAction['direc
   return '';
 };
 
-export const getSortFn =
-  <TRow>(fieldPath: string, getCustomSort: UseRowsSortParams<TRow>['getCustomSort']) =>
-  (item: TRow) => {
+export function getSortFn<TRow>(
+  fieldPath: string,
+  getCustomSort: UseRowsSortParams<TRow>['getCustomSort'],
+) {
+  return (item: TRow) => {
     if (!fieldPath) {
       return getCustomSort(item);
     }
 
     return get(item, fieldPath) || 0;
   };
+}
 
 interface UseRowsSortParams<TRow> {
   rows: Array<TRow>;
@@ -47,13 +50,13 @@ interface UseRowsSort<TRow> {
   updateSort: (params: SortAction) => void;
 }
 
-export const useRowsSort = <TRow>({
+export function useRowsSort<TRow>({
   rows,
   initialField = 'runs[0].delta',
   initialDirection = 'desc',
   getCustomSort,
   setQueryState,
-}: UseRowsSortParams<TRow>): UseRowsSort<TRow> => {
+}: UseRowsSortParams<TRow>): UseRowsSort<TRow> {
   const [sort, setSort] = useState({
     field: initialField,
     direction: getSortDirection(initialDirection),
@@ -85,4 +88,4 @@ export const useRowsSort = <TRow>({
     updateSort,
     items: orderedRows,
   };
-};
+}
