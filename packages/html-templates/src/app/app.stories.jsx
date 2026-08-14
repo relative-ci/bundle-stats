@@ -43,7 +43,7 @@ const [CURRENT_JOB, BASELINE_JOB] = JOBS;
 
 const EMPTY_BASELINE = createJobs([{ webpack: currentData.rawData.webpack }, { webpack: null }]);
 
-export default {
+const meta = {
   title: 'App',
   component: App,
   decorators: [
@@ -56,24 +56,42 @@ export default {
   ],
 };
 
-export const Default = () => <App jobs={[CURRENT_JOB, BASELINE_JOB]} />;
+export default meta;
 
-export const NoInsights = () => (
-  <App
-    jobs={[
+export const Default = {
+  args: {
+    jobs: [CURRENT_JOB, BASELINE_JOB],
+  },
+};
+
+export const NoInsights = {
+  args: {
+    jobs: [
       {
         ...CURRENT_JOB,
         insights: undefined,
       },
       BASELINE_JOB,
-    ]}
-  />
-);
+    ],
+  },
+};
 
-export const NoBaseline = () => <App jobs={[CURRENT_JOB]} />;
+export const NoBaseline = {
+  args: {
+    jobs: [CURRENT_JOB],
+  },
+};
 
-export const EmptyBaseline = () => <App jobs={EMPTY_BASELINE} />;
+export const EmptyBaseline = {
+  args: {
+    jobs: EMPTY_BASELINE,
+  },
+};
 
-export const MultipleBaselines = () => <App jobs={MULTIPLE_JOBS} />;
+export const MultipleBaselines = {
+  args: {
+    jobs: MULTIPLE_JOBS,
+  },
+};
 
-export const Empty = () => <App />;
+export const Empty = {};
