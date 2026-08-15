@@ -91,7 +91,8 @@ jobs:
 
   test-storybook:
     needs:
-      - build
+      - lint
+      - test-unit
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
@@ -105,7 +106,7 @@ jobs:
           name: build-artifacts
 
       - name: Build storybook
-        run: npx lerna run build-storybook
+        run: npm run build-storybook
 
       - name: Serve storybook static files
         run: npm run serve-storybook &
@@ -118,7 +119,8 @@ jobs:
 
   test-e2e:
     needs:
-      - build
+      - lint
+      - test-unit
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
@@ -141,7 +143,8 @@ jobs:
 
   test-package-cli:
     needs:
-      - build
+      - test-storybook
+      - test-e2e
     strategy:
       fail-fast: false
       matrix:
@@ -181,7 +184,8 @@ jobs:
 
   test-package-webpack-plugin:
     needs:
-      - build
+      - test-storybook
+      - test-e2e
     strategy:
       fail-fast: false
       matrix:
@@ -245,7 +249,8 @@ jobs:
 
   test-package-rollup-plugin:
     needs:
-      - build
+      - test-storybook
+      - test-e2e
     strategy:
       fail-fast: false
       matrix:
@@ -305,16 +310,12 @@ jobs:
 
   tests:
     needs:
-      - lint
-      - test-unit
-      - test-storybook
-      - test-e2e
       - test-package-cli
       - test-package-webpack-plugin
       - test-package-rollup-plugin
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Tests done."
+      - run: echo "Package tests done."
 
   publish:
     # Run only for version tags

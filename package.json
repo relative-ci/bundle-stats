@@ -51,6 +51,7 @@
   },
   "scripts": {
     "build": "lerna run build",
+    "build-storybook": "lerna run build-storybook",
     "bump": "./scripts/bump.sh",
     "format": "prettier --write \"**/*.{js,jsx}\"",
     "lerna": "lerna",
