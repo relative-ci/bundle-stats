@@ -42,8 +42,8 @@
     "@bundle-stats/utils": "^4.22.2",
     "find-cache-dir": "^3.1.0",
     "lodash": "^4.18.1",
-    "stream-chain": "^3.6.3",
-    "stream-json": "^1.8.0"
+    "stream-chain": "^4.2.5",
+    "stream-json": "^3.5.0"
   },
   "devDependencies": {
     "@types/find-cache-dir": "^3.2.1",
