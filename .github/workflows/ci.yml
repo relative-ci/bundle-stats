@@ -89,6 +89,33 @@ jobs:
       - name: Test
         run: npm test
 
+  test-storybook:
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+
+      - name: Setup node & npm
+        uses: relative-ci/.github/actions/setup-node-npm@v1.3.0
+
+      - name: Download build files
+        uses: actions/download-artifact@v8.0.1
+        with:
+          name: build-artifacts
+
+      - name: Build storybook
+        run: npx lerna run build-storybook
+
+      - name: Serve storybook static files
+        run: npm run serve-storybook &
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Storybook smoke tests
+        run: npm run test-storybook
+
   test-e2e:
     needs:
       - build
@@ -111,22 +138,6 @@ jobs:
       - name: Run E2E tests
         working-directory: packages/cli
         run: npm run test:e2e
-
-  test-storybook:
-    needs:
-      - build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7.0.1
-
-      - name: Setup node & npm
-        uses: relative-ci/.github/actions/setup-node-npm@v1.3.0
-
-      - name: Install Playwright browser
-        run: npx playwright install --with-deps chromium
-
-      - name: Run Storybook smoke tests
-        run: npx lerna run test-storybook
 
   test-package-cli:
     needs:
@@ -296,8 +307,8 @@ jobs:
     needs:
       - lint
       - test-unit
-      - test-e2e
       - test-storybook
+      - test-e2e
       - test-package-cli
       - test-package-webpack-plugin
       - test-package-rollup-plugin

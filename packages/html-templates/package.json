@@ -7,8 +7,10 @@
   "scripts": {
     "prebuild": "rimraf ./dist",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js --mode production",
+    "build-storybook": "storybook build -c ./build/storybook",
     "lint": "eslint .",
     "start": "cross-env NODE_ENV=development storybook dev -c ./build/storybook -p 8090",
+    "serve-storybook": "vite preview --outDir storybook-static --port 8090",
     "test": "echo \"No tests\" && exit 0",
     "test-storybook": "vitest run"
   },

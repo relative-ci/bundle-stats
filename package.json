@@ -57,6 +57,8 @@
     "lint": "lerna exec 'npm run lint -- --quiet'",
     "release": "./scripts/release.sh",
     "test": "lerna run test",
+    "serve-storybook": "lerna run serve-storybook --parallel",
+    "test-storybook": "lerna run test-storybook",
     "prepare": "husky install"
   },
   "repository": {

@@ -9,4 +9,5 @@ Thumbs.db
 yarn.lock
 dist
 artifacts
+storybook-static
 .env

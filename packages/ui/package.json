@@ -18,6 +18,7 @@
     "generate-svg-sprite": "npx svg-sprite -s --si --no-svg-namespace-classnames src/assets/icons/*.svg && mv symbol/svg/sprite.css.svg src/assets/icons.svg",
     "lint": "eslint .",
     "start": "cross-env NODE_ENV=development storybook dev -c ./build/storybook -p 8080",
+    "serve-storybook": "vite preview --outDir storybook-static --port 8080",
     "test": "jest src --passWithNoTests",
     "test-storybook": "vitest run"
   },
