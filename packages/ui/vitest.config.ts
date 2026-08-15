@@ -26,6 +26,7 @@ export default defineConfig({
   ],
   test: {
     name: 'ui:storybook',
+    setupFiles: ['./vitest.setup.ts'],
     retry: 2,
     browser: {
       enabled: true,
