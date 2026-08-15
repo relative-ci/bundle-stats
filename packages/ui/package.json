@@ -18,7 +18,8 @@
     "generate-svg-sprite": "npx svg-sprite -s --si --no-svg-namespace-classnames src/assets/icons/*.svg && mv symbol/svg/sprite.css.svg src/assets/icons.svg",
     "lint": "eslint .",
     "start": "cross-env NODE_ENV=development storybook dev -c ./build/storybook -p 8080",
-    "test": "jest src --passWithNoTests"
+    "test": "jest src --passWithNoTests",
+    "test-storybook": "vitest run"
   },
   "repository": {
     "type": "git",
@@ -39,12 +40,15 @@
     "@babel/preset-env": "8.0.2",
     "@babel/preset-react": "8.0.1",
     "@babel/preset-typescript": "8.0.1",
+    "@storybook/addon-vitest": "10.5.7",
     "@storybook/react": "10.5.7",
     "@storybook/react-vite": "10.5.7",
     "@types/d3": "7.4.3",
     "@types/react": "18.3.13",
     "@types/react-router-dom": "5.3.3",
     "@vitejs/plugin-react": "5.2.0",
+    "@vitest/browser": "4.1.10",
+    "@vitest/browser-playwright": "4.1.10",
     "babel-plugin-polyfill-corejs3": "1.0.0",
     "babel-plugin-require-context-hook": "1.0.0",
     "classnames": "2.5.1",
@@ -57,6 +61,7 @@
     "jest-date-mock": "1.0.10",
     "jest-environment-jsdom": "30.4.1",
     "lodash": "4.18.1",
+    "playwright": "1.62.1",
     "prop-types": "15.8.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
@@ -65,7 +70,8 @@
     "storybook": "10.5.7",
     "typescript": "5.9.3",
     "vite": "8.2.1",
-    "vite-plugin-svgr": "5.2.0"
+    "vite-plugin-svgr": "5.2.0",
+    "vitest": "4.1.10"
   },
   "peerDependencies": {
     "classnames": "^2.0.0",

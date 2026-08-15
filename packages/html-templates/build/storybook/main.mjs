@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { mergeConfig } from 'vite';
+import svgr from 'vite-plugin-svgr';
 
 const CONFIG_DIR = dirname(fileURLToPath(import.meta.url));
 // Stories read the shared fixtures from the monorepo root, outside of the package directory
@@ -14,7 +15,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 export default {
   framework: '@storybook/react-vite',
   stories: ['../../src/**/*.stories.@(jsx|tsx|mdx)'],
-  addons: [],
+  addons: ['@storybook/addon-vitest'],
 
   docs: {
     autodocs: true,
@@ -27,6 +28,7 @@ export default {
 
   viteFinal: (config) =>
     mergeConfig(config, {
+      plugins: [svgr()],
       resolve: {
         // Render with preact, the same as the production build (see build/webpack/resolve.js).
         // No @vitejs/plugin-react here: its React Refresh runtime is not supported by preact/compat.
