@@ -109,6 +109,8 @@ const config = [
             '^@vitejs/',
             // Vite raw imports, e.g. `import content from './x.md?raw'`
             '\\?raw$',
+            // SVGR React component imports, e.g. `import Icon from './icon.svg?react'`
+            '\\?react$',
           ],
         },
       ],
