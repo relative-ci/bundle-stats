@@ -114,6 +114,9 @@ jobs:
       - name: Install Playwright browser
         run: npx playwright install --with-deps chromium
 
+      - name: Wait for storybook static servers
+        run: npx wait-on --timeout 60000 http://localhost:8080 http://localhost:8090
+
       - name: Run Storybook smoke tests
         run: npm run test-storybook
 

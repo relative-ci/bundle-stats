@@ -24,6 +24,15 @@ export default defineConfig({
       config: () => ({ root: PACKAGE_ROOT }),
     },
   ],
+  optimizeDeps: {
+    // Vite's dependency scanner reads the story files from disk without running the JSX
+    // transform, so the automatic runtime imports it injects are invisible to it. On a cold
+    // cache (every CI run) they are only discovered once the browser requests a story, which
+    // re-runs the optimizer mid-suite, changes the `browserHash` and reloads the page. The test
+    // file then resolves a second copy of `@vitest/runner` whose collector was never
+    // initialised, and collection dies with "Vitest failed to find the current suite".
+    include: ['react/jsx-runtime', 'react/jsx-dev-runtime'],
+  },
   test: {
     name: 'ui:storybook',
     setupFiles: ['./vitest.setup.ts'],

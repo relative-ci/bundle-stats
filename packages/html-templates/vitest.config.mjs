@@ -11,7 +11,7 @@ export default defineConfig({
   plugins: [
     storybookTest({
       configDir: join(PACKAGE_ROOT, 'build/storybook'),
-      storybookUrl: 'http://localhost:8081',
+      storybookUrl: 'http://localhost:8090',
       storybookScript: 'npm start',
     }),
     // `storybookTest` assumes `configDir` sits one directory below the package root (the
@@ -24,6 +24,13 @@ export default defineConfig({
       config: () => ({ root: PACKAGE_ROOT }),
     },
   ],
+  optimizeDeps: {
+    // See the equivalent comment in `packages/ui/vitest.config.ts`. The JSX runtime is missed by
+    // Vite's dependency scanner and, on a cold cache, its late discovery reloads the page
+    // mid-suite. Listed under the aliased ids (`react` -> `preact/compat`, see
+    // `build/storybook/main.mjs`) because that is what the browser ends up requesting.
+    include: ['preact/compat/jsx-runtime', 'preact/compat/jsx-dev-runtime'],
+  },
   test: {
     name: 'html-templates:storybook',
     setupFiles: ['./vitest.setup.ts'],
