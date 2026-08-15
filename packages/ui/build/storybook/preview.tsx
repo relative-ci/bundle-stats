@@ -3,7 +3,7 @@ import type { Preview } from '@storybook/react';
 
 import '../../src/css/variables.css';
 import '../../src/css/default.css';
-import { SvgIcons } from '../../src/assets/icons.svg.jsx';
+import { SvgIcons } from '../../src/assets/icons';
 
 const preview: Preview = {
   decorators: [

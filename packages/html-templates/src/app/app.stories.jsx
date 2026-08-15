@@ -1,5 +1,5 @@
 import { createJobs } from '@bundle-stats/utils';
-import { SvgIcons } from '@bundle-stats/ui/lib-esm/assets/icons.svg';
+import { SvgIcons } from '@bundle-stats/ui/lib-esm/assets/icons';
 
 /* eslint-disable import/no-extraneous-dependencies */
 import currentData from 'Fixtures/job.current';
@@ -9,17 +9,17 @@ import { App } from '.';
 
 const CURRENT_SOURCE = {
   webpack: {
-    builtAt: currentData.builtAt,
-    hash: currentData.hash,
     ...currentData.rawData.webpack,
+    builtAt: currentData.createdAt,
+    hash: currentData.commit,
   },
 };
 
 const BASELINE_SOURCE = {
   webpack: {
-    builtAt: baselineData.builtAt,
-    hash: baselineData.hash,
     ...baselineData.rawData.webpack,
+    builtAt: baselineData.createdAt,
+    hash: baselineData.commit,
   },
 };
 
@@ -30,9 +30,9 @@ const MULTIPLE_JOBS = createJobs([
   BASELINE_SOURCE,
   {
     webpack: {
-      builtAt: baselineData.builtAt,
-      hash: 'aaaa1111',
       ...baselineData.rawData.webpack,
+      builtAt: baselineData.createdAt,
+      hash: 'aaaa1111',
       assets: baselineData.rawData.webpack.assets.filter((asset) => asset.name.match(/.(css|js)$/)),
       modules: baselineData.rawData.webpack.modules.slice(0, 100),
     },

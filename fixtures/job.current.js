@@ -1,8 +1,8 @@
-const webpackStats = require('./webpack-stats.current.json');
-const { currentMeta } = require('./meta');
+import webpackStats from './webpack-stats.current.json';
+import { metaCurrent } from './meta';
 
-module.exports = {
-  ...currentMeta,
+export default {
+  ...metaCurrent,
   rawData: {
     webpack: webpackStats,
   },

@@ -3,7 +3,8 @@ declare module '*.module.css' {
   export default classes;
 }
 
-declare module '*.md' {
+// Vite raw import (`import content from './x.md?raw'`)
+declare module '*.md?raw' {
   const content: string;
   export default content;
 }

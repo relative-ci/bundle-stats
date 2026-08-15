@@ -100,7 +100,16 @@ const config = [
       'import/no-unresolved': [
         'error',
         {
-          ignore: ['bundle-stats', 'storybook/*', 'rollup-plugin-webpack-stats'],
+          ignore: [
+            'bundle-stats',
+            'storybook/*',
+            'rollup-plugin-webpack-stats',
+            // `exports` maps, which eslint-import-resolver-node does not understand
+            '^vite$',
+            '^@vitejs/',
+            // Vite raw imports, e.g. `import content from './x.md?raw'`
+            '\\?raw$',
+          ],
         },
       ],
 

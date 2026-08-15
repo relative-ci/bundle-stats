@@ -13,7 +13,7 @@ const CURRENT_SOURCE = {
   webpack: {
     ...currentData.rawData.webpack,
     builtAt: currentData.createdAt,
-    hash: currentData.commit,
+    hash: currentData.rawData.webpack.hash || currentData.commit,
   },
 };
 
@@ -21,7 +21,7 @@ const BASELINE_SOURCE = {
   webpack: {
     ...baselineData.rawData.webpack,
     builtAt: baselineData.createdAt,
-    hash: baselineData.commit,
+    hash: baselineData.rawData.webpack.hash || baselineData.commit,
   },
 };
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export const SvgIcons = (props) => (
+export const SvgIcons = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width="0" height="0" style={{ position: 'absolute' }} {...props}>
     <symbol
       viewBox="0 0 24 24"

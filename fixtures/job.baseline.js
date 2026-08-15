@@ -1,7 +1,7 @@
-const webpackStats = require('./webpack-stats.baseline.json');
-const { metaBaseline } = require('./meta');
+import webpackStats from './webpack-stats.baseline.json';
+import { metaBaseline } from './meta';
 
-module.exports = {
+export default {
   ...metaBaseline,
   rawData: {
     webpack: webpackStats,

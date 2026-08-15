@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Container } from '../ui';
 import { getWrapperDecorator } from '../stories';
 import CHART_COLORS from '../chart-colors.json';
-import content from './typography.md';
+import content from './typography.md?raw';
 import css from './typography.module.css';
 
 const meta = {
