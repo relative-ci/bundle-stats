@@ -23,9 +23,7 @@ const meta = {
   title: 'Components/AssetName',
   component: AssetName,
   args: {
-    customComponentLink: 'span',
-    filters: {},
-    search: '',
+    EntryComponentLink: 'span',
   },
 } as Meta<typeof AssetName>;
 

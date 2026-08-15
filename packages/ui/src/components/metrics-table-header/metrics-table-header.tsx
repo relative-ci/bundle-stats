@@ -151,13 +151,18 @@ export const MetricsTableHeader = (
           {metricTitle || ' '}
         </Table.Th>
         {jobs.map((job, runIndex) => (
-          <JobColumn job={job} isBaseline={runIndex === jobs.length - 1} />
+          <JobColumn
+            key={job.internalBuildNumber}
+            job={job}
+            isBaseline={runIndex === jobs.length - 1}
+          />
         ))}
       </Table.Tr>
       {showSum && (
         <Table.Tr>
-          {jobs.map((_, runIndex) => (
+          {jobs.map((job, runIndex) => (
             <SumColumn
+              key={job.internalBuildNumber}
               rows={rows}
               isBaseline={runIndex === jobs.length - 1}
               runIndex={runIndex}
