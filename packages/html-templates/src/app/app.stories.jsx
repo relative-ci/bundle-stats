@@ -1,5 +1,5 @@
 import { createJobs } from '@bundle-stats/utils';
-import { SvgIcons } from '@bundle-stats/ui/lib-esm/assets/icons.svg';
+import SvgIcons from '@bundle-stats/ui/lib-esm/assets/icons.svg?react';
 
 /* eslint-disable import/no-extraneous-dependencies */
 import currentData from 'Fixtures/job.current';
@@ -9,17 +9,17 @@ import { App } from '.';
 
 const CURRENT_SOURCE = {
   webpack: {
-    builtAt: currentData.builtAt,
-    hash: currentData.hash,
     ...currentData.rawData.webpack,
+    builtAt: currentData.createdAt,
+    hash: currentData.commit,
   },
 };
 
 const BASELINE_SOURCE = {
   webpack: {
-    builtAt: baselineData.builtAt,
-    hash: baselineData.hash,
     ...baselineData.rawData.webpack,
+    builtAt: baselineData.createdAt,
+    hash: baselineData.commit,
   },
 };
 
@@ -30,9 +30,9 @@ const MULTIPLE_JOBS = createJobs([
   BASELINE_SOURCE,
   {
     webpack: {
-      builtAt: baselineData.builtAt,
-      hash: 'aaaa1111',
       ...baselineData.rawData.webpack,
+      builtAt: baselineData.createdAt,
+      hash: 'aaaa1111',
       assets: baselineData.rawData.webpack.assets.filter((asset) => asset.name.match(/.(css|js)$/)),
       modules: baselineData.rawData.webpack.modules.slice(0, 100),
     },
@@ -43,7 +43,7 @@ const [CURRENT_JOB, BASELINE_JOB] = JOBS;
 
 const EMPTY_BASELINE = createJobs([{ webpack: currentData.rawData.webpack }, { webpack: null }]);
 
-export default {
+const meta = {
   title: 'App',
   component: App,
   decorators: [
@@ -56,24 +56,42 @@ export default {
   ],
 };
 
-export const Default = () => <App jobs={[CURRENT_JOB, BASELINE_JOB]} />;
+export default meta;
 
-export const NoInsights = () => (
-  <App
-    jobs={[
+export const Default = {
+  args: {
+    jobs: [CURRENT_JOB, BASELINE_JOB],
+  },
+};
+
+export const NoInsights = {
+  args: {
+    jobs: [
       {
         ...CURRENT_JOB,
         insights: undefined,
       },
       BASELINE_JOB,
-    ]}
-  />
-);
+    ],
+  },
+};
 
-export const NoBaseline = () => <App jobs={[CURRENT_JOB]} />;
+export const NoBaseline = {
+  args: {
+    jobs: [CURRENT_JOB],
+  },
+};
 
-export const EmptyBaseline = () => <App jobs={EMPTY_BASELINE} />;
+export const EmptyBaseline = {
+  args: {
+    jobs: EMPTY_BASELINE,
+  },
+};
 
-export const MultipleBaselines = () => <App jobs={MULTIPLE_JOBS} />;
+export const MultipleBaselines = {
+  args: {
+    jobs: MULTIPLE_JOBS,
+  },
+};
 
-export const Empty = () => <App />;
+export const Empty = {};

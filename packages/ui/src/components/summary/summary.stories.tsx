@@ -1,12 +1,11 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { createJobs } from '@bundle-stats/utils';
 
 /* eslint-disable import/no-relative-packages */
 import baselineData from '../../../../../fixtures/webpack-stats.baseline.json';
 import currentData from '../../../../../fixtures/webpack-stats.current.json';
 /* eslint-enable import/no-relative-packages */
-import { METRICS_WEBPACK_ASSETS } from '../../constants';
 import { getWrapperDecorator } from '../../stories';
 import { Summary } from '.';
 
@@ -14,46 +13,41 @@ const MULTIPLE_JOBS = createJobs([{ webpack: currentData }, { webpack: baselineD
 
 const SINGLE_JOB = createJobs([{ webpack: currentData }]);
 
-export default {
+const meta = {
   title: 'Components/Summary',
   component: Summary,
   decorators: [getWrapperDecorator()],
-} as Meta;
+} satisfies Meta<typeof Summary>;
 
-const Template: Story = (args) => <Summary {...args} />;
+export default meta;
 
-export const Default = Template.bind({});
+type Story = StoryObj<typeof meta>;
 
-Default.args = {
-  data: MULTIPLE_JOBS[0].summary,
+export const Default: Story = {
+  args: {
+    data: MULTIPLE_JOBS[0].summary!.webpack,
+  },
 };
 
-export const CustomKeys = Template.bind({});
-
-CustomKeys.args = {
-  keys: METRICS_WEBPACK_ASSETS,
-  data: MULTIPLE_JOBS[0].summary,
+export const Loading: Story = {
+  args: {
+    loading: true,
+  },
 };
 
-export const Loading = Template.bind({});
-
-Loading.args = {
-  loading: true,
+export const SingleRun: Story = {
+  args: {
+    data: SINGLE_JOB[0].summary!.webpack,
+    showSummaryItemDelta: false,
+    showSummaryItemBaseline: false,
+  },
 };
 
-export const SingleRun = Template.bind({});
-
-SingleRun.args = {
-  data: SINGLE_JOB[0].summary,
-  showSummaryItemDelta: false,
-  showSummaryItemBaseline: false,
-};
-
-export const WithLink = Template.bind({});
-
-WithLink.args = {
-  data: MULTIPLE_JOBS[0].summary,
-  summaryItemLink: (linkProps: React.ComponentProps<'button'>) => (
-    <button {...linkProps} type="button" onClick={() => alert(JSON.stringify(linkProps))} />
-  ),
+export const WithLink: Story = {
+  args: {
+    data: MULTIPLE_JOBS[0].summary!.webpack,
+    summaryItemLink: (linkProps) => (
+      <button {...linkProps} type="button" onClick={() => alert(JSON.stringify(linkProps))} />
+    ),
+  },
 };

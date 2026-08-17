@@ -13,14 +13,26 @@ export const EmptySet = (props) => {
   const actions = [
     ...(handleResetFilters
       ? [
-          <Button kind="primary" type="button" onClick={handleResetFilters} className={css.action}>
+          <Button
+            key="reset-filters"
+            kind="primary"
+            type="button"
+            onClick={handleResetFilters}
+            className={css.action}
+          >
             {I18N.RESET_FILTERS}
           </Button>,
         ]
       : []),
     ...(handleViewAll
       ? [
-          <Button kind="primary" type="button" onClick={handleViewAll} className={css.action}>
+          <Button
+            key="view-all"
+            kind="primary"
+            type="button"
+            onClick={handleViewAll}
+            className={css.action}
+          >
             {I18N.VIEW_ALL}
           </Button>,
         ]
@@ -32,10 +44,10 @@ export const EmptySet = (props) => {
       <p>{message}</p>
       {filtered &&
         actions.map((action, index) => (
-          <>
+          <React.Fragment key={action.key}>
             {index > 0 && ' or '}
             {action}
-          </>
+          </React.Fragment>
         ))}
     </Stack>
   );

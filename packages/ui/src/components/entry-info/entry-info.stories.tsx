@@ -1,14 +1,9 @@
 import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { action } from 'storybook/actions';
 
 import { getWrapperDecorator } from '../../stories';
 import { EntryInfo } from '.';
-
-export default {
-  title: 'Components/EntryInfo',
-  component: EntryInfo,
-  decorators: [getWrapperDecorator()],
-};
 
 const RUNS = [
   {
@@ -22,54 +17,54 @@ const RUNS = [
   },
 ];
 
-export const Default = () => (
-  <EntryInfo
-    item={{
-      label: 'static/vendor.js',
-      runs: RUNS as any,
-    }}
-    labels={['Job #2', 'Job #1']}
-    onClose={action('CLOSE')}
-  />
-);
+const ITEM = {
+  key: 'static/vendor.js',
+  label: 'static/vendor.js',
+  biggerIsBetter: false,
+  changed: true,
+};
 
-export const Added = () => (
-  <EntryInfo
-    item={{
-      label: 'static/vendor.js',
-      runs: [RUNS[0], null] as any,
-    }}
-    labels={['Job #2', 'Job #1']}
-    onClose={action('CLOSE')}
-  />
-);
+const meta = {
+  title: 'Components/EntryInfo',
+  component: EntryInfo,
+  decorators: [getWrapperDecorator()],
+  args: {
+    item: { ...ITEM, runs: RUNS as any },
+    labels: ['Job #2', 'Job #1'],
+    onClose: action('CLOSE'),
+  },
+} satisfies Meta<typeof EntryInfo>;
 
-export const Removed = () => (
-  <EntryInfo
-    item={{
-      label: 'static/vendor.js',
-      runs: [null, RUNS[1]] as any,
-    }}
-    labels={['Job #2', 'Job #1']}
-    onClose={action('CLOSE')}
-  />
-);
+export default meta;
 
-export const WithCustomContent = () => (
-  <EntryInfo
-    item={{
-      label: 'static/vendor.js',
-      runs: RUNS as any,
-    }}
-    labels={['Job #2', 'Job #1']}
-    tags={<span>Critical tags</span>}
-    onClose={action('CLOSE')}
-  >
-    <div>
-      <EntryInfo.Meta label="Meta 1">value 1</EntryInfo.Meta>
-      <EntryInfo.Meta label="Meta 2">value 2</EntryInfo.Meta>
-    </div>
-    <div>custom entry info 1</div>
-    <div>custom entry info 2</div>
-  </EntryInfo>
-);
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {};
+
+export const Added: Story = {
+  args: {
+    item: { ...ITEM, runs: [RUNS[0], null] as any },
+  },
+};
+
+export const Removed: Story = {
+  args: {
+    item: { ...ITEM, runs: [null, RUNS[1]] as any },
+  },
+};
+
+export const WithCustomContent: Story = {
+  args: {
+    tags: <span>Critical tags</span>,
+  },
+  render: (args) => (
+    <EntryInfo {...args}>
+      <div>
+        <EntryInfo.Meta label="Meta 1">value 1</EntryInfo.Meta>
+        <EntryInfo.Meta label="Meta 2">value 2</EntryInfo.Meta>
+      </div>
+      <div>custom entry info 1</div>
+      <div>custom entry info 2</div>
+    </EntryInfo>
+  ),
+};

@@ -1,53 +1,56 @@
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { InsightType } from '@bundle-stats/utils';
 
 import { getWrapperDecorator } from '../../stories';
 import { Insights } from '.';
 
-export default {
+const meta = {
   title: 'Components/Insights',
   component: Insights,
   decorators: [getWrapperDecorator()],
-};
+} satisfies Meta<typeof Insights>;
 
-const Template = (props: any) => <Insights {...props} />;
+export default meta;
 
-export const Default = Template.bind({});
+type Story = StoryObj<typeof meta>;
 
-Default.args = {
-  insights: {
-    duplicatePackages: {
-      type: 'error',
-      data: {
-        packages: { 'package-a': ['package-a', 'package-a~1'] },
-        text: 'Bundle introduced 1 and removed 2 duplicate packages',
+export const Default: Story = {
+  args: {
+    insights: {
+      duplicatePackages: {
+        type: InsightType.ERROR,
+        data: {
+          packages: { 'package-a': ['package-a', 'package-a~1'] },
+          text: 'Bundle introduced 1 and removed 2 duplicate packages',
+        },
       },
-    },
-    newPackages: {
-      type: 'warning',
-      data: {
-        text: 'Bundle introduced 2 new packages: package-c, package-d',
-        packages: ['package-c', 'package-d'],
+      newPackages: {
+        type: InsightType.WARNING,
+        data: {
+          text: 'Bundle introduced 2 new packages: package-c, package-d',
+          packages: ['package-c', 'package-d'],
+        },
       },
     },
   },
 };
 
-export const Info = Template.bind({});
-
-Info.args = {
-  insights: {
-    duplicatePackages: {
-      type: 'info',
-      data: {
-        packages: { 'package-a': ['package-a', 'package-a~1'] },
-        text: 'Bundle removed 1 duplicate packages',
+export const Info: Story = {
+  args: {
+    insights: {
+      duplicatePackages: {
+        type: InsightType.INFO,
+        data: {
+          packages: { 'package-a': ['package-a', 'package-a~1'] },
+          text: 'Bundle removed 1 duplicate packages',
+        },
       },
-    },
-    newPackages: {
-      type: 'warning',
-      data: {
-        text: 'Bundle introduced 2 new packages: package-c, package-d',
-        packages: ['package-c', 'package-d'],
+      newPackages: {
+        type: InsightType.WARNING,
+        data: {
+          text: 'Bundle introduced 2 new packages: package-c, package-d',
+          packages: ['package-c', 'package-d'],
+        },
       },
     },
   },

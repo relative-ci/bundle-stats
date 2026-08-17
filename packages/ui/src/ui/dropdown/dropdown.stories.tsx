@@ -1,25 +1,33 @@
 import React from 'react';
-import { Meta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { getWrapperDecorator } from '../../stories';
 import { Dropdown, DropdownItem } from '.';
 
-export default {
+const meta = {
   title: 'UI/Dropdown',
   component: Dropdown,
   decorators: [getWrapperDecorator()],
-} as Meta;
+  args: {
+    glyph: 'filter',
+    label: 'Toggle',
+    children: (
+      <>
+        <DropdownItem>Option 1</DropdownItem>
+        <DropdownItem>Option 2</DropdownItem>
+      </>
+    ),
+  },
+} satisfies Meta<typeof Dropdown>;
 
-export const Defualt = () => (
-  <Dropdown glyph="filter" label="Toggle">
-    <DropdownItem>Option 1</DropdownItem>
-    <DropdownItem>Option 2</DropdownItem>
-  </Dropdown>
-);
+export default meta;
 
-export const Disabled = () => (
-  <Dropdown glyph="filter" label="Toggle" disabled>
-    <DropdownItem>Option 1</DropdownItem>
-    <DropdownItem>Option 2</DropdownItem>
-  </Dropdown>
-);
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+};

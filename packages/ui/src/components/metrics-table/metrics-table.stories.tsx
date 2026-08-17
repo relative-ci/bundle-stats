@@ -1,6 +1,7 @@
 import React from 'react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { MetricRunInfoDeltaType } from '@bundle-stats/utils';
+
 import { getWrapperDecorator } from '../../stories';
 import { MetricsTable } from '.';
 
@@ -204,22 +205,41 @@ const ITEMS_MULTIPLE_RUNS = [
   },
 ];
 
-export default {
+const meta = {
   title: 'Components/MetricsTable',
   component: MetricsTable,
   decorators: [getWrapperDecorator()],
+} satisfies Meta<typeof MetricsTable>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    runs: RUNS.slice(0, 1),
+    items: ITEMS_SINGLE_RUN,
+  },
 };
 
-export const Default = () => <MetricsTable runs={RUNS.slice(0, 1)} items={ITEMS_SINGLE_RUN} />;
+export const MultipleRuns: Story = {
+  args: {
+    runs: RUNS,
+    items: ITEMS_MULTIPLE_RUNS,
+  },
+};
 
-export const MultipleRuns = () => <MetricsTable runs={RUNS} items={ITEMS_MULTIPLE_RUNS} />;
+export const WithHeaderSum: Story = {
+  args: {
+    runs: RUNS,
+    items: [ITEMS_MULTIPLE_RUNS[0], ITEMS_MULTIPLE_RUNS[4]],
+    showHeaderSum: true,
+  },
+};
 
-export const WithHeaderSum = () => (
-  <MetricsTable
-    runs={RUNS}
-    items={[ITEMS_MULTIPLE_RUNS[0], ITEMS_MULTIPLE_RUNS[4]]}
-    showHeaderSum
-  />
-);
-
-export const Empty = () => <MetricsTable runs={RUNS} items={[]} />;
+export const Empty: Story = {
+  args: {
+    runs: RUNS,
+    items: [],
+  },
+};

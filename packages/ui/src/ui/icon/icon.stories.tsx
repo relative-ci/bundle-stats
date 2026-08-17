@@ -1,9 +1,9 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Icon } from '.';
 
-export default {
+const meta = {
   title: 'UI/Icon',
   component: Icon,
   args: {
@@ -19,36 +19,44 @@ export default {
       control: { type: 'select' },
     },
   },
-} as Meta;
+} satisfies Meta<typeof Icon>;
 
-const Template: Story = (args: any) => <Icon {...args} />;
+export default meta;
 
-export const Standard = Template.bind({});
+type Story = StoryObj<typeof meta>;
 
-Standard.args = {
-  glyph: Icon.ICONS.ARROW,
+export const Standard: Story = {
+  args: {
+    glyph: Icon.ICONS.ARROW,
+  },
 };
 
-export const CustomSize = Template.bind({});
-
-CustomSize.args = {
-  glyph: Icon.ICONS.ARROW,
-  size: Icon.SIZE_LARGE,
+export const CustomSize: Story = {
+  args: {
+    glyph: Icon.ICONS.ARROW,
+    size: Icon.SIZE_LARGE,
+  },
 };
 
-export const All = ({ size }: Pick<React.ComponentProps<typeof Icon>, 'size'>) => (
-  <>
-    {Object.values(Icon.ICONS).map((glyph) => (
-      <div
-        style={{
-          display: 'inline-block',
-          padding: '1rem',
-          textAlign: 'center',
-        }}
-      >
-        <Icon glyph={glyph} size={size} key={glyph} />
-        <code style={{ display: 'block' }}>{glyph}</code>
-      </div>
-    ))}
-  </>
-);
+export const All: Story = {
+  args: {
+    glyph: Icon.ICONS.ARROW,
+  },
+  render: ({ size }) => (
+    <>
+      {Object.values(Icon.ICONS).map((glyph) => (
+        <div
+          key={glyph}
+          style={{
+            display: 'inline-block',
+            padding: '1rem',
+            textAlign: 'center',
+          }}
+        >
+          <Icon glyph={glyph} size={size} />
+          <code style={{ display: 'block' }}>{glyph}</code>
+        </div>
+      ))}
+    </>
+  ),
+};

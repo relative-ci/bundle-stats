@@ -1,21 +1,37 @@
-import React from 'react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { action } from 'storybook/actions';
 
 import { getWrapperDecorator } from '../../stories';
 import { ModuleInfo } from '.';
 
-export default {
+const ITEM = {
+  key: './node_modules/lodash/fp/merge.js',
+  label: './node_modules/lodash/fp/merge.js',
+  biggerIsBetter: false,
+  changed: true,
+  thirdParty: true,
+  duplicated: true,
+  fileType: 'JS',
+};
+
+const meta = {
   title: 'Components/ModuleInfo',
   component: ModuleInfo,
   decorators: [getWrapperDecorator()],
-};
+  args: {
+    labels: ['Job #2', 'Job #1'],
+    onClose: action('CLOSE'),
+  },
+} satisfies Meta<typeof ModuleInfo>;
 
-export const Default = () => (
-  <ModuleInfo
-    item={{
-      label: './node_modules/lodash/fp/merge.js',
-      duplicated: true,
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    item: {
+      ...ITEM,
       runs: [
         {
           name: './node_modules/lodash/fp/merge.js',
@@ -29,8 +45,8 @@ export const Default = () => (
           displayValue: '3KiB',
         },
       ] as any,
-    }}
-    chunks={[
+    },
+    chunks: [
       {
         id: '1',
         name: 'chunk-1',
@@ -43,18 +59,15 @@ export const Default = () => (
         id: '3',
         name: 'chunk-3',
       },
-    ]}
-    chunkIds={['1', '2', '3']}
-    labels={['Job #2', 'Job #1']}
-    onClose={action('CLOSE')}
-  />
-);
+    ],
+    chunkIds: ['1', '2', '3'],
+  },
+};
 
-export const Duplicates = () => (
-  <ModuleInfo
-    item={{
-      label: './node_modules/lodash/fp/merge.js',
-      duplicated: true,
+export const Duplicates: Story = {
+  args: {
+    item: {
+      ...ITEM,
       runs: [
         {
           name: './node_modules/lodash/fp/merge.js',
@@ -68,8 +81,8 @@ export const Duplicates = () => (
           displayValue: '3KiB',
         },
       ] as any,
-    }}
-    chunks={[
+    },
+    chunks: [
       {
         id: '1',
         name: 'chunk-1',
@@ -90,9 +103,7 @@ export const Duplicates = () => (
         id: '5',
         name: 'chunk-5',
       },
-    ]}
-    chunkIds={['1', '2', '3', '4', '5']}
-    labels={['Job #2', 'Job #1']}
-    onClose={action('CLOSE')}
-  />
-);
+    ],
+    chunkIds: ['1', '2', '3', '4', '5'],
+  },
+};

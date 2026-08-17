@@ -2,6 +2,9 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "jsx": "react",
+    // Storybook transpiles with esbuild (one file at a time), which cannot tell a re-exported
+    // type from a re-exported value. Fail the build instead of the preview.
+    "isolatedModules": true,
   },
   "include": ["src/**/*", "globals.d.ts"],
   "exclude": ["**/__tests__/*", "**/*.stories.*"],

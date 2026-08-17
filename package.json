@@ -47,16 +47,20 @@
     "react-is": "^18.3.1",
     "rimraf": "6.1.3",
     "typescript": "5.9.3",
-    "verdaccio": "^6.2.0"
+    "verdaccio": "^6.2.0",
+    "wait-on": "9.1.0"
   },
   "scripts": {
     "build": "lerna run build",
+    "build-storybook": "lerna run build-storybook",
     "bump": "./scripts/bump.sh",
     "format": "prettier --write \"**/*.{js,jsx}\"",
     "lerna": "lerna",
     "lint": "lerna exec 'npm run lint -- --quiet'",
     "release": "./scripts/release.sh",
     "test": "lerna run test",
+    "serve-storybook": "lerna run serve-storybook --parallel",
+    "test-storybook": "lerna run test-storybook",
     "prepare": "husky install"
   },
   "repository": {

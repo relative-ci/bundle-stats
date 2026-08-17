@@ -1,0 +1,92 @@
+import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Container } from '../ui';
+import { getWrapperDecorator } from '../stories';
+import CHART_COLORS from '../chart-colors.json';
+import content from './typography.md?raw';
+import css from './typography.module.css';
+
+const meta = {
+  title: 'Prototypes/Styleguide',
+  decorators: [getWrapperDecorator()],
+} satisfies Meta;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Typography: Story = {
+  render: () => (
+    <main className={css.main}>
+      <Container dangerouslySetInnerHTML={{ __html: content }} />
+    </main>
+  ),
+};
+
+const Item = ({ colorName, valueName = 'normal' }: { colorName: string; valueName?: string }) => {
+  const colorFullName = valueName === 'normal' ? colorName : [colorName, valueName].join('-');
+
+  return (
+    <div
+      style={{
+        background: `var(--color-${colorFullName})`,
+        color: 'var(--color-light)',
+        padding: '12px',
+        flex: '1 1 20%',
+      }}
+    >
+      {`${colorName} ${valueName}`}
+    </div>
+  );
+};
+
+const ItemColorValue = ({ value }: { value: string }) => (
+  <div
+    style={{
+      background: value,
+      color: 'var(--color-light)',
+      padding: '12px',
+      flex: '1 1 20%',
+    }}
+  >
+    {value}
+  </div>
+);
+
+const COLORS = ['blue', 'red', 'green', 'yellow', 'gray'];
+
+const NAMES = ['ultra-light', 'light', 'normal', 'dark', 'ultra-dark'];
+
+export const ColorScheme: Story = {
+  render: () => (
+    <Container>
+      <Item colorName="branding" valueName="light" />
+      <Item colorName="branding" />
+      <Item colorName="branding" valueName="dark" />
+
+      <hr />
+
+      <Item colorName="dark" />
+
+      <hr />
+
+      {COLORS.map((colorName) => (
+        <div key={colorName} style={{ display: 'flex', marginBottom: '24px' }}>
+          {NAMES.map((valueName) => (
+            <Item key={`${colorName}-${valueName}`} colorName={colorName} valueName={valueName} />
+          ))}
+        </div>
+      ))}
+
+      <hr />
+
+      <h3>Chart colors</h3>
+      <div style={{ display: 'flex', marginBottom: '24px', flexWrap: 'wrap' }}>
+        {CHART_COLORS.map((color) => (
+          <ItemColorValue key={color} value={color} />
+        ))}
+      </div>
+    </Container>
+  ),
+};
