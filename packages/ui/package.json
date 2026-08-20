@@ -72,7 +72,7 @@
     "typescript": "5.9.3",
     "vite": "8.2.1",
     "vite-plugin-svgr": "5.2.0",
-    "vitest": "4.1.10"
+    "vitest": "4.1.11"
   },
   "peerDependencies": {
     "classnames": "^2.0.0",
