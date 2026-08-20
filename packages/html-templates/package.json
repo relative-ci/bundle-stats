@@ -38,7 +38,7 @@
     "@storybook/addon-vitest": "10.5.9",
     "@storybook/react": "10.5.9",
     "@storybook/react-vite": "10.5.9",
-    "@vitest/browser": "4.1.10",
+    "@vitest/browser": "4.1.11",
     "@vitest/browser-playwright": "4.1.11",
     "autoprefixer": "10.5.4",
     "babel-jest": "30.4.1",
