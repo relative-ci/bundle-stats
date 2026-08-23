@@ -6,11 +6,12 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/relative-ci/rollup-plugin-stats.git"
+    "url": "git+https://github.com/relative-ci/bundle-stats.git"
   },
   "bugs": {
-    "url": "https://github.com/relative-ci/rollup-plugin-stats/issues"
+    "url": "https://github.com/relative-ci/bundle-stats/issues"
   },
+  "homepage": "https://github.com/relative-ci/bundle-stats/blob/master/packages/plugins/rollup-plugin-stats#readme",
   "author": {
     "name": "Viorel Cojocaru",
     "email": "vio@relative-ci.com",
@@ -61,34 +62,22 @@
     "clean": "rimraf ./dist",
     "type-check": "tsc",
     "lint": "eslint",
-    "format": "prettier --write .",
-    "test:unit": "vitest test/unit",
+    "test": "vitest test/unit",
     "test:package": "npm run test:package:rolldown && npm run test:package:rollup && npm run test:package:vite",
     "test:package:rolldown": "cd test/package/rolldown && npm run test",
     "test:package:rollup": "cd test/package/rollup && npm run test",
-    "test:package:vite": "cd test/package/vite && npm run test",
-    "bump": "./scripts/bump.sh",
-    "release": "./scripts/release.sh",
-    "prepare": "husky"
+    "test:package:vite": "cd test/package/vite && npm run test"
   },
   "devDependencies": {
-    "@eslint/js": "10.0.1",
-    "@release-it/conventional-changelog": "12.0.0",
     "@types/deep-freeze-strict": "1.1.2",
     "@types/node": "26.2.0",
     "deep-freeze-strict": "1.1.1",
-    "eslint": "10.8.1",
-    "eslint-config-prettier": "10.1.8",
     "globals": "17.11.0",
-    "husky": "9.1.7",
     "lint-staged": "17.3.0",
     "memfs": "4.68.1",
-    "prettier": "3.9.6",
-    "release-it": "21.0.2",
     "rimraf": "6.1.3",
     "tsdown": "0.22.14",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.67.0",
     "vite": "8.2.2",
     "vitest": "4.1.11"
   },
