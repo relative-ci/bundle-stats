@@ -1,6 +1,6 @@
 import { MetricTypes } from '../constants';
 import { compareMetrics } from '../report/compare-metrics';
-import { MetricReportRowTransformFn } from '../report/types';
+import { ReportMetricRowTransformFn } from '../report/types';
 import {
   SECTION_WEBPACK_STATS,
   SECTION_WEBPACK_SIZES,
@@ -11,33 +11,33 @@ import {
 } from './constants';
 import { selectors, getModulesDuplicateSizeMetrics, getModulesTotalSizeMetrics } from './selectors';
 
-const compareStats = (jobs: Array<unknown>, rowTransformers?: Array<MetricReportRowTransformFn>) =>
+const compareStats = (jobs: Array<unknown>, rowTransformers?: Array<ReportMetricRowTransformFn>) =>
   compareMetrics(jobs, selectors.stats, undefined, rowTransformers);
 
-const compareSizes = (jobs: Array<unknown>, rowTransformers?: Array<MetricReportRowTransformFn>) =>
+const compareSizes = (jobs: Array<unknown>, rowTransformers?: Array<ReportMetricRowTransformFn>) =>
   compareMetrics(jobs, selectors.sizes, undefined, rowTransformers);
 
-const compareAssets = (jobs: Array<unknown>, rowTransformers?: Array<MetricReportRowTransformFn>) =>
+const compareAssets = (jobs: Array<unknown>, rowTransformers?: Array<ReportMetricRowTransformFn>) =>
   compareMetrics(jobs, selectors.assets, MetricTypes.FileSize, rowTransformers);
 
 const compareModules = (
   jobs: Array<unknown>,
-  rowTransformers?: Array<MetricReportRowTransformFn>,
+  rowTransformers?: Array<ReportMetricRowTransformFn>,
 ) => compareMetrics(jobs, selectors.modules, MetricTypes.FileSize, rowTransformers);
 
 export const compareModuleDuplicateSize = (
   jobs: Array<unknown>,
-  rowTransformers?: Array<MetricReportRowTransformFn>,
+  rowTransformers?: Array<ReportMetricRowTransformFn>,
 ) => compareMetrics(jobs, getModulesDuplicateSizeMetrics, MetricTypes.FileSize, rowTransformers);
 
 export const compareModuleTotalSize = (
   jobs: Array<unknown>,
-  rowTransformers?: Array<MetricReportRowTransformFn>,
+  rowTransformers?: Array<ReportMetricRowTransformFn>,
 ) => compareMetrics(jobs, getModulesTotalSizeMetrics, MetricTypes.FileSize, rowTransformers);
 
 const comparePackages = (
   jobs: Array<unknown>,
-  rowTransformers?: Array<MetricReportRowTransformFn>,
+  rowTransformers?: Array<ReportMetricRowTransformFn>,
 ) => compareMetrics(jobs, selectors.packages, MetricTypes.FileSize, rowTransformers);
 
 export const compareBySection = {
@@ -48,7 +48,6 @@ export const compareBySection = {
   [SECTION_WEBPACK_PACKAGES]: comparePackages,
 };
 
-/* eslint-disable prettier/prettier */
 /**
  * Compare webpack sections
  */
@@ -60,4 +59,3 @@ export const compare = (jobs: Array<unknown>) =>
     }),
     {},
   );
-/* eslint-enable prettier/prettier */

@@ -1,7 +1,7 @@
 import type { ComponentProps } from 'react';
 import React from 'react';
 import cx from 'classnames';
-import type { AssetMetricRun } from '@bundle-stats/utils/types/webpack';
+import type { AssetMetricRun } from '@bundle-stats/utils/webpack';
 
 import { Stack } from '../../layout/stack';
 import { Table } from '../../ui/table';

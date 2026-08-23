@@ -24,3 +24,7 @@ export interface ReportMetricRow {
 }
 
 export type MetricReportRowTransformFn = (row: ReportRow) => ReportMetricRow;
+
+// Transformer applied after `MetricReportRowTransformFn` has already run, so it
+// always receives a fully-formed `ReportMetricRow`, not a raw `ReportRow`.
+export type ReportMetricRowTransformFn = (row: ReportMetricRow) => ReportMetricRow;
