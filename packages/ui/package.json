@@ -2,17 +2,26 @@
   "name": "@bundle-stats/ui",
   "version": "4.22.3",
   "description": "UI components for BundleStats projects.",
-  "main": "lib/index.js",
-  "module": "lib-esm/index.js",
-  "types": "types/index.d.ts",
+  "main": "./lib/index.mjs",
+  "module": "./lib/index.mjs",
+  "types": "./lib/types/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/types/index.d.ts",
+        "default": "./lib/index.mjs"
+      }
+    },
+    "./css/variables.css": "./lib/css/variables.css",
+    "./css/default.css": "./lib/css/default.css",
+    "./assets/icons.svg": "./lib/assets/icons.svg"
+  },
   "scripts": {
-    "build": "npm run build-lib && npm run build-esm && npm run build-assets-lib && npm run build-assets-esm",
-    "prebuild-lib": "rimraf ./lib",
-    "build-lib": "tsc --rootDir ./src --project tsconfig.lib.json --outDir ./lib",
-    "build-assets-lib": "rsync -arm --include '*/' --include '*.json' --include '*.css' --include 'icons.svg' --exclude '*' src/ lib",
-    "prebuild-esm": "rimraf ./lib-esm ./types",
-    "build-esm": "tsc --rootDir ./src --project tsconfig.esm.json --outDir ./lib-esm",
-    "build-assets-esm": "rsync -arm --include '*/' --include '*.json' --include '*.css' --include 'icons.svg' --exclude '*' src/ lib-esm",
+    "build": "npm run clean && tsdown",
+    "clean": "rimraf ./lib",
     "build-storybook": "storybook build -c ./build/storybook",
     "generate-chart-colors": "node scripts/generate-chart-colors.js",
     "generate-svg-sprite": "npx svg-sprite -s --si --no-svg-namespace-classnames src/assets/icons/*.svg && mv symbol/svg/sprite.css.svg src/assets/icons.svg",
@@ -44,6 +53,7 @@
     "@storybook/addon-vitest": "10.5.10",
     "@storybook/react": "10.5.10",
     "@storybook/react-vite": "10.5.10",
+    "@tsdown/css": "^0.22.14",
     "@types/d3": "7.4.3",
     "@types/react": "18.3.13",
     "@types/react-router-dom": "5.3.3",
@@ -69,6 +79,7 @@
     "react-router-dom": "5.3.4",
     "rimraf": "6.1.3",
     "storybook": "10.5.10",
+    "tsdown": "^0.22.14",
     "typescript": "5.9.3",
     "vite": "8.2.2",
     "vite-plugin-svgr": "5.2.0",
