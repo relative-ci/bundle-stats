@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 
 import { action } from 'storybook/actions';
 import { createJobs } from '@bundle-stats/utils';
-import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
+import * as webpack from '@bundle-stats/utils/webpack';
 
 /* eslint-disable import/no-relative-packages */
 import baselineData from '../../../../../fixtures/webpack-stats.baseline.json';

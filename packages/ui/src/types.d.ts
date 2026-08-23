@@ -1,5 +1,5 @@
 import type { ReportMetricRow } from '@bundle-stats/utils';
-import type { Asset, Module } from '@bundle-stats/utils/types/webpack/types';
+import type { Asset, Module } from '@bundle-stats/utils/webpack';
 
 export interface SortAction {
   field: string;

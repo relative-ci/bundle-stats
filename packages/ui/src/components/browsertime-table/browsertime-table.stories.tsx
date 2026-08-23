@@ -1,7 +1,7 @@
 import type React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { createJobs, Job } from '@bundle-stats/utils';
-import * as browsertime from '@bundle-stats/utils/lib-esm/browsertime';
+import * as browsertime from '@bundle-stats/utils/browsertime';
 
 // eslint-disable-next-line import/no-relative-packages
 import browsertimeSourceFixtures from '../../../../../fixtures/browsertime.json';

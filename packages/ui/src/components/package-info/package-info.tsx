@@ -7,7 +7,7 @@ import {
   getBundleModulesBySearch,
   getBundlePackagesByNameComponentLink,
 } from '@bundle-stats/utils';
-import { Package } from '@bundle-stats/utils/types/webpack';
+import { Package } from '@bundle-stats/utils/webpack';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';

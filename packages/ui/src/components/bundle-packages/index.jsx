@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { PACKAGE_FILTERS } from '@bundle-stats/utils';
-import * as webpack from '@bundle-stats/utils/lib-esm/webpack/compare';
+import * as webpack from '@bundle-stats/utils/webpack';
 
 import { useRowsFilter } from '../../hooks/rows-filter';
 import { useRowsSort } from '../../hooks/rows-sort';

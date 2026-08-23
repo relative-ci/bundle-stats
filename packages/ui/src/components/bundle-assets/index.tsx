@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
-import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
+import * as webpack from '@bundle-stats/utils/webpack';
 import type { Job } from '@bundle-stats/utils';
-import { ASSET_FILTERS } from '@bundle-stats/utils';
 import {
+  ASSET_FILTERS,
   getAssetEntryTypeFilters,
   getAssetFileTypeFilters,
-} from '@bundle-stats/utils/lib-esm/utils/component-links';
+} from '@bundle-stats/utils';
 
 import { useRowsFilter } from '../../hooks/rows-filter';
 import { useRowsSort } from '../../hooks/rows-sort';
@@ -71,7 +71,11 @@ export const BundleAssets = (props: BundleAssetsProps) => {
 
   // Get metric rows
   const { rows, totalRowCount } = useMemo(() => {
-    const result = webpack.compareBySection.assets(jobs, [addMetricReportAssetRowData]);
+    // `addMetricReportAssetRowData` produces `ReportMetricAssetRow`, but `compareBySection`
+    // is typed generically as `ReportMetricRow[]` regardless of the transformer passed in.
+    const result = webpack.compareBySection.assets(jobs, [
+      addMetricReportAssetRowData,
+    ]) as Array<ReportMetricAssetRow>;
     return { rows: result, totalRowCount: result.length };
   }, [jobs]);
 
