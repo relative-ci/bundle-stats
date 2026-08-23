@@ -10,10 +10,7 @@ const appConfig = require('./src/config.json');
 const settings = require('./build/webpack-settings');
 
 const { isDevelopment, isProduction, srcDir, distDir } = settings;
-const iconSprite = fs.readFileSync(
-  require.resolve('@bundle-stats/ui/lib-esm/assets/icons.svg'),
-  'utf-8',
-);
+const iconSprite = fs.readFileSync(require.resolve('@bundle-stats/ui/assets/icons.svg'), 'utf-8');
 
 module.exports = merge(
   {
@@ -30,7 +27,7 @@ module.exports = merge(
     module: {
       rules: [
         {
-          test: /\.jsx?$/,
+          test: /\.(?:jsx?|mjs)$/,
           loader: 'babel-loader',
           include: [
             srcDir,

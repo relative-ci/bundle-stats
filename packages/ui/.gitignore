@@ -9,6 +9,4 @@ Thumbs.db
 yarn.lock
 artifacts
 lib
-lib-esm
 storybook-static
-types
