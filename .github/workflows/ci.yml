@@ -236,6 +236,167 @@ jobs:
         run: npm run test:package -- -t ${{ matrix.webpack }}
         working-directory: packages/webpack-plugin
 
+  test-package-rollup-plugin-stats-rollup:
+    needs:
+      - test-storybook
+      - test-e2e
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [26, 24, 22]
+        rollup: [3, 4]
+        exclude:
+          - os: windows-latest
+            node: 24
+          - os: windows-latest
+            node: 22
+          - rollup: 3
+            node: 24
+          - rollup: 3
+            node: 22
+    runs-on: ${{ matrix.os }}
+    name: rollup v${{ matrix.rollup }} / node v${{ matrix.node }} / ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+
+      - name: Setup node & npm
+        uses: relative-ci/.github/actions/setup-node-npm@v1.3.0
+        with:
+          cache: never
+          install: false
+          version: ${{ matrix.node }}
+
+      - name: Download build files
+        uses: actions/download-artifact@v8.0.1
+        with:
+          name: build-artifacts
+
+      - name: Download local registry files
+        uses: actions/download-artifact@v8.0.1
+        with:
+          name: local-registry
+
+      - name: Install verdaccio
+        run: npm install -g verdaccio@v5
+
+      - name: Run local npm registry
+        run: ./scripts/local-registry.sh &
+
+      - name: "Install test package dependencies"
+        run: |
+          npm install
+          npm install rollup@${{ matrix.rollup }} --force
+          npx rollup -v
+        working-directory: packages/plugins/rollup-plugin-stats/test/package/rollup
+
+      - name: "Test package"
+        run: npm run test:package:rollup
+        working-directory: packages/plugins/rollup-plugin-stats
+
+  test-package-rollup-plugin-stats-rolldown:
+    needs:
+      - test-storybook
+      - test-e2e
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [26, 24, 22]
+        rolldown: [1]
+    runs-on: ${{ matrix.os }}
+    name: rolldown v${{ matrix.rolldown }} / node v${{ matrix.node }} / ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+
+      - name: Setup node & npm
+        uses: relative-ci/.github/actions/setup-node-npm@v1.3.0
+        with:
+          cache: never
+          install: false
+          version: ${{ matrix.node }}
+
+      - name: Download build files
+        uses: actions/download-artifact@v8.0.1
+        with:
+          name: build-artifacts
+
+      - name: Download local registry files
+        uses: actions/download-artifact@v8.0.1
+        with:
+          name: local-registry
+
+      - name: Install verdaccio
+        run: npm install -g verdaccio@v5
+
+      - name: Run local npm registry
+        run: ./scripts/local-registry.sh &
+
+      - name: "Install test package dependencies"
+        run: |
+          npm install
+          npm install rolldown
+          npx rolldown -v
+        working-directory: packages/plugins/rollup-plugin-stats/test/package/rolldown
+
+      - name: "Test package"
+        run: npm run test:package:rolldown
+        working-directory: packages/plugins/rollup-plugin-stats
+
+  test-package-rollup-plugin-stats-vite:
+    needs:
+      - test-storybook
+      - test-e2e
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [26, 24, 22]
+        vite: [5, 6, 7, 8]
+        exclude:
+          - os: windows-latest
+            node: 24
+          - os: windows-latest
+            node: 22
+    runs-on: ${{ matrix.os }}
+    name: vite v${{ matrix.vite }} / node v${{ matrix.node }} / ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+
+      - name: Setup node & npm
+        uses: relative-ci/.github/actions/setup-node-npm@v1.3.0
+        with:
+          cache: never
+          install: false
+          version: ${{ matrix.node }}
+
+      - name: Download build files
+        uses: actions/download-artifact@v8.0.1
+        with:
+          name: build-artifacts
+
+      - name: Download local registry files
+        uses: actions/download-artifact@v8.0.1
+        with:
+          name: local-registry
+
+      - name: Install verdaccio
+        run: npm install -g verdaccio@v5
+
+      - name: Run local npm registry
+        run: ./scripts/local-registry.sh &
+
+      - name: "Install test package dependencies"
+        run: |
+          npm install
+          npm install vite@${{ matrix.vite }} --force
+          npx vite -v
+        working-directory: packages/plugins/rollup-plugin-stats/test/package/vite
+
+      - name: "Test package"
+        run: npm run test:package:vite
+        working-directory: packages/plugins/rollup-plugin-stats
+
   test-package-rollup-plugin:
     needs:
       - test-storybook

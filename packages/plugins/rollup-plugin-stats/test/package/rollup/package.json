@@ -1,0 +1,20 @@
+{
+  "name": "rollup-plugin-stats-package-test-rollup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-cjs": "rollup -c case-config.js",
+    "build-esm": "rollup -c case-config.mjs",
+    "build-ts": "rollup --config case-config.ts --configPlugin typescript",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^12.0.0",
+    "cross-env": "^7.0.0",
+    "rollup-plugin-stats": "*",
+    "typescript": "^5.0.0"
+  }
+}

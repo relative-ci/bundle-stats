@@ -1,0 +1,15 @@
+{
+  "name": "rollup-plugin-stats-package-test-rolldown",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "rolldown": "^1.0.0-rc.15",
+    "rollup-plugin-stats": "*"
+  }
+}
