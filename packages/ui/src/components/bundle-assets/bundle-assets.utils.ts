@@ -3,7 +3,7 @@ import intersection from 'lodash/intersection';
 import isEmpty from 'lodash/isEmpty';
 import orderBy from 'lodash/orderBy';
 import type { ReportMetricRow, WebpackChunk } from '@bundle-stats/utils';
-import type { AssetMetricRun } from '@bundle-stats/utils/types/webpack';
+import type { AssetMetricRun } from '@bundle-stats/utils/webpack';
 import {
   ASSET_CHUNK,
   ASSET_ENTRY_TYPE,
