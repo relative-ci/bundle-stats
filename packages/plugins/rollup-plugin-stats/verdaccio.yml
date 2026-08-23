@@ -1,0 +1,15 @@
+storage: .verdaccio-storage
+packages:
+  "rollup-plugin-stats":
+    access: $all
+    publish: $anonymous
+  "**":
+    access: $all
+    publish: $all
+    proxy: npmjs
+publish:
+  allow_offline: true
+uplinks:
+  npmjs:
+    url: https://registry.npmjs.org/
+    max_fails: 100

@@ -1,0 +1,134 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`extract > should extract rollup stats 1`] = `
+{
+  "assets/logo.abcd1234.svg": {
+    "fileName": "assets/logo.abcd1234.svg",
+    "type": "asset",
+  },
+  "assets/main.abcd1234.js": {
+    "fileName": "assets/main.abcd1234.js",
+    "modules": {
+      "/home/user/project/src/main.js": {},
+      "/home/user/project/src/utils.js": {},
+    },
+    "type": "chunk",
+  },
+  "assets/vendors.abcd1234.js": {
+    "fileName": "assets/vendors.abcd1234.js",
+    "modules": {
+      "/home/user/project/node_modules/package-a/index.js": {},
+      "/home/user/project/node_modules/package-b/index.js": {},
+    },
+    "type": "chunk",
+  },
+}
+`;
+
+exports[`extract > should extract rollup stats with excluded assets 1`] = `
+{
+  "assets/logo.abcd1234.svg": {
+    "fileName": "assets/logo.abcd1234.svg",
+    "type": "asset",
+  },
+  "assets/main.abcd1234.js": {
+    "fileName": "assets/main.abcd1234.js",
+    "modules": {
+      "/home/user/project/src/main.js": {},
+      "/home/user/project/src/utils.js": {},
+    },
+    "type": "chunk",
+  },
+}
+`;
+
+exports[`extract > should extract rollup stats with excluded modules 1`] = `
+{
+  "assets/logo.abcd1234.svg": {
+    "fileName": "assets/logo.abcd1234.svg",
+    "type": "asset",
+  },
+  "assets/main.abcd1234.js": {
+    "fileName": "assets/main.abcd1234.js",
+    "modules": {
+      "/home/user/project/src/main.js": {},
+    },
+    "type": "chunk",
+  },
+  "assets/vendors.abcd1234.js": {
+    "fileName": "assets/vendors.abcd1234.js",
+    "modules": {
+      "/home/user/project/node_modules/package-a/index.js": {},
+      "/home/user/project/node_modules/package-b/index.js": {},
+    },
+    "type": "chunk",
+  },
+}
+`;
+
+exports[`extract > should extract rollup stats with maps 1`] = `
+{
+  "assets/logo.abcd1234.svg": {
+    "fileName": "assets/logo.abcd1234.svg",
+    "type": "asset",
+  },
+  "assets/main.abcd1234.js": {
+    "fileName": "assets/main.abcd1234.js",
+    "map": {
+      "version": "3",
+    },
+    "modules": {
+      "/home/user/project/src/main.js": {},
+      "/home/user/project/src/utils.js": {},
+    },
+    "type": "chunk",
+  },
+  "assets/vendors.abcd1234.js": {
+    "fileName": "assets/vendors.abcd1234.js",
+    "map": {
+      "version": "3",
+    },
+    "modules": {
+      "/home/user/project/node_modules/package-a/index.js": {},
+      "/home/user/project/node_modules/package-b/index.js": {},
+    },
+    "type": "chunk",
+  },
+}
+`;
+
+exports[`extract > should extract rollup stats with sources 1`] = `
+{
+  "assets/logo.abcd1234.svg": {
+    "fileName": "assets/logo.abcd1234.svg",
+    "source": "<svg></svg>",
+    "type": "asset",
+  },
+  "assets/main.abcd1234.js": {
+    "code": "export default function () {}",
+    "fileName": "assets/main.abcd1234.js",
+    "modules": {
+      "/home/user/project/src/main.js": {
+        "code": "export default function () {}",
+      },
+      "/home/user/project/src/utils.js": {
+        "code": "export default function () {}",
+      },
+    },
+    "type": "chunk",
+  },
+  "assets/vendors.abcd1234.js": {
+    "code": "export default function () {}",
+    "fileName": "assets/vendors.abcd1234.js",
+    "modules": {
+      "/home/user/project/node_modules/package-a/index.js": {
+        "code": "export default function () {}",
+      },
+      "/home/user/project/node_modules/package-b/index.js": {
+        "code": "export default function () {}",
+      },
+    },
+    "type": "chunk",
+  },
+}
+`;
