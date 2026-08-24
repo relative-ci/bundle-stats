@@ -1,10 +1,12 @@
 import path from 'path';
 import { vol } from 'memfs';
 
+import { vi } from 'vitest';
+
 import { generateReports } from '../reports';
 import { BASELINE_STATS_DIR, BASELINE_STATS_BASE } from '../baseline';
 
-jest.mock('fs/promises');
+vi.mock('fs/promises');
 
 const SOURCE_CURRENT = {
   assets: [

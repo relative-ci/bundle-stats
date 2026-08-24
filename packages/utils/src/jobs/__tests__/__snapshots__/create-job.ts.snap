@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`createJob no baseline 1`] = `
+exports[`createJob > no baseline 1`] = `
 {
   "insights": {
     "webpack": {
@@ -366,7 +366,7 @@ exports[`createJob no baseline 1`] = `
 }
 `;
 
-exports[`createJob with baseline 1`] = `
+exports[`createJob > with baseline 1`] = `
 {
   "insights": {
     "webpack": {

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`report / createReport multiple sources 1`] = `
+exports[`report / createReport > multiple sources 1`] = `
 {
   "assets": [
     {
@@ -1061,7 +1061,7 @@ exports[`report / createReport multiple sources 1`] = `
 }
 `;
 
-exports[`report / createReport single source 1`] = `
+exports[`report / createReport > single source 1`] = `
 {
   "assets": [
     {

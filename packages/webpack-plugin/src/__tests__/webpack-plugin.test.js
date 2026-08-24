@@ -1,5 +1,6 @@
 import path from 'path';
 import fs from 'fs/promises';
+import { vi } from 'vitest';
 import webpack from 'webpack';
 import MemoryFS from 'memory-fs';
 import { advanceTo } from 'jest-date-mock';
@@ -8,12 +9,12 @@ import { BundleStatsWebpackPlugin } from '../webpack-plugin';
 
 advanceTo(new Date(2020, 10, 30));
 
-jest.setTimeout(10 * 1000);
+vi.setConfig({ testTimeout: 10 * 1000 });
 
 const CONTEXT = path.join(__dirname, '../../test/package/app');
 
 describe('webpack plugin', () => {
-  test('default config', (done) => {
+  test('default config', () => {
     expect.assertions(3);
 
     const compiler = webpack({
@@ -23,17 +24,19 @@ describe('webpack plugin', () => {
     });
     compiler.outputFileSystem = new MemoryFS();
 
-    compiler.run((error, stats) => {
-      expect(error).toEqual(null);
-      expect(stats.hasErrors()).toBe(false);
-      const { assets } = stats.toJson({ source: false, assets: true });
-      const bundleStatsAsset = assets.find((asset) => asset.name.match(/bundle-stats\.html$/));
-      expect(bundleStatsAsset).toBeTruthy();
-      done();
+    return new Promise((resolve) => {
+      compiler.run((error, stats) => {
+        expect(error).toEqual(null);
+        expect(stats.hasErrors()).toBe(false);
+        const { assets } = stats.toJson({ source: false, assets: true });
+        const bundleStatsAsset = assets.find((asset) => asset.name.match(/bundle-stats\.html$/));
+        expect(bundleStatsAsset).toBeTruthy();
+        resolve();
+      });
     });
   });
 
-  test('baseline', (done) => {
+  test('baseline', () => {
     expect.assertions(4);
 
     const compiler = webpack({
@@ -43,17 +46,19 @@ describe('webpack plugin', () => {
     });
     compiler.outputFileSystem = new MemoryFS();
 
-    compiler.run((error, stats) => {
-      expect(error).toEqual(null);
-      expect(stats.hasErrors()).toBe(false);
-      const { assets } = stats.toJson({ source: false, assets: true });
-      const bundleStatsAsset = assets.find((asset) => asset.name.match(/bundle-stats\.html$/));
-      expect(bundleStatsAsset).toBeTruthy();
-      const baselineAsset = assets.find((asset) =>
-        asset.name.match(/node_modules\/\.cache\/bundle-stats\/baseline\.json$/),
-      );
-      expect(baselineAsset).toBeTruthy();
-      done();
+    return new Promise((resolve) => {
+      compiler.run((error, stats) => {
+        expect(error).toEqual(null);
+        expect(stats.hasErrors()).toBe(false);
+        const { assets } = stats.toJson({ source: false, assets: true });
+        const bundleStatsAsset = assets.find((asset) => asset.name.match(/bundle-stats\.html$/));
+        expect(bundleStatsAsset).toBeTruthy();
+        const baselineAsset = assets.find((asset) =>
+          asset.name.match(/node_modules\/\.cache\/bundle-stats\/baseline\.json$/),
+        );
+        expect(baselineAsset).toBeTruthy();
+        resolve();
+      });
     });
   });
 
@@ -92,8 +97,8 @@ describe('webpack plugin', () => {
         }),
       );
 
-      jest.spyOn(global.console, 'info');
-      jest.spyOn(global.console, 'warn');
+      vi.spyOn(global.console, 'info');
+      vi.spyOn(global.console, 'warn');
     });
 
     afterEach(async () => {
@@ -101,7 +106,7 @@ describe('webpack plugin', () => {
       await fs.rm(customBaselineFilepath);
     });
 
-    test('should compare with baseline.json', (done) => {
+    test('should compare with baseline.json', () => {
       const compiler = webpack({
         mode: 'production',
         context: CONTEXT,
@@ -109,28 +114,30 @@ describe('webpack plugin', () => {
       });
       compiler.outputFileSystem = new MemoryFS();
 
-      compiler.run((error, stats) => {
-        expect(error).toEqual(null);
-        expect(stats.hasErrors()).toBe(false);
+      return new Promise((resolve) => {
+        compiler.run((error, stats) => {
+          expect(error).toEqual(null);
+          expect(stats.hasErrors()).toBe(false);
 
-        /* eslint-disable no-console */
-        expect(console.warn).not.toHaveBeenCalledWith(
-          'Missing baseline stats, see "baseline" option.',
-        );
-        expect(console.info).toHaveBeenCalledWith(
-          'Reading baseline data from ../node_modules/.cache/bundle-stats/baseline.json.',
-        );
-        expect(console.info).toHaveBeenCalledWith('Bundle Size — 27B (+35%).');
-        /* eslint-enable no-console */
+          /* eslint-disable no-console */
+          expect(console.warn).not.toHaveBeenCalledWith(
+            'Missing baseline stats, see "baseline" option.',
+          );
+          expect(console.info).toHaveBeenCalledWith(
+            'Reading baseline data from ../node_modules/.cache/bundle-stats/baseline.json.',
+          );
+          expect(console.info).toHaveBeenCalledWith('Bundle Size — 27B (+35%).');
+          /* eslint-enable no-console */
 
-        const { assets } = stats.toJson({ source: false, assets: true });
-        const bundleStatsAsset = assets.find((asset) => asset.name.match(/bundle-stats\.html$/));
-        expect(bundleStatsAsset).toBeTruthy();
-        done();
+          const { assets } = stats.toJson({ source: false, assets: true });
+          const bundleStatsAsset = assets.find((asset) => asset.name.match(/bundle-stats\.html$/));
+          expect(bundleStatsAsset).toBeTruthy();
+          resolve();
+        });
       });
     });
 
-    test('should compare and save baseline with custom baseline.json', (done) => {
+    test('should compare and save baseline with custom baseline.json', () => {
       const compiler = webpack({
         mode: 'production',
         output: {
@@ -147,29 +154,31 @@ describe('webpack plugin', () => {
       });
       compiler.outputFileSystem = new MemoryFS();
 
-      compiler.run((error, stats) => {
-        expect(error).toEqual(null);
-        expect(stats.hasErrors()).toBe(false);
+      return new Promise((resolve) => {
+        compiler.run((error, stats) => {
+          expect(error).toEqual(null);
+          expect(stats.hasErrors()).toBe(false);
 
-        /* eslint-disable no-console */
-        expect(console.warn).not.toHaveBeenCalledWith(
-          'Missing baseline stats, see "baseline" option.',
-        );
-        expect(console.info).toHaveBeenCalledWith(
-          'Reading baseline data from ./custom-baseline.json.',
-        );
-        expect(console.info).toHaveBeenCalledWith('Bundle Size — 27B (+8%).');
-        /* eslint-enable no-console */
+          /* eslint-disable no-console */
+          expect(console.warn).not.toHaveBeenCalledWith(
+            'Missing baseline stats, see "baseline" option.',
+          );
+          expect(console.info).toHaveBeenCalledWith(
+            'Reading baseline data from ./custom-baseline.json.',
+          );
+          expect(console.info).toHaveBeenCalledWith('Bundle Size — 27B (+8%).');
+          /* eslint-enable no-console */
 
-        const { assets } = stats.toJson({ source: false, assets: true });
+          const { assets } = stats.toJson({ source: false, assets: true });
 
-        const bundleStatsAsset = assets.find((asset) => asset.name.match(/bundle-stats\.html$/));
-        expect(bundleStatsAsset).toBeTruthy();
+          const bundleStatsAsset = assets.find((asset) => asset.name.match(/bundle-stats\.html$/));
+          expect(bundleStatsAsset).toBeTruthy();
 
-        const baselineAsset = assets.find((asset) => asset.name === 'custom-baseline.json');
-        expect(baselineAsset).toBeTruthy();
+          const baselineAsset = assets.find((asset) => asset.name === 'custom-baseline.json');
+          expect(baselineAsset).toBeTruthy();
 
-        done();
+          resolve();
+        });
       });
     });
   });

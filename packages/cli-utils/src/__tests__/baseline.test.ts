@@ -1,8 +1,9 @@
+import { vi } from 'vitest';
 import { vol } from 'memfs';
 
 import { writeBaseline } from '../baseline';
 
-jest.mock('fs/promises');
+vi.mock('fs/promises');
 
 const SOURCE_CURRENT = {
   assets: [

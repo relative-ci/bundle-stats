@@ -28,7 +28,7 @@
     "lint": "eslint .",
     "start": "cross-env NODE_ENV=development storybook dev -c ./build/storybook -p 8080",
     "serve-storybook": "vite preview --outDir storybook-static --port 8080",
-    "test": "jest src --passWithNoTests",
+    "test": "TZ=UTC vitest run --config vitest.unit.config.ts",
     "test-storybook": "vitest run"
   },
   "repository": {
@@ -68,9 +68,8 @@
     "cross-env": "10.1.0",
     "hex-rgb": "5.0.0",
     "identity-obj-proxy": "3.0.0",
-    "jest": "30.4.2",
     "jest-date-mock": "1.0.10",
-    "jest-environment-jsdom": "30.4.1",
+    "jsdom": "30.0.1",
     "lodash": "4.18.1",
     "playwright": "1.62.1",
     "prop-types": "15.8.1",

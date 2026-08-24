@@ -27,7 +27,7 @@
     "build": "npm run clean && tsdown",
     "clean": "rimraf ./lib",
     "lint": "eslint .",
-    "test": "jest --passWithNoTests src"
+    "test": "vitest run"
   },
   "keywords": [],
   "author": {
@@ -58,12 +58,10 @@
     "@types/lodash": "4.17.25",
     "@types/stream-chain": "^2.0.1",
     "@types/stream-json": "^1.7.3",
-    "jest": "30.4.2",
-    "jest-cli": "30.4.2",
     "memfs": "4.68.1",
     "rimraf": "6.1.3",
-    "ts-jest": "29.4.12",
     "tsdown": "0.22.14",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "vitest": "4.1.11"
   }
 }
