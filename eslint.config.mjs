@@ -4,7 +4,6 @@ import js from '@eslint/js';
 import globals from 'globals';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
-import pluginJest from 'eslint-plugin-jest';
 import prettierRecommended from 'eslint-plugin-prettier/recommended';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -44,14 +43,10 @@ const config = [
   // Common configuration for all JS/JSX/TS/TSX files
   {
     files: ['**/*.{js,mjs,jsx,ts,tsx}'],
-    plugins: {
-      jest: pluginJest,
-    },
     languageOptions: {
       globals: {
         ...globals.node,
         ...globals.browser,
-        ...pluginJest.environments.globals.globals,
         ...globals.vitest,
       },
     },
