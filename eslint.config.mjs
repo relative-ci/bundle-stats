@@ -52,6 +52,7 @@ const config = [
         ...globals.node,
         ...globals.browser,
         ...pluginJest.environments.globals.globals,
+        ...globals.vitest,
       },
     },
     settings: {
