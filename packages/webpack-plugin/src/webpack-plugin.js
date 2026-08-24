@@ -1,5 +1,5 @@
 import webpack from 'webpack';
-import { merge } from 'lodash';
+import merge from 'lodash/merge';
 import { generateReports } from '@bundle-stats/cli-utils';
 import validate from '@bundle-stats/plugin-webpack-validate';
 
