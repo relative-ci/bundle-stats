@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Tooltip } from '../../ui/tooltip';
 import css from './job-name.module.css';
 
 export const JobName = ({
@@ -11,9 +10,9 @@ export const JobName = ({
   children,
   ...restProps
 }) => (
-  <Tooltip className={css.root} as={Component} title={title} {...restProps}>
+  <Component className={css.root} title={title} {...restProps}>
     {children || `Job #${internalBuildNumber}`}
-  </Tooltip>
+  </Component>
 );
 
 JobName.defaultProps = {
