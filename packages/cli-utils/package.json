@@ -2,9 +2,21 @@
   "name": "@bundle-stats/cli-utils",
   "version": "4.22.3",
   "description": "BundleStats CLI utilities",
-  "main": "lib/index.js",
-  "module": "lib-esm/index.js",
-  "types": "types/index.d.ts",
+  "main": "./lib/index.cjs",
+  "module": "./lib/index.mjs",
+  "types": "./lib/index.d.cts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/index.d.mts",
+        "default": "./lib/index.mjs"
+      },
+      "require": {
+        "types": "./lib/index.d.cts",
+        "default": "./lib/index.cjs"
+      }
+    }
+  },
   "directories": {
     "lib": "lib"
   },
@@ -12,12 +24,8 @@
     "node": ">= 22.0"
   },
   "scripts": {
-    "build": "npm run clean && npm run build-lib && npm run build-esm",
-    "build-lib": "npm run clean-lib && tsc --rootDir ./src --project tsconfig.lib.json --outDir ./lib",
-    "build-esm": "npm run clean-esm && tsc --rootDir ./src --project tsconfig.esm.json --outDir ./lib-esm",
-    "clean": "npm run clean-lib && npm run clean-esm",
-    "clean-lib": "rimraf lib",
-    "clean-esm": "rimraf lib-esm types",
+    "build": "npm run clean && tsdown",
+    "clean": "rimraf ./lib",
     "lint": "eslint .",
     "test": "jest --passWithNoTests src"
   },
@@ -55,6 +63,7 @@
     "memfs": "4.68.1",
     "rimraf": "6.1.3",
     "ts-jest": "29.4.12",
+    "tsdown": "0.22.14",
     "typescript": "5.9.3"
   }
 }

@@ -1,7 +1,6 @@
 import React, { useCallback, useMemo } from 'react';
 import type { Job } from '@bundle-stats/utils';
-// @ts-ignore
-import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
+import * as webpack from '@bundle-stats/utils/webpack';
 
 import { ModuleSizeMetric } from '../../constants';
 import type { ReportMetricModuleRow, SortAction } from '../../types';
@@ -102,12 +101,18 @@ export const BundleModules = (props: BundleModulesProps) => {
   const { rows, totalRowCount } = useMemo(() => {
     let result: Array<ReportMetricModuleRow> = [];
 
+    // `addRowFlags` produces `ReportMetricModuleRow`, but `compareBySection`/`compareModule*`
+    // are typed generically as `ReportMetricRow[]` regardless of the transformer passed in.
     if (moduleMetric === ModuleSizeMetric.SIZE) {
-      result = webpack.compareBySection.modules(jobs, [addRowFlags]);
+      result = webpack.compareBySection.modules(jobs, [
+        addRowFlags,
+      ]) as Array<ReportMetricModuleRow>;
     } else if (moduleMetric === ModuleSizeMetric.DUPLICATE_SIZE) {
-      result = webpack.compareModuleDuplicateSize(jobs, [addRowFlags]);
+      result = webpack.compareModuleDuplicateSize(jobs, [
+        addRowFlags,
+      ]) as Array<ReportMetricModuleRow>;
     } else {
-      result = webpack.compareModuleTotalSize(jobs, [addRowFlags]);
+      result = webpack.compareModuleTotalSize(jobs, [addRowFlags]) as Array<ReportMetricModuleRow>;
     }
 
     return {

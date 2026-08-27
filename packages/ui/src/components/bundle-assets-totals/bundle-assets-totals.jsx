@@ -5,7 +5,7 @@ import {
   getBundleAssetsFileTypeComponentLink,
   getComponentStateQueryString,
 } from '@bundle-stats/utils';
-import * as webpack from '@bundle-stats/utils/lib-esm/webpack';
+import * as webpack from '@bundle-stats/utils/webpack';
 
 import config from '../../config.json';
 import { ASSETS_SIZES_FILE_TYPE_MAP, SECTION_URLS, MetricsDisplayType } from '../../constants';
