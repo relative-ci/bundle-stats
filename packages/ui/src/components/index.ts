@@ -11,6 +11,8 @@ export { JobName } from './job-name';
 export { JobsHeader } from './jobs-header';
 export { LighthouseTable } from './lighthouse-table';
 export { Metric } from './metric';
+export { MetricChangeLegend } from './metric-change-legend';
+export type { MetricChangeLegendProps } from './metric-change-legend';
 export { MetricRunInfo } from './metric-run-info';
 export type { MetricRunInfoProps } from './metric-run-info';
 export { MetricsTable } from './metrics-table';
