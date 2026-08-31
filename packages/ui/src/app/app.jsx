@@ -10,7 +10,7 @@ import { BundleAssetsTotals } from '../components/bundle-assets-totals';
 import { BundleModules } from '../components/bundle-modules';
 import { BundlePackages } from '../components/bundle-packages';
 import { Insights } from '../components/insights';
-import { MetricsTableTitle } from '../components';
+import { MetricChangeLegend, MetricsTableTitle } from '../components';
 import { Summary } from '../components/summary';
 import { Box } from '../layout/box';
 import { Footer } from '../layout/footer';
@@ -150,6 +150,11 @@ const AppComponent = ({ version, jobs }) => {
   return (
     <JobsProvider jobs={jobs}>
       <Layout jobs={jobs} version={version}>
+        <Container className={css.metricChangeLegendContainer}>
+          <div className={css.metricChangeLegendContainerInner}>
+            <MetricChangeLegend />
+          </div>
+        </Container>
         <Container className={css.summaryContainer}>
           <Summary
             data={jobs[0].summary}
