@@ -5,11 +5,14 @@
 .anchor {
   display: inline-block;
   color: inherit;
+  cursor: default;
   text-decoration: none;
+  transition: var(--transition-out);
 }
 
 .anchor:hover {
   color: var(--color-primary);
+  transition: var(--transition-in);
 }
 
 .anchor:focus {

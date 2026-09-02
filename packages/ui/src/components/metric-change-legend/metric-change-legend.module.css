@@ -1,0 +1,69 @@
+.root {
+  font-size: var(--size-small);
+}
+
+.itemAnchor {
+  color: var(--color-text-light);
+}
+
+.itemAnchor:hover {
+  color: var(--color-text);
+}
+
+.variants {
+  display: flex;
+  gap: 1px;
+  overflow: hidden;
+  border-radius: var(--radius-xsmall);
+}
+
+.infoPreviewCell {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.infoDescriptionCell {
+  padding-left: 0 !important;
+}
+
+.variant {
+  width: var(--space-xxsmall);
+  height: var(--space-xxsmall);
+}
+
+.large .variant {
+  width: var(--space-small);
+  height: var(--space-small);
+}
+
+.bar-improvement .variant-low {
+  background: var(--color-green-light);
+}
+
+.bar-improvement .variant-medium {
+  background: var(--color-green);
+}
+
+.bar-improvement .variant-high {
+  background: var(--color-green-dark);
+}
+
+.bar-regression .variant-low {
+  background: var(--color-red-light);
+}
+
+.bar-regression .variant-medium {
+  background: var(--color-red);
+}
+
+.bar-regression .variant-high {
+  background: var(--color-red-dark);
+}
+
+.bar-neutral .variant-medium {
+  background: var(--color-info);
+}
+
+.bar-no-change .variant-medium {
+  background: var(--color-gray-ultra-light);
+}

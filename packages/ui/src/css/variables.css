@@ -130,11 +130,13 @@
   --color-dark: #111;
   --color-light: #fff;
 
-  /* Functional color variables */
   --color-branding-light: #2b76d4;
   --color-branding: #1a477f;
   --color-branding-dark: #09182a;
+}
 
+body {
+  /* Functional color variables */
   --color-text-ultra-light: var(--color-gray-ultra-light);
   --color-text-light: var(--color-gray-light);
   --color-text: var(--color-gray);
