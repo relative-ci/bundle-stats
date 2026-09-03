@@ -71,7 +71,7 @@
     "vite": "8.2.2",
     "vite-plugin-svgr": "5.2.0",
     "vitest": "4.1.11",
-    "webpack": "^5.110.2",
+    "webpack": "^5.110.3",
     "webpack-cli": "7.2.3",
     "webpack-merge": "6.0.1"
   }
