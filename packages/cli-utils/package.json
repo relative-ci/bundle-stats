@@ -50,7 +50,7 @@
     "@types/lodash": "4.17.25",
     "@types/stream-chain": "^2.0.1",
     "@types/stream-json": "^1.7.3",
-    "jest": "30.5.1",
+    "jest": "^30.5.0",
     "jest-cli": "30.5.1",
     "memfs": "4.68.2",
     "rimraf": "6.1.3",
