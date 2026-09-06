@@ -240,7 +240,7 @@ jobs:
         with:
           name: local-registry
 
-      - name: Install dependencies
+      - name: Install verdaccio
         run: npm install -g verdaccio@v5
 
       - name: Run local npm registry
@@ -303,8 +303,8 @@ jobs:
 
       - name: Install test dependencies
         run: |
-          npm install --force
-          npm install --no-save --force rollup@${{ matrix.rollup }}
+          npm install --force --legacy-peer-deps
+          npm install --no-save --force --legacy-peer-deps rollup@${{ matrix.rollup }}
         working-directory: packages/rollup-plugin/test/package
 
       - name: Test package
