@@ -16,12 +16,9 @@
 
 .titleIcon {
   flex: 0 0 var(--space-small);
+  /* compensate for the button icon spacing */
   margin-top: -3px !important;
   margin-bottom: -3px !important;
-}
-
-.title + .info {
-  margin-top: var(--space-xxsmall);
 }
 
 .currentMetric {
@@ -32,33 +29,31 @@
   height: var(--line-height-number);
 }
 
-.delta {
-  font-weight: bold;
-}
-
-.deltaValue + .deltaValue::before {
-  margin-left: calc(var(--space-xxxsmall) / 2);
-  margin-right: calc(var(--space-xxxsmall) / 2);
-  content: '/';
-  color: var(--color-text-ultra-light);
-}
-
 .baselineMetric {
   color: var(--color-text-ultra-light);
   font-size: var(--size-small);
+  font-family: var(--font-family-fixed);
+  font-weight: normal;
   line-height: var(--line-height-number);
   height: var(--line-height-number);
 }
 
-/* Loading state */
-.loading.currentMetric {
-  min-width: 0;
-  max-width: 8em;
+.baselineMetricValue {
+  line-height: inherit;
 }
 
-.loading.baselineMetric {
-  min-width: 0;
-  max-width: 8em;
+
+.delta {
+  font-weight: bold;
+  font-size: var(--size-small);
+  line-height: var(--line-height-number);
+}
+
+.deltaValue + .deltaValue::before {
+  margin-left: var(--space-xxxsmall);
+  margin-right: var(--space-xxxsmall);
+  content: '\00B7';
+  color: var(--color-text-ultra-light);
 }
 
 /* Hover state */
@@ -82,13 +77,26 @@
     visibility 0s;
 }
 
-/* Size variation */
-.currentMetric {
-  font-size: var(--size-xxlarge);
+/* Loading state */
+.loading .currentMetric {
+  max-width: 6em;
 }
 
+.loading .baselineMetric {
+  max-width: 6em;
+}
+
+.loading .delta {
+  max-width: 12em;
+}
+
+/* Size variation */
 .small .currentMetric {
   font-size: var(--size-medium);
+}
+
+.currentMetric {
+  font-size: var(--size-xxlarge);
 }
 
 .large .currentMetric {

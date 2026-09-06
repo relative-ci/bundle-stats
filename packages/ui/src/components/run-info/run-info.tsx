@@ -24,23 +24,126 @@ const getMetricParams = (value: string): [string, string?] => {
   return [matches[1], matches[2]];
 };
 
-export interface RunInfoProps {
+type RunInfoTitleProps = {
+  className?: string;
   title?: ReactNode;
   titleHoverCard?: ReactNode;
   titleTooltip?: ReactNode;
+};
+
+const RunInfoTitle = ({ className, title, titleHoverCard, titleTooltip }: RunInfoTitleProps) => (
+  <FlexStack space="xxxsmall" alignItems="center" as="h3" className={cx(css.title, className)}>
+    <span className={css.titleText}>{title}</span>
+    {titleHoverCard && (
+      <HoverCard
+        label={<Icon glyph={Icon.ICONS.HELP} />}
+        className={cx(css.titleIcon, css.titleHoverCardIcon)}
+      >
+        {titleHoverCard}
+      </HoverCard>
+    )}
+    {titleTooltip && (
+      <Tooltip title={titleTooltip} className={cx(css.titleIcon, css.titleTooltipIcon)}>
+        <Icon glyph={Icon.ICONS.HELP} />
+      </Tooltip>
+    )}
+  </FlexStack>
+);
+
+type RunInfoContentProps = {
+  className?: string;
+  loading?: boolean;
   current?: ReactNode;
+  enhance?: boolean;
   baseline?: string;
   delta?: string;
   deltaPercentage?: string;
   deltaType?: string;
-
-  as?: React.ElementType;
-  size?: 'small' | 'medium' | 'large' | 'xlarge';
-
   showBaseline?: boolean;
-  loading?: boolean;
-  enhance?: boolean;
-}
+  showDelta?: boolean;
+};
+
+const RunInfoContent = ({
+  className,
+  loading = false,
+  current = '',
+  enhance = false,
+  baseline = '',
+  delta = '',
+  deltaPercentage = '',
+  deltaType = '',
+  showBaseline = true,
+  showDelta = true,
+}: RunInfoContentProps) => {
+  const currentValueParams: [ReactNode, string?] = useMemo(() => {
+    if (!enhance || typeof current !== 'string') {
+      return [current];
+    }
+
+    return getMetricParams(current);
+  }, [current, enhance]);
+
+  const contentClassName = cx(css.content, className);
+
+  if (loading) {
+    return (
+      <Stack space="xxsmall" className={contentClassName}>
+        <Stack space="xxxsmall">
+          <Skeleton className={css.currentMetric} />
+          {showBaseline && <Skeleton className={css.baselineMetric} />}
+        </Stack>
+        {showDelta && <Skeleton as="p" className={css.delta} />}
+      </Stack>
+    );
+  }
+
+  return (
+    <Stack space="xxsmall" className={contentClassName}>
+      <Stack space="xxxsmall">
+        <Metric
+          value={currentValueParams[0]}
+          unit={currentValueParams[1]}
+          className={css.currentMetric}
+        />
+        {showBaseline && (
+          <FlexStack alignItems="center" space="xxxsmall" className={css.baselineMetric}>
+            <span className={css.baselineMetricLabel}>vs</span>
+            <Metric value={baseline} inline className={css.baselineMetricValue} />
+          </FlexStack>
+        )}
+      </Stack>
+      {showDelta && (
+        <div className={css.delta}>
+          {deltaPercentage && (
+            <Delta
+              displayValue={deltaPercentage}
+              deltaType={deltaType}
+              className={css.deltaValue}
+            />
+          )}
+          {delta && <Delta displayValue={delta} deltaType={deltaType} className={css.deltaValue} />}
+        </div>
+      )}
+    </Stack>
+  );
+};
+
+export type RunInfoProps = Pick<RunInfoTitleProps, 'title' | 'titleHoverCard' | 'titleTooltip'> &
+  Pick<
+    RunInfoContentProps,
+    | 'current'
+    | 'baseline'
+    | 'delta'
+    | 'deltaPercentage'
+    | 'deltaType'
+    | 'showBaseline'
+    | 'showDelta'
+    | 'loading'
+    | 'enhance'
+  > & {
+    as?: React.ElementType;
+    size?: 'small' | 'medium' | 'large' | 'xlarge';
+  };
 
 export const RunInfo = ({
   className = '',
@@ -55,77 +158,33 @@ export const RunInfo = ({
   as: Component = 'div',
   size = 'medium',
   showBaseline = true,
+  showDelta = true,
   loading = false,
   enhance = false,
+  children,
   ...restProps
 }: RunInfoProps & Omit<React.ComponentProps<'div'>, 'title'>) => {
-  const rootClassName = cx(
-    css.root,
-    className,
-    css[size],
-    (delta || deltaPercentage) && css.showDelta,
-  );
-
-  const currentValueParams: [ReactNode, string?] = useMemo(() => {
-    if (!enhance || typeof current !== 'string') {
-      return [current];
-    }
-
-    return getMetricParams(current);
-  }, [current, enhance]);
+  const rootClassName = cx(css.root, loading && css.loading, css[size], className);
 
   return (
     <Component className={rootClassName} {...restProps}>
-      {title && (
-        <FlexStack space="xxxsmall" alignItems="center" as="h3" className={css.title}>
-          <span className={css.titleText}>{title}</span>
-          {titleHoverCard && (
-            <HoverCard
-              label={<Icon glyph={Icon.ICONS.HELP} />}
-              className={cx(css.titleIcon, css.titleHoverCardIcon)}
-            >
-              {titleHoverCard}
-            </HoverCard>
-          )}
-          {titleTooltip && (
-            <Tooltip title={titleTooltip} className={cx(css.titleIcon, css.titleTooltipIcon)}>
-              <Icon glyph={Icon.ICONS.HELP} />
-            </Tooltip>
-          )}
-        </FlexStack>
-      )}
-
-      {!loading ? (
-        <Stack space="xxxsmall" className={css.info}>
-          <Metric
-            value={currentValueParams[0]}
-            unit={currentValueParams[1]}
-            inline
-            className={css.currentMetric}
-          >
-            {(delta || deltaPercentage) && (
-              <span className={css.delta}>
-                {deltaPercentage && (
-                  <Delta
-                    displayValue={deltaPercentage}
-                    deltaType={deltaType}
-                    className={css.deltaValue}
-                  />
-                )}
-                {delta && (
-                  <Delta displayValue={delta} deltaType={deltaType} className={css.deltaValue} />
-                )}
-              </span>
-            )}
-          </Metric>
-          {showBaseline && <Metric className={css.baselineMetric} value={baseline} />}
-        </Stack>
-      ) : (
-        <Stack space="xxxsmall" className={css.info}>
-          <Skeleton className={cx(css.currentMetric, css.loading)} />
-          {showBaseline && <Skeleton as="p" className={cx(css.baselineMetric, css.loading)} />}
-        </Stack>
-      )}
+      <Stack space="xsmall">
+        {title && (
+          <RunInfoTitle title={title} titleHoverCard={titleHoverCard} titleTooltip={titleTooltip} />
+        )}
+        <RunInfoContent
+          loading={loading}
+          current={current}
+          enhance={enhance}
+          baseline={baseline}
+          delta={delta}
+          deltaPercentage={deltaPercentage}
+          deltaType={deltaType}
+          showBaseline={showBaseline}
+          showDelta={showDelta}
+        />
+        {children}
+      </Stack>
     </Component>
   );
 };
