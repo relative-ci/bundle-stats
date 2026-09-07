@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@babel/core": "8.0.1",
-    "@eslint/compat": "2.1.0",
+    "@eslint/compat": "2.1.1",
     "@eslint/eslintrc": "3.3.7",
     "@eslint/js": "10.0.1",
     "@tsconfig/node14": "14.1.8",
