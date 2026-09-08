@@ -27,10 +27,10 @@ updates:
           - "jest-cli"
           - "babel-jest"
           - "jest-environment-jsdom"
-      playwrite:
+      playwright:
         patterns:
-          - "@playwrite/*"
-          - "playwrite"
+          - "@playwright/*"
+          - "playwright"
       react:
         patterns:
           - "react"
