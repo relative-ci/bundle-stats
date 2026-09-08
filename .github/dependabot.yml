@@ -18,24 +18,32 @@ updates:
     target-branch: "master"
     open-pull-requests-limit: 25
     groups:
-      storybook:
-        patterns:
-          - "storybook"
-          - "@storybook/*"
-      react:
-        patterns:
-          - "react"
-          - "react-dom"
-          - "react-is"
       babel:
         patterns:
           - "@babel/*"
-      typescript-eslint:
-        patterns:
-          - "@typescript-eslint/*"
       jest:
         patterns:
           - "jest"
           - "jest-cli"
           - "babel-jest"
           - "jest-environment-jsdom"
+      playwrite:
+        patterns:
+          - "@playwrite/*"
+          - "playwrite"
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "react-is"
+      storybook:
+        patterns:
+          - "storybook"
+          - "@storybook/*"
+      typescript-eslint:
+        patterns:
+          - "@typescript-eslint/*"
+      vitest:
+        patterns:
+          - "@vitest/*"
+          - "vitest"
