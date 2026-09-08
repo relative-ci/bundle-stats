@@ -39,7 +39,7 @@
     "@storybook/react": "10.5.10",
     "@storybook/react-vite": "10.5.10",
     "@vitest/browser": "5.0.0",
-    "@vitest/browser-playwright": "4.1.11",
+    "@vitest/browser-playwright": "5.0.0",
     "autoprefixer": "10.5.5",
     "babel-jest": "30.5.1",
     "babel-loader": "10.1.1",

@@ -49,7 +49,7 @@
     "@types/react-router-dom": "5.3.3",
     "@vitejs/plugin-react": "6.1.1",
     "@vitest/browser": "5.0.0",
-    "@vitest/browser-playwright": "4.1.11",
+    "@vitest/browser-playwright": "5.0.0",
     "babel-plugin-polyfill-corejs3": "1.0.0",
     "babel-plugin-require-context-hook": "1.0.0",
     "classnames": "2.5.1",
