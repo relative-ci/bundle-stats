@@ -62,7 +62,7 @@
     "jest-date-mock": "1.0.10",
     "jest-environment-jsdom": "30.5.1",
     "lodash": "4.18.1",
-    "playwright": "1.62.1",
+    "playwright": "1.63.0",
     "prop-types": "15.8.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
