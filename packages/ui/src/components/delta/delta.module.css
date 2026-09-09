@@ -8,16 +8,16 @@
   color: var(--color-info);
 }
 
-.HIGH_NEGATIVE {
-  color: var(--color-red-dark);
+.LOW_NEGATIVE {
+  color: var(--color-red-light);
 }
 
 .NEGATIVE {
-  color: var(--color-red-dark);
+  color: var(--color-red);
 }
 
-.LOW_NEGATIVE {
-  color: var(--color-red-light);
+.HIGH_NEGATIVE {
+  color: var(--color-red-dark);
 }
 
 .LOW_POSITIVE {
@@ -25,7 +25,7 @@
 }
 
 .POSITIVE {
-  color: var(--color-green-dark);
+  color: var(--color-green);
 }
 
 .HIGH_POSITIVE {
@@ -43,24 +43,25 @@
   background: var(--color-info-light);
 }
 
+.inverted.LOW_NEGATIVE {
+  background: var(--color-red-light);
+}
+
+.inverted.NEGATIVE {
+  background: var(--color-red);
+}
+
 .inverted.HIGH_NEGATIVE {
   background: var(--color-red-dark);
 }
 
-.inverted.NEGATIVE {
-  background: var(--color-red-dark);
-}
-
-.inverted.LOW_NEGATIVE {
-  background: var(--color-red-light);
-}
 
 .inverted.LOW_POSITIVE {
   background: var(--color-green-light);
 }
 
 .inverted.POSITIVE {
-  background: var(--color-green-dark);
+  background: var(--color-green);
 }
 
 .inverted.HIGH_POSITIVE {
