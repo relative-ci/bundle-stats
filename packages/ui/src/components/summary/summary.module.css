@@ -30,7 +30,7 @@
   display: flex;
   align-items: stretch;
   flex-wrap: wrap;
-  gap: var(--space-small);
+  gap: var(--space-medium);
 }
 
 .item {
@@ -48,10 +48,10 @@
   display: block;
   position: absolute;
   z-index: -1;
-  top: calc(0px - var(--space-xxsmall));
-  right: calc(0px - var(--space-xxsmall));
-  bottom: calc(0px - var(--space-xxsmall));
-  left: calc(0px - var(--space-xxsmall));
+  top: calc(0px - var(--space-xsmall));
+  right: calc(0px - var(--space-xsmall));
+  bottom: calc(0px - var(--space-xsmall));
+  left: calc(0px - var(--space-xsmall));
   opacity: 0;
   transition: var(--transition-out);
 }
@@ -61,6 +61,21 @@
   transition: var(--transition-in);
 }
 
-.itemSmall {
-  min-width: 8em;
+.item + .item::after {
+  content: "";
+  border-radius: var(--radius-medium);
+  background: var(--color-outline);
+  display: block;
+  width: 1px;
+  position: absolute;
+  left: calc(0px - var(--space-xsmall));
+  top: var(--space-xxsmall);
+  bottom: var(--space-xxsmall);
+  opacity: 1;
+  transition: var(--transition-out);
+}
+
+.item:hover::after,  .item:hover + .item::after {
+  opacity: 0;
+  transition: var(--transition-in);
 }
