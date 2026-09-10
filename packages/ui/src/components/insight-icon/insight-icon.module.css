@@ -1,7 +1,7 @@
 .root {
-  width: calc(var(--space-small) + 6px);
-  height: calc(var(--space-small) + 6px);
-  padding: 3px;
+  width: calc(var(--space-small) + var(--space-xxsmall));
+  height: calc(var(--space-small) + var(--space-xxsmall));
+  padding: var(--space-xxxsmall);
   border-radius: 50%;
   background: var(--color-highlight);
 }

@@ -87,31 +87,27 @@ const RunInfoContent = ({
 
   if (loading) {
     return (
-      <Stack space="xxsmall" className={contentClassName}>
-        <Stack space="xxxsmall">
-          <Skeleton className={css.currentMetric} />
-          {showBaseline && <Skeleton className={css.baselineMetric} />}
-        </Stack>
+      <Stack space="xxxsmall" className={contentClassName}>
+        <Skeleton className={css.currentMetric} />
+        {showBaseline && <Skeleton className={css.baselineMetric} />}
         {showDelta && <Skeleton as="p" className={css.delta} />}
       </Stack>
     );
   }
 
   return (
-    <Stack space="xxsmall" className={contentClassName}>
-      <Stack space="xxxsmall">
-        <Metric
-          value={currentValueParams[0]}
-          unit={currentValueParams[1]}
-          className={css.currentMetric}
-        />
-        {showBaseline && (
-          <FlexStack alignItems="center" space="xxxsmall" className={css.baselineMetric}>
-            <span className={css.baselineMetricLabel}>vs</span>
-            <Metric value={baseline} inline className={css.baselineMetricValue} />
-          </FlexStack>
-        )}
-      </Stack>
+    <Stack space="xxxsmall" className={contentClassName}>
+      <Metric
+        value={currentValueParams[0]}
+        unit={currentValueParams[1]}
+        className={css.currentMetric}
+      />
+      {showBaseline && (
+        <FlexStack alignItems="center" space="xxxsmall" className={css.baselineMetric}>
+          <span className={css.baselineMetricLabel}>vs</span>
+          <Metric value={baseline} inline className={css.baselineMetricValue} />
+        </FlexStack>
+      )}
       {showDelta && (
         <div className={css.delta}>
           {deltaPercentage && (

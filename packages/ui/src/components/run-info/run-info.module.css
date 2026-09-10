@@ -1,5 +1,5 @@
 .title {
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-light);
   font-weight: bold;
   font-size: var(--size-xsmall);
   text-transform: uppercase;
@@ -30,7 +30,7 @@
 }
 
 .baselineMetric {
-  color: var(--color-text-ultra-light);
+  color: var(--color-text-light);
   font-size: var(--size-small);
   font-family: var(--font-family-fixed);
   font-weight: normal;
@@ -52,8 +52,8 @@
 .deltaValue + .deltaValue::before {
   margin-left: var(--space-xxxsmall);
   margin-right: var(--space-xxxsmall);
-  content: '\00B7';
-  color: var(--color-text-ultra-light);
+  content: '/';
+  color: var(--color-outline-dark);
 }
 
 /* Hover state */
