@@ -1,5 +1,6 @@
 import React, { type ReactNode, useMemo } from 'react';
 import cx from 'classnames';
+import type { MetricRunInfoDeltaType } from '@bundle-stats/utils';
 
 import { Icon } from '../../ui/icon';
 import { HoverCard } from '../../ui/hover-card';
@@ -58,7 +59,7 @@ type RunInfoContentProps = {
   baseline?: string;
   delta?: string;
   deltaPercentage?: string;
-  deltaType?: string;
+  deltaType?: MetricRunInfoDeltaType;
   showBaseline?: boolean;
   showDelta?: boolean;
 };
@@ -71,7 +72,7 @@ const RunInfoContent = ({
   baseline = '',
   delta = '',
   deltaPercentage = '',
-  deltaType = '',
+  deltaType = 'NO_CHANGE',
   showBaseline = true,
   showDelta = true,
 }: RunInfoContentProps) => {
@@ -153,7 +154,7 @@ export const RunInfo = ({
   baseline = '',
   delta = '',
   deltaPercentage = '',
-  deltaType = '',
+  deltaType = 'NO_CHANGE',
   as: Component = 'div',
   size = 'medium',
   showBaseline = true,
