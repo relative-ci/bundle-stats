@@ -1,5 +1,5 @@
 import React, { type MouseEvent, useCallback, useMemo, ElementType } from 'react';
-import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
+import { getGlobalMetricType, getMetricRunInfo, MetricTypes } from '@bundle-stats/utils';
 import { Focusable } from 'ariakit/focusable';
 
 import { Stack } from '../../layout/stack';
@@ -106,17 +106,27 @@ export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'
       };
     }
 
-    if ('delta' in metricRunInfo) {
+    // If the delta data is missing, do not render the dats
+    if (!('delta' in metricRunInfo)) {
+      return {
+        showDelta: false,
+      };
+    }
+
+    // For file sizes, show the real data
+    if (metric.type === MetricTypes.FileSize) {
       return {
         showDelta: true,
         delta: metricRunInfo.displayDelta,
-        deltaPercentage: metricRunInfo.displayDeltaPercentage,
         deltaType: metricRunInfo.deltaType,
+        deltaPercentage: metricRunInfo.displayDeltaPercentage,
       };
     }
 
     return {
       showDelta: true,
+      delta: metricRunInfo.displayDelta,
+      deltaType: metricRunInfo.deltaType,
     };
   }, [metric, metricRunInfo, showDelta]);
 

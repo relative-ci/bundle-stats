@@ -90,7 +90,6 @@ const RunInfoContent = ({
       <Stack space="xxxsmall" className={contentClassName}>
         <Skeleton className={css.currentMetric} />
         {showBaseline && <Skeleton className={css.baselineMetric} />}
-        {showDelta && <Skeleton as="p" className={css.delta} />}
       </Stack>
     );
   }
@@ -100,25 +99,29 @@ const RunInfoContent = ({
       <Metric
         value={currentValueParams[0]}
         unit={currentValueParams[1]}
+        inline
         className={css.currentMetric}
-      />
+      >
+        {showDelta && (
+          <div className={css.delta}>
+            {deltaPercentage && (
+              <Delta
+                displayValue={deltaPercentage}
+                deltaType={deltaType}
+                className={css.deltaValue}
+              />
+            )}
+            {delta && (
+              <Delta displayValue={delta} deltaType={deltaType} className={css.deltaValue} />
+            )}
+          </div>
+        )}
+      </Metric>
       {showBaseline && (
         <FlexStack alignItems="center" space="xxxsmall" className={css.baselineMetric}>
           <span className={css.baselineMetricLabel}>vs</span>
           <Metric value={baseline} inline className={css.baselineMetricValue} />
         </FlexStack>
-      )}
-      {showDelta && (
-        <div className={css.delta}>
-          {deltaPercentage && (
-            <Delta
-              displayValue={deltaPercentage}
-              deltaType={deltaType}
-              className={css.deltaValue}
-            />
-          )}
-          {delta && <Delta displayValue={delta} deltaType={deltaType} className={css.deltaValue} />}
-        </div>
       )}
     </Stack>
   );
