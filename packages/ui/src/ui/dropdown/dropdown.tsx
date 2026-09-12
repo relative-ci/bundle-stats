@@ -4,6 +4,7 @@ import { Menu, MenuButton, MenuItem, MenuStateProps, useMenuState } from 'ariaki
 
 import { Button, BUTTON_SIZE } from '../button';
 import css from './dropdown.module.css';
+import { Icon } from '../icon';
 
 interface DropdownItemProps {
   isActive?: boolean;
@@ -26,6 +27,7 @@ interface DropdownProps {
   placement?: MenuStateProps['placement'];
   gutter?: MenuStateProps['gutter'];
   shift?: MenuStateProps['shift'];
+  showChevron?: boolean;
 }
 
 export const Dropdown = (props: DropdownProps & React.ComponentProps<'div'>) => {
@@ -35,6 +37,7 @@ export const Dropdown = (props: DropdownProps & React.ComponentProps<'div'>) => 
     label = null,
     ariaLabel = '',
     glyph = '',
+    showChevron = true,
     disabled = false,
     placement,
     gutter = 4,
@@ -52,6 +55,7 @@ export const Dropdown = (props: DropdownProps & React.ComponentProps<'div'>) => 
         outline
         size={BUTTON_SIZE.SMALL}
         glyph={glyph}
+        rightGlyph={showChevron ? Icon.ICONS.CHEVRON_DOWN : undefined}
         disabled={disabled}
         state={menuState}
         tabIndex={null}
