@@ -17,11 +17,12 @@
   content: '';
   display: block;
   width: 1px;
-  background: var(--color-outline-dark);
+  background: var(--color-outline);
   position: absolute;
   left: 0;
-  top: var(--space-xxxsmall);
-  bottom: var(--space-xxxsmall);
+  top: calc(var(--space-xxxsmall) + var(--space-xxxsmall) / 2);
+  bottom: calc(var(--space-xxxsmall) + var(--space-xxxsmall) / 2);
+  transition: var(--transition-out);
 }
 
 .dropdownGroupAnchor:hover,
@@ -34,6 +35,11 @@
 
 .dropdownGroup:hover {
   border-color: var(--color-outline-dark);
+  transition: var(--transition-in);
+}
+
+.dropdownGroup:hover .dropdownGroupAnchor::before {
+  background: var(--color-outline-dark);
   transition: var(--transition-in);
 }
 
