@@ -30,7 +30,7 @@
 }
 
 .baselineMetric {
-  color: var(--color-text-light);
+  color: var(--color-text-ultra-light);
   font-size: var(--size-small);
   font-family: var(--font-family-fixed);
   font-weight: normal;
@@ -39,6 +39,7 @@
 }
 
 .baselineMetricValue {
+  color: var(--color-text-light);
   line-height: inherit;
 }
 
