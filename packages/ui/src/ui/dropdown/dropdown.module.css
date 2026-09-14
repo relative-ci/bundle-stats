@@ -16,6 +16,17 @@
   min-width: 12em;
   z-index: var(--layer-high);
   padding: calc(var(--space-xxxsmall) / 2);
+  opacity: 0;
+  transition: var(--transition-out);
+}
+
+.dropdown[data-enter] {
+  opacity: 1;
+  transition: var(--transition-in);
+}
+
+.dropdown[data-leave] {
+  pointer-events: none;
 }
 
 .dropdown:focus {

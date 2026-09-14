@@ -7,31 +7,6 @@
   padding: calc(var(--space-xxsmall) - 1px);
 }
 
-.dropdownGroupAnchor {
-  border: none;
-  border-radius: 0;
-  position: relative;
-}
-
-.dropdownGroupAnchor::before {
-  content: '';
-  display: block;
-  width: 1px;
-  background: var(--color-outline-dark);
-  position: absolute;
-  left: 0;
-  top: var(--space-xxxsmall);
-  bottom: var(--space-xxxsmall);
-}
-
-.dropdownGroupAnchor:hover,
-.dropdownGroupAnchor:focus,
-.dropdownGroupAnchor:active {
-  border-color: var(--color-outline);
-  box-shadow: none;
-  background: none;
-}
-
 .dropdownGroup:hover {
   border-color: var(--color-outline-dark);
   transition: var(--transition-in);

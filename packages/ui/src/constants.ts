@@ -36,6 +36,19 @@ export const METRICS_WEBPACK_MODULES = [
 ];
 export const METRICS_WEBPACK_PACKAGES = ['webpack.packageCount', 'webpack.duplicatePackagesCount'];
 
+export const METRICS_GROUP_ASSETS = {
+  title: 'Assets',
+  metrics: METRICS_WEBPACK_ASSETS,
+};
+export const METRICS_GROUP_MODULES = {
+  title: 'Modules',
+  metrics: METRICS_WEBPACK_MODULES,
+};
+export const METRICS_GROUP_PACKAGES = {
+  title: 'Packages',
+  metrics: METRICS_WEBPACK_PACKAGES,
+};
+
 export const SORT = {
   ASC: 'asc',
   DESC: 'desc',

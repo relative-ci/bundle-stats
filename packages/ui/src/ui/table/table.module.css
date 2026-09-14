@@ -16,7 +16,6 @@
 
 .root thead th {
   border-width: 0 0 1px;
-  text-transform: uppercase;
   vertical-align: top;
   background: var(--color-highlight);
 }

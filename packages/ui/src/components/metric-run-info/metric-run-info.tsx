@@ -1,5 +1,5 @@
 import React, { type MouseEvent, useCallback, useMemo, ElementType } from 'react';
-import { getGlobalMetricType, getMetricRunInfo } from '@bundle-stats/utils';
+import { getGlobalMetricType, getMetricRunInfo, MetricTypes } from '@bundle-stats/utils';
 import { Focusable } from 'ariakit/focusable';
 
 import { Stack } from '../../layout/stack';
@@ -8,11 +8,11 @@ import { Icon } from '../../ui/icon';
 import { RunInfo, RunInfoProps } from '../run-info';
 import css from './metric-run-info.module.css';
 
-interface MetricInfoProps {
+type MetricInfoProps = {
   title: string;
   description?: string;
   url?: string;
-}
+};
 
 const MetricHoverCard = ({ title, description, url }: MetricInfoProps) => {
   // The component parent can be rendered inside a link or a button
@@ -50,17 +50,13 @@ const MetricHoverCard = ({ title, description, url }: MetricInfoProps) => {
   );
 };
 
-export interface MetricRunInfoProps {
+export type MetricRunInfoProps = {
   metricId: string;
   current: number;
   baseline?: number;
-  showDelta?: boolean;
   showMetricDescription?: boolean;
-  showBaseline?: boolean;
   titleWrapper?: ElementType;
-  size?: RunInfoProps['size'];
-  loading?: RunInfoProps['loading'];
-}
+} & Pick<RunInfoProps, 'showDelta' | 'showBaseline' | 'size' | 'loading'>;
 
 export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'div'>) => {
   const {
@@ -92,16 +88,47 @@ export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'
     [CustomTitleWrapper, metric.label],
   );
 
+  const baselineProps = useMemo(() => {
+    if (showBaseline) {
+      return {
+        showBaseline,
+        baseline: metric.formatter(baseline),
+      };
+    }
+
+    return { showBaseline };
+  }, [showBaseline, baseline]);
+
   const deltaProps = useMemo(() => {
-    if (!showDelta || metric.skipDelta || !('delta' in metricRunInfo)) {
-      return {};
+    if (!showDelta || metric.skipDelta) {
+      return {
+        showDelta: false,
+      };
+    }
+
+    // If the delta data is missing, do not render the dats
+    if (!('delta' in metricRunInfo)) {
+      return {
+        showDelta: false,
+      };
+    }
+
+    // For file sizes, show the real data
+    if (metric.type === MetricTypes.FileSize) {
+      return {
+        showDelta: true,
+        delta: metricRunInfo.displayDelta,
+        deltaType: metricRunInfo.deltaType,
+        deltaPercentage: metricRunInfo.displayDeltaPercentage,
+      };
     }
 
     return {
-      delta: metricRunInfo.displayDeltaPercentage,
+      showDelta: true,
+      delta: metricRunInfo.displayDelta,
       deltaType: metricRunInfo.deltaType,
     };
-  }, [metricRunInfo]);
+  }, [metric, metricRunInfo, showDelta]);
 
   return (
     <RunInfo
@@ -109,10 +136,7 @@ export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'
       titleHoverCard={titleHoverCard}
       enhance
       current={metricRunInfo.displayValue}
-      showBaseline={showBaseline}
-      {...(showBaseline && {
-        baseline: metric.formatter(baseline),
-      })}
+      {...baselineProps}
       {...deltaProps}
       {...restProps}
     />

@@ -4,23 +4,23 @@
   padding-bottom: var(--space-xxsmall);
 }
 
-.root .metric {
+.root .colMetric {
   width: 55%;
   vertical-align: middle;
 }
 
-.root .job {
+.root .colJob {
   padding-top: var(--space-xxsmall);
   text-align: right;
 }
 
-.root .value {
+.root .colValue {
   text-align: right;
   vertical-align: baseline;
   width: 15%;
 }
 
-.root .delta {
+.root .colDelta {
   text-align: right;
   font-size: var(--size-xsmall);
   vertical-align: baseline;
@@ -28,21 +28,17 @@
   color: pink;
 }
 
-.root .deltaPercentage {
+.root .colDeltaPercentage {
   width: 5%;
 }
 
-.jobName {
-  white-space: nowrap;
-}
-
 /* columns overrides for showHeaderSum */
-.showHeaderSum .job {
+.showHeaderSum .colJob {
   border-bottom: 0;
-  padding-bottom: 0;
+  padding-bottom: var(--space-xxxsmall);
 }
 
-.showHeaderSum .sum {
+.showHeaderSum .colSum {
   padding-top: 0;
   font-size: var(--size-small);
   vertical-align: middle;

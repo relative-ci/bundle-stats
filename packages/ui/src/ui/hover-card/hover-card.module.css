@@ -5,11 +5,14 @@
 .anchor {
   display: inline-block;
   color: inherit;
+  cursor: default;
   text-decoration: none;
+  transition: var(--transition-out);
 }
 
 .anchor:hover {
   color: var(--color-primary);
+  transition: var(--transition-in);
 }
 
 .anchor:focus {
@@ -27,4 +30,15 @@
   will-change: filter;
   background: var(--color-light);
   font-size: var(--size-small);
+  opacity: 0;
+  transition: var(--transition-out);
+}
+
+.hoverCard[data-enter] {
+  opacity: 1;
+  transition: var(--transition-in);
+}
+
+.hoverCard[data-leave] {
+  pointer-events: none;
 }

@@ -3,6 +3,17 @@
   align-items: center;
   justify-content: center;
   z-index: var(--layer-xxhigh);
+  opacity: 0;
+  transition: var(--transition-out);
+}
+
+.backdrop[data-enter] {
+  opacity: 1;
+  transition: var(--transition-in);
+}
+
+.backdrop[data-leave] {
+  pointer-events: none;
 }
 
 .backdrop::before {
@@ -27,6 +38,17 @@
   background: var(--color-background);
   box-shadow: 0 0 var(--space-medium) var(--color-shadow);
   z-index: var(--layer-xxhigh);
+  opacity: 0;
+  transition: var(--transition-out);
+}
+
+.dialog[data-enter] {
+  opacity: 1;
+  transition: var(--transition-in);
+}
+
+.digalog[data-leave] {
+  pointer-events: none;
 }
 
 .header {

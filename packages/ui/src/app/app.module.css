@@ -17,8 +17,18 @@
   border-bottom: 1px solid var(--color-outline);
 }
 
-.summaryContainer {
+.metricChangeLegendContainer {
   padding-top: var(--space-small);
+  padding-bottom: var(--space-xxsmall);
+}
+
+.metricChangeLegendContainerInner {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.summaryContainer {
+  padding-top: var(--space-xxsmall);
   padding-bottom: var(--space-xxsmall);
 }
 

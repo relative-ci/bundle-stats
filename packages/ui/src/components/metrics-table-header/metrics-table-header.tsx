@@ -34,11 +34,10 @@ const JobColumn = ({ job, isBaseline }: JobColumnProps) => {
   }
 
   return (
-    <Table.Th className={cx(css.col, css.job)} colSpan={colSpan}>
+    <Table.Th className={cx(css.col, css.colJob)} colSpan={colSpan}>
       <JobName
         title={isBaseline ? I18N.BASELINE_TITLE : I18N.CURRENT_TITLE}
         internalBuildNumber={internalBuildNumber}
-        className={css.jobName}
       >
         {label}
       </JobName>
@@ -65,7 +64,7 @@ const SumColumn = ({ rows, isBaseline, runIndex, updateSort, sort }: ColumnSumPr
 
   return (
     <>
-      <Table.Th className={cx(css.col, css.value, css.sum)}>
+      <Table.Th className={cx(css.col, css.colValue, css.colSum)}>
         <SortButton
           fieldPath={fieldPath}
           fieldName="value"
@@ -78,7 +77,7 @@ const SumColumn = ({ rows, isBaseline, runIndex, updateSort, sort }: ColumnSumPr
       </Table.Th>
       {!isBaseline && (
         <>
-          <Table.Th className={cx(css.col, css.delta, css.sum)}>
+          <Table.Th className={cx(css.col, css.colDelta, css.colSum)}>
             <SortButton
               fieldPath={fieldPath}
               fieldName="delta"
@@ -91,7 +90,7 @@ const SumColumn = ({ rows, isBaseline, runIndex, updateSort, sort }: ColumnSumPr
               )}
             </SortButton>
           </Table.Th>
-          <Table.Th className={cx(css.col, css.delta, css.deltaPercentage, css.sum)}>
+          <Table.Th className={cx(css.col, css.colDelta, css.colDeltaPercentage, css.colSum)}>
             <SortButton
               fieldPath={fieldPath}
               fieldName="deltaPercentage"
@@ -147,7 +146,7 @@ export const MetricsTableHeader = (
   return (
     <Table.THead className={rootClassName}>
       <Table.Tr>
-        <Table.Th className={cx(css.col, css.metric)} rowSpan={showSum ? 2 : 1}>
+        <Table.Th className={cx(css.col, css.colMetric)} rowSpan={showSum ? 2 : 1}>
           {metricTitle || ' '}
         </Table.Th>
         {jobs.map((job, runIndex) => (

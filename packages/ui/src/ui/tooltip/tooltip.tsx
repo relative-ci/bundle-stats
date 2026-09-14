@@ -29,7 +29,7 @@ export const Tooltip = <T extends React.ElementType = 'span'>(
     ...restProps
   } = props;
 
-  const tooltip = useTooltipState({ placement: 'top', timeout: 300 });
+  const tooltip = useTooltipState({ animated: true, placement: 'top', timeout: 300 });
 
   return (
     <>
