@@ -187,8 +187,8 @@ body {
   --color-backdrop: rgba(0, 0, 0, 0.05);
   --color-shadow: rgba(0, 0, 0, 0.25);
 
-  --transition-duration-in: 0.2s;
-  --transition-duration-out: 0.17s;
+  --transition-duration-in: 0.16s;
+  --transition-duration-out: 0.10s;
   --transition-in: all var(--transition-duration-in) ease-in;
   --transition-out: all var(--transition-duration-out) ease-out;
 
@@ -222,4 +222,13 @@ body {
   --max-width: 88rem;
   --entry-info-width: 64rem;
   --entry-info-top: var(--header-height);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
 }

@@ -21,6 +21,17 @@
   text-align: center;
   filter: drop-shadow(var(--shadow-layer));
   will-change: filter;
+  opacity: 0;
+  transition: var(--transition-out);
+}
+
+.tooltip[data-enter] {
+  opacity: 1;
+  transition: var(--transition-in);
+}
+
+.tooltip[data-leave] {
+  pointer-events: none;
 }
 
 .arrow svg {

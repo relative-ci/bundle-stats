@@ -46,7 +46,7 @@ export const Dropdown = (props: DropdownProps & React.ComponentProps<'div'>) => 
   } = props;
 
   const dropdownAriaLabel = ariaLabel || (typeof label === 'string' ? label : '');
-  const menuState = useMenuState({ placement, gutter, shift });
+  const menuState = useMenuState({ animated: true, placement, gutter, shift });
 
   return (
     <>

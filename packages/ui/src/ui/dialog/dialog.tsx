@@ -1,13 +1,20 @@
 import type { ComponentProps, ReactNode } from 'react';
 import React from 'react';
 import cx from 'classnames';
-import { Dialog as AriakitDialog, DialogDismiss as AriakitDialogDismiss } from 'ariakit/dialog';
+import {
+  Dialog as AriakitDialog,
+  DialogDismiss as AriakitDialogDismiss,
+  useDialogState as useAriakitDialogState,
+  type DialogStateProps,
+} from 'ariakit/dialog';
 
 import { Stack } from '../../layout/stack';
 import { BUTTON_GLYPHS, Button } from '../button';
 import css from './dialog.module.css';
 
-export { useDialogState } from 'ariakit/dialog';
+export const useDialogState = (options: DialogStateProps = {}) => {
+  return useAriakitDialogState({ animated: true, ...options });
+};
 
 type AriakitDialogProps = ComponentProps<typeof AriakitDialog>;
 
