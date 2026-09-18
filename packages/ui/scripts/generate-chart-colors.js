@@ -3,18 +3,20 @@
 const path = require('path');
 const fs = require('fs');
 const colormap = require('colormap');
-const hexRgb = require('hex-rgb');
+const hexRgb = require('hex-rgb').default;
 
 const FILE_COLORS = path.join(__dirname, '../src/chart-colors.json');
 
+// https://www.learnui.design/tools/data-color-picker.html
 const COLORMAP_RECHARTS = [
-  '#8884d8',
-  '#83a6ed',
-  '#8dd1e1',
-  '#82ca9d',
-  '#a4de6c',
-  '#d0ed57',
-  '#ffc658',
+  '#4f92d5',
+  '#838ee5',
+  '#ba84e4',
+  '#ea76d0',
+  '#ff6cad',
+  '#ff7180',
+  '#ff874e',
+  '#ffa600',
 ]
   .map(hexRgb)
   .map(({ red, green, blue }, index) => ({
