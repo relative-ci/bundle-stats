@@ -1,6 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
 import { Menu, MenuButton, MenuItem, MenuStateProps, useMenuState } from 'ariakit/menu';
+import isNull from 'lodash/isNull';
+import isUndefined from 'lodash/isUndefined';
 
 import { Button, BUTTON_SIZE } from '../button';
 import css from './dropdown.module.css';
@@ -37,7 +39,7 @@ export const Dropdown = (props: DropdownProps & React.ComponentProps<'div'>) => 
     label = null,
     ariaLabel = '',
     glyph = '',
-    showChevron = true,
+    showChevron: initialShowChevron,
     disabled = false,
     placement,
     gutter = 4,
@@ -47,6 +49,7 @@ export const Dropdown = (props: DropdownProps & React.ComponentProps<'div'>) => 
 
   const dropdownAriaLabel = ariaLabel || (typeof label === 'string' ? label : '');
   const menuState = useMenuState({ animated: true, placement, gutter, shift });
+  const showChevron = isUndefined(initialShowChevron) ? !isNull(label) : initialShowChevron;
 
   return (
     <>
