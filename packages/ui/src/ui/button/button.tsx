@@ -41,6 +41,7 @@ interface ButtonProps<T extends React.ElementType> {
 
 const ButtonComponent = <T extends React.ElementType = 'button'>(
   props: ButtonProps<T> & Omit<React.ComponentPropsWithoutRef<T>, keyof ButtonProps<T>>,
+  ref: React.Ref<HTMLButtonElement>,
 ) => {
   const {
     className = '',
@@ -86,7 +87,7 @@ const ButtonComponent = <T extends React.ElementType = 'button'>(
   );
 
   return (
-    <Component {...restProps} className={rootClassName}>
+    <Component {...restProps} ref={ref} className={rootClassName}>
       {glyph && <Icon glyph={glyph} className={css.glyph} />}
       {children && <span className={css.content}>{children}</span>}
       {rightGlyph && <Icon glyph={rightGlyph} className={css.glyph} />}

@@ -61,6 +61,7 @@ export const Dropdown = (props: DropdownProps & React.ComponentProps<'div'>) => 
         rightGlyph={showChevron ? Icon.ICONS.CHEVRON_DOWN : undefined}
         disabled={disabled}
         state={menuState}
+        toggleOnClick
         tabIndex={null}
         className={cx(css.button, className)}
       >
