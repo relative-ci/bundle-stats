@@ -6,7 +6,7 @@ import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { Button } from '../button';
 import { ControlGroup } from '../control-group';
-import { Dropdown, DropdownItem } from '../dropdown';
+import { Dropdown, DropdownGroup, DropdownItem } from '../dropdown';
 import { InputSearch } from '../input-search';
 import * as I18N from './filters.i18n';
 import { getGroupFiltersLabelSuffix, LABELS } from './filters.utils';
@@ -102,16 +102,16 @@ const FilterGroup = (props: FilterGroupProps) => {
       ariaLabel={`${groupLabel}: ${filterSuffix}`}
     >
       {groupItems.length > 10 && (
-        <div className={css.filterGroupSearchWrapper}>
+        <DropdownGroup>
           <InputSearch
             defaultValue={search}
             onChange={setSearch}
             placeholder={I18N.GROUP_SEARCH}
             debounceWait={0}
           />
-        </div>
+        </DropdownGroup>
       )}
-      <div className={css.filterGroupItems}>
+      <DropdownGroup className={css.filterGroupItems}>
         {filteredGroupItems.length === 0 && (
           <Stack className={css.filterGroupSearchNotFound}>
             <p>{I18N.GROUP_NOT_FOUND}</p>
@@ -156,9 +156,9 @@ const FilterGroup = (props: FilterGroupProps) => {
             </DropdownItem>
           );
         })}
-      </div>
+      </DropdownGroup>
       {filteredGroupItems.length !== 0 && (
-        <div className={css.filterGroupActions}>
+        <DropdownGroup className={css.filterGroupActions}>
           {areAllGroupItemsChecked ? (
             <DropdownItem id="clear-all" onClick={getOnGroupCheck(false)} role="button">
               {I18N.CLEAR}
@@ -168,7 +168,7 @@ const FilterGroup = (props: FilterGroupProps) => {
               {I18N.CHECK}
             </DropdownItem>
           )}
-        </div>
+        </DropdownGroup>
       )}
     </Dropdown>
   );
