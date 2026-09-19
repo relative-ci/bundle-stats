@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
 import cx from 'classnames';
 import { Menu, MenuButton, MenuItem, MenuStateProps, useMenuState } from 'ariakit/menu';
 import isNull from 'lodash/isNull';
@@ -7,6 +7,13 @@ import isUndefined from 'lodash/isUndefined';
 import { Button, BUTTON_SIZE } from '../button';
 import css from './dropdown.module.css';
 import { Icon } from '../icon';
+
+export type DropdownGroupProps = ComponentProps<'div'>;
+
+export const DropdownGroup = (props: DropdownGroupProps) => {
+  const { className, ...restProps } = props;
+  return <div className={cx(css.group, className)} {...restProps} />;
+};
 
 interface DropdownItemProps {
   isActive?: boolean;
