@@ -41,7 +41,7 @@
     "@vitest/browser": "5.0.1",
     "@vitest/browser-playwright": "5.0.1",
     "autoprefixer": "10.6.1",
-    "babel-jest": "30.5.1",
+    "babel-jest": "30.5.2",
     "babel-loader": "10.1.1",
     "babel-plugin-polyfill-corejs3": "1.0.0",
     "babel-plugin-require-context-hook": "1.0.0",
