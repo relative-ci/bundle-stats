@@ -169,6 +169,7 @@
   padding: var(--space-xxsmall);
   gap: var(--space-xxxsmall);
   line-height: var(--line-height-heading);
+  cursor: default;
 }
 
 /** Align label to other elements on the first column cells */
@@ -294,12 +295,6 @@
 }
 
 /** tooltip */
-.tileContentTooltipAnchor {
-  width: 100%;
-  height: 100%;
-  cursor: default;
-}
-
 .tooltip {
   z-index: var(--layer-high);
   padding: var(--space-xsmall) var(--space-small);
@@ -323,7 +318,8 @@
   font-size: var(--size-small);
 }
 
-/* prevent tooltip portal wrapper from capturing events */
+/* prevent the tooltip portal wrapper from capturing pointer events - the
+   treemap relies on pointer events reaching the canvas to track the hovered cell */
 div[role='presentation']:has(.tooltip) {
   pointer-events: none;
 }
