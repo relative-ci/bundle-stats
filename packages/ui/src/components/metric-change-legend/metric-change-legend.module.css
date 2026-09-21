@@ -2,6 +2,17 @@
   font-size: var(--size-small);
 }
 
+.itemVariants {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.itemLabel {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+}
+
 .itemAnchor {
   color: var(--color-text-light);
 }
