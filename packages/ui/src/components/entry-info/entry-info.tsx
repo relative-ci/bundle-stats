@@ -63,8 +63,8 @@ function defaultRenderRunInfo(item: ReportMetricRow) {
   return (
     <RunInfo
       current={metricRunInfo.displayValue}
-      delta={metricRunInfo.displayDeltaPercentage}
-      deltaPercentage={metricRunInfo.displayDelta}
+      delta={metricRunInfo.displayDelta}
+      deltaPercentage={metricRunInfo.displayDeltaPercentage}
       deltaType={metricRunInfo.deltaType}
       baseline={baselineRun?.displayValue || '0B'}
       size="large"

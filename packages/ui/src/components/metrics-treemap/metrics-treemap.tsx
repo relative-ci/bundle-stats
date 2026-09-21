@@ -64,7 +64,8 @@ const TileTooltipContent = (props: TileTooltipContentProps) => {
       </h3>
       <RunInfo
         current={currentRun.displayValue}
-        delta={currentRun.displayDeltaPercentage}
+        delta={currentRun.displayDelta}
+        deltaPercentage={currentRun.displayDeltaPercentage}
         deltaType={currentRun.deltaType}
         baseline={baselineRun?.displayValue || '0B'}
       />

@@ -56,6 +56,7 @@ export type MetricRunInfoProps = {
   baseline?: number;
   showMetricDescription?: boolean;
   titleWrapper?: ElementType;
+  showDeltaValue?: boolean;
 } & Pick<RunInfoProps, 'showDelta' | 'showBaseline' | 'size' | 'loading'>;
 
 export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'div'>) => {
@@ -113,20 +114,10 @@ export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'
       };
     }
 
-    // For file sizes, show the real data
-    if (metric.type === MetricTypes.FileSize) {
-      return {
-        showDelta: true,
-        delta: metricRunInfo.displayDelta,
-        deltaType: metricRunInfo.deltaType,
-        deltaPercentage: metricRunInfo.displayDeltaPercentage,
-      };
-    }
-
     return {
       showDelta: true,
-      delta: metricRunInfo.displayDelta,
       deltaType: metricRunInfo.deltaType,
+      deltaPercentage: metricRunInfo.displayDeltaPercentage,
     };
   }, [metric, metricRunInfo, showDelta]);
 
