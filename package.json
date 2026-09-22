@@ -27,6 +27,8 @@
     "@types/react": "18.3.13",
     "@typescript-eslint/eslint-plugin": "8.70.0",
     "@typescript-eslint/parser": "8.70.0",
+    "@vitest/browser": "5.0.1",
+    "@vitest/browser-playwright": "5.0.1",
     "dotenv": "17.4.2",
     "eslint": "10.10.0",
     "eslint-config-airbnb": "19.0.4",
@@ -48,6 +50,7 @@
     "rimraf": "6.1.3",
     "typescript": "5.9.3",
     "verdaccio": "^6.2.0",
+    "vitest": "5.0.1",
     "wait-on": "9.1.0"
   },
   "scripts": {
@@ -100,7 +103,10 @@
     },
     "eslint-plugin-react": {
       "eslint": "$eslint"
-    }
+    },
+    "@vitest/browser": "$@vitest/browser",
+    "@vitest/browser-playwright": "$@vitest/browser-playwright",
+    "vitest": "$vitest"
   },
   "dependencies": {
     "@eslint/compat": "^2.1.0"
