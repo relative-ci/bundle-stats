@@ -35,6 +35,10 @@ export default defineConfig({
   },
   test: {
     name: 'ui:storybook',
+    // Same `configDir` misassumption as `fix-storybook-vitest-root` above, but on the Vitest
+    // side: `storybookTest` resolves the story globs and `setupFiles` against a root it derives
+    // from `configDir`. `dir` is the first source it reads, so set it explicitly.
+    dir: PACKAGE_ROOT,
     setupFiles: ['./vitest.setup.ts'],
     retry: 2,
     browser: {
