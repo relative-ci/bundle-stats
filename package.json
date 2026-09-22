@@ -100,6 +100,11 @@
     },
     "eslint-plugin-react": {
       "eslint": "$eslint"
+    },
+    "@storybook/addon-vitest": {
+      "@vitest/browser": "$@vitest/browser",
+      "@vitest/browser-playwright": "$@vitest/browser-playwright",
+      "vitest": "$vitest"
     }
   },
   "dependencies": {
