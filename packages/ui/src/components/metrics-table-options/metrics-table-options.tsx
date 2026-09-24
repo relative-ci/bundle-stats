@@ -15,18 +15,18 @@ export const MetricsTableOptions = (props: MetricsTableOptionsProps) => {
 
   return (
     <Dropdown glyph="more-vertical" placement="bottom-end" {...restProps}>
-      <DropdownGroup>
-        {onResetClick && <DropdownItem onClick={onResetClick}>{I18N.RESET_FILTERS}</DropdownItem>}
-        {onViewAllClick && <DropdownItem onClick={onViewAllClick}>{I18N.VIEW_ALL}</DropdownItem>}
-      </DropdownGroup>
-      <DropdownGroup>
-        {onExportClick && (
-          <>
-            <DropdownItem onClick={() => onExportClick('csv')}>{I18N.EXPORT_CSV}</DropdownItem>
-            <DropdownItem onClick={() => onExportClick('json')}>{I18N.EXPORT_JSON}</DropdownItem>
-          </>
-        )}
-      </DropdownGroup>
+      {(onResetClick || onViewAllClick) && (
+        <DropdownGroup>
+          {onResetClick && <DropdownItem onClick={onResetClick}>{I18N.RESET_FILTERS}</DropdownItem>}
+          {onViewAllClick && <DropdownItem onClick={onViewAllClick}>{I18N.VIEW_ALL}</DropdownItem>}
+        </DropdownGroup>
+      )}
+      {onExportClick && (
+        <DropdownGroup>
+          <DropdownItem onClick={() => onExportClick('csv')}>{I18N.EXPORT_CSV}</DropdownItem>
+          <DropdownItem onClick={() => onExportClick('json')}>{I18N.EXPORT_JSON}</DropdownItem>
+        </DropdownGroup>
+      )}
     </Dropdown>
   );
 };
