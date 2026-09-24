@@ -39,7 +39,7 @@
 .item:hover::after,
 .item:active::after,
 .item:focus::after {
-  background: currentColor;
+  opacity: 1;
   transition: var(--transition-in);
 }
 
