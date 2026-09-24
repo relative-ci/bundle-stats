@@ -56,7 +56,12 @@ export type MetricRunInfoProps = {
   baseline?: number;
   showMetricDescription?: boolean;
   titleWrapper?: ElementType;
-  showDeltaValue?: boolean;
+  /**
+   * Show the delta absolute value alongside the percentage value.
+   * Only applies when `showDelta` is `true`.
+   * @default false
+   */
+  showDeltaAbsoluteValue?: boolean;
 } & Pick<RunInfoProps, 'showDelta' | 'showBaseline' | 'size' | 'loading'>;
 
 export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'div'>) => {
@@ -67,6 +72,7 @@ export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'
     showDelta = true,
     showMetricDescription = true,
     showBaseline = true,
+    showDeltaAbsoluteValue = false,
     titleWrapper: CustomTitleWrapper = React.Fragment,
     ...restProps
   } = props;
@@ -118,8 +124,9 @@ export const MetricRunInfo = (props: MetricRunInfoProps & React.ComponentProps<'
       showDelta: true,
       deltaType: metricRunInfo.deltaType,
       deltaPercentage: metricRunInfo.displayDeltaPercentage,
+      ...(showDeltaAbsoluteValue && { delta: metricRunInfo.displayDelta }),
     };
-  }, [metric, metricRunInfo, showDelta]);
+  }, [metric, metricRunInfo, showDelta, showDeltaAbsoluteValue]);
 
   return (
     <RunInfo
