@@ -3,7 +3,7 @@
   border-radius: var(--radius-small);
   color: var(--color-text-light);
   width: 100%;
-  transition: var(--transition-in);
+  transition: var(--transition-out);
   appearance: none;
   outline: none;
 }
@@ -27,7 +27,7 @@
 .root:focus {
   border-color: var(--color-outline-dark);
   color: inherit;
-  transition: var(--transition-out);
+  transition: var(--transition-in);
 }
 
 /** Size modifier */

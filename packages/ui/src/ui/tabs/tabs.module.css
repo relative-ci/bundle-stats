@@ -13,7 +13,7 @@
   color: var(--color-text-ultra-light);
   font-weight: bold;
   text-decoration: none;
-  transition: var(--ui-transition-out);
+  transition: var(--transition-out);
 }
 
 .item::after {
@@ -24,27 +24,31 @@
   right: 0;
   bottom: -1px;
   height: 2px;
-  background: transparent;
+  background: currentColor;
+  opacity: 0;
+  transition: var(--transition-out);
 }
 
-.item:hover,
+.item:focus,
 .item:active,
-.item:focus {
-  color: var(--color-primary);
+.item:hover {
+  color: var(--color-accent);
   outline: none;
-  transition: var(--ui-transition-out);
 }
 
 .item:hover::after,
 .item:active::after,
 .item:focus::after {
   background: currentColor;
+  transition: var(--transition-in);
 }
 
 .itemActive {
-  color: var(--color-primary);
+  color: var(--color-accent);
+  transition: var(--transition-in);
 }
 
 .itemActive::after {
-  background: currentColor;
+  opacity: 1;
+  transition: var(--transition-in);
 }

@@ -11,14 +11,12 @@
   border-radius: 50%;
   opacity: 0.8;
   color: var(--color-text-ultra-dark);
-  transition: var(--transition-out);
 }
 
-.toolsGitHub:hover,
 .toolsGitHub:focus,
+.toolsGitHub:hover,
 .toolsGitHub:active {
   opacity: 1;
-  transition: var(--transition-in);
 }
 
 .toolsGitHubIcon {

@@ -5,7 +5,7 @@
   bottom: 0;
   width: 100vw;
   max-width: var(--entry-info-width);
-  z-index: var(--layer-high);
+  z-index: calc(var(--layer));
   background: var(--color-background);
   box-shadow: var(--shadow-layer-high);
 }
@@ -107,7 +107,6 @@
   line-height: var(--line-height-heading);
   border-radius: var(--radius-small);
   background: var(--color-highlight);
-  transition: var(--transition-out);
 
   text-decoration: none;
   text-transform: none;

@@ -6,7 +6,7 @@ import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { Button } from '../button';
 import { ControlGroup } from '../control-group';
-import { Dropdown, DropdownItem } from '../dropdown';
+import { Dropdown, DropdownGroup, DropdownItem } from '../dropdown';
 import { InputSearch } from '../input-search';
 import * as I18N from './filters.i18n';
 import { getGroupFiltersLabelSuffix, LABELS } from './filters.utils';
@@ -40,12 +40,86 @@ const Filter = (props: FilterBooleanProps) => {
   );
 };
 
+const getGroupItemKey = (groupKey: string, itemKey: string): string => `${groupKey}.${itemKey}`;
+
+type ToggleFilters = (newFilters: Record<string, boolean>) => void;
+
+type GetOnGroupCheck = (value: boolean, overrides?: Record<string, boolean>) => () => void;
+
+interface FilterDropdownItemProps {
+  className?: string;
+  id: string;
+  label: string;
+  checked: boolean;
+  disabled?: boolean;
+  onChange: FilterBooleanProps['onChange'];
+  toggleFilters: ToggleFilters;
+  getOnGroupCheck: GetOnGroupCheck;
+}
+
+const FilterDropdownItem = (props: FilterDropdownItemProps) => {
+  const { className, id, label, checked, disabled, onChange, toggleFilters, getOnGroupCheck } =
+    props;
+
+  /**
+   * Toggle the filter when the menu item itself is activated: ariakit fires a click on the menu
+   * item when pressing Enter/Space, and clicking the item padding targets it directly. Clicks on
+   * the nested label/checkbox and on the only button are handled by their own handlers.
+   */
+  const onItemClick = useCallback(
+    (event: React.MouseEvent<HTMLDivElement>) => {
+      if (disabled || event.target !== event.currentTarget) {
+        return;
+      }
+
+      toggleFilters({ [id]: !checked });
+    },
+    [disabled, toggleFilters, id, checked],
+  );
+
+  /**
+   * Check only the current filter of the group
+   */
+  const onOnlyClick = useCallback(
+    () => getOnGroupCheck(false, { [id]: true })(),
+    [getOnGroupCheck, id],
+  );
+
+  return (
+    <DropdownItem
+      onClick={onItemClick}
+      hideOnClick={false}
+      className={cx(css.filterGroupItem, className)}
+    >
+      <Filter
+        label={label}
+        name={id}
+        onChange={onChange}
+        checked={checked}
+        disabled={disabled}
+        className={css.filterGroupItemFilter}
+      />
+      <Button
+        kind="info"
+        solid
+        size="small"
+        type="button"
+        onClick={onOnlyClick}
+        disabled={disabled}
+        className={css.filterGroupOnlyButton}
+      >
+        {I18N.ONLY}
+      </Button>
+    </DropdownItem>
+  );
+};
+
 interface FilterGroupProps extends React.ComponentProps<'div'> {
   groupKey: string;
   data: FilterGroupFieldData;
   values: Record<string, boolean>;
   onCheckboxChange: FilterBooleanProps['onChange'];
-  toggleFilters: (newFilters: Record<string, boolean>) => void;
+  toggleFilters: ToggleFilters;
 }
 
 const FilterGroup = (props: FilterGroupProps) => {
@@ -70,22 +144,24 @@ const FilterGroup = (props: FilterGroupProps) => {
     </>
   );
 
-  const getOnGroupCheck =
-    (value: boolean, overrides = {}) =>
-    () => {
-      const newFilters = groupItems.reduce(
-        (agg, { key: itemKey }) => ({
-          ...agg,
-          [`${groupKey}.${itemKey}`]: value,
-        }),
-        {},
-      );
+  const getOnGroupCheck: GetOnGroupCheck = useCallback(
+    (value, overrides = {}) =>
+      () => {
+        const newFilters = groupItems.reduce(
+          (agg, { key: itemKey }) => ({
+            ...agg,
+            [getGroupItemKey(groupKey, itemKey)]: value,
+          }),
+          {},
+        );
 
-      toggleFilters({
-        ...newFilters,
-        ...overrides,
-      });
-    };
+        toggleFilters({
+          ...newFilters,
+          ...overrides,
+        });
+      },
+    [groupItems, groupKey, toggleFilters],
+  );
 
   const filteredGroupItems = useMemo(() => {
     if (!search) {
@@ -102,16 +178,16 @@ const FilterGroup = (props: FilterGroupProps) => {
       ariaLabel={`${groupLabel}: ${filterSuffix}`}
     >
       {groupItems.length > 10 && (
-        <div className={css.filterGroupSearchWrapper}>
+        <DropdownGroup>
           <InputSearch
             defaultValue={search}
             onChange={setSearch}
             placeholder={I18N.GROUP_SEARCH}
             debounceWait={0}
           />
-        </div>
+        </DropdownGroup>
       )}
-      <div className={css.filterGroupItems}>
+      <DropdownGroup className={css.filterGroupItems}>
         {filteredGroupItems.length === 0 && (
           <Stack className={css.filterGroupSearchNotFound}>
             <p>{I18N.GROUP_NOT_FOUND}</p>
@@ -129,36 +205,24 @@ const FilterGroup = (props: FilterGroupProps) => {
           </Stack>
         )}
         {filteredGroupItems.map(({ key: itemKey, ...itemData }) => {
-          const id = [groupKey, itemKey].join('.');
-          const getOnOnlyClick = () => getOnGroupCheck(false, { [id]: true });
+          const id = getGroupItemKey(groupKey, itemKey);
 
           return (
-            <DropdownItem key={id} className={css.filterGroupItem}>
-              <Filter
-                label={itemData.label}
-                name={id}
-                onChange={onCheckboxChange}
-                checked={values[id]}
-                disabled={itemData.disabled}
-                className={css.filterGroupItemFilter}
-              />
-              <Button
-                kind="info"
-                solid
-                size="small"
-                type="button"
-                onClick={getOnOnlyClick()}
-                disabled={itemData.disabled}
-                className={css.filterGroupOnlyButton}
-              >
-                {I18N.ONLY}
-              </Button>
-            </DropdownItem>
+            <FilterDropdownItem
+              key={id}
+              id={id}
+              label={itemData.label}
+              checked={values[id]}
+              disabled={itemData.disabled}
+              onChange={onCheckboxChange}
+              toggleFilters={toggleFilters}
+              getOnGroupCheck={getOnGroupCheck}
+            />
           );
         })}
-      </div>
+      </DropdownGroup>
       {filteredGroupItems.length !== 0 && (
-        <div className={css.filterGroupActions}>
+        <DropdownGroup className={css.filterGroupActions}>
           {areAllGroupItemsChecked ? (
             <DropdownItem id="clear-all" onClick={getOnGroupCheck(false)} role="button">
               {I18N.CLEAR}
@@ -168,7 +232,7 @@ const FilterGroup = (props: FilterGroupProps) => {
               {I18N.CHECK}
             </DropdownItem>
           )}
-        </div>
+        </DropdownGroup>
       )}
     </Dropdown>
   );

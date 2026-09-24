@@ -18,7 +18,6 @@
   overflow: hidden;
   right: -2px; /* compensate for the button padding */
   color: var(--color-text-ultra-light);
-  transition: var(--transition-out);
 }
 
 .directionIcon {
@@ -36,7 +35,6 @@
 .direction:active,
 .direction:focus {
   color: var(--color-text-dark);
-  transition: var(--transition-in);
 }
 
 .directionAsc {

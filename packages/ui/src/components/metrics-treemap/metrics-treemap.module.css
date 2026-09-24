@@ -20,6 +20,7 @@
  * Tile group
  */
 .tileGroup {
+  border-radius: var(--radius-xsmall);
   position: absolute;
 }
 
@@ -31,6 +32,7 @@
 .tileGroupTitleContent {
   width: 100%;
   padding: var(--space-xxxsmall) 2px var(--space-xxxsmall) var(--space-xxsmall);
+  border-radius: var(--radius-xsmall);
   display: flex;
   align-items: center;
   color: var(--color-text);
@@ -66,12 +68,6 @@
 .tileGroup {
   transition: var(--transition-out);
   transition-property: background-color, outline;
-  border-radius: var(--radius-xsmall);
-}
-
-.tileGroup--minimal,
-.tileGroup--small {
-  border-radius: calc(var(--radius-xsmall) / 2);
 }
 
 .tileGroup--minimal .tileGroupTitle,
@@ -136,9 +132,8 @@
   position: absolute;
   appearance: none;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--radius-xsmall);
   padding: 0;
-  border-radius: calc(var(--radius-xsmall) / 2);
   background: var(--color-background);
   display: flex;
   align-items: center;
@@ -159,6 +154,7 @@
   top: 0;
   width: 100%;
   height: 100%;
+  border-radius: inherit;
   background-color: currentColor;
 }
 
@@ -170,9 +166,10 @@
   display: flex;
   flex-flow: column;
   justify-content: center;
-  padding: var(--space-xxsmall) var(--space-xxsmall);
+  padding: var(--space-xxsmall);
   gap: var(--space-xxxsmall);
   line-height: var(--line-height-heading);
+  cursor: default;
 }
 
 /** Align label to other elements on the first column cells */
@@ -213,7 +210,7 @@
 /** Tile size variation */
 .tileSizeSmall .tileContent {
   padding: var(--space-xxxsmall);
-  font-size: 10px;
+  font-size: var(--size-xsmall);
 }
 
 .tileSizeSmall .tileContentLabel {
@@ -298,11 +295,6 @@
 }
 
 /** tooltip */
-.tileContentTooltipAnchor {
-  width: 100%;
-  height: 100%;
-}
-
 .tooltip {
   z-index: var(--layer-high);
   padding: var(--space-xsmall) var(--space-small);
@@ -326,7 +318,8 @@
   font-size: var(--size-small);
 }
 
-/* prevent tooltip portal wrapper from capturing events */
+/* prevent the tooltip portal wrapper from capturing pointer events - the
+   treemap relies on pointer events reaching the canvas to track the hovered cell */
 div[role='presentation']:has(.tooltip) {
   pointer-events: none;
 }

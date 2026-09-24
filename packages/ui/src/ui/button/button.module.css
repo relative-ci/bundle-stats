@@ -3,28 +3,32 @@
   --button-space: 0px;
   /* button border width */
   --border-width: 0px;
+  /* line height in pixels to prevent layout shift when rendering a glyph */
+  --line-height: var(--space-small);
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: calc(max(var(--button-space), var(--space-xxsmall)) * 0.66);
+  gap: calc(var(--button-space) * 0.66);
   appearance: none;
   padding: 0;
   border: var(--border-width) solid transparent;
   background: none;
-  transition: var(--transition-out);
   color: var(--color-text-ultra-light);
+  font-size: var(--size-medium);
   font-family: var(--font-family);
+  line-height: var(--line-height);
   white-space: nowrap;
+  transition: var(--transition-out);
 }
 
 a.root {
   text-decoration: none;
 }
 
+.root:focus,
 .root:hover,
-.root:active,
-.root:focus {
+.root:active {
   outline: none;
   color: var(--color-text-light);
   transition: var(--transition-in);
@@ -32,6 +36,8 @@ a.root {
 
 .glyph {
   flex: 0 0 auto;
+  width: var(--line-height);
+  height: var(--line-height);
 }
 
 .text {
@@ -182,38 +188,21 @@ a.root {
  */
 .small {
   --button-space: var(--space-xxsmall);
+  --line-height: var(--space-small);
 
   font-size: var(--size-small);
-  line-height: var(--space-small);
-}
-
-.small .glyph {
-  width: var(--space-small);
-  height: var(--space-small);
 }
 
 .medium {
   --button-space: var(--space-xsmall);
-
-  font-size: var(--size-medium);
-  line-height: calc(var(--space-small) + var(--space-xxxsmall));
-}
-
-.medium .glyph {
-  width: calc(var(--space-small) + var(--space-xxxsmall));
-  height: calc(var(--space-small) + var(--space-xxxsmall));
+  --line-height: calc(var(--space-small) + var(--space-xxxsmall));
 }
 
 .large {
   --button-space: var(--space-small);
+  --line-height: var(--space-medium);
 
   font-size: var(--size-large);
-  line-height: var(--space-medium);
-}
-
-.large .glyph {
-  width: var(--space-medium);
-  height: var(--space-medium);
 }
 
 /**

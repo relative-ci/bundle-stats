@@ -15,6 +15,7 @@ html {
 
 body {
   background: var(--color-background);
+  accent-color: var(--color-accent);
   color: var(--color-text);
   line-height: var(--line-height);
 }
@@ -59,12 +60,14 @@ code {
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-accent);
+  transition: var(--transition-out);
 }
 
-a:hover,
+a:focus,
 a:active,
-a:focus {
-  color: var(--color-primary-dark);
+a:hover {
+  color: var(--color-accent-dark);
   outline: none;
+  transition: var(--transition-in);
 }

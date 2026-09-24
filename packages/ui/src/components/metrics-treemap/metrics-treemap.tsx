@@ -2,17 +2,15 @@ import React, {
   type ComponentProps,
   type MouseEventHandler,
   type ReactNode,
-  type Ref,
-  type RefObject,
-  forwardRef,
   useCallback,
+  useEffect,
   useMemo,
   useRef,
 } from 'react';
-import { useHoverDirty, useMeasure } from 'react-use';
+import { useMeasure } from 'react-use';
 import cx from 'classnames';
 import { HierarchyRectangularNode, hierarchy, treemap, treemapSquarify } from 'd3';
-import { Tooltip, TooltipArrow, TooltipAnchor } from 'ariakit/tooltip';
+import { Tooltip, TooltipArrow } from 'ariakit/tooltip';
 import {
   type ReportMetricRow,
   type MetricRunInfo,
@@ -30,22 +28,42 @@ import {
   type TreeLeaf,
   type TreeNode,
   type Tree,
+  type TreeTotal,
   SQUARIFY_RATIO,
   PADDING_OUTER,
   PADDING_INNER,
   NESTED_PADDING,
   NESTED_PADDING_TOP,
   NESTED_PADDING_LEFT,
+  NODE_ID_SELECTOR,
   TileSizeDisplay,
 } from './metrics-treemap.constants';
 import * as I18N from './metrics-treemap.i18n';
 import css from './metrics-treemap.module.css';
 import {
+  getTreemapNodesIndex,
   resolveGroupDeltaType,
   resolveTileSizeDisplay,
   resolveTileGroupSizeDisplay,
-  useTooltipStateWithMouseFollow,
+  useTreemapTooltipState,
 } from './metrics-treemap.utils';
+
+/**
+ * Resolve the run info of a tile group from the children total
+ */
+function getGroupRunInfo(total: TreeTotal) {
+  const runInfo = getMetricRunInfo(
+    METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE,
+    total.current,
+    total.baseline,
+  ) as MetricRunInfo;
+
+  return {
+    runInfo,
+    baselineDisplayValue: formatFileSize(total.baseline),
+    deltaType: resolveGroupDeltaType(runInfo),
+  };
+}
 
 interface TileTooltipContentProps {
   item: ReportMetricRow;
@@ -64,7 +82,8 @@ const TileTooltipContent = (props: TileTooltipContentProps) => {
       </h3>
       <RunInfo
         current={currentRun.displayValue}
-        delta={currentRun.displayDeltaPercentage}
+        delta={currentRun.displayDelta}
+        deltaPercentage={currentRun.displayDeltaPercentage}
         deltaType={currentRun.deltaType}
         baseline={baselineRun?.displayValue || '0B'}
       />
@@ -91,12 +110,12 @@ interface TileContentProps {
   runInfo: MetricRunInfo;
 }
 
-const TileContent = forwardRef((props: TileContentProps, ref: Ref<HTMLDivElement>) => {
+const TileContent = (props: TileContentProps) => {
   const { label, sizeDisplay, item, runInfo } = props;
 
   // Render only the container
   if (sizeDisplay === 'minimal') {
-    return <div className={css.tileContent} ref={ref} />;
+    return <div className={css.tileContent} />;
   }
 
   const resolvedLabel = label || item.label;
@@ -104,14 +123,14 @@ const TileContent = forwardRef((props: TileContentProps, ref: Ref<HTMLDivElement
   // Render only the label
   if (sizeDisplay === 'small') {
     return (
-      <div className={css.tileContent} ref={ref}>
+      <div className={css.tileContent}>
         <p className={css.tileContentLabel}>{resolvedLabel}</p>
       </div>
     );
   }
 
   return (
-    <div className={css.tileContent} ref={ref}>
+    <div className={css.tileContent}>
       <p className={css.tileContentLabel}>{label || item.label}</p>
       <p className={css.tileContentValue}>
         <span className={css.tileContentMetric}>{runInfo.displayValue}</span>
@@ -122,24 +141,6 @@ const TileContent = forwardRef((props: TileContentProps, ref: Ref<HTMLDivElement
         />
       </p>
     </div>
-  );
-});
-
-const TileContentWithTooltip = (props: TileContentProps & { parentRef: RefObject<Element> }) => {
-  const { label, sizeDisplay, item, runInfo, parentRef } = props;
-
-  const tooltipState = useTooltipStateWithMouseFollow({ parentRef });
-
-  return (
-    <>
-      <TooltipAnchor state={tooltipState} className={css.tileContentTooltipAnchor}>
-        <TileContent label={label} sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
-      </TooltipAnchor>
-      <Tooltip state={tooltipState} className={css.tooltip}>
-        <TooltipArrow state={tooltipState} size={16} className={css.tileTooltipArrow} />
-        <TileTooltipContent item={item} />
-      </Tooltip>
-    </>
   );
 };
 
@@ -167,9 +168,6 @@ const Tile = (props: TileProps) => {
     [item.key, onClick],
   );
 
-  const contentRef = useRef<HTMLDivElement>(null);
-  const hover = useHoverDirty(contentRef);
-
   const className = cx(
     css.tile,
     css[`tile-${runInfo.deltaType}`],
@@ -184,49 +182,55 @@ const Tile = (props: TileProps) => {
       onClick={handleOnClick}
       role="button"
       aria-label={I18N.TILE_LABEL}
-      ref={contentRef}
+      data-treemap-id={data.id}
       style={{ left, top, width, height }}
       className={className}
     >
-      {hover ? (
-        <TileContentWithTooltip
-          label={label}
-          sizeDisplay={sizeDisplay}
-          item={item}
-          runInfo={runInfo}
-          parentRef={contentRef}
-        />
-      ) : (
-        <TileContent label={label} sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
-      )}
+      <TileContent label={label} sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
     </div>
   );
 };
 
-interface TileGroupTitleTooltipContentProps {
-  title: string;
-  runInfo?: MetricRunInfo;
-  baselineDisplayValue?: string;
+interface TileGroupTooltipContentProps {
+  node: Tree;
 }
 
-const TileGroupTitleTooltipContent = (props: TileGroupTitleTooltipContentProps) => {
-  const { title, runInfo, baselineDisplayValue } = props;
+const TileGroupTooltipContent = (props: TileGroupTooltipContentProps) => {
+  const { node } = props;
+
+  // by default show the node id (full path) as title
+  const title = node.id || node.label;
+  const groupRunInfo = node.total && getGroupRunInfo(node.total);
 
   return (
-    <Stack space="small" className={css.tileTooltip}>
+    <Stack space="small" className={css.tileTooltipContent}>
       <h3 className={css.tileTooltipContentTitle}>
         <FileName as="code" name={title} />
       </h3>
-      {runInfo && (
+      {groupRunInfo && (
         <RunInfo
-          current={runInfo.displayValue}
-          baseline={baselineDisplayValue}
-          delta={runInfo.displayDeltaPercentage}
-          deltaType={runInfo.deltaType}
+          current={groupRunInfo.runInfo.displayValue}
+          baseline={groupRunInfo.baselineDisplayValue}
+          delta={groupRunInfo.runInfo.displayDeltaPercentage}
+          deltaType={groupRunInfo.runInfo.deltaType}
         />
       )}
     </Stack>
   );
+};
+
+interface TreemapTooltipContentProps {
+  node: TreeNode;
+}
+
+const TreemapTooltipContent = (props: TreemapTooltipContentProps) => {
+  const { node } = props;
+
+  if ('item' in node) {
+    return <TileTooltipContent item={node.item} />;
+  }
+
+  return <TileGroupTooltipContent node={node} />;
 };
 
 interface TileGroupTitleContentProps {
@@ -250,47 +254,19 @@ const TileGroupTitleContent = (props: TileGroupTitleContentProps) => {
   );
 };
 
-type TileGroupTitleContentWithTooltipProps = {
-  parentRef: RefObject<Element>;
-  tooltipContent: TileGroupTitleTooltipContentProps;
-} & TileGroupTitleContentProps;
-
-const TileGroupTitleContentWithTooltip = (props: TileGroupTitleContentWithTooltipProps) => {
-  const { parentRef, tooltipContent, ...restProps } = props;
-
-  const tooltipState = useTooltipStateWithMouseFollow({ parentRef });
-
-  return (
-    <>
-      <TooltipAnchor state={tooltipState} className={css.tileContentTooltipAnchor}>
-        <TileGroupTitleContent {...restProps} />
-      </TooltipAnchor>
-      <Tooltip state={tooltipState} className={css.tooltip}>
-        <TooltipArrow state={tooltipState} size={16} className={css.tileTooltipArrow} />
-        <TileGroupTitleTooltipContent {...tooltipContent} />
-      </Tooltip>
-    </>
-  );
+type TileGroupTitleProps = TileGroupTitleContentProps & {
+  /**
+   * Node id - used to resolve the tooltip content on hover
+   */
+  id: string;
 };
 
-type TileGroupTitleProps = Omit<TileGroupTitleContentWithTooltipProps, 'parentRef'>;
-
 const TileGroupTitle = (props: TileGroupTitleProps) => {
-  const { tooltipContent, ...restProps } = props;
-  const contentRef = useRef<HTMLDivElement>(null);
-  const hover = useHoverDirty(contentRef);
+  const { id, ...restProps } = props;
 
   return (
-    <div className={css.tileGroupTitle} ref={contentRef}>
-      {hover ? (
-        <TileGroupTitleContentWithTooltip
-          parentRef={contentRef}
-          tooltipContent={tooltipContent}
-          {...restProps}
-        />
-      ) : (
-        <TileGroupTitleContent {...restProps} />
-      )}
+    <div className={css.tileGroupTitle} data-treemap-id={id}>
+      <TileGroupTitleContent {...restProps} />
     </div>
   );
 };
@@ -370,35 +346,13 @@ const TileGroup = (props: TileGroupProps) => {
   );
 
   // Prepare data
-  const [runInfo, baselineDisplayValue, deltaType] = useMemo(() => {
-    if (!total) {
-      return [];
-    }
-
-    const resolvedRunInfo = getMetricRunInfo(
-      METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE,
-      total.current,
-      total.baseline,
-    ) as MetricRunInfo;
-    const resolvedBaselineDisplayValue = formatFileSize(total.baseline);
-    const resolvedDeltaType = resolveGroupDeltaType(resolvedRunInfo);
-
-    return [resolvedRunInfo, resolvedBaselineDisplayValue, resolvedDeltaType];
-  }, [total]);
+  const groupRunInfo = useMemo(() => (total ? getGroupRunInfo(total) : undefined), [total]);
 
   const rootClassName = cx(
     css.tileGroup,
-    css[`tileGroup--${deltaType}`],
+    css[`tileGroup--${groupRunInfo?.deltaType}`],
     css[`tileGroup--${displaySize}`],
   );
-
-  // Tooltip data
-  // - by default show the node id (full path) as title
-  const tooltipContent = {
-    title: id || title,
-    runInfo,
-    baselineDisplayValue,
-  } as TileGroupTitleTooltipContentProps;
 
   if (title && displaySize === 'minimal') {
     return (
@@ -409,7 +363,7 @@ const TileGroup = (props: TileGroupProps) => {
         className={rootClassName}
         style={{ left, top, width, height }}
       >
-        <TileGroupTitle tooltipContent={tooltipContent} />
+        <TileGroupTitle id={id} />
       </div>
     );
   }
@@ -423,7 +377,7 @@ const TileGroup = (props: TileGroupProps) => {
         style={{ left, top, width, height }}
         className={rootClassName}
       >
-        <TileGroupTitle title={title} tooltipContent={tooltipContent} />
+        <TileGroupTitle id={id} title={title} />
       </div>
     );
   }
@@ -436,7 +390,7 @@ const TileGroup = (props: TileGroupProps) => {
       className={cx(rootClassName, css.tileGroupSizeDefault)}
       style={{ left, top, width, height }}
     >
-      <TileGroupTitle title={title} runInfo={runInfo} tooltipContent={tooltipContent} />
+      <TileGroupTitle id={id} title={title} runInfo={groupRunInfo?.runInfo} />
       {childNodes?.map((childNode) => {
         if ('children' in childNode) {
           const groupData = childNode.data as Tree;
@@ -542,33 +496,104 @@ export const MetricsTreemap = (props: MetricsTreemapProps & ComponentProps<'div'
   const [containerRef, { width, height }] = useMeasure<HTMLDivElement>();
   const rootNode = useMetricsTreemapHierarchy({ treeNodes, width, height, nested });
 
+  /**
+   * A single tooltip is shared by every tile and tile group title:
+   * - tiles are tagged with `data-treemap-id`
+   * - the pointer is tracked by one delegated handler on the canvas
+   * - hiding is deferred so that the tooltip stays up while the pointer
+   *   crosses the gutter between two tiles
+   */
+  const nodesIndex = useMemo(() => getTreemapNodesIndex(treeNodes), [treeNodes]);
+  const { tooltipState, setPointer, hoveredNodeId, setHoveredNode, clearHoveredNode } =
+    useTreemapTooltipState();
+  const canvasRef = useRef<HTMLDivElement>(null);
+
+  // Resolved on render so that the content cannot go stale when the data changes
+  const tooltipNode = hoveredNodeId === null ? null : nodesIndex.get(hoveredNodeId);
+
+  const handlePointerEvent = useCallback(
+    (event: MouseEvent) => {
+      // Anchor to the canvas to let ariakit track scrolling/resizing
+      tooltipState.anchorRef.current = canvasRef.current;
+
+      setPointer(event.clientX, event.clientY);
+
+      const target = (event.target as HTMLElement | null)?.closest<HTMLElement>(NODE_ID_SELECTOR);
+      setHoveredNode(target?.dataset.treemapId ?? null);
+    },
+    [tooltipState, setPointer, setHoveredNode],
+  );
+
+  const hasNodes = Boolean(rootNode.children && rootNode.children.length > 0);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+
+    if (!canvas) {
+      return undefined;
+    }
+
+    /**
+     * `mouseover` is needed on top of `mousemove`: the hovered element can
+     * change without the pointer moving (scrolling, resizing, layout shifts),
+     * and the browser only emits boundary events in that case.
+     *
+     * Native listeners are used instead of the React props because React skips
+     * `mouseover` dispatch when `relatedTarget` is inside the same tree.
+     */
+    canvas.addEventListener('mousemove', handlePointerEvent);
+    canvas.addEventListener('mouseover', handlePointerEvent);
+    canvas.addEventListener('mouseleave', clearHoveredNode);
+
+    return () => {
+      canvas.removeEventListener('mousemove', handlePointerEvent);
+      canvas.removeEventListener('mouseover', handlePointerEvent);
+      canvas.removeEventListener('mouseleave', clearHoveredNode);
+    };
+  }, [hasNodes, handlePointerEvent, clearHoveredNode]);
+
+  // Keep the cells out of the tooltip render path
+  // (`rootNode` is mutated in place by d3, so the layout size drives the memo)
+  const canvasContent = useMemo(
+    () => (
+      <TileGroup
+        title={nested ? rootNode.data.label : undefined}
+        total={(rootNode.data as Tree).total}
+        id={rootNode.data.id}
+        childNodes={rootNode.children}
+        onItemClick={onItemClick}
+        onGroupClick={onGroupClick}
+        left={rootNode.x0}
+        top={rootNode.y0}
+        absoluteLeft={rootNode.x0}
+        absoluteTop={rootNode.y0}
+        width={rootNode.x1 - rootNode.x0}
+        height={rootNode.y1 - rootNode.y0}
+      />
+    ),
+    [rootNode, width, height, nested, onItemClick, onGroupClick],
+  );
+
   return (
     <div
       className={cx(css.root, nested && css.nested, className)}
       {...restProps}
       ref={containerRef}
     >
-      {rootNode.children && rootNode.children?.length > 0 ? (
-        <div className={css.canvas}>
-          <TileGroup
-            title={nested ? rootNode.data.label : undefined}
-            total={(rootNode.data as Tree).total}
-            id={rootNode.data.id}
-            childNodes={rootNode.children}
-            onItemClick={onItemClick}
-            onGroupClick={onGroupClick}
-            left={rootNode.x0}
-            top={rootNode.y0}
-            absoluteLeft={rootNode.x0}
-            absoluteTop={rootNode.y0}
-            width={rootNode.x1 - rootNode.x0}
-            height={rootNode.y1 - rootNode.y0}
-          />
+      {hasNodes ? (
+        <div className={css.canvas} ref={canvasRef}>
+          {canvasContent}
         </div>
       ) : (
         <div className={css.emptyMessage}>
           <div className={css.emptyMessageWrapper}>{emptyMessage}</div>
         </div>
+      )}
+      {tooltipNode && (
+        <Tooltip state={tooltipState} className={css.tooltip}>
+          <TooltipArrow state={tooltipState} size={16} className={css.tileTooltipArrow} />
+          <TreemapTooltipContent node={tooltipNode} />
+        </Tooltip>
       )}
     </div>
   );

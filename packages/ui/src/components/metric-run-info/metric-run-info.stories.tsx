@@ -28,6 +28,15 @@ export const NoBaseline: Story = {
   },
 };
 
+export const ShowDeltaAbsoluteValue: Story = {
+  args: {
+    metricId: 'webpack.totalSizeByTypeALL',
+    current: 120 * 1024,
+    baseline: 100 * 1024,
+    showDeltaAbsoluteValue: true,
+  },
+};
+
 export const NoDelta: Story = {
   args: {
     ...NoBaseline.args,

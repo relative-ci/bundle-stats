@@ -45,9 +45,9 @@
   transition: var(--transition-out);
 }
 
-.filterSingle:hover,
+.filterSingle:focus,
 .filterSingle:active,
-.filterSingle:focus {
+.filterSingle:hover {
   border-color: var(--color-outline-dark);
   transition: var(--transition-in);
 }
@@ -101,23 +101,9 @@
   text-transform: lowercase;
 }
 
-.filterGroupSearchWrapper {
-  padding-bottom: var(--space-xxxsmall);
-  margin-bottom: var(--space-xxxsmall);
-  border-bottom: 1px solid var(--color-outline);
-}
-
 .filterGroupSearchNotFound {
   padding: var(--space-xxsmall) 0;
   text-align: center;
   font-size: var(--size-small);
   color: var(--color-text-light);
-}
-
-.filterGroupActions {
-  margin-top: var(--space-xxxsmall);
-  padding-top: var(--space-xxxsmall);
-  padding-bottom: var(--space-xxxsmall);
-  margin-bottom: calc(0px - var(--space-xxxsmall));
-  border-top: 1px solid var(--color-outline);
 }
