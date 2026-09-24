@@ -10,7 +10,6 @@
 
 a.root {
   text-decoration: none;
-  transition: var(--transition-out);
 }
 
 a.root:hover,
@@ -19,7 +18,6 @@ a.root:active {
   opacity: 0.8;
   color: var(--color-light);
   text-decoration: none;
-  transition: var(--transition-in);
 }
 
 /** Kind variation */

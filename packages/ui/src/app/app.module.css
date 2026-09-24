@@ -43,10 +43,12 @@
 
 .tabActive {
   color: var(--color-accent);
+  transition: var(--transition-in);
 }
 
 .tabActive::after {
-  background: currentColor;
+  opacity: 1;
+  transition: var(--transition-in);
 }
 
 .tabsContent {
