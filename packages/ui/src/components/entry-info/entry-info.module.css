@@ -107,7 +107,6 @@
   line-height: var(--line-height-heading);
   border-radius: var(--radius-small);
   background: var(--color-highlight);
-  transition: var(--transition-out);
 
   text-decoration: none;
   text-transform: none;

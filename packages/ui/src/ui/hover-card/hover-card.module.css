@@ -10,13 +10,12 @@
   transition: var(--transition-out);
 }
 
+.anchor:focus,
+.anchor:active,
 .anchor:hover {
-  color: var(--color-primary);
-  transition: var(--transition-in);
-}
-
-.anchor:focus {
+  color: var(--color-accent-dark);
   outline: 0;
+  transition: var(--transition-in);
 }
 
 .hoverCard {

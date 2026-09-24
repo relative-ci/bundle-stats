@@ -14,21 +14,21 @@
   padding: 0;
   border: var(--border-width) solid transparent;
   background: none;
-  transition: var(--transition-out);
   color: var(--color-text-ultra-light);
   font-size: var(--size-medium);
   font-family: var(--font-family);
   line-height: var(--line-height);
   white-space: nowrap;
+  transition: var(--transition-out);
 }
 
 a.root {
   text-decoration: none;
 }
 
+.root:focus,
 .root:hover,
-.root:active,
-.root:focus {
+.root:active {
   outline: none;
   color: var(--color-text-light);
   transition: var(--transition-in);

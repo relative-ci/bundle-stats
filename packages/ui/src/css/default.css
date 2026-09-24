@@ -61,6 +61,7 @@ code {
 
 a {
   color: var(--color-accent);
+  transition: var(--transition-out);
 }
 
 a:focus,
@@ -68,4 +69,5 @@ a:active,
 a:hover {
   color: var(--color-accent-dark);
   outline: none;
+  transition: var(--transition-in);
 }

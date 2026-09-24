@@ -38,10 +38,10 @@
   text-decoration: none;
 }
 
-.root tbody td a:hover,
 .root tbody td a:focus,
-.root tbody td a:active {
-  color: var(--color-primary);
+.root tbody td a:active,
+.root tbody td a:hover {
+  color: var(--color-accent);
   text-decoration: underline;
 }
 
