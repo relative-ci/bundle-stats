@@ -1,6 +1,6 @@
 {
   "name": "@bundle-stats/html-templates",
-  "version": "4.22.3",
+  "version": "4.23.0-beta.4",
   "description": "HTML templates for report generation.",
   "main": "index.js",
   "types": "types.d.ts",
@@ -33,8 +33,8 @@
     "@babel/core": "8.0.6",
     "@babel/preset-env": "8.0.6",
     "@babel/preset-react": "8.0.1",
-    "@bundle-stats/ui": "^4.22.3",
-    "@bundle-stats/utils": "^4.22.3",
+    "@bundle-stats/ui": "^4.23.0-beta.4",
+    "@bundle-stats/utils": "^4.23.0-beta.4",
     "@storybook/addon-vitest": "10.6.0",
     "@storybook/react": "10.6.0",
     "@storybook/react-vite": "10.6.0",
