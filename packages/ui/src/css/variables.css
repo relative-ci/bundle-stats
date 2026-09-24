@@ -35,18 +35,18 @@
    * Color scheme: https://coolors.co/287acc-da444e-55b950-e5c110-192339-353538
    */
 
-   --color-gray-25: #f9f9f9;
-   /** https://hihayk.github.io/scale/#4/5/60/90/0/-0/0/0/3F3F47/63/63/71/white */
-   --color-gray-50: #ececed;
-   --color-gray-100: #c9c9cc;
-   --color-gray-200: #a7a7aa;
-   --color-gray-300: #848489;
-   --color-gray-400: #626268;
-   --color-gray-500: #3f3f47;
-   --color-gray-600: #36363c;
-   --color-gray-700: #2c2c32;
-   --color-gray-800: #232327;
-   --color-gray-900: #19191c;
+  --color-gray-25: #f9f9f9;
+  /** https://hihayk.github.io/scale/#4/5/60/90/0/-0/0/0/3F3F47/63/63/71/white */
+  --color-gray-50: #ececed;
+  --color-gray-100: #c9c9cc;
+  --color-gray-200: #a7a7aa;
+  --color-gray-300: #848489;
+  --color-gray-400: #626268;
+  --color-gray-500: #3f3f47;
+  --color-gray-600: #36363c;
+  --color-gray-700: #2c2c32;
+  --color-gray-800: #232327;
+  --color-gray-900: #19191c;
 
   --color-gray-ultra-light: var(--color-gray-200);
   --color-gray-light: var(--color-gray-300);
@@ -98,7 +98,7 @@
   --color-green-200: #b1dfaf;
   --color-green-300: #92d28f;
   --color-green-400: #74c670;
-  --color-green-500: #55B950;
+  --color-green-500: #55b950;
   --color-green-600: #3ea839;
   --color-green-700: #2b9426;
   --color-green-800: #1b7b16;
@@ -112,7 +112,7 @@
 
   --color-yellow-25: #fffdf2;
   /* https://hihayk.github.io/scale/#4/5/40/80/0/-0/0/0/E5C110/229/193/16/white */
-  --color-yellow-50:  #faf3cf;
+  --color-yellow-50: #faf3cf;
   --color-yellow-100: #f6e9a9;
   --color-yellow-200: #f2df83;
   --color-yellow-300: #edd55d;
@@ -126,8 +126,8 @@
   --color-yellow-ultra-light: var(--color-yellow-100);
   --color-yellow-light: var(--color-yellow-300);
   --color-yellow: var(--color-yellow-500);
-  --color-yellow-ultra-dark: var(--color-yellow-700);
-  --color-yellow-dark: var(--color-yellow-900);
+  --color-yellow-dark: var(--color-yellow-700);
+  --color-yellow-ultra-dark: var(--color-yellow-900);
 
   --color-dark: #111;
   --color-light: #fff;
@@ -188,7 +188,7 @@ body {
   --color-shadow: rgba(0, 0, 0, 0.25);
 
   --transition-duration-in: 0.16s;
-  --transition-duration-out: 0.10s;
+  --transition-duration-out: 0.1s;
   --transition-in: all var(--transition-duration-in) ease-in;
   --transition-out: all var(--transition-duration-out) ease-out;
 
