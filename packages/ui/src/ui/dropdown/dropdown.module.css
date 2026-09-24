@@ -45,6 +45,9 @@
   border-radius: var(--radius-small);
   padding: var(--space-xxxsmall);
   background: none;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
   text-align: left;
   text-decoration: none;
   cursor: default;
@@ -70,14 +73,13 @@
   color: var(--color-primary-dark);
 }
 
-
 .group {
   position: relative;
   padding: calc(var(--space-xxxsmall) / 2 + 1px) 0 calc(var(--space-xxxsmall) / 2);
 }
 
 .group::before {
-  content: " ";
+  content: ' ';
   display: block;
   position: absolute;
   left: var(--space-xxxsmall);

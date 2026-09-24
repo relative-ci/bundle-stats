@@ -15,6 +15,12 @@ const meta = {
       <>
         <DropdownItem>Option 1</DropdownItem>
         <DropdownItem>Option 2</DropdownItem>
+        <DropdownItem as="a" href="#">
+          Option 3
+        </DropdownItem>
+        <DropdownItem as="button" onClick={() => alert('Select option')}>
+          Option 4
+        </DropdownItem>
       </>
     ),
   },
