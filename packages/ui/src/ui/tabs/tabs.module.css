@@ -25,12 +25,13 @@
   bottom: -1px;
   height: 2px;
   background: transparent;
+  transition: var(--ui-transition-out);
 }
 
-.item:hover,
+.item:focus,
 .item:active,
-.item:focus {
-  color: var(--color-primary);
+.item:hover {
+  color: var(--color-accent);
   outline: none;
   transition: var(--ui-transition-out);
 }
@@ -42,7 +43,7 @@
 }
 
 .itemActive {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 .itemActive::after {

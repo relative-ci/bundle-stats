@@ -146,6 +146,10 @@ body {
   --color-text-ultra-dark: var(--color-gray-ultra-dark);
   --color-heading: var(--color-gray-ultra-dark);
 
+  --color-accent-light: var(--color-gray);
+  --color-accent: var(--color-gray-dark);
+  --color-accent-dark: var(--color-gray-ultra-dark);
+
   --color-success-light: var(--color-green-light);
   --color-success: var(--color-green);
   --color-success-dark: var(--color-green-dark);

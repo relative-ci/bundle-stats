@@ -42,7 +42,7 @@
 }
 
 .tabActive {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 .tabActive::after {
