@@ -249,6 +249,8 @@ export const BundlePackages = (props) => {
     [PackageNameCustomComponentLink],
   );
 
+  const handleRowClick = useCallback((row) => showEntryInfo(row.key), [showEntryInfo]);
+
   const emptyMessage = useMemo(
     () => (
       <EmptySet
@@ -320,6 +322,7 @@ export const BundlePackages = (props) => {
               items={items}
               emptyMessage={emptyMessage}
               renderRowHeader={renderRowHeader}
+              onRowClick={handleRowClick}
               showHeaderSum
               title={metricsTableTitle}
               sort={sort}

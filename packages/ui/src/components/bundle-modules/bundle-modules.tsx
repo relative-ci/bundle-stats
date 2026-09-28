@@ -241,6 +241,11 @@ export const BundleModules = (props: BundleModulesProps) => {
     [EntryComponentLink],
   );
 
+  const handleRowClick = useCallback(
+    (row: ReportMetricRow) => showEntryInfo(row.key),
+    [showEntryInfo],
+  );
+
   const emptyMessage = useMemo(
     () => (
       <EmptySet
@@ -348,6 +353,7 @@ export const BundleModules = (props: BundleModulesProps) => {
               items={items}
               runs={jobs}
               renderRowHeader={renderRowHeader}
+              onRowClick={handleRowClick}
               emptyMessage={emptyMessage}
               showHeaderSum
               title={metricsTableTitle}
