@@ -39,15 +39,3 @@
 .packageNameTagDuplicate::before {
   content: 'd';
 }
-
-.root .packageName:hover,
-.root .packageName:active,
-.root .packageName:focus {
-  text-decoration: none;
-}
-
-.root .packageName:hover .packageNameLabel,
-.root .packageName:active .packageNameLabel,
-.root .packageName:focus .packageNameLabel {
-  text-decoration: underline;
-}

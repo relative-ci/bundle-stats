@@ -33,14 +33,14 @@
   border-top: 0;
 }
 
-.root tbody td a {
+.root tbody a {
   color: inherit;
   text-decoration: none;
 }
 
-.root tbody td a:focus,
-.root tbody td a:active,
-.root tbody td a:hover {
+.root tbody a:focus,
+.root tbody a:active,
+.root tbody a:hover {
   color: var(--color-accent);
   text-decoration: underline;
 }

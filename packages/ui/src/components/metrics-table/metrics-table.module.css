@@ -1,21 +1,13 @@
-.root a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.root a:hover,
-.root a:active,
-.root a:focus {
-  color: var(--color-primary);
-  text-decoration: underline;
-}
-
 .root .value,
 .root .delta {
   text-align: right;
 }
 
 /** rows */
+.clickable {
+  cursor: default;
+}
+
 .multipleRuns .unchanged th,
 .multipleRuns .unchanged td {
   color: var(--color-text-light);

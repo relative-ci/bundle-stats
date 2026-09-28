@@ -72,6 +72,10 @@ export const BundleAssetsTotals = ({
     [history],
   );
 
+  const handleItemClick = onTreemapItemClick || handleMetricsTreemapItemClick;
+
+  const handleRowClick = useCallback((row) => handleItemClick(row.key), [handleItemClick]);
+
   const exportDialog = useDialogState();
   const [exportSourceType, setExportSourceType] = useState(undefined);
 
@@ -98,6 +102,7 @@ export const BundleAssetsTotals = ({
               runs={jobs}
               items={items}
               renderRowHeader={renderRowHeader}
+              onRowClick={handleRowClick}
               showHeaderSum
               {...restProps}
             />
@@ -112,10 +117,7 @@ export const BundleAssetsTotals = ({
                   rows={items}
                 />
               </Table>
-              <MetricsTreemap
-                treeNodes={getTreemapNodes(items)}
-                onItemClick={onTreemapItemClick || handleMetricsTreemapItemClick}
-              />
+              <MetricsTreemap treeNodes={getTreemapNodes(items)} onItemClick={handleItemClick} />
             </>
           )}
         </Box>
