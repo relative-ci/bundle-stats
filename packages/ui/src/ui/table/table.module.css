@@ -45,9 +45,16 @@
   text-decoration: underline;
 }
 
+/* hover current row */
+.root tbody tr th,
+.root tbody tr td {
+  transition: var(--transition-out);
+}
+
 .root tbody tr:hover th,
 .root tbody tr:hover td {
   background-color: var(--color-highlight-warning);
+  transition: var(--transition-in);
 }
 
 .empty {
