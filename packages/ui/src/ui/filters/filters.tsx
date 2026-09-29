@@ -100,9 +100,8 @@ const FilterDropdownItem = (props: FilterDropdownItemProps) => {
         className={css.filterGroupItemFilter}
       />
       <Button
-        kind="info"
         solid
-        size="small"
+        size="xsmall"
         type="button"
         onClick={onOnlyClick}
         disabled={disabled}
@@ -189,20 +188,26 @@ const FilterGroup = (props: FilterGroupProps) => {
       )}
       <DropdownGroup className={css.filterGroupItems}>
         {filteredGroupItems.length === 0 && (
-          <Stack className={css.filterGroupSearchNotFound}>
-            <p>{I18N.GROUP_NOT_FOUND}</p>
-            <div>
-              <Button
-                size="small"
-                kind="primary"
-                type="button"
-                onClick={() => setSearch('')}
-                className={css.filterGroupSearchNotFoundClear}
-              >
-                {I18N.GROUP_SEARCH_CLEAR}
-              </Button>
-            </div>
-          </Stack>
+          <FlexStack
+            alignItems="center"
+            justifyContent="center"
+            className={css.filterGroupSearchNotFound}
+          >
+            <Stack space="xxxsmall">
+              <p>{I18N.GROUP_NOT_FOUND}</p>
+              <div>
+                <Button
+                  solid
+                  size="xsmall"
+                  type="button"
+                  onClick={() => setSearch('')}
+                  className={css.filterGroupSearchNotFoundClear}
+                >
+                  {I18N.GROUP_SEARCH_CLEAR}
+                </Button>
+              </div>
+            </Stack>
+          </FlexStack>
         )}
         {filteredGroupItems.map(({ key: itemKey, ...itemData }) => {
           const id = getGroupItemKey(groupKey, itemKey);
