@@ -1,0 +1,5 @@
+.root {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+}

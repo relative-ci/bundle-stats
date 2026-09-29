@@ -36,6 +36,7 @@ import { MetricsTreemap, getTreemapNodes, getTreemapNodesGroupedByPath } from '.
 import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsDisplaySelector } from '../metrics-display-selector';
 import { MetricsTableTitle } from '../metrics-table-title';
+import { MetricsTableRowCount } from '../metrics-table-row-count';
 import { ModuleInfo } from '../module-info';
 import { generateFilterFieldsData } from './bundle-modules.utils';
 import * as I18N_MODULES from './bundle-modules.i18n';
@@ -228,7 +229,7 @@ export const BundleModules = (props: BundleModulesProps) => {
     () => (
       <MetricsTableTitle
         title={I18N.MODULES}
-        info={`${items.length}/${totalRowCount}`}
+        info={<MetricsTableRowCount count={items.length} total={totalRowCount} />}
         popoverInfo={I18N.MODULES_INFO}
         popoverHref={config.documentation.modules}
       />
