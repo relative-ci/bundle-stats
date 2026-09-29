@@ -11,9 +11,14 @@
   border-bottom: 1px solid var(--color-outline);
 }
 
+.name {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xxxsmall);
+}
+
 .nameTagDuplicated {
-  margin-right: var(--space-xxxsmall);
-  vertical-align: baseline;
+  flex: 0 0 auto;
 }
 
 .nameTagDuplicated::before {
@@ -21,6 +26,5 @@
 }
 
 .nameText {
-  display: inline-block;
-  vertical-align: middle;
+  flex: 1 1 auto;
 }
