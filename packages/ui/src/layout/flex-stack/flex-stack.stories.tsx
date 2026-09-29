@@ -28,7 +28,7 @@ export const Default: Story = {
   },
 };
 
-export const withCustomWrapper: Story = {
+export const WithCustomWrapper: Story = {
   args: {
     as: 'main',
     className: 'wrapper',
@@ -41,9 +41,9 @@ export const withCustomWrapper: Story = {
   },
 };
 
-export const withLargeSpace: Story = {
+export const WithLargeGap: Story = {
   args: {
-    space: 'large',
+    gap: 'large',
     children: (
       <>
         <Box outline>Lorem ipsum 1</Box>
@@ -54,14 +54,14 @@ export const withLargeSpace: Story = {
   },
 };
 
-export const withNestedStack: Story = {
+export const WithNestedStack: Story = {
   args: {
-    space: 'large',
+    gap: 'large',
     children: (
       <>
         <Box outline>Lorem ipsum 1</Box>
         <Box outline>Lorem ipsum 2</Box>
-        <FlexStack space="small">
+        <FlexStack gap="small">
           <Box outline>Lorem ipsum 3.1</Box>
           <Box outline>Lorem ipsum 3.2</Box>
         </FlexStack>
@@ -70,20 +70,79 @@ export const withNestedStack: Story = {
   },
 };
 
-export const singleItem: Story = {
+export const SingleItem: Story = {
   args: {
     children: <Box outline>Lorem ipsum</Box>,
   },
 };
 
-export const withAlignItems: Story = {
+export const WithDirectionColumn: Story = {
+  args: {
+    direction: 'column',
+    gap: 'medium',
+    children: (
+      <>
+        <Box outline>Lorem ipsum 1</Box>
+        <Box outline>Lorem ipsum 2</Box>
+        <Box outline>Lorem ipsum 3</Box>
+      </>
+    ),
+  },
+};
+
+export const WithDirectionRowReverse: Story = {
+  args: {
+    direction: 'row-reverse',
+    gap: 'medium',
+    children: (
+      <>
+        <Box outline>Lorem ipsum 1</Box>
+        <Box outline>Lorem ipsum 2</Box>
+        <Box outline>Lorem ipsum 3</Box>
+      </>
+    ),
+  },
+};
+
+export const WithWrap: Story = {
+  args: {
+    wrap: 'wrap',
+    gap: 'medium',
+    style: { maxWidth: '320px' },
+    children: (
+      <>
+        <Box outline>Lorem ipsum 1</Box>
+        <Box outline>Lorem ipsum 2</Box>
+        <Box outline>Lorem ipsum 3</Box>
+        <Box outline>Lorem ipsum 4</Box>
+        <Box outline>Lorem ipsum 5</Box>
+      </>
+    ),
+  },
+};
+
+export const WithAlignItems: Story = {
   args: {
     alignItems: 'center',
-    space: 'medium',
+    gap: 'medium',
     children: (
       <>
         <h1>Title</h1>
         <a href="#test">Option 1</a>
+      </>
+    ),
+  },
+};
+
+export const WithJustifyContent: Story = {
+  args: {
+    justifyContent: 'space-between',
+    gap: 'medium',
+    children: (
+      <>
+        <Box outline>Lorem ipsum 1</Box>
+        <Box outline>Lorem ipsum 2</Box>
+        <Box outline>Lorem ipsum 3</Box>
       </>
     ),
   },
