@@ -6,6 +6,7 @@ import { Icon as BaseIcon } from '../icon';
 import css from './button.module.css';
 
 export const BUTTON_SIZE = {
+  XSMALL: 'xsmall',
   SMALL: 'small',
   MEDIUM: 'medium',
   LARGE: 'large',
