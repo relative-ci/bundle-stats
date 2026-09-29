@@ -72,8 +72,6 @@
   right: 2px;
   top: 50%;
   transform: translateY(-50%);
-  padding: var(--space-xxxsmall);
-  font-size: var(--size-xsmall);
   line-height: 1.1;
 }
 
@@ -102,8 +100,8 @@
 }
 
 .filterGroupSearchNotFound {
-  padding: var(--space-xxsmall) 0;
   text-align: center;
+  min-height: calc(10 * (var(--space-small) + 2 * var(--space-xxxsmall)));
   font-size: var(--size-small);
   color: var(--color-text-light);
 }
