@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
+import { FlexStack } from '../../layout/flex-stack';
 import css from './toolbar.module.css';
 
 export const Toolbar = (props) => {
@@ -12,7 +13,9 @@ export const Toolbar = (props) => {
     <div className={rootClassName}>
       <div className={css.content}>{children}</div>
       {renderActions && (
-        <div className={css.actions}>{renderActions({ actionClassName: css.action })}</div>
+        <FlexStack gap="xsmall" alignItems="center" className={css.actions}>
+          {renderActions({ actionClassName: css.action })}
+        </FlexStack>
       )}
     </div>
   );

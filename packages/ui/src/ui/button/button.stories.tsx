@@ -19,7 +19,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const Items = (props: React.ComponentProps<typeof FlexStack>) => (
-  <FlexStack alignItems="top" style={{ flexWrap: 'wrap', gap: '12px' }} {...props} />
+  <FlexStack alignItems="top" wrap="wrap" gap="xsmall" {...props} />
 );
 
 export const Default: Story = {};

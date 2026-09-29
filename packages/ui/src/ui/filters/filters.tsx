@@ -20,12 +20,7 @@ const Filter = (props: FilterBooleanProps) => {
   const { className = '', label, name, ...inputProps } = props;
 
   return (
-    <FlexStack
-      space="xxxsmall"
-      alignItems="center"
-      as="label"
-      className={cx(css.filter, className)}
-    >
+    <FlexStack gap="xxxsmall" alignItems="center" as="label" className={cx(css.filter, className)}>
       <input
         type="checkbox"
         id={`filter-${name}`}
