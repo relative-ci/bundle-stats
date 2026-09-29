@@ -12,8 +12,23 @@
 }
 
 .packageName {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xxxsmall);
   color: var(--color-text-light);
+  text-decoration: none;
+}
+
+.packageNameTagDuplicate {
+  flex: 0 0 auto;
+}
+
+.packageNameTagDuplicate::before {
+  content: 'd';
+}
+
+.packageNameLabel {
+  flex: 1 1 auto;
 }
 
 .packageName:last-child {
@@ -25,17 +40,13 @@
   margin: 0 var(--space-xxxsmall);
   content: '/';
   color: var(--color-text-ultra-light);
+  text-decoration: none;
 }
 
-.packageNameTagDuplicate {
-  margin-right: var(--space-xxxsmall);
-  vertical-align: middle;
+.packageName:hover {
+  text-decoration: none !important;
 }
 
-.packageNameLabel {
-  vertical-align: middle;
-}
-
-.packageNameTagDuplicate::before {
-  content: 'd';
+.packageName:hover .packageNameLabel {
+  text-decoration: underline !important;
 }

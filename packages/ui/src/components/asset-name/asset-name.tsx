@@ -1,4 +1,5 @@
 import React, { ElementType } from 'react';
+import cx from 'classnames';
 
 import { Icon } from '../../ui/icon';
 import { FileName } from '../../ui/file-name';
@@ -24,7 +25,7 @@ export const AssetName = (props: AssetNameProps) => {
   const { label, isNotPredictive, runs, isChunk, isEntry, isInitial } = row;
 
   return (
-    <span className={className}>
+    <span className={cx(css.root, className)}>
       {isNotPredictive && (
         <HoverCard
           label={<Icon className={css.notPredictiveIcon} glyph={Icon.ICONS.WARNING} />}
@@ -35,24 +36,19 @@ export const AssetName = (props: AssetNameProps) => {
         </HoverCard>
       )}
 
-      <EntryComponentLink entryId={row.key} className={css.name}>
-        <span className={css.metaTags}>
+      <EntryComponentLink entryId={row.key} className={css.link}>
+        <span className={css.tags}>
           {isEntry && (
-            <AssetMetaTag className={css.metaTag} title="Entrypoint" tag="entry" status={isEntry} />
+            <AssetMetaTag className={css.tag} title="Entrypoint" tag="entry" status={isEntry} />
           )}
           {isInitial && (
-            <AssetMetaTag
-              className={css.metaTag}
-              title="Initial"
-              tag="initial"
-              status={isInitial}
-            />
+            <AssetMetaTag className={css.tag} title="Initial" tag="initial" status={isInitial} />
           )}
           {isChunk && (
-            <AssetMetaTag className={css.metaTag} title="Chunk" tag="chunk" status={isChunk} />
+            <AssetMetaTag className={css.tag} title="Chunk" tag="chunk" status={isChunk} />
           )}
         </span>
-        <FileName className={css.nameText} name={label} />
+        <FileName className={css.name} name={label} />
       </EntryComponentLink>
     </span>
   );
