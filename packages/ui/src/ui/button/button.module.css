@@ -186,6 +186,13 @@ a.root {
 /**
  * Size variation
  */
+.xsmall {
+  --button-space: var(--space-xxxsmall);
+  --line-height: var(--space-xsmall);
+
+  font-size: var(--size-xsmall);
+}
+
 .small {
   --button-space: var(--space-xxsmall);
   --line-height: var(--space-small);
@@ -289,6 +296,10 @@ a.root {
 /**
  * Radius variation
  */
+.radius--xsmall {
+  border-radius: var(--radius-xsmall);
+}
+
 .radius--small {
   border-radius: var(--radius-small);
 }
