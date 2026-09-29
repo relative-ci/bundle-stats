@@ -49,13 +49,13 @@ a.root {
  * Kind variation
  */
 .primary {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 .primary:hover,
 .primary:active,
 .primary:focus {
-  color: var(--color-primary-dark);
+  color: var(--color-accent-dark);
 }
 
 .secondary {
@@ -112,14 +112,14 @@ a.root {
  * Solid Kind variation
  */
 .solid {
-  background: var(--color-text-ultra-light);
+  background: var(--color-accent);
   color: var(--color-background);
 }
 
 .solid:hover,
 .solid:active,
 .solid:focus {
-  background: var(--color-text-light);
+  background: var(--color-accent-dark);
   color: var(--color-background);
 }
 
