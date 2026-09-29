@@ -22,6 +22,7 @@ import { MetricsTableExport } from '../metrics-table-export';
 import { MetricsTableHeader } from '../metrics-table-header';
 import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
+import { MetricsTableRowCount } from '../metrics-table-row-count';
 import { PackageInfo } from '../package-info';
 import { SEARCH_PLACEHOLDER } from './bundle-packages.i18n';
 import css from './bundle-packages.module.css';
@@ -217,7 +218,7 @@ export const BundlePackages = (props) => {
     () => (
       <MetricsTableTitle
         title={I18N.PACKAGES}
-        info={`${items.length}/${totalRowCount}`}
+        info={<MetricsTableRowCount count={items.length} total={totalRowCount} />}
         popoverInfo={I18N.PACKAGES_INFO}
         popoverHref={config.documentation.packages}
       />
