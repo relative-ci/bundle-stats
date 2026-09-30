@@ -10,6 +10,7 @@ import {
   METRICS_WEBPACK_GENERAL,
 } from '../../constants';
 import { Box } from '../../layout/box';
+import { FlexStack } from '../../layout/flex-stack';
 import { ComponentLink } from '../component-link';
 import { MetricRunInfo, MetricRunInfoProps } from '../metric-run-info';
 import css from './summary.module.css';
@@ -77,9 +78,9 @@ export const Summary = ({
   summaryItemLink = ComponentLink,
 }: SummaryProps & React.ComponentProps<'div'>) => (
   <Box className={cx(css.root, className)}>
-    <div className={css.row}>
+    <FlexStack wrap="wrap" gap="small" className={css.row}>
       <Box outline padding="small" className={css.rowGroup}>
-        <div className={css.items}>
+        <FlexStack wrap="wrap" gap="medium">
           {METRICS_WEBPACK_GENERAL.map((metricId) => (
             <SummaryItem
               key={metricId}
@@ -93,15 +94,15 @@ export const Summary = ({
               showBaseline={showSummaryItemBaseline}
             />
           ))}
-        </div>
+        </FlexStack>
       </Box>
-    </div>
-    <div className={css.row}>
+    </FlexStack>
+    <FlexStack wrap="wrap" gap="small" className={css.row}>
       {[METRICS_GROUP_ASSETS, METRICS_GROUP_MODULES, METRICS_GROUP_PACKAGES].map((metricGroup) => (
         <Stack className={css.rowGroup} key={metricGroup.title}>
           <h3 className={css.rowGroupTitle}>{metricGroup.title}</h3>
           <Box outline padding="small">
-            <div className={css.items}>
+            <FlexStack wrap="wrap" gap="medium">
               {metricGroup.metrics.map((metricId) => (
                 <SummaryItem
                   key={metricId}
@@ -115,10 +116,10 @@ export const Summary = ({
                   showBaseline={showSummaryItemBaseline}
                 />
               ))}
-            </div>
+            </FlexStack>
           </Box>
         </Stack>
       ))}
-    </div>
+    </FlexStack>
   </Box>
 );

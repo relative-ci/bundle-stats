@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
-import cx from 'classnames';
 
+import { FlexStack } from '../../layout/flex-stack';
 import { Icon } from '../../ui/icon';
 import { FileName } from '../../ui/file-name';
 import { HoverCard } from '../../ui/hover-card';
@@ -25,7 +25,7 @@ export const AssetName = (props: AssetNameProps) => {
   const { label, isNotPredictive, runs, isChunk, isEntry, isInitial } = row;
 
   return (
-    <span className={cx(css.root, className)}>
+    <FlexStack as="span" inline alignItems="center" gap="xxxsmall" className={className}>
       {isNotPredictive && (
         <HoverCard
           label={<Icon className={css.notPredictiveIcon} glyph={Icon.ICONS.WARNING} />}
@@ -36,7 +36,14 @@ export const AssetName = (props: AssetNameProps) => {
         </HoverCard>
       )}
 
-      <EntryComponentLink entryId={row.key} className={css.link}>
+      <FlexStack
+        as={EntryComponentLink}
+        entryId={row.key}
+        inline
+        alignItems="center"
+        gap="xxxsmall"
+        className={css.link}
+      >
         <span className={css.tags}>
           {isEntry && (
             <AssetMetaTag className={css.tag} title="Entrypoint" tag="entry" status={isEntry} />
@@ -49,7 +56,7 @@ export const AssetName = (props: AssetNameProps) => {
           )}
         </span>
         <FileName className={css.name} name={label} />
-      </EntryComponentLink>
-    </span>
+      </FlexStack>
+    </FlexStack>
   );
 };

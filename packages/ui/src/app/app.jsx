@@ -13,6 +13,7 @@ import { Insights } from '../components/insights';
 import { MetricChangeLegend, MetricsTableTitle } from '../components';
 import { Summary } from '../components/summary';
 import { Box } from '../layout/box';
+import { FlexStack } from '../layout/flex-stack';
 import { Footer } from '../layout/footer';
 import { Stack } from '../layout/stack';
 import { Container } from '../ui/container';
@@ -151,9 +152,9 @@ const AppComponent = ({ version, jobs }) => {
     <JobsProvider jobs={jobs}>
       <Layout jobs={jobs} version={version}>
         <Container className={css.metricChangeLegendContainer}>
-          <div className={css.metricChangeLegendContainerInner}>
+          <FlexStack justifyContent="flex-end">
             <MetricChangeLegend />
-          </div>
+          </FlexStack>
         </Container>
         <Container className={css.summaryContainer}>
           <Summary
