@@ -20,6 +20,7 @@ import {
   getMetricRunInfo,
 } from '@bundle-stats/utils';
 
+import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { FileName } from '../../ui/file-name';
 import { Delta } from '../delta';
@@ -110,12 +111,22 @@ interface TileContentProps {
   runInfo: MetricRunInfo;
 }
 
+const TileContentContainer = (props: ComponentProps<'div'>) => (
+  <FlexStack
+    direction="column"
+    justifyContent="center"
+    gap="xxxsmall"
+    className={css.tileContent}
+    {...props}
+  />
+);
+
 const TileContent = (props: TileContentProps) => {
   const { label, sizeDisplay, item, runInfo } = props;
 
   // Render only the container
   if (sizeDisplay === 'minimal') {
-    return <div className={css.tileContent} />;
+    return <TileContentContainer />;
   }
 
   const resolvedLabel = label || item.label;
@@ -123,14 +134,14 @@ const TileContent = (props: TileContentProps) => {
   // Render only the label
   if (sizeDisplay === 'small') {
     return (
-      <div className={css.tileContent}>
+      <TileContentContainer>
         <p className={css.tileContentLabel}>{resolvedLabel}</p>
-      </div>
+      </TileContentContainer>
     );
   }
 
   return (
-    <div className={css.tileContent}>
+    <TileContentContainer>
       <p className={css.tileContentLabel}>{label || item.label}</p>
       <p className={css.tileContentValue}>
         <span className={css.tileContentMetric}>{runInfo.displayValue}</span>
@@ -140,7 +151,7 @@ const TileContent = (props: TileContentProps) => {
           deltaType={runInfo.deltaType}
         />
       </p>
-    </div>
+    </TileContentContainer>
   );
 };
 
@@ -585,9 +596,9 @@ export const MetricsTreemap = (props: MetricsTreemapProps & ComponentProps<'div'
           {canvasContent}
         </div>
       ) : (
-        <div className={css.emptyMessage}>
+        <FlexStack alignItems="center" justifyContent="center" className={css.emptyMessage}>
           <div className={css.emptyMessageWrapper}>{emptyMessage}</div>
-        </div>
+        </FlexStack>
       )}
       {tooltipNode && (
         <Tooltip state={tooltipState} className={css.tooltip}>

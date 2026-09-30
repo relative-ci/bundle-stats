@@ -76,7 +76,7 @@ export const JobsHeader = (props: JobsHeaderProps & React.ComponentProps<'header
   const rootClassName = cx(css.root, className);
 
   return (
-    <header className={rootClassName}>
+    <FlexStack as="header" className={rootClassName}>
       {jobs?.map((job, index) => (
         <Item
           key={job.internalBuildNumber || index}
@@ -84,6 +84,6 @@ export const JobsHeader = (props: JobsHeaderProps & React.ComponentProps<'header
           tag={index === 0 ? I18N.CURRENT : I18N.BASELINE}
         />
       ))}
-    </header>
+    </FlexStack>
   );
 };

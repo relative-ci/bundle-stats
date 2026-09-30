@@ -58,12 +58,12 @@ const RowHeader = (props: RowHeaderProps) => {
   const moduleRow = row as ReportMetricModuleRow;
 
   return (
-    <EntryComponentLink entryId={row.key} className={css.name}>
+    <FlexStack as={EntryComponentLink} entryId={row.key} inline alignItems="center" gap="xxxsmall">
       {moduleRow.duplicated && (
         <Tag className={css.nameTagDuplicated} size="small" kind={Tag.KINDS.DANGER} />
       )}
       <FileName className={css.nameText} name={moduleRow.label} />
-    </EntryComponentLink>
+    </FlexStack>
   );
 };
 
