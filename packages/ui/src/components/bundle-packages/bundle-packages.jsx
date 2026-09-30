@@ -49,7 +49,14 @@ const getDropdownFilters = ({ compareMode, filters }) => ({
 
 const PackageName = ({ row, packageName, showDetails, EntryComponentLink }) => {
   return (
-    <EntryComponentLink entryId={showDetails ? row.key : packageName} className={css.packageName}>
+    <FlexStack
+      as={EntryComponentLink}
+      entryId={showDetails ? row.key : packageName}
+      inline
+      alignItems="center"
+      gap="xxxsmall"
+      className={css.packageName}
+    >
       {showDetails && row.duplicate && (
         <Tag
           className={css.packageNameTagDuplicate}
@@ -59,7 +66,7 @@ const PackageName = ({ row, packageName, showDetails, EntryComponentLink }) => {
         />
       )}
       <span className={css.packageNameLabel}>{packageName}</span>
-    </EntryComponentLink>
+    </FlexStack>
   );
 };
 

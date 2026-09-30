@@ -5,10 +5,6 @@
 
 .row {
   width: 100%;
-  display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
-  gap: var(--space-small);
 }
 
 .rowGroup {
@@ -24,13 +20,6 @@
 
 .row + .row {
   margin-top: var(--summary-gap);
-}
-
-.items {
-  display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
-  gap: var(--space-medium);
 }
 
 .item {

@@ -12,9 +12,6 @@
 }
 
 .packageName {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xxxsmall);
   color: var(--color-text-light);
   text-decoration: none;
 }
