@@ -132,9 +132,10 @@
   --color-dark: #111;
   --color-light: #fff;
 
-  --color-branding-light: #2b76d4;
+  /* https://hihayk.github.io/scale/#4/4/40/40/0/-0/0/0/1a477f/26/71/127/white */
+  --color-branding-light: #31598c;
   --color-branding: #1a477f;
-  --color-branding-dark: #09182a;
+  --color-branding-dark: #102b4c;
 }
 
 body {
