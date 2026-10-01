@@ -71,7 +71,6 @@ const config = [
       'no-unused-vars': ['warn', { varsIgnorePattern: '^[_]{1,}$' }],
       'implicit-arrow-linebreak': 'warn',
       indent: 'warn',
-      'prettier/prettier': 'warn',
 
       // import rules
       'import/extensions': [
@@ -298,6 +297,13 @@ const config = [
 
   // Prettier must be last to override formatting rules
   prettierRecommended,
+
+  // Report prettier formatting issues as warnings
+  {
+    rules: {
+      'prettier/prettier': 'warn',
+    },
+  },
 ];
 
 export default config;
