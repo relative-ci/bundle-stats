@@ -361,5 +361,10 @@ a.root {
  * Disabled state
  */
 .root[disabled] {
-  filter: grayscale(1);
+  opacity: 0.9;
+}
+
+.root[disabled] .icon,
+.root[disabled] .content {
+  opacity: 0.8;
 }
