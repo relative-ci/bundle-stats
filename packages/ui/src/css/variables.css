@@ -111,17 +111,17 @@
   --color-green-ultra-dark: var(--color-green-900);
 
   --color-yellow-25: #fffdf2;
-  /* https://hihayk.github.io/scale/#4/5/40/80/0/-0/0/0/E5C110/229/193/16/white */
+  /* https://hihayk.github.io/scale/#4/5/20/80/0/-0/0/0/E5C110/229/193/16/white */
   --color-yellow-50: #faf3cf;
   --color-yellow-100: #f6e9a9;
   --color-yellow-200: #f2df83;
   --color-yellow-300: #edd55d;
   --color-yellow-400: #e9cb36;
   --color-yellow-500: #e5c110;
-  --color-yellow-600: #ceae0e;
-  --color-yellow-700: #b79a0d;
-  --color-yellow-800: #a0870b;
-  --color-yellow-900: #89740a;
+  --color-yellow-600: #dab70f;
+  --color-yellow-700: #ceae0e;
+  --color-yellow-800: #c3a40e;
+  --color-yellow-900: #b79a0d;
 
   --color-yellow-ultra-light: var(--color-yellow-100);
   --color-yellow-light: var(--color-yellow-300);
