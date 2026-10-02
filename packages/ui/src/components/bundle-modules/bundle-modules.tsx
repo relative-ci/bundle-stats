@@ -36,6 +36,7 @@ import { MetricsTreemap, getTreemapNodes, getTreemapNodesGroupedByPath } from '.
 import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsDisplaySelector } from '../metrics-display-selector';
 import { MetricsTableTitle } from '../metrics-table-title';
+import { MetricsTableRowCount } from '../metrics-table-row-count';
 import { ModuleInfo } from '../module-info';
 import { generateFilterFieldsData } from './bundle-modules.utils';
 import * as I18N_MODULES from './bundle-modules.i18n';
@@ -57,12 +58,12 @@ const RowHeader = (props: RowHeaderProps) => {
   const moduleRow = row as ReportMetricModuleRow;
 
   return (
-    <EntryComponentLink entryId={row.key} className={css.name}>
+    <FlexStack as={EntryComponentLink} entryId={row.key} inline alignItems="center" gap="xxxsmall">
       {moduleRow.duplicated && (
         <Tag className={css.nameTagDuplicated} size="small" kind={Tag.KINDS.DANGER} />
       )}
       <FileName className={css.nameText} name={moduleRow.label} />
-    </EntryComponentLink>
+    </FlexStack>
   );
 };
 
@@ -228,7 +229,7 @@ export const BundleModules = (props: BundleModulesProps) => {
     () => (
       <MetricsTableTitle
         title={I18N.MODULES}
-        info={`${items.length}/${totalRowCount}`}
+        info={<MetricsTableRowCount count={items.length} total={totalRowCount} />}
         popoverInfo={I18N.MODULES_INFO}
         popoverHref={config.documentation.modules}
       />
@@ -239,6 +240,11 @@ export const BundleModules = (props: BundleModulesProps) => {
   const renderRowHeader = useCallback(
     (row: ReportMetricRow) => <RowHeader row={row} EntryComponentLink={EntryComponentLink} />,
     [EntryComponentLink],
+  );
+
+  const handleRowClick = useCallback(
+    (row: ReportMetricRow) => showEntryInfo(row.key),
+    [showEntryInfo],
   );
 
   const emptyMessage = useMemo(
@@ -348,6 +354,7 @@ export const BundleModules = (props: BundleModulesProps) => {
               items={items}
               runs={jobs}
               renderRowHeader={renderRowHeader}
+              onRowClick={handleRowClick}
               emptyMessage={emptyMessage}
               showHeaderSum
               title={metricsTableTitle}

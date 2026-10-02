@@ -9,7 +9,7 @@ export const ControlGroup = (props: React.ComponentProps<typeof FlexStack>) => {
   return (
     <FlexStack
       className={cx(css.root, className)}
-      space="no-space"
+      gap="no-space"
       alignItems="center"
       {...restProps}
     />

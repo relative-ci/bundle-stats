@@ -135,8 +135,8 @@ export const MetricChangeLegend = (props: MetricChangeLegendProps) => {
           anchorClassName={css.itemAnchor}
           label={
             <FlexStack inline alignItems="center" space="xxsmall" className={css.item}>
-              <Variants kind={id} variants={variants} />
-              <span>{label}</span>
+              <Variants kind={id} variants={variants} className={css.itemVariants} />
+              <span className={css.itemLabel}>{label}</span>
             </FlexStack>
           }
         >

@@ -22,6 +22,7 @@ import { MetricsTableExport } from '../metrics-table-export';
 import { MetricsTableHeader } from '../metrics-table-header';
 import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
+import { MetricsTableRowCount } from '../metrics-table-row-count';
 import { PackageInfo } from '../package-info';
 import { SEARCH_PLACEHOLDER } from './bundle-packages.i18n';
 import css from './bundle-packages.module.css';
@@ -48,7 +49,14 @@ const getDropdownFilters = ({ compareMode, filters }) => ({
 
 const PackageName = ({ row, packageName, showDetails, EntryComponentLink }) => {
   return (
-    <EntryComponentLink entryId={showDetails ? row.key : packageName} className={css.packageName}>
+    <FlexStack
+      as={EntryComponentLink}
+      entryId={showDetails ? row.key : packageName}
+      inline
+      alignItems="center"
+      gap="xxxsmall"
+      className={css.packageName}
+    >
       {showDetails && row.duplicate && (
         <Tag
           className={css.packageNameTagDuplicate}
@@ -58,7 +66,7 @@ const PackageName = ({ row, packageName, showDetails, EntryComponentLink }) => {
         />
       )}
       <span className={css.packageNameLabel}>{packageName}</span>
-    </EntryComponentLink>
+    </FlexStack>
   );
 };
 
@@ -217,7 +225,7 @@ export const BundlePackages = (props) => {
     () => (
       <MetricsTableTitle
         title={I18N.PACKAGES}
-        info={`${items.length}/${totalRowCount}`}
+        info={<MetricsTableRowCount count={items.length} total={totalRowCount} />}
         popoverInfo={I18N.PACKAGES_INFO}
         popoverHref={config.documentation.packages}
       />
@@ -248,6 +256,8 @@ export const BundlePackages = (props) => {
     (row) => <RowHeader row={row} EntryComponentLink={PackageNameCustomComponentLink} />,
     [PackageNameCustomComponentLink],
   );
+
+  const handleRowClick = useCallback((row) => showEntryInfo(row.key), [showEntryInfo]);
 
   const emptyMessage = useMemo(
     () => (
@@ -320,6 +330,7 @@ export const BundlePackages = (props) => {
               items={items}
               emptyMessage={emptyMessage}
               renderRowHeader={renderRowHeader}
+              onRowClick={handleRowClick}
               showHeaderSum
               title={metricsTableTitle}
               sort={sort}

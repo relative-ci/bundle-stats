@@ -6,10 +6,10 @@
 
 /** done state */
 .root svg {
-  transition: var(--ui-transition-out);
+  transition: var(--transition-out);
 }
 
 .done svg {
   color: var(--color-success);
-  transition: var(--ui-transition-in);
+  transition: var(--transition-in);
 }

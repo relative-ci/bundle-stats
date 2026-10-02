@@ -33,21 +33,28 @@
   border-top: 0;
 }
 
-.root tbody td a {
+.root tbody a {
   color: inherit;
   text-decoration: none;
 }
 
-.root tbody td a:hover,
-.root tbody td a:focus,
-.root tbody td a:active {
-  color: var(--color-primary);
+.root tbody a:focus,
+.root tbody a:active,
+.root tbody a:hover {
+  color: var(--color-accent);
   text-decoration: underline;
+}
+
+/* hover current row */
+.root tbody tr th,
+.root tbody tr td {
+  transition: var(--transition-out);
 }
 
 .root tbody tr:hover th,
 .root tbody tr:hover td {
   background-color: var(--color-highlight-warning);
+  transition: var(--transition-in);
 }
 
 .empty {

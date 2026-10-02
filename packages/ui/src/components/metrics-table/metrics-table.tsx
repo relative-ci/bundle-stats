@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import cx from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import type { ReportMetricRow } from '@bundle-stats/utils';
@@ -20,51 +20,75 @@ const CURRENT_COLUMN_SPAN = 3;
 interface RowProps extends React.ComponentProps<typeof Table.Tr> {
   item: ReportMetricRow;
   renderHeader: (item: ReportMetricRow) => React.ReactNode;
+  onRowClick?: (item: ReportMetricRow) => void;
 }
 
-const Row = ({ className = '', item, renderHeader, ...restProps }: RowProps) => (
-  <Table.Tr className={cx(!item.changed && css.unchanged, className)} {...restProps}>
-    <Table.Th className={css.metricName}>{renderHeader(item)}</Table.Th>
-
-    {item.runs.map((run, index) => {
-      const isBaseline = index === item.runs.length - 1;
-      const valueClassName = cx(css.value, !isBaseline && css.current);
-
-      // Empty cells if no value
-      if (!run || typeof run.value === 'undefined') {
-        return (
-          <>
-            <Table.Td className={valueClassName}>-</Table.Td>
-            {!isBaseline && <Table.Td className={css.delta} />}
-            {!isBaseline && <Table.Td className={cx(css.delta, css.deltaPercentage)} />}
-          </>
-        );
+const Row = ({ className = '', item, renderHeader, onRowClick, ...restProps }: RowProps) => {
+  const handleClick = useCallback(
+    (event: React.MouseEvent<HTMLTableRowElement>) => {
+      // Skip clicks on interactive elements (eg: links, buttons)
+      if ((event.target as HTMLElement).closest('a, button')) {
+        return;
       }
 
-      return (
-        <>
-          <Table.Td className={valueClassName}>
-            <Metric value={run.displayValue} />
-          </Table.Td>
-          {!isBaseline && (
+      // Skip when the user is selecting text
+      if (window.getSelection()?.toString()) {
+        return;
+      }
+
+      onRowClick?.(item);
+    },
+    [onRowClick, item],
+  );
+
+  return (
+    <Table.Tr
+      className={cx(!item.changed && css.unchanged, onRowClick && css.clickable, className)}
+      onClick={onRowClick ? handleClick : undefined}
+      {...restProps}
+    >
+      <Table.Th className={css.metricName}>{renderHeader(item)}</Table.Th>
+
+      {item.runs.map((run, index) => {
+        const isBaseline = index === item.runs.length - 1;
+        const valueClassName = cx(css.value, !isBaseline && css.current);
+
+        // Empty cells if no value
+        if (!run || typeof run.value === 'undefined') {
+          return (
             <>
-              <Table.Td className={css.delta}>
-                {'delta' in run && (
-                  <Delta displayValue={run.displayDelta} deltaType={run.deltaType} />
-                )}
-              </Table.Td>
-              <Table.Td className={cx(css.delta, css.deltaPercentage)}>
-                {'delta' in run && (
-                  <Delta displayValue={run.displayDeltaPercentage} deltaType={run.deltaType} />
-                )}
-              </Table.Td>
+              <Table.Td className={valueClassName}>-</Table.Td>
+              {!isBaseline && <Table.Td className={css.delta} />}
+              {!isBaseline && <Table.Td className={cx(css.delta, css.deltaPercentage)} />}
             </>
-          )}
-        </>
-      );
-    })}
-  </Table.Tr>
-);
+          );
+        }
+
+        return (
+          <>
+            <Table.Td className={valueClassName}>
+              <Metric value={run.displayValue} />
+            </Table.Td>
+            {!isBaseline && (
+              <>
+                <Table.Td className={css.delta}>
+                  {'delta' in run && (
+                    <Delta displayValue={run.displayDelta} deltaType={run.deltaType} />
+                  )}
+                </Table.Td>
+                <Table.Td className={cx(css.delta, css.deltaPercentage)}>
+                  {'delta' in run && (
+                    <Delta displayValue={run.displayDeltaPercentage} deltaType={run.deltaType} />
+                  )}
+                </Table.Td>
+              </>
+            )}
+          </>
+        );
+      })}
+    </Table.Tr>
+  );
+};
 
 interface MetricsTableProps extends Omit<React.ComponentProps<typeof Table>, 'title'> {
   runs: Array<{
@@ -77,6 +101,7 @@ interface MetricsTableProps extends Omit<React.ComponentProps<typeof Table>, 'ti
   sort?: MetricsTableHeaderProps['sort'];
   updateSort?: MetricsTableHeaderProps['updateSort'];
   renderRowHeader?: (item: ReportMetricRow) => React.ReactNode;
+  onRowClick?: (item: ReportMetricRow) => void;
   emptyMessage?: React.ReactNode;
   showAllItems: boolean;
   setShowAllItems: (value: boolean) => void;
@@ -91,6 +116,7 @@ export const MetricsTable = ({
   sort,
   updateSort,
   renderRowHeader = (item: any) => item.label,
+  onRowClick,
   emptyMessage = I18N.EMPTY_MESSAGE,
   showAllItems,
   setShowAllItems,
@@ -132,7 +158,12 @@ export const MetricsTable = ({
         {showItems && (
           <>
             {visibleItems.map((item) => (
-              <Row key={item.key} item={item} renderHeader={renderRowHeader} />
+              <Row
+                key={item.key}
+                item={item}
+                renderHeader={renderRowHeader}
+                onRowClick={onRowClick}
+              />
             ))}
 
             {hasHiddenItems && (

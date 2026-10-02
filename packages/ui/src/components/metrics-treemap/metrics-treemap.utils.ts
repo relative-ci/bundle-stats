@@ -1,5 +1,4 @@
-import { type RefObject, useCallback } from 'react';
-import { useDebounce, useMouseHovered } from 'react-use';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTooltipState } from 'ariakit/tooltip';
 import {
   DeltaType,
@@ -10,6 +9,7 @@ import {
 
 import {
   type TreeLeaf,
+  type TreeNode,
   type TreeNodeChildren,
   type Tree,
   type TreeTotal,
@@ -158,6 +158,28 @@ export function getTreemapNodesGroupedByPath(items: Array<ReportMetricRow>): Tre
   };
 }
 
+/**
+ * Index every tree node by id, to allow resolving the hovered node from the
+ * `data-treemap-id` DOM marker without walking the tree on every pointer move
+ */
+export function getTreemapNodesIndex(
+  node: Tree,
+  index: Map<string, TreeNode> = new Map(),
+): Map<string, TreeNode> {
+  index.set(node.id, node);
+
+  node.children.forEach((childNode) => {
+    if ('children' in childNode) {
+      getTreemapNodesIndex(childNode, index);
+      return;
+    }
+
+    index.set(childNode.id, childNode);
+  });
+
+  return index;
+}
+
 export function resolveGroupDeltaType(
   metricRunInfo?: MetricRunInfo | MetricRunInfoBaseline,
 ): DeltaType.NO_CHANGE | DeltaType.NEGATIVE | DeltaType.POSITIVE {
@@ -225,50 +247,142 @@ export function resolveTileSizeDisplay(width: number, height: number): TileSizeD
   return 'default';
 }
 
-interface UseTooltipStateWithMouseFollowOptions {
-  /**
-   * React ref to parent div
-   */
-  parentRef: RefObject<Element>;
+interface UseTreemapTooltipStateOptions {
   /**
    * Tooltip gutter
    */
   gutter?: number;
   /**
-   * Tooltip timeout
+   * Delay before showing the tooltip
    */
   timeout?: number;
+  /**
+   * Delay before hiding the tooltip once the pointer is no longer over a cell.
+   *
+   * Tiles are separated by a gutter that belongs to no node, so without this
+   * grace period moving from one cell to another would close and reopen the
+   * tooltip every time the pointer crosses the gap.
+   */
+  hideTimeout?: number;
 }
 
 /**
- * Ariakit tooltip state hook with mouse follow functionality
+ * Ariakit tooltip state shared by every tile/tile group of a treemap.
+ *
+ * The tooltip is anchored to a virtual 1x1 rect that follows the pointer, so
+ * no `TooltipAnchor` is rendered per cell: the anchor position is stored on a
+ * ref and ariakit is asked to reposition at most once per animation frame,
+ * which keeps the treemap itself out of the pointer move render path.
+ *
+ * The hovered node id is owned here as well, so that all the tooltip timing
+ * lives in a single place.
  */
-export function useTooltipStateWithMouseFollow(options: UseTooltipStateWithMouseFollowOptions) {
-  const { parentRef, gutter = 16, timeout = 240 } = options;
+export function useTreemapTooltipState(options: UseTreemapTooltipStateOptions = {}) {
+  const { gutter = 16, timeout = 240, hideTimeout = timeout } = options;
 
-  const pointer = useMouseHovered(parentRef, { whenHovered: true });
+  const pointerRef = useRef<{ x: number; y: number } | null>(null);
+  const frameRef = useRef(0);
+  const hideTimeoutRef = useRef(0);
 
-  // Return custom rect based on the mouse position
+  // Return custom rect based on the pointer position
   const getAnchorRect = useCallback(() => {
-    // Skip custom component rect area if the pointer position is empty
-    if (pointer.docX === 0 && pointer.docY === 0 && pointer.elW === 0 && pointer.elH === 0) {
+    const pointer = pointerRef.current;
+
+    // Skip the custom rect until we have a pointer position
+    if (!pointer) {
       return null;
     }
 
-    const newRect = {
-      x: pointer.docX - (document?.defaultView?.scrollX ?? 0),
-      y: pointer.docY - (document?.defaultView?.scrollY ?? 0),
-      w: 1,
-      h: 1,
-    };
-
-    return newRect;
-  }, [pointer.docX, pointer.docY]);
+    return { x: pointer.x, y: pointer.y, w: 1, h: 1 };
+  }, []);
 
   const tooltipState = useTooltipState({ gutter, getAnchorRect, timeout });
+  const { mounted, render, show, hide } = tooltipState;
 
-  // Update tooltip position when pointer values change
-  useDebounce(tooltipState.render, 10, [pointer.docX, pointer.docY]);
+  const [hoveredNodeId, setHoveredNodeId] = useState<string | null>(null);
+  const hoveredNodeIdRef = useRef<string | null>(null);
 
-  return tooltipState;
+  useEffect(
+    () => () => {
+      cancelAnimationFrame(frameRef.current);
+      window.clearTimeout(hideTimeoutRef.current);
+    },
+    [],
+  );
+
+  const setPointer = useCallback(
+    (x: number, y: number) => {
+      pointerRef.current = { x, y };
+
+      // Reposition only while the tooltip is visible, once per frame
+      if (!mounted || frameRef.current) {
+        return;
+      }
+
+      frameRef.current = requestAnimationFrame(() => {
+        frameRef.current = 0;
+        render();
+      });
+    },
+    [mounted, render],
+  );
+
+  const commitHoveredNode = useCallback(
+    (nodeId: string | null) => {
+      hoveredNodeIdRef.current = nodeId;
+      setHoveredNodeId(nodeId);
+
+      if (nodeId === null) {
+        hide();
+        return;
+      }
+
+      show();
+    },
+    [hide, show],
+  );
+
+  /**
+   * Set the hovered node. Showing another node is applied right away, while
+   * hiding is deferred so that the tooltip survives the gap between two cells.
+   */
+  const setHoveredNode = useCallback(
+    (nodeId: string | null) => {
+      window.clearTimeout(hideTimeoutRef.current);
+      hideTimeoutRef.current = 0;
+
+      // Guard against re-triggering `show`, which would restart the show timeout
+      if (nodeId === hoveredNodeIdRef.current) {
+        return;
+      }
+
+      if (nodeId !== null || !hideTimeout) {
+        commitHoveredNode(nodeId);
+        return;
+      }
+
+      hideTimeoutRef.current = window.setTimeout(() => {
+        hideTimeoutRef.current = 0;
+        commitHoveredNode(null);
+      }, hideTimeout);
+    },
+    [commitHoveredNode, hideTimeout],
+  );
+
+  /**
+   * Hide the tooltip right away, without the grace period - the pointer left
+   * the treemap, there is no next cell to move to.
+   */
+  const clearHoveredNode = useCallback(() => {
+    window.clearTimeout(hideTimeoutRef.current);
+    hideTimeoutRef.current = 0;
+
+    if (hoveredNodeIdRef.current === null) {
+      return;
+    }
+
+    commitHoveredNode(null);
+  }, [commitHoveredNode]);
+
+  return { tooltipState, setPointer, hoveredNodeId, setHoveredNode, clearHoveredNode };
 }

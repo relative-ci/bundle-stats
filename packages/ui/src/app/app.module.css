@@ -22,11 +22,6 @@
   padding-bottom: var(--space-xxsmall);
 }
 
-.metricChangeLegendContainerInner {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .summaryContainer {
   padding-top: var(--space-xxsmall);
   padding-bottom: var(--space-xxsmall);
@@ -42,11 +37,13 @@
 }
 
 .tabActive {
-  color: var(--color-primary);
+  color: var(--color-accent);
+  transition: var(--transition-in);
 }
 
 .tabActive::after {
-  background: currentColor;
+  opacity: 1;
+  transition: var(--transition-in);
 }
 
 .tabsContent {
@@ -72,6 +69,6 @@
   .tabsContainer {
     position: sticky;
     top: var(--header-height);
-    z-index: calc(var(--layer-high));
+    z-index: var(--layer);
   }
 }
