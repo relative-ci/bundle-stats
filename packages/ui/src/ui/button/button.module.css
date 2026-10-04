@@ -112,14 +112,14 @@ a.root {
  * Solid Kind variation
  */
 .solid {
-  background: var(--color-accent);
+  background: var(--color-text-light);
   color: var(--color-background);
 }
 
 .solid:hover,
 .solid:active,
 .solid:focus {
-  background: var(--color-accent-dark);
+  background: var(--color-text);
   color: var(--color-background);
 }
 
