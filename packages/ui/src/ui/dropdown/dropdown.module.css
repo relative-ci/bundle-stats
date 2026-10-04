@@ -73,6 +73,10 @@
   color: var(--color-primary-dark);
 }
 
+.item + .item {
+  margin-top: calc(var(--space-xxxsmall) / 2);
+}
+
 .group {
   position: relative;
   padding: calc(var(--space-xxxsmall) / 2 + 1px) 0 calc(var(--space-xxxsmall) / 2);
