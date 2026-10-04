@@ -75,12 +75,14 @@ export const BundleAssets = (props: BundleAssetsProps) => {
     return { rows: result, totalRowCount: result.length };
   }, [jobs]);
 
+  const getRowFilter = useMemo(() => generateGetRowFilter({ chunkIds }), [chunkIds]);
+
   // Filter rows
   const filteredRows = useRowsFilter({
     rows,
     searchPattern: searchProps.searchPattern,
     filters: searchProps.filters,
-    getRowFilter: generateGetRowFilter({ chunkIds }),
+    getRowFilter,
   });
 
   // Sort rows
