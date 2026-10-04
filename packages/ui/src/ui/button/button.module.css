@@ -202,7 +202,13 @@ a.root {
 
 .medium {
   --button-space: var(--space-xsmall);
-  --line-height: calc(var(--space-small) + var(--space-xxxsmall));
+  --line-height: var(--space-small);
+}
+
+.medium .glyph {
+  margin: calc(0px - var(--space-xxxsmall) / 2);
+  height: calc(var(--space-small) + var(--space-xxxsmall));
+  width: calc(var(--space-small) + var(--space-xxxsmall));
 }
 
 .large {
