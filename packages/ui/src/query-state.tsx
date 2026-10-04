@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useRef } from 'react';
 import isEqual from 'lodash/isEqual';
 import { QueryParamProvider, useQueryParams } from 'use-query-params';
 import { ReactRouter5Adapter } from 'use-query-params/adapters/react-router-5';
@@ -19,18 +19,23 @@ export const useComponentQueryState = (componentName: string) => {
 
   const componentState = queryState[componentName];
 
+  // Read the latest state from a ref to keep `setState` stable across state changes
+  const componentStateRef = useRef(componentState);
+  componentStateRef.current = componentState;
+
   const setState = useCallback(
     (updates: Record<string, unknown>) => {
-      const newState = { ...componentState, ...updates };
+      const currentState = componentStateRef.current;
+      const newState = { ...currentState, ...updates };
 
       // Deep check to prevent unnecessary state changes
-      if (isEqual(componentState, newState)) {
+      if (isEqual(currentState, newState)) {
         return;
       }
 
       setQueryState({ [componentName]: newState });
     },
-    [componentState, setQueryState],
+    [componentName, setQueryState],
   );
 
   return [componentState, setState];
