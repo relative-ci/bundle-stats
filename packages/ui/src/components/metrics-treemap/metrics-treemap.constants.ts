@@ -55,6 +55,14 @@ export type TileGroupSizeDisplay = 'minimal' | 'small' | 'default';
 
 export type TileSizeDisplay = 'minimal' | 'small' | 'default';
 
+/**
+ * DOM marker set on every tile and tile group title (see `metrics-treemap.tsx`).
+ * `MetricsTreemap` uses it to resolve the hovered node from a single delegated
+ * pointer handler, instead of attaching hover listeners to every cell.
+ */
+export const NODE_ID_ATTRIBUTE = 'data-treemap-id';
+export const NODE_ID_SELECTOR = `[${NODE_ID_ATTRIBUTE}]`;
+
 export const SQUARIFY_RATIO = 1.66;
 export const PADDING_OUTER = 1;
 export const PADDING_INNER = 2;

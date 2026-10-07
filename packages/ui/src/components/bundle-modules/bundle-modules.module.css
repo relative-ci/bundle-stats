@@ -12,8 +12,7 @@
 }
 
 .nameTagDuplicated {
-  margin-right: var(--space-xxxsmall);
-  vertical-align: baseline;
+  flex: 0 0 auto;
 }
 
 .nameTagDuplicated::before {
@@ -21,18 +20,5 @@
 }
 
 .nameText {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.root .name:hover,
-.root .name:active,
-.root .name:focus {
-  text-decoration: none;
-}
-
-.root .name:hover .nameText,
-.root .name:active .nameText,
-.root .name:focus .nameText {
-  text-decoration: underline;
+  flex: 1 1 auto;
 }

@@ -12,8 +12,20 @@
 }
 
 .packageName {
-  display: inline-block;
   color: var(--color-text-light);
+  text-decoration: none;
+}
+
+.packageNameTagDuplicate {
+  flex: 0 0 auto;
+}
+
+.packageNameTagDuplicate::before {
+  content: 'd';
+}
+
+.packageNameLabel {
+  flex: 1 1 auto;
 }
 
 .packageName:last-child {
@@ -25,29 +37,13 @@
   margin: 0 var(--space-xxxsmall);
   content: '/';
   color: var(--color-text-ultra-light);
-}
-
-.packageNameTagDuplicate {
-  margin-right: var(--space-xxxsmall);
-  vertical-align: middle;
-}
-
-.packageNameLabel {
-  vertical-align: middle;
-}
-
-.packageNameTagDuplicate::before {
-  content: 'd';
-}
-
-.root .packageName:hover,
-.root .packageName:active,
-.root .packageName:focus {
   text-decoration: none;
 }
 
-.root .packageName:hover .packageNameLabel,
-.root .packageName:active .packageNameLabel,
-.root .packageName:focus .packageNameLabel {
-  text-decoration: underline;
+.packageName:hover {
+  text-decoration: none !important;
+}
+
+.packageName:hover .packageNameLabel {
+  text-decoration: underline !important;
 }

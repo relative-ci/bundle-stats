@@ -1,7 +1,6 @@
 .root {
   padding: var(--space-small) 0;
   width: 100%;
-  display: flex;
 }
 
 .item {

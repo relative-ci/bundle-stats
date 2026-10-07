@@ -116,11 +116,13 @@ export const BundleModules = (props: BundleModulesProps) => {
     };
   }, [jobs, moduleMetric]);
 
+  const getRowFilter = useMemo(() => generateGetRowFilter({ chunkIds }), [chunkIds]);
+
   const filteredRows = useRowsFilter({
     rows,
     searchPattern: searchParams.searchPattern,
     filters: searchParams.filters,
-    getRowFilter: generateGetRowFilter({ chunkIds }),
+    getRowFilter,
   }) as Array<ReportMetricModuleRow>;
 
   const sortParams = useRowsSort({

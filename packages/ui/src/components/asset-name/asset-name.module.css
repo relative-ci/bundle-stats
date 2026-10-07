@@ -1,6 +1,5 @@
 .notPredictive {
-  margin-right: var(--space-xxsmall);
-  display: inline-block;
+  flex: 0 0 auto;
   width: var(--space-small);
   height: var(--space-small);
 }
@@ -13,20 +12,22 @@
   max-width: 480px;
 }
 
-.metaTags {
-  display: inline;
-  margin-right: var(--space-xxxsmall);
+.link {
+  flex: 1 1 auto;
 }
 
-.metaTag + .metaTag {
-  margin-left: calc(var(--space-xxxsmall) / 2);
+.tags {
+  flex: 0 0 auto;
+  display: inline-flex;
+  gap: 1px;
 }
 
-.metaTags:empty {
+.tags:empty {
   display: none;
 }
 
-.nameText {
-  display: inline-block;
+.name {
+  flex: 1 1 auto;
   vertical-align: middle;
+  text-decoration: inherit;
 }

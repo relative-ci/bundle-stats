@@ -6,16 +6,10 @@
 
 .actions {
   margin-top: var(--space-xsmall);
-  display: flex;
-  align-items: center;
 }
 
 .action {
   flex: 0 0 auto;
-}
-
-.action + .action {
-  margin-left: var(--space-xsmall);
 }
 
 @media (min-width: 768px) {

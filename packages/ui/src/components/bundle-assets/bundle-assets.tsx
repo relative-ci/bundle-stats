@@ -26,6 +26,7 @@ import { MetricsTable } from '../metrics-table';
 import { MetricsTableExport } from '../metrics-table-export';
 import { MetricsTableOptions } from '../metrics-table-options';
 import { MetricsTableTitle } from '../metrics-table-title';
+import { MetricsTableRowCount } from '../metrics-table-row-count';
 import { MetricsDisplaySelector } from '../metrics-display-selector';
 import { MetricsTableHeader } from '../metrics-table-header';
 import { MetricsTreemap, getTreemapNodes, getTreemapNodesGroupedByPath } from '../metrics-treemap';
@@ -164,7 +165,7 @@ export const BundleAssets = (props: BundleAssetsProps) => {
     () => (
       <MetricsTableTitle
         title={I18N.ASSETS}
-        info={`${items.length}/${totalRowCount}`}
+        info={<MetricsTableRowCount count={items.length} total={totalRowCount} />}
         popoverInfo={I18N.ASSETS_INFO}
         popoverHref={config.documentation.assets}
       />
@@ -203,6 +204,11 @@ export const BundleAssets = (props: BundleAssetsProps) => {
       />
     ),
     [EntryComponentLink],
+  );
+
+  const handleRowClick = useCallback(
+    (row: ReportMetricRow) => showEntryInfo(row.key),
+    [showEntryInfo],
   );
 
   const emptyMessage = useMemo(
@@ -276,6 +282,7 @@ export const BundleAssets = (props: BundleAssetsProps) => {
               runs={jobs}
               items={items}
               renderRowHeader={renderRowHeader}
+              onRowClick={handleRowClick}
               emptyMessage={emptyMessage}
               showHeaderSum
               title={metricsTableTitle}
