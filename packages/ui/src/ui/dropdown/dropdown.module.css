@@ -51,6 +51,7 @@
   text-align: left;
   text-decoration: none;
   cursor: default;
+  transition: var(--transition-out);
 }
 
 .item[data-active-item],
@@ -59,6 +60,7 @@
 .item:active {
   background: var(--color-highlight);
   color: var(--color-text);
+  transition: var(--transition-in);
 }
 
 .itemActive {
