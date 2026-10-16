@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Dropdown, DropdownItem } from '../dropdown';
 import { Button } from '../button';
+import { HoverCard } from '../hover-card';
+import { Tooltip } from '../tooltip';
 import { Dialog, useDialogState } from '.';
 
 const meta: Meta<typeof Dialog> = {
@@ -38,6 +40,12 @@ const DialogComponent = (storyArgs: Story['args']) => {
             <DropdownItem>Option 2</DropdownItem>
             <DropdownItem>Option 3</DropdownItem>
           </Dropdown>
+          <br />
+          <br />
+          <Tooltip title="Tooltip content">Tooltip anchor</Tooltip>
+          <br />
+          <br />
+          <HoverCard label="HoverCard anchor">HoverCard content</HoverCard>
           <br />
           <br />
           {[1, 2, 3].map((item) => (

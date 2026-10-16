@@ -14,7 +14,7 @@
   box-shadow: var(--shadow-layer);
   background: var(--color-background);
   min-width: 16em;
-  z-index: var(--layer-high);
+  z-index: var(--layer-overlay);
   padding: var(--space-xxxsmall);
   color: var(--color-text-light);
   font-size: var(--size-small);

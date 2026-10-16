@@ -50,6 +50,16 @@ const EntryInfoMeta = ({
   </div>
 );
 
+/**
+ * Ariakit appends nested portals (tooltips, hovercards, menus) to the parent portal node,
+ * set a specific class on the entry info portal node to raise the z-index of the nested overlays
+ */
+const createPortalElement = (element: HTMLElement) => {
+  const portalElement = element.ownerDocument.createElement('div');
+  portalElement.className = css.portal;
+  return portalElement;
+};
+
 function defaultRenderRunInfo(item: ReportMetricRow) {
   const baselineRun = item.runs.length > 1 ? item.runs?.[item.runs.length - 1] : null;
 
@@ -108,7 +118,7 @@ export const EntryInfo = (props: EntryInfoProps & React.ComponentProps<'div'>) =
   } = props;
 
   return (
-    <Portal className={cx(css.root, className)}>
+    <Portal portalElement={createPortalElement} className={cx(css.root, className)}>
       <Box padding="medium" as="header" className={css.header}>
         <Stack space="small">
           <FlexStack space="xxxsmall" alignItems="center" as="h3" className={css.label}>
