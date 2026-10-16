@@ -16,6 +16,16 @@ export const useDialogState = (options: DialogStateProps = {}) => {
   return useAriakitDialogState({ animated: true, ...options });
 };
 
+/**
+ * Ariakit appends nested portals (tooltips, hovercards, menus) to the parent portal node,
+ * set a specific class on the dialog portal node to raise the z-index of the nested overlays
+ */
+const createPortalElement = (element: HTMLElement) => {
+  const portalElement = element.ownerDocument.createElement('div');
+  portalElement.className = css.portal;
+  return portalElement;
+};
+
 type AriakitDialogProps = ComponentProps<typeof AriakitDialog>;
 
 type DialogProps = {
@@ -48,6 +58,7 @@ export const Dialog = (props: DialogProps) => {
         className: css.backdrop,
       }}
       portal
+      portalElement={createPortalElement}
       className={rootClassName}
     >
       {!modal && (

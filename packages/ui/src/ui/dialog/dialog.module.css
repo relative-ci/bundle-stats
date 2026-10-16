@@ -1,3 +1,8 @@
+/** place overlays triggered from inside the dialog on top of the dialog */
+.portal {
+  --layer-overlay: calc(var(--layer-xxhigh) + 1);
+}
+
 .backdrop {
   display: flex;
   align-items: center;

@@ -289,7 +289,7 @@
 
 /** tooltip */
 .tooltip {
-  z-index: var(--layer-high);
+  z-index: var(--layer-overlay);
   padding: var(--space-xsmall) var(--space-small);
   border-radius: var(--radius-medium);
   width: calc(100vw - 2 * var(--space-small));
