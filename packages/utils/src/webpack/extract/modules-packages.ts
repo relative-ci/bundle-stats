@@ -79,79 +79,71 @@ export const extractModulesPackages = (
   currentExtractedData?: MetricsModules,
 ): MetricsPackages => {
   const modules = Object.entries(currentExtractedData?.metrics?.modules || {});
+  const packages: Record<string, Package> = {};
 
-  const packages = modules.reduce(
-    (agg, [modulePath, { value }]) => {
-      const packageMeta = getPackageMetaFromModulePath(modulePath);
+  modules.forEach(([modulePath, entry]) => {
+    const packageMeta = getPackageMetaFromModulePath(modulePath);
 
-      if (!packageMeta) {
-        return agg;
-      }
+    if (!packageMeta) {
+      return;
+    }
 
-      const existingPackageData = agg[packageMeta.id];
+    const existingPackageData = packages[packageMeta.id];
 
-      // New package data
-      if (!existingPackageData) {
-        return {
-          ...agg,
-          [packageMeta.id]: {
-            name: packageMeta.name,
-            path: packageMeta.path,
-            value,
-          },
-        };
-      }
-
-      // Existing package info
-      if (existingPackageData.path === packageMeta.path) {
-        return {
-          ...agg,
-          [packageMeta.id]: {
-            ...existingPackageData,
-            value: existingPackageData.value + value,
-          },
-        };
-      }
-
-      // Same package name, but different paths (eg: symlinks)
-      const existingPackageWithEqualPath = Object.entries(agg).find(
-        ([__, packageData]) => packageData.path === packageMeta.path,
-      );
-
-      if (existingPackageWithEqualPath) {
-        const [name, data] = existingPackageWithEqualPath;
-
-        return {
-          ...agg,
-          [name]: {
-            ...data,
-            value: data.value + value,
-          },
-        };
-      }
-
-      // New package name & data
-      const lastIndex =
-        max(
-          Object.keys(agg)
-            .map((id) => id.split('~'))
-            .filter(([id]) => id === packageMeta.id)
-            .map(([__, index]) => parseInt(index, 10)),
-        ) || 0;
-
-      const packageName = [packageMeta.id, lastIndex + 1].join(PACKAGE_ID_SEPARATOR);
-
-      return {
-        ...agg,
-        [packageName]: {
-          name: packageMeta.name,
-          path: packageMeta.path,
-          value,
-        },
+    // New package data
+    if (!existingPackageData) {
+      packages[packageMeta.id] = {
+        name: packageMeta.name,
+        path: packageMeta.path,
+        value: entry.value,
       };
-    },
-    {} as Record<string, Package>,
-  );
+
+      return;
+    }
+
+    // Existing package info
+    if (existingPackageData.path === packageMeta.path) {
+      packages[packageMeta.id] = {
+        ...existingPackageData,
+        value: existingPackageData.value + entry.value,
+      };
+
+      return;
+    }
+
+    // Same package name, but different paths (eg: symlinks)
+    const existingPackageWithEqualPath = Object.entries(packages).find(
+      ([__, packageData]) => packageData.path === packageMeta.path,
+    );
+
+    if (existingPackageWithEqualPath) {
+      const [name, data] = existingPackageWithEqualPath;
+
+      packages[name] = {
+        ...data,
+        value: data.value + entry.value,
+      };
+
+      return;
+    }
+
+    // New package name & data
+    const lastIndex =
+      max(
+        Object.keys(packages)
+          .map((id) => id.split('~'))
+          .filter(([id]) => id === packageMeta.id)
+          .map(([__, index]) => parseInt(index, 10)),
+      ) || 0;
+
+    const packageName = [packageMeta.id, lastIndex + 1].join(PACKAGE_ID_SEPARATOR);
+
+    packages[packageName] = {
+      name: packageMeta.name,
+      path: packageMeta.path,
+      value: entry.value,
+    };
+  });
 
   return { metrics: { packages } };
 };
