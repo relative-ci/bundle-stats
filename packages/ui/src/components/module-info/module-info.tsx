@@ -2,9 +2,10 @@ import type { ElementType } from 'react';
 import React, { useMemo } from 'react';
 import cx from 'classnames';
 import orderBy from 'lodash/orderBy';
-import noop from 'lodash/noop';
 import type { MetricRunInfo, MetricTypeConfig, ReportMetricRow } from '@bundle-stats/utils';
 import {
+  COMPONENT,
+  SECTIONS,
   METRIC_TYPE_CONFIGS,
   BUNDLE_MODULES_DUPLICATE,
   FILE_TYPE_LABELS,
@@ -19,6 +20,7 @@ import type { Module, MetaChunk } from '@bundle-stats/utils/types/webpack';
 
 import type { ReportMetricModuleRow } from '../../types';
 import { Stack } from '../../layout/stack';
+import { FileName } from '../../ui/file-name';
 import { Tag } from '../../ui/tag';
 import { ComponentLink } from '../component-link';
 import { RunInfo } from '../run-info';
@@ -221,7 +223,6 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
     chunkIds = [],
     metricLabel = '',
     customComponentLink: CustomComponentLink = ComponentLink,
-    onClick = noop,
     onClose,
   } = props;
 
@@ -283,7 +284,6 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
           <EntryInfoMetaLink
             as={CustomComponentLink}
             {...getBundleModulesBySource(item.thirdParty || false, sourceTypeLabel)}
-            onClick={onClick}
           >
             {sourceTypeLabel}
           </EntryInfoMetaLink>
@@ -306,6 +306,31 @@ export const ModuleInfo = (props: ModuleInfoProps & React.ComponentProps<'div'>)
             customComponentLink={CustomComponentLink}
           />
         </EntryInfo.Meta>
+
+        {item?.runs?.[0].reasons && (
+          <EntryInfo.Meta label="Reasons">
+            <ul className={css.reasons}>
+              {item.runs[0].reasons.map((reason) => (
+                <li key={reason}>
+                  <EntryInfoMetaLink
+                    as={CustomComponentLink}
+                    section={SECTIONS.MODULES}
+                    params={{
+                      [COMPONENT.BUNDLE_MODULES]: {
+                        filters: {},
+                        search: '',
+                        entryId: reason,
+                      },
+                    }}
+                    className={css.reasonLink}
+                  >
+                    <FileName name={reason} className={css.reason} />
+                  </EntryInfoMetaLink>
+                </li>
+              ))}
+            </ul>
+          </EntryInfo.Meta>
+        )}
       </Stack>
     </EntryInfo>
   );

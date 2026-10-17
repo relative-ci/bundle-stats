@@ -188,6 +188,20 @@ module.exports = {
       size: 1000,
       usedExports: true,
       warnings: 0,
+      reasons: [
+        {
+          moduleId: 10,
+          moduleIdentifier: '/usr/share/app/node_modules/package-a/index.js',
+          module: 'node_modules/package-a/index.js',
+          userLoc: '1:0-20',
+        },
+        {
+          moduleId: 10,
+          moduleIdentifier: '/usr/share/app/node_modules/package-a/index.js',
+          module: 'node_modules/package-a/index.js',
+          userLoc: '3:0-20',
+        },
+      ],
     },
     {
       assets: [],

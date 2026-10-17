@@ -49,15 +49,7 @@ export default (webpackSource?: any): string => {
   const output = [`${I18N.INVALID}`];
 
   failures.forEach((failure) => {
-    const failureOutput = ['', failure.message, `Path: ${failure.path.join('.')}`];
-
-    const failedSource = extractFailedStructure(webpackSource, failure.path);
-
-    if (failedSource) {
-      failureOutput.push(
-        `Failed structure(${failedSource.path}): ${JSON.stringify(failedSource.source, null, 2)}`,
-      );
-    }
+    const failureOutput = ['', failure.message, `Path: ${failure.path.join('.')}`, failure.explanation];
 
     output.push(failureOutput.join('\n'));
   });

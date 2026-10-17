@@ -58,6 +58,7 @@ export interface Module extends MetricRun {
   chunkIds: Array<string>;
   /* Flag to identify if the module is duplicated on the current job */
   duplicated?: boolean;
+  reasons?: Array<string>;
 }
 
 /**
