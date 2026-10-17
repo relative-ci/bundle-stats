@@ -31,7 +31,7 @@
 
 .tileGroupTitleContent {
   width: 100%;
-  padding: var(--space-xxxsmall) 2px var(--space-xxxsmall) var(--space-xxsmall);
+  padding: var(--space-xxxsmall) calc(var(--space-xxxsmall) / 2) var(--space-xxxsmall) var(--space-xxsmall);
   border-radius: var(--radius-xsmall);
   display: flex;
   align-items: center;
@@ -229,7 +229,7 @@
 .tile:hover::before {
   transition: var(--transition-in);
   transition-property: opacity;
-  opacity: 0.4;
+  opacity: 0.8;
 }
 
 .tile:hover .tileContentLabel {
