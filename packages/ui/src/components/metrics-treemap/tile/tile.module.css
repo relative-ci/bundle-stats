@@ -1,0 +1,145 @@
+/** Leaf wrapper button */
+.root {
+  position: absolute;
+  appearance: none;
+  border: 0;
+  border-radius: var(--radius-xsmall);
+  padding: 0;
+  background: var(--color-background);
+  display: flex;
+  align-items: center;
+  font-family: var(--font-family-fixed);
+  font-size: var(--size-small);
+  line-height: var(--line-height-heading);
+  text-align: left;
+  transition: var(--transition-out);
+  transition-property: opacity, background-color;
+}
+
+.root::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-color: currentColor;
+}
+
+.tileContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: var(--space-xxsmall);
+  line-height: var(--line-height-heading);
+  cursor: default;
+}
+
+/** Align label to other elements on the first column cells */
+.tileFirstCol .tileContent {
+  padding-left: var(--space-small);
+}
+
+.tileContentLabel {
+  flex: 0 1 auto;
+  width: 100%;
+  min-width: 0;
+  line-height: var(--line-height-heading);
+  max-height: calc(2em * var(--line-height-heading)); /* render max 2 rows */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+  white-space: normal;
+  overflow: hidden;
+}
+
+.tileContentValue {
+  flex: 0 0 auto;
+  max-width: calc(100% + var(--space-xxsmall));
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tileContentMetric {
+  font-weight: bold;
+}
+
+.tileContentDelta {
+  margin-left: var(--space-xxxsmall);
+}
+
+/** Tile size variation */
+.tileSizeSmall .tileContent {
+  padding: var(--space-xxxsmall);
+  font-size: var(--size-xsmall);
+}
+
+.tileSizeSmall .tileContentLabel {
+  margin-top: 0;
+}
+
+/** Tile diff variation */
+.root {
+  outline: 1px solid rgba(255, 255, 255, 1);
+  color: var(--color-text);
+}
+
+.root::before {
+  color: var(--color-highlight);
+  transition: var(--transition-out);
+  transition-property: opacity;
+  opacity: 0.6;
+}
+
+.root:hover::before {
+  transition: var(--transition-in);
+  transition-property: opacity;
+  opacity: 0.8;
+}
+
+.root:hover .tileContentLabel {
+  text-decoration: underline;
+}
+
+.tile-NO_CHANGE {
+  color: var(--color-text-light);
+}
+
+.tile-NO_CHANGE::before {
+  color: var(--color-gray-50);
+  opacity: 0.4;
+}
+
+.tile-NO_CHANGE:hover::before {
+  opacity: 0.2;
+}
+
+.tile-HIGH_NEGATIVE::before {
+  color: var(--color-red-100);
+}
+
+.tile-NEGATIVE::before {
+  color: var(--color-red-50);
+}
+
+.tile-LOW_NEGATIVE::before {
+  color: var(--color-red-50);
+}
+
+.tile-LOW_POSITIVE::before {
+  color: var(--color-green-50);
+}
+
+.tile-POSITIVE::before {
+  color: var(--color-green-50);
+}
+
+.tile-HIGH_POSITIVE::before {
+  color: var(--color-green-100);
+}
