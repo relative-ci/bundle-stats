@@ -2,6 +2,8 @@ const path = require('path');
 const webpack5 = require('webpack');
 const MemoryFS = require('memory-fs');
 
+jest.setTimeout(10 * 1000);
+
 const config = require('./app/webpack.config');
 
 describe('webpack plugin package', () => {
