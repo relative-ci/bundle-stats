@@ -12,6 +12,7 @@ import { FileName } from '../../ui/file-name';
 import { Button } from '../../ui/button';
 import { Icon } from '../../ui/icon';
 import { Table } from '../../ui/table';
+import { getCreatePortalElement } from '../../utils/portal';
 import { RunInfo } from '../run-info';
 import * as I18N from './entry-info.i18n';
 import css from './entry-info.module.css';
@@ -51,14 +52,9 @@ const EntryInfoMeta = ({
 );
 
 /**
- * Ariakit appends nested portals (tooltips, hovercards, menus) to the parent portal node,
- * set a specific class on the entry info portal node to raise the z-index of the nested overlays
+ * Raise the z-index of the overlays nested inside the entry info
  */
-const createPortalElement = (element: HTMLElement) => {
-  const portalElement = element.ownerDocument.createElement('div');
-  portalElement.className = css.portal;
-  return portalElement;
-};
+const createPortalElement = getCreatePortalElement(css.portal);
 
 function defaultRenderRunInfo(item: ReportMetricRow) {
   const baselineRun = item.runs.length > 1 ? item.runs?.[item.runs.length - 1] : null;

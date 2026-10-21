@@ -9,6 +9,7 @@ import {
 } from 'ariakit/dialog';
 
 import { Stack } from '../../layout/stack';
+import { getCreatePortalElement } from '../../utils/portal';
 import { BUTTON_GLYPHS, Button } from '../button';
 import css from './dialog.module.css';
 
@@ -17,14 +18,9 @@ export const useDialogState = (options: DialogStateProps = {}) => {
 };
 
 /**
- * Ariakit appends nested portals (tooltips, hovercards, menus) to the parent portal node,
- * set a specific class on the dialog portal node to raise the z-index of the nested overlays
+ * Raise the z-index of the overlays nested inside the dialog
  */
-const createPortalElement = (element: HTMLElement) => {
-  const portalElement = element.ownerDocument.createElement('div');
-  portalElement.className = css.portal;
-  return portalElement;
-};
+const createPortalElement = getCreatePortalElement(css.portal);
 
 type AriakitDialogProps = ComponentProps<typeof AriakitDialog>;
 
