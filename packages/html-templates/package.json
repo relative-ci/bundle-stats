@@ -46,7 +46,7 @@
     "babel-plugin-polyfill-corejs3": "1.0.0",
     "babel-plugin-require-context-hook": "1.0.0",
     "classnames": "2.5.1",
-    "core-js": "3.50.0",
+    "core-js": "3.51.0",
     "cross-env": "10.1.0",
     "css-loader": "6.10.0",
     "css-minimizer-webpack-plugin": "8.0.0",

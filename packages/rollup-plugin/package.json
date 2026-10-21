@@ -60,7 +60,7 @@
     "@rollup/plugin-typescript": "12.3.0",
     "@tsconfig/node16": "16.1.9",
     "@types/jest": "30.0.0",
-    "core-js": "3.50.0",
+    "core-js": "3.51.0",
     "jest": "^30.5.0",
     "jest-cli": "30.5.2",
     "memfs": "4.80.0",
