@@ -59,7 +59,8 @@
 
   .header {
     position: fixed;
-    z-index: calc(var(--layer-xhigh) + 2);
+    /** above the sticky tabs, entry info and the entry info overlays */
+    z-index: calc(var(--layer-xhigh) + 3);
     left: 0;
     top: 0;
     right: 0;
@@ -69,6 +70,7 @@
   .tabsContainer {
     position: sticky;
     top: var(--header-height);
-    z-index: var(--layer);
+    /** above the overlays (tooltips, hovercards, dropdowns) */
+    z-index: var(--layer-xhigh);
   }
 }

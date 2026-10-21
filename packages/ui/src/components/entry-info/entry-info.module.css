@@ -1,3 +1,8 @@
+/** place overlays triggered from inside the entry info above the panel, under the header */
+.portal {
+  --layer-overlay: calc(var(--layer-xhigh) + 2);
+}
+
 .root {
   position: fixed;
   right: 0;
@@ -5,7 +10,8 @@
   bottom: 0;
   width: 100vw;
   max-width: var(--entry-info-width);
-  z-index: calc(var(--layer));
+  /** above the sticky tabs */
+  z-index: calc(var(--layer-xhigh) + 1);
   background: var(--color-background);
   box-shadow: var(--shadow-layer-high);
 }

@@ -5,6 +5,9 @@ import {
   type MetricRunInfoBaseline,
   type MetricRunInfo,
   type ReportMetricRow,
+  METRIC_TYPE_CONFIGS,
+  formatFileSize,
+  getMetricRunInfo,
 } from '@bundle-stats/utils';
 
 import {
@@ -198,6 +201,23 @@ export function resolveGroupDeltaType(
   }
 
   return DeltaType.NO_CHANGE;
+}
+
+/**
+ * Resolve the run info of a tile group from the children total
+ */
+export function getGroupRunInfo(total: TreeTotal) {
+  const runInfo = getMetricRunInfo(
+    METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE,
+    total.current,
+    total.baseline,
+  ) as MetricRunInfo;
+
+  return {
+    runInfo,
+    baselineDisplayValue: formatFileSize(total.baseline),
+    deltaType: resolveGroupDeltaType(runInfo),
+  };
 }
 
 /**

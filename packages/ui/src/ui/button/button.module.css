@@ -124,13 +124,13 @@ a.root {
 }
 
 .solid--primary {
-  background: var(--color-primary);
+  background: var(--color-accent);
 }
 
 .solid--primary:hover,
 .solid--primary:active,
 .solid--primary:focus {
-  background: var(--color-primary-dark);
+  background: var(--color-accent-dark);
 }
 
 .solid--secondary {

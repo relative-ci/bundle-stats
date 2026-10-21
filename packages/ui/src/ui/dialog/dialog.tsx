@@ -9,12 +9,18 @@ import {
 } from 'ariakit/dialog';
 
 import { Stack } from '../../layout/stack';
+import { getCreatePortalElement } from '../../utils/portal';
 import { BUTTON_GLYPHS, Button } from '../button';
 import css from './dialog.module.css';
 
 export const useDialogState = (options: DialogStateProps = {}) => {
   return useAriakitDialogState({ animated: true, ...options });
 };
+
+/**
+ * Raise the z-index of the overlays nested inside the dialog
+ */
+const createPortalElement = getCreatePortalElement(css.portal);
 
 type AriakitDialogProps = ComponentProps<typeof AriakitDialog>;
 
@@ -48,6 +54,7 @@ export const Dialog = (props: DialogProps) => {
         className: css.backdrop,
       }}
       portal
+      portalElement={createPortalElement}
       className={rootClassName}
     >
       {!modal && (

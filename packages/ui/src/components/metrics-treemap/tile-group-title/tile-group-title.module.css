@@ -1,0 +1,48 @@
+.root {
+  width: 100%;
+  cursor: default;
+}
+
+.tileGroupTitleContent {
+  width: 100%;
+  padding: var(--space-xxxsmall) calc(var(--space-xxxsmall) / 2) var(--space-xxxsmall) var(--space-xxsmall);
+  border-radius: var(--radius-xsmall);
+  display: flex;
+  align-items: center;
+  color: var(--color-text);
+  font-family: var(--font-family-fixed);
+  font-size: 10px;
+  line-height: var(--space-small);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tileGroupTitleText,
+.tileGroupTitleTotal {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.tileGroupTitleTotal {
+  margin-left: var(--space-xxsmall);
+  color: var(--color-text-light);
+}
+
+.root {
+  transition: var(--transition-out);
+}
+
+.root:hover .tileGroupTitleText {
+  text-decoration: underline;
+  transition: var(--transition-in);
+}
+
+/** Fill variation */
+.fill {
+  height: 100%;
+}
+
+.fill .tileGroupTitleContent {
+  min-height: 100%;
+}

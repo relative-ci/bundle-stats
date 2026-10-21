@@ -1,6 +1,5 @@
 import React, {
   type ComponentProps,
-  type MouseEventHandler,
   type ReactNode,
   useCallback,
   useEffect,
@@ -11,25 +10,15 @@ import { useMeasure } from 'react-use';
 import cx from 'classnames';
 import { HierarchyRectangularNode, hierarchy, treemap, treemapSquarify } from 'd3';
 import { Tooltip, TooltipArrow } from 'ariakit/tooltip';
-import {
-  type ReportMetricRow,
-  type MetricRunInfo,
-  type MetricRunInfoBaseline,
-  METRIC_TYPE_CONFIGS,
-  formatFileSize,
-  getMetricRunInfo,
-} from '@bundle-stats/utils';
+import type { ReportMetricRow, MetricRunInfo, MetricRunInfoBaseline } from '@bundle-stats/utils';
 
 import { FlexStack } from '../../layout/flex-stack';
 import { Stack } from '../../layout/stack';
 import { FileName } from '../../ui/file-name';
-import { Delta } from '../delta';
 import { RunInfo } from '../run-info';
 import {
-  type TreeLeaf,
   type TreeNode,
   type Tree,
-  type TreeTotal,
   SQUARIFY_RATIO,
   PADDING_OUTER,
   PADDING_INNER,
@@ -37,34 +26,14 @@ import {
   NESTED_PADDING_TOP,
   NESTED_PADDING_LEFT,
   NODE_ID_SELECTOR,
-  TileSizeDisplay,
 } from './metrics-treemap.constants';
-import * as I18N from './metrics-treemap.i18n';
 import css from './metrics-treemap.module.css';
 import {
+  getGroupRunInfo,
   getTreemapNodesIndex,
-  resolveGroupDeltaType,
-  resolveTileSizeDisplay,
-  resolveTileGroupSizeDisplay,
   useTreemapTooltipState,
 } from './metrics-treemap.utils';
-
-/**
- * Resolve the run info of a tile group from the children total
- */
-function getGroupRunInfo(total: TreeTotal) {
-  const runInfo = getMetricRunInfo(
-    METRIC_TYPE_CONFIGS.METRIC_TYPE_FILE_SIZE,
-    total.current,
-    total.baseline,
-  ) as MetricRunInfo;
-
-  return {
-    runInfo,
-    baselineDisplayValue: formatFileSize(total.baseline),
-    deltaType: resolveGroupDeltaType(runInfo),
-  };
-}
+import { TileGroup } from './tile-group';
 
 interface TileTooltipContentProps {
   item: ReportMetricRow;
@@ -89,116 +58,6 @@ const TileTooltipContent = (props: TileTooltipContentProps) => {
         baseline={baselineRun?.displayValue || '0B'}
       />
     </Stack>
-  );
-};
-
-interface TileContentProps {
-  /**
-   * Node label
-   */
-  label: string;
-  /**
-   * Tile id - metric label or basename for grouped tiles
-   */
-  item: ReportMetricRow;
-  /**
-   * The estimated size of the tile
-   */
-  sizeDisplay: TileSizeDisplay;
-  /**
-   * Metric run info
-   */
-  runInfo: MetricRunInfo;
-}
-
-const TileContentContainer = (props: ComponentProps<'div'>) => (
-  <FlexStack
-    direction="column"
-    justifyContent="center"
-    gap="xxxsmall"
-    className={css.tileContent}
-    {...props}
-  />
-);
-
-const TileContent = (props: TileContentProps) => {
-  const { label, sizeDisplay, item, runInfo } = props;
-
-  // Render only the container
-  if (sizeDisplay === 'minimal') {
-    return <TileContentContainer />;
-  }
-
-  const resolvedLabel = label || item.label;
-
-  // Render only the label
-  if (sizeDisplay === 'small') {
-    return (
-      <TileContentContainer>
-        <p className={css.tileContentLabel}>{resolvedLabel}</p>
-      </TileContentContainer>
-    );
-  }
-
-  return (
-    <TileContentContainer>
-      <p className={css.tileContentLabel}>{label || item.label}</p>
-      <p className={css.tileContentValue}>
-        <span className={css.tileContentMetric}>{runInfo.displayValue}</span>
-        <Delta
-          className={css.tileContentDelta}
-          displayValue={runInfo.displayDeltaPercentage}
-          deltaType={runInfo.deltaType}
-        />
-      </p>
-    </TileContentContainer>
-  );
-};
-
-interface TileProps {
-  left: number;
-  top: number;
-  width: number;
-  height: number;
-  data: TreeLeaf;
-  onClick?: (id: string) => void;
-}
-
-const Tile = (props: TileProps) => {
-  const { left, top, width, height, data, onClick } = props;
-
-  const { item, label } = data;
-  const runInfo = item.runs?.[0] as MetricRunInfo;
-
-  const sizeDisplay = useMemo(() => resolveTileSizeDisplay(width, height), [width, height]);
-  const handleOnClick: MouseEventHandler<HTMLDivElement> = useCallback(
-    (event) => {
-      event.stopPropagation();
-      onClick?.(item.key);
-    },
-    [item.key, onClick],
-  );
-
-  const className = cx(
-    css.tile,
-    css[`tile-${runInfo.deltaType}`],
-    sizeDisplay === 'small' && css.tileSizeSmall,
-    sizeDisplay === 'default' && css.tileSizeDefault,
-    left === PADDING_INNER && css.tileFirstCol,
-  );
-
-  /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus */
-  return (
-    <div
-      onClick={handleOnClick}
-      role="button"
-      aria-label={I18N.TILE_LABEL}
-      data-treemap-id={data.id}
-      style={{ left, top, width, height }}
-      className={className}
-    >
-      <TileContent label={label} sizeDisplay={sizeDisplay} item={item} runInfo={runInfo} />
-    </div>
   );
 };
 
@@ -242,203 +101,6 @@ const TreemapTooltipContent = (props: TreemapTooltipContentProps) => {
   }
 
   return <TileGroupTooltipContent node={node} />;
-};
-
-interface TileGroupTitleContentProps {
-  title?: string;
-  runInfo?: MetricRunInfo;
-}
-
-const TileGroupTitleContent = (props: TileGroupTitleContentProps) => {
-  const { title, runInfo } = props;
-
-  return (
-    <div className={css.tileGroupTitleContent}>
-      {title && <span className={css.tileGroupTitleText}>{title}</span>}
-      {runInfo && (
-        <span className={css.tileGroupTitleTotal}>
-          {runInfo.displayValue}
-          {'displayDelta' in runInfo && `(${runInfo.displayDeltaPercentage})`}
-        </span>
-      )}
-    </div>
-  );
-};
-
-type TileGroupTitleProps = TileGroupTitleContentProps & {
-  /**
-   * Node id - used to resolve the tooltip content on hover
-   */
-  id: string;
-};
-
-const TileGroupTitle = (props: TileGroupTitleProps) => {
-  const { id, ...restProps } = props;
-
-  return (
-    <div className={css.tileGroupTitle} data-treemap-id={id}>
-      <TileGroupTitleContent {...restProps} />
-    </div>
-  );
-};
-
-interface TileGroupProps extends ComponentProps<'div'> {
-  /**
-   * Node title
-   */
-  title?: string;
-  /**
-   * Group sum
-   */
-  total?: Tree['total'];
-  /**
-   * Node id
-   */
-  id: string;
-  /**
-   * Node children
-   */
-  childNodes: HierarchyRectangularNode<TreeNode>['children'];
-  /**
-   * On click tile handler
-   */
-  onItemClick: TileProps['onClick'];
-  /**
-   * On click group title
-   */
-  onGroupClick?: (groupId: string) => void;
-
-  /**
-   * Node rectangle dimensions
-   */
-  width?: number;
-  height?: number;
-
-  /**
-   * Node rectangle relative coordinates (relative to parent)
-   */
-  left: number;
-  top: number;
-
-  /**
-   * Node rectangle absolute coordinates (relative to canvas)
-   */
-  absoluteLeft: number;
-  absoluteTop: number;
-}
-
-const TileGroup = (props: TileGroupProps) => {
-  const {
-    title = '',
-    total,
-    id,
-    childNodes,
-    onItemClick,
-    onGroupClick,
-    left,
-    top,
-    width,
-    height,
-    absoluteLeft,
-    absoluteTop,
-  } = props;
-
-  const onClick: MouseEventHandler<HTMLDivElement> = useCallback(
-    (event) => {
-      onGroupClick?.(id);
-      event.stopPropagation();
-    },
-    [onGroupClick, id],
-  );
-
-  const displaySize = useMemo(
-    () => resolveTileGroupSizeDisplay(width || 0, height || 0),
-    [width, height],
-  );
-
-  // Prepare data
-  const groupRunInfo = useMemo(() => (total ? getGroupRunInfo(total) : undefined), [total]);
-
-  const rootClassName = cx(
-    css.tileGroup,
-    css[`tileGroup--${groupRunInfo?.deltaType}`],
-    css[`tileGroup--${displaySize}`],
-  );
-
-  if (title && displaySize === 'minimal') {
-    return (
-      <div
-        onClick={onClick}
-        role="button"
-        aria-label={I18N.TILE_GROUP_LABEL}
-        className={rootClassName}
-        style={{ left, top, width, height }}
-      >
-        <TileGroupTitle id={id} />
-      </div>
-    );
-  }
-
-  if (title && displaySize === 'small') {
-    return (
-      <div
-        onClick={onClick}
-        role="button"
-        aria-label={I18N.TILE_GROUP_LABEL}
-        style={{ left, top, width, height }}
-        className={rootClassName}
-      >
-        <TileGroupTitle id={id} title={title} />
-      </div>
-    );
-  }
-
-  return (
-    <div
-      onClick={onClick}
-      role="button"
-      aria-label={I18N.TILE_GROUP_LABEL}
-      className={cx(rootClassName, css.tileGroupSizeDefault)}
-      style={{ left, top, width, height }}
-    >
-      <TileGroupTitle id={id} title={title} runInfo={groupRunInfo?.runInfo} />
-      {childNodes?.map((childNode) => {
-        if ('children' in childNode) {
-          const groupData = childNode.data as Tree;
-
-          return (
-            <TileGroup
-              title={groupData.label}
-              total={groupData.total}
-              id={groupData.id}
-              childNodes={childNode.children}
-              left={childNode.x0 - absoluteLeft}
-              top={childNode.y0 - absoluteTop}
-              absoluteLeft={childNode.x0}
-              absoluteTop={childNode.y0}
-              width={childNode.x1 - childNode.x0}
-              height={childNode.y1 - childNode.y0}
-              onItemClick={onItemClick}
-              onGroupClick={onGroupClick}
-              key={groupData.id}
-            />
-          );
-        }
-
-        return (
-          <Tile
-            data={childNode.data as TreeLeaf}
-            left={childNode.x0 - absoluteLeft}
-            top={childNode.y0 - absoluteTop}
-            width={childNode.x1 - childNode.x0}
-            height={childNode.y1 - childNode.y0}
-            onClick={onItemClick}
-            key={childNode.data.id}
-          />
-        );
-      })}
-    </div>
-  );
 };
 
 interface UseMetricsTreemapHierarchyParams {
@@ -572,6 +234,7 @@ export const MetricsTreemap = (props: MetricsTreemapProps & ComponentProps<'div'
         total={(rootNode.data as Tree).total}
         id={rootNode.data.id}
         childNodes={rootNode.children}
+        nested={nested}
         onItemClick={onItemClick}
         onGroupClick={onGroupClick}
         left={rootNode.x0}
@@ -586,11 +249,7 @@ export const MetricsTreemap = (props: MetricsTreemapProps & ComponentProps<'div'
   );
 
   return (
-    <div
-      className={cx(css.root, nested && css.nested, className)}
-      {...restProps}
-      ref={containerRef}
-    >
+    <div className={cx(css.root, className)} {...restProps} ref={containerRef}>
       {hasNodes ? (
         <div className={css.canvas} ref={canvasRef}>
           {canvasContent}
