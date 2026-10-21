@@ -25,6 +25,11 @@ module.exports = merge(appCommonConfig, {
   devtool: 'hidden-source-map',
   optimization: {
     minimizer: ['...', new CssMinimizerPlugin()],
+    // html-webpack-plugin already minifies the template; webpack's HTML minifier
+    // also minifies inline scripts and breaks the CLI `__INITIAL_DATA__` injection
+    minimizeOptions: {
+      html: false,
+    },
     splitChunks: {
       cacheGroups: {
         vendors: {
