@@ -72,7 +72,7 @@
   "peerDependencies": {
     "rolldown": "^1.0.0-beta.0",
     "rollup": "^4.64.12",
-    "vite": "^8.3.4"
+    "vite": "^8.3.5"
   },
   "peerDependenciesMeta": {
     "rolldown": {
