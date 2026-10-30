@@ -8,6 +8,12 @@ import * as TEXT from './text';
 import { createArtifacts } from './create-artifacts';
 import { getBaselinePath, getBaselineRelativePath, readBaseline } from './baseline';
 
+/**
+ * Webpack compatible stats data: webpack stats or
+ * rollup/vite stats transformed to the webpack format
+ */
+export type WebpackFilteredStats = Record<string, any>;
+
 export function getReportInfo(report: any): JobInsightAssetsSizeTotalData {
   return report?.insights?.webpack?.assetsSizeTotal?.data;
 }
@@ -88,7 +94,7 @@ const DEFAULT_OPTIONS = {
 };
 
 export const generateReports = async (
-  source: object,
+  source: WebpackFilteredStats,
   options: ReportOptions,
   pluginOptions: ReportPluginOptions = {},
 ): Promise<ReportAssets> => {
@@ -118,7 +124,7 @@ export const generateReports = async (
   if (compare) {
     try {
       const baselineStatsData = await readBaseline(baselineAbsolutePath);
-      baselineStats = filter(baselineStatsData);
+      baselineStats = filter(baselineStatsData as WebpackFilteredStats);
 
       if (!options.silent) {
         logger.info(`${TEXT.BASELINE_READING} ${baselinePublicPath}.`);
