@@ -96,6 +96,7 @@
   );
   padding-bottom: 0.3em; /* extra space to compensate for the title line-height and allow to show focus state correctly on buttons */
   overflow: auto;
+  overscroll-behavior: contain;
 }
 
 /** Width variation */
