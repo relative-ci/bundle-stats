@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 import { HashRouter, NavLink, Route, Switch, useLocation } from 'react-router-dom';
+import { PortalContext } from 'ariakit/portal';
 import { COMPONENT } from '@bundle-stats/utils';
 
 import { URLS } from '../constants';
@@ -19,6 +20,7 @@ import { Stack } from '../layout/stack';
 import { Container } from '../ui/container';
 import { Tabs } from '../ui/tabs';
 import { QueryStateProvider, useComponentQueryState } from '../query-state';
+import { usePortalRoot } from '../utils/portal';
 import I18N from '../i18n';
 import { Header } from './header';
 import css from './app.module.css';
@@ -137,6 +139,20 @@ const PackagesRoute = () => {
   );
 };
 
+/**
+ * Render the overlays (hovercards, tooltips) of the content above the tabs
+ * (metric change legend, summary) above the sticky tabs
+ */
+const RaisedOverlaysProvider = ({ children }) => {
+  const portalRoot = usePortalRoot(css.raisedOverlaysPortal);
+
+  return <PortalContext.Provider value={portalRoot}>{children}</PortalContext.Provider>;
+};
+
+RaisedOverlaysProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 const AppComponent = ({ version, jobs }) => {
   if (jobs?.length === 0) {
     return (
@@ -151,18 +167,20 @@ const AppComponent = ({ version, jobs }) => {
   return (
     <JobsProvider jobs={jobs}>
       <Layout jobs={jobs} version={version}>
-        <Container className={css.metricChangeLegendContainer}>
-          <FlexStack justifyContent="flex-end">
-            <MetricChangeLegend />
-          </FlexStack>
-        </Container>
-        <Container className={css.summaryContainer}>
-          <Summary
-            data={jobs[0].summary}
-            showSummaryItemDelta={jobs.length !== 1}
-            showSummaryItemBaseline={jobs?.length !== 1}
-          />
-        </Container>
+        <RaisedOverlaysProvider>
+          <Container className={css.metricChangeLegendContainer}>
+            <FlexStack justifyContent="flex-end">
+              <MetricChangeLegend />
+            </FlexStack>
+          </Container>
+          <Container className={css.summaryContainer}>
+            <Summary
+              data={jobs[0].summary}
+              showSummaryItemDelta={jobs.length !== 1}
+              showSummaryItemBaseline={jobs?.length !== 1}
+            />
+          </Container>
+        </RaisedOverlaysProvider>
 
         <Container className={css.tabsContainer}>
           <Tabs className={css.tabs}>
