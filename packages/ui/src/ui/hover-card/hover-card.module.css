@@ -7,7 +7,9 @@
   color: inherit;
   cursor: default;
   text-decoration: none;
-  transition: var(--transition-out);
+  transition-property: color;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .anchor:focus,
@@ -15,7 +17,7 @@
 .anchor:hover {
   color: var(--color-accent-dark);
   outline: 0;
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 .hoverCard {
@@ -30,12 +32,14 @@
   background: var(--color-light);
   font-size: var(--size-small);
   opacity: 0;
-  transition: var(--transition-out);
+  transition-property: opacity;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .hoverCard[data-enter] {
   opacity: 1;
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 .hoverCard[data-leave] {

@@ -13,7 +13,9 @@
   color: var(--color-text-ultra-light);
   font-weight: bold;
   text-decoration: none;
-  transition: var(--transition-out);
+  transition-property: color;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .item::after {
@@ -26,7 +28,9 @@
   height: 2px;
   background: currentColor;
   opacity: 0;
-  transition: var(--transition-out);
+  transition-property: opacity;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .item:focus,
@@ -40,15 +44,15 @@
 .item:active::after,
 .item:focus::after {
   opacity: 1;
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 .itemActive {
   color: var(--color-accent);
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 .itemActive::after {
   opacity: 1;
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }

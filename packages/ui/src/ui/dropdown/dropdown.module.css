@@ -20,12 +20,14 @@
   font-size: var(--size-small);
   line-height: var(--line-height);
   opacity: 0;
-  transition: var(--transition-out);
+  transition-property: opacity;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .dropdown[data-enter] {
   opacity: 1;
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 .dropdown[data-leave] {
@@ -51,7 +53,9 @@
   text-align: left;
   text-decoration: none;
   cursor: default;
-  transition: var(--transition-out);
+  transition-property: color, background-color;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .item[data-active-item],
@@ -60,7 +64,7 @@
 .item:active {
   background: var(--color-highlight);
   color: var(--color-text);
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 .itemActive {

@@ -48,13 +48,15 @@
 /* hover current row */
 .root tbody tr th,
 .root tbody tr td {
-  transition: var(--transition-out);
+  transition-property: background-color;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .root tbody tr:hover th,
 .root tbody tr:hover td {
   background-color: var(--color-highlight-warning);
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 .empty {

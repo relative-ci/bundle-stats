@@ -5,7 +5,8 @@
 
 .tileGroupTitleContent {
   width: 100%;
-  padding: var(--space-xxxsmall) calc(var(--space-xxxsmall) / 2) var(--space-xxxsmall) var(--space-xxsmall);
+  padding: var(--space-xxxsmall) calc(var(--space-xxxsmall) / 2) var(--space-xxxsmall)
+    var(--space-xxsmall);
   border-radius: var(--radius-xsmall);
   display: flex;
   align-items: center;
@@ -29,13 +30,8 @@
   color: var(--color-text-light);
 }
 
-.root {
-  transition: var(--transition-out);
-}
-
 .root:hover .tileGroupTitleText {
   text-decoration: underline;
-  transition: var(--transition-in);
 }
 
 /** Fill variation */

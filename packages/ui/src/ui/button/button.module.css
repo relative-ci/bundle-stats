@@ -19,7 +19,9 @@
   font-family: var(--font-family);
   line-height: var(--line-height);
   white-space: nowrap;
-  transition: var(--transition-out);
+  transition-property: color, background-color, border-color;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 a.root {
@@ -31,7 +33,7 @@ a.root {
 .root:active {
   outline: none;
   color: var(--color-text-light);
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 .glyph {

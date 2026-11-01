@@ -27,10 +27,12 @@
 
 .dropdownItemIcon {
   opacity: 0;
-  transition: var(--transition-out);
+  transition-property: opacity;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .dropdownItemActive .dropdownItemIcon {
   opacity: 1;
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }

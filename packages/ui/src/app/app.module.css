@@ -38,12 +38,12 @@
 
 .tabActive {
   color: var(--color-accent);
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 .tabActive::after {
   opacity: 1;
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 .tabsContent {

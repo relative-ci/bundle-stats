@@ -42,14 +42,16 @@
   bottom: calc(0px - var(--space-xsmall));
   left: calc(0px - var(--space-xsmall));
   opacity: 0;
-  transition: var(--transition-out);
+  transition-property: opacity;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .item:focus::before,
 .item:active::before,
 .item:hover::before {
   opacity: 1;
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 .item + .item::after {
@@ -63,7 +65,9 @@
   top: var(--space-xxsmall);
   bottom: var(--space-xxsmall);
   opacity: 1;
-  transition: var(--transition-out);
+  transition-property: opacity;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .item:focus::after,
@@ -73,5 +77,5 @@
 .item:active + .item::after,
 .item:hover + .item::after {
   opacity: 0;
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }

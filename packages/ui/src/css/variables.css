@@ -192,10 +192,13 @@ body {
   --color-backdrop: rgba(0, 0, 0, 0.05);
   --color-shadow: rgba(0, 0, 0, 0.25);
 
+  /**
+   * Transitions: set `transition-property` explicitly on the base rule, use the `out` duration
+   * on the base rule and switch only `transition-duration` to `in` on the active/hover rule
+   */
   --transition-duration-in: 120ms;
   --transition-duration-out: 80ms;
-  --transition-in: all var(--transition-duration-in) ease-in;
-  --transition-out: all var(--transition-duration-out) ease-out;
+  --transition-timing-function: ease-out;
 
   --layer-xlow: 1;
   --layer-low: 10;

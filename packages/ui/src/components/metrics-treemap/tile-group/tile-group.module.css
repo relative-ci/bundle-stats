@@ -5,8 +5,9 @@
 
 /** Tile group size variation */
 .root {
-  transition: var(--transition-out);
-  transition-property: background-color, outline;
+  transition-property: background-color, outline-color;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 /** Tile group nested variation */
@@ -19,8 +20,7 @@
 .root.nested:has(> [data-treemap-tile]:hover) {
   background-color: rgba(27, 26, 33, 0.06);
   outline: 1px solid rgba(255, 255, 255, 1);
-  transition: var(--transition-in);
-  transition-property: background-color, outline;
+  transition-duration: var(--transition-duration-in);
 }
 
 .nested.tileGroup--NEGATIVE {
@@ -51,7 +51,9 @@
 .nested.tileGroup--POSITIVE > .tileGroup--NO_CHANGE:has(> [data-treemap-tile-group-title]:hover),
 .nested.tileGroup--POSITIVE > .tileGroup--NO_CHANGE:has(> [data-treemap-tile]:hover),
 .nested.tileGroup--NEGATIVE > .tileGroup--NO_CHANGE:has(> [data-treemap-tile-group-title]:hover),
-.nested.tileGroup--NEGATIVE > .tileGroup--NEGATIVE > .tileGroup--NO_CHANGE:has(> [data-treemap-tile]:hover) {
+.nested.tileGroup--NEGATIVE
+  > .tileGroup--NEGATIVE
+  > .tileGroup--NO_CHANGE:has(> [data-treemap-tile]:hover) {
   background-color: var(--color-background);
   background-image: linear-gradient(rgba(27, 26, 33, 0.1), rgba(27, 26, 33, 0.1));
 }

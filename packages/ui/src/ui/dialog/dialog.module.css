@@ -9,12 +9,14 @@
   justify-content: center;
   z-index: var(--layer-xxhigh);
   opacity: 0;
-  transition: var(--transition-out);
+  transition-property: opacity;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .backdrop[data-enter] {
   opacity: 1;
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 .backdrop[data-leave] {
@@ -44,12 +46,14 @@
   box-shadow: 0 0 var(--space-medium) var(--color-shadow);
   z-index: var(--layer-xxhigh);
   opacity: 0;
-  transition: var(--transition-out);
+  transition-property: opacity;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .dialog[data-enter] {
   opacity: 1;
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 .digalog[data-leave] {
