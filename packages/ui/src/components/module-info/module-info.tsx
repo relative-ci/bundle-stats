@@ -15,7 +15,7 @@ import {
   getBundleModulesBySource,
   getMetricRunInfo,
 } from '@bundle-stats/utils';
-import type { Module, MetaChunk } from '@bundle-stats/utils/types/webpack';
+import type { Module, MetaChunk } from '@bundle-stats/utils/webpack';
 
 import type { ReportMetricModuleRow } from '../../types';
 import { Stack } from '../../layout/stack';

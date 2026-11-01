@@ -21,8 +21,8 @@ import {
   getModuleSourceTypeFilters,
   getModuleFileTypeFilters,
 } from '@bundle-stats/utils';
-import type { Module } from '@bundle-stats/utils/types/webpack';
-import { MODULE_PATH_PACKAGES } from '@bundle-stats/utils/lib-esm/webpack';
+import type { Module } from '@bundle-stats/utils/webpack';
+import { MODULE_PATH_PACKAGES } from '@bundle-stats/utils/webpack';
 
 import type { FilterFieldsData, FilterGroupFieldData, ReportMetricModuleRow } from '../../types';
 import * as I18N from './bundle-modules.i18n';

@@ -1,15 +1,10 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "allowJs": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "lib": ["es2020"]
+    // The root config sets `removeComments: true`; keep them here so the JSDoc on
+    // the public `Plugin`/`OutputOptions` types survives into the published .d.ts.
+    "removeComments": false
   },
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    }
-  }
+  "include": ["src/**/*"],
+  "exclude": ["**/*.test.ts"]
 }

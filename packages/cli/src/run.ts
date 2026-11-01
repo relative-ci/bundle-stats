@@ -5,7 +5,6 @@ import { Listr } from 'listr2';
 import { get } from 'lodash';
 import boxen from 'boxen';
 import type { StatsCompilation } from 'webpack';
-import '@bundle-stats/utils/lib/polyfills';
 import { createJobs, createReport } from '@bundle-stats/utils';
 import type { MetricRunInfoDeltaType } from '@bundle-stats/utils';
 import webpackFilter from '@bundle-stats/plugin-webpack-filter';

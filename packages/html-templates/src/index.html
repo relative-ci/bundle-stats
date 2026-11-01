@@ -3,26 +3,14 @@
   <head>
     <meta charset="utf8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-    <meta name="description" content="<%= htmlWebpackPlugin.options.description %>">
-    <% htmlWebpackPlugin.files.css.forEach(function(cssFile) { %>
-      <style type="text/css">
-	<%= compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source() %>
-      </style>
-    <% }) %>
+    <title>BundleStats</title>
+    <meta name="description" content="relative-ci/bundle-stats: In-depth bundle analyzer for webpack(bundle size, assets, modules, packages)">
   </head>
   <body>
     <script>
       window.__INITIAL_DATA__ = [];
     </script>
     <div id="root"></div>
-    <% htmlWebpackPlugin.files.js.forEach(function(jsFile) { %>
-      <script>
-	<%= compilation.assets[jsFile.substr(htmlWebpackPlugin.files.publicPath.length)].source() %>
-      </script>
-    <% }) %>
-    <div style="position: absolute; width: 0, height: 0">
-    	<%= htmlWebpackPlugin.options.iconSprite %>
-    </div>
+    <script type="module" src="./index.jsx"></script>
   </body>
 </html>
