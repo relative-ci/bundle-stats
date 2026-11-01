@@ -41,7 +41,8 @@
   width: calc(100vw - 2 * var(--dialog-padding));
   position: relative;
   border-radius: var(--radius-medium);
-  padding: var(--dialog-padding);
+  border: 1px solid var(--color-outline);
+  padding: calc(var(--dialog-padding) - 1px);
   background: var(--color-background);
   box-shadow: 0 0 var(--space-medium) var(--color-shadow);
   z-index: var(--layer-xxhigh);

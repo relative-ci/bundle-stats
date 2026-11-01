@@ -11,11 +11,12 @@
   left: 0;
   top: 100%;
   border-radius: var(--radius-small);
+  border: 1px solid var(--color-outline);
   box-shadow: var(--shadow-layer);
   background: var(--color-background);
   min-width: 16em;
   z-index: var(--layer-overlay);
-  padding: var(--space-xxxsmall);
+  padding: calc(var(--space-xxxsmall) - 1px);
   color: var(--color-text-light);
   font-size: var(--size-small);
   line-height: var(--line-height);
