@@ -61,7 +61,9 @@ code {
 
 a {
   color: var(--color-accent);
-  transition: var(--transition-out);
+  transition-property: color;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 a:focus,
@@ -69,5 +71,5 @@ a:active,
 a:hover {
   color: var(--color-accent-dark);
   outline: none;
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }

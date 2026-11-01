@@ -22,12 +22,14 @@
   filter: drop-shadow(var(--shadow-layer));
   will-change: filter;
   opacity: 0;
-  transition: var(--transition-out);
+  transition-property: opacity;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .tooltip[data-enter] {
   opacity: 1;
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 .tooltip[data-leave] {

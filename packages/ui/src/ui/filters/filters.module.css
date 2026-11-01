@@ -42,14 +42,16 @@
   font-size: var(--size-small);
   line-height: var(--space-small);
   color: var(--color-text-ultra-light);
-  transition: var(--transition-out);
+  transition-property: color, border-color;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .filterSingle:focus,
 .filterSingle:active,
 .filterSingle:hover {
   border-color: var(--color-outline-dark);
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 /** Filter group */

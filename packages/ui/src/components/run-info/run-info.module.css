@@ -43,7 +43,6 @@
   line-height: inherit;
 }
 
-
 .delta {
   font-weight: bold;
   font-size: var(--size-small);
@@ -62,10 +61,11 @@
 .titleTooltipIcon[aria-controls=''] {
   opacity: 0;
   visibility: hidden;
+  /* delay hiding until the fade-out completes */
   transition:
-    opacity var(--transition-duration-out) ease-out,
-    color var(--transition-duration-out) ease-out,
-    visibility 0s;
+    opacity var(--transition-duration-out) var(--transition-timing-function),
+    color var(--transition-duration-out) var(--transition-timing-function),
+    visibility 0s linear var(--transition-duration-out);
 }
 
 .root:hover .titleHoverCardIcon span,
@@ -73,8 +73,8 @@
   opacity: 1;
   visibility: visible;
   transition:
-    opacity var(--transition-duration-in) ease-in,
-    color var(--transition-duration-in) ease-in,
+    opacity var(--transition-duration-in) var(--transition-timing-function),
+    color var(--transition-duration-in) var(--transition-timing-function),
     visibility 0s;
 }
 

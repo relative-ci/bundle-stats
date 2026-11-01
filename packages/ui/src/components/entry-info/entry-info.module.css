@@ -29,6 +29,7 @@
 .contentWrapper {
   flex: 1 1 auto;
   overflow: auto;
+  overscroll-behavior: contain;
 }
 
 /** header */

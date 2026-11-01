@@ -28,7 +28,7 @@
 
 .directionActive {
   color: var(--color-text);
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 .direction:hover,
@@ -69,6 +69,9 @@
 .direction {
   pointer-events: none;
   opacity: 0;
+  transition-property: color, opacity;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .active .direction,
@@ -77,5 +80,5 @@
 .interactive:hover:focus .direction {
   pointer-events: auto;
   opacity: 1;
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }

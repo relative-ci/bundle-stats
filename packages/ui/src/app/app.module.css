@@ -27,6 +27,11 @@
   padding-bottom: var(--space-xxsmall);
 }
 
+/** legend and summary overlays: above the sticky tabs, below the header */
+.raisedOverlaysPortal {
+  --layer-overlay: calc(var(--layer-xhigh) + 2);
+}
+
 .tabsContainer {
   border-bottom: 1px solid var(--color-outline);
   background: var(--color-light);
@@ -38,12 +43,12 @@
 
 .tabActive {
   color: var(--color-accent);
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 .tabActive::after {
   opacity: 1;
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 .tabsContent {
@@ -70,7 +75,7 @@
   .tabsContainer {
     position: sticky;
     top: var(--header-height);
-    /** above the overlays (tooltips, hovercards, dropdowns) */
+    /** above the overlays (tooltips, hovercards, dropdowns), except the legend and summary overlays */
     z-index: var(--layer-xhigh);
   }
 }

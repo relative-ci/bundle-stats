@@ -18,14 +18,16 @@
 }
 
 .outlineHover {
-  transition: var(--transition-out);
+  transition-property: border-color;
+  transition-duration: var(--transition-duration-out);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .outlineHover:focus,
 .outlineHover:active,
 .outlineHover:hover {
   border-color: var(--color-outline-dark);
-  transition: var(--transition-in);
+  transition-duration: var(--transition-duration-in);
 }
 
 .padding-xxxsmall {
