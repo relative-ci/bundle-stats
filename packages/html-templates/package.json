@@ -68,7 +68,7 @@
     "rimraf": "6.1.4",
     "stats-webpack-plugin": "0.7.0",
     "storybook": "10.6.6",
-    "vite": "8.3.5",
+    "vite": "8.3.6",
     "vite-plugin-svgr": "5.2.0",
     "vitest": "5.1.0",
     "webpack": "^5.112.2",
