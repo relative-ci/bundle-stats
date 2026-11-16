@@ -63,7 +63,7 @@
     "core-js": "3.51.0",
     "jest": "^30.5.0",
     "jest-cli": "30.5.2",
-    "memfs": "4.80.0",
+    "memfs": "4.80.1",
     "regenerator-runtime": "0.14.1",
     "rimraf": "6.1.4",
     "ts-jest": "29.4.15",
