@@ -59,7 +59,7 @@
     "mini-css-extract-plugin": "2.10.2",
     "playwright": "1.65.1",
     "postcss": "8.5.33",
-    "postcss-loader": "8.2.1",
+    "postcss-loader": "8.2.2",
     "preact": "11.2.0",
     "prop-types": "15.8.1",
     "react": "18.3.1",
